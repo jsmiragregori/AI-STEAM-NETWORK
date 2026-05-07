@@ -1,7 +1,11 @@
 const appState = {
   cookiesAccepted: localStorage.getItem('cookies-accepted') === 'true',
   mobileMenuOpen: false,
-  marketplaceFilters: { type: 'all', route: 'all', status: 'all', sector: 'all', search: '' },
+  selectedChallengeId: null,
+  marketplaceShowSubmit: false,
+  marketplaceShowParticipation: false,
+  marketplaceParticipationSent: false,
+  marketplaceFilters: { type: 'All', route: 'All', status: 'Todos', sector: 'Todos', evidence: 'All', search: '' },
   networkTab: 'socios',
   networkCategory: 'todos',
   networkCountry: null,
