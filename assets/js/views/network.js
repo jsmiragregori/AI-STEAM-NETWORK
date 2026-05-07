@@ -254,12 +254,12 @@ function tabStakeholders(networkT, activeCategory, showForm) {
         <form id="net-form" class="space-y-5 max-w-2xl">
           <div class="grid grid-cols-1 gap-y-5 gap-x-4 sm:grid-cols-2">
             <div class="sm:col-span-2">
-              <label class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.entityName || ''} *</label>
-              <input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue bg-white" placeholder="Ej. FEDACOVA, Hospital La Fe..." />
+              <label for="net-entity" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.entityName || ''} *</label>
+              <input id="net-entity" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" placeholder="Ej. FEDACOVA, Hospital La Fe..." />
             </div>
             <div>
-              <label class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.category || ''} *</label>
-              <select class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:border-eu-blue">
+              <label for="net-category" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.category || ''} *</label>
+              <select id="net-category" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
                 <option>${networkT?.categoryOptions?.university || ''}</option>
                 <option>${networkT?.categoryOptions?.company || ''}</option>
                 <option>${networkT?.categoryOptions?.admin || ''}</option>
@@ -267,8 +267,8 @@ function tabStakeholders(networkT, activeCategory, showForm) {
               </select>
             </div>
             <div>
-              <label class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.sector || ''} *</label>
-              <select class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:border-eu-blue">
+              <label for="net-sector" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.sector || ''} *</label>
+              <select id="net-sector" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
                 <option>${networkT?.sectorOptions?.manufacturing || ''}</option>
                 <option>${networkT?.sectorOptions?.mobility || ''}</option>
                 <option>${networkT?.sectorOptions?.energy || ''}</option>
@@ -279,24 +279,24 @@ function tabStakeholders(networkT, activeCategory, showForm) {
               </select>
             </div>
             <div>
-              <label class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.contact || ''} *</label>
-              <input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue bg-white" placeholder="Nombre y apellidos" />
+              <label for="net-contact" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.contact || ''} *</label>
+              <input id="net-contact" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" placeholder="Nombre y apellidos" />
             </div>
             <div>
-              <label class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.country || ''} *</label>
-              <input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue bg-white" value="España" />
+              <label for="net-country" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.country || ''} *</label>
+              <input id="net-country" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" value="España" />
             </div>
             <div>
-              <label class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.region || ''} *</label>
-              <input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue bg-white" placeholder="Comunitat Valenciana..." />
+              <label for="net-region" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.region || ''} *</label>
+              <input id="net-region" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" placeholder="Comunitat Valenciana..." />
             </div>
             <div class="sm:col-span-2">
-              <label class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.email || ''} *</label>
-              <input type="email" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue bg-white" placeholder="correo@entidad.com" />
+              <label for="net-email" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.email || ''} *</label>
+              <input id="net-email" type="email" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" placeholder="correo@entidad.com" />
             </div>
             <div class="sm:col-span-2">
-              <label class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.contributionFocus || ''} *</label>
-              <select class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:border-eu-blue">
+              <label for="net-contribution" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.contributionFocus || ''} *</label>
+              <select id="net-contribution" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
                 <option>${networkT?.contributionOptions?.challenge || ''}</option>
                 <option>${networkT?.contributionOptions?.case || ''}</option>
                 <option>${networkT?.contributionOptions?.validation || ''}</option>
@@ -307,8 +307,8 @@ function tabStakeholders(networkT, activeCategory, showForm) {
               </select>
             </div>
             <div class="sm:col-span-2">
-              <label class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.description || ''}</label>
-              <textarea rows="3" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue bg-white resize-none" placeholder="Describa su entidad e interés en la red AI-STEAM..."></textarea>
+              <label for="net-description" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.description || ''}</label>
+              <textarea id="net-description" rows="3" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white resize-none" placeholder="Describa su entidad e interés en la red AI-STEAM..."></textarea>
             </div>
           </div>
           <div class="flex items-center gap-2">

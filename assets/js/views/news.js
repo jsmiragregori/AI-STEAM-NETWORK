@@ -117,7 +117,7 @@ export function render() {
       <div class="flex items-center justify-between mb-2">
         <div class="flex items-center gap-2">
           <span class="text-xs font-bold uppercase tracking-wider ${getCategoryColor(item.category)}">${item.category}</span>
-          ${item.sector ? `<span class="flex items-center gap-1 text-xs text-gray-400 font-semibold"><i data-lucide="tag" class="w-2.5 h-2.5"></i>${item.sector}</span>` : ''}
+          ${item.sector ? `<span class="flex items-center gap-1 text-xs text-gray-500 font-semibold"><i data-lucide="tag" class="w-2.5 h-2.5"></i>${item.sector}</span>` : ''}
         </div>
         <div class="flex items-center gap-2">
           ${item.isOfficial !== undefined ? `
@@ -130,7 +130,7 @@ export function render() {
       <h3 class="text-base font-bold text-eu-text mb-2 hover:text-eu-blue transition-colors leading-snug">${item.title}</h3>
       <p class="text-sm text-gray-600 mb-3 line-clamp-2">${item.excerpt}</p>
       <div class="flex items-center justify-between">
-        ${item.partner ? `<span class="text-sm text-gray-400 font-semibold">${item.partner}</span>` : '<span></span>'}
+        ${item.partner ? `<span class="text-sm text-gray-500 font-semibold">${item.partner}</span>` : '<span></span>'}
         <span class="inline-flex items-center text-sm font-bold text-eu-blue hover:underline ml-auto">
           ${newsT?.readMore || ''} <i data-lucide="arrow-right" class="ml-1 w-3.5 h-3.5"></i>
         </span>

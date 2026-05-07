@@ -15,7 +15,7 @@ const NAV_ITEMS = [
 
 function langBtn(code, lang) {
   const active = lang === code;
-  return `<button data-lang="${code}" class="cursor-pointer px-2 py-1 rounded transition-colors whitespace-nowrap text-sm font-semibold ${
+  return `<button data-lang="${code}" aria-label="Cambiar idioma a ${code.toUpperCase()}" style="min-height:44px;min-width:44px" class="cursor-pointer px-2 rounded transition-colors whitespace-nowrap text-sm font-semibold ${
     active ? 'text-eu-text font-bold bg-gray-100' : 'text-gray-700 hover:text-eu-blue hover:bg-gray-100'
   }">${code.toUpperCase()}</button>`;
 }
@@ -86,7 +86,7 @@ export function renderHeader() {
         </div>
 
         <!-- Hamburger (below lg) -->
-        <button id="mobile-menu-toggle" class="lg:hidden p-2 rounded hover:bg-gray-100 transition-colors h-10 w-10 flex items-center justify-center" aria-label="Toggle menu">
+        <button id="mobile-menu-toggle" style="min-height:44px;min-width:44px" class="lg:hidden p-2 rounded hover:bg-gray-100 transition-colors flex items-center justify-center" aria-label="Toggle menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${hamburgerPath}"/>
           </svg>

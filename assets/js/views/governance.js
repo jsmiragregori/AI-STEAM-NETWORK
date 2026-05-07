@@ -33,7 +33,7 @@ function tabEstructura(govT) {
       <div class="w-8 h-8 rounded-lg ${node.color || 'bg-eu-blue'} text-white flex items-center justify-center mb-3">
         <i data-lucide="globe" class="w-4 h-4"></i>
       </div>
-      <p class="text-xs font-extrabold uppercase tracking-wider text-gray-400 mb-0.5">${node.label || ''}</p>
+      <p class="text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-0.5">${node.label || ''}</p>
       <p class="font-bold text-eu-text">${node.city || ''}</p>
       <p class="text-xs text-gray-500 mb-2">${node.org || ''}</p>
       <p class="text-xs text-gray-600">${node.role || ''}</p>
@@ -331,7 +331,7 @@ function tabLbd(govT) {
       <div class="rounded-xl border-2 ${p.border || 'border-eu-border'} p-5 h-full">
         <div class="inline-block text-xs font-extrabold uppercase px-2 py-0.5 rounded mb-2 ${p.color || 'bg-eu-blue'} text-white">${p.track || ''}</div>
         <p class="font-bold text-eu-text">${p.name || ''}</p>
-        <p class="text-xs text-gray-400 mb-1">${p.tech || ''}</p>
+        <p class="text-xs text-gray-500 mb-1">${p.tech || ''}</p>
         <p class="text-xs font-bold uppercase ${p.text || 'text-eu-blue'} mb-2">${p.role || ''}</p>
         <p class="text-xs text-gray-600 mb-3">${p.desc || ''}</p>
         <p class="text-xs text-gray-500 font-semibold bg-eu-bg rounded px-2 py-1">👤 ${p.owner || ''}</p>
@@ -350,7 +350,7 @@ function tabLbd(govT) {
     <div class="bg-eu-bg rounded-xl border border-eu-border p-5">
       <div class="inline-block px-3 py-0.5 rounded-full text-white text-xs font-extrabold uppercase mb-2 ${f.color}">${f.fase}</div>
       <p class="font-bold text-eu-text text-sm mb-0.5">${f.rango}</p>
-      <p class="text-xs text-gray-400 mb-3">${f.periodo}</p>
+      <p class="text-xs text-gray-500 mb-3">${f.periodo}</p>
       <ul class="space-y-1.5">
         ${f.items.map(item => `<li class="flex items-start gap-2 text-xs text-gray-600"><span class="w-1.5 h-1.5 rounded-full mt-1 shrink-0 ${f.color}"></span>${item}</li>`).join('')}
       </ul>

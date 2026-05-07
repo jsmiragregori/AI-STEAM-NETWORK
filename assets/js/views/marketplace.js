@@ -224,19 +224,19 @@ function renderDetail(ch, mT) {
         <p class="text-sm text-gray-600 mt-2">${cdT.participationFormIntro || ''}</p>
       </div>
       <form id="mp-participation-form" class="p-6 space-y-5">
-        ${participationSent ? `<div class="bg-green-50 border border-green-200 rounded-lg p-4 text-sm text-green-800 font-semibold">${cdT.participationConfirmation || '¡Solicitud enviada correctamente!'}</div>` : ''}
+        ${participationSent ? `<div role="alert" class="bg-green-50 border border-green-200 rounded-lg p-4 text-sm text-green-800 font-semibold">${cdT.participationConfirmation || '¡Solicitud enviada correctamente!'}</div>` : ''}
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.name || 'Nombre'}</label><input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue"></div>
-          <div><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.email || 'Email'}</label><input type="email" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue"></div>
-          <div><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.organization || 'Organización'}</label><input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue"></div>
-          <div><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.language || 'Idioma'}</label><select class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:border-eu-blue"><option>ES</option><option>EN</option><option>VA</option></select></div>
-          <div><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.country || 'País'}</label><input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue"></div>
-          <div><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.region || 'Región'}</label><input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue"></div>
+          <div><label for="mp-pf-name" class="block text-[13px] font-bold text-eu-text mb-1">${fields.name || 'Nombre'}</label><input id="mp-pf-name" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
+          <div><label for="mp-pf-email" class="block text-[13px] font-bold text-eu-text mb-1">${fields.email || 'Email'}</label><input id="mp-pf-email" type="email" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
+          <div><label for="mp-pf-org" class="block text-[13px] font-bold text-eu-text mb-1">${fields.organization || 'Organización'}</label><input id="mp-pf-org" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
+          <div><label for="mp-pf-lang" class="block text-[13px] font-bold text-eu-text mb-1">${fields.language || 'Idioma'}</label><select id="mp-pf-lang" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"><option>ES</option><option>EN</option><option>VA</option></select></div>
+          <div><label for="mp-pf-country" class="block text-[13px] font-bold text-eu-text mb-1">${fields.country || 'País'}</label><input id="mp-pf-country" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
+          <div><label for="mp-pf-region" class="block text-[13px] font-bold text-eu-text mb-1">${fields.region || 'Región'}</label><input id="mp-pf-region" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
           ${roles.length ? `<div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-2">${fields.role || 'Rol'}</label><div class="grid grid-cols-1 sm:grid-cols-2 gap-2">${roles.map(r => `<label class="flex items-center gap-2 text-sm text-gray-700 bg-eu-bg border border-eu-border rounded-md px-3 py-2"><input type="checkbox" class="rounded border-eu-border"> ${r}</label>`).join('')}</div></div>` : ''}
           ${types.length ? `<div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-2">${fields.participationType || 'Tipo de participación'}</label><div class="grid grid-cols-1 sm:grid-cols-2 gap-2">${types.map(tp => `<label class="flex items-center gap-2 text-sm text-gray-700 bg-eu-bg border border-eu-border rounded-md px-3 py-2"><input type="checkbox" class="rounded border-eu-border"> ${tp}</label>`).join('')}</div></div>` : ''}
-          ${pathways.length ? `<div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.preferredPathway || 'Vía preferida'}</label><select class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:border-eu-blue">${pathways.map(p => `<option>${p}</option>`).join('')}</select></div>` : ''}
-          <div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.context || 'Contexto'}</label><textarea rows="4" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue resize-none" placeholder="${placeholders.context || ''}"></textarea></div>
-          <div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.availability || 'Disponibilidad'}</label><input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue" placeholder="${placeholders.availability || ''}"></div>
+          ${pathways.length ? `<div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.preferredPathway || 'Vía preferida'}</label><select class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">${pathways.map(p => `<option>${p}</option>`).join('')}</select></div>` : ''}
+          <div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.context || 'Contexto'}</label><textarea rows="4" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue resize-none" placeholder="${placeholders.context || ''}"></textarea></div>
+          <div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.availability || 'Disponibilidad'}</label><input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" placeholder="${placeholders.availability || ''}"></div>
         </div>
         ${ethics.length ? `<div class="space-y-2 border-t border-eu-border pt-4">${ethics.map(e => `<label class="flex items-start gap-2 text-xs text-gray-600"><input type="checkbox" class="mt-0.5 rounded border-eu-border"> ${e}</label>`).join('')}</div>` : ''}
         <div class="flex flex-col sm:flex-row justify-end gap-3">
@@ -358,7 +358,7 @@ function renderDetail(ch, mT) {
                 ${m.done ? '<i data-lucide="check-circle" class="w-3.5 h-3.5 text-white"></i>' : ''}
               </div>
               <div>
-                <p class="text-xs font-bold ${m.done ? 'text-eu-teal' : 'text-gray-400'}">${m.date}</p>
+                <p class="text-xs font-bold ${m.done ? 'text-eu-teal' : 'text-gray-500'}">${m.date}</p>
                 <p class="text-xs mt-0.5 ${m.done ? 'text-eu-text font-semibold' : 'text-gray-500'}">${m.label}</p>
               </div>
             </div>`).join('')}
@@ -379,7 +379,7 @@ function renderDetail(ch, mT) {
             <div>
               <p class="text-sm font-bold text-eu-text">${m.name}</p>
               <p class="text-xs text-eu-teal font-semibold">${m.role}</p>
-              <p class="text-xs text-gray-400">${m.org}</p>
+              <p class="text-xs text-gray-500">${m.org}</p>
             </div>
           </div>`;
           }).join('')}
@@ -492,34 +492,34 @@ function renderList(all, mT) {
         <p class="text-gray-700">${mT?.consensueDemoNote || ''}</p>
       </div>
       <form id="mp-submit-form" class="space-y-4 max-w-2xl">
-        <div><label class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.title || 'Título'} *</label><input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue" placeholder="${formPlaceholders.title || ''}"></div>
+        <div><label for="mp-sf-title" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.title || 'Título'} *</label><input id="mp-sf-title" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" placeholder="${formPlaceholders.title || ''}"></div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.contributionType || 'Tipo'} *</label>
-            <select class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:border-eu-blue">
+            <label for="mp-sf-type" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.contributionType || 'Tipo'} *</label>
+            <select id="mp-sf-type" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
               ${Object.entries(contributionTypes).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}
             </select>
           </div>
           <div>
-            <label class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.route || 'Ruta'} *</label>
-            <select class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:border-eu-blue">
+            <label for="mp-sf-route" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.route || 'Ruta'} *</label>
+            <select id="mp-sf-route" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
               ${Object.entries(routeOptions).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}
             </select>
           </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.sector || 'Sector'} *</label>
-            <select class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:border-eu-blue">
+            <label for="mp-sf-sector" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.sector || 'Sector'} *</label>
+            <select id="mp-sf-sector" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
               ${sectorOptions.map(s => `<option>${(sectorNames[getSectorCode(s)] || s)}</option>`).join('')}
             </select>
           </div>
-          <div><label class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.deadline || 'Plazo'}</label><input type="date" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue"></div>
+          <div><label for="mp-sf-deadline" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.deadline || 'Plazo'}</label><input id="mp-sf-deadline" type="date" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
         </div>
-        <div><label class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.evidenceExpected || 'Evidencia esperada'}</label><input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue" placeholder="${formPlaceholders.evidenceExpected || ''}"></div>
-        <div><label class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.stakeholderReturn || 'Valor para tu organización'}</label><input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue" placeholder="${formPlaceholders.stakeholderReturn || ''}"></div>
-        <div><label class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.ethicsConditions || 'Condiciones de datos / ética'}</label><input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue" placeholder="RGPD, datos anonimizados, acuerdo de uso..."></div>
-        <div><label class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.description || 'Descripción'} *</label><textarea rows="4" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:border-eu-blue resize-none" placeholder="${formPlaceholders.description || ''}"></textarea></div>
+        <div><label for="mp-sf-evidence" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.evidenceExpected || 'Evidencia esperada'}</label><input id="mp-sf-evidence" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" placeholder="${formPlaceholders.evidenceExpected || ''}"></div>
+        <div><label for="mp-sf-return" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.stakeholderReturn || 'Valor para tu organización'}</label><input id="mp-sf-return" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" placeholder="${formPlaceholders.stakeholderReturn || ''}"></div>
+        <div><label for="mp-sf-ethics" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.ethicsConditions || 'Condiciones de datos / ética'}</label><input id="mp-sf-ethics" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" placeholder="RGPD, datos anonimizados, acuerdo de uso..."></div>
+        <div><label for="mp-sf-desc" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.description || 'Descripción'} *</label><textarea id="mp-sf-desc" rows="4" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue resize-none" placeholder="${formPlaceholders.description || ''}"></textarea></div>
         <div class="flex flex-col-reverse sm:flex-row justify-end gap-3">
           <button type="button" id="mp-cancel-submit" class="px-5 py-2 rounded-md border border-eu-border text-eu-text text-sm font-bold hover:bg-eu-bg transition-colors cursor-pointer">${mT?.cancel || 'Cancelar'}</button>
           <button type="submit" class="bg-eu-orange text-white px-6 py-2.5 rounded-md font-bold border-none hover:bg-eu-purple transition-colors cursor-pointer">${mT?.submit || 'Enviar'}</button>
@@ -534,27 +534,27 @@ function renderList(all, mT) {
           <label class="block text-[12px] font-bold text-gray-500 uppercase mb-1">${mT?.searchLabel || 'Buscar'}</label>
           <div class="relative">
             <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
-            <input id="mp-search" type="text" value="${(filters.search || '').replace(/"/g, '&quot;')}" class="w-full border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:border-eu-blue" placeholder="${mT?.searchPlaceholder || ''}">
+            <input id="mp-search" type="text" value="${(filters.search || '').replace(/"/g, '&quot;')}" class="w-full border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" placeholder="${mT?.searchPlaceholder || ''}">
           </div>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           <div>
             <label class="flex items-center gap-1 text-[12px] font-bold text-gray-500 uppercase mb-1"><i data-lucide="book-open" class="w-3 h-3"></i> ${mT?.filterContributionType || 'Tipo'}</label>
-            <select id="mp-filter-type" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:border-eu-blue">
+            <select id="mp-filter-type" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
               <option value="All">${mT?.all || 'Todos'}</option>
               ${Object.entries(contributionTypes).map(([k, v]) => `<option value="${k}" ${filters.type === k ? 'selected' : ''}>${v}</option>`).join('')}
             </select>
           </div>
           <div>
             <label class="flex items-center gap-1 text-[12px] font-bold text-gray-500 uppercase mb-1"><i data-lucide="route" class="w-3 h-3"></i> ${mT?.filterRoute || 'Ruta'}</label>
-            <select id="mp-filter-route" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:border-eu-blue">
+            <select id="mp-filter-route" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
               <option value="All">${mT?.all || 'Todos'}</option>
               ${Object.entries(routeOptions).map(([k, v]) => `<option value="${k}" ${filters.route === k ? 'selected' : ''}>${v}</option>`).join('')}
             </select>
           </div>
           <div>
             <label class="block text-[12px] font-bold text-gray-500 uppercase mb-1">${mT?.filterStatus || 'Estado'}</label>
-            <select id="mp-filter-status" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:border-eu-blue">
+            <select id="mp-filter-status" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
               <option value="Todos">${mT?.all || 'Todos'}</option>
               <option value="Abierto" ${filters.status === 'Abierto' ? 'selected' : ''}>${mT?.open || 'Abierto'}</option>
               <option value="En Resolución" ${filters.status === 'En Resolución' ? 'selected' : ''}>${mT?.inProgress || 'En Resolución'}</option>
@@ -563,14 +563,14 @@ function renderList(all, mT) {
           </div>
           <div>
             <label class="block text-[12px] font-bold text-gray-500 uppercase mb-1">${mT?.filterSector || 'Sector'}</label>
-            <select id="mp-filter-sector" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:border-eu-blue">
+            <select id="mp-filter-sector" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
               <option value="Todos">${mT?.all || 'Todos'}</option>
               ${sectorOptions.map(s => `<option value="${s}" ${filters.sector === s ? 'selected' : ''}>${(sectorNames[getSectorCode(s)] || s)}</option>`).join('')}
             </select>
           </div>
           <div>
             <label class="flex items-center gap-1 text-[12px] font-bold text-gray-500 uppercase mb-1"><i data-lucide="flask-conical" class="w-3 h-3"></i> ${mT?.filterEvidenceMaturity || 'Madurez'}</label>
-            <select id="mp-filter-evidence" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:border-eu-blue">
+            <select id="mp-filter-evidence" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
               <option value="All">${mT?.all || 'Todos'}</option>
               ${Object.entries(mT?.evidenceMaturityOptions || {}).map(([k, v]) => `<option value="${k}" ${evidenceFilter === k ? 'selected' : ''}>${v}</option>`).join('')}
             </select>
@@ -593,7 +593,7 @@ function renderList(all, mT) {
           </div>
           <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug line-clamp-2">${ch.title}</h3>
           <p class="text-xs text-gray-500 mb-1 font-semibold truncate">${ch.country} ${ch.entity}</p>
-          <p class="text-xs text-gray-400 mb-3 line-clamp-1">${ch.entityType}</p>
+          <p class="text-xs text-gray-500 mb-3 line-clamp-1">${ch.entityType}</p>
           <p class="text-xs text-gray-600 mb-3 line-clamp-2">${ch.description}</p>
           <div class="flex flex-wrap items-center gap-2 mb-3">
             <span class="text-xs font-bold px-2 py-0.5 rounded ${ROUTE_STYLES[ch.route] || 'bg-gray-100 text-gray-600'}">${getRouteLabel(ch.route, mT)}</span>

@@ -145,7 +145,7 @@ function tabOER(search) {
       </div>
       <div class="text-right shrink-0">
         <p class="text-lg font-extrabold text-eu-teal">${(r.downloads || 0).toLocaleString()}</p>
-        <p class="text-xs text-gray-400">${t('knowledge.oerDownloads') || ''}</p>
+        <p class="text-xs text-gray-500">${t('knowledge.oerDownloads') || ''}</p>
         <button class="mt-1 flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer bg-transparent border-none">
           <i data-lucide="download" class="w-3 h-3"></i>${t('knowledge.oerDownloadBtn') || ''}
         </button>
@@ -154,7 +154,7 @@ function tabOER(search) {
   `).join('');
 
   const emptyHtml = filtered.length === 0
-    ? '<p class="text-center py-10 text-gray-400 font-semibold">No se encontraron recursos</p>'
+    ? '<p class="text-center py-10 text-gray-500 font-semibold">No se encontraron recursos</p>'
     : '';
 
   return `
@@ -167,7 +167,7 @@ function tabOER(search) {
         <div class="relative">
           <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
           <input id="oer-search" type="text" value="${search || ''}"
-            class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:border-eu-blue w-64"
+            class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
             placeholder="${t('knowledge.oerSearch') || ''}" />
         </div>
       </div>

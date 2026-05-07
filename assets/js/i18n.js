@@ -4,9 +4,12 @@ let currentLang = localStorage.getItem('language') || 'es';
 
 export function getLanguage() { return currentLang; }
 
+const LANG_BCP47 = { es: 'es', en: 'en', va: 'ca-valencia' };
+
 export function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('language', lang);
+  document.documentElement.lang = LANG_BCP47[lang] || lang;
   import('./main.js').then(m => m.renderApp());
 }
 

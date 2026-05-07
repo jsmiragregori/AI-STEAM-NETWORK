@@ -2,7 +2,14 @@ import { renderHeader, mountHeader } from './components/header.js';
 import { renderFooter, mountFooter } from './components/footer.js';
 import { renderCookieBanner, mountCookieBanner } from './components/cookie-banner.js';
 import { getActiveView } from './router.js';
+import { getLanguage } from './i18n.js';
 import * as views from './views/index.js';
+
+const LANG_BCP47 = { es: 'es', en: 'en', va: 'ca-valencia' };
+function syncHtmlLang() {
+  const lang = getLanguage();
+  document.documentElement.lang = LANG_BCP47[lang] || lang;
+}
 
 // 'banco-retos' contiene guión — mapeamos al nombre JS válido
 const VIEW_MAP = {
@@ -41,5 +48,6 @@ export function renderApp() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  syncHtmlLang();
   renderApp();
 });

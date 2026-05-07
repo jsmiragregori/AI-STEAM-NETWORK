@@ -144,7 +144,7 @@ export function render() {
           <h2 class="text-2xl font-bold text-eu-text mb-6">${enredBlock.heading || ''}</h2>
           <div class="flex flex-col md:flex-row items-stretch gap-4">
             <div class="flex-1 bg-white rounded-xl border border-eu-border p-6 shadow-sm">
-              <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">${enredBlock.enredLabel || ''}</p>
+              <p class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">${enredBlock.enredLabel || ''}</p>
               <div class="flex flex-wrap gap-2">${enredTags}</div>
             </div>
             <div class="flex flex-col items-center justify-center gap-1 shrink-0 py-4">
@@ -277,7 +277,7 @@ export function render() {
       <!-- Partners -->
       <section class="px-6 py-10 bg-white border-t border-eu-border">
         <div class="max-w-7xl mx-auto">
-          <p class="text-center text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">${t('home.consortium')} 23 ${t('home.members')} 12 ${t('home.countries2')}</p>
+          <p class="text-center text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">${t('home.consortium')} 23 ${t('home.members')} 12 ${t('home.countries2')}</p>
           <div class="flex flex-wrap justify-center gap-4 items-center">${partnersHtml}</div>
         </div>
       </section>
