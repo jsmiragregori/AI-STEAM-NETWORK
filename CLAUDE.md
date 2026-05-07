@@ -1,7 +1,8 @@
 # CLAUDE.md - AI-STEAM Network Vanilla
 
 **Fecha de inicio:** 2026-05-07  
-**Estado:** Fase 1 (Infraestructura base) - Pendiente de inicio  
+**Estado:** Fase 2 (Vistas principales) - COMPLETADO ✅  
+**Próximo:** Fase 3 (Vistas con estado: knowledge, governance, network)  
 **Objetivo:** Convertir el mockup React/Vite a HTML/CSS/JS vanilla puro (sin dependencias en producción)
 
 ---
@@ -138,55 +139,64 @@ npx tailwindcss -i ../AI-STEAM-MOCKUP/src/index.css \
 
 ## 🎯 Fases de Desarrollo
 
-### Fase 1: Infraestructura (EN PROGRESO)
-- [ ] Estructura de directorios
-- [ ] `index.html` shell
-- [ ] CSS compilado + `main.css`
-- [ ] `i18n.js`, `router.js`, `state.js`, `main.js`
-- [ ] `header.js`, `footer.js`, `cookie-banner.js`
-- [ ] ✅ Criterio: App carga, navega entre tabs, language switcher funciona
+### Fase 1: Infraestructura ✅ COMPLETADO
+- [x] Estructura de directorios
+- [x] `index.html` shell
+- [x] CSS compilado + `main.css` (Tailwind v4 CLI)
+- [x] `i18n.js`, `router.js`, `state.js`, `main.js`
+- [x] `header.js`, `footer.js`, `cookie-banner.js`
+- [x] Criterio: App carga, navega entre tabs, language switcher funciona
 
-### Fase 2: Views simples
-- [ ] `home.js`
-- [ ] `training.js`, `sectors.js`, `news.js`, `news-detail.js`
-- [ ] ✅ Criterio: Todas las views renderean en ES/EN/VA
+**Commits:** `bee147f` (fase1: Infraestructura base)
 
-### Fase 3: Views con estado
-- [ ] `governance.js` (5 tabs)
-- [ ] `knowledge.js` (5 tabs + search)
-- [ ] `network.js` (tabs + filtro país)
-- [ ] ✅ Criterio: Filtros y formularios UI funcionales
+### Fase 2: Views simples ✅ COMPLETADO
+- [x] `home.js` — Hero + stats + sectores + formación + retos
+- [x] `sectors.js` — 7 sectores con expand/collapse + transfer chain
+- [x] `training.js` — 3 tabs (FP/Teacher/Master) + cursos + badges + paths
+- [x] `news.js` — Listado + filtros + featured + sidebar + detail view
+- [x] Criterio: Todas las views renderean en ES/EN/VA ✅
 
-### Fase 4: Marketplace + ChallengeDetail
-- [ ] `marketplace.js` (filtros múltiples)
-- [ ] `challenge-detail.js` (1061 líneas → descomponer)
-- [ ] Integración bidireccional
-- [ ] ✅ Criterio: Filtrado y navegación funcionan
+**Commits:** `da46ea5` (feat: sectors, training, news views)
 
-### Fase 5: QA + Polish
+### Fase 3: Views con estado ⏳ PENDIENTE
+- [ ] `knowledge.js` (2 tabs: flow + stakeholder map)
+- [ ] `governance.js` (3 tabs: estructura + documentos + procesos)
+- [ ] `network.js` (2 tabs: consorcio + por-país)
+- [ ] Criterio: Tabs, filtros, estado funcionales
+
+**Recurso:** Ver `SIGUIENTE_SESION.md` para detalles de implementación
+
+### Fase 4: Marketplace + ChallengeDetail ⏳ PENDIENTE
+- [ ] `marketplace.js` (filtros: type, route, status, sector, search)
+- [ ] `challenge-detail.js` (hero + problem + outcomes + related)
+- [ ] Integración bidireccional (card → detail → list)
+- [ ] Criterio: Filtrado y navegación funcionan
+
+### Fase 5: QA + Polish ⏳ PENDIENTE
 - [ ] Tests responsive (320px, 768px, 1024px, 1440px)
 - [ ] Tests de idioma (reset de filtros, persistencia)
 - [ ] localStorage funciona entre recargas
 - [ ] Minificación opcional
-- [ ] ✅ Criterio: Funciona con `python -m http.server`, sin node_modules
+- [ ] Criterio: Funciona con `npx serve -l 3000`, sin node_modules
 
 ---
 
 ## 🚀 Desarrollo Local
 
 ```bash
-# Terminal 1: Servir en HTTP (ES OBLIGATORIO, no funciona file://)
+# Servir en HTTP (ES OBLIGATORIO, no funciona file://)
 cd D:\CEICE\AI-STEAM-VANILLA
-python -m http.server 8000
+npx serve -l 3000
 
-# Terminal 2: Abrir en navegador
-http://localhost:8000
+# Abrir en navegador
+http://localhost:3000
 ```
 
 **DevTools útiles:**
-- F12 → Console para errores JS
-- F12 → Network para ver módulos cargando
-- localStorage inspeccionable en DevTools
+- F12 → Console para errores JS (los imports show en Network)
+- F12 → Network para ver módulos cargando (index.js, home.js, etc.)
+- F12 → Application → localStorage para inspeccionar estado persistido
+- F12 → Console: `getState('key')`, `setLanguage('en')` para debug
 
 ---
 
@@ -258,12 +268,21 @@ npx esbuild ./assets/js/main.js --bundle --minify --outfile=./assets/js/main.min
 
 ## 📝 Notas de Cierre de Sesión
 
-Cuando finalices una sesión, actualiza:
-1. Este archivo (progress en Fases)
-2. Archivo de memoria en `.claude/projects/d--CEICE-AI-STEAM-VANILLA/`
-3. Git commits con mensajes claros
+Cuando finalices una sesión:
+1. Actualizar este `CLAUDE.md` con estado de Fases
+2. Crear/actualizar `SIGUIENTE_SESION.md` con próximos pasos
+3. Commits claros con `feat:`, `fix:`, `docs:` según corresponda
+4. Push a `origin/master`
+
+**Patrón de commits:**
+```bash
+feat(fase3): implement knowledge.js and governance.js
+fix(news): handle empty detail gracefully
+docs: update SIGUIENTE_SESION.md with Phase 4 details
+```
 
 ---
 
 **Última actualización:** 2026-05-07  
-**Sesión:** Preparación de artefactos para cambio de contexto
+**Última sesión completada:** Fase 2 (sectors, training, news) ✅  
+**Próxima sesión:** Fase 3 (knowledge, governance, network) — ver `SIGUIENTE_SESION.md`
