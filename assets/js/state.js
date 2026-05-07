@@ -9,7 +9,8 @@ const appState = {
   governanceTab: 'estructura',
   trainingTab: 'fp',
   expandedSector: null,
-  newsCategoryFilter: 'all',
+  newsCategoryFilter: null,
+  selectedNewsId: null,
 };
 
 export function getState(key) { return appState[key]; }
