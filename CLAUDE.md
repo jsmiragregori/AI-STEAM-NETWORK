@@ -1,288 +1,203 @@
 # CLAUDE.md - AI-STEAM Network Vanilla
 
 **Fecha de inicio:** 2026-05-07  
-**Estado:** Fase 2 (Vistas principales) - COMPLETADO ✅  
-**Próximo:** Fase 3 (Vistas con estado: knowledge, governance, network)  
-**Objetivo:** Convertir el mockup React/Vite a HTML/CSS/JS vanilla puro (sin dependencias en producción)
+**Última sesión:** 2026-05-07  
+**Estado:** Fases 1–5 COMPLETADAS ✅ — Proyecto funcional y publicado  
+**Repo:** https://github.com/jsmiragregori/AI-STEAM-NETWORK
 
 ---
 
-## 📋 Contexto del Proyecto
+## Contexto del Proyecto
 
-Este es el resultado de la conversión de `D:\CEICE\AI-STEAM-MOCKUP` (React/Vite) a vanilla HTML/CSS/JS.
+Conversión de `D:\CEICE\AI-STEAM-MOCKUP` (React/Vite) a vanilla HTML/CSS/JS sin bundler.  
+Hosting estático, sin node_modules en producción.
 
-**Por qué vanilla:**
-- El servidor de alojamiento solo soporta HTML, CSS, JS estático
-- No requiere build tools en producción
-- Datos completamente estáticos (mockup)
-- Comportamiento idéntico al original: routing por tabs, i18n 3 idiomas, UI dinámica
-
-**Garantías de éxito:**
-- Look and feel idéntico al original (Tailwind compilado)
-- Misma funcionalidad: tabs, idiomas, filtros, formularios (demo)
-- Archivos fuente pequeños y legibles (~1000 líneas JS total)
+**Commits clave:**
+- `bee147f` — Fase 1: Infraestructura base
+- `da46ea5` — Fase 2: home, sectors, training, news
+- `f81dbb3` — Fase 3: governance, knowledge, network
+- `55e8d48` — Fase 4: marketplace + challenge detail
+- `841f8d6` — Fase 5: Accessibility & UX audit
 
 ---
 
-## 🗂️ Estructura del Proyecto
+## Estructura
 
 ```
 D:\CEICE\AI-STEAM-VANILLA/
-├── index.html                  ← Punto de entrada único
+├── index.html
+├── CLAUDE.md
 ├── assets/
 │   ├── css/
-│   │   ├── main.css            ← Variables CSS custom, layout
-│   │   └── tailwind-output.css ← Tailwind compilado (estático)
+│   │   ├── main.css            ← prefers-reduced-motion aquí
+│   │   └── tailwind-output.css ← compilado estático desde React source
 │   ├── js/
-│   │   ├── main.js             ← Inicialización, orquestación
-│   │   ├── router.js           ← Gestión de tabs (navegación)
-│   │   ├── i18n.js             ← Sistema de traducciones
-│   │   ├── state.js            ← Estado global minimal
+│   │   ├── main.js             ← syncHtmlLang() + renderApp() en DOMContentLoaded
+│   │   ├── router.js
+│   │   ├── i18n.js             ← setLanguage() actualiza document.documentElement.lang
+│   │   ├── state.js            ← getState / setState
 │   │   ├── components/
 │   │   │   ├── header.js
 │   │   │   ├── footer.js
 │   │   │   └── cookie-banner.js
 │   │   └── views/
-│   │       ├── index.js        ← Exporta todas las views
+│   │       ├── index.js        ← exporta todas las views
 │   │       ├── home.js
-│   │       ├── network.js
-│   │       ├── marketplace.js
-│   │       ├── challenge-detail.js
 │   │       ├── sectors.js
-│   │       ├── knowledge.js
-│   │       ├── governance.js
 │   │       ├── training.js
 │   │       ├── news.js
-│   │       └── news-detail.js
+│   │       ├── governance.js
+│   │       ├── knowledge.js
+│   │       ├── network.js
+│   │       └── marketplace.js  ← incluye challenge detail inline
 │   └── data/
-│       ├── translations.js     ← { es: {...}, en: {...}, va: {...} }
-│       └── challenge-extras.js ← Datos extra de retos
-└── fonts/                      ← Instrument Sans local
+│       ├── translations.js     ← { es, en, va }
+│       └── challenge-extras.js ← datos extra r1-r9 (en/es/va)
+└── fonts/
     └── InstrumentSans-*.woff2
 ```
 
 ---
 
-## 🔄 Flujo de Funcionamiento
+## Estado Actual de Cada Vista
 
-1. **Carga:** `index.html` → `main.js` (módulo ES)
-2. **Inicialización:** `main.js` importa todo y llama `renderApp()`
-3. **Primer render:** `router.js` obtiene view activa → `views[view].render()`
-4. **HTML string:** Template literal con clases Tailwind, interpolaciones de `t(key)`
-5. **Mount:** Tras insertar HTML, `views[view].mount()` añade event listeners
-6. **Navegación:** Click → `navigateTo(view)` → `renderApp()` → loop
-7. **Idiomas:** `setLanguage(lang)` → localStorage → `renderApp()`
-
----
-
-## 📝 Patrones Clave
-
-### Traducción (i18n.js)
-```js
-import { t } from './i18n.js';
-const title = t('home.heroTitle');           // string
-const home = t('home');                      // { heroTitle: '...', ... }
-```
-
-### Routing (router.js)
-```js
-import { navigateTo } from './router.js';
-element.addEventListener('click', () => navigateTo('sectores'));
-```
-
-### Estado (state.js)
-```js
-import { getState, setState } from './state.js';
-const filters = getState('marketplaceFilters');
-setState('marketplaceFilters', { ...filters, type: 'validation' });
-```
-
-### Vista (views/home.js)
-```js
-export function render() {
-  return `<section class="...">...</section>`;
-}
-
-export function mount() {
-  document.querySelector('[data-action="navigate-to-sectores"]')
-    ?.addEventListener('click', () => navigateTo('sectores'));
-}
-```
+| Vista | Archivo | Estado | Notas |
+|-------|---------|--------|-------|
+| Inicio | `home.js` | ✅ | Hero, stats, features, partners |
+| Sectores | `sectors.js` | ✅ | 7 sectores expand/collapse, transfer chain |
+| Formación | `training.js` | ✅ | 3 tabs (FP/Teacher/Master), cursos, badges |
+| Actualidad | `news.js` | ✅ | Filtros, featured, sidebar, detail view |
+| Gobernanza | `governance.js` | ✅ | 5 tabs (estructura/dual-track/lbd/docs/participar) |
+| Conocimiento | `knowledge.js` | ✅ | 5 tabs (flujo/oer/casos/evidencia/plantillas), búsqueda OER |
+| Red | `network.js` | ✅ | 2 tabs (socios/stakeholders), filtros país+categoría, form |
+| Retos | `marketplace.js` | ✅ | 13 retos, 5 filtros, detail inline, participation form |
 
 ---
 
-## 🎨 CSS y Tema
+## Patrones Críticos (NO modificar sin entender)
 
-**Tailwind:** Compilado una sola vez via CLI, no es build-time.
+### 1. Render + Mount
+```js
+export function render() { return `<div>...</div>`; }
+export function mount() { /* event listeners */ }
+```
+Tras re-renderizar en-vista (sin `renderApp()`):
+```js
+function rerender() {
+  document.getElementById('main-root').innerHTML = render();
+  mount();
+  if (window.lucide) window.lucide.createIcons();
+}
+```
+
+### 2. Clases Tailwind — REGLA CRÍTICA
+El CSS fue compilado desde el React source. **Usar exactamente las mismas clases que el original React.**
+- ✅ `bg-gradient-to-b` (NO `bg-linear-to-b` — es v4, no está en el CSS compilado)
+- ✅ Si una clase nueva no está en el CSS compilado → usar `style=""` inline
+- Verificar: `grep "clase-sospechosa" assets/css/tailwind-output.css`
+
+### 3. Estado global
+```js
+// state.js — claves actuales:
+selectedChallengeId: null,
+marketplaceShowSubmit: false,
+marketplaceShowParticipation: false,
+marketplaceParticipationSent: false,
+marketplaceFilters: { type: 'All', route: 'All', status: 'Todos', sector: 'Todos', evidence: 'All', search: '' },
+networkTab: 'socios',         // valores válidos: 'socios' | 'stakeholders'
+networkCategory: 'todos',
+networkCountry: null,
+networkShowForm: false,
+knowledgeTab: 'flujo',        // clave debe coincidir exactamente con contentMap keys
+knowledgeSearch: '',
+governanceTab: 'estructura',
+trainingTab: 'fp',
+expandedSector: null,
+newsCategoryFilter: null,
+selectedNewsId: null,
+```
+**ATENCIÓN:** El valor inicial de un tab debe coincidir exactamente con la clave del contentMap. Bug anterior: `'flow'` vs `'flujo'`.
+
+### 4. Marketplace — Challenge Detail (inline en marketplace.js)
+- `challengeExtras` de `../../data/challenge-extras.js` — datos para r1-r9 (r10-r13 sin extras)
+- Fallback de idioma: `challengeExtras[lang][id] || challengeExtras.es[id]`
+- Navegación: `history.pushState` al abrir detail, listener `popstate` para volver
+- Estado: `marketplaceShowParticipation` y `marketplaceParticipationSent` en state.js
+
+### 5. Lang + Accesibilidad
+- `i18n.js`: `setLanguage()` actualiza `document.documentElement.lang` con BCP47 (`ca-valencia` para va)
+- `main.js`: `syncHtmlLang()` se llama en `DOMContentLoaded`
+- `main.css`: tiene `@media (prefers-reduced-motion: reduce)` — NO añadir animaciones sin respetar esto
+- Todos los inputs/selects: `focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue`
+- Botones táctiles: `min-height:44px` inline si la clase no está en el CSS compilado
+
+### 6. Iconos Lucide
+```html
+<i data-lucide="nombre-icono" class="w-4 h-4 text-eu-blue"></i>
+```
+Llamar `window.lucide.createIcons()` tras cada render/rerender.
+
+### 7. Traducciones
+```js
+import { t } from '../i18n.js';
+const mT = t('marketplace');   // objeto completo de la sección
+const title = t('home.heroTitle');  // string directamente
+```
+Namespaces disponibles: `home`, `sectors`, `training`, `news`, `governance`, `knowledge`, `network`, `marketplace`, `challengeDetail`, `header`, `footer`, `cookies`.
+
+---
+
+## Accesibilidad — Fixes ya aplicados (Fase 5)
+
+| Fix | Archivos | WCAG |
+|-----|----------|------|
+| `focus:ring-2` en todos los inputs | knowledge, network, marketplace | 2.4.7 |
+| Skip-to-content link | index.html | 2.4.1 |
+| `<html lang>` dinámico | i18n.js, main.js | 3.1.1 |
+| `for`/`id` en labels+inputs | network, marketplace | 1.3.1 |
+| `prefers-reduced-motion` | main.css | 2.3.3 |
+| Touch targets 44px | header.js (inline style) | Touch |
+| `role="alert"` en confirmaciones | marketplace.js | 4.1.3 |
+| `text-gray-400` → `text-gray-500` en texto | home, news, governance, knowledge, marketplace | 1.4.3 |
+
+---
+
+## Fuente de Datos
+
+```
+D:\CEICE\AI-STEAM-MOCKUP\src\
+├── translations.ts             ← fuente de translations.js
+├── challengeExtras.ts          ← fuente de challenge-extras.js
+└── components/views/
+    ├── Marketplace.tsx         ← fuente de marketplace.js
+    ├── ChallengeDetail.tsx     ← integrado en marketplace.js
+    ├── Governance.tsx          ← fuente de governance.js
+    ├── Knowledge.tsx           ← fuente de knowledge.js
+    └── Network.tsx             ← fuente de network.js
+```
+
+---
+
+## Desarrollo Local
 
 ```bash
-# Comando único (ya realizado o a realizar):
-npx tailwindcss -i ../AI-STEAM-MOCKUP/src/index.css \
-  -o ./assets/css/tailwind-output.css --minify
-```
-
-**Variables CSS custom** (en `main.css`):
-```css
-:root {
-  --color-eu-blue: #5620F6;
-  --color-eu-purple: #4918AD;
-  --color-eu-yellow: #FFF4E1;
-  --color-eu-bg: #F3F6F8;
-  --color-eu-text: #111827;
-  --color-eu-border: #C9D1E0;
-  --color-eu-footer: #24324A;
-  --font-sans: "Instrument Sans", sans-serif;
-}
-```
-
----
-
-## 🎯 Fases de Desarrollo
-
-### Fase 1: Infraestructura ✅ COMPLETADO
-- [x] Estructura de directorios
-- [x] `index.html` shell
-- [x] CSS compilado + `main.css` (Tailwind v4 CLI)
-- [x] `i18n.js`, `router.js`, `state.js`, `main.js`
-- [x] `header.js`, `footer.js`, `cookie-banner.js`
-- [x] Criterio: App carga, navega entre tabs, language switcher funciona
-
-**Commits:** `bee147f` (fase1: Infraestructura base)
-
-### Fase 2: Views simples ✅ COMPLETADO
-- [x] `home.js` — Hero + stats + sectores + formación + retos
-- [x] `sectors.js` — 7 sectores con expand/collapse + transfer chain
-- [x] `training.js` — 3 tabs (FP/Teacher/Master) + cursos + badges + paths
-- [x] `news.js` — Listado + filtros + featured + sidebar + detail view
-- [x] Criterio: Todas las views renderean en ES/EN/VA ✅
-
-**Commits:** `da46ea5` (feat: sectors, training, news views)
-
-### Fase 3: Views con estado ⏳ PENDIENTE
-- [ ] `knowledge.js` (2 tabs: flow + stakeholder map)
-- [ ] `governance.js` (3 tabs: estructura + documentos + procesos)
-- [ ] `network.js` (2 tabs: consorcio + por-país)
-- [ ] Criterio: Tabs, filtros, estado funcionales
-
-**Recurso:** Ver `SIGUIENTE_SESION.md` para detalles de implementación
-
-### Fase 4: Marketplace + ChallengeDetail ⏳ PENDIENTE
-- [ ] `marketplace.js` (filtros: type, route, status, sector, search)
-- [ ] `challenge-detail.js` (hero + problem + outcomes + related)
-- [ ] Integración bidireccional (card → detail → list)
-- [ ] Criterio: Filtrado y navegación funcionan
-
-### Fase 5: QA + Polish ⏳ PENDIENTE
-- [ ] Tests responsive (320px, 768px, 1024px, 1440px)
-- [ ] Tests de idioma (reset de filtros, persistencia)
-- [ ] localStorage funciona entre recargas
-- [ ] Minificación opcional
-- [ ] Criterio: Funciona con `npx serve -l 3000`, sin node_modules
-
----
-
-## 🚀 Desarrollo Local
-
-```bash
-# Servir en HTTP (ES OBLIGATORIO, no funciona file://)
+# HTTP obligatorio (no funciona con file://)
 cd D:\CEICE\AI-STEAM-VANILLA
 npx serve -l 3000
-
-# Abrir en navegador
-http://localhost:3000
+# o: python -m http.server 3000
 ```
 
-**DevTools útiles:**
-- F12 → Console para errores JS (los imports show en Network)
-- F12 → Network para ver módulos cargando (index.js, home.js, etc.)
-- F12 → Application → localStorage para inspeccionar estado persistido
-- F12 → Console: `getState('key')`, `setLanguage('en')` para debug
+DevTools útiles:
+- Console → errores JS y módulos
+- Application → localStorage → `language`, `cookies-accepted`
+- Console: `localStorage.setItem('language','en'); location.reload()`
 
 ---
 
-## 📚 Referencias Externas
+## Posibles Tareas Futuras
 
-**Proyecto origen:** `D:\CEICE\AI-STEAM-MOCKUP`
-- `src/translations.ts` ← copiar a `assets/data/translations.js`
-- `src/challengeExtras.ts` ← copiar a `assets/data/challenge-extras.js`
-- `src/components/views/*.tsx` ← adaptar a `.js` templates
-
-**Plan detallado:** Ver `PLAN_CONVERSION_VANILLA.md` en este mismo directorio.
-
----
-
-## ⚠️ Puntos Críticos
-
-1. **Sin bundler:** Usar `import/export` ES6 nativos. Los navegadores modernos los soportan.
-2. **Sin build-time:** Todo es estático. Las clases Tailwind ya están compiladas.
-3. **HTTP obligatorio:** No funciona con `file://`, requiere servidor.
-4. **Lucide vanilla:** `lucide.createIcons()` tras cada `renderApp()`.
-5. **ChallengeDetail 1061 líneas:** Será el componente más complejo, dedicar Fase 4 completa.
-
----
-
-## 📦 Dependencias Externas (Fase 1)
-
-En desarrollo (local):
-- `tailwindcss` CLI (para compilar CSS)
-- Python o Node.js HTTP server
-
-En producción (cero dependencias):
-- ✅ HTML
-- ✅ CSS (estático, compilado)
-- ✅ JavaScript (modules nativos ES6)
-- ✅ Fuentes woff2 locales
-- ✅ Lucide vanilla (bundle JS)
-
----
-
-## 📋 Checklist de Inicio (Antes de Fase 1)
-
-- [ ] Confirmar acceso a `D:\CEICE\AI-STEAM-MOCKUP` desde nuevo working directory (`D:\CEICE`)
-- [ ] Crear estructura base de directorios
-- [ ] Copiar y convertir `translations.ts` → `translations.js`
-- [ ] Copiar y convertir `challengeExtras.ts` → `challenge-extras.js`
-- [ ] Compilar Tailwind CSS
-- [ ] Crear `index.html` shell
-- [ ] Crear módulos base: `i18n.js`, `router.js`, `state.js`, `main.js`
-- [ ] Crear componentes base: `header.js`, `footer.js`, `cookie-banner.js`
-- [ ] Verificar que HTTP server funciona
-- [ ] Primer test en navegador (header navega, idioma cambia)
-
----
-
-## 🔗 Comandos Rápidos
-
-```bash
-# Compilar CSS (ejecución única)
-npx tailwindcss -i ../AI-STEAM-MOCKUP/src/index.css -o ./assets/css/tailwind-output.css --minify
-
-# Servidor dev (obliga HTTP)
-python -m http.server 8000
-
-# Minificar JS (opcional, Fase 5)
-npx esbuild ./assets/js/main.js --bundle --minify --outfile=./assets/js/main.min.js
-```
-
----
-
-## 📝 Notas de Cierre de Sesión
-
-Cuando finalices una sesión:
-1. Actualizar este `CLAUDE.md` con estado de Fases
-2. Crear/actualizar `SIGUIENTE_SESION.md` con próximos pasos
-3. Commits claros con `feat:`, `fix:`, `docs:` según corresponda
-4. Push a `origin/master`
-
-**Patrón de commits:**
-```bash
-feat(fase3): implement knowledge.js and governance.js
-fix(news): handle empty detail gracefully
-docs: update SIGUIENTE_SESION.md with Phase 4 details
-```
-
----
-
-**Última actualización:** 2026-05-07  
-**Última sesión completada:** Fase 2 (sectors, training, news) ✅  
-**Próxima sesión:** Fase 3 (knowledge, governance, network) — ver `SIGUIENTE_SESION.md`
+- [ ] Minificación JS (`npx esbuild main.js --bundle --minify`)
+- [ ] Tests responsive manuales en 375px, 768px, 1024px, 1440px
+- [ ] Verificar persistencia localStorage entre recargas (language, cookies)
+- [ ] Añadir más challenge-extras para r10-r13 si se necesita
+- [ ] Considerar Service Worker para offline (opcional)
