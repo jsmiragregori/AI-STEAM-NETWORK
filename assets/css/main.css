@@ -1,0 +1,6 @@
+/* tailwind-output.css ya incluye: reset, variables, fuentes, body styles */
+/* Solo aquí lo que Tailwind no puede cubrir */
+
+html {
+  scroll-behavior: smooth;
+}

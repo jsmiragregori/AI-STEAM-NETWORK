@@ -1,0 +1,7 @@
+1. Cierra contexto actual (D:\CEICE\AI-STEAM-MOCKUP)
+2. Abre contexto nuevo (D:\CEICE)
+3. En terminal: cd D:\CEICE\AI-STEAM-VANILLA
+4. Ejecuta: .\init-fase1.ps1
+5. Compilar CSS: npx tailwindcss -i ..\AI-STEAM-MOCKUP\src\index.css -o .\assets\css\tailwind-output.css --minify
+6. Sigue CHECKLIST_SESION_SIGUIENTE.md (paso-a-paso, ~3 horas para Fase 1)
+7. Resultado: App funcional en http://localhost:8000 con header, routing, idiomas
