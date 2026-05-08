@@ -9,3 +9,5 @@ node_modules/
 .idea/
 dist/
 *.log
+.agents/
+skills-lock.json

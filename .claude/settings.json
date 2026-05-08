@@ -1,0 +1,28 @@
+{
+  "description": "Project-level settings for AI-STEAM Network Vanilla",
+  "version": "1.0",
+  "skills": {
+    "find-skills": {
+      "enabled": true,
+      "scope": "project"
+    },
+    "security-review": {
+      "enabled": true,
+      "scope": "project"
+    },
+    "ui-ux-pro-max": {
+      "enabled": true,
+      "scope": "project"
+    },
+    "code-security-audit": {
+      "enabled": true,
+      "scope": "project"
+    }
+  },
+  "permissions": {
+    "bash": {
+      "read": ["*"],
+      "write": []
+    }
+  }
+}
