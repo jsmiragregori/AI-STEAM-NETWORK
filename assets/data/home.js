@@ -316,16 +316,16 @@ export const HOME_CONFIG = {
   "sectorsBlock": {
     "visible": true,
     "heading": {
-      "es": "7 Áreas Sectoriales AI-SECRETT",
-      "en": "7 AI-SECRETT Sectoral Areas",
-      "va": "7 Àrees Sectorials AI-SECRETT"
+      "es": "Siete Áreas Sectoriales AI-SECRETT",
+      "en": "Seven AI-SECRETT Sectoral Areas",
+      "va": "Set Àrees Sectorials AI-SECRETT"
     },
     "description": {
       "visible": true,
       "html": {
-        "es": "El conocimiento de la red se organiza en torno a las 7 áreas sectoriales AI-SECRETT para la triple transición digital, verde y social.",
-        "en": "Network knowledge is organised around the 7 AI-SECRETT sectoral areas for the digital, green and social triple transition.",
-        "va": "El coneixement de la xarxa s&#39;organitza al voltant de les 7 àrees sectorials AI-SECRETT per a la triple transició digital, verda i social."
+        "es": "El conocimiento de la red se organiza en torno a las siete áreas sectoriales AI-SECRETT para la triple transición digital, verde y social.",
+        "en": "Network knowledge is organised around the seven AI-SECRETT sectoral areas for the digital, green and social triple transition.",
+        "va": "El coneixement de la xarxa s&#39;organitza al voltant de les set àrees sectorials AI-SECRETT per a la triple transició digital, verda i social."
       }
     },
     "viewAll": {
