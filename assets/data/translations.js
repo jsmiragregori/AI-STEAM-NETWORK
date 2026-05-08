@@ -40,7 +40,7 @@ export const translations = {
       "subtitle": "Comunidad y Transferencia de AI-SECRETT",
       "heroTagline": "AI-STEAM Network es el ecosistema Track B de CEICE para AI-SECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders moviliza centros FP forma docentes y especializa los 7 sectores AI-SECRETT en IA y creatividad.",
       "description": "Liderada por CEICE activa stakeholders moviliza centros FP forma docentes y genera evidencias para el consorcio AI-SECRETT en las 7 áreas sectoriales europeas.",
-      "uploadChallenge": "Propón un reto caso o aportación",
+      "uploadChallenge": "Propón un reto, caso o aportación",
       "requestJoin": "Únete a la AI-STEAM Network",
       "stats": {
         "stakeholders": "Stakeholders",
@@ -2103,7 +2103,7 @@ export const translations = {
       "subtitle": "Community and Transfer of AI-SECRETT",
       "heroTagline": "AI-STEAM Network is the Track B ecosystem of CEICE for AI-SECRETT: built on ENRED interregional cooperation activating stakeholders mobilizing VET centers training teachers and specializing the 7 AI-SECRETT sectors in AI and creativity.",
       "description": "Led by CEICE it activates stakeholders mobilizes VET centers trains teachers and generates evidence for the AI-SECRETT consortium in the 7 sectoral areas.",
-      "uploadChallenge": "Submit a challenge case or contribution",
+      "uploadChallenge": "Submit a challenge, case or contribution",
       "requestJoin": "Join the AI-STEAM Network",
       "stats": {
         "stakeholders": "Stakeholders",
@@ -4166,7 +4166,7 @@ export const translations = {
       "subtitle": "Comunitat i Transferència d'AI-SECRETT",
       "heroTagline": "AI-STEAM Network és l'ecosistema Track B de CEICE per a AI-SECRETT: construïda sobre la cooperació interregional d'ENRED activa agents interessats movilitza centres FP forma docents i especialitza els 7 sectors AI-SECRETT en IA i creativitat.",
       "description": "Liderada per CEICE activa agents interessats movilitza centres FP forma docents i genera evidències per al consorci AI-SECRETT en les 7 àrees sectorials europees.",
-      "uploadChallenge": "Proposa un repte cas o aportació",
+      "uploadChallenge": "Proposa un repte, cas o aportació",
       "requestJoin": "Uneix-te a la AI-STEAM Network",
       "stats": {
         "stakeholders": "Grups d'interès",
