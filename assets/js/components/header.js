@@ -1,7 +1,7 @@
 import { t, getLanguage, setLanguage } from '../i18n.js';
 import { getActiveView, navigateTo } from '../router.js';
 import { getState, setState } from '../state.js';
-import { HEADER_CONFIG } from '../data/header.js';
+import { HEADER_CONFIG } from '../../data/header.js';
 
 const NAV_ITEMS = [
   { id: 'inicio',      key: 'nav.inicio' },
