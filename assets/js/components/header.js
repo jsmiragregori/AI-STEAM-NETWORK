@@ -20,7 +20,7 @@ function langBtnMobile(code, lang) {
 
 function renderDesktopButtons() {
   return HEADER_CONFIG.buttons
-    .filter(btn => btn.visible === 'si')
+    .filter(btn => btn.visible !== false)
     .map(btn => {
       const label = btn[`label_${getLanguage()}`] || btn.label_es;
       const href = btn.href;
@@ -34,7 +34,7 @@ function renderDesktopButtons() {
 
 function renderMobileButtons() {
   return HEADER_CONFIG.buttons
-    .filter(btn => btn.visible === 'si')
+    .filter(btn => btn.visible !== false)
     .map(btn => {
       const label = btn[`label_${getLanguage()}`] || btn.label_es;
       const href = btn.href;

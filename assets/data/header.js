@@ -8,8 +8,6 @@ export const HEADER_CONFIG = {
     "alt_en": "AI-STEAM Network logo",
     "alt_va": "Logotip de la xarxa AI-STEAM Network"
   },
-  "title": "AI-STEAM Network",
-  "subtitle": "GENERALITAT VALENCIANA · Conselleria d'Educació, Cultura i Universitats",
   "languages": [
     {
       "code": "es",
@@ -37,7 +35,7 @@ export const HEADER_CONFIG = {
       "target": "_blank",
       "icon": "",
       "color": "outline",
-      "visible": "si"
+      "visible": true
     },
     {
       "id": "consensue",
@@ -48,7 +46,7 @@ export const HEADER_CONFIG = {
       "target": "",
       "icon": "",
       "color": "outline",
-      "visible": "si"
+      "visible": true
     }
   ],
   "components": {
