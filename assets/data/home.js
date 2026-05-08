@@ -204,8 +204,116 @@ export const HOME_CONFIG = {
         ]
       }
     ]
+  },
+  "ecosystemBlock": {
+    "visible": true,
+    "heading": {
+      "es": "El Ecosistema AI-STEAM",
+      "en": "The AI-STEAM Ecosystem",
+      "va": "L&#39;Ecosistema AI-STEAM"
+    },
+    "description": {
+      "visible": true,
+      "html": {
+        "es": "Tres plataformas complementarias para una red de conocimiento e innovación educativa única en Europa.",
+        "en": "Three complementary platforms for a unique knowledge and educational innovation network in Europe.",
+        "va": "Tres plataformes complementàries per a una xarxa de coneixement i innovació educativa única a Europa."
+      }
+    },
+    "cards": [
+      {
+        "id": "aules",
+        "tone": "teal",
+        "initials": "AU",
+        "href": "https://aules.edu.gva.es/",
+        "target": "_blank",
+        "title": {
+          "es": "Aules",
+          "en": "Aules",
+          "va": "Aules"
+        },
+        "subtitle": {
+          "es": "LMS · Moodle",
+          "en": "LMS · Moodle",
+          "va": "LMS · Moodle"
+        },
+        "description": {
+          "es": "Cursos, módulos de FP y máster, formación docente y contenidos OER del proyecto.",
+          "en": "Courses, VET and master modules, teacher training and project OER content.",
+          "va": "Cursos, mòduls de FP i màster, formació docent i continguts OER del projecte."
+        },
+        "tag": {
+          "visible": true,
+          "html": {
+            "es": "Formación",
+            "en": "Training",
+            "va": "Formació"
+          }
+        }
+      },
+      {
+        "id": "network",
+        "tone": "blue",
+        "initials": "AI",
+        "href": "",
+        "target": "",
+        "title": {
+          "es": "AI-STEAM Network",
+          "en": "AI-STEAM Network",
+          "va": "AI-STEAM Network"
+        },
+        "subtitle": {
+          "es": "CMS · Este portal",
+          "en": "CMS · This portal",
+          "va": "CMS · Aquest portal"
+        },
+        "description": {
+          "es": "Repositorio de retos, socios, conocimiento y recursos para nutrir el máster y la FP de CEICE.",
+          "en": "Repository of challenges, partners, knowledge and resources to feed the master and CEICE VET programs.",
+          "va": "Repositori de reptes, socis, coneixement i recursos per a nodrir el màster i la FP de CEICE."
+        },
+        "tag": {
+          "visible": true,
+          "html": {
+            "es": "Red de Conocimiento",
+            "en": "Knowledge Network",
+            "va": "Xarxa de Coneixement"
+          }
+        }
+      },
+      {
+        "id": "consensue",
+        "tone": "orange",
+        "initials": "CO",
+        "href": "",
+        "target": "",
+        "title": {
+          "es": "ConsensUE",
+          "en": "ConsensUE",
+          "va": "ConsensUE"
+        },
+        "subtitle": {
+          "es": "Participación · Decidim",
+          "en": "Participation · Decidim",
+          "va": "Participació · Decidim"
+        },
+        "description": {
+          "es": "Democracia y participación: propuestas, votaciones y validación de relevancia de necesidades, casos y retos.",
+          "en": "Democracy and participation: proposals, voting and relevance validation of needs, cases and challenges.",
+          "va": "Democràcia i participació: propostes, votacions i validació de rellevància de necessitats, casos i reptes."
+        },
+        "tag": {
+          "visible": true,
+          "html": {
+            "es": "Participación",
+            "en": "Participation",
+            "va": "Participació"
+          }
+        }
+      }
+    ]
   }
 };
 
 // Exportar tambien por claves individuales para compatibilidad
-export const { isNotBlock, enredBlock } = HOME_CONFIG;
+export const { isNotBlock, enredBlock, ecosystemBlock } = HOME_CONFIG;

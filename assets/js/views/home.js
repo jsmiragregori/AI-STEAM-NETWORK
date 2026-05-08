@@ -79,6 +79,38 @@ function enredToneClasses(tone) {
   return tones[tone] || tones.neutral;
 }
 
+function ecosystemToneClasses(tone) {
+  const tones = {
+    teal: {
+      border: 'border-eu-teal',
+      icon: 'bg-eu-teal',
+      tag: 'text-eu-teal',
+    },
+    blue: {
+      border: 'border-eu-blue',
+      icon: 'bg-eu-blue',
+      tag: 'text-eu-teal',
+    },
+    orange: {
+      border: 'border-eu-orange',
+      icon: 'bg-eu-orange',
+      tag: 'text-eu-teal',
+    },
+    purple: {
+      border: 'border-eu-purple',
+      icon: 'bg-eu-purple',
+      tag: 'text-eu-purple',
+    },
+    neutral: {
+      border: 'border-eu-border',
+      icon: 'bg-gray-600',
+      tag: 'text-gray-600',
+    },
+  };
+
+  return tones[tone] || tones.neutral;
+}
+
 function renderIsNotBlock() {
   const block = HOME_CONFIG.isNotBlock;
   if (!block?.visible) return '';
@@ -164,6 +196,55 @@ function renderEnredBlock() {
   `;
 }
 
+function renderEcosystemBlock() {
+  const block = HOME_CONFIG.ecosystemBlock;
+  if (!block?.visible) return '';
+
+  const cards = (block.cards || []).map(card => {
+    const tone = ecosystemToneClasses(card.tone);
+    const tag = card.tag?.visible
+      ? `<span class="self-start text-xs font-bold px-2 py-1 bg-eu-bg rounded ${tone.tag}">${localized(card.tag.html)}</span>`
+      : '';
+    const attrs = card.href
+      ? `href="${card.href}"${card.target ? ` target="${card.target}"` : ''}${card.target === '_blank' ? ' rel="noopener noreferrer"' : ''}`
+      : '';
+    const element = card.href ? 'a' : 'div';
+    const interactive = card.href ? ' hover:shadow-lg transition-all cursor-pointer' : '';
+
+    return `
+      <${element} ${attrs} class="bg-white rounded-xl border-t-4 ${tone.border} border border-eu-border p-6 shadow-sm flex flex-col${interactive}">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 ${tone.icon} rounded-lg flex items-center justify-center text-white font-bold text-sm">${card.initials}</div>
+          <div>
+            <p class="font-bold text-eu-text">${localized(card.title)}</p>
+            <p class="text-xs text-gray-500">${localized(card.subtitle)}</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-600 flex-1 mb-4">${localized(card.description)}</p>
+        ${tag}
+      </${element}>
+    `;
+  }).join('');
+
+  if (!cards) return '';
+
+  const description = block.description?.visible
+    ? `<p class="text-gray-600 mb-8 max-w-2xl">${localized(block.description.html)}</p>`
+    : '';
+
+  return `
+    <section class="px-6 py-12 bg-white border-b border-eu-border">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl font-bold text-eu-text mb-2">${localized(block.heading)}</h2>
+        ${description}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          ${cards}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 export function render() {
   const challenges = t('home.latestChallengesData') || [];
   const sectorNames = t('marketplace.sectorNames') || {};
@@ -236,47 +317,7 @@ export function render() {
       ${renderEnredBlock()}
 
       <!-- Ecosystem -->
-      <section class="px-6 py-12 bg-white border-b border-eu-border">
-        <div class="max-w-7xl mx-auto">
-          <h2 class="text-2xl font-bold text-eu-text mb-2">${t('home.ecosystem')}</h2>
-          <p class="text-gray-600 mb-8 max-w-2xl">${t('home.ecosystemDesc')}</p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="https://aules.edu.gva.es/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl border-t-4 border-eu-teal border border-eu-border p-6 shadow-sm flex flex-col hover:shadow-lg transition-all cursor-pointer">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 bg-eu-teal rounded-lg flex items-center justify-center text-white font-bold text-sm">AU</div>
-                <div>
-                  <p class="font-bold text-eu-text">${t('home.platforms.aules.name')}</p>
-                  <p class="text-xs text-gray-500">${t('home.platforms.aules.subtitle')}</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-600 flex-1 mb-4">${t('home.platforms.aules.desc')}</p>
-              <span class="self-start text-xs font-bold px-2 py-1 bg-eu-bg rounded text-eu-teal">${t('home.platforms.aules.tag')}</span>
-            </a>
-            <div class="bg-white rounded-xl border-t-4 border-eu-blue border border-eu-border p-6 shadow-sm flex flex-col">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 bg-eu-blue rounded-lg flex items-center justify-center text-white font-bold text-sm">AI</div>
-                <div>
-                  <p class="font-bold text-eu-text">${t('home.platforms.network.name')}</p>
-                  <p class="text-xs text-gray-500">${t('home.platforms.network.subtitle')}</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-600 flex-1 mb-4">${t('home.platforms.network.desc')}</p>
-              <span class="self-start text-xs font-bold px-2 py-1 bg-eu-bg rounded text-eu-teal">${t('home.platforms.network.tag')}</span>
-            </div>
-            <div class="bg-white rounded-xl border-t-4 border-eu-orange border border-eu-border p-6 shadow-sm flex flex-col">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 bg-eu-orange rounded-lg flex items-center justify-center text-white font-bold text-sm">CO</div>
-                <div>
-                  <p class="font-bold text-eu-text">${t('home.platforms.consensUE.name')}</p>
-                  <p class="text-xs text-gray-500">${t('home.platforms.consensUE.subtitle')}</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-600 flex-1 mb-4">${t('home.platforms.consensUE.desc')}</p>
-              <span class="self-start text-xs font-bold px-2 py-1 bg-eu-bg rounded text-eu-teal">${t('home.platforms.consensUE.tag')}</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      ${renderEcosystemBlock()}
 
       <!-- 7 Sectors -->
       <section class="px-6 py-12 bg-eu-bg">
