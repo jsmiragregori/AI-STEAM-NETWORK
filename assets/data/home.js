@@ -346,7 +346,7 @@ export const HOME_CONFIG = {
         "description": {
           "es": "Los retos y conocimientos de la red nutren directamente los módulos de FP: ciclos formativos y cursos de especialización de la Conselleria de Educación, Cultura y Universidades.",
           "en": "Network challenges and knowledge directly feed VET subjects: training cycles and specialization courses from the Department of Education, Culture and Universities",
-          "va": "Els reptes i coneixements de la xarxa alimenten directament els mòduls de FP: cicles formatius i cursos d&#39;especialització de la Conselleria d&#39;Educació, Cultura i universitats."
+          "va": "Els reptes i coneixements de la xarxa alimenten directament els mòduls de FP: cicles formatius i cursos d&#39;especialització de la Conselleria d&#39;Educació, Cultura i Universitats."
         },
         "items": [
           {
@@ -436,6 +436,84 @@ export const HOME_CONFIG = {
             }
           }
         ]
+      }
+    ]
+  },
+  "latestChallengesBlock": {
+    "visible": true,
+    "heading": {
+      "es": "Últimos Retos Publicados",
+      "en": "Latest Published Challenges",
+      "va": "Últims Reptes Publicats"
+    },
+    "viewAll": {
+      "visible": true,
+      "html": {
+        "es": "Ver todos",
+        "en": "View all",
+        "va": "Veure tots"
+      }
+    },
+    "cards": [
+      {
+        "id": "r1",
+        "title": {
+          "es": "Optimización energética en museos con IA",
+          "en": "Energy efficiency optimization in museums with AI",
+          "va": "Optimització energètica en museus amb IA"
+        },
+        "org": {
+          "es": "Generalitat Valenciana (CEICE)",
+          "en": "Generalitat Valenciana (CEICE)",
+          "va": "Generalitat Valenciana (CEICE)"
+        },
+        "level": "FP",
+        "sectorCode": "ene",
+        "status": {
+          "es": "Abierto",
+          "en": "Open",
+          "va": "Obert"
+        }
+      },
+      {
+        "id": "r2",
+        "title": {
+          "es": "Detección de plagas en cítricos vía Computer Vision",
+          "en": "Citrus pest detection via Computer Vision",
+          "va": "Detecció de plagues en cítrics via Computer Vision"
+        },
+        "org": {
+          "es": "AVA-ASAJA Cooperativa",
+          "en": "AVA-ASAJA Cooperativa",
+          "va": "AVA-ASAJA Cooperativa"
+        },
+        "level": "Máster",
+        "sectorCode": "agr",
+        "status": {
+          "es": "En Resolución",
+          "en": "In Progress",
+          "va": "En Resolució"
+        }
+      },
+      {
+        "id": "r3",
+        "title": {
+          "es": "IA en triaje de urgencias pediátricas",
+          "en": "AI in pediatric emergency triage",
+          "va": "IA en triatge d&#39;urgències pediàtriques"
+        },
+        "org": {
+          "es": "Hospital La Fe – Valencia",
+          "en": "Hospital La Fe – Valencia",
+          "va": "Hospital La Fe – València"
+        },
+        "level": "Máster",
+        "sectorCode": "nts",
+        "status": {
+          "es": "Abierto",
+          "en": "Open",
+          "va": "Obert"
+        }
       }
     ]
   },
@@ -531,4 +609,4 @@ export const HOME_CONFIG = {
 };
 
 // Exportar tambien por claves individuales para compatibilidad
-export const { isNotBlock, enredBlock, ecosystemBlock, dualFocusBlock, sectorsBlock } = HOME_CONFIG;
+export const { isNotBlock, enredBlock, ecosystemBlock, dualFocusBlock, latestChallengesBlock, sectorsBlock } = HOME_CONFIG;

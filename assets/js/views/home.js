@@ -308,6 +308,51 @@ function renderDualFocusBlock() {
   `;
 }
 
+function renderLatestChallengesBlock() {
+  const block = HOME_CONFIG.latestChallengesBlock;
+  if (!block?.visible) return '';
+
+  const challenges = block.cards || [];
+  const sectorNames = t('marketplace.sectorNames') || {};
+
+  const challengesHtml = challenges.map(ch => {
+    const statusKey = statusClass(localized(ch.status));
+    const statusLabel = t(`marketplace.${statusKey}`);
+    const sectorLabel = sectorNames[ch.sectorCode] || ch.sectorCode;
+    const levelClass = ch.level === 'FP' ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
+    return `
+      <div class="bg-white rounded-xl border border-eu-border p-5 hover:border-eu-blue transition-colors shadow-sm">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${levelClass}">${t('home.challengeLabel')} ${ch.level}</span>
+          <span class="text-sm text-eu-teal font-bold">● ${statusLabel}</span>
+        </div>
+        <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug">${localized(ch.title)}</h3>
+        <p class="text-xs text-gray-500 mb-3">${localized(ch.org)}</p>
+        <span class="text-sm bg-eu-bg border border-eu-border px-2 py-0.5 rounded text-gray-600 font-semibold">${sectorLabel}</span>
+      </div>`;
+  }).join('');
+
+  if (!challengesHtml) return '';
+
+  const viewAll = block.viewAll?.visible
+    ? `<button data-nav="banco-retos" class="flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline bg-transparent border-none cursor-pointer">
+        ${localized(block.viewAll.html)} <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>`
+    : '';
+
+  return `
+    <section class="px-6 py-12 bg-eu-bg border-t border-eu-border">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-bold text-eu-text">${localized(block.heading)}</h2>
+          ${viewAll}
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">${challengesHtml}</div>
+      </div>
+    </section>
+  `;
+}
+
 function renderSectorsBlock() {
   const block = HOME_CONFIG.sectorsBlock;
   if (!block?.visible) return '';
@@ -347,9 +392,6 @@ function renderSectorsBlock() {
 }
 
 export function render() {
-  const challenges = t('home.latestChallengesData') || [];
-  const sectorNames = t('marketplace.sectorNames') || {};
-
   const statsHtml = HERO_CONFIG.stats.map(s => `
     <div class="bg-white/10 backdrop-blur rounded-xl p-5 flex flex-col">
       <i data-lucide="${s.icon}" class="w-5 h-5 text-eu-yellow mb-2"></i>
@@ -357,23 +399,6 @@ export function render() {
       <div class="text-xs text-white/70 font-semibold uppercase tracking-wide">${t(s.key)}</div>
     </div>
   `).join('');
-
-  const challengesHtml = challenges.map(ch => {
-    const statusKey = statusClass(ch.status);
-    const statusLabel = t(`marketplace.${statusKey}`);
-    const sectorLabel = sectorNames[ch.sectorCode] || ch.sectorCode;
-    const levelClass = ch.level === 'FP' ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
-    return `
-      <div class="bg-white rounded-xl border border-eu-border p-5 hover:border-eu-blue transition-colors shadow-sm">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${levelClass}">${t('home.challengeLabel')} ${ch.level}</span>
-          <span class="text-sm text-eu-teal font-bold">● ${statusLabel}</span>
-        </div>
-        <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug">${ch.title}</h3>
-        <p class="text-xs text-gray-500 mb-3">${ch.org}</p>
-        <span class="text-sm bg-eu-bg border border-eu-border px-2 py-0.5 rounded text-gray-600 font-semibold">${sectorLabel}</span>
-      </div>`;
-  }).join('');
 
   const partnersHtml = PARTNERS.map(p =>
     `<div class="bg-eu-bg border border-eu-border rounded px-3 py-1.5 text-sm font-bold text-gray-600">${p}</div>`
@@ -421,17 +446,7 @@ export function render() {
       ${renderDualFocusBlock()}
 
       <!-- Latest Challenges -->
-      <section class="px-6 py-12 bg-eu-bg border-t border-eu-border">
-        <div class="max-w-7xl mx-auto">
-          <div class="flex items-center justify-between mb-6">
-            <h2 class="text-2xl font-bold text-eu-text">${t('home.latestChallenges')}</h2>
-            <button data-nav="banco-retos" class="flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline bg-transparent border-none cursor-pointer">
-              ${t('home.viewAll')} <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">${challengesHtml}</div>
-        </div>
-      </section>
+      ${renderLatestChallengesBlock()}
 
       <!-- Partners -->
       <section class="px-6 py-10 bg-white border-t border-eu-border">
