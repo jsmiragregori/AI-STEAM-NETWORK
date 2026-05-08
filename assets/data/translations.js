@@ -36,11 +36,11 @@ export const translations = {
     "home": {
       "badge": "Programa Digital Europe 2021–2027 · AI-SECRETT",
       "title": "AI-STEAM Network",
-      "subtitle": "Comunitat i Transferència d'AI-SECRETT",
-      "heroTagline": "AI-STEAM Network és l'ecosistema Track B de CEICE per a AI-SECRETT: construïda sobre la cooperació interregional d'ENRED activa agents interessats movilitza centres FP forma docents i especialitza els 7 sectors AI-SECRETT en IA i creativitat.",
-      "description": "Liderada per CEICE activa agents interessats movilitza centres FP forma docents i genera evidències per al consorci AI-SECRETT en les 7 àrees sectorials europees.",
-      "uploadChallenge": "Proposa un repte cas o aportació",
-      "requestJoin": "Uneix-te a la AI-STEAM Network",
+      "subtitle": "Comunidad y Transferencia de AI-SECRETT",
+      "heroTagline": "AI-STEAM Network es el ecosistema Track B de CEICE para AI-SECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders moviliza centros FP forma docentes y especializa los 7 sectores AI-SECRETT en IA y creatividad.",
+      "description": "Liderada por CEICE activa stakeholders moviliza centros FP forma docentes y genera evidencias para el consorcio AI-SECRETT en las 7 áreas sectoriales europeas.",
+      "uploadChallenge": "Propón un reto caso o aportación",
+      "requestJoin": "Únete a la AI-STEAM Network",
       "stats": {
         "stakeholders": "Stakeholders",
         "totalChallenges": "Retos y Casos",
