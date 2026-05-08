@@ -44,7 +44,7 @@ export const HEADER_CONFIG = {
       "label_es": "ConsensUE",
       "label_en": "ConsensUE",
       "label_va": "ConsensUE",
-      "href": "",
+      "href": "#",
       "target": "",
       "icon": "",
       "color": "outline",
