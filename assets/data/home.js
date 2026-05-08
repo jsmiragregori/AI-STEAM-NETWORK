@@ -225,7 +225,7 @@ export const HOME_CONFIG = {
         "id": "aules",
         "tone": "teal",
         "initials": "AU",
-        "href": "https://aules.edu.gva.es/",
+        "href": "https://aules.edu.gva.es/formaciodelprofessorat",
         "target": "_blank",
         "title": {
           "es": "Aules",
@@ -285,7 +285,7 @@ export const HOME_CONFIG = {
         "id": "consensue",
         "tone": "orange",
         "initials": "CO",
-        "href": "",
+        "href": "#",
         "target": "",
         "title": {
           "es": "ConsensUE",
