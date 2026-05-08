@@ -472,6 +472,11 @@ export const HOME_CONFIG = {
           "en": "Challenge",
           "va": "Repte"
         },
+        "level": {
+          "es": "FP",
+          "en": "VET",
+          "va": "FP"
+        },
         "sectorCode": "ene",
         "status": {
           "es": "Abierto",
@@ -496,6 +501,11 @@ export const HOME_CONFIG = {
           "en": "Challenge",
           "va": "Repte"
         },
+        "level": {
+          "es": "Máster",
+          "en": "Master",
+          "va": "Màster"
+        },
         "sectorCode": "agr",
         "status": {
           "es": "En Resolución",
@@ -519,6 +529,11 @@ export const HOME_CONFIG = {
           "es": "Reto",
           "en": "Challenge",
           "va": "Repte"
+        },
+        "level": {
+          "es": "Máster",
+          "en": "Master",
+          "va": "Màster"
         },
         "sectorCode": "nts",
         "status": {

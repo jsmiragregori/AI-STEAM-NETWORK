@@ -320,11 +320,14 @@ function renderLatestChallengesBlock() {
     const statusLabel = t(`marketplace.${statusKey}`);
     const sectorLabel = sectorNames[ch.sectorCode] || ch.sectorCode;
     const typeLabel = localized(ch.contributionType);
-    const typeClass = typeLabel === 'Reto' || typeLabel === 'Repte' || typeLabel === 'Challenge' ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
+    const levelLabel = localized(ch.level);
+    const badgeText = `${typeLabel} ${levelLabel}`;
+    const isFP = levelLabel === 'FP' || levelLabel === 'VET';
+    const typeClass = isFP ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
     return `
       <div class="bg-white rounded-xl border border-eu-border p-5 hover:border-eu-blue transition-colors shadow-sm">
         <div class="flex items-center justify-between mb-3">
-          <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${typeClass}">${typeLabel}</span>
+          <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${typeClass}">${badgeText}</span>
           <span class="text-sm text-eu-teal font-bold">● ${statusLabel}</span>
         </div>
         <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug">${localized(ch.title)}</h3>
