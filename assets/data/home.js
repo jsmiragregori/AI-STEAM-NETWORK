@@ -442,16 +442,16 @@ export const HOME_CONFIG = {
   "latestChallengesBlock": {
     "visible": true,
     "heading": {
-      "es": "Últimos Retos Publicados",
-      "en": "Latest Published Challenges",
-      "va": "Últims Reptes Publicats"
+      "es": "Últimas Contribuciones Publicadas",
+      "en": "Latest Published Contributions",
+      "va": "Últimes Contribucions Publicades"
     },
     "viewAll": {
       "visible": true,
       "html": {
         "es": "Ver todos",
         "en": "View all",
-        "va": "Veure tots"
+        "va": "Veure totes"
       }
     },
     "cards": [
@@ -467,7 +467,7 @@ export const HOME_CONFIG = {
           "en": "Generalitat Valenciana (CEICE)",
           "va": "Generalitat Valenciana (CEICE)"
         },
-        "level": "FP",
+        "contributionType": "Challenge",
         "sectorCode": "ene",
         "status": {
           "es": "Abierto",
@@ -487,7 +487,7 @@ export const HOME_CONFIG = {
           "en": "AVA-ASAJA Cooperativa",
           "va": "AVA-ASAJA Cooperativa"
         },
-        "level": "Máster",
+        "contributionType": "Challenge",
         "sectorCode": "agr",
         "status": {
           "es": "En Resolución",
@@ -507,7 +507,7 @@ export const HOME_CONFIG = {
           "en": "Hospital La Fe – Valencia",
           "va": "Hospital La Fe – València"
         },
-        "level": "Máster",
+        "contributionType": "Challenge",
         "sectorCode": "nts",
         "status": {
           "es": "Abierto",

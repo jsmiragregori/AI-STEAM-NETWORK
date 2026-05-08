@@ -312,18 +312,20 @@ function renderLatestChallengesBlock() {
   const block = HOME_CONFIG.latestChallengesBlock;
   if (!block?.visible) return '';
 
-  const challenges = block.cards || [];
+  const contributions = block.cards || [];
   const sectorNames = t('marketplace.sectorNames') || {};
+  const contributionTypes = t('marketplace.contributionTypes') || {};
 
-  const challengesHtml = challenges.map(ch => {
+  const contributionsHtml = contributions.map(ch => {
     const statusKey = statusClass(localized(ch.status));
     const statusLabel = t(`marketplace.${statusKey}`);
     const sectorLabel = sectorNames[ch.sectorCode] || ch.sectorCode;
-    const levelClass = ch.level === 'FP' ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
+    const typeLabel = contributionTypes[ch.contributionType] || ch.contributionType;
+    const typeClass = ch.contributionType === 'Challenge' ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
     return `
       <div class="bg-white rounded-xl border border-eu-border p-5 hover:border-eu-blue transition-colors shadow-sm">
         <div class="flex items-center justify-between mb-3">
-          <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${levelClass}">${t('home.challengeLabel')} ${ch.level}</span>
+          <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${typeClass}">${typeLabel}</span>
           <span class="text-sm text-eu-teal font-bold">● ${statusLabel}</span>
         </div>
         <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug">${localized(ch.title)}</h3>
@@ -332,7 +334,7 @@ function renderLatestChallengesBlock() {
       </div>`;
   }).join('');
 
-  if (!challengesHtml) return '';
+  if (!contributionsHtml) return '';
 
   const viewAll = block.viewAll?.visible
     ? `<button data-nav="banco-retos" class="flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline bg-transparent border-none cursor-pointer">
@@ -347,7 +349,7 @@ function renderLatestChallengesBlock() {
           <h2 class="text-2xl font-bold text-eu-text">${localized(block.heading)}</h2>
           ${viewAll}
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">${challengesHtml}</div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">${contributionsHtml}</div>
       </div>
     </section>
   `;
