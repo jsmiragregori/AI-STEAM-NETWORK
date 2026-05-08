@@ -312,8 +312,97 @@ export const HOME_CONFIG = {
         }
       }
     ]
+  },
+  "sectorsBlock": {
+    "visible": true,
+    "heading": {
+      "es": "7 Áreas Sectoriales AI-SECRETT",
+      "en": "7 AI-SECRETT Sectoral Areas",
+      "va": "7 Àrees Sectorials AI-SECRETT"
+    },
+    "description": {
+      "visible": true,
+      "html": {
+        "es": "El conocimiento de la red se organiza en torno a las 7 áreas sectoriales AI-SECRETT para la triple transición digital, verde y social.",
+        "en": "Network knowledge is organised around the 7 AI-SECRETT sectoral areas for the digital, green and social triple transition.",
+        "va": "El coneixement de la xarxa s&#39;organitza al voltant de les 7 àrees sectorials AI-SECRETT per a la triple transició digital, verda i social."
+      }
+    },
+    "viewAll": {
+      "visible": true,
+      "html": {
+        "es": "Ver todos los sectores",
+        "en": "View all sectors",
+        "va": "Veure tots els sectors"
+      }
+    },
+    "cards": [
+      {
+        "id": "mfg",
+        "emoji": "⚙️",
+        "label": {
+          "es": "Manufactura",
+          "en": "Manufacturing",
+          "va": "Manufactura"
+        }
+      },
+      {
+        "id": "mob",
+        "emoji": "🚗",
+        "label": {
+          "es": "Movilidad y Transporte",
+          "en": "Mobility and Transport",
+          "va": "Mobilitat i Transport"
+        }
+      },
+      {
+        "id": "ene",
+        "emoji": "⚡",
+        "label": {
+          "es": "Energía y Medio Ambiente",
+          "en": "Energy and Environment",
+          "va": "Energia i Medi Ambient"
+        }
+      },
+      {
+        "id": "agr",
+        "emoji": "🌾",
+        "label": {
+          "es": "Agroalimentario",
+          "en": "Agrifood",
+          "va": "Agroalimentari"
+        }
+      },
+      {
+        "id": "cci",
+        "emoji": "🎨",
+        "label": {
+          "es": "Industrias Culturales y Creativas",
+          "en": "Cultural and Creative Industries",
+          "va": "Indústries Culturals i Creatives"
+        }
+      },
+      {
+        "id": "hou",
+        "emoji": "🏘️",
+        "label": {
+          "es": "Vivienda",
+          "en": "Housing",
+          "va": "Habitatge"
+        }
+      },
+      {
+        "id": "nts",
+        "emoji": "🏢",
+        "label": {
+          "es": "Servicios No Turísticos",
+          "en": "Non-Tourist Services",
+          "va": "Serveis No Turístics"
+        }
+      }
+    ]
   }
 };
 
 // Exportar tambien por claves individuales para compatibilidad
-export const { isNotBlock, enredBlock, ecosystemBlock } = HOME_CONFIG;
+export const { isNotBlock, enredBlock, ecosystemBlock, sectorsBlock } = HOME_CONFIG;

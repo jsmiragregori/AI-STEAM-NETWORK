@@ -4,15 +4,6 @@ import { navigateTo } from '../router.js';
 import { HERO_CONFIG } from '../../data/hero.js';
 import { HOME_CONFIG } from '../../data/home.js';
 
-const SECTORS = [
-  { id: 'ind', emoji: '⚙️' },
-  { id: 'sal', emoji: '🏥' },
-  { id: 'med', emoji: '🌿' },
-  { id: 'edu', emoji: '🎓' },
-  { id: 'agr', emoji: '🌾' },
-  { id: 'tur', emoji: '🏛️' },
-  { id: 'adm', emoji: '🏛' },
-];
 
 const PARTNERS = ['UVEG','CEICE','UMU','UPV','NTNU','HSW','FIDIT','INESC','TUV.IT','JOIST','C-LINK','LC','COGN','ESAD-GV','IF.E',"Ud'A",'LPGA','VARM','CINK','KEA','PREDA','RCE'];
 
@@ -245,6 +236,44 @@ function renderEcosystemBlock() {
   `;
 }
 
+function renderSectorsBlock() {
+  const block = HOME_CONFIG.sectorsBlock;
+  if (!block?.visible) return '';
+
+  const cards = (block.cards || []).map(card => `
+    <button data-nav="sectores" class="bg-white rounded-xl border border-eu-border p-4 flex flex-col items-center text-center hover:border-eu-blue hover:shadow-md transition-all cursor-pointer" aria-label="${localized(card.label)}">
+      <span class="text-3xl mb-2" role="img" aria-hidden="true">${card.emoji}</span>
+    </button>
+  `).join('');
+
+  if (!cards) return '';
+
+  const description = block.description?.visible
+    ? `<p class="text-gray-600 text-sm">${localized(block.description.html)}</p>`
+    : '';
+
+  const viewAll = block.viewAll?.visible
+    ? `<button data-nav="sectores" class="hidden md:flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline bg-transparent border-none cursor-pointer">
+        ${localized(block.viewAll.html)} <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </button>`
+    : '';
+
+  return `
+    <section class="px-6 py-12 bg-eu-bg">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-2xl font-bold text-eu-text mb-1">${localized(block.heading)}</h2>
+            ${description}
+          </div>
+          ${viewAll}
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">${cards}</div>
+      </div>
+    </section>
+  `;
+}
+
 export function render() {
   const challenges = t('home.latestChallengesData') || [];
   const sectorNames = t('marketplace.sectorNames') || {};
@@ -255,12 +284,6 @@ export function render() {
       <div class="text-3xl font-extrabold text-white leading-none mb-1">${s.value}</div>
       <div class="text-xs text-white/70 font-semibold uppercase tracking-wide">${t(s.key)}</div>
     </div>
-  `).join('');
-
-  const sectorsHtml = SECTORS.map(s => `
-    <button data-nav="sectores" class="bg-white rounded-xl border border-eu-border p-4 flex flex-col items-center text-center hover:border-eu-blue hover:shadow-md transition-all cursor-pointer">
-      <span class="text-3xl mb-2">${s.emoji}</span>
-    </button>
   `).join('');
 
   const challengesHtml = challenges.map(ch => {
@@ -320,20 +343,7 @@ export function render() {
       ${renderEcosystemBlock()}
 
       <!-- 7 Sectors -->
-      <section class="px-6 py-12 bg-eu-bg">
-        <div class="max-w-7xl mx-auto">
-          <div class="flex items-center justify-between mb-8">
-            <div>
-              <h2 class="text-2xl font-bold text-eu-text mb-1">${t('home.sectors')}</h2>
-              <p class="text-gray-600 text-sm">${t('home.sectorsDesc')}</p>
-            </div>
-            <button data-nav="sectores" class="hidden md:flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline bg-transparent border-none cursor-pointer">
-              ${t('home.viewAllSectors')} <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">${sectorsHtml}</div>
-        </div>
-      </section>
+      ${renderSectorsBlock()}
 
       <!-- Dual Focus -->
       <section class="px-6 py-12 bg-white">
