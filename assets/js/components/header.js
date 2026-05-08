@@ -2,17 +2,7 @@ import { t, getLanguage, setLanguage } from '../i18n.js';
 import { getActiveView, navigateTo } from '../router.js';
 import { getState, setState } from '../state.js';
 import { HEADER_CONFIG } from '../../data/header.js';
-
-const NAV_ITEMS = [
-  { id: 'inicio',      key: 'nav.inicio' },
-  { id: 'red',         key: 'nav.red' },
-  { id: 'sectores',    key: 'nav.sectores' },
-  { id: 'banco-retos', key: 'nav.bancoRetos' },
-  { id: 'formacion',   key: 'nav.formacion' },
-  { id: 'conocimiento',key: 'nav.conocimiento' },
-  { id: 'gobernanza',  key: 'nav.gobernanza' },
-  { id: 'actualidad',  key: 'nav.actualidad' },
-];
+import { NAV_CONFIG } from '../../data/navigation.js';
 
 function langBtn(code, lang) {
   const active = lang === code;
@@ -61,7 +51,7 @@ export function renderHeader() {
   const active = getActiveView();
   const mobileOpen = getState('mobileMenuOpen');
 
-  const desktopNav = NAV_ITEMS.map(item => `
+  const desktopNav = NAV_CONFIG.items.map(item => `
     <button data-view="${item.id}" class="text-sm font-medium flex items-center px-3 cursor-pointer border-b-[3px] transition-all duration-200 whitespace-nowrap h-full ${
       active === item.id
         ? 'text-white border-eu-yellow'
@@ -69,7 +59,7 @@ export function renderHeader() {
     }">${t(item.key)}</button>
   `).join('');
 
-  const mobileNav = NAV_ITEMS.map(item => `
+  const mobileNav = NAV_CONFIG.items.map(item => `
     <button data-view="${item.id}" class="px-6 py-4 text-left font-medium border-l-4 transition-all duration-200 min-h-12 flex items-center text-sm active:scale-95 ${
       active === item.id
         ? 'bg-eu-blue/20 border-eu-yellow text-white shadow-md'
