@@ -236,6 +236,78 @@ function renderEcosystemBlock() {
   `;
 }
 
+function dualFocusToneClasses(tone) {
+  const tones = {
+    orange: {
+      card: 'bg-gradient-to-br from-orange-50 to-orange-100/50 border-eu-yellow',
+      icon: 'bg-eu-orange',
+      coordinator: 'text-eu-orange',
+      bullet: 'bg-eu-orange',
+    },
+    purple: {
+      card: 'bg-gradient-to-br from-purple-50 to-purple-100/50 border-purple-200',
+      icon: 'bg-purple-600',
+      coordinator: 'text-purple-600',
+      bullet: 'bg-purple-600',
+    },
+    neutral: {
+      card: 'bg-white border-eu-border',
+      icon: 'bg-gray-600',
+      coordinator: 'text-gray-600',
+      bullet: 'bg-gray-600',
+    },
+  };
+
+  return tones[tone] || tones.neutral;
+}
+
+function renderDualFocusBlock() {
+  const block = HOME_CONFIG.dualFocusBlock;
+  if (!block?.visible) return '';
+
+  const cards = (block.cards || []).map(card => {
+    const tone = dualFocusToneClasses(card.tone);
+    const items = (card.items || []).map(item => `
+      <li class="flex items-center gap-2 text-sm text-gray-700">
+        <span class="w-1.5 h-1.5 ${tone.bullet} rounded-full inline-block"></span>
+        <span>${localized(item.html)}</span>
+      </li>
+    `).join('');
+
+    return `
+      <div class="${tone.card} border rounded-xl p-7">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 ${tone.icon} rounded-xl flex items-center justify-center text-white font-extrabold text-sm">${card.initials}</div>
+          <div>
+            <h3 class="font-bold text-eu-text text-lg">${localized(card.title)}</h3>
+            <p class="text-xs ${tone.coordinator} font-semibold">${localized(card.coordinator)}</p>
+          </div>
+        </div>
+        <p class="text-sm text-gray-700 mb-5">${localized(card.description)}</p>
+        <ul class="space-y-2">${items}</ul>
+      </div>
+    `;
+  }).join('');
+
+  if (!cards) return '';
+
+  const description = block.description?.visible
+    ? `<p class="text-gray-600 mb-8 text-sm max-w-2xl">${localized(block.description.html)}</p>`
+    : '';
+
+  return `
+    <section class="px-6 py-12 bg-white">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl font-bold text-eu-text mb-2">${localized(block.heading)}</h2>
+        ${description}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          ${cards}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 function renderSectorsBlock() {
   const block = HOME_CONFIG.sectorsBlock;
   if (!block?.visible) return '';
@@ -346,46 +418,7 @@ export function render() {
       ${renderSectorsBlock()}
 
       <!-- Dual Focus -->
-      <section class="px-6 py-12 bg-white">
-        <div class="max-w-7xl mx-auto">
-          <h2 class="text-2xl font-bold text-eu-text mb-2">${t('home.dualFocus')}</h2>
-          <p class="text-gray-600 mb-8 text-sm max-w-2xl">${t('home.dualFocusDesc')}</p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-linear-to-br from-orange-50 to-orange-100/50 border border-eu-yellow rounded-xl p-7">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-12 h-12 bg-eu-orange rounded-xl flex items-center justify-center text-white font-extrabold text-sm">FP</div>
-                <div>
-                  <h3 class="font-bold text-eu-text text-lg">${t('home.fp.title')}</h3>
-                  <p class="text-xs text-eu-orange font-semibold">${t('home.fp.coordinator')}</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-700 mb-5">${t('home.fp.desc')}</p>
-              <ul class="space-y-2 text-sm text-gray-700">
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-eu-orange rounded-full inline-block"></span> ${t('home.fp.item1')}</li>
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-eu-orange rounded-full inline-block"></span> ${t('home.fp.item2')}</li>
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-eu-orange rounded-full inline-block"></span> ${t('home.fp.item3')}</li>
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-eu-orange rounded-full inline-block"></span> ${t('home.fp.item4')}</li>
-              </ul>
-            </div>
-            <div class="bg-linear-to-br from-purple-50 to-purple-100/50 border border-purple-200 rounded-xl p-7">
-              <div class="flex items-center gap-3 mb-4">
-                <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center text-white font-extrabold text-sm">M</div>
-                <div>
-                  <h3 class="font-bold text-eu-text text-lg">${t('home.master.title')}</h3>
-                  <p class="text-xs text-purple-600 font-semibold">${t('home.master.coordinator')}</p>
-                </div>
-              </div>
-              <p class="text-sm text-gray-700 mb-5">${t('home.master.desc')}</p>
-              <ul class="space-y-2 text-sm text-gray-700">
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-purple-600 rounded-full inline-block"></span> ${t('home.master.item1')}</li>
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-purple-600 rounded-full inline-block"></span> ${t('home.master.item2')}</li>
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-purple-600 rounded-full inline-block"></span> ${t('home.master.item3')}</li>
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-purple-600 rounded-full inline-block"></span> ${t('home.master.item4')}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      ${renderDualFocusBlock()}
 
       <!-- Latest Challenges -->
       <section class="px-6 py-12 bg-eu-bg border-t border-eu-border">

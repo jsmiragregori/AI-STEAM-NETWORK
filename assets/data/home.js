@@ -313,6 +313,132 @@ export const HOME_CONFIG = {
       }
     ]
   },
+  "dualFocusBlock": {
+    "visible": true,
+    "heading": {
+      "es": "Foco Educativo Dual",
+      "en": "Dual Educational Focus",
+      "va": "Doble Focus Educatiu"
+    },
+    "description": {
+      "visible": true,
+      "html": {
+        "es": "La red alimenta simultáneamente dos niveles de formación reglada coordinados por CEICE.",
+        "en": "The network simultaneously feeds two levels of formal education coordinated by CEICE.",
+        "va": "La xarxa alimenta simultàniament dos nivells de formació reglada coordinats per CEICE."
+      }
+    },
+    "cards": [
+      {
+        "id": "fp",
+        "tone": "orange",
+        "initials": "FP",
+        "coordinator": {
+          "es": "Coordinado por CEICE",
+          "en": "Coordinated by CEICE",
+          "va": "Coordinat per CEICE"
+        },
+        "title": {
+          "es": "FP y Ciclos Formativos",
+          "en": "VET and Training Cycles",
+          "va": "FP i Cicles Formatius"
+        },
+        "description": {
+          "es": "Los retos y conocimientos de la red nutren directamente los módulos de FP: ciclos formativos y cursos de especialización de la Conselleria de Educación, Cultura y Universidades.",
+          "en": "Network challenges and knowledge directly feed VET subjects: training cycles and specialization courses from the Department of Education, Culture and Universities",
+          "va": "Els reptes i coneixements de la xarxa alimenten directament els mòduls de FP: cicles formatius i cursos d&#39;especialització de la Conselleria d&#39;Educació, Cultura i universitats."
+        },
+        "items": [
+          {
+            "id": "fp-1",
+            "html": {
+              "es": "Cursos de Especialización en IA para sectores STEAM",
+              "en": "Specialization Courses in AI for STEAM sectors",
+              "va": "Cursos d&#39;Especialització en IA per a sectors STEAM"
+            }
+          },
+          {
+            "id": "fp-2",
+            "html": {
+              "es": "ABP: retos de empresa en el aula",
+              "en": "PBL: business challenges in the classroom",
+              "va": "ABP: reptes d&#39;empresa a l&#39;aula"
+            }
+          },
+          {
+            "id": "fp-3",
+            "html": {
+              "es": "FCT tutorizada con socios de la red",
+              "en": "Tutored internships with network partners",
+              "va": "FCT tutorada amb socis de la xarxa"
+            }
+          },
+          {
+            "id": "fp-4",
+            "html": {
+              "es": "Materiales OER para docentes (CC-BY-SA)",
+              "en": "OER materials for teachers (CC-BY-SA)",
+              "va": "Materials OER per a docents (CC-BY-SA)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "master",
+        "tone": "purple",
+        "initials": "M",
+        "coordinator": {
+          "es": "Coordinado por UVEG",
+          "en": "Coordinated by UVEG",
+          "va": "Coordinat per UVEG"
+        },
+        "title": {
+          "es": "Máster AI-SECRETT",
+          "en": "Master AI-SECRETT",
+          "va": "Màster AI-SECRETT"
+        },
+        "description": {
+          "es": "Máster universitario internacional sobre IA aplicada a la creatividad y la triple transición. Contenidos co-creados con los socios de la red en 12 países europeos.",
+          "en": "International university master&#39;s degree on AI applied to creativity and the triple transition. Content co-created with network partners in 12 European countries.",
+          "va": "Màster universitari internacional sobre IA aplicada a la creativitat i la triple transició. Continguts co-creats amb els socis de la xarxa en 12 països europeus."
+        },
+        "items": [
+          {
+            "id": "master-1",
+            "html": {
+              "es": "2 ediciones anuales (formato blended)",
+              "en": "2 annual editions (blended format)",
+              "va": "2 edicions anuals (format blended)"
+            }
+          },
+          {
+            "id": "master-2",
+            "html": {
+              "es": "Certificación TÜV Thüringen (TUV.IT)",
+              "en": "TÜV Thüringen certification (TUV.IT)",
+              "va": "Certificació TÜV Thüringen (TUV.IT)"
+            }
+          },
+          {
+            "id": "master-3",
+            "html": {
+              "es": "Créditos ECTS y Credencial Digital Europea",
+              "en": "ECTS credits and European Digital Credentials",
+              "va": "Crèdits ECTS i Credencials Digitals Europees"
+            }
+          },
+          {
+            "id": "master-4",
+            "html": {
+              "es": "Retos reales del Banco de Retos como TFM",
+              "en": "Real challenges from the Challenge Bank as final projects",
+              "va": "Reptes reals del Banc de Reptes com TFM"
+            }
+          }
+        ]
+      }
+    ]
+  },
   "sectorsBlock": {
     "visible": true,
     "heading": {
@@ -405,4 +531,4 @@ export const HOME_CONFIG = {
 };
 
 // Exportar tambien por claves individuales para compatibilidad
-export const { isNotBlock, enredBlock, ecosystemBlock, sectorsBlock } = HOME_CONFIG;
+export const { isNotBlock, enredBlock, ecosystemBlock, dualFocusBlock, sectorsBlock } = HOME_CONFIG;
