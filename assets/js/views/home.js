@@ -148,7 +148,7 @@ function renderEnredBlock() {
     : `${cards[0]}${connector}${cards.slice(1).join('')}`;
 
   const description = block.description?.visible
-    ? `<p class="mt-6 text-sm text-gray-600 max-w-3xl leading-relaxed">${localized(block.description.html)}</p>`
+    ? `<p class="mt-6 text-sm text-gray-600 w-full leading-relaxed columns-1 lg:columns-2 gap-10 [column-fill:balance]">${localized(block.description.html)}</p>`
     : '';
 
   return `
