@@ -5,11 +5,11 @@ export const translations = {
   "es": {
     "header": {
       "title": "AI-STEAM Network",
-      "subtitle": "Generalitat Valenciana · CEICE · Digital Europe",
-      "privateAccess": "Acceso Área Privada",
+      "subtitle": "Generalitat Valenciana · Conselleria d'Educació Cultura i Universitats",
       "aules": "Aules",
       "consensUE": "ConsensUE",
-      "language": "Idioma"
+      "language": "Idioma",
+      "privateAccess": "Acceso Área Privada"
     },
     "nav": {
       "inicio": "Inicio",
@@ -163,11 +163,11 @@ export const translations = {
   "en": {
     "header": {
       "title": "AI-STEAM Network",
-      "subtitle": "Generalitat Valenciana · CEICE · Digital Europe",
-      "privateAccess": "Private Access",
+      "subtitle": "Generalitat Valenciana · Education Culture and Universities Ministry",
       "aules": "Aules",
       "consensUE": "ConsensUE",
-      "language": "Language"
+      "language": "Language",
+      "privateAccess": "Private Access"
     },
     "nav": {
       "inicio": "Home",
@@ -321,11 +321,11 @@ export const translations = {
   "va": {
     "header": {
       "title": "AI-STEAM Network",
-      "subtitle": "Generalitat Valenciana · CEICE · Digital Europe",
-      "privateAccess": "Accés Àrea Privada",
+      "subtitle": "Generalitat Valenciana · Conselleria d'Educació Cultura i Universitats",
       "aules": "Aules",
       "consensUE": "ConsensUE",
-      "language": "Idioma"
+      "language": "Idioma",
+      "privateAccess": "Accés Àrea Privada"
     },
     "nav": {
       "inicio": "Inici",
