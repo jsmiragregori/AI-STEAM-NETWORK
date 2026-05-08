@@ -1,6 +1,7 @@
 import { t, getLanguage, setLanguage } from '../i18n.js';
 import { getActiveView, navigateTo } from '../router.js';
 import { getState, setState } from '../state.js';
+import { HEADER_CONFIG } from '../data/header.js';
 
 const NAV_ITEMS = [
   { id: 'inicio',      key: 'nav.inicio' },
@@ -25,6 +26,34 @@ function langBtnMobile(code, lang) {
   return `<button data-lang="${code}" class="flex-1 px-3 py-2 rounded font-bold transition-all min-h-10 flex items-center justify-center text-sm ${
     active ? 'bg-eu-yellow text-eu-blue shadow-lg' : 'bg-white/40 text-white hover:bg-white/60 active:bg-white/50'
   }">${code.toUpperCase()}</button>`;
+}
+
+function renderDesktopButtons() {
+  return HEADER_CONFIG.buttons
+    .filter(btn => btn.visible === 'si')
+    .map(btn => {
+      const label = btn[`label_${getLanguage()}`] || btn.label_es;
+      const href = btn.href;
+      if (!href) return '';
+      return `<a href="${href}" target="${btn.target || '_self'}" rel="noopener noreferrer"
+               class="bg-eu-teal/10 border border-eu-teal text-eu-teal px-3 py-2 rounded text-sm font-bold cursor-pointer hover:bg-eu-teal hover:text-white transition-colors inline-block">
+              ${label}
+            </a>`;
+    }).join('');
+}
+
+function renderMobileButtons() {
+  return HEADER_CONFIG.buttons
+    .filter(btn => btn.visible === 'si')
+    .map(btn => {
+      const label = btn[`label_${getLanguage()}`] || btn.label_es;
+      const href = btn.href;
+      if (!href) return '';
+      return `<a href="${href}" target="${btn.target || '_self'}" rel="noopener noreferrer"
+             class="flex w-full items-center justify-center bg-white border border-eu-teal text-eu-teal px-4 py-3 rounded text-sm font-bold hover:bg-gray-50 transition-colors min-h-12">
+            ${label}
+          </a>`;
+    }).join('');
 }
 
 export function renderHeader() {
@@ -75,13 +104,7 @@ export function renderHeader() {
             ${langBtn('va', lang)}
           </div>
           <div class="flex items-center gap-2 border-l border-eu-border pl-4">
-            <a href="https://aules.edu.gva.es/" target="_blank" rel="noopener noreferrer"
-               class="bg-eu-teal/10 border border-eu-teal text-eu-teal px-3 py-2 rounded text-sm font-bold cursor-pointer hover:bg-eu-teal hover:text-white transition-colors inline-block">
-              ${t('header.aules')}
-            </a>
-            <button class="bg-eu-orange/10 border border-eu-orange text-eu-orange px-3 py-2 rounded text-sm font-bold cursor-pointer hover:bg-eu-orange hover:text-white transition-colors">
-              ${t('header.consensUE')}
-            </button>
+            ${renderDesktopButtons()}
           </div>
         </div>
 
@@ -111,13 +134,7 @@ export function renderHeader() {
           </div>
         </div>
         <div class="border-t border-eu-blue/20 px-4 sm:px-6 py-6 space-y-3">
-          <a href="https://aules.edu.gva.es/" target="_blank" rel="noopener noreferrer"
-             class="flex w-full items-center justify-center bg-white border border-eu-teal text-eu-teal px-4 py-3 rounded text-sm font-bold hover:bg-gray-50 transition-colors min-h-12">
-            ${t('header.aules')}
-          </a>
-          <button class="w-full bg-white border border-eu-orange text-eu-orange px-4 py-3 rounded text-sm font-bold hover:bg-gray-50 transition-colors min-h-12 flex items-center justify-center">
-            ${t('header.consensUE')}
-          </button>
+          ${renderMobileButtons()}
         </div>
       </nav>` : ''}
     </div>
