@@ -57,6 +57,28 @@ function cardToneClasses(tone) {
   return tones[tone] || tones.neutral;
 }
 
+function enredToneClasses(tone) {
+  const tones = {
+    institutional: {
+      card: 'bg-white border border-eu-border shadow-sm',
+      title: 'text-gray-500',
+      pill: 'bg-eu-bg border border-eu-border text-gray-600',
+    },
+    thematic: {
+      card: 'bg-white border-2 border-eu-purple shadow-md',
+      title: 'text-eu-purple',
+      pill: 'bg-eu-purple/10 border border-eu-purple/30 text-eu-purple font-semibold',
+    },
+    neutral: {
+      card: 'bg-white border border-eu-border shadow-sm',
+      title: 'text-eu-text',
+      pill: 'bg-eu-bg border border-eu-border text-gray-600',
+    },
+  };
+
+  return tones[tone] || tones.neutral;
+}
+
 function renderIsNotBlock() {
   const block = HOME_CONFIG.isNotBlock;
   if (!block?.visible) return '';
@@ -94,8 +116,55 @@ function renderIsNotBlock() {
   `;
 }
 
+function renderEnredBlock() {
+  const block = HOME_CONFIG.enredBlock;
+  if (!block?.visible) return '';
+
+  const cards = (block.cards || []).map(card => {
+    const tone = enredToneClasses(card.tone);
+    const pills = (card.pills || []).map(pill =>
+      `<span class="text-xs rounded px-2 py-1 ${tone.pill}">${localized(pill.html)}</span>`
+    ).join('');
+
+    return `
+      <div class="flex-1 ${tone.card} rounded-xl p-6">
+        <p class="text-xs font-bold uppercase tracking-widest ${tone.title} mb-3">${localized(card.title)}</p>
+        <div class="flex flex-wrap gap-2">${pills}</div>
+      </div>
+    `;
+  });
+
+  if (cards.length === 0) return '';
+
+  const connector = block.connector?.visible ? `
+    <div class="flex flex-col items-center justify-center gap-1 shrink-0 py-4">
+      <i data-lucide="${block.connector.icon || 'link-2'}" class="w-6 h-6 text-eu-blue/50"></i>
+      <span class="text-xs font-bold text-eu-blue/50 uppercase tracking-wider hidden md:block" style="writing-mode:vertical-rl;transform:rotate(180deg)">${localized(block.connector.label)}</span>
+    </div>
+  ` : '';
+
+  const body = cards.length === 1
+    ? cards[0]
+    : `${cards[0]}${connector}${cards.slice(1).join('')}`;
+
+  const description = block.description?.visible
+    ? `<p class="mt-6 text-sm text-gray-600 max-w-3xl leading-relaxed">${localized(block.description.html)}</p>`
+    : '';
+
+  return `
+    <section class="px-6 py-12 bg-eu-bg border-b border-eu-border">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl font-bold text-eu-text mb-6">${localized(block.heading)}</h2>
+        <div class="flex flex-col md:flex-row items-stretch gap-4">
+          ${body}
+        </div>
+        ${description}
+      </div>
+    </section>
+  `;
+}
+
 export function render() {
-  const enredBlock = t('home.enredBlock') || {};
   const challenges = t('home.latestChallengesData') || [];
   const sectorNames = t('marketplace.sectorNames') || {};
 
@@ -106,14 +175,6 @@ export function render() {
       <div class="text-xs text-white/70 font-semibold uppercase tracking-wide">${t(s.key)}</div>
     </div>
   `).join('');
-
-  const enredTags = (enredBlock.enredTags || []).map(tag =>
-    `<span class="text-xs bg-eu-bg border border-eu-border rounded px-2 py-1 text-gray-600">${tag}</span>`
-  ).join('');
-
-  const networkTags = (enredBlock.networkTags || []).map(tag =>
-    `<span class="text-xs bg-eu-blue/10 border border-eu-blue/30 rounded px-2 py-1 text-eu-blue font-semibold">${tag}</span>`
-  ).join('');
 
   const sectorsHtml = SECTORS.map(s => `
     <button data-nav="sectores" class="bg-white rounded-xl border border-eu-border p-4 flex flex-col items-center text-center hover:border-eu-blue hover:shadow-md transition-all cursor-pointer">
@@ -172,26 +233,7 @@ export function render() {
       ${renderIsNotBlock()}
 
       <!-- ENRED → AI-STEAM -->
-      <section class="px-6 py-12 bg-eu-bg border-b border-eu-border">
-        <div class="max-w-7xl mx-auto">
-          <h2 class="text-2xl font-bold text-eu-text mb-6">${enredBlock.heading || ''}</h2>
-          <div class="flex flex-col md:flex-row items-stretch gap-4">
-            <div class="flex-1 bg-white rounded-xl border border-eu-border p-6 shadow-sm">
-              <p class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">${enredBlock.enredLabel || ''}</p>
-              <div class="flex flex-wrap gap-2">${enredTags}</div>
-            </div>
-            <div class="flex flex-col items-center justify-center gap-1 shrink-0 py-4">
-              <i data-lucide="link-2" class="w-6 h-6 text-eu-blue/50"></i>
-              <span class="text-xs font-bold text-eu-blue/50 uppercase tracking-wider hidden md:block" style="writing-mode:vertical-rl;transform:rotate(180deg)">${enredBlock.synergyLabel || ''}</span>
-            </div>
-            <div class="flex-1 bg-white rounded-xl border-2 border-eu-blue p-6 shadow-md">
-              <p class="text-xs font-bold uppercase tracking-widest text-eu-blue mb-3">${enredBlock.networkLabel || ''}</p>
-              <div class="flex flex-wrap gap-2">${networkTags}</div>
-            </div>
-          </div>
-          <p class="mt-6 text-sm text-gray-600 max-w-3xl leading-relaxed">${enredBlock.desc || ''}</p>
-        </div>
-      </section>
+      ${renderEnredBlock()}
 
       <!-- Ecosystem -->
       <section class="px-6 py-12 bg-white border-b border-eu-border">

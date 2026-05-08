@@ -83,8 +83,129 @@ export const HOME_CONFIG = {
         ]
       }
     ]
+  },
+  "enredBlock": {
+    "visible": true,
+    "heading": {
+      "es": "Construida sobre ENRED: de la cooperación a la innovación temática",
+      "en": "Built on ENRED: From cooperation to thematic innovation",
+      "va": "Construïda sobre ENRED: de la cooperació a la innovació temàtica"
+    },
+    "connector": {
+      "visible": true,
+      "icon": "link-2",
+      "label": {
+        "es": "Sinergia complementaria",
+        "en": "Complementary synergy",
+        "va": "Sinergia complementària"
+      }
+    },
+    "description": {
+      "visible": true,
+      "html": {
+        "es": "ENRED es la red europea de departamentos regionales de educación impulsada por la Generalitat Valenciana: un entorno de cooperación interregional, intercambio de buenas prácticas, diálogo político y aprendizaje institucional entre administraciones educativas. AI-STEAM Network se construye sobre esa base de confianza institucional para añadir un foco temático especializado en IA, creatividad y educación STEAM. La sinergia es clara: ENRED proporciona el ecosistema institucional y el alcance europeo; AI-STEAM Network proporciona la profundidad temática, la comunidad especializada y el marco sostenible para movilizar centros, docentes y stakeholders alrededor de la innovación educativa en IA.",
+        "en": "ENRED is the European Network of Regional Education Departments, a non-binding cooperation framework promoted by the Generalitat Valenciana: an environment of interregional cooperation, best practice exchange, policy dialogue and institutional learning among education authorities. AI-STEAM Network builds on this foundation of institutional trust to add a focused thematic expertise in AI, creativity and STEAM education. The synergy is clear: ENRED provides the institutional ecosystem and European reach; AI-STEAM Network provides thematic depth, a specialised community and a sustainable framework to mobilise centres, educators and stakeholders around educational innovation in AI.",
+        "va": "ENRED és la Xarxa Europea de Departaments d&#39;Educació Regional impulsada per la Generalitat Valenciana: un entorn de cooperació interregional, intercanvi de bones pràctiques, diàleg polític i aprenentatge institucional entre administracions educatives. AI-STEAM Network es construeix sobre eixa base de confiança institucional per a afegir un focus temàtic especialitzat en IA, creativitat i educació STEAM. La sinergia és clara: ENRED proporciona l&#39;ecosistema institucional i l&#39;abast europeu; AI-STEAM Network proporciona la profunditat temàtica, la comunitat especialitzada i el marc sostenible per a mobilitzar centres, docents i stakeholders al voltant de la innovació educativa en IA."
+      }
+    },
+    "cards": [
+      {
+        "id": "enred",
+        "tone": "institutional",
+        "title": {
+          "es": "ENRED (ecosistema institucional)",
+          "en": "ENRED (institutional ecosystem)",
+          "va": "ENRED (ecosistema institucional)"
+        },
+        "pills": [
+          {
+            "id": "enred-1",
+            "html": {
+              "es": "Cooperación interregional",
+              "en": "Interregional cooperation",
+              "va": "Cooperació interregional"
+            }
+          },
+          {
+            "id": "enred-2",
+            "html": {
+              "es": "Intercambio de buenas prácticas",
+              "en": "Best practice exchange",
+              "va": "Intercanvi de bones pràctiques"
+            }
+          },
+          {
+            "id": "enred-3",
+            "html": {
+              "es": "Diálogo político",
+              "en": "Policy dialogue",
+              "va": "Diàleg polític"
+            }
+          },
+          {
+            "id": "enred-4",
+            "html": {
+              "es": "Alcance europeo",
+              "en": "European outreach",
+              "va": "Abast europeu"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ai-steam",
+        "tone": "thematic",
+        "title": {
+          "es": "AI-STEAM Network (foco temático)",
+          "en": "AI-STEAM Network (thematic focus)",
+          "va": "AI-STEAM Network (focus temàtic)"
+        },
+        "pills": [
+          {
+            "id": "ai-steam-1",
+            "html": {
+              "es": "IA &amp; STEAM",
+              "en": "AI &amp; STEAM",
+              "va": "IA &amp; STEAM"
+            }
+          },
+          {
+            "id": "ai-steam-2",
+            "html": {
+              "es": "Triple Transición",
+              "en": "Triple Transition",
+              "va": "Triple Transició"
+            }
+          },
+          {
+            "id": "ai-steam-3",
+            "html": {
+              "es": "FP Transfer",
+              "en": "VET Transfer",
+              "va": "Transferència FP"
+            }
+          },
+          {
+            "id": "ai-steam-4",
+            "html": {
+              "es": "Formación Docente",
+              "en": "Teacher Training",
+              "va": "Formació Docent"
+            }
+          },
+          {
+            "id": "ai-steam-5",
+            "html": {
+              "es": "AI-SECRETT Track B",
+              "en": "AI-SECRETT Track B",
+              "va": "AI-SECRETT Track B"
+            }
+          }
+        ]
+      }
+    ]
   }
 };
 
 // Exportar tambien por claves individuales para compatibilidad
-export const { isNotBlock } = HOME_CONFIG;
+export const { isNotBlock, enredBlock } = HOME_CONFIG;
