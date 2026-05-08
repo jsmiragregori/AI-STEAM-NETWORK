@@ -89,8 +89,8 @@ export function renderHeader() {
         <div id="logo-btn" class="flex items-center gap-2 sm:gap-3 cursor-pointer shrink-0">
           <div class="w-10 h-10 bg-eu-blue rounded flex items-center justify-center text-white font-bold text-xl shrink-0">AI</div>
           <div class="hidden sm:block">
-            <span class="font-bold text-xl text-eu-blue block leading-none">${t('header.title')}</span>
-            <span class="text-xs text-gray-500 font-medium tracking-wide uppercase">${t('header.subtitle')}</span>
+            <span class="font-bold text-xl text-eu-blue block leading-none">${HEADER_CONFIG.title}</span>
+            <span class="text-xs text-gray-500 font-medium tracking-wide uppercase">${HEADER_CONFIG.subtitle}</span>
           </div>
         </div>
 
