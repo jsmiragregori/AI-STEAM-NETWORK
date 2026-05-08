@@ -321,7 +321,7 @@ function renderLatestChallengesBlock() {
     const sectorLabel = sectorNames[ch.sectorCode] || ch.sectorCode;
     const typeLabel = localized(ch.contributionType);
     const levelLabel = localized(ch.level);
-    const badgeText = `${typeLabel} ${levelLabel}`;
+    const badgeText = `${typeLabel} (${levelLabel})`;
     const isFP = levelLabel === 'FP' || levelLabel === 'VET';
     const typeClass = isFP ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
     return `
