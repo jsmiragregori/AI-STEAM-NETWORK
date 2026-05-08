@@ -467,7 +467,11 @@ export const HOME_CONFIG = {
           "en": "Generalitat Valenciana (CEICE)",
           "va": "Generalitat Valenciana (CEICE)"
         },
-        "contributionType": "Challenge",
+        "contributionType": {
+          "es": "Reto",
+          "en": "Challenge",
+          "va": "Repte"
+        },
         "sectorCode": "ene",
         "status": {
           "es": "Abierto",
@@ -487,7 +491,11 @@ export const HOME_CONFIG = {
           "en": "AVA-ASAJA Cooperativa",
           "va": "AVA-ASAJA Cooperativa"
         },
-        "contributionType": "Challenge",
+        "contributionType": {
+          "es": "Reto",
+          "en": "Challenge",
+          "va": "Repte"
+        },
         "sectorCode": "agr",
         "status": {
           "es": "En Resolución",
@@ -507,7 +515,11 @@ export const HOME_CONFIG = {
           "en": "Hospital La Fe – Valencia",
           "va": "Hospital La Fe – València"
         },
-        "contributionType": "Challenge",
+        "contributionType": {
+          "es": "Reto",
+          "en": "Challenge",
+          "va": "Repte"
+        },
         "sectorCode": "nts",
         "status": {
           "es": "Abierto",

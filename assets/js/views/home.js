@@ -314,14 +314,13 @@ function renderLatestChallengesBlock() {
 
   const contributions = block.cards || [];
   const sectorNames = t('marketplace.sectorNames') || {};
-  const contributionTypes = t('marketplace.contributionTypes') || {};
 
   const contributionsHtml = contributions.map(ch => {
     const statusKey = statusClass(localized(ch.status));
     const statusLabel = t(`marketplace.${statusKey}`);
     const sectorLabel = sectorNames[ch.sectorCode] || ch.sectorCode;
-    const typeLabel = contributionTypes[ch.contributionType] || ch.contributionType;
-    const typeClass = ch.contributionType === 'Challenge' ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
+    const typeLabel = localized(ch.contributionType);
+    const typeClass = typeLabel === 'Reto' || typeLabel === 'Repte' || typeLabel === 'Challenge' ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
     return `
       <div class="bg-white rounded-xl border border-eu-border p-5 hover:border-eu-blue transition-colors shadow-sm">
         <div class="flex items-center justify-between mb-3">
