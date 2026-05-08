@@ -1,6 +1,6 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR DIRECTAMENTE
 // Edita los archivos en content/_ui/*.csv y ejecuta: npm run cms:ui
-// Base: translations.js existente + overrides de 29 entradas CSV
+// Base: translations.js existente + overrides de 35 entradas CSV
 
 export const translations = {
   "es": {
@@ -35,7 +35,7 @@ export const translations = {
       "accept": "Aceptar"
     },
     "home": {
-      "badge": "Programa Digital Europe 2021–2027 · AI-SECRETT",
+      "badge": "Programa Digital Europe 2021-2027 · AI-SECRETT",
       "title": "AI-STEAM Network",
       "subtitle": "Comunidad y Transferencia de AI-SECRETT",
       "heroTagline": "AI-STEAM Network es el ecosistema Track B de CEICE para AI-SECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders moviliza centros FP forma docentes y especializa los 7 sectores AI-SECRETT en IA y creatividad.",
@@ -43,12 +43,12 @@ export const translations = {
       "uploadChallenge": "Propón un reto, caso o aportación",
       "requestJoin": "Únete a la AI-STEAM Network",
       "stats": {
-        "stakeholders": "Stakeholders",
-        "totalChallenges": "Retos y Casos",
-        "consortiumMembers": "Miembros del Consorcio",
-        "microCredentials": "Experiencias Piloto",
+        "stakeholders": "Grupos de interés",
+        "totalChallenges": "Retos y casos",
+        "consortiumMembers": "Miembros del consorcio",
+        "microCredentials": "Experiencias piloto",
         "countries": "Países",
-        "trainingModules": "Módulos Formativos"
+        "trainingModules": "Módulos formativos"
       },
       "ecosystem": "El Ecosistema AI-STEAM",
       "ecosystemDesc": "Tres plataformas complementarias para una red de conocimiento e innovación educativa única en Europa.",
@@ -2098,7 +2098,7 @@ export const translations = {
       "accept": "Accept"
     },
     "home": {
-      "badge": "Digital Europe Programme 2021–2027 · AI-SECRETT",
+      "badge": "Digital Europe Programme 2021-2027 · AI-SECRETT",
       "title": "AI-STEAM Network",
       "subtitle": "Community and Transfer of AI-SECRETT",
       "heroTagline": "AI-STEAM Network is the Track B ecosystem of CEICE for AI-SECRETT: built on ENRED interregional cooperation activating stakeholders mobilizing VET centers training teachers and specializing the 7 AI-SECRETT sectors in AI and creativity.",
@@ -2107,11 +2107,11 @@ export const translations = {
       "requestJoin": "Join the AI-STEAM Network",
       "stats": {
         "stakeholders": "Stakeholders",
-        "totalChallenges": "Challenges & Cases",
-        "consortiumMembers": "Consortium Members",
-        "microCredentials": "Pilot Experiences",
+        "totalChallenges": "Challenges and cases",
+        "consortiumMembers": "Consortium members",
+        "microCredentials": "Pilot experiences",
         "countries": "Countries",
-        "trainingModules": "Training Units"
+        "trainingModules": "Training modules"
       },
       "ecosystem": "The AI-STEAM Ecosystem",
       "ecosystemDesc": "Three complementary platforms for a unique knowledge and educational innovation network in Europe.",
@@ -4161,7 +4161,7 @@ export const translations = {
       "accept": "Acceptar"
     },
     "home": {
-      "badge": "Programa Digital Europe 2021–2027 · AI-SECRETT",
+      "badge": "Programa Digital Europe 2021-2027 · AI-SECRETT",
       "title": "AI-STEAM Network",
       "subtitle": "Comunitat i Transferència d'AI-SECRETT",
       "heroTagline": "AI-STEAM Network és l'ecosistema Track B de CEICE per a AI-SECRETT: construïda sobre la cooperació interregional d'ENRED activa agents interessats movilitza centres FP forma docents i especialitza els 7 sectors AI-SECRETT en IA i creativitat.",
@@ -4169,12 +4169,12 @@ export const translations = {
       "uploadChallenge": "Proposa un repte, cas o aportació",
       "requestJoin": "Uneix-te a la AI-STEAM Network",
       "stats": {
-        "stakeholders": "Grups d'interès",
-        "totalChallenges": "Reptes i Casos",
-        "consortiumMembers": "Membres del Consorci",
-        "microCredentials": "Experiències Pilot",
+        "stakeholders": "Grups d'interés",
+        "totalChallenges": "Reptes i casos",
+        "consortiumMembers": "Membres del consorci",
+        "microCredentials": "Experiències pilot",
         "countries": "Països",
-        "trainingModules": "Mòduls Formatius"
+        "trainingModules": "Mòduls formatius"
       },
       "ecosystem": "L'Ecosistema AI-STEAM",
       "ecosystemDesc": "Tres plataformes complementàries per a una xarxa de coneixement i innovació educativa única a Europa.",

@@ -1,5 +1,8 @@
 import { t } from '../i18n.js';
+import { getLanguage } from '../i18n.js';
 import { navigateTo } from '../router.js';
+import { HERO_CONFIG } from '../../data/hero.js';
+import { HOME_CONFIG } from '../../data/home.js';
 
 const SECTORS = [
   { id: 'ind', emoji: '⚙️' },
@@ -9,15 +12,6 @@ const SECTORS = [
   { id: 'agr', emoji: '🌾' },
   { id: 'tur', emoji: '🏛️' },
   { id: 'adm', emoji: '🏛' },
-];
-
-const STATS = [
-  { key: 'stakeholders',      value: '142',   icon: 'users' },
-  { key: 'totalChallenges',   value: '127',   icon: 'zap' },
-  { key: 'consortiumMembers', value: '23',    icon: 'book-open' },
-  { key: 'microCredentials',  value: '1.200', icon: 'award' },
-  { key: 'countries',         value: '12',    icon: 'globe' },
-  { key: 'trainingModules',   value: '68',    icon: 'layers' },
 ];
 
 const PARTNERS = ['UVEG','CEICE','UMU','UPV','NTNU','HSW','FIDIT','INESC','TUV.IT','JOIST','C-LINK','LC','COGN','ESAD-GV','IF.E',"Ud'A",'LPGA','VARM','CINK','KEA','PREDA','RCE'];
@@ -30,29 +24,88 @@ function statusClass(status) {
   return 'resolved';
 }
 
+function localized(value) {
+  const lang = getLanguage();
+  return value?.[lang] || value?.es || '';
+}
+
+function cardToneClasses(tone) {
+  const tones = {
+    positive: {
+      card: 'bg-green-50 border-green-200',
+      icon: 'text-green-600',
+      title: 'text-green-800',
+      bullet: 'bg-green-600',
+      item: 'text-green-900',
+    },
+    negative: {
+      card: 'bg-red-50 border-red-200',
+      icon: 'text-red-600',
+      title: 'text-red-800',
+      bullet: 'bg-red-500',
+      item: 'text-red-900',
+    },
+    neutral: {
+      card: 'bg-white border-eu-border',
+      icon: 'text-eu-blue',
+      title: 'text-eu-text',
+      bullet: 'bg-eu-blue',
+      item: 'text-gray-700',
+    },
+  };
+
+  return tones[tone] || tones.neutral;
+}
+
+function renderIsNotBlock() {
+  const block = HOME_CONFIG.isNotBlock;
+  if (!block?.visible) return '';
+
+  const cards = (block.cards || []).map(card => {
+    const tone = cardToneClasses(card.tone);
+    const items = (card.items || []).map(item => `
+      <li class="flex items-start gap-2 text-sm ${tone.item}">
+        <span class="w-1.5 h-1.5 ${tone.bullet} rounded-full mt-1.5 shrink-0"></span><span>${localized(item.html)}</span>
+      </li>
+    `).join('');
+
+    return `
+      <div class="${tone.card} border rounded-xl p-6">
+        <div class="flex items-center gap-2 mb-4">
+          <i data-lucide="${card.icon}" class="w-5 h-5 ${tone.icon}"></i>
+          <h3 class="font-bold ${tone.title} text-lg">${localized(card.title)}</h3>
+        </div>
+        <ul class="space-y-3">${items}</ul>
+      </div>
+    `;
+  }).join('');
+
+  if (!cards) return '';
+
+  return `
+    <section class="px-6 py-12 bg-white border-b border-eu-border">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-2xl font-bold text-eu-text mb-8">${localized(block.heading)}</h2>
+        <div class="grid gap-6" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+          ${cards}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 export function render() {
-  const isNotBlock = t('home.isNotBlock') || {};
   const enredBlock = t('home.enredBlock') || {};
   const challenges = t('home.latestChallengesData') || [];
   const sectorNames = t('marketplace.sectorNames') || {};
 
-  const statsHtml = STATS.map(s => `
+  const statsHtml = HERO_CONFIG.stats.map(s => `
     <div class="bg-white/10 backdrop-blur rounded-xl p-5 flex flex-col">
       <i data-lucide="${s.icon}" class="w-5 h-5 text-eu-yellow mb-2"></i>
       <div class="text-3xl font-extrabold text-white leading-none mb-1">${s.value}</div>
-      <div class="text-xs text-white/70 font-semibold uppercase tracking-wide">${t('home.stats.' + s.key)}</div>
+      <div class="text-xs text-white/70 font-semibold uppercase tracking-wide">${t(s.key)}</div>
     </div>
   `).join('');
-
-  const isItems = (isNotBlock.isItems || []).map(item => `
-    <li class="flex items-start gap-2 text-sm text-green-900">
-      <span class="w-1.5 h-1.5 bg-green-600 rounded-full mt-1.5 shrink-0"></span>${item}
-    </li>`).join('');
-
-  const isNotItems = (isNotBlock.isNotItems || []).map(item => `
-    <li class="flex items-start gap-2 text-sm text-red-900">
-      <span class="w-1.5 h-1.5 bg-red-500 rounded-full mt-1.5 shrink-0"></span>${item}
-    </li>`).join('');
 
   const enredTags = (enredBlock.enredTags || []).map(tag =>
     `<span class="text-xs bg-eu-bg border border-eu-border rounded px-2 py-1 text-gray-600">${tag}</span>`
@@ -116,27 +169,7 @@ export function render() {
       </section>
 
       <!-- Is / Is Not -->
-      <section class="px-6 py-12 bg-white border-b border-eu-border">
-        <div class="max-w-7xl mx-auto">
-          <h2 class="text-2xl font-bold text-eu-text mb-8">${isNotBlock.heading || ''}</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-green-50 border border-green-200 rounded-xl p-6">
-              <div class="flex items-center gap-2 mb-4">
-                <i data-lucide="check-circle" class="w-5 h-5 text-green-600"></i>
-                <h3 class="font-bold text-green-800 text-lg">${isNotBlock.isTitle || ''}</h3>
-              </div>
-              <ul class="space-y-3">${isItems}</ul>
-            </div>
-            <div class="bg-red-50 border border-red-200 rounded-xl p-6">
-              <div class="flex items-center gap-2 mb-4">
-                <i data-lucide="x-circle" class="w-5 h-5 text-red-600"></i>
-                <h3 class="font-bold text-red-800 text-lg">${isNotBlock.isNotTitle || ''}</h3>
-              </div>
-              <ul class="space-y-3">${isNotItems}</ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      ${renderIsNotBlock()}
 
       <!-- ENRED → AI-STEAM -->
       <section class="px-6 py-12 bg-eu-bg border-b border-eu-border">
