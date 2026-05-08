@@ -239,13 +239,13 @@ function renderEcosystemBlock() {
 function dualFocusToneClasses(tone) {
   const tones = {
     orange: {
-      card: 'bg-gradient-to-br from-orange-50 to-orange-100/50 border-eu-yellow',
+      card: 'bg-linear-to-br from-orange-50 to-orange-100/50 border-eu-yellow',
       icon: 'bg-eu-orange',
       coordinator: 'text-eu-orange',
       bullet: 'bg-eu-orange',
     },
     purple: {
-      card: 'bg-gradient-to-br from-purple-50 to-purple-100/50 border-purple-200',
+      card: 'bg-linear-to-br from-purple-50 to-purple-100/50 border-purple-200',
       icon: 'bg-purple-600',
       coordinator: 'text-purple-600',
       bullet: 'bg-purple-600',
