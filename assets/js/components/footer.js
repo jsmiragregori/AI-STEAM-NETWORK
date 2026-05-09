@@ -13,7 +13,7 @@ export function renderFooter() {
             </div>
           </div>
           <div class="text-xs sm:text-sm hidden sm:block">
-            Generalitat Valenciana<br/>CEICE
+            ${t('footer.orgName')}<br/>${t('footer.orgUnit')}
           </div>
           <div class="flex flex-wrap gap-3 sm:gap-6 sm:ml-auto text-xs sm:text-sm">
             <a href="#" class="text-white hover:text-eu-yellow transition-colors font-medium">${t('footer.accessibility')}</a>

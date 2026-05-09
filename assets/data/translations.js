@@ -1,6 +1,6 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR DIRECTAMENTE
 // Edita los archivos en content/_ui/*.csv y ejecuta: npm run cms:ui
-// Base: translations.js existente + overrides de 35 entradas CSV
+// Base: translations.js existente + overrides de 40 entradas CSV
 
 export const translations = {
   "es": {
@@ -27,7 +27,9 @@ export const translations = {
       "europeanUnion": "Unión Europea",
       "accessibility": "Accesibilidad",
       "privacy": "Privacidad",
-      "sitemap": "Mapa Web"
+      "sitemap": "Mapa Web",
+      "orgName": "Generalitat Valenciana",
+      "orgUnit": "CEICE"
     },
     "cookieBanner": {
       "legal": "Aviso Legal:",
@@ -2090,7 +2092,9 @@ export const translations = {
       "europeanUnion": "European Union",
       "accessibility": "Accessibility",
       "privacy": "Privacy",
-      "sitemap": "Sitemap"
+      "sitemap": "Sitemap",
+      "orgName": "Generalitat Valenciana",
+      "orgUnit": "CEICE"
     },
     "cookieBanner": {
       "legal": "Legal Notice:",
@@ -4153,7 +4157,9 @@ export const translations = {
       "europeanUnion": "Unió Europea",
       "accessibility": "Accessibilitat",
       "privacy": "Privacitat",
-      "sitemap": "Mapa Web"
+      "sitemap": "Mapa Web",
+      "orgName": "Generalitat Valenciana",
+      "orgUnit": "CEICE"
     },
     "cookieBanner": {
       "legal": "Avís Legal:",
