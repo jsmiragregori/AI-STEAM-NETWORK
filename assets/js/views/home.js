@@ -1,4 +1,4 @@
-import { getLanguage } from '../i18n.js';
+import { t, getLanguage } from '../i18n.js';
 import { navigateTo } from '../router.js';
 import { HOME_CONFIG } from '../../data/home.js';
 

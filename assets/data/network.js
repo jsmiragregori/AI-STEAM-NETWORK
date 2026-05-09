@@ -52,7 +52,68 @@ export const NETWORK_CONFIG = {
         }
       }
     ]
+  },
+  "helixBlock": {
+    "visible": true,
+    "heading": {
+      "es": "Modelo de Cuádruple Hélice",
+      "en": "Quadruple Helix Model",
+      "va": "Model de Quàdruple Hèlix"
+    },
+    "description": {
+      "es": "La red se organiza según el modelo de innovación de cuádruple hélice, que reconoce el papel de la sociedad civil junto con la universidad, la empresa y la administración como motor de la innovación responsable.",
+      "en": "The network is organized according to the quadruple helix innovation model, which recognizes the role of civil society alongside universities, companies and administration as drivers of responsible innovation.",
+      "va": "La xarxa s'organitza segons el model d'innovació de quàdruple hèlix, que reconeix el paper de la societat civil juntament amb la universitat, l'empresa i l'administració com a motor de la innovació responsable."
+    },
+    "categories": [
+      {
+        "id": "universidad",
+        "icon": "graduation-cap",
+        "label": {
+          "es": "Educación Superior e I+D+I",
+          "en": "Higher Education & R&D&I",
+          "va": "Educació Superior i I+D+I"
+        },
+        "color": "text-purple-700",
+        "bg": "bg-purple-100",
+        "border": "border-purple-300"
+      },
+      {
+        "id": "empresa",
+        "icon": "building-2",
+        "label": {
+          "es": "Empresa e Innovación",
+          "en": "Business & Innovation",
+          "va": "Empresa i Innovació"
+        },
+        "color": "text-blue-700",
+        "bg": "bg-blue-100",
+        "border": "border-blue-300"
+      },
+      {
+        "id": "admin",
+        "icon": "globe",
+        "label": {
+          "es": "Administración Pública",
+          "en": "Public Administration",
+          "va": "Administració Pública"
+        },
+        "color": "text-green-700",
+        "bg": "bg-green-100",
+        "border": "border-green-300"
+      },
+      {
+        "id": "sociedad",
+        "icon": "heart-handshake",
+        "label": {
+          "es": "Sociedad Civil y ONG",
+          "en": "Civil Society & NGOs",
+          "va": "Societat Civil i ONG"
+        },
+        "color": "text-pink-700",
+        "bg": "bg-pink-100",
+        "border": "border-pink-300"
+      }
+    ]
   }
 };
-
-export const { heroBlock } = NETWORK_CONFIG;

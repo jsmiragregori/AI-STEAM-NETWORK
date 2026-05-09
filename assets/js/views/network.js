@@ -2,7 +2,7 @@ import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { NETWORK_CONFIG } from '../../data/network.js';
 
-// ─── Static data ─────────────────────────────────────────────────────────────
+// ── Static data ─────────────────────────────────────────────────────────────
 
 const PARTNERS = [
   { id: 'uveg',   name: 'Universitat de València',               acronym: 'UVEG',    country: 'ES', city: 'Valencia',        category: 'universidad', sectors: ['Educación', 'Industria'],            role: 'coordinator'   },
@@ -99,25 +99,33 @@ function counts(list) {
 
 // ─── Helix block ─────────────────────────────────────────────────────────────
 
-function helixBlock(networkT) {
+function helixBlock() {
+  if (!NETWORK_CONFIG || !NETWORK_CONFIG.helixBlock) return '';
+  const helix = NETWORK_CONFIG.helixBlock;
+  if (!helix?.visible) return '';
+
+  const lang = getLang();
+  const loc = v => v?.[lang] || v?.es || '';
+
   const pc = counts(PARTNERS);
   const sc = counts(STAKEHOLDERS);
-  const html = Object.entries(CATEGORY_META).map(([key, meta]) => {
-    const total = (pc[key] || 0) + (sc[key] || 0);
-    const label = networkT?.categoryLabels?.[key] || key;
+
+  const html = (helix.categories || []).map(cat => {
+    const total = (pc[cat.id] || 0) + (sc[cat.id] || 0);
     return `
-      <div class="${meta.bg} ${meta.border} border rounded-xl p-4 text-center">
-        <i data-lucide="${meta.icon}" class="w-6 h-6 ${meta.color} mx-auto mb-2"></i>
-        <p class="font-bold text-sm ${meta.color}">${label}</p>
+      <div class="${cat.bg} ${cat.border} border rounded-xl p-4 text-center">
+        <i data-lucide="${cat.icon}" class="w-6 h-6 ${cat.color} mx-auto mb-2"></i>
+        <p class="font-bold text-sm ${cat.color}">${loc(cat.label)}</p>
         <p class="text-2xl font-extrabold text-gray-800 mt-1">${total}</p>
-        <p class="text-xs text-gray-500 mt-0.5">${pc[key] || 0} ${networkT?.sociosLabel || ''} · ${sc[key] || 0} ${networkT?.stakeholdersLabel || ''}</p>
+        <p class="text-xs text-gray-500 mt-0.5">${pc[cat.id] || 0} ${loc({es:'socios',en:'partners',va:'socis'})} · ${sc[cat.id] || 0} ${loc({es:'stakeholders',en:'stakeholders',va:'stakeholders'})}</p>
       </div>
     `;
   }).join('');
+
   return `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7 mb-8">
-      <h2 class="text-xl font-bold text-eu-text mb-2">${networkT?.helixTitle || ''}</h2>
-      <p class="text-sm text-gray-600 mb-5 max-w-3xl">${networkT?.helixDesc || ''}</p>
+      <h2 class="text-xl font-bold text-eu-text mb-2">${loc(helix.heading)}</h2>
+      <p class="text-sm text-gray-600 mb-5 max-w-3xl">${loc(helix.description)}</p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">${html}</div>
     </div>
   `;
@@ -344,6 +352,7 @@ function tabStakeholders(networkT, activeCategory, showForm) {
 // ─── Network hero (CMS) ───────────────────────────────────────────────────────
 
 function renderNetworkHero() {
+  if (!NETWORK_CONFIG || !NETWORK_CONFIG.heroBlock) return '';
   const hero = NETWORK_CONFIG.heroBlock;
   if (!hero?.visible) return '';
 
@@ -371,27 +380,28 @@ function renderNetworkHero() {
 // ─── render / mount ───────────────────────────────────────────────────────────
 
 export function render() {
-  const networkT      = t('network') || {};
-  const activeTab     = getState('networkTab')      || 'socios';
-  const activeCategory= getState('networkCategory') || 'todos';
-  const filterCountry = getState('networkCountry');
-  const showForm      = getState('networkShowForm') || false;
+  try {
+    const networkT      = t('network') || {};
+    const activeTab     = getState('networkTab')      || 'socios';
+    const activeCategory= getState('networkCategory') || 'todos';
+    const filterCountry = getState('networkCountry');
+    const showForm      = getState('networkShowForm') || false;
 
-  const tabBtnClass = (id) => `px-5 py-2.5 text-sm font-semibold border-b-2 -mb-px transition-colors cursor-pointer ${
-    activeTab === id ? 'border-eu-blue text-eu-blue' : 'border-transparent text-gray-600 hover:text-eu-text'
-  }`;
+    const tabBtnClass = (id) => `px-5 py-2.5 text-sm font-semibold border-b-2 -mb-px transition-colors cursor-pointer ${
+      activeTab === id ? 'border-eu-blue text-eu-blue' : 'border-transparent text-gray-600 hover:text-eu-text'
+    }`;
 
-  const content = activeTab === 'socios'
-    ? tabSocios(networkT, activeCategory, filterCountry === null ? null : filterCountry)
-    : tabStakeholders(networkT, activeCategory, showForm);
+    const content = activeTab === 'socios'
+      ? tabSocios(networkT, activeCategory, filterCountry === null ? null : filterCountry)
+      : tabStakeholders(networkT, activeCategory, showForm);
 
-  return `
+    return `
     <div>
       <!-- Header -->
       ${renderNetworkHero()}
 
       <div class="max-w-7xl mx-auto px-6 py-10">
-        ${helixBlock(networkT)}
+        ${helixBlock()}
 
         <!-- Tabs -->
         <div class="flex gap-1 border-b border-eu-border mb-6">
@@ -406,7 +416,11 @@ export function render() {
         ${content}
       </div>
     </div>
-  `;
+    `;
+  } catch (error) {
+    console.error('❌ Error rendering network view:', error);
+    return `<div class="p-6"><p class="text-red-600">Error al cargar la sección Red. Revisa la consola.</p><pre>${error.message}</pre></div>`;
+  }
 }
 
 function rerender() {
