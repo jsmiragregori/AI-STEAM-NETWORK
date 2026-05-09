@@ -265,7 +265,7 @@ function tabStakeholders(networkT, activeCategory, showForm) {
           </div>
         </div>
         <p class="font-bold text-eu-text text-sm leading-snug mb-0.5">${localized(s.name)}</p>
-        ${s.region ? `<p class="text-xs text-eu-teal font-semibold mb-2">📍 ${s.region}</p>` : ''}
+        ${s.region ? `<p class="text-xs text-eu-teal font-semibold mb-2">📍 ${localized(s.region)}</p>` : ''}
         ${description ? `<p class="text-xs text-gray-600 mb-2">${description}</p>` : ''}
         ${sectorPills ? `<div class="flex flex-wrap gap-1 mt-2">${sectorPills}</div>` : ''}
       </${cardElement}>

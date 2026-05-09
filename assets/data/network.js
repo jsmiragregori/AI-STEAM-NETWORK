@@ -910,13 +910,17 @@ export const NETWORK_CONFIG = {
         "partner": "ceice",
         "name": {
           "es": "AESIA – Agencia Española de Supervisión de IA",
-          "en": "AESIA – Agencia Española de Supervisión de IA",
-          "va": "AESIA – Agencia Española de Supervisión de IA"
+          "en": "AESIA – Spanish AI Supervisory Agency",
+          "va": "AESIA – Agència Espanyola de Supervisió de la IA"
         },
         "category": "admin",
         "primarySector": "transversal",
         "sectors": [],
-        "region": "Nacional",
+        "region": {
+          "es": "Nacional",
+          "en": "National",
+          "va": "Nacional"
+        },
         "country": "ES",
         "website": "https://www.aesia.es",
         "description": {
@@ -936,7 +940,11 @@ export const NETWORK_CONFIG = {
         "category": "admin",
         "primarySector": "transversal",
         "sectors": [],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://www.ivace.es",
         "description": {
@@ -956,7 +964,11 @@ export const NETWORK_CONFIG = {
         "category": "admin",
         "primarySector": "transversal",
         "sectors": [],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://www.gva.es/es/inicio/atencion_ciudadano/dgtic",
         "description": {
@@ -978,7 +990,11 @@ export const NETWORK_CONFIG = {
         "sectors": [
           "mfg"
         ],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://www.lasnaves.com",
         "description": {
@@ -998,7 +1014,11 @@ export const NETWORK_CONFIG = {
         "category": "empresa",
         "primarySector": "agr",
         "sectors": [],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://www.fedacova.org",
         "description": {
@@ -1018,7 +1038,11 @@ export const NETWORK_CONFIG = {
         "category": "empresa",
         "primarySector": "agr",
         "sectors": [],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://www.ava-asaja.es",
         "description": {
@@ -1038,7 +1062,11 @@ export const NETWORK_CONFIG = {
         "category": "empresa",
         "primarySector": "mfg",
         "sectors": [],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://www.femeval.es",
         "description": {
@@ -1058,7 +1086,11 @@ export const NETWORK_CONFIG = {
         "category": "empresa",
         "primarySector": "mfg",
         "sectors": [],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://www.ascer.es",
         "description": {
@@ -1080,7 +1112,11 @@ export const NETWORK_CONFIG = {
         "sectors": [
           "mob"
         ],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://www.globalomnium.com",
         "description": {
@@ -1100,7 +1136,11 @@ export const NETWORK_CONFIG = {
         "category": "empresa",
         "primarySector": "cci",
         "sectors": [],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://www.brainstorm.es",
         "description": {
@@ -1114,13 +1154,17 @@ export const NETWORK_CONFIG = {
         "partner": "ceice",
         "name": {
           "es": "ITI – Institut Tecnològic d'Informàtica",
-          "en": "ITI – Institut Tecnològic d'Informàtica",
+          "en": "ITI – Technological Institute of Informatics",
           "va": "ITI – Institut Tecnològic d'Informàtica"
         },
         "category": "universidad",
         "primarySector": "transversal",
         "sectors": [],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://www.iti.es",
         "description": {
@@ -1140,7 +1184,11 @@ export const NETWORK_CONFIG = {
         "category": "universidad",
         "primarySector": "transversal",
         "sectors": [],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://www.redit.es",
         "description": {
@@ -1154,13 +1202,17 @@ export const NETWORK_CONFIG = {
         "partner": "ceice",
         "name": {
           "es": "Hospital Universitario La Fe",
-          "en": "Hospital Universitario La Fe",
-          "va": "Hospital Universitario La Fe"
+          "en": "La Fe University Hospital",
+          "va": "Hospital Universitari La Fe"
         },
         "category": "sociedad",
         "primarySector": "health",
         "sectors": [],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://www.hospital-lafe.com",
         "description": {
@@ -1180,7 +1232,11 @@ export const NETWORK_CONFIG = {
         "category": "admin",
         "primarySector": "cci",
         "sectors": [],
-        "region": "C. Valenciana",
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
         "country": "ES",
         "website": "https://invattur.gva.es",
         "description": {
