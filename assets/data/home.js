@@ -454,6 +454,13 @@ export const HOME_CONFIG = {
         "va": "Veure totes"
       }
     },
+    "emptyState": {
+      "html": {
+        "es": "Aún no hay contribuciones publicadas. Próximamente podrás consultar aquí los retos, casos y aportaciones de la comunidad AI-STEAM.",
+        "en": "No contributions published yet. You will soon be able to browse challenges, cases and contributions from the AI-STEAM community here.",
+        "va": "Encara no hi ha contribucions publicades. Prompte podràs consultar ací els reptes, casos i aportacions de la comunitat AI-STEAM."
+      }
+    },
     "cards": [
       {
         "id": "r3",

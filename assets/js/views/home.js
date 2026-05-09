@@ -315,28 +315,31 @@ function renderLatestChallengesBlock() {
   const contributions = block.cards || [];
   const sectorNames = t('marketplace.sectorNames') || {};
 
-  const contributionsHtml = contributions.map(ch => {
-    const statusKey = statusClass(localized(ch.status));
-    const statusLabel = t(`marketplace.${statusKey}`);
-    const sectorLabel = sectorNames[ch.sectorCode] || ch.sectorCode;
-    const typeLabel = localized(ch.contributionType);
-    const levelLabel = localized(ch.level);
-    const badgeText = `${typeLabel} (${levelLabel})`;
-    const isFP = levelLabel === 'FP' || levelLabel === 'VET';
-    const typeClass = isFP ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
-    return `
-      <div class="bg-white rounded-xl border border-eu-border p-5 hover:border-eu-blue transition-colors shadow-sm">
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${typeClass}">${badgeText}</span>
-          <span class="text-sm text-eu-teal font-bold">● ${statusLabel}</span>
-        </div>
-        <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug">${localized(ch.title)}</h3>
-        <p class="text-xs text-gray-500 mb-3">${localized(ch.org)}</p>
-        <span class="text-sm bg-eu-bg border border-eu-border px-2 py-0.5 rounded text-gray-600 font-semibold">${sectorLabel}</span>
-      </div>`;
-  }).join('');
-
-  if (!contributionsHtml) return '';
+  const contributionsHtml = contributions.length === 0
+    ? `<div class="col-span-3 flex flex-col items-center justify-center py-12 px-6 bg-white rounded-xl border border-eu-border border-dashed text-center">
+        <i data-lucide="inbox" class="w-10 h-10 text-gray-300 mb-4"></i>
+        <p class="text-gray-500 text-sm max-w-md">${localized(block.emptyState?.html)}</p>
+      </div>`
+    : contributions.map(ch => {
+        const statusKey = statusClass(localized(ch.status));
+        const statusLabel = t(`marketplace.${statusKey}`);
+        const sectorLabel = sectorNames[ch.sectorCode] || ch.sectorCode;
+        const typeLabel = localized(ch.contributionType);
+        const levelLabel = localized(ch.level);
+        const badgeText = `${typeLabel} (${levelLabel})`;
+        const isFP = levelLabel === 'FP' || levelLabel === 'VET';
+        const typeClass = isFP ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
+        return `
+          <div class="bg-white rounded-xl border border-eu-border p-5 hover:border-eu-blue transition-colors shadow-sm">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${typeClass}">${badgeText}</span>
+              <span class="text-sm text-eu-teal font-bold">● ${statusLabel}</span>
+            </div>
+            <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug">${localized(ch.title)}</h3>
+            <p class="text-xs text-gray-500 mb-3">${localized(ch.org)}</p>
+            <span class="text-sm bg-eu-bg border border-eu-border px-2 py-0.5 rounded text-gray-600 font-semibold">${sectorLabel}</span>
+          </div>`;
+      }).join('');
 
   const viewAll = block.viewAll?.visible
     ? `<button data-nav="banco-retos" class="flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline bg-transparent border-none cursor-pointer">
