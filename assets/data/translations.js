@@ -6,7 +6,7 @@ export const translations = {
   "es": {
     "header": {
       "title": "AI-STEAM Network",
-      "subtitle": "Generalitat Valenciana · Conselleria d'Educació Cultura i Universitats",
+      "subtitle": "Generalitat Valenciana · Conselleria d'Educació, Cultura i Universitats",
       "privateAccess": "Acceso Área Privada",
       "aules": "Aules",
       "consensUE": "ConsensUE",
@@ -29,7 +29,7 @@ export const translations = {
       "privacy": "Privacidad",
       "sitemap": "Mapa Web",
       "orgName": "Generalitat Valenciana",
-      "orgUnit": "CEICE"
+      "orgUnit": "Conselleria de Educación, Cultura y Universidades"
     },
     "cookieBanner": {
       "legal": "Aviso Legal:",
@@ -2071,7 +2071,7 @@ export const translations = {
   "en": {
     "header": {
       "title": "AI-STEAM Network",
-      "subtitle": "Generalitat Valenciana · Education Culture and Universities Ministry",
+      "subtitle": "Generalitat Valenciana · Education, Culture and Universities Ministry",
       "privateAccess": "Private Access",
       "aules": "Aules",
       "consensUE": "ConsensUE",
@@ -2094,7 +2094,7 @@ export const translations = {
       "privacy": "Privacy",
       "sitemap": "Sitemap",
       "orgName": "Generalitat Valenciana",
-      "orgUnit": "CEICE"
+      "orgUnit": "Education, Culture and Universities Ministry"
     },
     "cookieBanner": {
       "legal": "Legal Notice:",
@@ -4136,7 +4136,7 @@ export const translations = {
   "va": {
     "header": {
       "title": "AI-STEAM Network",
-      "subtitle": "Generalitat Valenciana · Conselleria d'Educació Cultura i Universitats",
+      "subtitle": "Generalitat Valenciana · Conselleria d'Educació, Cultura i Universitats",
       "privateAccess": "Accés Àrea Privada",
       "aules": "Aules",
       "consensUE": "ConsensUE",
@@ -4159,7 +4159,7 @@ export const translations = {
       "privacy": "Privacitat",
       "sitemap": "Mapa Web",
       "orgName": "Generalitat Valenciana",
-      "orgUnit": "CEICE"
+      "orgUnit": "Conselleria d'Educació, Cultura i Universitats"
     },
     "cookieBanner": {
       "legal": "Avís Legal:",
