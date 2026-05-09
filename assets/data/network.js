@@ -904,6 +904,216 @@ export const NETWORK_CONFIG = {
   },
   "stakeholdersBlock": {
     "visible": true,
+    "tabTitle": {
+      "es": "Stakeholders de la Red",
+      "en": "Network Stakeholders",
+      "va": "Grups d'interès de la Xarxa"
+    },
+    "description": {
+      "es": "Los stakeholders son organizaciones adheridas voluntariamente a la red AI-STEAM. Su adhesión es <strong>gratuita</strong> (acuerdo de gasto cero) y les permite publicar retos, acceder a recursos formativos y participar en la gobernanza a través de ConsensUE.",
+      "en": "Stakeholders are organizations voluntarily joined to the AI-STEAM network. Their membership is <strong>free</strong> (zero-cost agreement) and allows them to publish challenges, access training resources and participate in governance through ConsensUE.",
+      "va": "Els grups d'interès són organitzacions adherides voluntàriament a la xarxa AI-STEAM. La seua adhesió és <strong>gratuïta</strong> (acord de despesa zero) i els permet publicar reptes, accedir a recursos formatius i participar en la governança a través de ConsensUE."
+    },
+    "filterAll": {
+      "es": "Todos",
+      "en": "All",
+      "va": "Tots"
+    },
+    "requestMembership": {
+      "es": "Solicitar adhesión",
+      "en": "Request Membership",
+      "va": "Solicitar adhesió"
+    },
+    "closeForm": {
+      "es": "Cerrar formulario",
+      "en": "Close Form",
+      "va": "Tancar formulari"
+    },
+    "noResults": {
+      "es": "No hay resultados que coincidan con los filtros seleccionados.",
+      "en": "No results match the selected filters.",
+      "va": "No hi ha resultats que coincidisquen amb els filtres seleccionats."
+    },
+    "form": {
+      "title": {
+        "es": "Formulario de Adhesión como Stakeholder",
+        "en": "Stakeholder Membership Form",
+        "va": "Formulari d'Adhesió com a Grup d'interès"
+      },
+      "subtitle": {
+        "es": "Adhesión bajo el Acuerdo de Gasto Cero · Plazo abierto · Solo para organizaciones externas al consorcio",
+        "en": "Zero Cost Agreement · Open deadline · External organizations only",
+        "va": "Adhesió sota l'Acord de Despesa Zero · Termini obert · Solo per a organitzacions externes al consorci"
+      },
+      "description": {
+        "es": "Al adherirte como stakeholder podrás publicar retos al Banco de Retos, acceder a recursos formativos, participar en la gobernanza vía ConsensUE y conectar con los socios del consorcio AI-SECRETT. Tras la solicitud, un miembro del consorcio contactará con tu organización para completar el proceso y ubicar la adhesión según país, región, sector y tipo de aportación.",
+        "en": "As a stakeholder, you will be able to publish challenges to the Challenge Bank, access training resources, participate in governance via ConsensUE, and connect with AI-SECRETT consortium partners. After the request, a consortium member will contact your organisation to complete the process and place the membership according to country, region, sector and type of contribution.",
+        "va": "En adherir-te com a grup d'interès podràs publicar reptes al Banc de Reptes, accedir a recursos formatius, participar en la governança vía ConsensUE i connectar amb els socis del consorci AI-SECRETT. Després de la sol·licitud, un membre del consorci contactarà amb la teua organització per completar el procés i ubicar l'adhesió segons país, regió, sector i tipus d'aportació."
+      },
+      "fields": {
+        "entityName": {
+          "es": "Nombre de la Entidad",
+          "en": "Organization Name",
+          "va": "Nom de l'Entitat"
+        },
+        "contact": {
+          "es": "Persona de Contacto",
+          "en": "Contact Person",
+          "va": "Persona de Contacte"
+        },
+        "email": {
+          "es": "Correo Electrónico Institucional",
+          "en": "Institutional Email",
+          "va": "Correu Electrònic Institucional"
+        },
+        "country": {
+          "es": "País",
+          "en": "Country",
+          "va": "País"
+        },
+        "region": {
+          "es": "Región / territorio",
+          "en": "Region / territory",
+          "va": "Regió / territori"
+        },
+        "sector": {
+          "es": "Sector Principal",
+          "en": "Main Sector",
+          "va": "Sector Principal"
+        },
+        "category": {
+          "es": "Categoría (Cuádruple Hélice)",
+          "en": "Category (Quadruple Helix)",
+          "va": "Categoria (Quàdruple Hèlix)"
+        },
+        "contributionFocus": {
+          "es": "Tipo de aportación prevista",
+          "en": "Expected contribution type",
+          "va": "Tipus d'aportació prevista"
+        },
+        "description": {
+          "es": "Descripción breve y motivación para unirse",
+          "en": "Brief description and motivation for joining",
+          "va": "Descripció breu i motivació per unir-se"
+        }
+      },
+      "sectorOptions": {
+        "manufacturing": {
+          "es": "Industria y Manufactura",
+          "en": "Manufacturing",
+          "va": "Industria i Manufactura"
+        },
+        "mobility": {
+          "es": "Movilidad y Transporte",
+          "en": "Mobility and Transport",
+          "va": "Mobilitat i Transport"
+        },
+        "energy": {
+          "es": "Energía y Medio Ambiente",
+          "en": "Energy and Environment",
+          "va": "Energia i Medi Ambient"
+        },
+        "agrifood": {
+          "es": "Agroalimentario",
+          "en": "Agrifood",
+          "va": "Agroalimentari"
+        },
+        "cci": {
+          "es": "Industrias Culturales y Creativas",
+          "en": "Cultural and Creative Industries",
+          "va": "Indústries Culturals i Creatives"
+        },
+        "housing": {
+          "es": "Vivienda",
+          "en": "Housing",
+          "va": "Habitatge"
+        },
+        "services": {
+          "es": "Servicios No Turísticos",
+          "en": "Non-Touristic Services",
+          "va": "Serveis No Turístics"
+        }
+      },
+      "categoryOptions": {
+        "university": {
+          "es": "Educación Superior / Centro I+D",
+          "en": "Higher Education / R&D Center",
+          "va": "Educació Superior / Centre I+D"
+        },
+        "company": {
+          "es": "Empresa / PYME / Clúster",
+          "en": "Company / SME / Cluster",
+          "va": "Empresa / PIME / Clúster"
+        },
+        "admin": {
+          "es": "Administración Pública",
+          "en": "Public Administration",
+          "va": "Administració Pública"
+        },
+        "civil": {
+          "es": "ONG / Sociedad Civil",
+          "en": "NGO / Civil Society",
+          "va": "ONG / Societat Civil"
+        }
+      },
+      "contributionOptions": {
+        "challenge": {
+          "es": "Reto o necesidad sectorial",
+          "en": "Sector challenge or need",
+          "va": "Repte o necessitat sectorial"
+        },
+        "case": {
+          "es": "Caso de uso o experiencia documentada",
+          "en": "Use case or documented experience",
+          "va": "Cas d'ús o experiència documentada"
+        },
+        "validation": {
+          "es": "Validación de relevancia sectorial",
+          "en": "Sector relevance validation",
+          "va": "Validació de rellevància sectorial"
+        },
+        "mentoring": {
+          "es": "Mentoría o apoyo experto",
+          "en": "Mentoring or expert support",
+          "va": "Mentoria o suport expert"
+        },
+        "pilot": {
+          "es": "Pilotaje en organización o centro",
+          "en": "Pilot in an organisation or centre",
+          "va": "Pilotatge en organització o centre"
+        },
+        "resource": {
+          "es": "Datos, recursos u OER",
+          "en": "Data, resources or OER",
+          "va": "Dades, recursos o OER"
+        },
+        "network": {
+          "es": "Participación en la comunidad y gobernanza",
+          "en": "Community and governance participation",
+          "va": "Participació en la comunitat i governança"
+        }
+      },
+      "acceptTerms": {
+        "es": "Acepto la",
+        "en": "I accept the",
+        "va": "Accepte la"
+      },
+      "privacyPolicy": {
+        "es": "política de privacidad",
+        "en": "privacy policy",
+        "va": "política de privacitat"
+      },
+      "rgpd": {
+        "es": "y el tratamiento de mis datos según el RGPD",
+        "en": "and the processing of my data according to GDPR",
+        "va": "i el tractament de les meues dades segons el RGPD"
+      },
+      "submitBtn": {
+        "es": "Enviar Solicitud",
+        "en": "Submit Application",
+        "va": "Enviar Solicitud"
+      }
+    },
     "stakeholders": [
       {
         "id": "aesia",

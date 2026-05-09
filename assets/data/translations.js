@@ -1,6 +1,6 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR DIRECTAMENTE
 // Edita los archivos en content/_ui/*.csv y ejecuta: npm run cms:ui
-// Base: translations.js existente + overrides de 123 entradas CSV
+// Base: translations.js existente + overrides de 79 entradas CSV
 
 export const translations = {
   "es": {

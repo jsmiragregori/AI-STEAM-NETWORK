@@ -223,6 +223,17 @@ function tabSocios(networkT, activeCategory, filterCountry) {
 
 function tabStakeholders(networkT, activeCategory, showForm) {
   const lang = getLang();
+  const shBlock = NETWORK_CONFIG?.stakeholdersBlock || {};
+  const shTexts = {
+    description:       localized(shBlock.description)       || networkT?.stakeholdersDesc || '',
+    filterAll:         localized(shBlock.filterAll)         || networkT?.filterAll || 'Todos',
+    requestMembership: localized(shBlock.requestMembership) || networkT?.requestMembership || '',
+    closeForm:         localized(shBlock.closeForm)         || networkT?.closeForm || '',
+    noResults:         localized(shBlock.noResults)         || networkT?.noResults || '',
+    form: shBlock.form || {},
+  };
+  const loc = obj => localized(obj) || '';
+
   const sc = counts(STAKEHOLDERS);
   const filtered = activeCategory === 'todos'
     ? STAKEHOLDERS
@@ -230,7 +241,7 @@ function tabStakeholders(networkT, activeCategory, showForm) {
 
   const catFilters = `
     <button data-net-cat="todos" class="px-4 py-1.5 rounded-full text-xs font-bold cursor-pointer border transition-colors ${activeCategory === 'todos' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-eu-text border-eu-border hover:border-eu-blue'}">
-      ${networkT?.stakeholdersFilterAll || 'Todos'} (${STAKEHOLDERS.length})
+      ${shTexts.filterAll} (${STAKEHOLDERS.length})
     </button>
     ${Object.entries(CATEGORY_META).filter(([key]) => (sc[key] || 0) > 0).map(([key, meta]) => `
       <button data-net-cat="${key}" class="px-4 py-1.5 rounded-full text-xs font-bold cursor-pointer border transition-colors ${activeCategory === key ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-eu-text border-eu-border hover:border-eu-blue'}">
@@ -272,86 +283,87 @@ function tabStakeholders(networkT, activeCategory, showForm) {
     `;
   }).join('');
 
+  const f = shTexts.form;
   const formHtml = showForm ? `
     <div id="stakeholder-form" class="bg-white rounded-xl border-2 border-eu-orange shadow-sm overflow-hidden mt-8">
       <div class="bg-eu-orange/10 border-b border-eu-orange/30 px-6 py-4 flex items-center gap-3">
         <i data-lucide="user-plus" class="w-5 h-5 text-eu-orange"></i>
         <div>
-          <h2 class="text-lg font-bold text-eu-text">${networkT?.formTitle || ''}</h2>
-          <p class="text-xs text-gray-600 mt-0.5">${networkT?.formSubtitle || ''}</p>
+          <h2 class="text-lg font-bold text-eu-text">${loc(f.title)}</h2>
+          <p class="text-xs text-gray-600 mt-0.5">${loc(f.subtitle)}</p>
         </div>
       </div>
       <div class="p-6 bg-eu-bg">
-        <p class="text-sm text-gray-600 mb-6 max-w-2xl">${networkT?.formDescription || ''}</p>
+        <p class="text-sm text-gray-600 mb-6 max-w-2xl">${loc(f.description)}</p>
         <form id="net-form" class="space-y-5 max-w-2xl">
           <div class="grid grid-cols-1 gap-y-5 gap-x-4 sm:grid-cols-2">
             <div class="sm:col-span-2">
-              <label for="net-entity" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.entityName || ''} *</label>
+              <label for="net-entity" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.entityName)} *</label>
               <input id="net-entity" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" placeholder="Ej. FEDACOVA, Hospital La Fe..." />
             </div>
             <div>
-              <label for="net-category" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.category || ''} *</label>
+              <label for="net-category" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.category)} *</label>
               <select id="net-category" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-                <option>${networkT?.categoryOptions?.university || ''}</option>
-                <option>${networkT?.categoryOptions?.company || ''}</option>
-                <option>${networkT?.categoryOptions?.admin || ''}</option>
-                <option>${networkT?.categoryOptions?.civil || ''}</option>
+                <option>${loc(f.categoryOptions?.university)}</option>
+                <option>${loc(f.categoryOptions?.company)}</option>
+                <option>${loc(f.categoryOptions?.admin)}</option>
+                <option>${loc(f.categoryOptions?.civil)}</option>
               </select>
             </div>
             <div>
-              <label for="net-sector" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.sector || ''} *</label>
+              <label for="net-sector" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.sector)} *</label>
               <select id="net-sector" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-                <option>${networkT?.sectorOptions?.manufacturing || ''}</option>
-                <option>${networkT?.sectorOptions?.mobility || ''}</option>
-                <option>${networkT?.sectorOptions?.energy || ''}</option>
-                <option>${networkT?.sectorOptions?.agrifood || ''}</option>
-                <option>${networkT?.sectorOptions?.cci || ''}</option>
-                <option>${networkT?.sectorOptions?.housing || ''}</option>
-                <option>${networkT?.sectorOptions?.services || ''}</option>
+                <option>${loc(f.sectorOptions?.manufacturing)}</option>
+                <option>${loc(f.sectorOptions?.mobility)}</option>
+                <option>${loc(f.sectorOptions?.energy)}</option>
+                <option>${loc(f.sectorOptions?.agrifood)}</option>
+                <option>${loc(f.sectorOptions?.cci)}</option>
+                <option>${loc(f.sectorOptions?.housing)}</option>
+                <option>${loc(f.sectorOptions?.services)}</option>
               </select>
             </div>
             <div>
-              <label for="net-contact" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.contact || ''} *</label>
+              <label for="net-contact" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.contact)} *</label>
               <input id="net-contact" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" placeholder="Nombre y apellidos" />
             </div>
             <div>
-              <label for="net-country" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.country || ''} *</label>
+              <label for="net-country" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.country)} *</label>
               <input id="net-country" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" value="España" />
             </div>
             <div>
-              <label for="net-region" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.region || ''} *</label>
+              <label for="net-region" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.region)} *</label>
               <input id="net-region" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" placeholder="Comunitat Valenciana..." />
             </div>
             <div class="sm:col-span-2">
-              <label for="net-email" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.email || ''} *</label>
+              <label for="net-email" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.email)} *</label>
               <input id="net-email" type="email" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" placeholder="correo@entidad.com" />
             </div>
             <div class="sm:col-span-2">
-              <label for="net-contribution" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.contributionFocus || ''} *</label>
+              <label for="net-contribution" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.contributionFocus)} *</label>
               <select id="net-contribution" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-                <option>${networkT?.contributionOptions?.challenge || ''}</option>
-                <option>${networkT?.contributionOptions?.case || ''}</option>
-                <option>${networkT?.contributionOptions?.validation || ''}</option>
-                <option>${networkT?.contributionOptions?.mentoring || ''}</option>
-                <option>${networkT?.contributionOptions?.pilot || ''}</option>
-                <option>${networkT?.contributionOptions?.resource || ''}</option>
-                <option>${networkT?.contributionOptions?.network || ''}</option>
+                <option>${loc(f.contributionOptions?.challenge)}</option>
+                <option>${loc(f.contributionOptions?.case)}</option>
+                <option>${loc(f.contributionOptions?.validation)}</option>
+                <option>${loc(f.contributionOptions?.mentoring)}</option>
+                <option>${loc(f.contributionOptions?.pilot)}</option>
+                <option>${loc(f.contributionOptions?.resource)}</option>
+                <option>${loc(f.contributionOptions?.network)}</option>
               </select>
             </div>
             <div class="sm:col-span-2">
-              <label for="net-description" class="block text-xs font-bold text-eu-text mb-1">${networkT?.formFields?.description || ''}</label>
+              <label for="net-description" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.description)}</label>
               <textarea id="net-description" rows="3" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white resize-none" placeholder="Describa su entidad e interés en la red AI-STEAM..."></textarea>
             </div>
           </div>
           <div class="flex items-center gap-2">
             <input type="checkbox" id="net-gdpr" class="rounded border-eu-border" />
             <label for="net-gdpr" class="text-xs text-gray-600">
-              ${networkT?.acceptTerms || ''} <a href="#" class="text-eu-blue hover:underline">${networkT?.privacyPolicy || ''}</a> ${networkT?.rgpd || ''}
+              ${loc(f.acceptTerms)} <a href="#" class="text-eu-blue hover:underline">${loc(f.privacyPolicy)}</a> ${loc(f.rgpd)}
             </label>
           </div>
           <div class="flex justify-end">
             <button type="submit" class="bg-eu-orange text-white px-6 py-2.5 rounded-md font-bold border-none hover:bg-eu-purple transition-colors cursor-pointer">
-              ${networkT?.submitBtn || ''}
+              ${loc(f.submitBtn)}
             </button>
           </div>
         </form>
@@ -360,10 +372,10 @@ function tabStakeholders(networkT, activeCategory, showForm) {
 
   return `
     <div class="flex items-start justify-between mb-5 flex-wrap gap-4">
-      <p class="text-sm text-gray-600 max-w-3xl">${networkT?.stakeholdersDesc || ''}</p>
+      <p class="text-sm text-gray-600 max-w-3xl">${shTexts.description}</p>
       <button id="net-toggle-form" class="flex items-center gap-2 bg-eu-orange text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0">
         <i data-lucide="user-plus" class="w-4 h-4"></i>
-        ${showForm ? (networkT?.closeForm || 'Cerrar') : (networkT?.requestMembership || 'Solicitar')}
+        ${showForm ? shTexts.closeForm : shTexts.requestMembership}
       </button>
     </div>
     <div class="flex flex-wrap gap-2 mb-5">${catFilters}</div>
@@ -436,7 +448,7 @@ export function render() {
         <div class="flex gap-1 border-b border-eu-border mb-6">
           ${partnersTab}
           <button data-net-tab="stakeholders" class="${tabBtnClass('stakeholders')}">
-            ${networkT?.stakeholdersTabTitle || 'Stakeholders'} (${STAKEHOLDERS.length})
+            ${localized(NETWORK_CONFIG?.stakeholdersBlock?.tabTitle) || networkT?.stakeholdersTabTitle || 'Stakeholders'} (${STAKEHOLDERS.length})
           </button>
         </div>
 
