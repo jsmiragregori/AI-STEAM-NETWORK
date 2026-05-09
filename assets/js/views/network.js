@@ -1,5 +1,6 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
+import { NETWORK_CONFIG } from '../../data/network.js';
 
 // ─── Static data ─────────────────────────────────────────────────────────────
 
@@ -340,6 +341,33 @@ function tabStakeholders(networkT, activeCategory, showForm) {
   `;
 }
 
+// ─── Network hero (CMS) ───────────────────────────────────────────────────────
+
+function renderNetworkHero() {
+  const hero = NETWORK_CONFIG.heroBlock;
+  if (!hero?.visible) return '';
+
+  const lang = getLang();
+  const title = hero.title?.[lang] || hero.title?.es || '';
+  const description = hero.description?.[lang] || hero.description?.es || '';
+
+  const statsHtml = (hero.stats || []).map(s => `
+    <div class="bg-white/10 rounded-xl px-5 py-3 text-center">
+      <p class="text-2xl font-extrabold text-eu-yellow">${s.value}</p>
+      <p class="text-xs text-white/70 font-semibold uppercase mt-0.5">${s.label?.[lang] || s.label?.es || ''}</p>
+    </div>`
+  ).join('');
+
+  return `
+    <div class="bg-eu-blue text-white px-6 py-12">
+      <div class="max-w-7xl mx-auto">
+        <h1 class="text-3xl font-extrabold mb-3">${title}</h1>
+        <p class="text-white/80 max-w-3xl text-base mb-6">${description}</p>
+        <div class="flex flex-wrap gap-4">${statsHtml}</div>
+      </div>
+    </div>`;
+}
+
 // ─── render / mount ───────────────────────────────────────────────────────────
 
 export function render() {
@@ -360,30 +388,7 @@ export function render() {
   return `
     <div>
       <!-- Header -->
-      <div class="bg-eu-blue text-white px-6 py-12">
-        <div class="max-w-7xl mx-auto">
-          <h1 class="text-3xl font-extrabold mb-3">${t('network.title') || ''}</h1>
-          <p class="text-white/80 max-w-3xl text-base mb-6">${t('network.description') || ''}</p>
-          <div class="flex flex-wrap gap-4">
-            <div class="bg-white/10 rounded-xl px-5 py-3 text-center">
-              <p class="text-2xl font-extrabold text-eu-yellow">${PARTNERS.length}</p>
-              <p class="text-xs text-white/70 font-semibold uppercase mt-0.5">${networkT?.stats?.consortiumPartners || ''}</p>
-            </div>
-            <div class="bg-white/10 rounded-xl px-5 py-3 text-center">
-              <p class="text-2xl font-extrabold text-eu-yellow">${STAKEHOLDERS.length}</p>
-              <p class="text-xs text-white/70 font-semibold uppercase mt-0.5">${networkT?.stats?.stakeholdersNetwork || ''}</p>
-            </div>
-            <div class="bg-white/10 rounded-xl px-5 py-3 text-center">
-              <p class="text-2xl font-extrabold text-eu-yellow">${COUNTRIES.length}</p>
-              <p class="text-xs text-white/70 font-semibold uppercase mt-0.5">${networkT?.stats?.countries || ''}</p>
-            </div>
-            <div class="bg-white/10 rounded-xl px-5 py-3 text-center">
-              <p class="text-2xl font-extrabold text-eu-yellow">${PARTNERS.length + STAKEHOLDERS.length}</p>
-              <p class="text-xs text-white/70 font-semibold uppercase mt-0.5">${networkT?.stats?.totalOrganizations || ''}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      ${renderNetworkHero()}
 
       <div class="max-w-7xl mx-auto px-6 py-10">
         ${helixBlock(networkT)}
