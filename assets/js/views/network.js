@@ -4,6 +4,19 @@ import { NETWORK_CONFIG } from '../../data/network.js';
 
 // ── Static data ─────────────────────────────────────────────────────────────
 
+const SECTOR_ICON = {
+  mfg:         'factory',
+  mob:         'car',
+  ene:         'zap',
+  agr:         'wheat',
+  cci:         'palette',
+  hou:         'building',
+  nts:         'stethoscope',
+  edu:         'graduation-cap',
+  health:      'heart-pulse',
+  transversal: 'layers',
+};
+
 const PARTNERS = [
   { id: 'uveg',   name: 'Universitat de València',               acronym: 'UVEG',    country: 'ES', city: 'Valencia',        category: 'universidad', sectors: ['Educación', 'Industria'],            role: 'coordinator'   },
   { id: 'umu',    name: 'Universidad de Murcia',                  acronym: 'UMU',     country: 'ES', city: 'Murcia',          category: 'universidad', sectors: ['Salud', 'Educación'],                role: 'beneficiary'   },
@@ -35,22 +48,7 @@ const CMS_PARTNERS = NETWORK_CONFIG?.partnersBlock?.partners || [];
 const ACTIVE_PARTNERS = PARTNERS_BLOCK_VISIBLE ? (CMS_PARTNERS.length ? CMS_PARTNERS : PARTNERS) : [];
 const SHOW_PARTNERS_TAB = PARTNERS_BLOCK_VISIBLE && ACTIVE_PARTNERS.length > 0;
 
-const STAKEHOLDERS = [
-  { id: 'aesia',        name: 'AESIA – Agencia Española de Supervisión de IA',  type: 'Agencia estatal regulatoria',      sector: 'Transversal',        region: 'Nacional',        category: 'admin'      },
-  { id: 'ivace',        name: 'IVACE+i',                                          type: 'Agencia de Innovación Regional',   sector: 'Transversal',        region: 'C. Valenciana',   category: 'admin'      },
-  { id: 'dgtic',        name: 'GVA – DGTIC',                                      type: 'Organismo Público',                sector: 'Transversal',        region: 'C. Valenciana',   category: 'admin'      },
-  { id: 'lasnaves',     name: 'Las Naves',                                        type: 'Centro de Innovación Urbana',      sector: 'Industria / Energía', region: 'C. Valenciana',  category: 'admin'      },
-  { id: 'fedacova',     name: 'FEDACOVA',                                         type: 'Federación Agroalimentaria',       sector: 'Agroalimentario',    region: 'C. Valenciana',   category: 'empresa'    },
-  { id: 'avaasaja',     name: 'AVA-ASAJA',                                        type: 'Asociación de Agricultores',       sector: 'Agroalimentario',    region: 'C. Valenciana',   category: 'empresa'    },
-  { id: 'femeval',      name: 'FEMEVAL',                                          type: 'Federación Metalúrgica',           sector: 'Manufactura',        region: 'C. Valenciana',   category: 'empresa'    },
-  { id: 'ascer',        name: 'ASCER',                                            type: 'Asoc. Fabricantes de Azulejos',    sector: 'Manufactura',        region: 'C. Valenciana',   category: 'empresa'    },
-  { id: 'globalomnium', name: 'Global Omnium',                                    type: 'Empresa de Gestión del Agua',      sector: 'Medio Ambiente',     region: 'C. Valenciana',   category: 'empresa'    },
-  { id: 'brainstorm',   name: 'Brainstorm Multimedia',                            type: 'Empresa Tecnológica',              sector: 'Turismo y Cultura',  region: 'C. Valenciana',   category: 'empresa'    },
-  { id: 'iti',          name: "ITI – Institut Tecnològic d'Informàtica",         type: 'Centro Tecnológico (REDIT)',       sector: 'Transversal',        region: 'C. Valenciana',   category: 'universidad'},
-  { id: 'redit',        name: 'REDIT',                                            type: 'Red de Institutos Tecnológicos',   sector: 'Transversal',        region: 'C. Valenciana',   category: 'universidad'},
-  { id: 'lafe',         name: 'Hospital Universitario La Fe',                     type: 'Institución Sanitaria Pública',    sector: 'Salud',              region: 'C. Valenciana',   category: 'sociedad'   },
-  { id: 'invattur',     name: "INVAT·TUR",                                        type: 'Instituto Tecnologías Turísticas', sector: 'Turismo y Cultura',  region: 'C. Valenciana',   category: 'admin'      },
-];
+const STAKEHOLDERS = NETWORK_CONFIG?.stakeholdersBlock?.stakeholders || [];
 
 const CATEGORY_META = {
   universidad: { icon: 'graduation-cap', color: 'text-purple-700', bg: 'bg-purple-100', border: 'border-purple-300' },
@@ -59,22 +57,6 @@ const CATEGORY_META = {
   sociedad:    { icon: 'heart-handshake',color: 'text-pink-700',   bg: 'bg-pink-100',   border: 'border-pink-300'   },
 };
 
-const STAKEHOLDER_DESCS = {
-  aesia:        { es: 'Supervisión regulatoria y ética de la IA en España.',                                             en: 'AI regulatory supervision and ethics in Spain.',                                    va: "Supervisió regulatòria i ética de la IA a Espanya."                                     },
-  ivace:        { es: 'Financiación de innovación y enlace con PYMES.',                                                  en: 'Innovation funding and liaison with SMEs.',                                         va: "Finançament d'innovació i enllaç amb PIMEs."                                            },
-  dgtic:        { es: 'Dirección General de TIC de la GVA.',                                                             en: 'General Directorate of ICT of the GVA.',                                           va: 'Direcció General de TIC de la GVA.'                                                     },
-  lasnaves:     { es: 'Living lab urbano, misiones 2030 de la ciudad de Valencia.',                                      en: 'Urban living lab, 2030 missions of the city of Valencia.',                          va: 'Living lab urbà, missions 2030 de la ciutat de València.'                               },
-  fedacova:     { es: 'Agrupa 30 asociaciones de la industria transformadora agroalimentaria.',                          en: 'Groups 30 associations of the agrifood processing industry.',                       va: "Agrupa 30 associacions de la indústria transformadora agroalimentària."                  },
-  avaasaja:     { es: 'Digitalización rural y representación de la base productiva agrícola.',                           en: 'Rural digitalization and representation of the agricultural productive base.',       va: 'Digitalització rural i representació de la base productiva agrícola.'                   },
-  femeval:      { es: 'Transformación digital del sector metal valenciano.',                                              en: 'Digital transformation of the Valencian metal sector.',                             va: 'Transformació digital del sector metal valencià.'                                       },
-  ascer:        { es: 'Clúster cerámico, eficiencia energética e IA en diseño.',                                         en: 'Ceramic cluster, energy efficiency and AI in design.',                              va: 'Clúster ceràmic, eficiència energètica i IA en disseny.'                                },
-  globalomnium: { es: 'IA en ciclo integral del agua y gemelos digitales.',                                              en: 'AI in the complete water cycle and digital twins.',                                  va: "IA en cicle integral de l'aigua i bessons digitals."                                    },
-  brainstorm:   { es: 'Gráficos 3D en tiempo real y estudios virtuales con IA.',                                         en: 'Real-time 3D graphics and virtual studios with AI.',                                va: 'Gràfics 3D en temps real i estudis virtuals amb IA.'                                    },
-  iti:          { es: 'Big Data, IA y coordinador del EDIH valenciano.',                                                  en: 'Big Data, AI and coordinator of the Valencian EDIH.',                               va: "Big Data, IA i coordinador de l'EDIH valencià."                                         },
-  redit:        { es: 'Coordinación de 11 centros tecnológicos de la Comunitat Valenciana.',                             en: 'Coordination of 11 technology centers in the Valencian Community.',                 va: 'Coordinació de 11 centres tecnològics de la Comunitat Valenciana.'                      },
-  lafe:         { es: 'Referente en IA clínica y datos de salud.',                                                       en: 'Leader in clinical AI and health data.',                                            va: 'Referent en IA clínica i dades de salut.'                                               },
-  invattur:     { es: 'Turismo inteligente y analítica de destinos.',                                                    en: 'Smart tourism and destination analytics.',                                          va: 'Turisme intel·ligent i analítica de destinacions.'                                      },
-};
 
 const COUNTRIES = [...new Set(ACTIVE_PARTNERS.map(p => p.country))];
 
@@ -92,11 +74,6 @@ function localized(value) {
   const lang = getLang();
   if (typeof value === 'string') return value;
   return value?.[lang] || value?.es || '';
-}
-
-function getDesc(id) {
-  const lang = getLang();
-  return STAKEHOLDER_DESCS[id]?.[lang] || '';
 }
 
 function counts(list) {
@@ -232,6 +209,7 @@ function tabSocios(networkT, activeCategory, filterCountry) {
 // ─── Stakeholders tab ─────────────────────────────────────────────────────────
 
 function tabStakeholders(networkT, activeCategory, showForm) {
+  const lang = getLang();
   const sc = counts(STAKEHOLDERS);
   const filtered = activeCategory === 'todos'
     ? STAKEHOLDERS
@@ -249,21 +227,31 @@ function tabStakeholders(networkT, activeCategory, showForm) {
   `;
 
   const cardsHtml = filtered.map(s => {
-    const meta = CATEGORY_META[s.category];
+    const meta = CATEGORY_META[s.category] || CATEGORY_META.sociedad;
+    const sectorIcon = SECTOR_ICON[s.primarySector] || 'layers';
+    const description = s.description?.[lang] || s.description?.es || '';
+    const categoryLabel = networkT?.categoryLabels?.[s.category] || s.category;
+    const secondaryPills = (s.sectors || []).map(sec =>
+      `<span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${sec}</span>`
+    ).join('');
+    const cardAttrs = s.website ? `href="${s.website}" target="_blank" rel="noopener noreferrer"` : '';
+    const cardElement = s.website ? 'a' : 'div';
     return `
-      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-4 hover:border-eu-blue transition-colors">
+      <${cardElement} ${cardAttrs} class="block bg-white rounded-xl border border-eu-border shadow-sm p-4 hover:border-eu-blue hover:shadow-md transition-colors no-underline">
         <div class="flex items-start justify-between mb-3">
           <div class="w-9 h-9 rounded-lg ${meta.bg} flex items-center justify-center">
-            <i data-lucide="${meta.icon}" class="w-4 h-4 ${meta.color}"></i>
+            <i data-lucide="${sectorIcon}" class="w-4 h-4 ${meta.color}"></i>
           </div>
-          <span class="text-xs bg-eu-orange/10 text-eu-orange font-bold px-1.5 py-0.5 rounded">${networkT?.stakeholderBadge || 'Stakeholder'}</span>
+          <div class="network-category-tooltip flex items-center gap-1.5 ${meta.bg} ${meta.border} border rounded-full px-2 py-0.5" data-tooltip="${categoryLabel}" aria-label="${categoryLabel}" tabindex="0">
+            <i data-lucide="${meta.icon}" class="w-3 h-3 ${meta.color}"></i>
+            <span class="text-xs font-bold ${meta.color}">${categoryLabel}</span>
+          </div>
         </div>
         <p class="font-bold text-eu-text text-sm leading-snug mb-0.5">${s.name}</p>
-        <p class="text-xs text-gray-500 mb-1">${s.type}</p>
-        <p class="text-xs text-eu-teal font-semibold mb-2">📍 ${s.region}</p>
-        <p class="text-xs text-gray-600 mb-2">${getDesc(s.id)}</p>
-        <span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${s.sector}</span>
-      </div>
+        ${s.region ? `<p class="text-xs text-eu-teal font-semibold mb-2">📍 ${s.region}</p>` : ''}
+        ${description ? `<p class="text-xs text-gray-600 mb-2">${description}</p>` : ''}
+        ${secondaryPills ? `<div class="flex flex-wrap gap-1">${secondaryPills}</div>` : ''}
+      </${cardElement}>
     `;
   }).join('');
 

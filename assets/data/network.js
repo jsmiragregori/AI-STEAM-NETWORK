@@ -901,5 +901,238 @@ export const NETWORK_CONFIG = {
         "url": "https://www.relais-culture-europe.eu/"
       }
     ]
+  },
+  "stakeholdersBlock": {
+    "visible": true,
+    "stakeholders": [
+      {
+        "id": "aesia",
+        "partner": "ceice",
+        "name": "AESIA – Agencia Española de Supervisión de IA",
+        "category": "admin",
+        "primarySector": "transversal",
+        "sectors": [],
+        "region": "Nacional",
+        "country": "ES",
+        "website": "https://www.aesia.es",
+        "description": {
+          "es": "Supervisión regulatoria y ética de la IA en España.",
+          "en": "AI regulatory supervision and ethics in Spain.",
+          "va": "Supervisió regulatòria i ètica de la IA a Espanya."
+        }
+      },
+      {
+        "id": "ivace",
+        "partner": "ceice",
+        "name": "IVACE+i",
+        "category": "admin",
+        "primarySector": "transversal",
+        "sectors": [],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://www.ivace.es",
+        "description": {
+          "es": "Financiación de innovación y enlace con PYMES.",
+          "en": "Innovation funding and liaison with SMEs.",
+          "va": "Finançament d'innovació i enllaç amb PIMEs."
+        }
+      },
+      {
+        "id": "dgtic",
+        "partner": "ceice",
+        "name": "GVA – DGTIC",
+        "category": "admin",
+        "primarySector": "transversal",
+        "sectors": [],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://www.gva.es/es/inicio/atencion_ciudadano/dgtic",
+        "description": {
+          "es": "Dirección General de TIC de la Generalitat Valenciana.",
+          "en": "General Directorate of ICT of the GVA.",
+          "va": "Direcció General de TIC de la Generalitat Valenciana."
+        }
+      },
+      {
+        "id": "lasnaves",
+        "partner": "ceice",
+        "name": "Las Naves",
+        "category": "admin",
+        "primarySector": "ene",
+        "sectors": [
+          "mfg"
+        ],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://www.lasnaves.com",
+        "description": {
+          "es": "Living lab urbano, misiones 2030 de la ciudad de Valencia.",
+          "en": "Urban living lab, 2030 missions of the city of Valencia.",
+          "va": "Living lab urbà, missions 2030 de la ciutat de València."
+        }
+      },
+      {
+        "id": "fedacova",
+        "partner": "ceice",
+        "name": "FEDACOVA",
+        "category": "empresa",
+        "primarySector": "agr",
+        "sectors": [],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://www.fedacova.org",
+        "description": {
+          "es": "Agrupa 30 asociaciones de la industria transformadora agroalimentaria.",
+          "en": "Groups 30 associations of the agrifood processing industry.",
+          "va": "Agrupa 30 associacions de la indústria transformadora agroalimentària."
+        }
+      },
+      {
+        "id": "avaasaja",
+        "partner": "ceice",
+        "name": "AVA-ASAJA",
+        "category": "empresa",
+        "primarySector": "agr",
+        "sectors": [],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://www.ava-asaja.es",
+        "description": {
+          "es": "Digitalización rural y representación de la base productiva agrícola.",
+          "en": "Rural digitalization and representation of the agricultural productive base.",
+          "va": "Digitalització rural i representació de la base productiva agrícola."
+        }
+      },
+      {
+        "id": "femeval",
+        "partner": "ceice",
+        "name": "FEMEVAL",
+        "category": "empresa",
+        "primarySector": "mfg",
+        "sectors": [],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://www.femeval.es",
+        "description": {
+          "es": "Transformación digital del sector metal valenciano.",
+          "en": "Digital transformation of the Valencian metal sector.",
+          "va": "Transformació digital del sector metal valencià."
+        }
+      },
+      {
+        "id": "ascer",
+        "partner": "ceice",
+        "name": "ASCER",
+        "category": "empresa",
+        "primarySector": "mfg",
+        "sectors": [],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://www.ascer.es",
+        "description": {
+          "es": "Clúster cerámico, eficiencia energética e IA en diseño.",
+          "en": "Ceramic cluster, energy efficiency and AI in design.",
+          "va": "Clúster ceràmic, eficiència energètica i IA en disseny."
+        }
+      },
+      {
+        "id": "globalomnium",
+        "partner": "ceice",
+        "name": "Global Omnium",
+        "category": "empresa",
+        "primarySector": "ene",
+        "sectors": [
+          "mob"
+        ],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://www.globalomnium.com",
+        "description": {
+          "es": "IA en ciclo integral del agua y gemelos digitales.",
+          "en": "AI in the complete water cycle and digital twins.",
+          "va": "IA en cicle integral de l'aigua i bessons digitals."
+        }
+      },
+      {
+        "id": "brainstorm",
+        "partner": "ceice",
+        "name": "Brainstorm Multimedia",
+        "category": "empresa",
+        "primarySector": "cci",
+        "sectors": [],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://www.brainstorm.es",
+        "description": {
+          "es": "Gráficos 3D en tiempo real y estudios virtuales con IA.",
+          "en": "Real-time 3D graphics and virtual studios with AI.",
+          "va": "Gràfics 3D en temps real i estudis virtuals amb IA."
+        }
+      },
+      {
+        "id": "iti",
+        "partner": "ceice",
+        "name": "ITI – Institut Tecnològic d'Informàtica",
+        "category": "universidad",
+        "primarySector": "transversal",
+        "sectors": [],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://www.iti.es",
+        "description": {
+          "es": "Big Data, IA y coordinador del EDIH valenciano.",
+          "en": "Big Data, AI and coordinator of the Valencian EDIH.",
+          "va": "Big Data, IA i coordinador de l'EDIH valencià."
+        }
+      },
+      {
+        "id": "redit",
+        "partner": "ceice",
+        "name": "REDIT",
+        "category": "universidad",
+        "primarySector": "transversal",
+        "sectors": [],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://www.redit.es",
+        "description": {
+          "es": "Coordinación de 11 centros tecnológicos de la Comunitat Valenciana.",
+          "en": "Coordination of 11 technology centers in the Valencian Community.",
+          "va": "Coordinació de 11 centres tecnològics de la Comunitat Valenciana."
+        }
+      },
+      {
+        "id": "lafe",
+        "partner": "ceice",
+        "name": "Hospital Universitario La Fe",
+        "category": "sociedad",
+        "primarySector": "health",
+        "sectors": [],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://www.hospital-lafe.com",
+        "description": {
+          "es": "Referente en IA clínica y datos de salud.",
+          "en": "Leader in clinical AI and health data.",
+          "va": "Referent en IA clínica i dades de salut."
+        }
+      },
+      {
+        "id": "invattur",
+        "partner": "ceice",
+        "name": "INVAT·TUR",
+        "category": "admin",
+        "primarySector": "cci",
+        "sectors": [],
+        "region": "C. Valenciana",
+        "country": "ES",
+        "website": "https://invattur.gva.es",
+        "description": {
+          "es": "Turismo inteligente y analítica de destinos.",
+          "en": "Smart tourism and destination analytics.",
+          "va": "Turisme intel·ligent i analítica de destinacions."
+        }
+      }
+    ]
   }
 };
