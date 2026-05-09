@@ -26,7 +26,7 @@ export const NETWORK_CONFIG = {
       },
       {
         "id": "stakeholdersNetwork",
-        "value": "2",
+        "value": "14",
         "label": {
           "es": "Stakeholders Red",
           "en": "Network Stakeholders",
@@ -44,14 +44,20 @@ export const NETWORK_CONFIG = {
       },
       {
         "id": "totalOrganizations",
-        "value": "35",
+        "value": "37",
         "label": {
           "es": "Total Organizaciones",
           "en": "Total Organizations",
           "va": "Total Organitzacions"
         }
       }
-    ]
+    ],
+    "computedStats": {
+      "consortiumPartners": 23,
+      "countries": 12,
+      "totalOrganizations": 37,
+      "stakeholdersNetwork": 14
+    }
   },
   "helixBlock": {
     "visible": true,
@@ -863,6 +869,36 @@ export const NETWORK_CONFIG = {
         ],
         "role": "beneficiary",
         "url": "https://www.inspiringfutures.eu/"
+      },
+      {
+        "id": "rce",
+        "name": {
+          "es": "Relais Culture Europe",
+          "en": "Relais Culture Europe",
+          "va": "Relais Culture Europe"
+        },
+        "acronym": "RCE",
+        "country": "FR",
+        "city": {
+          "es": "París",
+          "en": "Paris",
+          "va": "París"
+        },
+        "category": "sociedad",
+        "categoryLabel": {
+          "es": "Sociedad Civil y ONG",
+          "en": "Civil Society & NGOs",
+          "va": "Societat Civil i ONG"
+        },
+        "sectors": [
+          {
+            "es": "Turismo y Cultura",
+            "en": "Tourism and Culture",
+            "va": "Turisme i Cultura"
+          }
+        ],
+        "role": "associated",
+        "url": "https://www.relais-culture-europe.eu/"
       }
     ]
   }

@@ -44,7 +44,7 @@ export const HOME_CONFIG = {
     "stats": [
       {
         "id": "stakeholders",
-        "value": 12,
+        "value": 14,
         "icon": "users",
         "label": {
           "es": "Grupos de interés",
@@ -748,10 +748,6 @@ export const HOME_CONFIG = {
         "name": "UVEG"
       },
       {
-        "id": "ceice",
-        "name": "CEICE"
-      },
-      {
         "id": "umu",
         "name": "UMU"
       },
@@ -772,12 +768,40 @@ export const HOME_CONFIG = {
         "name": "FIDIT"
       },
       {
+        "id": "uda",
+        "name": "Ud'A"
+      },
+      {
+        "id": "esad",
+        "name": "ESAD-GV"
+      },
+      {
         "id": "inesc",
         "name": "INESC"
       },
       {
         "id": "laurea",
         "name": "LAUREA"
+      },
+      {
+        "id": "ceice",
+        "name": "CEICE"
+      },
+      {
+        "id": "lpga",
+        "name": "LPGA"
+      },
+      {
+        "id": "varm",
+        "name": "VARM"
+      },
+      {
+        "id": "preda",
+        "name": "PREDA"
+      },
+      {
+        "id": "cogn",
+        "name": "COGN"
       },
       {
         "id": "tuvit",
@@ -792,44 +816,20 @@ export const HOME_CONFIG = {
         "name": "C-LINK"
       },
       {
-        "id": "lc",
-        "name": "LC"
-      },
-      {
-        "id": "cogn",
-        "name": "COGN"
-      },
-      {
-        "id": "esadgv",
-        "name": "ESAD-GV"
-      },
-      {
-        "id": "ife",
-        "name": "IF.E"
-      },
-      {
-        "id": "uda",
-        "name": "Ud'A"
-      },
-      {
-        "id": "lpga",
-        "name": "LPGA"
-      },
-      {
-        "id": "varm",
-        "name": "VARM"
-      },
-      {
         "id": "cink",
         "name": "CINK"
+      },
+      {
+        "id": "lc",
+        "name": "LC"
       },
       {
         "id": "kea",
         "name": "KEA"
       },
       {
-        "id": "preda",
-        "name": "PREDA"
+        "id": "ife",
+        "name": "IF.E"
       },
       {
         "id": "rce",

@@ -30,8 +30,10 @@ const PARTNERS = [
   { id: 'rce',    name: 'Relais Culture Europe',                   acronym: 'RCE',     country: 'FR', city: 'París',           category: 'sociedad',    sectors: ['Turismo y Cultura'],                 role: 'associated'    },
 ];
 
+const PARTNERS_BLOCK_VISIBLE = NETWORK_CONFIG?.partnersBlock?.visible !== false;
 const CMS_PARTNERS = NETWORK_CONFIG?.partnersBlock?.partners || [];
-const ACTIVE_PARTNERS = CMS_PARTNERS.length ? CMS_PARTNERS : PARTNERS;
+const ACTIVE_PARTNERS = PARTNERS_BLOCK_VISIBLE ? (CMS_PARTNERS.length ? CMS_PARTNERS : PARTNERS) : [];
+const SHOW_PARTNERS_TAB = PARTNERS_BLOCK_VISIBLE && ACTIVE_PARTNERS.length > 0;
 
 const STAKEHOLDERS = [
   { id: 'aesia',        name: 'AESIA – Agencia Española de Supervisión de IA',  type: 'Agencia estatal regulatoria',      sector: 'Transversal',        region: 'Nacional',        category: 'admin'      },
@@ -121,12 +123,16 @@ function helixBlock() {
 
   const html = (helix.categories || []).map(cat => {
     const total = (pc[cat.id] || 0) + (sc[cat.id] || 0);
+    const detailParts = [
+      pc[cat.id] ? `${pc[cat.id]} ${loc({es:'socios',en:'partners',va:'socis'})}` : '',
+      sc[cat.id] ? `${sc[cat.id]} ${loc({es:'stakeholders',en:'stakeholders',va:'stakeholders'})}` : '',
+    ].filter(Boolean);
     return `
       <div class="${cat.bg} ${cat.border} border rounded-xl p-4 text-center">
         <i data-lucide="${cat.icon}" class="w-6 h-6 ${cat.color} mx-auto mb-2"></i>
         <p class="font-bold text-sm ${cat.color}">${loc(cat.label)}</p>
         <p class="text-2xl font-extrabold text-gray-800 mt-1">${total}</p>
-        <p class="text-xs text-gray-500 mt-0.5">${pc[cat.id] || 0} ${loc({es:'socios',en:'partners',va:'socis'})} · ${sc[cat.id] || 0} ${loc({es:'stakeholders',en:'stakeholders',va:'stakeholders'})}</p>
+        ${detailParts.length ? `<p class="text-xs text-gray-500 mt-0.5">${detailParts.join(' · ')}</p>` : ''}
       </div>
     `;
   }).join('');
@@ -394,7 +400,8 @@ function renderNetworkHero() {
 export function render() {
   try {
     const networkT      = t('network') || {};
-    const activeTab     = getState('networkTab')      || 'socios';
+    const requestedTab  = getState('networkTab')      || 'socios';
+    const activeTab     = requestedTab === 'socios' && !SHOW_PARTNERS_TAB ? 'stakeholders' : requestedTab;
     const activeCategory= getState('networkCategory') || 'todos';
     const filterCountry = getState('networkCountry');
     const showForm      = getState('networkShowForm') || false;
@@ -403,9 +410,14 @@ export function render() {
       activeTab === id ? 'border-eu-blue text-eu-blue' : 'border-transparent text-gray-600 hover:text-eu-text'
     }`;
 
-    const content = activeTab === 'socios'
+    const content = activeTab === 'socios' && SHOW_PARTNERS_TAB
       ? tabSocios(networkT, activeCategory, filterCountry === null ? null : filterCountry)
       : tabStakeholders(networkT, activeCategory, showForm);
+    const partnersTab = SHOW_PARTNERS_TAB ? `
+          <button data-net-tab="socios" class="${tabBtnClass('socios')}">
+            ${networkT?.partnersTabTitle || 'Socios'} (${ACTIVE_PARTNERS.length})
+          </button>
+    ` : '';
 
     return `
     <div>
@@ -417,9 +429,7 @@ export function render() {
 
         <!-- Tabs -->
         <div class="flex gap-1 border-b border-eu-border mb-6">
-          <button data-net-tab="socios" class="${tabBtnClass('socios')}">
-            ${networkT?.partnersTabTitle || 'Socios'} (${ACTIVE_PARTNERS.length})
-          </button>
+          ${partnersTab}
           <button data-net-tab="stakeholders" class="${tabBtnClass('stakeholders')}">
             ${networkT?.stakeholdersTabTitle || 'Stakeholders'} (${STAKEHOLDERS.length})
           </button>
