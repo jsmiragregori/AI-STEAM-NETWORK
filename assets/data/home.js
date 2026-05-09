@@ -776,6 +776,10 @@ export const HOME_CONFIG = {
         "name": "INESC"
       },
       {
+        "id": "laurea",
+        "name": "LAUREA"
+      },
+      {
         "id": "tuvit",
         "name": "TUV.IT"
       },
