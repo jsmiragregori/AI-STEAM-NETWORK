@@ -908,7 +908,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "aesia",
         "partner": "ceice",
-        "name": "AESIA – Agencia Española de Supervisión de IA",
+        "name": {
+          "es": "AESIA – Agencia Española de Supervisión de IA",
+          "en": "AESIA – Agencia Española de Supervisión de IA",
+          "va": "AESIA – Agencia Española de Supervisión de IA"
+        },
         "category": "admin",
         "primarySector": "transversal",
         "sectors": [],
@@ -924,7 +928,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "ivace",
         "partner": "ceice",
-        "name": "IVACE+i",
+        "name": {
+          "es": "IVACE+i",
+          "en": "IVACE+i",
+          "va": "IVACE+i"
+        },
         "category": "admin",
         "primarySector": "transversal",
         "sectors": [],
@@ -940,7 +948,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "dgtic",
         "partner": "ceice",
-        "name": "GVA – DGTIC",
+        "name": {
+          "es": "GVA – DGTIC",
+          "en": "GVA – DGTIC",
+          "va": "GVA – DGTIC"
+        },
         "category": "admin",
         "primarySector": "transversal",
         "sectors": [],
@@ -956,7 +968,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "lasnaves",
         "partner": "ceice",
-        "name": "Las Naves",
+        "name": {
+          "es": "Las Naves",
+          "en": "Las Naves",
+          "va": "Las Naves"
+        },
         "category": "admin",
         "primarySector": "ene",
         "sectors": [
@@ -974,7 +990,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "fedacova",
         "partner": "ceice",
-        "name": "FEDACOVA",
+        "name": {
+          "es": "FEDACOVA",
+          "en": "FEDACOVA",
+          "va": "FEDACOVA"
+        },
         "category": "empresa",
         "primarySector": "agr",
         "sectors": [],
@@ -990,7 +1010,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "avaasaja",
         "partner": "ceice",
-        "name": "AVA-ASAJA",
+        "name": {
+          "es": "AVA-ASAJA",
+          "en": "AVA-ASAJA",
+          "va": "AVA-ASAJA"
+        },
         "category": "empresa",
         "primarySector": "agr",
         "sectors": [],
@@ -1006,7 +1030,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "femeval",
         "partner": "ceice",
-        "name": "FEMEVAL",
+        "name": {
+          "es": "FEMEVAL",
+          "en": "FEMEVAL",
+          "va": "FEMEVAL"
+        },
         "category": "empresa",
         "primarySector": "mfg",
         "sectors": [],
@@ -1022,7 +1050,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "ascer",
         "partner": "ceice",
-        "name": "ASCER",
+        "name": {
+          "es": "ASCER",
+          "en": "ASCER",
+          "va": "ASCER"
+        },
         "category": "empresa",
         "primarySector": "mfg",
         "sectors": [],
@@ -1038,7 +1070,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "globalomnium",
         "partner": "ceice",
-        "name": "Global Omnium",
+        "name": {
+          "es": "Global Omnium",
+          "en": "Global Omnium",
+          "va": "Global Omnium"
+        },
         "category": "empresa",
         "primarySector": "ene",
         "sectors": [
@@ -1056,7 +1092,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "brainstorm",
         "partner": "ceice",
-        "name": "Brainstorm Multimedia",
+        "name": {
+          "es": "Brainstorm Multimedia",
+          "en": "Brainstorm Multimedia",
+          "va": "Brainstorm Multimedia"
+        },
         "category": "empresa",
         "primarySector": "cci",
         "sectors": [],
@@ -1072,7 +1112,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "iti",
         "partner": "ceice",
-        "name": "ITI – Institut Tecnològic d'Informàtica",
+        "name": {
+          "es": "ITI – Institut Tecnològic d'Informàtica",
+          "en": "ITI – Institut Tecnològic d'Informàtica",
+          "va": "ITI – Institut Tecnològic d'Informàtica"
+        },
         "category": "universidad",
         "primarySector": "transversal",
         "sectors": [],
@@ -1088,7 +1132,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "redit",
         "partner": "ceice",
-        "name": "REDIT",
+        "name": {
+          "es": "REDIT",
+          "en": "REDIT",
+          "va": "REDIT"
+        },
         "category": "universidad",
         "primarySector": "transversal",
         "sectors": [],
@@ -1104,7 +1152,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "lafe",
         "partner": "ceice",
-        "name": "Hospital Universitario La Fe",
+        "name": {
+          "es": "Hospital Universitario La Fe",
+          "en": "Hospital Universitario La Fe",
+          "va": "Hospital Universitario La Fe"
+        },
         "category": "sociedad",
         "primarySector": "health",
         "sectors": [],
@@ -1120,7 +1172,11 @@ export const NETWORK_CONFIG = {
       {
         "id": "invattur",
         "partner": "ceice",
-        "name": "INVAT·TUR",
+        "name": {
+          "es": "INVAT·TUR",
+          "en": "INVAT·TUR",
+          "va": "INVAT·TUR"
+        },
         "category": "admin",
         "primarySector": "cci",
         "sectors": [],

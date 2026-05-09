@@ -17,6 +17,19 @@ const SECTOR_ICON = {
   transversal: 'layers',
 };
 
+const SECTOR_LABEL = {
+  mfg:         { es: 'Manufactura',                       en: 'Manufacturing',                  va: 'Manufactura'                      },
+  mob:         { es: 'Movilidad y Transporte',            en: 'Mobility & Transport',           va: 'Mobilitat i Transport'            },
+  ene:         { es: 'Energía y Medio Ambiente',          en: 'Energy & Environment',           va: 'Energia i Medi Ambient'           },
+  agr:         { es: 'Agroalimentario',                   en: 'Agrifood',                       va: 'Agroalimentari'                   },
+  cci:         { es: 'Industrias Culturales y Creativas', en: 'Cultural & Creative Industries', va: 'Indústries Culturals i Creatives' },
+  hou:         { es: 'Vivienda',                          en: 'Housing',                        va: 'Habitatge'                        },
+  nts:         { es: 'Servicios No Turísticos',           en: 'Non-Tourism Services',           va: 'Serveis No Turístics'             },
+  edu:         { es: 'Educación',                         en: 'Education',                      va: 'Educació'                         },
+  health:      { es: 'Salud',                             en: 'Health',                         va: 'Salut'                            },
+  transversal: { es: 'Transversal',                       en: 'Transversal',                    va: 'Transversal'                      },
+};
+
 const PARTNERS = [
   { id: 'uveg',   name: 'Universitat de València',               acronym: 'UVEG',    country: 'ES', city: 'Valencia',        category: 'universidad', sectors: ['Educación', 'Industria'],            role: 'coordinator'   },
   { id: 'umu',    name: 'Universidad de Murcia',                  acronym: 'UMU',     country: 'ES', city: 'Murcia',          category: 'universidad', sectors: ['Salud', 'Educación'],                role: 'beneficiary'   },
@@ -229,17 +242,21 @@ function tabStakeholders(networkT, activeCategory, showForm) {
   const cardsHtml = filtered.map(s => {
     const meta = CATEGORY_META[s.category] || CATEGORY_META.sociedad;
     const sectorIcon = SECTOR_ICON[s.primarySector] || 'layers';
+    const sectorTooltip = localized(SECTOR_LABEL[s.primarySector] || { es: s.primarySector, en: s.primarySector, va: s.primarySector });
     const description = s.description?.[lang] || s.description?.es || '';
-    const categoryLabel = networkT?.categoryLabels?.[s.category] || s.category;
-    const secondaryPills = (s.sectors || []).map(sec =>
-      `<span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${sec}</span>`
-    ).join('');
+    const categoryLabel = localized(s.categoryLabel) || networkT?.categoryLabels?.[s.category] || s.category;
+    // Todos los sectores (principal + secundarios) sin duplicados, con nombre localizado
+    const allSectors = [s.primarySector, ...(s.sectors || [])].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i);
+    const sectorPills = allSectors.map(sec => {
+      const label = localized(SECTOR_LABEL[sec] || { es: sec, en: sec, va: sec });
+      return `<span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${label}</span>`;
+    }).join('');
     const cardAttrs = s.website ? `href="${s.website}" target="_blank" rel="noopener noreferrer"` : '';
     const cardElement = s.website ? 'a' : 'div';
     return `
       <${cardElement} ${cardAttrs} class="block bg-white rounded-xl border border-eu-border shadow-sm p-4 hover:border-eu-blue hover:shadow-md transition-colors no-underline">
         <div class="flex items-start justify-between mb-3">
-          <div class="w-9 h-9 rounded-lg ${meta.bg} flex items-center justify-center">
+          <div class="network-category-tooltip w-9 h-9 rounded-lg ${meta.bg} flex items-center justify-center" data-tooltip="${sectorTooltip}" aria-label="${sectorTooltip}" tabindex="0">
             <i data-lucide="${sectorIcon}" class="w-4 h-4 ${meta.color}"></i>
           </div>
           <div class="network-category-tooltip flex items-center gap-1.5 ${meta.bg} ${meta.border} border rounded-full px-2 py-0.5" data-tooltip="${categoryLabel}" aria-label="${categoryLabel}" tabindex="0">
@@ -247,10 +264,10 @@ function tabStakeholders(networkT, activeCategory, showForm) {
             <span class="text-xs font-bold ${meta.color}">${categoryLabel}</span>
           </div>
         </div>
-        <p class="font-bold text-eu-text text-sm leading-snug mb-0.5">${s.name}</p>
+        <p class="font-bold text-eu-text text-sm leading-snug mb-0.5">${localized(s.name)}</p>
         ${s.region ? `<p class="text-xs text-eu-teal font-semibold mb-2">📍 ${s.region}</p>` : ''}
         ${description ? `<p class="text-xs text-gray-600 mb-2">${description}</p>` : ''}
-        ${secondaryPills ? `<div class="flex flex-wrap gap-1">${secondaryPills}</div>` : ''}
+        ${sectorPills ? `<div class="flex flex-wrap gap-1 mt-2">${sectorPills}</div>` : ''}
       </${cardElement}>
     `;
   }).join('');
