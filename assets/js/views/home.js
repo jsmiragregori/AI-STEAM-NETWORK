@@ -1,7 +1,5 @@
-import { t } from '../i18n.js';
 import { getLanguage } from '../i18n.js';
 import { navigateTo } from '../router.js';
-import { HERO_CONFIG } from '../../data/hero.js';
 import { HOME_CONFIG } from '../../data/home.js';
 
 
@@ -415,40 +413,49 @@ function renderConsortiumBlock() {
   `;
 }
 
-export function render() {
-  const statsHtml = HERO_CONFIG.stats.map(s => `
+function renderHeroBlock() {
+  const hero = HOME_CONFIG.heroBlock;
+  if (!hero?.visible) return '';
+  const lang = getLanguage();
+  const loc = v => v?.[lang] || v?.es || '';
+  const statsHtml = (hero.stats || []).map(s => `
     <div class="bg-white/10 backdrop-blur rounded-xl p-5 flex flex-col">
       <i data-lucide="${s.icon}" class="w-5 h-5 text-eu-yellow mb-2"></i>
       <div class="text-3xl font-extrabold text-white leading-none mb-1">${s.value}</div>
-      <div class="text-xs text-white/70 font-semibold uppercase tracking-wide">${t(s.key)}</div>
+      <div class="text-xs text-white/70 font-semibold uppercase tracking-wide">${loc(s.label)}</div>
     </div>
   `).join('');
+  return `
+    <section class="bg-linear-to-br from-eu-blue to-eu-purple text-white px-6 py-16">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="inline-block bg-eu-yellow/20 text-eu-yellow font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+            ${loc(hero.badge)}
+          </span>
+          <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-3">${loc(hero.title)}</h1>
+          <p class="text-lg font-semibold text-eu-yellow mb-4">${loc(hero.subtitle)}</p>
+          <p class="text-base text-white/90 mb-4 max-w-xl leading-relaxed border-l-4 border-eu-yellow/60 pl-4">${loc(hero.heroTagline)}</p>
+          <p class="text-sm text-white/70 mb-8 max-w-xl">${loc(hero.description)}</p>
+          <div class="flex flex-wrap gap-3">
+            <button data-nav="banco-retos" class="bg-eu-orange text-white px-6 py-3 rounded-md font-bold hover:bg-eu-purple transition-colors flex items-center gap-2">
+              ${loc(hero.buttons?.uploadChallenge)} <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <button data-nav="red" class="border-2 border-white/50 text-white px-6 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
+              ${loc(hero.buttons?.requestJoin)}
+            </button>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">${statsHtml}</div>
+      </div>
+    </section>
+  `;
+}
 
+export function render() {
   return `
     <div>
       <!-- Hero -->
-      <section class="bg-linear-to-br from-eu-blue to-eu-purple text-white px-6 py-16">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <span class="inline-block bg-eu-yellow/20 text-eu-yellow font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-4">
-              ${t('home.badge')}
-            </span>
-            <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-3">${t('home.title')}</h1>
-            <p class="text-lg font-semibold text-eu-yellow mb-4">${t('home.subtitle')}</p>
-            <p class="text-base text-white/90 mb-4 max-w-xl leading-relaxed border-l-4 border-eu-yellow/60 pl-4">${t('home.heroTagline')}</p>
-            <p class="text-sm text-white/70 mb-8 max-w-xl">${t('home.description')}</p>
-            <div class="flex flex-wrap gap-3">
-              <button data-nav="banco-retos" class="bg-eu-orange text-white px-6 py-3 rounded-md font-bold hover:bg-eu-purple transition-colors flex items-center gap-2">
-                ${t('home.uploadChallenge')} <i data-lucide="arrow-right" class="w-4 h-4"></i>
-              </button>
-              <button data-nav="red" class="border-2 border-white/50 text-white px-6 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
-                ${t('home.requestJoin')}
-              </button>
-            </div>
-          </div>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">${statsHtml}</div>
-        </div>
-      </section>
+      ${renderHeroBlock()}
 
       <!-- Is / Is Not -->
       ${renderIsNotBlock()}

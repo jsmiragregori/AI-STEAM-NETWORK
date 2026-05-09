@@ -2,6 +2,98 @@
 // Fuente: content/home/
 
 export const HOME_CONFIG = {
+  "heroBlock": {
+    "visible": true,
+    "badge": {
+      "es": "Programa Digital Europe 2021-2027 · AI-SECRETT",
+      "en": "Digital Europe Programme 2021-2027 · AI-SECRETT",
+      "va": "Programa Digital Europe 2021-2027 · AI-SECRETT"
+    },
+    "title": {
+      "es": "AI-STEAM Network",
+      "en": "AI-STEAM Network",
+      "va": "AI-STEAM Network"
+    },
+    "subtitle": {
+      "es": "Comunidad y Transferencia de AI-SECRETT",
+      "en": "Community and Transfer of AI-SECRETT",
+      "va": "Comunitat i Transferència d'AI-SECRETT"
+    },
+    "heroTagline": {
+      "es": "AI-STEAM Network es el ecosistema Track B de CEICE para AI-SECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders moviliza centros FP forma docentes y especializa los 7 sectores AI-SECRETT en IA y creatividad.",
+      "en": "AI-STEAM Network is the Track B ecosystem of CEICE for AI-SECRETT: built on ENRED interregional cooperation activating stakeholders mobilizing VET centers training teachers and specializing the 7 AI-SECRETT sectors in AI and creativity.",
+      "va": "AI-STEAM Network és l'ecosistema Track B de CEICE per a AI-SECRETT: construïda sobre la cooperació interregional d'ENRED activa agents interessats movilitza centres FP forma docents i especialitza els 7 sectors AI-SECRETT en IA i creativitat."
+    },
+    "description": {
+      "es": "Liderada por CEICE activa stakeholders moviliza centros FP forma docentes y genera evidencias para el consorcio AI-SECRETT en las 7 áreas sectoriales europeas.",
+      "en": "Led by CEICE it activates stakeholders mobilizes VET centers trains teachers and generates evidence for the AI-SECRETT consortium in the 7 sectoral areas.",
+      "va": "Liderada per CEICE activa agents interessats movilitza centres FP forma docents i genera evidències per al consorci AI-SECRETT en les 7 àrees sectorials europees."
+    },
+    "buttons": {
+      "uploadChallenge": {
+        "es": "Propón un reto, caso o aportación",
+        "en": "Submit a challenge, case or contribution",
+        "va": "Proposa un repte, cas o aportació"
+      },
+      "requestJoin": {
+        "es": "Únete a la AI-STEAM Network",
+        "en": "Join the AI-STEAM Network",
+        "va": "Uneix-te a la AI-STEAM Network"
+      }
+    },
+    "stats": [
+      {
+        "id": "stakeholders",
+        "value": 12,
+        "icon": "users",
+        "label": {
+          "es": "Grupos de interés",
+          "en": "Stakeholders",
+          "va": "Grups d'interés"
+        }
+      },
+      {
+        "id": "totalChallenges",
+        "value": 7,
+        "icon": "zap",
+        "label": {
+          "es": "Retos y casos",
+          "en": "Challenges and cases",
+          "va": "Reptes i casos"
+        }
+      },
+      {
+        "id": "consortiumMembers",
+        "value": 23,
+        "icon": "book-open",
+        "label": {
+          "es": "Miembros del consorcio",
+          "en": "Consortium members",
+          "va": "Membres del consorci"
+        }
+      },
+      {
+        "id": "countries",
+        "value": 12,
+        "icon": "globe",
+        "label": {
+          "es": "Países",
+          "en": "Countries",
+          "va": "Països"
+        }
+      },
+      {
+        "id": "trainingModules",
+        "value": 68,
+        "icon": "layers",
+        "label": {
+          "es": "Módulos formativos",
+          "en": "Training modules",
+          "va": "Mòduls formatius"
+        }
+      }
+    ]
+  },
   "isNotBlock": {
     "visible": true,
     "heading": {
@@ -744,4 +836,4 @@ export const HOME_CONFIG = {
 };
 
 // Exportar tambien por claves individuales para compatibilidad
-export const { isNotBlock, enredBlock, ecosystemBlock, dualFocusBlock, latestChallengesBlock, sectorsBlock, consortiumBlock } = HOME_CONFIG;
+export const { heroBlock, isNotBlock, enredBlock, ecosystemBlock, dualFocusBlock, latestChallengesBlock, sectorsBlock, consortiumBlock } = HOME_CONFIG;

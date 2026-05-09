@@ -26,7 +26,7 @@ export const NETWORK_CONFIG = {
       },
       {
         "id": "stakeholdersNetwork",
-        "value": "14",
+        "value": "2",
         "label": {
           "es": "Stakeholders Red",
           "en": "Network Stakeholders",
@@ -44,7 +44,7 @@ export const NETWORK_CONFIG = {
       },
       {
         "id": "totalOrganizations",
-        "value": "37",
+        "value": "35",
         "label": {
           "es": "Total Organizaciones",
           "en": "Total Organizations",
