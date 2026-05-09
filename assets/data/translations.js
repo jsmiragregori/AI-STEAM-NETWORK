@@ -4156,7 +4156,7 @@ export const translations = {
       "fundedBy": "Finançat per la",
       "europeanUnion": "Unió Europea",
       "accessibility": "Accessibilitat",
-      "privacy": "Privacitat",
+      "privacy": "Privacitat i cookies",
       "sitemap": "Mapa Web",
       "orgName": "Generalitat Valenciana",
       "orgUnit": "Conselleria d'Educació, Cultura i Universitats"
