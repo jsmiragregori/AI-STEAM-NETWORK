@@ -17,3 +17,52 @@ html {
     transition-duration: 0.01ms !important;
   }
 }
+
+.network-category-tooltip {
+  position: relative;
+}
+
+.network-category-tooltip::before,
+.network-category-tooltip::after {
+  position: absolute;
+  left: 50%;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) translateY(4px);
+  transition: opacity 140ms ease, transform 140ms ease;
+  z-index: 30;
+}
+
+.network-category-tooltip::before {
+  content: attr(data-tooltip);
+  top: calc(100% + 8px);
+  max-width: 220px;
+  width: max-content;
+  padding: 0.375rem 0.625rem;
+  border: 1px solid #d8dee8;
+  border-radius: 0.375rem;
+  background: #fff;
+  color: #2f24ff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: normal;
+  box-shadow: 0 10px 24px rgba(47, 36, 255, 0.12);
+}
+
+.network-category-tooltip::after {
+  content: "";
+  top: calc(100% + 3px);
+  border: 5px solid transparent;
+  border-bottom-color: #fff;
+  filter: drop-shadow(0 -1px 0 #d8dee8);
+}
+
+.network-category-tooltip:hover::before,
+.network-category-tooltip:hover::after,
+.network-category-tooltip:focus-visible::before,
+.network-category-tooltip:focus-visible::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

@@ -115,5 +115,755 @@ export const NETWORK_CONFIG = {
         "border": "border-pink-300"
       }
     ]
+  },
+  "partnersBlock": {
+    "visible": true,
+    "partners": [
+      {
+        "id": "uveg",
+        "name": {
+          "es": "Universitat de València",
+          "en": "University of Valencia",
+          "va": "Universitat de València"
+        },
+        "acronym": "UVEG",
+        "country": "ES",
+        "city": {
+          "es": "Valencia",
+          "en": "Valencia",
+          "va": "València"
+        },
+        "category": "universidad",
+        "categoryLabel": {
+          "es": "Educación Superior e I+D+I",
+          "en": "Higher Education & R&D&I",
+          "va": "Educació Superior i I+D+I"
+        },
+        "sectors": [
+          {
+            "es": "Educación",
+            "en": "Education",
+            "va": "Educació"
+          },
+          {
+            "es": "Industria",
+            "en": "Industry",
+            "va": "Indústria"
+          }
+        ],
+        "role": "coordinator",
+        "url": "https://www.uv.es/"
+      },
+      {
+        "id": "umu",
+        "name": {
+          "es": "Universidad de Murcia",
+          "en": "University of Murcia",
+          "va": "Universitat de Múrcia"
+        },
+        "acronym": "UMU",
+        "country": "ES",
+        "city": {
+          "es": "Murcia",
+          "en": "Murcia",
+          "va": "Múrcia"
+        },
+        "category": "universidad",
+        "categoryLabel": {
+          "es": "Educación Superior e I+D+I",
+          "en": "Higher Education & R&D&I",
+          "va": "Educació Superior i I+D+I"
+        },
+        "sectors": [
+          {
+            "es": "Salud",
+            "en": "Health",
+            "va": "Salut"
+          },
+          {
+            "es": "Educación",
+            "en": "Education",
+            "va": "Educació"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://www.um.es/"
+      },
+      {
+        "id": "upv",
+        "name": {
+          "es": "Universitat Politècnica de València",
+          "en": "Universitat Politècnica de València",
+          "va": "Universitat Politècnica de València"
+        },
+        "acronym": "UPV",
+        "country": "ES",
+        "city": {
+          "es": "Valencia",
+          "en": "Valencia",
+          "va": "València"
+        },
+        "category": "universidad",
+        "categoryLabel": {
+          "es": "Educación Superior e I+D+I",
+          "en": "Higher Education & R&D&I",
+          "va": "Educació Superior i I+D+I"
+        },
+        "sectors": [
+          {
+            "es": "Industria",
+            "en": "Industry",
+            "va": "Indústria"
+          },
+          {
+            "es": "Medio Ambiente",
+            "en": "Environment",
+            "va": "Medi Ambient"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://www.upv.es/"
+      },
+      {
+        "id": "ntnu",
+        "name": {
+          "es": "NTNU – Norwegian Univ. of S&T",
+          "en": "NTNU – Norwegian Univ. of S&T",
+          "va": "NTNU – Norwegian Univ. of S&T"
+        },
+        "acronym": "NTNU",
+        "country": "NO",
+        "city": {
+          "es": "Trondheim",
+          "en": "Trondheim",
+          "va": "Trondheim"
+        },
+        "category": "universidad",
+        "categoryLabel": {
+          "es": "Educación Superior e I+D+I",
+          "en": "Higher Education & R&D&I",
+          "va": "Educació Superior i I+D+I"
+        },
+        "sectors": [
+          {
+            "es": "Industria",
+            "en": "Industry",
+            "va": "Indústria"
+          },
+          {
+            "es": "Medio Ambiente",
+            "en": "Environment",
+            "va": "Medi Ambient"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://www.ntnu.edu/"
+      },
+      {
+        "id": "hsw",
+        "name": {
+          "es": "Hochschule Wismar",
+          "en": "Hochschule Wismar",
+          "va": "Hochschule Wismar"
+        },
+        "acronym": "HSW",
+        "country": "DE",
+        "city": {
+          "es": "Wismar",
+          "en": "Wismar",
+          "va": "Wismar"
+        },
+        "category": "universidad",
+        "categoryLabel": {
+          "es": "Educación Superior e I+D+I",
+          "en": "Higher Education & R&D&I",
+          "va": "Educació Superior i I+D+I"
+        },
+        "sectors": [
+          {
+            "es": "Industria",
+            "en": "Industry",
+            "va": "Indústria"
+          },
+          {
+            "es": "Educación",
+            "en": "Education",
+            "va": "Educació"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://www.hs-wismar.de/"
+      },
+      {
+        "id": "fidit",
+        "name": {
+          "es": "Univ. de Rijeka – FIDIT",
+          "en": "Univ. de Rijeka – FIDIT",
+          "va": "Univ. de Rijeka – FIDIT"
+        },
+        "acronym": "FIDIT",
+        "country": "HR",
+        "city": {
+          "es": "Rijeka",
+          "en": "Rijeka",
+          "va": "Rijeka"
+        },
+        "category": "universidad",
+        "categoryLabel": {
+          "es": "Educación Superior e I+D+I",
+          "en": "Higher Education & R&D&I",
+          "va": "Educació Superior i I+D+I"
+        },
+        "sectors": [
+          {
+            "es": "Educación",
+            "en": "Education",
+            "va": "Educació"
+          },
+          {
+            "es": "Administración",
+            "en": "Administration",
+            "va": "Administració"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://www.inf.uniri.hr/"
+      },
+      {
+        "id": "uda",
+        "name": {
+          "es": "Univ. Gabriele d'Annunzio",
+          "en": "Univ. Gabriele d'Annunzio",
+          "va": "Univ. Gabriele d'Annunzio"
+        },
+        "acronym": "Ud'A",
+        "country": "IT",
+        "city": {
+          "es": "Chieti-Pescara",
+          "en": "Chieti-Pescara",
+          "va": "Chieti-Pescara"
+        },
+        "category": "universidad",
+        "categoryLabel": {
+          "es": "Educación Superior e I+D+I",
+          "en": "Higher Education & R&D&I",
+          "va": "Educació Superior i I+D+I"
+        },
+        "sectors": [
+          {
+            "es": "Salud",
+            "en": "Health",
+            "va": "Salut"
+          },
+          {
+            "es": "Industria",
+            "en": "Industry",
+            "va": "Indústria"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://www.unich.it/"
+      },
+      {
+        "id": "esad",
+        "name": {
+          "es": "ESAD Grenoble-Valence",
+          "en": "ESAD Grenoble-Valence",
+          "va": "ESAD Grenoble-Valence"
+        },
+        "acronym": "ESAD-GV",
+        "country": "FR",
+        "city": {
+          "es": "Grenoble",
+          "en": "Grenoble",
+          "va": "Grenoble"
+        },
+        "category": "universidad",
+        "categoryLabel": {
+          "es": "Educación Superior e I+D+I",
+          "en": "Higher Education & R&D&I",
+          "va": "Educació Superior i I+D+I"
+        },
+        "sectors": [
+          {
+            "es": "Turismo y Cultura",
+            "en": "Tourism and Culture",
+            "va": "Turisme i Cultura"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://esad-gv.fr/"
+      },
+      {
+        "id": "inesc",
+        "name": {
+          "es": "INESC TEC",
+          "en": "INESC TEC",
+          "va": "INESC TEC"
+        },
+        "acronym": "INESC",
+        "country": "PT",
+        "city": {
+          "es": "Porto",
+          "en": "Porto",
+          "va": "Porto"
+        },
+        "category": "universidad",
+        "categoryLabel": {
+          "es": "Educación Superior e I+D+I",
+          "en": "Higher Education & R&D&I",
+          "va": "Educació Superior i I+D+I"
+        },
+        "sectors": [
+          {
+            "es": "Industria",
+            "en": "Industry",
+            "va": "Indústria"
+          },
+          {
+            "es": "Medio Ambiente",
+            "en": "Environment",
+            "va": "Medi Ambient"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://www.inesctec.pt/"
+      },
+      {
+        "id": "laurea",
+        "name": {
+          "es": "LAUREA University of Applied Sciences",
+          "en": "LAUREA University of Applied Sciences",
+          "va": "LAUREA University of Applied Sciences"
+        },
+        "acronym": "LAUREA",
+        "country": "FI",
+        "city": {
+          "es": "Espoo",
+          "en": "Espoo",
+          "va": "Espoo"
+        },
+        "category": "universidad",
+        "categoryLabel": {
+          "es": "Educación Superior e I+D+I",
+          "en": "Higher Education & R&D&I",
+          "va": "Educació Superior i I+D+I"
+        },
+        "sectors": [
+          {
+            "es": "Educación",
+            "en": "Education",
+            "va": "Educació"
+          },
+          {
+            "es": "Industria",
+            "en": "Industry",
+            "va": "Indústria"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://www.laurea.fi/en/"
+      },
+      {
+        "id": "ceice",
+        "name": {
+          "es": "Conselleria de Educación (CEICE)",
+          "en": "Department of Education (CEICE)",
+          "va": "Conselleria d'Educació (CEICE)"
+        },
+        "acronym": "CEICE",
+        "country": "ES",
+        "city": {
+          "es": "Valencia",
+          "en": "Valencia",
+          "va": "València"
+        },
+        "category": "admin",
+        "categoryLabel": {
+          "es": "Administración Pública",
+          "en": "Public Administration",
+          "va": "Administració Pública"
+        },
+        "sectors": [
+          {
+            "es": "Educación",
+            "en": "Education",
+            "va": "Educació"
+          },
+          {
+            "es": "Administración",
+            "en": "Administration",
+            "va": "Administració"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://ceice.gva.es/va/"
+      },
+      {
+        "id": "lpga",
+        "name": {
+          "es": "Promoción Las Palmas de GC",
+          "en": "Las Palmas de Gran Canaria Promotion",
+          "va": "Promoció Las Palmas de GC"
+        },
+        "acronym": "LPGA",
+        "country": "ES",
+        "city": {
+          "es": "Las Palmas",
+          "en": "Las Palmas",
+          "va": "Las Palmas"
+        },
+        "category": "admin",
+        "categoryLabel": {
+          "es": "Administración Pública",
+          "en": "Public Administration",
+          "va": "Administració Pública"
+        },
+        "sectors": [
+          {
+            "es": "Turismo y Cultura",
+            "en": "Tourism and Culture",
+            "va": "Turisme i Cultura"
+          },
+          {
+            "es": "Administración",
+            "en": "Administration",
+            "va": "Administració"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://www.laspalmasgc.es/es/ayuntamiento/organismos-y-empresas/sociedad-de-promocion-de-las-palmas-de-gran-canaria/"
+      },
+      {
+        "id": "varm",
+        "name": {
+          "es": "Region Värmland",
+          "en": "Region Värmland",
+          "va": "Region Värmland"
+        },
+        "acronym": "VARM",
+        "country": "SE",
+        "city": {
+          "es": "Karlstad",
+          "en": "Karlstad",
+          "va": "Karlstad"
+        },
+        "category": "admin",
+        "categoryLabel": {
+          "es": "Administración Pública",
+          "en": "Public Administration",
+          "va": "Administració Pública"
+        },
+        "sectors": [
+          {
+            "es": "Medio Ambiente",
+            "en": "Environment",
+            "va": "Medi Ambient"
+          },
+          {
+            "es": "Administración",
+            "en": "Administration",
+            "va": "Administració"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://www.regionvarmland.se/"
+      },
+      {
+        "id": "preda",
+        "name": {
+          "es": "Agencia Desarrollo Prijedor",
+          "en": "Agencia Desarrollo Prijedor",
+          "va": "Agencia Desarrollo Prijedor"
+        },
+        "acronym": "PREDA",
+        "country": "BA",
+        "city": {
+          "es": "Prijedor",
+          "en": "Prijedor",
+          "va": "Prijedor"
+        },
+        "category": "admin",
+        "categoryLabel": {
+          "es": "Administración Pública",
+          "en": "Public Administration",
+          "va": "Administració Pública"
+        },
+        "sectors": [
+          {
+            "es": "Administración",
+            "en": "Administration",
+            "va": "Administració"
+          },
+          {
+            "es": "Industria",
+            "en": "Industry",
+            "va": "Indústria"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://razvojnaagencija.predaprijedor.com/"
+      },
+      {
+        "id": "cogn",
+        "name": {
+          "es": "Cognito S.R.L.",
+          "en": "Cognito S.R.L.",
+          "va": "Cognito S.R.L."
+        },
+        "acronym": "COGN",
+        "country": "IT",
+        "city": {
+          "es": "Massa",
+          "en": "Massa",
+          "va": "Massa"
+        },
+        "category": "empresa",
+        "categoryLabel": {
+          "es": "Empresa e Innovación",
+          "en": "Business & Innovation",
+          "va": "Empresa i Innovació"
+        },
+        "sectors": [
+          {
+            "es": "Industria",
+            "en": "Industry",
+            "va": "Indústria"
+          },
+          {
+            "es": "Educación",
+            "en": "Education",
+            "va": "Educació"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://www.xplainai.eu/"
+      },
+      {
+        "id": "tuvit",
+        "name": {
+          "es": "TÜV Thüringen Italia",
+          "en": "TÜV Thüringen Italia",
+          "va": "TÜV Thüringen Italia"
+        },
+        "acronym": "TUV.IT",
+        "country": "IT",
+        "city": {
+          "es": "Collecchio",
+          "en": "Collecchio",
+          "va": "Collecchio"
+        },
+        "category": "empresa",
+        "categoryLabel": {
+          "es": "Empresa e Innovación",
+          "en": "Business & Innovation",
+          "va": "Empresa i Innovació"
+        },
+        "sectors": [
+          {
+            "es": "Industria",
+            "en": "Industry",
+            "va": "Indústria"
+          }
+        ],
+        "role": "certification",
+        "url": "https://tuv-thuringen.it/"
+      },
+      {
+        "id": "joist",
+        "name": {
+          "es": "The Factory IKE (JOIST)",
+          "en": "The Factory IKE (JOIST)",
+          "va": "The Factory IKE (JOIST)"
+        },
+        "acronym": "JOIST",
+        "country": "GR",
+        "city": {
+          "es": "Larissa",
+          "en": "Larissa",
+          "va": "Larissa"
+        },
+        "category": "empresa",
+        "categoryLabel": {
+          "es": "Empresa e Innovación",
+          "en": "Business & Innovation",
+          "va": "Empresa i Innovació"
+        },
+        "sectors": [
+          {
+            "es": "Industria",
+            "en": "Industry",
+            "va": "Indústria"
+          },
+          {
+            "es": "Turismo y Cultura",
+            "en": "Tourism and Culture",
+            "va": "Turisme i Cultura"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://joistpark.eu/"
+      },
+      {
+        "id": "clink",
+        "name": {
+          "es": "CulturaLink SL",
+          "en": "CulturaLink SL",
+          "va": "CulturaLink SL"
+        },
+        "acronym": "C-LINK",
+        "country": "ES",
+        "city": {
+          "es": "Las Palmas",
+          "en": "Las Palmas",
+          "va": "Las Palmas"
+        },
+        "category": "empresa",
+        "categoryLabel": {
+          "es": "Empresa e Innovación",
+          "en": "Business & Innovation",
+          "va": "Empresa i Innovació"
+        },
+        "sectors": [
+          {
+            "es": "Turismo y Cultura",
+            "en": "Tourism and Culture",
+            "va": "Turisme i Cultura"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://culturalink.net/"
+      },
+      {
+        "id": "cink",
+        "name": {
+          "es": "CINK Venturing SL",
+          "en": "CINK Venturing SL",
+          "va": "CINK Venturing SL"
+        },
+        "acronym": "CINK",
+        "country": "ES",
+        "city": {
+          "es": "Madrid",
+          "en": "Madrid",
+          "va": "Madrid"
+        },
+        "category": "empresa",
+        "categoryLabel": {
+          "es": "Empresa e Innovación",
+          "en": "Business & Innovation",
+          "va": "Empresa i Innovació"
+        },
+        "sectors": [
+          {
+            "es": "Industria",
+            "en": "Industry",
+            "va": "Indústria"
+          },
+          {
+            "es": "Agroalimentario",
+            "en": "Agrifood",
+            "va": "Agroalimentari"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://cinkventuring.es/"
+      },
+      {
+        "id": "lc",
+        "name": {
+          "es": "The Lisbon Council",
+          "en": "The Lisbon Council",
+          "va": "The Lisbon Council"
+        },
+        "acronym": "LC",
+        "country": "BE",
+        "city": {
+          "es": "Bruselas",
+          "en": "Brussels",
+          "va": "Brussel·les"
+        },
+        "category": "sociedad",
+        "categoryLabel": {
+          "es": "Sociedad Civil y ONG",
+          "en": "Civil Society & NGOs",
+          "va": "Societat Civil i ONG"
+        },
+        "sectors": [
+          {
+            "es": "Administración",
+            "en": "Administration",
+            "va": "Administració"
+          },
+          {
+            "es": "Educación",
+            "en": "Education",
+            "va": "Educació"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://lisboncouncil.net/"
+      },
+      {
+        "id": "kea",
+        "name": {
+          "es": "KEA European Affairs",
+          "en": "KEA European Affairs",
+          "va": "KEA European Affairs"
+        },
+        "acronym": "KEA",
+        "country": "BE",
+        "city": {
+          "es": "Bruselas",
+          "en": "Brussels",
+          "va": "Brussel·les"
+        },
+        "category": "sociedad",
+        "categoryLabel": {
+          "es": "Sociedad Civil y ONG",
+          "en": "Civil Society & NGOs",
+          "va": "Societat Civil i ONG"
+        },
+        "sectors": [
+          {
+            "es": "Turismo y Cultura",
+            "en": "Tourism and Culture",
+            "va": "Turisme i Cultura"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://keanet.eu/"
+      },
+      {
+        "id": "ife",
+        "name": {
+          "es": "Inspiring Futures Europe",
+          "en": "Inspiring Futures Europe",
+          "va": "Inspiring Futures Europe"
+        },
+        "acronym": "IF.E",
+        "country": "ES",
+        "city": {
+          "es": "Madrid",
+          "en": "Madrid",
+          "va": "Madrid"
+        },
+        "category": "sociedad",
+        "categoryLabel": {
+          "es": "Sociedad Civil y ONG",
+          "en": "Civil Society & NGOs",
+          "va": "Societat Civil i ONG"
+        },
+        "sectors": [
+          {
+            "es": "Educación",
+            "en": "Education",
+            "va": "Educació"
+          }
+        ],
+        "role": "beneficiary",
+        "url": "https://www.inspiringfutures.eu/"
+      }
+    ]
   }
 };

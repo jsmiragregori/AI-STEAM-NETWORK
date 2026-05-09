@@ -30,6 +30,9 @@ const PARTNERS = [
   { id: 'rce',    name: 'Relais Culture Europe',                   acronym: 'RCE',     country: 'FR', city: 'París',           category: 'sociedad',    sectors: ['Turismo y Cultura'],                 role: 'associated'    },
 ];
 
+const CMS_PARTNERS = NETWORK_CONFIG?.partnersBlock?.partners || [];
+const ACTIVE_PARTNERS = CMS_PARTNERS.length ? CMS_PARTNERS : PARTNERS;
+
 const STAKEHOLDERS = [
   { id: 'aesia',        name: 'AESIA – Agencia Española de Supervisión de IA',  type: 'Agencia estatal regulatoria',      sector: 'Transversal',        region: 'Nacional',        category: 'admin'      },
   { id: 'ivace',        name: 'IVACE+i',                                          type: 'Agencia de Innovación Regional',   sector: 'Transversal',        region: 'C. Valenciana',   category: 'admin'      },
@@ -71,7 +74,7 @@ const STAKEHOLDER_DESCS = {
   invattur:     { es: 'Turismo inteligente y analítica de destinos.',                                                    en: 'Smart tourism and destination analytics.',                                          va: 'Turisme intel·ligent i analítica de destinacions.'                                      },
 };
 
-const COUNTRIES = [...new Set(PARTNERS.map(p => p.country))];
+const COUNTRIES = [...new Set(ACTIVE_PARTNERS.map(p => p.country))];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -81,6 +84,12 @@ function getLang() {
 
 function getRoleLabel(role, networkT) {
   return networkT?.[role] || role;
+}
+
+function localized(value) {
+  const lang = getLang();
+  if (typeof value === 'string') return value;
+  return value?.[lang] || value?.es || '';
 }
 
 function getDesc(id) {
@@ -107,7 +116,7 @@ function helixBlock() {
   const lang = getLang();
   const loc = v => v?.[lang] || v?.es || '';
 
-  const pc = counts(PARTNERS);
+  const pc = counts(ACTIVE_PARTNERS);
   const sc = counts(STAKEHOLDERS);
 
   const html = (helix.categories || []).map(cat => {
@@ -134,16 +143,16 @@ function helixBlock() {
 // ─── Partners tab ─────────────────────────────────────────────────────────────
 
 function tabSocios(networkT, activeCategory, filterCountry) {
-  const pc = counts(PARTNERS);
+  const pc = counts(ACTIVE_PARTNERS);
 
-  const filtered = PARTNERS.filter(p =>
+  const filtered = ACTIVE_PARTNERS.filter(p =>
     (activeCategory === 'todos' || p.category === activeCategory) &&
     (filterCountry === null || p.country === filterCountry)
   );
 
   const catFilters = `
     <button data-net-cat="todos" class="px-4 py-1.5 rounded-full text-xs font-bold cursor-pointer border transition-colors ${activeCategory === 'todos' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-eu-text border-eu-border hover:border-eu-blue'}">
-      ${networkT?.filterAll || 'Todos'} (${PARTNERS.length})
+      ${networkT?.filterAll || 'Todos'} (${ACTIVE_PARTNERS.length})
     </button>
     ${Object.entries(CATEGORY_META).map(([key, meta]) => `
       <button data-net-cat="${key}" class="px-4 py-1.5 rounded-full text-xs font-bold cursor-pointer border transition-colors ${activeCategory === key ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-eu-text border-eu-border hover:border-eu-blue'}">
@@ -154,11 +163,14 @@ function tabSocios(networkT, activeCategory, filterCountry) {
 
   const cardsHtml = filtered.map(p => {
     const meta = CATEGORY_META[p.category];
-    const sectorsHtml = p.sectors.map(s => `<span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${s}</span>`).join('');
+    const sectorsHtml = p.sectors.map(s => `<span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${localized(s)}</span>`).join('');
+    const categoryLabel = localized(p.categoryLabel) || networkT?.categoryLabels?.[p.category] || p.category;
+    const cardAttrs = p.url ? `href="${p.url}" target="_blank" rel="noopener noreferrer"` : '';
+    const cardElement = p.url ? 'a' : 'div';
     return `
-      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-4 hover:border-eu-blue transition-colors">
+      <${cardElement} ${cardAttrs} class="block bg-white rounded-xl border border-eu-border shadow-sm p-4 hover:border-eu-blue hover:shadow-md transition-colors no-underline">
         <div class="flex items-start justify-between mb-3">
-          <div class="w-9 h-9 rounded-lg ${meta.bg} flex items-center justify-center">
+          <div class="network-category-tooltip w-9 h-9 rounded-lg ${meta.bg} flex items-center justify-center" data-tooltip="${categoryLabel}" aria-label="${categoryLabel}" tabindex="0">
             <i data-lucide="${meta.icon}" class="w-4 h-4 ${meta.color}"></i>
           </div>
           <div class="flex items-center gap-1.5">
@@ -166,16 +178,16 @@ function tabSocios(networkT, activeCategory, filterCountry) {
             <span class="text-xs bg-eu-blue/10 text-eu-blue font-bold px-1.5 py-0.5 rounded">${networkT?.consortium || 'Consorcio'}</span>
           </div>
         </div>
-        <p class="font-bold text-eu-text text-sm leading-snug mb-0.5">${p.name}</p>
-        <p class="text-xs font-mono text-gray-500 mb-2">${p.acronym} · ${p.city}</p>
+        <p class="font-bold text-eu-text text-sm leading-snug mb-0.5">${localized(p.name)}</p>
+        <p class="text-xs font-mono text-gray-500 mb-2">${p.acronym} · ${localized(p.city)}</p>
         <p class="text-xs text-eu-teal font-semibold mb-2">${getRoleLabel(p.role, networkT)}</p>
         <div class="flex flex-wrap gap-1">${sectorsHtml}</div>
-      </div>
+      </${cardElement}>
     `;
   }).join('');
 
   const countryGrid = COUNTRIES.map(c => {
-    const cnt = PARTNERS.filter(p => p.country === c).length;
+    const cnt = ACTIVE_PARTNERS.filter(p => p.country === c).length;
     const isActive = filterCountry === c;
     const name = networkT?.countryNames?.[c] ?? c;
     return `
@@ -406,7 +418,7 @@ export function render() {
         <!-- Tabs -->
         <div class="flex gap-1 border-b border-eu-border mb-6">
           <button data-net-tab="socios" class="${tabBtnClass('socios')}">
-            ${networkT?.partnersTabTitle || 'Socios'} (${PARTNERS.length})
+            ${networkT?.partnersTabTitle || 'Socios'} (${ACTIVE_PARTNERS.length})
           </button>
           <button data-net-tab="stakeholders" class="${tabBtnClass('stakeholders')}">
             ${networkT?.stakeholdersTabTitle || 'Stakeholders'} (${STAKEHOLDERS.length})
