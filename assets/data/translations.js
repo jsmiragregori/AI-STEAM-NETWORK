@@ -26,7 +26,7 @@ export const translations = {
       "fundedBy": "Financiado por la",
       "europeanUnion": "Unión Europea",
       "accessibility": "Accesibilidad",
-      "privacy": "Privacidad",
+      "privacy": "Privacidad y cookies",
       "sitemap": "Mapa Web",
       "orgName": "Generalitat Valenciana",
       "orgUnit": "Conselleria de Educación, Cultura y Universidades"
@@ -2091,7 +2091,7 @@ export const translations = {
       "fundedBy": "Funded by",
       "europeanUnion": "European Union",
       "accessibility": "Accessibility",
-      "privacy": "Privacy",
+      "privacy": "Privacy and cookies",
       "sitemap": "Sitemap",
       "orgName": "Generalitat Valenciana",
       "orgUnit": "Education, Culture and Universities Ministry"
