@@ -642,8 +642,106 @@ export const HOME_CONFIG = {
         }
       }
     ]
+  },
+  "consortiumBlock": {
+    "visible": true,
+    "heading": {
+      "es": "Consorcio AI-SECRETT · 23 miembros en 12 países",
+      "en": "AI-SECRETT Consortium · 23 members in 12 countries",
+      "va": "Consorci AI-SECRETT · 23 membres en 12 països"
+    },
+    "partners": [
+      {
+        "id": "uveg",
+        "name": "UVEG"
+      },
+      {
+        "id": "ceice",
+        "name": "CEICE"
+      },
+      {
+        "id": "umu",
+        "name": "UMU"
+      },
+      {
+        "id": "upv",
+        "name": "UPV"
+      },
+      {
+        "id": "ntnu",
+        "name": "NTNU"
+      },
+      {
+        "id": "hsw",
+        "name": "HSW"
+      },
+      {
+        "id": "fidit",
+        "name": "FIDIT"
+      },
+      {
+        "id": "inesc",
+        "name": "INESC"
+      },
+      {
+        "id": "tuvit",
+        "name": "TUV.IT"
+      },
+      {
+        "id": "joist",
+        "name": "JOIST"
+      },
+      {
+        "id": "clink",
+        "name": "C-LINK"
+      },
+      {
+        "id": "lc",
+        "name": "LC"
+      },
+      {
+        "id": "cogn",
+        "name": "COGN"
+      },
+      {
+        "id": "esadgv",
+        "name": "ESAD-GV"
+      },
+      {
+        "id": "ife",
+        "name": "IF.E"
+      },
+      {
+        "id": "uda",
+        "name": "Ud'A"
+      },
+      {
+        "id": "lpga",
+        "name": "LPGA"
+      },
+      {
+        "id": "varm",
+        "name": "VARM"
+      },
+      {
+        "id": "cink",
+        "name": "CINK"
+      },
+      {
+        "id": "kea",
+        "name": "KEA"
+      },
+      {
+        "id": "preda",
+        "name": "PREDA"
+      },
+      {
+        "id": "rce",
+        "name": "RCE"
+      }
+    ]
   }
 };
 
 // Exportar tambien por claves individuales para compatibilidad
-export const { isNotBlock, enredBlock, ecosystemBlock, dualFocusBlock, latestChallengesBlock, sectorsBlock } = HOME_CONFIG;
+export const { isNotBlock, enredBlock, ecosystemBlock, dualFocusBlock, latestChallengesBlock, sectorsBlock, consortiumBlock } = HOME_CONFIG;

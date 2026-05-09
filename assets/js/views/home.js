@@ -5,7 +5,6 @@ import { HERO_CONFIG } from '../../data/hero.js';
 import { HOME_CONFIG } from '../../data/home.js';
 
 
-const PARTNERS = ['UVEG','CEICE','UMU','UPV','NTNU','HSW','FIDIT','INESC','TUV.IT','JOIST','C-LINK','LC','COGN','ESAD-GV','IF.E',"Ud'A",'LPGA','VARM','CINK','KEA','PREDA','RCE'];
 
 function statusClass(status) {
   const open = ['Abierto','Open','Obert'];
@@ -398,6 +397,24 @@ function renderSectorsBlock() {
   `;
 }
 
+function renderConsortiumBlock() {
+  const block = HOME_CONFIG.consortiumBlock;
+  if (!block?.visible) return '';
+
+  const partnersHtml = (block.partners || []).map(p =>
+    `<div class="bg-eu-bg border border-eu-border rounded px-3 py-1.5 text-sm font-bold text-gray-600">${p.name}</div>`
+  ).join('');
+
+  return `
+    <section class="px-6 py-10 bg-white border-t border-eu-border">
+      <div class="max-w-7xl mx-auto">
+        <p class="text-center text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">${localized(block.heading)}</p>
+        <div class="flex flex-wrap justify-center gap-4 items-center">${partnersHtml}</div>
+      </div>
+    </section>
+  `;
+}
+
 export function render() {
   const statsHtml = HERO_CONFIG.stats.map(s => `
     <div class="bg-white/10 backdrop-blur rounded-xl p-5 flex flex-col">
@@ -406,10 +423,6 @@ export function render() {
       <div class="text-xs text-white/70 font-semibold uppercase tracking-wide">${t(s.key)}</div>
     </div>
   `).join('');
-
-  const partnersHtml = PARTNERS.map(p =>
-    `<div class="bg-eu-bg border border-eu-border rounded px-3 py-1.5 text-sm font-bold text-gray-600">${p}</div>`
-  ).join('');
 
   return `
     <div>
@@ -456,12 +469,7 @@ export function render() {
       ${renderLatestChallengesBlock()}
 
       <!-- Partners -->
-      <section class="px-6 py-10 bg-white border-t border-eu-border">
-        <div class="max-w-7xl mx-auto">
-          <p class="text-center text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">${t('home.consortium')} 23 ${t('home.members')} 12 ${t('home.countries2')}</p>
-          <div class="flex flex-wrap justify-center gap-4 items-center">${partnersHtml}</div>
-        </div>
-      </section>
+      ${renderConsortiumBlock()}
     </div>
   `;
 }
