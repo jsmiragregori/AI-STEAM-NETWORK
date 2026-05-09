@@ -456,16 +456,17 @@ export const HOME_CONFIG = {
     },
     "cards": [
       {
-        "id": "r1",
+        "id": "r3",
+        "publishedAt": "2026-05-05",
         "title": {
-          "es": "Optimización energética en museos con IA",
-          "en": "Energy efficiency optimization in museums with AI",
-          "va": "Optimització energètica en museus amb IA"
+          "es": "IA en triaje de urgencias pediátricas",
+          "en": "AI in pediatric emergency triage",
+          "va": "IA en triatge d&#39;urgències pediàtriques"
         },
         "org": {
-          "es": "Generalitat Valenciana (CEICE)",
-          "en": "Generalitat Valenciana (CEICE)",
-          "va": "Generalitat Valenciana (CEICE)"
+          "es": "Hospital La Fe – Valencia",
+          "en": "Hospital La Fe – Valencia",
+          "va": "Hospital La Fe – València"
         },
         "contributionType": {
           "es": "Reto",
@@ -473,11 +474,11 @@ export const HOME_CONFIG = {
           "va": "Repte"
         },
         "level": {
-          "es": "FP",
-          "en": "VET",
-          "va": "FP"
+          "es": "Máster",
+          "en": "Master",
+          "va": "Màster"
         },
-        "sectorCode": "ene",
+        "sectorCode": "nts",
         "status": {
           "es": "Abierto",
           "en": "Open",
@@ -486,6 +487,7 @@ export const HOME_CONFIG = {
       },
       {
         "id": "r2",
+        "publishedAt": "2026-04-22",
         "title": {
           "es": "Detección de plagas en cítricos vía Computer Vision",
           "en": "Citrus pest detection via Computer Vision",
@@ -514,16 +516,17 @@ export const HOME_CONFIG = {
         }
       },
       {
-        "id": "r3",
+        "id": "r1",
+        "publishedAt": "2026-04-10",
         "title": {
-          "es": "IA en triaje de urgencias pediátricas",
-          "en": "AI in pediatric emergency triage",
-          "va": "IA en triatge d&#39;urgències pediàtriques"
+          "es": "Optimización energética en museos con IA",
+          "en": "Energy efficiency optimization in museums with AI",
+          "va": "Optimització energètica en museus amb IA"
         },
         "org": {
-          "es": "Hospital La Fe – Valencia",
-          "en": "Hospital La Fe – Valencia",
-          "va": "Hospital La Fe – València"
+          "es": "Generalitat Valenciana (CEICE)",
+          "en": "Generalitat Valenciana (CEICE)",
+          "va": "Generalitat Valenciana (CEICE)"
         },
         "contributionType": {
           "es": "Reto",
@@ -531,11 +534,11 @@ export const HOME_CONFIG = {
           "va": "Repte"
         },
         "level": {
-          "es": "Máster",
-          "en": "Master",
-          "va": "Màster"
+          "es": "FP",
+          "en": "VET",
+          "va": "FP"
         },
-        "sectorCode": "nts",
+        "sectorCode": "ene",
         "status": {
           "es": "Abierto",
           "en": "Open",
