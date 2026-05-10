@@ -149,9 +149,14 @@ function renderExpanded(sector, sectorsT) {
   `;
 }
 
+function getLang() {
+  return localStorage.getItem('language') || 'es';
+}
+
 function localized(label) {
+  if (!label) return '';
   if (typeof label === 'string') return label;
-  return label.es || label.en || label.va || '';
+  return label[getLang()] || label.es || '';
 }
 
 export function render() {
