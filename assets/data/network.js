@@ -1642,6 +1642,31 @@ export const NETWORK_CONFIG = {
         }
       },
       {
+        "id": "ivace",
+        "joinedAt": "2026-01-19",
+        "partner": "ceice",
+        "name": {
+          "es": "IVACE+i",
+          "en": "IVACE+i",
+          "va": "IVACE+i"
+        },
+        "category": "admin",
+        "primarySector": "transversal",
+        "sectors": [],
+        "region": {
+          "es": "C. Valenciana",
+          "en": "Valencian Community",
+          "va": "C. Valenciana"
+        },
+        "country": "ES",
+        "website": "https://www.ivace.es",
+        "description": {
+          "es": "Financiación de innovación y enlace con PYMES.",
+          "en": "Innovation funding and liaison with SMEs.",
+          "va": "Finançament d'innovació i enllaç amb PIMEs."
+        }
+      },
+      {
         "id": "dgtic",
         "joinedAt": "2026-01-12",
         "partner": "ceice",
@@ -1664,31 +1689,6 @@ export const NETWORK_CONFIG = {
           "es": "Dirección General de TIC de la Generalitat Valenciana.",
           "en": "General Directorate of ICT of the GVA.",
           "va": "Direcció General de TIC de la Generalitat Valenciana."
-        }
-      },
-      {
-        "id": "ivace",
-        "joinedAt": "2026-01-05",
-        "partner": "ceice",
-        "name": {
-          "es": "IVACE+i",
-          "en": "IVACE+i",
-          "va": "IVACE+i"
-        },
-        "category": "admin",
-        "primarySector": "transversal",
-        "sectors": [],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.ivace.es",
-        "description": {
-          "es": "Financiación de innovación y enlace con PYMES.",
-          "en": "Innovation funding and liaison with SMEs.",
-          "va": "Finançament d'innovació i enllaç amb PIMEs."
         }
       }
     ]
