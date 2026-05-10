@@ -12,12 +12,12 @@ export const SECTORS_CONFIG = {
     "description": {
       "es": "Mapa de transferencia AI-SECRETT: cada sector conecta necesidades reales de stakeholders con soluciones de IA, formando el núcleo de la red.",
       "en": "AI-SECRETT transfer map: each sector connects real stakeholder needs with AI solutions, forming the core of the network.",
-      "va": "Mapa de transferència AI-SECRETT: cada sector connecta necessitats reals de stakeholders amb solucions d'IA, formant el nucli de la xarxa."
+      "va": "Mapa de transferència d'AI-SECRETT: cada sector connecta necessitats reals de stakeholders amb solucions d'IA, formant el nucli de la xarxa."
     },
     "stats": [
       {
         "id": "challenges",
-        "value": "117",
+        "value": "1171",
         "label": {
           "es": "Retos y Casos",
           "en": "Challenges & Cases",
