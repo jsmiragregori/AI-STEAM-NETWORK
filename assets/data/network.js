@@ -124,6 +124,190 @@ export const NETWORK_CONFIG = {
   },
   "partnersBlock": {
     "visible": true,
+    "tabTitle": {
+      "es": "Socios del Consorcio AI-SECRETT",
+      "en": "AI-SECRETT Consortium Partners",
+      "va": "Socis del Consorci AI-SECRETT"
+    },
+    "description": {
+      "es": "Los socios del consorcio AI-SECRETT son los <strong>23 miembros</strong> (22 beneficiarios + 1 socio asociado) del proyecto europeo, seleccionados en la convocatoria inicial. Su composición es fija durante la vida del proyecto.",
+      "en": "AI-SECRETT consortium partners are the <strong>23 members</strong> (22 beneficiaries + 1 associated partner) of the European project, selected in the initial call. Its composition is fixed during the project lifetime.",
+      "va": "Els socis del consorci AI-SECRETT són els <strong>23 membres</strong> (22 beneficiaris + 1 soci associat) del projecte europeu, seleccionats en la convocatòria inicial. La seua composició és fixa durant la vida del projecte."
+    },
+    "filterAll": {
+      "es": "Todos",
+      "en": "All",
+      "va": "Tots"
+    },
+    "consortium": {
+      "es": "CONSORCIO",
+      "en": "CONSORTIUM",
+      "va": "CONSORCI"
+    },
+    "geographicCoverage": {
+      "es": "Cobertura Geográfica del Consorcio",
+      "en": "Consortium Geographic Coverage",
+      "va": "Cobertura Geogràfica del Consorci"
+    },
+    "clearFilter": {
+      "es": "✕ Quitar filtro",
+      "en": "✕ Clear filter",
+      "va": "✕ Llevar filtre"
+    },
+    "filteringPartners": {
+      "es": "Filtrando socios de",
+      "en": "Filtering partners from",
+      "va": "Filtrant socis de"
+    },
+    "resultsMessage": {
+      "es": "Haz clic de nuevo en el país para mostrar todos.",
+      "en": "Click the country again to show all.",
+      "va": "Fes clic de nou al país per mostrar-los tots."
+    },
+    "member": {
+      "es": "miembro",
+      "en": "member",
+      "va": "membre"
+    },
+    "members": {
+      "es": "miembros",
+      "en": "members",
+      "va": "membres"
+    },
+    "roleLabels": {
+      "coordinator": {
+        "es": "Coordinador",
+        "en": "Coordinator",
+        "va": "Coordinador"
+      },
+      "beneficiary": {
+        "es": "Socio Beneficiario",
+        "en": "Beneficiary Partner",
+        "va": "Soci Beneficiari"
+      },
+      "certification": {
+        "es": "Certificación",
+        "en": "Certification",
+        "va": "Certificació"
+      },
+      "associated": {
+        "es": "Socio Asociado",
+        "en": "Associated Partner",
+        "va": "Soci Associat"
+      }
+    },
+    "countryNames": {
+      "ES": {
+        "es": "España",
+        "en": "Spain",
+        "va": "Espanya"
+      },
+      "IT": {
+        "es": "Italia",
+        "en": "Italy",
+        "va": "Itàlia"
+      },
+      "DE": {
+        "es": "Alemania",
+        "en": "Germany",
+        "va": "Alemanya"
+      },
+      "NO": {
+        "es": "Noruega",
+        "en": "Norway",
+        "va": "Noruega"
+      },
+      "FR": {
+        "es": "Francia",
+        "en": "France",
+        "va": "França"
+      },
+      "HR": {
+        "es": "Croacia",
+        "en": "Croatia",
+        "va": "Croàcia"
+      },
+      "PT": {
+        "es": "Portugal",
+        "en": "Portugal",
+        "va": "Portugal"
+      },
+      "SE": {
+        "es": "Suecia",
+        "en": "Sweden",
+        "va": "Suècia"
+      },
+      "BE": {
+        "es": "Bélgica",
+        "en": "Belgium",
+        "va": "Bèlgica"
+      },
+      "GR": {
+        "es": "Grecia",
+        "en": "Greece",
+        "va": "Grècia"
+      },
+      "BA": {
+        "es": "Bosnia y Herzegovina",
+        "en": "Bosnia and Herzegovina",
+        "va": "Bòsnia i Hercegovina"
+      },
+      "FI": {
+        "es": "Finlandia",
+        "en": "Finland",
+        "va": "Finlàndia"
+      }
+    },
+    "countries": [
+      {
+        "code": "ES",
+        "count": 8
+      },
+      {
+        "code": "NO",
+        "count": 1
+      },
+      {
+        "code": "DE",
+        "count": 1
+      },
+      {
+        "code": "HR",
+        "count": 1
+      },
+      {
+        "code": "IT",
+        "count": 3
+      },
+      {
+        "code": "FR",
+        "count": 2
+      },
+      {
+        "code": "PT",
+        "count": 1
+      },
+      {
+        "code": "FI",
+        "count": 1
+      },
+      {
+        "code": "SE",
+        "count": 1
+      },
+      {
+        "code": "BA",
+        "count": 1
+      },
+      {
+        "code": "GR",
+        "count": 1
+      },
+      {
+        "code": "BE",
+        "count": 2
+      }
+    ],
     "partners": [
       {
         "id": "uveg",
@@ -934,6 +1118,44 @@ export const NETWORK_CONFIG = {
       "en": "No results match the selected filters.",
       "va": "No hi ha resultats que coincidisquen amb els filtres seleccionats."
     },
+    "emptyState": {
+      "es": "Aún no hay stakeholders registrados en la red. Las organizaciones interesadas pueden solicitar su adhesión mediante el formulario.",
+      "en": "There are not yet any stakeholders registered in the network. Interested organizations can request membership through the form.",
+      "va": "Encara no hi ha grups d'interès registrats en la xarxa. Les organitzacions interessades poden sol·licitar l'adhesió mitjançant el formulari."
+    },
+    "emptyStateTitle": {
+      "es": "La red aún está creciendo",
+      "en": "The network is still growing",
+      "va": "La xarxa encara està creixent"
+    },
+    "visitWebLabel": {
+      "es": "Visitar web",
+      "en": "Visit website",
+      "va": "Visitar web"
+    },
+    "searchPlaceholder": {
+      "es": "Buscar por nombre, región o descripción…",
+      "en": "Search by name, region or description…",
+      "va": "Cercar per nom, regió o descripció…"
+    },
+    "paginationPrev": {
+      "es": "Anterior",
+      "en": "Previous",
+      "va": "Anterior"
+    },
+    "paginationNext": {
+      "es": "Siguiente",
+      "en": "Next",
+      "va": "Següent"
+    },
+    "pageSizeOptions": [
+      12,
+      24,
+      48,
+      96
+    ],
+    "showAllOption": true,
+    "pageSize": 12,
     "form": {
       "title": {
         "es": "Formulario de Adhesión como Stakeholder",
@@ -1115,30 +1337,6 @@ export const NETWORK_CONFIG = {
       }
     },
     "stakeholders": [
-      {
-        "id": "aesia",
-        "partner": "ceice",
-        "name": {
-          "es": "AESIA – Agencia Española de Supervisión de IA",
-          "en": "AESIA – Spanish AI Supervisory Agency",
-          "va": "AESIA – Agència Espanyola de Supervisió de la IA"
-        },
-        "category": "admin",
-        "primarySector": "transversal",
-        "sectors": [],
-        "region": {
-          "es": "Nacional",
-          "en": "National",
-          "va": "Nacional"
-        },
-        "country": "ES",
-        "website": "https://www.aesia.es",
-        "description": {
-          "es": "Supervisión regulatoria y ética de la IA en España.",
-          "en": "AI regulatory supervision and ethics in Spain.",
-          "va": "Supervisió regulatòria i ètica de la IA a Espanya."
-        }
-      },
       {
         "id": "ivace",
         "partner": "ceice",
@@ -1453,6 +1651,30 @@ export const NETWORK_CONFIG = {
           "es": "Turismo inteligente y analítica de destinos.",
           "en": "Smart tourism and destination analytics.",
           "va": "Turisme intel·ligent i analítica de destinacions."
+        }
+      },
+      {
+        "id": "aesia",
+        "partner": "ceice",
+        "name": {
+          "es": "AESIA – Agencia Española de Supervisión de IA",
+          "en": "AESIA – Spanish AI Supervisory Agency",
+          "va": "AESIA – Agència Espanyola de Supervisió de la IA"
+        },
+        "category": "admin",
+        "primarySector": "transversal",
+        "sectors": [],
+        "region": {
+          "es": "Nacional",
+          "en": "National",
+          "va": "Nacional"
+        },
+        "country": "ES",
+        "website": "https://www.aesia.es",
+        "description": {
+          "es": "Supervisión regulatoria y ética de la IA en España.",
+          "en": "AI regulatory supervision and ethics in Spain.",
+          "va": "Supervisió regulatòria i ètica de la IA a Espanya."
         }
       }
     ]
