@@ -1,6 +1,7 @@
 import { t } from '../i18n.js';
 import { navigateTo } from '../router.js';
 import { getState, setState } from '../state.js';
+import { SECTORS_CONFIG } from '../../data/sectors.js';
 
 const SECTORS_META = [
   { id: 'mfg', emoji: '⚙️',  color: 'from-blue-700 to-blue-500',      borderColor: 'border-blue-600',  tagBg: 'bg-blue-100',   tagText: 'text-blue-800',   challenges: 23, partners: 23, courses: 14, stakeholders: 87,  featuredPartners: ['TUV.IT', 'JOIST', 'INESC TEC', 'Hochschule Wismar'] },
@@ -148,13 +149,19 @@ function renderExpanded(sector, sectorsT) {
   `;
 }
 
+function localized(label) {
+  if (typeof label === 'string') return label;
+  return label.es || label.en || label.va || '';
+}
+
 export function render() {
   const sectorsT = t('sectors') || {};
   const expanded = getState('expandedSector');
 
-  const totalChallenges = SECTORS_META.reduce((a, s) => a + s.challenges, 0);
-  const totalCourses    = SECTORS_META.reduce((a, s) => a + s.courses, 0);
-  const totalPartners   = 23;
+  const hero = SECTORS_CONFIG?.heroBlock;
+  const heroTitle = hero?.title || {};
+  const heroDescription = hero?.description || {};
+  const heroStats = hero?.stats || [];
 
   const cardsHtml = SECTORS_META.map(sector => {
     const isOpen = expanded === sector.id;
@@ -193,24 +200,18 @@ export function render() {
 
   return `
     <div>
-      <!-- Header -->
+      <!-- Header (CMS-powered) -->
       <div class="bg-eu-blue text-white px-6 py-12">
         <div class="max-w-7xl mx-auto">
-          <h1 class="text-3xl font-extrabold mb-3">${sectorsT?.title || ''}</h1>
-          <p class="text-white/80 max-w-3xl text-base mb-8">${sectorsT?.description || ''}</p>
+          <h1 class="text-3xl font-extrabold mb-3">${localized(heroTitle)}</h1>
+          <p class="text-white/80 max-w-3xl text-base mb-8">${localized(heroDescription)}</p>
           <div class="flex flex-wrap gap-6">
-            <div class="bg-white/10 rounded-xl px-6 py-4 text-center">
-              <p class="text-3xl font-extrabold text-eu-yellow">${totalChallenges}</p>
-              <p class="text-xs text-white/70 font-semibold uppercase mt-1">${sectorsT?.stats?.totalChallenges || ''}</p>
-            </div>
-            <div class="bg-white/10 rounded-xl px-6 py-4 text-center">
-              <p class="text-3xl font-extrabold text-eu-yellow">${totalPartners}</p>
-              <p class="text-xs text-white/70 font-semibold uppercase mt-1">${sectorsT?.stats?.partners || ''}</p>
-            </div>
-            <div class="bg-white/10 rounded-xl px-6 py-4 text-center">
-              <p class="text-3xl font-extrabold text-eu-yellow">${totalCourses}</p>
-              <p class="text-xs text-white/70 font-semibold uppercase mt-1">${sectorsT?.stats?.trainingModules || ''}</p>
-            </div>
+            ${heroStats.map(s => `
+              <div class="bg-white/10 rounded-xl px-6 py-4 text-center">
+                <p class="text-3xl font-extrabold text-eu-yellow">${s.value}</p>
+                <p class="text-xs text-white/70 font-semibold uppercase mt-1">${localized(s.label)}</p>
+              </div>
+            `).join('')}
           </div>
         </div>
       </div>
