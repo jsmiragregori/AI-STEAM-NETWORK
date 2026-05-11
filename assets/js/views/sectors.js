@@ -22,129 +22,163 @@ const CHAIN_COLORS = [
   'bg-purple-50 text-purple-700 border-purple-200',
 ];
 
-function get(sectorsT, key, sectorId) {
-  return sectorsT?.[key]?.[sectorId];
+function enhanceSectorWithMetadata(sector) {
+  const uiMeta = SECTORS_CONFIG?.uiBlock || [];
+  const meta = uiMeta.find(m => m.id === sector.id) || SECTORS_META.find(m => m.id === sector.id);
+  return {
+    ...sector,
+    emoji: meta?.emoji || '❓',
+    color: meta?.color || 'from-gray-500 to-gray-400',
+    borderColor: meta?.borderColor || 'border-gray-400',
+    tagBg: meta?.tagBg || 'bg-gray-100',
+    tagText: meta?.tagText || 'text-gray-800',
+  };
 }
 
 function renderExpanded(sector, sectorsT) {
-  const keywords      = get(sectorsT, 'sectorKeywords', sector.id) || [];
-  const fpSkills      = get(sectorsT, 'sectorFpModules', sector.id) || [];
-  const masterBridge  = get(sectorsT, 'sectorMasterTopics', sector.id) || [];
-  const stakeholderTypes = get(sectorsT, 'sectorStakeholderTypes', sector.id) || [];
-  const teacherRelevance = get(sectorsT, 'sectorTeacherRelevance', sector.id) || '';
-  const exampleChallenge = get(sectorsT, 'sectorExampleChallenge', sector.id) || '';
-  const description   = get(sectorsT, 'sectorDescriptions', sector.id) || '';
-  const chainLabels   = sectorsT?.transferChainLabels || {};
+  const chainLabels = ['stakeholderNeed', 'fpSkill', 'teacherUse', 'evidence', 'masterBridge'];
+  const visibleChainItems = (sector.transferChain || [])
+    .map((item, index) => ({ ...item, index }))
+    .filter(item => item.visible !== false);
 
-  const chainItems = [
-    { label: chainLabels.stakeholderNeed, value: stakeholderTypes[0] || '—' },
-    { label: chainLabels.fpSkill,         value: fpSkills[0] || '—' },
-    { label: chainLabels.teacherUse,      value: teacherRelevance },
-    { label: chainLabels.evidence,        value: exampleChallenge },
-    { label: chainLabels.masterBridge,    value: masterBridge[0] || '—' },
-  ];
-
-  const chainHtml = chainItems.map((item, i) => `
+  const chainHtml = visibleChainItems.map((chainItem, displayIdx) => `
     <div class="flex items-start gap-1.5">
-      <div class="flex flex-col gap-1 border rounded-lg px-3 py-2 min-w-32.5 max-w-50 ${CHAIN_COLORS[i]}">
+      <div class="flex flex-col gap-1 border rounded-lg px-3 py-2 min-w-32.5 max-w-50 ${CHAIN_COLORS[chainItem.index] || CHAIN_COLORS[0]}">
         <div class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide">
-          <i data-lucide="${CHAIN_ICONS[i]}" class="w-4 h-4"></i>
-          ${item.label || ''}
+          <i data-lucide="${CHAIN_ICONS[chainItem.index] || 'circle'}" class="w-4 h-4"></i>
+          ${sectorsT?.transferChainLabels?.[chainLabels[chainItem.index]] || ''}
         </div>
-        <p class="text-xs leading-snug">${item.value}</p>
+        <p class="text-xs leading-snug">${localized(chainItem.value)}</p>
       </div>
-      ${i < chainItems.length - 1 ? '<i data-lucide="arrow-right" class="w-4 h-4 text-gray-400 mt-3 shrink-0"></i>' : ''}
+      ${displayIdx < visibleChainItems.length - 1 ? '<i data-lucide="arrow-right" class="w-4 h-4 text-gray-400 mt-3 shrink-0"></i>' : ''}
     </div>
   `).join('');
 
-  const stakeholderHtml = stakeholderTypes.map(s => `
-    <li class="text-xs text-gray-700 flex items-start gap-1.5">
-      <i data-lucide="arrow-right" class="w-3 h-3 text-eu-blue mt-0.5 shrink-0"></i>${s}
-    </li>`).join('');
+  const sections = sector.sections || {};
+  const stakeholderTypes = localizedList(sector.stakeholderTypes);
+  const keywords = localizedList(sector.keywords);
+  const fpSkills = localizedList(sector.fpSkills);
+  const masterTopics = localizedList(sector.masterTopics);
+  const col1Html = [];
+  const col2Html = [];
+  const col3Html = [];
 
-  const keywordsHtml = keywords.map(kw =>
-    `<span class="text-xs font-semibold px-2 py-0.5 rounded-full ${sector.tagBg} ${sector.tagText}">${kw}</span>`
-  ).join('');
+  if (sections.stakeholderTypes !== false && stakeholderTypes.length > 0) {
+    col1Html.push(`
+      <div class="bg-white rounded-lg border border-eu-border p-4">
+        <h4 class="font-bold text-eu-text text-sm mb-2 flex items-center gap-2">
+          <i data-lucide="users" class="w-4 h-4 text-eu-blue"></i>
+          ${sectorsT?.stakeholderTypesLabel || ''}
+        </h4>
+        <ul class="space-y-1">
+          ${stakeholderTypes.map(s => `
+            <li class="text-xs text-gray-700 flex items-start gap-1.5">
+              <i data-lucide="arrow-right" class="w-3 h-3 text-eu-blue mt-0.5 shrink-0"></i>${s}
+            </li>`).join('')}
+        </ul>
+      </div>
+    `);
+  }
 
-  const fpHtml = fpSkills.map(m => `
-    <li class="text-xs text-gray-700 flex items-start gap-2">
-      <i data-lucide="arrow-right" class="w-3 h-3 text-eu-orange mt-0.5 shrink-0"></i>${m}
-    </li>`).join('');
+  if (sections.keywords !== false && keywords.length > 0) {
+    col1Html.push(`
+      <div class="bg-white rounded-lg border border-eu-border p-4">
+        <p class="text-xs text-gray-700 mb-3">${localized(sector.description)}</p>
+        <div class="flex flex-wrap gap-1.5">
+          ${keywords.map(kw => `
+            <span class="text-xs font-semibold px-2 py-0.5 rounded-full ${sector.tagBg} ${sector.tagText}">${kw}</span>
+          `).join('')}
+        </div>
+      </div>
+    `);
+  }
 
-  const masterHtml = masterBridge.map(topic => `
-    <li class="text-xs text-gray-700 flex items-start gap-2">
-      <i data-lucide="arrow-right" class="w-3 h-3 text-purple-600 mt-0.5 shrink-0"></i>${topic}
-    </li>`).join('');
+  if (sections.fpSkills !== false && fpSkills.length > 0) {
+    col2Html.push(`
+      <div class="bg-white rounded-lg border border-eu-border p-4">
+        <h4 class="font-bold text-eu-text text-sm mb-3 flex items-center gap-2">
+          <i data-lucide="book-open" class="w-4 h-4 text-eu-orange"></i>
+          ${sectorsT?.fpModulesLabel || ''}
+        </h4>
+        <ul class="space-y-2">
+          ${fpSkills.map(m => `
+            <li class="text-xs text-gray-700 flex items-start gap-2">
+              <i data-lucide="arrow-right" class="w-3 h-3 text-eu-orange mt-0.5 shrink-0"></i>${m}
+            </li>`).join('')}
+        </ul>
+      </div>
+    `);
+  }
 
-  const partnersHtml = sector.featuredPartners.map(p =>
-    `<span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-bold">${p}</span>`
-  ).join('');
+  if (sections.teacherRelevance !== false && localized(sector.teacherRelevance)) {
+    col2Html.push(`
+      <div class="bg-white rounded-lg border border-eu-border p-4">
+        <h4 class="font-bold text-eu-text text-sm mb-2 flex items-center gap-2">
+          <i data-lucide="lightbulb" class="w-4 h-4 text-blue-600"></i>
+          ${sectorsT?.teacherRelevanceLabel || ''}
+        </h4>
+        <p class="text-xs text-gray-700">${localized(sector.teacherRelevance)}</p>
+      </div>
+    `);
+  }
+
+  if (sections.masterTopics !== false && masterTopics.length > 0) {
+    col3Html.push(`
+      <div class="bg-white rounded-lg border border-purple-100 p-4">
+        <h4 class="font-bold text-eu-text text-sm mb-3 flex items-center gap-2">
+          <i data-lucide="graduation-cap" class="w-4 h-4 text-purple-600"></i>
+          ${sectorsT?.masterTopicsLabel || ''}
+        </h4>
+        <ul class="space-y-2">
+          ${masterTopics.map(topic => `
+            <li class="text-xs text-gray-700 flex items-start gap-2">
+              <i data-lucide="arrow-right" class="w-3 h-3 text-purple-600 mt-0.5 shrink-0"></i>${topic}
+            </li>`).join('')}
+        </ul>
+        ${(sector.featuredPartners || []).length > 0 ? `
+          <div class="mt-3 pt-3 border-t border-eu-border">
+            <p class="text-xs text-gray-500 font-semibold uppercase mb-1.5">${sectorsT?.featuredPartnersLabel || ''}</p>
+            <div class="flex flex-wrap gap-1">
+              ${(sector.featuredPartners || []).map(p => `
+                <span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-bold">${p}</span>
+              `).join('')}
+            </div>
+          </div>
+        ` : ''}
+      </div>
+    `);
+  }
+
+  if (sections.exampleChallenge !== false && localized(sector.exampleChallenge)) {
+    col3Html.push(`
+      <div class="bg-amber-50 rounded-lg border border-amber-200 p-4">
+        <h4 class="font-bold text-amber-800 text-xs mb-1.5 flex items-center gap-1.5">
+          <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i>
+          ${sectorsT?.exampleChallengeLabel || ''}
+        </h4>
+        <p class="text-xs text-amber-700 italic">${localized(sector.exampleChallenge)}</p>
+      </div>
+    `);
+  }
+
+  const hasContent = col1Html.length || col2Html.length || col3Html.length;
+  const gridHtml = hasContent ? `
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="space-y-3">${col1Html.join('')}</div>
+      <div class="space-y-3">${col2Html.join('')}</div>
+      <div class="space-y-3">${col3Html.join('')}</div>
+    </div>
+  ` : '';
 
   return `
     <div class="border-t border-eu-border px-6 py-6 bg-eu-bg space-y-6">
-      <!-- Transfer Chain -->
-      <div class="bg-white rounded-xl border border-eu-border p-5">
-        <h4 class="font-bold text-eu-text text-sm mb-4">${sectorsT?.transferChainTitle || ''}</h4>
-        <div class="flex flex-wrap items-start gap-2">${chainHtml}</div>
-      </div>
-
-      <!-- Detail Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- Col 1: Stakeholders + keywords -->
-        <div class="space-y-3">
-          <div class="bg-white rounded-lg border border-eu-border p-4">
-            <h4 class="font-bold text-eu-text text-sm mb-2 flex items-center gap-2">
-              <i data-lucide="users" class="w-4 h-4 text-eu-blue"></i>
-              ${sectorsT?.stakeholderTypesLabel || ''}
-            </h4>
-            <ul class="space-y-1">${stakeholderHtml}</ul>
-          </div>
-          <div class="bg-white rounded-lg border border-eu-border p-4">
-            <p class="text-xs text-gray-700 mb-3">${description}</p>
-            <div class="flex flex-wrap gap-1.5">${keywordsHtml}</div>
-          </div>
+      ${chainHtml ? `
+        <div class="bg-white rounded-xl border border-eu-border p-5">
+          <h4 class="font-bold text-eu-text text-sm mb-4">${sectorsT?.transferChainTitle || ''}</h4>
+          <div class="flex flex-wrap items-start gap-2">${chainHtml}</div>
         </div>
-
-        <!-- Col 2: FP skills + teacher relevance -->
-        <div class="space-y-3">
-          <div class="bg-white rounded-lg border border-eu-border p-4">
-            <h4 class="font-bold text-eu-text text-sm mb-3 flex items-center gap-2">
-              <i data-lucide="book-open" class="w-4 h-4 text-eu-orange"></i>
-              ${sectorsT?.fpModulesLabel || ''}
-            </h4>
-            <ul class="space-y-2">${fpHtml}</ul>
-          </div>
-          <div class="bg-white rounded-lg border border-eu-border p-4">
-            <h4 class="font-bold text-eu-text text-sm mb-2 flex items-center gap-2">
-              <i data-lucide="lightbulb" class="w-4 h-4 text-blue-600"></i>
-              ${sectorsT?.teacherRelevanceLabel || ''}
-            </h4>
-            <p class="text-xs text-gray-700">${teacherRelevance}</p>
-          </div>
-        </div>
-
-        <!-- Col 3: Master bridge + partners + example -->
-        <div class="space-y-3">
-          <div class="bg-white rounded-lg border border-purple-100 p-4">
-            <h4 class="font-bold text-eu-text text-sm mb-3 flex items-center gap-2">
-              <i data-lucide="graduation-cap" class="w-4 h-4 text-purple-600"></i>
-              ${sectorsT?.masterTopicsLabel || ''}
-            </h4>
-            <ul class="space-y-2">${masterHtml}</ul>
-            <div class="mt-3 pt-3 border-t border-eu-border">
-              <p class="text-xs text-gray-500 font-semibold uppercase mb-1.5">${sectorsT?.featuredPartnersLabel || ''}</p>
-              <div class="flex flex-wrap gap-1">${partnersHtml}</div>
-            </div>
-          </div>
-          <div class="bg-amber-50 rounded-lg border border-amber-200 p-4">
-            <h4 class="font-bold text-amber-800 text-xs mb-1.5 flex items-center gap-1.5">
-              <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i>
-              ${sectorsT?.exampleChallengeLabel || ''}
-            </h4>
-            <p class="text-xs text-amber-700 italic">${exampleChallenge}</p>
-          </div>
-        </div>
-      </div>
+      ` : ''}
+      ${gridHtml}
     </div>
   `;
 }
@@ -159,6 +193,12 @@ function localized(label) {
   return label[getLang()] || label.es || '';
 }
 
+function localizedList(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) return value;
+  return value[getLang()] || value.es || [];
+}
+
 export function render() {
   const sectorsT = t('sectors') || {};
   const expanded = getState('expandedSector');
@@ -168,10 +208,15 @@ export function render() {
   const heroDescription = hero?.description || {};
   const heroStats = hero?.stats || [];
 
-  const cardsHtml = SECTORS_META.map(sector => {
+  const sectorList = (SECTORS_CONFIG.cardsBlock || [])
+    .filter(s => s.visible !== false)
+    .map(enhanceSectorWithMetadata);
+
+  const cardsHtml = sectorList.map(sector => {
     const isOpen = expanded === sector.id;
-    const name        = get(sectorsT, 'sectorNames', sector.id) || sector.id;
-    const description = get(sectorsT, 'sectorDescriptions', sector.id) || '';
+    const name = localized(sector.name) || sector.id;
+    const description = localized(sector.description);
+    const stats = sector.stats || {};
     const sectorLabels = sectorsT?.sectorLabels || {};
 
     return `
@@ -184,15 +229,15 @@ export function render() {
           </div>
           <div class="hidden sm:flex items-center gap-6 shrink-0">
             <div class="text-center">
-              <p class="text-xl font-extrabold text-eu-teal">${sector.challenges}</p>
+              <p class="text-xl font-extrabold text-eu-teal">${stats.challenges ?? ''}</p>
               <p class="text-xs text-gray-500 uppercase font-semibold">${sectorLabels.challenges || ''}</p>
             </div>
             <div class="text-center">
-              <p class="text-xl font-extrabold text-eu-blue">${sector.partners}</p>
+              <p class="text-xl font-extrabold text-eu-blue">${stats.partners ?? ''}</p>
               <p class="text-xs text-gray-500 uppercase font-semibold">${sectorLabels.partners || ''}</p>
             </div>
             <div class="text-center">
-              <p class="text-xl font-extrabold text-purple-600">${sector.stakeholders}</p>
+              <p class="text-xl font-extrabold text-purple-600">${stats.stakeholders ?? ''}</p>
               <p class="text-xs text-gray-500 uppercase font-semibold">${sectorLabels.stakeholders || ''}</p>
             </div>
           </div>
