@@ -1,5 +1,6 @@
 import { t, getLanguage } from '../i18n.js';
 import { navigateTo } from '../router.js';
+import { setState } from '../state.js';
 import { HOME_CONFIG } from '../../data/home.js';
 
 
@@ -425,6 +426,11 @@ function renderHeroBlock() {
       <div class="text-xs text-white/70 font-semibold uppercase tracking-wide">${loc(s.label)}</div>
     </div>
   `).join('');
+  const requestJoinButton = hero.buttons?.requestJoin?.visible !== false
+    ? `<button data-nav="red" data-membership-cta="true" class="border-2 border-white/50 text-white px-6 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
+        ${loc(hero.buttons?.requestJoin)}
+      </button>`
+    : '';
   return `
     <section class="bg-linear-to-br from-eu-blue to-eu-purple text-white px-6 py-16">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -440,9 +446,7 @@ function renderHeroBlock() {
             <button data-nav="banco-retos" class="bg-eu-orange text-white px-6 py-3 rounded-md font-bold hover:bg-eu-purple transition-colors flex items-center gap-2">
               ${loc(hero.buttons?.uploadChallenge)} <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
-            <button data-nav="red" class="border-2 border-white/50 text-white px-6 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
-              ${loc(hero.buttons?.requestJoin)}
-            </button>
+            ${requestJoinButton}
           </div>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">${statsHtml}</div>
@@ -483,6 +487,16 @@ export function render() {
 
 export function mount() {
   document.querySelectorAll('[data-nav]').forEach(btn => {
-    btn.addEventListener('click', () => navigateTo(btn.dataset.nav));
+    btn.addEventListener('click', () => {
+      if (btn.dataset.membershipCta === 'true') {
+        setState('networkTab', 'stakeholders');
+        setState('networkShowForm', true);
+        setState('networkCategory', 'todos');
+        setState('networkSector', 'todos');
+        setState('networkSearch', '');
+        setState('networkPage', 0);
+      }
+      navigateTo(btn.dataset.nav);
+    });
   });
 }

@@ -1174,6 +1174,9 @@ export const SECTORS_CONFIG = {
       "va": "La xarxa AI-STEAM és oberta a stakeholders de qualsevol dels 7 sectors. La sol·licitud es gestiona des de la secció <strong>La Xarxa</strong>, on es recull la informació necessària per ubicar la teua organització en l'ecosistema."
     },
     "buttonVisible": true,
+    "configuredButtonVisible": true,
+    "membershipFormVisible": true,
+    "membershipCtasVisible": true,
     "buttonLabel": {
       "es": "Ir al formulario de adhesión",
       "en": "Go to membership form",

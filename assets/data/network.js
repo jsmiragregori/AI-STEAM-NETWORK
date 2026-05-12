@@ -1088,6 +1088,9 @@ export const NETWORK_CONFIG = {
   },
   "stakeholdersBlock": {
     "visible": true,
+    "formVisible": true,
+    "membershipCtasVisible": true,
+    "effectiveMembershipCtasVisible": true,
     "tabTitle": {
       "es": "Stakeholders de la Red",
       "en": "Network Stakeholders",

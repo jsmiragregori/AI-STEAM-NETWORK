@@ -234,6 +234,10 @@ function tabStakeholders(activeCategory, showForm) {
   const lang = getLang();
   const shBlock = NETWORK_CONFIG?.stakeholdersBlock || {};
   const loc = obj => localized(obj) || '';
+  const formVisible = shBlock.formVisible !== false;
+  const membershipCtasVisible = formVisible && shBlock.membershipCtasVisible !== false;
+  const effectiveShowForm = formVisible && showForm;
+  const showToggleButton = formVisible;
 
   const shTexts = {
     description:       loc(shBlock.description),
@@ -262,7 +266,7 @@ function tabStakeholders(activeCategory, showForm) {
 
   // ── Form HTML (shared by empty-state and full view) ──────────────────────────
   const f = shTexts.form;
-  const formHtml = showForm ? `
+  const formHtml = effectiveShowForm ? `
     <div id="stakeholder-form" class="bg-white rounded-xl border-2 border-eu-orange shadow-sm overflow-hidden mt-8">
       <div class="bg-eu-orange/10 border-b border-eu-orange/30 px-6 py-4 flex items-center gap-3">
         <i data-lucide="user-plus" class="w-5 h-5 text-eu-orange"></i>
@@ -352,10 +356,10 @@ function tabStakeholders(activeCategory, showForm) {
   const headerBar = `
     <div class="flex items-start justify-between mb-5 flex-wrap gap-4">
       <p class="text-sm text-gray-600 max-w-3xl">${shTexts.description}</p>
-      <button id="net-toggle-form" class="flex items-center gap-2 bg-eu-orange text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0">
+      ${showToggleButton ? `<button id="net-toggle-form" class="flex items-center gap-2 bg-eu-orange text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0">
         <i data-lucide="user-plus" class="w-4 h-4"></i>
-        ${showForm ? shTexts.closeForm : shTexts.requestMembership}
-      </button>
+        ${effectiveShowForm ? shTexts.closeForm : shTexts.requestMembership}
+      </button>` : ''}
     </div>`;
 
   // ── Empty state (no stakeholders at all) ──────────────────────────────────────
@@ -366,10 +370,10 @@ function tabStakeholders(activeCategory, showForm) {
         <i data-lucide="users" class="w-12 h-12 text-gray-300 mx-auto mb-5"></i>
         ${shTexts.emptyStateTitle ? `<h3 class="text-base font-bold text-eu-text mb-3">${shTexts.emptyStateTitle}</h3>` : ''}
         <p class="text-sm text-gray-600 max-w-sm sm:max-w-md mx-auto mb-8">${shTexts.emptyState}</p>
-        <button id="net-toggle-form-empty" class="inline-flex items-center gap-2 bg-eu-orange text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer">
+        ${formVisible ? `<button id="net-toggle-form-empty" class="inline-flex items-center gap-2 bg-eu-orange text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer">
           <i data-lucide="user-plus" class="w-4 h-4"></i>
           ${shTexts.requestMembership}
-        </button>
+        </button>` : ''}
       </div>
       ${formHtml}`;
   }

@@ -38,7 +38,8 @@ export const HOME_CONFIG = {
       "requestJoin": {
         "es": "Únete a la AI-STEAM Network",
         "en": "Join the AI-STEAM Network",
-        "va": "Uneix-te a la AI-STEAM Network"
+        "va": "Uneix-te a la AI-STEAM Network",
+        "visible": true
       }
     },
     "stats": [

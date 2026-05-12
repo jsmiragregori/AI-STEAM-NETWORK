@@ -1,6 +1,46 @@
-# Próxima sesión: Continuación Migración Vanilla
+# Próxima sesión: AI-STEAM Vanilla
 
-**Estado actual:** Fase 2 completada al 100% (Home, Sectors, Training, News)
+**Estado actual:** sitio Vanilla conectado a CMS para Home, Network y Sectors. Ultima sesion relevante: 2026-05-12, formulario de adhesion y CTAs globales.
+
+## Handoff rapido 2026-05-12
+
+- Los datos generados vienen de `AI-STEAM-CONTENT`.
+- Formulario de adhesion:
+  - fuente: `AI-STEAM-CONTENT/content/network/stakeholders.yml`
+  - flags: `formVisible` y `membershipCtasVisible`
+  - si `formVisible=true`, Network siempre muestra boton operativo de abrir/cerrar formulario.
+  - si `membershipCtasVisible=false`, se ocultan CTAs promocionales desde Home y Sectors, pero Network mantiene su boton si el formulario esta visible.
+- Home:
+  - `assets/js/views/home.js` oculta el boton `requestJoin` si `HOME_CONFIG.heroBlock.buttons.requestJoin.visible === false`.
+  - si se pulsa, navega a `red`, tab `stakeholders`, con `networkShowForm=true`.
+- Network:
+  - `assets/js/views/network.js` renderiza formulario segun `NETWORK_CONFIG.stakeholdersBlock.formVisible`.
+  - el boton operativo dentro de Network depende solo de `formVisible`, no de `membershipCtasVisible`.
+- Sectors:
+  - `assets/js/views/sectors.js` usa `SECTORS_CONFIG.ctaBlock`.
+  - el destino del CTA queda fijo desde loader: `red > stakeholders > formulario`.
+  - el admin de Sectors ya no expone ruta/pestana/apertura para evitar ruido.
+- Regeneracion recomendada:
+  - cambios en Network/formulario/CTAs globales: ejecutar `npm run cms:network` desde `AI-STEAM-CONTENT`; esto genera `network.js`, `home.js` y `sectors.js`.
+  - cambios solo en CTA/textos de Sectors: ejecutar `npm run cms:sectors`.
+
+## Comandos al cambiar de ordenador
+
+```powershell
+cd D:\CEICE\AI-STEAM-CONTENT
+git pull origin master
+
+cd D:\CEICE\AI-STEAM-VANILLA
+git pull origin main
+python -m http.server 8000
+```
+
+Para el admin:
+
+```powershell
+cd D:\CEICE\AI-STEAM-CONTENT
+streamlit run admin/app.py
+```
 
 ## Resumen de progreso
 - ✅ **Fase 1 (Infrastructure):** Tailwind CLI, estructura, i18n, router, state, components (header/footer/cookie-banner)

@@ -6,6 +6,44 @@
 
 ---
 
+## Actualización 2026-05-12: CMS Network/Formulario/CTAs
+
+El sitio ya consume datos generados por `AI-STEAM-CONTENT` para Home, Network y Sectors. La sesión del 2026-05-12 dejó implementada la gestión global del formulario de adhesión.
+
+### Reglas actuales
+
+- Fuente de verdad: `AI-STEAM-CONTENT/content/network/stakeholders.yml`.
+- `formVisible` controla si el formulario de adhesión se renderiza en Network.
+- `membershipCtasVisible` controla los CTAs promocionales desde Home y Sectors.
+- En Network, si `formVisible=true`, siempre debe haber botón de abrir/cerrar formulario.
+- `membershipCtasVisible=false` no debe ocultar el botón operativo de Network.
+- En Sectors el destino del CTA es fijo: `red > stakeholders > formulario`.
+
+### Archivos Vanilla relevantes
+
+- `assets/js/views/home.js`: oculta/activa el botón de adhesión del hero según dato generado.
+- `assets/js/views/network.js`: controla apertura/cierre y render del formulario.
+- `assets/js/views/sectors.js`: navega al formulario desde el CTA cuando el dato generado permite mostrar el botón.
+- `assets/data/home.js`, `assets/data/network.js`, `assets/data/sectors.js`: generados desde `AI-STEAM-CONTENT`.
+
+### Regeneración
+
+Desde `AI-STEAM-CONTENT`:
+
+```powershell
+npm run cms:network
+```
+
+Este comando regenera en secuencia `network.js`, `home.js` y `sectors.js`.
+
+Para cambios aislados en el CTA de Sectors:
+
+```powershell
+npm run cms:sectors
+```
+
+---
+
 ## 📌 Resumen Ejecutivo
 
 Este es el resultado de la **segunda sesión** de Claude Code sobre el mockup de AI-STEAM Network. En la primera sesión (que se encuentra en `D:\CEICE\AI-STEAM-MOCKUP`), se desarrolló completamente la aplicación React/Vite multilingüe. 
