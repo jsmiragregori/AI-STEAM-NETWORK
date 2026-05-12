@@ -1,6 +1,6 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR DIRECTAMENTE
 // Edita los archivos en content/_ui/*.csv y ejecuta: npm run cms:ui
-// Base: translations.js existente + overrides de 40 entradas CSV
+// Base: translations.js existente + overrides de 41 entradas CSV
 
 export const translations = {
   "es": {
@@ -289,7 +289,7 @@ export const translations = {
       "featuredPartnersLabel": "Socios Destacados",
       "stakeholderTypesLabel": "Tipos de stakeholders",
       "teacherRelevanceLabel": "Relevancia para formación docente",
-      "exampleChallengeLabel": "Ejemplo de reto (prototipo)",
+      "exampleChallengeLabel": "Ejemplo de reto",
       "demoLabel": "demo",
       "transferChainTitle": "Cadena de transferencia AI-SECRETT",
       "transferChainLabels": {
@@ -2354,7 +2354,7 @@ export const translations = {
       "featuredPartnersLabel": "Featured Partners",
       "stakeholderTypesLabel": "Stakeholder types",
       "teacherRelevanceLabel": "Teacher training relevance",
-      "exampleChallengeLabel": "Example challenge (prototype)",
+      "exampleChallengeLabel": "Example challenge",
       "demoLabel": "demo",
       "transferChainTitle": "AI-SECRETT Transfer Chain",
       "transferChainLabels": {
@@ -4419,7 +4419,7 @@ export const translations = {
       "featuredPartnersLabel": "Socis Destacats",
       "stakeholderTypesLabel": "Tipus de stakeholders",
       "teacherRelevanceLabel": "Rellevància per a formació docent",
-      "exampleChallengeLabel": "Exemple de repte (prototip)",
+      "exampleChallengeLabel": "Exemple de repte",
       "demoLabel": "demo",
       "transferChainTitle": "Cadena de transferència AI-SECRETT",
       "transferChainLabels": {

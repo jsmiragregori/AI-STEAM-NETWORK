@@ -17,7 +17,7 @@ export const SECTORS_CONFIG = {
     "stats": [
       {
         "id": "challenges",
-        "value": "1171",
+        "value": "133",
         "label": {
           "es": "Retos y Casos",
           "en": "Challenges & Cases",
@@ -59,10 +59,10 @@ export const SECTORS_CONFIG = {
         "va": "IA aplicada a la fabricació avançada per a recolzar la transició digital i la sostenibilitat industrial. Automatització, manteniment predictiu i control de qualitat amb atenció a la seguretat laboral i l'ètica en sistemes OT/IT."
       },
       "stats": {
-        "challenges": 23,
+        "challenges": 3,
         "partners": 23,
-        "courses": 14,
-        "stakeholders": 87
+        "courses": 12,
+        "stakeholders": 16
       },
       "transferChain": [
         {
@@ -92,9 +92,9 @@ export const SECTORS_CONFIG = {
         {
           "visible": true,
           "value": {
-            "es": "Detección automática de defectos en línea de producción con visión artificial (ejemplo prototipo)",
-            "en": "Automatic defect detection on production line with artificial vision (prototype example)",
-            "va": "Detecció automàtica de defectes en línia de producció amb visió artificial (exemple prototip)"
+            "es": "Detección automática de defectos en línea de producción con visión artificial",
+            "en": "Automatic defect detection on production line with artificial vision",
+            "va": "Detecció automàtica de defectes en línia de producció amb visió artificial"
           }
         },
         {
@@ -185,17 +185,31 @@ export const SECTORS_CONFIG = {
         "en": "Automation, robotics and IoT for industrial VET. Responsible AI use in production environments.",
         "va": "Automatització, robòtica i IoT per a FP industrial. Ús responsable d'IA en entorns de producció."
       },
+      "exampleChallengeLabel": {
+        "es": "Ejemplo de caso",
+        "en": "Example of case",
+        "va": "Exemple de cas"
+      },
       "exampleChallenge": {
-        "es": "Detección automática de defectos en línea de producción con visión artificial (ejemplo prototipo)",
-        "en": "Automatic defect detection on production line with artificial vision (prototype example)",
-        "va": "Detecció automàtica de defectes en línia de producció amb visió artificial (exemple prototip)"
+        "es": "Detección automática de defectos en línea de producción con visión artificial",
+        "en": "Automatic defect detection on production line with artificial vision",
+        "va": "Detecció automàtica de defectes en línia de producció amb visió artificial"
       },
       "featuredPartners": [
         "TUV.IT",
         "JOIST",
         "INESC TEC"
       ],
-      "sections": {}
+      "sections": {
+        "stakeholderTypes": true,
+        "fpSkills": true,
+        "masterTopics": true,
+        "teacherRelevance": true,
+        "keywords": true,
+        "exampleChallenge": true,
+        "keywordsDescription": true,
+        "featuredPartners": true
+      }
     },
     {
       "id": "mob",
@@ -244,9 +258,9 @@ export const SECTORS_CONFIG = {
         {
           "visible": true,
           "value": {
-            "es": "Predicción de demanda en transporte público para optimización de frecuencias (ejemplo prototipo)",
-            "en": "Demand prediction in public transport for frequency optimisation (prototype example)",
-            "va": "Predicció de demanda en transport públic per a optimització de freqüències (exemple prototip)"
+            "es": "Predicción de demanda en transporte público para optimización de frecuencias",
+            "en": "Demand prediction in public transport for frequency optimisation",
+            "va": "Predicció de demanda en transport públic per a optimització de freqüències"
           }
         },
         {
@@ -337,10 +351,15 @@ export const SECTORS_CONFIG = {
         "en": "Sustainable mobility and green logistics for transport VET. The triple transition as a learning context.",
         "va": "Mobilitat sostenible i logística verda per a FP transport. La triple transició com a context d'aprenentatge."
       },
+      "exampleChallengeLabel": {
+        "es": "Ejemplo de reto",
+        "en": "Example challenge",
+        "va": "Exemple de repte"
+      },
       "exampleChallenge": {
-        "es": "Predicción de demanda en transporte público para optimización de frecuencias (ejemplo prototipo)",
-        "en": "Demand prediction in public transport for frequency optimisation (prototype example)",
-        "va": "Predicció de demanda en transport públic per a optimització de freqüències (exemple prototip)"
+        "es": "Predicción de demanda en transporte público para optimización de frecuencias",
+        "en": "Demand prediction in public transport for frequency optimisation",
+        "va": "Predicció de demanda en transport públic per a optimització de freqüències"
       },
       "featuredPartners": [
         "NTNU",
@@ -397,9 +416,9 @@ export const SECTORS_CONFIG = {
         {
           "visible": true,
           "value": {
-            "es": "Sistema de monitorización de calidad del aire con sensores IoT y alertas automáticas (ejemplo prototipo)",
-            "en": "Air quality monitoring system with IoT sensors and automatic alerts (prototype example)",
-            "va": "Sistema de monitorització de qualitat de l'aire amb sensors IoT i alertes automàtiques (exemple prototip)"
+            "es": "Sistema de monitorización de calidad del aire con sensores IoT y alertas automáticas",
+            "en": "Air quality monitoring system with IoT sensors and automatic alerts",
+            "va": "Sistema de monitorització de qualitat de l'aire amb sensors IoT i alertes automàtiques"
           }
         },
         {
@@ -490,10 +509,15 @@ export const SECTORS_CONFIG = {
         "en": "Circular economy, renewable energy and sensors for environmental and electrical VET.",
         "va": "Economia circular, energies renovables i sensòrica per a FP medi ambient i electricitat."
       },
+      "exampleChallengeLabel": {
+        "es": "Ejemplo de reto",
+        "en": "Example challenge",
+        "va": "Exemple de repte"
+      },
       "exampleChallenge": {
-        "es": "Sistema de monitorización de calidad del aire con sensores IoT y alertas automáticas (ejemplo prototipo)",
-        "en": "Air quality monitoring system with IoT sensors and automatic alerts (prototype example)",
-        "va": "Sistema de monitorització de qualitat de l'aire amb sensors IoT i alertes automàtiques (exemple prototip)"
+        "es": "Sistema de monitorización de calidad del aire con sensores IoT y alertas automáticas",
+        "en": "Air quality monitoring system with IoT sensors and automatic alerts",
+        "va": "Sistema de monitorització de qualitat de l'aire amb sensors IoT i alertes automàtiques"
       },
       "featuredPartners": [
         "Region Värmland",
@@ -550,9 +574,9 @@ export const SECTORS_CONFIG = {
         {
           "visible": true,
           "value": {
-            "es": "Detección de plagas en viñedos mediante análisis de imágenes de dron (ejemplo prototipo)",
-            "en": "Pest detection in vineyards through drone image analysis (prototype example)",
-            "va": "Detecció de plagues en vinyes mitjançant anàlisi d'imatges de dron (exemple prototip)"
+            "es": "Detección de plagas en viñedos mediante análisis de imágenes de dron",
+            "en": "Pest detection in vineyards through drone image analysis",
+            "va": "Detecció de plagues en vinyes mitjançant anàlisi d'imatges de dron"
           }
         },
         {
@@ -643,10 +667,15 @@ export const SECTORS_CONFIG = {
         "en": "Sustainable agriculture and food sovereignty for agricultural VET. Use of sensors and drones in real contexts.",
         "va": "Agricultura sostenible i sobirania alimentària per a FP agrària. Ús de sensors i drons en contextos reals."
       },
+      "exampleChallengeLabel": {
+        "es": "Ejemplo de reto",
+        "en": "Example challenge",
+        "va": "Exemple de repte"
+      },
       "exampleChallenge": {
-        "es": "Detección de plagas en viñedos mediante análisis de imágenes de dron (ejemplo prototipo)",
-        "en": "Pest detection in vineyards through drone image analysis (prototype example)",
-        "va": "Detecció de plagues en vinyes mitjançant anàlisi d'imatges de dron (exemple prototip)"
+        "es": "Detección de plagas en viñedos mediante análisis de imágenes de dron",
+        "en": "Pest detection in vineyards through drone image analysis",
+        "va": "Detecció de plagues en vinyes mitjançant anàlisi d'imatges de dron"
       },
       "featuredPartners": [
         "AVA-ASAJA",
@@ -703,9 +732,9 @@ export const SECTORS_CONFIG = {
         {
           "visible": true,
           "value": {
-            "es": "Digitalización y descripción automática de fondos archivísticos para acceso abierto (ejemplo prototipo)",
-            "en": "Digitisation and automatic description of archival collections for open access (prototype example)",
-            "va": "Digitalització i descripció automàtica de fons arxivístics per a accés obert (exemple prototip)"
+            "es": "Digitalización y descripción automática de fondos archivísticos para acceso abierto",
+            "en": "Digitisation and automatic description of archival collections for open access",
+            "va": "Digitalització i descripció automàtica de fons arxivístics per a accés obert"
           }
         },
         {
@@ -796,10 +825,15 @@ export const SECTORS_CONFIG = {
         "en": "Generative AI and ethics in creative contexts. Critical literacy on authorship, rights and access.",
         "va": "IA generativa i ètica en contextos creatius. Alfabetització crítica sobre autoria, drets i accés."
       },
+      "exampleChallengeLabel": {
+        "es": "Ejemplo de reto",
+        "en": "Example challenge",
+        "va": "Exemple de repte"
+      },
       "exampleChallenge": {
-        "es": "Digitalización y descripción automática de fondos archivísticos para acceso abierto (ejemplo prototipo)",
-        "en": "Digitisation and automatic description of archival collections for open access (prototype example)",
-        "va": "Digitalització i descripció automàtica de fons arxivístics per a accés obert (exemple prototip)"
+        "es": "Digitalización y descripción automática de fondos archivísticos para acceso abierto",
+        "en": "Digitisation and automatic description of archival collections for open access",
+        "va": "Digitalització i descripció automàtica de fons arxivístics per a accés obert"
       },
       "featuredPartners": [
         "LPGA",
@@ -857,9 +891,9 @@ export const SECTORS_CONFIG = {
         {
           "visible": true,
           "value": {
-            "es": "Optimización del consumo energético en bloque de viviendas sociales con ML (ejemplo prototipo)",
-            "en": "Energy consumption optimisation in social housing block with ML (prototype example)",
-            "va": "Optimització del consum energètic en bloc d'habitatges socials amb ML (exemple prototip)"
+            "es": "Optimización del consumo energético en bloque de viviendas sociales con ML",
+            "en": "Energy consumption optimisation in social housing block with ML",
+            "va": "Optimització del consum energètic en bloc d'habitatges socials amb ML"
           }
         },
         {
@@ -950,10 +984,15 @@ export const SECTORS_CONFIG = {
         "en": "Smart buildings and energy efficiency for construction VET. Social and sustainable urban planning as context.",
         "va": "Smart buildings i eficiència energètica per a FP construcció. Urbanisme social i sostenible com a context."
       },
+      "exampleChallengeLabel": {
+        "es": "Ejemplo de reto",
+        "en": "Example challenge",
+        "va": "Exemple de repte"
+      },
       "exampleChallenge": {
-        "es": "Optimización del consumo energético en bloque de viviendas sociales con ML (ejemplo prototipo)",
-        "en": "Energy consumption optimisation in social housing block with ML (prototype example)",
-        "va": "Optimització del consum energètic en bloc d'habitatges socials amb ML (exemple prototip)"
+        "es": "Optimización del consumo energético en bloque de viviendas sociales con ML",
+        "en": "Energy consumption optimisation in social housing block with ML",
+        "va": "Optimització del consum energètic en bloc d'habitatges socials amb ML"
       },
       "featuredPartners": [
         "HSW",
@@ -1010,9 +1049,9 @@ export const SECTORS_CONFIG = {
         {
           "visible": true,
           "value": {
-            "es": "Chatbot multilingüe para orientación ciudadana en servicios administrativos municipales (ejemplo prototipo)",
-            "en": "Multilingual chatbot for citizen guidance in municipal administrative services (prototype example)",
-            "va": "Chatbot multilingüe per a orientació ciutadana en serveis administratius municipals (exemple prototip)"
+            "es": "Chatbot multilingüe para orientación ciudadana en servicios administrativos municipales",
+            "en": "Multilingual chatbot for citizen guidance in municipal administrative services",
+            "va": "Chatbot multilingüe per a orientació ciutadana en serveis administratius municipals"
           }
         },
         {
@@ -1103,10 +1142,15 @@ export const SECTORS_CONFIG = {
         "en": "Responsible automation and data ethics for VET in administration, commerce and services.",
         "va": "Automatització responsable i ètica en dades per a FP administració, comerç i serveis."
       },
+      "exampleChallengeLabel": {
+        "es": "Ejemplo de reto",
+        "en": "Example challenge",
+        "va": "Exemple de repte"
+      },
       "exampleChallenge": {
-        "es": "Chatbot multilingüe para orientación ciudadana en servicios administrativos municipales (ejemplo prototipo)",
-        "en": "Multilingual chatbot for citizen guidance in municipal administrative services (prototype example)",
-        "va": "Chatbot multilingüe per a orientació ciutadana en serveis administratius municipals (exemple prototip)"
+        "es": "Chatbot multilingüe para orientación ciudadana en servicios administrativos municipales",
+        "en": "Multilingual chatbot for citizen guidance in municipal administrative services",
+        "va": "Chatbot multilingüe per a orientació ciutadana en serveis administratius municipals"
       },
       "featuredPartners": [
         "CEICE",
@@ -1117,6 +1161,28 @@ export const SECTORS_CONFIG = {
       "sections": {}
     }
   ],
+  "ctaBlock": {
+    "visible": true,
+    "title": {
+      "es": "¿Tu organización trabaja en alguno de estos sectores?",
+      "en": "Does your organization work in any of these sectors?",
+      "va": "La teua organització treballa en algun d'estos sectors?"
+    },
+    "description": {
+      "es": "La red AI-STEAM está abierta a stakeholders de cualquiera de los 7 sectores. La solicitud se gestiona desde la sección <strong>La Red</strong>, donde se recoge la información necesaria para ubicar tu organización en el ecosistema.",
+      "en": "The AI-STEAM network is open to stakeholders from any of the 7 sectors. The request is managed from the <strong>Network</strong> section, where the information needed to place your organisation in the ecosystem is collected.",
+      "va": "La xarxa AI-STEAM és oberta a stakeholders de qualsevol dels 7 sectors. La sol·licitud es gestiona des de la secció <strong>La Xarxa</strong>, on es recull la informació necessària per ubicar la teua organització en l'ecosistema."
+    },
+    "buttonVisible": true,
+    "buttonLabel": {
+      "es": "Ir al formulario de adhesión",
+      "en": "Go to membership form",
+      "va": "Anar al formulari d'adhesió"
+    },
+    "targetRoute": "red",
+    "targetNetworkTab": "stakeholders",
+    "openMembershipForm": true
+  },
   "uiBlock": [
     {
       "id": "mfg",

@@ -59,12 +59,10 @@ function renderExpanded(sector, sectorsT) {
   const keywords = localizedList(sector.keywords);
   const fpSkills = localizedList(sector.fpSkills);
   const masterTopics = localizedList(sector.masterTopics);
-  const col1Html = [];
-  const col2Html = [];
-  const col3Html = [];
+  const internalCardsHtml = [];
 
   if (sections.stakeholderTypes !== false && stakeholderTypes.length > 0) {
-    col1Html.push(`
+    internalCardsHtml.push(`
       <div class="bg-white rounded-lg border border-eu-border p-4">
         <h4 class="font-bold text-eu-text text-sm mb-2 flex items-center gap-2">
           <i data-lucide="users" class="w-4 h-4 text-eu-blue"></i>
@@ -80,21 +78,25 @@ function renderExpanded(sector, sectorsT) {
     `);
   }
 
-  if (sections.keywords !== false && keywords.length > 0) {
-    col1Html.push(`
+  if ((sections.keywordsDescription !== false && localized(sector.description)) || (sections.keywords !== false && keywords.length > 0)) {
+    internalCardsHtml.push(`
       <div class="bg-white rounded-lg border border-eu-border p-4">
-        <p class="text-xs text-gray-700 mb-3">${localized(sector.description)}</p>
-        <div class="flex flex-wrap gap-1.5">
-          ${keywords.map(kw => `
-            <span class="text-xs font-semibold px-2 py-0.5 rounded-full ${sector.tagBg} ${sector.tagText}">${kw}</span>
-          `).join('')}
-        </div>
+        ${sections.keywordsDescription !== false && localized(sector.description) ? `
+          <p class="text-xs text-gray-700 ${sections.keywords !== false && keywords.length > 0 ? 'mb-3' : ''}">${localized(sector.description)}</p>
+        ` : ''}
+        ${sections.keywords !== false && keywords.length > 0 ? `
+          <div class="flex flex-wrap gap-1.5">
+            ${keywords.map(kw => `
+              <span class="text-xs font-semibold px-2 py-0.5 rounded-full ${sector.tagBg} ${sector.tagText}">${kw}</span>
+            `).join('')}
+          </div>
+        ` : ''}
       </div>
     `);
   }
 
   if (sections.fpSkills !== false && fpSkills.length > 0) {
-    col2Html.push(`
+    internalCardsHtml.push(`
       <div class="bg-white rounded-lg border border-eu-border p-4">
         <h4 class="font-bold text-eu-text text-sm mb-3 flex items-center gap-2">
           <i data-lucide="book-open" class="w-4 h-4 text-eu-orange"></i>
@@ -111,7 +113,7 @@ function renderExpanded(sector, sectorsT) {
   }
 
   if (sections.teacherRelevance !== false && localized(sector.teacherRelevance)) {
-    col2Html.push(`
+    internalCardsHtml.push(`
       <div class="bg-white rounded-lg border border-eu-border p-4">
         <h4 class="font-bold text-eu-text text-sm mb-2 flex items-center gap-2">
           <i data-lucide="lightbulb" class="w-4 h-4 text-blue-600"></i>
@@ -122,21 +124,26 @@ function renderExpanded(sector, sectorsT) {
     `);
   }
 
-  if (sections.masterTopics !== false && masterTopics.length > 0) {
-    col3Html.push(`
+  const showMasterTopics = sections.masterTopics !== false && masterTopics.length > 0;
+  const showFeaturedPartners = sections.featuredPartners !== false && (sector.featuredPartners || []).length > 0;
+
+  if (showMasterTopics || showFeaturedPartners) {
+    internalCardsHtml.push(`
       <div class="bg-white rounded-lg border border-purple-100 p-4">
-        <h4 class="font-bold text-eu-text text-sm mb-3 flex items-center gap-2">
-          <i data-lucide="graduation-cap" class="w-4 h-4 text-purple-600"></i>
-          ${sectorsT?.masterTopicsLabel || ''}
-        </h4>
-        <ul class="space-y-2">
-          ${masterTopics.map(topic => `
-            <li class="text-xs text-gray-700 flex items-start gap-2">
-              <i data-lucide="arrow-right" class="w-3 h-3 text-purple-600 mt-0.5 shrink-0"></i>${topic}
-            </li>`).join('')}
-        </ul>
-        ${(sector.featuredPartners || []).length > 0 ? `
-          <div class="mt-3 pt-3 border-t border-eu-border">
+        ${showMasterTopics ? `
+          <h4 class="font-bold text-eu-text text-sm mb-3 flex items-center gap-2">
+            <i data-lucide="graduation-cap" class="w-4 h-4 text-purple-600"></i>
+            ${sectorsT?.masterTopicsLabel || ''}
+          </h4>
+          <ul class="space-y-2">
+            ${masterTopics.map(topic => `
+              <li class="text-xs text-gray-700 flex items-start gap-2">
+                <i data-lucide="arrow-right" class="w-3 h-3 text-purple-600 mt-0.5 shrink-0"></i>${topic}
+              </li>`).join('')}
+          </ul>
+        ` : ''}
+        ${showFeaturedPartners ? `
+          <div class="${showMasterTopics ? 'mt-3 pt-3 border-t border-eu-border' : ''}">
             <p class="text-xs text-gray-500 font-semibold uppercase mb-1.5">${sectorsT?.featuredPartnersLabel || ''}</p>
             <div class="flex flex-wrap gap-1">
               ${(sector.featuredPartners || []).map(p => `
@@ -150,23 +157,20 @@ function renderExpanded(sector, sectorsT) {
   }
 
   if (sections.exampleChallenge !== false && localized(sector.exampleChallenge)) {
-    col3Html.push(`
+    internalCardsHtml.push(`
       <div class="bg-amber-50 rounded-lg border border-amber-200 p-4">
         <h4 class="font-bold text-amber-800 text-xs mb-1.5 flex items-center gap-1.5">
           <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i>
-          ${sectorsT?.exampleChallengeLabel || ''}
+          ${localized(sector.exampleChallengeLabel) || sectorsT?.exampleChallengeLabel || ''}
         </h4>
         <p class="text-xs text-amber-700 italic">${localized(sector.exampleChallenge)}</p>
       </div>
     `);
   }
 
-  const hasContent = col1Html.length || col2Html.length || col3Html.length;
-  const gridHtml = hasContent ? `
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="space-y-3">${col1Html.join('')}</div>
-      <div class="space-y-3">${col2Html.join('')}</div>
-      <div class="space-y-3">${col3Html.join('')}</div>
+  const gridHtml = internalCardsHtml.length ? `
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 items-start">
+      ${internalCardsHtml.join('')}
     </div>
   ` : '';
 
@@ -207,6 +211,7 @@ export function render() {
   const heroTitle = hero?.title || {};
   const heroDescription = hero?.description || {};
   const heroStats = hero?.stats || [];
+  const cta = SECTORS_CONFIG?.ctaBlock;
 
   const sectorList = (SECTORS_CONFIG.cardsBlock || [])
     .filter(s => s.visible !== false)
@@ -269,18 +274,22 @@ export function render() {
       <!-- Sector Cards -->
       <div class="max-w-7xl mx-auto px-6 py-10 space-y-4">${cardsHtml}</div>
 
-      <!-- CTA -->
-      <div class="max-w-7xl mx-auto px-6 pb-12">
-        <div class="bg-eu-blue rounded-xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6">
-          <div class="max-w-2xl">
-            <h3 class="text-xl font-bold mb-2">${sectorsT?.cta || ''}</h3>
-            <p class="text-white/80 text-sm">${sectorsT?.ctaDesc || ''}</p>
+      ${cta?.visible !== false ? `
+        <!-- CTA -->
+        <div class="max-w-7xl mx-auto px-6 pb-12">
+          <div class="bg-eu-blue rounded-xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="${cta?.buttonVisible !== false ? 'max-w-2xl' : 'w-full'}">
+              <h3 class="text-xl font-bold mb-2">${localized(cta?.title) || sectorsT?.cta || ''}</h3>
+              <p class="text-white/80 text-sm">${localized(cta?.description) || sectorsT?.ctaDesc || ''}</p>
+            </div>
+            ${cta?.buttonVisible !== false ? `
+              <button id="sectors-cta-btn" class="bg-eu-orange text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0">
+                ${localized(cta?.buttonLabel) || sectorsT?.ctaButton || ''}
+              </button>
+            ` : ''}
           </div>
-          <button id="sectors-cta-btn" class="bg-eu-orange text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0">
-            ${sectorsT?.ctaButton || ''}
-          </button>
         </div>
-      </div>
+      ` : ''}
     </div>
   `;
 }
@@ -298,6 +307,16 @@ export function mount() {
 
   // CTA → red tab
   document.getElementById('sectors-cta-btn')?.addEventListener('click', () => {
-    navigateTo('red');
+    const cta = SECTORS_CONFIG?.ctaBlock || {};
+    if ((cta.targetRoute || 'red') === 'red') {
+      setState('networkTab', cta.targetNetworkTab || 'stakeholders');
+      setState('networkShowForm', cta.openMembershipForm !== false);
+      setState('networkCategory', 'todos');
+      setState('networkCountry', null);
+      setState('networkSector', null);
+      setState('networkSearch', '');
+      setState('networkPage', 0);
+    }
+    navigateTo(cta.targetRoute || 'red');
   });
 }

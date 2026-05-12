@@ -732,4 +732,8 @@ export function mount() {
 
   // Form submit
   document.getElementById('net-form')?.addEventListener('submit', e => e.preventDefault());
+
+  if (getState('networkTab') === 'stakeholders' && getState('networkShowForm')) {
+    setTimeout(() => document.getElementById('stakeholder-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
+  }
 }
