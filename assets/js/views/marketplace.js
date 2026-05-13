@@ -445,10 +445,10 @@ function renderList(all, mT) {
     { value: all.filter(c => c.status === 'Resuelto').length, label: mT?.resolvedChallenges || 'Resueltos' },
   ];
   const heroBlock = CHALLENGES_CONFIG?.heroBlock || {};
-  // Si heroBlock existe, respeta sus stats (aunque esté vacío).
-  // Solo usa fallbackStats si no hay heroBlock en absoluto.
-  const heroStats = (CHALLENGES_CONFIG?.heroBlock)
-    ? (heroBlock.stats || [])
+  // Si heroBlock existe y tiene stats, úsalos. Si no, usa fallback.
+  const hasHeroBlock = CHALLENGES_CONFIG?.heroBlock && Object.keys(CHALLENGES_CONFIG.heroBlock).length > 0;
+  const heroStats = hasHeroBlock && Array.isArray(heroBlock.stats)
+    ? heroBlock.stats
     : fallbackStats;
   const submitButton = heroBlock.submitButton || {};
 
