@@ -1,5 +1,6 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
+import { TRAINING_CONFIG } from '../../data/formacion.js';
 
 const COURSE_HOURS     = [60, 90, 30, 45, 80, 50, 70, 40];
 const COURSE_ENROLLED  = [312, 87, 524, 198, 54, 143, 72, 211];
@@ -13,6 +14,13 @@ const CREDENTIAL_FRAMEWORKS = [
   { name: 'Europass Certificate Supplement',    org: 'CEDEFOP',                      logo: '📋' },
   { name: 'TÜV Thüringen Certification',        org: 'TUV.IT – AI-SECRETT Consortium', logo: '✅' },
 ];
+
+function getLang() { return localStorage.getItem('language') || 'es'; }
+function pickLang(value, fallback = '') {
+  const lang = getLang();
+  if (value && typeof value === 'object') return value[lang] || value.es || fallback;
+  return fallback;
+}
 
 function statusColor(status) {
   if (status === 'Activo')       return 'text-green-700 bg-green-50';
@@ -193,41 +201,38 @@ export function render() {
       <i data-lucide="${tab.icon}" class="w-4 h-4"></i>${tab.label || ''}
     </button>`).join('');
 
+  const heroBlock = TRAINING_CONFIG?.heroBlock || {};
+  const heroVisible = heroBlock.visible !== false;
+  const heroStats = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
+  const ctaButton = heroBlock.ctaButton || {};
+
   return `
     <div>
+      ${heroVisible ? `
       <!-- Header -->
       <div class="bg-eu-blue text-white px-6 py-12">
         <div class="max-w-7xl mx-auto">
           <div class="flex flex-wrap items-start justify-between gap-6">
             <div>
-              <h1 class="text-3xl font-extrabold mb-3">${trainingT?.title || ''}</h1>
-              <p class="text-white/80 max-w-2xl text-base">${trainingT?.description || ''}</p>
+              <h1 class="text-3xl font-extrabold mb-3">${pickLang(heroBlock.title, trainingT?.title || '')}</h1>
+              <p class="text-white/80 max-w-2xl text-base">${pickLang(heroBlock.description, trainingT?.description || '')}</p>
             </div>
-            <a href="https://aules.edu.gva.es/" target="_blank" rel="noopener noreferrer"
+            ${ctaButton.visible !== false ? `
+            <a href="${ctaButton.url || 'https://aules.edu.gva.es/'}" target="_blank" rel="noopener noreferrer"
                class="flex min-h-11 items-center gap-2 rounded-lg bg-eu-orange px-5 py-2.5 text-sm font-bold text-white hover:bg-eu-purple transition-colors">
-              <i data-lucide="book-open" class="w-4 h-4"></i>${trainingT?.accessAules || ''}<i data-lucide="external-link" class="w-3 h-3"></i>
-            </a>
+              <i data-lucide="book-open" class="w-4 h-4"></i>${pickLang(ctaButton.label, trainingT?.accessAules || '')}<i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>` : ''}
           </div>
+          ${heroStats.length > 0 ? `
           <div class="flex flex-wrap gap-6 mt-8">
+            ${heroStats.map(stat => `
             <div class="bg-white/10 rounded-xl px-6 py-4">
-              <p class="text-2xl font-extrabold text-eu-yellow">${courses.length}</p>
-              <p class="text-xs text-white/70 font-semibold uppercase mt-1">${trainingT?.activeModules || ''}</p>
-            </div>
-            <div class="bg-white/10 rounded-xl px-6 py-4">
-              <p class="text-2xl font-extrabold text-eu-yellow">${totalEnrolled}</p>
-              <p class="text-xs text-white/70 font-semibold uppercase mt-1">${trainingT?.enrolled || ''}</p>
-            </div>
-            <div class="bg-white/10 rounded-xl px-6 py-4">
-              <p class="text-2xl font-extrabold text-eu-yellow">6</p>
-              <p class="text-xs text-white/70 font-semibold uppercase mt-1">${trainingT?.microCredentialsPilots || ''}</p>
-            </div>
-            <div class="bg-white/10 rounded-xl px-6 py-4">
-              <p class="text-2xl font-extrabold text-eu-yellow">12</p>
-              <p class="text-xs text-white/70 font-semibold uppercase mt-1">${trainingT?.countries || ''}</p>
-            </div>
-          </div>
+              <p class="text-2xl font-extrabold text-eu-yellow">${stat.value}</p>
+              <p class="text-xs text-white/70 font-semibold uppercase mt-1">${pickLang(stat.label, '')}</p>
+            </div>`).join('')}
+          </div>` : ''}
         </div>
-      </div>
+      </div>` : ''}
 
       <!-- Tabs + content -->
       <div class="max-w-7xl mx-auto px-6 py-10">
