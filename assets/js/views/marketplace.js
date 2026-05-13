@@ -451,6 +451,26 @@ function renderList(all, mT) {
     ? heroBlock.stats
     : fallbackStats;
   const submitButton = heroBlock.submitButton || {};
+  const heroHtml = heroBlock.visible !== false ? `
+  <div class="bg-eu-blue text-white px-4 sm:px-6 py-8 sm:py-10">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
+      <div class="flex-1 min-w-0">
+        <h1 class="text-2xl sm:text-3xl font-extrabold mb-2">${pickLang(heroBlock.title, mT?.title || 'Retos y Casos')}</h1>
+        <p class="text-white/80 max-w-2xl text-sm sm:text-base">${pickLang(heroBlock.description, mT?.description || '')}</p>
+        <div class="grid grid-cols-3 gap-3 sm:gap-5 mt-5">
+          ${heroStats.map(stat => `
+          <div class="bg-white/10 rounded-xl px-3 sm:px-6 py-3 sm:py-4 text-center sm:text-left">
+            <p class="text-xl sm:text-2xl font-extrabold text-eu-yellow">${stat.value}</p>
+            <p class="text-xs text-white/70 font-semibold uppercase mt-1 line-clamp-2">${pickLang(stat.label, stat.label || '')}</p>
+          </div>`).join('')}
+        </div>
+      </div>
+      ${submitButton.visible !== false ? `
+      <button id="mp-toggle-submit" class="flex items-center justify-center sm:justify-start gap-2 bg-eu-orange text-white px-5 py-3 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0 w-full sm:w-auto">
+        <i data-lucide="plus" class="w-4 h-4"></i> ${pickLang(submitButton.label, mT?.publishChallenge || 'Publicar reto')}
+      </button>` : ''}
+    </div>
+  </div>` : '';
 
   const sectorNames = t('sectors.sectorNames') || {};
   const sectorOptions = [
@@ -470,25 +490,7 @@ function renderList(all, mT) {
   return `
 <div class="animate-in fade-in duration-300">
   <!-- Header -->
-  <div class="bg-eu-blue text-white px-4 sm:px-6 py-8 sm:py-10">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
-      <div class="flex-1 min-w-0">
-        <h1 class="text-2xl sm:text-3xl font-extrabold mb-2">${pickLang(heroBlock.title, mT?.title || 'Retos y Casos')}</h1>
-        <p class="text-white/80 max-w-2xl text-sm sm:text-base">${pickLang(heroBlock.description, mT?.description || '')}</p>
-        <div class="grid grid-cols-3 gap-3 sm:gap-5 mt-5">
-          ${heroStats.map(stat => `
-          <div class="bg-white/10 rounded-xl px-3 sm:px-6 py-3 sm:py-4 text-center sm:text-left">
-            <p class="text-xl sm:text-2xl font-extrabold text-eu-yellow">${stat.value}</p>
-            <p class="text-xs text-white/70 font-semibold uppercase mt-1 line-clamp-2">${pickLang(stat.label, stat.label || '')}</p>
-          </div>`).join('')}
-        </div>
-      </div>
-      ${submitButton.visible !== false ? `
-      <button id="mp-toggle-submit" class="flex items-center justify-center sm:justify-start gap-2 bg-eu-orange text-white px-5 py-3 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0 w-full sm:w-auto">
-        <i data-lucide="plus" class="w-4 h-4"></i> ${pickLang(submitButton.label, mT?.publishChallenge || 'Publicar reto')}
-      </button>` : ''}
-    </div>
-  </div>
+  ${heroHtml}
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
     <!-- Submit form -->

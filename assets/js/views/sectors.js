@@ -212,6 +212,22 @@ export function render() {
   const heroDescription = hero?.description || {};
   const heroStats = hero?.stats || [];
   const cta = SECTORS_CONFIG?.ctaBlock;
+  const heroHtml = hero?.visible !== false ? `
+      <div class="bg-eu-blue text-white px-6 py-12">
+        <div class="max-w-7xl mx-auto">
+          <h1 class="text-3xl font-extrabold mb-3">${localized(heroTitle)}</h1>
+          <p class="text-white/80 max-w-3xl text-base mb-8">${localized(heroDescription)}</p>
+          <div class="flex flex-wrap gap-6">
+            ${heroStats.map(s => `
+              <div class="bg-white/10 rounded-xl px-6 py-4 text-center">
+                <p class="text-3xl font-extrabold text-eu-yellow">${s.value}</p>
+                <p class="text-xs text-white/70 font-semibold uppercase mt-1">${localized(s.label)}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+  ` : '';
 
   const sectorList = (SECTORS_CONFIG.cardsBlock || [])
     .filter(s => s.visible !== false)
@@ -256,20 +272,7 @@ export function render() {
   return `
     <div>
       <!-- Header (CMS-powered) -->
-      <div class="bg-eu-blue text-white px-6 py-12">
-        <div class="max-w-7xl mx-auto">
-          <h1 class="text-3xl font-extrabold mb-3">${localized(heroTitle)}</h1>
-          <p class="text-white/80 max-w-3xl text-base mb-8">${localized(heroDescription)}</p>
-          <div class="flex flex-wrap gap-6">
-            ${heroStats.map(s => `
-              <div class="bg-white/10 rounded-xl px-6 py-4 text-center">
-                <p class="text-3xl font-extrabold text-eu-yellow">${s.value}</p>
-                <p class="text-xs text-white/70 font-semibold uppercase mt-1">${localized(s.label)}</p>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      </div>
+      ${heroHtml}
 
       <!-- Sector Cards -->
       <div class="max-w-7xl mx-auto px-6 py-10 space-y-4">${cardsHtml}</div>
