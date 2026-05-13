@@ -14,40 +14,9 @@ export const CHALLENGES_CONFIG = {
       "en": "Catalog of real contributions from AI-SECRETT ecosystem organizations: challenges, use cases, validations, mentoring programs and pilots for VET, teacher training and, when applicable, Track A.",
       "va": "Catàleg de contribucions reals d'organitzacions de l'ecosistema AI-SECRETT: reptes, casos d'ús, validacions, mentories i pilots per a FP, formació docent i, quan correspon, la Track A."
     },
-    "stats": [
-      {
-        "id": "open-contributions",
-        "visible": true,
-        "value": 9,
-        "label": {
-          "es": "Abiertas",
-          "en": "Open",
-          "va": "Obertes"
-        }
-      },
-      {
-        "id": "in-progress-contributions",
-        "visible": true,
-        "value": 3,
-        "label": {
-          "es": "En Proceso",
-          "en": "In Progress",
-          "va": "En Procés"
-        }
-      },
-      {
-        "id": "completed-contributions",
-        "visible": true,
-        "value": 5,
-        "label": {
-          "es": "Completadas",
-          "en": "Completed",
-          "va": "Completades"
-        }
-      }
-    ],
+    "stats": [],
     "submitButton": {
-      "visible": true,
+      "visible": false,
       "label": {
         "es": "Proponer contribución",
         "en": "Submit Contribution",
