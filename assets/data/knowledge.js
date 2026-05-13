@@ -3,7 +3,7 @@
 
 export const KNOWLEDGE_CONFIG = {
   "heroBlock": {
-    "visible": false,
+    "visible": true,
     "title": {
       "es": "Conocimiento Abierto AI-STEAM",
       "en": "AI-STEAM Open Knowledge",
