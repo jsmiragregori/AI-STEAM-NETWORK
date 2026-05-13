@@ -1,6 +1,6 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
-import { TRAINING_CONFIG } from '../../data/formacion.js';
+import { TRAINING_CONFIG } from '../../data/training.js';
 
 const COURSE_HOURS     = [60, 90, 30, 45, 80, 50, 70, 40];
 const COURSE_ENROLLED  = [312, 87, 524, 198, 54, 143, 72, 211];
