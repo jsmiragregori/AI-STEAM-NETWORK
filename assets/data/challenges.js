@@ -47,7 +47,7 @@ export const CHALLENGES_CONFIG = {
       }
     ],
     "submitButton": {
-      "visible": false,
+      "visible": true,
       "label": {
         "es": "Proponer contribución",
         "en": "Submit Contribution",
