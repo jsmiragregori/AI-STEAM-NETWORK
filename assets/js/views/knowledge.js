@@ -1,5 +1,6 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
+import { KNOWLEDGE_CONFIG } from '../../data/knowledge.js';
 
 const TABS = ['flujo', 'oer', 'casos', 'evidencia', 'plantillas'];
 
@@ -25,6 +26,13 @@ const SECTOR_COLORS = {
 };
 
 const FLOW_ICONS = ['🏭', '🔍', '👥', '💻', '✅', '🌐'];
+
+function getLang() { return localStorage.getItem('language') || 'es'; }
+function pickLang(value, fallback = '') {
+  const lang = getLang();
+  if (value && typeof value === 'object') return value[lang] || value.es || fallback;
+  return fallback;
+}
 
 function getSectorName(sectorId) {
   if (!sectorId || sectorId === 'Todos' || sectorId === 'All' || sectorId === 'Tots') return sectorId || '';
@@ -311,28 +319,30 @@ export function render() {
     plantillas: tabPlantillas(),
   };
 
-  const demoNotice = t('knowledge.demoNotice');
+  const heroBlock = KNOWLEDGE_CONFIG?.heroBlock || {};
+  const heroVisible = heroBlock.visible !== false;
+  const heroStats = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
+  const notice = pickLang(heroBlock.notice, '');
 
   return `
     <div>
+      ${heroVisible ? `
       <!-- Header -->
       <div class="bg-eu-blue text-white px-6 py-12">
         <div class="max-w-7xl mx-auto">
-          <h1 class="text-3xl font-extrabold mb-2">${t('knowledge.title') || ''}</h1>
-          <p class="text-white/70 text-sm max-w-3xl mb-1">${t('knowledge.description') || ''}</p>
-          ${demoNotice ? `<p class="text-xs text-eu-yellow/80 italic mt-2">⚠️ ${demoNotice}</p>` : ''}
+          <h1 class="text-3xl font-extrabold mb-2">${pickLang(heroBlock.title, t('knowledge.title') || '')}</h1>
+          <p class="text-white/70 text-sm max-w-3xl mb-1">${pickLang(heroBlock.description, t('knowledge.description') || '')}</p>
+          ${notice ? `<p class="text-xs text-eu-yellow/80 italic mt-2">${notice}</p>` : ''}
+          ${heroStats.length > 0 ? `
           <div class="flex flex-wrap gap-4 mt-6">
+            ${heroStats.map(stat => `
             <div class="bg-white/10 rounded-xl px-5 py-3 text-center">
-              <p class="text-2xl font-extrabold text-eu-yellow">${oerData.length || 8}</p>
-              <p class="text-sm text-white/70 font-semibold uppercase mt-0.5">${t('knowledge.statsOER') || ''}</p>
-            </div>
-            <div class="bg-white/10 rounded-xl px-5 py-3 text-center">
-              <p class="text-2xl font-extrabold text-eu-yellow">${totalDl}</p>
-              <p class="text-sm text-white/70 font-semibold uppercase mt-0.5">${t('knowledge.statsDownloads') || ''}</p>
-            </div>
-          </div>
+              <p class="text-2xl font-extrabold text-eu-yellow">${stat.value}</p>
+              <p class="text-sm text-white/70 font-semibold uppercase mt-0.5">${pickLang(stat.label, '')}</p>
+            </div>`).join('')}
+          </div>` : ''}
         </div>
-      </div>
+      </div>` : ''}
 
       <!-- Tabs + content -->
       <div class="max-w-7xl mx-auto px-6 py-8">
