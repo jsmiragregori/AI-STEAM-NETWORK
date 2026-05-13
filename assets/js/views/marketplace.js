@@ -1,6 +1,7 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { challengeExtras } from '../../data/challenge-extras.js';
+import { CHALLENGES_CONFIG } from '../../data/challenges.js';
 
 const CHALLENGES = [
   { id: 'r1', title: 'Optimización energética de museos públicos con IA', entity: 'Generalitat Valenciana (CEICE)', entityType: 'Administración Pública', level: 'FP', status: 'Abierto', sector: 'Energy and Environment', description: 'Desarrollo de un modelo predictivo para optimizar el consumo de HVAC en la red de museos públicos valencianos. Se busca reducir el consumo un 25% sin afectar al confort de visitantes.', posted: '10 Mar 2026', deadline: '30 Jun 2026', teams: 0, tags: ['HVAC', 'ML Predictivo', 'IoT', 'Eficiencia Energética'], country: '🇪🇸', contributionType: 'Challenge', route: 'FP/VET', evidenceExpected: 'Modelo predictivo HVAC validado en 8 museos piloto', evidenceMaturity: 'validated' },
@@ -81,6 +82,11 @@ function getTranslatedChallenges(mT) {
 }
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
+
+function pickLang(value, fallback = '') {
+  const lang = getLang();
+  return value?.[lang] || value?.es || fallback;
+}
 
 function getFilteredChallenges(all, filters) {
   return all.filter(ch => {
@@ -433,9 +439,16 @@ function renderList(all, mT) {
   const effectiveFilters = { ...filters, evidence: evidenceFilter };
   const filtered = getFilteredChallenges(all, effectiveFilters);
 
-  const open       = all.filter(c => c.status === 'Abierto').length;
-  const inProgress = all.filter(c => c.status === 'En Resolución').length;
-  const solved     = all.filter(c => c.status === 'Resuelto').length;
+  const fallbackStats = [
+    { value: all.filter(c => c.status === 'Abierto').length, label: mT?.openChallenges || 'Abiertos' },
+    { value: all.filter(c => c.status === 'En Resolución').length, label: mT?.inProgressChallenges || 'En resolución' },
+    { value: all.filter(c => c.status === 'Resuelto').length, label: mT?.resolvedChallenges || 'Resueltos' },
+  ];
+  const heroBlock = CHALLENGES_CONFIG?.heroBlock || {};
+  const heroStats = Array.isArray(heroBlock.stats) && heroBlock.stats.length > 0
+    ? heroBlock.stats
+    : fallbackStats;
+  const submitButton = heroBlock.submitButton || {};
 
   const sectorNames = t('sectors.sectorNames') || {};
   const sectorOptions = [
@@ -458,26 +471,20 @@ function renderList(all, mT) {
   <div class="bg-eu-blue text-white px-4 sm:px-6 py-8 sm:py-10">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
       <div class="flex-1 min-w-0">
-        <h1 class="text-2xl sm:text-3xl font-extrabold mb-2">${mT?.title || 'Retos y Casos'}</h1>
-        <p class="text-white/80 max-w-2xl text-sm sm:text-base">${mT?.description || ''}</p>
+        <h1 class="text-2xl sm:text-3xl font-extrabold mb-2">${pickLang(heroBlock.title, mT?.title || 'Retos y Casos')}</h1>
+        <p class="text-white/80 max-w-2xl text-sm sm:text-base">${pickLang(heroBlock.description, mT?.description || '')}</p>
         <div class="grid grid-cols-3 gap-3 sm:gap-5 mt-5">
+          ${heroStats.map(stat => `
           <div class="bg-white/10 rounded-xl px-3 sm:px-6 py-3 sm:py-4 text-center sm:text-left">
-            <p class="text-xl sm:text-2xl font-extrabold text-eu-yellow">${open}</p>
-            <p class="text-xs text-white/70 font-semibold uppercase mt-1 line-clamp-2">${mT?.openChallenges || 'Abiertos'}</p>
-          </div>
-          <div class="bg-white/10 rounded-xl px-3 sm:px-6 py-3 sm:py-4 text-center sm:text-left">
-            <p class="text-xl sm:text-2xl font-extrabold text-eu-yellow">${inProgress}</p>
-            <p class="text-xs text-white/70 font-semibold uppercase mt-1 line-clamp-2">${mT?.inProgressChallenges || 'En resolución'}</p>
-          </div>
-          <div class="bg-white/10 rounded-xl px-3 sm:px-6 py-3 sm:py-4 text-center sm:text-left">
-            <p class="text-xl sm:text-2xl font-extrabold text-eu-yellow">${solved}</p>
-            <p class="text-xs text-white/70 font-semibold uppercase mt-1 line-clamp-2">${mT?.resolvedChallenges || 'Resueltos'}</p>
-          </div>
+            <p class="text-xl sm:text-2xl font-extrabold text-eu-yellow">${stat.value}</p>
+            <p class="text-xs text-white/70 font-semibold uppercase mt-1 line-clamp-2">${pickLang(stat.label, stat.label || '')}</p>
+          </div>`).join('')}
         </div>
       </div>
+      ${submitButton.visible !== false ? `
       <button id="mp-toggle-submit" class="flex items-center justify-center sm:justify-start gap-2 bg-eu-orange text-white px-5 py-3 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0 w-full sm:w-auto">
-        <i data-lucide="plus" class="w-4 h-4"></i> ${mT?.publishChallenge || 'Publicar reto'}
-      </button>
+        <i data-lucide="plus" class="w-4 h-4"></i> ${pickLang(submitButton.label, mT?.publishChallenge || 'Publicar reto')}
+      </button>` : ''}
     </div>
   </div>
 
