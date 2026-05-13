@@ -18,8 +18,7 @@ export const CHALLENGES_CONFIG = {
       {
         "id": "open-contributions",
         "visible": true,
-        "order": 1,
-        "value": 7,
+        "value": 9,
         "label": {
           "es": "Abiertas",
           "en": "Open",
@@ -29,8 +28,7 @@ export const CHALLENGES_CONFIG = {
       {
         "id": "in-progress-contributions",
         "visible": true,
-        "order": 2,
-        "value": 4,
+        "value": 3,
         "label": {
           "es": "En Proceso",
           "en": "In Progress",
@@ -40,8 +38,7 @@ export const CHALLENGES_CONFIG = {
       {
         "id": "completed-contributions",
         "visible": true,
-        "order": 3,
-        "value": 2,
+        "value": 5,
         "label": {
           "es": "Completadas",
           "en": "Completed",
