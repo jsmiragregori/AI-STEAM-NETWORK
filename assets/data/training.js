@@ -38,7 +38,7 @@ export const TRAINING_CONFIG = {
       {
         "id": "micro-credentials",
         "visible": true,
-        "value": 6,
+        "value": 12,
         "label": {
           "es": "Pilotos de microcredenciales",
           "en": "Micro-credential Pilots",
@@ -48,7 +48,7 @@ export const TRAINING_CONFIG = {
       {
         "id": "countries",
         "visible": true,
-        "value": 12,
+        "value": 24,
         "label": {
           "es": "Países participantes",
           "en": "Participating Countries",
