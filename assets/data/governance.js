@@ -1,5 +1,5 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR
-// Fuentes: content/governance/hero.yml, content/governance/structure-bodies.yml, content/governance/formal-bodies.yml, content/governance/dual-track.yml, content/governance/lbd.yml
+// Fuentes: content/governance/hero.yml, content/governance/structure-bodies.yml, content/governance/formal-bodies.yml, content/governance/dual-track.yml, content/governance/lbd.yml, content/governance/documentation.yml
 
 export const GOVERNANCE_CONFIG = {
   "heroBlock": {
@@ -1658,5 +1658,177 @@ export const GOVERNANCE_CONFIG = {
         }
       ]
     }
+  },
+  "documentationBlock": {
+    "visible": true,
+    "headerVisible": true,
+    "title": {
+      "es": "Documentación de Transparencia",
+      "en": "Transparency Documentation",
+      "va": "Documentació de Transparència"
+    },
+    "description": {
+      "es": "Los documentos públicos están disponibles para descarga directa. Los documentos de socios requieren acceso al Área Privada.",
+      "en": "Public documents are available for direct download. Partner documents require access to the Private Area.",
+      "va": "Els documents públics estan disponibles per a descàrrega directa. Els documents de socis requireixen accés a l'Àrea Privada."
+    },
+    "accessLabels": {
+      "public": {
+        "es": "🔓 Público",
+        "en": "🔓 Public",
+        "va": "🔓 Públic"
+      },
+      "partners": {
+        "es": "🔒 Socios",
+        "en": "🔒 Partners",
+        "va": "🔒 Socis"
+      }
+    },
+    "docs": [
+      {
+        "id": "consortium-agreement",
+        "visible": true,
+        "order": 1,
+        "title": "Acuerdo de Consorcio AI-SECRETT v1.0",
+        "date": "Oct 2025",
+        "type": "Fundacional",
+        "access": "public",
+        "icon": "📄",
+        "url": "",
+        "external": false
+      },
+      {
+        "id": "d1-2-governance",
+        "visible": true,
+        "order": 2,
+        "title": "D1.2 – AI STEAM Network: Conceptos Iniciales y Gobernanza",
+        "date": "Feb 2026",
+        "type": "Gobernanza",
+        "access": "public",
+        "icon": "🏛️",
+        "url": "",
+        "external": false
+      },
+      {
+        "id": "collaboration-agreement-model",
+        "visible": true,
+        "order": 3,
+        "title": "Modelo de Acuerdo de Colaboración – Stakeholders",
+        "date": "Feb 2026",
+        "type": "Colaboración",
+        "access": "public",
+        "icon": "🤝",
+        "url": "",
+        "external": false
+      },
+      {
+        "id": "oer-policy",
+        "visible": true,
+        "order": 4,
+        "title": "Política de Contenidos y Licencias OER",
+        "date": "Mar 2026",
+        "type": "Editorial",
+        "access": "public",
+        "icon": "📝",
+        "url": "",
+        "external": false
+      },
+      {
+        "id": "ethics-code",
+        "visible": true,
+        "order": 5,
+        "title": "Código Ético de Retos Industriales",
+        "date": "Feb 2026",
+        "type": "Ética",
+        "access": "public",
+        "icon": "⚖️",
+        "url": "",
+        "external": false
+      },
+      {
+        "id": "dmp",
+        "visible": true,
+        "order": 6,
+        "title": "Plan de Gestión de Datos (DMP)",
+        "date": "Oct 2025",
+        "type": "Técnico",
+        "access": "partners",
+        "icon": "🗄️",
+        "url": "",
+        "external": false
+      },
+      {
+        "id": "ga-minutes-1",
+        "visible": true,
+        "order": 7,
+        "title": "Actas Asamblea General – Sesión 1",
+        "date": "Nov 2025",
+        "type": "Actas",
+        "access": "partners",
+        "icon": "📋",
+        "url": "",
+        "external": false
+      },
+      {
+        "id": "sc-minutes-q1-2026",
+        "visible": true,
+        "order": 8,
+        "title": "Actas Comité Directivo – Q1 2026",
+        "date": "Mar 2026",
+        "type": "Actas",
+        "access": "partners",
+        "icon": "📋",
+        "url": "",
+        "external": false
+      },
+      {
+        "id": "ethics-declaration",
+        "visible": true,
+        "order": 9,
+        "title": "Declaración Ética y Conflictos de Interés",
+        "date": "Oct 2025",
+        "type": "Ética",
+        "access": "public",
+        "icon": "🔍",
+        "url": "",
+        "external": false
+      },
+      {
+        "id": "internal-progress-q1",
+        "visible": true,
+        "order": 10,
+        "title": "Informe de Progreso Interno Q1 2026",
+        "date": "Abr 2026",
+        "type": "Seguimiento",
+        "access": "partners",
+        "icon": "📈",
+        "url": "",
+        "external": false
+      },
+      {
+        "id": "consensue-manual",
+        "visible": true,
+        "order": 11,
+        "title": "Manual de Usuario – ConsensUE para Stakeholders",
+        "date": "Mar 2026",
+        "type": "Operativo",
+        "access": "public",
+        "icon": "📘",
+        "url": "",
+        "external": false
+      },
+      {
+        "id": "gender-equality-policy",
+        "visible": true,
+        "order": 12,
+        "title": "Política de Igualdad de Género y Diversidad",
+        "date": "Nov 2025",
+        "type": "RRHH",
+        "access": "public",
+        "icon": "⚧",
+        "url": "",
+        "external": false
+      }
+    ]
   }
 };

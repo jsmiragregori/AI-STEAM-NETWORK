@@ -505,33 +505,50 @@ function tabLbd(govT) {
 
 function tabDocumentos(govT) {
   const s   = govT?.tabContent_documentos || {};
-  const docs = govT?.transparencyDocs || [];
+  const fallbackDocs = govT?.transparencyDocs || [];
+  const cms = GOVERNANCE_CONFIG?.documentationBlock || {};
+  const hasCmsDocs = Object.prototype.hasOwnProperty.call(cms, 'docs');
+  const accessLabels = cms.accessLabels || { public: { es: '', en: '', va: '' }, partners: { es: '', en: '', va: '' } };
 
-  const docsHtml = docs.map(doc => {
-    const isPublic = doc.access === 'Public' || doc.access === 'Público' || doc.access === 'Públic';
+  function isPublic(doc) {
+    return doc.access === 'public';
+  }
+
+  const docsHtml = (hasCmsDocs && Array.isArray(cms.docs) ? cms.docs : []).map(doc => {
+    const pub = isPublic(doc);
+    const hasUrl = doc.url && doc.url.trim();
+    const tag = hasUrl ? 'a' : 'span';
+    const attrs = hasUrl
+      ? `href="${doc.url}" ${doc.external ? 'target="_blank" rel="noopener noreferrer"' : ''}`
+      : '';
     return `
-      <a href="#" class="flex items-center p-4 rounded-xl border border-eu-border bg-white hover:border-eu-blue hover:bg-eu-bg transition-colors group">
+      <${tag} ${attrs} class="flex items-center p-4 rounded-xl border border-eu-border bg-white ${hasUrl ? 'hover:border-eu-blue hover:bg-eu-bg transition-colors group cursor-pointer' : ''}">
         <span class="text-2xl mr-4 shrink-0">${doc.icon || '📄'}</span>
         <div class="flex-1 min-w-0">
-          <p class="font-semibold text-sm text-eu-text group-hover:text-eu-blue truncate">${doc.title || ''}</p>
+          <p class="font-semibold text-sm text-eu-text ${hasUrl ? 'group-hover:text-eu-blue' : ''} truncate">${doc.title || ''}</p>
           <div class="flex items-center gap-2 mt-0.5 flex-wrap">
             <span class="text-xs text-gray-500">${doc.date || ''}</span>
             <span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${doc.type || ''}</span>
-            <span class="text-xs font-bold px-1.5 py-0.5 rounded ${isPublic ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}">
-              ${isPublic ? (s.accessPublic || 'Público') : (s.accessPartners || 'Partners')}
+            <span class="text-xs font-bold px-1.5 py-0.5 rounded ${pub ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}">
+              ${pickLang(pub ? accessLabels.public : accessLabels.partners, pub ? (s.accessPublic || 'Público') : (s.accessPartners || 'Partners'))}
             </span>
+            ${doc.external ? '<i data-lucide="external-link" class="w-3 h-3 text-gray-400"></i>' : ''}
           </div>
         </div>
-        <i data-lucide="file-signature" class="w-4 h-4 text-gray-300 group-hover:text-eu-blue shrink-0 ml-3"></i>
-      </a>
+        ${hasUrl ? '<i data-lucide="file-signature" class="w-4 h-4 text-gray-300 group-hover:text-eu-blue shrink-0 ml-3"></i>' : ''}
+      </${tag}>
     `;
   }).join('');
 
   return `
     <div>
-      <h2 class="text-xl font-bold text-eu-text mb-2">${s.title || ''}</h2>
-      <p class="text-sm text-gray-600 mb-7 max-w-2xl">${s.description || ''}</p>
+      ${cms.visible !== false ? `
+      ${cms.headerVisible !== false ? `
+      <h2 class="text-xl font-bold text-eu-text mb-2">${pickLang(cms.title, s.title || '')}</h2>
+      <p class="text-sm text-gray-600 mb-7 max-w-2xl">${pickLang(cms.description, s.description || '')}</p>
+      ` : ''}
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">${docsHtml}</div>
+      ` : ''}
     </div>
   `;
 }
