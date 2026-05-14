@@ -1,5 +1,13 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
+import { NEWS_CONFIG } from '../../data/news.js';
+
+function getLang() { return localStorage.getItem('language') || 'es'; }
+function pickLang(value, fallback = '') {
+  const lang = getLang();
+  if (value && typeof value === 'object') return value[lang] || value.es || fallback;
+  return fallback;
+}
 
 function getTypeColor(type) {
   const map = {
@@ -175,21 +183,37 @@ export function render() {
     </a>
   `).join('');
 
+  const heroBlock  = NEWS_CONFIG?.heroBlock || {};
+  const heroVisible = heroBlock.visible !== false;
+  const heroStats  = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
+  const notice     = pickLang(heroBlock.notice, '');
+  const ctaButton  = heroBlock.ctaButton || {};
+
   return `
     <div>
+      ${heroVisible ? `
       <!-- Header -->
       <div class="bg-eu-blue text-white px-6 py-12">
         <div class="max-w-7xl mx-auto flex flex-wrap items-start justify-between gap-6">
           <div>
-            <h1 class="text-3xl font-extrabold mb-2">${newsT?.title || ''}</h1>
-            <p class="text-white/80 max-w-2xl text-sm">${newsT?.description || ''}</p>
-            ${newsT?.demoDisclaimer ? `<p class="text-xs text-eu-yellow/80 italic mt-2">${newsT.demoDisclaimer}</p>` : ''}
+            <h1 class="text-3xl font-extrabold mb-2">${pickLang(heroBlock.title, newsT?.title || '')}</h1>
+            <p class="text-white/80 max-w-2xl text-sm">${pickLang(heroBlock.description, newsT?.description || '')}</p>
+            ${notice ? `<p class="text-xs text-eu-yellow/80 italic mt-2">${notice}</p>` : ''}
+            ${heroStats.length > 0 ? `
+            <div class="flex flex-wrap gap-4 mt-6">
+              ${heroStats.map(s => `
+              <div class="bg-white/10 rounded-xl px-5 py-3 text-center">
+                <p class="text-2xl font-extrabold text-eu-yellow">${s.value}</p>
+                <p class="text-xs text-white/70 font-semibold uppercase mt-1">${pickLang(s.label)}</p>
+              </div>`).join('')}
+            </div>` : ''}
           </div>
-          <button class="flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors text-white px-4 py-2 rounded-lg font-bold text-sm border border-white/20 cursor-pointer">
-            <i data-lucide="rss" class="w-4 h-4"></i>${newsT?.subscribeButton || ''}
-          </button>
+          ${ctaButton.visible !== false ? `
+          <button class="flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors text-white px-4 py-2 rounded-lg font-bold text-sm border border-white/20 cursor-pointer min-h-11">
+            <i data-lucide="rss" class="w-4 h-4"></i>${pickLang(ctaButton.label, newsT?.subscribeButton || '')}
+          </button>` : ''}
         </div>
-      </div>
+      </div>` : ''}
 
       <!-- Content -->
       <div class="max-w-7xl mx-auto px-6 py-8">

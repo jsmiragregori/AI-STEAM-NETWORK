@@ -1,5 +1,13 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
+import { GOVERNANCE_CONFIG } from '../../data/governance.js';
+
+function getLang() { return localStorage.getItem('language') || 'es'; }
+function pickLang(value, fallback = '') {
+  const lang = getLang();
+  if (value && typeof value === 'object') return value[lang] || value.es || fallback;
+  return fallback;
+}
 
 const TABS = ['estructura', 'dual-track', 'lbd', 'documentos', 'participar'];
 
@@ -541,17 +549,15 @@ export function render() {
   const govT      = t('governance') || {};
   const activeTab = getState('governanceTab') || 'estructura';
 
-  const stats = [
-    { label: govT?.statBodies,    value: govT?.statValue1 },
-    { label: govT?.statDualTrack, value: govT?.statValue2 },
-    { label: govT?.statPlatforms, value: govT?.statValue3 },
-    { label: govT?.statAgreement, value: govT?.statValue4 },
-  ];
+  const heroBlock  = GOVERNANCE_CONFIG?.heroBlock || {};
+  const heroVisible = heroBlock.visible !== false;
+  const heroStats  = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
+  const ctaButton  = heroBlock.ctaButton || {};
 
-  const statsHtml = stats.map(s => `
+  const statsHtml = heroStats.map(s => `
     <div class="bg-white/10 rounded-xl px-5 py-3 text-center">
       <p class="text-xl font-extrabold text-eu-yellow leading-tight">${s.value || ''}</p>
-      <p class="text-xs text-white/70 font-semibold uppercase mt-0.5">${s.label || ''}</p>
+      <p class="text-xs text-white/70 font-semibold uppercase mt-0.5">${pickLang(s.label)}</p>
     </div>
   `).join('');
 
@@ -565,14 +571,25 @@ export function render() {
 
   return `
     <div>
+      ${heroVisible ? `
       <!-- Header -->
       <div class="bg-eu-blue text-white px-6 py-12">
         <div class="max-w-7xl mx-auto">
-          <h1 class="text-3xl font-extrabold mb-3">${govT?.title || ''}</h1>
-          <p class="text-white/80 max-w-3xl text-base">${govT?.description || ''}</p>
-          <div class="flex flex-wrap gap-4 mt-6">${statsHtml}</div>
+          <div class="flex flex-wrap items-start justify-between gap-6">
+            <div>
+              <h1 class="text-3xl font-extrabold mb-3">${pickLang(heroBlock.title, govT?.title || '')}</h1>
+              <p class="text-white/80 max-w-3xl text-base">${pickLang(heroBlock.description, govT?.description || '')}</p>
+            </div>
+            ${ctaButton.visible !== false && ctaButton.url ? `
+            <a href="${ctaButton.url}" target="_blank" rel="noopener noreferrer"
+               class="flex min-h-11 items-center gap-2 rounded-lg bg-eu-orange px-5 py-2.5 text-sm font-bold text-white hover:bg-eu-purple transition-colors">
+              <i data-lucide="file-text" class="w-4 h-4"></i>${pickLang(ctaButton.label)}<i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>` : ''}
+          </div>
+          ${heroStats.length > 0 ? `
+          <div class="flex flex-wrap gap-4 mt-6">${statsHtml}</div>` : ''}
         </div>
-      </div>
+      </div>` : ''}
 
       <!-- Tabs + content -->
       <div class="max-w-7xl mx-auto px-6 py-8">
