@@ -227,40 +227,47 @@ function tabEstructura(govT) {
 
 function tabDualTrack(govT) {
   const s = govT?.tabContent_dualtrack || {};
+  const dualTrackBlock = GOVERNANCE_CONFIG?.dualTrackBlock || {};
+  const dualTrackVisible = dualTrackBlock.visible !== false;
+  const tracksById = Object.fromEntries((dualTrackBlock.tracks || []).map(t => [t.id, t]));
+  const trackAVisible = tracksById['track-a']?.visible !== false;
+  const trackBVisible = tracksById['track-b']?.visible !== false;
 
-  function trackBlock(track, colorClass, borderClass, accentClass, alertIcon, alertBg, alertText) {
-    const bodiesHtml = (track?.bodies || []).map(o =>
-      `<span class="text-xs ${accentClass} font-bold px-2 py-1 rounded">${o}</span>`
+  const fl = dualTrackBlock.fieldLabels || {};
+
+  function trackBlock(cmsTrack, colorClass, borderClass, accentClass, alertIcon, alertBg, alertText) {
+    const bodiesHtml = (cmsTrack.activeBodies || []).map(b =>
+      `<span class="text-xs ${accentClass} font-bold px-2 py-1 rounded">${pickLang(b.label)}</span>`
     ).join('');
     return `
       <div class="bg-white rounded-2xl border-2 ${borderClass} shadow-sm overflow-hidden">
         <div class="${colorClass} text-white px-6 py-4">
           <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center font-extrabold text-lg">${track?.title?.charAt(track.title.indexOf(' ')+1) || ''}</div>
+            <div class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center font-extrabold text-lg">${cmsTrack.letter || ''}</div>
             <div>
-              <h3 class="font-extrabold text-lg">${track?.title || ''}</h3>
-              <p class="text-white/70 text-sm">${track?.subtitle || ''}</p>
+              <h3 class="font-extrabold text-lg">${pickLang(cmsTrack.title)}</h3>
+              <p class="text-white/70 text-sm">${pickLang(cmsTrack.subtitle)}</p>
             </div>
           </div>
         </div>
         <div class="p-6 space-y-4">
           <div>
-            <p class="text-xs font-bold uppercase ${alertText} mb-1">${track?.scope_label || ''}</p>
-            <p class="text-sm text-gray-600">${track?.scope_desc || ''}</p>
+            <p class="text-xs font-bold uppercase ${alertText} mb-1">${pickLang(fl.scope)}</p>
+            <p class="text-sm text-gray-600">${pickLang(cmsTrack.scope?.text)}</p>
           </div>
           <div>
-            <p class="text-xs font-bold uppercase ${alertText} mb-1">${track?.framework_label || ''}</p>
-            <p class="text-sm text-gray-600">${track?.framework_desc || ''}</p>
+            <p class="text-xs font-bold uppercase ${alertText} mb-1">${pickLang(fl.normativeFramework)}</p>
+            <p class="text-sm text-gray-600">${pickLang(cmsTrack.normativeFramework?.text)}</p>
           </div>
           <div>
-            <p class="text-xs font-bold uppercase ${alertText} mb-1">${track?.limit_label || ''}</p>
+            <p class="text-xs font-bold uppercase ${alertText} mb-1">${pickLang(fl.keyLimit)}</p>
             <div class="flex items-start gap-2 ${alertBg} rounded-lg p-3">
               <i data-lucide="${alertIcon}" class="w-4 h-4 ${alertText} mt-0.5 shrink-0"></i>
-              <p class="text-sm ${alertText} font-semibold">${track?.limit_desc || ''}</p>
+              <p class="text-sm ${alertText} font-semibold">${pickLang(cmsTrack.keyLimit?.text)}</p>
             </div>
           </div>
           <div>
-            <p class="text-xs font-bold uppercase ${alertText} mb-2">${track?.bodies_label || ''}</p>
+            <p class="text-xs font-bold uppercase ${alertText} mb-2">${pickLang(fl.activeBodies)}</p>
             <div class="flex flex-wrap gap-2">${bodiesHtml}</div>
           </div>
         </div>
@@ -268,71 +275,83 @@ function tabDualTrack(govT) {
     `;
   }
 
-  const publicItemsHtml  = (s.dataArch?.publicZone?.items  || []).map(i => `<li class="flex items-center gap-2 text-xs text-gray-700"><span class="w-1.5 h-1.5 rounded-full bg-eu-blue shrink-0"></span>${i}</li>`).join('');
-  const privateItemsHtml = (s.dataArch?.privateZone?.items || []).map(i => `<li class="flex items-center gap-2 text-xs text-gray-700"><span class="w-1.5 h-1.5 rounded-full bg-purple-600 shrink-0"></span>${i}</li>`).join('');
+  const cmsDataArch = dualTrackBlock.dataArch || {};
+  const zoneStyles = {
+    public:  { dot: 'bg-eu-blue',    zone: 'bg-blue-50 border-blue-200',     title: 'text-eu-blue'    },
+    private: { dot: 'bg-purple-600', zone: 'bg-purple-50 border-purple-200', title: 'text-purple-700' },
+  };
+  const dataArchZonesHtml = (cmsDataArch.zones || []).map(zone => {
+    const st = zoneStyles[zone.id] || zoneStyles.public;
+    const itemsHtml = (zone.items || []).map(item =>
+      `<li class="flex items-center gap-2 text-xs text-gray-700"><span class="w-1.5 h-1.5 rounded-full ${st.dot} shrink-0"></span>${pickLang(item)}</li>`
+    ).join('');
+    return `
+      <div class="${st.zone} border rounded-xl p-5">
+        <p class="text-xs font-extrabold uppercase ${st.title} mb-2">${pickLang(zone.title)}</p>
+        <p class="text-xs text-gray-600 mb-3">${pickLang(zone.description)}</p>
+        <ul class="space-y-1.5">${itemsHtml}</ul>
+      </div>`;
+  }).join('');
 
-  const responsibilityHtml = (s.responsibilityBoundaries?.items || []).map(item => `
+  const cmsRB = dualTrackBlock.responsibilityBoundaries || {};
+  const responsibilityHtml = (cmsRB.items || []).map(item => `
     <div class="rounded-xl border border-eu-border bg-eu-bg p-5">
-      <p class="text-xs font-extrabold uppercase text-eu-blue mb-1">${item.owner || ''}</p>
-      <p class="text-sm text-gray-700">${item.scope || ''}</p>
+      <p class="text-xs font-extrabold uppercase text-eu-blue mb-1">${pickLang(item.owner)}</p>
+      <p class="text-sm text-gray-700">${pickLang(item.scope)}</p>
     </div>
   `).join('');
 
-  const agreementItemsHtml = (s.agreement?.items || []).map(c => `
+  const cmsAgreement = dualTrackBlock.agreement || {};
+  const agreementItemsHtml = (cmsAgreement.items || []).map(c => `
     <div class="bg-white rounded-lg border border-eu-border p-4">
-      <p class="font-bold text-eu-teal text-sm mb-1">${c.title || ''}</p>
-      <p class="text-xs text-gray-600">${c.desc || ''}</p>
+      <p class="font-bold text-eu-teal text-sm mb-1">${pickLang(c.title)}</p>
+      <p class="text-xs text-gray-600">${pickLang(c.desc)}</p>
     </div>
   `).join('');
 
   return `
     <div class="space-y-8">
+      ${dualTrackVisible ? `
       <div>
-        <h2 class="text-xl font-bold text-eu-text mb-2">${s.title || ''}</h2>
-        <p class="text-sm text-gray-600 mb-6 max-w-3xl">${s.desc || ''}</p>
+        <h2 class="text-xl font-bold text-eu-text mb-2">${pickLang(dualTrackBlock.title)}</h2>
+        <p class="text-sm text-gray-600 mb-6 max-w-3xl">${pickLang(dualTrackBlock.description)}</p>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          ${trackBlock(s.trackA, 'bg-eu-blue',   'border-eu-blue',   'bg-eu-blue/10 text-eu-blue',   'alert-circle',  'bg-blue-50',       'text-eu-blue'  )}
-          ${trackBlock(s.trackB, 'bg-eu-orange',  'border-eu-orange', 'bg-eu-orange/10 text-eu-orange','check-circle',  'bg-eu-yellow/60',  'text-eu-orange')}
+          ${trackAVisible ? trackBlock(tracksById['track-a'], 'bg-eu-blue',   'border-eu-blue',   'bg-eu-blue/10 text-eu-blue',   'alert-circle',  'bg-blue-50',       'text-eu-blue'  ) : ''}
+          ${trackBVisible ? trackBlock(tracksById['track-b'], 'bg-eu-orange',  'border-eu-orange', 'bg-eu-orange/10 text-eu-orange','check-circle',  'bg-eu-yellow/60',  'text-eu-orange') : ''}
         </div>
+      </div>` : ''}
+      <div>
 
         <!-- Zonas de datos -->
+        ${cmsDataArch.visible !== false ? `
         <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7 mb-6">
           <h3 class="font-bold text-eu-text mb-4 flex items-center gap-2">
-            <i data-lucide="shield-check" class="w-5 h-5 text-eu-blue"></i>${s.dataArch?.title || ''}
+            <i data-lucide="shield-check" class="w-5 h-5 text-eu-blue"></i>${pickLang(cmsDataArch.title)}
           </h3>
-          <p class="text-sm text-gray-600 mb-5">${s.dataArch?.desc || ''}</p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
-              <p class="text-xs font-extrabold uppercase text-eu-blue mb-2">${s.dataArch?.publicZone?.title || ''}</p>
-              <p class="text-xs text-gray-600 mb-3">${s.dataArch?.publicZone?.desc || ''}</p>
-              <ul class="space-y-1.5">${publicItemsHtml}</ul>
-            </div>
-            <div class="bg-purple-50 border border-purple-200 rounded-xl p-5">
-              <p class="text-xs font-extrabold uppercase text-purple-700 mb-2">${s.dataArch?.privateZone?.title || ''}</p>
-              <p class="text-xs text-gray-600 mb-3">${s.dataArch?.privateZone?.desc || ''}</p>
-              <ul class="space-y-1.5">${privateItemsHtml}</ul>
-            </div>
-          </div>
-        </div>
+          <p class="text-sm text-gray-600 mb-5">${pickLang(cmsDataArch.description)}</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">${dataArchZonesHtml}</div>
+        </div>` : ''}
 
         <!-- Responsabilidad -->
+        ${cmsRB.visible !== false ? `
         <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7 mb-6">
           <h3 class="font-bold text-eu-text mb-2 flex items-center gap-2">
-            <i data-lucide="shield" class="w-5 h-5 text-eu-orange"></i>${s.responsibilityBoundaries?.title || ''}
+            <i data-lucide="shield" class="w-5 h-5 text-eu-orange"></i>${pickLang(cmsRB.title)}
           </h3>
-          <p class="text-sm text-gray-600 mb-5">${s.responsibilityBoundaries?.desc || ''}</p>
+          <p class="text-sm text-gray-600 mb-5">${pickLang(cmsRB.description)}</p>
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">${responsibilityHtml}</div>
-        </div>
+        </div>` : ''}
 
         <!-- Acuerdo de Colaboración -->
+        ${cmsAgreement.visible !== false ? `
         <div class="bg-eu-bg rounded-xl border border-eu-border p-6">
           <h3 class="font-bold text-eu-text mb-3 flex items-center gap-2">
-            <i data-lucide="file-signature" class="w-5 h-5 text-eu-teal"></i>${s.agreement?.title || ''}
+            <i data-lucide="file-signature" class="w-5 h-5 text-eu-teal"></i>${pickLang(cmsAgreement.title)}
           </h3>
-          <p class="text-sm text-gray-600 mb-4">${s.agreement?.desc || ''}</p>
+          <p class="text-sm text-gray-600 mb-4">${pickLang(cmsAgreement.description)}</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">${agreementItemsHtml}</div>
-        </div>
+        </div>` : ''}
       </div>
     </div>
   `;

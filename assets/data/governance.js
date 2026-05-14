@@ -1,5 +1,5 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR
-// Fuentes: content/governance/hero.yml, content/governance/structure-bodies.yml, content/governance/formal-bodies.yml
+// Fuentes: content/governance/hero.yml, content/governance/structure-bodies.yml, content/governance/formal-bodies.yml, content/governance/dual-track.yml
 
 export const GOVERNANCE_CONFIG = {
   "heroBlock": {
@@ -593,7 +593,460 @@ export const GOVERNANCE_CONFIG = {
     ],
     "standards": {
       "visible": true,
-      "cards": []
+      "cards": [
+        {
+          "id": "iso-21001",
+          "visible": true,
+          "order": 1,
+          "icon": "shield-check",
+          "tone": "blue",
+          "title": {
+            "es": "ISO 21001 – Gestión Educativa",
+            "en": "ISO 21001 – Educational Management",
+            "va": "ISO 21001 – Gestió Educativa"
+          },
+          "desc": {
+            "es": "El consorcio opera bajo ISO 21001 (EOMS), coordinado por UVEG. Garantiza que los procedimientos formativos estén orientados a las necesidades de estudiantes y partes interesadas, con trazabilidad y auditabilidad plena.",
+            "en": "The consortium operates under ISO 21001 (EOMS), coordinated by UVEG. It ensures that training procedures are oriented to the needs of students and stakeholders, with full traceability and auditability.",
+            "va": "El consorci funciona sota ISO 21001 (EOMS), coordinat per UVEG. Garanteix que els procediments formatius estiguen orientats a les necessitats d'estudiants i parts interessades, amb total rastreabilitat i auditabilitat."
+          }
+        },
+        {
+          "id": "enred",
+          "visible": true,
+          "order": 2,
+          "icon": "globe",
+          "tone": "orange",
+          "title": {
+            "es": "ENRED – Red Europea de Departamentos de Educación Regional",
+            "en": "ENRED – European Network of Regional Education Departments",
+            "va": "ENRED – Xarxa Europea de Departaments d'Educació Regional"
+          },
+          "desc": {
+            "es": "ENRED es un marco de cooperación interregional no vinculante que impulsa el intercambio de buenas prácticas, el diálogo político y la colaboración internacional entre departamentos regionales de educación en Europa. AI-STEAM Network se construye sobre ese ecosistema de confianza institucional&#58; aprovecha las relaciones interregionales de ENRED para ampliar la visibilidad, el compromiso de los stakeholders y la diseminación de la innovación educativa en IA, creatividad y STEAM.",
+            "en": "ENRED is a non-binding interregional cooperation framework promoting best practice exchange, policy dialogue and international collaboration among regional education departments in Europe. AI-STEAM Network builds on this institutional trust ecosystem&#58; it draws on ENRED's interregional relationships to broaden visibility, stakeholder engagement and dissemination of educational innovation in AI, creativity and STEAM.",
+            "va": "ENRED és un marc de cooperació interregional no vinculant que impulsa l'intercanvi de bones pràctiques, el diàleg polític i la col·laboració internacional entre departaments regionals d'educació a Europa. AI-STEAM Network es construeix sobre eixe ecosistema de confiança institucional&#58; aprofita les relacions interregionals d'ENRED per a ampliar la visibilitat, el compromís dels stakeholders i la difusió de la innovació educativa en IA, creativitat i STEAM."
+          }
+        }
+      ]
+    }
+  },
+  "dualTrackBlock": {
+    "visible": true,
+    "title": {
+      "es": "Modelo de Gobernanza Dual Track",
+      "en": "Dual Track Governance Model",
+      "va": "Model de Governança Dual Track"
+    },
+    "description": {
+      "es": "Para garantizar la operabilidad legal y pedagógica, la AI-STEAM Network implementa un modelo de gobernanza Dual Track que opera en paralelo. Cada Track tiene su propio gestor, ámbito, marco normativo y límites de autoridad. Esta separación es deliberada&#58; protege la autonomía universitaria en el Track A y permite la flexibilidad del ecosistema en el Track B.",
+      "en": "To ensure legal and pedagogical operability, the AI-STEAM Network implements a Dual Track governance model that operates in parallel. Each Track has its own manager, scope, normative framework, and limits of authority. This separation is deliberate&#58; it protects university autonomy in Track A and enables ecosystem flexibility in Track B.",
+      "va": "Per garantir l'operabilitat legal i pedagògica, la AI-STEAM Network implementa un model de governança Dual Track que opera en paral·lel. Cada Track té el seu propi gestor, àmbit, marc normatiu i límits d'autoritat. Aquesta separació és deliberada&#58; protegeix l'autonomia universitària al Track A i permet la flexibilitat de l'ecosistema al Track B."
+    },
+    "fieldLabels": {
+      "scope": {
+        "es": "Ámbito",
+        "en": "Scope",
+        "va": "Àmbit"
+      },
+      "normativeFramework": {
+        "es": "Marco Normativo",
+        "en": "Normative Framework",
+        "va": "Marc Normatiu"
+      },
+      "keyLimit": {
+        "es": "Límite Clave",
+        "en": "Key Limit",
+        "va": "Límit Clau"
+      },
+      "activeBodies": {
+        "es": "Órganos Activos",
+        "en": "Active Bodies",
+        "va": "Òrgans Actius"
+      }
+    },
+    "tracks": [
+      {
+        "id": "track-a",
+        "visible": true,
+        "order": 1,
+        "letter": "A",
+        "title": {
+          "es": "Track A – Espacio Académico",
+          "en": "Track A – Academic Space",
+          "va": "Track A – Espai Acadèmic"
+        },
+        "subtitle": {
+          "es": "Dirigido por UVEG + Laurea",
+          "en": "Led by UVEG + Laurea",
+          "va": "Dirigit per UVEG + Laurea"
+        },
+        "scope": {
+          "text": {
+            "es": "Currículo del Máster AI-SECRETT, microcredenciales ECTS, evaluaciones académicas, rigor científico y calidad pedagógica.",
+            "en": "Master AI-SECRETT curriculum, ECTS micro-credentials, academic evaluations, scientific rigor, and pedagogical quality.",
+            "va": "Currículum del Màster AI-SECRETT, microcredencials ECTS, avaluacions acadèmiques, rigor científic i qualitat pedagògica."
+          }
+        },
+        "normativeFramework": {
+          "text": {
+            "es": "Acuerdo de Consorcio AI-SECRETT + estándares universitarios de calidad (Proceso de Bolonia) + ISO 21001.",
+            "en": "AI-SECRETT Consortium Agreement + university quality standards (Bologna Process) + ISO 21001.",
+            "va": "Acord de Consorci AI-SECRETT + estàndards universitaris de qualitat (Procés de Bolonya) + ISO 21001."
+          }
+        },
+        "keyLimit": {
+          "text": {
+            "es": "Los socios industriales y gubernamentales no tienen derechos de voto en la evaluación académica o emisión de títulos. La autonomía universitaria es inviolable en este espacio.",
+            "en": "Industrial and governmental partners have no voting rights in academic evaluation or degree issuance. University autonomy is inviolable in this space.",
+            "va": "Els socis industrials i governamentals no tenen drets de vot en l'avaluació acadèmica o emissió de títols. L'autonomia universitària és inviolable en aquest espai."
+          }
+        },
+        "activeBodies": [
+          {
+            "id": "scc",
+            "label": {
+              "es": "Comité Científico (SCC)",
+              "en": "Scientific Committee (SCC)",
+              "va": "Comité Científic (SCC)"
+            },
+            "visible": true
+          },
+          {
+            "id": "sc",
+            "label": {
+              "es": "Comité Directivo (SC)",
+              "en": "Steering Committee (SC)",
+              "va": "Comité de Direcció (SC)"
+            },
+            "visible": true
+          },
+          {
+            "id": "ga",
+            "label": {
+              "es": "Asamblea General (GA)",
+              "en": "General Assembly (GA)",
+              "va": "Assemblea General (GA)"
+            },
+            "visible": true
+          }
+        ]
+      },
+      {
+        "id": "track-b",
+        "visible": true,
+        "order": 2,
+        "letter": "B",
+        "title": {
+          "es": "Track B – Espacio del Ecosistema",
+          "en": "Track B – Ecosystem Space",
+          "va": "Track B – Espai de l'Ecosistema"
+        },
+        "subtitle": {
+          "es": "Orquestado por CEICE (GVA)",
+          "en": "Orchestrated by CEICE (GVA)",
+          "va": "Orquestrat per CEICE (GVA)"
+        },
+        "scope": {
+          "text": {
+            "es": "Foros de política educativa, banco de retos, networking, eventos, repositorio de conocimiento y participación de stakeholders.",
+            "en": "Education policy forums, challenge bank, networking, events, knowledge repository, and stakeholder participation.",
+            "va": "Fòrums de política educativa, banc de reptes, networking, events, repositori de coneixement i participació de stakeholders."
+          }
+        },
+        "normativeFramework": {
+          "text": {
+            "es": "Acuerdo de Colaboración con Regla de Coste Cero. Espacio abierto y flexible, sin burocracia académica.",
+            "en": "Collaboration Agreement with Zero Cost Rule. Open and flexible space, without academic bureaucracy.",
+            "va": "Acord de Col·laboració amb Regla de Cost Zero. Espai obert i flexible, sense burocràcia acadèmica."
+          }
+        },
+        "keyLimit": {
+          "text": {
+            "es": "La admisión de nuevos miembros y la validación de la relevancia de los retos se deciden colectivamente a través de la Red de Stakeholders (SN) en ConsensUE. CEICE tiene voz principal pero no actúa unilateralmente. La membresía es rápida y no burocrática.",
+            "en": "Admission of new members and validation of challenge relevance are decided collectively through the Stakeholder Network (SN) in ConsensUE. CEICE has principal voice but does not act unilaterally. Membership is rapid and non-bureaucratic.",
+            "va": "L'admissió de nous membres i la validació de la rellevància dels reptes es decideixen col·lectivament a través de la Xarxa de Stakeholders (SN) a ConsensUE. CEICE té veu principal però no actua unilateralment. La membresia és ràpida i no burocràtica."
+          }
+        },
+        "activeBodies": [
+          {
+            "id": "sn",
+            "label": {
+              "es": "Red de Stakeholders (SN)",
+              "en": "Stakeholder Network (SN)",
+              "va": "Xarxa de Stakeholders (SN)"
+            },
+            "visible": true
+          },
+          {
+            "id": "sb",
+            "label": {
+              "es": "Junta Estratégica (SB)",
+              "en": "Strategic Board (SB)",
+              "va": "Junta Estratègica (SB)"
+            },
+            "visible": true
+          },
+          {
+            "id": "consensue",
+            "label": {
+              "es": "ConsensUE (Aules)",
+              "en": "ConsensUE (Aules)",
+              "va": "ConsensUE (Aules)"
+            },
+            "visible": true
+          }
+        ]
+      }
+    ],
+    "dataArch": {
+      "visible": true,
+      "title": {
+        "es": "Arquitectura de Datos: Zonas Diferenciadas",
+        "en": "Data Architecture: Differentiated Zones",
+        "va": "Arquitectura de Dades: Zones Diferenciades"
+      },
+      "description": {
+        "es": "La separación de tracks también se refleja en la arquitectura de datos, garantizando el cumplimiento del RGPD y la compartimentación de la información sensible.",
+        "en": "Track separation is also reflected in data architecture, ensuring GDPR compliance and compartmentalization of sensitive information.",
+        "va": "La separació de tracks també es reflecteix en l'arquitectura de dades, garantint el compliment del RGPD i la compartimentació de la informació sensible."
+      },
+      "zones": [
+        {
+          "id": "public",
+          "visible": true,
+          "order": 1,
+          "title": {
+            "es": "Zona Pública / Red (Track B)",
+            "en": "Public Zone / Network (Track B)",
+            "va": "Zona Pública / Xarxa (Track B)"
+          },
+          "description": {
+            "es": "Visible para todos los miembros autenticados de la red. Responsable del Tratamiento&#58; CEICE.",
+            "en": "Visible to all authenticated network members. Data Controller&#58; CEICE.",
+            "va": "Visible per a tots els membres autenticats de la xarxa. Responsable del Tractament&#58; CEICE."
+          },
+          "items": [
+            {
+              "es": "Foros sectoriales y debates",
+              "en": "Sectoral forums and debates",
+              "va": "Fòrums sectorials i debats"
+            },
+            {
+              "es": "Banco de retos y casos de uso",
+              "en": "Challenge Bank and use cases",
+              "va": "Banc de reptes i casos d'ús"
+            },
+            {
+              "es": "Repositorio de buenas prácticas y OER",
+              "en": "Repository of best practices and OER",
+              "va": "Repositori de bones pràctiques i OER"
+            },
+            {
+              "es": "Directorio de organizaciones de la red",
+              "en": "Network organization directory",
+              "va": "Directori d'organitzacions de la xarxa"
+            },
+            {
+              "es": "Agenda de eventos y noticias",
+              "en": "Event agenda and news",
+              "va": "Agenda d'esdeveniments i notícies"
+            }
+          ]
+        },
+        {
+          "id": "private",
+          "visible": true,
+          "order": 2,
+          "title": {
+            "es": "Zona Privada / Académica (Track A)",
+            "en": "Private Zone / Academic (Track A)",
+            "va": "Zona Privada / Acadèmica (Track A)"
+          },
+          "description": {
+            "es": "Accesible solo para estudiantes matriculados y profesorado. Responsable del Tratamiento&#58; UVEG.",
+            "en": "Accessible only to enrolled students and faculty. Data Controller&#58; UVEG.",
+            "va": "Accessible només per a estudiants matriculats i professorat. Responsable del Tractament&#58; UVEG."
+          },
+          "items": [
+            {
+              "es": "Expedientes académicos y calificaciones",
+              "en": "Academic records and grades",
+              "va": "Expedients acadèmics i qualificacions"
+            },
+            {
+              "es": "Exámenes y actividades de evaluación",
+              "en": "Exams and evaluation activities",
+              "va": "Exàmens i activitats d'avaluació"
+            },
+            {
+              "es": "Materiales docentes del Máster AI-SECRETT",
+              "en": "Master AI-SECRETT teaching materials",
+              "va": "Materials docents del Màster AI-SECRETT"
+            },
+            {
+              "es": "Datos personales de estudiantes (protegidos por normativa universitaria)",
+              "en": "Student personal data (protected by university regulations)",
+              "va": "Dades personals d'estudiants (protegits per normativa universitària)"
+            },
+            {
+              "es": "Gestión de ECTS y evaluación académica",
+              "en": "ECTS and academic evaluation management",
+              "va": "Gestió d'ECTS i avaluació acadèmica"
+            }
+          ]
+        }
+      ]
+    },
+    "responsibilityBoundaries": {
+      "visible": true,
+      "title": {
+        "es": "Datos y límites de responsabilidad",
+        "en": "Data and responsibility boundaries",
+        "va": "Dades i límits de responsabilitat"
+      },
+      "description": {
+        "es": "Cada plataforma mantiene su responsabilidad operativa. La AI-STEAM Network protege los compromisos de CEICE en el Track B sin entrar en decisiones académicas del Máster.",
+        "en": "Each platform keeps its operational responsibility. The AI-STEAM Network protects CEICE commitments in Track B without entering Master academic decisions.",
+        "va": "Cada plataforma manté la seua responsabilitat operativa. La AI-STEAM Network protegeix els compromisos de CEICE al Track B sense entrar en decisions acadèmiques del Màster."
+      },
+      "items": [
+        {
+          "id": "ceice",
+          "visible": true,
+          "order": 1,
+          "owner": {
+            "es": "CEICE",
+            "en": "CEICE",
+            "va": "CEICE"
+          },
+          "scope": {
+            "es": "Datos de miembros, participación comunitaria, red ENRED/AI-STEAM, retos/casos y evidencias del Track B.",
+            "en": "Member data, community participation, ENRED/AI-STEAM network, challenges/cases and Track B evidence.",
+            "va": "Dades de membres, participació comunitària, xarxa ENRED/AI-STEAM, reptes/casos i evidències del Track B."
+          }
+        },
+        {
+          "id": "uveg",
+          "visible": true,
+          "order": 2,
+          "owner": {
+            "es": "UVEG Y SOCIOS ACADÉMICOS",
+            "en": "UVEG AND ACADEMIC PARTNERS",
+            "va": "UVEG I SOCIS ACADÈMICS"
+          },
+          "scope": {
+            "es": "Expedientes académicos de estudiantes, evaluación del Máster, criterios docentes, ECTS y decisiones curriculares del Track A.",
+            "en": "Academic student records, Master evaluation, teaching criteria, ECTS and Track A curriculum decisions.",
+            "va": "Expedients acadèmics d'estudiants, avaluació del Màster, criteris docents, ECTS i decisions curriculars del Track A."
+          }
+        },
+        {
+          "id": "consensue",
+          "visible": true,
+          "order": 3,
+          "owner": {
+            "es": "CONSENSUE (Aules)",
+            "en": "CONSENSUE (Aules)",
+            "va": "CONSENSUE (Aules)"
+          },
+          "scope": {
+            "es": "Participación, deliberaciones, debates, votos y trazabilidad de las contribuciones de la comunidad.",
+            "en": "Participation, deliberations, debates, votes and traceability of community contributions.",
+            "va": "Participació, deliberacions, debats, vots i traçabilitat de les contribucions de la comunitat."
+          }
+        },
+        {
+          "id": "aules",
+          "visible": true,
+          "order": 4,
+          "owner": {
+            "es": "AULES / PORTALEDU",
+            "en": "AULES / PORTALEDU",
+            "va": "AULES / PORTALEDU"
+          },
+          "scope": {
+            "es": "Entornos de aprendizaje y recursos donde corresponda, según el responsable de cada actividad.",
+            "en": "Learning and resource environments where applicable, according to the responsible owner of each activity.",
+            "va": "Entorns d'aprenentatge i recursos on corresponga, segons el responsable de cada activitat."
+          }
+        }
+      ]
+    },
+    "agreement": {
+      "visible": true,
+      "title": {
+        "es": "Acuerdo de Colaboración – Regla de Coste Cero",
+        "en": "Collaboration Agreement – Zero Cost Rule",
+        "va": "Acord de Col·laboració – Regla de Cost Zero"
+      },
+      "description": {
+        "es": "La membresía en el Track B se formaliza a través del Acuerdo de Colaboración, que establece los siguientes principios&#58;",
+        "en": "Membership in Track B is formalized through the Collaboration Agreement, which establishes the following principles&#58;",
+        "va": "La membresia al Track B es formalitza a través de l'Acord de Col·laboració, que estableix els següents principis&#58;"
+      },
+      "items": [
+        {
+          "id": "zero-cost",
+          "visible": true,
+          "order": 1,
+          "title": {
+            "es": "Coste Cero",
+            "en": "Zero Cost",
+            "va": "Cost Zero"
+          },
+          "desc": {
+            "es": "Cada signatario asume sus propios costes con recursos ordinarios. La membresía es gratuita.",
+            "en": "Each signatory assumes its own costs from ordinary resources. Membership is free.",
+            "va": "Cada signatori assumeix els seus propis costos amb recursos ordinaris. La membresia és gratuïta."
+          }
+        },
+        {
+          "id": "validity",
+          "visible": true,
+          "order": 2,
+          "title": {
+            "es": "Validez de 4 Años",
+            "en": "4-Year Validity",
+            "va": "Validesa de 4 Anys"
+          },
+          "desc": {
+            "es": "El acuerdo tiene una duración de 4 años desde la firma, renovable por acuerdo escrito mutuo.",
+            "en": "The agreement has a 4-year duration from signing, renewable by mutual written agreement.",
+            "va": "L'acord té una durada de 4 anys des de la signatura, renovable per acord escrit mutu."
+          }
+        },
+        {
+          "id": "annual-meeting",
+          "visible": true,
+          "order": 3,
+          "title": {
+            "es": "Reunión Anual",
+            "en": "Annual Meeting",
+            "va": "Reunió Anual"
+          },
+          "desc": {
+            "es": "Los signatarios convocan una reunión anual (presencial o virtual) para evaluar los resultados de la colaboración.",
+            "en": "Signatories convene an annual meeting (in-person or virtual) to evaluate collaboration results.",
+            "va": "Els signataris convoquen una reunió anual (presencial o virtual) per avaluar els resultats de la col·laboració."
+          }
+        },
+        {
+          "id": "dispute-resolution",
+          "visible": true,
+          "order": 4,
+          "title": {
+            "es": "Resolución de Disputas",
+            "en": "Dispute Resolution",
+            "va": "Resolució de Disputes"
+          },
+          "desc": {
+            "es": "Aplicación del Reglamento (UE) 2021/694 (Europa Digital) y subsidiariamente la legislación española.",
+            "en": "Application of Regulation (EU) 2021/694 (Digital Europe) and subsidiarily Spanish legislation.",
+            "va": "Aplicació del Reglament (UE) 2021/694 (Europa Digital) i subsidiàriament la legislació espanyola."
+          }
+        }
+      ]
     }
   }
 };
