@@ -361,14 +361,27 @@ function tabDualTrack(govT) {
 
 function tabLbd(govT) {
   const s = govT?.tabContent_lbd || {};
+  const lbdBlock = GOVERNANCE_CONFIG?.lbdBlock || {};
+  const cycleBlock = lbdBlock.cycle || {};
+  const cyclePhases = Array.isArray(cycleBlock.phases) ? cycleBlock.phases : null;
+  const operatingFlowBlock = lbdBlock.operatingFlow || {};
+  const operatingFlowSteps = Array.isArray(operatingFlowBlock.steps) ? operatingFlowBlock.steps : null;
+  const platformsBlock = lbdBlock.platformsBlock || {};
+  const platformCards = Array.isArray(platformsBlock.cards) ? platformsBlock.cards : null;
+  const scalabilityBlock = lbdBlock.scalabilityBlock || {};
+  const scalabilityPhases = Array.isArray(scalabilityBlock.phases) ? scalabilityBlock.phases : null;
 
-  const phaseColors = { '1': ['bg-eu-orange', 'border-eu-orange'], '2': ['bg-eu-blue', 'border-eu-blue'], '3': ['bg-eu-teal', 'border-eu-teal'] };
+  const phaseColors = [
+    ['bg-eu-orange', 'border-eu-orange'],
+    ['bg-eu-blue', 'border-eu-blue'],
+    ['bg-eu-teal', 'border-eu-teal'],
+  ];
 
-  const phasesHtml = (s.phases || []).map((phase, i) => {
-    const [color, border] = phaseColors[phase.step] || ['bg-gray-400', 'border-gray-400'];
+  const phasesHtml = (cyclePhases || s.phases || []).map((phase, i, arr) => {
+    const [color, border] = phaseColors[i % phaseColors.length];
     const outputsHtml = (phase.outputs || []).map(o => `
       <span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-2 py-1 rounded-full text-gray-700 font-semibold">
-        <i data-lucide="check-circle" class="w-3 h-3 text-eu-teal shrink-0"></i>${o}
+        <i data-lucide="check-circle" class="w-3 h-3 text-eu-teal shrink-0"></i>${pickLang(o.label, o)}
       </span>`).join('');
     return `
       <div class="relative">
@@ -376,97 +389,113 @@ function tabLbd(govT) {
           <div class="w-10 h-10 rounded-full ${color} text-white flex items-center justify-center font-extrabold text-lg shrink-0">${phase.step}</div>
           <div class="flex-1">
             <div class="flex flex-wrap items-center gap-2 mb-1">
-              <span class="text-xs font-extrabold uppercase px-2 py-0.5 rounded ${color} text-white">${phase.track || ''}</span>
+              <span class="text-xs font-extrabold uppercase px-2 py-0.5 rounded ${color} text-white">${pickLang(phase.track, phase.track || '')}</span>
               <span class="text-xs text-gray-400">·</span>
-              <span class="text-xs font-semibold text-gray-500">${phase.platform || ''}</span>
+              <span class="text-xs font-semibold text-gray-500">${pickLang(phase.platform, phase.platform || '')}</span>
             </div>
-            <h4 class="font-bold text-eu-text mb-0.5">${phase.title || ''}</h4>
-            <p class="text-xs text-gray-500 font-semibold mb-2">👤 ${phase.actor || ''}</p>
-            <p class="text-sm text-gray-600 mb-3">${phase.desc || ''}</p>
+            <h4 class="font-bold text-eu-text mb-0.5">${pickLang(phase.title, phase.title || '')}</h4>
+            <p class="text-xs text-gray-500 font-semibold mb-2">👤 ${pickLang(phase.actor, phase.actor || '')}</p>
+            <p class="text-sm text-gray-600 mb-3">${pickLang(phase.description, phase.desc || '')}</p>
             <div class="flex flex-wrap gap-2">${outputsHtml}</div>
           </div>
         </div>
-        ${i < 2 ? '<div class="flex justify-center my-1"><i data-lucide="arrow-down" class="w-5 h-5 text-gray-300"></i></div>' : ''}
+        ${i < arr.length - 1 ? '<div class="flex justify-center my-1"><i data-lucide="arrow-down" class="w-5 h-5 text-gray-300"></i></div>' : ''}
       </div>
     `;
   }).join('');
 
-  const flowStepsHtml = (s.operatingFlow?.steps || []).map((step, i) => `
+  const flowStepsHtml = (operatingFlowSteps || s.operatingFlow?.steps || []).map((step, i) => `
     <div class="relative rounded-xl border border-eu-border bg-eu-bg p-4">
       <div class="w-8 h-8 rounded-lg bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm mb-3">${i + 1}</div>
-      <p class="text-sm font-bold text-eu-text mb-1">${step.title || ''}</p>
-      <p class="text-xs text-gray-600 leading-relaxed">${step.desc || ''}</p>
+      <p class="text-sm font-bold text-eu-text mb-1">${pickLang(step.title, step.title || '')}</p>
+      <p class="text-xs text-gray-600 leading-relaxed">${pickLang(step.description, step.desc || '')}</p>
     </div>
   `).join('');
 
-  const platformsHtml = (s.platforms || []).map((p, i) => `
-    <div class="relative">
-      <div class="rounded-xl border-2 ${p.border || 'border-eu-border'} p-5 h-full">
-        <div class="inline-block text-xs font-extrabold uppercase px-2 py-0.5 rounded mb-2 ${p.color || 'bg-eu-blue'} text-white">${p.track || ''}</div>
-        <p class="font-bold text-eu-text">${p.name || ''}</p>
-        <p class="text-xs text-gray-500 mb-1">${p.tech || ''}</p>
-        <p class="text-xs font-bold uppercase ${p.text || 'text-eu-blue'} mb-2">${p.role || ''}</p>
-        <p class="text-xs text-gray-600 mb-3">${p.desc || ''}</p>
-        <p class="text-xs text-gray-500 font-semibold bg-eu-bg rounded px-2 py-1">👤 ${p.owner || ''}</p>
-      </div>
-      ${i < 2 ? '<div class="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 bg-white border border-eu-border rounded-full items-center justify-center"><i data-lucide="arrow-right" class="w-3 h-3 text-gray-400"></i></div>' : ''}
-    </div>
-  `).join('');
-
-  // Hardcoded scalability (not in translations)
-  const scalePhases = [
-    { fase: 'Fase Piloto', rango: '< 50 organizaciones', periodo: '2025–2026', color: 'bg-eu-blue', items: ['Track B gestionado manualmente por CEICE', 'Comité Científico revisa todos los retos', 'ConsensUE con grupos reducidos', 'Todos los retos pasan por revisión completa'] },
-    { fase: 'Fase de Crecimiento', rango: '50–250 organizaciones', periodo: '2026–2027', color: 'bg-eu-teal', items: ['Validación por grupos de trabajo sectoriales (SN)', 'Automatización del enrutamiento de propuestas', 'RBAC en las 3 plataformas', 'Sistema de reputación para revisores del Track B'] },
-    { fase: 'Fase Estable', rango: '500+ organizaciones', periodo: '2027+', color: 'bg-purple-600', items: ['Delegación de validación Track B a orgs. acreditadas', 'Workflows asíncronos sin reuniones obligatorias', 'IA asistente para pre-validación de retos', 'Sostenibilidad financiera con cuotas + Digital Europe'] },
+  const platformTones = [
+    ['bg-eu-orange', 'border-eu-orange', 'text-eu-orange'],
+    ['bg-eu-blue', 'border-eu-blue', 'text-eu-blue'],
+    ['bg-eu-teal', 'border-eu-teal', 'text-eu-teal'],
   ];
-  const scaleHtml = scalePhases.map(f => `
+
+  const platformsHtml = (platformCards || s.platforms || []).map((p, i, arr) => {
+    const [color, border, text] = platformTones[i % platformTones.length];
+    return `
+    <div class="relative">
+      <div class="rounded-xl border-2 ${border} p-5 h-full">
+        <div class="inline-block text-xs font-extrabold uppercase px-2 py-0.5 rounded mb-2 ${color} text-white">${pickLang(p.track, p.track || '')}</div>
+        <p class="font-bold text-eu-text">${pickLang(p.name, p.name || '')}</p>
+        <p class="text-xs text-gray-500 mb-1">${pickLang(p.tech, p.tech || '')}</p>
+        <p class="text-xs font-bold uppercase ${text} mb-2">${pickLang(p.role, p.role || '')}</p>
+        <p class="text-xs text-gray-600 mb-3">${pickLang(p.description, p.desc || '')}</p>
+        <p class="text-xs text-gray-500 font-semibold bg-eu-bg rounded px-2 py-1">👤 ${pickLang(p.owner, p.owner || '')}</p>
+      </div>
+      ${i < arr.length - 1 ? '<div class="hidden md:flex absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-6 h-6 bg-white border border-eu-border rounded-full items-center justify-center"><i data-lucide="arrow-right" class="w-3 h-3 text-gray-400"></i></div>' : ''}
+    </div>
+  `;
+  }).join('');
+
+  const scaleTones = [
+    'bg-eu-blue',
+    'bg-eu-teal',
+    'bg-purple-600',
+  ];
+  const scaleHtml = (scalabilityPhases || []).map((f, i) => {
+    const color = scaleTones[i % scaleTones.length];
+    return `
     <div class="bg-eu-bg rounded-xl border border-eu-border p-5">
-      <div class="inline-block px-3 py-0.5 rounded-full text-white text-xs font-extrabold uppercase mb-2 ${f.color}">${f.fase}</div>
-      <p class="font-bold text-eu-text text-sm mb-0.5">${f.rango}</p>
-      <p class="text-xs text-gray-500 mb-3">${f.periodo}</p>
+      <div class="inline-block px-3 py-0.5 rounded-full text-white text-xs font-extrabold uppercase mb-2 ${color}">${pickLang(f.label)}</div>
+      <p class="font-bold text-eu-text text-sm mb-0.5">${pickLang(f.range)}</p>
+      <p class="text-xs text-gray-500 mb-3">${f.period || ''}</p>
       <ul class="space-y-1.5">
-        ${f.items.map(item => `<li class="flex items-start gap-2 text-xs text-gray-600"><span class="w-1.5 h-1.5 rounded-full mt-1 shrink-0 ${f.color}"></span>${item}</li>`).join('')}
+        ${(f.items || []).map(item => `<li class="flex items-start gap-2 text-xs text-gray-600"><span class="w-1.5 h-1.5 rounded-full mt-1 shrink-0 ${color}"></span>${pickLang(item.label)}</li>`).join('')}
       </ul>
     </div>
-  `).join('');
+  `}).join('');
 
   return `
     <div class="space-y-8">
       <div>
-        <h2 class="text-xl font-bold text-eu-text mb-2">${s.title || ''}</h2>
-        <p class="text-sm text-gray-600 mb-2 max-w-3xl">${s.intro_desc || ''}</p>
-        <p class="text-sm text-gray-500 mb-6 max-w-3xl">${s.diginetDesc || ''}</p>
+        ${lbdBlock.visible !== false ? `
+        <h2 class="text-xl font-bold text-eu-text mb-2">${pickLang(lbdBlock.title, s.title || '')}</h2>
+        <p class="text-sm text-gray-600 mb-2 max-w-3xl">${pickLang(lbdBlock.description, s.intro_desc || '')}</p>
+        <p class="text-sm text-gray-500 mb-6 max-w-3xl">${pickLang(lbdBlock.diginetDescription, s.diginetDesc || '')}</p>
+        ` : ''}
 
         <!-- Fases LbD -->
+        ${cycleBlock.visible !== false ? `
         <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7 mb-8">
-          <h3 class="font-bold text-eu-text mb-6">${s.cycleTitle || ''}</h3>
+          <h3 class="font-bold text-eu-text mb-6">${pickLang(cycleBlock.title, s.cycleTitle || '')}</h3>
           <div class="space-y-0">${phasesHtml}</div>
-        </div>
+        </div>` : ''}
 
         <!-- Flujo operativo -->
+        ${operatingFlowBlock.visible !== false ? `
         <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7 mb-6">
           <h3 class="font-bold text-eu-text mb-2 flex items-center gap-2">
-            <i data-lucide="arrow-right" class="w-5 h-5 text-eu-teal"></i>${s.operatingFlow?.title || ''}
+            <i data-lucide="arrow-right" class="w-5 h-5 text-eu-teal"></i>${pickLang(operatingFlowBlock.title, s.operatingFlow?.title || '')}
           </h3>
-          <p class="text-sm text-gray-600 mb-5">${s.operatingFlow?.desc || ''}</p>
+          <p class="text-sm text-gray-600 mb-5">${pickLang(operatingFlowBlock.description, s.operatingFlow?.desc || '')}</p>
           <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-3">${flowStepsHtml}</div>
-        </div>
+        </div>` : ''}
 
         <!-- Plataformas -->
+        ${platformsBlock.visible !== false ? `
         <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7 mb-6">
-          <h3 class="font-bold text-eu-text mb-2">${s.platformsTitle || ''}</h3>
-          <p class="text-sm text-gray-600 mb-5">${s.platformsDesc || ''}</p>
+          <h3 class="font-bold text-eu-text mb-2">${pickLang(platformsBlock.title, s.platformsTitle || '')}</h3>
+          <p class="text-sm text-gray-600 mb-5">${pickLang(platformsBlock.description, s.platformsDesc || '')}</p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">${platformsHtml}</div>
-        </div>
+        </div>` : ''}
 
         <!-- Escalabilidad -->
+        ${scalabilityBlock.visible !== false ? `
         <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
           <h3 class="font-bold text-eu-text mb-2 flex items-center gap-2">
-            <i data-lucide="zap" class="w-5 h-5 text-eu-orange"></i>Escalabilidad del Modelo LbD
+            <i data-lucide="zap" class="w-5 h-5 text-eu-orange"></i>${pickLang(scalabilityBlock.title)}
           </h3>
-          <p class="text-sm text-gray-600 mb-5">El Dual Track + LbD está diseñado para crecer sin reestructurarse. Cada fase añade capacidad manteniendo la misma lógica de intercambio de valor.</p>
+          <p class="text-sm text-gray-600 mb-5">${pickLang(scalabilityBlock.description)}</p>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">${scaleHtml}</div>
-        </div>
+        </div>` : ''}
       </div>
     </div>
   `;

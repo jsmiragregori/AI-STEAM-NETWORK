@@ -1,5 +1,5 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR
-// Fuentes: content/governance/hero.yml, content/governance/structure-bodies.yml, content/governance/formal-bodies.yml, content/governance/dual-track.yml
+// Fuentes: content/governance/hero.yml, content/governance/structure-bodies.yml, content/governance/formal-bodies.yml, content/governance/dual-track.yml, content/governance/lbd.yml
 
 export const GOVERNANCE_CONFIG = {
   "heroBlock": {
@@ -1045,6 +1045,616 @@ export const GOVERNANCE_CONFIG = {
             "en": "Application of Regulation (EU) 2021/694 (Digital Europe) and subsidiarily Spanish legislation.",
             "va": "Aplicació del Reglament (UE) 2021/694 (Europa Digital) i subsidiàriament la legislació espanyola."
           }
+        }
+      ]
+    }
+  },
+  "lbdBlock": {
+    "visible": true,
+    "title": {
+      "es": "Metodología Learning by Developing (LbD)",
+      "en": "Learning by Developing (LbD) Methodology",
+      "va": "Metodologia Learning by Developing (LbD)"
+    },
+    "description": {
+      "es": "La AI-STEAM Network no es un repositorio pasivo. La interacción entre los dos Tracks (Académico y Ecosistema) está gobernada por la metodología LbD (Learning by Developing), que convierte los retos reales de las organizaciones en motores de aprendizaje académico con impacto mutuo.",
+      "en": "The AI-STEAM Network is not a passive repository. Interaction between the two Tracks (Academic and Ecosystem) is governed by the LbD methodology, which transforms real challenges into engines of academic learning with mutual impact.",
+      "va": "La xarxa AI-STEAM no és un repositori passiu. La interacció entre els dos Tracks (Acadèmic i Ecosistema) està governada per la metodologia LbD, que transforma els reptes reals en motors d'aprenentatge acadèmic amb impacte mutu."
+    },
+    "diginetDescription": {
+      "es": "Este modelo replica el éxito de DigiNet (red educativa finlandesa en salud digital y bienestar), adaptándolo al contexto de la IA aplicada a la triple transición europea.",
+      "en": "This model replicates the success of DigiNet (Finnish educational network in digital health), adapting it to the context of AI applied to Europe's triple transition.",
+      "va": "Este model replica l'èxit de DigiNet (xarxa educativa finlandesa en salut digital), adaptant-lo al context de la IA aplicada a la triple transició europea."
+    },
+    "cycle": {
+      "visible": true,
+      "title": {
+        "es": "El ciclo LbD: de la empresa al estudiante y de vuelta",
+        "en": "The LbD Cycle: From Business to Student and Back",
+        "va": "El cicle LbD: de l'empresa a l'estudiant i de tornada"
+      },
+      "phases": [
+        {
+          "id": "input",
+          "visible": true,
+          "order": 1,
+          "step": "1",
+          "track": {
+            "es": "Track B",
+            "en": "Track B",
+            "va": "Track B"
+          },
+          "platform": {
+            "es": "ConsensUE + AI-STEAM Network",
+            "en": "ConsensUE + AI-STEAM Network",
+            "va": "ConsensUE + AI-STEAM Network"
+          },
+          "title": {
+            "es": "Input: Retos y Casos de Uso",
+            "en": "Input: Challenges and Use Cases",
+            "va": "Input: Reptes i Casos d'Ús"
+          },
+          "actor": {
+            "es": "Organizaciones de la red (empresas, administraciones, ONGs)",
+            "en": "Network organizations",
+            "va": "Organitzacions de la xarxa"
+          },
+          "description": {
+            "es": "Los miembros del ecosistema aportan necesidades, retos y casos de uso a través de ConsensUE. La Red de Stakeholders (SN), con CEICE como orquestadora, valida su relevancia Track B y los clasifica para actividades, recursos, pilotos o posible revisión académica por Track A.",
+            "en": "Ecosystem members contribute needs, challenges and use cases through ConsensUE. The Stakeholder Network, with CEICE as orchestrator, validates Track B relevance and classifies them for activities, resources, pilots or possible academic review by Track A.",
+            "va": "Els membres de l'ecosistema aporten necessitats, reptes i casos d'ús a través de ConsensUE. La Xarxa de Stakeholders, amb CEICE com a orquestradora, valida la rellevància Track B i els classifica per a activitats, recursos, pilots o possible revisió acadèmica per Track A."
+          },
+          "outputs": [
+            {
+              "visible": true,
+              "order": 1,
+              "label": {
+                "es": "Reto o caso registrado",
+                "en": "Challenge or case registered",
+                "va": "Repte o cas registrat"
+              }
+            },
+            {
+              "visible": true,
+              "order": 2,
+              "label": {
+                "es": "Necesidad y sector clasificados",
+                "en": "Need and sector classified",
+                "va": "Necessitat i sector classificats"
+              }
+            },
+            {
+              "visible": true,
+              "order": 3,
+              "label": {
+                "es": "Ruta de tratamiento propuesta",
+                "en": "Treatment route proposed",
+                "va": "Ruta de tractament proposada"
+              }
+            }
+          ]
+        },
+        {
+          "id": "academic-processing",
+          "visible": true,
+          "order": 2,
+          "step": "2",
+          "track": {
+            "es": "Track A",
+            "en": "Track A",
+            "va": "Track A"
+          },
+          "platform": {
+            "es": "Comité Científico + UVEG",
+            "en": "Scientific Committee + UVEG",
+            "va": "Comité Científic + UVEG"
+          },
+          "title": {
+            "es": "Procesamiento Académico",
+            "en": "Academic Processing",
+            "va": "Processament Acadèmic"
+          },
+          "actor": {
+            "es": "Comité Científico + Equipo docente UVEG/Laurea",
+            "en": "Scientific Committee + UVEG/Laurea teaching team",
+            "va": "Comité Científic + equip docent UVEG/Laurea"
+          },
+          "description": {
+            "es": "Cuando una contribución se considera académicamente pertinente, UVEG y los socios académicos deciden si se convierte en material, actividad o propuesta de trabajo dentro del Track A. La AI-STEAM Network no asigna ECTS ni evalúa al alumnado del Máster.",
+            "en": "When a contribution is academically relevant, UVEG and academic partners decide whether it becomes material, an activity or a work proposal within Track A. The AI-STEAM Network does not assign ECTS or evaluate Master students.",
+            "va": "Quan una contribució és acadèmicament pertinent, UVEG i els socis acadèmics decidixen si es converteix en material, activitat o proposta de treball dins del Track A. La xarxa AI-STEAM no assigna ECTS ni avalua l'alumnat del Màster."
+          },
+          "outputs": [
+            {
+              "visible": true,
+              "order": 1,
+              "label": {
+                "es": "Revisión académica por Track A",
+                "en": "Academic review by Track A",
+                "va": "Revisió acadèmica per Track A"
+              }
+            },
+            {
+              "visible": true,
+              "order": 2,
+              "label": {
+                "es": "Decisión docente documentada",
+                "en": "Teaching decision documented",
+                "va": "Decisió docent documentada"
+              }
+            },
+            {
+              "visible": true,
+              "order": 3,
+              "label": {
+                "es": "Mentoría académica coordinada si procede",
+                "en": "Academic mentoring coordinated where applicable",
+                "va": "Mentoria acadèmica coordinada si escau"
+              }
+            }
+          ]
+        },
+        {
+          "id": "triple-benefit",
+          "visible": true,
+          "order": 3,
+          "step": "3",
+          "track": {
+            "es": "Track B + Track A",
+            "en": "Track B + Track A",
+            "va": "Track B + Track A"
+          },
+          "platform": {
+            "es": "AI-STEAM Network + Aules",
+            "en": "AI-STEAM Network + Aules",
+            "va": "AI-STEAM Network + Aules"
+          },
+          "title": {
+            "es": "Output: Beneficio Triple",
+            "en": "Output: Triple Benefit",
+            "va": "Output: Benefici Triple"
+          },
+          "actor": {
+            "es": "Organización proponente + Estudiante + Red AI-STEAM",
+            "en": "Proposing organization + Student + AI-STEAM Network",
+            "va": "Organització proponent + Estudiant + Xarxa AI-STEAM"
+          },
+          "description": {
+            "es": "Al completar el reto, cada parte recibe su beneficio específico. Si el resultado no es confidencial, se publica como caso de éxito en la sección de Conocimiento para visibilidad europea.",
+            "en": "When work is completed, each party receives its specific benefit. If results are not confidential, they can be published as success cases or evidence records for European visibility.",
+            "va": "En completar el treball, cada part rep el seu benefici específic. Si els resultats no són confidencials, poden publicar-se com a casos d'èxit o registres d'evidència per a visibilitat europea."
+          },
+          "outputs": [
+            {
+              "visible": true,
+              "order": 1,
+              "label": {
+                "es": "Organización: prototipo o informe de viabilidad",
+                "en": "Organization: prototype or feasibility report",
+                "va": "Organització: prototip o informe de viabilitat"
+              }
+            },
+            {
+              "visible": true,
+              "order": 2,
+              "label": {
+                "es": "Track A: evaluación gestionada por UVEG si aplica",
+                "en": "Track A: evaluation managed by UVEG where applicable",
+                "va": "Track A: avaluació gestionada per UVEG si aplica"
+              }
+            },
+            {
+              "visible": true,
+              "order": 3,
+              "label": {
+                "es": "Red: evidencia o caso publicado si procede",
+                "en": "Network: evidence or case published where applicable",
+                "va": "Xarxa: evidència o cas publicat si escau"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "operatingFlow": {
+      "visible": true,
+      "title": {
+        "es": "Flujo operativo de Track B a evidencias",
+        "en": "Operating flow from Track B to evidence",
+        "va": "Flux operatiu de Track B a evidències"
+      },
+      "description": {
+        "es": "El recorrido muestra cómo CEICE puede convertir participación de red en evidencias auditables sin presentar indicadores demo como resultados reales.",
+        "en": "The flow shows how CEICE can turn network participation into auditable evidence without presenting demo indicators as real results.",
+        "va": "El recorregut mostra com CEICE pot convertir participació de xarxa en evidències auditables sense presentar indicadors demo com a resultats reals."
+      },
+      "steps": [
+        {
+          "id": "input",
+          "visible": true,
+          "order": 1,
+          "title": {
+            "es": "Input",
+            "en": "Input",
+            "va": "Input"
+          },
+          "description": {
+            "es": "Stakeholder, ENRED o centro educativo aporta una necesidad, caso o propuesta.",
+            "en": "A stakeholder, ENRED or education centre contributes a need, case or proposal.",
+            "va": "Un stakeholder, ENRED o centre educatiu aporta una necessitat, cas o proposta."
+          }
+        },
+        {
+          "id": "classification",
+          "visible": true,
+          "order": 2,
+          "title": {
+            "es": "Clasificación",
+            "en": "Classification",
+            "va": "Classificació"
+          },
+          "description": {
+            "es": "Se clasifica por sector AI-SECRETT y ruta: FP, docente, recurso, piloto o puente académico.",
+            "en": "It is classified by AI-SECRETT sector and route: VET, teacher, resource, pilot or academic bridge.",
+            "va": "Es classifica per sector AI-SECRETT i ruta: FP, docent, recurs, pilot o pont acadèmic."
+          }
+        },
+        {
+          "id": "validation",
+          "visible": true,
+          "order": 3,
+          "title": {
+            "es": "Validación",
+            "en": "Validation",
+            "va": "Validació"
+          },
+          "description": {
+            "es": "La relevancia se contrasta en Track B y, si procede, se deriva a órganos académicos Track A.",
+            "en": "Relevance is checked in Track B and, where appropriate, routed to Track A academic bodies.",
+            "va": "La rellevància es contrasta en Track B i, si escau, es deriva a òrgans acadèmics Track A."
+          }
+        },
+        {
+          "id": "activity",
+          "visible": true,
+          "order": 4,
+          "title": {
+            "es": "Actividad",
+            "en": "Activity",
+            "va": "Activitat"
+          },
+          "description": {
+            "es": "Se genera actividad, recurso OER, debate, piloto o caso documentado.",
+            "en": "An activity, OER resource, debate, pilot or documented case is produced.",
+            "va": "Es genera activitat, recurs OER, debat, pilot o cas documentat."
+          }
+        },
+        {
+          "id": "evidence",
+          "visible": true,
+          "order": 5,
+          "title": {
+            "es": "Evidencia",
+            "en": "Evidence",
+            "va": "Evidència"
+          },
+          "description": {
+            "es": "Se registran indicadores, trazas ConsensUE, recursos, encuestas y participación.",
+            "en": "Indicators, ConsensUE traces, resources, surveys and participation are recorded.",
+            "va": "Es registren indicadors, traces ConsensUE, recursos, enquestes i participació."
+          }
+        },
+        {
+          "id": "tracking",
+          "visible": true,
+          "order": 6,
+          "title": {
+            "es": "Seguimiento",
+            "en": "Tracking",
+            "va": "Seguiment"
+          },
+          "description": {
+            "es": "La evidencia alimenta la mejora continua y el relato público de evolución de la red.",
+            "en": "Evidence feeds continuous improvement and the public story of network evolution.",
+            "va": "L'evidència alimenta la millora contínua i el relat públic d'evolució de la xarxa."
+          }
+        }
+      ]
+    },
+    "platformsBlock": {
+      "visible": true,
+      "title": {
+        "es": "Las tres plataformas en el flujo LbD",
+        "en": "The Three Platforms in the LbD Flow",
+        "va": "Les Tres Plataformes en el Flux LbD"
+      },
+      "description": {
+        "es": "Cada plataforma tiene un rol específico y una autoridad responsable. El contenido fluye unidireccionalmente del ecosistema al aprendizaje.",
+        "en": "Each platform has a specific role. Content flows from ecosystem to learning.",
+        "va": "Cada plataforma té un rol específic. El contingut fluïx de l'ecosistema a l'aprenentatge."
+      },
+      "cards": [
+        {
+          "id": "consensue",
+          "visible": true,
+          "order": 1,
+          "name": {
+            "es": "ConsensUE",
+            "en": "ConsensUE",
+            "va": "ConsensUE"
+          },
+          "tech": {
+            "es": "Decidim",
+            "en": "Decidim",
+            "va": "Decidim"
+          },
+          "track": {
+            "es": "Track B",
+            "en": "Track B",
+            "va": "Track B"
+          },
+          "owner": {
+            "es": "CEICE",
+            "en": "CEICE",
+            "va": "CEICE"
+          },
+          "role": {
+            "es": "Participación democrática",
+            "en": "Democratic Participation",
+            "va": "Participació Democràtica"
+          },
+          "description": {
+            "es": "Punto de entrada de propuestas. Deliberación comunitaria, votación de prioridades y validación de relevancia de necesidades, casos y retos.",
+            "en": "Entry point for proposals, community deliberation, priority voting and relevance validation of needs, cases and challenges.",
+            "va": "Punt d'entrada de propostes, deliberació comunitària, votació de prioritats i validació de rellevància de necessitats, casos i reptes."
+          }
+        },
+        {
+          "id": "ai-steam-network",
+          "visible": true,
+          "order": 2,
+          "name": {
+            "es": "AI-STEAM Network",
+            "en": "AI-STEAM Network",
+            "va": "AI-STEAM Network"
+          },
+          "tech": {
+            "es": "Portal web",
+            "en": "Web Portal",
+            "va": "Portal Web"
+          },
+          "track": {
+            "es": "Track A + B",
+            "en": "Track A + B",
+            "va": "Track A + B"
+          },
+          "owner": {
+            "es": "CEICE + UVEG",
+            "en": "CEICE + UVEG",
+            "va": "CEICE + UVEG"
+          },
+          "role": {
+            "es": "Validación y repositorio",
+            "en": "Validation and Repository",
+            "va": "Validació i Repositori"
+          },
+          "description": {
+            "es": "Banco de Retos validados, Conocimiento OER, directorio de la red. Punto de encuentro de los dos Tracks.",
+            "en": "Challenge Bank, OER Knowledge, network directory.",
+            "va": "Banc de Reptes, Coneixement OER, directori de la xarxa."
+          }
+        },
+        {
+          "id": "aules",
+          "visible": true,
+          "order": 3,
+          "name": {
+            "es": "Aules",
+            "en": "Aules",
+            "va": "Aules"
+          },
+          "tech": {
+            "es": "Moodle LMS",
+            "en": "Moodle LMS",
+            "va": "Moodle LMS"
+          },
+          "track": {
+            "es": "Track A + entornos CEICE",
+            "en": "Track A + CEICE environments",
+            "va": "Track A + entorns CEICE"
+          },
+          "owner": {
+            "es": "UVEG/CEICE según actividad",
+            "en": "UVEG/CEICE by activity",
+            "va": "UVEG/CEICE segons activitat"
+          },
+          "role": {
+            "es": "Entrega formativa",
+            "en": "Training Delivery",
+            "va": "Entrega Formativa"
+          },
+          "description": {
+            "es": "Entorno de aprendizaje para actividades del Máster, FP o formación docente. La evaluación y los ECTS del Máster permanecen bajo Track A.",
+            "en": "Learning environment for Master, VET or teacher training activities. Master evaluation and ECTS remain under Track A.",
+            "va": "Entorn d'aprenentatge per a activitats del Màster, FP o formació docent. L'avaluació i els ECTS del Màster romanen sota Track A."
+          }
+        }
+      ]
+    },
+    "scalabilityBlock": {
+      "visible": true,
+      "title": {
+        "es": "Escalabilidad del Modelo LbD",
+        "en": "Scalability of the LbD Model",
+        "va": "Escalabilitat del Model LbD"
+      },
+      "description": {
+        "es": "El Dual Track + LbD está diseñado para crecer sin reestructurarse. Cada fase añade capacidad manteniendo la misma lógica de intercambio de valor.",
+        "en": "The Dual Track + LbD model is designed to grow without restructuring. Each phase adds capacity while preserving the same value exchange logic.",
+        "va": "El Dual Track + LbD està dissenyat per a créixer sense reestructurar-se. Cada fase afig capacitat mantenint la mateixa lògica d'intercanvi de valor."
+      },
+      "phases": [
+        {
+          "id": "pilot",
+          "visible": true,
+          "order": 1,
+          "label": {
+            "es": "Fase Piloto",
+            "en": "Pilot Phase",
+            "va": "Fase Pilot"
+          },
+          "range": {
+            "es": "< 50 organizaciones",
+            "en": "< 50 organizations",
+            "va": "< 50 organitzacions"
+          },
+          "period": "2025–2026",
+          "items": [
+            {
+              "visible": true,
+              "order": 1,
+              "label": {
+                "es": "Track B gestionado manualmente por CEICE",
+                "en": "Track B manually managed by CEICE",
+                "va": "Track B gestionat manualment per CEICE"
+              }
+            },
+            {
+              "visible": true,
+              "order": 2,
+              "label": {
+                "es": "Comité Científico revisa todos los retos",
+                "en": "Scientific Committee reviews all challenges",
+                "va": "El Comité Científic revisa tots els reptes"
+              }
+            },
+            {
+              "visible": true,
+              "order": 3,
+              "label": {
+                "es": "ConsensUE con grupos reducidos",
+                "en": "ConsensUE with small groups",
+                "va": "ConsensUE amb grups reduïts"
+              }
+            },
+            {
+              "visible": true,
+              "order": 4,
+              "label": {
+                "es": "Todos los retos pasan por revisión completa",
+                "en": "All challenges go through full review",
+                "va": "Tots els reptes passen per revisió completa"
+              }
+            }
+          ]
+        },
+        {
+          "id": "growth",
+          "visible": true,
+          "order": 2,
+          "label": {
+            "es": "Fase de Crecimiento",
+            "en": "Growth Phase",
+            "va": "Fase de Creixement"
+          },
+          "range": {
+            "es": "50–250 organizaciones",
+            "en": "50–250 organizations",
+            "va": "50–250 organitzacions"
+          },
+          "period": "2026–2027",
+          "items": [
+            {
+              "visible": true,
+              "order": 1,
+              "label": {
+                "es": "Validación por grupos de trabajo sectoriales (SN)",
+                "en": "Validation by sector working groups (SN)",
+                "va": "Validació per grups de treball sectorials (SN)"
+              }
+            },
+            {
+              "visible": true,
+              "order": 2,
+              "label": {
+                "es": "Automatización del enrutamiento de propuestas",
+                "en": "Automation of proposal routing",
+                "va": "Automatització de l'encaminament de propostes"
+              }
+            },
+            {
+              "visible": true,
+              "order": 3,
+              "label": {
+                "es": "RBAC en las 3 plataformas",
+                "en": "RBAC across the 3 platforms",
+                "va": "RBAC en les 3 plataformes"
+              }
+            },
+            {
+              "visible": true,
+              "order": 4,
+              "label": {
+                "es": "Sistema de reputación para revisores del Track B",
+                "en": "Reputation system for Track B reviewers",
+                "va": "Sistema de reputació per a revisors del Track B"
+              }
+            }
+          ]
+        },
+        {
+          "id": "stable",
+          "visible": true,
+          "order": 3,
+          "label": {
+            "es": "Fase Estable",
+            "en": "Stable Phase",
+            "va": "Fase Estable"
+          },
+          "range": {
+            "es": "500+ organizaciones",
+            "en": "500+ organizations",
+            "va": "500+ organitzacions"
+          },
+          "period": "2027+",
+          "items": [
+            {
+              "visible": true,
+              "order": 1,
+              "label": {
+                "es": "Delegación de validación Track B a orgs. acreditadas",
+                "en": "Delegation of Track B validation to accredited organizations",
+                "va": "Delegació de validació Track B a orgs. acreditades"
+              }
+            },
+            {
+              "visible": true,
+              "order": 2,
+              "label": {
+                "es": "Workflows asíncronos sin reuniones obligatorias",
+                "en": "Asynchronous workflows without mandatory meetings",
+                "va": "Workflows asíncrons sense reunions obligatòries"
+              }
+            },
+            {
+              "visible": true,
+              "order": 3,
+              "label": {
+                "es": "IA asistente para pre-validación de retos",
+                "en": "AI assistant for challenge pre-validation",
+                "va": "IA assistent per a prevalidació de reptes"
+              }
+            },
+            {
+              "visible": true,
+              "order": 4,
+              "label": {
+                "es": "Sostenibilidad financiera con cuotas + Digital Europe",
+                "en": "Financial sustainability with fees + Digital Europe",
+                "va": "Sostenibilitat financera amb quotes + Digital Europe"
+              }
+            }
+          ]
         }
       ]
     }
