@@ -34,17 +34,25 @@ function tabBar(activeTab, govT) {
 
 function tabEstructura(govT) {
   const s = govT?.tabContent_estructura || {};
+  const structureBodiesBlock = GOVERNANCE_CONFIG?.structureBodiesBlock || {};
+  const hubBlock = structureBodiesBlock.hub || {};
+  const actorsBlock = structureBodiesBlock.actors || {};
+  const formalBodiesBlock = GOVERNANCE_CONFIG?.formalBodiesBlock || {};
   const bodies = govT?.governanceBodies || [];
 
-  const nodesHtml = (s.nodes || []).map(node => `
+  const hasCmsHubNodes = Object.prototype.hasOwnProperty.call(hubBlock, 'nodes');
+  const hubNodes = hasCmsHubNodes && Array.isArray(hubBlock.nodes)
+    ? hubBlock.nodes
+    : (s.nodes || []);
+  const nodesHtml = hubNodes.map(node => `
     <div class="rounded-xl border-2 ${node.border || 'border-eu-border'} p-5">
       <div class="w-8 h-8 rounded-lg ${node.color || 'bg-eu-blue'} text-white flex items-center justify-center mb-3">
-        <i data-lucide="globe" class="w-4 h-4"></i>
+        <i data-lucide="${node.icon || 'globe'}" class="w-4 h-4"></i>
       </div>
-      <p class="text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-0.5">${node.label || ''}</p>
-      <p class="font-bold text-eu-text">${node.city || ''}</p>
-      <p class="text-xs text-gray-500 mb-2">${node.org || ''}</p>
-      <p class="text-xs text-gray-600">${node.role || ''}</p>
+      <p class="text-xs font-extrabold uppercase tracking-wider text-gray-500 mb-0.5">${pickLang(node.label, node.label || '')}</p>
+      <p class="font-bold text-eu-text">${pickLang(node.city, node.city || '')}</p>
+      <p class="text-xs text-gray-500 mb-2">${pickLang(node.org, node.org || '')}</p>
+      <p class="text-xs text-gray-600">${pickLang(node.role, node.role || '')}</p>
     </div>
   `).join('');
 
@@ -82,97 +90,135 @@ function tabEstructura(govT) {
     </div>
   `).join('');
 
-  const bodiesHtml = bodies.map(body => `
+  const hasCmsActorCards = Object.prototype.hasOwnProperty.call(actorsBlock, 'cards');
+  const actorCards = hasCmsActorCards && Array.isArray(actorsBlock.cards)
+    ? actorsBlock.cards
+    : [
+        { id: 'ceice', visible: true, icon: 'building-2', tone: 'orange', title: s.ceiceTitle, subtitle: s.ceiceSubtitle, roles: s.ceiceRoles || [] },
+        { id: 'uveg', visible: true, icon: 'graduation-cap', tone: 'blue', title: s.uvegTitle, subtitle: s.uvegSubtitle, roles: s.uvegRoles || [] },
+      ];
+
+  function actorTone(tone) {
+    return tone === 'orange'
+      ? { border: 'border-eu-orange', bg: 'bg-eu-orange/10', text: 'text-eu-orange' }
+      : { border: 'border-eu-blue', bg: 'bg-eu-blue/10', text: 'text-eu-blue' };
+  }
+
+  const actorCardsHtml = actorCards.map(card => {
+    const tone = actorTone(card.tone);
+    const rolesHtml = (Array.isArray(card.roles) ? card.roles : []).map(item => `
+      <div class="flex items-start gap-2.5">
+        <i data-lucide="${item.icon || 'globe'}" class="w-4 h-4 ${tone.text} mt-0.5 shrink-0"></i>
+        <div>
+          <span class="font-bold text-eu-text">${pickLang(item.label, item.label || '')}: </span>
+          <span class="text-gray-600">${pickLang(item.desc, item.desc || '')}</span>
+        </div>
+      </div>
+    `).join('');
+
+    return `
+      <div class="bg-white rounded-xl border-l-4 ${tone.border} border border-eu-border shadow-sm p-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-10 h-10 ${tone.bg} rounded-xl flex items-center justify-center">
+            <i data-lucide="${card.icon || 'globe'}" class="w-5 h-5 ${tone.text}"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-eu-text">${pickLang(card.title, card.title || '')}</h3>
+            <p class="text-xs ${tone.text} font-bold uppercase">${pickLang(card.subtitle, card.subtitle || '')}</p>
+          </div>
+        </div>
+        <div class="space-y-3 text-sm">${rolesHtml}</div>
+      </div>
+    `;
+  }).join('');
+
+  const hasCmsFormalBodies = Object.prototype.hasOwnProperty.call(formalBodiesBlock, 'cards');
+  const formalBodies = hasCmsFormalBodies && Array.isArray(formalBodiesBlock.cards)
+    ? formalBodiesBlock.cards
+    : bodies;
+  const formalLabels = formalBodiesBlock.fieldLabels || {};
+  const standardsBlock = formalBodiesBlock.standards || {};
+  function metaRow(label, value) {
+    const picked = pickLang(value, '');
+    const text = typeof picked === 'string' ? picked.trim() : '';
+    if (!text) return '';
+    return `<p><span class="font-bold text-gray-700">${pickLang(label)}:</span> ${text}</p>`;
+  }
+
+  const bodiesHtml = formalBodies.map(body => `
     <div class="rounded-xl border-l-4 border ${body.color || 'border-eu-border'} p-6 shadow-sm">
       <div class="flex items-start justify-between mb-3">
         <div>
-          <h3 class="font-bold text-lg text-eu-text">${body.name || ''}</h3>
-          <p class="text-xs font-bold uppercase tracking-wider mt-0.5 ${body.iconColor || 'text-eu-blue'}">${body.type || ''}</p>
+          <h3 class="font-bold text-lg text-eu-text">${pickLang(body.name, body.name || '')}</h3>
+          <p class="text-xs font-bold uppercase tracking-wider mt-0.5 ${body.iconColor || 'text-eu-blue'}">${pickLang(body.type, body.type || '')}</p>
         </div>
         <span class="text-2xl font-extrabold ${body.iconColor || 'text-eu-blue'} opacity-20">${body.abbr || ''}</span>
       </div>
-      <p class="text-sm text-gray-600 mb-4">${body.desc || ''}</p>
+      <p class="text-sm text-gray-600 mb-4">${pickLang(body.desc, body.desc || '')}</p>
       <div class="space-y-1 text-xs text-gray-500">
-        <p><span class="font-bold text-gray-700">Miembros:</span> ${body.members || ''}</p>
-        <p><span class="font-bold text-gray-700">Frecuencia:</span> ${body.freq || ''}</p>
-        <p><span class="font-bold text-gray-700">Quórum:</span> ${body.quorum || ''}</p>
+        ${metaRow(formalLabels.members || { es: 'Miembros', en: 'Members', va: 'Membres' }, body.members)}
+        ${metaRow(formalLabels.frequency || { es: 'Frecuencia', en: 'Frequency', va: 'Freqüència' }, body.frequency || body.freq)}
+        ${metaRow(formalLabels.quorum || { es: 'Quórum', en: 'Quorum', va: 'Quòrum' }, body.quorum)}
       </div>
     </div>
   `).join('');
 
+  const standardTone = tone => tone === 'orange'
+    ? { bg: 'bg-eu-orange/10', text: 'text-eu-orange' }
+    : { bg: 'bg-eu-blue/10', text: 'text-eu-blue' };
+  const standardCardsHtml = (Array.isArray(standardsBlock.cards) ? standardsBlock.cards : [
+    { icon: 'shield-check', tone: 'blue', title: s.iso21001Title, desc: s.iso21001Desc },
+    { icon: 'globe', tone: 'orange', title: s.enredTitle, desc: s.enredDesc },
+  ]).map(card => {
+    const tone = standardTone(card.tone);
+    return `
+      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 flex gap-4 items-start">
+        <div class="w-12 h-12 rounded-xl ${tone.bg} flex items-center justify-center shrink-0">
+          <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 ${tone.text}"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-eu-text mb-1">${pickLang(card.title, card.title || '')}</h3>
+          <p class="text-sm text-gray-600">${pickLang(card.desc, card.desc || '')}</p>
+        </div>
+      </div>
+    `;
+  }).join('');
+
   return `
     <div class="space-y-10">
+      ${hubBlock.visible !== false ? `
       <!-- Hub -->
       <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
         <h2 class="text-xl font-bold text-eu-text mb-3 flex items-center gap-2">
-          <i data-lucide="globe" class="w-5 h-5 text-eu-blue"></i>${s.hubTitle || ''}
+          <i data-lucide="globe" class="w-5 h-5 text-eu-blue"></i>${pickLang(hubBlock.title, s.hubTitle || '')}
         </h2>
-        <p class="text-sm text-gray-600 mb-5 max-w-3xl">${s.hubDesc || ''}</p>
+        <p class="text-sm text-gray-600 mb-5 max-w-3xl">${pickLang(hubBlock.description, s.hubDesc || '')}</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">${nodesHtml}</div>
-      </div>
+      </div>` : ''}
 
+      ${actorsBlock.visible !== false ? `
       <!-- Actores principales -->
       <div>
-        <h2 class="text-xl font-bold text-eu-text mb-2">${s.actorsTitle || ''}</h2>
-        <p class="text-sm text-gray-600 mb-5 max-w-3xl">${s.actorsDesc || ''}</p>
+        <h2 class="text-xl font-bold text-eu-text mb-2">${pickLang(actorsBlock.title, s.actorsTitle || '')}</h2>
+        <p class="text-sm text-gray-600 mb-5 max-w-3xl">${pickLang(actorsBlock.description, s.actorsDesc || '')}</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- CEICE -->
-          <div class="bg-white rounded-xl border-l-4 border-eu-orange border border-eu-border shadow-sm p-6">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 bg-eu-orange/10 rounded-xl flex items-center justify-center">
-                <i data-lucide="building-2" class="w-5 h-5 text-eu-orange"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-eu-text">${s.ceiceTitle || ''}</h3>
-                <p class="text-xs text-eu-orange font-bold uppercase">${s.ceiceSubtitle || ''}</p>
-              </div>
-            </div>
-            <div class="space-y-3 text-sm">${ceiceRolesHtml}</div>
-          </div>
-          <!-- UVEG -->
-          <div class="bg-white rounded-xl border-l-4 border-eu-blue border border-eu-border shadow-sm p-6">
-            <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 bg-eu-blue/10 rounded-xl flex items-center justify-center">
-                <i data-lucide="graduation-cap" class="w-5 h-5 text-eu-blue"></i>
-              </div>
-              <div>
-                <h3 class="font-bold text-eu-text">${s.uvegTitle || ''}</h3>
-                <p class="text-xs text-eu-blue font-bold uppercase">${s.uvegSubtitle || ''}</p>
-              </div>
-            </div>
-            <div class="space-y-3 text-sm">${uvegRolesHtml}</div>
-          </div>
+          ${actorCardsHtml}
         </div>
-      </div>
+      </div>` : ''}
 
+      ${formalBodiesBlock.visible !== false ? `
       <!-- Órganos formales -->
       <div>
-        <h2 class="text-xl font-bold text-eu-text mb-2">${s.bodiesTitle || ''}</h2>
-        <p class="text-sm text-gray-600 mb-6 max-w-3xl">${s.bodiesDesc || ''}</p>
+        <h2 class="text-xl font-bold text-eu-text mb-2">${pickLang(formalBodiesBlock.title, s.bodiesTitle || '')}</h2>
+        <p class="text-sm text-gray-600 mb-6 max-w-3xl">${pickLang(formalBodiesBlock.description, s.bodiesDesc || '')}</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">${bodiesHtml}</div>
-      </div>
+      </div>` : ''}
 
+      ${standardsBlock.visible !== false ? `
       <!-- ISO + ENRED -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 flex gap-4 items-start">
-          <div class="w-12 h-12 rounded-xl bg-eu-blue/10 flex items-center justify-center shrink-0">
-            <i data-lucide="shield-check" class="w-6 h-6 text-eu-blue"></i>
-          </div>
-          <div>
-            <h3 class="font-bold text-eu-text mb-1">${s.iso21001Title || ''}</h3>
-            <p class="text-sm text-gray-600">${s.iso21001Desc || ''}</p>
-          </div>
-        </div>
-        <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 flex gap-4 items-start">
-          <div class="w-12 h-12 rounded-xl bg-eu-orange/10 flex items-center justify-center shrink-0">
-            <i data-lucide="globe" class="w-6 h-6 text-eu-orange"></i>
-          </div>
-          <div>
-            <h3 class="font-bold text-eu-text mb-1">${s.enredTitle || ''}</h3>
-            <p class="text-sm text-gray-600">${s.enredDesc || ''}</p>
-          </div>
-        </div>
-      </div>
+        ${standardCardsHtml}
+      </div>` : ''}
     </div>
   `;
 }
