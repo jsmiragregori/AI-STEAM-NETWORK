@@ -5,20 +5,6 @@ import { TRAINING_CONFIG } from '../../data/training.js';
 const COURSE_PARTNERS  = ['UVEG / CEICE', "Ud'A / UVEG", 'CEICE / Inspiring Futures Europe', 'AVA-ASAJA / CINK', 'INESC TEC / HSW', 'Region Värmland / NTNU', 'KEA / ESAD-GV / LPGA', 'LC / CEICE'];
 const COURSE_MODALITY  = ['Semipresencial', 'Online', 'Online', 'Semipresencial', 'Online', 'Online', 'Online', 'Online'];
 
-const CREDENTIAL_FRAMEWORKS = [
-  { name: 'European Digital Credentials (EDC)', org: 'European Commission',          logo: '🇪🇺' },
-  { name: 'Open Badges 3.0',                    org: 'IMS Global / 1EdTech',         logo: '🏅' },
-  { name: 'Europass Certificate Supplement',    org: 'CEDEFOP',                      logo: '📋' },
-  { name: 'TÜV Thüringen Certification',        org: 'TUV.IT – AI-SECRETT Consortium', logo: '✅' },
-];
-
-function getLang() { return localStorage.getItem('language') || 'es'; }
-function pickLang(value, fallback = '') {
-  const lang = getLang();
-  if (value && typeof value === 'object') return value[lang] || value.es || fallback;
-  return fallback;
-}
-
 const TONE_MAP = {
   success: { cls: 'text-green-700 bg-green-50',   activeStyle: 'background:#15803d;color:#fff' },
   warning: { cls: 'text-yellow-700 bg-yellow-50', activeStyle: 'background:#b45309;color:#fff' },
@@ -27,92 +13,102 @@ const TONE_MAP = {
   neutral: { cls: 'text-gray-600 bg-gray-100',    activeStyle: 'background:#4b5563;color:#fff' },
 };
 
+// ── Helpers ──────────────────────────────────────────────────────────────────
+function getLang() { return localStorage.getItem('language') || 'es'; }
+function pickLang(value, fallback = '') {
+  const lang = getLang();
+  if (value && typeof value === 'object') return value[lang] || value.es || fallback;
+  return fallback;
+}
+
+function rerender() {
+  const main = document.getElementById('main-root');
+  main.innerHTML = render();
+  mount();
+  if (window.lucide) window.lucide.createIcons();
+}
+
+// ── Filter state (localStorage, per tab) ─────────────────────────────────────
 function getActiveFilters(tab) {
-  const filterKey = `trainingFilters_${tab}`;
-  return JSON.parse(localStorage.getItem(filterKey) || '{"sectors":[],"modalities":[],"tags":[],"statuses":[]}');
+  const key = `trainingFilters_${tab}`;
+  const def = '{"sectors":[],"modalities":[],"tags":[],"statuses":[],"search":""}';
+  const stored = JSON.parse(localStorage.getItem(key) || def);
+  if (!('search' in stored)) stored.search = '';   // back-compat
+  return stored;
 }
 
 function setActiveFilters(tab, filters) {
-  const filterKey = `trainingFilters_${tab}`;
-  localStorage.setItem(filterKey, JSON.stringify(filters));
+  localStorage.setItem(`trainingFilters_${tab}`, JSON.stringify(filters));
 }
 
 function filterCourses(courses, filters) {
+  const q = (filters.search || '').toLowerCase().trim();
   return courses.filter(course => {
-    const sectorMatch   = filters.sectors.length === 0   || course.sectorIds?.some(s => filters.sectors.includes(s));
-    const modalityMatch = filters.modalities.length === 0 || (course.modalityId && filters.modalities.includes(course.modalityId));
-    const tagMatch      = filters.tags.length === 0      || course.tagIds?.some(t => filters.tags.includes(t));
-    const statusMatch   = (filters.statuses || []).length === 0 || (filters.statuses || []).includes(course.statusId);
+    if (q) {
+      const hit = course.title.toLowerCase().includes(q) || course.description.toLowerCase().includes(q);
+      if (!hit) return false;
+    }
+    const sectorMatch   = !filters.sectors.length   || course.sectorIds?.some(s => filters.sectors.includes(s));
+    const modalityMatch = !filters.modalities.length || (course.modalityId && filters.modalities.includes(course.modalityId));
+    const tagMatch      = !filters.tags.length       || course.tagIds?.some(tg => filters.tags.includes(tg));
+    const statusMatch   = !(filters.statuses || []).length || (filters.statuses || []).includes(course.statusId);
     return sectorMatch && modalityMatch && tagMatch && statusMatch;
   });
 }
 
+// ── Course data ───────────────────────────────────────────────────────────────
 function getCourses(trainingT) {
   const cmsConfig = TRAINING_CONFIG?.coursesBlock;
   if (cmsConfig?.courses?.length > 0) {
-    // Crear mapas de lookup para resolver IDs a labels/objetos
-    const sectorsMap = {};
-    const modalitiesMap = {};
-    const statusesMap = {};
-    (cmsConfig.sectors || []).forEach(s => { sectorsMap[s.id] = s.label; });
+    const sectorsMap = {}, modalitiesMap = {}, statusesMap = {};
+    (cmsConfig.sectors    || []).forEach(s => { sectorsMap[s.id]    = s.label; });
     (cmsConfig.modalities || []).forEach(m => { modalitiesMap[m.id] = m.label; });
-    (cmsConfig.statuses || []).forEach(s => { statusesMap[s.id] = s; });
+    (cmsConfig.statuses   || []).forEach(s => { statusesMap[s.id]   = s; });
 
     return cmsConfig.courses.map((course, idx) => ({
-      id: course.id,
-      title: pickLang(course.title, ''),
-      level: course.level,
-      sectorIds: course.sectorIds || [],
-      sectors: (course.sectorIds || []).map(sectorId => pickLang(sectorsMap[sectorId], sectorId)),
-      hours:    course.hours    ?? null,
-      enrolled: course.enrolled ?? null,
-      rating:   course.rating   ?? null,
-      partner: COURSE_PARTNERS[idx] || '',
+      id:          course.id,
+      title:       pickLang(course.title, ''),
+      level:       course.level,
+      sectorIds:   course.sectorIds || [],
+      sectors:     (course.sectorIds || []).map(id => pickLang(sectorsMap[id], id)),
+      hours:       course.hours    ?? null,
+      enrolled:    course.enrolled ?? null,
+      rating:      course.rating   ?? null,
+      partner:     COURSE_PARTNERS[idx] || '',
       description: pickLang(course.description, ''),
-      modalityId: course.modalityId || '',
-      modality: pickLang(modalitiesMap[course.modalityId], course.modalityId),
-      statusId: course.statusId || '',
-      statusObj: statusesMap[course.statusId] || { id: course.statusId, label: { es: course.statusId, en: course.statusId, va: course.statusId }, tone: 'neutral' },
-      tagIds: course.tagIds || [],
-      link: course.link || { url: '', external: true },
+      modalityId:  course.modalityId || '',
+      modality:    pickLang(modalitiesMap[course.modalityId], course.modalityId),
+      statusId:    course.statusId || '',
+      statusObj:   statusesMap[course.statusId] || { id: course.statusId, label: { es: course.statusId, en: course.statusId, va: course.statusId }, tone: 'neutral' },
+      tagIds:      course.tagIds || [],
+      link:        course.link || { url: '', external: true },
     }));
   }
-  // Fallback to translations if no CMS courses
   const coursesObj = trainingT?.courses || {};
   return Object.values(coursesObj).map((course, idx) => ({
-    id: `c${idx + 1}`,
-    title: course.title,
-    level: course.level,
-    sectorIds: [],
-    sectors: [course.sector] || [],
-    hours:    null,
-    enrolled: null,
-    rating:   null,
-    partner: COURSE_PARTNERS[idx],
-    description: course.desc,
-    modalityId: '',
-    modality: COURSE_MODALITY[idx],
+    id: `c${idx + 1}`, title: course.title, level: course.level,
+    sectorIds: [], sectors: [course.sector] || [],
+    hours: null, enrolled: null, rating: null,
+    partner: COURSE_PARTNERS[idx], description: course.desc,
+    modalityId: '', modality: COURSE_MODALITY[idx],
     statusId: course.status || '',
     statusObj: { id: course.status, label: { es: course.status, en: course.status, va: course.status }, tone: 'neutral' },
-    tagIds: [],
-    link: { url: '', external: true },
+    tagIds: [], link: { url: '', external: true },
   }));
 }
 
-function courseCard(course, trainingT, isMaster = false, courseTags = [], activeTab = 'fp', activeFilters = { sectors: [], modalities: [], tags: [], statuses: [] }) {
+// ── Course card ───────────────────────────────────────────────────────────────
+function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFilters) {
   const levelLabels    = trainingT?.levelLabels    || {};
   const modalityLabels = trainingT?.modalityLabels || {};
-
-  const statusLabel   = pickLang(course.statusObj?.label, course.statusId);
-  const levelLabel    = levelLabels[course.level]       || course.level;
-  const modalityLabel = modalityLabels[course.modality] || course.modality;
-
-  const tone = course.statusObj?.tone || 'neutral';
+  const statusLabel    = pickLang(course.statusObj?.label, course.statusId);
+  const levelLabel     = levelLabels[course.level]       || course.level;
+  const modalityLabel  = modalityLabels[course.modality] || course.modality;
+  const tone           = course.statusObj?.tone || 'neutral';
   const isStatusActive = (activeFilters.statuses || []).includes(course.statusId);
-  const courseSectorLabels = course.sectors || [];
-  const linkUrl   = course.link?.url || '';
-  const linkTarget = course.link?.external !== false ? '_blank' : '_self';
-  const viewLabel = trainingT?.courseViewMore || 'Ver';
+  const linkUrl        = course.link?.url || '';
+  const linkTarget     = course.link?.external !== false ? '_blank' : '_self';
+  const viewLabel      = trainingT?.courseViewMore || 'Ver';
 
   const chipsHtml = (course.tagIds || []).map(chipId => {
     const chip = courseTags.find(c => c.id === chipId);
@@ -141,8 +137,8 @@ function courseCard(course, trainingT, isMaster = false, courseTags = [], active
         <div class="flex flex-wrap gap-2">
           ${(course.sectorIds || []).map((sectorId, idx) => {
             const isActive = activeFilters.sectors.includes(sectorId);
-            const sectorLabel = courseSectorLabels[idx] || sectorId;
-            return `<button data-filter-sector="${sectorId}" class="text-sm font-semibold px-2 py-0.5 rounded whitespace-nowrap transition-colors cursor-pointer ${isActive ? 'bg-eu-blue text-white border border-eu-blue' : 'bg-eu-bg border border-eu-border text-gray-600 hover:border-eu-blue'}">${sectorLabel}</button>`;
+            const label    = course.sectors[idx] || sectorId;
+            return `<button data-filter-sector="${sectorId}" class="text-sm font-semibold px-2 py-0.5 rounded whitespace-nowrap transition-colors cursor-pointer ${isActive ? 'bg-eu-blue text-white border border-eu-blue' : 'bg-eu-bg border border-eu-border text-gray-600 hover:border-eu-blue'}">${label}</button>`;
           }).join('')}
           ${course.modalityId ? `<button data-filter-modality="${course.modalityId}" class="text-xs px-2 py-0.5 rounded font-bold whitespace-nowrap transition-colors cursor-pointer ${activeFilters.modalities.includes(course.modalityId) ? 'bg-purple-600 text-white' : 'bg-purple-100 text-purple-700 border border-purple-300 hover:bg-purple-200'}">${modalityLabel}</button>` : ''}
         </div>
@@ -155,10 +151,10 @@ function courseCard(course, trainingT, isMaster = false, courseTags = [], active
           ${viewLabel} <i data-lucide="external-link" class="w-3 h-3"></i>
         </a>
       </div>` : ''}
-    </div>
-  `;
+    </div>`;
 }
 
+// ── Path steps ────────────────────────────────────────────────────────────────
 function pathSteps(steps, color) {
   return (steps || []).map((step, i, arr) => `
     <div class="flex items-center gap-2">
@@ -167,131 +163,200 @@ function pathSteps(steps, color) {
         <span class="text-sm text-eu-text">${step}</span>
       </div>
       ${i < arr.length - 1 ? '<i data-lucide="arrow-right" class="w-4 h-4 text-gray-400 shrink-0"></i>' : ''}
-    </div>
-  `).join('');
+    </div>`).join('');
 }
 
-function tabContent(activeTab, courses, trainingT, sections, courseTags = [], emptyMessage = {}) {
-  const cmsConfig = TRAINING_CONFIG?.coursesBlock || {};
-  const filters = getActiveFilters(activeTab);
+// ── Search controls (outside #tr-courses-grid, survives partial updates) ──────
+function renderSearchControls(tab, trainingT) {
+  const filters = getActiveFilters(tab);
+  const hasActive = filters.sectors.length || filters.modalities.length || filters.tags.length
+    || (filters.statuses || []).length || (filters.search || '').trim().length;
+  const clearLabel  = trainingT?.clearFiltersButton || 'Limpiar filtros';
+  const placeholder = trainingT?.searchPlaceholder  || 'Buscar cursos...';
+  return `
+    <div class="flex flex-wrap items-center gap-3 mb-4">
+      <div class="relative">
+        <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+        <input id="tr-search" type="search" value="${(filters.search || '').replace(/"/g, '&quot;')}"
+          placeholder="${placeholder}"
+          class="w-full sm:w-64 border border-eu-border rounded-full pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" />
+      </div>
+      ${hasActive ? `<button data-clear-filters class="inline-flex items-center gap-2 text-sm px-3 py-1.5 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 border border-gray-300 hover:bg-gray-200 hover:border-gray-400"><i data-lucide="x" class="w-4 h-4"></i>${clearLabel}</button>` : ''}
+    </div>`;
+}
 
-  // Filter courses by level and active filters
-  let fpCourses      = courses.filter(c => c.level === 'FP');
-  let teacherCourses = courses.filter(c => c.level === 'Docentes');
-  let masterCourses  = courses.filter(c => c.level === 'Máster');
+// ── Course grid with pagination (replaces #tr-courses-grid on partial update) ─
+function renderCourseGridContent(tab, allCourses, trainingT, courseTags, emptyMessage) {
+  const levelMap  = { fp: 'FP', teacher: 'Docentes', master: 'Máster' };
+  const isMaster  = tab === 'master';
+  const filters   = getActiveFilters(tab);
+  const filtered  = filterCourses(allCourses.filter(c => c.level === levelMap[tab]), filters);
 
-  // Apply active filters
-  fpCourses = filterCourses(fpCourses, filters);
-  teacherCourses = filterCourses(teacherCourses, filters);
-  masterCourses = filterCourses(masterCourses, filters);
+  const pageSizeOpts = [9, 18, 36];
+  const pageSize     = getState('trainingPageSize') || 9;
+  const isAll        = pageSize === 'all';
+  const rawPage      = getState('trainingPage') || 0;
+  const totalPages   = isAll ? 1 : Math.ceil(filtered.length / pageSize);
+  const safePage     = Math.min(rawPage, Math.max(0, totalPages - 1));
+  const paginated    = isAll ? filtered : filtered.slice(safePage * pageSize, (safePage + 1) * pageSize);
 
-  // Build clear filters button if needed
-  const hasActiveFilters = filters.sectors.length > 0 || filters.modalities.length > 0 || filters.tags.length > 0 || (filters.statuses || []).length > 0;
-  const clearFiltersLabel = trainingT?.clearFiltersButton || 'Limpiar filtros';
-  const clearFiltersHtml = hasActiveFilters ? `<div class="mb-6"><button data-clear-filters class="inline-flex items-center gap-2 text-sm px-3 py-1.5 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 border border-gray-300 hover:bg-gray-200 hover:border-gray-400"><i data-lucide="x" class="w-4 h-4"></i>${clearFiltersLabel}</button></div>` : '';
-  const filterChipsHtml = clearFiltersHtml;
+  const pageSizeHtml = `
+    <div class="flex gap-1">
+      ${pageSizeOpts.map(n => `<button data-tr-pagesize="${n}" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${n}</button>`).join('')}
+      <button data-tr-pagesize="all" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">Todos</button>
+    </div>`;
 
-  // Encontrar sección CMS correspondiente
-  const sectionMap = {
-    'fp': 'fp-skills',
-    'teacher': 'continuous-learning',
-    'master': 'master-skills'
+  const paginationHtml = !isAll && totalPages > 1 ? `
+    <div class="flex gap-2 justify-center mt-6 items-center">
+      <button id="tr-pag-prev" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">← ${trainingT?.paginationPrev || 'Anterior'}</button>
+      <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
+      <button id="tr-pag-next" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">${trainingT?.paginationNext || 'Siguiente'} →</button>
+    </div>` : '';
+
+  const count = filtered.length;
+  const countLabel = `${count} curso${count !== 1 ? 's' : ''}`;
+
+  return `
+    <div class="flex items-center justify-between mb-4">
+      <span class="text-xs text-gray-500 font-medium">${countLabel}</span>
+      ${pageSizeHtml}
+    </div>
+    ${paginated.length > 0 ? `
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        ${paginated.map(c => courseCard(c, trainingT, isMaster, courseTags, tab, filters)).join('')}
+      </div>
+      ${paginationHtml}` : `
+      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-8 text-center">
+        <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+        <p class="text-gray-600 text-base">${pickLang(emptyMessage, 'No hay cursos disponibles.')}</p>
+      </div>`}`;
+}
+
+// ── Partial update — only replaces #tr-courses-grid ──────────────────────────
+function updateCourseGrid() {
+  const tab         = getState('trainingTab') || 'fp';
+  const trainingT   = t('training') || {};
+  const coursesBlock = TRAINING_CONFIG?.coursesBlock || {};
+  const courses     = getCourses(trainingT);
+  const courseTags  = coursesBlock.courseTags || [];
+  const emptyMsg    = coursesBlock.emptyMessage || {};
+  const container   = document.getElementById('tr-courses-grid');
+  if (!container) return;
+  container.innerHTML = renderCourseGridContent(tab, courses, trainingT, courseTags, emptyMsg);
+  if (window.lucide) window.lucide.createIcons();
+  attachPaginationListeners();
+  attachFilterPillListeners(tab);
+}
+
+// ── Listener helpers ──────────────────────────────────────────────────────────
+function attachPaginationListeners() {
+  document.querySelectorAll('[data-tr-pagesize]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sz = btn.dataset.trPagesize === 'all' ? 'all' : parseInt(btn.dataset.trPagesize, 10);
+      setState('trainingPageSize', sz);
+      setState('trainingPage', 0);
+      updateCourseGrid();
+    });
+  });
+  document.getElementById('tr-pag-prev')?.addEventListener('click', () => {
+    const cur = getState('trainingPage') || 0;
+    if (cur > 0) { setState('trainingPage', cur - 1); updateCourseGrid(); }
+  });
+  document.getElementById('tr-pag-next')?.addEventListener('click', () => {
+    setState('trainingPage', (getState('trainingPage') || 0) + 1);
+    updateCourseGrid();
+  });
+}
+
+function attachFilterPillListeners(tab) {
+  const toggle = (arr, val) => {
+    const idx = arr.indexOf(val);
+    if (idx > -1) arr.splice(idx, 1); else arr.push(val);
   };
+  document.querySelectorAll('[data-filter-sector]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      const f = getActiveFilters(tab); toggle(f.sectors, btn.dataset.filterSector);
+      setActiveFilters(tab, f); setState('trainingPage', 0); rerender();
+    });
+  });
+  document.querySelectorAll('[data-filter-modality]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const f = getActiveFilters(tab); toggle(f.modalities, btn.dataset.filterModality);
+      setActiveFilters(tab, f); setState('trainingPage', 0); rerender();
+    });
+  });
+  document.querySelectorAll('[data-filter-tag]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const f = getActiveFilters(tab); toggle(f.tags, btn.dataset.filterTag);
+      setActiveFilters(tab, f); setState('trainingPage', 0); rerender();
+    });
+  });
+  document.querySelectorAll('[data-filter-status]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault(); e.stopPropagation();
+      const f = getActiveFilters(tab);
+      if (!f.statuses) f.statuses = [];
+      toggle(f.statuses, btn.dataset.filterStatus);
+      setActiveFilters(tab, f); setState('trainingPage', 0); rerender();
+    });
+  });
+  document.querySelector('[data-clear-filters]')?.addEventListener('click', () => {
+    setActiveFilters(tab, { sectors: [], modalities: [], tags: [], statuses: [], search: '' });
+    setState('trainingPage', 0); rerender();
+  });
+}
+
+// ── Tab content ───────────────────────────────────────────────────────────────
+function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMessage) {
+  const sectionMap = { fp: 'fp-skills', teacher: 'continuous-learning', master: 'master-skills' };
   const cmsSection = sections.find(s => s.id === sectionMap[activeTab]);
+  const searchControls = renderSearchControls(activeTab, trainingT);
+  const courseGrid = `<div id="tr-courses-grid">${renderCourseGridContent(activeTab, courses, trainingT, courseTags, emptyMessage)}</div>`;
 
   if (activeTab === 'fp') {
-    // Usar skills del CMS si están disponibles, sino fallback a traducciones
     const skillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
     const skills = cmsSection?.skillsBlock?.skills || [];
     const skillsHtml = skills.length > 0
-      ? skills.map(skill => `
-        <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow shadow-sm text-sm text-eu-text font-medium">
-          <span class="text-lg">${skill.icon}</span><span>${pickLang(skill.title, '')}</span>
-        </div>`).join('')
-      : (trainingT?.fpSkills || []).map(skill => `
-        <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow shadow-sm text-sm text-eu-text font-medium">
-          <i data-lucide="check-circle" class="w-4 h-4 text-eu-orange shrink-0"></i>${skill}
-        </div>`).join('');
-
+      ? skills.map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow shadow-sm text-sm text-eu-text font-medium"><span class="text-lg">${s.icon}</span><span>${pickLang(s.title, '')}</span></div>`).join('')
+      : (trainingT?.fpSkills || []).map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow shadow-sm text-sm text-eu-text font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-eu-orange shrink-0"></i>${s}</div>`).join('');
     const sectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabFpVet || '') : (trainingT?.tabFpVet || '');
-
     return `
       ${skillsBlockVisible ? `
       <div class="bg-eu-yellow/20 border border-eu-yellow rounded-xl p-6 mb-8">
-        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2">
-          <i data-lucide="briefcase" class="w-5 h-5 text-eu-orange"></i>${sectionTitle}
-        </h2>
+        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="briefcase" class="w-5 h-5 text-eu-orange"></i>${sectionTitle}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">${skillsHtml}</div>
       </div>` : ''}
-      ${filterChipsHtml}
-      ${fpCourses.length > 0 ? `
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
-        ${fpCourses.map(c => courseCard(c, trainingT, false, courseTags, activeTab, filters)).join('')}
-      </div>` : `
-      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-8 mb-10 text-center">
-        <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
-        <p class="text-gray-600 text-base">${pickLang(emptyMessage, '')}</p>
-      </div>`}
-      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6">
+      ${searchControls}${courseGrid}
+      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 mt-10">
         <h3 class="font-bold text-eu-text mb-4">${trainingT?.fpPath || ''}</h3>
         <div class="flex flex-wrap items-center gap-2">${pathSteps(trainingT?.fpPathSteps, 'bg-eu-orange')}</div>
       </div>`;
   }
 
   if (activeTab === 'teacher') {
-    // Usar skills del CMS si están disponibles (continuous-learning section)
-    const teacherSection = sections.find(s => s.id === 'continuous-learning');
-    const skillsBlockVisible = teacherSection?.skillsBlock?.visible !== false;
-    const skills = teacherSection?.skillsBlock?.skills || [];
+    const skillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
+    const skills = cmsSection?.skillsBlock?.skills || [];
     const topicsHtml = skills.length > 0
-      ? skills.map(skill => `
-        <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border shadow-sm text-sm text-eu-text font-medium">
-          <span class="text-lg">${skill.icon}</span><span>${pickLang(skill.title, '')}</span>
-        </div>`).join('')
-      : (trainingT?.teacherTopics || []).map(topic => `
-        <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border shadow-sm text-sm text-eu-text font-medium">
-          <i data-lucide="check-circle" class="w-4 h-4 text-eu-blue shrink-0"></i>${topic}
-        </div>`).join('');
-
-    const sectionTitle = teacherSection ? pickLang(teacherSection.title, trainingT?.tabTeacherTraining || '') : (trainingT?.tabTeacherTraining || '');
-
+      ? skills.map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border shadow-sm text-sm text-eu-text font-medium"><span class="text-lg">${s.icon}</span><span>${pickLang(s.title, '')}</span></div>`).join('')
+      : (trainingT?.teacherTopics || []).map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border shadow-sm text-sm text-eu-text font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-eu-blue shrink-0"></i>${s}</div>`).join('');
+    const sectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabTeacherTraining || '') : (trainingT?.tabTeacherTraining || '');
     return `
       ${skillsBlockVisible ? `
       <div class="bg-eu-blue/5 border border-eu-blue/20 rounded-xl p-6 mb-8">
-        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2">
-          <i data-lucide="book-open" class="w-5 h-5 text-eu-blue"></i>${sectionTitle}
-        </h2>
+        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-5 h-5 text-eu-blue"></i>${sectionTitle}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${topicsHtml}</div>
       </div>` : ''}
-      ${filterChipsHtml}
-      ${teacherCourses.length > 0 ? `
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        ${teacherCourses.map(c => courseCard(c, trainingT, false, courseTags, activeTab, filters)).join('')}
-      </div>` : `
-      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-8 text-center">
-        <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
-        <p class="text-gray-600 text-base">${pickLang(emptyMessage, '')}</p>
-      </div>`}`;
+      ${searchControls}${courseGrid}`;
   }
 
   // master
-  const masterSection = sections.find(s => s.id === 'master-skills');
-  const masterSkillsBlockVisible = masterSection?.skillsBlock?.visible !== false;
-  const masterSkills = masterSection?.skillsBlock?.skills || [];
+  const masterSkillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
+  const masterSkills = cmsSection?.skillsBlock?.skills || [];
   const masterSkillsHtml = masterSkills.length > 0
-    ? masterSkills.map((skill, i) => `
-      <div class="flex items-start gap-2 bg-white rounded-lg px-4 py-3 border border-purple-100 shadow-sm text-sm text-eu-text font-medium">
-        <span class="text-lg">${skill.icon}</span>
-        <span>${pickLang(skill.title, '')}</span>
-      </div>`).join('')
-    : (trainingT?.masterBridgeItems || []).map((item, i) => `
-      <div class="flex items-start gap-2 bg-white rounded-lg px-4 py-3 border border-purple-100 shadow-sm text-sm text-eu-text font-medium">
-        <span class="w-5 h-5 rounded-full bg-purple-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">${i + 1}</span>
-        ${item}
-      </div>`).join('');
-
-  const masterSectionTitle = masterSection ? pickLang(masterSection.title, trainingT?.tabMasterBridge || '') : (trainingT?.tabMasterBridge || '');
-
+    ? masterSkills.map(s => `<div class="flex items-start gap-2 bg-white rounded-lg px-4 py-3 border border-purple-100 shadow-sm text-sm text-eu-text font-medium"><span class="text-lg">${s.icon}</span><span>${pickLang(s.title, '')}</span></div>`).join('')
+    : (trainingT?.masterBridgeItems || []).map((item, i) => `<div class="flex items-start gap-2 bg-white rounded-lg px-4 py-3 border border-purple-100 shadow-sm text-sm text-eu-text font-medium"><span class="w-5 h-5 rounded-full bg-purple-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">${i + 1}</span>${item}</div>`).join('');
+  const masterSectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabMasterBridge || '') : (trainingT?.tabMasterBridge || '');
   return `
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 flex items-start gap-3">
       <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
@@ -299,61 +364,43 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags = [], em
     </div>
     ${masterSkillsBlockVisible ? `
     <div class="bg-purple-50 border border-purple-200 rounded-xl p-6 mb-8">
-      <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2">
-        <i data-lucide="graduation-cap" class="w-5 h-5 text-purple-700"></i>${masterSectionTitle}
-      </h2>
+      <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="graduation-cap" class="w-5 h-5 text-purple-700"></i>${masterSectionTitle}</h2>
       <div class="space-y-3">${masterSkillsHtml}</div>
     </div>` : ''}
-    ${filterChipsHtml}
-    ${masterCourses.length > 0 ? `
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-      ${masterCourses.map(c => courseCard(c, trainingT, true, courseTags, activeTab, filters)).join('')}
-    </div>` : `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-8 mb-8 text-center">
-      <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
-      <p class="text-gray-600 text-base">${pickLang(emptyMessage, '')}</p>
-    </div>`}
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6">
+    ${searchControls}${courseGrid}
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 mt-8">
       <h3 class="font-bold text-eu-text mb-4">${trainingT?.masterPath || ''}</h3>
       <div class="flex flex-wrap items-center gap-2">${pathSteps(trainingT?.masterPathSteps, 'bg-purple-600')}</div>
     </div>`;
 }
 
+// ── render ────────────────────────────────────────────────────────────────────
 export function render() {
-  const trainingT = t('training') || {};
-  const activeTab = getState('trainingTab') || 'fp';
+  const trainingT    = t('training') || {};
+  const activeTab    = getState('trainingTab') || 'fp';
   const coursesBlock = TRAINING_CONFIG?.coursesBlock || {};
-  const coursesBlockVisible = coursesBlock.visible !== false;
-  const courses   = coursesBlockVisible ? getCourses(trainingT) : [];
-  const sections  = TRAINING_CONFIG?.sectionsBlock || [];
-  const courseTags = coursesBlock.courseTags || [];
-
-  const totalEnrolled = courses.reduce((a, c) => a + c.enrolled, 0).toLocaleString();
+  const courses      = coursesBlock.visible !== false ? getCourses(trainingT) : [];
+  const sections     = TRAINING_CONFIG?.sectionsBlock || [];
+  const courseTags   = coursesBlock.courseTags || [];
 
   const TABS = [
-    { key: 'fp',      icon: 'briefcase',      label: trainingT?.tabFpVet },
-    { key: 'teacher', icon: 'book-open',       label: trainingT?.tabTeacherTraining },
-    { key: 'master',  icon: 'graduation-cap',  label: trainingT?.tabMasterBridge },
+    { key: 'fp',      icon: 'briefcase',     label: trainingT?.tabFpVet },
+    { key: 'teacher', icon: 'book-open',      label: trainingT?.tabTeacherTraining },
+    { key: 'master',  icon: 'graduation-cap', label: trainingT?.tabMasterBridge },
   ];
 
   const tabsHtml = TABS.map(tab => `
     <button data-tab="${tab.key}" class="flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold cursor-pointer transition-colors ${
-      activeTab === tab.key
-        ? 'bg-eu-blue text-white shadow-sm'
-        : 'bg-white text-eu-text border border-eu-border hover:border-eu-blue'
-    }">
-      <i data-lucide="${tab.icon}" class="w-4 h-4"></i>${tab.label || ''}
-    </button>`).join('');
+      activeTab === tab.key ? 'bg-eu-blue text-white shadow-sm' : 'bg-white text-eu-text border border-eu-border hover:border-eu-blue'
+    }"><i data-lucide="${tab.icon}" class="w-4 h-4"></i>${tab.label || ''}</button>`).join('');
 
-  const heroBlock = TRAINING_CONFIG?.heroBlock || {};
-  const heroVisible = heroBlock.visible !== false;
-  const heroStats = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
-  const ctaButton = heroBlock.ctaButton || {};
+  const heroBlock  = TRAINING_CONFIG?.heroBlock || {};
+  const heroStats  = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
+  const ctaButton  = heroBlock.ctaButton || {};
 
   return `
     <div>
-      ${heroVisible ? `
-      <!-- Header -->
+      ${heroBlock.visible !== false ? `
       <div class="bg-eu-blue text-white px-6 py-12">
         <div class="max-w-7xl mx-auto">
           <div class="flex flex-wrap items-start justify-between gap-6">
@@ -377,102 +424,35 @@ export function render() {
           </div>` : ''}
         </div>
       </div>` : ''}
-
-      <!-- Tabs + content -->
       <div class="max-w-7xl mx-auto px-6 py-10">
         <div class="flex flex-wrap gap-2 mb-8 border-b border-eu-border pb-4">${tabsHtml}</div>
         ${tabContent(activeTab, courses, trainingT, sections, courseTags, coursesBlock.emptyMessage || {})}
       </div>
-    </div>
-  `;
+    </div>`;
 }
 
+// ── mount ─────────────────────────────────────────────────────────────────────
 export function mount() {
   const activeTab = getState('trainingTab') || 'fp';
 
-  // Tab navigation
   document.querySelectorAll('[data-tab]').forEach(btn => {
     btn.addEventListener('click', () => {
       setState('trainingTab', btn.dataset.tab);
-      const main = document.getElementById('main-root');
-      main.innerHTML = render();
-      mount();
-      if (window.lucide) window.lucide.createIcons();
+      setState('trainingPage', 0);
+      rerender();
     });
   });
 
-  // Filter chips - Sector
-  document.querySelectorAll('[data-filter-sector]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const filters = getActiveFilters(activeTab);
-      const sectorId = btn.dataset.filterSector;
-      const idx = filters.sectors.indexOf(sectorId);
-      if (idx > -1) filters.sectors.splice(idx, 1);
-      else filters.sectors.push(sectorId);
-      setActiveFilters(activeTab, filters);
-      const main = document.getElementById('main-root');
-      main.innerHTML = render();
-      mount();
-      if (window.lucide) window.lucide.createIcons();
-    });
+  // Search — partial update only (no full re-render, preserves focus while typing)
+  document.getElementById('tr-search')?.addEventListener('input', e => {
+    const tab = getState('trainingTab') || 'fp';
+    const f = getActiveFilters(tab);
+    f.search = e.target.value;
+    setActiveFilters(tab, f);
+    setState('trainingPage', 0);
+    updateCourseGrid();
   });
 
-  document.querySelectorAll('[data-filter-modality]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filters = getActiveFilters(activeTab);
-      const modalityId = btn.dataset.filterModality;
-      const idx = filters.modalities.indexOf(modalityId);
-      if (idx > -1) filters.modalities.splice(idx, 1);
-      else filters.modalities.push(modalityId);
-      setActiveFilters(activeTab, filters);
-      const main = document.getElementById('main-root');
-      main.innerHTML = render();
-      mount();
-      if (window.lucide) window.lucide.createIcons();
-    });
-  });
-
-  document.querySelectorAll('[data-filter-tag]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filters = getActiveFilters(activeTab);
-      const tagId = btn.dataset.filterTag;
-      const idx = filters.tags.indexOf(tagId);
-      if (idx > -1) filters.tags.splice(idx, 1);
-      else filters.tags.push(tagId);
-      setActiveFilters(activeTab, filters);
-      const main = document.getElementById('main-root');
-      main.innerHTML = render();
-      mount();
-      if (window.lucide) window.lucide.createIcons();
-    });
-  });
-
-  document.querySelectorAll('[data-filter-status]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const filters = getActiveFilters(activeTab);
-      if (!filters.statuses) filters.statuses = [];
-      const statusId = btn.dataset.filterStatus;
-      const idx = filters.statuses.indexOf(statusId);
-      if (idx > -1) filters.statuses.splice(idx, 1);
-      else filters.statuses.push(statusId);
-      setActiveFilters(activeTab, filters);
-      const main = document.getElementById('main-root');
-      main.innerHTML = render();
-      mount();
-      if (window.lucide) window.lucide.createIcons();
-    });
-  });
-
-  // Clear filters button
-  document.querySelector('[data-clear-filters]')?.addEventListener('click', () => {
-    setActiveFilters(activeTab, { sectors: [], modalities: [], tags: [], statuses: [] });
-    const main = document.getElementById('main-root');
-    main.innerHTML = render();
-    mount();
-    if (window.lucide) window.lucide.createIcons();
-  });
+  attachFilterPillListeners(activeTab);
+  attachPaginationListeners();
 }
