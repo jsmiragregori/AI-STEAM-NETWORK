@@ -22,17 +22,13 @@ function pickLang(value, fallback = '') {
   return fallback;
 }
 
-function statusInactiveClasses(status) {
-  if (status === 'Activo')       return 'text-green-700 bg-green-50';
-  if (status === 'Próximamente') return 'text-yellow-700 bg-yellow-50';
-  return 'text-gray-600 bg-gray-100';
-}
-
-function statusActiveStyle(status) {
-  if (status === 'Activo')       return 'background:#15803d;color:#fff';
-  if (status === 'Próximamente') return 'background:#b45309;color:#fff';
-  return 'background:#4b5563;color:#fff';
-}
+const TONE_MAP = {
+  success: { cls: 'text-green-700 bg-green-50',   activeStyle: 'background:#15803d;color:#fff' },
+  warning: { cls: 'text-yellow-700 bg-yellow-50', activeStyle: 'background:#b45309;color:#fff' },
+  danger:  { cls: 'text-red-700 bg-red-50',       activeStyle: 'background:#b91c1c;color:#fff' },
+  info:    { cls: 'text-eu-blue bg-eu-blue/10',   activeStyle: 'background:#1d4ed8;color:#fff' },
+  neutral: { cls: 'text-gray-600 bg-gray-100',    activeStyle: 'background:#4b5563;color:#fff' },
+};
 
 function getActiveFilters(tab) {
   const filterKey = `trainingFilters_${tab}`;
@@ -49,7 +45,7 @@ function filterCourses(courses, filters) {
     const sectorMatch   = filters.sectors.length === 0   || course.sectorIds?.some(s => filters.sectors.includes(s));
     const modalityMatch = filters.modalities.length === 0 || (course.modalityId && filters.modalities.includes(course.modalityId));
     const tagMatch      = filters.tags.length === 0      || course.tagIds?.some(t => filters.tags.includes(t));
-    const statusMatch   = (filters.statuses || []).length === 0 || (filters.statuses || []).includes(course.status);
+    const statusMatch   = (filters.statuses || []).length === 0 || (filters.statuses || []).includes(course.statusId);
     return sectorMatch && modalityMatch && tagMatch && statusMatch;
   });
 }
@@ -57,11 +53,13 @@ function filterCourses(courses, filters) {
 function getCourses(trainingT) {
   const cmsConfig = TRAINING_CONFIG?.coursesBlock;
   if (cmsConfig?.courses?.length > 0) {
-    // Crear mapas de lookup para resolver IDs a labels
+    // Crear mapas de lookup para resolver IDs a labels/objetos
     const sectorsMap = {};
     const modalitiesMap = {};
+    const statusesMap = {};
     (cmsConfig.sectors || []).forEach(s => { sectorsMap[s.id] = s.label; });
     (cmsConfig.modalities || []).forEach(m => { modalitiesMap[m.id] = m.label; });
+    (cmsConfig.statuses || []).forEach(s => { statusesMap[s.id] = s; });
 
     return cmsConfig.courses.map((course, idx) => ({
       id: course.id,
@@ -76,7 +74,8 @@ function getCourses(trainingT) {
       description: pickLang(course.description, ''),
       modalityId: course.modalityId || '',
       modality: pickLang(modalitiesMap[course.modalityId], course.modalityId),
-      status: course.status,
+      statusId: course.statusId || '',
+      statusObj: statusesMap[course.statusId] || { id: course.statusId, label: { es: course.statusId, en: course.statusId, va: course.statusId }, tone: 'neutral' },
       tagIds: course.tagIds || [],
     }));
   }
@@ -95,21 +94,22 @@ function getCourses(trainingT) {
     description: course.desc,
     modalityId: '',
     modality: COURSE_MODALITY[idx],
-    status: course.status,
+    statusId: course.status || '',
+    statusObj: { id: course.status, label: { es: course.status, en: course.status, va: course.status }, tone: 'neutral' },
     tagIds: [],
   }));
 }
 
 function courseCard(course, trainingT, isMaster = false, courseTags = [], activeTab = 'fp', activeFilters = { sectors: [], modalities: [], tags: [], statuses: [] }) {
-  const statusLabels   = trainingT?.statusLabels   || {};
   const levelLabels    = trainingT?.levelLabels    || {};
   const modalityLabels = trainingT?.modalityLabels || {};
 
-  const statusLabel   = statusLabels[course.status]     || course.status;
+  const statusLabel   = pickLang(course.statusObj?.label, course.statusId);
   const levelLabel    = levelLabels[course.level]       || course.level;
   const modalityLabel = modalityLabels[course.modality] || course.modality;
 
-  const isStatusActive = (activeFilters.statuses || []).includes(course.status);
+  const tone = course.statusObj?.tone || 'neutral';
+  const isStatusActive = (activeFilters.statuses || []).includes(course.statusId);
   const courseSectorLabels = course.sectors || [];
   const href = isMaster ? 'https://valgrai.eu' : 'https://portal.edu.gva.es/aules/';
   const viewLabel = isMaster ? 'Ver' : (trainingT?.courseViewMore || '');
@@ -129,7 +129,7 @@ function courseCard(course, trainingT, isMaster = false, courseTags = [], active
             <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded bg-eu-yellow text-eu-purple">${levelLabel}</span>
             ${isMaster ? '<span class="text-xs bg-purple-600 text-white px-2 py-0.5 rounded font-bold">Track A</span>' : ''}
           </div>
-          <button data-filter-status="${course.status}" class="text-sm font-bold px-2 py-0.5 rounded cursor-pointer transition-colors ${isStatusActive ? '' : statusInactiveClasses(course.status)}" ${isStatusActive ? `style="${statusActiveStyle(course.status)}"` : ''}>${statusLabel}</button>
+          <button data-filter-status="${course.statusId}" class="text-sm font-bold px-2 py-0.5 rounded cursor-pointer transition-colors ${isStatusActive ? '' : (TONE_MAP[tone]?.cls || TONE_MAP.neutral.cls)}" ${isStatusActive ? `style="${TONE_MAP[tone]?.activeStyle || TONE_MAP.neutral.activeStyle}"` : ''}>${statusLabel}</button>
         </div>
         <h3 class="font-bold text-eu-text text-sm mb-2 leading-snug">${course.title}</h3>
         <p class="text-xs text-gray-500 mb-3">${course.description}</p>

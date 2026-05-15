@@ -554,6 +554,53 @@ export const TRAINING_CONFIG = {
         }
       }
     ],
+    "statuses": [
+      {
+        "id": "activo",
+        "label": {
+          "es": "Activo",
+          "en": "Active",
+          "va": "Actiu"
+        },
+        "tone": "success"
+      },
+      {
+        "id": "proximo",
+        "label": {
+          "es": "Próximamente",
+          "en": "Coming Soon",
+          "va": "Properament"
+        },
+        "tone": "warning"
+      },
+      {
+        "id": "completado",
+        "label": {
+          "es": "Completado",
+          "en": "Completed",
+          "va": "Completat"
+        },
+        "tone": "neutral"
+      },
+      {
+        "id": "inscripcion",
+        "label": {
+          "es": "En inscripción",
+          "en": "Open for enrollment",
+          "va": "En inscripció"
+        },
+        "tone": "info"
+      },
+      {
+        "id": "finalizado",
+        "label": {
+          "es": "Finalizado",
+          "en": "Finished",
+          "va": "Finalitzat"
+        },
+        "tone": "neutral"
+      }
+    ],
     "courses": [
       {
         "id": "ai-industria-fp",
@@ -568,7 +615,7 @@ export const TRAINING_CONFIG = {
           "va": "Mòdul d'especialització per a l'alumnnat de FP. Manteniment predictiu, visió artificial i bessons digitals amb casos reals de l'ecosistema."
         },
         "level": "FP",
-        "status": "Activo",
+        "statusId": "activo",
         "sectorIds": [
           "industria",
           "medio-ambiente"
@@ -594,7 +641,7 @@ export const TRAINING_CONFIG = {
           "va": "Mòdul d'aprofundiment — candidat a pont amb el Track A. CNNs aplicades a radiologia, NLP clínic i suport a la decisió mèdica."
         },
         "level": "Máster",
-        "status": "Activo",
+        "statusId": "activo",
         "sectorIds": [
           "salud"
         ],
@@ -617,7 +664,7 @@ export const TRAINING_CONFIG = {
           "va": "Formació per a docents de FP. Fonaments de IA, enginering de prompts, detecció de biaix i ús ètic en el context educatiu. Disponible a Aules."
         },
         "level": "Docentes",
-        "status": "Activo",
+        "statusId": "activo",
         "sectorIds": [
           "educacion-sector"
         ],
@@ -641,7 +688,7 @@ export const TRAINING_CONFIG = {
           "va": "Mòdul FP. Vols autònoms, anàlisi multiespectral i reg intel·ligent. Inclou pràctiques amb sensors reals en camp."
         },
         "level": "FP",
-        "status": "Activo",
+        "statusId": "activo",
         "sectorIds": [
           "agroalimentario",
           "medio-ambiente"
@@ -667,7 +714,7 @@ export const TRAINING_CONFIG = {
           "va": "Mòdul candidat a pont Track A. Bessons digitals en entorns industrials, SCADA, IIoT i edge computing."
         },
         "level": "Máster",
-        "status": "Activo",
+        "statusId": "activo",
         "sectorIds": [
           "industria"
         ],
@@ -691,7 +738,7 @@ export const TRAINING_CONFIG = {
           "va": "Mòdul FP. Sensors ambientals, sèries temporals i alertes automàtiques. Casos reals de conques fluvials i qualitat de l'aire."
         },
         "level": "FP",
-        "status": "Activo",
+        "statusId": "activo",
         "sectorIds": [
           "medio-ambiente"
         ],
@@ -716,7 +763,7 @@ export const TRAINING_CONFIG = {
           "va": "Mòdul candidat a pont Track A. Models de difusió i NLP per a museus virtuals i restauració digital."
         },
         "level": "Máster",
-        "status": "Próximamente",
+        "statusId": "proximo",
         "sectorIds": [
           "turismo-cultura"
         ],
@@ -739,7 +786,7 @@ export const TRAINING_CONFIG = {
           "va": "Formació per a docents i funcionaris. IA en serveis públics, xatbots ciutadans i regulació europea de IA. Disponible a Aules."
         },
         "level": "Docentes",
-        "status": "Activo",
+        "statusId": "activo",
         "sectorIds": [
           "administracion"
         ],
