@@ -22,15 +22,15 @@ function pickLang(value, fallback = '') {
   return fallback;
 }
 
-function statusColor(status) {
-  if (status === 'Activo')       return 'text-green-700 bg-green-50';
-  if (status === 'Próximamente') return 'text-yellow-700 bg-yellow-50';
-  return 'text-gray-600 bg-gray-100';
+function statusColor(status, isActive = false) {
+  if (status === 'Activo')       return isActive ? 'bg-green-700 text-white'  : 'text-green-700 bg-green-50 hover:bg-green-100';
+  if (status === 'Próximamente') return isActive ? 'bg-yellow-600 text-white' : 'text-yellow-700 bg-yellow-50 hover:bg-yellow-100';
+  return isActive ? 'bg-gray-600 text-white' : 'text-gray-600 bg-gray-100 hover:bg-gray-200';
 }
 
 function getActiveFilters(tab) {
   const filterKey = `trainingFilters_${tab}`;
-  return JSON.parse(localStorage.getItem(filterKey) || '{"sectors":[],"modalities":[],"tags":[]}');
+  return JSON.parse(localStorage.getItem(filterKey) || '{"sectors":[],"modalities":[],"tags":[],"levels":[],"statuses":[]}');
 }
 
 function setActiveFilters(tab, filters) {
@@ -40,10 +40,12 @@ function setActiveFilters(tab, filters) {
 
 function filterCourses(courses, filters) {
   return courses.filter(course => {
-    const sectorMatch = filters.sectors.length === 0 || course.sectorIds?.some(s => filters.sectors.includes(s));
+    const sectorMatch   = filters.sectors.length === 0   || course.sectorIds?.some(s => filters.sectors.includes(s));
     const modalityMatch = filters.modalities.length === 0 || (course.modalityId && filters.modalities.includes(course.modalityId));
-    const tagMatch = filters.tags.length === 0 || course.tagIds?.some(t => filters.tags.includes(t));
-    return sectorMatch && modalityMatch && tagMatch;
+    const tagMatch      = filters.tags.length === 0      || course.tagIds?.some(t => filters.tags.includes(t));
+    const levelMatch    = (filters.levels  || []).length === 0 || (filters.levels  || []).includes(course.level);
+    const statusMatch   = (filters.statuses || []).length === 0 || (filters.statuses || []).includes(course.status);
+    return sectorMatch && modalityMatch && tagMatch && levelMatch && statusMatch;
   });
 }
 
@@ -93,14 +95,17 @@ function getCourses(trainingT) {
   }));
 }
 
-function courseCard(course, trainingT, isMaster = false, courseTags = [], activeTab = 'fp', activeFilters = { sectors: [], modalities: [], tags: [] }) {
+function courseCard(course, trainingT, isMaster = false, courseTags = [], activeTab = 'fp', activeFilters = { sectors: [], modalities: [], tags: [], levels: [], statuses: [] }) {
   const statusLabels   = trainingT?.statusLabels   || {};
   const levelLabels    = trainingT?.levelLabels    || {};
   const modalityLabels = trainingT?.modalityLabels || {};
 
-  const statusLabel   = statusLabels[course.status]   || course.status;
-  const levelLabel    = levelLabels[course.level]     || course.level;
+  const statusLabel   = statusLabels[course.status]     || course.status;
+  const levelLabel    = levelLabels[course.level]       || course.level;
   const modalityLabel = modalityLabels[course.modality] || course.modality;
+
+  const isLevelActive  = (activeFilters.levels   || []).includes(course.level);
+  const isStatusActive = (activeFilters.statuses || []).includes(course.status);
   const courseSectorLabels = course.sectors || [];
   const href = isMaster ? 'https://valgrai.eu' : 'https://portal.edu.gva.es/aules/';
   const viewLabel = isMaster ? 'Ver' : (trainingT?.courseViewMore || '');
@@ -117,10 +122,10 @@ function courseCard(course, trainingT, isMaster = false, courseTags = [], active
       <div class="p-5 flex-1">
         <div class="flex items-center justify-between mb-3 gap-2">
           <div class="flex items-center gap-2 flex-wrap">
-            <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded bg-eu-yellow text-eu-purple">${levelLabel}</span>
+            <button data-filter-level="${course.level}" class="text-sm font-extrabold uppercase px-2 py-0.5 rounded cursor-pointer transition-colors ${isLevelActive ? 'bg-eu-purple text-eu-yellow' : 'bg-eu-yellow text-eu-purple hover:opacity-80'}">${levelLabel}</button>
             ${isMaster ? '<span class="text-xs bg-purple-600 text-white px-2 py-0.5 rounded font-bold">Track A</span>' : ''}
           </div>
-          <span class="text-sm font-bold px-2 py-0.5 rounded ${statusColor(course.status)}">${statusLabel}</span>
+          <button data-filter-status="${course.status}" class="text-sm font-bold px-2 py-0.5 rounded cursor-pointer transition-colors ${statusColor(course.status, isStatusActive)}">${statusLabel}</button>
         </div>
         <h3 class="font-bold text-eu-text text-sm mb-2 leading-snug">${course.title}</h3>
         <p class="text-xs text-gray-500 mb-3">${course.description}</p>
@@ -176,7 +181,7 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags = [], em
   masterCourses = filterCourses(masterCourses, filters);
 
   // Build clear filters button if needed
-  const hasActiveFilters = filters.sectors.length > 0 || filters.modalities.length > 0 || filters.tags.length > 0;
+  const hasActiveFilters = filters.sectors.length > 0 || filters.modalities.length > 0 || filters.tags.length > 0 || (filters.levels || []).length > 0 || (filters.statuses || []).length > 0;
   const clearFiltersLabel = trainingT?.clearFiltersButton || 'Limpiar filtros';
   const clearFiltersHtml = hasActiveFilters ? `<div class="mb-6"><button data-clear-filters class="inline-flex items-center gap-2 text-sm px-3 py-1.5 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 border border-gray-300 hover:bg-gray-200 hover:border-gray-400"><i data-lucide="x" class="w-4 h-4"></i>${clearFiltersLabel}</button></div>` : '';
   const filterChipsHtml = clearFiltersHtml;
@@ -439,9 +444,45 @@ export function mount() {
     });
   });
 
+  document.querySelectorAll('[data-filter-level]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const filters = getActiveFilters(activeTab);
+      if (!filters.levels) filters.levels = [];
+      const levelId = btn.dataset.filterLevel;
+      const idx = filters.levels.indexOf(levelId);
+      if (idx > -1) filters.levels.splice(idx, 1);
+      else filters.levels.push(levelId);
+      setActiveFilters(activeTab, filters);
+      const main = document.getElementById('main-root');
+      main.innerHTML = render();
+      mount();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  });
+
+  document.querySelectorAll('[data-filter-status]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const filters = getActiveFilters(activeTab);
+      if (!filters.statuses) filters.statuses = [];
+      const statusId = btn.dataset.filterStatus;
+      const idx = filters.statuses.indexOf(statusId);
+      if (idx > -1) filters.statuses.splice(idx, 1);
+      else filters.statuses.push(statusId);
+      setActiveFilters(activeTab, filters);
+      const main = document.getElementById('main-root');
+      main.innerHTML = render();
+      mount();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  });
+
   // Clear filters button
   document.querySelector('[data-clear-filters]')?.addEventListener('click', () => {
-    setActiveFilters(activeTab, { sectors: [], modalities: [], tags: [] });
+    setActiveFilters(activeTab, { sectors: [], modalities: [], tags: [], levels: [], statuses: [] });
     const main = document.getElementById('main-root');
     main.innerHTML = render();
     mount();
