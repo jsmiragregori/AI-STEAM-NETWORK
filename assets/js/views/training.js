@@ -332,10 +332,16 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">${skillsHtml}</div>
       </div>` : ''}
       ${searchControls}${courseGrid}
-      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 mt-10">
-        <h3 class="font-bold text-eu-text mb-4">${trainingT?.fpPath || ''}</h3>
-        <div class="flex flex-wrap items-center gap-2">${pathSteps(trainingT?.fpPathSteps, 'bg-eu-orange')}</div>
-      </div>`;
+      ${(() => {
+        const pb = cmsSection?.pathBlock;
+        if (pb && pb.visible === false) return '';
+        const pbTitle = pb ? pickLang(pb.title, trainingT?.fpPath || '') : (trainingT?.fpPath || '');
+        const pbSteps = pb?.steps?.length > 0 ? pb.steps.map(s => pickLang(s.text, '')) : (trainingT?.fpPathSteps || []);
+        return `<div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 mt-10">
+          <h3 class="font-bold text-eu-text mb-4">${pbTitle}</h3>
+          <div class="flex flex-wrap items-center gap-2">${pathSteps(pbSteps, 'bg-eu-orange')}</div>
+        </div>`;
+      })()}`;
   }
 
   if (activeTab === 'teacher') {

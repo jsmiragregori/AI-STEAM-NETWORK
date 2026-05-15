@@ -170,6 +170,48 @@ export const TRAINING_CONFIG = {
             "icon": "👥"
           }
         ]
+      },
+      "pathBlock": {
+        "visible": true,
+        "title": {
+          "es": "Itinerario FP – CEICE",
+          "en": "VET Pathway – CEICE",
+          "va": "Itinerari FP – CEICE"
+        },
+        "steps": [
+          {
+            "id": "cfgs",
+            "text": {
+              "es": "Ciclo Formativo de Grado Superior (CFGS)",
+              "en": "Upper Secondary VET Cycle (CFGS)",
+              "va": "Cicle Formatiu de Grau Superior (CFGS)"
+            }
+          },
+          {
+            "id": "modul-especializacion",
+            "text": {
+              "es": "Módulo de especialización IA-STEAM (Aules)",
+              "en": "AI-STEAM specialisation subject (Aules)",
+              "va": "Curs d'especialització AI-STEAM (Aules)"
+            }
+          },
+          {
+            "id": "proyecto-intermodular",
+            "text": {
+              "es": "Proyecto intermodular con reto del ecosistema",
+              "en": "Cross-subject project with ecosystem challenge",
+              "va": "Projecte intermodular amb repte de l'ecosistema"
+            }
+          },
+          {
+            "id": "portfolio-evidencias",
+            "text": {
+              "es": "Portfolio de evidencias del alumnado",
+              "en": "Student evidence portfolio",
+              "va": "Portfolio d'evidències de l'alumnat"
+            }
+          }
+        ]
       }
     },
     {
@@ -266,7 +308,8 @@ export const TRAINING_CONFIG = {
             "icon": "📢"
           }
         ]
-      }
+      },
+      "pathBlock": null
     },
     {
       "id": "continuous-learning",
@@ -362,7 +405,8 @@ export const TRAINING_CONFIG = {
             "icon": "🌐"
           }
         ]
-      }
+      },
+      "pathBlock": null
     }
   ],
   "coursesBlock": {
@@ -375,6 +419,7 @@ export const TRAINING_CONFIG = {
     "pageSizeOptions": [
       9,
       18,
+      27,
       36
     ],
     "showAllOption": true,
