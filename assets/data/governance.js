@@ -1671,6 +1671,11 @@ export const GOVERNANCE_CONFIG = {
       "en": "Public documents are available for direct download. Partner documents require access to the Private Area.",
       "va": "Els documents públics estan disponibles per a descàrrega directa. Els documents de socis requireixen accés a l'Àrea Privada."
     },
+    "noDocsMessage": {
+      "es": "Aún no hay documentos disponibles. Por favor, consulta más tarde.",
+      "en": "No documents available yet. Please check back soon.",
+      "va": "Encara no hi ha documents disponibles. Torna a consultar més tard."
+    },
     "accessLabels": {
       "public": {
         "es": "🔓 Público",
@@ -1684,30 +1689,6 @@ export const GOVERNANCE_CONFIG = {
       }
     },
     "docs": [
-      {
-        "id": "consortium-agreement",
-        "visible": true,
-        "order": 1,
-        "title": "Acuerdo de Consorcio AI-SECRETT v1.0",
-        "date": "Oct 2025",
-        "type": "Fundacional",
-        "access": "public",
-        "icon": "📄",
-        "url": "",
-        "external": false
-      },
-      {
-        "id": "d1-2-governance",
-        "visible": true,
-        "order": 2,
-        "title": "D1.2 – AI STEAM Network: Conceptos Iniciales y Gobernanza",
-        "date": "Feb 2026",
-        "type": "Gobernanza",
-        "access": "public",
-        "icon": "🏛️",
-        "url": "",
-        "external": false
-      },
       {
         "id": "collaboration-agreement-model",
         "visible": true,

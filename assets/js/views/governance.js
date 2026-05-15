@@ -540,6 +540,12 @@ function tabDocumentos(govT) {
     `;
   }).join('');
 
+  const noDocsContent = docsHtml.trim() === '' ? `
+    <div class="col-span-full rounded-xl border border-eu-border bg-eu-bg p-8 text-center">
+      <p class="text-sm text-gray-600">${pickLang(cms.noDocsMessage, s.noDocsMessage || '')}</p>
+    </div>
+  ` : '';
+
   return `
     <div>
       ${cms.visible !== false ? `
@@ -547,7 +553,7 @@ function tabDocumentos(govT) {
       <h2 class="text-xl font-bold text-eu-text mb-2">${pickLang(cms.title, s.title || '')}</h2>
       <p class="text-sm text-gray-600 mb-7 max-w-2xl">${pickLang(cms.description, s.description || '')}</p>
       ` : ''}
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">${docsHtml}</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">${docsHtml}${noDocsContent}</div>
       ` : ''}
     </div>
   `;
