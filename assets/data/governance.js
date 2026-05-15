@@ -1661,6 +1661,13 @@ export const GOVERNANCE_CONFIG = {
   },
   "documentationBlock": {
     "headerVisible": true,
+    "pageSize": 12,
+    "pageSizeOptions": [
+      12,
+      24,
+      48
+    ],
+    "showAllOption": true,
     "title": {
       "es": "Documentación de Transparencia",
       "en": "Transparency Documentation",
@@ -1675,6 +1682,21 @@ export const GOVERNANCE_CONFIG = {
       "es": "Aún no hay documentos disponibles. Por favor, consulta más tarde.",
       "en": "No documents available yet. Please check back soon.",
       "va": "Encara no hi ha documents disponibles. Torna a consultar més tard."
+    },
+    "allLabel": {
+      "es": "Todo",
+      "en": "All",
+      "va": "Tot"
+    },
+    "paginationPrev": {
+      "es": "Anterior",
+      "en": "Previous",
+      "va": "Anterior"
+    },
+    "paginationNext": {
+      "es": "Siguiente",
+      "en": "Next",
+      "va": "Següent"
     },
     "accessLabels": {
       "public": {

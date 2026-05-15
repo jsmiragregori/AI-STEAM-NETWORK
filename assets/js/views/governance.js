@@ -527,8 +527,12 @@ function tabDocumentos(govT) {
   const cms = GOVERNANCE_CONFIG?.documentationBlock || {};
   const hasCmsDocs = Object.prototype.hasOwnProperty.call(cms, 'docs');
   const accessLabels = cms.accessLabels || { public: { es: '', en: '', va: '' }, partners: { es: '', en: '', va: '' } };
-  const pageSize = 12;
-  const pageSizeOptions = [12, 24, 48];
+  const pageSize = cms.pageSize || 12;
+  const pageSizeOptions = cms.pageSizeOptions || [12, 24, 48];
+  const showAllOption = cms.showAllOption !== false;
+  const allLabel = cms.allLabel || { es: 'Todo', en: 'All', va: 'Tot' };
+  const paginationPrev = cms.paginationPrev || { es: 'Anterior', en: 'Previous', va: 'Anterior' };
+  const paginationNext = cms.paginationNext || { es: 'Siguiente', en: 'Next', va: 'Següent' };
 
   function isPublic(doc) {
     return doc.access === 'public';
@@ -593,9 +597,9 @@ function tabDocumentos(govT) {
 
     const paginationHtml = !isShowAll && totalPages > 1 ? `
       <div class="flex gap-2 justify-center mt-4">
-        <button data-gov-doc-page="prev" class="px-3 py-1 rounded border cursor-pointer transition-colors ${safePage === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:border-eu-blue'} border-eu-border">← ${s.paginationPrev || 'Anterior'}</button>
+        <button data-gov-doc-page="prev" class="px-3 py-1 rounded border cursor-pointer transition-colors ${safePage === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:border-eu-blue'} border-eu-border">← ${pickLang(paginationPrev, 'Anterior')}</button>
         <span class="px-3 py-1 text-xs text-gray-600">Página ${safePage + 1} de ${totalPages}</span>
-        <button data-gov-doc-page="next" class="px-3 py-1 rounded border cursor-pointer transition-colors ${safePage >= totalPages - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:border-eu-blue'} border-eu-border">${s.paginationNext || 'Siguiente'} →</button>
+        <button data-gov-doc-page="next" class="px-3 py-1 rounded border cursor-pointer transition-colors ${safePage >= totalPages - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:border-eu-blue'} border-eu-border">${pickLang(paginationNext, 'Siguiente')} →</button>
       </div>
     ` : '';
 
@@ -606,9 +610,9 @@ function tabDocumentos(govT) {
             ${opt}
           </button>
         `).join('')}
-        <button data-gov-doc-pagesize="all" class="px-2 py-1 rounded border cursor-pointer transition-colors text-xs font-semibold ${actualPageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">
-          Todo
-        </button>
+        ${showAllOption ? `<button data-gov-doc-pagesize="all" class="px-2 py-1 rounded border cursor-pointer transition-colors text-xs font-semibold ${actualPageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">
+          ${pickLang(allLabel, 'Todo')}
+        </button>` : ''}
       </div>
     ` : '';
 
