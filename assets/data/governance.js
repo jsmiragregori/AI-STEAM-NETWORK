@@ -1690,6 +1690,30 @@ export const GOVERNANCE_CONFIG = {
     },
     "docs": [
       {
+        "id": "consortium-agreement",
+        "visible": true,
+        "order": 1,
+        "title": "Acuerdo de Consorcio AI-SECRETT v1.0",
+        "date": "Oct 2025",
+        "type": "Fundacional",
+        "access": "public",
+        "icon": "📄",
+        "url": "",
+        "external": false
+      },
+      {
+        "id": "d1-2-governance",
+        "visible": true,
+        "order": 2,
+        "title": "D1.2 – AI STEAM Network: Conceptos Iniciales y Gobernanza",
+        "date": "Feb 2026",
+        "type": "Gobernanza",
+        "access": "public",
+        "icon": "🏛️",
+        "url": "",
+        "external": false
+      },
+      {
         "id": "collaboration-agreement-model",
         "visible": true,
         "order": 3,
