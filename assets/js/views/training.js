@@ -192,8 +192,12 @@ function renderCourseGridContent(tab, allCourses, trainingT, courseTags, emptyMe
   const filters   = getActiveFilters(tab);
   const filtered  = filterCourses(allCourses.filter(c => c.level === levelMap[tab]), filters);
 
-  const pageSizeOpts = [9, 18, 36];
-  const pageSize     = getState('trainingPageSize') || 9;
+  const coursesBlock = TRAINING_CONFIG?.coursesBlock || {};
+  const pageSizeOpts = Array.isArray(coursesBlock.pageSizeOptions) ? coursesBlock.pageSizeOptions : [9, 18, 36];
+  const showAllOpt   = coursesBlock.showAllOption !== false;
+  const showAllLbl   = pickLang(coursesBlock.showAllLabel, 'Todos');
+
+  const pageSize     = getState('trainingPageSize') || pageSizeOpts[0];
   const isAll        = pageSize === 'all';
   const rawPage      = getState('trainingPage') || 0;
   const totalPages   = isAll ? 1 : Math.ceil(filtered.length / pageSize);
@@ -203,7 +207,7 @@ function renderCourseGridContent(tab, allCourses, trainingT, courseTags, emptyMe
   const pageSizeHtml = `
     <div class="flex gap-1">
       ${pageSizeOpts.map(n => `<button data-tr-pagesize="${n}" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${n}</button>`).join('')}
-      <button data-tr-pagesize="all" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">Todos</button>
+      ${showAllOpt ? `<button data-tr-pagesize="all" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${showAllLbl}</button>` : ''}
     </div>`;
 
   const paginationHtml = !isAll && totalPages > 1 ? `

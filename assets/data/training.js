@@ -372,6 +372,17 @@ export const TRAINING_CONFIG = {
       "en": "New courses in this category will be available soon.",
       "va": "Properament estaran disponibles nous cursos en aquesta categoria."
     },
+    "pageSizeOptions": [
+      9,
+      18,
+      36
+    ],
+    "showAllOption": true,
+    "showAllLabel": {
+      "es": "Todos",
+      "en": "All",
+      "va": "Tots"
+    },
     "courseTags": [
       {
         "id": "ia-aplicada",
