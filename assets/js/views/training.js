@@ -74,6 +74,7 @@ function getCourses(trainingT) {
       statusId: course.statusId || '',
       statusObj: statusesMap[course.statusId] || { id: course.statusId, label: { es: course.statusId, en: course.statusId, va: course.statusId }, tone: 'neutral' },
       tagIds: course.tagIds || [],
+      link: course.link || { url: '', external: true },
     }));
   }
   // Fallback to translations if no CMS courses
@@ -94,6 +95,7 @@ function getCourses(trainingT) {
     statusId: course.status || '',
     statusObj: { id: course.status, label: { es: course.status, en: course.status, va: course.status }, tone: 'neutral' },
     tagIds: [],
+    link: { url: '', external: true },
   }));
 }
 
@@ -108,8 +110,9 @@ function courseCard(course, trainingT, isMaster = false, courseTags = [], active
   const tone = course.statusObj?.tone || 'neutral';
   const isStatusActive = (activeFilters.statuses || []).includes(course.statusId);
   const courseSectorLabels = course.sectors || [];
-  const href = isMaster ? 'https://valgrai.eu' : 'https://portal.edu.gva.es/aules/';
-  const viewLabel = isMaster ? 'Ver' : (trainingT?.courseViewMore || '');
+  const linkUrl   = course.link?.url || '';
+  const linkTarget = course.link?.external !== false ? '_blank' : '_self';
+  const viewLabel = trainingT?.courseViewMore || 'Ver';
 
   const chipsHtml = (course.tagIds || []).map(chipId => {
     const chip = courseTags.find(c => c.id === chipId);
@@ -145,12 +148,13 @@ function courseCard(course, trainingT, isMaster = false, courseTags = [], active
         </div>
         ${chipsHtml ? `<div class="flex flex-wrap gap-2 mt-3">${chipsHtml}</div>` : ''}
       </div>
+      ${linkUrl ? `
       <div class="border-t border-eu-border p-3 flex items-center justify-end bg-eu-bg">
-        <a href="${href}" target="_blank" rel="noopener noreferrer"
+        <a href="${linkUrl}" target="${linkTarget}" ${linkTarget === '_blank' ? 'rel="noopener noreferrer"' : ''}
            class="text-eu-blue font-bold text-xs cursor-pointer hover:underline inline-flex items-center gap-1 shrink-0">
           ${viewLabel} <i data-lucide="external-link" class="w-3 h-3"></i>
         </a>
-      </div>
+      </div>` : ''}
     </div>
   `;
 }

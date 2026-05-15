@@ -607,9 +607,9 @@ export const TRAINING_CONFIG = {
         },
         "level": "FP",
         "statusId": "activo",
-        "hours": 60,
-        "enrolled": 312,
-        "rating": 4.7,
+        "hours": 25,
+        "enrolled": null,
+        "rating": 4.9,
         "sectorIds": [
           "industria",
           "medio-ambiente"
@@ -620,7 +620,11 @@ export const TRAINING_CONFIG = {
           "predictivo",
           "gemelos-digitales",
           "automatizacion"
-        ]
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
       },
       {
         "id": "ml-diagnostico-master",
@@ -646,7 +650,11 @@ export const TRAINING_CONFIG = {
         "tagIds": [
           "ia-aplicada",
           "responsable"
-        ]
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
       },
       {
         "id": "ia-etica-aula-docentes",
@@ -673,7 +681,11 @@ export const TRAINING_CONFIG = {
           "educacion",
           "etica",
           "responsable"
-        ]
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
       },
       {
         "id": "agricultura-precision-fp",
@@ -702,7 +714,11 @@ export const TRAINING_CONFIG = {
           "sostenibilidad",
           "iot",
           "datos-reales"
-        ]
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
       },
       {
         "id": "gemelos-digitales-master",
@@ -729,7 +745,11 @@ export const TRAINING_CONFIG = {
           "gemelos-digitales",
           "automatizacion",
           "ia-aplicada"
-        ]
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
       },
       {
         "id": "monitorizacion-ambiental-fp",
@@ -757,7 +777,11 @@ export const TRAINING_CONFIG = {
           "datos-reales",
           "sostenibilidad",
           "visualizacion"
-        ]
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
       },
       {
         "id": "patrimonio-cultural-master",
@@ -783,7 +807,11 @@ export const TRAINING_CONFIG = {
         "tagIds": [
           "generativa",
           "visualizacion"
-        ]
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
       },
       {
         "id": "administracion-electronica-docentes",
@@ -810,7 +838,11 @@ export const TRAINING_CONFIG = {
           "educacion",
           "responsable",
           "generativa"
-        ]
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
       }
     ]
   }
