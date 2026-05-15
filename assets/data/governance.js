@@ -1661,9 +1661,8 @@ export const GOVERNANCE_CONFIG = {
   },
   "documentationBlock": {
     "headerVisible": true,
-    "pageSize": 6,
+    "pageSize": 12,
     "pageSizeOptions": [
-      6,
       12,
       24,
       48
