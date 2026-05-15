@@ -517,26 +517,29 @@ function tabDocumentos(govT) {
   const docsHtml = (hasCmsDocs && Array.isArray(cms.docs) ? cms.docs : []).map(doc => {
     const pub = isPublic(doc);
     const hasUrl = doc.url && doc.url.trim();
-    const tag = hasUrl ? 'a' : 'span';
-    const attrs = hasUrl
-      ? `href="${doc.url}" ${doc.external ? 'target="_blank" rel="noopener noreferrer"' : ''}`
-      : '';
+    const linkText = pickLang(doc.linkText, doc.linkText?.es || 'Ver');
     return `
-      <${tag} ${attrs} class="flex items-center p-4 rounded-xl border border-eu-border bg-white ${hasUrl ? 'hover:border-eu-blue hover:bg-eu-bg transition-colors group cursor-pointer' : ''}">
-        <span class="text-2xl mr-4 shrink-0">${doc.icon || '📄'}</span>
-        <div class="flex-1 min-w-0">
-          <p class="font-semibold text-sm text-eu-text ${hasUrl ? 'group-hover:text-eu-blue' : ''} truncate">${doc.title || ''}</p>
-          <div class="flex items-center gap-2 mt-0.5 flex-wrap">
-            <span class="text-xs text-gray-500">${doc.date || ''}</span>
-            <span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${doc.type || ''}</span>
-            <span class="text-xs font-bold px-1.5 py-0.5 rounded ${pub ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}">
-              ${pickLang(pub ? accessLabels.public : accessLabels.partners, pub ? (s.accessPublic || 'Público') : (s.accessPartners || 'Partners'))}
-            </span>
-            ${doc.external ? '<i data-lucide="external-link" class="w-3 h-3 text-gray-400"></i>' : ''}
+      <div class="flex flex-col p-4 rounded-xl border border-eu-border bg-white hover:border-eu-blue hover:bg-eu-bg transition-colors">
+        <div class="flex items-start gap-3 mb-3">
+          <span class="text-2xl shrink-0">${doc.icon || '📄'}</span>
+          <div class="flex-1 min-w-0">
+            <p class="font-semibold text-sm text-eu-text truncate">${doc.title || ''}</p>
+            <div class="flex items-center gap-2 mt-0.5 flex-wrap">
+              <span class="text-xs text-gray-500">${doc.date || ''}</span>
+              <span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${doc.type || ''}</span>
+              <span class="text-xs font-bold px-1.5 py-0.5 rounded ${pub ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}">
+                ${pickLang(pub ? accessLabels.public : accessLabels.partners, pub ? (s.accessPublic || 'Público') : (s.accessPartners || 'Partners'))}
+              </span>
+            </div>
           </div>
         </div>
-        ${hasUrl ? '<i data-lucide="file-signature" class="w-4 h-4 text-gray-300 group-hover:text-eu-blue shrink-0 ml-3"></i>' : ''}
-      </${tag}>
+        ${hasUrl ? `
+        <a href="${doc.url}" ${doc.external ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-sm font-semibold text-eu-blue hover:text-eu-blue/80 transition-colors mt-auto pt-3 border-t border-eu-border">
+          ${linkText}
+          <i data-lucide="external-link" class="w-3 h-3"></i>
+        </a>
+        ` : '<div class="text-xs text-gray-400 mt-auto pt-3 border-t border-eu-border">Sin enlace</div>'}
+      </div>
     `;
   }).join('');
 

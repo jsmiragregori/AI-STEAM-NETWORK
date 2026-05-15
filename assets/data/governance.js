@@ -1698,8 +1698,13 @@ export const GOVERNANCE_CONFIG = {
         "type": "Fundacional",
         "access": "public",
         "icon": "📄",
-        "url": "",
-        "external": false
+        "url": "https://aules.edu.gva.es/formaciodelprofessorat",
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       },
       {
         "id": "d1-2-governance",
@@ -1710,8 +1715,13 @@ export const GOVERNANCE_CONFIG = {
         "type": "Gobernanza",
         "access": "public",
         "icon": "🏛️",
-        "url": "",
-        "external": false
+        "url": "https://aules.edu.gva.es/formaciodelprofessorat",
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       },
       {
         "id": "collaboration-agreement-model",
@@ -1723,7 +1733,12 @@ export const GOVERNANCE_CONFIG = {
         "access": "public",
         "icon": "🤝",
         "url": "",
-        "external": false
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       },
       {
         "id": "oer-policy",
@@ -1735,7 +1750,12 @@ export const GOVERNANCE_CONFIG = {
         "access": "public",
         "icon": "📝",
         "url": "",
-        "external": false
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       },
       {
         "id": "ethics-code",
@@ -1746,8 +1766,13 @@ export const GOVERNANCE_CONFIG = {
         "type": "Ética",
         "access": "public",
         "icon": "⚖️",
-        "url": "",
-        "external": false
+        "url": "https://aules.edu.gva.es/formaciodelprofessorat",
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       },
       {
         "id": "dmp",
@@ -1759,7 +1784,12 @@ export const GOVERNANCE_CONFIG = {
         "access": "partners",
         "icon": "🗄️",
         "url": "",
-        "external": false
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       },
       {
         "id": "ga-minutes-1",
@@ -1771,7 +1801,12 @@ export const GOVERNANCE_CONFIG = {
         "access": "partners",
         "icon": "📋",
         "url": "",
-        "external": false
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       },
       {
         "id": "sc-minutes-q1-2026",
@@ -1783,7 +1818,12 @@ export const GOVERNANCE_CONFIG = {
         "access": "partners",
         "icon": "📋",
         "url": "",
-        "external": false
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       },
       {
         "id": "ethics-declaration",
@@ -1795,7 +1835,12 @@ export const GOVERNANCE_CONFIG = {
         "access": "public",
         "icon": "🔍",
         "url": "",
-        "external": false
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       },
       {
         "id": "internal-progress-q1",
@@ -1807,7 +1852,12 @@ export const GOVERNANCE_CONFIG = {
         "access": "partners",
         "icon": "📈",
         "url": "",
-        "external": false
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       },
       {
         "id": "consensue-manual",
@@ -1819,7 +1869,12 @@ export const GOVERNANCE_CONFIG = {
         "access": "public",
         "icon": "📘",
         "url": "",
-        "external": false
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       },
       {
         "id": "gender-equality-policy",
@@ -1831,7 +1886,12 @@ export const GOVERNANCE_CONFIG = {
         "access": "public",
         "icon": "⚧",
         "url": "",
-        "external": false
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       }
     ]
   }
