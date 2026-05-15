@@ -640,16 +640,39 @@ function tabDocumentos(govT) {
 
 function tabParticipar(govT) {
   const s = govT?.tabContent_participar || {};
+  const cms = GOVERNANCE_CONFIG?.participateBlock || {};
+  const hasCms = !!cms.stakeholderCard;
 
-  const stakeholderBenefitsHtml = (s.stakeholderBenefits || []).map(a => `
+  const sc = hasCms ? cms.stakeholderCard : {};
+  const cc = hasCms ? cms.consensueCard : {};
+  const ms = hasCms ? cms.meetingsSection : {};
+
+  const stakeBtnUrl = hasCms ? cms.stakeholderCard.buttonUrl || '#' : '#';
+  const stakeBtnExt = hasCms ? cms.stakeholderCard.buttonExternal : false;
+  const consBtnUrl = hasCms ? cms.consensueCard.buttonUrl || '#' : '#';
+  const consBtnExt = hasCms ? cms.consensueCard.buttonExternal : false;
+
+  const stakeholderBenefitsHtml = (hasCms
+    ? (cms.stakeholderCard.benefits || []).map(b => `
+    <li class="flex items-start gap-2 text-sm text-gray-700">
+      <i data-lucide="check-circle" class="w-3.5 h-3.5 text-eu-orange mt-0.5 shrink-0"></i>${pickLang(b.text, b.text?.es || '')}
+    </li>`).join('')
+    : (s.stakeholderBenefits || []).map(a => `
     <li class="flex items-start gap-2 text-sm text-gray-700">
       <i data-lucide="check-circle" class="w-3.5 h-3.5 text-eu-orange mt-0.5 shrink-0"></i>${a}
-    </li>`).join('');
+    </li>`).join('')
+  );
 
-  const consensueGroups = [
-    { who: s.consensueGroupStakeholders, actions: s.consensueActionsStakeholders },
-    { who: s.consensueGroupConsortium,   actions: s.consensueActionsConsortium   },
-  ];
+  const consensueGroups = hasCms
+    ? (cms.consensueCard.groups || []).map(g => ({
+        who: pickLang(g.who, g.who?.es || ''),
+        actions: (g.actions || []).map(a => pickLang(a.text, a.text?.es || '')),
+      }))
+    : [
+        { who: s.consensueGroupStakeholders, actions: s.consensueActionsStakeholders },
+        { who: s.consensueGroupConsortium,   actions: s.consensueActionsConsortium   },
+      ];
+
   const consensueGroupsHtml = consensueGroups.map(g => `
     <div class="bg-eu-blue/10 rounded-lg p-4">
       <p class="text-xs font-extrabold uppercase text-eu-teal mb-2">${g.who || ''}</p>
@@ -662,9 +685,40 @@ function tabParticipar(govT) {
     </div>
   `).join('');
 
-  const meetingsHtml = (s.meetings || []).map(e => {
-    const parts = (e.date || '').split(' ');
-    return `
+  const meetingsHtml = hasCms
+    ? (cms.meetingsSection.meetings || []).map(e => {
+        const parts = (e.date || '').split(' ');
+        const regUrl = (e.registrationUrl || '').trim();
+        const regExt = e.registrationExternal;
+        const accUrl = (e.accessUrl || '').trim();
+        const accExt = e.accessExternal;
+        return `
+      <div class="flex flex-col gap-3 p-4 bg-eu-bg rounded-lg border border-eu-border">
+        <div class="flex items-start gap-3">
+          <div class="bg-eu-blue text-white rounded-lg px-2 py-1 text-center shrink-0 min-w-12">
+            <span class="block text-xs font-extrabold leading-none">${parts[0] || ''}</span>
+            <span class="block text-xs font-semibold uppercase">${parts[1] || ''}</span>
+          </div>
+          <div>
+            <p class="font-bold text-sm text-eu-text">${pickLang(e.title, e.title?.es || '')}</p>
+            <p class="text-xs text-gray-500">${pickLang(e.location, e.location?.es || '')}</p>
+          </div>
+        </div>
+        ${(regUrl || accUrl) ? `
+        <div class="flex flex-wrap gap-2 ml-15">
+          ${regUrl ? `<a href="${regUrl}" ${regExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-xs font-semibold text-eu-blue hover:text-eu-blue/80 transition-colors bg-white border border-eu-border rounded-lg px-3 py-1.5">
+            <i data-lucide="clipboard-list" class="w-3.5 h-3.5"></i>Registration
+          </a>` : ''}
+          ${accUrl ? `<a href="${accUrl}" ${accExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-xs font-semibold text-eu-teal hover:text-eu-teal/80 transition-colors bg-white border border-eu-border rounded-lg px-3 py-1.5">
+            <i data-lucide="video" class="w-3.5 h-3.5"></i>Access
+          </a>` : ''}
+        </div>` : ''}
+      </div>
+    `;
+      }).join('')
+    : (s.meetings || []).map(e => {
+        const parts = (e.date || '').split(' ');
+        return `
       <div class="flex items-start gap-3 p-4 bg-eu-bg rounded-lg border border-eu-border">
         <div class="bg-eu-blue text-white rounded-lg px-2 py-1 text-center shrink-0 min-w-12">
           <span class="block text-xs font-extrabold leading-none">${parts[0] || ''}</span>
@@ -676,63 +730,73 @@ function tabParticipar(govT) {
         </div>
       </div>
     `;
-  }).join('');
+      }).join('');
 
   return `
     <div class="space-y-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- Track B – Stakeholder -->
+        ${(hasCms ? cms.stakeholderCard.visible !== false : true) ? `
         <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
           <div class="w-12 h-12 bg-eu-orange/10 rounded-xl flex items-center justify-center mb-4">
             <i data-lucide="building-2" class="w-6 h-6 text-eu-orange"></i>
           </div>
-          <h2 class="text-xl font-bold text-eu-text mb-1">${s.stakeholderTitle || ''}</h2>
-          <p class="text-xs font-bold uppercase text-eu-orange mb-3">${s.stakeholderSubtitle || ''}</p>
-          <p class="text-sm text-gray-600 mb-4">${s.stakeholderDesc || ''}</p>
+          <h2 class="text-xl font-bold text-eu-text mb-1">${hasCms ? pickLang(cms.stakeholderCard.title, s.stakeholderTitle || '') : (s.stakeholderTitle || '')}</h2>
+          <p class="text-xs font-bold uppercase text-eu-orange mb-3">${hasCms ? pickLang(cms.stakeholderCard.subtitle, s.stakeholderSubtitle || '') : (s.stakeholderSubtitle || '')}</p>
+          <p class="text-sm text-gray-600 mb-4">${hasCms ? pickLang(cms.stakeholderCard.description, s.stakeholderDesc || '') : (s.stakeholderDesc || '')}</p>
           <div class="bg-eu-yellow/60 rounded-lg p-4 mb-5">
-            <p class="text-xs font-bold text-eu-orange uppercase mb-2">${s.stakeholderBenefitsLabel || ''}</p>
+            <p class="text-xs font-bold text-eu-orange uppercase mb-2">${hasCms ? pickLang(cms.stakeholderCard.benefitsLabel, s.stakeholderBenefitsLabel || '') : (s.stakeholderBenefitsLabel || '')}</p>
             <ul class="space-y-1.5">${stakeholderBenefitsHtml}</ul>
           </div>
           <p class="text-xs text-gray-500 mb-4 flex items-start gap-2">
             <i data-lucide="alert-circle" class="w-3.5 h-3.5 shrink-0 mt-0.5 text-gray-400"></i>
-            ${s.stakeholderWarning || ''}
+            ${hasCms ? pickLang(cms.stakeholderCard.warning, s.stakeholderWarning || '') : (s.stakeholderWarning || '')}
           </p>
-          <a href="#" class="inline-flex items-center gap-2 bg-eu-orange text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors">
-            ${s.stakeholderButton || ''} <i data-lucide="external-link" class="w-4 h-4"></i>
-          </a>
-        </div>
+          ${(hasCms && stakeBtnUrl !== '#')
+            ? `<a href="${stakeBtnUrl}" ${stakeBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 bg-eu-orange text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors">
+            ${pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || '')} <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>`
+            : `<span class="inline-flex items-center gap-2 bg-eu-orange text-white px-5 py-2.5 rounded-lg font-bold text-sm">
+            ${pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || '')} <i data-lucide="external-link" class="w-4 h-4"></i>
+          </span>`
+          }
+        </div>` : ''}
 
         <!-- ConsensUE -->
+        ${(hasCms ? cms.consensueCard.visible !== false : true) ? `
         <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
           <div class="w-12 h-12 bg-eu-teal/10 rounded-xl flex items-center justify-center mb-4">
             <i data-lucide="users" class="w-6 h-6 text-eu-teal"></i>
           </div>
-          <h2 class="text-xl font-bold text-eu-text mb-1">${s.consensueTitle || ''}</h2>
-          <p class="text-xs font-bold uppercase text-eu-teal mb-3">${s.consensueSubtitle || ''}</p>
-          <p class="text-sm text-gray-600 mb-4">${s.consensueDesc || ''}</p>
+          <h2 class="text-xl font-bold text-eu-text mb-1">${hasCms ? pickLang(cms.consensueCard.title, s.consensueTitle || '') : (s.consensueTitle || '')}</h2>
+          <p class="text-xs font-bold uppercase text-eu-teal mb-3">${hasCms ? pickLang(cms.consensueCard.subtitle, s.consensueSubtitle || '') : (s.consensueSubtitle || '')}</p>
+          <p class="text-sm text-gray-600 mb-4">${hasCms ? pickLang(cms.consensueCard.description, s.consensueDesc || '') : (s.consensueDesc || '')}</p>
           <div class="space-y-3 mb-5">${consensueGroupsHtml}</div>
-          <a href="#" class="inline-flex items-center gap-2 bg-eu-teal text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors">
-            ${s.consensueButton || ''} <i data-lucide="external-link" class="w-4 h-4"></i>
-          </a>
-        </div>
+          ${(hasCms && consBtnUrl !== '#')
+            ? `<a href="${consBtnUrl}" ${consBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 bg-eu-teal text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors">
+            ${pickLang(cms.consensueCard.buttonText, s.consensueButton || '')} <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>`
+            : `<span class="inline-flex items-center gap-2 bg-eu-teal text-white px-5 py-2.5 rounded-lg font-bold text-sm">
+            ${pickLang(cms.consensueCard.buttonText, s.consensueButton || '')} <i data-lucide="external-link" class="w-4 h-4"></i>
+          </span>`
+          }
+        </div>` : ''}
       </div>
 
       <!-- Reuniones -->
+      ${(hasCms ? cms.meetingsSection.visible !== false : true) ? `
       <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
         <div class="flex items-center gap-3 mb-4">
           <div class="w-10 h-10 bg-eu-blue/10 rounded-xl flex items-center justify-center">
             <i data-lucide="landmark" class="w-5 h-5 text-eu-blue"></i>
           </div>
           <div>
-            <h2 class="text-xl font-bold text-eu-text">${s.meetingsTitle || ''}</h2>
-            <p class="text-sm text-gray-500">${s.meetingsSubtitle || ''}</p>
+            <h2 class="text-xl font-bold text-eu-text">${hasCms ? pickLang(cms.meetingsSection.title, s.meetingsTitle || '') : (s.meetingsTitle || '')}</h2>
+            <p class="text-sm text-gray-500">${hasCms ? pickLang(cms.meetingsSection.subtitle, s.meetingsSubtitle || '') : (s.meetingsSubtitle || '')}</p>
           </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">${meetingsHtml}</div>
-        <a href="#" class="inline-flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-blue-800 transition-colors">
-          ${s.meetingsButton || ''} <i data-lucide="external-link" class="w-4 h-4"></i>
-        </a>
-      </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">${meetingsHtml}</div>
+      </div>` : ''}
     </div>
   `;
 }

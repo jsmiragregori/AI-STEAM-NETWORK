@@ -1,5 +1,5 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR
-// Fuentes: content/governance/hero.yml, content/governance/structure-bodies.yml, content/governance/formal-bodies.yml, content/governance/dual-track.yml, content/governance/lbd.yml, content/governance/documentation.yml
+// Fuentes: content/governance/hero.yml, content/governance/structure-bodies.yml, content/governance/formal-bodies.yml, content/governance/dual-track.yml, content/governance/lbd.yml, content/governance/documentation.yml, content/governance/participate.yml
 
 export const GOVERNANCE_CONFIG = {
   "heroBlock": {
@@ -2045,5 +2045,260 @@ export const GOVERNANCE_CONFIG = {
         }
       }
     ]
+  },
+  "participateBlock": {
+    "stakeholderCard": {
+      "visible": true,
+      "title": {
+        "es": "Adhesión como Stakeholder",
+        "en": "Join as a Stakeholder",
+        "va": "Adhesió com a Stakeholder"
+      },
+      "subtitle": {
+        "es": "Track B · Espacio Ecosistema · Gasto Cero",
+        "en": "Track B · Ecosystem Space · Zero Cost",
+        "va": "Track B · Espai Ecosistema · Cost Zero"
+      },
+      "description": {
+        "es": "Cualquier organización pública o privada puede adherirse a la red suscribiendo el <strong>Acuerdo de Colaboración</strong>. La adhesión es gratuita (Regla de Gasto Cero), vigente durante 4 años y renovable.",
+        "en": "Any public or private organization can join the network by signing the <strong>Collaboration Agreement</strong>. Membership is free (Zero Cost Rule), valid for 4 years and renewable.",
+        "va": "Qualsevol organització pública o privada pot adherir-se a la xarxa signant l'<strong>Acord de Col·laboració</strong>. L'adhesió és gratuïta (Regla de Cost Zero), vigent durant 4 anys i renovable."
+      },
+      "benefitsLabel": {
+        "es": "Como stakeholder podrás:",
+        "en": "As a stakeholder you can:",
+        "va": "Com a stakeholder podràs:"
+      },
+      "benefits": [
+        {
+          "text": {
+            "es": "Proponer retos reales al Banco de Retos vía ConsensUE",
+            "en": "Propose real challenges to the Challenge Bank via ConsensUE",
+            "va": "Proposar reptes reals al Banc de Reptes via ConsensUE"
+          }
+        },
+        {
+          "text": {
+            "es": "Informar necesidades, validar relevancia y contribuir casos o retos",
+            "en": "Inform needs, validate relevance and contribute cases or challenges",
+            "va": "Informar necessitats, validar rellevància i contribuir casos o reptes"
+          }
+        },
+        {
+          "text": {
+            "es": "Acceder al repositorio de recursos OER y casos de éxito",
+            "en": "Access the OER resources repository and success cases",
+            "va": "Accedir al repositori de recursos OER i casos d'èxit"
+          }
+        },
+        {
+          "text": {
+            "es": "Participar en grupos de trabajo sectoriales",
+            "en": "Participate in sectorial working groups",
+            "va": "Participar en grups de treball sectorials"
+          }
+        },
+        {
+          "text": {
+            "es": "Recibir soluciones prototipadas de equipos del Máster AI-SECRETT",
+            "en": "Receive prototyped solutions from Master AI-SECRETT teams",
+            "va": "Rebre solucions prototipades d'equips del Màster AI-SECRETT"
+          }
+        },
+        {
+          "text": {
+            "es": "Conectar con los socios del consorcio y la red europea",
+            "en": "Connect with consortium partners and the European network",
+            "va": "Connectar amb els socis del consorcio i la xarxa europea"
+          }
+        }
+      ],
+      "warning": {
+        "es": "Los stakeholders operan exclusivamente en el Track B. No tienen acceso al espacio académico (Aules/Máster) salvo autorización expresa de UVEG.",
+        "en": "Stakeholders operate exclusively in Track B. They do not have access to the academic space (Aules/Master) unless expressly authorized by UVEG.",
+        "va": "Els stakeholders operen exclusivament en el Track B. No tindran accés a l'espai acadèmic (Aules/Màster) llevat que UVEG ho autorice expressament."
+      },
+      "buttonText": {
+        "es": "Solicitar Acuerdo de Colaboración",
+        "en": "Request Collaboration Agreement",
+        "va": "Solicitar Acord de Col·laboració"
+      },
+      "buttonUrl": "https://portal.edu.gva.es/aules/",
+      "buttonExternal": true
+    },
+    "consensueCard": {
+      "visible": true,
+      "title": {
+        "es": "Participa vía ConsensUE",
+        "en": "Participate via ConsensUE",
+        "va": "Participa vía ConsensUE"
+      },
+      "subtitle": {
+        "es": "Track B · Plataforma ConsensUE · Democracia Participativa",
+        "en": "Track B · ConsensUE Platform · Participatory Democracy",
+        "va": "Track B · Plataforma ConsensUE · Democràcia Participativa"
+      },
+      "description": {
+        "es": "ConsensUE es la plataforma democrática del ecosistema, basada en <strong>Decidim</strong> y gestionada por CEICE. Es el canal principal para que stakeholders y socios del consorcio propongan y debatan contenidos del Track B.",
+        "en": "ConsensUE is the ecosystem's democratic platform, based on <strong>Decidim</strong> and managed by CEICE. It's the main channel for stakeholders and consortium partners to propose and debate Track B content.",
+        "va": "ConsensUE és la plataforma democràtica de l'ecosistema, basada en <strong>Decidim</strong> i gestionada per CEICE. És el canal principal per a que stakeholders i socis del consorcio propongan i debatem continguts del Track B."
+      },
+      "groups": [
+        {
+          "id": "stakeholders",
+          "visible": true,
+          "who": {
+            "es": "Para Stakeholders (Track B)",
+            "en": "For Stakeholders (Track B)",
+            "va": "Per a Stakeholders (Track B)"
+          },
+          "actions": [
+            {
+              "text": {
+                "es": "Proponer retos al Banco de Retos",
+                "en": "Propose challenges to the Challenge Bank",
+                "va": "Proposar reptes al Banc de Reptes"
+              }
+            },
+            {
+              "text": {
+                "es": "Votar prioridades del próximo curso",
+                "en": "Vote on next year priorities",
+                "va": "Votar prioritats del pròxim curs"
+              }
+            },
+            {
+              "text": {
+                "es": "Participar en grupos de trabajo sectoriales",
+                "en": "Participate in sectorial working groups",
+                "va": "Participar en grups de treball sectorials"
+              }
+            },
+            {
+              "text": {
+                "es": "Consultas sobre políticas de la red",
+                "en": "Network policy consultations",
+                "va": "Consultes sobre polítiques de la xarxa"
+              }
+            }
+          ]
+        },
+        {
+          "id": "consortium",
+          "visible": true,
+          "who": {
+            "es": "Para Socios del Consorcio",
+            "en": "For Consortium Partners",
+            "va": "Per a Socis del Consorcio"
+          },
+          "actions": [
+            {
+              "text": {
+                "es": "Proponer recursos OER y casos de éxito",
+                "en": "Propose OER resources and success cases",
+                "va": "Proposar recursos OER i casos d'èxit"
+              }
+            },
+            {
+              "text": {
+                "es": "Debatir modificaciones de gobernanza",
+                "en": "Debate governance modifications",
+                "va": "Debatre modificacions de governança"
+              }
+            },
+            {
+              "text": {
+                "es": "Convocar consultas a la red",
+                "en": "Convene network consultations",
+                "va": "Convocar consultes a la xarxa"
+              }
+            },
+            {
+              "text": {
+                "es": "Coordinar nodos distribuidos",
+                "en": "Coordinate distributed nodes",
+                "va": "Coordinar nodes distribuïts"
+              }
+            }
+          ]
+        }
+      ],
+      "buttonText": {
+        "es": "Ir a ConsensUE",
+        "en": "Go to ConsensUE",
+        "va": "Anar a ConsensUE"
+      },
+      "buttonUrl": "https://aules.edu.gva.es/formaciodelprofessorat",
+      "buttonExternal": true
+    },
+    "meetingsSection": {
+      "visible": true,
+      "title": {
+        "es": "Red de Stakeholders (SN) – Próximas Reuniones",
+        "en": "Stakeholder Network (SN) – Upcoming Meetings",
+        "va": "Xarxa de Stakeholders (SN) – Pròximes Reunions"
+      },
+      "subtitle": {
+        "es": "Coordinada por CEICE · Frecuencia semestral + online continua",
+        "en": "Coordinated by CEICE · Bi-annual frequency + continuous online",
+        "va": "Coordinada per CEICE · Freqüència semestral + online contínua"
+      },
+      "meetings": [
+        {
+          "id": "asamblea-3",
+          "date": "15 Jun 2026",
+          "title": {
+            "es": "Asamblea de la Red – Sesión 3",
+            "en": "Network Assembly – Session 3",
+            "va": "Assemblea de la Xarxa – Sessió 3"
+          },
+          "location": {
+            "es": "Conselleria de Educació, Valencia + Streaming",
+            "en": "Education Ministry, Valencia + Streaming",
+            "va": "Conselleria d'Educació, València + Streaming"
+          },
+          "registrationUrl": "https://aules.edu.gva.es/formaciodelprofessorat/login/index.php",
+          "registrationExternal": true,
+          "accessUrl": "https://teams.microsoft.com/meet/392333086027865?p=NJ3mn5mHNiHdLaZmSo",
+          "accessExternal": true
+        },
+        {
+          "id": "taller-ia-salud",
+          "date": "10 Jul 2026",
+          "title": {
+            "es": "Taller Sectorial: IA y Salud",
+            "en": "Sectorial Workshop: AI and Health",
+            "va": "Taller Sectorial: IA i Salut"
+          },
+          "location": {
+            "es": "Hospital La Fe + Online",
+            "en": "La Fe Hospital + Online",
+            "va": "Hospital La Fe + Online"
+          },
+          "registrationUrl": "",
+          "registrationExternal": false,
+          "accessUrl": "",
+          "accessExternal": false
+        },
+        {
+          "id": "foro-anual-2026",
+          "date": "18 Sep 2026",
+          "title": {
+            "es": "Foro Anual AI-STEAM Network",
+            "en": "AI-STEAM Network Annual Forum",
+            "va": "Fòrum Anual AI-STEAM Network"
+          },
+          "location": {
+            "es": "Ciudad Politécnica de la Innovación, Valencia",
+            "en": "Innovation Polytechnic City, Valencia",
+            "va": "Ciutat Politècnica de la Innovació, València"
+          },
+          "registrationUrl": "",
+          "registrationExternal": false,
+          "accessUrl": "",
+          "accessExternal": false
+        }
+      ]
+    }
   }
 };
