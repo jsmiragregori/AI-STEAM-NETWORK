@@ -503,51 +503,117 @@ function tabLbd(govT) {
 
 // ─── Tab 4: Documentos ───────────────────────────────────────────────────────
 
+function formatDocDate(dateStr) {
+  if (!dateStr) return '';
+  try {
+    const date = new Date(dateStr);
+    const lang = getLang();
+    const months_es = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+    const months_en = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const d = date.getDate();
+    const m = date.getMonth();
+    const y = date.getFullYear();
+    if (lang === 'es') return `${d} ${months_es[m]} ${y}`;
+    if (lang === 'en') return `${months_en[m]} ${d}, ${y}`;
+    if (lang === 'va') return `${d} ${months_es[m]} ${y}`;
+    return dateStr;
+  } catch {
+    return dateStr;
+  }
+}
+
 function tabDocumentos(govT) {
   const s   = govT?.tabContent_documentos || {};
-  const fallbackDocs = govT?.transparencyDocs || [];
   const cms = GOVERNANCE_CONFIG?.documentationBlock || {};
   const hasCmsDocs = Object.prototype.hasOwnProperty.call(cms, 'docs');
   const accessLabels = cms.accessLabels || { public: { es: '', en: '', va: '' }, partners: { es: '', en: '', va: '' } };
+  const pageSize = 12;
+  const pageSizeOptions = [12, 24, 48];
 
   function isPublic(doc) {
     return doc.access === 'public';
   }
 
-  const docsHtml = (hasCmsDocs && Array.isArray(cms.docs) ? cms.docs : []).map(doc => {
-    const pub = isPublic(doc);
-    const hasUrl = doc.url && doc.url.trim();
-    const linkText = pickLang(doc.linkText, doc.linkText?.es || 'Ver');
-    return `
-      <div class="flex flex-col p-4 rounded-xl border border-eu-border bg-white hover:border-eu-blue hover:bg-eu-bg transition-colors">
-        <div class="flex items-start gap-3 mb-3">
-          <span class="text-2xl shrink-0">${doc.icon || '📄'}</span>
-          <div class="flex-1 min-w-0">
-            <p class="font-semibold text-sm text-eu-text truncate">${doc.title || ''}</p>
-            <div class="flex items-center gap-2 mt-0.5 flex-wrap">
-              <span class="text-xs text-gray-500">${doc.date || ''}</span>
-              <span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${doc.type || ''}</span>
-              <span class="text-xs font-bold px-1.5 py-0.5 rounded ${pub ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}">
-                ${pickLang(pub ? accessLabels.public : accessLabels.partners, pub ? (s.accessPublic || 'Público') : (s.accessPartners || 'Partners'))}
-              </span>
+  function docMatchesSearch(doc, term) {
+    if (!term) return true;
+    const title = (doc.title || '').toLowerCase();
+    const type = (doc.type || '').toLowerCase();
+    const id = (doc.id || '').toLowerCase();
+    return title.includes(term) || type.includes(term) || id.includes(term);
+  }
+
+  function renderDocs() {
+    const allDocs = (hasCmsDocs && Array.isArray(cms.docs) ? cms.docs : []);
+    const searchQuery = document.getElementById('gov-doc-search')?.value?.toLowerCase() || '';
+    const filtered = allDocs.filter(doc => docMatchesSearch(doc, searchQuery));
+
+    if (filtered.length === 0) {
+      return `
+        <div class="col-span-full rounded-xl border border-eu-border bg-eu-bg p-8 text-center">
+          <p class="text-sm text-gray-600">${searchQuery ? 'No hay documentos que coincidan con la búsqueda.' : pickLang(cms.noDocsMessage, s.noDocsMessage || '')}</p>
+        </div>
+      `;
+    }
+
+    const actualPageSize = getState('govDocPageSize') || pageSize;
+    const isShowAll = actualPageSize === 'all';
+    const totalPages = isShowAll ? 1 : Math.ceil(filtered.length / actualPageSize);
+    const page = getState('govDocPage') || 0;
+    const safePage = Math.min(page, totalPages - 1);
+    const paged = isShowAll ? filtered : filtered.slice(safePage * actualPageSize, (safePage + 1) * actualPageSize);
+
+    const cardsHtml = paged.map(doc => {
+      const pub = isPublic(doc);
+      const hasUrl = doc.url && doc.url.trim();
+      const linkText = pickLang(doc.linkText, doc.linkText?.es || 'Ver');
+      return `
+        <div class="flex flex-col p-4 rounded-xl border border-eu-border bg-white hover:border-eu-blue hover:bg-eu-bg transition-colors">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-2xl shrink-0">${doc.icon || '📄'}</span>
+            <div class="flex-1 min-w-0">
+              <p class="font-semibold text-sm text-eu-text truncate">${doc.title || ''}</p>
+              <div class="flex items-center gap-2 mt-0.5 flex-wrap">
+                <span class="text-xs text-gray-500">${formatDocDate(doc.date)}</span>
+                <span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${doc.type || ''}</span>
+                <span class="text-xs font-bold px-1.5 py-0.5 rounded ${pub ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}">
+                  ${pickLang(pub ? accessLabels.public : accessLabels.partners, pub ? (s.accessPublic || 'Público') : (s.accessPartners || 'Partners'))}
+                </span>
+              </div>
             </div>
           </div>
+          ${hasUrl ? `
+          <a href="${doc.url}" ${doc.external ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-sm font-semibold text-eu-blue hover:text-eu-blue/80 transition-colors mt-auto pt-3 border-t border-eu-border">
+            ${linkText}
+            <i data-lucide="external-link" class="w-3 h-3"></i>
+          </a>
+          ` : '<div class="text-xs text-gray-400 mt-auto pt-3 border-t border-eu-border">Sin enlace</div>'}
         </div>
-        ${hasUrl ? `
-        <a href="${doc.url}" ${doc.external ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-sm font-semibold text-eu-blue hover:text-eu-blue/80 transition-colors mt-auto pt-3 border-t border-eu-border">
-          ${linkText}
-          <i data-lucide="external-link" class="w-3 h-3"></i>
-        </a>
-        ` : '<div class="text-xs text-gray-400 mt-auto pt-3 border-t border-eu-border">Sin enlace</div>'}
-      </div>
-    `;
-  }).join('');
+      `;
+    }).join('');
 
-  const noDocsContent = docsHtml.trim() === '' ? `
-    <div class="col-span-full rounded-xl border border-eu-border bg-eu-bg p-8 text-center">
-      <p class="text-sm text-gray-600">${pickLang(cms.noDocsMessage, s.noDocsMessage || '')}</p>
-    </div>
-  ` : '';
+    const paginationHtml = !isShowAll && totalPages > 1 ? `
+      <div class="flex gap-2 justify-center mt-4">
+        <button data-gov-doc-page="prev" class="px-3 py-1 rounded border cursor-pointer transition-colors ${safePage === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:border-eu-blue'} border-eu-border">← ${s.paginationPrev || 'Anterior'}</button>
+        <span class="px-3 py-1 text-xs text-gray-600">Página ${safePage + 1} de ${totalPages}</span>
+        <button data-gov-doc-page="next" class="px-3 py-1 rounded border cursor-pointer transition-colors ${safePage >= totalPages - 1 ? 'opacity-50 cursor-not-allowed' : 'hover:border-eu-blue'} border-eu-border">${s.paginationNext || 'Siguiente'} →</button>
+      </div>
+    ` : '';
+
+    const pageSizeSelector = pageSizeOptions && pageSizeOptions.length > 0 ? `
+      <div class="flex gap-2 justify-end mb-3">
+        ${pageSizeOptions.map(opt => `
+          <button data-gov-doc-pagesize="${opt}" class="px-2 py-1 rounded border cursor-pointer transition-colors text-xs font-semibold ${actualPageSize === opt ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">
+            ${opt}
+          </button>
+        `).join('')}
+        <button data-gov-doc-pagesize="all" class="px-2 py-1 rounded border cursor-pointer transition-colors text-xs font-semibold ${actualPageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">
+          Todo
+        </button>
+      </div>
+    ` : '';
+
+    return `${pageSizeSelector}<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-2">${cardsHtml}</div>${paginationHtml}`;
+  }
 
   return `
     <div>
@@ -556,7 +622,8 @@ function tabDocumentos(govT) {
       <h2 class="text-xl font-bold text-eu-text mb-2">${pickLang(cms.title, s.title || '')}</h2>
       <p class="text-sm text-gray-600 mb-7 max-w-2xl">${pickLang(cms.description, s.description || '')}</p>
       ` : ''}
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">${docsHtml}${noDocsContent}</div>
+      <input type="text" id="gov-doc-search" placeholder="Buscar por título, tipo o ID..." class="w-full px-4 py-2 rounded-lg border border-eu-border focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue mb-5" />
+      <div id="gov-docs-results">${renderDocs()}</div>
       ` : ''}
     </div>
   `;
@@ -730,6 +797,80 @@ export function mount() {
       main.innerHTML = render();
       mount();
       if (window.lucide) window.lucide.createIcons();
+    });
+  });
+
+  // Documentación: búsqueda
+  const docSearch = document.getElementById('gov-doc-search');
+  if (docSearch) {
+    docSearch.addEventListener('input', () => {
+      setState('govDocPage', 0); // Reset a página 1
+      const results = document.getElementById('gov-docs-results');
+      if (results) {
+        const govTab = document.querySelector('[data-gov-tab="documentos"]')?.closest('[data-gov-tab]');
+        const activeTab = document.querySelector('[data-gov-tab].active');
+        if (activeTab?.dataset.govTab === 'documentos') {
+          const govT = window.GOVERNANCE_CONFIG?.governanceTexts || {};
+          const tabContent = tabDocumentos(govT);
+          // Extraer solo la parte de documentos
+          const temp = document.createElement('div');
+          temp.innerHTML = tabContent;
+          const newResults = temp.querySelector('#gov-docs-results');
+          if (newResults) {
+            results.innerHTML = newResults.innerHTML;
+            mount();
+            if (window.lucide) window.lucide.createIcons();
+          }
+        }
+      }
+    });
+  }
+
+  // Documentación: paginación
+  document.querySelectorAll('[data-gov-doc-page]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const action = btn.dataset.govDocPage;
+      const currentPage = getState('govDocPage') || 0;
+      if (action === 'next') {
+        setState('govDocPage', currentPage + 1);
+      } else if (action === 'prev' && currentPage > 0) {
+        setState('govDocPage', currentPage - 1);
+      }
+      const results = document.getElementById('gov-docs-results');
+      if (results) {
+        const govT = window.GOVERNANCE_CONFIG?.governanceTexts || {};
+        const tabContent = tabDocumentos(govT);
+        const temp = document.createElement('div');
+        temp.innerHTML = tabContent;
+        const newResults = temp.querySelector('#gov-docs-results');
+        if (newResults) {
+          results.innerHTML = newResults.innerHTML;
+          mount();
+          if (window.lucide) window.lucide.createIcons();
+        }
+      }
+    });
+  });
+
+  // Documentación: selector de tamaño de página
+  document.querySelectorAll('[data-gov-doc-pagesize]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const size = btn.dataset.govDocPagesize === 'all' ? 'all' : parseInt(btn.dataset.govDocPagesize);
+      setState('govDocPageSize', size);
+      setState('govDocPage', 0); // Reset a página 1
+      const results = document.getElementById('gov-docs-results');
+      if (results) {
+        const govT = window.GOVERNANCE_CONFIG?.governanceTexts || {};
+        const tabContent = tabDocumentos(govT);
+        const temp = document.createElement('div');
+        temp.innerHTML = tabContent;
+        const newResults = temp.querySelector('#gov-docs-results');
+        if (newResults) {
+          results.innerHTML = newResults.innerHTML;
+          mount();
+          if (window.lucide) window.lucide.createIcons();
+        }
+      }
     });
   });
 }

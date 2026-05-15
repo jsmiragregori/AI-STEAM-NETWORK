@@ -1690,48 +1690,14 @@ export const GOVERNANCE_CONFIG = {
     },
     "docs": [
       {
-        "id": "consortium-agreement",
+        "id": "internal-progress-q1",
         "visible": true,
-        "order": 1,
-        "title": "Acuerdo de Consorcio AI-SECRETT v1.0",
-        "date": "Oct 2025",
-        "type": "Fundacional",
-        "access": "public",
-        "icon": "📄",
-        "url": "https://aules.edu.gva.es/formaciodelprofessorat",
-        "external": false,
-        "linkText": {
-          "es": "",
-          "en": "",
-          "va": ""
-        }
-      },
-      {
-        "id": "d1-2-governance",
-        "visible": true,
-        "order": 2,
-        "title": "D1.2 – AI STEAM Network: Conceptos Iniciales y Gobernanza",
-        "date": "Feb 2026",
-        "type": "Gobernanza",
-        "access": "public",
-        "icon": "🏛️",
-        "url": "https://aules.edu.gva.es/formaciodelprofessorat",
-        "external": false,
-        "linkText": {
-          "es": "",
-          "en": "",
-          "va": ""
-        }
-      },
-      {
-        "id": "collaboration-agreement-model",
-        "visible": true,
-        "order": 3,
-        "title": "Modelo de Acuerdo de Colaboración – Stakeholders",
-        "date": "Feb 2026",
-        "type": "Colaboración",
-        "access": "public",
-        "icon": "🤝",
+        "order": 10,
+        "title": "Informe de Progreso Interno Q1 2026",
+        "date": "2026-04-15",
+        "type": "Seguimiento",
+        "access": "partners",
+        "icon": "📈",
         "url": "",
         "external": false,
         "linkText": {
@@ -1745,61 +1711,10 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 4,
         "title": "Política de Contenidos y Licencias OER",
-        "date": "Mar 2026",
+        "date": "2026-03-15",
         "type": "Editorial",
         "access": "public",
         "icon": "📝",
-        "url": "",
-        "external": false,
-        "linkText": {
-          "es": "",
-          "en": "",
-          "va": ""
-        }
-      },
-      {
-        "id": "ethics-code",
-        "visible": true,
-        "order": 5,
-        "title": "Código Ético de Retos Industriales",
-        "date": "Feb 2026",
-        "type": "Ética",
-        "access": "public",
-        "icon": "⚖️",
-        "url": "https://aules.edu.gva.es/formaciodelprofessorat",
-        "external": false,
-        "linkText": {
-          "es": "",
-          "en": "",
-          "va": ""
-        }
-      },
-      {
-        "id": "dmp",
-        "visible": true,
-        "order": 6,
-        "title": "Plan de Gestión de Datos (DMP)",
-        "date": "Oct 2025",
-        "type": "Técnico",
-        "access": "partners",
-        "icon": "🗄️",
-        "url": "",
-        "external": false,
-        "linkText": {
-          "es": "",
-          "en": "",
-          "va": ""
-        }
-      },
-      {
-        "id": "ga-minutes-1",
-        "visible": true,
-        "order": 7,
-        "title": "Actas Asamblea General – Sesión 1",
-        "date": "Nov 2025",
-        "type": "Actas",
-        "access": "partners",
-        "icon": "📋",
         "url": "",
         "external": false,
         "linkText": {
@@ -1813,44 +1728,10 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 8,
         "title": "Actas Comité Directivo – Q1 2026",
-        "date": "Mar 2026",
+        "date": "2026-03-15",
         "type": "Actas",
         "access": "partners",
         "icon": "📋",
-        "url": "",
-        "external": false,
-        "linkText": {
-          "es": "",
-          "en": "",
-          "va": ""
-        }
-      },
-      {
-        "id": "ethics-declaration",
-        "visible": true,
-        "order": 9,
-        "title": "Declaración Ética y Conflictos de Interés",
-        "date": "Oct 2025",
-        "type": "Ética",
-        "access": "public",
-        "icon": "🔍",
-        "url": "",
-        "external": false,
-        "linkText": {
-          "es": "",
-          "en": "",
-          "va": ""
-        }
-      },
-      {
-        "id": "internal-progress-q1",
-        "visible": true,
-        "order": 10,
-        "title": "Informe de Progreso Interno Q1 2026",
-        "date": "Abr 2026",
-        "type": "Seguimiento",
-        "access": "partners",
-        "icon": "📈",
         "url": "",
         "external": false,
         "linkText": {
@@ -1864,10 +1745,78 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 11,
         "title": "Manual de Usuario – ConsensUE para Stakeholders",
-        "date": "Mar 2026",
+        "date": "2026-03-15",
         "type": "Operativo",
         "access": "public",
         "icon": "📘",
+        "url": "",
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      {
+        "id": "d1-2-governance",
+        "visible": true,
+        "order": 2,
+        "title": "D1.2 – AI STEAM Network: Conceptos Iniciales y Gobernanza",
+        "date": "2026-02-15",
+        "type": "Gobernanza",
+        "access": "public",
+        "icon": "🏛️",
+        "url": "https://aules.edu.gva.es/formaciodelprofessorat",
+        "external": true,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      {
+        "id": "collaboration-agreement-model",
+        "visible": true,
+        "order": 3,
+        "title": "Modelo de Acuerdo de Colaboración – Stakeholders",
+        "date": "2026-02-15",
+        "type": "Colaboración",
+        "access": "public",
+        "icon": "🤝",
+        "url": "",
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      {
+        "id": "ethics-code",
+        "visible": true,
+        "order": 5,
+        "title": "Código Ético de Retos Industriales",
+        "date": "2026-02-15",
+        "type": "Ética",
+        "access": "public",
+        "icon": "⚖️",
+        "url": "https://aules.edu.gva.es/formaciodelprofessorat",
+        "external": true,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      {
+        "id": "ga-minutes-1",
+        "visible": true,
+        "order": 7,
+        "title": "Actas Asamblea General – Sesión 1",
+        "date": "2025-11-15",
+        "type": "Actas",
+        "access": "partners",
+        "icon": "📋",
         "url": "",
         "external": false,
         "linkText": {
@@ -1881,10 +1830,61 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 12,
         "title": "Política de Igualdad de Género y Diversidad",
-        "date": "Nov 2025",
+        "date": "2025-11-15",
         "type": "RRHH",
         "access": "public",
         "icon": "⚧",
+        "url": "",
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      {
+        "id": "consortium-agreement",
+        "visible": true,
+        "order": 1,
+        "title": "Acuerdo de Consorcio AI-SECRETT v1.0",
+        "date": "2025-10-15",
+        "type": "Fundacional",
+        "access": "public",
+        "icon": "📄",
+        "url": "https://aules.edu.gva.es/formaciodelprofessorat",
+        "external": true,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      {
+        "id": "dmp",
+        "visible": true,
+        "order": 6,
+        "title": "Plan de Gestión de Datos (DMP)",
+        "date": "2025-10-15",
+        "type": "Técnico",
+        "access": "partners",
+        "icon": "🗄️",
+        "url": "",
+        "external": false,
+        "linkText": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      {
+        "id": "ethics-declaration",
+        "visible": true,
+        "order": 9,
+        "title": "Declaración Ética y Conflictos de Interés",
+        "date": "2025-10-15",
+        "type": "Ética",
+        "access": "public",
+        "icon": "🔍",
         "url": "",
         "external": false,
         "linkText": {
