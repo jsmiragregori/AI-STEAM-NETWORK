@@ -4,18 +4,40 @@ import { getState, setState } from '../state.js';
 import { HEADER_CONFIG } from '../../data/header.js';
 import { NAV_CONFIG } from '../../data/navigation.js';
 
-function langBtn(code, lang) {
-  const active = lang === code;
-  return `<button data-lang="${code}" aria-label="Cambiar idioma a ${code.toUpperCase()}" style="min-height:44px;min-width:44px" class="cursor-pointer px-2 rounded transition-colors whitespace-nowrap text-sm font-semibold ${
-    active ? 'text-eu-text font-bold bg-gray-100' : 'text-gray-700 hover:text-eu-blue hover:bg-gray-100'
-  }">${code.toUpperCase()}</button>`;
+const DEFAULT_LANGUAGES = [
+  { code: 'en', label: 'EN', bcp47: 'en' },
+  { code: 'es', label: 'ES', bcp47: 'es' },
+  { code: 'va', label: 'VA', bcp47: 'ca-valencia' },
+];
+
+function getHeaderLanguages() {
+  const configured = Array.isArray(HEADER_CONFIG?.languages) ? HEADER_CONFIG.languages : [];
+  const valid = configured
+    .filter(item => item && typeof item.code === 'string' && item.code.trim())
+    .map(item => ({
+      code: item.code.trim(),
+      label: String(item.label || item.code).trim(),
+      bcp47: String(item.bcp47 || item.code).trim(),
+    }));
+  return valid.length ? valid : DEFAULT_LANGUAGES;
 }
 
-function langBtnMobile(code, lang) {
+function langBtn(language, lang) {
+  const code = language.code;
+  const label = language.label || code.toUpperCase();
   const active = lang === code;
-  return `<button data-lang="${code}" class="flex-1 px-3 py-2 rounded font-bold transition-all min-h-10 flex items-center justify-center text-sm ${
+  return `<button data-lang="${code}" lang="${language.bcp47 || code}" aria-label="Cambiar idioma a ${label}" style="min-height:44px;min-width:44px" class="cursor-pointer px-2 rounded transition-colors whitespace-nowrap text-sm font-semibold ${
+    active ? 'text-eu-text font-bold bg-gray-100' : 'text-gray-700 hover:text-eu-blue hover:bg-gray-100'
+  }">${label}</button>`;
+}
+
+function langBtnMobile(language, lang) {
+  const code = language.code;
+  const label = language.label || code.toUpperCase();
+  const active = lang === code;
+  return `<button data-lang="${code}" lang="${language.bcp47 || code}" class="flex-1 px-3 py-2 rounded font-bold transition-all min-h-10 flex items-center justify-center text-sm ${
     active ? 'bg-eu-yellow text-eu-blue shadow-lg' : 'bg-white/40 text-white hover:bg-white/60 active:bg-white/50'
-  }">${code.toUpperCase()}</button>`;
+  }">${label}</button>`;
 }
 
 function renderDesktopButtons() {
@@ -50,6 +72,12 @@ export function renderHeader() {
   const lang = getLanguage();
   const active = getActiveView();
   const mobileOpen = getState('mobileMenuOpen');
+  const languages = getHeaderLanguages();
+  const desktopLangButtons = languages.map((language, index) => `
+            ${index > 0 ? '<span class="text-gray-400">|</span>' : ''}
+            ${langBtn(language, lang)}
+          `).join('');
+  const mobileLangButtons = languages.map(language => langBtnMobile(language, lang)).join('');
 
   const desktopNav = NAV_CONFIG.items.map(item => `
     <button data-view="${item.id}" class="text-sm font-medium flex items-center px-3 cursor-pointer border-b-[3px] transition-all duration-200 whitespace-nowrap h-full ${
@@ -87,11 +115,7 @@ export function renderHeader() {
         <!-- Desktop right actions (lg+) -->
         <div class="hidden lg:flex items-center gap-3">
           <div class="flex items-center font-semibold text-gray-700 gap-2">
-            ${langBtn('en', lang)}
-            <span class="text-gray-400">|</span>
-            ${langBtn('es', lang)}
-            <span class="text-gray-400">|</span>
-            ${langBtn('va', lang)}
+            ${desktopLangButtons}
           </div>
           <div class="flex items-center gap-2 border-l border-eu-border pl-4">
             ${renderDesktopButtons()}
@@ -118,9 +142,7 @@ export function renderHeader() {
         <div class="border-t border-eu-blue/20 px-6 py-4">
           <p class="text-xs text-white/80 font-bold uppercase mb-3 tracking-wide">${t('header.language')}</p>
           <div class="flex gap-2">
-            ${langBtnMobile('en', lang)}
-            ${langBtnMobile('es', lang)}
-            ${langBtnMobile('va', lang)}
+            ${mobileLangButtons}
           </div>
         </div>
         <div class="border-t border-eu-blue/20 px-4 sm:px-6 py-6 space-y-3">
