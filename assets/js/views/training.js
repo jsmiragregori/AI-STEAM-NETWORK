@@ -28,36 +28,89 @@ function statusColor(status) {
   return 'text-gray-600 bg-gray-100';
 }
 
+function getActiveFilters(tab) {
+  const filterKey = `trainingFilters_${tab}`;
+  return JSON.parse(localStorage.getItem(filterKey) || '{"sectors":[],"modalities":[],"tags":[]}');
+}
+
+function setActiveFilters(tab, filters) {
+  const filterKey = `trainingFilters_${tab}`;
+  localStorage.setItem(filterKey, JSON.stringify(filters));
+}
+
+function filterCourses(courses, filters) {
+  return courses.filter(course => {
+    const sectorMatch = filters.sectors.length === 0 || course.sectorIds?.some(s => filters.sectors.includes(s));
+    const modalityMatch = filters.modalities.length === 0 || (course.modalityId && filters.modalities.includes(course.modalityId));
+    const tagMatch = filters.tags.length === 0 || course.tagIds?.some(t => filters.tags.includes(t));
+    return sectorMatch && modalityMatch && tagMatch;
+  });
+}
+
 function getCourses(trainingT) {
+  const cmsConfig = TRAINING_CONFIG?.coursesBlock;
+  if (cmsConfig?.courses?.length > 0) {
+    // Crear mapas de lookup para resolver IDs a labels
+    const sectorsMap = {};
+    const modalitiesMap = {};
+    (cmsConfig.sectors || []).forEach(s => { sectorsMap[s.id] = s.label; });
+    (cmsConfig.modalities || []).forEach(m => { modalitiesMap[m.id] = m.label; });
+
+    return cmsConfig.courses.map((course, idx) => ({
+      id: course.id,
+      title: pickLang(course.title, ''),
+      level: course.level,
+      sectorIds: course.sectorIds || [],
+      sectors: (course.sectorIds || []).map(sectorId => pickLang(sectorsMap[sectorId], sectorId)),
+      hours: COURSE_HOURS[idx] || 0,
+      enrolled: COURSE_ENROLLED[idx] || 0,
+      rating: COURSE_RATING[idx] || 0,
+      partner: COURSE_PARTNERS[idx] || '',
+      description: pickLang(course.description, ''),
+      modalityId: course.modalityId || '',
+      modality: pickLang(modalitiesMap[course.modalityId], course.modalityId),
+      status: course.status,
+      tagIds: course.tagIds || [],
+    }));
+  }
+  // Fallback to translations if no CMS courses
   const coursesObj = trainingT?.courses || {};
   return Object.values(coursesObj).map((course, idx) => ({
     id: `c${idx + 1}`,
-    title:       course.title,
-    level:       course.level,
-    sector:      course.sector,
-    hours:       COURSE_HOURS[idx],
-    enrolled:    COURSE_ENROLLED[idx],
-    rating:      COURSE_RATING[idx],
-    partner:     COURSE_PARTNERS[idx],
-    badge:       course.badge,
+    title: course.title,
+    level: course.level,
+    sectorIds: [],
+    sectors: [course.sector] || [],
+    hours: COURSE_HOURS[idx],
+    enrolled: COURSE_ENROLLED[idx],
+    rating: COURSE_RATING[idx],
+    partner: COURSE_PARTNERS[idx],
     description: course.desc,
-    modality:    COURSE_MODALITY[idx],
-    status:      course.status,
+    modalityId: '',
+    modality: COURSE_MODALITY[idx],
+    status: course.status,
+    tagIds: [],
   }));
 }
 
-function courseCard(course, trainingT, isMaster = false) {
+function courseCard(course, trainingT, isMaster = false, courseTags = [], activeTab = 'fp', activeFilters = { sectors: [], modalities: [], tags: [] }) {
   const statusLabels   = trainingT?.statusLabels   || {};
   const levelLabels    = trainingT?.levelLabels    || {};
   const modalityLabels = trainingT?.modalityLabels || {};
-  const sectorLabels   = trainingT?.sectorLabels   || {};
 
   const statusLabel   = statusLabels[course.status]   || course.status;
   const levelLabel    = levelLabels[course.level]     || course.level;
   const modalityLabel = modalityLabels[course.modality] || course.modality;
-  const sectorLabel   = sectorLabels[course.sector]   || course.sector;
+  const courseSectorLabels = course.sectors || [];
   const href = isMaster ? 'https://valgrai.eu' : 'https://portal.edu.gva.es/aules/';
   const viewLabel = isMaster ? 'Ver' : (trainingT?.courseViewMore || '');
+
+  const chipsHtml = (course.tagIds || []).map(chipId => {
+    const chip = courseTags.find(c => c.id === chipId);
+    if (!chip) return '';
+    const isActive = activeFilters.tags.includes(chipId);
+    return `<button data-filter-tag="${chipId}" class="text-xs font-medium px-2 py-1 rounded-full transition-colors cursor-pointer ${isActive ? 'bg-eu-blue text-white border border-eu-blue' : 'bg-eu-blue/10 text-eu-blue border border-eu-blue/20 hover:bg-eu-blue/20'}">${pickLang(chip.label, chipId)}</button>`;
+  }).join('');
 
   return `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col overflow-hidden hover:border-eu-blue transition-colors">
@@ -77,17 +130,18 @@ function courseCard(course, trainingT, isMaster = false) {
           <span class="flex items-center gap-1"><i data-lucide="star" class="w-3 h-3 text-yellow-500"></i>${course.rating}</span>
         </div>
         <div class="flex flex-wrap gap-2">
-          <span class="text-sm bg-eu-bg border border-eu-border px-2 py-0.5 rounded font-semibold text-gray-600 whitespace-nowrap">${sectorLabel}</span>
-          <span class="text-sm bg-eu-bg border border-eu-border px-2 py-0.5 rounded font-semibold text-gray-600 whitespace-nowrap">${modalityLabel}</span>
+          ${(course.sectorIds || []).map((sectorId, idx) => {
+            const isActive = activeFilters.sectors.includes(sectorId);
+            const sectorLabel = courseSectorLabels[idx] || sectorId;
+            return `<button data-filter-sector="${sectorId}" class="text-sm font-semibold px-2 py-0.5 rounded whitespace-nowrap transition-colors cursor-pointer ${isActive ? 'bg-eu-blue text-white border border-eu-blue' : 'bg-eu-bg border border-eu-border text-gray-600 hover:border-eu-blue'}">${sectorLabel}</button>`;
+          }).join('')}
+          ${course.modalityId ? `<button data-filter-modality="${course.modalityId}" class="text-xs px-2 py-0.5 rounded font-bold whitespace-nowrap transition-colors cursor-pointer ${activeFilters.modalities.includes(course.modalityId) ? 'bg-purple-600 text-white' : 'bg-purple-100 text-purple-700 border border-purple-300 hover:bg-purple-200'}">${modalityLabel}</button>` : ''}
         </div>
+        ${chipsHtml ? `<div class="flex flex-wrap gap-2 mt-3">${chipsHtml}</div>` : ''}
       </div>
-      <div class="border-t border-eu-border p-3 flex items-center justify-between bg-eu-bg">
-        <div class="flex items-center gap-1.5 min-w-0 flex-1">
-          <i data-lucide="award" class="w-3 h-3 text-eu-orange shrink-0"></i>
-          <span class="text-sm font-bold text-eu-orange truncate">${course.badge}</span>
-        </div>
+      <div class="border-t border-eu-border p-3 flex items-center justify-end bg-eu-bg">
         <a href="${href}" target="_blank" rel="noopener noreferrer"
-           class="text-eu-blue font-bold text-xs cursor-pointer hover:underline inline-flex items-center gap-1 shrink-0 ml-2">
+           class="text-eu-blue font-bold text-xs cursor-pointer hover:underline inline-flex items-center gap-1 shrink-0">
           ${viewLabel} <i data-lucide="external-link" class="w-3 h-3"></i>
         </a>
       </div>
@@ -107,10 +161,24 @@ function pathSteps(steps, color) {
   `).join('');
 }
 
-function tabContent(activeTab, courses, trainingT, sections) {
-  const fpCourses      = courses.filter(c => c.level === 'FP');
-  const teacherCourses = courses.filter(c => c.level === 'Docentes');
-  const masterCourses  = courses.filter(c => c.level === 'Máster');
+function tabContent(activeTab, courses, trainingT, sections, courseTags = [], emptyMessage = {}) {
+  const cmsConfig = TRAINING_CONFIG?.coursesBlock || {};
+  const filters = getActiveFilters(activeTab);
+
+  // Filter courses by level and active filters
+  let fpCourses      = courses.filter(c => c.level === 'FP');
+  let teacherCourses = courses.filter(c => c.level === 'Docentes');
+  let masterCourses  = courses.filter(c => c.level === 'Máster');
+
+  // Apply active filters
+  fpCourses = filterCourses(fpCourses, filters);
+  teacherCourses = filterCourses(teacherCourses, filters);
+  masterCourses = filterCourses(masterCourses, filters);
+
+  // Build clear filters button if needed
+  const hasActiveFilters = filters.sectors.length > 0 || filters.modalities.length > 0 || filters.tags.length > 0;
+  const clearFiltersHtml = hasActiveFilters ? `<div class="mb-6"><button data-clear-filters class="text-sm px-4 py-2 rounded-lg font-bold bg-red-50 text-red-700 border border-red-300 hover:bg-red-100 transition-colors">✕ Limpiar filtros</button></div>` : '';
+  const filterChipsHtml = clearFiltersHtml;
 
   // Encontrar sección CMS correspondiente
   const sectionMap = {
@@ -144,9 +212,15 @@ function tabContent(activeTab, courses, trainingT, sections) {
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">${skillsHtml}</div>
       </div>` : ''}
+      ${filterChipsHtml}
+      ${fpCourses.length > 0 ? `
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
-        ${fpCourses.map(c => courseCard(c, trainingT)).join('')}
-      </div>
+        ${fpCourses.map(c => courseCard(c, trainingT, false, courseTags, activeTab, filters)).join('')}
+      </div>` : `
+      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-8 mb-10 text-center">
+        <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+        <p class="text-gray-600 text-base">${pickLang(emptyMessage, '')}</p>
+      </div>`}
       <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6">
         <h3 class="font-bold text-eu-text mb-4">${trainingT?.fpPath || ''}</h3>
         <div class="flex flex-wrap items-center gap-2">${pathSteps(trainingT?.fpPathSteps, 'bg-eu-orange')}</div>
@@ -178,9 +252,15 @@ function tabContent(activeTab, courses, trainingT, sections) {
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${topicsHtml}</div>
       </div>` : ''}
+      ${filterChipsHtml}
+      ${teacherCourses.length > 0 ? `
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        ${teacherCourses.map(c => courseCard(c, trainingT)).join('')}
-      </div>`;
+        ${teacherCourses.map(c => courseCard(c, trainingT, false, courseTags, activeTab, filters)).join('')}
+      </div>` : `
+      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-8 text-center">
+        <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+        <p class="text-gray-600 text-base">${pickLang(emptyMessage, '')}</p>
+      </div>`}`;
   }
 
   // master
@@ -213,9 +293,15 @@ function tabContent(activeTab, courses, trainingT, sections) {
       </h2>
       <div class="space-y-3">${masterSkillsHtml}</div>
     </div>` : ''}
+    ${filterChipsHtml}
+    ${masterCourses.length > 0 ? `
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
-      ${masterCourses.map(c => courseCard(c, trainingT, true)).join('')}
-    </div>
+      ${masterCourses.map(c => courseCard(c, trainingT, true, courseTags, activeTab, filters)).join('')}
+    </div>` : `
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-8 mb-8 text-center">
+      <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+      <p class="text-gray-600 text-base">${pickLang(emptyMessage, '')}</p>
+    </div>`}
     <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6">
       <h3 class="font-bold text-eu-text mb-4">${trainingT?.masterPath || ''}</h3>
       <div class="flex flex-wrap items-center gap-2">${pathSteps(trainingT?.masterPathSteps, 'bg-purple-600')}</div>
@@ -225,8 +311,11 @@ function tabContent(activeTab, courses, trainingT, sections) {
 export function render() {
   const trainingT = t('training') || {};
   const activeTab = getState('trainingTab') || 'fp';
-  const courses   = getCourses(trainingT);
+  const coursesBlock = TRAINING_CONFIG?.coursesBlock || {};
+  const coursesBlockVisible = coursesBlock.visible !== false;
+  const courses   = coursesBlockVisible ? getCourses(trainingT) : [];
   const sections  = TRAINING_CONFIG?.sectionsBlock || [];
+  const courseTags = coursesBlock.courseTags || [];
 
   const totalEnrolled = courses.reduce((a, c) => a + c.enrolled, 0).toLocaleString();
 
@@ -281,21 +370,80 @@ export function render() {
       <!-- Tabs + content -->
       <div class="max-w-7xl mx-auto px-6 py-10">
         <div class="flex flex-wrap gap-2 mb-8 border-b border-eu-border pb-4">${tabsHtml}</div>
-        ${tabContent(activeTab, courses, trainingT, sections)}
+        ${tabContent(activeTab, courses, trainingT, sections, courseTags, coursesBlock.emptyMessage || {})}
       </div>
     </div>
   `;
 }
 
 export function mount() {
+  const activeTab = getState('trainingTab') || 'fp';
+
+  // Tab navigation
   document.querySelectorAll('[data-tab]').forEach(btn => {
     btn.addEventListener('click', () => {
       setState('trainingTab', btn.dataset.tab);
-      // Re-render solo el main-root para no perder la posición de scroll
       const main = document.getElementById('main-root');
       main.innerHTML = render();
       mount();
       if (window.lucide) window.lucide.createIcons();
     });
+  });
+
+  // Filter chips - Sector
+  document.querySelectorAll('[data-filter-sector]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const filters = getActiveFilters(activeTab);
+      const sectorId = btn.dataset.filterSector;
+      const idx = filters.sectors.indexOf(sectorId);
+      if (idx > -1) filters.sectors.splice(idx, 1);
+      else filters.sectors.push(sectorId);
+      setActiveFilters(activeTab, filters);
+      const main = document.getElementById('main-root');
+      main.innerHTML = render();
+      mount();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  });
+
+  document.querySelectorAll('[data-filter-modality]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filters = getActiveFilters(activeTab);
+      const modalityId = btn.dataset.filterModality;
+      const idx = filters.modalities.indexOf(modalityId);
+      if (idx > -1) filters.modalities.splice(idx, 1);
+      else filters.modalities.push(modalityId);
+      setActiveFilters(activeTab, filters);
+      const main = document.getElementById('main-root');
+      main.innerHTML = render();
+      mount();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  });
+
+  document.querySelectorAll('[data-filter-tag]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const filters = getActiveFilters(activeTab);
+      const tagId = btn.dataset.filterTag;
+      const idx = filters.tags.indexOf(tagId);
+      if (idx > -1) filters.tags.splice(idx, 1);
+      else filters.tags.push(tagId);
+      setActiveFilters(activeTab, filters);
+      const main = document.getElementById('main-root');
+      main.innerHTML = render();
+      mount();
+      if (window.lucide) window.lucide.createIcons();
+    });
+  });
+
+  // Clear filters button
+  document.querySelector('[data-clear-filters]')?.addEventListener('click', () => {
+    setActiveFilters(activeTab, { sectors: [], modalities: [], tags: [] });
+    const main = document.getElementById('main-root');
+    main.innerHTML = render();
+    mount();
+    if (window.lucide) window.lucide.createIcons();
   });
 }
