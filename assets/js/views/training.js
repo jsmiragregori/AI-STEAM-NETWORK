@@ -2,9 +2,6 @@ import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { TRAINING_CONFIG } from '../../data/training.js';
 
-const COURSE_HOURS     = [60, 90, 30, 45, 80, 50, 70, 40];
-const COURSE_ENROLLED  = [312, 87, 524, 198, 54, 143, 72, 211];
-const COURSE_RATING    = [4.7, 4.9, 4.8, 4.6, 4.8, 4.5, 4.7, 4.4];
 const COURSE_PARTNERS  = ['UVEG / CEICE', "Ud'A / UVEG", 'CEICE / Inspiring Futures Europe', 'AVA-ASAJA / CINK', 'INESC TEC / HSW', 'Region Värmland / NTNU', 'KEA / ESAD-GV / LPGA', 'LC / CEICE'];
 const COURSE_MODALITY  = ['Semipresencial', 'Online', 'Online', 'Semipresencial', 'Online', 'Online', 'Online', 'Online'];
 
@@ -67,9 +64,9 @@ function getCourses(trainingT) {
       level: course.level,
       sectorIds: course.sectorIds || [],
       sectors: (course.sectorIds || []).map(sectorId => pickLang(sectorsMap[sectorId], sectorId)),
-      hours: COURSE_HOURS[idx] || 0,
-      enrolled: COURSE_ENROLLED[idx] || 0,
-      rating: COURSE_RATING[idx] || 0,
+      hours:    course.hours    ?? null,
+      enrolled: course.enrolled ?? null,
+      rating:   course.rating   ?? null,
       partner: COURSE_PARTNERS[idx] || '',
       description: pickLang(course.description, ''),
       modalityId: course.modalityId || '',
@@ -87,9 +84,9 @@ function getCourses(trainingT) {
     level: course.level,
     sectorIds: [],
     sectors: [course.sector] || [],
-    hours: COURSE_HOURS[idx],
-    enrolled: COURSE_ENROLLED[idx],
-    rating: COURSE_RATING[idx],
+    hours:    null,
+    enrolled: null,
+    rating:   null,
     partner: COURSE_PARTNERS[idx],
     description: course.desc,
     modalityId: '',
@@ -134,9 +131,9 @@ function courseCard(course, trainingT, isMaster = false, courseTags = [], active
         <h3 class="font-bold text-eu-text text-sm mb-2 leading-snug">${course.title}</h3>
         <p class="text-xs text-gray-500 mb-3">${course.description}</p>
         <div class="flex flex-wrap gap-2 text-sm text-gray-600 mb-3">
-          <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i>${course.hours}${trainingT?.courseHours || ''}</span>
-          <span class="flex items-center gap-1"><i data-lucide="users" class="w-3 h-3"></i>${course.enrolled} ${trainingT?.courseEnrolledLabel || ''}</span>
-          <span class="flex items-center gap-1"><i data-lucide="star" class="w-3 h-3 text-yellow-500"></i>${course.rating}</span>
+          ${course.hours    != null ? `<span class="flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i>${course.hours}${trainingT?.courseHours || ''}</span>` : ''}
+          ${course.enrolled != null ? `<span class="flex items-center gap-1"><i data-lucide="users" class="w-3 h-3"></i>${course.enrolled} ${trainingT?.courseEnrolledLabel || ''}</span>` : ''}
+          ${course.rating   != null ? `<span class="flex items-center gap-1"><i data-lucide="star" class="w-3 h-3 text-yellow-500"></i>${course.rating}</span>` : ''}
         </div>
         <div class="flex flex-wrap gap-2">
           ${(course.sectorIds || []).map((sectorId, idx) => {

@@ -574,15 +574,6 @@ export const TRAINING_CONFIG = {
         "tone": "warning"
       },
       {
-        "id": "completado",
-        "label": {
-          "es": "Completado",
-          "en": "Completed",
-          "va": "Completat"
-        },
-        "tone": "neutral"
-      },
-      {
         "id": "inscripcion",
         "label": {
           "es": "En inscripción",
@@ -616,6 +607,9 @@ export const TRAINING_CONFIG = {
         },
         "level": "FP",
         "statusId": "activo",
+        "hours": 60,
+        "enrolled": 312,
+        "rating": 4.7,
         "sectorIds": [
           "industria",
           "medio-ambiente"
@@ -642,6 +636,9 @@ export const TRAINING_CONFIG = {
         },
         "level": "Máster",
         "statusId": "activo",
+        "hours": 90,
+        "enrolled": 87,
+        "rating": 4.9,
         "sectorIds": [
           "salud"
         ],
@@ -665,6 +662,9 @@ export const TRAINING_CONFIG = {
         },
         "level": "Docentes",
         "statusId": "activo",
+        "hours": 30,
+        "enrolled": 524,
+        "rating": 4.8,
         "sectorIds": [
           "educacion-sector"
         ],
@@ -688,12 +688,15 @@ export const TRAINING_CONFIG = {
           "va": "Mòdul FP. Vols autònoms, anàlisi multiespectral i reg intel·ligent. Inclou pràctiques amb sensors reals en camp."
         },
         "level": "FP",
-        "statusId": "activo",
+        "statusId": "inscripcion",
+        "hours": 45,
+        "enrolled": 198,
+        "rating": 4.6,
         "sectorIds": [
           "agroalimentario",
           "medio-ambiente"
         ],
-        "modalityId": "semipresencial",
+        "modalityId": "online",
         "tagIds": [
           "ia-aplicada",
           "sostenibilidad",
@@ -715,6 +718,9 @@ export const TRAINING_CONFIG = {
         },
         "level": "Máster",
         "statusId": "activo",
+        "hours": 80,
+        "enrolled": 54,
+        "rating": 4.8,
         "sectorIds": [
           "industria"
         ],
@@ -739,6 +745,9 @@ export const TRAINING_CONFIG = {
         },
         "level": "FP",
         "statusId": "activo",
+        "hours": 50,
+        "enrolled": 143,
+        "rating": 4.5,
         "sectorIds": [
           "medio-ambiente"
         ],
@@ -764,6 +773,9 @@ export const TRAINING_CONFIG = {
         },
         "level": "Máster",
         "statusId": "proximo",
+        "hours": 70,
+        "enrolled": 72,
+        "rating": 4.7,
         "sectorIds": [
           "turismo-cultura"
         ],
@@ -787,6 +799,9 @@ export const TRAINING_CONFIG = {
         },
         "level": "Docentes",
         "statusId": "activo",
+        "hours": 40,
+        "enrolled": 211,
+        "rating": 4.4,
         "sectorIds": [
           "administracion"
         ],
