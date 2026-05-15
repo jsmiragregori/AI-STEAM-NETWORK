@@ -616,7 +616,7 @@ function tabDocumentos(govT) {
       </div>
     ` : '';
 
-    return `${pageSizeSelector}<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-2">${cardsHtml}</div>${paginationHtml}`;
+    return `${pageSizeSelector}<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 mb-2">${cardsHtml}</div>${paginationHtml}`;
   }
 
   return `
@@ -810,21 +810,17 @@ export function mount() {
     docSearch.addEventListener('input', () => {
       setState('govDocPage', 0); // Reset a página 1
       const results = document.getElementById('gov-docs-results');
-      if (results) {
-        const govTab = document.querySelector('[data-gov-tab="documentos"]')?.closest('[data-gov-tab]');
-        const activeTab = document.querySelector('[data-gov-tab].active');
-        if (activeTab?.dataset.govTab === 'documentos') {
-          const govT = window.GOVERNANCE_CONFIG?.governanceTexts || {};
-          const tabContent = tabDocumentos(govT);
-          // Extraer solo la parte de documentos
-          const temp = document.createElement('div');
-          temp.innerHTML = tabContent;
-          const newResults = temp.querySelector('#gov-docs-results');
-          if (newResults) {
-            results.innerHTML = newResults.innerHTML;
-            mount();
-            if (window.lucide) window.lucide.createIcons();
-          }
+      if (results && getState('governanceTab') === 'documentos') {
+        const govT = window.GOVERNANCE_CONFIG?.governanceTexts || {};
+        const tabContent = tabDocumentos(govT);
+        // Extraer solo la parte de documentos
+        const temp = document.createElement('div');
+        temp.innerHTML = tabContent;
+        const newResults = temp.querySelector('#gov-docs-results');
+        if (newResults) {
+          results.innerHTML = newResults.innerHTML;
+          mount();
+          if (window.lucide) window.lucide.createIcons();
         }
       }
     });
