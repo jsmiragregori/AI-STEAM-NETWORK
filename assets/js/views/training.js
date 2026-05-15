@@ -122,6 +122,7 @@ function tabContent(activeTab, courses, trainingT, sections) {
 
   if (activeTab === 'fp') {
     // Usar skills del CMS si están disponibles, sino fallback a traducciones
+    const skillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
     const skills = cmsSection?.skillsBlock?.skills || [];
     const skillsHtml = skills.length > 0
       ? skills.map(skill => `
@@ -136,12 +137,13 @@ function tabContent(activeTab, courses, trainingT, sections) {
     const sectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabFpVet || '') : (trainingT?.tabFpVet || '');
 
     return `
+      ${skillsBlockVisible ? `
       <div class="bg-eu-yellow/20 border border-eu-yellow rounded-xl p-6 mb-8">
         <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2">
           <i data-lucide="briefcase" class="w-5 h-5 text-eu-orange"></i>${sectionTitle}
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">${skillsHtml}</div>
-      </div>
+      </div>` : ''}
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
         ${fpCourses.map(c => courseCard(c, trainingT)).join('')}
       </div>
@@ -154,6 +156,7 @@ function tabContent(activeTab, courses, trainingT, sections) {
   if (activeTab === 'teacher') {
     // Usar skills del CMS si están disponibles (continuous-learning section)
     const teacherSection = sections.find(s => s.id === 'continuous-learning');
+    const skillsBlockVisible = teacherSection?.skillsBlock?.visible !== false;
     const skills = teacherSection?.skillsBlock?.skills || [];
     const topicsHtml = skills.length > 0
       ? skills.map(skill => `
@@ -168,12 +171,13 @@ function tabContent(activeTab, courses, trainingT, sections) {
     const sectionTitle = teacherSection ? pickLang(teacherSection.title, trainingT?.tabTeacherTraining || '') : (trainingT?.tabTeacherTraining || '');
 
     return `
+      ${skillsBlockVisible ? `
       <div class="bg-eu-blue/5 border border-eu-blue/20 rounded-xl p-6 mb-8">
         <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2">
           <i data-lucide="book-open" class="w-5 h-5 text-eu-blue"></i>${sectionTitle}
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${topicsHtml}</div>
-      </div>
+      </div>` : ''}
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         ${teacherCourses.map(c => courseCard(c, trainingT)).join('')}
       </div>`;
@@ -181,6 +185,7 @@ function tabContent(activeTab, courses, trainingT, sections) {
 
   // master
   const masterSection = sections.find(s => s.id === 'master-skills');
+  const masterSkillsBlockVisible = masterSection?.skillsBlock?.visible !== false;
   const masterSkills = masterSection?.skillsBlock?.skills || [];
   const masterSkillsHtml = masterSkills.length > 0
     ? masterSkills.map((skill, i) => `
@@ -201,12 +206,13 @@ function tabContent(activeTab, courses, trainingT, sections) {
       <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
       <p class="text-sm text-amber-800">${trainingT?.masterBridgeDisclaimer || ''}</p>
     </div>
+    ${masterSkillsBlockVisible ? `
     <div class="bg-purple-50 border border-purple-200 rounded-xl p-6 mb-8">
       <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2">
         <i data-lucide="graduation-cap" class="w-5 h-5 text-purple-700"></i>${masterSectionTitle}
       </h2>
       <div class="space-y-3">${masterSkillsHtml}</div>
-    </div>
+    </div>` : ''}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
       ${masterCourses.map(c => courseCard(c, trainingT, true)).join('')}
     </div>

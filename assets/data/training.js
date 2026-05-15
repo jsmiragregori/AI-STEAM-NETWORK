@@ -76,6 +76,7 @@ export const TRAINING_CONFIG = {
         "va": "FP · Habilitats i Empleabilitat"
       },
       "skillsBlock": {
+        "visible": false,
         "title": {
           "es": "Competencias clave",
           "en": "Key Competencies",
@@ -180,6 +181,7 @@ export const TRAINING_CONFIG = {
         "va": "Master · Habilitats i Empleabilitat"
       },
       "skillsBlock": {
+        "visible": true,
         "title": {
           "es": "Competencias avanzadas",
           "en": "Advanced Competencies",
@@ -275,6 +277,7 @@ export const TRAINING_CONFIG = {
         "va": "Aprenentatge Continu · Capacitació Docent"
       },
       "skillsBlock": {
+        "visible": true,
         "title": {
           "es": "Habilidades para la educación",
           "en": "Skills for Education",
