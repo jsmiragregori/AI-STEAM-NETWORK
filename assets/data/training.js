@@ -595,6 +595,7 @@ export const TRAINING_CONFIG = {
     "courses": [
       {
         "id": "ai-industria-fp",
+        "createdAt": "2026-01-08",
         "title": {
           "es": "Inteligencia Artificial Aplicada a la Industria 4.0",
           "en": "Artificial Intelligence Applied to Industry 4.0",
@@ -628,6 +629,7 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "ml-diagnostico-master",
+        "createdAt": "2026-01-23",
         "title": {
           "es": "Machine Learning para Diagnóstico Clínico",
           "en": "Machine Learning for Clinical Diagnosis",
@@ -658,6 +660,7 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "ia-etica-aula-docentes",
+        "createdAt": "2026-02-11",
         "title": {
           "es": "IA Ética y Uso Responsable en el Aula",
           "en": "Ethical AI and Responsible Use in the Classroom",
@@ -689,6 +692,7 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "agricultura-precision-fp",
+        "createdAt": "2026-02-27",
         "title": {
           "es": "Agricultura de Precisión con IA y Drones",
           "en": "Precision Agriculture with AI and Drones",
@@ -722,6 +726,7 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "gemelos-digitales-master",
+        "createdAt": "2026-03-14",
         "title": {
           "es": "Gemelos Digitales y Simulación para la Industria",
           "en": "Digital Twins and Simulation for Industry",
@@ -753,6 +758,7 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "monitorizacion-ambiental-fp",
+        "createdAt": "2026-04-02",
         "title": {
           "es": "Monitorización Ambiental con IoT e IA",
           "en": "Environmental Monitoring with IoT and AI",
@@ -785,6 +791,7 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "patrimonio-cultural-master",
+        "createdAt": "2026-04-22",
         "title": {
           "es": "IA Generativa para Patrimonio Cultural y Turismo",
           "en": "Generative AI for Cultural Heritage and Tourism",
@@ -815,6 +822,7 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "administracion-electronica-docentes",
+        "createdAt": "2026-05-07",
         "title": {
           "es": "Administración Electrónica e IA para el Sector Público",
           "en": "Electronic Administration and AI for the Public Sector",
