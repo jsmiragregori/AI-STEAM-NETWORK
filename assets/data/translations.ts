@@ -318,7 +318,7 @@ export const translations = {
       courseEnrolled: 'participantes',
       courseRating: 'Valoración',
       courseBadge: 'Insignia prototipo',
-      courseViewMore: 'Ver en Aules →',
+      courseViewMore: 'Ver curso →',
       courseHourSingular: 'hora',
       courseHourPlural: 'horas',
       courseEnrolledLabel: 'participantes',
@@ -1218,7 +1218,7 @@ export const translations = {
       courseEnrolled: 'participants',
       courseRating: 'Rating',
       courseBadge: 'Prototype badge',
-      courseViewMore: 'View on Aules →',
+      courseViewMore: 'View course →',
       courseHourSingular: 'hour',
       courseHourPlural: 'hours',
       courseEnrolledLabel: 'participants',
@@ -2689,4 +2689,3 @@ export const translations = {
     },
   },
 };
-

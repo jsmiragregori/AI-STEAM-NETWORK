@@ -1,5 +1,5 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR
-// Fuente: content/training/hero.yml, content/training/sections.yml, content/training/courses.yml
+// Fuente: content/training/hero.yml, content/training/sections.yml, content/training/courses/
 
 export const TRAINING_CONFIG = {
   "heroBlock": {
@@ -181,6 +181,7 @@ export const TRAINING_CONFIG = {
         "steps": [
           {
             "id": "cfgs",
+            "order": 1,
             "text": {
               "es": "Ciclo Formativo de Grado Superior (CFGS)",
               "en": "Upper Secondary VET Cycle (CFGS)",
@@ -189,6 +190,7 @@ export const TRAINING_CONFIG = {
           },
           {
             "id": "modul-especializacion",
+            "order": 2,
             "text": {
               "es": "Módulo de especialización IA-STEAM (Aules)",
               "en": "AI-STEAM specialisation subject (Aules)",
@@ -197,6 +199,7 @@ export const TRAINING_CONFIG = {
           },
           {
             "id": "proyecto-intermodular",
+            "order": 3,
             "text": {
               "es": "Proyecto intermodular con reto del ecosistema",
               "en": "Cross-subject project with ecosystem challenge",
@@ -205,6 +208,7 @@ export const TRAINING_CONFIG = {
           },
           {
             "id": "portfolio-evidencias",
+            "order": 4,
             "text": {
               "es": "Portfolio de evidencias del alumnado",
               "en": "Student evidence portfolio",
@@ -684,69 +688,6 @@ export const TRAINING_CONFIG = {
         }
       },
       {
-        "id": "ml-diagnostico-master",
-        "createdAt": "2026-01-23",
-        "title": {
-          "es": "Machine Learning para Diagnóstico Clínico",
-          "en": "Machine Learning for Clinical Diagnosis",
-          "va": "Aprenentatge de Màquina per a Diagnòstic Clínic"
-        },
-        "description": {
-          "es": "Módulo de profundización — candidato a puente con el Track A. CNN aplicadas a radiología, NLP clínico y apoyo a la decisión médica.",
-          "en": "In-depth module — candidate for Track A bridge. CNNs applied to radiology, clinical NLP and medical decision support.",
-          "va": "Mòdul d'aprofundiment — candidat a pont amb el Track A. CNNs aplicades a radiologia, NLP clínic i suport a la decisió mèdica."
-        },
-        "level": "Máster",
-        "statusId": "activo",
-        "hours": 90,
-        "enrolled": 87,
-        "rating": 4.9,
-        "sectorIds": [
-          "salud"
-        ],
-        "modalityId": "online",
-        "tagIds": [
-          "ia-aplicada",
-          "responsable"
-        ],
-        "link": {
-          "url": "https://valgrai.eu",
-          "external": true
-        }
-      },
-      {
-        "id": "ia-etica-aula-docentes",
-        "createdAt": "2026-02-11",
-        "title": {
-          "es": "IA Ética y Uso Responsable en el Aula",
-          "en": "Ethical AI and Responsible Use in the Classroom",
-          "va": "IA Ètica i Ús Responsable a l'Aula"
-        },
-        "description": {
-          "es": "Formación para docentes de FP. Fundamentos de IA, prompt engineering, detección de sesgos y uso ético en el contexto educativo. Disponible en Aules.",
-          "en": "Training for VET teachers. AI fundamentals, prompt engineering, bias detection and ethical use in educational context. Available on Aules.",
-          "va": "Formació per a docents de FP. Fonaments de IA, enginering de prompts, detecció de biaix i ús ètic en el context educatiu. Disponible a Aules."
-        },
-        "level": "Docentes",
-        "statusId": "activo",
-        "hours": 30,
-        "enrolled": 524,
-        "rating": 4.8,
-        "sectorIds": [
-          "educacion-sector"
-        ],
-        "modalityId": "online",
-        "tagIds": [
-          "educacion",
-          "etica",
-          "responsable"
-        ],
-        "link": {
-          "url": "https://portal.edu.gva.es/aules/",
-          "external": true
-        }
-      },
-      {
         "id": "agricultura-precision-fp",
         "createdAt": "2026-02-27",
         "title": {
@@ -781,38 +722,6 @@ export const TRAINING_CONFIG = {
         }
       },
       {
-        "id": "gemelos-digitales-master",
-        "createdAt": "2026-03-14",
-        "title": {
-          "es": "Gemelos Digitales y Simulación para la Industria",
-          "en": "Digital Twins and Simulation for Industry",
-          "va": "Bessons Digitals i Simulació per a la Indústria"
-        },
-        "description": {
-          "es": "Módulo candidato a puente Track A. Gemelos digitales en entornos industriales, SCADA, IIoT y edge computing.",
-          "en": "Module candidate for Track A bridge. Digital twins in industrial environments, SCADA, IIoT and edge computing.",
-          "va": "Mòdul candidat a pont Track A. Bessons digitals en entorns industrials, SCADA, IIoT i edge computing."
-        },
-        "level": "Máster",
-        "statusId": "activo",
-        "hours": 80,
-        "enrolled": 54,
-        "rating": 4.8,
-        "sectorIds": [
-          "industria"
-        ],
-        "modalityId": "online",
-        "tagIds": [
-          "gemelos-digitales",
-          "automatizacion",
-          "ia-aplicada"
-        ],
-        "link": {
-          "url": "https://valgrai.eu",
-          "external": true
-        }
-      },
-      {
         "id": "monitorizacion-ambiental-fp",
         "createdAt": "2026-04-02",
         "title": {
@@ -839,69 +748,6 @@ export const TRAINING_CONFIG = {
           "datos-reales",
           "sostenibilidad",
           "visualizacion"
-        ],
-        "link": {
-          "url": "https://portal.edu.gva.es/aules/",
-          "external": true
-        }
-      },
-      {
-        "id": "patrimonio-cultural-master",
-        "createdAt": "2026-04-22",
-        "title": {
-          "es": "IA Generativa para Patrimonio Cultural y Turismo",
-          "en": "Generative AI for Cultural Heritage and Tourism",
-          "va": "IA Generativa per al Patrimoni Cultural i Turisme"
-        },
-        "description": {
-          "es": "Módulo candidato a puente Track A. Modelos de difusión y NLP para museos virtuales y restauración digital.",
-          "en": "Module candidate for Track A bridge. Diffusion models and NLP for virtual museums and digital restoration.",
-          "va": "Mòdul candidat a pont Track A. Models de difusió i NLP per a museus virtuals i restauració digital."
-        },
-        "level": "Máster",
-        "statusId": "proximo",
-        "hours": 70,
-        "enrolled": 72,
-        "rating": 4.7,
-        "sectorIds": [
-          "turismo-cultura"
-        ],
-        "modalityId": "online",
-        "tagIds": [
-          "generativa",
-          "visualizacion"
-        ],
-        "link": {
-          "url": "https://valgrai.eu",
-          "external": true
-        }
-      },
-      {
-        "id": "administracion-electronica-docentes",
-        "createdAt": "2026-05-07",
-        "title": {
-          "es": "Administración Electrónica e IA para el Sector Público",
-          "en": "Electronic Administration and AI for the Public Sector",
-          "va": "Administració Electrònica i IA per al Sector Públic"
-        },
-        "description": {
-          "es": "Formación docente y funcionarios. IA en servicios públicos, chatbots ciudadanos y reglamento europeo de IA. Disponible en Aules.",
-          "en": "Training for teachers and civil servants. AI in public services, citizen chatbots and European AI regulation. Available on Aules.",
-          "va": "Formació per a docents i funcionaris. IA en serveis públics, xatbots ciutadans i regulació europea de IA. Disponible a Aules."
-        },
-        "level": "Docentes",
-        "statusId": "activo",
-        "hours": 40,
-        "enrolled": 211,
-        "rating": 4.4,
-        "sectorIds": [
-          "administracion"
-        ],
-        "modalityId": "online",
-        "tagIds": [
-          "educacion",
-          "responsable",
-          "generativa"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -1559,6 +1405,891 @@ export const TRAINING_CONFIG = {
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "ia-etica-aula-docentes",
+        "createdAt": "2026-02-11",
+        "title": {
+          "es": "IA Ética y Uso Responsable en el Aula",
+          "en": "Ethical AI and Responsible Use in the Classroom",
+          "va": "IA Ètica i Ús Responsable a l'Aula"
+        },
+        "description": {
+          "es": "Formación para docentes de FP. Fundamentos de IA, prompt engineering, detección de sesgos y uso ético en el contexto educativo. Disponible en Aules.",
+          "en": "Training for VET teachers. AI fundamentals, prompt engineering, bias detection and ethical use in educational context. Available on Aules.",
+          "va": "Formació per a docents de FP. Fonaments de IA, enginering de prompts, detecció de biaix i ús ètic en el context educatiu. Disponible a Aules."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 30,
+        "enrolled": 524,
+        "rating": 4.8,
+        "sectorIds": [
+          "educacion-sector"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "educacion",
+          "etica",
+          "responsable"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "administracion-electronica-docentes",
+        "createdAt": "2026-05-07",
+        "title": {
+          "es": "Administración Electrónica e IA para el Sector Público",
+          "en": "Electronic Administration and AI for the Public Sector",
+          "va": "Administració Electrònica i IA per al Sector Públic"
+        },
+        "description": {
+          "es": "Formación docente y funcionarios. IA en servicios públicos, chatbots ciudadanos y reglamento europeo de IA. Disponible en Aules.",
+          "en": "Training for teachers and civil servants. AI in public services, citizen chatbots and European AI regulation. Available on Aules.",
+          "va": "Formació per a docents i funcionaris. IA en serveis públics, xatbots ciutadans i regulació europea de IA. Disponible a Aules."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 40,
+        "enrolled": 211,
+        "rating": 4.4,
+        "sectorIds": [
+          "administracion"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "educacion",
+          "responsable",
+          "generativa"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "steam-creatividad-generativa-docentes",
+        "createdAt": "2026-01-06",
+        "title": {
+          "es": "STEAM Creativo e IA Generativa para Proyectos de Aula",
+          "en": "Creative STEAM and Generative AI for Classroom Projects",
+          "va": "STEAM Creatiu i IA Generativa per a Projectes d'Aula"
+        },
+        "description": {
+          "es": "Diseño de proyectos STEAM donde la A se trabaja como arte, diseño y creatividad. Incluye prompts visuales, prototipado rápido y criterios éticos para evaluar producciones con IA.",
+          "en": "Design of STEAM projects where A means art, design and creativity. Includes visual prompts, rapid prototyping and ethical criteria for assessing AI-assisted productions.",
+          "va": "Disseny de projectes STEAM on la A es treballa com a art, disseny i creativitat. Inclou prompts visuals, prototipat ràpid i criteris ètics per a avaluar produccions amb IA."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 25,
+        "enrolled": 186,
+        "rating": 4.8,
+        "sectorIds": [
+          "educacion-sector",
+          "turismo-cultura"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "generativa",
+          "educacion",
+          "etica"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "vision-artificial-industria-docentes",
+        "createdAt": "2026-01-13",
+        "title": {
+          "es": "Visión Artificial para Retos Industriales en FP",
+          "en": "Computer Vision for Industrial Challenges in VET",
+          "va": "Visió Artificial per a Reptes Industrials en FP"
+        },
+        "description": {
+          "es": "Formación docente para diseñar actividades con cámaras, datasets de calidad y modelos de clasificación aplicados a mantenimiento, seguridad y control de procesos industriales.",
+          "en": "Teacher training to design activities with cameras, quality datasets and classification models applied to maintenance, safety and industrial process control.",
+          "va": "Formació docent per a dissenyar activitats amb càmeres, datasets de qualitat i models de classificació aplicats a manteniment, seguretat i control de processos industrials."
+        },
+        "level": "Docentes",
+        "statusId": "inscripcion",
+        "hours": 35,
+        "enrolled": 94,
+        "rating": 4.7,
+        "sectorIds": [
+          "industria"
+        ],
+        "modalityId": "semipresencial",
+        "tagIds": [
+          "ia-aplicada",
+          "datos-reales",
+          "automatizacion"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "datos-climaticos-docentes",
+        "createdAt": "2026-01-20",
+        "title": {
+          "es": "Datos Climáticos, IA y Sostenibilidad en el Aula",
+          "en": "Climate Data, AI and Sustainability in the Classroom",
+          "va": "Dades Climàtiques, IA i Sostenibilitat a l'Aula"
+        },
+        "description": {
+          "es": "Uso didáctico de datos ambientales abiertos para analizar tendencias, crear visualizaciones y plantear retos STEAM sobre energía, agua, residuos y adaptación climática.",
+          "en": "Educational use of open environmental data to analyse trends, create visualisations and design STEAM challenges on energy, water, waste and climate adaptation.",
+          "va": "Ús didàctic de dades ambientals obertes per a analitzar tendències, crear visualitzacions i plantejar reptes STEAM sobre energia, aigua, residus i adaptació climàtica."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 30,
+        "enrolled": 143,
+        "rating": 4.6,
+        "sectorIds": [
+          "medio-ambiente",
+          "educacion-sector"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "datos-reales",
+          "sostenibilidad",
+          "visualizacion"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "arte-datos-turismo-docentes",
+        "createdAt": "2026-01-27",
+        "title": {
+          "es": "Arte de Datos e IA para Turismo Cultural",
+          "en": "Data Art and AI for Cultural Tourism",
+          "va": "Art de Dades i IA per al Turisme Cultural"
+        },
+        "description": {
+          "es": "Curso para crear narrativas visuales con datos turísticos, patrimonio digital e IA generativa, conectando pensamiento computacional, cultura local y creatividad aplicada.",
+          "en": "Course for creating visual narratives with tourism data, digital heritage and generative AI, connecting computational thinking, local culture and applied creativity.",
+          "va": "Curs per a crear narratives visuals amb dades turístiques, patrimoni digital i IA generativa, connectant pensament computacional, cultura local i creativitat aplicada."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 20,
+        "enrolled": 77,
+        "rating": 4.5,
+        "sectorIds": [
+          "turismo-cultura"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "generativa",
+          "visualizacion",
+          "datos-reales"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "ia-agroalimentaria-docentes",
+        "createdAt": "2026-02-03",
+        "title": {
+          "es": "IA para Sistemas Agroalimentarios en Proyectos STEAM",
+          "en": "AI for Agri-food Systems in STEAM Projects",
+          "va": "IA per a Sistemes Agroalimentaris en Projectes STEAM"
+        },
+        "description": {
+          "es": "Diseño de actividades sobre agricultura de precisión, trazabilidad alimentaria y predicción de cosechas usando datos reales, sensores e interpretación crítica de modelos.",
+          "en": "Design of activities on precision agriculture, food traceability and crop prediction using real data, sensors and critical interpretation of models.",
+          "va": "Disseny d'activitats sobre agricultura de precisió, traçabilitat alimentària i predicció de collites amb dades reals, sensors i interpretació crítica de models."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 32,
+        "enrolled": 118,
+        "rating": 4.7,
+        "sectorIds": [
+          "agroalimentario",
+          "medio-ambiente"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "ia-aplicada",
+          "iot",
+          "predictivo"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "salud-digital-aula-docentes",
+        "createdAt": "2026-02-17",
+        "title": {
+          "es": "Salud Digital, IA Responsable y Aprendizaje Basado en Casos",
+          "en": "Digital Health, Responsible AI and Case-based Learning",
+          "va": "Salut Digital, IA Responsable i Aprenentatge Basat en Casos"
+        },
+        "description": {
+          "es": "Formación para docentes que quieran trabajar diagnóstico asistido, bienestar digital y privacidad con casos simulados, rúbricas de riesgo y debate ético.",
+          "en": "Training for teachers who want to work on assisted diagnosis, digital wellbeing and privacy with simulated cases, risk rubrics and ethical debate.",
+          "va": "Formació per a docents que vulguen treballar diagnòstic assistit, benestar digital i privacitat amb casos simulats, rúbriques de risc i debat ètic."
+        },
+        "level": "Docentes",
+        "statusId": "inscripcion",
+        "hours": 28,
+        "enrolled": 86,
+        "rating": 4.8,
+        "sectorIds": [
+          "salud",
+          "educacion-sector"
+        ],
+        "modalityId": "semipresencial",
+        "tagIds": [
+          "responsable",
+          "etica",
+          "ia-aplicada"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "automatizacion-administracion-docentes",
+        "createdAt": "2026-02-24",
+        "title": {
+          "es": "Automatización Inteligente y Servicios Públicos como Reto de Aula",
+          "en": "Intelligent Automation and Public Services as Classroom Challenges",
+          "va": "Automatització Intel·ligent i Serveis Públics com a Repte d'Aula"
+        },
+        "description": {
+          "es": "Curso para transformar trámites públicos, chatbots y análisis documental en proyectos STEAM sobre mejora de servicios, accesibilidad y confianza ciudadana.",
+          "en": "Course to transform public procedures, chatbots and document analysis into STEAM projects on service improvement, accessibility and citizen trust.",
+          "va": "Curs per a transformar tràmits públics, xatbots i anàlisi documental en projectes STEAM sobre millora de serveis, accessibilitat i confiança ciutadana."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 30,
+        "enrolled": 124,
+        "rating": 4.5,
+        "sectorIds": [
+          "administracion",
+          "educacion-sector"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "automatizacion",
+          "generativa",
+          "responsable"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "creatividad-aumentada-docentes",
+        "createdAt": "2026-03-02",
+        "title": {
+          "es": "Creatividad Aumentada, Diseño y Pensamiento Visual con IA",
+          "en": "Augmented Creativity, Design and Visual Thinking with AI",
+          "va": "Creativitat Augmentada, Disseny i Pensament Visual amb IA"
+        },
+        "description": {
+          "es": "Estrategias para integrar bocetado, imagen generativa, moodboards y prototipos visuales en secuencias STEAM, con atención a autoría, sesgos y evaluación.",
+          "en": "Strategies to integrate sketching, generative images, moodboards and visual prototypes into STEAM sequences, with attention to authorship, bias and assessment.",
+          "va": "Estratègies per a integrar esbós, imatge generativa, moodboards i prototips visuals en seqüències STEAM, amb atenció a autoria, biaixos i avaluació."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 22,
+        "enrolled": 201,
+        "rating": 4.9,
+        "sectorIds": [
+          "turismo-cultura",
+          "educacion-sector"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "generativa",
+          "educacion",
+          "visualizacion"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "iot-aula-sectores-docentes",
+        "createdAt": "2026-03-09",
+        "title": {
+          "es": "IoT, Sensores e IA para Retos Multisectoriales",
+          "en": "IoT, Sensors and AI for Multi-sector Challenges",
+          "va": "IoT, Sensors i IA per a Reptes Multisectorials"
+        },
+        "description": {
+          "es": "Itinerario docente para conectar sensores sencillos, recogida de datos y modelos predictivos en retos de industria, agroalimentación, salud y medio ambiente.",
+          "en": "Teacher pathway to connect simple sensors, data collection and predictive models in challenges for industry, agri-food, health and environment.",
+          "va": "Itinerari docent per a connectar sensors senzills, recollida de dades i models predictius en reptes d'indústria, agroalimentació, salut i medi ambient."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 40,
+        "enrolled": 99,
+        "rating": 4.6,
+        "sectorIds": [
+          "industria",
+          "agroalimentario",
+          "medio-ambiente"
+        ],
+        "modalityId": "semipresencial",
+        "tagIds": [
+          "iot",
+          "datos-reales",
+          "predictivo"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "evaluacion-ia-steam-docentes",
+        "createdAt": "2026-03-16",
+        "title": {
+          "es": "Evaluación de Proyectos STEAM con Evidencias Generadas por IA",
+          "en": "Assessing STEAM Projects with AI-generated Evidence",
+          "va": "Avaluació de Projectes STEAM amb Evidències Generades per IA"
+        },
+        "description": {
+          "es": "Diseño de rúbricas, diarios de aprendizaje, portfolios y criterios de transparencia para evaluar procesos creativos, técnicos y colaborativos con apoyo de IA.",
+          "en": "Design of rubrics, learning journals, portfolios and transparency criteria to assess creative, technical and collaborative processes supported by AI.",
+          "va": "Disseny de rúbriques, diaris d'aprenentatge, portfolios i criteris de transparència per a avaluar processos creatius, tècnics i col·laboratius amb suport d'IA."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 18,
+        "enrolled": 163,
+        "rating": 4.7,
+        "sectorIds": [
+          "educacion-sector"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "educacion",
+          "responsable",
+          "etica"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "mantenimiento-predictivo-docentes",
+        "createdAt": "2026-03-23",
+        "title": {
+          "es": "Mantenimiento Predictivo como Proyecto Didáctico",
+          "en": "Predictive Maintenance as a Teaching Project",
+          "va": "Manteniment Predictiu com a Projecte Didàctic"
+        },
+        "description": {
+          "es": "Curso práctico para convertir datos de máquinas, vibraciones y consumos en actividades de análisis predictivo, visualización y toma de decisiones en FP.",
+          "en": "Practical course to turn machine, vibration and consumption data into predictive analysis, visualisation and decision-making activities in VET.",
+          "va": "Curs pràctic per a convertir dades de màquines, vibracions i consums en activitats d'anàlisi predictiva, visualització i presa de decisions en FP."
+        },
+        "level": "Docentes",
+        "statusId": "proximo",
+        "hours": 26,
+        "enrolled": 0,
+        "rating": null,
+        "sectorIds": [
+          "industria"
+        ],
+        "modalityId": "presencial",
+        "tagIds": [
+          "predictivo",
+          "visualizacion",
+          "datos-reales"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "narrativas-inmersivas-docentes",
+        "createdAt": "2026-03-30",
+        "title": {
+          "es": "Narrativas Inmersivas con IA para Patrimonio y Cultura",
+          "en": "Immersive AI Narratives for Heritage and Culture",
+          "va": "Narratives Immersives amb IA per a Patrimoni i Cultura"
+        },
+        "description": {
+          "es": "Formación para crear experiencias educativas con guion, imagen, audio y recorridos interactivos generados con IA a partir de patrimonio cultural local.",
+          "en": "Training to create educational experiences with scripts, images, audio and interactive tours generated with AI from local cultural heritage.",
+          "va": "Formació per a crear experiències educatives amb guió, imatge, àudio i recorreguts interactius generats amb IA a partir de patrimoni cultural local."
+        },
+        "level": "Docentes",
+        "statusId": "inscripcion",
+        "hours": 24,
+        "enrolled": 72,
+        "rating": 4.4,
+        "sectorIds": [
+          "turismo-cultura",
+          "educacion-sector"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "generativa",
+          "visualizacion",
+          "educacion"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "ia-inclusiva-accesibilidad-docentes",
+        "createdAt": "2026-04-02",
+        "title": {
+          "es": "IA Inclusiva, Accesibilidad y Diseño Universal",
+          "en": "Inclusive AI, Accessibility and Universal Design",
+          "va": "IA Inclusiva, Accessibilitat i Disseny Universal"
+        },
+        "description": {
+          "es": "Uso de herramientas de IA para adaptar materiales, crear subtítulos, generar alternativas visuales y revisar barreras de accesibilidad en recursos STEAM.",
+          "en": "Use of AI tools to adapt materials, create captions, generate visual alternatives and review accessibility barriers in STEAM resources.",
+          "va": "Ús d'eines d'IA per a adaptar materials, crear subtítols, generar alternatives visuals i revisar barreres d'accessibilitat en recursos STEAM."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 20,
+        "enrolled": 138,
+        "rating": 4.8,
+        "sectorIds": [
+          "educacion-sector",
+          "administracion"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "responsable",
+          "educacion",
+          "etica"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "gemelos-digitales-aula-docentes",
+        "createdAt": "2026-04-06",
+        "title": {
+          "es": "Gemelos Digitales para Simular Ciudades, Fábricas y Aulas",
+          "en": "Digital Twins to Simulate Cities, Factories and Classrooms",
+          "va": "Bessons Digitals per a Simular Ciutats, Fàbriques i Aules"
+        },
+        "description": {
+          "es": "Introducción docente a modelos digitales sencillos para simular procesos, comparar escenarios y diseñar retos de mejora con datos de industria, energía y servicios.",
+          "en": "Teacher introduction to simple digital models to simulate processes, compare scenarios and design improvement challenges with data from industry, energy and services.",
+          "va": "Introducció docent a models digitals senzills per a simular processos, comparar escenaris i dissenyar reptes de millora amb dades d'indústria, energia i serveis."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 34,
+        "enrolled": 81,
+        "rating": 4.6,
+        "sectorIds": [
+          "industria",
+          "administracion",
+          "medio-ambiente"
+        ],
+        "modalityId": "semipresencial",
+        "tagIds": [
+          "gemelos-digitales",
+          "visualizacion",
+          "datos-reales"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "pensamiento-critico-modelos-docentes",
+        "createdAt": "2026-04-10",
+        "title": {
+          "es": "Pensamiento Crítico ante Modelos de IA en Contextos STEAM",
+          "en": "Critical Thinking about AI Models in STEAM Contexts",
+          "va": "Pensament Crític davant Models d'IA en Contextos STEAM"
+        },
+        "description": {
+          "es": "Curso transversal para analizar límites, sesgos, alucinaciones y calidad de datos en modelos de IA usados en proyectos técnicos, creativos y sociales.",
+          "en": "Cross-cutting course to analyse limits, bias, hallucinations and data quality in AI models used in technical, creative and social projects.",
+          "va": "Curs transversal per a analitzar límits, biaixos, al·lucinacions i qualitat de dades en models d'IA usats en projectes tècnics, creatius i socials."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 16,
+        "enrolled": 247,
+        "rating": 4.9,
+        "sectorIds": [
+          "educacion-sector",
+          "administracion",
+          "salud"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "etica",
+          "responsable",
+          "educacion"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "musica-sonido-ia-docentes",
+        "createdAt": "2026-04-14",
+        "title": {
+          "es": "Música, Sonido e IA para Aprendizaje Creativo",
+          "en": "Music, Sound and AI for Creative Learning",
+          "va": "Música, So i IA per a Aprenentatge Creatiu"
+        },
+        "description": {
+          "es": "Propuestas para trabajar composición generativa, paisajes sonoros, análisis acústico y narrativas audiovisuales como puente entre arte, tecnología y datos.",
+          "en": "Proposals to work on generative composition, soundscapes, acoustic analysis and audiovisual narratives as a bridge between art, technology and data.",
+          "va": "Propostes per a treballar composició generativa, paisatges sonors, anàlisi acústica i narratives audiovisuals com a pont entre art, tecnologia i dades."
+        },
+        "level": "Docentes",
+        "statusId": "finalizado",
+        "hours": 18,
+        "enrolled": 119,
+        "rating": 4.3,
+        "sectorIds": [
+          "turismo-cultura",
+          "educacion-sector"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "generativa",
+          "educacion",
+          "visualizacion"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "movilidad-datos-urbanos-docentes",
+        "createdAt": "2026-04-18",
+        "title": {
+          "es": "Movilidad, Datos Urbanos e IA para Retos STEAM",
+          "en": "Mobility, Urban Data and AI for STEAM Challenges",
+          "va": "Mobilitat, Dades Urbanes i IA per a Reptes STEAM"
+        },
+        "description": {
+          "es": "Formación para diseñar retos sobre transporte, rutas, accesibilidad y huella ambiental usando datos urbanos, visualizaciones y modelos predictivos sencillos.",
+          "en": "Training to design challenges on transport, routes, accessibility and environmental footprint using urban data, visualisations and simple predictive models.",
+          "va": "Formació per a dissenyar reptes sobre transport, rutes, accessibilitat i petjada ambiental amb dades urbanes, visualitzacions i models predictius senzills."
+        },
+        "level": "Docentes",
+        "statusId": "inscripcion",
+        "hours": 28,
+        "enrolled": 63,
+        "rating": 4.5,
+        "sectorIds": [
+          "administracion",
+          "medio-ambiente"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "datos-reales",
+          "predictivo",
+          "sostenibilidad"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "seguridad-alimentaria-docentes",
+        "createdAt": "2026-04-22",
+        "title": {
+          "es": "Seguridad Alimentaria, Trazabilidad e IA en el Aula",
+          "en": "Food Safety, Traceability and AI in the Classroom",
+          "va": "Seguretat Alimentària, Traçabilitat i IA a l'Aula"
+        },
+        "description": {
+          "es": "Curso para convertir control de calidad, visión artificial y trazabilidad de productos en secuencias didácticas vinculadas a sostenibilidad y salud pública.",
+          "en": "Course to turn quality control, computer vision and product traceability into teaching sequences linked to sustainability and public health.",
+          "va": "Curs per a convertir control de qualitat, visió artificial i traçabilitat de productes en seqüències didàctiques vinculades a sostenibilitat i salut pública."
+        },
+        "level": "Docentes",
+        "statusId": "proximo",
+        "hours": 24,
+        "enrolled": 0,
+        "rating": null,
+        "sectorIds": [
+          "agroalimentario",
+          "salud"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "ia-aplicada",
+          "responsable",
+          "datos-reales"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "laboratorios-creativos-ia-docentes",
+        "createdAt": "2026-04-27",
+        "title": {
+          "es": "Laboratorios Creativos de IA para Retos del Ecosistema",
+          "en": "Creative AI Labs for Ecosystem Challenges",
+          "va": "Laboratoris Creatius d'IA per a Reptes de l'Ecosistema"
+        },
+        "description": {
+          "es": "Metodología para organizar laboratorios de aula donde alumnado, docentes y agentes externos prototipan soluciones STEAM con IA, datos y narrativas creativas.",
+          "en": "Methodology to organise classroom labs where students, teachers and external actors prototype STEAM solutions with AI, data and creative narratives.",
+          "va": "Metodologia per a organitzar laboratoris d'aula on alumnat, docents i agents externs prototipen solucions STEAM amb IA, dades i narratives creatives."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 36,
+        "enrolled": 154,
+        "rating": 4.8,
+        "sectorIds": [
+          "educacion-sector",
+          "turismo-cultura",
+          "industria"
+        ],
+        "modalityId": "presencial",
+        "tagIds": [
+          "ia-aplicada",
+          "generativa",
+          "educacion"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "privacidad-datos-aula-docentes",
+        "createdAt": "2026-05-01",
+        "title": {
+          "es": "Privacidad, Datos y Gobernanza de IA para Docentes",
+          "en": "Privacy, Data and AI Governance for Teachers",
+          "va": "Privacitat, Dades i Governança d'IA per a Docents"
+        },
+        "description": {
+          "es": "Curso para trabajar protección de datos, consentimiento, trazabilidad de herramientas y uso responsable de plataformas de IA en proyectos educativos.",
+          "en": "Course to address data protection, consent, tool traceability and responsible use of AI platforms in educational projects.",
+          "va": "Curs per a treballar protecció de dades, consentiment, traçabilitat d'eines i ús responsable de plataformes d'IA en projectes educatius."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 20,
+        "enrolled": 208,
+        "rating": 4.7,
+        "sectorIds": [
+          "educacion-sector",
+          "administracion"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "responsable",
+          "etica",
+          "datos-reales"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "emprendimiento-steam-ia-docentes",
+        "createdAt": "2026-05-08",
+        "title": {
+          "es": "Emprendimiento STEAM con IA, Arte y Prototipos",
+          "en": "STEAM Entrepreneurship with AI, Art and Prototypes",
+          "va": "Emprenedoria STEAM amb IA, Art i Prototips"
+        },
+        "description": {
+          "es": "Formación para guiar proyectos emprendedores que combinen creatividad, análisis de mercado, prototipos generativos y validación con usuarios reales.",
+          "en": "Training to guide entrepreneurial projects combining creativity, market analysis, generative prototypes and validation with real users.",
+          "va": "Formació per a guiar projectes emprenedors que combinen creativitat, anàlisi de mercat, prototips generatius i validació amb usuaris reals."
+        },
+        "level": "Docentes",
+        "statusId": "inscripcion",
+        "hours": 30,
+        "enrolled": 58,
+        "rating": 4.6,
+        "sectorIds": [
+          "industria",
+          "turismo-cultura",
+          "administracion"
+        ],
+        "modalityId": "semipresencial",
+        "tagIds": [
+          "generativa",
+          "visualizacion",
+          "responsable"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "bienestar-docente-ia-docentes",
+        "createdAt": "2026-05-13",
+        "title": {
+          "es": "Bienestar Docente, Organización del Trabajo e IA",
+          "en": "Teacher Wellbeing, Work Organisation and AI",
+          "va": "Benestar Docent, Organització del Treball i IA"
+        },
+        "description": {
+          "es": "Uso crítico de asistentes de IA para planificación, adaptación de materiales, gestión de feedback y reducción de carga administrativa sin perder criterio pedagógico.",
+          "en": "Critical use of AI assistants for planning, material adaptation, feedback management and reducing administrative workload without losing pedagogical judgement.",
+          "va": "Ús crític d'assistents d'IA per a planificació, adaptació de materials, gestió de feedback i reducció de càrrega administrativa sense perdre criteri pedagògic."
+        },
+        "level": "Docentes",
+        "statusId": "activo",
+        "hours": 15,
+        "enrolled": 312,
+        "rating": 4.9,
+        "sectorIds": [
+          "educacion-sector",
+          "administracion"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "educacion",
+          "responsable",
+          "automatizacion"
+        ],
+        "link": {
+          "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "ml-diagnostico-master",
+        "createdAt": "2026-01-23",
+        "title": {
+          "es": "Machine Learning para Diagnóstico Clínico",
+          "en": "Machine Learning for Clinical Diagnosis",
+          "va": "Aprenentatge de Màquina per a Diagnòstic Clínic"
+        },
+        "description": {
+          "es": "Módulo de profundización — candidato a puente con el Track A. CNN aplicadas a radiología, NLP clínico y apoyo a la decisión médica.",
+          "en": "In-depth module — candidate for Track A bridge. CNNs applied to radiology, clinical NLP and medical decision support.",
+          "va": "Mòdul d'aprofundiment — candidat a pont amb el Track A. CNNs aplicades a radiologia, NLP clínic i suport a la decisió mèdica."
+        },
+        "level": "Máster",
+        "statusId": "activo",
+        "hours": 90,
+        "enrolled": 87,
+        "rating": 4.9,
+        "sectorIds": [
+          "salud"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "ia-aplicada",
+          "responsable"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "gemelos-digitales-master",
+        "createdAt": "2026-03-14",
+        "title": {
+          "es": "Gemelos Digitales y Simulación para la Industria",
+          "en": "Digital Twins and Simulation for Industry",
+          "va": "Bessons Digitals i Simulació per a la Indústria"
+        },
+        "description": {
+          "es": "Módulo candidato a puente Track A. Gemelos digitales en entornos industriales, SCADA, IIoT y edge computing.",
+          "en": "Module candidate for Track A bridge. Digital twins in industrial environments, SCADA, IIoT and edge computing.",
+          "va": "Mòdul candidat a pont Track A. Bessons digitals en entorns industrials, SCADA, IIoT i edge computing."
+        },
+        "level": "Máster",
+        "statusId": "activo",
+        "hours": 80,
+        "enrolled": 54,
+        "rating": 4.8,
+        "sectorIds": [
+          "industria"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "gemelos-digitales",
+          "automatizacion",
+          "ia-aplicada"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "patrimonio-cultural-master",
+        "createdAt": "2026-04-22",
+        "title": {
+          "es": "IA Generativa para Patrimonio Cultural y Turismo",
+          "en": "Generative AI for Cultural Heritage and Tourism",
+          "va": "IA Generativa per al Patrimoni Cultural i Turisme"
+        },
+        "description": {
+          "es": "Módulo candidato a puente Track A. Modelos de difusión y NLP para museos virtuales y restauración digital.",
+          "en": "Module candidate for Track A bridge. Diffusion models and NLP for virtual museums and digital restoration.",
+          "va": "Mòdul candidat a pont Track A. Models de difusió i NLP per a museus virtuals i restauració digital."
+        },
+        "level": "Máster",
+        "statusId": "proximo",
+        "hours": 70,
+        "enrolled": 72,
+        "rating": 4.7,
+        "sectorIds": [
+          "turismo-cultura"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "generativa",
+          "visualizacion"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
           "external": true
         }
       }

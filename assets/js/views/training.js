@@ -353,8 +353,8 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
     const sectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabTeacherTraining || '') : (trainingT?.tabTeacherTraining || '');
     return `
       ${skillsBlockVisible ? `
-      <div class="bg-eu-blue/5 border border-eu-blue/20 rounded-xl p-6 mb-8">
-        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-5 h-5 text-eu-blue"></i>${sectionTitle}</h2>
+      <div class="bg-purple-50 border border-purple-200 rounded-xl p-6 mb-8">
+        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-5 h-5 text-purple-700"></i>${sectionTitle}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${topicsHtml}</div>
       </div>` : ''}
       ${searchControls}${courseGrid}`;
