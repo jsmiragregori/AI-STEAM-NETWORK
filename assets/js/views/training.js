@@ -207,7 +207,7 @@ function renderCourseGridContent(tab, allCourses, trainingT, courseTags, emptyMe
     </div>`;
 
   const paginationHtml = !isAll && totalPages > 1 ? `
-    <div class="flex gap-2 justify-center mt-6 mb-8 items-center">
+    <div class="flex gap-2 justify-center mt-6 mb-6 items-center">
       <button id="tr-pag-prev" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">← ${trainingT?.paginationPrev || 'Anterior'}</button>
       <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
       <button id="tr-pag-next" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">${trainingT?.paginationNext || 'Siguiente'} →</button>
@@ -222,7 +222,7 @@ function renderCourseGridContent(tab, allCourses, trainingT, courseTags, emptyMe
       ${pageSizeHtml}
     </div>
     ${paginated.length > 0 ? `
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
         ${paginated.map(c => courseCard(c, trainingT, isMaster, courseTags, tab, filters)).join('')}
       </div>
       ${paginationHtml}` : `
