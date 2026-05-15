@@ -533,6 +533,7 @@ function tabDocumentos(govT) {
   const allLabel = cms.allLabel || { es: 'Todo', en: 'All', va: 'Tot' };
   const paginationPrev = cms.paginationPrev || { es: 'Anterior', en: 'Previous', va: 'Anterior' };
   const paginationNext = cms.paginationNext || { es: 'Siguiente', en: 'Next', va: 'Següent' };
+  const noSearchResultsMessage = cms.noSearchResultsMessage || { es: 'No hay documentos que coincidan con la búsqueda.', en: 'No documents match your search.', va: 'Cap document coincideix amb la teva cerca.' };
 
   function isPublic(doc) {
     return doc.access === 'public';
@@ -554,7 +555,7 @@ function tabDocumentos(govT) {
     if (filtered.length === 0) {
       return `
         <div class="col-span-full rounded-xl border border-eu-border bg-eu-bg p-8 text-center">
-          <p class="text-sm text-gray-600">${searchQuery ? 'No hay documentos que coincidan con la búsqueda.' : pickLang(cms.noDocsMessage, s.noDocsMessage || '')}</p>
+          <p class="text-sm text-gray-600">${searchQuery ? pickLang(noSearchResultsMessage, 'No hay documentos que coincidan con la búsqueda.') : pickLang(cms.noDocsMessage, s.noDocsMessage || '')}</p>
         </div>
       `;
     }

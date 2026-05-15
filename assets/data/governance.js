@@ -1661,8 +1661,9 @@ export const GOVERNANCE_CONFIG = {
   },
   "documentationBlock": {
     "headerVisible": true,
-    "pageSize": 12,
+    "pageSize": 6,
     "pageSizeOptions": [
+      6,
       12,
       24,
       48
@@ -1682,6 +1683,11 @@ export const GOVERNANCE_CONFIG = {
       "es": "Aún no hay documentos disponibles. Por favor, consulta más tarde.",
       "en": "No documents available yet. Please check back soon.",
       "va": "Encara no hi ha documents disponibles. Torna a consultar més tard."
+    },
+    "noSearchResultsMessage": {
+      "es": "No hay documentos que coincidan con la búsqueda.",
+      "en": "No documents match your search.",
+      "va": "Cap document coincideix amb la teva cerca."
     },
     "allLabel": {
       "es": "Todo",
