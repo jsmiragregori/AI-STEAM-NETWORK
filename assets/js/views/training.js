@@ -107,21 +107,38 @@ function pathSteps(steps, color) {
   `).join('');
 }
 
-function tabContent(activeTab, courses, trainingT) {
+function tabContent(activeTab, courses, trainingT, sections) {
   const fpCourses      = courses.filter(c => c.level === 'FP');
   const teacherCourses = courses.filter(c => c.level === 'Docentes');
   const masterCourses  = courses.filter(c => c.level === 'Máster');
 
+  // Encontrar sección CMS correspondiente
+  const sectionMap = {
+    'fp': 'fp-skills',
+    'teacher': 'continuous-learning',
+    'master': 'master-skills'
+  };
+  const cmsSection = sections.find(s => s.id === sectionMap[activeTab]);
+
   if (activeTab === 'fp') {
-    const skillsHtml = (trainingT?.fpSkills || []).map(skill => `
-      <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow shadow-sm text-sm text-eu-text font-medium">
-        <i data-lucide="check-circle" class="w-4 h-4 text-eu-orange shrink-0"></i>${skill}
-      </div>`).join('');
+    // Usar skills del CMS si están disponibles, sino fallback a traducciones
+    const skills = cmsSection?.skillsBlock?.skills || [];
+    const skillsHtml = skills.length > 0
+      ? skills.map(skill => `
+        <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow shadow-sm text-sm text-eu-text font-medium">
+          <span class="text-lg">${skill.icon}</span><span>${pickLang(skill.title, '')}</span>
+        </div>`).join('')
+      : (trainingT?.fpSkills || []).map(skill => `
+        <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow shadow-sm text-sm text-eu-text font-medium">
+          <i data-lucide="check-circle" class="w-4 h-4 text-eu-orange shrink-0"></i>${skill}
+        </div>`).join('');
+
+    const sectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabFpVet || '') : (trainingT?.tabFpVet || '');
 
     return `
       <div class="bg-eu-yellow/20 border border-eu-yellow rounded-xl p-6 mb-8">
         <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2">
-          <i data-lucide="briefcase" class="w-5 h-5 text-eu-orange"></i>${trainingT?.tabFpVet || ''}
+          <i data-lucide="briefcase" class="w-5 h-5 text-eu-orange"></i>${sectionTitle}
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">${skillsHtml}</div>
       </div>
@@ -135,15 +152,25 @@ function tabContent(activeTab, courses, trainingT) {
   }
 
   if (activeTab === 'teacher') {
-    const topicsHtml = (trainingT?.teacherTopics || []).map(topic => `
-      <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border shadow-sm text-sm text-eu-text font-medium">
-        <i data-lucide="check-circle" class="w-4 h-4 text-eu-blue shrink-0"></i>${topic}
-      </div>`).join('');
+    // Usar skills del CMS si están disponibles (continuous-learning section)
+    const teacherSection = sections.find(s => s.id === 'continuous-learning');
+    const skills = teacherSection?.skillsBlock?.skills || [];
+    const topicsHtml = skills.length > 0
+      ? skills.map(skill => `
+        <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border shadow-sm text-sm text-eu-text font-medium">
+          <span class="text-lg">${skill.icon}</span><span>${pickLang(skill.title, '')}</span>
+        </div>`).join('')
+      : (trainingT?.teacherTopics || []).map(topic => `
+        <div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border shadow-sm text-sm text-eu-text font-medium">
+          <i data-lucide="check-circle" class="w-4 h-4 text-eu-blue shrink-0"></i>${topic}
+        </div>`).join('');
+
+    const sectionTitle = teacherSection ? pickLang(teacherSection.title, trainingT?.tabTeacherTraining || '') : (trainingT?.tabTeacherTraining || '');
 
     return `
       <div class="bg-eu-blue/5 border border-eu-blue/20 rounded-xl p-6 mb-8">
         <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2">
-          <i data-lucide="book-open" class="w-5 h-5 text-eu-blue"></i>${trainingT?.tabTeacherTraining || ''}
+          <i data-lucide="book-open" class="w-5 h-5 text-eu-blue"></i>${sectionTitle}
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${topicsHtml}</div>
       </div>
@@ -153,11 +180,21 @@ function tabContent(activeTab, courses, trainingT) {
   }
 
   // master
-  const bridgeItemsHtml = (trainingT?.masterBridgeItems || []).map((item, i) => `
-    <div class="flex items-start gap-2 bg-white rounded-lg px-4 py-3 border border-purple-100 shadow-sm text-sm text-eu-text font-medium">
-      <span class="w-5 h-5 rounded-full bg-purple-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">${i + 1}</span>
-      ${item}
-    </div>`).join('');
+  const masterSection = sections.find(s => s.id === 'master-skills');
+  const masterSkills = masterSection?.skillsBlock?.skills || [];
+  const masterSkillsHtml = masterSkills.length > 0
+    ? masterSkills.map((skill, i) => `
+      <div class="flex items-start gap-2 bg-white rounded-lg px-4 py-3 border border-purple-100 shadow-sm text-sm text-eu-text font-medium">
+        <span class="text-lg">${skill.icon}</span>
+        <span>${pickLang(skill.title, '')}</span>
+      </div>`).join('')
+    : (trainingT?.masterBridgeItems || []).map((item, i) => `
+      <div class="flex items-start gap-2 bg-white rounded-lg px-4 py-3 border border-purple-100 shadow-sm text-sm text-eu-text font-medium">
+        <span class="w-5 h-5 rounded-full bg-purple-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">${i + 1}</span>
+        ${item}
+      </div>`).join('');
+
+  const masterSectionTitle = masterSection ? pickLang(masterSection.title, trainingT?.tabMasterBridge || '') : (trainingT?.tabMasterBridge || '');
 
   return `
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 flex items-start gap-3">
@@ -166,9 +203,9 @@ function tabContent(activeTab, courses, trainingT) {
     </div>
     <div class="bg-purple-50 border border-purple-200 rounded-xl p-6 mb-8">
       <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2">
-        <i data-lucide="graduation-cap" class="w-5 h-5 text-purple-700"></i>${trainingT?.tabMasterBridge || ''}
+        <i data-lucide="graduation-cap" class="w-5 h-5 text-purple-700"></i>${masterSectionTitle}
       </h2>
-      <div class="space-y-3">${bridgeItemsHtml}</div>
+      <div class="space-y-3">${masterSkillsHtml}</div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
       ${masterCourses.map(c => courseCard(c, trainingT, true)).join('')}
@@ -183,6 +220,7 @@ export function render() {
   const trainingT = t('training') || {};
   const activeTab = getState('trainingTab') || 'fp';
   const courses   = getCourses(trainingT);
+  const sections  = TRAINING_CONFIG?.sectionsBlock || [];
 
   const totalEnrolled = courses.reduce((a, c) => a + c.enrolled, 0).toLocaleString();
 
@@ -237,7 +275,7 @@ export function render() {
       <!-- Tabs + content -->
       <div class="max-w-7xl mx-auto px-6 py-10">
         <div class="flex flex-wrap gap-2 mb-8 border-b border-eu-border pb-4">${tabsHtml}</div>
-        ${tabContent(activeTab, courses, trainingT)}
+        ${tabContent(activeTab, courses, trainingT, sections)}
       </div>
     </div>
   `;
