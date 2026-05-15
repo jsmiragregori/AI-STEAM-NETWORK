@@ -36,7 +36,7 @@ function statusActiveStyle(status) {
 
 function getActiveFilters(tab) {
   const filterKey = `trainingFilters_${tab}`;
-  return JSON.parse(localStorage.getItem(filterKey) || '{"sectors":[],"modalities":[],"tags":[],"levels":[],"statuses":[]}');
+  return JSON.parse(localStorage.getItem(filterKey) || '{"sectors":[],"modalities":[],"tags":[],"statuses":[]}');
 }
 
 function setActiveFilters(tab, filters) {
@@ -49,9 +49,8 @@ function filterCourses(courses, filters) {
     const sectorMatch   = filters.sectors.length === 0   || course.sectorIds?.some(s => filters.sectors.includes(s));
     const modalityMatch = filters.modalities.length === 0 || (course.modalityId && filters.modalities.includes(course.modalityId));
     const tagMatch      = filters.tags.length === 0      || course.tagIds?.some(t => filters.tags.includes(t));
-    const levelMatch    = (filters.levels  || []).length === 0 || (filters.levels  || []).includes(course.level);
     const statusMatch   = (filters.statuses || []).length === 0 || (filters.statuses || []).includes(course.status);
-    return sectorMatch && modalityMatch && tagMatch && levelMatch && statusMatch;
+    return sectorMatch && modalityMatch && tagMatch && statusMatch;
   });
 }
 
@@ -101,7 +100,7 @@ function getCourses(trainingT) {
   }));
 }
 
-function courseCard(course, trainingT, isMaster = false, courseTags = [], activeTab = 'fp', activeFilters = { sectors: [], modalities: [], tags: [], levels: [], statuses: [] }) {
+function courseCard(course, trainingT, isMaster = false, courseTags = [], activeTab = 'fp', activeFilters = { sectors: [], modalities: [], tags: [], statuses: [] }) {
   const statusLabels   = trainingT?.statusLabels   || {};
   const levelLabels    = trainingT?.levelLabels    || {};
   const modalityLabels = trainingT?.modalityLabels || {};
@@ -110,7 +109,6 @@ function courseCard(course, trainingT, isMaster = false, courseTags = [], active
   const levelLabel    = levelLabels[course.level]       || course.level;
   const modalityLabel = modalityLabels[course.modality] || course.modality;
 
-  const isLevelActive  = (activeFilters.levels   || []).includes(course.level);
   const isStatusActive = (activeFilters.statuses || []).includes(course.status);
   const courseSectorLabels = course.sectors || [];
   const href = isMaster ? 'https://valgrai.eu' : 'https://portal.edu.gva.es/aules/';
@@ -128,7 +126,7 @@ function courseCard(course, trainingT, isMaster = false, courseTags = [], active
       <div class="p-5 flex-1">
         <div class="flex items-center justify-between mb-3 gap-2">
           <div class="flex items-center gap-2 flex-wrap">
-            <button data-filter-level="${course.level}" class="text-sm font-extrabold uppercase px-2 py-0.5 rounded cursor-pointer transition-colors ${isLevelActive ? 'bg-eu-purple text-eu-yellow' : 'bg-eu-yellow text-eu-purple hover:opacity-80'}">${levelLabel}</button>
+            <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded bg-eu-yellow text-eu-purple">${levelLabel}</span>
             ${isMaster ? '<span class="text-xs bg-purple-600 text-white px-2 py-0.5 rounded font-bold">Track A</span>' : ''}
           </div>
           <button data-filter-status="${course.status}" class="text-sm font-bold px-2 py-0.5 rounded cursor-pointer transition-colors ${isStatusActive ? '' : statusInactiveClasses(course.status)}" ${isStatusActive ? `style="${statusActiveStyle(course.status)}"` : ''}>${statusLabel}</button>
@@ -187,7 +185,7 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags = [], em
   masterCourses = filterCourses(masterCourses, filters);
 
   // Build clear filters button if needed
-  const hasActiveFilters = filters.sectors.length > 0 || filters.modalities.length > 0 || filters.tags.length > 0 || (filters.levels || []).length > 0 || (filters.statuses || []).length > 0;
+  const hasActiveFilters = filters.sectors.length > 0 || filters.modalities.length > 0 || filters.tags.length > 0 || (filters.statuses || []).length > 0;
   const clearFiltersLabel = trainingT?.clearFiltersButton || 'Limpiar filtros';
   const clearFiltersHtml = hasActiveFilters ? `<div class="mb-6"><button data-clear-filters class="inline-flex items-center gap-2 text-sm px-3 py-1.5 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 border border-gray-300 hover:bg-gray-200 hover:border-gray-400"><i data-lucide="x" class="w-4 h-4"></i>${clearFiltersLabel}</button></div>` : '';
   const filterChipsHtml = clearFiltersHtml;
@@ -450,24 +448,6 @@ export function mount() {
     });
   });
 
-  document.querySelectorAll('[data-filter-level]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      const filters = getActiveFilters(activeTab);
-      if (!filters.levels) filters.levels = [];
-      const levelId = btn.dataset.filterLevel;
-      const idx = filters.levels.indexOf(levelId);
-      if (idx > -1) filters.levels.splice(idx, 1);
-      else filters.levels.push(levelId);
-      setActiveFilters(activeTab, filters);
-      const main = document.getElementById('main-root');
-      main.innerHTML = render();
-      mount();
-      if (window.lucide) window.lucide.createIcons();
-    });
-  });
-
   document.querySelectorAll('[data-filter-status]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
@@ -488,7 +468,7 @@ export function mount() {
 
   // Clear filters button
   document.querySelector('[data-clear-filters]')?.addEventListener('click', () => {
-    setActiveFilters(activeTab, { sectors: [], modalities: [], tags: [], levels: [], statuses: [] });
+    setActiveFilters(activeTab, { sectors: [], modalities: [], tags: [], statuses: [] });
     const main = document.getElementById('main-root');
     main.innerHTML = render();
     mount();
