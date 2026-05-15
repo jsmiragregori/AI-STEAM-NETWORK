@@ -1931,7 +1931,16 @@ export const GOVERNANCE_CONFIG = {
         "order": 12,
         "title": "Política de Igualdad de Género y Diversidad",
         "date": "2025-11-15",
-        "types": [],
+        "types": [
+          {
+            "id": "hr",
+            "label": {
+              "es": "RRHH",
+              "en": "Human Resources",
+              "va": "RRHH"
+            }
+          }
+        ],
         "access": "public",
         "icon": "⚧",
         "url": "",
@@ -1955,6 +1964,22 @@ export const GOVERNANCE_CONFIG = {
               "es": "Fundacional",
               "en": "Foundational",
               "va": "Fundacional"
+            }
+          },
+          {
+            "id": "governance",
+            "label": {
+              "es": "Gobernanza",
+              "en": "Governance",
+              "va": "Governança"
+            }
+          },
+          {
+            "id": "collaboration",
+            "label": {
+              "es": "Colaboración",
+              "en": "Collaboration",
+              "va": "Col·laboració"
             }
           }
         ],
