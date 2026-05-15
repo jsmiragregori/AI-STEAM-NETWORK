@@ -1660,7 +1660,6 @@ export const GOVERNANCE_CONFIG = {
     }
   },
   "documentationBlock": {
-    "visible": true,
     "headerVisible": true,
     "title": {
       "es": "Documentación de Transparencia",
