@@ -1687,7 +1687,7 @@ export const GOVERNANCE_CONFIG = {
     "noSearchResultsMessage": {
       "es": "No hay documentos que coincidan con la búsqueda.",
       "en": "No documents match your search.",
-      "va": "Cap document coincideix amb la teva cerca."
+      "va": "Cap document coincideix amb la teua cerca."
     },
     "allLabel": {
       "es": "Todo",
@@ -1723,7 +1723,16 @@ export const GOVERNANCE_CONFIG = {
         "order": 10,
         "title": "Informe de Progreso Interno Q1 2026",
         "date": "2026-04-15",
-        "type": "Seguimiento",
+        "types": [
+          {
+            "id": "tracking",
+            "label": {
+              "es": "Seguimiento",
+              "en": "Progress Tracking",
+              "va": "Seguiment"
+            }
+          }
+        ],
         "access": "partners",
         "icon": "📈",
         "url": "",
@@ -1740,7 +1749,16 @@ export const GOVERNANCE_CONFIG = {
         "order": 4,
         "title": "Política de Contenidos y Licencias OER",
         "date": "2026-03-15",
-        "type": "Editorial",
+        "types": [
+          {
+            "id": "editorial",
+            "label": {
+              "es": "Editorial",
+              "en": "Editorial",
+              "va": "Editorial"
+            }
+          }
+        ],
         "access": "public",
         "icon": "📝",
         "url": "",
@@ -1757,7 +1775,16 @@ export const GOVERNANCE_CONFIG = {
         "order": 8,
         "title": "Actas Comité Directivo – Q1 2026",
         "date": "2026-03-15",
-        "type": "Actas",
+        "types": [
+          {
+            "id": "minutes",
+            "label": {
+              "es": "Actas",
+              "en": "Minutes",
+              "va": "Actes"
+            }
+          }
+        ],
         "access": "partners",
         "icon": "📋",
         "url": "",
@@ -1774,7 +1801,16 @@ export const GOVERNANCE_CONFIG = {
         "order": 11,
         "title": "Manual de Usuario – ConsensUE para Stakeholders",
         "date": "2026-03-15",
-        "type": "Operativo",
+        "types": [
+          {
+            "id": "operational",
+            "label": {
+              "es": "Operativo",
+              "en": "Operational",
+              "va": "Operatiu"
+            }
+          }
+        ],
         "access": "public",
         "icon": "📘",
         "url": "",
@@ -1791,7 +1827,16 @@ export const GOVERNANCE_CONFIG = {
         "order": 2,
         "title": "D1.2 – AI STEAM Network: Conceptos Iniciales y Gobernanza",
         "date": "2026-02-15",
-        "type": "Gobernanza",
+        "types": [
+          {
+            "id": "governance",
+            "label": {
+              "es": "Gobernanza",
+              "en": "Governance",
+              "va": "Governança"
+            }
+          }
+        ],
         "access": "public",
         "icon": "🏛️",
         "url": "https://aules.edu.gva.es/formaciodelprofessorat",
@@ -1808,7 +1853,16 @@ export const GOVERNANCE_CONFIG = {
         "order": 3,
         "title": "Modelo de Acuerdo de Colaboración – Stakeholders",
         "date": "2026-02-15",
-        "type": "Colaboración",
+        "types": [
+          {
+            "id": "collaboration",
+            "label": {
+              "es": "Colaboración",
+              "en": "Collaboration",
+              "va": "Col·laboració"
+            }
+          }
+        ],
         "access": "public",
         "icon": "🤝",
         "url": "",
@@ -1825,7 +1879,16 @@ export const GOVERNANCE_CONFIG = {
         "order": 5,
         "title": "Código Ético de Retos Industriales",
         "date": "2026-02-15",
-        "type": "Ética",
+        "types": [
+          {
+            "id": "ethics",
+            "label": {
+              "es": "Ética",
+              "en": "Ethics",
+              "va": "Ètica"
+            }
+          }
+        ],
         "access": "public",
         "icon": "⚖️",
         "url": "https://aules.edu.gva.es/formaciodelprofessorat",
@@ -1842,7 +1905,16 @@ export const GOVERNANCE_CONFIG = {
         "order": 7,
         "title": "Actas Asamblea General – Sesión 1",
         "date": "2025-11-15",
-        "type": "Actas",
+        "types": [
+          {
+            "id": "minutes",
+            "label": {
+              "es": "Actas",
+              "en": "Minutes",
+              "va": "Actes"
+            }
+          }
+        ],
         "access": "partners",
         "icon": "📋",
         "url": "",
@@ -1859,7 +1931,7 @@ export const GOVERNANCE_CONFIG = {
         "order": 12,
         "title": "Política de Igualdad de Género y Diversidad",
         "date": "2025-11-15",
-        "type": "RRHH",
+        "types": [],
         "access": "public",
         "icon": "⚧",
         "url": "",
@@ -1876,7 +1948,16 @@ export const GOVERNANCE_CONFIG = {
         "order": 1,
         "title": "Acuerdo de Consorcio AI-SECRETT v1.0",
         "date": "2025-10-15",
-        "type": "Fundacional",
+        "types": [
+          {
+            "id": "foundational",
+            "label": {
+              "es": "Fundacional",
+              "en": "Foundational",
+              "va": "Fundacional"
+            }
+          }
+        ],
         "access": "public",
         "icon": "📄",
         "url": "https://aules.edu.gva.es/formaciodelprofessorat",
@@ -1893,7 +1974,16 @@ export const GOVERNANCE_CONFIG = {
         "order": 6,
         "title": "Plan de Gestión de Datos (DMP)",
         "date": "2025-10-15",
-        "type": "Técnico",
+        "types": [
+          {
+            "id": "technical",
+            "label": {
+              "es": "Técnico",
+              "en": "Technical",
+              "va": "Tècnic"
+            }
+          }
+        ],
         "access": "partners",
         "icon": "🗄️",
         "url": "",
@@ -1910,7 +2000,16 @@ export const GOVERNANCE_CONFIG = {
         "order": 9,
         "title": "Declaración Ética y Conflictos de Interés",
         "date": "2025-10-15",
-        "type": "Ética",
+        "types": [
+          {
+            "id": "ethics",
+            "label": {
+              "es": "Ética",
+              "en": "Ethics",
+              "va": "Ètica"
+            }
+          }
+        ],
         "access": "public",
         "icon": "🔍",
         "url": "",

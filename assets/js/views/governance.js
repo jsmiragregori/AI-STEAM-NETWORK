@@ -542,9 +542,9 @@ function tabDocumentos(govT) {
   function docMatchesSearch(doc, term) {
     if (!term) return true;
     const title = (doc.title || '').toLowerCase();
-    const type = (doc.type || '').toLowerCase();
+    const typesStr = (Array.isArray(doc.types) ? doc.types.map(t => (t.label?.es || '').toLowerCase()).join(' ') : '').toLowerCase();
     const id = (doc.id || '').toLowerCase();
-    return title.includes(term) || type.includes(term) || id.includes(term);
+    return title.includes(term) || typesStr.includes(term) || id.includes(term);
   }
 
   function renderDocs() {
@@ -579,7 +579,9 @@ function tabDocumentos(govT) {
               <p class="font-semibold text-sm text-eu-text truncate">${doc.title || ''}</p>
               <div class="flex items-center gap-2 mt-0.5 flex-wrap">
                 <span class="text-xs text-gray-500">${formatDocDate(doc.date)}</span>
-                <span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${doc.type || ''}</span>
+                ${(Array.isArray(doc.types) ? doc.types : []).map(type => `
+                  <span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${pickLang(type.label, '')}</span>
+                `).join('')}
                 <span class="text-xs font-bold px-1.5 py-0.5 rounded ${pub ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}">
                   ${pickLang(pub ? accessLabels.public : accessLabels.partners, pub ? (s.accessPublic || 'Público') : (s.accessPartners || 'Partners'))}
                 </span>
