@@ -22,10 +22,16 @@ function pickLang(value, fallback = '') {
   return fallback;
 }
 
-function statusColor(status, isActive = false) {
-  if (status === 'Activo')       return isActive ? 'bg-green-700 text-white'  : 'text-green-700 bg-green-50 hover:bg-green-100';
-  if (status === 'Próximamente') return isActive ? 'bg-yellow-600 text-white' : 'text-yellow-700 bg-yellow-50 hover:bg-yellow-100';
-  return isActive ? 'bg-gray-600 text-white' : 'text-gray-600 bg-gray-100 hover:bg-gray-200';
+function statusInactiveClasses(status) {
+  if (status === 'Activo')       return 'text-green-700 bg-green-50';
+  if (status === 'Próximamente') return 'text-yellow-700 bg-yellow-50';
+  return 'text-gray-600 bg-gray-100';
+}
+
+function statusActiveStyle(status) {
+  if (status === 'Activo')       return 'background:#15803d;color:#fff';
+  if (status === 'Próximamente') return 'background:#b45309;color:#fff';
+  return 'background:#4b5563;color:#fff';
 }
 
 function getActiveFilters(tab) {
@@ -125,7 +131,7 @@ function courseCard(course, trainingT, isMaster = false, courseTags = [], active
             <button data-filter-level="${course.level}" class="text-sm font-extrabold uppercase px-2 py-0.5 rounded cursor-pointer transition-colors ${isLevelActive ? 'bg-eu-purple text-eu-yellow' : 'bg-eu-yellow text-eu-purple hover:opacity-80'}">${levelLabel}</button>
             ${isMaster ? '<span class="text-xs bg-purple-600 text-white px-2 py-0.5 rounded font-bold">Track A</span>' : ''}
           </div>
-          <button data-filter-status="${course.status}" class="text-sm font-bold px-2 py-0.5 rounded cursor-pointer transition-colors ${statusColor(course.status, isStatusActive)}">${statusLabel}</button>
+          <button data-filter-status="${course.status}" class="text-sm font-bold px-2 py-0.5 rounded cursor-pointer transition-colors ${isStatusActive ? '' : statusInactiveClasses(course.status)}" ${isStatusActive ? `style="${statusActiveStyle(course.status)}"` : ''}>${statusLabel}</button>
         </div>
         <h3 class="font-bold text-eu-text text-sm mb-2 leading-snug">${course.title}</h3>
         <p class="text-xs text-gray-500 mb-3">${course.description}</p>
