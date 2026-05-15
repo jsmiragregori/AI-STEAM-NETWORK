@@ -177,7 +177,8 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags = [], em
 
   // Build clear filters button if needed
   const hasActiveFilters = filters.sectors.length > 0 || filters.modalities.length > 0 || filters.tags.length > 0;
-  const clearFiltersHtml = hasActiveFilters ? `<div class="mb-6"><button data-clear-filters class="text-sm px-4 py-2 rounded-lg font-bold bg-red-50 text-red-700 border border-red-300 hover:bg-red-100 transition-colors">✕ Limpiar filtros</button></div>` : '';
+  const clearFiltersLabel = trainingT?.clearFiltersButton || 'Limpiar filtros';
+  const clearFiltersHtml = hasActiveFilters ? `<div class="mb-6"><button data-clear-filters class="inline-flex items-center gap-2 text-sm px-3 py-1.5 rounded-full font-medium transition-colors bg-gray-100 text-gray-700 border border-gray-300 hover:bg-gray-200 hover:border-gray-400"><i data-lucide="x" class="w-4 h-4"></i>${clearFiltersLabel}</button></div>` : '';
   const filterChipsHtml = clearFiltersHtml;
 
   // Encontrar sección CMS correspondiente

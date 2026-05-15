@@ -653,7 +653,8 @@ export const translations = {
         "Turismo y Cultura": "Turismo y Cultura",
         "Administración": "Administración",
         "Medio Ambiente": "Medio Ambiente"
-      }
+      },
+      "clearFiltersButton": "Limpiar filtros"
     },
     "knowledge": {
       "title": "Transferencia de Conocimiento",
@@ -2718,7 +2719,8 @@ export const translations = {
         "Turismo y Cultura": "Tourism and Culture",
         "Administración": "Administration",
         "Medio Ambiente": "Energy and Environment"
-      }
+      },
+      "clearFiltersButton": "Clear filters"
     },
     "knowledge": {
       "title": "Knowledge Transfer",
@@ -4766,7 +4768,8 @@ export const translations = {
         "Turismo y Cultura": "Turisme i Cultura",
         "Administración": "Administració",
         "Medio Ambiente": "Medi Ambient"
-      }
+      },
+      "clearFiltersButton": "Esborrar filtres"
     },
     "knowledge": {
       "title": "Transferència de Coneixement",
