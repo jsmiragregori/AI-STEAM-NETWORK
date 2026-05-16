@@ -322,12 +322,12 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
     const skillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
     const skills = cmsSection?.skillsBlock?.skills || [];
     const skillsHtml = skills.length > 0
-      ? skills.map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow shadow-sm text-sm text-eu-text font-medium"><span class="text-lg">${s.icon}</span><span>${pickLang(s.title, '')}</span></div>`).join('')
-      : (trainingT?.fpSkills || []).map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow shadow-sm text-sm text-eu-text font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-eu-orange shrink-0"></i>${s}</div>`).join('');
+      ? skills.map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow/70 text-sm text-eu-text font-medium"><span class="text-base leading-none">${s.icon}</span><span>${pickLang(s.title, '')}</span></div>`).join('')
+      : (trainingT?.fpSkills || []).map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow/70 text-sm text-eu-text font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-eu-orange shrink-0"></i>${s}</div>`).join('');
     const sectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabFpVet || '') : (trainingT?.tabFpVet || '');
     return `
       ${skillsBlockVisible ? `
-      <div class="bg-eu-yellow/20 border border-eu-yellow rounded-xl p-6 mb-8">
+      <div class="bg-eu-yellow/20 border border-eu-yellow rounded-xl p-5 mb-8">
         <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="briefcase" class="w-5 h-5 text-eu-orange"></i>${sectionTitle}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">${skillsHtml}</div>
       </div>` : ''}
@@ -348,12 +348,12 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
     const skillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
     const skills = cmsSection?.skillsBlock?.skills || [];
     const topicsHtml = skills.length > 0
-      ? skills.map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border shadow-sm text-sm text-eu-text font-medium"><span class="text-lg">${s.icon}</span><span>${pickLang(s.title, '')}</span></div>`).join('')
-      : (trainingT?.teacherTopics || []).map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border shadow-sm text-sm text-eu-text font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-eu-blue shrink-0"></i>${s}</div>`).join('');
+      ? skills.map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border text-sm text-eu-text font-medium"><span class="text-base leading-none">${s.icon}</span><span>${pickLang(s.title, '')}</span></div>`).join('')
+      : (trainingT?.teacherTopics || []).map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border text-sm text-eu-text font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-eu-blue shrink-0"></i>${s}</div>`).join('');
     const sectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabTeacherTraining || '') : (trainingT?.tabTeacherTraining || '');
     return `
       ${skillsBlockVisible ? `
-      <div class="bg-purple-50 border border-purple-200 rounded-xl p-6 mb-8">
+      <div class="bg-purple-50 border border-purple-200 rounded-xl p-5 mb-8">
         <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-5 h-5 text-purple-700"></i>${sectionTitle}</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${topicsHtml}</div>
       </div>` : ''}
@@ -364,24 +364,32 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
   const masterSkillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
   const masterSkills = cmsSection?.skillsBlock?.skills || [];
   const masterSkillsHtml = masterSkills.length > 0
-    ? masterSkills.map(s => `<div class="flex items-start gap-2 bg-white rounded-lg px-4 py-3 border border-purple-100 shadow-sm text-sm text-eu-text font-medium"><span class="text-lg">${s.icon}</span><span>${pickLang(s.title, '')}</span></div>`).join('')
-    : (trainingT?.masterBridgeItems || []).map((item, i) => `<div class="flex items-start gap-2 bg-white rounded-lg px-4 py-3 border border-purple-100 shadow-sm text-sm text-eu-text font-medium"><span class="w-5 h-5 rounded-full bg-purple-600 text-white text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">${i + 1}</span>${item}</div>`).join('');
+    ? masterSkills.map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-purple-100 text-sm text-eu-text font-medium"><span class="text-base leading-none">${s.icon}</span><span>${pickLang(s.title, '')}</span></div>`).join('')
+    : (trainingT?.masterBridgeItems || []).map((item, i) => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-purple-100 text-sm text-eu-text font-medium"><span class="w-5 h-5 rounded-full bg-purple-600 text-white text-xs font-bold flex items-center justify-center shrink-0">${i + 1}</span>${item}</div>`).join('');
   const masterSectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabMasterBridge || '') : (trainingT?.tabMasterBridge || '');
+  const masterDisclaimer = cmsSection?.disclaimerBlock
+    ? pickLang(cmsSection.disclaimerBlock.text, '')
+    : (trainingT?.masterBridgeDisclaimer || '');
+  const masterPathBlock = cmsSection?.pathBlock;
+  const masterPathTitle = masterPathBlock ? pickLang(masterPathBlock.title, trainingT?.masterPath || '') : (trainingT?.masterPath || '');
+  const masterPathSteps = masterPathBlock?.steps?.length > 0 ? masterPathBlock.steps.map(s => pickLang(s.text, '')) : (trainingT?.masterPathSteps || []);
   return `
+    ${cmsSection?.disclaimerBlock?.visible === false || !masterDisclaimer ? '' : `
     <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 flex items-start gap-3">
       <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
-      <p class="text-sm text-amber-800">${trainingT?.masterBridgeDisclaimer || ''}</p>
-    </div>
+      <p class="text-sm text-amber-800">${masterDisclaimer}</p>
+    </div>`}
     ${masterSkillsBlockVisible ? `
-    <div class="bg-purple-50 border border-purple-200 rounded-xl p-6 mb-8">
+    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5 mb-8">
       <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="graduation-cap" class="w-5 h-5 text-purple-700"></i>${masterSectionTitle}</h2>
-      <div class="space-y-3">${masterSkillsHtml}</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">${masterSkillsHtml}</div>
     </div>` : ''}
     ${searchControls}${courseGrid}
+    ${masterPathBlock?.visible === false ? '' : `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 mt-8">
-      <h3 class="font-bold text-eu-text mb-4">${trainingT?.masterPath || ''}</h3>
-      <div class="flex flex-wrap items-center gap-2">${pathSteps(trainingT?.masterPathSteps, 'bg-purple-600')}</div>
-    </div>`;
+      <h3 class="font-bold text-eu-text mb-4">${masterPathTitle}</h3>
+      <div class="flex flex-wrap items-center gap-2">${pathSteps(masterPathSteps, 'bg-purple-600')}</div>
+    </div>`}`;
 }
 
 // ── render ────────────────────────────────────────────────────────────────────

@@ -16,43 +16,47 @@ export const TRAINING_CONFIG = {
     },
     "stats": [
       {
-        "id": "active-modules",
+        "id": "total-courses",
         "visible": true,
-        "value": 8,
+        "value": 63,
+        "manualOverride": false,
         "label": {
-          "es": "Módulos activos",
-          "en": "Active Modules",
-          "va": "Mòduls actius"
+          "es": "Cursos publicados",
+          "en": "Published Courses",
+          "va": "Cursos publicats"
         }
       },
       {
-        "id": "enrolled",
+        "id": "training-hours",
         "visible": true,
-        "value": 1601,
+        "value": 2745,
+        "manualOverride": false,
         "label": {
-          "es": "Matriculados",
-          "en": "Enrolled",
-          "va": "Matriculats"
+          "es": "Horas formativas",
+          "en": "Training Hours",
+          "va": "Hores formatives"
         }
       },
       {
-        "id": "micro-credentials",
+        "id": "covered-sectors",
         "visible": true,
-        "value": 12,
+        "value": 7,
+        "manualOverride": false,
         "label": {
-          "es": "Pilotos de microcredenciales",
-          "en": "Micro-credential Pilots",
-          "va": "Pilots de microcredencials"
+          "es": "Sectores cubiertos",
+          "en": "Covered Sectors",
+          "va": "Sectors coberts"
         }
       },
       {
-        "id": "countries",
+        "id": "open-courses",
         "visible": true,
-        "value": 24,
+        "value": 54,
+        "manualOverride": false,
         "label": {
-          "es": "Países participantes",
-          "en": "Participating Countries",
-          "va": "Països participants"
+          "es": "Activos o en inscripción",
+          "en": "Active or Open Courses",
+          "va": "Actius o en inscripció"
         }
       }
     ],
@@ -77,16 +81,6 @@ export const TRAINING_CONFIG = {
       },
       "skillsBlock": {
         "visible": true,
-        "title": {
-          "es": "Competencias clave",
-          "en": "Key Competencies",
-          "va": "Competències clau"
-        },
-        "description": {
-          "es": "",
-          "en": "",
-          "va": ""
-        },
         "skills": [
           {
             "id": "ai-literacy",
@@ -216,7 +210,8 @@ export const TRAINING_CONFIG = {
             }
           }
         ]
-      }
+      },
+      "disclaimerBlock": null
     },
     {
       "id": "master-skills",
@@ -228,16 +223,6 @@ export const TRAINING_CONFIG = {
       },
       "skillsBlock": {
         "visible": true,
-        "title": {
-          "es": "Competencias avanzadas",
-          "en": "Advanced Competencies",
-          "va": "Competències avançades"
-        },
-        "description": {
-          "es": "",
-          "en": "",
-          "va": ""
-        },
         "skills": [
           {
             "id": "ai-strategy",
@@ -313,7 +298,69 @@ export const TRAINING_CONFIG = {
           }
         ]
       },
-      "pathBlock": null
+      "pathBlock": {
+        "visible": true,
+        "title": {
+          "es": "Puente al Máster AI-SECRETT (Track A)",
+          "en": "Master AI-SECRETT Bridge (Track A)",
+          "va": "Pont al Màster AI-SECRETT"
+        },
+        "steps": [
+          {
+            "id": "admision",
+            "order": 1,
+            "text": {
+              "es": "Caso o reto del ecosistema candidato al Track A",
+              "en": "Ecosystem case or challenge candidate for Track A",
+              "va": "Admissió (grau universitari o FP + pont)"
+            }
+          },
+          {
+            "id": "modulos-sector",
+            "order": 2,
+            "text": {
+              "es": "Validación de relevancia curricular por UVEG",
+              "en": "Curriculum relevance validation by UVEG",
+              "va": "Mòduls temàtics per sector (60 ECTS)"
+            }
+          },
+          {
+            "id": "reto-real",
+            "order": 3,
+            "text": {
+              "es": "Posible incorporación como TFM (decisión de UVEG)",
+              "en": "Possible TFM incorporation (UVEG decision)",
+              "va": "Repte real del Banc de Reptes com a TFG"
+            }
+          },
+          {
+            "id": "practicas-internacionales",
+            "order": 4,
+            "text": {
+              "es": "Sesión de transferencia o conferencia invitada",
+              "en": "Transfer session or guest lecture",
+              "va": "Pràctiques internacionals amb soci UE"
+            }
+          },
+          {
+            "id": "certificacion",
+            "order": 5,
+            "text": {
+              "es": "Evidencia de adopción aportada a AI-SECRETT",
+              "en": "Adoption evidence contributed to AI-SECRETT",
+              "va": "Certificació TÜV + Credencial Digital Europea (pilot)"
+            }
+          }
+        ]
+      },
+      "disclaimerBlock": {
+        "visible": true,
+        "text": {
+          "es": "El Máster AI-SECRETT (Track A) es gobernado por UVEG y los socios académicos del consorcio. La AI-STEAM Network (Track B) no asigna ECTS, no certifica títulos universitarios ni define los criterios de evaluación del Máster.",
+          "en": "The Master AI-SECRETT (Track A) is governed by UVEG and the academic partners of the consortium. The AI-STEAM Network (Track B) does not award ECTS, does not certify university degrees and does not define Master assessment criteria.",
+          "va": "El Màster AI-SECRETT (Track A) és governat per UVEG. L'accés i el reconeixement de crèdits estan subjectes als criteris d'admissió universitària. AI-STEAM Network (Track B, CEICE) facilita el pont i la preparació."
+        }
+      }
     },
     {
       "id": "continuous-learning",
@@ -325,16 +372,6 @@ export const TRAINING_CONFIG = {
       },
       "skillsBlock": {
         "visible": true,
-        "title": {
-          "es": "Habilidades para la educación",
-          "en": "Skills for Education",
-          "va": "Habilitats per a l'educació"
-        },
-        "description": {
-          "es": "",
-          "en": "",
-          "va": ""
-        },
         "skills": [
           {
             "id": "ped-ai-integration",
@@ -410,7 +447,8 @@ export const TRAINING_CONFIG = {
           }
         ]
       },
-      "pathBlock": null
+      "pathBlock": null,
+      "disclaimerBlock": null
     }
   ],
   "coursesBlock": {
@@ -2287,6 +2325,436 @@ export const TRAINING_CONFIG = {
         "tagIds": [
           "generativa",
           "visualizacion"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "agentes-ia-servicios-publicos-master",
+        "createdAt": "2026-01-04",
+        "title": {
+          "es": "Agentes de IA para Servicios Públicos y Participación Ciudadana",
+          "en": "AI Agents for Public Services and Citizen Participation",
+          "va": "Agents d'IA per a Serveis Públics i Participació Ciutadana"
+        },
+        "description": {
+          "es": "Diseño de asistentes inteligentes, RAG documental y análisis de trámites para mejorar accesibilidad, transparencia y confianza institucional.",
+          "en": "Design of intelligent assistants, document RAG and procedure analysis to improve accessibility, transparency and institutional trust.",
+          "va": "Disseny d'assistents intel·ligents, RAG documental i anàlisi de tràmits per a millorar accessibilitat, transparència i confiança institucional."
+        },
+        "level": "Máster",
+        "statusId": "inscripcion",
+        "hours": 72,
+        "enrolled": 68,
+        "rating": 4.8,
+        "sectorIds": [
+          "administracion",
+          "educacion-sector"
+        ],
+        "modalityId": "semipresencial",
+        "tagIds": [
+          "generativa",
+          "responsable",
+          "datos-reales"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "creatividad-computacional-steam-master",
+        "createdAt": "2026-01-10",
+        "title": {
+          "es": "Creatividad Computacional e IA Generativa para Proyectos STEAM",
+          "en": "Computational Creativity and Generative AI for STEAM Projects",
+          "va": "Creativitat Computacional i IA Generativa per a Projectes STEAM"
+        },
+        "description": {
+          "es": "Laboratorio avanzado de modelos generativos, narrativa visual, sonido sintético y evaluación crítica para prototipos creativos con impacto sectorial.",
+          "en": "Advanced lab on generative models, visual storytelling, synthetic sound and critical assessment for creative prototypes with sector impact.",
+          "va": "Laboratori avançat de models generatius, narrativa visual, so sintètic i avaluació crítica per a prototips creatius amb impacte sectorial."
+        },
+        "level": "Máster",
+        "statusId": "activo",
+        "hours": 84,
+        "enrolled": 91,
+        "rating": 4.9,
+        "sectorIds": [
+          "turismo-cultura",
+          "educacion-sector"
+        ],
+        "modalityId": "presencial",
+        "tagIds": [
+          "generativa",
+          "visualizacion",
+          "etica"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "vision-artificial-calidad-industrial-master",
+        "createdAt": "2026-01-18",
+        "title": {
+          "es": "Visión Artificial para Calidad, Seguridad y Diseño Industrial",
+          "en": "Computer Vision for Quality, Safety and Industrial Design",
+          "va": "Visió Artificial per a Qualitat, Seguretat i Disseny Industrial"
+        },
+        "description": {
+          "es": "Deep learning visual para inspección de producto, prevención de riesgos, diseño asistido y cuadros de mando explicables en planta.",
+          "en": "Visual deep learning for product inspection, risk prevention, assisted design and explainable plant dashboards.",
+          "va": "Deep learning visual per a inspecció de producte, prevenció de riscos, disseny assistit i quadres de comandament explicables en planta."
+        },
+        "level": "Máster",
+        "statusId": "activo",
+        "hours": 78,
+        "enrolled": 76,
+        "rating": 4.7,
+        "sectorIds": [
+          "industria"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "ia-aplicada",
+          "automatizacion",
+          "visualizacion"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "ia-agroalimentaria-precision-master",
+        "createdAt": "2026-01-29",
+        "title": {
+          "es": "IA para Agroalimentación de Precisión y Trazabilidad Creativa",
+          "en": "AI for Precision Agri-food and Creative Traceability",
+          "va": "IA per a Agroalimentació de Precisió i Traçabilitat Creativa"
+        },
+        "description": {
+          "es": "Modelos predictivos, sensores, visión artificial y relatos de trazabilidad para optimizar cultivos, calidad alimentaria y comunicación con consumidores.",
+          "en": "Predictive models, sensors, computer vision and traceability narratives to optimise crops, food quality and consumer communication.",
+          "va": "Models predictius, sensors, visió artificial i relats de traçabilitat per a optimitzar cultius, qualitat alimentària i comunicació amb consumidors."
+        },
+        "level": "Máster",
+        "statusId": "inscripcion",
+        "hours": 74,
+        "enrolled": 59,
+        "rating": 4.6,
+        "sectorIds": [
+          "agroalimentario",
+          "medio-ambiente"
+        ],
+        "modalityId": "semipresencial",
+        "tagIds": [
+          "predictivo",
+          "iot",
+          "sostenibilidad"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "modelos-climaticos-biodiversidad-master",
+        "createdAt": "2026-02-06",
+        "title": {
+          "es": "Modelos de IA para Clima, Biodiversidad y Visualización Ambiental",
+          "en": "AI Models for Climate, Biodiversity and Environmental Visualisation",
+          "va": "Models d'IA per a Clima, Biodiversitat i Visualització Ambiental"
+        },
+        "description": {
+          "es": "Aprendizaje automático con datos satelitales, sensores y series temporales para anticipar riesgos ambientales y comunicar escenarios complejos.",
+          "en": "Machine learning with satellite data, sensors and time series to anticipate environmental risks and communicate complex scenarios.",
+          "va": "Aprenentatge automàtic amb dades satel·litàries, sensors i sèries temporals per a anticipar riscos ambientals i comunicar escenaris complexos."
+        },
+        "level": "Máster",
+        "statusId": "activo",
+        "hours": 88,
+        "enrolled": 83,
+        "rating": 4.8,
+        "sectorIds": [
+          "medio-ambiente",
+          "administracion"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "sostenibilidad",
+          "predictivo",
+          "visualizacion"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "learning-analytics-generativa-master",
+        "createdAt": "2026-02-15",
+        "title": {
+          "es": "Learning Analytics e IA Generativa para Educación Personalizada",
+          "en": "Learning Analytics and Generative AI for Personalised Education",
+          "va": "Learning Analytics i IA Generativa per a Educació Personalitzada"
+        },
+        "description": {
+          "es": "Analítica avanzada, tutores generativos, evaluación responsable y diseño de experiencias STEAM adaptativas con evidencias de aprendizaje.",
+          "en": "Advanced analytics, generative tutors, responsible assessment and adaptive STEAM experience design with learning evidence.",
+          "va": "Analítica avançada, tutors generatius, avaluació responsable i disseny d'experiències STEAM adaptatives amb evidències d'aprenentatge."
+        },
+        "level": "Máster",
+        "statusId": "proximo",
+        "hours": 76,
+        "enrolled": 64,
+        "rating": 4.7,
+        "sectorIds": [
+          "educacion-sector"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "educacion",
+          "generativa",
+          "responsable"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "bioarte-datos-salud-master",
+        "createdAt": "2026-02-24",
+        "title": {
+          "es": "Bioarte, Datos de Salud e IA Responsable",
+          "en": "Bioart, Health Data and Responsible AI",
+          "va": "Bioart, Dades de Salut i IA Responsable"
+        },
+        "description": {
+          "es": "Cruce entre ciencia de datos, visualización artística y ética biomédica para explorar señales fisiológicas, bienestar y comunicación pública de salud.",
+          "en": "Intersection of data science, artistic visualisation and biomedical ethics to explore physiological signals, wellbeing and public health communication.",
+          "va": "Creuament entre ciència de dades, visualització artística i ètica biomèdica per a explorar senyals fisiològics, benestar i comunicació pública de salut."
+        },
+        "level": "Máster",
+        "statusId": "inscripcion",
+        "hours": 68,
+        "enrolled": 51,
+        "rating": 4.6,
+        "sectorIds": [
+          "salud",
+          "turismo-cultura"
+        ],
+        "modalityId": "presencial",
+        "tagIds": [
+          "responsable",
+          "visualizacion",
+          "etica"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "robots-colaborativos-industria-creativa-master",
+        "createdAt": "2026-03-03",
+        "title": {
+          "es": "Robots Colaborativos, IA y Fabricación Creativa",
+          "en": "Collaborative Robots, AI and Creative Manufacturing",
+          "va": "Robots Col·laboratius, IA i Fabricació Creativa"
+        },
+        "description": {
+          "es": "Programación inteligente de cobots, percepción multimodal y prototipado creativo para fabricación avanzada, seguridad y personalización de producto.",
+          "en": "Intelligent cobot programming, multimodal perception and creative prototyping for advanced manufacturing, safety and product customisation.",
+          "va": "Programació intel·ligent de cobots, percepció multimodal i prototipatge creatiu per a fabricació avançada, seguretat i personalització de producte."
+        },
+        "level": "Máster",
+        "statusId": "activo",
+        "hours": 92,
+        "enrolled": 47,
+        "rating": 4.8,
+        "sectorIds": [
+          "industria",
+          "educacion-sector"
+        ],
+        "modalityId": "semipresencial",
+        "tagIds": [
+          "automatizacion",
+          "ia-aplicada",
+          "iot"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "turismo-inteligente-experiencias-master",
+        "createdAt": "2026-03-21",
+        "title": {
+          "es": "Turismo Inteligente, Experiencias Inmersivas e IA Narrativa",
+          "en": "Smart Tourism, Immersive Experiences and Narrative AI",
+          "va": "Turisme Intel·ligent, Experiències Immersives i IA Narrativa"
+        },
+        "description": {
+          "es": "Recomendadores, gemelos de destino, generación de contenidos y métricas de experiencia para diseñar rutas culturales inclusivas y sostenibles.",
+          "en": "Recommenders, destination twins, content generation and experience metrics to design inclusive and sustainable cultural routes.",
+          "va": "Recomanadors, bessons de destinació, generació de continguts i mètriques d'experiència per a dissenyar rutes culturals inclusives i sostenibles."
+        },
+        "level": "Máster",
+        "statusId": "activo",
+        "hours": 66,
+        "enrolled": 88,
+        "rating": 4.7,
+        "sectorIds": [
+          "turismo-cultura",
+          "medio-ambiente"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "generativa",
+          "gemelos-digitales",
+          "sostenibilidad"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "ia-compras-publicas-sostenibles-master",
+        "createdAt": "2026-04-01",
+        "title": {
+          "es": "IA para Compra Pública Innovadora y Sostenible",
+          "en": "AI for Innovative and Sustainable Public Procurement",
+          "va": "IA per a Compra Pública Innovadora i Sostenible"
+        },
+        "description": {
+          "es": "Minería de documentos, evaluación multicriterio, detección de riesgos y diseño visual de evidencias para políticas públicas basadas en datos.",
+          "en": "Document mining, multicriteria assessment, risk detection and visual evidence design for data-driven public policy.",
+          "va": "Mineria de documents, avaluació multicriteri, detecció de riscos i disseny visual d'evidències per a polítiques públiques basades en dades."
+        },
+        "level": "Máster",
+        "statusId": "proximo",
+        "hours": 64,
+        "enrolled": 42,
+        "rating": 4.5,
+        "sectorIds": [
+          "administracion",
+          "medio-ambiente"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "datos-reales",
+          "responsable",
+          "sostenibilidad"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "food-design-ia-master",
+        "createdAt": "2026-04-12",
+        "title": {
+          "es": "Food Design con IA, Sensorización y Experiencia de Usuario",
+          "en": "Food Design with AI, Sensing and User Experience",
+          "va": "Food Design amb IA, Sensorització i Experiència d'Usuari"
+        },
+        "description": {
+          "es": "Generación de recetas, análisis sensorial, optimización nutricional y diseño de productos alimentarios con criterios creativos, saludables y sostenibles.",
+          "en": "Recipe generation, sensory analysis, nutritional optimisation and food product design with creative, healthy and sustainable criteria.",
+          "va": "Generació de receptes, anàlisi sensorial, optimització nutricional i disseny de productes alimentaris amb criteris creatius, saludables i sostenibles."
+        },
+        "level": "Máster",
+        "statusId": "inscripcion",
+        "hours": 70,
+        "enrolled": 73,
+        "rating": 4.7,
+        "sectorIds": [
+          "agroalimentario",
+          "salud"
+        ],
+        "modalityId": "presencial",
+        "tagIds": [
+          "generativa",
+          "datos-reales",
+          "sostenibilidad"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "ciberseguridad-ia-infraestructuras-master",
+        "createdAt": "2026-04-28",
+        "title": {
+          "es": "IA para Ciberseguridad de Infraestructuras Críticas STEAM",
+          "en": "AI for Cybersecurity in Critical STEAM Infrastructures",
+          "va": "IA per a Ciberseguretat d'Infraestructures Crítiques STEAM"
+        },
+        "description": {
+          "es": "Detección de anomalías, simulación de ataques, explicación de modelos y comunicación visual de riesgos en entornos industriales y públicos.",
+          "en": "Anomaly detection, attack simulation, model explanation and visual risk communication in industrial and public environments.",
+          "va": "Detecció d'anomalies, simulació d'atacs, explicació de models i comunicació visual de riscos en entorns industrials i públics."
+        },
+        "level": "Máster",
+        "statusId": "activo",
+        "hours": 86,
+        "enrolled": 58,
+        "rating": 4.8,
+        "sectorIds": [
+          "industria",
+          "administracion"
+        ],
+        "modalityId": "online",
+        "tagIds": [
+          "predictivo",
+          "responsable",
+          "visualizacion"
+        ],
+        "link": {
+          "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "laboratorio-retos-multisectoriales-master",
+        "createdAt": "2026-05-16",
+        "title": {
+          "es": "Laboratorio Master de Retos Multisectoriales con IA",
+          "en": "Master Lab for Multi-sector AI Challenges",
+          "va": "Laboratori Master de Reptes Multisectorials amb IA"
+        },
+        "description": {
+          "es": "Proyecto integrador con datos reales, prototipos generativos, evaluación ética y transferencia a retos de salud, industria, educación, ambiente y cultura.",
+          "en": "Integrative project with real data, generative prototypes, ethical assessment and transfer to health, industry, education, environment and culture challenges.",
+          "va": "Projecte integrador amb dades reals, prototips generatius, avaluació ètica i transferència a reptes de salut, indústria, educació, ambient i cultura."
+        },
+        "level": "Máster",
+        "statusId": "proximo",
+        "hours": 96,
+        "enrolled": 39,
+        "rating": 4.9,
+        "sectorIds": [
+          "salud",
+          "industria",
+          "educacion-sector",
+          "medio-ambiente",
+          "turismo-cultura"
+        ],
+        "modalityId": "semipresencial",
+        "tagIds": [
+          "ia-aplicada",
+          "generativa",
+          "etica"
         ],
         "link": {
           "url": "https://valgrai.eu",
