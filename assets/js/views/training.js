@@ -612,6 +612,12 @@ export function mount() {
       const rect = cloudCanvas.parentElement.getBoundingClientRect();
       cloudCanvas.width = rect.width;
       cloudCanvas.height = 320;
+
+      // Preseleccionar ~25% de palabras más cortas para rotación vertical
+      const sortedByLength = [...wordList].sort((a, b) => a[0].length - b[0].length);
+      const verticalCount = Math.max(1, Math.ceil(wordList.length * 0.25));
+      const verticalWords = new Set(sortedByLength.slice(0, verticalCount).map(item => item[0]));
+
       const palette = ['#5620f6', '#1d4ed8', '#0d9488', '#ea580c', '#d97706', '#7c3aed'];
       window.WordCloud(cloudCanvas, {
         list: wordList,
@@ -621,7 +627,7 @@ export function mount() {
           for (let i = 0; i < word.length; i++) hash = ((hash << 5) - hash) + word.charCodeAt(i);
           return palette[Math.abs(hash) % palette.length];
         },
-        rotateRatio: 1,
+        rotateRatio: (word) => verticalWords.has(word) ? 1 : 0,
         minRotation: 0,
         maxRotation: Math.PI / 2,
         rotationSteps: 2,

@@ -503,12 +503,16 @@ if (!window.clearImmediate) {
     }
 
     /* Get the deg of rotation according to settings, and luck. */
-    var getRotateDeg = function getRotateDeg () {
-      if (settings.rotateRatio === 0) {
+    var getRotateDeg = function getRotateDeg (word, weight, extraDataArray) {
+      var ratio = typeof settings.rotateRatio === 'function'
+        ? settings.rotateRatio(word, weight, extraDataArray)
+        : settings.rotateRatio
+
+      if (ratio === 0) {
         return 0
       }
 
-      if (Math.random() > settings.rotateRatio) {
+      if (Math.random() > ratio) {
         return 0
       }
 
@@ -927,9 +931,9 @@ if (!window.clearImmediate) {
         weight = item.weight
         attributes = item.attributes
       }
-      var rotateDeg = getRotateDeg()
-
       var extraDataArray = getItemExtraData(item)
+
+      var rotateDeg = getRotateDeg(word, weight, extraDataArray)
 
       // get info needed to put the text onto the canvas
       var info = getTextInfo(word, weight, rotateDeg, extraDataArray)

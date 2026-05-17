@@ -81,7 +81,7 @@ export const TRAINING_CONFIG = {
       },
       "skillsBlock": {
         "visible": true,
-        "displayMode": "cards",
+        "displayMode": "cloud",
         "skills": [
           {
             "id": "ai-literacy",
