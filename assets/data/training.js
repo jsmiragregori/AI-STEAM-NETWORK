@@ -1106,39 +1106,9 @@ export const TRAINING_CONFIG = {
           "va": "Nova skill"
         },
         "description": {
-          "es": "",
-          "en": "",
-          "va": ""
-        }
-      },
-      {
-        "id": "skill-14",
-        "visible": true,
-        "appliesTo": [
-          "FP",
-          "Teacher",
-          "Master"
-        ],
-        "icon": "🎯",
-        "label": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
-        },
-        "shortLabel": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
-        },
-        "title": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
-        },
-        "description": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "sdfsdfasdfasf",
+          "en": "fasdfasdfsaf",
+          "va": "asdfasdfsdf"
         }
       }
     ],
@@ -1528,39 +1498,9 @@ export const TRAINING_CONFIG = {
           "va": "Nova skill"
         },
         "description": {
-          "es": "",
-          "en": "",
-          "va": ""
-        }
-      },
-      {
-        "id": "skill-14",
-        "visible": true,
-        "appliesTo": [
-          "FP",
-          "Teacher",
-          "Master"
-        ],
-        "icon": "🎯",
-        "label": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
-        },
-        "shortLabel": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
-        },
-        "title": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
-        },
-        "description": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "sdfsdfasdfasf",
+          "en": "fasdfasdfsaf",
+          "va": "asdfasdfsdf"
         }
       }
     ],
@@ -2585,12 +2525,14 @@ export const TRAINING_CONFIG = {
         "skillIds": [
           "predictivo",
           "visualizacion",
-          "datos-reales"
+          "datos-reales",
+          "skill-13"
         ],
         "tagIds": [
           "predictivo",
           "visualizacion",
-          "datos-reales"
+          "datos-reales",
+          "skill-13"
         ],
         "link": {
           "url": "https://aules.es",
