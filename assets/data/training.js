@@ -29,7 +29,7 @@ export const TRAINING_CONFIG = {
       {
         "id": "unique-skills",
         "visible": true,
-        "value": 12,
+        "value": 22,
         "manualOverride": false,
         "label": {
           "es": "Skills desarrolladas",
@@ -83,177 +83,190 @@ export const TRAINING_CONFIG = {
         "visible": true,
         "skills": [
           {
-            "id": "ia-aplicada",
+            "id": "ai-literacy",
             "title": {
-              "es": "Inteligencia artificial aplicada",
-              "en": "Applied Artificial Intelligence",
-              "va": "Intel·ligència artificial aplicada"
+              "es": "Alfabetización IA aplicada",
+              "en": "Applied AI Literacy",
+              "va": "Alfabetització IA aplicada"
             },
             "shortLabel": {
-              "es": "IA aplicada",
-              "en": "Applied AI",
-              "va": "IA aplicada"
+              "es": "Alfabetización IA aplicada",
+              "en": "Applied AI Literacy",
+              "va": "Alfabetització IA aplicada"
             },
             "description": {
-              "es": "Uso de modelos de IA para resolver retos técnicos, creativos y sectoriales con datos y contexto real.",
-              "en": "Use of AI models to solve technical, creative and sector-based challenges with real data and context.",
-              "va": "Ús de models d'IA per a resoldre reptes tècnics, creatius i sectorials amb dades i context real."
+              "es": "Comprension aplicada de la IA para usarla en tareas tecnicas, creativas y profesionales.",
+              "en": "Applied understanding of AI for technical, creative and professional tasks.",
+              "va": "Comprensio aplicada de la IA per a usar-la en tasques tecniques, creatives i professionals."
             },
             "icon": "🤖"
           },
           {
-            "id": "datos-reales",
+            "id": "data-work",
             "title": {
-              "es": "Trabajo con datos reales",
-              "en": "Working with Real Data",
-              "va": "Treball amb dades reals"
+              "es": "Trabajo con datos en contextos reales",
+              "en": "Working with Data in Real Contexts",
+              "va": "Treball amb dades en contextos reals"
             },
             "shortLabel": {
-              "es": "Datos reales",
-              "en": "Real data",
-              "va": "Dades reals"
+              "es": "Trabajo con datos en contextos reales",
+              "en": "Working with Data in Real Contexts",
+              "va": "Treball amb dades en contextos reals"
             },
             "description": {
-              "es": "Captura, limpieza, interpretación y uso responsable de datos procedentes de entornos educativos, productivos o sociales.",
-              "en": "Collection, cleaning, interpretation and responsible use of data from educational, productive or social environments.",
-              "va": "Captura, neteja, interpretació i ús responsable de dades procedents d'entorns educatius, productius o socials."
+              "es": "Trabajo con datos reales para interpretar evidencias, patrones y decisiones en contexto.",
+              "en": "Work with real data to interpret evidence, patterns and decisions in context.",
+              "va": "Treball amb dades reals per a interpretar evidencies, patrons i decisions en context."
             },
             "icon": "📊"
           },
           {
-            "id": "automatizacion",
+            "id": "process-automation",
             "title": {
-              "es": "Automatización inteligente de procesos",
-              "en": "Intelligent Process Automation",
-              "va": "Automatització intel·ligent de processos"
+              "es": "Automatización de procesos",
+              "en": "Process Automation",
+              "va": "Automatització de processos"
             },
             "shortLabel": {
-              "es": "Automatización",
-              "en": "Automation",
-              "va": "Automatització"
+              "es": "Automatización de procesos",
+              "en": "Process Automation",
+              "va": "Automatització de processos"
             },
             "description": {
-              "es": "Diseño de flujos, agentes, sensores o sistemas que reducen tareas repetitivas y mejoran decisiones operativas.",
-              "en": "Design of workflows, agents, sensors or systems that reduce repetitive tasks and improve operational decisions.",
-              "va": "Disseny de fluxos, agents, sensors o sistemes que redueixen tasques repetitives i milloren decisions operatives."
+              "es": "Automatizacion de tareas y procesos mediante herramientas digitales, sensores o IA.",
+              "en": "Automation of tasks and processes using digital tools, sensors or AI.",
+              "va": "Automatitzacio de tasques i processos amb eines digitals, sensors o IA."
             },
             "icon": "⚙️"
           },
           {
-            "id": "responsable",
+            "id": "responsible-ai",
             "title": {
-              "es": "Uso responsable y seguro de IA",
-              "en": "Responsible and Safe Use of AI",
-              "va": "Ús responsable i segur d'IA"
+              "es": "Uso responsable de IA generativa",
+              "en": "Responsible Use of Generative AI",
+              "va": "Ús responsable de IA generativa"
             },
             "shortLabel": {
-              "es": "IA responsable",
-              "en": "Responsible AI",
-              "va": "IA responsable"
+              "es": "Uso responsable de IA generativa",
+              "en": "Responsible Use of Generative AI",
+              "va": "Ús responsable de IA generativa"
             },
             "description": {
-              "es": "Aplicación de criterios de seguridad, transparencia, privacidad y control humano en proyectos con inteligencia artificial.",
-              "en": "Application of safety, transparency, privacy and human oversight criteria in artificial intelligence projects.",
-              "va": "Aplicació de criteris de seguretat, transparència, privacitat i control humà en projectes amb intel·ligència artificial."
+              "es": "Uso seguro, transparente y supervisado de sistemas de IA en contextos formativos y sectoriales.",
+              "en": "Safe, transparent and supervised use of AI systems in training and sector contexts.",
+              "va": "Us segur, transparent i supervisat de sistemes d IA en contextos formatius i sectorials."
             },
             "icon": "⚖️"
           },
           {
-            "id": "sostenibilidad",
+            "id": "technical-communication",
             "title": {
-              "es": "Sostenibilidad y eficiencia con IA",
-              "en": "Sustainability and Efficiency with AI",
-              "va": "Sostenibilitat i eficiència amb IA"
+              "es": "Comunicación técnica",
+              "en": "Technical Communication",
+              "va": "Comunicació tècnica"
             },
             "shortLabel": {
-              "es": "Sostenibilidad",
-              "en": "Sustainability",
-              "va": "Sostenibilitat"
+              "es": "Comunicación técnica",
+              "en": "Technical Communication",
+              "va": "Comunicació tècnica"
             },
             "description": {
-              "es": "Uso de IA y datos para reducir impactos, optimizar recursos y comunicar decisiones sostenibles.",
-              "en": "Use of AI and data to reduce impacts, optimise resources and communicate sustainable decisions.",
-              "va": "Ús d'IA i dades per a reduir impactes, optimitzar recursos i comunicar decisions sostenibles."
+              "es": "Comunicacion clara de procesos, resultados, datos y decisiones tecnicas.",
+              "en": "Clear communication of processes, results, data and technical decisions.",
+              "va": "Comunicacio clara de processos, resultats, dades i decisions tecniques."
+            },
+            "icon": "💬"
+          },
+          {
+            "id": "problem-solving",
+            "title": {
+              "es": "Resolución creativa de problemas",
+              "en": "Creative Problem-Solving",
+              "va": "Resolució creativa de problemes"
+            },
+            "shortLabel": {
+              "es": "Resolución creativa de problemas",
+              "en": "Creative Problem-Solving",
+              "va": "Resolució creativa de problemes"
+            },
+            "description": {
+              "es": "Resolucion creativa de retos mediante prototipado, experimentacion y pensamiento STEAM.",
+              "en": "Creative problem-solving through prototyping, experimentation and STEAM thinking.",
+              "va": "Resolucio creativa de reptes mitjancant prototipatge, experimentacio i pensament STEAM."
+            },
+            "icon": "💡"
+          },
+          {
+            "id": "sustainability",
+            "title": {
+              "es": "Sostenibilidad y eficiencia",
+              "en": "Sustainability and Efficiency",
+              "va": "Sostenibilitat i eficiència"
+            },
+            "shortLabel": {
+              "es": "Sostenibilidad y eficiencia",
+              "en": "Sustainability and Efficiency",
+              "va": "Sostenibilitat i eficiència"
+            },
+            "description": {
+              "es": "Aplicacion de IA y datos para mejorar eficiencia, impacto ambiental y uso de recursos.",
+              "en": "Use of AI and data to improve efficiency, environmental impact and resource use.",
+              "va": "Aplicacio d IA i dades per a millorar eficiencia, impacte ambiental i us de recursos."
             },
             "icon": "♻️"
           },
           {
-            "id": "predictivo",
+            "id": "privacy-ethics",
             "title": {
-              "es": "Análisis predictivo y anticipación",
-              "en": "Predictive Analysis and Anticipation",
-              "va": "Anàlisi predictiva i anticipació"
+              "es": "Privacidad y ética",
+              "en": "Privacy and Ethics",
+              "va": "Privacitat i ètica"
             },
             "shortLabel": {
-              "es": "Predictivo",
-              "en": "Predictive",
-              "va": "Predictiu"
+              "es": "Privacidad y ética",
+              "en": "Privacy and Ethics",
+              "va": "Privacitat i ètica"
             },
             "description": {
-              "es": "Modelado de patrones, riesgos y escenarios futuros a partir de datos históricos, sensores o señales complejas.",
-              "en": "Modelling of patterns, risks and future scenarios from historical data, sensors or complex signals.",
-              "va": "Modelatge de patrons, riscos i escenaris futurs a partir de dades històriques, sensors o senyals complexos."
+              "es": "Criterios de privacidad, etica y gobernanza en el trabajo con datos e IA.",
+              "en": "Privacy, ethics and governance criteria when working with data and AI.",
+              "va": "Criteris de privacitat, etica i governanca en el treball amb dades i IA."
             },
-            "icon": "📈"
+            "icon": "🔒"
           },
           {
-            "id": "visualizacion",
+            "id": "teamwork",
             "title": {
-              "es": "Visualización, narrativa y comunicación de datos",
-              "en": "Data Visualisation, Storytelling and Communication",
-              "va": "Visualització, narrativa i comunicació de dades"
+              "es": "Trabajo interdisciplinar en equipo",
+              "en": "Interdisciplinary Teamwork",
+              "va": "Treball interdisciplinari en equip"
             },
             "shortLabel": {
-              "es": "Visualización",
-              "en": "Visualization",
-              "va": "Visualització"
+              "es": "Trabajo interdisciplinar en equipo",
+              "en": "Interdisciplinary Teamwork",
+              "va": "Treball interdisciplinari en equip"
             },
             "description": {
-              "es": "Creación de representaciones visuales, narrativas y dashboards para explicar datos, modelos y evidencias.",
-              "en": "Creation of visual representations, narratives and dashboards to explain data, models and evidence.",
-              "va": "Creació de representacions visuals, narratives i quadres per a explicar dades, models i evidències."
+              "es": "Colaboracion interdisciplinar para conectar perfiles, sectores y evidencias de aprendizaje.",
+              "en": "Interdisciplinary collaboration to connect profiles, sectors and learning evidence.",
+              "va": "Col.laboracio interdisciplinaria per a connectar perfils, sectors i evidencies d aprenentatge."
             },
-            "icon": "📍"
-          },
-          {
-            "id": "iot",
-            "title": {
-              "es": "Sensores, IoT y datos conectados",
-              "en": "Sensors, IoT and Connected Data",
-              "va": "Sensors, IoT i dades connectades"
-            },
-            "shortLabel": {
-              "es": "IoT",
-              "en": "IoT",
-              "va": "IoT"
-            },
-            "description": {
-              "es": "Uso de sensores, dispositivos conectados y datos en tiempo real para construir soluciones inteligentes.",
-              "en": "Use of sensors, connected devices and real-time data to build intelligent solutions.",
-              "va": "Ús de sensors, dispositius connectats i dades en temps real per a construir solucions intel·ligents."
-            },
-            "icon": "📡"
-          },
-          {
-            "id": "generativa",
-            "title": {
-              "es": "Inteligencia artificial generativa y creatividad",
-              "en": "Generative Artificial Intelligence and Creativity",
-              "va": "Intel·ligència artificial generativa i creativitat"
-            },
-            "shortLabel": {
-              "es": "IA generativa",
-              "en": "Generative AI",
-              "va": "IA generativa"
-            },
-            "description": {
-              "es": "Uso creativo y crítico de modelos generativos para texto, imagen, sonido, diseño, prototipado y comunicación.",
-              "en": "Creative and critical use of generative models for text, image, sound, design, prototyping and communication.",
-              "va": "Ús creatiu i crític de models generatius per a text, imatge, so, disseny, prototipatge i comunicació."
-            },
-            "icon": "✨"
+            "icon": "👥"
           }
-        ]
+        ],
+        "derivedSkillIds": [
+          "ai-literacy",
+          "data-work",
+          "process-automation",
+          "responsible-ai",
+          "technical-communication",
+          "problem-solving",
+          "sustainability",
+          "privacy-ethics",
+          "teamwork"
+        ],
+        "manualIncludeIds": [],
+        "manualHiddenIds": []
       },
       "pathBlock": {
         "visible": true,
@@ -315,158 +328,150 @@ export const TRAINING_CONFIG = {
         "visible": true,
         "skills": [
           {
-            "id": "ia-aplicada",
+            "id": "ai-strategy",
             "title": {
-              "es": "Inteligencia artificial aplicada",
-              "en": "Applied Artificial Intelligence",
-              "va": "Intel·ligència artificial aplicada"
+              "es": "Estrategia de IA en organizaciones",
+              "en": "AI Strategy in Organizations",
+              "va": "Estratègia de IA en organitzacions"
             },
             "shortLabel": {
-              "es": "IA aplicada",
-              "en": "Applied AI",
-              "va": "IA aplicada"
+              "es": "Estrategia de IA en organizaciones",
+              "en": "AI Strategy in Organizations",
+              "va": "Estratègia de IA en organitzacions"
             },
             "description": {
-              "es": "Uso de modelos de IA para resolver retos técnicos, creativos y sectoriales con datos y contexto real.",
-              "en": "Use of AI models to solve technical, creative and sector-based challenges with real data and context.",
-              "va": "Ús de models d'IA per a resoldre reptes tècnics, creatius i sectorials amb dades i context real."
-            },
-            "icon": "🤖"
-          },
-          {
-            "id": "datos-reales",
-            "title": {
-              "es": "Trabajo con datos reales",
-              "en": "Working with Real Data",
-              "va": "Treball amb dades reals"
-            },
-            "shortLabel": {
-              "es": "Datos reales",
-              "en": "Real data",
-              "va": "Dades reals"
-            },
-            "description": {
-              "es": "Captura, limpieza, interpretación y uso responsable de datos procedentes de entornos educativos, productivos o sociales.",
-              "en": "Collection, cleaning, interpretation and responsible use of data from educational, productive or social environments.",
-              "va": "Captura, neteja, interpretació i ús responsable de dades procedents d'entorns educatius, productius o socials."
-            },
-            "icon": "📊"
-          },
-          {
-            "id": "responsable",
-            "title": {
-              "es": "Uso responsable y seguro de IA",
-              "en": "Responsible and Safe Use of AI",
-              "va": "Ús responsable i segur d'IA"
-            },
-            "shortLabel": {
-              "es": "IA responsable",
-              "en": "Responsible AI",
-              "va": "IA responsable"
-            },
-            "description": {
-              "es": "Aplicación de criterios de seguridad, transparencia, privacidad y control humano en proyectos con inteligencia artificial.",
-              "en": "Application of safety, transparency, privacy and human oversight criteria in artificial intelligence projects.",
-              "va": "Aplicació de criteris de seguretat, transparència, privacitat i control humà en projectes amb intel·ligència artificial."
-            },
-            "icon": "⚖️"
-          },
-          {
-            "id": "predictivo",
-            "title": {
-              "es": "Análisis predictivo y anticipación",
-              "en": "Predictive Analysis and Anticipation",
-              "va": "Anàlisi predictiva i anticipació"
-            },
-            "shortLabel": {
-              "es": "Predictivo",
-              "en": "Predictive",
-              "va": "Predictiu"
-            },
-            "description": {
-              "es": "Modelado de patrones, riesgos y escenarios futuros a partir de datos históricos, sensores o señales complejas.",
-              "en": "Modelling of patterns, risks and future scenarios from historical data, sensors or complex signals.",
-              "va": "Modelatge de patrons, riscos i escenaris futurs a partir de dades històriques, sensors o senyals complexos."
+              "es": "Diseno de estrategias de adopcion de IA conectadas con objetivos organizativos y sectoriales.",
+              "en": "Design of AI adoption strategies connected to organisational and sector goals.",
+              "va": "Disseny d estrategies d adopcio d IA connectades amb objectius organitzatius i sectorials."
             },
             "icon": "📈"
           },
           {
-            "id": "etica",
+            "id": "advanced-data",
             "title": {
-              "es": "Ética, sesgos y gobernanza de IA",
-              "en": "Ethics, Bias and AI Governance",
-              "va": "Ètica, biaixos i governança d'IA"
+              "es": "Análisis avanzado de datos",
+              "en": "Advanced Data Analysis",
+              "va": "Anàlisi avançada de dades"
             },
             "shortLabel": {
-              "es": "Ética",
-              "en": "Ethics",
-              "va": "Ètica"
+              "es": "Análisis avanzado de datos",
+              "en": "Advanced Data Analysis",
+              "va": "Anàlisi avançada de dades"
             },
             "description": {
-              "es": "Identificación de sesgos, límites, responsabilidades y criterios de gobernanza en el uso de sistemas inteligentes.",
-              "en": "Identification of bias, limits, responsibilities and governance criteria in the use of intelligent systems.",
-              "va": "Identificació de biaixos, límits, responsabilitats i criteris de governança en l'ús de sistemes intel·ligents."
+              "es": "Analisis avanzado de datos para investigar, modelizar y tomar decisiones basadas en evidencias.",
+              "en": "Advanced data analysis to research, model and make evidence-based decisions.",
+              "va": "Analisi avancada de dades per a investigar, modelitzar i prendre decisions basades en evidencies."
             },
-            "icon": "🧭"
+            "icon": "🔬"
           },
           {
-            "id": "visualizacion",
+            "id": "ai-governance",
             "title": {
-              "es": "Visualización, narrativa y comunicación de datos",
-              "en": "Data Visualisation, Storytelling and Communication",
-              "va": "Visualització, narrativa i comunicació de dades"
+              "es": "Gobernanza de IA",
+              "en": "AI Governance",
+              "va": "Governança de IA"
             },
             "shortLabel": {
-              "es": "Visualización",
-              "en": "Visualization",
-              "va": "Visualització"
+              "es": "Gobernanza de IA",
+              "en": "AI Governance",
+              "va": "Governança de IA"
             },
             "description": {
-              "es": "Creación de representaciones visuales, narrativas y dashboards para explicar datos, modelos y evidencias.",
-              "en": "Creation of visual representations, narratives and dashboards to explain data, models and evidence.",
-              "va": "Creació de representacions visuals, narratives i quadres per a explicar dades, models i evidències."
+              "es": "Gobernanza de IA, riesgos, responsabilidades, cumplimiento y supervision humana.",
+              "en": "AI governance, risks, responsibilities, compliance and human oversight.",
+              "va": "Governanca d IA, riscos, responsabilitats, compliment i supervisio humana."
             },
-            "icon": "📍"
+            "icon": "🏛️"
           },
           {
-            "id": "gemelos-digitales",
+            "id": "innovation-management",
             "title": {
-              "es": "Gemelos digitales y simulación",
-              "en": "Digital Twins and Simulation",
-              "va": "Bessons digitals i simulació"
+              "es": "Gestión de innovación",
+              "en": "Innovation Management",
+              "va": "Gestió de innovació"
             },
             "shortLabel": {
-              "es": "Gemelos digitales",
-              "en": "Digital twins",
-              "va": "Bessons digitals"
+              "es": "Gestión de innovación",
+              "en": "Innovation Management",
+              "va": "Gestió de innovació"
             },
             "description": {
-              "es": "Modelado y simulación de sistemas físicos, productivos o territoriales para analizar escenarios y decisiones.",
-              "en": "Modelling and simulation of physical, productive or territorial systems to analyse scenarios and decisions.",
-              "va": "Modelatge i simulació de sistemes físics, productius o territorials per a analitzar escenaris i decisions."
+              "es": "Gestion de innovacion para convertir capacidades de IA en soluciones transferibles.",
+              "en": "Innovation management to turn AI capabilities into transferable solutions.",
+              "va": "Gestio de la innovacio per a convertir capacitats d IA en solucions transferibles."
             },
-            "icon": "🧩"
+            "icon": "🚀"
           },
           {
-            "id": "generativa",
+            "id": "stakeholder-engagement",
             "title": {
-              "es": "Inteligencia artificial generativa y creatividad",
-              "en": "Generative Artificial Intelligence and Creativity",
-              "va": "Intel·ligència artificial generativa i creativitat"
+              "es": "Engagement de stakeholders",
+              "en": "Stakeholder Engagement",
+              "va": "Engagement de stakeholders"
             },
             "shortLabel": {
-              "es": "IA generativa",
-              "en": "Generative AI",
-              "va": "IA generativa"
+              "es": "Engagement de stakeholders",
+              "en": "Stakeholder Engagement",
+              "va": "Engagement de stakeholders"
             },
             "description": {
-              "es": "Uso creativo y crítico de modelos generativos para texto, imagen, sonido, diseño, prototipado y comunicación.",
-              "en": "Creative and critical use of generative models for text, image, sound, design, prototyping and communication.",
-              "va": "Ús creatiu i crític de models generatius per a text, imatge, so, disseny, prototipatge i comunicació."
+              "es": "Implicacion de stakeholders para alinear retos, evidencias, impacto y adopcion.",
+              "en": "Stakeholder engagement to align challenges, evidence, impact and adoption.",
+              "va": "Implicacio de stakeholders per a alinear reptes, evidencies, impacte i adopcio."
             },
-            "icon": "✨"
+            "icon": "🤝"
+          },
+          {
+            "id": "systems-thinking",
+            "title": {
+              "es": "Pensamiento sistémico",
+              "en": "Systems Thinking",
+              "va": "Pensament sistèmic"
+            },
+            "shortLabel": {
+              "es": "Pensamiento sistémico",
+              "en": "Systems Thinking",
+              "va": "Pensament sistèmic"
+            },
+            "description": {
+              "es": "Pensamiento sistemico para comprender relaciones, escenarios y efectos de las decisiones.",
+              "en": "Systems thinking to understand relationships, scenarios and decision effects.",
+              "va": "Pensament sistemic per a comprendre relacions, escenaris i efectes de les decisions."
+            },
+            "icon": "🔗"
+          },
+          {
+            "id": "strategic-communication",
+            "title": {
+              "es": "Comunicación estratégica",
+              "en": "Strategic Communication",
+              "va": "Comunicació estratègica"
+            },
+            "shortLabel": {
+              "es": "Comunicación estratégica",
+              "en": "Strategic Communication",
+              "va": "Comunicació estratègica"
+            },
+            "description": {
+              "es": "Comunicacion estrategica de resultados, impacto, riesgos y propuestas de valor.",
+              "en": "Strategic communication of results, impact, risks and value propositions.",
+              "va": "Comunicacio estrategica de resultats, impacte, riscos i propostes de valor."
+            },
+            "icon": "📢"
           }
-        ]
+        ],
+        "derivedSkillIds": [
+          "ai-strategy",
+          "advanced-data",
+          "ai-governance",
+          "innovation-management",
+          "stakeholder-engagement",
+          "systems-thinking",
+          "strategic-communication"
+        ],
+        "manualIncludeIds": [],
+        "manualHiddenIds": []
       },
       "pathBlock": {
         "visible": true,
@@ -544,158 +549,130 @@ export const TRAINING_CONFIG = {
         "visible": true,
         "skills": [
           {
-            "id": "educacion",
+            "id": "ped-ai-integration",
             "title": {
-              "es": "Diseño educativo con IA",
-              "en": "Educational Design with AI",
-              "va": "Disseny educatiu amb IA"
+              "es": "Integración de IA en pedagogía",
+              "en": "AI Integration in Pedagogy",
+              "va": "Integració de IA en pedagogia"
             },
             "shortLabel": {
-              "es": "Educación",
-              "en": "Education",
-              "va": "Educació"
+              "es": "Integración de IA en pedagogía",
+              "en": "AI Integration in Pedagogy",
+              "va": "Integració de IA en pedagogia"
             },
             "description": {
-              "es": "Integración de IA en actividades, evaluación, acompañamiento y recursos educativos con criterios pedagógicos.",
-              "en": "Integration of AI into activities, assessment, support and educational resources with pedagogical criteria.",
-              "va": "Integració d'IA en activitats, avaluació, acompanyament i recursos educatius amb criteris pedagògics."
+              "es": "Integracion pedagogica de la IA en actividades, proyectos, evaluacion y acompanamiento.",
+              "en": "Pedagogical integration of AI into activities, projects, assessment and support.",
+              "va": "Integracio pedagogica de la IA en activitats, projectes, avaluacio i acompanyament."
             },
             "icon": "🎓"
           },
           {
-            "id": "generativa",
+            "id": "digital-literacy",
             "title": {
-              "es": "Inteligencia artificial generativa y creatividad",
-              "en": "Generative Artificial Intelligence and Creativity",
-              "va": "Intel·ligència artificial generativa i creativitat"
+              "es": "Alfabetización digital para docentes",
+              "en": "Digital Literacy for Teachers",
+              "va": "Alfabetització digital per a docents"
             },
             "shortLabel": {
-              "es": "IA generativa",
-              "en": "Generative AI",
-              "va": "IA generativa"
+              "es": "Alfabetización digital para docentes",
+              "en": "Digital Literacy for Teachers",
+              "va": "Alfabetització digital per a docents"
             },
             "description": {
-              "es": "Uso creativo y crítico de modelos generativos para texto, imagen, sonido, diseño, prototipado y comunicación.",
-              "en": "Creative and critical use of generative models for text, image, sound, design, prototyping and communication.",
-              "va": "Ús creatiu i crític de models generatius per a text, imatge, so, disseny, prototipatge i comunicació."
+              "es": "Competencia digital docente para entender, seleccionar y usar herramientas de IA.",
+              "en": "Teacher digital literacy to understand, select and use AI tools.",
+              "va": "Competencia digital docent per a entendre, seleccionar i usar eines d IA."
             },
-            "icon": "✨"
+            "icon": "💻"
           },
           {
-            "id": "responsable",
+            "id": "critical-thinking",
             "title": {
-              "es": "Uso responsable y seguro de IA",
-              "en": "Responsible and Safe Use of AI",
-              "va": "Ús responsable i segur d'IA"
+              "es": "Pensamiento crítico ante IA",
+              "en": "Critical Thinking on AI",
+              "va": "Pensament crític davant la IA"
             },
             "shortLabel": {
-              "es": "IA responsable",
-              "en": "Responsible AI",
-              "va": "IA responsable"
+              "es": "Pensamiento crítico ante IA",
+              "en": "Critical Thinking on AI",
+              "va": "Pensament crític davant la IA"
             },
             "description": {
-              "es": "Aplicación de criterios de seguridad, transparencia, privacidad y control humano en proyectos con inteligencia artificial.",
-              "en": "Application of safety, transparency, privacy and human oversight criteria in artificial intelligence projects.",
-              "va": "Aplicació de criteris de seguretat, transparència, privacitat i control humà en projectes amb intel·ligència artificial."
+              "es": "Pensamiento critico para analizar sesgos, limites, evidencias y decisiones automatizadas.",
+              "en": "Critical thinking to analyse bias, limits, evidence and automated decisions.",
+              "va": "Pensament critic per a analitzar biaixos, limits, evidencies i decisions automatitzades."
             },
-            "icon": "⚖️"
+            "icon": "🧠"
           },
           {
-            "id": "etica",
+            "id": "assessment-innovation",
             "title": {
-              "es": "Ética, sesgos y gobernanza de IA",
-              "en": "Ethics, Bias and AI Governance",
-              "va": "Ètica, biaixos i governança d'IA"
+              "es": "Innovación en evaluación",
+              "en": "Assessment Innovation",
+              "va": "Innovació en avaluació"
             },
             "shortLabel": {
-              "es": "Ética",
-              "en": "Ethics",
-              "va": "Ètica"
+              "es": "Innovación en evaluación",
+              "en": "Assessment Innovation",
+              "va": "Innovació en avaluació"
             },
             "description": {
-              "es": "Identificación de sesgos, límites, responsabilidades y criterios de gobernanza en el uso de sistemas inteligentes.",
-              "en": "Identification of bias, limits, responsibilities and governance criteria in the use of intelligent systems.",
-              "va": "Identificació de biaixos, límits, responsabilitats i criteris de governança en l'ús de sistemes intel·ligents."
+              "es": "Innovacion en evaluacion mediante evidencias, rubricas, datos y retroalimentacion asistida.",
+              "en": "Assessment innovation through evidence, rubrics, data and assisted feedback.",
+              "va": "Innovacio en avaluacio mitjancant evidencies, rubriques, dades i retroalimentacio assistida."
             },
-            "icon": "🧭"
+            "icon": "✅"
           },
           {
-            "id": "visualizacion",
+            "id": "student-support",
             "title": {
-              "es": "Visualización, narrativa y comunicación de datos",
-              "en": "Data Visualisation, Storytelling and Communication",
-              "va": "Visualització, narrativa i comunicació de dades"
+              "es": "Apoyo personalizado al estudiante",
+              "en": "Personalized Student Support",
+              "va": "Suport personalitzat a l'estudiant"
             },
             "shortLabel": {
-              "es": "Visualización",
-              "en": "Visualization",
-              "va": "Visualització"
+              "es": "Apoyo personalizado al estudiante",
+              "en": "Personalized Student Support",
+              "va": "Suport personalitzat a l'estudiant"
             },
             "description": {
-              "es": "Creación de representaciones visuales, narrativas y dashboards para explicar datos, modelos y evidencias.",
-              "en": "Creation of visual representations, narratives and dashboards to explain data, models and evidence.",
-              "va": "Creació de representacions visuals, narratives i quadres per a explicar dades, models i evidències."
+              "es": "Acompanamiento personalizado del alumnado con recursos, datos y herramientas inteligentes.",
+              "en": "Personalised student support with resources, data and intelligent tools.",
+              "va": "Acompanyament personalitzat de l alumnat amb recursos, dades i eines intel.ligents."
             },
-            "icon": "📍"
+            "icon": "👨‍🏫"
           },
           {
-            "id": "datos-reales",
+            "id": "collaboration-networks",
             "title": {
-              "es": "Trabajo con datos reales",
-              "en": "Working with Real Data",
-              "va": "Treball amb dades reals"
+              "es": "Redes de colaboración docente",
+              "en": "Teacher Collaboration Networks",
+              "va": "Xarxes de col·laboració docent"
             },
             "shortLabel": {
-              "es": "Datos reales",
-              "en": "Real data",
-              "va": "Dades reals"
+              "es": "Redes de colaboración docente",
+              "en": "Teacher Collaboration Networks",
+              "va": "Xarxes de col·laboració docent"
             },
             "description": {
-              "es": "Captura, limpieza, interpretación y uso responsable de datos procedentes de entornos educativos, productivos o sociales.",
-              "en": "Collection, cleaning, interpretation and responsible use of data from educational, productive or social environments.",
-              "va": "Captura, neteja, interpretació i ús responsable de dades procedents d'entorns educatius, productius o socials."
+              "es": "Trabajo en redes docentes y ecosistemas para compartir retos, recursos y aprendizajes.",
+              "en": "Work in teacher networks and ecosystems to share challenges, resources and learning.",
+              "va": "Treball en xarxes docents i ecosistemes per a compartir reptes, recursos i aprenentatges."
             },
-            "icon": "📊"
-          },
-          {
-            "id": "ia-aplicada",
-            "title": {
-              "es": "Inteligencia artificial aplicada",
-              "en": "Applied Artificial Intelligence",
-              "va": "Intel·ligència artificial aplicada"
-            },
-            "shortLabel": {
-              "es": "IA aplicada",
-              "en": "Applied AI",
-              "va": "IA aplicada"
-            },
-            "description": {
-              "es": "Uso de modelos de IA para resolver retos técnicos, creativos y sectoriales con datos y contexto real.",
-              "en": "Use of AI models to solve technical, creative and sector-based challenges with real data and context.",
-              "va": "Ús de models d'IA per a resoldre reptes tècnics, creatius i sectorials amb dades i context real."
-            },
-            "icon": "🤖"
-          },
-          {
-            "id": "iot",
-            "title": {
-              "es": "Sensores, IoT y datos conectados",
-              "en": "Sensors, IoT and Connected Data",
-              "va": "Sensors, IoT i dades connectades"
-            },
-            "shortLabel": {
-              "es": "IoT",
-              "en": "IoT",
-              "va": "IoT"
-            },
-            "description": {
-              "es": "Uso de sensores, dispositivos conectados y datos en tiempo real para construir soluciones inteligentes.",
-              "en": "Use of sensors, connected devices and real-time data to build intelligent solutions.",
-              "va": "Ús de sensors, dispositius connectats i dades en temps real per a construir solucions intel·ligents."
-            },
-            "icon": "📡"
+            "icon": "🌐"
           }
-        ]
+        ],
+        "derivedSkillIds": [
+          "ped-ai-integration",
+          "digital-literacy",
+          "critical-thinking",
+          "assessment-innovation",
+          "student-support",
+          "collaboration-networks"
+        ],
+        "manualIncludeIds": [],
+        "manualHiddenIds": []
       },
       "pathBlock": null,
       "disclaimerBlock": null
@@ -722,785 +699,1405 @@ export const TRAINING_CONFIG = {
     },
     "skills": [
       {
-        "id": "ia-aplicada",
+        "id": "ai-literacy",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
-          "Master"
+          "FP"
         ],
         "icon": "🤖",
         "label": {
-          "es": "IA Aplicada",
-          "en": "Applied AI",
-          "va": "IA Aplicada"
+          "es": "Alfabetización IA aplicada",
+          "en": "Applied AI Literacy",
+          "va": "Alfabetització IA aplicada"
         },
         "shortLabel": {
-          "es": "IA aplicada",
-          "en": "Applied AI",
-          "va": "IA aplicada"
+          "es": "Alfabetización IA aplicada",
+          "en": "Applied AI Literacy",
+          "va": "Alfabetització IA aplicada"
         },
         "title": {
-          "es": "Inteligencia artificial aplicada",
-          "en": "Applied Artificial Intelligence",
-          "va": "Intel·ligència artificial aplicada"
+          "es": "Alfabetización IA aplicada",
+          "en": "Applied AI Literacy",
+          "va": "Alfabetització IA aplicada"
         },
         "description": {
-          "es": "Uso de modelos de IA para resolver retos técnicos, creativos y sectoriales con datos y contexto real.",
-          "en": "Use of AI models to solve technical, creative and sector-based challenges with real data and context.",
-          "va": "Ús de models d'IA per a resoldre reptes tècnics, creatius i sectorials amb dades i context real."
+          "es": "Comprension aplicada de la IA para usarla en tareas tecnicas, creativas y profesionales.",
+          "en": "Applied understanding of AI for technical, creative and professional tasks.",
+          "va": "Comprensio aplicada de la IA per a usar-la en tasques tecniques, creatives i professionals."
         }
       },
       {
-        "id": "datos-reales",
+        "id": "data-work",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
-          "Master"
+          "FP"
         ],
         "icon": "📊",
         "label": {
-          "es": "Datos Reales",
-          "en": "Real Data",
-          "va": "Dades Reals"
+          "es": "Trabajo con datos en contextos reales",
+          "en": "Working with Data in Real Contexts",
+          "va": "Treball amb dades en contextos reals"
         },
         "shortLabel": {
-          "es": "Datos reales",
-          "en": "Real data",
-          "va": "Dades reals"
+          "es": "Trabajo con datos en contextos reales",
+          "en": "Working with Data in Real Contexts",
+          "va": "Treball amb dades en contextos reals"
         },
         "title": {
-          "es": "Trabajo con datos reales",
-          "en": "Working with Real Data",
-          "va": "Treball amb dades reals"
+          "es": "Trabajo con datos en contextos reales",
+          "en": "Working with Data in Real Contexts",
+          "va": "Treball amb dades en contextos reals"
         },
         "description": {
-          "es": "Captura, limpieza, interpretación y uso responsable de datos procedentes de entornos educativos, productivos o sociales.",
-          "en": "Collection, cleaning, interpretation and responsible use of data from educational, productive or social environments.",
-          "va": "Captura, neteja, interpretació i ús responsable de dades procedents d'entorns educatius, productius o socials."
+          "es": "Trabajo con datos reales para interpretar evidencias, patrones y decisiones en contexto.",
+          "en": "Work with real data to interpret evidence, patterns and decisions in context.",
+          "va": "Treball amb dades reals per a interpretar evidencies, patrons i decisions en context."
         }
       },
       {
-        "id": "automatizacion",
+        "id": "process-automation",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
-          "Master"
+          "FP"
         ],
         "icon": "⚙️",
         "label": {
-          "es": "Automatización",
-          "en": "Automation",
-          "va": "Automatització"
+          "es": "Automatización de procesos",
+          "en": "Process Automation",
+          "va": "Automatització de processos"
         },
         "shortLabel": {
-          "es": "Automatización",
-          "en": "Automation",
-          "va": "Automatització"
+          "es": "Automatización de procesos",
+          "en": "Process Automation",
+          "va": "Automatització de processos"
         },
         "title": {
-          "es": "Automatización inteligente de procesos",
-          "en": "Intelligent Process Automation",
-          "va": "Automatització intel·ligent de processos"
+          "es": "Automatización de procesos",
+          "en": "Process Automation",
+          "va": "Automatització de processos"
         },
         "description": {
-          "es": "Diseño de flujos, agentes, sensores o sistemas que reducen tareas repetitivas y mejoran decisiones operativas.",
-          "en": "Design of workflows, agents, sensors or systems that reduce repetitive tasks and improve operational decisions.",
-          "va": "Disseny de fluxos, agents, sensors o sistemes que redueixen tasques repetitives i milloren decisions operatives."
+          "es": "Automatizacion de tareas y procesos mediante herramientas digitales, sensores o IA.",
+          "en": "Automation of tasks and processes using digital tools, sensors or AI.",
+          "va": "Automatitzacio de tasques i processos amb eines digitals, sensors o IA."
         }
       },
       {
-        "id": "responsable",
+        "id": "responsible-ai",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
-          "Master"
+          "FP"
         ],
         "icon": "⚖️",
         "label": {
-          "es": "IA Responsable",
-          "en": "Responsible AI",
-          "va": "IA Responsable"
+          "es": "Uso responsable de IA generativa",
+          "en": "Responsible Use of Generative AI",
+          "va": "Ús responsable de IA generativa"
         },
         "shortLabel": {
-          "es": "IA responsable",
-          "en": "Responsible AI",
-          "va": "IA responsable"
+          "es": "Uso responsable de IA generativa",
+          "en": "Responsible Use of Generative AI",
+          "va": "Ús responsable de IA generativa"
         },
         "title": {
-          "es": "Uso responsable y seguro de IA",
-          "en": "Responsible and Safe Use of AI",
-          "va": "Ús responsable i segur d'IA"
+          "es": "Uso responsable de IA generativa",
+          "en": "Responsible Use of Generative AI",
+          "va": "Ús responsable de IA generativa"
         },
         "description": {
-          "es": "Aplicación de criterios de seguridad, transparencia, privacidad y control humano en proyectos con inteligencia artificial.",
-          "en": "Application of safety, transparency, privacy and human oversight criteria in artificial intelligence projects.",
-          "va": "Aplicació de criteris de seguretat, transparència, privacitat i control humà en projectes amb intel·ligència artificial."
+          "es": "Uso seguro, transparente y supervisado de sistemas de IA en contextos formativos y sectoriales.",
+          "en": "Safe, transparent and supervised use of AI systems in training and sector contexts.",
+          "va": "Us segur, transparent i supervisat de sistemes d IA en contextos formatius i sectorials."
         }
       },
       {
-        "id": "sostenibilidad",
+        "id": "technical-communication",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
-          "Master"
+          "FP"
+        ],
+        "icon": "💬",
+        "label": {
+          "es": "Comunicación técnica",
+          "en": "Technical Communication",
+          "va": "Comunicació tècnica"
+        },
+        "shortLabel": {
+          "es": "Comunicación técnica",
+          "en": "Technical Communication",
+          "va": "Comunicació tècnica"
+        },
+        "title": {
+          "es": "Comunicación técnica",
+          "en": "Technical Communication",
+          "va": "Comunicació tècnica"
+        },
+        "description": {
+          "es": "Comunicacion clara de procesos, resultados, datos y decisiones tecnicas.",
+          "en": "Clear communication of processes, results, data and technical decisions.",
+          "va": "Comunicacio clara de processos, resultats, dades i decisions tecniques."
+        }
+      },
+      {
+        "id": "problem-solving",
+        "visible": true,
+        "appliesTo": [
+          "FP"
+        ],
+        "icon": "💡",
+        "label": {
+          "es": "Resolución creativa de problemas",
+          "en": "Creative Problem-Solving",
+          "va": "Resolució creativa de problemes"
+        },
+        "shortLabel": {
+          "es": "Resolución creativa de problemas",
+          "en": "Creative Problem-Solving",
+          "va": "Resolució creativa de problemes"
+        },
+        "title": {
+          "es": "Resolución creativa de problemas",
+          "en": "Creative Problem-Solving",
+          "va": "Resolució creativa de problemes"
+        },
+        "description": {
+          "es": "Resolucion creativa de retos mediante prototipado, experimentacion y pensamiento STEAM.",
+          "en": "Creative problem-solving through prototyping, experimentation and STEAM thinking.",
+          "va": "Resolucio creativa de reptes mitjancant prototipatge, experimentacio i pensament STEAM."
+        }
+      },
+      {
+        "id": "sustainability",
+        "visible": true,
+        "appliesTo": [
+          "FP"
         ],
         "icon": "♻️",
         "label": {
-          "es": "Sostenibilidad",
-          "en": "Sustainability",
-          "va": "Sostenibilitat"
+          "es": "Sostenibilidad y eficiencia",
+          "en": "Sustainability and Efficiency",
+          "va": "Sostenibilitat i eficiència"
         },
         "shortLabel": {
-          "es": "Sostenibilidad",
-          "en": "Sustainability",
-          "va": "Sostenibilitat"
+          "es": "Sostenibilidad y eficiencia",
+          "en": "Sustainability and Efficiency",
+          "va": "Sostenibilitat i eficiència"
         },
         "title": {
-          "es": "Sostenibilidad y eficiencia con IA",
-          "en": "Sustainability and Efficiency with AI",
-          "va": "Sostenibilitat i eficiència amb IA"
+          "es": "Sostenibilidad y eficiencia",
+          "en": "Sustainability and Efficiency",
+          "va": "Sostenibilitat i eficiència"
         },
         "description": {
-          "es": "Uso de IA y datos para reducir impactos, optimizar recursos y comunicar decisiones sostenibles.",
-          "en": "Use of AI and data to reduce impacts, optimise resources and communicate sustainable decisions.",
-          "va": "Ús d'IA i dades per a reduir impactes, optimitzar recursos i comunicar decisions sostenibles."
+          "es": "Aplicacion de IA y datos para mejorar eficiencia, impacto ambiental y uso de recursos.",
+          "en": "Use of AI and data to improve efficiency, environmental impact and resource use.",
+          "va": "Aplicacio d IA i dades per a millorar eficiencia, impacte ambiental i us de recursos."
         }
       },
       {
-        "id": "predictivo",
+        "id": "privacy-ethics",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
+          "FP"
+        ],
+        "icon": "🔒",
+        "label": {
+          "es": "Privacidad y ética",
+          "en": "Privacy and Ethics",
+          "va": "Privacitat i ètica"
+        },
+        "shortLabel": {
+          "es": "Privacidad y ética",
+          "en": "Privacy and Ethics",
+          "va": "Privacitat i ètica"
+        },
+        "title": {
+          "es": "Privacidad y ética",
+          "en": "Privacy and Ethics",
+          "va": "Privacitat i ètica"
+        },
+        "description": {
+          "es": "Criterios de privacidad, etica y gobernanza en el trabajo con datos e IA.",
+          "en": "Privacy, ethics and governance criteria when working with data and AI.",
+          "va": "Criteris de privacitat, etica i governanca en el treball amb dades i IA."
+        }
+      },
+      {
+        "id": "teamwork",
+        "visible": true,
+        "appliesTo": [
+          "FP"
+        ],
+        "icon": "👥",
+        "label": {
+          "es": "Trabajo interdisciplinar en equipo",
+          "en": "Interdisciplinary Teamwork",
+          "va": "Treball interdisciplinari en equip"
+        },
+        "shortLabel": {
+          "es": "Trabajo interdisciplinar en equipo",
+          "en": "Interdisciplinary Teamwork",
+          "va": "Treball interdisciplinari en equip"
+        },
+        "title": {
+          "es": "Trabajo interdisciplinar en equipo",
+          "en": "Interdisciplinary Teamwork",
+          "va": "Treball interdisciplinari en equip"
+        },
+        "description": {
+          "es": "Colaboracion interdisciplinar para conectar perfiles, sectores y evidencias de aprendizaje.",
+          "en": "Interdisciplinary collaboration to connect profiles, sectors and learning evidence.",
+          "va": "Col.laboracio interdisciplinaria per a connectar perfils, sectors i evidencies d aprenentatge."
+        }
+      },
+      {
+        "id": "ped-ai-integration",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "🎓",
+        "label": {
+          "es": "Integración de IA en pedagogía",
+          "en": "AI Integration in Pedagogy",
+          "va": "Integració de IA en pedagogia"
+        },
+        "shortLabel": {
+          "es": "Integración de IA en pedagogía",
+          "en": "AI Integration in Pedagogy",
+          "va": "Integració de IA en pedagogia"
+        },
+        "title": {
+          "es": "Integración de IA en pedagogía",
+          "en": "AI Integration in Pedagogy",
+          "va": "Integració de IA en pedagogia"
+        },
+        "description": {
+          "es": "Integracion pedagogica de la IA en actividades, proyectos, evaluacion y acompanamiento.",
+          "en": "Pedagogical integration of AI into activities, projects, assessment and support.",
+          "va": "Integracio pedagogica de la IA en activitats, projectes, avaluacio i acompanyament."
+        }
+      },
+      {
+        "id": "digital-literacy",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "💻",
+        "label": {
+          "es": "Alfabetización digital para docentes",
+          "en": "Digital Literacy for Teachers",
+          "va": "Alfabetització digital per a docents"
+        },
+        "shortLabel": {
+          "es": "Alfabetización digital para docentes",
+          "en": "Digital Literacy for Teachers",
+          "va": "Alfabetització digital per a docents"
+        },
+        "title": {
+          "es": "Alfabetización digital para docentes",
+          "en": "Digital Literacy for Teachers",
+          "va": "Alfabetització digital per a docents"
+        },
+        "description": {
+          "es": "Competencia digital docente para entender, seleccionar y usar herramientas de IA.",
+          "en": "Teacher digital literacy to understand, select and use AI tools.",
+          "va": "Competencia digital docent per a entendre, seleccionar i usar eines d IA."
+        }
+      },
+      {
+        "id": "critical-thinking",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "🧠",
+        "label": {
+          "es": "Pensamiento crítico ante IA",
+          "en": "Critical Thinking on AI",
+          "va": "Pensament crític davant la IA"
+        },
+        "shortLabel": {
+          "es": "Pensamiento crítico ante IA",
+          "en": "Critical Thinking on AI",
+          "va": "Pensament crític davant la IA"
+        },
+        "title": {
+          "es": "Pensamiento crítico ante IA",
+          "en": "Critical Thinking on AI",
+          "va": "Pensament crític davant la IA"
+        },
+        "description": {
+          "es": "Pensamiento critico para analizar sesgos, limites, evidencias y decisiones automatizadas.",
+          "en": "Critical thinking to analyse bias, limits, evidence and automated decisions.",
+          "va": "Pensament critic per a analitzar biaixos, limits, evidencies i decisions automatitzades."
+        }
+      },
+      {
+        "id": "inclusive-education",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "♿",
+        "label": {
+          "es": "Educación inclusiva con IA",
+          "en": "Inclusive Education with AI",
+          "va": "Educació inclusiva amb IA"
+        },
+        "shortLabel": {
+          "es": "Educación inclusiva con IA",
+          "en": "Inclusive Education with AI",
+          "va": "Educació inclusiva amb IA"
+        },
+        "title": {
+          "es": "Educación inclusiva con IA",
+          "en": "Inclusive Education with AI",
+          "va": "Educació inclusiva amb IA"
+        },
+        "description": {
+          "es": "Diseno inclusivo de experiencias de aprendizaje apoyadas por IA y tecnologias digitales.",
+          "en": "Inclusive design of learning experiences supported by AI and digital technologies.",
+          "va": "Disseny inclusiu d experiencies d aprenentatge amb suport d IA i tecnologies digitals."
+        }
+      },
+      {
+        "id": "assessment-innovation",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "✅",
+        "label": {
+          "es": "Innovación en evaluación",
+          "en": "Assessment Innovation",
+          "va": "Innovació en avaluació"
+        },
+        "shortLabel": {
+          "es": "Innovación en evaluación",
+          "en": "Assessment Innovation",
+          "va": "Innovació en avaluació"
+        },
+        "title": {
+          "es": "Innovación en evaluación",
+          "en": "Assessment Innovation",
+          "va": "Innovació en avaluació"
+        },
+        "description": {
+          "es": "Innovacion en evaluacion mediante evidencias, rubricas, datos y retroalimentacion asistida.",
+          "en": "Assessment innovation through evidence, rubrics, data and assisted feedback.",
+          "va": "Innovacio en avaluacio mitjancant evidencies, rubriques, dades i retroalimentacio assistida."
+        }
+      },
+      {
+        "id": "student-support",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "👨‍🏫",
+        "label": {
+          "es": "Apoyo personalizado al estudiante",
+          "en": "Personalized Student Support",
+          "va": "Suport personalitzat a l'estudiant"
+        },
+        "shortLabel": {
+          "es": "Apoyo personalizado al estudiante",
+          "en": "Personalized Student Support",
+          "va": "Suport personalitzat a l'estudiant"
+        },
+        "title": {
+          "es": "Apoyo personalizado al estudiante",
+          "en": "Personalized Student Support",
+          "va": "Suport personalitzat a l'estudiant"
+        },
+        "description": {
+          "es": "Acompanamiento personalizado del alumnado con recursos, datos y herramientas inteligentes.",
+          "en": "Personalised student support with resources, data and intelligent tools.",
+          "va": "Acompanyament personalitzat de l alumnat amb recursos, dades i eines intel.ligents."
+        }
+      },
+      {
+        "id": "teacher-wellbeing",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "😊",
+        "label": {
+          "es": "Bienestar docente",
+          "en": "Teacher Wellbeing",
+          "va": "Benestar docent"
+        },
+        "shortLabel": {
+          "es": "Bienestar docente",
+          "en": "Teacher Wellbeing",
+          "va": "Benestar docent"
+        },
+        "title": {
+          "es": "Bienestar docente",
+          "en": "Teacher Wellbeing",
+          "va": "Benestar docent"
+        },
+        "description": {
+          "es": "Uso de IA para organizar trabajo docente, reducir carga repetitiva y cuidar el bienestar.",
+          "en": "Use of AI to organise teaching work, reduce repetitive workload and support wellbeing.",
+          "va": "Us d IA per a organitzar el treball docent, reduir carrega repetitiva i cuidar el benestar."
+        }
+      },
+      {
+        "id": "collaboration-networks",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "🌐",
+        "label": {
+          "es": "Redes de colaboración docente",
+          "en": "Teacher Collaboration Networks",
+          "va": "Xarxes de col·laboració docent"
+        },
+        "shortLabel": {
+          "es": "Redes de colaboración docente",
+          "en": "Teacher Collaboration Networks",
+          "va": "Xarxes de col·laboració docent"
+        },
+        "title": {
+          "es": "Redes de colaboración docente",
+          "en": "Teacher Collaboration Networks",
+          "va": "Xarxes de col·laboració docent"
+        },
+        "description": {
+          "es": "Trabajo en redes docentes y ecosistemas para compartir retos, recursos y aprendizajes.",
+          "en": "Work in teacher networks and ecosystems to share challenges, resources and learning.",
+          "va": "Treball en xarxes docents i ecosistemes per a compartir reptes, recursos i aprenentatges."
+        }
+      },
+      {
+        "id": "ai-strategy",
+        "visible": true,
+        "appliesTo": [
           "Master"
         ],
         "icon": "📈",
         "label": {
-          "es": "Análisis Predictivo",
-          "en": "Predictive Analysis",
-          "va": "Anàlisi Predictiu"
+          "es": "Estrategia de IA en organizaciones",
+          "en": "AI Strategy in Organizations",
+          "va": "Estratègia de IA en organitzacions"
         },
         "shortLabel": {
-          "es": "Predictivo",
-          "en": "Predictive",
-          "va": "Predictiu"
+          "es": "Estrategia de IA en organizaciones",
+          "en": "AI Strategy in Organizations",
+          "va": "Estratègia de IA en organitzacions"
         },
         "title": {
-          "es": "Análisis predictivo y anticipación",
-          "en": "Predictive Analysis and Anticipation",
-          "va": "Anàlisi predictiva i anticipació"
+          "es": "Estrategia de IA en organizaciones",
+          "en": "AI Strategy in Organizations",
+          "va": "Estratègia de IA en organitzacions"
         },
         "description": {
-          "es": "Modelado de patrones, riesgos y escenarios futuros a partir de datos históricos, sensores o señales complejas.",
-          "en": "Modelling of patterns, risks and future scenarios from historical data, sensors or complex signals.",
-          "va": "Modelatge de patrons, riscos i escenaris futurs a partir de dades històriques, sensors o senyals complexos."
+          "es": "Diseno de estrategias de adopcion de IA conectadas con objetivos organizativos y sectoriales.",
+          "en": "Design of AI adoption strategies connected to organisational and sector goals.",
+          "va": "Disseny d estrategies d adopcio d IA connectades amb objectius organitzatius i sectorials."
         }
       },
       {
-        "id": "etica",
+        "id": "advanced-data",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "🧭",
+        "icon": "🔬",
         "label": {
-          "es": "Ética",
-          "en": "Ethics",
-          "va": "Ètica"
+          "es": "Análisis avanzado de datos",
+          "en": "Advanced Data Analysis",
+          "va": "Anàlisi avançada de dades"
         },
         "shortLabel": {
-          "es": "Ética",
-          "en": "Ethics",
-          "va": "Ètica"
+          "es": "Análisis avanzado de datos",
+          "en": "Advanced Data Analysis",
+          "va": "Anàlisi avançada de dades"
         },
         "title": {
-          "es": "Ética, sesgos y gobernanza de IA",
-          "en": "Ethics, Bias and AI Governance",
-          "va": "Ètica, biaixos i governança d'IA"
+          "es": "Análisis avanzado de datos",
+          "en": "Advanced Data Analysis",
+          "va": "Anàlisi avançada de dades"
         },
         "description": {
-          "es": "Identificación de sesgos, límites, responsabilidades y criterios de gobernanza en el uso de sistemas inteligentes.",
-          "en": "Identification of bias, limits, responsibilities and governance criteria in the use of intelligent systems.",
-          "va": "Identificació de biaixos, límits, responsabilitats i criteris de governança en l'ús de sistemes intel·ligents."
+          "es": "Analisis avanzado de datos para investigar, modelizar y tomar decisiones basadas en evidencias.",
+          "en": "Advanced data analysis to research, model and make evidence-based decisions.",
+          "va": "Analisi avancada de dades per a investigar, modelitzar i prendre decisions basades en evidencies."
         }
       },
       {
-        "id": "visualizacion",
+        "id": "ai-governance",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "📍",
+        "icon": "🏛️",
         "label": {
-          "es": "Visualización",
-          "en": "Visualization",
-          "va": "Visualització"
+          "es": "Gobernanza de IA",
+          "en": "AI Governance",
+          "va": "Governança de IA"
         },
         "shortLabel": {
-          "es": "Visualización",
-          "en": "Visualization",
-          "va": "Visualització"
+          "es": "Gobernanza de IA",
+          "en": "AI Governance",
+          "va": "Governança de IA"
         },
         "title": {
-          "es": "Visualización, narrativa y comunicación de datos",
-          "en": "Data Visualisation, Storytelling and Communication",
-          "va": "Visualització, narrativa i comunicació de dades"
+          "es": "Gobernanza de IA",
+          "en": "AI Governance",
+          "va": "Governança de IA"
         },
         "description": {
-          "es": "Creación de representaciones visuales, narrativas y dashboards para explicar datos, modelos y evidencias.",
-          "en": "Creation of visual representations, narratives and dashboards to explain data, models and evidence.",
-          "va": "Creació de representacions visuals, narratives i quadres per a explicar dades, models i evidències."
+          "es": "Gobernanza de IA, riesgos, responsabilidades, cumplimiento y supervision humana.",
+          "en": "AI governance, risks, responsibilities, compliance and human oversight.",
+          "va": "Governanca d IA, riscos, responsabilitats, compliment i supervisio humana."
         }
       },
       {
-        "id": "educacion",
+        "id": "innovation-management",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "🎓",
+        "icon": "🚀",
         "label": {
-          "es": "Educación",
-          "en": "Education",
-          "va": "Educació"
+          "es": "Gestión de innovación",
+          "en": "Innovation Management",
+          "va": "Gestió de innovació"
         },
         "shortLabel": {
-          "es": "Educación",
-          "en": "Education",
-          "va": "Educació"
+          "es": "Gestión de innovación",
+          "en": "Innovation Management",
+          "va": "Gestió de innovació"
         },
         "title": {
-          "es": "Diseño educativo con IA",
-          "en": "Educational Design with AI",
-          "va": "Disseny educatiu amb IA"
+          "es": "Gestión de innovación",
+          "en": "Innovation Management",
+          "va": "Gestió de innovació"
         },
         "description": {
-          "es": "Integración de IA en actividades, evaluación, acompañamiento y recursos educativos con criterios pedagógicos.",
-          "en": "Integration of AI into activities, assessment, support and educational resources with pedagogical criteria.",
-          "va": "Integració d'IA en activitats, avaluació, acompanyament i recursos educatius amb criteris pedagògics."
+          "es": "Gestion de innovacion para convertir capacidades de IA en soluciones transferibles.",
+          "en": "Innovation management to turn AI capabilities into transferable solutions.",
+          "va": "Gestio de la innovacio per a convertir capacitats d IA en solucions transferibles."
         }
       },
       {
-        "id": "gemelos-digitales",
+        "id": "stakeholder-engagement",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "🧩",
+        "icon": "🤝",
         "label": {
-          "es": "Gemelos Digitales",
-          "en": "Digital Twins",
-          "va": "Bessons Digitals"
+          "es": "Engagement de stakeholders",
+          "en": "Stakeholder Engagement",
+          "va": "Engagement de stakeholders"
         },
         "shortLabel": {
-          "es": "Gemelos digitales",
-          "en": "Digital twins",
-          "va": "Bessons digitals"
+          "es": "Engagement de stakeholders",
+          "en": "Stakeholder Engagement",
+          "va": "Engagement de stakeholders"
         },
         "title": {
-          "es": "Gemelos digitales y simulación",
-          "en": "Digital Twins and Simulation",
-          "va": "Bessons digitals i simulació"
+          "es": "Engagement de stakeholders",
+          "en": "Stakeholder Engagement",
+          "va": "Engagement de stakeholders"
         },
         "description": {
-          "es": "Modelado y simulación de sistemas físicos, productivos o territoriales para analizar escenarios y decisiones.",
-          "en": "Modelling and simulation of physical, productive or territorial systems to analyse scenarios and decisions.",
-          "va": "Modelatge i simulació de sistemes físics, productius o territorials per a analitzar escenaris i decisions."
+          "es": "Implicacion de stakeholders para alinear retos, evidencias, impacto y adopcion.",
+          "en": "Stakeholder engagement to align challenges, evidence, impact and adoption.",
+          "va": "Implicacio de stakeholders per a alinear reptes, evidencies, impacte i adopcio."
         }
       },
       {
-        "id": "iot",
+        "id": "research-methodology",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "📡",
+        "icon": "🔍",
         "label": {
-          "es": "IoT",
-          "en": "IoT",
-          "va": "IoT"
+          "es": "Metodología de investigación",
+          "en": "Research Methodology",
+          "va": "Metodologia de recerca"
         },
         "shortLabel": {
-          "es": "IoT",
-          "en": "IoT",
-          "va": "IoT"
+          "es": "Metodología de investigación",
+          "en": "Research Methodology",
+          "va": "Metodologia de recerca"
         },
         "title": {
-          "es": "Sensores, IoT y datos conectados",
-          "en": "Sensors, IoT and Connected Data",
-          "va": "Sensors, IoT i dades connectades"
+          "es": "Metodología de investigación",
+          "en": "Research Methodology",
+          "va": "Metodologia de recerca"
         },
         "description": {
-          "es": "Uso de sensores, dispositivos conectados y datos en tiempo real para construir soluciones inteligentes.",
-          "en": "Use of sensors, connected devices and real-time data to build intelligent solutions.",
-          "va": "Ús de sensors, dispositius connectats i dades en temps real per a construir solucions intel·ligents."
+          "es": "Metodologia de investigacion para formular preguntas, validar resultados y documentar evidencias.",
+          "en": "Research methodology to frame questions, validate results and document evidence.",
+          "va": "Metodologia de recerca per a formular preguntes, validar resultats i documentar evidencies."
         }
       },
       {
-        "id": "generativa",
+        "id": "systems-thinking",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "✨",
+        "icon": "🔗",
         "label": {
-          "es": "IA Generativa",
-          "en": "Generative AI",
-          "va": "IA Generativa"
+          "es": "Pensamiento sistémico",
+          "en": "Systems Thinking",
+          "va": "Pensament sistèmic"
         },
         "shortLabel": {
-          "es": "IA generativa",
-          "en": "Generative AI",
-          "va": "IA generativa"
+          "es": "Pensamiento sistémico",
+          "en": "Systems Thinking",
+          "va": "Pensament sistèmic"
         },
         "title": {
-          "es": "Inteligencia artificial generativa y creatividad",
-          "en": "Generative Artificial Intelligence and Creativity",
-          "va": "Intel·ligència artificial generativa i creativitat"
+          "es": "Pensamiento sistémico",
+          "en": "Systems Thinking",
+          "va": "Pensament sistèmic"
         },
         "description": {
-          "es": "Uso creativo y crítico de modelos generativos para texto, imagen, sonido, diseño, prototipado y comunicación.",
-          "en": "Creative and critical use of generative models for text, image, sound, design, prototyping and communication.",
-          "va": "Ús creatiu i crític de models generatius per a text, imatge, so, disseny, prototipatge i comunicació."
+          "es": "Pensamiento sistemico para comprender relaciones, escenarios y efectos de las decisiones.",
+          "en": "Systems thinking to understand relationships, scenarios and decision effects.",
+          "va": "Pensament sistemic per a comprendre relacions, escenaris i efectes de les decisions."
         }
       },
       {
-        "id": "skill-13",
+        "id": "strategic-communication",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "🎯",
+        "icon": "📢",
         "label": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
+          "es": "Comunicación estratégica",
+          "en": "Strategic Communication",
+          "va": "Comunicació estratègica"
         },
         "shortLabel": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
+          "es": "Comunicación estratégica",
+          "en": "Strategic Communication",
+          "va": "Comunicació estratègica"
         },
         "title": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
+          "es": "Comunicación estratégica",
+          "en": "Strategic Communication",
+          "va": "Comunicació estratègica"
         },
         "description": {
-          "es": "sdfsdfasdfasf",
-          "en": "fasdfasdfsaf",
-          "va": "asdfasdfsdf"
+          "es": "Comunicacion estrategica de resultados, impacto, riesgos y propuestas de valor.",
+          "en": "Strategic communication of results, impact, risks and value propositions.",
+          "va": "Comunicacio estrategica de resultats, impacte, riscos i propostes de valor."
         }
       }
     ],
     "courseTags": [
       {
-        "id": "ia-aplicada",
+        "id": "ai-literacy",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
-          "Master"
+          "FP"
         ],
         "icon": "🤖",
         "label": {
-          "es": "IA Aplicada",
-          "en": "Applied AI",
-          "va": "IA Aplicada"
+          "es": "Alfabetización IA aplicada",
+          "en": "Applied AI Literacy",
+          "va": "Alfabetització IA aplicada"
         },
         "shortLabel": {
-          "es": "IA aplicada",
-          "en": "Applied AI",
-          "va": "IA aplicada"
+          "es": "Alfabetización IA aplicada",
+          "en": "Applied AI Literacy",
+          "va": "Alfabetització IA aplicada"
         },
         "title": {
-          "es": "Inteligencia artificial aplicada",
-          "en": "Applied Artificial Intelligence",
-          "va": "Intel·ligència artificial aplicada"
+          "es": "Alfabetización IA aplicada",
+          "en": "Applied AI Literacy",
+          "va": "Alfabetització IA aplicada"
         },
         "description": {
-          "es": "Uso de modelos de IA para resolver retos técnicos, creativos y sectoriales con datos y contexto real.",
-          "en": "Use of AI models to solve technical, creative and sector-based challenges with real data and context.",
-          "va": "Ús de models d'IA per a resoldre reptes tècnics, creatius i sectorials amb dades i context real."
+          "es": "Comprension aplicada de la IA para usarla en tareas tecnicas, creativas y profesionales.",
+          "en": "Applied understanding of AI for technical, creative and professional tasks.",
+          "va": "Comprensio aplicada de la IA per a usar-la en tasques tecniques, creatives i professionals."
         }
       },
       {
-        "id": "datos-reales",
+        "id": "data-work",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
-          "Master"
+          "FP"
         ],
         "icon": "📊",
         "label": {
-          "es": "Datos Reales",
-          "en": "Real Data",
-          "va": "Dades Reals"
+          "es": "Trabajo con datos en contextos reales",
+          "en": "Working with Data in Real Contexts",
+          "va": "Treball amb dades en contextos reals"
         },
         "shortLabel": {
-          "es": "Datos reales",
-          "en": "Real data",
-          "va": "Dades reals"
+          "es": "Trabajo con datos en contextos reales",
+          "en": "Working with Data in Real Contexts",
+          "va": "Treball amb dades en contextos reals"
         },
         "title": {
-          "es": "Trabajo con datos reales",
-          "en": "Working with Real Data",
-          "va": "Treball amb dades reals"
+          "es": "Trabajo con datos en contextos reales",
+          "en": "Working with Data in Real Contexts",
+          "va": "Treball amb dades en contextos reals"
         },
         "description": {
-          "es": "Captura, limpieza, interpretación y uso responsable de datos procedentes de entornos educativos, productivos o sociales.",
-          "en": "Collection, cleaning, interpretation and responsible use of data from educational, productive or social environments.",
-          "va": "Captura, neteja, interpretació i ús responsable de dades procedents d'entorns educatius, productius o socials."
+          "es": "Trabajo con datos reales para interpretar evidencias, patrones y decisiones en contexto.",
+          "en": "Work with real data to interpret evidence, patterns and decisions in context.",
+          "va": "Treball amb dades reals per a interpretar evidencies, patrons i decisions en context."
         }
       },
       {
-        "id": "automatizacion",
+        "id": "process-automation",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
-          "Master"
+          "FP"
         ],
         "icon": "⚙️",
         "label": {
-          "es": "Automatización",
-          "en": "Automation",
-          "va": "Automatització"
+          "es": "Automatización de procesos",
+          "en": "Process Automation",
+          "va": "Automatització de processos"
         },
         "shortLabel": {
-          "es": "Automatización",
-          "en": "Automation",
-          "va": "Automatització"
+          "es": "Automatización de procesos",
+          "en": "Process Automation",
+          "va": "Automatització de processos"
         },
         "title": {
-          "es": "Automatización inteligente de procesos",
-          "en": "Intelligent Process Automation",
-          "va": "Automatització intel·ligent de processos"
+          "es": "Automatización de procesos",
+          "en": "Process Automation",
+          "va": "Automatització de processos"
         },
         "description": {
-          "es": "Diseño de flujos, agentes, sensores o sistemas que reducen tareas repetitivas y mejoran decisiones operativas.",
-          "en": "Design of workflows, agents, sensors or systems that reduce repetitive tasks and improve operational decisions.",
-          "va": "Disseny de fluxos, agents, sensors o sistemes que redueixen tasques repetitives i milloren decisions operatives."
+          "es": "Automatizacion de tareas y procesos mediante herramientas digitales, sensores o IA.",
+          "en": "Automation of tasks and processes using digital tools, sensors or AI.",
+          "va": "Automatitzacio de tasques i processos amb eines digitals, sensors o IA."
         }
       },
       {
-        "id": "responsable",
+        "id": "responsible-ai",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
-          "Master"
+          "FP"
         ],
         "icon": "⚖️",
         "label": {
-          "es": "IA Responsable",
-          "en": "Responsible AI",
-          "va": "IA Responsable"
+          "es": "Uso responsable de IA generativa",
+          "en": "Responsible Use of Generative AI",
+          "va": "Ús responsable de IA generativa"
         },
         "shortLabel": {
-          "es": "IA responsable",
-          "en": "Responsible AI",
-          "va": "IA responsable"
+          "es": "Uso responsable de IA generativa",
+          "en": "Responsible Use of Generative AI",
+          "va": "Ús responsable de IA generativa"
         },
         "title": {
-          "es": "Uso responsable y seguro de IA",
-          "en": "Responsible and Safe Use of AI",
-          "va": "Ús responsable i segur d'IA"
+          "es": "Uso responsable de IA generativa",
+          "en": "Responsible Use of Generative AI",
+          "va": "Ús responsable de IA generativa"
         },
         "description": {
-          "es": "Aplicación de criterios de seguridad, transparencia, privacidad y control humano en proyectos con inteligencia artificial.",
-          "en": "Application of safety, transparency, privacy and human oversight criteria in artificial intelligence projects.",
-          "va": "Aplicació de criteris de seguretat, transparència, privacitat i control humà en projectes amb intel·ligència artificial."
+          "es": "Uso seguro, transparente y supervisado de sistemas de IA en contextos formativos y sectoriales.",
+          "en": "Safe, transparent and supervised use of AI systems in training and sector contexts.",
+          "va": "Us segur, transparent i supervisat de sistemes d IA en contextos formatius i sectorials."
         }
       },
       {
-        "id": "sostenibilidad",
+        "id": "technical-communication",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
-          "Master"
+          "FP"
+        ],
+        "icon": "💬",
+        "label": {
+          "es": "Comunicación técnica",
+          "en": "Technical Communication",
+          "va": "Comunicació tècnica"
+        },
+        "shortLabel": {
+          "es": "Comunicación técnica",
+          "en": "Technical Communication",
+          "va": "Comunicació tècnica"
+        },
+        "title": {
+          "es": "Comunicación técnica",
+          "en": "Technical Communication",
+          "va": "Comunicació tècnica"
+        },
+        "description": {
+          "es": "Comunicacion clara de procesos, resultados, datos y decisiones tecnicas.",
+          "en": "Clear communication of processes, results, data and technical decisions.",
+          "va": "Comunicacio clara de processos, resultats, dades i decisions tecniques."
+        }
+      },
+      {
+        "id": "problem-solving",
+        "visible": true,
+        "appliesTo": [
+          "FP"
+        ],
+        "icon": "💡",
+        "label": {
+          "es": "Resolución creativa de problemas",
+          "en": "Creative Problem-Solving",
+          "va": "Resolució creativa de problemes"
+        },
+        "shortLabel": {
+          "es": "Resolución creativa de problemas",
+          "en": "Creative Problem-Solving",
+          "va": "Resolució creativa de problemes"
+        },
+        "title": {
+          "es": "Resolución creativa de problemas",
+          "en": "Creative Problem-Solving",
+          "va": "Resolució creativa de problemes"
+        },
+        "description": {
+          "es": "Resolucion creativa de retos mediante prototipado, experimentacion y pensamiento STEAM.",
+          "en": "Creative problem-solving through prototyping, experimentation and STEAM thinking.",
+          "va": "Resolucio creativa de reptes mitjancant prototipatge, experimentacio i pensament STEAM."
+        }
+      },
+      {
+        "id": "sustainability",
+        "visible": true,
+        "appliesTo": [
+          "FP"
         ],
         "icon": "♻️",
         "label": {
-          "es": "Sostenibilidad",
-          "en": "Sustainability",
-          "va": "Sostenibilitat"
+          "es": "Sostenibilidad y eficiencia",
+          "en": "Sustainability and Efficiency",
+          "va": "Sostenibilitat i eficiència"
         },
         "shortLabel": {
-          "es": "Sostenibilidad",
-          "en": "Sustainability",
-          "va": "Sostenibilitat"
+          "es": "Sostenibilidad y eficiencia",
+          "en": "Sustainability and Efficiency",
+          "va": "Sostenibilitat i eficiència"
         },
         "title": {
-          "es": "Sostenibilidad y eficiencia con IA",
-          "en": "Sustainability and Efficiency with AI",
-          "va": "Sostenibilitat i eficiència amb IA"
+          "es": "Sostenibilidad y eficiencia",
+          "en": "Sustainability and Efficiency",
+          "va": "Sostenibilitat i eficiència"
         },
         "description": {
-          "es": "Uso de IA y datos para reducir impactos, optimizar recursos y comunicar decisiones sostenibles.",
-          "en": "Use of AI and data to reduce impacts, optimise resources and communicate sustainable decisions.",
-          "va": "Ús d'IA i dades per a reduir impactes, optimitzar recursos i comunicar decisions sostenibles."
+          "es": "Aplicacion de IA y datos para mejorar eficiencia, impacto ambiental y uso de recursos.",
+          "en": "Use of AI and data to improve efficiency, environmental impact and resource use.",
+          "va": "Aplicacio d IA i dades per a millorar eficiencia, impacte ambiental i us de recursos."
         }
       },
       {
-        "id": "predictivo",
+        "id": "privacy-ethics",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
+          "FP"
+        ],
+        "icon": "🔒",
+        "label": {
+          "es": "Privacidad y ética",
+          "en": "Privacy and Ethics",
+          "va": "Privacitat i ètica"
+        },
+        "shortLabel": {
+          "es": "Privacidad y ética",
+          "en": "Privacy and Ethics",
+          "va": "Privacitat i ètica"
+        },
+        "title": {
+          "es": "Privacidad y ética",
+          "en": "Privacy and Ethics",
+          "va": "Privacitat i ètica"
+        },
+        "description": {
+          "es": "Criterios de privacidad, etica y gobernanza en el trabajo con datos e IA.",
+          "en": "Privacy, ethics and governance criteria when working with data and AI.",
+          "va": "Criteris de privacitat, etica i governanca en el treball amb dades i IA."
+        }
+      },
+      {
+        "id": "teamwork",
+        "visible": true,
+        "appliesTo": [
+          "FP"
+        ],
+        "icon": "👥",
+        "label": {
+          "es": "Trabajo interdisciplinar en equipo",
+          "en": "Interdisciplinary Teamwork",
+          "va": "Treball interdisciplinari en equip"
+        },
+        "shortLabel": {
+          "es": "Trabajo interdisciplinar en equipo",
+          "en": "Interdisciplinary Teamwork",
+          "va": "Treball interdisciplinari en equip"
+        },
+        "title": {
+          "es": "Trabajo interdisciplinar en equipo",
+          "en": "Interdisciplinary Teamwork",
+          "va": "Treball interdisciplinari en equip"
+        },
+        "description": {
+          "es": "Colaboracion interdisciplinar para conectar perfiles, sectores y evidencias de aprendizaje.",
+          "en": "Interdisciplinary collaboration to connect profiles, sectors and learning evidence.",
+          "va": "Col.laboracio interdisciplinaria per a connectar perfils, sectors i evidencies d aprenentatge."
+        }
+      },
+      {
+        "id": "ped-ai-integration",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "🎓",
+        "label": {
+          "es": "Integración de IA en pedagogía",
+          "en": "AI Integration in Pedagogy",
+          "va": "Integració de IA en pedagogia"
+        },
+        "shortLabel": {
+          "es": "Integración de IA en pedagogía",
+          "en": "AI Integration in Pedagogy",
+          "va": "Integració de IA en pedagogia"
+        },
+        "title": {
+          "es": "Integración de IA en pedagogía",
+          "en": "AI Integration in Pedagogy",
+          "va": "Integració de IA en pedagogia"
+        },
+        "description": {
+          "es": "Integracion pedagogica de la IA en actividades, proyectos, evaluacion y acompanamiento.",
+          "en": "Pedagogical integration of AI into activities, projects, assessment and support.",
+          "va": "Integracio pedagogica de la IA en activitats, projectes, avaluacio i acompanyament."
+        }
+      },
+      {
+        "id": "digital-literacy",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "💻",
+        "label": {
+          "es": "Alfabetización digital para docentes",
+          "en": "Digital Literacy for Teachers",
+          "va": "Alfabetització digital per a docents"
+        },
+        "shortLabel": {
+          "es": "Alfabetización digital para docentes",
+          "en": "Digital Literacy for Teachers",
+          "va": "Alfabetització digital per a docents"
+        },
+        "title": {
+          "es": "Alfabetización digital para docentes",
+          "en": "Digital Literacy for Teachers",
+          "va": "Alfabetització digital per a docents"
+        },
+        "description": {
+          "es": "Competencia digital docente para entender, seleccionar y usar herramientas de IA.",
+          "en": "Teacher digital literacy to understand, select and use AI tools.",
+          "va": "Competencia digital docent per a entendre, seleccionar i usar eines d IA."
+        }
+      },
+      {
+        "id": "critical-thinking",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "🧠",
+        "label": {
+          "es": "Pensamiento crítico ante IA",
+          "en": "Critical Thinking on AI",
+          "va": "Pensament crític davant la IA"
+        },
+        "shortLabel": {
+          "es": "Pensamiento crítico ante IA",
+          "en": "Critical Thinking on AI",
+          "va": "Pensament crític davant la IA"
+        },
+        "title": {
+          "es": "Pensamiento crítico ante IA",
+          "en": "Critical Thinking on AI",
+          "va": "Pensament crític davant la IA"
+        },
+        "description": {
+          "es": "Pensamiento critico para analizar sesgos, limites, evidencias y decisiones automatizadas.",
+          "en": "Critical thinking to analyse bias, limits, evidence and automated decisions.",
+          "va": "Pensament critic per a analitzar biaixos, limits, evidencies i decisions automatitzades."
+        }
+      },
+      {
+        "id": "inclusive-education",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "♿",
+        "label": {
+          "es": "Educación inclusiva con IA",
+          "en": "Inclusive Education with AI",
+          "va": "Educació inclusiva amb IA"
+        },
+        "shortLabel": {
+          "es": "Educación inclusiva con IA",
+          "en": "Inclusive Education with AI",
+          "va": "Educació inclusiva amb IA"
+        },
+        "title": {
+          "es": "Educación inclusiva con IA",
+          "en": "Inclusive Education with AI",
+          "va": "Educació inclusiva amb IA"
+        },
+        "description": {
+          "es": "Diseno inclusivo de experiencias de aprendizaje apoyadas por IA y tecnologias digitales.",
+          "en": "Inclusive design of learning experiences supported by AI and digital technologies.",
+          "va": "Disseny inclusiu d experiencies d aprenentatge amb suport d IA i tecnologies digitals."
+        }
+      },
+      {
+        "id": "assessment-innovation",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "✅",
+        "label": {
+          "es": "Innovación en evaluación",
+          "en": "Assessment Innovation",
+          "va": "Innovació en avaluació"
+        },
+        "shortLabel": {
+          "es": "Innovación en evaluación",
+          "en": "Assessment Innovation",
+          "va": "Innovació en avaluació"
+        },
+        "title": {
+          "es": "Innovación en evaluación",
+          "en": "Assessment Innovation",
+          "va": "Innovació en avaluació"
+        },
+        "description": {
+          "es": "Innovacion en evaluacion mediante evidencias, rubricas, datos y retroalimentacion asistida.",
+          "en": "Assessment innovation through evidence, rubrics, data and assisted feedback.",
+          "va": "Innovacio en avaluacio mitjancant evidencies, rubriques, dades i retroalimentacio assistida."
+        }
+      },
+      {
+        "id": "student-support",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "👨‍🏫",
+        "label": {
+          "es": "Apoyo personalizado al estudiante",
+          "en": "Personalized Student Support",
+          "va": "Suport personalitzat a l'estudiant"
+        },
+        "shortLabel": {
+          "es": "Apoyo personalizado al estudiante",
+          "en": "Personalized Student Support",
+          "va": "Suport personalitzat a l'estudiant"
+        },
+        "title": {
+          "es": "Apoyo personalizado al estudiante",
+          "en": "Personalized Student Support",
+          "va": "Suport personalitzat a l'estudiant"
+        },
+        "description": {
+          "es": "Acompanamiento personalizado del alumnado con recursos, datos y herramientas inteligentes.",
+          "en": "Personalised student support with resources, data and intelligent tools.",
+          "va": "Acompanyament personalitzat de l alumnat amb recursos, dades i eines intel.ligents."
+        }
+      },
+      {
+        "id": "teacher-wellbeing",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "😊",
+        "label": {
+          "es": "Bienestar docente",
+          "en": "Teacher Wellbeing",
+          "va": "Benestar docent"
+        },
+        "shortLabel": {
+          "es": "Bienestar docente",
+          "en": "Teacher Wellbeing",
+          "va": "Benestar docent"
+        },
+        "title": {
+          "es": "Bienestar docente",
+          "en": "Teacher Wellbeing",
+          "va": "Benestar docent"
+        },
+        "description": {
+          "es": "Uso de IA para organizar trabajo docente, reducir carga repetitiva y cuidar el bienestar.",
+          "en": "Use of AI to organise teaching work, reduce repetitive workload and support wellbeing.",
+          "va": "Us d IA per a organitzar el treball docent, reduir carrega repetitiva i cuidar el benestar."
+        }
+      },
+      {
+        "id": "collaboration-networks",
+        "visible": true,
+        "appliesTo": [
+          "Teacher"
+        ],
+        "icon": "🌐",
+        "label": {
+          "es": "Redes de colaboración docente",
+          "en": "Teacher Collaboration Networks",
+          "va": "Xarxes de col·laboració docent"
+        },
+        "shortLabel": {
+          "es": "Redes de colaboración docente",
+          "en": "Teacher Collaboration Networks",
+          "va": "Xarxes de col·laboració docent"
+        },
+        "title": {
+          "es": "Redes de colaboración docente",
+          "en": "Teacher Collaboration Networks",
+          "va": "Xarxes de col·laboració docent"
+        },
+        "description": {
+          "es": "Trabajo en redes docentes y ecosistemas para compartir retos, recursos y aprendizajes.",
+          "en": "Work in teacher networks and ecosystems to share challenges, resources and learning.",
+          "va": "Treball en xarxes docents i ecosistemes per a compartir reptes, recursos i aprenentatges."
+        }
+      },
+      {
+        "id": "ai-strategy",
+        "visible": true,
+        "appliesTo": [
           "Master"
         ],
         "icon": "📈",
         "label": {
-          "es": "Análisis Predictivo",
-          "en": "Predictive Analysis",
-          "va": "Anàlisi Predictiu"
+          "es": "Estrategia de IA en organizaciones",
+          "en": "AI Strategy in Organizations",
+          "va": "Estratègia de IA en organitzacions"
         },
         "shortLabel": {
-          "es": "Predictivo",
-          "en": "Predictive",
-          "va": "Predictiu"
+          "es": "Estrategia de IA en organizaciones",
+          "en": "AI Strategy in Organizations",
+          "va": "Estratègia de IA en organitzacions"
         },
         "title": {
-          "es": "Análisis predictivo y anticipación",
-          "en": "Predictive Analysis and Anticipation",
-          "va": "Anàlisi predictiva i anticipació"
+          "es": "Estrategia de IA en organizaciones",
+          "en": "AI Strategy in Organizations",
+          "va": "Estratègia de IA en organitzacions"
         },
         "description": {
-          "es": "Modelado de patrones, riesgos y escenarios futuros a partir de datos históricos, sensores o señales complejas.",
-          "en": "Modelling of patterns, risks and future scenarios from historical data, sensors or complex signals.",
-          "va": "Modelatge de patrons, riscos i escenaris futurs a partir de dades històriques, sensors o senyals complexos."
+          "es": "Diseno de estrategias de adopcion de IA conectadas con objetivos organizativos y sectoriales.",
+          "en": "Design of AI adoption strategies connected to organisational and sector goals.",
+          "va": "Disseny d estrategies d adopcio d IA connectades amb objectius organitzatius i sectorials."
         }
       },
       {
-        "id": "etica",
+        "id": "advanced-data",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "🧭",
+        "icon": "🔬",
         "label": {
-          "es": "Ética",
-          "en": "Ethics",
-          "va": "Ètica"
+          "es": "Análisis avanzado de datos",
+          "en": "Advanced Data Analysis",
+          "va": "Anàlisi avançada de dades"
         },
         "shortLabel": {
-          "es": "Ética",
-          "en": "Ethics",
-          "va": "Ètica"
+          "es": "Análisis avanzado de datos",
+          "en": "Advanced Data Analysis",
+          "va": "Anàlisi avançada de dades"
         },
         "title": {
-          "es": "Ética, sesgos y gobernanza de IA",
-          "en": "Ethics, Bias and AI Governance",
-          "va": "Ètica, biaixos i governança d'IA"
+          "es": "Análisis avanzado de datos",
+          "en": "Advanced Data Analysis",
+          "va": "Anàlisi avançada de dades"
         },
         "description": {
-          "es": "Identificación de sesgos, límites, responsabilidades y criterios de gobernanza en el uso de sistemas inteligentes.",
-          "en": "Identification of bias, limits, responsibilities and governance criteria in the use of intelligent systems.",
-          "va": "Identificació de biaixos, límits, responsabilitats i criteris de governança en l'ús de sistemes intel·ligents."
+          "es": "Analisis avanzado de datos para investigar, modelizar y tomar decisiones basadas en evidencias.",
+          "en": "Advanced data analysis to research, model and make evidence-based decisions.",
+          "va": "Analisi avancada de dades per a investigar, modelitzar i prendre decisions basades en evidencies."
         }
       },
       {
-        "id": "visualizacion",
+        "id": "ai-governance",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "📍",
+        "icon": "🏛️",
         "label": {
-          "es": "Visualización",
-          "en": "Visualization",
-          "va": "Visualització"
+          "es": "Gobernanza de IA",
+          "en": "AI Governance",
+          "va": "Governança de IA"
         },
         "shortLabel": {
-          "es": "Visualización",
-          "en": "Visualization",
-          "va": "Visualització"
+          "es": "Gobernanza de IA",
+          "en": "AI Governance",
+          "va": "Governança de IA"
         },
         "title": {
-          "es": "Visualización, narrativa y comunicación de datos",
-          "en": "Data Visualisation, Storytelling and Communication",
-          "va": "Visualització, narrativa i comunicació de dades"
+          "es": "Gobernanza de IA",
+          "en": "AI Governance",
+          "va": "Governança de IA"
         },
         "description": {
-          "es": "Creación de representaciones visuales, narrativas y dashboards para explicar datos, modelos y evidencias.",
-          "en": "Creation of visual representations, narratives and dashboards to explain data, models and evidence.",
-          "va": "Creació de representacions visuals, narratives i quadres per a explicar dades, models i evidències."
+          "es": "Gobernanza de IA, riesgos, responsabilidades, cumplimiento y supervision humana.",
+          "en": "AI governance, risks, responsibilities, compliance and human oversight.",
+          "va": "Governanca d IA, riscos, responsabilitats, compliment i supervisio humana."
         }
       },
       {
-        "id": "educacion",
+        "id": "innovation-management",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "🎓",
+        "icon": "🚀",
         "label": {
-          "es": "Educación",
-          "en": "Education",
-          "va": "Educació"
+          "es": "Gestión de innovación",
+          "en": "Innovation Management",
+          "va": "Gestió de innovació"
         },
         "shortLabel": {
-          "es": "Educación",
-          "en": "Education",
-          "va": "Educació"
+          "es": "Gestión de innovación",
+          "en": "Innovation Management",
+          "va": "Gestió de innovació"
         },
         "title": {
-          "es": "Diseño educativo con IA",
-          "en": "Educational Design with AI",
-          "va": "Disseny educatiu amb IA"
+          "es": "Gestión de innovación",
+          "en": "Innovation Management",
+          "va": "Gestió de innovació"
         },
         "description": {
-          "es": "Integración de IA en actividades, evaluación, acompañamiento y recursos educativos con criterios pedagógicos.",
-          "en": "Integration of AI into activities, assessment, support and educational resources with pedagogical criteria.",
-          "va": "Integració d'IA en activitats, avaluació, acompanyament i recursos educatius amb criteris pedagògics."
+          "es": "Gestion de innovacion para convertir capacidades de IA en soluciones transferibles.",
+          "en": "Innovation management to turn AI capabilities into transferable solutions.",
+          "va": "Gestio de la innovacio per a convertir capacitats d IA en solucions transferibles."
         }
       },
       {
-        "id": "gemelos-digitales",
+        "id": "stakeholder-engagement",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "🧩",
+        "icon": "🤝",
         "label": {
-          "es": "Gemelos Digitales",
-          "en": "Digital Twins",
-          "va": "Bessons Digitals"
+          "es": "Engagement de stakeholders",
+          "en": "Stakeholder Engagement",
+          "va": "Engagement de stakeholders"
         },
         "shortLabel": {
-          "es": "Gemelos digitales",
-          "en": "Digital twins",
-          "va": "Bessons digitals"
+          "es": "Engagement de stakeholders",
+          "en": "Stakeholder Engagement",
+          "va": "Engagement de stakeholders"
         },
         "title": {
-          "es": "Gemelos digitales y simulación",
-          "en": "Digital Twins and Simulation",
-          "va": "Bessons digitals i simulació"
+          "es": "Engagement de stakeholders",
+          "en": "Stakeholder Engagement",
+          "va": "Engagement de stakeholders"
         },
         "description": {
-          "es": "Modelado y simulación de sistemas físicos, productivos o territoriales para analizar escenarios y decisiones.",
-          "en": "Modelling and simulation of physical, productive or territorial systems to analyse scenarios and decisions.",
-          "va": "Modelatge i simulació de sistemes físics, productius o territorials per a analitzar escenaris i decisions."
+          "es": "Implicacion de stakeholders para alinear retos, evidencias, impacto y adopcion.",
+          "en": "Stakeholder engagement to align challenges, evidence, impact and adoption.",
+          "va": "Implicacio de stakeholders per a alinear reptes, evidencies, impacte i adopcio."
         }
       },
       {
-        "id": "iot",
+        "id": "research-methodology",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "📡",
+        "icon": "🔍",
         "label": {
-          "es": "IoT",
-          "en": "IoT",
-          "va": "IoT"
+          "es": "Metodología de investigación",
+          "en": "Research Methodology",
+          "va": "Metodologia de recerca"
         },
         "shortLabel": {
-          "es": "IoT",
-          "en": "IoT",
-          "va": "IoT"
+          "es": "Metodología de investigación",
+          "en": "Research Methodology",
+          "va": "Metodologia de recerca"
         },
         "title": {
-          "es": "Sensores, IoT y datos conectados",
-          "en": "Sensors, IoT and Connected Data",
-          "va": "Sensors, IoT i dades connectades"
+          "es": "Metodología de investigación",
+          "en": "Research Methodology",
+          "va": "Metodologia de recerca"
         },
         "description": {
-          "es": "Uso de sensores, dispositivos conectados y datos en tiempo real para construir soluciones inteligentes.",
-          "en": "Use of sensors, connected devices and real-time data to build intelligent solutions.",
-          "va": "Ús de sensors, dispositius connectats i dades en temps real per a construir solucions intel·ligents."
+          "es": "Metodologia de investigacion para formular preguntas, validar resultados y documentar evidencias.",
+          "en": "Research methodology to frame questions, validate results and document evidence.",
+          "va": "Metodologia de recerca per a formular preguntes, validar resultats i documentar evidencies."
         }
       },
       {
-        "id": "generativa",
+        "id": "systems-thinking",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "✨",
+        "icon": "🔗",
         "label": {
-          "es": "IA Generativa",
-          "en": "Generative AI",
-          "va": "IA Generativa"
+          "es": "Pensamiento sistémico",
+          "en": "Systems Thinking",
+          "va": "Pensament sistèmic"
         },
         "shortLabel": {
-          "es": "IA generativa",
-          "en": "Generative AI",
-          "va": "IA generativa"
+          "es": "Pensamiento sistémico",
+          "en": "Systems Thinking",
+          "va": "Pensament sistèmic"
         },
         "title": {
-          "es": "Inteligencia artificial generativa y creatividad",
-          "en": "Generative Artificial Intelligence and Creativity",
-          "va": "Intel·ligència artificial generativa i creativitat"
+          "es": "Pensamiento sistémico",
+          "en": "Systems Thinking",
+          "va": "Pensament sistèmic"
         },
         "description": {
-          "es": "Uso creativo y crítico de modelos generativos para texto, imagen, sonido, diseño, prototipado y comunicación.",
-          "en": "Creative and critical use of generative models for text, image, sound, design, prototyping and communication.",
-          "va": "Ús creatiu i crític de models generatius per a text, imatge, so, disseny, prototipatge i comunicació."
+          "es": "Pensamiento sistemico para comprender relaciones, escenarios y efectos de las decisiones.",
+          "en": "Systems thinking to understand relationships, scenarios and decision effects.",
+          "va": "Pensament sistemic per a comprendre relacions, escenaris i efectes de les decisions."
         }
       },
       {
-        "id": "skill-13",
+        "id": "strategic-communication",
         "visible": true,
         "appliesTo": [
-          "FP",
-          "Teacher",
           "Master"
         ],
-        "icon": "🎯",
+        "icon": "📢",
         "label": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
+          "es": "Comunicación estratégica",
+          "en": "Strategic Communication",
+          "va": "Comunicació estratègica"
         },
         "shortLabel": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
+          "es": "Comunicación estratégica",
+          "en": "Strategic Communication",
+          "va": "Comunicació estratègica"
         },
         "title": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
+          "es": "Comunicación estratégica",
+          "en": "Strategic Communication",
+          "va": "Comunicació estratègica"
         },
         "description": {
-          "es": "sdfsdfasdfasf",
-          "en": "fasdfasdfsaf",
-          "va": "asdfasdfsdf"
+          "es": "Comunicacion estrategica de resultados, impacto, riesgos y propuestas de valor.",
+          "en": "Strategic communication of results, impact, risks and value propositions.",
+          "va": "Comunicacio estrategica de resultats, impacte, riscos i propostes de valor."
         }
       }
     ],
@@ -1651,16 +2248,16 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "ia-aplicada",
-          "predictivo",
-          "gemelos-digitales",
-          "automatizacion"
+          "ai-literacy",
+          "data-work",
+          "problem-solving",
+          "process-automation"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "predictivo",
-          "gemelos-digitales",
-          "automatizacion"
+          "ai-literacy",
+          "data-work",
+          "problem-solving",
+          "process-automation"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -1691,16 +2288,16 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "ia-aplicada",
-          "sostenibilidad",
-          "iot",
-          "datos-reales"
+          "ai-literacy",
+          "sustainability",
+          "process-automation",
+          "data-work"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "sostenibilidad",
-          "iot",
-          "datos-reales"
+          "ai-literacy",
+          "sustainability",
+          "process-automation",
+          "data-work"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -1730,16 +2327,16 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "iot",
-          "datos-reales",
-          "sostenibilidad",
-          "visualizacion"
+          "process-automation",
+          "data-work",
+          "sustainability",
+          "technical-communication"
         ],
         "tagIds": [
-          "iot",
-          "datos-reales",
-          "sostenibilidad",
-          "visualizacion"
+          "process-automation",
+          "data-work",
+          "sustainability",
+          "technical-communication"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -1770,14 +2367,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "ia-aplicada",
-          "visualizacion",
-          "automatizacion"
+          "ai-literacy",
+          "technical-communication",
+          "process-automation"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "visualizacion",
-          "automatizacion"
+          "ai-literacy",
+          "technical-communication",
+          "process-automation"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -1808,14 +2405,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "generativa",
-          "educacion",
-          "visualizacion"
+          "problem-solving",
+          "teamwork",
+          "technical-communication"
         ],
         "tagIds": [
-          "generativa",
-          "educacion",
-          "visualizacion"
+          "problem-solving",
+          "teamwork",
+          "technical-communication"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -1845,14 +2442,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "presencial",
         "skillIds": [
-          "automatizacion",
-          "ia-aplicada",
-          "gemelos-digitales"
+          "process-automation",
+          "ai-literacy",
+          "problem-solving"
         ],
         "tagIds": [
-          "automatizacion",
-          "ia-aplicada",
-          "gemelos-digitales"
+          "process-automation",
+          "ai-literacy",
+          "problem-solving"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -1883,12 +2480,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "generativa",
-          "educacion"
+          "problem-solving",
+          "teamwork"
         ],
         "tagIds": [
-          "generativa",
-          "educacion"
+          "problem-solving",
+          "teamwork"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -1919,14 +2516,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "ia-aplicada",
-          "responsable",
-          "etica"
+          "ai-literacy",
+          "responsible-ai",
+          "privacy-ethics"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "responsable",
-          "etica"
+          "ai-literacy",
+          "responsible-ai",
+          "privacy-ethics"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -1956,14 +2553,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "ia-aplicada",
-          "datos-reales",
-          "responsable"
+          "ai-literacy",
+          "data-work",
+          "responsible-ai"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "datos-reales",
-          "responsable"
+          "ai-literacy",
+          "data-work",
+          "responsible-ai"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -1994,14 +2591,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "ia-aplicada",
-          "visualizacion",
-          "sostenibilidad"
+          "ai-literacy",
+          "technical-communication",
+          "sustainability"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "visualizacion",
-          "sostenibilidad"
+          "ai-literacy",
+          "technical-communication",
+          "sustainability"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2032,14 +2629,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "iot",
-          "sostenibilidad",
-          "ia-aplicada"
+          "process-automation",
+          "sustainability",
+          "ai-literacy"
         ],
         "tagIds": [
-          "iot",
-          "sostenibilidad",
-          "ia-aplicada"
+          "process-automation",
+          "sustainability",
+          "ai-literacy"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2069,14 +2666,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "educacion",
-          "generativa",
-          "ia-aplicada"
+          "teamwork",
+          "problem-solving",
+          "ai-literacy"
         ],
         "tagIds": [
-          "educacion",
-          "generativa",
-          "ia-aplicada"
+          "teamwork",
+          "problem-solving",
+          "ai-literacy"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2106,14 +2703,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "presencial",
         "skillIds": [
-          "automatizacion",
-          "ia-aplicada",
-          "datos-reales"
+          "process-automation",
+          "ai-literacy",
+          "data-work"
         ],
         "tagIds": [
-          "automatizacion",
-          "ia-aplicada",
-          "datos-reales"
+          "process-automation",
+          "ai-literacy",
+          "data-work"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2144,14 +2741,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "generativa",
-          "responsable",
-          "etica"
+          "problem-solving",
+          "responsible-ai",
+          "privacy-ethics"
         ],
         "tagIds": [
-          "generativa",
-          "responsable",
-          "etica"
+          "problem-solving",
+          "responsible-ai",
+          "privacy-ethics"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2182,14 +2779,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "predictivo",
-          "datos-reales",
-          "ia-aplicada"
+          "data-work",
+          "ai-literacy"
         ],
         "tagIds": [
-          "predictivo",
-          "datos-reales",
-          "ia-aplicada"
+          "data-work",
+          "ai-literacy"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2219,14 +2814,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "ia-aplicada",
-          "visualizacion",
-          "generativa"
+          "ai-literacy",
+          "technical-communication",
+          "problem-solving"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "visualizacion",
-          "generativa"
+          "ai-literacy",
+          "technical-communication",
+          "problem-solving"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2257,14 +2852,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "ia-aplicada",
-          "etica",
-          "responsable"
+          "ai-literacy",
+          "privacy-ethics",
+          "responsible-ai"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "etica",
-          "responsable"
+          "ai-literacy",
+          "privacy-ethics",
+          "responsible-ai"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2295,14 +2890,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "sostenibilidad",
-          "predictivo",
-          "iot"
+          "sustainability",
+          "data-work",
+          "process-automation"
         ],
         "tagIds": [
-          "sostenibilidad",
-          "predictivo",
-          "iot"
+          "sustainability",
+          "data-work",
+          "process-automation"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2333,14 +2928,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "automatizacion",
-          "predictivo",
-          "datos-reales"
+          "process-automation",
+          "data-work"
         ],
         "tagIds": [
-          "automatizacion",
-          "predictivo",
-          "datos-reales"
+          "process-automation",
+          "data-work"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2371,14 +2964,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "etica",
-          "responsable",
-          "educacion"
+          "privacy-ethics",
+          "responsible-ai",
+          "teamwork"
         ],
         "tagIds": [
-          "etica",
-          "responsable",
-          "educacion"
+          "privacy-ethics",
+          "responsible-ai",
+          "teamwork"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2409,14 +3002,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "datos-reales",
-          "visualizacion",
-          "ia-aplicada"
+          "data-work",
+          "technical-communication",
+          "ai-literacy"
         ],
         "tagIds": [
-          "datos-reales",
-          "visualizacion",
-          "ia-aplicada"
+          "data-work",
+          "technical-communication",
+          "ai-literacy"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2447,14 +3040,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "generativa",
-          "visualizacion",
-          "educacion"
+          "problem-solving",
+          "technical-communication",
+          "teamwork"
         ],
         "tagIds": [
-          "generativa",
-          "visualizacion",
-          "educacion"
+          "problem-solving",
+          "technical-communication",
+          "teamwork"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2485,14 +3078,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "ia-aplicada",
-          "datos-reales",
-          "responsable"
+          "ai-literacy",
+          "data-work",
+          "responsible-ai"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "datos-reales",
-          "responsable"
+          "ai-literacy",
+          "data-work",
+          "responsible-ai"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2522,14 +3115,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "educacion",
-          "etica",
-          "responsable"
+          "ped-ai-integration",
+          "critical-thinking"
         ],
         "tagIds": [
-          "educacion",
-          "etica",
-          "responsable"
+          "ped-ai-integration",
+          "critical-thinking"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2559,14 +3150,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "educacion",
-          "responsable",
-          "generativa"
+          "ped-ai-integration",
+          "critical-thinking",
+          "digital-literacy"
         ],
         "tagIds": [
-          "educacion",
-          "responsable",
-          "generativa"
+          "ped-ai-integration",
+          "critical-thinking",
+          "digital-literacy"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2597,14 +3188,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "generativa",
-          "educacion",
-          "etica"
+          "digital-literacy",
+          "ped-ai-integration",
+          "critical-thinking"
         ],
         "tagIds": [
-          "generativa",
-          "educacion",
-          "etica"
+          "digital-literacy",
+          "ped-ai-integration",
+          "critical-thinking"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2634,14 +3225,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "ia-aplicada",
-          "datos-reales",
-          "automatizacion"
+          "ped-ai-integration",
+          "digital-literacy",
+          "student-support"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "datos-reales",
-          "automatizacion"
+          "ped-ai-integration",
+          "digital-literacy",
+          "student-support"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2672,14 +3263,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "datos-reales",
-          "sostenibilidad",
-          "visualizacion"
+          "digital-literacy",
+          "collaboration-networks",
+          "assessment-innovation"
         ],
         "tagIds": [
-          "datos-reales",
-          "sostenibilidad",
-          "visualizacion"
+          "digital-literacy",
+          "collaboration-networks",
+          "assessment-innovation"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2709,14 +3300,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "generativa",
-          "visualizacion",
-          "datos-reales"
+          "digital-literacy",
+          "assessment-innovation"
         ],
         "tagIds": [
-          "generativa",
-          "visualizacion",
-          "datos-reales"
+          "digital-literacy",
+          "assessment-innovation"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2747,14 +3336,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "ia-aplicada",
-          "iot",
-          "predictivo"
+          "ped-ai-integration",
+          "digital-literacy",
+          "assessment-innovation"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "iot",
-          "predictivo"
+          "ped-ai-integration",
+          "digital-literacy",
+          "assessment-innovation"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2785,14 +3374,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "responsable",
-          "etica",
-          "ia-aplicada"
+          "critical-thinking",
+          "ped-ai-integration"
         ],
         "tagIds": [
-          "responsable",
-          "etica",
-          "ia-aplicada"
+          "critical-thinking",
+          "ped-ai-integration"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2823,14 +3410,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "automatizacion",
-          "generativa",
-          "responsable"
+          "student-support",
+          "digital-literacy",
+          "critical-thinking"
         ],
         "tagIds": [
-          "automatizacion",
-          "generativa",
-          "responsable"
+          "student-support",
+          "digital-literacy",
+          "critical-thinking"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2861,14 +3448,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "generativa",
-          "educacion",
-          "visualizacion"
+          "digital-literacy",
+          "ped-ai-integration",
+          "assessment-innovation"
         ],
         "tagIds": [
-          "generativa",
-          "educacion",
-          "visualizacion"
+          "digital-literacy",
+          "ped-ai-integration",
+          "assessment-innovation"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2900,14 +3487,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "iot",
-          "datos-reales",
-          "predictivo"
+          "digital-literacy",
+          "assessment-innovation"
         ],
         "tagIds": [
-          "iot",
-          "datos-reales",
-          "predictivo"
+          "digital-literacy",
+          "assessment-innovation"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2937,14 +3522,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "educacion",
-          "responsable",
-          "etica"
+          "ped-ai-integration",
+          "critical-thinking"
         ],
         "tagIds": [
-          "educacion",
-          "responsable",
-          "etica"
+          "ped-ai-integration",
+          "critical-thinking"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -2974,14 +3557,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "presencial",
         "skillIds": [
-          "predictivo",
-          "visualizacion",
-          "datos-reales"
+          "assessment-innovation",
+          "digital-literacy"
         ],
         "tagIds": [
-          "predictivo",
-          "visualizacion",
-          "datos-reales"
+          "assessment-innovation",
+          "digital-literacy"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -3012,14 +3593,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "generativa",
-          "visualizacion",
-          "educacion"
+          "digital-literacy",
+          "assessment-innovation",
+          "ped-ai-integration"
         ],
         "tagIds": [
-          "generativa",
-          "visualizacion",
-          "educacion"
+          "digital-literacy",
+          "assessment-innovation",
+          "ped-ai-integration"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -3050,14 +3631,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "responsable",
-          "educacion",
-          "etica"
+          "critical-thinking",
+          "ped-ai-integration"
         ],
         "tagIds": [
-          "responsable",
-          "educacion",
-          "etica"
+          "critical-thinking",
+          "ped-ai-integration"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -3089,14 +3668,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "gemelos-digitales",
-          "visualizacion",
-          "datos-reales"
+          "collaboration-networks",
+          "assessment-innovation",
+          "digital-literacy"
         ],
         "tagIds": [
-          "gemelos-digitales",
-          "visualizacion",
-          "datos-reales"
+          "collaboration-networks",
+          "assessment-innovation",
+          "digital-literacy"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -3128,14 +3707,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "etica",
-          "responsable",
-          "educacion"
+          "critical-thinking",
+          "ped-ai-integration"
         ],
         "tagIds": [
-          "etica",
-          "responsable",
-          "educacion"
+          "critical-thinking",
+          "ped-ai-integration"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -3166,14 +3743,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "generativa",
-          "educacion",
-          "visualizacion"
+          "digital-literacy",
+          "ped-ai-integration",
+          "assessment-innovation"
         ],
         "tagIds": [
-          "generativa",
-          "educacion",
-          "visualizacion"
+          "digital-literacy",
+          "ped-ai-integration",
+          "assessment-innovation"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -3204,14 +3781,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "datos-reales",
-          "predictivo",
-          "sostenibilidad"
+          "digital-literacy",
+          "assessment-innovation",
+          "collaboration-networks"
         ],
         "tagIds": [
-          "datos-reales",
-          "predictivo",
-          "sostenibilidad"
+          "digital-literacy",
+          "assessment-innovation",
+          "collaboration-networks"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -3242,14 +3819,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "ia-aplicada",
-          "responsable",
-          "datos-reales"
+          "ped-ai-integration",
+          "critical-thinking",
+          "digital-literacy"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "responsable",
-          "datos-reales"
+          "ped-ai-integration",
+          "critical-thinking",
+          "digital-literacy"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -3281,14 +3858,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "presencial",
         "skillIds": [
-          "ia-aplicada",
-          "generativa",
-          "educacion"
+          "ped-ai-integration",
+          "digital-literacy"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "generativa",
-          "educacion"
+          "ped-ai-integration",
+          "digital-literacy"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -3319,14 +3894,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "responsable",
-          "etica",
-          "datos-reales"
+          "critical-thinking",
+          "digital-literacy"
         ],
         "tagIds": [
-          "responsable",
-          "etica",
-          "datos-reales"
+          "critical-thinking",
+          "digital-literacy"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -3358,14 +3931,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "generativa",
-          "visualizacion",
-          "responsable"
+          "digital-literacy",
+          "assessment-innovation",
+          "critical-thinking"
         ],
         "tagIds": [
-          "generativa",
-          "visualizacion",
-          "responsable"
+          "digital-literacy",
+          "assessment-innovation",
+          "critical-thinking"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -3396,14 +3969,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "educacion",
-          "responsable",
-          "automatizacion"
+          "ped-ai-integration",
+          "critical-thinking",
+          "student-support"
         ],
         "tagIds": [
-          "educacion",
-          "responsable",
-          "automatizacion"
+          "ped-ai-integration",
+          "critical-thinking",
+          "student-support"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
@@ -3433,12 +4006,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "ia-aplicada",
-          "responsable"
+          "ai-strategy",
+          "ai-governance"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "responsable"
+          "ai-strategy",
+          "ai-governance"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3468,14 +4041,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "gemelos-digitales",
-          "automatizacion",
-          "ia-aplicada"
+          "systems-thinking",
+          "ai-strategy"
         ],
         "tagIds": [
-          "gemelos-digitales",
-          "automatizacion",
-          "ia-aplicada"
+          "systems-thinking",
+          "ai-strategy"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3505,12 +4076,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "generativa",
-          "visualizacion"
+          "innovation-management",
+          "strategic-communication"
         ],
         "tagIds": [
-          "generativa",
-          "visualizacion"
+          "innovation-management",
+          "strategic-communication"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3541,14 +4112,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "generativa",
-          "responsable",
-          "datos-reales"
+          "innovation-management",
+          "ai-governance",
+          "advanced-data"
         ],
         "tagIds": [
-          "generativa",
-          "responsable",
-          "datos-reales"
+          "innovation-management",
+          "ai-governance",
+          "advanced-data"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3579,14 +4150,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "presencial",
         "skillIds": [
-          "generativa",
-          "visualizacion",
-          "etica"
+          "innovation-management",
+          "strategic-communication",
+          "ai-governance"
         ],
         "tagIds": [
-          "generativa",
-          "visualizacion",
-          "etica"
+          "innovation-management",
+          "strategic-communication",
+          "ai-governance"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3616,14 +4187,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "ia-aplicada",
-          "automatizacion",
-          "visualizacion"
+          "ai-strategy",
+          "systems-thinking",
+          "strategic-communication"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "automatizacion",
-          "visualizacion"
+          "ai-strategy",
+          "systems-thinking",
+          "strategic-communication"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3654,14 +4225,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "predictivo",
-          "iot",
-          "sostenibilidad"
+          "advanced-data",
+          "systems-thinking",
+          "stakeholder-engagement"
         ],
         "tagIds": [
-          "predictivo",
-          "iot",
-          "sostenibilidad"
+          "advanced-data",
+          "systems-thinking",
+          "stakeholder-engagement"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3692,14 +4263,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "sostenibilidad",
-          "predictivo",
-          "visualizacion"
+          "stakeholder-engagement",
+          "advanced-data",
+          "strategic-communication"
         ],
         "tagIds": [
-          "sostenibilidad",
-          "predictivo",
-          "visualizacion"
+          "stakeholder-engagement",
+          "advanced-data",
+          "strategic-communication"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3729,14 +4300,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "educacion",
-          "generativa",
-          "responsable"
+          "innovation-management",
+          "ai-governance"
         ],
         "tagIds": [
-          "educacion",
-          "generativa",
-          "responsable"
+          "innovation-management",
+          "ai-governance"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3767,14 +4336,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "presencial",
         "skillIds": [
-          "responsable",
-          "visualizacion",
-          "etica"
+          "ai-governance",
+          "strategic-communication"
         ],
         "tagIds": [
-          "responsable",
-          "visualizacion",
-          "etica"
+          "ai-governance",
+          "strategic-communication"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3805,14 +4372,12 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "automatizacion",
-          "ia-aplicada",
-          "iot"
+          "systems-thinking",
+          "ai-strategy"
         ],
         "tagIds": [
-          "automatizacion",
-          "ia-aplicada",
-          "iot"
+          "systems-thinking",
+          "ai-strategy"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3843,14 +4408,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "generativa",
-          "gemelos-digitales",
-          "sostenibilidad"
+          "innovation-management",
+          "systems-thinking",
+          "stakeholder-engagement"
         ],
         "tagIds": [
-          "generativa",
-          "gemelos-digitales",
-          "sostenibilidad"
+          "innovation-management",
+          "systems-thinking",
+          "stakeholder-engagement"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3881,14 +4446,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "datos-reales",
-          "responsable",
-          "sostenibilidad"
+          "advanced-data",
+          "ai-governance",
+          "stakeholder-engagement"
         ],
         "tagIds": [
-          "datos-reales",
-          "responsable",
-          "sostenibilidad"
+          "advanced-data",
+          "ai-governance",
+          "stakeholder-engagement"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3919,14 +4484,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "presencial",
         "skillIds": [
-          "generativa",
-          "datos-reales",
-          "sostenibilidad"
+          "innovation-management",
+          "advanced-data",
+          "stakeholder-engagement"
         ],
         "tagIds": [
-          "generativa",
-          "datos-reales",
-          "sostenibilidad"
+          "innovation-management",
+          "advanced-data",
+          "stakeholder-engagement"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3957,14 +4522,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "online",
         "skillIds": [
-          "predictivo",
-          "responsable",
-          "visualizacion"
+          "advanced-data",
+          "ai-governance",
+          "strategic-communication"
         ],
         "tagIds": [
-          "predictivo",
-          "responsable",
-          "visualizacion"
+          "advanced-data",
+          "ai-governance",
+          "strategic-communication"
         ],
         "link": {
           "url": "https://valgrai.eu",
@@ -3998,14 +4563,14 @@ export const TRAINING_CONFIG = {
         ],
         "modalityId": "semipresencial",
         "skillIds": [
-          "ia-aplicada",
-          "generativa",
-          "etica"
+          "ai-strategy",
+          "innovation-management",
+          "ai-governance"
         ],
         "tagIds": [
-          "ia-aplicada",
-          "generativa",
-          "etica"
+          "ai-strategy",
+          "innovation-management",
+          "ai-governance"
         ],
         "link": {
           "url": "https://valgrai.eu",
