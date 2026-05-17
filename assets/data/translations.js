@@ -282,6 +282,7 @@ export const translations = {
         "challenges": "Retos y casos",
         "partners": "Socios",
         "stakeholders": "Stakeholders",
+        "courses": "Cursos",
         "modules": "Skills FP"
       },
       "fpModulesLabel": "FP Skills (ejemplos prototipo)",
@@ -2348,6 +2349,7 @@ export const translations = {
         "challenges": "Challenges & cases",
         "partners": "Partners",
         "stakeholders": "Stakeholders",
+        "courses": "Courses",
         "modules": "VET Skills"
       },
       "fpModulesLabel": "VET Skills (prototype examples)",
@@ -4414,6 +4416,7 @@ export const translations = {
         "challenges": "Reptes i casos",
         "partners": "Socis",
         "stakeholders": "Stakeholders",
+        "courses": "Cursos",
         "modules": "Skills FP"
       },
       "fpModulesLabel": "FP Skills (exemples prototip)",

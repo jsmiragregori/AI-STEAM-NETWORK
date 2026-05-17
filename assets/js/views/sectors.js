@@ -246,7 +246,7 @@ export function render() {
           <span class="text-4xl">${sector.emoji}</span>
           <div class="flex-1 min-w-0">
             <h2 class="text-lg font-bold text-eu-text">${name}</h2>
-            <p class="text-sm text-gray-600 line-clamp-1">${description}</p>
+            <p class="text-sm text-gray-600 line-clamp-2">${description}</p>
           </div>
           <div class="hidden sm:flex items-center gap-6 shrink-0">
             <div class="text-center">
@@ -260,6 +260,10 @@ export function render() {
             <div class="text-center">
               <p class="text-xl font-extrabold text-purple-600">${stats.stakeholders ?? ''}</p>
               <p class="text-xs text-gray-500 uppercase font-semibold">${sectorLabels.stakeholders || ''}</p>
+            </div>
+            <div class="text-center">
+              <p class="text-xl font-extrabold text-eu-orange">${stats.courses ?? ''}</p>
+              <p class="text-xs text-gray-500 uppercase font-semibold">${sectorLabels.courses || ''}</p>
             </div>
           </div>
           <i data-lucide="${isOpen ? 'chevron-up' : 'chevron-down'}" class="w-5 h-5 text-gray-400 shrink-0"></i>

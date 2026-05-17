@@ -70,7 +70,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "challenges": 3,
         "partners": 23,
-        "courses": 12,
+        "courses": 18,
         "stakeholders": 16
       },
       "transferChain": [
@@ -236,7 +236,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "challenges": 18,
         "partners": 20,
-        "courses": 12,
+        "courses": 0,
         "stakeholders": 65
       },
       "transferChain": [
@@ -394,7 +394,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "challenges": 19,
         "partners": 22,
-        "courses": 9,
+        "courses": 17,
         "stakeholders": 102
       },
       "transferChain": [
@@ -552,7 +552,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "challenges": 14,
         "partners": 22,
-        "courses": 8,
+        "courses": 9,
         "stakeholders": 78
       },
       "transferChain": [
@@ -710,7 +710,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "challenges": 12,
         "partners": 19,
-        "courses": 7,
+        "courses": 19,
         "stakeholders": 43
       },
       "transferChain": [
@@ -1027,7 +1027,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "challenges": 16,
         "partners": 21,
-        "courses": 11,
+        "courses": 36,
         "stakeholders": 56
       },
       "transferChain": [
