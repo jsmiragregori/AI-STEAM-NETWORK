@@ -18,7 +18,7 @@ export const TRAINING_CONFIG = {
       {
         "id": "total-courses",
         "visible": true,
-        "value": 63,
+        "value": 64,
         "manualOverride": false,
         "label": {
           "es": "Cursos publicados",
@@ -29,7 +29,7 @@ export const TRAINING_CONFIG = {
       {
         "id": "training-hours",
         "visible": true,
-        "value": 2745,
+        "value": 2800,
         "manualOverride": false,
         "label": {
           "es": "Horas formativas",
@@ -2436,6 +2436,44 @@ export const TRAINING_CONFIG = {
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "fp-course-24",
+        "createdAt": "2026-05-17",
+        "title": {
+          "es": "Nuevo curso FP",
+          "en": "Nuevo curso FP",
+          "va": "Nuevo curso FP"
+        },
+        "description": {
+          "es": "fghdfgh",
+          "en": "dfghdfghf",
+          "va": "dfghdfgh"
+        },
+        "level": "FP",
+        "statusId": "proximo",
+        "hours": 55,
+        "enrolled": null,
+        "rating": null,
+        "sectorIds": [
+          "salud",
+          "agroalimentario"
+        ],
+        "modalityId": "presencial",
+        "skillIds": [
+          "predictivo",
+          "visualizacion",
+          "datos-reales"
+        ],
+        "tagIds": [
+          "predictivo",
+          "visualizacion",
+          "datos-reales"
+        ],
+        "link": {
+          "url": "https://aules.es",
           "external": true
         }
       },
