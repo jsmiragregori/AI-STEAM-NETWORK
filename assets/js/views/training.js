@@ -50,7 +50,7 @@ function filterCourses(courses, filters) {
     }
     const sectorMatch   = !filters.sectors.length   || course.sectorIds?.some(s => filters.sectors.includes(s));
     const modalityMatch = !filters.modalities.length || (course.modalityId && filters.modalities.includes(course.modalityId));
-    const tagMatch      = !filters.tags.length       || course.tagIds?.some(tg => filters.tags.includes(tg));
+    const tagMatch      = !filters.tags.length       || course.skillIds?.some(tg => filters.tags.includes(tg));
     const statusMatch   = !(filters.statuses || []).length || (filters.statuses || []).includes(course.statusId);
     return sectorMatch && modalityMatch && tagMatch && statusMatch;
   });
@@ -80,7 +80,8 @@ function getCourses(trainingT) {
       modality:    pickLang(modalitiesMap[course.modalityId], course.modalityId),
       statusId:    course.statusId || '',
       statusObj:   statusesMap[course.statusId] || { id: course.statusId, label: { es: course.statusId, en: course.statusId, va: course.statusId }, tone: 'neutral' },
-      tagIds:      course.tagIds || [],
+      skillIds:    course.skillIds || course.tagIds || [],
+      tagIds:      course.skillIds || course.tagIds || [],
       link:        course.link || { url: '', external: true },
     }));
   }
@@ -93,7 +94,7 @@ function getCourses(trainingT) {
     modalityId: '', modality: COURSE_MODALITY[idx],
     statusId: course.status || '',
     statusObj: { id: course.status, label: { es: course.status, en: course.status, va: course.status }, tone: 'neutral' },
-    tagIds: [], link: { url: '', external: true },
+    skillIds: [], tagIds: [], link: { url: '', external: true },
   }));
 }
 
@@ -110,11 +111,11 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
   const linkTarget     = course.link?.external !== false ? '_blank' : '_self';
   const viewLabel      = trainingT?.courseViewMore || 'Ver';
 
-  const chipsHtml = (course.tagIds || []).map(chipId => {
+  const chipsHtml = (course.skillIds || course.tagIds || []).map(chipId => {
     const chip = courseTags.find(c => c.id === chipId);
     if (!chip) return '';
     const isActive = activeFilters.tags.includes(chipId);
-    return `<button data-filter-tag="${chipId}" class="text-xs font-medium px-2 py-1 rounded-full transition-colors cursor-pointer ${isActive ? 'bg-eu-blue text-white border border-eu-blue' : 'bg-eu-blue/10 text-eu-blue border border-eu-blue/20 hover:bg-eu-blue/20'}">${pickLang(chip.label, chipId)}</button>`;
+    return `<button data-filter-tag="${chipId}" class="text-xs font-medium px-2 py-1 rounded-full transition-colors cursor-pointer ${isActive ? 'bg-eu-blue text-white border border-eu-blue' : 'bg-eu-blue/10 text-eu-blue border border-eu-blue/20 hover:bg-eu-blue/20'}">${pickLang(chip.shortLabel || chip.label, chipId)}</button>`;
   }).join('');
 
   return `
@@ -242,7 +243,7 @@ function updateCourseGrid() {
   const trainingT   = t('training') || {};
   const coursesBlock = TRAINING_CONFIG?.coursesBlock || {};
   const courses     = getCourses(trainingT);
-  const courseTags  = coursesBlock.courseTags || [];
+  const courseTags  = coursesBlock.skills || coursesBlock.courseTags || [];
   const emptyMsg    = coursesBlock.emptyMessage || {};
   const container   = document.getElementById('tr-courses-grid');
   if (!container) return;
@@ -399,7 +400,7 @@ export function render() {
   const coursesBlock = TRAINING_CONFIG?.coursesBlock || {};
   const courses      = coursesBlock.visible !== false ? getCourses(trainingT) : [];
   const sections     = TRAINING_CONFIG?.sectionsBlock || [];
-  const courseTags   = coursesBlock.courseTags || [];
+  const courseTags   = coursesBlock.skills || coursesBlock.courseTags || [];
 
   const TABS = [
     { key: 'fp',      icon: 'briefcase',     label: trainingT?.tabFpVet },
