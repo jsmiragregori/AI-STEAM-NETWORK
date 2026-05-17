@@ -1080,6 +1080,66 @@ export const TRAINING_CONFIG = {
           "en": "Creative and critical use of generative models for text, image, sound, design, prototyping and communication.",
           "va": "Ús creatiu i crític de models generatius per a text, imatge, so, disseny, prototipatge i comunicació."
         }
+      },
+      {
+        "id": "skill-13",
+        "visible": true,
+        "appliesTo": [
+          "FP",
+          "Teacher",
+          "Master"
+        ],
+        "icon": "🎯",
+        "label": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "shortLabel": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "title": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "description": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      {
+        "id": "skill-14",
+        "visible": true,
+        "appliesTo": [
+          "FP",
+          "Teacher",
+          "Master"
+        ],
+        "icon": "🎯",
+        "label": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "shortLabel": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "title": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "description": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       }
     ],
     "courseTags": [
@@ -1441,6 +1501,66 @@ export const TRAINING_CONFIG = {
           "es": "Uso creativo y crítico de modelos generativos para texto, imagen, sonido, diseño, prototipado y comunicación.",
           "en": "Creative and critical use of generative models for text, image, sound, design, prototyping and communication.",
           "va": "Ús creatiu i crític de models generatius per a text, imatge, so, disseny, prototipatge i comunicació."
+        }
+      },
+      {
+        "id": "skill-13",
+        "visible": true,
+        "appliesTo": [
+          "FP",
+          "Teacher",
+          "Master"
+        ],
+        "icon": "🎯",
+        "label": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "shortLabel": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "title": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "description": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      {
+        "id": "skill-14",
+        "visible": true,
+        "appliesTo": [
+          "FP",
+          "Teacher",
+          "Master"
+        ],
+        "icon": "🎯",
+        "label": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "shortLabel": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "title": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "description": {
+          "es": "",
+          "en": "",
+          "va": ""
         }
       }
     ],
