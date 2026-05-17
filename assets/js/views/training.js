@@ -621,7 +621,7 @@ export function mount() {
           for (let i = 0; i < word.length; i++) hash = ((hash << 5) - hash) + word.charCodeAt(i);
           return palette[Math.abs(hash) % palette.length];
         },
-        rotateRatio: 0.3,
+        rotateRatio: 0.5,
         minRotation: 0,
         maxRotation: Math.PI / 2,
         rotationSteps: 2,
