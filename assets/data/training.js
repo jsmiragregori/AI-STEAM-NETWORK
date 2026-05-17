@@ -83,85 +83,175 @@ export const TRAINING_CONFIG = {
         "visible": true,
         "skills": [
           {
-            "id": "ai-literacy",
+            "id": "ia-aplicada",
             "title": {
-              "es": "Alfabetización IA aplicada",
-              "en": "Applied AI Literacy",
-              "va": "Alfabetització IA aplicada"
+              "es": "Inteligencia artificial aplicada",
+              "en": "Applied Artificial Intelligence",
+              "va": "Intel·ligència artificial aplicada"
+            },
+            "shortLabel": {
+              "es": "IA aplicada",
+              "en": "Applied AI",
+              "va": "IA aplicada"
+            },
+            "description": {
+              "es": "Uso de modelos de IA para resolver retos técnicos, creativos y sectoriales con datos y contexto real.",
+              "en": "Use of AI models to solve technical, creative and sector-based challenges with real data and context.",
+              "va": "Ús de models d'IA per a resoldre reptes tècnics, creatius i sectorials amb dades i context real."
             },
             "icon": "🤖"
           },
           {
-            "id": "data-work",
+            "id": "datos-reales",
             "title": {
-              "es": "Trabajo con datos en contextos reales",
-              "en": "Working with Data in Real Contexts",
-              "va": "Treball amb dades en contextos reals"
+              "es": "Trabajo con datos reales",
+              "en": "Working with Real Data",
+              "va": "Treball amb dades reals"
+            },
+            "shortLabel": {
+              "es": "Datos reales",
+              "en": "Real data",
+              "va": "Dades reals"
+            },
+            "description": {
+              "es": "Captura, limpieza, interpretación y uso responsable de datos procedentes de entornos educativos, productivos o sociales.",
+              "en": "Collection, cleaning, interpretation and responsible use of data from educational, productive or social environments.",
+              "va": "Captura, neteja, interpretació i ús responsable de dades procedents d'entorns educatius, productius o socials."
             },
             "icon": "📊"
           },
           {
-            "id": "process-automation",
+            "id": "automatizacion",
             "title": {
-              "es": "Automatización de procesos",
-              "en": "Process Automation",
-              "va": "Automatització de processos"
+              "es": "Automatización inteligente de procesos",
+              "en": "Intelligent Process Automation",
+              "va": "Automatització intel·ligent de processos"
+            },
+            "shortLabel": {
+              "es": "Automatización",
+              "en": "Automation",
+              "va": "Automatització"
+            },
+            "description": {
+              "es": "Diseño de flujos, agentes, sensores o sistemas que reducen tareas repetitivas y mejoran decisiones operativas.",
+              "en": "Design of workflows, agents, sensors or systems that reduce repetitive tasks and improve operational decisions.",
+              "va": "Disseny de fluxos, agents, sensors o sistemes que redueixen tasques repetitives i milloren decisions operatives."
             },
             "icon": "⚙️"
           },
           {
-            "id": "responsible-ai",
+            "id": "responsable",
             "title": {
-              "es": "Uso responsable de IA generativa",
-              "en": "Responsible Use of Generative AI",
-              "va": "Ús responsable de IA generativa"
+              "es": "Uso responsable y seguro de IA",
+              "en": "Responsible and Safe Use of AI",
+              "va": "Ús responsable i segur d'IA"
+            },
+            "shortLabel": {
+              "es": "IA responsable",
+              "en": "Responsible AI",
+              "va": "IA responsable"
+            },
+            "description": {
+              "es": "Aplicación de criterios de seguridad, transparencia, privacidad y control humano en proyectos con inteligencia artificial.",
+              "en": "Application of safety, transparency, privacy and human oversight criteria in artificial intelligence projects.",
+              "va": "Aplicació de criteris de seguretat, transparència, privacitat i control humà en projectes amb intel·ligència artificial."
             },
             "icon": "⚖️"
           },
           {
-            "id": "technical-communication",
+            "id": "sostenibilidad",
             "title": {
-              "es": "Comunicación técnica",
-              "en": "Technical Communication",
-              "va": "Comunicació tècnica"
+              "es": "Sostenibilidad y eficiencia con IA",
+              "en": "Sustainability and Efficiency with AI",
+              "va": "Sostenibilitat i eficiència amb IA"
             },
-            "icon": "💬"
-          },
-          {
-            "id": "problem-solving",
-            "title": {
-              "es": "Resolución creativa de problemas",
-              "en": "Creative Problem-Solving",
-              "va": "Resolució creativa de problemes"
+            "shortLabel": {
+              "es": "Sostenibilidad",
+              "en": "Sustainability",
+              "va": "Sostenibilitat"
             },
-            "icon": "💡"
-          },
-          {
-            "id": "sustainability",
-            "title": {
-              "es": "Sostenibilidad y eficiencia",
-              "en": "Sustainability and Efficiency",
-              "va": "Sostenibilitat i eficiència"
+            "description": {
+              "es": "Uso de IA y datos para reducir impactos, optimizar recursos y comunicar decisiones sostenibles.",
+              "en": "Use of AI and data to reduce impacts, optimise resources and communicate sustainable decisions.",
+              "va": "Ús d'IA i dades per a reduir impactes, optimitzar recursos i comunicar decisions sostenibles."
             },
             "icon": "♻️"
           },
           {
-            "id": "privacy-ethics",
+            "id": "predictivo",
             "title": {
-              "es": "Privacidad y ética",
-              "en": "Privacy and Ethics",
-              "va": "Privacitat i ètica"
+              "es": "Análisis predictivo y anticipación",
+              "en": "Predictive Analysis and Anticipation",
+              "va": "Anàlisi predictiva i anticipació"
             },
-            "icon": "🔒"
+            "shortLabel": {
+              "es": "Predictivo",
+              "en": "Predictive",
+              "va": "Predictiu"
+            },
+            "description": {
+              "es": "Modelado de patrones, riesgos y escenarios futuros a partir de datos históricos, sensores o señales complejas.",
+              "en": "Modelling of patterns, risks and future scenarios from historical data, sensors or complex signals.",
+              "va": "Modelatge de patrons, riscos i escenaris futurs a partir de dades històriques, sensors o senyals complexos."
+            },
+            "icon": "📈"
           },
           {
-            "id": "teamwork",
+            "id": "visualizacion",
             "title": {
-              "es": "Trabajo interdisciplinar en equipo",
-              "en": "Interdisciplinary Teamwork",
-              "va": "Treball interdisciplinari en equip"
+              "es": "Visualización, narrativa y comunicación de datos",
+              "en": "Data Visualisation, Storytelling and Communication",
+              "va": "Visualització, narrativa i comunicació de dades"
             },
-            "icon": "👥"
+            "shortLabel": {
+              "es": "Visualización",
+              "en": "Visualization",
+              "va": "Visualització"
+            },
+            "description": {
+              "es": "Creación de representaciones visuales, narrativas y dashboards para explicar datos, modelos y evidencias.",
+              "en": "Creation of visual representations, narratives and dashboards to explain data, models and evidence.",
+              "va": "Creació de representacions visuals, narratives i quadres per a explicar dades, models i evidències."
+            },
+            "icon": "📍"
+          },
+          {
+            "id": "iot",
+            "title": {
+              "es": "Sensores, IoT y datos conectados",
+              "en": "Sensors, IoT and Connected Data",
+              "va": "Sensors, IoT i dades connectades"
+            },
+            "shortLabel": {
+              "es": "IoT",
+              "en": "IoT",
+              "va": "IoT"
+            },
+            "description": {
+              "es": "Uso de sensores, dispositivos conectados y datos en tiempo real para construir soluciones inteligentes.",
+              "en": "Use of sensors, connected devices and real-time data to build intelligent solutions.",
+              "va": "Ús de sensors, dispositius connectats i dades en temps real per a construir solucions intel·ligents."
+            },
+            "icon": "📡"
+          },
+          {
+            "id": "generativa",
+            "title": {
+              "es": "Inteligencia artificial generativa y creatividad",
+              "en": "Generative Artificial Intelligence and Creativity",
+              "va": "Intel·ligència artificial generativa i creativitat"
+            },
+            "shortLabel": {
+              "es": "IA generativa",
+              "en": "Generative AI",
+              "va": "IA generativa"
+            },
+            "description": {
+              "es": "Uso creativo y crítico de modelos generativos para texto, imagen, sonido, diseño, prototipado y comunicación.",
+              "en": "Creative and critical use of generative models for text, image, sound, design, prototyping and communication.",
+              "va": "Ús creatiu i crític de models generatius per a text, imatge, so, disseny, prototipatge i comunicació."
+            },
+            "icon": "✨"
           }
         ]
       },
@@ -225,76 +315,156 @@ export const TRAINING_CONFIG = {
         "visible": true,
         "skills": [
           {
-            "id": "ai-strategy",
+            "id": "ia-aplicada",
             "title": {
-              "es": "Estrategia de IA en organizaciones",
-              "en": "AI Strategy in Organizations",
-              "va": "Estratègia de IA en organitzacions"
+              "es": "Inteligencia artificial aplicada",
+              "en": "Applied Artificial Intelligence",
+              "va": "Intel·ligència artificial aplicada"
+            },
+            "shortLabel": {
+              "es": "IA aplicada",
+              "en": "Applied AI",
+              "va": "IA aplicada"
+            },
+            "description": {
+              "es": "Uso de modelos de IA para resolver retos técnicos, creativos y sectoriales con datos y contexto real.",
+              "en": "Use of AI models to solve technical, creative and sector-based challenges with real data and context.",
+              "va": "Ús de models d'IA per a resoldre reptes tècnics, creatius i sectorials amb dades i context real."
+            },
+            "icon": "🤖"
+          },
+          {
+            "id": "datos-reales",
+            "title": {
+              "es": "Trabajo con datos reales",
+              "en": "Working with Real Data",
+              "va": "Treball amb dades reals"
+            },
+            "shortLabel": {
+              "es": "Datos reales",
+              "en": "Real data",
+              "va": "Dades reals"
+            },
+            "description": {
+              "es": "Captura, limpieza, interpretación y uso responsable de datos procedentes de entornos educativos, productivos o sociales.",
+              "en": "Collection, cleaning, interpretation and responsible use of data from educational, productive or social environments.",
+              "va": "Captura, neteja, interpretació i ús responsable de dades procedents d'entorns educatius, productius o socials."
+            },
+            "icon": "📊"
+          },
+          {
+            "id": "responsable",
+            "title": {
+              "es": "Uso responsable y seguro de IA",
+              "en": "Responsible and Safe Use of AI",
+              "va": "Ús responsable i segur d'IA"
+            },
+            "shortLabel": {
+              "es": "IA responsable",
+              "en": "Responsible AI",
+              "va": "IA responsable"
+            },
+            "description": {
+              "es": "Aplicación de criterios de seguridad, transparencia, privacidad y control humano en proyectos con inteligencia artificial.",
+              "en": "Application of safety, transparency, privacy and human oversight criteria in artificial intelligence projects.",
+              "va": "Aplicació de criteris de seguretat, transparència, privacitat i control humà en projectes amb intel·ligència artificial."
+            },
+            "icon": "⚖️"
+          },
+          {
+            "id": "predictivo",
+            "title": {
+              "es": "Análisis predictivo y anticipación",
+              "en": "Predictive Analysis and Anticipation",
+              "va": "Anàlisi predictiva i anticipació"
+            },
+            "shortLabel": {
+              "es": "Predictivo",
+              "en": "Predictive",
+              "va": "Predictiu"
+            },
+            "description": {
+              "es": "Modelado de patrones, riesgos y escenarios futuros a partir de datos históricos, sensores o señales complejas.",
+              "en": "Modelling of patterns, risks and future scenarios from historical data, sensors or complex signals.",
+              "va": "Modelatge de patrons, riscos i escenaris futurs a partir de dades històriques, sensors o senyals complexos."
             },
             "icon": "📈"
           },
           {
-            "id": "advanced-data",
+            "id": "etica",
             "title": {
-              "es": "Análisis avanzado de datos",
-              "en": "Advanced Data Analysis",
-              "va": "Anàlisi avançada de dades"
+              "es": "Ética, sesgos y gobernanza de IA",
+              "en": "Ethics, Bias and AI Governance",
+              "va": "Ètica, biaixos i governança d'IA"
             },
-            "icon": "🔬"
+            "shortLabel": {
+              "es": "Ética",
+              "en": "Ethics",
+              "va": "Ètica"
+            },
+            "description": {
+              "es": "Identificación de sesgos, límites, responsabilidades y criterios de gobernanza en el uso de sistemas inteligentes.",
+              "en": "Identification of bias, limits, responsibilities and governance criteria in the use of intelligent systems.",
+              "va": "Identificació de biaixos, límits, responsabilitats i criteris de governança en l'ús de sistemes intel·ligents."
+            },
+            "icon": "🧭"
           },
           {
-            "id": "ai-governance",
+            "id": "visualizacion",
             "title": {
-              "es": "Gobernanza de IA",
-              "en": "AI Governance",
-              "va": "Governança de IA"
+              "es": "Visualización, narrativa y comunicación de datos",
+              "en": "Data Visualisation, Storytelling and Communication",
+              "va": "Visualització, narrativa i comunicació de dades"
             },
-            "icon": "🏛️"
+            "shortLabel": {
+              "es": "Visualización",
+              "en": "Visualization",
+              "va": "Visualització"
+            },
+            "description": {
+              "es": "Creación de representaciones visuales, narrativas y dashboards para explicar datos, modelos y evidencias.",
+              "en": "Creation of visual representations, narratives and dashboards to explain data, models and evidence.",
+              "va": "Creació de representacions visuals, narratives i quadres per a explicar dades, models i evidències."
+            },
+            "icon": "📍"
           },
           {
-            "id": "innovation-management",
+            "id": "gemelos-digitales",
             "title": {
-              "es": "Gestión de innovación",
-              "en": "Innovation Management",
-              "va": "Gestió de innovació"
+              "es": "Gemelos digitales y simulación",
+              "en": "Digital Twins and Simulation",
+              "va": "Bessons digitals i simulació"
             },
-            "icon": "🚀"
+            "shortLabel": {
+              "es": "Gemelos digitales",
+              "en": "Digital twins",
+              "va": "Bessons digitals"
+            },
+            "description": {
+              "es": "Modelado y simulación de sistemas físicos, productivos o territoriales para analizar escenarios y decisiones.",
+              "en": "Modelling and simulation of physical, productive or territorial systems to analyse scenarios and decisions.",
+              "va": "Modelatge i simulació de sistemes físics, productius o territorials per a analitzar escenaris i decisions."
+            },
+            "icon": "🧩"
           },
           {
-            "id": "stakeholder-engagement",
+            "id": "generativa",
             "title": {
-              "es": "Engagement de stakeholders",
-              "en": "Stakeholder Engagement",
-              "va": "Engagement de stakeholders"
+              "es": "Inteligencia artificial generativa y creatividad",
+              "en": "Generative Artificial Intelligence and Creativity",
+              "va": "Intel·ligència artificial generativa i creativitat"
             },
-            "icon": "🤝"
-          },
-          {
-            "id": "research-methodology",
-            "title": {
-              "es": "Metodología de investigación",
-              "en": "Research Methodology",
-              "va": "Metodologia de recerca"
+            "shortLabel": {
+              "es": "IA generativa",
+              "en": "Generative AI",
+              "va": "IA generativa"
             },
-            "icon": "🔍"
-          },
-          {
-            "id": "systems-thinking",
-            "title": {
-              "es": "Pensamiento sistémico",
-              "en": "Systems Thinking",
-              "va": "Pensament sistèmic"
+            "description": {
+              "es": "Uso creativo y crítico de modelos generativos para texto, imagen, sonido, diseño, prototipado y comunicación.",
+              "en": "Creative and critical use of generative models for text, image, sound, design, prototyping and communication.",
+              "va": "Ús creatiu i crític de models generatius per a text, imatge, so, disseny, prototipatge i comunicació."
             },
-            "icon": "🔗"
-          },
-          {
-            "id": "strategic-communication",
-            "title": {
-              "es": "Comunicación estratégica",
-              "en": "Strategic Communication",
-              "va": "Comunicació estratègica"
-            },
-            "icon": "📢"
+            "icon": "✨"
           }
         ]
       },
@@ -374,76 +544,156 @@ export const TRAINING_CONFIG = {
         "visible": true,
         "skills": [
           {
-            "id": "ped-ai-integration",
+            "id": "educacion",
             "title": {
-              "es": "Integración de IA en pedagogía",
-              "en": "AI Integration in Pedagogy",
-              "va": "Integració de IA en pedagogia"
+              "es": "Diseño educativo con IA",
+              "en": "Educational Design with AI",
+              "va": "Disseny educatiu amb IA"
+            },
+            "shortLabel": {
+              "es": "Educación",
+              "en": "Education",
+              "va": "Educació"
+            },
+            "description": {
+              "es": "Integración de IA en actividades, evaluación, acompañamiento y recursos educativos con criterios pedagógicos.",
+              "en": "Integration of AI into activities, assessment, support and educational resources with pedagogical criteria.",
+              "va": "Integració d'IA en activitats, avaluació, acompanyament i recursos educatius amb criteris pedagògics."
             },
             "icon": "🎓"
           },
           {
-            "id": "digital-literacy",
+            "id": "generativa",
             "title": {
-              "es": "Alfabetización digital para docentes",
-              "en": "Digital Literacy for Teachers",
-              "va": "Alfabetització digital per a docents"
+              "es": "Inteligencia artificial generativa y creatividad",
+              "en": "Generative Artificial Intelligence and Creativity",
+              "va": "Intel·ligència artificial generativa i creativitat"
             },
-            "icon": "💻"
+            "shortLabel": {
+              "es": "IA generativa",
+              "en": "Generative AI",
+              "va": "IA generativa"
+            },
+            "description": {
+              "es": "Uso creativo y crítico de modelos generativos para texto, imagen, sonido, diseño, prototipado y comunicación.",
+              "en": "Creative and critical use of generative models for text, image, sound, design, prototyping and communication.",
+              "va": "Ús creatiu i crític de models generatius per a text, imatge, so, disseny, prototipatge i comunicació."
+            },
+            "icon": "✨"
           },
           {
-            "id": "critical-thinking",
+            "id": "responsable",
             "title": {
-              "es": "Pensamiento crítico ante IA",
-              "en": "Critical Thinking on AI",
-              "va": "Pensament crític davant la IA"
+              "es": "Uso responsable y seguro de IA",
+              "en": "Responsible and Safe Use of AI",
+              "va": "Ús responsable i segur d'IA"
             },
-            "icon": "🧠"
+            "shortLabel": {
+              "es": "IA responsable",
+              "en": "Responsible AI",
+              "va": "IA responsable"
+            },
+            "description": {
+              "es": "Aplicación de criterios de seguridad, transparencia, privacidad y control humano en proyectos con inteligencia artificial.",
+              "en": "Application of safety, transparency, privacy and human oversight criteria in artificial intelligence projects.",
+              "va": "Aplicació de criteris de seguretat, transparència, privacitat i control humà en projectes amb intel·ligència artificial."
+            },
+            "icon": "⚖️"
           },
           {
-            "id": "inclusive-education",
+            "id": "etica",
             "title": {
-              "es": "Educación inclusiva con IA",
-              "en": "Inclusive Education with AI",
-              "va": "Educació inclusiva amb IA"
+              "es": "Ética, sesgos y gobernanza de IA",
+              "en": "Ethics, Bias and AI Governance",
+              "va": "Ètica, biaixos i governança d'IA"
             },
-            "icon": "♿"
+            "shortLabel": {
+              "es": "Ética",
+              "en": "Ethics",
+              "va": "Ètica"
+            },
+            "description": {
+              "es": "Identificación de sesgos, límites, responsabilidades y criterios de gobernanza en el uso de sistemas inteligentes.",
+              "en": "Identification of bias, limits, responsibilities and governance criteria in the use of intelligent systems.",
+              "va": "Identificació de biaixos, límits, responsabilitats i criteris de governança en l'ús de sistemes intel·ligents."
+            },
+            "icon": "🧭"
           },
           {
-            "id": "assessment-innovation",
+            "id": "visualizacion",
             "title": {
-              "es": "Innovación en evaluación",
-              "en": "Assessment Innovation",
-              "va": "Innovació en avaluació"
+              "es": "Visualización, narrativa y comunicación de datos",
+              "en": "Data Visualisation, Storytelling and Communication",
+              "va": "Visualització, narrativa i comunicació de dades"
             },
-            "icon": "✅"
+            "shortLabel": {
+              "es": "Visualización",
+              "en": "Visualization",
+              "va": "Visualització"
+            },
+            "description": {
+              "es": "Creación de representaciones visuales, narrativas y dashboards para explicar datos, modelos y evidencias.",
+              "en": "Creation of visual representations, narratives and dashboards to explain data, models and evidence.",
+              "va": "Creació de representacions visuals, narratives i quadres per a explicar dades, models i evidències."
+            },
+            "icon": "📍"
           },
           {
-            "id": "student-support",
+            "id": "datos-reales",
             "title": {
-              "es": "Apoyo personalizado al estudiante",
-              "en": "Personalized Student Support",
-              "va": "Suport personalitzat a l'estudiant"
+              "es": "Trabajo con datos reales",
+              "en": "Working with Real Data",
+              "va": "Treball amb dades reals"
             },
-            "icon": "👨‍🏫"
+            "shortLabel": {
+              "es": "Datos reales",
+              "en": "Real data",
+              "va": "Dades reals"
+            },
+            "description": {
+              "es": "Captura, limpieza, interpretación y uso responsable de datos procedentes de entornos educativos, productivos o sociales.",
+              "en": "Collection, cleaning, interpretation and responsible use of data from educational, productive or social environments.",
+              "va": "Captura, neteja, interpretació i ús responsable de dades procedents d'entorns educatius, productius o socials."
+            },
+            "icon": "📊"
           },
           {
-            "id": "teacher-wellbeing",
+            "id": "ia-aplicada",
             "title": {
-              "es": "Bienestar docente",
-              "en": "Teacher Wellbeing",
-              "va": "Benestar docent"
+              "es": "Inteligencia artificial aplicada",
+              "en": "Applied Artificial Intelligence",
+              "va": "Intel·ligència artificial aplicada"
             },
-            "icon": "😊"
+            "shortLabel": {
+              "es": "IA aplicada",
+              "en": "Applied AI",
+              "va": "IA aplicada"
+            },
+            "description": {
+              "es": "Uso de modelos de IA para resolver retos técnicos, creativos y sectoriales con datos y contexto real.",
+              "en": "Use of AI models to solve technical, creative and sector-based challenges with real data and context.",
+              "va": "Ús de models d'IA per a resoldre reptes tècnics, creatius i sectorials amb dades i context real."
+            },
+            "icon": "🤖"
           },
           {
-            "id": "collaboration-networks",
+            "id": "iot",
             "title": {
-              "es": "Redes de colaboración docente",
-              "en": "Teacher Collaboration Networks",
-              "va": "Xarxes de col·laboració docent"
+              "es": "Sensores, IoT y datos conectados",
+              "en": "Sensors, IoT and Connected Data",
+              "va": "Sensors, IoT i dades connectades"
             },
-            "icon": "🌐"
+            "shortLabel": {
+              "es": "IoT",
+              "en": "IoT",
+              "va": "IoT"
+            },
+            "description": {
+              "es": "Uso de sensores, dispositivos conectados y datos en tiempo real para construir soluciones inteligentes.",
+              "en": "Use of sensors, connected devices and real-time data to build intelligent solutions.",
+              "va": "Ús de sensors, dispositius connectats i dades en temps real per a construir solucions intel·ligents."
+            },
+            "icon": "📡"
           }
         ]
       },
