@@ -1399,33 +1399,32 @@ export const TRAINING_CONFIG = {
         }
       },
       {
-        "id": "skill-26",
+        "id": "proteccion-datos",
         "visible": true,
         "appliesTo": [
-          "FP",
           "Teacher",
           "Master"
         ],
-        "icon": "🎯",
+        "icon": "🪪",
         "label": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
+          "es": "Protección de datos personales",
+          "en": "Personal data protection",
+          "va": "Protecció de dades personals"
         },
         "shortLabel": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
+          "es": "Protección de datos",
+          "en": "Data protection",
+          "va": "Protecció de dades"
         },
         "title": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
+          "es": "Protección de datos personales",
+          "en": "Personal data protection",
+          "va": "Protecció de dades personals"
         },
         "description": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Conocimientos de protección de datos y RGPD",
+          "en": "Knowledge on data proteciones and GDPR",
+          "va": "Coneixements de protección de dades i RGPD"
         }
       }
     ],
@@ -2131,33 +2130,32 @@ export const TRAINING_CONFIG = {
         }
       },
       {
-        "id": "skill-26",
+        "id": "proteccion-datos",
         "visible": true,
         "appliesTo": [
-          "FP",
           "Teacher",
           "Master"
         ],
-        "icon": "🎯",
+        "icon": "🪪",
         "label": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
+          "es": "Protección de datos personales",
+          "en": "Personal data protection",
+          "va": "Protecció de dades personals"
         },
         "shortLabel": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
+          "es": "Protección de datos",
+          "en": "Data protection",
+          "va": "Protecció de dades"
         },
         "title": {
-          "es": "Nueva skill",
-          "en": "New skill",
-          "va": "Nova skill"
+          "es": "Protección de datos personales",
+          "en": "Personal data protection",
+          "va": "Protecció de dades personals"
         },
         "description": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Conocimientos de protección de datos y RGPD",
+          "en": "Knowledge on data proteciones and GDPR",
+          "va": "Coneixements de protección de dades i RGPD"
         }
       }
     ],
