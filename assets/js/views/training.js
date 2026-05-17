@@ -371,14 +371,14 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
     const skillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
     const skills = cmsSection?.skillsBlock?.skills || [];
     const skillsHtml = skills.length > 0
-      ? skills.map(s => `<div class="flex items-start gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm shadow-amber-100/40 border-amber-200">
-          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-amber-200 bg-amber-50 text-eu-orange">
+      ? skills.map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
+          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-orange">
             <span class="text-base leading-none">${s.icon}</span>
           </div>
           <span class="min-w-0 leading-5">${pickLang(s.title, '')}</span>
         </div>`).join('')
-      : (trainingT?.fpSkills || []).map(s => `<div class="flex items-start gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm shadow-amber-100/40 border-amber-200">
-          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-amber-200 bg-amber-50 text-eu-orange">
+      : (trainingT?.fpSkills || []).map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
+          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-orange">
             <i data-lucide="check-circle" class="w-4 h-4 shrink-0"></i>
           </div>
           <span class="min-w-0 leading-5">${s}</span>
@@ -404,14 +404,14 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
     const skillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
     const skills = cmsSection?.skillsBlock?.skills || [];
     const topicsHtml = skills.length > 0
-      ? skills.map(s => `<div class="flex items-start gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm shadow-indigo-100/40 border-indigo-200">
-          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-indigo-200 bg-indigo-50 text-indigo-600">
+      ? skills.map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
+          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-blue">
             <span class="text-base leading-none">${s.icon}</span>
           </div>
           <span class="min-w-0 leading-5">${pickLang(s.title, '')}</span>
         </div>`).join('')
-      : (trainingT?.teacherTopics || []).map(s => `<div class="flex items-start gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm shadow-indigo-100/40 border-indigo-200">
-          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-indigo-200 bg-indigo-50 text-indigo-600">
+      : (trainingT?.teacherTopics || []).map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
+          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-blue">
             <i data-lucide="check-circle" class="w-4 h-4 shrink-0"></i>
           </div>
           <span class="min-w-0 leading-5">${s}</span>
@@ -427,15 +427,15 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
   const masterSkillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
   const masterSkills = cmsSection?.skillsBlock?.skills || [];
   const masterSkillsHtml = masterSkills.length > 0
-    ? masterSkills.map(s => `<div class="flex items-start gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm shadow-violet-100/40 border-violet-200">
-        <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-violet-200 bg-violet-50 text-violet-600">
+    ? masterSkills.map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
+        <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-purple">
           <span class="text-base leading-none">${s.icon}</span>
         </div>
         <span class="min-w-0 leading-5">${pickLang(s.title, '')}</span>
       </div>`).join('')
-    : (trainingT?.masterBridgeItems || []).map((item, i) => `<div class="flex items-start gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm shadow-violet-100/40 border-violet-200">
-        <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-violet-200 bg-violet-50 text-violet-600">
-          <span class="w-5 h-5 rounded-full bg-violet-600 text-white text-xs font-bold flex items-center justify-center">${i + 1}</span>
+    : (trainingT?.masterBridgeItems || []).map((item, i) => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
+        <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-purple">
+          <span class="w-5 h-5 rounded-full bg-eu-purple text-white text-xs font-bold flex items-center justify-center">${i + 1}</span>
         </div>
         <span class="min-w-0 leading-5">${item}</span>
       </div>`).join('');
