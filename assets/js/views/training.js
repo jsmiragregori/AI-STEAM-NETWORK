@@ -155,6 +155,54 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
     </div>`;
 }
 
+function renderSkillPanel(theme, icon, title, itemsHtml, gridClass) {
+  const themes = {
+    fp: {
+      ring: 'border-amber-200',
+      fill: 'bg-amber-50/85',
+      shadow: 'shadow-[0_18px_45px_-30px_rgba(217,119,6,0.45)]',
+      accent: 'bg-amber-400',
+      icon: 'text-eu-orange',
+    },
+    teacher: {
+      ring: 'border-indigo-200',
+      fill: 'bg-indigo-50/85',
+      shadow: 'shadow-[0_18px_45px_-30px_rgba(79,70,229,0.35)]',
+      accent: 'bg-indigo-500',
+      icon: 'text-indigo-600',
+    },
+    master: {
+      ring: 'border-violet-200',
+      fill: 'bg-violet-50/85',
+      shadow: 'shadow-[0_18px_45px_-30px_rgba(124,58,237,0.4)]',
+      accent: 'bg-violet-500',
+      icon: 'text-violet-600',
+    },
+  }[theme] || {
+    ring: 'border-amber-200',
+    fill: 'bg-amber-50/85',
+    shadow: 'shadow-[0_18px_45px_-30px_rgba(217,119,6,0.45)]',
+    accent: 'bg-amber-400',
+    icon: 'text-eu-orange',
+  };
+
+  return `
+    <section class="relative overflow-hidden rounded-2xl border ${themes.ring} ${themes.fill} ${themes.shadow}">
+      <div class="absolute inset-x-0 top-0 h-1 ${themes.accent}"></div>
+      <div class="p-5 sm:p-6">
+        <div class="flex items-start gap-3 mb-5">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border ${themes.ring} bg-white">
+            <i data-lucide="${icon}" class="w-5 h-5 ${themes.icon}"></i>
+          </div>
+          <div class="min-w-0">
+            <h2 class="text-lg font-bold text-eu-text leading-tight">${title}</h2>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 ${gridClass} gap-3">${itemsHtml}</div>
+      </div>
+    </section>`;
+}
+
 // ── Path steps ────────────────────────────────────────────────────────────────
 function pathSteps(steps, color) {
   return (steps || []).map((step, i, arr) => `
@@ -323,15 +371,22 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
     const skillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
     const skills = cmsSection?.skillsBlock?.skills || [];
     const skillsHtml = skills.length > 0
-      ? skills.map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow/70 text-sm text-eu-text font-medium"><span class="text-base leading-none">${s.icon}</span><span>${pickLang(s.title, '')}</span></div>`).join('')
-      : (trainingT?.fpSkills || []).map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-yellow/70 text-sm text-eu-text font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-eu-orange shrink-0"></i>${s}</div>`).join('');
+      ? skills.map(s => `<div class="flex items-start gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm shadow-amber-100/40 border-amber-200">
+          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-amber-200 bg-amber-50 text-eu-orange">
+            <span class="text-base leading-none">${s.icon}</span>
+          </div>
+          <span class="min-w-0 leading-5">${pickLang(s.title, '')}</span>
+        </div>`).join('')
+      : (trainingT?.fpSkills || []).map(s => `<div class="flex items-start gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm shadow-amber-100/40 border-amber-200">
+          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-amber-200 bg-amber-50 text-eu-orange">
+            <i data-lucide="check-circle" class="w-4 h-4 shrink-0"></i>
+          </div>
+          <span class="min-w-0 leading-5">${s}</span>
+        </div>`).join('');
     const sectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabFpVet || '') : (trainingT?.tabFpVet || '');
     return `
       ${skillsBlockVisible ? `
-      <div class="bg-eu-yellow/20 border border-eu-yellow rounded-xl p-5 mb-8">
-        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="briefcase" class="w-5 h-5 text-eu-orange"></i>${sectionTitle}</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">${skillsHtml}</div>
-      </div>` : ''}
+      <div class="mb-8">${renderSkillPanel('fp', 'briefcase', sectionTitle, skillsHtml, 'lg:grid-cols-3')}</div>` : ''}
       ${searchControls}${courseGrid}
       ${(() => {
         const pb = cmsSection?.pathBlock;
@@ -349,15 +404,22 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
     const skillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
     const skills = cmsSection?.skillsBlock?.skills || [];
     const topicsHtml = skills.length > 0
-      ? skills.map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border text-sm text-eu-text font-medium"><span class="text-base leading-none">${s.icon}</span><span>${pickLang(s.title, '')}</span></div>`).join('')
-      : (trainingT?.teacherTopics || []).map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-eu-border text-sm text-eu-text font-medium"><i data-lucide="check-circle" class="w-4 h-4 text-eu-blue shrink-0"></i>${s}</div>`).join('');
+      ? skills.map(s => `<div class="flex items-start gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm shadow-indigo-100/40 border-indigo-200">
+          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-indigo-200 bg-indigo-50 text-indigo-600">
+            <span class="text-base leading-none">${s.icon}</span>
+          </div>
+          <span class="min-w-0 leading-5">${pickLang(s.title, '')}</span>
+        </div>`).join('')
+      : (trainingT?.teacherTopics || []).map(s => `<div class="flex items-start gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm shadow-indigo-100/40 border-indigo-200">
+          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-indigo-200 bg-indigo-50 text-indigo-600">
+            <i data-lucide="check-circle" class="w-4 h-4 shrink-0"></i>
+          </div>
+          <span class="min-w-0 leading-5">${s}</span>
+        </div>`).join('');
     const sectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabTeacherTraining || '') : (trainingT?.tabTeacherTraining || '');
     return `
       ${skillsBlockVisible ? `
-      <div class="bg-purple-50 border border-purple-200 rounded-xl p-5 mb-8">
-        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="book-open" class="w-5 h-5 text-purple-700"></i>${sectionTitle}</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">${topicsHtml}</div>
-      </div>` : ''}
+      <div class="mb-8">${renderSkillPanel('teacher', 'book-open', sectionTitle, topicsHtml, 'lg:grid-cols-2')}</div>` : ''}
       ${searchControls}${courseGrid}`;
   }
 
@@ -365,8 +427,18 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
   const masterSkillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
   const masterSkills = cmsSection?.skillsBlock?.skills || [];
   const masterSkillsHtml = masterSkills.length > 0
-    ? masterSkills.map(s => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-purple-100 text-sm text-eu-text font-medium"><span class="text-base leading-none">${s.icon}</span><span>${pickLang(s.title, '')}</span></div>`).join('')
-    : (trainingT?.masterBridgeItems || []).map((item, i) => `<div class="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-purple-100 text-sm text-eu-text font-medium"><span class="w-5 h-5 rounded-full bg-purple-600 text-white text-xs font-bold flex items-center justify-center shrink-0">${i + 1}</span>${item}</div>`).join('');
+    ? masterSkills.map(s => `<div class="flex items-start gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm shadow-violet-100/40 border-violet-200">
+        <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-violet-200 bg-violet-50 text-violet-600">
+          <span class="text-base leading-none">${s.icon}</span>
+        </div>
+        <span class="min-w-0 leading-5">${pickLang(s.title, '')}</span>
+      </div>`).join('')
+    : (trainingT?.masterBridgeItems || []).map((item, i) => `<div class="flex items-start gap-3 rounded-xl border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm shadow-violet-100/40 border-violet-200">
+        <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-violet-200 bg-violet-50 text-violet-600">
+          <span class="w-5 h-5 rounded-full bg-violet-600 text-white text-xs font-bold flex items-center justify-center">${i + 1}</span>
+        </div>
+        <span class="min-w-0 leading-5">${item}</span>
+      </div>`).join('');
   const masterSectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabMasterBridge || '') : (trainingT?.tabMasterBridge || '');
   const masterDisclaimer = cmsSection?.disclaimerBlock
     ? pickLang(cmsSection.disclaimerBlock.text, '')
@@ -381,10 +453,7 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
       <p class="text-sm text-amber-800">${masterDisclaimer}</p>
     </div>`}
     ${masterSkillsBlockVisible ? `
-    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5 mb-8">
-      <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="graduation-cap" class="w-5 h-5 text-purple-700"></i>${masterSectionTitle}</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3">${masterSkillsHtml}</div>
-    </div>` : ''}
+    <div class="mb-8">${renderSkillPanel('master', 'graduation-cap', masterSectionTitle, masterSkillsHtml, 'xl:grid-cols-4')}</div>` : ''}
     ${searchControls}${courseGrid}
     ${masterPathBlock?.visible === false ? '' : `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 mt-8">
