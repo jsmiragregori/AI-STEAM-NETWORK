@@ -1397,6 +1397,36 @@ export const TRAINING_CONFIG = {
           "en": "Strategic communication of results, impact, risks and value propositions.",
           "va": "Comunicacio estrategica de resultats, impacte, riscos i propostes de valor."
         }
+      },
+      {
+        "id": "skill-26",
+        "visible": true,
+        "appliesTo": [
+          "FP",
+          "Teacher",
+          "Master"
+        ],
+        "icon": "🎯",
+        "label": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "shortLabel": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "title": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "description": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
       }
     ],
     "courseTags": [
@@ -2098,6 +2128,36 @@ export const TRAINING_CONFIG = {
           "es": "Comunicacion estrategica de resultados, impacto, riesgos y propuestas de valor.",
           "en": "Strategic communication of results, impact, risks and value propositions.",
           "va": "Comunicacio estrategica de resultats, impacte, riscos i propostes de valor."
+        }
+      },
+      {
+        "id": "skill-26",
+        "visible": true,
+        "appliesTo": [
+          "FP",
+          "Teacher",
+          "Master"
+        ],
+        "icon": "🎯",
+        "label": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "shortLabel": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "title": {
+          "es": "Nueva skill",
+          "en": "New skill",
+          "va": "Nova skill"
+        },
+        "description": {
+          "es": "",
+          "en": "",
+          "va": ""
         }
       }
     ],
