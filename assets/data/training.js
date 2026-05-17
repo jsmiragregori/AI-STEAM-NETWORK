@@ -721,9 +721,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "ai-literacy",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "🤖",
         "label": {
           "es": "Alfabetización IA aplicada",
@@ -749,9 +746,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "data-work",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "📊",
         "label": {
           "es": "Trabajo con datos en contextos reales",
@@ -777,9 +771,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "process-automation",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "⚙️",
         "label": {
           "es": "Automatización de procesos",
@@ -805,9 +796,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "responsible-ai",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "⚖️",
         "label": {
           "es": "Uso responsable de IA generativa",
@@ -833,9 +821,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "technical-communication",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "💬",
         "label": {
           "es": "Comunicación técnica",
@@ -861,9 +846,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "problem-solving",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "💡",
         "label": {
           "es": "Resolución creativa de problemas",
@@ -889,9 +871,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "sustainability",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "♻️",
         "label": {
           "es": "Sostenibilidad y eficiencia",
@@ -917,9 +896,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "privacy-ethics",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "🔒",
         "label": {
           "es": "Privacidad y ética",
@@ -945,9 +921,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "teamwork",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "👥",
         "label": {
           "es": "Trabajo interdisciplinar en equipo",
@@ -973,9 +946,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "ped-ai-integration",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "🎓",
         "label": {
           "es": "Integración de IA en pedagogía",
@@ -1001,9 +971,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "digital-literacy",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "💻",
         "label": {
           "es": "Alfabetización digital para docentes",
@@ -1029,9 +996,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "critical-thinking",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "🧠",
         "label": {
           "es": "Pensamiento crítico ante IA",
@@ -1057,9 +1021,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "inclusive-education",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "♿",
         "label": {
           "es": "Educación inclusiva con IA",
@@ -1085,9 +1046,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "assessment-innovation",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "✅",
         "label": {
           "es": "Innovación en evaluación",
@@ -1113,9 +1071,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "student-support",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "👨‍🏫",
         "label": {
           "es": "Apoyo personalizado al estudiante",
@@ -1141,9 +1096,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "teacher-wellbeing",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "😊",
         "label": {
           "es": "Bienestar docente",
@@ -1169,9 +1121,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "collaboration-networks",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "🌐",
         "label": {
           "es": "Redes de colaboración docente",
@@ -1197,9 +1146,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "ai-strategy",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "📈",
         "label": {
           "es": "Estrategia de IA en organizaciones",
@@ -1225,9 +1171,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "advanced-data",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "🔬",
         "label": {
           "es": "Análisis avanzado de datos",
@@ -1253,9 +1196,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "ai-governance",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "🏛️",
         "label": {
           "es": "Gobernanza de IA",
@@ -1281,9 +1221,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "innovation-management",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "🚀",
         "label": {
           "es": "Gestión de innovación",
@@ -1309,9 +1246,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "stakeholder-engagement",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "🤝",
         "label": {
           "es": "Engagement de stakeholders",
@@ -1337,9 +1271,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "research-methodology",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "🔍",
         "label": {
           "es": "Metodología de investigación",
@@ -1365,9 +1296,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "systems-thinking",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "🔗",
         "label": {
           "es": "Pensamiento sistémico",
@@ -1393,9 +1321,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "strategic-communication",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "📢",
         "label": {
           "es": "Comunicación estratégica",
@@ -1421,9 +1346,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "proteccion-datos",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "🪪",
         "label": {
           "es": "Protección de datos personales",
@@ -1451,9 +1373,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "ai-literacy",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "🤖",
         "label": {
           "es": "Alfabetización IA aplicada",
@@ -1479,9 +1398,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "data-work",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "📊",
         "label": {
           "es": "Trabajo con datos en contextos reales",
@@ -1507,9 +1423,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "process-automation",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "⚙️",
         "label": {
           "es": "Automatización de procesos",
@@ -1535,9 +1448,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "responsible-ai",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "⚖️",
         "label": {
           "es": "Uso responsable de IA generativa",
@@ -1563,9 +1473,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "technical-communication",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "💬",
         "label": {
           "es": "Comunicación técnica",
@@ -1591,9 +1498,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "problem-solving",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "💡",
         "label": {
           "es": "Resolución creativa de problemas",
@@ -1619,9 +1523,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "sustainability",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "♻️",
         "label": {
           "es": "Sostenibilidad y eficiencia",
@@ -1647,9 +1548,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "privacy-ethics",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "🔒",
         "label": {
           "es": "Privacidad y ética",
@@ -1675,9 +1573,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "teamwork",
         "visible": true,
-        "appliesTo": [
-          "FP"
-        ],
         "icon": "👥",
         "label": {
           "es": "Trabajo interdisciplinar en equipo",
@@ -1703,9 +1598,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "ped-ai-integration",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "🎓",
         "label": {
           "es": "Integración de IA en pedagogía",
@@ -1731,9 +1623,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "digital-literacy",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "💻",
         "label": {
           "es": "Alfabetización digital para docentes",
@@ -1759,9 +1648,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "critical-thinking",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "🧠",
         "label": {
           "es": "Pensamiento crítico ante IA",
@@ -1787,9 +1673,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "inclusive-education",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "♿",
         "label": {
           "es": "Educación inclusiva con IA",
@@ -1815,9 +1698,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "assessment-innovation",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "✅",
         "label": {
           "es": "Innovación en evaluación",
@@ -1843,9 +1723,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "student-support",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "👨‍🏫",
         "label": {
           "es": "Apoyo personalizado al estudiante",
@@ -1871,9 +1748,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "teacher-wellbeing",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "😊",
         "label": {
           "es": "Bienestar docente",
@@ -1899,9 +1773,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "collaboration-networks",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "🌐",
         "label": {
           "es": "Redes de colaboración docente",
@@ -1927,9 +1798,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "ai-strategy",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "📈",
         "label": {
           "es": "Estrategia de IA en organizaciones",
@@ -1955,9 +1823,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "advanced-data",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "🔬",
         "label": {
           "es": "Análisis avanzado de datos",
@@ -1983,9 +1848,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "ai-governance",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "🏛️",
         "label": {
           "es": "Gobernanza de IA",
@@ -2011,9 +1873,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "innovation-management",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "🚀",
         "label": {
           "es": "Gestión de innovación",
@@ -2039,9 +1898,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "stakeholder-engagement",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "🤝",
         "label": {
           "es": "Engagement de stakeholders",
@@ -2067,9 +1923,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "research-methodology",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "🔍",
         "label": {
           "es": "Metodología de investigación",
@@ -2095,9 +1948,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "systems-thinking",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "🔗",
         "label": {
           "es": "Pensamiento sistémico",
@@ -2123,9 +1973,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "strategic-communication",
         "visible": true,
-        "appliesTo": [
-          "Master"
-        ],
         "icon": "📢",
         "label": {
           "es": "Comunicación estratégica",
@@ -2151,9 +1998,6 @@ export const TRAINING_CONFIG = {
       {
         "id": "proteccion-datos",
         "visible": true,
-        "appliesTo": [
-          "Teacher"
-        ],
         "icon": "🪪",
         "label": {
           "es": "Protección de datos personales",
