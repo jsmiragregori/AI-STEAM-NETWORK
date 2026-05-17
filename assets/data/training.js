@@ -715,6 +715,7 @@ export const TRAINING_CONFIG = {
         "id": "educacion",
         "visible": true,
         "appliesTo": [
+          "FP",
           "Teacher",
           "Master"
         ],
@@ -745,6 +746,7 @@ export const TRAINING_CONFIG = {
         "visible": true,
         "appliesTo": [
           "FP",
+          "Teacher",
           "Master"
         ],
         "icon": "🧩",
