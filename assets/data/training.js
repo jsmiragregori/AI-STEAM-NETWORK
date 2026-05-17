@@ -971,7 +971,7 @@ export const TRAINING_CONFIG = {
         "level": "FP",
         "statusId": "activo",
         "hours": 25,
-        "enrolled": null,
+        "enrolled": 22,
         "rating": 4.9,
         "sectorIds": [
           "industria",
