@@ -203,7 +203,7 @@ function renderSkillPanel(theme, icon, title, itemsHtml, gridClass) {
     </section>`;
 }
 
-function renderSkillCloudPanel(theme, icon, title, canvasId) {
+function renderSkillCloudPanel(theme, icon, title, cloudId) {
   const themes = {
     fp: { ring: 'border-eu-border', fill: 'bg-white', shadow: 'shadow-sm', accent: 'bg-eu-yellow/70', icon: 'text-eu-orange' },
     teacher: { ring: 'border-eu-border', fill: 'bg-white', shadow: 'shadow-sm', accent: 'bg-eu-blue/70', icon: 'text-eu-blue' },
@@ -222,9 +222,7 @@ function renderSkillCloudPanel(theme, icon, title, canvasId) {
             <h2 class="text-lg font-bold text-eu-text leading-tight">${title}</h2>
           </div>
         </div>
-        <div class="flex justify-center">
-          <canvas id="${canvasId}" class="w-full" style="height: 320px;"></canvas>
-        </div>
+        <div id="${cloudId}" class="flex flex-wrap items-center justify-center gap-4 py-4 min-h-[280px]"></div>
       </div>
     </section>`;
 }
@@ -594,50 +592,43 @@ export function mount() {
   attachFilterPillListeners(activeTab);
   attachPaginationListeners();
 
-  // WordCloud init for skills block when displayMode === 'cloud'
+  // Skill cloud render for skills block when displayMode === 'cloud'
   const sectionMap = { fp: 'fp-skills', teacher: 'continuous-learning', master: 'master-skills' };
-  const cloudCanvas = document.getElementById(`tr-cloud-${activeTab}`);
-  if (cloudCanvas && typeof window.WordCloud === 'function') {
+  const cloudContainer = document.getElementById(`tr-cloud-${activeTab}`);
+  if (cloudContainer) {
     const cmsSection = (TRAINING_CONFIG?.sectionsBlock || []).find(s => s.id === sectionMap[activeTab]);
     const cloudCounts = cmsSection?.skillsBlock?.cloudCounts || [];
     const skillsCatalog = TRAINING_CONFIG?.coursesBlock?.skills || TRAINING_CONFIG?.coursesBlock?.courseTags || [];
-    const wordList = cloudCounts.map(({ skillId, count }) => {
+
+    const items = cloudCounts.map(({ skillId, count }) => {
       const skill = skillsCatalog.find(s => s.id === skillId);
       const label = pickLang(skill?.shortLabel || skill?.title, skillId);
-      return [label, count];
-    }).filter(([label]) => label);
+      return { label, count, length: label.length };
+    }).filter(item => item.label);
 
-    if (wordList.length > 0) {
-      window.WordCloud.stop();
-      const rect = cloudCanvas.parentElement.getBoundingClientRect();
-      cloudCanvas.width = rect.width;
-      cloudCanvas.height = 320;
-
-      // Preseleccionar ~25% de palabras más cortas para rotación vertical
-      const sortedByLength = [...wordList].sort((a, b) => a[0].length - b[0].length);
-      const verticalCount = Math.max(1, Math.ceil(wordList.length * 0.25));
-      const verticalWords = new Set(sortedByLength.slice(0, verticalCount).map(item => item[0]));
-
+    if (items.length > 0) {
+      const maxCount = Math.max(...items.map(i => i.count));
+      const minSize = 14;
+      const maxSize = 32;
       const palette = ['#5620f6', '#1d4ed8', '#0d9488', '#ea580c', '#d97706', '#7c3aed'];
-      window.WordCloud(cloudCanvas, {
-        list: wordList,
-        fontFamily: '"Instrument Sans", sans-serif',
-        color: (word) => {
-          let hash = 0;
-          for (let i = 0; i < word.length; i++) hash = ((hash << 5) - hash) + word.charCodeAt(i);
-          return palette[Math.abs(hash) % palette.length];
-        },
-        rotateRatio: (word) => verticalWords.has(word) ? 1 : 0,
-        minRotation: 0,
-        maxRotation: Math.PI / 2,
-        rotationSteps: 2,
-        gridSize: 4,
-        weightFactor: (size) => Math.max(12, Math.min(40, 10 + size * 5)),
-        backgroundColor: 'transparent',
-        drawOutOfBound: false,
-        shrinkToFit: true,
-        abortThreshold: 3000,
-      });
+
+      // Preseleccionar ~30% de palabras más cortas para vertical
+      const sortedByLength = [...items].sort((a, b) => a.length - b.length);
+      const verticalCount = Math.max(2, Math.ceil(items.length * 0.3));
+      const verticalWords = new Set(sortedByLength.slice(0, verticalCount).map(i => i.label));
+
+      // Aleatorizar orden para distribución orgánica
+      const shuffled = [...items].sort(() => Math.random() - 0.5);
+
+      cloudContainer.innerHTML = shuffled.map((item, idx) => {
+        const size = Math.round(minSize + (item.count / maxCount) * (maxSize - minSize));
+        const color = palette[Math.abs(item.label.split('').reduce((h, c) => ((h << 5) - h) + c.charCodeAt(0), 0)) % palette.length];
+        const isVertical = verticalWords.has(item.label);
+        const style = isVertical
+          ? `font-size:${size}px;color:${color};writing-mode:vertical-rl;text-orientation:mixed;line-height:1.2;`
+          : `font-size:${size}px;color:${color};line-height:1.2;`;
+        return `<span class="inline-block font-medium px-1 py-1 whitespace-nowrap" style="${style}">${item.label}</span>`;
+      }).join('');
     }
   }
 }
