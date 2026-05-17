@@ -27,14 +27,14 @@ export const TRAINING_CONFIG = {
         }
       },
       {
-        "id": "training-hours",
+        "id": "unique-skills",
         "visible": true,
-        "value": 2800,
+        "value": 13,
         "manualOverride": false,
         "label": {
-          "es": "Horas formativas",
-          "en": "Training Hours",
-          "va": "Hores formatives"
+          "es": "Skills desarrolladas",
+          "en": "Skills Developed",
+          "va": "Skills desenvolupades"
         }
       },
       {
