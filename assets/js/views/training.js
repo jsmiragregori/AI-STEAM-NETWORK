@@ -203,6 +203,32 @@ function renderSkillPanel(theme, icon, title, itemsHtml, gridClass) {
     </section>`;
 }
 
+function renderSkillCloudPanel(theme, icon, title, canvasId) {
+  const themes = {
+    fp: { ring: 'border-eu-border', fill: 'bg-white', shadow: 'shadow-sm', accent: 'bg-eu-yellow/70', icon: 'text-eu-orange' },
+    teacher: { ring: 'border-eu-border', fill: 'bg-white', shadow: 'shadow-sm', accent: 'bg-eu-blue/70', icon: 'text-eu-blue' },
+    master: { ring: 'border-eu-border', fill: 'bg-white', shadow: 'shadow-sm', accent: 'bg-eu-purple/70', icon: 'text-eu-purple' },
+  }[theme] || { ring: 'border-eu-border', fill: 'bg-white', shadow: 'shadow-sm', accent: 'bg-eu-yellow/70', icon: 'text-eu-orange' };
+
+  return `
+    <section class="relative overflow-hidden rounded-2xl border ${themes.ring} ${themes.fill} ${themes.shadow}">
+      <div class="absolute inset-x-0 top-0 h-1 ${themes.accent}"></div>
+      <div class="p-5 sm:p-6">
+        <div class="flex items-start gap-3 mb-5">
+          <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border ${themes.ring} bg-white">
+            <i data-lucide="${icon}" class="w-5 h-5 ${themes.icon}"></i>
+          </div>
+          <div class="min-w-0">
+            <h2 class="text-lg font-bold text-eu-text leading-tight">${title}</h2>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <canvas id="${canvasId}" class="w-full" style="height: 280px;"></canvas>
+        </div>
+      </div>
+    </section>`;
+}
+
 // ── Path steps ────────────────────────────────────────────────────────────────
 function pathSteps(steps, color) {
   return (steps || []).map((step, i, arr) => `
@@ -369,24 +395,32 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
 
   if (activeTab === 'fp') {
     const skillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
-    const skills = cmsSection?.skillsBlock?.skills || [];
-    const skillsHtml = skills.length > 0
-      ? skills.map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
-          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-orange">
-            <span class="text-base leading-none">${s.icon}</span>
-          </div>
-          <span class="min-w-0 leading-5">${pickLang(s.title, '')}</span>
-        </div>`).join('')
-      : (trainingT?.fpSkills || []).map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
-          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-orange">
-            <i data-lucide="check-circle" class="w-4 h-4 shrink-0"></i>
-          </div>
-          <span class="min-w-0 leading-5">${s}</span>
-        </div>`).join('');
+    const displayMode = cmsSection?.skillsBlock?.displayMode || 'cards';
     const sectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabFpVet || '') : (trainingT?.tabFpVet || '');
+    let skillsBlockHtml = '';
+    if (skillsBlockVisible) {
+      if (displayMode === 'cloud') {
+        skillsBlockHtml = `<div class="mb-8">${renderSkillCloudPanel('fp', 'briefcase', sectionTitle, 'tr-cloud-fp')}</div>`;
+      } else {
+        const skills = cmsSection?.skillsBlock?.skills || [];
+        const skillsHtml = skills.length > 0
+          ? skills.map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
+              <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-orange">
+                <span class="text-base leading-none">${s.icon}</span>
+              </div>
+              <span class="min-w-0 leading-5">${pickLang(s.title, '')}</span>
+            </div>`).join('')
+          : (trainingT?.fpSkills || []).map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
+              <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-orange">
+                <i data-lucide="check-circle" class="w-4 h-4 shrink-0"></i>
+              </div>
+              <span class="min-w-0 leading-5">${s}</span>
+            </div>`).join('');
+        skillsBlockHtml = `<div class="mb-8">${renderSkillPanel('fp', 'briefcase', sectionTitle, skillsHtml, 'lg:grid-cols-3')}</div>`;
+      }
+    }
     return `
-      ${skillsBlockVisible ? `
-      <div class="mb-8">${renderSkillPanel('fp', 'briefcase', sectionTitle, skillsHtml, 'lg:grid-cols-3')}</div>` : ''}
+      ${skillsBlockHtml}
       ${searchControls}${courseGrid}
       ${(() => {
         const pb = cmsSection?.pathBlock;
@@ -402,44 +436,61 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
 
   if (activeTab === 'teacher') {
     const skillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
-    const skills = cmsSection?.skillsBlock?.skills || [];
-    const topicsHtml = skills.length > 0
-      ? skills.map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
-          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-blue">
-            <span class="text-base leading-none">${s.icon}</span>
-          </div>
-          <span class="min-w-0 leading-5">${pickLang(s.title, '')}</span>
-        </div>`).join('')
-      : (trainingT?.teacherTopics || []).map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
-          <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-blue">
-            <i data-lucide="check-circle" class="w-4 h-4 shrink-0"></i>
-          </div>
-          <span class="min-w-0 leading-5">${s}</span>
-        </div>`).join('');
+    const displayMode = cmsSection?.skillsBlock?.displayMode || 'cards';
     const sectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabTeacherTraining || '') : (trainingT?.tabTeacherTraining || '');
+    let skillsBlockHtml = '';
+    if (skillsBlockVisible) {
+      if (displayMode === 'cloud') {
+        skillsBlockHtml = `<div class="mb-8">${renderSkillCloudPanel('teacher', 'book-open', sectionTitle, 'tr-cloud-teacher')}</div>`;
+      } else {
+        const skills = cmsSection?.skillsBlock?.skills || [];
+        const topicsHtml = skills.length > 0
+          ? skills.map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
+              <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-blue">
+                <span class="text-base leading-none">${s.icon}</span>
+              </div>
+              <span class="min-w-0 leading-5">${pickLang(s.title, '')}</span>
+            </div>`).join('')
+          : (trainingT?.teacherTopics || []).map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
+              <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-blue">
+                <i data-lucide="check-circle" class="w-4 h-4 shrink-0"></i>
+              </div>
+              <span class="min-w-0 leading-5">${s}</span>
+            </div>`).join('');
+        skillsBlockHtml = `<div class="mb-8">${renderSkillPanel('teacher', 'book-open', sectionTitle, topicsHtml, 'lg:grid-cols-2')}</div>`;
+      }
+    }
     return `
-      ${skillsBlockVisible ? `
-      <div class="mb-8">${renderSkillPanel('teacher', 'book-open', sectionTitle, topicsHtml, 'lg:grid-cols-2')}</div>` : ''}
+      ${skillsBlockHtml}
       ${searchControls}${courseGrid}`;
   }
 
   // master
   const masterSkillsBlockVisible = cmsSection?.skillsBlock?.visible !== false;
-  const masterSkills = cmsSection?.skillsBlock?.skills || [];
-  const masterSkillsHtml = masterSkills.length > 0
-    ? masterSkills.map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
-        <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-purple">
-          <span class="text-base leading-none">${s.icon}</span>
-        </div>
-        <span class="min-w-0 leading-5">${pickLang(s.title, '')}</span>
-      </div>`).join('')
-    : (trainingT?.masterBridgeItems || []).map((item, i) => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
-        <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-purple">
-          <span class="w-5 h-5 rounded-full bg-eu-purple text-white text-xs font-bold flex items-center justify-center">${i + 1}</span>
-        </div>
-        <span class="min-w-0 leading-5">${item}</span>
-      </div>`).join('');
+  const masterDisplayMode = cmsSection?.skillsBlock?.displayMode || 'cards';
   const masterSectionTitle = cmsSection ? pickLang(cmsSection.title, trainingT?.tabMasterBridge || '') : (trainingT?.tabMasterBridge || '');
+  let masterSkillsBlockHtml = '';
+  if (masterSkillsBlockVisible) {
+    if (masterDisplayMode === 'cloud') {
+      masterSkillsBlockHtml = `<div class="mb-8">${renderSkillCloudPanel('master', 'graduation-cap', masterSectionTitle, 'tr-cloud-master')}</div>`;
+    } else {
+      const masterSkills = cmsSection?.skillsBlock?.skills || [];
+      const masterSkillsHtml = masterSkills.length > 0
+        ? masterSkills.map(s => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
+            <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-purple">
+              <span class="text-base leading-none">${s.icon}</span>
+            </div>
+            <span class="min-w-0 leading-5">${pickLang(s.title, '')}</span>
+          </div>`).join('')
+        : (trainingT?.masterBridgeItems || []).map((item, i) => `<div class="flex items-start gap-3 rounded-xl border border-eu-border bg-white px-4 py-3 text-sm font-medium text-eu-text shadow-sm">
+            <div class="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-eu-border bg-eu-bg text-eu-purple">
+              <span class="w-5 h-5 rounded-full bg-eu-purple text-white text-xs font-bold flex items-center justify-center">${i + 1}</span>
+            </div>
+            <span class="min-w-0 leading-5">${item}</span>
+          </div>`).join('');
+      masterSkillsBlockHtml = `<div class="mb-8">${renderSkillPanel('master', 'graduation-cap', masterSectionTitle, masterSkillsHtml, 'xl:grid-cols-4')}</div>`;
+    }
+  }
   const masterDisclaimer = cmsSection?.disclaimerBlock
     ? pickLang(cmsSection.disclaimerBlock.text, '')
     : (trainingT?.masterBridgeDisclaimer || '');
@@ -452,8 +503,7 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
       <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
       <p class="text-sm text-amber-800">${masterDisclaimer}</p>
     </div>`}
-    ${masterSkillsBlockVisible ? `
-    <div class="mb-8">${renderSkillPanel('master', 'graduation-cap', masterSectionTitle, masterSkillsHtml, 'xl:grid-cols-4')}</div>` : ''}
+    ${masterSkillsBlockHtml}
     ${searchControls}${courseGrid}
     ${masterPathBlock?.visible === false ? '' : `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 mt-8">
@@ -543,4 +593,45 @@ export function mount() {
 
   attachFilterPillListeners(activeTab);
   attachPaginationListeners();
+
+  // WordCloud init for skills block when displayMode === 'cloud'
+  const sectionMap = { fp: 'fp-skills', teacher: 'continuous-learning', master: 'master-skills' };
+  const cloudCanvas = document.getElementById(`tr-cloud-${activeTab}`);
+  if (cloudCanvas && typeof window.WordCloud === 'function') {
+    const cmsSection = (TRAINING_CONFIG?.sectionsBlock || []).find(s => s.id === sectionMap[activeTab]);
+    const cloudCounts = cmsSection?.skillsBlock?.cloudCounts || [];
+    const skillsCatalog = TRAINING_CONFIG?.coursesBlock?.skills || TRAINING_CONFIG?.coursesBlock?.courseTags || [];
+    const wordList = cloudCounts.map(({ skillId, count }) => {
+      const skill = skillsCatalog.find(s => s.id === skillId);
+      const label = pickLang(skill?.shortLabel || skill?.title, skillId);
+      return [label, count];
+    }).filter(([label]) => label);
+
+    if (wordList.length > 0) {
+      window.WordCloud.stop();
+      const rect = cloudCanvas.parentElement.getBoundingClientRect();
+      cloudCanvas.width = rect.width;
+      cloudCanvas.height = 280;
+      const palette = ['#5620f6', '#1d4ed8', '#0d9488', '#ea580c', '#d97706', '#7c3aed'];
+      window.WordCloud(cloudCanvas, {
+        list: wordList,
+        fontFamily: '"Instrument Sans", sans-serif',
+        color: (word) => {
+          let hash = 0;
+          for (let i = 0; i < word.length; i++) hash = ((hash << 5) - hash) + word.charCodeAt(i);
+          return palette[Math.abs(hash) % palette.length];
+        },
+        rotateRatio: 0.3,
+        minRotation: 0,
+        maxRotation: Math.PI / 2,
+        rotationSteps: 2,
+        gridSize: 8,
+        weightFactor: (size) => Math.max(14, Math.min(44, 12 + size * 6)),
+        backgroundColor: 'transparent',
+        drawOutOfBound: false,
+        shrinkToFit: true,
+        abortThreshold: 3000,
+      });
+    }
+  }
 }

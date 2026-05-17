@@ -81,6 +81,7 @@ export const TRAINING_CONFIG = {
       },
       "skillsBlock": {
         "visible": true,
+        "displayMode": "cards",
         "skills": [
           {
             "id": "ai-literacy",
@@ -254,6 +255,44 @@ export const TRAINING_CONFIG = {
             "icon": "👥"
           }
         ],
+        "cloudCounts": [
+          {
+            "skillId": "ai-literacy",
+            "count": 15
+          },
+          {
+            "skillId": "data-work",
+            "count": 10
+          },
+          {
+            "skillId": "problem-solving",
+            "count": 8
+          },
+          {
+            "skillId": "process-automation",
+            "count": 9
+          },
+          {
+            "skillId": "sustainability",
+            "count": 5
+          },
+          {
+            "skillId": "technical-communication",
+            "count": 7
+          },
+          {
+            "skillId": "teamwork",
+            "count": 5
+          },
+          {
+            "skillId": "responsible-ai",
+            "count": 6
+          },
+          {
+            "skillId": "privacy-ethics",
+            "count": 4
+          }
+        ],
         "derivedSkillIds": [
           "ai-literacy",
           "data-work",
@@ -326,6 +365,7 @@ export const TRAINING_CONFIG = {
       },
       "skillsBlock": {
         "visible": true,
+        "displayMode": "cards",
         "skills": [
           {
             "id": "ai-strategy",
@@ -461,6 +501,36 @@ export const TRAINING_CONFIG = {
             "icon": "📢"
           }
         ],
+        "cloudCounts": [
+          {
+            "skillId": "ai-strategy",
+            "count": 5
+          },
+          {
+            "skillId": "ai-governance",
+            "count": 8
+          },
+          {
+            "skillId": "systems-thinking",
+            "count": 5
+          },
+          {
+            "skillId": "innovation-management",
+            "count": 7
+          },
+          {
+            "skillId": "strategic-communication",
+            "count": 6
+          },
+          {
+            "skillId": "advanced-data",
+            "count": 6
+          },
+          {
+            "skillId": "stakeholder-engagement",
+            "count": 5
+          }
+        ],
         "derivedSkillIds": [
           "ai-strategy",
           "advanced-data",
@@ -547,6 +617,7 @@ export const TRAINING_CONFIG = {
       },
       "skillsBlock": {
         "visible": true,
+        "displayMode": "cards",
         "skills": [
           {
             "id": "ped-ai-integration",
@@ -661,6 +732,32 @@ export const TRAINING_CONFIG = {
               "va": "Treball en xarxes docents i ecosistemes per a compartir reptes, recursos i aprenentatges."
             },
             "icon": "🌐"
+          }
+        ],
+        "cloudCounts": [
+          {
+            "skillId": "ped-ai-integration",
+            "count": 15
+          },
+          {
+            "skillId": "critical-thinking",
+            "count": 12
+          },
+          {
+            "skillId": "digital-literacy",
+            "count": 18
+          },
+          {
+            "skillId": "student-support",
+            "count": 3
+          },
+          {
+            "skillId": "collaboration-networks",
+            "count": 3
+          },
+          {
+            "skillId": "assessment-innovation",
+            "count": 11
           }
         ],
         "derivedSkillIds": [
