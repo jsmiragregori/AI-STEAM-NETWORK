@@ -223,7 +223,7 @@ function renderSkillCloudPanel(theme, icon, title, canvasId) {
           </div>
         </div>
         <div class="flex justify-center">
-          <canvas id="${canvasId}" class="w-full" style="height: 280px;"></canvas>
+          <canvas id="${canvasId}" class="w-full" style="height: 320px;"></canvas>
         </div>
       </div>
     </section>`;
@@ -611,7 +611,7 @@ export function mount() {
       window.WordCloud.stop();
       const rect = cloudCanvas.parentElement.getBoundingClientRect();
       cloudCanvas.width = rect.width;
-      cloudCanvas.height = 280;
+      cloudCanvas.height = 320;
       const palette = ['#5620f6', '#1d4ed8', '#0d9488', '#ea580c', '#d97706', '#7c3aed'];
       window.WordCloud(cloudCanvas, {
         list: wordList,
@@ -621,12 +621,12 @@ export function mount() {
           for (let i = 0; i < word.length; i++) hash = ((hash << 5) - hash) + word.charCodeAt(i);
           return palette[Math.abs(hash) % palette.length];
         },
-        rotateRatio: 0.5,
+        rotateRatio: 1,
         minRotation: 0,
         maxRotation: Math.PI / 2,
         rotationSteps: 2,
-        gridSize: 8,
-        weightFactor: (size) => Math.max(14, Math.min(44, 12 + size * 6)),
+        gridSize: 4,
+        weightFactor: (size) => Math.max(12, Math.min(40, 10 + size * 5)),
         backgroundColor: 'transparent',
         drawOutOfBound: false,
         shrinkToFit: true,
