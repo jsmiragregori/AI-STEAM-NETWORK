@@ -35,11 +35,20 @@ export const SECTORS_CONFIG = {
       },
       {
         "id": "fpSkills",
-        "value": "71",
+        "value": "9",
         "label": {
           "es": "Skills FP",
           "en": "FP Skills",
           "va": "Skills FP"
+        }
+      },
+      {
+        "id": "allSkills",
+        "value": "22",
+        "label": {
+          "es": "Total Skills",
+          "en": "Total Skills",
+          "va": "Total Skills"
         }
       }
     ]
