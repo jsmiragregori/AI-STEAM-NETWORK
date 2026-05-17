@@ -1350,7 +1350,7 @@ export const NETWORK_CONFIG = {
           "va": "AESIA – Agència Espanyola de Supervisió de la IA"
         },
         "category": "admin",
-        "primarySector": "transversal",
+        "primarySector": "nts",
         "sectors": [],
         "region": {
           "es": "Nacional",
@@ -1400,7 +1400,7 @@ export const NETWORK_CONFIG = {
           "va": "Hospital Universitari La Fe"
         },
         "category": "sociedad",
-        "primarySector": "health",
+        "primarySector": "hou",
         "sectors": [],
         "region": {
           "es": "C. Valenciana",
@@ -1425,8 +1425,11 @@ export const NETWORK_CONFIG = {
           "va": "REDIT"
         },
         "category": "universidad",
-        "primarySector": "transversal",
-        "sectors": [],
+        "primarySector": "mfg",
+        "sectors": [
+          "ene",
+          "agr"
+        ],
         "region": {
           "es": "C. Valenciana",
           "en": "Valencian Community",
@@ -1450,8 +1453,10 @@ export const NETWORK_CONFIG = {
           "va": "ITI – Institut Tecnològic d'Informàtica"
         },
         "category": "universidad",
-        "primarySector": "transversal",
-        "sectors": [],
+        "primarySector": "mfg",
+        "sectors": [
+          "nts"
+        ],
         "region": {
           "es": "C. Valenciana",
           "en": "Valencian Community",
@@ -1654,8 +1659,10 @@ export const NETWORK_CONFIG = {
           "va": "IVACE+i"
         },
         "category": "admin",
-        "primarySector": "transversal",
-        "sectors": [],
+        "primarySector": "mfg",
+        "sectors": [
+          "nts"
+        ],
         "region": {
           "es": "C. Valenciana",
           "en": "Valencian Community",
@@ -1679,7 +1686,7 @@ export const NETWORK_CONFIG = {
           "va": "GVA – DGTIC"
         },
         "category": "admin",
-        "primarySector": "transversal",
+        "primarySector": "nts",
         "sectors": [],
         "region": {
           "es": "C. Valenciana",

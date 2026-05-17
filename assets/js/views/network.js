@@ -4,29 +4,23 @@ import { NETWORK_CONFIG } from '../../data/network.js';
 // ── Static data ─────────────────────────────────────────────────────────────
 
 const SECTOR_ICON = {
-  mfg:         'factory',
-  mob:         'car',
-  ene:         'zap',
-  agr:         'wheat',
-  cci:         'palette',
-  hou:         'building',
-  nts:         'stethoscope',
-  edu:         'graduation-cap',
-  health:      'heart-pulse',
-  transversal: 'layers',
+  mfg: 'factory',
+  mob: 'car',
+  ene: 'zap',
+  agr: 'wheat',
+  cci: 'palette',
+  hou: 'building',
+  nts: 'stethoscope',
 };
 
 const SECTOR_LABEL = {
-  mfg:         { es: 'Manufactura',                       en: 'Manufacturing',                  va: 'Manufactura'                      },
-  mob:         { es: 'Movilidad y Transporte',            en: 'Mobility & Transport',           va: 'Mobilitat i Transport'            },
-  ene:         { es: 'Energía y Medio Ambiente',          en: 'Energy & Environment',           va: 'Energia i Medi Ambient'           },
-  agr:         { es: 'Agroalimentario',                   en: 'Agrifood',                       va: 'Agroalimentari'                   },
-  cci:         { es: 'Industrias Culturales y Creativas', en: 'Cultural & Creative Industries', va: 'Indústries Culturals i Creatives' },
-  hou:         { es: 'Vivienda',                          en: 'Housing',                        va: 'Habitatge'                        },
-  nts:         { es: 'Servicios No Turísticos',           en: 'Non-Tourism Services',           va: 'Serveis No Turístics'             },
-  edu:         { es: 'Educación',                         en: 'Education',                      va: 'Educació'                         },
-  health:      { es: 'Salud',                             en: 'Health',                         va: 'Salut'                            },
-  transversal: { es: 'Transversal',                       en: 'Transversal',                    va: 'Transversal'                      },
+  mfg: { es: 'Manufactura',                       en: 'Manufacturing',                  va: 'Manufactura'                      },
+  mob: { es: 'Movilidad y Transporte',            en: 'Mobility & Transport',           va: 'Mobilitat i Transport'            },
+  ene: { es: 'Energía y Medio Ambiente',          en: 'Energy & Environment',           va: 'Energia i Medi Ambient'           },
+  agr: { es: 'Agroalimentario',                   en: 'Agrifood',                       va: 'Agroalimentari'                   },
+  cci: { es: 'Industrias Culturales y Creativas', en: 'Cultural & Creative Industries', va: 'Indústries Culturals i Creatives' },
+  hou: { es: 'Vivienda',                          en: 'Housing',                        va: 'Habitatge'                        },
+  nts: { es: 'Servicios No Turísticos',           en: 'Non-Tourism Services',           va: 'Serveis No Turístics'             },
 };
 
 const PARTNERS = [
