@@ -4,13 +4,13 @@ import { getState, setState } from '../state.js';
 import { SECTORS_CONFIG } from '../../data/sectors.js';
 
 const SECTORS_META = [
-  { id: 'mfg', emoji: '⚙️',  color: 'from-blue-700 to-blue-500',      borderColor: 'border-blue-600',  tagBg: 'bg-blue-100',   tagText: 'text-blue-800',   challenges: 23, partners: 23, courses: 14, stakeholders: 87,  featuredPartners: ['TUV.IT', 'JOIST', 'INESC TEC', 'Hochschule Wismar'] },
-  { id: 'mob', emoji: '🚗',  color: 'from-eu-purple to-eu-blue',       borderColor: 'border-eu-purple', tagBg: 'bg-eu-yellow',  tagText: 'text-eu-purple',  challenges: 18, partners: 20, courses: 12, stakeholders: 65,  featuredPartners: ['NTNU', 'HSW', 'INESC TEC', 'CEICE'] },
-  { id: 'ene', emoji: '⚡',  color: 'from-green-700 to-emerald-500',   borderColor: 'border-green-600', tagBg: 'bg-green-100',  tagText: 'text-green-800',  challenges: 19, partners: 22, courses: 9,  stakeholders: 102, featuredPartners: ['Region Värmland', 'PREDA', 'NTNU', 'INESC TEC'] },
-  { id: 'agr', emoji: '🌾',  color: 'from-yellow-600 to-amber-400',    borderColor: 'border-yellow-500',tagBg: 'bg-yellow-100', tagText: 'text-yellow-800', challenges: 14, partners: 22, courses: 8,  stakeholders: 78,  featuredPartners: ['AVA-ASAJA', 'CINK', 'INESC TEC', 'UVEG'] },
-  { id: 'cci', emoji: '🎨',  color: 'from-pink-600 to-fuchsia-400',    borderColor: 'border-pink-500',  tagBg: 'bg-pink-100',   tagText: 'text-pink-800',   challenges: 12, partners: 19, courses: 7,  stakeholders: 43,  featuredPartners: ['LPGA', 'C-LINK', 'KEA', 'ESAD-GV', 'RCE'] },
-  { id: 'hou', emoji: '🏘️', color: 'from-red-600 to-rose-500',         borderColor: 'border-red-500',   tagBg: 'bg-red-100',    tagText: 'text-red-800',    challenges: 15, partners: 18, courses: 10, stakeholders: 91,  featuredPartners: ['HSW', 'NTNU', 'INESC TEC', 'CEICE'] },
-  { id: 'nts', emoji: '🏢',  color: 'from-slate-600 to-gray-500',      borderColor: 'border-slate-500', tagBg: 'bg-slate-100',  tagText: 'text-slate-800',  challenges: 16, partners: 21, courses: 11, stakeholders: 56,  featuredPartners: ['CEICE', 'LC', 'COGN', 'FIDIT'] },
+  { id: 'mfg', emoji: '⚙️',  color: 'from-blue-700 to-blue-500',      borderColor: 'border-blue-600',  tagBg: 'bg-blue-100',   tagText: 'text-blue-800',   challenges: 23, courses: 14, stakeholders: 87,  featuredPartners: ['TUV.IT', 'JOIST', 'INESC TEC', 'Hochschule Wismar'] },
+  { id: 'mob', emoji: '🚗',  color: 'from-eu-purple to-eu-blue',       borderColor: 'border-eu-purple', tagBg: 'bg-eu-yellow',  tagText: 'text-eu-purple',  challenges: 18, courses: 12, stakeholders: 65,  featuredPartners: ['NTNU', 'HSW', 'INESC TEC', 'CEICE'] },
+  { id: 'ene', emoji: '⚡',  color: 'from-green-700 to-emerald-500',   borderColor: 'border-green-600', tagBg: 'bg-green-100',  tagText: 'text-green-800',  challenges: 19, courses: 9,  stakeholders: 102, featuredPartners: ['Region Värmland', 'PREDA', 'NTNU', 'INESC TEC'] },
+  { id: 'agr', emoji: '🌾',  color: 'from-yellow-600 to-amber-400',    borderColor: 'border-yellow-500',tagBg: 'bg-yellow-100', tagText: 'text-yellow-800', challenges: 14, courses: 8,  stakeholders: 78,  featuredPartners: ['AVA-ASAJA', 'CINK', 'INESC TEC', 'UVEG'] },
+  { id: 'cci', emoji: '🎨',  color: 'from-pink-600 to-fuchsia-400',    borderColor: 'border-pink-500',  tagBg: 'bg-pink-100',   tagText: 'text-pink-800',   challenges: 12, courses: 7,  stakeholders: 43,  featuredPartners: ['LPGA', 'C-LINK', 'KEA', 'ESAD-GV', 'RCE'] },
+  { id: 'hou', emoji: '🏘️', color: 'from-red-600 to-rose-500',         borderColor: 'border-red-500',   tagBg: 'bg-red-100',    tagText: 'text-red-800',    challenges: 15, courses: 10, stakeholders: 91,  featuredPartners: ['HSW', 'NTNU', 'INESC TEC', 'CEICE'] },
+  { id: 'nts', emoji: '🏢',  color: 'from-slate-600 to-gray-500',      borderColor: 'border-slate-500', tagBg: 'bg-slate-100',  tagText: 'text-slate-800',  challenges: 16, courses: 11, stakeholders: 56,  featuredPartners: ['CEICE', 'LC', 'COGN', 'FIDIT'] },
 ];
 
 const CHAIN_ICONS = ['users', 'book-open', 'lightbulb', 'flask-conical', 'graduation-cap'];
@@ -252,10 +252,6 @@ export function render() {
             <div class="text-center">
               <p class="text-xl font-extrabold text-eu-teal">${stats.challenges ?? ''}</p>
               <p class="text-xs text-gray-500 uppercase font-semibold">${sectorLabels.challenges || ''}</p>
-            </div>
-            <div class="text-center">
-              <p class="text-xl font-extrabold text-eu-blue">${stats.partners ?? ''}</p>
-              <p class="text-xs text-gray-500 uppercase font-semibold">${sectorLabels.partners || ''}</p>
             </div>
             <div class="text-center">
               <p class="text-xl font-extrabold text-purple-600">${stats.stakeholders ?? ''}</p>

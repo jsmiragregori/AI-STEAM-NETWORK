@@ -280,7 +280,6 @@ export const translations = {
       "ctaButton": "Ir al formulario de adhesión",
       "sectorLabels": {
         "challenges": "Retos y casos",
-        "partners": "Socios",
         "stakeholders": "Stakeholders",
         "courses": "Cursos",
         "modules": "Skills FP"
@@ -2347,7 +2346,6 @@ export const translations = {
       "ctaButton": "Go to membership form",
       "sectorLabels": {
         "challenges": "Challenges & cases",
-        "partners": "Partners",
         "stakeholders": "Stakeholders",
         "courses": "Courses",
         "modules": "VET Skills"
@@ -4414,7 +4412,6 @@ export const translations = {
       "ctaButton": "Anar al formulari d'adhesió",
       "sectorLabels": {
         "challenges": "Reptes i casos",
-        "partners": "Socis",
         "stakeholders": "Stakeholders",
         "courses": "Cursos",
         "modules": "Skills FP"

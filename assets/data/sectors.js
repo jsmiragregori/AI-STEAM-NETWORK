@@ -69,7 +69,6 @@ export const SECTORS_CONFIG = {
       },
       "stats": {
         "challenges": 3,
-        "partners": 23,
         "courses": 18,
         "stakeholders": 6
       },
@@ -235,7 +234,6 @@ export const SECTORS_CONFIG = {
       },
       "stats": {
         "challenges": 18,
-        "partners": 20,
         "courses": 0,
         "stakeholders": 1
       },
@@ -393,7 +391,6 @@ export const SECTORS_CONFIG = {
       },
       "stats": {
         "challenges": 19,
-        "partners": 22,
         "courses": 17,
         "stakeholders": 3
       },
@@ -551,7 +548,6 @@ export const SECTORS_CONFIG = {
       },
       "stats": {
         "challenges": 14,
-        "partners": 22,
         "courses": 9,
         "stakeholders": 3
       },
@@ -709,7 +705,6 @@ export const SECTORS_CONFIG = {
       },
       "stats": {
         "challenges": 12,
-        "partners": 19,
         "courses": 19,
         "stakeholders": 2
       },
@@ -868,7 +863,6 @@ export const SECTORS_CONFIG = {
       },
       "stats": {
         "challenges": 15,
-        "partners": 18,
         "courses": 10,
         "stakeholders": 1
       },
@@ -1026,7 +1020,6 @@ export const SECTORS_CONFIG = {
       },
       "stats": {
         "challenges": 16,
-        "partners": 21,
         "courses": 36,
         "stakeholders": 4
       },
