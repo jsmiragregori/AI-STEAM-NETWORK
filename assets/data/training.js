@@ -29,7 +29,7 @@ export const TRAINING_CONFIG = {
       {
         "id": "unique-skills",
         "visible": true,
-        "value": 22,
+        "value": 23,
         "manualOverride": false,
         "label": {
           "es": "Skills desarrolladas",
@@ -661,6 +661,25 @@ export const TRAINING_CONFIG = {
               "va": "Treball en xarxes docents i ecosistemes per a compartir reptes, recursos i aprenentatges."
             },
             "icon": "🌐"
+          },
+          {
+            "id": "proteccion-datos",
+            "title": {
+              "es": "Protección de datos personales",
+              "en": "Personal data protection",
+              "va": "Protecció de dades personals"
+            },
+            "shortLabel": {
+              "es": "Protección de datos",
+              "en": "Data protection",
+              "va": "Protecció de dades"
+            },
+            "description": {
+              "es": "Conocimientos de protección de datos y RGPD",
+              "en": "Knowledge on data proteciones and GDPR",
+              "va": "Coneixements de protección de dades i RGPD"
+            },
+            "icon": "🪪"
           }
         ],
         "derivedSkillIds": [
@@ -669,7 +688,8 @@ export const TRAINING_CONFIG = {
           "critical-thinking",
           "assessment-innovation",
           "student-support",
-          "collaboration-networks"
+          "collaboration-networks",
+          "proteccion-datos"
         ],
         "manualIncludeIds": [],
         "manualHiddenIds": []
@@ -1402,8 +1422,7 @@ export const TRAINING_CONFIG = {
         "id": "proteccion-datos",
         "visible": true,
         "appliesTo": [
-          "Teacher",
-          "Master"
+          "Teacher"
         ],
         "icon": "🪪",
         "label": {
@@ -2133,8 +2152,7 @@ export const TRAINING_CONFIG = {
         "id": "proteccion-datos",
         "visible": true,
         "appliesTo": [
-          "Teacher",
-          "Master"
+          "Teacher"
         ],
         "icon": "🪪",
         "label": {
@@ -3174,11 +3192,13 @@ export const TRAINING_CONFIG = {
         "modalityId": "online",
         "skillIds": [
           "ped-ai-integration",
-          "critical-thinking"
+          "critical-thinking",
+          "proteccion-datos"
         ],
         "tagIds": [
           "ped-ai-integration",
-          "critical-thinking"
+          "critical-thinking",
+          "proteccion-datos"
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
