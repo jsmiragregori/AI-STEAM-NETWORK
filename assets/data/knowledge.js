@@ -201,9 +201,9 @@ export const KNOWLEDGE_CONFIG = {
       "va": "OER i Recursos de la Xarxa"
     },
     "description": {
-      "es": "Recursos abiertos (CC) disponibles en Aules. Cada recurso indica sector AI-SECRETT, ruta educativa, tipo y estado de validación. Datos demo del prototipo.",
-      "en": "Open resources (CC-licensed) available in Aules. Each resource shows AI-SECRETT sector, educational route, type and validation status. Prototype demo data.",
-      "va": "Recursos oberts (CC) disponibles a Aules. Cada recurs indica sector AI-SECRETT, ruta educativa, tipus i estat de validació. Dades demo del prototip."
+      "es": "Recursos abiertos (CC) disponibles en Aules y Obert. Cada recurso indica sector AI-SECRETT, ruta educativa, tipo y estado de validación. Datos demo del prototipo.",
+      "en": "Open resources (CC-licensed) available in Aules and Obert. Each resource shows AI-SECRETT sector, educational route, type and validation status. Prototype demo data.",
+      "va": "Recursos oberts (CC) disponibles a Aules i a Obert. Cada recurs indica sector AI-SECRETT, ruta educativa, tipus i estat de validació. Dades demo del prototip."
     },
     "searchPlaceholder": {
       "es": "Buscar recurso...",
@@ -226,6 +226,22 @@ export const KNOWLEDGE_CONFIG = {
       "va": "Veure tots els recursos a Aules"
     },
     "viewAllUrl": "#",
+    "pageSizeOptions": [
+      5,
+      10,
+      20
+    ],
+    "showAllOption": true,
+    "showAllLabel": {
+      "es": "Todos",
+      "en": "All",
+      "va": "Tots"
+    },
+    "emptyMessage": {
+      "es": "Todavía no hay recursos disponibles en esta sección",
+      "en": "No resources available in this section yet",
+      "va": "Encara no hi ha recursos disponibles en aquesta secció"
+    },
     "typeLabels": [
       {
         "id": "guia",

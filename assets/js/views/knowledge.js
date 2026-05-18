@@ -206,7 +206,7 @@ function tabOER(search) {
             placeholder="${searchPlh}" />
         </div>
       </div>
-      <div id="oer-grid" class="space-y-3">${renderOerGrid(search)}</div>
+      <div id="oer-grid" class="space-y-3">${renderOerGridContent(search)}</div>
       <div class="mt-6 text-center">
         <a href="${vaUrl}" class="inline-flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline">
           <i data-lucide="external-link" class="w-4 h-4"></i>${vaLabel}
@@ -218,7 +218,7 @@ function tabOER(search) {
 
 // ── OER Grid (partial update target, survives search input) ────────────────────
 
-function renderOerGrid(search) {
+function renderOerGridContent(search) {
   const oerBlock = KNOWLEDGE_CONFIG?.oerResourcesBlock;
   const hasCmsBlock = Boolean(oerBlock);
   const oerData = hasCmsBlock ? oerBlock.resources : (t('knowledge.oerResources') || []);
@@ -249,7 +249,41 @@ function renderOerGrid(search) {
       })
     : oerData;
 
-  const rowsHtml = filtered.map(r => {
+  // ── Pagination ──
+  const pageSizeOpts = hasCmsBlock && Array.isArray(oerBlock.pageSizeOptions)
+    ? oerBlock.pageSizeOptions : [5, 10, 20];
+  const showAllOpt  = hasCmsBlock ? (oerBlock.showAllOption !== false) : true;
+  const showAllLbl  = hasCmsBlock ? pickLang(oerBlock.showAllLabel, 'Todos') : 'Todos';
+  const emptyMsg    = hasCmsBlock ? pickLang(oerBlock.emptyMessage, '') : '';
+
+  const pageSize   = getState('oerPageSize') || pageSizeOpts[0];
+  const isAll      = pageSize === 'all';
+  const rawPage    = getState('oerPage') || 0;
+  const totalPages = isAll ? 1 : Math.ceil(filtered.length / pageSize);
+  const safePage   = Math.min(rawPage, Math.max(0, totalPages - 1));
+  const paginated  = isAll ? filtered : filtered.slice(safePage * pageSize, (safePage + 1) * pageSize);
+
+  const count      = filtered.length;
+  const countLabel = `${count} recurso${count !== 1 ? 's' : ''}`;
+
+  const pageSizeHtml = `
+    <div class="flex gap-1">
+      ${pageSizeOpts.map(n => `<button data-oer-pagesize="${n}" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${n}</button>`).join('')}
+      ${showAllOpt ? `<button data-oer-pagesize="all" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${showAllLbl}</button>` : ''}
+    </div>`;
+
+  const paginationHtml = !isAll && totalPages > 1 ? `
+    <div class="flex gap-2 justify-center mt-6 items-center">
+      <button id="oer-pag-prev" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
+        ← ${getLang() === 'en' ? 'Previous' : getLang() === 'va' ? 'Anterior' : 'Anterior'}
+      </button>
+      <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
+      <button id="oer-pag-next" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
+        ${getLang() === 'en' ? 'Next' : getLang() === 'va' ? 'Següent' : 'Siguiente'} →
+      </button>
+    </div>` : '';
+
+  const rowsHtml = paginated.map(r => {
     const rTitle  = hasCmsBlock ? pickLang(r.title, '') : (r.title || '');
     const rTypeId = hasCmsBlock ? r.typeId : r.type;
     const rType   = typeLabels[rTypeId] || rTypeId;
@@ -294,14 +328,21 @@ function renderOerGrid(search) {
     <div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
       <i data-lucide="search" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
       <p class="text-gray-500 text-base">
-        ${getLang() === 'en' ? 'No resources found matching your search'
+        ${emptyMsg || (getLang() === 'en' ? 'No resources found matching your search'
           : getLang() === 'va' ? 'No s\'han trobat recursos amb la cerca'
-          : 'No se encontraron recursos'}
+          : 'No se encontraron recursos')}
       </p>
     </div>`
     : '';
 
-  return rowsHtml + emptyHtml;
+  return `
+    <div class="flex items-center justify-between mb-4">
+      <span class="text-xs text-gray-500 font-medium">${countLabel}</span>
+      ${pageSizeHtml}
+    </div>
+    ${paginated.length > 0 ? `
+      <div class="space-y-3 mb-8">${rowsHtml}</div>
+      ${paginationHtml}` : emptyHtml}`;
 }
 
 // ── OER partial update — only replaces #oer-grid, preserves search input focus ──
@@ -310,8 +351,28 @@ function updateOerGrid() {
   const search    = getState('knowledgeSearch') || '';
   const container = document.getElementById('oer-grid');
   if (!container) return;
-  container.innerHTML = renderOerGrid(search);
+  container.innerHTML = renderOerGridContent(search);
   if (window.lucide) window.lucide.createIcons();
+  attachOerPaginationListeners();
+}
+
+function attachOerPaginationListeners() {
+  document.querySelectorAll('[data-oer-pagesize]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sz = btn.dataset.oerPagesize === 'all' ? 'all' : parseInt(btn.dataset.oerPagesize, 10);
+      setState('oerPageSize', sz);
+      setState('oerPage', 0);
+      updateOerGrid();
+    });
+  });
+  document.getElementById('oer-pag-prev')?.addEventListener('click', () => {
+    const cur = getState('oerPage') || 0;
+    if (cur > 0) { setState('oerPage', cur - 1); updateOerGrid(); }
+  });
+  document.getElementById('oer-pag-next')?.addEventListener('click', () => {
+    setState('oerPage', (getState('oerPage') || 0) + 1);
+    updateOerGrid();
+  });
 }
 
 // ─── Tab 3: Casos de Transferencia ───────────────────────────────────────────
@@ -484,6 +545,7 @@ export function mount() {
   document.querySelectorAll('[data-know-tab]').forEach(btn => {
     btn.addEventListener('click', () => {
       setState('knowledgeTab', btn.dataset.knowTab);
+      setState('oerPage', 0);
       rerender();
     });
   });
@@ -491,8 +553,11 @@ export function mount() {
   // OER search — partial update only (no full re-render, preserves focus while typing)
   document.getElementById('oer-search')?.addEventListener('input', e => {
     setState('knowledgeSearch', e.target.value);
+    setState('oerPage', 0);
     updateOerGrid();
   });
+
+  attachOerPaginationListeners();
 }
 
 function rerender() {
