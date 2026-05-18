@@ -1,5 +1,5 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR
-// Fuentes: content/knowledge/hero.yml, content/knowledge/transfer-cycle.yml
+// Fuentes: content/knowledge/hero.yml, content/knowledge/transfer-cycle.yml, content/knowledge/oer-resources.yml
 
 export const KNOWLEDGE_CONFIG = {
   "heroBlock": {
@@ -192,5 +192,229 @@ export const KNOWLEDGE_CONFIG = {
         }
       ]
     }
+  },
+  "oerResourcesBlock": {
+    "visible": true,
+    "title": {
+      "es": "OER y Recursos de la Red",
+      "en": "OER and Network Resources",
+      "va": "OER i Recursos de la Xarxa"
+    },
+    "description": {
+      "es": "Recursos abiertos (CC) disponibles en Aules. Cada recurso indica sector AI-SECRETT, ruta educativa, tipo y estado de validación. Datos demo del prototipo.",
+      "en": "Open resources (CC-licensed) available in Aules. Each resource shows AI-SECRETT sector, educational route, type and validation status. Prototype demo data.",
+      "va": "Recursos oberts (CC) disponibles a Aules. Cada recurs indica sector AI-SECRETT, ruta educativa, tipus i estat de validació. Dades demo del prototip."
+    },
+    "searchPlaceholder": {
+      "es": "Buscar recurso...",
+      "en": "Search resource...",
+      "va": "Buscar recurs..."
+    },
+    "downloadLabel": {
+      "es": "Descargar",
+      "en": "Download",
+      "va": "Descarregar"
+    },
+    "downloadsLabel": {
+      "es": "descargas",
+      "en": "downloads",
+      "va": "descàrregues"
+    },
+    "viewAllLabel": {
+      "es": "Ver todos los recursos en Aules",
+      "en": "View all resources in Aules",
+      "va": "Veure tots els recursos a Aules"
+    },
+    "viewAllUrl": "#",
+    "typeLabels": [
+      {
+        "id": "guia",
+        "visible": true,
+        "icon": "📖",
+        "label": {
+          "es": "Guía",
+          "en": "Guide",
+          "va": "Guia"
+        }
+      },
+      {
+        "id": "manual",
+        "visible": true,
+        "icon": "📋",
+        "label": {
+          "es": "Manual",
+          "en": "Manual",
+          "va": "Manual"
+        }
+      },
+      {
+        "id": "dataset",
+        "visible": true,
+        "icon": "🗄️",
+        "label": {
+          "es": "Dataset",
+          "en": "Dataset",
+          "va": "Dataset"
+        }
+      },
+      {
+        "id": "video",
+        "visible": true,
+        "icon": "🎬",
+        "label": {
+          "es": "Vídeo",
+          "en": "Video",
+          "va": "Vídeo"
+        }
+      },
+      {
+        "id": "plantilla",
+        "visible": true,
+        "icon": "📝",
+        "label": {
+          "es": "Plantilla",
+          "en": "Template",
+          "va": "Plantilla"
+        }
+      }
+    ],
+    "resources": [
+      {
+        "id": "o1",
+        "visible": true,
+        "title": {
+          "es": "Guía de Ética en IA para FP",
+          "en": "Guide to AI Ethics for VET",
+          "va": "Guia d'Ètica en IA per a FP"
+        },
+        "typeId": "guia",
+        "sectorId": "nts",
+        "level": "FP",
+        "license": "CC-BY-SA 4.0",
+        "author": "CEICE / IF.E",
+        "date": "Mar 2026",
+        "downloads": 1420,
+        "lang": "ES / VA"
+      },
+      {
+        "id": "o2",
+        "visible": true,
+        "title": {
+          "es": "Manual de Gemelos Digitales v2.1",
+          "en": "Digital Twins Manual v2.1",
+          "va": "Manual de Bessons Digitals v2.1"
+        },
+        "typeId": "manual",
+        "sectorId": "mfg",
+        "level": "Máster",
+        "license": "CC-BY 4.0",
+        "author": "INESC TEC / HSW",
+        "date": "Feb 2026",
+        "downloads": 876,
+        "lang": "EN / ES"
+      },
+      {
+        "id": "o3",
+        "visible": true,
+        "title": {
+          "es": "Dataset Plagas Cítricos CV (10K imágenes)",
+          "en": "Citrus Pest Dataset CV (10K images)",
+          "va": "Dataset Plagues Cítrics CV (10K imatges)"
+        },
+        "typeId": "dataset",
+        "sectorId": "agr",
+        "level": "Máster",
+        "license": "CC-BY-NC 4.0",
+        "author": "AVA-ASAJA / UVEG",
+        "date": "Ene 2026",
+        "downloads": 543,
+        "lang": "ES"
+      },
+      {
+        "id": "o4",
+        "visible": true,
+        "title": {
+          "es": "Plantilla Análisis de Sesgo en Modelos de IA",
+          "en": "AI Model Bias Analysis Template",
+          "va": "Plantilla Anàlisi de Biaix en Models d'IA"
+        },
+        "typeId": "plantilla",
+        "sectorId": "nts",
+        "level": "Todos",
+        "license": "CC-BY-SA 4.0",
+        "author": "COGN / LC",
+        "date": "Dic 2025",
+        "downloads": 2105,
+        "lang": "EN / ES / FR"
+      },
+      {
+        "id": "o5",
+        "visible": true,
+        "title": {
+          "es": "Introducción a ML con Python para FP – Vídeo (12h)",
+          "en": "Introduction to ML with Python for VET – Video (12h)",
+          "va": "Introducció a ML amb Python per a FP – Vídeo (12h)"
+        },
+        "typeId": "video",
+        "sectorId": "nts",
+        "level": "FP",
+        "license": "CC-BY 4.0",
+        "author": "UMU / CEICE",
+        "date": "Nov 2025",
+        "downloads": 3210,
+        "lang": "ES / VA"
+      },
+      {
+        "id": "o6",
+        "visible": true,
+        "title": {
+          "es": "Guía Reglamento IA UE para la Administración",
+          "en": "EU AI Act Guide for Public Administration",
+          "va": "Guia Reglament IA UE per a l'Administració"
+        },
+        "typeId": "guia",
+        "sectorId": "nts",
+        "level": "Docentes",
+        "license": "CC-BY-SA 4.0",
+        "author": "LC / CEICE",
+        "date": "Feb 2026",
+        "downloads": 789,
+        "lang": "ES / EN"
+      },
+      {
+        "id": "o7",
+        "visible": true,
+        "title": {
+          "es": "Manual de NLP para Análisis Clínico",
+          "en": "NLP Manual for Clinical Analysis",
+          "va": "Manual de NLP per a Anàlisi Clínica"
+        },
+        "typeId": "manual",
+        "sectorId": "nts",
+        "level": "Máster",
+        "license": "CC-BY-NC-SA 4.0",
+        "author": "Ud'A / UVEG",
+        "date": "Mar 2026",
+        "downloads": 412,
+        "lang": "IT / EN"
+      },
+      {
+        "id": "o8",
+        "visible": true,
+        "title": {
+          "es": "Dataset Imágenes Patrimonio Cultural (5K)",
+          "en": "Cultural Heritage Images Dataset (5K)",
+          "va": "Dataset Imatges Patrimoni Cultural (5K)"
+        },
+        "typeId": "dataset",
+        "sectorId": "cci",
+        "level": "Máster",
+        "license": "CC-BY 4.0",
+        "author": "LPGA / ESAD-GV",
+        "date": "Ene 2026",
+        "downloads": 298,
+        "lang": "ES / EN"
+      }
+    ]
   }
 };

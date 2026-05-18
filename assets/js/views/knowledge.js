@@ -169,37 +169,66 @@ function tabFlujo() {
 // ─── Tab 2: OER y Recursos ───────────────────────────────────────────────────
 
 function tabOER(search) {
-  const oerData = t('knowledge.oerResources') || [];
+  const oerBlock = KNOWLEDGE_CONFIG?.oerResourcesBlock;
+  const hasCmsBlock = Boolean(oerBlock);
 
-  const typeLabels = {
-    'Guía':     t('knowledge.oerTypeGuide')    || 'Guía',
-    'Manual':   t('knowledge.oerTypeManual')   || 'Manual',
-    'Dataset':  t('knowledge.oerTypeDataset')  || 'Dataset',
-    'Vídeo':    t('knowledge.oerTypeVideo')    || 'Vídeo',
-    'Plantilla':t('knowledge.oerTypeTemplate') || 'Plantilla',
-  };
+  const oerData    = hasCmsBlock ? oerBlock.resources : (t('knowledge.oerResources') || []);
+  const blockTitle = hasCmsBlock ? pickLang(oerBlock.title, '') : (t('knowledge.oerTitle') || '');
+  const blockDesc  = hasCmsBlock ? pickLang(oerBlock.description, '') : (t('knowledge.oerDesc') || '');
+  const searchPlh  = hasCmsBlock ? pickLang(oerBlock.searchPlaceholder, '') : (t('knowledge.oerSearch') || '');
+  const dlLabel    = hasCmsBlock ? pickLang(oerBlock.downloadLabel, '') : (t('knowledge.oerDownloadBtn') || '');
+  const dlsLabel   = hasCmsBlock ? pickLang(oerBlock.downloadsLabel, '') : (t('knowledge.oerDownloads') || '');
+  const vaLabel    = hasCmsBlock ? pickLang(oerBlock.viewAllLabel, '') : (t('knowledge.oerViewAll') || '');
+  const vaUrl      = hasCmsBlock ? (oerBlock.viewAllUrl || '#') : '#';
+
+  const typeLabels = hasCmsBlock
+    ? Object.fromEntries((oerBlock.typeLabels || []).map(tl => [tl.id, pickLang(tl.label, tl.id)]))
+    : {
+        'Guía':     t('knowledge.oerTypeGuide')    || 'Guía',
+        'Manual':   t('knowledge.oerTypeManual')   || 'Manual',
+        'Dataset':  t('knowledge.oerTypeDataset')  || 'Dataset',
+        'Vídeo':    t('knowledge.oerTypeVideo')    || 'Vídeo',
+        'Plantilla':t('knowledge.oerTypeTemplate') || 'Plantilla',
+      };
+
+  const typeIcons = hasCmsBlock
+    ? Object.fromEntries((oerBlock.typeLabels || []).map(tl => [tl.id, tl.icon]))
+    : TYPE_ICONS;
 
   const filtered = search
-    ? oerData.filter(r =>
-        r.title.toLowerCase().includes(search.toLowerCase()) ||
-        getSectorName(r.sector).toLowerCase().includes(search.toLowerCase())
-      )
+    ? oerData.filter(r => {
+        const titleStr = hasCmsBlock ? pickLang(r.title, '') : (r.title || '');
+        const sectorStr = hasCmsBlock ? getSectorName(r.sectorId) : getSectorName(r.sector);
+        return titleStr.toLowerCase().includes(search.toLowerCase()) ||
+               sectorStr.toLowerCase().includes(search.toLowerCase());
+      })
     : oerData;
 
-  const rowsHtml = filtered.map(r => `
+  const rowsHtml = filtered.map(r => {
+    const rTitle  = hasCmsBlock ? pickLang(r.title, '') : (r.title || '');
+    const rTypeId = hasCmsBlock ? r.typeId : r.type;
+    const rType   = typeLabels[rTypeId] || rTypeId;
+    const rIcon   = typeIcons[rTypeId] || '📄';
+    const rSectorId = hasCmsBlock ? r.sectorId : r.sector;
+    const rLevel  = r.level || '';
+    const rRoute  = r.route || '';
+    const rVal    = r.validationStatus || '';
+    const sectorName = getSectorName(rSectorId);
+
+    return `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm p-4 flex items-center gap-4 hover:border-eu-blue transition-colors group">
-      <span class="text-2xl shrink-0">${TYPE_ICONS[r.type] || '📄'}</span>
+      <span class="text-2xl shrink-0">${rIcon}</span>
       <div class="flex-1 min-w-0">
         <div class="flex flex-wrap items-center gap-2 mb-1">
-          <h3 class="font-bold text-eu-text text-sm group-hover:text-eu-blue transition-colors">${r.title || ''}</h3>
-          <span class="text-xs font-bold px-1.5 py-0.5 rounded ${LEVEL_COLORS[r.level] || 'bg-gray-100 text-gray-600'}">${r.level || ''}</span>
+          <h3 class="font-bold text-eu-text text-sm group-hover:text-eu-blue transition-colors">${rTitle}</h3>
+          <span class="text-xs font-bold px-1.5 py-0.5 rounded ${LEVEL_COLORS[rLevel] || 'bg-gray-100 text-gray-600'}">${rLevel}</span>
         </div>
         <div class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500">
-          <span>${typeLabels[r.type] || r.type}</span>
-          <span>${t('knowledge.oerSector') || 'Sector:'} ${getSectorName(r.sector)}</span>
+          <span>${rType}</span>
+          <span>${t('knowledge.oerSector') || 'Sector:'} ${sectorName}</span>
           <span>${t('knowledge.oerAuthor') || 'Autor:'} ${r.author || ''}</span>
-          ${r.route ? `<span>${t('knowledge.oerRoute') || 'Ruta:'} ${r.route}</span>` : ''}
-          ${r.validationStatus ? `<span class="text-eu-teal font-semibold">${t('knowledge.oerValidation') || 'Val:'} ${r.validationStatus}</span>` : ''}
+          ${rRoute ? `<span>${t('knowledge.oerRoute') || 'Ruta:'} ${rRoute}</span>` : ''}
+          ${rVal ? `<span class="text-eu-teal font-semibold">${t('knowledge.oerValidation') || 'Val:'} ${rVal}</span>` : ''}
           <span>${r.date || ''}</span>
           <span class="font-mono text-eu-teal">${r.license || ''}</span>
           <span>🌐 ${r.lang || ''}</span>
@@ -207,13 +236,13 @@ function tabOER(search) {
       </div>
       <div class="text-right shrink-0">
         <p class="text-lg font-extrabold text-eu-teal">${(r.downloads || 0).toLocaleString()}</p>
-        <p class="text-xs text-gray-500">${t('knowledge.oerDownloads') || ''}</p>
+        <p class="text-xs text-gray-500">${dlsLabel}</p>
         <button class="mt-1 flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer bg-transparent border-none">
-          <i data-lucide="download" class="w-3 h-3"></i>${t('knowledge.oerDownloadBtn') || ''}
+          <i data-lucide="download" class="w-3 h-3"></i>${dlLabel}
         </button>
       </div>
     </div>
-  `).join('');
+  `}).join('');
 
   const emptyHtml = filtered.length === 0
     ? '<p class="text-center py-10 text-gray-500 font-semibold">No se encontraron recursos</p>'
@@ -223,20 +252,20 @@ function tabOER(search) {
     <div>
       <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
         <div>
-          <h2 class="text-xl font-bold text-eu-text mb-1">${t('knowledge.oerTitle') || ''}</h2>
-          <p class="text-sm text-gray-600 max-w-2xl">${t('knowledge.oerDesc') || ''}</p>
+          <h2 class="text-xl font-bold text-eu-text mb-1">${blockTitle}</h2>
+          <p class="text-sm text-gray-600 max-w-2xl">${blockDesc}</p>
         </div>
         <div class="relative">
           <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
           <input id="oer-search" type="text" value="${search || ''}"
             class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
-            placeholder="${t('knowledge.oerSearch') || ''}" />
+            placeholder="${searchPlh}" />
         </div>
       </div>
       <div class="space-y-3">${rowsHtml}${emptyHtml}</div>
       <div class="mt-6 text-center">
-        <a href="#" class="inline-flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline">
-          <i data-lucide="external-link" class="w-4 h-4"></i>${t('knowledge.oerViewAll') || ''}
+        <a href="${vaUrl}" class="inline-flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline">
+          <i data-lucide="external-link" class="w-4 h-4"></i>${vaLabel}
         </a>
       </div>
     </div>
