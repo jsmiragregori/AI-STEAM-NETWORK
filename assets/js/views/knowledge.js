@@ -186,14 +186,42 @@ function tabOER(search) {
     </div>`;
   }
 
-  const oerData    = hasCmsBlock ? oerBlock.resources : (t('knowledge.oerResources') || []);
   const blockTitle = hasCmsBlock ? pickLang(oerBlock.title, '') : (t('knowledge.oerTitle') || '');
   const blockDesc  = hasCmsBlock ? pickLang(oerBlock.description, '') : (t('knowledge.oerDesc') || '');
   const searchPlh  = hasCmsBlock ? pickLang(oerBlock.searchPlaceholder, '') : (t('knowledge.oerSearch') || '');
-  const dlLabel    = hasCmsBlock ? pickLang(oerBlock.downloadLabel, '') : (t('knowledge.oerDownloadBtn') || '');
-  const dlsLabel   = hasCmsBlock ? pickLang(oerBlock.downloadsLabel, '') : (t('knowledge.oerDownloads') || '');
   const vaLabel    = hasCmsBlock ? pickLang(oerBlock.viewAllLabel, '') : (t('knowledge.oerViewAll') || '');
   const vaUrl      = hasCmsBlock ? (oerBlock.viewAllUrl || '#') : '#';
+
+  return `
+    <div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-xl font-bold text-eu-text mb-1">${blockTitle}</h2>
+          <p class="text-sm text-gray-600 max-w-2xl">${blockDesc}</p>
+        </div>
+        <div class="relative">
+          <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
+          <input id="oer-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
+            class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
+            placeholder="${searchPlh}" />
+        </div>
+      </div>
+      <div id="oer-grid" class="space-y-3">${renderOerGrid(search)}</div>
+      <div class="mt-6 text-center">
+        <a href="${vaUrl}" class="inline-flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline">
+          <i data-lucide="external-link" class="w-4 h-4"></i>${vaLabel}
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+// ── OER Grid (partial update target, survives search input) ────────────────────
+
+function renderOerGrid(search) {
+  const oerBlock = KNOWLEDGE_CONFIG?.oerResourcesBlock;
+  const hasCmsBlock = Boolean(oerBlock);
+  const oerData = hasCmsBlock ? oerBlock.resources : (t('knowledge.oerResources') || []);
 
   const typeLabels = hasCmsBlock
     ? Object.fromEntries((oerBlock.typeLabels || []).map(tl => [tl.id, pickLang(tl.label, tl.id)]))
@@ -208,6 +236,9 @@ function tabOER(search) {
   const typeIcons = hasCmsBlock
     ? Object.fromEntries((oerBlock.typeLabels || []).map(tl => [tl.id, tl.icon]))
     : TYPE_ICONS;
+
+  const dlLabel  = hasCmsBlock ? pickLang(oerBlock.downloadLabel, '') : (t('knowledge.oerDownloadBtn') || '');
+  const dlsLabel = hasCmsBlock ? pickLang(oerBlock.downloadsLabel, '') : (t('knowledge.oerDownloads') || '');
 
   const filtered = search
     ? oerData.filter(r => {
@@ -270,28 +301,17 @@ function tabOER(search) {
     </div>`
     : '';
 
-  return `
-    <div>
-      <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
-        <div>
-          <h2 class="text-xl font-bold text-eu-text mb-1">${blockTitle}</h2>
-          <p class="text-sm text-gray-600 max-w-2xl">${blockDesc}</p>
-        </div>
-        <div class="relative">
-          <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
-          <input id="oer-search" type="text" value="${search || ''}"
-            class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
-            placeholder="${searchPlh}" />
-        </div>
-      </div>
-      <div class="space-y-3">${rowsHtml}${emptyHtml}</div>
-      <div class="mt-6 text-center">
-        <a href="${vaUrl}" class="inline-flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline">
-          <i data-lucide="external-link" class="w-4 h-4"></i>${vaLabel}
-        </a>
-      </div>
-    </div>
-  `;
+  return rowsHtml + emptyHtml;
+}
+
+// ── OER partial update — only replaces #oer-grid, preserves search input focus ──
+
+function updateOerGrid() {
+  const search    = getState('knowledgeSearch') || '';
+  const container = document.getElementById('oer-grid');
+  if (!container) return;
+  container.innerHTML = renderOerGrid(search);
+  if (window.lucide) window.lucide.createIcons();
 }
 
 // ─── Tab 3: Casos de Transferencia ───────────────────────────────────────────
@@ -468,10 +488,10 @@ export function mount() {
     });
   });
 
-  // OER live search — re-render only on input
+  // OER search — partial update only (no full re-render, preserves focus while typing)
   document.getElementById('oer-search')?.addEventListener('input', e => {
     setState('knowledgeSearch', e.target.value);
-    rerender();
+    updateOerGrid();
   });
 }
 
