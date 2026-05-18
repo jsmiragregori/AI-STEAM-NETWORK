@@ -346,7 +346,7 @@ export function render() {
 
       <!-- Tabs + content -->
       <div class="max-w-7xl mx-auto px-6 py-8">
-        <div class="flex flex-wrap gap-1 border-b border-eu-border mb-8 overflow-x-auto">
+        <div class="flex flex-wrap gap-1 border-b border-eu-border mb-8">
           ${tabBar(activeTab)}
         </div>
         ${contentMap[activeTab] || ''}
