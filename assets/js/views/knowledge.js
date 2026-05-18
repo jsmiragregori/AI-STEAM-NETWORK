@@ -206,7 +206,7 @@ function tabOER(search) {
             placeholder="${searchPlh}" />
         </div>
       </div>
-      <div id="oer-grid" class="space-y-3">${renderOerGridContent(search)}</div>
+      <div id="oer-grid">${renderOerGridContent(search)}</div>
       <div class="mt-6 text-center">
         <a href="${vaUrl}" class="inline-flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline">
           <i data-lucide="external-link" class="w-4 h-4"></i>${vaLabel}
@@ -295,15 +295,17 @@ function renderOerGridContent(search) {
     const sectorName = getSectorName(rSectorId);
 
     return `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-4 flex items-center gap-4 hover:border-eu-blue transition-colors group">
-      <span class="text-2xl shrink-0">${rIcon}</span>
-      <div class="flex-1 min-w-0">
-        <div class="flex flex-wrap items-center gap-2 mb-1">
-          <h3 class="font-bold text-eu-text text-sm group-hover:text-eu-blue transition-colors">${rTitle}</h3>
-          <span class="text-xs font-bold px-1.5 py-0.5 rounded ${LEVEL_COLORS[rLevel] || 'bg-gray-100 text-gray-600'}">${rLevel}</span>
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col overflow-hidden hover:border-eu-blue transition-colors">
+      <div class="p-5 flex-1">
+        <div class="flex items-center justify-between mb-3 gap-2">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="text-2xl">${rIcon}</span>
+            <span class="text-xs font-bold uppercase px-2 py-0.5 rounded bg-eu-bg border border-eu-border text-gray-600">${rType}</span>
+          </div>
+          <span class="text-xs font-bold px-2 py-0.5 rounded ${LEVEL_COLORS[rLevel] || 'bg-gray-100 text-gray-600'}">${rLevel}</span>
         </div>
-        <div class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500">
-          <span>${rType}</span>
+        <h3 class="font-bold text-eu-text text-sm mb-2 leading-snug">${rTitle}</h3>
+        <div class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500 mb-3">
           <span>${t('knowledge.oerSector') || 'Sector:'} ${sectorName}</span>
           <span>${t('knowledge.oerAuthor') || 'Autor:'} ${r.author || ''}</span>
           ${rRoute ? `<span>${t('knowledge.oerRoute') || 'Ruta:'} ${rRoute}</span>` : ''}
@@ -313,10 +315,12 @@ function renderOerGridContent(search) {
           <span>🌐 ${r.lang || ''}</span>
         </div>
       </div>
-      <div class="text-right shrink-0">
-        <p class="text-lg font-extrabold text-eu-teal">${(r.downloads || 0).toLocaleString()}</p>
-        <p class="text-xs text-gray-500">${dlsLabel}</p>
-        <button class="mt-1 flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer bg-transparent border-none">
+      <div class="border-t border-eu-border p-3 flex items-center justify-between bg-eu-bg">
+        <div>
+          <p class="text-lg font-extrabold text-eu-teal leading-none">${(r.downloads || 0).toLocaleString()}</p>
+          <p class="text-xs text-gray-500">${dlsLabel}</p>
+        </div>
+        <button class="flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer bg-transparent border-none">
           <i data-lucide="download" class="w-3 h-3"></i>${dlLabel}
         </button>
       </div>
@@ -341,7 +345,7 @@ function renderOerGridContent(search) {
       ${pageSizeHtml}
     </div>
     ${paginated.length > 0 ? `
-      <div class="space-y-3 mb-8">${rowsHtml}</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">${rowsHtml}</div>
       ${paginationHtml}` : emptyHtml}`;
 }
 
