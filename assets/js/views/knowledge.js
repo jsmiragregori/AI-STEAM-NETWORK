@@ -251,7 +251,7 @@ function renderOerGridContent(search) {
 
   // ── Pagination ──
   const pageSizeOpts = hasCmsBlock && Array.isArray(oerBlock.pageSizeOptions)
-    ? oerBlock.pageSizeOptions : [5, 10, 20];
+    ? oerBlock.pageSizeOptions : [9, 18, 36];
   const showAllOpt  = hasCmsBlock ? (oerBlock.showAllOption !== false) : true;
   const showAllLbl  = hasCmsBlock ? pickLang(oerBlock.showAllLabel, 'Todos') : 'Todos';
   const emptyMsg    = hasCmsBlock ? pickLang(oerBlock.emptyMessage, '') : '';

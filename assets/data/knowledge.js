@@ -227,9 +227,9 @@ export const KNOWLEDGE_CONFIG = {
     },
     "viewAllUrl": "#",
     "pageSizeOptions": [
-      5,
-      10,
-      20
+      9,
+      18,
+      36
     ],
     "showAllOption": true,
     "showAllLabel": {
