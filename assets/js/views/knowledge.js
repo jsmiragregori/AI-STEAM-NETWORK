@@ -403,6 +403,14 @@ export function render() {
   const heroStats = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
   const notice = pickLang(heroBlock.notice, '');
 
+  const contentMap = {
+    flujo:      tabFlujo(),
+    oer:        tabOER(oerSearch),
+    casos:      tabCasos(),
+    evidencia:  tabEvidencia(),
+    plantillas: tabPlantillas(),
+  };
+
   return `
     <div>
       ${heroVisible ? `
