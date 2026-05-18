@@ -236,7 +236,10 @@ function renderOerGridContent(search) {
   const filtered = search
     ? oerData.filter(r => {
         const titleStr = hasCmsBlock ? pickLang(r.title, '') : (r.title || '');
-        const sectorStr = hasCmsBlock ? getSectorName(r.sectorId) : getSectorName(r.sector);
+        const sectorIds = hasCmsBlock
+          ? (Array.isArray(r.sectorIds) ? r.sectorIds : (r.sectorId ? [r.sectorId] : []))
+          : (r.sector ? [r.sector] : []);
+        const sectorStr = sectorIds.map(id => getSectorName(id)).join(' ');
         return titleStr.toLowerCase().includes(search.toLowerCase()) ||
                sectorStr.toLowerCase().includes(search.toLowerCase());
       })
@@ -281,11 +284,15 @@ function renderOerGridContent(search) {
     const rTypeId = hasCmsBlock ? r.typeId : r.type;
     const rType   = typeLabels[rTypeId] || rTypeId;
     const rIcon   = typeIcons[rTypeId] || '📄';
-    const rSectorId = hasCmsBlock ? r.sectorId : r.sector;
+    const rSectorIds = hasCmsBlock
+      ? (Array.isArray(r.sectorIds) ? r.sectorIds : (r.sectorId ? [r.sectorId] : []))
+      : (r.sector ? [r.sector] : []);
+    const rSectorsHtml = rSectorIds.map(sid => 
+      `<span class="text-xs font-semibold px-1.5 py-0.5 rounded ${SECTOR_COLORS[sid] || 'bg-gray-100 text-gray-600'}">${getSectorName(sid)}</span>`
+    ).join(' ');
     const rLevel  = r.level || '';
     const rRoute  = r.route || '';
     const rVal    = r.validationStatus || '';
-    const sectorName = getSectorName(rSectorId);
 
     return `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col overflow-hidden hover:border-eu-blue transition-colors">
@@ -298,8 +305,8 @@ function renderOerGridContent(search) {
           <span class="text-xs font-bold px-2 py-0.5 rounded ${LEVEL_COLORS[rLevel] || 'bg-gray-100 text-gray-600'}">${rLevel}</span>
         </div>
         <h3 class="font-bold text-eu-text text-sm mb-2 leading-snug">${rTitle}</h3>
+        <div class="flex flex-wrap gap-2 mb-1">${rSectorsHtml}</div>
         <div class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500 mb-3">
-          <span>${t('knowledge.oerSector') || 'Sector:'} ${sectorName}</span>
           <span>${t('knowledge.oerAuthor') || 'Autor:'} ${r.author || ''}</span>
           ${rRoute ? `<span>${t('knowledge.oerRoute') || 'Ruta:'} ${rRoute}</span>` : ''}
           ${rVal ? `<span class="text-eu-teal font-semibold">${t('knowledge.oerValidation') || 'Val:'} ${rVal}</span>` : ''}

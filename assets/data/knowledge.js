@@ -298,7 +298,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Guia d'Ètica en IA per a FP"
         },
         "typeId": "guia",
-        "sectorId": "nts",
+        "sectorIds": [
+          "nts"
+        ],
         "level": "FP",
         "license": "CC-BY-SA 4.0",
         "author": "CEICE / IF.E",
@@ -315,7 +317,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Manual de Bessons Digitals v2.1"
         },
         "typeId": "manual",
-        "sectorId": "mfg",
+        "sectorIds": [
+          "mfg"
+        ],
         "level": "Máster",
         "license": "CC-BY 4.0",
         "author": "INESC TEC / HSW",
@@ -332,7 +336,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Dataset Plagues Cítrics CV (10K imatges)"
         },
         "typeId": "dataset",
-        "sectorId": "agr",
+        "sectorIds": [
+          "agr"
+        ],
         "level": "Máster",
         "license": "CC-BY-NC 4.0",
         "author": "AVA-ASAJA / UVEG",
@@ -349,7 +355,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Plantilla Anàlisi de Biaix en Models d'IA"
         },
         "typeId": "plantilla",
-        "sectorId": "nts",
+        "sectorIds": [
+          "nts"
+        ],
         "level": "Todos",
         "license": "CC-BY-SA 4.0",
         "author": "COGN / LC",
@@ -366,7 +374,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Introducció a ML amb Python per a FP – Vídeo (12h)"
         },
         "typeId": "video",
-        "sectorId": "nts",
+        "sectorIds": [
+          "nts"
+        ],
         "level": "FP",
         "license": "CC-BY 4.0",
         "author": "UMU / CEICE",
@@ -383,7 +393,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Guia Reglament IA UE per a l'Administració"
         },
         "typeId": "guia",
-        "sectorId": "nts",
+        "sectorIds": [
+          "nts"
+        ],
         "level": "Docentes",
         "license": "CC-BY-SA 4.0",
         "author": "LC / CEICE",
@@ -400,7 +412,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Manual de NLP per a Anàlisi Clínica"
         },
         "typeId": "manual",
-        "sectorId": "nts",
+        "sectorIds": [
+          "nts"
+        ],
         "level": "Máster",
         "license": "CC-BY-NC-SA 4.0",
         "author": "Ud'A / UVEG",
@@ -417,7 +431,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Dataset Imatges Patrimoni Cultural (5K)"
         },
         "typeId": "dataset",
-        "sectorId": "cci",
+        "sectorIds": [
+          "cci"
+        ],
         "level": "Máster",
         "license": "CC-BY 4.0",
         "author": "LPGA / ESAD-GV",
