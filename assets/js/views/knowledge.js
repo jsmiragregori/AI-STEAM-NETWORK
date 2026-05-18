@@ -56,7 +56,7 @@ function statusBadge(status) {
 
 // ─── Tab bar ─────────────────────────────────────────────────────────────────
 
-function tabBar(activeTab, hiddenTabs = new Set()) {
+function tabBar(activeTab) {
   const labels = {
     flujo:      t('knowledge.tabFlow')      || 'Flujo',
     oer:        t('knowledge.tabOER')       || 'OER',
@@ -64,7 +64,7 @@ function tabBar(activeTab, hiddenTabs = new Set()) {
     evidencia:  t('knowledge.tabEvidence')  || 'Evidencias',
     plantillas: t('knowledge.tabTemplates') || 'Plantillas',
   };
-  return TABS.filter(id => !hiddenTabs.has(id)).map(id => `
+  return TABS.map(id => `
     <button data-know-tab="${id}" class="px-4 py-2.5 text-sm font-semibold border-b-2 -mb-px transition-colors cursor-pointer whitespace-nowrap ${
       activeTab === id
         ? 'border-eu-blue text-eu-blue'
@@ -398,22 +398,6 @@ export function render() {
   const oerData    = t('knowledge.oerResources') || [];
   const totalDl    = oerData.reduce((a, r) => a + (r.downloads || 0), 0).toLocaleString();
 
-  const cycleBlock = KNOWLEDGE_CONFIG?.transferCycleBlock;
-  const oerBlock   = KNOWLEDGE_CONFIG?.oerResourcesBlock;
-  const hiddenTabs = new Set();
-  if (cycleBlock && cycleBlock.visible === false && (!cycleBlock.platformsBlock || cycleBlock.platformsBlock.visible === false)) hiddenTabs.add('flujo');
-  if (oerBlock   && oerBlock.visible   === false) hiddenTabs.add('oer');
-
-  const visibleTab = hiddenTabs.has(activeTab) ? 'flujo' : activeTab;
-
-  const contentMap = {
-    flujo:      tabFlujo(),
-    oer:        tabOER(oerSearch),
-    casos:      tabCasos(),
-    evidencia:  tabEvidencia(),
-    plantillas: tabPlantillas(),
-  };
-
   const heroBlock = KNOWLEDGE_CONFIG?.heroBlock || {};
   const heroVisible = heroBlock.visible !== false;
   const heroStats = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
@@ -442,9 +426,9 @@ export function render() {
       <!-- Tabs + content -->
       <div class="max-w-7xl mx-auto px-6 py-8">
         <div class="flex flex-wrap gap-1 border-b border-eu-border mb-8">
-          ${tabBar(visibleTab, hiddenTabs)}
+          ${tabBar(activeTab)}
         </div>
-        ${contentMap[visibleTab] || ''}
+        ${contentMap[activeTab] || ''}
       </div>
     </div>
   `;
