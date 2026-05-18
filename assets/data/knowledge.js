@@ -303,7 +303,8 @@ export const KNOWLEDGE_CONFIG = {
           "cci"
         ],
         "levels": [
-          "FP"
+          "FP",
+          "Docentes"
         ],
         "license": "CC-BY-SA 4.0",
         "author": "CEICE / IF.E",
