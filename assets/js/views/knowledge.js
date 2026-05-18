@@ -189,8 +189,6 @@ function tabOER(search) {
   const blockTitle = hasCmsBlock ? pickLang(oerBlock.title, '') : (t('knowledge.oerTitle') || '');
   const blockDesc  = hasCmsBlock ? pickLang(oerBlock.description, '') : (t('knowledge.oerDesc') || '');
   const searchPlh  = hasCmsBlock ? pickLang(oerBlock.searchPlaceholder, '') : (t('knowledge.oerSearch') || '');
-  const vaLabel    = hasCmsBlock ? pickLang(oerBlock.viewAllLabel, '') : (t('knowledge.oerViewAll') || '');
-  const vaUrl      = hasCmsBlock ? (oerBlock.viewAllUrl || '#') : '#';
 
   return `
     <div>
@@ -207,11 +205,6 @@ function tabOER(search) {
         </div>
       </div>
       <div id="oer-grid">${renderOerGridContent(search)}</div>
-      <div class="mt-6 text-center">
-        <a href="${vaUrl}" class="inline-flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline">
-          <i data-lucide="external-link" class="w-4 h-4"></i>${vaLabel}
-        </a>
-      </div>
     </div>
   `;
 }

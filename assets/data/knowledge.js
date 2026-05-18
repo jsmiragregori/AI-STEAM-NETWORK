@@ -220,12 +220,6 @@ export const KNOWLEDGE_CONFIG = {
       "en": "downloads",
       "va": "descàrregues"
     },
-    "viewAllLabel": {
-      "es": "Ver todos los recursos en Aules",
-      "en": "View all resources in Aules",
-      "va": "Veure tots els recursos a Aules"
-    },
-    "viewAllUrl": "#",
     "pageSizeOptions": [
       9,
       18,
