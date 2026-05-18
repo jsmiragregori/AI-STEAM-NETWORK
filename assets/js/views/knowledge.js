@@ -75,41 +75,95 @@ function tabBar(activeTab) {
 
 // ─── Tab 1: Flujo de transferencia ───────────────────────────────────────────
 
-function tabFlujo() {
-  const flowSteps = t('knowledge.flowSteps') || [];
-  const stepsHtml = flowSteps.map((step, idx) => `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 relative">
-      <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${idx + 1}</div>
-      <span class="text-3xl block mb-3">${FLOW_ICONS[idx] || '🔹'}</span>
-      <h3 class="font-bold text-eu-text mb-2">${step.title || ''}</h3>
-      <p class="text-sm text-gray-600">${step.desc || ''}</p>
-    </div>
-  `).join('');
+const PLATFORM_COLORS = {
+  aules:     'border-eu-teal/30 text-eu-teal',
+  network:   'border-eu-blue/30 text-eu-blue',
+  consensue: 'border-eu-orange/30 text-eu-orange',
+};
 
-  return `
-    <div>
-      <h2 class="text-xl font-bold text-eu-text mb-2">${t('knowledge.flowTitle') || ''}</h2>
-      <p class="text-sm text-gray-600 mb-8 max-w-3xl">${t('knowledge.flowDesc') || ''}</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">${stepsHtml}</div>
-      <div class="bg-eu-bg border border-eu-border rounded-xl p-6">
-        <h3 class="font-bold text-eu-text mb-3">${t('knowledge.flowConnection') || ''}</h3>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
-          <div class="bg-white rounded-lg border border-eu-teal/30 p-4">
-            <p class="font-bold text-eu-teal mb-1">Aules (Moodle)</p>
-            <p class="text-gray-600 text-xs">${t('knowledge.aulesPlatform') || ''}</p>
-          </div>
-          <div class="bg-white rounded-lg border border-eu-blue/30 p-4">
-            <p class="font-bold text-eu-blue mb-1">AI-STEAM Network (CMS)</p>
-            <p class="text-gray-600 text-xs">${t('knowledge.networkPlatform') || ''}</p>
-          </div>
-          <div class="bg-white rounded-lg border border-eu-orange/30 p-4">
-            <p class="font-bold text-eu-orange mb-1">ConsensUE (Decidim)</p>
-            <p class="text-gray-600 text-xs">${t('knowledge.consensuePlatform') || ''}</p>
-          </div>
+function tabFlujo() {
+  const cycleBlock = KNOWLEDGE_CONFIG?.transferCycleBlock;
+  const hasCmsBlock = Boolean(cycleBlock);
+
+  // ── Bloque de steps (título + cards) — visible controla solo este bloque ──
+  const stepsVisible = !hasCmsBlock || cycleBlock.visible !== false;
+  let stepsSection = '';
+  if (stepsVisible) {
+    const sectionTitle = hasCmsBlock ? pickLang(cycleBlock.title, '') : (t('knowledge.flowTitle') || '');
+    const sectionDesc  = hasCmsBlock ? pickLang(cycleBlock.description, '') : (t('knowledge.flowDesc') || '');
+    let stepsHtml = '';
+    if (hasCmsBlock) {
+      // CMS activo: renderiza solo los steps visibles (puede ser array vacío)
+      stepsHtml = (cycleBlock.steps || []).map((step, idx) => `
+        <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 relative">
+          <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${idx + 1}</div>
+          <span class="text-3xl block mb-3">${step.icon || '🔹'}</span>
+          <h3 class="font-bold text-eu-text mb-2">${pickLang(step.title, '')}</h3>
+          <p class="text-sm text-gray-600">${pickLang(step.description, '')}</p>
         </div>
-      </div>
-    </div>
-  `;
+      `).join('');
+    } else {
+      // Legacy fallback (sin bloque CMS)
+      const flowSteps = t('knowledge.flowSteps') || [];
+      stepsHtml = flowSteps.map((step, idx) => `
+        <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 relative">
+          <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${idx + 1}</div>
+          <span class="text-3xl block mb-3">${FLOW_ICONS[idx] || '🔹'}</span>
+          <h3 class="font-bold text-eu-text mb-2">${step.title || ''}</h3>
+          <p class="text-sm text-gray-600">${step.desc || ''}</p>
+        </div>
+      `).join('');
+    }
+    stepsSection = `
+      <h2 class="text-xl font-bold text-eu-text mb-2">${sectionTitle}</h2>
+      <p class="text-sm text-gray-600 mb-8 max-w-3xl">${sectionDesc}</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">${stepsHtml}</div>`;
+  }
+
+  // ── Bloque de plataformas — platformsBlock.visible controla solo este bloque ──
+  const pb = hasCmsBlock ? cycleBlock.platformsBlock : null;
+  let platformsHtml = '';
+  if (!hasCmsBlock || pb?.visible !== false) {
+    const pbTitle = pb ? pickLang(pb.title, '') : (t('knowledge.flowConnection') || '');
+    let platformCards = '';
+    if (hasCmsBlock) {
+      // CMS activo: el loader ya filtró las plataformas con visible:false
+      platformCards = (pb?.platforms || []).map(p => {
+        const colorClass = PLATFORM_COLORS[p.id] || 'border-gray-200 text-gray-700';
+        const [borderCls, textCls] = colorClass.split(' ');
+        return `
+          <div class="bg-white rounded-lg border ${borderCls} p-4">
+            <p class="font-bold ${textCls} mb-1">${p.name || ''}</p>
+            <p class="text-gray-600 text-xs">${pickLang(p.description, '')}</p>
+          </div>`;
+      }).join('');
+    } else {
+      // Legacy fallback (sin bloque CMS)
+      platformCards = `
+        <div class="bg-white rounded-lg border border-eu-teal/30 p-4">
+          <p class="font-bold text-eu-teal mb-1">Aules (Moodle)</p>
+          <p class="text-gray-600 text-xs">${t('knowledge.aulesPlatform') || ''}</p>
+        </div>
+        <div class="bg-white rounded-lg border border-eu-blue/30 p-4">
+          <p class="font-bold text-eu-blue mb-1">AI-STEAM Network (CMS)</p>
+          <p class="text-gray-600 text-xs">${t('knowledge.networkPlatform') || ''}</p>
+        </div>
+        <div class="bg-white rounded-lg border border-eu-orange/30 p-4">
+          <p class="font-bold text-eu-orange mb-1">ConsensUE (Decidim)</p>
+          <p class="text-gray-600 text-xs">${t('knowledge.consensuePlatform') || ''}</p>
+        </div>`;
+    }
+    // Solo renderizar el contenedor si hay plataformas que mostrar
+    if (platformCards) {
+      platformsHtml = `
+        <div class="bg-eu-bg border border-eu-border rounded-xl p-6">
+          <h3 class="font-bold text-eu-text mb-3">${pbTitle}</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">${platformCards}</div>
+        </div>`;
+    }
+  }
+
+  return `<div>${stepsSection}${platformsHtml}</div>`;
 }
 
 // ─── Tab 2: OER y Recursos ───────────────────────────────────────────────────
