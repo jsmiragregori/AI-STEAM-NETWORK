@@ -10,9 +10,14 @@ const LEVEL_COLORS = {
   FP:       'bg-eu-yellow text-eu-purple',
   Máster:   'bg-purple-100 text-purple-800',
   Docentes: 'bg-eu-blue/10 text-eu-blue',
-  Todos:    'bg-gray-100 text-gray-600',
   'VET/FP': 'bg-eu-yellow text-eu-purple',
   Master:   'bg-purple-100 text-purple-800',
+};
+
+const LEVEL_LABELS = {
+  FP:       { es: 'FP', en: 'VET', va: 'FP' },
+  Máster:   { es: 'Máster', en: 'Master', va: 'Màster' },
+  Docentes: { es: 'Docentes', en: 'Teachers', va: 'Docents' },
 };
 
 const SECTOR_COLORS = {
@@ -290,7 +295,13 @@ function renderOerGridContent(search) {
     const rSectorsHtml = rSectorIds.map(sid => 
       `<span class="text-xs font-semibold px-1.5 py-0.5 rounded ${SECTOR_COLORS[sid] || 'bg-gray-100 text-gray-600'}">${getSectorName(sid)}</span>`
     ).join(' ');
-    const rLevel  = r.level || '';
+    const rLevels = hasCmsBlock
+      ? (Array.isArray(r.levels) ? r.levels : (r.level && r.level !== 'Todos' ? [r.level] : ['FP', 'Máster', 'Docentes']))
+      : (r.level && r.level !== 'Todos' ? [r.level] : ['FP', 'Máster', 'Docentes']);
+    const rLevelsHtml = rLevels.map(l => {
+      const label = LEVEL_LABELS[l] ? pickLang(LEVEL_LABELS[l], l) : l;
+      return `<span class="text-xs font-bold px-1.5 py-0.5 rounded ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-600'}">${label}</span>`;
+    }).join(' ');
     const rRoute  = r.route || '';
     const rVal    = r.validationStatus || '';
 
@@ -302,7 +313,7 @@ function renderOerGridContent(search) {
             <span class="text-2xl">${rIcon}</span>
             <span class="text-xs font-bold uppercase px-2 py-0.5 rounded bg-eu-bg border border-eu-border text-gray-600">${rType}</span>
           </div>
-          <span class="text-xs font-bold px-2 py-0.5 rounded ${LEVEL_COLORS[rLevel] || 'bg-gray-100 text-gray-600'}">${rLevel}</span>
+          <div class="flex flex-wrap gap-1">${rLevelsHtml}</div>
         </div>
         <h3 class="font-bold text-eu-text text-sm mb-2 leading-snug">${rTitle}</h3>
         <div class="flex flex-wrap gap-2 mb-1">${rSectorsHtml}</div>

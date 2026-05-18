@@ -299,9 +299,12 @@ export const KNOWLEDGE_CONFIG = {
         },
         "typeId": "guia",
         "sectorIds": [
-          "nts"
+          "nts",
+          "cci"
         ],
-        "level": "FP",
+        "levels": [
+          "FP"
+        ],
         "license": "CC-BY-SA 4.0",
         "author": "CEICE / IF.E",
         "date": "Mar 2026",
@@ -320,7 +323,9 @@ export const KNOWLEDGE_CONFIG = {
         "sectorIds": [
           "mfg"
         ],
-        "level": "Máster",
+        "levels": [
+          "Máster"
+        ],
         "license": "CC-BY 4.0",
         "author": "INESC TEC / HSW",
         "date": "Feb 2026",
@@ -339,7 +344,9 @@ export const KNOWLEDGE_CONFIG = {
         "sectorIds": [
           "agr"
         ],
-        "level": "Máster",
+        "levels": [
+          "Máster"
+        ],
         "license": "CC-BY-NC 4.0",
         "author": "AVA-ASAJA / UVEG",
         "date": "Ene 2026",
@@ -358,7 +365,11 @@ export const KNOWLEDGE_CONFIG = {
         "sectorIds": [
           "nts"
         ],
-        "level": "Todos",
+        "levels": [
+          "FP",
+          "Máster",
+          "Docentes"
+        ],
         "license": "CC-BY-SA 4.0",
         "author": "COGN / LC",
         "date": "Dic 2025",
@@ -377,7 +388,9 @@ export const KNOWLEDGE_CONFIG = {
         "sectorIds": [
           "nts"
         ],
-        "level": "FP",
+        "levels": [
+          "FP"
+        ],
         "license": "CC-BY 4.0",
         "author": "UMU / CEICE",
         "date": "Nov 2025",
@@ -396,7 +409,9 @@ export const KNOWLEDGE_CONFIG = {
         "sectorIds": [
           "nts"
         ],
-        "level": "Docentes",
+        "levels": [
+          "Docentes"
+        ],
         "license": "CC-BY-SA 4.0",
         "author": "LC / CEICE",
         "date": "Feb 2026",
@@ -415,7 +430,9 @@ export const KNOWLEDGE_CONFIG = {
         "sectorIds": [
           "nts"
         ],
-        "level": "Máster",
+        "levels": [
+          "Máster"
+        ],
         "license": "CC-BY-NC-SA 4.0",
         "author": "Ud'A / UVEG",
         "date": "Mar 2026",
@@ -434,7 +451,9 @@ export const KNOWLEDGE_CONFIG = {
         "sectorIds": [
           "cci"
         ],
-        "level": "Máster",
+        "levels": [
+          "Máster"
+        ],
         "license": "CC-BY 4.0",
         "author": "LPGA / ESAD-GV",
         "date": "Ene 2026",
