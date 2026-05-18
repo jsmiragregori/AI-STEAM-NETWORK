@@ -173,7 +173,17 @@ function tabOER(search) {
   const hasCmsBlock = Boolean(oerBlock);
 
   if (hasCmsBlock && oerBlock.visible === false) {
-    return '<div class="text-center py-10 text-gray-400 text-sm">Sección no disponible</div>';
+    const lang = getLang();
+    const noContentMsg = lang === 'en'
+      ? 'No content available in this section yet'
+      : lang === 'va'
+        ? 'Encara no hi ha contingut disponible en aquesta secció'
+        : 'Todavía no hay contenido disponible en esta sección';
+    return `
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
+      <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+      <p class="text-gray-500 text-base">${noContentMsg}</p>
+    </div>`;
   }
 
   const oerData    = hasCmsBlock ? oerBlock.resources : (t('knowledge.oerResources') || []);
@@ -249,7 +259,15 @@ function tabOER(search) {
   `}).join('');
 
   const emptyHtml = filtered.length === 0
-    ? '<p class="text-center py-10 text-gray-500 font-semibold">No se encontraron recursos</p>'
+    ? `
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
+      <i data-lucide="search" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+      <p class="text-gray-500 text-base">
+        ${getLang() === 'en' ? 'No resources found matching your search'
+          : getLang() === 'va' ? 'No s\'han trobat recursos amb la cerca'
+          : 'No se encontraron recursos'}
+      </p>
+    </div>`
     : '';
 
   return `
