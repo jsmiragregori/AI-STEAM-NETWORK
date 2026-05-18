@@ -307,9 +307,9 @@ function renderOerGridContent(search) {
         <h3 class="font-bold text-eu-text text-sm mb-2 leading-snug">${rTitle}</h3>
         <div class="flex flex-wrap gap-2 mb-1">${rSectorsHtml}</div>
         <div class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500 mb-3">
-          <span>${t('knowledge.oerAuthor') || 'Autor:'} ${r.author || ''}</span>
-          ${rRoute ? `<span>${t('knowledge.oerRoute') || 'Ruta:'} ${rRoute}</span>` : ''}
-          ${rVal ? `<span class="text-eu-teal font-semibold">${t('knowledge.oerValidation') || 'Val:'} ${rVal}</span>` : ''}
+          ${r.author ? `<span>${r.author}</span>` : ''}
+          ${rRoute ? `<span class="text-eu-orange font-semibold">${rRoute}</span>` : ''}
+          ${rVal ? `<span class="text-eu-teal font-semibold">${rVal}</span>` : ''}
           <span>${r.date || ''}</span>
           <span class="font-mono text-eu-teal">${r.license || ''}</span>
           <span>🌐 ${r.lang || ''}</span>
