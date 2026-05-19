@@ -86,6 +86,23 @@ const PLATFORM_COLORS = {
   consensue: 'border-eu-orange/30 text-eu-orange',
 };
 
+// ─── OER Filter Functions ────────────────────────────────────────────────────────
+
+function getOerFilters() {
+  const key = 'oerFilters';
+  const stored = localStorage.getItem(key);
+  if (!stored) return { typeId: null, sectors: [], levels: [] };
+  try {
+    return JSON.parse(stored);
+  } catch {
+    return { typeId: null, sectors: [], levels: [] };
+  }
+}
+
+function setOerFilters(filters) {
+  localStorage.setItem('oerFilters', JSON.stringify(filters));
+}
+
 function tabFlujo() {
   const cycleBlock = KNOWLEDGE_CONFIG?.transferCycleBlock;
   const hasCmsBlock = Boolean(cycleBlock);
@@ -195,6 +212,9 @@ function tabOER(search) {
   const blockDesc  = hasCmsBlock ? pickLang(oerBlock.description, '') : (t('knowledge.oerDesc') || '');
   const searchPlh  = hasCmsBlock ? pickLang(oerBlock.searchPlaceholder, '') : (t('knowledge.oerSearch') || '');
 
+  const activeFilters = getOerFilters();
+  const hasFilters = activeFilters.typeId || activeFilters.sectors.length > 0 || activeFilters.levels.length > 0;
+
   return `
     <div>
       <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
@@ -202,11 +222,14 @@ function tabOER(search) {
           <h2 class="text-xl font-bold text-eu-text mb-1">${blockTitle}</h2>
           <p class="text-sm text-gray-600 max-w-2xl">${blockDesc}</p>
         </div>
-        <div class="relative">
-          <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
-          <input id="oer-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
-            class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
-            placeholder="${searchPlh}" />
+        <div class="flex gap-3 items-center">
+          <div class="relative">
+            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
+            <input id="oer-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
+              class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
+              placeholder="${searchPlh}" />
+          </div>
+          ${hasFilters ? `<button id="oer-clear-filters" class="px-3 py-2 rounded border border-eu-blue text-eu-blue text-sm font-semibold cursor-pointer hover:bg-eu-blue/5 transition-colors" title="Limpiar filtros">Limpiar</button>` : ''}
         </div>
       </div>
       <div id="oer-grid">${renderOerGridContent(search)}</div>
@@ -238,7 +261,8 @@ function renderOerGridContent(search) {
   const dlLabel  = hasCmsBlock ? pickLang(oerBlock.downloadLabel, '') : (t('knowledge.oerDownloadBtn') || '');
   const dlsLabel = hasCmsBlock ? pickLang(oerBlock.downloadsLabel, '') : (t('knowledge.oerDownloads') || '');
 
-  const filtered = search
+  // Apply search filter
+  let filtered = search
     ? oerData.filter(r => {
         const titleStr = hasCmsBlock ? pickLang(r.title, '') : (r.title || '');
         const sectorIds = hasCmsBlock
@@ -249,6 +273,30 @@ function renderOerGridContent(search) {
                sectorStr.toLowerCase().includes(search.toLowerCase());
       })
     : oerData;
+
+  // Apply filter chips
+  const activeFilters = getOerFilters();
+  if (activeFilters.typeId || activeFilters.sectors.length > 0 || activeFilters.levels.length > 0) {
+    filtered = filtered.filter(r => {
+      // Type filter
+      if (activeFilters.typeId && r.typeId !== activeFilters.typeId) return false;
+      // Sector filter (OR logic: resource must have at least one selected sector)
+      if (activeFilters.sectors.length > 0) {
+        const rSectorIds = hasCmsBlock
+          ? (Array.isArray(r.sectorIds) ? r.sectorIds : (r.sectorId ? [r.sectorId] : []))
+          : (r.sector ? [r.sector] : []);
+        if (!activeFilters.sectors.some(s => rSectorIds.includes(s))) return false;
+      }
+      // Level filter (OR logic: resource must have at least one selected level)
+      if (activeFilters.levels.length > 0) {
+        const rLevels = hasCmsBlock
+          ? (Array.isArray(r.levels) ? r.levels : (r.level && r.level !== 'Todos' ? [r.level] : []))
+          : (r.level && r.level !== 'Todos' ? [r.level] : []);
+        if (!activeFilters.levels.some(l => rLevels.includes(l))) return false;
+      }
+      return true;
+    });
+  }
 
   // ── Pagination ──
   const pageSizeOpts = hasCmsBlock && Array.isArray(oerBlock.pageSizeOptions)
@@ -289,18 +337,21 @@ function renderOerGridContent(search) {
     const rTypeId = hasCmsBlock ? r.typeId : r.type;
     const rType   = typeLabels[rTypeId] || rTypeId;
     const rIcon   = typeIcons[rTypeId] || '📄';
+    const activeFilters = getOerFilters();
     const rSectorIds = hasCmsBlock
       ? (Array.isArray(r.sectorIds) ? r.sectorIds : (r.sectorId ? [r.sectorId] : []))
       : (r.sector ? [r.sector] : []);
-    const rSectorsHtml = rSectorIds.map(sid => 
-      `<span class="text-xs font-semibold px-1.5 py-0.5 rounded ${SECTOR_COLORS[sid] || 'bg-gray-100 text-gray-600'}">${getSectorName(sid)}</span>`
-    ).join(' ');
+    const rSectorsHtml = rSectorIds.map(sid => {
+      const isActive = activeFilters.sectors.includes(sid);
+      return `<button data-filter-sector="${sid}" class="text-xs font-semibold px-1.5 py-0.5 rounded cursor-pointer transition-all ${SECTOR_COLORS[sid] || 'bg-gray-100 text-gray-600'} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="Filtrar por sector">${getSectorName(sid)}</button>`;
+    }).join(' ');
     const rLevels = hasCmsBlock
       ? (Array.isArray(r.levels) ? r.levels : (r.level && r.level !== 'Todos' ? [r.level] : ['FP', 'Máster', 'Docentes']))
       : (r.level && r.level !== 'Todos' ? [r.level] : ['FP', 'Máster', 'Docentes']);
     const rLevelsHtml = rLevels.map(l => {
+      const isActive = activeFilters.levels.includes(l);
       const label = LEVEL_LABELS[l] ? pickLang(LEVEL_LABELS[l], l) : l;
-      return `<span class="text-xs font-bold px-1.5 py-0.5 rounded ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-600'}">${label}</span>`;
+      return `<button data-filter-level="${l}" class="text-xs font-bold px-1.5 py-0.5 rounded cursor-pointer transition-all ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-600'} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="Filtrar por nivel">${label}</button>`;
     }).join(' ');
     const rUrl    = r.url || '';
     const rLinkType = r.linkType || 'external';
@@ -320,7 +371,7 @@ function renderOerGridContent(search) {
         <div class="flex items-start justify-between mb-4 gap-3">
           <div class="flex items-center gap-3">
             <span class="text-3xl flex-shrink-0">${rIcon}</span>
-            <span class="text-sm font-bold uppercase px-2.5 py-1 rounded bg-eu-bg border border-eu-border text-gray-700 whitespace-nowrap">${rType}</span>
+            <button data-filter-type="${rTypeId}" class="text-sm font-bold uppercase px-2.5 py-1 rounded bg-eu-bg border border-eu-border text-gray-700 whitespace-nowrap cursor-pointer transition-all hover:border-eu-blue ${activeFilters.typeId === rTypeId ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="Filtrar por tipo">${rType}</button>
           </div>
           <div class="flex flex-wrap justify-end gap-1.5">${rLevelsHtml}</div>
         </div>
@@ -401,6 +452,7 @@ function updateOerGrid() {
   container.innerHTML = renderOerGridContent(search);
   if (window.lucide) window.lucide.createIcons();
   attachOerPaginationListeners();
+  attachOerFilterListeners();
 }
 
 function attachOerPaginationListeners() {
@@ -419,6 +471,62 @@ function attachOerPaginationListeners() {
   document.getElementById('oer-pag-next')?.addEventListener('click', () => {
     setState('oerPage', (getState('oerPage') || 0) + 1);
     updateOerGrid();
+  });
+}
+
+function attachOerFilterListeners() {
+  // Type filter
+  document.querySelectorAll('[data-filter-type]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const typeId = btn.dataset.filterType;
+      const filters = getOerFilters();
+      filters.typeId = filters.typeId === typeId ? null : typeId;
+      setOerFilters(filters);
+      setState('oerPage', 0);
+      updateOerGrid();
+    });
+  });
+
+  // Sector filter
+  document.querySelectorAll('[data-filter-sector]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const sectorId = btn.dataset.filterSector;
+      const filters = getOerFilters();
+      if (filters.sectors.includes(sectorId)) {
+        filters.sectors = filters.sectors.filter(s => s !== sectorId);
+      } else {
+        filters.sectors.push(sectorId);
+      }
+      setOerFilters(filters);
+      setState('oerPage', 0);
+      updateOerGrid();
+    });
+  });
+
+  // Level filter
+  document.querySelectorAll('[data-filter-level]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const level = btn.dataset.filterLevel;
+      const filters = getOerFilters();
+      if (filters.levels.includes(level)) {
+        filters.levels = filters.levels.filter(l => l !== level);
+      } else {
+        filters.levels.push(level);
+      }
+      setOerFilters(filters);
+      setState('oerPage', 0);
+      updateOerGrid();
+    });
+  });
+
+  // Clear filters button
+  document.getElementById('oer-clear-filters')?.addEventListener('click', () => {
+    setOerFilters({ typeId: null, sectors: [], levels: [] });
+    setState('oerPage', 0);
+    rerender();
   });
 }
 
@@ -605,6 +713,7 @@ export function mount() {
   });
 
   attachOerPaginationListeners();
+  attachOerFilterListeners();
 }
 
 function rerender() {
