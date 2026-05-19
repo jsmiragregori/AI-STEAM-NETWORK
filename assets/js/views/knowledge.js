@@ -119,6 +119,23 @@ function getStatusLabel(status) {
   return labels[status]?.[lang] || status;
 }
 
+function getOerLabel(key) {
+  const lang = getLang();
+  const labels = {
+    noAuthor: { es: 'Sin autor', en: 'No author', va: 'Sense autor' },
+    created: { es: 'Creado:', en: 'Created:', va: 'Creat:' },
+    duration: { es: 'Duración:', en: 'Duration:', va: 'Duració:' },
+    format: { es: 'Formato:', en: 'Format:', va: 'Format:' },
+    updated: { es: 'Actualizado:', en: 'Updated:', va: 'Actualitzat:' },
+    filterByStatus: { es: 'Filtrar por estado', en: 'Filter by status', va: 'Filtrar per estat' },
+    resource: { es: 'recurso', en: 'resource', va: 'recurs' },
+    resources: { es: 'recursos', en: 'resources', va: 'recursos' },
+    previous: { es: 'Anterior', en: 'Previous', va: 'Anterior' },
+    next: { es: 'Siguiente', en: 'Next', va: 'Següent' }
+  };
+  return labels[key]?.[lang] || key;
+}
+
 function tabFlujo() {
   const cycleBlock = KNOWLEDGE_CONFIG?.transferCycleBlock;
   const hasCmsBlock = Boolean(cycleBlock);
@@ -413,7 +430,7 @@ function renderOerGridContent(search) {
   const paginated  = isAll ? filtered : filtered.slice(safePage * pageSize, (safePage + 1) * pageSize);
 
   const count      = filtered.length;
-  const countLabel = `${count} recurso${count !== 1 ? 's' : ''}`;
+  const countLabel = `${count} ${count !== 1 ? getOerLabel('resources') : getOerLabel('resource')}`;
 
   const pageSizeHtml = `
     <div class="flex gap-1">
@@ -424,11 +441,11 @@ function renderOerGridContent(search) {
   const paginationHtml = !isAll && totalPages > 1 ? `
     <div class="flex gap-2 justify-center mt-6 items-center">
       <button id="oer-pag-prev" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
-        ← ${getLang() === 'en' ? 'Previous' : getLang() === 'va' ? 'Anterior' : 'Anterior'}
+        ← ${getOerLabel('previous')}
       </button>
       <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
       <button id="oer-pag-next" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
-        ${getLang() === 'en' ? 'Next' : getLang() === 'va' ? 'Següent' : 'Siguiente'} →
+        ${getOerLabel('next')} →
       </button>
     </div>` : '';
 
@@ -485,7 +502,7 @@ function renderOerGridContent(search) {
         <!-- Technical Metadata: Author, License, Language -->
         <div class="space-y-2 mb-4 pb-4 border-b border-eu-border">
           <div class="text-sm text-gray-700 font-semibold">
-            ${r.author ? `${r.author}` : '<span class="text-gray-400">Sin autor</span>'}
+            ${r.author ? `${r.author}` : `<span class="text-gray-400">${getOerLabel('noAuthor')}</span>`}
           </div>
           <div class="flex flex-wrap gap-3 text-sm text-gray-600">
             ${r.license ? `<span class="font-mono">${r.license}</span>` : ''}
@@ -495,10 +512,10 @@ function renderOerGridContent(search) {
 
         <!-- Resource Details: Date, Duration, Format, Updated -->
         <div class="space-y-2 text-sm text-gray-600">
-          ${r.date ? `<div><span class="text-gray-500">Creado:</span> ${r.date}</div>` : ''}
-          ${r.duration ? `<div><span class="text-gray-500">Duración:</span> ⏱️ ${r.duration}</div>` : ''}
-          ${r.format ? `<div><span class="text-gray-500">Formato:</span> ${r.format}</div>` : ''}
-          ${r.updatedAt ? `<div><span class="text-eu-blue font-semibold">✎ Actualizado:</span> ${r.updatedAt}</div>` : ''}
+          ${r.date ? `<div><span class="text-gray-500">${getOerLabel('created')}</span> ${r.date}</div>` : ''}
+          ${r.duration ? `<div><span class="text-gray-500">${getOerLabel('duration')}</span> ⏱️ ${r.duration}</div>` : ''}
+          ${r.format ? `<div><span class="text-gray-500">${getOerLabel('format')}</span> ${r.format}</div>` : ''}
+          ${r.updatedAt ? `<div><span class="text-eu-blue font-semibold">✎ ${getOerLabel('updated')}</span> ${r.updatedAt}</div>` : ''}
         </div>
       </div>
 
@@ -514,7 +531,7 @@ function renderOerGridContent(search) {
             };
             const badge = statusBadges[status] || statusBadges.validated;
             const isActive = activeFilters.validationStatus === status;
-            return `<button data-filter-status="${status}" class="inline-block text-sm font-bold px-3 py-1.5 rounded cursor-pointer transition-all ${badge.color} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="Filtrar por estado">${badge.icon} ${getStatusLabel(status)}</button>`;
+            return `<button data-filter-status="${status}" class="inline-block text-sm font-bold px-3 py-1.5 rounded cursor-pointer transition-all ${badge.color} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getOerLabel('filterByStatus')}">${badge.icon} ${getStatusLabel(status)}</button>`;
           })()}
         </div>
         ${linkButtonHtml}
