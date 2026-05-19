@@ -302,8 +302,15 @@ function renderOerGridContent(search) {
       const label = LEVEL_LABELS[l] ? pickLang(LEVEL_LABELS[l], l) : l;
       return `<span class="text-xs font-bold px-1.5 py-0.5 rounded ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-600'}">${label}</span>`;
     }).join(' ');
-    const rRoute  = r.route || '';
-    const rVal    = r.validationStatus || '';
+    const rUrl    = r.url || '';
+    const rLinkType = r.linkType || 'external';
+    const linkIcon = rLinkType === 'download' ? 'download' : 'external-link';
+    const linkText = rLinkType === 'download'
+      ? (getLang() === 'en' ? 'Download' : getLang() === 'va' ? 'Descarregar' : 'Descargar')
+      : (getLang() === 'en' ? 'View' : getLang() === 'va' ? 'Veure' : 'Ver');
+    const linkButtonHtml = rUrl
+      ? `<a href="${rUrl}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-3 h-3"></i>${linkText}</a>`
+      : `<span class="flex items-center gap-1 text-gray-400 text-xs font-bold"><i data-lucide="${linkIcon}" class="w-3 h-3"></i>${linkText}</span>`;
 
     return `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col overflow-hidden hover:border-eu-blue transition-colors">
@@ -319,8 +326,6 @@ function renderOerGridContent(search) {
         <div class="flex flex-wrap gap-2 mb-1">${rSectorsHtml}</div>
         <div class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500 mb-3">
           ${r.author ? `<span>${r.author}</span>` : ''}
-          ${rRoute ? `<span class="text-eu-orange font-semibold">${rRoute}</span>` : ''}
-          ${rVal ? `<span class="text-eu-teal font-semibold">${rVal}</span>` : ''}
           <span>${r.date || ''}</span>
           <span class="font-mono text-eu-teal">${r.license || ''}</span>
           <span>🌐 ${r.lang || ''}</span>
@@ -331,9 +336,7 @@ function renderOerGridContent(search) {
           <p class="text-lg font-extrabold text-eu-teal leading-none">${(r.downloads || 0).toLocaleString()}</p>
           <p class="text-xs text-gray-500">${dlsLabel}</p>
         </div>
-        <button class="flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer bg-transparent border-none">
-          <i data-lucide="download" class="w-3 h-3"></i>${dlLabel}
-        </button>
+        ${linkButtonHtml}
       </div>
     </div>
   `}).join('');
