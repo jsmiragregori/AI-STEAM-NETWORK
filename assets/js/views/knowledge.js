@@ -710,6 +710,21 @@ function formatMonthYear(dateStr) {
 function tabCasos(search) {
   const casesBlock = KNOWLEDGE_CONFIG?.successCasesBlock;
   const hasCmsBlock = Boolean(casesBlock);
+
+  if (hasCmsBlock && casesBlock.visible === false) {
+    const lang = getLang();
+    const noContentMsg = lang === 'en'
+      ? 'No content available in this section yet'
+      : lang === 'va'
+        ? 'Encara no hi ha contingut disponible en aquesta secció'
+        : 'Todavía no hay contenido disponible en esta sección';
+    return `
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
+      <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+      <p class="text-gray-500 text-base">${noContentMsg}</p>
+    </div>`;
+  }
+
   const casesData = hasCmsBlock ? casesBlock.cases : (t('knowledge.successCases') || []);
   const showVerificationStatus = hasCmsBlock ? (casesBlock.showVerificationStatus !== false) : false;
 
