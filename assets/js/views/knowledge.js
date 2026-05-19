@@ -314,28 +314,45 @@ function renderOerGridContent(search) {
       : `<span class="flex items-center gap-1 text-gray-400 text-xs font-bold"><i data-lucide="${linkIcon}" class="w-3 h-3"></i>${linkText}</span>`;
 
     return `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col overflow-hidden hover:border-eu-blue transition-colors">
-      <div class="p-5 flex-1">
-        <div class="flex items-center justify-between mb-3 gap-2">
-          <div class="flex items-center gap-2 flex-wrap">
-            <span class="text-2xl">${rIcon}</span>
-            <span class="text-xs font-bold uppercase px-2 py-0.5 rounded bg-eu-bg border border-eu-border text-gray-600">${rType}</span>
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col overflow-hidden hover:border-eu-blue hover:shadow-md transition-all cursor-pointer">
+      <div class="p-6 flex-1 flex flex-col">
+        <!-- Header: Type + Levels -->
+        <div class="flex items-start justify-between mb-4 gap-3">
+          <div class="flex items-center gap-3">
+            <span class="text-3xl flex-shrink-0">${rIcon}</span>
+            <span class="text-sm font-bold uppercase px-2.5 py-1 rounded bg-eu-bg border border-eu-border text-gray-700 whitespace-nowrap">${rType}</span>
           </div>
-          <div class="flex flex-wrap gap-1">${rLevelsHtml}</div>
+          <div class="flex flex-wrap justify-end gap-1.5">${rLevelsHtml}</div>
         </div>
-        <h3 class="font-bold text-eu-text text-sm mb-2 leading-snug">${rTitle}</h3>
-        <div class="flex flex-wrap gap-2 mb-1">${rSectorsHtml}</div>
-        <div class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500 mb-3">
-          ${r.author ? `<span>${r.author}</span>` : ''}
-          ${r.date ? `<span>${r.date}</span>` : ''}
-          ${r.duration ? `<span>⏱️ ${r.duration}</span>` : ''}
-          ${r.format ? `<span>${r.format}</span>` : ''}
-          ${r.updatedAt ? `<span class="text-eu-blue font-semibold">Actualizado: ${r.updatedAt}</span>` : ''}
-          <span class="font-mono text-eu-teal">${r.license || ''}</span>
-          <span>🌐 ${r.lang || ''}</span>
+
+        <!-- Title: Large and bold -->
+        <h3 class="font-bold text-eu-text text-base mb-4 leading-snug">${rTitle}</h3>
+
+        <!-- Sectors -->
+        <div class="flex flex-wrap gap-2 mb-4">${rSectorsHtml}</div>
+
+        <!-- Technical Metadata: Author, License, Language -->
+        <div class="space-y-2 mb-4 pb-4 border-b border-eu-border">
+          <div class="text-sm text-gray-700 font-semibold">
+            ${r.author ? `${r.author}` : '<span class="text-gray-400">Sin autor</span>'}
+          </div>
+          <div class="flex flex-wrap gap-3 text-sm text-gray-600">
+            ${r.license ? `<span class="font-mono">${r.license}</span>` : ''}
+            ${r.lang ? `<span>🌐 ${r.lang}</span>` : ''}
+          </div>
+        </div>
+
+        <!-- Resource Details: Date, Duration, Format, Updated -->
+        <div class="space-y-2 text-sm text-gray-600">
+          ${r.date ? `<div><span class="text-gray-500">Creado:</span> ${r.date}</div>` : ''}
+          ${r.duration ? `<div><span class="text-gray-500">Duración:</span> ⏱️ ${r.duration}</div>` : ''}
+          ${r.format ? `<div><span class="text-gray-500">Formato:</span> ${r.format}</div>` : ''}
+          ${r.updatedAt ? `<div><span class="text-eu-blue font-semibold">✎ Actualizado:</span> ${r.updatedAt}</div>` : ''}
         </div>
       </div>
-      <div class="border-t border-eu-border p-3 flex items-center justify-between bg-eu-bg">
+
+      <!-- Footer: Validation status + Link button -->
+      <div class="border-t border-eu-border p-4 flex items-center justify-between gap-3 bg-eu-bg">
         <div>
           ${(() => {
             const status = r.validationStatus || 'validated';
@@ -345,7 +362,7 @@ function renderOerGridContent(search) {
               draft: { icon: '📝', text: 'Borrador', color: 'bg-gray-100 text-gray-700' }
             };
             const badge = statusBadges[status] || statusBadges.validated;
-            return `<span class="inline-block text-xs font-bold px-2 py-1 rounded ${badge.color}">${badge.icon} ${badge.text}</span>`;
+            return `<span class="inline-block text-sm font-bold px-3 py-1.5 rounded ${badge.color}">${badge.icon} ${badge.text}</span>`;
           })()}
         </div>
         ${linkButtonHtml}
