@@ -324,7 +324,6 @@ function renderActiveFiltersDisplay() {
     <div class="flex flex-wrap items-center gap-2 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
       <span class="text-xs font-semibold text-gray-700">Filtros activos:</span>
       ${badges.join('')}
-      <span class="text-xs text-gray-500 italic ml-2">(se combinan con AND)</span>
     </div>
   `;
 }
