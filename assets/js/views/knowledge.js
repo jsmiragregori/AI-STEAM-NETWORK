@@ -482,59 +482,60 @@ function renderOerGridContent(search) {
       : `<span class="flex items-center gap-1 text-gray-400 text-xs font-bold"><i data-lucide="${linkIcon}" class="w-3 h-3"></i>${linkText}</span>`;
 
     return `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col overflow-hidden hover:border-eu-blue hover:shadow-md transition-all cursor-pointer">
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col overflow-hidden hover:border-eu-blue hover:shadow-md transition-all">
       <div class="p-6 flex-1 flex flex-col">
-        <!-- Header: Type + Levels -->
-        <div class="flex items-start justify-between mb-4 gap-3">
-          <div class="flex items-center gap-3">
-            <span class="text-3xl flex-shrink-0">${rIcon}</span>
-            <button data-filter-type="${rTypeId}" class="text-sm font-bold uppercase px-2.5 py-1 rounded bg-eu-bg border border-eu-border text-gray-700 whitespace-nowrap cursor-pointer transition-all hover:border-eu-blue ${activeFilters.typeId === rTypeId ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="Filtrar por tipo">${rType}</button>
-          </div>
-          <div class="flex flex-wrap justify-end gap-1.5">${rLevelsHtml}</div>
+        <!-- Header: Type + Levels (secondary, compact) -->
+        <div class="flex items-center gap-2 mb-3">
+          <span class="text-2xl flex-shrink-0">${rIcon}</span>
+          <span class="text-xs font-bold uppercase text-gray-600 tracking-wider">${rType}</span>
+          <div class="flex gap-1 ml-auto">${rLevelsHtml}</div>
         </div>
 
-        <!-- Title: Large and bold -->
-        <h3 class="font-bold text-eu-text text-base mb-4 leading-snug">${rTitle}</h3>
+        <!-- Title: Larger and more prominent -->
+        <h3 class="font-bold text-eu-text text-lg mb-5 leading-tight line-clamp-3">${rTitle}</h3>
 
-        <!-- Sectors -->
-        <div class="flex flex-wrap gap-2 mb-4">${rSectorsHtml}</div>
+        <!-- Sectors with visual separation -->
+        <div class="flex flex-wrap gap-2 mb-5 pb-4 border-b border-gray-200">${rSectorsHtml}</div>
 
-        <!-- Technical Metadata: Author, License, Language -->
-        <div class="space-y-2 mb-4 pb-4 border-b border-eu-border">
-          <div class="text-sm text-gray-700 font-semibold">
+        <!-- Author + Metadata (compact) -->
+        <div class="mb-4 pb-4 border-b border-gray-200">
+          <div class="text-sm text-gray-800 font-semibold mb-1">
             ${r.author ? `${r.author}` : `<span class="text-gray-400">${getOerLabel('noAuthor')}</span>`}
           </div>
-          <div class="flex flex-wrap gap-3 text-sm text-gray-600">
-            ${r.license ? `<span class="font-mono">${r.license}</span>` : ''}
+          <div class="text-xs text-gray-500 flex gap-2 flex-wrap">
+            ${r.license ? `<span>${r.license}</span>` : ''}
             ${r.lang ? `<span>🌐 ${r.lang}</span>` : ''}
           </div>
         </div>
 
-        <!-- Resource Details: Date, Duration, Format, Updated -->
-        <div class="space-y-2 text-sm text-gray-600">
-          ${r.date ? `<div><span class="text-gray-500">${getOerLabel('created')}</span> ${r.date}</div>` : ''}
-          ${r.duration ? `<div><span class="text-gray-500">${getOerLabel('duration')}</span> ⏱️ ${r.duration}</div>` : ''}
-          ${r.format ? `<div><span class="text-gray-500">${getOerLabel('format')}</span> ${r.format}</div>` : ''}
-          ${r.updatedAt ? `<div><span class="text-eu-blue font-semibold">✎ ${getOerLabel('updated')}</span> ${r.updatedAt}</div>` : ''}
+        <!-- Resource Details (compressed) -->
+        <div class="text-xs text-gray-500 space-y-1">
+          ${r.date || r.duration || r.format ? `<div>
+            ${r.date ? `${getOerLabel('created')}: ${r.date}` : ''}
+            ${r.duration ? `${r.date ? ' | ' : ''}⏱️ ${r.duration}` : ''}
+            ${r.format ? `${r.date || r.duration ? ' | ' : ''}📄 ${r.format}` : ''}
+          </div>` : ''}
+          ${r.updatedAt ? `<div class="text-eu-blue font-medium">✎ ${getOerLabel('updated')}: ${r.updatedAt}</div>` : ''}
         </div>
       </div>
 
-      <!-- Footer: Validation status + Link button -->
-      <div class="border-t border-eu-border p-4 flex items-center justify-between gap-3 bg-eu-bg">
-        <div>
+      <!-- Footer: Status badge (compact, clickable) + Link button (primary) -->
+      <div class="border-t border-gray-200 p-4 flex items-center justify-between gap-3 bg-white">
+        <button data-filter-status="${r.validationStatus || 'validated'}" class="text-xs font-semibold px-2.5 py-1 rounded whitespace-nowrap cursor-pointer transition-all ${(() => {
+          const status = r.validationStatus || 'validated';
+          const activeFilters = getOerFilters();
+          const baseColors = { validated: 'bg-green-100 text-green-800', pending: 'bg-amber-100 text-amber-800', draft: 'bg-gray-100 text-gray-700' };
+          const color = baseColors[status] || baseColors.validated;
+          const isActive = activeFilters.validationStatus === status;
+          return `${color} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}`;
+        })()}" title="${getOerLabel('filterByStatus')}">
           ${(() => {
             const status = r.validationStatus || 'validated';
-            const statusBadges = {
-              validated: { icon: '✓', color: 'bg-green-100 text-green-800' },
-              pending: { icon: '⏳', color: 'bg-amber-100 text-amber-800' },
-              draft: { icon: '📝', color: 'bg-gray-100 text-gray-700' }
-            };
-            const badge = statusBadges[status] || statusBadges.validated;
-            const isActive = activeFilters.validationStatus === status;
-            return `<button data-filter-status="${status}" class="inline-block text-sm font-bold px-3 py-1.5 rounded cursor-pointer transition-all ${badge.color} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getOerLabel('filterByStatus')}">${badge.icon} ${getStatusLabel(status)}</button>`;
+            const icons = { validated: '✓', pending: '⏳', draft: '📝' };
+            return `${icons[status] || '✓'} ${getStatusLabel(status)}`;
           })()}
-        </div>
-        ${linkButtonHtml}
+        </button>
+        ${rUrl ? `<a href="${rUrl}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-eu-blue text-white text-sm font-bold hover:bg-eu-blue/90 transition-colors"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-400 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</span>`}
       </div>
     </div>
   `}).join('');
@@ -956,11 +957,15 @@ function renderCasosGridContent(search) {
   const emptyHtml = filtered.length === 0
     ? `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
-      <i data-lucide="search" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+      <i data-lucide="${search ? 'search' : 'inbox'}" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
       <p class="text-gray-500 text-base">
-        ${getLang() === 'en' ? 'No cases found matching your search'
-          : getLang() === 'va' ? 'No s\'han trobat casos amb la cerca'
-          : 'No se encontraron casos'}
+        ${search
+          ? (getLang() === 'en' ? 'No cases found matching your search'
+            : getLang() === 'va' ? 'No s\'han trobat casos amb la cerca'
+            : 'No se encontraron casos')
+          : (getLang() === 'en' ? 'No transfer cases registered yet'
+            : getLang() === 'va' ? 'Aún no hi ha casos de transferència registrats'
+            : 'Aún no hay casos de transferencia registrados')}
       </p>
     </div>`
     : '';
