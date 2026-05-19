@@ -707,7 +707,7 @@ function formatMonthYear(dateStr) {
   return `${monthLabels[parseInt(month, 10)] || month} ${year}`;
 }
 
-function tabCasos() {
+function tabCasos(search) {
   const casesBlock = KNOWLEDGE_CONFIG?.successCasesBlock;
   const hasCmsBlock = Boolean(casesBlock);
   const casesData = hasCmsBlock ? casesBlock.cases : (t('knowledge.successCases') || []);
@@ -715,15 +715,82 @@ function tabCasos() {
 
   const blockTitle = hasCmsBlock ? pickLang(casesBlock.title, '') : (t('knowledge.casesTitle') || '');
   const blockDesc = hasCmsBlock ? pickLang(casesBlock.description, '') : (t('knowledge.casesDesc') || '');
+  const searchPlh = hasCmsBlock ? pickLang(casesBlock.searchPlaceholder, '') : (t('knowledge.casesSearch') || 'Buscar casos...');
+
+  return `
+    <div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-xl font-bold text-eu-text mb-1">${blockTitle}</h2>
+          <p class="text-base text-gray-600 max-w-2xl">${blockDesc}</p>
+        </div>
+        <div class="relative">
+          <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
+          <input id="casos-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
+            class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
+            placeholder="${searchPlh}" />
+        </div>
+      </div>
+      <div id="casos-grid">${renderCasosGridContent(search)}</div>
+    </div>
+  `;
+}
+
+function renderCasosGridContent(search) {
+  const casesBlock = KNOWLEDGE_CONFIG?.successCasesBlock;
+  const hasCmsBlock = Boolean(casesBlock);
+  const casesData = hasCmsBlock ? casesBlock.cases : (t('knowledge.successCases') || []);
+  const showVerificationStatus = hasCmsBlock ? (casesBlock.showVerificationStatus !== false) : false;
 
   // Sort by most recent date (revisionDate if present, else publishedAt)
-  const sortedCases = [...casesData].sort((a, b) => {
+  let sorted = [...casesData].sort((a, b) => {
     const dateA = a.revisionDate ? new Date(a.revisionDate).getTime() : new Date(a.publishedAt).getTime();
     const dateB = b.revisionDate ? new Date(b.revisionDate).getTime() : new Date(b.publishedAt).getTime();
     return dateB - dateA; // Descendente: más nuevas primero
   });
 
-  const casesHtml = sortedCases.map(c => {
+  // Apply search filter
+  let filtered = search
+    ? sorted.filter(c => {
+        const cTitle = hasCmsBlock ? pickLang(c.title, '') : (c.title || '');
+        const cOrg = c.organization || '';
+        const cSectorIds = Array.isArray(c.sectorIds) ? c.sectorIds : (c.sector ? [c.sector] : []);
+        const cSectorStr = cSectorIds.map(id => getSectorName(id)).join(' ');
+        return cTitle.toLowerCase().includes(search.toLowerCase()) ||
+               cOrg.toLowerCase().includes(search.toLowerCase()) ||
+               cSectorStr.toLowerCase().includes(search.toLowerCase());
+      })
+    : sorted;
+
+  // Pagination
+  const pageSize = getState('casosPageSize') || 6;
+  const isAll = pageSize === 'all';
+  const rawPage = getState('casosPage') || 0;
+  const totalPages = isAll ? 1 : Math.ceil(filtered.length / pageSize);
+  const safePage = Math.min(rawPage, Math.max(0, totalPages - 1));
+  const paginated = isAll ? filtered : filtered.slice(safePage * pageSize, (safePage + 1) * pageSize);
+
+  const count = filtered.length;
+  const countLabel = `${count} ${count !== 1 ? (getLang() === 'en' ? 'cases' : getLang() === 'va' ? 'casos' : 'casos') : (getLang() === 'en' ? 'case' : getLang() === 'va' ? 'cas' : 'caso')}`;
+
+  const pageSizeHtml = `
+    <div class="flex gap-1">
+      ${[6, 12, 24].map(n => `<button data-casos-pagesize="${n}" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${n}</button>`).join('')}
+      <button data-casos-pagesize="all" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">Todos</button>
+    </div>`;
+
+  const paginationHtml = !isAll && totalPages > 1 ? `
+    <div class="flex gap-2 justify-center mt-6 items-center">
+      <button id="casos-pag-prev" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
+        ← Anterior
+      </button>
+      <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
+      <button id="casos-pag-next" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
+        Siguiente →
+      </button>
+    </div>` : '';
+
+  const casesHtml = paginated.map(c => {
     const cTitle = hasCmsBlock ? pickLang(c.title, '') : (c.title || '');
     const cDescription = c.description ? pickLang(c.description, '') : null;
     const cResult = hasCmsBlock ? pickLang(c.result, '') : (c.result || '');
@@ -849,13 +916,54 @@ function tabCasos() {
   `;
   }).join('');
 
+  const emptyHtml = filtered.length === 0
+    ? `
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
+      <i data-lucide="search" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+      <p class="text-gray-500 text-base">
+        ${getLang() === 'en' ? 'No cases found matching your search'
+          : getLang() === 'va' ? 'No s\'han trobat casos amb la cerca'
+          : 'No se encontraron casos'}
+      </p>
+    </div>`
+    : '';
+
   return `
-    <div>
-      <h2 class="text-xl font-bold text-eu-text mb-2">${blockTitle}</h2>
-      <p class="text-base text-gray-600 mb-8 max-w-3xl">${blockDesc}</p>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">${casesHtml}</div>
+    <div class="flex items-center justify-between mb-4">
+      <span class="text-xs text-gray-500 font-medium">${countLabel}</span>
+      ${pageSizeHtml}
     </div>
-  `;
+    ${paginated.length > 0 ? `
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">${casesHtml}</div>
+      ${paginationHtml}` : emptyHtml}`;
+}
+
+function updateCasosGrid() {
+  const search = getState('casosSearch') || '';
+  const container = document.getElementById('casos-grid');
+  if (!container) return;
+  container.innerHTML = renderCasosGridContent(search);
+  if (window.lucide) window.lucide.createIcons();
+  attachCasosPaginationListeners();
+}
+
+function attachCasosPaginationListeners() {
+  document.querySelectorAll('[data-casos-pagesize]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sz = btn.dataset.casosPagesize === 'all' ? 'all' : parseInt(btn.dataset.casosPagesize, 10);
+      setState('casosPageSize', sz);
+      setState('casosPage', 0);
+      updateCasosGrid();
+    });
+  });
+  document.getElementById('casos-pag-prev')?.addEventListener('click', () => {
+    const cur = getState('casosPage') || 0;
+    if (cur > 0) { setState('casosPage', cur - 1); updateCasosGrid(); }
+  });
+  document.getElementById('casos-pag-next')?.addEventListener('click', () => {
+    setState('casosPage', (getState('casosPage') || 0) + 1);
+    updateCasosGrid();
+  });
 }
 
 // ─── Tab 4: Evidencias ───────────────────────────────────────────────────────
@@ -944,10 +1052,12 @@ export function render() {
   const heroStats = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
   const notice = pickLang(heroBlock.notice, '');
 
+  const casosSearch = getState('casosSearch') || '';
+
   const contentMap = {
     flujo:      tabFlujo(),
     oer:        tabOER(oerSearch),
-    casos:      tabCasos(),
+    casos:      tabCasos(casosSearch),
     evidencia:  tabEvidencia(),
     plantillas: tabPlantillas(),
   };
@@ -988,6 +1098,7 @@ export function mount() {
     btn.addEventListener('click', () => {
       setState('knowledgeTab', btn.dataset.knowTab);
       setState('oerPage', 0);
+      setState('casosPage', 0);
       rerender();
     });
   });
@@ -999,8 +1110,16 @@ export function mount() {
     updateOerGrid();
   });
 
+  // Casos search — partial update only
+  document.getElementById('casos-search')?.addEventListener('input', e => {
+    setState('casosSearch', e.target.value);
+    setState('casosPage', 0);
+    updateCasosGrid();
+  });
+
   attachOerPaginationListeners();
   attachOerFilterListeners();
+  attachCasosPaginationListeners();
 }
 
 function rerender() {
