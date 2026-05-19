@@ -292,6 +292,7 @@ export const KNOWLEDGE_CONFIG = {
       {
         "id": "o1",
         "visible": true,
+        "createdAt": "2026-05-10",
         "title": {
           "es": "Guía de Ética en IA para FP",
           "en": "Guide to AI Ethics for VET",
@@ -315,6 +316,7 @@ export const KNOWLEDGE_CONFIG = {
       {
         "id": "o2",
         "visible": true,
+        "createdAt": "2026-05-01",
         "title": {
           "es": "Manual de Gemelos Digitales v2.1",
           "en": "Digital Twins Manual v2.1",
@@ -336,6 +338,7 @@ export const KNOWLEDGE_CONFIG = {
       {
         "id": "o3",
         "visible": true,
+        "createdAt": "2026-04-20",
         "title": {
           "es": "Dataset Plagas Cítricos CV (10K imágenes)",
           "en": "Citrus Pest Dataset CV (10K images)",
@@ -357,6 +360,7 @@ export const KNOWLEDGE_CONFIG = {
       {
         "id": "o4",
         "visible": true,
+        "createdAt": "2026-04-05",
         "title": {
           "es": "Plantilla Análisis de Sesgo en Modelos de IA",
           "en": "AI Model Bias Analysis Template",
@@ -380,6 +384,7 @@ export const KNOWLEDGE_CONFIG = {
       {
         "id": "o5",
         "visible": true,
+        "createdAt": "2026-03-15",
         "title": {
           "es": "Introducción a ML con Python para FP – Vídeo (12h)",
           "en": "Introduction to ML with Python for VET – Video (12h)",
@@ -401,6 +406,7 @@ export const KNOWLEDGE_CONFIG = {
       {
         "id": "o6",
         "visible": true,
+        "createdAt": "2026-03-01",
         "title": {
           "es": "Guía Reglamento IA UE para la Administración",
           "en": "EU AI Act Guide for Public Administration",
@@ -422,6 +428,7 @@ export const KNOWLEDGE_CONFIG = {
       {
         "id": "o7",
         "visible": true,
+        "createdAt": "2026-02-14",
         "title": {
           "es": "Manual de NLP para Análisis Clínico",
           "en": "NLP Manual for Clinical Analysis",
@@ -443,6 +450,7 @@ export const KNOWLEDGE_CONFIG = {
       {
         "id": "o8",
         "visible": true,
+        "createdAt": "2026-01-15",
         "title": {
           "es": "Dataset Imágenes Patrimonio Cultural (5K)",
           "en": "Cultural Heritage Images Dataset (5K)",
