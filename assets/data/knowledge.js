@@ -1,5 +1,5 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR
-// Fuentes: content/knowledge/hero.yml, content/knowledge/transfer-cycle.yml, content/knowledge/oer-resources.yml
+// Fuentes: content/knowledge/hero.yml, content/knowledge/transfer-cycle.yml, content/knowledge/oer-resources.yml, content/knowledge/success-cases.yml
 
 export const KNOWLEDGE_CONFIG = {
   "heroBlock": {
@@ -513,6 +513,280 @@ export const KNOWLEDGE_CONFIG = {
         "url": "https://zenodo.org/records/cultural-heritage-images-5k",
         "linkType": "external",
         "external": true
+      }
+    ]
+  },
+  "successCasesBlock": {
+    "visible": true,
+    "title": {
+      "es": "Casos de Transferencia",
+      "en": "Transfer Cases",
+      "va": "Casos de Transferència"
+    },
+    "description": {
+      "es": "Experiencias reales de transferencia de conocimiento e innovación en la red AI-STEAM. Cada caso documenta un proyecto exitoso con verificación de impacto.",
+      "en": "Real experiences of knowledge and innovation transfer in the AI-STEAM network. Each case documents a successful project with impact verification.",
+      "va": "Experiències reals de transferència de coneixement i innovació a la xarxa AI-STEAM. Cada cas documenta un projecte exitós amb verificació d'impacte."
+    },
+    "showVerificationStatus": true,
+    "cases": [
+      {
+        "id": "c1",
+        "visible": true,
+        "title": {
+          "es": "Implementación de sistemas de visión artificial en manufactura",
+          "en": "Implementation of computer vision systems in manufacturing",
+          "va": "Implementació de sistemes de visió artificial en manufactura"
+        },
+        "description": {
+          "es": "Integración de tecnologías de IA en líneas de producción para inspección automatizada de componentes.",
+          "en": "Integration of AI technologies in production lines for automated component inspection.",
+          "va": "Integració de tecnologies d'IA en línies de producció per a inspecció automatitzada de components."
+        },
+        "result": {
+          "es": "Exitosa integración de sistemas de visión por computadora. Mejora del 35% en eficiencia de inspección. Formación de 45 estudiantes FP en competencias de IA aplicada.",
+          "en": "Successful integration of computer vision systems. 35% improvement in inspection efficiency. Training of 45 VET students in applied AI competencies.",
+          "va": "Integració exitosa de sistemes de visió per computadora. Millora del 35% en eficiència d'inspecció. Formació de 45 estudiants de FP en competències d'IA aplicada."
+        },
+        "sectorIds": [
+          "mfg",
+          "nts"
+        ],
+        "levels": [
+          "FP",
+          "Docentes"
+        ],
+        "publishedAt": "2025-05-10",
+        "date": "May 2025",
+        "revisionDate": "2026-05-15",
+        "verificationStatus": "verified",
+        "license": "CC-BY-SA 4.0",
+        "organization": "Centro de Innovación Tecnológica",
+        "impact": {
+          "es": "45 estudiantes FP capacitados, 35% mejora en velocidad de inspección, 3 centros educativos implementan el sistema",
+          "en": "45 VET students trained, 35% improvement in inspection speed, 3 educational centers implement the system",
+          "va": "45 estudiants de FP capacitats, 35% millora en velocitat d'inspecció, 3 centres educatius implementen el sistema"
+        },
+        "documentation": {
+          "url": "https://zenodo.org/records/ejemplo-vision-artificial",
+          "license": "CC-BY-SA 4.0",
+          "externalLink": true
+        },
+        "additionalUrl": {
+          "label": {
+            "es": "Guía técnica y dataset",
+            "en": "Technical guide and dataset",
+            "va": "Guia tècnica i dataset"
+          },
+          "url": "https://github.com/ai-steam/vision-systems",
+          "externalLink": true
+        },
+        "evidence": {
+          "es": "Vídeo de implementación, informe de resultados, testimonios de estudiantes y empresas participantes",
+          "en": "Implementation video, results report, testimonials from students and participating companies",
+          "va": "Vídeo d'implementació, informe de resultats, testimonis d'estudiants i empreses participants"
+        }
+      },
+      {
+        "id": "c2",
+        "visible": true,
+        "title": {
+          "es": "Transformación digital de cadena de suministro agroalimentaria",
+          "en": "Digital transformation of agri-food supply chain",
+          "va": "Transformació digital de cadena de subministrament agroalimentària"
+        },
+        "description": {
+          "es": "Implementación de trazabilidad blockchain y sistemas IoT para mejorar sostenibilidad y seguridad alimentaria.",
+          "en": "Implementation of blockchain traceability and IoT systems to improve sustainability and food safety.",
+          "va": "Implementació de traçabilitat blockchain i sistemes IoT per a millorar sostenibilitat i seguretat alimentària."
+        },
+        "result": {
+          "es": "Sistema de trazabilidad blockchain operacional en 22 productores. Certificación ISO 27001 lograda. Formación de 12 técnicos especialistas. Aumento de 28% en valor agregado de productos.",
+          "en": "Blockchain traceability system operational in 22 producers. ISO 27001 certification achieved. Training of 12 specialist technicians. 28% increase in product added value.",
+          "va": "Sistema de traçabilitat blockchain operacional en 22 productors. Certificació ISO 27001 aconseguida. Formació de 12 tècnics especialistes. Augment de 28% en valor afegit de productes."
+        },
+        "sectorIds": [
+          "agr"
+        ],
+        "levels": [
+          "Máster",
+          "Docentes"
+        ],
+        "publishedAt": "2025-06-20",
+        "date": "Jun 2025",
+        "revisionDate": "2026-04-10",
+        "verificationStatus": "verified",
+        "license": "CC-BY 4.0",
+        "organization": "Asociación de Productores Agrícolas Valencianos",
+        "impact": {
+          "es": "22 productores adoptaron la solución, 12 profesionales especializados, 28% incremento en valor de exportación",
+          "en": "22 producers adopted the solution, 12 specialized professionals, 28% increase in export value",
+          "va": "22 productors van adoptar la solució, 12 professionals especialitzats, 28% increment en valor d'exportació"
+        },
+        "documentation": {
+          "url": "https://oert.org/agri-blockchain-case-study",
+          "license": "CC-BY 4.0",
+          "externalLink": true
+        },
+        "evidence": {
+          "es": "Certificado ISO 27001, reportaje de prensa, casos de éxito de productores participantes",
+          "en": "ISO 27001 certificate, press coverage, success stories from participating producers",
+          "va": "Certificat ISO 27001, reportatge de premsa, casos d'èxit de productors participants"
+        }
+      },
+      {
+        "id": "c3",
+        "visible": true,
+        "title": {
+          "es": "Formación de docentes en energías renovables y sostenibilidad",
+          "en": "Teacher training in renewable energy and sustainability",
+          "va": "Formació de docents en energies renovables i sostenibilitat"
+        },
+        "description": {
+          "es": "Diseño de materiales didácticos y capacitación de educadores en energías limpias para integración en curriculum.",
+          "en": "Design of teaching materials and educator training in clean energy for curriculum integration.",
+          "va": "Disseny de materials didàctics i capacitació d'educadors en energies netes per a integració en currículum."
+        },
+        "result": {
+          "es": "8 unidades didácticas desarrolladas y validadas. 35 docentes capacitados en 18 centros educativos. Impacto estimado en más de 900 estudiantes. Recursos publicados bajo licencia abierta.",
+          "en": "8 validated teaching units developed. 35 teachers trained in 18 educational centers. Estimated impact on over 900 students. Resources published under open license.",
+          "va": "8 unitats didàctiques desenvolupades i validades. 35 docents capacitats en 18 centres educatius. Impacte estimat en més de 900 estudiants. Recursos publicats sota llicència oberta."
+        },
+        "sectorIds": [
+          "ene",
+          "nts"
+        ],
+        "levels": [
+          "Docentes",
+          "FP"
+        ],
+        "publishedAt": "2026-01-15",
+        "date": "Ene 2026",
+        "revisionDate": "2026-05-18",
+        "verificationStatus": "verified",
+        "license": "CC-BY-SA 4.0",
+        "organization": "Instituto de Energías Renovables",
+        "impact": {
+          "es": "35 docentes formados, 18 centros educativos, alcance de 900+ estudiantes, 8 recursos educativos abiertos",
+          "en": "35 teachers trained, 18 educational centers, reach of 900+ students, 8 open educational resources",
+          "va": "35 docents formats, 18 centres educatius, assoliment de més de 900 estudiants, 8 recursos educatius oberts"
+        },
+        "mainLink": {
+          "url": "/knowledge/cases/c3"
+        },
+        "documentation": {
+          "url": "https://oert.org/renewable-energy-curriculum",
+          "license": "CC-BY-SA 4.0",
+          "externalLink": true
+        },
+        "additionalUrl": {
+          "label": {
+            "es": "Manual de energías renovables para educadores",
+            "en": "Renewable energy manual for educators",
+            "va": "Manual d'energies renovables per a educadors"
+          },
+          "url": "https://zenodo.org/records/renewable-energy-manual",
+          "externalLink": true
+        },
+        "evidence": {
+          "es": "Evaluación de docentes (4.8/5), testimonios de estudiantes, análisis de impacto educativo",
+          "en": "Teacher evaluation (4.8/5), student testimonials, educational impact analysis",
+          "va": "Avaluació de docents (4.8/5), testimonis d'estudiants, anàlisi d'impacte educatiu"
+        }
+      },
+      {
+        "id": "c4",
+        "visible": true,
+        "title": {
+          "es": "Estrategia omnichannel para comercio electrónico en turismo",
+          "en": "Omnichannel strategy for tourism e-commerce",
+          "va": "Estratègia omnichannel per a comerç electrònic en turisme"
+        },
+        "result": {
+          "es": "Definición e implementación de estrategia omnichannel. Aumento de 45% en conversiones online. Formación de 8 profesionales especialistas. Adopción por 22 empresas del sector turístico.",
+          "en": "Definition and implementation of omnichannel strategy. 45% increase in online conversions. Training of 8 specialist professionals. Adoption by 22 tourism sector companies.",
+          "va": "Definició e implementació d'estratègia omnichannel. Augment del 45% en conversions en línia. Formació de 8 professionals especialistes. Adopció per part de 22 empreses del sector turístic."
+        },
+        "sectorIds": [
+          "cci"
+        ],
+        "levels": [
+          "Máster"
+        ],
+        "publishedAt": "2025-09-20",
+        "date": "Sep 2025",
+        "revisionDate": "2026-03-05",
+        "verificationStatus": "unverified",
+        "license": "CC-BY 4.0",
+        "organization": "Asociación de Empresas Turísticas Valencianas",
+        "impact": {
+          "es": "22 empresas turísticas, 8 especialistas formados, 45% incremento en conversiones, modelo replicable",
+          "en": "22 tourism companies, 8 trained specialists, 45% increase in conversions, replicable model",
+          "va": "22 empreses turístiques, 8 especialistes formats, 45% increment en conversions, model replicable"
+        },
+        "documentation": {
+          "url": "https://example.com/omnichannel-strategy-report",
+          "license": "CC-BY 4.0",
+          "externalLink": true
+        },
+        "evidence": {
+          "es": "Dashboard de métricas, casos de éxito empresariales, informe de ROI",
+          "en": "Metrics dashboard, company success stories, ROI report",
+          "va": "Dashboard de mètriques, casos d'èxit empresarials, informe de ROI"
+        }
+      },
+      {
+        "id": "c5",
+        "visible": true,
+        "title": {
+          "es": "Programas de inclusión digital para colectivos vulnerables",
+          "en": "Digital inclusion programs for vulnerable groups",
+          "va": "Programes d'inclusió digital per a col·lectius vulnerables"
+        },
+        "description": {
+          "es": "Diseño e implementación de programas de capacitación en competencias digitales básicas para personas en riesgo de exclusión.",
+          "en": "Design and implementation of training programs in basic digital competencies for people at risk of exclusion.",
+          "va": "Disseny e implementació de programes de capacitació en competències digitals bàsiques per a persones en risc d'exclusió."
+        },
+        "result": {
+          "es": "5 cursos de competencias digitales diseñados e implementados. 150 participantes formados de colectivos vulnerables. Tasa de inserción laboral del 62% en 6 meses. Colaboración con 8 centros sociales y ONG.",
+          "en": "5 digital competency courses designed and implemented. 150 participants trained from vulnerable groups. 62% employment insertion rate within 6 months. Partnership with 8 social centers and NGOs.",
+          "va": "5 cursos de competències digitals dissenyats e implementats. 150 participants formats de col·lectius vulnerables. Taxa d'inserció laboral del 62% en 6 mesos. Col·laboració amb 8 centres socials i ONG."
+        },
+        "sectorIds": [
+          "nts"
+        ],
+        "levels": [
+          "Docentes",
+          "FP"
+        ],
+        "publishedAt": "2026-02-14",
+        "date": "Feb 2026",
+        "verificationStatus": "verified",
+        "license": "CC-BY-SA 4.0",
+        "organization": "Fundación para la Inclusión Social",
+        "impact": {
+          "es": "150 personas formadas, 62% inserción laboral, 8 entidades colaboradoras, impacto social comprobado",
+          "en": "150 people trained, 62% employment insertion, 8 collaborating organizations, verified social impact",
+          "va": "150 persones formats, 62% inserció laboral, 8 entitats col·laboradores, impacte social comprovat"
+        },
+        "mainLink": {
+          "url": "/knowledge/cases/c5"
+        },
+        "additionalUrl": {
+          "label": {
+            "es": "Informe de impacto social",
+            "en": "Social impact report",
+            "va": "Informe d'impacte social"
+          },
+          "url": "https://zenodo.org/records/digital-inclusion-impact",
+          "externalLink": true
+        },
+        "evidence": {
+          "es": "Seguimiento de inserción laboral, testimoni de beneficiarios, evaluación de competencias antes/después",
+          "en": "Employment insertion tracking, beneficiary testimonials, pre/post competency assessment",
+          "va": "Seguiment d'inserció laboral, testimoni de beneficiaris, avaluació de competències abans/després"
+        }
       }
     ]
   }

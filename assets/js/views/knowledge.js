@@ -694,48 +694,149 @@ function attachOerFilterListeners() {
 
 // ─── Tab 3: Casos de Transferencia ───────────────────────────────────────────
 
+function formatMonthYear(dateStr) {
+  if (!dateStr) return '';
+  const [year, month] = dateStr.split('-');
+  const lang = getLang();
+  const months = {
+    es: ['', 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+    en: ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    va: ['', 'Gen', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Des']
+  };
+  const monthLabels = months[lang] || months.es;
+  return `${monthLabels[parseInt(month, 10)] || month} ${year}`;
+}
+
 function tabCasos() {
   const casesBlock = KNOWLEDGE_CONFIG?.successCasesBlock;
   const hasCmsBlock = Boolean(casesBlock);
   const casesData = hasCmsBlock ? casesBlock.cases : (t('knowledge.successCases') || []);
+  const showVerificationStatus = hasCmsBlock ? (casesBlock.showVerificationStatus !== false) : false;
 
   const blockTitle = hasCmsBlock ? pickLang(casesBlock.title, '') : (t('knowledge.casesTitle') || '');
   const blockDesc = hasCmsBlock ? pickLang(casesBlock.description, '') : (t('knowledge.casesDesc') || '');
-  const routeLabel = hasCmsBlock ? pickLang(casesBlock.routeLabel, 'Ruta:') : (t('knowledge.casesRoute') || 'Ruta:');
-  const solvedLabel = hasCmsBlock ? pickLang(casesBlock.solvedLabel, '') : (t('knowledge.casesSolved') || '');
-  const evidenceLabel = hasCmsBlock ? pickLang(casesBlock.evidenceLabel, 'Evidencia:') : (t('knowledge.casesEvidence') || 'Evidencia:');
-  const viewFullLabel = hasCmsBlock ? pickLang(casesBlock.viewFullButton, '') : (t('knowledge.casesViewFull') || '');
-  const downloadLabel = hasCmsBlock ? pickLang(casesBlock.downloadButton, '') : (t('knowledge.casesDownloadResources') || '');
 
   const casesHtml = casesData.map(c => {
     const cTitle = hasCmsBlock ? pickLang(c.title, '') : (c.title || '');
+    const cDescription = c.description ? pickLang(c.description, '') : null;
     const cResult = hasCmsBlock ? pickLang(c.result, '') : (c.result || '');
-    const cRoute = c.route ? pickLang(c.route, '') : null;
+    const cOrg = c.organization || '';
+    const cLicense = c.license || '';
+
+    // Sectores: múltiples
+    const cSectorIds = Array.isArray(c.sectorIds) ? c.sectorIds : (c.sector ? [c.sector] : []);
+    const cSectorsHtml = cSectorIds.map(sid => {
+      return `<button class="text-sm font-semibold px-2.5 py-1 rounded cursor-pointer transition-all ${SECTOR_COLORS[sid] || 'bg-gray-100 text-gray-600'}">${getSectorName(sid)}</button>`;
+    }).join(' ');
+
+    // Niveles: múltiples
+    const cLevels = Array.isArray(c.levels) ? c.levels : (c.level ? [c.level] : []);
+    const cLevelsHtml = cLevels.map(l => {
+      const label = LEVEL_LABELS[l] ? pickLang(LEVEL_LABELS[l], l) : l;
+      return `<span class="text-sm font-bold px-2.5 py-1 rounded ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-600'}">${label}</span>`;
+    }).join(' ');
+
+    // Fecha publicación
+    const cPublishedAt = c.publishedAt ? formatMonthYear(c.publishedAt) : '';
+    const cRevisionDate = c.revisionDate ? formatMonthYear(c.revisionDate) : null;
+
+    // Campos opcionales
+    const cImpact = c.impact ? pickLang(c.impact, '') : null;
+    const cEvidence = c.evidence ? pickLang(c.evidence, '') : null;
+    const cMainLink = c.mainLink ? c.mainLink : null;
+    const cDocumentation = c.documentation ? c.documentation : null;
+    const cAdditionalUrl = c.additionalUrl ? c.additionalUrl : null;
+
+    // Verification status badge
+    const verificationStatusHtml = showVerificationStatus ? `
+      <div>
+        <span class="text-sm font-bold px-3 py-1.5 rounded ${c.verificationStatus === 'verified' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'}">
+          ${c.verificationStatus === 'verified' ? '✓ Verificado' : '⏳ Pendiente'}
+        </span>
+      </div>
+    ` : '';
 
     return `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 hover:border-eu-blue transition-colors">
-      <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
-        <div>
-          <h3 class="font-bold text-eu-text text-base mb-0.5">${cTitle}</h3>
-          <p class="text-sm text-gray-500">${c.org || ''} · <span class="text-eu-teal font-semibold">${getSectorName(c.sector)}</span></p>
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm hover:shadow-md hover:border-eu-blue transition-all overflow-hidden flex flex-col">
+      <!-- Header: Title + Org + Status Badge -->
+      <div class="border-b border-eu-border p-6 pb-4">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
+          <div class="flex-1">
+            <h3 class="text-lg font-bold text-eu-text mb-1">${cTitle}</h3>
+            <p class="text-base text-gray-600">${cOrg}</p>
+          </div>
+          ${verificationStatusHtml}
         </div>
+
+        <!-- Sectors and Levels -->
         <div class="flex flex-wrap gap-2">
-          <span class="text-xs font-bold px-2 py-0.5 rounded ${LEVEL_COLORS[c.level] || 'bg-gray-100 text-gray-600'}">${c.level || ''}</span>
-          <span class="text-xs bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded">${solvedLabel}</span>
-          <span class="text-xs bg-eu-bg border border-eu-border px-2 py-0.5 rounded text-gray-600 font-semibold">${c.year || ''}</span>
+          <div class="flex flex-wrap gap-1.5">${cSectorsHtml}</div>
+          <div class="flex flex-wrap gap-1.5">${cLevelsHtml}</div>
         </div>
       </div>
-      ${cRoute ? `<p class="text-xs text-eu-orange font-semibold mb-2">${routeLabel} ${cRoute}</p>` : ''}
-      <p class="text-sm text-gray-700 mb-3">${cResult}</p>
-      ${c.oer ? `<div class="flex items-center gap-2 text-xs mb-3"><i data-lucide="book-open" class="w-3.5 h-3.5 text-eu-teal"></i><span class="text-eu-teal font-semibold">${c.oer}</span></div>` : ''}
-      ${c.evidence ? `<p class="text-xs text-gray-500 italic mb-3">${evidenceLabel} ${c.evidence}</p>` : ''}
-      <div class="mt-3 flex gap-3">
-        <button class="flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer bg-transparent border-none">
-          <i data-lucide="file-text" class="w-3 h-3"></i>${viewFullLabel}
-        </button>
-        <button class="flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer bg-transparent border-none">
-          <i data-lucide="download" class="w-3 h-3"></i>${downloadLabel}
-        </button>
+
+      <!-- Main Content -->
+      <div class="p-6 flex-1 flex flex-col space-y-4">
+        <!-- Description (optional) -->
+        ${cDescription ? `<p class="text-base text-gray-700">${cDescription}</p>` : ''}
+
+        <!-- Result -->
+        <div>
+          <p class="text-base text-gray-700 leading-relaxed">${cResult}</p>
+        </div>
+
+        <!-- Impact (optional) -->
+        ${cImpact ? `
+        <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
+          <p class="text-sm font-semibold text-blue-900 mb-1">📊 Impacto</p>
+          <p class="text-base text-blue-800">${cImpact}</p>
+        </div>
+        ` : ''}
+
+        <!-- Evidence (optional) -->
+        ${cEvidence ? `
+        <div class="bg-purple-50 rounded-lg p-4 border border-purple-100">
+          <p class="text-sm font-semibold text-purple-900 mb-1">📋 Evidencias</p>
+          <p class="text-base text-purple-800">${cEvidence}</p>
+        </div>
+        ` : ''}
+      </div>
+
+      <!-- Technical Metadata -->
+      <div class="border-t border-eu-border px-6 py-4 bg-eu-bg space-y-2 text-sm">
+        <div class="flex items-center justify-between">
+          <span class="text-gray-600">Publicado:</span>
+          <span class="font-semibold text-gray-800">${cPublishedAt}</span>
+        </div>
+        ${cRevisionDate ? `
+        <div class="flex items-center justify-between">
+          <span class="text-gray-600">Revisado:</span>
+          <span class="font-semibold text-gray-800">${cRevisionDate}</span>
+        </div>
+        ` : ''}
+        <div class="flex items-center justify-between">
+          <span class="text-gray-600">Licencia:</span>
+          <span class="font-semibold text-gray-800">${cLicense}</span>
+        </div>
+      </div>
+
+      <!-- Footer: Links -->
+      <div class="border-t border-eu-border p-6 flex flex-wrap gap-3">
+        ${cMainLink ? `
+        <a href="${cMainLink.url}" class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>Ver caso completo
+        </a>
+        ` : ''}
+        ${cDocumentation ? `
+        <a href="${cDocumentation.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
+          <i data-lucide="book-open" class="w-4 h-4"></i>Documentación
+        </a>
+        ` : ''}
+        ${cAdditionalUrl ? `
+        <a href="${cAdditionalUrl.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
+          <i data-lucide="download" class="w-4 h-4"></i>${pickLang(cAdditionalUrl.label, 'Recursos')}
+        </a>
+        ` : ''}
       </div>
     </div>
   `;
@@ -744,8 +845,8 @@ function tabCasos() {
   return `
     <div>
       <h2 class="text-xl font-bold text-eu-text mb-2">${blockTitle}</h2>
-      <p class="text-sm text-gray-600 mb-7 max-w-2xl">${blockDesc}</p>
-      <div class="space-y-5">${casesHtml}</div>
+      <p class="text-base text-gray-600 mb-8 max-w-3xl">${blockDesc}</p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">${casesHtml}</div>
     </div>
   `;
 }
