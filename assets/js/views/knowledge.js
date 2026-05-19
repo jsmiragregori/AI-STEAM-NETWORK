@@ -327,15 +327,26 @@ function renderOerGridContent(search) {
         <div class="flex flex-wrap gap-2 mb-1">${rSectorsHtml}</div>
         <div class="flex flex-wrap gap-x-3 gap-y-1 text-xs text-gray-500 mb-3">
           ${r.author ? `<span>${r.author}</span>` : ''}
-          <span>${r.date || ''}</span>
+          ${r.date ? `<span>${r.date}</span>` : ''}
+          ${r.duration ? `<span>⏱️ ${r.duration}</span>` : ''}
+          ${r.format ? `<span>${r.format}</span>` : ''}
+          ${r.updatedAt ? `<span class="text-eu-blue font-semibold">Actualizado: ${r.updatedAt}</span>` : ''}
           <span class="font-mono text-eu-teal">${r.license || ''}</span>
           <span>🌐 ${r.lang || ''}</span>
         </div>
       </div>
       <div class="border-t border-eu-border p-3 flex items-center justify-between bg-eu-bg">
         <div>
-          <p class="text-lg font-extrabold text-eu-teal leading-none">${(r.downloads || 0).toLocaleString()}</p>
-          <p class="text-xs text-gray-500">${dlsLabel}</p>
+          ${(() => {
+            const status = r.validationStatus || 'validated';
+            const statusBadges = {
+              validated: { icon: '✓', text: 'Validado', color: 'bg-green-100 text-green-800' },
+              pending: { icon: '⏳', text: 'En proceso', color: 'bg-amber-100 text-amber-800' },
+              draft: { icon: '📝', text: 'Borrador', color: 'bg-gray-100 text-gray-700' }
+            };
+            const badge = statusBadges[status] || statusBadges.validated;
+            return `<span class="inline-block text-xs font-bold px-2 py-1 rounded ${badge.color}">${badge.icon} ${badge.text}</span>`;
+          })()}
         </div>
         ${linkButtonHtml}
       </div>
