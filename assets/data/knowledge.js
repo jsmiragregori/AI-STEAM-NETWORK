@@ -309,7 +309,7 @@ export const KNOWLEDGE_CONFIG = {
         ],
         "license": "CC-BY-SA 4.0",
         "author": "CEICE / IF.E",
-        "date": "Mar 2026",
+        "date": "May 2026",
         "downloads": 1420,
         "lang": "ES / VA"
       },
@@ -331,7 +331,7 @@ export const KNOWLEDGE_CONFIG = {
         ],
         "license": "CC-BY 4.0",
         "author": "INESC TEC / HSW",
-        "date": "Feb 2026",
+        "date": "May 2026",
         "downloads": 876,
         "lang": "EN / ES"
       },
@@ -353,7 +353,7 @@ export const KNOWLEDGE_CONFIG = {
         ],
         "license": "CC-BY-NC 4.0",
         "author": "AVA-ASAJA / UVEG",
-        "date": "Ene 2026",
+        "date": "Abr 2026",
         "downloads": 543,
         "lang": "ES"
       },
@@ -377,7 +377,7 @@ export const KNOWLEDGE_CONFIG = {
         ],
         "license": "CC-BY-SA 4.0",
         "author": "COGN / LC",
-        "date": "Dic 2025",
+        "date": "Abr 2026",
         "downloads": 2105,
         "lang": "EN / ES / FR"
       },
@@ -399,7 +399,7 @@ export const KNOWLEDGE_CONFIG = {
         ],
         "license": "CC-BY 4.0",
         "author": "UMU / CEICE",
-        "date": "Nov 2025",
+        "date": "Mar 2026",
         "downloads": 3210,
         "lang": "ES / VA"
       },
@@ -421,7 +421,7 @@ export const KNOWLEDGE_CONFIG = {
         ],
         "license": "CC-BY-SA 4.0",
         "author": "LC / CEICE",
-        "date": "Feb 2026",
+        "date": "Mar 2026",
         "downloads": 789,
         "lang": "ES / EN"
       },
@@ -443,7 +443,7 @@ export const KNOWLEDGE_CONFIG = {
         ],
         "license": "CC-BY-NC-SA 4.0",
         "author": "Ud'A / UVEG",
-        "date": "Mar 2026",
+        "date": "Feb 2026",
         "downloads": 412,
         "lang": "IT / EN"
       },
