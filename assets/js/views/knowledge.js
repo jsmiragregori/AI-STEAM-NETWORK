@@ -320,11 +320,13 @@ function renderActiveFiltersDisplay() {
     `);
   }
 
-  const clearAllLabel = getLang() === 'en' ? 'Clear all' : getLang() === 'va' ? 'Netejar tots' : 'Limpiar todo';
+  const lang = getLang();
+  const activeFiltersLabel = lang === 'en' ? 'Active filters:' : lang === 'va' ? 'Filtres actius:' : 'Filtros activos:';
+  const clearAllLabel = lang === 'en' ? 'Clear all' : lang === 'va' ? 'Netejar tots' : 'Limpiar todo';
 
   return `
     <div class="flex flex-wrap items-center gap-2 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-      <span class="text-xs font-semibold text-gray-700">Filtros activos:</span>
+      <span class="text-xs font-semibold text-gray-700">${activeFiltersLabel}</span>
       ${badges.join('')}
       <button id="oer-clear-all-filters" class="ml-auto px-2.5 py-1 rounded text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200">
         ${clearAllLabel}
