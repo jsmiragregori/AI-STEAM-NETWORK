@@ -553,6 +553,30 @@ export const KNOWLEDGE_CONFIG = {
           "en": "Successful integration of computer vision systems. 35% improvement in inspection efficiency. Training of 45 VET students in applied AI competencies.",
           "va": "Integració exitosa de sistemes de visió per computadora. Millora del 35% en eficiència d'inspecció. Formació de 45 estudiants de FP en competències d'IA aplicada."
         },
+        "originOrganization": "Centro de Innovación Tecnológica",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Empresa de Manufactura Valencia",
+            "sector": "mfg",
+            "type": "empresa"
+          },
+          {
+            "name": "Centro FP Industrial A",
+            "sector": "nts",
+            "type": "educativo"
+          },
+          {
+            "name": "Centro FP Industrial B",
+            "sector": "nts",
+            "type": "educativo"
+          }
+        ],
+        "transferType": "implementación",
+        "transferDescription": {
+          "es": "El centro desarrolló el sistema y lo implementó en línea de producción con 3 centros FP como socios formadores.",
+          "en": "The center developed the system and implemented it in a production line with 3 VET centers as training partners.",
+          "va": "El centre va desenvolupar el sistema i el va implementar en línia de producció amb 3 centres FP com a socis formadors."
+        },
         "sectorIds": [
           "mfg",
           "nts"
@@ -566,7 +590,6 @@ export const KNOWLEDGE_CONFIG = {
         "revisionDate": "2026-04-15",
         "verificationStatus": "verified",
         "license": "CC-BY-SA 4.0",
-        "organization": "Centro de Innovación Tecnológica",
         "impact": {
           "es": "45 estudiantes FP capacitados, 35% mejora en velocidad de inspección, 3 centros educativos implementan el sistema",
           "en": "45 VET students trained, 35% improvement in inspection speed, 3 educational centers implement the system",
@@ -610,6 +633,25 @@ export const KNOWLEDGE_CONFIG = {
           "en": "Blockchain traceability system operational in 22 producers. ISO 27001 certification achieved. Training of 12 specialist technicians. 28% increase in product added value.",
           "va": "Sistema de traçabilitat blockchain operacional en 22 productors. Certificació ISO 27001 aconseguida. Formació de 12 tècnics especialistes. Augment de 28% en valor afegit de productes."
         },
+        "originOrganization": "Instituto Agroalimentario Regional",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Asociación de Productores Agrícolas Valencianos",
+            "sector": "agr",
+            "type": "asociación"
+          },
+          {
+            "name": "22 Productores de la región",
+            "sector": "agr",
+            "type": "empresa"
+          }
+        ],
+        "transferType": "escalado",
+        "transferDescription": {
+          "es": "Instituto desarrolló solución blockchain. Asociación facilitó adopción masiva por 22 productores con capacitación de técnicos especializados.",
+          "en": "Institute developed blockchain solution. Association facilitated massive adoption by 22 producers with specialized technician training.",
+          "va": "Institut va desenvolupar solució blockchain. Associació va facilitar adopció massiva per 22 productors amb capacitació de tècnics especialitzats."
+        },
         "sectorIds": [
           "agr"
         ],
@@ -622,7 +664,6 @@ export const KNOWLEDGE_CONFIG = {
         "revisionDate": "2026-03-20",
         "verificationStatus": "verified",
         "license": "CC-BY 4.0",
-        "organization": "Asociación de Productores Agrícolas Valencianos",
         "impact": {
           "es": "22 productores adoptaron la solución, 12 profesionales especializados, 28% incremento en valor de exportación",
           "en": "22 producers adopted the solution, 12 specialized professionals, 28% increase in export value",
@@ -657,6 +698,20 @@ export const KNOWLEDGE_CONFIG = {
           "en": "8 validated teaching units developed. 35 teachers trained in 18 educational centers. Estimated impact on over 900 students. Resources published under open license.",
           "va": "8 unitats didàctiques desenvolupades i validades. 35 docents capacitats en 18 centres educatius. Impacte estimat en més de 900 estudiants. Recursos publicats sota llicència oberta."
         },
+        "originOrganization": "Instituto de Energías Renovables",
+        "beneficiaryOrganizations": [
+          {
+            "name": "18 Centros Educativos (FP y Secundaria)",
+            "sector": "nts",
+            "type": "educativo"
+          }
+        ],
+        "transferType": "capacitación",
+        "transferDescription": {
+          "es": "Instituto diseñó 8 unidades didácticas de energías renovables. Se capacitó a 35 docentes de 18 centros para integrar contenidos en curriculum.",
+          "en": "Institute designed 8 renewable energy teaching units. 35 teachers from 18 centers were trained to integrate content into curriculum.",
+          "va": "Institut va dissenyar 8 unitats didàctiques d'energies renovables. Es va capacitar 35 docents de 18 centres per integrar continguts en currículum."
+        },
         "sectorIds": [
           "ene",
           "nts"
@@ -669,7 +724,6 @@ export const KNOWLEDGE_CONFIG = {
         "date": "Ago 2025",
         "verificationStatus": "verified",
         "license": "CC-BY-SA 4.0",
-        "organization": "Instituto de Energías Renovables",
         "impact": {
           "es": "35 docentes formados, 18 centros educativos, alcance de 900+ estudiantes, 8 recursos educativos abiertos",
           "en": "35 teachers trained, 18 educational centers, reach of 900+ students, 8 open educational resources",
@@ -711,6 +765,25 @@ export const KNOWLEDGE_CONFIG = {
           "en": "Definition and implementation of omnichannel strategy. 45% increase in online conversions. Training of 8 specialist professionals. Adoption by 22 tourism sector companies.",
           "va": "Definició e implementació d'estratègia omnichannel. Augment del 45% en conversions en línia. Formació de 8 professionals especialistes. Adopció per part de 22 empreses del sector turístic."
         },
+        "originOrganization": "Agencia de Innovación Digital Turística",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Asociación de Empresas Turísticas Valencianas",
+            "sector": "cci",
+            "type": "asociación"
+          },
+          {
+            "name": "22 Empresas turísticas (hoteles, agencias)",
+            "sector": "cci",
+            "type": "empresa"
+          }
+        ],
+        "transferType": "adaptación",
+        "transferDescription": {
+          "es": "Agencia diseñó estrategia omnichannel. Asociación adaptó modelo para 22 empresas turísticas con programa de formación de especialistas.",
+          "en": "Agency designed omnichannel strategy. Association adapted model for 22 tourism companies with specialist training program.",
+          "va": "Agència va dissenyar estratègia omnichannel. Associació va adaptar model per 22 empreses turístiques amb programa de formació de especialistes."
+        },
         "sectorIds": [
           "cci"
         ],
@@ -722,7 +795,6 @@ export const KNOWLEDGE_CONFIG = {
         "revisionDate": "2026-05-10",
         "verificationStatus": "unverified",
         "license": "CC-BY 4.0",
-        "organization": "Asociación de Empresas Turísticas Valencianas",
         "impact": {
           "es": "22 empresas turísticas, 8 especialistas formados, 45% incremento en conversiones, modelo replicable",
           "en": "22 tourism companies, 8 trained specialists, 45% increase in conversions, replicable model",
@@ -757,6 +829,20 @@ export const KNOWLEDGE_CONFIG = {
           "en": "5 digital competency courses designed and implemented. 150 participants trained from vulnerable groups. 62% employment insertion rate within 6 months. Partnership with 8 social centers and NGOs.",
           "va": "5 cursos de competències digitals dissenyats e implementats. 150 participants formats de col·lectius vulnerables. Taxa d'inserció laboral del 62% en 6 mesos. Col·laboració amb 8 centres socials i ONG."
         },
+        "originOrganization": "Fundación para la Inclusión Social",
+        "beneficiaryOrganizations": [
+          {
+            "name": "8 Centros Sociales y ONG colaboradoras",
+            "sector": "nts",
+            "type": "ong"
+          }
+        ],
+        "transferType": "implementación",
+        "transferDescription": {
+          "es": "Fundación diseñó 5 cursos de competencias digitales. Se implementó en 8 centros sociales con 150 participantes de colectivos en riesgo de exclusión.",
+          "en": "Foundation designed 5 digital competency courses. Implemented in 8 social centers with 150 participants from vulnerable groups.",
+          "va": "Fundació va dissenyar 5 cursos de competències digitals. Es va implementar en 8 centres socials amb 150 participants de col·lectius en risc d'exclusió."
+        },
         "sectorIds": [
           "nts"
         ],
@@ -768,7 +854,6 @@ export const KNOWLEDGE_CONFIG = {
         "date": "May 2025",
         "verificationStatus": "verified",
         "license": "CC-BY-SA 4.0",
-        "organization": "Fundación para la Inclusión Social",
         "impact": {
           "es": "150 personas formadas, 62% inserción laboral, 8 entidades colaboradoras, impacto social comprobado",
           "en": "150 people trained, 62% employment insertion, 8 collaborating organizations, verified social impact",

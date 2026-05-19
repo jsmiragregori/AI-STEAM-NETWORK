@@ -794,8 +794,13 @@ function renderCasosGridContent(search) {
     const cTitle = hasCmsBlock ? pickLang(c.title, '') : (c.title || '');
     const cDescription = c.description ? pickLang(c.description, '') : null;
     const cResult = hasCmsBlock ? pickLang(c.result, '') : (c.result || '');
-    const cOrg = c.organization || '';
     const cLicense = c.license || '';
+
+    // Transfer information
+    const cOrigin = c.originOrganization || '';
+    const cBeneficiaries = Array.isArray(c.beneficiaryOrganizations) ? c.beneficiaryOrganizations : [];
+    const cTransferType = c.transferType || '';
+    const cTransferDesc = c.transferDescription ? pickLang(c.transferDescription, '') : null;
 
     // Sectores: múltiples
     const cSectorIds = Array.isArray(c.sectorIds) ? c.sectorIds : (c.sector ? [c.sector] : []);
@@ -832,12 +837,21 @@ function renderCasosGridContent(search) {
 
     return `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm hover:shadow-md hover:border-eu-blue transition-all overflow-hidden flex flex-col">
-      <!-- Header: Title + Org + Status Badge -->
+      <!-- Header: Title + Status Badge -->
       <div class="border-b border-eu-border p-6 pb-4">
         <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
           <div class="flex-1">
-            <h3 class="text-lg font-bold text-eu-text mb-1">${cTitle}</h3>
-            <p class="text-base text-gray-600">${cOrg}</p>
+            <h3 class="text-lg font-bold text-eu-text mb-2">${cTitle}</h3>
+            <!-- Transfer Info: Origin → Beneficiaries -->
+            <div class="space-y-1 mb-2">
+              <p class="text-sm text-gray-700"><span class="font-semibold">Creado por:</span> ${cOrigin}</p>
+              <p class="text-sm text-gray-700">
+                <span class="font-semibold">Adoptado por:</span> ${cBeneficiaries.map(b => b.name).join(', ')}
+              </p>
+              <p class="text-sm text-eu-blue font-semibold capitalize">
+                <i data-lucide="arrow-right" class="w-3 h-3 inline"></i> ${cTransferType}
+              </p>
+            </div>
           </div>
           ${verificationStatusHtml}
         </div>
@@ -858,6 +872,14 @@ function renderCasosGridContent(search) {
         <div>
           <p class="text-base text-gray-700 leading-relaxed">${cResult}</p>
         </div>
+
+        <!-- Transfer Description (optional) -->
+        ${cTransferDesc ? `
+        <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+          <p class="text-sm font-semibold text-blue-900 mb-1">🔄 Cómo se transfirió</p>
+          <p class="text-base text-blue-800">${cTransferDesc}</p>
+        </div>
+        ` : ''}
 
         <!-- Impact (optional) -->
         ${cImpact ? `
