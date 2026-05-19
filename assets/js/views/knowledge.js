@@ -695,39 +695,56 @@ function attachOerFilterListeners() {
 // ─── Tab 3: Casos de Transferencia ───────────────────────────────────────────
 
 function tabCasos() {
-  const cases = t('knowledge.successCases') || [];
-  const casesHtml = cases.map(c => `
+  const casesBlock = KNOWLEDGE_CONFIG?.successCasesBlock;
+  const hasCmsBlock = Boolean(casesBlock);
+  const casesData = hasCmsBlock ? casesBlock.cases : (t('knowledge.successCases') || []);
+
+  const blockTitle = hasCmsBlock ? pickLang(casesBlock.title, '') : (t('knowledge.casesTitle') || '');
+  const blockDesc = hasCmsBlock ? pickLang(casesBlock.description, '') : (t('knowledge.casesDesc') || '');
+  const routeLabel = hasCmsBlock ? pickLang(casesBlock.routeLabel, 'Ruta:') : (t('knowledge.casesRoute') || 'Ruta:');
+  const solvedLabel = hasCmsBlock ? pickLang(casesBlock.solvedLabel, '') : (t('knowledge.casesSolved') || '');
+  const evidenceLabel = hasCmsBlock ? pickLang(casesBlock.evidenceLabel, 'Evidencia:') : (t('knowledge.casesEvidence') || 'Evidencia:');
+  const viewFullLabel = hasCmsBlock ? pickLang(casesBlock.viewFullButton, '') : (t('knowledge.casesViewFull') || '');
+  const downloadLabel = hasCmsBlock ? pickLang(casesBlock.downloadButton, '') : (t('knowledge.casesDownloadResources') || '');
+
+  const casesHtml = casesData.map(c => {
+    const cTitle = hasCmsBlock ? pickLang(c.title, '') : (c.title || '');
+    const cResult = hasCmsBlock ? pickLang(c.result, '') : (c.result || '');
+    const cRoute = c.route ? pickLang(c.route, '') : null;
+
+    return `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 hover:border-eu-blue transition-colors">
       <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
         <div>
-          <h3 class="font-bold text-eu-text text-base mb-0.5">${c.title || ''}</h3>
+          <h3 class="font-bold text-eu-text text-base mb-0.5">${cTitle}</h3>
           <p class="text-sm text-gray-500">${c.org || ''} · <span class="text-eu-teal font-semibold">${getSectorName(c.sector)}</span></p>
         </div>
         <div class="flex flex-wrap gap-2">
           <span class="text-xs font-bold px-2 py-0.5 rounded ${LEVEL_COLORS[c.level] || 'bg-gray-100 text-gray-600'}">${c.level || ''}</span>
-          <span class="text-xs bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded">${t('knowledge.casesSolved') || ''}</span>
+          <span class="text-xs bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded">${solvedLabel}</span>
           <span class="text-xs bg-eu-bg border border-eu-border px-2 py-0.5 rounded text-gray-600 font-semibold">${c.year || ''}</span>
         </div>
       </div>
-      ${c.route ? `<p class="text-xs text-eu-orange font-semibold mb-2">${t('knowledge.casesRoute') || 'Ruta:'} ${c.route}</p>` : ''}
-      <p class="text-sm text-gray-700 mb-3">${c.result || ''}</p>
+      ${cRoute ? `<p class="text-xs text-eu-orange font-semibold mb-2">${routeLabel} ${cRoute}</p>` : ''}
+      <p class="text-sm text-gray-700 mb-3">${cResult}</p>
       ${c.oer ? `<div class="flex items-center gap-2 text-xs mb-3"><i data-lucide="book-open" class="w-3.5 h-3.5 text-eu-teal"></i><span class="text-eu-teal font-semibold">${c.oer}</span></div>` : ''}
-      ${c.evidence ? `<p class="text-xs text-gray-500 italic mb-3">${t('knowledge.casesEvidence') || 'Evidencia:'} ${c.evidence}</p>` : ''}
+      ${c.evidence ? `<p class="text-xs text-gray-500 italic mb-3">${evidenceLabel} ${c.evidence}</p>` : ''}
       <div class="mt-3 flex gap-3">
         <button class="flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer bg-transparent border-none">
-          <i data-lucide="file-text" class="w-3 h-3"></i>${t('knowledge.casesViewFull') || ''}
+          <i data-lucide="file-text" class="w-3 h-3"></i>${viewFullLabel}
         </button>
         <button class="flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer bg-transparent border-none">
-          <i data-lucide="download" class="w-3 h-3"></i>${t('knowledge.casesDownloadResources') || ''}
+          <i data-lucide="download" class="w-3 h-3"></i>${downloadLabel}
         </button>
       </div>
     </div>
-  `).join('');
+  `;
+  }).join('');
 
   return `
     <div>
-      <h2 class="text-xl font-bold text-eu-text mb-2">${t('knowledge.casesTitle') || ''}</h2>
-      <p class="text-sm text-gray-600 mb-7 max-w-2xl">${t('knowledge.casesDesc') || ''}</p>
+      <h2 class="text-xl font-bold text-eu-text mb-2">${blockTitle}</h2>
+      <p class="text-sm text-gray-600 mb-7 max-w-2xl">${blockDesc}</p>
       <div class="space-y-5">${casesHtml}</div>
     </div>
   `;
