@@ -311,7 +311,10 @@ export const KNOWLEDGE_CONFIG = {
         "author": "CEICE / IF.E",
         "date": "May 2026",
         "downloads": 1420,
-        "lang": "ES / VA"
+        "lang": "ES / VA",
+        "url": "https://aules.edu.gva.es/etica-ia-fp",
+        "linkType": "download",
+        "external": false
       },
       {
         "id": "o2",
@@ -333,7 +336,10 @@ export const KNOWLEDGE_CONFIG = {
         "author": "INESC TEC / HSW",
         "date": "May 2026",
         "downloads": 876,
-        "lang": "EN / ES"
+        "lang": "EN / ES",
+        "url": "https://oert.org/digital-twins-manual-v2.1",
+        "linkType": "external",
+        "external": true
       },
       {
         "id": "o3",
@@ -355,7 +361,10 @@ export const KNOWLEDGE_CONFIG = {
         "author": "AVA-ASAJA / UVEG",
         "date": "Abr 2026",
         "downloads": 543,
-        "lang": "ES"
+        "lang": "ES",
+        "url": "https://github.com/ava-asaja/dataset-plagas-citricos",
+        "linkType": "external",
+        "external": true
       },
       {
         "id": "o4",
@@ -379,7 +388,10 @@ export const KNOWLEDGE_CONFIG = {
         "author": "COGN / LC",
         "date": "Abr 2026",
         "downloads": 2105,
-        "lang": "EN / ES / FR"
+        "lang": "EN / ES / FR",
+        "url": "https://resources.ceice.gva.es/plantilla-bias-analysis.zip",
+        "linkType": "download",
+        "external": false
       },
       {
         "id": "o5",
@@ -401,7 +413,10 @@ export const KNOWLEDGE_CONFIG = {
         "author": "UMU / CEICE",
         "date": "Mar 2026",
         "downloads": 3210,
-        "lang": "ES / VA"
+        "lang": "ES / VA",
+        "url": "https://youtube.com/watch?v=ml-python-fp-intro",
+        "linkType": "external",
+        "external": true
       },
       {
         "id": "o6",
@@ -423,7 +438,10 @@ export const KNOWLEDGE_CONFIG = {
         "author": "LC / CEICE",
         "date": "Mar 2026",
         "downloads": 789,
-        "lang": "ES / EN"
+        "lang": "ES / EN",
+        "url": "https://ceice.gva.es/recursos/reglamento-ia-ue-administracion",
+        "linkType": "external",
+        "external": true
       },
       {
         "id": "o7",
@@ -445,7 +463,10 @@ export const KNOWLEDGE_CONFIG = {
         "author": "Ud'A / UVEG",
         "date": "Feb 2026",
         "downloads": 412,
-        "lang": "IT / EN"
+        "lang": "IT / EN",
+        "url": "https://oert.org/nlp-clinical-analysis-manual",
+        "linkType": "external",
+        "external": true
       },
       {
         "id": "o8",
@@ -467,7 +488,10 @@ export const KNOWLEDGE_CONFIG = {
         "author": "LPGA / ESAD-GV",
         "date": "Ene 2026",
         "downloads": 298,
-        "lang": "ES / EN"
+        "lang": "ES / EN",
+        "url": "https://zenodo.org/records/cultural-heritage-images-5k",
+        "linkType": "external",
+        "external": true
       }
     ]
   }

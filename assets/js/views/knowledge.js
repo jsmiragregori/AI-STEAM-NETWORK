@@ -304,12 +304,13 @@ function renderOerGridContent(search) {
     }).join(' ');
     const rUrl    = r.url || '';
     const rLinkType = r.linkType || 'external';
+    const rExternal = r.external === true;
     const linkIcon = rLinkType === 'download' ? 'download' : 'external-link';
     const linkText = rLinkType === 'download'
       ? (getLang() === 'en' ? 'Download' : getLang() === 'va' ? 'Descarregar' : 'Descargar')
       : (getLang() === 'en' ? 'View' : getLang() === 'va' ? 'Veure' : 'Ver');
     const linkButtonHtml = rUrl
-      ? `<a href="${rUrl}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-3 h-3"></i>${linkText}</a>`
+      ? `<a href="${rUrl}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-3 h-3"></i>${linkText}</a>`
       : `<span class="flex items-center gap-1 text-gray-400 text-xs font-bold"><i data-lucide="${linkIcon}" class="w-3 h-3"></i>${linkText}</span>`;
 
     return `
