@@ -320,10 +320,15 @@ function renderActiveFiltersDisplay() {
     `);
   }
 
+  const clearAllLabel = getLang() === 'en' ? 'Clear all' : getLang() === 'va' ? 'Netejar tots' : 'Limpiar todo';
+
   return `
     <div class="flex flex-wrap items-center gap-2 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
       <span class="text-xs font-semibold text-gray-700">Filtros activos:</span>
       ${badges.join('')}
+      <button id="oer-clear-all-filters" class="ml-auto px-2.5 py-1 rounded text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200">
+        ${clearAllLabel}
+      </button>
     </div>
   `;
 }
@@ -653,8 +658,15 @@ function attachOerFilterListeners() {
     });
   });
 
-  // Clear filters button
+  // Clear filters button (top)
   document.getElementById('oer-clear-filters')?.addEventListener('click', () => {
+    setOerFilters({ typeId: null, sectors: [], levels: [], validationStatus: null });
+    setState('oerPage', 0);
+    rerender();
+  });
+
+  // Clear all filters button (in active filters panel)
+  document.getElementById('oer-clear-all-filters')?.addEventListener('click', () => {
     setOerFilters({ typeId: null, sectors: [], levels: [], validationStatus: null });
     setState('oerPage', 0);
     rerender();
