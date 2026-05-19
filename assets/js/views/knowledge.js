@@ -91,16 +91,32 @@ const PLATFORM_COLORS = {
 function getOerFilters() {
   const key = 'oerFilters';
   const stored = localStorage.getItem(key);
-  if (!stored) return { typeId: null, sectors: [], levels: [] };
+  if (!stored) return { typeId: null, sectors: [], levels: [], validationStatus: null };
   try {
-    return JSON.parse(stored);
+    const parsed = JSON.parse(stored);
+    return {
+      typeId: parsed.typeId || null,
+      sectors: parsed.sectors || [],
+      levels: parsed.levels || [],
+      validationStatus: parsed.validationStatus || null
+    };
   } catch {
-    return { typeId: null, sectors: [], levels: [] };
+    return { typeId: null, sectors: [], levels: [], validationStatus: null };
   }
 }
 
 function setOerFilters(filters) {
   localStorage.setItem('oerFilters', JSON.stringify(filters));
+}
+
+function getStatusLabel(status) {
+  const lang = getLang();
+  const labels = {
+    validated: { es: 'Validado', en: 'Validated', va: 'Validat' },
+    pending: { es: 'En proceso', en: 'Pending', va: 'En procés' },
+    draft: { es: 'Borrador', en: 'Draft', va: 'Esborrany' }
+  };
+  return labels[status]?.[lang] || status;
 }
 
 function tabFlujo() {
@@ -213,7 +229,7 @@ function tabOER(search) {
   const searchPlh  = hasCmsBlock ? pickLang(oerBlock.searchPlaceholder, '') : (t('knowledge.oerSearch') || '');
 
   const activeFilters = getOerFilters();
-  const hasFilters = activeFilters.typeId || activeFilters.sectors.length > 0 || activeFilters.levels.length > 0;
+  const hasFilters = activeFilters.typeId || activeFilters.sectors.length > 0 || activeFilters.levels.length > 0 || activeFilters.validationStatus;
   const clearLabel = getLang() === 'en' ? 'Clear filters' : getLang() === 'va' ? 'Netejar filtres' : 'Limpiar filtros';
 
   return `
@@ -234,6 +250,81 @@ function tabOER(search) {
         </div>
       </div>
       <div id="oer-grid">${renderOerGridContent(search)}</div>
+    </div>
+  `;
+}
+
+// ── Active filters display ────────────────────────────────────────────────────
+
+function renderActiveFiltersDisplay() {
+  const activeFilters = getOerFilters();
+  const hasFilters = activeFilters.typeId || activeFilters.sectors.length > 0 || activeFilters.levels.length > 0 || activeFilters.validationStatus;
+
+  if (!hasFilters) return '';
+
+  const badges = [];
+
+  // Type filter badge
+  if (activeFilters.typeId) {
+    const typeLabels = {
+      guia: 'Guía',
+      manual: 'Manual',
+      dataset: 'Dataset',
+      video: 'Vídeo',
+      plantilla: 'Plantilla'
+    };
+    badges.push(`
+      <button data-remove-filter="type" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-eu-blue/10 text-eu-blue border border-eu-blue/30 text-xs font-semibold hover:bg-eu-blue/20 transition-colors cursor-pointer">
+        <span>📋 ${typeLabels[activeFilters.typeId] || activeFilters.typeId}</span>
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>
+    `);
+  }
+
+  // Sector filter badges
+  activeFilters.sectors.forEach(sectorId => {
+    const label = getSectorName(sectorId);
+    badges.push(`
+      <button data-remove-filter="sector" data-filter-value="${sectorId}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-purple-100 text-purple-800 border border-purple-300 text-xs font-semibold hover:bg-purple-200 transition-colors cursor-pointer">
+        <span>🏷️ ${label}</span>
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>
+    `);
+  });
+
+  // Level filter badges
+  activeFilters.levels.forEach(level => {
+    const label = LEVEL_LABELS[level] ? pickLang(LEVEL_LABELS[level], level) : level;
+    badges.push(`
+      <button data-remove-filter="level" data-filter-value="${level}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-amber-100 text-amber-800 border border-amber-300 text-xs font-semibold hover:bg-amber-200 transition-colors cursor-pointer">
+        <span>🎓 ${label}</span>
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>
+    `);
+  });
+
+  // Status filter badge
+  if (activeFilters.validationStatus) {
+    const status = activeFilters.validationStatus;
+    const statusBadges = {
+      validated: { icon: '✓', color: 'bg-green-100 text-green-800 border-green-300' },
+      pending: { icon: '⏳', color: 'bg-amber-100 text-amber-800 border-amber-300' },
+      draft: { icon: '📝', color: 'bg-gray-100 text-gray-700 border-gray-300' }
+    };
+    const badge = statusBadges[status] || statusBadges.validated;
+    badges.push(`
+      <button data-remove-filter="status" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${badge.color} border text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
+        <span>${badge.icon} ${getStatusLabel(status)}</span>
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>
+    `);
+  }
+
+  return `
+    <div class="flex flex-wrap items-center gap-2 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+      <span class="text-xs font-semibold text-gray-700">Filtros activos:</span>
+      ${badges.join('')}
+      <span class="text-xs text-gray-500 italic ml-2">(se combinan con AND)</span>
     </div>
   `;
 }
@@ -277,7 +368,7 @@ function renderOerGridContent(search) {
 
   // Apply filter chips
   const activeFilters = getOerFilters();
-  if (activeFilters.typeId || activeFilters.sectors.length > 0 || activeFilters.levels.length > 0) {
+  if (activeFilters.typeId || activeFilters.sectors.length > 0 || activeFilters.levels.length > 0 || activeFilters.validationStatus) {
     filtered = filtered.filter(r => {
       // Type filter
       if (activeFilters.typeId && r.typeId !== activeFilters.typeId) return false;
@@ -295,6 +386,8 @@ function renderOerGridContent(search) {
           : (r.level && r.level !== 'Todos' ? [r.level] : []);
         if (!activeFilters.levels.some(l => rLevels.includes(l))) return false;
       }
+      // Validation status filter
+      if (activeFilters.validationStatus && r.validationStatus !== activeFilters.validationStatus) return false;
       return true;
     });
   }
@@ -409,12 +502,13 @@ function renderOerGridContent(search) {
           ${(() => {
             const status = r.validationStatus || 'validated';
             const statusBadges = {
-              validated: { icon: '✓', text: 'Validado', color: 'bg-green-100 text-green-800' },
-              pending: { icon: '⏳', text: 'En proceso', color: 'bg-amber-100 text-amber-800' },
-              draft: { icon: '📝', text: 'Borrador', color: 'bg-gray-100 text-gray-700' }
+              validated: { icon: '✓', color: 'bg-green-100 text-green-800' },
+              pending: { icon: '⏳', color: 'bg-amber-100 text-amber-800' },
+              draft: { icon: '📝', color: 'bg-gray-100 text-gray-700' }
             };
             const badge = statusBadges[status] || statusBadges.validated;
-            return `<span class="inline-block text-sm font-bold px-3 py-1.5 rounded ${badge.color}">${badge.icon} ${badge.text}</span>`;
+            const isActive = activeFilters.validationStatus === status;
+            return `<button data-filter-status="${status}" class="inline-block text-sm font-bold px-3 py-1.5 rounded cursor-pointer transition-all ${badge.color} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="Filtrar por estado">${badge.icon} ${getStatusLabel(status)}</button>`;
           })()}
         </div>
         ${linkButtonHtml}
@@ -435,6 +529,7 @@ function renderOerGridContent(search) {
     : '';
 
   return `
+    ${renderActiveFiltersDisplay()}
     <div class="flex items-center justify-between mb-4">
       <span class="text-xs text-gray-500 font-medium">${countLabel}</span>
       ${pageSizeHtml}
@@ -523,9 +618,45 @@ function attachOerFilterListeners() {
     });
   });
 
+  // Validation status filter
+  document.querySelectorAll('[data-filter-status]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const status = btn.dataset.filterStatus;
+      const filters = getOerFilters();
+      filters.validationStatus = filters.validationStatus === status ? null : status;
+      setOerFilters(filters);
+      setState('oerPage', 0);
+      updateOerGrid();
+    });
+  });
+
+  // Clear individual filters
+  document.querySelectorAll('[data-remove-filter]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const filterType = btn.dataset.removeFilter;
+      const filterValue = btn.dataset.filterValue;
+      const filters = getOerFilters();
+
+      if (filterType === 'type') {
+        filters.typeId = null;
+      } else if (filterType === 'sector') {
+        filters.sectors = filters.sectors.filter(s => s !== filterValue);
+      } else if (filterType === 'level') {
+        filters.levels = filters.levels.filter(l => l !== filterValue);
+      } else if (filterType === 'status') {
+        filters.validationStatus = null;
+      }
+      setOerFilters(filters);
+      setState('oerPage', 0);
+      rerender();
+    });
+  });
+
   // Clear filters button
   document.getElementById('oer-clear-filters')?.addEventListener('click', () => {
-    setOerFilters({ typeId: null, sectors: [], levels: [] });
+    setOerFilters({ typeId: null, sectors: [], levels: [], validationStatus: null });
     setState('oerPage', 0);
     rerender();
   });
