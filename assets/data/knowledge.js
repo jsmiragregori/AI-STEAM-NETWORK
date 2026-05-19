@@ -528,6 +528,11 @@ export const KNOWLEDGE_CONFIG = {
       "en": "Real experiences of knowledge and innovation transfer in the AI-STEAM network. Each case documents a successful project with impact verification.",
       "va": "Experiències reals de transferència de coneixement i innovació a la xarxa AI-STEAM. Cada cas documenta un projecte exitós amb verificació d'impacte."
     },
+    "searchPlaceholder": {
+      "es": "Buscar por título, organización o sector...",
+      "en": "Search by title, organization or sector...",
+      "va": "Cercar per títol, organització o sector..."
+    },
     "showVerificationStatus": true,
     "cases": [
       {
