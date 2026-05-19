@@ -214,6 +214,7 @@ function tabOER(search) {
 
   const activeFilters = getOerFilters();
   const hasFilters = activeFilters.typeId || activeFilters.sectors.length > 0 || activeFilters.levels.length > 0;
+  const clearLabel = getLang() === 'en' ? 'Clear filters' : getLang() === 'va' ? 'Netejar filtres' : 'Limpiar filtros';
 
   return `
     <div>
@@ -229,7 +230,7 @@ function tabOER(search) {
               class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
               placeholder="${searchPlh}" />
           </div>
-          ${hasFilters ? `<button id="oer-clear-filters" class="px-3 py-2 rounded border border-eu-blue text-eu-blue text-sm font-semibold cursor-pointer hover:bg-eu-blue/5 transition-colors" title="Limpiar filtros">Limpiar</button>` : ''}
+          ${hasFilters ? `<button id="oer-clear-filters" class="px-3 py-2 rounded border border-eu-blue text-eu-blue text-sm font-semibold cursor-pointer hover:bg-eu-blue/5 transition-colors">${clearLabel}</button>` : ''}
         </div>
       </div>
       <div id="oer-grid">${renderOerGridContent(search)}</div>
