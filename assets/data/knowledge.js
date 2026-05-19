@@ -662,7 +662,6 @@ export const KNOWLEDGE_CONFIG = {
         ],
         "publishedAt": "2026-01-15",
         "date": "Ene 2026",
-        "revisionDate": "2026-05-18",
         "verificationStatus": "verified",
         "license": "CC-BY-SA 4.0",
         "organization": "Instituto de Energías Renovables",

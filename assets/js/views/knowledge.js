@@ -716,7 +716,14 @@ function tabCasos() {
   const blockTitle = hasCmsBlock ? pickLang(casesBlock.title, '') : (t('knowledge.casesTitle') || '');
   const blockDesc = hasCmsBlock ? pickLang(casesBlock.description, '') : (t('knowledge.casesDesc') || '');
 
-  const casesHtml = casesData.map(c => {
+  // Sort by most recent date (revisionDate if present, else publishedAt)
+  const sortedCases = [...casesData].sort((a, b) => {
+    const dateA = a.revisionDate ? new Date(a.revisionDate).getTime() : new Date(a.publishedAt).getTime();
+    const dateB = b.revisionDate ? new Date(b.revisionDate).getTime() : new Date(b.publishedAt).getTime();
+    return dateB - dateA; // Descendente: más nuevas primero
+  });
+
+  const casesHtml = sortedCases.map(c => {
     const cTitle = hasCmsBlock ? pickLang(c.title, '') : (c.title || '');
     const cDescription = c.description ? pickLang(c.description, '') : null;
     const cResult = hasCmsBlock ? pickLang(c.result, '') : (c.result || '');
