@@ -517,7 +517,7 @@ export const KNOWLEDGE_CONFIG = {
     ]
   },
   "successCasesBlock": {
-    "visible": true,
+    "visible": false,
     "title": {
       "es": "Casos de Transferencia",
       "en": "Transfer Cases",
@@ -759,6 +759,11 @@ export const KNOWLEDGE_CONFIG = {
           "es": "Estrategia omnichannel para comercio electrónico en turismo",
           "en": "Omnichannel strategy for tourism e-commerce",
           "va": "Estratègia omnichannel per a comerç electrònic en turisme"
+        },
+        "description": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "result": {
           "es": "Definición e implementación de estrategia omnichannel. Aumento de 45% en conversiones online. Formación de 8 profesionales especialistas. Adopción por 22 empresas del sector turístico.",
