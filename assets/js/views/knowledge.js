@@ -32,12 +32,7 @@ const SECTOR_COLORS = {
 
 const FLOW_ICONS = ['🏭', '🔍', '👥', '💻', '✅', '🌐'];
 
-const TRANSFER_TYPE_COLORS = {
-  implementación: 'bg-indigo-100 text-indigo-800 border border-indigo-300',
-  adaptación:     'bg-rose-100 text-rose-800 border border-rose-300',
-  capacitación:   'bg-teal-100 text-teal-800 border border-teal-300',
-  escalado:       'bg-amber-100 text-amber-800 border border-amber-300',
-};
+const TRANSFER_TYPE_COLOR = 'bg-gray-100 text-gray-700 border border-gray-300';
 
 const TRANSFER_TYPE_ICONS = {
   implementación: 'wrench',
@@ -231,7 +226,7 @@ function renderCasosActiveFiltersDisplay() {
   });
 
   if (f.transferType) {
-    const cls = TRANSFER_TYPE_COLORS[f.transferType] || 'bg-gray-100 text-gray-700';
+    const cls = TRANSFER_TYPE_COLOR;
     const icon = TRANSFER_TYPE_ICONS[f.transferType] || 'arrow-right';
     badges.push(`
       <button data-caso-remove-filter="transfer"
@@ -1021,7 +1016,7 @@ function renderCasosGridContent(search) {
               <p class="text-sm text-gray-700">
                 <span class="font-semibold">${getCasosLabel('adoptedBy')}</span> ${cBeneficiaries.map(b => b.name).join(', ')}
               </p>
-              <button data-caso-filter-transfer="${cTransferType}" class="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded cursor-pointer transition-all ${TRANSFER_TYPE_COLORS[cTransferType] || 'bg-gray-100 text-gray-700 border border-gray-300'} ${activeCasosFilters.transferType === cTransferType ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterTransfer')}">
+              <button data-caso-filter-transfer="${cTransferType}" class="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded cursor-pointer transition-all ${TRANSFER_TYPE_COLOR} ${activeCasosFilters.transferType === cTransferType ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterTransfer')}">
                 <i data-lucide="${TRANSFER_TYPE_ICONS[cTransferType] || 'arrow-right'}" class="w-3 h-3"></i> ${pickLang(casesBlock?.transferTypeLabels?.[cTransferType] || TRANSFER_TYPE_LABELS[cTransferType], cTransferType)}
               </button>
             </div>
