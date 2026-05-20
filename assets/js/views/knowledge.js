@@ -866,9 +866,6 @@ function tabCasos(search) {
   const blockDesc = hasCmsBlock ? pickLang(casesBlock.description, '') : (t('knowledge.casesDesc') || '');
   const searchPlh = hasCmsBlock ? pickLang(casesBlock.searchPlaceholder, '') : (t('knowledge.casesSearch') || 'Buscar casos...');
 
-  const f = getCasosFilters();
-  const hasFilters = f.sectors.length > 0 || f.levels.length > 0 || f.transferType || f.verificationStatus;
-
   return `
     <div>
       <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
@@ -876,14 +873,11 @@ function tabCasos(search) {
           <h2 class="text-xl font-bold text-eu-text mb-1">${blockTitle}</h2>
           <p class="text-base text-gray-600 max-w-2xl">${blockDesc}</p>
         </div>
-        <div class="flex gap-3 items-center">
-          <div class="relative">
-            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
-            <input id="casos-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
-              class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
-              placeholder="${searchPlh}" />
-          </div>
-          ${hasFilters ? `<button id="casos-clear-filters" class="px-3 py-2 rounded border border-eu-blue text-eu-blue text-sm font-semibold cursor-pointer hover:bg-eu-blue/5 transition-colors">${getCasosLabel('clearFilters')}</button>` : ''}
+        <div class="relative">
+          <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
+          <input id="casos-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
+            class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
+            placeholder="${searchPlh}" />
         </div>
       </div>
       <div id="casos-grid">${renderCasosGridContent(search)}</div>
@@ -1252,12 +1246,6 @@ function attachCasosFilterListeners() {
     updateCasosGrid();
   });
 
-  // Clear all filters (header button)
-  document.getElementById('casos-clear-filters')?.addEventListener('click', () => {
-    setCasosFilters({ sectors: [], levels: [], transferType: null, verificationStatus: null });
-    setState('casosPage', 0);
-    updateCasosGrid();
-  });
 }
 
 // ─── Tab 4: Evidencias ───────────────────────────────────────────────────────
