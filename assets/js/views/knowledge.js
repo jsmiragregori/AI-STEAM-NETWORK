@@ -968,7 +968,6 @@ function renderCasosGridContent(search) {
     const cOrigin = c.originOrganization || '';
     const cBeneficiaries = Array.isArray(c.beneficiaryOrganizations) ? c.beneficiaryOrganizations : [];
     const cTransferType = c.transferType || '';
-    const cTransferDesc = c.transferDescription ? pickLang(c.transferDescription, '') : null;
 
     // Sectores: múltiples — clickables como filtro
     const cSectorIds = Array.isArray(c.sectorIds) ? c.sectorIds : (c.sector ? [c.sector] : []);
@@ -989,11 +988,12 @@ function renderCasosGridContent(search) {
     const cPublishedAt = c.publishedAt ? formatMonthYear(c.publishedAt) : '';
     const cRevisionDate = c.revisionDate ? formatMonthYear(c.revisionDate) : null;
 
-    // Campos opcionales
-    const cImpact = c.impact ? pickLang(c.impact, '') : null;
-    const cEvidence = c.evidence ? pickLang(c.evidence, '') : null;
+    // Campos opcionales (respetan flag show* — default true si no existe)
+    const cTransferDesc = (c.showTransferDescription !== false) && c.transferDescription ? pickLang(c.transferDescription, '') : null;
+    const cImpact = (c.showImpact !== false) && c.impact ? pickLang(c.impact, '') : null;
+    const cEvidence = (c.showEvidence !== false) && c.evidence ? pickLang(c.evidence, '') : null;
     const cMainLink = c.mainLink ? c.mainLink : null;
-    const cDocumentation = c.documentation ? c.documentation : null;
+    const cDocumentation = (c.showDocumentation !== false) && c.documentation ? c.documentation : null;
     const cAdditionalUrl = c.additionalUrl ? c.additionalUrl : null;
 
     // Verification status badge
