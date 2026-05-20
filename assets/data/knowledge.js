@@ -947,6 +947,1050 @@ export const KNOWLEDGE_CONFIG = {
           "url": "https://zenodo.org/records/digital-inclusion-impact",
           "externalLink": true
         }
+      },
+      {
+        "id": "c6",
+        "visible": true,
+        "title": {
+          "es": "Robótica colaborativa en líneas de producción de automoción",
+          "en": "Collaborative robotics in automotive production lines",
+          "va": "Robòtica col·laborativa en línies de producció d'automoció"
+        },
+        "description": {
+          "es": "Integración de cobots en procesos de ensamblaje con formación dual para técnicos de FP en entornos reales de producción.",
+          "en": "Integration of cobots in assembly processes with dual training for VET technicians in real production environments.",
+          "va": "Integració de cobots en processos d'assemblatge amb formació dual per a tècnics de FP en entorns reals de producció."
+        },
+        "result": {
+          "es": "3 líneas de producción actualizadas con cobots. 60 técnicos FP certificados. Reducción del 22% en tiempos de ciclo. Acuerdo de prácticas con 4 centros educativos.",
+          "en": "3 production lines updated with cobots. 60 VET technicians certified. 22% reduction in cycle times. Internship agreement with 4 educational centers.",
+          "va": "3 línies de producció actualitzades amb cobots. 60 tècnics FP certificats. Reducció del 22% en temps de cicle. Acord de pràctiques amb 4 centres educatius."
+        },
+        "originOrganization": "Ford España — Centro Tecnológico de Valencia",
+        "beneficiaryOrganizations": [
+          {
+            "name": "IES La Sénia",
+            "sector": "mfg",
+            "type": "educativo"
+          },
+          {
+            "name": "IES Llombai",
+            "sector": "mfg",
+            "type": "educativo"
+          },
+          {
+            "name": "IES Politècnic de Gandia",
+            "sector": "mfg",
+            "type": "educativo"
+          },
+          {
+            "name": "IES Número 1 de Burjassot",
+            "sector": "mfg",
+            "type": "educativo"
+          }
+        ],
+        "transferType": "implementación",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "Ford cedió instalaciones y supervisión técnica. Los centros FP adaptaron el currículum y enviaron estudiantes a rotaciones reales de 3 meses en planta.",
+          "en": "Ford provided facilities and technical supervision. VET centers adapted curriculum and sent students on 3-month real plant rotations.",
+          "va": "Ford va cedir instal·lacions i supervisió tècnica. Els centres FP van adaptar el currículum i van enviar estudiants a rotacions reals de 3 mesos en planta."
+        },
+        "sectorIds": [
+          "mfg",
+          "mob"
+        ],
+        "levels": [
+          "FP"
+        ],
+        "publishedAt": "2025-03-10",
+        "date": "Mar 2025",
+        "revisionDate": "2026-01-20",
+        "verificationStatus": "verified",
+        "license": "CC-BY 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "60 técnicos certificados, 4 centros educativos implicados, 22% mejora productividad, modelo replicable en 8 plantas europeas",
+          "en": "60 certified technicians, 4 educational centers involved, 22% productivity improvement, replicable model in 8 European plants",
+          "va": "60 tècnics certificats, 4 centres educatius implicats, 22% millora productivitat, model replicable en 8 plantes europees"
+        },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Certificados de competencia, registros de producción, encuestas de satisfacción (4.7/5), actas de seguimiento trimestral",
+          "en": "Competency certificates, production records, satisfaction surveys (4.7/5), quarterly follow-up minutes",
+          "va": "Certificats de competència, registres de producció, enquestes de satisfacció (4.7/5), actes de seguiment trimestral"
+        },
+        "showDocumentation": true,
+        "showMainLink": true,
+        "showAdditionalUrl": true
+      },
+      {
+        "id": "c7",
+        "visible": true,
+        "title": {
+          "es": "IA para el diagnóstico predictivo en mantenimiento industrial",
+          "en": "AI for predictive diagnostics in industrial maintenance",
+          "va": "IA per al diagnòstic predictiu en manteniment industrial"
+        },
+        "result": {
+          "es": "Sistema de mantenimiento predictivo desplegado en 5 plantas. 40 técnicos formados. Reducción del 31% en paradas no planificadas. Ahorro estimado de 400.000€ anuales.",
+          "en": "Predictive maintenance system deployed in 5 plants. 40 technicians trained. 31% reduction in unplanned stoppages. Estimated savings of €400,000 per year.",
+          "va": "Sistema de manteniment predictiu desplegat en 5 plantes. 40 tècnics formats. Reducció del 31% en parades no planificades. Estalvi estimat de 400.000€ anuals."
+        },
+        "originOrganization": "Institut Tecnològic de Manteniment Industrial (ITEMI)",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Grupo Iberdrola — Plantas CV",
+            "sector": "ene",
+            "type": "empresa"
+          },
+          {
+            "name": "Fundació Laboral de la Construcció",
+            "sector": "hou",
+            "type": "asociación"
+          }
+        ],
+        "transferType": "adaptación",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "ITEMI desarrolló el modelo de IA. Iberdrola lo adaptó a sus sensores de planta y la Fundació lo integró en su programa de FP de mantenimiento.",
+          "en": "ITEMI developed the AI model. Iberdrola adapted it to its plant sensors and the Foundation integrated it into its maintenance VET program.",
+          "va": "ITEMI va desenvolupar el model d'IA. Iberdrola el va adaptar als seus sensors de planta i la Fundació el va integrar en el seu programa de FP de manteniment."
+        },
+        "sectorIds": [
+          "mfg",
+          "ene"
+        ],
+        "levels": [
+          "FP",
+          "Máster"
+        ],
+        "publishedAt": "2024-11-05",
+        "date": "Nov 2024",
+        "verificationStatus": "verified",
+        "license": "CC-BY-SA 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "5 plantas mejoradas, 40 técnicos formados, 31% menos paradas, ROI positivo en 8 meses",
+          "en": "5 improved plants, 40 technicians trained, 31% fewer stoppages, positive ROI in 8 months",
+          "va": "5 plantes millorades, 40 tècnics formats, 31% menys parades, ROI positiu en 8 mesos"
+        },
+        "showEvidence": false,
+        "showDocumentation": true,
+        "showMainLink": false,
+        "showAdditionalUrl": false,
+        "documentation": {
+          "url": "https://itemi.es/casos/mantenimiento-predictivo-ia",
+          "license": "CC-BY-SA 4.0",
+          "externalLink": true
+        }
+      },
+      {
+        "id": "c8",
+        "visible": true,
+        "title": {
+          "es": "Instalaciones solares fotovoltaicas en centros educativos como laboratorio vivo",
+          "en": "Photovoltaic solar installations in schools as living laboratories",
+          "va": "Instal·lacions solars fotovoltaiques en centres educatius com a laboratori viu"
+        },
+        "description": {
+          "es": "Los centros de FP de la familia energética se convierten en demostradores reales de instalación y monitorización solar con datos en tiempo real para el aula.",
+          "en": "Energy VET centers become real demonstrators for solar installation and monitoring with real-time classroom data.",
+          "va": "Els centres de FP de la família energètica es converteixen en demostadors reals d'instal·lació i monitorització solar amb dades en temps real per a l'aula."
+        },
+        "result": {
+          "es": "12 centros educativos con instalación solar operativa. 320 estudiantes formados anualmente. Reducción del 40% en consumo eléctrico de los centros.",
+          "en": "12 educational centers with operational solar installation. 320 students trained annually. 40% reduction in centers' electricity consumption.",
+          "va": "12 centres educatius amb instal·lació solar operativa. 320 estudiants formats anualment. Reducció del 40% en consum elèctric dels centres."
+        },
+        "originOrganization": "Institut Valencià d'Energies Renovables (IVER)",
+        "beneficiaryOrganizations": [
+          {
+            "name": "12 Centros FP de la familia Electricidad y Electrónica",
+            "sector": "ene",
+            "type": "educativo"
+          }
+        ],
+        "transferType": "escalado",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "IVER financió y supervisó las instalaciones. Los centros aportaron mano de obra estudiantil supervisada como práctica real del ciclo formativo.",
+          "en": "IVER funded and supervised the installations. Centers contributed supervised student labor as real practical work for the training cycle.",
+          "va": "IVER va finançar i supervisar les instal·lacions. Els centres van aportar mà d'obra estudiantil supervisada com a pràctica real del cicle formatiu."
+        },
+        "sectorIds": [
+          "ene",
+          "nts"
+        ],
+        "levels": [
+          "FP",
+          "Docentes"
+        ],
+        "publishedAt": "2024-09-01",
+        "date": "Sep 2024",
+        "revisionDate": "2025-09-01",
+        "verificationStatus": "verified",
+        "license": "CC-BY 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "12 centros descarbonizados, 320 estudiantes/año con práctica real, 40% reducción consumo, modelo escalable a nivel nacional",
+          "en": "12 decarbonized centers, 320 students/year with real practice, 40% consumption reduction, nationally scalable model",
+          "va": "12 centres descarbonitzats, 320 estudiants/any amb pràctica real, 40% reducció consum, model escalable a nivell nacional"
+        },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Facturas eléctricas comparativas, datos del sistema de monitorización, encuestas docentes, actas de inspección técnica",
+          "en": "Comparative electricity bills, monitoring system data, teacher surveys, technical inspection reports",
+          "va": "Factures elèctriques comparatives, dades del sistema de monitorització, enquestes docents, actes d'inspecció tècnica"
+        },
+        "showDocumentation": false,
+        "showMainLink": false,
+        "showAdditionalUrl": true,
+        "additionalUrl": {
+          "label": {
+            "es": "Guía de implementación para centros",
+            "en": "Implementation guide for schools",
+            "va": "Guia d'implementació per a centres"
+          },
+          "url": "https://iver.gva.es/guia-solar-centros-educativos",
+          "externalLink": true
+        }
+      },
+      {
+        "id": "c9",
+        "visible": true,
+        "title": {
+          "es": "Formación de técnicos en movilidad eléctrica e infraestructura de carga",
+          "en": "Training technicians in electric mobility and charging infrastructure",
+          "va": "Formació de tècnics en mobilitat elèctrica i infraestructura de càrrega"
+        },
+        "result": {
+          "es": "180 técnicos de taller certificados en vehículo eléctrico. 24 puntos de carga instalados en talleres escuela. Acuerdo con 3 fabricantes de cargadores.",
+          "en": "180 workshop technicians certified in electric vehicles. 24 charging points installed in school workshops. Agreement with 3 charger manufacturers.",
+          "va": "180 tècnics de taller certificats en vehicle elèctric. 24 punts de càrrega instal·lats en tallers escola. Acord amb 3 fabricants de carregadors."
+        },
+        "originOrganization": "Asociación Española del Vehículo Eléctrico (ASEVA)",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Red de talleres escuela de la Comunitat Valenciana",
+            "sector": "mob",
+            "type": "educativo"
+          },
+          {
+            "name": "Asociación de Concesionarios Valencianos",
+            "sector": "mob",
+            "type": "asociación"
+          }
+        ],
+        "transferType": "capacitación",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "ASEVA diseñó el itinerario formativo. Los talleres escuela aportaron espacio y estudiantes. Los fabricantes cedieron equipos y actualizaciones de software.",
+          "en": "ASEVA designed the training itinerary. School workshops provided space and students. Manufacturers provided equipment and software updates.",
+          "va": "ASEVA va dissenyar l'itinerari formatiu. Els tallers escola van aportar espai i estudiants. Els fabricants van cedir equips i actualitzacions de programari."
+        },
+        "sectorIds": [
+          "mob"
+        ],
+        "levels": [
+          "FP"
+        ],
+        "publishedAt": "2025-02-14",
+        "date": "Feb 2025",
+        "verificationStatus": "verified",
+        "license": "CC-BY-SA 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "180 técnicos certificados, cobertura de demanda regional, 24 puntos de carga activos, modelo exportado a Murcia y Cataluña",
+          "en": "180 certified technicians, regional demand coverage, 24 active charging points, model exported to Murcia and Catalonia",
+          "va": "180 tècnics certificats, cobertura de demanda regional, 24 punts de càrrega actius, model exportat a Múrcia i Catalunya"
+        },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Certificados oficiales de homologación, registros de matrículas, encuestas de inserción laboral a 6 meses",
+          "en": "Official approval certificates, enrollment records, 6-month employment insertion surveys",
+          "va": "Certificats oficials d'homologació, registres de matrícules, enquestes d'inserció laboral a 6 mesos"
+        },
+        "showDocumentation": true,
+        "showMainLink": false,
+        "showAdditionalUrl": true,
+        "documentation": {
+          "url": "https://aseva.es/formacion-ev-centros-fp",
+          "license": "CC-BY 4.0",
+          "externalLink": true
+        },
+        "additionalUrl": {
+          "label": {
+            "es": "Catálogo de módulos formativos VE",
+            "en": "EV training modules catalogue",
+            "va": "Catàleg de mòduls formatius VE"
+          },
+          "url": "https://aseva.es/catalogo-modulos-ve",
+          "externalLink": true
+        }
+      },
+      {
+        "id": "c10",
+        "visible": true,
+        "title": {
+          "es": "Diseño paramétrico y fabricación digital en arquitectura sostenible",
+          "en": "Parametric design and digital fabrication in sustainable architecture",
+          "va": "Disseny paramètric i fabricació digital en arquitectura sostenible"
+        },
+        "description": {
+          "es": "Integración de herramientas de diseño computacional y fabricación CNC en másteres de arquitectura con énfasis en materiales reciclados y construcción circular.",
+          "en": "Integration of computational design tools and CNC fabrication in architecture master programs with emphasis on recycled materials and circular construction.",
+          "va": "Integració d'eines de disseny computacional i fabricació CNC en màsters d'arquitectura amb èmfasi en materials reciclats i construcció circular."
+        },
+        "result": {
+          "es": "Laboratorio de fabricación digital equipado en 2 escuelas de arquitectura. 85 estudiantes de máster con competencias en Grasshopper y CNC. 3 proyectos finalistas en concursos europeos de arquitectura sostenible.",
+          "en": "Digital fabrication lab equipped in 2 architecture schools. 85 master students skilled in Grasshopper and CNC. 3 finalist projects in European sustainable architecture competitions.",
+          "va": "Laboratori de fabricació digital equipat en 2 escoles d'arquitectura. 85 estudiants de màster amb competències en Grasshopper i CNC. 3 projectes finalistes en concursos europeus d'arquitectura sostenible."
+        },
+        "originOrganization": "Fab Lab Valencia — Instituto de Arquitectura Avanzada",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Escuela Técnica Superior de Arquitectura de Valencia (ETSAV)",
+            "sector": "hou",
+            "type": "educativo"
+          },
+          {
+            "name": "Escuela de Arquitectura de Alicante",
+            "sector": "hou",
+            "type": "educativo"
+          }
+        ],
+        "transferType": "implementación",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "Fab Lab cedió maquinaria y formó al profesorado. Las escuelas integraron los módulos en el máster y desarrollaron proyectos conjuntos de investigación aplicada.",
+          "en": "Fab Lab provided machinery and trained faculty. Schools integrated modules into the master program and developed joint applied research projects.",
+          "va": "Fab Lab va cedir maquinària i va formar el professorat. Les escoles van integrar els mòduls en el màster i van desenvolupar projectes conjunts de recerca aplicada."
+        },
+        "sectorIds": [
+          "hou"
+        ],
+        "levels": [
+          "Máster",
+          "Docentes"
+        ],
+        "publishedAt": "2024-07-22",
+        "date": "Jul 2024",
+        "verificationStatus": "unverified",
+        "license": "CC-BY-SA 4.0",
+        "showImpact": false,
+        "showEvidence": true,
+        "evidence": {
+          "es": "Portafolios de proyectos estudiantiles, memorias de investigación, premios recibidos, publicaciones académicas derivadas",
+          "en": "Student project portfolios, research reports, awards received, derived academic publications",
+          "va": "Portafolis de projectes estudiantils, memòries de recerca, premis rebuts, publicacions acadèmiques derivades"
+        },
+        "showDocumentation": true,
+        "showMainLink": false,
+        "showAdditionalUrl": true,
+        "documentation": {
+          "url": "https://iaac.net/fab-lab-valencia-arquitectura",
+          "license": "CC-BY 4.0",
+          "externalLink": true
+        },
+        "additionalUrl": {
+          "label": {
+            "es": "Repositorio de proyectos estudiantiles",
+            "en": "Student projects repository",
+            "va": "Repositori de projectes estudiantils"
+          },
+          "url": "https://fab.city/valencia/proyectos-arquitectura",
+          "externalLink": true
+        }
+      },
+      {
+        "id": "c11",
+        "visible": true,
+        "title": {
+          "es": "IA generativa aplicada a la producción audiovisual y creación de contenidos",
+          "en": "Generative AI applied to audiovisual production and content creation",
+          "va": "IA generativa aplicada a la producció audiovisual i creació de continguts"
+        },
+        "result": {
+          "es": "120 profesionales de medios formados en herramientas de IA generativa. 15 productoras incorporan flujos de trabajo con IA. Reducción media del 35% en tiempos de postproducción.",
+          "en": "120 media professionals trained in generative AI tools. 15 production companies incorporate AI workflows. Average 35% reduction in post-production times.",
+          "va": "120 professionals dels mitjans formats en eines d'IA generativa. 15 productores incorporen fluxos de treball amb IA. Reducció mitjana del 35% en temps de postproducció."
+        },
+        "originOrganization": "Escola Superior de Cinema i Audiovisuals de Catalunya (ESCAC)",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Asociación de Productoras Valencianas (APV)",
+            "sector": "cci",
+            "type": "asociación"
+          },
+          {
+            "name": "À Punt Mèdia",
+            "sector": "cci",
+            "type": "empresa"
+          }
+        ],
+        "transferType": "capacitación",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "ESCAC diseñó el programa formativo intensivo de 80 horas. APV facilitó el acceso a las productoras y À Punt aportó infraestructura y casos de uso reales.",
+          "en": "ESCAC designed the 80-hour intensive training program. APV facilitated access to production companies and À Punt provided infrastructure and real use cases.",
+          "va": "ESCAC va dissenyar el programa formatiu intensiu de 80 hores. APV va facilitar l'accés a les productores i À Punt va aportar infraestructura i casos d'ús reals."
+        },
+        "sectorIds": [
+          "cci"
+        ],
+        "levels": [
+          "Máster"
+        ],
+        "publishedAt": "2025-09-15",
+        "date": "Sep 2025",
+        "verificationStatus": "unverified",
+        "license": "CC-BY 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "120 profesionales actualizados, 15 empresas con IA integrada, 35% menos tiempo de postproducción, nuevos perfiles laborales emergentes",
+          "en": "120 updated professionals, 15 companies with integrated AI, 35% less post-production time, new emerging job profiles",
+          "va": "120 professionals actualitzats, 15 empreses amb IA integrada, 35% menys temps de postproducció, nous perfils laborals emergents"
+        },
+        "showEvidence": false,
+        "showDocumentation": false,
+        "showMainLink": false,
+        "showAdditionalUrl": false
+      },
+      {
+        "id": "c12",
+        "visible": true,
+        "title": {
+          "es": "Trazabilidad blockchain en la cadena de frío agroalimentaria",
+          "en": "Blockchain traceability in the agri-food cold chain",
+          "va": "Traçabilitat blockchain en la cadena de fred agroalimentària"
+        },
+        "description": {
+          "es": "Sistema de trazabilidad distribuida para control de temperatura y autenticidad de producto desde campo hasta punto de venta, con cumplimiento normativo EU.",
+          "en": "Distributed traceability system for temperature control and product authenticity from field to point of sale, with EU regulatory compliance.",
+          "va": "Sistema de traçabilitat distribuïda per al control de temperatura i autenticitat de producte des del camp fins al punt de venda, amb compliment normatiu EU."
+        },
+        "result": {
+          "es": "Sistema operativo en 35 cooperativas. Reducción del 60% en incidencias de temperatura. Cumplimiento pleno con normativa EU 2024/1135. 18 técnicos de calidad certificados.",
+          "en": "System operational in 35 cooperatives. 60% reduction in temperature incidents. Full compliance with EU 2024/1135 regulation. 18 quality technicians certified.",
+          "va": "Sistema operatiu en 35 cooperatives. Reducció del 60% en incidències de temperatura. Compliment ple amb normativa EU 2024/1135. 18 tècnics de qualitat certificats."
+        },
+        "originOrganization": "Cooperativa Anecoop — Àrea d'Innovació",
+        "beneficiaryOrganizations": [
+          {
+            "name": "35 Cooperatives agrícoles de la CV",
+            "sector": "agr",
+            "type": "asociación"
+          },
+          {
+            "name": "Mercavalència",
+            "sector": "agr",
+            "type": "empresa"
+          }
+        ],
+        "transferType": "escalado",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "Anecoop pilotó el sistema en su propia red y estandarizó protocolos. Lo ofreció como servicio a las 35 cooperativas con formación incluida.",
+          "en": "Anecoop piloted the system in its own network and standardized protocols. It offered it as a service to 35 cooperatives with included training.",
+          "va": "Anecoop va pilotar el sistema en la seua pròpia xarxa i va estandarditzar protocols. El va oferir com a servei a les 35 cooperatives amb formació inclosa."
+        },
+        "sectorIds": [
+          "agr"
+        ],
+        "levels": [
+          "FP",
+          "Máster"
+        ],
+        "publishedAt": "2025-06-10",
+        "date": "Jun 2025",
+        "verificationStatus": "verified",
+        "license": "CC-BY 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "35 cooperativas connectades, 60% reducción incidencias, conformidad normativa, modelo exportable a otras cadenas",
+          "en": "35 connected cooperatives, 60% incident reduction, regulatory compliance, exportable model to other chains",
+          "va": "35 cooperatives connectades, 60% reducció incidències, conformitat normativa, model exportable a altres cadenes"
+        },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Registros de temperatura exportados, informe de auditoría externa, certificación EU, testimonios de gerentes de cooperativa",
+          "en": "Exported temperature records, external audit report, EU certification, cooperative manager testimonials",
+          "va": "Registres de temperatura exportats, informe d'auditoria externa, certificació EU, testimonis de gerents de cooperativa"
+        },
+        "showDocumentation": true,
+        "showMainLink": false,
+        "showAdditionalUrl": false,
+        "documentation": {
+          "url": "https://anecoop.com/innovacion/blockchain-cadena-frio",
+          "license": "CC-BY 4.0",
+          "externalLink": true
+        }
+      },
+      {
+        "id": "c13",
+        "visible": true,
+        "title": {
+          "es": "Ciberseguridad básica para microempresas del sector servicios",
+          "en": "Basic cybersecurity for micro-enterprises in the services sector",
+          "va": "Ciberseguretat bàsica per a microempreses del sector serveis"
+        },
+        "result": {
+          "es": "200 microempresas formadas. Reducción del 45% en incidentes reportados. 12 tutores certificados como formadores. Guía de buenas prácticas publicada en abierto.",
+          "en": "200 micro-enterprises trained. 45% reduction in reported incidents. 12 tutors certified as trainers. Best practices guide published openly.",
+          "va": "200 microempreses formades. Reducció del 45% en incidents reportats. 12 tutors certificats com a formadors. Guia de bones pràctiques publicada en obert."
+        },
+        "originOrganization": "INCIBE — Instituto Nacional de Ciberseguridad",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Cámara de Comercio de Valencia",
+            "sector": "nts",
+            "type": "asociación"
+          },
+          {
+            "name": "FEVEC — Federación Valenciana de Empresarios de la Construcción",
+            "sector": "hou",
+            "type": "asociación"
+          }
+        ],
+        "transferType": "capacitación",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "INCIBE aportó contenidos y certificación. Las cámaras de comercio convocaron a las microempresas y organizaron sesiones presenciales en sus sedes.",
+          "en": "INCIBE provided content and certification. Chambers of commerce convened micro-enterprises and organized face-to-face sessions at their premises.",
+          "va": "INCIBE va aportar continguts i certificació. Les cambres de comerç van convocar les microempreses i van organitzar sessions presencials a les seues seus."
+        },
+        "sectorIds": [
+          "nts",
+          "hou"
+        ],
+        "levels": [
+          "FP",
+          "Docentes"
+        ],
+        "publishedAt": "2024-10-07",
+        "date": "Oct 2024",
+        "revisionDate": "2025-10-07",
+        "verificationStatus": "verified",
+        "license": "CC-BY-SA 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "200 empresas protegidas, 45% menos incidentes, 12 formadores certificados, guía descargada más de 1.200 veces",
+          "en": "200 protected businesses, 45% fewer incidents, 12 certified trainers, guide downloaded over 1,200 times",
+          "va": "200 empreses protegides, 45% menys incidents, 12 formadors certificats, guia descarregada més de 1.200 vegades"
+        },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Registros de incidentes antes/después, evaluaciones de conocimiento, testimonios de gerentes, estadísticas de descarga",
+          "en": "Before/after incident records, knowledge assessments, manager testimonials, download statistics",
+          "va": "Registres d'incidents abans/després, avaluacions de coneixement, testimonis de gerents, estadístiques de descàrrega"
+        },
+        "showDocumentation": true,
+        "showMainLink": false,
+        "showAdditionalUrl": true,
+        "documentation": {
+          "url": "https://incibe.es/empresas/guia-ciberseguridad-microempresas",
+          "license": "CC-BY-SA 4.0",
+          "externalLink": true
+        },
+        "additionalUrl": {
+          "label": {
+            "es": "Guía de buenas prácticas (PDF)",
+            "en": "Best practices guide (PDF)",
+            "va": "Guia de bones pràctiques (PDF)"
+          },
+          "url": "https://incibe.es/guia-microempresas.pdf",
+          "externalLink": true
+        }
+      },
+      {
+        "id": "c14",
+        "visible": true,
+        "title": {
+          "es": "Impresión 3D de ortesis y ayudas técnicas en centros sanitarios y educativos",
+          "en": "3D printing of orthoses and technical aids in health and educational centers",
+          "va": "Impressió 3D d'ortesis i ajudes tècniques en centres sanitaris i educatius"
+        },
+        "description": {
+          "es": "Transferencia de capacidades de fabricación aditiva desde hospitales a centros FP para producción local de ortesis personalizadas a coste reducido.",
+          "en": "Transfer of additive manufacturing capabilities from hospitals to VET centers for local production of customized orthoses at reduced cost.",
+          "va": "Transferència de capacitats de fabricació additiva des d'hospitals a centres FP per a producció local d'ortesis personalitzades a cost reduït."
+        },
+        "result": {
+          "es": "4 centros educativos con lab de impresión 3D sanitaria. 300 ortesis producidas el primer año. Coste por ortesis reducido de 800€ a 45€. 55 estudiantes certificados.",
+          "en": "4 educational centers with medical 3D printing lab. 300 orthoses produced in the first year. Cost per orthosis reduced from €800 to €45. 55 students certified.",
+          "va": "4 centres educatius amb lab d'impressió 3D sanitària. 300 ortesis produïdes el primer any. Cost per ortesi reduït de 800€ a 45€. 55 estudiants certificats."
+        },
+        "originOrganization": "Hospital La Fe — Unitat d'Innovació Clínica",
+        "beneficiaryOrganizations": [
+          {
+            "name": "IES Doctor Peset Aleixandre",
+            "sector": "nts",
+            "type": "educativo"
+          },
+          {
+            "name": "IES Les Heures",
+            "sector": "nts",
+            "type": "educativo"
+          },
+          {
+            "name": "Cruz Roja Española — Delegació Valencia",
+            "sector": "nts",
+            "type": "ong"
+          }
+        ],
+        "transferType": "adaptación",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "La Fe formó al profesorado en protocolos clínicos. Los centros FP aportaron estudiantes y maquinaria. Cruz Roja distribuyó las ortesis a pacientes sin recursos.",
+          "en": "La Fe trained faculty in clinical protocols. VET centers provided students and machinery. Cruz Roja distributed orthoses to patients without resources.",
+          "va": "La Fe va formar el professorat en protocols clínics. Els centres FP van aportar estudiants i maquinària. Creu Roja va distribuir les ortesis a pacients sense recursos."
+        },
+        "sectorIds": [
+          "nts",
+          "mfg"
+        ],
+        "levels": [
+          "FP",
+          "Máster"
+        ],
+        "publishedAt": "2025-04-03",
+        "date": "Abr 2025",
+        "verificationStatus": "verified",
+        "license": "CC-BY-SA 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "300 ortesis producidas, 94% reducción de coste, 55 estudiantes certificados, impacto social en pacientes sin recursos",
+          "en": "300 orthoses produced, 94% cost reduction, 55 certified students, social impact on patients without resources",
+          "va": "300 ortesis produïdes, 94% reducció de cost, 55 estudiants certificats, impacte social en pacients sense recursos"
+        },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Historiales clínicos anonimizados, certificados de estudiantes, comparativa de costes, informe de satisfacción de pacientes",
+          "en": "Anonymized clinical records, student certificates, cost comparison, patient satisfaction report",
+          "va": "Historials clínics anonimitzats, certificats d'estudiants, comparativa de costs, informe de satisfacció de pacients"
+        },
+        "showDocumentation": true,
+        "showMainLink": false,
+        "showAdditionalUrl": false,
+        "documentation": {
+          "url": "https://lafe.san.gva.es/innovacion/impresion3d-ortesis",
+          "license": "CC-BY-SA 4.0",
+          "externalLink": true
+        }
+      },
+      {
+        "id": "c15",
+        "visible": true,
+        "title": {
+          "es": "Programación con Python e introducción a la IA en educación secundaria",
+          "en": "Python programming and AI introduction in secondary education",
+          "va": "Programació amb Python i introducció a la IA en educació secundària"
+        },
+        "result": {
+          "es": "85 docentes de secundaria formados. Materiales curriculares publicados en abierto. Integración en más de 40 centros el primer curso. Premio nacional de innovación educativa 2025.",
+          "en": "85 secondary teachers trained. Curricular materials published openly. Integration in 40+ schools in the first year. National Educational Innovation Award 2025.",
+          "va": "85 docents de secundària formats. Materials curriculars publicats en obert. Integració en més de 40 centres el primer curs. Premi nacional d'innovació educativa 2025."
+        },
+        "originOrganization": "Universitat Politècnica de València — LabHuman",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Conselleria d'Educació de la Generalitat Valenciana",
+            "sector": "nts",
+            "type": "educativo"
+          }
+        ],
+        "transferType": "capacitación",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "UPV diseñó el programa y materiales. La Conselleria organizó la formación del profesorado e integró los contenidos en el marco curricular de la LOMLOE.",
+          "en": "UPV designed the program and materials. The Department organized teacher training and integrated content into the LOMLOE curricular framework.",
+          "va": "UPV va dissenyar el programa i materials. La Conselleria va organitzar la formació del professorat i va integrar els continguts en el marc curricular de la LOMLOE."
+        },
+        "sectorIds": [
+          "nts"
+        ],
+        "levels": [
+          "Docentes"
+        ],
+        "publishedAt": "2025-01-20",
+        "date": "Ene 2025",
+        "revisionDate": "2026-01-20",
+        "verificationStatus": "verified",
+        "license": "CC-BY-SA 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "85 docentes formados, 40+ centros adoptantes, materiales con más de 5.000 descargas, premio nacional de innovación",
+          "en": "85 trained teachers, 40+ adopting schools, materials with over 5,000 downloads, national innovation award",
+          "va": "85 docents formats, 40+ centres adoptants, materials amb més de 5.000 descàrregues, premi nacional d'innovació"
+        },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Estadísticas de adopción, evaluaciones del profesorado, acta del premio, estadísticas de descarga del repositorio",
+          "en": "Adoption statistics, teacher evaluations, award certificate, repository download statistics",
+          "va": "Estadístiques d'adopció, avaluacions del professorat, acta del premi, estadístiques de descàrrega del repositori"
+        },
+        "showDocumentation": true,
+        "showMainLink": false,
+        "showAdditionalUrl": true,
+        "documentation": {
+          "url": "https://labhuman.upv.es/python-ia-secundaria",
+          "license": "CC-BY-SA 4.0",
+          "externalLink": true
+        },
+        "additionalUrl": {
+          "label": {
+            "es": "Repositorio de materiales educativos",
+            "en": "Educational materials repository",
+            "va": "Repositori de materials educatius"
+          },
+          "url": "https://github.com/labhuman-upv/python-ia-secundaria",
+          "externalLink": true
+        }
+      },
+      {
+        "id": "c16",
+        "visible": true,
+        "title": {
+          "es": "Gemelos digitales para optimización de redes de distribución eléctrica",
+          "en": "Digital twins for optimizing electrical distribution networks",
+          "va": "Bessons digitals per a optimització de xarxes de distribució elèctrica"
+        },
+        "description": {
+          "es": "Modelos digitales de redes eléctricas para simulación, planificación y formación de técnicos en gestión inteligente de la distribución.",
+          "en": "Digital models of electrical networks for simulation, planning and training technicians in smart distribution management.",
+          "va": "Models digitals de xarxes elèctriques per a simulació, planificació i formació de tècnics en gestió intel·ligent de la distribució."
+        },
+        "result": {
+          "es": "Gemelo digital de la red de distribución de 3 provincias operativo. 45 ingenieros y técnicos formados. Reducción del 18% en tiempo de localización de averías.",
+          "en": "Digital twin of distribution network of 3 provinces operational. 45 engineers and technicians trained. 18% reduction in fault location time.",
+          "va": "Bessó digital de la xarxa de distribució de 3 províncies operatiu. 45 enginyers i tècnics formats. Reducció del 18% en temps de localització d'avaries."
+        },
+        "originOrganization": "i-DE Redes Eléctricas Inteligentes (Iberdrola)",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Universitat de València — Dept. Enginyeria Elèctrica",
+            "sector": "ene",
+            "type": "educativo"
+          },
+          {
+            "name": "Fundació Laboral — Rama Energía",
+            "sector": "ene",
+            "type": "asociación"
+          }
+        ],
+        "transferType": "implementación",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "i-DE desarrolló el gemelo digital y lo abrió a la universidad para investigación y a la Fundació Laboral como herramienta de simulación en los ciclos de electricidad.",
+          "en": "i-DE developed the digital twin and opened it to the university for research and to Fundació Laboral as a simulation tool in electricity training cycles.",
+          "va": "i-DE va desenvolupar el bessó digital i el va obrir a la universitat per a recerca i a la Fundació Laboral com a eina de simulació en els cicles d'electricitat."
+        },
+        "sectorIds": [
+          "ene"
+        ],
+        "levels": [
+          "Máster",
+          "FP"
+        ],
+        "publishedAt": "2024-12-01",
+        "date": "Dic 2024",
+        "verificationStatus": "unverified",
+        "license": "CC-BY 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "Xarxa de 3 provinces modelada, 45 tècnics formats, 18% millora en gestió d'avaries, base per a futures expansions",
+          "en": "Network of 3 provinces modeled, 45 technicians trained, 18% improvement in fault management, foundation for future expansions",
+          "va": "Xarxa de 3 províncies modelada, 45 tècnics formats, 18% millora en gestió d'avaries, base per a futures expansions"
+        },
+        "showEvidence": false,
+        "showDocumentation": true,
+        "showMainLink": false,
+        "showAdditionalUrl": false,
+        "documentation": {
+          "url": "https://i-de.es/innovacion/gemelo-digital-distribucion",
+          "license": "CC-BY 4.0",
+          "externalLink": true
+        }
+      },
+      {
+        "id": "c17",
+        "visible": true,
+        "title": {
+          "es": "Smart farming con IoT y análisis de datos en agricultura de regadío",
+          "en": "Smart farming with IoT and data analytics in irrigated agriculture",
+          "va": "Smart farming amb IoT i anàlisi de dades en agricultura de regadiu"
+        },
+        "result": {
+          "es": "280 agricultores conectados a plataforma IoT. Ahorro medio del 32% en consumo de agua. 15 técnicos agrícolas certificados en análisis de datos.",
+          "en": "280 farmers connected to IoT platform. Average 32% water savings. 15 agricultural technicians certified in data analytics.",
+          "va": "280 agricultors connectats a plataforma IoT. Estalvi mitjà del 32% en consum d'aigua. 15 tècnics agrícoles certificats en anàlisi de dades."
+        },
+        "originOrganization": "IVIA — Institut Valencià d'Investigacions Agràries",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Comunitat de Regants de l'Horta Nord",
+            "sector": "agr",
+            "type": "asociación"
+          },
+          {
+            "name": "Comunitat de Regants de la Ribera Alta",
+            "sector": "agr",
+            "type": "asociación"
+          }
+        ],
+        "transferType": "escalado",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "IVIA pilotó el sistema con 20 explotaciones experimentales. Validados los resultados, las comunidades de regantes financiaron la extensión masiva con cofinanciación FEADER.",
+          "en": "IVIA piloted the system with 20 experimental farms. Results validated, irrigation communities funded the mass extension co-financed by EAFRD.",
+          "va": "IVIA va pilotar el sistema amb 20 explotacions experimentals. Validats els resultats, les comunitats de regants van finançar l'extensió massiva amb cofinançament FEADER."
+        },
+        "sectorIds": [
+          "agr"
+        ],
+        "levels": [
+          "FP",
+          "Máster"
+        ],
+        "publishedAt": "2025-07-14",
+        "date": "Jul 2025",
+        "verificationStatus": "verified",
+        "license": "CC-BY-SA 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "280 agricultores beneficiados, 32% ahorro hídrico, 15 técnicos certificados, cofinanciado con fondos europeos FEADER",
+          "en": "280 farmers benefited, 32% water savings, 15 certified technicians, co-financed with European EAFRD funds",
+          "va": "280 agricultors beneficiats, 32% estalvi hídric, 15 tècnics certificats, cofinançat amb fons europeus FEADER"
+        },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Datos de telemetría de caudales, facturas de agua comparativas, certificados de técnicos, informe de auditoría FEADER",
+          "en": "Flow telemetry data, comparative water bills, technician certificates, EAFRD audit report",
+          "va": "Dades de telemetria de cabals, factures d'aigua comparatives, certificats de tècnics, informe d'auditoria FEADER"
+        },
+        "showDocumentation": true,
+        "showMainLink": false,
+        "showAdditionalUrl": true,
+        "documentation": {
+          "url": "https://ivia.gva.es/smartfarming-horta",
+          "license": "CC-BY-SA 4.0",
+          "externalLink": true
+        },
+        "additionalUrl": {
+          "label": {
+            "es": "Plataforma de datos abiertos agrícolas",
+            "en": "Open agricultural data platform",
+            "va": "Plataforma de dades obertes agrícoles"
+          },
+          "url": "https://dades.ivia.gva.es/smartfarming",
+          "externalLink": true
+        }
+      },
+      {
+        "id": "c18",
+        "visible": true,
+        "title": {
+          "es": "Economía circular en construcción — reutilización de materiales de demolición",
+          "en": "Circular economy in construction — reuse of demolition materials",
+          "va": "Economia circular en construcció — reutilització de materials de demolició"
+        },
+        "description": {
+          "es": "Sistema de clasificación, certificación y reutilización de materiales de demolición en nuevas obras, con formación de operarios y técnicos especialistas.",
+          "en": "System for classifying, certifying and reusing demolition materials in new works, with training of operators and specialist technicians.",
+          "va": "Sistema de classificació, certificació i reutilització de materials de demolició en noves obres, amb formació d'operaris i tècnics especialistes."
+        },
+        "result": {
+          "es": "18.000 toneladas de material recuperado y reutilizado. 90 operarios formados. Cumplimiento con Reglamento UE de Productos de Construcción 2024. Reducción del 55% en residuos enviados a vertedero.",
+          "en": "18,000 tons of recovered and reused material. 90 operators trained. Compliance with EU Construction Products Regulation 2024. 55% reduction in waste sent to landfill.",
+          "va": "18.000 tones de material recuperat i reutilitzat. 90 operaris formats. Compliment amb Reglament UE de Productes de Construcció 2024. Reducció del 55% en residus enviats a abocador."
+        },
+        "originOrganization": "FEVEC — Federación Valenciana de Empresarios de la Construcción",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Ecometro S.L. — Gestió de Residus",
+            "sector": "hou",
+            "type": "empresa"
+          },
+          {
+            "name": "Asociació de Constructors Sostenibles CV",
+            "sector": "hou",
+            "type": "asociación"
+          }
+        ],
+        "transferType": "implementación",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "FEVEC desarrolló el protocolo de clasificación. Ecometro operó el centro de acopio. La asociación capacitó a los operarios con supervisión de inspectores certificados.",
+          "en": "FEVEC developed the classification protocol. Ecometro operated the collection center. The association trained operators under supervision from certified inspectors.",
+          "va": "FEVEC va desenvolupar el protocol de classificació. Ecometro va operar el centre d'aplec. L'associació va capacitar els operaris amb supervisió d'inspectors certificats."
+        },
+        "sectorIds": [
+          "hou"
+        ],
+        "levels": [
+          "FP"
+        ],
+        "publishedAt": "2025-10-01",
+        "date": "Oct 2025",
+        "verificationStatus": "unverified",
+        "license": "CC-BY 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "18.000 t recuperadas, 55% menos vertido, 90 operarios formados, modelo alineado con normativa EU 2024",
+          "en": "18,000 t recovered, 55% less landfill, 90 trained operators, model aligned with EU 2024 regulation",
+          "va": "18.000 t recuperades, 55% menys abocament, 90 operaris formats, model alineat amb normativa EU 2024"
+        },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Manifiestos de residuos, certificados de operarios, informe de auditoría ambiental, comunicación de prensa institucional",
+          "en": "Waste manifests, operator certificates, environmental audit report, institutional press communication",
+          "va": "Manifestos de residus, certificats d'operaris, informe d'auditoria ambiental, comunicació de premsa institucional"
+        },
+        "showDocumentation": false,
+        "showMainLink": false,
+        "showAdditionalUrl": false
+      },
+      {
+        "id": "c19",
+        "visible": true,
+        "title": {
+          "es": "Videojuegos y gamificación como herramienta pedagógica en FP",
+          "en": "Video games and gamification as pedagogical tools in VET",
+          "va": "Videojocs i gamificació com a eina pedagògica en FP"
+        },
+        "result": {
+          "es": "50 docentes de FP formados en diseño de experiencias gamificadas. 8 módulos formativos transformados con mecánicas de juego. Mejora del 28% en finalización y 41% en satisfacción del alumnado.",
+          "en": "50 VET teachers trained in gamified experience design. 8 training modules transformed with game mechanics. 28% improvement in completion and 41% in student satisfaction.",
+          "va": "50 docents de FP formats en disseny d'experiències gamificades. 8 mòduls formatius transformats amb mecàniques de joc. Millora del 28% en finalització i 41% en satisfacció de l'alumnat."
+        },
+        "originOrganization": "Escola de Videojocs — Universitat Jaume I",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Red de Centres FP Innovadors de la CV",
+            "sector": "cci",
+            "type": "educativo"
+          }
+        ],
+        "transferType": "adaptación",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "La UJI formó a los docentes en diseño de juegos. Cada centro adaptó la metodología a su familia profesional con apoyo de estudiantes de máster de videojuegos como co-diseñadores.",
+          "en": "UJI trained teachers in game design. Each center adapted the methodology to their professional field with support from video game master's students as co-designers.",
+          "va": "La UJI va formar els docents en disseny de jocs. Cada centre va adaptar la metodologia a la seua família professional amb suport d'estudiants de màster de videojocs com a co-dissenyadors."
+        },
+        "sectorIds": [
+          "cci",
+          "nts"
+        ],
+        "levels": [
+          "Docentes",
+          "FP"
+        ],
+        "publishedAt": "2024-06-05",
+        "date": "Jun 2024",
+        "revisionDate": "2025-06-05",
+        "verificationStatus": "verified",
+        "license": "CC-BY-SA 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "50 docentes certificados, 8 módulos gamificados, +28% finalización, +41% satisfacción, modelo exportado a 3 CC.AA.",
+          "en": "50 certified teachers, 8 gamified modules, +28% completion, +41% satisfaction, model exported to 3 autonomous communities",
+          "va": "50 docents certificats, 8 mòduls gamificats, +28% finalització, +41% satisfacció, model exportat a 3 CC.AA."
+        },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Registros de completitud de Moodle, encuestas antes/después, evaluaciones externas, publicación en revista RELIEVE",
+          "en": "Moodle completion records, before/after surveys, external assessments, publication in RELIEVE journal",
+          "va": "Registres de completitud de Moodle, enquestes abans/després, avaluacions externes, publicació en revista RELIEVE"
+        },
+        "showDocumentation": true,
+        "showMainLink": false,
+        "showAdditionalUrl": true,
+        "documentation": {
+          "url": "https://uji.es/videojocs/gamificacion-fp",
+          "license": "CC-BY-SA 4.0",
+          "externalLink": true
+        },
+        "additionalUrl": {
+          "label": {
+            "es": "Módulos gamificados descargables",
+            "en": "Downloadable gamified modules",
+            "va": "Mòduls gamificats descarregables"
+          },
+          "url": "https://uji.es/videojocs/modulos-fp-descarga",
+          "externalLink": true
+        }
+      },
+      {
+        "id": "c20",
+        "visible": true,
+        "title": {
+          "es": "Hidrógeno verde — itinerario formativo para técnicos de planta",
+          "en": "Green hydrogen — training itinerary for plant technicians",
+          "va": "Hidrogen verd — itinerari formatiu per a tècnics de planta"
+        },
+        "description": {
+          "es": "Diseño e implantación del primer ciclo formativo de FP en producción, almacenamiento y distribución de hidrógeno verde, homologado a nivel nacional.",
+          "en": "Design and implementation of the first VET training cycle in green hydrogen production, storage and distribution, approved at national level.",
+          "va": "Disseny i implantació del primer cicle formatiu de FP en producció, emmagatzematge i distribució d'hidrogen verd, homologat a nivell nacional."
+        },
+        "result": {
+          "es": "Primer ciclo de FP en hidrógeno verde homologado en España. 65 técnicos graduados. 4 empresas han contratado directamente a egresados. Material curricular cedido al Ministerio para extensión nacional.",
+          "en": "First approved VET cycle in green hydrogen in Spain. 65 technicians graduated. 4 companies have directly hired graduates. Curricular material provided to Ministry for national extension.",
+          "va": "Primer cicle de FP en hidrogen verd homologat a Espanya. 65 tècnics graduats. 4 empreses han contractat directament egresats. Material curricular cedit al Ministeri per a extensió nacional."
+        },
+        "originOrganization": "Hynergreen Technologies — Centro de I+D",
+        "beneficiaryOrganizations": [
+          {
+            "name": "IES El Cabanyal — Família Química",
+            "sector": "ene",
+            "type": "educativo"
+          },
+          {
+            "name": "Ministerio de Educación — Àrea FP",
+            "sector": "nts",
+            "type": "educativo"
+          }
+        ],
+        "transferType": "implementación",
+        "showTransferDescription": true,
+        "transferDescription": {
+          "es": "Hynergreen aportó conocimiento técnico, equipos de laboratorio y supervisores de planta. El IES desarrolló el marco pedagógico. El Ministerio acreditó el ciclo y coordinó la extensión nacional.",
+          "en": "Hynergreen provided technical knowledge, laboratory equipment and plant supervisors. The IES developed the pedagogical framework. The Ministry accredited the cycle and coordinated the national extension.",
+          "va": "Hynergreen va aportar coneixement tècnic, equips de laboratori i supervisors de planta. L'IES va desenvolupar el marc pedagògic. El Ministeri va acreditar el cicle i va coordinar l'extensió nacional."
+        },
+        "sectorIds": [
+          "ene"
+        ],
+        "levels": [
+          "FP",
+          "Máster"
+        ],
+        "publishedAt": "2026-02-28",
+        "date": "Feb 2026",
+        "verificationStatus": "unverified",
+        "license": "CC-BY 4.0",
+        "showImpact": true,
+        "impact": {
+          "es": "Primer ciclo FP hidrógeno en España, 65 técnicos graduados, 4 contratos directos, modelo curricular adoptado a nivel nacional",
+          "en": "First hydrogen VET cycle in Spain, 65 graduated technicians, 4 direct contracts, curricular model adopted nationally",
+          "va": "Primer cicle FP hidrogen a Espanya, 65 tècnics graduats, 4 contractes directes, model curricular adoptat a nivell nacional"
+        },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Resolución de homologación ministerial, expedientes académicos, contratos laborales, carta de adopción del Ministerio",
+          "en": "Ministerial approval resolution, academic records, employment contracts, Ministry adoption letter",
+          "va": "Resolució d'homologació ministerial, expedients acadèmics, contractes laborals, carta d'adopció del Ministeri"
+        },
+        "showDocumentation": true,
+        "showMainLink": false,
+        "showAdditionalUrl": false,
+        "documentation": {
+          "url": "https://hynergreen.com/formacion-hidrogeno-fp",
+          "license": "CC-BY 4.0",
+          "externalLink": true
+        }
       }
     ]
   }
