@@ -136,6 +136,26 @@ function getOerLabel(key) {
   return labels[key]?.[lang] || key;
 }
 
+function getCasosLabel(key) {
+  const lang = getLang();
+  const labels = {
+    createdBy: { es: 'Creado por:', en: 'Created by:', va: 'Creat per:' },
+    adoptedBy: { es: 'Adoptado por:', en: 'Adopted by:', va: 'Adoptat per:' },
+    howTransferred: { es: 'Cómo se transfirió', en: 'How it was transferred', va: 'Com es va transferir' },
+    impact: { es: 'Impacto', en: 'Impact', va: 'Impacte' },
+    evidence: { es: 'Evidencias', en: 'Evidence', va: 'Evidències' },
+    published: { es: 'Publicado:', en: 'Published:', va: 'Publicat:' },
+    revised: { es: 'Revisado:', en: 'Revised:', va: 'Revisat:' },
+    license: { es: 'Licencia:', en: 'License:', va: 'Llicència:' },
+    viewCase: { es: 'Ver caso completo', en: 'View full case', va: 'Veure cas complet' },
+    documentation: { es: 'Documentación', en: 'Documentation', va: 'Documentació' },
+    resources: { es: 'Recursos', en: 'Resources', va: 'Recursos' },
+    previous: { es: 'Anterior', en: 'Previous', va: 'Anterior' },
+    next: { es: 'Siguiente', en: 'Next', va: 'Següent' }
+  };
+  return labels[key]?.[lang] || key;
+}
+
 function tabFlujo() {
   const cycleBlock = KNOWLEDGE_CONFIG?.transferCycleBlock;
   const hasCmsBlock = Boolean(cycleBlock);
@@ -798,11 +818,11 @@ function renderCasosGridContent(search) {
   const paginationHtml = !isAll && totalPages > 1 ? `
     <div class="flex gap-2 justify-center mt-6 items-center">
       <button id="casos-pag-prev" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
-        ← Anterior
+        ← ${getCasosLabel('previous')}
       </button>
       <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
       <button id="casos-pag-next" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
-        Siguiente →
+        ${getCasosLabel('next')} →
       </button>
     </div>` : '';
 
@@ -862,9 +882,9 @@ function renderCasosGridContent(search) {
             <h3 class="text-lg font-bold text-eu-text mb-2">${cTitle}</h3>
             <!-- Transfer Info: Origin → Beneficiaries -->
             <div class="space-y-1 mb-2">
-              <p class="text-sm text-gray-700"><span class="font-semibold">Creado por:</span> ${cOrigin}</p>
+              <p class="text-sm text-gray-700"><span class="font-semibold">${getCasosLabel('createdBy')}</span> ${cOrigin}</p>
               <p class="text-sm text-gray-700">
-                <span class="font-semibold">Adoptado por:</span> ${cBeneficiaries.map(b => b.name).join(', ')}
+                <span class="font-semibold">${getCasosLabel('adoptedBy')}</span> ${cBeneficiaries.map(b => b.name).join(', ')}
               </p>
               <p class="text-sm text-eu-blue font-semibold capitalize">
                 <i data-lucide="arrow-right" class="w-3 h-3 inline"></i> ${cTransferType}
@@ -894,7 +914,7 @@ function renderCasosGridContent(search) {
         <!-- Transfer Description (optional) -->
         ${cTransferDesc ? `
         <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
-          <p class="text-sm font-semibold text-blue-900 mb-1">🔄 Cómo se transfirió</p>
+          <p class="text-sm font-semibold text-blue-900 mb-1">🔄 ${getCasosLabel('howTransferred')}</p>
           <p class="text-base text-blue-800">${cTransferDesc}</p>
         </div>
         ` : ''}
@@ -902,7 +922,7 @@ function renderCasosGridContent(search) {
         <!-- Impact (optional) -->
         ${cImpact ? `
         <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
-          <p class="text-sm font-semibold text-blue-900 mb-1">📊 Impacto</p>
+          <p class="text-sm font-semibold text-blue-900 mb-1">📊 ${getCasosLabel('impact')}</p>
           <p class="text-base text-blue-800">${cImpact}</p>
         </div>
         ` : ''}
@@ -910,7 +930,7 @@ function renderCasosGridContent(search) {
         <!-- Evidence (optional) -->
         ${cEvidence ? `
         <div class="bg-purple-50 rounded-lg p-4 border border-purple-100">
-          <p class="text-sm font-semibold text-purple-900 mb-1">📋 Evidencias</p>
+          <p class="text-sm font-semibold text-purple-900 mb-1">📋 ${getCasosLabel('evidence')}</p>
           <p class="text-base text-purple-800">${cEvidence}</p>
         </div>
         ` : ''}
@@ -919,17 +939,17 @@ function renderCasosGridContent(search) {
       <!-- Technical Metadata -->
       <div class="border-t border-eu-border px-6 py-4 bg-eu-bg space-y-2 text-sm">
         <div class="flex items-center justify-between">
-          <span class="text-gray-600">Publicado:</span>
+          <span class="text-gray-600">${getCasosLabel('published')}</span>
           <span class="font-semibold text-gray-800">${cPublishedAt}</span>
         </div>
         ${cRevisionDate ? `
         <div class="flex items-center justify-between">
-          <span class="text-gray-600">Revisado:</span>
+          <span class="text-gray-600">${getCasosLabel('revised')}</span>
           <span class="font-semibold text-gray-800">${cRevisionDate}</span>
         </div>
         ` : ''}
         <div class="flex items-center justify-between">
-          <span class="text-gray-600">Licencia:</span>
+          <span class="text-gray-600">${getCasosLabel('license')}</span>
           <span class="font-semibold text-gray-800">${cLicense}</span>
         </div>
       </div>
@@ -938,17 +958,17 @@ function renderCasosGridContent(search) {
       <div class="border-t border-eu-border p-6 flex flex-wrap gap-3">
         ${cMainLink ? `
         <a href="${cMainLink.url}" class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>Ver caso completo
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>${getCasosLabel('viewCase')}
         </a>
         ` : ''}
         ${cDocumentation ? `
         <a href="${cDocumentation.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
-          <i data-lucide="book-open" class="w-4 h-4"></i>Documentación
+          <i data-lucide="book-open" class="w-4 h-4"></i>${getCasosLabel('documentation')}
         </a>
         ` : ''}
         ${cAdditionalUrl ? `
         <a href="${cAdditionalUrl.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
-          <i data-lucide="download" class="w-4 h-4"></i>${pickLang(cAdditionalUrl.label, 'Recursos')}
+          <i data-lucide="download" class="w-4 h-4"></i>${pickLang(cAdditionalUrl.label, getCasosLabel('resources'))}
         </a>
         ` : ''}
       </div>
