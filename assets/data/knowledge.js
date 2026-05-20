@@ -584,7 +584,7 @@ export const KNOWLEDGE_CONFIG = {
           }
         ],
         "transferType": "implementación",
-        "showTransferDescription": false,
+        "showTransferDescription": true,
         "transferDescription": {
           "es": "El centro desarrolló el sistema y lo implementó en línea de producción con 3 centros FP como socios formadores.",
           "en": "The center developed the system and implemented it in a production line with 3 VET centers as training partners.",
@@ -603,19 +603,21 @@ export const KNOWLEDGE_CONFIG = {
         "revisionDate": "2026-04-15",
         "verificationStatus": "verified",
         "license": "CC-BY-SA 4.0",
-        "showImpact": false,
+        "showImpact": true,
         "impact": {
           "es": "45 estudiantes FP capacitados, 35% mejora en velocidad de inspección, 3 centros educativos implementan el sistema",
           "en": "45 VET students trained, 35% improvement in inspection speed, 3 educational centers implement the system",
           "va": "45 estudiants de FP capacitats, 35% millora en velocitat d'inspecció, 3 centres educatius implementen el sistema"
         },
-        "showEvidence": false,
+        "showEvidence": true,
         "evidence": {
           "es": "Vídeo de implementación, informe de resultados, testimonios de estudiantes y empresas participantes",
           "en": "Implementation video, results report, testimonials from students and participating companies",
           "va": "Vídeo d'implementació, informe de resultats, testimonis d'estudiants i empreses participants"
         },
-        "showDocumentation": true,
+        "showDocumentation": false,
+        "showMainLink": true,
+        "showAdditionalUrl": true,
         "documentation": {
           "url": "https://zenodo.org/records/ejemplo-vision-artificial",
           "license": "CC-BY-SA 4.0",
@@ -694,6 +696,8 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Certificat ISO 27001, reportatge de premsa, casos d'èxit de productors participants"
         },
         "showDocumentation": true,
+        "showMainLink": true,
+        "showAdditionalUrl": true,
         "documentation": {
           "url": "https://oert.org/agri-blockchain-case-study",
           "license": "CC-BY 4.0",
@@ -758,9 +762,12 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Avaluació de docents (4.8/5), testimonis d'estudiants, anàlisi d'impacte educatiu"
         },
         "showDocumentation": true,
+        "showMainLink": true,
         "mainLink": {
-          "url": "/knowledge/cases/c3"
+          "url": "/knowledge/cases/c3",
+          "externalLink": false
         },
+        "showAdditionalUrl": true,
         "documentation": {
           "url": "https://oert.org/renewable-energy-curriculum",
           "license": "CC-BY-SA 4.0",
@@ -838,6 +845,8 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Dashboard de mètriques, casos d'èxit empresarials, informe de ROI"
         },
         "showDocumentation": true,
+        "showMainLink": true,
+        "showAdditionalUrl": true,
         "documentation": {
           "url": "https://example.com/omnichannel-strategy-report",
           "license": "CC-BY 4.0",
@@ -901,9 +910,12 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Seguiment d'inserció laboral, testimoni de beneficiaris, avaluació de competències abans/després"
         },
         "showDocumentation": true,
+        "showMainLink": true,
         "mainLink": {
-          "url": "/knowledge/cases/c5"
+          "url": "/knowledge/cases/c5",
+          "externalLink": false
         },
+        "showAdditionalUrl": true,
         "additionalUrl": {
           "label": {
             "es": "Informe de impacto social",

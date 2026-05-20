@@ -992,9 +992,9 @@ function renderCasosGridContent(search) {
     const cTransferDesc = (c.showTransferDescription !== false) && c.transferDescription ? pickLang(c.transferDescription, '') : null;
     const cImpact = (c.showImpact !== false) && c.impact ? pickLang(c.impact, '') : null;
     const cEvidence = (c.showEvidence !== false) && c.evidence ? pickLang(c.evidence, '') : null;
-    const cMainLink = c.mainLink ? c.mainLink : null;
+    const cMainLink = (c.showMainLink !== false) && c.mainLink ? c.mainLink : null;
     const cDocumentation = (c.showDocumentation !== false) && c.documentation ? c.documentation : null;
-    const cAdditionalUrl = c.additionalUrl ? c.additionalUrl : null;
+    const cAdditionalUrl = (c.showAdditionalUrl !== false) && c.additionalUrl ? c.additionalUrl : null;
 
     // Verification status badge
     const statusLabels = casesBlock?.verificationStatusLabels || {};
@@ -1092,17 +1092,17 @@ function renderCasosGridContent(search) {
       <!-- Footer: Links -->
       <div class="border-t border-eu-border p-6 flex flex-wrap gap-3">
         ${cMainLink ? `
-        <a href="${cMainLink.url}" class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
+        <a href="${cMainLink.url}" ${cMainLink.externalLink ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
           <i data-lucide="arrow-right" class="w-4 h-4"></i>${getCasosLabel('viewCase')}
         </a>
         ` : ''}
         ${cDocumentation ? `
-        <a href="${cDocumentation.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
+        <a href="${cDocumentation.url}" ${cDocumentation.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
           <i data-lucide="book-open" class="w-4 h-4"></i>${getCasosLabel('documentation')}
         </a>
         ` : ''}
         ${cAdditionalUrl ? `
-        <a href="${cAdditionalUrl.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
+        <a href="${cAdditionalUrl.url}" ${cAdditionalUrl.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
           <i data-lucide="download" class="w-4 h-4"></i>${pickLang(cAdditionalUrl.label, getCasosLabel('resources'))}
         </a>
         ` : ''}
