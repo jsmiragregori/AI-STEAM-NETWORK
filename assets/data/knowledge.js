@@ -584,6 +584,7 @@ export const KNOWLEDGE_CONFIG = {
           }
         ],
         "transferType": "implementación",
+        "showTransferDescription": false,
         "transferDescription": {
           "es": "El centro desarrolló el sistema y lo implementó en línea de producción con 3 centros FP como socios formadores.",
           "en": "The center developed the system and implemented it in a production line with 3 VET centers as training partners.",
@@ -602,11 +603,19 @@ export const KNOWLEDGE_CONFIG = {
         "revisionDate": "2026-04-15",
         "verificationStatus": "verified",
         "license": "CC-BY-SA 4.0",
+        "showImpact": false,
         "impact": {
           "es": "45 estudiantes FP capacitados, 35% mejora en velocidad de inspección, 3 centros educativos implementan el sistema",
           "en": "45 VET students trained, 35% improvement in inspection speed, 3 educational centers implement the system",
           "va": "45 estudiants de FP capacitats, 35% millora en velocitat d'inspecció, 3 centres educatius implementen el sistema"
         },
+        "showEvidence": false,
+        "evidence": {
+          "es": "Vídeo de implementación, informe de resultados, testimonios de estudiantes y empresas participantes",
+          "en": "Implementation video, results report, testimonials from students and participating companies",
+          "va": "Vídeo d'implementació, informe de resultats, testimonis d'estudiants i empreses participants"
+        },
+        "showDocumentation": true,
         "documentation": {
           "url": "https://zenodo.org/records/ejemplo-vision-artificial",
           "license": "CC-BY-SA 4.0",
@@ -620,11 +629,6 @@ export const KNOWLEDGE_CONFIG = {
           },
           "url": "https://github.com/ai-steam/vision-systems",
           "externalLink": true
-        },
-        "evidence": {
-          "es": "Vídeo de implementación, informe de resultados, testimonios de estudiantes y empresas participantes",
-          "en": "Implementation video, results report, testimonials from students and participating companies",
-          "va": "Vídeo d'implementació, informe de resultats, testimonis d'estudiants i empreses participants"
         }
       },
       {
@@ -659,6 +663,7 @@ export const KNOWLEDGE_CONFIG = {
           }
         ],
         "transferType": "escalado",
+        "showTransferDescription": true,
         "transferDescription": {
           "es": "Instituto desarrolló solución blockchain. Asociación facilitó adopción masiva por 22 productores con capacitación de técnicos especializados.",
           "en": "Institute developed blockchain solution. Association facilitated massive adoption by 22 producers with specialized technician training.",
@@ -676,20 +681,23 @@ export const KNOWLEDGE_CONFIG = {
         "revisionDate": "2026-03-20",
         "verificationStatus": "verified",
         "license": "CC-BY 4.0",
+        "showImpact": true,
         "impact": {
           "es": "22 productores adoptaron la solución, 12 profesionales especializados, 28% incremento en valor de exportación",
           "en": "22 producers adopted the solution, 12 specialized professionals, 28% increase in export value",
           "va": "22 productors van adoptar la solució, 12 professionals especialitzats, 28% increment en valor d'exportació"
         },
-        "documentation": {
-          "url": "https://oert.org/agri-blockchain-case-study",
-          "license": "CC-BY 4.0",
-          "externalLink": true
-        },
+        "showEvidence": true,
         "evidence": {
           "es": "Certificado ISO 27001, reportaje de prensa, casos de éxito de productores participantes",
           "en": "ISO 27001 certificate, press coverage, success stories from participating producers",
           "va": "Certificat ISO 27001, reportatge de premsa, casos d'èxit de productors participants"
+        },
+        "showDocumentation": true,
+        "documentation": {
+          "url": "https://oert.org/agri-blockchain-case-study",
+          "license": "CC-BY 4.0",
+          "externalLink": true
         }
       },
       {
@@ -719,6 +727,7 @@ export const KNOWLEDGE_CONFIG = {
           }
         ],
         "transferType": "capacitación",
+        "showTransferDescription": true,
         "transferDescription": {
           "es": "Instituto diseñó 8 unidades didácticas de energías renovables. Se capacitó a 35 docentes de 18 centros para integrar contenidos en curriculum.",
           "en": "Institute designed 8 renewable energy teaching units. 35 teachers from 18 centers were trained to integrate content into curriculum.",
@@ -736,11 +745,19 @@ export const KNOWLEDGE_CONFIG = {
         "date": "Ago 2025",
         "verificationStatus": "verified",
         "license": "CC-BY-SA 4.0",
+        "showImpact": true,
         "impact": {
           "es": "35 docentes formados, 18 centros educativos, alcance de 900+ estudiantes, 8 recursos educativos abiertos",
           "en": "35 teachers trained, 18 educational centers, reach of 900+ students, 8 open educational resources",
           "va": "35 docents formats, 18 centres educatius, assoliment de més de 900 estudiants, 8 recursos educatius oberts"
         },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Evaluación de docentes (4.8/5), testimonios de estudiantes, análisis de impacto educativo",
+          "en": "Teacher evaluation (4.8/5), student testimonials, educational impact analysis",
+          "va": "Avaluació de docents (4.8/5), testimonis d'estudiants, anàlisi d'impacte educatiu"
+        },
+        "showDocumentation": true,
         "mainLink": {
           "url": "/knowledge/cases/c3"
         },
@@ -757,11 +774,6 @@ export const KNOWLEDGE_CONFIG = {
           },
           "url": "https://zenodo.org/records/renewable-energy-manual",
           "externalLink": true
-        },
-        "evidence": {
-          "es": "Evaluación de docentes (4.8/5), testimonios de estudiantes, análisis de impacto educativo",
-          "en": "Teacher evaluation (4.8/5), student testimonials, educational impact analysis",
-          "va": "Avaluació de docents (4.8/5), testimonis d'estudiants, anàlisi d'impacte educatiu"
         }
       },
       {
@@ -796,6 +808,7 @@ export const KNOWLEDGE_CONFIG = {
           }
         ],
         "transferType": "adaptación",
+        "showTransferDescription": true,
         "transferDescription": {
           "es": "Agencia diseñó estrategia omnichannel. Asociación adaptó modelo para 22 empresas turísticas con programa de formación de especialistas.",
           "en": "Agency designed omnichannel strategy. Association adapted model for 22 tourism companies with specialist training program.",
@@ -812,20 +825,23 @@ export const KNOWLEDGE_CONFIG = {
         "revisionDate": "2026-05-10",
         "verificationStatus": "unverified",
         "license": "CC-BY 4.0",
+        "showImpact": true,
         "impact": {
           "es": "22 empresas turísticas, 8 especialistas formados, 45% incremento en conversiones, modelo replicable",
           "en": "22 tourism companies, 8 trained specialists, 45% increase in conversions, replicable model",
           "va": "22 empreses turístiques, 8 especialistes formats, 45% increment en conversions, model replicable"
         },
-        "documentation": {
-          "url": "https://example.com/omnichannel-strategy-report",
-          "license": "CC-BY 4.0",
-          "externalLink": true
-        },
+        "showEvidence": true,
         "evidence": {
           "es": "Dashboard de métricas, casos de éxito empresariales, informe de ROI",
           "en": "Metrics dashboard, company success stories, ROI report",
           "va": "Dashboard de mètriques, casos d'èxit empresarials, informe de ROI"
+        },
+        "showDocumentation": true,
+        "documentation": {
+          "url": "https://example.com/omnichannel-strategy-report",
+          "license": "CC-BY 4.0",
+          "externalLink": true
         }
       },
       {
@@ -855,6 +871,7 @@ export const KNOWLEDGE_CONFIG = {
           }
         ],
         "transferType": "implementación",
+        "showTransferDescription": true,
         "transferDescription": {
           "es": "Fundación diseñó 5 cursos de competencias digitales. Se implementó en 8 centros sociales con 150 participantes de colectivos en riesgo de exclusión.",
           "en": "Foundation designed 5 digital competency courses. Implemented in 8 social centers with 150 participants from vulnerable groups.",
@@ -871,11 +888,19 @@ export const KNOWLEDGE_CONFIG = {
         "date": "May 2025",
         "verificationStatus": "verified",
         "license": "CC-BY-SA 4.0",
+        "showImpact": true,
         "impact": {
           "es": "150 personas formadas, 62% inserción laboral, 8 entidades colaboradoras, impacto social comprobado",
           "en": "150 people trained, 62% employment insertion, 8 collaborating organizations, verified social impact",
           "va": "150 persones formats, 62% inserció laboral, 8 entitats col·laboradores, impacte social comprovat"
         },
+        "showEvidence": true,
+        "evidence": {
+          "es": "Seguimiento de inserción laboral, testimoni de beneficiarios, evaluación de competencias antes/después",
+          "en": "Employment insertion tracking, beneficiary testimonials, pre/post competency assessment",
+          "va": "Seguiment d'inserció laboral, testimoni de beneficiaris, avaluació de competències abans/després"
+        },
+        "showDocumentation": true,
         "mainLink": {
           "url": "/knowledge/cases/c5"
         },
@@ -887,11 +912,6 @@ export const KNOWLEDGE_CONFIG = {
           },
           "url": "https://zenodo.org/records/digital-inclusion-impact",
           "externalLink": true
-        },
-        "evidence": {
-          "es": "Seguimiento de inserción laboral, testimoni de beneficiarios, evaluación de competencias antes/después",
-          "en": "Employment insertion tracking, beneficiary testimonials, pre/post competency assessment",
-          "va": "Seguiment d'inserció laboral, testimoni de beneficiaris, avaluació de competències abans/després"
         }
       }
     ]
