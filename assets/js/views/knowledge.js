@@ -1243,46 +1243,355 @@ function attachCasosFilterListeners() {
 
 }
 
-// ─── Tab 4: Evidencias ───────────────────────────────────────────────────────
+// ─── Tab 4: Evidencias de Pilotaje ───────────────────────────────────────────
+
+const PILOT_TYPE_CHIP   = 'bg-gray-100 text-gray-700 border border-gray-300';
+const HELIX_CHIP        = 'bg-indigo-50 text-indigo-700 border border-indigo-200';
+const TRANSITION_CHIP   = 'bg-teal-50 text-teal-700 border border-teal-200';
+const STATUS_CHIP = {
+  'in-design':   'bg-gray-100 text-gray-700',
+  'in-progress': 'bg-orange-100 text-orange-800',
+  'completed':   'bg-green-100 text-green-800',
+  'in-review':   'bg-amber-100 text-amber-800',
+  'validated':   'bg-emerald-100 text-emerald-800',
+};
+
+function getEvidLabel(key) {
+  const lang = getLang();
+  const labels = {
+    participants:   { es: 'participantes',   en: 'participants',   va: 'participants' },
+    leadOrg:        { es: 'Líder:',          en: 'Lead:',          va: 'Líder:' },
+    partners:       { es: 'Partners:',       en: 'Partners:',      va: 'Partners:' },
+    deliverable:    { es: 'Entregable:',     en: 'Deliverable:',   va: 'Lliurable:' },
+    relatedCase:    { es: 'Caso:',           en: 'Case:',          va: 'Cas:' },
+    relatedOer:     { es: 'Recurso:',        en: 'Resource:',      va: 'Recurs:' },
+    objective:      { es: 'Objetivo',        en: 'Objective',      va: 'Objectiu' },
+    methodology:    { es: 'Metodología',     en: 'Methodology',    va: 'Metodologia' },
+    outcome:        { es: 'Resultado',       en: 'Outcome',        va: 'Resultat' },
+    helix:          { es: 'Hélice:',         en: 'Helix:',         va: 'Hèlix:' },
+    transitions:    { es: 'Transiciones:',   en: 'Transitions:',   va: 'Transicions:' },
+    filterType:     { es: 'Filtrar por tipo de piloto',   en: 'Filter by pilot type',   va: 'Filtrar per tipus de pilot' },
+    filterStatus:   { es: 'Filtrar por estado',           en: 'Filter by status',       va: 'Filtrar per estat' },
+    filterSector:   { es: 'Filtrar por sector',           en: 'Filter by sector',       va: 'Filtrar per sector' },
+    filterLevel:    { es: 'Filtrar por nivel',            en: 'Filter by level',        va: 'Filtrar per nivell' },
+    filterHelix:    { es: 'Filtrar por hélice',           en: 'Filter by helix',        va: 'Filtrar per hèlix' },
+    filterTrans:    { es: 'Filtrar por transición',       en: 'Filter by transition',   va: 'Filtrar per transició' },
+    activeFilters:  { es: 'Filtros activos:', en: 'Active filters:', va: 'Filtres actius:' },
+    clearAll:       { es: 'Limpiar todo',     en: 'Clear all',       va: 'Netejar tots' },
+    previous:       { es: 'Anterior',         en: 'Previous',        va: 'Anterior' },
+    next:           { es: 'Siguiente',        en: 'Next',            va: 'Següent' },
+    noResults:      { es: 'No se encontraron evidencias', en: 'No evidence found', va: 'No s\'han trobat evidències' },
+    viewEvidence:   { es: 'Ver evidencia',    en: 'View evidence',   va: 'Veure evidència' },
+    documentation:  { es: 'Documentación',    en: 'Documentation',   va: 'Documentació' },
+  };
+  return labels[key]?.[lang] || key;
+}
+
+function getEvidFilters() {
+  try {
+    const p = JSON.parse(localStorage.getItem('evidFilters') || '{}');
+    return {
+      pilotType: p.pilotType || null,
+      status: p.status || null,
+      sectors: p.sectors || [],
+      levels: p.levels || [],
+      helix: p.helix || [],
+      transitions: p.transitions || [],
+    };
+  } catch {
+    return { pilotType: null, status: null, sectors: [], levels: [], helix: [], transitions: [] };
+  }
+}
+function setEvidFilters(f) { localStorage.setItem('evidFilters', JSON.stringify(f)); }
 
 function tabEvidencia() {
-  const items = t('knowledge.evidenceItems') || [];
-  const evHtml = items.map(ev => `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 hover:border-eu-blue transition-colors">
-      <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
-        <div class="flex-1 min-w-0">
-          <h3 class="font-bold text-eu-text text-base mb-1">${ev.title || ''}</h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="text-xs font-bold px-1.5 py-0.5 rounded ${SECTOR_COLORS[ev.sector] || 'bg-gray-100 text-gray-600'}">
-              ${t('knowledge.evidenceSector') || 'Sector:'} ${getSectorName(ev.sector)}
-            </span>
-            <span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">
-              ${t('knowledge.evidenceRoute') || 'Ruta:'} ${ev.route || ''}
-            </span>
-          </div>
-        </div>
-        <div class="flex items-center gap-2">
-          ${statusIcon(ev.status || '')}
-          <span class="text-xs font-bold px-2 py-0.5 rounded ${statusBadge(ev.status || '')}">${ev.status || ''}</span>
-        </div>
-      </div>
-      ${ev.participants > 0 ? `<p class="text-xs text-gray-500 mb-2">👥 ${ev.participants} participantes</p>` : ''}
-      <p class="text-sm text-gray-700 mb-2">${t('knowledge.evidenceOutcome') || 'Evidencia:'} <span class="font-medium">${ev.outcome || ''}</span></p>
-      <p class="text-xs text-eu-blue font-semibold">${ev.partner || ''}</p>
-    </div>
-  `).join('');
+  const block = KNOWLEDGE_CONFIG?.pilotEvidencesBlock;
+  if (!block) {
+    return `<div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
+      <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+      <p class="text-gray-500 text-base">${getEvidLabel('noResults')}</p>
+    </div>`;
+  }
+  if (block.visible === false) {
+    const lang = getLang();
+    const msg = lang === 'en' ? 'No content available in this section yet'
+              : lang === 'va' ? 'Encara no hi ha contingut disponible en aquesta secció'
+              : 'Todavía no hay contenido disponible en esta sección';
+    return `<div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
+      <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+      <p class="text-gray-500 text-base">${msg}</p>
+    </div>`;
+  }
+
+  const search = getState('evidSearch') || '';
+  const title = pickLang(block.title, '');
+  const desc = pickLang(block.description, '');
+  const placeholder = pickLang(block.searchPlaceholder, '');
+  const demo = block.demoNotice || {};
+  const demoText = pickLang(demo.text, '');
 
   return `
     <div>
-      <h2 class="text-xl font-bold text-eu-text mb-2">${t('knowledge.evidenceTitle') || ''}</h2>
-      <p class="text-sm text-gray-600 mb-7 max-w-2xl">${t('knowledge.evidenceDesc') || ''}</p>
-      <div class="bg-amber-50 border border-amber-200 rounded-xl px-5 py-3 mb-7 flex items-start gap-3">
-        <span class="text-amber-500 text-lg mt-0.5">⚠️</span>
-        <p class="text-xs text-amber-700">${t('knowledge.evidenceDemoLabel') || 'Indicadores demo'} — ${t('knowledge.evidenceDesc') || ''}</p>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+        <div>
+          <h2 class="text-xl font-bold text-eu-text mb-1">${title}</h2>
+          <p class="text-base text-gray-600 max-w-2xl">${desc}</p>
+        </div>
+        <div class="relative">
+          <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
+          <input id="evid-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
+            class="border border-eu-border rounded-md pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
+            placeholder="${placeholder}" />
+          <button id="evid-search-clear" style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)" class="w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer ${search ? '' : 'hidden'}" title="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
+        </div>
       </div>
-      <div class="space-y-5">${evHtml}</div>
+      ${(demo.visible !== false && demoText) ? `
+      <div class="bg-amber-50 border border-amber-200 rounded-xl px-5 py-3 mb-6 flex items-start gap-3">
+        <span class="text-amber-500 text-lg mt-0.5">⚠️</span>
+        <p class="text-xs text-amber-700">${demoText}</p>
+      </div>` : ''}
+      <div id="evid-grid">${renderEvidGridContent(search)}</div>
     </div>
   `;
+}
+
+function renderEvidGridContent(search) {
+  const block = KNOWLEDGE_CONFIG?.pilotEvidencesBlock;
+  if (!block) return '';
+  const evidences = Array.isArray(block.evidences) ? block.evidences : [];
+
+  // Sort by startDate desc
+  let sorted = [...evidences].sort((a, b) => {
+    const da = new Date(a.startDate || '1970-01-01').getTime();
+    const db = new Date(b.startDate || '1970-01-01').getTime();
+    return db - da;
+  });
+
+  // Text search
+  let filtered = search ? sorted.filter(e => {
+    const tt = pickLang(e.title, '');
+    const sm = pickLang(e.summary, '');
+    const lead = e.leadOrganization || '';
+    const partners = (e.partnerOrganizations || []).map(p => p.name).join(' ');
+    const deliv = e.relatedDeliverable || '';
+    const hay = `${e.id} ${tt} ${sm} ${lead} ${partners} ${deliv}`.toLowerCase();
+    return hay.includes(search.toLowerCase());
+  }) : sorted;
+
+  // Chip filters
+  const f = getEvidFilters();
+  filtered = filtered.filter(e => {
+    if (f.pilotType && e.pilotType !== f.pilotType) return false;
+    if (f.status && e.status !== f.status) return false;
+    if (f.sectors.length && !f.sectors.some(s => (e.sectorIds || []).includes(s))) return false;
+    if (f.levels.length && !f.levels.some(l => (e.levels || []).includes(l))) return false;
+    if (f.helix.length && !f.helix.some(h => (e.helix || []).includes(h))) return false;
+    if (f.transitions.length && !f.transitions.some(t => (e.transitions || []).includes(t))) return false;
+    return true;
+  });
+
+  // Pagination
+  const pageOptions = Array.isArray(block.pageSizeOptions) ? block.pageSizeOptions : [6, 12, 24];
+  const pageSize = getState('evidPageSize') || pageOptions[0];
+  const isAll = pageSize === 'all';
+  const rawPage = getState('evidPage') || 0;
+  const totalPages = isAll ? 1 : Math.ceil(filtered.length / pageSize);
+  const safePage = Math.min(rawPage, Math.max(0, totalPages - 1));
+  const paginated = isAll ? filtered : filtered.slice(safePage * pageSize, (safePage + 1) * pageSize);
+
+  const ptLabels = block.pilotTypeLabels || {};
+  const stLabels = block.statusLabels || {};
+  const hxLabels = block.helixLabels || {};
+  const trLabels = block.transitionLabels || {};
+
+  // Cards
+  const cardsHtml = paginated.length === 0 ? `
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
+      <i data-lucide="${search ? 'search' : 'inbox'}" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+      <p class="text-gray-500 text-base">${search ? getEvidLabel('noResults') : pickLang(block.emptyMessage, getEvidLabel('noResults'))}</p>
+    </div>
+  ` : `<div class="space-y-5">${paginated.map(e => renderEvidCard(e, ptLabels, stLabels, hxLabels, trLabels)).join('')}</div>`;
+
+  // Active filters panel
+  const activeChips = [];
+  if (f.pilotType) activeChips.push({ kind: 'pilotType', value: f.pilotType, label: pickLang(ptLabels[f.pilotType], f.pilotType), cls: PILOT_TYPE_CHIP });
+  if (f.status) activeChips.push({ kind: 'status', value: f.status, label: pickLang(stLabels[f.status], f.status), cls: STATUS_CHIP[f.status] || 'bg-gray-100 text-gray-700' });
+  for (const s of f.sectors) activeChips.push({ kind: 'sectors', value: s, label: getSectorName(s), cls: SECTOR_COLORS[s] || 'bg-gray-100 text-gray-600' });
+  for (const l of f.levels) activeChips.push({ kind: 'levels', value: l, label: pickLang(LEVEL_LABELS[l], l), cls: LEVEL_COLORS[l] || 'bg-gray-100 text-gray-700' });
+  for (const h of f.helix) activeChips.push({ kind: 'helix', value: h, label: pickLang(hxLabels[h], h), cls: HELIX_CHIP });
+  for (const tr of f.transitions) activeChips.push({ kind: 'transitions', value: tr, label: pickLang(trLabels[tr], tr), cls: TRANSITION_CHIP });
+
+  const activeFiltersHtml = activeChips.length ? `
+    <div class="bg-eu-bg border border-eu-border rounded-xl p-4 mb-5">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs font-semibold text-gray-600 mr-1">${getEvidLabel('activeFilters')}</span>
+        ${activeChips.map(c => `
+          <span class="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded ${c.cls}">
+            ${c.label}
+            <button class="evid-filter-remove ml-1 text-gray-600 hover:text-red-600 cursor-pointer" data-kind="${c.kind}" data-value="${c.value}">×</button>
+          </span>
+        `).join('')}
+        <button id="evid-filter-clear-all" class="text-xs text-eu-blue font-semibold hover:underline cursor-pointer ml-2">${getEvidLabel('clearAll')}</button>
+      </div>
+    </div>
+  ` : '';
+
+  // Pagination controls
+  const showAll = block.showAllOption !== false;
+  const showAllLabel = pickLang(block.showAllLabel, 'Todas');
+  const pageSelector = `
+    <div class="flex flex-wrap items-center justify-between gap-3 mt-6">
+      <div class="text-xs text-gray-600">${filtered.length}</div>
+      <div class="flex items-center gap-2">
+        <label class="text-xs text-gray-600">Página:</label>
+        <select id="evid-page-size" class="border border-eu-border rounded px-2 py-1 text-xs cursor-pointer">
+          ${pageOptions.map(o => `<option value="${o}" ${pageSize === o ? 'selected' : ''}>${o}</option>`).join('')}
+          ${showAll ? `<option value="all" ${isAll ? 'selected' : ''}>${showAllLabel}</option>` : ''}
+        </select>
+        ${!isAll && totalPages > 1 ? `
+          <button id="evid-prev" class="px-2 py-1 text-xs border border-eu-border rounded cursor-pointer hover:bg-eu-bg" ${safePage === 0 ? 'disabled' : ''}>${getEvidLabel('previous')}</button>
+          <span class="text-xs">${safePage + 1} / ${totalPages}</span>
+          <button id="evid-next" class="px-2 py-1 text-xs border border-eu-border rounded cursor-pointer hover:bg-eu-bg" ${safePage >= totalPages - 1 ? 'disabled' : ''}>${getEvidLabel('next')}</button>
+        ` : ''}
+      </div>
+    </div>
+  `;
+
+  return `${activeFiltersHtml}${cardsHtml}${pageSelector}`;
+}
+
+function renderEvidCard(e, ptLabels, stLabels, hxLabels, trLabels) {
+  const tt = pickLang(e.title, '');
+  const sm = pickLang(e.summary, '');
+  const ptLabel = pickLang(ptLabels[e.pilotType], e.pilotType);
+  const stLabel = pickLang(stLabels[e.status], e.status);
+  const stCls = STATUS_CHIP[e.status] || 'bg-gray-100 text-gray-700';
+
+  const sectorChips = (e.sectorIds || []).map(s => `
+    <span class="text-xs font-bold px-1.5 py-0.5 rounded ${SECTOR_COLORS[s] || 'bg-gray-100 text-gray-600'}">${getSectorName(s)}</span>
+  `).join('');
+  const levelChips = (e.levels || []).map(l => `
+    <span class="text-xs font-bold px-1.5 py-0.5 rounded ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-700'}">${pickLang(LEVEL_LABELS[l], l)}</span>
+  `).join('');
+  const helixChips = (e.helix || []).map(h => `
+    <span class="text-xs font-semibold px-1.5 py-0.5 rounded ${HELIX_CHIP}">${pickLang(hxLabels[h], h)}</span>
+  `).join('');
+  const transChips = (e.transitions || []).map(tr => `
+    <span class="text-xs font-semibold px-1.5 py-0.5 rounded ${TRANSITION_CHIP}">${pickLang(trLabels[tr], tr)}</span>
+  `).join('');
+
+  const objective   = (e.showObjective   !== false) && e.objective   ? pickLang(e.objective,   '') : null;
+  const methodology = (e.showMethodology !== false) && e.methodology ? pickLang(e.methodology, '') : null;
+  const outcome     = (e.showOutcome     !== false) && e.outcome     ? pickLang(e.outcome,     '') : null;
+
+  const evLink = (e.showEvidenceLink !== false) && e.evidenceLink && e.evidenceLink.url ? e.evidenceLink : null;
+  const docLink = (e.showDocumentation !== false) && e.documentation && e.documentation.url ? e.documentation : null;
+  const addLink = (e.showAdditionalUrl !== false) && e.additionalUrl && e.additionalUrl.url ? e.additionalUrl : null;
+
+  const partners = (e.partnerOrganizations || []).filter(p => p.name).map(p => p.role ? `${p.name} (${p.role})` : p.name).join(', ');
+  const dates = e.startDate ? (e.endDate && e.endDate !== e.startDate ? `${e.startDate} → ${e.endDate}` : e.startDate) : '';
+
+  return `
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 hover:border-eu-blue transition-colors">
+      <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+        <div class="flex-1 min-w-0">
+          <h3 class="font-bold text-eu-text text-base mb-1">${tt}</h3>
+          ${sm ? `<p class="text-sm text-gray-600 mb-2">${sm}</p>` : ''}
+          <div class="flex flex-wrap gap-1.5 items-center">
+            <span class="text-xs font-semibold px-1.5 py-0.5 rounded ${PILOT_TYPE_CHIP}">${ptLabel}</span>
+            ${sectorChips}
+            ${levelChips}
+          </div>
+        </div>
+        <span class="text-xs font-bold px-2 py-0.5 rounded ${stCls}">${stLabel}</span>
+      </div>
+
+      ${(helixChips || transChips) ? `
+        <div class="flex flex-wrap gap-1.5 mb-3">
+          ${helixChips}
+          ${transChips}
+        </div>` : ''}
+
+      <div class="text-xs text-gray-500 space-y-0.5 mb-3">
+        ${e.leadOrganization ? `<p><span class="font-semibold">${getEvidLabel('leadOrg')}</span> <span class="text-eu-blue font-semibold">${e.leadOrganization}</span></p>` : ''}
+        ${partners ? `<p><span class="font-semibold">${getEvidLabel('partners')}</span> ${partners}</p>` : ''}
+        ${e.relatedDeliverable ? `<p><span class="font-semibold">${getEvidLabel('deliverable')}</span> <span class="font-mono">${e.relatedDeliverable}</span></p>` : ''}
+        ${e.relatedCaseId ? `<p><span class="font-semibold">${getEvidLabel('relatedCase')}</span> <span class="font-mono">${e.relatedCaseId}</span></p>` : ''}
+        ${e.relatedOerId ? `<p><span class="font-semibold">${getEvidLabel('relatedOer')}</span> <span class="font-mono">${e.relatedOerId}</span></p>` : ''}
+        ${dates ? `<p>📅 ${dates}</p>` : ''}
+        ${e.participants > 0 ? `<p>👥 ${e.participants} ${getEvidLabel('participants')}</p>` : ''}
+      </div>
+
+      ${objective ? `<div class="bg-blue-50 border-l-4 border-blue-400 rounded p-3 mb-2">
+        <p class="text-xs font-semibold text-blue-900 mb-0.5">🎯 ${getEvidLabel('objective')}</p>
+        <p class="text-sm text-gray-700">${objective}</p>
+      </div>` : ''}
+      ${methodology ? `<div class="bg-violet-50 border-l-4 border-violet-400 rounded p-3 mb-2">
+        <p class="text-xs font-semibold text-violet-900 mb-0.5">🛠️ ${getEvidLabel('methodology')}</p>
+        <p class="text-sm text-gray-700">${methodology}</p>
+      </div>` : ''}
+      ${outcome ? `<div class="bg-emerald-50 border-l-4 border-emerald-400 rounded p-3 mb-2">
+        <p class="text-xs font-semibold text-emerald-900 mb-0.5">📊 ${getEvidLabel('outcome')}</p>
+        <p class="text-sm text-gray-700">${outcome}</p>
+      </div>` : ''}
+
+      ${(evLink || docLink || addLink) ? `
+        <div class="flex flex-wrap gap-2 mt-3 pt-3 border-t border-eu-border">
+          ${evLink ? `<a href="${evLink.url}" ${evLink.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1 text-xs font-semibold text-eu-blue hover:underline"><i data-lucide="external-link" class="w-3.5 h-3.5"></i>${getEvidLabel('viewEvidence')}</a>` : ''}
+          ${docLink ? `<a href="${docLink.url}" ${docLink.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1 text-xs font-semibold text-eu-teal hover:underline"><i data-lucide="file-text" class="w-3.5 h-3.5"></i>${getEvidLabel('documentation')}${docLink.license ? ` <span class="font-mono text-gray-500">(${docLink.license})</span>` : ''}</a>` : ''}
+          ${addLink ? `<a href="${addLink.url}" ${addLink.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1 text-xs font-semibold text-gray-700 hover:underline"><i data-lucide="link" class="w-3.5 h-3.5"></i>${pickLang(addLink.label, '')}</a>` : ''}
+        </div>` : ''}
+    </div>
+  `;
+}
+
+function updateEvidGrid() {
+  const grid = document.getElementById('evid-grid');
+  if (!grid) return;
+  const search = getState('evidSearch') || '';
+  grid.innerHTML = renderEvidGridContent(search);
+  attachEvidGridListeners();
+  if (window.lucide) window.lucide.createIcons();
+}
+
+function attachEvidGridListeners() {
+  // Remove single filter chip
+  document.querySelectorAll('.evid-filter-remove').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const kind = btn.dataset.kind;
+      const value = btn.dataset.value;
+      const f = getEvidFilters();
+      if (Array.isArray(f[kind])) {
+        f[kind] = f[kind].filter(v => v !== value);
+      } else {
+        f[kind] = null;
+      }
+      setEvidFilters(f);
+      setState('evidPage', 0);
+      updateEvidGrid();
+    });
+  });
+  // Clear all
+  document.getElementById('evid-filter-clear-all')?.addEventListener('click', () => {
+    setEvidFilters({ pilotType: null, status: null, sectors: [], levels: [], helix: [], transitions: [] });
+    setState('evidPage', 0);
+    updateEvidGrid();
+  });
+  // Pagination
+  document.getElementById('evid-prev')?.addEventListener('click', () => {
+    const cur = getState('evidPage') || 0;
+    if (cur > 0) { setState('evidPage', cur - 1); updateEvidGrid(); }
+  });
+  document.getElementById('evid-next')?.addEventListener('click', () => {
+    setState('evidPage', (getState('evidPage') || 0) + 1);
+    updateEvidGrid();
+  });
+  document.getElementById('evid-page-size')?.addEventListener('change', e => {
+    const v = e.target.value;
+    setState('evidPageSize', v === 'all' ? 'all' : parseInt(v, 10));
+    setState('evidPage', 0);
+    updateEvidGrid();
+  });
 }
 
 // ─── Tab 5: Plantillas ───────────────────────────────────────────────────────
@@ -1422,6 +1731,26 @@ export function mount() {
   attachOerFilterListeners();
   attachCasosPaginationListeners();
   attachCasosFilterListeners();
+
+  // Evidencias de pilotaje
+  document.getElementById('evid-search')?.addEventListener('input', e => {
+    const val = e.target.value;
+    setState('evidSearch', val);
+    setState('evidPage', 0);
+    const clearBtn = document.getElementById('evid-search-clear');
+    if (clearBtn) clearBtn.classList.toggle('hidden', !val);
+    updateEvidGrid();
+  });
+  document.getElementById('evid-search-clear')?.addEventListener('click', () => {
+    const input = document.getElementById('evid-search');
+    if (input) input.value = '';
+    document.getElementById('evid-search-clear')?.classList.add('hidden');
+    setState('evidSearch', '');
+    setState('evidPage', 0);
+    updateEvidGrid();
+    input?.focus();
+  });
+  attachEvidGridListeners();
 }
 
 function rerender() {

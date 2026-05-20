@@ -362,7 +362,7 @@ export const translations = {
       tabFlow: 'Ciclo de Transferencia',
       tabOER: 'OER y Recursos',
       tabCases: 'Casos de Transferencia',
-      tabEvidence: 'Evidencias de Piloto',
+      tabEvidence: 'Evidencias de pilotaje',
       tabTemplates: 'Plantillas y Toolkits',
       // Flow section
       flowTitle: 'Del Reto Ecosistema al Recurso Educativo Abierto',
@@ -2121,7 +2121,7 @@ export const translations = {
       tabFlow: 'Cicle de Transferència',
       tabOER: 'OER i Recursos',
       tabCases: 'Casos de Transferència',
-      tabEvidence: 'Evidències de Pilot',
+      tabEvidence: 'Evidències de pilotatge',
       tabTemplates: 'Plantilles i Toolkits',
       // Flow section
       flowTitle: 'Del Repte Industrial al Recurs Educatiu Obert',

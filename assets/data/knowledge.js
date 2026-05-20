@@ -1,5 +1,5 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR
-// Fuentes: content/knowledge/hero.yml, content/knowledge/transfer-cycle.yml, content/knowledge/oer-resources.yml, content/knowledge/success-cases.yml
+// Fuentes: content/knowledge/hero.yml, content/knowledge/transfer-cycle.yml, content/knowledge/oer-resources.yml, content/knowledge/success-cases.yml, content/knowledge/pilot-evidences.yml
 
 export const KNOWLEDGE_CONFIG = {
   "heroBlock": {
@@ -1989,6 +1989,570 @@ export const KNOWLEDGE_CONFIG = {
         "documentation": {
           "url": "https://hynergreen.com/formacion-hidrogeno-fp",
           "license": "CC-BY 4.0",
+          "externalLink": true
+        }
+      }
+    ]
+  },
+  "pilotEvidencesBlock": {
+    "visible": true,
+    "title": {
+      "es": "Evidencias de pilotaje",
+      "en": "Pilot Evidence",
+      "va": "Evidències de pilotatge"
+    },
+    "description": {
+      "es": "Registro de actividades piloto realizadas en el marco de la red AI-STEAM, vinculadas a entregables del proyecto AI-SECRETT, y al modelo de cuádruple hélice y triple transición.",
+      "en": "Record of pilot activities carried out within the AI-STEAM Network, linked to AI-SECRETT deliverables and to the quadruple helix and triple transition model.",
+      "va": "Registre d'activitats pilot realitzades en el marc de la xarxa AI-STEAM, vinculades a lliurables del projecte AI-SECRETT i al model de quàdruple hèlix i triple transició."
+    },
+    "searchPlaceholder": {
+      "es": "Buscar por título, organización o entregable...",
+      "en": "Search by title, organization or deliverable...",
+      "va": "Cercar per títol, organització o lliurable..."
+    },
+    "demoNotice": {
+      "visible": true,
+      "text": {
+        "es": "Indicadores demo del prototipo — no representan entregas oficiales de AI-SECRETT.",
+        "en": "Prototype demo indicators — do not represent official AI-SECRETT deliverables.",
+        "va": "Indicadors demo del prototip — no representen lliurables oficials d'AI-SECRETT."
+      }
+    },
+    "pageSizeOptions": [
+      6,
+      12,
+      24
+    ],
+    "showAllOption": true,
+    "showAllLabel": {
+      "es": "Todas",
+      "en": "All",
+      "va": "Totes"
+    },
+    "emptyMessage": {
+      "es": "Aún no hay evidencias de pilotaje registradas.",
+      "en": "No pilot evidence registered yet.",
+      "va": "Encara no hi ha evidències de pilotatge registrades."
+    },
+    "pilotTypeLabels": {
+      "fp": {
+        "es": "Piloto FP",
+        "en": "VET pilot",
+        "va": "Pilot FP"
+      },
+      "teacher-training": {
+        "es": "Formación docente",
+        "en": "Teacher training",
+        "va": "Formació docent"
+      },
+      "master-bridge": {
+        "es": "Puente al Máster",
+        "en": "Master bridge",
+        "va": "Pont al Màster"
+      },
+      "stakeholder-validation": {
+        "es": "Validación stakeholder",
+        "en": "Stakeholder validation",
+        "va": "Validació stakeholder"
+      },
+      "network-cooperation": {
+        "es": "Cooperación de red",
+        "en": "Network cooperation",
+        "va": "Cooperació de xarxa"
+      },
+      "deliverable-review": {
+        "es": "Revisión de entregable",
+        "en": "Deliverable review",
+        "va": "Revisió de lliurable"
+      },
+      "consensue-trace": {
+        "es": "Traza ConsensUE",
+        "en": "ConsensUE trace",
+        "va": "Traça ConsensUE"
+      }
+    },
+    "statusLabels": {
+      "in-design": {
+        "es": "En diseño",
+        "en": "In design",
+        "va": "En disseny"
+      },
+      "in-progress": {
+        "es": "En curso",
+        "en": "In progress",
+        "va": "En curs"
+      },
+      "completed": {
+        "es": "Completado",
+        "en": "Completed",
+        "va": "Completat"
+      },
+      "in-review": {
+        "es": "En revisión",
+        "en": "In review",
+        "va": "En revisió"
+      },
+      "validated": {
+        "es": "Validado",
+        "en": "Validated",
+        "va": "Validat"
+      }
+    },
+    "helixLabels": {
+      "academia": {
+        "es": "Academia",
+        "en": "Academia",
+        "va": "Acadèmia"
+      },
+      "public-sector": {
+        "es": "Sector público",
+        "en": "Public sector",
+        "va": "Sector públic"
+      },
+      "industry": {
+        "es": "Industria / PYME",
+        "en": "Industry / SME",
+        "va": "Indústria / PIME"
+      },
+      "civil-society": {
+        "es": "Sociedad civil",
+        "en": "Civil society",
+        "va": "Societat civil"
+      }
+    },
+    "transitionLabels": {
+      "digital": {
+        "es": "Digital",
+        "en": "Digital",
+        "va": "Digital"
+      },
+      "green": {
+        "es": "Verde",
+        "en": "Green",
+        "va": "Verda"
+      },
+      "social": {
+        "es": "Social",
+        "en": "Social",
+        "va": "Social"
+      }
+    },
+    "evidences": [
+      {
+        "id": "ev1",
+        "visible": true,
+        "title": {
+          "es": "Piloto FP — IA para eficiencia energética en centros educativos",
+          "en": "VET Pilot — AI for energy efficiency in educational centers",
+          "va": "Pilot FP — IA per a l'eficiència energètica en centres educatius"
+        },
+        "summary": {
+          "es": "Módulo OER de eficiencia energética con IA pilotado con alumnado de FP en IES La Costera.",
+          "en": "AI-based energy efficiency OER module piloted with VET students at IES La Costera.",
+          "va": "Mòdul OER d'eficiència energètica amb IA pilotat amb alumnat de FP a l'IES La Costera."
+        },
+        "pilotType": "fp",
+        "status": "completed",
+        "sectorIds": [
+          "ene"
+        ],
+        "levels": [
+          "FP"
+        ],
+        "helix": [
+          "academia",
+          "public-sector"
+        ],
+        "transitions": [
+          "digital",
+          "green"
+        ],
+        "startDate": "2026-01-15",
+        "endDate": "2026-04-30",
+        "participants": 24,
+        "leadOrganization": "CEICE",
+        "partnerOrganizations": [
+          {
+            "name": "IES La Costera",
+            "role": "Centro piloto"
+          }
+        ],
+        "relatedDeliverable": "T4.2 / D4.2",
+        "relatedCaseId": "",
+        "relatedOerId": "",
+        "showObjective": true,
+        "objective": {
+          "es": "Validar la transferibilidad de un módulo OER de eficiencia energética con IA al alumnado de FP de Energía y Agua.",
+          "en": "Validate the transferability of an AI-based energy efficiency OER module to VET students in Energy and Water.",
+          "va": "Validar la transferibilitat d'un mòdul OER d'eficiència energètica amb IA a l'alumnat de FP d'Energia i Aigua."
+        },
+        "showMethodology": true,
+        "methodology": {
+          "es": "Implementación en aula con metodología Learning by Developing (LbD), sesiones híbridas en Aules y captura de evidencias mediante checklist AI-SECRETT.",
+          "en": "Classroom deployment using Learning by Developing (LbD), hybrid sessions on Aules and evidence capture via the AI-SECRETT checklist.",
+          "va": "Implementació a l'aula amb metodologia Learning by Developing (LbD), sessions híbrides a Aules i captura d'evidències mitjançant checklist AI-SECRETT."
+        },
+        "showOutcome": true,
+        "outcome": {
+          "es": "Módulo OER CC-BY publicado en Aules. 24 alumnos participantes. Dataset anonimizado disponible para reutilización.",
+          "en": "CC-BY OER module published on Aules. 24 participating students. Anonymized dataset available for reuse.",
+          "va": "Mòdul OER CC-BY publicat a Aules. 24 alumnes participants. Dataset anonimitzat disponible per a reutilització."
+        },
+        "showEvidenceLink": false,
+        "evidenceLink": {
+          "url": "",
+          "externalLink": true
+        },
+        "showDocumentation": false,
+        "documentation": {
+          "url": "",
+          "license": "",
+          "externalLink": true
+        },
+        "showAdditionalUrl": false,
+        "additionalUrl": {
+          "url": "",
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "externalLink": true
+        }
+      },
+      {
+        "id": "ev2",
+        "visible": true,
+        "title": {
+          "es": "Piloto Formación Docente — Uso responsable de IA generativa en el aula",
+          "en": "Teacher Training Pilot — Responsible use of generative AI in the classroom",
+          "va": "Pilot Formació Docent — Ús responsable d'IA generativa a l'aula"
+        },
+        "summary": {
+          "es": "Sesiones CEFIRE sobre IA generativa ética y responsable para docentes de la red AI-STEAM.",
+          "en": "CEFIRE sessions on ethical and responsible generative AI for teachers in the AI-STEAM Network.",
+          "va": "Sessions CEFIRE sobre IA generativa ètica i responsable per a docents de la xarxa AI-STEAM."
+        },
+        "pilotType": "teacher-training",
+        "status": "in-progress",
+        "sectorIds": [
+          "nts"
+        ],
+        "levels": [
+          "Docentes"
+        ],
+        "helix": [
+          "academia",
+          "public-sector"
+        ],
+        "transitions": [
+          "digital",
+          "social"
+        ],
+        "startDate": "2026-02-01",
+        "endDate": "2026-06-30",
+        "participants": 18,
+        "leadOrganization": "CEFIRE Valencia",
+        "partnerOrganizations": [
+          {
+            "name": "CEICE",
+            "role": "Coordinación"
+          }
+        ],
+        "relatedDeliverable": "T4.2",
+        "relatedCaseId": "",
+        "relatedOerId": "",
+        "showObjective": true,
+        "objective": {
+          "es": "Capacitar al profesorado en uso ético y responsable de IA generativa siguiendo principios del AI Act y guías AI-SECRETT.",
+          "en": "Train teachers in ethical and responsible use of generative AI following AI Act principles and AI-SECRETT guidelines.",
+          "va": "Capacitar el professorat en l'ús ètic i responsable d'IA generativa seguint principis de l'AI Act i guies AI-SECRETT."
+        },
+        "showMethodology": true,
+        "methodology": {
+          "es": "Sesiones presenciales en CEFIRE + plataforma Aules, con co-creación de actividades de aula y revisión por pares.",
+          "en": "In-person CEFIRE sessions + Aules platform, with co-creation of classroom activities and peer review.",
+          "va": "Sessions presencials al CEFIRE + plataforma Aules, amb co-creació d'activitats d'aula i revisió per parells."
+        },
+        "showOutcome": true,
+        "outcome": {
+          "es": "Sesiones CEFIRE en curso. Guía metodológica en elaboración. Encuesta de impacto prevista para junio 2026.",
+          "en": "CEFIRE sessions in progress. Methodological guide under development. Impact survey planned for June 2026.",
+          "va": "Sessions CEFIRE en curs. Guia metodològica en elaboració. Enquesta d'impacte prevista per al juny de 2026."
+        },
+        "showEvidenceLink": false,
+        "evidenceLink": {
+          "url": "",
+          "externalLink": true
+        },
+        "showDocumentation": false,
+        "documentation": {
+          "url": "",
+          "license": "",
+          "externalLink": true
+        },
+        "showAdditionalUrl": false,
+        "additionalUrl": {
+          "url": "",
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "externalLink": true
+        }
+      },
+      {
+        "id": "ev3",
+        "visible": true,
+        "title": {
+          "es": "Piloto Stakeholder — Validación de reto de agricultura de precisión",
+          "en": "Stakeholder Pilot — Precision agriculture challenge validation",
+          "va": "Pilot Stakeholder — Validació de repte d'agricultura de precisió"
+        },
+        "summary": {
+          "es": "Validación con AVA-ASAJA de un reto sectorial sobre agricultura de precisión y clasificación a Track A.",
+          "en": "Validation with AVA-ASAJA of a sectoral challenge on precision agriculture and Track A classification.",
+          "va": "Validació amb AVA-ASAJA d'un repte sectorial sobre agricultura de precisió i classificació a Track A."
+        },
+        "pilotType": "stakeholder-validation",
+        "status": "completed",
+        "sectorIds": [
+          "agr"
+        ],
+        "levels": [
+          "FP",
+          "Máster"
+        ],
+        "helix": [
+          "academia",
+          "industry",
+          "civil-society"
+        ],
+        "transitions": [
+          "digital",
+          "green"
+        ],
+        "startDate": "2025-11-10",
+        "endDate": "2026-01-20",
+        "participants": 3,
+        "leadOrganization": "AVA-ASAJA",
+        "partnerOrganizations": [
+          {
+            "name": "UVEG",
+            "role": "Clasificación Track A"
+          }
+        ],
+        "relatedDeliverable": "T2.4 / T4.4",
+        "relatedCaseId": "",
+        "relatedOerId": "",
+        "showObjective": true,
+        "objective": {
+          "es": "Validar la pertinencia y madurez de un reto de agricultura de precisión propuesto por el sector agroalimentario valenciano.",
+          "en": "Validate the relevance and maturity of a precision agriculture challenge proposed by the Valencian agri-food sector.",
+          "va": "Validar la pertinència i maduresa d'un repte d'agricultura de precisió proposat pel sector agroalimentari valencià."
+        },
+        "showMethodology": true,
+        "methodology": {
+          "es": "Entrevistas con AVA-ASAJA, revisión técnica por UVEG y triage en ConsensUE para clasificación Track A / Track B.",
+          "en": "Interviews with AVA-ASAJA, technical review by UVEG and ConsensUE triage for Track A / Track B classification.",
+          "va": "Entrevistes amb AVA-ASAJA, revisió tècnica per UVEG i triatge en ConsensUE per a classificació Track A / Track B."
+        },
+        "showOutcome": true,
+        "outcome": {
+          "es": "Reto validado por AVA-ASAJA. Clasificado para tratamiento Track A por UVEG. Dataset multispectral cedido para reuso académico.",
+          "en": "Challenge validated by AVA-ASAJA. Classified for Track A handling by UVEG. Multispectral dataset donated for academic reuse.",
+          "va": "Repte validat per AVA-ASAJA. Classificat per a tractament Track A per UVEG. Dataset multispectral cedit per a reús acadèmic."
+        },
+        "showEvidenceLink": false,
+        "evidenceLink": {
+          "url": "",
+          "externalLink": true
+        },
+        "showDocumentation": false,
+        "documentation": {
+          "url": "",
+          "license": "",
+          "externalLink": true
+        },
+        "showAdditionalUrl": false,
+        "additionalUrl": {
+          "url": "",
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "externalLink": true
+        }
+      },
+      {
+        "id": "ev4",
+        "visible": true,
+        "title": {
+          "es": "Piloto ENRED — Taller de cooperación ENRED & AI-STEAM Network",
+          "en": "ENRED Pilot — ENRED & AI-STEAM Network cooperation workshop",
+          "va": "Pilot ENRED — Taller de cooperació ENRED & AI-STEAM Network"
+        },
+        "summary": {
+          "es": "Taller intersectorial entre departamentos regionales de la Generalitat y la red AI-STEAM.",
+          "en": "Cross-sectoral workshop between regional Generalitat departments and the AI-STEAM Network.",
+          "va": "Taller intersectorial entre departaments regionals de la Generalitat i la xarxa AI-STEAM."
+        },
+        "pilotType": "network-cooperation",
+        "status": "completed",
+        "sectorIds": [
+          "cci"
+        ],
+        "levels": [
+          "Docentes"
+        ],
+        "helix": [
+          "public-sector",
+          "civil-society"
+        ],
+        "transitions": [
+          "social"
+        ],
+        "startDate": "2026-03-05",
+        "endDate": "2026-03-05",
+        "participants": 11,
+        "leadOrganization": "ENRED",
+        "partnerOrganizations": [
+          {
+            "name": "CEICE",
+            "role": "Anfitrión"
+          },
+          {
+            "name": "KEA",
+            "role": "Facilitación europea"
+          }
+        ],
+        "relatedDeliverable": "T2.4",
+        "relatedCaseId": "",
+        "relatedOerId": "",
+        "showObjective": true,
+        "objective": {
+          "es": "Articular cooperación operativa entre ENRED y la red AI-STEAM identificando necesidades sectoriales comunes.",
+          "en": "Operationalize cooperation between ENRED and the AI-STEAM Network by identifying common sectoral needs.",
+          "va": "Articular cooperació operativa entre ENRED i la xarxa AI-STEAM identificant necessitats sectorials comunes."
+        },
+        "showMethodology": true,
+        "methodology": {
+          "es": "Taller presencial con dinámicas de co-creación, mapeo de actores y firma de acta de cooperación.",
+          "en": "In-person workshop with co-creation dynamics, stakeholder mapping and signed cooperation minutes.",
+          "va": "Taller presencial amb dinàmiques de co-creació, mapatge d'actors i signatura d'acta de cooperació."
+        },
+        "showOutcome": true,
+        "outcome": {
+          "es": "Acta de cooperación firmada entre 4 departamentos regionales. 3 necesidades sectoriales identificadas. Informe de síntesis publicado.",
+          "en": "Cooperation minutes signed by 4 regional departments. 3 sectoral needs identified. Synthesis report published.",
+          "va": "Acta de cooperació signada entre 4 departaments regionals. 3 necessitats sectorials identificades. Informe de síntesi publicat."
+        },
+        "showEvidenceLink": false,
+        "evidenceLink": {
+          "url": "",
+          "externalLink": true
+        },
+        "showDocumentation": false,
+        "documentation": {
+          "url": "",
+          "license": "",
+          "externalLink": true
+        },
+        "showAdditionalUrl": false,
+        "additionalUrl": {
+          "url": "",
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "externalLink": true
+        }
+      },
+      {
+        "id": "ev5",
+        "visible": true,
+        "title": {
+          "es": "Revisión de entregable D2.2 — Red AI-STEAM funcionalmente activa",
+          "en": "D2.2 deliverable review — AI-STEAM Network functionally active",
+          "va": "Revisió del lliurable D2.2 — Xarxa AI-STEAM funcionalment activa"
+        },
+        "summary": {
+          "es": "Consolidación de indicadores Track B y trazas ConsensUE para el entregable D2.2 de AI-SECRETT.",
+          "en": "Consolidation of Track B indicators and ConsensUE traces for AI-SECRETT deliverable D2.2.",
+          "va": "Consolidació d'indicadors Track B i traces ConsensUE per al lliurable D2.2 d'AI-SECRETT."
+        },
+        "pilotType": "deliverable-review",
+        "status": "in-review",
+        "sectorIds": [
+          "nts"
+        ],
+        "levels": [
+          "FP",
+          "Docentes",
+          "Máster"
+        ],
+        "helix": [
+          "academia",
+          "public-sector"
+        ],
+        "transitions": [
+          "digital",
+          "social"
+        ],
+        "startDate": "2026-04-01",
+        "endDate": "2026-05-15",
+        "participants": 0,
+        "leadOrganization": "CEICE",
+        "partnerOrganizations": [
+          {
+            "name": "Steering Committee",
+            "role": "Revisión"
+          }
+        ],
+        "relatedDeliverable": "D2.2",
+        "relatedCaseId": "",
+        "relatedOerId": "",
+        "showObjective": true,
+        "objective": {
+          "es": "Consolidar indicadores Track B (stakeholders registrados, sectores activos, retos validados, trazas ConsensUE) para el entregable D2.2.",
+          "en": "Consolidate Track B indicators (registered stakeholders, active sectors, validated challenges, ConsensUE traces) for deliverable D2.2.",
+          "va": "Consolidar indicadors Track B (stakeholders registrats, sectors actius, reptes validats, traces ConsensUE) per al lliurable D2.2."
+        },
+        "showMethodology": true,
+        "methodology": {
+          "es": "Recopilación cruzada desde plataformas (Network, ConsensUE, Aules), validación por Steering Committee y revisión editorial.",
+          "en": "Cross-platform data collection (Network, ConsensUE, Aules), Steering Committee validation and editorial review.",
+          "va": "Recopilació creuada des de plataformes (Network, ConsensUE, Aules), validació pel Steering Committee i revisió editorial."
+        },
+        "showOutcome": true,
+        "outcome": {
+          "es": "Indicadores Track B consolidados. Entregable D2.2 en preparación final con revisión por el Steering Committee.",
+          "en": "Track B indicators consolidated. Deliverable D2.2 in final preparation with Steering Committee review.",
+          "va": "Indicadors Track B consolidats. Lliurable D2.2 en preparació final amb revisió pel Steering Committee."
+        },
+        "showEvidenceLink": false,
+        "evidenceLink": {
+          "url": "",
+          "externalLink": true
+        },
+        "showDocumentation": false,
+        "documentation": {
+          "url": "",
+          "license": "",
+          "externalLink": true
+        },
+        "showAdditionalUrl": false,
+        "additionalUrl": {
+          "url": "",
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "externalLink": true
         }
       }
