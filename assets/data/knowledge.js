@@ -534,6 +534,28 @@ export const KNOWLEDGE_CONFIG = {
       "va": "Cercar per títol, organització o sector..."
     },
     "showVerificationStatus": true,
+    "transferTypeLabels": {
+      "implementación": {
+        "es": "Implementación",
+        "en": "Implementation",
+        "va": "Implementació"
+      },
+      "adaptación": {
+        "es": "Adaptación",
+        "en": "Adaptation",
+        "va": "Adaptació"
+      },
+      "capacitación": {
+        "es": "Capacitación",
+        "en": "Training",
+        "va": "Capacitació"
+      },
+      "escalado": {
+        "es": "Escalado",
+        "en": "Scaling",
+        "va": "Escalat"
+      }
+    },
     "verificationStatusLabels": {
       "verified": {
         "es": "Verificado",
@@ -615,7 +637,7 @@ export const KNOWLEDGE_CONFIG = {
           "en": "Implementation video, results report, testimonials from students and participating companies",
           "va": "Vídeo d'implementació, informe de resultats, testimonis d'estudiants i empreses participants"
         },
-        "showDocumentation": false,
+        "showDocumentation": true,
         "showMainLink": true,
         "showAdditionalUrl": true,
         "documentation": {

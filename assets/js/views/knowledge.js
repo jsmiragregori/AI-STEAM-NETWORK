@@ -237,7 +237,7 @@ function renderCasosActiveFiltersDisplay() {
       <button data-caso-remove-filter="transfer"
         class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${cls} border border-current/20 text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
         <i data-lucide="${icon}" class="w-3 h-3"></i>
-        <span>${pickLang(TRANSFER_TYPE_LABELS[f.transferType], f.transferType)}</span>
+        <span>${pickLang(KNOWLEDGE_CONFIG?.successCasesBlock?.transferTypeLabels?.[f.transferType] || TRANSFER_TYPE_LABELS[f.transferType], f.transferType)}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>`);
   }
@@ -1022,7 +1022,7 @@ function renderCasosGridContent(search) {
                 <span class="font-semibold">${getCasosLabel('adoptedBy')}</span> ${cBeneficiaries.map(b => b.name).join(', ')}
               </p>
               <button data-caso-filter-transfer="${cTransferType}" class="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded cursor-pointer transition-all ${TRANSFER_TYPE_COLORS[cTransferType] || 'bg-gray-100 text-gray-700 border border-gray-300'} ${activeCasosFilters.transferType === cTransferType ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterTransfer')}">
-                <i data-lucide="${TRANSFER_TYPE_ICONS[cTransferType] || 'arrow-right'}" class="w-3 h-3"></i> ${pickLang(TRANSFER_TYPE_LABELS[cTransferType], cTransferType)}
+                <i data-lucide="${TRANSFER_TYPE_ICONS[cTransferType] || 'arrow-right'}" class="w-3 h-3"></i> ${pickLang(casesBlock?.transferTypeLabels?.[cTransferType] || TRANSFER_TYPE_LABELS[cTransferType], cTransferType)}
               </button>
             </div>
           </div>
