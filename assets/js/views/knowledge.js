@@ -378,10 +378,6 @@ function tabOER(search) {
   const blockDesc  = hasCmsBlock ? pickLang(oerBlock.description, '') : (t('knowledge.oerDesc') || '');
   const searchPlh  = hasCmsBlock ? pickLang(oerBlock.searchPlaceholder, '') : (t('knowledge.oerSearch') || '');
 
-  const activeFilters = getOerFilters();
-  const hasFilters = activeFilters.typeId || activeFilters.sectors.length > 0 || activeFilters.levels.length > 0 || activeFilters.validationStatus;
-  const clearLabel = getLang() === 'en' ? 'Clear filters' : getLang() === 'va' ? 'Netejar filtres' : 'Limpiar filtros';
-
   return `
     <div>
       <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
@@ -393,10 +389,13 @@ function tabOER(search) {
           <div class="relative">
             <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
             <input id="oer-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
-              class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
+              class="border border-eu-border rounded-md pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
               placeholder="${searchPlh}" />
+            <button id="oer-search-clear"
+              style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)"
+              class="w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer ${search ? '' : 'hidden'}"
+              title="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
           </div>
-          ${hasFilters ? `<button id="oer-clear-filters" class="px-3 py-2 rounded border border-eu-blue text-eu-blue text-sm font-semibold cursor-pointer hover:bg-eu-blue/5 transition-colors">${clearLabel}</button>` : ''}
         </div>
       </div>
       <div id="oer-grid">${renderOerGridContent(search)}</div>
@@ -878,7 +877,7 @@ function tabCasos(search) {
           <input id="casos-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
             class="border border-eu-border rounded-md pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
             placeholder="${searchPlh}" />
-          <button id="casos-search-clear" class="absolute right-2 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer ${search ? '' : 'hidden'}" title="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
+          <button id="casos-search-clear" style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)" class="w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer ${search ? '' : 'hidden'}" title="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
         </div>
       </div>
       <div id="casos-grid">${renderCasosGridContent(search)}</div>
@@ -1388,9 +1387,21 @@ export function mount() {
 
   // OER search — partial update only (no full re-render, preserves focus while typing)
   document.getElementById('oer-search')?.addEventListener('input', e => {
-    setState('knowledgeSearch', e.target.value);
+    const val = e.target.value;
+    setState('knowledgeSearch', val);
+    setState('oerPage', 0);
+    const clearBtn = document.getElementById('oer-search-clear');
+    if (clearBtn) clearBtn.classList.toggle('hidden', !val);
+    updateOerGrid();
+  });
+  document.getElementById('oer-search-clear')?.addEventListener('click', () => {
+    const input = document.getElementById('oer-search');
+    if (input) input.value = '';
+    document.getElementById('oer-search-clear')?.classList.add('hidden');
+    setState('knowledgeSearch', '');
     setState('oerPage', 0);
     updateOerGrid();
+    input?.focus();
   });
 
   // Casos search — partial update only
