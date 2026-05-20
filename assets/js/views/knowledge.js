@@ -159,6 +159,8 @@ function getCasosLabel(key) {
     activeFilters:  { es: 'Filtros activos:', en: 'Active filters:', va: 'Filtres actius:' },
     clearAll:       { es: 'Limpiar todo', en: 'Clear all', va: 'Netejar tots' },
     clearFilters:   { es: 'Limpiar filtros', en: 'Clear filters', va: 'Netejar filtres' },
+    statusVerified: { es: 'Verificado', en: 'Verified', va: 'Verificat' },
+    statusPending:  { es: 'Pendiente', en: 'Pending', va: 'Pendent' },
   };
   return labels[key]?.[lang] || key;
 }
@@ -228,10 +230,14 @@ function renderCasosActiveFiltersDisplay() {
       ? 'bg-green-100 text-green-800 border-green-300'
       : 'bg-amber-100 text-amber-800 border-amber-300';
     const icon = f.verificationStatus === 'verified' ? '✓' : '⏳';
+    const statusLabels = KNOWLEDGE_CONFIG?.successCasesBlock?.verificationStatusLabels || {};
+    const verLabel = statusLabels[f.verificationStatus]
+      ? pickLang(statusLabels[f.verificationStatus], f.verificationStatus)
+      : getCasosLabel(f.verificationStatus === 'verified' ? 'statusVerified' : 'statusPending');
     badges.push(`
       <button data-caso-remove-filter="status"
         class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${cls} border text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
-        <span>${icon} ${f.verificationStatus}</span>
+        <span>${icon} ${verLabel}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>`);
   }
