@@ -33,10 +33,10 @@ const SECTOR_COLORS = {
 const FLOW_ICONS = ['🏭', '🔍', '👥', '💻', '✅', '🌐'];
 
 const TRANSFER_TYPE_COLORS = {
-  implementación: 'bg-indigo-100 text-indigo-800',
-  adaptación:     'bg-rose-100 text-rose-800',
-  capacitación:   'bg-teal-100 text-teal-800',
-  escalado:       'bg-amber-100 text-amber-800',
+  implementación: 'bg-indigo-100 text-indigo-800 border border-indigo-300',
+  adaptación:     'bg-rose-100 text-rose-800 border border-rose-300',
+  capacitación:   'bg-teal-100 text-teal-800 border border-teal-300',
+  escalado:       'bg-amber-100 text-amber-800 border border-amber-300',
 };
 
 const TRANSFER_TYPE_ICONS = {
@@ -44,6 +44,13 @@ const TRANSFER_TYPE_ICONS = {
   adaptación:     'git-branch',
   capacitación:   'graduation-cap',
   escalado:       'trending-up',
+};
+
+const TRANSFER_TYPE_LABELS = {
+  implementación: { es: 'Implementación', en: 'Implementation', va: 'Implementació' },
+  adaptación:     { es: 'Adaptación',     en: 'Adaptation',     va: 'Adaptació' },
+  capacitación:   { es: 'Capacitación',   en: 'Training',       va: 'Capacitació' },
+  escalado:       { es: 'Escalado',       en: 'Scaling',        va: 'Escalat' },
 };
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
@@ -230,7 +237,7 @@ function renderCasosActiveFiltersDisplay() {
       <button data-caso-remove-filter="transfer"
         class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${cls} border border-current/20 text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
         <i data-lucide="${icon}" class="w-3 h-3"></i>
-        <span>${f.transferType}</span>
+        <span>${pickLang(TRANSFER_TYPE_LABELS[f.transferType], f.transferType)}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>`);
   }
@@ -1020,8 +1027,8 @@ function renderCasosGridContent(search) {
               <p class="text-sm text-gray-700">
                 <span class="font-semibold">${getCasosLabel('adoptedBy')}</span> ${cBeneficiaries.map(b => b.name).join(', ')}
               </p>
-              <button data-caso-filter-transfer="${cTransferType}" class="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded cursor-pointer transition-all ${TRANSFER_TYPE_COLORS[cTransferType] || 'bg-gray-100 text-gray-700'} ${activeCasosFilters.transferType === cTransferType ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterTransfer')}">
-                <i data-lucide="${TRANSFER_TYPE_ICONS[cTransferType] || 'arrow-right'}" class="w-3 h-3"></i> ${cTransferType}
+              <button data-caso-filter-transfer="${cTransferType}" class="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded cursor-pointer transition-all ${TRANSFER_TYPE_COLORS[cTransferType] || 'bg-gray-100 text-gray-700 border border-gray-300'} ${activeCasosFilters.transferType === cTransferType ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterTransfer')}">
+                <i data-lucide="${TRANSFER_TYPE_ICONS[cTransferType] || 'arrow-right'}" class="w-3 h-3"></i> ${pickLang(TRANSFER_TYPE_LABELS[cTransferType], cTransferType)}
               </button>
             </div>
           </div>
