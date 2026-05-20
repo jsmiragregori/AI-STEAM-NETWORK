@@ -139,21 +139,111 @@ function getOerLabel(key) {
 function getCasosLabel(key) {
   const lang = getLang();
   const labels = {
-    createdBy: { es: 'Creado por:', en: 'Created by:', va: 'Creat per:' },
-    adoptedBy: { es: 'Adoptado por:', en: 'Adopted by:', va: 'Adoptat per:' },
+    createdBy:      { es: 'Creado por:', en: 'Created by:', va: 'Creat per:' },
+    adoptedBy:      { es: 'Adoptado por:', en: 'Adopted by:', va: 'Adoptat per:' },
     howTransferred: { es: 'Cómo se transfirió', en: 'How it was transferred', va: 'Com es va transferir' },
-    impact: { es: 'Impacto', en: 'Impact', va: 'Impacte' },
-    evidence: { es: 'Evidencias', en: 'Evidence', va: 'Evidències' },
-    published: { es: 'Publicado:', en: 'Published:', va: 'Publicat:' },
-    revised: { es: 'Revisado:', en: 'Revised:', va: 'Revisat:' },
-    license: { es: 'Licencia:', en: 'License:', va: 'Llicència:' },
-    viewCase: { es: 'Ver caso completo', en: 'View full case', va: 'Veure cas complet' },
-    documentation: { es: 'Documentación', en: 'Documentation', va: 'Documentació' },
-    resources: { es: 'Recursos', en: 'Resources', va: 'Recursos' },
-    previous: { es: 'Anterior', en: 'Previous', va: 'Anterior' },
-    next: { es: 'Siguiente', en: 'Next', va: 'Següent' }
+    impact:         { es: 'Impacto', en: 'Impact', va: 'Impacte' },
+    evidence:       { es: 'Evidencias', en: 'Evidence', va: 'Evidències' },
+    published:      { es: 'Publicado:', en: 'Published:', va: 'Publicat:' },
+    revised:        { es: 'Revisado:', en: 'Revised:', va: 'Revisat:' },
+    license:        { es: 'Licencia:', en: 'License:', va: 'Llicència:' },
+    viewCase:       { es: 'Ver caso completo', en: 'View full case', va: 'Veure cas complet' },
+    documentation:  { es: 'Documentación', en: 'Documentation', va: 'Documentació' },
+    resources:      { es: 'Recursos', en: 'Resources', va: 'Recursos' },
+    previous:       { es: 'Anterior', en: 'Previous', va: 'Anterior' },
+    next:           { es: 'Siguiente', en: 'Next', va: 'Següent' },
+    filterSector:   { es: 'Filtrar por sector', en: 'Filter by sector', va: 'Filtrar per sector' },
+    filterLevel:    { es: 'Filtrar por nivel', en: 'Filter by level', va: 'Filtrar per nivell' },
+    filterTransfer: { es: 'Filtrar por tipo de transferencia', en: 'Filter by transfer type', va: 'Filtrar per tipus de transferència' },
+    filterStatus:   { es: 'Filtrar por estado', en: 'Filter by status', va: 'Filtrar per estat' },
+    activeFilters:  { es: 'Filtros activos:', en: 'Active filters:', va: 'Filtres actius:' },
+    clearAll:       { es: 'Limpiar todo', en: 'Clear all', va: 'Netejar tots' },
+    clearFilters:   { es: 'Limpiar filtros', en: 'Clear filters', va: 'Netejar filtres' },
   };
   return labels[key]?.[lang] || key;
+}
+
+function getCasosFilters() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem('casosFilters') || '{}');
+    return {
+      sectors:            parsed.sectors || [],
+      levels:             parsed.levels || [],
+      transferType:       parsed.transferType || null,
+      verificationStatus: parsed.verificationStatus || null,
+    };
+  } catch {
+    return { sectors: [], levels: [], transferType: null, verificationStatus: null };
+  }
+}
+
+function setCasosFilters(filters) {
+  localStorage.setItem('casosFilters', JSON.stringify(filters));
+}
+
+function renderCasosActiveFiltersDisplay() {
+  const f = getCasosFilters();
+  const hasFilters = f.sectors.length > 0 || f.levels.length > 0 || f.transferType || f.verificationStatus;
+  if (!hasFilters) return '';
+
+  const badges = [];
+
+  f.sectors.forEach(sid => {
+    badges.push(`
+      <button data-caso-remove-filter="sector" data-filter-value="${sid}"
+        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${SECTOR_COLORS[sid] || 'bg-gray-100 text-gray-600'} border border-current/30 text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
+        <span>🏷️ ${getSectorName(sid)}</span>
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>`);
+  });
+
+  f.levels.forEach(l => {
+    const label = LEVEL_LABELS[l] ? pickLang(LEVEL_LABELS[l], l) : l;
+    badges.push(`
+      <button data-caso-remove-filter="level" data-filter-value="${l}"
+        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-600'} border border-current/30 text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
+        <span>🎓 ${label}</span>
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>`);
+  });
+
+  if (f.transferType) {
+    const TRANSFER_COLORS = {
+      implementación: 'bg-blue-100 text-blue-800 border-blue-300',
+      adaptación:     'bg-violet-100 text-violet-800 border-violet-300',
+      capacitación:   'bg-teal-100 text-teal-800 border-teal-300',
+      escalado:       'bg-orange-100 text-orange-800 border-orange-300',
+    };
+    const cls = TRANSFER_COLORS[f.transferType] || 'bg-gray-100 text-gray-700 border-gray-300';
+    badges.push(`
+      <button data-caso-remove-filter="transfer"
+        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${cls} border text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
+        <span>🔄 ${f.transferType}</span>
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>`);
+  }
+
+  if (f.verificationStatus) {
+    const cls = f.verificationStatus === 'verified'
+      ? 'bg-green-100 text-green-800 border-green-300'
+      : 'bg-amber-100 text-amber-800 border-amber-300';
+    const icon = f.verificationStatus === 'verified' ? '✓' : '⏳';
+    badges.push(`
+      <button data-caso-remove-filter="status"
+        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${cls} border text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
+        <span>${icon} ${f.verificationStatus}</span>
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>`);
+  }
+
+  return `
+    <div class="flex flex-wrap items-center gap-2 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+      <span class="text-xs font-semibold text-gray-700">${getCasosLabel('activeFilters')}</span>
+      ${badges.join('')}
+      <button id="casos-clear-all-filters" class="ml-auto px-2.5 py-1 rounded text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200">
+        ${getCasosLabel('clearAll')}
+      </button>
+    </div>`;
 }
 
 function tabFlujo() {
@@ -753,6 +843,9 @@ function tabCasos(search) {
   const blockDesc = hasCmsBlock ? pickLang(casesBlock.description, '') : (t('knowledge.casesDesc') || '');
   const searchPlh = hasCmsBlock ? pickLang(casesBlock.searchPlaceholder, '') : (t('knowledge.casesSearch') || 'Buscar casos...');
 
+  const f = getCasosFilters();
+  const hasFilters = f.sectors.length > 0 || f.levels.length > 0 || f.transferType || f.verificationStatus;
+
   return `
     <div>
       <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
@@ -760,11 +853,14 @@ function tabCasos(search) {
           <h2 class="text-xl font-bold text-eu-text mb-1">${blockTitle}</h2>
           <p class="text-base text-gray-600 max-w-2xl">${blockDesc}</p>
         </div>
-        <div class="relative">
-          <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
-          <input id="casos-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
-            class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
-            placeholder="${searchPlh}" />
+        <div class="flex gap-3 items-center">
+          <div class="relative">
+            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
+            <input id="casos-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
+              class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
+              placeholder="${searchPlh}" />
+          </div>
+          ${hasFilters ? `<button id="casos-clear-filters" class="px-3 py-2 rounded border border-eu-blue text-eu-blue text-sm font-semibold cursor-pointer hover:bg-eu-blue/5 transition-colors">${getCasosLabel('clearFilters')}</button>` : ''}
         </div>
       </div>
       <div id="casos-grid">${renderCasosGridContent(search)}</div>
@@ -789,14 +885,33 @@ function renderCasosGridContent(search) {
   let filtered = search
     ? sorted.filter(c => {
         const cTitle = hasCmsBlock ? pickLang(c.title, '') : (c.title || '');
-        const cOrg = c.organization || '';
+        const cOrg = c.originOrganization || c.organization || '';
+        const cBens = (c.beneficiaryOrganizations || []).map(b => b.name || '').join(' ');
         const cSectorIds = Array.isArray(c.sectorIds) ? c.sectorIds : (c.sector ? [c.sector] : []);
         const cSectorStr = cSectorIds.map(id => getSectorName(id)).join(' ');
-        return cTitle.toLowerCase().includes(search.toLowerCase()) ||
-               cOrg.toLowerCase().includes(search.toLowerCase()) ||
-               cSectorStr.toLowerCase().includes(search.toLowerCase());
+        const haystack = `${cTitle} ${cOrg} ${cBens} ${cSectorStr}`.toLowerCase();
+        return haystack.includes(search.toLowerCase());
       })
     : sorted;
+
+  // Apply chip filters
+  const activeCasosFilters = getCasosFilters();
+  const hasChipFilters = activeCasosFilters.sectors.length > 0 || activeCasosFilters.levels.length > 0 || activeCasosFilters.transferType || activeCasosFilters.verificationStatus;
+  if (hasChipFilters) {
+    filtered = filtered.filter(c => {
+      if (activeCasosFilters.sectors.length > 0) {
+        const cSectors = Array.isArray(c.sectorIds) ? c.sectorIds : (c.sector ? [c.sector] : []);
+        if (!activeCasosFilters.sectors.some(s => cSectors.includes(s))) return false;
+      }
+      if (activeCasosFilters.levels.length > 0) {
+        const cLevels = Array.isArray(c.levels) ? c.levels : (c.level ? [c.level] : []);
+        if (!activeCasosFilters.levels.some(l => cLevels.includes(l))) return false;
+      }
+      if (activeCasosFilters.transferType && c.transferType !== activeCasosFilters.transferType) return false;
+      if (activeCasosFilters.verificationStatus && c.verificationStatus !== activeCasosFilters.verificationStatus) return false;
+      return true;
+    });
+  }
 
   // Pagination
   const pageSize = getState('casosPageSize') || 6;
@@ -838,17 +953,19 @@ function renderCasosGridContent(search) {
     const cTransferType = c.transferType || '';
     const cTransferDesc = c.transferDescription ? pickLang(c.transferDescription, '') : null;
 
-    // Sectores: múltiples
+    // Sectores: múltiples — clickables como filtro
     const cSectorIds = Array.isArray(c.sectorIds) ? c.sectorIds : (c.sector ? [c.sector] : []);
     const cSectorsHtml = cSectorIds.map(sid => {
-      return `<button class="text-sm font-semibold px-2.5 py-1 rounded cursor-pointer transition-all ${SECTOR_COLORS[sid] || 'bg-gray-100 text-gray-600'}">${getSectorName(sid)}</button>`;
+      const isActive = activeCasosFilters.sectors.includes(sid);
+      return `<button data-caso-filter-sector="${sid}" class="text-xs font-semibold px-2 py-0.5 rounded cursor-pointer transition-all ${SECTOR_COLORS[sid] || 'bg-gray-100 text-gray-600'} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterSector')}">${getSectorName(sid)}</button>`;
     }).join(' ');
 
-    // Niveles: múltiples
+    // Niveles: múltiples — clickables como filtro
     const cLevels = Array.isArray(c.levels) ? c.levels : (c.level ? [c.level] : []);
     const cLevelsHtml = cLevels.map(l => {
       const label = LEVEL_LABELS[l] ? pickLang(LEVEL_LABELS[l], l) : l;
-      return `<span class="text-sm font-bold px-2.5 py-1 rounded ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-600'}">${label}</span>`;
+      const isActive = activeCasosFilters.levels.includes(l);
+      return `<button data-caso-filter-level="${l}" class="text-xs font-bold px-2 py-0.5 rounded cursor-pointer transition-all ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-600'} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterLevel')}">${label}</button>`;
     }).join(' ');
 
     // Fecha publicación
@@ -865,11 +982,12 @@ function renderCasosGridContent(search) {
     // Verification status badge
     const statusLabels = casesBlock?.verificationStatusLabels || {};
     const cVerificationLabel = pickLang(statusLabels[c.verificationStatus], c.verificationStatus === 'verified' ? 'Verificado' : 'Pendiente');
+    const verStatusIsActive = activeCasosFilters.verificationStatus === c.verificationStatus;
     const verificationStatusHtml = showVerificationStatus ? `
       <div>
-        <span class="text-sm font-bold px-3 py-1.5 rounded ${c.verificationStatus === 'verified' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'}">
+        <button data-caso-filter-status="${c.verificationStatus}" class="text-sm font-bold px-3 py-1.5 rounded cursor-pointer transition-all ${c.verificationStatus === 'verified' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'} ${verStatusIsActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterStatus')}">
           ${c.verificationStatus === 'verified' ? '✓' : '⏳'} ${cVerificationLabel}
-        </span>
+        </button>
       </div>
     ` : '';
 
@@ -886,9 +1004,9 @@ function renderCasosGridContent(search) {
               <p class="text-sm text-gray-700">
                 <span class="font-semibold">${getCasosLabel('adoptedBy')}</span> ${cBeneficiaries.map(b => b.name).join(', ')}
               </p>
-              <p class="text-sm text-eu-blue font-semibold capitalize">
+              <button data-caso-filter-transfer="${cTransferType}" class="text-sm text-eu-blue font-semibold capitalize cursor-pointer hover:underline text-left ${activeCasosFilters.transferType === cTransferType ? 'underline decoration-2' : ''}" title="${getCasosLabel('filterTransfer')}">
                 <i data-lucide="arrow-right" class="w-3 h-3 inline"></i> ${cTransferType}
-              </p>
+              </button>
             </div>
           </div>
           ${verificationStatusHtml}
@@ -993,6 +1111,7 @@ function renderCasosGridContent(search) {
     : '';
 
   return `
+    ${renderCasosActiveFiltersDisplay()}
     <div class="flex items-center justify-between mb-4">
       <span class="text-xs text-gray-500 font-medium">${countLabel}</span>
       ${pageSizeHtml}
@@ -1009,6 +1128,7 @@ function updateCasosGrid() {
   container.innerHTML = renderCasosGridContent(search);
   if (window.lucide) window.lucide.createIcons();
   attachCasosPaginationListeners();
+  attachCasosFilterListeners();
 }
 
 function attachCasosPaginationListeners() {
@@ -1026,6 +1146,93 @@ function attachCasosPaginationListeners() {
   });
   document.getElementById('casos-pag-next')?.addEventListener('click', () => {
     setState('casosPage', (getState('casosPage') || 0) + 1);
+    updateCasosGrid();
+  });
+}
+
+function attachCasosFilterListeners() {
+  // Sector chip filter
+  document.querySelectorAll('[data-caso-filter-sector]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const sid = btn.dataset.casoFilterSector;
+      const f = getCasosFilters();
+      if (f.sectors.includes(sid)) f.sectors = f.sectors.filter(s => s !== sid);
+      else f.sectors.push(sid);
+      setCasosFilters(f);
+      setState('casosPage', 0);
+      updateCasosGrid();
+    });
+  });
+
+  // Level chip filter
+  document.querySelectorAll('[data-caso-filter-level]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const l = btn.dataset.casoFilterLevel;
+      const f = getCasosFilters();
+      if (f.levels.includes(l)) f.levels = f.levels.filter(x => x !== l);
+      else f.levels.push(l);
+      setCasosFilters(f);
+      setState('casosPage', 0);
+      updateCasosGrid();
+    });
+  });
+
+  // Transfer type filter (toggle)
+  document.querySelectorAll('[data-caso-filter-transfer]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const tt = btn.dataset.casoFilterTransfer;
+      const f = getCasosFilters();
+      f.transferType = f.transferType === tt ? null : tt;
+      setCasosFilters(f);
+      setState('casosPage', 0);
+      updateCasosGrid();
+    });
+  });
+
+  // Verification status filter (toggle)
+  document.querySelectorAll('[data-caso-filter-status]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const st = btn.dataset.casoFilterStatus;
+      const f = getCasosFilters();
+      f.verificationStatus = f.verificationStatus === st ? null : st;
+      setCasosFilters(f);
+      setState('casosPage', 0);
+      updateCasosGrid();
+    });
+  });
+
+  // Remove individual filter badges
+  document.querySelectorAll('[data-caso-remove-filter]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const type = btn.dataset.casoRemoveFilter;
+      const val = btn.dataset.filterValue;
+      const f = getCasosFilters();
+      if (type === 'sector') f.sectors = f.sectors.filter(s => s !== val);
+      else if (type === 'level') f.levels = f.levels.filter(l => l !== val);
+      else if (type === 'transfer') f.transferType = null;
+      else if (type === 'status') f.verificationStatus = null;
+      setCasosFilters(f);
+      setState('casosPage', 0);
+      updateCasosGrid();
+    });
+  });
+
+  // Clear all filters (panel button)
+  document.getElementById('casos-clear-all-filters')?.addEventListener('click', () => {
+    setCasosFilters({ sectors: [], levels: [], transferType: null, verificationStatus: null });
+    setState('casosPage', 0);
+    updateCasosGrid();
+  });
+
+  // Clear all filters (header button)
+  document.getElementById('casos-clear-filters')?.addEventListener('click', () => {
+    setCasosFilters({ sectors: [], levels: [], transferType: null, verificationStatus: null });
+    setState('casosPage', 0);
     updateCasosGrid();
   });
 }
@@ -1184,6 +1391,7 @@ export function mount() {
   attachOerPaginationListeners();
   attachOerFilterListeners();
   attachCasosPaginationListeners();
+  attachCasosFilterListeners();
 }
 
 function rerender() {
