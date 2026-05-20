@@ -876,8 +876,9 @@ function tabCasos(search) {
         <div class="relative">
           <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
           <input id="casos-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
-            class="border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
+            class="border border-eu-border rounded-md pl-9 ${search ? 'pr-8' : 'pr-3'} py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
             placeholder="${searchPlh}" />
+          ${search ? `<button id="casos-search-clear" class="absolute right-2 top-1/2 -translate-y-1/2 w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer" title="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>` : ''}
         </div>
       </div>
       <div id="casos-grid">${renderCasosGridContent(search)}</div>
@@ -1397,6 +1398,12 @@ export function mount() {
     setState('casosSearch', e.target.value);
     setState('casosPage', 0);
     updateCasosGrid();
+  });
+  document.getElementById('casos-search-clear')?.addEventListener('click', () => {
+    setState('casosSearch', '');
+    setState('casosPage', 0);
+    updateCasosGrid();
+    document.getElementById('casos-search')?.focus();
   });
 
   attachOerPaginationListeners();
