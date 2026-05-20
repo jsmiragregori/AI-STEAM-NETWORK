@@ -32,6 +32,20 @@ const SECTOR_COLORS = {
 
 const FLOW_ICONS = ['🏭', '🔍', '👥', '💻', '✅', '🌐'];
 
+const TRANSFER_TYPE_COLORS = {
+  implementación: 'bg-indigo-100 text-indigo-800',
+  adaptación:     'bg-rose-100 text-rose-800',
+  capacitación:   'bg-teal-100 text-teal-800',
+  escalado:       'bg-amber-100 text-amber-800',
+};
+
+const TRANSFER_TYPE_ICONS = {
+  implementación: 'wrench',
+  adaptación:     'git-branch',
+  capacitación:   'graduation-cap',
+  escalado:       'trending-up',
+};
+
 function getLang() { return localStorage.getItem('language') || 'es'; }
 function pickLang(value, fallback = '') {
   const lang = getLang();
@@ -210,17 +224,13 @@ function renderCasosActiveFiltersDisplay() {
   });
 
   if (f.transferType) {
-    const TRANSFER_COLORS = {
-      implementación: 'bg-blue-100 text-blue-800 border-blue-300',
-      adaptación:     'bg-violet-100 text-violet-800 border-violet-300',
-      capacitación:   'bg-teal-100 text-teal-800 border-teal-300',
-      escalado:       'bg-orange-100 text-orange-800 border-orange-300',
-    };
-    const cls = TRANSFER_COLORS[f.transferType] || 'bg-gray-100 text-gray-700 border-gray-300';
+    const cls = TRANSFER_TYPE_COLORS[f.transferType] || 'bg-gray-100 text-gray-700';
+    const icon = TRANSFER_TYPE_ICONS[f.transferType] || 'arrow-right';
     badges.push(`
       <button data-caso-remove-filter="transfer"
-        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${cls} border text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
-        <span>🔄 ${f.transferType}</span>
+        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${cls} border border-current/20 text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
+        <i data-lucide="${icon}" class="w-3 h-3"></i>
+        <span>${f.transferType}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>`);
   }
@@ -1010,8 +1020,8 @@ function renderCasosGridContent(search) {
               <p class="text-sm text-gray-700">
                 <span class="font-semibold">${getCasosLabel('adoptedBy')}</span> ${cBeneficiaries.map(b => b.name).join(', ')}
               </p>
-              <button data-caso-filter-transfer="${cTransferType}" class="text-sm text-eu-blue font-semibold capitalize cursor-pointer hover:underline text-left ${activeCasosFilters.transferType === cTransferType ? 'underline decoration-2' : ''}" title="${getCasosLabel('filterTransfer')}">
-                <i data-lucide="arrow-right" class="w-3 h-3 inline"></i> ${cTransferType}
+              <button data-caso-filter-transfer="${cTransferType}" class="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded cursor-pointer transition-all ${TRANSFER_TYPE_COLORS[cTransferType] || 'bg-gray-100 text-gray-700'} ${activeCasosFilters.transferType === cTransferType ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterTransfer')}">
+                <i data-lucide="${TRANSFER_TYPE_ICONS[cTransferType] || 'arrow-right'}" class="w-3 h-3"></i> ${cTransferType}
               </button>
             </div>
           </div>
