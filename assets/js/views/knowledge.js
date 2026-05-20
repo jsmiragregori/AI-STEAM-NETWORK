@@ -843,10 +843,12 @@ function renderCasosGridContent(search) {
     const cAdditionalUrl = c.additionalUrl ? c.additionalUrl : null;
 
     // Verification status badge
+    const statusLabels = casesBlock?.verificationStatusLabels || {};
+    const cVerificationLabel = pickLang(statusLabels[c.verificationStatus], c.verificationStatus === 'verified' ? 'Verificado' : 'Pendiente');
     const verificationStatusHtml = showVerificationStatus ? `
       <div>
         <span class="text-sm font-bold px-3 py-1.5 rounded ${c.verificationStatus === 'verified' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'}">
-          ${c.verificationStatus === 'verified' ? '✓ Verificado' : '⏳ Pendiente'}
+          ${c.verificationStatus === 'verified' ? '✓' : '⏳'} ${cVerificationLabel}
         </span>
       </div>
     ` : '';

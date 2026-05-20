@@ -517,7 +517,7 @@ export const KNOWLEDGE_CONFIG = {
     ]
   },
   "successCasesBlock": {
-    "visible": false,
+    "visible": true,
     "title": {
       "es": "Casos de Transferencia",
       "en": "Transfer Cases",
@@ -534,6 +534,18 @@ export const KNOWLEDGE_CONFIG = {
       "va": "Cercar per títol, organització o sector..."
     },
     "showVerificationStatus": true,
+    "verificationStatusLabels": {
+      "verified": {
+        "es": "Verificado",
+        "en": "Verified",
+        "va": "Verificat"
+      },
+      "unverified": {
+        "es": "Pendiente",
+        "en": "Pending",
+        "va": "Pendent"
+      }
+    },
     "cases": [
       {
         "id": "c1",
