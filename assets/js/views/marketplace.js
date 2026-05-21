@@ -3,6 +3,53 @@ import { getState, setState } from '../state.js';
 import { MARKETPLACE_CONFIG } from '../../data/marketplace.js';
 import { CHALLENGES_CONFIG } from '../../data/challenges.js';
 
+// ─── Filter persistence (localStorage) ───────────────────────────────────────
+
+const MP_FILTER_KEY     = 'mpFilters';
+const MP_SEARCH_KEY     = 'mpSearch';
+const MP_EXPANDED_KEY   = 'mpSearchExpanded';
+
+function getMpFilters() {
+  try {
+    const p = JSON.parse(localStorage.getItem(MP_FILTER_KEY) || '{}');
+    return {
+      types:       Array.isArray(p.types)       ? p.types       : [],
+      routes:      Array.isArray(p.routes)      ? p.routes      : [],
+      statuses:    Array.isArray(p.statuses)    ? p.statuses    : [],
+      sectors:     Array.isArray(p.sectors)     ? p.sectors     : [],
+      evidences:   Array.isArray(p.evidences)   ? p.evidences   : [],
+      helices:     Array.isArray(p.helices)     ? p.helices     : [],
+      transitions: Array.isArray(p.transitions) ? p.transitions : [],
+      tracks:      Array.isArray(p.tracks)      ? p.tracks      : [],
+    };
+  } catch {
+    return { types:[], routes:[], statuses:[], sectors:[], evidences:[], helices:[], transitions:[], tracks:[] };
+  }
+}
+function setMpFilters(f) { localStorage.setItem(MP_FILTER_KEY, JSON.stringify(f)); }
+function clearMpFilters() { localStorage.removeItem(MP_FILTER_KEY); localStorage.removeItem(MP_SEARCH_KEY); }
+
+function getMpSearch() { return localStorage.getItem(MP_SEARCH_KEY) || ''; }
+function setMpSearch(v) {
+  if (v) localStorage.setItem(MP_SEARCH_KEY, v);
+  else localStorage.removeItem(MP_SEARCH_KEY);
+}
+
+function getMpSearchExpanded() {
+  const stored = localStorage.getItem(MP_EXPANDED_KEY);
+  if (stored !== null) return stored === 'true';
+  return MARKETPLACE_CONFIG.searchBlock?.defaultExpanded === true;
+}
+function setMpSearchExpanded(v) { localStorage.setItem(MP_EXPANDED_KEY, v ? 'true' : 'false'); }
+
+function toggleMpFilter(arr, val) {
+  return arr.includes(val) ? arr.filter(v => v !== val) : [...arr, val];
+}
+
+function hasMpFilters(filters, search) {
+  return Object.values(filters).some(v => Array.isArray(v) && v.length > 0) || !!search;
+}
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
@@ -17,12 +64,13 @@ function getLabelFromArray(arr, id) {
   return pickLang(arr?.find(l => l.id === id)?.label) || id;
 }
 
-function getStatusLabel(id)         { return getLabelFromArray(MARKETPLACE_CONFIG.statusLabels, id); }
-function getTypeLabel(id)           { return getLabelFromArray(MARKETPLACE_CONFIG.typeLabels, id); }
-function getRouteLabel(id)          { return getLabelFromArray(MARKETPLACE_CONFIG.routeLabels, id); }
-function getHelixLabel(id)          { return getLabelFromArray(MARKETPLACE_CONFIG.helixLabels, id); }
-function getCyclePhaseLabel(id)     { return getLabelFromArray(MARKETPLACE_CONFIG.cyclePhaseLabels, id); }
-function getTransitionLabel(id)     { return getLabelFromArray(MARKETPLACE_CONFIG.transitionLabels, id); }
+function getStatusLabel(id)           { return getLabelFromArray(MARKETPLACE_CONFIG.statusLabels, id); }
+function getTypeLabel(id)             { return getLabelFromArray(MARKETPLACE_CONFIG.typeLabels, id); }
+function getRouteLabel(id)            { return getLabelFromArray(MARKETPLACE_CONFIG.routeLabels, id); }
+function getHelixLabel(id)            { return getLabelFromArray(MARKETPLACE_CONFIG.helixLabels, id); }
+function getCyclePhaseLabel(id)       { return getLabelFromArray(MARKETPLACE_CONFIG.cyclePhaseLabels, id); }
+function getTransitionLabel(id)       { return getLabelFromArray(MARKETPLACE_CONFIG.transitionLabels, id); }
+function getTrackLabel(id)            { return getLabelFromArray(MARKETPLACE_CONFIG.trackLabels, id); }
 function getEvidenceMaturityLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.evidenceMaturityLabels, id); }
 
 function getSectorCode(s) {
@@ -107,21 +155,86 @@ const TRANSITION_STYLES = {
   social:  'bg-pink-50 text-pink-700',
 };
 
-function getFilteredContributions(all, filters) {
+function getFilteredContributions(all, filters, search) {
   return all.filter(ch => {
-    if (filters.type   !== 'All'  && ch.type             !== filters.type)   return false;
-    if (filters.route  !== 'All'  && ch.route            !== filters.route)  return false;
-    if (filters.status !== 'Todos'&& ch.status           !== filters.status) return false;
-    if (filters.sector !== 'Todos'&& ch.sector           !== filters.sector) return false;
-    if (filters.evidence !== 'All'&& ch.evidenceMaturity !== filters.evidence) return false;
-    if (filters.search) {
-      const q = filters.search.toLowerCase();
+    if (filters.types.length       && !filters.types.includes(ch.type))                               return false;
+    if (filters.routes.length      && !filters.routes.includes(ch.route))                             return false;
+    if (filters.statuses.length    && !filters.statuses.includes(ch.status))                          return false;
+    if (filters.sectors.length     && !filters.sectors.includes(ch.sector))                           return false;
+    if (filters.evidences.length   && !filters.evidences.includes(ch.evidenceMaturity))               return false;
+    if (filters.helices.length     && !filters.helices.includes(ch.helixRole))                        return false;
+    if (filters.transitions.length && !(ch.tripleTransition || []).some(tr => filters.transitions.includes(tr))) return false;
+    if (filters.tracks.length      && !filters.tracks.includes(ch.track))                             return false;
+    if (search) {
+      const q = search.toLowerCase();
+      const lang = getLang();
       const title = pickLang(ch.title).toLowerCase();
-      const desc = pickLang(ch.description || ch.detail?.es?.fullDescription || '').toLowerCase();
+      const desc  = (ch.detail?.[lang]?.fullDescription || ch.detail?.es?.fullDescription || '').toLowerCase();
       if (!title.includes(q) && !desc.includes(q)) return false;
     }
     return true;
   });
+}
+
+// ─── Filter chip helpers ──────────────────────────────────────────────────────
+
+const CHIP_ACTIVE   = 'bg-eu-blue text-white border border-eu-blue';
+const CHIP_INACTIVE = 'bg-eu-bg border border-eu-border text-gray-600 hover:border-eu-blue';
+const CHIP_BASE     = 'text-xs font-semibold px-2.5 py-1 rounded-full cursor-pointer transition-colors whitespace-nowrap';
+
+function renderChipRow(items, activeArr, dimension, label) {
+  const visible = (items || []).filter(it => it.visible !== false);
+  if (!visible.length) return '';
+  const chips = visible.map(it => {
+    const on = activeArr.includes(it.id);
+    return `<button data-mp-chip="${dimension}" data-mp-val="${it.id}" class="${CHIP_BASE} ${on ? CHIP_ACTIVE : CHIP_INACTIVE}">${pickLang(it.label)}</button>`;
+  }).join('');
+  return `<div class="flex flex-wrap items-center gap-2">
+    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wide w-20 shrink-0 pt-0.5">${label}</span>
+    <div class="flex flex-wrap gap-1.5">${chips}</div>
+  </div>`;
+}
+
+function renderSectorChipRow(activeSectors, label) {
+  const sectorOptions = [
+    'Manufacturing', 'Mobility and Transport', 'Energy and Environment',
+    'Agrifood', 'Cultural and Creative Industries', 'Housing', 'Non-Touristic Services',
+  ];
+  const chips = sectorOptions.map(s => {
+    const on = activeSectors.includes(s);
+    return `<button data-mp-chip="sector" data-mp-val="${s}" class="${CHIP_BASE} ${on ? CHIP_ACTIVE : CHIP_INACTIVE}">${getSectorLabel(s)}</button>`;
+  }).join('');
+  return `<div class="flex flex-wrap items-center gap-2">
+    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wide w-20 shrink-0 pt-0.5">${label}</span>
+    <div class="flex flex-wrap gap-1.5">${chips}</div>
+  </div>`;
+}
+
+function renderMpActiveFilters(filters, search, mT) {
+  const mp = MARKETPLACE_CONFIG;
+  const badges = [];
+  const badge = (dim, val, label, cls) =>
+    `<button data-mp-remove="${dim}" data-mp-val="${val}"
+      class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg ${cls} text-xs font-semibold hover:opacity-80 cursor-pointer">
+      <span>${label}</span><i data-lucide="x" class="w-3 h-3"></i>
+    </button>`;
+
+  filters.types.forEach(id       => badges.push(badge('types',       id, getTypeLabel(id),             'bg-eu-blue/10 text-eu-blue')));
+  filters.statuses.forEach(id    => badges.push(badge('statuses',    id, getStatusLabel(id),            STATUS_STYLES[id]  || 'bg-gray-100 text-gray-600')));
+  filters.routes.forEach(id      => badges.push(badge('routes',      id, getRouteLabel(id),             ROUTE_STYLES[id]   || 'bg-gray-100 text-gray-600')));
+  filters.sectors.forEach(s      => badges.push(badge('sectors',     s,  getSectorLabel(s),             'bg-eu-teal/10 text-eu-teal')));
+  filters.evidences.forEach(id   => badges.push(badge('evidences',   id, getEvidenceMaturityLabel(id),  EVIDENCE_STYLES[id] || 'bg-gray-100 text-gray-600')));
+  filters.helices.forEach(id     => badges.push(badge('helices',     id, getHelixLabel(id),             HELIX_STYLES[id]   || 'bg-gray-100 text-gray-600')));
+  filters.transitions.forEach(id => badges.push(badge('transitions', id, getTransitionLabel(id),        TRANSITION_STYLES[id] || 'bg-gray-100 text-gray-600')));
+  filters.tracks.forEach(id      => badges.push(badge('tracks',      id, getTrackLabel(id),             'bg-gray-100 text-gray-700')));
+  if (search) badges.push(badge('search', search, `"${search}"`, 'bg-amber-100 text-amber-800'));
+
+  if (!badges.length) return '';
+  return `<div class="flex flex-wrap items-center gap-2 mb-6 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-xl">
+    <span class="text-[11px] font-bold text-gray-600 uppercase tracking-wide shrink-0">${mT.activeFilters || 'Filtros activos'}:</span>
+    ${badges.join('')}
+    <button id="mp-clear-all" class="ml-auto px-2.5 py-1 rounded text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200 bg-transparent">${mT.clearAllFilters || 'Limpiar todo'}</button>
+  </div>`;
 }
 
 // ─── Detail view ─────────────────────────────────────────────────────────────
@@ -459,11 +572,11 @@ function renderDetail(ch, mT) {
 // ─── List view ────────────────────────────────────────────────────────────────
 
 function renderList(all, mT) {
-  const filters = getState('marketplaceFilters') || {};
-  const showSubmit = getState('marketplaceShowSubmit');
-  const evidenceFilter = filters.evidence || 'All';
-  const effectiveFilters = { ...filters, evidence: evidenceFilter };
-  const filtered = getFilteredContributions(all, effectiveFilters);
+  const filters        = getMpFilters();
+  const search         = getMpSearch();
+  const searchExpanded = getMpSearchExpanded();
+  const showSubmit     = getState('marketplaceShowSubmit');
+  const filtered       = getFilteredContributions(all, filters, search);
 
   const heroBlock = MARKETPLACE_CONFIG?.heroBlock || CHALLENGES_CONFIG?.heroBlock || {};
   const hasHeroBlock = heroBlock && Object.keys(heroBlock).length > 0;
@@ -497,22 +610,19 @@ function renderList(all, mT) {
     </div>
   </div>` : '';
 
-  const sectorNames = t('sectors.sectorNames') || {};
-  const sectorOptions = [
-    'Manufacturing', 'Mobility and Transport', 'Energy and Environment',
-    'Agrifood', 'Cultural and Creative Industries', 'Housing', 'Non-Touristic Services',
-  ];
-
   const resultsCountTpl = (mT?.resultsCount || 'Mostrando <strong>{{count}}</strong> de {{total}} contribuciones')
     .replace('{{count}}', `<strong>${filtered.length}</strong>`)
     .replace('{{total}}', String(all.length));
 
-  const formLabels = mT?.formLabels || {};
+  const formLabels       = mT?.formLabels       || {};
   const formPlaceholders = mT?.formPlaceholders || {};
 
-  const typeLabels = MARKETPLACE_CONFIG.typeLabels || [];
-  const routeLabels = MARKETPLACE_CONFIG.routeLabels || [];
-  const evidenceMaturityLabels = MARKETPLACE_CONFIG.evidenceMaturityLabels || [];
+  const mp  = MARKETPLACE_CONFIG;
+  const cv  = mp.chipVisibility  || {};
+  const sb  = mp.searchBlock     || {};
+  const typeLabels           = mp.typeLabels           || [];
+  const routeLabels          = mp.routeLabels          || [];
+  const evidenceMaturityLabels = mp.evidenceMaturityLabels || [];
 
   return `
 <div class="animate-in fade-in duration-300">
@@ -561,110 +671,94 @@ function renderList(all, mT) {
       </form>
     </div>` : ''}
 
-    <!-- Filters -->
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-4 sm:p-5 mb-6">
-      <div class="flex flex-col gap-4">
-        <div class="w-full">
-          <label class="block text-[12px] font-bold text-gray-500 uppercase mb-1">${mT?.searchLabel || 'Buscar'}</label>
-          <div class="relative">
-            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
-            <input id="mp-search" type="text" value="${(filters.search || '').replace(/"/g, '&quot;')}" class="w-full border border-eu-border rounded-md pl-9 pr-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" placeholder="${mT?.searchPlaceholder || ''}">
-          </div>
-        </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
-          <div>
-            <label class="flex items-center gap-1 text-[12px] font-bold text-gray-500 uppercase mb-1"><i data-lucide="book-open" class="w-3 h-3"></i> ${mT?.filterContributionType || 'Tipo'}</label>
-            <select id="mp-filter-type" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-              <option value="All">${mT?.all || 'Todos'}</option>
-              ${typeLabels.filter(l => l.visible).map(l => `<option value="${l.id}" ${filters.type === l.id ? 'selected' : ''}>${pickLang(l.label)}</option>`).join('')}
-            </select>
-          </div>
-          <div>
-            <label class="flex items-center gap-1 text-[12px] font-bold text-gray-500 uppercase mb-1"><i data-lucide="route" class="w-3 h-3"></i> ${mT?.filterRoute || 'Ruta'}</label>
-            <select id="mp-filter-route" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-              <option value="All">${mT?.all || 'Todos'}</option>
-              ${routeLabels.filter(l => l.visible).map(l => `<option value="${l.id}" ${filters.route === l.id ? 'selected' : ''}>${pickLang(l.label)}</option>`).join('')}
-            </select>
-          </div>
-          <div>
-            <label class="block text-[12px] font-bold text-gray-500 uppercase mb-1">${mT?.filterStatus || 'Estado'}</label>
-            <select id="mp-filter-status" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-              <option value="Todos">${mT?.all || 'Todos'}</option>
-              <option value="open" ${filters.status === 'open' ? 'selected' : ''}>${getStatusLabel('open')}</option>
-              <option value="in-progress" ${filters.status === 'in-progress' ? 'selected' : ''}>${getStatusLabel('in-progress')}</option>
-              <option value="resolved" ${filters.status === 'resolved' ? 'selected' : ''}>${getStatusLabel('resolved')}</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-[12px] font-bold text-gray-500 uppercase mb-1">${mT?.filterSector || 'Sector'}</label>
-            <select id="mp-filter-sector" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-              <option value="Todos">${mT?.all || 'Todos'}</option>
-              ${sectorOptions.map(s => `<option value="${s}" ${filters.sector === s ? 'selected' : ''}>${(sectorNames[getSectorCode(s)] || s)}</option>`).join('')}
-            </select>
-          </div>
-          <div>
-            <label class="flex items-center gap-1 text-[12px] font-bold text-gray-500 uppercase mb-1"><i data-lucide="flask-conical" class="w-3 h-3"></i> ${mT?.filterEvidenceMaturity || 'Madurez'}</label>
-            <select id="mp-filter-evidence" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-              <option value="All">${mT?.all || 'Todos'}</option>
-              ${evidenceMaturityLabels.filter(l => l.visible).map(l => `<option value="${l.id}" ${evidenceFilter === l.id ? 'selected' : ''}>${pickLang(l.label)}</option>`).join('')}
-            </select>
-          </div>
-        </div>
+    <!-- Filter chips -->
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-4 sm:p-5 mb-2">
+      <div class="flex flex-col gap-3">
+        ${cv.type             !== false ? renderChipRow(mp.typeLabels,             filters.types,       'type',       mT?.filterContributionType || 'Tipo')       : ''}
+        ${cv.status           !== false ? renderChipRow(mp.statusLabels,           filters.statuses,    'status',     mT?.filterStatus           || 'Estado')     : ''}
+        ${cv.route            !== false ? renderChipRow(mp.routeLabels,            filters.routes,      'route',      mT?.filterRoute            || 'Ruta')       : ''}
+        ${cv.helixRole        !== false ? renderChipRow(mp.helixLabels,            filters.helices,     'helix',      mT?.filterHelixRole        || 'Hélice')     : ''}
+        ${cv.tripleTransition !== false ? renderChipRow(mp.transitionLabels,       filters.transitions, 'transition', mT?.filterTransition       || 'Transición') : ''}
+        ${cv.track            !== false ? renderChipRow(mp.trackLabels,            filters.tracks,      'track',      mT?.filterTrack            || 'Track')      : ''}
+        ${cv.evidenceMaturity !== false ? renderChipRow(mp.evidenceMaturityLabels, filters.evidences,   'evidence',   mT?.filterEvidenceMaturity || 'Madurez')    : ''}
+        ${cv.sector           !== false ? renderSectorChipRow(filters.sectors, mT?.filterSector || 'Sector') : ''}
+        ${sb.visible !== false ? `
+        <div class="border-t border-eu-border pt-3 mt-1">
+          <button id="mp-search-toggle" class="flex items-center gap-1.5 text-sm font-semibold text-gray-500 hover:text-eu-blue bg-transparent border-none cursor-pointer w-full text-left p-0 transition-colors">
+            <i data-lucide="${searchExpanded ? 'chevron-down' : 'chevron-right'}" class="w-4 h-4 shrink-0"></i>
+            ${mT?.advancedSearch || 'Búsqueda por texto'}
+            ${getMpSearch() ? `<span class="ml-2 text-xs font-bold text-eu-orange">${mT?.searchActive || '(activa)'}</span>` : ''}
+          </button>
+          ${searchExpanded ? `
+          <div class="mt-3 flex items-center gap-2">
+            <div class="relative flex-1 sm:flex-none">
+              <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
+              <input id="mp-search" type="text" value="${getMpSearch().replace(/"/g, '&quot;')}"
+                class="w-full sm:w-80 border border-eu-border rounded-md pl-9 pr-9 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"
+                placeholder="${mT?.searchPlaceholder || ''}">
+              <button id="mp-search-clear" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 bg-transparent border-none cursor-pointer ${getMpSearch() ? '' : 'hidden'}" title="${mT?.clearSearch || 'Borrar búsqueda'}">
+                <i data-lucide="x" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>` : ''}
+        </div>` : ''}
       </div>
     </div>
 
+    <!-- Active filters panel -->
+    <div id="mp-active-filters">${renderMpActiveFilters(filters, search, mT)}</div>
+
     <!-- Results count -->
-    <p class="text-sm text-gray-500 mb-4">${resultsCountTpl}</p>
+    <p id="mp-results-count" class="text-sm text-gray-500 mb-4">${resultsCountTpl}</p>
 
-    <!-- Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-      ${filtered.map(ch => {
-        const tags = getTags(ch);
-        const stStyle = STATUS_STYLES[ch.status] || 'bg-gray-100 text-gray-600';
-        const rtStyle = ROUTE_STYLES[ch.route] || 'bg-gray-100 text-gray-600';
-        const evStyle = EVIDENCE_STYLES[ch.evidenceMaturity] || 'bg-gray-100 text-gray-600';
-        return `
-      <div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col hover:border-eu-blue transition-colors">
-        <div class="p-4 sm:p-5 flex-1">
-          <div class="flex flex-wrap items-center gap-2 mb-3">
-            <span class="text-xs font-extrabold uppercase px-2 py-0.5 rounded bg-eu-blue/10 text-eu-blue">${getTypeLabel(ch.type)}</span>
-            <span class="text-xs font-bold px-2 py-0.5 rounded ${stStyle}">${getStatusLabel(ch.status)}</span>
-          </div>
-          <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug line-clamp-2">${pickLang(ch.title)}</h3>
-          <p class="text-xs text-gray-500 mb-1 font-semibold truncate">${ch.entity}</p>
-          <p class="text-xs text-gray-500 mb-3 line-clamp-1">${pickLang(ch.entityType)}</p>
-          <div class="flex flex-wrap items-center gap-2 mb-3">
-            <span class="text-xs font-bold px-2 py-0.5 rounded ${rtStyle}">${getRouteLabel(ch.route)}</span>
-            <span class="text-xs font-semibold px-2 py-0.5 rounded ${evStyle}">${getEvidenceMaturityLabel(ch.evidenceMaturity)}</span>
-          </div>
-          <!-- LbD badges -->
-          <div class="flex flex-wrap gap-1.5 mb-3">
-            ${ch.cyclePhase ? `<span class="text-xs px-1.5 py-0.5 rounded ${CYCLE_PHASE_STYLES[ch.cyclePhase] || 'bg-gray-100 text-gray-500'}">${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
-            ${ch.helixRole ? `<span class="text-xs px-1.5 py-0.5 rounded ${HELIX_STYLES[ch.helixRole] || 'bg-gray-100 text-gray-500'}">${getHelixLabel(ch.helixRole)}</span>` : ''}
-            ${(ch.tripleTransition || []).slice(0, 2).map(tr => `<span class="text-xs px-1.5 py-0.5 rounded ${TRANSITION_STYLES[tr] || 'bg-gray-100 text-gray-500'}">${getTransitionLabel(tr)}</span>`).join('')}
-          </div>
-          <div class="flex flex-wrap gap-1.5 mb-3">
-            ${tags.slice(0, 2).map(tag => `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold"><i data-lucide="tag" class="w-2.5 h-2.5 shrink-0"></i>${tag}</span>`).join('')}
-          </div>
-          <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-xs text-gray-500">
-            <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 shrink-0"></i><span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadline}</span></span>
-            <span class="flex items-center gap-1"><i data-lucide="users" class="w-3 h-3 shrink-0"></i>${ch.teams} ${ch.teams === 1 ? (mT?.teamSingular || 'equipo') : (mT?.teamPlural || 'equipos')}</span>
-          </div>
-        </div>
-        <div class="border-t border-eu-border p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-eu-bg">
-          <span class="text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded w-fit">${getSectorLabel(ch.sector)}</span>
-          <button class="mp-view-detail text-eu-blue font-bold text-xs bg-transparent border-none cursor-pointer hover:underline text-left sm:text-right" data-id="${ch.id}">
-            ${mT?.viewAndApply || 'Ver detalle'} →
-          </button>
-        </div>
-      </div>`; }).join('')}
-    </div>
-
-    ${filtered.length === 0 ? `
-    <div class="text-center py-16 text-gray-500">
-      <p class="text-lg font-semibold mb-2">${mT?.noResults || 'Sin resultados'}</p>
-      <p class="text-sm">${mT?.tryModifying || 'Prueba a modificar los filtros'}</p>
-    </div>` : ''}
+    <!-- Grid / empty state -->
+    ${filtered.length === 0
+      ? `<div id="mp-grid" class="text-center py-16 text-gray-500">
+          <p class="text-lg font-semibold mb-2">${mT?.noResults || 'Sin resultados'}</p>
+          <p class="text-sm">${mT?.tryModifying || 'Prueba a modificar los filtros'}</p>
+        </div>`
+      : `<div id="mp-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        ${filtered.map(ch => {
+          const tags    = getTags(ch);
+          const stStyle = STATUS_STYLES[ch.status]             || 'bg-gray-100 text-gray-600';
+          const rtStyle = ROUTE_STYLES[ch.route]               || 'bg-gray-100 text-gray-600';
+          const evStyle = EVIDENCE_STYLES[ch.evidenceMaturity] || 'bg-gray-100 text-gray-600';
+          return `<div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col hover:border-eu-blue transition-colors">
+            <div class="p-4 sm:p-5 flex-1">
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="text-xs font-extrabold uppercase px-2 py-0.5 rounded bg-eu-blue/10 text-eu-blue">${getTypeLabel(ch.type)}</span>
+                <span class="text-xs font-bold px-2 py-0.5 rounded ${stStyle}">${getStatusLabel(ch.status)}</span>
+              </div>
+              <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug line-clamp-2">${pickLang(ch.title)}</h3>
+              <p class="text-xs text-gray-500 mb-1 font-semibold truncate">${ch.entity}</p>
+              <p class="text-xs text-gray-500 mb-3 line-clamp-1">${pickLang(ch.entityType)}</p>
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="text-xs font-bold px-2 py-0.5 rounded ${rtStyle}">${getRouteLabel(ch.route)}</span>
+                <span class="text-xs font-semibold px-2 py-0.5 rounded ${evStyle}">${getEvidenceMaturityLabel(ch.evidenceMaturity)}</span>
+              </div>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                ${ch.cyclePhase ? `<span class="text-xs px-1.5 py-0.5 rounded ${CYCLE_PHASE_STYLES[ch.cyclePhase] || 'bg-gray-100 text-gray-500'}">${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
+                ${ch.helixRole ? `<span class="text-xs px-1.5 py-0.5 rounded ${HELIX_STYLES[ch.helixRole] || 'bg-gray-100 text-gray-500'}">${getHelixLabel(ch.helixRole)}</span>` : ''}
+                ${(ch.tripleTransition || []).slice(0, 2).map(tr => `<span class="text-xs px-1.5 py-0.5 rounded ${TRANSITION_STYLES[tr] || 'bg-gray-100 text-gray-500'}">${getTransitionLabel(tr)}</span>`).join('')}
+              </div>
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                ${tags.slice(0, 2).map(tag => `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold"><i data-lucide="tag" class="w-2.5 h-2.5 shrink-0"></i>${tag}</span>`).join('')}
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-xs text-gray-500">
+                <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 shrink-0"></i><span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadline}</span></span>
+                <span class="flex items-center gap-1"><i data-lucide="users" class="w-3 h-3 shrink-0"></i>${ch.teams} ${ch.teams === 1 ? (mT?.teamSingular || 'equipo') : (mT?.teamPlural || 'equipos')}</span>
+              </div>
+            </div>
+            <div class="border-t border-eu-border p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-eu-bg">
+              <span class="text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded w-fit">${getSectorLabel(ch.sector)}</span>
+              <button class="mp-view-detail text-eu-blue font-bold text-xs bg-transparent border-none cursor-pointer hover:underline text-left sm:text-right" data-id="${ch.id}">
+                ${mT?.viewAndApply || 'Ver detalle'} →
+              </button>
+            </div>
+          </div>`;
+        }).join('')}
+        </div>`
+    }
   </div>
 </div>`;
 }
@@ -718,35 +812,61 @@ export function mount() {
   });
   document.getElementById('mp-submit-form')?.addEventListener('submit', e => e.preventDefault());
 
-  // Filters
+  // Filter chips
+  const DIM_MAP = {
+    type:       'types',
+    status:     'statuses',
+    route:      'routes',
+    helix:      'helices',
+    transition: 'transitions',
+    track:      'tracks',
+    evidence:   'evidences',
+    sector:     'sectors',
+  };
+  document.querySelectorAll('[data-mp-chip]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dim = DIM_MAP[btn.dataset.mpChip];
+      if (!dim) return;
+      const f = getMpFilters();
+      f[dim] = toggleMpFilter(f[dim], btn.dataset.mpVal);
+      setMpFilters(f);
+      rerender();
+    });
+  });
+
+  // Remove badge from active filters panel
+  document.querySelectorAll('[data-mp-remove]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dim = btn.dataset.mpRemove;
+      const val = btn.dataset.mpVal;
+      if (dim === 'search') { setMpSearch(''); rerender(); return; }
+      const f = getMpFilters();
+      if (Array.isArray(f[dim])) f[dim] = f[dim].filter(v => v !== val);
+      setMpFilters(f);
+      rerender();
+    });
+  });
+
+  // Clear all
+  document.getElementById('mp-clear-all')?.addEventListener('click', () => {
+    clearMpFilters();
+    rerender();
+  });
+
+  // Search toggle (expander)
+  document.getElementById('mp-search-toggle')?.addEventListener('click', () => {
+    setMpSearchExpanded(!getMpSearchExpanded());
+    rerender();
+  });
+
+  // Search input
   document.getElementById('mp-search')?.addEventListener('input', e => {
-    const f = getState('marketplaceFilters') || {};
-    setState('marketplaceFilters', { ...f, search: e.target.value });
-    rerender();
+    setMpSearch(e.target.value);
+    // Partial rerender: only update grid + active filters + count
+    updateMpGrid();
   });
-  document.getElementById('mp-filter-type')?.addEventListener('change', e => {
-    const f = getState('marketplaceFilters') || {};
-    setState('marketplaceFilters', { ...f, type: e.target.value });
-    rerender();
-  });
-  document.getElementById('mp-filter-route')?.addEventListener('change', e => {
-    const f = getState('marketplaceFilters') || {};
-    setState('marketplaceFilters', { ...f, route: e.target.value });
-    rerender();
-  });
-  document.getElementById('mp-filter-status')?.addEventListener('change', e => {
-    const f = getState('marketplaceFilters') || {};
-    setState('marketplaceFilters', { ...f, status: e.target.value });
-    rerender();
-  });
-  document.getElementById('mp-filter-sector')?.addEventListener('change', e => {
-    const f = getState('marketplaceFilters') || {};
-    setState('marketplaceFilters', { ...f, sector: e.target.value });
-    rerender();
-  });
-  document.getElementById('mp-filter-evidence')?.addEventListener('change', e => {
-    const f = getState('marketplaceFilters') || {};
-    setState('marketplaceFilters', { ...f, evidence: e.target.value });
+  document.getElementById('mp-search-clear')?.addEventListener('click', () => {
+    setMpSearch('');
     rerender();
   });
 
@@ -789,4 +909,89 @@ function rerender() {
   main.innerHTML = render();
   mount();
   if (window.lucide) window.lucide.createIcons();
+}
+
+function updateMpGrid() {
+  const mT  = t('marketplace') || {};
+  const all  = MARKETPLACE_CONFIG.contributions || [];
+  const filters = getMpFilters();
+  const search  = getMpSearch();
+  const filtered = getFilteredContributions(all, filters, search);
+
+  // Active filters panel
+  const afEl = document.getElementById('mp-active-filters');
+  if (afEl) afEl.outerHTML = `<div id="mp-active-filters">${renderMpActiveFilters(filters, search, mT)}</div>`;
+
+  // Results count
+  const countEl = document.getElementById('mp-results-count');
+  if (countEl) {
+    const tpl = (mT?.resultsCount || 'Mostrando <strong>{{count}}</strong> de {{total}} contribuciones')
+      .replace('{{count}}', `<strong>${filtered.length}</strong>`)
+      .replace('{{total}}', String(all.length));
+    countEl.innerHTML = tpl;
+  }
+
+  // Grid
+  const gridEl = document.getElementById('mp-grid');
+  if (!gridEl) { rerender(); return; }
+
+  if (filtered.length === 0) {
+    gridEl.outerHTML = `<div id="mp-grid" class="text-center py-16 text-gray-500"><p class="text-lg font-semibold mb-2">${mT?.noResults || 'Sin resultados'}</p><p class="text-sm">${mT?.tryModifying || 'Prueba a modificar los filtros'}</p></div>`;
+  } else {
+    const cardsHtml = filtered.map(ch => {
+      const tags    = getTags(ch);
+      const stStyle = STATUS_STYLES[ch.status]          || 'bg-gray-100 text-gray-600';
+      const rtStyle = ROUTE_STYLES[ch.route]            || 'bg-gray-100 text-gray-600';
+      const evStyle = EVIDENCE_STYLES[ch.evidenceMaturity] || 'bg-gray-100 text-gray-600';
+      return `<div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col hover:border-eu-blue transition-colors">
+        <div class="p-4 sm:p-5 flex-1">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="text-xs font-extrabold uppercase px-2 py-0.5 rounded bg-eu-blue/10 text-eu-blue">${getTypeLabel(ch.type)}</span>
+            <span class="text-xs font-bold px-2 py-0.5 rounded ${stStyle}">${getStatusLabel(ch.status)}</span>
+          </div>
+          <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug line-clamp-2">${pickLang(ch.title)}</h3>
+          <p class="text-xs text-gray-500 mb-1 font-semibold truncate">${ch.entity}</p>
+          <p class="text-xs text-gray-500 mb-3 line-clamp-1">${pickLang(ch.entityType)}</p>
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="text-xs font-bold px-2 py-0.5 rounded ${rtStyle}">${getRouteLabel(ch.route)}</span>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded ${evStyle}">${getEvidenceMaturityLabel(ch.evidenceMaturity)}</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            ${ch.cyclePhase ? `<span class="text-xs px-1.5 py-0.5 rounded ${CYCLE_PHASE_STYLES[ch.cyclePhase] || 'bg-gray-100 text-gray-500'}">${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
+            ${ch.helixRole ? `<span class="text-xs px-1.5 py-0.5 rounded ${HELIX_STYLES[ch.helixRole] || 'bg-gray-100 text-gray-500'}">${getHelixLabel(ch.helixRole)}</span>` : ''}
+            ${(ch.tripleTransition || []).slice(0, 2).map(tr => `<span class="text-xs px-1.5 py-0.5 rounded ${TRANSITION_STYLES[tr] || 'bg-gray-100 text-gray-500'}">${getTransitionLabel(tr)}</span>`).join('')}
+          </div>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            ${tags.slice(0, 2).map(tag => `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold"><i data-lucide="tag" class="w-2.5 h-2.5 shrink-0"></i>${tag}</span>`).join('')}
+          </div>
+          <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-xs text-gray-500">
+            <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 shrink-0"></i><span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadline}</span></span>
+            <span class="flex items-center gap-1"><i data-lucide="users" class="w-3 h-3 shrink-0"></i>${ch.teams} ${ch.teams === 1 ? (mT?.teamSingular || 'equipo') : (mT?.teamPlural || 'equipos')}</span>
+          </div>
+        </div>
+        <div class="border-t border-eu-border p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-eu-bg">
+          <span class="text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded w-fit">${getSectorLabel(ch.sector)}</span>
+          <button class="mp-view-detail text-eu-blue font-bold text-xs bg-transparent border-none cursor-pointer hover:underline text-left sm:text-right" data-id="${ch.id}">
+            ${mT?.viewAndApply || 'Ver detalle'} →
+          </button>
+        </div>
+      </div>`;
+    }).join('');
+    gridEl.outerHTML = `<div id="mp-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">${cardsHtml}</div>`;
+  }
+
+  if (window.lucide) window.lucide.createIcons();
+
+  // Re-attach "ver detalle" listeners after grid replacement
+  document.querySelectorAll('.mp-view-detail').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      setState('selectedChallengeId', id);
+      setState('marketplaceShowParticipation', false);
+      setState('marketplaceParticipationSent', false);
+      history.pushState({ challengeId: id }, '', window.location.pathname);
+      rerender();
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    });
+  });
 }

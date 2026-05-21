@@ -55,6 +55,20 @@ export const MARKETPLACE_CONFIG = {
       }
     }
   },
+  "chipVisibility": {
+    "type": true,
+    "status": true,
+    "route": true,
+    "helixRole": true,
+    "tripleTransition": true,
+    "track": true,
+    "evidenceMaturity": true,
+    "sector": true
+  },
+  "searchBlock": {
+    "visible": true,
+    "defaultExpanded": false
+  },
   "statusLabels": [
     {
       "id": "open",
