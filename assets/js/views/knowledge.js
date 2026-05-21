@@ -642,7 +642,7 @@ function renderOerGridContent(search) {
         <!-- Resource Details (compressed) -->
         <div class="text-xs text-gray-500 space-y-1">
           ${r.date || r.duration || r.format ? `<div>
-            ${r.date ? `${getOerLabel('created')}: ${r.date}` : ''}
+            ${r.date ? `📅 ${getOerLabel('created')}: ${r.date}` : ''}
             ${r.duration ? `${r.date ? ' | ' : ''}⏱️ ${r.duration}` : ''}
             ${r.format ? `${r.date || r.duration ? ' | ' : ''}📄 ${r.format}` : ''}
           </div>` : ''}

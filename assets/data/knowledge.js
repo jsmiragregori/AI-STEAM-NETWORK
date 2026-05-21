@@ -23,7 +23,9 @@ export const KNOWLEDGE_CONFIG = {
       {
         "id": "oer-resources",
         "visible": true,
-        "value": 8,
+        "manualOverride": false,
+        "value": 13,
+        "computedValue": 13,
         "label": {
           "es": "Recursos OER",
           "en": "OER Resources",
@@ -31,13 +33,39 @@ export const KNOWLEDGE_CONFIG = {
         }
       },
       {
-        "id": "total-downloads",
+        "id": "transfer-cases",
         "visible": true,
-        "value": 1250,
+        "manualOverride": false,
+        "value": 20,
+        "computedValue": 20,
         "label": {
-          "es": "Descargas",
-          "en": "Downloads",
-          "va": "Descàrregues"
+          "es": "Casos de transferencia",
+          "en": "Transfer cases",
+          "va": "Casos de transferència"
+        }
+      },
+      {
+        "id": "pilot-evidences",
+        "visible": true,
+        "manualOverride": false,
+        "value": 15,
+        "computedValue": 15,
+        "label": {
+          "es": "Evidencias de pilotaje",
+          "en": "Pilot evidence",
+          "va": "Evidències de pilotatge"
+        }
+      },
+      {
+        "id": "templates",
+        "visible": true,
+        "manualOverride": false,
+        "value": 23,
+        "computedValue": 23,
+        "label": {
+          "es": "Plantillas y toolkits",
+          "en": "Templates and toolkits",
+          "va": "Plantilles i toolkits"
         }
       }
     ]
@@ -511,6 +539,155 @@ export const KNOWLEDGE_CONFIG = {
         "format": "ZIP",
         "updatedAt": "2026-05-05",
         "url": "https://zenodo.org/records/cultural-heritage-images-5k",
+        "linkType": "external",
+        "external": true
+      },
+      {
+        "id": "o9",
+        "visible": true,
+        "createdAt": "2025-12-09",
+        "title": {
+          "es": "Toolkit de IA Generativa para Artes Escénicas",
+          "en": "Generative AI Toolkit for Performing Arts",
+          "va": "Toolkit d'IA Generativa per a Arts Escèniques"
+        },
+        "typeId": "plantilla",
+        "sectorIds": [
+          "cci"
+        ],
+        "levels": [
+          "FP",
+          "Docentes"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "author": "ESAD-GV / LPGA",
+        "date": "Dic 2025",
+        "lang": "ES / VA / EN",
+        "validationStatus": "pending",
+        "duration": "1h",
+        "format": "ZIP",
+        "updatedAt": "2026-02-18",
+        "url": "https://resources.ceice.gva.es/toolkit-ia-generativa-artes-escenicas.zip",
+        "linkType": "download",
+        "external": false
+      },
+      {
+        "id": "o10",
+        "visible": true,
+        "createdAt": "2025-10-27",
+        "title": {
+          "es": "Guía de Prompting STEAM para Comunidades de Práctica",
+          "en": "STEAM Prompting Guide for Communities of Practice",
+          "va": "Guia de Prompting STEAM per a Comunitats de Pràctica"
+        },
+        "typeId": "guia",
+        "sectorIds": [
+          "nts",
+          "cci"
+        ],
+        "levels": [
+          "FP",
+          "Máster",
+          "Docentes"
+        ],
+        "license": "CC-BY 4.0",
+        "author": "CEICE / UVEG",
+        "date": "Oct 2025",
+        "lang": "ES / VA / EN",
+        "validationStatus": "validated",
+        "duration": "35 min",
+        "format": "PDF",
+        "updatedAt": "2026-01-12",
+        "url": "https://ceice.gva.es/recursos/guia-prompting-steam-comunidades-practica",
+        "linkType": "external",
+        "external": true
+      },
+      {
+        "id": "o11",
+        "visible": true,
+        "createdAt": "2025-09-03",
+        "title": {
+          "es": "Dataset de Bocetos y Prototipos para Clasificación Creativa",
+          "en": "Sketches and Prototypes Dataset for Creative Classification",
+          "va": "Dataset d'Esbossos i Prototips per a Classificació Creativa"
+        },
+        "typeId": "dataset",
+        "sectorIds": [
+          "cci",
+          "mfg"
+        ],
+        "levels": [
+          "Máster"
+        ],
+        "license": "CC-BY-NC 4.0",
+        "author": "UVEG / HSW / ESAD-GV",
+        "date": "Sep 2025",
+        "lang": "ES / EN",
+        "validationStatus": "draft",
+        "duration": "",
+        "format": "ZIP",
+        "url": "https://zenodo.org/records/ai-steam-creative-sketches-prototypes",
+        "linkType": "external",
+        "external": true
+      },
+      {
+        "id": "o12",
+        "visible": true,
+        "createdAt": "2025-07-22",
+        "title": {
+          "es": "Vídeo-laboratorio de IA Visual para Aula STEAM",
+          "en": "Visual AI Video Lab for STEAM Classrooms",
+          "va": "Vídeo-laboratori d'IA Visual per a Aula STEAM"
+        },
+        "typeId": "video",
+        "sectorIds": [
+          "cci",
+          "nts"
+        ],
+        "levels": [
+          "FP",
+          "Docentes"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "author": "UMU / CEICE",
+        "date": "Jul 2025",
+        "lang": "ES / VA",
+        "validationStatus": "validated",
+        "duration": "2h 15 min",
+        "format": "MP4",
+        "updatedAt": "2025-11-05",
+        "url": "https://youtube.com/watch?v=ai-steam-visual-lab",
+        "linkType": "external",
+        "external": true
+      },
+      {
+        "id": "o13",
+        "visible": true,
+        "createdAt": "2025-06-12",
+        "title": {
+          "es": "Manual de Transferencia de Conocimiento IA-STEAM para Centros FP",
+          "en": "AI-STEAM Knowledge Transfer Manual for VET Centres",
+          "va": "Manual de Transferència de Coneixement IA-STEAM per a Centres FP"
+        },
+        "typeId": "manual",
+        "sectorIds": [
+          "nts",
+          "mfg",
+          "ene"
+        ],
+        "levels": [
+          "FP",
+          "Docentes"
+        ],
+        "license": "CC-BY 4.0",
+        "author": "CEICE / IF.E / INESC TEC",
+        "date": "Jun 2025",
+        "lang": "ES / VA / EN",
+        "validationStatus": "pending",
+        "duration": "1h 45 min",
+        "format": "PDF",
+        "updatedAt": "2025-09-19",
+        "url": "https://oert.org/ai-steam-transfer-manual-vet-centres",
         "linkType": "external",
         "external": true
       }
