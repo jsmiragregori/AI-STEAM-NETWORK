@@ -1,5 +1,5 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR
-// Fuentes: content/knowledge/hero.yml, content/knowledge/transfer-cycle.yml, content/knowledge/oer-resources.yml, content/knowledge/success-cases.yml, content/knowledge/pilot-evidences.yml
+// Fuentes: content/knowledge/hero.yml, content/knowledge/transfer-cycle.yml, content/knowledge/oer-resources.yml, content/knowledge/success-cases.yml, content/knowledge/pilot-evidences.yml, content/knowledge/templates.yml
 
 export const KNOWLEDGE_CONFIG = {
   "heroBlock": {
@@ -3464,6 +3464,729 @@ export const KNOWLEDGE_CONFIG = {
           },
           "externalLink": true
         }
+      }
+    ]
+  },
+  "templatesBlock": {
+    "visible": true,
+    "title": {
+      "es": "Plantillas y Toolkits",
+      "en": "Templates and Toolkits",
+      "va": "Plantilles i Toolkits"
+    },
+    "description": {
+      "es": "Plantillas descargables y recursos externos para que stakeholders, docentes y centros de FP contribuyan a la red AI-STEAM.",
+      "en": "Downloadable templates and external resources for stakeholders, teachers and VET centres to contribute to the AI-STEAM network.",
+      "va": "Plantilles descarregables i recursos externs perquè stakeholders, docents i centres de FP contribuesquen a la xarxa AI-STEAM."
+    },
+    "searchPlaceholder": {
+      "es": "Buscar plantillas...",
+      "en": "Search templates...",
+      "va": "Cercar plantilles..."
+    },
+    "downloadLabel": {
+      "es": "Descargar plantilla",
+      "en": "Download template",
+      "va": "Descarregar plantilla"
+    },
+    "externalLabel": {
+      "es": "Acceder",
+      "en": "Open",
+      "va": "Accedir"
+    },
+    "emptyMessage": {
+      "es": "No hay plantillas disponibles en este momento.",
+      "en": "No templates available at this moment.",
+      "va": "No hi ha plantilles disponibles en aquest moment."
+    },
+    "pageSize": 9,
+    "pageSizeOptions": [
+      9,
+      18,
+      27
+    ],
+    "showAllOption": true,
+    "showAllLabel": {
+      "es": "Todos",
+      "en": "All",
+      "va": "Tots"
+    },
+    "chipVisibility": {
+      "type": true,
+      "route": true,
+      "license": true
+    },
+    "typeLabels": [
+      {
+        "id": "form",
+        "visible": true,
+        "icon": "📋",
+        "label": {
+          "es": "Formulario",
+          "en": "Form",
+          "va": "Formulari"
+        }
+      },
+      {
+        "id": "pedagogical",
+        "visible": true,
+        "icon": "📚",
+        "label": {
+          "es": "Plantilla pedagógica",
+          "en": "Pedagogical template",
+          "va": "Plantilla pedagògica"
+        }
+      },
+      {
+        "id": "checklist",
+        "visible": true,
+        "icon": "✅",
+        "label": {
+          "es": "Checklist",
+          "en": "Checklist",
+          "va": "Checklist"
+        }
+      }
+    ],
+    "routeLabels": [
+      {
+        "id": "fp",
+        "visible": true,
+        "label": {
+          "es": "FP",
+          "en": "VET",
+          "va": "FP"
+        }
+      },
+      {
+        "id": "teacher",
+        "visible": true,
+        "label": {
+          "es": "Formación del Profesorado",
+          "en": "Teacher Training",
+          "va": "Formació del Professorat"
+        }
+      },
+      {
+        "id": "master",
+        "visible": true,
+        "label": {
+          "es": "Puente al Máster",
+          "en": "Master Bridge",
+          "va": "Pont al Màster"
+        }
+      }
+    ],
+    "templates": [
+      {
+        "id": "t1",
+        "visible": true,
+        "title": {
+          "es": "Challenge Intake Template",
+          "en": "Challenge Intake Template",
+          "va": "Challenge Intake Template"
+        },
+        "description": {
+          "es": "Formulario estructurado para que stakeholders propongan un reto, caso o contribución al ecosistema AI-STEAM.",
+          "en": "Structured form for stakeholders to propose a challenge, case or contribution to the AI-STEAM ecosystem.",
+          "va": "Formulari estructurat perquè stakeholders proposen un repte, cas o contribució a l'ecosistema AI-STEAM."
+        },
+        "typeId": "form",
+        "routeIds": [
+          "fp",
+          "teacher",
+          "master"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📋",
+        "publishedAt": "2026-04-01",
+        "revisionDate": "2026-05-20",
+        "date": "May 2026",
+        "url": "https://ai-steam.network/templates/challenge-intake.pdf",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t21",
+        "visible": true,
+        "title": {
+          "es": "Plantilla de Itinerario de Formación IA para Docentes",
+          "en": "AI Training Pathway Template for Teachers",
+          "va": "Plantilla d'Itinerari de Formació IA per a Docents"
+        },
+        "description": {
+          "es": "Plantilla para que coordinadores de formación diseñen itinerarios personalizados de desarrollo profesional docente en IA, desde nivel básico a avanzado.",
+          "en": "Template for training coordinators to design personalised professional development pathways for teachers in AI, from basic to advanced level.",
+          "va": "Plantilla perquè coordinadors de formació dissenyen itineraris personalitzats de desenvolupament professional docent en IA, des de nivell bàsic a avançat."
+        },
+        "typeId": "pedagogical",
+        "routeIds": [
+          "teacher",
+          "master"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📚",
+        "publishedAt": "2026-04-17",
+        "revisionDate": "2026-05-19",
+        "date": "May 2026",
+        "url": "https://ai-steam.network/templates/ai-training-pathway-teachers.docx",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t4",
+        "visible": true,
+        "title": {
+          "es": "Guía Rápida de Formación Docente",
+          "en": "Teacher Training Quick Guide",
+          "va": "Guia Ràpida de Formació Docent"
+        },
+        "description": {
+          "es": "Plantilla pedagógica con dinámicas y rúbricas para integrar AI-STEAM en programas de formación docente.",
+          "en": "Pedagogical template with activities and rubrics to integrate AI-STEAM into teacher training programmes.",
+          "va": "Plantilla pedagògica amb dinàmiques i rúbriques per a integrar AI-STEAM en programes de formació docent."
+        },
+        "typeId": "pedagogical",
+        "routeIds": [
+          "teacher"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📚",
+        "publishedAt": "2026-04-15",
+        "revisionDate": "2026-05-18",
+        "date": "May 2026",
+        "url": "https://ai-steam.network/resources/teacher-training-guide",
+        "linkType": "external",
+        "external": true
+      },
+      {
+        "id": "t3",
+        "visible": true,
+        "title": {
+          "es": "Checklist de Adopción FP",
+          "en": "VET Adoption Checklist",
+          "va": "Checklist d'Adopció FP"
+        },
+        "description": {
+          "es": "Lista de comprobación para centros de FP que quieran adoptar buenas prácticas y casos de transferencia AI-STEAM.",
+          "en": "Checklist for VET centres adopting AI-STEAM best practices and transfer cases.",
+          "va": "Llista de comprovació per a centres de FP que vulguen adoptar bones pràctiques i casos de transferència AI-STEAM."
+        },
+        "typeId": "checklist",
+        "routeIds": [
+          "fp"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "✅",
+        "publishedAt": "2026-04-10",
+        "revisionDate": "2026-05-15",
+        "date": "May 2026",
+        "url": "https://ai-steam.network/templates/fp-adoption-checklist.pdf",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t16",
+        "visible": true,
+        "title": {
+          "es": "Checklist de Accesibilidad en Recursos STEAM Digitales",
+          "en": "Digital STEAM Resource Accessibility Checklist",
+          "va": "Checklist d'Accessibilitat en Recursos STEAM Digitals"
+        },
+        "description": {
+          "es": "Lista de verificación para que docentes y diseñadores instruccionales evalúen la accesibilidad (WCAG, UDL) de recursos y actividades STEAM digitales.",
+          "en": "Checklist for teachers and instructional designers to evaluate the accessibility (WCAG, UDL) of digital STEAM resources and activities.",
+          "va": "Llista de verificació perquè docents i dissenyadors instruccionals avaluen l'accessibilitat (WCAG, UDL) de recursos i activitats STEAM digitals."
+        },
+        "typeId": "checklist",
+        "routeIds": [
+          "fp",
+          "teacher"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "✅",
+        "publishedAt": "2026-03-24",
+        "revisionDate": "2026-05-14",
+        "date": "May 2026",
+        "url": "https://ai-steam.network/templates/digital-steam-accessibility-checklist.pdf",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t10",
+        "visible": true,
+        "title": {
+          "es": "Formulario de Autoevaluación de Competencias IA",
+          "en": "AI Competency Self-Assessment Form",
+          "va": "Formulari d'Autoavaluació de Competències IA"
+        },
+        "description": {
+          "es": "Formulario para que docentes y estudiantes evalúen su nivel de competencia en IA según el marco DigComp y el perfil AI-STEAM.",
+          "en": "Form for teachers and students to assess their AI competency level according to the DigComp framework and AI-STEAM profile.",
+          "va": "Formulari perquè docents i estudiants avaluen el seu nivell de competència en IA segons el marc DigComp i el perfil AI-STEAM."
+        },
+        "typeId": "form",
+        "routeIds": [
+          "fp",
+          "teacher",
+          "master"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📋",
+        "publishedAt": "2026-02-10",
+        "revisionDate": "2026-05-12",
+        "date": "May 2026",
+        "url": "https://ai-steam.network/templates/ai-competency-self-assessment.pdf",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t18",
+        "visible": true,
+        "title": {
+          "es": "Formulario de Documentación de Piloto IA en Aula",
+          "en": "Classroom AI Pilot Documentation Form",
+          "va": "Formulari de Documentació de Pilot IA a l'Aula"
+        },
+        "description": {
+          "es": "Formulario estructurado para registrar el diseño, implementación y resultados de un piloto de herramienta IA en contexto educativo, alineado con el framework AI-SECRETT.",
+          "en": "Structured form to record the design, implementation and outcomes of an AI tool pilot in an educational context, aligned with the AI-SECRETT framework.",
+          "va": "Formulari estructurat per a registrar el disseny, implementació i resultats d'un pilot d'eina IA en context educatiu, alineat amb el framework AI-SECRETT."
+        },
+        "typeId": "form",
+        "routeIds": [
+          "fp",
+          "teacher"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📋",
+        "publishedAt": "2026-04-02",
+        "revisionDate": "2026-05-10",
+        "date": "May 2026",
+        "url": "https://ai-steam.network/templates/ai-pilot-documentation-form.pdf",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t14",
+        "visible": true,
+        "title": {
+          "es": "Formulario de Propuesta de Proyecto STEAM+IA",
+          "en": "STEAM+AI Project Proposal Form",
+          "va": "Formulari de Proposta de Projecte STEAM+IA"
+        },
+        "description": {
+          "es": "Formulario para que equipos docentes o de investigación presenten proyectos colaborativos que integren IA y creatividad STEAM en el ecosistema AI-STEAM.",
+          "en": "Form for teaching or research teams to submit collaborative projects integrating AI and STEAM creativity into the AI-STEAM ecosystem.",
+          "va": "Formulari perquè equips docents o d'investigació presenten projectes col·laboratius que integren IA i creativitat STEAM a l'ecosistema AI-STEAM."
+        },
+        "typeId": "form",
+        "routeIds": [
+          "fp",
+          "teacher",
+          "master"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📋",
+        "publishedAt": "2026-03-10",
+        "revisionDate": "2026-05-08",
+        "date": "May 2026",
+        "url": "https://ai-steam.network/templates/project-proposal-steam-ai.pdf",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t8",
+        "visible": true,
+        "title": {
+          "es": "Checklist de Ética en IA para el Aula",
+          "en": "Classroom AI Ethics Checklist",
+          "va": "Checklist d'Ètica en IA per a l'Aula"
+        },
+        "description": {
+          "es": "Lista de verificación para que docentes evalúen el uso responsable, justo y accesible de herramientas de IA antes de introducirlas en el aula.",
+          "en": "Verification checklist for teachers to assess responsible, fair and accessible use of AI tools before introducing them in the classroom.",
+          "va": "Llista de verificació perquè docents avaluen l'ús responsable, just i accessible d'eines d'IA abans d'introduir-les a l'aula."
+        },
+        "typeId": "checklist",
+        "routeIds": [
+          "fp",
+          "teacher",
+          "master"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "✅",
+        "publishedAt": "2026-01-28",
+        "revisionDate": "2026-05-05",
+        "date": "May 2026",
+        "url": "https://ai-steam.network/templates/ai-ethics-classroom-checklist.pdf",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t23",
+        "visible": true,
+        "title": {
+          "es": "Plantilla de Proyecto Interdisciplinar Arte + Datos",
+          "en": "Interdisciplinary Art + Data Project Template",
+          "va": "Plantilla de Projecte Interdisciplinari Art + Dades"
+        },
+        "description": {
+          "es": "Plantilla para proyectos que cruzan módulos de análisis de datos y expresión artística, integrando herramientas de IA generativa para la síntesis creativa.",
+          "en": "Template for projects crossing data analysis and artistic expression modules, integrating generative AI tools for creative synthesis.",
+          "va": "Plantilla per a projectes que creuen mòduls d'anàlisi de dades i expressió artística, integrant eines d'IA generativa per a la síntesi creativa."
+        },
+        "typeId": "pedagogical",
+        "routeIds": [
+          "fp",
+          "teacher"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "🎨",
+        "publishedAt": "2026-05-02",
+        "date": "May 2026",
+        "url": "https://ai-steam.network/templates/art-data-interdisciplinary-project.docx",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t12",
+        "visible": true,
+        "title": {
+          "es": "Checklist de Preparación de Aula para IA",
+          "en": "Classroom AI Readiness Checklist",
+          "va": "Checklist de Preparació d'Aula per a IA"
+        },
+        "description": {
+          "es": "Guía de comprobación técnica, pedagógica y normativa para que un centro de FP evalúe si está listo para integrar herramientas de IA en sus aulas.",
+          "en": "Technical, pedagogical and regulatory checklist for a VET centre to assess its readiness to integrate AI tools in its classrooms.",
+          "va": "Guia de comprovació tècnica, pedagògica i normativa perquè un centre de FP avalueu si està preparat per integrar eines d'IA a les seues aules."
+        },
+        "typeId": "checklist",
+        "routeIds": [
+          "fp"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "✅",
+        "publishedAt": "2026-02-24",
+        "revisionDate": "2026-04-30",
+        "date": "Abr 2026",
+        "url": "https://ai-steam.network/templates/classroom-ai-readiness.pdf",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t22",
+        "visible": true,
+        "title": {
+          "es": "Formulario de Feedback de Experiencia Piloto",
+          "en": "Pilot Experience Feedback Form",
+          "va": "Formulari de Feedback d'Experiència Pilot"
+        },
+        "description": {
+          "es": "Formulario para recoger valoraciones de participantes (docentes, alumnado, coordinadores) tras una experiencia piloto AI-STEAM, con escala Likert y campo abierto.",
+          "en": "Form to collect participant feedback (teachers, students, coordinators) after an AI-STEAM pilot experience, with Likert scale and open field.",
+          "va": "Formulari per a recollir valoracions de participants (docents, alumnat, coordinadors) després d'una experiència pilot AI-STEAM, amb escala Likert i camp obert."
+        },
+        "typeId": "form",
+        "routeIds": [
+          "fp",
+          "teacher"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📋",
+        "publishedAt": "2026-04-25",
+        "date": "Abr 2026",
+        "url": "https://ai-steam.network/templates/pilot-feedback-form.pdf",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t9",
+        "visible": true,
+        "title": {
+          "es": "Plantilla de Aprendizaje Basado en Retos (ABR) con IA",
+          "en": "AI-enhanced Challenge-Based Learning Template",
+          "va": "Plantilla d'Aprenentatge Basat en Reptes (ABR) amb IA"
+        },
+        "description": {
+          "es": "Marco pedagógico para diseñar experiencias ABR donde la IA actúa como herramienta de investigación, creación y reflexión crítica.",
+          "en": "Pedagogical framework to design CBL experiences where AI acts as a tool for research, creation and critical reflection.",
+          "va": "Marc pedagògic per a dissenyar experiències ABR on la IA actua com a eina d'investigació, creació i reflexió crítica."
+        },
+        "typeId": "pedagogical",
+        "routeIds": [
+          "fp",
+          "teacher"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📚",
+        "publishedAt": "2026-02-03",
+        "revisionDate": "2026-04-22",
+        "date": "Abr 2026",
+        "url": "https://ai-steam.network/templates/challenge-based-learning-ai.docx",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t5",
+        "visible": true,
+        "title": {
+          "es": "Formulario de Adhesión Stakeholder",
+          "en": "Stakeholder Membership Form",
+          "va": "Formulari d'Adhesió Stakeholder"
+        },
+        "description": {
+          "es": "Formulario operativo para incorporar nuevas entidades a la red AI-STEAM con rol, sectores y compromisos.",
+          "en": "Operational form to onboard new entities into the AI-STEAM network with role, sectors and commitments.",
+          "va": "Formulari operatiu per a incorporar noves entitats a la xarxa AI-STEAM amb rol, sectors i compromisos."
+        },
+        "typeId": "form",
+        "routeIds": [
+          "fp",
+          "teacher",
+          "master"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📋",
+        "publishedAt": "2026-04-20",
+        "date": "Abr 2026",
+        "url": "https://ai-steam.network/network#join",
+        "linkType": "external",
+        "external": true
+      },
+      {
+        "id": "t20",
+        "visible": true,
+        "title": {
+          "es": "Checklist de Sostenibilidad de Proyecto STEAM en Centro",
+          "en": "STEAM Project Sustainability Checklist for VET Centres",
+          "va": "Checklist de Sostenibilitat de Projecte STEAM en Centre"
+        },
+        "description": {
+          "es": "Herramienta de autoevaluación para que los centros de FP valoren la viabilidad a largo plazo de sus iniciativas STEAM+IA (recursos, comunidad, reconocimiento).",
+          "en": "Self-assessment tool for VET centres to evaluate the long-term viability of their STEAM+AI initiatives (resources, community, recognition).",
+          "va": "Eina d'autoavaluació perquè els centres de FP valoren la viabilitat a llarg termini de les seues iniciatives STEAM+IA (recursos, comunitat, reconeixement)."
+        },
+        "typeId": "checklist",
+        "routeIds": [
+          "fp"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "✅",
+        "publishedAt": "2026-04-12",
+        "date": "Abr 2026",
+        "url": "https://ai-steam.network/templates/steam-sustainability-checklist.pdf",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t6",
+        "visible": true,
+        "title": {
+          "es": "Plantilla de Unidad Didáctica STEAM+IA",
+          "en": "STEAM+AI Didactic Unit Template",
+          "va": "Plantilla d'Unitat Didàctica STEAM+IA"
+        },
+        "description": {
+          "es": "Plantilla pedagógica para diseñar unidades didácticas que integren IA y arte creativo en módulos de FP o programas docentes.",
+          "en": "Pedagogical template to design didactic units integrating AI and creative arts into VET modules or teacher programmes.",
+          "va": "Plantilla pedagògica per a dissenyar unitats didàctiques que integren IA i art creatiu en mòduls de FP o programes docents."
+        },
+        "typeId": "pedagogical",
+        "routeIds": [
+          "fp",
+          "teacher"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📚",
+        "publishedAt": "2026-01-15",
+        "revisionDate": "2026-04-10",
+        "date": "Abr 2026",
+        "url": "https://ai-steam.network/templates/didactic-unit-steam-ai.docx",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t19",
+        "visible": true,
+        "title": {
+          "es": "Toolkit de Narrativa de Datos con Arte",
+          "en": "Data Storytelling with Art Toolkit",
+          "va": "Toolkit de Narrativa de Dades amb Art"
+        },
+        "description": {
+          "es": "Recursos y plantillas para transformar conjuntos de datos en visualizaciones artísticas y narrativas, combinando análisis con expresión creativa.",
+          "en": "Resources and templates to transform datasets into artistic visualisations and narratives, combining analysis with creative expression.",
+          "va": "Recursos i plantilles per a transformar conjunts de dades en visualitzacions artístiques i narratives, combinant anàlisi amb expressió creativa."
+        },
+        "typeId": "pedagogical",
+        "routeIds": [
+          "fp",
+          "master"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "🎨",
+        "publishedAt": "2026-04-08",
+        "date": "Abr 2026",
+        "url": "https://ai-steam.network/templates/data-storytelling-art-toolkit.zip",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t2",
+        "visible": true,
+        "title": {
+          "es": "Plantilla AI-SECRETT Track B",
+          "en": "AI-SECRETT Track B Template",
+          "va": "Plantilla AI-SECRETT Track B"
+        },
+        "description": {
+          "es": "Plantilla pedagógica para diseñar y documentar pilotos del Track B (mediante el Aula Sandbox AI-SECRETT).",
+          "en": "Pedagogical template to design and document Track B pilots (via the AI-SECRETT Sandbox Classroom).",
+          "va": "Plantilla pedagògica per a dissenyar i documentar pilots del Track B (mitjançant l'Aula Sandbox AI-SECRETT)."
+        },
+        "typeId": "pedagogical",
+        "routeIds": [
+          "fp",
+          "teacher"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📚",
+        "publishedAt": "2026-04-05",
+        "date": "Abr 2026",
+        "url": "https://ai-steam.network/templates/track-b-pilot.docx",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t17",
+        "visible": true,
+        "title": {
+          "es": "Plantilla de Lesson Study con IA",
+          "en": "AI-integrated Lesson Study Template",
+          "va": "Plantilla de Lesson Study amb IA"
+        },
+        "description": {
+          "es": "Adaptación del método Lesson Study para ciclos de mejora docente centrados en la integración de IA, con fases de diseño colaborativo, observación y análisis.",
+          "en": "Adaptation of the Lesson Study method for teacher improvement cycles focused on AI integration, with collaborative design, observation and analysis phases.",
+          "va": "Adaptació del mètode Lesson Study per a cicles de millora docent centrats en la integració d'IA, amb fases de disseny col·laboratiu, observació i anàlisi."
+        },
+        "typeId": "pedagogical",
+        "routeIds": [
+          "teacher"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📚",
+        "publishedAt": "2026-03-28",
+        "date": "Mar 2026",
+        "url": "https://ai-steam.network/templates/lesson-study-ai-integration.docx",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t15",
+        "visible": true,
+        "title": {
+          "es": "Plantilla de Sesión de Co-creación Humano-IA",
+          "en": "Human–AI Co-creation Session Template",
+          "va": "Plantilla de Sessió de Co-creació Humà-IA"
+        },
+        "description": {
+          "es": "Diseño de taller para facilitar sesiones donde humanos y sistemas de IA colaboran en la creación de artefactos artísticos, narrativos o de diseño.",
+          "en": "Workshop design to facilitate sessions where humans and AI systems collaborate in creating artistic, narrative or design artefacts.",
+          "va": "Disseny de taller per a facilitar sessions on humans i sistemes d'IA col·laboren en la creació d'artefactes artístics, narratius o de disseny."
+        },
+        "typeId": "pedagogical",
+        "routeIds": [
+          "fp",
+          "teacher"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "🎨",
+        "publishedAt": "2026-03-17",
+        "date": "Mar 2026",
+        "url": "https://ai-steam.network/templates/human-ai-cocreation-session.docx",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t13",
+        "visible": true,
+        "title": {
+          "es": "Plantilla de Portfolio de Aprendizaje IA-STEAM",
+          "en": "AI-STEAM Learning Portfolio Template",
+          "va": "Plantilla de Portafoli d'Aprenentatge IA-STEAM"
+        },
+        "description": {
+          "es": "Marco estructurado para que el alumnado documente su proceso de aprendizaje STEAM+IA, con secciones de reflexión, evidencias y proyección profesional.",
+          "en": "Structured framework for students to document their STEAM+AI learning process, with sections for reflection, evidence and career projection.",
+          "va": "Marc estructurat perquè l'alumnat documente el seu procés d'aprenentatge STEAM+IA, amb seccions de reflexió, evidències i projecció professional."
+        },
+        "typeId": "pedagogical",
+        "routeIds": [
+          "fp",
+          "master"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📚",
+        "publishedAt": "2026-03-03",
+        "date": "Mar 2026",
+        "url": "https://ai-steam.network/templates/learning-portfolio-ai-steam.docx",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t11",
+        "visible": true,
+        "title": {
+          "es": "Toolkit de Arte Generativo con IA",
+          "en": "Generative AI Art Toolkit",
+          "va": "Toolkit d'Art Generatiu amb IA"
+        },
+        "description": {
+          "es": "Guía práctica y plantillas de sesión para explorar la creación artística asistida por IA (imagen, texto, música), con reflexión crítica sobre autoría.",
+          "en": "Practical guide and session templates for exploring AI-assisted artistic creation (image, text, music), with critical reflection on authorship.",
+          "va": "Guia pràctica i plantilles de sessió per a explorar la creació artística assistida per IA (imatge, text, música), amb reflexió crítica sobre autoria."
+        },
+        "typeId": "pedagogical",
+        "routeIds": [
+          "fp",
+          "teacher"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "🎨",
+        "publishedAt": "2026-02-17",
+        "date": "Feb 2026",
+        "url": "https://ai-steam.network/templates/generative-art-ai-toolkit.zip",
+        "linkType": "download",
+        "external": true
+      },
+      {
+        "id": "t7",
+        "visible": true,
+        "title": {
+          "es": "Rúbrica de Evaluación de Proyectos STEAM",
+          "en": "STEAM Project Evaluation Rubric",
+          "va": "Rúbrica d'Avaluació de Projectes STEAM"
+        },
+        "description": {
+          "es": "Plantilla con criterios de evaluación para proyectos que combinan ciencia, tecnología, arte y datos, con indicadores adaptables por nivel.",
+          "en": "Template with evaluation criteria for projects combining science, technology, art and data, with level-adaptable indicators.",
+          "va": "Plantilla amb criteris d'avaluació per a projectes que combinen ciència, tecnologia, art i dades, amb indicadors adaptables per nivell."
+        },
+        "typeId": "pedagogical",
+        "routeIds": [
+          "fp",
+          "teacher"
+        ],
+        "license": "CC-BY-SA 4.0",
+        "icon": "📚",
+        "publishedAt": "2026-01-20",
+        "date": "Ene 2026",
+        "url": "https://ai-steam.network/templates/steam-project-rubric.xlsx",
+        "linkType": "download",
+        "external": true
       }
     ]
   }

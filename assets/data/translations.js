@@ -780,56 +780,6 @@ export const translations = {
           "partner": "CEICE / Steering Committee"
         }
       ],
-      "templatesTitle": "Plantillas y Toolkits",
-      "templatesDesc": "Plantillas descargables para que stakeholders, docentes y centros de FP contribuyan a la red AI-STEAM. Todas son demo del prototipo, bajo licencia CC-BY-SA 4.0.",
-      "templatesDownload": "Descargar plantilla",
-      "templatesItems": [
-        {
-          "id": "t1",
-          "title": "Challenge Intake Template",
-          "desc": "Formulario estructurado para que stakeholders propongan un reto, caso o contribución al ecosistema AI-STEAM.",
-          "type": "Formulario",
-          "route": "Todos",
-          "license": "CC-BY-SA 4.0",
-          "icon": "📋"
-        },
-        {
-          "id": "t2",
-          "title": "Stakeholder Contribution Form",
-          "desc": "Formulario de contribución para validaciones, mentorías, pilotajes y aportaciones de datos o recursos.",
-          "type": "Formulario",
-          "route": "Stakeholders",
-          "license": "CC-BY-SA 4.0",
-          "icon": "🤝"
-        },
-        {
-          "id": "t3",
-          "title": "FP Learning Situation Template",
-          "desc": "Plantilla para diseñar situaciones de aprendizaje FP basadas en retos reales del ecosistema AI-STEAM.",
-          "type": "Plantilla pedagógica",
-          "route": "FP",
-          "license": "CC-BY-SA 4.0",
-          "icon": "📚"
-        },
-        {
-          "id": "t4",
-          "title": "Teacher Training Activity Template",
-          "desc": "Plantilla para diseñar actividades de formación docente sobre IA ética y uso responsable en el aula.",
-          "type": "Plantilla pedagógica",
-          "route": "Formación Docente",
-          "license": "CC-BY-SA 4.0",
-          "icon": "🎓"
-        },
-        {
-          "id": "t5",
-          "title": "Evidence Capture Checklist",
-          "desc": "Lista de verificación para registrar evidencias de piloto, participación y resultados en el marco de AI-SECRETT Track B.",
-          "type": "Checklist",
-          "route": "AI-SECRETT Track B",
-          "license": "CC-BY-SA 4.0",
-          "icon": "✅"
-        }
-      ],
       "statsOER": "Recursos OER",
       "statsDownloads": "Descargas Totales (demo)",
       "oerResources": [
@@ -2846,56 +2796,6 @@ export const translations = {
           "partner": "CEICE / Steering Committee"
         }
       ],
-      "templatesTitle": "Templates and Toolkits",
-      "templatesDesc": "Downloadable templates for stakeholders, teachers and VET centres to contribute to the AI-STEAM network. All are prototype demo content under CC-BY-SA 4.0.",
-      "templatesDownload": "Download template",
-      "templatesItems": [
-        {
-          "id": "t1",
-          "title": "Challenge Intake Template",
-          "desc": "Structured form for stakeholders to propose a challenge, case or contribution to the AI-STEAM ecosystem.",
-          "type": "Form",
-          "route": "All",
-          "license": "CC-BY-SA 4.0",
-          "icon": "📋"
-        },
-        {
-          "id": "t2",
-          "title": "Stakeholder Contribution Form",
-          "desc": "Contribution form for validations, mentoring, piloting and data or resource contributions.",
-          "type": "Form",
-          "route": "Stakeholders",
-          "license": "CC-BY-SA 4.0",
-          "icon": "🤝"
-        },
-        {
-          "id": "t3",
-          "title": "FP Learning Situation Template",
-          "desc": "Template to design VET learning situations based on real ecosystem challenges from AI-STEAM.",
-          "type": "Pedagogical template",
-          "route": "VET",
-          "license": "CC-BY-SA 4.0",
-          "icon": "📚"
-        },
-        {
-          "id": "t4",
-          "title": "Teacher Training Activity Template",
-          "desc": "Template to design teacher training activities on ethical AI and responsible classroom use.",
-          "type": "Pedagogical template",
-          "route": "Teacher Training",
-          "license": "CC-BY-SA 4.0",
-          "icon": "🎓"
-        },
-        {
-          "id": "t5",
-          "title": "Evidence Capture Checklist",
-          "desc": "Checklist for recording pilot evidence, participation and outcomes within the AI-SECRETT Track B framework.",
-          "type": "Checklist",
-          "route": "AI-SECRETT Track B",
-          "license": "CC-BY-SA 4.0",
-          "icon": "✅"
-        }
-      ],
       "statsOER": "OER Resources",
       "statsDownloads": "Total Downloads (demo)",
       "oerResources": [
@@ -4891,56 +4791,6 @@ export const translations = {
           "participants": 0,
           "outcome": "Indicadors Track B consolidats: stakeholders registrats, sectors actius, reptes validats, traces ConsensUE. Lliurable D2.2 en preparació.",
           "partner": "CEICE / Steering Committee"
-        }
-      ],
-      "templatesTitle": "Plantilles i Toolkits",
-      "templatesDesc": "Plantilles descarregables perquè stakeholders, docents i centres de FP contribuesquen a la xarxa AI-STEAM. Totes són contingut demo del prototipus, sota llicència CC-BY-SA 4.0.",
-      "templatesDownload": "Descarregar plantilla",
-      "templatesItems": [
-        {
-          "id": "t1",
-          "title": "Challenge Intake Template",
-          "desc": "Formulari estructurat perquè stakeholders proposen un repte, cas o contribució a l'ecosistema AI-STEAM.",
-          "type": "Formulari",
-          "route": "Tots",
-          "license": "CC-BY-SA 4.0",
-          "icon": "📋"
-        },
-        {
-          "id": "t2",
-          "title": "Stakeholder Contribution Form",
-          "desc": "Formulari de contribució per a validacions, mentories, pilotatges i aportacions de dades o recursos.",
-          "type": "Formulari",
-          "route": "Stakeholders",
-          "license": "CC-BY-SA 4.0",
-          "icon": "🤝"
-        },
-        {
-          "id": "t3",
-          "title": "FP Learning Situation Template",
-          "desc": "Plantilla per a dissenyar situacions d'aprenentatge FP basades en reptes reals de l'ecosistema AI-STEAM.",
-          "type": "Plantilla pedagògica",
-          "route": "FP",
-          "license": "CC-BY-SA 4.0",
-          "icon": "📚"
-        },
-        {
-          "id": "t4",
-          "title": "Teacher Training Activity Template",
-          "desc": "Plantilla per a dissenyar activitats de formació docent sobre IA ètica i ús responsable a l'aula.",
-          "type": "Plantilla pedagògica",
-          "route": "Formació Docent",
-          "license": "CC-BY-SA 4.0",
-          "icon": "🎓"
-        },
-        {
-          "id": "t5",
-          "title": "Evidence Capture Checklist",
-          "desc": "Llista de verificació per a registrar evidències de pilot, participació i resultats en el marc del AI-SECRETT Track B.",
-          "type": "Checklist",
-          "route": "AI-SECRETT Track B",
-          "license": "CC-BY-SA 4.0",
-          "icon": "✅"
         }
       ],
       "statsOER": "Recursos OER",

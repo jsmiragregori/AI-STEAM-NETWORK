@@ -1779,35 +1779,314 @@ function attachEvidGridListeners() {
   });
 }
 
-// ─── Tab 5: Plantillas ───────────────────────────────────────────────────────
+// ─── Tab 5: Plantillas y Toolkits (CMS) ──────────────────────────────────────
 
-function tabPlantillas() {
-  const items = t('knowledge.templatesItems') || [];
-  const tmplHtml = items.map(tmpl => `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 flex flex-col hover:border-eu-blue transition-colors group">
-      <div class="text-4xl mb-4">${tmpl.icon || '📄'}</div>
-      <h3 class="font-bold text-eu-text text-base mb-2 group-hover:text-eu-blue transition-colors">${tmpl.title || ''}</h3>
-      <p class="text-sm text-gray-600 mb-4 flex-1">${tmpl.desc || ''}</p>
-      <div class="flex flex-wrap gap-2 mb-4">
-        <span class="text-xs bg-eu-bg border border-eu-border px-2 py-0.5 rounded text-gray-600 font-semibold">${tmpl.type || ''}</span>
-        <span class="text-xs bg-eu-blue/10 text-eu-blue px-2 py-0.5 rounded font-semibold">${tmpl.route || ''}</span>
-      </div>
-      <div class="flex items-center justify-between">
-        <span class="text-xs font-mono text-eu-teal">${tmpl.license || ''}</span>
-        <button class="flex items-center gap-1.5 text-eu-blue text-xs font-bold hover:underline cursor-pointer bg-transparent border-none">
-          <i data-lucide="download" class="w-3.5 h-3.5"></i>${t('knowledge.templatesDownload') || ''}
-        </button>
-      </div>
-    </div>
-  `).join('');
+function getTemplatesFilters() {
+  const stored = localStorage.getItem('tmplFilters');
+  if (!stored) return { typeId: null, routeIds: [] };
+  try {
+    const parsed = JSON.parse(stored);
+    return {
+      typeId: parsed.typeId || null,
+      routeIds: Array.isArray(parsed.routeIds) ? parsed.routeIds : [],
+    };
+  } catch {
+    return { typeId: null, routeIds: [] };
+  }
+}
+
+function setTemplatesFilters(filters) {
+  localStorage.setItem('tmplFilters', JSON.stringify(filters));
+}
+
+function tabPlantillas(search) {
+  const block = KNOWLEDGE_CONFIG?.templatesBlock;
+
+  if (!block) {
+    return `<div class="bg-white rounded-xl border border-eu-border p-8 text-center">
+      <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+      <p class="text-gray-500 text-base">Sin datos de plantillas.</p>
+    </div>`;
+  }
+
+  if (!block.visible) {
+    return `<div class="bg-white rounded-xl border border-eu-border p-8 text-center">
+      <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+      <p class="text-gray-500 text-base">${pickLang(block.emptyMessage, '')}</p>
+    </div>`;
+  }
+
+  const blockTitle = pickLang(block.title, '');
+  const blockDesc  = pickLang(block.description, '');
+  const searchPlh  = pickLang(block.searchPlaceholder, '');
 
   return `
     <div>
-      <h2 class="text-xl font-bold text-eu-text mb-2">${t('knowledge.templatesTitle') || ''}</h2>
-      <p class="text-sm text-gray-600 mb-7 max-w-2xl">${t('knowledge.templatesDesc') || ''}</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">${tmplHtml}</div>
+      <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
+        <div>
+          <h2 class="text-xl font-bold text-eu-text mb-1">${blockTitle}</h2>
+          <p class="text-sm text-gray-600 max-w-2xl">${blockDesc}</p>
+        </div>
+        <div class="flex gap-3 items-center">
+          <div class="relative">
+            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
+            <input id="tmpl-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
+              class="border border-eu-border rounded-md pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
+              placeholder="${searchPlh}" />
+            <button id="tmpl-search-clear"
+              style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)"
+              class="w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer ${search ? '' : 'hidden'}"
+              title="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
+          </div>
+        </div>
+      </div>
+      <div id="tmpl-grid">${renderTemplatesGridContent(search)}</div>
     </div>
   `;
+}
+
+function renderTemplatesGridContent(search) {
+  const block = KNOWLEDGE_CONFIG?.templatesBlock;
+  if (!block) return '';
+
+  const cv = block.chipVisibility || {};
+  const showType    = cv.type    !== false;
+  const showRoute   = cv.route   !== false;
+  const showLicense = cv.license !== false;
+
+  const typeLabelMap  = Object.fromEntries((block.typeLabels  || []).map(x => [x.id, x]));
+  const routeLabelMap = Object.fromEntries((block.routeLabels || []).map(x => [x.id, x]));
+
+  const dlLabel  = pickLang(block.downloadLabel, '');
+  const extLabel = pickLang(block.externalLabel, '');
+  const emptyMsg = pickLang(block.emptyMessage, '');
+
+  const data = block.templates || [];
+
+  // Apply search
+  let filtered = search
+    ? data.filter(tpl => {
+        const q = search.toLowerCase();
+        const titleStr = pickLang(tpl.title, '').toLowerCase();
+        const descStr  = pickLang(tpl.description, '').toLowerCase();
+        const typeStr  = pickLang(typeLabelMap[tpl.typeId]?.label, '').toLowerCase();
+        return titleStr.includes(q) || descStr.includes(q) || typeStr.includes(q);
+      })
+    : data;
+
+  // Apply filter chips
+  const activeFilters = getTemplatesFilters();
+  if (activeFilters.typeId) {
+    filtered = filtered.filter(tpl => tpl.typeId === activeFilters.typeId);
+  }
+  if (activeFilters.routeIds.length > 0) {
+    filtered = filtered.filter(tpl => {
+      const rIds = Array.isArray(tpl.routeIds) ? tpl.routeIds : [];
+      return activeFilters.routeIds.some(rid => rIds.includes(rid));
+    });
+  }
+
+  // Pagination
+  const pageSizeOpts = Array.isArray(block.pageSizeOptions) ? block.pageSizeOptions : [9, 18, 36];
+  const showAllOpt   = block.showAllOption !== false;
+  const showAllLbl   = pickLang(block.showAllLabel, 'Todos');
+
+  const pageSize   = getState('templatesPageSize') || block.pageSize || pageSizeOpts[0] || 9;
+  const isAll      = pageSize === 'all';
+  const rawPage    = getState('templatesPage') || 0;
+  const totalPages = isAll ? 1 : Math.ceil(filtered.length / pageSize);
+  const safePage   = Math.min(rawPage, Math.max(0, totalPages - 1));
+  const paginated  = isAll ? filtered : filtered.slice(safePage * pageSize, (safePage + 1) * pageSize);
+
+  const lang = getLang();
+  const prevLbl = lang === 'en' ? 'Previous' : lang === 'va' ? 'Anterior' : 'Anterior';
+  const nextLbl = lang === 'en' ? 'Next' : lang === 'va' ? 'Següent' : 'Siguiente';
+
+  const activeFiltersHtml = (() => {
+    const badges = [];
+    if (activeFilters.typeId) {
+      const meta = typeLabelMap[activeFilters.typeId];
+      const lbl = meta ? pickLang(meta.label, activeFilters.typeId) : activeFilters.typeId;
+      const icon = meta?.icon || '📋';
+      badges.push(`
+        <button data-tmpl-remove-filter="type" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-eu-blue/10 text-eu-blue border border-eu-blue/30 text-xs font-semibold hover:bg-eu-blue/20 transition-colors cursor-pointer">
+          <span>${icon} ${lbl}</span>
+          <i data-lucide="x" class="w-3.5 h-3.5"></i>
+        </button>`);
+    }
+    activeFilters.routeIds.forEach(rid => {
+      const meta = routeLabelMap[rid];
+      const lbl = meta ? pickLang(meta.label, rid) : rid;
+      badges.push(`
+        <button data-tmpl-remove-filter="route" data-filter-value="${rid}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-purple-100 text-purple-800 border border-purple-300 text-xs font-semibold hover:bg-purple-200 transition-colors cursor-pointer">
+          <span>👥 ${lbl}</span>
+          <i data-lucide="x" class="w-3.5 h-3.5"></i>
+        </button>`);
+    });
+
+    if (badges.length === 0) return '';
+
+    const activeFiltersLabel = lang === 'en' ? 'Active filters:' : lang === 'va' ? 'Filtres actius:' : 'Filtros activos:';
+    const clearAllLabel = lang === 'en' ? 'Clear all' : lang === 'va' ? 'Netejar tots' : 'Limpiar todo';
+
+    return `
+      <div class="flex flex-wrap items-center gap-2 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+        <span class="text-xs font-semibold text-gray-700">${activeFiltersLabel}</span>
+        ${badges.join('')}
+        <button id="tmpl-clear-all-filters" class="ml-auto px-2.5 py-1 rounded text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200">
+          ${clearAllLabel}
+        </button>
+      </div>`;
+  })();
+
+  const pageSizeHtml = `
+    <div class="flex gap-1">
+      ${pageSizeOpts.map(n => `<button data-tmpl-pagesize="${n}" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${n}</button>`).join('')}
+      ${showAllOpt ? `<button data-tmpl-pagesize="all" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${showAllLbl}</button>` : ''}
+    </div>`;
+
+  const paginationHtml = !isAll && totalPages > 1 ? `
+    <div class="flex gap-2 justify-center mt-6 items-center">
+      <button id="tmpl-pag-prev" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
+        ← ${prevLbl}
+      </button>
+      <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
+      <button id="tmpl-pag-next" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
+        ${nextLbl} →
+      </button>
+    </div>` : '';
+
+  const cardsHtml = paginated.map(tpl => {
+    const typeMeta = typeLabelMap[tpl.typeId];
+    const iconStr  = tpl.icon || typeMeta?.icon || '📄';
+    const typeStr  = typeMeta ? pickLang(typeMeta.label, '') : '';
+    const routes   = (tpl.routeIds || []).map(rid => ({ id: rid, label: pickLang(routeLabelMap[rid]?.label, rid) }));
+
+    const btnLabel  = tpl.linkType === 'external' ? extLabel : dlLabel;
+    const btnIcon   = tpl.linkType === 'external' ? 'external-link' : 'download';
+    const isExternal = tpl.linkType === 'external' || tpl.external !== false;
+    const targetAttr = isExternal ? `target="_blank" rel="noopener noreferrer"` : '';
+
+    // Dates: publishedAt is required, revisionDate optional. Format using the same helper as Casos.
+    const tplLang = getLang();
+    const createdLbl = tplLang === 'en' ? 'Created' : tplLang === 'va' ? 'Creat' : 'Creado';
+    const revisedLbl = tplLang === 'en' ? 'Revised' : tplLang === 'va' ? 'Revisat' : 'Revisado';
+    const pubFmt = tpl.publishedAt ? formatMonthYear(tpl.publishedAt) : '';
+    const revFmt = tpl.revisionDate ? formatMonthYear(tpl.revisionDate) : '';
+
+    const filtersHere = getTemplatesFilters();
+
+    return `<div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 flex flex-col hover:border-eu-blue transition-colors group">
+      <div class="text-4xl mb-4">${iconStr}</div>
+      <h3 class="font-bold text-eu-text text-base mb-2 group-hover:text-eu-blue transition-colors">${pickLang(tpl.title, '')}</h3>
+      <p class="text-sm text-gray-600 mb-4 flex-1">${pickLang(tpl.description, '')}</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        ${showType && typeStr ? `<button data-tmpl-filter-type="${tpl.typeId}" class="text-xs px-2 py-0.5 rounded font-semibold cursor-pointer transition-colors border ${filtersHere.typeId === tpl.typeId ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-bg border-eu-border text-gray-600 hover:bg-eu-blue/10 hover:border-eu-blue hover:text-eu-blue'}">${typeStr}</button>` : ''}
+        ${showRoute ? routes.map(r => `<button data-tmpl-filter-route="${r.id}" class="text-xs px-2 py-0.5 rounded font-semibold cursor-pointer transition-colors border ${filtersHere.routeIds.includes(r.id) ? 'bg-purple-600 text-white border-purple-600' : 'bg-eu-blue/10 text-eu-blue border-eu-blue/20 hover:bg-purple-100 hover:text-purple-800 hover:border-purple-300'}">${r.label}</button>`).join('') : ''}
+      </div>
+      <div class="text-xs text-gray-500 space-y-1 mb-3 pt-3 border-t border-gray-100">
+        ${pubFmt ? `<div>📅 ${createdLbl}: ${pubFmt}</div>` : ''}
+        ${revFmt ? `<div class="text-eu-blue font-medium">✎ ${revisedLbl}: ${revFmt}</div>` : ''}
+      </div>
+      <div class="flex items-center justify-between">
+        ${showLicense ? `<span class="text-xs font-mono text-eu-teal">${tpl.license || ''}</span>` : '<span></span>'}
+        <a href="${tpl.url}" ${targetAttr} class="flex items-center gap-1.5 text-eu-blue text-xs font-bold hover:underline cursor-pointer">
+          <i data-lucide="${btnIcon}" class="w-3.5 h-3.5"></i>${btnLabel}
+        </a>
+      </div>
+    </div>`;
+  }).join('');
+
+  const emptyHtml = paginated.length === 0
+    ? `<div class="col-span-full bg-white rounded-xl border border-eu-border p-8 text-center">
+        <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+        <p class="text-gray-500 text-base">${emptyMsg}</p>
+      </div>`
+    : '';
+
+  return `
+    ${activeFiltersHtml}
+    <div class="flex items-center justify-end mb-4">
+      ${pageSizeHtml}
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">${cardsHtml}${emptyHtml}</div>
+    ${paginationHtml}
+  `;
+}
+
+function updateTemplatesGrid() {
+  const container = document.getElementById('tmpl-grid');
+  if (!container) return;
+  const search = getState('templatesSearch') || '';
+  container.innerHTML = renderTemplatesGridContent(search);
+  if (window.lucide) window.lucide.createIcons();
+  attachTemplatesGridListeners();
+}
+
+function attachTemplatesGridListeners() {
+  document.querySelectorAll('[data-tmpl-pagesize]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.tmplPagesize;
+      setState('templatesPageSize', v === 'all' ? 'all' : parseInt(v, 10));
+      setState('templatesPage', 0);
+      updateTemplatesGrid();
+    });
+  });
+  document.getElementById('tmpl-pag-prev')?.addEventListener('click', () => {
+    const cur = getState('templatesPage') || 0;
+    if (cur > 0) { setState('templatesPage', cur - 1); updateTemplatesGrid(); }
+  });
+  document.getElementById('tmpl-pag-next')?.addEventListener('click', () => {
+    setState('templatesPage', (getState('templatesPage') || 0) + 1);
+    updateTemplatesGrid();
+  });
+
+  // Filter chip clicks on cards
+  document.querySelectorAll('[data-tmpl-filter-type]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.tmplFilterType;
+      const filters = getTemplatesFilters();
+      filters.typeId = filters.typeId === v ? null : v;
+      setTemplatesFilters(filters);
+      setState('templatesPage', 0);
+      updateTemplatesGrid();
+    });
+  });
+  document.querySelectorAll('[data-tmpl-filter-route]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = btn.dataset.tmplFilterRoute;
+      const filters = getTemplatesFilters();
+      if (filters.routeIds.includes(v)) {
+        filters.routeIds = filters.routeIds.filter(x => x !== v);
+      } else {
+        filters.routeIds = [...filters.routeIds, v];
+      }
+      setTemplatesFilters(filters);
+      setState('templatesPage', 0);
+      updateTemplatesGrid();
+    });
+  });
+
+  // Remove-filter badges
+  document.querySelectorAll('[data-tmpl-remove-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const kind = btn.dataset.tmplRemoveFilter;
+      const filters = getTemplatesFilters();
+      if (kind === 'type') filters.typeId = null;
+      if (kind === 'route') {
+        const v = btn.dataset.filterValue;
+        filters.routeIds = filters.routeIds.filter(x => x !== v);
+      }
+      setTemplatesFilters(filters);
+      setState('templatesPage', 0);
+      updateTemplatesGrid();
+    });
+  });
+  document.getElementById('tmpl-clear-all-filters')?.addEventListener('click', () => {
+    setTemplatesFilters({ typeId: null, routeIds: [] });
+    setState('templatesPage', 0);
+    updateTemplatesGrid();
+  });
 }
 
 // ─── render / mount ──────────────────────────────────────────────────────────
@@ -1824,13 +2103,14 @@ export function render() {
   const notice = pickLang(heroBlock.notice, '');
 
   const casosSearch = getState('casosSearch') || '';
+  const templatesSearch = getState('templatesSearch') || '';
 
   const contentMap = {
     flujo:      tabFlujo(),
     oer:        tabOER(oerSearch),
     casos:      tabCasos(casosSearch),
     evidencia:  tabEvidencia(),
-    plantillas: tabPlantillas(),
+    plantillas: tabPlantillas(templatesSearch),
   };
 
   return `
@@ -1870,6 +2150,7 @@ export function mount() {
       setState('knowledgeTab', btn.dataset.knowTab);
       setState('oerPage', 0);
       setState('casosPage', 0);
+      setState('templatesPage', 0);
       rerender();
     });
   });
@@ -1936,6 +2217,26 @@ export function mount() {
     input?.focus();
   });
   attachEvidGridListeners();
+
+  // Templates / Plantillas y Toolkits
+  document.getElementById('tmpl-search')?.addEventListener('input', e => {
+    const val = e.target.value;
+    setState('templatesSearch', val);
+    setState('templatesPage', 0);
+    const clearBtn = document.getElementById('tmpl-search-clear');
+    if (clearBtn) clearBtn.classList.toggle('hidden', !val);
+    updateTemplatesGrid();
+  });
+  document.getElementById('tmpl-search-clear')?.addEventListener('click', () => {
+    const input = document.getElementById('tmpl-search');
+    if (input) input.value = '';
+    document.getElementById('tmpl-search-clear')?.classList.add('hidden');
+    setState('templatesSearch', '');
+    setState('templatesPage', 0);
+    updateTemplatesGrid();
+    input?.focus();
+  });
+  attachTemplatesGridListeners();
 }
 
 function rerender() {
