@@ -1259,7 +1259,9 @@ const STATUS_CHIP = {
 function getEvidLabel(key) {
   const lang = getLang();
   const labels = {
-    participants:   { es: 'participantes',   en: 'participants',   va: 'participants' },
+    publishedAt:    { es: 'Publicado',        en: 'Published',      va: 'Publicat' },
+    revisionDate:   { es: 'Actualizado',     en: 'Updated',        va: 'Actualitzat' },
+    participants:   { es: 'Participantes',    en: 'Participants',   va: 'Participants' },
     leadOrg:        { es: 'Líder:',          en: 'Lead:',          va: 'Líder:' },
     partners:       { es: 'Partners:',       en: 'Partners:',      va: 'Partners:' },
     deliverable:    { es: 'Entregable:',     en: 'Deliverable:',   va: 'Lliurable:' },
@@ -1360,10 +1362,10 @@ function renderEvidGridContent(search) {
   if (!block) return '';
   const evidences = Array.isArray(block.evidences) ? block.evidences : [];
 
-  // Sort by startDate desc
+  // Sort by most recent date (revisionDate if present, else publishedAt)
   let sorted = [...evidences].sort((a, b) => {
-    const da = new Date(a.startDate || '1970-01-01').getTime();
-    const db = new Date(b.startDate || '1970-01-01').getTime();
+    const da = new Date(a.revisionDate || a.publishedAt || '1970-01-01').getTime();
+    const db = new Date(b.revisionDate || b.publishedAt || '1970-01-01').getTime();
     return db - da;
   });
 
@@ -1404,60 +1406,72 @@ function renderEvidGridContent(search) {
   const hxLabels = block.helixLabels || {};
   const trLabels = block.transitionLabels || {};
 
-  // Cards
+  const count = filtered.length;
+  const lang = getLang();
+  const countLabel = `${count} ${count !== 1
+    ? (lang === 'en' ? 'evidences' : lang === 'va' ? 'evidències' : 'evidencias')
+    : (lang === 'en' ? 'evidence' : lang === 'va' ? 'evidència' : 'evidencia')}`;
+
+  const showAll = block.showAllOption !== false;
+  const showAllLabel = pickLang(block.showAllLabel, 'Todas');
+
+  const pageSizeHtml = `
+    <div class="flex gap-1">
+      ${pageOptions.map(n => `<button data-evid-pagesize="${n}" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${n}</button>`).join('')}
+      ${showAll ? `<button data-evid-pagesize="all" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${isAll ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${showAllLabel}</button>` : ''}
+    </div>`;
+
+  const paginationHtml = !isAll && totalPages > 1 ? `
+    <div class="flex gap-2 justify-center mt-6 items-center">
+      <button id="evid-pag-prev" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
+        ← ${getEvidLabel('previous')}
+      </button>
+      <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
+      <button id="evid-pag-next" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
+        ${getEvidLabel('next')} →
+      </button>
+    </div>` : '';
+
+  // Active filters panel — respeta chipVisibility global
+  const cv = block.chipVisibility || {};
+  const activeChips = [];
+  if (f.pilotType   && cv.pilotType   !== false) activeChips.push({ kind: 'pilotType', value: f.pilotType, label: pickLang(ptLabels[f.pilotType], f.pilotType), cls: PILOT_TYPE_CHIP });
+  if (f.status      && cv.status      !== false) activeChips.push({ kind: 'status', value: f.status, label: pickLang(stLabels[f.status], f.status), cls: STATUS_CHIP[f.status] || 'bg-gray-100 text-gray-700' });
+  if (cv.sectors    !== false) for (const s of f.sectors)     activeChips.push({ kind: 'sectors', value: s, label: getSectorName(s), cls: SECTOR_COLORS[s] || 'bg-gray-100 text-gray-600' });
+  if (cv.levels     !== false) for (const l of f.levels)      activeChips.push({ kind: 'levels', value: l, label: pickLang(LEVEL_LABELS[l], l), cls: LEVEL_COLORS[l] || 'bg-gray-100 text-gray-700' });
+  if (cv.helix      !== false) for (const h of f.helix)       activeChips.push({ kind: 'helix', value: h, label: pickLang(hxLabels[h], h), cls: HELIX_CHIP });
+  if (cv.transitions !== false) for (const tr of f.transitions) activeChips.push({ kind: 'transitions', value: tr, label: pickLang(trLabels[tr], tr), cls: TRANSITION_CHIP });
+
+  const activeFiltersHtml = activeChips.length ? `
+    <div class="flex flex-wrap items-center gap-2 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+      <span class="text-xs font-semibold text-gray-700">${getEvidLabel('activeFilters')}</span>
+      ${activeChips.map(c => `
+        <button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${c.cls} border border-current/30 text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer evid-filter-remove" data-kind="${c.kind}" data-value="${c.value}">
+          <span>${c.label}</span>
+          <i data-lucide="x" class="w-3.5 h-3.5"></i>
+        </button>
+      `).join('')}
+      <button id="evid-filter-clear-all" class="ml-auto px-2.5 py-1 rounded text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200">
+        ${getEvidLabel('clearAll')}
+      </button>
+    </div>
+  ` : '';
+
   const cardsHtml = paginated.length === 0 ? `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
       <i data-lucide="${search ? 'search' : 'inbox'}" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
       <p class="text-gray-500 text-base">${search ? getEvidLabel('noResults') : pickLang(block.emptyMessage, getEvidLabel('noResults'))}</p>
     </div>
-  ` : `<div class="space-y-5">${paginated.map(e => renderEvidCard(e, ptLabels, stLabels, hxLabels, trLabels)).join('')}</div>`;
+  ` : `<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">${paginated.map(e => renderEvidCard(e, ptLabels, stLabels, hxLabels, trLabels)).join('')}</div>`;
 
-  // Active filters panel
-  const activeChips = [];
-  if (f.pilotType) activeChips.push({ kind: 'pilotType', value: f.pilotType, label: pickLang(ptLabels[f.pilotType], f.pilotType), cls: PILOT_TYPE_CHIP });
-  if (f.status) activeChips.push({ kind: 'status', value: f.status, label: pickLang(stLabels[f.status], f.status), cls: STATUS_CHIP[f.status] || 'bg-gray-100 text-gray-700' });
-  for (const s of f.sectors) activeChips.push({ kind: 'sectors', value: s, label: getSectorName(s), cls: SECTOR_COLORS[s] || 'bg-gray-100 text-gray-600' });
-  for (const l of f.levels) activeChips.push({ kind: 'levels', value: l, label: pickLang(LEVEL_LABELS[l], l), cls: LEVEL_COLORS[l] || 'bg-gray-100 text-gray-700' });
-  for (const h of f.helix) activeChips.push({ kind: 'helix', value: h, label: pickLang(hxLabels[h], h), cls: HELIX_CHIP });
-  for (const tr of f.transitions) activeChips.push({ kind: 'transitions', value: tr, label: pickLang(trLabels[tr], tr), cls: TRANSITION_CHIP });
-
-  const activeFiltersHtml = activeChips.length ? `
-    <div class="bg-eu-bg border border-eu-border rounded-xl p-4 mb-5">
-      <div class="flex flex-wrap items-center gap-2">
-        <span class="text-xs font-semibold text-gray-600 mr-1">${getEvidLabel('activeFilters')}</span>
-        ${activeChips.map(c => `
-          <span class="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded ${c.cls}">
-            ${c.label}
-            <button class="evid-filter-remove ml-1 text-gray-600 hover:text-red-600 cursor-pointer" data-kind="${c.kind}" data-value="${c.value}">×</button>
-          </span>
-        `).join('')}
-        <button id="evid-filter-clear-all" class="text-xs text-eu-blue font-semibold hover:underline cursor-pointer ml-2">${getEvidLabel('clearAll')}</button>
-      </div>
+  return `
+    ${activeFiltersHtml}
+    <div class="flex items-center justify-between mb-4">
+      <span class="text-xs text-gray-500 font-medium">${countLabel}</span>
+      ${pageSizeHtml}
     </div>
-  ` : '';
-
-  // Pagination controls
-  const showAll = block.showAllOption !== false;
-  const showAllLabel = pickLang(block.showAllLabel, 'Todas');
-  const pageSelector = `
-    <div class="flex flex-wrap items-center justify-between gap-3 mt-6">
-      <div class="text-xs text-gray-600">${filtered.length}</div>
-      <div class="flex items-center gap-2">
-        <label class="text-xs text-gray-600">Página:</label>
-        <select id="evid-page-size" class="border border-eu-border rounded px-2 py-1 text-xs cursor-pointer">
-          ${pageOptions.map(o => `<option value="${o}" ${pageSize === o ? 'selected' : ''}>${o}</option>`).join('')}
-          ${showAll ? `<option value="all" ${isAll ? 'selected' : ''}>${showAllLabel}</option>` : ''}
-        </select>
-        ${!isAll && totalPages > 1 ? `
-          <button id="evid-prev" class="px-2 py-1 text-xs border border-eu-border rounded cursor-pointer hover:bg-eu-bg" ${safePage === 0 ? 'disabled' : ''}>${getEvidLabel('previous')}</button>
-          <span class="text-xs">${safePage + 1} / ${totalPages}</span>
-          <button id="evid-next" class="px-2 py-1 text-xs border border-eu-border rounded cursor-pointer hover:bg-eu-bg" ${safePage >= totalPages - 1 ? 'disabled' : ''}>${getEvidLabel('next')}</button>
-        ` : ''}
-      </div>
-    </div>
-  `;
-
-  return `${activeFiltersHtml}${cardsHtml}${pageSelector}`;
+    ${cardsHtml}
+    ${paginationHtml}`;
 }
 
 function renderEvidCard(e, ptLabels, stLabels, hxLabels, trLabels) {
@@ -1467,79 +1481,148 @@ function renderEvidCard(e, ptLabels, stLabels, hxLabels, trLabels) {
   const stLabel = pickLang(stLabels[e.status], e.status);
   const stCls = STATUS_CHIP[e.status] || 'bg-gray-100 text-gray-700';
 
-  const sectorChips = (e.sectorIds || []).map(s => `
-    <span class="text-xs font-bold px-1.5 py-0.5 rounded ${SECTOR_COLORS[s] || 'bg-gray-100 text-gray-600'}">${getSectorName(s)}</span>
-  `).join('');
-  const levelChips = (e.levels || []).map(l => `
-    <span class="text-xs font-bold px-1.5 py-0.5 rounded ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-700'}">${pickLang(LEVEL_LABELS[l], l)}</span>
-  `).join('');
-  const helixChips = (e.helix || []).map(h => `
-    <span class="text-xs font-semibold px-1.5 py-0.5 rounded ${HELIX_CHIP}">${pickLang(hxLabels[h], h)}</span>
-  `).join('');
-  const transChips = (e.transitions || []).map(tr => `
-    <span class="text-xs font-semibold px-1.5 py-0.5 rounded ${TRANSITION_CHIP}">${pickLang(trLabels[tr], tr)}</span>
-  `).join('');
+  const f = getEvidFilters();
+
+  const sectorChips = (e.sectorIds || []).map(s => {
+    const isActive = f.sectors.includes(s);
+    return `<button data-evid-filter-sector="${s}" class="text-xs font-semibold px-2 py-0.5 rounded cursor-pointer transition-all ${SECTOR_COLORS[s] || 'bg-gray-100 text-gray-600'} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getEvidLabel('filterSector')}">${getSectorName(s)}</button>`;
+  }).join(' ');
+
+  const levelChips = (e.levels || []).map(l => {
+    const label = LEVEL_LABELS[l] ? pickLang(LEVEL_LABELS[l], l) : l;
+    const isActive = f.levels.includes(l);
+    return `<button data-evid-filter-level="${l}" class="text-xs font-bold px-2 py-0.5 rounded cursor-pointer transition-all ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-600'} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getEvidLabel('filterLevel')}">${label}</button>`;
+  }).join(' ');
+
+  const helixChips = (e.helix || []).map(h => {
+    const isActive = f.helix.includes(h);
+    return `<button data-evid-filter-helix="${h}" class="text-xs font-semibold px-2 py-0.5 rounded cursor-pointer transition-all ${HELIX_CHIP} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getEvidLabel('filterHelix')}">${pickLang(hxLabels[h], h)}</button>`;
+  }).join(' ');
+
+  const transChips = (e.transitions || []).map(tr => {
+    const isActive = f.transitions.includes(tr);
+    return `<button data-evid-filter-trans="${tr}" class="text-xs font-semibold px-2 py-0.5 rounded cursor-pointer transition-all ${TRANSITION_CHIP} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getEvidLabel('filterTrans')}">${pickLang(trLabels[tr], tr)}</button>`;
+  }).join(' ');
+
+  const pilotTypeIsActive = f.pilotType === e.pilotType;
+
+  const cv = KNOWLEDGE_CONFIG?.pilotEvidencesBlock?.chipVisibility || {};
+  const showPilotType   = cv.pilotType   !== false;
+  const showSectors     = cv.sectors     !== false;
+  const showLevels      = cv.levels      !== false;
+  const showStatus      = cv.status      !== false;
+  const showHelix       = cv.helix       !== false;
+  const showTransitions = cv.transitions !== false;
 
   const objective   = (e.showObjective   !== false) && e.objective   ? pickLang(e.objective,   '') : null;
   const methodology = (e.showMethodology !== false) && e.methodology ? pickLang(e.methodology, '') : null;
   const outcome     = (e.showOutcome     !== false) && e.outcome     ? pickLang(e.outcome,     '') : null;
 
-  const evLink = (e.showEvidenceLink !== false) && e.evidenceLink && e.evidenceLink.url ? e.evidenceLink : null;
+  const evLink  = (e.showEvidenceLink  !== false) && e.evidenceLink  && e.evidenceLink.url  ? e.evidenceLink  : null;
   const docLink = (e.showDocumentation !== false) && e.documentation && e.documentation.url ? e.documentation : null;
   const addLink = (e.showAdditionalUrl !== false) && e.additionalUrl && e.additionalUrl.url ? e.additionalUrl : null;
 
   const partners = (e.partnerOrganizations || []).filter(p => p.name).map(p => p.role ? `${p.name} (${p.role})` : p.name).join(', ');
-  const dates = e.startDate ? (e.endDate && e.endDate !== e.startDate ? `${e.startDate} → ${e.endDate}` : e.startDate) : '';
+  const ePublishedAt  = e.publishedAt  ? formatMonthYear(e.publishedAt)  : '';
+  const eRevisionDate = e.revisionDate ? formatMonthYear(e.revisionDate) : null;
+
+  // Cross-refs: lookup en los bloques CMS para mostrar títulos en lugar de IDs crudos.
+  // Si el caso/recurso no existe o está oculto, el loader ya lo excluye → la referencia no se muestra.
+  const relatedCase = e.relatedCaseId
+    ? (KNOWLEDGE_CONFIG?.successCasesBlock?.cases || []).find(c => c.id === e.relatedCaseId) || null
+    : null;
+  const relatedOer = e.relatedOerId
+    ? (KNOWLEDGE_CONFIG?.oerResourcesBlock?.resources || []).find(r => r.id === e.relatedOerId) || null
+    : null;
 
   return `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 hover:border-eu-blue transition-colors">
-      <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
-        <div class="flex-1 min-w-0">
-          <h3 class="font-bold text-eu-text text-base mb-1">${tt}</h3>
-          ${sm ? `<p class="text-sm text-gray-600 mb-2">${sm}</p>` : ''}
-          <div class="flex flex-wrap gap-1.5 items-center">
-            <span class="text-xs font-semibold px-1.5 py-0.5 rounded ${PILOT_TYPE_CHIP}">${ptLabel}</span>
-            ${sectorChips}
-            ${levelChips}
-          </div>
-        </div>
-        <span class="text-xs font-bold px-2 py-0.5 rounded ${stCls}">${stLabel}</span>
-      </div>
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm hover:shadow-md hover:border-eu-blue transition-all overflow-hidden flex flex-col">
 
-      ${(helixChips || transChips) ? `
-        <div class="flex flex-wrap gap-1.5 mb-3">
-          ${helixChips}
-          ${transChips}
+      <!-- Header: Title + Status + Chips -->
+      <div class="border-b border-eu-border p-6 pb-4">
+        <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+          <div class="flex-1 min-w-0">
+            <h3 class="text-lg font-bold text-eu-text mb-1">${tt}</h3>
+            ${sm ? `<p class="text-base text-gray-600">${sm}</p>` : ''}
+          </div>
+          ${showStatus ? `<button data-evid-filter-status="${e.status}" class="text-xs font-bold px-2.5 py-1 rounded whitespace-nowrap cursor-pointer transition-all ${stCls} ${f.status === e.status ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getEvidLabel('filterStatus')}">${stLabel}</button>` : ''}
+        </div>
+
+        <!-- Pilot type + sectors + levels -->
+        ${(showPilotType || (showSectors && sectorChips) || (showLevels && levelChips)) ? `
+        <div class="flex flex-wrap gap-1.5 mb-2">
+          ${showPilotType ? `<button data-evid-filter-type="${e.pilotType}" class="text-xs font-semibold px-2 py-0.5 rounded cursor-pointer transition-all ${PILOT_TYPE_CHIP} ${pilotTypeIsActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getEvidLabel('filterType')}">${ptLabel}</button>` : ''}
+          ${showSectors ? sectorChips : ''}
+          ${showLevels ? levelChips : ''}
         </div>` : ''}
 
-      <div class="text-xs text-gray-500 space-y-0.5 mb-3">
-        ${e.leadOrganization ? `<p><span class="font-semibold">${getEvidLabel('leadOrg')}</span> <span class="text-eu-blue font-semibold">${e.leadOrganization}</span></p>` : ''}
-        ${partners ? `<p><span class="font-semibold">${getEvidLabel('partners')}</span> ${partners}</p>` : ''}
-        ${e.relatedDeliverable ? `<p><span class="font-semibold">${getEvidLabel('deliverable')}</span> <span class="font-mono">${e.relatedDeliverable}</span></p>` : ''}
-        ${e.relatedCaseId ? `<p><span class="font-semibold">${getEvidLabel('relatedCase')}</span> <span class="font-mono">${e.relatedCaseId}</span></p>` : ''}
-        ${e.relatedOerId ? `<p><span class="font-semibold">${getEvidLabel('relatedOer')}</span> <span class="font-mono">${e.relatedOerId}</span></p>` : ''}
-        ${dates ? `<p>📅 ${dates}</p>` : ''}
-        ${e.participants > 0 ? `<p>👥 ${e.participants} ${getEvidLabel('participants')}</p>` : ''}
+        <!-- Helix + Transitions -->
+        ${((showHelix && helixChips) || (showTransitions && transChips)) ? `
+          <div class="flex flex-wrap gap-1.5 mb-2">
+            ${showHelix ? helixChips : ''}
+            ${showTransitions ? transChips : ''}
+          </div>` : ''}
+
       </div>
 
-      ${objective ? `<div class="bg-blue-50 border-l-4 border-blue-400 rounded p-3 mb-2">
-        <p class="text-xs font-semibold text-blue-900 mb-0.5">🎯 ${getEvidLabel('objective')}</p>
-        <p class="text-sm text-gray-700">${objective}</p>
-      </div>` : ''}
-      ${methodology ? `<div class="bg-violet-50 border-l-4 border-violet-400 rounded p-3 mb-2">
-        <p class="text-xs font-semibold text-violet-900 mb-0.5">🛠️ ${getEvidLabel('methodology')}</p>
-        <p class="text-sm text-gray-700">${methodology}</p>
-      </div>` : ''}
-      ${outcome ? `<div class="bg-emerald-50 border-l-4 border-emerald-400 rounded p-3 mb-2">
-        <p class="text-xs font-semibold text-emerald-900 mb-0.5">📊 ${getEvidLabel('outcome')}</p>
-        <p class="text-sm text-gray-700">${outcome}</p>
+      <!-- Main Content -->
+      <div class="p-6 flex-1 flex flex-col space-y-3">
+        ${(e.leadOrganization || partners) ? `
+          <div class="text-sm space-y-1">
+            ${e.leadOrganization ? `<p><span class="font-semibold text-gray-700">${getEvidLabel('leadOrg')}</span> <span class="text-eu-blue font-semibold">${e.leadOrganization}</span></p>` : ''}
+            ${partners ? `<p class="text-gray-600"><span class="font-semibold text-gray-700">${getEvidLabel('partners')}</span> ${partners}</p>` : ''}
+          </div>` : ''}
+
+        ${(e.relatedDeliverable || relatedCase || relatedOer) ? `
+          <div class="text-sm text-gray-500 space-y-0.5">
+            ${e.relatedDeliverable ? `<p><span class="font-semibold">${getEvidLabel('deliverable')}</span> ${e.relatedDeliverable}</p>` : ''}
+            ${relatedCase ? `<p><span class="font-semibold">${getEvidLabel('relatedCase')}</span> <span class="text-gray-700">${pickLang(relatedCase.title, e.relatedCaseId)}</span></p>` : ''}
+            ${relatedOer  ? `<p><span class="font-semibold">${getEvidLabel('relatedOer')}</span> <span class="text-gray-700">${pickLang(relatedOer.title, e.relatedOerId)}</span></p>` : ''}
+          </div>` : ''}
+
+        ${objective ? `
+          <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
+            <p class="text-sm font-semibold text-blue-900 mb-1">🎯 ${getEvidLabel('objective')}</p>
+            <p class="text-base text-blue-800">${objective}</p>
+          </div>` : ''}
+        ${methodology ? `
+          <div class="bg-violet-50 rounded-lg p-4 border border-violet-100">
+            <p class="text-sm font-semibold text-violet-900 mb-1">🛠️ ${getEvidLabel('methodology')}</p>
+            <p class="text-base text-violet-800">${methodology}</p>
+          </div>` : ''}
+        ${outcome ? `
+          <div class="bg-emerald-50 rounded-lg p-4 border border-emerald-100">
+            <p class="text-sm font-semibold text-emerald-900 mb-1">📊 ${getEvidLabel('outcome')}</p>
+            <p class="text-base text-emerald-800">${outcome}</p>
+          </div>` : ''}
+      </div>
+
+      <!-- Metadata: dates + participants -->
+      ${(ePublishedAt || e.participants > 0) ? `
+      <div class="border-t border-eu-border px-6 py-4 bg-eu-bg space-y-2 text-sm">
+        ${ePublishedAt ? `
+        <div class="flex items-center justify-between">
+          <span class="text-gray-600">${getEvidLabel('publishedAt')}</span>
+          <span class="font-semibold text-gray-800">${ePublishedAt}</span>
+        </div>` : ''}
+        ${eRevisionDate ? `
+        <div class="flex items-center justify-between">
+          <span class="text-gray-600">${getEvidLabel('revisionDate')}</span>
+          <span class="font-semibold text-gray-800">${eRevisionDate}</span>
+        </div>` : ''}
+        ${e.participants > 0 ? `
+        <div class="flex items-center justify-between">
+          <span class="text-gray-600">${getEvidLabel('participants')}</span>
+          <span class="font-semibold text-gray-800">${e.participants}</span>
+        </div>` : ''}
       </div>` : ''}
 
+      <!-- Footer: Links -->
       ${(evLink || docLink || addLink) ? `
-        <div class="flex flex-wrap gap-2 mt-3 pt-3 border-t border-eu-border">
-          ${evLink ? `<a href="${evLink.url}" ${evLink.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1 text-xs font-semibold text-eu-blue hover:underline"><i data-lucide="external-link" class="w-3.5 h-3.5"></i>${getEvidLabel('viewEvidence')}</a>` : ''}
-          ${docLink ? `<a href="${docLink.url}" ${docLink.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1 text-xs font-semibold text-eu-teal hover:underline"><i data-lucide="file-text" class="w-3.5 h-3.5"></i>${getEvidLabel('documentation')}${docLink.license ? ` <span class="font-mono text-gray-500">(${docLink.license})</span>` : ''}</a>` : ''}
-          ${addLink ? `<a href="${addLink.url}" ${addLink.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1 text-xs font-semibold text-gray-700 hover:underline"><i data-lucide="link" class="w-3.5 h-3.5"></i>${pickLang(addLink.label, '')}</a>` : ''}
+        <div class="border-t border-eu-border p-6 flex flex-wrap gap-3">
+          ${evLink ? `<a href="${evLink.url}" ${evLink.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors"><i data-lucide="external-link" class="w-4 h-4"></i>${getEvidLabel('viewEvidence')}</a>` : ''}
+          ${docLink ? `<a href="${docLink.url}" ${docLink.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-eu-teal font-bold text-base hover:underline cursor-pointer transition-colors"><i data-lucide="file-text" class="w-4 h-4"></i>${getEvidLabel('documentation')}${docLink.license ? ` <span class="font-mono text-sm text-gray-500">(${docLink.license})</span>` : ''}</a>` : ''}
+          ${addLink ? `<a href="${addLink.url}" ${addLink.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-gray-700 font-bold text-base hover:underline cursor-pointer transition-colors"><i data-lucide="link" class="w-4 h-4"></i>${pickLang(addLink.label, '')}</a>` : ''}
         </div>` : ''}
     </div>
   `;
@@ -1555,7 +1638,7 @@ function updateEvidGrid() {
 }
 
 function attachEvidGridListeners() {
-  // Remove single filter chip
+  // Remove single filter chip (active filters panel)
   document.querySelectorAll('.evid-filter-remove').forEach(btn => {
     btn.addEventListener('click', () => {
       const kind = btn.dataset.kind;
@@ -1571,25 +1654,113 @@ function attachEvidGridListeners() {
       updateEvidGrid();
     });
   });
-  // Clear all
+
+  // Clear all filters
   document.getElementById('evid-filter-clear-all')?.addEventListener('click', () => {
     setEvidFilters({ pilotType: null, status: null, sectors: [], levels: [], helix: [], transitions: [] });
     setState('evidPage', 0);
     updateEvidGrid();
   });
-  // Pagination
-  document.getElementById('evid-prev')?.addEventListener('click', () => {
+
+  // Pilot type chip filter (on cards)
+  document.querySelectorAll('[data-evid-filter-type]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const val = btn.dataset.evidFilterType;
+      const f = getEvidFilters();
+      f.pilotType = f.pilotType === val ? null : val;
+      setEvidFilters(f);
+      setState('evidPage', 0);
+      updateEvidGrid();
+    });
+  });
+
+  // Sector chip filter
+  document.querySelectorAll('[data-evid-filter-sector]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const val = btn.dataset.evidFilterSector;
+      const f = getEvidFilters();
+      if (f.sectors.includes(val)) f.sectors = f.sectors.filter(s => s !== val);
+      else f.sectors.push(val);
+      setEvidFilters(f);
+      setState('evidPage', 0);
+      updateEvidGrid();
+    });
+  });
+
+  // Level chip filter
+  document.querySelectorAll('[data-evid-filter-level]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const val = btn.dataset.evidFilterLevel;
+      const f = getEvidFilters();
+      if (f.levels.includes(val)) f.levels = f.levels.filter(l => l !== val);
+      else f.levels.push(val);
+      setEvidFilters(f);
+      setState('evidPage', 0);
+      updateEvidGrid();
+    });
+  });
+
+  // Helix chip filter
+  document.querySelectorAll('[data-evid-filter-helix]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const val = btn.dataset.evidFilterHelix;
+      const f = getEvidFilters();
+      if (f.helix.includes(val)) f.helix = f.helix.filter(h => h !== val);
+      else f.helix.push(val);
+      setEvidFilters(f);
+      setState('evidPage', 0);
+      updateEvidGrid();
+    });
+  });
+
+  // Status badge filter
+  document.querySelectorAll('[data-evid-filter-status]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const val = btn.dataset.evidFilterStatus;
+      const f = getEvidFilters();
+      f.status = f.status === val ? null : val;
+      setEvidFilters(f);
+      setState('evidPage', 0);
+      updateEvidGrid();
+    });
+  });
+
+  // Transition chip filter
+  document.querySelectorAll('[data-evid-filter-trans]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const val = btn.dataset.evidFilterTrans;
+      const f = getEvidFilters();
+      if (f.transitions.includes(val)) f.transitions = f.transitions.filter(t => t !== val);
+      else f.transitions.push(val);
+      setEvidFilters(f);
+      setState('evidPage', 0);
+      updateEvidGrid();
+    });
+  });
+
+  // Page size buttons
+  document.querySelectorAll('[data-evid-pagesize]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sz = btn.dataset.evidPagesize === 'all' ? 'all' : parseInt(btn.dataset.evidPagesize, 10);
+      setState('evidPageSize', sz);
+      setState('evidPage', 0);
+      updateEvidGrid();
+    });
+  });
+
+  // Prev / Next pagination
+  document.getElementById('evid-pag-prev')?.addEventListener('click', () => {
     const cur = getState('evidPage') || 0;
     if (cur > 0) { setState('evidPage', cur - 1); updateEvidGrid(); }
   });
-  document.getElementById('evid-next')?.addEventListener('click', () => {
+  document.getElementById('evid-pag-next')?.addEventListener('click', () => {
     setState('evidPage', (getState('evidPage') || 0) + 1);
-    updateEvidGrid();
-  });
-  document.getElementById('evid-page-size')?.addEventListener('change', e => {
-    const v = e.target.value;
-    setState('evidPageSize', v === 'all' ? 'all' : parseInt(v, 10));
-    setState('evidPage', 0);
     updateEvidGrid();
   });
 }
