@@ -1,4 +1,4 @@
-export type Language = 'es' | 'en' | 'va';
+﻿export type Language = 'es' | 'en' | 'va';
 
 export const translations = {
   es: {
@@ -842,9 +842,6 @@ export const translations = {
       howValidatedTitle: 'Cómo se valida',
       expectedOutcomeTitle: 'Resultado esperado',
       sectorNames: { mfg: 'Manufactura', mob: 'Movilidad y Transporte', ene: 'Energía y Medio Ambiente', agr: 'Agroalimentario', cci: 'Industrias Culturales y Creativas', hou: 'Vivienda', nts: 'Servicios No Turísticos' },
-      contributionTypes: { Challenge: 'Reto', Case: 'Caso', Validation: 'Validación', Mentoring: 'Mentoría', Pilot: 'Pilotaje', Resource: 'Recurso' },
-      routeOptions: { 'FP': 'FP', 'Teacher Training': 'Formación Docente', 'Master Bridge': 'Puente al Máster', 'Mixed': 'Mixta' },
-      evidenceMaturityOptions: { idea: 'Idea', validated: 'Validado', inPilot: 'En Piloto', completed: 'Completado' },
       formLabels: { title: 'Título', contributionType: 'Tipo de contribución', route: 'Ruta educativa', sector: 'Sector AI-SECRETT', deadline: 'Plazo límite', evidenceExpected: 'Evidencia esperada', ethicsConditions: 'Condiciones de datos / ética', stakeholderReturn: 'Valor para tu organización', description: 'Descripción' },
       formPlaceholders: { title: 'Ej. Predicción de consumo energético en edificios educativos', description: 'Describe el contexto, los datos disponibles, los objetivos y el resultado esperado...', evidenceExpected: 'Ej. Modelo funcional validado con datos reales', stakeholderReturn: 'Ej. Acceso a estudiantes formados, publicación de resultados, piloto con la red' },
       searchPlaceholder: 'Buscar por título o descripción...',
@@ -860,22 +857,7 @@ export const translations = {
       statusResolved: 'Resuelto',
       levelFP: 'FP',
       levelMaster: 'Máster',
-      levelBoth: 'Ambos',
-      challengeData: {
-        r1: { title: 'Optimización energética de museos públicos con IA', entityType: 'Administración Pública', description: 'Desarrollo de un modelo predictivo para optimizar el consumo de HVAC en la red de museos públicos valencianos. Se busca reducir el consumo un 25% sin afectar al confort de visitantes.', tags: ['HVAC', 'ML Predictivo', 'IoT', 'Eficiencia Energética'] },
-        r2: { title: 'Detección de plagas en cítricos vía Computer Vision', entityType: 'Empresa Agrícola', description: 'Sistema de detección temprana de la Xylella fastidiosa y cotonet en cultivos de cítricos mediante drones y modelos de visión computacional entrenados con imágenes multiespectrales.', tags: ['Computer Vision', 'Drones', 'Deep Learning', 'Xylella'] },
-        r3: { title: 'Mantenimiento predictivo en líneas de embotellado', entityType: 'PYME Agroalimentaria', description: 'Reducción de paradas no planificadas en líneas de embotellado de vino mediante sensórica vibratoria y modelos LSTM para la predicción de fallos en rodamientos y motores.', tags: ['LSTM', 'Vibración', 'IoT Industrial', 'Industria 4.0'] },
-        r4: { title: 'IA en triaje de urgencias pediátricas', entityType: 'Institución Sanitaria Pública', description: 'Modelo de apoyo a la decisión clínica para el triaje en urgencias pediátricas basado en constantes vitales, motivo de consulta (NLP) e historial clínico previo (HL7 FHIR).', tags: ['NLP Clínico', 'FHIR', 'Triaje', 'Ética IA'] },
-        r5: { title: 'Digitalización de colecciones patrimoniales con NLP multilingüe', entityType: 'Administración Pública', description: 'Uso de NLP y OCR para catalogar y enriquecer semánticamente 50.000 documentos históricos en español, inglés y neerlandés del archivo colonial de Gran Canaria.', tags: ['NLP', 'OCR', 'Patrimonio Digital', 'Multilingüe'] },
-        r6: { title: 'Predicción de calidad del agua en cuencas fluviales', entityType: 'Administración Regional', description: 'Modelos de series temporales para predecir la concentración de nitratos y fosfatos en el lago Vänern usando datos de sensores remotos y registros históricos de 15 años.', tags: ['Series Temporales', 'Teledetección', 'Calidad Agua', 'GIS'] },
-        r7: { title: 'Sistema de recomendación de itinerarios turísticos sostenibles', entityType: 'Startup', description: 'Motor de recomendación personalizado para turismo cultural en Canarias que integre criterios de sostenibilidad, preferencias de usuario y datos de afluencia en tiempo real.', tags: ['Sistemas de Recomendación', 'Turismo Sostenible', 'LLM', 'API REST'] },
-        r8: { title: 'Automatización del proceso de expedientes académicos con IA', entityType: 'Administración Pública', description: 'Sistema de extracción y validación automática de datos en expedientes académicos de la CV mediante OCR + LLM. Reducción del tiempo de tramitación del 70%.', tags: ['OCR', 'RPA', 'LLM', 'Tramitación Electrónica'] },
-        r9: { title: 'Detección de desinformación climática en redes sociales', entityType: 'Centro de Investigación', description: 'Clasificador multilingüe (ES/PT/EN) para identificar narrativas de desinformación sobre cambio climático en Twitter/X y Mastodon usando modelos transformer y grafos de conocimiento.', tags: ['NLP', 'Desinformación', 'Transformers', 'Redes Sociales'] },
-        r10: { title: 'Validación sectorial de necesidades IA para FP industrial', entityType: 'Clúster Empresarial', description: 'Revisión con empresas industriales de competencias, herramientas y casos reales que deberían priorizarse en actividades FP sobre IA aplicada a producción, mantenimiento y calidad.', tags: ['Validación Sectorial', 'FP', 'Industria', 'Competencias'] },
-        r11: { title: 'Mentoría para proyectos de IA responsable en administración pública', entityType: 'Fundación de Innovación Pública', description: 'Disponibilidad de perfiles expertos para orientar equipos docentes y estudiantes en privacidad, explicabilidad y evaluación de impacto en casos de IA para servicios públicos.', tags: ['Mentoría', 'IA Responsable', 'Sector Público', 'Ética'] },
-        r12: { title: 'Pilotaje de actividad docente sobre sensores y calidad del aire', entityType: 'Centro FP', description: 'Piloto en aula para probar una situación de aprendizaje con sensores ambientales, visualización de datos y reflexión sobre sostenibilidad y sesgos de medición.', tags: ['Pilotaje', 'Sensórica', 'Aules', 'Sostenibilidad'] },
-        r13: { title: 'Dataset sintético para trazabilidad agroalimentaria', entityType: 'PYME Tecnológica', description: 'Aportación de un conjunto de datos sintético y anonimizado para practicar trazabilidad, detección de anomalías y visualización de cadenas de suministro agroalimentarias.', tags: ['Recurso', 'Dataset Sintético', 'Trazabilidad', 'Agroalimentario'] },
-      },
+      levelBoth: 'Ambos'
     },
     challengeDetail: {
       consortiumLabel: '23 miembros del consorcio',
@@ -1707,9 +1689,6 @@ export const translations = {
       howValidatedTitle: 'How it is validated',
       expectedOutcomeTitle: 'Expected outcome',
       sectorNames: { mfg: 'Manufacturing', mob: 'Mobility and Transport', ene: 'Energy and Environment', agr: 'Agrifood', cci: 'Cultural and Creative Industries', hou: 'Housing', nts: 'Non-Touristic Services' },
-      contributionTypes: { Challenge: 'Challenge', Case: 'Case study', Validation: 'Content validation', Mentoring: 'Mentoring', Pilot: 'Pilot site', Resource: 'Data/resource' },
-      routeOptions: { 'VET': 'VET', 'Teacher Training': 'Teacher Training', 'Master Bridge': 'Master Bridge', 'Mixed': 'Mixed' },
-      evidenceMaturityOptions: { idea: 'Idea', validated: 'Validated', inPilot: 'In Pilot', completed: 'Completed' },
       formLabels: { title: 'Title', contributionType: 'Contribution type', route: 'Educational route', sector: 'AI-SECRETT sector', deadline: 'Deadline', evidenceExpected: 'Expected evidence', ethicsConditions: 'Data / ethics / privacy conditions', stakeholderReturn: 'Value for your organisation', description: 'Description' },
       formPlaceholders: { title: 'E.g. Energy consumption prediction in educational buildings', description: 'Describe the context, available data, objectives and expected outcome...', evidenceExpected: 'E.g. Validated model with real data', stakeholderReturn: 'E.g. Access to trained students, publication of results, network pilot' },
       searchPlaceholder: 'Search by title or description...',
@@ -1725,22 +1704,7 @@ export const translations = {
       statusResolved: 'Resolved',
       levelFP: 'VET',
       levelMaster: 'Master',
-      levelBoth: 'Both',
-      challengeData: {
-        r1: { title: 'Energy Optimization in Public Museums with AI', entityType: 'Public Administration', description: 'Development of a predictive model to optimize HVAC consumption across the Valencian network of public museums. The goal is to reduce consumption by 25% without affecting visitor comfort.', tags: ['HVAC', 'Predictive ML', 'IoT', 'Energy Efficiency'] },
-        r2: { title: 'Pest Detection in Citrus via Computer Vision', entityType: 'Agricultural Enterprise', description: 'Early detection system for Xylella fastidiosa and whiteflies in citrus crops using drones and computer vision models trained on multispectral images.', tags: ['Computer Vision', 'Drones', 'Deep Learning', 'Xylella'] },
-        r3: { title: 'Predictive Maintenance in Bottling Lines', entityType: 'Agricultural SME', description: 'Reduction of unplanned downtime in wine bottling lines using vibration sensors and LSTM models for bearing and motor failure prediction.', tags: ['LSTM', 'Vibration', 'Industrial IoT', 'Industry 4.0'] },
-        r4: { title: 'AI for Pediatric Emergency Triage', entityType: 'Public Health Institution', description: 'Clinical decision support model for pediatric emergency triage based on vital signs, chief complaint (NLP), and prior medical history (HL7 FHIR).', tags: ['Clinical NLP', 'FHIR', 'Triage', 'AI Ethics'] },
-        r5: { title: 'Digitization of Heritage Collections with Multilingual NLP', entityType: 'Public Administration', description: 'NLP and OCR system to catalog and semantically enrich 50,000 historical documents in Spanish, English, and Dutch from the Grand Canary colonial archive.', tags: ['NLP', 'OCR', 'Digital Heritage', 'Multilingual'] },
-        r6: { title: 'Water Quality Prediction in River Basins', entityType: 'Regional Administration', description: 'Time series models to predict nitrate and phosphate concentrations in Lake Vänern using remote sensing data and 15 years of historical records.', tags: ['Time Series', 'Remote Sensing', 'Water Quality', 'GIS'] },
-        r7: { title: 'Sustainable Tourism Recommendation System', entityType: 'Startup', description: 'Personalized recommendation engine for cultural tourism in the Canaries that integrates sustainability criteria, user preferences, and real-time visitor flow data.', tags: ['Recommendation Systems', 'Sustainable Tourism', 'LLM', 'REST API'] },
-        r8: { title: 'Automation of Academic Records Processing with AI', entityType: 'Public Administration', description: 'Automated extraction and validation system for academic record data using OCR + LLM. Achieves 70% reduction in processing time.', tags: ['OCR', 'RPA', 'LLM', 'E-Government'] },
-        r9: { title: 'Detection of Climate Misinformation on Social Media', entityType: 'Research Center', description: 'Multilingual classifier (ES/PT/EN) to identify climate change misinformation narratives on Twitter/X and Mastodon using transformer models and knowledge graphs.', tags: ['NLP', 'Misinformation', 'Transformers', 'Social Media'] },
-        r10: { title: 'Sector validation of AI needs for industrial VET', entityType: 'Business Cluster', description: 'Review with industrial companies of skills, tools and real cases that should be prioritised in VET activities on AI applied to production, maintenance and quality.', tags: ['Sector Validation', 'VET', 'Industry', 'Skills'] },
-        r11: { title: 'Mentoring for responsible AI projects in public administration', entityType: 'Public Innovation Foundation', description: 'Availability of expert profiles to guide teachers and students on privacy, explainability and impact assessment in AI cases for public services.', tags: ['Mentoring', 'Responsible AI', 'Public Sector', 'Ethics'] },
-        r12: { title: 'Pilot teaching activity on sensors and air quality', entityType: 'VET Centre', description: 'Classroom pilot to test a learning situation with environmental sensors, data visualisation and reflection on sustainability and measurement bias.', tags: ['Pilot', 'Sensors', 'Aules', 'Sustainability'] },
-        r13: { title: 'Synthetic dataset for agrifood traceability', entityType: 'Technology SME', description: 'Contribution of a synthetic and anonymised dataset to practise traceability, anomaly detection and visualisation of agrifood supply chains.', tags: ['Resource', 'Synthetic Dataset', 'Traceability', 'Agrifood'] },
-      },
+      levelBoth: 'Both'
     },
     challengeDetail: {
       consortiumLabel: '23 members of the consortium',
@@ -2569,9 +2533,6 @@ export const translations = {
       howValidatedTitle: 'Com es valida',
       expectedOutcomeTitle: 'Resultat esperat',
       sectorNames: { mfg: 'Manufactura', mob: 'Mobilitat i Transport', ene: 'Energia i Medi Ambient', agr: 'Agroalimentari', cci: 'Indústries Culturals i Creatives', hou: 'Habitatge', nts: 'Serveis No Turístics' },
-      contributionTypes: { Challenge: 'Repte', Case: 'Cas', Validation: 'Validació', Mentoring: 'Mentoria', Pilot: 'Pilotatge', Resource: 'Recurs' },
-      routeOptions: { 'FP': 'FP', 'Teacher Training': 'Formació Docent', 'Master Bridge': 'Pont al Màster', 'Mixed': 'Mixta' },
-      evidenceMaturityOptions: { idea: 'Idea', validated: 'Validat', inPilot: 'En Pilot', completed: 'Completat' },
       formLabels: { title: 'Títol', contributionType: 'Tipus de contribució', route: 'Ruta educativa', sector: 'Sector AI-SECRETT', deadline: 'Termini límit', evidenceExpected: 'Evidència esperada', ethicsConditions: 'Condicions de dades / ètica', stakeholderReturn: 'Valor per a la teua organització', description: 'Descripció' },
       formPlaceholders: { title: 'Ex. Predicció de consum energètic en edificis educatius', description: 'Descriu el context, les dades disponibles, els objectius i el resultat esperat...', evidenceExpected: 'Ex. Model funcional validat amb dades reals', stakeholderReturn: 'Ex. Accés a estudiants formats, publicació de resultats, pilot amb la xarxa' },
       searchPlaceholder: 'Busca per títol o descripció...',
@@ -2587,22 +2548,7 @@ export const translations = {
       statusResolved: 'Resolt',
       levelFP: 'FP',
       levelMaster: 'Màster',
-      levelBoth: 'Ambdós',
-      challengeData: {
-        r1: { title: 'Optimització energètica de museus públics amb IA', entityType: 'Administració Pública', description: 'Desenvolupament d\'un model predictiu per optimitzar el consum de HVAC a la xarxa de museus públics valencians. Es busca reduir el consum un 25% sense afectar el confort dels visitants.', tags: ['HVAC', 'ML Predictiu', 'IoT', 'Eficiència Energètica'] },
-        r2: { title: 'Detecció de plagues en cítrics via Computer Vision', entityType: 'Empresa Agrícola', description: 'Sistema de detecció primerenca de la Xylella fastidiosa i cotonia en cultius de cítrics usant drons i models de visió per computadora entrenats amb imatges multiespectrals.', tags: ['Computer Vision', 'Drons', 'Deep Learning', 'Xylella'] },
-        r3: { title: 'Manteniment predictiu en línies d\'embotellat', entityType: 'PIME Agroalimentaria', description: 'Reducció de parades no planificades en línies d\'embotellat de vi usant sensors de vibració i models LSTM per a la predicció de falles en rodaments i motors.', tags: ['LSTM', 'Vibració', 'IoT Industrial', 'Indústria 4.0'] },
-        r4: { title: 'IA en triatge d\'urgències pediàtriques', entityType: 'Institució Sanitària Pública', description: 'Model de suport a la decisió clínica per al triatge en urgències pediàtriques basat en signes vitals, motiu de consulta (NLP) i historial clínic anterior (HL7 FHIR).', tags: ['NLP Clínic', 'FHIR', 'Triatge', 'Ètica IA'] },
-        r5: { title: 'Digitalització de col·leccions patrimonials amb NLP multilingüe', entityType: 'Administració Pública', description: 'Sistema de NLP i OCR per catalogar i enriquir semànticament 50.000 documents històrics en espanyol, anglès i holandès de l\'arxiu colonial de Gran Canària.', tags: ['NLP', 'OCR', 'Patrimoni Digital', 'Multilingüe'] },
-        r6: { title: 'Predicció de qualitat de l\'aigua en conques fluvials', entityType: 'Administració Regional', description: 'Models de sèries temporals per predir la concentració de nitratos i fosfatos al llac Vänern usant dades de sensors remots i registres històrics de 15 anys.', tags: ['Sèries Temporals', 'Teledetecció', 'Qualitat de l\'Aigua', 'GIS'] },
-        r7: { title: 'Sistema de recomanació d\'itineraris turístics sostenibles', entityType: 'Startup', description: 'Motor de recomanació personalitzat per al turisme cultural a les Canàries que integre criteris de sostenibilitat, preferències de l\'usuari i dades d\'afluència en temps real.', tags: ['Sistemes de Recomanació', 'Turisme Sostenible', 'LLM', 'API REST'] },
-        r8: { title: 'Automatització del procés d\'expedients acadèmics amb IA', entityType: 'Administració Pública', description: 'Sistema d\'extracció i validació automàtica de dades en expedients acadèmics de la CV usant OCR + LLM. Reducció del temps de tramitació del 70%.', tags: ['OCR', 'RPA', 'LLM', 'Tramitació Electrònica'] },
-        r9: { title: 'Detecció de desinformació climàtica en xarxes socials', entityType: 'Centre de Recerca', description: 'Classificador multilingüe (ES/PT/EN) per identificar narratives de desinformació sobre canvi climàtic a Twitter/X i Mastodon usant models transformers i gràfics de coneixement.', tags: ['NLP', 'Desinformació', 'Transformers', 'Xarxes Socials'] },
-        r10: { title: 'Validació sectorial de necessitats IA per a FP industrial', entityType: 'Clúster Empresarial', description: 'Revisió amb empreses industrials de competències, eines i casos reals que haurien de prioritzar-se en activitats FP sobre IA aplicada a producció, manteniment i qualitat.', tags: ['Validació Sectorial', 'FP', 'Indústria', 'Competències'] },
-        r11: { title: 'Mentoria per a projectes d\'IA responsable en administració pública', entityType: 'Fundació d\'Innovació Pública', description: 'Disponibilitat de perfils experts per orientar equips docents i estudiants en privacitat, explicabilitat i avaluació d\'impacte en casos d\'IA per a serveis públics.', tags: ['Mentoria', 'IA Responsable', 'Sector Públic', 'Ètica'] },
-        r12: { title: 'Pilotatge d\'activitat docent sobre sensors i qualitat de l\'aire', entityType: 'Centre FP', description: 'Pilot en aula per provar una situació d\'aprenentatge amb sensors ambientals, visualització de dades i reflexió sobre sostenibilitat i biaixos de mesura.', tags: ['Pilotatge', 'Sensòrica', 'Aules', 'Sostenibilitat'] },
-        r13: { title: 'Dataset sintètic per a traçabilitat agroalimentària', entityType: 'PIME Tecnològica', description: 'Aportació d\'un conjunt de dades sintètic i anonimitzat per practicar traçabilitat, detecció d\'anomalies i visualització de cadenes de subministrament agroalimentàries.', tags: ['Recurs', 'Dataset Sintètic', 'Traçabilitat', 'Agroalimentari'] },
-      },
+      levelBoth: 'Ambdós'
     },
     challengeDetail: {
       consortiumLabel: '23 membres del consorcio',

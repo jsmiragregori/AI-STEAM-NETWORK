@@ -1,103 +1,124 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
-import { challengeExtras } from '../../data/challenge-extras.js';
+import { MARKETPLACE_CONFIG } from '../../data/marketplace.js';
 import { CHALLENGES_CONFIG } from '../../data/challenges.js';
 
-const CHALLENGES = [
-  { id: 'r1', title: 'Optimización energética de museos públicos con IA', entity: 'Generalitat Valenciana (CEICE)', entityType: 'Administración Pública', level: 'FP', status: 'Abierto', sector: 'Energy and Environment', description: 'Desarrollo de un modelo predictivo para optimizar el consumo de HVAC en la red de museos públicos valencianos. Se busca reducir el consumo un 25% sin afectar al confort de visitantes.', posted: '10 Mar 2026', deadline: '30 Jun 2026', teams: 0, tags: ['HVAC', 'ML Predictivo', 'IoT', 'Eficiencia Energética'], country: '🇪🇸', contributionType: 'Challenge', route: 'FP/VET', evidenceExpected: 'Modelo predictivo HVAC validado en 8 museos piloto', evidenceMaturity: 'validated' },
-  { id: 'r2', title: 'Detección de plagas en cítricos vía Computer Vision', entity: 'AVA-ASAJA Cooperativa', entityType: 'Empresa Agrícola', level: 'Máster', status: 'En Resolución', sector: 'Agrifood', description: 'Sistema de detección temprana de la Xylella fastidiosa y cotonet en cultivos de cítricos mediante drones y modelos de visión computacional entrenados con imágenes multiespectrales.', posted: '15 Ene 2026', deadline: '15 Jul 2026', teams: 3, tags: ['Computer Vision', 'Drones', 'Deep Learning', 'Xylella'], country: '🇪🇸', contributionType: 'Challenge', route: 'Master Bridge', evidenceExpected: 'Pipeline CV desplegable en campo + artículo técnico IEEE', evidenceMaturity: 'inPilot' },
-  { id: 'r3', title: 'Mantenimiento predictivo en líneas de embotellado', entity: 'Bodegas Murviedro SA', entityType: 'PYME Agroalimentaria', level: 'FP', status: 'Abierto', sector: 'Manufacturing', description: 'Reducción de paradas no planificadas en líneas de embotellado de vino mediante sensórica vibratoria y modelos LSTM para la predicción de fallos en rodamientos y motores.', posted: '01 Feb 2026', deadline: '30 Ago 2026', teams: 1, tags: ['LSTM', 'Vibración', 'IoT Sectorial', 'Manufactura 4.0'], country: '🇪🇸', contributionType: 'Challenge', route: 'FP/VET', evidenceExpected: 'Sistema de alertas integrado con SAP PM + informe ROI', evidenceMaturity: 'validated' },
-  { id: 'r4', title: 'IA en triaje de urgencias pediátricas', entity: 'Hospital Universitario La Fe', entityType: 'Institución Sanitaria Pública', level: 'Máster', status: 'Abierto', sector: 'Non-Touristic Services', description: 'Modelo de apoyo a la decisión clínica para el triaje en urgencias pediátricas basado en constantes vitales, motivo de consulta (NLP) e historial clínico previo (HL7 FHIR).', posted: '05 Mar 2026', deadline: '30 Sep 2026', teams: 2, tags: ['NLP Clínico', 'FHIR', 'Triaje', 'Ética IA'], country: '🇪🇸', contributionType: 'Challenge', route: 'Master Bridge', evidenceExpected: 'CDSS con kappa ≥ 88% + documentación AI Act', evidenceMaturity: 'idea' },
-  { id: 'r5', title: 'Digitalización de colecciones patrimoniales con NLP multilingüe', entity: 'LPGA – Promoción Las Palmas', entityType: 'Administración Pública', level: 'Máster', status: 'En Resolución', sector: 'Cultural and Creative Industries', description: 'Uso de NLP y OCR para catalogar y enriquecer semánticamente 50.000 documentos históricos en español, inglés y neerlandés del archivo colonial de Gran Canaria.', posted: '20 Nov 2025', deadline: '20 May 2026', teams: 4, tags: ['NLP', 'OCR', 'Patrimonio Digital', 'Multilingüe'], country: '🇪🇸', contributionType: 'Challenge', route: 'Master Bridge', evidenceExpected: 'Dataset Dublin Core 5.000 docs + pipeline OCR-NER publicado', evidenceMaturity: 'inPilot' },
-  { id: 'r6', title: 'Predicción de calidad del agua en cuencas fluviales', entity: 'Region Värmland', entityType: 'Administración Regional', level: 'Máster', status: 'Abierto', sector: 'Energy and Environment', description: 'Modelos de series temporales para predecir la concentración de nitratos y fosfatos en el lago Vänern usando datos de sensores remotos y registros históricos de 15 años.', posted: '01 Mar 2026', deadline: '30 Sep 2026', teams: 1, tags: ['Series Temporales', 'Teledetección', 'Calidad Agua', 'GIS'], country: '🇸🇪', contributionType: 'Challenge', route: 'Master Bridge', evidenceExpected: 'Modelo predicción 30 días + sistema de alertas prototipo', evidenceMaturity: 'idea' },
-  { id: 'r7', title: 'Sistema de recomendación de itinerarios turísticos sostenibles', entity: 'CulturaLink SL', entityType: 'Startup', level: 'FP', status: 'Abierto', sector: 'Cultural and Creative Industries', description: 'Motor de recomendación personalizado para turismo cultural en Canarias que integre criterios de sostenibilidad, preferencias de usuario y datos de afluencia en tiempo real.', posted: '12 Feb 2026', deadline: '12 Ago 2026', teams: 2, tags: ['Recomendación', 'Turismo Sostenible', 'LLM', 'API REST'], country: '🇪🇸', contributionType: 'Challenge', route: 'FP/VET', evidenceExpected: 'Motor de recomendación desplegado con precisión@10 ≥ 0.7', evidenceMaturity: 'validated' },
-  { id: 'r8', title: 'Automatización del proceso de expedientes académicos con IA', entity: "CEICE – Conselleria d'Educació", entityType: 'Administración Pública', level: 'FP', status: 'Resuelto', sector: 'Non-Touristic Services', description: 'Sistema de extracción y validación automática de datos en expedientes académicos de la CV mediante OCR + LLM. Reducción del tiempo de tramitación del 70%. En producción desde enero 2026.', posted: '01 Sep 2025', deadline: '28 Feb 2026', teams: 5, tags: ['OCR', 'RPA', 'LLM', 'Tramitación Electrónica'], country: '🇪🇸', contributionType: 'Case', route: 'FP/VET', evidenceExpected: 'Sistema en producción GVA (99.3% precisión, 1.200 exp/día)', evidenceMaturity: 'completed' },
-  { id: 'r9', title: 'Detección de desinformación climática en redes sociales', entity: 'INESC TEC', entityType: 'Centro de Investigación', level: 'Máster', status: 'Abierto', sector: 'Energy and Environment', description: 'Clasificador multilingüe (ES/PT/EN) para identificar narrativas de desinformación sobre cambio climático en Twitter/X y Mastodon usando modelos transformer y grafos de conocimiento.', posted: '20 Feb 2026', deadline: '20 Oct 2026', teams: 0, tags: ['NLP', 'Desinformación', 'Transformers', 'Redes Sociales'], country: '🇵🇹', contributionType: 'Challenge', route: 'Master Bridge', evidenceExpected: 'Clasificador multilingüe F1 ≥ 0.82 + API tiempo real', evidenceMaturity: 'idea' },
-  { id: 'r10', title: 'Validación sectorial de necesidades IA para FP industrial', entity: 'Clúster Manufactura Avanzada CV', entityType: 'Clúster Empresarial', level: 'FP', status: 'Abierto', sector: 'Manufacturing', description: 'Revisión con empresas industriales de competencias, herramientas y casos reales que deberían priorizarse en actividades FP/VET sobre IA aplicada a producción, mantenimiento y calidad.', posted: '18 Mar 2026', deadline: '30 Jun 2026', teams: 0, tags: ['Validación Sectorial', 'FP/VET', 'Industria', 'Competencias'], country: '🇪🇸', contributionType: 'Validation', route: 'FP/VET', evidenceExpected: 'Informe breve de relevancia sectorial + matriz de competencias priorizadas', evidenceMaturity: 'idea' },
-  { id: 'r11', title: 'Mentoría para proyectos de IA responsable en administración pública', entity: 'FIDIT', entityType: 'Fundación de Innovación Pública', level: 'Máster', status: 'En Resolución', sector: 'Non-Touristic Services', description: 'Disponibilidad de perfiles expertos para orientar equipos docentes y estudiantes en privacidad, explicabilidad y evaluación de impacto en casos de IA para servicios públicos.', posted: '22 Mar 2026', deadline: '15 Jul 2026', teams: 2, tags: ['Mentoría', 'IA Responsable', 'Sector Público', 'Ética'], country: '🇪🇸', contributionType: 'Mentoring', route: 'Mixed', evidenceExpected: 'Registro de sesiones, recomendaciones éticas y checklist reutilizable', evidenceMaturity: 'validated' },
-  { id: 'r12', title: 'Pilotaje de actividad docente sobre sensores y calidad del aire', entity: 'IES La Costera', entityType: 'Centro FP/VET', level: 'FP', status: 'En Resolución', sector: 'Energy and Environment', description: 'Piloto en aula para probar una situación de aprendizaje con sensores ambientales, visualización de datos y reflexión sobre sostenibilidad y sesgos de medición.', posted: '27 Mar 2026', deadline: '30 Sep 2026', teams: 1, tags: ['Pilotaje', 'Sensórica', 'Aules', 'Sostenibilidad'], country: '🇪🇸', contributionType: 'Pilot', route: 'Teacher Training', evidenceExpected: 'Actividad probada, feedback docente y paquete OER revisable', evidenceMaturity: 'inPilot' },
-  { id: 'r13', title: 'Dataset sintético para trazabilidad agroalimentaria', entity: 'CINK', entityType: 'PYME Tecnológica', level: 'FP', status: 'Resuelto', sector: 'Agrifood', description: 'Aportación de un conjunto de datos sintético y anonimizado para practicar trazabilidad, detección de anomalías y visualización de cadenas de suministro agroalimentarias.', posted: '02 Abr 2026', deadline: '30 Abr 2026', teams: 0, tags: ['Recurso', 'Dataset Sintético', 'Trazabilidad', 'Agroalimentario'], country: '🇭🇷', contributionType: 'Resource', route: 'FP/VET', evidenceExpected: 'Dataset CC-BY-SA, guía docente y ficha de uso responsable', evidenceMaturity: 'completed' },
-];
+// ─── Helpers ──────────────────────────────────────────────────────────────────
 
+function getLang() { return localStorage.getItem('language') || 'es'; }
+
+function pickLang(value, fallback = '') {
+  if (!value || typeof value !== 'object') return value || fallback;
+  const lang = getLang();
+  return value[lang] || value.es || value.en || fallback;
+}
+
+function getLabelFromArray(arr, id) {
+  return pickLang(arr?.find(l => l.id === id)?.label) || id;
+}
+
+function getStatusLabel(id)         { return getLabelFromArray(MARKETPLACE_CONFIG.statusLabels, id); }
+function getTypeLabel(id)           { return getLabelFromArray(MARKETPLACE_CONFIG.typeLabels, id); }
+function getRouteLabel(id)          { return getLabelFromArray(MARKETPLACE_CONFIG.routeLabels, id); }
+function getHelixLabel(id)          { return getLabelFromArray(MARKETPLACE_CONFIG.helixLabels, id); }
+function getCyclePhaseLabel(id)     { return getLabelFromArray(MARKETPLACE_CONFIG.cyclePhaseLabels, id); }
+function getTransitionLabel(id)     { return getLabelFromArray(MARKETPLACE_CONFIG.transitionLabels, id); }
+function getEvidenceMaturityLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.evidenceMaturityLabels, id); }
+
+function getSectorCode(s) {
+  const MAP = {
+    'Manufacturing': 'mfg', 'Mobility and Transport': 'mob', 'Energy and Environment': 'ene',
+    'Agrifood': 'agr', 'Cultural and Creative Industries': 'cci', 'Housing': 'hou',
+    'Non-Touristic Services': 'nts',
+  };
+  return MAP[s] || s;
+}
+function getSectorLabel(s) { return (t('sectors.sectorNames') || {})[getSectorCode(s)] || s; }
+
+// Tags: pick the right language array
+function getTags(ch) {
+  const lang = getLang();
+  if (ch.tags && typeof ch.tags === 'object' && !Array.isArray(ch.tags)) {
+    return ch.tags[lang] || ch.tags.es || ch.tags.en || [];
+  }
+  return Array.isArray(ch.tags) ? ch.tags : [];
+}
+
+// Status badge styles (by normalized id)
 const STATUS_STYLES = {
-  'Abierto':       'bg-green-100 text-green-800',
-  'En Resolución': 'bg-yellow-100 text-yellow-800',
-  'Resuelto':      'bg-gray-100 text-gray-600',
+  'open':        'bg-green-100 text-green-800',
+  'in-progress': 'bg-yellow-100 text-yellow-800',
+  'resolved':    'bg-gray-100 text-gray-600',
 };
 const STATUS_DOT = {
-  'Abierto':       'bg-green-500',
-  'En Resolución': 'bg-yellow-500',
-  'Resuelto':      'bg-gray-400',
+  'open':        'bg-green-500',
+  'in-progress': 'bg-yellow-500',
+  'resolved':    'bg-gray-400',
 };
 const STATUS_BG = {
-  'Abierto':       'bg-green-100',
-  'En Resolución': 'bg-yellow-100',
-  'Resuelto':      'bg-gray-100',
+  'open':        'bg-green-100',
+  'in-progress': 'bg-yellow-100',
+  'resolved':    'bg-gray-100',
 };
 const STATUS_TEXT = {
-  'Abierto':       'text-green-800',
-  'En Resolución': 'text-yellow-800',
-  'Resuelto':      'text-gray-600',
+  'open':        'text-green-800',
+  'in-progress': 'text-yellow-800',
+  'resolved':    'text-gray-600',
 };
+
 const ROUTE_STYLES = {
-  'FP/VET':           'bg-eu-yellow text-eu-purple',
-  'Teacher Training': 'bg-teal-100 text-teal-800',
-  'Master Bridge':    'bg-purple-100 text-purple-800',
-  'Mixed':            'bg-blue-100 text-blue-800',
+  'fp':      'bg-eu-yellow text-eu-purple',
+  'teacher': 'bg-teal-100 text-teal-800',
+  'master':  'bg-purple-100 text-purple-800',
+  'mixed':   'bg-blue-100 text-blue-800',
 };
+
 const EVIDENCE_STYLES = {
   idea:      'bg-gray-100 text-gray-600',
   validated: 'bg-blue-100 text-blue-700',
   inPilot:   'bg-yellow-100 text-yellow-800',
   completed: 'bg-green-100 text-green-800',
 };
+
 const LEVEL_STYLES = {
   'FP':     'bg-eu-yellow text-eu-purple',
   'Máster': 'bg-purple-100 text-purple-800',
 };
-const SECTOR_CODE = {
-  'Manufacturing': 'mfg', 'Mobility and Transport': 'mob', 'Energy and Environment': 'ene',
-  'Agrifood': 'agr', 'Cultural and Creative Industries': 'cci', 'Housing': 'hou', 'Non-Touristic Services': 'nts',
+
+// Helix chip colors
+const HELIX_STYLES = {
+  academia: 'bg-purple-100 text-purple-700',
+  public:   'bg-blue-100 text-blue-700',
+  industry: 'bg-orange-100 text-orange-700',
+  civil:    'bg-teal-100 text-teal-700',
 };
 
-function getSectorCode(s) { return SECTOR_CODE[s] || s; }
-function getSectorLabel(s, mT) { return (mT?.sectorNames || t('sectors.sectorNames') || {})[getSectorCode(s)] || s; }
-function getStatusLabel(s, mT) {
-  const map = { 'Abierto': mT?.open || 'Abierto', 'En Resolución': mT?.inProgress || 'En Resolución', 'Resuelto': mT?.resolved || 'Resuelto' };
-  return map[s] || s;
-}
-function getContributionTypeLabel(type, mT) { return (mT?.contributionTypes || {})[type] || type; }
-function getRouteLabel(route, mT) { return (mT?.routeOptions || {})[route] || route; }
-function getEvidenceMaturityLabel(m, mT) { return (mT?.evidenceMaturityOptions || {})[m] || m; }
+// Cycle phase colors
+const CYCLE_PHASE_STYLES = {
+  input:      'bg-eu-yellow text-eu-purple',
+  processing: 'bg-blue-100 text-blue-700',
+  output:     'bg-green-100 text-green-700',
+};
 
-function getTranslatedChallenges(mT) {
-  const cd = mT?.challengeData || {};
-  return CHALLENGES.map(ch => ({
-    ...ch,
-    title:       cd[ch.id]?.title       || ch.title,
-    description: cd[ch.id]?.description || ch.description,
-    entityType:  cd[ch.id]?.entityType  || ch.entityType,
-    tags:        cd[ch.id]?.tags        || ch.tags,
-  }));
-}
+// Transition badge colors
+const TRANSITION_STYLES = {
+  digital: 'bg-blue-50 text-blue-600',
+  green:   'bg-green-50 text-green-700',
+  social:  'bg-pink-50 text-pink-700',
+};
 
-function getLang() { return localStorage.getItem('language') || 'es'; }
-
-function pickLang(value, fallback = '') {
-  const lang = getLang();
-  return value?.[lang] || value?.es || fallback;
-}
-
-function getFilteredChallenges(all, filters) {
+function getFilteredContributions(all, filters) {
   return all.filter(ch => {
-    if (filters.type   !== 'All'  && ch.contributionType !== filters.type)   return false;
+    if (filters.type   !== 'All'  && ch.type             !== filters.type)   return false;
     if (filters.route  !== 'All'  && ch.route            !== filters.route)  return false;
     if (filters.status !== 'Todos'&& ch.status           !== filters.status) return false;
     if (filters.sector !== 'Todos'&& ch.sector           !== filters.sector) return false;
     if (filters.evidence !== 'All'&& ch.evidenceMaturity !== filters.evidence) return false;
     if (filters.search) {
       const q = filters.search.toLowerCase();
-      if (!ch.title.toLowerCase().includes(q) && !ch.description.toLowerCase().includes(q)) return false;
+      const title = pickLang(ch.title).toLowerCase();
+      const desc = pickLang(ch.description || ch.detail?.es?.fullDescription || '').toLowerCase();
+      if (!title.includes(q) && !desc.includes(q)) return false;
     }
     return true;
   });
@@ -108,25 +129,37 @@ function getFilteredChallenges(all, filters) {
 function renderDetail(ch, mT) {
   const lang = getLang();
   const cdT = t('challengeDetail') || {};
-  const extra = (challengeExtras[lang] || {})[ch.id] || (challengeExtras.es || {})[ch.id] || null;
-  const st = STATUS_STYLES[ch.status] || 'bg-gray-100 text-gray-600';
-  const stBg = STATUS_BG[ch.status] || 'bg-gray-100';
-  const stText = STATUS_TEXT[ch.status] || 'text-gray-600';
-  const stDot = STATUS_DOT[ch.status] || 'bg-gray-400';
-  const lvl = LEVEL_STYLES[ch.level] || 'bg-gray-100 text-gray-600';
+  const extra = ch.detail?.[lang] || ch.detail?.en || ch.detail?.es || null;
+
+  const statusId = ch.status;
+  const stBg   = STATUS_BG[statusId]   || 'bg-gray-100';
+  const stText  = STATUS_TEXT[statusId] || 'text-gray-600';
+  const stDot   = STATUS_DOT[statusId]  || 'bg-gray-400';
+  const lvlStyle = LEVEL_STYLES[ch.level] || 'bg-gray-100 text-gray-600';
+
   const participationCtas = cdT.participationCtas || {};
-  const participationButton = participationCtas[ch.contributionType] || cdT.requestParticipationButton || 'Solicitar participación →';
+  const participationButton = participationCtas[ch.type] || cdT.requestParticipationButton || 'Solicitar participación →';
 
   const showForm = getState('marketplaceShowParticipation');
   const participationSent = getState('marketplaceParticipationSent');
 
-  // Participation roles/types/pathways/ethics from translations
   const roles = cdT.participationRoles || [];
   const types = cdT.participationTypes || [];
   const pathways = cdT.participationPathways || [];
   const ethics = cdT.participationEthics || [];
   const fields = cdT.participationFields || {};
   const placeholders = cdT.participationPlaceholders || {};
+
+  const tags = getTags(ch);
+
+  // New LbD badge row
+  const ldBadges = `
+    <div class="flex flex-wrap gap-2 mt-3">
+      ${CYCLE_PHASE_STYLES[ch.cyclePhase] ? `<span class="text-xs font-bold px-2 py-0.5 rounded ${CYCLE_PHASE_STYLES[ch.cyclePhase]}">${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
+      ${HELIX_STYLES[ch.helixRole] ? `<span class="text-xs font-bold px-2 py-0.5 rounded ${HELIX_STYLES[ch.helixRole]}">${getHelixLabel(ch.helixRole)}</span>` : ''}
+      ${(ch.tripleTransition || []).map(t => `<span class="text-xs font-semibold px-2 py-0.5 rounded ${TRANSITION_STYLES[t] || 'bg-gray-100 text-gray-600'}">${getTransitionLabel(t)}</span>`).join('')}
+      ${ch.track ? `<span class="text-xs font-semibold px-2 py-0.5 rounded bg-gray-100 text-gray-600">Track ${ch.track}</span>` : ''}
+    </div>`;
 
   return `
 <div class="animate-in fade-in duration-300">
@@ -137,10 +170,10 @@ function renderDetail(ch, mT) {
         <i data-lucide="arrow-left" class="w-4 h-4"></i> ${cdT.backButton || 'Volver a Retos y Casos'}
       </button>
       <div class="flex items-center gap-2">
-        <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${lvl}">${cdT.challengeLevel || 'Nivel'} ${ch.level}</span>
+        <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${lvlStyle}">${cdT.challengeLevel || 'Nivel'} ${ch.level}</span>
         <span class="flex items-center gap-1.5 text-sm font-bold px-2 py-0.5 rounded ${stBg} ${stText}">
           <span class="w-1.5 h-1.5 rounded-full ${stDot}"></span>
-          ${ch.status}
+          ${getStatusLabel(statusId)}
         </span>
       </div>
     </div>
@@ -153,25 +186,24 @@ function renderDetail(ch, mT) {
         <div class="flex items-center gap-2 mb-3">
           <span class="text-xs font-bold uppercase tracking-widest text-eu-yellow">${ch.sector}</span>
           <i data-lucide="chevron-right" class="w-3 h-3 text-white/40"></i>
-          <span class="text-xs text-white/60">${ch.entityType}</span>
+          <span class="text-xs text-white/60">${pickLang(ch.entityType)}</span>
         </div>
-        <h1 class="text-3xl font-extrabold mb-3 leading-tight">${ch.title}</h1>
+        <h1 class="text-3xl font-extrabold mb-3 leading-tight">${pickLang(ch.title)}</h1>
         <div class="flex items-center gap-3 mb-5">
           <i data-lucide="building-2" class="w-4 h-4 text-white/60 shrink-0"></i>
           <span class="text-white/80 font-semibold">${ch.entity}</span>
-          <span class="text-white/40">·</span>
-          <span class="text-white/60 text-sm">${ch.country}</span>
         </div>
         <div class="flex flex-wrap gap-2">
-          ${ch.tags.map(tag => `<span class="flex items-center gap-1 bg-white/10 text-white/80 text-xs font-semibold px-2.5 py-1 rounded-full"><i data-lucide="tag" class="w-3 h-3"></i>${tag}</span>`).join('')}
+          ${tags.map(tag => `<span class="flex items-center gap-1 bg-white/10 text-white/80 text-xs font-semibold px-2.5 py-1 rounded-full"><i data-lucide="tag" class="w-3 h-3"></i>${tag}</span>`).join('')}
         </div>
+        ${ldBadges}
       </div>
       <!-- Key info card -->
       <div class="bg-white/10 rounded-xl p-5 flex flex-col gap-3">
         <div class="flex items-center gap-3">
           <i data-lucide="calendar" class="w-4 h-4 text-eu-yellow shrink-0"></i>
           <div>
-            <p class="text-xs text-white/50 uppercase font-bold">${cdT.deadline || 'Plazo de entrega'}</p>
+            <p class="text-xs text-white/50 uppercase font-bold">${cdT.deadline || 'Plazo'}</p>
             <p class="font-bold text-white">${ch.deadline}</p>
           </div>
         </div>
@@ -189,7 +221,7 @@ function renderDetail(ch, mT) {
             <p class="font-bold text-white">${ch.teams} ${ch.teams === 1 ? (cdT.participationSingular || 'participación') : (cdT.participationPlural || 'participaciones')}</p>
           </div>
         </div>
-        ${extra ? `
+        ${extra?.teamSize ? `
         <div class="flex items-center gap-3">
           <i data-lucide="users" class="w-4 h-4 text-eu-yellow shrink-0"></i>
           <div>
@@ -202,26 +234,18 @@ function renderDetail(ch, mT) {
           <i data-lucide="route" class="w-4 h-4 text-eu-yellow shrink-0"></i>
           <div>
             <p class="text-xs text-white/50 uppercase font-bold">${cdT.routeLabel || 'Ruta educativa'}</p>
-            <p class="font-bold text-white text-sm">${ch.route}</p>
+            <p class="font-bold text-white text-sm">${getRouteLabel(ch.route)}</p>
           </div>
         </div>` : ''}
-        ${ch.evidenceExpected ? `
-        <div class="flex items-start gap-3">
-          <i data-lucide="flask-conical" class="w-4 h-4 text-eu-yellow shrink-0 mt-0.5"></i>
-          <div>
-            <p class="text-xs text-white/50 uppercase font-bold">${cdT.evidenceLabel || 'Evidencia esperada'}</p>
-            <p class="text-white text-sm leading-snug">${ch.evidenceExpected}</p>
-          </div>
-        </div>` : ''}
-        ${ch.status === 'Abierto' ? `<button id="mp-open-form" class="mt-2 w-full bg-eu-orange text-white font-bold py-2.5 rounded-lg hover:bg-eu-purple transition-colors border-none cursor-pointer text-sm">${participationButton}</button>` : ''}
-        ${ch.status === 'En Resolución' ? `<div class="mt-2 w-full bg-yellow-400/20 text-yellow-200 font-bold py-2.5 rounded-lg text-sm text-center">${cdT.enrollmentClosed || 'Inscripciones cerradas'}</div>` : ''}
-        ${ch.status === 'Resuelto' ? `<div class="mt-2 w-full bg-white/10 text-white/60 font-bold py-2.5 rounded-lg text-sm text-center">${cdT.challengeCompleted || 'Reto completado'}</div>` : ''}
+        ${ch.status === 'open' ? `<button id="mp-open-form" class="mt-2 w-full bg-eu-orange text-white font-bold py-2.5 rounded-lg hover:bg-eu-purple transition-colors border-none cursor-pointer text-sm">${participationButton}</button>` : ''}
+        ${ch.status === 'in-progress' ? `<div class="mt-2 w-full bg-yellow-400/20 text-yellow-200 font-bold py-2.5 rounded-lg text-sm text-center">${cdT.enrollmentClosed || 'Inscripciones cerradas'}</div>` : ''}
+        ${ch.status === 'resolved' ? `<div class="mt-2 w-full bg-white/10 text-white/60 font-bold py-2.5 rounded-lg text-sm text-center">${cdT.challengeCompleted || 'Reto completado'}</div>` : ''}
       </div>
     </div>
   </div>
 
   <!-- Participation form -->
-  ${showForm && ch.status === 'Abierto' ? `
+  ${showForm && ch.status === 'open' ? `
   <div id="challenge-participation-form" class="bg-eu-bg border-b border-eu-border px-6 py-8">
     <div class="max-w-4xl mx-auto bg-white rounded-xl border-2 border-eu-orange shadow-sm overflow-hidden">
       <div class="bg-eu-orange/10 border-b border-eu-orange/30 px-6 py-4">
@@ -261,12 +285,12 @@ function renderDetail(ch, mT) {
       <!-- Description -->
       <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
         <h2 class="text-lg font-bold text-eu-text mb-3 flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5 text-eu-blue"></i> ${cdT.descriptionTitle || 'Descripción'}</h2>
-        <p class="text-sm text-gray-700 leading-relaxed mb-4">${extra?.fullDescription ?? ch.description}</p>
+        <p class="text-sm text-gray-700 leading-relaxed mb-4">${extra?.fullDescription ?? pickLang(ch.title)}</p>
         ${extra?.context ? `<div class="bg-eu-bg border-l-4 border-eu-teal rounded-r-lg p-4"><p class="text-xs font-bold text-eu-teal uppercase mb-1">${cdT.contextLabel || 'Contexto y datos disponibles'}</p><p class="text-sm text-gray-600">${extra.context}</p></div>` : ''}
       </section>
 
       <!-- Objectives -->
-      ${extra?.objectives ? `
+      ${extra?.objectives?.length ? `
       <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
         <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="target" class="w-5 h-5 text-eu-orange"></i> ${cdT.objectivesTitle || 'Objetivos y Resultados Esperados'}</h2>
         <ul class="space-y-2.5">
@@ -275,9 +299,10 @@ function renderDetail(ch, mT) {
       </section>` : ''}
 
       <!-- Datasets & tools -->
-      ${extra ? `
+      ${extra?.datasets?.length || extra?.tools?.length ? `
       <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
         <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="database" class="w-5 h-5 text-eu-blue"></i> ${cdT.resourcesTitle || 'Datos y Recursos Disponibles'}</h2>
+        ${extra?.datasets?.length ? `
         <div class="mb-5">
           <p class="text-xs font-bold text-gray-500 uppercase mb-3">${cdT.datasetsLabel || 'Datasets proporcionados'}</p>
           <div class="space-y-2">
@@ -287,17 +312,18 @@ function renderDetail(ch, mT) {
               <div class="flex items-center gap-2 shrink-0 ml-4"><span class="text-xs bg-eu-blue/10 text-eu-blue font-bold px-2 py-0.5 rounded">${d.format}</span><span class="text-xs text-gray-400 font-semibold">${d.size}</span></div>
             </div>`).join('')}
           </div>
-        </div>
+        </div>` : ''}
+        ${extra?.tools?.length ? `
         <div>
           <p class="text-xs font-bold text-gray-500 uppercase mb-3">${cdT.toolsLabel || 'Tecnologías recomendadas'}</p>
           <div class="flex flex-wrap gap-2">
             ${extra.tools.map(tool => `<span class="text-xs bg-eu-bg border border-eu-border px-2.5 py-1 rounded-full font-semibold text-gray-600">${tool}</span>`).join('')}
           </div>
-        </div>
+        </div>` : ''}
       </section>` : ''}
 
       <!-- Deliverables -->
-      ${extra?.deliverables ? `
+      ${extra?.deliverables?.length ? `
       <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
         <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5 text-eu-teal"></i> ${cdT.deliverablesTitle || 'Entregables Requeridos'}</h2>
         <div class="space-y-2.5">
@@ -313,7 +339,7 @@ function renderDetail(ch, mT) {
       </section>` : ''}
 
       <!-- Eval criteria -->
-      ${extra?.evalCriteria ? `
+      ${extra?.evalCriteria?.length ? `
       <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
         <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="star" class="w-5 h-5 text-eu-yellow"></i> ${cdT.evaluationTitle || 'Criterios de Evaluación'}</h2>
         <div class="space-y-4">
@@ -327,7 +353,7 @@ function renderDetail(ch, mT) {
       </section>` : ''}
 
       <!-- Eligibility -->
-      ${extra?.eligibility && extra.eligibility.length > 0 && extra.eligibility[0] !== 'Reto cerrado — en producción desde enero 2026' ? `
+      ${extra?.eligibility?.length && extra.eligibility[0] !== 'Challenge closed — in production since January 2026' ? `
       <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
         <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-eu-teal"></i> ${cdT.eligibilityTitle || 'Elegibilidad y Requisitos'}</h2>
         <ul class="space-y-2">
@@ -336,7 +362,7 @@ function renderDetail(ch, mT) {
       </section>` : ''}
 
       <!-- FAQ -->
-      ${extra?.faq && extra.faq.length > 0 ? `
+      ${extra?.faq?.length ? `
       <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
         <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="message-square" class="w-5 h-5 text-eu-orange"></i> ${cdT.faqTitle || 'Preguntas Frecuentes'}</h2>
         <div class="space-y-4">
@@ -352,7 +378,7 @@ function renderDetail(ch, mT) {
     <!-- Sidebar -->
     <div class="space-y-6">
       <!-- Timeline -->
-      ${extra?.milestones ? `
+      ${extra?.milestones?.length ? `
       <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6">
         <h3 class="font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-eu-blue"></i> ${cdT.milestonesTitle || 'Hitos'}</h3>
         <div class="relative">
@@ -373,7 +399,7 @@ function renderDetail(ch, mT) {
       </div>` : ''}
 
       <!-- Mentors -->
-      ${extra?.mentors ? `
+      ${extra?.mentors?.length ? `
       <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6">
         <h3 class="font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-eu-blue"></i> ${cdT.mentorsTitle || 'Mentores'}</h3>
         <div class="space-y-4">
@@ -393,7 +419,7 @@ function renderDetail(ch, mT) {
       </div>` : ''}
 
       <!-- Recognition -->
-      ${extra?.recognition ? `
+      ${extra?.recognition?.length ? `
       <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6">
         <h3 class="font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-eu-orange"></i> ${cdT.recognitionTitle || 'Reconocimiento'}</h3>
         <ul class="space-y-2.5">
@@ -418,7 +444,7 @@ function renderDetail(ch, mT) {
       </div>
 
       <!-- CTA bottom -->
-      ${ch.status === 'Abierto' ? `
+      ${ch.status === 'open' ? `
       <div class="bg-eu-blue rounded-xl p-6 text-white text-center">
         <p class="font-bold mb-1">${cdT.interestCTA || '¿Quieres participar en este reto?'}</p>
         <p class="text-xs text-white/70 mb-4">${cdT.requestBeforeDeadline || 'Abierto hasta el'} ${ch.deadline}.</p>
@@ -437,20 +463,19 @@ function renderList(all, mT) {
   const showSubmit = getState('marketplaceShowSubmit');
   const evidenceFilter = filters.evidence || 'All';
   const effectiveFilters = { ...filters, evidence: evidenceFilter };
-  const filtered = getFilteredChallenges(all, effectiveFilters);
+  const filtered = getFilteredContributions(all, effectiveFilters);
+
+  const heroBlock = MARKETPLACE_CONFIG?.heroBlock || CHALLENGES_CONFIG?.heroBlock || {};
+  const hasHeroBlock = heroBlock && Object.keys(heroBlock).length > 0;
 
   const fallbackStats = [
-    { value: all.filter(c => c.status === 'Abierto').length, label: mT?.openChallenges || 'Abiertos' },
-    { value: all.filter(c => c.status === 'En Resolución').length, label: mT?.inProgressChallenges || 'En resolución' },
-    { value: all.filter(c => c.status === 'Resuelto').length, label: mT?.resolvedChallenges || 'Resueltos' },
+    { value: all.filter(c => c.status === 'open').length, label: { es: 'Abiertas', en: 'Open', va: 'Obertes' } },
+    { value: all.filter(c => c.status === 'in-progress').length, label: { es: 'En Proceso', en: 'In Progress', va: 'En Procés' } },
+    { value: all.filter(c => c.status === 'resolved').length, label: { es: 'Completadas', en: 'Completed', va: 'Completades' } },
   ];
-  const heroBlock = CHALLENGES_CONFIG?.heroBlock || {};
-  // Si heroBlock existe y tiene stats, úsalos. Si no, usa fallback.
-  const hasHeroBlock = CHALLENGES_CONFIG?.heroBlock && Object.keys(CHALLENGES_CONFIG.heroBlock).length > 0;
-  const heroStats = hasHeroBlock && Array.isArray(heroBlock.stats)
-    ? heroBlock.stats
-    : fallbackStats;
+  const heroStats = hasHeroBlock && Array.isArray(heroBlock.stats) ? heroBlock.stats : fallbackStats;
   const submitButton = heroBlock.submitButton || {};
+
   const heroHtml = heroBlock.visible !== false ? `
   <div class="bg-eu-blue text-white px-4 sm:px-6 py-8 sm:py-10">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
@@ -461,7 +486,7 @@ function renderList(all, mT) {
           ${heroStats.map(stat => `
           <div class="bg-white/10 rounded-xl px-3 sm:px-6 py-3 sm:py-4 text-center sm:text-left">
             <p class="text-xl sm:text-2xl font-extrabold text-eu-yellow">${stat.value}</p>
-            <p class="text-xs text-white/70 font-semibold uppercase mt-1 line-clamp-2">${pickLang(stat.label, stat.label || '')}</p>
+            <p class="text-xs text-white/70 font-semibold uppercase mt-1 line-clamp-2">${pickLang(stat.label, '')}</p>
           </div>`).join('')}
         </div>
       </div>
@@ -484,12 +509,13 @@ function renderList(all, mT) {
 
   const formLabels = mT?.formLabels || {};
   const formPlaceholders = mT?.formPlaceholders || {};
-  const contributionTypes = mT?.contributionTypes || {};
-  const routeOptions = mT?.routeOptions || {};
+
+  const typeLabels = MARKETPLACE_CONFIG.typeLabels || [];
+  const routeLabels = MARKETPLACE_CONFIG.routeLabels || [];
+  const evidenceMaturityLabels = MARKETPLACE_CONFIG.evidenceMaturityLabels || [];
 
   return `
 <div class="animate-in fade-in duration-300">
-  <!-- Header -->
   ${heroHtml}
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
@@ -508,13 +534,13 @@ function renderList(all, mT) {
           <div>
             <label for="mp-sf-type" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.contributionType || 'Tipo'} *</label>
             <select id="mp-sf-type" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-              ${Object.entries(contributionTypes).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}
+              ${typeLabels.filter(l => l.visible).map(l => `<option value="${l.id}">${pickLang(l.label)}</option>`).join('')}
             </select>
           </div>
           <div>
             <label for="mp-sf-route" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.route || 'Ruta'} *</label>
             <select id="mp-sf-route" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-              ${Object.entries(routeOptions).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}
+              ${routeLabels.filter(l => l.visible).map(l => `<option value="${l.id}">${pickLang(l.label)}</option>`).join('')}
             </select>
           </div>
         </div>
@@ -527,9 +553,6 @@ function renderList(all, mT) {
           </div>
           <div><label for="mp-sf-deadline" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.deadline || 'Plazo'}</label><input id="mp-sf-deadline" type="date" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
         </div>
-        <div><label for="mp-sf-evidence" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.evidenceExpected || 'Evidencia esperada'}</label><input id="mp-sf-evidence" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" placeholder="${formPlaceholders.evidenceExpected || ''}"></div>
-        <div><label for="mp-sf-return" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.stakeholderReturn || 'Valor para tu organización'}</label><input id="mp-sf-return" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" placeholder="${formPlaceholders.stakeholderReturn || ''}"></div>
-        <div><label for="mp-sf-ethics" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.ethicsConditions || 'Condiciones de datos / ética'}</label><input id="mp-sf-ethics" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" placeholder="RGPD, datos anonimizados, acuerdo de uso..."></div>
         <div><label for="mp-sf-desc" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.description || 'Descripción'} *</label><textarea id="mp-sf-desc" rows="4" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue resize-none" placeholder="${formPlaceholders.description || ''}"></textarea></div>
         <div class="flex flex-col-reverse sm:flex-row justify-end gap-3">
           <button type="button" id="mp-cancel-submit" class="px-5 py-2 rounded-md border border-eu-border text-eu-text text-sm font-bold hover:bg-eu-bg transition-colors cursor-pointer">${mT?.cancel || 'Cancelar'}</button>
@@ -553,23 +576,23 @@ function renderList(all, mT) {
             <label class="flex items-center gap-1 text-[12px] font-bold text-gray-500 uppercase mb-1"><i data-lucide="book-open" class="w-3 h-3"></i> ${mT?.filterContributionType || 'Tipo'}</label>
             <select id="mp-filter-type" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
               <option value="All">${mT?.all || 'Todos'}</option>
-              ${Object.entries(contributionTypes).map(([k, v]) => `<option value="${k}" ${filters.type === k ? 'selected' : ''}>${v}</option>`).join('')}
+              ${typeLabels.filter(l => l.visible).map(l => `<option value="${l.id}" ${filters.type === l.id ? 'selected' : ''}>${pickLang(l.label)}</option>`).join('')}
             </select>
           </div>
           <div>
             <label class="flex items-center gap-1 text-[12px] font-bold text-gray-500 uppercase mb-1"><i data-lucide="route" class="w-3 h-3"></i> ${mT?.filterRoute || 'Ruta'}</label>
             <select id="mp-filter-route" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
               <option value="All">${mT?.all || 'Todos'}</option>
-              ${Object.entries(routeOptions).map(([k, v]) => `<option value="${k}" ${filters.route === k ? 'selected' : ''}>${v}</option>`).join('')}
+              ${routeLabels.filter(l => l.visible).map(l => `<option value="${l.id}" ${filters.route === l.id ? 'selected' : ''}>${pickLang(l.label)}</option>`).join('')}
             </select>
           </div>
           <div>
             <label class="block text-[12px] font-bold text-gray-500 uppercase mb-1">${mT?.filterStatus || 'Estado'}</label>
             <select id="mp-filter-status" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
               <option value="Todos">${mT?.all || 'Todos'}</option>
-              <option value="Abierto" ${filters.status === 'Abierto' ? 'selected' : ''}>${mT?.open || 'Abierto'}</option>
-              <option value="En Resolución" ${filters.status === 'En Resolución' ? 'selected' : ''}>${mT?.inProgress || 'En Resolución'}</option>
-              <option value="Resuelto" ${filters.status === 'Resuelto' ? 'selected' : ''}>${mT?.resolved || 'Resuelto'}</option>
+              <option value="open" ${filters.status === 'open' ? 'selected' : ''}>${getStatusLabel('open')}</option>
+              <option value="in-progress" ${filters.status === 'in-progress' ? 'selected' : ''}>${getStatusLabel('in-progress')}</option>
+              <option value="resolved" ${filters.status === 'resolved' ? 'selected' : ''}>${getStatusLabel('resolved')}</option>
             </select>
           </div>
           <div>
@@ -583,7 +606,7 @@ function renderList(all, mT) {
             <label class="flex items-center gap-1 text-[12px] font-bold text-gray-500 uppercase mb-1"><i data-lucide="flask-conical" class="w-3 h-3"></i> ${mT?.filterEvidenceMaturity || 'Madurez'}</label>
             <select id="mp-filter-evidence" class="w-full border border-eu-border rounded-md p-2 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
               <option value="All">${mT?.all || 'Todos'}</option>
-              ${Object.entries(mT?.evidenceMaturityOptions || {}).map(([k, v]) => `<option value="${k}" ${evidenceFilter === k ? 'selected' : ''}>${v}</option>`).join('')}
+              ${evidenceMaturityLabels.filter(l => l.visible).map(l => `<option value="${l.id}" ${evidenceFilter === l.id ? 'selected' : ''}>${pickLang(l.label)}</option>`).join('')}
             </select>
           </div>
         </div>
@@ -595,24 +618,33 @@ function renderList(all, mT) {
 
     <!-- Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-      ${filtered.map(ch => `
+      ${filtered.map(ch => {
+        const tags = getTags(ch);
+        const stStyle = STATUS_STYLES[ch.status] || 'bg-gray-100 text-gray-600';
+        const rtStyle = ROUTE_STYLES[ch.route] || 'bg-gray-100 text-gray-600';
+        const evStyle = EVIDENCE_STYLES[ch.evidenceMaturity] || 'bg-gray-100 text-gray-600';
+        return `
       <div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col hover:border-eu-blue transition-colors">
         <div class="p-4 sm:p-5 flex-1">
           <div class="flex flex-wrap items-center gap-2 mb-3">
-            <span class="text-xs font-extrabold uppercase px-2 py-0.5 rounded bg-eu-blue/10 text-eu-blue">${getContributionTypeLabel(ch.contributionType, mT)}</span>
-            <span class="text-xs font-bold px-2 py-0.5 rounded ${STATUS_STYLES[ch.status] || 'bg-gray-100 text-gray-600'}">${getStatusLabel(ch.status, mT)}</span>
+            <span class="text-xs font-extrabold uppercase px-2 py-0.5 rounded bg-eu-blue/10 text-eu-blue">${getTypeLabel(ch.type)}</span>
+            <span class="text-xs font-bold px-2 py-0.5 rounded ${stStyle}">${getStatusLabel(ch.status)}</span>
           </div>
-          <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug line-clamp-2">${ch.title}</h3>
-          <p class="text-xs text-gray-500 mb-1 font-semibold truncate">${ch.country} ${ch.entity}</p>
-          <p class="text-xs text-gray-500 mb-3 line-clamp-1">${ch.entityType}</p>
-          <p class="text-xs text-gray-600 mb-3 line-clamp-2">${ch.description}</p>
+          <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug line-clamp-2">${pickLang(ch.title)}</h3>
+          <p class="text-xs text-gray-500 mb-1 font-semibold truncate">${ch.entity}</p>
+          <p class="text-xs text-gray-500 mb-3 line-clamp-1">${pickLang(ch.entityType)}</p>
           <div class="flex flex-wrap items-center gap-2 mb-3">
-            <span class="text-xs font-bold px-2 py-0.5 rounded ${ROUTE_STYLES[ch.route] || 'bg-gray-100 text-gray-600'}">${getRouteLabel(ch.route, mT)}</span>
-            <span class="text-xs font-semibold px-2 py-0.5 rounded ${EVIDENCE_STYLES[ch.evidenceMaturity] || 'bg-gray-100 text-gray-600'}">${getEvidenceMaturityLabel(ch.evidenceMaturity, mT)}</span>
+            <span class="text-xs font-bold px-2 py-0.5 rounded ${rtStyle}">${getRouteLabel(ch.route)}</span>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded ${evStyle}">${getEvidenceMaturityLabel(ch.evidenceMaturity)}</span>
           </div>
-          <p class="text-xs text-gray-500 mb-3 line-clamp-1"><span class="font-bold">${mT?.evidenceLabel || 'Evidencia'}:</span> ${ch.evidenceExpected}</p>
+          <!-- LbD badges -->
           <div class="flex flex-wrap gap-1.5 mb-3">
-            ${ch.tags.slice(0, 2).map(tag => `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold"><i data-lucide="tag" class="w-2.5 h-2.5 shrink-0"></i>${tag}</span>`).join('')}
+            ${ch.cyclePhase ? `<span class="text-xs px-1.5 py-0.5 rounded ${CYCLE_PHASE_STYLES[ch.cyclePhase] || 'bg-gray-100 text-gray-500'}">${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
+            ${ch.helixRole ? `<span class="text-xs px-1.5 py-0.5 rounded ${HELIX_STYLES[ch.helixRole] || 'bg-gray-100 text-gray-500'}">${getHelixLabel(ch.helixRole)}</span>` : ''}
+            ${(ch.tripleTransition || []).slice(0, 2).map(tr => `<span class="text-xs px-1.5 py-0.5 rounded ${TRANSITION_STYLES[tr] || 'bg-gray-100 text-gray-500'}">${getTransitionLabel(tr)}</span>`).join('')}
+          </div>
+          <div class="flex flex-wrap gap-1.5 mb-3">
+            ${tags.slice(0, 2).map(tag => `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold"><i data-lucide="tag" class="w-2.5 h-2.5 shrink-0"></i>${tag}</span>`).join('')}
           </div>
           <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-xs text-gray-500">
             <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 shrink-0"></i><span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadline}</span></span>
@@ -620,12 +652,12 @@ function renderList(all, mT) {
           </div>
         </div>
         <div class="border-t border-eu-border p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-eu-bg">
-          <span class="text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded w-fit">${getSectorLabel(ch.sector, mT)}</span>
+          <span class="text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded w-fit">${getSectorLabel(ch.sector)}</span>
           <button class="mp-view-detail text-eu-blue font-bold text-xs bg-transparent border-none cursor-pointer hover:underline text-left sm:text-right" data-id="${ch.id}">
             ${mT?.viewAndApply || 'Ver detalle'} →
           </button>
         </div>
-      </div>`).join('')}
+      </div>`; }).join('')}
     </div>
 
     ${filtered.length === 0 ? `
@@ -641,7 +673,7 @@ function renderList(all, mT) {
 
 export function render() {
   const mT = t('marketplace') || {};
-  const all = getTranslatedChallenges(mT);
+  const all = MARKETPLACE_CONFIG.contributions || [];
   const selectedId = getState('selectedChallengeId');
   if (selectedId) {
     const ch = all.find(c => c.id === selectedId);
@@ -652,7 +684,6 @@ export function render() {
 
 export function mount() {
   const mT = t('marketplace') || {};
-  const all = getTranslatedChallenges(mT);
 
   // Back button (detail view)
   document.getElementById('mp-back')?.addEventListener('click', () => {
