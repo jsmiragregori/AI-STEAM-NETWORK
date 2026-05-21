@@ -484,6 +484,11 @@ function renderActiveFiltersDisplay() {
 function renderOerGridContent(search) {
   const oerBlock = KNOWLEDGE_CONFIG?.oerResourcesBlock;
   const hasCmsBlock = Boolean(oerBlock);
+  const oerCv = oerBlock?.chipVisibility || {};
+  const oerShowType             = oerCv.type             !== false;
+  const oerShowLevels           = oerCv.levels           !== false;
+  const oerShowSectors          = oerCv.sectors          !== false;
+  const oerShowValidationStatus = oerCv.validationStatus !== false;
   const oerData = hasCmsBlock ? oerBlock.resources : (t('knowledge.oerResources') || []);
 
   const typeLabels = hasCmsBlock
@@ -613,16 +618,15 @@ function renderOerGridContent(search) {
       <div class="p-6 flex-1 flex flex-col">
         <!-- Header: Type + Levels (secondary, compact) -->
         <div class="flex items-center gap-2 mb-3">
-          <span class="text-2xl flex-shrink-0">${rIcon}</span>
-          <span class="text-xs font-bold uppercase text-gray-600 tracking-wider">${rType}</span>
-          <div class="flex gap-1 ml-auto">${rLevelsHtml}</div>
+          ${oerShowType ? `<span class="text-2xl flex-shrink-0">${rIcon}</span><span class="text-xs font-bold uppercase text-gray-600 tracking-wider">${rType}</span>` : ''}
+          ${oerShowLevels ? `<div class="flex gap-1 ml-auto">${rLevelsHtml}</div>` : ''}
         </div>
 
         <!-- Title: Larger and more prominent -->
         <h3 class="font-bold text-eu-text text-lg mb-5 leading-tight line-clamp-3">${rTitle}</h3>
 
         <!-- Sectors with visual separation -->
-        <div class="flex flex-wrap gap-2 mb-5 pb-4 border-b border-gray-200">${rSectorsHtml}</div>
+        ${oerShowSectors ? `<div class="flex flex-wrap gap-2 mb-5 pb-4 border-b border-gray-200">${rSectorsHtml}</div>` : '<div class="mb-5 pb-4 border-b border-gray-200"></div>'}
 
         <!-- Author + Metadata (compact) -->
         <div class="mb-4 pb-4 border-b border-gray-200">
@@ -648,7 +652,7 @@ function renderOerGridContent(search) {
 
       <!-- Footer: Status badge (compact, clickable) + Link button (primary) -->
       <div class="border-t border-gray-200 p-4 flex items-center justify-between gap-3 bg-white">
-        <button data-filter-status="${r.validationStatus || 'validated'}" class="text-xs font-semibold px-2.5 py-1 rounded whitespace-nowrap cursor-pointer transition-all ${(() => {
+        ${oerShowValidationStatus ? `<button data-filter-status="${r.validationStatus || 'validated'}" class="text-xs font-semibold px-2.5 py-1 rounded whitespace-nowrap cursor-pointer transition-all ${(() => {
           const status = r.validationStatus || 'validated';
           const activeFilters = getOerFilters();
           const baseColors = { validated: 'bg-green-100 text-green-800', pending: 'bg-amber-100 text-amber-800', draft: 'bg-gray-100 text-gray-700' };
@@ -661,7 +665,7 @@ function renderOerGridContent(search) {
             const icons = { validated: '✓', pending: '⏳', draft: '📝' };
             return `${icons[status] || '✓'} ${getStatusLabel(status)}`;
           })()}
-        </button>
+        </button>` : '<span></span>'}
         ${rUrl ? `<a href="${rUrl}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-eu-blue text-white text-sm font-bold hover:bg-eu-blue/90 transition-colors"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-400 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</span>`}
       </div>
     </div>
@@ -855,6 +859,11 @@ function tabCasos(search) {
 
   const casesData = hasCmsBlock ? casesBlock.cases : (t('knowledge.successCases') || []);
   const showVerificationStatus = hasCmsBlock ? (casesBlock.showVerificationStatus !== false) : false;
+  const casosCv = casesBlock?.chipVisibility || {};
+  const casosShowSectors            = casosCv.sectors            !== false;
+  const casosShowLevels             = casosCv.levels             !== false;
+  const casosShowTransferType       = casosCv.transferType       !== false;
+  const casosShowVerificationStatus = casosCv.verificationStatus !== false;
 
   const blockTitle = hasCmsBlock ? pickLang(casesBlock.title, '') : (t('knowledge.casesTitle') || '');
   const blockDesc = hasCmsBlock ? pickLang(casesBlock.description, '') : (t('knowledge.casesDesc') || '');
@@ -995,7 +1004,7 @@ function renderCasosGridContent(search) {
     const statusLabels = casesBlock?.verificationStatusLabels || {};
     const cVerificationLabel = pickLang(statusLabels[c.verificationStatus], c.verificationStatus === 'verified' ? 'Verificado' : 'Pendiente');
     const verStatusIsActive = activeCasosFilters.verificationStatus === c.verificationStatus;
-    const verificationStatusHtml = showVerificationStatus ? `
+    const verificationStatusHtml = (showVerificationStatus && casosShowVerificationStatus) ? `
       <div>
         <button data-caso-filter-status="${c.verificationStatus}" class="text-sm font-bold px-3 py-1.5 rounded cursor-pointer transition-all ${c.verificationStatus === 'verified' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'} ${verStatusIsActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterStatus')}">
           ${c.verificationStatus === 'verified' ? '✓' : '⏳'} ${cVerificationLabel}
@@ -1016,9 +1025,9 @@ function renderCasosGridContent(search) {
               <p class="text-sm text-gray-700">
                 <span class="font-semibold">${getCasosLabel('adoptedBy')}</span> ${cBeneficiaries.map(b => b.name).join(', ')}
               </p>
-              <button data-caso-filter-transfer="${cTransferType}" class="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded cursor-pointer transition-all ${TRANSFER_TYPE_COLOR} ${activeCasosFilters.transferType === cTransferType ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterTransfer')}">
+              ${casosShowTransferType ? `<button data-caso-filter-transfer="${cTransferType}" class="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded cursor-pointer transition-all ${TRANSFER_TYPE_COLOR} ${activeCasosFilters.transferType === cTransferType ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterTransfer')}">
                 <i data-lucide="${TRANSFER_TYPE_ICONS[cTransferType] || 'arrow-right'}" class="w-3 h-3"></i> ${pickLang(casesBlock?.transferTypeLabels?.[cTransferType] || TRANSFER_TYPE_LABELS[cTransferType], cTransferType)}
-              </button>
+              </button>` : ''}
             </div>
           </div>
           ${verificationStatusHtml}
@@ -1026,8 +1035,8 @@ function renderCasosGridContent(search) {
 
         <!-- Sectors and Levels -->
         <div class="flex flex-wrap gap-2">
-          <div class="flex flex-wrap gap-1.5">${cSectorsHtml}</div>
-          <div class="flex flex-wrap gap-1.5">${cLevelsHtml}</div>
+          ${casosShowSectors ? `<div class="flex flex-wrap gap-1.5">${cSectorsHtml}</div>` : ''}
+          ${casosShowLevels  ? `<div class="flex flex-wrap gap-1.5">${cLevelsHtml}</div>`  : ''}
         </div>
       </div>
 

@@ -746,95 +746,141 @@ export const HOME_CONFIG = {
     "partners": [
       {
         "id": "uveg",
-        "name": "UVEG"
+        "name": "UVEG",
+        "acronym": "UVEG",
+        "logo": "uveg.png"
       },
       {
         "id": "umu",
-        "name": "UMU"
+        "name": "UMU",
+        "acronym": "UMU",
+        "logo": "umu.png"
       },
       {
         "id": "upv",
-        "name": "UPV"
+        "name": "UPV",
+        "acronym": "UPV",
+        "logo": "upv.png"
       },
       {
         "id": "ntnu",
-        "name": "NTNU"
+        "name": "NTNU",
+        "acronym": "NTNU",
+        "logo": "ntnu.png"
       },
       {
         "id": "hsw",
-        "name": "HSW"
+        "name": "HSW",
+        "acronym": "HSW",
+        "logo": "hsw.png"
       },
       {
         "id": "fidit",
-        "name": "FIDIT"
+        "name": "FIDIT",
+        "acronym": "FIDIT",
+        "logo": "fidit.png"
       },
       {
         "id": "uda",
-        "name": "Ud'A"
+        "name": "Ud'A",
+        "acronym": "Ud'A",
+        "logo": "uda.png"
       },
       {
         "id": "esad",
-        "name": "ESAD-GV"
+        "name": "ESAD-GV",
+        "acronym": "ESAD-GV",
+        "logo": "esad.png"
       },
       {
         "id": "inesc",
-        "name": "INESC"
+        "name": "INESC",
+        "acronym": "INESC",
+        "logo": "inesc.png"
       },
       {
         "id": "laurea",
-        "name": "LAUREA"
+        "name": "LAUREA",
+        "acronym": "LAUREA",
+        "logo": "laurea.png"
       },
       {
         "id": "ceice",
-        "name": "CEICE"
+        "name": "CEICE",
+        "acronym": "CEICE",
+        "logo": "ceice.png"
       },
       {
         "id": "lpga",
-        "name": "LPGA"
+        "name": "LPGA",
+        "acronym": "LPGA",
+        "logo": "lpga.png"
       },
       {
         "id": "varm",
-        "name": "VARM"
+        "name": "VARM",
+        "acronym": "VARM",
+        "logo": "varm.png"
       },
       {
         "id": "preda",
-        "name": "PREDA"
+        "name": "PREDA",
+        "acronym": "PREDA",
+        "logo": "preda.png"
       },
       {
         "id": "cogn",
-        "name": "COGN"
+        "name": "COGN",
+        "acronym": "COGN",
+        "logo": "cogn.png"
       },
       {
         "id": "tuvit",
-        "name": "TUV.IT"
+        "name": "TUV.IT",
+        "acronym": "TUV.IT",
+        "logo": "tuvit.png"
       },
       {
         "id": "joist",
-        "name": "JOIST"
+        "name": "JOIST",
+        "acronym": "JOIST",
+        "logo": "joist.png"
       },
       {
         "id": "clink",
-        "name": "C-LINK"
+        "name": "C-LINK",
+        "acronym": "C-LINK",
+        "logo": "clink.png"
       },
       {
         "id": "cink",
-        "name": "CINK"
+        "name": "CINK",
+        "acronym": "CINK",
+        "logo": "cink.png"
       },
       {
         "id": "lc",
-        "name": "LC"
+        "name": "LC",
+        "acronym": "LC",
+        "logo": "lc.png"
       },
       {
         "id": "kea",
-        "name": "KEA"
+        "name": "KEA",
+        "acronym": "KEA",
+        "logo": "kea.png"
       },
       {
         "id": "ife",
-        "name": "IF.E"
+        "name": "IF.E",
+        "acronym": "IF.E",
+        "logo": "ife.png"
       },
       {
         "id": "rce",
-        "name": "RCE"
+        "name": "RCE",
+        "acronym": "RCE",
+        "logo": "rce.png"
       }
     ]
   }

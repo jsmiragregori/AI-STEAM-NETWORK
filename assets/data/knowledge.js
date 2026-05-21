@@ -514,7 +514,13 @@ export const KNOWLEDGE_CONFIG = {
         "linkType": "external",
         "external": true
       }
-    ]
+    ],
+    "chipVisibility": {
+      "type": true,
+      "levels": true,
+      "sectors": true,
+      "validationStatus": true
+    }
   },
   "successCasesBlock": {
     "visible": true,
@@ -1992,7 +1998,13 @@ export const KNOWLEDGE_CONFIG = {
           "externalLink": true
         }
       }
-    ]
+    ],
+    "chipVisibility": {
+      "sectors": true,
+      "levels": true,
+      "transferType": true,
+      "verificationStatus": true
+    }
   },
   "pilotEvidencesBlock": {
     "visible": true,

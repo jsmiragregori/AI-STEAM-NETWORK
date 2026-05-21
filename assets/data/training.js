@@ -4574,6 +4574,13 @@ export const TRAINING_CONFIG = {
           "external": true
         }
       }
-    ]
+    ],
+    "chipVisibility": {
+      "level": true,
+      "status": true,
+      "sectors": true,
+      "modality": true,
+      "tags": true
+    }
   }
 };

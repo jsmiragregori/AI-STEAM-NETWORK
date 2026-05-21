@@ -111,22 +111,29 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
   const linkTarget     = course.link?.external !== false ? '_blank' : '_self';
   const viewLabel      = trainingT?.courseViewMore || 'Ver';
 
-  const chipsHtml = (course.skillIds || course.tagIds || []).map(chipId => {
+  const trCv          = TRAINING_CONFIG?.coursesBlock?.chipVisibility || {};
+  const trShowLevel    = trCv.level    !== false;
+  const trShowStatus   = trCv.status   !== false;
+  const trShowSectors  = trCv.sectors  !== false;
+  const trShowModality = trCv.modality !== false;
+  const trShowTags     = trCv.tags     !== false;
+
+  const chipsHtml = trShowTags ? (course.skillIds || course.tagIds || []).map(chipId => {
     const chip = courseTags.find(c => c.id === chipId);
     if (!chip) return '';
     const isActive = activeFilters.tags.includes(chipId);
     return `<button data-filter-tag="${chipId}" class="text-xs font-medium px-2 py-1 rounded-full transition-colors cursor-pointer ${isActive ? 'bg-eu-blue text-white border border-eu-blue' : 'bg-eu-blue/10 text-eu-blue border border-eu-blue/20 hover:bg-eu-blue/20'}">${pickLang(chip.shortLabel || chip.label, chipId)}</button>`;
-  }).join('');
+  }).join('') : '';
 
   return `
     <div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col overflow-hidden hover:border-eu-blue transition-colors">
       <div class="p-5 flex-1">
         <div class="flex items-center justify-between mb-3 gap-2">
           <div class="flex items-center gap-2 flex-wrap">
-            <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded bg-eu-yellow text-eu-purple">${levelLabel}</span>
+            ${trShowLevel ? `<span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded bg-eu-yellow text-eu-purple">${levelLabel}</span>` : ''}
             ${isMaster ? '<span class="text-xs bg-purple-600 text-white px-2 py-0.5 rounded font-bold">Track A</span>' : ''}
           </div>
-          <button data-filter-status="${course.statusId}" class="text-sm font-bold px-2 py-0.5 rounded cursor-pointer transition-colors ${isStatusActive ? '' : (TONE_MAP[tone]?.cls || TONE_MAP.neutral.cls)}" ${isStatusActive ? `style="${TONE_MAP[tone]?.activeStyle || TONE_MAP.neutral.activeStyle}"` : ''}>${statusLabel}</button>
+          ${trShowStatus ? `<button data-filter-status="${course.statusId}" class="text-sm font-bold px-2 py-0.5 rounded cursor-pointer transition-colors ${isStatusActive ? '' : (TONE_MAP[tone]?.cls || TONE_MAP.neutral.cls)}" ${isStatusActive ? `style="${TONE_MAP[tone]?.activeStyle || TONE_MAP.neutral.activeStyle}"` : ''}>${statusLabel}</button>` : ''}
         </div>
         <h3 class="font-bold text-eu-text text-sm mb-2 leading-snug">${course.title}</h3>
         <p class="text-xs text-gray-500 mb-3">${course.description}</p>
@@ -135,14 +142,14 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
           ${course.enrolled != null ? `<span class="flex items-center gap-1"><i data-lucide="users" class="w-3 h-3"></i>${course.enrolled} ${trainingT?.courseEnrolledLabel || ''}</span>` : ''}
           ${course.rating   != null ? `<span class="flex items-center gap-1"><i data-lucide="star" class="w-3 h-3 text-yellow-500"></i>${course.rating}</span>` : ''}
         </div>
-        <div class="flex flex-wrap gap-2">
-          ${(course.sectorIds || []).map((sectorId, idx) => {
+        ${trShowSectors || trShowModality ? `<div class="flex flex-wrap gap-2">
+          ${trShowSectors ? (course.sectorIds || []).map((sectorId, idx) => {
             const isActive = activeFilters.sectors.includes(sectorId);
             const label    = course.sectors[idx] || sectorId;
             return `<button data-filter-sector="${sectorId}" class="text-sm font-semibold px-2 py-0.5 rounded whitespace-nowrap transition-colors cursor-pointer ${isActive ? 'bg-eu-blue text-white border border-eu-blue' : 'bg-eu-bg border border-eu-border text-gray-600 hover:border-eu-blue'}">${label}</button>`;
-          }).join('')}
-          ${course.modalityId ? `<button data-filter-modality="${course.modalityId}" class="text-xs px-2 py-0.5 rounded font-bold whitespace-nowrap transition-colors cursor-pointer ${activeFilters.modalities.includes(course.modalityId) ? 'bg-purple-600 text-white' : 'bg-purple-100 text-purple-700 border border-purple-300 hover:bg-purple-200'}">${modalityLabel}</button>` : ''}
-        </div>
+          }).join('') : ''}
+          ${trShowModality && course.modalityId ? `<button data-filter-modality="${course.modalityId}" class="text-xs px-2 py-0.5 rounded font-bold whitespace-nowrap transition-colors cursor-pointer ${activeFilters.modalities.includes(course.modalityId) ? 'bg-purple-600 text-white' : 'bg-purple-100 text-purple-700 border border-purple-300 hover:bg-purple-200'}">${modalityLabel}</button>` : ''}
+        </div>` : ''}
         ${chipsHtml ? `<div class="flex flex-wrap gap-2 mt-3">${chipsHtml}</div>` : ''}
       </div>
       ${linkUrl ? `

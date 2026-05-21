@@ -174,6 +174,16 @@ export const NETWORK_CONFIG = {
       "en": "members",
       "va": "membres"
     },
+    "visitSite": {
+      "es": "Visitar sitio web",
+      "en": "Visit website",
+      "va": "Visitar lloc web"
+    },
+    "chipVisibility": {
+      "category": true,
+      "sectors": true,
+      "role": true
+    },
     "roleLabels": {
       "coordinator": {
         "es": "Coordinador",
@@ -1105,7 +1115,7 @@ export const NETWORK_CONFIG = {
         ],
         "role": "associated",
         "url": "https://www.relais-culture-europe.eu/",
-        "logo": ""
+        "logo": "rce.png"
       }
     ]
   },
@@ -1361,6 +1371,10 @@ export const NETWORK_CONFIG = {
         "en": "Submit Application",
         "va": "Enviar Solicitud"
       }
+    },
+    "chipVisibility": {
+      "category": true,
+      "sectors": true
     },
     "stakeholders": [
       {

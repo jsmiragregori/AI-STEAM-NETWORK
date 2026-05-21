@@ -400,15 +400,22 @@ function renderConsortiumBlock() {
   const block = HOME_CONFIG.consortiumBlock;
   if (!block?.visible) return '';
 
-  const partnersHtml = (block.partners || []).map(p =>
-    `<div class="bg-eu-bg border border-eu-border rounded px-3 py-1.5 text-sm font-bold text-gray-600">${p.name}</div>`
-  ).join('');
+  const LOGO_BASE = 'assets/images/partners/';
+  const partnersHtml = (block.partners || []).map(p => {
+    const initials = p.acronym
+      ? p.acronym.slice(0, 3).toUpperCase()
+      : (p.name || '').split(' ').map(w => w[0]).join('').slice(0, 3).toUpperCase();
+    const inner = p.logo
+      ? `<img src="${LOGO_BASE}${p.logo}" alt="${p.acronym || p.name}" style="max-height:44px;max-width:140px;width:auto;height:auto;object-fit:contain;display:block;" loading="lazy" />`
+      : `<span style="font-size:13px;font-weight:700;color:#6b7280;letter-spacing:0.05em;">${initials}</span>`;
+    return `<div title="${p.name}" style="height:68px;min-width:100px;max-width:180px;display:flex;align-items:center;justify-content:center;padding:10px 18px;overflow:hidden;background:white;border:1px solid #e5e7eb;border-radius:10px;flex-shrink:0;">${inner}</div>`;
+  }).join('');
 
   return `
     <section class="px-6 py-10 bg-white border-t border-eu-border">
       <div class="max-w-7xl mx-auto">
         <p class="text-center text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">${localized(block.heading)}</p>
-        <div class="flex flex-wrap justify-center gap-4 items-center">${partnersHtml}</div>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;align-items:center;">${partnersHtml}</div>
       </div>
     </section>
   `;
