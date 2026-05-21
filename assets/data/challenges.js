@@ -10,9 +10,9 @@ export const CHALLENGES_CONFIG = {
       "va": "Contribucions de l'Ecosistema"
     },
     "description": {
-      "es": "Catálogo de contribuciones reales propuestas por organizaciones del ecosistema AI-SECRETT: retos, casos de uso, validaciones, mentorías y pilotos para FP, formación docente y, cuando corresponde, el Track A.",
-      "en": "Catalog of real contributions from AI-SECRETT ecosystem organizations: challenges, use cases, validations, mentoring programs and pilots for VET, teacher training and, when applicable, Track A.",
-      "va": "Catàleg de contribucions reals d'organitzacions de l'ecosistema AI-SECRETT: reptes, casos d'ús, validacions, mentories i pilots per a FP, formació docent i, quan correspon, la Track A."
+      "es": "Catálogo de contribuciones reales del ecosistema AI-SECRETT: retos, casos de uso, validaciones, mentorías y pilotos para FP, formación docente y, cuando corresponde, el Track A académico.",
+      "en": "Catalogue of real contributions from the AI-SECRETT ecosystem: challenges, use cases, validations, mentoring programmes and pilots for VET, teacher training and, when applicable, Track A.",
+      "va": "Catàleg de contribucions reals de l'ecosistema AI-SECRETT: reptes, casos d'ús, validacions, mentories i pilots per a FP, formació docent i, quan correspon, el Track A acadèmic."
     },
     "stats": [
       {
