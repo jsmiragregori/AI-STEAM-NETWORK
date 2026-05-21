@@ -894,6 +894,11 @@ function renderCasosGridContent(search) {
   const hasCmsBlock = Boolean(casesBlock);
   const casesData = hasCmsBlock ? casesBlock.cases : (t('knowledge.successCases') || []);
   const showVerificationStatus = hasCmsBlock ? (casesBlock.showVerificationStatus !== false) : false;
+  const casosCv = casesBlock?.chipVisibility || {};
+  const casosShowSectors            = casosCv.sectors            !== false;
+  const casosShowLevels             = casosCv.levels             !== false;
+  const casosShowTransferType       = casosCv.transferType       !== false;
+  const casosShowVerificationStatus = casosCv.verificationStatus !== false;
 
   // Sort by most recent date (revisionDate if present, else publishedAt)
   let sorted = [...casesData].sort((a, b) => {
