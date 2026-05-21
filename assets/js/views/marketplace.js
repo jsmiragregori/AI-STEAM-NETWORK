@@ -201,8 +201,8 @@ function renderChipRow(items, activeArr, dimension, label) {
     const on = activeArr.includes(it.id);
     return `<button data-mp-chip="${dimension}" data-mp-val="${it.id}" class="${CHIP_BASE} ${on ? CHIP_ACTIVE : CHIP_INACTIVE}">${pickLang(it.label)}</button>`;
   }).join('');
-  return `<div class="flex flex-wrap items-center gap-2">
-    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wide w-20 shrink-0 pt-0.5">${label}</span>
+  return `<div class="flex items-start gap-3">
+    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wide w-20 shrink-0 mt-1 text-right">${label}</span>
     <div class="flex flex-wrap gap-1.5">${chips}</div>
   </div>`;
 }
@@ -216,8 +216,8 @@ function renderSectorChipRow(activeSectors, label) {
     const on = activeSectors.includes(s);
     return `<button data-mp-chip="sector" data-mp-val="${s}" class="${CHIP_BASE} ${on ? CHIP_ACTIVE : CHIP_INACTIVE}">${getSectorLabel(s)}</button>`;
   }).join('');
-  return `<div class="flex flex-wrap items-center gap-2">
-    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wide w-20 shrink-0 pt-0.5">${label}</span>
+  return `<div class="flex items-start gap-3">
+    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wide w-20 shrink-0 mt-1 text-right">${label}</span>
     <div class="flex flex-wrap gap-1.5">${chips}</div>
   </div>`;
 }
@@ -242,10 +242,9 @@ function renderMpActiveFilters(filters, search, mT) {
   if (search) badges.push(badge('search', search, `"${search}"`, 'bg-amber-100 text-amber-800'));
 
   if (!badges.length) return '';
-  return `<div class="flex flex-wrap items-center gap-2 mb-6 p-3 sm:p-4 bg-blue-50 border border-blue-200 rounded-xl">
-    <span class="text-[11px] font-bold text-gray-600 uppercase tracking-wide shrink-0">${mT.activeFilters || 'Filtros activos'}:</span>
+  return `<div class="flex flex-wrap items-center gap-2 mb-4 px-3 sm:px-4 py-3 bg-blue-50 border border-blue-200 rounded-xl">
+    <span class="text-[11px] font-bold text-gray-500 uppercase tracking-wide shrink-0">${mT.activeFilters || 'Filtros activos'}:</span>
     ${badges.join('')}
-    <button id="mp-clear-all" class="ml-auto px-2.5 py-1 rounded text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200 bg-transparent">${mT.clearAllFilters || 'Limpiar todo'}</button>
   </div>`;
 }
 
@@ -685,6 +684,8 @@ function renderList(all, mT) {
   const routeLabels          = mp.routeLabels          || [];
   const evidenceMaturityLabels = mp.evidenceMaturityLabels || [];
 
+  const totalActive = Object.values(filters).reduce((n, v) => n + (Array.isArray(v) ? v.length : 0), 0) + (search ? 1 : 0);
+
   return `
 <div class="animate-in fade-in duration-300">
   ${heroHtml}
@@ -732,9 +733,21 @@ function renderList(all, mT) {
       </form>
     </div>` : ''}
 
-    <!-- Filter chips -->
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-4 sm:p-5 mb-2">
-      <div class="flex flex-col gap-3">
+    <!-- Filter chips panel -->
+    <div class="bg-white rounded-xl border border-eu-border shadow-sm mb-3 overflow-hidden">
+
+      <!-- Panel header -->
+      <div class="flex items-center justify-between px-4 sm:px-5 py-3 bg-gray-50 border-b border-eu-border">
+        <div class="flex items-center gap-2">
+          <i data-lucide="sliders-horizontal" class="w-4 h-4 text-eu-blue shrink-0"></i>
+          <span class="text-sm font-bold text-eu-text">${mT?.filtersTitle || 'Filtros'}</span>
+          ${totalActive > 0 ? `<span class="bg-eu-blue text-white text-xs font-bold px-2 py-0.5 rounded-full leading-none">${totalActive}</span>` : ''}
+        </div>
+        ${totalActive > 0 ? `<button id="mp-clear-all" class="text-xs font-semibold text-gray-500 hover:text-red-600 transition-colors cursor-pointer bg-transparent border-none">${mT?.clearAllFilters || 'Limpiar todo'}</button>` : ''}
+      </div>
+
+      <!-- Chip rows -->
+      <div class="px-4 sm:px-5 py-4 flex flex-col gap-3">
         ${cv.type             !== false ? renderChipRow(mp.typeLabels,             filters.types,       'type',       mT?.filterContributionType || 'Tipo')       : ''}
         ${cv.status           !== false ? renderChipRow(mp.statusLabels,           filters.statuses,    'status',     mT?.filterStatus           || 'Estado')     : ''}
         ${cv.route            !== false ? renderChipRow(mp.routeLabels,            filters.routes,      'route',      mT?.filterRoute            || 'Ruta')       : ''}
@@ -743,24 +756,25 @@ function renderList(all, mT) {
         ${cv.track            !== false ? renderChipRow(mp.trackLabels,            filters.tracks,      'track',      mT?.filterTrack            || 'Track')      : ''}
         ${cv.evidenceMaturity !== false ? renderChipRow(mp.evidenceMaturityLabels, filters.evidences,   'evidence',   mT?.filterEvidenceMaturity || 'Madurez')    : ''}
         ${cv.sector           !== false ? renderSectorChipRow(filters.sectors, mT?.filterSector || 'Sector') : ''}
+
+        <!-- Search expander -->
         ${sb.visible !== false ? `
         <div class="border-t border-eu-border pt-3 mt-1">
-          <button id="mp-search-toggle" class="flex items-center gap-1.5 text-sm font-semibold text-gray-500 hover:text-eu-blue bg-transparent border-none cursor-pointer w-full text-left p-0 transition-colors">
-            <i data-lucide="${searchExpanded ? 'chevron-down' : 'chevron-right'}" class="w-4 h-4 shrink-0"></i>
-            ${mT?.advancedSearch || 'Búsqueda por texto'}
-            ${getMpSearch() ? `<span class="ml-2 text-xs font-bold text-eu-orange">${mT?.searchActive || '(activa)'}</span>` : ''}
+          <button id="mp-search-toggle" class="flex items-center gap-2 w-full px-3 py-2 rounded-lg bg-eu-bg border border-eu-border text-sm font-semibold text-gray-600 hover:border-eu-blue transition-colors cursor-pointer text-left">
+            <i data-lucide="search" class="w-4 h-4 shrink-0 text-gray-400"></i>
+            <span>${mT?.advancedSearch || 'Búsqueda por texto'}</span>
+            ${getMpSearch() ? `<span class="text-xs font-bold text-eu-orange ml-1">${mT?.searchActive || '· activa'}</span>` : ''}
+            <i data-lucide="${searchExpanded ? 'chevron-up' : 'chevron-down'}" class="ml-auto w-4 h-4 shrink-0 text-gray-400"></i>
           </button>
           ${searchExpanded ? `
-          <div class="mt-3 flex items-center gap-2">
-            <div class="relative flex-1 sm:flex-none">
-              <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
-              <input id="mp-search" type="text" value="${getMpSearch().replace(/"/g, '&quot;')}"
-                class="w-full sm:w-80 border border-eu-border rounded-md pl-9 pr-9 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"
-                placeholder="${mT?.searchPlaceholder || ''}">
-              <button id="mp-search-clear" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 bg-transparent border-none cursor-pointer ${getMpSearch() ? '' : 'hidden'}" title="${mT?.clearSearch || 'Borrar búsqueda'}">
-                <i data-lucide="x" class="w-4 h-4"></i>
-              </button>
-            </div>
+          <div class="mt-2 relative">
+            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
+            <input id="mp-search" type="text" value="${getMpSearch().replace(/"/g, '&quot;')}"
+              class="w-full border border-eu-border rounded-md pl-9 pr-9 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"
+              placeholder="${mT?.searchPlaceholder || ''}" autofocus>
+            <button id="mp-search-clear" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 bg-transparent border-none cursor-pointer ${getMpSearch() ? '' : 'hidden'}" title="${mT?.clearSearch || 'Borrar búsqueda'}">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
           </div>` : ''}
         </div>` : ''}
       </div>
