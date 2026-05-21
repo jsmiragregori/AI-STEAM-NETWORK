@@ -1,6 +1,6 @@
-﻿// GENERADO AUTOMÁTICAMENTE — NO EDITAR DIRECTAMENTE
+// GENERADO AUTOMÁTICAMENTE — NO EDITAR DIRECTAMENTE
 // Edita los archivos en content/_ui/*.csv y ejecuta: npm run cms:ui
-// Base: translations.js existente + overrides de 42 entradas CSV
+// Base: translations.js existente + overrides de 54 entradas CSV
 
 export const translations = {
   "es": {
@@ -1745,7 +1745,19 @@ export const translations = {
       "statusResolved": "Resuelto",
       "levelFP": "FP",
       "levelMaster": "Máster",
-      "levelBoth": "Ambos"
+      "levelBoth": "Ambos",
+      "filtersTitle": "Filtros",
+      "clearAllFilters": "Limpiar todo",
+      "activeFilters": "Filtros activos",
+      "expandFilters": "Mostrar",
+      "collapseFilters": "Ocultar",
+      "advancedSearch": "Búsqueda por texto",
+      "searchActive": "· activa",
+      "clearSearch": "Borrar búsqueda",
+      "filterBy": "Filtrar por",
+      "filterHelixRole": "Hélice",
+      "filterTransition": "Transición",
+      "filterTrack": "Track"
     },
     "challengeDetail": {
       "consortiumLabel": "23 miembros del consorcio",
@@ -3596,7 +3608,19 @@ export const translations = {
       "statusResolved": "Resolved",
       "levelFP": "VET",
       "levelMaster": "Master",
-      "levelBoth": "Both"
+      "levelBoth": "Both",
+      "filtersTitle": "Filters",
+      "clearAllFilters": "Clear all",
+      "activeFilters": "Active filters",
+      "expandFilters": "Show",
+      "collapseFilters": "Hide",
+      "advancedSearch": "Text search",
+      "searchActive": "· active",
+      "clearSearch": "Clear search",
+      "filterBy": "Filter by",
+      "filterHelixRole": "Helix",
+      "filterTransition": "Transition",
+      "filterTrack": "Track"
     },
     "challengeDetail": {
       "consortiumLabel": "23 members of the consortium",
@@ -3718,7 +3742,7 @@ export const translations = {
       "inicio": "Inici",
       "red": "La Xarxa",
       "sectores": "Sectors",
-      "bancoRetos": "Retos i Casos",
+      "bancoRetos": "Reptes i Casos",
       "formacion": "Formació",
       "conocimiento": "Coneixement",
       "actualidad": "Actualitat",
@@ -5444,7 +5468,19 @@ export const translations = {
       "statusResolved": "Resolt",
       "levelFP": "FP",
       "levelMaster": "Màster",
-      "levelBoth": "Ambdós"
+      "levelBoth": "Ambdós",
+      "filtersTitle": "Filtres",
+      "clearAllFilters": "Netejar-ho tot",
+      "activeFilters": "Filtres actius",
+      "expandFilters": "Mostrar",
+      "collapseFilters": "Ocultar",
+      "advancedSearch": "Cerca per text",
+      "searchActive": "· activa",
+      "clearSearch": "Esborrar cerca",
+      "filterBy": "Filtrar per",
+      "filterHelixRole": "Hèlix",
+      "filterTransition": "Transició",
+      "filterTrack": "Track"
     },
     "challengeDetail": {
       "consortiumLabel": "23 membres del consorcio",

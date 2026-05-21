@@ -8,6 +8,7 @@ import { CHALLENGES_CONFIG } from '../../data/challenges.js';
 const MP_FILTER_KEY     = 'mpFilters';
 const MP_SEARCH_KEY     = 'mpSearch';
 const MP_EXPANDED_KEY   = 'mpSearchExpanded';
+const MP_PANEL_KEY      = 'mpFilterPanelExpanded';
 
 function getMpFilters() {
   try {
@@ -41,6 +42,11 @@ function getMpSearchExpanded() {
   return MARKETPLACE_CONFIG.searchBlock?.defaultExpanded === true;
 }
 function setMpSearchExpanded(v) { localStorage.setItem(MP_EXPANDED_KEY, v ? 'true' : 'false'); }
+
+function getMpFilterPanelExpanded() {
+  return localStorage.getItem(MP_PANEL_KEY) === 'true';
+}
+function setMpFilterPanelExpanded(v) { localStorage.setItem(MP_PANEL_KEY, v ? 'true' : 'false'); }
 
 function toggleMpFilter(arr, val) {
   return arr.includes(val) ? arr.filter(v => v !== val) : [...arr, val];
@@ -190,9 +196,9 @@ function getFilteredContributions(all, filters, search) {
 
 // ─── Filter chip helpers ──────────────────────────────────────────────────────
 
-const CHIP_ACTIVE   = 'bg-eu-blue text-white border border-eu-blue';
+const CHIP_ACTIVE   = 'bg-eu-blue/10 text-eu-blue border border-eu-blue';
 const CHIP_INACTIVE = 'bg-eu-bg border border-eu-border text-gray-600 hover:border-eu-blue';
-const CHIP_BASE     = 'text-xs font-semibold px-2.5 py-1 rounded-full cursor-pointer transition-colors whitespace-nowrap';
+const CHIP_BASE     = 'text-xs font-bold px-2 py-0.5 rounded cursor-pointer transition-colors whitespace-nowrap';
 
 function renderChipRow(items, activeArr, dimension, label) {
   const visible = (items || []).filter(it => it.visible !== false);
@@ -201,8 +207,8 @@ function renderChipRow(items, activeArr, dimension, label) {
     const on = activeArr.includes(it.id);
     return `<button data-mp-chip="${dimension}" data-mp-val="${it.id}" class="${CHIP_BASE} ${on ? CHIP_ACTIVE : CHIP_INACTIVE}">${pickLang(it.label)}</button>`;
   }).join('');
-  return `<div class="flex items-start gap-3">
-    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wide w-20 shrink-0 mt-1 text-right">${label}</span>
+  return `<div class="flex flex-col sm:flex-row sm:items-start gap-1.5 sm:gap-2">
+    <span class="text-xs font-bold text-gray-500 sm:w-32 shrink-0 sm:mt-0.5 leading-snug">${label}</span>
     <div class="flex flex-wrap gap-1.5">${chips}</div>
   </div>`;
 }
@@ -216,8 +222,8 @@ function renderSectorChipRow(activeSectors, label) {
     const on = activeSectors.includes(s);
     return `<button data-mp-chip="sector" data-mp-val="${s}" class="${CHIP_BASE} ${on ? CHIP_ACTIVE : CHIP_INACTIVE}">${getSectorLabel(s)}</button>`;
   }).join('');
-  return `<div class="flex items-start gap-3">
-    <span class="text-[11px] font-bold text-gray-400 uppercase tracking-wide w-20 shrink-0 mt-1 text-right">${label}</span>
+  return `<div class="flex flex-col sm:flex-row sm:items-start gap-1.5 sm:gap-2">
+    <span class="text-xs font-bold text-gray-500 sm:w-32 shrink-0 sm:mt-0.5 leading-snug">${label}</span>
     <div class="flex flex-wrap gap-1.5">${chips}</div>
   </div>`;
 }
@@ -227,7 +233,7 @@ function renderMpActiveFilters(filters, search, mT) {
   const badges = [];
   const badge = (dim, val, label, cls) =>
     `<button data-mp-remove="${dim}" data-mp-val="${val}"
-      class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg ${cls} text-xs font-semibold hover:opacity-80 cursor-pointer">
+      class="inline-flex items-center gap-1 px-2 py-0.5 rounded ${cls} text-xs font-bold hover:opacity-80 cursor-pointer">
       <span>${label}</span><i data-lucide="x" class="w-3 h-3"></i>
     </button>`;
 
@@ -242,9 +248,12 @@ function renderMpActiveFilters(filters, search, mT) {
   if (search) badges.push(badge('search', search, `"${search}"`, 'bg-amber-100 text-amber-800'));
 
   if (!badges.length) return '';
-  return `<div class="flex flex-wrap items-center gap-2 mb-4 px-3 sm:px-4 py-3 bg-blue-50 border border-blue-200 rounded-xl">
-    <span class="text-[11px] font-bold text-gray-500 uppercase tracking-wide shrink-0">${mT.activeFilters || 'Filtros activos'}:</span>
+  return `<div class="flex flex-wrap items-center gap-2 mb-4 px-4 py-3 bg-white border border-eu-border rounded-xl shadow-sm">
+    <span class="text-xs font-bold text-gray-500 shrink-0">${mT.activeFilters || 'Filtros activos'}:</span>
     ${badges.join('')}
+    <button id="mp-clear-active-filters" type="button" class="ml-auto px-2 py-0.5 rounded text-xs font-bold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200">
+      ${mT?.clearAllFilters || 'Limpiar todo'}
+    </button>
   </div>`;
 }
 
@@ -635,6 +644,7 @@ function renderList(all, mT) {
   const filters        = getMpFilters();
   const search         = getMpSearch();
   const searchExpanded = getMpSearchExpanded();
+  const filterPanelExpanded = getMpFilterPanelExpanded();
   const showSubmit     = getState('marketplaceShowSubmit');
   const filtered       = getFilteredContributions(all, filters, search);
 
@@ -734,20 +744,27 @@ function renderList(all, mT) {
     </div>` : ''}
 
     <!-- Filter chips panel -->
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm mb-3 overflow-hidden">
+    <div class="bg-white rounded-lg border border-eu-border shadow-sm mb-3 overflow-hidden">
 
       <!-- Panel header -->
-      <div class="flex items-center justify-between px-4 sm:px-5 py-3 bg-gray-50 border-b border-eu-border">
-        <div class="flex items-center gap-2">
+      <div class="flex items-center justify-between gap-3 px-3 sm:px-4 py-2.5 bg-gray-50 ${filterPanelExpanded ? 'border-b border-eu-border' : ''}">
+        <button id="mp-filter-panel-toggle" type="button" aria-expanded="${filterPanelExpanded ? 'true' : 'false'}" class="min-h-11 flex flex-1 items-center gap-2 text-left bg-transparent border-none cursor-pointer group">
           <i data-lucide="sliders-horizontal" class="w-4 h-4 text-eu-blue shrink-0"></i>
           <span class="text-sm font-bold text-eu-text">${mT?.filtersTitle || 'Filtros'}</span>
-          ${totalActive > 0 ? `<span class="bg-eu-blue text-white text-xs font-bold px-2 py-0.5 rounded-full leading-none">${totalActive}</span>` : ''}
+          ${totalActive > 0 ? `<span class="bg-eu-blue/10 text-eu-blue text-xs font-bold px-2 py-0.5 rounded">${totalActive}</span>` : ''}
+          <span class="text-xs font-semibold text-gray-500 ml-1 hidden sm:inline">
+            ${filterPanelExpanded ? (mT?.collapseFilters || 'Ocultar') : (mT?.expandFilters || 'Mostrar')}
+          </span>
+          <i data-lucide="${filterPanelExpanded ? 'chevron-up' : 'chevron-down'}" class="w-4 h-4 text-gray-400 group-hover:text-eu-blue transition-colors"></i>
+        </button>
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="text-xs text-gray-500">${resultsCountTpl}</span>
+          ${totalActive > 0 ? `<button id="mp-clear-all" type="button" class="min-h-9 px-2 text-xs font-semibold text-gray-500 hover:text-red-600 transition-colors cursor-pointer bg-transparent border-none">${mT?.clearAllFilters || 'Limpiar todo'}</button>` : ''}
         </div>
-        ${totalActive > 0 ? `<button id="mp-clear-all" class="text-xs font-semibold text-gray-500 hover:text-red-600 transition-colors cursor-pointer bg-transparent border-none">${mT?.clearAllFilters || 'Limpiar todo'}</button>` : ''}
       </div>
 
       <!-- Chip rows -->
-      <div class="px-4 sm:px-5 py-4 flex flex-col gap-3">
+      ${filterPanelExpanded ? `<div class="px-4 sm:px-5 py-4 flex flex-col gap-3 bg-white">
         ${cv.type             !== false ? renderChipRow(mp.typeLabels,             filters.types,       'type',       mT?.filterContributionType || 'Tipo')       : ''}
         ${cv.status           !== false ? renderChipRow(mp.statusLabels,           filters.statuses,    'status',     mT?.filterStatus           || 'Estado')     : ''}
         ${cv.route            !== false ? renderChipRow(mp.routeLabels,            filters.routes,      'route',      mT?.filterRoute            || 'Ruta')       : ''}
@@ -759,32 +776,32 @@ function renderList(all, mT) {
 
         <!-- Search expander -->
         ${sb.visible !== false ? `
-        <div class="border-t border-eu-border pt-3 mt-1">
-          <button id="mp-search-toggle" class="flex items-center gap-2 w-full px-3 py-2 rounded-lg bg-eu-bg border border-eu-border text-sm font-semibold text-gray-600 hover:border-eu-blue transition-colors cursor-pointer text-left">
-            <i data-lucide="search" class="w-4 h-4 shrink-0 text-gray-400"></i>
+        <div class="border-t border-eu-border pt-2 mt-1">
+          <button id="mp-search-toggle" type="button" aria-expanded="${searchExpanded ? 'true' : 'false'}" class="min-h-10 flex items-center gap-2 w-full px-3 py-2 rounded-md bg-eu-bg border border-eu-border text-xs font-semibold text-gray-600 hover:border-eu-blue transition-colors cursor-pointer text-left">
+            <i data-lucide="search" class="w-3.5 h-3.5 shrink-0 text-gray-400"></i>
             <span>${mT?.advancedSearch || 'Búsqueda por texto'}</span>
             ${getMpSearch() ? `<span class="text-xs font-bold text-eu-orange ml-1">${mT?.searchActive || '· activa'}</span>` : ''}
-            <i data-lucide="${searchExpanded ? 'chevron-up' : 'chevron-down'}" class="ml-auto w-4 h-4 shrink-0 text-gray-400"></i>
+            <i data-lucide="${searchExpanded ? 'chevron-up' : 'chevron-down'}" class="ml-auto w-3.5 h-3.5 shrink-0 text-gray-400"></i>
           </button>
           ${searchExpanded ? `
           <div class="mt-2 relative">
-            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
+            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none"></i>
             <input id="mp-search" type="text" value="${getMpSearch().replace(/"/g, '&quot;')}"
-              class="w-full border border-eu-border rounded-md pl-9 pr-9 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"
+              class="w-full border border-eu-border rounded-md pl-8 pr-8 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"
               placeholder="${mT?.searchPlaceholder || ''}" autofocus>
             <button id="mp-search-clear" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 bg-transparent border-none cursor-pointer ${getMpSearch() ? '' : 'hidden'}" title="${mT?.clearSearch || 'Borrar búsqueda'}">
               <i data-lucide="x" class="w-4 h-4"></i>
             </button>
           </div>` : ''}
         </div>` : ''}
-      </div>
+      </div>` : ''}
     </div>
 
     <!-- Active filters panel -->
     <div id="mp-active-filters">${renderMpActiveFilters(filters, search, mT)}</div>
 
     <!-- Results count -->
-    <p id="mp-results-count" class="text-sm text-gray-500 mb-4">${resultsCountTpl}</p>
+    <p id="mp-results-count" class="text-sm text-gray-500 mb-4 ${filterPanelExpanded ? '' : 'sr-only'}">${resultsCountTpl}</p>
 
     <!-- Grid / empty state -->
     ${filtered.length === 0
@@ -849,6 +866,11 @@ export function mount() {
   });
   document.getElementById('mp-submit-form')?.addEventListener('submit', e => e.preventDefault());
 
+  document.getElementById('mp-filter-panel-toggle')?.addEventListener('click', () => {
+    setMpFilterPanelExpanded(!getMpFilterPanelExpanded());
+    rerender();
+  });
+
   // Filter chips (panel + card badges share the same handler via DIM_MAP_GRID)
   document.querySelectorAll('[data-mp-chip]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -876,6 +898,10 @@ export function mount() {
 
   // Clear all
   document.getElementById('mp-clear-all')?.addEventListener('click', () => {
+    clearMpFilters();
+    rerender();
+  });
+  document.getElementById('mp-clear-active-filters')?.addEventListener('click', () => {
     clearMpFilters();
     rerender();
   });
