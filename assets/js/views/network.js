@@ -156,6 +156,7 @@ function tabSocios(activeCategory, filterCountry) {
     `).join('')}
   `;
 
+  const LOGO_BASE = 'assets/images/partners/';
   const cardsHtml = filtered.map(p => {
     const meta = CATEGORY_META[p.category];
     const sectorsHtml = p.sectors.map(s => `<span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${localized(s)}</span>`).join('');
@@ -164,21 +165,32 @@ function tabSocios(activeCategory, filterCountry) {
     const consortiumLabel = loc(pb.consortium) || 'CONSORCIO';
     const cardAttrs = p.url ? `href="${p.url}" target="_blank" rel="noopener noreferrer"` : '';
     const cardElement = p.url ? 'a' : 'div';
+    const logoHtml = p.logo
+      ? `<img src="${LOGO_BASE}${p.logo}" alt="${p.acronym}" class="max-h-12 max-w-full w-auto object-contain" loading="lazy" />`
+      : `<div class="network-category-tooltip w-10 h-10 rounded-lg ${meta.bg} flex items-center justify-center" data-tooltip="${categoryLabel}" aria-label="${categoryLabel}"><i data-lucide="${meta.icon}" class="w-5 h-5 ${meta.color}"></i></div>`;
     return `
-      <${cardElement} ${cardAttrs} class="block bg-white rounded-xl border border-eu-border shadow-sm p-4 hover:border-eu-blue hover:shadow-md transition-colors no-underline">
-        <div class="flex items-start justify-between mb-3">
-          <div class="network-category-tooltip w-9 h-9 rounded-lg ${meta.bg} flex items-center justify-center" data-tooltip="${categoryLabel}" aria-label="${categoryLabel}" tabindex="0">
-            <i data-lucide="${meta.icon}" class="w-4 h-4 ${meta.color}"></i>
+      <${cardElement} ${cardAttrs} class="block bg-white rounded-xl border border-eu-border shadow-sm hover:border-eu-blue hover:shadow-md transition-colors no-underline flex flex-col overflow-hidden cursor-pointer">
+        <!-- Logo area -->
+        <div class="flex items-center justify-center h-20 px-5 pt-5 pb-3">
+          ${logoHtml}
+        </div>
+        <!-- Meta row: category icon + flag + badge -->
+        <div class="flex items-center justify-between px-4 pb-3">
+          <div class="network-category-tooltip w-6 h-6 rounded ${meta.bg} flex items-center justify-center shrink-0" data-tooltip="${categoryLabel}" aria-label="${categoryLabel}" tabindex="0">
+            <i data-lucide="${meta.icon}" class="w-3.5 h-3.5 ${meta.color}"></i>
           </div>
           <div class="flex items-center gap-1.5">
             <img src="https://flagcdn.com/20x15/${p.country.toLowerCase()}.png" alt="${p.country}" class="rounded-sm" />
             <span class="text-xs bg-eu-blue/10 text-eu-blue font-bold px-1.5 py-0.5 rounded">${consortiumLabel}</span>
           </div>
         </div>
-        <p class="font-bold text-eu-text text-sm leading-snug mb-0.5">${localized(p.name)}</p>
-        <p class="text-xs font-mono text-gray-500 mb-2">${p.acronym} · ${localized(p.city)}</p>
-        <p class="text-xs text-eu-teal font-semibold mb-2">${roleLabel}</p>
-        <div class="flex flex-wrap gap-1">${sectorsHtml}</div>
+        <!-- Name + acronym -->
+        <div class="px-4 pb-2 flex-1">
+          <p class="font-bold text-eu-text text-sm leading-snug mb-0.5">${localized(p.name)}</p>
+          <p class="text-xs text-gray-500 mb-1.5">${p.acronym} · ${localized(p.city)}</p>
+          <p class="text-xs text-eu-teal font-semibold mb-2">${roleLabel}</p>
+          <div class="flex flex-wrap gap-1">${sectorsHtml}</div>
+        </div>
       </${cardElement}>
     `;
   }).join('');

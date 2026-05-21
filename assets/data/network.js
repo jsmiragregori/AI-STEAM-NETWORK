@@ -342,7 +342,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "coordinator",
-        "url": "https://www.uv.es/"
+        "url": "https://www.uv.es/",
+        "logo": "uveg.png"
       },
       {
         "id": "umu",
@@ -377,7 +378,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.um.es/"
+        "url": "https://www.um.es/",
+        "logo": "umu.png"
       },
       {
         "id": "upv",
@@ -412,7 +414,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.upv.es/"
+        "url": "https://www.upv.es/",
+        "logo": "upv.png"
       },
       {
         "id": "ntnu",
@@ -447,7 +450,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.ntnu.edu/"
+        "url": "https://www.ntnu.edu/",
+        "logo": "ntnu.png"
       },
       {
         "id": "hsw",
@@ -482,7 +486,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.hs-wismar.de/"
+        "url": "https://www.hs-wismar.de/",
+        "logo": "hsw.png"
       },
       {
         "id": "fidit",
@@ -517,7 +522,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.inf.uniri.hr/"
+        "url": "https://www.inf.uniri.hr/",
+        "logo": "fidit.png"
       },
       {
         "id": "uda",
@@ -552,7 +558,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.unich.it/"
+        "url": "https://www.unich.it/",
+        "logo": "uda.png"
       },
       {
         "id": "esad",
@@ -582,7 +589,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://esad-gv.fr/"
+        "url": "https://esad-gv.fr/",
+        "logo": "esad.png"
       },
       {
         "id": "inesc",
@@ -617,7 +625,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.inesctec.pt/"
+        "url": "https://www.inesctec.pt/",
+        "logo": "inesc.png"
       },
       {
         "id": "laurea",
@@ -652,7 +661,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.laurea.fi/en/"
+        "url": "https://www.laurea.fi/en/",
+        "logo": "laurea.png"
       },
       {
         "id": "ceice",
@@ -687,7 +697,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://ceice.gva.es/va/"
+        "url": "https://ceice.gva.es/va/",
+        "logo": "ceice.png"
       },
       {
         "id": "lpga",
@@ -722,7 +733,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.laspalmasgc.es/es/ayuntamiento/organismos-y-empresas/sociedad-de-promocion-de-las-palmas-de-gran-canaria/"
+        "url": "https://www.laspalmasgc.es/es/ayuntamiento/organismos-y-empresas/sociedad-de-promocion-de-las-palmas-de-gran-canaria/",
+        "logo": "lpga.png"
       },
       {
         "id": "varm",
@@ -757,7 +769,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.regionvarmland.se/"
+        "url": "https://www.regionvarmland.se/",
+        "logo": "varm.png"
       },
       {
         "id": "preda",
@@ -792,7 +805,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://razvojnaagencija.predaprijedor.com/"
+        "url": "https://razvojnaagencija.predaprijedor.com/",
+        "logo": "preda.png"
       },
       {
         "id": "cogn",
@@ -827,7 +841,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.xplainai.eu/"
+        "url": "https://www.xplainai.eu/",
+        "logo": "cogn.png"
       },
       {
         "id": "tuvit",
@@ -857,7 +872,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "certification",
-        "url": "https://tuv-thuringen.it/"
+        "url": "https://tuv-thuringen.it/",
+        "logo": "tuvit.png"
       },
       {
         "id": "joist",
@@ -892,7 +908,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://joistpark.eu/"
+        "url": "https://joistpark.eu/",
+        "logo": "joist.png"
       },
       {
         "id": "clink",
@@ -922,7 +939,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://culturalink.net/"
+        "url": "https://culturalink.net/",
+        "logo": "clink.png"
       },
       {
         "id": "cink",
@@ -957,7 +975,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://cinkventuring.es/"
+        "url": "https://cinkventuring.es/",
+        "logo": "cink.png"
       },
       {
         "id": "lc",
@@ -992,7 +1011,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://lisboncouncil.net/"
+        "url": "https://lisboncouncil.net/",
+        "logo": "lc.png"
       },
       {
         "id": "kea",
@@ -1022,7 +1042,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://keanet.eu/"
+        "url": "https://keanet.eu/",
+        "logo": "kea.png"
       },
       {
         "id": "ife",
@@ -1052,7 +1073,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.inspiringfutures.eu/"
+        "url": "https://www.inspiringfutures.eu/",
+        "logo": "ife.png"
       },
       {
         "id": "rce",
@@ -1082,7 +1104,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "associated",
-        "url": "https://www.relais-culture-europe.eu/"
+        "url": "https://www.relais-culture-europe.eu/",
+        "logo": ""
       }
     ]
   },
