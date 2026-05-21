@@ -50,6 +50,18 @@ function hasMpFilters(filters, search) {
   return Object.values(filters).some(v => Array.isArray(v) && v.length > 0) || !!search;
 }
 
+// Maps data-mp-chip dimension name → filter array key
+const DIM_MAP_GRID = {
+  type:       'types',
+  status:     'statuses',
+  route:      'routes',
+  helix:      'helices',
+  transition: 'transitions',
+  track:      'tracks',
+  evidence:   'evidences',
+  sector:     'sectors',
+};
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
@@ -234,6 +246,55 @@ function renderMpActiveFilters(filters, search, mT) {
     <span class="text-[11px] font-bold text-gray-600 uppercase tracking-wide shrink-0">${mT.activeFilters || 'Filtros activos'}:</span>
     ${badges.join('')}
     <button id="mp-clear-all" class="ml-auto px-2.5 py-1 rounded text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200 bg-transparent">${mT.clearAllFilters || 'Limpiar todo'}</button>
+  </div>`;
+}
+
+// ─── Card renderer ───────────────────────────────────────────────────────────
+
+function renderCardHtml(ch, mT) {
+  const tags    = getTags(ch);
+  const stStyle = STATUS_STYLES[ch.status]             || 'bg-gray-100 text-gray-600';
+  const rtStyle = ROUTE_STYLES[ch.route]               || 'bg-gray-100 text-gray-600';
+  const evStyle = EVIDENCE_STYLES[ch.evidenceMaturity] || 'bg-gray-100 text-gray-600';
+
+  // Filterable badge — same data attrs as the filter chip panel
+  const fb = (dim, val, cls, label) =>
+    `<button data-mp-chip="${dim}" data-mp-val="${val}"
+      class="${cls} cursor-pointer hover:opacity-80 transition-opacity border-none"
+      title="${mT?.filterBy || 'Filtrar por'} ${label}">${label}</button>`;
+
+  return `<div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col hover:border-eu-blue transition-colors">
+    <div class="p-4 sm:p-5 flex-1">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        ${fb('type',   ch.type,   'text-xs font-extrabold uppercase px-2 py-0.5 rounded bg-eu-blue/10 text-eu-blue', getTypeLabel(ch.type))}
+        ${fb('status', ch.status, `text-xs font-bold px-2 py-0.5 rounded ${stStyle}`, getStatusLabel(ch.status))}
+      </div>
+      <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug line-clamp-2">${pickLang(ch.title)}</h3>
+      <p class="text-xs text-gray-500 mb-1 font-semibold truncate">${ch.entity}</p>
+      <p class="text-xs text-gray-500 mb-3 line-clamp-1">${pickLang(ch.entityType)}</p>
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        ${fb('route',    ch.route,            `text-xs font-bold px-2 py-0.5 rounded ${rtStyle}`, getRouteLabel(ch.route))}
+        ${fb('evidence', ch.evidenceMaturity, `text-xs font-semibold px-2 py-0.5 rounded ${evStyle}`, getEvidenceMaturityLabel(ch.evidenceMaturity))}
+      </div>
+      <div class="flex flex-wrap gap-1.5 mb-3">
+        ${ch.cyclePhase ? `<span class="text-xs px-1.5 py-0.5 rounded ${CYCLE_PHASE_STYLES[ch.cyclePhase] || 'bg-gray-100 text-gray-500'}">${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
+        ${ch.helixRole ? fb('helix', ch.helixRole, `text-xs px-1.5 py-0.5 rounded ${HELIX_STYLES[ch.helixRole] || 'bg-gray-100 text-gray-500'}`, getHelixLabel(ch.helixRole)) : ''}
+        ${(ch.tripleTransition || []).slice(0, 2).map(tr => fb('transition', tr, `text-xs px-1.5 py-0.5 rounded ${TRANSITION_STYLES[tr] || 'bg-gray-100 text-gray-500'}`, getTransitionLabel(tr))).join('')}
+      </div>
+      <div class="flex flex-wrap gap-1.5 mb-3">
+        ${tags.slice(0, 2).map(tag => `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold"><i data-lucide="tag" class="w-2.5 h-2.5 shrink-0"></i>${tag}</span>`).join('')}
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-xs text-gray-500">
+        <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 shrink-0"></i><span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadline}</span></span>
+        <span class="flex items-center gap-1"><i data-lucide="users" class="w-3 h-3 shrink-0"></i>${ch.teams} ${ch.teams === 1 ? (mT?.teamSingular || 'equipo') : (mT?.teamPlural || 'equipos')}</span>
+      </div>
+    </div>
+    <div class="border-t border-eu-border p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-eu-bg">
+      ${fb('sector', ch.sector, 'text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded w-fit', getSectorLabel(ch.sector))}
+      <button class="mp-view-detail text-eu-blue font-bold text-xs bg-transparent border-none cursor-pointer hover:underline text-left sm:text-right" data-id="${ch.id}">
+        ${mT?.viewAndApply || 'Ver detalle'} →
+      </button>
+    </div>
   </div>`;
 }
 
@@ -718,45 +779,7 @@ function renderList(all, mT) {
           <p class="text-sm">${mT?.tryModifying || 'Prueba a modificar los filtros'}</p>
         </div>`
       : `<div id="mp-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        ${filtered.map(ch => {
-          const tags    = getTags(ch);
-          const stStyle = STATUS_STYLES[ch.status]             || 'bg-gray-100 text-gray-600';
-          const rtStyle = ROUTE_STYLES[ch.route]               || 'bg-gray-100 text-gray-600';
-          const evStyle = EVIDENCE_STYLES[ch.evidenceMaturity] || 'bg-gray-100 text-gray-600';
-          return `<div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col hover:border-eu-blue transition-colors">
-            <div class="p-4 sm:p-5 flex-1">
-              <div class="flex flex-wrap items-center gap-2 mb-3">
-                <span class="text-xs font-extrabold uppercase px-2 py-0.5 rounded bg-eu-blue/10 text-eu-blue">${getTypeLabel(ch.type)}</span>
-                <span class="text-xs font-bold px-2 py-0.5 rounded ${stStyle}">${getStatusLabel(ch.status)}</span>
-              </div>
-              <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug line-clamp-2">${pickLang(ch.title)}</h3>
-              <p class="text-xs text-gray-500 mb-1 font-semibold truncate">${ch.entity}</p>
-              <p class="text-xs text-gray-500 mb-3 line-clamp-1">${pickLang(ch.entityType)}</p>
-              <div class="flex flex-wrap items-center gap-2 mb-3">
-                <span class="text-xs font-bold px-2 py-0.5 rounded ${rtStyle}">${getRouteLabel(ch.route)}</span>
-                <span class="text-xs font-semibold px-2 py-0.5 rounded ${evStyle}">${getEvidenceMaturityLabel(ch.evidenceMaturity)}</span>
-              </div>
-              <div class="flex flex-wrap gap-1.5 mb-3">
-                ${ch.cyclePhase ? `<span class="text-xs px-1.5 py-0.5 rounded ${CYCLE_PHASE_STYLES[ch.cyclePhase] || 'bg-gray-100 text-gray-500'}">${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
-                ${ch.helixRole ? `<span class="text-xs px-1.5 py-0.5 rounded ${HELIX_STYLES[ch.helixRole] || 'bg-gray-100 text-gray-500'}">${getHelixLabel(ch.helixRole)}</span>` : ''}
-                ${(ch.tripleTransition || []).slice(0, 2).map(tr => `<span class="text-xs px-1.5 py-0.5 rounded ${TRANSITION_STYLES[tr] || 'bg-gray-100 text-gray-500'}">${getTransitionLabel(tr)}</span>`).join('')}
-              </div>
-              <div class="flex flex-wrap gap-1.5 mb-3">
-                ${tags.slice(0, 2).map(tag => `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold"><i data-lucide="tag" class="w-2.5 h-2.5 shrink-0"></i>${tag}</span>`).join('')}
-              </div>
-              <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-xs text-gray-500">
-                <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 shrink-0"></i><span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadline}</span></span>
-                <span class="flex items-center gap-1"><i data-lucide="users" class="w-3 h-3 shrink-0"></i>${ch.teams} ${ch.teams === 1 ? (mT?.teamSingular || 'equipo') : (mT?.teamPlural || 'equipos')}</span>
-              </div>
-            </div>
-            <div class="border-t border-eu-border p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-eu-bg">
-              <span class="text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded w-fit">${getSectorLabel(ch.sector)}</span>
-              <button class="mp-view-detail text-eu-blue font-bold text-xs bg-transparent border-none cursor-pointer hover:underline text-left sm:text-right" data-id="${ch.id}">
-                ${mT?.viewAndApply || 'Ver detalle'} →
-              </button>
-            </div>
-          </div>`;
-        }).join('')}
+          ${filtered.map(ch => renderCardHtml(ch, mT)).join('')}
         </div>`
     }
   </div>
@@ -812,20 +835,10 @@ export function mount() {
   });
   document.getElementById('mp-submit-form')?.addEventListener('submit', e => e.preventDefault());
 
-  // Filter chips
-  const DIM_MAP = {
-    type:       'types',
-    status:     'statuses',
-    route:      'routes',
-    helix:      'helices',
-    transition: 'transitions',
-    track:      'tracks',
-    evidence:   'evidences',
-    sector:     'sectors',
-  };
+  // Filter chips (panel + card badges share the same handler via DIM_MAP_GRID)
   document.querySelectorAll('[data-mp-chip]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const dim = DIM_MAP[btn.dataset.mpChip];
+      const dim = DIM_MAP_GRID[btn.dataset.mpChip];
       if (!dim) return;
       const f = getMpFilters();
       f[dim] = toggleMpFilter(f[dim], btn.dataset.mpVal);
@@ -938,51 +951,12 @@ function updateMpGrid() {
   if (filtered.length === 0) {
     gridEl.outerHTML = `<div id="mp-grid" class="text-center py-16 text-gray-500"><p class="text-lg font-semibold mb-2">${mT?.noResults || 'Sin resultados'}</p><p class="text-sm">${mT?.tryModifying || 'Prueba a modificar los filtros'}</p></div>`;
   } else {
-    const cardsHtml = filtered.map(ch => {
-      const tags    = getTags(ch);
-      const stStyle = STATUS_STYLES[ch.status]          || 'bg-gray-100 text-gray-600';
-      const rtStyle = ROUTE_STYLES[ch.route]            || 'bg-gray-100 text-gray-600';
-      const evStyle = EVIDENCE_STYLES[ch.evidenceMaturity] || 'bg-gray-100 text-gray-600';
-      return `<div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col hover:border-eu-blue transition-colors">
-        <div class="p-4 sm:p-5 flex-1">
-          <div class="flex flex-wrap items-center gap-2 mb-3">
-            <span class="text-xs font-extrabold uppercase px-2 py-0.5 rounded bg-eu-blue/10 text-eu-blue">${getTypeLabel(ch.type)}</span>
-            <span class="text-xs font-bold px-2 py-0.5 rounded ${stStyle}">${getStatusLabel(ch.status)}</span>
-          </div>
-          <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug line-clamp-2">${pickLang(ch.title)}</h3>
-          <p class="text-xs text-gray-500 mb-1 font-semibold truncate">${ch.entity}</p>
-          <p class="text-xs text-gray-500 mb-3 line-clamp-1">${pickLang(ch.entityType)}</p>
-          <div class="flex flex-wrap items-center gap-2 mb-3">
-            <span class="text-xs font-bold px-2 py-0.5 rounded ${rtStyle}">${getRouteLabel(ch.route)}</span>
-            <span class="text-xs font-semibold px-2 py-0.5 rounded ${evStyle}">${getEvidenceMaturityLabel(ch.evidenceMaturity)}</span>
-          </div>
-          <div class="flex flex-wrap gap-1.5 mb-3">
-            ${ch.cyclePhase ? `<span class="text-xs px-1.5 py-0.5 rounded ${CYCLE_PHASE_STYLES[ch.cyclePhase] || 'bg-gray-100 text-gray-500'}">${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
-            ${ch.helixRole ? `<span class="text-xs px-1.5 py-0.5 rounded ${HELIX_STYLES[ch.helixRole] || 'bg-gray-100 text-gray-500'}">${getHelixLabel(ch.helixRole)}</span>` : ''}
-            ${(ch.tripleTransition || []).slice(0, 2).map(tr => `<span class="text-xs px-1.5 py-0.5 rounded ${TRANSITION_STYLES[tr] || 'bg-gray-100 text-gray-500'}">${getTransitionLabel(tr)}</span>`).join('')}
-          </div>
-          <div class="flex flex-wrap gap-1.5 mb-3">
-            ${tags.slice(0, 2).map(tag => `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold"><i data-lucide="tag" class="w-2.5 h-2.5 shrink-0"></i>${tag}</span>`).join('')}
-          </div>
-          <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-xs text-gray-500">
-            <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 shrink-0"></i><span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadline}</span></span>
-            <span class="flex items-center gap-1"><i data-lucide="users" class="w-3 h-3 shrink-0"></i>${ch.teams} ${ch.teams === 1 ? (mT?.teamSingular || 'equipo') : (mT?.teamPlural || 'equipos')}</span>
-          </div>
-        </div>
-        <div class="border-t border-eu-border p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-eu-bg">
-          <span class="text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded w-fit">${getSectorLabel(ch.sector)}</span>
-          <button class="mp-view-detail text-eu-blue font-bold text-xs bg-transparent border-none cursor-pointer hover:underline text-left sm:text-right" data-id="${ch.id}">
-            ${mT?.viewAndApply || 'Ver detalle'} →
-          </button>
-        </div>
-      </div>`;
-    }).join('');
-    gridEl.outerHTML = `<div id="mp-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">${cardsHtml}</div>`;
+    gridEl.outerHTML = `<div id="mp-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">${filtered.map(ch => renderCardHtml(ch, mT)).join('')}</div>`;
   }
 
   if (window.lucide) window.lucide.createIcons();
 
-  // Re-attach "ver detalle" listeners after grid replacement
+  // Re-attach listeners on the replaced grid
   document.querySelectorAll('.mp-view-detail').forEach(btn => {
     btn.addEventListener('click', () => {
       const id = btn.dataset.id;
@@ -993,5 +967,32 @@ function updateMpGrid() {
       rerender();
       window.scrollTo({ top: 0, behavior: 'instant' });
     });
+  });
+  // Card chip badges → trigger full rerender so filter panel updates
+  document.querySelectorAll('#mp-grid [data-mp-chip]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dim = DIM_MAP_GRID[btn.dataset.mpChip];
+      if (!dim) return;
+      const f = getMpFilters();
+      f[dim] = toggleMpFilter(f[dim], btn.dataset.mpVal);
+      setMpFilters(f);
+      rerender();
+    });
+  });
+  // Remove badges in active filters panel (re-rendered above)
+  document.querySelectorAll('#mp-active-filters [data-mp-remove]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const dim = btn.dataset.mpRemove;
+      const val = btn.dataset.mpVal;
+      if (dim === 'search') { setMpSearch(''); rerender(); return; }
+      const f = getMpFilters();
+      if (Array.isArray(f[dim])) f[dim] = f[dim].filter(v => v !== val);
+      setMpFilters(f);
+      rerender();
+    });
+  });
+  document.getElementById('mp-clear-all')?.addEventListener('click', () => {
+    clearMpFilters();
+    rerender();
   });
 }
