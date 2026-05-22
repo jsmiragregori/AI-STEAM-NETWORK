@@ -1361,17 +1361,17 @@ export const MARKETPLACE_CONFIG = {
       "status": "open",
       "sector": "hou",
       "route": "fp",
-      "posted": "2026-03-10",
+      "posted": "2026-05-22",
       "postedLabel": {
-        "es": "Mar 2026",
-        "en": "Mar 2026",
-        "va": "Mar 2026"
+        "es": "May 2026",
+        "en": "May 2026",
+        "va": "Mai 2026"
       },
-      "deadline": "2026-06-30",
+      "deadline": "2026-05-22",
       "deadlineLabel": {
-        "es": "Jun 2026",
-        "en": "Jun 2026",
-        "va": "Jun 2026"
+        "es": "May 2026",
+        "en": "May 2026",
+        "va": "Mai 2026"
       },
       "teams": 1,
       "tags": {

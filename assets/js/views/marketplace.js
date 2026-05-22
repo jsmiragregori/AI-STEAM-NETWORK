@@ -182,6 +182,19 @@ const TRANSITION_STYLES = {
   social:  'bg-pink-50 text-pink-700',
 };
 
+const HERO_CHIP_STYLES = {
+  cycle:      'bg-white text-eu-purple border border-white/80',
+  helix:      'bg-white text-eu-blue border border-white/80',
+  digital:    'bg-white text-blue-800 border border-white/80',
+  green:      'bg-white text-green-800 border border-white/80',
+  social:     'bg-white text-pink-800 border border-white/80',
+  track:      'bg-white text-gray-800 border border-white/80',
+  tag:        'bg-white text-eu-blue border border-white/80',
+  meta:       'bg-white/15 text-white border border-white/30',
+};
+
+const HERO_CHIP_BASE = 'inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm';
+
 function getFilteredContributions(all, filters, search) {
   return all.filter(ch => {
     if (filters.types.length       && !filters.types.includes(ch.type))                               return false;
@@ -291,10 +304,17 @@ function renderMpEmptyState(allCount, mT) {
 }
 
 function renderCardHtml(ch, mT) {
+  const lang = getLang();
   const tags    = getTags(ch);
   const stStyle = STATUS_STYLES[ch.status]             || 'bg-gray-100 text-gray-600';
   const rtStyle = ROUTE_STYLES[ch.route]               || 'bg-gray-100 text-gray-600';
   const evStyle = EVIDENCE_STYLES[ch.evidenceMaturity] || 'bg-gray-100 text-gray-600';
+  const hasText = (v) => v !== null && v !== undefined && String(v).trim() !== '';
+  const localizedText = (v) => {
+    if (!v) return '';
+    if (typeof v === 'object') return pickLang(v) || '';
+    return String(v);
+  };
 
   const ccv = MARKETPLACE_CONFIG.cardChipVisibility || {};
   const showType     = ccv.type             !== false;
@@ -325,6 +345,33 @@ function renderCardHtml(ch, mT) {
     getTransitionLabel(id).replace(/^Transici[oóò]n?\s+/i, '').replace(/^Transition\s+/i, '');
 
   const transitions = ch.tripleTransition || [];
+  const postedFallback = lang === 'en' ? 'Opening' : (lang === 'va' ? 'Obertura' : 'Apertura');
+  const entityTypeText = localizedText(ch.entityType);
+  const postedText = localizedText(ch.postedLabel) || (hasText(ch.posted) ? ch.posted : '');
+  const deadlineText = localizedText(ch.deadlineLabel) || (hasText(ch.deadline) ? ch.deadline : '');
+  const publishedAtText = localizedText(ch.publishedAtLabel);
+  const revisionDateText = localizedText(ch.revisionDateLabel);
+  const teamsCount = Number(ch.teams);
+  const infoItems = [
+    postedText
+      ? `<span class="flex items-center gap-1.5 min-w-0">
+          <i data-lucide="calendar" class="w-3 h-3 shrink-0 text-gray-400"></i>
+          <span class="truncate">${mT?.postedLabel || postedFallback}: ${postedText}</span>
+        </span>`
+      : '',
+    deadlineText
+      ? `<span class="flex items-center gap-1.5 min-w-0">
+          <i data-lucide="clock" class="w-3 h-3 shrink-0 text-gray-400"></i>
+          <span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${deadlineText}</span>
+        </span>`
+      : '',
+    Number.isFinite(teamsCount) && teamsCount > 0
+      ? `<span class="flex items-center gap-1.5 shrink-0">
+          <i data-lucide="users" class="w-3 h-3 shrink-0 text-gray-400"></i>
+          ${teamsCount} ${teamsCount === 1 ? (mT?.teamSingular || 'equipo') : (mT?.teamPlural || 'equipos')}
+        </span>`
+      : ''
+  ].filter(Boolean).join('');
 
   return `<div class="bg-white rounded-2xl border border-eu-border shadow-sm flex flex-col hover:shadow-md transition-shadow duration-200 cursor-pointer">
 
@@ -338,13 +385,13 @@ function renderCardHtml(ch, mT) {
       </div>` : ''}
 
       <!-- Title + entity -->
-      <div>
+      ${(hasText(ch.entity) || entityTypeText) ? `<div>
         <h3 class="font-bold text-eu-text text-sm leading-snug line-clamp-2 mb-1">${pickLang(ch.title)}</h3>
         <p class="text-xs text-gray-500 truncate">
-          <span class="font-semibold">${ch.entity}</span>
-          <span class="text-gray-400"> · ${pickLang(ch.entityType)}</span>
+          ${hasText(ch.entity) ? `<span class="font-semibold">${ch.entity}</span>` : ''}
+          ${entityTypeText ? `<span class="text-gray-400">${hasText(ch.entity) ? ' · ' : ''}${entityTypeText}</span>` : ''}
         </p>
-      </div>
+      </div>` : `<h3 class="font-bold text-eu-text text-sm leading-snug line-clamp-2">${pickLang(ch.title)}</h3>`}
 
       <!-- Primary chips: route (icon-prefixed) + evidence -->
       ${(showRoute || showEvidence) ? `<div class="flex flex-wrap gap-1.5">
@@ -383,16 +430,7 @@ function renderCardHtml(ch, mT) {
       </div>` : ''}
 
       <!-- Deadline + teams -->
-      <div class="flex items-center gap-3 text-xs text-gray-500">
-        <span class="flex items-center gap-1.5">
-          <i data-lucide="clock" class="w-3 h-3 shrink-0 text-gray-400"></i>
-          <span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadlineLabel ? pickLang(ch.deadlineLabel) : ch.deadline}</span>
-        </span>
-        <span class="flex items-center gap-1.5 shrink-0">
-          <i data-lucide="users" class="w-3 h-3 shrink-0 text-gray-400"></i>
-          ${ch.teams} ${ch.teams === 1 ? (mT?.teamSingular || 'equipo') : (mT?.teamPlural || 'equipos')}
-        </span>
-      </div>
+      ${infoItems ? `<div class="flex items-center gap-3 text-xs text-gray-500">${infoItems}</div>` : ''}
     </div>
 
     <!-- ── FOOTER ── -->
@@ -407,18 +445,18 @@ function renderCardHtml(ch, mT) {
       </div>` : ''}
 
       <!-- Date + CTA row -->
-      <div class="bg-eu-bg px-5 pt-3 pb-4 flex items-center justify-between gap-3">
-        <span class="flex items-center gap-1.5 text-xs text-gray-400">
-          ${ch.publishedAtLabel
-            ? `<i data-lucide="calendar" class="w-3 h-3 shrink-0"></i>
-               <span>${pickLang(ch.publishedAtLabel)}</span>
-               ${ch.revisionDateLabel
-                 ? `<span class="text-gray-300 mx-0.5">·</span>
-                    <i data-lucide="pencil" class="w-3 h-3 shrink-0"></i>
-                    <span>${pickLang(ch.revisionDateLabel)}</span>`
-                 : ''}`
-            : ''}
-        </span>
+      <div class="bg-eu-bg px-5 pt-3 pb-4 flex items-center ${publishedAtText ? 'justify-between' : 'justify-end'} gap-3">
+        ${publishedAtText
+          ? `<span class="flex items-center gap-1.5 text-xs text-gray-400">
+              <i data-lucide="calendar" class="w-3 h-3 shrink-0"></i>
+              <span>${publishedAtText}</span>
+              ${revisionDateText
+                ? `<span class="text-gray-300 mx-0.5">·</span>
+                   <i data-lucide="pencil" class="w-3 h-3 shrink-0"></i>
+                   <span>${revisionDateText}</span>`
+                : ''}
+            </span>`
+          : ''}
         <button class="mp-view-detail shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-eu-blue text-white text-xs font-bold hover:bg-eu-blue/90 transition-colors cursor-pointer border-none" data-id="${ch.id}">
           ${mT?.viewAndApply || 'Ver detalle'}
           <i data-lucide="arrow-right" class="w-3 h-3"></i>
@@ -434,6 +472,12 @@ function renderDetail(ch, mT) {
   const lang = getLang();
   const cdT = t('challengeDetail') || {};
   const extra = ch.detail?.[lang] || ch.detail?.en || ch.detail?.es || null;
+  const hasText = (v) => v !== null && v !== undefined && String(v).trim() !== '';
+  const localizedText = (v) => {
+    if (!v) return '';
+    if (typeof v === 'object') return pickLang(v) || '';
+    return String(v);
+  };
 
   const statusId = ch.status;
   const stBg   = STATUS_BG[statusId]   || 'bg-gray-100';
@@ -458,14 +502,18 @@ function renderDetail(ch, mT) {
   const placeholders = cdT.participationPlaceholders || {};
 
   const tags = getTags(ch);
+  const entityTypeText = localizedText(ch.entityType);
+  const deadlineText = localizedText(ch.deadlineLabel) || (hasText(ch.deadline) ? ch.deadline : '');
+  const postedText = localizedText(ch.postedLabel) || (hasText(ch.posted) ? ch.posted : '');
+  const teamsCount = Number(ch.teams);
 
-  // New LbD badge row
+  // Hero chips use high-contrast pairs because the hero sits on a dark blue surface.
   const ldBadges = `
     <div class="flex flex-wrap gap-2 mt-3">
-      ${CYCLE_PHASE_STYLES[ch.cyclePhase] ? `<span class="text-xs font-bold px-2 py-0.5 rounded ${CYCLE_PHASE_STYLES[ch.cyclePhase]}">${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
-      ${HELIX_STYLES[ch.helixRole] ? `<span class="text-xs font-bold px-2 py-0.5 rounded ${HELIX_STYLES[ch.helixRole]}">${getHelixLabel(ch.helixRole)}</span>` : ''}
-      ${(ch.tripleTransition || []).map(t => `<span class="text-xs font-semibold px-2 py-0.5 rounded ${TRANSITION_STYLES[t] || 'bg-gray-100 text-gray-600'}">${getTransitionLabel(t)}</span>`).join('')}
-      ${getTracks(ch).map(track => `<span class="text-xs font-semibold px-2 py-0.5 rounded bg-gray-100 text-gray-600">${getTrackLabel(track)}</span>`).join('')}
+      ${ch.cyclePhase ? `<span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES.cycle}"><i data-lucide="workflow" class="w-3 h-3"></i>${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
+      ${ch.helixRole ? `<span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES.helix}"><i data-lucide="network" class="w-3 h-3"></i>${getHelixLabel(ch.helixRole)}</span>` : ''}
+      ${(ch.tripleTransition || []).map(t => `<span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES[t] || HERO_CHIP_STYLES.track}"><i data-lucide="sparkles" class="w-3 h-3"></i>${getTransitionLabel(t)}</span>`).join('')}
+      ${getTracks(ch).map(track => `<span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES.track}"><i data-lucide="git-branch" class="w-3 h-3"></i>${getTrackLabel(track)}</span>`).join('')}
     </div>`;
 
   return `
@@ -490,44 +538,47 @@ function renderDetail(ch, mT) {
   <div class="bg-eu-blue text-white px-6 py-10">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
       <div class="lg:col-span-2">
-        <div class="flex items-center gap-2 mb-3">
-          <span class="text-xs font-bold uppercase tracking-widest text-eu-yellow">${ch.sector}</span>
-          <i data-lucide="chevron-right" class="w-3 h-3 text-white/40"></i>
-          <span class="text-xs text-white/60">${pickLang(ch.entityType)}</span>
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES.meta} uppercase tracking-wide">${getSectorLabel(ch.sector)}</span>
+          ${entityTypeText ? `<i data-lucide="chevron-right" class="w-3 h-3 text-white/40"></i>
+          <span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES.meta}">${entityTypeText}</span>` : ''}
         </div>
         <h1 class="text-3xl font-extrabold mb-3 leading-tight">${pickLang(ch.title)}</h1>
-        <div class="flex items-center gap-3 mb-5">
+        ${hasText(ch.entity) ? `<div class="flex items-center gap-3 mb-5">
           <i data-lucide="building-2" class="w-4 h-4 text-white/60 shrink-0"></i>
           <span class="text-white/80 font-semibold">${ch.entity}</span>
-        </div>
+        </div>` : ''}
         <div class="flex flex-wrap gap-2">
-          ${tags.map(tag => `<span class="flex items-center gap-1 bg-white/10 text-white/80 text-xs font-semibold px-2.5 py-1 rounded-full"><i data-lucide="tag" class="w-3 h-3"></i>${tag}</span>`).join('')}
+          ${tags.map(tag => `<span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES.tag}"><i data-lucide="tag" class="w-3 h-3"></i>${tag}</span>`).join('')}
         </div>
         ${ldBadges}
       </div>
       <!-- Key info card -->
       <div class="bg-white/10 rounded-xl p-5 flex flex-col gap-3">
+        ${deadlineText ? `
         <div class="flex items-center gap-3">
           <i data-lucide="calendar" class="w-4 h-4 text-eu-yellow shrink-0"></i>
           <div>
             <p class="text-xs text-white/50 uppercase font-bold">${cdT.deadline || 'Plazo'}</p>
-            <p class="font-bold text-white">${ch.deadlineLabel ? pickLang(ch.deadlineLabel) : ch.deadline}</p>
+            <p class="font-bold text-white">${deadlineText}</p>
           </div>
-        </div>
+        </div>` : ''}
+        ${postedText ? `
         <div class="flex items-center gap-3">
           <i data-lucide="clock" class="w-4 h-4 text-eu-yellow shrink-0"></i>
           <div>
             <p class="text-xs text-white/50 uppercase font-bold">${cdT.posted || 'Publicado'}</p>
-            <p class="font-bold text-white">${ch.postedLabel ? pickLang(ch.postedLabel) : ch.posted}</p>
+            <p class="font-bold text-white">${postedText}</p>
           </div>
-        </div>
+        </div>` : ''}
+        ${Number.isFinite(teamsCount) && teamsCount > 0 ? `
         <div class="flex items-center gap-3">
           <i data-lucide="users" class="w-4 h-4 text-eu-yellow shrink-0"></i>
           <div>
             <p class="text-xs text-white/50 uppercase font-bold">${cdT.teamsEnrolled || 'Participaciones activas'}</p>
-            <p class="font-bold text-white">${ch.teams} ${ch.teams === 1 ? (cdT.participationSingular || 'participación') : (cdT.participationPlural || 'participaciones')}</p>
+            <p class="font-bold text-white">${teamsCount} ${teamsCount === 1 ? (cdT.participationSingular || 'participación') : (cdT.participationPlural || 'participaciones')}</p>
           </div>
-        </div>
+        </div>` : ''}
         ${extra?.teamSize ? `
         <div class="flex items-center gap-3">
           <i data-lucide="users" class="w-4 h-4 text-eu-yellow shrink-0"></i>
@@ -754,7 +805,7 @@ function renderDetail(ch, mT) {
       ${ch.status === 'open' ? `
       <div class="bg-eu-blue rounded-xl p-6 text-white text-center">
         <p class="font-bold mb-1">${cdT.interestCTA || '¿Quieres participar en este reto?'}</p>
-        <p class="text-xs text-white/70 mb-4">${cdT.requestBeforeDeadline || 'Abierto hasta el'} ${ch.deadlineLabel ? pickLang(ch.deadlineLabel) : ch.deadline}.</p>
+        ${deadlineText ? `<p class="text-xs text-white/70 mb-4">${cdT.requestBeforeDeadline || 'Abierto hasta el'} ${deadlineText}.</p>` : ''}
         <button id="mp-open-form-bottom" class="w-full bg-eu-orange text-white font-bold py-2.5 rounded-lg hover:bg-eu-purple transition-colors border-none cursor-pointer text-sm">${participationButton}</button>
         <p class="text-xs text-white/60 mt-3">${cdT.requestReviewNote || ''}</p>
       </div>` : ''}

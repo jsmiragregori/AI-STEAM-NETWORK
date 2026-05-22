@@ -1,6 +1,6 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR DIRECTAMENTE
 // Edita los archivos en content/_ui/*.csv y ejecuta: npm run cms:ui
-// Base: translations.js existente + overrides de 60 entradas CSV
+// Base: translations.js existente + overrides de 61 entradas CSV
 
 export const translations = {
   "es": {
@@ -1763,7 +1763,8 @@ export const translations = {
       "emptyContributionsTitle": "No hay retos publicados",
       "emptyContributionsMessage": "Todavía no hay contribuciones visibles en este espacio.",
       "noFilterResultsTitle": "No se han encontrado retos",
-      "noFilterResultsMessage": "Prueba a modificar los filtros o borrar la búsqueda."
+      "noFilterResultsMessage": "Prueba a modificar los filtros o borrar la búsqueda.",
+      "postedLabel": "Apertura"
     },
     "challengeDetail": {
       "consortiumLabel": "23 miembros del consorcio",
@@ -3632,7 +3633,8 @@ export const translations = {
       "emptyContributionsTitle": "No contributions published",
       "emptyContributionsMessage": "There are no visible contributions in this space yet.",
       "noFilterResultsTitle": "No contributions found",
-      "noFilterResultsMessage": "Try changing the filters or clearing the search."
+      "noFilterResultsMessage": "Try changing the filters or clearing the search.",
+      "postedLabel": "Opening"
     },
     "challengeDetail": {
       "consortiumLabel": "23 members of the consortium",
@@ -5498,7 +5500,8 @@ export const translations = {
       "emptyContributionsTitle": "No hi ha reptes publicats",
       "emptyContributionsMessage": "Encara no hi ha contribucions visibles en aquest espai.",
       "noFilterResultsTitle": "No s'han trobat reptes",
-      "noFilterResultsMessage": "Prova a modificar els filtres o esborrar la cerca."
+      "noFilterResultsMessage": "Prova a modificar els filtres o esborrar la cerca.",
+      "postedLabel": "Obertura"
     },
     "challengeDetail": {
       "consortiumLabel": "23 membres del consorcio",
