@@ -63,7 +63,8 @@ export const MARKETPLACE_CONFIG = {
     "tripleTransition": true,
     "track": true,
     "evidenceMaturity": true,
-    "sector": true
+    "sector": true,
+    "level": true
   },
   "cardChipVisibility": {
     "type": true,
@@ -363,6 +364,35 @@ export const MARKETPLACE_CONFIG = {
         "es": "Completado",
         "en": "Completed",
         "va": "Completat"
+      }
+    }
+  ],
+  "levelLabels": [
+    {
+      "id": "FP",
+      "visible": true,
+      "label": {
+        "es": "FP",
+        "en": "VET",
+        "va": "FP"
+      }
+    },
+    {
+      "id": "Máster",
+      "visible": true,
+      "label": {
+        "es": "Máster",
+        "en": "Master",
+        "va": "Màster"
+      }
+    },
+    {
+      "id": "Docentes",
+      "visible": true,
+      "label": {
+        "es": "Docentes",
+        "en": "Teachers",
+        "va": "Docents"
       }
     }
   ],

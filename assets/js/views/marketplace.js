@@ -21,9 +21,10 @@ function getMpFilters() {
       helices:     Array.isArray(p.helices)     ? p.helices     : [],
       transitions: Array.isArray(p.transitions) ? p.transitions : [],
       tracks:      Array.isArray(p.tracks)      ? p.tracks      : [],
+      levels:      Array.isArray(p.levels)      ? p.levels      : [],
     };
   } catch {
-    return { types:[], routes:[], statuses:[], sectors:[], evidences:[], helices:[], transitions:[], tracks:[] };
+    return { types:[], routes:[], statuses:[], sectors:[], evidences:[], helices:[], transitions:[], tracks:[], levels:[] };
   }
 }
 function setMpFilters(f) { localStorage.setItem(MP_FILTER_KEY, JSON.stringify(f)); }
@@ -65,6 +66,7 @@ const DIM_MAP_GRID = {
   track:      'tracks',
   evidence:   'evidences',
   sector:     'sectors',
+  level:      'levels',
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -184,6 +186,7 @@ function getFilteredContributions(all, filters, search) {
     if (filters.helices.length     && !filters.helices.includes(ch.helixRole))                        return false;
     if (filters.transitions.length && !(ch.tripleTransition || []).some(tr => filters.transitions.includes(tr))) return false;
     if (filters.tracks.length      && !filters.tracks.includes(ch.track))                             return false;
+    if (filters.levels.length      && !(ch.level || []).some(l => filters.levels.includes(l)))        return false;
     if (search) {
       const q = search.toLowerCase();
       const lang = getLang();
@@ -246,6 +249,7 @@ function renderMpActiveFilters(filters, search, mT) {
   filters.helices.forEach(id     => badges.push(badge('helices',     id, getHelixLabel(id),             HELIX_STYLES[id]   || 'bg-gray-100 text-gray-600')));
   filters.transitions.forEach(id => badges.push(badge('transitions', id, getTransitionLabel(id),        TRANSITION_STYLES[id] || 'bg-gray-100 text-gray-600')));
   filters.tracks.forEach(id      => badges.push(badge('tracks',      id, getTrackLabel(id),             'bg-gray-100 text-gray-700')));
+  filters.levels.forEach(id      => badges.push(badge('levels',      id, getLevelLabel(id),              LEVEL_STYLES[id] || 'bg-gray-100 text-gray-600')));
   if (search) badges.push(badge('search', search, `"${search}"`, 'bg-amber-100 text-amber-800'));
 
   if (!badges.length) return '';
@@ -867,6 +871,7 @@ function renderList(all, mT) {
         ${cv.tripleTransition !== false ? renderChipRow(mp.transitionLabels,       filters.transitions, 'transition', mT?.filterTransition       || 'Transición') : ''}
         ${cv.track            !== false ? renderChipRow(mp.trackLabels,            filters.tracks,      'track',      mT?.filterTrack            || 'Track')      : ''}
         ${cv.evidenceMaturity !== false ? renderChipRow(mp.evidenceMaturityLabels, filters.evidences,   'evidence',   mT?.filterEvidenceMaturity || 'Madurez')    : ''}
+        ${cv.level              !== false ? renderChipRow(mp.levelLabels,            filters.levels,      'level',      mT?.filterLevel            || 'Nivel')      : ''}
         ${cv.sector           !== false ? renderSectorChipRow(filters.sectors, mT?.filterSector || 'Sector') : ''}
 
         <!-- Search expander -->
