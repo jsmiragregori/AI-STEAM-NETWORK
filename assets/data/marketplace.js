@@ -193,15 +193,6 @@ export const MARKETPLACE_CONFIG = {
         "en": "Master Bridge",
         "va": "Pont al Màster"
       }
-    },
-    {
-      "id": "mixed",
-      "visible": true,
-      "label": {
-        "es": "Mixta",
-        "en": "Mixed",
-        "va": "Mixta"
-      }
     }
   ],
   "helixLabels": [
@@ -444,6 +435,581 @@ export const MARKETPLACE_CONFIG = {
     }
   ],
   "contributions": [
+    {
+      "id": "r1",
+      "visible": true,
+      "type": "Challenge",
+      "title": {
+        "es": "Optimización energética de museos públicos con IA",
+        "en": "Energy Optimization in Public Museums with AI",
+        "va": "Optimització energètica de museus públics amb IA"
+      },
+      "entity": "Generalitat Valenciana (CEICE)",
+      "entityType": {
+        "es": "Administración Pública",
+        "en": "Public Administration",
+        "va": "Administració Pública"
+      },
+      "level": [
+        "FP",
+        "Docentes"
+      ],
+      "status": "open",
+      "sector": "hou",
+      "route": "fp",
+      "posted": "2026-03-10",
+      "postedLabel": {
+        "es": "Mar 2026",
+        "en": "Mar 2026",
+        "va": "Mar 2026"
+      },
+      "deadline": "2026-06-30",
+      "deadlineLabel": {
+        "es": "Jun 2026",
+        "en": "Jun 2026",
+        "va": "Jun 2026"
+      },
+      "teams": 0,
+      "tags": {
+        "es": [
+          "HVAC",
+          "ML Predictivo",
+          "IoT",
+          "Eficiencia Energética"
+        ],
+        "en": [
+          "HVAC",
+          "Predictive ML",
+          "IoT",
+          "Energy Efficiency"
+        ],
+        "va": [
+          "HVAC",
+          "ML Predictiu",
+          "IoT",
+          "Eficiència Energètica"
+        ]
+      },
+      "evidenceMaturity": "validated",
+      "cyclePhase": "input",
+      "helixRole": "public",
+      "tripleTransition": [
+        "digital",
+        "green"
+      ],
+      "track": "B",
+      "benefitTypes": [
+        "prototype",
+        "ects",
+        "success-story"
+      ],
+      "publishedAt": "2026-03-25",
+      "revisionDate": "2026-05-22",
+      "publishedAtLabel": {
+        "es": "Mar 2026",
+        "en": "Mar 2026",
+        "va": "Mar 2026"
+      },
+      "revisionDateLabel": {
+        "es": "May 2026",
+        "en": "May 2026",
+        "va": "Mai 2026"
+      },
+      "detail": {
+        "es": {
+          "fullDescription": "La Conselleria d'Educació i la Generalitat Valenciana gestionan una red de 38 museos públicos con consumos energéticos muy heterogéneos y escasamente monitorizados. El principal gasto energético recae en los sistemas HVAC (climatización), que en algunos edificios patrimoniales supone hasta el 65% de la factura eléctrica. El objetivo de este reto es desarrollar un modelo predictivo basado en IA que optimice automáticamente la programación de los sistemas HVAC en función de variables como la afluencia prevista, la temperatura exterior y las condiciones de conservación de las colecciones.",
+          "context": "Los edificios son en su mayoría inmuebles históricos con baja instrumentación. Se dispone de datos históricos de consumo (2019-2025) de 8 museos piloto, junto con datos meteorológicos y registros de visitantes.",
+          "objectives": [
+            "Reducir el consumo energético de HVAC en al menos un 25% respecto a la línea base 2024",
+            "Garantizar condiciones de conservación (T 18-22°C, HR 45-55%) en salas de colecciones permanentes",
+            "Diseñar un sistema de alertas automáticas ante desviaciones críticas",
+            "Generar un dashboard de monitorización accesible para el personal técnico"
+          ],
+          "eligibility": [
+            "Equipos de 2 a 4 estudiantes matriculados en FP de Grado Superior en el curso 2025-2026",
+            "Al menos un integrante del ciclo formativo de Informática, Electrónica o Mecatrónica",
+            "Centros educativos adheridos a la red AI-STEAM o vinculados a CEICE",
+            "Un tutor docente por equipo (responsable de la entrega final)"
+          ],
+          "teamSize": "2 – 4 estudiantes de FP + tutor docente",
+          "datasets": [
+            {
+              "label": "Histórico consumo HVAC (8 museos, 2019–2025)",
+              "format": "CSV",
+              "size": "4.2 GB"
+            },
+            {
+              "label": "Datos meteorológicos AEMET estación Valencia-Aeropuerto",
+              "format": "CSV",
+              "size": "120 MB"
+            },
+            {
+              "label": "Afluencia diaria visitantes 2019–2025",
+              "format": "XLSX",
+              "size": "18 MB"
+            },
+            {
+              "label": "Planos y especificaciones técnicas HVAC (8 edificios)",
+              "format": "PDF",
+              "size": "340 MB"
+            }
+          ],
+          "tools": [
+            "Python 3.11+",
+            "TensorFlow / PyTorch",
+            "Grafana (visualización)",
+            "Node-RED (IoT)",
+            "PostgreSQL TimescaleDB"
+          ],
+          "deliverables": [
+            {
+              "label": "Código fuente del modelo predictivo",
+              "format": "Repositorio GitHub"
+            },
+            {
+              "label": "Dashboard de monitorización funcional",
+              "format": "Demo desplegada + vídeo 3 min"
+            },
+            {
+              "label": "Memoria técnica del proyecto",
+              "format": "PDF ≤ 20 páginas"
+            },
+            {
+              "label": "Presentación ejecutiva para gestores del museo",
+              "format": "PPTX / PDF ≤ 10 diapositivas"
+            }
+          ],
+          "evalCriteria": [
+            {
+              "label": "Reducción de consumo demostrada",
+              "weight": 30,
+              "desc": "Evaluada sobre los datos de test; se requiere backtesting sobre 2024"
+            },
+            {
+              "label": "Viabilidad de implantación real",
+              "weight": 25,
+              "desc": "Coste estimado, compatibilidad con infraestructura existente y plan de despliegue"
+            },
+            {
+              "label": "Calidad técnica del código y documentación",
+              "weight": 20,
+              "desc": "Clean code, reproducibilidad, tests unitarios, README completo"
+            },
+            {
+              "label": "Usabilidad del dashboard",
+              "weight": 15,
+              "desc": "Evaluado por técnicos del museo sin formación en IA"
+            },
+            {
+              "label": "Presentación oral y defensa",
+              "weight": 10,
+              "desc": "Claridad, respuesta a preguntas del jurado"
+            }
+          ],
+          "milestones": [
+            {
+              "date": "2026-03-10",
+              "label": "Publicación del reto y acceso a datos",
+              "done": true
+            },
+            {
+              "date": "2026-03-31",
+              "label": "Cierre de inscripción de equipos",
+              "done": true
+            },
+            {
+              "date": "",
+              "label": "Kick-off: sesión de presentación con técnicos GVA",
+              "done": false
+            },
+            {
+              "date": "2026-05-15",
+              "label": "Checkpoint 1: entrega de prototipo inicial",
+              "done": false
+            },
+            {
+              "date": "2026-06-15",
+              "label": "Checkpoint 2: demo del dashboard",
+              "done": false
+            },
+            {
+              "date": "2026-06-30",
+              "label": "Entrega final",
+              "done": false
+            },
+            {
+              "date": "2026-07-15",
+              "label": "Presentaciones y resolución",
+              "done": false
+            }
+          ],
+          "mentors": [
+            {
+              "name": "Dra. Amparo Seguí",
+              "role": "Ingeniería de Sistemas de Control",
+              "org": "Universitat Politècnica de València"
+            },
+            {
+              "name": "Carlos Monzó",
+              "role": "Responsable de Infraestructuras",
+              "org": "GVA – Conselleria de Cultura"
+            }
+          ],
+          "recognition": [
+            "1.er equipo: estancia de prácticas remunerada en GVA (3 meses) + badge AI-Industry Badge",
+            "2.º equipo: reconocimiento oficial en expediente CEICE + badge AI-Industry Badge",
+            "Todos los participantes: certificado de participación AI-STEAM + micro-credencial Open Badge 3.0",
+            "Los mejores resultados se publicarán como recurso OER en Aules"
+          ],
+          "faq": [
+            {
+              "q": "¿Puedo participar si no tengo experiencia previa en IA?",
+              "a": "Sí. El reto está diseñado para nivel FP. Se proporcionan materiales introductorios en Aules y hay sesiones de mentoría quincenales."
+            },
+            {
+              "q": "¿Los datos están anonimizados?",
+              "a": "Los datos de consumo están agregados por edificio. No contienen datos personales de visitantes."
+            },
+            {
+              "q": "¿Puedo usar librerías de terceros?",
+              "a": "Sí, siempre que sean de código abierto y estén debidamente referenciadas en el repositorio."
+            },
+            {
+              "q": "¿Qué pasa si mi equipo se disuelve a mitad del reto?",
+              "a": "Contacta con el coordinador del reto. Es posible fusionar equipos o continuar con menos integrantes mínimo 2."
+            }
+          ]
+        },
+        "en": {
+          "fullDescription": "The Department of Education and Generalitat Valenciana manage a network of 38 public museums with highly heterogeneous and poorly monitored energy consumption. The main energy expenditure falls on HVAC systems (air conditioning), which in some heritage buildings accounts for up to 65% of the electricity bill. The goal of this challenge is to develop an AI-based predictive model that automatically optimizes HVAC system scheduling based on variables such as predicted attendance, outdoor temperature, and collection preservation conditions.",
+          "context": "Most buildings are historic properties with low instrumentation. Historical consumption data (2019-2025) from 8 pilot museums is available, along with meteorological data and visitor records.",
+          "objectives": [
+            "Reduce HVAC energy consumption by at least 25% compared to the 2024 baseline",
+            "Ensure preservation conditions (T 18-22°C, RH 45-55%) in permanent collection rooms",
+            "Design an automatic alerting system for critical deviations",
+            "Generate an accessible monitoring dashboard for technical staff"
+          ],
+          "eligibility": [
+            "Teams of 2 to 4 students enrolled in VET Higher Level during 2025-2026",
+            "At least one member from IT, Electronics, or Mechatronics vocational training",
+            "Educational centers affiliated with the AI-STEAM network or linked to CEICE",
+            "One instructor per team (responsible for final delivery)"
+          ],
+          "teamSize": "2 – 4 VET students + instructor",
+          "datasets": [
+            {
+              "label": "HVAC consumption history (8 museums, 2019–2025)",
+              "format": "CSV",
+              "size": "4.2 GB"
+            },
+            {
+              "label": "AEMET meteorological data Valencia-Airport station",
+              "format": "CSV",
+              "size": "120 MB"
+            },
+            {
+              "label": "Daily visitor attendance 2019–2025",
+              "format": "XLSX",
+              "size": "18 MB"
+            },
+            {
+              "label": "HVAC technical drawings and specifications (8 buildings)",
+              "format": "PDF",
+              "size": "340 MB"
+            }
+          ],
+          "tools": [
+            "Python 3.11+",
+            "TensorFlow / PyTorch",
+            "Grafana (visualization)",
+            "Node-RED (IoT)",
+            "PostgreSQL TimescaleDB"
+          ],
+          "deliverables": [
+            {
+              "label": "Predictive model source code",
+              "format": "GitHub Repository"
+            },
+            {
+              "label": "Functional monitoring dashboard",
+              "format": "Deployed demo + 3 min video"
+            },
+            {
+              "label": "Project technical report",
+              "format": "PDF ≤ 20 pages"
+            },
+            {
+              "label": "Executive presentation for museum managers",
+              "format": "PPTX / PDF ≤ 10 slides"
+            }
+          ],
+          "evalCriteria": [
+            {
+              "label": "Demonstrated energy reduction",
+              "weight": 30,
+              "desc": "Evaluated on test data; backtesting over 2024 required"
+            },
+            {
+              "label": "Real deployment feasibility",
+              "weight": 25,
+              "desc": "Estimated cost, compatibility with existing infrastructure, deployment plan"
+            },
+            {
+              "label": "Code quality and documentation",
+              "weight": 20,
+              "desc": "Clean code, reproducibility, unit tests, complete README"
+            },
+            {
+              "label": "Dashboard usability",
+              "weight": 15,
+              "desc": "Evaluated by museum technicians without AI training"
+            },
+            {
+              "label": "Oral presentation and defense",
+              "weight": 10,
+              "desc": "Clarity and response to jury questions"
+            }
+          ],
+          "milestones": [
+            {
+              "date": "2026-03-10",
+              "label": "Challenge publication and data access",
+              "done": true
+            },
+            {
+              "date": "2026-03-31",
+              "label": "Team registration closure",
+              "done": true
+            },
+            {
+              "date": "2026-04-15",
+              "label": "Kick-off: presentation session with GVA technicians",
+              "done": false
+            },
+            {
+              "date": "2026-05-15",
+              "label": "Checkpoint 1: initial prototype delivery",
+              "done": false
+            },
+            {
+              "date": "2026-06-15",
+              "label": "Checkpoint 2: dashboard demo",
+              "done": false
+            },
+            {
+              "date": "2026-06-30",
+              "label": "Final delivery",
+              "done": false
+            },
+            {
+              "date": "2026-07-15",
+              "label": "Presentations and resolution",
+              "done": false
+            }
+          ],
+          "mentors": [
+            {
+              "name": "Dr. Amparo Seguí",
+              "role": "Control Systems Engineering",
+              "org": "Universitat Politècnica de València"
+            },
+            {
+              "name": "Carlos Monzó",
+              "role": "Infrastructure Manager",
+              "org": "GVA – Ministry of Culture"
+            }
+          ],
+          "recognition": [
+            "1st team: paid internship at GVA (3 months) + AI-Industry Badge",
+            "2nd team: official recognition in CEICE file + AI-Industry Badge",
+            "All participants: AI-STEAM participation certificate + Open Badge 3.0 micro-credential",
+            "Best results will be published as OER resource on Aules"
+          ],
+          "faq": [
+            {
+              "q": "Can I participate if I have no prior AI experience?",
+              "a": "Yes. The challenge is designed for VET level. Introductory materials are provided on Aules and there are bi-weekly mentoring sessions."
+            },
+            {
+              "q": "Is the data anonymized?",
+              "a": "Consumption data is aggregated by building. It contains no personal visitor data."
+            },
+            {
+              "q": "Can I use third-party libraries?",
+              "a": "Yes, as long as they are open source and properly referenced in the repository."
+            },
+            {
+              "q": "What if my team dissolves mid-challenge?",
+              "a": "Contact the challenge coordinator. Team merging is possible or continuing with minimum 2 members."
+            }
+          ]
+        },
+        "va": {
+          "fullDescription": "La Conselleria d'Educació i la Generalitat Valenciana gestionen una xarxa de 38 museus públics amb consums energètics molt heterogenis i escassament monitoritzats. La principal despesa energètica recau en els sistemes HVAC (climatització), que en alguns edificis patrimonials suposa fins al 65% de la factura elèctrica. L'objectiu d'aquest repte és desenvolupar un model predictiu basat en IA que optimitze automàticament la programació dels sistemes HVAC en funció de variables com la previsió d'afluència, la temperatura exterior i les condicions de conservació de les col·leccions.",
+          "context": "Els edificis són en la seua majoria béns immobles històrics amb baixa instrumentació. Es disposa de dades històriques de consum (2019-2025) de 8 museus pilot, juntament amb dades meteorològiques i registres de visitants.",
+          "objectives": [
+            "Reduir el consum energètic de HVAC en almenys un 25% respecte a la línia de base 2024",
+            "Garantir condicions de conservació (T 18-22°C, HR 45-55%) en sales de col·leccions permanents",
+            "Dissenyar un sistema d'alertes automàtiques davant desviacions crítiques",
+            "Generar un panell de monitorització accessible per al personal tècnic"
+          ],
+          "eligibility": [
+            "Equips de 2 a 4 estudiants matriculats en FP de Grau Superior en el curs 2025-2026",
+            "Almenys un integrant del cicle formatiu d'Informàtica, Electrònica o Mecatrònica",
+            "Centres educatius adherits a la xarxa AI-STEAM o vinculats a CEICE",
+            "Un tutor docent per equip (responsable de l'entrega final)"
+          ],
+          "teamSize": "2 – 4 estudiants de FP + tutor docent",
+          "datasets": [
+            {
+              "label": "Històric de consum HVAC (8 museus, 2019–2025)",
+              "format": "CSV",
+              "size": "4.2 GB"
+            },
+            {
+              "label": "Dades meteorològiques AEMET estació València-Aeroport",
+              "format": "CSV",
+              "size": "120 MB"
+            },
+            {
+              "label": "Afluència diària de visitants 2019–2025",
+              "format": "XLSX",
+              "size": "18 MB"
+            },
+            {
+              "label": "Plànols i especificacions tècniques HVAC (8 edificis)",
+              "format": "PDF",
+              "size": "340 MB"
+            }
+          ],
+          "tools": [
+            "Python 3.11+",
+            "TensorFlow / PyTorch",
+            "Grafana (visualització)",
+            "Node-RED (IoT)",
+            "PostgreSQL TimescaleDB"
+          ],
+          "deliverables": [
+            {
+              "label": "Codi font del model predictiu",
+              "format": "Repositori GitHub"
+            },
+            {
+              "label": "Panell de monitorització funcional",
+              "format": "Demo desplegada + vídeo 3 min"
+            },
+            {
+              "label": "Memòria tècnica del projecte",
+              "format": "PDF ≤ 20 pàgines"
+            },
+            {
+              "label": "Presentació executiva per a gestors del museu",
+              "format": "PPTX / PDF ≤ 10 diapositives"
+            }
+          ],
+          "evalCriteria": [
+            {
+              "label": "Reducció de consum demostrada",
+              "weight": 30,
+              "desc": "Avaluada sobre les dades de test; es requereix backtesting sobre 2024"
+            },
+            {
+              "label": "Viabilitat de desplegament real",
+              "weight": 25,
+              "desc": "Cost estimat, compatibilitat amb infraestructura existent i pla de desplegament"
+            },
+            {
+              "label": "Qualitat tècnica del codi i documentació",
+              "weight": 20,
+              "desc": "Codi net, reproducibilitat, tests unitaris, README complet"
+            },
+            {
+              "label": "Usabilitat del panell",
+              "weight": 15,
+              "desc": "Avaluat per tècnics del museu sense formació en IA"
+            },
+            {
+              "label": "Presentació oral i defensa",
+              "weight": 10,
+              "desc": "Claredat i resposta a les preguntes del jurat"
+            }
+          ],
+          "milestones": [
+            {
+              "date": "2026-03-10",
+              "label": "Publicació del repte i accés a dades",
+              "done": true
+            },
+            {
+              "date": "2026-03-31",
+              "label": "Tancament de la inscripció d'equips",
+              "done": true
+            },
+            {
+              "date": "",
+              "label": "Kick-off: sessió de presentació amb tècnics GVA",
+              "done": false
+            },
+            {
+              "date": "2026-05-15",
+              "label": "Checkpoint 1: entrega de prototip inicial",
+              "done": false
+            },
+            {
+              "date": "2026-06-15",
+              "label": "Checkpoint 2: demo del panell",
+              "done": false
+            },
+            {
+              "date": "2026-06-30",
+              "label": "Entrega final",
+              "done": false
+            },
+            {
+              "date": "2026-07-15",
+              "label": "Presentacions i resolució",
+              "done": false
+            }
+          ],
+          "mentors": [
+            {
+              "name": "Dra. Amparo Seguí",
+              "role": "Enginyeria de Sistemes de Control",
+              "org": "Universitat Politècnica de València"
+            },
+            {
+              "name": "Carlos Monzó",
+              "role": "Responsable d'Infraestructures",
+              "org": "GVA – Conselleria de Cultura"
+            }
+          ],
+          "recognition": [
+            "1r equip: estada de pràctiques remunerada a GVA (3 mesos) + badge AI-Industry Badge",
+            "2n equip: reconeixement oficial en expedient CEICE + badge AI-Industry Badge",
+            "Tots els participants: certificat de participació AI-STEAM + micro-credencial Open Badge 3.0",
+            "Els millors resultats es publicaran com a recurs OER en Aules"
+          ],
+          "faq": [
+            {
+              "q": "¿Puc participar si no tinc experiència prèvia en IA?",
+              "a": "Sí. El repte està dissenyat per a nivell FP. Es proporcionen materials introductori en Aules i hi ha sessions de mentoria quinzenals."
+            },
+            {
+              "q": "¿Les dades estan anonimitzades?",
+              "a": "Les dades de consum estan agregades per edifici. No contenen dades personals de visitants."
+            },
+            {
+              "q": "¿Puc usar llibreries de tercers?",
+              "a": "Sí, sempre que siguen de codi obert i esten adequadament referenciades en el repositori."
+            },
+            {
+              "q": "¿Què passa si el meu equip es dissol a meitat del repte?",
+              "a": "Contacta amb el coordinador del repte. És possible fusionar equips o continuar amb un mínim de 2 integrants."
+            }
+          ]
+        }
+      }
+    },
     {
       "id": "r10",
       "visible": true,
@@ -1348,577 +1914,6 @@ export const MARKETPLACE_CONFIG = {
             {
               "q": "Will the system actually be deployed?",
               "a": "If results are sufficiently robust, a supervised clinical pilot is planned for the evening pediatric emergency shift in 2027."
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "r1",
-      "visible": true,
-      "type": "Challenge",
-      "title": {
-        "es": "Optimización energética de museos públicos con IA",
-        "en": "Energy Optimization in Public Museums with AI",
-        "va": "Optimització energètica de museus públics amb IA"
-      },
-      "entity": "Generalitat Valenciana (CEICE)",
-      "entityType": {
-        "es": "Administración Pública",
-        "en": "Public Administration",
-        "va": "Administració Pública"
-      },
-      "level": [
-        "FP",
-        "Docentes"
-      ],
-      "status": "open",
-      "sector": "",
-      "route": "fp",
-      "posted": "2026-03-10",
-      "postedLabel": {
-        "es": "Mar 2026",
-        "en": "Mar 2026",
-        "va": "Mar 2026"
-      },
-      "deadline": "2026-06-30",
-      "deadlineLabel": {
-        "es": "Jun 2026",
-        "en": "Jun 2026",
-        "va": "Jun 2026"
-      },
-      "teams": 0,
-      "tags": {
-        "es": [
-          "HVAC",
-          "ML Predictivo",
-          "IoT",
-          "Eficiencia Energética"
-        ],
-        "en": [
-          "HVAC",
-          "Predictive ML",
-          "IoT",
-          "Energy Efficiency"
-        ],
-        "va": [
-          "HVAC",
-          "ML Predictiu",
-          "IoT",
-          "Eficiència Energètica"
-        ]
-      },
-      "evidenceMaturity": "validated",
-      "cyclePhase": "input",
-      "helixRole": "public",
-      "tripleTransition": [
-        "digital",
-        "green"
-      ],
-      "track": "B",
-      "benefitTypes": [
-        "prototype",
-        "ects",
-        "success-story"
-      ],
-      "publishedAt": "2026-03-25",
-      "revisionDate": null,
-      "publishedAtLabel": {
-        "es": "Mar 2026",
-        "en": "Mar 2026",
-        "va": "Mar 2026"
-      },
-      "revisionDateLabel": null,
-      "detail": {
-        "es": {
-          "fullDescription": "La Conselleria d'Educació i la Generalitat Valenciana gestionan una red de 38 museos públicos con consumos energéticos muy heterogéneos y escasamente monitorizados. El principal gasto energético recae en los sistemas HVAC (climatización), que en algunos edificios patrimoniales supone hasta el 65% de la factura eléctrica. El objetivo de este reto es desarrollar un modelo predictivo basado en IA que optimice automáticamente la programación de los sistemas HVAC en función de variables como la afluencia prevista, la temperatura exterior y las condiciones de conservación de las colecciones.",
-          "context": "Los edificios son en su mayoría inmuebles históricos con baja instrumentación. Se dispone de datos históricos de consumo (2019-2025) de 8 museos piloto, junto con datos meteorológicos y registros de visitantes.",
-          "objectives": [
-            "Reducir el consumo energético de HVAC en al menos un 25% respecto a la línea base 2024",
-            "Garantizar condiciones de conservación (T 18-22°C, HR 45-55%) en salas de colecciones permanentes",
-            "Diseñar un sistema de alertas automáticas ante desviaciones críticas",
-            "Generar un dashboard de monitorización accesible para el personal técnico"
-          ],
-          "eligibility": [
-            "Equipos de 2 a 4 estudiantes matriculados en FP de Grado Superior en el curso 2025-2026",
-            "Al menos un integrante del ciclo formativo de Informática, Electrónica o Mecatrónica",
-            "Centros educativos adheridos a la red AI-STEAM o vinculados a CEICE",
-            "Un tutor docente por equipo (responsable de la entrega final)"
-          ],
-          "teamSize": "2 – 4 estudiantes de FP + tutor docente",
-          "datasets": [
-            {
-              "label": "Histórico consumo HVAC (8 museos, 2019–2025)",
-              "format": "CSV",
-              "size": "4.2 GB"
-            },
-            {
-              "label": "Datos meteorológicos AEMET estación Valencia-Aeropuerto",
-              "format": "CSV",
-              "size": "120 MB"
-            },
-            {
-              "label": "Afluencia diaria visitantes 2019–2025",
-              "format": "XLSX",
-              "size": "18 MB"
-            },
-            {
-              "label": "Planos y especificaciones técnicas HVAC (8 edificios)",
-              "format": "PDF",
-              "size": "340 MB"
-            }
-          ],
-          "tools": [
-            "Python 3.11+",
-            "TensorFlow / PyTorch",
-            "Grafana (visualización)",
-            "Node-RED (IoT)",
-            "PostgreSQL TimescaleDB"
-          ],
-          "deliverables": [
-            {
-              "label": "Código fuente del modelo predictivo",
-              "format": "Repositorio GitHub"
-            },
-            {
-              "label": "Dashboard de monitorización funcional",
-              "format": "Demo desplegada + vídeo 3 min"
-            },
-            {
-              "label": "Memoria técnica del proyecto",
-              "format": "PDF ≤ 20 páginas"
-            },
-            {
-              "label": "Presentación ejecutiva para gestores del museo",
-              "format": "PPTX / PDF ≤ 10 diapositivas"
-            }
-          ],
-          "evalCriteria": [
-            {
-              "label": "Reducción de consumo demostrada",
-              "weight": 30,
-              "desc": "Evaluada sobre los datos de test; se requiere backtesting sobre 2024"
-            },
-            {
-              "label": "Viabilidad de implantación real",
-              "weight": 25,
-              "desc": "Coste estimado, compatibilidad con infraestructura existente y plan de despliegue"
-            },
-            {
-              "label": "Calidad técnica del código y documentación",
-              "weight": 20,
-              "desc": "Clean code, reproducibilidad, tests unitarios, README completo"
-            },
-            {
-              "label": "Usabilidad del dashboard",
-              "weight": 15,
-              "desc": "Evaluado por técnicos del museo sin formación en IA"
-            },
-            {
-              "label": "Presentación oral y defensa",
-              "weight": 10,
-              "desc": "Claridad, respuesta a preguntas del jurado"
-            }
-          ],
-          "milestones": [
-            {
-              "date": "2026-03-10",
-              "label": "Publicación del reto y acceso a datos",
-              "done": true
-            },
-            {
-              "date": "2026-03-31",
-              "label": "Cierre de inscripción de equipos",
-              "done": true
-            },
-            {
-              "date": "",
-              "label": "Kick-off: sesión de presentación con técnicos GVA",
-              "done": false
-            },
-            {
-              "date": "2026-05-15",
-              "label": "Checkpoint 1: entrega de prototipo inicial",
-              "done": false
-            },
-            {
-              "date": "2026-06-15",
-              "label": "Checkpoint 2: demo del dashboard",
-              "done": false
-            },
-            {
-              "date": "2026-06-30",
-              "label": "Entrega final",
-              "done": false
-            },
-            {
-              "date": "2026-07-15",
-              "label": "Presentaciones y resolución",
-              "done": false
-            }
-          ],
-          "mentors": [
-            {
-              "name": "Dra. Amparo Seguí",
-              "role": "Ingeniería de Sistemas de Control",
-              "org": "Universitat Politècnica de València"
-            },
-            {
-              "name": "Carlos Monzó",
-              "role": "Responsable de Infraestructuras",
-              "org": "GVA – Conselleria de Cultura"
-            }
-          ],
-          "recognition": [
-            "1.er equipo: estancia de prácticas remunerada en GVA (3 meses) + badge AI-Industry Badge",
-            "2.º equipo: reconocimiento oficial en expediente CEICE + badge AI-Industry Badge",
-            "Todos los participantes: certificado de participación AI-STEAM + micro-credencial Open Badge 3.0",
-            "Los mejores resultados se publicarán como recurso OER en Aules"
-          ],
-          "faq": [
-            {
-              "q": "¿Puedo participar si no tengo experiencia previa en IA?",
-              "a": "Sí. El reto está diseñado para nivel FP. Se proporcionan materiales introductorios en Aules y hay sesiones de mentoría quincenales."
-            },
-            {
-              "q": "¿Los datos están anonimizados?",
-              "a": "Los datos de consumo están agregados por edificio. No contienen datos personales de visitantes."
-            },
-            {
-              "q": "¿Puedo usar librerías de terceros?",
-              "a": "Sí, siempre que sean de código abierto y estén debidamente referenciadas en el repositorio."
-            },
-            {
-              "q": "¿Qué pasa si mi equipo se disuelve a mitad del reto?",
-              "a": "Contacta con el coordinador del reto. Es posible fusionar equipos o continuar con menos integrantes mínimo 2."
-            }
-          ]
-        },
-        "en": {
-          "fullDescription": "The Department of Education and Generalitat Valenciana manage a network of 38 public museums with highly heterogeneous and poorly monitored energy consumption. The main energy expenditure falls on HVAC systems (air conditioning), which in some heritage buildings accounts for up to 65% of the electricity bill. The goal of this challenge is to develop an AI-based predictive model that automatically optimizes HVAC system scheduling based on variables such as predicted attendance, outdoor temperature, and collection preservation conditions.",
-          "context": "Most buildings are historic properties with low instrumentation. Historical consumption data (2019-2025) from 8 pilot museums is available, along with meteorological data and visitor records.",
-          "objectives": [
-            "Reduce HVAC energy consumption by at least 25% compared to the 2024 baseline",
-            "Ensure preservation conditions (T 18-22°C, RH 45-55%) in permanent collection rooms",
-            "Design an automatic alerting system for critical deviations",
-            "Generate an accessible monitoring dashboard for technical staff"
-          ],
-          "eligibility": [
-            "Teams of 2 to 4 students enrolled in VET Higher Level during 2025-2026",
-            "At least one member from IT, Electronics, or Mechatronics vocational training",
-            "Educational centers affiliated with the AI-STEAM network or linked to CEICE",
-            "One instructor per team (responsible for final delivery)"
-          ],
-          "teamSize": "2 – 4 VET students + instructor",
-          "datasets": [
-            {
-              "label": "HVAC consumption history (8 museums, 2019–2025)",
-              "format": "CSV",
-              "size": "4.2 GB"
-            },
-            {
-              "label": "AEMET meteorological data Valencia-Airport station",
-              "format": "CSV",
-              "size": "120 MB"
-            },
-            {
-              "label": "Daily visitor attendance 2019–2025",
-              "format": "XLSX",
-              "size": "18 MB"
-            },
-            {
-              "label": "HVAC technical drawings and specifications (8 buildings)",
-              "format": "PDF",
-              "size": "340 MB"
-            }
-          ],
-          "tools": [
-            "Python 3.11+",
-            "TensorFlow / PyTorch",
-            "Grafana (visualization)",
-            "Node-RED (IoT)",
-            "PostgreSQL TimescaleDB"
-          ],
-          "deliverables": [
-            {
-              "label": "Predictive model source code",
-              "format": "GitHub Repository"
-            },
-            {
-              "label": "Functional monitoring dashboard",
-              "format": "Deployed demo + 3 min video"
-            },
-            {
-              "label": "Project technical report",
-              "format": "PDF ≤ 20 pages"
-            },
-            {
-              "label": "Executive presentation for museum managers",
-              "format": "PPTX / PDF ≤ 10 slides"
-            }
-          ],
-          "evalCriteria": [
-            {
-              "label": "Demonstrated energy reduction",
-              "weight": 30,
-              "desc": "Evaluated on test data; backtesting over 2024 required"
-            },
-            {
-              "label": "Real deployment feasibility",
-              "weight": 25,
-              "desc": "Estimated cost, compatibility with existing infrastructure, deployment plan"
-            },
-            {
-              "label": "Code quality and documentation",
-              "weight": 20,
-              "desc": "Clean code, reproducibility, unit tests, complete README"
-            },
-            {
-              "label": "Dashboard usability",
-              "weight": 15,
-              "desc": "Evaluated by museum technicians without AI training"
-            },
-            {
-              "label": "Oral presentation and defense",
-              "weight": 10,
-              "desc": "Clarity and response to jury questions"
-            }
-          ],
-          "milestones": [
-            {
-              "date": "2026-03-10",
-              "label": "Challenge publication and data access",
-              "done": true
-            },
-            {
-              "date": "2026-03-31",
-              "label": "Team registration closure",
-              "done": true
-            },
-            {
-              "date": "2026-04-15",
-              "label": "Kick-off: presentation session with GVA technicians",
-              "done": false
-            },
-            {
-              "date": "2026-05-15",
-              "label": "Checkpoint 1: initial prototype delivery",
-              "done": false
-            },
-            {
-              "date": "2026-06-15",
-              "label": "Checkpoint 2: dashboard demo",
-              "done": false
-            },
-            {
-              "date": "2026-06-30",
-              "label": "Final delivery",
-              "done": false
-            },
-            {
-              "date": "2026-07-15",
-              "label": "Presentations and resolution",
-              "done": false
-            }
-          ],
-          "mentors": [
-            {
-              "name": "Dr. Amparo Seguí",
-              "role": "Control Systems Engineering",
-              "org": "Universitat Politècnica de València"
-            },
-            {
-              "name": "Carlos Monzó",
-              "role": "Infrastructure Manager",
-              "org": "GVA – Ministry of Culture"
-            }
-          ],
-          "recognition": [
-            "1st team: paid internship at GVA (3 months) + AI-Industry Badge",
-            "2nd team: official recognition in CEICE file + AI-Industry Badge",
-            "All participants: AI-STEAM participation certificate + Open Badge 3.0 micro-credential",
-            "Best results will be published as OER resource on Aules"
-          ],
-          "faq": [
-            {
-              "q": "Can I participate if I have no prior AI experience?",
-              "a": "Yes. The challenge is designed for VET level. Introductory materials are provided on Aules and there are bi-weekly mentoring sessions."
-            },
-            {
-              "q": "Is the data anonymized?",
-              "a": "Consumption data is aggregated by building. It contains no personal visitor data."
-            },
-            {
-              "q": "Can I use third-party libraries?",
-              "a": "Yes, as long as they are open source and properly referenced in the repository."
-            },
-            {
-              "q": "What if my team dissolves mid-challenge?",
-              "a": "Contact the challenge coordinator. Team merging is possible or continuing with minimum 2 members."
-            }
-          ]
-        },
-        "va": {
-          "fullDescription": "La Conselleria d'Educació i la Generalitat Valenciana gestionen una xarxa de 38 museus públics amb consums energètics molt heterogenis i escassament monitoritzats. La principal despesa energètica recau en els sistemes HVAC (climatització), que en alguns edificis patrimonials suposa fins al 65% de la factura elèctrica. L'objectiu d'aquest repte és desenvolupar un model predictiu basat en IA que optimitze automàticament la programació dels sistemes HVAC en funció de variables com la previsió d'afluència, la temperatura exterior i les condicions de conservació de les col·leccions.",
-          "context": "Els edificis són en la seua majoria béns immobles històrics amb baixa instrumentació. Es disposa de dades històriques de consum (2019-2025) de 8 museus pilot, juntament amb dades meteorològiques i registres de visitants.",
-          "objectives": [
-            "Reduir el consum energètic de HVAC en almenys un 25% respecte a la línia de base 2024",
-            "Garantir condicions de conservació (T 18-22°C, HR 45-55%) en sales de col·leccions permanents",
-            "Dissenyar un sistema d'alertes automàtiques davant desviacions crítiques",
-            "Generar un panell de monitorització accessible per al personal tècnic"
-          ],
-          "eligibility": [
-            "Equips de 2 a 4 estudiants matriculats en FP de Grau Superior en el curs 2025-2026",
-            "Almenys un integrant del cicle formatiu d'Informàtica, Electrònica o Mecatrònica",
-            "Centres educatius adherits a la xarxa AI-STEAM o vinculats a CEICE",
-            "Un tutor docent per equip (responsable de l'entrega final)"
-          ],
-          "teamSize": "2 – 4 estudiants de FP + tutor docent",
-          "datasets": [
-            {
-              "label": "Històric de consum HVAC (8 museus, 2019–2025)",
-              "format": "CSV",
-              "size": "4.2 GB"
-            },
-            {
-              "label": "Dades meteorològiques AEMET estació València-Aeroport",
-              "format": "CSV",
-              "size": "120 MB"
-            },
-            {
-              "label": "Afluència diària de visitants 2019–2025",
-              "format": "XLSX",
-              "size": "18 MB"
-            },
-            {
-              "label": "Plànols i especificacions tècniques HVAC (8 edificis)",
-              "format": "PDF",
-              "size": "340 MB"
-            }
-          ],
-          "tools": [
-            "Python 3.11+",
-            "TensorFlow / PyTorch",
-            "Grafana (visualització)",
-            "Node-RED (IoT)",
-            "PostgreSQL TimescaleDB"
-          ],
-          "deliverables": [
-            {
-              "label": "Codi font del model predictiu",
-              "format": "Repositori GitHub"
-            },
-            {
-              "label": "Panell de monitorització funcional",
-              "format": "Demo desplegada + vídeo 3 min"
-            },
-            {
-              "label": "Memòria tècnica del projecte",
-              "format": "PDF ≤ 20 pàgines"
-            },
-            {
-              "label": "Presentació executiva per a gestors del museu",
-              "format": "PPTX / PDF ≤ 10 diapositives"
-            }
-          ],
-          "evalCriteria": [
-            {
-              "label": "Reducció de consum demostrada",
-              "weight": 30,
-              "desc": "Avaluada sobre les dades de test; es requereix backtesting sobre 2024"
-            },
-            {
-              "label": "Viabilitat de desplegament real",
-              "weight": 25,
-              "desc": "Cost estimat, compatibilitat amb infraestructura existent i pla de desplegament"
-            },
-            {
-              "label": "Qualitat tècnica del codi i documentació",
-              "weight": 20,
-              "desc": "Codi net, reproducibilitat, tests unitaris, README complet"
-            },
-            {
-              "label": "Usabilitat del panell",
-              "weight": 15,
-              "desc": "Avaluat per tècnics del museu sense formació en IA"
-            },
-            {
-              "label": "Presentació oral i defensa",
-              "weight": 10,
-              "desc": "Claredat i resposta a les preguntes del jurat"
-            }
-          ],
-          "milestones": [
-            {
-              "date": "2026-03-10",
-              "label": "Publicació del repte i accés a dades",
-              "done": true
-            },
-            {
-              "date": "2026-03-31",
-              "label": "Tancament de la inscripció d'equips",
-              "done": true
-            },
-            {
-              "date": "",
-              "label": "Kick-off: sessió de presentació amb tècnics GVA",
-              "done": false
-            },
-            {
-              "date": "2026-05-15",
-              "label": "Checkpoint 1: entrega de prototip inicial",
-              "done": false
-            },
-            {
-              "date": "2026-06-15",
-              "label": "Checkpoint 2: demo del panell",
-              "done": false
-            },
-            {
-              "date": "2026-06-30",
-              "label": "Entrega final",
-              "done": false
-            },
-            {
-              "date": "2026-07-15",
-              "label": "Presentacions i resolució",
-              "done": false
-            }
-          ],
-          "mentors": [
-            {
-              "name": "Dra. Amparo Seguí",
-              "role": "Enginyeria de Sistemes de Control",
-              "org": "Universitat Politècnica de València"
-            },
-            {
-              "name": "Carlos Monzó",
-              "role": "Responsable d'Infraestructures",
-              "org": "GVA – Conselleria de Cultura"
-            }
-          ],
-          "recognition": [
-            "1r equip: estada de pràctiques remunerada a GVA (3 mesos) + badge AI-Industry Badge",
-            "2n equip: reconeixement oficial en expedient CEICE + badge AI-Industry Badge",
-            "Tots els participants: certificat de participació AI-STEAM + micro-credencial Open Badge 3.0",
-            "Els millors resultats es publicaran com a recurs OER en Aules"
-          ],
-          "faq": [
-            {
-              "q": "¿Puc participar si no tinc experiència prèvia en IA?",
-              "a": "Sí. El repte està dissenyat per a nivell FP. Es proporcionen materials introductori en Aules i hi ha sessions de mentoria quinzenals."
-            },
-            {
-              "q": "¿Les dades estan anonimitzades?",
-              "a": "Les dades de consum estan agregades per edifici. No contenen dades personals de visitants."
-            },
-            {
-              "q": "¿Puc usar llibreries de tercers?",
-              "a": "Sí, sempre que siguen de codi obert i esten adequadament referenciades en el repositori."
-            },
-            {
-              "q": "¿Què passa si el meu equip es dissol a meitat del repte?",
-              "a": "Contacta amb el coordinador del repte. És possible fusionar equips o continuar amb un mínim de 2 integrants."
             }
           ]
         }
@@ -5073,7 +5068,7 @@ export const MARKETPLACE_CONFIG = {
       ],
       "status": "in-progress",
       "sector": "Non-Touristic Services",
-      "route": "mixed",
+      "route": "master",
       "posted": "22 Mar 2026",
       "postedLabel": null,
       "deadline": "15 Jul 2026",

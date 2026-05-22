@@ -138,7 +138,6 @@ const ROUTE_STYLES = {
   'fp':      'bg-eu-yellow text-eu-purple',
   'teacher': 'bg-teal-100 text-teal-800',
   'master':  'bg-purple-100 text-purple-800',
-  'mixed':   'bg-blue-100 text-blue-800',
 };
 
 const EVIDENCE_STYLES = {
