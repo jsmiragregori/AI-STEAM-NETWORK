@@ -315,8 +315,8 @@ function renderCardHtml(ch, mT) {
       <!-- Tags (conditional) -->
       ${tags.length ? `<div class="flex flex-wrap gap-1.5">
         ${tags.map(tag =>
-          `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-2 py-1 rounded-lg text-gray-500 font-medium">
-            <i data-lucide="tag" class="w-3 h-3 shrink-0"></i>${tag}
+          `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-2 py-1 rounded-lg text-gray-500 font-medium max-w-xs">
+            <i data-lucide="tag" class="w-3 h-3 shrink-0"></i><span class="truncate">${tag}</span>
           </span>`).join('')}
       </div>` : ''}
 
@@ -339,7 +339,7 @@ function renderCardHtml(ch, mT) {
       <!-- Sector row -->
       <div class="bg-eu-bg px-5 pt-3 pb-2">
         ${fb('sector', ch.sector,
-          'text-xs font-bold text-eu-teal uppercase tracking-wide bg-eu-teal/10 px-2.5 py-1 rounded-lg',
+          'text-xs font-bold text-eu-teal uppercase tracking-wide bg-eu-teal/10 px-2.5 py-1 rounded-lg max-w-xs truncate',
           getSectorLabel(ch.sector))}
       </div>
 
