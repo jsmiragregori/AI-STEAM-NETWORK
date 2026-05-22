@@ -297,42 +297,47 @@ function renderCardHtml(ch, mT) {
         </p>
       </div>
 
-      <!-- Row 3: Primary filter chips — Route + Evidence (always short) -->
+      <!-- Row 3a: Primary chips — Route + Evidence (max 2, always short-medium) -->
       <div class="flex flex-wrap gap-1.5">
         ${fb('route',    ch.route,            `text-xs font-bold px-2 py-0.5 rounded ${rtStyle}`, getRouteLabel(ch.route))}
         ${fb('evidence', ch.evidenceMaturity, `text-xs font-semibold px-2 py-0.5 rounded ${evStyle}`, getEvidenceMaturityLabel(ch.evidenceMaturity))}
+      </div>
+
+      <!-- Row 3b: Context chips — Helix + max 1 transition (max 2, compact) -->
+      <div class="flex flex-wrap gap-1.5">
         ${ch.helixRole ? fb('helix', ch.helixRole, `text-xs font-medium px-2 py-0.5 rounded ${HELIX_STYLES[ch.helixRole] || 'bg-gray-100 text-gray-500'}`, getHelixLabel(ch.helixRole)) : ''}
-        ${(ch.tripleTransition || []).slice(0, 2).map(tr =>
+        ${(ch.tripleTransition || []).slice(0, 1).map(tr =>
           fb('transition', tr, `text-xs font-medium px-2 py-0.5 rounded ${TRANSITION_STYLES[tr] || 'bg-gray-100 text-gray-500'}`,
             shortTransLabel(tr), getTransitionLabel(tr))
         ).join('')}
+        ${(ch.tripleTransition || []).length > 1
+          ? `<span class="text-xs font-medium px-2 py-0.5 rounded bg-gray-100 text-gray-500">+${(ch.tripleTransition).length - 1}</span>`
+          : ''}
       </div>
 
       <!-- Row 4: Tags — conditional -->
       ${tags.length ? `<div class="flex flex-wrap gap-1.5">
         ${tags.slice(0, 2).map(tag =>
-          `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-500 font-medium">
-            <i data-lucide="tag" class="w-2.5 h-2.5 shrink-0"></i>${tag}
-          </span>`
+          `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-500 font-medium"><i data-lucide="tag" class="w-2.5 h-2.5 shrink-0"></i>${tag}</span>`
         ).join('')}
       </div>` : ''}
 
-      <!-- Row 5: Deadline + Teams — mt-auto keeps this flush to footer regardless of content height -->
-      <div class="flex items-center gap-3 text-xs text-gray-500 mt-auto pt-1 border-t border-eu-border/50">
+      <!-- Row 5: Deadline + Teams — mt-auto pushes to bottom regardless of card height -->
+      <div class="flex items-center gap-3 text-xs text-gray-500 mt-auto pt-2 border-t border-eu-border/40">
         <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3 h-3 shrink-0"></i><span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadline}</span></span>
         <span class="flex items-center gap-1.5 shrink-0"><i data-lucide="users" class="w-3 h-3 shrink-0"></i>${ch.teams} ${ch.teams === 1 ? (mT?.teamSingular || 'equipo') : (mT?.teamPlural || 'equipos')}</span>
       </div>
     </div>
 
-    <!-- Footer: sector | date info | action -->
-    <div class="border-t border-eu-border bg-eu-bg rounded-b-xl px-3 py-2 flex items-center gap-2 min-w-0">
-      ${fb('sector', ch.sector, 'text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded shrink-0', getSectorLabel(ch.sector))}
-      <div class="ml-auto flex items-center gap-2.5 shrink-0">
-        ${ch.publishedAtLabel ? `<span class="hidden lg:flex items-center gap-1.5 text-xs text-gray-400">
-          <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i>${pickLang(ch.publishedAtLabel)}</span>
-          ${ch.revisionDateLabel ? `<span class="flex items-center gap-1 text-eu-teal/60"><i data-lucide="pencil" class="w-3 h-3"></i>${pickLang(ch.revisionDateLabel)}</span>` : ''}
-        </span>` : ''}
-        <button class="mp-view-detail text-eu-blue font-bold text-xs bg-transparent border-none cursor-pointer hover:underline whitespace-nowrap" data-id="${ch.id}">
+    <!-- Footer: 2 rows — sector alone / dates + action -->
+    <div class="border-t border-eu-border bg-eu-bg rounded-b-xl px-3 pt-2 pb-2.5 flex flex-col gap-1.5">
+      <div>${fb('sector', ch.sector, 'text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded', getSectorLabel(ch.sector))}</div>
+      <div class="flex items-center justify-between gap-2">
+        ${ch.publishedAtLabel ? `<span class="flex items-center gap-2 text-xs text-gray-400">
+          <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 shrink-0"></i>${pickLang(ch.publishedAtLabel)}</span>
+          ${ch.revisionDateLabel ? `<span class="flex items-center gap-1"><i data-lucide="pencil" class="w-3 h-3 shrink-0"></i>${pickLang(ch.revisionDateLabel)}</span>` : ''}
+        </span>` : '<span></span>'}
+        <button class="mp-view-detail text-eu-blue font-bold text-xs bg-transparent border-none cursor-pointer hover:underline whitespace-nowrap shrink-0" data-id="${ch.id}">
           ${mT?.viewAndApply || 'Ver detalle'} →
         </button>
       </div>
