@@ -302,6 +302,10 @@ function renderCardHtml(ch, mT) {
         ${mT?.viewAndApply || 'Ver detalle'} →
       </button>
     </div>
+    ${ch.publishedAtLabel ? `<div class="px-3 pb-2 flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-gray-400">
+      <span>📅 ${mT?.publishedLabel || 'Publicado'}: ${pickLang(ch.publishedAtLabel)}</span>
+      ${ch.revisionDateLabel ? `<span>✎ ${mT?.revisedLabel || 'Revisado'}: ${pickLang(ch.revisionDateLabel)}</span>` : ''}
+    </div>` : ''}
   </div>`;
 }
 

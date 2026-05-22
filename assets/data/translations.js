@@ -1,6 +1,6 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR DIRECTAMENTE
 // Edita los archivos en content/_ui/*.csv y ejecuta: npm run cms:ui
-// Base: translations.js existente + overrides de 54 entradas CSV
+// Base: translations.js existente + overrides de 56 entradas CSV
 
 export const translations = {
   "es": {
@@ -1757,7 +1757,9 @@ export const translations = {
       "filterBy": "Filtrar por",
       "filterHelixRole": "Hélice",
       "filterTransition": "Transición",
-      "filterTrack": "Track"
+      "filterTrack": "Track",
+      "publishedLabel": "Publicado",
+      "revisedLabel": "Revisado"
     },
     "challengeDetail": {
       "consortiumLabel": "23 miembros del consorcio",
@@ -3620,7 +3622,9 @@ export const translations = {
       "filterBy": "Filter by",
       "filterHelixRole": "Helix",
       "filterTransition": "Transition",
-      "filterTrack": "Track"
+      "filterTrack": "Track",
+      "publishedLabel": "Published",
+      "revisedLabel": "Revised"
     },
     "challengeDetail": {
       "consortiumLabel": "23 members of the consortium",
@@ -5480,7 +5484,9 @@ export const translations = {
       "filterBy": "Filtrar per",
       "filterHelixRole": "Hèlix",
       "filterTransition": "Transició",
-      "filterTrack": "Track"
+      "filterTrack": "Track",
+      "publishedLabel": "Publicat",
+      "revisedLabel": "Revisat"
     },
     "challengeDetail": {
       "consortiumLabel": "23 membres del consorcio",
