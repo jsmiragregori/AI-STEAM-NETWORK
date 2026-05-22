@@ -377,7 +377,10 @@ function renderDetail(ch, mT) {
   const stBg   = STATUS_BG[statusId]   || 'bg-gray-100';
   const stText  = STATUS_TEXT[statusId] || 'text-gray-600';
   const stDot   = STATUS_DOT[statusId]  || 'bg-gray-400';
-  const lvlStyle = LEVEL_STYLES[ch.level] || 'bg-gray-100 text-gray-600';
+  const levels = Array.isArray(ch.level) ? ch.level : (ch.level ? [ch.level] : []);
+  const lvlChips = levels.map(l =>
+    `<span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${LEVEL_STYLES[l] || 'bg-gray-100 text-gray-600'}">${l}</span>`
+  ).join('');
 
   const participationCtas = cdT.participationCtas || {};
   const participationButton = participationCtas[ch.type] || cdT.requestParticipationButton || 'Solicitar participación →';
@@ -412,7 +415,7 @@ function renderDetail(ch, mT) {
         <i data-lucide="arrow-left" class="w-4 h-4"></i> ${cdT.backButton || 'Volver a Retos y Casos'}
       </button>
       <div class="flex items-center gap-2">
-        <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${lvlStyle}">${cdT.challengeLevel || 'Nivel'} ${ch.level}</span>
+        ${lvlChips}
         <span class="flex items-center gap-1.5 text-sm font-bold px-2 py-0.5 rounded ${stBg} ${stText}">
           <span class="w-1.5 h-1.5 rounded-full ${stDot}"></span>
           ${getStatusLabel(statusId)}
