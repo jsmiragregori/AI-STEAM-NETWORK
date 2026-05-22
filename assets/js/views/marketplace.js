@@ -280,7 +280,7 @@ function renderCardHtml(ch, mT) {
   return `<div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col hover:border-eu-blue hover:shadow-md transition-all duration-200">
 
     <!-- Body -->
-    <div class="p-4 flex-1 flex flex-col gap-3">
+    <div class="p-5 flex-1 flex flex-col gap-3">
 
       <!-- Row 1: Type + Status -->
       <div class="flex flex-wrap items-center gap-1.5">
@@ -329,11 +329,11 @@ function renderCardHtml(ch, mT) {
       </div>
     </div>
 
-    <!-- Footer: 2 rows — sector alone / dates + action -->
-    <div class="border-t border-eu-border bg-eu-bg rounded-b-xl px-3 pt-2 pb-2.5 flex flex-col gap-1.5">
-      <div>${fb('sector', ch.sector, 'text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded', getSectorLabel(ch.sector))}</div>
+    <!-- Footer: 2 rows — sector / dates + action -->
+    <div class="border-t border-eu-border bg-eu-bg rounded-b-xl px-4 py-3 flex flex-col gap-2">
+      <div>${fb('sector', ch.sector, 'text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2.5 py-1 rounded', getSectorLabel(ch.sector))}</div>
       <div class="flex items-center justify-between gap-2">
-        ${ch.publishedAtLabel ? `<span class="flex items-center gap-2 text-xs text-gray-400">
+        ${ch.publishedAtLabel ? `<span class="flex items-center gap-2.5 text-xs text-gray-400">
           <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 shrink-0"></i>${pickLang(ch.publishedAtLabel)}</span>
           ${ch.revisionDateLabel ? `<span class="flex items-center gap-1"><i data-lucide="pencil" class="w-3 h-3 shrink-0"></i>${pickLang(ch.revisionDateLabel)}</span>` : ''}
         </span>` : '<span></span>'}
