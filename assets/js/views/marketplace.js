@@ -264,6 +264,17 @@ function renderCardHtml(ch, mT) {
   const rtStyle = ROUTE_STYLES[ch.route]               || 'bg-gray-100 text-gray-600';
   const evStyle = EVIDENCE_STYLES[ch.evidenceMaturity] || 'bg-gray-100 text-gray-600';
 
+  const ccv = MARKETPLACE_CONFIG.cardChipVisibility || {};
+  const showType     = ccv.type             !== false;
+  const showStatus   = ccv.status           !== false;
+  const showRoute    = ccv.route            !== false;
+  const showEvidence = ccv.evidenceMaturity !== false;
+  const showHelix    = ccv.helixRole        !== false;
+  const showTrans    = ccv.tripleTransition !== false;
+  const showSector   = ccv.sector           !== false;
+  const showTags     = ccv.tags             !== false;
+  const showLevel    = ccv.level            === true;
+
   const fb = (dim, val, cls, label, tooltip) =>
     `<button data-mp-chip="${dim}" data-mp-val="${val}"
       class="${cls} cursor-pointer hover:opacity-75 transition-opacity border-none"
@@ -280,10 +291,10 @@ function renderCardHtml(ch, mT) {
     <div class="p-5 flex-1 space-y-3">
 
       <!-- Badges: type + status -->
-      <div class="flex flex-wrap gap-2">
-        ${fb('type',   ch.type,   'text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-lg bg-eu-blue/10 text-eu-blue', getTypeLabel(ch.type))}
-        ${fb('status', ch.status, `text-xs font-semibold px-2.5 py-1 rounded-lg ${stStyle}`, getStatusLabel(ch.status))}
-      </div>
+      ${(showType || showStatus) ? `<div class="flex flex-wrap gap-2">
+        ${showType   ? fb('type',   ch.type,   'text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-lg bg-eu-blue/10 text-eu-blue', getTypeLabel(ch.type)) : ''}
+        ${showStatus ? fb('status', ch.status, `text-xs font-semibold px-2.5 py-1 rounded-lg ${stStyle}`, getStatusLabel(ch.status)) : ''}
+      </div>` : ''}
 
       <!-- Title + entity -->
       <div>
@@ -294,26 +305,29 @@ function renderCardHtml(ch, mT) {
         </p>
       </div>
 
-      <!-- Primary chips: route + evidence -->
-      <div class="flex flex-wrap gap-1.5">
-        ${fb('route',    ch.route,            `text-xs font-semibold px-2.5 py-1 rounded-lg ${rtStyle}`, getRouteLabel(ch.route))}
-        ${fb('evidence', ch.evidenceMaturity, `text-xs font-semibold px-2.5 py-1 rounded-lg ${evStyle}`, getEvidenceMaturityLabel(ch.evidenceMaturity))}
-      </div>
+      <!-- Primary chips: route + evidence + level (optional) -->
+      ${(showRoute || showEvidence || showLevel) ? `<div class="flex flex-wrap gap-1.5">
+        ${showRoute    ? fb('route',    ch.route,            `text-xs font-semibold px-2.5 py-1 rounded-lg ${rtStyle}`, getRouteLabel(ch.route)) : ''}
+        ${showEvidence ? fb('evidence', ch.evidenceMaturity, `text-xs font-semibold px-2.5 py-1 rounded-lg ${evStyle}`, getEvidenceMaturityLabel(ch.evidenceMaturity)) : ''}
+        ${showLevel    ? (Array.isArray(ch.level) ? ch.level : [ch.level]).filter(Boolean).map(l =>
+            fb('level', l, `text-xs font-semibold px-2.5 py-1 rounded-lg ${LEVEL_STYLES[l] || 'bg-gray-100 text-gray-600'}`, l)
+          ).join('') : ''}
+      </div>` : ''}
 
       <!-- Context chips: helix + all transitions -->
-      <div class="flex flex-wrap gap-1.5">
-        ${ch.helixRole
+      ${(showHelix || showTrans) ? `<div class="flex flex-wrap gap-1.5">
+        ${showHelix && ch.helixRole
           ? fb('helix', ch.helixRole, `text-xs font-medium px-2.5 py-1 rounded-lg ${HELIX_STYLES[ch.helixRole] || 'bg-gray-100 text-gray-600'}`, getHelixLabel(ch.helixRole))
           : ''}
-        ${transitions.map(tr =>
+        ${showTrans ? transitions.map(tr =>
           fb('transition', tr,
             `text-xs font-medium px-2.5 py-1 rounded-lg ${TRANSITION_STYLES[tr] || 'bg-gray-100 text-gray-600'}`,
             shortTrans(tr), getTransitionLabel(tr))
-        ).join('')}
-      </div>
+        ).join('') : ''}
+      </div>` : ''}
 
       <!-- Tags (conditional) -->
-      ${tags.length ? `<div class="flex flex-wrap gap-1.5">
+      ${(showTags && tags.length) ? `<div class="flex flex-wrap gap-1.5">
         ${tags.map(tag =>
           `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-2 py-1 rounded-lg text-gray-500 font-medium" style="max-width:160px">
             <i data-lucide="tag" class="w-3 h-3 shrink-0"></i><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${tag}</span>
@@ -337,12 +351,12 @@ function renderCardHtml(ch, mT) {
     <div class="border-t border-eu-border rounded-b-2xl overflow-hidden">
 
       <!-- Sector row -->
-      <div class="bg-eu-bg px-5 pt-4 pb-3">
+      ${showSector ? `<div class="bg-eu-bg px-5 pt-4 pb-3">
         <button data-mp-chip="sector" data-mp-val="${ch.sector}"
           class="text-xs font-bold text-eu-teal uppercase tracking-wide bg-eu-teal/10 px-2.5 py-1 rounded-lg cursor-pointer hover:opacity-75 transition-opacity border-none"
           style="max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;vertical-align:middle"
           title="${getSectorLabel(ch.sector)}">${getSectorLabel(ch.sector)}</button>
-      </div>
+      </div>` : ''}
 
       <!-- Date + CTA row -->
       <div class="bg-eu-bg px-5 pt-3 pb-4 flex items-center justify-between gap-3">
