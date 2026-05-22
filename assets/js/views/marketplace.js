@@ -89,6 +89,7 @@ function getCyclePhaseLabel(id)       { return getLabelFromArray(MARKETPLACE_CON
 function getTransitionLabel(id)       { return getLabelFromArray(MARKETPLACE_CONFIG.transitionLabels, id); }
 function getTrackLabel(id)            { return getLabelFromArray(MARKETPLACE_CONFIG.trackLabels, id); }
 function getEvidenceMaturityLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.evidenceMaturityLabels, id); }
+function getLevelLabel(id)            { return getLabelFromArray(MARKETPLACE_CONFIG.levelLabels, id); }
 
 function getSectorCode(s) {
   const MAP = {
@@ -310,7 +311,7 @@ function renderCardHtml(ch, mT) {
         ${showRoute    ? fb('route',    ch.route,            `text-xs font-semibold px-2.5 py-1 rounded-lg ${rtStyle}`, getRouteLabel(ch.route)) : ''}
         ${showEvidence ? fb('evidence', ch.evidenceMaturity, `text-xs font-semibold px-2.5 py-1 rounded-lg ${evStyle}`, getEvidenceMaturityLabel(ch.evidenceMaturity)) : ''}
         ${showLevel    ? (Array.isArray(ch.level) ? ch.level : [ch.level]).filter(Boolean).map(l =>
-            fb('level', l, `text-xs font-semibold px-2.5 py-1 rounded-lg ${LEVEL_STYLES[l] || 'bg-gray-100 text-gray-600'}`, l)
+            fb('level', l, `text-xs font-semibold px-2.5 py-1 rounded-lg ${LEVEL_STYLES[l] || 'bg-gray-100 text-gray-600'}`, getLevelLabel(l))
           ).join('') : ''}
       </div>` : ''}
 
@@ -393,7 +394,7 @@ function renderDetail(ch, mT) {
   const stDot   = STATUS_DOT[statusId]  || 'bg-gray-400';
   const levels = Array.isArray(ch.level) ? ch.level : (ch.level ? [ch.level] : []);
   const lvlChips = levels.map(l =>
-    `<span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${LEVEL_STYLES[l] || 'bg-gray-100 text-gray-600'}">${l}</span>`
+    `<span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${LEVEL_STYLES[l] || 'bg-gray-100 text-gray-600'}">${getLevelLabel(l)}</span>`
   ).join('');
 
   const participationCtas = cdT.participationCtas || {};
