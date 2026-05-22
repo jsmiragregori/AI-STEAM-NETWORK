@@ -282,6 +282,15 @@ function renderCardHtml(ch, mT) {
       class="${cls} cursor-pointer hover:opacity-75 transition-opacity border-none"
       title="${tooltip || label}">${label}</button>`;
 
+  // Icon-prefixed chip: icon + text inside an inline-flex wrapper
+  const fbIcon = (dim, val, cls, icon, text, tooltip) =>
+    `<button data-mp-chip="${dim}" data-mp-val="${val}"
+      class="${cls} inline-flex items-center gap-1 cursor-pointer hover:opacity-75 transition-opacity border-none"
+      title="${tooltip || text}">
+      <i data-lucide="${icon}" class="w-3 h-3 shrink-0" aria-hidden="true"></i>
+      <span>${text}</span>
+    </button>`;
+
   const shortTrans = (id) =>
     getTransitionLabel(id).replace(/^Transici[oóò]n?\s+/i, '').replace(/^Transition\s+/i, '');
 
@@ -307,18 +316,18 @@ function renderCardHtml(ch, mT) {
         </p>
       </div>
 
-      <!-- Primary chips: route + evidence -->
+      <!-- Primary chips: route (icon-prefixed) + evidence -->
       ${(showRoute || showEvidence) ? `<div class="flex flex-wrap gap-1.5">
-        ${showRoute    ? fb('route',    ch.route,            `text-xs font-semibold px-2.5 py-1 rounded-lg ${rtStyle}`, getRouteLabel(ch.route)) : ''}
+        ${showRoute    ? fbIcon('route',    ch.route,            `text-xs font-semibold px-2.5 py-1 rounded-lg ${rtStyle}`, 'route', getRouteLabel(ch.route)) : ''}
         ${showEvidence ? fb('evidence', ch.evidenceMaturity, `text-xs font-semibold px-2.5 py-1 rounded-lg ${evStyle}`, getEvidenceMaturityLabel(ch.evidenceMaturity)) : ''}
       </div>` : ''}
 
-      <!-- Level chips (own row to avoid confusion with route) -->
+      <!-- Level chips — own row, icon-prefixed to distinguish from route -->
       ${showLevel ? (() => {
           const levels = (Array.isArray(ch.level) ? ch.level : [ch.level]).filter(Boolean);
           return levels.length ? `<div class="flex flex-wrap gap-1.5">
             ${levels.map(l =>
-              fb('level', l, `text-xs font-semibold px-2.5 py-1 rounded-lg ${LEVEL_STYLES[l] || 'bg-gray-100 text-gray-600'}`, getLevelLabel(l))
+              fbIcon('level', l, `text-xs font-semibold px-2.5 py-1 rounded-lg ${LEVEL_STYLES[l] || 'bg-gray-100 text-gray-600'}`, 'graduation-cap', getLevelLabel(l))
             ).join('')}
           </div>` : '';
         })() : ''}
