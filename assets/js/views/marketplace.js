@@ -2,38 +2,197 @@ import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { MARKETPLACE_CONFIG } from '../../data/marketplace.js';
 
-// ─── Filter persistence (localStorage) ───────────────────────────────────────
+const MP_FILTER_KEY = 'mpFilters';
+const MP_SEARCH_KEY = 'mpSearch';
+const MP_EXPANDED_KEY = 'mpSearchExpanded';
+const MP_PANEL_KEY = 'mpFilterPanelExpanded';
 
-const MP_FILTER_KEY     = 'mpFilters';
-const MP_SEARCH_KEY     = 'mpSearch';
-const MP_EXPANDED_KEY   = 'mpSearchExpanded';
-const MP_PANEL_KEY      = 'mpFilterPanelExpanded';
+const FILTER_KEYS = [
+  'types',
+  'statuses',
+  'sectors',
+  'stakeholders',
+  'transitions',
+  'policies',
+  'engagements',
+  'evidences',
+  'focuses',
+  'tags',
+];
+
+const DIM_MAP_GRID = {
+  type: 'types',
+  status: 'statuses',
+  sector: 'sectors',
+  stakeholder: 'stakeholders',
+  transition: 'transitions',
+  policy: 'policies',
+  engagement: 'engagements',
+  evidence: 'evidences',
+  focus: 'focuses',
+  tag: 'tags',
+};
+
+const DETAIL_BLOCKS = [
+  { key: 'need', icon: 'sparkles' },
+  { key: 'context', icon: 'map' },
+  { key: 'transferValue', icon: 'repeat-2' },
+  { key: 'participation', icon: 'users' },
+  { key: 'resources', icon: 'folder-open' },
+  { key: 'outputs', icon: 'package-check' },
+  { key: 'evidence', icon: 'bar-chart-3' },
+  { key: 'process', icon: 'route' },
+  { key: 'people', icon: 'user-round-check' },
+  { key: 'access', icon: 'link' },
+  { key: 'trackA', icon: 'graduation-cap' },
+];
+
+const STATUS_TONE = {
+  open: 'bg-emerald-50 text-emerald-800 ring-emerald-200',
+  'in-progress': 'bg-sky-50 text-sky-800 ring-sky-200',
+  resolved: 'bg-slate-100 text-slate-700 ring-slate-200',
+};
+
+const TYPE_TONE = {
+  challenge: 'bg-violet-50 text-violet-800 ring-violet-200',
+  case: 'bg-amber-50 text-amber-800 ring-amber-200',
+  validation: 'bg-cyan-50 text-cyan-800 ring-cyan-200',
+  mentoring: 'bg-rose-50 text-rose-800 ring-rose-200',
+  pilot: 'bg-lime-50 text-lime-900 ring-lime-200',
+  resource: 'bg-indigo-50 text-indigo-800 ring-indigo-200',
+};
+
+function getLang() {
+  return localStorage.getItem('language') || 'es';
+}
+
+function pickLang(value, fallback = '') {
+  if (value == null) return fallback;
+  if (typeof value !== 'object' || Array.isArray(value)) return value;
+  const lang = getLang();
+  return value[lang] || value.es || value.en || Object.values(value).find(Boolean) || fallback;
+}
+
+function isLocalizedObject(value) {
+  return Boolean(value && typeof value === 'object' && !Array.isArray(value) && ['es', 'en', 'va'].some(key => key in value));
+}
+
+function esc(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function getLabelFromArray(arr, id, fallback = '') {
+  return pickLang(arr?.find(item => item.id === id)?.label, fallback || id);
+}
+
+function getStatusLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.statusLabels, id); }
+function getTypeLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.trackBTypeLabels || MARKETPLACE_CONFIG.typeLabels, id); }
+function getStakeholderLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.stakeholderCategoryLabels, id); }
+function getTransitionLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.transitionLabels, id); }
+function getPolicyLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.policyClusterLabels, id); }
+function getEngagementLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.engagementLevelLabels, id); }
+function getEvidenceLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.evidenceMaturityLabels, id); }
+function getFocusLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.aiSteamFocusLabels, id); }
+function getBlockLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.detailBlockLabels, id); }
+
+function getSectorCode(value) {
+  const map = {
+    Manufacturing: 'mfg',
+    'Mobility and Transport': 'mob',
+    'Energy and Environment': 'ene',
+    Agrifood: 'agr',
+    'Cultural and Creative Industries': 'cci',
+    Housing: 'hou',
+    'Non-Touristic Services': 'nts',
+  };
+  return map[value] || value;
+}
+
+function getSectorLabel(value) {
+  return (t('sectors.sectorNames') || {})[getSectorCode(value)] || value;
+}
+
+function compact(values) {
+  return values.flat().filter(value => value !== undefined && value !== null && value !== '');
+}
+
+function asArray(value) {
+  if (!value) return [];
+  return Array.isArray(value) ? value : [value];
+}
+
+function getLocalizedTags(item) {
+  const tags = item.core?.tags || item.tags || [];
+  if (Array.isArray(tags)) return tags;
+  if (typeof tags === 'object') return pickLang(tags, []);
+  return [];
+}
+
+function getItems() {
+  const primary = MARKETPLACE_CONFIG.items || [];
+  if (primary.length) return primary.filter(item => item.visible !== false);
+  return (MARKETPLACE_CONFIG.contributions || []).filter(item => item.visible !== false).map(contributionToItem);
+}
+
+function contributionToItem(ch) {
+  return {
+    id: ch.id,
+    type: String(ch.type || '').toLowerCase(),
+    core: {
+      status: ch.status,
+      title: ch.title,
+      summary: ch.description,
+      entity: { name: ch.owner || ch.entity, type: ch.ownerType },
+      sector: ch.sector,
+      stakeholderCategory: ch.helixRole,
+      deadlineLabel: ch.deadlineLabel,
+      tags: ch.tags,
+    },
+    classification: {
+      tripleTransition: asArray(ch.tripleTransition),
+      evidenceMaturity: ch.evidenceMaturity,
+      engagementLevel: ch.level,
+      aiSteamFocus: asArray(ch.focus || ch.tags),
+      trackBValue: ch.impact,
+    },
+    detail: ch.detail || {},
+    visibility: {},
+    access: {},
+  };
+}
 
 function getMpFilters() {
   try {
-    const p = JSON.parse(localStorage.getItem(MP_FILTER_KEY) || '{}');
-    return {
-      types:       Array.isArray(p.types)       ? p.types       : [],
-      routes:      Array.isArray(p.routes)      ? p.routes      : [],
-      statuses:    Array.isArray(p.statuses)    ? p.statuses    : [],
-      sectors:     Array.isArray(p.sectors)     ? p.sectors     : [],
-      evidences:   Array.isArray(p.evidences)   ? p.evidences   : [],
-      helices:     Array.isArray(p.helices)     ? p.helices     : [],
-      transitions: Array.isArray(p.transitions) ? p.transitions : [],
-      tracks:      Array.isArray(p.tracks)      ? p.tracks      : [],
-      levels:      Array.isArray(p.levels)      ? p.levels      : [],
-      tags:        Array.isArray(p.tags)        ? p.tags        : [],
-    };
+    const parsed = JSON.parse(localStorage.getItem(MP_FILTER_KEY) || '{}');
+    return FILTER_KEYS.reduce((acc, key) => {
+      acc[key] = Array.isArray(parsed[key]) ? parsed[key] : [];
+      return acc;
+    }, {});
   } catch {
-    return { types:[], routes:[], statuses:[], sectors:[], evidences:[], helices:[], transitions:[], tracks:[], levels:[], tags:[] };
+    return FILTER_KEYS.reduce((acc, key) => ({ ...acc, [key]: [] }), {});
   }
 }
-function setMpFilters(f) { localStorage.setItem(MP_FILTER_KEY, JSON.stringify(f)); }
-function clearMpFilters() { localStorage.removeItem(MP_FILTER_KEY); localStorage.removeItem(MP_SEARCH_KEY); }
 
-function getMpSearch() { return localStorage.getItem(MP_SEARCH_KEY) || ''; }
-function setMpSearch(v) {
-  if (v) localStorage.setItem(MP_SEARCH_KEY, v);
+function setMpFilters(filters) {
+  localStorage.setItem(MP_FILTER_KEY, JSON.stringify(filters));
+}
+
+function clearMpFilters() {
+  localStorage.removeItem(MP_FILTER_KEY);
+  localStorage.removeItem(MP_SEARCH_KEY);
+}
+
+function getMpSearch() {
+  return localStorage.getItem(MP_SEARCH_KEY) || '';
+}
+
+function setMpSearch(value) {
+  if (value) localStorage.setItem(MP_SEARCH_KEY, value);
   else localStorage.removeItem(MP_SEARCH_KEY);
 }
 
@@ -42,1170 +201,631 @@ function getMpSearchExpanded() {
   if (stored !== null) return stored === 'true';
   return MARKETPLACE_CONFIG.searchBlock?.defaultExpanded === true;
 }
-function setMpSearchExpanded(v) { localStorage.setItem(MP_EXPANDED_KEY, v ? 'true' : 'false'); }
+
+function setMpSearchExpanded(value) {
+  localStorage.setItem(MP_EXPANDED_KEY, value ? 'true' : 'false');
+}
 
 function getMpFilterPanelExpanded() {
   return localStorage.getItem(MP_PANEL_KEY) === 'true';
 }
-function setMpFilterPanelExpanded(v) { localStorage.setItem(MP_PANEL_KEY, v ? 'true' : 'false'); }
 
-function toggleMpFilter(arr, val) {
-  return arr.includes(val) ? arr.filter(v => v !== val) : [...arr, val];
+function setMpFilterPanelExpanded(value) {
+  localStorage.setItem(MP_PANEL_KEY, value ? 'true' : 'false');
+}
+
+function toggleMpFilter(arr, value) {
+  return arr.includes(value) ? arr.filter(item => item !== value) : [...arr, value];
 }
 
 function hasMpFilters(filters, search) {
-  return Object.values(filters).some(v => Array.isArray(v) && v.length > 0) || !!search;
+  return FILTER_KEYS.some(key => filters[key]?.length) || Boolean(search);
 }
 
-// Maps data-mp-chip dimension name → filter array key
-const DIM_MAP_GRID = {
-  type:       'types',
-  status:     'statuses',
-  route:      'routes',
-  helix:      'helices',
-  transition: 'transitions',
-  track:      'tracks',
-  evidence:   'evidences',
-  sector:     'sectors',
-  level:      'levels',
-  tag:        'tags',
-};
-
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
-function getLang() { return localStorage.getItem('language') || 'es'; }
-
-function pickLang(value, fallback = '') {
-  if (!value || typeof value !== 'object') return value || fallback;
-  const lang = getLang();
-  return value[lang] || value.es || value.en || fallback;
-}
-
-function getLabelFromArray(arr, id) {
-  return pickLang(arr?.find(l => l.id === id)?.label) || id;
-}
-
-function getStatusLabel(id)           { return getLabelFromArray(MARKETPLACE_CONFIG.statusLabels, id); }
-function getTypeLabel(id)             { return getLabelFromArray(MARKETPLACE_CONFIG.typeLabels, id); }
-function getRouteLabel(id)            { return getLabelFromArray(MARKETPLACE_CONFIG.routeLabels, id); }
-function getHelixLabel(id)            { return getLabelFromArray(MARKETPLACE_CONFIG.helixLabels, id); }
-function getCyclePhaseLabel(id)       { return getLabelFromArray(MARKETPLACE_CONFIG.cyclePhaseLabels, id); }
-function getTransitionLabel(id)       { return getLabelFromArray(MARKETPLACE_CONFIG.transitionLabels, id); }
-function getTrackLabel(id)            { return getLabelFromArray(MARKETPLACE_CONFIG.trackLabels, id); }
-function getEvidenceMaturityLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.evidenceMaturityLabels, id); }
-function getLevelLabel(id)            { return getLabelFromArray(MARKETPLACE_CONFIG.levelLabels, id); }
-
-function getSectorCode(s) {
-  const MAP = {
-    'Manufacturing': 'mfg', 'Mobility and Transport': 'mob', 'Energy and Environment': 'ene',
-    'Agrifood': 'agr', 'Cultural and Creative Industries': 'cci', 'Housing': 'hou',
-    'Non-Touristic Services': 'nts',
+function getFilterValues(item) {
+  return {
+    types: compact([item.type]),
+    statuses: compact([item.core?.status]),
+    sectors: compact([getSectorCode(item.core?.sector)]),
+    stakeholders: compact([item.core?.stakeholderCategory]),
+    transitions: compact(asArray(item.classification?.tripleTransition)),
+    policies: compact(asArray(item.classification?.policyCluster)),
+    engagements: compact([item.classification?.engagementLevel]),
+    evidences: compact([item.classification?.evidenceMaturity]),
+    focuses: compact(asArray(item.classification?.aiSteamFocus)),
+    tags: compact(getLocalizedTags(item)),
   };
-  return MAP[s] || s;
-}
-function getSectorLabel(s) { return (t('sectors.sectorNames') || {})[getSectorCode(s)] || s; }
-
-// Tags: pick the right language array
-function getTags(ch) {
-  const lang = getLang();
-  if (ch.tags && typeof ch.tags === 'object' && !Array.isArray(ch.tags)) {
-    return ch.tags[lang] || ch.tags.es || ch.tags.en || [];
-  }
-  return Array.isArray(ch.tags) ? ch.tags : [];
 }
 
-function getTracks(ch) {
-  if (Array.isArray(ch.track)) return ch.track;
-  return ch.track ? [ch.track] : [];
+function itemMatchesFilters(item, filters) {
+  const values = getFilterValues(item);
+  return FILTER_KEYS.every(key => !filters[key]?.length || filters[key].some(value => values[key].includes(value)));
 }
 
-// Status badge styles (by normalized id)
-const STATUS_STYLES = {
-  'open':        'bg-green-100 text-green-800',
-  'in-progress': 'bg-yellow-100 text-yellow-800',
-  'resolved':    'bg-gray-100 text-gray-600',
-};
-const STATUS_DOT = {
-  'open':        'bg-green-500',
-  'in-progress': 'bg-yellow-500',
-  'resolved':    'bg-gray-400',
-};
-const STATUS_BG = {
-  'open':        'bg-green-100',
-  'in-progress': 'bg-yellow-100',
-  'resolved':    'bg-gray-100',
-};
-const STATUS_TEXT = {
-  'open':        'text-green-800',
-  'in-progress': 'text-yellow-800',
-  'resolved':    'text-gray-600',
-};
-
-const ROUTE_STYLES = {
-  'fp':      'bg-eu-yellow text-eu-purple',
-  'teacher': 'bg-teal-100 text-teal-800',
-  'master':  'bg-purple-100 text-purple-800',
-};
-
-const EVIDENCE_STYLES = {
-  idea:      'bg-gray-100 text-gray-600',
-  validated: 'bg-blue-100 text-blue-700',
-  inPilot:   'bg-yellow-100 text-yellow-800',
-  completed: 'bg-green-100 text-green-800',
-};
-
-const LEVEL_STYLES = {
-  'FP':       'bg-orange-100 text-orange-800',
-  'Máster':   'bg-purple-100 text-purple-800',
-  'Docentes': 'bg-teal-100 text-teal-800',
-};
-
-// Helix chip colors
-const HELIX_STYLES = {
-  academia: 'bg-purple-100 text-purple-700',
-  public:   'bg-blue-100 text-blue-700',
-  industry: 'bg-orange-100 text-orange-700',
-  civil:    'bg-teal-100 text-teal-700',
-};
-
-// Cycle phase colors
-const CYCLE_PHASE_STYLES = {
-  input:      'bg-eu-yellow text-eu-purple',
-  processing: 'bg-blue-100 text-blue-700',
-  output:     'bg-green-100 text-green-700',
-};
-
-// Transition badge colors
-const TRANSITION_STYLES = {
-  digital: 'bg-blue-50 text-blue-600',
-  green:   'bg-green-50 text-green-700',
-  social:  'bg-pink-50 text-pink-700',
-};
-
-const HERO_CHIP_STYLES = {
-  cycle:      'bg-white text-eu-purple border border-white/80',
-  helix:      'bg-white text-eu-blue border border-white/80',
-  digital:    'bg-white text-blue-800 border border-white/80',
-  green:      'bg-white text-green-800 border border-white/80',
-  social:     'bg-white text-pink-800 border border-white/80',
-  track:      'bg-white text-gray-800 border border-white/80',
-  tag:        'bg-white text-eu-blue border border-white/80',
-  meta:       'bg-white/15 text-white border border-white/30',
-};
-
-const HERO_CHIP_BASE = 'inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full shadow-sm';
-
-function getFilteredContributions(all, filters, search) {
-  return all.filter(ch => {
-    if (filters.types.length       && !filters.types.includes(ch.type))                               return false;
-    if (filters.routes.length      && !filters.routes.includes(ch.route))                             return false;
-    if (filters.statuses.length    && !filters.statuses.includes(ch.status))                          return false;
-    if (filters.sectors.length     && !filters.sectors.includes(ch.sector))                           return false;
-    if (filters.evidences.length   && !filters.evidences.includes(ch.evidenceMaturity))               return false;
-    if (filters.helices.length     && !filters.helices.includes(ch.helixRole))                        return false;
-    if (filters.transitions.length && !(ch.tripleTransition || []).some(tr => filters.transitions.includes(tr))) return false;
-    if (filters.tracks.length      && !getTracks(ch).some(track => filters.tracks.includes(track)))   return false;
-    if (filters.levels.length      && !(ch.level || []).some(l => filters.levels.includes(l)))        return false;
-    if (filters.tags.length        && !getTags(ch).some(tag => filters.tags.includes(tag)))           return false;
-    if (search) {
-      const q = search.toLowerCase();
-      const lang = getLang();
-      const title = pickLang(ch.title).toLowerCase();
-      const desc  = (ch.detail?.[lang]?.fullDescription || ch.detail?.es?.fullDescription || '').toLowerCase();
-      if (!title.includes(q) && !desc.includes(q)) return false;
-    }
-    return true;
-  });
+function itemMatchesSearch(item, search) {
+  if (!search) return true;
+  const q = search.toLowerCase();
+  const haystack = compact([
+    pickLang(item.core?.title),
+    pickLang(item.core?.summary),
+    pickLang(item.core?.entity?.name),
+    getTypeLabel(item.type),
+    getStatusLabel(item.core?.status),
+    getSectorLabel(item.core?.sector),
+    getStakeholderLabel(item.core?.stakeholderCategory),
+    getEvidenceLabel(item.classification?.evidenceMaturity),
+    getEngagementLabel(item.classification?.engagementLevel),
+    asArray(item.classification?.tripleTransition).map(getTransitionLabel),
+    asArray(item.classification?.policyCluster).map(getPolicyLabel),
+    asArray(item.classification?.aiSteamFocus).map(getFocusLabel),
+    getLocalizedTags(item),
+  ]).join(' ').toLowerCase();
+  return haystack.includes(q);
 }
 
-// ─── Filter chip helpers ──────────────────────────────────────────────────────
-
-const CHIP_ACTIVE   = 'bg-eu-blue/10 text-eu-blue border border-eu-blue';
-const CHIP_INACTIVE = 'bg-eu-bg border border-eu-border text-gray-600 hover:border-eu-blue';
-const CHIP_BASE     = 'text-xs font-bold px-2 py-0.5 rounded cursor-pointer transition-colors whitespace-nowrap';
-
-function renderChipRow(items, activeArr, dimension, label) {
-  const visible = (items || []).filter(it => it.visible !== false);
-  if (!visible.length) return '';
-  const chips = visible.map(it => {
-    const on = activeArr.includes(it.id);
-    return `<button data-mp-chip="${dimension}" data-mp-val="${it.id}" class="${CHIP_BASE} ${on ? CHIP_ACTIVE : CHIP_INACTIVE}">${pickLang(it.label)}</button>`;
-  }).join('');
-  return `<div class="flex flex-col sm:flex-row sm:items-start gap-1.5 sm:gap-2">
-    <span class="text-xs font-bold text-gray-500 sm:w-32 shrink-0 sm:mt-0.5 leading-snug">${label}</span>
-    <div class="flex flex-wrap gap-1.5">${chips}</div>
-  </div>`;
+function getFilteredItems(items, filters, search) {
+  return items.filter(item => itemMatchesFilters(item, filters) && itemMatchesSearch(item, search.trim()));
 }
 
-function renderSectorChipRow(activeSectors, label) {
-  const sectorOptions = [
-    'Manufacturing', 'Mobility and Transport', 'Energy and Environment',
-    'Agrifood', 'Cultural and Creative Industries', 'Housing', 'Non-Touristic Services',
-  ];
-  const chips = sectorOptions.map(s => {
-    const on = activeSectors.includes(s);
-    return `<button data-mp-chip="sector" data-mp-val="${s}" class="${CHIP_BASE} ${on ? CHIP_ACTIVE : CHIP_INACTIVE}">${getSectorLabel(s)}</button>`;
-  }).join('');
-  return `<div class="flex flex-col sm:flex-row sm:items-start gap-1.5 sm:gap-2">
-    <span class="text-xs font-bold text-gray-500 sm:w-32 shrink-0 sm:mt-0.5 leading-snug">${label}</span>
-    <div class="flex flex-wrap gap-1.5">${chips}</div>
-  </div>`;
+function buildOptions(items, key, labeler) {
+  const values = [...new Set(items.flatMap(item => getFilterValues(item)[key] || []))].filter(Boolean);
+  return values.map(value => ({ value, label: labeler(value) })).sort((a, b) => a.label.localeCompare(b.label));
 }
 
-function renderMpActiveFilters(filters, search, mT) {
-  const mp = MARKETPLACE_CONFIG;
-  const badges = [];
-  const badge = (dim, val, label, cls) =>
-    `<button data-mp-remove="${dim}" data-mp-val="${val}"
-      class="inline-flex items-center gap-1 px-2 py-0.5 rounded ${cls} text-xs font-bold hover:opacity-80 cursor-pointer">
-      <span>${label}</span><i data-lucide="x" class="w-3 h-3"></i>
+function chipClasses(active = false, tone = '') {
+  if (active) return 'border-violet-500 bg-violet-50 text-violet-800';
+  return `${tone || 'bg-white text-slate-700'} border-slate-200 hover:border-violet-300 hover:text-violet-800`;
+}
+
+function renderClickableChip(dimension, value, label, active = false, tone = '') {
+  if (!value || !label) return '';
+  return `
+    <button type="button" data-mp-chip="${dimension}" data-mp-val="${esc(value)}"
+      class="inline-flex min-h-11 items-center rounded-full border px-3 py-1 text-xs font-semibold transition ${chipClasses(active, tone)}">
+      ${esc(label)}
     </button>`;
-
-  filters.types.forEach(id       => badges.push(badge('types',       id, getTypeLabel(id),             'bg-eu-blue/10 text-eu-blue')));
-  filters.statuses.forEach(id    => badges.push(badge('statuses',    id, getStatusLabel(id),            STATUS_STYLES[id]  || 'bg-gray-100 text-gray-600')));
-  filters.routes.forEach(id      => badges.push(badge('routes',      id, getRouteLabel(id),             ROUTE_STYLES[id]   || 'bg-gray-100 text-gray-600')));
-  filters.sectors.forEach(s      => badges.push(badge('sectors',     s,  getSectorLabel(s),             'bg-eu-teal/10 text-eu-teal')));
-  filters.evidences.forEach(id   => badges.push(badge('evidences',   id, getEvidenceMaturityLabel(id),  EVIDENCE_STYLES[id] || 'bg-gray-100 text-gray-600')));
-  filters.helices.forEach(id     => badges.push(badge('helices',     id, getHelixLabel(id),             HELIX_STYLES[id]   || 'bg-gray-100 text-gray-600')));
-  filters.transitions.forEach(id => badges.push(badge('transitions', id, getTransitionLabel(id),        TRANSITION_STYLES[id] || 'bg-gray-100 text-gray-600')));
-  filters.tracks.forEach(id      => badges.push(badge('tracks',      id, getTrackLabel(id),             'bg-gray-100 text-gray-700')));
-  filters.levels.forEach(id      => badges.push(badge('levels',      id, getLevelLabel(id),              LEVEL_STYLES[id] || 'bg-gray-100 text-gray-600')));
-  filters.tags.forEach(tag       => badges.push(badge('tags',        tag, tag,                           'bg-eu-bg text-gray-600 border border-eu-border')));
-  if (search) badges.push(badge('search', search, `"${search}"`, 'bg-amber-100 text-amber-800'));
-
-  if (!badges.length) return '';
-  return `<div class="flex flex-wrap items-center gap-2 mb-4 px-4 py-3 bg-white border border-eu-border rounded-xl shadow-sm">
-    <span class="text-xs font-bold text-gray-500 shrink-0">${mT.activeFilters || 'Filtros activos'}:</span>
-    ${badges.join('')}
-    <button id="mp-clear-active-filters" type="button" class="ml-auto px-2 py-0.5 rounded text-xs font-bold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200">
-      ${mT?.clearAllFilters || 'Limpiar todo'}
-    </button>
-  </div>`;
 }
 
-// ─── Card renderer ───────────────────────────────────────────────────────────
-
-function renderMpEmptyState(allCount, mT) {
-  const hasContributions = allCount > 0;
-  const title = hasContributions
-    ? (mT?.noFilterResultsTitle || mT?.noResults || 'Sin resultados')
-    : (mT?.emptyContributionsTitle || 'No hay retos publicados');
-  const message = hasContributions
-    ? (mT?.noFilterResultsMessage || mT?.tryModifying || 'Prueba a modificar los filtros')
-    : (mT?.emptyContributionsMessage || 'Todavía no hay contribuciones visibles en este espacio.');
-
-  return `<div id="mp-grid" class="bg-white rounded-xl border border-eu-border shadow-sm px-6 text-center flex flex-col items-center justify-center" style="min-height: 240px; padding-top: 64px; padding-bottom: 64px;">
-    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-eu-bg border border-eu-border text-eu-blue">
-      <i data-lucide="${hasContributions ? 'search-x' : 'inbox'}" class="w-6 h-6"></i>
-    </div>
-    <p class="text-lg font-bold text-eu-text mb-3">${title}</p>
-    <p class="text-sm text-gray-500 max-w-md mx-auto">${message}</p>
-  </div>`;
+function renderBadge(label, tone = 'bg-white text-slate-700 ring-slate-200') {
+  if (!label) return '';
+  return `<span class="inline-flex min-h-8 items-center rounded-full px-3 py-1 text-xs font-bold ring-1 ${tone}">${esc(label)}</span>`;
 }
 
-function renderCardHtml(ch, mT) {
-  const lang = getLang();
-  const tags    = getTags(ch);
-  const stStyle = STATUS_STYLES[ch.status]             || 'bg-gray-100 text-gray-600';
-  const rtStyle = ROUTE_STYLES[ch.route]               || 'bg-gray-100 text-gray-600';
-  const evStyle = EVIDENCE_STYLES[ch.evidenceMaturity] || 'bg-gray-100 text-gray-600';
-  const hasText = (v) => v !== null && v !== undefined && String(v).trim() !== '';
-  const localizedText = (v) => {
-    if (!v) return '';
-    if (typeof v === 'object') return pickLang(v) || '';
-    return String(v);
-  };
-
-  const ccv = MARKETPLACE_CONFIG.cardChipVisibility || {};
-  const showType     = ccv.type             !== false;
-  const showStatus   = ccv.status           !== false;
-  const showRoute    = ccv.route            !== false;
-  const showEvidence = ccv.evidenceMaturity !== false;
-  const showHelix    = ccv.helixRole        !== false;
-  const showTrans    = ccv.tripleTransition !== false;
-  const showSector   = ccv.sector           !== false;
-  const showTags     = ccv.tags             !== false;
-  const showLevel    = ccv.level            !== false;
-
-  const fb = (dim, val, cls, label, tooltip) =>
-    `<button data-mp-chip="${dim}" data-mp-val="${val}"
-      class="${cls} cursor-pointer hover:opacity-75 transition-opacity border-none"
-      title="${tooltip || label}">${label}</button>`;
-
-  // Icon-prefixed chip: icon + text inside an inline-flex wrapper
-  const fbIcon = (dim, val, cls, icon, text, tooltip) =>
-    `<button data-mp-chip="${dim}" data-mp-val="${val}"
-      class="${cls} inline-flex items-center gap-1 cursor-pointer hover:opacity-75 transition-opacity border-none"
-      title="${tooltip || text}">
-      <i data-lucide="${icon}" class="w-3 h-3 shrink-0" aria-hidden="true"></i>
-      <span>${text}</span>
-    </button>`;
-
-  const shortTrans = (id) =>
-    getTransitionLabel(id).replace(/^Transici[oóò]n?\s+/i, '').replace(/^Transition\s+/i, '');
-
-  const transitions = ch.tripleTransition || [];
-  const postedFallback = lang === 'en' ? 'Opening' : (lang === 'va' ? 'Obertura' : 'Apertura');
-  const entityTypeText = localizedText(ch.entityType);
-  const postedText = localizedText(ch.postedLabel) || (hasText(ch.posted) ? ch.posted : '');
-  const deadlineText = localizedText(ch.deadlineLabel) || (hasText(ch.deadline) ? ch.deadline : '');
-  const publishedAtText = localizedText(ch.publishedAtLabel);
-  const revisionDateText = localizedText(ch.revisionDateLabel);
-  const teamsCount = Number(ch.teams);
-  const infoItems = [
-    postedText
-      ? `<span class="flex items-center gap-1.5 min-w-0">
-          <i data-lucide="calendar" class="w-3 h-3 shrink-0 text-gray-400"></i>
-          <span class="truncate">${mT?.postedLabel || postedFallback}: ${postedText}</span>
-        </span>`
-      : '',
-    deadlineText
-      ? `<span class="flex items-center gap-1.5 min-w-0">
-          <i data-lucide="clock" class="w-3 h-3 shrink-0 text-gray-400"></i>
-          <span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${deadlineText}</span>
-        </span>`
-      : '',
-    Number.isFinite(teamsCount) && teamsCount > 0
-      ? `<span class="flex items-center gap-1.5 shrink-0">
-          <i data-lucide="users" class="w-3 h-3 shrink-0 text-gray-400"></i>
-          ${teamsCount} ${teamsCount === 1 ? (mT?.teamSingular || 'equipo') : (mT?.teamPlural || 'equipos')}
-        </span>`
-      : ''
-  ].filter(Boolean).join('');
-
-  return `<div class="bg-white rounded-2xl border border-eu-border shadow-sm flex flex-col hover:shadow-md transition-shadow duration-200 cursor-pointer">
-
-    <!-- ── BODY ── -->
-    <div class="p-5 flex-1 space-y-3">
-
-      <!-- Badges: type + status -->
-      ${(showType || showStatus) ? `<div class="flex flex-wrap gap-2">
-        ${showType   ? fb('type',   ch.type,   'text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded-lg bg-eu-blue/10 text-eu-blue', getTypeLabel(ch.type)) : ''}
-        ${showStatus ? fb('status', ch.status, `text-xs font-semibold px-2.5 py-1 rounded-lg ${stStyle}`, getStatusLabel(ch.status)) : ''}
-      </div>` : ''}
-
-      <!-- Title + entity -->
-      ${(hasText(ch.entity) || entityTypeText) ? `<div>
-        <h3 class="font-bold text-eu-text text-sm leading-snug line-clamp-2 mb-1">${pickLang(ch.title)}</h3>
-        <p class="text-xs text-gray-500 truncate">
-          ${hasText(ch.entity) ? `<span class="font-semibold">${ch.entity}</span>` : ''}
-          ${entityTypeText ? `<span class="text-gray-400">${hasText(ch.entity) ? ' · ' : ''}${entityTypeText}</span>` : ''}
-        </p>
-      </div>` : `<h3 class="font-bold text-eu-text text-sm leading-snug line-clamp-2">${pickLang(ch.title)}</h3>`}
-
-      <!-- Primary chips: route (icon-prefixed) + evidence -->
-      ${(showRoute || showEvidence) ? `<div class="flex flex-wrap gap-1.5">
-        ${showRoute    ? fbIcon('route',    ch.route,            `text-xs font-semibold px-2.5 py-1 rounded-lg ${rtStyle}`, 'route', getRouteLabel(ch.route)) : ''}
-        ${showEvidence ? fb('evidence', ch.evidenceMaturity, `text-xs font-semibold px-2.5 py-1 rounded-lg ${evStyle}`, getEvidenceMaturityLabel(ch.evidenceMaturity)) : ''}
-      </div>` : ''}
-
-      <!-- Level chips — own row, icon-prefixed to distinguish from route -->
-      ${showLevel ? (() => {
-          const levels = (Array.isArray(ch.level) ? ch.level : [ch.level]).filter(Boolean);
-          return levels.length ? `<div class="flex flex-wrap gap-1.5">
-            ${levels.map(l =>
-              fbIcon('level', l, `text-xs font-semibold px-2.5 py-1 rounded-lg ${LEVEL_STYLES[l] || 'bg-gray-100 text-gray-600'}`, 'graduation-cap', getLevelLabel(l))
-            ).join('')}
-          </div>` : '';
-        })() : ''}
-
-      <!-- Context chips: helix + all transitions -->
-      ${(showHelix || showTrans) ? `<div class="flex flex-wrap gap-1.5">
-        ${showHelix && ch.helixRole
-          ? fb('helix', ch.helixRole, `text-xs font-medium px-2.5 py-1 rounded-lg ${HELIX_STYLES[ch.helixRole] || 'bg-gray-100 text-gray-600'}`, getHelixLabel(ch.helixRole))
-          : ''}
-        ${showTrans ? transitions.map(tr =>
-          fb('transition', tr,
-            `text-xs font-medium px-2.5 py-1 rounded-lg ${TRANSITION_STYLES[tr] || 'bg-gray-100 text-gray-600'}`,
-            shortTrans(tr), getTransitionLabel(tr))
-        ).join('') : ''}
-      </div>` : ''}
-
-      <!-- Tags (conditional) -->
-      ${(showTags && tags.length) ? `<div class="flex flex-wrap gap-1.5">
-        ${tags.map(tag =>
-          `<button data-mp-chip="tag" data-mp-val="${tag}" class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-2 py-1 rounded-lg text-gray-500 font-medium cursor-pointer hover:border-eu-blue hover:text-eu-blue transition-colors" style="max-width:160px">
-            <i data-lucide="tag" class="w-3 h-3 shrink-0"></i><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${tag}</span>
-          </button>`).join('')}
-      </div>` : ''}
-
-      <!-- Deadline + teams -->
-      ${infoItems ? `<div class="flex items-center gap-3 text-xs text-gray-500">${infoItems}</div>` : ''}
-    </div>
-
-    <!-- ── FOOTER ── -->
-    <div class="border-t border-eu-border rounded-b-2xl overflow-hidden">
-
-      <!-- Sector row -->
-      ${showSector ? `<div class="bg-eu-bg px-5 pt-4 pb-3">
-        <button data-mp-chip="sector" data-mp-val="${ch.sector}"
-          class="text-xs font-bold text-eu-teal uppercase tracking-wide bg-eu-teal/10 px-2.5 py-1 rounded-lg cursor-pointer hover:opacity-75 transition-opacity border-none"
-          style="max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;vertical-align:middle"
-          title="${getSectorLabel(ch.sector)}">${getSectorLabel(ch.sector)}</button>
-      </div>` : ''}
-
-      <!-- Date + CTA row -->
-      <div class="bg-eu-bg px-5 pt-3 pb-4 flex items-center ${publishedAtText ? 'justify-between' : 'justify-end'} gap-3">
-        ${publishedAtText
-          ? `<span class="flex items-center gap-1.5 text-xs text-gray-400">
-              <i data-lucide="calendar" class="w-3 h-3 shrink-0"></i>
-              <span>${publishedAtText}</span>
-              ${revisionDateText
-                ? `<span class="text-gray-300 mx-0.5">·</span>
-                   <i data-lucide="pencil" class="w-3 h-3 shrink-0"></i>
-                   <span>${revisionDateText}</span>`
-                : ''}
-            </span>`
-          : ''}
-        <button class="mp-view-detail shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-eu-blue text-white text-xs font-bold hover:bg-eu-blue/90 transition-colors cursor-pointer border-none" data-id="${ch.id}">
-          ${mT?.viewAndApply || 'Ver detalle'}
-          <i data-lucide="arrow-right" class="w-3 h-3"></i>
-        </button>
+function renderFilterGroup(title, dimension, options, activeValues) {
+  if (!options.length) return '';
+  return `
+    <div class="space-y-2">
+      <p class="text-xs font-bold uppercase tracking-wide text-slate-500">${esc(title)}</p>
+      <div class="flex flex-wrap gap-2">
+        ${options.map(option => renderClickableChip(dimension, option.value, option.label, activeValues.includes(option.value))).join('')}
       </div>
-    </div>
-  </div>`;
+    </div>`;
 }
 
-// ─── Detail view ─────────────────────────────────────────────────────────────
-
-function renderDetail(ch, mT) {
-  const lang = getLang();
-  const cdT = t('challengeDetail') || {};
-  const extra = ch.detail?.[lang] || ch.detail?.en || ch.detail?.es || null;
-  const hasText = (v) => v !== null && v !== undefined && String(v).trim() !== '';
-  const localizedText = (v) => {
-    if (!v) return '';
-    if (typeof v === 'object') return pickLang(v) || '';
-    return String(v);
+function renderActiveFilters(filters, search) {
+  if (!hasMpFilters(filters, search)) return '';
+  const labels = {
+    types: getTypeLabel,
+    statuses: getStatusLabel,
+    sectors: getSectorLabel,
+    stakeholders: getStakeholderLabel,
+    transitions: getTransitionLabel,
+    policies: getPolicyLabel,
+    engagements: getEngagementLabel,
+    evidences: getEvidenceLabel,
+    focuses: getFocusLabel,
+    tags: value => value,
   };
-
-  const statusId = ch.status;
-  const stBg   = STATUS_BG[statusId]   || 'bg-gray-100';
-  const stText  = STATUS_TEXT[statusId] || 'text-gray-600';
-  const stDot   = STATUS_DOT[statusId]  || 'bg-gray-400';
-  const levels = Array.isArray(ch.level) ? ch.level : (ch.level ? [ch.level] : []);
-  const lvlChips = levels.map(l =>
-    `<span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${LEVEL_STYLES[l] || 'bg-gray-100 text-gray-600'}">${getLevelLabel(l)}</span>`
-  ).join('');
-
-  const participationCtas = cdT.participationCtas || {};
-  const participationButton = participationCtas[ch.type] || cdT.requestParticipationButton || 'Solicitar participación →';
-
-  const showForm = getState('marketplaceShowParticipation');
-  const participationSent = getState('marketplaceParticipationSent');
-
-  const roles = cdT.participationRoles || [];
-  const types = cdT.participationTypes || [];
-  const pathways = cdT.participationPathways || [];
-  const ethics = cdT.participationEthics || [];
-  const fields = cdT.participationFields || {};
-  const placeholders = cdT.participationPlaceholders || {};
-
-  const tags = getTags(ch);
-  const entityTypeText = localizedText(ch.entityType);
-  const deadlineText = localizedText(ch.deadlineLabel) || (hasText(ch.deadline) ? ch.deadline : '');
-  const postedText = localizedText(ch.postedLabel) || (hasText(ch.posted) ? ch.posted : '');
-  const teamsCount = Number(ch.teams);
-
-  // Hero chips use high-contrast pairs because the hero sits on a dark blue surface.
-  const ldBadges = `
-    <div class="flex flex-wrap gap-2 mt-3">
-      ${ch.cyclePhase ? `<span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES.cycle}"><i data-lucide="workflow" class="w-3 h-3"></i>${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
-      ${ch.helixRole ? `<span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES.helix}"><i data-lucide="network" class="w-3 h-3"></i>${getHelixLabel(ch.helixRole)}</span>` : ''}
-      ${(ch.tripleTransition || []).map(t => `<span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES[t] || HERO_CHIP_STYLES.track}"><i data-lucide="sparkles" class="w-3 h-3"></i>${getTransitionLabel(t)}</span>`).join('')}
-      ${getTracks(ch).map(track => `<span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES.track}"><i data-lucide="git-branch" class="w-3 h-3"></i>${getTrackLabel(track)}</span>`).join('')}
+  const chips = FILTER_KEYS.flatMap(key => filters[key].map(value => `
+    <button type="button" data-mp-remove="${key}" data-mp-val="${esc(value)}"
+      class="inline-flex min-h-11 items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-200">
+      ${esc(labels[key](value))}
+      <i data-lucide="x" class="h-3 w-3"></i>
+    </button>`));
+  if (search) {
+    chips.unshift(`
+      <button type="button" data-mp-remove="search" data-mp-val=""
+        class="inline-flex min-h-11 items-center gap-2 rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-800 hover:bg-violet-100">
+        ${esc(search)}
+        <i data-lucide="x" class="h-3 w-3"></i>
+      </button>`);
+  }
+  return `
+    <div id="mp-active-filters" class="flex flex-wrap items-center gap-2">
+      ${chips.join('')}
+      <button id="mp-clear-active-filters" type="button" class="text-xs font-bold text-violet-700 hover:text-violet-900">
+        Limpiar filtros
+      </button>
     </div>`;
+}
+
+function getCardSignal(item) {
+  const detail = item.detail || {};
+  const core = item.core || {};
+  if (item.type === 'challenge') return core.deadlineLabel || pickLang(detail.need?.question) || pickLang(item.classification?.trackBValue);
+  if (item.type === 'case') return pickLang(detail.transferValue?.value) || pickLang(detail.context?.learningSetting);
+  if (item.type === 'validation') return pickLang(detail.evidence?.result) || pickLang(detail.evidence?.method);
+  if (item.type === 'mentoring') return pickLang(detail.participation?.availability) || pickLang(detail.participation?.modality);
+  if (item.type === 'pilot') return pickLang(detail.process?.nextStep) || pickLang(detail.evidence?.learningSignals);
+  if (item.type === 'resource') return pickLang(detail.access?.format) || pickLang(detail.resources?.mainResource);
+  return pickLang(item.classification?.trackBValue);
+}
+
+function renderCard(item) {
+  const title = pickLang(item.core?.title, item.id);
+  const summary = pickLang(item.core?.summary);
+  const entity = pickLang(item.core?.entity?.name);
+  const sectorCode = getSectorCode(item.core?.sector);
+  const signal = getCardSignal(item);
+  const active = getMpFilters();
+  const focuses = asArray(item.classification?.aiSteamFocus).slice(0, 2);
+  const transitions = asArray(item.classification?.tripleTransition).slice(0, 2);
 
   return `
-<div class="animate-in fade-in duration-300">
-  <!-- Sticky nav -->
-  <div class="bg-white border-b border-eu-border sticky top-[112px] z-40 px-6 py-3">
-    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-      <button id="mp-back" class="flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline bg-transparent border-none cursor-pointer">
-        <i data-lucide="arrow-left" class="w-4 h-4"></i> ${cdT.backButton || 'Volver a Retos y Casos'}
-      </button>
-      <div class="flex items-center gap-2">
-        ${lvlChips}
-        <span class="flex items-center gap-1.5 text-sm font-bold px-2 py-0.5 rounded ${stBg} ${stText}">
-          <span class="w-1.5 h-1.5 rounded-full ${stDot}"></span>
-          ${getStatusLabel(statusId)}
-        </span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Hero -->
-  <div class="bg-eu-blue text-white px-6 py-10">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <div class="lg:col-span-2">
-        <div class="flex flex-wrap items-center gap-2 mb-3">
-          <span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES.meta} uppercase tracking-wide">${getSectorLabel(ch.sector)}</span>
-          ${entityTypeText ? `<i data-lucide="chevron-right" class="w-3 h-3 text-white/40"></i>
-          <span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES.meta}">${entityTypeText}</span>` : ''}
-        </div>
-        <h1 class="text-3xl font-extrabold mb-3 leading-tight">${pickLang(ch.title)}</h1>
-        ${hasText(ch.entity) ? `<div class="flex items-center gap-3 mb-5">
-          <i data-lucide="building-2" class="w-4 h-4 text-white/60 shrink-0"></i>
-          <span class="text-white/80 font-semibold">${ch.entity}</span>
-        </div>` : ''}
-        <div class="flex flex-wrap gap-2">
-          ${tags.map(tag => `<span class="${HERO_CHIP_BASE} ${HERO_CHIP_STYLES.tag}"><i data-lucide="tag" class="w-3 h-3"></i>${tag}</span>`).join('')}
-        </div>
-        ${ldBadges}
-      </div>
-      <!-- Key info card -->
-      <div class="bg-white/10 rounded-xl p-5 flex flex-col gap-3">
-        ${deadlineText ? `
-        <div class="flex items-center gap-3">
-          <i data-lucide="calendar" class="w-4 h-4 text-eu-yellow shrink-0"></i>
-          <div>
-            <p class="text-xs text-white/50 uppercase font-bold">${cdT.deadline || 'Plazo'}</p>
-            <p class="font-bold text-white">${deadlineText}</p>
-          </div>
-        </div>` : ''}
-        ${postedText ? `
-        <div class="flex items-center gap-3">
-          <i data-lucide="clock" class="w-4 h-4 text-eu-yellow shrink-0"></i>
-          <div>
-            <p class="text-xs text-white/50 uppercase font-bold">${cdT.posted || 'Publicado'}</p>
-            <p class="font-bold text-white">${postedText}</p>
-          </div>
-        </div>` : ''}
-        ${Number.isFinite(teamsCount) && teamsCount > 0 ? `
-        <div class="flex items-center gap-3">
-          <i data-lucide="users" class="w-4 h-4 text-eu-yellow shrink-0"></i>
-          <div>
-            <p class="text-xs text-white/50 uppercase font-bold">${cdT.teamsEnrolled || 'Participaciones activas'}</p>
-            <p class="font-bold text-white">${teamsCount} ${teamsCount === 1 ? (cdT.participationSingular || 'participación') : (cdT.participationPlural || 'participaciones')}</p>
-          </div>
-        </div>` : ''}
-        ${extra?.teamSize ? `
-        <div class="flex items-center gap-3">
-          <i data-lucide="users" class="w-4 h-4 text-eu-yellow shrink-0"></i>
-          <div>
-            <p class="text-xs text-white/50 uppercase font-bold">${cdT.teamComposition || 'Composición de equipo'}</p>
-            <p class="font-bold text-white text-sm">${extra.teamSize}</p>
-          </div>
-        </div>` : ''}
-        ${ch.route ? `
-        <div class="flex items-center gap-3">
-          <i data-lucide="route" class="w-4 h-4 text-eu-yellow shrink-0"></i>
-          <div>
-            <p class="text-xs text-white/50 uppercase font-bold">${cdT.routeLabel || 'Ruta educativa'}</p>
-            <p class="font-bold text-white text-sm">${getRouteLabel(ch.route)}</p>
-          </div>
-        </div>` : ''}
-        ${ch.status === 'open' ? `<button id="mp-open-form" class="mt-2 w-full bg-eu-orange text-white font-bold py-2.5 rounded-lg hover:bg-eu-purple transition-colors border-none cursor-pointer text-sm">${participationButton}</button>` : ''}
-        ${ch.status === 'in-progress' ? `<div class="mt-2 w-full bg-yellow-400/20 text-yellow-200 font-bold py-2.5 rounded-lg text-sm text-center">${cdT.enrollmentClosed || 'Inscripciones cerradas'}</div>` : ''}
-        ${ch.status === 'resolved' ? `<div class="mt-2 w-full bg-white/10 text-white/60 font-bold py-2.5 rounded-lg text-sm text-center">${cdT.challengeCompleted || 'Reto completado'}</div>` : ''}
-      </div>
-    </div>
-  </div>
-
-  <!-- Participation form -->
-  ${showForm && ch.status === 'open' ? `
-  <div id="challenge-participation-form" class="bg-eu-bg border-b border-eu-border px-6 py-8">
-    <div class="max-w-4xl mx-auto bg-white rounded-xl border-2 border-eu-orange shadow-sm overflow-hidden">
-      <div class="bg-eu-orange/10 border-b border-eu-orange/30 px-6 py-4">
-        <p class="text-xs font-extrabold uppercase text-eu-orange mb-1">${cdT.consensuePreferredLabel || 'ConsensUE · trazabilidad participativa'}</p>
-        <h2 class="text-lg font-bold text-eu-text">${cdT.participationFormTitle || 'Formulario de solicitud de participación'}</h2>
-        <p class="text-sm text-gray-600 mt-2">${cdT.participationFormIntro || ''}</p>
-      </div>
-      <form id="mp-participation-form" class="p-6 space-y-5">
-        ${participationSent ? `<div role="alert" class="bg-green-50 border border-green-200 rounded-lg p-4 text-sm text-green-800 font-semibold">${cdT.participationConfirmation || '¡Solicitud enviada correctamente!'}</div>` : ''}
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div><label for="mp-pf-name" class="block text-[13px] font-bold text-eu-text mb-1">${fields.name || 'Nombre'}</label><input id="mp-pf-name" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
-          <div><label for="mp-pf-email" class="block text-[13px] font-bold text-eu-text mb-1">${fields.email || 'Email'}</label><input id="mp-pf-email" type="email" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
-          <div><label for="mp-pf-org" class="block text-[13px] font-bold text-eu-text mb-1">${fields.organization || 'Organización'}</label><input id="mp-pf-org" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
-          <div><label for="mp-pf-lang" class="block text-[13px] font-bold text-eu-text mb-1">${fields.language || 'Idioma'}</label><select id="mp-pf-lang" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"><option>ES</option><option>EN</option><option>VA</option></select></div>
-          <div><label for="mp-pf-country" class="block text-[13px] font-bold text-eu-text mb-1">${fields.country || 'País'}</label><input id="mp-pf-country" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
-          <div><label for="mp-pf-region" class="block text-[13px] font-bold text-eu-text mb-1">${fields.region || 'Región'}</label><input id="mp-pf-region" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
-          ${roles.length ? `<div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-2">${fields.role || 'Rol'}</label><div class="grid grid-cols-1 sm:grid-cols-2 gap-2">${roles.map(r => `<label class="flex items-center gap-2 text-sm text-gray-700 bg-eu-bg border border-eu-border rounded-md px-3 py-2"><input type="checkbox" class="rounded border-eu-border"> ${r}</label>`).join('')}</div></div>` : ''}
-          ${types.length ? `<div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-2">${fields.participationType || 'Tipo de participación'}</label><div class="grid grid-cols-1 sm:grid-cols-2 gap-2">${types.map(tp => `<label class="flex items-center gap-2 text-sm text-gray-700 bg-eu-bg border border-eu-border rounded-md px-3 py-2"><input type="checkbox" class="rounded border-eu-border"> ${tp}</label>`).join('')}</div></div>` : ''}
-          ${pathways.length ? `<div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.preferredPathway || 'Vía preferida'}</label><select class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">${pathways.map(p => `<option>${p}</option>`).join('')}</select></div>` : ''}
-          <div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.context || 'Contexto'}</label><textarea rows="4" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue resize-none" placeholder="${placeholders.context || ''}"></textarea></div>
-          <div class="sm:col-span-2"><label class="block text-[13px] font-bold text-eu-text mb-1">${fields.availability || 'Disponibilidad'}</label><input type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" placeholder="${placeholders.availability || ''}"></div>
-        </div>
-        ${ethics.length ? `<div class="space-y-2 border-t border-eu-border pt-4">${ethics.map(e => `<label class="flex items-start gap-2 text-xs text-gray-600"><input type="checkbox" class="mt-0.5 rounded border-eu-border"> ${e}</label>`).join('')}</div>` : ''}
-        <div class="flex flex-col sm:flex-row justify-end gap-3">
-          <button type="button" id="mp-cancel-form" class="px-5 py-2 rounded-md border border-eu-border text-eu-text text-sm font-bold hover:bg-eu-bg transition-colors cursor-pointer">${cdT.cancel || 'Cancelar'}</button>
-          <button type="submit" class="bg-eu-orange text-white px-6 py-2.5 rounded-md font-bold border-none hover:bg-eu-purple transition-colors cursor-pointer">${cdT.submitParticipation || 'Enviar solicitud'}</button>
-        </div>
-      </form>
-    </div>
-  </div>` : ''}
-
-  <!-- Main grid -->
-  <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
-    <!-- Main content -->
-    <div class="lg:col-span-2 space-y-8">
-
-      <!-- Description -->
-      <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
-        <h2 class="text-lg font-bold text-eu-text mb-3 flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5 text-eu-blue"></i> ${cdT.descriptionTitle || 'Descripción'}</h2>
-        <p class="text-sm text-gray-700 leading-relaxed mb-4">${extra?.fullDescription ?? pickLang(ch.title)}</p>
-        ${extra?.context ? `<div class="bg-eu-bg border-l-4 border-eu-teal rounded-r-lg p-4"><p class="text-xs font-bold text-eu-teal uppercase mb-1">${cdT.contextLabel || 'Contexto y datos disponibles'}</p><p class="text-sm text-gray-600">${extra.context}</p></div>` : ''}
-      </section>
-
-      <!-- Objectives -->
-      ${extra?.objectives?.length ? `
-      <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
-        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="target" class="w-5 h-5 text-eu-orange"></i> ${cdT.objectivesTitle || 'Objetivos y Resultados Esperados'}</h2>
-        <ul class="space-y-2.5">
-          ${extra.objectives.map(o => `<li class="flex items-start gap-3 text-sm text-gray-700"><i data-lucide="check-circle" class="w-4 h-4 text-eu-teal mt-0.5 shrink-0"></i>${o}</li>`).join('')}
-        </ul>
-      </section>` : ''}
-
-      <!-- Datasets & tools -->
-      ${extra?.datasets?.length || extra?.tools?.length ? `
-      <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
-        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="database" class="w-5 h-5 text-eu-blue"></i> ${cdT.resourcesTitle || 'Datos y Recursos Disponibles'}</h2>
-        ${extra?.datasets?.length ? `
-        <div class="mb-5">
-          <p class="text-xs font-bold text-gray-500 uppercase mb-3">${cdT.datasetsLabel || 'Datasets proporcionados'}</p>
-          <div class="space-y-2">
-            ${extra.datasets.map(d => `
-            <div class="flex items-center justify-between bg-eu-bg rounded-lg px-4 py-2.5 border border-eu-border">
-              <div class="flex items-center gap-2"><i data-lucide="download" class="w-4 h-4 text-eu-blue shrink-0"></i><span class="text-sm font-semibold text-eu-text">${d.label}</span></div>
-              <div class="flex items-center gap-2 shrink-0 ml-4"><span class="text-xs bg-eu-blue/10 text-eu-blue font-bold px-2 py-0.5 rounded">${d.format}</span><span class="text-xs text-gray-400 font-semibold">${d.size}</span></div>
-            </div>`).join('')}
-          </div>
-        </div>` : ''}
-        ${extra?.tools?.length ? `
-        <div>
-          <p class="text-xs font-bold text-gray-500 uppercase mb-3">${cdT.toolsLabel || 'Tecnologías recomendadas'}</p>
-          <div class="flex flex-wrap gap-2">
-            ${extra.tools.map(tool => `<span class="text-xs bg-eu-bg border border-eu-border px-2.5 py-1 rounded-full font-semibold text-gray-600">${tool}</span>`).join('')}
-          </div>
-        </div>` : ''}
-      </section>` : ''}
-
-      <!-- Deliverables -->
-      ${extra?.deliverables?.length ? `
-      <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
-        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5 text-eu-teal"></i> ${cdT.deliverablesTitle || 'Entregables Requeridos'}</h2>
-        <div class="space-y-2.5">
-          ${extra.deliverables.map((d, i) => `
-          <div class="flex items-center justify-between gap-4">
-            <div class="flex items-center gap-2.5">
-              <span class="w-6 h-6 rounded-full bg-eu-teal/10 text-eu-teal text-xs font-extrabold flex items-center justify-center shrink-0">${i + 1}</span>
-              <span class="text-sm font-semibold text-eu-text">${d.label}</span>
-            </div>
-            <span class="text-xs text-gray-500 font-semibold shrink-0 text-right">${d.format}</span>
-          </div>`).join('')}
-        </div>
-      </section>` : ''}
-
-      <!-- Eval criteria -->
-      ${extra?.evalCriteria?.length ? `
-      <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
-        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="star" class="w-5 h-5 text-eu-yellow"></i> ${cdT.evaluationTitle || 'Criterios de Evaluación'}</h2>
-        <div class="space-y-4">
-          ${extra.evalCriteria.map(c => `
-          <div>
-            <div class="flex items-center justify-between mb-1"><span class="text-sm font-bold text-eu-text">${c.label}</span><span class="text-sm font-extrabold text-eu-blue">${c.weight}%</span></div>
-            <div class="w-full bg-eu-bg rounded-full h-1.5 mb-1.5"><div class="bg-eu-blue h-1.5 rounded-full" style="width:${c.weight}%"></div></div>
-            <p class="text-xs text-gray-500">${c.desc}</p>
-          </div>`).join('')}
-        </div>
-      </section>` : ''}
-
-      <!-- Eligibility -->
-      ${extra?.eligibility?.length && extra.eligibility[0] !== 'Challenge closed — in production since January 2026' ? `
-      <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
-        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="users" class="w-5 h-5 text-eu-teal"></i> ${cdT.eligibilityTitle || 'Elegibilidad y Requisitos'}</h2>
-        <ul class="space-y-2">
-          ${extra.eligibility.map(e => `<li class="flex items-start gap-2.5 text-sm text-gray-700"><span class="w-1.5 h-1.5 rounded-full bg-eu-teal mt-1.5 shrink-0"></span>${e}</li>`).join('')}
-        </ul>
-      </section>` : ''}
-
-      <!-- FAQ -->
-      ${extra?.faq?.length ? `
-      <section class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
-        <h2 class="text-lg font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="message-square" class="w-5 h-5 text-eu-orange"></i> ${cdT.faqTitle || 'Preguntas Frecuentes'}</h2>
-        <div class="space-y-4">
-          ${extra.faq.map(f => `
-          <div class="border-b border-eu-border pb-4 last:border-0 last:pb-0">
-            <p class="text-sm font-bold text-eu-text mb-1.5">${f.q}</p>
-            <p class="text-sm text-gray-600">${f.a}</p>
-          </div>`).join('')}
-        </div>
-      </section>` : ''}
-    </div>
-
-    <!-- Sidebar -->
-    <div class="space-y-6">
-      <!-- Timeline -->
-      ${extra?.milestones?.length ? `
-      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6">
-        <h3 class="font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-eu-blue"></i> ${cdT.milestonesTitle || 'Hitos'}</h3>
-        <div class="relative">
-          <div class="absolute left-3 top-2 bottom-2 w-0.5 bg-eu-border"></div>
-          <div class="space-y-4">
-            ${extra.milestones.map(m => `
-            <div class="flex gap-3 pl-8 relative">
-              <div class="absolute left-0 top-1 w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${m.done ? 'bg-eu-teal' : 'bg-white border-2 border-eu-border'}">
-                ${m.done ? '<i data-lucide="check-circle" class="w-3.5 h-3.5 text-white"></i>' : ''}
-              </div>
-              <div>
-                <p class="text-xs font-bold ${m.done ? 'text-eu-teal' : 'text-gray-500'}">${m.date}</p>
-                <p class="text-xs mt-0.5 ${m.done ? 'text-eu-text font-semibold' : 'text-gray-500'}">${m.label}</p>
-              </div>
-            </div>`).join('')}
-          </div>
-        </div>
-      </div>` : ''}
-
-      <!-- Mentors -->
-      ${extra?.mentors?.length ? `
-      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6">
-        <h3 class="font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-eu-blue"></i> ${cdT.mentorsTitle || 'Mentores'}</h3>
-        <div class="space-y-4">
-          ${extra.mentors.map(m => {
-            const initials = m.name.split(' ').map(n => n[0]).slice(0, 2).join('');
-            return `
-          <div class="flex items-start gap-3">
-            <div class="w-9 h-9 rounded-full bg-eu-blue/10 flex items-center justify-center shrink-0 text-eu-blue font-extrabold text-sm">${initials}</div>
-            <div>
-              <p class="text-sm font-bold text-eu-text">${m.name}</p>
-              <p class="text-xs text-eu-teal font-semibold">${m.role}</p>
-              <p class="text-xs text-gray-500">${m.org}</p>
-            </div>
-          </div>`;
-          }).join('')}
-        </div>
-      </div>` : ''}
-
-      <!-- Recognition -->
-      ${extra?.recognition?.length ? `
-      <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6">
-        <h3 class="font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="award" class="w-4 h-4 text-eu-orange"></i> ${cdT.recognitionTitle || 'Reconocimiento'}</h3>
-        <ul class="space-y-2.5">
-          ${extra.recognition.map((r, i) => `
-          <li class="flex items-start gap-2 text-xs text-gray-700">
-            <span class="text-eu-orange font-extrabold shrink-0 mt-0.5">${i === 0 ? '🥇' : i === 1 ? '🥈' : '✓'}</span>
-            ${r}
-          </li>`).join('')}
-        </ul>
-      </div>` : ''}
-
-      <!-- Network return -->
-      <div class="bg-eu-bg rounded-xl border border-eu-border p-6">
-        <h3 class="font-bold text-eu-text mb-4 flex items-center gap-2"><i data-lucide="handshake" class="w-4 h-4 text-eu-teal"></i> ${cdT.networkReturnTitle || 'Qué devuelve la red al stakeholder'}</h3>
-        <ul class="space-y-2.5 text-xs text-gray-700">
-          <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-eu-teal rounded-full mt-1.5 shrink-0"></span>Publicación del caso/resultado como recurso OER en Aules</li>
-          <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-eu-teal rounded-full mt-1.5 shrink-0"></span>Visibilidad en la red de ${cdT.consortiumLabel || '23 socios'} de AI-SECRETT</li>
-          <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-eu-teal rounded-full mt-1.5 shrink-0"></span>Acceso a talento formado (FP/VET y, si procede, Máster)</li>
-          <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-eu-teal rounded-full mt-1.5 shrink-0"></span>Co-validación del resultado por el Comité Científico AI-SECRETT</li>
-          <li class="flex items-start gap-2"><span class="w-1.5 h-1.5 bg-eu-teal rounded-full mt-1.5 shrink-0"></span>Participación en la gobernanza vía ConsensUE (acuerdo gasto cero)</li>
-        </ul>
+    <article class="group flex h-full flex-col rounded-lg border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-md">
+      <div class="flex flex-wrap items-center gap-2">
+        ${renderClickableChip('type', item.type, getTypeLabel(item.type), active.types.includes(item.type), TYPE_TONE[item.type])}
+        ${renderClickableChip('status', item.core?.status, getStatusLabel(item.core?.status), active.statuses.includes(item.core?.status), STATUS_TONE[item.core?.status])}
+        ${renderClickableChip('evidence', item.classification?.evidenceMaturity, getEvidenceLabel(item.classification?.evidenceMaturity), active.evidences.includes(item.classification?.evidenceMaturity))}
       </div>
 
-      <!-- CTA bottom -->
-      ${ch.status === 'open' ? `
-      <div class="bg-eu-blue rounded-xl p-6 text-white text-center">
-        <p class="font-bold mb-1">${cdT.interestCTA || '¿Quieres participar en este reto?'}</p>
-        ${deadlineText ? `<p class="text-xs text-white/70 mb-4">${cdT.requestBeforeDeadline || 'Abierto hasta el'} ${deadlineText}.</p>` : ''}
-        <button id="mp-open-form-bottom" class="w-full bg-eu-orange text-white font-bold py-2.5 rounded-lg hover:bg-eu-purple transition-colors border-none cursor-pointer text-sm">${participationButton}</button>
-        <p class="text-xs text-white/60 mt-3">${cdT.requestReviewNote || ''}</p>
-      </div>` : ''}
-    </div>
-  </div>
-</div>`;
+      <div class="mt-4 flex-1">
+        <h3 class="text-lg font-black leading-snug text-slate-950">${esc(title)}</h3>
+        ${entity ? `<p class="mt-1 text-sm font-semibold text-slate-500">${esc(entity)}${item.core?.entity?.type ? ` · ${esc(pickLang(item.core.entity.type))}` : ''}</p>` : ''}
+        ${summary ? `<p class="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">${esc(summary)}</p>` : ''}
+      </div>
+
+      <div class="mt-4 flex flex-wrap gap-2">
+        ${renderClickableChip('sector', sectorCode, getSectorLabel(item.core?.sector), active.sectors.includes(sectorCode))}
+        ${renderClickableChip('stakeholder', item.core?.stakeholderCategory, getStakeholderLabel(item.core?.stakeholderCategory), active.stakeholders.includes(item.core?.stakeholderCategory))}
+        ${transitions.map(value => renderClickableChip('transition', value, getTransitionLabel(value), active.transitions.includes(value))).join('')}
+        ${focuses.map(value => renderClickableChip('focus', value, getFocusLabel(value), active.focuses.includes(value))).join('')}
+      </div>
+
+      ${signal ? `
+        <div class="mt-5 rounded-lg bg-slate-50 p-3 text-sm leading-6 text-slate-700">
+          <span class="font-bold text-slate-950">${esc(getTypeLabel(item.type))}:</span>
+          ${esc(signal)}
+        </div>` : ''}
+
+      <div class="mt-5 flex items-center justify-between gap-3 border-t border-slate-100 pt-4">
+        <span class="text-xs font-semibold uppercase tracking-wide text-slate-400">Track B</span>
+        <button type="button" data-id="${esc(item.id)}"
+          class="mp-view-detail inline-flex items-center gap-2 rounded-full bg-violet-700 px-4 py-2 text-sm font-bold text-white transition hover:bg-violet-800">
+          Ver detalle
+          <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </button>
+      </div>
+    </article>`;
 }
 
-// ─── List view ────────────────────────────────────────────────────────────────
+function renderTextValue(value) {
+  const localized = isLocalizedObject(value) ? pickLang(value) : value;
+  if (localized == null || localized === '') return '';
+  if (Array.isArray(localized)) {
+    const items = localized.map(renderTextValue).filter(Boolean);
+    if (!items.length) return '';
+    return `<ul class="space-y-2">${items.map(item => `<li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400"></span><span>${item}</span></li>`).join('')}</ul>`;
+  }
+  if (typeof localized === 'object') {
+    return renderObjectValue(localized);
+  }
+  return `<span>${esc(localized)}</span>`;
+}
 
-function renderList(all, mT) {
-  const filters        = getMpFilters();
-  const search         = getMpSearch();
+function renderObjectValue(value) {
+  const entries = Object.entries(value || {})
+    .map(([key, entry]) => [key, renderTextValue(entry)])
+    .filter(([, rendered]) => rendered);
+  if (!entries.length) return '';
+  return `<dl class="space-y-3">${entries.map(([key, rendered]) => `
+    <div>
+      <dt class="text-xs font-bold uppercase tracking-wide text-slate-400">${esc(humanizeKey(key))}</dt>
+      <dd class="mt-1 text-sm leading-6 text-slate-700">${rendered}</dd>
+    </div>`).join('')}</dl>`;
+}
+
+function humanizeKey(key) {
+  return String(key)
+    .replace(/([A-Z])/g, ' $1')
+    .replace(/[_-]/g, ' ')
+    .replace(/^./, match => match.toUpperCase());
+}
+
+function getBlockContent(item, key) {
+  if (key === 'access') {
+    return item.detail?.access || item.access || {};
+  }
+  if (key === 'trackA') {
+    if (item.trackALink?.enabled === false) return {};
+    return item.detail?.trackA || item.trackALink || {};
+  }
+  return item.detail?.[key] || {};
+}
+
+function renderDetailBlock(item, block) {
+  if (item.visibility?.[block.key] === false) return '';
+  const content = getBlockContent(item, block.key);
+  const body = renderTextValue(content);
+  if (!body) return '';
+  return `
+    <section class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+      <div class="mb-4 flex items-center gap-3">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-violet-50 text-violet-700">
+          <i data-lucide="${block.icon}" class="h-4 w-4"></i>
+        </span>
+        <h2 class="text-base font-black text-slate-950">${esc(getBlockLabel(block.key) || humanizeKey(block.key))}</h2>
+      </div>
+      <div class="text-sm leading-6 text-slate-700">${body}</div>
+    </section>`;
+}
+
+function renderDetail(item) {
+  const title = pickLang(item.core?.title, item.id);
+  const summary = pickLang(item.core?.summary);
+  const entity = pickLang(item.core?.entity?.name);
+  const trackBValue = pickLang(item.classification?.trackBValue);
+  const sectorCode = getSectorCode(item.core?.sector);
+  const transitions = asArray(item.classification?.tripleTransition);
+  const policies = asArray(item.classification?.policyCluster);
+  const focuses = asArray(item.classification?.aiSteamFocus);
+  const blocks = DETAIL_BLOCKS.map(block => renderDetailBlock(item, block)).filter(Boolean);
+
+  return `
+    <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <button id="mp-back" type="button" class="mb-6 inline-flex items-center gap-2 text-sm font-bold text-violet-700 hover:text-violet-900">
+        <i data-lucide="arrow-left" class="h-4 w-4"></i>
+        Volver al marketplace
+      </button>
+
+      <div class="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+        <div class="bg-slate-950 px-5 py-7 text-white sm:px-8 sm:py-9">
+          <div class="flex flex-wrap gap-2">
+            ${renderBadge(getTypeLabel(item.type), 'bg-white/10 text-white ring-white/20')}
+            ${renderBadge(getStatusLabel(item.core?.status), 'bg-emerald-400/15 text-emerald-100 ring-emerald-300/25')}
+            ${renderBadge(getEvidenceLabel(item.classification?.evidenceMaturity), 'bg-sky-400/15 text-sky-100 ring-sky-300/25')}
+            ${renderBadge(getEngagementLabel(item.classification?.engagementLevel), 'bg-amber-400/15 text-amber-100 ring-amber-300/25')}
+          </div>
+          <h1 class="mt-5 max-w-4xl text-3xl font-black leading-tight sm:text-4xl">${esc(title)}</h1>
+          ${summary ? `<p class="mt-4 max-w-4xl text-base leading-7 text-slate-200">${esc(summary)}</p>` : ''}
+          <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-300">
+            ${entity ? `<span class="inline-flex items-center gap-2"><i data-lucide="building-2" class="h-4 w-4"></i>${esc(entity)}</span>` : ''}
+            ${item.core?.publishedAtLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="calendar" class="h-4 w-4"></i>${esc(item.core.publishedAtLabel)}</span>` : ''}
+            ${item.core?.deadlineLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="timer" class="h-4 w-4"></i>${esc(item.core.deadlineLabel)}</span>` : ''}
+          </div>
+        </div>
+
+        <div class="px-5 py-5 sm:px-8">
+          <div class="flex flex-wrap gap-2">
+            ${renderBadge(getSectorLabel(item.core?.sector))}
+            ${renderBadge(getStakeholderLabel(item.core?.stakeholderCategory))}
+            ${transitions.map(value => renderBadge(getTransitionLabel(value))).join('')}
+            ${policies.map(value => renderBadge(getPolicyLabel(value))).join('')}
+            ${focuses.map(value => renderBadge(getFocusLabel(value))).join('')}
+          </div>
+          ${trackBValue ? `
+            <div class="mt-5 rounded-lg bg-violet-50 p-4 text-sm leading-6 text-violet-950 ring-1 ring-violet-100">
+              <strong>Valor Track B:</strong> ${esc(trackBValue)}
+            </div>` : ''}
+        </div>
+      </div>
+
+      <div class="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1fr)_20rem]">
+        <div class="grid gap-5 md:grid-cols-2">
+          ${blocks.join('') || `<p class="rounded-lg border border-slate-200 bg-white p-5 text-sm text-slate-500">Este elemento todavía no tiene bloques de detalle publicados.</p>`}
+        </div>
+        <aside class="space-y-5">
+          <section class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+            <h2 class="text-base font-black text-slate-950">Resumen operativo</h2>
+            <dl class="mt-4 space-y-3 text-sm">
+              ${renderSummaryRow('Tipo', getTypeLabel(item.type))}
+              ${renderSummaryRow('Estado', getStatusLabel(item.core?.status))}
+              ${renderSummaryRow('Sector', getSectorLabel(item.core?.sector))}
+              ${renderSummaryRow('Agente', getStakeholderLabel(item.core?.stakeholderCategory))}
+              ${renderSummaryRow('Madurez', getEvidenceLabel(item.classification?.evidenceMaturity))}
+              ${renderSummaryRow('Participación', getEngagementLabel(item.classification?.engagementLevel))}
+            </dl>
+          </section>
+          ${renderCallToAction(item)}
+        </aside>
+      </div>
+    </section>`;
+}
+
+function renderSummaryRow(label, value) {
+  if (!value) return '';
+  return `
+    <div>
+      <dt class="text-xs font-bold uppercase tracking-wide text-slate-400">${esc(label)}</dt>
+      <dd class="mt-1 font-semibold text-slate-700">${esc(value)}</dd>
+    </div>`;
+}
+
+function renderCallToAction(item) {
+  const access = item.access || {};
+  const detailAccess = item.detail?.access || {};
+  const label = pickLang(access.ctaLabel) || pickLang(detailAccess.ctaLabel) || 'Solicitar participación';
+  const url = pickLang(access.url) || pickLang(detailAccess.url);
+  const href = url || '#';
+  return `
+    <section class="rounded-lg border border-violet-200 bg-violet-50 p-5 shadow-sm">
+      <h2 class="text-base font-black text-violet-950">Siguiente paso</h2>
+      ${pickLang(access.instructions) ? `<p class="mt-2 text-sm leading-6 text-violet-900">${esc(pickLang(access.instructions))}</p>` : ''}
+      <a ${url ? `href="${esc(href)}"` : ''} class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-violet-700 px-4 py-2 text-sm font-bold text-white transition hover:bg-violet-800">
+        ${esc(label)}
+        <i data-lucide="arrow-right" class="h-4 w-4"></i>
+      </a>
+    </section>`;
+}
+
+function renderEmptyState(total) {
+  return `
+    <div id="mp-grid" class="rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center">
+      <i data-lucide="search-x" class="mx-auto h-8 w-8 text-slate-400"></i>
+      <h3 class="mt-3 text-lg font-black text-slate-900">No hay resultados con esos filtros</h3>
+      <p class="mt-2 text-sm text-slate-500">Prueba a ajustar la búsqueda o limpiar filtros. Hay ${total} elementos publicados.</p>
+      <button id="mp-clear-all" type="button" class="mt-4 rounded-full bg-violet-700 px-4 py-2 text-sm font-bold text-white hover:bg-violet-800">Limpiar filtros</button>
+    </div>`;
+}
+
+function renderList(items) {
+  const filters = getMpFilters();
+  const search = getMpSearch();
+  const filtered = getFilteredItems(items, filters, search);
   const searchExpanded = getMpSearchExpanded();
   const filterPanelExpanded = getMpFilterPanelExpanded();
-  const showSubmit     = getState('marketplaceShowSubmit');
-  const filtered       = getFilteredContributions(all, filters, search);
-
-  const heroBlock = MARKETPLACE_CONFIG?.heroBlock || {};
-  const hasHeroBlock = heroBlock && Object.keys(heroBlock).length > 0;
-
-  const fallbackStats = [
-    { value: all.filter(c => c.status === 'open').length, label: { es: 'Abiertas', en: 'Open', va: 'Obertes' } },
-    { value: all.filter(c => c.status === 'in-progress').length, label: { es: 'En Proceso', en: 'In Progress', va: 'En Procés' } },
-    { value: all.filter(c => c.status === 'resolved').length, label: { es: 'Completadas', en: 'Completed', va: 'Completades' } },
-  ];
-  const heroStats = hasHeroBlock && Array.isArray(heroBlock.stats) ? heroBlock.stats : fallbackStats;
-  const submitButton = heroBlock.submitButton || {};
-
-  const heroHtml = heroBlock.visible !== false ? `
-  <div class="bg-eu-blue text-white px-4 sm:px-6 py-8 sm:py-10">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
-      <div class="flex-1 min-w-0">
-        <h1 class="text-2xl sm:text-3xl font-extrabold mb-2">${pickLang(heroBlock.title, mT?.title || 'Retos y Casos')}</h1>
-        <p class="text-white/80 max-w-2xl text-sm sm:text-base">${pickLang(heroBlock.description, mT?.description || '')}</p>
-        <div class="grid grid-cols-3 gap-3 sm:gap-5 mt-5">
-          ${heroStats.map(stat => `
-          <div class="bg-white/10 rounded-xl px-3 sm:px-6 py-3 sm:py-4 text-center sm:text-left">
-            <p class="text-xl sm:text-2xl font-extrabold text-eu-yellow">${stat.value}</p>
-            <p class="text-xs text-white/70 font-semibold uppercase mt-1 line-clamp-2">${pickLang(stat.label, '')}</p>
-          </div>`).join('')}
-        </div>
-      </div>
-      ${submitButton.visible !== false ? `
-      <button id="mp-toggle-submit" class="flex items-center justify-center sm:justify-start gap-2 bg-eu-orange text-white px-5 py-3 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0 w-full sm:w-auto">
-        <i data-lucide="plus" class="w-4 h-4"></i> ${pickLang(submitButton.label, mT?.publishChallenge || 'Publicar reto')}
-      </button>` : ''}
-    </div>
-  </div>` : '';
-
-  const resultsCountTpl = (mT?.resultsCount || 'Mostrando <strong>{{count}}</strong> de {{total}} contribuciones')
-    .replace('{{count}}', `<strong>${filtered.length}</strong>`)
-    .replace('{{total}}', String(all.length));
-
-  const formLabels       = mT?.formLabels       || {};
-  const formPlaceholders = mT?.formPlaceholders || {};
-
-  const mp  = MARKETPLACE_CONFIG;
-  const cv  = mp.chipVisibility  || {};
-  const sb  = mp.searchBlock     || {};
-  const typeLabels           = mp.typeLabels           || [];
-  const routeLabels          = mp.routeLabels          || [];
-  const evidenceMaturityLabels = mp.evidenceMaturityLabels || [];
-
-  const totalActive = Object.values(filters).reduce((n, v) => n + (Array.isArray(v) ? v.length : 0), 0) + (search ? 1 : 0);
+  const hero = MARKETPLACE_CONFIG.heroBlock || {};
+  const stats = getStats(items);
 
   return `
-<div class="animate-in fade-in duration-300">
-  ${heroHtml}
-
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-    <!-- Submit form -->
-    ${showSubmit ? `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-5 sm:p-7 mb-8">
-      <h2 class="text-lg sm:text-xl font-bold text-eu-text mb-1">${mT?.publishNew || 'Publicar nueva contribución'}</h2>
-      <p class="text-sm text-gray-600 mb-5">${mT?.shareChallenge || ''}</p>
-      <div class="bg-eu-yellow/30 border border-eu-yellow rounded-md p-3 mb-5 text-sm text-eu-text">
-        <p class="font-bold mb-1">${mT?.consensueDemoTitle || 'ConsensUE (demo)'}</p>
-        <p class="text-gray-700">${mT?.consensueDemoNote || ''}</p>
-      </div>
-      <form id="mp-submit-form" class="space-y-4 max-w-2xl">
-        <div><label for="mp-sf-title" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.title || 'Título'} *</label><input id="mp-sf-title" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" placeholder="${formPlaceholders.title || ''}"></div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <section class="bg-slate-950 text-white">
+      <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-end">
           <div>
-            <label for="mp-sf-type" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.contributionType || 'Tipo'} *</label>
-            <select id="mp-sf-type" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-              ${typeLabels.filter(l => l.visible).map(l => `<option value="${l.id}">${pickLang(l.label)}</option>`).join('')}
-            </select>
+            <p class="text-sm font-bold uppercase tracking-wide text-violet-200">AI-STEAM Network · Track B</p>
+            <h1 class="mt-3 max-w-4xl text-4xl font-black leading-tight sm:text-5xl">${esc(pickLang(hero.title, 'Marketplace Track B'))}</h1>
+            <p class="mt-4 max-w-3xl text-base leading-7 text-slate-200">${esc(pickLang(hero.description, 'Retos, casos, validaciones, mentorías, pilotajes y recursos para transferencia real en IA, STEAM, arte y creatividad.'))}</p>
           </div>
-          <div>
-            <label for="mp-sf-route" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.route || 'Ruta'} *</label>
-            <select id="mp-sf-route" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-              ${routeLabels.filter(l => l.visible).map(l => `<option value="${l.id}">${pickLang(l.label)}</option>`).join('')}
-            </select>
+          <div class="grid grid-cols-3 gap-3">
+            ${stats.map(stat => `
+              <div class="rounded-lg bg-white/10 p-4 ring-1 ring-white/15">
+                <p class="text-2xl font-black">${stat.value}</p>
+                <p class="mt-1 text-xs font-semibold text-slate-300">${esc(stat.label)}</p>
+              </div>`).join('')}
           </div>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label for="mp-sf-sector" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.sector || 'Sector'} *</label>
-            <select id="mp-sf-sector" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
-              ${sectorOptions.map(s => `<option>${(sectorNames[getSectorCode(s)] || s)}</option>`).join('')}
-            </select>
-          </div>
-          <div><label for="mp-sf-deadline" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.deadline || 'Plazo'}</label><input id="mp-sf-deadline" type="date" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"></div>
-        </div>
-        <div><label for="mp-sf-desc" class="block text-[13px] font-bold text-eu-text mb-1">${formLabels.description || 'Descripción'} *</label><textarea id="mp-sf-desc" rows="4" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue resize-none" placeholder="${formPlaceholders.description || ''}"></textarea></div>
-        <div class="flex flex-col-reverse sm:flex-row justify-end gap-3">
-          <button type="button" id="mp-cancel-submit" class="px-5 py-2 rounded-md border border-eu-border text-eu-text text-sm font-bold hover:bg-eu-bg transition-colors cursor-pointer">${mT?.cancel || 'Cancelar'}</button>
-          <button type="submit" class="bg-eu-orange text-white px-6 py-2.5 rounded-md font-bold border-none hover:bg-eu-purple transition-colors cursor-pointer">${mT?.submit || 'Enviar'}</button>
-        </div>
-      </form>
-    </div>` : ''}
-
-    <!-- Filter chips panel -->
-    <div class="bg-white rounded-lg border border-eu-border shadow-sm mb-3 overflow-hidden">
-
-      <!-- Panel header -->
-      <div class="flex items-center justify-between gap-3 px-3 sm:px-4 py-2.5 bg-gray-50 ${filterPanelExpanded ? 'border-b border-eu-border' : ''}">
-        <button id="mp-filter-panel-toggle" type="button" aria-expanded="${filterPanelExpanded ? 'true' : 'false'}" class="min-h-11 flex flex-1 items-center gap-2 text-left bg-transparent border-none cursor-pointer group">
-          <i data-lucide="sliders-horizontal" class="w-4 h-4 text-eu-blue shrink-0"></i>
-          <span class="text-sm font-bold text-eu-text">${mT?.filtersTitle || 'Filtros'}</span>
-          ${totalActive > 0 ? `<span class="bg-eu-blue/10 text-eu-blue text-xs font-bold px-2 py-0.5 rounded">${totalActive}</span>` : ''}
-          <span class="text-xs font-semibold text-gray-500 ml-1 hidden sm:inline">
-            ${filterPanelExpanded ? (mT?.collapseFilters || 'Ocultar') : (mT?.expandFilters || 'Mostrar')}
-          </span>
-          <i data-lucide="${filterPanelExpanded ? 'chevron-up' : 'chevron-down'}" class="w-4 h-4 text-gray-400 group-hover:text-eu-blue transition-colors"></i>
-        </button>
-        <div class="flex items-center gap-2 shrink-0">
-          <span class="text-xs text-gray-500">${resultsCountTpl}</span>
-          ${totalActive > 0 ? `<button id="mp-clear-all" type="button" class="min-h-9 px-2 text-xs font-semibold text-gray-500 hover:text-red-600 transition-colors cursor-pointer bg-transparent border-none">${mT?.clearAllFilters || 'Limpiar todo'}</button>` : ''}
         </div>
       </div>
+    </section>
 
-      <!-- Chip rows -->
-      ${filterPanelExpanded ? `<div class="px-4 sm:px-5 py-4 flex flex-col gap-3 bg-white">
-        ${cv.type             !== false ? renderChipRow(mp.typeLabels,             filters.types,       'type',       mT?.filterContributionType || 'Tipo')       : ''}
-        ${cv.status           !== false ? renderChipRow(mp.statusLabels,           filters.statuses,    'status',     mT?.filterStatus           || 'Estado')     : ''}
-        ${cv.route            !== false ? renderChipRow(mp.routeLabels,            filters.routes,      'route',      mT?.filterRoute            || 'Ruta')       : ''}
-        ${cv.helixRole        !== false ? renderChipRow(mp.helixLabels,            filters.helices,     'helix',      mT?.filterHelixRole        || 'Hélice')     : ''}
-        ${cv.tripleTransition !== false ? renderChipRow(mp.transitionLabels,       filters.transitions, 'transition', mT?.filterTransition       || 'Transición') : ''}
-        ${cv.track            !== false ? renderChipRow(mp.trackLabels,            filters.tracks,      'track',      mT?.filterTrack            || 'Track')      : ''}
-        ${cv.evidenceMaturity !== false ? renderChipRow(mp.evidenceMaturityLabels, filters.evidences,   'evidence',   mT?.filterEvidenceMaturity || 'Madurez')    : ''}
-        ${cv.level              !== false ? renderChipRow(mp.levelLabels,            filters.levels,      'level',      mT?.filterLevel            || 'Nivel')      : ''}
-        ${cv.sector           !== false ? renderSectorChipRow(filters.sectors, mT?.filterSector || 'Sector') : ''}
-
-        <!-- Search expander -->
-        ${sb.visible !== false ? `
-        <div class="border-t border-eu-border pt-2 mt-1">
-          <button id="mp-search-toggle" type="button" aria-expanded="${searchExpanded ? 'true' : 'false'}" class="min-h-10 flex items-center gap-2 w-full px-3 py-2 rounded-md bg-eu-bg border border-eu-border text-xs font-semibold text-gray-600 hover:border-eu-blue transition-colors cursor-pointer text-left">
-            <i data-lucide="search" class="w-3.5 h-3.5 shrink-0 text-gray-400"></i>
-            <span>${mT?.advancedSearch || 'Búsqueda por texto'}</span>
-            ${getMpSearch() ? `<span class="text-xs font-bold text-eu-orange ml-1">${mT?.searchActive || '· activa'}</span>` : ''}
-            <i data-lucide="${searchExpanded ? 'chevron-up' : 'chevron-down'}" class="ml-auto w-3.5 h-3.5 shrink-0 text-gray-400"></i>
-          </button>
-          ${searchExpanded ? `
-          <div class="mt-2 relative">
-            <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none"></i>
-            <input id="mp-search" type="text" value="${getMpSearch().replace(/"/g, '&quot;')}"
-              class="w-full border border-eu-border rounded-md pl-8 pr-8 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue"
-              placeholder="${mT?.searchPlaceholder || ''}" autofocus>
-            <button id="mp-search-clear" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 bg-transparent border-none cursor-pointer ${getMpSearch() ? '' : 'hidden'}" title="${mT?.clearSearch || 'Borrar búsqueda'}">
-              <i data-lucide="x" class="w-4 h-4"></i>
+    <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div class="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+        <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+          <div class="flex flex-wrap items-center gap-2">
+            <button id="mp-search-toggle" type="button" class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-bold text-slate-700 hover:border-violet-300 hover:text-violet-800">
+              <i data-lucide="search" class="h-4 w-4"></i>
+              Buscar
             </button>
+            <button id="mp-filter-panel-toggle" type="button" class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-bold text-slate-700 hover:border-violet-300 hover:text-violet-800">
+              <i data-lucide="sliders-horizontal" class="h-4 w-4"></i>
+              Filtros
+            </button>
+          </div>
+          <p id="mp-results-count" class="text-sm font-semibold text-slate-500">Mostrando <strong>${filtered.length}</strong> de ${items.length} elementos</p>
+        </div>
+
+        ${searchExpanded ? `
+          <div class="mt-4 flex gap-2">
+            <input id="mp-search" value="${esc(search)}" type="search" placeholder="Buscar por título, entidad, sector, foco o etiqueta"
+              class="min-h-11 w-full rounded-lg border border-slate-200 px-4 text-sm outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-100">
+            ${search ? `<button id="mp-search-clear" type="button" class="rounded-lg border border-slate-200 px-3 text-slate-500 hover:text-slate-800"><i data-lucide="x" class="h-4 w-4"></i></button>` : ''}
           </div>` : ''}
-        </div>` : ''}
-      </div>` : ''}
-    </div>
 
-    <!-- Active filters panel -->
-    <div id="mp-active-filters">${renderMpActiveFilters(filters, search, mT)}</div>
+        ${filterPanelExpanded ? renderFilterPanel(items, filters) : ''}
+        <div id="mp-active-filter-slot" class="${hasMpFilters(filters, search) ? 'mt-4' : ''}">${renderActiveFilters(filters, search)}</div>
+      </div>
 
-    <!-- Results count -->
-    <p id="mp-results-count" class="text-sm text-gray-500 mb-4 ${filterPanelExpanded ? '' : 'sr-only'}">${resultsCountTpl}</p>
-
-    <!-- Grid / empty state -->
-    ${filtered.length === 0
-      ? renderMpEmptyState(all.length, mT)
-      : `<div id="mp-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-          ${filtered.map(ch => renderCardHtml(ch, mT)).join('')}
-        </div>`
-    }
-  </div>
-</div>`;
+      <div class="mt-6">
+        ${filtered.length ? `<div id="mp-grid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">${filtered.map(renderCard).join('')}</div>` : renderEmptyState(items.length)}
+      </div>
+    </section>`;
 }
 
-// ─── Public API ───────────────────────────────────────────────────────────────
+function renderFilterPanel(items, filters) {
+  const groups = [
+    ['Tipo', 'type', 'types', buildOptions(items, 'types', getTypeLabel)],
+    ['Estado', 'status', 'statuses', buildOptions(items, 'statuses', getStatusLabel)],
+    ['Sector', 'sector', 'sectors', buildOptions(items, 'sectors', getSectorLabel)],
+    ['Agente', 'stakeholder', 'stakeholders', buildOptions(items, 'stakeholders', getStakeholderLabel)],
+    ['Transición', 'transition', 'transitions', buildOptions(items, 'transitions', getTransitionLabel)],
+    ['Política', 'policy', 'policies', buildOptions(items, 'policies', getPolicyLabel)],
+    ['Participación', 'engagement', 'engagements', buildOptions(items, 'engagements', getEngagementLabel)],
+    ['Evidencia', 'evidence', 'evidences', buildOptions(items, 'evidences', getEvidenceLabel)],
+    ['Foco AI-STEAM', 'focus', 'focuses', buildOptions(items, 'focuses', getFocusLabel)],
+    ['Etiquetas', 'tag', 'tags', buildOptions(items, 'tags', value => value)],
+  ];
+  return `
+    <div class="mt-5 grid gap-5 border-t border-slate-100 pt-5 md:grid-cols-2 lg:grid-cols-3">
+      ${groups.map(([title, dimension, key, options]) => renderFilterGroup(title, dimension, options, filters[key])).join('')}
+    </div>`;
+}
+
+function getStats(items) {
+  return [
+    { value: items.length, label: 'Elementos' },
+    { value: items.filter(item => item.core?.status === 'open').length, label: 'Abiertos' },
+    { value: new Set(items.flatMap(item => asArray(item.classification?.aiSteamFocus))).size, label: 'Focos AI-STEAM' },
+  ];
+}
 
 export function render() {
-  const mT = t('marketplace') || {};
-  const all = MARKETPLACE_CONFIG.contributions || [];
+  const items = getItems();
   const selectedId = getState('selectedChallengeId');
-  if (selectedId) {
-    const ch = all.find(c => c.id === selectedId);
-    if (ch) return renderDetail(ch, mT);
-  }
-  return renderList(all, mT);
+  const selected = items.find(item => item.id === selectedId);
+  return selected ? renderDetail(selected) : renderList(items);
 }
 
 export function mount() {
-  const mT = t('marketplace') || {};
+  const items = getItems();
 
-  // Back button (detail view)
   document.getElementById('mp-back')?.addEventListener('click', () => {
     setState('selectedChallengeId', null);
-    setState('marketplaceShowParticipation', false);
-    setState('marketplaceParticipationSent', false);
-    history.pushState({}, '', window.location.pathname);
+    window.history.pushState({}, '', window.location.pathname);
     rerender();
+    window.scrollTo({ top: 0, behavior: 'instant' });
   });
-
-  // "Ver detalle" buttons (list view)
-  document.querySelectorAll('.mp-view-detail').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.dataset.id;
-      setState('selectedChallengeId', id);
-      setState('marketplaceShowParticipation', false);
-      setState('marketplaceParticipationSent', false);
-      history.pushState({ challengeId: id }, '', window.location.pathname);
-      rerender();
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    });
-  });
-
-  // Toggle submit form
-  document.getElementById('mp-toggle-submit')?.addEventListener('click', () => {
-    setState('marketplaceShowSubmit', !getState('marketplaceShowSubmit'));
-    rerender();
-  });
-  document.getElementById('mp-cancel-submit')?.addEventListener('click', () => {
-    setState('marketplaceShowSubmit', false);
-    rerender();
-  });
-  document.getElementById('mp-submit-form')?.addEventListener('submit', e => e.preventDefault());
 
   document.getElementById('mp-filter-panel-toggle')?.addEventListener('click', () => {
     setMpFilterPanelExpanded(!getMpFilterPanelExpanded());
     rerender();
   });
 
-  // Filter chips (panel + card badges share the same handler via DIM_MAP_GRID)
-  document.querySelectorAll('[data-mp-chip]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const dim = DIM_MAP_GRID[btn.dataset.mpChip];
-      if (!dim) return;
-      const f = getMpFilters();
-      f[dim] = toggleMpFilter(f[dim], btn.dataset.mpVal);
-      setMpFilters(f);
-      rerender();
-    });
-  });
-
-  // Remove badge from active filters panel
-  document.querySelectorAll('[data-mp-remove]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const dim = btn.dataset.mpRemove;
-      const val = btn.dataset.mpVal;
-      if (dim === 'search') { setMpSearch(''); rerender(); return; }
-      const f = getMpFilters();
-      if (Array.isArray(f[dim])) f[dim] = f[dim].filter(v => v !== val);
-      setMpFilters(f);
-      rerender();
-    });
-  });
-
-  // Clear all
-  document.getElementById('mp-clear-all')?.addEventListener('click', () => {
-    clearMpFilters();
-    rerender();
-  });
-  document.getElementById('mp-clear-active-filters')?.addEventListener('click', () => {
-    clearMpFilters();
-    rerender();
-  });
-
-  // Search toggle (expander)
   document.getElementById('mp-search-toggle')?.addEventListener('click', () => {
     setMpSearchExpanded(!getMpSearchExpanded());
     rerender();
   });
 
-  // Search input
-  document.getElementById('mp-search')?.addEventListener('input', e => {
-    setMpSearch(e.target.value);
-    // Partial rerender: only update grid + active filters + count
+  document.getElementById('mp-search')?.addEventListener('input', event => {
+    setMpSearch(event.target.value);
     updateMpGrid();
   });
+
   document.getElementById('mp-search-clear')?.addEventListener('click', () => {
     setMpSearch('');
     rerender();
   });
 
-  // Open participation form (detail view)
-  const openForm = () => {
-    setState('marketplaceShowParticipation', true);
-    setState('marketplaceParticipationSent', false);
+  document.getElementById('mp-clear-all')?.addEventListener('click', () => {
+    clearMpFilters();
     rerender();
-    setTimeout(() => {
-      document.getElementById('challenge-participation-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 0);
-  };
-  document.getElementById('mp-open-form')?.addEventListener('click', openForm);
-  document.getElementById('mp-open-form-bottom')?.addEventListener('click', openForm);
-  document.getElementById('mp-cancel-form')?.addEventListener('click', () => {
-    setState('marketplaceShowParticipation', false);
-    rerender();
-  });
-  document.getElementById('mp-participation-form')?.addEventListener('submit', e => {
-    e.preventDefault();
-    setState('marketplaceParticipationSent', true);
-    rerender();
-    setTimeout(() => {
-      document.getElementById('challenge-participation-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 0);
   });
 
-  // Browser back button
-  window.addEventListener('popstate', () => {
-    if (!getState('selectedChallengeId')) return;
-    setState('selectedChallengeId', null);
-    setState('marketplaceShowParticipation', false);
-    setState('marketplaceParticipationSent', false);
+  document.getElementById('mp-clear-active-filters')?.addEventListener('click', () => {
+    clearMpFilters();
     rerender();
   });
+
+  document.querySelectorAll('[data-mp-chip]').forEach(button => {
+    button.addEventListener('click', () => {
+      const key = DIM_MAP_GRID[button.dataset.mpChip];
+      if (!key) return;
+      const filters = getMpFilters();
+      filters[key] = toggleMpFilter(filters[key], button.dataset.mpVal);
+      setMpFilters(filters);
+      rerender();
+    });
+  });
+
+  document.querySelectorAll('[data-mp-remove]').forEach(button => {
+    button.addEventListener('click', () => {
+      const key = button.dataset.mpRemove;
+      if (key === 'search') {
+        setMpSearch('');
+      } else {
+        const filters = getMpFilters();
+        filters[key] = filters[key]?.filter(value => value !== button.dataset.mpVal) || [];
+        setMpFilters(filters);
+      }
+      rerender();
+    });
+  });
+
+  document.querySelectorAll('.mp-view-detail').forEach(button => {
+    button.addEventListener('click', () => {
+      setState('selectedChallengeId', button.dataset.id);
+      window.history.pushState({ itemId: button.dataset.id }, '', window.location.pathname);
+      rerender();
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    });
+  });
+
+  window.onpopstate = () => {
+    if (!getState('selectedChallengeId')) return;
+    setState('selectedChallengeId', null);
+    rerender();
+  };
+
+  if (!items.length) clearMpFilters();
 }
 
 function rerender() {
   const main = document.getElementById('main-root');
+  if (!main) return;
   main.innerHTML = render();
   mount();
   if (window.lucide) window.lucide.createIcons();
 }
 
 function updateMpGrid() {
-  const mT  = t('marketplace') || {};
-  const all  = MARKETPLACE_CONFIG.contributions || [];
+  const items = getItems();
   const filters = getMpFilters();
-  const search  = getMpSearch();
-  const filtered = getFilteredContributions(all, filters, search);
+  const search = getMpSearch();
+  const filtered = getFilteredItems(items, filters, search);
 
-  // Active filters panel
-  const afEl = document.getElementById('mp-active-filters');
-  if (afEl) afEl.outerHTML = `<div id="mp-active-filters">${renderMpActiveFilters(filters, search, mT)}</div>`;
+  document.getElementById('mp-results-count')?.replaceChildren();
+  const count = document.getElementById('mp-results-count');
+  if (count) count.innerHTML = `Mostrando <strong>${filtered.length}</strong> de ${items.length} elementos`;
 
-  // Results count
-  const countEl = document.getElementById('mp-results-count');
-  if (countEl) {
-    const tpl = (mT?.resultsCount || 'Mostrando <strong>{{count}}</strong> de {{total}} contribuciones')
-      .replace('{{count}}', `<strong>${filtered.length}</strong>`)
-      .replace('{{total}}', String(all.length));
-    countEl.innerHTML = tpl;
+  const activeSlot = document.getElementById('mp-active-filter-slot');
+  const renderedActive = renderActiveFilters(filters, search);
+  if (activeSlot) {
+    activeSlot.className = hasMpFilters(filters, search) ? 'mt-4' : '';
+    activeSlot.innerHTML = renderedActive;
   }
 
-  // Grid
-  const gridEl = document.getElementById('mp-grid');
-  if (!gridEl) { rerender(); return; }
-
-  if (filtered.length === 0) {
-    gridEl.outerHTML = renderMpEmptyState(all.length, mT);
-  } else {
-    gridEl.outerHTML = `<div id="mp-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">${filtered.map(ch => renderCardHtml(ch, mT)).join('')}</div>`;
+  const grid = document.getElementById('mp-grid');
+  if (!grid) {
+    rerender();
+    return;
   }
+  grid.outerHTML = filtered.length
+    ? `<div id="mp-grid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">${filtered.map(renderCard).join('')}</div>`
+    : renderEmptyState(items.length);
 
+  bindDynamicListControls();
   if (window.lucide) window.lucide.createIcons();
+}
 
-  // Re-attach listeners on the replaced grid
-  document.querySelectorAll('.mp-view-detail').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.dataset.id;
-      setState('selectedChallengeId', id);
-      setState('marketplaceShowParticipation', false);
-      setState('marketplaceParticipationSent', false);
-      history.pushState({ challengeId: id }, '', window.location.pathname);
+function bindDynamicListControls() {
+  document.querySelectorAll('#mp-grid [data-mp-chip]').forEach(button => {
+    button.addEventListener('click', () => {
+      const key = DIM_MAP_GRID[button.dataset.mpChip];
+      if (!key) return;
+      const filters = getMpFilters();
+      filters[key] = toggleMpFilter(filters[key], button.dataset.mpVal);
+      setMpFilters(filters);
+      rerender();
+    });
+  });
+
+  document.querySelectorAll('#mp-active-filter-slot [data-mp-remove]').forEach(button => {
+    button.addEventListener('click', () => {
+      const key = button.dataset.mpRemove;
+      if (key === 'search') {
+        setMpSearch('');
+      } else {
+        const filters = getMpFilters();
+        filters[key] = filters[key]?.filter(value => value !== button.dataset.mpVal) || [];
+        setMpFilters(filters);
+      }
+      rerender();
+    });
+  });
+
+  document.querySelectorAll('#mp-grid .mp-view-detail').forEach(button => {
+    button.addEventListener('click', () => {
+      setState('selectedChallengeId', button.dataset.id);
+      window.history.pushState({ itemId: button.dataset.id }, '', window.location.pathname);
       rerender();
       window.scrollTo({ top: 0, behavior: 'instant' });
     });
   });
-  // Card chip badges → trigger full rerender so filter panel updates
-  document.querySelectorAll('#mp-grid [data-mp-chip]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const dim = DIM_MAP_GRID[btn.dataset.mpChip];
-      if (!dim) return;
-      const f = getMpFilters();
-      f[dim] = toggleMpFilter(f[dim], btn.dataset.mpVal);
-      setMpFilters(f);
-      rerender();
-    });
-  });
-  // Remove badges in active filters panel (re-rendered above)
-  document.querySelectorAll('#mp-active-filters [data-mp-remove]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const dim = btn.dataset.mpRemove;
-      const val = btn.dataset.mpVal;
-      if (dim === 'search') { setMpSearch(''); rerender(); return; }
-      const f = getMpFilters();
-      if (Array.isArray(f[dim])) f[dim] = f[dim].filter(v => v !== val);
-      setMpFilters(f);
-      rerender();
-    });
-  });
+
   document.getElementById('mp-clear-all')?.addEventListener('click', () => {
+    clearMpFilters();
+    rerender();
+  });
+
+  document.getElementById('mp-clear-active-filters')?.addEventListener('click', () => {
     clearMpFilters();
     rerender();
   });
