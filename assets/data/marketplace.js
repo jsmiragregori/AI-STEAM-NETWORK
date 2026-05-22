@@ -65,6 +65,17 @@ export const MARKETPLACE_CONFIG = {
     "evidenceMaturity": true,
     "sector": true
   },
+  "cardChipVisibility": {
+    "type": true,
+    "status": true,
+    "route": true,
+    "evidenceMaturity": true,
+    "helixRole": true,
+    "tripleTransition": true,
+    "sector": true,
+    "tags": true,
+    "level": true
+  },
   "searchBlock": {
     "visible": true,
     "defaultExpanded": false

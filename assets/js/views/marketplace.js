@@ -147,8 +147,9 @@ const EVIDENCE_STYLES = {
 };
 
 const LEVEL_STYLES = {
-  'FP':     'bg-eu-yellow text-eu-purple',
-  'Máster': 'bg-purple-100 text-purple-800',
+  'FP':       'bg-orange-100 text-orange-800',
+  'Máster':   'bg-purple-100 text-purple-800',
+  'Docentes': 'bg-teal-100 text-teal-800',
 };
 
 // Helix chip colors
@@ -274,7 +275,7 @@ function renderCardHtml(ch, mT) {
   const showTrans    = ccv.tripleTransition !== false;
   const showSector   = ccv.sector           !== false;
   const showTags     = ccv.tags             !== false;
-  const showLevel    = ccv.level            === true;
+  const showLevel    = ccv.level            !== false;
 
   const fb = (dim, val, cls, label, tooltip) =>
     `<button data-mp-chip="${dim}" data-mp-val="${val}"
@@ -306,14 +307,21 @@ function renderCardHtml(ch, mT) {
         </p>
       </div>
 
-      <!-- Primary chips: route + evidence + level (optional) -->
-      ${(showRoute || showEvidence || showLevel) ? `<div class="flex flex-wrap gap-1.5">
+      <!-- Primary chips: route + evidence -->
+      ${(showRoute || showEvidence) ? `<div class="flex flex-wrap gap-1.5">
         ${showRoute    ? fb('route',    ch.route,            `text-xs font-semibold px-2.5 py-1 rounded-lg ${rtStyle}`, getRouteLabel(ch.route)) : ''}
         ${showEvidence ? fb('evidence', ch.evidenceMaturity, `text-xs font-semibold px-2.5 py-1 rounded-lg ${evStyle}`, getEvidenceMaturityLabel(ch.evidenceMaturity)) : ''}
-        ${showLevel    ? (Array.isArray(ch.level) ? ch.level : [ch.level]).filter(Boolean).map(l =>
-            fb('level', l, `text-xs font-semibold px-2.5 py-1 rounded-lg ${LEVEL_STYLES[l] || 'bg-gray-100 text-gray-600'}`, getLevelLabel(l))
-          ).join('') : ''}
       </div>` : ''}
+
+      <!-- Level chips (own row to avoid confusion with route) -->
+      ${showLevel ? (() => {
+          const levels = (Array.isArray(ch.level) ? ch.level : [ch.level]).filter(Boolean);
+          return levels.length ? `<div class="flex flex-wrap gap-1.5">
+            ${levels.map(l =>
+              fb('level', l, `text-xs font-semibold px-2.5 py-1 rounded-lg ${LEVEL_STYLES[l] || 'bg-gray-100 text-gray-600'}`, getLevelLabel(l))
+            ).join('')}
+          </div>` : '';
+        })() : ''}
 
       <!-- Context chips: helix + all transitions -->
       ${(showHelix || showTrans) ? `<div class="flex flex-wrap gap-1.5">
