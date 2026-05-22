@@ -322,8 +322,8 @@ function renderCardHtml(ch, mT) {
         ).join('')}
       </div>` : ''}
 
-      <!-- Row 5: Deadline + Teams — mt-auto pushes to bottom regardless of card height -->
-      <div class="flex items-center gap-3 text-xs text-gray-500 mt-auto">
+      <!-- Row 5: Deadline + Teams -->
+      <div class="flex items-center gap-3 text-xs text-gray-500">
         <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3 h-3 shrink-0"></i><span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadline}</span></span>
         <span class="flex items-center gap-1.5 shrink-0"><i data-lucide="users" class="w-3 h-3 shrink-0"></i>${ch.teams} ${ch.teams === 1 ? (mT?.teamSingular || 'equipo') : (mT?.teamPlural || 'equipos')}</span>
       </div>
