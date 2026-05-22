@@ -324,7 +324,7 @@ function renderCardHtml(ch, mT) {
       <div class="flex items-center gap-3 text-xs text-gray-500">
         <span class="flex items-center gap-1.5">
           <i data-lucide="clock" class="w-3 h-3 shrink-0 text-gray-400"></i>
-          <span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadline}</span>
+          <span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadlineLabel ? pickLang(ch.deadlineLabel) : ch.deadline}</span>
         </span>
         <span class="flex items-center gap-1.5 shrink-0">
           <i data-lucide="users" class="w-3 h-3 shrink-0 text-gray-400"></i>
@@ -446,14 +446,14 @@ function renderDetail(ch, mT) {
           <i data-lucide="calendar" class="w-4 h-4 text-eu-yellow shrink-0"></i>
           <div>
             <p class="text-xs text-white/50 uppercase font-bold">${cdT.deadline || 'Plazo'}</p>
-            <p class="font-bold text-white">${ch.deadline}</p>
+            <p class="font-bold text-white">${ch.deadlineLabel ? pickLang(ch.deadlineLabel) : ch.deadline}</p>
           </div>
         </div>
         <div class="flex items-center gap-3">
           <i data-lucide="clock" class="w-4 h-4 text-eu-yellow shrink-0"></i>
           <div>
             <p class="text-xs text-white/50 uppercase font-bold">${cdT.posted || 'Publicado'}</p>
-            <p class="font-bold text-white">${ch.posted}</p>
+            <p class="font-bold text-white">${ch.postedLabel ? pickLang(ch.postedLabel) : ch.posted}</p>
           </div>
         </div>
         <div class="flex items-center gap-3">
@@ -689,7 +689,7 @@ function renderDetail(ch, mT) {
       ${ch.status === 'open' ? `
       <div class="bg-eu-blue rounded-xl p-6 text-white text-center">
         <p class="font-bold mb-1">${cdT.interestCTA || '¿Quieres participar en este reto?'}</p>
-        <p class="text-xs text-white/70 mb-4">${cdT.requestBeforeDeadline || 'Abierto hasta el'} ${ch.deadline}.</p>
+        <p class="text-xs text-white/70 mb-4">${cdT.requestBeforeDeadline || 'Abierto hasta el'} ${ch.deadlineLabel ? pickLang(ch.deadlineLabel) : ch.deadline}.</p>
         <button id="mp-open-form-bottom" class="w-full bg-eu-orange text-white font-bold py-2.5 rounded-lg hover:bg-eu-purple transition-colors border-none cursor-pointer text-sm">${participationButton}</button>
         <p class="text-xs text-white/60 mt-3">${cdT.requestReviewNote || ''}</p>
       </div>` : ''}
