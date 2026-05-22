@@ -22,9 +22,10 @@ function getMpFilters() {
       transitions: Array.isArray(p.transitions) ? p.transitions : [],
       tracks:      Array.isArray(p.tracks)      ? p.tracks      : [],
       levels:      Array.isArray(p.levels)      ? p.levels      : [],
+      tags:        Array.isArray(p.tags)        ? p.tags        : [],
     };
   } catch {
-    return { types:[], routes:[], statuses:[], sectors:[], evidences:[], helices:[], transitions:[], tracks:[], levels:[] };
+    return { types:[], routes:[], statuses:[], sectors:[], evidences:[], helices:[], transitions:[], tracks:[], levels:[], tags:[] };
   }
 }
 function setMpFilters(f) { localStorage.setItem(MP_FILTER_KEY, JSON.stringify(f)); }
@@ -67,6 +68,7 @@ const DIM_MAP_GRID = {
   evidence:   'evidences',
   sector:     'sectors',
   level:      'levels',
+  tag:        'tags',
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -110,6 +112,11 @@ function getTags(ch) {
     return ch.tags[lang] || ch.tags.es || ch.tags.en || [];
   }
   return Array.isArray(ch.tags) ? ch.tags : [];
+}
+
+function getTracks(ch) {
+  if (Array.isArray(ch.track)) return ch.track;
+  return ch.track ? [ch.track] : [];
 }
 
 // Status badge styles (by normalized id)
@@ -184,8 +191,9 @@ function getFilteredContributions(all, filters, search) {
     if (filters.evidences.length   && !filters.evidences.includes(ch.evidenceMaturity))               return false;
     if (filters.helices.length     && !filters.helices.includes(ch.helixRole))                        return false;
     if (filters.transitions.length && !(ch.tripleTransition || []).some(tr => filters.transitions.includes(tr))) return false;
-    if (filters.tracks.length      && !filters.tracks.includes(ch.track))                             return false;
+    if (filters.tracks.length      && !getTracks(ch).some(track => filters.tracks.includes(track)))   return false;
     if (filters.levels.length      && !(ch.level || []).some(l => filters.levels.includes(l)))        return false;
+    if (filters.tags.length        && !getTags(ch).some(tag => filters.tags.includes(tag)))           return false;
     if (search) {
       const q = search.toLowerCase();
       const lang = getLang();
@@ -249,6 +257,7 @@ function renderMpActiveFilters(filters, search, mT) {
   filters.transitions.forEach(id => badges.push(badge('transitions', id, getTransitionLabel(id),        TRANSITION_STYLES[id] || 'bg-gray-100 text-gray-600')));
   filters.tracks.forEach(id      => badges.push(badge('tracks',      id, getTrackLabel(id),             'bg-gray-100 text-gray-700')));
   filters.levels.forEach(id      => badges.push(badge('levels',      id, getLevelLabel(id),              LEVEL_STYLES[id] || 'bg-gray-100 text-gray-600')));
+  filters.tags.forEach(tag       => badges.push(badge('tags',        tag, tag,                           'bg-eu-bg text-gray-600 border border-eu-border')));
   if (search) badges.push(badge('search', search, `"${search}"`, 'bg-amber-100 text-amber-800'));
 
   if (!badges.length) return '';
@@ -262,6 +271,24 @@ function renderMpActiveFilters(filters, search, mT) {
 }
 
 // ─── Card renderer ───────────────────────────────────────────────────────────
+
+function renderMpEmptyState(allCount, mT) {
+  const hasContributions = allCount > 0;
+  const title = hasContributions
+    ? (mT?.noFilterResultsTitle || mT?.noResults || 'Sin resultados')
+    : (mT?.emptyContributionsTitle || 'No hay retos publicados');
+  const message = hasContributions
+    ? (mT?.noFilterResultsMessage || mT?.tryModifying || 'Prueba a modificar los filtros')
+    : (mT?.emptyContributionsMessage || 'Todavía no hay contribuciones visibles en este espacio.');
+
+  return `<div id="mp-grid" class="bg-white rounded-xl border border-eu-border shadow-sm px-6 text-center flex flex-col items-center justify-center" style="min-height: 240px; padding-top: 64px; padding-bottom: 64px;">
+    <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-eu-bg border border-eu-border text-eu-blue">
+      <i data-lucide="${hasContributions ? 'search-x' : 'inbox'}" class="w-6 h-6"></i>
+    </div>
+    <p class="text-lg font-bold text-eu-text mb-3">${title}</p>
+    <p class="text-sm text-gray-500 max-w-md mx-auto">${message}</p>
+  </div>`;
+}
 
 function renderCardHtml(ch, mT) {
   const tags    = getTags(ch);
@@ -350,9 +377,9 @@ function renderCardHtml(ch, mT) {
       <!-- Tags (conditional) -->
       ${(showTags && tags.length) ? `<div class="flex flex-wrap gap-1.5">
         ${tags.map(tag =>
-          `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-2 py-1 rounded-lg text-gray-500 font-medium" style="max-width:160px">
+          `<button data-mp-chip="tag" data-mp-val="${tag}" class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-2 py-1 rounded-lg text-gray-500 font-medium cursor-pointer hover:border-eu-blue hover:text-eu-blue transition-colors" style="max-width:160px">
             <i data-lucide="tag" class="w-3 h-3 shrink-0"></i><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${tag}</span>
-          </span>`).join('')}
+          </button>`).join('')}
       </div>` : ''}
 
       <!-- Deadline + teams -->
@@ -438,7 +465,7 @@ function renderDetail(ch, mT) {
       ${CYCLE_PHASE_STYLES[ch.cyclePhase] ? `<span class="text-xs font-bold px-2 py-0.5 rounded ${CYCLE_PHASE_STYLES[ch.cyclePhase]}">${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
       ${HELIX_STYLES[ch.helixRole] ? `<span class="text-xs font-bold px-2 py-0.5 rounded ${HELIX_STYLES[ch.helixRole]}">${getHelixLabel(ch.helixRole)}</span>` : ''}
       ${(ch.tripleTransition || []).map(t => `<span class="text-xs font-semibold px-2 py-0.5 rounded ${TRANSITION_STYLES[t] || 'bg-gray-100 text-gray-600'}">${getTransitionLabel(t)}</span>`).join('')}
-      ${ch.track ? `<span class="text-xs font-semibold px-2 py-0.5 rounded bg-gray-100 text-gray-600">Track ${ch.track}</span>` : ''}
+      ${getTracks(ch).map(track => `<span class="text-xs font-semibold px-2 py-0.5 rounded bg-gray-100 text-gray-600">${getTrackLabel(track)}</span>`).join('')}
     </div>`;
 
   return `
@@ -904,10 +931,7 @@ function renderList(all, mT) {
 
     <!-- Grid / empty state -->
     ${filtered.length === 0
-      ? `<div id="mp-grid" class="text-center py-16 text-gray-500">
-          <p class="text-lg font-semibold mb-2">${mT?.noResults || 'Sin resultados'}</p>
-          <p class="text-sm">${mT?.tryModifying || 'Prueba a modificar los filtros'}</p>
-        </div>`
+      ? renderMpEmptyState(all.length, mT)
       : `<div id="mp-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           ${filtered.map(ch => renderCardHtml(ch, mT)).join('')}
         </div>`
@@ -1088,7 +1112,7 @@ function updateMpGrid() {
   if (!gridEl) { rerender(); return; }
 
   if (filtered.length === 0) {
-    gridEl.outerHTML = `<div id="mp-grid" class="text-center py-16 text-gray-500"><p class="text-lg font-semibold mb-2">${mT?.noResults || 'Sin resultados'}</p><p class="text-sm">${mT?.tryModifying || 'Prueba a modificar los filtros'}</p></div>`;
+    gridEl.outerHTML = renderMpEmptyState(all.length, mT);
   } else {
     gridEl.outerHTML = `<div id="mp-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">${filtered.map(ch => renderCardHtml(ch, mT)).join('')}</div>`;
   }

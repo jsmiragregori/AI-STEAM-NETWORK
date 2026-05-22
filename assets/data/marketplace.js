@@ -309,15 +309,6 @@ export const MARKETPLACE_CONFIG = {
         "en": "Track B (Ecosystem)",
         "va": "Track B (Ecosistema)"
       }
-    },
-    {
-      "id": "both",
-      "visible": true,
-      "label": {
-        "es": "Ambos tracks",
-        "en": "Both tracks",
-        "va": "Ambdós tracks"
-      }
     }
   ],
   "evidenceMaturityLabels": [
@@ -487,7 +478,9 @@ export const MARKETPLACE_CONFIG = {
       "tripleTransition": [
         "digital"
       ],
-      "track": "B",
+      "track": [
+        "B"
+      ],
       "benefitTypes": [
         "ects"
       ],
@@ -888,7 +881,9 @@ export const MARKETPLACE_CONFIG = {
         "digital",
         "social"
       ],
-      "track": "A",
+      "track": [
+        "A"
+      ],
       "benefitTypes": [
         "prototype",
         "ects",
@@ -1406,7 +1401,9 @@ export const MARKETPLACE_CONFIG = {
         "digital",
         "green"
       ],
-      "track": "B",
+      "track": [
+        "B"
+      ],
       "benefitTypes": [
         "prototype",
         "ects",
@@ -1967,7 +1964,9 @@ export const MARKETPLACE_CONFIG = {
       "tripleTransition": [
         "digital"
       ],
-      "track": "B",
+      "track": [
+        "B"
+      ],
       "benefitTypes": [
         "prototype",
         "ects"
@@ -2441,7 +2440,9 @@ export const MARKETPLACE_CONFIG = {
         "digital",
         "social"
       ],
-      "track": "B",
+      "track": [
+        "B"
+      ],
       "benefitTypes": [
         "prototype",
         "ects"
@@ -2912,7 +2913,9 @@ export const MARKETPLACE_CONFIG = {
         "digital",
         "green"
       ],
-      "track": "A",
+      "track": [
+        "A"
+      ],
       "benefitTypes": [
         "prototype",
         "publication"
@@ -3412,7 +3415,9 @@ export const MARKETPLACE_CONFIG = {
       "tripleTransition": [
         "digital"
       ],
-      "track": "B",
+      "track": [
+        "B"
+      ],
       "benefitTypes": [
         "success-story",
         "prototype"
@@ -3786,7 +3791,9 @@ export const MARKETPLACE_CONFIG = {
         "social",
         "green"
       ],
-      "track": "A",
+      "track": [
+        "A"
+      ],
       "benefitTypes": [
         "prototype",
         "publication"
@@ -4275,7 +4282,9 @@ export const MARKETPLACE_CONFIG = {
         "digital",
         "green"
       ],
-      "track": "B",
+      "track": [
+        "B"
+      ],
       "benefitTypes": [
         "dataset"
       ],
@@ -4680,7 +4689,9 @@ export const MARKETPLACE_CONFIG = {
         "digital",
         "green"
       ],
-      "track": "B",
+      "track": [
+        "B"
+      ],
       "benefitTypes": [
         "ects",
         "success-story"
@@ -5097,7 +5108,10 @@ export const MARKETPLACE_CONFIG = {
         "digital",
         "social"
       ],
-      "track": "both",
+      "track": [
+        "A",
+        "B"
+      ],
       "benefitTypes": [
         "ects"
       ],
@@ -5498,7 +5512,9 @@ export const MARKETPLACE_CONFIG = {
         "digital",
         "green"
       ],
-      "track": "A",
+      "track": [
+        "A"
+      ],
       "benefitTypes": [
         "prototype",
         "ects",
@@ -6011,7 +6027,9 @@ export const MARKETPLACE_CONFIG = {
       "tripleTransition": [
         "digital"
       ],
-      "track": "A",
+      "track": [
+        "A"
+      ],
       "benefitTypes": [
         "dataset",
         "publication",
