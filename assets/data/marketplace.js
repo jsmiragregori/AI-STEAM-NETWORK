@@ -418,12 +418,16 @@ export const MARKETPLACE_CONFIG = {
         "en": "Business Cluster",
         "va": "Clúster Empresarial"
       },
-      "level": "FP",
+      "level": [
+        "FP"
+      ],
       "status": "open",
       "sector": "Manufacturing",
       "route": "fp",
       "posted": "18 Mar 2026",
+      "postedLabel": null,
       "deadline": "30 Jun 2026",
+      "deadlineLabel": null,
       "teams": 0,
       "tags": {
         "es": [
@@ -814,12 +818,16 @@ export const MARKETPLACE_CONFIG = {
         "en": "Public Health Institution",
         "va": "Institució Sanitària Pública"
       },
-      "level": "Máster",
+      "level": [
+        "Máster"
+      ],
       "status": "open",
       "sector": "Non-Touristic Services",
       "route": "master",
       "posted": "05 Mar 2026",
+      "postedLabel": null,
       "deadline": "30 Sep 2026",
+      "deadlineLabel": null,
       "teams": 2,
       "tags": {
         "es": [
@@ -1319,12 +1327,25 @@ export const MARKETPLACE_CONFIG = {
         "en": "Public Administration",
         "va": "Administració Pública"
       },
-      "level": "FP",
+      "level": [
+        "FP",
+        "Docentes"
+      ],
       "status": "open",
-      "sector": "Energy and Environment",
+      "sector": "",
       "route": "fp",
-      "posted": "10 Mar 2026",
-      "deadline": "30 Jun 2026",
+      "posted": "2026-03-10",
+      "postedLabel": {
+        "es": "Mar 2026",
+        "en": "Mar 2026",
+        "va": "Mar 2026"
+      },
+      "deadline": "2026-06-30",
+      "deadlineLabel": {
+        "es": "Jun 2026",
+        "en": "Jun 2026",
+        "va": "Jun 2026"
+      },
       "teams": 0,
       "tags": {
         "es": [
@@ -1460,37 +1481,37 @@ export const MARKETPLACE_CONFIG = {
           ],
           "milestones": [
             {
-              "date": "10 Mar 2026",
+              "date": "2026-03-10",
               "label": "Publicación del reto y acceso a datos",
               "done": true
             },
             {
-              "date": "31 Mar 2026",
+              "date": "2026-03-31",
               "label": "Cierre de inscripción de equipos",
               "done": true
             },
             {
-              "date": "15 Abr 2026",
+              "date": "",
               "label": "Kick-off: sesión de presentación con técnicos GVA",
               "done": false
             },
             {
-              "date": "15 May 2026",
+              "date": "2026-05-15",
               "label": "Checkpoint 1: entrega de prototipo inicial",
               "done": false
             },
             {
-              "date": "15 Jun 2026",
+              "date": "2026-06-15",
               "label": "Checkpoint 2: demo del dashboard",
               "done": false
             },
             {
-              "date": "30 Jun 2026",
+              "date": "2026-06-30",
               "label": "Entrega final",
               "done": false
             },
             {
-              "date": "15 Jul 2026",
+              "date": "2026-07-15",
               "label": "Presentaciones y resolución",
               "done": false
             }
@@ -1624,37 +1645,37 @@ export const MARKETPLACE_CONFIG = {
           ],
           "milestones": [
             {
-              "date": "10 Mar 2026",
+              "date": "2026-03-10",
               "label": "Challenge publication and data access",
               "done": true
             },
             {
-              "date": "31 Mar 2026",
+              "date": "2026-03-31",
               "label": "Team registration closure",
               "done": true
             },
             {
-              "date": "15 Apr 2026",
+              "date": "2026-04-15",
               "label": "Kick-off: presentation session with GVA technicians",
               "done": false
             },
             {
-              "date": "15 May 2026",
+              "date": "2026-05-15",
               "label": "Checkpoint 1: initial prototype delivery",
               "done": false
             },
             {
-              "date": "15 Jun 2026",
+              "date": "2026-06-15",
               "label": "Checkpoint 2: dashboard demo",
               "done": false
             },
             {
-              "date": "30 Jun 2026",
+              "date": "2026-06-30",
               "label": "Final delivery",
               "done": false
             },
             {
-              "date": "15 Jul 2026",
+              "date": "2026-07-15",
               "label": "Presentations and resolution",
               "done": false
             }
@@ -1788,37 +1809,37 @@ export const MARKETPLACE_CONFIG = {
           ],
           "milestones": [
             {
-              "date": "10 Mar 2026",
+              "date": "2026-03-10",
               "label": "Publicació del repte i accés a dades",
               "done": true
             },
             {
-              "date": "31 Mar 2026",
+              "date": "2026-03-31",
               "label": "Tancament de la inscripció d'equips",
               "done": true
             },
             {
-              "date": "15 Abr 2026",
+              "date": "",
               "label": "Kick-off: sessió de presentació amb tècnics GVA",
               "done": false
             },
             {
-              "date": "15 May 2026",
+              "date": "2026-05-15",
               "label": "Checkpoint 1: entrega de prototip inicial",
               "done": false
             },
             {
-              "date": "15 Jun 2026",
+              "date": "2026-06-15",
               "label": "Checkpoint 2: demo del panell",
               "done": false
             },
             {
-              "date": "30 Jun 2026",
+              "date": "2026-06-30",
               "label": "Entrega final",
               "done": false
             },
             {
-              "date": "15 Jul 2026",
+              "date": "2026-07-15",
               "label": "Presentacions i resolució",
               "done": false
             }
@@ -1877,12 +1898,16 @@ export const MARKETPLACE_CONFIG = {
         "en": "Agricultural SME",
         "va": "PIME Agroalimentaria"
       },
-      "level": "FP",
+      "level": [
+        "FP"
+      ],
       "status": "open",
       "sector": "Manufacturing",
       "route": "fp",
       "posted": "01 Feb 2026",
+      "postedLabel": null,
       "deadline": "30 Ago 2026",
+      "deadlineLabel": null,
       "teams": 1,
       "tags": {
         "es": [
@@ -2346,12 +2371,16 @@ export const MARKETPLACE_CONFIG = {
         "en": "Startup",
         "va": "Startup"
       },
-      "level": "FP",
+      "level": [
+        "FP"
+      ],
       "status": "open",
       "sector": "Cultural and Creative Industries",
       "route": "fp",
       "posted": "12 Feb 2026",
+      "postedLabel": null,
       "deadline": "12 Ago 2026",
+      "deadlineLabel": null,
       "teams": 2,
       "tags": {
         "es": [
@@ -2513,9 +2542,7 @@ export const MARKETPLACE_CONFIG = {
             }
           ],
           "recognition": [
-            {
-              "1st team": "commercial product license + revenue sharing agreement with CulturaLink"
-            },
+            "1st team: commercial product license + revenue sharing agreement with CulturaLink",
             "Possibility of joining CulturaLink team as intern",
             "All: CreativeAI Badge + participation certificate"
           ],
@@ -2649,9 +2676,7 @@ export const MARKETPLACE_CONFIG = {
             }
           ],
           "recognition": [
-            {
-              "1st team": "commercial product license + revenue sharing agreement with CulturaLink"
-            },
+            "1st team: commercial product license + revenue sharing agreement with CulturaLink",
             "Possibility of joining CulturaLink team as intern",
             "All: CreativeAI Badge + participation certificate"
           ],
@@ -2785,9 +2810,7 @@ export const MARKETPLACE_CONFIG = {
             }
           ],
           "recognition": [
-            {
-              "1st team": "commercial product license + revenue sharing agreement with CulturaLink"
-            },
+            "1st team: commercial product license + revenue sharing agreement with CulturaLink",
             "Possibility of joining CulturaLink team as intern",
             "All: CreativeAI Badge + participation certificate"
           ],
@@ -2819,12 +2842,16 @@ export const MARKETPLACE_CONFIG = {
         "en": "Regional Administration",
         "va": "Administració Regional"
       },
-      "level": "Máster",
+      "level": [
+        "Máster"
+      ],
       "status": "open",
       "sector": "Energy and Environment",
       "route": "master",
       "posted": "01 Mar 2026",
+      "postedLabel": null,
       "deadline": "30 Sep 2026",
+      "deadlineLabel": null,
       "teams": 1,
       "tags": {
         "es": [
@@ -3316,12 +3343,16 @@ export const MARKETPLACE_CONFIG = {
         "en": "Public Administration",
         "va": "Administració Pública"
       },
-      "level": "FP",
+      "level": [
+        "FP"
+      ],
       "status": "resolved",
       "sector": "Non-Touristic Services",
       "route": "fp",
       "posted": "01 Sep 2025",
+      "postedLabel": null,
       "deadline": "28 Feb 2026",
+      "deadlineLabel": null,
       "teams": 5,
       "tags": {
         "es": [
@@ -3684,12 +3715,16 @@ export const MARKETPLACE_CONFIG = {
         "en": "Research Center",
         "va": "Centre de Recerca"
       },
-      "level": "Máster",
+      "level": [
+        "Máster"
+      ],
       "status": "open",
       "sector": "Energy and Environment",
       "route": "master",
       "posted": "20 Feb 2026",
+      "postedLabel": null,
       "deadline": "20 Oct 2026",
+      "deadlineLabel": null,
       "teams": 0,
       "tags": {
         "es": [
@@ -4170,12 +4205,16 @@ export const MARKETPLACE_CONFIG = {
         "en": "Technology SME",
         "va": "PIME Tecnològica"
       },
-      "level": "FP",
+      "level": [
+        "FP"
+      ],
       "status": "resolved",
       "sector": "Agrifood",
       "route": "fp",
       "posted": "02 Abr 2026",
+      "postedLabel": null,
       "deadline": "30 Abr 2026",
+      "deadlineLabel": null,
       "teams": 0,
       "tags": {
         "es": [
@@ -4571,12 +4610,16 @@ export const MARKETPLACE_CONFIG = {
         "en": "VET Centre",
         "va": "Centre FP"
       },
-      "level": "FP",
+      "level": [
+        "FP"
+      ],
       "status": "in-progress",
       "sector": "Energy and Environment",
       "route": "teacher",
       "posted": "27 Mar 2026",
+      "postedLabel": null,
       "deadline": "30 Sep 2026",
+      "deadlineLabel": null,
       "teams": 1,
       "tags": {
         "es": [
@@ -4984,12 +5027,16 @@ export const MARKETPLACE_CONFIG = {
         "en": "Public Innovation Foundation",
         "va": "Fundació d'Innovació Pública"
       },
-      "level": "Máster",
+      "level": [
+        "Máster"
+      ],
       "status": "in-progress",
       "sector": "Non-Touristic Services",
       "route": "mixed",
       "posted": "22 Mar 2026",
+      "postedLabel": null,
       "deadline": "15 Jul 2026",
+      "deadlineLabel": null,
       "teams": 2,
       "tags": {
         "es": [
@@ -5381,12 +5428,16 @@ export const MARKETPLACE_CONFIG = {
         "en": "Agricultural Enterprise",
         "va": "Empresa Agrícola"
       },
-      "level": "Máster",
+      "level": [
+        "Máster"
+      ],
       "status": "in-progress",
       "sector": "Agrifood",
       "route": "master",
       "posted": "15 Ene 2026",
+      "postedLabel": null,
       "deadline": "15 Jul 2026",
+      "deadlineLabel": null,
       "teams": 3,
       "tags": {
         "es": [
@@ -5891,12 +5942,16 @@ export const MARKETPLACE_CONFIG = {
         "en": "Public Administration",
         "va": "Administració Pública"
       },
-      "level": "Máster",
+      "level": [
+        "Máster"
+      ],
       "status": "in-progress",
       "sector": "Cultural and Creative Industries",
       "route": "master",
       "posted": "20 Nov 2025",
+      "postedLabel": null,
       "deadline": "20 May 2026",
+      "deadlineLabel": null,
       "teams": 4,
       "tags": {
         "es": [
