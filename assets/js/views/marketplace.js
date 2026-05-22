@@ -330,7 +330,7 @@ function renderCardHtml(ch, mT) {
     </div>
 
     <!-- Footer: 2 rows — sector / dates + action -->
-    <div class="border-t border-eu-border bg-eu-bg rounded-b-xl px-4 py-3 flex flex-col gap-2">
+    <div class="border-t border-eu-border bg-eu-bg rounded-b-xl px-4 pt-4 pb-3 flex flex-col gap-2">
       <div>${fb('sector', ch.sector, 'text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2.5 py-1 rounded', getSectorLabel(ch.sector))}</div>
       <div class="flex items-center justify-between gap-2">
         ${ch.publishedAtLabel ? `<span class="flex items-center gap-2.5 text-xs text-gray-400">
