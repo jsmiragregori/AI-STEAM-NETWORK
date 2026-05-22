@@ -270,42 +270,57 @@ function renderCardHtml(ch, mT) {
       class="${cls} cursor-pointer hover:opacity-80 transition-opacity border-none"
       title="${mT?.filterBy || 'Filtrar por'} ${label}">${label}</button>`;
 
-  return `<div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col hover:border-eu-blue transition-colors">
-    <div class="p-4 sm:p-5 flex-1">
-      <div class="flex flex-wrap items-center gap-2 mb-3">
+  const hasTags = tags.length > 0;
+
+  return `<div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col hover:border-eu-blue hover:shadow-md transition-all duration-200 cursor-pointer">
+    <div class="p-4 flex-1 flex flex-col gap-2.5">
+
+      <!-- Type + Status -->
+      <div class="flex flex-wrap items-center gap-1.5">
         ${fb('type',   ch.type,   'text-xs font-extrabold uppercase px-2 py-0.5 rounded bg-eu-blue/10 text-eu-blue', getTypeLabel(ch.type))}
         ${fb('status', ch.status, `text-xs font-bold px-2 py-0.5 rounded ${stStyle}`, getStatusLabel(ch.status))}
       </div>
-      <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug line-clamp-2">${pickLang(ch.title)}</h3>
-      <p class="text-xs text-gray-500 mb-1 font-semibold truncate">${ch.entity}</p>
-      <p class="text-xs text-gray-500 mb-3 line-clamp-1">${pickLang(ch.entityType)}</p>
-      <div class="flex flex-wrap items-center gap-2 mb-3">
+
+      <!-- Title + Entity (single entity line) -->
+      <div>
+        <h3 class="font-bold text-eu-text text-sm leading-snug line-clamp-2 mb-0.5">${pickLang(ch.title)}</h3>
+        <p class="text-xs text-gray-500 truncate"><span class="font-semibold">${ch.entity}</span><span class="text-gray-400"> · ${pickLang(ch.entityType)}</span></p>
+      </div>
+
+      <!-- All chips in one unified row -->
+      <div class="flex flex-wrap gap-1.5">
         ${fb('route',    ch.route,            `text-xs font-bold px-2 py-0.5 rounded ${rtStyle}`, getRouteLabel(ch.route))}
         ${fb('evidence', ch.evidenceMaturity, `text-xs font-semibold px-2 py-0.5 rounded ${evStyle}`, getEvidenceMaturityLabel(ch.evidenceMaturity))}
-      </div>
-      <div class="flex flex-wrap gap-1.5 mb-3">
         ${ch.cyclePhase ? `<span class="text-xs px-1.5 py-0.5 rounded ${CYCLE_PHASE_STYLES[ch.cyclePhase] || 'bg-gray-100 text-gray-500'}">${getCyclePhaseLabel(ch.cyclePhase)}</span>` : ''}
         ${ch.helixRole ? fb('helix', ch.helixRole, `text-xs px-1.5 py-0.5 rounded ${HELIX_STYLES[ch.helixRole] || 'bg-gray-100 text-gray-500'}`, getHelixLabel(ch.helixRole)) : ''}
         ${(ch.tripleTransition || []).slice(0, 2).map(tr => fb('transition', tr, `text-xs px-1.5 py-0.5 rounded ${TRANSITION_STYLES[tr] || 'bg-gray-100 text-gray-500'}`, getTransitionLabel(tr))).join('')}
       </div>
-      <div class="flex flex-wrap gap-1.5 mb-3">
+
+      <!-- Tags (conditional) -->
+      ${hasTags ? `<div class="flex flex-wrap gap-1.5">
         ${tags.slice(0, 2).map(tag => `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold"><i data-lucide="tag" class="w-2.5 h-2.5 shrink-0"></i>${tag}</span>`).join('')}
-      </div>
-      <div class="flex flex-col sm:flex-row sm:items-center gap-2 text-xs text-gray-500">
+      </div>` : ''}
+
+      <!-- Deadline + Teams — pushed to bottom of body -->
+      <div class="flex items-center gap-3 text-xs text-gray-500 mt-auto pt-1">
         <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 shrink-0"></i><span class="truncate">${mT?.deadlineLabel || 'Plazo'}: ${ch.deadline}</span></span>
         <span class="flex items-center gap-1"><i data-lucide="users" class="w-3 h-3 shrink-0"></i>${ch.teams} ${ch.teams === 1 ? (mT?.teamSingular || 'equipo') : (mT?.teamPlural || 'equipos')}</span>
       </div>
     </div>
-    <div class="border-t border-eu-border p-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-eu-bg">
-      ${fb('sector', ch.sector, 'text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded w-fit', getSectorLabel(ch.sector))}
-      <button class="mp-view-detail text-eu-blue font-bold text-xs bg-transparent border-none cursor-pointer hover:underline text-left sm:text-right" data-id="${ch.id}">
-        ${mT?.viewAndApply || 'Ver detalle'} →
-      </button>
+
+    <!-- Footer: sector · dates · action — single unified strip -->
+    <div class="border-t border-eu-border bg-eu-bg rounded-b-xl px-3 py-2.5 flex items-center gap-2">
+      ${fb('sector', ch.sector, 'text-xs font-bold text-eu-teal uppercase bg-eu-teal/10 px-2 py-0.5 rounded shrink-0', getSectorLabel(ch.sector))}
+      <div class="ml-auto flex items-center gap-3 shrink-0">
+        ${ch.publishedAtLabel ? `<span class="hidden sm:flex items-center gap-2 text-xs text-gray-400">
+          <span class="flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3 shrink-0"></i>${pickLang(ch.publishedAtLabel)}</span>
+          ${ch.revisionDateLabel ? `<span class="flex items-center gap-1 text-eu-teal/70"><i data-lucide="pencil" class="w-3 h-3 shrink-0"></i>${pickLang(ch.revisionDateLabel)}</span>` : ''}
+        </span>` : ''}
+        <button class="mp-view-detail text-eu-blue font-bold text-xs bg-transparent border-none cursor-pointer hover:underline" data-id="${ch.id}">
+          ${mT?.viewAndApply || 'Ver detalle'} →
+        </button>
+      </div>
     </div>
-    ${ch.publishedAtLabel ? `<div class="px-3 pb-2 flex flex-wrap gap-x-3 gap-y-0.5 text-xs text-gray-400">
-      <span>📅 ${mT?.publishedLabel || 'Publicado'}: ${pickLang(ch.publishedAtLabel)}</span>
-      ${ch.revisionDateLabel ? `<span>✎ ${mT?.revisedLabel || 'Revisado'}: ${pickLang(ch.revisionDateLabel)}</span>` : ''}
-    </div>` : ''}
   </div>`;
 }
 
