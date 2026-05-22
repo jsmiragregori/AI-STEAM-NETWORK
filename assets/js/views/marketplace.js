@@ -135,35 +135,7 @@ function getLocalizedTags(item) {
 
 function getItems() {
   const primary = MARKETPLACE_CONFIG.items || [];
-  if (primary.length) return primary.filter(item => item.visible !== false);
-  return (MARKETPLACE_CONFIG.contributions || []).filter(item => item.visible !== false).map(contributionToItem);
-}
-
-function contributionToItem(ch) {
-  return {
-    id: ch.id,
-    type: String(ch.type || '').toLowerCase(),
-    core: {
-      status: ch.status,
-      title: ch.title,
-      summary: ch.description,
-      entity: { name: ch.owner || ch.entity, type: ch.ownerType },
-      sector: ch.sector,
-      stakeholderCategory: ch.helixRole,
-      deadlineLabel: ch.deadlineLabel,
-      tags: ch.tags,
-    },
-    classification: {
-      tripleTransition: asArray(ch.tripleTransition),
-      evidenceMaturity: ch.evidenceMaturity,
-      engagementLevel: ch.level,
-      aiSteamFocus: asArray(ch.focus || ch.tags),
-      trackBValue: ch.impact,
-    },
-    detail: ch.detail || {},
-    visibility: {},
-    access: {},
-  };
+  return primary.filter(item => item.visible !== false);
 }
 
 function getMpFilters() {
