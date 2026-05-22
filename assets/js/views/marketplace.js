@@ -300,24 +300,21 @@ function renderCardHtml(ch, mT) {
         ${fb('evidence', ch.evidenceMaturity, `text-xs font-semibold px-2.5 py-1 rounded-lg ${evStyle}`, getEvidenceMaturityLabel(ch.evidenceMaturity))}
       </div>
 
-      <!-- Context chips: helix + max 1 transition + overflow badge -->
+      <!-- Context chips: helix + all transitions -->
       <div class="flex flex-wrap gap-1.5">
         ${ch.helixRole
           ? fb('helix', ch.helixRole, `text-xs font-medium px-2.5 py-1 rounded-lg ${HELIX_STYLES[ch.helixRole] || 'bg-gray-100 text-gray-600'}`, getHelixLabel(ch.helixRole))
           : ''}
-        ${transitions.slice(0, 1).map(tr =>
+        ${transitions.map(tr =>
           fb('transition', tr,
             `text-xs font-medium px-2.5 py-1 rounded-lg ${TRANSITION_STYLES[tr] || 'bg-gray-100 text-gray-600'}`,
             shortTrans(tr), getTransitionLabel(tr))
         ).join('')}
-        ${transitions.length > 1
-          ? `<span class="text-xs font-medium px-2.5 py-1 rounded-lg bg-gray-100 text-gray-500">+${transitions.length - 1}</span>`
-          : ''}
       </div>
 
       <!-- Tags (conditional) -->
       ${tags.length ? `<div class="flex flex-wrap gap-1.5">
-        ${tags.slice(0, 2).map(tag =>
+        ${tags.map(tag =>
           `<span class="flex items-center gap-1 text-xs bg-eu-bg border border-eu-border px-2 py-1 rounded-lg text-gray-500 font-medium">
             <i data-lucide="tag" class="w-3 h-3 shrink-0"></i>${tag}
           </span>`).join('')}
