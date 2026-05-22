@@ -1,7 +1,6 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { MARKETPLACE_CONFIG } from '../../data/marketplace.js';
-import { CHALLENGES_CONFIG } from '../../data/challenges.js';
 
 // ─── Filter persistence (localStorage) ───────────────────────────────────────
 
@@ -648,7 +647,7 @@ function renderList(all, mT) {
   const showSubmit     = getState('marketplaceShowSubmit');
   const filtered       = getFilteredContributions(all, filters, search);
 
-  const heroBlock = MARKETPLACE_CONFIG?.heroBlock || CHALLENGES_CONFIG?.heroBlock || {};
+  const heroBlock = MARKETPLACE_CONFIG?.heroBlock || {};
   const hasHeroBlock = heroBlock && Object.keys(heroBlock).length > 0;
 
   const fallbackStats = [
