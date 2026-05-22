@@ -337,15 +337,15 @@ function renderCardHtml(ch, mT) {
     <div class="border-t border-eu-border rounded-b-2xl overflow-hidden">
 
       <!-- Sector row -->
-      <div class="bg-eu-bg px-5 pt-3 pb-2">
+      <div class="bg-eu-bg px-5 pt-4 pb-3">
         <button data-mp-chip="sector" data-mp-val="${ch.sector}"
           class="text-xs font-bold text-eu-teal uppercase tracking-wide bg-eu-teal/10 px-2.5 py-1 rounded-lg cursor-pointer hover:opacity-75 transition-opacity border-none"
-          style="max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:block"
+          style="max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:inline-block;vertical-align:middle"
           title="${getSectorLabel(ch.sector)}">${getSectorLabel(ch.sector)}</button>
       </div>
 
       <!-- Date + CTA row -->
-      <div class="bg-eu-bg px-5 pt-1 pb-4 flex items-center justify-between gap-3">
+      <div class="bg-eu-bg px-5 pt-3 pb-4 flex items-center justify-between gap-3">
         <span class="flex items-center gap-1.5 text-xs text-gray-400">
           ${ch.publishedAtLabel
             ? `<i data-lucide="calendar" class="w-3 h-3 shrink-0"></i>
