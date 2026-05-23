@@ -5,7 +5,7 @@ import { MARKETPLACE_CONFIG } from '../../data/marketplace.js';
 const MP_FILTER_KEY = 'mpFilters';
 const MP_SEARCH_KEY = 'mpSearch';
 const MP_EXPANDED_KEY = 'mpSearchExpanded';
-const MP_PANEL_KEY = 'mpFilterPanelExpanded';
+const MP_PANEL_KEY = 'mpFilterPanelExpandedV2';
 
 const FILTER_KEYS = [
   'types',
@@ -48,22 +48,100 @@ const DETAIL_BLOCKS = [
 ];
 
 const STATUS_TONE = {
-  open: 'bg-emerald-50 text-emerald-800 ring-emerald-200',
-  'in-progress': 'bg-sky-50 text-sky-800 ring-sky-200',
-  resolved: 'bg-slate-100 text-slate-700 ring-slate-200',
+  open: 'bg-green-100 text-green-800 border-eu-border',
+  'in-progress': 'bg-orange-100 text-orange-800 border-eu-border',
+  resolved: 'bg-gray-100 text-gray-600 border-eu-border',
 };
 
 const TYPE_TONE = {
-  challenge: 'bg-violet-50 text-violet-800 ring-violet-200',
-  case: 'bg-amber-50 text-amber-800 ring-amber-200',
-  validation: 'bg-cyan-50 text-cyan-800 ring-cyan-200',
-  mentoring: 'bg-rose-50 text-rose-800 ring-rose-200',
-  pilot: 'bg-lime-50 text-lime-900 ring-lime-200',
-  resource: 'bg-indigo-50 text-indigo-800 ring-indigo-200',
+  challenge: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
+  case: 'bg-eu-orange/10 text-eu-orange border-eu-orange/20',
+  validation: 'bg-blue-50 text-blue-700 border-blue-200',
+  mentoring: 'bg-purple-100 text-purple-800 border-purple-300',
+  pilot: 'bg-green-100 text-green-800 border-eu-border',
+  resource: 'bg-eu-bg text-gray-700 border-eu-border',
+};
+
+const UI_TEXT = {
+  backMarketplace: { es: 'Volver a Retos y Casos', en: 'Back to Challenges & Cases', va: 'Tornar a Reptes i Casos' },
+  trackBValue: { es: 'Valor Track B', en: 'Track B value', va: 'Valor Track B' },
+  detailEmpty: { es: 'Este elemento todavía no tiene bloques de detalle publicados.', en: 'This item does not have published detail blocks yet.', va: 'Aquest element encara no té blocs de detall publicats.' },
+  operationalSummary: { es: 'Resumen operativo', en: 'Operational summary', va: 'Resum operatiu' },
+  nextStep: { es: 'Siguiente paso', en: 'Next step', va: 'Següent pas' },
+  participationRequest: { es: 'Solicitar participación', en: 'Request participation', va: 'Sol·licitar participació' },
+  searchPlaceholder: { es: 'Buscar por título, entidad, sector, foco o etiqueta', en: 'Search by title, organisation, sector, focus or tag', va: 'Busca per títol, entitat, sector, focus o etiqueta' },
+  statItems: { es: 'Elementos', en: 'Items', va: 'Elements' },
+  statOpen: { es: 'Abiertos', en: 'Open', va: 'Oberts' },
+  statFocuses: { es: 'Focos AI-STEAM', en: 'AI-STEAM focuses', va: 'Focus AI-STEAM' },
+  summaryType: { es: 'Tipo', en: 'Type', va: 'Tipus' },
+  summaryStatus: { es: 'Estado', en: 'Status', va: 'Estat' },
+  summarySector: { es: 'Sector', en: 'Sector', va: 'Sector' },
+  summaryAgent: { es: 'Agente', en: 'Agent', va: 'Agent' },
+  summaryMaturity: { es: 'Madurez', en: 'Maturity', va: 'Maduresa' },
+  summaryEngagement: { es: 'Participación', en: 'Participation', va: 'Participació' },
+  filterType: { es: 'Tipo', en: 'Type', va: 'Tipus' },
+  filterStatus: { es: 'Estado', en: 'Status', va: 'Estat' },
+  filterSector: { es: 'Sector', en: 'Sector', va: 'Sector' },
+  filterAgent: { es: 'Agente', en: 'Agent', va: 'Agent' },
+  filterTransition: { es: 'Transición', en: 'Transition', va: 'Transició' },
+  filterPolicy: { es: 'Política', en: 'Policy', va: 'Política' },
+  filterEngagement: { es: 'Participación', en: 'Participation', va: 'Participació' },
+  filterEvidence: { es: 'Evidencia', en: 'Evidence', va: 'Evidència' },
+  filterFocus: { es: 'Foco AI-STEAM', en: 'AI-STEAM focus', va: 'Focus AI-STEAM' },
+  filterTags: { es: 'Etiquetas', en: 'Tags', va: 'Etiquetes' },
+  activeFilters: { es: 'Filtros activos', en: 'Active filters', va: 'Filtres actius' },
+  clearAll: { es: 'Limpiar todo', en: 'Clear all', va: 'Netejar-ho tot' },
+  clearFilters: { es: 'Limpiar filtros', en: 'Clear filters', va: 'Netejar filtres' },
+  viewDetail: { es: 'Ver detalle', en: 'View detail', va: 'Veure detall' },
+  noResultsTitle: { es: 'No hay resultados con esos filtros', en: 'No results with those filters', va: 'No hi ha resultats amb aquests filtres' },
+  noResultsMessage: { es: 'Prueba a ajustar la búsqueda o limpiar filtros. Hay {{total}} elementos publicados.', en: 'Try adjusting the search or clearing filters. There are {{total}} published items.', va: 'Prova a ajustar la cerca o netejar filtres. Hi ha {{total}} elements publicats.' },
+  searchAction: { es: 'Buscar', en: 'Search', va: 'Buscar' },
+  filtersAction: { es: 'Filtros', en: 'Filters', va: 'Filtres' },
+  resultsCount: { es: 'Mostrando <strong>{{count}}</strong> de {{total}} elementos', en: 'Showing <strong>{{count}}</strong> of {{total}} items', va: 'Mostrant <strong>{{count}}</strong> de {{total}} elements' },
+  heroDescriptionFallback: { es: 'Retos, casos, validaciones, mentorías, pilotajes y recursos para transferencia real en IA, STEAM, arte y creatividad.', en: 'Challenges, cases, validations, mentoring, pilots and resources for real transfer in AI, STEAM, art and creativity.', va: 'Reptes, casos, validacions, mentories, pilotatges i recursos per a transferència real en IA, STEAM, art i creativitat.' },
+};
+
+const FIELD_LABELS = {
+  method: { es: 'Método', en: 'Method', va: 'Mètode' },
+  indicators: { es: 'Indicadores', en: 'Indicators', va: 'Indicadors' },
+  metric: { es: 'Métrica', en: 'Metric', va: 'Mètrica' },
+  expected: { es: 'Entregables previstos', en: 'Expected deliverables', va: 'Entregables previstos' },
+  milestones: { es: 'Hitos', en: 'Milestones', va: 'Fites' },
+  date: { es: 'Fecha', en: 'Date', va: 'Data' },
+  available: { es: 'Recursos disponibles', en: 'Available resources', va: 'Recursos disponibles' },
+  format: { es: 'Formato', en: 'Format', va: 'Format' },
+  license: { es: 'Licencia', en: 'License', va: 'Llicència' },
+  publicUrl: { es: 'URL pública', en: 'Public URL', va: 'URL pública' },
+  rightsNote: { es: 'Derechos y privacidad', en: 'Rights and privacy', va: 'Drets i privacitat' },
+  privacyLevel: { es: 'Nivel de privacidad', en: 'Privacy level', va: 'Nivell de privacitat' },
+  ctaLabel: { es: 'Acción', en: 'Action', va: 'Acció' },
+  instructions: { es: 'Instrucciones', en: 'Instructions', va: 'Instruccions' },
+  url: { es: 'Enlace', en: 'Link', va: 'Enllaç' },
+  modality: { es: 'Modalidad', en: 'Modality', va: 'Modalitat' },
+  availability: { es: 'Disponibilidad', en: 'Availability', va: 'Disponibilitat' },
+  result: { es: 'Resultado', en: 'Result', va: 'Resultat' },
+  learningSignals: { es: 'Señales de aprendizaje', en: 'Learning signals', va: 'Senyals d’aprenentatge' },
+  nextStep: { es: 'Próximo paso', en: 'Next step', va: 'Pròxim pas' },
+  mainResource: { es: 'Recurso principal', en: 'Main resource', va: 'Recurs principal' },
+  organisations: { es: 'Organizaciones', en: 'Organisations', va: 'Organitzacions' },
+  role: { es: 'Rol', en: 'Role', va: 'Rol' },
+  expertise: { es: 'Experiencia', en: 'Expertise', va: 'Experiència' },
+  contact: { es: 'Contacto', en: 'Contact', va: 'Contacte' },
+  owner: { es: 'Responsable', en: 'Owner', va: 'Responsable' },
+  value: { es: 'Valor', en: 'Value', va: 'Valor' },
+  question: { es: 'Pregunta guía', en: 'Guiding question', va: 'Pregunta guia' },
+  dataInputs: { es: 'Datos de entrada', en: 'Data inputs', va: 'Dades d’entrada' },
+  targetUsers: { es: 'Usuarios destinatarios', en: 'Target users', va: 'Usuaris destinataris' },
+  learningSetting: { es: 'Contexto de aprendizaje', en: 'Learning setting', va: 'Context d’aprenentatge' },
+  participants: { es: 'Participantes', en: 'Participants', va: 'Participants' },
 };
 
 function getLang() {
   return localStorage.getItem('language') || 'es';
+}
+
+function uiText(key) {
+  return pickLang(UI_TEXT[key], key);
 }
 
 function pickLang(value, fallback = '') {
@@ -245,33 +323,40 @@ function buildOptions(items, key, labeler) {
 }
 
 function chipClasses(active = false, tone = '') {
-  if (active) return 'border-violet-500 bg-violet-50 text-violet-800';
-  return `${tone || 'bg-white text-slate-700'} border-slate-200 hover:border-violet-300 hover:text-violet-800`;
+  if (active) return 'bg-eu-blue text-white border-eu-blue';
+  return `${tone || 'bg-white text-gray-700 border-eu-border'} hover:border-eu-blue hover:text-eu-blue`;
 }
 
 function renderClickableChip(dimension, value, label, active = false, tone = '') {
   if (!value || !label) return '';
   return `
     <button type="button" data-mp-chip="${dimension}" data-mp-val="${esc(value)}"
-      class="inline-flex min-h-11 items-center rounded-full border px-3 py-1 text-xs font-semibold transition ${chipClasses(active, tone)}">
+      class="inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold leading-5 transition-colors cursor-pointer ${chipClasses(active, tone)}">
       ${esc(label)}
     </button>`;
 }
 
-function renderBadge(label, tone = 'bg-white text-slate-700 ring-slate-200') {
+function renderBadge(label, tone = 'bg-eu-bg text-gray-700 border-eu-border') {
   if (!label) return '';
-  return `<span class="inline-flex min-h-8 items-center rounded-full px-3 py-1 text-xs font-bold ring-1 ${tone}">${esc(label)}</span>`;
+  return `<span class="inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold ${tone}">${esc(label)}</span>`;
 }
 
 function renderFilterGroup(title, dimension, options, activeValues) {
   if (!options.length) return '';
+  const activeCount = activeValues?.length || 0;
   return `
-    <div class="space-y-2">
-      <p class="text-xs font-bold uppercase tracking-wide text-slate-500">${esc(title)}</p>
-      <div class="flex flex-wrap gap-2">
+    <details class="rounded-lg border border-eu-border bg-white">
+      <summary class="flex min-h-10 cursor-pointer list-none items-center justify-between gap-3 px-3 py-2 text-xs font-bold uppercase tracking-wide text-gray-600 hover:text-eu-blue">
+        <span>${esc(title)}</span>
+        <span class="inline-flex items-center gap-2">
+          ${activeCount ? `<span class="rounded bg-eu-blue px-1.5 py-0.5 text-xs text-white">${activeCount}</span>` : ''}
+          <i data-lucide="chevron-down" class="h-3.5 w-3.5"></i>
+        </span>
+      </summary>
+      <div class="flex flex-wrap gap-1.5 border-t border-eu-border bg-eu-bg p-3">
         ${options.map(option => renderClickableChip(dimension, option.value, option.label, activeValues.includes(option.value))).join('')}
       </div>
-    </div>`;
+    </details>`;
 }
 
 function renderActiveFilters(filters, search) {
@@ -290,23 +375,24 @@ function renderActiveFilters(filters, search) {
   };
   const chips = FILTER_KEYS.flatMap(key => filters[key].map(value => `
     <button type="button" data-mp-remove="${key}" data-mp-val="${esc(value)}"
-      class="inline-flex min-h-11 items-center gap-2 rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-200">
+      class="inline-flex items-center gap-1.5 rounded bg-eu-bg px-3 py-1.5 text-xs font-semibold text-gray-700 border border-eu-border hover:border-eu-blue hover:text-eu-blue transition-colors cursor-pointer">
       ${esc(labels[key](value))}
       <i data-lucide="x" class="h-3 w-3"></i>
     </button>`));
   if (search) {
     chips.unshift(`
       <button type="button" data-mp-remove="search" data-mp-val=""
-        class="inline-flex min-h-11 items-center gap-2 rounded-full bg-violet-50 px-3 py-1 text-xs font-semibold text-violet-800 hover:bg-violet-100">
+        class="inline-flex items-center gap-1.5 rounded bg-eu-blue/10 px-3 py-1.5 text-xs font-semibold text-eu-blue border border-eu-blue/20 hover:bg-eu-blue/20 transition-colors cursor-pointer">
         ${esc(search)}
         <i data-lucide="x" class="h-3 w-3"></i>
       </button>`);
   }
   return `
-    <div id="mp-active-filters" class="flex flex-wrap items-center gap-2">
+    <div id="mp-active-filters" class="flex flex-wrap items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 p-4">
+      <span class="text-xs font-semibold text-gray-700">${esc(uiText('activeFilters'))}:</span>
       ${chips.join('')}
-      <button id="mp-clear-active-filters" type="button" class="text-xs font-bold text-violet-700 hover:text-violet-900">
-        Limpiar filtros
+      <button id="mp-clear-active-filters" type="button" class="ml-auto rounded border border-red-200 px-2.5 py-1 text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer">
+        ${esc(uiText('clearAll'))}
       </button>
     </div>`;
 }
@@ -334,17 +420,18 @@ function renderCard(item) {
   const transitions = asArray(item.classification?.tripleTransition).slice(0, 2);
 
   return `
-    <article class="group flex h-full flex-col rounded-lg border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-200 hover:shadow-md">
-      <div class="flex flex-wrap items-center gap-2">
+    <article class="group flex h-full flex-col overflow-hidden rounded-xl border border-eu-border bg-white shadow-sm transition-colors hover:border-eu-blue">
+      <div class="p-5 flex-1">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
         ${renderClickableChip('type', item.type, getTypeLabel(item.type), active.types.includes(item.type), TYPE_TONE[item.type])}
         ${renderClickableChip('status', item.core?.status, getStatusLabel(item.core?.status), active.statuses.includes(item.core?.status), STATUS_TONE[item.core?.status])}
         ${renderClickableChip('evidence', item.classification?.evidenceMaturity, getEvidenceLabel(item.classification?.evidenceMaturity), active.evidences.includes(item.classification?.evidenceMaturity))}
       </div>
 
-      <div class="mt-4 flex-1">
-        <h3 class="text-lg font-black leading-snug text-slate-950">${esc(title)}</h3>
-        ${entity ? `<p class="mt-1 text-sm font-semibold text-slate-500">${esc(entity)}${item.core?.entity?.type ? ` · ${esc(pickLang(item.core.entity.type))}` : ''}</p>` : ''}
-        ${summary ? `<p class="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">${esc(summary)}</p>` : ''}
+      <div>
+        <h3 class="font-bold text-eu-text text-base leading-snug group-hover:text-eu-blue transition-colors">${esc(title)}</h3>
+        ${entity ? `<p class="mt-1 text-xs font-semibold text-gray-500">${esc(entity)}${item.core?.entity?.type ? ` · ${esc(pickLang(item.core.entity.type))}` : ''}</p>` : ''}
+        ${summary ? `<p class="mt-3 line-clamp-2 text-sm leading-6 text-gray-600">${esc(summary)}</p>` : ''}
       </div>
 
       <div class="mt-4 flex flex-wrap gap-2">
@@ -355,17 +442,18 @@ function renderCard(item) {
       </div>
 
       ${signal ? `
-        <div class="mt-5 rounded-lg bg-slate-50 p-3 text-sm leading-6 text-slate-700">
-          <span class="font-bold text-slate-950">${esc(getTypeLabel(item.type))}:</span>
+        <div class="mt-4 rounded-lg border border-eu-border bg-eu-bg p-3 text-xs leading-relaxed text-gray-700">
+          <span class="font-bold text-eu-text">${esc(getTypeLabel(item.type))}:</span>
           ${esc(signal)}
         </div>` : ''}
+      </div>
 
-      <div class="mt-5 flex items-center justify-between gap-3 border-t border-slate-100 pt-4">
-        <span class="text-xs font-semibold uppercase tracking-wide text-slate-400">Track B</span>
+      <div class="border-t border-eu-border bg-eu-bg p-3 flex items-center justify-between gap-3">
+        <span class="text-xs font-semibold uppercase text-gray-500">Track B</span>
         <button type="button" data-id="${esc(item.id)}"
-          class="mp-view-detail inline-flex items-center gap-2 rounded-full bg-violet-700 px-4 py-2 text-sm font-bold text-white transition hover:bg-violet-800">
-          Ver detalle
-          <i data-lucide="arrow-right" class="h-4 w-4"></i>
+          class="mp-view-detail inline-flex items-center gap-1.5 text-eu-blue text-xs font-bold hover:underline cursor-pointer">
+          ${esc(uiText('viewDetail'))}
+          <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
         </button>
       </div>
     </article>`;
@@ -377,12 +465,32 @@ function renderTextValue(value) {
   if (Array.isArray(localized)) {
     const items = localized.map(renderTextValue).filter(Boolean);
     if (!items.length) return '';
-    return `<ul class="space-y-2">${items.map(item => `<li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400"></span><span>${item}</span></li>`).join('')}</ul>`;
+    return `<ul class="space-y-2">${items.map(item => `<li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-eu-blue"></span><span>${item}</span></li>`).join('')}</ul>`;
   }
   if (typeof localized === 'object') {
+    if (localized.label) return renderLabeledObject(localized);
     return renderObjectValue(localized);
   }
   return `<span>${esc(localized)}</span>`;
+}
+
+function renderLabeledObject(value) {
+  const label = pickLang(value.label);
+  const meta = Object.entries(value || {})
+    .filter(([key]) => key !== 'label')
+    .map(([key, entry]) => [key, renderTextValue(entry)])
+    .filter(([, rendered]) => rendered);
+  if (!label && !meta.length) return '';
+  if (!meta.length) return `<span>${esc(label)}</span>`;
+  return `
+    <div>
+      ${label ? `<p class="font-semibold text-gray-800">${esc(label)}</p>` : ''}
+      <dl class="mt-2 space-y-2">${meta.map(([key, rendered]) => `
+        <div>
+          <dt class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(getFieldLabel(key))}</dt>
+          <dd class="mt-0.5 text-sm leading-6 text-gray-700">${rendered}</dd>
+        </div>`).join('')}</dl>
+    </div>`;
 }
 
 function renderObjectValue(value) {
@@ -392,9 +500,13 @@ function renderObjectValue(value) {
   if (!entries.length) return '';
   return `<dl class="space-y-3">${entries.map(([key, rendered]) => `
     <div>
-      <dt class="text-xs font-bold uppercase tracking-wide text-slate-400">${esc(humanizeKey(key))}</dt>
-      <dd class="mt-1 text-sm leading-6 text-slate-700">${rendered}</dd>
+      <dt class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(getFieldLabel(key))}</dt>
+      <dd class="mt-1 text-sm leading-6 text-gray-700">${rendered}</dd>
     </div>`).join('')}</dl>`;
+}
+
+function getFieldLabel(key) {
+  return pickLang(FIELD_LABELS[key], humanizeKey(key));
 }
 
 function humanizeKey(key) {
@@ -421,14 +533,14 @@ function renderDetailBlock(item, block) {
   const body = renderTextValue(content);
   if (!body) return '';
   return `
-    <section class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+    <section class="rounded-xl border border-eu-border bg-white p-6 shadow-sm">
       <div class="mb-4 flex items-center gap-3">
-        <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-violet-50 text-violet-700">
-          <i data-lucide="${block.icon}" class="h-4 w-4"></i>
+        <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-eu-blue/10 text-eu-blue">
+          <i data-lucide="${block.icon}" class="h-5 w-5"></i>
         </span>
-        <h2 class="text-base font-black text-slate-950">${esc(getBlockLabel(block.key) || humanizeKey(block.key))}</h2>
+        <h2 class="text-base font-bold text-eu-text">${esc(getBlockLabel(block.key) || humanizeKey(block.key))}</h2>
       </div>
-      <div class="text-sm leading-6 text-slate-700">${body}</div>
+      <div class="text-sm leading-6 text-gray-700">${body}</div>
     </section>`;
 }
 
@@ -436,6 +548,8 @@ function renderDetail(item) {
   const title = pickLang(item.core?.title, item.id);
   const summary = pickLang(item.core?.summary);
   const entity = pickLang(item.core?.entity?.name);
+  const publishedAtLabel = pickLang(item.core?.publishedAtLabel);
+  const deadlineLabel = pickLang(item.core?.deadlineLabel);
   const trackBValue = pickLang(item.classification?.trackBValue);
   const sectorCode = getSectorCode(item.core?.sector);
   const transitions = asArray(item.classification?.tripleTransition);
@@ -444,30 +558,31 @@ function renderDetail(item) {
   const blocks = DETAIL_BLOCKS.map(block => renderDetailBlock(item, block)).filter(Boolean);
 
   return `
-    <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-      <button id="mp-back" type="button" class="mb-6 inline-flex items-center gap-2 text-sm font-bold text-violet-700 hover:text-violet-900">
-        <i data-lucide="arrow-left" class="h-4 w-4"></i>
-        Volver al marketplace
-      </button>
-
-      <div class="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
-        <div class="bg-slate-950 px-5 py-7 text-white sm:px-8 sm:py-9">
+    <div>
+      <section class="bg-eu-blue px-6 py-12 text-white">
+        <div class="mx-auto max-w-7xl">
+          <button id="mp-back" type="button" class="mb-7 inline-flex min-h-10 items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-bold text-white hover:bg-white/20 transition-colors cursor-pointer">
+            <i data-lucide="arrow-left" class="h-4 w-4"></i>
+            ${esc(uiText('backMarketplace'))}
+          </button>
           <div class="flex flex-wrap gap-2">
-            ${renderBadge(getTypeLabel(item.type), 'bg-white/10 text-white ring-white/20')}
-            ${renderBadge(getStatusLabel(item.core?.status), 'bg-emerald-400/15 text-emerald-100 ring-emerald-300/25')}
-            ${renderBadge(getEvidenceLabel(item.classification?.evidenceMaturity), 'bg-sky-400/15 text-sky-100 ring-sky-300/25')}
-            ${renderBadge(getEngagementLabel(item.classification?.engagementLevel), 'bg-amber-400/15 text-amber-100 ring-amber-300/25')}
+            ${renderBadge(getTypeLabel(item.type), 'bg-white/10 text-white border-white/20')}
+            ${renderBadge(getStatusLabel(item.core?.status), 'bg-white/10 text-white border-white/20')}
+            ${renderBadge(getEvidenceLabel(item.classification?.evidenceMaturity), 'bg-white/10 text-white border-white/20')}
+            ${renderBadge(getEngagementLabel(item.classification?.engagementLevel), 'bg-white/10 text-white border-white/20')}
           </div>
-          <h1 class="mt-5 max-w-4xl text-3xl font-black leading-tight sm:text-4xl">${esc(title)}</h1>
-          ${summary ? `<p class="mt-4 max-w-4xl text-base leading-7 text-slate-200">${esc(summary)}</p>` : ''}
-          <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-300">
+          <h1 class="mt-5 max-w-4xl text-3xl font-extrabold leading-tight">${esc(title)}</h1>
+          ${summary ? `<p class="mt-4 max-w-4xl text-base leading-7 text-white/80">${esc(summary)}</p>` : ''}
+          <div class="mt-6 flex flex-wrap items-center gap-8 text-sm text-white/75">
             ${entity ? `<span class="inline-flex items-center gap-2"><i data-lucide="building-2" class="h-4 w-4"></i>${esc(entity)}</span>` : ''}
-            ${item.core?.publishedAtLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="calendar" class="h-4 w-4"></i>${esc(item.core.publishedAtLabel)}</span>` : ''}
-            ${item.core?.deadlineLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="timer" class="h-4 w-4"></i>${esc(item.core.deadlineLabel)}</span>` : ''}
+            ${publishedAtLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="calendar" class="h-4 w-4"></i>${esc(publishedAtLabel)}</span>` : ''}
+            ${deadlineLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="timer" class="h-4 w-4"></i>${esc(deadlineLabel)}</span>` : ''}
           </div>
         </div>
+      </section>
 
-        <div class="px-5 py-5 sm:px-8">
+      <section class="mx-auto max-w-7xl px-6 py-8">
+        <div class="rounded-xl border border-eu-border bg-white p-5 shadow-sm">
           <div class="flex flex-wrap gap-2">
             ${renderBadge(getSectorLabel(item.core?.sector))}
             ${renderBadge(getStakeholderLabel(item.core?.stakeholderCategory))}
@@ -476,54 +591,54 @@ function renderDetail(item) {
             ${focuses.map(value => renderBadge(getFocusLabel(value))).join('')}
           </div>
           ${trackBValue ? `
-            <div class="mt-5 rounded-lg bg-violet-50 p-4 text-sm leading-6 text-violet-950 ring-1 ring-violet-100">
-              <strong>Valor Track B:</strong> ${esc(trackBValue)}
+            <div class="mt-4 rounded-lg border border-eu-blue/20 bg-eu-blue/10 p-4 text-sm leading-6 text-eu-text">
+              <strong>${esc(uiText('trackBValue'))}:</strong> ${esc(trackBValue)}
             </div>` : ''}
         </div>
-      </div>
 
-      <div class="mt-6 grid gap-5 lg:grid-cols-[minmax(0,1fr)_20rem]">
-        <div class="grid gap-5 md:grid-cols-2">
-          ${blocks.join('') || `<p class="rounded-lg border border-slate-200 bg-white p-5 text-sm text-slate-500">Este elemento todavía no tiene bloques de detalle publicados.</p>`}
+        <div class="mt-6 grid gap-6 lg:grid-cols-3">
+          <div class="grid gap-5 md:grid-cols-2 lg:col-span-2">
+            ${blocks.join('') || `<p class="rounded-xl border border-eu-border bg-white p-6 text-sm text-gray-500 shadow-sm">${esc(uiText('detailEmpty'))}</p>`}
+          </div>
+          <aside class="space-y-5">
+            <section class="rounded-xl border border-eu-border bg-white p-5 shadow-sm">
+              <h2 class="text-base font-bold text-eu-text">${esc(uiText('operationalSummary'))}</h2>
+              <dl class="mt-4 space-y-3 text-sm">
+                ${renderSummaryRow(uiText('summaryType'), getTypeLabel(item.type))}
+                ${renderSummaryRow(uiText('summaryStatus'), getStatusLabel(item.core?.status))}
+                ${renderSummaryRow(uiText('summarySector'), getSectorLabel(item.core?.sector))}
+                ${renderSummaryRow(uiText('summaryAgent'), getStakeholderLabel(item.core?.stakeholderCategory))}
+                ${renderSummaryRow(uiText('summaryMaturity'), getEvidenceLabel(item.classification?.evidenceMaturity))}
+                ${renderSummaryRow(uiText('summaryEngagement'), getEngagementLabel(item.classification?.engagementLevel))}
+              </dl>
+            </section>
+            ${renderCallToAction(item)}
+          </aside>
         </div>
-        <aside class="space-y-5">
-          <section class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-            <h2 class="text-base font-black text-slate-950">Resumen operativo</h2>
-            <dl class="mt-4 space-y-3 text-sm">
-              ${renderSummaryRow('Tipo', getTypeLabel(item.type))}
-              ${renderSummaryRow('Estado', getStatusLabel(item.core?.status))}
-              ${renderSummaryRow('Sector', getSectorLabel(item.core?.sector))}
-              ${renderSummaryRow('Agente', getStakeholderLabel(item.core?.stakeholderCategory))}
-              ${renderSummaryRow('Madurez', getEvidenceLabel(item.classification?.evidenceMaturity))}
-              ${renderSummaryRow('Participación', getEngagementLabel(item.classification?.engagementLevel))}
-            </dl>
-          </section>
-          ${renderCallToAction(item)}
-        </aside>
-      </div>
-    </section>`;
+      </section>
+    </div>`;
 }
 
 function renderSummaryRow(label, value) {
   if (!value) return '';
   return `
     <div>
-      <dt class="text-xs font-bold uppercase tracking-wide text-slate-400">${esc(label)}</dt>
-      <dd class="mt-1 font-semibold text-slate-700">${esc(value)}</dd>
+      <dt class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(label)}</dt>
+      <dd class="mt-1 font-semibold text-gray-700">${esc(value)}</dd>
     </div>`;
 }
 
 function renderCallToAction(item) {
   const access = item.access || {};
   const detailAccess = item.detail?.access || {};
-  const label = pickLang(access.ctaLabel) || pickLang(detailAccess.ctaLabel) || 'Solicitar participación';
+  const label = pickLang(access.ctaLabel) || pickLang(detailAccess.ctaLabel) || uiText('participationRequest');
   const url = pickLang(access.url) || pickLang(detailAccess.url);
   const href = url || '#';
   return `
-    <section class="rounded-lg border border-violet-200 bg-violet-50 p-5 shadow-sm">
-      <h2 class="text-base font-black text-violet-950">Siguiente paso</h2>
-      ${pickLang(access.instructions) ? `<p class="mt-2 text-sm leading-6 text-violet-900">${esc(pickLang(access.instructions))}</p>` : ''}
-      <a ${url ? `href="${esc(href)}"` : ''} class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-violet-700 px-4 py-2 text-sm font-bold text-white transition hover:bg-violet-800">
+    <section class="rounded-xl border border-eu-border bg-eu-bg p-5 shadow-sm">
+      <h2 class="text-base font-bold text-eu-text">${esc(uiText('nextStep'))}</h2>
+      ${pickLang(access.instructions) ? `<p class="mt-2 text-sm leading-6 text-gray-700">${esc(pickLang(access.instructions))}</p>` : ''}
+      <a ${url ? `href="${esc(href)}"` : ''} class="mt-4 inline-flex w-full min-h-11 items-center justify-center gap-2 rounded-lg bg-eu-orange px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-eu-purple">
         ${esc(label)}
         <i data-lucide="arrow-right" class="h-4 w-4"></i>
       </a>
@@ -531,12 +646,13 @@ function renderCallToAction(item) {
 }
 
 function renderEmptyState(total) {
+  const message = uiText('noResultsMessage').replace('{{total}}', total);
   return `
-    <div id="mp-grid" class="rounded-lg border border-dashed border-slate-300 bg-white p-8 text-center">
-      <i data-lucide="search-x" class="mx-auto h-8 w-8 text-slate-400"></i>
-      <h3 class="mt-3 text-lg font-black text-slate-900">No hay resultados con esos filtros</h3>
-      <p class="mt-2 text-sm text-slate-500">Prueba a ajustar la búsqueda o limpiar filtros. Hay ${total} elementos publicados.</p>
-      <button id="mp-clear-all" type="button" class="mt-4 rounded-full bg-violet-700 px-4 py-2 text-sm font-bold text-white hover:bg-violet-800">Limpiar filtros</button>
+    <div id="mp-grid" class="rounded-xl border border-eu-border bg-white p-8 text-center shadow-sm">
+      <i data-lucide="search-x" class="mx-auto h-8 w-8 text-gray-400"></i>
+      <h3 class="mt-3 text-lg font-bold text-eu-text">${esc(uiText('noResultsTitle'))}</h3>
+      <p class="mt-2 text-sm text-gray-500">${esc(message)}</p>
+      <button id="mp-clear-all" type="button" class="mt-4 rounded-lg bg-eu-blue px-4 py-2 text-sm font-bold text-white hover:bg-eu-purple transition-colors cursor-pointer">${esc(uiText('clearFilters'))}</button>
     </div>`;
 }
 
@@ -550,46 +666,46 @@ function renderList(items) {
   const stats = getStats(items);
 
   return `
-    <section class="bg-slate-950 text-white">
-      <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+    <section class="bg-eu-blue text-white px-6 py-12">
+      <div class="mx-auto max-w-7xl">
         <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-end">
           <div>
-            <p class="text-sm font-bold uppercase tracking-wide text-violet-200">AI-STEAM Network · Track B</p>
-            <h1 class="mt-3 max-w-4xl text-4xl font-black leading-tight sm:text-5xl">${esc(pickLang(hero.title, 'Marketplace Track B'))}</h1>
-            <p class="mt-4 max-w-3xl text-base leading-7 text-slate-200">${esc(pickLang(hero.description, 'Retos, casos, validaciones, mentorías, pilotajes y recursos para transferencia real en IA, STEAM, arte y creatividad.'))}</p>
+            <h1 class="max-w-4xl text-3xl font-extrabold leading-tight">${esc(pickLang(hero.title, 'Marketplace Track B'))}</h1>
+            <p class="mt-3 max-w-3xl text-base leading-7 text-white/80">${esc(pickLang(hero.description, uiText('heroDescriptionFallback')))}</p>
           </div>
           <div class="grid grid-cols-3 gap-3">
             ${stats.map(stat => `
-              <div class="rounded-lg bg-white/10 p-4 ring-1 ring-white/15">
-                <p class="text-2xl font-black">${stat.value}</p>
-                <p class="mt-1 text-xs font-semibold text-slate-300">${esc(stat.label)}</p>
+              <div class="rounded-xl bg-white/10 px-5 py-3 text-center">
+                <p class="text-2xl font-extrabold text-eu-yellow">${stat.value}</p>
+                <p class="mt-0.5 text-xs font-semibold uppercase text-white/70">${esc(stat.label)}</p>
               </div>`).join('')}
           </div>
         </div>
       </div>
     </section>
 
-    <section class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-      <div class="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+    <section class="mx-auto max-w-7xl px-6 py-8">
+      <div class="rounded-xl border border-eu-border bg-white p-5 shadow-sm">
         <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div class="flex flex-wrap items-center gap-2">
-            <button id="mp-search-toggle" type="button" class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-bold text-slate-700 hover:border-violet-300 hover:text-violet-800">
+            <button id="mp-search-toggle" type="button" class="inline-flex min-h-10 items-center gap-2 rounded-lg border border-eu-border px-4 py-2 text-sm font-bold text-eu-text hover:border-eu-blue hover:text-eu-blue transition-colors cursor-pointer">
               <i data-lucide="search" class="h-4 w-4"></i>
-              Buscar
+              ${esc(uiText('searchAction'))}
             </button>
-            <button id="mp-filter-panel-toggle" type="button" class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-bold text-slate-700 hover:border-violet-300 hover:text-violet-800">
+            <button id="mp-filter-panel-toggle" type="button" class="inline-flex min-h-10 items-center gap-2 rounded-lg border border-eu-border px-4 py-2 text-sm font-bold text-eu-text hover:border-eu-blue hover:text-eu-blue transition-colors cursor-pointer">
               <i data-lucide="sliders-horizontal" class="h-4 w-4"></i>
-              Filtros
+              ${esc(uiText('filtersAction'))}
+              ${hasMpFilters(filters, '') ? `<span class="rounded bg-eu-blue px-1.5 py-0.5 text-xs text-white">${FILTER_KEYS.reduce((acc, key) => acc + filters[key].length, 0)}</span>` : ''}
             </button>
           </div>
-          <p id="mp-results-count" class="text-sm font-semibold text-slate-500">Mostrando <strong>${filtered.length}</strong> de ${items.length} elementos</p>
+          <p id="mp-results-count" class="text-sm font-semibold text-gray-500">${uiText('resultsCount').replace('{{count}}', esc(filtered.length)).replace('{{total}}', esc(items.length))}</p>
         </div>
 
         ${searchExpanded ? `
           <div class="mt-4 flex gap-2">
-            <input id="mp-search" value="${esc(search)}" type="search" placeholder="Buscar por título, entidad, sector, foco o etiqueta"
-              class="min-h-11 w-full rounded-lg border border-slate-200 px-4 text-sm outline-none focus:border-violet-500 focus:ring-2 focus:ring-violet-100">
-            ${search ? `<button id="mp-search-clear" type="button" class="rounded-lg border border-slate-200 px-3 text-slate-500 hover:text-slate-800"><i data-lucide="x" class="h-4 w-4"></i></button>` : ''}
+            <input id="mp-search" value="${esc(search)}" type="search" placeholder="${esc(uiText('searchPlaceholder'))}"
+              class="min-h-11 w-full rounded-lg border border-eu-border px-4 text-sm outline-none focus:border-eu-blue focus:ring-2 focus:ring-eu-blue">
+            ${search ? `<button id="mp-search-clear" type="button" class="rounded-lg border border-eu-border px-3 text-gray-500 hover:text-eu-text cursor-pointer"><i data-lucide="x" class="h-4 w-4"></i></button>` : ''}
           </div>` : ''}
 
         ${filterPanelExpanded ? renderFilterPanel(items, filters) : ''}
@@ -604,28 +720,30 @@ function renderList(items) {
 
 function renderFilterPanel(items, filters) {
   const groups = [
-    ['Tipo', 'type', 'types', buildOptions(items, 'types', getTypeLabel)],
-    ['Estado', 'status', 'statuses', buildOptions(items, 'statuses', getStatusLabel)],
-    ['Sector', 'sector', 'sectors', buildOptions(items, 'sectors', getSectorLabel)],
-    ['Agente', 'stakeholder', 'stakeholders', buildOptions(items, 'stakeholders', getStakeholderLabel)],
-    ['Transición', 'transition', 'transitions', buildOptions(items, 'transitions', getTransitionLabel)],
-    ['Política', 'policy', 'policies', buildOptions(items, 'policies', getPolicyLabel)],
-    ['Participación', 'engagement', 'engagements', buildOptions(items, 'engagements', getEngagementLabel)],
-    ['Evidencia', 'evidence', 'evidences', buildOptions(items, 'evidences', getEvidenceLabel)],
-    ['Foco AI-STEAM', 'focus', 'focuses', buildOptions(items, 'focuses', getFocusLabel)],
-    ['Etiquetas', 'tag', 'tags', buildOptions(items, 'tags', value => value)],
+    [uiText('filterType'), 'type', 'types', buildOptions(items, 'types', getTypeLabel)],
+    [uiText('filterStatus'), 'status', 'statuses', buildOptions(items, 'statuses', getStatusLabel)],
+    [uiText('filterSector'), 'sector', 'sectors', buildOptions(items, 'sectors', getSectorLabel)],
+    [uiText('filterAgent'), 'stakeholder', 'stakeholders', buildOptions(items, 'stakeholders', getStakeholderLabel)],
+    [uiText('filterTransition'), 'transition', 'transitions', buildOptions(items, 'transitions', getTransitionLabel)],
+    [uiText('filterPolicy'), 'policy', 'policies', buildOptions(items, 'policies', getPolicyLabel)],
+    [uiText('filterEngagement'), 'engagement', 'engagements', buildOptions(items, 'engagements', getEngagementLabel)],
+    [uiText('filterEvidence'), 'evidence', 'evidences', buildOptions(items, 'evidences', getEvidenceLabel)],
+    [uiText('filterFocus'), 'focus', 'focuses', buildOptions(items, 'focuses', getFocusLabel)],
+    [uiText('filterTags'), 'tag', 'tags', buildOptions(items, 'tags', value => value)],
   ];
   return `
-    <div class="mt-5 grid gap-5 border-t border-slate-100 pt-5 md:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-4 border-t border-eu-border pt-4">
+      <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
       ${groups.map(([title, dimension, key, options]) => renderFilterGroup(title, dimension, options, filters[key])).join('')}
+      </div>
     </div>`;
 }
 
 function getStats(items) {
   return [
-    { value: items.length, label: 'Elementos' },
-    { value: items.filter(item => item.core?.status === 'open').length, label: 'Abiertos' },
-    { value: new Set(items.flatMap(item => asArray(item.classification?.aiSteamFocus))).size, label: 'Focos AI-STEAM' },
+    { value: items.length, label: uiText('statItems') },
+    { value: items.filter(item => item.core?.status === 'open').length, label: uiText('statOpen') },
+    { value: new Set(items.flatMap(item => asArray(item.classification?.aiSteamFocus))).size, label: uiText('statFocuses') },
   ];
 }
 
@@ -735,7 +853,9 @@ function updateMpGrid() {
 
   document.getElementById('mp-results-count')?.replaceChildren();
   const count = document.getElementById('mp-results-count');
-  if (count) count.innerHTML = `Mostrando <strong>${filtered.length}</strong> de ${items.length} elementos`;
+  if (count) count.innerHTML = uiText('resultsCount')
+    .replace('{{count}}', esc(filtered.length))
+    .replace('{{total}}', esc(items.length));
 
   const activeSlot = document.getElementById('mp-active-filter-slot');
   const renderedActive = renderActiveFilters(filters, search);
