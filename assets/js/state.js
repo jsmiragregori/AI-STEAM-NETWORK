@@ -2,6 +2,7 @@ const appState = {
   cookiesAccepted: localStorage.getItem('cookies-accepted') === 'true',
   mobileMenuOpen: false,
   selectedChallengeId: null,
+  marketplaceTab: 'challenges',
   marketplaceShowSubmit: false,
   marketplaceShowParticipation: false,
   marketplaceParticipationSent: false,

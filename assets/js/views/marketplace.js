@@ -2,35 +2,98 @@ import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { MARKETPLACE_CONFIG } from '../../data/marketplace.js';
 
-const MP_FILTER_KEY = 'mpFilters';
-const MP_SEARCH_KEY = 'mpSearch';
-const MP_EXPANDED_KEY = 'mpSearchExpanded';
-const MP_PANEL_KEY = 'mpFilterPanelExpandedV2';
+const UI_TEXT = {
+  activeTabHint: {
+    es: 'Subseccion activa de la comunidad',
+    en: 'Active community subsection',
+    va: 'Subseccio activa de la comunitat',
+  },
+  activitySummary: {
+    es: 'Actividad de la subseccion',
+    en: 'Subsection activity',
+    va: 'Activitat de la subseccio',
+  },
+  backCommunity: {
+    es: 'Volver a Comunidad',
+    en: 'Back to Community',
+    va: 'Tornar a Comunitat',
+  },
+  created: {
+    es: 'Creado',
+    en: 'Created',
+    va: 'Creat',
+  },
+  detailEmpty: {
+    es: 'Este elemento todavia no tiene bloques de detalle publicados.',
+    en: 'This item does not have published detail blocks yet.',
+    va: 'Aquest element encara no te blocs de detall publicats.',
+  },
+  featuredSignal: {
+    es: 'Clave para participar',
+    en: 'Participation signal',
+    va: 'Clau per a participar',
+  },
+  items: {
+    es: 'Elementos',
+    en: 'Items',
+    va: 'Elements',
+  },
+  latestUpdate: {
+    es: 'Ultima actualizacion',
+    en: 'Latest update',
+    va: 'Ultima actualitzacio',
+  },
+  noDate: {
+    es: 'Sin fecha',
+    en: 'No date',
+    va: 'Sense data',
+  },
+  openItems: {
+    es: 'Abiertos',
+    en: 'Open',
+    va: 'Oberts',
+  },
+  operationalSummary: {
+    es: 'Resumen operativo',
+    en: 'Operational summary',
+    va: 'Resum operatiu',
+  },
+  updated: {
+    es: 'Revisado',
+    en: 'Reviewed',
+    va: 'Revisat',
+  },
+  viewDetail: {
+    es: 'Ver detalle',
+    en: 'View detail',
+    va: 'Veure detall',
+  },
+};
 
-const FILTER_KEYS = [
-  'types',
-  'statuses',
-  'sectors',
-  'stakeholders',
-  'transitions',
-  'policies',
-  'engagements',
-  'evidences',
-  'focuses',
-  'tags',
-];
-
-const DIM_MAP_GRID = {
-  type: 'types',
-  status: 'statuses',
-  sector: 'sectors',
-  stakeholder: 'stakeholders',
-  transition: 'transitions',
-  policy: 'policies',
-  engagement: 'engagements',
-  evidence: 'evidences',
-  focus: 'focuses',
-  tag: 'tags',
+const FIELD_LABELS = {
+  actionTitle: { es: 'Accion', en: 'Action', va: 'Accio' },
+  actors: { es: 'Actores', en: 'Actors', va: 'Actors' },
+  availability: { es: 'Disponibilidad', en: 'Availability', va: 'Disponibilitat' },
+  badges: { es: 'Distintivos', en: 'Badges', va: 'Distintius' },
+  collaborationDirection: { es: 'Direccion de colaboracion', en: 'Collaboration direction', va: 'Direccio de col-laboracio' },
+  entity: { es: 'Entidad', en: 'Organisation', va: 'Entitat' },
+  evidence: { es: 'Evidencia', en: 'Evidence', va: 'Evidencia' },
+  executionWindow: { es: 'Ventana', en: 'Window', va: 'Finestra' },
+  featuredSignal: { es: 'Senal destacada', en: 'Featured signal', va: 'Senyal destacat' },
+  impactKpi: { es: 'KPI de impacto', en: 'Impact KPI', va: 'KPI d impacte' },
+  infrastructure: { es: 'Infraestructura', en: 'Infrastructure', va: 'Infraestructura' },
+  mentorName: { es: 'Mentor', en: 'Mentor', va: 'Mentor' },
+  mentorRole: { es: 'Rol', en: 'Role', va: 'Rol' },
+  needs: { es: 'Necesidades', en: 'Needs', va: 'Necessitats' },
+  organisation: { es: 'Organizacion', en: 'Organisation', va: 'Organitzacio' },
+  requirements: { es: 'Requisitos', en: 'Requirements', va: 'Requisits' },
+  reward: { es: 'Recompensa', en: 'Reward', va: 'Recompensa' },
+  sdgs: { es: 'ODS', en: 'SDGs', va: 'ODS' },
+  setCompetences: { es: 'Competencias SET', en: 'SET competences', va: 'Competencies SET' },
+  specialties: { es: 'Especialidades', en: 'Specialties', va: 'Especialitats' },
+  trl: { es: 'TRL', en: 'TRL', va: 'TRL' },
+  valorisation: { es: 'Valorizacion', en: 'Valorisation', va: 'Valoritzacio' },
+  validationStatus: { es: 'Estado de validacion', en: 'Validation status', va: 'Estat de validacio' },
 };
 
 const DETAIL_BLOCKS = [
@@ -47,112 +110,43 @@ const DETAIL_BLOCKS = [
   { key: 'trackA', icon: 'graduation-cap' },
 ];
 
-const STATUS_TONE = {
-  open: 'bg-green-100 text-green-800 border-eu-border',
-  'in-progress': 'bg-orange-100 text-orange-800 border-eu-border',
-  resolved: 'bg-gray-100 text-gray-600 border-eu-border',
-};
-
-const TYPE_TONE = {
-  challenge: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
-  case: 'bg-eu-orange/10 text-eu-orange border-eu-orange/20',
-  validation: 'bg-blue-50 text-blue-700 border-blue-200',
-  mentoring: 'bg-purple-100 text-purple-800 border-purple-300',
-  pilot: 'bg-green-100 text-green-800 border-eu-border',
-  resource: 'bg-eu-bg text-gray-700 border-eu-border',
-};
-
-const UI_TEXT = {
-  backMarketplace: { es: 'Volver a Retos y Casos', en: 'Back to Challenges & Cases', va: 'Tornar a Reptes i Casos' },
-  trackBValue: { es: 'Valor Track B', en: 'Track B value', va: 'Valor Track B' },
-  detailEmpty: { es: 'Este elemento todavía no tiene bloques de detalle publicados.', en: 'This item does not have published detail blocks yet.', va: 'Aquest element encara no té blocs de detall publicats.' },
-  operationalSummary: { es: 'Resumen operativo', en: 'Operational summary', va: 'Resum operatiu' },
-  nextStep: { es: 'Siguiente paso', en: 'Next step', va: 'Següent pas' },
-  participationRequest: { es: 'Solicitar participación', en: 'Request participation', va: 'Sol·licitar participació' },
-  searchPlaceholder: { es: 'Buscar por título, entidad, sector, foco o etiqueta', en: 'Search by title, organisation, sector, focus or tag', va: 'Busca per títol, entitat, sector, focus o etiqueta' },
-  statItems: { es: 'Elementos', en: 'Items', va: 'Elements' },
-  statOpen: { es: 'Abiertos', en: 'Open', va: 'Oberts' },
-  statFocuses: { es: 'Focos AI-STEAM', en: 'AI-STEAM focuses', va: 'Focus AI-STEAM' },
-  summaryType: { es: 'Tipo', en: 'Type', va: 'Tipus' },
-  summaryStatus: { es: 'Estado', en: 'Status', va: 'Estat' },
-  summarySector: { es: 'Sector', en: 'Sector', va: 'Sector' },
-  summaryAgent: { es: 'Agente', en: 'Agent', va: 'Agent' },
-  summaryMaturity: { es: 'Madurez', en: 'Maturity', va: 'Maduresa' },
-  summaryEngagement: { es: 'Participación', en: 'Participation', va: 'Participació' },
-  filterType: { es: 'Tipo', en: 'Type', va: 'Tipus' },
-  filterStatus: { es: 'Estado', en: 'Status', va: 'Estat' },
-  filterSector: { es: 'Sector', en: 'Sector', va: 'Sector' },
-  filterAgent: { es: 'Agente', en: 'Agent', va: 'Agent' },
-  filterTransition: { es: 'Transición', en: 'Transition', va: 'Transició' },
-  filterPolicy: { es: 'Política', en: 'Policy', va: 'Política' },
-  filterEngagement: { es: 'Participación', en: 'Participation', va: 'Participació' },
-  filterEvidence: { es: 'Evidencia', en: 'Evidence', va: 'Evidència' },
-  filterFocus: { es: 'Foco AI-STEAM', en: 'AI-STEAM focus', va: 'Focus AI-STEAM' },
-  filterTags: { es: 'Etiquetas', en: 'Tags', va: 'Etiquetes' },
-  activeFilters: { es: 'Filtros activos', en: 'Active filters', va: 'Filtres actius' },
-  clearAll: { es: 'Limpiar todo', en: 'Clear all', va: 'Netejar-ho tot' },
-  clearFilters: { es: 'Limpiar filtros', en: 'Clear filters', va: 'Netejar filtres' },
-  viewDetail: { es: 'Ver detalle', en: 'View detail', va: 'Veure detall' },
-  noResultsTitle: { es: 'No hay resultados con esos filtros', en: 'No results with those filters', va: 'No hi ha resultats amb aquests filtres' },
-  noResultsMessage: { es: 'Prueba a ajustar la búsqueda o limpiar filtros. Hay {{total}} elementos publicados.', en: 'Try adjusting the search or clearing filters. There are {{total}} published items.', va: 'Prova a ajustar la cerca o netejar filtres. Hi ha {{total}} elements publicats.' },
-  searchAction: { es: 'Buscar', en: 'Search', va: 'Buscar' },
-  filtersAction: { es: 'Filtros', en: 'Filters', va: 'Filtres' },
-  resultsCount: { es: 'Mostrando <strong>{{count}}</strong> de {{total}} elementos', en: 'Showing <strong>{{count}}</strong> of {{total}} items', va: 'Mostrant <strong>{{count}}</strong> de {{total}} elements' },
-  heroDescriptionFallback: { es: 'Retos, casos, validaciones, mentorías, pilotajes y recursos para transferencia real en IA, STEAM, arte y creatividad.', en: 'Challenges, cases, validations, mentoring, pilots and resources for real transfer in AI, STEAM, art and creativity.', va: 'Reptes, casos, validacions, mentories, pilotatges i recursos per a transferència real en IA, STEAM, art i creativitat.' },
-};
-
-const FIELD_LABELS = {
-  method: { es: 'Método', en: 'Method', va: 'Mètode' },
-  indicators: { es: 'Indicadores', en: 'Indicators', va: 'Indicadors' },
-  metric: { es: 'Métrica', en: 'Metric', va: 'Mètrica' },
-  expected: { es: 'Entregables previstos', en: 'Expected deliverables', va: 'Entregables previstos' },
-  milestones: { es: 'Hitos', en: 'Milestones', va: 'Fites' },
-  date: { es: 'Fecha', en: 'Date', va: 'Data' },
-  available: { es: 'Recursos disponibles', en: 'Available resources', va: 'Recursos disponibles' },
-  format: { es: 'Formato', en: 'Format', va: 'Format' },
-  license: { es: 'Licencia', en: 'License', va: 'Llicència' },
-  publicUrl: { es: 'URL pública', en: 'Public URL', va: 'URL pública' },
-  rightsNote: { es: 'Derechos y privacidad', en: 'Rights and privacy', va: 'Drets i privacitat' },
-  privacyLevel: { es: 'Nivel de privacidad', en: 'Privacy level', va: 'Nivell de privacitat' },
-  ctaLabel: { es: 'Acción', en: 'Action', va: 'Acció' },
-  instructions: { es: 'Instrucciones', en: 'Instructions', va: 'Instruccions' },
-  url: { es: 'Enlace', en: 'Link', va: 'Enllaç' },
-  modality: { es: 'Modalidad', en: 'Modality', va: 'Modalitat' },
-  availability: { es: 'Disponibilidad', en: 'Availability', va: 'Disponibilitat' },
-  result: { es: 'Resultado', en: 'Result', va: 'Resultat' },
-  learningSignals: { es: 'Señales de aprendizaje', en: 'Learning signals', va: 'Senyals d’aprenentatge' },
-  nextStep: { es: 'Próximo paso', en: 'Next step', va: 'Pròxim pas' },
-  mainResource: { es: 'Recurso principal', en: 'Main resource', va: 'Recurs principal' },
-  organisations: { es: 'Organizaciones', en: 'Organisations', va: 'Organitzacions' },
-  role: { es: 'Rol', en: 'Role', va: 'Rol' },
-  expertise: { es: 'Experiencia', en: 'Expertise', va: 'Experiència' },
-  contact: { es: 'Contacto', en: 'Contact', va: 'Contacte' },
-  owner: { es: 'Responsable', en: 'Owner', va: 'Responsable' },
-  value: { es: 'Valor', en: 'Value', va: 'Valor' },
-  question: { es: 'Pregunta guía', en: 'Guiding question', va: 'Pregunta guia' },
-  dataInputs: { es: 'Datos de entrada', en: 'Data inputs', va: 'Dades d’entrada' },
-  targetUsers: { es: 'Usuarios destinatarios', en: 'Target users', va: 'Usuaris destinataris' },
-  learningSetting: { es: 'Contexto de aprendizaje', en: 'Learning setting', va: 'Context d’aprenentatge' },
-  participants: { es: 'Participantes', en: 'Participants', va: 'Participants' },
+const TAB_TONES = {
+  challenges: {
+    band: 'from-eu-blue/10 via-blue-50 to-white',
+    badge: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
+    icon: 'bg-eu-blue text-white',
+  },
+  cases: {
+    band: 'from-eu-orange/10 via-orange-50 to-white',
+    badge: 'bg-eu-orange/10 text-eu-orange border-eu-orange/20',
+    icon: 'bg-eu-orange text-white',
+  },
+  'pilots-validations': {
+    band: 'from-emerald-100 via-green-50 to-white',
+    badge: 'bg-green-100 text-green-800 border-green-200',
+    icon: 'bg-green-700 text-white',
+  },
+  mentorings: {
+    band: 'from-slate-200 via-slate-50 to-white',
+    badge: 'bg-slate-100 text-slate-700 border-slate-200',
+    icon: 'bg-slate-800 text-white',
+  },
 };
 
 function getLang() {
   return localStorage.getItem('language') || 'es';
 }
 
-function uiText(key) {
-  return pickLang(UI_TEXT[key], key);
-}
-
 function pickLang(value, fallback = '') {
   if (value == null) return fallback;
-  if (typeof value !== 'object' || Array.isArray(value)) return value;
+  if (Array.isArray(value)) return value;
+  if (typeof value !== 'object') return value;
   const lang = getLang();
   return value[lang] || value.es || value.en || Object.values(value).find(Boolean) || fallback;
 }
 
-function isLocalizedObject(value) {
-  return Boolean(value && typeof value === 'object' && !Array.isArray(value) && ['es', 'en', 'va'].some(key => key in value));
+function uiText(key) {
+  return pickLang(UI_TEXT[key], key);
 }
 
 function esc(value) {
@@ -164,19 +158,38 @@ function esc(value) {
     .replaceAll("'", '&#39;');
 }
 
+function asArray(value) {
+  if (!value) return [];
+  return Array.isArray(value) ? value : [value];
+}
+
 function getLabelFromArray(arr, id, fallback = '') {
   return pickLang(arr?.find(item => item.id === id)?.label, fallback || id);
 }
 
-function getStatusLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.statusLabels, id); }
-function getTypeLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.trackBTypeLabels || MARKETPLACE_CONFIG.typeLabels, id); }
-function getStakeholderLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.stakeholderCategoryLabels, id); }
-function getTransitionLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.transitionLabels, id); }
-function getPolicyLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.policyClusterLabels, id); }
-function getEngagementLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.engagementLevelLabels, id); }
-function getEvidenceLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.evidenceMaturityLabels, id); }
-function getFocusLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.aiSteamFocusLabels, id); }
-function getBlockLabel(id) { return getLabelFromArray(MARKETPLACE_CONFIG.detailBlockLabels, id); }
+function getTypeLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.trackBTypeLabels || MARKETPLACE_CONFIG.typeLabels, id);
+}
+
+function getStatusLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.statusLabels, id);
+}
+
+function getEvidenceLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.evidenceMaturityLabels, id);
+}
+
+function getEngagementLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.engagementLevelLabels, id);
+}
+
+function getFocusLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.aiSteamFocusLabels, id);
+}
+
+function getBlockLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.detailBlockLabels, id);
+}
 
 function getSectorCode(value) {
   const map = {
@@ -195,314 +208,376 @@ function getSectorLabel(value) {
   return (t('sectors.sectorNames') || {})[getSectorCode(value)] || value;
 }
 
-function compact(values) {
-  return values.flat().filter(value => value !== undefined && value !== null && value !== '');
+function getTabs() {
+  return (MARKETPLACE_CONFIG.tabs || [])
+    .filter(tab => tab.visible !== false)
+    .sort((a, b) => (a.order || 0) - (b.order || 0));
 }
 
-function asArray(value) {
-  if (!value) return [];
-  return Array.isArray(value) ? value : [value];
+function getActiveTabId() {
+  const tabs = getTabs();
+  const current = getState('marketplaceTab');
+  if (tabs.some(tab => tab.id === current)) return current;
+  return tabs[0]?.id || 'challenges';
 }
 
-function getLocalizedTags(item) {
-  const tags = item.core?.tags || item.tags || [];
-  if (Array.isArray(tags)) return tags;
-  if (typeof tags === 'object') return pickLang(tags, []);
-  return [];
+function getActiveTab() {
+  const activeId = getActiveTabId();
+  return getTabs().find(tab => tab.id === activeId);
 }
 
-function getItems() {
-  const primary = MARKETPLACE_CONFIG.items || [];
-  return primary.filter(item => item.visible !== false);
+function getItemsForTab(tabId) {
+  const items = MARKETPLACE_CONFIG.itemsByTab?.[tabId] || [];
+  return items.filter(item => item.visible !== false);
 }
 
-function getMpFilters() {
-  try {
-    const parsed = JSON.parse(localStorage.getItem(MP_FILTER_KEY) || '{}');
-    return FILTER_KEYS.reduce((acc, key) => {
-      acc[key] = Array.isArray(parsed[key]) ? parsed[key] : [];
-      return acc;
-    }, {});
-  } catch {
-    return FILTER_KEYS.reduce((acc, key) => ({ ...acc, [key]: [] }), {});
-  }
+function getAllItems() {
+  return (MARKETPLACE_CONFIG.items || []).filter(item => item.visible !== false);
 }
 
-function setMpFilters(filters) {
-  localStorage.setItem(MP_FILTER_KEY, JSON.stringify(filters));
+function getItemById(id) {
+  return getAllItems().find(item => item.id === id);
 }
 
-function clearMpFilters() {
-  localStorage.removeItem(MP_FILTER_KEY);
-  localStorage.removeItem(MP_SEARCH_KEY);
+function getLatestLabel(items) {
+  const latest = items.find(item => item.core?.revisionDateLabel || item.core?.publishedAtLabel);
+  return pickLang(latest?.core?.revisionDateLabel || latest?.core?.publishedAtLabel, uiText('noDate'));
 }
 
-function getMpSearch() {
-  return localStorage.getItem(MP_SEARCH_KEY) || '';
+function getItemDateLabel(item) {
+  const revised = pickLang(item.core?.revisionDateLabel);
+  if (revised) return `${uiText('updated')}: ${revised}`;
+  const created = pickLang(item.core?.publishedAtLabel);
+  if (created) return `${uiText('created')}: ${created}`;
+  return '';
 }
 
-function setMpSearch(value) {
-  if (value) localStorage.setItem(MP_SEARCH_KEY, value);
-  else localStorage.removeItem(MP_SEARCH_KEY);
-}
-
-function getMpSearchExpanded() {
-  const stored = localStorage.getItem(MP_EXPANDED_KEY);
-  if (stored !== null) return stored === 'true';
-  return MARKETPLACE_CONFIG.searchBlock?.defaultExpanded === true;
-}
-
-function setMpSearchExpanded(value) {
-  localStorage.setItem(MP_EXPANDED_KEY, value ? 'true' : 'false');
-}
-
-function getMpFilterPanelExpanded() {
-  return localStorage.getItem(MP_PANEL_KEY) === 'true';
-}
-
-function setMpFilterPanelExpanded(value) {
-  localStorage.setItem(MP_PANEL_KEY, value ? 'true' : 'false');
-}
-
-function toggleMpFilter(arr, value) {
-  return arr.includes(value) ? arr.filter(item => item !== value) : [...arr, value];
-}
-
-function hasMpFilters(filters, search) {
-  return FILTER_KEYS.some(key => filters[key]?.length) || Boolean(search);
-}
-
-function getFilterValues(item) {
-  return {
-    types: compact([item.type]),
-    statuses: compact([item.core?.status]),
-    sectors: compact([getSectorCode(item.core?.sector)]),
-    stakeholders: compact([item.core?.stakeholderCategory]),
-    transitions: compact(asArray(item.classification?.tripleTransition)),
-    policies: compact(asArray(item.classification?.policyCluster)),
-    engagements: compact([item.classification?.engagementLevel]),
-    evidences: compact([item.classification?.evidenceMaturity]),
-    focuses: compact(asArray(item.classification?.aiSteamFocus)),
-    tags: compact(getLocalizedTags(item)),
-  };
-}
-
-function itemMatchesFilters(item, filters) {
-  const values = getFilterValues(item);
-  return FILTER_KEYS.every(key => !filters[key]?.length || filters[key].some(value => values[key].includes(value)));
-}
-
-function itemMatchesSearch(item, search) {
-  if (!search) return true;
-  const q = search.toLowerCase();
-  const haystack = compact([
-    pickLang(item.core?.title),
-    pickLang(item.core?.summary),
-    pickLang(item.core?.entity?.name),
-    getTypeLabel(item.type),
-    getStatusLabel(item.core?.status),
-    getSectorLabel(item.core?.sector),
-    getStakeholderLabel(item.core?.stakeholderCategory),
-    getEvidenceLabel(item.classification?.evidenceMaturity),
-    getEngagementLabel(item.classification?.engagementLevel),
-    asArray(item.classification?.tripleTransition).map(getTransitionLabel),
-    asArray(item.classification?.policyCluster).map(getPolicyLabel),
-    asArray(item.classification?.aiSteamFocus).map(getFocusLabel),
-    getLocalizedTags(item),
-  ]).join(' ').toLowerCase();
-  return haystack.includes(q);
-}
-
-function getFilteredItems(items, filters, search) {
-  return items.filter(item => itemMatchesFilters(item, filters) && itemMatchesSearch(item, search.trim()));
-}
-
-function buildOptions(items, key, labeler) {
-  const values = [...new Set(items.flatMap(item => getFilterValues(item)[key] || []))].filter(Boolean);
-  return values.map(value => ({ value, label: labeler(value) })).sort((a, b) => a.label.localeCompare(b.label));
-}
-
-function chipClasses(active = false, tone = '') {
-  if (active) return 'bg-eu-blue text-white border-eu-blue';
-  return `${tone || 'bg-white text-gray-700 border-eu-border'} hover:border-eu-blue hover:text-eu-blue`;
-}
-
-function renderClickableChip(dimension, value, label, active = false, tone = '') {
-  if (!value || !label) return '';
-  return `
-    <button type="button" data-mp-chip="${dimension}" data-mp-val="${esc(value)}"
-      class="inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold leading-5 transition-colors cursor-pointer ${chipClasses(active, tone)}">
-      ${esc(label)}
-    </button>`;
-}
-
-function renderBadge(label, tone = 'bg-eu-bg text-gray-700 border-eu-border') {
+function renderBadge(label, tone = 'bg-white text-gray-700 border-eu-border') {
   if (!label) return '';
   return `<span class="inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold ${tone}">${esc(label)}</span>`;
 }
 
-function renderFilterGroup(title, dimension, options, activeValues) {
-  if (!options.length) return '';
-  const activeCount = activeValues?.length || 0;
+function renderHero() {
+  const hero = MARKETPLACE_CONFIG.heroBlock || {};
+  const stats = (hero.stats || []).filter(stat => stat.visible !== false);
+  const title = pickLang(hero.title, pickLang(MARKETPLACE_CONFIG.publicSectionName?.title, 'Comunidad de Practica'));
+  const description = pickLang(hero.description);
+
   return `
-    <details class="rounded-lg border border-eu-border bg-white">
-      <summary class="flex min-h-10 cursor-pointer list-none items-center justify-between gap-3 px-3 py-2 text-xs font-bold uppercase tracking-wide text-gray-600 hover:text-eu-blue">
-        <span>${esc(title)}</span>
-        <span class="inline-flex items-center gap-2">
-          ${activeCount ? `<span class="rounded bg-eu-blue px-1.5 py-0.5 text-xs text-white">${activeCount}</span>` : ''}
-          <i data-lucide="chevron-down" class="h-3.5 w-3.5"></i>
-        </span>
-      </summary>
-      <div class="flex flex-wrap gap-1.5 border-t border-eu-border bg-eu-bg p-3">
-        ${options.map(option => renderClickableChip(dimension, option.value, option.label, activeValues.includes(option.value))).join('')}
+    <section class="bg-eu-blue px-6 py-12 text-white">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-end">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-eu-yellow">${esc(pickLang(MARKETPLACE_CONFIG.publicSectionName?.nav, 'Comunidad'))}</p>
+            <h1 class="mt-3 max-w-4xl text-3xl font-extrabold leading-tight md:text-4xl">${esc(title)}</h1>
+            ${description ? `<p class="mt-4 max-w-3xl text-base leading-7 text-white/80">${esc(description)}</p>` : ''}
+          </div>
+          ${stats.length ? `
+            <div class="grid grid-cols-3 gap-3">
+              ${stats.map(stat => `
+                <div class="rounded-xl bg-white/10 px-4 py-3 text-center ring-1 ring-white/10">
+                  <p class="text-2xl font-extrabold text-eu-yellow">${esc(stat.value)}</p>
+                  <p class="mt-1 text-xs font-semibold uppercase leading-4 text-white/70">${esc(pickLang(stat.label))}</p>
+                </div>`).join('')}
+            </div>` : ''}
+        </div>
       </div>
-    </details>`;
+    </section>`;
 }
 
-function renderActiveFilters(filters, search) {
-  if (!hasMpFilters(filters, search)) return '';
-  const labels = {
-    types: getTypeLabel,
-    statuses: getStatusLabel,
-    sectors: getSectorLabel,
-    stakeholders: getStakeholderLabel,
-    transitions: getTransitionLabel,
-    policies: getPolicyLabel,
-    engagements: getEngagementLabel,
-    evidences: getEvidenceLabel,
-    focuses: getFocusLabel,
-    tags: value => value,
-  };
-  const chips = FILTER_KEYS.flatMap(key => filters[key].map(value => `
-    <button type="button" data-mp-remove="${key}" data-mp-val="${esc(value)}"
-      class="inline-flex items-center gap-1.5 rounded bg-eu-bg px-3 py-1.5 text-xs font-semibold text-gray-700 border border-eu-border hover:border-eu-blue hover:text-eu-blue transition-colors cursor-pointer">
-      ${esc(labels[key](value))}
-      <i data-lucide="x" class="h-3 w-3"></i>
-    </button>`));
-  if (search) {
-    chips.unshift(`
-      <button type="button" data-mp-remove="search" data-mp-val=""
-        class="inline-flex items-center gap-1.5 rounded bg-eu-blue/10 px-3 py-1.5 text-xs font-semibold text-eu-blue border border-eu-blue/20 hover:bg-eu-blue/20 transition-colors cursor-pointer">
-        ${esc(search)}
-        <i data-lucide="x" class="h-3 w-3"></i>
-      </button>`);
-  }
+function renderTabs(activeId) {
+  const tabs = getTabs();
   return `
-    <div id="mp-active-filters" class="flex flex-wrap items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 p-4">
-      <span class="text-xs font-semibold text-gray-700">${esc(uiText('activeFilters'))}:</span>
-      ${chips.join('')}
-      <button id="mp-clear-active-filters" type="button" class="ml-auto rounded border border-red-200 px-2.5 py-1 text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer">
-        ${esc(uiText('clearAll'))}
-      </button>
+    <div class="mx-auto max-w-7xl px-6">
+      <div class="-mt-7 overflow-x-auto rounded-2xl border border-eu-border bg-white p-2 shadow-sm" role="tablist" aria-label="${esc(uiText('activeTabHint'))}">
+        <div class="grid min-w-[44rem] grid-cols-4 gap-2 md:min-w-0">
+          ${tabs.map(tab => {
+            const active = tab.id === activeId;
+            const tone = TAB_TONES[tab.id] || TAB_TONES.challenges;
+            return `
+              <button type="button" role="tab" aria-selected="${active ? 'true' : 'false'}" data-mp-tab="${esc(tab.id)}"
+                class="group flex min-h-14 items-center gap-3 rounded-xl px-4 py-3 text-left text-sm font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 ${active ? 'bg-eu-blue text-white shadow-sm' : 'text-eu-text hover:bg-eu-bg'}">
+                <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${active ? 'bg-white/15 text-white' : tone.icon}">
+                  <i data-lucide="${esc(tab.icon || 'layers-3')}" class="h-4 w-4"></i>
+                </span>
+                <span>${esc(pickLang(tab.label, tab.id))}</span>
+              </button>`;
+          }).join('')}
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderActivitySummary(tab, items) {
+  const openCount = items.filter(item => item.core?.status === 'open').length;
+  const tone = TAB_TONES[tab.id] || TAB_TONES.challenges;
+  return `
+    <aside class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
+      <h2 class="text-sm font-extrabold uppercase tracking-wide text-gray-500">${esc(uiText('activitySummary'))}</h2>
+      <dl class="mt-4 grid grid-cols-3 gap-3 lg:grid-cols-1">
+        ${renderSummaryMetric(uiText('items'), items.length)}
+        ${renderSummaryMetric(uiText('openItems'), openCount)}
+        ${renderSummaryMetric(uiText('latestUpdate'), getLatestLabel(items))}
+      </dl>
+      <div class="mt-5 rounded-xl border p-4 ${tone.badge}">
+        <p class="text-sm font-semibold leading-6">${esc(pickLang(tab.ctaLabel, uiText('viewDetail')))}</p>
+      </div>
+    </aside>`;
+}
+
+function renderSummaryMetric(label, value) {
+  return `
+    <div class="rounded-xl border border-eu-border bg-eu-bg px-4 py-3">
+      <dt class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(label)}</dt>
+      <dd class="mt-1 text-lg font-extrabold text-eu-text">${esc(value)}</dd>
     </div>`;
 }
 
 function getCardSignal(item) {
+  const card = item.card || {};
   const detail = item.detail || {};
-  const core = item.core || {};
-  if (item.type === 'challenge') return core.deadlineLabel || pickLang(detail.need?.question) || pickLang(item.classification?.trackBValue);
-  if (item.type === 'case') return pickLang(detail.transferValue?.value) || pickLang(detail.context?.learningSetting);
-  if (item.type === 'validation') return pickLang(detail.evidence?.result) || pickLang(detail.evidence?.method);
-  if (item.type === 'mentoring') return pickLang(detail.participation?.availability) || pickLang(detail.participation?.modality);
-  if (item.type === 'pilot') return pickLang(detail.process?.nextStep) || pickLang(detail.evidence?.learningSignals);
-  if (item.type === 'resource') return pickLang(detail.access?.format) || pickLang(detail.resources?.mainResource);
-  return pickLang(item.classification?.trackBValue);
+  const type = item.type;
+  if (type === 'challenge') return pickLang(card.actionTitle) || pickLang(card.reward) || pickLang(detail.need?.question);
+  if (type === 'case') return pickLang(card.impactKpi) || pickLang(card.valorisation) || pickLang(detail.transferValue?.value);
+  if (type === 'pilot' || type === 'validation') return pickLang(card.collaborationDirection) || pickLang(card.validationStatus) || pickLang(card.executionWindow?.label);
+  if (type === 'mentoring') return pickLang(card.mentorRole) || pickLang(card.availability) || card.mentorName;
+  return pickLang(item.classification?.trackBValue) || pickLang(item.core?.summary);
 }
 
-function renderCard(item) {
+function renderItemCard(item, tab) {
   const title = pickLang(item.core?.title, item.id);
   const summary = pickLang(item.core?.summary);
   const entity = pickLang(item.core?.entity?.name);
-  const sectorCode = getSectorCode(item.core?.sector);
   const signal = getCardSignal(item);
-  const active = getMpFilters();
+  const dateLabel = getItemDateLabel(item);
   const focuses = asArray(item.classification?.aiSteamFocus).slice(0, 2);
-  const transitions = asArray(item.classification?.tripleTransition).slice(0, 2);
+  const tone = TAB_TONES[tab.id] || TAB_TONES.challenges;
 
   return `
-    <article class="group flex h-full flex-col overflow-hidden rounded-xl border border-eu-border bg-white shadow-sm transition-colors hover:border-eu-blue">
-      <div class="p-5 flex-1">
-      <div class="flex flex-wrap items-center gap-2 mb-3">
-        ${renderClickableChip('type', item.type, getTypeLabel(item.type), active.types.includes(item.type), TYPE_TONE[item.type])}
-        ${renderClickableChip('status', item.core?.status, getStatusLabel(item.core?.status), active.statuses.includes(item.core?.status), STATUS_TONE[item.core?.status])}
-        ${renderClickableChip('evidence', item.classification?.evidenceMaturity, getEvidenceLabel(item.classification?.evidenceMaturity), active.evidences.includes(item.classification?.evidenceMaturity))}
+    <article class="group flex h-full flex-col rounded-2xl border border-eu-border bg-white p-5 shadow-sm transition-colors hover:border-eu-blue">
+      <div class="flex flex-wrap gap-2">
+        ${renderBadge(getTypeLabel(item.type), tone.badge)}
+        ${renderBadge(getStatusLabel(item.core?.status))}
+        ${renderBadge(getSectorLabel(item.core?.sector))}
       </div>
-
-      <div>
-        <h3 class="font-bold text-eu-text text-base leading-snug group-hover:text-eu-blue transition-colors">${esc(title)}</h3>
-        ${entity ? `<p class="mt-1 text-xs font-semibold text-gray-500">${esc(entity)}${item.core?.entity?.type ? ` · ${esc(pickLang(item.core.entity.type))}` : ''}</p>` : ''}
-        ${summary ? `<p class="mt-3 line-clamp-2 text-sm leading-6 text-gray-600">${esc(summary)}</p>` : ''}
+      <div class="mt-4 flex-1">
+        <h3 class="text-lg font-extrabold leading-snug text-eu-text">${esc(title)}</h3>
+        ${summary ? `<p class="mt-3 text-sm leading-6 text-gray-600">${esc(summary)}</p>` : ''}
       </div>
-
-      <div class="mt-4 flex flex-wrap gap-2">
-        ${renderClickableChip('sector', sectorCode, getSectorLabel(item.core?.sector), active.sectors.includes(sectorCode))}
-        ${renderClickableChip('stakeholder', item.core?.stakeholderCategory, getStakeholderLabel(item.core?.stakeholderCategory), active.stakeholders.includes(item.core?.stakeholderCategory))}
-        ${transitions.map(value => renderClickableChip('transition', value, getTransitionLabel(value), active.transitions.includes(value))).join('')}
-        ${focuses.map(value => renderClickableChip('focus', value, getFocusLabel(value), active.focuses.includes(value))).join('')}
-      </div>
-
       ${signal ? `
-        <div class="mt-4 rounded-lg border border-eu-border bg-eu-bg p-3 text-xs leading-relaxed text-gray-700">
-          <span class="font-bold text-eu-text">${esc(getTypeLabel(item.type))}:</span>
-          ${esc(signal)}
+        <div class="mt-4 rounded-xl bg-eu-bg p-4">
+          <p class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('featuredSignal'))}</p>
+          <p class="mt-1 text-sm font-semibold leading-6 text-eu-text">${esc(signal)}</p>
         </div>` : ''}
+      <div class="mt-4 flex flex-wrap gap-2">
+        ${focuses.map(focus => renderBadge(getFocusLabel(focus))).join('')}
       </div>
-
-      <div class="border-t border-eu-border bg-eu-bg p-3 flex items-center justify-between gap-3">
-        <span class="text-xs font-semibold uppercase text-gray-500">Track B</span>
-        <button type="button" data-id="${esc(item.id)}"
-          class="mp-view-detail inline-flex items-center gap-1.5 text-eu-blue text-xs font-bold hover:underline cursor-pointer">
-          ${esc(uiText('viewDetail'))}
+      <div class="mt-5 flex items-center justify-between gap-4 border-t border-eu-border pt-4">
+        <div class="min-w-0 text-xs font-semibold text-gray-500">
+          ${entity ? `<p class="truncate">${esc(entity)}</p>` : ''}
+          ${dateLabel ? `<p class="mt-1 truncate">${esc(dateLabel)}</p>` : ''}
+        </div>
+        <button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
+          ${esc(pickLang(tab.ctaLabel, uiText('viewDetail')))}
           <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
         </button>
       </div>
     </article>`;
 }
 
-function renderTextValue(value) {
-  const localized = isLocalizedObject(value) ? pickLang(value) : value;
-  if (localized == null || localized === '') return '';
-  if (Array.isArray(localized)) {
-    const items = localized.map(renderTextValue).filter(Boolean);
-    if (!items.length) return '';
-    return `<ul class="space-y-2">${items.map(item => `<li class="flex gap-2"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-eu-blue"></span><span>${item}</span></li>`).join('')}</ul>`;
-  }
-  if (typeof localized === 'object') {
-    if (localized.label) return renderLabeledObject(localized);
-    return renderObjectValue(localized);
-  }
-  return `<span>${esc(localized)}</span>`;
-}
-
-function renderLabeledObject(value) {
-  const label = pickLang(value.label);
-  const meta = Object.entries(value || {})
-    .filter(([key]) => key !== 'label')
-    .map(([key, entry]) => [key, renderTextValue(entry)])
-    .filter(([, rendered]) => rendered);
-  if (!label && !meta.length) return '';
-  if (!meta.length) return `<span>${esc(label)}</span>`;
+function renderEmptyState(tab) {
   return `
-    <div>
-      ${label ? `<p class="font-semibold text-gray-800">${esc(label)}</p>` : ''}
-      <dl class="mt-2 space-y-2">${meta.map(([key, rendered]) => `
-        <div>
-          <dt class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(getFieldLabel(key))}</dt>
-          <dd class="mt-0.5 text-sm leading-6 text-gray-700">${rendered}</dd>
-        </div>`).join('')}</dl>
+    <div class="rounded-2xl border border-dashed border-eu-border bg-white p-8 text-center shadow-sm">
+      <i data-lucide="${esc(tab.icon || 'inbox')}" class="mx-auto h-8 w-8 text-gray-400"></i>
+      <h3 class="mt-3 text-lg font-extrabold text-eu-text">${esc(pickLang(tab.emptyState?.title, 'Sin elementos publicados'))}</h3>
+      <p class="mx-auto mt-2 max-w-xl text-sm leading-6 text-gray-500">${esc(pickLang(tab.emptyState?.message))}</p>
     </div>`;
 }
 
-function renderObjectValue(value) {
-  const entries = Object.entries(value || {})
-    .map(([key, entry]) => [key, renderTextValue(entry)])
+function renderTabPanel(tab, items) {
+  const tone = TAB_TONES[tab.id] || TAB_TONES.challenges;
+  return `
+    <section class="mx-auto max-w-7xl px-6 py-8">
+      <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_18rem]">
+        <div>
+          <div class="rounded-2xl border border-eu-border bg-gradient-to-br ${tone.band} p-6 shadow-sm">
+            <div class="flex items-start gap-4">
+              <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${tone.icon}">
+                <i data-lucide="${esc(tab.icon || 'layers-3')}" class="h-5 w-5"></i>
+              </span>
+              <div>
+                <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-gray-500">${esc(uiText('activeTabHint'))}</p>
+                <h2 class="mt-2 text-2xl font-extrabold text-eu-text">${esc(pickLang(tab.label, tab.id))}</h2>
+                <p class="mt-3 max-w-3xl text-sm leading-6 text-gray-700">${esc(pickLang(tab.intro))}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+            ${items.length ? items.map(item => renderItemCard(item, tab)).join('') : renderEmptyState(tab)}
+          </div>
+        </div>
+        ${renderActivitySummary(tab, items)}
+      </div>
+    </section>`;
+}
+
+function renderList() {
+  const activeTab = getActiveTab();
+  const activeId = activeTab?.id || getActiveTabId();
+  const tab = activeTab || { id: activeId, label: { es: activeId }, icon: 'layers-3' };
+  const items = getItemsForTab(activeId);
+  return `
+    ${renderHero()}
+    ${renderTabs(activeId)}
+    ${renderTabPanel(tab, items)}`;
+}
+
+function renderDetailHeader(item) {
+  const title = pickLang(item.core?.title, item.id);
+  const summary = pickLang(item.core?.summary);
+  const entity = pickLang(item.core?.entity?.name);
+  const tab = getTabs().find(candidate => candidate.id === item.tab) || getActiveTab();
+  const tone = TAB_TONES[tab?.id] || TAB_TONES.challenges;
+  const dateLabel = getItemDateLabel(item);
+
+  return `
+    <section class="bg-eu-blue px-6 py-12 text-white">
+      <div class="mx-auto max-w-7xl">
+        <button id="mp-back" type="button" class="mb-7 inline-flex min-h-11 items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-bold text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-eu-blue">
+          <i data-lucide="arrow-left" class="h-4 w-4"></i>
+          ${esc(uiText('backCommunity'))}
+        </button>
+        <div class="flex flex-wrap gap-2">
+          ${renderBadge(pickLang(tab?.label, item.tab), 'bg-white/10 text-white border-white/20')}
+          ${renderBadge(getTypeLabel(item.type), 'bg-white/10 text-white border-white/20')}
+          ${renderBadge(getStatusLabel(item.core?.status), 'bg-white/10 text-white border-white/20')}
+          ${renderBadge(getEvidenceLabel(item.classification?.evidenceMaturity), 'bg-white/10 text-white border-white/20')}
+        </div>
+        <h1 class="mt-5 max-w-4xl text-3xl font-extrabold leading-tight md:text-4xl">${esc(title)}</h1>
+        ${summary ? `<p class="mt-4 max-w-4xl text-base leading-7 text-white/80">${esc(summary)}</p>` : ''}
+        <div class="mt-6 flex flex-wrap items-center gap-6 text-sm font-semibold text-white/75">
+          ${entity ? `<span class="inline-flex items-center gap-2"><i data-lucide="building-2" class="h-4 w-4"></i>${esc(entity)}</span>` : ''}
+          ${dateLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="calendar" class="h-4 w-4"></i>${esc(dateLabel)}</span>` : ''}
+          <span class="inline-flex items-center gap-2 ${tone.badge} rounded border px-2 py-1">${esc(getSectorLabel(item.core?.sector))}</span>
+        </div>
+      </div>
+    </section>`;
+}
+
+function renderDetail(item) {
+  return `
+    <div>
+      ${renderDetailHeader(item)}
+      <section class="mx-auto max-w-7xl px-6 py-8">
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
+          <div class="grid gap-5 md:grid-cols-2">
+            ${renderCardDetailBlock(item)}
+            ${DETAIL_BLOCKS.map(block => renderDetailBlock(item, block)).filter(Boolean).join('') || renderDetailEmpty()}
+          </div>
+          <aside class="space-y-5">
+            ${renderOperationalSummary(item)}
+          </aside>
+        </div>
+      </section>
+    </div>`;
+}
+
+function renderCardDetailBlock(item) {
+  const body = renderValue(item.card || {});
+  if (!body) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm md:col-span-2">
+      <div class="mb-4 flex items-center gap-3">
+        <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-eu-blue/10 text-eu-blue">
+          <i data-lucide="layout-dashboard" class="h-5 w-5"></i>
+        </span>
+        <h2 class="text-base font-extrabold text-eu-text">${esc(uiText('featuredSignal'))}</h2>
+      </div>
+      <div class="text-sm leading-6 text-gray-700">${body}</div>
+    </section>`;
+}
+
+function renderDetailBlock(item, block) {
+  if (item.visibility?.[block.key] === false) return '';
+  const content = getBlockContent(item, block.key);
+  const body = renderValue(content);
+  if (!body) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+      <div class="mb-4 flex items-center gap-3">
+        <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-eu-blue/10 text-eu-blue">
+          <i data-lucide="${esc(block.icon)}" class="h-5 w-5"></i>
+        </span>
+        <h2 class="text-base font-extrabold text-eu-text">${esc(getBlockLabel(block.key) || humanizeKey(block.key))}</h2>
+      </div>
+      <div class="text-sm leading-6 text-gray-700">${body}</div>
+    </section>`;
+}
+
+function getBlockContent(item, key) {
+  if (key === 'access') return item.detail?.access || item.access || {};
+  if (key === 'trackA') {
+    if (item.trackALink?.enabled === false) return {};
+    return item.detail?.trackA || item.trackALink || {};
+  }
+  return item.detail?.[key] || {};
+}
+
+function renderDetailEmpty() {
+  return `<p class="rounded-2xl border border-eu-border bg-white p-6 text-sm text-gray-500 shadow-sm">${esc(uiText('detailEmpty'))}</p>`;
+}
+
+function renderOperationalSummary(item) {
+  const rows = [
+    [FIELD_LABELS.entity, pickLang(item.core?.entity?.name)],
+    [{ es: 'Tipo', en: 'Type', va: 'Tipus' }, getTypeLabel(item.type)],
+    [{ es: 'Estado', en: 'Status', va: 'Estat' }, getStatusLabel(item.core?.status)],
+    [{ es: 'Sector', en: 'Sector', va: 'Sector' }, getSectorLabel(item.core?.sector)],
+    [{ es: 'Madurez', en: 'Maturity', va: 'Maduresa' }, getEvidenceLabel(item.classification?.evidenceMaturity)],
+    [{ es: 'Participacion', en: 'Participation', va: 'Participacio' }, getEngagementLabel(item.classification?.engagementLevel)],
+    [UI_TEXT.created, pickLang(item.core?.publishedAtLabel)],
+    [UI_TEXT.updated, pickLang(item.core?.revisionDateLabel)],
+  ].filter(([, value]) => value !== undefined && value !== null && value !== '');
+
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
+      <h2 class="text-base font-extrabold text-eu-text">${esc(uiText('operationalSummary'))}</h2>
+      <dl class="mt-4 space-y-4">
+        ${rows.map(([label, value]) => `
+          <div>
+            <dt class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang(label))}</dt>
+            <dd class="mt-1 text-sm font-semibold leading-6 text-gray-700">${esc(value)}</dd>
+          </div>`).join('')}
+      </dl>
+    </section>`;
+}
+
+function renderValue(value) {
+  if (value === null || value === undefined || value === '' || value === false) return '';
+  if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') return esc(value);
+  if (Array.isArray(value)) {
+    const rendered = value.map(renderValue).filter(Boolean);
+    if (!rendered.length) return '';
+    return `<ul class="list-disc space-y-1 pl-5">${rendered.map(entry => `<li>${entry}</li>`).join('')}</ul>`;
+  }
+  if (isLocalizedObject(value)) return esc(pickLang(value));
+  const entries = Object.entries(value)
+    .map(([key, entry]) => [key, renderValue(entry)])
     .filter(([, rendered]) => rendered);
   if (!entries.length) return '';
-  return `<dl class="space-y-3">${entries.map(([key, rendered]) => `
-    <div>
-      <dt class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(getFieldLabel(key))}</dt>
-      <dd class="mt-1 text-sm leading-6 text-gray-700">${rendered}</dd>
-    </div>`).join('')}</dl>`;
+  return `
+    <dl class="space-y-3">
+      ${entries.map(([key, rendered]) => `
+        <div>
+          <dt class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(getFieldLabel(key))}</dt>
+          <dd class="mt-1">${rendered}</dd>
+        </div>`).join('')}
+    </dl>`;
+}
+
+function isLocalizedObject(value) {
+  return Boolean(value && typeof value === 'object' && !Array.isArray(value) && ['es', 'en', 'va'].some(key => key in value));
 }
 
 function getFieldLabel(key) {
@@ -516,306 +591,23 @@ function humanizeKey(key) {
     .replace(/^./, match => match.toUpperCase());
 }
 
-function getBlockContent(item, key) {
-  if (key === 'access') {
-    return item.detail?.access || item.access || {};
-  }
-  if (key === 'trackA') {
-    if (item.trackALink?.enabled === false) return {};
-    return item.detail?.trackA || item.trackALink || {};
-  }
-  return item.detail?.[key] || {};
-}
-
-function renderDetailBlock(item, block) {
-  if (item.visibility?.[block.key] === false) return '';
-  const content = getBlockContent(item, block.key);
-  const body = renderTextValue(content);
-  if (!body) return '';
-  return `
-    <section class="rounded-xl border border-eu-border bg-white p-6 shadow-sm">
-      <div class="mb-4 flex items-center gap-3">
-        <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-eu-blue/10 text-eu-blue">
-          <i data-lucide="${block.icon}" class="h-5 w-5"></i>
-        </span>
-        <h2 class="text-base font-bold text-eu-text">${esc(getBlockLabel(block.key) || humanizeKey(block.key))}</h2>
-      </div>
-      <div class="text-sm leading-6 text-gray-700">${body}</div>
-    </section>`;
-}
-
-function renderDetail(item) {
-  const title = pickLang(item.core?.title, item.id);
-  const summary = pickLang(item.core?.summary);
-  const entity = pickLang(item.core?.entity?.name);
-  const publishedAtLabel = pickLang(item.core?.publishedAtLabel);
-  const deadlineLabel = pickLang(item.core?.deadlineLabel);
-  const trackBValue = pickLang(item.classification?.trackBValue);
-  const sectorCode = getSectorCode(item.core?.sector);
-  const transitions = asArray(item.classification?.tripleTransition);
-  const policies = asArray(item.classification?.policyCluster);
-  const focuses = asArray(item.classification?.aiSteamFocus);
-  const blocks = DETAIL_BLOCKS.map(block => renderDetailBlock(item, block)).filter(Boolean);
-
-  return `
-    <div>
-      <section class="bg-eu-blue px-6 py-12 text-white">
-        <div class="mx-auto max-w-7xl">
-          <button id="mp-back" type="button" class="mb-7 inline-flex min-h-10 items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-bold text-white hover:bg-white/20 transition-colors cursor-pointer">
-            <i data-lucide="arrow-left" class="h-4 w-4"></i>
-            ${esc(uiText('backMarketplace'))}
-          </button>
-          <div class="flex flex-wrap gap-2">
-            ${renderBadge(getTypeLabel(item.type), 'bg-white/10 text-white border-white/20')}
-            ${renderBadge(getStatusLabel(item.core?.status), 'bg-white/10 text-white border-white/20')}
-            ${renderBadge(getEvidenceLabel(item.classification?.evidenceMaturity), 'bg-white/10 text-white border-white/20')}
-            ${renderBadge(getEngagementLabel(item.classification?.engagementLevel), 'bg-white/10 text-white border-white/20')}
-          </div>
-          <h1 class="mt-5 max-w-4xl text-3xl font-extrabold leading-tight">${esc(title)}</h1>
-          ${summary ? `<p class="mt-4 max-w-4xl text-base leading-7 text-white/80">${esc(summary)}</p>` : ''}
-          <div class="mt-6 flex flex-wrap items-center gap-8 text-sm text-white/75">
-            ${entity ? `<span class="inline-flex items-center gap-2"><i data-lucide="building-2" class="h-4 w-4"></i>${esc(entity)}</span>` : ''}
-            ${publishedAtLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="calendar" class="h-4 w-4"></i>${esc(publishedAtLabel)}</span>` : ''}
-            ${deadlineLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="timer" class="h-4 w-4"></i>${esc(deadlineLabel)}</span>` : ''}
-          </div>
-        </div>
-      </section>
-
-      <section class="mx-auto max-w-7xl px-6 py-8">
-        <div class="rounded-xl border border-eu-border bg-white p-5 shadow-sm">
-          <div class="flex flex-wrap gap-2">
-            ${renderBadge(getSectorLabel(item.core?.sector))}
-            ${renderBadge(getStakeholderLabel(item.core?.stakeholderCategory))}
-            ${transitions.map(value => renderBadge(getTransitionLabel(value))).join('')}
-            ${policies.map(value => renderBadge(getPolicyLabel(value))).join('')}
-            ${focuses.map(value => renderBadge(getFocusLabel(value))).join('')}
-          </div>
-          ${trackBValue ? `
-            <div class="mt-4 rounded-lg border border-eu-blue/20 bg-eu-blue/10 p-4 text-sm leading-6 text-eu-text">
-              <strong>${esc(uiText('trackBValue'))}:</strong> ${esc(trackBValue)}
-            </div>` : ''}
-        </div>
-
-        <div class="mt-6 grid gap-6 lg:grid-cols-3">
-          <div class="grid gap-5 md:grid-cols-2 lg:col-span-2">
-            ${blocks.join('') || `<p class="rounded-xl border border-eu-border bg-white p-6 text-sm text-gray-500 shadow-sm">${esc(uiText('detailEmpty'))}</p>`}
-          </div>
-          <aside class="space-y-5">
-            <section class="rounded-xl border border-eu-border bg-white p-5 shadow-sm">
-              <h2 class="text-base font-bold text-eu-text">${esc(uiText('operationalSummary'))}</h2>
-              <dl class="mt-4 space-y-3 text-sm">
-                ${renderSummaryRow(uiText('summaryType'), getTypeLabel(item.type))}
-                ${renderSummaryRow(uiText('summaryStatus'), getStatusLabel(item.core?.status))}
-                ${renderSummaryRow(uiText('summarySector'), getSectorLabel(item.core?.sector))}
-                ${renderSummaryRow(uiText('summaryAgent'), getStakeholderLabel(item.core?.stakeholderCategory))}
-                ${renderSummaryRow(uiText('summaryMaturity'), getEvidenceLabel(item.classification?.evidenceMaturity))}
-                ${renderSummaryRow(uiText('summaryEngagement'), getEngagementLabel(item.classification?.engagementLevel))}
-              </dl>
-            </section>
-            ${renderCallToAction(item)}
-          </aside>
-        </div>
-      </section>
-    </div>`;
-}
-
-function renderSummaryRow(label, value) {
-  if (!value) return '';
-  return `
-    <div>
-      <dt class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(label)}</dt>
-      <dd class="mt-1 font-semibold text-gray-700">${esc(value)}</dd>
-    </div>`;
-}
-
-function renderCallToAction(item) {
-  const access = item.access || {};
-  const detailAccess = item.detail?.access || {};
-  const label = pickLang(access.ctaLabel) || pickLang(detailAccess.ctaLabel) || uiText('participationRequest');
-  const url = pickLang(access.url) || pickLang(detailAccess.url);
-  const href = url || '#';
-  return `
-    <section class="rounded-xl border border-eu-border bg-eu-bg p-5 shadow-sm">
-      <h2 class="text-base font-bold text-eu-text">${esc(uiText('nextStep'))}</h2>
-      ${pickLang(access.instructions) ? `<p class="mt-2 text-sm leading-6 text-gray-700">${esc(pickLang(access.instructions))}</p>` : ''}
-      <a ${url ? `href="${esc(href)}"` : ''} class="mt-4 inline-flex w-full min-h-11 items-center justify-center gap-2 rounded-lg bg-eu-orange px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-eu-purple">
-        ${esc(label)}
-        <i data-lucide="arrow-right" class="h-4 w-4"></i>
-      </a>
-    </section>`;
-}
-
-function renderEmptyState(total) {
-  const message = uiText('noResultsMessage').replace('{{total}}', total);
-  return `
-    <div id="mp-grid" class="rounded-xl border border-eu-border bg-white p-8 text-center shadow-sm">
-      <i data-lucide="search-x" class="mx-auto h-8 w-8 text-gray-400"></i>
-      <h3 class="mt-3 text-lg font-bold text-eu-text">${esc(uiText('noResultsTitle'))}</h3>
-      <p class="mt-2 text-sm text-gray-500">${esc(message)}</p>
-      <button id="mp-clear-all" type="button" class="mt-4 rounded-lg bg-eu-blue px-4 py-2 text-sm font-bold text-white hover:bg-eu-purple transition-colors cursor-pointer">${esc(uiText('clearFilters'))}</button>
-    </div>`;
-}
-
-function renderList(items) {
-  const filters = getMpFilters();
-  const search = getMpSearch();
-  const filtered = getFilteredItems(items, filters, search);
-  const searchExpanded = getMpSearchExpanded();
-  const filterPanelExpanded = getMpFilterPanelExpanded();
-  const hero = MARKETPLACE_CONFIG.heroBlock || {};
-  const stats = getStats(items);
-
-  return `
-    <section class="bg-eu-blue text-white px-6 py-12">
-      <div class="mx-auto max-w-7xl">
-        <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-end">
-          <div>
-            <h1 class="max-w-4xl text-3xl font-extrabold leading-tight">${esc(pickLang(hero.title, 'Marketplace Track B'))}</h1>
-            <p class="mt-3 max-w-3xl text-base leading-7 text-white/80">${esc(pickLang(hero.description, uiText('heroDescriptionFallback')))}</p>
-          </div>
-          <div class="grid grid-cols-3 gap-3">
-            ${stats.map(stat => `
-              <div class="rounded-xl bg-white/10 px-5 py-3 text-center">
-                <p class="text-2xl font-extrabold text-eu-yellow">${stat.value}</p>
-                <p class="mt-0.5 text-xs font-semibold uppercase text-white/70">${esc(stat.label)}</p>
-              </div>`).join('')}
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mx-auto max-w-7xl px-6 py-8">
-      <div class="rounded-xl border border-eu-border bg-white p-5 shadow-sm">
-        <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-          <div class="flex flex-wrap items-center gap-2">
-            <button id="mp-search-toggle" type="button" class="inline-flex min-h-10 items-center gap-2 rounded-lg border border-eu-border px-4 py-2 text-sm font-bold text-eu-text hover:border-eu-blue hover:text-eu-blue transition-colors cursor-pointer">
-              <i data-lucide="search" class="h-4 w-4"></i>
-              ${esc(uiText('searchAction'))}
-            </button>
-            <button id="mp-filter-panel-toggle" type="button" class="inline-flex min-h-10 items-center gap-2 rounded-lg border border-eu-border px-4 py-2 text-sm font-bold text-eu-text hover:border-eu-blue hover:text-eu-blue transition-colors cursor-pointer">
-              <i data-lucide="sliders-horizontal" class="h-4 w-4"></i>
-              ${esc(uiText('filtersAction'))}
-              ${hasMpFilters(filters, '') ? `<span class="rounded bg-eu-blue px-1.5 py-0.5 text-xs text-white">${FILTER_KEYS.reduce((acc, key) => acc + filters[key].length, 0)}</span>` : ''}
-            </button>
-          </div>
-          <p id="mp-results-count" class="text-sm font-semibold text-gray-500">${uiText('resultsCount').replace('{{count}}', esc(filtered.length)).replace('{{total}}', esc(items.length))}</p>
-        </div>
-
-        ${searchExpanded ? `
-          <div class="mt-4 flex gap-2">
-            <input id="mp-search" value="${esc(search)}" type="search" placeholder="${esc(uiText('searchPlaceholder'))}"
-              class="min-h-11 w-full rounded-lg border border-eu-border px-4 text-sm outline-none focus:border-eu-blue focus:ring-2 focus:ring-eu-blue">
-            ${search ? `<button id="mp-search-clear" type="button" class="rounded-lg border border-eu-border px-3 text-gray-500 hover:text-eu-text cursor-pointer"><i data-lucide="x" class="h-4 w-4"></i></button>` : ''}
-          </div>` : ''}
-
-        ${filterPanelExpanded ? renderFilterPanel(items, filters) : ''}
-        <div id="mp-active-filter-slot" class="${hasMpFilters(filters, search) ? 'mt-4' : ''}">${renderActiveFilters(filters, search)}</div>
-      </div>
-
-      <div class="mt-6">
-        ${filtered.length ? `<div id="mp-grid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">${filtered.map(renderCard).join('')}</div>` : renderEmptyState(items.length)}
-      </div>
-    </section>`;
-}
-
-function renderFilterPanel(items, filters) {
-  const groups = [
-    [uiText('filterType'), 'type', 'types', buildOptions(items, 'types', getTypeLabel)],
-    [uiText('filterStatus'), 'status', 'statuses', buildOptions(items, 'statuses', getStatusLabel)],
-    [uiText('filterSector'), 'sector', 'sectors', buildOptions(items, 'sectors', getSectorLabel)],
-    [uiText('filterAgent'), 'stakeholder', 'stakeholders', buildOptions(items, 'stakeholders', getStakeholderLabel)],
-    [uiText('filterTransition'), 'transition', 'transitions', buildOptions(items, 'transitions', getTransitionLabel)],
-    [uiText('filterPolicy'), 'policy', 'policies', buildOptions(items, 'policies', getPolicyLabel)],
-    [uiText('filterEngagement'), 'engagement', 'engagements', buildOptions(items, 'engagements', getEngagementLabel)],
-    [uiText('filterEvidence'), 'evidence', 'evidences', buildOptions(items, 'evidences', getEvidenceLabel)],
-    [uiText('filterFocus'), 'focus', 'focuses', buildOptions(items, 'focuses', getFocusLabel)],
-    [uiText('filterTags'), 'tag', 'tags', buildOptions(items, 'tags', value => value)],
-  ];
-  return `
-    <div class="mt-4 border-t border-eu-border pt-4">
-      <div class="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
-      ${groups.map(([title, dimension, key, options]) => renderFilterGroup(title, dimension, options, filters[key])).join('')}
-      </div>
-    </div>`;
-}
-
-function getStats(items) {
-  return [
-    { value: items.length, label: uiText('statItems') },
-    { value: items.filter(item => item.core?.status === 'open').length, label: uiText('statOpen') },
-    { value: new Set(items.flatMap(item => asArray(item.classification?.aiSteamFocus))).size, label: uiText('statFocuses') },
-  ];
+function scrollToTop(preferredBehavior = 'auto') {
+  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : preferredBehavior });
 }
 
 export function render() {
-  const items = getItems();
-  const selectedId = getState('selectedChallengeId');
-  const selected = items.find(item => item.id === selectedId);
-  return selected ? renderDetail(selected) : renderList(items);
+  const selected = getItemById(getState('selectedChallengeId'));
+  return selected ? renderDetail(selected) : renderList();
 }
 
 export function mount() {
-  const items = getItems();
-
-  document.getElementById('mp-back')?.addEventListener('click', () => {
-    setState('selectedChallengeId', null);
-    window.history.pushState({}, '', window.location.pathname);
-    rerender();
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  });
-
-  document.getElementById('mp-filter-panel-toggle')?.addEventListener('click', () => {
-    setMpFilterPanelExpanded(!getMpFilterPanelExpanded());
-    rerender();
-  });
-
-  document.getElementById('mp-search-toggle')?.addEventListener('click', () => {
-    setMpSearchExpanded(!getMpSearchExpanded());
-    rerender();
-  });
-
-  document.getElementById('mp-search')?.addEventListener('input', event => {
-    setMpSearch(event.target.value);
-    updateMpGrid();
-  });
-
-  document.getElementById('mp-search-clear')?.addEventListener('click', () => {
-    setMpSearch('');
-    rerender();
-  });
-
-  document.getElementById('mp-clear-all')?.addEventListener('click', () => {
-    clearMpFilters();
-    rerender();
-  });
-
-  document.getElementById('mp-clear-active-filters')?.addEventListener('click', () => {
-    clearMpFilters();
-    rerender();
-  });
-
-  document.querySelectorAll('[data-mp-chip]').forEach(button => {
+  document.querySelectorAll('[data-mp-tab]').forEach(button => {
     button.addEventListener('click', () => {
-      const key = DIM_MAP_GRID[button.dataset.mpChip];
-      if (!key) return;
-      const filters = getMpFilters();
-      filters[key] = toggleMpFilter(filters[key], button.dataset.mpVal);
-      setMpFilters(filters);
+      setState('marketplaceTab', button.dataset.mpTab);
+      setState('selectedChallengeId', null);
       rerender();
-    });
-  });
-
-  document.querySelectorAll('[data-mp-remove]').forEach(button => {
-    button.addEventListener('click', () => {
-      const key = button.dataset.mpRemove;
-      if (key === 'search') {
-        setMpSearch('');
-      } else {
-        const filters = getMpFilters();
-        filters[key] = filters[key]?.filter(value => value !== button.dataset.mpVal) || [];
-        setMpFilters(filters);
-      }
-      rerender();
+      scrollToTop('smooth');
     });
   });
 
@@ -824,8 +616,15 @@ export function mount() {
       setState('selectedChallengeId', button.dataset.id);
       window.history.pushState({ itemId: button.dataset.id }, '', window.location.pathname);
       rerender();
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      scrollToTop();
     });
+  });
+
+  document.getElementById('mp-back')?.addEventListener('click', () => {
+    setState('selectedChallengeId', null);
+    window.history.pushState({}, '', window.location.pathname);
+    rerender();
+    scrollToTop();
   });
 
   window.onpopstate = () => {
@@ -833,8 +632,6 @@ export function mount() {
     setState('selectedChallengeId', null);
     rerender();
   };
-
-  if (!items.length) clearMpFilters();
 }
 
 function rerender() {
@@ -843,82 +640,4 @@ function rerender() {
   main.innerHTML = render();
   mount();
   if (window.lucide) window.lucide.createIcons();
-}
-
-function updateMpGrid() {
-  const items = getItems();
-  const filters = getMpFilters();
-  const search = getMpSearch();
-  const filtered = getFilteredItems(items, filters, search);
-
-  document.getElementById('mp-results-count')?.replaceChildren();
-  const count = document.getElementById('mp-results-count');
-  if (count) count.innerHTML = uiText('resultsCount')
-    .replace('{{count}}', esc(filtered.length))
-    .replace('{{total}}', esc(items.length));
-
-  const activeSlot = document.getElementById('mp-active-filter-slot');
-  const renderedActive = renderActiveFilters(filters, search);
-  if (activeSlot) {
-    activeSlot.className = hasMpFilters(filters, search) ? 'mt-4' : '';
-    activeSlot.innerHTML = renderedActive;
-  }
-
-  const grid = document.getElementById('mp-grid');
-  if (!grid) {
-    rerender();
-    return;
-  }
-  grid.outerHTML = filtered.length
-    ? `<div id="mp-grid" class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">${filtered.map(renderCard).join('')}</div>`
-    : renderEmptyState(items.length);
-
-  bindDynamicListControls();
-  if (window.lucide) window.lucide.createIcons();
-}
-
-function bindDynamicListControls() {
-  document.querySelectorAll('#mp-grid [data-mp-chip]').forEach(button => {
-    button.addEventListener('click', () => {
-      const key = DIM_MAP_GRID[button.dataset.mpChip];
-      if (!key) return;
-      const filters = getMpFilters();
-      filters[key] = toggleMpFilter(filters[key], button.dataset.mpVal);
-      setMpFilters(filters);
-      rerender();
-    });
-  });
-
-  document.querySelectorAll('#mp-active-filter-slot [data-mp-remove]').forEach(button => {
-    button.addEventListener('click', () => {
-      const key = button.dataset.mpRemove;
-      if (key === 'search') {
-        setMpSearch('');
-      } else {
-        const filters = getMpFilters();
-        filters[key] = filters[key]?.filter(value => value !== button.dataset.mpVal) || [];
-        setMpFilters(filters);
-      }
-      rerender();
-    });
-  });
-
-  document.querySelectorAll('#mp-grid .mp-view-detail').forEach(button => {
-    button.addEventListener('click', () => {
-      setState('selectedChallengeId', button.dataset.id);
-      window.history.pushState({ itemId: button.dataset.id }, '', window.location.pathname);
-      rerender();
-      window.scrollTo({ top: 0, behavior: 'instant' });
-    });
-  });
-
-  document.getElementById('mp-clear-all')?.addEventListener('click', () => {
-    clearMpFilters();
-    rerender();
-  });
-
-  document.getElementById('mp-clear-active-filters')?.addEventListener('click', () => {
-    clearMpFilters();
-    rerender();
-  });
 }
