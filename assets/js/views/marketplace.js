@@ -925,13 +925,8 @@ function formatDateShort(isoStr) {
 function renderStructuredSection(title, icon, contentHtml) {
   if (!contentHtml) return '';
   return `
-    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
-      <div class="mb-4 flex items-center gap-3">
-        <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-eu-blue/10 text-eu-blue">
-          <i data-lucide="${esc(icon)}" class="h-5 w-5"></i>
-        </span>
-        <h2 class="text-base font-extrabold text-eu-text">${esc(pickLang(title, title))}</h2>
-      </div>
+    <section class="rounded-2xl bg-white border border-eu-border p-6">
+      ${renderSecondaryHeader(icon, pickLang(title, title))}
       ${contentHtml}
     </section>`;
 }
@@ -1046,6 +1041,14 @@ function renderTrackABlock(item) {
 
 function fw(html) { return html ? `<div class="col-span-2">${html}</div>` : ''; }
 
+function renderSecondaryHeader(icon, title) {
+  return `
+    <div class="mb-4 flex items-center gap-2 border-b border-eu-border pb-3">
+      <i data-lucide="${esc(icon)}" class="h-4 w-4 shrink-0 text-eu-blue"></i>
+      <h2 class="text-xs font-extrabold uppercase tracking-widest text-gray-400">${esc(title)}</h2>
+    </div>`;
+}
+
 function renderSectionHeader(icon, title, accent = false) {
   const iconBg = accent ? 'bg-eu-blue text-white' : 'bg-eu-blue/10 text-eu-blue';
   return `
@@ -1088,7 +1091,7 @@ function renderChallengeBriefSection(item) {
   const deadline = pickLang(card.deadlineMode) || pickLang(item.core?.deadlineLabel);
   if (!actionTitle && !need && !reward) return '';
   return `
-    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+    <section class="rounded-2xl bg-eu-blue/5 border border-eu-blue/20 p-6">
       ${renderSectionHeader('target', uiText('challengeBrief'), true)}
       ${actionTitle ? `<p class="text-xl font-bold leading-snug text-eu-blue">${esc(actionTitle)}</p>` : ''}
       ${need ? `<p class="mt-4 text-sm leading-7 text-gray-700">${esc(need)}</p>` : ''}
@@ -1105,8 +1108,8 @@ function renderCollaborationSection(item) {
   const transferValue = pickLang(detail.transferValue);
   if (!context && !audience && !format && !transferValue) return '';
   return `
-    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
-      ${renderSectionHeader('users', uiText('collaborationMap'))}
+    <section class="rounded-2xl bg-white border border-eu-border p-6">
+      ${renderSecondaryHeader('users', uiText('collaborationMap'))}
       ${context ? `<p class="text-sm leading-7 text-gray-700">${esc(context)}</p>` : ''}
       ${audience || format ? `
         <div class="mt-5 rounded-xl bg-eu-bg p-4">
@@ -1129,8 +1132,8 @@ function renderTechnicalSection(item) {
   const ipModel = pickLang(card.ipModel);
   if (!competences.length && !sdgs.length && !ipModel) return '';
   return `
-    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
-      ${renderSectionHeader('settings-2', uiText('technicalBlocks'))}
+    <section class="rounded-2xl bg-white border border-eu-border p-6">
+      ${renderSecondaryHeader('settings-2', uiText('technicalBlocks'))}
       ${competences.length ? `
         <div>
           <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang(FIELD_LABELS.setCompetences))}</p>
@@ -1166,7 +1169,7 @@ function renderCaseEvidenceSection(item) {
   const valorisation = pickLang(card.economicValue || card.valorisation);
   if (!achievement && !actors && !kpi) return '';
   return `
-    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+    <section class="rounded-2xl bg-eu-orange/10 border border-eu-orange/20 p-6">
       ${renderSectionHeader('trophy', uiText('detailCaseEvidence'), true)}
       ${achievement ? `<p class="text-xl font-bold leading-snug text-eu-blue">${esc(achievement)}</p>` : ''}
       ${actors ? `<p class="mt-3 flex items-center gap-2 text-sm text-gray-500"><i data-lucide="users" class="h-4 w-4 shrink-0"></i>${esc(actors)}</p>` : ''}
@@ -1186,7 +1189,7 @@ function renderPilotPlanSection(item) {
   const infra = asArray(card.infrastructure).join(' / ');
   if (!direction && !trlLabel && !window && !infra) return '';
   return `
-    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+    <section class="rounded-2xl bg-eu-blue/5 border border-eu-blue/20 p-6">
       ${renderSectionHeader('flask-conical', uiText('pilotValidationPlan'), true)}
       ${direction ? `<p class="text-xl font-bold leading-snug text-eu-blue">${esc(direction)}</p>` : ''}
       <div class="mt-5 grid gap-3 md:grid-cols-2">
@@ -1329,7 +1332,7 @@ function renderMentoringDetail(item) {
   const participation = pickLang(detail.participation);
   const transferValue = pickLang(detail.transferValue);
   const mentorProfile = `
-    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+    <section class="rounded-2xl bg-eu-blue/5 border border-eu-blue/20 p-6">
       ${renderSectionHeader('messages-square', uiText('mentoringSupport'), true)}
       ${mentorName ? `<p class="text-xl font-bold leading-snug text-eu-blue">${esc(mentorName)}</p>` : ''}
       ${mentorRole ? `<p class="mt-1 text-sm font-semibold text-gray-600">${esc(mentorRole)}</p>` : ''}
@@ -1355,8 +1358,8 @@ function renderMentoringDetail(item) {
     </section>`;
 
   const collaborationSection = (context || participation) ? `
-    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
-      ${renderSectionHeader('users', getBlockLabel('participation') || pickLang({ es: 'Colaboración', en: 'Collaboration', va: 'Col·laboració' }))}
+    <section class="rounded-2xl bg-white border border-eu-border p-6">
+      ${renderSecondaryHeader('users', getBlockLabel('participation') || pickLang({ es: 'Colaboración', en: 'Collaboration', va: 'Col·laboració' }))}
       ${context ? `<p class="text-sm leading-7 text-gray-700">${esc(context)}</p>` : ''}
       ${participation ? `
         <div class="mt-4 rounded-xl bg-eu-bg p-4">
