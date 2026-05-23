@@ -438,7 +438,9 @@ function renderTabs(activeId) {
         ${tabs.map(tab => {
           const active = tab.id === activeId;
           return `
-            <button type="button" role="tab" aria-selected="${active ? 'true' : 'false'}" data-mp-tab="${esc(tab.id)}"
+            <button type="button" role="tab" aria-selected="${active ? 'true' : 'false'}"
+              id="mp-tab-${esc(tab.id)}" aria-controls="mp-tabpanel-${esc(tab.id)}"
+              data-mp-tab="${esc(tab.id)}"
               class="min-h-11 whitespace-nowrap border-b-2 px-4 py-2.5 text-sm font-semibold transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 ${
                 active
                   ? 'border-eu-blue text-eu-blue'
@@ -453,7 +455,7 @@ function renderTabs(activeId) {
 
 function renderActivitySummary(tab, items) {
   const openCount = items.filter(item => item.core?.status === 'open').length;
-  const tone = TAB_TONES[tab.id] || TAB_TONES.challenges;
+  const ctaLabel = pickLang(tab.ctaLabel);
   return `
     <aside class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
       <h2 class="text-sm font-extrabold uppercase tracking-wide text-gray-500">${esc(uiText('activitySummary'))}</h2>
@@ -462,9 +464,11 @@ function renderActivitySummary(tab, items) {
         ${renderSummaryMetric(uiText('openItems'), openCount)}
         ${renderSummaryMetric(uiText('latestUpdate'), getLatestLabel(items))}
       </dl>
-      <div class="mt-5 rounded-xl border p-4 ${tone.badge}">
-        <p class="text-sm font-semibold leading-6">${esc(pickLang(tab.ctaLabel, uiText('viewDetail')))}</p>
-      </div>
+      ${ctaLabel ? `
+        <div class="mt-5 flex items-start gap-2 text-sm text-gray-600">
+          <i data-lucide="info" class="mt-0.5 h-4 w-4 shrink-0 text-gray-400"></i>
+          <p class="leading-5">${esc(ctaLabel)}</p>
+        </div>` : ''}
     </aside>`;
 }
 
@@ -765,7 +769,7 @@ function renderItemCard(item, tab) {
 function renderChallengeCard(item, tab) {
   const card = item.card || {};
   const body = `
-    ${renderCardCallout(uiText('featuredSignal'), card.actionTitle || item.core?.summary, 'target')}
+    ${renderCardCallout(uiText('featuredSignal'), card.actionTitle, 'target')}
     ${renderCardCallout(uiText('reward'), card.reward, 'award')}
     ${renderChipList(asArray(card.setCompetences), 'bg-eu-blue/10 text-eu-blue border-eu-blue/20', 4)}
     ${renderSdgs(card.sdgs, 3)}
@@ -787,7 +791,7 @@ function renderCaseCard(item, tab) {
     ? `${pickLang(card.highlightKpi.value)}${pickLang(card.highlightKpi.label) ? ` / ${pickLang(card.highlightKpi.label)}` : ''}`
     : pickLang(card.impactKpi);
   const body = `
-    ${renderCardCallout(uiText('featuredSignal'), card.achievement || item.core?.summary, 'trophy')}
+    ${renderCardCallout(uiText('featuredSignal'), card.achievement, 'trophy')}
     ${renderCardMiniMeta([
       { label: uiText('actors'), value: renderActorNames(card.actors) },
       { label: uiText('kpi'), value: kpi },
@@ -811,7 +815,6 @@ function renderPilotCard(item, tab) {
       { label: uiText('window'), value: pickLang(card.executionWindow?.label) || pickLang(card.validationStatus) },
       { label: uiText('infrastructure'), value: asArray(card.infrastructure).slice(0, 3).join(' / ') },
     ])}
-    ${renderChipList(asArray(card.infrastructure).slice(0, 4), 'bg-green-50 text-green-800 border-green-200', 4)}
   `;
   return renderCardShell(item, tab, body, {
     title: item.core?.title,
@@ -836,7 +839,6 @@ function renderMentoringCard(item, tab) {
     ${renderChipList(badges, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20', 3)}
     ${renderCardMiniMeta([
       { label: uiText('availability'), value: pickLang(card.availability) },
-      { label: uiText('tags'), value: card.quickChat ? 'Chat' : '' },
     ])}
   `;
   return renderCardShell(item, tab, body, {
@@ -870,7 +872,8 @@ function renderEmptyState(tab) {
 function renderTabPanel(tab, items) {
   const tone = TAB_TONES[tab.id] || TAB_TONES.challenges;
   return `
-    <section class="mx-auto max-w-7xl px-6 py-8">
+    <section class="mx-auto max-w-7xl px-6 py-8"
+      id="mp-tabpanel-${esc(tab.id)}" role="tabpanel" aria-labelledby="mp-tab-${esc(tab.id)}">
       <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_18rem]">
         <div>
           <div class="rounded-2xl border border-eu-border bg-gradient-to-br ${tone.band} p-6 shadow-sm">
@@ -1264,12 +1267,28 @@ export function render() {
 }
 
 export function mount() {
-  document.querySelectorAll('[data-mp-tab]').forEach(button => {
+  const tabButtons = [...document.querySelectorAll('[data-mp-tab]')];
+  tabButtons.forEach((button, idx) => {
     button.addEventListener('click', () => {
       setState('marketplaceTab', button.dataset.mpTab);
       setState('selectedChallengeId', null);
       rerender();
       scrollToTop('smooth');
+    });
+    button.addEventListener('keydown', event => {
+      let next = -1;
+      if (event.key === 'ArrowRight') next = (idx + 1) % tabButtons.length;
+      if (event.key === 'ArrowLeft') next = (idx - 1 + tabButtons.length) % tabButtons.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = tabButtons.length - 1;
+      if (next >= 0) {
+        event.preventDefault();
+        tabButtons[next].focus();
+        setState('marketplaceTab', tabButtons[next].dataset.mpTab);
+        setState('selectedChallengeId', null);
+        rerender();
+        scrollToTop('smooth');
+      }
     });
   });
 
