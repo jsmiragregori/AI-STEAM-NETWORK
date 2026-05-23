@@ -1254,7 +1254,7 @@ function renderDetailLayout(item, mainHtml, sidebarHtml = '') {
       ${renderDetailHeader(item)}
       <section class="mx-auto max-w-7xl px-6 py-8">
         <div class="grid gap-6 lg:grid-cols-3">
-          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 items-start lg:col-span-2">
+          <div class="space-y-5 lg:col-span-2">
             ${mainHtml || renderDetailEmpty()}
           </div>
           <aside class="space-y-5 self-start">
@@ -1278,13 +1278,13 @@ function renderChallengeDetail(item) {
   const trackA = renderTrackABlock(item);
 
   return renderDetailLayout(item, [
-    fw(renderChallengeBriefSection(item)),
+    renderChallengeBriefSection(item),
     renderCollaborationSection(item),
-    renderTechnicalSection(item),
-    fw(resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : ''),
-    fw(deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : ''),
-    fw(milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : ''),
+    resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : '',
+    deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
+    milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : '',
     contacts,
+    renderTechnicalSection(item),
     trackA,
   ].filter(Boolean).join(''), renderDetailChipPanel(item));
 }
@@ -1295,11 +1295,11 @@ function renderCaseDetail(item) {
   const deliverables = renderDeliverableList(detail.outputs);
 
   return renderDetailLayout(item, [
-    fw(renderCaseEvidenceSection(item)),
+    renderCaseEvidenceSection(item),
     renderCollaborationSection(item),
-    renderTechnicalSection(item),
     contactCards ? renderStructuredSection(getBlockLabel('people'), 'user-round-check', contactCards) : '',
     deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
+    renderTechnicalSection(item),
   ].filter(Boolean).join(''), renderDetailChipPanel(item));
 }
 
@@ -1310,12 +1310,12 @@ function renderPilotDetail(item) {
   const deliverables = renderDeliverableList(detail.outputs);
 
   return renderDetailLayout(item, [
-    fw(renderPilotPlanSection(item)),
+    renderPilotPlanSection(item),
     renderCollaborationSection(item),
-    renderTechnicalSection(item),
-    fw(milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : ''),
+    milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : '',
     resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : '',
     deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
+    renderTechnicalSection(item),
   ].filter(Boolean).join(''), renderDetailChipPanel(item));
 }
 
@@ -1376,15 +1376,15 @@ function renderMentoringDetail(item) {
     </section>` : '';
 
   return renderDetailLayout(item, [
-    fw(mentorProfile),
-    fw(collaborationSection),
+    mentorProfile,
+    collaborationSection,
   ].filter(Boolean).join(''), renderDetailChipPanel(item));
 }
 
 function renderGenericDetail(item) {
   return renderDetailLayout(item, [
-    fw(renderDetailSection(uiText('featuredSignal'), 'layout-dashboard', [renderDetailPair(uiText('featuredSignal'), item.card)])),
-    fw(DETAIL_BLOCKS.map(block => renderDetailBlock(item, block)).filter(Boolean).join('')),
+    renderDetailSection(uiText('featuredSignal'), 'layout-dashboard', [renderDetailPair(uiText('featuredSignal'), item.card)]),
+    DETAIL_BLOCKS.map(block => renderDetailBlock(item, block)).filter(Boolean).join(''),
   ].filter(Boolean).join(''), renderDetailChipPanel(item));
 }
 
