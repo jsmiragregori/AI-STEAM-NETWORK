@@ -1462,21 +1462,39 @@ function renderDetailChipPanel(item) {
 
 function renderAccessPanel(item) {
   const access = item.detail?.access || item.access || {};
-  const label = pickLang(access.ctaLabel) || pickLang(item.card?.availability) || uiText('viewDetail');
+  const ctaLabel = pickLang(access.ctaLabel) || pickLang(item.card?.availability) || uiText('viewDetail');
   const instructions = pickLang(access.instructions);
-  const url = pickLang(access.url);
-  const renderedAccess = renderValue(access);
-  if (!renderedAccess && !instructions && !url) return '';
+  const url = pickLang(access.url) || (typeof access.publicUrl === 'string' && access.publicUrl ? access.publicUrl : '');
+  const license = typeof access.license === 'string' ? access.license : pickLang(access.license);
+  const rightsNote = pickLang(access.rightsNote);
+  const privacyLevel = access.privacyLevel;
+
+  if (!url && !instructions && !license && !rightsNote && !privacyLevel) return '';
+
+  const PRIVACY = {
+    public:     { icon: 'globe',      label: { es: 'Acceso público',      en: 'Public access',      va: 'Accés públic' } },
+    restricted: { icon: 'lock',       label: { es: 'Acceso restringido',  en: 'Restricted access',  va: 'Accés restringit' } },
+    private:    { icon: 'eye-off',    label: { es: 'Acceso privado',      en: 'Private access',     va: 'Accés privat' } },
+  };
+  const privacy = privacyLevel ? (PRIVACY[privacyLevel] || { icon: 'info', label: { es: privacyLevel, en: privacyLevel, va: privacyLevel } }) : null;
+  const privacyLabel = privacy ? pickLang(privacy.label) : '';
+
   return `
     <section class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
-      <h2 class="text-base font-extrabold text-eu-text">${esc(uiText('access'))}</h2>
-      ${instructions ? `<p class="mt-2 text-sm leading-6 text-gray-600">${esc(instructions)}</p>` : ''}
+      <h2 class="mb-4 text-base font-extrabold text-eu-text">${esc(uiText('access'))}</h2>
+      ${privacyLabel || license ? `
+        <div class="flex items-center gap-3">
+          ${privacy ? `<i data-lucide="${esc(privacy.icon)}" class="h-4 w-4 shrink-0 text-eu-blue"></i>` : ''}
+          ${privacyLabel ? `<span class="text-sm font-semibold text-gray-700">${esc(privacyLabel)}</span>` : ''}
+          ${license ? `<span class="ml-auto rounded-full bg-eu-bg px-2.5 py-0.5 text-xs font-bold text-gray-600" style="border:1px solid rgba(0,0,0,0.08)">${esc(license)}</span>` : ''}
+        </div>` : ''}
+      ${rightsNote ? `<p class="mt-3 text-xs leading-5 text-gray-500">${esc(rightsNote)}</p>` : ''}
+      ${instructions ? `<p class="mt-3 text-sm leading-6 text-gray-600">${esc(instructions)}</p>` : ''}
       ${url ? `
-        <a href="${esc(url)}" class="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-eu-orange px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-orange focus:ring-offset-2">
-          ${esc(label)}
+        <a href="${esc(url)}" target="_blank" rel="noopener" class="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-eu-orange px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-orange focus:ring-offset-2">
+          ${esc(ctaLabel)}
           <i data-lucide="arrow-right" class="h-4 w-4"></i>
         </a>` : ''}
-      ${!url && renderedAccess ? `<div class="mt-3 text-sm leading-6 text-gray-700">${renderedAccess}</div>` : ''}
     </section>`;
 }
 
