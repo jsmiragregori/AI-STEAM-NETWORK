@@ -1044,6 +1044,8 @@ function renderTrackABlock(item) {
 
 /* ─── Narrative section renderers ─── */
 
+function fw(html) { return html ? `<div class="col-span-2">${html}</div>` : ''; }
+
 function renderSectionHeader(icon, title, accent = false) {
   const iconBg = accent ? 'bg-eu-blue text-white' : 'bg-eu-blue/10 text-eu-blue';
   return `
@@ -1249,7 +1251,7 @@ function renderDetailLayout(item, mainHtml, sidebarHtml = '') {
       ${renderDetailHeader(item)}
       <section class="mx-auto max-w-7xl px-6 py-8">
         <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
-          <div class="space-y-5">
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 items-start">
             ${mainHtml || renderDetailEmpty()}
           </div>
           <aside class="space-y-5">
@@ -1269,17 +1271,19 @@ function renderChallengeDetail(item) {
   const deliverables = renderDeliverableList(detail.outputs);
   const milestones = renderMilestoneList(detail.process);
   const contactCards = renderContactCards(detail.people);
+  const contacts = contactCards ? renderStructuredSection(getBlockLabel('people'), 'user-round-check', contactCards) : '';
+  const trackA = renderTrackABlock(item);
 
   return renderDetailLayout(item, [
-    renderChallengeBriefSection(item),
+    fw(renderChallengeBriefSection(item)),
     renderCollaborationSection(item),
-    resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : '',
-    deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
-    milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : '',
-    contactCards ? renderStructuredSection(getBlockLabel('people'), 'user-round-check', contactCards) : '',
     renderTechnicalSection(item),
-    renderTrackABlock(item),
-  ].join(''), renderDetailChipPanel(item));
+    fw(resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : ''),
+    fw(deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : ''),
+    fw(milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : ''),
+    contacts,
+    trackA,
+  ].filter(Boolean).join(''), renderDetailChipPanel(item));
 }
 
 function renderCaseDetail(item) {
@@ -1288,12 +1292,12 @@ function renderCaseDetail(item) {
   const deliverables = renderDeliverableList(detail.outputs);
 
   return renderDetailLayout(item, [
-    renderCaseEvidenceSection(item),
+    fw(renderCaseEvidenceSection(item)),
     renderCollaborationSection(item),
+    renderTechnicalSection(item),
     contactCards ? renderStructuredSection(getBlockLabel('people'), 'user-round-check', contactCards) : '',
     deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
-    renderTechnicalSection(item),
-  ].join(''), renderDetailChipPanel(item));
+  ].filter(Boolean).join(''), renderDetailChipPanel(item));
 }
 
 function renderPilotDetail(item) {
@@ -1303,13 +1307,13 @@ function renderPilotDetail(item) {
   const deliverables = renderDeliverableList(detail.outputs);
 
   return renderDetailLayout(item, [
-    renderPilotPlanSection(item),
+    fw(renderPilotPlanSection(item)),
     renderCollaborationSection(item),
-    milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : '',
+    renderTechnicalSection(item),
+    fw(milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : ''),
     resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : '',
     deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
-    renderTechnicalSection(item),
-  ].join(''), renderDetailChipPanel(item));
+  ].filter(Boolean).join(''), renderDetailChipPanel(item));
 }
 
 function renderMentoringDetail(item) {
@@ -1350,33 +1354,35 @@ function renderMentoringDetail(item) {
         </div>` : ''}
     </section>`;
 
+  const collaborationSection = (context || participation) ? `
+    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+      ${renderSectionHeader('users', getBlockLabel('participation') || pickLang({ es: 'Colaboración', en: 'Collaboration', va: 'Col·laboració' }))}
+      ${context ? `<p class="text-sm leading-7 text-gray-700">${esc(context)}</p>` : ''}
+      ${participation ? `
+        <div class="mt-4 rounded-xl bg-eu-bg p-4">
+          <div class="flex items-start gap-2">
+            <i data-lucide="user-check" class="mt-0.5 h-4 w-4 shrink-0 text-eu-blue"></i>
+            <p class="text-sm leading-6 text-gray-700">${esc(participation)}</p>
+          </div>
+        </div>` : ''}
+      ${transferValue ? `
+        <div class="mt-5 border-t border-eu-border pt-4">
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(getBlockLabel('transferValue') || '')}</p>
+          <p class="text-sm leading-7 text-gray-700">${esc(transferValue)}</p>
+        </div>` : ''}
+    </section>` : '';
+
   return renderDetailLayout(item, [
-    mentorProfile,
-    (context || participation) ? `
-      <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
-        ${renderSectionHeader('users', getBlockLabel('participation') || pickLang({ es: 'Colaboración', en: 'Collaboration', va: 'Col·laboració' }))}
-        ${context ? `<p class="text-sm leading-7 text-gray-700">${esc(context)}</p>` : ''}
-        ${participation ? `
-          <div class="mt-4 rounded-xl bg-eu-bg p-4">
-            <div class="flex items-start gap-2">
-              <i data-lucide="user-check" class="mt-0.5 h-4 w-4 shrink-0 text-eu-blue"></i>
-              <p class="text-sm leading-6 text-gray-700">${esc(participation)}</p>
-            </div>
-          </div>` : ''}
-        ${transferValue ? `
-          <div class="mt-5 border-t border-eu-border pt-4">
-            <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(getBlockLabel('transferValue') || '')}</p>
-            <p class="text-sm leading-7 text-gray-700">${esc(transferValue)}</p>
-          </div>` : ''}
-      </section>` : '',
-  ].join(''), renderDetailChipPanel(item));
+    fw(mentorProfile),
+    fw(collaborationSection),
+  ].filter(Boolean).join(''), renderDetailChipPanel(item));
 }
 
 function renderGenericDetail(item) {
   return renderDetailLayout(item, [
-    renderDetailSection(uiText('featuredSignal'), 'layout-dashboard', [renderDetailPair(uiText('featuredSignal'), item.card)]),
-    DETAIL_BLOCKS.map(block => renderDetailBlock(item, block)).filter(Boolean).join(''),
-  ].join(''), renderDetailChipPanel(item));
+    fw(renderDetailSection(uiText('featuredSignal'), 'layout-dashboard', [renderDetailPair(uiText('featuredSignal'), item.card)])),
+    fw(DETAIL_BLOCKS.map(block => renderDetailBlock(item, block)).filter(Boolean).join('')),
+  ].filter(Boolean).join(''), renderDetailChipPanel(item));
 }
 
 function renderDetailSection(title, icon, rows) {
@@ -1431,7 +1437,7 @@ function getBlockContent(item, key) {
 }
 
 function renderDetailEmpty() {
-  return `<p class="rounded-2xl border border-eu-border bg-white p-6 text-sm text-gray-500 shadow-sm">${esc(uiText('detailEmpty'))}</p>`;
+  return `<p class="col-span-2 rounded-2xl border border-eu-border bg-white p-6 text-sm text-gray-500 shadow-sm">${esc(uiText('detailEmpty'))}</p>`;
 }
 
 function renderDetailChipPanel(item) {
