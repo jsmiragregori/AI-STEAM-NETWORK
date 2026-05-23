@@ -33,10 +33,45 @@ const UI_TEXT = {
     en: 'Participation signal',
     va: 'Clau per a participar',
   },
+  actors: {
+    es: 'Actores',
+    en: 'Actors',
+    va: 'Actors',
+  },
+  availability: {
+    es: 'Disponibilidad',
+    en: 'Availability',
+    va: 'Disponibilitat',
+  },
+  competencies: {
+    es: 'Competencias SET',
+    en: 'SET competences',
+    va: 'Competencies SET',
+  },
+  deadline: {
+    es: 'Fecha limite',
+    en: 'Deadline',
+    va: 'Data limit',
+  },
+  direction: {
+    es: 'Direccion',
+    en: 'Direction',
+    va: 'Direccio',
+  },
+  infrastructure: {
+    es: 'Infraestructura',
+    en: 'Infrastructure',
+    va: 'Infraestructura',
+  },
   items: {
     es: 'Elementos',
     en: 'Items',
     va: 'Elements',
+  },
+  kpi: {
+    es: 'KPI',
+    en: 'KPI',
+    va: 'KPI',
   },
   latestUpdate: {
     es: 'Ultima actualizacion',
@@ -52,6 +87,36 @@ const UI_TEXT = {
     es: 'Abiertos',
     en: 'Open',
     va: 'Oberts',
+  },
+  reward: {
+    es: 'Recompensa',
+    en: 'Reward',
+    va: 'Recompensa',
+  },
+  sdgs: {
+    es: 'ODS',
+    en: 'SDGs',
+    va: 'ODS',
+  },
+  tags: {
+    es: 'Etiquetas',
+    en: 'Tags',
+    va: 'Etiquetes',
+  },
+  trl: {
+    es: 'TRL',
+    en: 'TRL',
+    va: 'TRL',
+  },
+  valorisation: {
+    es: 'Valorizacion',
+    en: 'Valorisation',
+    va: 'Valoritzacio',
+  },
+  window: {
+    es: 'Ventana',
+    en: 'Window',
+    va: 'Finestra',
   },
   operationalSummary: {
     es: 'Resumen operativo',
@@ -331,56 +396,207 @@ function renderSummaryMetric(label, value) {
     </div>`;
 }
 
-function getCardSignal(item) {
-  const card = item.card || {};
-  const detail = item.detail || {};
-  const type = item.type;
-  if (type === 'challenge') return pickLang(card.actionTitle) || pickLang(card.reward) || pickLang(detail.need?.question);
-  if (type === 'case') return pickLang(card.impactKpi) || pickLang(card.valorisation) || pickLang(detail.transferValue?.value);
-  if (type === 'pilot' || type === 'validation') return pickLang(card.collaborationDirection) || pickLang(card.validationStatus) || pickLang(card.executionWindow?.label);
-  if (type === 'mentoring') return pickLang(card.mentorRole) || pickLang(card.availability) || card.mentorName;
-  return pickLang(item.classification?.trackBValue) || pickLang(item.core?.summary);
-}
-
-function renderItemCard(item, tab) {
-  const title = pickLang(item.core?.title, item.id);
-  const summary = pickLang(item.core?.summary);
+function renderCardShell(item, tab, body, options = {}) {
+  const title = pickLang(options.title, pickLang(item.core?.title, item.id));
+  const subtitle = pickLang(options.subtitle);
   const entity = pickLang(item.core?.entity?.name);
-  const signal = getCardSignal(item);
   const dateLabel = getItemDateLabel(item);
-  const focuses = asArray(item.classification?.aiSteamFocus).slice(0, 2);
   const tone = TAB_TONES[tab.id] || TAB_TONES.challenges;
 
   return `
-    <article class="group flex h-full flex-col rounded-2xl border border-eu-border bg-white p-5 shadow-sm transition-colors hover:border-eu-blue">
+    <article class="group flex h-full flex-col rounded-xl border border-eu-border bg-white p-6 shadow-sm transition-colors hover:border-eu-blue">
       <div class="flex flex-wrap gap-2">
         ${renderBadge(getTypeLabel(item.type), tone.badge)}
         ${renderBadge(getStatusLabel(item.core?.status))}
-        ${renderBadge(getSectorLabel(item.core?.sector))}
+        ${options.extraBadge ? renderBadge(options.extraBadge) : ''}
       </div>
       <div class="mt-4 flex-1">
-        <h3 class="text-lg font-extrabold leading-snug text-eu-text">${esc(title)}</h3>
-        ${summary ? `<p class="mt-3 text-sm leading-6 text-gray-600">${esc(summary)}</p>` : ''}
+        <h3 class="text-lg font-bold leading-snug text-eu-text group-hover:text-eu-blue">${esc(title)}</h3>
+        ${subtitle ? `<p class="mt-2 text-sm leading-6 text-gray-600">${esc(subtitle)}</p>` : ''}
+        ${body}
       </div>
-      ${signal ? `
-        <div class="mt-4 rounded-xl bg-eu-bg p-4">
-          <p class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('featuredSignal'))}</p>
-          <p class="mt-1 text-sm font-semibold leading-6 text-eu-text">${esc(signal)}</p>
-        </div>` : ''}
-      <div class="mt-4 flex flex-wrap gap-2">
-        ${focuses.map(focus => renderBadge(getFocusLabel(focus))).join('')}
-      </div>
-      <div class="mt-5 flex items-center justify-between gap-4 border-t border-eu-border pt-4">
-        <div class="min-w-0 text-xs font-semibold text-gray-500">
-          ${entity ? `<p class="truncate">${esc(entity)}</p>` : ''}
-          ${dateLabel ? `<p class="mt-1 truncate">${esc(dateLabel)}</p>` : ''}
-        </div>
-        <button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
-          ${esc(pickLang(tab.ctaLabel, uiText('viewDetail')))}
-          <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
-        </button>
-      </div>
+      ${renderCardFooter(item, tab, entity, dateLabel)}
     </article>`;
+}
+
+function renderCardFooter(item, tab, entity, dateLabel) {
+  return `
+    <div class="mt-5 flex items-center justify-between gap-4 border-t border-eu-border pt-4">
+      <div class="min-w-0 text-xs font-semibold text-gray-500">
+        ${entity ? `<p class="truncate">${esc(entity)}</p>` : ''}
+        ${dateLabel ? `<p class="mt-1 truncate">${esc(dateLabel)}</p>` : ''}
+      </div>
+      <button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
+        ${esc(pickLang(tab.ctaLabel, uiText('viewDetail')))}
+        <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
+      </button>
+    </div>`;
+}
+
+function renderCardCallout(label, value, icon = 'sparkles') {
+  const text = pickLang(value);
+  if (!text) return '';
+  return `
+    <div class="mt-4 rounded-lg bg-eu-bg p-4">
+      <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-gray-500">
+        <i data-lucide="${esc(icon)}" class="h-3.5 w-3.5"></i>
+        ${esc(label)}
+      </p>
+      <p class="mt-1 text-sm font-semibold leading-6 text-eu-text">${esc(text)}</p>
+    </div>`;
+}
+
+function renderCardMiniMeta(items) {
+  const visible = items.filter(item => item.value !== undefined && item.value !== null && item.value !== '');
+  if (!visible.length) return '';
+  return `
+    <div class="mt-4 grid gap-3">
+      ${visible.map(item => `
+        <div class="rounded-lg border border-eu-border bg-white px-3 py-2">
+          <p class="text-[11px] font-bold uppercase tracking-wide text-gray-500">${esc(item.label)}</p>
+          <p class="mt-0.5 text-sm font-semibold leading-5 text-gray-700">${esc(item.value)}</p>
+        </div>`).join('')}
+    </div>`;
+}
+
+function renderChipList(values, tone = 'bg-eu-bg text-gray-700 border-eu-border', limit = 4) {
+  const chips = values.map(value => pickLang(value)).filter(Boolean).slice(0, limit);
+  if (!chips.length) return '';
+  return `<div class="mt-4 flex flex-wrap gap-2">${chips.map(chip => renderBadge(chip, tone)).join('')}</div>`;
+}
+
+function renderSdgs(sdgs, limit = 3) {
+  const values = asArray(sdgs)
+    .map(sdg => sdg?.id ? `ODS ${sdg.id}` : pickLang(sdg?.label || sdg))
+    .filter(Boolean);
+  return renderChipList(values, 'bg-green-50 text-green-800 border-green-200', limit);
+}
+
+function renderActorNames(actors) {
+  return asArray(actors)
+    .map(actor => actor?.name || pickLang(actor))
+    .filter(Boolean)
+    .slice(0, 2)
+    .join(' / ');
+}
+
+function getTrlLabel(trl) {
+  if (!trl) return '';
+  const label = pickLang(trl.label);
+  return trl.level ? `TRL ${trl.level}${label ? ` / ${label}` : ''}` : label;
+}
+
+function getMentorInitials(name) {
+  return String(name || 'AI')
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map(part => part[0]?.toUpperCase())
+    .join('');
+}
+
+function renderItemCard(item, tab) {
+  if (item.type === 'challenge') return renderChallengeCard(item, tab);
+  if (item.type === 'case') return renderCaseCard(item, tab);
+  if (item.type === 'pilot' || item.type === 'validation') return renderPilotCard(item, tab);
+  if (item.type === 'mentoring') return renderMentoringCard(item, tab);
+  return renderGenericCard(item, tab);
+}
+
+function renderChallengeCard(item, tab) {
+  const card = item.card || {};
+  const body = `
+    ${renderCardCallout(uiText('featuredSignal'), card.actionTitle || item.core?.summary, 'target')}
+    ${renderCardCallout(uiText('reward'), card.reward, 'award')}
+    ${renderChipList(asArray(card.setCompetences), 'bg-eu-blue/10 text-eu-blue border-eu-blue/20', 4)}
+    ${renderSdgs(card.sdgs, 3)}
+    ${renderCardMiniMeta([
+      { label: uiText('deadline'), value: pickLang(card.deadlineMode) || pickLang(item.core?.deadlineLabel) },
+      { label: 'IP', value: pickLang(card.ipModel) },
+    ])}
+  `;
+  return renderCardShell(item, tab, body, {
+    title: card.actionTitle || item.core?.title,
+    subtitle: item.core?.summary,
+    extraBadge: card.quickChat ? 'Chat' : getSectorLabel(item.core?.sector),
+  });
+}
+
+function renderCaseCard(item, tab) {
+  const card = item.card || {};
+  const kpi = card.highlightKpi?.value
+    ? `${pickLang(card.highlightKpi.value)}${pickLang(card.highlightKpi.label) ? ` / ${pickLang(card.highlightKpi.label)}` : ''}`
+    : pickLang(card.impactKpi);
+  const body = `
+    ${renderCardCallout(uiText('featuredSignal'), card.achievement || item.core?.summary, 'trophy')}
+    ${renderCardMiniMeta([
+      { label: uiText('actors'), value: renderActorNames(card.actors) },
+      { label: uiText('kpi'), value: kpi },
+      { label: uiText('valorisation'), value: pickLang(card.economicValue || card.valorisation) },
+    ])}
+    ${renderSdgs(card.validatedSdgs || card.sdgs, 3)}
+  `;
+  return renderCardShell(item, tab, body, {
+    title: item.core?.title,
+    subtitle: card.achievement || item.core?.summary,
+    extraBadge: getEvidenceLabel(item.classification?.evidenceMaturity),
+  });
+}
+
+function renderPilotCard(item, tab) {
+  const card = item.card || {};
+  const body = `
+    ${renderCardCallout(uiText('direction'), card.collaborationDirection || item.core?.summary, 'route')}
+    ${renderCardMiniMeta([
+      { label: uiText('trl'), value: getTrlLabel(card.trl) },
+      { label: uiText('window'), value: pickLang(card.executionWindow?.label) || pickLang(card.validationStatus) },
+      { label: uiText('infrastructure'), value: asArray(card.infrastructure).slice(0, 3).join(' / ') },
+    ])}
+    ${renderChipList(asArray(card.infrastructure).slice(0, 4), 'bg-green-50 text-green-800 border-green-200', 4)}
+  `;
+  return renderCardShell(item, tab, body, {
+    title: item.core?.title,
+    subtitle: card.validationStatus || item.core?.summary,
+    extraBadge: getTrlLabel(card.trl) || getSectorLabel(item.core?.sector),
+  });
+}
+
+function renderMentoringCard(item, tab) {
+  const card = item.card || {};
+  const mentorName = pickLang(card.mentorName, pickLang(item.core?.entity?.name));
+  const badges = asArray(card.badges).map(badge => badge?.label || badge);
+  const body = `
+    <div class="mt-4 flex items-start gap-4 rounded-lg bg-eu-bg p-4">
+      <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-slate-800 text-sm font-extrabold text-white">${esc(getMentorInitials(mentorName))}</span>
+      <div>
+        <p class="text-sm font-bold text-eu-text">${esc(mentorName)}</p>
+        <p class="mt-1 text-sm leading-5 text-gray-600">${esc(pickLang(card.mentorRole || item.core?.summary))}</p>
+      </div>
+    </div>
+    ${renderChipList(asArray(card.specialties), 'bg-slate-100 text-slate-700 border-slate-200', 4)}
+    ${renderChipList(badges, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20', 3)}
+    ${renderCardMiniMeta([
+      { label: uiText('availability'), value: pickLang(card.availability) },
+      { label: uiText('tags'), value: card.quickChat ? 'Chat' : '' },
+    ])}
+  `;
+  return renderCardShell(item, tab, body, {
+    title: item.core?.title,
+    subtitle: card.organisation || item.core?.summary,
+    extraBadge: card.quickChat ? 'Chat' : getSectorLabel(item.core?.sector),
+  });
+}
+
+function renderGenericCard(item, tab) {
+  const body = `
+    ${renderCardCallout(uiText('featuredSignal'), item.core?.summary, 'sparkles')}
+    ${renderChipList(asArray(item.classification?.aiSteamFocus).map(getFocusLabel), 'bg-eu-bg text-gray-700 border-eu-border', 3)}
+  `;
+  return renderCardShell(item, tab, body, {
+    title: item.core?.title,
+    subtitle: item.core?.summary,
+    extraBadge: getSectorLabel(item.core?.sector),
+  });
 }
 
 function renderEmptyState(tab) {
