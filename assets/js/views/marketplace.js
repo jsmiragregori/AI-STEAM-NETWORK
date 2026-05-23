@@ -288,22 +288,20 @@ function renderHero() {
 function renderTabs(activeId) {
   const tabs = getTabs();
   return `
-    <div class="mx-auto max-w-7xl px-6">
-      <div class="-mt-7 overflow-x-auto rounded-2xl border border-eu-border bg-white p-2 shadow-sm" role="tablist" aria-label="${esc(uiText('activeTabHint'))}">
-        <div class="grid min-w-[44rem] grid-cols-4 gap-2 md:min-w-0">
-          ${tabs.map(tab => {
-            const active = tab.id === activeId;
-            const tone = TAB_TONES[tab.id] || TAB_TONES.challenges;
-            return `
-              <button type="button" role="tab" aria-selected="${active ? 'true' : 'false'}" data-mp-tab="${esc(tab.id)}"
-                class="group flex min-h-14 items-center gap-3 rounded-xl px-4 py-3 text-left text-sm font-bold transition-colors focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 ${active ? 'bg-eu-blue text-white shadow-sm' : 'text-eu-text hover:bg-eu-bg'}">
-                <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${active ? 'bg-white/15 text-white' : tone.icon}">
-                  <i data-lucide="${esc(tab.icon || 'layers-3')}" class="h-4 w-4"></i>
-                </span>
-                <span>${esc(pickLang(tab.label, tab.id))}</span>
-              </button>`;
-          }).join('')}
-        </div>
+    <div class="mx-auto max-w-7xl px-6 pt-8">
+      <div class="flex flex-wrap gap-1 border-b border-eu-border" role="tablist" aria-label="${esc(uiText('activeTabHint'))}">
+        ${tabs.map(tab => {
+          const active = tab.id === activeId;
+          return `
+            <button type="button" role="tab" aria-selected="${active ? 'true' : 'false'}" data-mp-tab="${esc(tab.id)}"
+              class="min-h-11 whitespace-nowrap border-b-2 px-4 py-2.5 text-sm font-semibold transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 ${
+                active
+                  ? 'border-eu-blue text-eu-blue'
+                  : 'border-transparent text-gray-600 hover:text-eu-text'
+              }">
+              ${esc(pickLang(tab.label, tab.id))}
+            </button>`;
+        }).join('')}
       </div>
     </div>`;
 }
