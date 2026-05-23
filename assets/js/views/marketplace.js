@@ -1042,6 +1042,159 @@ function renderTrackABlock(item) {
     </section>`;
 }
 
+/* ─── Narrative section renderers ─── */
+
+function renderSectionHeader(icon, title, accent = false) {
+  const iconBg = accent ? 'bg-eu-blue text-white' : 'bg-eu-blue/10 text-eu-blue';
+  return `
+    <div class="mb-5 flex items-center gap-3">
+      <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${iconBg}">
+        <i data-lucide="${esc(icon)}" class="h-5 w-5"></i>
+      </span>
+      <h2 class="text-base font-extrabold text-eu-text">${esc(title)}</h2>
+    </div>`;
+}
+
+function renderCallout(icon, labelText, body, tone = 'bg-eu-bg border-eu-border text-gray-500') {
+  if (!body) return '';
+  const [bg, border, labelColor] = tone.split(' ');
+  return `
+    <div class="mt-5 flex items-start gap-3 rounded-xl ${bg} p-4" style="border:1px solid rgba(0,0,0,0.07)">
+      <i data-lucide="${esc(icon)}" class="mt-0.5 h-5 w-5 shrink-0 ${labelColor || 'text-gray-500'}"></i>
+      <div>
+        <p class="text-xs font-extrabold uppercase tracking-wide ${labelColor || 'text-gray-500'}">${esc(labelText)}</p>
+        <p class="mt-1 text-sm leading-6 text-gray-700">${esc(body)}</p>
+      </div>
+    </div>`;
+}
+
+function renderKeyFact(label, value) {
+  if (!value) return '';
+  return `
+    <div class="rounded-xl bg-eu-bg p-4">
+      <p class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(label)}</p>
+      <p class="mt-1 text-sm font-semibold text-eu-text">${esc(value)}</p>
+    </div>`;
+}
+
+function renderChallengeBriefSection(item) {
+  const card = item.card || {};
+  const detail = item.detail || {};
+  const actionTitle = pickLang(card.actionTitle);
+  const need = pickLang(detail.need);
+  const reward = pickLang(card.reward);
+  const deadline = pickLang(card.deadlineMode) || pickLang(item.core?.deadlineLabel);
+  if (!actionTitle && !need && !reward) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+      ${renderSectionHeader('target', uiText('challengeBrief'), true)}
+      ${actionTitle ? `<p class="text-xl font-bold leading-snug text-eu-blue">${esc(actionTitle)}</p>` : ''}
+      ${need ? `<p class="mt-4 text-sm leading-7 text-gray-700">${esc(need)}</p>` : ''}
+      ${renderCallout('award', pickLang(FIELD_LABELS.reward), reward, 'bg-eu-orange/10 border-eu-orange/20 text-eu-orange')}
+      ${deadline ? `<p class="mt-4 flex items-center gap-2 text-sm text-gray-500"><i data-lucide="clock" class="h-4 w-4 shrink-0 text-eu-blue"></i>${esc(deadline)}</p>` : ''}
+    </section>`;
+}
+
+function renderCollaborationSection(item) {
+  const detail = item.detail || {};
+  const context = pickLang(detail.context);
+  const audience = pickLang(detail.participation?.audience);
+  const format = pickLang(detail.participation?.format);
+  const transferValue = pickLang(detail.transferValue);
+  if (!context && !audience && !format && !transferValue) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+      ${renderSectionHeader('users', uiText('collaborationMap'))}
+      ${context ? `<p class="text-sm leading-7 text-gray-700">${esc(context)}</p>` : ''}
+      ${audience || format ? `
+        <div class="mt-5 rounded-xl bg-eu-bg p-4">
+          ${audience ? `<div class="flex items-start gap-2"><i data-lucide="user-check" class="mt-0.5 h-4 w-4 shrink-0 text-eu-blue"></i><p class="text-sm leading-6 text-gray-700">${esc(audience)}</p></div>` : ''}
+          ${format ? `<div class="mt-3 flex items-start gap-2"><i data-lucide="send" class="mt-0.5 h-4 w-4 shrink-0 text-eu-blue"></i><p class="text-sm leading-6 text-gray-700">${esc(format)}</p></div>` : ''}
+        </div>` : ''}
+      ${transferValue ? `
+        <div class="mt-5 border-t border-eu-border pt-4">
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(getBlockLabel('transferValue') || pickLang(FIELD_LABELS.evidence))}</p>
+          <p class="text-sm leading-7 text-gray-700">${esc(transferValue)}</p>
+        </div>` : ''}
+    </section>`;
+}
+
+function renderTechnicalSection(item) {
+  const card = item.card || {};
+  const sdgSource = card.sdgs || card.validatedSdgs;
+  const competences = asArray(card.setCompetences).map(v => (typeof v === 'string' ? v : pickLang(v))).filter(Boolean);
+  const sdgs = asArray(sdgSource);
+  const ipModel = pickLang(card.ipModel);
+  if (!competences.length && !sdgs.length && !ipModel) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+      ${renderSectionHeader('settings-2', uiText('technicalBlocks'))}
+      ${competences.length ? `
+        <div>
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang(FIELD_LABELS.setCompetences))}</p>
+          <div class="flex flex-wrap gap-2">${competences.map(c => renderBadge(c, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20')).join('')}</div>
+        </div>` : ''}
+      ${sdgs.length ? `
+        <div class="${competences.length ? 'mt-5' : ''}">
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang(FIELD_LABELS.sdgs))}</p>
+          <div class="flex flex-wrap gap-2">
+            ${sdgs.map(sdg => {
+              const id = sdg?.id;
+              const lbl = pickLang(sdg?.label || sdg);
+              const text = id ? `ODS ${id}${lbl ? ' · ' + lbl : ''}` : lbl;
+              return text ? renderBadge(text, 'bg-green-50 text-green-800 border-green-200') : '';
+            }).filter(Boolean).join('')}
+          </div>
+        </div>` : ''}
+      ${ipModel ? `
+        <div class="${(competences.length || sdgs.length) ? 'mt-5' : ''} flex items-start gap-2">
+          <i data-lucide="shield" class="mt-0.5 h-4 w-4 shrink-0 text-gray-400"></i>
+          <p class="text-sm leading-6 text-gray-600">${esc(ipModel)}</p>
+        </div>` : ''}
+    </section>`;
+}
+
+function renderCaseEvidenceSection(item) {
+  const card = item.card || {};
+  const achievement = pickLang(card.achievement);
+  const actors = renderActorNames(card.actors);
+  const kpi = card.highlightKpi?.value
+    ? `${pickLang(card.highlightKpi.value)}${pickLang(card.highlightKpi.label) ? ' / ' + pickLang(card.highlightKpi.label) : ''}`
+    : pickLang(card.impactKpi);
+  const valorisation = pickLang(card.economicValue || card.valorisation);
+  if (!achievement && !actors && !kpi) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+      ${renderSectionHeader('trophy', uiText('detailCaseEvidence'), true)}
+      ${achievement ? `<p class="text-xl font-bold leading-snug text-eu-blue">${esc(achievement)}</p>` : ''}
+      ${actors ? `<p class="mt-3 flex items-center gap-2 text-sm text-gray-500"><i data-lucide="users" class="h-4 w-4 shrink-0"></i>${esc(actors)}</p>` : ''}
+      ${kpi || valorisation ? `
+        <div class="mt-5 grid gap-3 md:grid-cols-2">
+          ${renderKeyFact(pickLang(UI_TEXT.kpi), kpi)}
+          ${renderKeyFact(pickLang(UI_TEXT.valorisation), valorisation)}
+        </div>` : ''}
+    </section>`;
+}
+
+function renderPilotPlanSection(item) {
+  const card = item.card || {};
+  const direction = pickLang(card.collaborationDirection);
+  const trlLabel = getTrlLabel(card.trl);
+  const window = pickLang(card.executionWindow?.label) || pickLang(card.validationStatus);
+  const infra = asArray(card.infrastructure).join(' / ');
+  if (!direction && !trlLabel && !window && !infra) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+      ${renderSectionHeader('flask-conical', uiText('pilotValidationPlan'), true)}
+      ${direction ? `<p class="text-xl font-bold leading-snug text-eu-blue">${esc(direction)}</p>` : ''}
+      <div class="mt-5 grid gap-3 md:grid-cols-2">
+        ${renderKeyFact(pickLang(UI_TEXT.trl), trlLabel)}
+        ${renderKeyFact(pickLang(UI_TEXT.window), window)}
+        ${infra ? renderKeyFact(pickLang(UI_TEXT.infrastructure), infra) : ''}
+      </div>
+    </section>`;
+}
+
 function renderDetailHeader(item) {
   const title = pickLang(item.core?.title, item.id);
   const summary = pickLang(item.core?.summary);
@@ -1118,26 +1271,13 @@ function renderChallengeDetail(item) {
   const contactCards = renderContactCards(detail.people);
 
   return renderDetailLayout(item, [
-    renderDetailSection(uiText('challengeBrief'), 'target', [
-      renderDetailPair(FIELD_LABELS.actionTitle, item.card?.actionTitle || detail.need?.question),
-      renderDetailPair(FIELD_LABELS.needs, detail.need),
-      renderDetailPair(FIELD_LABELS.reward, item.card?.reward),
-    ]),
-    renderDetailSection(uiText('collaborationMap'), 'users', [
-      renderDetailPair(getBlockLabel('context'), detail.context),
-      renderDetailPair(getBlockLabel('participation'), detail.participation),
-      resourceRows ? '' : renderDetailPair(getBlockLabel('resources'), detail.resources),
-      deliverables ? '' : renderDetailPair(getBlockLabel('outputs'), detail.outputs),
-    ]),
+    renderChallengeBriefSection(item),
+    renderCollaborationSection(item),
     resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : '',
     deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
     milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : '',
     contactCards ? renderStructuredSection(getBlockLabel('people'), 'user-round-check', contactCards) : '',
-    renderDetailSection(uiText('technicalBlocks'), 'settings-2', [
-      renderDetailPair(FIELD_LABELS.setCompetences, item.card?.setCompetences),
-      renderDetailPair(FIELD_LABELS.sdgs, item.card?.sdgs),
-      renderDetailPair('IP', item.card?.ipModel),
-    ]),
+    renderTechnicalSection(item),
     renderTrackABlock(item),
   ].join(''), renderDetailChipPanel(item));
 }
@@ -1148,24 +1288,11 @@ function renderCaseDetail(item) {
   const deliverables = renderDeliverableList(detail.outputs);
 
   return renderDetailLayout(item, [
-    renderDetailSection(uiText('detailCaseEvidence'), 'trophy', [
-      renderDetailPair(FIELD_LABELS.featuredSignal, item.card?.achievement),
-      renderDetailPair(FIELD_LABELS.actors, item.card?.actors),
-      renderDetailPair(UI_TEXT.kpi, item.card?.highlightKpi || item.card?.impactKpi),
-      renderDetailPair(UI_TEXT.valorisation, item.card?.economicValue || item.card?.valorisation),
-    ]),
-    renderDetailSection(getBlockLabel('context'), 'map', [
-      renderDetailPair(getBlockLabel('context'), detail.context),
-      contactCards ? '' : renderDetailPair(getBlockLabel('people'), detail.people),
-      deliverables ? '' : renderDetailPair(getBlockLabel('outputs'), detail.outputs),
-    ]),
+    renderCaseEvidenceSection(item),
+    renderCollaborationSection(item),
     contactCards ? renderStructuredSection(getBlockLabel('people'), 'user-round-check', contactCards) : '',
     deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
-    renderDetailSection(getBlockLabel('evidence'), 'bar-chart-3', [
-      renderDetailPair(getBlockLabel('evidence'), detail.evidence),
-      renderDetailPair(getBlockLabel('transferValue'), detail.transferValue),
-      renderDetailPair(FIELD_LABELS.sdgs, item.card?.validatedSdgs || item.card?.sdgs),
-    ]),
+    renderTechnicalSection(item),
   ].join(''), renderDetailChipPanel(item));
 }
 
@@ -1176,48 +1303,72 @@ function renderPilotDetail(item) {
   const deliverables = renderDeliverableList(detail.outputs);
 
   return renderDetailLayout(item, [
-    renderDetailSection(uiText('pilotValidationPlan'), 'flask-conical', [
-      renderDetailPair(UI_TEXT.direction, item.card?.collaborationDirection),
-      renderDetailPair(UI_TEXT.trl, item.card?.trl),
-      renderDetailPair(UI_TEXT.window, item.card?.executionWindow || item.card?.validationStatus),
-      renderDetailPair(UI_TEXT.infrastructure, item.card?.infrastructure),
-    ]),
-    renderDetailSection(getBlockLabel('process'), 'route', [
-      renderDetailPair(getBlockLabel('context'), detail.context),
-      renderDetailPair(getBlockLabel('participation'), detail.participation),
-      milestones ? '' : renderDetailPair(getBlockLabel('process'), detail.process),
-    ]),
+    renderPilotPlanSection(item),
+    renderCollaborationSection(item),
     milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : '',
-    renderDetailSection(getBlockLabel('evidence'), 'bar-chart-3', [
-      resourceRows ? '' : renderDetailPair(getBlockLabel('resources'), detail.resources),
-      renderDetailPair(getBlockLabel('evidence'), detail.evidence),
-      deliverables ? '' : renderDetailPair(getBlockLabel('outputs'), detail.outputs),
-    ]),
     resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : '',
     deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
+    renderTechnicalSection(item),
   ].join(''), renderDetailChipPanel(item));
 }
 
 function renderMentoringDetail(item) {
+  const card = item.card || {};
+  const detail = item.detail || {};
+  const mentorName = pickLang(card.mentorName);
+  const mentorRole = pickLang(card.mentorRole);
+  const organisation = pickLang(card.organisation);
+  const specialties = asArray(card.specialties).map(v => (typeof v === 'string' ? v : pickLang(v))).filter(Boolean);
+  const badges = asArray(card.badges).map(v => (typeof v === 'string' ? v : pickLang(v))).filter(Boolean);
+  const availability = pickLang(card.availability);
+  const context = pickLang(detail.context);
+  const participation = pickLang(detail.participation);
+  const transferValue = pickLang(detail.transferValue);
+  const mentorProfile = `
+    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+      ${renderSectionHeader('messages-square', uiText('mentoringSupport'), true)}
+      ${mentorName ? `<p class="text-xl font-bold leading-snug text-eu-blue">${esc(mentorName)}</p>` : ''}
+      ${mentorRole ? `<p class="mt-1 text-sm font-semibold text-gray-600">${esc(mentorRole)}</p>` : ''}
+      ${organisation ? `
+        <div class="mt-3 flex items-center gap-2 text-sm text-gray-500">
+          <i data-lucide="building-2" class="h-4 w-4 shrink-0 text-eu-blue"></i>
+          <span>${esc(organisation)}</span>
+        </div>` : ''}
+      ${availability ? `
+        <div class="mt-2 flex items-center gap-2 text-sm text-gray-500">
+          <i data-lucide="calendar-check" class="h-4 w-4 shrink-0 text-eu-blue"></i>
+          <span>${esc(availability)}</span>
+        </div>` : ''}
+      ${specialties.length ? `
+        <div class="mt-5">
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang(FIELD_LABELS.specialties))}</p>
+          <div class="flex flex-wrap gap-2">${specialties.map(s => renderBadge(s, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20')).join('')}</div>
+        </div>` : ''}
+      ${badges.length ? `
+        <div class="mt-4">
+          <div class="flex flex-wrap gap-2">${badges.map(b => renderBadge(b, 'bg-eu-orange/10 text-eu-orange border-eu-orange/20')).join('')}</div>
+        </div>` : ''}
+    </section>`;
+
   return renderDetailLayout(item, [
-    renderDetailSection(uiText('mentoringSupport'), 'messages-square', [
-      renderDetailPair(FIELD_LABELS.mentorName, item.card?.mentorName),
-      renderDetailPair(FIELD_LABELS.mentorRole, item.card?.mentorRole),
-      renderDetailPair(FIELD_LABELS.organisation, item.card?.organisation),
-      renderDetailPair(FIELD_LABELS.specialties, item.card?.specialties),
-      renderDetailPair(FIELD_LABELS.badges, item.card?.badges),
-      renderDetailPair(FIELD_LABELS.availability, item.card?.availability),
-    ]),
-    renderDetailSection(getBlockLabel('participation'), 'users', [
-      renderDetailPair(getBlockLabel('context'), item.detail?.context),
-      renderDetailPair(getBlockLabel('participation'), item.detail?.participation),
-      renderDetailPair(getBlockLabel('people'), item.detail?.people),
-    ]),
-    renderDetailSection(getBlockLabel('transferValue'), 'repeat-2', [
-      renderDetailPair(getBlockLabel('transferValue'), item.detail?.transferValue),
-      renderDetailPair(getBlockLabel('process'), item.detail?.process),
-      renderDetailPair(getBlockLabel('outputs'), item.detail?.outputs),
-    ]),
+    mentorProfile,
+    (context || participation) ? `
+      <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+        ${renderSectionHeader('users', getBlockLabel('participation') || pickLang({ es: 'Colaboración', en: 'Collaboration', va: 'Col·laboració' }))}
+        ${context ? `<p class="text-sm leading-7 text-gray-700">${esc(context)}</p>` : ''}
+        ${participation ? `
+          <div class="mt-4 rounded-xl bg-eu-bg p-4">
+            <div class="flex items-start gap-2">
+              <i data-lucide="user-check" class="mt-0.5 h-4 w-4 shrink-0 text-eu-blue"></i>
+              <p class="text-sm leading-6 text-gray-700">${esc(participation)}</p>
+            </div>
+          </div>` : ''}
+        ${transferValue ? `
+          <div class="mt-5 border-t border-eu-border pt-4">
+            <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(getBlockLabel('transferValue') || '')}</p>
+            <p class="text-sm leading-7 text-gray-700">${esc(transferValue)}</p>
+          </div>` : ''}
+      </section>` : '',
   ].join(''), renderDetailChipPanel(item));
 }
 
@@ -1358,27 +1509,42 @@ function renderTraceabilityPanel(item) {
 }
 
 function renderOperationalSummary(item) {
-  const rows = [
-    [FIELD_LABELS.entity, pickLang(item.core?.entity?.name)],
-    [{ es: 'Tipo', en: 'Type', va: 'Tipus' }, getTypeLabel(item.type)],
-    [{ es: 'Estado', en: 'Status', va: 'Estat' }, getStatusLabel(item.core?.status)],
-    [{ es: 'Sector', en: 'Sector', va: 'Sector' }, getSectorLabel(item.core?.sector)],
-    [{ es: 'Madurez', en: 'Maturity', va: 'Maduresa' }, getEvidenceLabel(item.classification?.evidenceMaturity)],
-    [{ es: 'Participacion', en: 'Participation', va: 'Participacio' }, getEngagementLabel(item.classification?.engagementLevel)],
-    [UI_TEXT.created, pickLang(item.core?.publishedAtLabel)],
-    [UI_TEXT.updated, pickLang(item.core?.revisionDateLabel)],
-  ].filter(([, value]) => value !== undefined && value !== null && value !== '');
+  const entity = pickLang(item.core?.entity?.name);
+  const status = getStatusLabel(item.core?.status);
+  const typeLabel = getTypeLabel(item.type);
+  const sector = getSectorLabel(item.core?.sector);
+  const maturity = getEvidenceLabel(item.classification?.evidenceMaturity);
+  const engagement = getEngagementLabel(item.classification?.engagementLevel);
+  const created = pickLang(item.core?.publishedAtLabel);
+  const updated = pickLang(item.core?.revisionDateLabel);
+
+  const metaRows = [
+    sector && [uiText('sector') || 'Sector', sector],
+    maturity && [pickLang({ es: 'Madurez', en: 'Maturity', va: 'Maduresa' }), maturity],
+    engagement && [pickLang({ es: 'Participación', en: 'Participation', va: 'Participació' }), engagement],
+    created && [pickLang(UI_TEXT.created), created],
+    updated && [pickLang(UI_TEXT.updated), updated],
+  ].filter(Boolean);
 
   return `
     <section class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
-      <h2 class="text-base font-extrabold text-eu-text">${esc(uiText('operationalSummary'))}</h2>
-      <dl class="mt-4 space-y-4">
-        ${rows.map(([label, value]) => `
-          <div>
-            <dt class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang(label))}</dt>
-            <dd class="mt-1 text-sm font-semibold leading-6 text-gray-700">${esc(value)}</dd>
-          </div>`).join('')}
-      </dl>
+      <div class="mb-4 flex flex-wrap items-center gap-2">
+        ${status ? renderBadge(status, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20') : ''}
+        ${typeLabel ? renderBadge(typeLabel, 'bg-eu-bg text-gray-600 border-eu-border') : ''}
+      </div>
+      ${entity ? `
+        <div class="flex items-start gap-2">
+          <i data-lucide="building-2" class="mt-0.5 h-4 w-4 shrink-0 text-eu-blue"></i>
+          <p class="text-sm font-bold leading-snug text-eu-text">${esc(entity)}</p>
+        </div>` : ''}
+      ${metaRows.length ? `
+        <dl class="mt-4 space-y-2 border-t border-eu-border pt-4">
+          ${metaRows.map(([label, value]) => `
+            <div class="flex items-baseline justify-between gap-2">
+              <dt class="shrink-0 text-xs font-bold uppercase tracking-wide text-gray-400">${esc(label)}</dt>
+              <dd class="text-right text-xs font-semibold text-gray-700">${esc(value)}</dd>
+            </div>`).join('')}
+        </dl>` : ''}
     </section>`;
 }
 
