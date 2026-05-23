@@ -23,6 +23,11 @@ const UI_TEXT = {
     en: 'Created',
     va: 'Creat',
   },
+  clearFilters: {
+    es: 'Limpiar filtros',
+    en: 'Clear filters',
+    va: 'Netejar filtres',
+  },
   detailEmpty: {
     es: 'Este elemento todavia no tiene bloques de detalle publicados.',
     en: 'This item does not have published detail blocks yet.',
@@ -58,6 +63,11 @@ const UI_TEXT = {
     en: 'Actors',
     va: 'Actors',
   },
+  all: {
+    es: 'Todos',
+    en: 'All',
+    va: 'Tots',
+  },
   availability: {
     es: 'Disponibilidad',
     en: 'Availability',
@@ -82,6 +92,11 @@ const UI_TEXT = {
     es: 'Infraestructura',
     en: 'Infrastructure',
     va: 'Infraestructura',
+  },
+  filterBy: {
+    es: 'Filtrar por',
+    en: 'Filter by',
+    va: 'Filtrar per',
   },
   items: {
     es: 'Elementos',
@@ -108,15 +123,40 @@ const UI_TEXT = {
     en: 'Open',
     va: 'Oberts',
   },
+  noResults: {
+    es: 'No hay elementos con estos filtros',
+    en: 'No items match these filters',
+    va: 'No hi ha elements amb aquests filtres',
+  },
   reward: {
     es: 'Recompensa',
     en: 'Reward',
     va: 'Recompensa',
   },
+  search: {
+    es: 'Buscar',
+    en: 'Search',
+    va: 'Buscar',
+  },
+  searchPlaceholder: {
+    es: 'Buscar en esta subseccion',
+    en: 'Search this subsection',
+    va: 'Buscar en aquesta subseccio',
+  },
   sdgs: {
     es: 'ODS',
     en: 'SDGs',
     va: 'ODS',
+  },
+  sector: {
+    es: 'Sector',
+    en: 'Sector',
+    va: 'Sector',
+  },
+  status: {
+    es: 'Estado',
+    en: 'Status',
+    va: 'Estat',
   },
   tags: {
     es: 'Etiquetas',
@@ -428,6 +468,185 @@ function renderActivitySummary(tab, items) {
     </aside>`;
 }
 
+function getFilterStorageKey(tabId) {
+  return `mpCommunityFilters:${tabId}`;
+}
+
+function getTabFilterState(tabId) {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(getFilterStorageKey(tabId)) || '{}');
+    return {
+      search: typeof parsed.search === 'string' ? parsed.search : '',
+      values: parsed.values && typeof parsed.values === 'object' ? parsed.values : {},
+    };
+  } catch {
+    return { search: '', values: {} };
+  }
+}
+
+function setTabFilterState(tabId, state) {
+  localStorage.setItem(getFilterStorageKey(tabId), JSON.stringify({
+    search: state.search || '',
+    values: state.values || {},
+  }));
+}
+
+function clearTabFilterState(tabId) {
+  localStorage.removeItem(getFilterStorageKey(tabId));
+}
+
+function normalizeText(value) {
+  return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+function getSearchHaystack(item) {
+  return [
+    pickLang(item.core?.title),
+    pickLang(item.core?.summary),
+    pickLang(item.core?.entity?.name),
+    getTypeLabel(item.type),
+    getStatusLabel(item.core?.status),
+    getSectorLabel(item.core?.sector),
+    pickLang(item.classification?.trackBValue),
+    renderPlainValue(item.card),
+  ].join(' ');
+}
+
+function renderPlainValue(value) {
+  if (value === null || value === undefined || value === false) return '';
+  if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') return String(value);
+  if (Array.isArray(value)) return value.map(renderPlainValue).filter(Boolean).join(' ');
+  if (isLocalizedObject(value)) return pickLang(value);
+  return Object.values(value).map(renderPlainValue).filter(Boolean).join(' ');
+}
+
+function getItemFilterValue(item, key) {
+  const card = item.card || {};
+  if (key === 'sector') return getSectorCode(item.core?.sector);
+  if (key === 'status') return item.core?.status;
+  if (key === 'competency') return asArray(card.setCompetences);
+  if (key === 'sdg') return asArray(card.sdgs || card.validatedSdgs).map(sdg => sdg?.id ? String(sdg.id) : pickLang(sdg?.label || sdg));
+  if (key === 'impact') return item.classification?.evidenceMaturity || (card.highlightKpi || card.impactKpi ? 'with-kpi' : '');
+  if (key === 'trl') return card.trl?.level ? String(card.trl.level) : '';
+  if (key === 'infrastructure') return asArray(card.infrastructure);
+  if (key === 'window') return item.core?.status || pickLang(card.validationStatus) || pickLang(card.executionWindow?.label);
+  if (key === 'specialty') return asArray(card.specialties);
+  if (key === 'availability') return card.quickChat ? 'chat' : pickLang(card.availability);
+  if (key === 'organisation') return card.organisation || pickLang(item.core?.entity?.name);
+  return '';
+}
+
+function getFilterDefinitions(tabId) {
+  const common = {
+    sector: { key: 'sector', label: uiText('filterBy') + ' ' + uiText('sector'), labeler: getSectorLabel },
+    status: { key: 'status', label: uiText('filterBy') + ' ' + uiText('status'), labeler: getStatusLabel },
+    sdg: { label: uiText('filterBy') + ' ' + uiText('sdgs'), labeler: value => `ODS ${value}` },
+  };
+  if (tabId === 'challenges') {
+    return [
+      common.sector,
+      { key: 'competency', label: uiText('filterBy') + ' ' + uiText('competencies'), labeler: value => value },
+      { ...common.sdg, key: 'sdg' },
+      common.status,
+    ];
+  }
+  if (tabId === 'cases') {
+    return [
+      common.sector,
+      { key: 'impact', label: uiText('filterBy') + ' ' + uiText('kpi'), labeler: value => value === 'with-kpi' ? uiText('kpi') : getEvidenceLabel(value) },
+      { ...common.sdg, key: 'sdg' },
+    ];
+  }
+  if (tabId === 'pilots-validations') {
+    return [
+      { key: 'trl', label: uiText('filterBy') + ' ' + uiText('trl'), labeler: value => `TRL ${value}` },
+      { key: 'infrastructure', label: uiText('filterBy') + ' ' + uiText('infrastructure'), labeler: value => value },
+      { key: 'window', label: uiText('filterBy') + ' ' + uiText('window'), labeler: value => getStatusLabel(value) || value },
+    ];
+  }
+  if (tabId === 'mentorings') {
+    return [
+      { key: 'specialty', label: uiText('filterBy') + ' ' + pickLang(FIELD_LABELS.specialties), labeler: value => value },
+      { key: 'availability', label: uiText('filterBy') + ' ' + uiText('availability'), labeler: value => value === 'chat' ? 'Chat' : value },
+      { key: 'organisation', label: uiText('filterBy') + ' ' + pickLang(FIELD_LABELS.organisation), labeler: value => value },
+    ];
+  }
+  return [common.sector, common.status];
+}
+
+function getFilterOptions(items, definition) {
+  const values = [...new Set(items.flatMap(item => asArray(getItemFilterValue(item, definition.key))))].filter(Boolean);
+  return values
+    .map(value => ({ value, label: definition.labeler ? definition.labeler(value) : value }))
+    .filter(option => option.label)
+    .sort((a, b) => String(a.label).localeCompare(String(b.label)));
+}
+
+function itemMatchesTabFilters(item, filterState, definitions) {
+  const search = normalizeText(filterState.search);
+  if (search && !normalizeText(getSearchHaystack(item)).includes(search)) return false;
+  return definitions.every(definition => {
+    const selected = filterState.values?.[definition.key];
+    if (!selected) return true;
+    return asArray(getItemFilterValue(item, definition.key)).map(String).includes(String(selected));
+  });
+}
+
+function getFilteredTabItems(tabId, items) {
+  const filterState = getTabFilterState(tabId);
+  const definitions = getFilterDefinitions(tabId);
+  return items.filter(item => itemMatchesTabFilters(item, filterState, definitions));
+}
+
+function renderTabFilters(tab, items) {
+  const state = getTabFilterState(tab.id);
+  const definitions = getFilterDefinitions(tab.id);
+  const activeCount = Object.values(state.values || {}).filter(Boolean).length + (state.search ? 1 : 0);
+  return `
+    <div class="mt-6 rounded-xl border border-eu-border bg-white p-4 shadow-sm">
+      <div class="grid gap-3 lg:grid-cols-[minmax(14rem,1fr)_auto] lg:items-end">
+        <label class="block">
+          <span class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('search'))}</span>
+          <span class="relative mt-1 block">
+            <i data-lucide="search" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400"></i>
+            <input id="mp-tab-search" type="search" value="${esc(state.search)}" placeholder="${esc(uiText('searchPlaceholder'))}"
+              class="min-h-11 w-full rounded-lg border border-eu-border bg-white py-2 pl-9 pr-3 text-sm outline-none focus:border-eu-blue focus:ring-2 focus:ring-eu-blue">
+          </span>
+        </label>
+        <button id="mp-clear-tab-filters" type="button" class="inline-flex min-h-11 items-center justify-center rounded-lg border border-eu-border px-3 py-2 text-xs font-bold text-gray-600 transition-colors hover:border-eu-blue hover:text-eu-blue focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 ${activeCount ? '' : 'opacity-50'}">
+          ${esc(uiText('clearFilters'))}${activeCount ? ` (${activeCount})` : ''}
+        </button>
+      </div>
+      <div class="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+        ${definitions.map(definition => {
+          const options = getFilterOptions(items, definition);
+          if (!options.length) return '';
+          return `
+            <label class="block">
+              <span class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(definition.label)}</span>
+              <select data-mp-filter="${esc(definition.key)}" class="mt-1 min-h-11 w-full rounded-lg border border-eu-border bg-white px-3 py-2 text-sm outline-none focus:border-eu-blue focus:ring-2 focus:ring-eu-blue">
+                <option value="">${esc(uiText('all'))}</option>
+                ${options.map(option => `<option value="${esc(option.value)}" ${String(state.values?.[definition.key] || '') === String(option.value) ? 'selected' : ''}>${esc(option.label)}</option>`).join('')}
+              </select>
+            </label>`;
+        }).join('')}
+      </div>
+    </div>`;
+}
+
+function renderTabResults(tab, items) {
+  const filtered = getFilteredTabItems(tab.id, items);
+  if (!filtered.length) {
+    return `
+      <div class="rounded-2xl border border-dashed border-eu-border bg-white p-8 text-center shadow-sm">
+        <i data-lucide="search-x" class="mx-auto h-8 w-8 text-gray-400"></i>
+        <h3 class="mt-3 text-lg font-extrabold text-eu-text">${esc(uiText('noResults'))}</h3>
+        <p class="mx-auto mt-2 max-w-xl text-sm leading-6 text-gray-500">${esc(pickLang(tab.emptyState?.message))}</p>
+      </div>`;
+  }
+  return `<div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">${filtered.map(item => renderItemCard(item, tab)).join('')}</div>`;
+}
+
 function renderSummaryMetric(label, value) {
   return `
     <div class="rounded-xl border border-eu-border bg-eu-bg px-4 py-3">
@@ -667,8 +886,9 @@ function renderTabPanel(tab, items) {
             </div>
           </div>
 
-          <div class="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-            ${items.length ? items.map(item => renderItemCard(item, tab)).join('') : renderEmptyState(tab)}
+          ${items.length ? renderTabFilters(tab, items) : ''}
+          <div id="mp-tab-results" class="mt-6">
+            ${items.length ? renderTabResults(tab, items) : renderEmptyState(tab)}
           </div>
         </div>
         ${renderActivitySummary(tab, items)}
@@ -1069,11 +1289,54 @@ export function mount() {
     scrollToTop();
   });
 
+  document.getElementById('mp-tab-search')?.addEventListener('input', event => {
+    const tabId = getActiveTabId();
+    const state = getTabFilterState(tabId);
+    state.search = event.target.value;
+    setTabFilterState(tabId, state);
+    updateTabResults();
+  });
+
+  document.querySelectorAll('[data-mp-filter]').forEach(select => {
+    select.addEventListener('change', () => {
+      const tabId = getActiveTabId();
+      const state = getTabFilterState(tabId);
+      state.values = { ...(state.values || {}), [select.dataset.mpFilter]: select.value };
+      if (!select.value) delete state.values[select.dataset.mpFilter];
+      setTabFilterState(tabId, state);
+      updateTabResults();
+    });
+  });
+
+  document.getElementById('mp-clear-tab-filters')?.addEventListener('click', () => {
+    const tabId = getActiveTabId();
+    clearTabFilterState(tabId);
+    rerender();
+  });
+
   window.onpopstate = () => {
     if (!getState('selectedChallengeId')) return;
     setState('selectedChallengeId', null);
     rerender();
   };
+}
+
+function updateTabResults() {
+  const activeTab = getActiveTab();
+  if (!activeTab) return;
+  const items = getItemsForTab(activeTab.id);
+  const target = document.getElementById('mp-tab-results');
+  if (!target) return;
+  target.innerHTML = renderTabResults(activeTab, items);
+  document.querySelectorAll('#mp-tab-results .mp-view-detail').forEach(button => {
+    button.addEventListener('click', () => {
+      setState('selectedChallengeId', button.dataset.id);
+      window.history.pushState({ itemId: button.dataset.id }, '', window.location.pathname);
+      rerender();
+      scrollToTop();
+    });
+  });
+  if (window.lucide) window.lucide.createIcons();
 }
 
 function rerender() {
