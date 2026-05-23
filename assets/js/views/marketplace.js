@@ -910,6 +910,138 @@ function renderList() {
     ${renderTabPanel(tab, items)}`;
 }
 
+function formatDateShort(isoStr) {
+  if (!isoStr) return '';
+  try {
+    const d = new Date(isoStr + 'T00:00:00');
+    const lang = getLang();
+    const locale = lang === 'en' ? 'en-GB' : lang === 'va' ? 'ca-ES' : 'es-ES';
+    return d.toLocaleDateString(locale, { month: 'short', year: 'numeric' });
+  } catch {
+    return isoStr;
+  }
+}
+
+function renderStructuredSection(title, icon, contentHtml) {
+  if (!contentHtml) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+      <div class="mb-4 flex items-center gap-3">
+        <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-eu-blue/10 text-eu-blue">
+          <i data-lucide="${esc(icon)}" class="h-5 w-5"></i>
+        </span>
+        <h2 class="text-base font-extrabold text-eu-text">${esc(pickLang(title, title))}</h2>
+      </div>
+      ${contentHtml}
+    </section>`;
+}
+
+function renderContactCards(people) {
+  const contacts = asArray(people?.contacts);
+  if (!contacts.length) return '';
+  return `<div class="space-y-3">
+    ${contacts.map(contact => {
+      const name = contact.name || '';
+      const role = pickLang(contact.role);
+      const org = contact.org || '';
+      const initials = name.split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]?.toUpperCase()).join('') || '?';
+      const meta = [role, org].filter(Boolean).join(' · ');
+      return `
+        <div class="flex items-center gap-3 rounded-lg border border-eu-border bg-eu-bg p-3">
+          <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-eu-blue text-sm font-extrabold text-white">${esc(initials)}</span>
+          <div class="min-w-0">
+            <p class="text-sm font-bold text-eu-text">${esc(name)}</p>
+            ${meta ? `<p class="mt-0.5 truncate text-xs text-gray-500">${esc(meta)}</p>` : ''}
+          </div>
+        </div>`;
+    }).join('')}
+  </div>`;
+}
+
+function renderMilestoneList(process) {
+  const milestones = asArray(process?.milestones);
+  if (!milestones.length) return '';
+  return `<ol>
+    ${milestones.map((ms, i) => {
+      const dateLabel = formatDateShort(ms.date);
+      const label = pickLang(ms.label || ms);
+      if (!label) return '';
+      const isLast = i === milestones.length - 1;
+      return `<li class="flex gap-3">
+        <div class="flex flex-col items-center">
+          <span class="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-eu-blue" style="min-width:0.625rem"></span>
+          ${!isLast ? `<span class="mt-1 w-px flex-1 bg-gray-200" style="min-height:1.5rem"></span>` : ''}
+        </div>
+        <div class="${isLast ? '' : 'pb-4'} min-w-0">
+          ${dateLabel ? `<p class="text-xs font-bold text-eu-blue">${esc(dateLabel)}</p>` : ''}
+          <p class="mt-0.5 text-sm text-gray-700">${esc(label)}</p>
+        </div>
+      </li>`;
+    }).join('')}
+  </ol>`;
+}
+
+function renderDeliverableList(outputs) {
+  const expected = asArray(outputs?.expected);
+  if (!expected.length) return '';
+  return `<ul class="space-y-2">
+    ${expected.map(item => {
+      const label = pickLang(item?.label || item);
+      if (!label) return '';
+      return `<li class="flex items-start gap-2">
+        <i data-lucide="check" class="mt-0.5 h-4 w-4 shrink-0 text-green-600"></i>
+        <span class="text-sm text-gray-700">${esc(label)}</span>
+      </li>`;
+    }).filter(Boolean).join('')}
+  </ul>`;
+}
+
+function renderResourceRows(resources) {
+  const available = asArray(resources?.available);
+  if (!available.length) return '';
+  return `<ul class="space-y-2">
+    ${available.map(resource => {
+      const label = pickLang(resource?.label || resource);
+      if (!label) return '';
+      const format = resource?.format || '';
+      const license = resource?.license || '';
+      return `<li class="flex items-center justify-between gap-3 rounded-lg border border-eu-border bg-eu-bg p-3">
+        <div class="flex items-center gap-2 min-w-0">
+          <i data-lucide="file-text" class="h-4 w-4 shrink-0 text-eu-blue"></i>
+          <span class="text-sm font-semibold text-gray-700 truncate">${esc(label)}</span>
+        </div>
+        <div class="flex shrink-0 gap-1">
+          ${format ? renderBadge(format) : ''}
+          ${license ? renderBadge(license, 'bg-green-50 text-green-800 border-green-200') : ''}
+        </div>
+      </li>`;
+    }).filter(Boolean).join('')}
+  </ul>`;
+}
+
+function renderTrackABlock(item) {
+  const trackA = getBlockContent(item, 'trackA');
+  if (!trackA || trackA.enabled === false) return '';
+  const label = pickLang(trackA.label);
+  if (!label) return '';
+  const url = pickLang(trackA.url);
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
+      <div class="mb-4 flex items-center gap-3">
+        <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-eu-blue/10 text-eu-blue">
+          <i data-lucide="graduation-cap" class="h-5 w-5"></i>
+        </span>
+        <h2 class="text-base font-extrabold text-eu-text">${esc(getBlockLabel('trackA') || 'Track A')}</h2>
+      </div>
+      <p class="text-sm leading-6 text-gray-700">${esc(label)}</p>
+      ${url ? `
+        <a href="${esc(url)}" class="mt-4 inline-flex min-h-11 items-center gap-2 rounded-lg bg-eu-blue px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
+          ${esc(uiText('viewDetail'))}
+          <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </a>` : ''}
+    </section>`;
+}
+
 function renderDetailHeader(item) {
   const title = pickLang(item.core?.title, item.id);
   const summary = pickLang(item.core?.summary);
@@ -917,6 +1049,8 @@ function renderDetailHeader(item) {
   const tab = getTabs().find(candidate => candidate.id === item.tab) || getActiveTab();
   const tone = TAB_TONES[tab?.id] || TAB_TONES.challenges;
   const dateLabel = getItemDateLabel(item);
+  const featuredSignal = pickLang(item.community?.featuredSignal);
+  const deadline = pickLang(item.card?.deadlineMode) || pickLang(item.core?.deadlineLabel);
 
   return `
     <section class="bg-eu-blue px-6 py-12 text-white">
@@ -933,9 +1067,15 @@ function renderDetailHeader(item) {
         </div>
         <h1 class="mt-5 max-w-4xl text-3xl font-extrabold leading-tight md:text-4xl">${esc(title)}</h1>
         ${summary ? `<p class="mt-4 max-w-4xl text-base leading-7 text-white/80">${esc(summary)}</p>` : ''}
-        <div class="mt-6 flex flex-wrap items-center gap-6 text-sm font-semibold text-white/75">
+        ${featuredSignal ? `
+          <div class="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-semibold text-white">
+            <i data-lucide="zap" class="h-4 w-4 text-eu-yellow"></i>
+            ${esc(featuredSignal)}
+          </div>` : ''}
+        <div class="mt-6 flex flex-wrap items-center gap-4 text-sm font-semibold text-white/75">
           ${entity ? `<span class="inline-flex items-center gap-2"><i data-lucide="building-2" class="h-4 w-4"></i>${esc(entity)}</span>` : ''}
-          ${dateLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="calendar" class="h-4 w-4"></i>${esc(dateLabel)}</span>` : ''}
+          ${deadline ? `<span class="inline-flex items-center gap-2 rounded border border-white/20 bg-white/10 px-2 py-1"><i data-lucide="clock" class="h-4 w-4"></i>${esc(deadline)}</span>` : ''}
+          ${!deadline && dateLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="calendar" class="h-4 w-4"></i>${esc(dateLabel)}</span>` : ''}
           <span class="inline-flex items-center gap-2 ${tone.badge} rounded border px-2 py-1">${esc(getSectorLabel(item.core?.sector))}</span>
         </div>
       </div>
@@ -971,28 +1111,42 @@ function renderDetailLayout(item, mainHtml, sidebarHtml = '') {
 }
 
 function renderChallengeDetail(item) {
+  const detail = item.detail || {};
+  const resourceRows = renderResourceRows(detail.resources);
+  const deliverables = renderDeliverableList(detail.outputs);
+  const milestones = renderMilestoneList(detail.process);
+  const contactCards = renderContactCards(detail.people);
+
   return renderDetailLayout(item, [
     renderDetailSection(uiText('challengeBrief'), 'target', [
-      renderDetailPair(FIELD_LABELS.actionTitle, item.card?.actionTitle || item.detail?.need?.question),
-      renderDetailPair(FIELD_LABELS.needs, item.detail?.need),
+      renderDetailPair(FIELD_LABELS.actionTitle, item.card?.actionTitle || detail.need?.question),
+      renderDetailPair(FIELD_LABELS.needs, detail.need),
       renderDetailPair(FIELD_LABELS.reward, item.card?.reward),
-      renderDetailPair(UI_TEXT.deadline, item.card?.deadlineMode || item.core?.deadlineLabel),
     ]),
     renderDetailSection(uiText('collaborationMap'), 'users', [
-      renderDetailPair(getBlockLabel('context'), item.detail?.context),
-      renderDetailPair(getBlockLabel('participation'), item.detail?.participation),
-      renderDetailPair(getBlockLabel('resources'), item.detail?.resources),
+      renderDetailPair(getBlockLabel('context'), detail.context),
+      renderDetailPair(getBlockLabel('participation'), detail.participation),
+      resourceRows ? '' : renderDetailPair(getBlockLabel('resources'), detail.resources),
+      deliverables ? '' : renderDetailPair(getBlockLabel('outputs'), detail.outputs),
     ]),
+    resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : '',
+    deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
+    milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : '',
+    contactCards ? renderStructuredSection(getBlockLabel('people'), 'user-round-check', contactCards) : '',
     renderDetailSection(uiText('technicalBlocks'), 'settings-2', [
       renderDetailPair(FIELD_LABELS.setCompetences, item.card?.setCompetences),
       renderDetailPair(FIELD_LABELS.sdgs, item.card?.sdgs),
       renderDetailPair('IP', item.card?.ipModel),
-      renderDetailPair(getBlockLabel('trackA'), getBlockContent(item, 'trackA')),
     ]),
+    renderTrackABlock(item),
   ].join(''), renderDetailChipPanel(item));
 }
 
 function renderCaseDetail(item) {
+  const detail = item.detail || {};
+  const contactCards = renderContactCards(detail.people);
+  const deliverables = renderDeliverableList(detail.outputs);
+
   return renderDetailLayout(item, [
     renderDetailSection(uiText('detailCaseEvidence'), 'trophy', [
       renderDetailPair(FIELD_LABELS.featuredSignal, item.card?.achievement),
@@ -1001,19 +1155,26 @@ function renderCaseDetail(item) {
       renderDetailPair(UI_TEXT.valorisation, item.card?.economicValue || item.card?.valorisation),
     ]),
     renderDetailSection(getBlockLabel('context'), 'map', [
-      renderDetailPair(getBlockLabel('context'), item.detail?.context),
-      renderDetailPair(getBlockLabel('people'), item.detail?.people),
-      renderDetailPair(getBlockLabel('outputs'), item.detail?.outputs),
+      renderDetailPair(getBlockLabel('context'), detail.context),
+      contactCards ? '' : renderDetailPair(getBlockLabel('people'), detail.people),
+      deliverables ? '' : renderDetailPair(getBlockLabel('outputs'), detail.outputs),
     ]),
+    contactCards ? renderStructuredSection(getBlockLabel('people'), 'user-round-check', contactCards) : '',
+    deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
     renderDetailSection(getBlockLabel('evidence'), 'bar-chart-3', [
-      renderDetailPair(getBlockLabel('evidence'), item.detail?.evidence),
-      renderDetailPair(getBlockLabel('transferValue'), item.detail?.transferValue),
+      renderDetailPair(getBlockLabel('evidence'), detail.evidence),
+      renderDetailPair(getBlockLabel('transferValue'), detail.transferValue),
       renderDetailPair(FIELD_LABELS.sdgs, item.card?.validatedSdgs || item.card?.sdgs),
     ]),
   ].join(''), renderDetailChipPanel(item));
 }
 
 function renderPilotDetail(item) {
+  const detail = item.detail || {};
+  const milestones = renderMilestoneList(detail.process);
+  const resourceRows = renderResourceRows(detail.resources);
+  const deliverables = renderDeliverableList(detail.outputs);
+
   return renderDetailLayout(item, [
     renderDetailSection(uiText('pilotValidationPlan'), 'flask-conical', [
       renderDetailPair(UI_TEXT.direction, item.card?.collaborationDirection),
@@ -1022,15 +1183,18 @@ function renderPilotDetail(item) {
       renderDetailPair(UI_TEXT.infrastructure, item.card?.infrastructure),
     ]),
     renderDetailSection(getBlockLabel('process'), 'route', [
-      renderDetailPair(getBlockLabel('context'), item.detail?.context),
-      renderDetailPair(getBlockLabel('participation'), item.detail?.participation),
-      renderDetailPair(getBlockLabel('process'), item.detail?.process),
+      renderDetailPair(getBlockLabel('context'), detail.context),
+      renderDetailPair(getBlockLabel('participation'), detail.participation),
+      milestones ? '' : renderDetailPair(getBlockLabel('process'), detail.process),
     ]),
+    milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : '',
     renderDetailSection(getBlockLabel('evidence'), 'bar-chart-3', [
-      renderDetailPair(getBlockLabel('resources'), item.detail?.resources),
-      renderDetailPair(getBlockLabel('evidence'), item.detail?.evidence),
-      renderDetailPair(getBlockLabel('outputs'), item.detail?.outputs),
+      resourceRows ? '' : renderDetailPair(getBlockLabel('resources'), detail.resources),
+      renderDetailPair(getBlockLabel('evidence'), detail.evidence),
+      deliverables ? '' : renderDetailPair(getBlockLabel('outputs'), detail.outputs),
     ]),
+    resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : '',
+    deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
   ].join(''), renderDetailChipPanel(item));
 }
 
