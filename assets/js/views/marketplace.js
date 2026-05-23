@@ -1253,11 +1253,11 @@ function renderDetailLayout(item, mainHtml, sidebarHtml = '') {
     <div>
       ${renderDetailHeader(item)}
       <section class="mx-auto max-w-7xl px-6 py-8">
-        <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
-          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 items-start">
+        <div class="grid gap-6 lg:grid-cols-3">
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 items-start lg:col-span-2">
             ${mainHtml || renderDetailEmpty()}
           </div>
-          <aside class="space-y-5">
+          <aside class="space-y-5 self-start">
             ${renderOperationalSummary(item)}
             ${renderAccessPanel(item)}
             ${sidebarHtml}
