@@ -28,6 +28,26 @@ const UI_TEXT = {
     en: 'This item does not have published detail blocks yet.',
     va: 'Aquest element encara no te blocs de detall publicats.',
   },
+  access: {
+    es: 'Acceso y siguiente paso',
+    en: 'Access and next step',
+    va: 'Acces i seguent pas',
+  },
+  challengeBrief: {
+    es: 'Brief del reto',
+    en: 'Challenge brief',
+    va: 'Brief del repte',
+  },
+  collaborationMap: {
+    es: 'Mapa de colaboracion',
+    en: 'Collaboration map',
+    va: 'Mapa de col-laboracio',
+  },
+  detailCaseEvidence: {
+    es: 'Evidencia y transferencia',
+    en: 'Evidence and transfer',
+    va: 'Evidencia i transferencia',
+  },
   featuredSignal: {
     es: 'Clave para participar',
     en: 'Participation signal',
@@ -122,6 +142,26 @@ const UI_TEXT = {
     es: 'Resumen operativo',
     en: 'Operational summary',
     va: 'Resum operatiu',
+  },
+  pilotValidationPlan: {
+    es: 'Plan de piloto o validacion',
+    en: 'Pilot or validation plan',
+    va: 'Pla de pilot o validacio',
+  },
+  mentoringSupport: {
+    es: 'Soporte de mentoria',
+    en: 'Mentoring support',
+    va: 'Suport de mentoria',
+  },
+  relationships: {
+    es: 'Trazabilidad relacional',
+    en: 'Relational traceability',
+    va: 'Traçabilitat relacional',
+  },
+  technicalBlocks: {
+    es: 'Bloques tecnicos',
+    en: 'Technical blocks',
+    va: 'Blocs tecnics',
   },
   updated: {
     es: 'Revisado',
@@ -680,36 +720,150 @@ function renderDetailHeader(item) {
 }
 
 function renderDetail(item) {
+  if (item.type === 'challenge') return renderChallengeDetail(item);
+  if (item.type === 'case') return renderCaseDetail(item);
+  if (item.type === 'pilot' || item.type === 'validation') return renderPilotDetail(item);
+  if (item.type === 'mentoring') return renderMentoringDetail(item);
+  return renderGenericDetail(item);
+}
+
+function renderDetailLayout(item, mainHtml, sidebarHtml = '') {
   return `
     <div>
       ${renderDetailHeader(item)}
       <section class="mx-auto max-w-7xl px-6 py-8">
         <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
-          <div class="grid gap-5 md:grid-cols-2">
-            ${renderCardDetailBlock(item)}
-            ${DETAIL_BLOCKS.map(block => renderDetailBlock(item, block)).filter(Boolean).join('') || renderDetailEmpty()}
+          <div class="space-y-5">
+            ${mainHtml || renderDetailEmpty()}
           </div>
           <aside class="space-y-5">
             ${renderOperationalSummary(item)}
+            ${renderAccessPanel(item)}
+            ${sidebarHtml}
+            ${renderTraceabilityPanel(item)}
           </aside>
         </div>
       </section>
     </div>`;
 }
 
-function renderCardDetailBlock(item) {
-  const body = renderValue(item.card || {});
+function renderChallengeDetail(item) {
+  return renderDetailLayout(item, [
+    renderDetailSection(uiText('challengeBrief'), 'target', [
+      renderDetailPair(FIELD_LABELS.actionTitle, item.card?.actionTitle || item.detail?.need?.question),
+      renderDetailPair(FIELD_LABELS.needs, item.detail?.need),
+      renderDetailPair(FIELD_LABELS.reward, item.card?.reward),
+      renderDetailPair(UI_TEXT.deadline, item.card?.deadlineMode || item.core?.deadlineLabel),
+    ]),
+    renderDetailSection(uiText('collaborationMap'), 'users', [
+      renderDetailPair(getBlockLabel('context'), item.detail?.context),
+      renderDetailPair(getBlockLabel('participation'), item.detail?.participation),
+      renderDetailPair(getBlockLabel('resources'), item.detail?.resources),
+    ]),
+    renderDetailSection(uiText('technicalBlocks'), 'settings-2', [
+      renderDetailPair(FIELD_LABELS.setCompetences, item.card?.setCompetences),
+      renderDetailPair(FIELD_LABELS.sdgs, item.card?.sdgs),
+      renderDetailPair('IP', item.card?.ipModel),
+      renderDetailPair(getBlockLabel('trackA'), getBlockContent(item, 'trackA')),
+    ]),
+  ].join(''), renderDetailChipPanel(item));
+}
+
+function renderCaseDetail(item) {
+  return renderDetailLayout(item, [
+    renderDetailSection(uiText('detailCaseEvidence'), 'trophy', [
+      renderDetailPair(FIELD_LABELS.featuredSignal, item.card?.achievement),
+      renderDetailPair(FIELD_LABELS.actors, item.card?.actors),
+      renderDetailPair(UI_TEXT.kpi, item.card?.highlightKpi || item.card?.impactKpi),
+      renderDetailPair(UI_TEXT.valorisation, item.card?.economicValue || item.card?.valorisation),
+    ]),
+    renderDetailSection(getBlockLabel('context'), 'map', [
+      renderDetailPair(getBlockLabel('context'), item.detail?.context),
+      renderDetailPair(getBlockLabel('people'), item.detail?.people),
+      renderDetailPair(getBlockLabel('outputs'), item.detail?.outputs),
+    ]),
+    renderDetailSection(getBlockLabel('evidence'), 'bar-chart-3', [
+      renderDetailPair(getBlockLabel('evidence'), item.detail?.evidence),
+      renderDetailPair(getBlockLabel('transferValue'), item.detail?.transferValue),
+      renderDetailPair(FIELD_LABELS.sdgs, item.card?.validatedSdgs || item.card?.sdgs),
+    ]),
+  ].join(''), renderDetailChipPanel(item));
+}
+
+function renderPilotDetail(item) {
+  return renderDetailLayout(item, [
+    renderDetailSection(uiText('pilotValidationPlan'), 'flask-conical', [
+      renderDetailPair(UI_TEXT.direction, item.card?.collaborationDirection),
+      renderDetailPair(UI_TEXT.trl, item.card?.trl),
+      renderDetailPair(UI_TEXT.window, item.card?.executionWindow || item.card?.validationStatus),
+      renderDetailPair(UI_TEXT.infrastructure, item.card?.infrastructure),
+    ]),
+    renderDetailSection(getBlockLabel('process'), 'route', [
+      renderDetailPair(getBlockLabel('context'), item.detail?.context),
+      renderDetailPair(getBlockLabel('participation'), item.detail?.participation),
+      renderDetailPair(getBlockLabel('process'), item.detail?.process),
+    ]),
+    renderDetailSection(getBlockLabel('evidence'), 'bar-chart-3', [
+      renderDetailPair(getBlockLabel('resources'), item.detail?.resources),
+      renderDetailPair(getBlockLabel('evidence'), item.detail?.evidence),
+      renderDetailPair(getBlockLabel('outputs'), item.detail?.outputs),
+    ]),
+  ].join(''), renderDetailChipPanel(item));
+}
+
+function renderMentoringDetail(item) {
+  return renderDetailLayout(item, [
+    renderDetailSection(uiText('mentoringSupport'), 'messages-square', [
+      renderDetailPair(FIELD_LABELS.mentorName, item.card?.mentorName),
+      renderDetailPair(FIELD_LABELS.mentorRole, item.card?.mentorRole),
+      renderDetailPair(FIELD_LABELS.organisation, item.card?.organisation),
+      renderDetailPair(FIELD_LABELS.specialties, item.card?.specialties),
+      renderDetailPair(FIELD_LABELS.badges, item.card?.badges),
+      renderDetailPair(FIELD_LABELS.availability, item.card?.availability),
+    ]),
+    renderDetailSection(getBlockLabel('participation'), 'users', [
+      renderDetailPair(getBlockLabel('context'), item.detail?.context),
+      renderDetailPair(getBlockLabel('participation'), item.detail?.participation),
+      renderDetailPair(getBlockLabel('people'), item.detail?.people),
+    ]),
+    renderDetailSection(getBlockLabel('transferValue'), 'repeat-2', [
+      renderDetailPair(getBlockLabel('transferValue'), item.detail?.transferValue),
+      renderDetailPair(getBlockLabel('process'), item.detail?.process),
+      renderDetailPair(getBlockLabel('outputs'), item.detail?.outputs),
+    ]),
+  ].join(''), renderDetailChipPanel(item));
+}
+
+function renderGenericDetail(item) {
+  return renderDetailLayout(item, [
+    renderDetailSection(uiText('featuredSignal'), 'layout-dashboard', [renderDetailPair(uiText('featuredSignal'), item.card)]),
+    DETAIL_BLOCKS.map(block => renderDetailBlock(item, block)).filter(Boolean).join(''),
+  ].join(''), renderDetailChipPanel(item));
+}
+
+function renderDetailSection(title, icon, rows) {
+  const body = rows.filter(Boolean).join('');
   if (!body) return '';
   return `
-    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm md:col-span-2">
+    <section class="rounded-2xl border border-eu-border bg-white p-6 shadow-sm">
       <div class="mb-4 flex items-center gap-3">
         <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-eu-blue/10 text-eu-blue">
-          <i data-lucide="layout-dashboard" class="h-5 w-5"></i>
+          <i data-lucide="${esc(icon)}" class="h-5 w-5"></i>
         </span>
-        <h2 class="text-base font-extrabold text-eu-text">${esc(uiText('featuredSignal'))}</h2>
+        <h2 class="text-base font-extrabold text-eu-text">${esc(title)}</h2>
       </div>
-      <div class="text-sm leading-6 text-gray-700">${body}</div>
+      <dl class="grid gap-4 md:grid-cols-2">${body}</dl>
     </section>`;
+}
+
+function renderDetailPair(label, value) {
+  const rendered = renderValue(value);
+  if (!rendered) return '';
+  return `
+    <div>
+      <dt class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang(label, label))}</dt>
+      <dd class="mt-1 text-sm leading-6 text-gray-700">${rendered}</dd>
+    </div>`;
 }
 
 function renderDetailBlock(item, block) {
@@ -740,6 +894,80 @@ function getBlockContent(item, key) {
 
 function renderDetailEmpty() {
   return `<p class="rounded-2xl border border-eu-border bg-white p-6 text-sm text-gray-500 shadow-sm">${esc(uiText('detailEmpty'))}</p>`;
+}
+
+function renderDetailChipPanel(item) {
+  const focus = asArray(item.classification?.aiSteamFocus).map(getFocusLabel).filter(Boolean);
+  const tags = pickLang(item.core?.tags, []);
+  const chips = [
+    getSectorLabel(item.core?.sector),
+    getEvidenceLabel(item.classification?.evidenceMaturity),
+    getEngagementLabel(item.classification?.engagementLevel),
+    ...focus,
+    ...asArray(tags),
+  ].filter(Boolean);
+  if (!chips.length) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
+      <h2 class="text-base font-extrabold text-eu-text">${esc(uiText('tags'))}</h2>
+      <div class="mt-3 flex flex-wrap gap-2">
+        ${chips.slice(0, 8).map(chip => renderBadge(chip)).join('')}
+      </div>
+    </section>`;
+}
+
+function renderAccessPanel(item) {
+  const access = item.detail?.access || item.access || {};
+  const label = pickLang(access.ctaLabel) || pickLang(item.card?.availability) || uiText('viewDetail');
+  const instructions = pickLang(access.instructions);
+  const url = pickLang(access.url);
+  const renderedAccess = renderValue(access);
+  if (!renderedAccess && !instructions && !url) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
+      <h2 class="text-base font-extrabold text-eu-text">${esc(uiText('access'))}</h2>
+      ${instructions ? `<p class="mt-2 text-sm leading-6 text-gray-600">${esc(instructions)}</p>` : ''}
+      ${url ? `
+        <a href="${esc(url)}" class="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-eu-orange px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-orange focus:ring-offset-2">
+          ${esc(label)}
+          <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        </a>` : ''}
+      ${!url && renderedAccess ? `<div class="mt-3 text-sm leading-6 text-gray-700">${renderedAccess}</div>` : ''}
+    </section>`;
+}
+
+function collectRelatedEntries(value, found = []) {
+  if (!value) return found;
+  if (Array.isArray(value)) {
+    value.forEach(entry => collectRelatedEntries(entry, found));
+    return found;
+  }
+  if (typeof value !== 'object') return found;
+  if (Array.isArray(value.related)) {
+    value.related.forEach(entry => found.push(entry));
+  }
+  Object.entries(value).forEach(([key, entry]) => {
+    if (key !== 'related') collectRelatedEntries(entry, found);
+  });
+  return found;
+}
+
+function renderTraceabilityPanel(item) {
+  const related = collectRelatedEntries(item.detail || {})
+    .map(entry => pickLang(entry?.label || entry?.title || entry?.name || entry))
+    .filter(Boolean);
+  if (!related.length) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
+      <h2 class="text-base font-extrabold text-eu-text">${esc(uiText('relationships'))}</h2>
+      <ul class="mt-3 space-y-2">
+        ${related.slice(0, 6).map(label => `
+          <li class="flex gap-2 text-sm leading-6 text-gray-700">
+            <i data-lucide="link-2" class="mt-1 h-4 w-4 shrink-0 text-eu-blue"></i>
+            <span>${esc(label)}</span>
+          </li>`).join('')}
+      </ul>
+    </section>`;
 }
 
 function renderOperationalSummary(item) {
