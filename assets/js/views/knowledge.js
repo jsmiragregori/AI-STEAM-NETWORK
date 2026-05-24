@@ -59,6 +59,19 @@ function statusBadge(status) {
   return 'bg-gray-100 text-gray-600';
 }
 
+function formatMonthYear(dateStr) {
+  if (!dateStr) return '';
+  const [year, month] = dateStr.split('-');
+  const lang = getLang();
+  const months = {
+    es: ['', 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+    en: ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    va: ['', 'Gen', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Des'],
+  };
+  const m = parseInt(month, 10);
+  return `${(months[lang] || months.es)[m] || month} ${year}`;
+}
+
 // ─── Tab bar ─────────────────────────────────────────────────────────────────
 
 function tabBar(activeTab) {
