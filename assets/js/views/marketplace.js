@@ -233,6 +233,21 @@ const UI_TEXT = {
     en: 'Transfer',
     va: 'Transferència',
   },
+  pilotType: {
+    es: 'Tipo de piloto',
+    en: 'Pilot type',
+    va: 'Tipus de pilot',
+  },
+  pilotStatus: {
+    es: 'Estado del piloto',
+    en: 'Pilot status',
+    va: 'Estat del pilot',
+  },
+  helix: {
+    es: 'Hélice',
+    en: 'Helix',
+    va: 'Hèlix',
+  },
 };
 
 const FIELD_LABELS = {
@@ -299,10 +314,15 @@ const TAB_TONES = {
     badge: 'bg-eu-orange/10 text-eu-orange border-eu-orange/20',
     icon: 'bg-eu-orange text-white',
   },
-  'pilots-validations': {
+  pilots: {
     band: 'from-emerald-100 via-green-50 to-white',
     badge: 'bg-green-100 text-green-800 border-green-200',
     icon: 'bg-green-700 text-white',
+  },
+  validations: {
+    band: 'from-teal-100 via-cyan-50 to-white',
+    badge: 'bg-teal-100 text-teal-800 border-teal-200',
+    icon: 'bg-teal-700 text-white',
   },
   mentorings: {
     band: 'from-slate-200 via-slate-50 to-white',
@@ -379,6 +399,18 @@ function getLevelLabel(id) {
 
 function getVerificationLabel(id) {
   return getLabelFromArray(MARKETPLACE_CONFIG.labels?.verificationStatus || MARKETPLACE_CONFIG.verificationStatusLabels, id);
+}
+
+function getPilotTypeLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.labels?.pilotType || MARKETPLACE_CONFIG.pilotTypeLabels, id);
+}
+
+function getPilotStatusLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.labels?.pilotStatus || MARKETPLACE_CONFIG.pilotStatusLabels, id);
+}
+
+function getHelixLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.helixLabels, id);
 }
 
 function getSectorCode(value) {
@@ -585,6 +617,9 @@ function getItemFilterValue(item, key) {
   if (key === 'transferType') return item.transfer?.type || '';
   if (key === 'level') return asArray(item.core?.levels);
   if (key === 'verificationStatus') return item.classification?.verificationStatus || '';
+  if (key === 'pilotType') return item.core?.pilotType || '';
+  if (key === 'helix') return asArray(item.core?.helix);
+  if (key === 'pilotStatus') return item.classification?.pilotStatus || '';
   return '';
 }
 
@@ -610,11 +645,19 @@ function getFilterDefinitions(tabId) {
       { key: 'verificationStatus', label: uiText('filterBy') + ' ' + uiText('verificationStatus'), labeler: getVerificationLabel },
     ];
   }
-  if (tabId === 'pilots-validations') {
+  if (tabId === 'pilots') {
     return [
-      { key: 'trl', label: uiText('filterBy') + ' ' + uiText('trl'), labeler: value => `TRL ${value}` },
-      { key: 'infrastructure', label: uiText('filterBy') + ' ' + uiText('infrastructure'), labeler: value => value },
-      { key: 'window', label: uiText('filterBy') + ' ' + uiText('window'), labeler: value => getStatusLabel(value) || value },
+      { key: 'pilotType', label: uiText('filterBy') + ' ' + uiText('pilotType'), labeler: getPilotTypeLabel },
+      { key: 'pilotStatus', label: uiText('filterBy') + ' ' + uiText('pilotStatus'), labeler: getPilotStatusLabel },
+      { key: 'helix', label: uiText('filterBy') + ' ' + uiText('helix'), labeler: getHelixLabel },
+      common.sector,
+    ];
+  }
+  if (tabId === 'validations') {
+    return [
+      { key: 'pilotStatus', label: uiText('filterBy') + ' ' + uiText('pilotStatus'), labeler: getPilotStatusLabel },
+      { key: 'helix', label: uiText('filterBy') + ' ' + uiText('helix'), labeler: getHelixLabel },
+      common.sector,
     ];
   }
   if (tabId === 'mentorings') {
@@ -872,6 +915,9 @@ function renderCaseCard(item, tab) {
 
 function renderPilotCard(item, tab) {
   const card = item.card || {};
+  const pilotTypeLabel = getPilotTypeLabel(item.core?.pilotType);
+  const pilotStatusLabel = getPilotStatusLabel(item.classification?.pilotStatus);
+  const helixChips = asArray(item.core?.helix).map(h => renderBadge(getHelixLabel(h), 'bg-eu-bg text-gray-700 border-eu-border')).filter(Boolean).join('');
   const body = `
     ${renderCardCallout(uiText('direction'), card.collaborationDirection || item.core?.summary, 'route')}
     ${renderCardMiniMeta([
@@ -879,11 +925,17 @@ function renderPilotCard(item, tab) {
       { label: uiText('window'), value: pickLang(card.executionWindow?.label) || pickLang(card.validationStatus) },
       { label: uiText('infrastructure'), value: asArray(card.infrastructure).slice(0, 3).join(' / ') },
     ])}
+    ${pilotTypeLabel || pilotStatusLabel || helixChips ? `
+      <div class="mt-4 flex flex-wrap gap-2">
+        ${pilotTypeLabel ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200') : ''}
+        ${pilotStatusLabel ? renderBadge(pilotStatusLabel, 'bg-emerald-50 text-emerald-800 border-emerald-200') : ''}
+        ${helixChips}
+      </div>` : ''}
   `;
   return renderCardShell(item, tab, body, {
     title: item.core?.title,
     subtitle: card.validationStatus || item.core?.summary,
-    extraBadge: getTrlLabel(card.trl) || getSectorLabel(item.core?.sector),
+    extraBadge: pilotTypeLabel || getTrlLabel(card.trl) || getSectorLabel(item.core?.sector),
   });
 }
 
@@ -1417,6 +1469,9 @@ function renderPilotDetail(item) {
 
   return renderDetailLayout(item, [
     renderPilotPlanSection(item),
+    renderDetailBlock(item, { key: 'objective', icon: 'target' }),
+    renderDetailBlock(item, { key: 'methodology', icon: 'flask-conical' }),
+    renderDetailBlock(item, { key: 'outcome', icon: 'trending-up' }),
     renderCollaborationSection(item),
     milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : '',
     resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : '',
@@ -1552,10 +1607,15 @@ function renderDetailEmpty() {
 function renderDetailChipPanel(item) {
   const focus = asArray(item.classification?.aiSteamFocus).map(getFocusLabel).filter(Boolean);
   const tags = pickLang(item.core?.tags, []);
+  const isPilotOrValidation = item.type === 'pilot' || item.type === 'validation';
+  const helixChips = isPilotOrValidation ? asArray(item.core?.helix).map(getHelixLabel).filter(Boolean) : [];
   const chips = [
     getSectorLabel(item.core?.sector),
     getEvidenceLabel(item.classification?.evidenceMaturity),
     getEngagementLabel(item.classification?.engagementLevel),
+    isPilotOrValidation ? getPilotTypeLabel(item.core?.pilotType) : null,
+    isPilotOrValidation ? getPilotStatusLabel(item.classification?.pilotStatus) : null,
+    ...helixChips,
     ...focus,
     ...asArray(tags),
   ].filter(Boolean);
