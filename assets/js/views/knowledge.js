@@ -2,7 +2,7 @@ import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { KNOWLEDGE_CONFIG } from '../../data/knowledge.js';
 
-const TABS = ['flujo', 'oer', 'casos', 'evidencia', 'plantillas'];
+const TABS = ['flujo', 'oer', 'evidencia', 'plantillas'];
 
 const TYPE_ICONS = { 'Guía': '📖', 'Manual': '📋', 'Dataset': '🗄️', 'Vídeo': '🎬', 'Plantilla': '📝' };
 
@@ -31,22 +31,6 @@ const SECTOR_COLORS = {
 };
 
 const FLOW_ICONS = ['🏭', '🔍', '👥', '💻', '✅', '🌐'];
-
-const TRANSFER_TYPE_COLOR = 'bg-gray-100 text-gray-700 border border-gray-300';
-
-const TRANSFER_TYPE_ICONS = {
-  implementación: 'wrench',
-  adaptación:     'git-branch',
-  capacitación:   'graduation-cap',
-  escalado:       'trending-up',
-};
-
-const TRANSFER_TYPE_LABELS = {
-  implementación: { es: 'Implementación', en: 'Implementation', va: 'Implementació' },
-  adaptación:     { es: 'Adaptación',     en: 'Adaptation',     va: 'Adaptació' },
-  capacitación:   { es: 'Capacitación',   en: 'Training',       va: 'Capacitació' },
-  escalado:       { es: 'Escalado',       en: 'Scaling',        va: 'Escalat' },
-};
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
 function pickLang(value, fallback = '') {
@@ -81,7 +65,6 @@ function tabBar(activeTab) {
   const labels = {
     flujo:      t('knowledge.tabFlow')      || 'Flujo',
     oer:        t('knowledge.tabOER')       || 'OER',
-    casos:      t('knowledge.tabCases')     || 'Casos',
     evidencia:  t('knowledge.tabEvidence')  || 'Evidencias',
     plantillas: t('knowledge.tabTemplates') || 'Plantillas',
   };
@@ -151,119 +134,6 @@ function getOerLabel(key) {
   };
   return labels[key]?.[lang] || key;
 }
-
-function getCasosLabel(key) {
-  const lang = getLang();
-  const labels = {
-    createdBy:      { es: 'Creado por:', en: 'Created by:', va: 'Creat per:' },
-    adoptedBy:      { es: 'Adoptado por:', en: 'Adopted by:', va: 'Adoptat per:' },
-    howTransferred: { es: 'Cómo se transfirió', en: 'How it was transferred', va: 'Com es va transferir' },
-    impact:         { es: 'Impacto', en: 'Impact', va: 'Impacte' },
-    evidence:       { es: 'Evidencias', en: 'Evidence', va: 'Evidències' },
-    published:      { es: 'Publicado:', en: 'Published:', va: 'Publicat:' },
-    revised:        { es: 'Revisado:', en: 'Revised:', va: 'Revisat:' },
-    license:        { es: 'Licencia:', en: 'License:', va: 'Llicència:' },
-    viewCase:       { es: 'Ver caso completo', en: 'View full case', va: 'Veure cas complet' },
-    documentation:  { es: 'Documentación', en: 'Documentation', va: 'Documentació' },
-    resources:      { es: 'Recursos', en: 'Resources', va: 'Recursos' },
-    previous:       { es: 'Anterior', en: 'Previous', va: 'Anterior' },
-    next:           { es: 'Siguiente', en: 'Next', va: 'Següent' },
-    filterSector:   { es: 'Filtrar por sector', en: 'Filter by sector', va: 'Filtrar per sector' },
-    filterLevel:    { es: 'Filtrar por nivel', en: 'Filter by level', va: 'Filtrar per nivell' },
-    filterTransfer: { es: 'Filtrar por tipo de transferencia', en: 'Filter by transfer type', va: 'Filtrar per tipus de transferència' },
-    filterStatus:   { es: 'Filtrar por estado', en: 'Filter by status', va: 'Filtrar per estat' },
-    activeFilters:  { es: 'Filtros activos:', en: 'Active filters:', va: 'Filtres actius:' },
-    clearAll:       { es: 'Limpiar todo', en: 'Clear all', va: 'Netejar tots' },
-    clearFilters:   { es: 'Limpiar filtros', en: 'Clear filters', va: 'Netejar filtres' },
-    statusVerified: { es: 'Verificado', en: 'Verified', va: 'Verificat' },
-    statusPending:  { es: 'Pendiente', en: 'Pending', va: 'Pendent' },
-  };
-  return labels[key]?.[lang] || key;
-}
-
-function getCasosFilters() {
-  try {
-    const parsed = JSON.parse(localStorage.getItem('casosFilters') || '{}');
-    return {
-      sectors:            parsed.sectors || [],
-      levels:             parsed.levels || [],
-      transferType:       parsed.transferType || null,
-      verificationStatus: parsed.verificationStatus || null,
-    };
-  } catch {
-    return { sectors: [], levels: [], transferType: null, verificationStatus: null };
-  }
-}
-
-function setCasosFilters(filters) {
-  localStorage.setItem('casosFilters', JSON.stringify(filters));
-}
-
-function renderCasosActiveFiltersDisplay() {
-  const f = getCasosFilters();
-  const hasFilters = f.sectors.length > 0 || f.levels.length > 0 || f.transferType || f.verificationStatus;
-  if (!hasFilters) return '';
-
-  const badges = [];
-
-  f.sectors.forEach(sid => {
-    badges.push(`
-      <button data-caso-remove-filter="sector" data-filter-value="${sid}"
-        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${SECTOR_COLORS[sid] || 'bg-gray-100 text-gray-600'} border border-current/30 text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
-        <span>🏷️ ${getSectorName(sid)}</span>
-        <i data-lucide="x" class="w-3.5 h-3.5"></i>
-      </button>`);
-  });
-
-  f.levels.forEach(l => {
-    const label = LEVEL_LABELS[l] ? pickLang(LEVEL_LABELS[l], l) : l;
-    badges.push(`
-      <button data-caso-remove-filter="level" data-filter-value="${l}"
-        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-600'} border border-current/30 text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
-        <span>🎓 ${label}</span>
-        <i data-lucide="x" class="w-3.5 h-3.5"></i>
-      </button>`);
-  });
-
-  if (f.transferType) {
-    const cls = TRANSFER_TYPE_COLOR;
-    const icon = TRANSFER_TYPE_ICONS[f.transferType] || 'arrow-right';
-    badges.push(`
-      <button data-caso-remove-filter="transfer"
-        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${cls} border border-current/20 text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
-        <i data-lucide="${icon}" class="w-3 h-3"></i>
-        <span>${pickLang(KNOWLEDGE_CONFIG?.successCasesBlock?.transferTypeLabels?.[f.transferType] || TRANSFER_TYPE_LABELS[f.transferType], f.transferType)}</span>
-        <i data-lucide="x" class="w-3.5 h-3.5"></i>
-      </button>`);
-  }
-
-  if (f.verificationStatus) {
-    const cls = f.verificationStatus === 'verified'
-      ? 'bg-green-100 text-green-800 border-green-300'
-      : 'bg-amber-100 text-amber-800 border-amber-300';
-    const icon = f.verificationStatus === 'verified' ? '✓' : '⏳';
-    const statusLabels = KNOWLEDGE_CONFIG?.successCasesBlock?.verificationStatusLabels || {};
-    const verLabel = statusLabels[f.verificationStatus]
-      ? pickLang(statusLabels[f.verificationStatus], f.verificationStatus)
-      : getCasosLabel(f.verificationStatus === 'verified' ? 'statusVerified' : 'statusPending');
-    badges.push(`
-      <button data-caso-remove-filter="status"
-        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${cls} border text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
-        <span>${icon} ${verLabel}</span>
-        <i data-lucide="x" class="w-3.5 h-3.5"></i>
-      </button>`);
-  }
-
-  return `
-    <div class="flex flex-wrap items-center gap-2 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-      <span class="text-xs font-semibold text-gray-700">${getCasosLabel('activeFilters')}</span>
-      ${badges.join('')}
-      <button id="casos-clear-all-filters" class="ml-auto px-2.5 py-1 rounded text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200">
-        ${getCasosLabel('clearAll')}
-      </button>
-    </div>`;
-}
-
 function tabFlujo() {
   const cycleBlock = KNOWLEDGE_CONFIG?.transferCycleBlock;
   const hasCmsBlock = Boolean(cycleBlock);
@@ -823,440 +693,6 @@ function attachOerFilterListeners() {
     rerender();
   });
 }
-
-// ─── Tab 3: Casos de Transferencia ───────────────────────────────────────────
-
-function formatMonthYear(dateStr) {
-  if (!dateStr) return '';
-  const [year, month] = dateStr.split('-');
-  const lang = getLang();
-  const months = {
-    es: ['', 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
-    en: ['', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    va: ['', 'Gen', 'Feb', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Des']
-  };
-  const monthLabels = months[lang] || months.es;
-  return `${monthLabels[parseInt(month, 10)] || month} ${year}`;
-}
-
-function tabCasos(search) {
-  const casesBlock = KNOWLEDGE_CONFIG?.successCasesBlock;
-  const hasCmsBlock = Boolean(casesBlock);
-
-  if (hasCmsBlock && casesBlock.visible === false) {
-    const lang = getLang();
-    const noContentMsg = lang === 'en'
-      ? 'No content available in this section yet'
-      : lang === 'va'
-        ? 'Encara no hi ha contingut disponible en aquesta secció'
-        : 'Todavía no hay contenido disponible en esta sección';
-    return `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
-      <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
-      <p class="text-gray-500 text-base">${noContentMsg}</p>
-    </div>`;
-  }
-
-  const casesData = hasCmsBlock ? casesBlock.cases : (t('knowledge.successCases') || []);
-  const showVerificationStatus = hasCmsBlock ? (casesBlock.showVerificationStatus !== false) : false;
-  const casosCv = casesBlock?.chipVisibility || {};
-  const casosShowSectors            = casosCv.sectors            !== false;
-  const casosShowLevels             = casosCv.levels             !== false;
-  const casosShowTransferType       = casosCv.transferType       !== false;
-  const casosShowVerificationStatus = casosCv.verificationStatus !== false;
-
-  const blockTitle = hasCmsBlock ? pickLang(casesBlock.title, '') : (t('knowledge.casesTitle') || '');
-  const blockDesc = hasCmsBlock ? pickLang(casesBlock.description, '') : (t('knowledge.casesDesc') || '');
-  const searchPlh = hasCmsBlock ? pickLang(casesBlock.searchPlaceholder, '') : (t('knowledge.casesSearch') || 'Buscar casos...');
-
-  return `
-    <div>
-      <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
-        <div>
-          <h2 class="text-xl font-bold text-eu-text mb-1">${blockTitle}</h2>
-          <p class="text-base text-gray-600 max-w-2xl">${blockDesc}</p>
-        </div>
-        <div class="relative">
-          <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
-          <input id="casos-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
-            class="border border-eu-border rounded-md pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
-            placeholder="${searchPlh}" />
-          <button id="casos-search-clear" style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)" class="w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer ${search ? '' : 'hidden'}" title="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
-        </div>
-      </div>
-      <div id="casos-grid">${renderCasosGridContent(search)}</div>
-    </div>
-  `;
-}
-
-function renderCasosGridContent(search) {
-  const casesBlock = KNOWLEDGE_CONFIG?.successCasesBlock;
-  const hasCmsBlock = Boolean(casesBlock);
-  const casesData = hasCmsBlock ? casesBlock.cases : (t('knowledge.successCases') || []);
-  const showVerificationStatus = hasCmsBlock ? (casesBlock.showVerificationStatus !== false) : false;
-  const casosCv = casesBlock?.chipVisibility || {};
-  const casosShowSectors            = casosCv.sectors            !== false;
-  const casosShowLevels             = casosCv.levels             !== false;
-  const casosShowTransferType       = casosCv.transferType       !== false;
-  const casosShowVerificationStatus = casosCv.verificationStatus !== false;
-
-  // Sort by most recent date (revisionDate if present, else publishedAt)
-  let sorted = [...casesData].sort((a, b) => {
-    const dateA = a.revisionDate ? new Date(a.revisionDate).getTime() : new Date(a.publishedAt).getTime();
-    const dateB = b.revisionDate ? new Date(b.revisionDate).getTime() : new Date(b.publishedAt).getTime();
-    return dateB - dateA; // Descendente: más nuevas primero
-  });
-
-  // Apply search filter
-  let filtered = search
-    ? sorted.filter(c => {
-        const cTitle = hasCmsBlock ? pickLang(c.title, '') : (c.title || '');
-        const cOrg = c.originOrganization || c.organization || '';
-        const cBens = (c.beneficiaryOrganizations || []).map(b => b.name || '').join(' ');
-        const cSectorIds = Array.isArray(c.sectorIds) ? c.sectorIds : (c.sector ? [c.sector] : []);
-        const cSectorStr = cSectorIds.map(id => getSectorName(id)).join(' ');
-        const haystack = `${cTitle} ${cOrg} ${cBens} ${cSectorStr}`.toLowerCase();
-        return haystack.includes(search.toLowerCase());
-      })
-    : sorted;
-
-  // Apply chip filters
-  const activeCasosFilters = getCasosFilters();
-  const hasChipFilters = activeCasosFilters.sectors.length > 0 || activeCasosFilters.levels.length > 0 || activeCasosFilters.transferType || activeCasosFilters.verificationStatus;
-  if (hasChipFilters) {
-    filtered = filtered.filter(c => {
-      if (activeCasosFilters.sectors.length > 0) {
-        const cSectors = Array.isArray(c.sectorIds) ? c.sectorIds : (c.sector ? [c.sector] : []);
-        if (!activeCasosFilters.sectors.some(s => cSectors.includes(s))) return false;
-      }
-      if (activeCasosFilters.levels.length > 0) {
-        const cLevels = Array.isArray(c.levels) ? c.levels : (c.level ? [c.level] : []);
-        if (!activeCasosFilters.levels.some(l => cLevels.includes(l))) return false;
-      }
-      if (activeCasosFilters.transferType && c.transferType !== activeCasosFilters.transferType) return false;
-      if (activeCasosFilters.verificationStatus && c.verificationStatus !== activeCasosFilters.verificationStatus) return false;
-      return true;
-    });
-  }
-
-  // Pagination
-  const pageSize = getState('casosPageSize') || 6;
-  const isAll = pageSize === 'all';
-  const rawPage = getState('casosPage') || 0;
-  const totalPages = isAll ? 1 : Math.ceil(filtered.length / pageSize);
-  const safePage = Math.min(rawPage, Math.max(0, totalPages - 1));
-  const paginated = isAll ? filtered : filtered.slice(safePage * pageSize, (safePage + 1) * pageSize);
-
-  const count = filtered.length;
-  const countLabel = `${count} ${count !== 1 ? (getLang() === 'en' ? 'cases' : getLang() === 'va' ? 'casos' : 'casos') : (getLang() === 'en' ? 'case' : getLang() === 'va' ? 'cas' : 'caso')}`;
-
-  const pageSizeHtml = `
-    <div class="flex gap-1">
-      ${[6, 12, 24].map(n => `<button data-casos-pagesize="${n}" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${n}</button>`).join('')}
-      <button data-casos-pagesize="all" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">Todos</button>
-    </div>`;
-
-  const paginationHtml = !isAll && totalPages > 1 ? `
-    <div class="flex gap-2 justify-center mt-6 items-center">
-      <button id="casos-pag-prev" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
-        ← ${getCasosLabel('previous')}
-      </button>
-      <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
-      <button id="casos-pag-next" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
-        ${getCasosLabel('next')} →
-      </button>
-    </div>` : '';
-
-  const casesHtml = paginated.map(c => {
-    const cTitle = hasCmsBlock ? pickLang(c.title, '') : (c.title || '');
-    const cDescription = c.description ? pickLang(c.description, '') : null;
-    const cResult = hasCmsBlock ? pickLang(c.result, '') : (c.result || '');
-    const cLicense = c.license || '';
-
-    // Transfer information
-    const cOrigin = c.originOrganization || '';
-    const cBeneficiaries = Array.isArray(c.beneficiaryOrganizations) ? c.beneficiaryOrganizations : [];
-    const cTransferType = c.transferType || '';
-
-    // Sectores: múltiples — clickables como filtro
-    const cSectorIds = Array.isArray(c.sectorIds) ? c.sectorIds : (c.sector ? [c.sector] : []);
-    const cSectorsHtml = cSectorIds.map(sid => {
-      const isActive = activeCasosFilters.sectors.includes(sid);
-      return `<button data-caso-filter-sector="${sid}" class="text-xs font-semibold px-2 py-0.5 rounded cursor-pointer transition-all ${SECTOR_COLORS[sid] || 'bg-gray-100 text-gray-600'} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterSector')}">${getSectorName(sid)}</button>`;
-    }).join(' ');
-
-    // Niveles: múltiples — clickables como filtro
-    const cLevels = Array.isArray(c.levels) ? c.levels : (c.level ? [c.level] : []);
-    const cLevelsHtml = cLevels.map(l => {
-      const label = LEVEL_LABELS[l] ? pickLang(LEVEL_LABELS[l], l) : l;
-      const isActive = activeCasosFilters.levels.includes(l);
-      return `<button data-caso-filter-level="${l}" class="text-xs font-bold px-2 py-0.5 rounded cursor-pointer transition-all ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-600'} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterLevel')}">${label}</button>`;
-    }).join(' ');
-
-    // Fecha publicación
-    const cPublishedAt = c.publishedAt ? formatMonthYear(c.publishedAt) : '';
-    const cRevisionDate = c.revisionDate ? formatMonthYear(c.revisionDate) : null;
-
-    // Campos opcionales (respetan flag show* — default true si no existe)
-    const cTransferDesc = (c.showTransferDescription !== false) && c.transferDescription ? pickLang(c.transferDescription, '') : null;
-    const cImpact = (c.showImpact !== false) && c.impact ? pickLang(c.impact, '') : null;
-    const cEvidence = (c.showEvidence !== false) && c.evidence ? pickLang(c.evidence, '') : null;
-    const cMainLink = (c.showMainLink !== false) && c.mainLink ? c.mainLink : null;
-    const cDocumentation = (c.showDocumentation !== false) && c.documentation ? c.documentation : null;
-    const cAdditionalUrl = (c.showAdditionalUrl !== false) && c.additionalUrl ? c.additionalUrl : null;
-
-    // Verification status badge
-    const statusLabels = casesBlock?.verificationStatusLabels || {};
-    const cVerificationLabel = pickLang(statusLabels[c.verificationStatus], c.verificationStatus === 'verified' ? 'Verificado' : 'Pendiente');
-    const verStatusIsActive = activeCasosFilters.verificationStatus === c.verificationStatus;
-    const verificationStatusHtml = (showVerificationStatus && casosShowVerificationStatus) ? `
-      <div>
-        <button data-caso-filter-status="${c.verificationStatus}" class="text-sm font-bold px-3 py-1.5 rounded cursor-pointer transition-all ${c.verificationStatus === 'verified' ? 'bg-green-100 text-green-800' : 'bg-amber-100 text-amber-800'} ${verStatusIsActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterStatus')}">
-          ${c.verificationStatus === 'verified' ? '✓' : '⏳'} ${cVerificationLabel}
-        </button>
-      </div>
-    ` : '';
-
-    return `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm hover:shadow-md hover:border-eu-blue transition-all overflow-hidden flex flex-col">
-      <!-- Header: Title + Status Badge -->
-      <div class="border-b border-eu-border p-6 pb-4">
-        <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
-          <div class="flex-1">
-            <h3 class="text-lg font-bold text-eu-text mb-2">${cTitle}</h3>
-            <!-- Transfer Info: Origin → Beneficiaries -->
-            <div class="space-y-1 mb-2">
-              <p class="text-sm text-gray-700"><span class="font-semibold">${getCasosLabel('createdBy')}</span> ${cOrigin}</p>
-              <p class="text-sm text-gray-700">
-                <span class="font-semibold">${getCasosLabel('adoptedBy')}</span> ${cBeneficiaries.map(b => b.name).join(', ')}
-              </p>
-              ${casosShowTransferType ? `<button data-caso-filter-transfer="${cTransferType}" class="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded cursor-pointer transition-all ${TRANSFER_TYPE_COLOR} ${activeCasosFilters.transferType === cTransferType ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="${getCasosLabel('filterTransfer')}">
-                <i data-lucide="${TRANSFER_TYPE_ICONS[cTransferType] || 'arrow-right'}" class="w-3 h-3"></i> ${pickLang(casesBlock?.transferTypeLabels?.[cTransferType] || TRANSFER_TYPE_LABELS[cTransferType], cTransferType)}
-              </button>` : ''}
-            </div>
-          </div>
-          ${verificationStatusHtml}
-        </div>
-
-        <!-- Sectors and Levels -->
-        <div class="flex flex-wrap gap-2">
-          ${casosShowSectors ? `<div class="flex flex-wrap gap-1.5">${cSectorsHtml}</div>` : ''}
-          ${casosShowLevels  ? `<div class="flex flex-wrap gap-1.5">${cLevelsHtml}</div>`  : ''}
-        </div>
-      </div>
-
-      <!-- Main Content -->
-      <div class="p-6 flex-1 flex flex-col space-y-4">
-        <!-- Description (optional) -->
-        ${cDescription ? `<p class="text-base text-gray-700">${cDescription}</p>` : ''}
-
-        <!-- Result -->
-        <div>
-          <p class="text-base text-gray-700 leading-relaxed">${cResult}</p>
-        </div>
-
-        <!-- Transfer Description (optional) -->
-        ${cTransferDesc ? `
-        <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
-          <p class="text-sm font-semibold text-blue-900 mb-1">🔄 ${getCasosLabel('howTransferred')}</p>
-          <p class="text-base text-blue-800">${cTransferDesc}</p>
-        </div>
-        ` : ''}
-
-        <!-- Impact (optional) -->
-        ${cImpact ? `
-        <div class="bg-blue-50 rounded-lg p-4 border border-blue-100">
-          <p class="text-sm font-semibold text-blue-900 mb-1">📊 ${getCasosLabel('impact')}</p>
-          <p class="text-base text-blue-800">${cImpact}</p>
-        </div>
-        ` : ''}
-
-        <!-- Evidence (optional) -->
-        ${cEvidence ? `
-        <div class="bg-purple-50 rounded-lg p-4 border border-purple-100">
-          <p class="text-sm font-semibold text-purple-900 mb-1">📋 ${getCasosLabel('evidence')}</p>
-          <p class="text-base text-purple-800">${cEvidence}</p>
-        </div>
-        ` : ''}
-      </div>
-
-      <!-- Technical Metadata -->
-      <div class="border-t border-eu-border px-6 py-4 bg-eu-bg space-y-2 text-sm">
-        <div class="flex items-center justify-between">
-          <span class="text-gray-600">${getCasosLabel('published')}</span>
-          <span class="font-semibold text-gray-800">${cPublishedAt}</span>
-        </div>
-        ${cRevisionDate ? `
-        <div class="flex items-center justify-between">
-          <span class="text-gray-600">${getCasosLabel('revised')}</span>
-          <span class="font-semibold text-gray-800">${cRevisionDate}</span>
-        </div>
-        ` : ''}
-        <div class="flex items-center justify-between">
-          <span class="text-gray-600">${getCasosLabel('license')}</span>
-          <span class="font-semibold text-gray-800">${cLicense}</span>
-        </div>
-      </div>
-
-      <!-- Footer: Links -->
-      <div class="border-t border-eu-border p-6 flex flex-wrap gap-3">
-        ${cMainLink ? `
-        <a href="${cMainLink.url}" ${cMainLink.externalLink ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>${getCasosLabel('viewCase')}
-        </a>
-        ` : ''}
-        ${cDocumentation ? `
-        <a href="${cDocumentation.url}" ${cDocumentation.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
-          <i data-lucide="book-open" class="w-4 h-4"></i>${getCasosLabel('documentation')}
-        </a>
-        ` : ''}
-        ${cAdditionalUrl ? `
-        <a href="${cAdditionalUrl.url}" ${cAdditionalUrl.externalLink !== false ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-eu-blue font-bold text-base hover:underline cursor-pointer transition-colors">
-          <i data-lucide="download" class="w-4 h-4"></i>${pickLang(cAdditionalUrl.label, getCasosLabel('resources'))}
-        </a>
-        ` : ''}
-      </div>
-    </div>
-  `;
-  }).join('');
-
-  const emptyHtml = filtered.length === 0
-    ? `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
-      <i data-lucide="${search ? 'search' : 'inbox'}" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
-      <p class="text-gray-500 text-base">
-        ${search
-          ? (getLang() === 'en' ? 'No cases found matching your search'
-            : getLang() === 'va' ? 'No s\'han trobat casos amb la cerca'
-            : 'No se encontraron casos')
-          : (getLang() === 'en' ? 'No transfer cases registered yet'
-            : getLang() === 'va' ? 'Aún no hi ha casos de transferència registrats'
-            : 'Aún no hay casos de transferencia registrados')}
-      </p>
-    </div>`
-    : '';
-
-  return `
-    ${renderCasosActiveFiltersDisplay()}
-    <div class="flex items-center justify-between mb-4">
-      <span class="text-xs text-gray-500 font-medium">${countLabel}</span>
-      ${pageSizeHtml}
-    </div>
-    ${paginated.length > 0 ? `
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">${casesHtml}</div>
-      ${paginationHtml}` : emptyHtml}`;
-}
-
-function updateCasosGrid() {
-  const search = getState('casosSearch') || '';
-  const container = document.getElementById('casos-grid');
-  if (!container) return;
-  container.innerHTML = renderCasosGridContent(search);
-  if (window.lucide) window.lucide.createIcons();
-  attachCasosPaginationListeners();
-  attachCasosFilterListeners();
-}
-
-function attachCasosPaginationListeners() {
-  document.querySelectorAll('[data-casos-pagesize]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const sz = btn.dataset.casosPagesize === 'all' ? 'all' : parseInt(btn.dataset.casosPagesize, 10);
-      setState('casosPageSize', sz);
-      setState('casosPage', 0);
-      updateCasosGrid();
-    });
-  });
-  document.getElementById('casos-pag-prev')?.addEventListener('click', () => {
-    const cur = getState('casosPage') || 0;
-    if (cur > 0) { setState('casosPage', cur - 1); updateCasosGrid(); }
-  });
-  document.getElementById('casos-pag-next')?.addEventListener('click', () => {
-    setState('casosPage', (getState('casosPage') || 0) + 1);
-    updateCasosGrid();
-  });
-}
-
-function attachCasosFilterListeners() {
-  // Sector chip filter
-  document.querySelectorAll('[data-caso-filter-sector]').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const sid = btn.dataset.casoFilterSector;
-      const f = getCasosFilters();
-      if (f.sectors.includes(sid)) f.sectors = f.sectors.filter(s => s !== sid);
-      else f.sectors.push(sid);
-      setCasosFilters(f);
-      setState('casosPage', 0);
-      updateCasosGrid();
-    });
-  });
-
-  // Level chip filter
-  document.querySelectorAll('[data-caso-filter-level]').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const l = btn.dataset.casoFilterLevel;
-      const f = getCasosFilters();
-      if (f.levels.includes(l)) f.levels = f.levels.filter(x => x !== l);
-      else f.levels.push(l);
-      setCasosFilters(f);
-      setState('casosPage', 0);
-      updateCasosGrid();
-    });
-  });
-
-  // Transfer type filter (toggle)
-  document.querySelectorAll('[data-caso-filter-transfer]').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const tt = btn.dataset.casoFilterTransfer;
-      const f = getCasosFilters();
-      f.transferType = f.transferType === tt ? null : tt;
-      setCasosFilters(f);
-      setState('casosPage', 0);
-      updateCasosGrid();
-    });
-  });
-
-  // Verification status filter (toggle)
-  document.querySelectorAll('[data-caso-filter-status]').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const st = btn.dataset.casoFilterStatus;
-      const f = getCasosFilters();
-      f.verificationStatus = f.verificationStatus === st ? null : st;
-      setCasosFilters(f);
-      setState('casosPage', 0);
-      updateCasosGrid();
-    });
-  });
-
-  // Remove individual filter badges
-  document.querySelectorAll('[data-caso-remove-filter]').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const type = btn.dataset.casoRemoveFilter;
-      const val = btn.dataset.filterValue;
-      const f = getCasosFilters();
-      if (type === 'sector') f.sectors = f.sectors.filter(s => s !== val);
-      else if (type === 'level') f.levels = f.levels.filter(l => l !== val);
-      else if (type === 'transfer') f.transferType = null;
-      else if (type === 'status') f.verificationStatus = null;
-      setCasosFilters(f);
-      setState('casosPage', 0);
-      updateCasosGrid();
-    });
-  });
-
-  // Clear all filters (panel button)
-  document.getElementById('casos-clear-all-filters')?.addEventListener('click', () => {
-    setCasosFilters({ sectors: [], levels: [], transferType: null, verificationStatus: null });
-    setState('casosPage', 0);
-    updateCasosGrid();
-  });
-
-}
-
 // ─── Tab 4: Evidencias de Pilotaje ───────────────────────────────────────────
 
 const PILOT_TYPE_CHIP   = 'bg-gray-100 text-gray-700 border border-gray-300';
@@ -1967,7 +1403,6 @@ function renderTemplatesGridContent(search) {
     const isExternal = tpl.linkType === 'external' || tpl.external !== false;
     const targetAttr = isExternal ? `target="_blank" rel="noopener noreferrer"` : '';
 
-    // Dates: publishedAt is required, revisionDate optional. Format using the same helper as Casos.
     const tplLang = getLang();
     const createdLbl = tplLang === 'en' ? 'Created' : tplLang === 'va' ? 'Creat' : 'Creado';
     const revisedLbl = tplLang === 'en' ? 'Revised' : tplLang === 'va' ? 'Revisat' : 'Revisado';
@@ -2102,13 +1537,11 @@ export function render() {
   const heroStats = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
   const notice = pickLang(heroBlock.notice, '');
 
-  const casosSearch = getState('casosSearch') || '';
   const templatesSearch = getState('templatesSearch') || '';
 
   const contentMap = {
     flujo:      tabFlujo(),
     oer:        tabOER(oerSearch),
-    casos:      tabCasos(casosSearch),
     evidencia:  tabEvidencia(),
     plantillas: tabPlantillas(templatesSearch),
   };
@@ -2149,7 +1582,6 @@ export function mount() {
     btn.addEventListener('click', () => {
       setState('knowledgeTab', btn.dataset.knowTab);
       setState('oerPage', 0);
-      setState('casosPage', 0);
       setState('templatesPage', 0);
       rerender();
     });
@@ -2174,29 +1606,8 @@ export function mount() {
     input?.focus();
   });
 
-  // Casos search — partial update only
-  document.getElementById('casos-search')?.addEventListener('input', e => {
-    const val = e.target.value;
-    setState('casosSearch', val);
-    setState('casosPage', 0);
-    const clearBtn = document.getElementById('casos-search-clear');
-    if (clearBtn) clearBtn.classList.toggle('hidden', !val);
-    updateCasosGrid();
-  });
-  document.getElementById('casos-search-clear')?.addEventListener('click', () => {
-    const input = document.getElementById('casos-search');
-    if (input) input.value = '';
-    document.getElementById('casos-search-clear')?.classList.add('hidden');
-    setState('casosSearch', '');
-    setState('casosPage', 0);
-    updateCasosGrid();
-    input?.focus();
-  });
-
   attachOerPaginationListeners();
   attachOerFilterListeners();
-  attachCasosPaginationListeners();
-  attachCasosFilterListeners();
 
   // Evidencias de pilotaje
   document.getElementById('evid-search')?.addEventListener('input', e => {
