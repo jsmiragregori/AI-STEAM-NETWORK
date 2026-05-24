@@ -976,11 +976,8 @@ function renderEvidCard(e, ptLabels, stLabels, hxLabels, trLabels) {
   const ePublishedAt  = e.publishedAt  ? formatMonthYear(e.publishedAt)  : '';
   const eRevisionDate = e.revisionDate ? formatMonthYear(e.revisionDate) : null;
 
-  // Cross-refs: lookup en los bloques CMS para mostrar títulos en lugar de IDs crudos.
-  // Si el caso/recurso no existe o está oculto, el loader ya lo excluye → la referencia no se muestra.
-  const relatedCase = e.relatedCaseId
-    ? (KNOWLEDGE_CONFIG?.successCasesBlock?.cases || []).find(c => c.id === e.relatedCaseId) || null
-    : null;
+  // Cross-refs: OER lookup via CMS block. Case cross-refs point to Marketplace IDs (not resolved here).
+  const relatedCase = null;
   const relatedOer = e.relatedOerId
     ? (KNOWLEDGE_CONFIG?.oerResourcesBlock?.resources || []).find(r => r.id === e.relatedOerId) || null
     : null;
