@@ -213,6 +213,26 @@ const UI_TEXT = {
     en: 'View detail',
     va: 'Veure detall',
   },
+  transferType: {
+    es: 'Tipo de transferencia',
+    en: 'Transfer type',
+    va: 'Tipus de transferència',
+  },
+  verificationStatus: {
+    es: 'Verificación',
+    en: 'Verification',
+    va: 'Verificació',
+  },
+  level: {
+    es: 'Nivel formativo',
+    en: 'Training level',
+    va: 'Nivell formatiu',
+  },
+  transferFlow: {
+    es: 'Transferencia',
+    en: 'Transfer',
+    va: 'Transferència',
+  },
 };
 
 const FIELD_LABELS = {
@@ -254,6 +274,19 @@ const DETAIL_BLOCKS = [
   { key: 'access', icon: 'link' },
   { key: 'trackA', icon: 'graduation-cap' },
 ];
+
+const TRANSFER_TYPE_ICONS = {
+  implementación: 'wrench',
+  adaptación: 'git-branch',
+  capacitación: 'graduation-cap',
+  escalado: 'trending-up',
+};
+
+const LEVEL_STYLES = {
+  FP:       'bg-yellow-100 text-yellow-800 border-yellow-200',
+  Máster:   'bg-purple-100 text-purple-800 border-purple-200',
+  Docentes: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
+};
 
 const TAB_TONES = {
   challenges: {
@@ -334,6 +367,18 @@ function getFocusLabel(id) {
 
 function getBlockLabel(id) {
   return getLabelFromArray(MARKETPLACE_CONFIG.detailBlockLabels, id);
+}
+
+function getTransferTypeLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.labels?.transferType || MARKETPLACE_CONFIG.transferTypeLabels, id);
+}
+
+function getLevelLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.labels?.level || MARKETPLACE_CONFIG.legacyLabels?.levelLabels, id);
+}
+
+function getVerificationLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.labels?.verificationStatus || MARKETPLACE_CONFIG.verificationStatusLabels, id);
 }
 
 function getSectorCode(value) {
@@ -537,6 +582,9 @@ function getItemFilterValue(item, key) {
   if (key === 'specialty') return asArray(card.specialties);
   if (key === 'availability') return card.quickChat ? 'chat' : pickLang(card.availability);
   if (key === 'organisation') return card.organisation || pickLang(item.core?.entity?.name);
+  if (key === 'transferType') return item.transfer?.type || '';
+  if (key === 'level') return asArray(item.core?.levels);
+  if (key === 'verificationStatus') return item.classification?.verificationStatus || '';
   return '';
 }
 
@@ -557,8 +605,9 @@ function getFilterDefinitions(tabId) {
   if (tabId === 'cases') {
     return [
       common.sector,
-      { key: 'impact', label: uiText('filterBy') + ' ' + uiText('kpi'), labeler: value => value === 'with-kpi' ? uiText('kpi') : getEvidenceLabel(value) },
-      { ...common.sdg, key: 'sdg' },
+      { key: 'transferType', label: uiText('filterBy') + ' ' + uiText('transferType'), labeler: getTransferTypeLabel },
+      { key: 'level', label: uiText('filterBy') + ' ' + uiText('level'), labeler: id => getLevelLabel(id) || id },
+      { key: 'verificationStatus', label: uiText('filterBy') + ' ' + uiText('verificationStatus'), labeler: getVerificationLabel },
     ];
   }
   if (tabId === 'pilots-validations') {
@@ -787,22 +836,37 @@ function renderChallengeCard(item, tab) {
 
 function renderCaseCard(item, tab) {
   const card = item.card || {};
+  const transfer = item.transfer || {};
   const kpi = card.highlightKpi?.value
     ? `${pickLang(card.highlightKpi.value)}${pickLang(card.highlightKpi.label) ? ` / ${pickLang(card.highlightKpi.label)}` : ''}`
     : pickLang(card.impactKpi);
+  const origin = transfer.originOrganization || '';
+  const beneficiaries = asArray(transfer.beneficiaryOrganizations).map(b => b.name).filter(Boolean);
+  const transferTypeLabel = getTransferTypeLabel(transfer.type);
+  const transferTypeIcon = TRANSFER_TYPE_ICONS[transfer.type] || 'arrow-right';
+  const levels = asArray(item.core?.levels);
+  const vs = item.classification?.verificationStatus;
+  const verifiedLabel = vs === 'verified' ? getVerificationLabel('verified') : '';
+
   const body = `
+    ${origin || beneficiaries.length ? `
+      <div class="mt-4 flex items-start gap-2 rounded-lg bg-eu-bg px-3 py-2 text-sm text-gray-700">
+        <i data-lucide="building-2" class="mt-0.5 h-4 w-4 shrink-0 text-gray-400"></i>
+        <span class="line-clamp-2">${esc(origin)}${beneficiaries.length ? ' → ' + beneficiaries.slice(0, 2).join(', ') : ''}</span>
+      </div>` : ''}
     ${renderCardCallout(uiText('featuredSignal'), card.achievement, 'trophy')}
-    ${renderCardMiniMeta([
-      { label: uiText('actors'), value: renderActorNames(card.actors) },
-      { label: uiText('kpi'), value: kpi },
-      { label: uiText('valorisation'), value: pickLang(card.economicValue || card.valorisation) },
-    ])}
+    ${kpi ? renderCardMiniMeta([{ label: uiText('kpi'), value: kpi }]) : ''}
+    <div class="mt-4 flex flex-wrap gap-2">
+      ${transferTypeLabel ? `<span class="inline-flex items-center gap-1.5 rounded-full border border-orange-200 bg-orange-50 px-2.5 py-1 text-xs font-bold text-orange-700"><i data-lucide="${esc(transferTypeIcon)}" class="h-3 w-3"></i>${esc(transferTypeLabel)}</span>` : ''}
+      ${levels.map(lvl => renderBadge(getLevelLabel(lvl) || lvl, LEVEL_STYLES[lvl] || 'bg-eu-bg text-gray-700 border-eu-border')).join('')}
+      ${verifiedLabel ? `<span class="inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-bold text-green-700"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifiedLabel)}</span>` : ''}
+    </div>
     ${renderSdgs(card.validatedSdgs || card.sdgs, 3)}
   `;
   return renderCardShell(item, tab, body, {
     title: item.core?.title,
-    subtitle: card.achievement || item.core?.summary,
-    extraBadge: getEvidenceLabel(item.classification?.evidenceMaturity),
+    subtitle: item.core?.summary,
+    extraBadge: transferTypeLabel || getEvidenceLabel(item.classification?.evidenceMaturity),
   });
 }
 
@@ -1289,12 +1353,54 @@ function renderChallengeDetail(item) {
   ].filter(Boolean).join(''), renderDetailChipPanel(item));
 }
 
+function renderCaseTransferSection(item) {
+  const transfer = item.transfer || {};
+  const origin = transfer.originOrganization || '';
+  const beneficiaries = asArray(transfer.beneficiaryOrganizations).filter(b => b.name);
+  const transferType = transfer.type || '';
+  const transferTypeLabel = getTransferTypeLabel(transferType);
+  const transferTypeIcon = TRANSFER_TYPE_ICONS[transferType] || 'arrow-right';
+  const vs = item.classification?.verificationStatus || '';
+  const verificationLabel = getVerificationLabel(vs);
+  if (!origin && !beneficiaries.length && !transferTypeLabel) return '';
+  return `
+    <section class="rounded-2xl bg-eu-orange/5 border border-eu-orange/20 p-6">
+      ${renderSectionHeader('repeat-2', uiText('transferFlow'), true)}
+      ${transferTypeLabel ? `
+        <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-orange-200 bg-orange-50 px-3 py-1.5 text-sm font-bold text-orange-700">
+          <i data-lucide="${esc(transferTypeIcon)}" class="h-4 w-4"></i>
+          ${esc(transferTypeLabel)}
+        </div>` : ''}
+      ${origin ? `
+        <div class="flex items-start gap-2 text-sm text-gray-700">
+          <i data-lucide="building-2" class="mt-0.5 h-4 w-4 shrink-0 text-eu-orange"></i>
+          <span class="font-semibold">${esc(origin)}</span>
+        </div>` : ''}
+      ${beneficiaries.length ? `
+        <div class="mt-3 space-y-2">
+          <p class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang({ es: 'Entidades beneficiarias', en: 'Beneficiary organisations', va: 'Entitats beneficiàries' }))}</p>
+          ${beneficiaries.map(b => `
+            <div class="flex items-center gap-2 text-sm text-gray-700">
+              <i data-lucide="arrow-right" class="h-3.5 w-3.5 shrink-0 text-eu-orange"></i>
+              <span>${esc(b.name)}</span>
+              ${b.type ? `<span class="text-xs text-gray-400">(${esc(b.type)})</span>` : ''}
+            </div>`).join('')}
+        </div>` : ''}
+      ${vs ? `
+        <div class="mt-4 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-bold ${vs === 'verified' ? 'border-green-200 bg-green-50 text-green-700' : 'border-gray-200 bg-gray-50 text-gray-600'}">
+          <i data-lucide="${vs === 'verified' ? 'shield-check' : 'shield'}" class="h-3.5 w-3.5"></i>
+          ${esc(verificationLabel)}
+        </div>` : ''}
+    </section>`;
+}
+
 function renderCaseDetail(item) {
   const detail = item.detail || {};
   const contactCards = renderContactCards(detail.people);
   const deliverables = renderDeliverableList(detail.outputs);
 
   return renderDetailLayout(item, [
+    renderCaseTransferSection(item),
     renderCaseEvidenceSection(item),
     renderCollaborationSection(item),
     contactCards ? renderStructuredSection(getBlockLabel('people'), 'user-round-check', contactCards) : '',
