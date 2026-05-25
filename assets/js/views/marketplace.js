@@ -2520,6 +2520,299 @@ function renderCaseDetail(item) {
 }
 
 function renderPilotDetail(item) {
+  const isV2 = item.pilotPlan != null || item.ownership?.lead != null;
+  return isV2 ? renderPilotDetailV2(item) : renderPilotDetailLegacy(item);
+}
+
+function renderPilotDetailV2(item) {
+  const core = item.core || {};
+  const pilotPlan = item.pilotPlan || {};
+  const impl = item.implementation || {};
+  const readiness = impl.readiness || {};
+  const evidence = item.evidence || {};
+  const results = item.results || {};
+  const transfer = item.transferability || {};
+  const downloads = item.downloads || {};
+  const resources = item.resources || {};
+  const ownership = item.ownership || {};
+  const pres = item.presentation?.detail?.sections || {};
+
+  // ── Helpers internos ───────────────────────────────────────────────────────
+  function textBlock(localized) {
+    const text = pickLang(localized);
+    return text ? `<p class="mt-2 text-sm leading-7 text-gray-700">${esc(text)}</p>` : '';
+  }
+  function labeledBlock(labelText, localized) {
+    const text = pickLang(localized);
+    if (!text) return '';
+    return `<div class="mt-4">
+      <p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-1">${esc(labelText)}</p>
+      <p class="text-sm leading-7 text-gray-700">${esc(text)}</p>
+    </div>`;
+  }
+  function bulletList(items, icon = 'check-circle') {
+    const arr = asArray(items).map(i => pickLang(i.label || i)).filter(Boolean);
+    if (!arr.length) return '';
+    return `<ul class="mt-3 space-y-2">${arr.map(t => `
+      <li class="flex gap-2 text-sm leading-6 text-gray-700">
+        <i data-lucide="${esc(icon)}" class="mt-0.5 h-4 w-4 shrink-0 text-eu-blue"></i>
+        <span>${esc(t)}</span>
+      </li>`).join('')}</ul>`;
+  }
+  function orgList(items) {
+    return asArray(items).map(o => {
+      const name = o.name || '';
+      const role = pickLang(o.role);
+      const initials = name.split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]?.toUpperCase()).join('') || '?';
+      return `<div class="flex items-center gap-3 rounded-lg border border-eu-border bg-eu-bg p-3">
+        <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-eu-blue text-xs font-extrabold text-white">${esc(initials)}</span>
+        <div class="min-w-0">
+          <p class="text-sm font-bold text-eu-text truncate">${esc(name)}</p>
+          ${role ? `<p class="mt-0.5 text-xs text-gray-500 truncate">${esc(role)}</p>` : ''}
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  // ── S1: Plan de pilotaje ───────────────────────────────────────────────────
+  const s1Html = pres.pilotPlan !== false ? (() => {
+    const hypothesis = pickLang(pilotPlan.hypothesis);
+    const content = [
+      hypothesis ? `<p class="text-lg font-bold leading-snug text-eu-blue">${esc(hypothesis)}</p>` : '',
+      labeledBlock(pickLang({ es: 'Objetivo', en: 'Objective', va: 'Objectiu' }), pilotPlan.objective),
+      labeledBlock(pickLang({ es: 'Contexto', en: 'Context', va: 'Context' }), pilotPlan.context),
+      labeledBlock(pickLang({ es: 'Participantes', en: 'Participants', va: 'Participants' }), pilotPlan.targetParticipants),
+    ].filter(Boolean).join('');
+    return content ? renderStructuredSection({ es: 'Plan de pilotaje', en: 'Pilot plan', va: 'Pla de pilot' }, 'flask-conical', content) : '';
+  })() : '';
+
+  // ── S2: Metodología ────────────────────────────────────────────────────────
+  const s2Html = pres.pilotPlan !== false ? (() => {
+    const method = pickLang(pilotPlan.methodology);
+    const criteria = bulletList(pilotPlan.successCriteria, 'target');
+    const content = [
+      method ? `<p class="text-sm leading-7 text-gray-700">${esc(method)}</p>` : '',
+      criteria ? `<div class="mt-4"><p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-1">${esc(pickLang({ es: 'Criterios de éxito', en: 'Success criteria', va: 'Criteris d\'èxit' }))}</p>${criteria}</div>` : '',
+    ].filter(Boolean).join('');
+    return content ? renderStructuredSection({ es: 'Metodología', en: 'Methodology', va: 'Metodologia' }, 'book-open', content) : '';
+  })() : '';
+
+  // ── S3: Implementación ─────────────────────────────────────────────────────
+  const s3Html = pres.implementation !== false ? (() => {
+    const trl = readiness.technologyReadiness;
+    const er = readiness.educationalReadiness;
+    const trlHtml = trl?.enabled ? `
+      <div class="rounded-lg border border-eu-border bg-eu-bg px-4 py-3">
+        <p class="text-xs font-bold uppercase tracking-wide text-gray-400">TRL</p>
+        <p class="mt-0.5 text-base font-bold text-eu-blue">TRL ${trl.level || ''}${pickLang(trl.label) ? ` — ${pickLang(trl.label)}` : ''}</p>
+      </div>` : '';
+    const erHtml = er?.enabled ? `
+      <div class="rounded-lg border border-eu-border bg-eu-bg px-4 py-3">
+        <p class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Madurez educativa', en: 'Educational readiness', va: 'Maduresa educativa' }))}</p>
+        <p class="mt-0.5 text-base font-bold text-eu-blue">${esc(getEducationalReadinessLabel(er.level) || pickLang(er.label) || er.level || '')}</p>
+      </div>` : '';
+    const readinessRow = (trlHtml || erHtml) ? `<div class="grid gap-3 md:grid-cols-2">${trlHtml}${erHtml}</div>` : '';
+
+    const infraLabels = asArray(impl.infrastructure).map(i => pickLang(i.label)).filter(Boolean);
+    const infraChips = infraLabels.length ? `
+      <div class="mt-4">
+        <p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-2">${esc(pickLang({ es: 'Infraestructura', en: 'Infrastructure', va: 'Infraestructura' }))}</p>
+        <div class="flex flex-wrap gap-2">${infraLabels.map(l => renderBadge(l, 'bg-slate-50 text-slate-700 border-slate-200')).join('')}</div>
+      </div>` : '';
+
+    const toolLabels = asArray(impl.tools).map(t => pickLang(t.label)).filter(Boolean);
+    const toolChips = toolLabels.length ? `
+      <div class="mt-4">
+        <p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-2">${esc(pickLang({ es: 'Herramientas', en: 'Tools', va: 'Eines' }))}</p>
+        <div class="flex flex-wrap gap-2">${toolLabels.map(l => renderBadge(l, 'bg-blue-50 text-blue-700 border-blue-200')).join('')}</div>
+      </div>` : '';
+
+    const dm = impl.dataManagement;
+    const dmHtml = dm?.note ? `
+      <div class="mt-4 flex gap-2 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-xs text-amber-800">
+        <i data-lucide="database" class="h-4 w-4 shrink-0 mt-0.5"></i>
+        <span>${esc(pickLang(dm.note))}</span>
+      </div>` : '';
+
+    const content = [readinessRow, infraChips, toolChips, dmHtml].filter(Boolean).join('');
+    return content ? renderStructuredSection({ es: 'Implementación', en: 'Implementation', va: 'Implementació' }, 'cpu', content) : '';
+  })() : '';
+
+  // ── S4: Evidencia ──────────────────────────────────────────────────────────
+  const s4Html = pres.evidence !== false ? (() => {
+    const evLevel = getLabelFromArray(MARKETPLACE_CONFIG.labels?.pilotEvidenceLevel, evidence.evidenceLevel);
+    const evVer = evidence.verificationStatus || '';
+    const badgesHtml = (evLevel || evVer) ? `
+      <div class="flex flex-wrap gap-2 mb-4">
+        ${evLevel ? renderBadge(evLevel, 'bg-teal-50 text-teal-700 border-teal-200') : ''}
+        ${evVer ? renderBadge(evVer, 'bg-eu-bg text-gray-700 border-eu-border') : ''}
+      </div>` : '';
+
+    const pm = evidence.primaryMetric;
+    const primaryHtml = pm ? `
+      <div class="rounded-xl border border-eu-border bg-eu-bg p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold text-gray-400">${esc(pickLang({ es: 'Métrica principal', en: 'Primary metric', va: 'Mètrica principal' }))}</span>
+          <p class="mt-1 text-sm font-bold text-eu-text">${esc(pickLang(pm.label))}</p>
+        </div>
+        <div class="shrink-0 rounded-lg bg-eu-orange/10 border border-eu-orange/20 px-4 py-3 text-center">
+          <span class="text-xl font-bold text-eu-orange">${esc(String(pm.value))} <span class="text-sm font-semibold">${esc(pickLang(pm.unit) || '')}</span></span>
+        </div>
+      </div>` : '';
+
+    const secMetrics = asArray(evidence.secondaryMetrics).filter(m => pickLang(m.label));
+    const secondaryHtml = secMetrics.length ? `
+      <div class="mt-4 space-y-2">
+        <p class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Métricas secundarias', en: 'Secondary metrics', va: 'Mètriques secundàries' }))}</p>
+        ${secMetrics.map(m => `
+          <div class="rounded-lg border border-eu-border bg-white px-4 py-3">
+            <p class="text-xs font-bold text-gray-400">${esc(pickLang(m.label))}</p>
+            ${pickLang(m.method) ? `<p class="mt-0.5 text-xs text-gray-500">${esc(pickLang(m.method))}</p>` : ''}
+          </div>`).join('')}
+      </div>` : '';
+
+    const limHtml = evidence.limitations ? labeledBlock(
+      pickLang({ es: 'Limitaciones', en: 'Limitations', va: 'Limitacions' }),
+      evidence.limitations
+    ) : '';
+
+    const collHtml = evidence.collectionMethod ? labeledBlock(
+      pickLang({ es: 'Método de recogida', en: 'Collection method', va: 'Mètode de recollida' }),
+      evidence.collectionMethod
+    ) : '';
+
+    const content = [badgesHtml, collHtml, primaryHtml, secondaryHtml, limHtml].filter(Boolean).join('');
+    return content ? renderStructuredSection({ es: 'Evidencia', en: 'Evidence', va: 'Evidència' }, 'bar-chart-2', content) : '';
+  })() : '';
+
+  // ── S5: Resultados y decisión ──────────────────────────────────────────────
+  const s5Html = pres.results !== false ? (() => {
+    const headline = pickLang(results.headline);
+    const outputs = bulletList(results.outputs, 'check-circle');
+    const dec = results.decision;
+    const decHtml = dec ? `
+      <div class="mt-4 rounded-lg border border-eu-border bg-eu-bg px-4 py-3 flex items-start gap-3">
+        <i data-lucide="arrow-right-circle" class="h-4 w-4 mt-0.5 shrink-0 text-eu-blue"></i>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Decisión posterior', en: 'Next decision', va: 'Decisió posterior' }))}</span>
+          ${dec.outcome ? `<span class="ml-2 inline-flex rounded border px-1.5 py-0.5 text-xs font-bold bg-green-50 text-green-800 border-green-200">${esc(getLabelFromArray(MARKETPLACE_CONFIG.labels?.pilotDecision, dec.outcome) || dec.outcome)}</span>` : ''}
+          ${pickLang(dec.label) ? `<p class="mt-1 text-sm text-gray-700">${esc(pickLang(dec.label))}</p>` : ''}
+        </div>
+      </div>` : '';
+
+    const content = [
+      headline ? `<p class="text-base font-bold leading-snug text-eu-text">${esc(headline)}</p>` : '',
+      outputs ? `<div class="mt-4"><p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-1">${esc(pickLang({ es: 'Outputs', en: 'Outputs', va: 'Outputs' }))}</p>${outputs}</div>` : '',
+      decHtml,
+    ].filter(Boolean).join('');
+    return content ? renderStructuredSection({ es: 'Resultados y decisión', en: 'Results and decision', va: 'Resultats i decisió' }, 'trophy', content) : '';
+  })() : '';
+
+  // ── S6: Transferibilidad ───────────────────────────────────────────────────
+  const s6Html = pres.transferability !== false ? (() => {
+    const whyText = pickLang(transfer.whyTransferable);
+    const suitFor = asArray(transfer.suitableFor).filter(Boolean);
+    const reqs = bulletList(transfer.requirements, 'check-square');
+    const steps = bulletList(transfer.replicationSteps, 'arrow-right');
+    const risks = bulletList(transfer.risks, 'alert-triangle');
+    const content = [
+      whyText ? `<p class="text-sm leading-7 text-gray-700">${esc(whyText)}</p>` : '',
+      suitFor.length ? `<div class="mt-3 flex flex-wrap gap-2">${suitFor.map(s => renderBadge(s, 'bg-purple-50 text-purple-700 border-purple-200')).join('')}</div>` : '',
+      reqs ? `<div class="mt-4"><p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-1">${esc(pickLang({ es: 'Requisitos', en: 'Requirements', va: 'Requisits' }))}</p>${reqs}</div>` : '',
+      steps ? `<div class="mt-4"><p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-1">${esc(pickLang({ es: 'Pasos de replicación', en: 'Replication steps', va: 'Passos de replicació' }))}</p>${steps}</div>` : '',
+      risks ? `<div class="mt-4"><p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-1">${esc(pickLang({ es: 'Riesgos', en: 'Risks', va: 'Riscos' }))}</p>${risks}</div>` : '',
+    ].filter(Boolean).join('');
+    return content ? renderStructuredSection({ es: 'Transferibilidad', en: 'Transferability', va: 'Transferibilitat' }, 'share-2', content) : '';
+  })() : '';
+
+  // ── S7: Descargables ──────────────────────────────────────────────────────
+  const s7Html = (pres.downloads !== false && downloads.enabled && asArray(downloads.items).length) ? (() => {
+    const itemsHtml = asArray(downloads.items).map(d => {
+      const title = pickLang(d.title);
+      const desc = pickLang(d.description);
+      const typeLabel = getLabelFromArray(MARKETPLACE_CONFIG.labels?.downloadTypes, d.type);
+      return `
+        <div class="rounded-lg border border-eu-border bg-white px-4 py-3">
+          <div class="flex items-start justify-between gap-3">
+            <div class="min-w-0">
+              <p class="text-sm font-bold text-eu-text">${esc(title || typeLabel || d.id)}</p>
+              ${desc ? `<p class="mt-0.5 text-xs leading-5 text-gray-500">${esc(desc)}</p>` : ''}
+              ${d.format ? `<span class="mt-1 inline-block text-xs font-semibold text-gray-400">${esc(d.format)}</span>` : ''}
+            </div>
+            ${typeLabel ? renderBadge(typeLabel, 'bg-eu-bg text-gray-600 border-eu-border') : ''}
+          </div>
+        </div>`;
+    }).join('');
+    return renderStructuredSection({ es: 'Descargables', en: 'Downloads', va: 'Descarregables' }, 'file-down', `<div class="mt-2 space-y-2">${itemsHtml}</div>`);
+  })() : '';
+
+  // ── S8: Recursos externos ─────────────────────────────────────────────────
+  const s8Html = (pres.resources !== false && asArray(resources.externalLinks).length) ? (() => {
+    const linksHtml = asArray(resources.externalLinks).map(l => {
+      const label = pickLang(l.label);
+      return `<a href="${esc(l.url || '#')}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-lg border border-eu-border bg-white px-4 py-3 text-sm font-semibold text-eu-blue hover:bg-eu-bg">
+        <i data-lucide="external-link" class="h-4 w-4 shrink-0"></i>
+        <span class="truncate">${esc(label || l.url)}</span>
+      </a>`;
+    }).join('');
+    return renderStructuredSection({ es: 'Recursos externos', en: 'External resources', va: 'Recursos externs' }, 'link', `<div class="mt-2 space-y-2">${linksHtml}</div>`);
+  })() : '';
+
+  // ── S9: Proceso / Hitos ───────────────────────────────────────────────────
+  const s9Html = pres.process !== false ? (() => {
+    const ew = core.executionWindow;
+    const startMs = ew?.start ? [{ date: ew.start, label: { es: 'Inicio del piloto', en: 'Pilot start', va: 'Inici del pilot' } }] : [];
+    const endMs = ew?.end ? [{ date: ew.end, label: { es: 'Fin del piloto', en: 'Pilot end', va: 'Fi del pilot' } }] : [];
+    const extraMs = asArray(item.process?.milestones);
+    const allMs = [...startMs, ...extraMs, ...endMs];
+    const milestonesHtml = renderMilestoneList({ milestones: allMs });
+    return milestonesHtml ? renderStructuredSection({ es: 'Proceso y hitos', en: 'Process and milestones', va: 'Procés i fites' }, 'route', milestonesHtml) : '';
+  })() : '';
+
+  // ── Sidebar: Personas y entidades ─────────────────────────────────────────
+  const sidebarPeopleHtml = pres.people !== false ? (() => {
+    const leadHtml = ownership.lead?.name ? `
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-2">${esc(pickLang({ es: 'Entidad líder', en: 'Lead entity', va: 'Entitat líder' }))}</p>
+        <div class="rounded-lg border border-eu-border bg-eu-bg px-4 py-3">
+          <p class="text-sm font-bold text-eu-text">${esc(ownership.lead.name)}</p>
+          ${pickLang(ownership.lead.type) ? `<p class="mt-0.5 text-xs text-gray-500">${esc(pickLang(ownership.lead.type))}</p>` : ''}
+          ${pickLang(ownership.lead.role) ? `<p class="mt-0.5 text-xs text-gray-500">${esc(pickLang(ownership.lead.role))}</p>` : ''}
+        </div>
+      </div>` : '';
+
+    const sitesOrgs = asArray(ownership.pilotSites);
+    const sitesHtml = sitesOrgs.length ? `
+      <div class="mt-4">
+        <p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-2">${esc(pickLang({ es: 'Centros piloto', en: 'Pilot sites', va: 'Centres pilot' }))}</p>
+        <div class="space-y-2">${orgList(sitesOrgs)}</div>
+      </div>` : '';
+
+    const partnerOrgs = asArray(ownership.partners);
+    const partnersHtml = partnerOrgs.length ? `
+      <div class="mt-4">
+        <p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-2">${esc(pickLang({ es: 'Socios', en: 'Partners', va: 'Socis' }))}</p>
+        <div class="space-y-2">${orgList(partnerOrgs)}</div>
+      </div>` : '';
+
+    const content = [leadHtml, sitesHtml, partnersHtml].filter(Boolean).join('');
+    if (!content) return '';
+    return `
+      <section class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
+        <h2 class="mb-4 text-base font-extrabold text-eu-text">${esc(pickLang({ es: 'Personas y entidades', en: 'People and entities', va: 'Persones i entitats' }))}</h2>
+        ${content}
+      </section>`;
+  })() : '';
+
+  // ── Sidebar: Acceso ───────────────────────────────────────────────────────
+  const accessPanelHtml = pres.access !== false ? renderAccessPanel(item) : '';
+
+  const mainHtml = [s1Html, s2Html, s3Html, s4Html, s5Html, s6Html, s7Html, s8Html, s9Html].filter(Boolean).join('');
+
+  return renderDetailLayout(item, mainHtml, sidebarPeopleHtml + accessPanelHtml);
+}
+
+function renderPilotDetailLegacy(item) {
   const detail = item.detail || {};
   const milestones = renderMilestoneList(detail.process);
   const resourceRows = renderResourceRows(detail.resources);
