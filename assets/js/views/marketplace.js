@@ -942,11 +942,11 @@ function renderChallengeCard(item, tab) {
     }
   }
 
-  // CTA externo (solo si hay URL real)
+  // CTA: externo si hay URL real, interno (Ver reto) si no — NUNCA usar tab.ctaLabel
   const extUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : null;
   const ctaHtml = extUrl
     ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang(ef.primaryAction?.label) || uiText('viewDetail'))}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
-    : null;
+    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang({ es: 'Ver reto', en: 'View challenge', va: 'Veure repte' }))}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
 
   // Entidad pública desde ownership (v2) o legacy
   const entityLabel = pickLang(ownership.requester?.publicLabel) || pickLang(item.core?.entity?.name);
@@ -1570,7 +1570,7 @@ function renderChallengeParticipationSection(item) {
   if (!audienceText && !formatText && !transferValue && !contribChips.length) return '';
   return `
     <section class="rounded-2xl bg-white border border-eu-border p-6">
-      ${renderSecondaryHeader('users', uiText('collaborationMap'))}
+      ${renderSecondaryHeader('users', pickLang({ es: 'Quién puede participar', en: 'Who can participate', va: 'Qui pot participar' }))}
       ${contribChips.length ? `
         <div class="mb-4">
           <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('seeking'))}</p>
@@ -1672,7 +1672,7 @@ function renderChallengeTechnicalSection(item) {
   if (!competences.length && !sdgs.length && !sensitivePolicy) return '';
   return `
     <section class="rounded-2xl bg-white border border-eu-border p-6">
-      ${renderSecondaryHeader('settings-2', uiText('technicalBlocks'))}
+      ${renderSecondaryHeader('settings-2', pickLang({ es: 'Competencias y ODS', en: 'Competences and SDGs', va: 'Competències i ODS' }))}
       ${competences.length ? `
         <div>
           <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('competencies'))}</p>
@@ -1709,7 +1709,7 @@ function renderChallengeAccessSection(item) {
   if (!privacyLabel && !license && !rightsNote) return '';
   return `
     <section class="rounded-2xl bg-white border border-eu-border p-6">
-      ${renderSecondaryHeader('link', uiText('access'))}
+      ${renderSecondaryHeader('link', pickLang({ es: 'Acceso, licencia y datos', en: 'Access, licence and data', va: 'Accés, llicència i dades' }))}
       ${privacyLabel || license ? `
         <div class="flex items-center gap-3">
           ${privacy ? `<i data-lucide="${esc(privacy.icon)}" class="h-4 w-4 shrink-0 text-eu-blue"></i>` : ''}
@@ -1990,8 +1990,9 @@ function renderDetailBlock(item, block) {
 function getBlockContent(item, key) {
   if (key === 'access') return item.detail?.access || item.access || {};
   if (key === 'trackA') {
-    if (item.trackALink?.enabled === false) return {};
-    return item.detail?.trackA || item.trackALink || {};
+    if (item.trackA != null) return item.trackA;          // v2 root-level
+    if (item.trackALink?.enabled === false) return {};    // v1 disabled
+    return item.detail?.trackA || item.trackALink || {};  // v1 fallback
   }
   return item.detail?.[key] || {};
 }
