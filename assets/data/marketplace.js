@@ -326,7 +326,9 @@ export const MARKETPLACE_CONFIG = {
     "verificationStatus": true,
     "pilotType": true,
     "pilotStatus": true,
-    "helix": true
+    "helix": true,
+    "contributionType": false,
+    "audience": false
   },
   "cardChipVisibility": {
     "type": true,
@@ -1297,6 +1299,24 @@ export const MARKETPLACE_CONFIG = {
         "en": "Outcomes and findings",
         "va": "Resultats i troballes"
       }
+    },
+    {
+      "id": "downloads",
+      "visible": true,
+      "label": {
+        "es": "Materiales descargables",
+        "en": "Downloadable materials",
+        "va": "Materials descarregables"
+      }
+    },
+    {
+      "id": "relations",
+      "visible": true,
+      "label": {
+        "es": "Elementos relacionados",
+        "en": "Related items",
+        "va": "Elements relacionats"
+      }
     }
   ],
   "detailTemplates": {
@@ -1314,7 +1334,9 @@ export const MARKETPLACE_CONFIG = {
         "people",
         "evidence",
         "access",
-        "trackA"
+        "trackA",
+        "downloads",
+        "relations"
       ],
       "cardSignal": "need"
     },
@@ -1401,6 +1423,239 @@ export const MARKETPLACE_CONFIG = {
       "cardSignal": "access"
     }
   },
+  "contributionTypeLabels": [
+    {
+      "id": "ideas",
+      "visible": true,
+      "label": {
+        "es": "Ideas",
+        "en": "Ideas",
+        "va": "Idees"
+      }
+    },
+    {
+      "id": "contextual-data",
+      "visible": true,
+      "label": {
+        "es": "Datos de contexto",
+        "en": "Contextual data",
+        "va": "Dades de context"
+      }
+    },
+    {
+      "id": "prototypes",
+      "visible": true,
+      "label": {
+        "es": "Prototipos",
+        "en": "Prototypes",
+        "va": "Prototips"
+      }
+    },
+    {
+      "id": "methodologies",
+      "visible": true,
+      "label": {
+        "es": "Metodologías",
+        "en": "Methodologies",
+        "va": "Metodologies"
+      }
+    },
+    {
+      "id": "documentation",
+      "visible": true,
+      "label": {
+        "es": "Documentación",
+        "en": "Documentation",
+        "va": "Documentació"
+      }
+    }
+  ],
+  "audienceLabels": [
+    {
+      "id": "companies",
+      "visible": true,
+      "label": {
+        "es": "Empresas",
+        "en": "Companies",
+        "va": "Empreses"
+      }
+    },
+    {
+      "id": "vet-centres",
+      "visible": true,
+      "label": {
+        "es": "Centros FP",
+        "en": "VET Centres",
+        "va": "Centres FP"
+      }
+    },
+    {
+      "id": "teachers",
+      "visible": true,
+      "label": {
+        "es": "Docentes",
+        "en": "Teachers",
+        "va": "Docents"
+      }
+    },
+    {
+      "id": "advanced-learners",
+      "visible": true,
+      "label": {
+        "es": "Alumnado avanzado",
+        "en": "Advanced learners",
+        "va": "Alumnat avançat"
+      }
+    },
+    {
+      "id": "researchers",
+      "visible": true,
+      "label": {
+        "es": "Investigadores",
+        "en": "Researchers",
+        "va": "Investigadors"
+      }
+    },
+    {
+      "id": "public-admin",
+      "visible": true,
+      "label": {
+        "es": "Administración pública",
+        "en": "Public administration",
+        "va": "Administració pública"
+      }
+    }
+  ],
+  "competenceLabels": [
+    {
+      "id": "teamwork",
+      "visible": true,
+      "label": {
+        "es": "Trabajo en equipo",
+        "en": "Teamwork",
+        "va": "Treball en equip"
+      }
+    },
+    {
+      "id": "ai-ethics",
+      "visible": true,
+      "label": {
+        "es": "Ética en IA",
+        "en": "AI ethics",
+        "va": "Ètica en IA"
+      }
+    },
+    {
+      "id": "data-analysis",
+      "visible": true,
+      "label": {
+        "es": "Análisis de datos",
+        "en": "Data analysis",
+        "va": "Anàlisi de dades"
+      }
+    },
+    {
+      "id": "applied-creativity",
+      "visible": true,
+      "label": {
+        "es": "Creatividad aplicada",
+        "en": "Applied creativity",
+        "va": "Creativitat aplicada"
+      }
+    },
+    {
+      "id": "systems-thinking",
+      "visible": true,
+      "label": {
+        "es": "Pensamiento sistémico",
+        "en": "Systems thinking",
+        "va": "Pensament sistèmic"
+      }
+    },
+    {
+      "id": "sustainability",
+      "visible": true,
+      "label": {
+        "es": "Sostenibilidad",
+        "en": "Sustainability",
+        "va": "Sostenibilitat"
+      }
+    }
+  ],
+  "downloadTypeLabels": [
+    {
+      "id": "brief",
+      "visible": true,
+      "label": {
+        "es": "Brief del reto",
+        "en": "Challenge brief",
+        "va": "Brief del repte"
+      }
+    },
+    {
+      "id": "template",
+      "visible": true,
+      "label": {
+        "es": "Plantilla",
+        "en": "Template",
+        "va": "Plantilla"
+      }
+    },
+    {
+      "id": "criteria",
+      "visible": true,
+      "label": {
+        "es": "Criterios de valoración",
+        "en": "Assessment criteria",
+        "va": "Criteris de valoració"
+      }
+    },
+    {
+      "id": "guide",
+      "visible": true,
+      "label": {
+        "es": "Guía",
+        "en": "Guide",
+        "va": "Guia"
+      }
+    },
+    {
+      "id": "evidence-sheet",
+      "visible": true,
+      "label": {
+        "es": "Ficha de evidencia",
+        "en": "Evidence sheet",
+        "va": "Fitxa d'evidència"
+      }
+    },
+    {
+      "id": "dataset",
+      "visible": true,
+      "label": {
+        "es": "Dataset",
+        "en": "Dataset",
+        "va": "Dataset"
+      }
+    },
+    {
+      "id": "zip-pack",
+      "visible": true,
+      "label": {
+        "es": "Paquete completo",
+        "en": "Full package",
+        "va": "Paquet complet"
+      }
+    },
+    {
+      "id": "other",
+      "visible": true,
+      "label": {
+        "es": "Otro",
+        "en": "Other",
+        "va": "Altre"
+      }
+    }
+  ],
   "modelVersion": "community-practice-mvp-1",
   "items": [
     {
@@ -1412,6 +1667,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/eficiencia-energetica-edificios-hou.yml",
       "core": {
         "status": "resolved",
+        "maturity": "completed",
         "title": {
           "es": "Escalado de sistema de monitorización energética con IA desde edificio piloto a red de viviendas sociales",
           "en": "Scaling of AI-powered energy monitoring system from pilot building to social housing network",
@@ -1727,14 +1983,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "Apache 2.0",
+        "pageVisibility": "public",
+        "pageLicense": "Apache 2.0",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "El código puede usarse y modificarse libremente. Los datos de consumo de las viviendas son confidenciales y no están incluidos.",
           "en": "The code may be freely used and modified. Housing consumption data is confidential and not included.",
           "va": "El codi pot usar-se i modificar-se lliurement. Les dades de consum dels habitatges són confidencials i no s'inclouen."
         },
+        "publicUrl": "",
+        "license": "Apache 2.0",
         "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": true,
+        "label": {
+          "es": "Trabajo final de Máster relacionado",
+          "en": "Related Master's final project",
+          "va": "Treball final de Màster relacionat"
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": true,
@@ -1770,6 +2043,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-fp-energia-costera.yml",
       "core": {
         "status": "resolved",
+        "maturity": "completed",
         "title": {
           "es": "Piloto FP — IA para eficiencia energética en centros educativos",
           "en": "VET Pilot — AI for energy efficiency in educational centres",
@@ -2047,14 +2321,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "CC BY 4.0",
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "Módulo y dataset publicados bajo CC BY 4.0. Datos de participantes anonimizados.",
           "en": "Module and dataset published under CC BY 4.0. Participant data anonymised.",
           "va": "Mòdul i dataset publicats sota CC BY 4.0. Dades de participants anonimitzades."
         },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
         "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": false,
@@ -2094,6 +2385,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/narrativas-digitales-ia-cci.yml",
       "core": {
         "status": "resolved",
+        "maturity": "inPilot",
         "title": {
           "es": "Narrativas digitales con IA generativa: del museo al aula de formación artística",
           "en": "Digital narratives with generative AI: from the museum to the arts education classroom",
@@ -2375,14 +2667,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "CC BY-NC 4.0",
+        "pageVisibility": "public",
+        "pageLicense": "CC BY-NC 4.0",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "Los materiales son libres para uso educativo no comercial. Los prompts que referencien obras del IVAM requieren atribución expresa.",
           "en": "Materials are free for non-commercial educational use. Prompts referencing IVAM works require explicit attribution.",
           "va": "Els materials són lliures per a ús educatiu no comercial. Els prompts que referencien obres de l'IVAM requereixen atribució expressa."
         },
+        "publicUrl": "",
+        "license": "CC BY-NC 4.0",
         "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": false,
@@ -2418,6 +2727,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/challenges/creative-ai-green-campus.yml",
       "core": {
         "status": "open",
+        "maturity": "idea",
         "title": {
           "es": "Co-diseñar un campus verde con IA generativa y prácticas STEAM",
           "en": "Co-designing a green campus with generative AI and STEAM practices",
@@ -2429,11 +2739,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Una institució educativa busca idees aplicables per a reduir consum energètic i millorar espais d'aprenentatge mitjançant IA, dades i creativitat."
         },
         "entity": {
-          "name": "AI-STEAM Network",
+          "name": "",
           "type": {
-            "es": "Comunidad de práctica",
-            "en": "Community of practice",
-            "va": "Comunitat de pràctica"
+            "es": "Institución educativa",
+            "en": "Educational institution",
+            "va": "Institució educativa"
           }
         },
         "sector": "ene",
@@ -2482,6 +2792,29 @@ export const MARKETPLACE_CONFIG = {
           ]
         }
       },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "requester": {
+          "name": "",
+          "publicLabel": {
+            "es": "Institución educativa",
+            "en": "Educational institution",
+            "va": "Institució educativa"
+          }
+        },
+        "contact": {
+          "name": "AI-STEAM Network Desk",
+          "org": "CEICE",
+          "role": {
+            "es": "Punto de coordinación Track B",
+            "en": "Track B coordination point",
+            "va": "Punt de coordinació Track B"
+          }
+        }
+      },
       "classification": {
         "aiSteamFocus": [
           "creative-ai",
@@ -2507,7 +2840,30 @@ export const MARKETPLACE_CONFIG = {
           "va": "Converteix una necessitat institucional en una oportunitat oberta de col·laboració entre centres, empreses creatives i experts en IA responsable."
         },
         "verificationStatus": "",
-        "pilotStatus": ""
+        "pilotStatus": "",
+        "contributionTypes": [
+          "ideas",
+          "contextual-data",
+          "prototypes",
+          "methodologies"
+        ],
+        "audience": [
+          "companies",
+          "vet-centres",
+          "teachers",
+          "advanced-learners"
+        ],
+        "competences": [
+          "teamwork",
+          "ai-ethics",
+          "data-analysis",
+          "applied-creativity"
+        ],
+        "sdgs": [
+          4,
+          9,
+          13
+        ]
       },
       "transfer": {
         "type": "",
@@ -2516,92 +2872,20 @@ export const MARKETPLACE_CONFIG = {
       },
       "community": {
         "tab": "challenges",
-        "audience": [
-          "companies",
-          "vet-centres",
-          "teachers",
-          "advanced-learners"
-        ],
-        "primaryCta": {
-          "es": "Proponer equipo",
-          "en": "Propose a team",
-          "va": "Proposar equip"
-        },
         "featuredSignal": {
           "es": "Reto abierto hasta septiembre de 2026",
           "en": "Challenge open until September 2026",
           "va": "Repte obert fins a setembre de 2026"
         }
       },
-      "card": {
-        "actionTitle": {
+      "card": {},
+      "visibility": {},
+      "detail": {
+        "briefTitle": {
           "es": "Diseñar intervenciones verdes con IA generativa",
           "en": "Design green interventions with generative AI",
           "va": "Dissenyar intervencions verdes amb IA generativa"
         },
-        "reward": {
-          "es": "Reconocimiento de participación y posibilidad de derivación a actividad LbD.",
-          "en": "Participation recognition and possible routing into an LbD activity.",
-          "va": "Reconeixement de participació i possible derivació a activitat LbD."
-        },
-        "setCompetences": [
-          "Trabajo en equipo",
-          "Ética en IA",
-          "Análisis de datos",
-          "Creatividad aplicada"
-        ],
-        "sdgs": [
-          {
-            "id": 4,
-            "label": {
-              "es": "Educación de calidad",
-              "en": "Quality education",
-              "va": "Educació de qualitat"
-            }
-          },
-          {
-            "id": 9,
-            "label": {
-              "es": "Industria, innovación e infraestructura",
-              "en": "Industry, innovation and infrastructure",
-              "va": "Indústria, innovació i infraestructura"
-            }
-          },
-          {
-            "id": 13,
-            "label": {
-              "es": "Acción por el clima",
-              "en": "Climate action",
-              "va": "Acció pel clima"
-            }
-          }
-        ],
-        "quickChat": true,
-        "deadlineMode": {
-          "es": "Recepción de propuestas hasta el 30/09/2026.",
-          "en": "Proposals accepted until 2026-09-30.",
-          "va": "Recepció de propostes fins al 30/09/2026."
-        },
-        "ipModel": {
-          "es": "Conocimiento abierto o descripción pública sin datos sensibles.",
-          "en": "Open knowledge or public description without sensitive data.",
-          "va": "Coneixement obert o descripció pública sense dades sensibles."
-        }
-      },
-      "visibility": {
-        "need": true,
-        "context": true,
-        "transferValue": true,
-        "participation": true,
-        "resources": true,
-        "outputs": true,
-        "process": true,
-        "people": true,
-        "evidence": false,
-        "access": true,
-        "trackA": true
-      },
-      "detail": {
         "need": {
           "es": "Identificar intervenciones viables para mejorar sostenibilidad y bienestar en espacios educativos usando IA como apoyo creativo, no como sustituto de la deliberación humana.",
           "en": "Identify feasible interventions to improve sustainability and wellbeing in learning spaces using AI as a creative support, not as a replacement for human deliberation.",
@@ -2612,97 +2896,55 @@ export const MARKETPLACE_CONFIG = {
           "en": "The challenge sits in the Track B network space and seeks proposals transferable to educational centres with different levels of technological capacity.",
           "va": "El repte se situa en l'espai Track B de la xarxa i busca propostes transferibles a centres educatius amb diferent capacitat tecnològica."
         },
-        "transferValue": {
-          "es": "La red obtiene un brief común, ejemplos de intervención y criterios de transferencia para otros centros interesados en IA, creatividad y sostenibilidad.",
-          "en": "The network gains a shared brief, intervention examples and transfer criteria for other centres interested in AI, creativity and sustainability.",
-          "va": "La xarxa obté un brief comú, exemples d'intervenció i criteris de transferència per a altres centres interessats en IA, creativitat i sostenibilitat."
-        },
         "participation": {
-          "audience": {
+          "audienceText": {
             "es": "Centros educativos, administraciones, empresas de energía, estudios creativos, docentes y alumnado avanzado.",
             "en": "Educational centres, public administrations, energy companies, creative studios, teachers and advanced learners.",
             "va": "Centres educatius, administracions, empreses d'energia, estudis creatius, docents i alumnat avançat."
           },
-          "format": {
+          "formatText": {
             "es": "Contribución abierta de ideas, datos de contexto, prototipos o metodologías.",
             "en": "Open contribution of ideas, contextual data, prototypes or methodologies.",
             "va": "Contribució oberta d'idees, dades de context, prototips o metodologies."
+          },
+          "transferValue": {
+            "es": "La red obtiene un brief común, ejemplos de intervención y criterios de transferencia para otros centros interesados en IA, creatividad y sostenibilidad.",
+            "en": "The network gains a shared brief, intervention examples and transfer criteria for other centres interested in AI, creativity and sustainability.",
+            "va": "La xarxa obté un brief comú, exemples d'intervenció i criteris de transferència per a altres centres interessats en IA, creativitat i sostenibilitat."
           }
         },
-        "resources": {
-          "available": [
-            {
-              "label": {
-                "es": "Plantilla de diagnóstico de espacios",
-                "en": "Learning-space diagnosis template",
-                "va": "Plantilla de diagnòstic d'espais"
-              },
-              "format": "ODT/PDF",
-              "license": "CC BY 4.0"
-            }
-          ]
-        },
-        "outputs": {
-          "expected": [
-            {
-              "label": {
-                "es": "Mapa de oportunidades de mejora",
-                "en": "Opportunity map for improvements",
-                "va": "Mapa d'oportunitats de millora"
-              }
-            },
-            {
-              "label": {
-                "es": "Prototipo visual o narrativo de intervención",
-                "en": "Visual or narrative intervention prototype",
-                "va": "Prototip visual o narratiu d'intervenció"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2026-06-15",
-              "label": {
-                "es": "Apertura de contribuciones",
-                "en": "Contribution window opens",
-                "va": "Obertura de contribucions"
-              }
-            },
-            {
-              "date": "2026-09-30",
-              "label": {
-                "es": "Cierre de recepción de propuestas",
-                "en": "Submission window closes",
-                "va": "Tancament de recepció de propostes"
-              }
-            }
-          ]
-        },
-        "people": {
-          "contacts": [
-            {
-              "name": "AI-STEAM Network Desk",
-              "role": {
-                "es": "Punto de coordinación Track B",
-                "en": "Track B coordination point",
-                "va": "Punt de coordinació Track B"
-              },
-              "org": "CEICE"
-            }
-          ]
+        "reward": {
+          "es": "Reconocimiento de participación y posibilidad de derivación a actividad LbD.",
+          "en": "Participation recognition and possible routing into an LbD activity.",
+          "va": "Reconeixement de participació i possible derivació a activitat LbD."
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "CC BY 4.0",
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "contributionVisibility": "external-managed",
+        "sensitiveDataPolicy": {
+          "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
+          "en": "Personal, confidential or sensitive data must not be submitted through this site.",
+          "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+        },
         "rightsNote": {
           "es": "Las contribuciones públicas deberán poder compartirse como conocimiento abierto o describirse sin datos sensibles.",
           "en": "Public contributions must be shareable as open knowledge or describable without sensitive data.",
           "va": "Les contribucions públiques hauran de poder compartir-se com a coneixement obert o descriure's sense dades sensibles."
         },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
         "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": true,
+        "label": {
+          "es": "Puede derivarse a actividad LbD o TFM si el comité académico lo considera oportuno.",
+          "en": "May be routed to an LbD activity or thesis topic if the academic committee considers it appropriate.",
+          "va": "Pot derivar-se a activitat LbD o TFM si el comité acadèmic ho considera oportú."
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": true,
@@ -2712,6 +2954,193 @@ export const MARKETPLACE_CONFIG = {
           "va": "Pot derivar-se a activitat LbD o TFM si el comité acadèmic ho considera oportú."
         },
         "url": ""
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Solicitar participación",
+            "en": "Request participation",
+            "va": "Sol·licitar participació"
+          },
+          "system": "",
+          "url": ""
+        },
+        "fallbackAction": {
+          "label": {
+            "es": "Ver reto",
+            "en": "View challenge",
+            "va": "Veure repte"
+          },
+          "url": ""
+        },
+        "fallbackContact": {
+          "label": {
+            "es": "Contactar con la coordinación del reto",
+            "en": "Contact the challenge coordination desk",
+            "va": "Contactar amb la coordinació del repte"
+          },
+          "url": ""
+        }
+      },
+      "relations": {
+        "validations": [],
+        "pilots": [],
+        "cases": [],
+        "mentorships": [],
+        "resources": []
+      },
+      "resources": {
+        "available": [
+          {
+            "label": {
+              "es": "Plantilla de diagnóstico de espacios",
+              "en": "Learning-space diagnosis template",
+              "va": "Plantilla de diagnòstic d'espais"
+            },
+            "format": "ODT/PDF",
+            "license": "CC BY 4.0"
+          }
+        ]
+      },
+      "downloads": {
+        "enabled": true,
+        "basePath": "/assets/downloads/challenges/creative-ai-green-campus/",
+        "items": [
+          {
+            "id": "proposal-template",
+            "type": "template",
+            "title": {
+              "es": "Plantilla de propuesta",
+              "en": "Proposal template",
+              "va": "Plantilla de proposta"
+            },
+            "description": {
+              "es": "Documento editable para estructurar una propuesta de intervención.",
+              "en": "Editable document to structure an intervention proposal.",
+              "va": "Document editable per a estructurar una proposta d'intervenció."
+            },
+            "files": [
+              {
+                "file": "plantilla-propuesta-campus-verde.odt",
+                "format": "odt",
+                "language": "es",
+                "license": ""
+              },
+              {
+                "file": "plantilla-propuesta-campus-verde.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": ""
+              }
+            ],
+            "license": "CC BY 4.0",
+            "showOnCard": true,
+            "showOnDetail": true
+          }
+        ]
+      },
+      "outputs": {
+        "expected": [
+          {
+            "id": "opportunity-map",
+            "label": {
+              "es": "Mapa de oportunidades de mejora",
+              "en": "Opportunity map for improvements",
+              "va": "Mapa d'oportunitats de millora"
+            }
+          },
+          {
+            "id": "intervention-prototype",
+            "label": {
+              "es": "Prototipo visual o narrativo de intervención",
+              "en": "Visual or narrative intervention prototype",
+              "va": "Prototip visual o narratiu d'intervenció"
+            }
+          }
+        ]
+      },
+      "process": {
+        "milestones": [
+          {
+            "date": "2026-06-15",
+            "label": {
+              "es": "Apertura de contribuciones",
+              "en": "Contribution window opens",
+              "va": "Obertura de contribucions"
+            }
+          },
+          {
+            "date": "2026-09-30",
+            "label": {
+              "es": "Cierre de recepción de propuestas",
+              "en": "Submission window closes",
+              "va": "Tancament de recepció de propostes"
+            }
+          }
+        ]
+      },
+      "hasDownloads": true,
+      "downloadCount": 1,
+      "cardDownloads": [
+        {
+          "id": "proposal-template",
+          "type": "template",
+          "title": {
+            "es": "Plantilla de propuesta",
+            "en": "Proposal template",
+            "va": "Plantilla de proposta"
+          },
+          "description": {
+            "es": "Documento editable para estructurar una propuesta de intervención.",
+            "en": "Editable document to structure an intervention proposal.",
+            "va": "Document editable per a estructurar una proposta d'intervenció."
+          },
+          "files": [
+            {
+              "file": "plantilla-propuesta-campus-verde.odt",
+              "format": "odt",
+              "language": "es"
+            },
+            {
+              "file": "plantilla-propuesta-campus-verde.pdf",
+              "format": "pdf",
+              "language": "es"
+            }
+          ],
+          "license": "CC BY 4.0",
+          "showOnCard": true,
+          "showOnDetail": true
+        }
+      ],
+      "presentation": {
+        "card": {
+          "variant": "challenge",
+          "showReward": true,
+          "showSdgs": true,
+          "showCompetences": true,
+          "showDeadline": true,
+          "showDownloadsIndicator": true,
+          "showChatBadge": false
+        },
+        "detail": {
+          "sections": {
+            "brief": true,
+            "need": true,
+            "context": true,
+            "participation": true,
+            "transferValue": true,
+            "resources": true,
+            "downloads": true,
+            "outputs": true,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": true,
+            "relations": false,
+            "evidence": false
+          }
+        }
       },
       "template": {
         "requiredBlocks": [
@@ -2727,7 +3156,9 @@ export const MARKETPLACE_CONFIG = {
           "people",
           "evidence",
           "access",
-          "trackA"
+          "trackA",
+          "downloads",
+          "relations"
         ],
         "cardSignal": "need"
       }
@@ -2741,6 +3172,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/ia-deteccion-plagas-agr.yml",
       "core": {
         "status": "resolved",
+        "maturity": "completed",
         "title": {
           "es": "IA para detección temprana de plagas en cultivos: adaptación del modelo IVIA a FP Agroalimentario",
           "en": "AI for early crop pest detection: adapting the IVIA model for Agrifood VET",
@@ -3042,14 +3474,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "CC BY-NC-SA 4.0",
+        "pageVisibility": "public",
+        "pageLicense": "CC BY-NC-SA 4.0",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "El dataset no puede usarse con fines comerciales sin acuerdo previo con el IVIA.",
           "en": "The dataset cannot be used for commercial purposes without prior agreement with IVIA.",
           "va": "El dataset no pot usar-se amb fins comercials sense acord previ amb l'IVIA."
         },
+        "publicUrl": "",
+        "license": "CC BY-NC-SA 4.0",
         "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": false,
@@ -3085,6 +3534,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/mentorings/responsible-ai-creative-briefs.yml",
       "core": {
         "status": "open",
+        "maturity": "idea",
         "title": {
           "es": "Mentoría para briefs creativos con IA responsable",
           "en": "Mentoring for responsible AI creative briefs",
@@ -3297,14 +3747,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "Not applicable",
+        "pageVisibility": "network",
+        "pageLicense": "Not applicable",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "La entidad conserva la titularidad de su idea; la red solo ayuda a formularla.",
           "en": "The organisation keeps ownership of its idea; the network only helps frame it.",
           "va": "L'entitat conserva la titularitat de la seua idea; la xarxa només ajuda a formular-la."
         },
+        "publicUrl": "",
+        "license": "Not applicable",
         "privacyLevel": "network"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": false,
@@ -3340,6 +3807,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/cobot-soldadura-fp.yml",
       "core": {
         "status": "resolved",
+        "maturity": "completed",
         "title": {
           "es": "Integración de cobots colaborativos en soldadura para FP Industrial",
           "en": "Collaborative cobot integration in welding for Industrial VET",
@@ -3630,14 +4098,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "CC BY-SA 4.0",
+        "pageVisibility": "public",
+        "pageLicense": "CC BY-SA 4.0",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "El checklist de seguridad debe revisarse con el coordinador de PRL del centro antes de su uso.",
           "en": "The safety checklist must be reviewed with the centre's health and safety coordinator before use.",
           "va": "El checklist de seguretat s'ha de revisar amb el coordinador de PRL del centre abans del seu ús."
         },
+        "publicUrl": "",
+        "license": "CC BY-SA 4.0",
         "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": false,
@@ -3673,6 +4158,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-teacher-sesgos-ia-uveg.yml",
       "core": {
         "status": "resolved",
+        "maturity": "completed",
         "title": {
           "es": "Formación Docente — Análisis de sesgos en IA para profesorado de Máster",
           "en": "Teacher Training — AI bias analysis for Master's programme faculty",
@@ -3976,14 +4462,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "CC BY-SA 4.0",
+        "pageVisibility": "public",
+        "pageLicense": "CC BY-SA 4.0",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "Plantilla y materiales del taller publicados bajo CC BY-SA 4.0.",
           "en": "Workshop template and materials published under CC BY-SA 4.0.",
           "va": "Plantilla i materials del taller publicats sota CC BY-SA 4.0."
         },
+        "publicUrl": "",
+        "license": "CC BY-SA 4.0",
         "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": false,
@@ -4023,6 +4526,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/movilidad-sostenible-formacion-docente.yml",
       "core": {
         "status": "resolved",
+        "maturity": "completed",
         "title": {
           "es": "Programa de capacitación docente en movilidad sostenible e inteligencia artificial",
           "en": "Teacher training programme in sustainable mobility and artificial intelligence",
@@ -4309,14 +4813,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "CC BY 4.0",
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "Los materiales pueden adaptarse libremente con atribución a CEFIREs y EMT Valencia.",
           "en": "Materials may be freely adapted with attribution to CEFIREs and EMT Valencia.",
           "va": "Els materials poden adaptar-se lliurement amb atribució als CEFIREs i EMT València."
         },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
         "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": false,
@@ -4352,6 +4873,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-fp-cobots-mecatronica.yml",
       "core": {
         "status": "resolved",
+        "maturity": "completed",
         "title": {
           "es": "Piloto FP — Cobots y robótica colaborativa en ciclos de mecatrónica",
           "en": "VET Pilot — Cobots and collaborative robotics in mechatronics cycles",
@@ -4645,14 +5167,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "CC BY 4.0",
+        "pageVisibility": "network",
+        "pageLicense": "CC BY 4.0",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "Rúbricas y materiales del módulo publicados bajo CC BY 4.0.",
           "en": "Module rubrics and materials published under CC BY 4.0.",
           "va": "Rúbriques i materials del mòdul publicats sota CC BY 4.0."
         },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
         "privacyLevel": "network"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": false,
@@ -4692,6 +5231,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-master-bridge-gemelos-digitales.yml",
       "core": {
         "status": "in-progress",
+        "maturity": "inPilot",
         "title": {
           "es": "Piloto Máster — Puente FP-Máster en IA aplicada a gemelos digitales",
           "en": "Master Bridge Pilot — VET-to-Master bridge in AI applied to digital twins",
@@ -4988,14 +5528,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "CC BY 4.0",
+        "pageVisibility": "network",
+        "pageLicense": "CC BY 4.0",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "La guía de itinerario se publicará bajo CC BY 4.0 al completarse el piloto.",
           "en": "The itinerary guide will be published under CC BY 4.0 on pilot completion.",
           "va": "La guia d'itinerari es publicarà sota CC BY 4.0 en completar-se el pilot."
         },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
         "privacyLevel": "network"
+      },
+      "trackA": {
+        "enabled": true,
+        "label": {
+          "es": "Conectado con oferta de Máster Track A en UPV.",
+          "en": "Connected to Track A Master's offer at UPV.",
+          "va": "Connectat amb oferta de Màster Track A a UPV."
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": true,
@@ -5035,6 +5592,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-agr-asaja.yml",
       "core": {
         "status": "resolved",
+        "maturity": "completed",
         "title": {
           "es": "Validación Stakeholder — Reto de agricultura de precisión con IA",
           "en": "Stakeholder Validation — Precision agriculture with AI challenge",
@@ -5322,14 +5880,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "Open data",
+        "pageVisibility": "network",
+        "pageLicense": "Open data",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "Dataset multispectral cedido bajo licencia open data para reuso académico y de red.",
           "en": "Multispectral dataset donated under open data licence for academic and network reuse.",
           "va": "Dataset multiespectral cedit sota llicència open data per a reús acadèmic i de xarxa."
         },
+        "publicUrl": "",
+        "license": "Open data",
         "privacyLevel": "network"
+      },
+      "trackA": {
+        "enabled": true,
+        "label": {
+          "es": "Clasificado Track A — derivado a UVEG para tratamiento académico.",
+          "en": "Classified as Track A — referred to UVEG for academic treatment.",
+          "va": "Classificat Track A — derivat a UVEG per a tractament acadèmic."
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": true,
@@ -5369,6 +5944,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
       "core": {
         "status": "resolved",
+        "maturity": "validated",
         "title": {
           "es": "Validación Stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
           "en": "Stakeholder Validation — Electric mobility and charging infrastructure challenge",
@@ -5670,14 +6246,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "CC BY 4.0",
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "Ficha de competencias publicada bajo CC BY 4.0.",
           "en": "Competency sheet published under CC BY 4.0.",
           "va": "Fitxa de competències publicada sota CC BY 4.0."
         },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
         "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": false,
@@ -5720,6 +6313,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/challenges/creative-ai-green-campus.yml",
         "core": {
           "status": "open",
+          "maturity": "idea",
           "title": {
             "es": "Co-diseñar un campus verde con IA generativa y prácticas STEAM",
             "en": "Co-designing a green campus with generative AI and STEAM practices",
@@ -5731,11 +6325,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Una institució educativa busca idees aplicables per a reduir consum energètic i millorar espais d'aprenentatge mitjançant IA, dades i creativitat."
           },
           "entity": {
-            "name": "AI-STEAM Network",
+            "name": "",
             "type": {
-              "es": "Comunidad de práctica",
-              "en": "Community of practice",
-              "va": "Comunitat de pràctica"
+              "es": "Institución educativa",
+              "en": "Educational institution",
+              "va": "Institució educativa"
             }
           },
           "sector": "ene",
@@ -5784,6 +6378,29 @@ export const MARKETPLACE_CONFIG = {
             ]
           }
         },
+        "ownership": {
+          "publisher": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE"
+          },
+          "requester": {
+            "name": "",
+            "publicLabel": {
+              "es": "Institución educativa",
+              "en": "Educational institution",
+              "va": "Institució educativa"
+            }
+          },
+          "contact": {
+            "name": "AI-STEAM Network Desk",
+            "org": "CEICE",
+            "role": {
+              "es": "Punto de coordinación Track B",
+              "en": "Track B coordination point",
+              "va": "Punt de coordinació Track B"
+            }
+          }
+        },
         "classification": {
           "aiSteamFocus": [
             "creative-ai",
@@ -5809,7 +6426,30 @@ export const MARKETPLACE_CONFIG = {
             "va": "Converteix una necessitat institucional en una oportunitat oberta de col·laboració entre centres, empreses creatives i experts en IA responsable."
           },
           "verificationStatus": "",
-          "pilotStatus": ""
+          "pilotStatus": "",
+          "contributionTypes": [
+            "ideas",
+            "contextual-data",
+            "prototypes",
+            "methodologies"
+          ],
+          "audience": [
+            "companies",
+            "vet-centres",
+            "teachers",
+            "advanced-learners"
+          ],
+          "competences": [
+            "teamwork",
+            "ai-ethics",
+            "data-analysis",
+            "applied-creativity"
+          ],
+          "sdgs": [
+            4,
+            9,
+            13
+          ]
         },
         "transfer": {
           "type": "",
@@ -5818,92 +6458,20 @@ export const MARKETPLACE_CONFIG = {
         },
         "community": {
           "tab": "challenges",
-          "audience": [
-            "companies",
-            "vet-centres",
-            "teachers",
-            "advanced-learners"
-          ],
-          "primaryCta": {
-            "es": "Proponer equipo",
-            "en": "Propose a team",
-            "va": "Proposar equip"
-          },
           "featuredSignal": {
             "es": "Reto abierto hasta septiembre de 2026",
             "en": "Challenge open until September 2026",
             "va": "Repte obert fins a setembre de 2026"
           }
         },
-        "card": {
-          "actionTitle": {
+        "card": {},
+        "visibility": {},
+        "detail": {
+          "briefTitle": {
             "es": "Diseñar intervenciones verdes con IA generativa",
             "en": "Design green interventions with generative AI",
             "va": "Dissenyar intervencions verdes amb IA generativa"
           },
-          "reward": {
-            "es": "Reconocimiento de participación y posibilidad de derivación a actividad LbD.",
-            "en": "Participation recognition and possible routing into an LbD activity.",
-            "va": "Reconeixement de participació i possible derivació a activitat LbD."
-          },
-          "setCompetences": [
-            "Trabajo en equipo",
-            "Ética en IA",
-            "Análisis de datos",
-            "Creatividad aplicada"
-          ],
-          "sdgs": [
-            {
-              "id": 4,
-              "label": {
-                "es": "Educación de calidad",
-                "en": "Quality education",
-                "va": "Educació de qualitat"
-              }
-            },
-            {
-              "id": 9,
-              "label": {
-                "es": "Industria, innovación e infraestructura",
-                "en": "Industry, innovation and infrastructure",
-                "va": "Indústria, innovació i infraestructura"
-              }
-            },
-            {
-              "id": 13,
-              "label": {
-                "es": "Acción por el clima",
-                "en": "Climate action",
-                "va": "Acció pel clima"
-              }
-            }
-          ],
-          "quickChat": true,
-          "deadlineMode": {
-            "es": "Recepción de propuestas hasta el 30/09/2026.",
-            "en": "Proposals accepted until 2026-09-30.",
-            "va": "Recepció de propostes fins al 30/09/2026."
-          },
-          "ipModel": {
-            "es": "Conocimiento abierto o descripción pública sin datos sensibles.",
-            "en": "Open knowledge or public description without sensitive data.",
-            "va": "Coneixement obert o descripció pública sense dades sensibles."
-          }
-        },
-        "visibility": {
-          "need": true,
-          "context": true,
-          "transferValue": true,
-          "participation": true,
-          "resources": true,
-          "outputs": true,
-          "process": true,
-          "people": true,
-          "evidence": false,
-          "access": true,
-          "trackA": true
-        },
-        "detail": {
           "need": {
             "es": "Identificar intervenciones viables para mejorar sostenibilidad y bienestar en espacios educativos usando IA como apoyo creativo, no como sustituto de la deliberación humana.",
             "en": "Identify feasible interventions to improve sustainability and wellbeing in learning spaces using AI as a creative support, not as a replacement for human deliberation.",
@@ -5914,97 +6482,55 @@ export const MARKETPLACE_CONFIG = {
             "en": "The challenge sits in the Track B network space and seeks proposals transferable to educational centres with different levels of technological capacity.",
             "va": "El repte se situa en l'espai Track B de la xarxa i busca propostes transferibles a centres educatius amb diferent capacitat tecnològica."
           },
-          "transferValue": {
-            "es": "La red obtiene un brief común, ejemplos de intervención y criterios de transferencia para otros centros interesados en IA, creatividad y sostenibilidad.",
-            "en": "The network gains a shared brief, intervention examples and transfer criteria for other centres interested in AI, creativity and sustainability.",
-            "va": "La xarxa obté un brief comú, exemples d'intervenció i criteris de transferència per a altres centres interessats en IA, creativitat i sostenibilitat."
-          },
           "participation": {
-            "audience": {
+            "audienceText": {
               "es": "Centros educativos, administraciones, empresas de energía, estudios creativos, docentes y alumnado avanzado.",
               "en": "Educational centres, public administrations, energy companies, creative studios, teachers and advanced learners.",
               "va": "Centres educatius, administracions, empreses d'energia, estudis creatius, docents i alumnat avançat."
             },
-            "format": {
+            "formatText": {
               "es": "Contribución abierta de ideas, datos de contexto, prototipos o metodologías.",
               "en": "Open contribution of ideas, contextual data, prototypes or methodologies.",
               "va": "Contribució oberta d'idees, dades de context, prototips o metodologies."
+            },
+            "transferValue": {
+              "es": "La red obtiene un brief común, ejemplos de intervención y criterios de transferencia para otros centros interesados en IA, creatividad y sostenibilidad.",
+              "en": "The network gains a shared brief, intervention examples and transfer criteria for other centres interested in AI, creativity and sustainability.",
+              "va": "La xarxa obté un brief comú, exemples d'intervenció i criteris de transferència per a altres centres interessats en IA, creativitat i sostenibilitat."
             }
           },
-          "resources": {
-            "available": [
-              {
-                "label": {
-                  "es": "Plantilla de diagnóstico de espacios",
-                  "en": "Learning-space diagnosis template",
-                  "va": "Plantilla de diagnòstic d'espais"
-                },
-                "format": "ODT/PDF",
-                "license": "CC BY 4.0"
-              }
-            ]
-          },
-          "outputs": {
-            "expected": [
-              {
-                "label": {
-                  "es": "Mapa de oportunidades de mejora",
-                  "en": "Opportunity map for improvements",
-                  "va": "Mapa d'oportunitats de millora"
-                }
-              },
-              {
-                "label": {
-                  "es": "Prototipo visual o narrativo de intervención",
-                  "en": "Visual or narrative intervention prototype",
-                  "va": "Prototip visual o narratiu d'intervenció"
-                }
-              }
-            ]
-          },
-          "process": {
-            "milestones": [
-              {
-                "date": "2026-06-15",
-                "label": {
-                  "es": "Apertura de contribuciones",
-                  "en": "Contribution window opens",
-                  "va": "Obertura de contribucions"
-                }
-              },
-              {
-                "date": "2026-09-30",
-                "label": {
-                  "es": "Cierre de recepción de propuestas",
-                  "en": "Submission window closes",
-                  "va": "Tancament de recepció de propostes"
-                }
-              }
-            ]
-          },
-          "people": {
-            "contacts": [
-              {
-                "name": "AI-STEAM Network Desk",
-                "role": {
-                  "es": "Punto de coordinación Track B",
-                  "en": "Track B coordination point",
-                  "va": "Punt de coordinació Track B"
-                },
-                "org": "CEICE"
-              }
-            ]
+          "reward": {
+            "es": "Reconocimiento de participación y posibilidad de derivación a actividad LbD.",
+            "en": "Participation recognition and possible routing into an LbD activity.",
+            "va": "Reconeixement de participació i possible derivació a activitat LbD."
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "CC BY 4.0",
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "contributionVisibility": "external-managed",
+          "sensitiveDataPolicy": {
+            "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
+            "en": "Personal, confidential or sensitive data must not be submitted through this site.",
+            "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+          },
           "rightsNote": {
             "es": "Las contribuciones públicas deberán poder compartirse como conocimiento abierto o describirse sin datos sensibles.",
             "en": "Public contributions must be shareable as open knowledge or describable without sensitive data.",
             "va": "Les contribucions públiques hauran de poder compartir-se com a coneixement obert o descriure's sense dades sensibles."
           },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
           "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": true,
+          "label": {
+            "es": "Puede derivarse a actividad LbD o TFM si el comité académico lo considera oportuno.",
+            "en": "May be routed to an LbD activity or thesis topic if the academic committee considers it appropriate.",
+            "va": "Pot derivar-se a activitat LbD o TFM si el comité acadèmic ho considera oportú."
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": true,
@@ -6014,6 +6540,193 @@ export const MARKETPLACE_CONFIG = {
             "va": "Pot derivar-se a activitat LbD o TFM si el comité acadèmic ho considera oportú."
           },
           "url": ""
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Solicitar participación",
+              "en": "Request participation",
+              "va": "Sol·licitar participació"
+            },
+            "system": "",
+            "url": ""
+          },
+          "fallbackAction": {
+            "label": {
+              "es": "Ver reto",
+              "en": "View challenge",
+              "va": "Veure repte"
+            },
+            "url": ""
+          },
+          "fallbackContact": {
+            "label": {
+              "es": "Contactar con la coordinación del reto",
+              "en": "Contact the challenge coordination desk",
+              "va": "Contactar amb la coordinació del repte"
+            },
+            "url": ""
+          }
+        },
+        "relations": {
+          "validations": [],
+          "pilots": [],
+          "cases": [],
+          "mentorships": [],
+          "resources": []
+        },
+        "resources": {
+          "available": [
+            {
+              "label": {
+                "es": "Plantilla de diagnóstico de espacios",
+                "en": "Learning-space diagnosis template",
+                "va": "Plantilla de diagnòstic d'espais"
+              },
+              "format": "ODT/PDF",
+              "license": "CC BY 4.0"
+            }
+          ]
+        },
+        "downloads": {
+          "enabled": true,
+          "basePath": "/assets/downloads/challenges/creative-ai-green-campus/",
+          "items": [
+            {
+              "id": "proposal-template",
+              "type": "template",
+              "title": {
+                "es": "Plantilla de propuesta",
+                "en": "Proposal template",
+                "va": "Plantilla de proposta"
+              },
+              "description": {
+                "es": "Documento editable para estructurar una propuesta de intervención.",
+                "en": "Editable document to structure an intervention proposal.",
+                "va": "Document editable per a estructurar una proposta d'intervenció."
+              },
+              "files": [
+                {
+                  "file": "plantilla-propuesta-campus-verde.odt",
+                  "format": "odt",
+                  "language": "es",
+                  "license": ""
+                },
+                {
+                  "file": "plantilla-propuesta-campus-verde.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": ""
+                }
+              ],
+              "license": "CC BY 4.0",
+              "showOnCard": true,
+              "showOnDetail": true
+            }
+          ]
+        },
+        "outputs": {
+          "expected": [
+            {
+              "id": "opportunity-map",
+              "label": {
+                "es": "Mapa de oportunidades de mejora",
+                "en": "Opportunity map for improvements",
+                "va": "Mapa d'oportunitats de millora"
+              }
+            },
+            {
+              "id": "intervention-prototype",
+              "label": {
+                "es": "Prototipo visual o narrativo de intervención",
+                "en": "Visual or narrative intervention prototype",
+                "va": "Prototip visual o narratiu d'intervenció"
+              }
+            }
+          ]
+        },
+        "process": {
+          "milestones": [
+            {
+              "date": "2026-06-15",
+              "label": {
+                "es": "Apertura de contribuciones",
+                "en": "Contribution window opens",
+                "va": "Obertura de contribucions"
+              }
+            },
+            {
+              "date": "2026-09-30",
+              "label": {
+                "es": "Cierre de recepción de propuestas",
+                "en": "Submission window closes",
+                "va": "Tancament de recepció de propostes"
+              }
+            }
+          ]
+        },
+        "hasDownloads": true,
+        "downloadCount": 1,
+        "cardDownloads": [
+          {
+            "id": "proposal-template",
+            "type": "template",
+            "title": {
+              "es": "Plantilla de propuesta",
+              "en": "Proposal template",
+              "va": "Plantilla de proposta"
+            },
+            "description": {
+              "es": "Documento editable para estructurar una propuesta de intervención.",
+              "en": "Editable document to structure an intervention proposal.",
+              "va": "Document editable per a estructurar una proposta d'intervenció."
+            },
+            "files": [
+              {
+                "file": "plantilla-propuesta-campus-verde.odt",
+                "format": "odt",
+                "language": "es"
+              },
+              {
+                "file": "plantilla-propuesta-campus-verde.pdf",
+                "format": "pdf",
+                "language": "es"
+              }
+            ],
+            "license": "CC BY 4.0",
+            "showOnCard": true,
+            "showOnDetail": true
+          }
+        ],
+        "presentation": {
+          "card": {
+            "variant": "challenge",
+            "showReward": true,
+            "showSdgs": true,
+            "showCompetences": true,
+            "showDeadline": true,
+            "showDownloadsIndicator": true,
+            "showChatBadge": false
+          },
+          "detail": {
+            "sections": {
+              "brief": true,
+              "need": true,
+              "context": true,
+              "participation": true,
+              "transferValue": true,
+              "resources": true,
+              "downloads": true,
+              "outputs": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": true,
+              "relations": false,
+              "evidence": false
+            }
+          }
         },
         "template": {
           "requiredBlocks": [
@@ -6029,7 +6742,9 @@ export const MARKETPLACE_CONFIG = {
             "people",
             "evidence",
             "access",
-            "trackA"
+            "trackA",
+            "downloads",
+            "relations"
           ],
           "cardSignal": "need"
         }
@@ -6045,6 +6760,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/eficiencia-energetica-edificios-hou.yml",
         "core": {
           "status": "resolved",
+          "maturity": "completed",
           "title": {
             "es": "Escalado de sistema de monitorización energética con IA desde edificio piloto a red de viviendas sociales",
             "en": "Scaling of AI-powered energy monitoring system from pilot building to social housing network",
@@ -6360,14 +7076,31 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "Apache 2.0",
+          "pageVisibility": "public",
+          "pageLicense": "Apache 2.0",
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "rightsNote": {
             "es": "El código puede usarse y modificarse libremente. Los datos de consumo de las viviendas son confidenciales y no están incluidos.",
             "en": "The code may be freely used and modified. Housing consumption data is confidential and not included.",
             "va": "El codi pot usar-se i modificar-se lliurement. Les dades de consum dels habitatges són confidencials i no s'inclouen."
           },
+          "publicUrl": "",
+          "license": "Apache 2.0",
           "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": true,
+          "label": {
+            "es": "Trabajo final de Máster relacionado",
+            "en": "Related Master's final project",
+            "va": "Treball final de Màster relacionat"
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": true,
@@ -6403,6 +7136,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/narrativas-digitales-ia-cci.yml",
         "core": {
           "status": "resolved",
+          "maturity": "inPilot",
           "title": {
             "es": "Narrativas digitales con IA generativa: del museo al aula de formación artística",
             "en": "Digital narratives with generative AI: from the museum to the arts education classroom",
@@ -6684,14 +7418,31 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "CC BY-NC 4.0",
+          "pageVisibility": "public",
+          "pageLicense": "CC BY-NC 4.0",
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "rightsNote": {
             "es": "Los materiales son libres para uso educativo no comercial. Los prompts que referencien obras del IVAM requieren atribución expresa.",
             "en": "Materials are free for non-commercial educational use. Prompts referencing IVAM works require explicit attribution.",
             "va": "Els materials són lliures per a ús educatiu no comercial. Els prompts que referencien obres de l'IVAM requereixen atribució expressa."
           },
+          "publicUrl": "",
+          "license": "CC BY-NC 4.0",
           "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": false,
@@ -6727,6 +7478,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/ia-deteccion-plagas-agr.yml",
         "core": {
           "status": "resolved",
+          "maturity": "completed",
           "title": {
             "es": "IA para detección temprana de plagas en cultivos: adaptación del modelo IVIA a FP Agroalimentario",
             "en": "AI for early crop pest detection: adapting the IVIA model for Agrifood VET",
@@ -7028,14 +7780,31 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "CC BY-NC-SA 4.0",
+          "pageVisibility": "public",
+          "pageLicense": "CC BY-NC-SA 4.0",
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "rightsNote": {
             "es": "El dataset no puede usarse con fines comerciales sin acuerdo previo con el IVIA.",
             "en": "The dataset cannot be used for commercial purposes without prior agreement with IVIA.",
             "va": "El dataset no pot usar-se amb fins comercials sense acord previ amb l'IVIA."
           },
+          "publicUrl": "",
+          "license": "CC BY-NC-SA 4.0",
           "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": false,
@@ -7071,6 +7840,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/cobot-soldadura-fp.yml",
         "core": {
           "status": "resolved",
+          "maturity": "completed",
           "title": {
             "es": "Integración de cobots colaborativos en soldadura para FP Industrial",
             "en": "Collaborative cobot integration in welding for Industrial VET",
@@ -7361,14 +8131,31 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "CC BY-SA 4.0",
+          "pageVisibility": "public",
+          "pageLicense": "CC BY-SA 4.0",
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "rightsNote": {
             "es": "El checklist de seguridad debe revisarse con el coordinador de PRL del centro antes de su uso.",
             "en": "The safety checklist must be reviewed with the centre's health and safety coordinator before use.",
             "va": "El checklist de seguretat s'ha de revisar amb el coordinador de PRL del centre abans del seu ús."
           },
+          "publicUrl": "",
+          "license": "CC BY-SA 4.0",
           "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": false,
@@ -7404,6 +8191,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/movilidad-sostenible-formacion-docente.yml",
         "core": {
           "status": "resolved",
+          "maturity": "completed",
           "title": {
             "es": "Programa de capacitación docente en movilidad sostenible e inteligencia artificial",
             "en": "Teacher training programme in sustainable mobility and artificial intelligence",
@@ -7690,14 +8478,31 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "CC BY 4.0",
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "rightsNote": {
             "es": "Los materiales pueden adaptarse libremente con atribución a CEFIREs y EMT Valencia.",
             "en": "Materials may be freely adapted with attribution to CEFIREs and EMT Valencia.",
             "va": "Els materials poden adaptar-se lliurement amb atribució als CEFIREs i EMT València."
           },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
           "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": false,
@@ -7735,6 +8540,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-fp-energia-costera.yml",
         "core": {
           "status": "resolved",
+          "maturity": "completed",
           "title": {
             "es": "Piloto FP — IA para eficiencia energética en centros educativos",
             "en": "VET Pilot — AI for energy efficiency in educational centres",
@@ -8012,14 +8818,31 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "CC BY 4.0",
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "rightsNote": {
             "es": "Módulo y dataset publicados bajo CC BY 4.0. Datos de participantes anonimizados.",
             "en": "Module and dataset published under CC BY 4.0. Participant data anonymised.",
             "va": "Mòdul i dataset publicats sota CC BY 4.0. Dades de participants anonimitzades."
           },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
           "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": false,
@@ -8059,6 +8882,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-teacher-sesgos-ia-uveg.yml",
         "core": {
           "status": "resolved",
+          "maturity": "completed",
           "title": {
             "es": "Formación Docente — Análisis de sesgos en IA para profesorado de Máster",
             "en": "Teacher Training — AI bias analysis for Master's programme faculty",
@@ -8362,14 +9186,31 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "CC BY-SA 4.0",
+          "pageVisibility": "public",
+          "pageLicense": "CC BY-SA 4.0",
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "rightsNote": {
             "es": "Plantilla y materiales del taller publicados bajo CC BY-SA 4.0.",
             "en": "Workshop template and materials published under CC BY-SA 4.0.",
             "va": "Plantilla i materials del taller publicats sota CC BY-SA 4.0."
           },
+          "publicUrl": "",
+          "license": "CC BY-SA 4.0",
           "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": false,
@@ -8409,6 +9250,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-fp-cobots-mecatronica.yml",
         "core": {
           "status": "resolved",
+          "maturity": "completed",
           "title": {
             "es": "Piloto FP — Cobots y robótica colaborativa en ciclos de mecatrónica",
             "en": "VET Pilot — Cobots and collaborative robotics in mechatronics cycles",
@@ -8702,14 +9544,31 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "CC BY 4.0",
+          "pageVisibility": "network",
+          "pageLicense": "CC BY 4.0",
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "rightsNote": {
             "es": "Rúbricas y materiales del módulo publicados bajo CC BY 4.0.",
             "en": "Module rubrics and materials published under CC BY 4.0.",
             "va": "Rúbriques i materials del mòdul publicats sota CC BY 4.0."
           },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
           "privacyLevel": "network"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": false,
@@ -8749,6 +9608,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-master-bridge-gemelos-digitales.yml",
         "core": {
           "status": "in-progress",
+          "maturity": "inPilot",
           "title": {
             "es": "Piloto Máster — Puente FP-Máster en IA aplicada a gemelos digitales",
             "en": "Master Bridge Pilot — VET-to-Master bridge in AI applied to digital twins",
@@ -9045,14 +9905,31 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "CC BY 4.0",
+          "pageVisibility": "network",
+          "pageLicense": "CC BY 4.0",
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "rightsNote": {
             "es": "La guía de itinerario se publicará bajo CC BY 4.0 al completarse el piloto.",
             "en": "The itinerary guide will be published under CC BY 4.0 on pilot completion.",
             "va": "La guia d'itinerari es publicarà sota CC BY 4.0 en completar-se el pilot."
           },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
           "privacyLevel": "network"
+        },
+        "trackA": {
+          "enabled": true,
+          "label": {
+            "es": "Conectado con oferta de Máster Track A en UPV.",
+            "en": "Connected to Track A Master's offer at UPV.",
+            "va": "Connectat amb oferta de Màster Track A a UPV."
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": true,
@@ -9094,6 +9971,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-agr-asaja.yml",
         "core": {
           "status": "resolved",
+          "maturity": "completed",
           "title": {
             "es": "Validación Stakeholder — Reto de agricultura de precisión con IA",
             "en": "Stakeholder Validation — Precision agriculture with AI challenge",
@@ -9381,14 +10259,31 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "Open data",
+          "pageVisibility": "network",
+          "pageLicense": "Open data",
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "rightsNote": {
             "es": "Dataset multispectral cedido bajo licencia open data para reuso académico y de red.",
             "en": "Multispectral dataset donated under open data licence for academic and network reuse.",
             "va": "Dataset multiespectral cedit sota llicència open data per a reús acadèmic i de xarxa."
           },
+          "publicUrl": "",
+          "license": "Open data",
           "privacyLevel": "network"
+        },
+        "trackA": {
+          "enabled": true,
+          "label": {
+            "es": "Clasificado Track A — derivado a UVEG para tratamiento académico.",
+            "en": "Classified as Track A — referred to UVEG for academic treatment.",
+            "va": "Classificat Track A — derivat a UVEG per a tractament acadèmic."
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": true,
@@ -9428,6 +10323,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
         "core": {
           "status": "resolved",
+          "maturity": "validated",
           "title": {
             "es": "Validación Stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
             "en": "Stakeholder Validation — Electric mobility and charging infrastructure challenge",
@@ -9729,14 +10625,31 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "CC BY 4.0",
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "rightsNote": {
             "es": "Ficha de competencias publicada bajo CC BY 4.0.",
             "en": "Competency sheet published under CC BY 4.0.",
             "va": "Fitxa de competències publicada sota CC BY 4.0."
           },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
           "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": false,
@@ -9778,6 +10691,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/mentorings/responsible-ai-creative-briefs.yml",
         "core": {
           "status": "open",
+          "maturity": "idea",
           "title": {
             "es": "Mentoría para briefs creativos con IA responsable",
             "en": "Mentoring for responsible AI creative briefs",
@@ -9990,14 +10904,31 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "publicUrl": "",
-          "license": "Not applicable",
+          "pageVisibility": "network",
+          "pageLicense": "Not applicable",
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
           "rightsNote": {
             "es": "La entidad conserva la titularidad de su idea; la red solo ayuda a formularla.",
             "en": "The organisation keeps ownership of its idea; the network only helps frame it.",
             "va": "L'entitat conserva la titularitat de la seua idea; la xarxa només ajuda a formular-la."
           },
+          "publicUrl": "",
+          "license": "Not applicable",
           "privacyLevel": "network"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
         },
         "trackALink": {
           "enabled": false,
@@ -10036,6 +10967,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/resources/ai-steam-brief-template.yml",
       "core": {
         "status": "open",
+        "maturity": "validated",
         "title": {
           "es": "Plantilla de brief Track B para necesidades AI-STEAM",
           "en": "Track B brief template for AI-STEAM needs",
@@ -10197,14 +11129,31 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "publicUrl": "",
-        "license": "CC BY 4.0",
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
         "rightsNote": {
           "es": "Reutilizable con atribución. No incluir datos personales ni información confidencial en briefs públicos.",
           "en": "Reusable with attribution. Do not include personal data or confidential information in public briefs.",
           "va": "Reutilitzable amb atribució. No incloure dades personals ni informació confidencial en briefs públics."
         },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
         "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
       },
       "trackALink": {
         "enabled": false,
@@ -10720,6 +11669,24 @@ export const MARKETPLACE_CONFIG = {
           "en": "Outcomes and findings",
           "va": "Resultats i troballes"
         }
+      },
+      {
+        "id": "downloads",
+        "visible": true,
+        "label": {
+          "es": "Materiales descargables",
+          "en": "Downloadable materials",
+          "va": "Materials descarregables"
+        }
+      },
+      {
+        "id": "relations",
+        "visible": true,
+        "label": {
+          "es": "Elementos relacionados",
+          "en": "Related items",
+          "va": "Elements relacionats"
+        }
       }
     ],
     "card": {
@@ -11008,6 +11975,239 @@ export const MARKETPLACE_CONFIG = {
           "es": "Sociedad civil",
           "en": "Civil society",
           "va": "Societat civil"
+        }
+      }
+    ],
+    "contributionTypes": [
+      {
+        "id": "ideas",
+        "visible": true,
+        "label": {
+          "es": "Ideas",
+          "en": "Ideas",
+          "va": "Idees"
+        }
+      },
+      {
+        "id": "contextual-data",
+        "visible": true,
+        "label": {
+          "es": "Datos de contexto",
+          "en": "Contextual data",
+          "va": "Dades de context"
+        }
+      },
+      {
+        "id": "prototypes",
+        "visible": true,
+        "label": {
+          "es": "Prototipos",
+          "en": "Prototypes",
+          "va": "Prototips"
+        }
+      },
+      {
+        "id": "methodologies",
+        "visible": true,
+        "label": {
+          "es": "Metodologías",
+          "en": "Methodologies",
+          "va": "Metodologies"
+        }
+      },
+      {
+        "id": "documentation",
+        "visible": true,
+        "label": {
+          "es": "Documentación",
+          "en": "Documentation",
+          "va": "Documentació"
+        }
+      }
+    ],
+    "audience": [
+      {
+        "id": "companies",
+        "visible": true,
+        "label": {
+          "es": "Empresas",
+          "en": "Companies",
+          "va": "Empreses"
+        }
+      },
+      {
+        "id": "vet-centres",
+        "visible": true,
+        "label": {
+          "es": "Centros FP",
+          "en": "VET Centres",
+          "va": "Centres FP"
+        }
+      },
+      {
+        "id": "teachers",
+        "visible": true,
+        "label": {
+          "es": "Docentes",
+          "en": "Teachers",
+          "va": "Docents"
+        }
+      },
+      {
+        "id": "advanced-learners",
+        "visible": true,
+        "label": {
+          "es": "Alumnado avanzado",
+          "en": "Advanced learners",
+          "va": "Alumnat avançat"
+        }
+      },
+      {
+        "id": "researchers",
+        "visible": true,
+        "label": {
+          "es": "Investigadores",
+          "en": "Researchers",
+          "va": "Investigadors"
+        }
+      },
+      {
+        "id": "public-admin",
+        "visible": true,
+        "label": {
+          "es": "Administración pública",
+          "en": "Public administration",
+          "va": "Administració pública"
+        }
+      }
+    ],
+    "competences": [
+      {
+        "id": "teamwork",
+        "visible": true,
+        "label": {
+          "es": "Trabajo en equipo",
+          "en": "Teamwork",
+          "va": "Treball en equip"
+        }
+      },
+      {
+        "id": "ai-ethics",
+        "visible": true,
+        "label": {
+          "es": "Ética en IA",
+          "en": "AI ethics",
+          "va": "Ètica en IA"
+        }
+      },
+      {
+        "id": "data-analysis",
+        "visible": true,
+        "label": {
+          "es": "Análisis de datos",
+          "en": "Data analysis",
+          "va": "Anàlisi de dades"
+        }
+      },
+      {
+        "id": "applied-creativity",
+        "visible": true,
+        "label": {
+          "es": "Creatividad aplicada",
+          "en": "Applied creativity",
+          "va": "Creativitat aplicada"
+        }
+      },
+      {
+        "id": "systems-thinking",
+        "visible": true,
+        "label": {
+          "es": "Pensamiento sistémico",
+          "en": "Systems thinking",
+          "va": "Pensament sistèmic"
+        }
+      },
+      {
+        "id": "sustainability",
+        "visible": true,
+        "label": {
+          "es": "Sostenibilidad",
+          "en": "Sustainability",
+          "va": "Sostenibilitat"
+        }
+      }
+    ],
+    "downloadTypes": [
+      {
+        "id": "brief",
+        "visible": true,
+        "label": {
+          "es": "Brief del reto",
+          "en": "Challenge brief",
+          "va": "Brief del repte"
+        }
+      },
+      {
+        "id": "template",
+        "visible": true,
+        "label": {
+          "es": "Plantilla",
+          "en": "Template",
+          "va": "Plantilla"
+        }
+      },
+      {
+        "id": "criteria",
+        "visible": true,
+        "label": {
+          "es": "Criterios de valoración",
+          "en": "Assessment criteria",
+          "va": "Criteris de valoració"
+        }
+      },
+      {
+        "id": "guide",
+        "visible": true,
+        "label": {
+          "es": "Guía",
+          "en": "Guide",
+          "va": "Guia"
+        }
+      },
+      {
+        "id": "evidence-sheet",
+        "visible": true,
+        "label": {
+          "es": "Ficha de evidencia",
+          "en": "Evidence sheet",
+          "va": "Fitxa d'evidència"
+        }
+      },
+      {
+        "id": "dataset",
+        "visible": true,
+        "label": {
+          "es": "Dataset",
+          "en": "Dataset",
+          "va": "Dataset"
+        }
+      },
+      {
+        "id": "zip-pack",
+        "visible": true,
+        "label": {
+          "es": "Paquete completo",
+          "en": "Full package",
+          "va": "Paquet complet"
+        }
+      },
+      {
+        "id": "other",
+        "visible": true,
+        "label": {
+          "es": "Otro",
+          "en": "Other",
+          "va": "Altre"
         }
       }
     ]
