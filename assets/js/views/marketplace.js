@@ -273,6 +273,31 @@ const UI_TEXT = {
     en: 'downloads',
     va: 'descarregables',
   },
+  whatIsTested: {
+    es: 'Qué se prueba',
+    en: 'What is being tested',
+    va: 'Què es prova',
+  },
+  readiness: {
+    es: 'Madurez',
+    en: 'Readiness',
+    va: 'Maduresa',
+  },
+  pilotStageLabel: {
+    es: 'Fase',
+    en: 'Stage',
+    va: 'Fase',
+  },
+  pilotResult: {
+    es: 'Resultado',
+    en: 'Result',
+    va: 'Resultat',
+  },
+  pilotCriteria: {
+    es: 'Criterio clave',
+    en: 'Key criterion',
+    va: 'Criteri clau',
+  },
 };
 
 const FIELD_LABELS = {
@@ -447,6 +472,27 @@ function getPilotTypeLabel(id) {
 
 function getPilotStatusLabel(id) {
   return getLabelFromArray(MARKETPLACE_CONFIG.labels?.pilotStatus || MARKETPLACE_CONFIG.pilotStatusLabels, id);
+}
+
+function getPilotStageLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.labels?.pilotStage, id);
+}
+
+function getPilotStageTone(stage) {
+  const tones = {
+    planned:    'bg-gray-100 text-gray-700 border-gray-200',
+    open:       'bg-blue-50 text-blue-700 border-blue-200',
+    'in-progress': 'bg-amber-50 text-amber-800 border-amber-200',
+    completed:  'bg-teal-50 text-teal-700 border-teal-200',
+    published:  'bg-green-50 text-green-800 border-green-200',
+    scaled:     'bg-purple-50 text-purple-700 border-purple-200',
+    archived:   'bg-gray-50 text-gray-500 border-gray-200',
+  };
+  return tones[stage] || 'bg-eu-bg text-gray-700 border-eu-border';
+}
+
+function getEducationalReadinessLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.labels?.educationalReadiness, id);
 }
 
 function getHelixLabel(id) {
@@ -1106,6 +1152,109 @@ function renderCaseCard(item, tab) {
 }
 
 function renderPilotCard(item, tab) {
+  // Detección v2: pilotPlan presente → esquema nuevo
+  const isV2 = item.pilotPlan != null || item.ownership?.lead != null;
+  if (!isV2) return renderPilotCardLegacy(item, tab);
+
+  const core = item.core || {};
+  const pres = item.presentation?.card || {};
+  const pilotPlan = item.pilotPlan || {};
+  const impl = item.implementation || {};
+  const readiness = impl.readiness || {};
+  const results = item.results || {};
+
+  // ── Hypothesis (bloque principal de la card) ──────────────────────────────
+  const resultBlockLabel = pickLang(pres.resultBlockLabel) || uiText('whatIsTested');
+  const hypothesisHtml = renderCardCallout(resultBlockLabel, pilotPlan.hypothesis || core.summary, 'flask-conical');
+
+  // ── Madurez (TRL o educacional) ───────────────────────────────────────────
+  let readinessStr = '';
+  const trl = readiness.technologyReadiness;
+  const er = readiness.educationalReadiness;
+  if (pres.showReadiness !== false) {
+    if (trl?.enabled && trl?.level) {
+      const trlLbl = pickLang(trl.label);
+      readinessStr = `TRL ${trl.level}${trlLbl ? ` — ${trlLbl}` : ''}`;
+    } else if (er?.enabled && er?.level) {
+      readinessStr = getEducationalReadinessLabel(er.level) || pickLang(er.label) || er.level;
+    }
+  }
+
+  // ── Ventana temporal ──────────────────────────────────────────────────────
+  const windowLabel = pres.showWindow !== false ? pickLang(core.executionWindow?.label) : '';
+
+  // ── Mini-meta: readiness + ventana ────────────────────────────────────────
+  const miniMetaHtml = renderCardMiniMeta([
+    readinessStr ? { label: uiText('readiness'), value: readinessStr } : null,
+    windowLabel ? { label: uiText('window'), value: windowLabel } : null,
+  ].filter(Boolean));
+
+  // ── Infraestructura (max 3 chips) ─────────────────────────────────────────
+  let infraHtml = '';
+  if (pres.showInfrastructure !== false) {
+    const infraLabels = asArray(impl.infrastructure).slice(0, 3)
+      .map(i => typeof i === 'string' ? i : pickLang(i.label, i.label)).filter(Boolean);
+    if (infraLabels.length) {
+      infraHtml = `<div class="mt-4 flex flex-wrap gap-2">${infraLabels.map(l => renderBadge(l, 'bg-slate-50 text-slate-700 border-slate-200')).join('')}</div>`;
+    }
+  }
+
+  // ── Resultado / KPI ───────────────────────────────────────────────────────
+  let kpiHtml = '';
+  if (pres.showPrimaryMetric !== false) {
+    const isFinished = ['completed', 'published', 'scaled'].includes(core.pilotStage);
+    if (isFinished && results.headline) {
+      kpiHtml = renderCardCallout(uiText('pilotResult'), results.headline, 'check-circle');
+    } else if (!isFinished && pilotPlan.successCriteria?.length) {
+      kpiHtml = renderCardCallout(uiText('pilotCriteria'), pilotPlan.successCriteria[0].label, 'target');
+    }
+  }
+
+  // ── Descargables ──────────────────────────────────────────────────────────
+  let dlHtml = '';
+  if (pres.showDownloadsIndicator && item.hasDownloads && item.downloadCount) {
+    const n = item.downloadCount;
+    dlHtml = `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500"><i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i><span>${esc(n === 1 ? `1 ${uiText('downloadable')}` : `${n} ${uiText('downloadables')}`)}</span></div>`;
+  }
+
+  // ── Badges: stage + tipo (colores diferenciados) ─────────────────────────
+  const pilotTypeLabel = getPilotTypeLabel(core.pilotType);
+  const stageLabel = getPilotStageLabel(core.pilotStage);
+  const stageTone = getPilotStageTone(core.pilotStage);
+  const bottomBadges = [
+    stageLabel ? renderBadge(stageLabel, stageTone) : '',
+    pilotTypeLabel ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200') : '',
+  ].filter(Boolean);
+  const badgesHtml = bottomBadges.length
+    ? `<div class="mt-4 flex flex-wrap gap-2">${bottomBadges.join('')}</div>`
+    : '';
+
+  const body = `
+    ${hypothesisHtml}
+    ${miniMetaHtml}
+    ${infraHtml}
+    ${kpiHtml}
+    ${dlHtml}
+    ${badgesHtml}
+  `;
+
+  // ── CTA ───────────────────────────────────────────────────────────────────
+  const ef = item.externalFlow || {};
+  const extUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : null;
+  const ctaHtml = extUrl
+    ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang(ef.primaryAction?.label) || uiText('viewDetail'))}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
+    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang({ es: 'Ver pilotaje', en: 'View pilot', va: 'Veure pilot' }))}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
+
+  return renderCardShell(item, tab, body, {
+    title: core.title,
+    subtitle: core.summary,
+    extraBadge: getSectorLabel(core.sector),
+    entity: item.ownership?.lead?.name || '',
+    ctaHtml,
+  });
+}
+
+function renderPilotCardLegacy(item, tab) {
   const card = item.card || {};
   const pilotTypeLabel = getPilotTypeLabel(item.core?.pilotType);
   const pilotStatusLabel = getPilotStatusLabel(item.classification?.pilotStatus);

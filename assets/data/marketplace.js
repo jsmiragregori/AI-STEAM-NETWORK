@@ -150,9 +150,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Activitats pilot educatives — mòduls FP, formació docent, ponts al màster i cooperació de xarxa — on es prova i valida la transferència de coneixement AI-STEAM."
       },
       "ctaLabel": {
-        "es": "Explorar pilotos",
-        "en": "Explore pilots",
-        "va": "Explorar pilots"
+        "es": "Ver pilotos",
+        "en": "View pilots",
+        "va": "Veure pilots"
       },
       "emptyState": {
         "title": {
@@ -326,6 +326,7 @@ export const MARKETPLACE_CONFIG = {
     "verificationStatus": true,
     "pilotType": true,
     "pilotStatus": true,
+    "pilotStage": true,
     "helix": true,
     "contributionType": false,
     "audience": false
@@ -344,6 +345,7 @@ export const MARKETPLACE_CONFIG = {
     "verificationStatus": true,
     "pilotType": true,
     "pilotStatus": true,
+    "pilotStage": true,
     "helix": true
   },
   "searchBlock": {
@@ -772,6 +774,15 @@ export const MARKETPLACE_CONFIG = {
   ],
   "pilotTypeLabels": [
     {
+      "id": "vet-industry",
+      "visible": true,
+      "label": {
+        "es": "Piloto FP-Empresa",
+        "en": "VET-Industry pilot",
+        "va": "Pilot FP-Empresa"
+      }
+    },
+    {
       "id": "fp",
       "visible": true,
       "label": {
@@ -796,6 +807,51 @@ export const MARKETPLACE_CONFIG = {
         "es": "Puente al Máster",
         "en": "Master bridge",
         "va": "Pont al Màster"
+      }
+    },
+    {
+      "id": "living-lab",
+      "visible": true,
+      "label": {
+        "es": "Living Lab",
+        "en": "Living Lab",
+        "va": "Living Lab"
+      }
+    },
+    {
+      "id": "technology-pilot",
+      "visible": true,
+      "label": {
+        "es": "Piloto tecnológico",
+        "en": "Technology pilot",
+        "va": "Pilot tecnològic"
+      }
+    },
+    {
+      "id": "curriculum-pilot",
+      "visible": true,
+      "label": {
+        "es": "Piloto curricular",
+        "en": "Curriculum pilot",
+        "va": "Pilot curricular"
+      }
+    },
+    {
+      "id": "institutional-pilot",
+      "visible": true,
+      "label": {
+        "es": "Piloto institucional",
+        "en": "Institutional pilot",
+        "va": "Pilot institucional"
+      }
+    },
+    {
+      "id": "validation-pilot",
+      "visible": true,
+      "label": {
+        "es": "Validación piloto",
+        "en": "Validation pilot",
+        "va": "Validació pilot"
       }
     },
     {
@@ -1409,22 +1465,22 @@ export const MARKETPLACE_CONFIG = {
     },
     "pilot": {
       "requiredBlocks": [
-        "context",
-        "participation",
-        "resources",
+        "pilotPlan",
+        "implementation",
         "evidence",
-        "process",
-        "outputs"
+        "results",
+        "transferability"
       ],
       "optionalBlocks": [
+        "downloads",
+        "resources",
+        "process",
         "people",
         "access",
-        "trackA",
-        "objective",
-        "methodology",
-        "outcome"
+        "externalFlow",
+        "relations"
       ],
-      "cardSignal": "process"
+      "cardSignal": "pilotPlan"
     },
     "resource": {
       "requiredBlocks": [
@@ -1735,6 +1791,69 @@ export const MARKETPLACE_CONFIG = {
         "en": "Other",
         "va": "Altre"
       }
+    },
+    {
+      "id": "pilot-plan",
+      "visible": true,
+      "label": {
+        "es": "Plan de pilotaje",
+        "en": "Pilot plan",
+        "va": "Pla de pilotatge"
+      }
+    },
+    {
+      "id": "protocol",
+      "visible": true,
+      "label": {
+        "es": "Protocolo",
+        "en": "Protocol",
+        "va": "Protocol"
+      }
+    },
+    {
+      "id": "rubric",
+      "visible": true,
+      "label": {
+        "es": "Rúbrica de evaluación",
+        "en": "Assessment rubric",
+        "va": "Rúbrica d'avaluació"
+      }
+    },
+    {
+      "id": "checklist",
+      "visible": true,
+      "label": {
+        "es": "Checklist",
+        "en": "Checklist",
+        "va": "Checklist"
+      }
+    },
+    {
+      "id": "evidence-template",
+      "visible": true,
+      "label": {
+        "es": "Plantilla de evidencias",
+        "en": "Evidence template",
+        "va": "Plantilla d'evidències"
+      }
+    },
+    {
+      "id": "results-report",
+      "visible": true,
+      "label": {
+        "es": "Informe de resultados",
+        "en": "Results report",
+        "va": "Informe de resultats"
+      }
+    },
+    {
+      "id": "oer",
+      "visible": true,
+      "label": {
+        "es": "Recurso educativo abierto (OER)",
+        "en": "Open Educational Resource (OER)",
+        "va": "Recurs educatiu obert (OER)"
+      }
     }
   ],
   "caseStageLabels": [
@@ -1884,6 +2003,322 @@ export const MARKETPLACE_CONFIG = {
         "es": "No aplica",
         "en": "Not applicable",
         "va": "No aplica"
+      }
+    }
+  ],
+  "pilotStageLabels": [
+    {
+      "id": "planned",
+      "visible": true,
+      "label": {
+        "es": "Planificado",
+        "en": "Planned",
+        "va": "Planificat"
+      }
+    },
+    {
+      "id": "open",
+      "visible": true,
+      "label": {
+        "es": "Abierto",
+        "en": "Open",
+        "va": "Obert"
+      }
+    },
+    {
+      "id": "in-progress",
+      "visible": true,
+      "label": {
+        "es": "En curso",
+        "en": "In progress",
+        "va": "En curs"
+      }
+    },
+    {
+      "id": "completed",
+      "visible": true,
+      "label": {
+        "es": "Completado",
+        "en": "Completed",
+        "va": "Completat"
+      }
+    },
+    {
+      "id": "published",
+      "visible": true,
+      "label": {
+        "es": "Publicado",
+        "en": "Published",
+        "va": "Publicat"
+      }
+    },
+    {
+      "id": "scaled",
+      "visible": true,
+      "label": {
+        "es": "Escalado",
+        "en": "Scaled",
+        "va": "Escalat"
+      }
+    },
+    {
+      "id": "archived",
+      "visible": true,
+      "label": {
+        "es": "Archivado",
+        "en": "Archived",
+        "va": "Arxivat"
+      }
+    }
+  ],
+  "technologyReadinessLabels": [
+    {
+      "id": 1,
+      "visible": true,
+      "label": {
+        "es": "Principios básicos observados",
+        "en": "Basic principles observed",
+        "va": "Principis bàsics observats"
+      }
+    },
+    {
+      "id": 2,
+      "visible": true,
+      "label": {
+        "es": "Concepto tecnológico formulado",
+        "en": "Technology concept formulated",
+        "va": "Concepte tecnològic formulat"
+      }
+    },
+    {
+      "id": 3,
+      "visible": true,
+      "label": {
+        "es": "Prueba de concepto experimental",
+        "en": "Experimental proof of concept",
+        "va": "Prova de concepte experimental"
+      }
+    },
+    {
+      "id": 4,
+      "visible": true,
+      "label": {
+        "es": "Tecnología validada en laboratorio",
+        "en": "Technology validated in lab",
+        "va": "Tecnologia validada en laboratori"
+      }
+    },
+    {
+      "id": 5,
+      "visible": true,
+      "label": {
+        "es": "Tecnología validada en entorno relevante",
+        "en": "Technology validated in relevant environment",
+        "va": "Tecnologia validada en entorn rellevant"
+      }
+    },
+    {
+      "id": 6,
+      "visible": true,
+      "label": {
+        "es": "Tecnología demostrada en entorno relevante",
+        "en": "Technology demonstrated in relevant environment",
+        "va": "Tecnologia demostrada en entorn rellevant"
+      }
+    },
+    {
+      "id": 7,
+      "visible": true,
+      "label": {
+        "es": "Demostración en entorno operacional",
+        "en": "Demonstration in operational environment",
+        "va": "Demostració en entorn operacional"
+      }
+    },
+    {
+      "id": 8,
+      "visible": true,
+      "label": {
+        "es": "Sistema completo y cualificado",
+        "en": "System complete and qualified",
+        "va": "Sistema complet i qualificat"
+      }
+    },
+    {
+      "id": 9,
+      "visible": true,
+      "label": {
+        "es": "Sistema probado con éxito en entorno operacional",
+        "en": "Actual system proven in operational environment",
+        "va": "Sistema provat amb èxit en entorn operacional"
+      }
+    }
+  ],
+  "educationalReadinessLabels": [
+    {
+      "id": "concept",
+      "visible": true,
+      "label": {
+        "es": "Concepto docente definido",
+        "en": "Teaching concept defined",
+        "va": "Concepte docent definit"
+      }
+    },
+    {
+      "id": "designed",
+      "visible": true,
+      "label": {
+        "es": "Diseño pedagógico completado",
+        "en": "Pedagogical design completed",
+        "va": "Disseny pedagògic completat"
+      }
+    },
+    {
+      "id": "classroom-tested",
+      "visible": true,
+      "label": {
+        "es": "Probado en aula",
+        "en": "Classroom tested",
+        "va": "Provat en aula"
+      }
+    },
+    {
+      "id": "validated-in-real-context",
+      "visible": true,
+      "label": {
+        "es": "Validado en contexto real",
+        "en": "Validated in real context",
+        "va": "Validat en context real"
+      }
+    },
+    {
+      "id": "replicated",
+      "visible": true,
+      "label": {
+        "es": "Replicado en otros contextos",
+        "en": "Replicated in other contexts",
+        "va": "Replicat en altres contextos"
+      }
+    },
+    {
+      "id": "scaled",
+      "visible": true,
+      "label": {
+        "es": "Escalado a nivel sistémico",
+        "en": "Scaled at system level",
+        "va": "Escalat a nivell sistèmic"
+      }
+    }
+  ],
+  "pilotEvidenceLevelLabels": [
+    {
+      "id": "planned",
+      "visible": true,
+      "label": {
+        "es": "Planificado",
+        "en": "Planned",
+        "va": "Planificat"
+      }
+    },
+    {
+      "id": "observed",
+      "visible": true,
+      "label": {
+        "es": "Observado",
+        "en": "Observed",
+        "va": "Observat"
+      }
+    },
+    {
+      "id": "documented",
+      "visible": true,
+      "label": {
+        "es": "Documentado",
+        "en": "Documented",
+        "va": "Documentat"
+      }
+    },
+    {
+      "id": "measured",
+      "visible": true,
+      "label": {
+        "es": "Medido",
+        "en": "Measured",
+        "va": "Mesurat"
+      }
+    },
+    {
+      "id": "reviewed",
+      "visible": true,
+      "label": {
+        "es": "Revisado",
+        "en": "Reviewed",
+        "va": "Revisat"
+      }
+    },
+    {
+      "id": "verified",
+      "visible": true,
+      "label": {
+        "es": "Verificado externamente",
+        "en": "Externally verified",
+        "va": "Verificat externament"
+      }
+    }
+  ],
+  "pilotDecisionLabels": [
+    {
+      "id": "scale",
+      "visible": true,
+      "label": {
+        "es": "Escalar",
+        "en": "Scale",
+        "va": "Escalar"
+      }
+    },
+    {
+      "id": "adapt",
+      "visible": true,
+      "label": {
+        "es": "Adaptar y repetir",
+        "en": "Adapt and repeat",
+        "va": "Adaptar i repetir"
+      }
+    },
+    {
+      "id": "close",
+      "visible": true,
+      "label": {
+        "es": "Cerrar",
+        "en": "Close",
+        "va": "Tancar"
+      }
+    },
+    {
+      "id": "repeat",
+      "visible": true,
+      "label": {
+        "es": "Repetir sin cambios",
+        "en": "Repeat without changes",
+        "va": "Repetir sense canvis"
+      }
+    },
+    {
+      "id": "convert-to-case",
+      "visible": true,
+      "label": {
+        "es": "Convertir en caso transferible",
+        "en": "Convert to transferable case",
+        "va": "Convertir en cas transferible"
+      }
+    },
+    {
+      "id": "publish-resource",
+      "visible": true,
+      "label": {
+        "es": "Publicar como recurso abierto",
+        "en": "Publish as open resource",
+        "va": "Publicar com a recurs obert"
       }
     }
   ],
@@ -2542,7 +2977,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-fp-energia-costera.yml",
       "core": {
         "status": "resolved",
-        "maturity": "completed",
+        "maturity": "idea",
         "title": {
           "es": "Piloto FP — IA para eficiencia energética en centros educativos",
           "en": "VET Pilot — AI for energy efficiency in educational centres",
@@ -2554,11 +2989,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Mòdul OER d'eficiència energètica amb IA pilotat amb alumnat de FP a l'IES La Costera."
         },
         "entity": {
-          "name": "CEICE",
+          "name": "",
           "type": {
-            "es": "Organismo público educativo",
-            "en": "Public education body",
-            "va": "Organisme públic educatiu"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "sector": "ene",
@@ -2566,7 +3001,7 @@ export const MARKETPLACE_CONFIG = {
         "levels": [
           "FP"
         ],
-        "pilotType": "fp",
+        "pilotType": "curriculum-pilot",
         "helix": [
           "academia",
           "public-sector"
@@ -2622,15 +3057,15 @@ export const MARKETPLACE_CONFIG = {
           "learning-ecosystems"
         ],
         "engagementLevel": "hosting",
-        "evidenceMaturity": "completed",
-        "lbdStage": "output",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
         "trackBValue": {
-          "es": "Módulo reutilizable CC-BY que demuestra la transferibilidad de OER de IA en FP de Energía y Agua.",
-          "en": "Reusable CC-BY module demonstrating OER transferability for AI in Energy and Water VET.",
-          "va": "Mòdul reutilitzable CC-BY que demostra la transferibilitat d'OER d'IA en FP d'Energia i Aigua."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
-        "pilotStatus": "completed"
+        "pilotStatus": ""
       },
       "transfer": {
         "type": "",
@@ -2643,187 +3078,16 @@ export const MARKETPLACE_CONFIG = {
           "vet-centres",
           "teachers",
           "energy-sector"
-        ],
-        "primaryCta": {
-          "es": "Explorar resultados",
-          "en": "Explore results",
-          "va": "Explorar resultats"
-        },
-        "featuredSignal": {
-          "es": "Módulo publicado en Aules. Dataset anonimizado disponible para reutilización.",
-          "en": "Module published on Aules. Anonymised dataset available for reuse.",
-          "va": "Mòdul publicat a Aules. Dataset anonimitzat disponible per a reutilització."
-        }
+        ]
       },
-      "card": {
-        "collaborationDirection": {
-          "es": "Oferta de módulo OER validado para replicación en centros de FP de Energía y Agua.",
-          "en": "Validated OER module offer for replication in Energy and Water VET centres.",
-          "va": "Oferta de mòdul OER validat per a replicació en centres de FP d'Energia i Aigua."
-        },
-        "trl": {
-          "level": 7,
-          "label": {
-            "es": "Demostración en entorno operacional",
-            "en": "Demonstration in operational environment",
-            "va": "Demostració en entorn operacional"
-          }
-        },
-        "infrastructure": [
-          "Plataforma Aules",
-          "Sensores IoT aula",
-          "Dataset energético anonimizado"
-        ],
-        "executionWindow": {
-          "start": "2025-11-01",
-          "end": "2026-01-15",
-          "label": {
-            "es": "Nov 2025 – Ene 2026",
-            "en": "Nov 2025 – Jan 2026",
-            "va": "Nov 2025 – Gen 2026"
-          }
-        },
-        "validationStatus": {
-          "es": "Completado y publicado",
-          "en": "Completed and published",
-          "va": "Completat i publicat"
-        }
-      },
-      "visibility": {
-        "objective": true,
-        "methodology": true,
-        "outcome": true,
-        "context": true,
-        "participation": true,
-        "resources": true,
-        "evidence": true,
-        "process": true,
-        "outputs": true,
-        "people": true,
-        "access": true,
-        "trackA": false
-      },
-      "detail": {
-        "objective": {
-          "es": "Validar la transferibilidad de un módulo OER de eficiencia energética con IA al alumnado de FP de Energía y Agua.",
-          "en": "Validate the transferability of an AI-based energy efficiency OER module to VET students in Energy and Water.",
-          "va": "Validar la transferibilitat d'un mòdul OER d'eficiència energètica amb IA a l'alumnat de FP d'Energia i Aigua."
-        },
-        "methodology": {
-          "es": "Implementación en aula con metodología Learning by Developing (LbD), sesiones híbridas en Aules y captura de evidencias mediante checklist AI-SECRETT.",
-          "en": "Classroom deployment using Learning by Developing (LbD), hybrid sessions on Aules and evidence capture via the AI-SECRETT checklist.",
-          "va": "Implementació a l'aula amb metodologia Learning by Developing (LbD), sessions híbrides a Aules i captura d'evidències mitjançant checklist AI-SECRETT."
-        },
-        "outcome": {
-          "es": "Módulo OER CC-BY publicado en Aules. 24 alumnos participantes. Dataset anonimizado disponible para reutilización.",
-          "en": "CC-BY OER module published on Aules. 24 participating students. Anonymised dataset available for reuse.",
-          "va": "Mòdul OER CC-BY publicat a Aules. 24 alumnes participants. Dataset anonimitzat disponible per a reutilització."
-        },
-        "context": {
-          "es": "El piloto conecta la eficiencia energética de los edificios educativos con el aprendizaje práctico de IA en FP, generando un recurso abierto reutilizable.",
-          "en": "The pilot connects educational building energy efficiency with practical AI learning in VET, generating a reusable open resource.",
-          "va": "El pilot connecta l'eficiència energètica dels edificis educatius amb l'aprenentatge pràctic d'IA en FP, generant un recurs obert reutilitzable."
-        },
-        "participation": {
-          "participants": {
-            "es": "24 alumnos de FP de Energía y Agua en IES La Costera.",
-            "en": "24 Energy and Water VET students at IES La Costera.",
-            "va": "24 alumnes de FP d'Energia i Aigua a l'IES La Costera."
-          }
-        },
-        "resources": {
-          "used": [
-            {
-              "label": {
-                "es": "Módulo OER eficiencia energética con IA",
-                "en": "AI energy efficiency OER module",
-                "va": "Mòdul OER eficiència energètica amb IA"
-              },
-              "format": "Aules / PDF",
-              "license": "CC BY 4.0"
-            }
-          ]
-        },
-        "evidence": {
-          "metrics": [
-            {
-              "label": {
-                "es": "Competencias adquiridas",
-                "en": "Acquired competencies",
-                "va": "Competències adquirides"
-              },
-              "method": {
-                "es": "Checklist AI-SECRETT",
-                "en": "AI-SECRETT checklist",
-                "va": "Checklist AI-SECRETT"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2025-11-01",
-              "label": {
-                "es": "Inicio del piloto",
-                "en": "Pilot start",
-                "va": "Inici del pilot"
-              }
-            },
-            {
-              "date": "2026-01-15",
-              "label": {
-                "es": "Publicación del módulo OER",
-                "en": "OER module published",
-                "va": "Publicació del mòdul OER"
-              }
-            }
-          ]
-        },
-        "outputs": {
-          "expected": [
-            {
-              "label": {
-                "es": "Módulo OER CC-BY publicado",
-                "en": "CC-BY OER module published",
-                "va": "Mòdul OER CC-BY publicat"
-              }
-            },
-            {
-              "label": {
-                "es": "Dataset energético anonimizado",
-                "en": "Anonymised energy dataset",
-                "va": "Dataset energètic anonimitzat"
-              }
-            }
-          ]
-        },
-        "people": {
-          "organisations": [
-            {
-              "name": "CEICE",
-              "role": {
-                "es": "Coordinación y publicación",
-                "en": "Coordination and publication",
-                "va": "Coordinació i publicació"
-              }
-            },
-            {
-              "name": "IES La Costera",
-              "role": {
-                "es": "Centro piloto",
-                "en": "Pilot centre",
-                "va": "Centre pilot"
-              }
-            }
-          ]
-        }
-      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
       "access": {
         "pageVisibility": "public",
         "pageLicense": "CC BY 4.0",
         "codeLicense": "",
-        "dataAvailability": "",
+        "dataAvailability": "available-in-repository",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -2858,24 +3122,373 @@ export const MARKETPLACE_CONFIG = {
         },
         "url": ""
       },
+      "ownership": {
+        "publisher": {
+          "name": "",
+          "org": ""
+        },
+        "lead": {
+          "name": "CEICE",
+          "type": {
+            "es": "Organismo público educativo",
+            "en": "Public education body",
+            "va": "Organisme públic educatiu"
+          },
+          "role": {
+            "es": "Coordinación y publicación del módulo OER",
+            "en": "Coordination and OER module publication",
+            "va": "Coordinació i publicació del mòdul OER"
+          }
+        },
+        "coordinator": null,
+        "pilotSites": [
+          {
+            "name": "IES La Costera",
+            "type": "",
+            "role": {
+              "es": "Centro piloto",
+              "en": "Pilot centre",
+              "va": "Centre pilot"
+            }
+          }
+        ],
+        "partners": []
+      },
+      "pilotPlan": {
+        "hypothesis": {
+          "es": "Oferta de módulo OER validado para replicación en centros de FP de Energía y Agua.",
+          "en": "Validated OER module offer for replication in Energy and Water VET centres.",
+          "va": "Oferta de mòdul OER validat per a replicació en centres de FP d'Energia i Aigua."
+        },
+        "objective": {
+          "es": "Validar la transferibilidad de un módulo OER de eficiencia energética con IA al alumnado de FP de Energía y Agua.",
+          "en": "Validate the transferability of an AI-based energy efficiency OER module to VET students in Energy and Water.",
+          "va": "Validar la transferibilitat d'un mòdul OER d'eficiència energètica amb IA a l'alumnat de FP d'Energia i Aigua."
+        },
+        "context": {
+          "es": "El piloto conecta la eficiencia energética de los edificios educativos con el aprendizaje práctico de IA en FP, generando un recurso abierto reutilizable.",
+          "en": "The pilot connects educational building energy efficiency with practical AI learning in VET, generating a reusable open resource.",
+          "va": "El pilot connecta l'eficiència energètica dels edificis educatius amb l'aprenentatge pràctic d'IA en FP, generant un recurs obert reutilitzable."
+        },
+        "targetParticipants": {
+          "es": "24 alumnos de FP de Energía y Agua en IES La Costera.",
+          "en": "24 Energy and Water VET students at IES La Costera.",
+          "va": "24 alumnes de FP d'Energia i Aigua a l'IES La Costera."
+        },
+        "methodology": {
+          "es": "Implementación en aula con metodología Learning by Developing (LbD), sesiones híbridas en Aules y captura de evidencias mediante checklist AI-SECRETT.",
+          "en": "Classroom deployment using Learning by Developing (LbD), hybrid sessions on Aules and evidence capture via the AI-SECRETT checklist.",
+          "va": "Implementació a l'aula amb metodologia Learning by Developing (LbD), sessions híbrides a Aules i captura d'evidències mitjançant checklist AI-SECRETT."
+        },
+        "successCriteria": [
+          {
+            "id": "sc1",
+            "label": {
+              "es": "El módulo OER es completado por al menos el 80% del alumnado participante",
+              "en": "The OER module is completed by at least 80% of participating students",
+              "va": "El mòdul OER és completat per almenys el 80% de l'alumnat participant"
+            }
+          },
+          {
+            "id": "sc2",
+            "label": {
+              "es": "El módulo se publica en Aules bajo licencia CC BY con dataset anonimizado disponible",
+              "en": "The module is published on Aules under CC BY with anonymised dataset available",
+              "va": "El mòdul es publica a Aules sota llicència CC BY amb dataset anonimitzat disponible"
+            }
+          }
+        ]
+      },
+      "implementation": {
+        "readiness": {
+          "technologyReadiness": {
+            "enabled": true,
+            "level": 7,
+            "label": {
+              "es": "Demostración en entorno operacional",
+              "en": "Demonstration in operational environment",
+              "va": "Demostració en entorn operacional"
+            }
+          },
+          "educationalReadiness": {
+            "enabled": true,
+            "level": "validated-in-real-context",
+            "label": {
+              "es": "Validado en contexto real",
+              "en": "Validated in real context",
+              "va": "Validat en context real"
+            }
+          }
+        },
+        "infrastructure": [
+          {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        ],
+        "tools": [
+          {
+            "label": {
+              "es": "Checklist AI-SECRETT",
+              "en": "AI-SECRETT checklist",
+              "va": "Checklist AI-SECRETT"
+            }
+          }
+        ],
+        "dataManagement": {
+          "sensitiveDataIncluded": false,
+          "personalDataIncluded": true,
+          "note": {
+            "es": "Datos de consumo energético del edificio escolar. Datos de participantes anonimizados.",
+            "en": "School building energy consumption data. Participant data anonymised.",
+            "va": "Dades de consum energètic de l'edifici escolar. Dades de participants anonimitzades."
+          }
+        }
+      },
+      "evidence": {
+        "evidenceLevel": "measured",
+        "verificationStatus": "self-reported",
+        "collectionMethod": {
+          "es": "Checklist AI-SECRETT + evaluación de competencias adquiridas",
+          "en": "AI-SECRETT checklist + acquired competency assessment",
+          "va": "Checklist AI-SECRETT + avaluació de competències adquirides"
+        },
+        "primaryMetric": {
+          "id": "students-completed",
+          "value": "24",
+          "unit": {
+            "es": "alumnos participantes",
+            "en": "participating students",
+            "va": "alumnes participants"
+          },
+          "label": {
+            "es": "Alumnos que completaron el módulo",
+            "en": "Students who completed the module",
+            "va": "Alumnes que van completar el mòdul"
+          }
+        },
+        "secondaryMetrics": [
+          {
+            "id": "sm1",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Módulo publicado en Aules bajo CC BY 4.0",
+              "en": "Module published on Aules under CC BY 4.0",
+              "va": "Mòdul publicat a Aules sota CC BY 4.0"
+            }
+          },
+          {
+            "id": "sm2",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Dataset energético anonimizado disponible para reutilización",
+              "en": "Anonymised energy dataset available for reuse",
+              "va": "Dataset energètic anonimitzat disponible per a reutilització"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "Piloto con un único centro; transferibilidad a entornos sin sensores IoT por confirmar.",
+          "en": "Single-centre pilot; transferability to environments without IoT sensors to be confirmed.",
+          "va": "Pilot amb un únic centre; transferibilitat a entorns sense sensors IoT per confirmar."
+        }
+      },
+      "results": {
+        "headline": {
+          "es": "Módulo OER CC-BY publicado en Aules. 24 alumnos participantes. Dataset anonimizado disponible para reutilización.",
+          "en": "CC-BY OER module published on Aules. 24 participating students. Anonymised dataset available for reuse.",
+          "va": "Mòdul OER CC-BY publicat a Aules. 24 alumnes participants. Dataset anonimitzat disponible per a reutilització."
+        },
+        "outputs": [
+          {
+            "id": "o1",
+            "label": {
+              "es": "Módulo OER CC-BY publicado en Aules",
+              "en": "CC-BY OER module published on Aules",
+              "va": "Mòdul OER CC-BY publicat a Aules"
+            }
+          },
+          {
+            "id": "o2",
+            "label": {
+              "es": "Dataset energético anonimizado (open data)",
+              "en": "Anonymised energy dataset (open data)",
+              "va": "Dataset energètic anonimitzat (open data)"
+            }
+          }
+        ],
+        "decision": {
+          "outcome": "publish-resource",
+          "label": {
+            "es": "Publicar recurso — módulo OER CC-BY disponible en repositorio",
+            "en": "Publish resource — CC-BY OER module available in repository",
+            "va": "Publicar recurs — mòdul OER CC-BY disponible en repositori"
+          }
+        }
+      },
+      "transferability": {
+        "whyTransferable": {
+          "es": "El módulo OER está publicado bajo CC BY 4.0 y es reutilizable en cualquier ciclo de FP con sensores de consumo energético básicos.",
+          "en": "The OER module is published under CC BY 4.0 and reusable in any VET cycle with basic energy consumption sensors.",
+          "va": "El mòdul OER està publicat sota CC BY 4.0 i és reutilitzable en qualsevol cicle de FP amb sensors de consum energètic bàsics."
+        },
+        "suitableFor": [
+          "vet-centres",
+          "teachers"
+        ],
+        "requirements": [
+          {
+            "label": {
+              "es": "Acceso a plataforma Aules o LMS equivalente",
+              "en": "Access to Aules platform or equivalent LMS",
+              "va": "Accés a plataforma Aules o LMS equivalent"
+            }
+          },
+          {
+            "label": {
+              "es": "Datos de consumo energético del edificio (sensores IoT o lecturas manuales)",
+              "en": "Building energy consumption data (IoT sensors or manual readings)",
+              "va": "Dades de consum energètic de l'edifici (sensors IoT o lectures manuals)"
+            }
+          }
+        ],
+        "replicationSteps": [
+          {
+            "label": {
+              "es": "Descargar módulo OER desde repositorio AI-STEAM y adaptar al contexto del centro",
+              "en": "Download OER module from AI-STEAM repository and adapt to the centre context",
+              "va": "Descarregar mòdul OER des del repositori AI-STEAM i adaptar al context del centre"
+            }
+          },
+          {
+            "label": {
+              "es": "Configurar captura de datos de consumo energético del edificio",
+              "en": "Configure energy consumption data capture for the building",
+              "va": "Configurar la captura de dades de consum energètic de l'edifici"
+            }
+          },
+          {
+            "label": {
+              "es": "Implementar checklist AI-SECRETT para evaluación de competencias",
+              "en": "Implement AI-SECRETT checklist for competency assessment",
+              "va": "Implementar checklist AI-SECRETT per a l'avaluació de competències"
+            }
+          }
+        ],
+        "risks": [
+          {
+            "label": {
+              "es": "La calidad de los datos de consumo depende de la infraestructura del edificio",
+              "en": "Consumption data quality depends on the building infrastructure",
+              "va": "La qualitat de les dades de consum depèn de la infraestructura de l'edifici"
+            }
+          }
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "",
+        "items": []
+      },
+      "resources": null,
+      "externalFlow": {
+        "enabled": true,
+        "primaryAction": {
+          "label": {
+            "es": "Explorar resultados",
+            "en": "Explore results",
+            "va": "Explorar resultats"
+          },
+          "system": "",
+          "url": ""
+        },
+        "secondaryAction": null
+      },
+      "relations": {
+        "originChallengeId": "",
+        "relatedValidations": [],
+        "relatedCases": [],
+        "relatedResources": [
+          "o1"
+        ],
+        "relatedMentorships": [],
+        "nextPossibleItems": []
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "presentation": {
+        "card": {
+          "variant": "pilot",
+          "showPilotStage": true,
+          "showPilotType": true,
+          "showReadiness": true,
+          "showWindow": true,
+          "showInfrastructure": true,
+          "showPrimaryMetric": true,
+          "showDownloadsIndicator": false,
+          "resultBlockLabel": {
+            "es": "Qué se prueba",
+            "en": "What is being tested",
+            "va": "Què es prova"
+          }
+        },
+        "detail": {
+          "sections": {
+            "summary": true,
+            "pilotPlan": true,
+            "methodology": true,
+            "implementation": true,
+            "evidence": true,
+            "results": true,
+            "transferability": true,
+            "downloads": false,
+            "resources": false,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": false,
+            "relations": false
+          }
+        }
+      },
       "template": {
         "requiredBlocks": [
-          "context",
-          "participation",
-          "resources",
+          "pilotPlan",
+          "implementation",
           "evidence",
-          "process",
-          "outputs"
+          "results",
+          "transferability"
         ],
         "optionalBlocks": [
+          "downloads",
+          "resources",
+          "process",
           "people",
           "access",
-          "trackA",
-          "objective",
-          "methodology",
-          "outcome"
+          "externalFlow",
+          "relations"
         ],
-        "cardSignal": "process"
+        "cardSignal": "pilotPlan"
       }
     },
     {
@@ -5392,7 +6005,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-teacher-sesgos-ia-uveg.yml",
       "core": {
         "status": "resolved",
-        "maturity": "completed",
+        "maturity": "idea",
         "title": {
           "es": "Formación Docente — Análisis de sesgos en IA para profesorado de Máster",
           "en": "Teacher Training — AI bias analysis for Master's programme faculty",
@@ -5404,11 +6017,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Taller intensiu per a professorat universitari sobre detecció i mitigació de biaixos algorítmics en models d'IA usats en contextos educatius."
         },
         "entity": {
-          "name": "UVEG — Facultat d'Informàtica",
+          "name": "",
           "type": {
-            "es": "Universidad pública",
-            "en": "Public university",
-            "va": "Universitat pública"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "sector": "nts",
@@ -5473,15 +6086,15 @@ export const MARKETPLACE_CONFIG = {
           "equity-inclusion"
         ],
         "engagementLevel": "learning-activity",
-        "evidenceMaturity": "completed",
-        "lbdStage": "output",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
         "trackBValue": {
-          "es": "14 docentes universitarios capacitados en auditoría de sesgos. Plantilla CC-BY-SA reutilizable para cualquier programa de Máster.",
-          "en": "14 university faculty trained in bias auditing. CC-BY-SA template reusable across any Master's programme.",
-          "va": "14 docents universitaris capacitats en auditoria de biaixos. Plantilla CC-BY-SA reutilitzable per a qualsevol programa de Màster."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
-        "pilotStatus": "completed"
+        "pilotStatus": ""
       },
       "transfer": {
         "type": "",
@@ -5494,212 +6107,16 @@ export const MARKETPLACE_CONFIG = {
           "universities",
           "teachers",
           "master-programmes"
-        ],
-        "primaryCta": {
-          "es": "Acceder a materiales",
-          "en": "Access materials",
-          "va": "Accedir als materials"
-        },
-        "featuredSignal": {
-          "es": "6 asignaturas de Máster incorporan unidad de sesgos en IA en 2026-27. Plantilla CC-BY-SA publicada.",
-          "en": "6 Master's courses incorporate AI bias unit in 2026-27. CC-BY-SA template published.",
-          "va": "6 assignatures de Màster incorporen unitat de biaixos en IA en 2026-27. Plantilla CC-BY-SA publicada."
-        }
+        ]
       },
-      "card": {
-        "collaborationDirection": {
-          "es": "Oferta de taller replicable sobre auditoría de sesgos algorítmicos para programas de Máster.",
-          "en": "Replicable workshop offer on algorithmic bias auditing for Master's programmes.",
-          "va": "Oferta de taller replicable sobre auditoria de biaixos algorítmics per a programes de Màster."
-        },
-        "trl": {
-          "level": 7,
-          "label": {
-            "es": "Demostración en entorno operacional",
-            "en": "Demonstration in operational environment",
-            "va": "Demostració en entorn operacional"
-          }
-        },
-        "infrastructure": [
-          "Aula universitaria equipada",
-          "Datasets reales de auditoría",
-          "Repositorio AI-STEAM"
-        ],
-        "executionWindow": {
-          "start": "2025-11-01",
-          "end": "2025-12-15",
-          "label": {
-            "es": "Nov – Dic 2025",
-            "en": "Nov – Dec 2025",
-            "va": "Nov – Des 2025"
-          }
-        },
-        "validationStatus": {
-          "es": "Completado — materiales publicados",
-          "en": "Completed — materials published",
-          "va": "Completat — materials publicats"
-        }
-      },
-      "visibility": {
-        "objective": true,
-        "methodology": true,
-        "outcome": true,
-        "context": true,
-        "participation": true,
-        "resources": true,
-        "evidence": true,
-        "process": true,
-        "outputs": true,
-        "people": true,
-        "access": true,
-        "trackA": false
-      },
-      "detail": {
-        "objective": {
-          "es": "Capacitar al profesorado universitario en el uso de herramientas de auditoría de sesgos y en la integración de contenidos de equidad algorítmica en sus asignaturas.",
-          "en": "Train university faculty in the use of bias auditing tools and in the integration of algorithmic fairness content into their courses.",
-          "va": "Capacitar el professorat universitari en l'ús d'eines d'auditoria de biaixos i en la integració de continguts d'equitat algorítmica en les seues assignatures."
-        },
-        "methodology": {
-          "es": "Taller de 16h en dos módulos: auditoría práctica con datasets reales y diseño colaborativo de actividades de aula sobre equidad en IA.",
-          "en": "16-hour workshop in two modules: practical auditing with real datasets and collaborative design of classroom activities on AI fairness.",
-          "va": "Taller de 16h en dos mòduls: auditoria pràctica amb datasets reals i disseny col·laboratiu d'activitats d'aula sobre equitat en IA."
-        },
-        "outcome": {
-          "es": "14 docentes formados. 6 asignaturas de Máster incorporan unidad de sesgos en IA en 2026-27. Plantilla de auditoría CC-BY-SA publicada en repositorio AI-STEAM.",
-          "en": "14 teachers trained. 6 Master's courses incorporate AI bias unit in 2026-27. CC-BY-SA audit template published in AI-STEAM repository.",
-          "va": "14 docents formats. 6 assignatures de Màster incorporen unitat de biaixos en IA en 2026-27. Plantilla d'auditoria CC-BY-SA publicada en repositori AI-STEAM."
-        },
-        "context": {
-          "es": "La formación surgió de la necesidad detectada en el ecosistema de programas de Máster con contenidos de IA que carecían de perspectiva crítica sobre sesgos y equidad algorítmica.",
-          "en": "The training arose from a need detected in the ecosystem of AI-content Master programmes lacking a critical perspective on algorithmic bias and fairness.",
-          "va": "La formació va sorgir de la necessitat detectada en l'ecosistema de programes de Màster amb continguts d'IA que mancaven de perspectiva crítica sobre biaixos i equitat algorítmica."
-        },
-        "participation": {
-          "participants": {
-            "es": "14 docentes universitarios de UVEG y UPV de áreas de Informática e IA.",
-            "en": "14 university faculty from UVEG and UPV in Computer Science and AI areas.",
-            "va": "14 docents universitaris de UVEG i UPV d'àrees d'Informàtica i IA."
-          }
-        },
-        "resources": {
-          "used": [
-            {
-              "label": {
-                "es": "Datasets reales de auditoría de sesgos",
-                "en": "Real bias auditing datasets",
-                "va": "Datasets reals d'auditoria de biaixos"
-              },
-              "format": "CSV / Notebook",
-              "license": "Open data"
-            },
-            {
-              "label": {
-                "es": "Plantilla de auditoría CC-BY-SA",
-                "en": "CC-BY-SA audit template",
-                "va": "Plantilla d'auditoria CC-BY-SA"
-              },
-              "format": "PDF / LaTeX",
-              "license": "CC BY-SA 4.0"
-            }
-          ]
-        },
-        "evidence": {
-          "metrics": [
-            {
-              "label": {
-                "es": "Asignaturas con unidad de sesgos incorporada",
-                "en": "Courses with integrated bias unit",
-                "va": "Assignatures amb unitat de biaixos incorporada"
-              },
-              "method": {
-                "es": "Revisión de programas 2026-27",
-                "en": "Review of 2026-27 syllabi",
-                "va": "Revisió de programes 2026-27"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2025-11-15",
-              "label": {
-                "es": "Módulo 1 — auditoría práctica",
-                "en": "Module 1 — practical auditing",
-                "va": "Mòdul 1 — auditoria pràctica"
-              }
-            },
-            {
-              "date": "2025-12-10",
-              "label": {
-                "es": "Módulo 2 — diseño de actividades",
-                "en": "Module 2 — activity design",
-                "va": "Mòdul 2 — disseny d'activitats"
-              }
-            },
-            {
-              "date": "2026-03-01",
-              "label": {
-                "es": "Publicación de plantilla CC-BY-SA",
-                "en": "CC-BY-SA template published",
-                "va": "Publicació de plantilla CC-BY-SA"
-              }
-            }
-          ]
-        },
-        "outputs": {
-          "expected": [
-            {
-              "label": {
-                "es": "Plantilla de auditoría de sesgos CC-BY-SA",
-                "en": "CC-BY-SA bias audit template",
-                "va": "Plantilla d'auditoria de biaixos CC-BY-SA"
-              }
-            },
-            {
-              "label": {
-                "es": "14 docentes con certificación en equidad algorítmica",
-                "en": "14 faculty certified in algorithmic fairness",
-                "va": "14 docents amb certificació en equitat algorítmica"
-              }
-            }
-          ]
-        },
-        "people": {
-          "organisations": [
-            {
-              "name": "UVEG — Facultat d'Informàtica",
-              "role": {
-                "es": "Organización principal y facilitación",
-                "en": "Main organiser and facilitator",
-                "va": "Organització principal i facilitació"
-              }
-            },
-            {
-              "name": "UPV — Escola Tècnica Superior d'Enginyeria Informàtica",
-              "role": {
-                "es": "Co-organización",
-                "en": "Co-organiser",
-                "va": "Co-organització"
-              }
-            },
-            {
-              "name": "CEICE",
-              "role": {
-                "es": "Coordinación AI-STEAM",
-                "en": "AI-STEAM coordination",
-                "va": "Coordinació AI-STEAM"
-              }
-            }
-          ]
-        }
-      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
       "access": {
         "pageVisibility": "public",
         "pageLicense": "CC BY-SA 4.0",
         "codeLicense": "",
-        "dataAvailability": "",
+        "dataAvailability": "available-in-repository",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -5734,24 +6151,398 @@ export const MARKETPLACE_CONFIG = {
         },
         "url": ""
       },
+      "ownership": {
+        "publisher": {
+          "name": "",
+          "org": ""
+        },
+        "lead": {
+          "name": "UVEG — Facultat d'Informàtica",
+          "type": {
+            "es": "Universidad pública",
+            "en": "Public university",
+            "va": "Universitat pública"
+          },
+          "role": {
+            "es": "Organización principal y facilitación del taller",
+            "en": "Main organiser and workshop facilitator",
+            "va": "Organització principal i facilitació del taller"
+          }
+        },
+        "coordinator": null,
+        "pilotSites": [],
+        "partners": [
+          {
+            "name": "UPV — Escola Tècnica Superior d'Enginyeria Informàtica",
+            "type": "",
+            "role": {
+              "es": "Co-organización",
+              "en": "Co-organiser",
+              "va": "Co-organització"
+            }
+          },
+          {
+            "name": "CEICE",
+            "type": "",
+            "role": {
+              "es": "Coordinación AI-STEAM",
+              "en": "AI-STEAM coordination",
+              "va": "Coordinació AI-STEAM"
+            }
+          }
+        ]
+      },
+      "pilotPlan": {
+        "hypothesis": {
+          "es": "Oferta de taller replicable sobre auditoría de sesgos algorítmicos para programas de Máster.",
+          "en": "Replicable workshop offer on algorithmic bias auditing for Master's programmes.",
+          "va": "Oferta de taller replicable sobre auditoria de biaixos algorítmics per a programes de Màster."
+        },
+        "objective": {
+          "es": "Capacitar al profesorado universitario en el uso de herramientas de auditoría de sesgos y en la integración de contenidos de equidad algorítmica en sus asignaturas.",
+          "en": "Train university faculty in the use of bias auditing tools and in the integration of algorithmic fairness content into their courses.",
+          "va": "Capacitar el professorat universitari en l'ús d'eines d'auditoria de biaixos i en la integració de continguts d'equitat algorítmica en les seues assignatures."
+        },
+        "context": {
+          "es": "La formación surgió de la necesidad detectada en el ecosistema de programas de Máster con contenidos de IA que carecían de perspectiva crítica sobre sesgos y equidad algorítmica.",
+          "en": "The training arose from a need detected in the ecosystem of AI-content Master programmes lacking a critical perspective on algorithmic bias and fairness.",
+          "va": "La formació va sorgir de la necessitat detectada en l'ecosistema de programes de Màster amb continguts d'IA que mancaven de perspectiva crítica sobre biaixos i equitat algorítmica."
+        },
+        "targetParticipants": {
+          "es": "14 docentes universitarios de UVEG y UPV de áreas de Informática e IA.",
+          "en": "14 university faculty from UVEG and UPV in Computer Science and AI areas.",
+          "va": "14 docents universitaris de UVEG i UPV d'àrees d'Informàtica i IA."
+        },
+        "methodology": {
+          "es": "Taller de 16h en dos módulos: auditoría práctica con datasets reales y diseño colaborativo de actividades de aula sobre equidad en IA.",
+          "en": "16-hour workshop in two modules: practical auditing with real datasets and collaborative design of classroom activities on AI fairness.",
+          "va": "Taller de 16h en dos mòduls: auditoria pràctica amb datasets reals i disseny col·laboratiu d'activitats d'aula sobre equitat en IA."
+        },
+        "successCriteria": [
+          {
+            "id": "sc1",
+            "label": {
+              "es": "Al menos el 80% del profesorado integra contenidos de sesgos en sus asignaturas para 2026-27",
+              "en": "At least 80% of faculty integrate bias content into their courses for 2026-27",
+              "va": "Almenys el 80% del professorat integra continguts de biaixos en les seues assignatures per a 2026-27"
+            }
+          },
+          {
+            "id": "sc2",
+            "label": {
+              "es": "Plantilla CC-BY-SA publicada en repositorio AI-STEAM y reutilizable",
+              "en": "CC-BY-SA template published in AI-STEAM repository and reusable",
+              "va": "Plantilla CC-BY-SA publicada en repositori AI-STEAM i reutilitzable"
+            }
+          }
+        ]
+      },
+      "implementation": {
+        "readiness": {
+          "technologyReadiness": {
+            "enabled": false,
+            "level": null,
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "educationalReadiness": {
+            "enabled": true,
+            "level": "validated-in-real-context",
+            "label": {
+              "es": "Validado en contexto real",
+              "en": "Validated in real context",
+              "va": "Validat en context real"
+            }
+          }
+        },
+        "infrastructure": [
+          {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        ],
+        "tools": [
+          {
+            "label": {
+              "es": "Plantilla de auditoría CC-BY-SA",
+              "en": "CC-BY-SA audit template",
+              "va": "Plantilla d'auditoria CC-BY-SA"
+            }
+          },
+          {
+            "label": {
+              "es": "Datasets reales de auditoría de sesgos (CSV/Notebook)",
+              "en": "Real bias auditing datasets (CSV/Notebook)",
+              "va": "Datasets reals d'auditoria de biaixos (CSV/Notebook)"
+            }
+          }
+        ],
+        "dataManagement": {
+          "sensitiveDataIncluded": false,
+          "personalDataIncluded": false,
+          "note": {
+            "es": "Datasets de auditoría son datos anonimizados o públicos. No se tratan datos de participantes.",
+            "en": "Audit datasets are anonymised or public data. No participant data is processed.",
+            "va": "Datasets d'auditoria són dades anonimitzades o públiques. No es tracten dades de participants."
+          }
+        }
+      },
+      "evidence": {
+        "evidenceLevel": "measured",
+        "verificationStatus": "self-reported",
+        "collectionMethod": {
+          "es": "Revisión de programas de asignaturas 2026-27 + verificación de publicación de plantilla",
+          "en": "Review of 2026-27 course syllabi + template publication verification",
+          "va": "Revisió de programes d'assignatures 2026-27 + verificació de publicació de plantilla"
+        },
+        "primaryMetric": {
+          "id": "faculty-trained",
+          "value": "14",
+          "unit": {
+            "es": "docentes formados",
+            "en": "faculty trained",
+            "va": "docents formats"
+          },
+          "label": {
+            "es": "Docentes universitarios formados en auditoría de sesgos",
+            "en": "University faculty trained in bias auditing",
+            "va": "Docents universitaris formats en auditoria de biaixos"
+          }
+        },
+        "secondaryMetrics": [
+          {
+            "id": "sm1",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Asignaturas de Máster con unidad de sesgos incorporada en 2026-27",
+              "en": "Master's courses with integrated bias unit in 2026-27",
+              "va": "Assignatures de Màster amb unitat de biaixos incorporada en 2026-27"
+            }
+          },
+          {
+            "id": "sm2",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Plantilla CC-BY-SA publicada en repositorio AI-STEAM",
+              "en": "CC-BY-SA template published in AI-STEAM repository",
+              "va": "Plantilla CC-BY-SA publicada en repositori AI-STEAM"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "La integración efectiva en asignaturas para 2026-27 está en fase de seguimiento; datos finales disponibles en septiembre 2026.",
+          "en": "Effective integration into 2026-27 courses is under monitoring; final data available in September 2026.",
+          "va": "La integració efectiva en assignatures per a 2026-27 està en fase de seguiment; dades finals disponibles al setembre 2026."
+        }
+      },
+      "results": {
+        "headline": {
+          "es": "14 docentes formados. 6 asignaturas de Máster incorporan unidad de sesgos en IA en 2026-27. Plantilla CC-BY-SA publicada.",
+          "en": "14 teachers trained. 6 Master's courses incorporate AI bias unit in 2026-27. CC-BY-SA template published.",
+          "va": "14 docents formats. 6 assignatures de Màster incorporen unitat de biaixos en IA en 2026-27. Plantilla CC-BY-SA publicada."
+        },
+        "outputs": [
+          {
+            "id": "o1",
+            "label": {
+              "es": "Plantilla de auditoría de sesgos CC-BY-SA",
+              "en": "CC-BY-SA bias audit template",
+              "va": "Plantilla d'auditoria de biaixos CC-BY-SA"
+            }
+          },
+          {
+            "id": "o2",
+            "label": {
+              "es": "14 docentes con formación en equidad algorítmica",
+              "en": "14 faculty with algorithmic fairness training",
+              "va": "14 docents amb formació en equitat algorítmica"
+            }
+          },
+          {
+            "id": "o3",
+            "label": {
+              "es": "Datasets reales de auditoría disponibles para uso académico",
+              "en": "Real audit datasets available for academic use",
+              "va": "Datasets reals d'auditoria disponibles per a ús acadèmic"
+            }
+          }
+        ],
+        "decision": {
+          "outcome": "scale",
+          "label": {
+            "es": "Escalar — plantilla replicable en cualquier programa de Máster con contenidos de IA",
+            "en": "Scale — template replicable in any AI-content Master's programme",
+            "va": "Escalar — plantilla replicable en qualsevol programa de Màster amb continguts d'IA"
+          }
+        }
+      },
+      "transferability": {
+        "whyTransferable": {
+          "es": "La plantilla CC-BY-SA está publicada y el formato de taller de 16h es replicable en cualquier universidad con docentes de IA.",
+          "en": "The CC-BY-SA template is published and the 16h workshop format is replicable at any university with AI faculty.",
+          "va": "La plantilla CC-BY-SA està publicada i el format de taller de 16h és replicable en qualsevol universitat amb docents d'IA."
+        },
+        "suitableFor": [
+          "universities",
+          "teachers",
+          "master-programmes"
+        ],
+        "requirements": [
+          {
+            "label": {
+              "es": "Docentes con conocimientos básicos de modelos de IA y estadística",
+              "en": "Faculty with basic knowledge of AI models and statistics",
+              "va": "Docents amb coneixements bàsics de models d'IA i estadística"
+            }
+          },
+          {
+            "label": {
+              "es": "Acceso a datasets de auditoría (disponibles en el repositorio AI-STEAM)",
+              "en": "Access to audit datasets (available in AI-STEAM repository)",
+              "va": "Accés a datasets d'auditoria (disponibles en el repositori AI-STEAM)"
+            }
+          }
+        ],
+        "replicationSteps": [
+          {
+            "label": {
+              "es": "Descargar la plantilla CC-BY-SA del repositorio AI-STEAM",
+              "en": "Download the CC-BY-SA template from AI-STEAM repository",
+              "va": "Descarregar la plantilla CC-BY-SA del repositori AI-STEAM"
+            }
+          },
+          {
+            "label": {
+              "es": "Adaptar los datasets de auditoría al contexto disciplinar del programa",
+              "en": "Adapt the audit datasets to the programme disciplinary context",
+              "va": "Adaptar els datasets d'auditoria al context disciplinar del programa"
+            }
+          },
+          {
+            "label": {
+              "es": "Ejecutar el taller en dos módulos (auditoría práctica + diseño de actividades)",
+              "en": "Run the workshop in two modules (practical auditing + activity design)",
+              "va": "Executar el taller en dos mòduls (auditoria pràctica + disseny d'activitats)"
+            }
+          }
+        ],
+        "risks": [
+          {
+            "label": {
+              "es": "La integración curricular depende de la voluntad del equipo docente de cada asignatura",
+              "en": "Curricular integration depends on the willingness of the teaching team of each course",
+              "va": "La integració curricular depèn de la voluntat de l'equip docent de cada assignatura"
+            }
+          }
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "",
+        "items": []
+      },
+      "resources": null,
+      "externalFlow": {
+        "enabled": true,
+        "primaryAction": {
+          "label": {
+            "es": "Acceder a materiales",
+            "en": "Access materials",
+            "va": "Accedir als materials"
+          },
+          "system": "",
+          "url": ""
+        },
+        "secondaryAction": null
+      },
+      "relations": {
+        "originChallengeId": "",
+        "relatedValidations": [],
+        "relatedCases": [],
+        "relatedResources": [
+          "o4"
+        ],
+        "relatedMentorships": [],
+        "nextPossibleItems": []
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "presentation": {
+        "card": {
+          "variant": "pilot",
+          "showPilotStage": true,
+          "showPilotType": true,
+          "showReadiness": true,
+          "showWindow": true,
+          "showInfrastructure": true,
+          "showPrimaryMetric": true,
+          "showDownloadsIndicator": false,
+          "resultBlockLabel": {
+            "es": "Qué se entrena",
+            "en": "What is being trained",
+            "va": "Què s'entrena"
+          }
+        },
+        "detail": {
+          "sections": {
+            "summary": true,
+            "pilotPlan": true,
+            "methodology": true,
+            "implementation": true,
+            "evidence": true,
+            "results": true,
+            "transferability": true,
+            "downloads": false,
+            "resources": false,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": false,
+            "relations": false
+          }
+        }
+      },
       "template": {
         "requiredBlocks": [
-          "context",
-          "participation",
-          "resources",
+          "pilotPlan",
+          "implementation",
           "evidence",
-          "process",
-          "outputs"
+          "results",
+          "transferability"
         ],
         "optionalBlocks": [
+          "downloads",
+          "resources",
+          "process",
           "people",
           "access",
-          "trackA",
-          "objective",
-          "methodology",
-          "outcome"
+          "externalFlow",
+          "relations"
         ],
-        "cardSignal": "process"
+        "cardSignal": "pilotPlan"
       }
     },
     {
@@ -6368,7 +7159,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-fp-cobots-mecatronica.yml",
       "core": {
         "status": "resolved",
-        "maturity": "completed",
+        "maturity": "idea",
         "title": {
           "es": "Piloto FP — Cobots y robótica colaborativa en ciclos de mecatrónica",
           "en": "VET Pilot — Cobots and collaborative robotics in mechatronics cycles",
@@ -6380,11 +7171,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Integració de cobots industrials en la pràctica de taller de FP de Mecatrònica en col·laboració amb Ford España i tres centres educatius."
         },
         "entity": {
-          "name": "Ford España — Centro Tecnológico de Valencia",
+          "name": "",
           "type": {
-            "es": "Empresa industrial",
-            "en": "Industrial company",
-            "va": "Empresa industrial"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "sector": "mfg",
@@ -6392,7 +7183,7 @@ export const MARKETPLACE_CONFIG = {
         "levels": [
           "FP"
         ],
-        "pilotType": "fp",
+        "pilotType": "vet-industry",
         "helix": [
           "academia",
           "industry"
@@ -6447,15 +7238,15 @@ export const MARKETPLACE_CONFIG = {
           "learning-ecosystems"
         ],
         "engagementLevel": "hosting",
-        "evidenceMaturity": "completed",
-        "lbdStage": "output",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
         "trackBValue": {
-          "es": "Módulo dual empresa-centro validado y replicable en 4 centros adicionales de la red.",
-          "en": "Validated dual company-centre module replicable in 4 additional network centres.",
-          "va": "Mòdul dual empresa-centre validat i replicable en 4 centres addicionals de la xarxa."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
-        "pilotStatus": "completed"
+        "pilotStatus": ""
       },
       "transfer": {
         "type": "",
@@ -6469,203 +7260,16 @@ export const MARKETPLACE_CONFIG = {
           "vet-centres",
           "teachers",
           "technical-teams"
-        ],
-        "primaryCta": {
-          "es": "Replicar módulo dual",
-          "en": "Replicate dual module",
-          "va": "Replicar mòdul dual"
-        },
-        "featuredSignal": {
-          "es": "32 estudiantes certificados. Acuerdo de continuidad firmado para 2026-27.",
-          "en": "32 students certified. Continuity agreement signed for 2026-27.",
-          "va": "32 estudiants certificats. Acord de continuïtat signat per a 2026-27."
-        }
+        ]
       },
-      "card": {
-        "collaborationDirection": {
-          "es": "Oferta de rotaciones en planta industrial con certificación en operación de cobots.",
-          "en": "Offer of industrial plant rotations with cobot operation certification.",
-          "va": "Oferta de rotacions en planta industrial amb certificació en operació de cobots."
-        },
-        "trl": {
-          "level": 7,
-          "label": {
-            "es": "Demostración en entorno operacional",
-            "en": "Demonstration in operational environment",
-            "va": "Demostració en entorn operacional"
-          }
-        },
-        "infrastructure": [
-          "Planta Ford Valencia",
-          "Cobots industriales (UR10)",
-          "Taller FP Mecatrónica"
-        ],
-        "executionWindow": {
-          "start": "2025-09-01",
-          "end": "2026-01-31",
-          "label": {
-            "es": "Sep 2025 – Ene 2026",
-            "en": "Sep 2025 – Jan 2026",
-            "va": "Set 2025 – Gen 2026"
-          }
-        },
-        "validationStatus": {
-          "es": "Completado — módulo validado y replicable",
-          "en": "Completed — validated and replicable module",
-          "va": "Completat — mòdul validat i replicable"
-        }
-      },
-      "visibility": {
-        "objective": true,
-        "methodology": true,
-        "outcome": true,
-        "context": true,
-        "participation": true,
-        "resources": true,
-        "evidence": true,
-        "process": true,
-        "outputs": true,
-        "people": true,
-        "access": true,
-        "trackA": false
-      },
-      "detail": {
-        "objective": {
-          "es": "Validar la integración curricular de cobots industriales en el ciclo de Mecatrónica con rotaciones reales en planta Ford.",
-          "en": "Validate the curricular integration of industrial cobots in the Mechatronics cycle with real rotations at Ford plant.",
-          "va": "Validar la integració curricular de cobots industrials en el cicle de Mecatrònica amb rotacions reals a la planta Ford."
-        },
-        "methodology": {
-          "es": "Rotaciones de 6 semanas en planta con supervisión técnica de Ford. Evaluación de competencias mediante rúbricas AI-SECRETT adaptadas al perfil industrial.",
-          "en": "6-week plant rotations with Ford technical supervision. Competency assessment using AI-SECRETT rubrics adapted to the industrial profile.",
-          "va": "Rotacions de 6 setmanes en planta amb supervisió tècnica de Ford. Avaluació de competències mitjançant rúbriques AI-SECRETT adaptades al perfil industrial."
-        },
-        "outcome": {
-          "es": "32 estudiantes certificados en operación de cobots. Módulo dual validado y replicable en 4 centros adicionales. Acuerdo de continuidad firmado para 2026-27.",
-          "en": "32 students certified in cobot operation. Dual module validated and replicable in 4 additional centres. Continuity agreement signed for 2026-27.",
-          "va": "32 estudiants certificats en operació de cobots. Mòdul dual validat i replicable en 4 centres addicionals. Acord de continuïtat signat per a 2026-27."
-        },
-        "context": {
-          "es": "El piloto surgió de la necesidad de Ford de disponer de egresados de FP con competencias reales en robótica colaborativa, conectando el taller escolar con la planta industrial.",
-          "en": "The pilot arose from Ford's need for VET graduates with real collaborative robotics skills, connecting the school workshop with the industrial plant.",
-          "va": "El pilot va sorgir de la necessitat de Ford de disposar d'egresats de FP amb competències reals en robòtica col·laborativa, connectant el taller escolar amb la planta industrial."
-        },
-        "participation": {
-          "participants": {
-            "es": "32 alumnos de FP de Mecatrónica en tres centros educativos valencianos.",
-            "en": "32 Mechatronics VET students in three Valencian educational centres.",
-            "va": "32 alumnes de FP de Mecatrònica en tres centres educatius valencians."
-          }
-        },
-        "resources": {
-          "used": [
-            {
-              "label": {
-                "es": "Rúbricas de evaluación AI-SECRETT (perfil industrial)",
-                "en": "AI-SECRETT assessment rubrics (industrial profile)",
-                "va": "Rúbriques d'avaluació AI-SECRETT (perfil industrial)"
-              },
-              "format": "PDF",
-              "license": "CC BY 4.0"
-            }
-          ]
-        },
-        "evidence": {
-          "metrics": [
-            {
-              "label": {
-                "es": "Certificación en operación de cobots",
-                "en": "Cobot operation certification",
-                "va": "Certificació en operació de cobots"
-              },
-              "method": {
-                "es": "Evaluación técnica en planta",
-                "en": "Technical on-plant assessment",
-                "va": "Avaluació tècnica en planta"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2025-09-01",
-              "label": {
-                "es": "Inicio de rotaciones en planta",
-                "en": "Plant rotations start",
-                "va": "Inici de rotacions en planta"
-              }
-            },
-            {
-              "date": "2026-01-31",
-              "label": {
-                "es": "Certificación final y cierre",
-                "en": "Final certification and closure",
-                "va": "Certificació final i tancament"
-              }
-            }
-          ]
-        },
-        "outputs": {
-          "expected": [
-            {
-              "label": {
-                "es": "Módulo dual empresa-centro replicable",
-                "en": "Replicable dual company-centre module",
-                "va": "Mòdul dual empresa-centre replicable"
-              }
-            },
-            {
-              "label": {
-                "es": "32 certificados en operación de cobots",
-                "en": "32 cobot operation certificates",
-                "va": "32 certificats en operació de cobots"
-              }
-            }
-          ]
-        },
-        "people": {
-          "organisations": [
-            {
-              "name": "Ford España — Centro Tecnológico de Valencia",
-              "role": {
-                "es": "Empresa socia y facilitadora de planta",
-                "en": "Partner company and plant facilitator",
-                "va": "Empresa sòcia i facilitadora de planta"
-              }
-            },
-            {
-              "name": "IES La Sénia",
-              "role": {
-                "es": "Centro piloto",
-                "en": "Pilot centre",
-                "va": "Centre pilot"
-              }
-            },
-            {
-              "name": "IES Politècnic de Gandia",
-              "role": {
-                "es": "Centro piloto",
-                "en": "Pilot centre",
-                "va": "Centre pilot"
-              }
-            },
-            {
-              "name": "CEICE",
-              "role": {
-                "es": "Coordinación curricular",
-                "en": "Curricular coordination",
-                "va": "Coordinació curricular"
-              }
-            }
-          ]
-        }
-      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
       "access": {
         "pageVisibility": "network",
         "pageLicense": "CC BY 4.0",
         "codeLicense": "",
-        "dataAvailability": "",
+        "dataAvailability": "available-on-request",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -6700,24 +7304,389 @@ export const MARKETPLACE_CONFIG = {
         },
         "url": ""
       },
+      "ownership": {
+        "publisher": {
+          "name": "",
+          "org": ""
+        },
+        "lead": {
+          "name": "Ford España — Centro Tecnológico de Valencia",
+          "type": {
+            "es": "Empresa industrial",
+            "en": "Industrial company",
+            "va": "Empresa industrial"
+          },
+          "role": {
+            "es": "Empresa socia y facilitadora de planta",
+            "en": "Partner company and plant facilitator",
+            "va": "Empresa sòcia i facilitadora de planta"
+          }
+        },
+        "coordinator": null,
+        "pilotSites": [
+          {
+            "name": "IES La Sénia",
+            "type": "",
+            "role": {
+              "es": "Centro piloto",
+              "en": "Pilot centre",
+              "va": "Centre pilot"
+            }
+          },
+          {
+            "name": "IES Politècnic de Gandia",
+            "type": "",
+            "role": {
+              "es": "Centro piloto",
+              "en": "Pilot centre",
+              "va": "Centre pilot"
+            }
+          }
+        ],
+        "partners": [
+          {
+            "name": "CEICE",
+            "type": "",
+            "role": {
+              "es": "Coordinación curricular",
+              "en": "Curricular coordination",
+              "va": "Coordinació curricular"
+            }
+          }
+        ]
+      },
+      "pilotPlan": {
+        "hypothesis": {
+          "es": "Oferta de rotaciones en planta industrial con certificación en operación de cobots.",
+          "en": "Offer of industrial plant rotations with cobot operation certification.",
+          "va": "Oferta de rotacions en planta industrial amb certificació en operació de cobots."
+        },
+        "objective": {
+          "es": "Validar la integración curricular de cobots industriales en el ciclo de Mecatrónica con rotaciones reales en planta Ford.",
+          "en": "Validate the curricular integration of industrial cobots in the Mechatronics cycle with real rotations at Ford plant.",
+          "va": "Validar la integració curricular de cobots industrials en el cicle de Mecatrònica amb rotacions reals a la planta Ford."
+        },
+        "context": {
+          "es": "El piloto surgió de la necesidad de Ford de disponer de egresados de FP con competencias reales en robótica colaborativa, conectando el taller escolar con la planta industrial.",
+          "en": "The pilot arose from Ford's need for VET graduates with real collaborative robotics skills, connecting the school workshop with the industrial plant.",
+          "va": "El pilot va sorgir de la necessitat de Ford de disposar d'egresats de FP amb competències reals en robòtica col·laborativa, connectant el taller escolar amb la planta industrial."
+        },
+        "targetParticipants": {
+          "es": "32 alumnos de FP de Mecatrónica en tres centros educativos valencianos.",
+          "en": "32 Mechatronics VET students in three Valencian educational centres.",
+          "va": "32 alumnes de FP de Mecatrònica en tres centres educatius valencians."
+        },
+        "methodology": {
+          "es": "Rotaciones de 6 semanas en planta con supervisión técnica de Ford. Evaluación de competencias mediante rúbricas AI-SECRETT adaptadas al perfil industrial.",
+          "en": "6-week plant rotations with Ford technical supervision. Competency assessment using AI-SECRETT rubrics adapted to the industrial profile.",
+          "va": "Rotacions de 6 setmanes en planta amb supervisió tècnica de Ford. Avaluació de competències mitjançant rúbriques AI-SECRETT adaptades al perfil industrial."
+        },
+        "successCriteria": [
+          {
+            "id": "sc1",
+            "label": {
+              "es": "Al menos el 80% de los participantes obtiene certificación en operación de cobots",
+              "en": "At least 80% of participants obtain cobot operation certification",
+              "va": "Almenys el 80% dels participants obtenen certificació en operació de cobots"
+            }
+          },
+          {
+            "id": "sc2",
+            "label": {
+              "es": "Módulo dual documentado y replicable en al menos 4 centros adicionales",
+              "en": "Dual module documented and replicable in at least 4 additional centres",
+              "va": "Mòdul dual documentat i replicable en almenys 4 centres addicionals"
+            }
+          }
+        ]
+      },
+      "implementation": {
+        "readiness": {
+          "technologyReadiness": {
+            "enabled": true,
+            "level": 7,
+            "label": {
+              "es": "Demostración en entorno operacional",
+              "en": "Demonstration in operational environment",
+              "va": "Demostració en entorn operacional"
+            }
+          },
+          "educationalReadiness": {
+            "enabled": false,
+            "level": null,
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        },
+        "infrastructure": [
+          {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        ],
+        "tools": [
+          {
+            "label": {
+              "es": "Rúbricas AI-SECRETT (perfil industrial)",
+              "en": "AI-SECRETT rubrics (industrial profile)",
+              "va": "Rúbriques AI-SECRETT (perfil industrial)"
+            }
+          }
+        ],
+        "dataManagement": {
+          "sensitiveDataIncluded": false,
+          "personalDataIncluded": true,
+          "note": {
+            "es": "Datos académicos de participantes anonimizados en el informe.",
+            "en": "Participant academic data anonymised in the report.",
+            "va": "Dades acadèmiques dels participants anonimitzades en l'informe."
+          }
+        }
+      },
+      "evidence": {
+        "evidenceLevel": "measured",
+        "verificationStatus": "self-reported",
+        "collectionMethod": {
+          "es": "Evaluación técnica en planta + rúbricas AI-SECRETT",
+          "en": "Technical on-plant assessment + AI-SECRETT rubrics",
+          "va": "Avaluació tècnica en planta + rúbriques AI-SECRETT"
+        },
+        "primaryMetric": {
+          "id": "students-certified",
+          "value": "32",
+          "unit": {
+            "es": "estudiantes certificados",
+            "en": "students certified",
+            "va": "estudiants certificats"
+          },
+          "label": {
+            "es": "Estudiantes certificados en operación de cobots",
+            "en": "Students certified in cobot operation",
+            "va": "Estudiants certificats en operació de cobots"
+          }
+        },
+        "secondaryMetrics": [
+          {
+            "id": "sm1",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Acuerdo de continuidad firmado para 2026-27",
+              "en": "Continuity agreement signed for 2026-27",
+              "va": "Acord de continuïtat signat per a 2026-27"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "Muestra limitada a tres centros; replicabilidad pendiente de confirmar en centros de otras provincias.",
+          "en": "Sample limited to three centres; replicability to be confirmed in centres in other provinces.",
+          "va": "Mostra limitada a tres centres; replicabilitat pendent de confirmar en centres d'altres províncies."
+        }
+      },
+      "results": {
+        "headline": {
+          "es": "32 estudiantes certificados en cobots. Módulo dual validado y replicable en 4 centros. Acuerdo de continuidad firmado para 2026-27.",
+          "en": "32 students certified in cobots. Dual module validated and replicable in 4 centres. Continuity agreement signed for 2026-27.",
+          "va": "32 estudiants certificats en cobots. Mòdul dual validat i replicable en 4 centres. Acord de continuïtat signat per a 2026-27."
+        },
+        "outputs": [
+          {
+            "id": "o1",
+            "label": {
+              "es": "Módulo dual empresa-centro replicable (CC BY 4.0)",
+              "en": "Replicable dual company-centre module (CC BY 4.0)",
+              "va": "Mòdul dual empresa-centre replicable (CC BY 4.0)"
+            }
+          },
+          {
+            "id": "o2",
+            "label": {
+              "es": "32 certificados en operación de cobots",
+              "en": "32 cobot operation certificates",
+              "va": "32 certificats en operació de cobots"
+            }
+          },
+          {
+            "id": "o3",
+            "label": {
+              "es": "Rúbricas AI-SECRETT adaptadas al perfil industrial",
+              "en": "AI-SECRETT rubrics adapted to the industrial profile",
+              "va": "Rúbriques AI-SECRETT adaptades al perfil industrial"
+            }
+          }
+        ],
+        "decision": {
+          "outcome": "scale",
+          "label": {
+            "es": "Escalar — módulo preparado para replicación en nuevos centros",
+            "en": "Scale — module ready for replication in new centres",
+            "va": "Escalar — mòdul preparat per a replicació en nous centres"
+          }
+        }
+      },
+      "transferability": {
+        "whyTransferable": {
+          "es": "El módulo dual está completamente documentado y probado en tres entornos diferentes. La metodología de rúbricas AI-SECRETT es independiente del fabricante de cobot.",
+          "en": "The dual module is fully documented and tested in three different environments. The AI-SECRETT rubric methodology is manufacturer-independent.",
+          "va": "El mòdul dual està completament documentat i provat en tres entorns diferents. La metodologia de rúbriques AI-SECRETT és independent del fabricant de cobot."
+        },
+        "suitableFor": [
+          "vet-centres",
+          "companies",
+          "technical-teams"
+        ],
+        "requirements": [
+          {
+            "label": {
+              "es": "Acceso a cobots industriales o simuladores equivalentes",
+              "en": "Access to industrial cobots or equivalent simulators",
+              "va": "Accés a cobots industrials o simuladors equivalents"
+            }
+          },
+          {
+            "label": {
+              "es": "Empresa industrial socia con espacio de planta disponible",
+              "en": "Industrial partner company with available plant space",
+              "va": "Empresa industrial sòcia amb espai de planta disponible"
+            }
+          }
+        ],
+        "replicationSteps": [
+          {
+            "label": {
+              "es": "Identificar empresa industrial socia y formalizar acuerdo de colaboración",
+              "en": "Identify industrial partner company and formalise collaboration agreement",
+              "va": "Identificar empresa industrial sòcia i formalitzar acord de col·laboració"
+            }
+          },
+          {
+            "label": {
+              "es": "Adaptar rúbricas AI-SECRETT al perfil técnico del cobot disponible",
+              "en": "Adapt AI-SECRETT rubrics to the technical profile of the available cobot",
+              "va": "Adaptar rúbriques AI-SECRETT al perfil tècnic del cobot disponible"
+            }
+          },
+          {
+            "label": {
+              "es": "Ejecutar rotaciones de 6 semanas con supervisión técnica conjunta",
+              "en": "Execute 6-week rotations with joint technical supervision",
+              "va": "Executar rotacions de 6 setmanes amb supervisió tècnica conjunta"
+            }
+          }
+        ],
+        "risks": [
+          {
+            "label": {
+              "es": "Dependencia de la disponibilidad de planta industrial en periodos lectivos",
+              "en": "Dependence on industrial plant availability during school periods",
+              "va": "Dependència de la disponibilitat de planta industrial en períodes lectius"
+            }
+          }
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "",
+        "items": []
+      },
+      "resources": null,
+      "externalFlow": {
+        "enabled": true,
+        "primaryAction": {
+          "label": {
+            "es": "Replicar módulo dual",
+            "en": "Replicate dual module",
+            "va": "Replicar mòdul dual"
+          },
+          "system": "",
+          "url": ""
+        },
+        "secondaryAction": null
+      },
+      "relations": {
+        "originChallengeId": "",
+        "relatedValidations": [],
+        "relatedCases": [],
+        "relatedResources": [],
+        "relatedMentorships": [],
+        "nextPossibleItems": []
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "presentation": {
+        "card": {
+          "variant": "pilot",
+          "showPilotStage": true,
+          "showPilotType": true,
+          "showReadiness": true,
+          "showWindow": true,
+          "showInfrastructure": true,
+          "showPrimaryMetric": true,
+          "showDownloadsIndicator": false,
+          "resultBlockLabel": {
+            "es": "Qué se prueba",
+            "en": "What is being tested",
+            "va": "Què es prova"
+          }
+        },
+        "detail": {
+          "sections": {
+            "summary": true,
+            "pilotPlan": true,
+            "methodology": true,
+            "implementation": true,
+            "evidence": true,
+            "results": true,
+            "transferability": true,
+            "downloads": false,
+            "resources": false,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": false,
+            "relations": false
+          }
+        }
+      },
       "template": {
         "requiredBlocks": [
-          "context",
-          "participation",
-          "resources",
+          "pilotPlan",
+          "implementation",
           "evidence",
-          "process",
-          "outputs"
+          "results",
+          "transferability"
         ],
         "optionalBlocks": [
+          "downloads",
+          "resources",
+          "process",
           "people",
           "access",
-          "trackA",
-          "objective",
-          "methodology",
-          "outcome"
+          "externalFlow",
+          "relations"
         ],
-        "cardSignal": "process"
+        "cardSignal": "pilotPlan"
       }
     },
     {
@@ -6729,7 +7698,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-master-bridge-gemelos-digitales.yml",
       "core": {
         "status": "in-progress",
-        "maturity": "inPilot",
+        "maturity": "idea",
         "title": {
           "es": "Piloto Máster — Puente FP-Máster en IA aplicada a gemelos digitales",
           "en": "Master Bridge Pilot — VET-to-Master bridge in AI applied to digital twins",
@@ -6741,11 +7710,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Itinerari de transició entre FP Superior i Màster universitari centrat en bessons digitals i simulació industrial amb IA."
         },
         "entity": {
-          "name": "INESC TEC",
+          "name": "",
           "type": {
-            "es": "Centro de investigación tecnológica",
-            "en": "Technology research centre",
-            "va": "Centre de recerca tecnològica"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "sector": "mfg",
@@ -6806,15 +7775,15 @@ export const MARKETPLACE_CONFIG = {
           "integrated-pedagogy"
         ],
         "engagementLevel": "challenge-contribution",
-        "evidenceMaturity": "inPilot",
-        "lbdStage": "processing",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
         "trackBValue": {
-          "es": "Crea un itinerario de reconocimiento de créditos entre FP Superior y Máster en IA Industrial, ampliando el acceso al nivel universitario.",
-          "en": "Creates a credit recognition itinerary between Higher VET and Master's in Industrial AI, widening access to university level.",
-          "va": "Crea un itinerari de reconeixement de crèdits entre FP Superior i Màster en IA Industrial, ampliant l'accés al nivell universitari."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
-        "pilotStatus": "in-progress"
+        "pilotStatus": ""
       },
       "transfer": {
         "type": "",
@@ -6828,208 +7797,16 @@ export const MARKETPLACE_CONFIG = {
           "universities",
           "students",
           "companies"
-        ],
-        "primaryCta": {
-          "es": "Conocer el itinerario",
-          "en": "Learn about the itinerary",
-          "va": "Conéixer l'itinerari"
-        },
-        "featuredSignal": {
-          "es": "12 estudiantes en itinerario activo. Marco de créditos en revisión por UPV.",
-          "en": "12 students on active itinerary. Credit framework under UPV review.",
-          "va": "12 estudiants en itinerari actiu. Marc de crèdits en revisió per UPV."
-        }
+        ]
       },
-      "card": {
-        "collaborationDirection": {
-          "es": "Demanda de centros FP y oferta de marco de reconocimiento universitario para itinerario puente.",
-          "en": "Demand from VET centres and offer of university recognition framework for bridge itinerary.",
-          "va": "Demanda de centres FP i oferta de marc de reconeixement universitari per a itinerari pont."
-        },
-        "trl": {
-          "level": 5,
-          "label": {
-            "es": "Validación en entorno relevante",
-            "en": "Validation in relevant environment",
-            "va": "Validació en entorn rellevant"
-          }
-        },
-        "infrastructure": [
-          "Plataforma LMS UPV",
-          "Laboratorio de gemelos digitales INESC TEC",
-          "Entorno Aules FP"
-        ],
-        "executionWindow": {
-          "start": "2026-02-01",
-          "end": "2026-09-30",
-          "label": {
-            "es": "Feb – Sep 2026",
-            "en": "Feb – Sep 2026",
-            "va": "Feb – Set 2026"
-          }
-        },
-        "validationStatus": {
-          "es": "Itinerario en curso — marco de créditos en revisión",
-          "en": "Itinerary in progress — credit framework under review",
-          "va": "Itinerari en curs — marc de crèdits en revisió"
-        }
-      },
-      "visibility": {
-        "objective": true,
-        "methodology": true,
-        "outcome": true,
-        "context": true,
-        "participation": true,
-        "resources": true,
-        "evidence": true,
-        "process": true,
-        "outputs": true,
-        "people": true,
-        "access": true,
-        "trackA": true
-      },
-      "detail": {
-        "objective": {
-          "es": "Diseñar y validar un itinerario de reconocimiento de créditos que permita a titulados de FP Superior acceder al Máster en IA Industrial.",
-          "en": "Design and validate a credit recognition itinerary enabling Higher VET graduates to access the Master in Industrial AI.",
-          "va": "Dissenyar i validar un itinerari de reconeixement de crèdits que permeta a titulats de FP Superior accedir al Màster en IA Industrial."
-        },
-        "methodology": {
-          "es": "Mapeo de competencias entre FP y Máster, semestre puente con módulos de nivelación y tutoría personalizada por perfil de entrada.",
-          "en": "Competency mapping between VET and Master's, bridge semester with levelling modules and personalised tutoring by entry profile.",
-          "va": "Mapatge de competències entre FP i Màster, semestre pont amb mòduls de nivelació i tutoria personalitzada per perfil d'entrada."
-        },
-        "outcome": {
-          "es": "12 estudiantes en itinerario puente activo. Marco de reconocimiento de créditos en revisión por UPV. Publicación de guía prevista para septiembre 2026.",
-          "en": "12 students on active bridge itinerary. Credit recognition framework under UPV review. Guide publication planned for September 2026.",
-          "va": "12 estudiants en itinerari pont actiu. Marc de reconeixement de crèdits en revisió per UPV. Publicació de guia prevista per al setembre 2026."
-        },
-        "context": {
-          "es": "El piloto nace de la brecha entre egresados de FP Superior con conocimientos técnicos avanzados y la falta de pasarelas formales hacia estudios de máster en IA.",
-          "en": "The pilot addresses the gap between Higher VET graduates with advanced technical knowledge and the lack of formal bridges to Master's studies in AI.",
-          "va": "El pilot naix de la bretxa entre egresats de FP Superior amb coneixements tècnics avançats i la manca de passarel·les formals cap a estudis de màster en IA."
-        },
-        "participation": {
-          "participants": {
-            "es": "12 titulados de FP Superior de Mecatrónica e Informática en itinerario puente UPV.",
-            "en": "12 Higher VET graduates in Mechatronics and Computing on UPV bridge itinerary.",
-            "va": "12 titulats de FP Superior de Mecatrònica i Informàtica en itinerari pont UPV."
-          }
-        },
-        "resources": {
-          "used": [
-            {
-              "label": {
-                "es": "Marco de competencias FP-Máster AI-STEAM",
-                "en": "AI-STEAM VET-Master competency framework",
-                "va": "Marc de competències FP-Màster AI-STEAM"
-              },
-              "format": "PDF",
-              "license": "CC BY 4.0"
-            }
-          ]
-        },
-        "evidence": {
-          "metrics": [
-            {
-              "label": {
-                "es": "Créditos reconocidos por UPV",
-                "en": "Credits recognised by UPV",
-                "va": "Crèdits reconeguts per UPV"
-              },
-              "method": {
-                "es": "Revisión de expedientes académicos",
-                "en": "Academic record review",
-                "va": "Revisió d'expedients acadèmics"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2026-02-01",
-              "label": {
-                "es": "Inicio del itinerario puente",
-                "en": "Bridge itinerary start",
-                "va": "Inici de l'itinerari pont"
-              }
-            },
-            {
-              "date": "2026-06-30",
-              "label": {
-                "es": "Revisión del marco de créditos por UPV",
-                "en": "UPV credit framework review",
-                "va": "Revisió del marc de crèdits per UPV"
-              }
-            },
-            {
-              "date": "2026-09-30",
-              "label": {
-                "es": "Publicación de la guía de itinerario",
-                "en": "Itinerary guide publication",
-                "va": "Publicació de la guia d'itinerari"
-              }
-            }
-          ]
-        },
-        "outputs": {
-          "expected": [
-            {
-              "label": {
-                "es": "Guía de itinerario puente FP-Máster (CC BY)",
-                "en": "VET-Master bridge itinerary guide (CC BY)",
-                "va": "Guia d'itinerari pont FP-Màster (CC BY)"
-              }
-            },
-            {
-              "label": {
-                "es": "Marco de reconocimiento de créditos validado por UPV",
-                "en": "UPV-validated credit recognition framework",
-                "va": "Marc de reconeixement de crèdits validat per UPV"
-              }
-            }
-          ]
-        },
-        "people": {
-          "organisations": [
-            {
-              "name": "INESC TEC",
-              "role": {
-                "es": "Coordinación y diseño del itinerario",
-                "en": "Itinerary coordination and design",
-                "va": "Coordinació i disseny de l'itinerari"
-              }
-            },
-            {
-              "name": "Universitat Politècnica de València (UPV)",
-              "role": {
-                "es": "Máster de acogida y validación de créditos",
-                "en": "Hosting Master and credit validation",
-                "va": "Màster d'acollida i validació de crèdits"
-              }
-            },
-            {
-              "name": "IES Número 1 de Burjassot",
-              "role": {
-                "es": "Centro FP origen",
-                "en": "Origin VET centre",
-                "va": "Centre FP origen"
-              }
-            }
-          ]
-        },
-        "trackA": {
-          "es": "Itinerario puente directamente vinculado con la oferta de Máster Track A (UPV).",
-          "en": "Bridge itinerary directly linked to the Track A Master's offer (UPV).",
-          "va": "Itinerari pont directament vinculat amb l'oferta de Màster Track A (UPV)."
-        }
-      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
       "access": {
         "pageVisibility": "network",
         "pageLicense": "CC BY 4.0",
         "codeLicense": "",
-        "dataAvailability": "",
+        "dataAvailability": "available-on-request",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -7047,41 +7824,382 @@ export const MARKETPLACE_CONFIG = {
         "privacyLevel": "network"
       },
       "trackA": {
-        "enabled": true,
+        "enabled": false,
         "label": {
-          "es": "Conectado con oferta de Máster Track A en UPV.",
-          "en": "Connected to Track A Master's offer at UPV.",
-          "va": "Connectat amb oferta de Màster Track A a UPV."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "url": ""
       },
       "trackALink": {
-        "enabled": true,
+        "enabled": false,
         "label": {
-          "es": "Conectado con oferta de Máster Track A en UPV.",
-          "en": "Connected to Track A Master's offer at UPV.",
-          "va": "Connectat amb oferta de Màster Track A a UPV."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "url": ""
       },
+      "ownership": {
+        "publisher": {
+          "name": "",
+          "org": ""
+        },
+        "lead": {
+          "name": "INESC TEC",
+          "type": {
+            "es": "Centro de investigación tecnológica",
+            "en": "Technology research centre",
+            "va": "Centre de recerca tecnològica"
+          },
+          "role": {
+            "es": "Coordinación y diseño del itinerario",
+            "en": "Itinerary coordination and design",
+            "va": "Coordinació i disseny de l'itinerari"
+          }
+        },
+        "coordinator": null,
+        "pilotSites": [],
+        "partners": [
+          {
+            "name": "Universitat Politècnica de València (UPV)",
+            "type": "",
+            "role": {
+              "es": "Máster de acogida y validación de créditos",
+              "en": "Hosting Master's and credit validation",
+              "va": "Màster d'acollida i validació de crèdits"
+            }
+          },
+          {
+            "name": "IES Número 1 de Burjassot",
+            "type": "",
+            "role": {
+              "es": "Centro FP origen",
+              "en": "Origin VET centre",
+              "va": "Centre FP origen"
+            }
+          }
+        ]
+      },
+      "pilotPlan": {
+        "hypothesis": {
+          "es": "Demanda de centros FP y oferta de marco de reconocimiento universitario para itinerario puente.",
+          "en": "Demand from VET centres and offer of university recognition framework for bridge itinerary.",
+          "va": "Demanda de centres FP i oferta de marc de reconeixement universitari per a itinerari pont."
+        },
+        "objective": {
+          "es": "Diseñar y validar un itinerario de reconocimiento de créditos que permita a titulados de FP Superior acceder al Máster en IA Industrial.",
+          "en": "Design and validate a credit recognition itinerary enabling Higher VET graduates to access the Master in Industrial AI.",
+          "va": "Dissenyar i validar un itinerari de reconeixement de crèdits que permeta a titulats de FP Superior accedir al Màster en IA Industrial."
+        },
+        "context": {
+          "es": "El piloto nace de la brecha entre egresados de FP Superior con conocimientos técnicos avanzados y la falta de pasarelas formales hacia estudios de máster en IA.",
+          "en": "The pilot addresses the gap between Higher VET graduates with advanced technical knowledge and the lack of formal bridges to Master's studies in AI.",
+          "va": "El pilot naix de la bretxa entre egresats de FP Superior amb coneixements tècnics avançats i la manca de passarel·les formals cap a estudis de màster en IA."
+        },
+        "targetParticipants": {
+          "es": "12 titulados de FP Superior de Mecatrónica e Informática en itinerario puente UPV.",
+          "en": "12 Higher VET graduates in Mechatronics and Computing on UPV bridge itinerary.",
+          "va": "12 titulats de FP Superior de Mecatrònica i Informàtica en itinerari pont UPV."
+        },
+        "methodology": {
+          "es": "Mapeo de competencias entre FP y Máster, semestre puente con módulos de nivelación y tutoría personalizada por perfil de entrada.",
+          "en": "Competency mapping between VET and Master's, bridge semester with levelling modules and personalised tutoring by entry profile.",
+          "va": "Mapatge de competències entre FP i Màster, semestre pont amb mòduls de nivelació i tutoria personalitzada per perfil d'entrada."
+        },
+        "successCriteria": [
+          {
+            "id": "sc1",
+            "label": {
+              "es": "Al menos el 75% de los participantes obtiene el reconocimiento de créditos por UPV",
+              "en": "At least 75% of participants obtain credit recognition from UPV",
+              "va": "Almenys el 75% dels participants obtenen el reconeixement de crèdits per UPV"
+            }
+          },
+          {
+            "id": "sc2",
+            "label": {
+              "es": "Guía de itinerario publicada bajo CC BY antes de septiembre 2026",
+              "en": "Itinerary guide published under CC BY before September 2026",
+              "va": "Guia d'itinerari publicada sota CC BY abans del setembre de 2026"
+            }
+          }
+        ]
+      },
+      "implementation": {
+        "readiness": {
+          "technologyReadiness": {
+            "enabled": true,
+            "level": 5,
+            "label": {
+              "es": "Validación en entorno relevante",
+              "en": "Validation in relevant environment",
+              "va": "Validació en entorn rellevant"
+            }
+          },
+          "educationalReadiness": {
+            "enabled": true,
+            "level": "designed",
+            "label": {
+              "es": "Diseñado",
+              "en": "Designed",
+              "va": "Dissenyat"
+            }
+          }
+        },
+        "infrastructure": [
+          {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        ],
+        "tools": [
+          {
+            "label": {
+              "es": "Marco de competencias FP-Máster AI-STEAM",
+              "en": "AI-STEAM VET-Master competency framework",
+              "va": "Marc de competències FP-Màster AI-STEAM"
+            }
+          }
+        ],
+        "dataManagement": {
+          "sensitiveDataIncluded": false,
+          "personalDataIncluded": true,
+          "note": {
+            "es": "Expedientes académicos de participantes tratados conforme a RGPD.",
+            "en": "Participant academic records processed in accordance with GDPR.",
+            "va": "Expedients acadèmics dels participants tractats d'acord amb el RGPD."
+          }
+        }
+      },
+      "evidence": {
+        "evidenceLevel": "observed",
+        "verificationStatus": "self-reported",
+        "collectionMethod": {
+          "es": "Revisión de expedientes académicos y seguimiento de itinerario",
+          "en": "Academic record review and itinerary tracking",
+          "va": "Revisió d'expedients acadèmics i seguiment d'itinerari"
+        },
+        "primaryMetric": {
+          "id": "students-on-itinerary",
+          "value": "12",
+          "unit": {
+            "es": "estudiantes en itinerario activo",
+            "en": "students on active itinerary",
+            "va": "estudiants en itinerari actiu"
+          },
+          "label": {
+            "es": "Estudiantes en itinerario puente activo",
+            "en": "Students on active bridge itinerary",
+            "va": "Estudiants en itinerari pont actiu"
+          }
+        },
+        "secondaryMetrics": [
+          {
+            "id": "sm1",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Marco de reconocimiento de créditos en revisión por UPV",
+              "en": "Credit recognition framework under UPV review",
+              "va": "Marc de reconeixement de crèdits en revisió per UPV"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "Piloto en curso; datos de reconocimiento de créditos pendientes de resolución institucional por UPV.",
+          "en": "Pilot in progress; credit recognition data pending institutional resolution by UPV.",
+          "va": "Pilot en curs; dades de reconeixement de crèdits pendents de resolució institucional per UPV."
+        }
+      },
+      "results": {
+        "headline": {
+          "es": "12 estudiantes en itinerario puente activo. Marco de créditos en revisión por UPV. Publicación de guía prevista para septiembre 2026.",
+          "en": "12 students on active bridge itinerary. Credit framework under UPV review. Guide publication planned for September 2026.",
+          "va": "12 estudiants en itinerari pont actiu. Marc de crèdits en revisió per UPV. Publicació de guia prevista per al setembre 2026."
+        },
+        "outputs": [
+          {
+            "id": "o1",
+            "label": {
+              "es": "Guía de itinerario puente FP-Máster (CC BY) — prevista sep 2026",
+              "en": "VET-Master bridge itinerary guide (CC BY) — planned Sep 2026",
+              "va": "Guia d'itinerari pont FP-Màster (CC BY) — prevista set 2026"
+            }
+          },
+          {
+            "id": "o2",
+            "label": {
+              "es": "Marco de reconocimiento de créditos validado por UPV",
+              "en": "UPV-validated credit recognition framework",
+              "va": "Marc de reconeixement de crèdits validat per UPV"
+            }
+          }
+        ],
+        "decision": {
+          "outcome": "adapt",
+          "label": {
+            "es": "Adaptar — piloto en curso, decisión final tras cierre en sep 2026",
+            "en": "Adapt — pilot in progress, final decision after closure in Sep 2026",
+            "va": "Adaptar — pilot en curs, decisió final després del tancament al set 2026"
+          }
+        }
+      },
+      "transferability": {
+        "whyTransferable": {
+          "es": "El marco de competencias FP-Máster es adaptable a otras combinaciones de ciclos y másteres en el ámbito de la IA industrial.",
+          "en": "The VET-Master competency framework is adaptable to other cycle-Master's combinations in the industrial AI field.",
+          "va": "El marc de competències FP-Màster és adaptable a altres combinacions de cicles i màsters en l'àmbit de la IA industrial."
+        },
+        "suitableFor": [
+          "universities",
+          "vet-centres"
+        ],
+        "requirements": [
+          {
+            "label": {
+              "es": "Acuerdo de colaboración entre centro FP y universidad",
+              "en": "Collaboration agreement between VET centre and university",
+              "va": "Acord de col·laboració entre centre FP i universitat"
+            }
+          },
+          {
+            "label": {
+              "es": "Marco de reconocimiento de créditos aprobado por la institución universitaria",
+              "en": "Credit recognition framework approved by the university institution",
+              "va": "Marc de reconeixement de crèdits aprovat per la institució universitària"
+            }
+          }
+        ],
+        "replicationSteps": [
+          {
+            "label": {
+              "es": "Mapear competencias entre el ciclo FP y el programa de máster destino",
+              "en": "Map competencies between the VET cycle and the target Master programme",
+              "va": "Mapar competències entre el cicle FP i el programa de màster destí"
+            }
+          },
+          {
+            "label": {
+              "es": "Formalizar acuerdo de reconocimiento de créditos con la institución universitaria",
+              "en": "Formalise credit recognition agreement with the university institution",
+              "va": "Formalitzar acord de reconeixement de crèdits amb la institució universitària"
+            }
+          }
+        ],
+        "risks": [
+          {
+            "label": {
+              "es": "Dependencia de la voluntad institucional universitaria para el reconocimiento de créditos",
+              "en": "Dependence on university institutional willingness for credit recognition",
+              "va": "Dependència de la voluntat institucional universitària per al reconeixement de crèdits"
+            }
+          }
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "",
+        "items": []
+      },
+      "resources": null,
+      "externalFlow": {
+        "enabled": true,
+        "primaryAction": {
+          "label": {
+            "es": "Conocer el itinerario",
+            "en": "Learn about the itinerary",
+            "va": "Conéixer l'itinerari"
+          },
+          "system": "",
+          "url": ""
+        },
+        "secondaryAction": null
+      },
+      "relations": {
+        "originChallengeId": "",
+        "relatedValidations": [],
+        "relatedCases": [],
+        "relatedResources": [
+          "o2"
+        ],
+        "relatedMentorships": [],
+        "nextPossibleItems": []
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "presentation": {
+        "card": {
+          "variant": "pilot",
+          "showPilotStage": true,
+          "showPilotType": true,
+          "showReadiness": true,
+          "showWindow": true,
+          "showInfrastructure": true,
+          "showPrimaryMetric": true,
+          "showDownloadsIndicator": false,
+          "resultBlockLabel": {
+            "es": "Qué se prueba",
+            "en": "What is being tested",
+            "va": "Què es prova"
+          }
+        },
+        "detail": {
+          "sections": {
+            "summary": true,
+            "pilotPlan": true,
+            "methodology": true,
+            "implementation": true,
+            "evidence": true,
+            "results": true,
+            "transferability": true,
+            "downloads": false,
+            "resources": false,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": false,
+            "relations": false
+          }
+        }
+      },
       "template": {
         "requiredBlocks": [
-          "context",
-          "participation",
-          "resources",
+          "pilotPlan",
+          "implementation",
           "evidence",
-          "process",
-          "outputs"
+          "results",
+          "transferability"
         ],
         "optionalBlocks": [
+          "downloads",
+          "resources",
+          "process",
           "people",
           "access",
-          "trackA",
-          "objective",
-          "methodology",
-          "outcome"
+          "externalFlow",
+          "relations"
         ],
-        "cardSignal": "process"
+        "cardSignal": "pilotPlan"
       }
     },
     {
@@ -7384,7 +8502,7 @@ export const MARKETPLACE_CONFIG = {
         "pageVisibility": "network",
         "pageLicense": "Open data",
         "codeLicense": "",
-        "dataAvailability": "",
+        "dataAvailability": "not-applicable",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -7418,6 +8536,259 @@ export const MARKETPLACE_CONFIG = {
           "va": "Classificat Track A — derivat a UVEG per a tractament acadèmic."
         },
         "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "lead": {
+          "name": "AVA-ASAJA",
+          "type": "public-administration",
+          "role": {
+            "es": "Entidad coordinadora",
+            "en": "Coordinating entity",
+            "va": "Entitat coordinadora"
+          }
+        },
+        "coordinator": null,
+        "pilotSites": [],
+        "partners": [
+          {
+            "name": "AVA-ASAJA",
+            "type": "",
+            "role": {
+              "es": "Proponente del reto",
+              "en": "Challenge proposer",
+              "va": "Proponent del repte"
+            }
+          },
+          {
+            "name": "UVEG",
+            "type": "",
+            "role": {
+              "es": "Clasificación Track A",
+              "en": "Track A classification",
+              "va": "Classificació Track A"
+            }
+          }
+        ]
+      },
+      "pilotPlan": {
+        "hypothesis": {
+          "es": "Oferta de dataset multispectral de cítricos y demanda de formación dual en agricultura de precisión.",
+          "en": "Offer of citrus multispectral dataset and demand for dual training in precision agriculture.",
+          "va": "Oferta de dataset multiespectral de cítrics i demanda de formació dual en agricultura de precisió."
+        },
+        "objective": {
+          "es": "Validar la pertinencia y madurez de un reto de agricultura de precisión propuesto por el sector agroalimentario valenciano.",
+          "en": "Validate the relevance and maturity of a precision agriculture challenge proposed by the Valencian agri-food sector.",
+          "va": "Validar la pertinència i maduresa d'un repte d'agricultura de precisió proposat pel sector agroalimentari valencià."
+        },
+        "context": {
+          "es": "AVA-ASAJA propuso el reto a la red AI-STEAM. La validación determina su clasificación (Track A académico o Track B ecosistema) mediante el proceso ConsensUE.",
+          "en": "AVA-ASAJA submitted the challenge to the AI-STEAM Network. The validation determines its classification (Track A academic or Track B ecosystem) via the ConsensUE process.",
+          "va": "AVA-ASAJA va proposar el repte a la xarxa AI-STEAM. La validació determina la seua classificació (Track A acadèmica o Track B ecosistema) mitjançant el procés ConsensUE."
+        },
+        "targetParticipants": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "methodology": {
+          "es": "Entrevistas con AVA-ASAJA, revisión técnica por UVEG y triage en ConsensUE para clasificación Track A / Track B.",
+          "en": "Interviews with AVA-ASAJA, technical review by UVEG and ConsensUE triage for Track A / Track B classification.",
+          "va": "Entrevistes amb AVA-ASAJA, revisió tècnica per UVEG i triatge en ConsensUE per a classificació Track A / Track B."
+        },
+        "successCriteria": []
+      },
+      "implementation": {
+        "readiness": {
+          "technologyReadiness": {
+            "enabled": true,
+            "level": 6,
+            "label": {
+              "es": "Demostración en entorno relevante",
+              "en": "Demonstration in relevant environment",
+              "va": "Demostració en entorn rellevant"
+            }
+          },
+          "educationalReadiness": {
+            "enabled": false,
+            "level": null,
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        },
+        "infrastructure": [
+          {
+            "label": {
+              "es": "Drones multiespectrales",
+              "en": "Drones multiespectrales",
+              "va": "Drones multiespectrales"
+            }
+          },
+          {
+            "label": {
+              "es": "Dataset citrus CV",
+              "en": "Dataset citrus CV",
+              "va": "Dataset citrus CV"
+            }
+          },
+          {
+            "label": {
+              "es": "Sistema ConsensUE",
+              "en": "Sistema ConsensUE",
+              "va": "Sistema ConsensUE"
+            }
+          }
+        ],
+        "tools": [],
+        "dataManagement": {
+          "sensitiveDataIncluded": false,
+          "personalDataIncluded": false,
+          "note": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        }
+      },
+      "evidence": {
+        "evidenceLevel": "measured",
+        "verificationStatus": "self-reported",
+        "collectionMethod": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "primaryMetric": null,
+        "secondaryMetrics": [],
+        "limitations": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      "results": {
+        "headline": {
+          "es": "Validado — clasificado Track A por UVEG",
+          "en": "Validated — classified as Track A by UVEG",
+          "va": "Validat — classificat Track A per UVEG"
+        },
+        "outputs": [
+          {
+            "id": "output-0",
+            "label": {
+              "es": "Informe de validación con clasificación Track A",
+              "en": "Validation report with Track A classification",
+              "va": "Informe de validació amb classificació Track A"
+            }
+          },
+          {
+            "id": "output-1",
+            "label": {
+              "es": "Dataset multispectral cedido para reuso",
+              "en": "Multispectral dataset donated for reuse",
+              "va": "Dataset multiespectral cedit per a reús"
+            }
+          }
+        ],
+        "decision": {
+          "outcome": "",
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        }
+      },
+      "transferability": {
+        "whyTransferable": {
+          "es": "Dataset multispectral cedido para reuso académico. Reto validado y clasificado para Track A por UVEG.",
+          "en": "Multispectral dataset donated for academic reuse. Challenge validated and classified for Track A by UVEG.",
+          "va": "Dataset multiespectral cedit per a reús acadèmic. Repte validat i classificat per a Track A per UVEG."
+        },
+        "suitableFor": [
+          "companies",
+          "vet-centres",
+          "universities",
+          "public-administration"
+        ],
+        "requirements": [],
+        "replicationSteps": [],
+        "risks": []
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/pilots/validation-stakeholder-agr-asaja/",
+        "items": []
+      },
+      "resources": null,
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver ficha de validación",
+            "en": "View validation record",
+            "va": "Veure fitxa de validació"
+          },
+          "system": "",
+          "url": ""
+        },
+        "secondaryAction": null
+      },
+      "relations": {
+        "originChallengeId": "",
+        "relatedValidations": [],
+        "relatedCases": [],
+        "relatedResources": [],
+        "relatedMentorships": [],
+        "nextPossibleItems": [
+          "case",
+          "resource"
+        ]
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "presentation": {
+        "card": {
+          "variant": "validation",
+          "showPilotStage": true,
+          "showPilotType": true,
+          "showReadiness": true,
+          "showWindow": true,
+          "showInfrastructure": true,
+          "showPrimaryMetric": true,
+          "showDownloadsIndicator": false,
+          "resultBlockLabel": {
+            "es": "Qué se prueba",
+            "en": "What is being tested",
+            "va": "Què es prova"
+          }
+        },
+        "detail": {
+          "sections": {
+            "summary": true,
+            "pilotPlan": true,
+            "methodology": true,
+            "implementation": true,
+            "evidence": true,
+            "results": true,
+            "transferability": true,
+            "downloads": false,
+            "resources": true,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": true,
+            "relations": false
+          }
+        }
       },
       "template": {
         "requiredBlocks": [
@@ -7753,7 +9124,7 @@ export const MARKETPLACE_CONFIG = {
         "pageVisibility": "public",
         "pageLicense": "CC BY 4.0",
         "codeLicense": "",
-        "dataAvailability": "",
+        "dataAvailability": "not-applicable",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -7787,6 +9158,267 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "lead": {
+          "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
+          "type": "public-administration",
+          "role": {
+            "es": "Entidad coordinadora",
+            "en": "Coordinating entity",
+            "va": "Entitat coordinadora"
+          }
+        },
+        "coordinator": null,
+        "pilotSites": [],
+        "partners": [
+          {
+            "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
+            "type": "",
+            "role": {
+              "es": "Proponente del reto y co-validador",
+              "en": "Challenge proposer and co-validator",
+              "va": "Proponent del repte i co-validador"
+            }
+          },
+          {
+            "name": "Asociación de Concesionarios Valencianos",
+            "type": "",
+            "role": {
+              "es": "Co-validador",
+              "en": "Co-validator",
+              "va": "Co-validador"
+            }
+          },
+          {
+            "name": "UVEG — Grup de Recerca Mobilitat",
+            "type": "",
+            "role": {
+              "es": "Revisión técnica Track A",
+              "en": "Track A technical review",
+              "va": "Revisió tècnica Track A"
+            }
+          }
+        ]
+      },
+      "pilotPlan": {
+        "hypothesis": {
+          "es": "Demanda de formación dual en instalación y mantenimiento de infraestructura de carga para VE.",
+          "en": "Demand for dual training in EV charging infrastructure installation and maintenance.",
+          "va": "Demanda de formació dual en instal·lació i manteniment d'infraestructura de càrrega per a VE."
+        },
+        "objective": {
+          "es": "Validar la pertinencia y viabilidad de un reto formativo sobre instalación y mantenimiento de infraestructura de carga para vehículo eléctrico en FP.",
+          "en": "Validate the relevance and feasibility of a training challenge on the installation and maintenance of electric vehicle charging infrastructure in VET.",
+          "va": "Validar la pertinència i viabilitat d'un repte formatiu sobre instal·lació i manteniment d'infraestructura de càrrega per a vehicle elèctric en FP."
+        },
+        "context": {
+          "es": "ASEVA identifica una brecha creciente entre la proliferación de puntos de carga y la disponibilidad de técnicos cualificados para instalarlos y mantenerlos.",
+          "en": "ASEVA identifies a growing gap between the proliferation of charging points and the availability of qualified technicians to install and maintain them.",
+          "va": "ASEVA identifica una bretxa creixent entre la proliferació de punts de càrrega i la disponibilitat de tècnics qualificats per a instal·lar-los i mantenir-los."
+        },
+        "targetParticipants": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "methodology": {
+          "es": "Panel de expertos con ASEVA y concesionarios, análisis de brechas de competencias y triage ConsensUE para clasificación Track B.",
+          "en": "Expert panel with ASEVA and dealers, competency gap analysis and ConsensUE triage for Track B classification.",
+          "va": "Panell d'experts amb ASEVA i concessionaris, anàlisi de bretxes de competències i triatge ConsensUE per a classificació Track B."
+        },
+        "successCriteria": []
+      },
+      "implementation": {
+        "readiness": {
+          "technologyReadiness": {
+            "enabled": true,
+            "level": 6,
+            "label": {
+              "es": "Demostración en entorno relevante",
+              "en": "Demonstration in relevant environment",
+              "va": "Demostració en entorn rellevant"
+            }
+          },
+          "educationalReadiness": {
+            "enabled": false,
+            "level": null,
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        },
+        "infrastructure": [
+          {
+            "label": {
+              "es": "Panel de expertos ASEVA",
+              "en": "Panel de expertos ASEVA",
+              "va": "Panel de expertos ASEVA"
+            }
+          },
+          {
+            "label": {
+              "es": "Sistema ConsensUE",
+              "en": "Sistema ConsensUE",
+              "va": "Sistema ConsensUE"
+            }
+          },
+          {
+            "label": {
+              "es": "Concesionarios asociados",
+              "en": "Concesionarios asociados",
+              "va": "Concesionarios asociados"
+            }
+          }
+        ],
+        "tools": [],
+        "dataManagement": {
+          "sensitiveDataIncluded": false,
+          "personalDataIncluded": false,
+          "note": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        }
+      },
+      "evidence": {
+        "evidenceLevel": "observed",
+        "verificationStatus": "self-reported",
+        "collectionMethod": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "primaryMetric": null,
+        "secondaryMetrics": [],
+        "limitations": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      "results": {
+        "headline": {
+          "es": "Validado — clasificado Track B para formación dual",
+          "en": "Validated — classified as Track B for dual training",
+          "va": "Validat — classificat Track B per a formació dual"
+        },
+        "outputs": [
+          {
+            "id": "output-0",
+            "label": {
+              "es": "Ficha de competencias publicada",
+              "en": "Competency sheet published",
+              "va": "Fitxa de competències publicada"
+            }
+          },
+          {
+            "id": "output-1",
+            "label": {
+              "es": "Base para módulo FP dual 2026-27",
+              "en": "Basis for dual VET module 2026-27",
+              "va": "Base per al mòdul FP dual 2026-27"
+            }
+          }
+        ],
+        "decision": {
+          "outcome": "",
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        }
+      },
+      "transferability": {
+        "whyTransferable": {
+          "es": "Ficha de competencias publicada. Base para módulo FP dual con ASEVA en el curso 2026-27.",
+          "en": "Competency sheet published. Basis for dual VET module with ASEVA in 2026-27.",
+          "va": "Fitxa de competències publicada. Base per al mòdul FP dual amb ASEVA per al curs 2026-27."
+        },
+        "suitableFor": [
+          "companies",
+          "vet-centres",
+          "public-administration"
+        ],
+        "requirements": [],
+        "replicationSteps": [],
+        "risks": []
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/pilots/validation-stakeholder-movilidad-electrica/",
+        "items": []
+      },
+      "resources": null,
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver ficha de competencias",
+            "en": "View competency sheet",
+            "va": "Veure fitxa de competències"
+          },
+          "system": "",
+          "url": ""
+        },
+        "secondaryAction": null
+      },
+      "relations": {
+        "originChallengeId": "",
+        "relatedValidations": [],
+        "relatedCases": [],
+        "relatedResources": [],
+        "relatedMentorships": [],
+        "nextPossibleItems": [
+          "case",
+          "resource"
+        ]
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "presentation": {
+        "card": {
+          "variant": "validation",
+          "showPilotStage": true,
+          "showPilotType": true,
+          "showReadiness": true,
+          "showWindow": true,
+          "showInfrastructure": true,
+          "showPrimaryMetric": true,
+          "showDownloadsIndicator": false,
+          "resultBlockLabel": {
+            "es": "Qué se prueba",
+            "en": "What is being tested",
+            "va": "Què es prova"
+          }
+        },
+        "detail": {
+          "sections": {
+            "summary": true,
+            "pilotPlan": true,
+            "methodology": true,
+            "implementation": true,
+            "evidence": true,
+            "results": true,
+            "transferability": true,
+            "downloads": false,
+            "resources": true,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": false,
+            "relations": false
+          }
+        }
       },
       "template": {
         "requiredBlocks": [
@@ -11302,7 +12934,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-fp-energia-costera.yml",
         "core": {
           "status": "resolved",
-          "maturity": "completed",
+          "maturity": "idea",
           "title": {
             "es": "Piloto FP — IA para eficiencia energética en centros educativos",
             "en": "VET Pilot — AI for energy efficiency in educational centres",
@@ -11314,11 +12946,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mòdul OER d'eficiència energètica amb IA pilotat amb alumnat de FP a l'IES La Costera."
           },
           "entity": {
-            "name": "CEICE",
+            "name": "",
             "type": {
-              "es": "Organismo público educativo",
-              "en": "Public education body",
-              "va": "Organisme públic educatiu"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "sector": "ene",
@@ -11326,7 +12958,7 @@ export const MARKETPLACE_CONFIG = {
           "levels": [
             "FP"
           ],
-          "pilotType": "fp",
+          "pilotType": "curriculum-pilot",
           "helix": [
             "academia",
             "public-sector"
@@ -11382,15 +13014,15 @@ export const MARKETPLACE_CONFIG = {
             "learning-ecosystems"
           ],
           "engagementLevel": "hosting",
-          "evidenceMaturity": "completed",
-          "lbdStage": "output",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
           "trackBValue": {
-            "es": "Módulo reutilizable CC-BY que demuestra la transferibilidad de OER de IA en FP de Energía y Agua.",
-            "en": "Reusable CC-BY module demonstrating OER transferability for AI in Energy and Water VET.",
-            "va": "Mòdul reutilitzable CC-BY que demostra la transferibilitat d'OER d'IA en FP d'Energia i Aigua."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
-          "pilotStatus": "completed"
+          "pilotStatus": ""
         },
         "transfer": {
           "type": "",
@@ -11403,187 +13035,16 @@ export const MARKETPLACE_CONFIG = {
             "vet-centres",
             "teachers",
             "energy-sector"
-          ],
-          "primaryCta": {
-            "es": "Explorar resultados",
-            "en": "Explore results",
-            "va": "Explorar resultats"
-          },
-          "featuredSignal": {
-            "es": "Módulo publicado en Aules. Dataset anonimizado disponible para reutilización.",
-            "en": "Module published on Aules. Anonymised dataset available for reuse.",
-            "va": "Mòdul publicat a Aules. Dataset anonimitzat disponible per a reutilització."
-          }
+          ]
         },
-        "card": {
-          "collaborationDirection": {
-            "es": "Oferta de módulo OER validado para replicación en centros de FP de Energía y Agua.",
-            "en": "Validated OER module offer for replication in Energy and Water VET centres.",
-            "va": "Oferta de mòdul OER validat per a replicació en centres de FP d'Energia i Aigua."
-          },
-          "trl": {
-            "level": 7,
-            "label": {
-              "es": "Demostración en entorno operacional",
-              "en": "Demonstration in operational environment",
-              "va": "Demostració en entorn operacional"
-            }
-          },
-          "infrastructure": [
-            "Plataforma Aules",
-            "Sensores IoT aula",
-            "Dataset energético anonimizado"
-          ],
-          "executionWindow": {
-            "start": "2025-11-01",
-            "end": "2026-01-15",
-            "label": {
-              "es": "Nov 2025 – Ene 2026",
-              "en": "Nov 2025 – Jan 2026",
-              "va": "Nov 2025 – Gen 2026"
-            }
-          },
-          "validationStatus": {
-            "es": "Completado y publicado",
-            "en": "Completed and published",
-            "va": "Completat i publicat"
-          }
-        },
-        "visibility": {
-          "objective": true,
-          "methodology": true,
-          "outcome": true,
-          "context": true,
-          "participation": true,
-          "resources": true,
-          "evidence": true,
-          "process": true,
-          "outputs": true,
-          "people": true,
-          "access": true,
-          "trackA": false
-        },
-        "detail": {
-          "objective": {
-            "es": "Validar la transferibilidad de un módulo OER de eficiencia energética con IA al alumnado de FP de Energía y Agua.",
-            "en": "Validate the transferability of an AI-based energy efficiency OER module to VET students in Energy and Water.",
-            "va": "Validar la transferibilitat d'un mòdul OER d'eficiència energètica amb IA a l'alumnat de FP d'Energia i Aigua."
-          },
-          "methodology": {
-            "es": "Implementación en aula con metodología Learning by Developing (LbD), sesiones híbridas en Aules y captura de evidencias mediante checklist AI-SECRETT.",
-            "en": "Classroom deployment using Learning by Developing (LbD), hybrid sessions on Aules and evidence capture via the AI-SECRETT checklist.",
-            "va": "Implementació a l'aula amb metodologia Learning by Developing (LbD), sessions híbrides a Aules i captura d'evidències mitjançant checklist AI-SECRETT."
-          },
-          "outcome": {
-            "es": "Módulo OER CC-BY publicado en Aules. 24 alumnos participantes. Dataset anonimizado disponible para reutilización.",
-            "en": "CC-BY OER module published on Aules. 24 participating students. Anonymised dataset available for reuse.",
-            "va": "Mòdul OER CC-BY publicat a Aules. 24 alumnes participants. Dataset anonimitzat disponible per a reutilització."
-          },
-          "context": {
-            "es": "El piloto conecta la eficiencia energética de los edificios educativos con el aprendizaje práctico de IA en FP, generando un recurso abierto reutilizable.",
-            "en": "The pilot connects educational building energy efficiency with practical AI learning in VET, generating a reusable open resource.",
-            "va": "El pilot connecta l'eficiència energètica dels edificis educatius amb l'aprenentatge pràctic d'IA en FP, generant un recurs obert reutilitzable."
-          },
-          "participation": {
-            "participants": {
-              "es": "24 alumnos de FP de Energía y Agua en IES La Costera.",
-              "en": "24 Energy and Water VET students at IES La Costera.",
-              "va": "24 alumnes de FP d'Energia i Aigua a l'IES La Costera."
-            }
-          },
-          "resources": {
-            "used": [
-              {
-                "label": {
-                  "es": "Módulo OER eficiencia energética con IA",
-                  "en": "AI energy efficiency OER module",
-                  "va": "Mòdul OER eficiència energètica amb IA"
-                },
-                "format": "Aules / PDF",
-                "license": "CC BY 4.0"
-              }
-            ]
-          },
-          "evidence": {
-            "metrics": [
-              {
-                "label": {
-                  "es": "Competencias adquiridas",
-                  "en": "Acquired competencies",
-                  "va": "Competències adquirides"
-                },
-                "method": {
-                  "es": "Checklist AI-SECRETT",
-                  "en": "AI-SECRETT checklist",
-                  "va": "Checklist AI-SECRETT"
-                }
-              }
-            ]
-          },
-          "process": {
-            "milestones": [
-              {
-                "date": "2025-11-01",
-                "label": {
-                  "es": "Inicio del piloto",
-                  "en": "Pilot start",
-                  "va": "Inici del pilot"
-                }
-              },
-              {
-                "date": "2026-01-15",
-                "label": {
-                  "es": "Publicación del módulo OER",
-                  "en": "OER module published",
-                  "va": "Publicació del mòdul OER"
-                }
-              }
-            ]
-          },
-          "outputs": {
-            "expected": [
-              {
-                "label": {
-                  "es": "Módulo OER CC-BY publicado",
-                  "en": "CC-BY OER module published",
-                  "va": "Mòdul OER CC-BY publicat"
-                }
-              },
-              {
-                "label": {
-                  "es": "Dataset energético anonimizado",
-                  "en": "Anonymised energy dataset",
-                  "va": "Dataset energètic anonimitzat"
-                }
-              }
-            ]
-          },
-          "people": {
-            "organisations": [
-              {
-                "name": "CEICE",
-                "role": {
-                  "es": "Coordinación y publicación",
-                  "en": "Coordination and publication",
-                  "va": "Coordinació i publicació"
-                }
-              },
-              {
-                "name": "IES La Costera",
-                "role": {
-                  "es": "Centro piloto",
-                  "en": "Pilot centre",
-                  "va": "Centre pilot"
-                }
-              }
-            ]
-          }
-        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
         "access": {
           "pageVisibility": "public",
           "pageLicense": "CC BY 4.0",
           "codeLicense": "",
-          "dataAvailability": "",
+          "dataAvailability": "available-in-repository",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -11618,24 +13079,373 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "CEICE",
+            "type": {
+              "es": "Organismo público educativo",
+              "en": "Public education body",
+              "va": "Organisme públic educatiu"
+            },
+            "role": {
+              "es": "Coordinación y publicación del módulo OER",
+              "en": "Coordination and OER module publication",
+              "va": "Coordinació i publicació del mòdul OER"
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [
+            {
+              "name": "IES La Costera",
+              "type": "",
+              "role": {
+                "es": "Centro piloto",
+                "en": "Pilot centre",
+                "va": "Centre pilot"
+              }
+            }
+          ],
+          "partners": []
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Oferta de módulo OER validado para replicación en centros de FP de Energía y Agua.",
+            "en": "Validated OER module offer for replication in Energy and Water VET centres.",
+            "va": "Oferta de mòdul OER validat per a replicació en centres de FP d'Energia i Aigua."
+          },
+          "objective": {
+            "es": "Validar la transferibilidad de un módulo OER de eficiencia energética con IA al alumnado de FP de Energía y Agua.",
+            "en": "Validate the transferability of an AI-based energy efficiency OER module to VET students in Energy and Water.",
+            "va": "Validar la transferibilitat d'un mòdul OER d'eficiència energètica amb IA a l'alumnat de FP d'Energia i Aigua."
+          },
+          "context": {
+            "es": "El piloto conecta la eficiencia energética de los edificios educativos con el aprendizaje práctico de IA en FP, generando un recurso abierto reutilizable.",
+            "en": "The pilot connects educational building energy efficiency with practical AI learning in VET, generating a reusable open resource.",
+            "va": "El pilot connecta l'eficiència energètica dels edificis educatius amb l'aprenentatge pràctic d'IA en FP, generant un recurs obert reutilitzable."
+          },
+          "targetParticipants": {
+            "es": "24 alumnos de FP de Energía y Agua en IES La Costera.",
+            "en": "24 Energy and Water VET students at IES La Costera.",
+            "va": "24 alumnes de FP d'Energia i Aigua a l'IES La Costera."
+          },
+          "methodology": {
+            "es": "Implementación en aula con metodología Learning by Developing (LbD), sesiones híbridas en Aules y captura de evidencias mediante checklist AI-SECRETT.",
+            "en": "Classroom deployment using Learning by Developing (LbD), hybrid sessions on Aules and evidence capture via the AI-SECRETT checklist.",
+            "va": "Implementació a l'aula amb metodologia Learning by Developing (LbD), sessions híbrides a Aules i captura d'evidències mitjançant checklist AI-SECRETT."
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "El módulo OER es completado por al menos el 80% del alumnado participante",
+                "en": "The OER module is completed by at least 80% of participating students",
+                "va": "El mòdul OER és completat per almenys el 80% de l'alumnat participant"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "El módulo se publica en Aules bajo licencia CC BY con dataset anonimizado disponible",
+                "en": "The module is published on Aules under CC BY with anonymised dataset available",
+                "va": "El mòdul es publica a Aules sota llicència CC BY amb dataset anonimitzat disponible"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 7,
+              "label": {
+                "es": "Demostración en entorno operacional",
+                "en": "Demonstration in operational environment",
+                "va": "Demostració en entorn operacional"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": true,
+              "level": "validated-in-real-context",
+              "label": {
+                "es": "Validado en contexto real",
+                "en": "Validated in real context",
+                "va": "Validat en context real"
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            },
+            {
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            },
+            {
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            }
+          ],
+          "tools": [
+            {
+              "label": {
+                "es": "Checklist AI-SECRETT",
+                "en": "AI-SECRETT checklist",
+                "va": "Checklist AI-SECRETT"
+              }
+            }
+          ],
+          "dataManagement": {
+            "sensitiveDataIncluded": false,
+            "personalDataIncluded": true,
+            "note": {
+              "es": "Datos de consumo energético del edificio escolar. Datos de participantes anonimizados.",
+              "en": "School building energy consumption data. Participant data anonymised.",
+              "va": "Dades de consum energètic de l'edifici escolar. Dades de participants anonimitzades."
+            }
+          }
+        },
+        "evidence": {
+          "evidenceLevel": "measured",
+          "verificationStatus": "self-reported",
+          "collectionMethod": {
+            "es": "Checklist AI-SECRETT + evaluación de competencias adquiridas",
+            "en": "AI-SECRETT checklist + acquired competency assessment",
+            "va": "Checklist AI-SECRETT + avaluació de competències adquirides"
+          },
+          "primaryMetric": {
+            "id": "students-completed",
+            "value": "24",
+            "unit": {
+              "es": "alumnos participantes",
+              "en": "participating students",
+              "va": "alumnes participants"
+            },
+            "label": {
+              "es": "Alumnos que completaron el módulo",
+              "en": "Students who completed the module",
+              "va": "Alumnes que van completar el mòdul"
+            }
+          },
+          "secondaryMetrics": [
+            {
+              "id": "sm1",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Módulo publicado en Aules bajo CC BY 4.0",
+                "en": "Module published on Aules under CC BY 4.0",
+                "va": "Mòdul publicat a Aules sota CC BY 4.0"
+              }
+            },
+            {
+              "id": "sm2",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Dataset energético anonimizado disponible para reutilización",
+                "en": "Anonymised energy dataset available for reuse",
+                "va": "Dataset energètic anonimitzat disponible per a reutilització"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "Piloto con un único centro; transferibilidad a entornos sin sensores IoT por confirmar.",
+            "en": "Single-centre pilot; transferability to environments without IoT sensors to be confirmed.",
+            "va": "Pilot amb un únic centre; transferibilitat a entorns sense sensors IoT per confirmar."
+          }
+        },
+        "results": {
+          "headline": {
+            "es": "Módulo OER CC-BY publicado en Aules. 24 alumnos participantes. Dataset anonimizado disponible para reutilización.",
+            "en": "CC-BY OER module published on Aules. 24 participating students. Anonymised dataset available for reuse.",
+            "va": "Mòdul OER CC-BY publicat a Aules. 24 alumnes participants. Dataset anonimitzat disponible per a reutilització."
+          },
+          "outputs": [
+            {
+              "id": "o1",
+              "label": {
+                "es": "Módulo OER CC-BY publicado en Aules",
+                "en": "CC-BY OER module published on Aules",
+                "va": "Mòdul OER CC-BY publicat a Aules"
+              }
+            },
+            {
+              "id": "o2",
+              "label": {
+                "es": "Dataset energético anonimizado (open data)",
+                "en": "Anonymised energy dataset (open data)",
+                "va": "Dataset energètic anonimitzat (open data)"
+              }
+            }
+          ],
+          "decision": {
+            "outcome": "publish-resource",
+            "label": {
+              "es": "Publicar recurso — módulo OER CC-BY disponible en repositorio",
+              "en": "Publish resource — CC-BY OER module available in repository",
+              "va": "Publicar recurs — mòdul OER CC-BY disponible en repositori"
+            }
+          }
+        },
+        "transferability": {
+          "whyTransferable": {
+            "es": "El módulo OER está publicado bajo CC BY 4.0 y es reutilizable en cualquier ciclo de FP con sensores de consumo energético básicos.",
+            "en": "The OER module is published under CC BY 4.0 and reusable in any VET cycle with basic energy consumption sensors.",
+            "va": "El mòdul OER està publicat sota CC BY 4.0 i és reutilitzable en qualsevol cicle de FP amb sensors de consum energètic bàsics."
+          },
+          "suitableFor": [
+            "vet-centres",
+            "teachers"
+          ],
+          "requirements": [
+            {
+              "label": {
+                "es": "Acceso a plataforma Aules o LMS equivalente",
+                "en": "Access to Aules platform or equivalent LMS",
+                "va": "Accés a plataforma Aules o LMS equivalent"
+              }
+            },
+            {
+              "label": {
+                "es": "Datos de consumo energético del edificio (sensores IoT o lecturas manuales)",
+                "en": "Building energy consumption data (IoT sensors or manual readings)",
+                "va": "Dades de consum energètic de l'edifici (sensors IoT o lectures manuals)"
+              }
+            }
+          ],
+          "replicationSteps": [
+            {
+              "label": {
+                "es": "Descargar módulo OER desde repositorio AI-STEAM y adaptar al contexto del centro",
+                "en": "Download OER module from AI-STEAM repository and adapt to the centre context",
+                "va": "Descarregar mòdul OER des del repositori AI-STEAM i adaptar al context del centre"
+              }
+            },
+            {
+              "label": {
+                "es": "Configurar captura de datos de consumo energético del edificio",
+                "en": "Configure energy consumption data capture for the building",
+                "va": "Configurar la captura de dades de consum energètic de l'edifici"
+              }
+            },
+            {
+              "label": {
+                "es": "Implementar checklist AI-SECRETT para evaluación de competencias",
+                "en": "Implement AI-SECRETT checklist for competency assessment",
+                "va": "Implementar checklist AI-SECRETT per a l'avaluació de competències"
+              }
+            }
+          ],
+          "risks": [
+            {
+              "label": {
+                "es": "La calidad de los datos de consumo depende de la infraestructura del edificio",
+                "en": "Consumption data quality depends on the building infrastructure",
+                "va": "La qualitat de les dades de consum depèn de la infraestructura de l'edifici"
+              }
+            }
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": true,
+          "primaryAction": {
+            "label": {
+              "es": "Explorar resultados",
+              "en": "Explore results",
+              "va": "Explorar resultats"
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [
+            "o1"
+          ],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": false,
+              "resources": false,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
         "template": {
           "requiredBlocks": [
-            "context",
-            "participation",
-            "resources",
+            "pilotPlan",
+            "implementation",
             "evidence",
-            "process",
-            "outputs"
+            "results",
+            "transferability"
           ],
           "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
             "people",
             "access",
-            "trackA",
-            "objective",
-            "methodology",
-            "outcome"
+            "externalFlow",
+            "relations"
           ],
-          "cardSignal": "process"
+          "cardSignal": "pilotPlan"
         }
       },
       {
@@ -11647,7 +13457,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-teacher-sesgos-ia-uveg.yml",
         "core": {
           "status": "resolved",
-          "maturity": "completed",
+          "maturity": "idea",
           "title": {
             "es": "Formación Docente — Análisis de sesgos en IA para profesorado de Máster",
             "en": "Teacher Training — AI bias analysis for Master's programme faculty",
@@ -11659,11 +13469,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Taller intensiu per a professorat universitari sobre detecció i mitigació de biaixos algorítmics en models d'IA usats en contextos educatius."
           },
           "entity": {
-            "name": "UVEG — Facultat d'Informàtica",
+            "name": "",
             "type": {
-              "es": "Universidad pública",
-              "en": "Public university",
-              "va": "Universitat pública"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "sector": "nts",
@@ -11728,15 +13538,15 @@ export const MARKETPLACE_CONFIG = {
             "equity-inclusion"
           ],
           "engagementLevel": "learning-activity",
-          "evidenceMaturity": "completed",
-          "lbdStage": "output",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
           "trackBValue": {
-            "es": "14 docentes universitarios capacitados en auditoría de sesgos. Plantilla CC-BY-SA reutilizable para cualquier programa de Máster.",
-            "en": "14 university faculty trained in bias auditing. CC-BY-SA template reusable across any Master's programme.",
-            "va": "14 docents universitaris capacitats en auditoria de biaixos. Plantilla CC-BY-SA reutilitzable per a qualsevol programa de Màster."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
-          "pilotStatus": "completed"
+          "pilotStatus": ""
         },
         "transfer": {
           "type": "",
@@ -11749,212 +13559,16 @@ export const MARKETPLACE_CONFIG = {
             "universities",
             "teachers",
             "master-programmes"
-          ],
-          "primaryCta": {
-            "es": "Acceder a materiales",
-            "en": "Access materials",
-            "va": "Accedir als materials"
-          },
-          "featuredSignal": {
-            "es": "6 asignaturas de Máster incorporan unidad de sesgos en IA en 2026-27. Plantilla CC-BY-SA publicada.",
-            "en": "6 Master's courses incorporate AI bias unit in 2026-27. CC-BY-SA template published.",
-            "va": "6 assignatures de Màster incorporen unitat de biaixos en IA en 2026-27. Plantilla CC-BY-SA publicada."
-          }
+          ]
         },
-        "card": {
-          "collaborationDirection": {
-            "es": "Oferta de taller replicable sobre auditoría de sesgos algorítmicos para programas de Máster.",
-            "en": "Replicable workshop offer on algorithmic bias auditing for Master's programmes.",
-            "va": "Oferta de taller replicable sobre auditoria de biaixos algorítmics per a programes de Màster."
-          },
-          "trl": {
-            "level": 7,
-            "label": {
-              "es": "Demostración en entorno operacional",
-              "en": "Demonstration in operational environment",
-              "va": "Demostració en entorn operacional"
-            }
-          },
-          "infrastructure": [
-            "Aula universitaria equipada",
-            "Datasets reales de auditoría",
-            "Repositorio AI-STEAM"
-          ],
-          "executionWindow": {
-            "start": "2025-11-01",
-            "end": "2025-12-15",
-            "label": {
-              "es": "Nov – Dic 2025",
-              "en": "Nov – Dec 2025",
-              "va": "Nov – Des 2025"
-            }
-          },
-          "validationStatus": {
-            "es": "Completado — materiales publicados",
-            "en": "Completed — materials published",
-            "va": "Completat — materials publicats"
-          }
-        },
-        "visibility": {
-          "objective": true,
-          "methodology": true,
-          "outcome": true,
-          "context": true,
-          "participation": true,
-          "resources": true,
-          "evidence": true,
-          "process": true,
-          "outputs": true,
-          "people": true,
-          "access": true,
-          "trackA": false
-        },
-        "detail": {
-          "objective": {
-            "es": "Capacitar al profesorado universitario en el uso de herramientas de auditoría de sesgos y en la integración de contenidos de equidad algorítmica en sus asignaturas.",
-            "en": "Train university faculty in the use of bias auditing tools and in the integration of algorithmic fairness content into their courses.",
-            "va": "Capacitar el professorat universitari en l'ús d'eines d'auditoria de biaixos i en la integració de continguts d'equitat algorítmica en les seues assignatures."
-          },
-          "methodology": {
-            "es": "Taller de 16h en dos módulos: auditoría práctica con datasets reales y diseño colaborativo de actividades de aula sobre equidad en IA.",
-            "en": "16-hour workshop in two modules: practical auditing with real datasets and collaborative design of classroom activities on AI fairness.",
-            "va": "Taller de 16h en dos mòduls: auditoria pràctica amb datasets reals i disseny col·laboratiu d'activitats d'aula sobre equitat en IA."
-          },
-          "outcome": {
-            "es": "14 docentes formados. 6 asignaturas de Máster incorporan unidad de sesgos en IA en 2026-27. Plantilla de auditoría CC-BY-SA publicada en repositorio AI-STEAM.",
-            "en": "14 teachers trained. 6 Master's courses incorporate AI bias unit in 2026-27. CC-BY-SA audit template published in AI-STEAM repository.",
-            "va": "14 docents formats. 6 assignatures de Màster incorporen unitat de biaixos en IA en 2026-27. Plantilla d'auditoria CC-BY-SA publicada en repositori AI-STEAM."
-          },
-          "context": {
-            "es": "La formación surgió de la necesidad detectada en el ecosistema de programas de Máster con contenidos de IA que carecían de perspectiva crítica sobre sesgos y equidad algorítmica.",
-            "en": "The training arose from a need detected in the ecosystem of AI-content Master programmes lacking a critical perspective on algorithmic bias and fairness.",
-            "va": "La formació va sorgir de la necessitat detectada en l'ecosistema de programes de Màster amb continguts d'IA que mancaven de perspectiva crítica sobre biaixos i equitat algorítmica."
-          },
-          "participation": {
-            "participants": {
-              "es": "14 docentes universitarios de UVEG y UPV de áreas de Informática e IA.",
-              "en": "14 university faculty from UVEG and UPV in Computer Science and AI areas.",
-              "va": "14 docents universitaris de UVEG i UPV d'àrees d'Informàtica i IA."
-            }
-          },
-          "resources": {
-            "used": [
-              {
-                "label": {
-                  "es": "Datasets reales de auditoría de sesgos",
-                  "en": "Real bias auditing datasets",
-                  "va": "Datasets reals d'auditoria de biaixos"
-                },
-                "format": "CSV / Notebook",
-                "license": "Open data"
-              },
-              {
-                "label": {
-                  "es": "Plantilla de auditoría CC-BY-SA",
-                  "en": "CC-BY-SA audit template",
-                  "va": "Plantilla d'auditoria CC-BY-SA"
-                },
-                "format": "PDF / LaTeX",
-                "license": "CC BY-SA 4.0"
-              }
-            ]
-          },
-          "evidence": {
-            "metrics": [
-              {
-                "label": {
-                  "es": "Asignaturas con unidad de sesgos incorporada",
-                  "en": "Courses with integrated bias unit",
-                  "va": "Assignatures amb unitat de biaixos incorporada"
-                },
-                "method": {
-                  "es": "Revisión de programas 2026-27",
-                  "en": "Review of 2026-27 syllabi",
-                  "va": "Revisió de programes 2026-27"
-                }
-              }
-            ]
-          },
-          "process": {
-            "milestones": [
-              {
-                "date": "2025-11-15",
-                "label": {
-                  "es": "Módulo 1 — auditoría práctica",
-                  "en": "Module 1 — practical auditing",
-                  "va": "Mòdul 1 — auditoria pràctica"
-                }
-              },
-              {
-                "date": "2025-12-10",
-                "label": {
-                  "es": "Módulo 2 — diseño de actividades",
-                  "en": "Module 2 — activity design",
-                  "va": "Mòdul 2 — disseny d'activitats"
-                }
-              },
-              {
-                "date": "2026-03-01",
-                "label": {
-                  "es": "Publicación de plantilla CC-BY-SA",
-                  "en": "CC-BY-SA template published",
-                  "va": "Publicació de plantilla CC-BY-SA"
-                }
-              }
-            ]
-          },
-          "outputs": {
-            "expected": [
-              {
-                "label": {
-                  "es": "Plantilla de auditoría de sesgos CC-BY-SA",
-                  "en": "CC-BY-SA bias audit template",
-                  "va": "Plantilla d'auditoria de biaixos CC-BY-SA"
-                }
-              },
-              {
-                "label": {
-                  "es": "14 docentes con certificación en equidad algorítmica",
-                  "en": "14 faculty certified in algorithmic fairness",
-                  "va": "14 docents amb certificació en equitat algorítmica"
-                }
-              }
-            ]
-          },
-          "people": {
-            "organisations": [
-              {
-                "name": "UVEG — Facultat d'Informàtica",
-                "role": {
-                  "es": "Organización principal y facilitación",
-                  "en": "Main organiser and facilitator",
-                  "va": "Organització principal i facilitació"
-                }
-              },
-              {
-                "name": "UPV — Escola Tècnica Superior d'Enginyeria Informàtica",
-                "role": {
-                  "es": "Co-organización",
-                  "en": "Co-organiser",
-                  "va": "Co-organització"
-                }
-              },
-              {
-                "name": "CEICE",
-                "role": {
-                  "es": "Coordinación AI-STEAM",
-                  "en": "AI-STEAM coordination",
-                  "va": "Coordinació AI-STEAM"
-                }
-              }
-            ]
-          }
-        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
         "access": {
           "pageVisibility": "public",
           "pageLicense": "CC BY-SA 4.0",
           "codeLicense": "",
-          "dataAvailability": "",
+          "dataAvailability": "available-in-repository",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -11989,24 +13603,398 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "UVEG — Facultat d'Informàtica",
+            "type": {
+              "es": "Universidad pública",
+              "en": "Public university",
+              "va": "Universitat pública"
+            },
+            "role": {
+              "es": "Organización principal y facilitación del taller",
+              "en": "Main organiser and workshop facilitator",
+              "va": "Organització principal i facilitació del taller"
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [],
+          "partners": [
+            {
+              "name": "UPV — Escola Tècnica Superior d'Enginyeria Informàtica",
+              "type": "",
+              "role": {
+                "es": "Co-organización",
+                "en": "Co-organiser",
+                "va": "Co-organització"
+              }
+            },
+            {
+              "name": "CEICE",
+              "type": "",
+              "role": {
+                "es": "Coordinación AI-STEAM",
+                "en": "AI-STEAM coordination",
+                "va": "Coordinació AI-STEAM"
+              }
+            }
+          ]
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Oferta de taller replicable sobre auditoría de sesgos algorítmicos para programas de Máster.",
+            "en": "Replicable workshop offer on algorithmic bias auditing for Master's programmes.",
+            "va": "Oferta de taller replicable sobre auditoria de biaixos algorítmics per a programes de Màster."
+          },
+          "objective": {
+            "es": "Capacitar al profesorado universitario en el uso de herramientas de auditoría de sesgos y en la integración de contenidos de equidad algorítmica en sus asignaturas.",
+            "en": "Train university faculty in the use of bias auditing tools and in the integration of algorithmic fairness content into their courses.",
+            "va": "Capacitar el professorat universitari en l'ús d'eines d'auditoria de biaixos i en la integració de continguts d'equitat algorítmica en les seues assignatures."
+          },
+          "context": {
+            "es": "La formación surgió de la necesidad detectada en el ecosistema de programas de Máster con contenidos de IA que carecían de perspectiva crítica sobre sesgos y equidad algorítmica.",
+            "en": "The training arose from a need detected in the ecosystem of AI-content Master programmes lacking a critical perspective on algorithmic bias and fairness.",
+            "va": "La formació va sorgir de la necessitat detectada en l'ecosistema de programes de Màster amb continguts d'IA que mancaven de perspectiva crítica sobre biaixos i equitat algorítmica."
+          },
+          "targetParticipants": {
+            "es": "14 docentes universitarios de UVEG y UPV de áreas de Informática e IA.",
+            "en": "14 university faculty from UVEG and UPV in Computer Science and AI areas.",
+            "va": "14 docents universitaris de UVEG i UPV d'àrees d'Informàtica i IA."
+          },
+          "methodology": {
+            "es": "Taller de 16h en dos módulos: auditoría práctica con datasets reales y diseño colaborativo de actividades de aula sobre equidad en IA.",
+            "en": "16-hour workshop in two modules: practical auditing with real datasets and collaborative design of classroom activities on AI fairness.",
+            "va": "Taller de 16h en dos mòduls: auditoria pràctica amb datasets reals i disseny col·laboratiu d'activitats d'aula sobre equitat en IA."
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "Al menos el 80% del profesorado integra contenidos de sesgos en sus asignaturas para 2026-27",
+                "en": "At least 80% of faculty integrate bias content into their courses for 2026-27",
+                "va": "Almenys el 80% del professorat integra continguts de biaixos en les seues assignatures per a 2026-27"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "Plantilla CC-BY-SA publicada en repositorio AI-STEAM y reutilizable",
+                "en": "CC-BY-SA template published in AI-STEAM repository and reusable",
+                "va": "Plantilla CC-BY-SA publicada en repositori AI-STEAM i reutilitzable"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": false,
+              "level": null,
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            },
+            "educationalReadiness": {
+              "enabled": true,
+              "level": "validated-in-real-context",
+              "label": {
+                "es": "Validado en contexto real",
+                "en": "Validated in real context",
+                "va": "Validat en context real"
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            },
+            {
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            },
+            {
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            }
+          ],
+          "tools": [
+            {
+              "label": {
+                "es": "Plantilla de auditoría CC-BY-SA",
+                "en": "CC-BY-SA audit template",
+                "va": "Plantilla d'auditoria CC-BY-SA"
+              }
+            },
+            {
+              "label": {
+                "es": "Datasets reales de auditoría de sesgos (CSV/Notebook)",
+                "en": "Real bias auditing datasets (CSV/Notebook)",
+                "va": "Datasets reals d'auditoria de biaixos (CSV/Notebook)"
+              }
+            }
+          ],
+          "dataManagement": {
+            "sensitiveDataIncluded": false,
+            "personalDataIncluded": false,
+            "note": {
+              "es": "Datasets de auditoría son datos anonimizados o públicos. No se tratan datos de participantes.",
+              "en": "Audit datasets are anonymised or public data. No participant data is processed.",
+              "va": "Datasets d'auditoria són dades anonimitzades o públiques. No es tracten dades de participants."
+            }
+          }
+        },
+        "evidence": {
+          "evidenceLevel": "measured",
+          "verificationStatus": "self-reported",
+          "collectionMethod": {
+            "es": "Revisión de programas de asignaturas 2026-27 + verificación de publicación de plantilla",
+            "en": "Review of 2026-27 course syllabi + template publication verification",
+            "va": "Revisió de programes d'assignatures 2026-27 + verificació de publicació de plantilla"
+          },
+          "primaryMetric": {
+            "id": "faculty-trained",
+            "value": "14",
+            "unit": {
+              "es": "docentes formados",
+              "en": "faculty trained",
+              "va": "docents formats"
+            },
+            "label": {
+              "es": "Docentes universitarios formados en auditoría de sesgos",
+              "en": "University faculty trained in bias auditing",
+              "va": "Docents universitaris formats en auditoria de biaixos"
+            }
+          },
+          "secondaryMetrics": [
+            {
+              "id": "sm1",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Asignaturas de Máster con unidad de sesgos incorporada en 2026-27",
+                "en": "Master's courses with integrated bias unit in 2026-27",
+                "va": "Assignatures de Màster amb unitat de biaixos incorporada en 2026-27"
+              }
+            },
+            {
+              "id": "sm2",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Plantilla CC-BY-SA publicada en repositorio AI-STEAM",
+                "en": "CC-BY-SA template published in AI-STEAM repository",
+                "va": "Plantilla CC-BY-SA publicada en repositori AI-STEAM"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "La integración efectiva en asignaturas para 2026-27 está en fase de seguimiento; datos finales disponibles en septiembre 2026.",
+            "en": "Effective integration into 2026-27 courses is under monitoring; final data available in September 2026.",
+            "va": "La integració efectiva en assignatures per a 2026-27 està en fase de seguiment; dades finals disponibles al setembre 2026."
+          }
+        },
+        "results": {
+          "headline": {
+            "es": "14 docentes formados. 6 asignaturas de Máster incorporan unidad de sesgos en IA en 2026-27. Plantilla CC-BY-SA publicada.",
+            "en": "14 teachers trained. 6 Master's courses incorporate AI bias unit in 2026-27. CC-BY-SA template published.",
+            "va": "14 docents formats. 6 assignatures de Màster incorporen unitat de biaixos en IA en 2026-27. Plantilla CC-BY-SA publicada."
+          },
+          "outputs": [
+            {
+              "id": "o1",
+              "label": {
+                "es": "Plantilla de auditoría de sesgos CC-BY-SA",
+                "en": "CC-BY-SA bias audit template",
+                "va": "Plantilla d'auditoria de biaixos CC-BY-SA"
+              }
+            },
+            {
+              "id": "o2",
+              "label": {
+                "es": "14 docentes con formación en equidad algorítmica",
+                "en": "14 faculty with algorithmic fairness training",
+                "va": "14 docents amb formació en equitat algorítmica"
+              }
+            },
+            {
+              "id": "o3",
+              "label": {
+                "es": "Datasets reales de auditoría disponibles para uso académico",
+                "en": "Real audit datasets available for academic use",
+                "va": "Datasets reals d'auditoria disponibles per a ús acadèmic"
+              }
+            }
+          ],
+          "decision": {
+            "outcome": "scale",
+            "label": {
+              "es": "Escalar — plantilla replicable en cualquier programa de Máster con contenidos de IA",
+              "en": "Scale — template replicable in any AI-content Master's programme",
+              "va": "Escalar — plantilla replicable en qualsevol programa de Màster amb continguts d'IA"
+            }
+          }
+        },
+        "transferability": {
+          "whyTransferable": {
+            "es": "La plantilla CC-BY-SA está publicada y el formato de taller de 16h es replicable en cualquier universidad con docentes de IA.",
+            "en": "The CC-BY-SA template is published and the 16h workshop format is replicable at any university with AI faculty.",
+            "va": "La plantilla CC-BY-SA està publicada i el format de taller de 16h és replicable en qualsevol universitat amb docents d'IA."
+          },
+          "suitableFor": [
+            "universities",
+            "teachers",
+            "master-programmes"
+          ],
+          "requirements": [
+            {
+              "label": {
+                "es": "Docentes con conocimientos básicos de modelos de IA y estadística",
+                "en": "Faculty with basic knowledge of AI models and statistics",
+                "va": "Docents amb coneixements bàsics de models d'IA i estadística"
+              }
+            },
+            {
+              "label": {
+                "es": "Acceso a datasets de auditoría (disponibles en el repositorio AI-STEAM)",
+                "en": "Access to audit datasets (available in AI-STEAM repository)",
+                "va": "Accés a datasets d'auditoria (disponibles en el repositori AI-STEAM)"
+              }
+            }
+          ],
+          "replicationSteps": [
+            {
+              "label": {
+                "es": "Descargar la plantilla CC-BY-SA del repositorio AI-STEAM",
+                "en": "Download the CC-BY-SA template from AI-STEAM repository",
+                "va": "Descarregar la plantilla CC-BY-SA del repositori AI-STEAM"
+              }
+            },
+            {
+              "label": {
+                "es": "Adaptar los datasets de auditoría al contexto disciplinar del programa",
+                "en": "Adapt the audit datasets to the programme disciplinary context",
+                "va": "Adaptar els datasets d'auditoria al context disciplinar del programa"
+              }
+            },
+            {
+              "label": {
+                "es": "Ejecutar el taller en dos módulos (auditoría práctica + diseño de actividades)",
+                "en": "Run the workshop in two modules (practical auditing + activity design)",
+                "va": "Executar el taller en dos mòduls (auditoria pràctica + disseny d'activitats)"
+              }
+            }
+          ],
+          "risks": [
+            {
+              "label": {
+                "es": "La integración curricular depende de la voluntad del equipo docente de cada asignatura",
+                "en": "Curricular integration depends on the willingness of the teaching team of each course",
+                "va": "La integració curricular depèn de la voluntat de l'equip docent de cada assignatura"
+              }
+            }
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": true,
+          "primaryAction": {
+            "label": {
+              "es": "Acceder a materiales",
+              "en": "Access materials",
+              "va": "Accedir als materials"
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [
+            "o4"
+          ],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se entrena",
+              "en": "What is being trained",
+              "va": "Què s'entrena"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": false,
+              "resources": false,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
         "template": {
           "requiredBlocks": [
-            "context",
-            "participation",
-            "resources",
+            "pilotPlan",
+            "implementation",
             "evidence",
-            "process",
-            "outputs"
+            "results",
+            "transferability"
           ],
           "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
             "people",
             "access",
-            "trackA",
-            "objective",
-            "methodology",
-            "outcome"
+            "externalFlow",
+            "relations"
           ],
-          "cardSignal": "process"
+          "cardSignal": "pilotPlan"
         }
       },
       {
@@ -12018,7 +14006,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-fp-cobots-mecatronica.yml",
         "core": {
           "status": "resolved",
-          "maturity": "completed",
+          "maturity": "idea",
           "title": {
             "es": "Piloto FP — Cobots y robótica colaborativa en ciclos de mecatrónica",
             "en": "VET Pilot — Cobots and collaborative robotics in mechatronics cycles",
@@ -12030,11 +14018,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Integració de cobots industrials en la pràctica de taller de FP de Mecatrònica en col·laboració amb Ford España i tres centres educatius."
           },
           "entity": {
-            "name": "Ford España — Centro Tecnológico de Valencia",
+            "name": "",
             "type": {
-              "es": "Empresa industrial",
-              "en": "Industrial company",
-              "va": "Empresa industrial"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "sector": "mfg",
@@ -12042,7 +14030,7 @@ export const MARKETPLACE_CONFIG = {
           "levels": [
             "FP"
           ],
-          "pilotType": "fp",
+          "pilotType": "vet-industry",
           "helix": [
             "academia",
             "industry"
@@ -12097,15 +14085,15 @@ export const MARKETPLACE_CONFIG = {
             "learning-ecosystems"
           ],
           "engagementLevel": "hosting",
-          "evidenceMaturity": "completed",
-          "lbdStage": "output",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
           "trackBValue": {
-            "es": "Módulo dual empresa-centro validado y replicable en 4 centros adicionales de la red.",
-            "en": "Validated dual company-centre module replicable in 4 additional network centres.",
-            "va": "Mòdul dual empresa-centre validat i replicable en 4 centres addicionals de la xarxa."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
-          "pilotStatus": "completed"
+          "pilotStatus": ""
         },
         "transfer": {
           "type": "",
@@ -12119,203 +14107,16 @@ export const MARKETPLACE_CONFIG = {
             "vet-centres",
             "teachers",
             "technical-teams"
-          ],
-          "primaryCta": {
-            "es": "Replicar módulo dual",
-            "en": "Replicate dual module",
-            "va": "Replicar mòdul dual"
-          },
-          "featuredSignal": {
-            "es": "32 estudiantes certificados. Acuerdo de continuidad firmado para 2026-27.",
-            "en": "32 students certified. Continuity agreement signed for 2026-27.",
-            "va": "32 estudiants certificats. Acord de continuïtat signat per a 2026-27."
-          }
+          ]
         },
-        "card": {
-          "collaborationDirection": {
-            "es": "Oferta de rotaciones en planta industrial con certificación en operación de cobots.",
-            "en": "Offer of industrial plant rotations with cobot operation certification.",
-            "va": "Oferta de rotacions en planta industrial amb certificació en operació de cobots."
-          },
-          "trl": {
-            "level": 7,
-            "label": {
-              "es": "Demostración en entorno operacional",
-              "en": "Demonstration in operational environment",
-              "va": "Demostració en entorn operacional"
-            }
-          },
-          "infrastructure": [
-            "Planta Ford Valencia",
-            "Cobots industriales (UR10)",
-            "Taller FP Mecatrónica"
-          ],
-          "executionWindow": {
-            "start": "2025-09-01",
-            "end": "2026-01-31",
-            "label": {
-              "es": "Sep 2025 – Ene 2026",
-              "en": "Sep 2025 – Jan 2026",
-              "va": "Set 2025 – Gen 2026"
-            }
-          },
-          "validationStatus": {
-            "es": "Completado — módulo validado y replicable",
-            "en": "Completed — validated and replicable module",
-            "va": "Completat — mòdul validat i replicable"
-          }
-        },
-        "visibility": {
-          "objective": true,
-          "methodology": true,
-          "outcome": true,
-          "context": true,
-          "participation": true,
-          "resources": true,
-          "evidence": true,
-          "process": true,
-          "outputs": true,
-          "people": true,
-          "access": true,
-          "trackA": false
-        },
-        "detail": {
-          "objective": {
-            "es": "Validar la integración curricular de cobots industriales en el ciclo de Mecatrónica con rotaciones reales en planta Ford.",
-            "en": "Validate the curricular integration of industrial cobots in the Mechatronics cycle with real rotations at Ford plant.",
-            "va": "Validar la integració curricular de cobots industrials en el cicle de Mecatrònica amb rotacions reals a la planta Ford."
-          },
-          "methodology": {
-            "es": "Rotaciones de 6 semanas en planta con supervisión técnica de Ford. Evaluación de competencias mediante rúbricas AI-SECRETT adaptadas al perfil industrial.",
-            "en": "6-week plant rotations with Ford technical supervision. Competency assessment using AI-SECRETT rubrics adapted to the industrial profile.",
-            "va": "Rotacions de 6 setmanes en planta amb supervisió tècnica de Ford. Avaluació de competències mitjançant rúbriques AI-SECRETT adaptades al perfil industrial."
-          },
-          "outcome": {
-            "es": "32 estudiantes certificados en operación de cobots. Módulo dual validado y replicable en 4 centros adicionales. Acuerdo de continuidad firmado para 2026-27.",
-            "en": "32 students certified in cobot operation. Dual module validated and replicable in 4 additional centres. Continuity agreement signed for 2026-27.",
-            "va": "32 estudiants certificats en operació de cobots. Mòdul dual validat i replicable en 4 centres addicionals. Acord de continuïtat signat per a 2026-27."
-          },
-          "context": {
-            "es": "El piloto surgió de la necesidad de Ford de disponer de egresados de FP con competencias reales en robótica colaborativa, conectando el taller escolar con la planta industrial.",
-            "en": "The pilot arose from Ford's need for VET graduates with real collaborative robotics skills, connecting the school workshop with the industrial plant.",
-            "va": "El pilot va sorgir de la necessitat de Ford de disposar d'egresats de FP amb competències reals en robòtica col·laborativa, connectant el taller escolar amb la planta industrial."
-          },
-          "participation": {
-            "participants": {
-              "es": "32 alumnos de FP de Mecatrónica en tres centros educativos valencianos.",
-              "en": "32 Mechatronics VET students in three Valencian educational centres.",
-              "va": "32 alumnes de FP de Mecatrònica en tres centres educatius valencians."
-            }
-          },
-          "resources": {
-            "used": [
-              {
-                "label": {
-                  "es": "Rúbricas de evaluación AI-SECRETT (perfil industrial)",
-                  "en": "AI-SECRETT assessment rubrics (industrial profile)",
-                  "va": "Rúbriques d'avaluació AI-SECRETT (perfil industrial)"
-                },
-                "format": "PDF",
-                "license": "CC BY 4.0"
-              }
-            ]
-          },
-          "evidence": {
-            "metrics": [
-              {
-                "label": {
-                  "es": "Certificación en operación de cobots",
-                  "en": "Cobot operation certification",
-                  "va": "Certificació en operació de cobots"
-                },
-                "method": {
-                  "es": "Evaluación técnica en planta",
-                  "en": "Technical on-plant assessment",
-                  "va": "Avaluació tècnica en planta"
-                }
-              }
-            ]
-          },
-          "process": {
-            "milestones": [
-              {
-                "date": "2025-09-01",
-                "label": {
-                  "es": "Inicio de rotaciones en planta",
-                  "en": "Plant rotations start",
-                  "va": "Inici de rotacions en planta"
-                }
-              },
-              {
-                "date": "2026-01-31",
-                "label": {
-                  "es": "Certificación final y cierre",
-                  "en": "Final certification and closure",
-                  "va": "Certificació final i tancament"
-                }
-              }
-            ]
-          },
-          "outputs": {
-            "expected": [
-              {
-                "label": {
-                  "es": "Módulo dual empresa-centro replicable",
-                  "en": "Replicable dual company-centre module",
-                  "va": "Mòdul dual empresa-centre replicable"
-                }
-              },
-              {
-                "label": {
-                  "es": "32 certificados en operación de cobots",
-                  "en": "32 cobot operation certificates",
-                  "va": "32 certificats en operació de cobots"
-                }
-              }
-            ]
-          },
-          "people": {
-            "organisations": [
-              {
-                "name": "Ford España — Centro Tecnológico de Valencia",
-                "role": {
-                  "es": "Empresa socia y facilitadora de planta",
-                  "en": "Partner company and plant facilitator",
-                  "va": "Empresa sòcia i facilitadora de planta"
-                }
-              },
-              {
-                "name": "IES La Sénia",
-                "role": {
-                  "es": "Centro piloto",
-                  "en": "Pilot centre",
-                  "va": "Centre pilot"
-                }
-              },
-              {
-                "name": "IES Politècnic de Gandia",
-                "role": {
-                  "es": "Centro piloto",
-                  "en": "Pilot centre",
-                  "va": "Centre pilot"
-                }
-              },
-              {
-                "name": "CEICE",
-                "role": {
-                  "es": "Coordinación curricular",
-                  "en": "Curricular coordination",
-                  "va": "Coordinació curricular"
-                }
-              }
-            ]
-          }
-        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
         "access": {
           "pageVisibility": "network",
           "pageLicense": "CC BY 4.0",
           "codeLicense": "",
-          "dataAvailability": "",
+          "dataAvailability": "available-on-request",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -12350,24 +14151,389 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "Ford España — Centro Tecnológico de Valencia",
+            "type": {
+              "es": "Empresa industrial",
+              "en": "Industrial company",
+              "va": "Empresa industrial"
+            },
+            "role": {
+              "es": "Empresa socia y facilitadora de planta",
+              "en": "Partner company and plant facilitator",
+              "va": "Empresa sòcia i facilitadora de planta"
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [
+            {
+              "name": "IES La Sénia",
+              "type": "",
+              "role": {
+                "es": "Centro piloto",
+                "en": "Pilot centre",
+                "va": "Centre pilot"
+              }
+            },
+            {
+              "name": "IES Politècnic de Gandia",
+              "type": "",
+              "role": {
+                "es": "Centro piloto",
+                "en": "Pilot centre",
+                "va": "Centre pilot"
+              }
+            }
+          ],
+          "partners": [
+            {
+              "name": "CEICE",
+              "type": "",
+              "role": {
+                "es": "Coordinación curricular",
+                "en": "Curricular coordination",
+                "va": "Coordinació curricular"
+              }
+            }
+          ]
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Oferta de rotaciones en planta industrial con certificación en operación de cobots.",
+            "en": "Offer of industrial plant rotations with cobot operation certification.",
+            "va": "Oferta de rotacions en planta industrial amb certificació en operació de cobots."
+          },
+          "objective": {
+            "es": "Validar la integración curricular de cobots industriales en el ciclo de Mecatrónica con rotaciones reales en planta Ford.",
+            "en": "Validate the curricular integration of industrial cobots in the Mechatronics cycle with real rotations at Ford plant.",
+            "va": "Validar la integració curricular de cobots industrials en el cicle de Mecatrònica amb rotacions reals a la planta Ford."
+          },
+          "context": {
+            "es": "El piloto surgió de la necesidad de Ford de disponer de egresados de FP con competencias reales en robótica colaborativa, conectando el taller escolar con la planta industrial.",
+            "en": "The pilot arose from Ford's need for VET graduates with real collaborative robotics skills, connecting the school workshop with the industrial plant.",
+            "va": "El pilot va sorgir de la necessitat de Ford de disposar d'egresats de FP amb competències reals en robòtica col·laborativa, connectant el taller escolar amb la planta industrial."
+          },
+          "targetParticipants": {
+            "es": "32 alumnos de FP de Mecatrónica en tres centros educativos valencianos.",
+            "en": "32 Mechatronics VET students in three Valencian educational centres.",
+            "va": "32 alumnes de FP de Mecatrònica en tres centres educatius valencians."
+          },
+          "methodology": {
+            "es": "Rotaciones de 6 semanas en planta con supervisión técnica de Ford. Evaluación de competencias mediante rúbricas AI-SECRETT adaptadas al perfil industrial.",
+            "en": "6-week plant rotations with Ford technical supervision. Competency assessment using AI-SECRETT rubrics adapted to the industrial profile.",
+            "va": "Rotacions de 6 setmanes en planta amb supervisió tècnica de Ford. Avaluació de competències mitjançant rúbriques AI-SECRETT adaptades al perfil industrial."
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "Al menos el 80% de los participantes obtiene certificación en operación de cobots",
+                "en": "At least 80% of participants obtain cobot operation certification",
+                "va": "Almenys el 80% dels participants obtenen certificació en operació de cobots"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "Módulo dual documentado y replicable en al menos 4 centros adicionales",
+                "en": "Dual module documented and replicable in at least 4 additional centres",
+                "va": "Mòdul dual documentat i replicable en almenys 4 centres addicionals"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 7,
+              "label": {
+                "es": "Demostración en entorno operacional",
+                "en": "Demonstration in operational environment",
+                "va": "Demostració en entorn operacional"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": false,
+              "level": null,
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            },
+            {
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            },
+            {
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            }
+          ],
+          "tools": [
+            {
+              "label": {
+                "es": "Rúbricas AI-SECRETT (perfil industrial)",
+                "en": "AI-SECRETT rubrics (industrial profile)",
+                "va": "Rúbriques AI-SECRETT (perfil industrial)"
+              }
+            }
+          ],
+          "dataManagement": {
+            "sensitiveDataIncluded": false,
+            "personalDataIncluded": true,
+            "note": {
+              "es": "Datos académicos de participantes anonimizados en el informe.",
+              "en": "Participant academic data anonymised in the report.",
+              "va": "Dades acadèmiques dels participants anonimitzades en l'informe."
+            }
+          }
+        },
+        "evidence": {
+          "evidenceLevel": "measured",
+          "verificationStatus": "self-reported",
+          "collectionMethod": {
+            "es": "Evaluación técnica en planta + rúbricas AI-SECRETT",
+            "en": "Technical on-plant assessment + AI-SECRETT rubrics",
+            "va": "Avaluació tècnica en planta + rúbriques AI-SECRETT"
+          },
+          "primaryMetric": {
+            "id": "students-certified",
+            "value": "32",
+            "unit": {
+              "es": "estudiantes certificados",
+              "en": "students certified",
+              "va": "estudiants certificats"
+            },
+            "label": {
+              "es": "Estudiantes certificados en operación de cobots",
+              "en": "Students certified in cobot operation",
+              "va": "Estudiants certificats en operació de cobots"
+            }
+          },
+          "secondaryMetrics": [
+            {
+              "id": "sm1",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Acuerdo de continuidad firmado para 2026-27",
+                "en": "Continuity agreement signed for 2026-27",
+                "va": "Acord de continuïtat signat per a 2026-27"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "Muestra limitada a tres centros; replicabilidad pendiente de confirmar en centros de otras provincias.",
+            "en": "Sample limited to three centres; replicability to be confirmed in centres in other provinces.",
+            "va": "Mostra limitada a tres centres; replicabilitat pendent de confirmar en centres d'altres províncies."
+          }
+        },
+        "results": {
+          "headline": {
+            "es": "32 estudiantes certificados en cobots. Módulo dual validado y replicable en 4 centros. Acuerdo de continuidad firmado para 2026-27.",
+            "en": "32 students certified in cobots. Dual module validated and replicable in 4 centres. Continuity agreement signed for 2026-27.",
+            "va": "32 estudiants certificats en cobots. Mòdul dual validat i replicable en 4 centres. Acord de continuïtat signat per a 2026-27."
+          },
+          "outputs": [
+            {
+              "id": "o1",
+              "label": {
+                "es": "Módulo dual empresa-centro replicable (CC BY 4.0)",
+                "en": "Replicable dual company-centre module (CC BY 4.0)",
+                "va": "Mòdul dual empresa-centre replicable (CC BY 4.0)"
+              }
+            },
+            {
+              "id": "o2",
+              "label": {
+                "es": "32 certificados en operación de cobots",
+                "en": "32 cobot operation certificates",
+                "va": "32 certificats en operació de cobots"
+              }
+            },
+            {
+              "id": "o3",
+              "label": {
+                "es": "Rúbricas AI-SECRETT adaptadas al perfil industrial",
+                "en": "AI-SECRETT rubrics adapted to the industrial profile",
+                "va": "Rúbriques AI-SECRETT adaptades al perfil industrial"
+              }
+            }
+          ],
+          "decision": {
+            "outcome": "scale",
+            "label": {
+              "es": "Escalar — módulo preparado para replicación en nuevos centros",
+              "en": "Scale — module ready for replication in new centres",
+              "va": "Escalar — mòdul preparat per a replicació en nous centres"
+            }
+          }
+        },
+        "transferability": {
+          "whyTransferable": {
+            "es": "El módulo dual está completamente documentado y probado en tres entornos diferentes. La metodología de rúbricas AI-SECRETT es independiente del fabricante de cobot.",
+            "en": "The dual module is fully documented and tested in three different environments. The AI-SECRETT rubric methodology is manufacturer-independent.",
+            "va": "El mòdul dual està completament documentat i provat en tres entorns diferents. La metodologia de rúbriques AI-SECRETT és independent del fabricant de cobot."
+          },
+          "suitableFor": [
+            "vet-centres",
+            "companies",
+            "technical-teams"
+          ],
+          "requirements": [
+            {
+              "label": {
+                "es": "Acceso a cobots industriales o simuladores equivalentes",
+                "en": "Access to industrial cobots or equivalent simulators",
+                "va": "Accés a cobots industrials o simuladors equivalents"
+              }
+            },
+            {
+              "label": {
+                "es": "Empresa industrial socia con espacio de planta disponible",
+                "en": "Industrial partner company with available plant space",
+                "va": "Empresa industrial sòcia amb espai de planta disponible"
+              }
+            }
+          ],
+          "replicationSteps": [
+            {
+              "label": {
+                "es": "Identificar empresa industrial socia y formalizar acuerdo de colaboración",
+                "en": "Identify industrial partner company and formalise collaboration agreement",
+                "va": "Identificar empresa industrial sòcia i formalitzar acord de col·laboració"
+              }
+            },
+            {
+              "label": {
+                "es": "Adaptar rúbricas AI-SECRETT al perfil técnico del cobot disponible",
+                "en": "Adapt AI-SECRETT rubrics to the technical profile of the available cobot",
+                "va": "Adaptar rúbriques AI-SECRETT al perfil tècnic del cobot disponible"
+              }
+            },
+            {
+              "label": {
+                "es": "Ejecutar rotaciones de 6 semanas con supervisión técnica conjunta",
+                "en": "Execute 6-week rotations with joint technical supervision",
+                "va": "Executar rotacions de 6 setmanes amb supervisió tècnica conjunta"
+              }
+            }
+          ],
+          "risks": [
+            {
+              "label": {
+                "es": "Dependencia de la disponibilidad de planta industrial en periodos lectivos",
+                "en": "Dependence on industrial plant availability during school periods",
+                "va": "Dependència de la disponibilitat de planta industrial en períodes lectius"
+              }
+            }
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": true,
+          "primaryAction": {
+            "label": {
+              "es": "Replicar módulo dual",
+              "en": "Replicate dual module",
+              "va": "Replicar mòdul dual"
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": false,
+              "resources": false,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
         "template": {
           "requiredBlocks": [
-            "context",
-            "participation",
-            "resources",
+            "pilotPlan",
+            "implementation",
             "evidence",
-            "process",
-            "outputs"
+            "results",
+            "transferability"
           ],
           "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
             "people",
             "access",
-            "trackA",
-            "objective",
-            "methodology",
-            "outcome"
+            "externalFlow",
+            "relations"
           ],
-          "cardSignal": "process"
+          "cardSignal": "pilotPlan"
         }
       },
       {
@@ -12379,7 +14545,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-master-bridge-gemelos-digitales.yml",
         "core": {
           "status": "in-progress",
-          "maturity": "inPilot",
+          "maturity": "idea",
           "title": {
             "es": "Piloto Máster — Puente FP-Máster en IA aplicada a gemelos digitales",
             "en": "Master Bridge Pilot — VET-to-Master bridge in AI applied to digital twins",
@@ -12391,11 +14557,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Itinerari de transició entre FP Superior i Màster universitari centrat en bessons digitals i simulació industrial amb IA."
           },
           "entity": {
-            "name": "INESC TEC",
+            "name": "",
             "type": {
-              "es": "Centro de investigación tecnológica",
-              "en": "Technology research centre",
-              "va": "Centre de recerca tecnològica"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "sector": "mfg",
@@ -12456,15 +14622,15 @@ export const MARKETPLACE_CONFIG = {
             "integrated-pedagogy"
           ],
           "engagementLevel": "challenge-contribution",
-          "evidenceMaturity": "inPilot",
-          "lbdStage": "processing",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
           "trackBValue": {
-            "es": "Crea un itinerario de reconocimiento de créditos entre FP Superior y Máster en IA Industrial, ampliando el acceso al nivel universitario.",
-            "en": "Creates a credit recognition itinerary between Higher VET and Master's in Industrial AI, widening access to university level.",
-            "va": "Crea un itinerari de reconeixement de crèdits entre FP Superior i Màster en IA Industrial, ampliant l'accés al nivell universitari."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
-          "pilotStatus": "in-progress"
+          "pilotStatus": ""
         },
         "transfer": {
           "type": "",
@@ -12478,208 +14644,16 @@ export const MARKETPLACE_CONFIG = {
             "universities",
             "students",
             "companies"
-          ],
-          "primaryCta": {
-            "es": "Conocer el itinerario",
-            "en": "Learn about the itinerary",
-            "va": "Conéixer l'itinerari"
-          },
-          "featuredSignal": {
-            "es": "12 estudiantes en itinerario activo. Marco de créditos en revisión por UPV.",
-            "en": "12 students on active itinerary. Credit framework under UPV review.",
-            "va": "12 estudiants en itinerari actiu. Marc de crèdits en revisió per UPV."
-          }
+          ]
         },
-        "card": {
-          "collaborationDirection": {
-            "es": "Demanda de centros FP y oferta de marco de reconocimiento universitario para itinerario puente.",
-            "en": "Demand from VET centres and offer of university recognition framework for bridge itinerary.",
-            "va": "Demanda de centres FP i oferta de marc de reconeixement universitari per a itinerari pont."
-          },
-          "trl": {
-            "level": 5,
-            "label": {
-              "es": "Validación en entorno relevante",
-              "en": "Validation in relevant environment",
-              "va": "Validació en entorn rellevant"
-            }
-          },
-          "infrastructure": [
-            "Plataforma LMS UPV",
-            "Laboratorio de gemelos digitales INESC TEC",
-            "Entorno Aules FP"
-          ],
-          "executionWindow": {
-            "start": "2026-02-01",
-            "end": "2026-09-30",
-            "label": {
-              "es": "Feb – Sep 2026",
-              "en": "Feb – Sep 2026",
-              "va": "Feb – Set 2026"
-            }
-          },
-          "validationStatus": {
-            "es": "Itinerario en curso — marco de créditos en revisión",
-            "en": "Itinerary in progress — credit framework under review",
-            "va": "Itinerari en curs — marc de crèdits en revisió"
-          }
-        },
-        "visibility": {
-          "objective": true,
-          "methodology": true,
-          "outcome": true,
-          "context": true,
-          "participation": true,
-          "resources": true,
-          "evidence": true,
-          "process": true,
-          "outputs": true,
-          "people": true,
-          "access": true,
-          "trackA": true
-        },
-        "detail": {
-          "objective": {
-            "es": "Diseñar y validar un itinerario de reconocimiento de créditos que permita a titulados de FP Superior acceder al Máster en IA Industrial.",
-            "en": "Design and validate a credit recognition itinerary enabling Higher VET graduates to access the Master in Industrial AI.",
-            "va": "Dissenyar i validar un itinerari de reconeixement de crèdits que permeta a titulats de FP Superior accedir al Màster en IA Industrial."
-          },
-          "methodology": {
-            "es": "Mapeo de competencias entre FP y Máster, semestre puente con módulos de nivelación y tutoría personalizada por perfil de entrada.",
-            "en": "Competency mapping between VET and Master's, bridge semester with levelling modules and personalised tutoring by entry profile.",
-            "va": "Mapatge de competències entre FP i Màster, semestre pont amb mòduls de nivelació i tutoria personalitzada per perfil d'entrada."
-          },
-          "outcome": {
-            "es": "12 estudiantes en itinerario puente activo. Marco de reconocimiento de créditos en revisión por UPV. Publicación de guía prevista para septiembre 2026.",
-            "en": "12 students on active bridge itinerary. Credit recognition framework under UPV review. Guide publication planned for September 2026.",
-            "va": "12 estudiants en itinerari pont actiu. Marc de reconeixement de crèdits en revisió per UPV. Publicació de guia prevista per al setembre 2026."
-          },
-          "context": {
-            "es": "El piloto nace de la brecha entre egresados de FP Superior con conocimientos técnicos avanzados y la falta de pasarelas formales hacia estudios de máster en IA.",
-            "en": "The pilot addresses the gap between Higher VET graduates with advanced technical knowledge and the lack of formal bridges to Master's studies in AI.",
-            "va": "El pilot naix de la bretxa entre egresats de FP Superior amb coneixements tècnics avançats i la manca de passarel·les formals cap a estudis de màster en IA."
-          },
-          "participation": {
-            "participants": {
-              "es": "12 titulados de FP Superior de Mecatrónica e Informática en itinerario puente UPV.",
-              "en": "12 Higher VET graduates in Mechatronics and Computing on UPV bridge itinerary.",
-              "va": "12 titulats de FP Superior de Mecatrònica i Informàtica en itinerari pont UPV."
-            }
-          },
-          "resources": {
-            "used": [
-              {
-                "label": {
-                  "es": "Marco de competencias FP-Máster AI-STEAM",
-                  "en": "AI-STEAM VET-Master competency framework",
-                  "va": "Marc de competències FP-Màster AI-STEAM"
-                },
-                "format": "PDF",
-                "license": "CC BY 4.0"
-              }
-            ]
-          },
-          "evidence": {
-            "metrics": [
-              {
-                "label": {
-                  "es": "Créditos reconocidos por UPV",
-                  "en": "Credits recognised by UPV",
-                  "va": "Crèdits reconeguts per UPV"
-                },
-                "method": {
-                  "es": "Revisión de expedientes académicos",
-                  "en": "Academic record review",
-                  "va": "Revisió d'expedients acadèmics"
-                }
-              }
-            ]
-          },
-          "process": {
-            "milestones": [
-              {
-                "date": "2026-02-01",
-                "label": {
-                  "es": "Inicio del itinerario puente",
-                  "en": "Bridge itinerary start",
-                  "va": "Inici de l'itinerari pont"
-                }
-              },
-              {
-                "date": "2026-06-30",
-                "label": {
-                  "es": "Revisión del marco de créditos por UPV",
-                  "en": "UPV credit framework review",
-                  "va": "Revisió del marc de crèdits per UPV"
-                }
-              },
-              {
-                "date": "2026-09-30",
-                "label": {
-                  "es": "Publicación de la guía de itinerario",
-                  "en": "Itinerary guide publication",
-                  "va": "Publicació de la guia d'itinerari"
-                }
-              }
-            ]
-          },
-          "outputs": {
-            "expected": [
-              {
-                "label": {
-                  "es": "Guía de itinerario puente FP-Máster (CC BY)",
-                  "en": "VET-Master bridge itinerary guide (CC BY)",
-                  "va": "Guia d'itinerari pont FP-Màster (CC BY)"
-                }
-              },
-              {
-                "label": {
-                  "es": "Marco de reconocimiento de créditos validado por UPV",
-                  "en": "UPV-validated credit recognition framework",
-                  "va": "Marc de reconeixement de crèdits validat per UPV"
-                }
-              }
-            ]
-          },
-          "people": {
-            "organisations": [
-              {
-                "name": "INESC TEC",
-                "role": {
-                  "es": "Coordinación y diseño del itinerario",
-                  "en": "Itinerary coordination and design",
-                  "va": "Coordinació i disseny de l'itinerari"
-                }
-              },
-              {
-                "name": "Universitat Politècnica de València (UPV)",
-                "role": {
-                  "es": "Máster de acogida y validación de créditos",
-                  "en": "Hosting Master and credit validation",
-                  "va": "Màster d'acollida i validació de crèdits"
-                }
-              },
-              {
-                "name": "IES Número 1 de Burjassot",
-                "role": {
-                  "es": "Centro FP origen",
-                  "en": "Origin VET centre",
-                  "va": "Centre FP origen"
-                }
-              }
-            ]
-          },
-          "trackA": {
-            "es": "Itinerario puente directamente vinculado con la oferta de Máster Track A (UPV).",
-            "en": "Bridge itinerary directly linked to the Track A Master's offer (UPV).",
-            "va": "Itinerari pont directament vinculat amb l'oferta de Màster Track A (UPV)."
-          }
-        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
         "access": {
           "pageVisibility": "network",
           "pageLicense": "CC BY 4.0",
           "codeLicense": "",
-          "dataAvailability": "",
+          "dataAvailability": "available-on-request",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -12697,41 +14671,382 @@ export const MARKETPLACE_CONFIG = {
           "privacyLevel": "network"
         },
         "trackA": {
-          "enabled": true,
+          "enabled": false,
           "label": {
-            "es": "Conectado con oferta de Máster Track A en UPV.",
-            "en": "Connected to Track A Master's offer at UPV.",
-            "va": "Connectat amb oferta de Màster Track A a UPV."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": ""
         },
         "trackALink": {
-          "enabled": true,
+          "enabled": false,
           "label": {
-            "es": "Conectado con oferta de Máster Track A en UPV.",
-            "en": "Connected to Track A Master's offer at UPV.",
-            "va": "Connectat amb oferta de Màster Track A a UPV."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": ""
         },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "INESC TEC",
+            "type": {
+              "es": "Centro de investigación tecnológica",
+              "en": "Technology research centre",
+              "va": "Centre de recerca tecnològica"
+            },
+            "role": {
+              "es": "Coordinación y diseño del itinerario",
+              "en": "Itinerary coordination and design",
+              "va": "Coordinació i disseny de l'itinerari"
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [],
+          "partners": [
+            {
+              "name": "Universitat Politècnica de València (UPV)",
+              "type": "",
+              "role": {
+                "es": "Máster de acogida y validación de créditos",
+                "en": "Hosting Master's and credit validation",
+                "va": "Màster d'acollida i validació de crèdits"
+              }
+            },
+            {
+              "name": "IES Número 1 de Burjassot",
+              "type": "",
+              "role": {
+                "es": "Centro FP origen",
+                "en": "Origin VET centre",
+                "va": "Centre FP origen"
+              }
+            }
+          ]
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Demanda de centros FP y oferta de marco de reconocimiento universitario para itinerario puente.",
+            "en": "Demand from VET centres and offer of university recognition framework for bridge itinerary.",
+            "va": "Demanda de centres FP i oferta de marc de reconeixement universitari per a itinerari pont."
+          },
+          "objective": {
+            "es": "Diseñar y validar un itinerario de reconocimiento de créditos que permita a titulados de FP Superior acceder al Máster en IA Industrial.",
+            "en": "Design and validate a credit recognition itinerary enabling Higher VET graduates to access the Master in Industrial AI.",
+            "va": "Dissenyar i validar un itinerari de reconeixement de crèdits que permeta a titulats de FP Superior accedir al Màster en IA Industrial."
+          },
+          "context": {
+            "es": "El piloto nace de la brecha entre egresados de FP Superior con conocimientos técnicos avanzados y la falta de pasarelas formales hacia estudios de máster en IA.",
+            "en": "The pilot addresses the gap between Higher VET graduates with advanced technical knowledge and the lack of formal bridges to Master's studies in AI.",
+            "va": "El pilot naix de la bretxa entre egresats de FP Superior amb coneixements tècnics avançats i la manca de passarel·les formals cap a estudis de màster en IA."
+          },
+          "targetParticipants": {
+            "es": "12 titulados de FP Superior de Mecatrónica e Informática en itinerario puente UPV.",
+            "en": "12 Higher VET graduates in Mechatronics and Computing on UPV bridge itinerary.",
+            "va": "12 titulats de FP Superior de Mecatrònica i Informàtica en itinerari pont UPV."
+          },
+          "methodology": {
+            "es": "Mapeo de competencias entre FP y Máster, semestre puente con módulos de nivelación y tutoría personalizada por perfil de entrada.",
+            "en": "Competency mapping between VET and Master's, bridge semester with levelling modules and personalised tutoring by entry profile.",
+            "va": "Mapatge de competències entre FP i Màster, semestre pont amb mòduls de nivelació i tutoria personalitzada per perfil d'entrada."
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "Al menos el 75% de los participantes obtiene el reconocimiento de créditos por UPV",
+                "en": "At least 75% of participants obtain credit recognition from UPV",
+                "va": "Almenys el 75% dels participants obtenen el reconeixement de crèdits per UPV"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "Guía de itinerario publicada bajo CC BY antes de septiembre 2026",
+                "en": "Itinerary guide published under CC BY before September 2026",
+                "va": "Guia d'itinerari publicada sota CC BY abans del setembre de 2026"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 5,
+              "label": {
+                "es": "Validación en entorno relevante",
+                "en": "Validation in relevant environment",
+                "va": "Validació en entorn rellevant"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": true,
+              "level": "designed",
+              "label": {
+                "es": "Diseñado",
+                "en": "Designed",
+                "va": "Dissenyat"
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            },
+            {
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            },
+            {
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            }
+          ],
+          "tools": [
+            {
+              "label": {
+                "es": "Marco de competencias FP-Máster AI-STEAM",
+                "en": "AI-STEAM VET-Master competency framework",
+                "va": "Marc de competències FP-Màster AI-STEAM"
+              }
+            }
+          ],
+          "dataManagement": {
+            "sensitiveDataIncluded": false,
+            "personalDataIncluded": true,
+            "note": {
+              "es": "Expedientes académicos de participantes tratados conforme a RGPD.",
+              "en": "Participant academic records processed in accordance with GDPR.",
+              "va": "Expedients acadèmics dels participants tractats d'acord amb el RGPD."
+            }
+          }
+        },
+        "evidence": {
+          "evidenceLevel": "observed",
+          "verificationStatus": "self-reported",
+          "collectionMethod": {
+            "es": "Revisión de expedientes académicos y seguimiento de itinerario",
+            "en": "Academic record review and itinerary tracking",
+            "va": "Revisió d'expedients acadèmics i seguiment d'itinerari"
+          },
+          "primaryMetric": {
+            "id": "students-on-itinerary",
+            "value": "12",
+            "unit": {
+              "es": "estudiantes en itinerario activo",
+              "en": "students on active itinerary",
+              "va": "estudiants en itinerari actiu"
+            },
+            "label": {
+              "es": "Estudiantes en itinerario puente activo",
+              "en": "Students on active bridge itinerary",
+              "va": "Estudiants en itinerari pont actiu"
+            }
+          },
+          "secondaryMetrics": [
+            {
+              "id": "sm1",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Marco de reconocimiento de créditos en revisión por UPV",
+                "en": "Credit recognition framework under UPV review",
+                "va": "Marc de reconeixement de crèdits en revisió per UPV"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "Piloto en curso; datos de reconocimiento de créditos pendientes de resolución institucional por UPV.",
+            "en": "Pilot in progress; credit recognition data pending institutional resolution by UPV.",
+            "va": "Pilot en curs; dades de reconeixement de crèdits pendents de resolució institucional per UPV."
+          }
+        },
+        "results": {
+          "headline": {
+            "es": "12 estudiantes en itinerario puente activo. Marco de créditos en revisión por UPV. Publicación de guía prevista para septiembre 2026.",
+            "en": "12 students on active bridge itinerary. Credit framework under UPV review. Guide publication planned for September 2026.",
+            "va": "12 estudiants en itinerari pont actiu. Marc de crèdits en revisió per UPV. Publicació de guia prevista per al setembre 2026."
+          },
+          "outputs": [
+            {
+              "id": "o1",
+              "label": {
+                "es": "Guía de itinerario puente FP-Máster (CC BY) — prevista sep 2026",
+                "en": "VET-Master bridge itinerary guide (CC BY) — planned Sep 2026",
+                "va": "Guia d'itinerari pont FP-Màster (CC BY) — prevista set 2026"
+              }
+            },
+            {
+              "id": "o2",
+              "label": {
+                "es": "Marco de reconocimiento de créditos validado por UPV",
+                "en": "UPV-validated credit recognition framework",
+                "va": "Marc de reconeixement de crèdits validat per UPV"
+              }
+            }
+          ],
+          "decision": {
+            "outcome": "adapt",
+            "label": {
+              "es": "Adaptar — piloto en curso, decisión final tras cierre en sep 2026",
+              "en": "Adapt — pilot in progress, final decision after closure in Sep 2026",
+              "va": "Adaptar — pilot en curs, decisió final després del tancament al set 2026"
+            }
+          }
+        },
+        "transferability": {
+          "whyTransferable": {
+            "es": "El marco de competencias FP-Máster es adaptable a otras combinaciones de ciclos y másteres en el ámbito de la IA industrial.",
+            "en": "The VET-Master competency framework is adaptable to other cycle-Master's combinations in the industrial AI field.",
+            "va": "El marc de competències FP-Màster és adaptable a altres combinacions de cicles i màsters en l'àmbit de la IA industrial."
+          },
+          "suitableFor": [
+            "universities",
+            "vet-centres"
+          ],
+          "requirements": [
+            {
+              "label": {
+                "es": "Acuerdo de colaboración entre centro FP y universidad",
+                "en": "Collaboration agreement between VET centre and university",
+                "va": "Acord de col·laboració entre centre FP i universitat"
+              }
+            },
+            {
+              "label": {
+                "es": "Marco de reconocimiento de créditos aprobado por la institución universitaria",
+                "en": "Credit recognition framework approved by the university institution",
+                "va": "Marc de reconeixement de crèdits aprovat per la institució universitària"
+              }
+            }
+          ],
+          "replicationSteps": [
+            {
+              "label": {
+                "es": "Mapear competencias entre el ciclo FP y el programa de máster destino",
+                "en": "Map competencies between the VET cycle and the target Master programme",
+                "va": "Mapar competències entre el cicle FP i el programa de màster destí"
+              }
+            },
+            {
+              "label": {
+                "es": "Formalizar acuerdo de reconocimiento de créditos con la institución universitaria",
+                "en": "Formalise credit recognition agreement with the university institution",
+                "va": "Formalitzar acord de reconeixement de crèdits amb la institució universitària"
+              }
+            }
+          ],
+          "risks": [
+            {
+              "label": {
+                "es": "Dependencia de la voluntad institucional universitaria para el reconocimiento de créditos",
+                "en": "Dependence on university institutional willingness for credit recognition",
+                "va": "Dependència de la voluntat institucional universitària per al reconeixement de crèdits"
+              }
+            }
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": true,
+          "primaryAction": {
+            "label": {
+              "es": "Conocer el itinerario",
+              "en": "Learn about the itinerary",
+              "va": "Conéixer l'itinerari"
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [
+            "o2"
+          ],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": false,
+              "resources": false,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
         "template": {
           "requiredBlocks": [
-            "context",
-            "participation",
-            "resources",
+            "pilotPlan",
+            "implementation",
             "evidence",
-            "process",
-            "outputs"
+            "results",
+            "transferability"
           ],
           "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
             "people",
             "access",
-            "trackA",
-            "objective",
-            "methodology",
-            "outcome"
+            "externalFlow",
+            "relations"
           ],
-          "cardSignal": "process"
+          "cardSignal": "pilotPlan"
         }
       }
     ],
@@ -13036,7 +15351,7 @@ export const MARKETPLACE_CONFIG = {
           "pageVisibility": "network",
           "pageLicense": "Open data",
           "codeLicense": "",
-          "dataAvailability": "",
+          "dataAvailability": "not-applicable",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -13070,6 +15385,259 @@ export const MARKETPLACE_CONFIG = {
             "va": "Classificat Track A — derivat a UVEG per a tractament acadèmic."
           },
           "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE"
+          },
+          "lead": {
+            "name": "AVA-ASAJA",
+            "type": "public-administration",
+            "role": {
+              "es": "Entidad coordinadora",
+              "en": "Coordinating entity",
+              "va": "Entitat coordinadora"
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [],
+          "partners": [
+            {
+              "name": "AVA-ASAJA",
+              "type": "",
+              "role": {
+                "es": "Proponente del reto",
+                "en": "Challenge proposer",
+                "va": "Proponent del repte"
+              }
+            },
+            {
+              "name": "UVEG",
+              "type": "",
+              "role": {
+                "es": "Clasificación Track A",
+                "en": "Track A classification",
+                "va": "Classificació Track A"
+              }
+            }
+          ]
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Oferta de dataset multispectral de cítricos y demanda de formación dual en agricultura de precisión.",
+            "en": "Offer of citrus multispectral dataset and demand for dual training in precision agriculture.",
+            "va": "Oferta de dataset multiespectral de cítrics i demanda de formació dual en agricultura de precisió."
+          },
+          "objective": {
+            "es": "Validar la pertinencia y madurez de un reto de agricultura de precisión propuesto por el sector agroalimentario valenciano.",
+            "en": "Validate the relevance and maturity of a precision agriculture challenge proposed by the Valencian agri-food sector.",
+            "va": "Validar la pertinència i maduresa d'un repte d'agricultura de precisió proposat pel sector agroalimentari valencià."
+          },
+          "context": {
+            "es": "AVA-ASAJA propuso el reto a la red AI-STEAM. La validación determina su clasificación (Track A académico o Track B ecosistema) mediante el proceso ConsensUE.",
+            "en": "AVA-ASAJA submitted the challenge to the AI-STEAM Network. The validation determines its classification (Track A academic or Track B ecosystem) via the ConsensUE process.",
+            "va": "AVA-ASAJA va proposar el repte a la xarxa AI-STEAM. La validació determina la seua classificació (Track A acadèmica o Track B ecosistema) mitjançant el procés ConsensUE."
+          },
+          "targetParticipants": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "methodology": {
+            "es": "Entrevistas con AVA-ASAJA, revisión técnica por UVEG y triage en ConsensUE para clasificación Track A / Track B.",
+            "en": "Interviews with AVA-ASAJA, technical review by UVEG and ConsensUE triage for Track A / Track B classification.",
+            "va": "Entrevistes amb AVA-ASAJA, revisió tècnica per UVEG i triatge en ConsensUE per a classificació Track A / Track B."
+          },
+          "successCriteria": []
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 6,
+              "label": {
+                "es": "Demostración en entorno relevante",
+                "en": "Demonstration in relevant environment",
+                "va": "Demostració en entorn rellevant"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": false,
+              "level": null,
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "label": {
+                "es": "Drones multiespectrales",
+                "en": "Drones multiespectrales",
+                "va": "Drones multiespectrales"
+              }
+            },
+            {
+              "label": {
+                "es": "Dataset citrus CV",
+                "en": "Dataset citrus CV",
+                "va": "Dataset citrus CV"
+              }
+            },
+            {
+              "label": {
+                "es": "Sistema ConsensUE",
+                "en": "Sistema ConsensUE",
+                "va": "Sistema ConsensUE"
+              }
+            }
+          ],
+          "tools": [],
+          "dataManagement": {
+            "sensitiveDataIncluded": false,
+            "personalDataIncluded": false,
+            "note": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        },
+        "evidence": {
+          "evidenceLevel": "measured",
+          "verificationStatus": "self-reported",
+          "collectionMethod": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "primaryMetric": null,
+          "secondaryMetrics": [],
+          "limitations": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "results": {
+          "headline": {
+            "es": "Validado — clasificado Track A por UVEG",
+            "en": "Validated — classified as Track A by UVEG",
+            "va": "Validat — classificat Track A per UVEG"
+          },
+          "outputs": [
+            {
+              "id": "output-0",
+              "label": {
+                "es": "Informe de validación con clasificación Track A",
+                "en": "Validation report with Track A classification",
+                "va": "Informe de validació amb classificació Track A"
+              }
+            },
+            {
+              "id": "output-1",
+              "label": {
+                "es": "Dataset multispectral cedido para reuso",
+                "en": "Multispectral dataset donated for reuse",
+                "va": "Dataset multiespectral cedit per a reús"
+              }
+            }
+          ],
+          "decision": {
+            "outcome": "",
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        },
+        "transferability": {
+          "whyTransferable": {
+            "es": "Dataset multispectral cedido para reuso académico. Reto validado y clasificado para Track A por UVEG.",
+            "en": "Multispectral dataset donated for academic reuse. Challenge validated and classified for Track A by UVEG.",
+            "va": "Dataset multiespectral cedit per a reús acadèmic. Repte validat i classificat per a Track A per UVEG."
+          },
+          "suitableFor": [
+            "companies",
+            "vet-centres",
+            "universities",
+            "public-administration"
+          ],
+          "requirements": [],
+          "replicationSteps": [],
+          "risks": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/pilots/validation-stakeholder-agr-asaja/",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver ficha de validación",
+              "en": "View validation record",
+              "va": "Veure fitxa de validació"
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": [
+            "case",
+            "resource"
+          ]
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": false,
+              "resources": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": true,
+              "relations": false
+            }
+          }
         },
         "template": {
           "requiredBlocks": [
@@ -13405,7 +15973,7 @@ export const MARKETPLACE_CONFIG = {
           "pageVisibility": "public",
           "pageLicense": "CC BY 4.0",
           "codeLicense": "",
-          "dataAvailability": "",
+          "dataAvailability": "not-applicable",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -13439,6 +16007,267 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE"
+          },
+          "lead": {
+            "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
+            "type": "public-administration",
+            "role": {
+              "es": "Entidad coordinadora",
+              "en": "Coordinating entity",
+              "va": "Entitat coordinadora"
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [],
+          "partners": [
+            {
+              "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
+              "type": "",
+              "role": {
+                "es": "Proponente del reto y co-validador",
+                "en": "Challenge proposer and co-validator",
+                "va": "Proponent del repte i co-validador"
+              }
+            },
+            {
+              "name": "Asociación de Concesionarios Valencianos",
+              "type": "",
+              "role": {
+                "es": "Co-validador",
+                "en": "Co-validator",
+                "va": "Co-validador"
+              }
+            },
+            {
+              "name": "UVEG — Grup de Recerca Mobilitat",
+              "type": "",
+              "role": {
+                "es": "Revisión técnica Track A",
+                "en": "Track A technical review",
+                "va": "Revisió tècnica Track A"
+              }
+            }
+          ]
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Demanda de formación dual en instalación y mantenimiento de infraestructura de carga para VE.",
+            "en": "Demand for dual training in EV charging infrastructure installation and maintenance.",
+            "va": "Demanda de formació dual en instal·lació i manteniment d'infraestructura de càrrega per a VE."
+          },
+          "objective": {
+            "es": "Validar la pertinencia y viabilidad de un reto formativo sobre instalación y mantenimiento de infraestructura de carga para vehículo eléctrico en FP.",
+            "en": "Validate the relevance and feasibility of a training challenge on the installation and maintenance of electric vehicle charging infrastructure in VET.",
+            "va": "Validar la pertinència i viabilitat d'un repte formatiu sobre instal·lació i manteniment d'infraestructura de càrrega per a vehicle elèctric en FP."
+          },
+          "context": {
+            "es": "ASEVA identifica una brecha creciente entre la proliferación de puntos de carga y la disponibilidad de técnicos cualificados para instalarlos y mantenerlos.",
+            "en": "ASEVA identifies a growing gap between the proliferation of charging points and the availability of qualified technicians to install and maintain them.",
+            "va": "ASEVA identifica una bretxa creixent entre la proliferació de punts de càrrega i la disponibilitat de tècnics qualificats per a instal·lar-los i mantenir-los."
+          },
+          "targetParticipants": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "methodology": {
+            "es": "Panel de expertos con ASEVA y concesionarios, análisis de brechas de competencias y triage ConsensUE para clasificación Track B.",
+            "en": "Expert panel with ASEVA and dealers, competency gap analysis and ConsensUE triage for Track B classification.",
+            "va": "Panell d'experts amb ASEVA i concessionaris, anàlisi de bretxes de competències i triatge ConsensUE per a classificació Track B."
+          },
+          "successCriteria": []
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 6,
+              "label": {
+                "es": "Demostración en entorno relevante",
+                "en": "Demonstration in relevant environment",
+                "va": "Demostració en entorn rellevant"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": false,
+              "level": null,
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "label": {
+                "es": "Panel de expertos ASEVA",
+                "en": "Panel de expertos ASEVA",
+                "va": "Panel de expertos ASEVA"
+              }
+            },
+            {
+              "label": {
+                "es": "Sistema ConsensUE",
+                "en": "Sistema ConsensUE",
+                "va": "Sistema ConsensUE"
+              }
+            },
+            {
+              "label": {
+                "es": "Concesionarios asociados",
+                "en": "Concesionarios asociados",
+                "va": "Concesionarios asociados"
+              }
+            }
+          ],
+          "tools": [],
+          "dataManagement": {
+            "sensitiveDataIncluded": false,
+            "personalDataIncluded": false,
+            "note": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        },
+        "evidence": {
+          "evidenceLevel": "observed",
+          "verificationStatus": "self-reported",
+          "collectionMethod": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "primaryMetric": null,
+          "secondaryMetrics": [],
+          "limitations": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "results": {
+          "headline": {
+            "es": "Validado — clasificado Track B para formación dual",
+            "en": "Validated — classified as Track B for dual training",
+            "va": "Validat — classificat Track B per a formació dual"
+          },
+          "outputs": [
+            {
+              "id": "output-0",
+              "label": {
+                "es": "Ficha de competencias publicada",
+                "en": "Competency sheet published",
+                "va": "Fitxa de competències publicada"
+              }
+            },
+            {
+              "id": "output-1",
+              "label": {
+                "es": "Base para módulo FP dual 2026-27",
+                "en": "Basis for dual VET module 2026-27",
+                "va": "Base per al mòdul FP dual 2026-27"
+              }
+            }
+          ],
+          "decision": {
+            "outcome": "",
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        },
+        "transferability": {
+          "whyTransferable": {
+            "es": "Ficha de competencias publicada. Base para módulo FP dual con ASEVA en el curso 2026-27.",
+            "en": "Competency sheet published. Basis for dual VET module with ASEVA in 2026-27.",
+            "va": "Fitxa de competències publicada. Base per al mòdul FP dual amb ASEVA per al curs 2026-27."
+          },
+          "suitableFor": [
+            "companies",
+            "vet-centres",
+            "public-administration"
+          ],
+          "requirements": [],
+          "replicationSteps": [],
+          "risks": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/pilots/validation-stakeholder-movilidad-electrica/",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver ficha de competencias",
+              "en": "View competency sheet",
+              "va": "Veure fitxa de competències"
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": [
+            "case",
+            "resource"
+          ]
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": false,
+              "resources": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
         },
         "template": {
           "requiredBlocks": [
@@ -14634,6 +17463,15 @@ export const MARKETPLACE_CONFIG = {
     ],
     "pilotType": [
       {
+        "id": "vet-industry",
+        "visible": true,
+        "label": {
+          "es": "Piloto FP-Empresa",
+          "en": "VET-Industry pilot",
+          "va": "Pilot FP-Empresa"
+        }
+      },
+      {
         "id": "fp",
         "visible": true,
         "label": {
@@ -14658,6 +17496,51 @@ export const MARKETPLACE_CONFIG = {
           "es": "Puente al Máster",
           "en": "Master bridge",
           "va": "Pont al Màster"
+        }
+      },
+      {
+        "id": "living-lab",
+        "visible": true,
+        "label": {
+          "es": "Living Lab",
+          "en": "Living Lab",
+          "va": "Living Lab"
+        }
+      },
+      {
+        "id": "technology-pilot",
+        "visible": true,
+        "label": {
+          "es": "Piloto tecnológico",
+          "en": "Technology pilot",
+          "va": "Pilot tecnològic"
+        }
+      },
+      {
+        "id": "curriculum-pilot",
+        "visible": true,
+        "label": {
+          "es": "Piloto curricular",
+          "en": "Curriculum pilot",
+          "va": "Pilot curricular"
+        }
+      },
+      {
+        "id": "institutional-pilot",
+        "visible": true,
+        "label": {
+          "es": "Piloto institucional",
+          "en": "Institutional pilot",
+          "va": "Pilot institucional"
+        }
+      },
+      {
+        "id": "validation-pilot",
+        "visible": true,
+        "label": {
+          "es": "Validación piloto",
+          "en": "Validation pilot",
+          "va": "Validació pilot"
         }
       },
       {
@@ -14741,6 +17624,472 @@ export const MARKETPLACE_CONFIG = {
           "es": "Validado",
           "en": "Validated",
           "va": "Validat"
+        }
+      }
+    ],
+    "pilotStage": [
+      {
+        "id": "planned",
+        "visible": true,
+        "label": {
+          "es": "Planificado",
+          "en": "Planned",
+          "va": "Planificat"
+        }
+      },
+      {
+        "id": "open",
+        "visible": true,
+        "label": {
+          "es": "Abierto",
+          "en": "Open",
+          "va": "Obert"
+        }
+      },
+      {
+        "id": "in-progress",
+        "visible": true,
+        "label": {
+          "es": "En curso",
+          "en": "In progress",
+          "va": "En curs"
+        }
+      },
+      {
+        "id": "completed",
+        "visible": true,
+        "label": {
+          "es": "Completado",
+          "en": "Completed",
+          "va": "Completat"
+        }
+      },
+      {
+        "id": "published",
+        "visible": true,
+        "label": {
+          "es": "Publicado",
+          "en": "Published",
+          "va": "Publicat"
+        }
+      },
+      {
+        "id": "scaled",
+        "visible": true,
+        "label": {
+          "es": "Escalado",
+          "en": "Scaled",
+          "va": "Escalat"
+        }
+      },
+      {
+        "id": "archived",
+        "visible": true,
+        "label": {
+          "es": "Archivado",
+          "en": "Archived",
+          "va": "Arxivat"
+        }
+      }
+    ],
+    "pilotDecision": [
+      {
+        "id": "scale",
+        "visible": true,
+        "label": {
+          "es": "Escalar",
+          "en": "Scale",
+          "va": "Escalar"
+        }
+      },
+      {
+        "id": "adapt",
+        "visible": true,
+        "label": {
+          "es": "Adaptar y repetir",
+          "en": "Adapt and repeat",
+          "va": "Adaptar i repetir"
+        }
+      },
+      {
+        "id": "close",
+        "visible": true,
+        "label": {
+          "es": "Cerrar",
+          "en": "Close",
+          "va": "Tancar"
+        }
+      },
+      {
+        "id": "repeat",
+        "visible": true,
+        "label": {
+          "es": "Repetir sin cambios",
+          "en": "Repeat without changes",
+          "va": "Repetir sense canvis"
+        }
+      },
+      {
+        "id": "convert-to-case",
+        "visible": true,
+        "label": {
+          "es": "Convertir en caso transferible",
+          "en": "Convert to transferable case",
+          "va": "Convertir en cas transferible"
+        }
+      },
+      {
+        "id": "publish-resource",
+        "visible": true,
+        "label": {
+          "es": "Publicar como recurso abierto",
+          "en": "Publish as open resource",
+          "va": "Publicar com a recurs obert"
+        }
+      }
+    ],
+    "pilotEvidenceLevel": [
+      {
+        "id": "planned",
+        "visible": true,
+        "label": {
+          "es": "Planificado",
+          "en": "Planned",
+          "va": "Planificat"
+        }
+      },
+      {
+        "id": "observed",
+        "visible": true,
+        "label": {
+          "es": "Observado",
+          "en": "Observed",
+          "va": "Observat"
+        }
+      },
+      {
+        "id": "documented",
+        "visible": true,
+        "label": {
+          "es": "Documentado",
+          "en": "Documented",
+          "va": "Documentat"
+        }
+      },
+      {
+        "id": "measured",
+        "visible": true,
+        "label": {
+          "es": "Medido",
+          "en": "Measured",
+          "va": "Mesurat"
+        }
+      },
+      {
+        "id": "reviewed",
+        "visible": true,
+        "label": {
+          "es": "Revisado",
+          "en": "Reviewed",
+          "va": "Revisat"
+        }
+      },
+      {
+        "id": "verified",
+        "visible": true,
+        "label": {
+          "es": "Verificado externamente",
+          "en": "Externally verified",
+          "va": "Verificat externament"
+        }
+      }
+    ],
+    "technologyReadiness": [
+      {
+        "id": 1,
+        "visible": true,
+        "label": {
+          "es": "Principios básicos observados",
+          "en": "Basic principles observed",
+          "va": "Principis bàsics observats"
+        }
+      },
+      {
+        "id": 2,
+        "visible": true,
+        "label": {
+          "es": "Concepto tecnológico formulado",
+          "en": "Technology concept formulated",
+          "va": "Concepte tecnològic formulat"
+        }
+      },
+      {
+        "id": 3,
+        "visible": true,
+        "label": {
+          "es": "Prueba de concepto experimental",
+          "en": "Experimental proof of concept",
+          "va": "Prova de concepte experimental"
+        }
+      },
+      {
+        "id": 4,
+        "visible": true,
+        "label": {
+          "es": "Tecnología validada en laboratorio",
+          "en": "Technology validated in lab",
+          "va": "Tecnologia validada en laboratori"
+        }
+      },
+      {
+        "id": 5,
+        "visible": true,
+        "label": {
+          "es": "Tecnología validada en entorno relevante",
+          "en": "Technology validated in relevant environment",
+          "va": "Tecnologia validada en entorn rellevant"
+        }
+      },
+      {
+        "id": 6,
+        "visible": true,
+        "label": {
+          "es": "Tecnología demostrada en entorno relevante",
+          "en": "Technology demonstrated in relevant environment",
+          "va": "Tecnologia demostrada en entorn rellevant"
+        }
+      },
+      {
+        "id": 7,
+        "visible": true,
+        "label": {
+          "es": "Demostración en entorno operacional",
+          "en": "Demonstration in operational environment",
+          "va": "Demostració en entorn operacional"
+        }
+      },
+      {
+        "id": 8,
+        "visible": true,
+        "label": {
+          "es": "Sistema completo y cualificado",
+          "en": "System complete and qualified",
+          "va": "Sistema complet i qualificat"
+        }
+      },
+      {
+        "id": 9,
+        "visible": true,
+        "label": {
+          "es": "Sistema probado con éxito en entorno operacional",
+          "en": "Actual system proven in operational environment",
+          "va": "Sistema provat amb èxit en entorn operacional"
+        }
+      }
+    ],
+    "educationalReadiness": [
+      {
+        "id": "concept",
+        "visible": true,
+        "label": {
+          "es": "Concepto docente definido",
+          "en": "Teaching concept defined",
+          "va": "Concepte docent definit"
+        }
+      },
+      {
+        "id": "designed",
+        "visible": true,
+        "label": {
+          "es": "Diseño pedagógico completado",
+          "en": "Pedagogical design completed",
+          "va": "Disseny pedagògic completat"
+        }
+      },
+      {
+        "id": "classroom-tested",
+        "visible": true,
+        "label": {
+          "es": "Probado en aula",
+          "en": "Classroom tested",
+          "va": "Provat en aula"
+        }
+      },
+      {
+        "id": "validated-in-real-context",
+        "visible": true,
+        "label": {
+          "es": "Validado en contexto real",
+          "en": "Validated in real context",
+          "va": "Validat en context real"
+        }
+      },
+      {
+        "id": "replicated",
+        "visible": true,
+        "label": {
+          "es": "Replicado en otros contextos",
+          "en": "Replicated in other contexts",
+          "va": "Replicat en altres contextos"
+        }
+      },
+      {
+        "id": "scaled",
+        "visible": true,
+        "label": {
+          "es": "Escalado a nivel sistémico",
+          "en": "Scaled at system level",
+          "va": "Escalat a nivell sistèmic"
+        }
+      }
+    ],
+    "caseStage": [
+      {
+        "id": "pilot-result",
+        "visible": true,
+        "label": {
+          "es": "Resultado piloto",
+          "en": "Pilot result",
+          "va": "Resultat pilot"
+        }
+      },
+      {
+        "id": "validated",
+        "visible": true,
+        "label": {
+          "es": "Validado",
+          "en": "Validated",
+          "va": "Validat"
+        }
+      },
+      {
+        "id": "adapted",
+        "visible": true,
+        "label": {
+          "es": "Adaptado",
+          "en": "Adapted",
+          "va": "Adaptat"
+        }
+      },
+      {
+        "id": "scaled",
+        "visible": true,
+        "label": {
+          "es": "Escalado",
+          "en": "Scaled",
+          "va": "Escalat"
+        }
+      },
+      {
+        "id": "replicated",
+        "visible": true,
+        "label": {
+          "es": "Replicado",
+          "en": "Replicated",
+          "va": "Replicat"
+        }
+      }
+    ],
+    "evidenceLevel": [
+      {
+        "id": "narrative",
+        "visible": true,
+        "label": {
+          "es": "Narrativa",
+          "en": "Narrative",
+          "va": "Narrativa"
+        }
+      },
+      {
+        "id": "documented",
+        "visible": true,
+        "label": {
+          "es": "Documentado",
+          "en": "Documented",
+          "va": "Documentat"
+        }
+      },
+      {
+        "id": "measured",
+        "visible": true,
+        "label": {
+          "es": "Medido",
+          "en": "Measured",
+          "va": "Mesurat"
+        }
+      },
+      {
+        "id": "verified",
+        "visible": true,
+        "label": {
+          "es": "Verificado",
+          "en": "Verified",
+          "va": "Verificat"
+        }
+      },
+      {
+        "id": "peer-reviewed",
+        "visible": true,
+        "label": {
+          "es": "Revisado por pares",
+          "en": "Peer-reviewed",
+          "va": "Revisat per parells"
+        }
+      }
+    ],
+    "dataAvailability": [
+      {
+        "id": "open",
+        "visible": true,
+        "label": {
+          "es": "Abierto y público",
+          "en": "Open and public",
+          "va": "Obert i públic"
+        }
+      },
+      {
+        "id": "anonymised",
+        "visible": true,
+        "label": {
+          "es": "Anonimizado",
+          "en": "Anonymised",
+          "va": "Anonimitzat"
+        }
+      },
+      {
+        "id": "aggregated",
+        "visible": true,
+        "label": {
+          "es": "Agregado",
+          "en": "Aggregated",
+          "va": "Agregat"
+        }
+      },
+      {
+        "id": "restricted",
+        "visible": true,
+        "label": {
+          "es": "Acceso restringido",
+          "en": "Restricted access",
+          "va": "Accés restringit"
+        }
+      },
+      {
+        "id": "confidential-not-included",
+        "visible": true,
+        "label": {
+          "es": "Confidencial (no incluido)",
+          "en": "Confidential (not included)",
+          "va": "Confidencial (no inclòs)"
+        }
+      },
+      {
+        "id": "not-applicable",
+        "visible": true,
+        "label": {
+          "es": "No aplica",
+          "en": "Not applicable",
+          "va": "No aplica"
         }
       }
     ],
@@ -15075,6 +18424,69 @@ export const MARKETPLACE_CONFIG = {
           "es": "Otro",
           "en": "Other",
           "va": "Altre"
+        }
+      },
+      {
+        "id": "pilot-plan",
+        "visible": true,
+        "label": {
+          "es": "Plan de pilotaje",
+          "en": "Pilot plan",
+          "va": "Pla de pilotatge"
+        }
+      },
+      {
+        "id": "protocol",
+        "visible": true,
+        "label": {
+          "es": "Protocolo",
+          "en": "Protocol",
+          "va": "Protocol"
+        }
+      },
+      {
+        "id": "rubric",
+        "visible": true,
+        "label": {
+          "es": "Rúbrica de evaluación",
+          "en": "Assessment rubric",
+          "va": "Rúbrica d'avaluació"
+        }
+      },
+      {
+        "id": "checklist",
+        "visible": true,
+        "label": {
+          "es": "Checklist",
+          "en": "Checklist",
+          "va": "Checklist"
+        }
+      },
+      {
+        "id": "evidence-template",
+        "visible": true,
+        "label": {
+          "es": "Plantilla de evidencias",
+          "en": "Evidence template",
+          "va": "Plantilla d'evidències"
+        }
+      },
+      {
+        "id": "results-report",
+        "visible": true,
+        "label": {
+          "es": "Informe de resultados",
+          "en": "Results report",
+          "va": "Informe de resultats"
+        }
+      },
+      {
+        "id": "oer",
+        "visible": true,
+        "label": {
+          "es": "Recurso educativo abierto (OER)",
+          "en": "Open Educational Resource (OER)",
+          "va": "Recurs educatiu obert (OER)"
         }
       }
     ]
