@@ -3415,7 +3415,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "resources": null,
       "externalFlow": {
-        "enabled": true,
+        "enabled": false,
         "primaryAction": {
           "label": {
             "es": "Explorar resultados",
@@ -6474,7 +6474,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "resources": null,
       "externalFlow": {
-        "enabled": true,
+        "enabled": false,
         "primaryAction": {
           "label": {
             "es": "Acceder a materiales",
@@ -7624,7 +7624,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "resources": null,
       "externalFlow": {
-        "enabled": true,
+        "enabled": false,
         "primaryAction": {
           "label": {
             "es": "Replicar módulo dual",
@@ -8139,7 +8139,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "resources": null,
       "externalFlow": {
-        "enabled": true,
+        "enabled": false,
         "primaryAction": {
           "label": {
             "es": "Conocer el itinerario",
@@ -13395,7 +13395,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "resources": null,
         "externalFlow": {
-          "enabled": true,
+          "enabled": false,
           "primaryAction": {
             "label": {
               "es": "Explorar resultados",
@@ -13949,7 +13949,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "resources": null,
         "externalFlow": {
-          "enabled": true,
+          "enabled": false,
           "primaryAction": {
             "label": {
               "es": "Acceder a materiales",
@@ -14494,7 +14494,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "resources": null,
         "externalFlow": {
-          "enabled": true,
+          "enabled": false,
           "primaryAction": {
             "label": {
               "es": "Replicar módulo dual",
@@ -15009,7 +15009,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "resources": null,
         "externalFlow": {
-          "enabled": true,
+          "enabled": false,
           "primaryAction": {
             "label": {
               "es": "Conocer el itinerario",
