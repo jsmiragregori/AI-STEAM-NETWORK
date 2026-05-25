@@ -1482,25 +1482,323 @@ function renderDetailLayout(item, mainHtml, sidebarHtml = '') {
     </div>`;
 }
 
-function renderChallengeDetail(item) {
-  const detail = item.detail || {};
-  const resourceRows = renderResourceRows(detail.resources);
-  const deliverables = renderDeliverableList(detail.outputs);
-  const milestones = renderMilestoneList(detail.process);
-  const contactCards = renderContactCards(detail.people);
-  const contacts = contactCards ? renderStructuredSection(getBlockLabel('people'), 'user-round-check', contactCards) : '';
-  const trackA = renderTrackABlock(item);
+/* ─── Challenge v2 detail: header ─── */
 
-  return renderDetailLayout(item, [
-    renderChallengeBriefSection(item),
-    renderCollaborationSection(item),
-    resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : '',
-    deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
-    milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : '',
-    contacts,
-    renderTechnicalSection(item),
-    trackA,
-  ].filter(Boolean).join(''), renderDetailChipPanel(item));
+function renderChallengeDetailHeader(item) {
+  const ownership = item.ownership || {};
+  const ef = item.externalFlow || {};
+  const title = pickLang(item.core?.title, item.id);
+  const summary = pickLang(item.core?.summary);
+  const tab = getTabs().find(t => t.id === item.tab) || getActiveTab();
+  const tone = TAB_TONES[tab?.id] || TAB_TONES.challenges;
+  const dateLabel = getItemDateLabel(item);
+  const featuredSignal = pickLang(item.community?.featuredSignal);
+  const deadline = pickLang(item.core?.deadlineLabel);
+  const entityLabel = pickLang(ownership.requester?.publicLabel) || pickLang(item.core?.entity?.name);
+  const ctaUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : null;
+  const ctaLabel = ctaUrl ? (pickLang(ef.primaryAction?.label) || uiText('viewDetail')) : null;
+  return `
+    <section class="bg-eu-blue px-6 py-12 text-white">
+      <div class="mx-auto max-w-7xl">
+        <button id="mp-back" type="button" class="mb-7 inline-flex min-h-11 items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-bold text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-eu-blue">
+          <i data-lucide="arrow-left" class="h-4 w-4"></i>
+          ${esc(uiText('backCommunity'))}
+        </button>
+        <div class="flex flex-wrap gap-2">
+          ${renderBadge(pickLang(tab?.label, item.tab), 'bg-white/10 text-white border-white/20')}
+          ${renderBadge(getTypeLabel(item.type), 'bg-white/10 text-white border-white/20')}
+          ${renderBadge(getStatusLabel(item.core?.status), 'bg-white/10 text-white border-white/20')}
+          ${renderBadge(getEvidenceLabel(item.core?.maturity || item.classification?.evidenceMaturity), 'bg-white/10 text-white border-white/20')}
+        </div>
+        <h1 class="mt-5 max-w-4xl text-3xl font-extrabold leading-tight md:text-4xl">${esc(title)}</h1>
+        ${summary ? `<p class="mt-4 max-w-4xl text-base leading-7 text-white/80">${esc(summary)}</p>` : ''}
+        ${featuredSignal ? `
+          <div class="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-semibold text-white">
+            <i data-lucide="zap" class="h-4 w-4 text-eu-yellow"></i>
+            ${esc(featuredSignal)}
+          </div>` : ''}
+        <div class="mt-6 flex flex-wrap items-center gap-4 text-sm font-semibold text-white/75">
+          ${entityLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="building-2" class="h-4 w-4"></i>${esc(entityLabel)}</span>` : ''}
+          ${deadline ? `<span class="inline-flex items-center gap-2 rounded border border-white/20 bg-white/10 px-2 py-1"><i data-lucide="clock" class="h-4 w-4"></i>${esc(deadline)}</span>` : ''}
+          ${!deadline && dateLabel ? `<span class="inline-flex items-center gap-2"><i data-lucide="calendar" class="h-4 w-4"></i>${esc(dateLabel)}</span>` : ''}
+          <span class="inline-flex items-center gap-2 ${tone.badge} rounded border px-2 py-1">${esc(getSectorLabel(item.core?.sector))}</span>
+        </div>
+        ${ctaUrl ? `
+          <div class="mt-6">
+            <a href="${esc(ctaUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center gap-2 rounded-lg bg-eu-orange px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-orange focus:ring-offset-2 focus:ring-offset-eu-blue">
+              ${esc(ctaLabel)}
+              <i data-lucide="external-link" class="h-4 w-4"></i>
+            </a>
+          </div>` : ''}
+      </div>
+    </section>`;
+}
+
+/* ─── Challenge v2 detail: main column sections ─── */
+
+function renderChallengeBriefV2(item) {
+  const briefTitle = pickLang(item.detail?.briefTitle);
+  const need = pickLang(item.detail?.need);
+  const reward = pickLang(item.detail?.reward);
+  if (!briefTitle && !need && !reward) return '';
+  return `
+    <section class="rounded-2xl bg-eu-blue/5 border border-eu-blue/20 p-6">
+      ${renderSectionHeader('target', uiText('challengeBrief'), true)}
+      ${briefTitle ? `<p class="text-xl font-bold leading-snug text-eu-blue">${esc(briefTitle)}</p>` : ''}
+      ${need ? `<p class="mt-4 text-sm leading-7 text-gray-700">${esc(need)}</p>` : ''}
+      ${renderCallout('award', pickLang(FIELD_LABELS.reward), reward, 'bg-eu-orange/10 border-eu-orange/20 text-eu-orange')}
+    </section>`;
+}
+
+function renderChallengeContextSection(item) {
+  const context = pickLang(item.detail?.context);
+  if (!context) return '';
+  return `
+    <section class="rounded-2xl bg-white border border-eu-border p-6">
+      ${renderSecondaryHeader('map', getBlockLabel('context') || pickLang({ es: 'Contexto', en: 'Context', va: 'Context' }))}
+      <p class="text-sm leading-7 text-gray-700">${esc(context)}</p>
+    </section>`;
+}
+
+function renderChallengeParticipationSection(item) {
+  const cl = item.classification || {};
+  const part = item.detail?.participation || {};
+  const audienceText = pickLang(part.audienceText);
+  const formatText = pickLang(part.formatText);
+  const transferValue = pickLang(part.transferValue);
+  const contribChips = asArray(cl.contributionTypes).map(id => getContributionTypeLabel(id)).filter(Boolean);
+  if (!audienceText && !formatText && !transferValue && !contribChips.length) return '';
+  return `
+    <section class="rounded-2xl bg-white border border-eu-border p-6">
+      ${renderSecondaryHeader('users', uiText('collaborationMap'))}
+      ${contribChips.length ? `
+        <div class="mb-4">
+          <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('seeking'))}</p>
+          <div class="flex flex-wrap gap-2">${contribChips.map(c => renderBadge(c, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20')).join('')}</div>
+        </div>` : ''}
+      ${audienceText || formatText ? `
+        <div class="rounded-xl bg-eu-bg p-4">
+          ${audienceText ? `<div class="flex items-start gap-2"><i data-lucide="user-check" class="mt-0.5 h-4 w-4 shrink-0 text-eu-blue"></i><p class="text-sm leading-6 text-gray-700">${esc(audienceText)}</p></div>` : ''}
+          ${formatText ? `<div class="mt-3 flex items-start gap-2"><i data-lucide="send" class="mt-0.5 h-4 w-4 shrink-0 text-eu-blue"></i><p class="text-sm leading-6 text-gray-700">${esc(formatText)}</p></div>` : ''}
+        </div>` : ''}
+      ${transferValue ? `
+        <div class="mt-5 border-t border-eu-border pt-4">
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(getBlockLabel('transferValue') || pickLang({ es: 'Valor para la red', en: 'Network value', va: 'Valor per a la xarxa' }))}</p>
+          <p class="text-sm leading-7 text-gray-700">${esc(transferValue)}</p>
+        </div>` : ''}
+    </section>`;
+}
+
+function renderDownloadsSection(item) {
+  const dl = item.downloads || {};
+  const basePath = dl.basePath || '';
+  const dlItems = asArray(dl.items).filter(i => i.showOnDetail !== false);
+  if (!dlItems.length) return '';
+  return `
+    <section class="rounded-2xl bg-white border border-eu-border p-6">
+      ${renderSecondaryHeader('file-down', getBlockLabel('downloads') || pickLang({ es: 'Materiales descargables', en: 'Downloadable materials', va: 'Materials descarregables' }))}
+      <div class="space-y-4">
+        ${dlItems.map(dlItem => {
+          const typeLabel = getDownloadTypeLabel(dlItem.type);
+          const dlTitle = pickLang(dlItem.title);
+          const dlDesc = pickLang(dlItem.description);
+          const dlFiles = asArray(dlItem.files);
+          const filesHtml = dlFiles.map(f => {
+            if (!f.file) return '';
+            const href = `${basePath}${f.file}`;
+            const badge = [f.format?.toUpperCase(), f.language?.toUpperCase()].filter(Boolean).join(' · ');
+            return `<a href="${esc(href)}" download class="inline-flex items-center gap-1.5 rounded border border-eu-border bg-white px-2.5 py-1 text-xs font-semibold text-gray-700 hover:bg-eu-blue hover:text-white hover:border-eu-blue transition-colors focus:outline-none focus:ring-2 focus:ring-eu-blue"><i data-lucide="download" class="h-3.5 w-3.5"></i>${esc(badge)}</a>`;
+          }).filter(Boolean).join('');
+          return `
+            <div class="rounded-xl border border-eu-border bg-eu-bg p-4">
+              <div class="flex items-start justify-between gap-2">
+                <p class="text-sm font-bold text-eu-text">${esc(dlTitle)}</p>
+                ${typeLabel ? renderBadge(typeLabel, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20') : ''}
+              </div>
+              ${dlDesc ? `<p class="mt-1 text-xs leading-5 text-gray-500">${esc(dlDesc)}</p>` : ''}
+              ${filesHtml ? `<div class="mt-3 flex flex-wrap gap-2">${filesHtml}</div>` : ''}
+              ${dlItem.license ? `<p class="mt-2 text-xs text-gray-400">${esc(dlItem.license)}</p>` : ''}
+            </div>`;
+        }).join('')}
+      </div>
+    </section>`;
+}
+
+function renderChallengeOwnershipSection(item) {
+  const ownership = item.ownership || {};
+  const publisher = ownership.publisher;
+  const requester = ownership.requester;
+  const contact = ownership.contact;
+  const publicLabel = pickLang(requester?.publicLabel);
+  const publisherStr = [publisher?.name, publisher?.org].filter(Boolean).join(' · ');
+  if (!publisherStr && !publicLabel && !contact) return '';
+  const contactHtml = contact ? (() => {
+    const name = contact.name || '';
+    const role = pickLang(contact.role);
+    const org = contact.org || '';
+    const initials = name.split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]?.toUpperCase()).join('') || '?';
+    const meta = [role, org].filter(Boolean).join(' · ');
+    return `
+      <div class="flex items-center gap-3 rounded-lg border border-eu-border bg-eu-bg p-3">
+        <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-eu-blue text-sm font-extrabold text-white">${esc(initials)}</span>
+        <div class="min-w-0">
+          <p class="text-sm font-bold text-eu-text">${esc(name)}</p>
+          ${meta ? `<p class="mt-0.5 truncate text-xs text-gray-500">${esc(meta)}</p>` : ''}
+        </div>
+      </div>`;
+  })() : '';
+  return `
+    <section class="rounded-2xl bg-white border border-eu-border p-6">
+      ${renderSecondaryHeader('user-round-check', getBlockLabel('people') || pickLang({ es: 'Personas y entidades', en: 'People and organisations', va: 'Persones i entitats' }))}
+      ${publisherStr ? `
+        <div class="mb-3 flex items-center gap-2 text-sm text-gray-700">
+          <i data-lucide="building-2" class="h-4 w-4 shrink-0 text-eu-blue"></i>
+          <span class="font-semibold">${esc(publisherStr)}</span>
+        </div>` : ''}
+      ${publicLabel ? `
+        <div class="mb-3 flex items-center gap-2 text-sm text-gray-500">
+          <i data-lucide="briefcase" class="h-4 w-4 shrink-0 text-gray-400"></i>
+          <span>${esc(publicLabel)}</span>
+        </div>` : ''}
+      ${contactHtml}
+    </section>`;
+}
+
+function renderChallengeTechnicalSection(item) {
+  const cl = item.classification || {};
+  const competences = asArray(cl.competences).map(id => getCompetenceLabel(id)).filter(Boolean);
+  const sdgs = asArray(cl.sdgs);
+  const sensitivePolicy = pickLang(item.access?.sensitiveDataPolicy);
+  if (!competences.length && !sdgs.length && !sensitivePolicy) return '';
+  return `
+    <section class="rounded-2xl bg-white border border-eu-border p-6">
+      ${renderSecondaryHeader('settings-2', uiText('technicalBlocks'))}
+      ${competences.length ? `
+        <div>
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('competencies'))}</p>
+          <div class="flex flex-wrap gap-2">${competences.map(c => renderBadge(c, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20')).join('')}</div>
+        </div>` : ''}
+      ${sdgs.length ? `
+        <div class="${competences.length ? 'mt-5' : ''}">
+          <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('sdgs'))}</p>
+          <div class="flex flex-wrap gap-2">${sdgs.map(id => {
+            const n = typeof id === 'object' ? id?.id : id;
+            return n != null ? renderBadge(`ODS ${n}`, 'bg-green-50 text-green-800 border-green-200') : '';
+          }).filter(Boolean).join('')}</div>
+        </div>` : ''}
+      ${sensitivePolicy ? `
+        <div class="${(competences.length || sdgs.length) ? 'mt-5' : ''} flex items-start gap-2">
+          <i data-lucide="shield-alert" class="mt-0.5 h-4 w-4 shrink-0 text-gray-400"></i>
+          <p class="text-xs leading-5 text-gray-500">${esc(sensitivePolicy)}</p>
+        </div>` : ''}
+    </section>`;
+}
+
+function renderChallengeAccessSection(item) {
+  const access = item.access || {};
+  const PRIVACY_LABELS = {
+    public:     { icon: 'globe',   label: { es: 'Acceso público',     en: 'Public access',     va: 'Accés públic' } },
+    restricted: { icon: 'lock',    label: { es: 'Acceso restringido', en: 'Restricted access', va: 'Accés restringit' } },
+    private:    { icon: 'eye-off', label: { es: 'Acceso privado',     en: 'Private access',    va: 'Accés privat' } },
+  };
+  const pv = access.pageVisibility || access.privacyLevel;
+  const privacy = pv ? (PRIVACY_LABELS[pv] || { icon: 'info', label: { es: pv, en: pv, va: pv } }) : null;
+  const privacyLabel = privacy ? pickLang(privacy.label) : '';
+  const license = access.pageLicense || access.license;
+  const rightsNote = pickLang(access.rightsNote);
+  if (!privacyLabel && !license && !rightsNote) return '';
+  return `
+    <section class="rounded-2xl bg-white border border-eu-border p-6">
+      ${renderSecondaryHeader('link', uiText('access'))}
+      ${privacyLabel || license ? `
+        <div class="flex items-center gap-3">
+          ${privacy ? `<i data-lucide="${esc(privacy.icon)}" class="h-4 w-4 shrink-0 text-eu-blue"></i>` : ''}
+          ${privacyLabel ? `<span class="text-sm font-semibold text-gray-700">${esc(privacyLabel)}</span>` : ''}
+          ${license ? `<span class="ml-auto rounded-full bg-eu-bg px-2.5 py-0.5 text-xs font-bold text-gray-600" style="border:1px solid rgba(0,0,0,0.08)">${esc(license)}</span>` : ''}
+        </div>` : ''}
+      ${rightsNote ? `<p class="mt-3 text-xs leading-5 text-gray-500">${esc(rightsNote)}</p>` : ''}
+    </section>`;
+}
+
+/* ─── Challenge v2 detail: sidebar panel ─── */
+
+function renderChallengeOperationalPanel(item) {
+  const ownership = item.ownership || {};
+  const status = getStatusLabel(item.core?.status);
+  const typeLabel = getTypeLabel(item.type);
+  const sector = getSectorLabel(item.core?.sector);
+  const maturity = getEvidenceLabel(item.core?.maturity || item.classification?.evidenceMaturity);
+  const engagement = getEngagementLabel(item.classification?.engagementLevel);
+  const created = pickLang(item.core?.publishedAtLabel);
+  const updated = pickLang(item.core?.revisionDateLabel);
+  const entityLabel = pickLang(ownership.requester?.publicLabel) || pickLang(item.core?.entity?.name);
+  const metaRows = [
+    sector && [uiText('sector'), sector],
+    maturity && [pickLang({ es: 'Madurez', en: 'Maturity', va: 'Maduresa' }), maturity],
+    engagement && [pickLang({ es: 'Participación', en: 'Participation', va: 'Participació' }), engagement],
+    created && [pickLang(UI_TEXT.created), created],
+    updated && [pickLang(UI_TEXT.updated), updated],
+  ].filter(Boolean);
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
+      <div class="mb-4 flex flex-wrap items-center gap-2">
+        ${status ? renderBadge(status, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20') : ''}
+        ${typeLabel ? renderBadge(typeLabel, 'bg-eu-bg text-gray-600 border-eu-border') : ''}
+      </div>
+      ${entityLabel ? `
+        <div class="flex items-start gap-2">
+          <i data-lucide="building-2" class="mt-0.5 h-4 w-4 shrink-0 text-eu-blue"></i>
+          <p class="text-sm font-bold leading-snug text-eu-text">${esc(entityLabel)}</p>
+        </div>` : ''}
+      ${metaRows.length ? `
+        <dl class="mt-4 space-y-2 border-t border-eu-border pt-4">
+          ${metaRows.map(([label, value]) => `
+            <div class="flex items-baseline justify-between gap-2">
+              <dt class="shrink-0 text-xs font-bold uppercase tracking-wide text-gray-400">${esc(label)}</dt>
+              <dd class="text-right text-xs font-semibold text-gray-700">${esc(value)}</dd>
+            </div>`).join('')}
+        </dl>` : ''}
+    </section>`;
+}
+
+/* ─── Challenge v2 detail: orchestrator ─── */
+
+function renderChallengeDetail(item) {
+  const sections = item.presentation?.detail?.sections || {};
+
+  const resourceRows = renderResourceRows(item.resources);
+  const deliverables = renderDeliverableList(item.outputs);
+  const milestones = renderMilestoneList(item.process);
+
+  const mainHtml = [
+    sections.brief !== false && renderChallengeBriefV2(item),
+    sections.context !== false && renderChallengeContextSection(item),
+    sections.participation !== false && renderChallengeParticipationSection(item),
+    sections.resources !== false && resourceRows ? renderStructuredSection(getBlockLabel('resources'), 'folder-open', resourceRows) : '',
+    sections.downloads !== false && item.downloads?.enabled && renderDownloadsSection(item),
+    sections.outputs !== false && deliverables ? renderStructuredSection(getBlockLabel('outputs'), 'package-check', deliverables) : '',
+    sections.process !== false && milestones ? renderStructuredSection(getBlockLabel('process'), 'route', milestones) : '',
+    sections.people !== false && renderChallengeOwnershipSection(item),
+    renderChallengeTechnicalSection(item),
+    sections.access !== false && renderChallengeAccessSection(item),
+    sections.trackA !== false && renderTrackABlock(item),
+  ].filter(Boolean).join('');
+
+  return `
+    <div>
+      ${renderChallengeDetailHeader(item)}
+      <section class="mx-auto max-w-7xl px-6 py-8">
+        <div class="grid gap-6 lg:grid-cols-3">
+          <div class="space-y-5 lg:col-span-2">
+            ${mainHtml || renderDetailEmpty()}
+          </div>
+          <aside class="space-y-5 self-start">
+            ${renderChallengeOperationalPanel(item)}
+            ${renderDetailChipPanel(item)}
+          </aside>
+        </div>
+      </section>
+    </div>`;
 }
 
 function renderCaseTransferSection(item) {
