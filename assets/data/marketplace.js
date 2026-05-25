@@ -3222,29 +3222,33 @@ export const MARKETPLACE_CONFIG = {
         },
         "infrastructure": [
           {
+            "id": "aules",
             "label": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "Plataforma Aules",
+              "en": "Plataforma Aules",
+              "va": "Plataforma Aules"
             }
           },
           {
+            "id": "iot-sensors",
             "label": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "Sensores IoT aula",
+              "en": "Sensores IoT aula",
+              "va": "Sensores IoT aula"
             }
           },
           {
+            "id": "energy-dataset",
             "label": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "Dataset energético anonimizado",
+              "en": "Dataset energético anonimizado",
+              "va": "Dataset energético anonimizado"
             }
           }
         ],
         "tools": [
           {
+            "id": "ai-secrett-checklist",
             "label": {
               "es": "Checklist AI-SECRETT",
               "en": "AI-SECRETT checklist",
@@ -6260,29 +6264,33 @@ export const MARKETPLACE_CONFIG = {
         },
         "infrastructure": [
           {
+            "id": "classroom",
             "label": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "Aula universitaria equipada",
+              "en": "Aula universitaria equipada",
+              "va": "Aula universitaria equipada"
             }
           },
           {
+            "id": "audit-datasets",
             "label": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "Datasets reales de auditoría",
+              "en": "Datasets reales de auditoría",
+              "va": "Datasets reales de auditoría"
             }
           },
           {
+            "id": "ai-steam-repo",
             "label": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "Repositorio AI-STEAM",
+              "en": "Repositorio AI-STEAM",
+              "va": "Repositorio AI-STEAM"
             }
           }
         ],
         "tools": [
           {
+            "id": "audit-template",
             "label": {
               "es": "Plantilla de auditoría CC-BY-SA",
               "en": "CC-BY-SA audit template",
@@ -6290,6 +6298,7 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           {
+            "id": "bias-datasets",
             "label": {
               "es": "Datasets reales de auditoría de sesgos (CSV/Notebook)",
               "en": "Real bias auditing datasets (CSV/Notebook)",
@@ -7423,29 +7432,33 @@ export const MARKETPLACE_CONFIG = {
         },
         "infrastructure": [
           {
+            "id": "ford-plant",
             "label": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "Planta Ford Valencia",
+              "en": "Planta Ford Valencia",
+              "va": "Planta Ford Valencia"
             }
           },
           {
+            "id": "cobots-ur10",
             "label": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "Cobots industriales (UR10)",
+              "en": "Cobots industriales (UR10)",
+              "va": "Cobots industriales (UR10)"
             }
           },
           {
+            "id": "fp-workshop",
             "label": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "Taller FP Mecatrónica",
+              "en": "Taller FP Mecatrónica",
+              "va": "Taller FP Mecatrónica"
             }
           }
         ],
         "tools": [
           {
+            "id": "ai-secrett-rubrics",
             "label": {
               "es": "Rúbricas AI-SECRETT (perfil industrial)",
               "en": "AI-SECRETT rubrics (industrial profile)",
@@ -7950,29 +7963,33 @@ export const MARKETPLACE_CONFIG = {
         },
         "infrastructure": [
           {
+            "id": "upv-lms",
             "label": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "Plataforma LMS UPV",
+              "en": "Plataforma LMS UPV",
+              "va": "Plataforma LMS UPV"
             }
           },
           {
+            "id": "digital-twins-lab",
             "label": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "Laboratorio de gemelos digitales INESC TEC",
+              "en": "Laboratorio de gemelos digitales INESC TEC",
+              "va": "Laboratorio de gemelos digitales INESC TEC"
             }
           },
           {
+            "id": "aules-fp",
             "label": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "Entorno Aules FP",
+              "en": "Entorno Aules FP",
+              "va": "Entorno Aules FP"
             }
           }
         ],
         "tools": [
           {
+            "id": "competency-framework",
             "label": {
               "es": "Marco de competencias FP-Máster AI-STEAM",
               "en": "AI-STEAM VET-Master competency framework",
@@ -8625,6 +8642,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "infrastructure": [
           {
+            "id": null,
             "label": {
               "es": "Drones multiespectrales",
               "en": "Drones multiespectrales",
@@ -8632,6 +8650,7 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           {
+            "id": null,
             "label": {
               "es": "Dataset citrus CV",
               "en": "Dataset citrus CV",
@@ -8639,6 +8658,7 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           {
+            "id": null,
             "label": {
               "es": "Sistema ConsensUE",
               "en": "Sistema ConsensUE",
@@ -9256,6 +9276,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "infrastructure": [
           {
+            "id": null,
             "label": {
               "es": "Panel de expertos ASEVA",
               "en": "Panel de expertos ASEVA",
@@ -9263,6 +9284,7 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           {
+            "id": null,
             "label": {
               "es": "Sistema ConsensUE",
               "en": "Sistema ConsensUE",
@@ -9270,6 +9292,7 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           {
+            "id": null,
             "label": {
               "es": "Concesionarios asociados",
               "en": "Concesionarios asociados",
@@ -13179,29 +13202,33 @@ export const MARKETPLACE_CONFIG = {
           },
           "infrastructure": [
             {
+              "id": "aules",
               "label": {
-                "es": "",
-                "en": "",
-                "va": ""
+                "es": "Plataforma Aules",
+                "en": "Plataforma Aules",
+                "va": "Plataforma Aules"
               }
             },
             {
+              "id": "iot-sensors",
               "label": {
-                "es": "",
-                "en": "",
-                "va": ""
+                "es": "Sensores IoT aula",
+                "en": "Sensores IoT aula",
+                "va": "Sensores IoT aula"
               }
             },
             {
+              "id": "energy-dataset",
               "label": {
-                "es": "",
-                "en": "",
-                "va": ""
+                "es": "Dataset energético anonimizado",
+                "en": "Dataset energético anonimizado",
+                "va": "Dataset energético anonimizado"
               }
             }
           ],
           "tools": [
             {
+              "id": "ai-secrett-checklist",
               "label": {
                 "es": "Checklist AI-SECRETT",
                 "en": "AI-SECRETT checklist",
@@ -13712,29 +13739,33 @@ export const MARKETPLACE_CONFIG = {
           },
           "infrastructure": [
             {
+              "id": "classroom",
               "label": {
-                "es": "",
-                "en": "",
-                "va": ""
+                "es": "Aula universitaria equipada",
+                "en": "Aula universitaria equipada",
+                "va": "Aula universitaria equipada"
               }
             },
             {
+              "id": "audit-datasets",
               "label": {
-                "es": "",
-                "en": "",
-                "va": ""
+                "es": "Datasets reales de auditoría",
+                "en": "Datasets reales de auditoría",
+                "va": "Datasets reales de auditoría"
               }
             },
             {
+              "id": "ai-steam-repo",
               "label": {
-                "es": "",
-                "en": "",
-                "va": ""
+                "es": "Repositorio AI-STEAM",
+                "en": "Repositorio AI-STEAM",
+                "va": "Repositorio AI-STEAM"
               }
             }
           ],
           "tools": [
             {
+              "id": "audit-template",
               "label": {
                 "es": "Plantilla de auditoría CC-BY-SA",
                 "en": "CC-BY-SA audit template",
@@ -13742,6 +13773,7 @@ export const MARKETPLACE_CONFIG = {
               }
             },
             {
+              "id": "bias-datasets",
               "label": {
                 "es": "Datasets reales de auditoría de sesgos (CSV/Notebook)",
                 "en": "Real bias auditing datasets (CSV/Notebook)",
@@ -14270,29 +14302,33 @@ export const MARKETPLACE_CONFIG = {
           },
           "infrastructure": [
             {
+              "id": "ford-plant",
               "label": {
-                "es": "",
-                "en": "",
-                "va": ""
+                "es": "Planta Ford Valencia",
+                "en": "Planta Ford Valencia",
+                "va": "Planta Ford Valencia"
               }
             },
             {
+              "id": "cobots-ur10",
               "label": {
-                "es": "",
-                "en": "",
-                "va": ""
+                "es": "Cobots industriales (UR10)",
+                "en": "Cobots industriales (UR10)",
+                "va": "Cobots industriales (UR10)"
               }
             },
             {
+              "id": "fp-workshop",
               "label": {
-                "es": "",
-                "en": "",
-                "va": ""
+                "es": "Taller FP Mecatrónica",
+                "en": "Taller FP Mecatrónica",
+                "va": "Taller FP Mecatrónica"
               }
             }
           ],
           "tools": [
             {
+              "id": "ai-secrett-rubrics",
               "label": {
                 "es": "Rúbricas AI-SECRETT (perfil industrial)",
                 "en": "AI-SECRETT rubrics (industrial profile)",
@@ -14797,29 +14833,33 @@ export const MARKETPLACE_CONFIG = {
           },
           "infrastructure": [
             {
+              "id": "upv-lms",
               "label": {
-                "es": "",
-                "en": "",
-                "va": ""
+                "es": "Plataforma LMS UPV",
+                "en": "Plataforma LMS UPV",
+                "va": "Plataforma LMS UPV"
               }
             },
             {
+              "id": "digital-twins-lab",
               "label": {
-                "es": "",
-                "en": "",
-                "va": ""
+                "es": "Laboratorio de gemelos digitales INESC TEC",
+                "en": "Laboratorio de gemelos digitales INESC TEC",
+                "va": "Laboratorio de gemelos digitales INESC TEC"
               }
             },
             {
+              "id": "aules-fp",
               "label": {
-                "es": "",
-                "en": "",
-                "va": ""
+                "es": "Entorno Aules FP",
+                "en": "Entorno Aules FP",
+                "va": "Entorno Aules FP"
               }
             }
           ],
           "tools": [
             {
+              "id": "competency-framework",
               "label": {
                 "es": "Marco de competencias FP-Máster AI-STEAM",
                 "en": "AI-STEAM VET-Master competency framework",
@@ -15474,6 +15514,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "infrastructure": [
             {
+              "id": null,
               "label": {
                 "es": "Drones multiespectrales",
                 "en": "Drones multiespectrales",
@@ -15481,6 +15522,7 @@ export const MARKETPLACE_CONFIG = {
               }
             },
             {
+              "id": null,
               "label": {
                 "es": "Dataset citrus CV",
                 "en": "Dataset citrus CV",
@@ -15488,6 +15530,7 @@ export const MARKETPLACE_CONFIG = {
               }
             },
             {
+              "id": null,
               "label": {
                 "es": "Sistema ConsensUE",
                 "en": "Sistema ConsensUE",
@@ -16105,6 +16148,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "infrastructure": [
             {
+              "id": null,
               "label": {
                 "es": "Panel de expertos ASEVA",
                 "en": "Panel de expertos ASEVA",
@@ -16112,6 +16156,7 @@ export const MARKETPLACE_CONFIG = {
               }
             },
             {
+              "id": null,
               "label": {
                 "es": "Sistema ConsensUE",
                 "en": "Sistema ConsensUE",
@@ -16119,6 +16164,7 @@ export const MARKETPLACE_CONFIG = {
               }
             },
             {
+              "id": null,
               "label": {
                 "es": "Concesionarios asociados",
                 "en": "Concesionarios asociados",
