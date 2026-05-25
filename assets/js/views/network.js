@@ -428,7 +428,7 @@ function tabStakeholders(activeCategory, showForm) {
       <div class="ml-auto">${searchBar}</div>
     </div>
     <div id="net-sh-results">
-      ${buildShResults({ lang, shTexts, pageSize, activeCategory, activeSector, searchQuery, page, pageSizeOptions: shBlock.pageSizeOptions || [12, 24, 48, 96], showAllOption: shBlock.showAllOption !== false })}
+      ${buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, activeSector, searchQuery, page, pageSizeOptions: shBlock.pageSizeOptions || [12, 24, 48, 96], showAllOption: shBlock.showAllOption !== false })}
     </div>
     ${formHtml}
   `;
@@ -436,7 +436,7 @@ function tabStakeholders(activeCategory, showForm) {
 
 // ─── Stakeholder results builder (partial update target) ─────────────────────
 
-function buildShResults({ lang, shTexts, pageSize, activeCategory, activeSector, searchQuery, page, pageSizeOptions, showAllOption }) {
+function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, activeSector, searchQuery, page, pageSizeOptions, showAllOption }) {
   const loc = obj => localized(obj) || '';
 
   const getCatLabel = key => {
@@ -586,6 +586,7 @@ function updateShResults() {
   const loc     = obj => localized(obj) || '';
   container.innerHTML = buildShResults({
     lang:           getLang(),
+    shBlock,
     shTexts: {
       noResults:      loc(shBlock.noResults)      || '',
       visitWebLabel:  loc(shBlock.visitWebLabel)  || 'Visitar web',
