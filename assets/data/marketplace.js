@@ -1828,6 +1828,60 @@ export const MARKETPLACE_CONFIG = {
       }
     },
     {
+      "id": "brief-template",
+      "visible": true,
+      "label": {
+        "es": "Plantilla de brief",
+        "en": "Brief template",
+        "va": "Plantilla de brief"
+      }
+    },
+    {
+      "id": "preparation-guide",
+      "visible": true,
+      "label": {
+        "es": "GuÃ­a de preparaciÃ³n",
+        "en": "Preparation guide",
+        "va": "Guia de preparaciÃ³"
+      }
+    },
+    {
+      "id": "intake-form",
+      "visible": true,
+      "label": {
+        "es": "Formulario de preparaciÃ³n",
+        "en": "Intake form",
+        "va": "Formulari de preparaciÃ³"
+      }
+    },
+    {
+      "id": "ethics-note",
+      "visible": true,
+      "label": {
+        "es": "Nota Ã©tica",
+        "en": "Ethics note",
+        "va": "Nota Ã¨tica"
+      }
+    },
+    {
+      "id": "scope-template",
+      "visible": true,
+      "label": {
+        "es": "Plantilla de alcance",
+        "en": "Scope template",
+        "va": "Plantilla d'abast"
+      }
+    },
+    {
+      "id": "publication-note",
+      "visible": true,
+      "label": {
+        "es": "Nota de publicaciÃ³n",
+        "en": "Publication note",
+        "va": "Nota de publicaciÃ³"
+      }
+    },
+    {
       "id": "evidence-template",
       "visible": true,
       "label": {
@@ -2603,6 +2657,306 @@ export const MARKETPLACE_CONFIG = {
         "es": "Descartado",
         "en": "Rejected",
         "va": "Descartat"
+      }
+    }
+  ],
+  "mentoringTypeLabels": [
+    {
+      "id": "brief-support",
+      "visible": true,
+      "label": {
+        "es": "Apoyo a brief",
+        "en": "Brief support",
+        "va": "Suport a brief"
+      }
+    },
+    {
+      "id": "ethical-ai-support",
+      "visible": true,
+      "label": {
+        "es": "Apoyo en IA responsable",
+        "en": "Responsible AI support",
+        "va": "Suport en IA responsable"
+      }
+    },
+    {
+      "id": "technical-mentoring",
+      "visible": true,
+      "label": {
+        "es": "MentorÃ­a tÃ©cnica",
+        "en": "Technical mentoring",
+        "va": "Mentoria tÃ¨cnica"
+      }
+    },
+    {
+      "id": "pedagogical-mentoring",
+      "visible": true,
+      "label": {
+        "es": "MentorÃ­a pedagÃ³gica",
+        "en": "Pedagogical mentoring",
+        "va": "Mentoria pedagÃ²gica"
+      }
+    },
+    {
+      "id": "transfer-support",
+      "visible": true,
+      "label": {
+        "es": "Apoyo a transferencia",
+        "en": "Transfer support",
+        "va": "Suport a transferÃ¨ncia"
+      }
+    },
+    {
+      "id": "resource-design",
+      "visible": true,
+      "label": {
+        "es": "DiseÃ±o de recursos",
+        "en": "Resource design",
+        "va": "Disseny de recursos"
+      }
+    },
+    {
+      "id": "challenge-framing",
+      "visible": true,
+      "label": {
+        "es": "FormulaciÃ³n de retos",
+        "en": "Challenge framing",
+        "va": "FormulaciÃ³ de reptes"
+      }
+    }
+  ],
+  "mentoringStatusLabels": [
+    {
+      "id": "open",
+      "visible": true,
+      "label": {
+        "es": "Abierta",
+        "en": "Open",
+        "va": "Oberta"
+      }
+    },
+    {
+      "id": "paused",
+      "visible": true,
+      "label": {
+        "es": "Pausada",
+        "en": "Paused",
+        "va": "Pausada"
+      }
+    },
+    {
+      "id": "closed",
+      "visible": true,
+      "label": {
+        "es": "Cerrada",
+        "en": "Closed",
+        "va": "Tancada"
+      }
+    },
+    {
+      "id": "upcoming",
+      "visible": true,
+      "label": {
+        "es": "PrÃ³ximamente",
+        "en": "Upcoming",
+        "va": "PrÃ²ximament"
+      }
+    }
+  ],
+  "mentoringSpecialtyLabels": [
+    {
+      "id": "responsible-ai",
+      "visible": true,
+      "label": {
+        "es": "IA responsable",
+        "en": "Responsible AI",
+        "va": "IA responsable"
+      }
+    },
+    {
+      "id": "creative-brief",
+      "visible": true,
+      "label": {
+        "es": "Brief creativo",
+        "en": "Creative brief",
+        "va": "Brief creatiu"
+      }
+    },
+    {
+      "id": "co-design",
+      "visible": true,
+      "label": {
+        "es": "Co-diseÃ±o",
+        "en": "Co-design",
+        "va": "Codisseny"
+      }
+    },
+    {
+      "id": "track-b-transfer",
+      "visible": true,
+      "label": {
+        "es": "Transferencia Track B",
+        "en": "Track B transfer",
+        "va": "TransferÃ¨ncia Track B"
+      }
+    },
+    {
+      "id": "ai-ethics",
+      "visible": true,
+      "label": {
+        "es": "Ã‰tica de IA",
+        "en": "AI ethics",
+        "va": "Ãˆtica d'IA"
+      }
+    },
+    {
+      "id": "lbd",
+      "visible": true,
+      "label": {
+        "es": "Learning by Developing",
+        "en": "Learning by Developing",
+        "va": "Learning by Developing"
+      }
+    },
+    {
+      "id": "data-protection",
+      "visible": true,
+      "label": {
+        "es": "ProtecciÃ³n de datos",
+        "en": "Data protection",
+        "va": "ProtecciÃ³ de dades"
+      }
+    },
+    {
+      "id": "curriculum-design",
+      "visible": true,
+      "label": {
+        "es": "DiseÃ±o curricular",
+        "en": "Curriculum design",
+        "va": "Disseny curricular"
+      }
+    },
+    {
+      "id": "resource-design",
+      "visible": true,
+      "label": {
+        "es": "DiseÃ±o de recursos",
+        "en": "Resource design",
+        "va": "Disseny de recursos"
+      }
+    }
+  ],
+  "modalityLabels": [
+    {
+      "id": "online",
+      "visible": true,
+      "label": {
+        "es": "Online",
+        "en": "Online",
+        "va": "En lÃ­nia"
+      }
+    },
+    {
+      "id": "hybrid",
+      "visible": true,
+      "label": {
+        "es": "HÃ­brida",
+        "en": "Hybrid",
+        "va": "HÃ­brida"
+      }
+    },
+    {
+      "id": "in-person",
+      "visible": true,
+      "label": {
+        "es": "Presencial",
+        "en": "In person",
+        "va": "Presencial"
+      }
+    },
+    {
+      "id": "asynchronous",
+      "visible": true,
+      "label": {
+        "es": "AsÃ­ncrona",
+        "en": "Asynchronous",
+        "va": "AsÃ­ncrona"
+      }
+    }
+  ],
+  "mentoringRequestAccessLabels": [
+    {
+      "id": "external-managed",
+      "visible": true,
+      "label": {
+        "es": "Gestionada externamente",
+        "en": "Externally managed",
+        "va": "Gestionada externament"
+      }
+    },
+    {
+      "id": "email-managed",
+      "visible": true,
+      "label": {
+        "es": "Gestionada por correo",
+        "en": "Email managed",
+        "va": "Gestionada per correu"
+      }
+    },
+    {
+      "id": "lms-managed",
+      "visible": true,
+      "label": {
+        "es": "Gestionada en LMS",
+        "en": "LMS managed",
+        "va": "Gestionada en LMS"
+      }
+    },
+    {
+      "id": "not-available",
+      "visible": true,
+      "label": {
+        "es": "No disponible",
+        "en": "Not available",
+        "va": "No disponible"
+      }
+    }
+  ],
+  "confidentialityLevelLabels": [
+    {
+      "id": "public-guidance",
+      "visible": true,
+      "label": {
+        "es": "OrientaciÃ³n pÃºblica",
+        "en": "Public guidance",
+        "va": "OrientaciÃ³ pÃºblica"
+      }
+    },
+    {
+      "id": "standard",
+      "visible": true,
+      "label": {
+        "es": "EstÃ¡ndar",
+        "en": "Standard",
+        "va": "EstÃ ndard"
+      }
+    },
+    {
+      "id": "restricted",
+      "visible": true,
+      "label": {
+        "es": "Restringida",
+        "en": "Restricted",
+        "va": "Restringida"
+      }
+    },
+    {
+      "id": "nda-required",
+      "visible": true,
+      "label": {
+        "es": "Requiere NDA",
+        "en": "NDA required",
+        "va": "Requereix NDA"
       }
     }
   ],
@@ -18448,6 +18802,60 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       {
+        "id": "brief-template",
+        "visible": true,
+        "label": {
+          "es": "Plantilla de brief",
+          "en": "Brief template",
+          "va": "Plantilla de brief"
+        }
+      },
+      {
+        "id": "preparation-guide",
+        "visible": true,
+        "label": {
+          "es": "GuÃ­a de preparaciÃ³n",
+          "en": "Preparation guide",
+          "va": "Guia de preparaciÃ³"
+        }
+      },
+      {
+        "id": "intake-form",
+        "visible": true,
+        "label": {
+          "es": "Formulario de preparaciÃ³n",
+          "en": "Intake form",
+          "va": "Formulari de preparaciÃ³"
+        }
+      },
+      {
+        "id": "ethics-note",
+        "visible": true,
+        "label": {
+          "es": "Nota Ã©tica",
+          "en": "Ethics note",
+          "va": "Nota Ã¨tica"
+        }
+      },
+      {
+        "id": "scope-template",
+        "visible": true,
+        "label": {
+          "es": "Plantilla de alcance",
+          "en": "Scope template",
+          "va": "Plantilla d'abast"
+        }
+      },
+      {
+        "id": "publication-note",
+        "visible": true,
+        "label": {
+          "es": "Nota de publicaciÃ³n",
+          "en": "Publication note",
+          "va": "Nota de publicaciÃ³"
+        }
+      },
+      {
         "id": "evidence-template",
         "visible": true,
         "label": {
@@ -18535,6 +18943,306 @@ export const MARKETPLACE_CONFIG = {
           "es": "Resumen de evidencia",
           "en": "Evidence summary",
           "va": "Resum d'evidència"
+        }
+      }
+    ],
+    "mentoringType": [
+      {
+        "id": "brief-support",
+        "visible": true,
+        "label": {
+          "es": "Apoyo a brief",
+          "en": "Brief support",
+          "va": "Suport a brief"
+        }
+      },
+      {
+        "id": "ethical-ai-support",
+        "visible": true,
+        "label": {
+          "es": "Apoyo en IA responsable",
+          "en": "Responsible AI support",
+          "va": "Suport en IA responsable"
+        }
+      },
+      {
+        "id": "technical-mentoring",
+        "visible": true,
+        "label": {
+          "es": "MentorÃ­a tÃ©cnica",
+          "en": "Technical mentoring",
+          "va": "Mentoria tÃ¨cnica"
+        }
+      },
+      {
+        "id": "pedagogical-mentoring",
+        "visible": true,
+        "label": {
+          "es": "MentorÃ­a pedagÃ³gica",
+          "en": "Pedagogical mentoring",
+          "va": "Mentoria pedagÃ²gica"
+        }
+      },
+      {
+        "id": "transfer-support",
+        "visible": true,
+        "label": {
+          "es": "Apoyo a transferencia",
+          "en": "Transfer support",
+          "va": "Suport a transferÃ¨ncia"
+        }
+      },
+      {
+        "id": "resource-design",
+        "visible": true,
+        "label": {
+          "es": "DiseÃ±o de recursos",
+          "en": "Resource design",
+          "va": "Disseny de recursos"
+        }
+      },
+      {
+        "id": "challenge-framing",
+        "visible": true,
+        "label": {
+          "es": "FormulaciÃ³n de retos",
+          "en": "Challenge framing",
+          "va": "FormulaciÃ³ de reptes"
+        }
+      }
+    ],
+    "mentoringStatus": [
+      {
+        "id": "open",
+        "visible": true,
+        "label": {
+          "es": "Abierta",
+          "en": "Open",
+          "va": "Oberta"
+        }
+      },
+      {
+        "id": "paused",
+        "visible": true,
+        "label": {
+          "es": "Pausada",
+          "en": "Paused",
+          "va": "Pausada"
+        }
+      },
+      {
+        "id": "closed",
+        "visible": true,
+        "label": {
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
+        }
+      },
+      {
+        "id": "upcoming",
+        "visible": true,
+        "label": {
+          "es": "PrÃ³ximamente",
+          "en": "Upcoming",
+          "va": "PrÃ²ximament"
+        }
+      }
+    ],
+    "mentoringSpecialty": [
+      {
+        "id": "responsible-ai",
+        "visible": true,
+        "label": {
+          "es": "IA responsable",
+          "en": "Responsible AI",
+          "va": "IA responsable"
+        }
+      },
+      {
+        "id": "creative-brief",
+        "visible": true,
+        "label": {
+          "es": "Brief creativo",
+          "en": "Creative brief",
+          "va": "Brief creatiu"
+        }
+      },
+      {
+        "id": "co-design",
+        "visible": true,
+        "label": {
+          "es": "Co-diseÃ±o",
+          "en": "Co-design",
+          "va": "Codisseny"
+        }
+      },
+      {
+        "id": "track-b-transfer",
+        "visible": true,
+        "label": {
+          "es": "Transferencia Track B",
+          "en": "Track B transfer",
+          "va": "TransferÃ¨ncia Track B"
+        }
+      },
+      {
+        "id": "ai-ethics",
+        "visible": true,
+        "label": {
+          "es": "Ã‰tica de IA",
+          "en": "AI ethics",
+          "va": "Ãˆtica d'IA"
+        }
+      },
+      {
+        "id": "lbd",
+        "visible": true,
+        "label": {
+          "es": "Learning by Developing",
+          "en": "Learning by Developing",
+          "va": "Learning by Developing"
+        }
+      },
+      {
+        "id": "data-protection",
+        "visible": true,
+        "label": {
+          "es": "ProtecciÃ³n de datos",
+          "en": "Data protection",
+          "va": "ProtecciÃ³ de dades"
+        }
+      },
+      {
+        "id": "curriculum-design",
+        "visible": true,
+        "label": {
+          "es": "DiseÃ±o curricular",
+          "en": "Curriculum design",
+          "va": "Disseny curricular"
+        }
+      },
+      {
+        "id": "resource-design",
+        "visible": true,
+        "label": {
+          "es": "DiseÃ±o de recursos",
+          "en": "Resource design",
+          "va": "Disseny de recursos"
+        }
+      }
+    ],
+    "modality": [
+      {
+        "id": "online",
+        "visible": true,
+        "label": {
+          "es": "Online",
+          "en": "Online",
+          "va": "En lÃ­nia"
+        }
+      },
+      {
+        "id": "hybrid",
+        "visible": true,
+        "label": {
+          "es": "HÃ­brida",
+          "en": "Hybrid",
+          "va": "HÃ­brida"
+        }
+      },
+      {
+        "id": "in-person",
+        "visible": true,
+        "label": {
+          "es": "Presencial",
+          "en": "In person",
+          "va": "Presencial"
+        }
+      },
+      {
+        "id": "asynchronous",
+        "visible": true,
+        "label": {
+          "es": "AsÃ­ncrona",
+          "en": "Asynchronous",
+          "va": "AsÃ­ncrona"
+        }
+      }
+    ],
+    "mentoringRequestAccess": [
+      {
+        "id": "external-managed",
+        "visible": true,
+        "label": {
+          "es": "Gestionada externamente",
+          "en": "Externally managed",
+          "va": "Gestionada externament"
+        }
+      },
+      {
+        "id": "email-managed",
+        "visible": true,
+        "label": {
+          "es": "Gestionada por correo",
+          "en": "Email managed",
+          "va": "Gestionada per correu"
+        }
+      },
+      {
+        "id": "lms-managed",
+        "visible": true,
+        "label": {
+          "es": "Gestionada en LMS",
+          "en": "LMS managed",
+          "va": "Gestionada en LMS"
+        }
+      },
+      {
+        "id": "not-available",
+        "visible": true,
+        "label": {
+          "es": "No disponible",
+          "en": "Not available",
+          "va": "No disponible"
+        }
+      }
+    ],
+    "confidentialityLevel": [
+      {
+        "id": "public-guidance",
+        "visible": true,
+        "label": {
+          "es": "OrientaciÃ³n pÃºblica",
+          "en": "Public guidance",
+          "va": "OrientaciÃ³ pÃºblica"
+        }
+      },
+      {
+        "id": "standard",
+        "visible": true,
+        "label": {
+          "es": "EstÃ¡ndar",
+          "en": "Standard",
+          "va": "EstÃ ndard"
+        }
+      },
+      {
+        "id": "restricted",
+        "visible": true,
+        "label": {
+          "es": "Restringida",
+          "en": "Restricted",
+          "va": "Restringida"
+        }
+      },
+      {
+        "id": "nda-required",
+        "visible": true,
+        "label": {
+          "es": "Requiere NDA",
+          "en": "NDA required",
+          "va": "Requereix NDA"
         }
       }
     ]
