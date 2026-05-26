@@ -436,6 +436,22 @@ function getStatusLabel(id) {
   return getLabelFromArray(MARKETPLACE_CONFIG.statusLabels, id);
 }
 
+function getMentoringTypeLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.mentoringTypeLabels || MARKETPLACE_CONFIG.labels?.mentoringType, id);
+}
+
+function getMentoringStatusLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.mentoringStatusLabels || MARKETPLACE_CONFIG.statusLabels, id);
+}
+
+function getMentoringSpecialtyLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.mentoringSpecialtyLabels || MARKETPLACE_CONFIG.labels?.mentoringSpecialty, id);
+}
+
+function getModalityLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.modalityLabels || MARKETPLACE_CONFIG.labels?.modality, id);
+}
+
 function getEvidenceLabel(id) {
   return getLabelFromArray(MARKETPLACE_CONFIG.evidenceMaturityLabels, id);
 }
@@ -892,7 +908,7 @@ function renderCardShell(item, tab, body, options = {}) {
     <article class="group flex h-full flex-col rounded-xl border border-eu-border bg-white p-6 shadow-sm transition-colors hover:border-eu-blue">
       <div class="flex flex-wrap gap-2">
         ${renderBadge(getTypeLabel(item.type), tone.badge)}
-        ${renderBadge(getStatusLabel(item.core?.status))}
+        ${renderBadge(options.statusLabel !== undefined ? options.statusLabel : getStatusLabel(item.core?.status))}
         ${options.extraBadge ? renderBadge(options.extraBadge) : ''}
       </div>
       <div class="mt-4 flex-1">
@@ -1394,10 +1410,86 @@ function renderValidationCard(item, tab) {
 }
 
 function renderMentoringCard(item, tab) {
-  const card = item.card || {};
+  const core = item.core || {};
+  const pres = item.presentation?.card || {};
+  const offer = item.mentoringOffer || {};
+  const format = offer.format || {};
+  const provider = item.ownership?.provider || {};
   const ef = item.externalFlow || {};
   const primaryUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : '';
   const fallbackLabel = pickLang(ef.fallbackAction?.label) || pickLang({ es: 'Ver mentoria', en: 'View mentoring', va: 'Veure mentoria' });
+
+  if (offer.purpose || item.mentors || item.expectedOutputs || item.presentation) {
+    const providerName = pickLang(provider.name) || pickLang(core.entity?.name);
+    const providerRole = pickLang(provider.role);
+    const purposeLabel = pickLang(pres.mainBlockLabel) || pickLang({ es: 'Que ofrece', en: 'What it offers', va: 'Que ofereix' });
+    const purpose = pickLang(offer.purpose);
+    const specialties = asArray(item.mentors?.items)
+      .flatMap(mentor => asArray(mentor?.specialties))
+      .map(specialty => getMentoringSpecialtyLabel(specialty) || pickLang(specialty))
+      .filter(Boolean)
+      .filter((specialty, index, all) => all.indexOf(specialty) === index);
+    const modality = getModalityLabel(format.modality);
+    const duration = format.sessionDurationMinutes
+      ? pickLang({
+          es: `${format.sessionDurationMinutes} min`,
+          en: `${format.sessionDurationMinutes} min`,
+          va: `${format.sessionDurationMinutes} min`,
+        })
+      : '';
+    const asyncReview = format.asyncReview
+      ? pickLang({
+          es: 'revision asincronica',
+          en: 'async review',
+          va: 'revisio asincronica',
+        })
+      : '';
+    const formatSummary = [modality, duration, asyncReview].filter(Boolean).join(' / ');
+    const cardDownloads = asArray(item.cardDownloads).filter(download => download?.showOnCard !== false);
+    const dlHtml = pres.showDownloadsIndicator !== false && item.downloads?.enabled && item.hasDownloads && cardDownloads.length
+      ? `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500"><i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i><span>${esc(cardDownloads.length === 1 ? `1 ${uiText('downloadable')}` : `${cardDownloads.length} ${uiText('downloadables')}`)}</span></div>`
+      : '';
+    const ctaHtml = primaryUrl
+      ? `<a href="${esc(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang(ef.primaryAction?.label) || fallbackLabel)}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
+      : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(fallbackLabel)}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
+
+    const providerHtml = providerName
+      ? `<div class="mt-4 rounded-lg border border-eu-border bg-white px-3 py-2">
+          <p class="text-[11px] font-bold uppercase tracking-wide text-gray-500">${esc(pickLang({ es: 'Proveedor', en: 'Provider', va: 'Proveidor' }))}</p>
+          <p class="mt-0.5 text-sm font-semibold leading-5 text-gray-700">${esc(providerName)}</p>
+          ${providerRole ? `<p class="mt-1 text-xs leading-5 text-gray-500">${esc(providerRole)}</p>` : ''}
+        </div>`
+      : '';
+
+    const body = `
+      ${purpose ? `
+        <div class="mt-4 rounded-lg bg-eu-bg p-4">
+          <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-gray-500">
+            <i data-lucide="handshake" class="h-3.5 w-3.5"></i>
+            ${esc(purposeLabel)}
+          </p>
+          <p class="mt-1 text-sm font-semibold leading-6 text-eu-text">${esc(purpose)}</p>
+        </div>` : ''}
+      ${providerHtml}
+      ${renderChipList(specialties, 'bg-slate-100 text-slate-700 border-slate-200', 4)}
+      ${renderCardMiniMeta([
+        { label: uiText('availability'), value: pickLang(format.availability) },
+        { label: pickLang({ es: 'Formato', en: 'Format', va: 'Format' }), value: formatSummary },
+      ])}
+      ${dlHtml}
+    `;
+
+    return renderCardShell(item, tab, body, {
+      title: core.title,
+      subtitle: core.summary,
+      statusLabel: getMentoringStatusLabel(core.status),
+      extraBadge: getMentoringTypeLabel(core.mentoringType),
+      entity: '',
+      ctaHtml,
+    });
+  }
+
+  const card = item.card || {};
   const ctaHtml = primaryUrl
     ? `<a href="${esc(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang(ef.primaryAction?.label) || fallbackLabel)}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
     : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(fallbackLabel)}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
