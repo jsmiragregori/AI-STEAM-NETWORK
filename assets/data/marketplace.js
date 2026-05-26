@@ -1431,22 +1431,21 @@ export const MARKETPLACE_CONFIG = {
     },
     "validation": {
       "requiredBlocks": [
-        "need",
-        "context",
+        "validation",
+        "criteria",
         "evidence",
-        "outputs",
-        "process"
+        "decision"
       ],
       "optionalBlocks": [
-        "people",
+        "downloads",
         "resources",
         "access",
-        "trackA",
-        "objective",
-        "methodology",
-        "outcome"
+        "trackRouting",
+        "relations",
+        "people",
+        "externalFlow"
       ],
-      "cardSignal": "evidence"
+      "cardSignal": "validation"
     },
     "mentoring": {
       "requiredBlocks": [
@@ -1854,6 +1853,69 @@ export const MARKETPLACE_CONFIG = {
         "en": "Open Educational Resource (OER)",
         "va": "Recurs educatiu obert (OER)"
       }
+    },
+    {
+      "id": "validation-sheet",
+      "visible": true,
+      "label": {
+        "es": "Ficha de validación",
+        "en": "Validation sheet",
+        "va": "Fitxa de validació"
+      }
+    },
+    {
+      "id": "competence-sheet",
+      "visible": true,
+      "label": {
+        "es": "Ficha de competencias",
+        "en": "Competence sheet",
+        "va": "Fitxa de competències"
+      }
+    },
+    {
+      "id": "criteria-matrix",
+      "visible": true,
+      "label": {
+        "es": "Matriz de criterios",
+        "en": "Criteria matrix",
+        "va": "Matriu de criteris"
+      }
+    },
+    {
+      "id": "panel-summary",
+      "visible": true,
+      "label": {
+        "es": "Acta/resumen del panel",
+        "en": "Panel summary",
+        "va": "Acta/resum del panell"
+      }
+    },
+    {
+      "id": "triage-report",
+      "visible": true,
+      "label": {
+        "es": "Informe de triage",
+        "en": "Triage report",
+        "va": "Informe de triatge"
+      }
+    },
+    {
+      "id": "track-routing-note",
+      "visible": true,
+      "label": {
+        "es": "Nota de derivación Track A/B",
+        "en": "Track A/B routing note",
+        "va": "Nota de derivació Track A/B"
+      }
+    },
+    {
+      "id": "evidence-summary",
+      "visible": true,
+      "label": {
+        "es": "Resumen de evidencia",
+        "en": "Evidence summary",
+        "va": "Resum d'evidència"
+      }
     }
   ],
   "caseStageLabels": [
@@ -1958,6 +2020,15 @@ export const MARKETPLACE_CONFIG = {
         "es": "Abierto y público",
         "en": "Open and public",
         "va": "Obert i públic"
+      }
+    },
+    {
+      "id": "summary-only",
+      "visible": true,
+      "label": {
+        "es": "Solo resumen público",
+        "en": "Summary only",
+        "va": "Només resum públic"
       }
     },
     {
@@ -2322,6 +2393,219 @@ export const MARKETPLACE_CONFIG = {
       }
     }
   ],
+  "validationTypeLabels": [
+    {
+      "id": "stakeholder-validation",
+      "visible": true,
+      "label": {
+        "es": "Validación stakeholder",
+        "en": "Stakeholder validation",
+        "va": "Validació stakeholder"
+      }
+    },
+    {
+      "id": "academic-validation",
+      "visible": true,
+      "label": {
+        "es": "Validación académica",
+        "en": "Academic validation",
+        "va": "Validació acadèmica"
+      }
+    },
+    {
+      "id": "technical-validation",
+      "visible": true,
+      "label": {
+        "es": "Validación técnica",
+        "en": "Technical validation",
+        "va": "Validació tècnica"
+      }
+    },
+    {
+      "id": "pedagogical-validation",
+      "visible": true,
+      "label": {
+        "es": "Validación pedagógica",
+        "en": "Pedagogical validation",
+        "va": "Validació pedagògica"
+      }
+    },
+    {
+      "id": "ethical-validation",
+      "visible": true,
+      "label": {
+        "es": "Validación ética",
+        "en": "Ethical validation",
+        "va": "Validació ètica"
+      }
+    },
+    {
+      "id": "legal-validation",
+      "visible": true,
+      "label": {
+        "es": "Validación legal",
+        "en": "Legal validation",
+        "va": "Validació legal"
+      }
+    },
+    {
+      "id": "track-triage",
+      "visible": true,
+      "label": {
+        "es": "Triage Track A/B",
+        "en": "Track A/B triage",
+        "va": "Triatge Track A/B"
+      }
+    },
+    {
+      "id": "resource-validation",
+      "visible": true,
+      "label": {
+        "es": "Validación de recurso",
+        "en": "Resource validation",
+        "va": "Validació de recurs"
+      }
+    }
+  ],
+  "validationStageLabels": [
+    {
+      "id": "planned",
+      "visible": true,
+      "label": {
+        "es": "Planificada",
+        "en": "Planned",
+        "va": "Planificada"
+      }
+    },
+    {
+      "id": "in-review",
+      "visible": true,
+      "label": {
+        "es": "En revisión",
+        "en": "In review",
+        "va": "En revisió"
+      }
+    },
+    {
+      "id": "validated",
+      "visible": true,
+      "label": {
+        "es": "Validada",
+        "en": "Validated",
+        "va": "Validada"
+      }
+    },
+    {
+      "id": "not-validated",
+      "visible": true,
+      "label": {
+        "es": "No validada",
+        "en": "Not validated",
+        "va": "No validada"
+      }
+    },
+    {
+      "id": "needs-reformulation",
+      "visible": true,
+      "label": {
+        "es": "Requiere reformulación",
+        "en": "Needs reformulation",
+        "va": "Requereix reformulació"
+      }
+    },
+    {
+      "id": "completed",
+      "visible": true,
+      "label": {
+        "es": "Completada",
+        "en": "Completed",
+        "va": "Completada"
+      }
+    },
+    {
+      "id": "archived",
+      "visible": true,
+      "label": {
+        "es": "Archivada",
+        "en": "Archived",
+        "va": "Arxivada"
+      }
+    }
+  ],
+  "decisionOutcomeLabels": [
+    {
+      "id": "validated-track-a",
+      "visible": true,
+      "label": {
+        "es": "Validado — Track A",
+        "en": "Validated — Track A",
+        "va": "Validat — Track A"
+      }
+    },
+    {
+      "id": "validated-track-b",
+      "visible": true,
+      "label": {
+        "es": "Validado — Track B",
+        "en": "Validated — Track B",
+        "va": "Validat — Track B"
+      }
+    },
+    {
+      "id": "validated-for-pilot",
+      "visible": true,
+      "label": {
+        "es": "Validado — derivar a piloto",
+        "en": "Validated — refer to pilot",
+        "va": "Validat — derivar a pilot"
+      }
+    },
+    {
+      "id": "validated-for-resource",
+      "visible": true,
+      "label": {
+        "es": "Validado — publicar como recurso",
+        "en": "Validated — publish as resource",
+        "va": "Validat — publicar com a recurs"
+      }
+    },
+    {
+      "id": "validated-for-case",
+      "visible": true,
+      "label": {
+        "es": "Validado — documentar como caso",
+        "en": "Validated — document as case",
+        "va": "Validat — documentar com a cas"
+      }
+    },
+    {
+      "id": "needs-reformulation",
+      "visible": true,
+      "label": {
+        "es": "Requiere reformulación",
+        "en": "Needs reformulation",
+        "va": "Requereix reformulació"
+      }
+    },
+    {
+      "id": "not-prioritised",
+      "visible": true,
+      "label": {
+        "es": "No priorizado",
+        "en": "Not prioritised",
+        "va": "No prioritzat"
+      }
+    },
+    {
+      "id": "rejected",
+      "visible": true,
+      "label": {
+        "es": "Descartado",
+        "en": "Rejected",
+        "va": "Descartat"
+      }
+    }
+  ],
   "modelVersion": "community-practice-mvp-1",
   "items": [
     {
@@ -2356,6 +2640,8 @@ export const MARKETPLACE_CONFIG = {
         "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
+        "validationType": "",
+        "validationStage": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -3002,6 +3288,8 @@ export const MARKETPLACE_CONFIG = {
           "FP"
         ],
         "pilotType": "curriculum-pilot",
+        "validationType": "",
+        "validationStage": "",
         "helix": [
           "academia",
           "public-sector"
@@ -3527,6 +3815,8 @@ export const MARKETPLACE_CONFIG = {
         "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
+        "validationType": "",
+        "validationStage": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -4110,6 +4400,8 @@ export const MARKETPLACE_CONFIG = {
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
+        "validationType": "",
+        "validationStage": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -4576,6 +4868,8 @@ export const MARKETPLACE_CONFIG = {
         "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
+        "validationType": "",
+        "validationStage": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -5203,6 +5497,8 @@ export const MARKETPLACE_CONFIG = {
         "stakeholderCategory": "civic",
         "levels": [],
         "pilotType": "",
+        "validationType": "",
+        "validationStage": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -5479,6 +5775,8 @@ export const MARKETPLACE_CONFIG = {
         "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
+        "validationType": "",
+        "validationStage": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -6035,6 +6333,8 @@ export const MARKETPLACE_CONFIG = {
           "Máster"
         ],
         "pilotType": "teacher-training",
+        "validationType": "",
+        "validationStage": "",
         "helix": [
           "academia",
           "civil-society"
@@ -6586,6 +6886,8 @@ export const MARKETPLACE_CONFIG = {
         "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
+        "validationType": "",
+        "validationStage": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -7193,6 +7495,8 @@ export const MARKETPLACE_CONFIG = {
           "FP"
         ],
         "pilotType": "vet-industry",
+        "validationType": "",
+        "validationStage": "",
         "helix": [
           "academia",
           "industry"
@@ -7737,6 +8041,8 @@ export const MARKETPLACE_CONFIG = {
           "Máster"
         ],
         "pilotType": "master-bridge",
+        "validationType": "",
+        "validationStage": "",
         "helix": [
           "academia",
           "industry"
@@ -8228,38 +8534,36 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-agr-asaja.yml",
       "core": {
         "status": "resolved",
-        "maturity": "completed",
+        "maturity": "idea",
         "title": {
-          "es": "Validación Stakeholder — Reto de agricultura de precisión con IA",
-          "en": "Stakeholder Validation — Precision agriculture with AI challenge",
-          "va": "Validació Stakeholder — Repte d'agricultura de precisió amb IA"
+          "es": "Validación stakeholder — Reto de agricultura de precisión con IA",
+          "en": "Stakeholder validation — Precision agriculture with AI challenge",
+          "va": "Validació stakeholder — Repte d'agricultura de precisió amb IA"
         },
         "summary": {
-          "es": "Validación con AVA-ASAJA de un reto sectorial sobre agricultura de precisión y clasificación a Track A.",
-          "en": "Validation with AVA-ASAJA of a sectoral challenge on precision agriculture and Track A classification.",
-          "va": "Validació amb AVA-ASAJA d'un repte sectorial sobre agricultura de precisió i classificació a Track A."
+          "es": "Validación con AVA-ASAJA y UVEG del reto sectorial sobre agricultura de precisión. Clasificado Track A para tratamiento académico en el Máster.",
+          "en": "Validation with AVA-ASAJA and UVEG of the sectoral challenge on precision agriculture. Classified as Track A for academic treatment in the Master programme.",
+          "va": "Validació amb AVA-ASAJA i UVEG del repte sectorial sobre agricultura de precisió. Classificat Track A per a tractament acadèmic en el Màster."
         },
         "entity": {
-          "name": "AVA-ASAJA",
+          "name": "",
           "type": {
-            "es": "Asociación sectorial agraria",
-            "en": "Agrarian sector association",
-            "va": "Associació sectorial agrària"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "sector": "agr",
-        "stakeholderCategory": "economic",
+        "stakeholderCategory": "",
         "levels": [
           "FP",
           "Máster"
         ],
-        "pilotType": "stakeholder-validation",
-        "helix": [
-          "academia",
-          "industry",
-          "civil-society"
-        ],
-        "relatedDeliverable": "Informe de validación de reto — Agricultura de precisión (Track A)",
+        "pilotType": "",
+        "validationType": "stakeholder-validation",
+        "validationStage": "completed",
+        "helix": [],
+        "relatedDeliverable": "",
         "relatedOerId": "",
         "publishedAt": "2025-11-10",
         "revisionDate": "2026-01-25",
@@ -8309,16 +8613,16 @@ export const MARKETPLACE_CONFIG = {
           "learning-ecosystems",
           "infrastructure-evidence"
         ],
-        "engagementLevel": "insight",
-        "evidenceMaturity": "completed",
-        "lbdStage": "output",
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
         "trackBValue": {
-          "es": "Dataset multispectral cedido para reuso académico. Reto validado y clasificado para Track A por UVEG.",
-          "en": "Multispectral dataset donated for academic reuse. Challenge validated and classified for Track A by UVEG.",
-          "va": "Dataset multiespectral cedit per a reús acadèmic. Repte validat i classificat per a Track A per UVEG."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
-        "pilotStatus": "completed"
+        "pilotStatus": ""
       },
       "transfer": {
         "type": "",
@@ -8326,825 +8630,16 @@ export const MARKETPLACE_CONFIG = {
         "beneficiaryOrganizations": []
       },
       "community": {
-        "tab": "validations",
-        "audience": [
-          "companies",
-          "vet-centres",
-          "universities",
-          "public-administration"
-        ],
-        "primaryCta": {
-          "es": "Ver ficha de validación",
-          "en": "View validation record",
-          "va": "Veure fitxa de validació"
-        },
-        "featuredSignal": {
-          "es": "Reto validado y clasificado Track A. Dataset multispectral disponible para reutilización.",
-          "en": "Challenge validated and classified as Track A. Multispectral dataset available for reuse.",
-          "va": "Repte validat i classificat Track A. Dataset multiespectral disponible per a reutilització."
-        }
+        "tab": "validations"
       },
-      "card": {
-        "collaborationDirection": {
-          "es": "Oferta de dataset multispectral de cítricos y demanda de formación dual en agricultura de precisión.",
-          "en": "Offer of citrus multispectral dataset and demand for dual training in precision agriculture.",
-          "va": "Oferta de dataset multiespectral de cítrics i demanda de formació dual en agricultura de precisió."
-        },
-        "trl": {
-          "level": 6,
-          "label": {
-            "es": "Demostración en entorno relevante",
-            "en": "Demonstration in relevant environment",
-            "va": "Demostració en entorn rellevant"
-          }
-        },
-        "infrastructure": [
-          "Drones multiespectrales",
-          "Dataset citrus CV",
-          "Sistema ConsensUE"
-        ],
-        "executionWindow": {
-          "start": "2025-10-01",
-          "end": "2026-01-25",
-          "label": {
-            "es": "Oct 2025 – Ene 2026",
-            "en": "Oct 2025 – Jan 2026",
-            "va": "Oct 2025 – Gen 2026"
-          }
-        },
-        "validationStatus": {
-          "es": "Validado — clasificado Track A por UVEG",
-          "en": "Validated — classified as Track A by UVEG",
-          "va": "Validat — classificat Track A per UVEG"
-        }
-      },
-      "visibility": {
-        "objective": true,
-        "methodology": true,
-        "outcome": true,
-        "need": true,
-        "context": true,
-        "evidence": true,
-        "outputs": true,
-        "process": true,
-        "people": true,
-        "resources": true,
-        "access": true,
-        "trackA": true
-      },
-      "detail": {
-        "objective": {
-          "es": "Validar la pertinencia y madurez de un reto de agricultura de precisión propuesto por el sector agroalimentario valenciano.",
-          "en": "Validate the relevance and maturity of a precision agriculture challenge proposed by the Valencian agri-food sector.",
-          "va": "Validar la pertinència i maduresa d'un repte d'agricultura de precisió proposat pel sector agroalimentari valencià."
-        },
-        "methodology": {
-          "es": "Entrevistas con AVA-ASAJA, revisión técnica por UVEG y triage en ConsensUE para clasificación Track A / Track B.",
-          "en": "Interviews with AVA-ASAJA, technical review by UVEG and ConsensUE triage for Track A / Track B classification.",
-          "va": "Entrevistes amb AVA-ASAJA, revisió tècnica per UVEG i triatge en ConsensUE per a classificació Track A / Track B."
-        },
-        "outcome": {
-          "es": "Reto validado por AVA-ASAJA. Clasificado para tratamiento Track A por UVEG. Dataset multispectral cedido para reuso académico.",
-          "en": "Challenge validated by AVA-ASAJA. Classified for Track A handling by UVEG. Multispectral dataset donated for academic reuse.",
-          "va": "Repte validat per AVA-ASAJA. Classificat per a tractament Track A per UVEG. Dataset multiespectral cedit per a reús acadèmic."
-        },
-        "need": {
-          "es": "El sector agroalimentario valenciano necesita FP y Máster con competencias en visión artificial y drones para gestión de cultivos y detección de plagas.",
-          "en": "The Valencian agri-food sector needs VET and Master programmes with competencies in computer vision and drones for crop management and pest detection.",
-          "va": "El sector agroalimentari valencià necessita FP i Màster amb competències en visió artificial i drons per a gestió de cultius i detecció de plagues."
-        },
-        "context": {
-          "es": "AVA-ASAJA propuso el reto a la red AI-STEAM. La validación determina su clasificación (Track A académico o Track B ecosistema) mediante el proceso ConsensUE.",
-          "en": "AVA-ASAJA submitted the challenge to the AI-STEAM Network. The validation determines its classification (Track A academic or Track B ecosystem) via the ConsensUE process.",
-          "va": "AVA-ASAJA va proposar el repte a la xarxa AI-STEAM. La validació determina la seua classificació (Track A acadèmica o Track B ecosistema) mitjançant el procés ConsensUE."
-        },
-        "evidence": {
-          "method": {
-            "es": "Entrevistas estructuradas con AVA-ASAJA, revisión técnica por UVEG y triage ConsensUE.",
-            "en": "Structured interviews with AVA-ASAJA, UVEG technical review and ConsensUE triage.",
-            "va": "Entrevistes estructurades amb AVA-ASAJA, revisió tècnica per UVEG i triatge ConsensUE."
-          },
-          "indicators": [
-            {
-              "label": {
-                "es": "Madurez del reto",
-                "en": "Challenge maturity",
-                "va": "Maduresa del repte"
-              },
-              "metric": "ConsensUE 1-5"
-            },
-            {
-              "label": {
-                "es": "Pertinencia sectorial",
-                "en": "Sectoral relevance",
-                "va": "Pertinència sectorial"
-              },
-              "metric": "Evaluación experta"
-            }
-          ]
-        },
-        "outputs": {
-          "expected": [
-            {
-              "label": {
-                "es": "Informe de validación con clasificación Track A",
-                "en": "Validation report with Track A classification",
-                "va": "Informe de validació amb classificació Track A"
-              }
-            },
-            {
-              "label": {
-                "es": "Dataset multispectral cedido para reuso",
-                "en": "Multispectral dataset donated for reuse",
-                "va": "Dataset multiespectral cedit per a reús"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2025-10-15",
-              "label": {
-                "es": "Entrevistas con AVA-ASAJA",
-                "en": "Interviews with AVA-ASAJA",
-                "va": "Entrevistes amb AVA-ASAJA"
-              }
-            },
-            {
-              "date": "2025-12-10",
-              "label": {
-                "es": "Revisión técnica UVEG",
-                "en": "UVEG technical review",
-                "va": "Revisió tècnica UVEG"
-              }
-            },
-            {
-              "date": "2026-01-25",
-              "label": {
-                "es": "Clasificación Track A confirmada",
-                "en": "Track A classification confirmed",
-                "va": "Classificació Track A confirmada"
-              }
-            }
-          ]
-        },
-        "people": {
-          "organisations": [
-            {
-              "name": "AVA-ASAJA",
-              "role": {
-                "es": "Proponente del reto",
-                "en": "Challenge proposer",
-                "va": "Proponent del repte"
-              }
-            },
-            {
-              "name": "UVEG",
-              "role": {
-                "es": "Clasificación Track A",
-                "en": "Track A classification",
-                "va": "Classificació Track A"
-              }
-            }
-          ]
-        },
-        "trackA": {
-          "es": "Reto clasificado Track A por UVEG para tratamiento académico en el Máster en Agricultura de Precisión.",
-          "en": "Challenge classified as Track A by UVEG for academic treatment in the Master in Precision Agriculture.",
-          "va": "Repte classificat Track A per UVEG per a tractament acadèmic en el Màster en Agricultura de Precisió."
-        }
-      },
-      "access": {
-        "pageVisibility": "network",
-        "pageLicense": "Open data",
-        "codeLicense": "",
-        "dataAvailability": "not-applicable",
-        "sensitiveDataIncluded": false,
-        "contributionVisibility": "",
-        "sensitiveDataPolicy": {
-          "es": "",
-          "en": "",
-          "va": ""
-        },
-        "rightsNote": {
-          "es": "Dataset multispectral cedido bajo licencia open data para reuso académico y de red.",
-          "en": "Multispectral dataset donated under open data licence for academic and network reuse.",
-          "va": "Dataset multiespectral cedit sota llicència open data per a reús acadèmic i de xarxa."
-        },
-        "publicUrl": "",
-        "license": "Open data",
-        "privacyLevel": "network"
-      },
-      "trackA": {
-        "enabled": true,
-        "label": {
-          "es": "Clasificado Track A — derivado a UVEG para tratamiento académico.",
-          "en": "Classified as Track A — referred to UVEG for academic treatment.",
-          "va": "Classificat Track A — derivat a UVEG per a tractament acadèmic."
-        },
-        "url": ""
-      },
-      "trackALink": {
-        "enabled": true,
-        "label": {
-          "es": "Clasificado Track A — derivado a UVEG para tratamiento académico.",
-          "en": "Classified as Track A — referred to UVEG for academic treatment.",
-          "va": "Classificat Track A — derivat a UVEG per a tractament acadèmic."
-        },
-        "url": ""
-      },
-      "ownership": {
-        "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
-        },
-        "lead": {
-          "name": "AVA-ASAJA",
-          "type": "public-administration",
-          "role": {
-            "es": "Entidad coordinadora",
-            "en": "Coordinating entity",
-            "va": "Entitat coordinadora"
-          }
-        },
-        "coordinator": null,
-        "pilotSites": [],
-        "partners": [
-          {
-            "name": "AVA-ASAJA",
-            "type": "",
-            "role": {
-              "es": "Proponente del reto",
-              "en": "Challenge proposer",
-              "va": "Proponent del repte"
-            }
-          },
-          {
-            "name": "UVEG",
-            "type": "",
-            "role": {
-              "es": "Clasificación Track A",
-              "en": "Track A classification",
-              "va": "Classificació Track A"
-            }
-          }
-        ]
-      },
-      "pilotPlan": {
-        "hypothesis": {
-          "es": "Oferta de dataset multispectral de cítricos y demanda de formación dual en agricultura de precisión.",
-          "en": "Offer of citrus multispectral dataset and demand for dual training in precision agriculture.",
-          "va": "Oferta de dataset multiespectral de cítrics i demanda de formació dual en agricultura de precisió."
-        },
-        "objective": {
-          "es": "Validar la pertinencia y madurez de un reto de agricultura de precisión propuesto por el sector agroalimentario valenciano.",
-          "en": "Validate the relevance and maturity of a precision agriculture challenge proposed by the Valencian agri-food sector.",
-          "va": "Validar la pertinència i maduresa d'un repte d'agricultura de precisió proposat pel sector agroalimentari valencià."
-        },
-        "context": {
-          "es": "AVA-ASAJA propuso el reto a la red AI-STEAM. La validación determina su clasificación (Track A académico o Track B ecosistema) mediante el proceso ConsensUE.",
-          "en": "AVA-ASAJA submitted the challenge to the AI-STEAM Network. The validation determines its classification (Track A academic or Track B ecosystem) via the ConsensUE process.",
-          "va": "AVA-ASAJA va proposar el repte a la xarxa AI-STEAM. La validació determina la seua classificació (Track A acadèmica o Track B ecosistema) mitjançant el procés ConsensUE."
-        },
-        "targetParticipants": {
-          "es": "",
-          "en": "",
-          "va": ""
-        },
-        "methodology": {
-          "es": "Entrevistas con AVA-ASAJA, revisión técnica por UVEG y triage en ConsensUE para clasificación Track A / Track B.",
-          "en": "Interviews with AVA-ASAJA, technical review by UVEG and ConsensUE triage for Track A / Track B classification.",
-          "va": "Entrevistes amb AVA-ASAJA, revisió tècnica per UVEG i triatge en ConsensUE per a classificació Track A / Track B."
-        },
-        "successCriteria": []
-      },
-      "implementation": {
-        "readiness": {
-          "technologyReadiness": {
-            "enabled": true,
-            "level": 6,
-            "label": {
-              "es": "Demostración en entorno relevante",
-              "en": "Demonstration in relevant environment",
-              "va": "Demostració en entorn rellevant"
-            }
-          },
-          "educationalReadiness": {
-            "enabled": false,
-            "level": null,
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          }
-        },
-        "infrastructure": [
-          {
-            "id": null,
-            "label": {
-              "es": "Drones multiespectrales",
-              "en": "Drones multiespectrales",
-              "va": "Drones multiespectrales"
-            }
-          },
-          {
-            "id": null,
-            "label": {
-              "es": "Dataset citrus CV",
-              "en": "Dataset citrus CV",
-              "va": "Dataset citrus CV"
-            }
-          },
-          {
-            "id": null,
-            "label": {
-              "es": "Sistema ConsensUE",
-              "en": "Sistema ConsensUE",
-              "va": "Sistema ConsensUE"
-            }
-          }
-        ],
-        "tools": [],
-        "dataManagement": {
-          "sensitiveDataIncluded": false,
-          "personalDataIncluded": false,
-          "note": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        }
-      },
-      "evidence": {
-        "evidenceLevel": "measured",
-        "verificationStatus": "self-reported",
-        "collectionMethod": {
-          "es": "",
-          "en": "",
-          "va": ""
-        },
-        "primaryMetric": null,
-        "secondaryMetrics": [],
-        "limitations": {
-          "es": "",
-          "en": "",
-          "va": ""
-        }
-      },
-      "results": {
-        "headline": {
-          "es": "Validado — clasificado Track A por UVEG",
-          "en": "Validated — classified as Track A by UVEG",
-          "va": "Validat — classificat Track A per UVEG"
-        },
-        "outputs": [
-          {
-            "id": "output-0",
-            "label": {
-              "es": "Informe de validación con clasificación Track A",
-              "en": "Validation report with Track A classification",
-              "va": "Informe de validació amb classificació Track A"
-            }
-          },
-          {
-            "id": "output-1",
-            "label": {
-              "es": "Dataset multispectral cedido para reuso",
-              "en": "Multispectral dataset donated for reuse",
-              "va": "Dataset multiespectral cedit per a reús"
-            }
-          }
-        ],
-        "decision": {
-          "outcome": "",
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        }
-      },
-      "transferability": {
-        "whyTransferable": {
-          "es": "Dataset multispectral cedido para reuso académico. Reto validado y clasificado para Track A por UVEG.",
-          "en": "Multispectral dataset donated for academic reuse. Challenge validated and classified for Track A by UVEG.",
-          "va": "Dataset multiespectral cedit per a reús acadèmic. Repte validat i classificat per a Track A per UVEG."
-        },
-        "suitableFor": [
-          "companies",
-          "vet-centres",
-          "universities",
-          "public-administration"
-        ],
-        "requirements": [],
-        "replicationSteps": [],
-        "risks": []
-      },
-      "downloads": {
-        "enabled": false,
-        "basePath": "/assets/downloads/pilots/validation-stakeholder-agr-asaja/",
-        "items": []
-      },
-      "resources": null,
-      "externalFlow": {
-        "enabled": false,
-        "primaryAction": {
-          "label": {
-            "es": "Ver ficha de validación",
-            "en": "View validation record",
-            "va": "Veure fitxa de validació"
-          },
-          "system": "",
-          "url": ""
-        },
-        "secondaryAction": null
-      },
-      "relations": {
-        "originChallengeId": "",
-        "relatedValidations": [],
-        "relatedCases": [],
-        "relatedResources": [],
-        "relatedMentorships": [],
-        "nextPossibleItems": [
-          "case",
-          "resource"
-        ]
-      },
-      "hasDownloads": false,
-      "downloadCount": 0,
-      "cardDownloads": [],
-      "presentation": {
-        "card": {
-          "variant": "validation",
-          "showPilotStage": true,
-          "showPilotType": true,
-          "showReadiness": true,
-          "showWindow": true,
-          "showInfrastructure": true,
-          "showPrimaryMetric": true,
-          "showDownloadsIndicator": false,
-          "resultBlockLabel": {
-            "es": "Qué se prueba",
-            "en": "What is being tested",
-            "va": "Què es prova"
-          }
-        },
-        "detail": {
-          "sections": {
-            "summary": true,
-            "pilotPlan": true,
-            "methodology": true,
-            "implementation": true,
-            "evidence": true,
-            "results": true,
-            "transferability": true,
-            "downloads": false,
-            "resources": true,
-            "process": true,
-            "people": true,
-            "access": true,
-            "trackA": true,
-            "relations": false
-          }
-        }
-      },
-      "template": {
-        "requiredBlocks": [
-          "need",
-          "context",
-          "evidence",
-          "outputs",
-          "process"
-        ],
-        "optionalBlocks": [
-          "people",
-          "resources",
-          "access",
-          "trackA",
-          "objective",
-          "methodology",
-          "outcome"
-        ],
-        "cardSignal": "evidence"
-      }
-    },
-    {
-      "id": "validation-stakeholder-movilidad-electrica",
-      "type": "validation",
-      "tab": "validations",
-      "sortDate": "2025-10-20",
-      "visible": true,
-      "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
-      "core": {
-        "status": "resolved",
-        "maturity": "validated",
-        "title": {
-          "es": "Validación Stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
-          "en": "Stakeholder Validation — Electric mobility and charging infrastructure challenge",
-          "va": "Validació Stakeholder — Repte de mobilitat elèctrica i infraestructura de càrrega"
-        },
-        "summary": {
-          "es": "Proceso de validación con ASEVA y concesionarios valencianos de un reto sectorial sobre vehículo eléctrico y formación dual.",
-          "en": "Validation process with ASEVA and Valencian dealers of a sectoral challenge on electric vehicles and dual training.",
-          "va": "Procés de validació amb ASEVA i concessionaris valencians d'un repte sectorial sobre vehicle elèctric i formació dual."
-        },
-        "entity": {
-          "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
-          "type": {
-            "es": "Asociación sectorial",
-            "en": "Sector association",
-            "va": "Associació sectorial"
-          }
-        },
-        "sector": "mob",
-        "stakeholderCategory": "economic",
-        "levels": [
-          "FP"
-        ],
-        "pilotType": "stakeholder-validation",
-        "helix": [
-          "academia",
-          "industry",
-          "public-sector"
-        ],
-        "relatedDeliverable": "Ficha de validación de reto — Movilidad eléctrica e infraestructura de carga (Track B)",
-        "relatedOerId": "",
-        "publishedAt": "2025-07-01",
-        "revisionDate": "2025-10-20",
-        "deadline": null,
-        "publishedAtLabel": {
-          "es": "Jul 2025",
-          "en": "Jul 2025",
-          "va": "Jul 2025"
-        },
-        "revisionDateLabel": {
-          "es": "Oct 2025",
-          "en": "Oct 2025",
-          "va": "Oct 2025"
-        },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Vehículo eléctrico",
-            "Movilidad sostenible",
-            "FP dual",
-            "Validación sectorial"
-          ],
-          "en": [
-            "Electric vehicle",
-            "Sustainable mobility",
-            "Dual VET",
-            "Sectoral validation"
-          ],
-          "va": [
-            "Vehicle elèctric",
-            "Mobilitat sostenible",
-            "FP dual",
-            "Validació sectorial"
-          ]
-        }
-      },
-      "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "institutional-readiness"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "infrastructure-evidence"
-        ],
-        "engagementLevel": "insight",
-        "evidenceMaturity": "validated",
-        "lbdStage": "output",
-        "trackBValue": {
-          "es": "Ficha de competencias publicada. Base para módulo FP dual con ASEVA en el curso 2026-27.",
-          "en": "Competency sheet published. Basis for dual VET module with ASEVA in 2026-27.",
-          "va": "Fitxa de competències publicada. Base per al mòdul FP dual amb ASEVA per al curs 2026-27."
-        },
-        "verificationStatus": "",
-        "pilotStatus": "validated"
-      },
-      "transfer": {
-        "type": "",
-        "originOrganization": "",
-        "beneficiaryOrganizations": []
-      },
-      "community": {
-        "tab": "validations",
-        "audience": [
-          "companies",
-          "vet-centres",
-          "public-administration"
-        ],
-        "primaryCta": {
-          "es": "Ver ficha de competencias",
-          "en": "View competency sheet",
-          "va": "Veure fitxa de competències"
-        },
-        "featuredSignal": {
-          "es": "Reto validado Track B. Módulo FP dual en diseño para 2026-27.",
-          "en": "Track B validated challenge. Dual VET module in design for 2026-27.",
-          "va": "Repte validat Track B. Mòdul FP dual en disseny per a 2026-27."
-        }
-      },
-      "card": {
-        "collaborationDirection": {
-          "es": "Demanda de formación dual en instalación y mantenimiento de infraestructura de carga para VE.",
-          "en": "Demand for dual training in EV charging infrastructure installation and maintenance.",
-          "va": "Demanda de formació dual en instal·lació i manteniment d'infraestructura de càrrega per a VE."
-        },
-        "trl": {
-          "level": 6,
-          "label": {
-            "es": "Demostración en entorno relevante",
-            "en": "Demonstration in relevant environment",
-            "va": "Demostració en entorn rellevant"
-          }
-        },
-        "infrastructure": [
-          "Panel de expertos ASEVA",
-          "Sistema ConsensUE",
-          "Concesionarios asociados"
-        ],
-        "executionWindow": {
-          "start": "2025-06-01",
-          "end": "2025-10-20",
-          "label": {
-            "es": "Jun – Oct 2025",
-            "en": "Jun – Oct 2025",
-            "va": "Jun – Oct 2025"
-          }
-        },
-        "validationStatus": {
-          "es": "Validado — clasificado Track B para formación dual",
-          "en": "Validated — classified as Track B for dual training",
-          "va": "Validat — classificat Track B per a formació dual"
-        }
-      },
-      "visibility": {
-        "objective": true,
-        "methodology": true,
-        "outcome": true,
-        "need": true,
-        "context": true,
-        "evidence": true,
-        "outputs": true,
-        "process": true,
-        "people": true,
-        "resources": true,
-        "access": true,
-        "trackA": false
-      },
-      "detail": {
-        "objective": {
-          "es": "Validar la pertinencia y viabilidad de un reto formativo sobre instalación y mantenimiento de infraestructura de carga para vehículo eléctrico en FP.",
-          "en": "Validate the relevance and feasibility of a training challenge on the installation and maintenance of electric vehicle charging infrastructure in VET.",
-          "va": "Validar la pertinència i viabilitat d'un repte formatiu sobre instal·lació i manteniment d'infraestructura de càrrega per a vehicle elèctric en FP."
-        },
-        "methodology": {
-          "es": "Panel de expertos con ASEVA y concesionarios, análisis de brechas de competencias y triage ConsensUE para clasificación Track B.",
-          "en": "Expert panel with ASEVA and dealers, competency gap analysis and ConsensUE triage for Track B classification.",
-          "va": "Panell d'experts amb ASEVA i concessionaris, anàlisi de bretxes de competències i triatge ConsensUE per a classificació Track B."
-        },
-        "outcome": {
-          "es": "Reto validado y clasificado Track B. Ficha de competencias publicada. Base para el diseño de módulo FP en colaboración con ASEVA para el curso 2026-27.",
-          "en": "Challenge validated and classified as Track B. Competency sheet published. Basis for VET module design in collaboration with ASEVA for 2026-27.",
-          "va": "Repte validat i classificat Track B. Fitxa de competències publicada. Base per al disseny de mòdul FP en col·laboració amb ASEVA per al curs 2026-27."
-        },
-        "need": {
-          "es": "Los centros FP de Automoción carecen de formación específica en instalación, mantenimiento y diagnóstico de infraestructura de carga para VE.",
-          "en": "Automotive VET centres lack specific training in the installation, maintenance and diagnosis of EV charging infrastructure.",
-          "va": "Els centres FP d'Automoció manquen de formació específica en instal·lació, manteniment i diagnòstic d'infraestructura de càrrega per a VE."
-        },
-        "context": {
-          "es": "ASEVA identifica una brecha creciente entre la proliferación de puntos de carga y la disponibilidad de técnicos cualificados para instalarlos y mantenerlos.",
-          "en": "ASEVA identifies a growing gap between the proliferation of charging points and the availability of qualified technicians to install and maintain them.",
-          "va": "ASEVA identifica una bretxa creixent entre la proliferació de punts de càrrega i la disponibilitat de tècnics qualificats per a instal·lar-los i mantenir-los."
-        },
-        "evidence": {
-          "method": {
-            "es": "Panel de expertos, análisis de brechas de competencias y proceso ConsensUE de triage y clasificación.",
-            "en": "Expert panel, competency gap analysis and ConsensUE triage and classification process.",
-            "va": "Panell d'experts, anàlisi de bretxes de competències i procés ConsensUE de triatge i classificació."
-          },
-          "indicators": [
-            {
-              "label": {
-                "es": "Brecha de competencias identificada",
-                "en": "Competency gap identified",
-                "va": "Bretxa de competències identificada"
-              },
-              "metric": "Análisis experto"
-            },
-            {
-              "label": {
-                "es": "Clasificación ConsensUE",
-                "en": "ConsensUE classification",
-                "va": "Classificació ConsensUE"
-              },
-              "metric": "Track A / Track B"
-            }
-          ]
-        },
-        "outputs": {
-          "expected": [
-            {
-              "label": {
-                "es": "Ficha de competencias publicada",
-                "en": "Competency sheet published",
-                "va": "Fitxa de competències publicada"
-              }
-            },
-            {
-              "label": {
-                "es": "Base para módulo FP dual 2026-27",
-                "en": "Basis for dual VET module 2026-27",
-                "va": "Base per al mòdul FP dual 2026-27"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2025-07-15",
-              "label": {
-                "es": "Panel de expertos ASEVA",
-                "en": "ASEVA expert panel",
-                "va": "Panell d'experts ASEVA"
-              }
-            },
-            {
-              "date": "2025-09-20",
-              "label": {
-                "es": "Análisis de brechas de competencias",
-                "en": "Competency gap analysis",
-                "va": "Anàlisi de bretxes de competències"
-              }
-            },
-            {
-              "date": "2025-10-20",
-              "label": {
-                "es": "Clasificación Track B confirmada",
-                "en": "Track B classification confirmed",
-                "va": "Classificació Track B confirmada"
-              }
-            }
-          ]
-        },
-        "people": {
-          "organisations": [
-            {
-              "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
-              "role": {
-                "es": "Proponente del reto y co-validador",
-                "en": "Challenge proposer and co-validator",
-                "va": "Proponent del repte i co-validador"
-              }
-            },
-            {
-              "name": "Asociación de Concesionarios Valencianos",
-              "role": {
-                "es": "Co-validador",
-                "en": "Co-validator",
-                "va": "Co-validador"
-              }
-            },
-            {
-              "name": "UVEG — Grup de Recerca Mobilitat",
-              "role": {
-                "es": "Revisión técnica Track A",
-                "en": "Track A technical review",
-                "va": "Revisió tècnica Track A"
-              }
-            }
-          ]
-        },
-        "resources": {
-          "available": [
-            {
-              "label": {
-                "es": "Ficha de competencias para instalación VE",
-                "en": "EV installation competency sheet",
-                "va": "Fitxa de competències per a instal·lació VE"
-              },
-              "format": "PDF",
-              "license": "CC BY 4.0"
-            }
-          ]
-        }
-      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
       "access": {
         "pageVisibility": "public",
         "pageLicense": "CC BY 4.0",
         "codeLicense": "",
-        "dataAvailability": "not-applicable",
+        "dataAvailability": "summary-only",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -9153,9 +8648,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "Ficha de competencias publicada bajo CC BY 4.0.",
-          "en": "Competency sheet published under CC BY 4.0.",
-          "va": "Fitxa de competències publicada sota CC BY 4.0."
+          "es": "El dataset multispectral de cítricos se publica bajo licencia open data para reuso académico y de red.",
+          "en": "The citrus multispectral dataset is published under an open data licence for academic and network reuse.",
+          "va": "El dataset multiespectral de cítrics es publica sota llicència open data per a reús acadèmic i de xarxa."
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
@@ -9184,126 +8679,761 @@ export const MARKETPLACE_CONFIG = {
           "name": "AI-STEAM Network",
           "org": "CEICE"
         },
-        "lead": {
-          "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
-          "type": "public-administration",
+        "proposer": {
+          "name": "AVA-ASAJA",
+          "type": "sector-association",
           "role": {
-            "es": "Entidad coordinadora",
-            "en": "Coordinating entity",
-            "va": "Entitat coordinadora"
+            "es": "Proponente del reto y co-validador",
+            "en": "Challenge proposer and co-validator",
+            "va": "Proponent del repte i co-validador"
           }
         },
-        "coordinator": null,
-        "pilotSites": [],
-        "partners": [
+        "validators": [
           {
-            "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
-            "type": "",
+            "name": "AVA-ASAJA",
+            "type": "sector-association",
             "role": {
-              "es": "Proponente del reto y co-validador",
-              "en": "Challenge proposer and co-validator",
-              "va": "Proponent del repte i co-validador"
+              "es": "Panel experto sectorial agroalimentario",
+              "en": "Agri-food sector expert panel",
+              "va": "Panell expert sectorial agroalimentari"
             }
           },
           {
-            "name": "Asociación de Concesionarios Valencianos",
-            "type": "",
+            "name": "UVEG — Grup de Recerca en Teledetecció Agrícola",
+            "type": "university",
             "role": {
-              "es": "Co-validador",
-              "en": "Co-validator",
-              "va": "Co-validador"
-            }
-          },
-          {
-            "name": "UVEG — Grup de Recerca Mobilitat",
-            "type": "",
-            "role": {
-              "es": "Revisión técnica Track A",
-              "en": "Track A technical review",
-              "va": "Revisió tècnica Track A"
+              "es": "Revisión técnica y académica — clasificación Track A",
+              "en": "Technical and academic review — Track A classification",
+              "va": "Revisió tècnica i acadèmica — classificació Track A"
             }
           }
         ]
       },
-      "pilotPlan": {
-        "hypothesis": {
-          "es": "Demanda de formación dual en instalación y mantenimiento de infraestructura de carga para VE.",
-          "en": "Demand for dual training in EV charging infrastructure installation and maintenance.",
-          "va": "Demanda de formació dual en instal·lació i manteniment d'infraestructura de càrrega per a VE."
+      "validation": {
+        "objectType": "challenge",
+        "objectTitle": {
+          "es": "Reto formativo sobre visión artificial y drones en agricultura de precisión",
+          "en": "Training challenge on computer vision and drones in precision agriculture",
+          "va": "Repte formatiu sobre visió artificial i drons en agricultura de precisió"
         },
-        "objective": {
-          "es": "Validar la pertinencia y viabilidad de un reto formativo sobre instalación y mantenimiento de infraestructura de carga para vehículo eléctrico en FP.",
-          "en": "Validate the relevance and feasibility of a training challenge on the installation and maintenance of electric vehicle charging infrastructure in VET.",
-          "va": "Validar la pertinència i viabilitat d'un repte formatiu sobre instal·lació i manteniment d'infraestructura de càrrega per a vehicle elèctric en FP."
+        "validationQuestion": {
+          "es": "¿Existe demanda sectorial suficiente y una brecha de competencias clara para justificar un reto Track A orientado a FP y Máster en el sector agroalimentario valenciano?",
+          "en": "Is there sufficient sector demand and a clear competence gap to justify a Track A challenge for VET and Master programmes in the Valencian agri-food sector?",
+          "va": "Existeix demanda sectorial suficient i una bretxa de competències clara per a justificar un repte Track A orientat a FP i Màster en el sector agroalimentari valencià?"
+        },
+        "need": {
+          "es": "Los centros FP y el Máster en Agricultura de Precisión carecen de formación práctica en visión artificial, drones multiespectrales y análisis de datos agrícolas con IA.",
+          "en": "VET centres and the Master in Precision Agriculture lack practical training in computer vision, multispectral drones and AI-driven agricultural data analysis.",
+          "va": "Els centres FP i el Màster en Agricultura de Precisió manquen de formació pràctica en visió artificial, drons multiespectrals i anàlisi de dades agrícoles amb IA."
         },
         "context": {
-          "es": "ASEVA identifica una brecha creciente entre la proliferación de puntos de carga y la disponibilidad de técnicos cualificados para instalarlos y mantenerlos.",
-          "en": "ASEVA identifies a growing gap between the proliferation of charging points and the availability of qualified technicians to install and maintain them.",
-          "va": "ASEVA identifica una bretxa creixent entre la proliferació de punts de càrrega i la disponibilitat de tècnics qualificats per a instal·lar-los i mantenir-los."
+          "es": "AVA-ASAJA propuso el reto a la red AI-STEAM tras identificar una brecha creciente entre la adopción de tecnología de precisión en el campo y la disponibilidad de técnicos y graduados formados para operarla. El proceso ConsensUE determinó que el reto tiene mayor encaje como contribución académica (Track A) que como reto abierto al ecosistema (Track B).",
+          "en": "AVA-ASAJA submitted the challenge to the AI-STEAM Network after identifying a growing gap between the adoption of precision technology in the field and the availability of trained technicians and graduates to operate it. The ConsensUE process determined that the challenge fits better as an academic contribution (Track A) than as an open ecosystem challenge (Track B).",
+          "va": "AVA-ASAJA va proposar el repte a la xarxa AI-STEAM després d'identificar una bretxa creixent entre l'adopció de tecnologia de precisió al camp i la disponibilitat de tècnics i graduats formats per a operar-la. El procés ConsensUE va determinar que el repte té un encaix millor com a contribució acadèmica (Track A) que com a repte obert a l'ecosistema (Track B)."
         },
-        "targetParticipants": {
+        "method": {
+          "es": "Entrevistes estructurades amb tècnics d'AVA-ASAJA, revisió de literatura tècnica por UVEG i triage ConsensUE per a classificació Track A / Track B.",
+          "en": "Structured interviews with AVA-ASAJA technicians, technical literature review by UVEG and ConsensUE triage for Track A / Track B classification.",
+          "va": "Entrevistes estructurades amb tècnics d'AVA-ASAJA, revisió de literatura tècnica per UVEG i triatge ConsensUE per a classificació Track A / Track B."
+        },
+        "validationEnvironment": [
+          {
+            "label": {
+              "es": "Entrevistas estructuradas con AVA-ASAJA",
+              "en": "Structured interviews with AVA-ASAJA",
+              "va": "Entrevistes estructurades amb AVA-ASAJA"
+            }
+          },
+          {
+            "label": {
+              "es": "Revisión técnica UVEG",
+              "en": "UVEG technical review",
+              "va": "Revisió tècnica UVEG"
+            }
+          },
+          {
+            "label": {
+              "es": "Proceso de triage ConsensUE",
+              "en": "ConsensUE triage process",
+              "va": "Procés de triatge ConsensUE"
+            }
+          }
+        ]
+      },
+      "criteria": {
+        "items": [
+          {
+            "id": "sector-demand",
+            "label": {
+              "es": "Demanda sectorial",
+              "en": "Sector demand",
+              "va": "Demanda sectorial"
+            },
+            "result": "positive",
+            "note": {
+              "es": "AVA-ASAJA confirma necesidad creciente de técnicos con competencias en visión artificial y drones para gestión de cultivos.",
+              "en": "AVA-ASAJA confirms growing need for technicians with computer vision and drone skills for crop management.",
+              "va": "AVA-ASAJA confirma la necessitat creixent de tècnics amb competències en visió artificial i drons per a gestió de cultius."
+            }
+          },
+          {
+            "id": "vet-fit",
+            "label": {
+              "es": "Encaje con FP y Máster",
+              "en": "VET and Master fit",
+              "va": "Encaix amb FP i Màster"
+            },
+            "result": "positive",
+            "note": {
+              "es": "El reto encaja con el Máster en Agricultura de Precisión de la UVEG y con módulos de FP Agraria.",
+              "en": "The challenge fits the UVEG Master in Precision Agriculture and Agrarian VET modules.",
+              "va": "El repte encaixa amb el Màster en Agricultura de Precisió de la UVEG i amb mòduls de FP Agrària."
+            }
+          },
+          {
+            "id": "academic-relevance",
+            "label": {
+              "es": "Relevancia académica",
+              "en": "Academic relevance",
+              "va": "Rellevància acadèmica"
+            },
+            "result": "positive",
+            "note": {
+              "es": "UVEG confirma interés investigador y disponibilidad de dataset multispectral de cítricos para uso académico.",
+              "en": "UVEG confirms research interest and availability of citrus multispectral dataset for academic use.",
+              "va": "UVEG confirma interès investigador i disponibilitat de dataset multiespectral de cítrics per a ús acadèmic."
+            }
+          },
+          {
+            "id": "feasibility",
+            "label": {
+              "es": "Viabilidad de desarrollo",
+              "en": "Development feasibility",
+              "va": "Viabilitat de desenvolupament"
+            },
+            "result": "medium",
+            "note": {
+              "es": "Requiere acceso a drones y dataset real; la UVEG puede facilitar el recurso como dataset abierto.",
+              "en": "Requires access to drones and a real dataset; UVEG can provide the resource as an open dataset.",
+              "va": "Requereix accés a drons i dataset real; la UVEG pot facilitar el recurs com a dataset obert."
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "evidenceLevel": "reviewed",
+        "collectionMethod": {
+          "es": "Entrevistas estructuradas con AVA-ASAJA, revisión técnica por UVEG y proceso ConsensUE de triage y clasificación Track A / Track B.",
+          "en": "Structured interviews with AVA-ASAJA, UVEG technical review and ConsensUE triage and Track A / Track B classification process.",
+          "va": "Entrevistes estructurades amb AVA-ASAJA, revisió tècnica per UVEG i procés ConsensUE de triatge i classificació Track A / Track B."
+        },
+        "indicators": [
+          {
+            "id": "competence-gap",
+            "label": {
+              "es": "Brecha de competencias identificada",
+              "en": "Competence gap identified",
+              "va": "Bretxa de competències identificada"
+            },
+            "metric": {
+              "es": "Análisis experto AVA-ASAJA",
+              "en": "AVA-ASAJA expert analysis",
+              "va": "Anàlisi expert AVA-ASAJA"
+            }
+          },
+          {
+            "id": "consensue-classification",
+            "label": {
+              "es": "Clasificación ConsensUE",
+              "en": "ConsensUE classification",
+              "va": "Classificació ConsensUE"
+            },
+            "metric": {
+              "es": "Track A (contribución académica)",
+              "en": "Track A (academic contribution)",
+              "va": "Track A (contribució acadèmica)"
+            }
+          },
+          {
+            "id": "dataset-availability",
+            "label": {
+              "es": "Recurso académico disponible",
+              "en": "Academic resource available",
+              "va": "Recurs acadèmic disponible"
+            },
+            "metric": {
+              "es": "Dataset multispectral de cítricos (UVEG, open data)",
+              "en": "Citrus multispectral dataset (UVEG, open data)",
+              "va": "Dataset multiespectral de cítrics (UVEG, open data)"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "La ficha pública documenta el resultado de la validación. Las actas internas y la deliberación completa del proceso ConsensUE no se publican.",
+          "en": "The public page documents the validation result. Internal minutes and the full ConsensUE deliberation are not published.",
+          "va": "La fitxa pública documenta el resultat de la validació. Les actes internes i la deliberació completa del procés ConsensUE no es publiquen."
+        }
+      },
+      "decision": {
+        "outcome": "validated-track-a",
+        "label": {
+          "es": "Validado — clasificado Track A para tratamiento académico",
+          "en": "Validated — classified as Track A for academic treatment",
+          "va": "Validat — classificat Track A per a tractament acadèmic"
+        },
+        "rationale": {
+          "es": "La validación confirma demanda sectorial, relevancia académica y disponibilidad de recurso (dataset multispectral). El proceso ConsensUE determina Track A como vía principal, derivando el reto al Máster en Agricultura de Precisión de la UVEG.",
+          "en": "The validation confirms sector demand, academic relevance and resource availability (multispectral dataset). The ConsensUE process determines Track A as the main route, referring the challenge to the UVEG Master in Precision Agriculture.",
+          "va": "La validació confirma demanda sectorial, rellevància acadèmica i disponibilitat de recurs (dataset multiespectral). El procés ConsensUE determina Track A com a via principal, derivant el repte al Màster en Agricultura de Precisió de la UVEG."
+        },
+        "nextStep": {
+          "type": "design-module",
+          "label": {
+            "es": "Integrar el dataset multispectral como caso práctico en el Máster UVEG 2026-27",
+            "en": "Integrate the multispectral dataset as a practical case in the UVEG Master 2026-27",
+            "va": "Integrar el dataset multiespectral com a cas pràctic en el Màster UVEG 2026-27"
+          }
+        }
+      },
+      "trackRouting": {
+        "route": "track-a",
+        "label": {
+          "es": "Clasificado Track A — derivado a UVEG para tratamiento académico en el Máster en Agricultura de Precisión",
+          "en": "Classified as Track A — referred to UVEG for academic treatment in the Master in Precision Agriculture",
+          "va": "Classificat Track A — derivat a UVEG per a tractament acadèmic en el Màster en Agricultura de Precisió"
+        },
+        "academicReview": {
+          "enabled": true,
+          "reviewer": {
+            "name": "UVEG — Grup de Recerca en Teledetecció Agrícola",
+            "type": "university"
+          },
+          "note": {
+            "es": "Revisión técnica y académica realizada antes de confirmar clasificación Track A.",
+            "en": "Technical and academic review carried out before confirming Track A classification.",
+            "va": "Revisió tècnica i acadèmica realitzada abans de confirmar classificació Track A."
+          }
+        }
+      },
+      "relations": {
+        "validatedChallengeId": "",
+        "resultingPilotIds": [],
+        "resultingCaseIds": [],
+        "resultingResourceIds": [],
+        "relatedMentorshipIds": [],
+        "nextPossibleItems": [
+          "resource",
+          "case"
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/validations/validation-stakeholder-agr-asaja/",
+        "items": []
+      },
+      "resources": {
+        "externalLinks": [
+          {
+            "id": "uveg-dataset",
+            "type": "external-system",
+            "label": {
+              "es": "Dataset multispectral de cítricos (UVEG)",
+              "en": "Citrus multispectral dataset (UVEG)",
+              "va": "Dataset multiespectral de cítrics (UVEG)"
+            },
+            "url": "",
+            "access": {
+              "es": "Acceso abierto — pendiente de publicación formal",
+              "en": "Open access — pending formal publication",
+              "va": "Accés obert — pendent de publicació formal"
+            }
+          }
+        ]
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver validación",
+            "en": "View validation",
+            "va": "Veure validació"
+          },
+          "url": "",
+          "system": ""
+        },
+        "secondaryAction": null
+      },
+      "presentation": {
+        "card": {
+          "variant": "validation",
+          "showValidationType": true,
+          "showDecision": true,
+          "showEvidenceLevel": true,
+          "showWindow": true,
+          "showValidationEnvironment": true,
+          "showDownloadsIndicator": false,
+          "mainBlockLabel": {
+            "es": "Qué se valida",
+            "en": "What is validated",
+            "va": "Què es valida"
+          }
+        },
+        "detail": {
+          "sections": {
+            "object": true,
+            "need": true,
+            "context": true,
+            "method": true,
+            "criteria": true,
+            "evidence": true,
+            "decision": true,
+            "downloads": false,
+            "resources": true,
+            "people": true,
+            "access": true,
+            "trackRouting": true,
+            "relations": false
+          }
+        }
+      },
+      "validationWindow": {
+        "start": "2025-10-01",
+        "end": "2026-01-25",
+        "label": {
+          "es": "Oct 2025 – Ene 2026",
+          "en": "Oct 2025 – Jan 2026",
+          "va": "Oct 2025 – Gen 2026"
+        }
+      },
+      "criteriaCount": 4,
+      "validationTypeLabel": {
+        "es": "Validación stakeholder",
+        "en": "Stakeholder validation",
+        "va": "Validació stakeholder"
+      },
+      "validationStageLabel": {
+        "es": "Completada",
+        "en": "Completed",
+        "va": "Completada"
+      },
+      "decisionOutcomeLabel": {
+        "es": "Validado — Track A",
+        "en": "Validated — Track A",
+        "va": "Validat — Track A"
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "template": {
+        "requiredBlocks": [
+          "validation",
+          "criteria",
+          "evidence",
+          "decision"
+        ],
+        "optionalBlocks": [
+          "downloads",
+          "resources",
+          "access",
+          "trackRouting",
+          "relations",
+          "people",
+          "externalFlow"
+        ],
+        "cardSignal": "validation"
+      }
+    },
+    {
+      "id": "validation-stakeholder-movilidad-electrica",
+      "type": "validation",
+      "tab": "validations",
+      "sortDate": "2025-10-20",
+      "visible": true,
+      "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
+      "core": {
+        "status": "resolved",
+        "maturity": "idea",
+        "title": {
+          "es": "Validación stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
+          "en": "Stakeholder validation — Electric mobility and charging infrastructure challenge",
+          "va": "Validació stakeholder — Repte de mobilitat elèctrica i infraestructura de càrrega"
+        },
+        "summary": {
+          "es": "Validación con ASEVA y concesionarios valencianos del reto sectorial sobre vehículo eléctrico y formación dual. Clasificado Track B para diseño de módulo FP dual en 2026-27.",
+          "en": "Validation with ASEVA and Valencian dealers of the sectoral challenge on electric vehicles and dual training. Classified as Track B for dual VET module design in 2026-27.",
+          "va": "Validació amb ASEVA i concessionaris valencians del repte sectorial sobre vehicle elèctric i formació dual. Classificat Track B per al disseny de mòdul FP dual en 2026-27."
+        },
+        "entity": {
+          "name": "",
+          "type": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "sector": "mob",
+        "stakeholderCategory": "",
+        "levels": [
+          "FP"
+        ],
+        "pilotType": "",
+        "validationType": "stakeholder-validation",
+        "validationStage": "completed",
+        "helix": [],
+        "relatedDeliverable": "",
+        "relatedOerId": "",
+        "publishedAt": "2025-07-01",
+        "revisionDate": "2025-10-20",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "Jul 2025",
+          "en": "Jul 2025",
+          "va": "Jul 2025"
+        },
+        "revisionDateLabel": {
+          "es": "Oct 2025",
+          "en": "Oct 2025",
+          "va": "Oct 2025"
+        },
+        "deadlineLabel": null,
+        "tags": {
+          "es": [
+            "Vehículo eléctrico",
+            "Movilidad sostenible",
+            "FP dual",
+            "Track B",
+            "Validación sectorial"
+          ],
+          "en": [
+            "Electric vehicle",
+            "Sustainable mobility",
+            "Dual VET",
+            "Track B",
+            "Sectoral validation"
+          ],
+          "va": [
+            "Vehicle elèctric",
+            "Mobilitat sostenible",
+            "FP dual",
+            "Track B",
+            "Validació sectorial"
+          ]
+        }
+      },
+      "classification": {
+        "aiSteamFocus": [
+          "data-ai",
+          "institutional-readiness"
+        ],
+        "tripleTransition": [
+          "digital",
+          "green"
+        ],
+        "policyCluster": [
+          "integrated-pedagogy",
+          "infrastructure-evidence"
+        ],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
           "es": "",
           "en": "",
           "va": ""
         },
-        "methodology": {
-          "es": "Panel de expertos con ASEVA y concesionarios, análisis de brechas de competencias y triage ConsensUE para clasificación Track B.",
-          "en": "Expert panel with ASEVA and dealers, competency gap analysis and ConsensUE triage for Track B classification.",
-          "va": "Panell d'experts amb ASEVA i concessionaris, anàlisi de bretxes de competències i triatge ConsensUE per a classificació Track B."
-        },
-        "successCriteria": []
+        "verificationStatus": "",
+        "pilotStatus": ""
       },
-      "implementation": {
-        "readiness": {
-          "technologyReadiness": {
-            "enabled": true,
-            "level": 6,
-            "label": {
-              "es": "Demostración en entorno relevante",
-              "en": "Demonstration in relevant environment",
-              "va": "Demostració en entorn rellevant"
-            }
-          },
-          "educationalReadiness": {
-            "enabled": false,
-            "level": null,
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "validations"
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "summary-only",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "rightsNote": {
+          "es": "La ficha de competencias se publica bajo licencia CC BY 4.0 para reuso por centros FP y empresas del sector.",
+          "en": "The competency sheet is published under a CC BY 4.0 licence for reuse by VET centres and sector companies.",
+          "va": "La fitxa de competències es publica sota llicència CC BY 4.0 per a reús per centres FP i empreses del sector."
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "proposer": {
+          "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
+          "type": "sector-association",
+          "role": {
+            "es": "Proponente del reto y co-validador",
+            "en": "Challenge proposer and co-validator",
+            "va": "Proponent del repte i co-validador"
           }
         },
-        "infrastructure": [
+        "validators": [
           {
-            "id": null,
-            "label": {
-              "es": "Panel de expertos ASEVA",
-              "en": "Panel de expertos ASEVA",
-              "va": "Panel de expertos ASEVA"
+            "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
+            "type": "sector-association",
+            "role": {
+              "es": "Panel experto sectorial de movilidad eléctrica",
+              "en": "Electric mobility sector expert panel",
+              "va": "Panell expert sectorial de mobilitat elèctrica"
             }
           },
           {
-            "id": null,
-            "label": {
-              "es": "Sistema ConsensUE",
-              "en": "Sistema ConsensUE",
-              "va": "Sistema ConsensUE"
+            "name": "Asociación de Concesionarios Valencianos",
+            "type": "industry",
+            "role": {
+              "es": "Co-validador — perspectiva empresarial del sector",
+              "en": "Co-validator — business perspective of the sector",
+              "va": "Co-validador — perspectiva empresarial del sector"
             }
           },
           {
-            "id": null,
+            "name": "UVEG — Grup de Recerca en Mobilitat",
+            "type": "university",
+            "role": {
+              "es": "Revisión técnica y clasificación Track B",
+              "en": "Technical review and Track B classification",
+              "va": "Revisió tècnica i classificació Track B"
+            }
+          }
+        ]
+      },
+      "validation": {
+        "objectType": "challenge",
+        "objectTitle": {
+          "es": "Reto formativo sobre instalación y mantenimiento de infraestructura de carga para vehículo eléctrico",
+          "en": "Training challenge on the installation and maintenance of electric vehicle charging infrastructure",
+          "va": "Repte formatiu sobre instal·lació i manteniment d'infraestructura de càrrega per a vehicle elèctric"
+        },
+        "validationQuestion": {
+          "es": "¿Existe demanda sectorial suficiente y una brecha de competencias clara para justificar un reto Track B orientado a FP en instalación y mantenimiento de infraestructura de carga para VE en el sector de la movilidad eléctrica valenciana?",
+          "en": "Is there sufficient sector demand and a clear competence gap to justify a Track B challenge for VET in the installation and maintenance of EV charging infrastructure in the Valencian electric mobility sector?",
+          "va": "Existeix demanda sectorial suficient i una bretxa de competències clara per a justificar un repte Track B orientat a FP en instal·lació i manteniment d'infraestructura de càrrega per a VE en el sector de la mobilitat elèctrica valenciana?"
+        },
+        "need": {
+          "es": "Los centros FP de Automoción carecen de formación específica en instalación, mantenimiento y diagnóstico de infraestructura de carga para vehículo eléctrico, en un contexto de rápida proliferación de puntos de recarga.",
+          "en": "Automotive VET centres lack specific training in the installation, maintenance and diagnosis of EV charging infrastructure, in a context of rapid proliferation of charging points.",
+          "va": "Els centres FP d'Automoció manquen de formació específica en instal·lació, manteniment i diagnòstic d'infraestructura de càrrega per a vehicle elèctric, en un context de ràpida proliferació de punts de recàrrega."
+        },
+        "context": {
+          "es": "ASEVA identifica una brecha creciente entre la proliferación de puntos de carga en la Comunitat Valenciana y la disponibilidad de técnicos cualificados para instalarlos y mantenerlos. El proceso ConsensUE determinó que el reto tiene mayor encaje como propuesta de ecosistema (Track B) que como contribución académica pura (Track A), dada la necesidad de colaboración directa empresa-centro FP.",
+          "en": "ASEVA identifies a growing gap between the proliferation of charging points in the Valencian Community and the availability of qualified technicians to install and maintain them. The ConsensUE process determined that the challenge fits better as an ecosystem proposal (Track B) than as a purely academic contribution (Track A), given the need for direct company-VET centre collaboration.",
+          "va": "ASEVA identifica una bretxa creixent entre la proliferació de punts de càrrega a la Comunitat Valenciana i la disponibilitat de tècnics qualificats per a instal·lar-los i mantenir-los. El procés ConsensUE va determinar que el repte té un encaix millor com a proposta d'ecosistema (Track B) que com a contribució acadèmica pura (Track A), donada la necessitat de col·laboració directa empresa-centre FP."
+        },
+        "method": {
+          "es": "Panel de expertos con técnicos de ASEVA y concesionarios asociados, análisis de brechas de competencias y triage ConsensUE para clasificación Track A / Track B.",
+          "en": "Expert panel with ASEVA technicians and associated dealers, competency gap analysis and ConsensUE triage for Track A / Track B classification.",
+          "va": "Panell d'experts amb tècnics d'ASEVA i concessionaris associats, anàlisi de bretxes de competències i triatge ConsensUE per a classificació Track A / Track B."
+        },
+        "validationEnvironment": [
+          {
             "label": {
-              "es": "Concesionarios asociados",
-              "en": "Concesionarios asociados",
-              "va": "Concesionarios asociados"
+              "es": "Panel de expertos ASEVA con concesionarios",
+              "en": "ASEVA expert panel with dealers",
+              "va": "Panell d'experts ASEVA amb concessionaris"
+            }
+          },
+          {
+            "label": {
+              "es": "Análisis de brechas de competencias",
+              "en": "Competency gap analysis",
+              "va": "Anàlisi de bretxes de competències"
+            }
+          },
+          {
+            "label": {
+              "es": "Proceso de triage ConsensUE",
+              "en": "ConsensUE triage process",
+              "va": "Procés de triatge ConsensUE"
+            }
+          }
+        ]
+      },
+      "criteria": {
+        "items": [
+          {
+            "id": "sector-demand",
+            "label": {
+              "es": "Demanda sectorial",
+              "en": "Sector demand",
+              "va": "Demanda sectorial"
+            },
+            "result": "positive",
+            "note": {
+              "es": "ASEVA y los concesionarios confirman demanda creciente de técnicos para instalación y mantenimiento de cargadores VE, especialmente puntos de carga rápida.",
+              "en": "ASEVA and dealers confirm growing demand for technicians in EV charger installation and maintenance, especially fast charging points.",
+              "va": "ASEVA i els concessionaris confirmen demanda creixent de tècnics per a instal·lació i manteniment de carregadors VE, especialment punts de càrrega ràpida."
+            }
+          },
+          {
+            "id": "vet-fit",
+            "label": {
+              "es": "Encaje con FP",
+              "en": "VET fit",
+              "va": "Encaix amb FP"
+            },
+            "result": "positive",
+            "note": {
+              "es": "El reto encaja directamente con el ciclo de Automoción y Electromovilidad de FP, con posibilidad de formación dual empresa-centro.",
+              "en": "The challenge fits directly with the Automotive and Electromobility VET cycle, with the possibility of dual company-centre training.",
+              "va": "El repte encaixa directament amb el cicle d'Automoció i Electromovilitat de FP, amb possibilitat de formació dual empresa-centre."
+            }
+          },
+          {
+            "id": "ecosystem-relevance",
+            "label": {
+              "es": "Relevancia para el ecosistema",
+              "en": "Ecosystem relevance",
+              "va": "Rellevància per a l'ecosistema"
+            },
+            "result": "positive",
+            "note": {
+              "es": "La clasificación Track B permite la co-diseño del módulo entre ASEVA, concesionarios y centros FP, con mayor impacto en el ecosistema local.",
+              "en": "The Track B classification allows co-design of the module between ASEVA, dealers and VET centres, with greater impact on the local ecosystem.",
+              "va": "La classificació Track B permet el co-disseny del mòdul entre ASEVA, concessionaris i centres FP, amb major impacte en l'ecosistema local."
+            }
+          },
+          {
+            "id": "feasibility",
+            "label": {
+              "es": "Viabilidad de desarrollo",
+              "en": "Development feasibility",
+              "va": "Viabilitat de desenvolupament"
+            },
+            "result": "medium",
+            "note": {
+              "es": "Requiere acuerdo formal empresa-centro FP para formación dual; ASEVA facilita la conexión con concesionarios dispuestos a participar.",
+              "en": "Requires a formal company-VET centre agreement for dual training; ASEVA facilitates connection with dealers willing to participate.",
+              "va": "Requereix acord formal empresa-centre FP per a formació dual; ASEVA facilita la connexió amb concessionaris disposats a participar."
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "evidenceLevel": "reviewed",
+        "collectionMethod": {
+          "es": "Panel de expertos con ASEVA y concesionarios valencianos, análisis de brechas de competencias y proceso ConsensUE de triage y clasificación Track A / Track B.",
+          "en": "Expert panel with ASEVA and Valencian dealers, competency gap analysis and ConsensUE triage and Track A / Track B classification process.",
+          "va": "Panell d'experts amb ASEVA i concessionaris valencians, anàlisi de bretxes de competències i procés ConsensUE de triatge i classificació Track A / Track B."
+        },
+        "indicators": [
+          {
+            "id": "competence-gap",
+            "label": {
+              "es": "Brecha de competencias identificada",
+              "en": "Competence gap identified",
+              "va": "Bretxa de competències identificada"
+            },
+            "metric": {
+              "es": "Análisis experto ASEVA + concesionarios",
+              "en": "ASEVA + dealer expert analysis",
+              "va": "Anàlisi expert ASEVA + concessionaris"
+            }
+          },
+          {
+            "id": "consensue-classification",
+            "label": {
+              "es": "Clasificación ConsensUE",
+              "en": "ConsensUE classification",
+              "va": "Classificació ConsensUE"
+            },
+            "metric": {
+              "es": "Track B (propuesta de ecosistema — módulo FP dual)",
+              "en": "Track B (ecosystem proposal — dual VET module)",
+              "va": "Track B (proposta d'ecosistema — mòdul FP dual)"
+            }
+          },
+          {
+            "id": "sector-willingness",
+            "label": {
+              "es": "Disposición empresarial para formación dual",
+              "en": "Business willingness for dual training",
+              "va": "Disposició empresarial per a formació dual"
+            },
+            "metric": {
+              "es": "Concesionarios ASEVA dispuestos a acoger alumnado FP",
+              "en": "ASEVA dealers willing to host VET students",
+              "va": "Concessionaris ASEVA disposats a acollir alumnat FP"
             }
           }
         ],
-        "tools": [],
-        "dataManagement": {
-          "sensitiveDataIncluded": false,
-          "personalDataIncluded": false,
+        "limitations": {
+          "es": "La ficha pública documenta el resultado de la validación. Las actas internas del panel y la deliberación completa del proceso ConsensUE no se publican.",
+          "en": "The public page documents the validation result. Internal panel minutes and the full ConsensUE deliberation are not published.",
+          "va": "La fitxa pública documenta el resultat de la validació. Les actes internes del panell i la deliberació completa del procés ConsensUE no es publiquen."
+        }
+      },
+      "decision": {
+        "outcome": "validated-track-b",
+        "label": {
+          "es": "Validado — clasificado Track B para diseño de módulo FP dual",
+          "en": "Validated — classified as Track B for dual VET module design",
+          "va": "Validat — classificat Track B per al disseny de mòdul FP dual"
+        },
+        "rationale": {
+          "es": "La validación confirma demanda sectorial, encaje con FP y disposición empresarial para formación dual. El proceso ConsensUE determina Track B como vía principal, derivando el reto al diseño de un módulo FP dual en colaboración con ASEVA y concesionarios para el curso 2026-27.",
+          "en": "The validation confirms sector demand, VET fit and business willingness for dual training. The ConsensUE process determines Track B as the main route, referring the challenge to the design of a dual VET module in collaboration with ASEVA and dealers for 2026-27.",
+          "va": "La validació confirma demanda sectorial, encaix amb FP i disposició empresarial per a formació dual. El procés ConsensUE determina Track B com a via principal, derivant el repte al disseny d'un mòdul FP dual en col·laboració amb ASEVA i concessionaris per al curs 2026-27."
+        },
+        "nextStep": {
+          "type": "design-module",
+          "label": {
+            "es": "Diseñar módulo FP dual con ASEVA y concesionarios para el curso 2026-27",
+            "en": "Design dual VET module with ASEVA and dealers for 2026-27",
+            "va": "Dissenyar mòdul FP dual amb ASEVA i concessionaris per al curs 2026-27"
+          }
+        }
+      },
+      "trackRouting": {
+        "route": "track-b",
+        "label": {
+          "es": "Clasificado Track B — derivado a diseño de módulo FP dual con ASEVA y concesionarios para 2026-27",
+          "en": "Classified as Track B — referred to dual VET module design with ASEVA and dealers for 2026-27",
+          "va": "Classificat Track B — derivat al disseny de mòdul FP dual amb ASEVA i concessionaris per a 2026-27"
+        },
+        "academicReview": {
+          "enabled": false,
+          "reviewer": null,
           "note": {
             "es": "",
             "en": "",
@@ -9311,156 +9441,132 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "evidence": {
-        "evidenceLevel": "observed",
-        "verificationStatus": "self-reported",
-        "collectionMethod": {
-          "es": "",
-          "en": "",
-          "va": ""
-        },
-        "primaryMetric": null,
-        "secondaryMetrics": [],
-        "limitations": {
-          "es": "",
-          "en": "",
-          "va": ""
-        }
-      },
-      "results": {
-        "headline": {
-          "es": "Validado — clasificado Track B para formación dual",
-          "en": "Validated — classified as Track B for dual training",
-          "va": "Validat — classificat Track B per a formació dual"
-        },
-        "outputs": [
-          {
-            "id": "output-0",
-            "label": {
-              "es": "Ficha de competencias publicada",
-              "en": "Competency sheet published",
-              "va": "Fitxa de competències publicada"
-            }
-          },
-          {
-            "id": "output-1",
-            "label": {
-              "es": "Base para módulo FP dual 2026-27",
-              "en": "Basis for dual VET module 2026-27",
-              "va": "Base per al mòdul FP dual 2026-27"
-            }
-          }
-        ],
-        "decision": {
-          "outcome": "",
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        }
-      },
-      "transferability": {
-        "whyTransferable": {
-          "es": "Ficha de competencias publicada. Base para módulo FP dual con ASEVA en el curso 2026-27.",
-          "en": "Competency sheet published. Basis for dual VET module with ASEVA in 2026-27.",
-          "va": "Fitxa de competències publicada. Base per al mòdul FP dual amb ASEVA per al curs 2026-27."
-        },
-        "suitableFor": [
-          "companies",
-          "vet-centres",
-          "public-administration"
-        ],
-        "requirements": [],
-        "replicationSteps": [],
-        "risks": []
+      "relations": {
+        "validatedChallengeId": "",
+        "resultingPilotIds": [],
+        "resultingCaseIds": [],
+        "resultingResourceIds": [],
+        "relatedMentorshipIds": [],
+        "nextPossibleItems": [
+          "pilot",
+          "resource"
+        ]
       },
       "downloads": {
         "enabled": false,
-        "basePath": "/assets/downloads/pilots/validation-stakeholder-movilidad-electrica/",
+        "basePath": "/assets/downloads/validations/validation-stakeholder-movilidad-electrica/",
         "items": []
       },
-      "resources": null,
+      "resources": {
+        "externalLinks": [
+          {
+            "id": "competency-sheet",
+            "type": "external-system",
+            "label": {
+              "es": "Ficha de competencias para instalación VE",
+              "en": "EV installation competency sheet",
+              "va": "Fitxa de competències per a instal·lació VE"
+            },
+            "url": "",
+            "access": {
+              "es": "Acceso abierto — pendiente de publicación formal",
+              "en": "Open access — pending formal publication",
+              "va": "Accés obert — pendent de publicació formal"
+            }
+          }
+        ]
+      },
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Ver ficha de competencias",
-            "en": "View competency sheet",
-            "va": "Veure fitxa de competències"
+            "es": "Ver validación",
+            "en": "View validation",
+            "va": "Veure validació"
           },
-          "system": "",
-          "url": ""
+          "url": "",
+          "system": ""
         },
         "secondaryAction": null
       },
-      "relations": {
-        "originChallengeId": "",
-        "relatedValidations": [],
-        "relatedCases": [],
-        "relatedResources": [],
-        "relatedMentorships": [],
-        "nextPossibleItems": [
-          "case",
-          "resource"
-        ]
-      },
-      "hasDownloads": false,
-      "downloadCount": 0,
-      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "validation",
-          "showPilotStage": true,
-          "showPilotType": true,
-          "showReadiness": true,
+          "showValidationType": true,
+          "showDecision": true,
+          "showEvidenceLevel": true,
           "showWindow": true,
-          "showInfrastructure": true,
-          "showPrimaryMetric": true,
+          "showValidationEnvironment": true,
           "showDownloadsIndicator": false,
-          "resultBlockLabel": {
-            "es": "Qué se prueba",
-            "en": "What is being tested",
-            "va": "Què es prova"
+          "mainBlockLabel": {
+            "es": "Qué se valida",
+            "en": "What is validated",
+            "va": "Què es valida"
           }
         },
         "detail": {
           "sections": {
-            "summary": true,
-            "pilotPlan": true,
-            "methodology": true,
-            "implementation": true,
+            "object": true,
+            "need": true,
+            "context": true,
+            "method": true,
+            "criteria": true,
             "evidence": true,
-            "results": true,
-            "transferability": true,
+            "decision": true,
             "downloads": false,
             "resources": true,
-            "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
+            "trackRouting": true,
             "relations": false
           }
         }
       },
+      "validationWindow": {
+        "start": "2025-06-01",
+        "end": "2025-10-20",
+        "label": {
+          "es": "Jun – Oct 2025",
+          "en": "Jun – Oct 2025",
+          "va": "Jun – Oct 2025"
+        }
+      },
+      "criteriaCount": 4,
+      "validationTypeLabel": {
+        "es": "Validación stakeholder",
+        "en": "Stakeholder validation",
+        "va": "Validació stakeholder"
+      },
+      "validationStageLabel": {
+        "es": "Completada",
+        "en": "Completed",
+        "va": "Completada"
+      },
+      "decisionOutcomeLabel": {
+        "es": "Validado — Track B",
+        "en": "Validated — Track B",
+        "va": "Validat — Track B"
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "template": {
         "requiredBlocks": [
-          "need",
-          "context",
+          "validation",
+          "criteria",
           "evidence",
-          "outputs",
-          "process"
+          "decision"
         ],
         "optionalBlocks": [
-          "people",
+          "downloads",
           "resources",
           "access",
-          "trackA",
-          "objective",
-          "methodology",
-          "outcome"
+          "trackRouting",
+          "relations",
+          "people",
+          "externalFlow"
         ],
-        "cardSignal": "evidence"
+        "cardSignal": "validation"
       }
     }
   ],
@@ -9498,6 +9604,8 @@ export const MARKETPLACE_CONFIG = {
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
+          "validationType": "",
+          "validationStage": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -9966,6 +10074,8 @@ export const MARKETPLACE_CONFIG = {
           "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
+          "validationType": "",
+          "validationStage": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -10610,6 +10720,8 @@ export const MARKETPLACE_CONFIG = {
           "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
+          "validationType": "",
+          "validationStage": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -11193,6 +11305,8 @@ export const MARKETPLACE_CONFIG = {
           "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
+          "validationType": "",
+          "validationStage": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -11820,6 +11934,8 @@ export const MARKETPLACE_CONFIG = {
           "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
+          "validationType": "",
+          "validationStage": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -12373,6 +12489,8 @@ export const MARKETPLACE_CONFIG = {
           "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
+          "validationType": "",
+          "validationStage": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -12982,6 +13100,8 @@ export const MARKETPLACE_CONFIG = {
             "FP"
           ],
           "pilotType": "curriculum-pilot",
+          "validationType": "",
+          "validationStage": "",
           "helix": [
             "academia",
             "public-sector"
@@ -13510,6 +13630,8 @@ export const MARKETPLACE_CONFIG = {
             "Máster"
           ],
           "pilotType": "teacher-training",
+          "validationType": "",
+          "validationStage": "",
           "helix": [
             "academia",
             "civil-society"
@@ -14063,6 +14185,8 @@ export const MARKETPLACE_CONFIG = {
             "FP"
           ],
           "pilotType": "vet-industry",
+          "validationType": "",
+          "validationStage": "",
           "helix": [
             "academia",
             "industry"
@@ -14607,6 +14731,8 @@ export const MARKETPLACE_CONFIG = {
             "Máster"
           ],
           "pilotType": "master-bridge",
+          "validationType": "",
+          "validationStage": "",
           "helix": [
             "academia",
             "industry"
@@ -15100,38 +15226,36 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-agr-asaja.yml",
         "core": {
           "status": "resolved",
-          "maturity": "completed",
+          "maturity": "idea",
           "title": {
-            "es": "Validación Stakeholder — Reto de agricultura de precisión con IA",
-            "en": "Stakeholder Validation — Precision agriculture with AI challenge",
-            "va": "Validació Stakeholder — Repte d'agricultura de precisió amb IA"
+            "es": "Validación stakeholder — Reto de agricultura de precisión con IA",
+            "en": "Stakeholder validation — Precision agriculture with AI challenge",
+            "va": "Validació stakeholder — Repte d'agricultura de precisió amb IA"
           },
           "summary": {
-            "es": "Validación con AVA-ASAJA de un reto sectorial sobre agricultura de precisión y clasificación a Track A.",
-            "en": "Validation with AVA-ASAJA of a sectoral challenge on precision agriculture and Track A classification.",
-            "va": "Validació amb AVA-ASAJA d'un repte sectorial sobre agricultura de precisió i classificació a Track A."
+            "es": "Validación con AVA-ASAJA y UVEG del reto sectorial sobre agricultura de precisión. Clasificado Track A para tratamiento académico en el Máster.",
+            "en": "Validation with AVA-ASAJA and UVEG of the sectoral challenge on precision agriculture. Classified as Track A for academic treatment in the Master programme.",
+            "va": "Validació amb AVA-ASAJA i UVEG del repte sectorial sobre agricultura de precisió. Classificat Track A per a tractament acadèmic en el Màster."
           },
           "entity": {
-            "name": "AVA-ASAJA",
+            "name": "",
             "type": {
-              "es": "Asociación sectorial agraria",
-              "en": "Agrarian sector association",
-              "va": "Associació sectorial agrària"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "sector": "agr",
-          "stakeholderCategory": "economic",
+          "stakeholderCategory": "",
           "levels": [
             "FP",
             "Máster"
           ],
-          "pilotType": "stakeholder-validation",
-          "helix": [
-            "academia",
-            "industry",
-            "civil-society"
-          ],
-          "relatedDeliverable": "Informe de validación de reto — Agricultura de precisión (Track A)",
+          "pilotType": "",
+          "validationType": "stakeholder-validation",
+          "validationStage": "completed",
+          "helix": [],
+          "relatedDeliverable": "",
           "relatedOerId": "",
           "publishedAt": "2025-11-10",
           "revisionDate": "2026-01-25",
@@ -15181,16 +15305,16 @@ export const MARKETPLACE_CONFIG = {
             "learning-ecosystems",
             "infrastructure-evidence"
           ],
-          "engagementLevel": "insight",
-          "evidenceMaturity": "completed",
-          "lbdStage": "output",
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
           "trackBValue": {
-            "es": "Dataset multispectral cedido para reuso académico. Reto validado y clasificado para Track A por UVEG.",
-            "en": "Multispectral dataset donated for academic reuse. Challenge validated and classified for Track A by UVEG.",
-            "va": "Dataset multiespectral cedit per a reús acadèmic. Repte validat i classificat per a Track A per UVEG."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
-          "pilotStatus": "completed"
+          "pilotStatus": ""
         },
         "transfer": {
           "type": "",
@@ -15198,825 +15322,16 @@ export const MARKETPLACE_CONFIG = {
           "beneficiaryOrganizations": []
         },
         "community": {
-          "tab": "validations",
-          "audience": [
-            "companies",
-            "vet-centres",
-            "universities",
-            "public-administration"
-          ],
-          "primaryCta": {
-            "es": "Ver ficha de validación",
-            "en": "View validation record",
-            "va": "Veure fitxa de validació"
-          },
-          "featuredSignal": {
-            "es": "Reto validado y clasificado Track A. Dataset multispectral disponible para reutilización.",
-            "en": "Challenge validated and classified as Track A. Multispectral dataset available for reuse.",
-            "va": "Repte validat i classificat Track A. Dataset multiespectral disponible per a reutilització."
-          }
+          "tab": "validations"
         },
-        "card": {
-          "collaborationDirection": {
-            "es": "Oferta de dataset multispectral de cítricos y demanda de formación dual en agricultura de precisión.",
-            "en": "Offer of citrus multispectral dataset and demand for dual training in precision agriculture.",
-            "va": "Oferta de dataset multiespectral de cítrics i demanda de formació dual en agricultura de precisió."
-          },
-          "trl": {
-            "level": 6,
-            "label": {
-              "es": "Demostración en entorno relevante",
-              "en": "Demonstration in relevant environment",
-              "va": "Demostració en entorn rellevant"
-            }
-          },
-          "infrastructure": [
-            "Drones multiespectrales",
-            "Dataset citrus CV",
-            "Sistema ConsensUE"
-          ],
-          "executionWindow": {
-            "start": "2025-10-01",
-            "end": "2026-01-25",
-            "label": {
-              "es": "Oct 2025 – Ene 2026",
-              "en": "Oct 2025 – Jan 2026",
-              "va": "Oct 2025 – Gen 2026"
-            }
-          },
-          "validationStatus": {
-            "es": "Validado — clasificado Track A por UVEG",
-            "en": "Validated — classified as Track A by UVEG",
-            "va": "Validat — classificat Track A per UVEG"
-          }
-        },
-        "visibility": {
-          "objective": true,
-          "methodology": true,
-          "outcome": true,
-          "need": true,
-          "context": true,
-          "evidence": true,
-          "outputs": true,
-          "process": true,
-          "people": true,
-          "resources": true,
-          "access": true,
-          "trackA": true
-        },
-        "detail": {
-          "objective": {
-            "es": "Validar la pertinencia y madurez de un reto de agricultura de precisión propuesto por el sector agroalimentario valenciano.",
-            "en": "Validate the relevance and maturity of a precision agriculture challenge proposed by the Valencian agri-food sector.",
-            "va": "Validar la pertinència i maduresa d'un repte d'agricultura de precisió proposat pel sector agroalimentari valencià."
-          },
-          "methodology": {
-            "es": "Entrevistas con AVA-ASAJA, revisión técnica por UVEG y triage en ConsensUE para clasificación Track A / Track B.",
-            "en": "Interviews with AVA-ASAJA, technical review by UVEG and ConsensUE triage for Track A / Track B classification.",
-            "va": "Entrevistes amb AVA-ASAJA, revisió tècnica per UVEG i triatge en ConsensUE per a classificació Track A / Track B."
-          },
-          "outcome": {
-            "es": "Reto validado por AVA-ASAJA. Clasificado para tratamiento Track A por UVEG. Dataset multispectral cedido para reuso académico.",
-            "en": "Challenge validated by AVA-ASAJA. Classified for Track A handling by UVEG. Multispectral dataset donated for academic reuse.",
-            "va": "Repte validat per AVA-ASAJA. Classificat per a tractament Track A per UVEG. Dataset multiespectral cedit per a reús acadèmic."
-          },
-          "need": {
-            "es": "El sector agroalimentario valenciano necesita FP y Máster con competencias en visión artificial y drones para gestión de cultivos y detección de plagas.",
-            "en": "The Valencian agri-food sector needs VET and Master programmes with competencies in computer vision and drones for crop management and pest detection.",
-            "va": "El sector agroalimentari valencià necessita FP i Màster amb competències en visió artificial i drons per a gestió de cultius i detecció de plagues."
-          },
-          "context": {
-            "es": "AVA-ASAJA propuso el reto a la red AI-STEAM. La validación determina su clasificación (Track A académico o Track B ecosistema) mediante el proceso ConsensUE.",
-            "en": "AVA-ASAJA submitted the challenge to the AI-STEAM Network. The validation determines its classification (Track A academic or Track B ecosystem) via the ConsensUE process.",
-            "va": "AVA-ASAJA va proposar el repte a la xarxa AI-STEAM. La validació determina la seua classificació (Track A acadèmica o Track B ecosistema) mitjançant el procés ConsensUE."
-          },
-          "evidence": {
-            "method": {
-              "es": "Entrevistas estructuradas con AVA-ASAJA, revisión técnica por UVEG y triage ConsensUE.",
-              "en": "Structured interviews with AVA-ASAJA, UVEG technical review and ConsensUE triage.",
-              "va": "Entrevistes estructurades amb AVA-ASAJA, revisió tècnica per UVEG i triatge ConsensUE."
-            },
-            "indicators": [
-              {
-                "label": {
-                  "es": "Madurez del reto",
-                  "en": "Challenge maturity",
-                  "va": "Maduresa del repte"
-                },
-                "metric": "ConsensUE 1-5"
-              },
-              {
-                "label": {
-                  "es": "Pertinencia sectorial",
-                  "en": "Sectoral relevance",
-                  "va": "Pertinència sectorial"
-                },
-                "metric": "Evaluación experta"
-              }
-            ]
-          },
-          "outputs": {
-            "expected": [
-              {
-                "label": {
-                  "es": "Informe de validación con clasificación Track A",
-                  "en": "Validation report with Track A classification",
-                  "va": "Informe de validació amb classificació Track A"
-                }
-              },
-              {
-                "label": {
-                  "es": "Dataset multispectral cedido para reuso",
-                  "en": "Multispectral dataset donated for reuse",
-                  "va": "Dataset multiespectral cedit per a reús"
-                }
-              }
-            ]
-          },
-          "process": {
-            "milestones": [
-              {
-                "date": "2025-10-15",
-                "label": {
-                  "es": "Entrevistas con AVA-ASAJA",
-                  "en": "Interviews with AVA-ASAJA",
-                  "va": "Entrevistes amb AVA-ASAJA"
-                }
-              },
-              {
-                "date": "2025-12-10",
-                "label": {
-                  "es": "Revisión técnica UVEG",
-                  "en": "UVEG technical review",
-                  "va": "Revisió tècnica UVEG"
-                }
-              },
-              {
-                "date": "2026-01-25",
-                "label": {
-                  "es": "Clasificación Track A confirmada",
-                  "en": "Track A classification confirmed",
-                  "va": "Classificació Track A confirmada"
-                }
-              }
-            ]
-          },
-          "people": {
-            "organisations": [
-              {
-                "name": "AVA-ASAJA",
-                "role": {
-                  "es": "Proponente del reto",
-                  "en": "Challenge proposer",
-                  "va": "Proponent del repte"
-                }
-              },
-              {
-                "name": "UVEG",
-                "role": {
-                  "es": "Clasificación Track A",
-                  "en": "Track A classification",
-                  "va": "Classificació Track A"
-                }
-              }
-            ]
-          },
-          "trackA": {
-            "es": "Reto clasificado Track A por UVEG para tratamiento académico en el Máster en Agricultura de Precisión.",
-            "en": "Challenge classified as Track A by UVEG for academic treatment in the Master in Precision Agriculture.",
-            "va": "Repte classificat Track A per UVEG per a tractament acadèmic en el Màster en Agricultura de Precisió."
-          }
-        },
-        "access": {
-          "pageVisibility": "network",
-          "pageLicense": "Open data",
-          "codeLicense": "",
-          "dataAvailability": "not-applicable",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "Dataset multispectral cedido bajo licencia open data para reuso académico y de red.",
-            "en": "Multispectral dataset donated under open data licence for academic and network reuse.",
-            "va": "Dataset multiespectral cedit sota llicència open data per a reús acadèmic i de xarxa."
-          },
-          "publicUrl": "",
-          "license": "Open data",
-          "privacyLevel": "network"
-        },
-        "trackA": {
-          "enabled": true,
-          "label": {
-            "es": "Clasificado Track A — derivado a UVEG para tratamiento académico.",
-            "en": "Classified as Track A — referred to UVEG for academic treatment.",
-            "va": "Classificat Track A — derivat a UVEG per a tractament acadèmic."
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": true,
-          "label": {
-            "es": "Clasificado Track A — derivado a UVEG para tratamiento académico.",
-            "en": "Classified as Track A — referred to UVEG for academic treatment.",
-            "va": "Classificat Track A — derivat a UVEG per a tractament acadèmic."
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
-          },
-          "lead": {
-            "name": "AVA-ASAJA",
-            "type": "public-administration",
-            "role": {
-              "es": "Entidad coordinadora",
-              "en": "Coordinating entity",
-              "va": "Entitat coordinadora"
-            }
-          },
-          "coordinator": null,
-          "pilotSites": [],
-          "partners": [
-            {
-              "name": "AVA-ASAJA",
-              "type": "",
-              "role": {
-                "es": "Proponente del reto",
-                "en": "Challenge proposer",
-                "va": "Proponent del repte"
-              }
-            },
-            {
-              "name": "UVEG",
-              "type": "",
-              "role": {
-                "es": "Clasificación Track A",
-                "en": "Track A classification",
-                "va": "Classificació Track A"
-              }
-            }
-          ]
-        },
-        "pilotPlan": {
-          "hypothesis": {
-            "es": "Oferta de dataset multispectral de cítricos y demanda de formación dual en agricultura de precisión.",
-            "en": "Offer of citrus multispectral dataset and demand for dual training in precision agriculture.",
-            "va": "Oferta de dataset multiespectral de cítrics i demanda de formació dual en agricultura de precisió."
-          },
-          "objective": {
-            "es": "Validar la pertinencia y madurez de un reto de agricultura de precisión propuesto por el sector agroalimentario valenciano.",
-            "en": "Validate the relevance and maturity of a precision agriculture challenge proposed by the Valencian agri-food sector.",
-            "va": "Validar la pertinència i maduresa d'un repte d'agricultura de precisió proposat pel sector agroalimentari valencià."
-          },
-          "context": {
-            "es": "AVA-ASAJA propuso el reto a la red AI-STEAM. La validación determina su clasificación (Track A académico o Track B ecosistema) mediante el proceso ConsensUE.",
-            "en": "AVA-ASAJA submitted the challenge to the AI-STEAM Network. The validation determines its classification (Track A academic or Track B ecosystem) via the ConsensUE process.",
-            "va": "AVA-ASAJA va proposar el repte a la xarxa AI-STEAM. La validació determina la seua classificació (Track A acadèmica o Track B ecosistema) mitjançant el procés ConsensUE."
-          },
-          "targetParticipants": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "methodology": {
-            "es": "Entrevistas con AVA-ASAJA, revisión técnica por UVEG y triage en ConsensUE para clasificación Track A / Track B.",
-            "en": "Interviews with AVA-ASAJA, technical review by UVEG and ConsensUE triage for Track A / Track B classification.",
-            "va": "Entrevistes amb AVA-ASAJA, revisió tècnica per UVEG i triatge en ConsensUE per a classificació Track A / Track B."
-          },
-          "successCriteria": []
-        },
-        "implementation": {
-          "readiness": {
-            "technologyReadiness": {
-              "enabled": true,
-              "level": 6,
-              "label": {
-                "es": "Demostración en entorno relevante",
-                "en": "Demonstration in relevant environment",
-                "va": "Demostració en entorn rellevant"
-              }
-            },
-            "educationalReadiness": {
-              "enabled": false,
-              "level": null,
-              "label": {
-                "es": "",
-                "en": "",
-                "va": ""
-              }
-            }
-          },
-          "infrastructure": [
-            {
-              "id": null,
-              "label": {
-                "es": "Drones multiespectrales",
-                "en": "Drones multiespectrales",
-                "va": "Drones multiespectrales"
-              }
-            },
-            {
-              "id": null,
-              "label": {
-                "es": "Dataset citrus CV",
-                "en": "Dataset citrus CV",
-                "va": "Dataset citrus CV"
-              }
-            },
-            {
-              "id": null,
-              "label": {
-                "es": "Sistema ConsensUE",
-                "en": "Sistema ConsensUE",
-                "va": "Sistema ConsensUE"
-              }
-            }
-          ],
-          "tools": [],
-          "dataManagement": {
-            "sensitiveDataIncluded": false,
-            "personalDataIncluded": false,
-            "note": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          }
-        },
-        "evidence": {
-          "evidenceLevel": "measured",
-          "verificationStatus": "self-reported",
-          "collectionMethod": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "primaryMetric": null,
-          "secondaryMetrics": [],
-          "limitations": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        },
-        "results": {
-          "headline": {
-            "es": "Validado — clasificado Track A por UVEG",
-            "en": "Validated — classified as Track A by UVEG",
-            "va": "Validat — classificat Track A per UVEG"
-          },
-          "outputs": [
-            {
-              "id": "output-0",
-              "label": {
-                "es": "Informe de validación con clasificación Track A",
-                "en": "Validation report with Track A classification",
-                "va": "Informe de validació amb classificació Track A"
-              }
-            },
-            {
-              "id": "output-1",
-              "label": {
-                "es": "Dataset multispectral cedido para reuso",
-                "en": "Multispectral dataset donated for reuse",
-                "va": "Dataset multiespectral cedit per a reús"
-              }
-            }
-          ],
-          "decision": {
-            "outcome": "",
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          }
-        },
-        "transferability": {
-          "whyTransferable": {
-            "es": "Dataset multispectral cedido para reuso académico. Reto validado y clasificado para Track A por UVEG.",
-            "en": "Multispectral dataset donated for academic reuse. Challenge validated and classified for Track A by UVEG.",
-            "va": "Dataset multiespectral cedit per a reús acadèmic. Repte validat i classificat per a Track A per UVEG."
-          },
-          "suitableFor": [
-            "companies",
-            "vet-centres",
-            "universities",
-            "public-administration"
-          ],
-          "requirements": [],
-          "replicationSteps": [],
-          "risks": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "/assets/downloads/pilots/validation-stakeholder-agr-asaja/",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "Ver ficha de validación",
-              "en": "View validation record",
-              "va": "Veure fitxa de validació"
-            },
-            "system": "",
-            "url": ""
-          },
-          "secondaryAction": null
-        },
-        "relations": {
-          "originChallengeId": "",
-          "relatedValidations": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "relatedMentorships": [],
-          "nextPossibleItems": [
-            "case",
-            "resource"
-          ]
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "validation",
-            "showPilotStage": true,
-            "showPilotType": true,
-            "showReadiness": true,
-            "showWindow": true,
-            "showInfrastructure": true,
-            "showPrimaryMetric": true,
-            "showDownloadsIndicator": false,
-            "resultBlockLabel": {
-              "es": "Qué se prueba",
-              "en": "What is being tested",
-              "va": "Què es prova"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "pilotPlan": true,
-              "methodology": true,
-              "implementation": true,
-              "evidence": true,
-              "results": true,
-              "transferability": true,
-              "downloads": false,
-              "resources": true,
-              "process": true,
-              "people": true,
-              "access": true,
-              "trackA": true,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "need",
-            "context",
-            "evidence",
-            "outputs",
-            "process"
-          ],
-          "optionalBlocks": [
-            "people",
-            "resources",
-            "access",
-            "trackA",
-            "objective",
-            "methodology",
-            "outcome"
-          ],
-          "cardSignal": "evidence"
-        }
-      },
-      {
-        "id": "validation-stakeholder-movilidad-electrica",
-        "type": "validation",
-        "tab": "validations",
-        "sortDate": "2025-10-20",
-        "visible": true,
-        "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
-        "core": {
-          "status": "resolved",
-          "maturity": "validated",
-          "title": {
-            "es": "Validación Stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
-            "en": "Stakeholder Validation — Electric mobility and charging infrastructure challenge",
-            "va": "Validació Stakeholder — Repte de mobilitat elèctrica i infraestructura de càrrega"
-          },
-          "summary": {
-            "es": "Proceso de validación con ASEVA y concesionarios valencianos de un reto sectorial sobre vehículo eléctrico y formación dual.",
-            "en": "Validation process with ASEVA and Valencian dealers of a sectoral challenge on electric vehicles and dual training.",
-            "va": "Procés de validació amb ASEVA i concessionaris valencians d'un repte sectorial sobre vehicle elèctric i formació dual."
-          },
-          "entity": {
-            "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
-            "type": {
-              "es": "Asociación sectorial",
-              "en": "Sector association",
-              "va": "Associació sectorial"
-            }
-          },
-          "sector": "mob",
-          "stakeholderCategory": "economic",
-          "levels": [
-            "FP"
-          ],
-          "pilotType": "stakeholder-validation",
-          "helix": [
-            "academia",
-            "industry",
-            "public-sector"
-          ],
-          "relatedDeliverable": "Ficha de validación de reto — Movilidad eléctrica e infraestructura de carga (Track B)",
-          "relatedOerId": "",
-          "publishedAt": "2025-07-01",
-          "revisionDate": "2025-10-20",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "Jul 2025",
-            "en": "Jul 2025",
-            "va": "Jul 2025"
-          },
-          "revisionDateLabel": {
-            "es": "Oct 2025",
-            "en": "Oct 2025",
-            "va": "Oct 2025"
-          },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Vehículo eléctrico",
-              "Movilidad sostenible",
-              "FP dual",
-              "Validación sectorial"
-            ],
-            "en": [
-              "Electric vehicle",
-              "Sustainable mobility",
-              "Dual VET",
-              "Sectoral validation"
-            ],
-            "va": [
-              "Vehicle elèctric",
-              "Mobilitat sostenible",
-              "FP dual",
-              "Validació sectorial"
-            ]
-          }
-        },
-        "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "institutional-readiness"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "infrastructure-evidence"
-          ],
-          "engagementLevel": "insight",
-          "evidenceMaturity": "validated",
-          "lbdStage": "output",
-          "trackBValue": {
-            "es": "Ficha de competencias publicada. Base para módulo FP dual con ASEVA en el curso 2026-27.",
-            "en": "Competency sheet published. Basis for dual VET module with ASEVA in 2026-27.",
-            "va": "Fitxa de competències publicada. Base per al mòdul FP dual amb ASEVA per al curs 2026-27."
-          },
-          "verificationStatus": "",
-          "pilotStatus": "validated"
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "validations",
-          "audience": [
-            "companies",
-            "vet-centres",
-            "public-administration"
-          ],
-          "primaryCta": {
-            "es": "Ver ficha de competencias",
-            "en": "View competency sheet",
-            "va": "Veure fitxa de competències"
-          },
-          "featuredSignal": {
-            "es": "Reto validado Track B. Módulo FP dual en diseño para 2026-27.",
-            "en": "Track B validated challenge. Dual VET module in design for 2026-27.",
-            "va": "Repte validat Track B. Mòdul FP dual en disseny per a 2026-27."
-          }
-        },
-        "card": {
-          "collaborationDirection": {
-            "es": "Demanda de formación dual en instalación y mantenimiento de infraestructura de carga para VE.",
-            "en": "Demand for dual training in EV charging infrastructure installation and maintenance.",
-            "va": "Demanda de formació dual en instal·lació i manteniment d'infraestructura de càrrega per a VE."
-          },
-          "trl": {
-            "level": 6,
-            "label": {
-              "es": "Demostración en entorno relevante",
-              "en": "Demonstration in relevant environment",
-              "va": "Demostració en entorn rellevant"
-            }
-          },
-          "infrastructure": [
-            "Panel de expertos ASEVA",
-            "Sistema ConsensUE",
-            "Concesionarios asociados"
-          ],
-          "executionWindow": {
-            "start": "2025-06-01",
-            "end": "2025-10-20",
-            "label": {
-              "es": "Jun – Oct 2025",
-              "en": "Jun – Oct 2025",
-              "va": "Jun – Oct 2025"
-            }
-          },
-          "validationStatus": {
-            "es": "Validado — clasificado Track B para formación dual",
-            "en": "Validated — classified as Track B for dual training",
-            "va": "Validat — classificat Track B per a formació dual"
-          }
-        },
-        "visibility": {
-          "objective": true,
-          "methodology": true,
-          "outcome": true,
-          "need": true,
-          "context": true,
-          "evidence": true,
-          "outputs": true,
-          "process": true,
-          "people": true,
-          "resources": true,
-          "access": true,
-          "trackA": false
-        },
-        "detail": {
-          "objective": {
-            "es": "Validar la pertinencia y viabilidad de un reto formativo sobre instalación y mantenimiento de infraestructura de carga para vehículo eléctrico en FP.",
-            "en": "Validate the relevance and feasibility of a training challenge on the installation and maintenance of electric vehicle charging infrastructure in VET.",
-            "va": "Validar la pertinència i viabilitat d'un repte formatiu sobre instal·lació i manteniment d'infraestructura de càrrega per a vehicle elèctric en FP."
-          },
-          "methodology": {
-            "es": "Panel de expertos con ASEVA y concesionarios, análisis de brechas de competencias y triage ConsensUE para clasificación Track B.",
-            "en": "Expert panel with ASEVA and dealers, competency gap analysis and ConsensUE triage for Track B classification.",
-            "va": "Panell d'experts amb ASEVA i concessionaris, anàlisi de bretxes de competències i triatge ConsensUE per a classificació Track B."
-          },
-          "outcome": {
-            "es": "Reto validado y clasificado Track B. Ficha de competencias publicada. Base para el diseño de módulo FP en colaboración con ASEVA para el curso 2026-27.",
-            "en": "Challenge validated and classified as Track B. Competency sheet published. Basis for VET module design in collaboration with ASEVA for 2026-27.",
-            "va": "Repte validat i classificat Track B. Fitxa de competències publicada. Base per al disseny de mòdul FP en col·laboració amb ASEVA per al curs 2026-27."
-          },
-          "need": {
-            "es": "Los centros FP de Automoción carecen de formación específica en instalación, mantenimiento y diagnóstico de infraestructura de carga para VE.",
-            "en": "Automotive VET centres lack specific training in the installation, maintenance and diagnosis of EV charging infrastructure.",
-            "va": "Els centres FP d'Automoció manquen de formació específica en instal·lació, manteniment i diagnòstic d'infraestructura de càrrega per a VE."
-          },
-          "context": {
-            "es": "ASEVA identifica una brecha creciente entre la proliferación de puntos de carga y la disponibilidad de técnicos cualificados para instalarlos y mantenerlos.",
-            "en": "ASEVA identifies a growing gap between the proliferation of charging points and the availability of qualified technicians to install and maintain them.",
-            "va": "ASEVA identifica una bretxa creixent entre la proliferació de punts de càrrega i la disponibilitat de tècnics qualificats per a instal·lar-los i mantenir-los."
-          },
-          "evidence": {
-            "method": {
-              "es": "Panel de expertos, análisis de brechas de competencias y proceso ConsensUE de triage y clasificación.",
-              "en": "Expert panel, competency gap analysis and ConsensUE triage and classification process.",
-              "va": "Panell d'experts, anàlisi de bretxes de competències i procés ConsensUE de triatge i classificació."
-            },
-            "indicators": [
-              {
-                "label": {
-                  "es": "Brecha de competencias identificada",
-                  "en": "Competency gap identified",
-                  "va": "Bretxa de competències identificada"
-                },
-                "metric": "Análisis experto"
-              },
-              {
-                "label": {
-                  "es": "Clasificación ConsensUE",
-                  "en": "ConsensUE classification",
-                  "va": "Classificació ConsensUE"
-                },
-                "metric": "Track A / Track B"
-              }
-            ]
-          },
-          "outputs": {
-            "expected": [
-              {
-                "label": {
-                  "es": "Ficha de competencias publicada",
-                  "en": "Competency sheet published",
-                  "va": "Fitxa de competències publicada"
-                }
-              },
-              {
-                "label": {
-                  "es": "Base para módulo FP dual 2026-27",
-                  "en": "Basis for dual VET module 2026-27",
-                  "va": "Base per al mòdul FP dual 2026-27"
-                }
-              }
-            ]
-          },
-          "process": {
-            "milestones": [
-              {
-                "date": "2025-07-15",
-                "label": {
-                  "es": "Panel de expertos ASEVA",
-                  "en": "ASEVA expert panel",
-                  "va": "Panell d'experts ASEVA"
-                }
-              },
-              {
-                "date": "2025-09-20",
-                "label": {
-                  "es": "Análisis de brechas de competencias",
-                  "en": "Competency gap analysis",
-                  "va": "Anàlisi de bretxes de competències"
-                }
-              },
-              {
-                "date": "2025-10-20",
-                "label": {
-                  "es": "Clasificación Track B confirmada",
-                  "en": "Track B classification confirmed",
-                  "va": "Classificació Track B confirmada"
-                }
-              }
-            ]
-          },
-          "people": {
-            "organisations": [
-              {
-                "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
-                "role": {
-                  "es": "Proponente del reto y co-validador",
-                  "en": "Challenge proposer and co-validator",
-                  "va": "Proponent del repte i co-validador"
-                }
-              },
-              {
-                "name": "Asociación de Concesionarios Valencianos",
-                "role": {
-                  "es": "Co-validador",
-                  "en": "Co-validator",
-                  "va": "Co-validador"
-                }
-              },
-              {
-                "name": "UVEG — Grup de Recerca Mobilitat",
-                "role": {
-                  "es": "Revisión técnica Track A",
-                  "en": "Track A technical review",
-                  "va": "Revisió tècnica Track A"
-                }
-              }
-            ]
-          },
-          "resources": {
-            "available": [
-              {
-                "label": {
-                  "es": "Ficha de competencias para instalación VE",
-                  "en": "EV installation competency sheet",
-                  "va": "Fitxa de competències per a instal·lació VE"
-                },
-                "format": "PDF",
-                "license": "CC BY 4.0"
-              }
-            ]
-          }
-        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
         "access": {
           "pageVisibility": "public",
           "pageLicense": "CC BY 4.0",
           "codeLicense": "",
-          "dataAvailability": "not-applicable",
+          "dataAvailability": "summary-only",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -16025,9 +15340,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "Ficha de competencias publicada bajo CC BY 4.0.",
-            "en": "Competency sheet published under CC BY 4.0.",
-            "va": "Fitxa de competències publicada sota CC BY 4.0."
+            "es": "El dataset multispectral de cítricos se publica bajo licencia open data para reuso académico y de red.",
+            "en": "The citrus multispectral dataset is published under an open data licence for academic and network reuse.",
+            "va": "El dataset multiespectral de cítrics es publica sota llicència open data per a reús acadèmic i de xarxa."
           },
           "publicUrl": "",
           "license": "CC BY 4.0",
@@ -16056,126 +15371,761 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Network",
             "org": "CEICE"
           },
-          "lead": {
-            "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
-            "type": "public-administration",
+          "proposer": {
+            "name": "AVA-ASAJA",
+            "type": "sector-association",
             "role": {
-              "es": "Entidad coordinadora",
-              "en": "Coordinating entity",
-              "va": "Entitat coordinadora"
+              "es": "Proponente del reto y co-validador",
+              "en": "Challenge proposer and co-validator",
+              "va": "Proponent del repte i co-validador"
             }
           },
-          "coordinator": null,
-          "pilotSites": [],
-          "partners": [
+          "validators": [
             {
-              "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
-              "type": "",
+              "name": "AVA-ASAJA",
+              "type": "sector-association",
               "role": {
-                "es": "Proponente del reto y co-validador",
-                "en": "Challenge proposer and co-validator",
-                "va": "Proponent del repte i co-validador"
+                "es": "Panel experto sectorial agroalimentario",
+                "en": "Agri-food sector expert panel",
+                "va": "Panell expert sectorial agroalimentari"
               }
             },
             {
-              "name": "Asociación de Concesionarios Valencianos",
-              "type": "",
+              "name": "UVEG — Grup de Recerca en Teledetecció Agrícola",
+              "type": "university",
               "role": {
-                "es": "Co-validador",
-                "en": "Co-validator",
-                "va": "Co-validador"
-              }
-            },
-            {
-              "name": "UVEG — Grup de Recerca Mobilitat",
-              "type": "",
-              "role": {
-                "es": "Revisión técnica Track A",
-                "en": "Track A technical review",
-                "va": "Revisió tècnica Track A"
+                "es": "Revisión técnica y académica — clasificación Track A",
+                "en": "Technical and academic review — Track A classification",
+                "va": "Revisió tècnica i acadèmica — classificació Track A"
               }
             }
           ]
         },
-        "pilotPlan": {
-          "hypothesis": {
-            "es": "Demanda de formación dual en instalación y mantenimiento de infraestructura de carga para VE.",
-            "en": "Demand for dual training in EV charging infrastructure installation and maintenance.",
-            "va": "Demanda de formació dual en instal·lació i manteniment d'infraestructura de càrrega per a VE."
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Reto formativo sobre visión artificial y drones en agricultura de precisión",
+            "en": "Training challenge on computer vision and drones in precision agriculture",
+            "va": "Repte formatiu sobre visió artificial i drons en agricultura de precisió"
           },
-          "objective": {
-            "es": "Validar la pertinencia y viabilidad de un reto formativo sobre instalación y mantenimiento de infraestructura de carga para vehículo eléctrico en FP.",
-            "en": "Validate the relevance and feasibility of a training challenge on the installation and maintenance of electric vehicle charging infrastructure in VET.",
-            "va": "Validar la pertinència i viabilitat d'un repte formatiu sobre instal·lació i manteniment d'infraestructura de càrrega per a vehicle elèctric en FP."
+          "validationQuestion": {
+            "es": "¿Existe demanda sectorial suficiente y una brecha de competencias clara para justificar un reto Track A orientado a FP y Máster en el sector agroalimentario valenciano?",
+            "en": "Is there sufficient sector demand and a clear competence gap to justify a Track A challenge for VET and Master programmes in the Valencian agri-food sector?",
+            "va": "Existeix demanda sectorial suficient i una bretxa de competències clara per a justificar un repte Track A orientat a FP i Màster en el sector agroalimentari valencià?"
+          },
+          "need": {
+            "es": "Los centros FP y el Máster en Agricultura de Precisión carecen de formación práctica en visión artificial, drones multiespectrales y análisis de datos agrícolas con IA.",
+            "en": "VET centres and the Master in Precision Agriculture lack practical training in computer vision, multispectral drones and AI-driven agricultural data analysis.",
+            "va": "Els centres FP i el Màster en Agricultura de Precisió manquen de formació pràctica en visió artificial, drons multiespectrals i anàlisi de dades agrícoles amb IA."
           },
           "context": {
-            "es": "ASEVA identifica una brecha creciente entre la proliferación de puntos de carga y la disponibilidad de técnicos cualificados para instalarlos y mantenerlos.",
-            "en": "ASEVA identifies a growing gap between the proliferation of charging points and the availability of qualified technicians to install and maintain them.",
-            "va": "ASEVA identifica una bretxa creixent entre la proliferació de punts de càrrega i la disponibilitat de tècnics qualificats per a instal·lar-los i mantenir-los."
+            "es": "AVA-ASAJA propuso el reto a la red AI-STEAM tras identificar una brecha creciente entre la adopción de tecnología de precisión en el campo y la disponibilidad de técnicos y graduados formados para operarla. El proceso ConsensUE determinó que el reto tiene mayor encaje como contribución académica (Track A) que como reto abierto al ecosistema (Track B).",
+            "en": "AVA-ASAJA submitted the challenge to the AI-STEAM Network after identifying a growing gap between the adoption of precision technology in the field and the availability of trained technicians and graduates to operate it. The ConsensUE process determined that the challenge fits better as an academic contribution (Track A) than as an open ecosystem challenge (Track B).",
+            "va": "AVA-ASAJA va proposar el repte a la xarxa AI-STEAM després d'identificar una bretxa creixent entre l'adopció de tecnologia de precisió al camp i la disponibilitat de tècnics i graduats formats per a operar-la. El procés ConsensUE va determinar que el repte té un encaix millor com a contribució acadèmica (Track A) que com a repte obert a l'ecosistema (Track B)."
           },
-          "targetParticipants": {
+          "method": {
+            "es": "Entrevistes estructurades amb tècnics d'AVA-ASAJA, revisió de literatura tècnica por UVEG i triage ConsensUE per a classificació Track A / Track B.",
+            "en": "Structured interviews with AVA-ASAJA technicians, technical literature review by UVEG and ConsensUE triage for Track A / Track B classification.",
+            "va": "Entrevistes estructurades amb tècnics d'AVA-ASAJA, revisió de literatura tècnica per UVEG i triatge ConsensUE per a classificació Track A / Track B."
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Entrevistas estructuradas con AVA-ASAJA",
+                "en": "Structured interviews with AVA-ASAJA",
+                "va": "Entrevistes estructurades amb AVA-ASAJA"
+              }
+            },
+            {
+              "label": {
+                "es": "Revisión técnica UVEG",
+                "en": "UVEG technical review",
+                "va": "Revisió tècnica UVEG"
+              }
+            },
+            {
+              "label": {
+                "es": "Proceso de triage ConsensUE",
+                "en": "ConsensUE triage process",
+                "va": "Procés de triatge ConsensUE"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": [
+            {
+              "id": "sector-demand",
+              "label": {
+                "es": "Demanda sectorial",
+                "en": "Sector demand",
+                "va": "Demanda sectorial"
+              },
+              "result": "positive",
+              "note": {
+                "es": "AVA-ASAJA confirma necesidad creciente de técnicos con competencias en visión artificial y drones para gestión de cultivos.",
+                "en": "AVA-ASAJA confirms growing need for technicians with computer vision and drone skills for crop management.",
+                "va": "AVA-ASAJA confirma la necessitat creixent de tècnics amb competències en visió artificial i drons per a gestió de cultius."
+              }
+            },
+            {
+              "id": "vet-fit",
+              "label": {
+                "es": "Encaje con FP y Máster",
+                "en": "VET and Master fit",
+                "va": "Encaix amb FP i Màster"
+              },
+              "result": "positive",
+              "note": {
+                "es": "El reto encaja con el Máster en Agricultura de Precisión de la UVEG y con módulos de FP Agraria.",
+                "en": "The challenge fits the UVEG Master in Precision Agriculture and Agrarian VET modules.",
+                "va": "El repte encaixa amb el Màster en Agricultura de Precisió de la UVEG i amb mòduls de FP Agrària."
+              }
+            },
+            {
+              "id": "academic-relevance",
+              "label": {
+                "es": "Relevancia académica",
+                "en": "Academic relevance",
+                "va": "Rellevància acadèmica"
+              },
+              "result": "positive",
+              "note": {
+                "es": "UVEG confirma interés investigador y disponibilidad de dataset multispectral de cítricos para uso académico.",
+                "en": "UVEG confirms research interest and availability of citrus multispectral dataset for academic use.",
+                "va": "UVEG confirma interès investigador i disponibilitat de dataset multiespectral de cítrics per a ús acadèmic."
+              }
+            },
+            {
+              "id": "feasibility",
+              "label": {
+                "es": "Viabilidad de desarrollo",
+                "en": "Development feasibility",
+                "va": "Viabilitat de desenvolupament"
+              },
+              "result": "medium",
+              "note": {
+                "es": "Requiere acceso a drones y dataset real; la UVEG puede facilitar el recurso como dataset abierto.",
+                "en": "Requires access to drones and a real dataset; UVEG can provide the resource as an open dataset.",
+                "va": "Requereix accés a drons i dataset real; la UVEG pot facilitar el recurs com a dataset obert."
+              }
+            }
+          ]
+        },
+        "evidence": {
+          "evidenceLevel": "reviewed",
+          "collectionMethod": {
+            "es": "Entrevistas estructuradas con AVA-ASAJA, revisión técnica por UVEG y proceso ConsensUE de triage y clasificación Track A / Track B.",
+            "en": "Structured interviews with AVA-ASAJA, UVEG technical review and ConsensUE triage and Track A / Track B classification process.",
+            "va": "Entrevistes estructurades amb AVA-ASAJA, revisió tècnica per UVEG i procés ConsensUE de triatge i classificació Track A / Track B."
+          },
+          "indicators": [
+            {
+              "id": "competence-gap",
+              "label": {
+                "es": "Brecha de competencias identificada",
+                "en": "Competence gap identified",
+                "va": "Bretxa de competències identificada"
+              },
+              "metric": {
+                "es": "Análisis experto AVA-ASAJA",
+                "en": "AVA-ASAJA expert analysis",
+                "va": "Anàlisi expert AVA-ASAJA"
+              }
+            },
+            {
+              "id": "consensue-classification",
+              "label": {
+                "es": "Clasificación ConsensUE",
+                "en": "ConsensUE classification",
+                "va": "Classificació ConsensUE"
+              },
+              "metric": {
+                "es": "Track A (contribución académica)",
+                "en": "Track A (academic contribution)",
+                "va": "Track A (contribució acadèmica)"
+              }
+            },
+            {
+              "id": "dataset-availability",
+              "label": {
+                "es": "Recurso académico disponible",
+                "en": "Academic resource available",
+                "va": "Recurs acadèmic disponible"
+              },
+              "metric": {
+                "es": "Dataset multispectral de cítricos (UVEG, open data)",
+                "en": "Citrus multispectral dataset (UVEG, open data)",
+                "va": "Dataset multiespectral de cítrics (UVEG, open data)"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "La ficha pública documenta el resultado de la validación. Las actas internas y la deliberación completa del proceso ConsensUE no se publican.",
+            "en": "The public page documents the validation result. Internal minutes and the full ConsensUE deliberation are not published.",
+            "va": "La fitxa pública documenta el resultat de la validació. Les actes internes i la deliberació completa del procés ConsensUE no es publiquen."
+          }
+        },
+        "decision": {
+          "outcome": "validated-track-a",
+          "label": {
+            "es": "Validado — clasificado Track A para tratamiento académico",
+            "en": "Validated — classified as Track A for academic treatment",
+            "va": "Validat — classificat Track A per a tractament acadèmic"
+          },
+          "rationale": {
+            "es": "La validación confirma demanda sectorial, relevancia académica y disponibilidad de recurso (dataset multispectral). El proceso ConsensUE determina Track A como vía principal, derivando el reto al Máster en Agricultura de Precisión de la UVEG.",
+            "en": "The validation confirms sector demand, academic relevance and resource availability (multispectral dataset). The ConsensUE process determines Track A as the main route, referring the challenge to the UVEG Master in Precision Agriculture.",
+            "va": "La validació confirma demanda sectorial, rellevància acadèmica i disponibilitat de recurs (dataset multiespectral). El procés ConsensUE determina Track A com a via principal, derivant el repte al Màster en Agricultura de Precisió de la UVEG."
+          },
+          "nextStep": {
+            "type": "design-module",
+            "label": {
+              "es": "Integrar el dataset multispectral como caso práctico en el Máster UVEG 2026-27",
+              "en": "Integrate the multispectral dataset as a practical case in the UVEG Master 2026-27",
+              "va": "Integrar el dataset multiespectral com a cas pràctic en el Màster UVEG 2026-27"
+            }
+          }
+        },
+        "trackRouting": {
+          "route": "track-a",
+          "label": {
+            "es": "Clasificado Track A — derivado a UVEG para tratamiento académico en el Máster en Agricultura de Precisión",
+            "en": "Classified as Track A — referred to UVEG for academic treatment in the Master in Precision Agriculture",
+            "va": "Classificat Track A — derivat a UVEG per a tractament acadèmic en el Màster en Agricultura de Precisió"
+          },
+          "academicReview": {
+            "enabled": true,
+            "reviewer": {
+              "name": "UVEG — Grup de Recerca en Teledetecció Agrícola",
+              "type": "university"
+            },
+            "note": {
+              "es": "Revisión técnica y académica realizada antes de confirmar clasificación Track A.",
+              "en": "Technical and academic review carried out before confirming Track A classification.",
+              "va": "Revisió tècnica i acadèmica realitzada abans de confirmar classificació Track A."
+            }
+          }
+        },
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": [
+            "resource",
+            "case"
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/validations/validation-stakeholder-agr-asaja/",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": [
+            {
+              "id": "uveg-dataset",
+              "type": "external-system",
+              "label": {
+                "es": "Dataset multispectral de cítricos (UVEG)",
+                "en": "Citrus multispectral dataset (UVEG)",
+                "va": "Dataset multiespectral de cítrics (UVEG)"
+              },
+              "url": "",
+              "access": {
+                "es": "Acceso abierto — pendiente de publicación formal",
+                "en": "Open access — pending formal publication",
+                "va": "Accés obert — pendent de publicació formal"
+              }
+            }
+          ]
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showValidationType": true,
+            "showDecision": true,
+            "showEvidenceLevel": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": false,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-10-01",
+          "end": "2026-01-25",
+          "label": {
+            "es": "Oct 2025 – Ene 2026",
+            "en": "Oct 2025 – Jan 2026",
+            "va": "Oct 2025 – Gen 2026"
+          }
+        },
+        "criteriaCount": 4,
+        "validationTypeLabel": {
+          "es": "Validación stakeholder",
+          "en": "Stakeholder validation",
+          "va": "Validació stakeholder"
+        },
+        "validationStageLabel": {
+          "es": "Completada",
+          "en": "Completed",
+          "va": "Completada"
+        },
+        "decisionOutcomeLabel": {
+          "es": "Validado — Track A",
+          "en": "Validated — Track A",
+          "va": "Validat — Track A"
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-stakeholder-movilidad-electrica",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2025-10-20",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
+        "core": {
+          "status": "resolved",
+          "maturity": "idea",
+          "title": {
+            "es": "Validación stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
+            "en": "Stakeholder validation — Electric mobility and charging infrastructure challenge",
+            "va": "Validació stakeholder — Repte de mobilitat elèctrica i infraestructura de càrrega"
+          },
+          "summary": {
+            "es": "Validación con ASEVA y concesionarios valencianos del reto sectorial sobre vehículo eléctrico y formación dual. Clasificado Track B para diseño de módulo FP dual en 2026-27.",
+            "en": "Validation with ASEVA and Valencian dealers of the sectoral challenge on electric vehicles and dual training. Classified as Track B for dual VET module design in 2026-27.",
+            "va": "Validació amb ASEVA i concessionaris valencians del repte sectorial sobre vehicle elèctric i formació dual. Classificat Track B per al disseny de mòdul FP dual en 2026-27."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "sector": "mob",
+          "stakeholderCategory": "",
+          "levels": [
+            "FP"
+          ],
+          "pilotType": "",
+          "validationType": "stakeholder-validation",
+          "validationStage": "completed",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2025-07-01",
+          "revisionDate": "2025-10-20",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "Jul 2025",
+            "en": "Jul 2025",
+            "va": "Jul 2025"
+          },
+          "revisionDateLabel": {
+            "es": "Oct 2025",
+            "en": "Oct 2025",
+            "va": "Oct 2025"
+          },
+          "deadlineLabel": null,
+          "tags": {
+            "es": [
+              "Vehículo eléctrico",
+              "Movilidad sostenible",
+              "FP dual",
+              "Track B",
+              "Validación sectorial"
+            ],
+            "en": [
+              "Electric vehicle",
+              "Sustainable mobility",
+              "Dual VET",
+              "Track B",
+              "Sectoral validation"
+            ],
+            "va": [
+              "Vehicle elèctric",
+              "Mobilitat sostenible",
+              "FP dual",
+              "Track B",
+              "Validació sectorial"
+            ]
+          }
+        },
+        "classification": {
+          "aiSteamFocus": [
+            "data-ai",
+            "institutional-readiness"
+          ],
+          "tripleTransition": [
+            "digital",
+            "green"
+          ],
+          "policyCluster": [
+            "integrated-pedagogy",
+            "infrastructure-evidence"
+          ],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
             "es": "",
             "en": "",
             "va": ""
           },
-          "methodology": {
-            "es": "Panel de expertos con ASEVA y concesionarios, análisis de brechas de competencias y triage ConsensUE para clasificación Track B.",
-            "en": "Expert panel with ASEVA and dealers, competency gap analysis and ConsensUE triage for Track B classification.",
-            "va": "Panell d'experts amb ASEVA i concessionaris, anàlisi de bretxes de competències i triatge ConsensUE per a classificació Track B."
-          },
-          "successCriteria": []
+          "verificationStatus": "",
+          "pilotStatus": ""
         },
-        "implementation": {
-          "readiness": {
-            "technologyReadiness": {
-              "enabled": true,
-              "level": 6,
-              "label": {
-                "es": "Demostración en entorno relevante",
-                "en": "Demonstration in relevant environment",
-                "va": "Demostració en entorn rellevant"
-              }
-            },
-            "educationalReadiness": {
-              "enabled": false,
-              "level": null,
-              "label": {
-                "es": "",
-                "en": "",
-                "va": ""
-              }
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "",
+          "dataAvailability": "summary-only",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "La ficha de competencias se publica bajo licencia CC BY 4.0 para reuso por centros FP y empresas del sector.",
+            "en": "The competency sheet is published under a CC BY 4.0 licence for reuse by VET centres and sector companies.",
+            "va": "La fitxa de competències es publica sota llicència CC BY 4.0 per a reús per centres FP i empreses del sector."
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE"
+          },
+          "proposer": {
+            "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
+            "type": "sector-association",
+            "role": {
+              "es": "Proponente del reto y co-validador",
+              "en": "Challenge proposer and co-validator",
+              "va": "Proponent del repte i co-validador"
             }
           },
-          "infrastructure": [
+          "validators": [
             {
-              "id": null,
-              "label": {
-                "es": "Panel de expertos ASEVA",
-                "en": "Panel de expertos ASEVA",
-                "va": "Panel de expertos ASEVA"
+              "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
+              "type": "sector-association",
+              "role": {
+                "es": "Panel experto sectorial de movilidad eléctrica",
+                "en": "Electric mobility sector expert panel",
+                "va": "Panell expert sectorial de mobilitat elèctrica"
               }
             },
             {
-              "id": null,
-              "label": {
-                "es": "Sistema ConsensUE",
-                "en": "Sistema ConsensUE",
-                "va": "Sistema ConsensUE"
+              "name": "Asociación de Concesionarios Valencianos",
+              "type": "industry",
+              "role": {
+                "es": "Co-validador — perspectiva empresarial del sector",
+                "en": "Co-validator — business perspective of the sector",
+                "va": "Co-validador — perspectiva empresarial del sector"
               }
             },
             {
-              "id": null,
+              "name": "UVEG — Grup de Recerca en Mobilitat",
+              "type": "university",
+              "role": {
+                "es": "Revisión técnica y clasificación Track B",
+                "en": "Technical review and Track B classification",
+                "va": "Revisió tècnica i classificació Track B"
+              }
+            }
+          ]
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Reto formativo sobre instalación y mantenimiento de infraestructura de carga para vehículo eléctrico",
+            "en": "Training challenge on the installation and maintenance of electric vehicle charging infrastructure",
+            "va": "Repte formatiu sobre instal·lació i manteniment d'infraestructura de càrrega per a vehicle elèctric"
+          },
+          "validationQuestion": {
+            "es": "¿Existe demanda sectorial suficiente y una brecha de competencias clara para justificar un reto Track B orientado a FP en instalación y mantenimiento de infraestructura de carga para VE en el sector de la movilidad eléctrica valenciana?",
+            "en": "Is there sufficient sector demand and a clear competence gap to justify a Track B challenge for VET in the installation and maintenance of EV charging infrastructure in the Valencian electric mobility sector?",
+            "va": "Existeix demanda sectorial suficient i una bretxa de competències clara per a justificar un repte Track B orientat a FP en instal·lació i manteniment d'infraestructura de càrrega per a VE en el sector de la mobilitat elèctrica valenciana?"
+          },
+          "need": {
+            "es": "Los centros FP de Automoción carecen de formación específica en instalación, mantenimiento y diagnóstico de infraestructura de carga para vehículo eléctrico, en un contexto de rápida proliferación de puntos de recarga.",
+            "en": "Automotive VET centres lack specific training in the installation, maintenance and diagnosis of EV charging infrastructure, in a context of rapid proliferation of charging points.",
+            "va": "Els centres FP d'Automoció manquen de formació específica en instal·lació, manteniment i diagnòstic d'infraestructura de càrrega per a vehicle elèctric, en un context de ràpida proliferació de punts de recàrrega."
+          },
+          "context": {
+            "es": "ASEVA identifica una brecha creciente entre la proliferación de puntos de carga en la Comunitat Valenciana y la disponibilidad de técnicos cualificados para instalarlos y mantenerlos. El proceso ConsensUE determinó que el reto tiene mayor encaje como propuesta de ecosistema (Track B) que como contribución académica pura (Track A), dada la necesidad de colaboración directa empresa-centro FP.",
+            "en": "ASEVA identifies a growing gap between the proliferation of charging points in the Valencian Community and the availability of qualified technicians to install and maintain them. The ConsensUE process determined that the challenge fits better as an ecosystem proposal (Track B) than as a purely academic contribution (Track A), given the need for direct company-VET centre collaboration.",
+            "va": "ASEVA identifica una bretxa creixent entre la proliferació de punts de càrrega a la Comunitat Valenciana i la disponibilitat de tècnics qualificats per a instal·lar-los i mantenir-los. El procés ConsensUE va determinar que el repte té un encaix millor com a proposta d'ecosistema (Track B) que com a contribució acadèmica pura (Track A), donada la necessitat de col·laboració directa empresa-centre FP."
+          },
+          "method": {
+            "es": "Panel de expertos con técnicos de ASEVA y concesionarios asociados, análisis de brechas de competencias y triage ConsensUE para clasificación Track A / Track B.",
+            "en": "Expert panel with ASEVA technicians and associated dealers, competency gap analysis and ConsensUE triage for Track A / Track B classification.",
+            "va": "Panell d'experts amb tècnics d'ASEVA i concessionaris associats, anàlisi de bretxes de competències i triatge ConsensUE per a classificació Track A / Track B."
+          },
+          "validationEnvironment": [
+            {
               "label": {
-                "es": "Concesionarios asociados",
-                "en": "Concesionarios asociados",
-                "va": "Concesionarios asociados"
+                "es": "Panel de expertos ASEVA con concesionarios",
+                "en": "ASEVA expert panel with dealers",
+                "va": "Panell d'experts ASEVA amb concessionaris"
+              }
+            },
+            {
+              "label": {
+                "es": "Análisis de brechas de competencias",
+                "en": "Competency gap analysis",
+                "va": "Anàlisi de bretxes de competències"
+              }
+            },
+            {
+              "label": {
+                "es": "Proceso de triage ConsensUE",
+                "en": "ConsensUE triage process",
+                "va": "Procés de triatge ConsensUE"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": [
+            {
+              "id": "sector-demand",
+              "label": {
+                "es": "Demanda sectorial",
+                "en": "Sector demand",
+                "va": "Demanda sectorial"
+              },
+              "result": "positive",
+              "note": {
+                "es": "ASEVA y los concesionarios confirman demanda creciente de técnicos para instalación y mantenimiento de cargadores VE, especialmente puntos de carga rápida.",
+                "en": "ASEVA and dealers confirm growing demand for technicians in EV charger installation and maintenance, especially fast charging points.",
+                "va": "ASEVA i els concessionaris confirmen demanda creixent de tècnics per a instal·lació i manteniment de carregadors VE, especialment punts de càrrega ràpida."
+              }
+            },
+            {
+              "id": "vet-fit",
+              "label": {
+                "es": "Encaje con FP",
+                "en": "VET fit",
+                "va": "Encaix amb FP"
+              },
+              "result": "positive",
+              "note": {
+                "es": "El reto encaja directamente con el ciclo de Automoción y Electromovilidad de FP, con posibilidad de formación dual empresa-centro.",
+                "en": "The challenge fits directly with the Automotive and Electromobility VET cycle, with the possibility of dual company-centre training.",
+                "va": "El repte encaixa directament amb el cicle d'Automoció i Electromovilitat de FP, amb possibilitat de formació dual empresa-centre."
+              }
+            },
+            {
+              "id": "ecosystem-relevance",
+              "label": {
+                "es": "Relevancia para el ecosistema",
+                "en": "Ecosystem relevance",
+                "va": "Rellevància per a l'ecosistema"
+              },
+              "result": "positive",
+              "note": {
+                "es": "La clasificación Track B permite la co-diseño del módulo entre ASEVA, concesionarios y centros FP, con mayor impacto en el ecosistema local.",
+                "en": "The Track B classification allows co-design of the module between ASEVA, dealers and VET centres, with greater impact on the local ecosystem.",
+                "va": "La classificació Track B permet el co-disseny del mòdul entre ASEVA, concessionaris i centres FP, amb major impacte en l'ecosistema local."
+              }
+            },
+            {
+              "id": "feasibility",
+              "label": {
+                "es": "Viabilidad de desarrollo",
+                "en": "Development feasibility",
+                "va": "Viabilitat de desenvolupament"
+              },
+              "result": "medium",
+              "note": {
+                "es": "Requiere acuerdo formal empresa-centro FP para formación dual; ASEVA facilita la conexión con concesionarios dispuestos a participar.",
+                "en": "Requires a formal company-VET centre agreement for dual training; ASEVA facilitates connection with dealers willing to participate.",
+                "va": "Requereix acord formal empresa-centre FP per a formació dual; ASEVA facilita la connexió amb concessionaris disposats a participar."
+              }
+            }
+          ]
+        },
+        "evidence": {
+          "evidenceLevel": "reviewed",
+          "collectionMethod": {
+            "es": "Panel de expertos con ASEVA y concesionarios valencianos, análisis de brechas de competencias y proceso ConsensUE de triage y clasificación Track A / Track B.",
+            "en": "Expert panel with ASEVA and Valencian dealers, competency gap analysis and ConsensUE triage and Track A / Track B classification process.",
+            "va": "Panell d'experts amb ASEVA i concessionaris valencians, anàlisi de bretxes de competències i procés ConsensUE de triatge i classificació Track A / Track B."
+          },
+          "indicators": [
+            {
+              "id": "competence-gap",
+              "label": {
+                "es": "Brecha de competencias identificada",
+                "en": "Competence gap identified",
+                "va": "Bretxa de competències identificada"
+              },
+              "metric": {
+                "es": "Análisis experto ASEVA + concesionarios",
+                "en": "ASEVA + dealer expert analysis",
+                "va": "Anàlisi expert ASEVA + concessionaris"
+              }
+            },
+            {
+              "id": "consensue-classification",
+              "label": {
+                "es": "Clasificación ConsensUE",
+                "en": "ConsensUE classification",
+                "va": "Classificació ConsensUE"
+              },
+              "metric": {
+                "es": "Track B (propuesta de ecosistema — módulo FP dual)",
+                "en": "Track B (ecosystem proposal — dual VET module)",
+                "va": "Track B (proposta d'ecosistema — mòdul FP dual)"
+              }
+            },
+            {
+              "id": "sector-willingness",
+              "label": {
+                "es": "Disposición empresarial para formación dual",
+                "en": "Business willingness for dual training",
+                "va": "Disposició empresarial per a formació dual"
+              },
+              "metric": {
+                "es": "Concesionarios ASEVA dispuestos a acoger alumnado FP",
+                "en": "ASEVA dealers willing to host VET students",
+                "va": "Concessionaris ASEVA disposats a acollir alumnat FP"
               }
             }
           ],
-          "tools": [],
-          "dataManagement": {
-            "sensitiveDataIncluded": false,
-            "personalDataIncluded": false,
+          "limitations": {
+            "es": "La ficha pública documenta el resultado de la validación. Las actas internas del panel y la deliberación completa del proceso ConsensUE no se publican.",
+            "en": "The public page documents the validation result. Internal panel minutes and the full ConsensUE deliberation are not published.",
+            "va": "La fitxa pública documenta el resultat de la validació. Les actes internes del panell i la deliberació completa del procés ConsensUE no es publiquen."
+          }
+        },
+        "decision": {
+          "outcome": "validated-track-b",
+          "label": {
+            "es": "Validado — clasificado Track B para diseño de módulo FP dual",
+            "en": "Validated — classified as Track B for dual VET module design",
+            "va": "Validat — classificat Track B per al disseny de mòdul FP dual"
+          },
+          "rationale": {
+            "es": "La validación confirma demanda sectorial, encaje con FP y disposición empresarial para formación dual. El proceso ConsensUE determina Track B como vía principal, derivando el reto al diseño de un módulo FP dual en colaboración con ASEVA y concesionarios para el curso 2026-27.",
+            "en": "The validation confirms sector demand, VET fit and business willingness for dual training. The ConsensUE process determines Track B as the main route, referring the challenge to the design of a dual VET module in collaboration with ASEVA and dealers for 2026-27.",
+            "va": "La validació confirma demanda sectorial, encaix amb FP i disposició empresarial per a formació dual. El procés ConsensUE determina Track B com a via principal, derivant el repte al disseny d'un mòdul FP dual en col·laboració amb ASEVA i concessionaris per al curs 2026-27."
+          },
+          "nextStep": {
+            "type": "design-module",
+            "label": {
+              "es": "Diseñar módulo FP dual con ASEVA y concesionarios para el curso 2026-27",
+              "en": "Design dual VET module with ASEVA and dealers for 2026-27",
+              "va": "Dissenyar mòdul FP dual amb ASEVA i concessionaris per al curs 2026-27"
+            }
+          }
+        },
+        "trackRouting": {
+          "route": "track-b",
+          "label": {
+            "es": "Clasificado Track B — derivado a diseño de módulo FP dual con ASEVA y concesionarios para 2026-27",
+            "en": "Classified as Track B — referred to dual VET module design with ASEVA and dealers for 2026-27",
+            "va": "Classificat Track B — derivat al disseny de mòdul FP dual amb ASEVA i concessionaris per a 2026-27"
+          },
+          "academicReview": {
+            "enabled": false,
+            "reviewer": null,
             "note": {
               "es": "",
               "en": "",
@@ -16183,156 +16133,132 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "evidence": {
-          "evidenceLevel": "observed",
-          "verificationStatus": "self-reported",
-          "collectionMethod": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "primaryMetric": null,
-          "secondaryMetrics": [],
-          "limitations": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        },
-        "results": {
-          "headline": {
-            "es": "Validado — clasificado Track B para formación dual",
-            "en": "Validated — classified as Track B for dual training",
-            "va": "Validat — classificat Track B per a formació dual"
-          },
-          "outputs": [
-            {
-              "id": "output-0",
-              "label": {
-                "es": "Ficha de competencias publicada",
-                "en": "Competency sheet published",
-                "va": "Fitxa de competències publicada"
-              }
-            },
-            {
-              "id": "output-1",
-              "label": {
-                "es": "Base para módulo FP dual 2026-27",
-                "en": "Basis for dual VET module 2026-27",
-                "va": "Base per al mòdul FP dual 2026-27"
-              }
-            }
-          ],
-          "decision": {
-            "outcome": "",
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          }
-        },
-        "transferability": {
-          "whyTransferable": {
-            "es": "Ficha de competencias publicada. Base para módulo FP dual con ASEVA en el curso 2026-27.",
-            "en": "Competency sheet published. Basis for dual VET module with ASEVA in 2026-27.",
-            "va": "Fitxa de competències publicada. Base per al mòdul FP dual amb ASEVA per al curs 2026-27."
-          },
-          "suitableFor": [
-            "companies",
-            "vet-centres",
-            "public-administration"
-          ],
-          "requirements": [],
-          "replicationSteps": [],
-          "risks": []
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": [
+            "pilot",
+            "resource"
+          ]
         },
         "downloads": {
           "enabled": false,
-          "basePath": "/assets/downloads/pilots/validation-stakeholder-movilidad-electrica/",
+          "basePath": "/assets/downloads/validations/validation-stakeholder-movilidad-electrica/",
           "items": []
         },
-        "resources": null,
+        "resources": {
+          "externalLinks": [
+            {
+              "id": "competency-sheet",
+              "type": "external-system",
+              "label": {
+                "es": "Ficha de competencias para instalación VE",
+                "en": "EV installation competency sheet",
+                "va": "Fitxa de competències per a instal·lació VE"
+              },
+              "url": "",
+              "access": {
+                "es": "Acceso abierto — pendiente de publicación formal",
+                "en": "Open access — pending formal publication",
+                "va": "Accés obert — pendent de publicació formal"
+              }
+            }
+          ]
+        },
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Ver ficha de competencias",
-              "en": "View competency sheet",
-              "va": "Veure fitxa de competències"
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
             },
-            "system": "",
-            "url": ""
+            "url": "",
+            "system": ""
           },
           "secondaryAction": null
         },
-        "relations": {
-          "originChallengeId": "",
-          "relatedValidations": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "relatedMentorships": [],
-          "nextPossibleItems": [
-            "case",
-            "resource"
-          ]
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "validation",
-            "showPilotStage": true,
-            "showPilotType": true,
-            "showReadiness": true,
+            "showValidationType": true,
+            "showDecision": true,
+            "showEvidenceLevel": true,
             "showWindow": true,
-            "showInfrastructure": true,
-            "showPrimaryMetric": true,
+            "showValidationEnvironment": true,
             "showDownloadsIndicator": false,
-            "resultBlockLabel": {
-              "es": "Qué se prueba",
-              "en": "What is being tested",
-              "va": "Què es prova"
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
             }
           },
           "detail": {
             "sections": {
-              "summary": true,
-              "pilotPlan": true,
-              "methodology": true,
-              "implementation": true,
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
               "evidence": true,
-              "results": true,
-              "transferability": true,
+              "decision": true,
               "downloads": false,
               "resources": true,
-              "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
+              "trackRouting": true,
               "relations": false
             }
           }
         },
+        "validationWindow": {
+          "start": "2025-06-01",
+          "end": "2025-10-20",
+          "label": {
+            "es": "Jun – Oct 2025",
+            "en": "Jun – Oct 2025",
+            "va": "Jun – Oct 2025"
+          }
+        },
+        "criteriaCount": 4,
+        "validationTypeLabel": {
+          "es": "Validación stakeholder",
+          "en": "Stakeholder validation",
+          "va": "Validació stakeholder"
+        },
+        "validationStageLabel": {
+          "es": "Completada",
+          "en": "Completed",
+          "va": "Completada"
+        },
+        "decisionOutcomeLabel": {
+          "es": "Validado — Track B",
+          "en": "Validated — Track B",
+          "va": "Validat — Track B"
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "template": {
           "requiredBlocks": [
-            "need",
-            "context",
+            "validation",
+            "criteria",
             "evidence",
-            "outputs",
-            "process"
+            "decision"
           ],
           "optionalBlocks": [
-            "people",
+            "downloads",
             "resources",
             "access",
-            "trackA",
-            "objective",
-            "methodology",
-            "outcome"
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
           ],
-          "cardSignal": "evidence"
+          "cardSignal": "validation"
         }
       }
     ],
@@ -16369,6 +16295,8 @@ export const MARKETPLACE_CONFIG = {
           "stakeholderCategory": "civic",
           "levels": [],
           "pilotType": "",
+          "validationType": "",
+          "validationStage": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -16648,6 +16576,8 @@ export const MARKETPLACE_CONFIG = {
         "stakeholderCategory": "community",
         "levels": [],
         "pilotType": "",
+        "validationType": "",
+        "validationStage": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -18094,6 +18024,15 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       {
+        "id": "summary-only",
+        "visible": true,
+        "label": {
+          "es": "Solo resumen público",
+          "en": "Summary only",
+          "va": "Només resum públic"
+        }
+      },
+      {
         "id": "anonymised",
         "visible": true,
         "label": {
@@ -18533,6 +18472,69 @@ export const MARKETPLACE_CONFIG = {
           "es": "Recurso educativo abierto (OER)",
           "en": "Open Educational Resource (OER)",
           "va": "Recurs educatiu obert (OER)"
+        }
+      },
+      {
+        "id": "validation-sheet",
+        "visible": true,
+        "label": {
+          "es": "Ficha de validación",
+          "en": "Validation sheet",
+          "va": "Fitxa de validació"
+        }
+      },
+      {
+        "id": "competence-sheet",
+        "visible": true,
+        "label": {
+          "es": "Ficha de competencias",
+          "en": "Competence sheet",
+          "va": "Fitxa de competències"
+        }
+      },
+      {
+        "id": "criteria-matrix",
+        "visible": true,
+        "label": {
+          "es": "Matriz de criterios",
+          "en": "Criteria matrix",
+          "va": "Matriu de criteris"
+        }
+      },
+      {
+        "id": "panel-summary",
+        "visible": true,
+        "label": {
+          "es": "Acta/resumen del panel",
+          "en": "Panel summary",
+          "va": "Acta/resum del panell"
+        }
+      },
+      {
+        "id": "triage-report",
+        "visible": true,
+        "label": {
+          "es": "Informe de triage",
+          "en": "Triage report",
+          "va": "Informe de triatge"
+        }
+      },
+      {
+        "id": "track-routing-note",
+        "visible": true,
+        "label": {
+          "es": "Nota de derivación Track A/B",
+          "en": "Track A/B routing note",
+          "va": "Nota de derivació Track A/B"
+        }
+      },
+      {
+        "id": "evidence-summary",
+        "visible": true,
+        "label": {
+          "es": "Resumen de evidencia",
+          "en": "Evidence summary",
+          "va": "Resum d'evidència"
         }
       }
     ]

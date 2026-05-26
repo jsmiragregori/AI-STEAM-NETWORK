@@ -515,6 +515,18 @@ function getDownloadTypeLabel(id) {
   return getLabelFromArray(MARKETPLACE_CONFIG.labels?.downloadTypes, id);
 }
 
+function getValidationTypeLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.validationTypeLabels, id);
+}
+
+function getValidationStageLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.validationStageLabels, id);
+}
+
+function getDecisionOutcomeLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.decisionOutcomeLabels, id);
+}
+
 function getSectorCode(value) {
   const map = {
     Manufacturing: 'mfg',
@@ -724,6 +736,8 @@ function getItemFilterValue(item, key) {
   if (key === 'pilotType') return item.core?.pilotType || '';
   if (key === 'helix') return asArray(item.core?.helix);
   if (key === 'pilotStatus') return item.classification?.pilotStatus || '';
+  if (key === 'validationType') return item.core?.validationType || '';
+  if (key === 'validationStage') return item.core?.validationStage || '';
   return '';
 }
 
@@ -759,8 +773,8 @@ function getFilterDefinitions(tabId) {
   }
   if (tabId === 'validations') {
     return [
-      { key: 'pilotStatus', label: uiText('filterBy') + ' ' + uiText('pilotStatus'), labeler: getPilotStatusLabel },
-      { key: 'helix', label: uiText('filterBy') + ' ' + uiText('helix'), labeler: getHelixLabel },
+      { key: 'validationType', label: uiText('filterBy') + ' ' + pickLang({ es: 'Tipo', en: 'Type', va: 'Tipus' }), labeler: getValidationTypeLabel },
+      { key: 'validationStage', label: uiText('filterBy') + ' ' + pickLang({ es: 'Etapa', en: 'Stage', va: 'Etapa' }), labeler: getValidationStageLabel },
       common.sector,
     ];
   }
@@ -961,7 +975,8 @@ function getMentorInitials(name) {
 function renderItemCard(item, tab) {
   if (item.type === 'challenge') return renderChallengeCard(item, tab);
   if (item.type === 'case') return renderCaseCard(item, tab);
-  if (item.type === 'pilot' || item.type === 'validation') return renderPilotCard(item, tab);
+  if (item.type === 'validation') return renderValidationCard(item, tab);
+  if (item.type === 'pilot') return renderPilotCard(item, tab);
   if (item.type === 'mentoring') return renderMentoringCard(item, tab);
   return renderGenericCard(item, tab);
 }
@@ -1277,6 +1292,92 @@ function renderPilotCardLegacy(item, tab) {
     title: item.core?.title,
     subtitle: card.validationStatus || item.core?.summary,
     extraBadge: pilotTypeLabel || getTrlLabel(card.trl) || getSectorLabel(item.core?.sector),
+  });
+}
+
+function renderValidationCard(item, tab) {
+  const core = item.core || {};
+  const pres = item.presentation?.card || {};
+  const validation = item.validation || {};
+  const decision = item.decision || {};
+  const ef = item.externalFlow || {};
+
+  // ── Bloque principal: "Qué se valida" ────────────────────────────────────
+  const mainBlockLabel = pickLang(pres.mainBlockLabel) || pickLang({ es: 'Qué se valida', en: 'What is validated', va: 'Què es valida' });
+  const objectTitle = pickLang(validation.objectTitle) || pickLang(core.summary);
+  const mainBlockHtml = objectTitle
+    ? `<div class="mt-4 rounded-lg bg-eu-bg p-4">
+        <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-gray-500">
+          <i data-lucide="clipboard-check" class="h-3.5 w-3.5"></i>
+          ${esc(mainBlockLabel)}
+        </p>
+        <p class="mt-1 text-sm font-semibold leading-6 text-eu-text">${esc(objectTitle)}</p>
+      </div>`
+    : '';
+
+  // ── Ventana de validación ─────────────────────────────────────────────────
+  const windowLabel = pres.showWindow !== false ? pickLang(core.validationWindow?.label) : '';
+
+  // ── Entorno de validación (max 3 chips) ───────────────────────────────────
+  let envHtml = '';
+  if (pres.showValidationEnvironment !== false) {
+    const envItems = asArray(validation.validationEnvironment).slice(0, 3)
+      .map(e => pickLang(e.label)).filter(Boolean);
+    if (envItems.length) {
+      envHtml = `<div class="mt-4 flex flex-wrap gap-2">${envItems.map(l => renderBadge(l, 'bg-slate-50 text-slate-700 border-slate-200')).join('')}</div>`;
+    }
+  }
+
+  // ── Decisión ──────────────────────────────────────────────────────────────
+  const decisionLabel = pickLang(decision.label);
+  const decisionHtml = (pres.showDecision !== false && decisionLabel)
+    ? `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500">
+        <i data-lucide="check-circle-2" class="h-3.5 w-3.5 shrink-0 text-green-600"></i>
+        <span>${esc(decisionLabel)}</span>
+      </div>`
+    : '';
+
+  // ── Descargables ──────────────────────────────────────────────────────────
+  let dlHtml = '';
+  if (pres.showDownloadsIndicator && item.hasDownloads && item.downloadCount) {
+    const n = item.downloadCount;
+    dlHtml = `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500"><i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i><span>${esc(n === 1 ? `1 ${uiText('downloadable')}` : `${n} ${uiText('downloadables')}`)}</span></div>`;
+  }
+
+  // ── Ventana + nivel de evidencia (mini-meta) ──────────────────────────────
+  const evidenceLevelLabel = pres.showEvidenceLevel !== false ? getEvidenceLevelLabel(core.evidenceLevel || item.evidence?.evidenceLevel) : '';
+  const miniMetaHtml = renderCardMiniMeta([
+    windowLabel ? { label: uiText('window'), value: windowLabel } : null,
+    evidenceLevelLabel ? { label: pickLang({ es: 'Evidencia', en: 'Evidence', va: 'Evidència' }), value: evidenceLevelLabel } : null,
+  ].filter(Boolean));
+
+  // ── CTA: "Ver validación" siempre singular ────────────────────────────────
+  const extUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : null;
+  const ctaLabel = pickLang({ es: 'Ver validación', en: 'View validation', va: 'Veure validació' });
+  const ctaHtml = extUrl
+    ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(ctaLabel)}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
+    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(ctaLabel)}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
+
+  // ── Badge extra: tipo de validación o sector ──────────────────────────────
+  const validationTypeLabel = getValidationTypeLabel(core.validationType);
+  const extraBadge = validationTypeLabel || getSectorLabel(core.sector);
+
+  const body = `
+    ${mainBlockHtml}
+    ${miniMetaHtml}
+    ${envHtml}
+    ${decisionHtml}
+    ${dlHtml}
+  `;
+
+  const proposerName = pickLang(item.ownership?.proposer?.name) || '';
+
+  return renderCardShell(item, tab, body, {
+    title: core.title,
+    subtitle: core.summary,
+    extraBadge,
+    entity: proposerName,
+    ctaHtml,
   });
 }
 
