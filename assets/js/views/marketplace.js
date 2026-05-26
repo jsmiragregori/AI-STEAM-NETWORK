@@ -390,10 +390,20 @@ function getLang() {
 
 function pickLang(value, fallback = '') {
   if (value == null) return fallback;
-  if (Array.isArray(value)) return value;
+  if (Array.isArray(value)) return value.map(entry => pickLang(entry)).filter(Boolean);
   if (typeof value !== 'object') return value;
   const lang = getLang();
-  return value[lang] || value.es || value.en || Object.values(value).find(Boolean) || fallback;
+  if (value[lang] != null) return pickLang(value[lang], fallback);
+  if (value.es != null) return pickLang(value.es, fallback);
+  if (value.en != null) return pickLang(value.en, fallback);
+  if (value.label != null) return pickLang(value.label, fallback);
+  if (value.title != null) return pickLang(value.title, fallback);
+  if (value.name != null) return pickLang(value.name, fallback);
+  for (const entry of Object.values(value)) {
+    const resolved = pickLang(entry);
+    if (Array.isArray(resolved) ? resolved.length : resolved) return resolved;
+  }
+  return fallback;
 }
 
 function uiText(key) {
@@ -589,8 +599,10 @@ function getItemDateLabel(item) {
 }
 
 function renderBadge(label, tone = 'bg-white text-gray-700 border-eu-border') {
-  if (!label) return '';
-  return `<span class="inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold ${tone}">${esc(label)}</span>`;
+  const text = pickLang(label);
+  if (Array.isArray(text)) return text.map(entry => renderBadge(entry, tone)).join('');
+  if (!text) return '';
+  return `<span class="inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold ${tone}">${esc(text)}</span>`;
 }
 
 function renderHero() {
@@ -728,7 +740,7 @@ function getItemFilterValue(item, key) {
   if (key === 'infrastructure') return asArray(card.infrastructure);
   if (key === 'window') return item.core?.status || pickLang(card.validationStatus) || pickLang(card.executionWindow?.label);
   if (key === 'specialty') return asArray(card.specialties);
-  if (key === 'availability') return card.quickChat ? 'chat' : pickLang(card.availability);
+  if (key === 'availability') return pickLang(item.mentoringOffer?.format?.availability) || pickLang(card.availability);
   if (key === 'organisation') return card.organisation || pickLang(item.core?.entity?.name);
   if (key === 'transferType') return item.transfer?.type || '';
   if (key === 'level') return asArray(item.core?.levels);
@@ -1383,14 +1395,21 @@ function renderValidationCard(item, tab) {
 
 function renderMentoringCard(item, tab) {
   const card = item.card || {};
-  const mentorName = pickLang(card.mentorName, pickLang(item.core?.entity?.name));
+  const ef = item.externalFlow || {};
+  const primaryUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : '';
+  const fallbackLabel = pickLang(ef.fallbackAction?.label) || pickLang({ es: 'Ver mentoria', en: 'View mentoring', va: 'Veure mentoria' });
+  const ctaHtml = primaryUrl
+    ? `<a href="${esc(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang(ef.primaryAction?.label) || fallbackLabel)}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
+    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(fallbackLabel)}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
+  const mentorName = pickLang(card.mentorName, pickLang(item.ownership?.provider?.name) || pickLang(item.core?.entity?.name));
+  const mentorRole = pickLang(card.mentorRole || item.ownership?.provider?.role || item.core?.summary);
   const badges = asArray(card.badges).map(badge => badge?.label || badge);
   const body = `
     <div class="mt-4 flex items-start gap-4 rounded-lg bg-eu-bg p-4">
       <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-slate-800 text-sm font-extrabold text-white">${esc(getMentorInitials(mentorName))}</span>
       <div>
         <p class="text-sm font-bold text-eu-text">${esc(mentorName)}</p>
-        <p class="mt-1 text-sm leading-5 text-gray-600">${esc(pickLang(card.mentorRole || item.core?.summary))}</p>
+        <p class="mt-1 text-sm leading-5 text-gray-600">${esc(mentorRole)}</p>
       </div>
     </div>
     ${renderChipList(asArray(card.specialties), 'bg-slate-100 text-slate-700 border-slate-200', 4)}
@@ -1402,7 +1421,8 @@ function renderMentoringCard(item, tab) {
   return renderCardShell(item, tab, body, {
     title: item.core?.title,
     subtitle: card.organisation || item.core?.summary,
-    extraBadge: card.quickChat ? 'Chat' : getSectorLabel(item.core?.sector),
+    extraBadge: (primaryUrl && item.presentation?.card?.showChatBadge) ? 'Chat' : getSectorLabel(item.core?.sector),
+    ctaHtml,
   });
 }
 
