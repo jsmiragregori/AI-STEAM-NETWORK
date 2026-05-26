@@ -452,6 +452,14 @@ function getModalityLabel(id) {
   return getLabelFromArray(MARKETPLACE_CONFIG.modalityLabels || MARKETPLACE_CONFIG.labels?.modality, id);
 }
 
+function getMentoringRequestAccessLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.mentoringRequestAccessLabels || MARKETPLACE_CONFIG.labels?.mentoringRequestAccess, id);
+}
+
+function getConfidentialityLevelLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.confidentialityLevelLabels || MARKETPLACE_CONFIG.labels?.confidentialityLevel, id);
+}
+
 function getEvidenceLabel(id) {
   return getLabelFromArray(MARKETPLACE_CONFIG.evidenceMaturityLabels, id);
 }
@@ -3317,6 +3325,9 @@ function renderPilotDetailLegacy(item) {
 }
 
 function renderMentoringDetail(item) {
+  const isV2 = item.mentoringOffer || item.mentors || item.expectedOutputs || item.presentation?.detail;
+  if (isV2) return renderMentoringDetailV2(item);
+
   const card = item.card || {};
   const detail = item.detail || {};
   const mentorName = pickLang(card.mentorName);
@@ -3376,6 +3387,310 @@ function renderMentoringDetail(item) {
     mentorProfile,
     collaborationSection,
   ].filter(Boolean).join(''), renderDetailChipPanel(item));
+}
+
+function renderMentoringDetailV2(item) {
+  const sections = item.presentation?.detail?.sections || {};
+  const mainHtml = [
+    renderMentoringPurposeSection(item, sections),
+    renderMentoringScopeSection(item, sections),
+    renderMentoringTargetUsersSection(item, sections),
+    renderMentoringFormatSection(item, sections),
+    renderMentoringTeamSection(item, sections),
+    renderMentoringPreparationSection(item, sections),
+    renderMentoringExpectedOutputsSection(item, sections),
+    renderMentoringTransferValueSection(item, sections),
+    renderMentoringDownloadsSection(item, sections),
+    renderMentoringResourcesSection(item, sections),
+    renderMentoringAccessSection(item, sections),
+    renderMentoringRelationsSection(item, sections),
+  ].filter(Boolean).join('');
+
+  return `
+    <div>
+      ${renderMentoringDetailHeader(item)}
+      <section class="mx-auto max-w-7xl px-6 py-8">
+        <div class="grid gap-6 lg:grid-cols-3">
+          <div class="space-y-5 lg:col-span-2">
+            ${mainHtml || renderDetailEmpty()}
+          </div>
+          <aside class="space-y-5 self-start">
+            ${renderMentoringSummaryPanel(item)}
+            ${renderDetailChipPanel(item)}
+          </aside>
+        </div>
+      </section>
+    </div>`;
+}
+
+function renderMentoringDetailHeader(item) {
+  const core = item.core || {};
+  const offer = item.mentoringOffer || {};
+  const format = offer.format || {};
+  const provider = item.ownership?.provider || {};
+  const ef = item.externalFlow || {};
+  const tab = getTabs().find(candidate => candidate.id === item.tab) || getActiveTab();
+  const title = pickLang(core.title, item.id);
+  const summary = pickLang(core.summary);
+  const providerName = pickLang(provider.name) || pickLang(core.entity?.name);
+  const availability = pickLang(format.availability);
+  const typeLabel = getMentoringTypeLabel(core.mentoringType);
+  const primaryUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : '';
+  const primaryLabel = pickLang(ef.primaryAction?.label) || pickLang({ es: 'Abrir sistema externo', en: 'Open external system', va: 'Obrir sistema extern' });
+  const formatSummary = getMentoringFormatSummary(format);
+
+  return `
+    <section class="bg-eu-blue px-6 py-12 text-white">
+      <div class="mx-auto max-w-7xl">
+        <button id="mp-back" type="button" class="mb-7 inline-flex min-h-11 items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm font-bold text-white transition-colors hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-eu-blue">
+          <i data-lucide="arrow-left" class="h-4 w-4"></i>
+          ${esc(uiText('backCommunity'))}
+        </button>
+        <div class="flex flex-wrap gap-2">
+          ${renderBadge(pickLang(tab?.label, item.tab), 'bg-white/10 text-white border-white/20')}
+          ${renderBadge(getTypeLabel(item.type), 'bg-white/10 text-white border-white/20')}
+          ${renderBadge(getMentoringStatusLabel(core.status), 'bg-white/10 text-white border-white/20')}
+          ${typeLabel ? renderBadge(typeLabel, 'bg-white/10 text-white border-white/20') : ''}
+        </div>
+        <h1 class="mt-5 max-w-4xl text-3xl font-extrabold leading-tight md:text-4xl">${esc(title)}</h1>
+        ${summary ? `<p class="mt-4 max-w-4xl text-base leading-7 text-white/80">${esc(summary)}</p>` : ''}
+        <div class="mt-6 flex flex-wrap items-center gap-4 text-sm font-semibold text-white/75">
+          ${providerName ? `<span class="inline-flex items-center gap-2"><i data-lucide="building-2" class="h-4 w-4"></i>${esc(providerName)}</span>` : ''}
+          ${availability ? `<span class="inline-flex items-center gap-2"><i data-lucide="calendar-check" class="h-4 w-4"></i>${esc(availability)}</span>` : ''}
+          ${formatSummary ? `<span class="inline-flex items-center gap-2"><i data-lucide="monitor-dot" class="h-4 w-4"></i>${esc(formatSummary)}</span>` : ''}
+        </div>
+        ${primaryUrl ? `
+          <div class="mt-6">
+            <a href="${esc(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 items-center gap-2 rounded-lg bg-eu-orange px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-orange focus:ring-offset-2 focus:ring-offset-eu-blue">
+              ${esc(primaryLabel)}
+              <i data-lucide="external-link" class="h-4 w-4"></i>
+            </a>
+          </div>` : ''}
+      </div>
+    </section>`;
+}
+
+function getMentoringFormatSummary(format = {}) {
+  const parts = [
+    getModalityLabel(format.modality),
+    format.sessionDurationMinutes ? `${format.sessionDurationMinutes} min` : '',
+    format.asyncReview ? pickLang({ es: 'revision asincronica', en: 'async review', va: 'revisio asincronica' }) : '',
+  ].filter(Boolean);
+  return parts.join(' / ');
+}
+
+function renderMentoringSection(sections, key, icon, title, body, accent = false) {
+  if (sections?.[key] === false || !body) return '';
+  return `
+    <section class="rounded-2xl border ${accent ? 'border-eu-blue/20 bg-eu-blue/5' : 'border-eu-border bg-white'} p-6 shadow-sm">
+      ${accent ? renderSectionHeader(icon, title, true) : renderSecondaryHeader(icon, title)}
+      ${body}
+    </section>`;
+}
+
+function renderMentoringParagraphs(values) {
+  const paragraphs = values.map(value => pickLang(value)).filter(Boolean);
+  if (!paragraphs.length) return '';
+  return paragraphs.map(text => `<p class="text-sm leading-7 text-gray-700">${esc(text)}</p>`).join('');
+}
+
+function renderMentoringLabeledList(items, tone = 'text-gray-700') {
+  const labels = asArray(items).map(item => pickLang(item?.label || item)).filter(Boolean);
+  if (!labels.length) return '';
+  return `
+    <ul class="space-y-2">
+      ${labels.map(label => `
+        <li class="flex gap-2 text-sm leading-6 ${tone}">
+          <i data-lucide="check-circle-2" class="mt-1 h-4 w-4 shrink-0 text-eu-blue"></i>
+          <span>${esc(label)}</span>
+        </li>`).join('')}
+    </ul>`;
+}
+
+function renderMentoringPurposeSection(item, sections) {
+  const offer = item.mentoringOffer || {};
+  const body = renderMentoringParagraphs([offer.purpose, offer.problemAddressed]);
+  return renderMentoringSection(sections, 'purpose', 'handshake', pickLang({ es: 'Que ofrece', en: 'What it offers', va: 'Que ofereix' }), body, true);
+}
+
+function renderMentoringScopeSection(item, sections) {
+  const scope = item.mentoringOffer?.mentoringScope || {};
+  const included = renderMentoringLabeledList(scope.included);
+  const excludedLabels = asArray(scope.excluded).map(entry => pickLang(entry?.label || entry)).filter(Boolean);
+  const excluded = excludedLabels.length ? `
+    <ul class="space-y-2">
+      ${excludedLabels.map(label => `
+        <li class="flex gap-2 text-sm leading-6 text-gray-600">
+          <i data-lucide="minus-circle" class="mt-1 h-4 w-4 shrink-0 text-gray-400"></i>
+          <span>${esc(label)}</span>
+        </li>`).join('')}
+    </ul>` : '';
+  const body = [included ? `
+      <div>
+        <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang({ es: 'Incluye', en: 'Includes', va: 'Inclou' }))}</p>
+        ${included}
+      </div>` : '',
+    excluded ? `
+      <div class="mt-5 border-t border-eu-border pt-4">
+        <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang({ es: 'No incluye', en: 'Does not include', va: 'No inclou' }))}</p>
+        ${excluded}
+      </div>` : '',
+  ].filter(Boolean).join('');
+  return renderMentoringSection(sections, 'scope', 'list-checks', pickLang({ es: 'Alcance', en: 'Scope', va: 'Abast' }), body);
+}
+
+function renderMentoringTargetUsersSection(item, sections) {
+  const users = pickLang(item.mentoringOffer?.targetUsers);
+  const audience = asArray(item.classification?.audience).map(getAudienceLabel).filter(Boolean);
+  const body = [
+    users ? `<p class="text-sm leading-7 text-gray-700">${esc(users)}</p>` : '',
+    audience.length ? `<div class="mt-4 flex flex-wrap gap-2">${audience.map(label => renderBadge(label, 'bg-eu-bg text-gray-700 border-eu-border')).join('')}</div>` : '',
+  ].filter(Boolean).join('');
+  return renderMentoringSection(sections, 'targetUsers', 'users', pickLang({ es: 'Para quien es', en: 'Who it is for', va: 'Per a qui es' }), body);
+}
+
+function renderMentoringFormatSection(item, sections) {
+  const format = item.mentoringOffer?.format || {};
+  const languages = asArray(format.languageCodes).map(code => String(code).toUpperCase()).join(' / ');
+  const body = `
+    <dl class="grid gap-3 md:grid-cols-2">
+      ${renderDetailPair(pickLang({ es: 'Modalidad', en: 'Modality', va: 'Modalitat' }), getModalityLabel(format.modality))}
+      ${renderDetailPair(pickLang({ es: 'Duracion', en: 'Duration', va: 'Duracio' }), format.sessionDurationMinutes ? `${format.sessionDurationMinutes} min` : '')}
+      ${renderDetailPair(pickLang({ es: 'Revision asincronica', en: 'Async review', va: 'Revisio asincronica' }), format.asyncReview ? pickLang({ es: 'Si', en: 'Yes', va: 'Si' }) : '')}
+      ${renderDetailPair(pickLang({ es: 'Idiomas', en: 'Languages', va: 'Idiomes' }), languages)}
+    </dl>
+    ${pickLang(format.availability) ? `<p class="mt-4 text-sm leading-7 text-gray-700">${esc(pickLang(format.availability))}</p>` : ''}`;
+  return renderMentoringSection(sections, 'format', 'calendar-check', pickLang({ es: 'Formato y disponibilidad', en: 'Format and availability', va: 'Format i disponibilitat' }), body.trim());
+}
+
+function renderMentoringTeamSection(item, sections) {
+  const mentors = asArray(item.mentors?.items);
+  const mode = pickLang(item.mentors?.mode) || item.mentors?.mode;
+  const mentorHtml = mentors.map(mentor => {
+    const name = pickLang(mentor?.name);
+    const role = pickLang(mentor?.role);
+    const organisation = pickLang(mentor?.organisation);
+    const specialties = asArray(mentor?.specialties).map(getMentoringSpecialtyLabel).filter(Boolean);
+    if (!name && !role && !organisation && !specialties.length) return '';
+    return `
+      <div class="rounded-xl bg-eu-bg p-4">
+        ${name ? `<p class="text-sm font-bold text-eu-text">${esc(name)}</p>` : ''}
+        ${role ? `<p class="mt-1 text-sm leading-6 text-gray-700">${esc(role)}</p>` : ''}
+        ${organisation ? `<p class="mt-1 text-xs font-semibold text-gray-500">${esc(organisation)}</p>` : ''}
+        ${specialties.length ? `<div class="mt-3 flex flex-wrap gap-2">${specialties.map(label => renderBadge(label, 'bg-white text-gray-700 border-eu-border')).join('')}</div>` : ''}
+      </div>`;
+  }).filter(Boolean).join('');
+  const body = [
+    mode ? `<p class="mb-3 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(mode)}</p>` : '',
+    mentorHtml,
+  ].filter(Boolean).join('');
+  return renderMentoringSection(sections, 'mentors', 'user-round-check', pickLang({ es: 'Mentores o equipo', en: 'Mentors or team', va: 'Mentors o equip' }), body);
+}
+
+function renderMentoringPreparationSection(item, sections) {
+  const prep = item.preparation || {};
+  const required = renderMentoringLabeledList(prep.requiredBeforeRequest);
+  const questions = renderMentoringLabeledList(prep.intakeQuestions);
+  const body = [
+    required ? `
+      <div>
+        <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang({ es: 'Antes de solicitar', en: 'Before requesting', va: 'Abans de sol-licitar' }))}</p>
+        ${required}
+      </div>` : '',
+    questions ? `
+      <div class="mt-5 border-t border-eu-border pt-4">
+        <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang({ es: 'Preguntas de preparacion', en: 'Preparation questions', va: 'Preguntes de preparacio' }))}</p>
+        ${questions}
+      </div>` : '',
+  ].filter(Boolean).join('');
+  return renderMentoringSection(sections, 'preparation', 'clipboard-list', pickLang({ es: 'Como prepararse', en: 'How to prepare', va: 'Com preparar-se' }), body);
+}
+
+function renderMentoringExpectedOutputsSection(item, sections) {
+  const body = renderMentoringLabeledList(item.expectedOutputs?.items);
+  return renderMentoringSection(sections, 'expectedOutputs', 'package-check', pickLang({ es: 'Resultado esperado', en: 'Expected output', va: 'Resultat esperat' }), body);
+}
+
+function renderMentoringTransferValueSection(item, sections) {
+  const body = renderMentoringParagraphs([item.mentoringOffer?.transferValue]);
+  return renderMentoringSection(sections, 'transferValue', 'repeat-2', pickLang({ es: 'Valor para Track B', en: 'Track B value', va: 'Valor per a Track B' }), body);
+}
+
+function renderMentoringDownloadsSection(item, sections) {
+  if (sections?.downloads === false || !item.downloads?.enabled || !item.hasDownloads) return '';
+  return renderDownloadsSection(item);
+}
+
+function renderMentoringResourcesSection(item, sections) {
+  const links = asArray(item.resources?.externalLinks).filter(link => link?.url);
+  const body = links.map(link => `
+    <a href="${esc(link.url)}" target="_blank" rel="noopener noreferrer" class="flex items-start gap-3 rounded-xl border border-eu-border bg-white p-4 text-sm font-semibold text-eu-blue transition-colors hover:border-eu-blue hover:bg-eu-blue/5">
+      <i data-lucide="external-link" class="mt-0.5 h-4 w-4 shrink-0"></i>
+      <span>${esc(pickLang(link.label) || link.url)}</span>
+    </a>`).join('');
+  return renderMentoringSection(sections, 'resources', 'folder-open', pickLang({ es: 'Recursos externos', en: 'External resources', va: 'Recursos externs' }), body);
+}
+
+function renderMentoringAccessSection(item, sections) {
+  const access = item.access || {};
+  const rows = [
+    renderDetailPair(pickLang({ es: 'Visibilidad', en: 'Visibility', va: 'Visibilitat' }), access.pageVisibility),
+    renderDetailPair(pickLang({ es: 'Licencia de pagina', en: 'Page licence', va: 'Llicencia de pagina' }), access.pageLicense || access.license),
+    renderDetailPair(pickLang({ es: 'Gestion de solicitud', en: 'Request management', va: 'Gestio de sol-licitud' }), getMentoringRequestAccessLabel(access.mentoringRequestAccess)),
+    renderDetailPair(pickLang({ es: 'Confidencialidad', en: 'Confidentiality', va: 'Confidencialitat' }), getConfidentialityLevelLabel(access.confidentialityLevel)),
+    renderDetailPair(pickLang({ es: 'Datos sensibles', en: 'Sensitive data', va: 'Dades sensibles' }), access.sensitiveDataIncluded === false ? pickLang({ es: 'No incluidos', en: 'Not included', va: 'No incloses' }) : ''),
+  ].filter(Boolean).join('');
+  const notes = renderMentoringParagraphs([access.rightsNote, access.publicationNote]);
+  const body = [
+    rows ? `<dl class="grid gap-4 md:grid-cols-2">${rows}</dl>` : '',
+    notes ? `<div class="mt-5 border-t border-eu-border pt-4">${notes}</div>` : '',
+  ].filter(Boolean).join('');
+  return renderMentoringSection(sections, 'access', 'shield-check', pickLang({ es: 'Acceso, titularidad y confidencialidad', en: 'Access, ownership and confidentiality', va: 'Acces, titularitat i confidencialitat' }), body);
+}
+
+function renderMentoringRelationsSection(item, sections) {
+  const relations = item.relations || {};
+  const linked = [
+    ...asArray(relations.relatedChallenges),
+    ...asArray(relations.relatedValidations),
+    ...asArray(relations.relatedPilots),
+    ...asArray(relations.relatedCases),
+    ...asArray(relations.relatedResources),
+  ].map(entry => pickLang(entry?.label || entry?.title || entry)).filter(Boolean);
+  const outputs = asArray(relations.possibleOutputs).map(getTypeLabel).filter(Boolean);
+  const body = [
+    linked.length ? renderMentoringLabeledList(linked) : '',
+    outputs.length ? `
+      <div class="${linked.length ? 'mt-5 border-t border-eu-border pt-4' : ''}">
+        <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(pickLang({ es: 'Puede derivar en', en: 'May lead to', va: 'Pot derivar en' }))}</p>
+        <div class="flex flex-wrap gap-2">${outputs.map(label => renderBadge(label, 'bg-eu-bg text-gray-700 border-eu-border')).join('')}</div>
+      </div>` : '',
+  ].filter(Boolean).join('');
+  return renderMentoringSection(sections, 'relations', 'git-branch', pickLang({ es: 'Relaciones', en: 'Relations', va: 'Relacions' }), body);
+}
+
+function renderMentoringSummaryPanel(item) {
+  const format = item.mentoringOffer?.format || {};
+  const provider = pickLang(item.ownership?.provider?.name);
+  const rows = [
+    provider && [pickLang({ es: 'Proveedor', en: 'Provider', va: 'Proveidor' }), provider],
+    getMentoringStatusLabel(item.core?.status) && [uiText('status'), getMentoringStatusLabel(item.core?.status)],
+    getMentoringTypeLabel(item.core?.mentoringType) && [pickLang({ es: 'Subtipo', en: 'Subtype', va: 'Subtipus' }), getMentoringTypeLabel(item.core?.mentoringType)],
+    getModalityLabel(format.modality) && [pickLang({ es: 'Modalidad', en: 'Modality', va: 'Modalitat' }), getModalityLabel(format.modality)],
+    pickLang(format.availability) && [uiText('availability'), pickLang(format.availability)],
+  ].filter(Boolean);
+  if (!rows.length) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
+      <h2 class="text-base font-extrabold text-eu-text">${esc(pickLang({ es: 'Resumen de mentoria', en: 'Mentoring summary', va: 'Resum de mentoria' }))}</h2>
+      <dl class="mt-4 space-y-2">
+        ${rows.map(([label, value]) => `
+          <div class="flex items-baseline justify-between gap-2">
+            <dt class="shrink-0 text-xs font-bold uppercase tracking-wide text-gray-400">${esc(label)}</dt>
+            <dd class="text-right text-xs font-semibold text-gray-700">${esc(value)}</dd>
+          </div>`).join('')}
+      </dl>
+    </section>`;
 }
 
 function renderGenericDetail(item) {
