@@ -5870,21 +5870,21 @@ export const MARKETPLACE_CONFIG = {
         "status": "open",
         "maturity": "idea",
         "title": {
-          "es": "Mentoría para briefs creativos con IA responsable",
+          "es": "Mentoria para briefs creativos con IA responsable",
           "en": "Mentoring for responsible AI creative briefs",
           "va": "Mentoria per a briefs creatius amb IA responsable"
         },
         "summary": {
-          "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
+          "es": "Acompanamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboracion AI-STEAM.",
           "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AI-STEAM collaboration.",
-          "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AI-STEAM."
+          "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboracio AI-STEAM."
         },
         "entity": {
-          "name": "AI-STEAM Network",
+          "name": "AI-STEAM Network Mentoring Pool",
           "type": {
-            "es": "Equipo de mentoría",
-            "en": "Mentoring team",
-            "va": "Equip de mentoria"
+            "es": "Equipo de mentoria en formulacion de retos y etica de IA",
+            "en": "Mentoring team in challenge framing and AI ethics",
+            "va": "Equip de mentoria en formulacio de reptes i etica d'IA"
           }
         },
         "sector": "cci",
@@ -5913,22 +5913,25 @@ export const MARKETPLACE_CONFIG = {
         "deadlineLabel": null,
         "tags": {
           "es": [
-            "Mentoría",
+            "Mentoria",
             "Brief creativo",
             "IA responsable",
-            "Co-diseño"
+            "Co-diseno",
+            "Transferencia Track B"
           ],
           "en": [
             "Mentoring",
             "Creative brief",
             "Responsible AI",
-            "Co-design"
+            "Co-design",
+            "Track B transfer"
           ],
           "va": [
             "Mentoria",
             "Brief creatiu",
             "IA responsable",
-            "Codisseny"
+            "Codisseny",
+            "Transferencia Track B"
           ]
         }
       },
@@ -5941,9 +5944,9 @@ export const MARKETPLACE_CONFIG = {
           "name": "AI-STEAM Network Mentoring Pool",
           "type": "mentoring-pool",
           "role": {
-            "es": "Digimentores en formulación de retos y ética de IA",
-            "en": "Digital mentors in challenge framing and AI ethics",
-            "va": "Digimentors en formulació de reptes i ètica d'IA"
+            "es": "Equipo de mentoria en formulacion de retos y etica de IA",
+            "en": "Mentoring team in challenge framing and AI ethics",
+            "va": "Equip de mentoria en formulacio de reptes i etica d'IA"
           },
           "org": "AI-STEAM Network"
         },
@@ -5960,7 +5963,8 @@ export const MARKETPLACE_CONFIG = {
       "classification": {
         "aiSteamFocus": [
           "creative-ai",
-          "responsible-ai"
+          "responsible-ai",
+          "challenge-framing"
         ],
         "tripleTransition": [
           "digital",
@@ -5968,23 +5972,24 @@ export const MARKETPLACE_CONFIG = {
         ],
         "policyCluster": [
           "learning-ecosystems",
-          "teacher-capacity"
+          "teacher-capacity",
+          "responsible-ai"
         ],
-        "engagementLevel": "challenge-contribution",
+        "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
         "trackBValue": {
-          "es": "Ayuda a miembros de la red a formular mejor sus necesidades y aumentar la calidad de futuras colaboraciones.",
-          "en": "Helps network members formulate their needs better and increase the quality of future collaborations.",
-          "va": "Ajuda membres de la xarxa a formular millor les seues necessitats i augmentar la qualitat de futures col·laboracions."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
         "pilotStatus": "",
         "sector": "cci",
         "sectorLabel": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Industrias culturales y creativas",
+          "en": "Cultural and creative industries",
+          "va": "Industries culturals i creatives"
         },
         "stakeholderCategory": "civic",
         "audience": [
@@ -5996,22 +6001,25 @@ export const MARKETPLACE_CONFIG = {
         ],
         "tags": {
           "es": [
-            "Mentoría",
+            "Mentoria",
             "Brief creativo",
             "IA responsable",
-            "Co-diseño"
+            "Co-diseno",
+            "Transferencia Track B"
           ],
           "en": [
             "Mentoring",
             "Creative brief",
             "Responsible AI",
-            "Co-design"
+            "Co-design",
+            "Track B transfer"
           ],
           "va": [
             "Mentoria",
             "Brief creatiu",
             "IA responsable",
-            "Codisseny"
+            "Codisseny",
+            "Transferencia Track B"
           ]
         }
       },
@@ -6021,127 +6029,11 @@ export const MARKETPLACE_CONFIG = {
         "beneficiaryOrganizations": []
       },
       "community": {
-        "tab": "mentorings",
-        "audience": [
-          "cultural-organisations",
-          "ngos",
-          "creative-smes",
-          "teachers",
-          "local-administration"
-        ],
-        "primaryCta": {
-          "es": "Solicitar mentoría",
-          "en": "Request mentoring",
-          "va": "Sol·licitar mentoria"
-        },
-        "featuredSignal": {
-          "es": "Convocatoria continua mientras haya capacidad disponible.",
-          "en": "Rolling call while capacity is available.",
-          "va": "Convocatòria contínua mentre hi haja capacitat disponible."
-        }
+        "tab": "mentorings"
       },
-      "card": {
-        "mentorName": "AI-STEAM Network Mentoring Pool",
-        "mentorRole": {
-          "es": "Digimentores en formulación de retos y ética de IA",
-          "en": "Digital mentors in challenge framing and AI ethics",
-          "va": "Digimentors en formulació de reptes i ètica d'IA"
-        },
-        "organisation": "AI-STEAM Network",
-        "specialties": [
-          "IA responsable",
-          "Brief creativo",
-          "Co-diseño",
-          "Transferencia Track B"
-        ],
-        "badges": [
-          {
-            "label": {
-              "es": "Ética IA",
-              "en": "AI ethics",
-              "va": "Ètica IA"
-            }
-          },
-          {
-            "label": {
-              "es": "LbD",
-              "en": "LbD",
-              "va": "LbD"
-            }
-          }
-        ],
-        "availability": {
-          "es": "Sesiones online de 45 minutos y revisión asincrónica.",
-          "en": "45-minute online sessions and asynchronous review.",
-          "va": "Sessions online de 45 minuts i revisió asincrònica."
-        },
-        "quickChat": true
-      },
-      "visibility": {
-        "context": true,
-        "transferValue": true,
-        "participation": true,
-        "people": true,
-        "process": true,
-        "outputs": true,
-        "access": true,
-        "trackA": false
-      },
-      "detail": {
-        "context": {
-          "es": "Muchas organizaciones tienen ideas relevantes pero necesitan apoyo para convertirlas en un reto, caso o recurso accionable.",
-          "en": "Many organisations have relevant ideas but need support to turn them into an actionable challenge, case or resource.",
-          "va": "Moltes organitzacions tenen idees rellevants però necessiten suport per a convertir-les en un repte, cas o recurs accionable."
-        },
-        "transferValue": {
-          "es": "La mentoría mejora la calidad de entrada al ecosistema y reduce ruido en la comunidad de práctica.",
-          "en": "Mentoring improves ecosystem inputs and reduces noise in the community of practice.",
-          "va": "La mentoria millora la qualitat d'entrada a l'ecosistema i redueix soroll en la comunitat de pràctica."
-        },
-        "participation": {
-          "audience": {
-            "es": "Entidades culturales, centros educativos, ONG, administraciones locales y pymes creativas.",
-            "en": "Cultural organisations, schools, NGOs, local administrations and creative SMEs.",
-            "va": "Entitats culturals, centres educatius, ONG, administracions locals i pimes creatives."
-          },
-          "modality": {
-            "es": "Sesiones online de 45 minutos y revisión asincrónica de brief.",
-            "en": "45-minute online sessions and asynchronous brief review.",
-            "va": "Sessions online de 45 minuts i revisió asincrònica de brief."
-          }
-        },
-        "people": {
-          "mentors": [
-            {
-              "name": "AI-STEAM Network Mentoring Pool",
-              "role": {
-                "es": "Mentoría en formulación de retos y ética de IA",
-                "en": "Mentoring in challenge framing and AI ethics",
-                "va": "Mentoria en formulació de reptes i ètica d'IA"
-              },
-              "org": "AI-STEAM Network"
-            }
-          ]
-        },
-        "process": {
-          "availability": {
-            "es": "Convocatoria continua mientras haya capacidad de mentoría.",
-            "en": "Rolling call while mentoring capacity is available.",
-            "va": "Convocatòria contínua mentre hi haja capacitat de mentoria."
-          }
-        },
-        "outputs": {
-          "expected": [
-            {
-              "label": {
-                "es": "Brief Track B listo para publicar o revisar",
-                "en": "Track B brief ready to publish or review",
-                "va": "Brief Track B llest per a publicar o revisar"
-              }
-            }
-          ]
-        }
-      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
       "access": {
         "pageVisibility": "public",
         "pageLicense": "CC BY 4.0",
@@ -6155,16 +6047,16 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "La entidad conserva la titularidad de su idea; la red solo ayuda a formularla.",
-          "en": "The organisation keeps ownership of its idea; the network only helps frame it.",
-          "va": "L'entitat conserva la titularitat de la seua idea; la xarxa només ajuda a formular-la."
+          "es": "La entidad conserva la titularidad de su idea. La red solo ayuda a formularla. No deben enviarse datos personales, confidenciales o sensibles a traves de esta web.",
+          "en": "The organisation keeps ownership of its idea. The network only helps frame it. Personal, confidential or sensitive data must not be submitted through this website.",
+          "va": "L'entitat conserva la titularitat de la seua idea. La xarxa nomes ajuda a formular-la. No s'han d'enviar dades personals, confidencials o sensibles a traves d'esta web."
         },
         "mentoringRequestAccess": "not-available",
         "confidentialityLevel": "standard",
         "publicationNote": {
-          "es": "El resultado solo se publica si la entidad lo autoriza y no contiene informacion sensible.",
-          "en": "The output is only published if the organisation authorises it and it contains no sensitive information.",
-          "va": "El resultat nomes es publica si l entitat ho autoritza i no conte informacio sensible."
+          "es": "El resultado de la mentoria solo se publicara como reto, caso, recurso o validacion si la entidad lo autoriza y no contiene informacion sensible.",
+          "en": "The mentoring output will only be published as a challenge, case, resource or validation if the organisation authorises it and it contains no sensitive information.",
+          "va": "El resultat de la mentoria nomes es publicara com a repte, cas, recurs o validacio si l'entitat ho autoritza i no conte informacio sensible."
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
@@ -6190,18 +6082,62 @@ export const MARKETPLACE_CONFIG = {
       },
       "mentoringOffer": {
         "purpose": {
-          "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
-          "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AI-STEAM collaboration.",
-          "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AI-STEAM."
+          "es": "Ayudar a entidades de la red a transformar una idea inicial en un brief claro, publicable y accionable dentro del ecosistema AI-STEAM.",
+          "en": "Help network organisations turn an initial idea into a clear, publishable and actionable brief within the AI-STEAM ecosystem.",
+          "va": "Ajudar entitats de la xarxa a transformar una idea inicial en un brief clar, publicable i accionable dins de l'ecosistema AI-STEAM."
         },
         "problemAddressed": {
-          "es": "Muchas organizaciones tienen ideas relevantes pero necesitan apoyo para convertirlas en un reto, caso o recurso accionable.",
-          "en": "Many organisations have relevant ideas but need support to turn them into an actionable challenge, case or resource.",
-          "va": "Moltes organitzacions tenen idees rellevants però necessiten suport per a convertir-les en un repte, cas o recurs accionable."
+          "es": "Muchas organizaciones tienen ideas relevantes, pero necesitan apoyo para convertirlas en un reto, caso, recurso o validacion con alcance, lenguaje y condiciones claras.",
+          "en": "Many organisations have relevant ideas but need support to turn them into a challenge, case, resource or validation with clear scope, language and conditions.",
+          "va": "Moltes organitzacions tenen idees rellevants, pero necessiten suport per a convertir-les en un repte, cas, recurs o validacio amb abast, llenguatge i condicions clares."
         },
         "mentoringScope": {
-          "included": [],
-          "excluded": []
+          "included": [
+            {
+              "label": {
+                "es": "Formulacion de brief Track B",
+                "en": "Track B brief framing",
+                "va": "Formulacio de brief Track B"
+              }
+            },
+            {
+              "label": {
+                "es": "Revision etica basica de uso de IA",
+                "en": "Basic ethical review of AI use",
+                "va": "Revisio etica basica d'us d'IA"
+              }
+            },
+            {
+              "label": {
+                "es": "Clarificacion de actores, entregables y valor de transferencia",
+                "en": "Clarification of actors, outputs and transfer value",
+                "va": "Clarificacio d'actors, entregables i valor de transferencia"
+              }
+            }
+          ],
+          "excluded": [
+            {
+              "label": {
+                "es": "Evaluacion academica formal",
+                "en": "Formal academic assessment",
+                "va": "Avaluacio academica formal"
+              }
+            },
+            {
+              "label": {
+                "es": "Asesoramiento juridico especializado",
+                "en": "Specialist legal advice",
+                "va": "Assessorament juridic especialitzat"
+              }
+            },
+            {
+              "label": {
+                "es": "Desarrollo tecnico completo de soluciones",
+                "en": "Full technical development of solutions",
+                "va": "Desenvolupament tecnic complet de solucions"
+              }
+            }
+          ]
         },
         "format": {
           "modality": "online",
@@ -6213,9 +6149,9 @@ export const MARKETPLACE_CONFIG = {
             "va"
           ],
           "availability": {
-            "es": "Sesiones online de 45 minutos y revisión asincrónica.",
-            "en": "45-minute online sessions and asynchronous review.",
-            "va": "Sessions online de 45 minuts i revisió asincrònica."
+            "es": "Convocatoria continua mientras haya capacidad de mentoria disponible.",
+            "en": "Rolling call while mentoring capacity is available.",
+            "va": "Convocatoria continua mentre hi haja capacitat de mentoria disponible."
           }
         },
         "targetUsers": {
@@ -6224,44 +6160,107 @@ export const MARKETPLACE_CONFIG = {
           "va": "Entitats culturals, centres educatius, ONG, administracions locals i pimes creatives."
         },
         "transferValue": {
-          "es": "La mentoría mejora la calidad de entrada al ecosistema y reduce ruido en la comunidad de práctica.",
-          "en": "Mentoring improves ecosystem inputs and reduces noise in the community of practice.",
-          "va": "La mentoria millora la qualitat d'entrada a l'ecosistema i redueix soroll en la comunitat de pràctica."
+          "es": "La mentoria mejora la calidad de entrada al ecosistema, reduce ruido en la comunidad de practica y ayuda a convertir ideas iniciales en objetos publicables o revisables.",
+          "en": "Mentoring improves ecosystem inputs, reduces noise in the community of practice and helps convert initial ideas into publishable or reviewable objects.",
+          "va": "La mentoria millora la qualitat d'entrada a l'ecosistema, redueix soroll en la comunitat de practica i ajuda a convertir idees inicials en objectes publicables o revisables."
         }
       },
       "mentors": {
-        "mode": "team",
+        "mode": "pool",
         "items": [
           {
-            "id": "mentor-1",
+            "id": "ai-steam-mentoring-pool",
             "name": "AI-STEAM Network Mentoring Pool",
             "organisation": "AI-STEAM Network",
             "role": {
-              "es": "Mentoría en formulación de retos y ética de IA",
+              "es": "Mentoria en formulacion de retos y etica de IA",
               "en": "Mentoring in challenge framing and AI ethics",
-              "va": "Mentoria en formulació de reptes i ètica d'IA"
+              "va": "Mentoria en formulacio de reptes i etica d'IA"
             },
             "specialties": [
-              "IA responsable",
-              "Brief creativo",
-              "Co-diseño",
-              "Transferencia Track B"
+              "responsible-ai",
+              "creative-brief",
+              "co-design",
+              "track-b-transfer"
             ]
           }
         ]
       },
       "preparation": {
-        "requiredBeforeRequest": [],
-        "intakeQuestions": []
+        "requiredBeforeRequest": [
+          {
+            "label": {
+              "es": "Descripcion breve de la necesidad o idea inicial",
+              "en": "Short description of the initial need or idea",
+              "va": "Descripcio breu de la necessitat o idea inicial"
+            }
+          },
+          {
+            "label": {
+              "es": "Tipo de resultado deseado; reto, caso, recurso, validacion o piloto",
+              "en": "Desired output type; challenge, case, resource, validation or pilot",
+              "va": "Tipus de resultat desitjat; repte, cas, recurs, validacio o pilotatge"
+            }
+          },
+          {
+            "label": {
+              "es": "Informacion sobre posibles datos sensibles o restricciones de publicacion",
+              "en": "Information about possible sensitive data or publication constraints",
+              "va": "Informacio sobre possibles dades sensibles o restriccions de publicacio"
+            }
+          }
+        ],
+        "intakeQuestions": [
+          {
+            "id": "need",
+            "label": {
+              "es": "Que necesidad quiere formular la entidad?",
+              "en": "What need does the organisation want to frame?",
+              "va": "Quina necessitat vol formular l'entitat?"
+            }
+          },
+          {
+            "id": "stakeholders",
+            "label": {
+              "es": "Que actores deberian participar?",
+              "en": "Which actors should be involved?",
+              "va": "Quins actors haurien de participar?"
+            }
+          },
+          {
+            "id": "expected-output",
+            "label": {
+              "es": "Que producto espera obtener tras la mentoria?",
+              "en": "What product is expected after the mentoring?",
+              "va": "Quin producte s'espera obtindre despres de la mentoria?"
+            }
+          }
+        ]
       },
       "expectedOutputs": {
         "items": [
           {
-            "id": "expected-output-1",
+            "id": "track-b-brief",
             "label": {
               "es": "Brief Track B listo para publicar o revisar",
               "en": "Track B brief ready to publish or review",
               "va": "Brief Track B llest per a publicar o revisar"
+            }
+          },
+          {
+            "id": "refined-scope",
+            "label": {
+              "es": "Alcance, actores y entregables clarificados",
+              "en": "Scope, actors and outputs clarified",
+              "va": "Abast, actors i entregables clarificats"
+            }
+          },
+          {
+            "id": "risk-note",
+            "label": {
+              "es": "Nota inicial sobre datos sensibles, etica e IA responsable",
+              "en": "Initial note on sensitive data, ethics and responsible AI",
+              "va": "Nota inicial sobre dades sensibles, etica i IA responsable"
             }
           }
         ]
@@ -6269,16 +6268,87 @@ export const MARKETPLACE_CONFIG = {
       "downloads": {
         "enabled": false,
         "basePath": "/assets/downloads/mentorings/responsible-ai-creative-briefs/",
-        "items": []
+        "items": [
+          {
+            "id": "brief-template",
+            "type": "brief-template",
+            "title": {
+              "es": "Plantilla de brief Track B",
+              "en": "Track B brief template",
+              "va": "Plantilla de brief Track B"
+            },
+            "description": {
+              "es": "Documento editable para preparar la necesidad, actores, alcance, entregables y condiciones de publicacion antes de la mentoria.",
+              "en": "Editable document to prepare the need, actors, scope, outputs and publication conditions before the mentoring session.",
+              "va": "Document editable per a preparar la necessitat, actors, abast, entregables i condicions de publicacio abans de la mentoria."
+            },
+            "files": [],
+            "license": "",
+            "showOnCard": true,
+            "showOnDetail": true
+          },
+          {
+            "id": "responsible-ai-checklist",
+            "type": "checklist",
+            "title": {
+              "es": "Checklist de IA responsable para briefs creativos",
+              "en": "Responsible AI checklist for creative briefs",
+              "va": "Checklist d'IA responsable per a briefs creatius"
+            },
+            "description": {
+              "es": "Lista breve para revisar finalidad, datos, riesgos, transparencia y limites del uso de IA en una propuesta inicial.",
+              "en": "Short checklist to review purpose, data, risks, transparency and AI-use boundaries in an initial proposal.",
+              "va": "Llista breu per a revisar finalitat, dades, riscos, transparencia i limits de l'us d'IA en una proposta inicial."
+            },
+            "files": [],
+            "license": "",
+            "showOnCard": true,
+            "showOnDetail": true
+          },
+          {
+            "id": "mentoring-preparation-guide",
+            "type": "preparation-guide",
+            "title": {
+              "es": "Guia para preparar la sesion de mentoria",
+              "en": "Guide to prepare the mentoring session",
+              "va": "Guia per a preparar la sessio de mentoria"
+            },
+            "description": {
+              "es": "Orientaciones para llegar a la mentoria con una idea minima, preguntas utiles y limites de publicacion claros.",
+              "en": "Guidance to arrive at the mentoring session with a minimum idea, useful questions and clear publication limits.",
+              "va": "Orientacions per a arribar a la mentoria amb una idea minima, preguntes utils i limits de publicacio clars."
+            },
+            "files": [],
+            "license": "",
+            "showOnCard": false,
+            "showOnDetail": true
+          }
+        ]
       },
       "resources": {
-        "externalLinks": []
+        "externalLinks": [
+          {
+            "id": "request-form",
+            "type": "external-form",
+            "label": {
+              "es": "Formulario externo de solicitud",
+              "en": "External request form",
+              "va": "Formulari extern de sol·licitud"
+            },
+            "url": "",
+            "access": {
+              "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
+              "en": "The request is managed outside this website when an external system is available.",
+              "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
+            }
+          }
+        ]
       },
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar mentoría",
+            "es": "Solicitar mentoria",
             "en": "Request mentoring",
             "va": "Sol·licitar mentoria"
           },
@@ -6293,7 +6363,15 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
-        "secondaryAction": null
+        "secondaryAction": {
+          "label": {
+            "es": "Descargar plantilla de brief",
+            "en": "Download brief template",
+            "va": "Descarregar plantilla de brief"
+          },
+          "downloadId": "brief-template",
+          "url": ""
+        }
       },
       "relations": {
         "relatedChallenges": [],
@@ -6309,7 +6387,7 @@ export const MARKETPLACE_CONFIG = {
         ]
       },
       "hasDownloads": false,
-      "downloadCount": 0,
+      "downloadCount": 3,
       "cardDownloads": [],
       "presentation": {
         "card": {
@@ -6317,7 +6395,7 @@ export const MARKETPLACE_CONFIG = {
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
-          "showDownloadsIndicator": false,
+          "showDownloadsIndicator": true,
           "showChatBadge": false,
           "mainBlockLabel": {
             "es": "Que ofrece",
@@ -6336,10 +6414,10 @@ export const MARKETPLACE_CONFIG = {
             "preparation": true,
             "expectedOutputs": true,
             "transferValue": true,
-            "downloads": false,
+            "downloads": true,
             "resources": true,
             "access": true,
-            "relations": false
+            "relations": true
           }
         }
       },
@@ -17042,21 +17120,21 @@ export const MARKETPLACE_CONFIG = {
           "status": "open",
           "maturity": "idea",
           "title": {
-            "es": "Mentoría para briefs creativos con IA responsable",
+            "es": "Mentoria para briefs creativos con IA responsable",
             "en": "Mentoring for responsible AI creative briefs",
             "va": "Mentoria per a briefs creatius amb IA responsable"
           },
           "summary": {
-            "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
+            "es": "Acompanamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboracion AI-STEAM.",
             "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AI-STEAM collaboration.",
-            "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AI-STEAM."
+            "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboracio AI-STEAM."
           },
           "entity": {
-            "name": "AI-STEAM Network",
+            "name": "AI-STEAM Network Mentoring Pool",
             "type": {
-              "es": "Equipo de mentoría",
-              "en": "Mentoring team",
-              "va": "Equip de mentoria"
+              "es": "Equipo de mentoria en formulacion de retos y etica de IA",
+              "en": "Mentoring team in challenge framing and AI ethics",
+              "va": "Equip de mentoria en formulacio de reptes i etica d'IA"
             }
           },
           "sector": "cci",
@@ -17085,22 +17163,25 @@ export const MARKETPLACE_CONFIG = {
           "deadlineLabel": null,
           "tags": {
             "es": [
-              "Mentoría",
+              "Mentoria",
               "Brief creativo",
               "IA responsable",
-              "Co-diseño"
+              "Co-diseno",
+              "Transferencia Track B"
             ],
             "en": [
               "Mentoring",
               "Creative brief",
               "Responsible AI",
-              "Co-design"
+              "Co-design",
+              "Track B transfer"
             ],
             "va": [
               "Mentoria",
               "Brief creatiu",
               "IA responsable",
-              "Codisseny"
+              "Codisseny",
+              "Transferencia Track B"
             ]
           }
         },
@@ -17113,9 +17194,9 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Network Mentoring Pool",
             "type": "mentoring-pool",
             "role": {
-              "es": "Digimentores en formulación de retos y ética de IA",
-              "en": "Digital mentors in challenge framing and AI ethics",
-              "va": "Digimentors en formulació de reptes i ètica d'IA"
+              "es": "Equipo de mentoria en formulacion de retos y etica de IA",
+              "en": "Mentoring team in challenge framing and AI ethics",
+              "va": "Equip de mentoria en formulacio de reptes i etica d'IA"
             },
             "org": "AI-STEAM Network"
           },
@@ -17132,7 +17213,8 @@ export const MARKETPLACE_CONFIG = {
         "classification": {
           "aiSteamFocus": [
             "creative-ai",
-            "responsible-ai"
+            "responsible-ai",
+            "challenge-framing"
           ],
           "tripleTransition": [
             "digital",
@@ -17140,23 +17222,24 @@ export const MARKETPLACE_CONFIG = {
           ],
           "policyCluster": [
             "learning-ecosystems",
-            "teacher-capacity"
+            "teacher-capacity",
+            "responsible-ai"
           ],
-          "engagementLevel": "challenge-contribution",
+          "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
           "trackBValue": {
-            "es": "Ayuda a miembros de la red a formular mejor sus necesidades y aumentar la calidad de futuras colaboraciones.",
-            "en": "Helps network members formulate their needs better and increase the quality of future collaborations.",
-            "va": "Ajuda membres de la xarxa a formular millor les seues necessitats i augmentar la qualitat de futures col·laboracions."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
           "pilotStatus": "",
           "sector": "cci",
           "sectorLabel": {
-            "es": "",
-            "en": "",
-            "va": ""
+            "es": "Industrias culturales y creativas",
+            "en": "Cultural and creative industries",
+            "va": "Industries culturals i creatives"
           },
           "stakeholderCategory": "civic",
           "audience": [
@@ -17168,22 +17251,25 @@ export const MARKETPLACE_CONFIG = {
           ],
           "tags": {
             "es": [
-              "Mentoría",
+              "Mentoria",
               "Brief creativo",
               "IA responsable",
-              "Co-diseño"
+              "Co-diseno",
+              "Transferencia Track B"
             ],
             "en": [
               "Mentoring",
               "Creative brief",
               "Responsible AI",
-              "Co-design"
+              "Co-design",
+              "Track B transfer"
             ],
             "va": [
               "Mentoria",
               "Brief creatiu",
               "IA responsable",
-              "Codisseny"
+              "Codisseny",
+              "Transferencia Track B"
             ]
           }
         },
@@ -17193,127 +17279,11 @@ export const MARKETPLACE_CONFIG = {
           "beneficiaryOrganizations": []
         },
         "community": {
-          "tab": "mentorings",
-          "audience": [
-            "cultural-organisations",
-            "ngos",
-            "creative-smes",
-            "teachers",
-            "local-administration"
-          ],
-          "primaryCta": {
-            "es": "Solicitar mentoría",
-            "en": "Request mentoring",
-            "va": "Sol·licitar mentoria"
-          },
-          "featuredSignal": {
-            "es": "Convocatoria continua mientras haya capacidad disponible.",
-            "en": "Rolling call while capacity is available.",
-            "va": "Convocatòria contínua mentre hi haja capacitat disponible."
-          }
+          "tab": "mentorings"
         },
-        "card": {
-          "mentorName": "AI-STEAM Network Mentoring Pool",
-          "mentorRole": {
-            "es": "Digimentores en formulación de retos y ética de IA",
-            "en": "Digital mentors in challenge framing and AI ethics",
-            "va": "Digimentors en formulació de reptes i ètica d'IA"
-          },
-          "organisation": "AI-STEAM Network",
-          "specialties": [
-            "IA responsable",
-            "Brief creativo",
-            "Co-diseño",
-            "Transferencia Track B"
-          ],
-          "badges": [
-            {
-              "label": {
-                "es": "Ética IA",
-                "en": "AI ethics",
-                "va": "Ètica IA"
-              }
-            },
-            {
-              "label": {
-                "es": "LbD",
-                "en": "LbD",
-                "va": "LbD"
-              }
-            }
-          ],
-          "availability": {
-            "es": "Sesiones online de 45 minutos y revisión asincrónica.",
-            "en": "45-minute online sessions and asynchronous review.",
-            "va": "Sessions online de 45 minuts i revisió asincrònica."
-          },
-          "quickChat": true
-        },
-        "visibility": {
-          "context": true,
-          "transferValue": true,
-          "participation": true,
-          "people": true,
-          "process": true,
-          "outputs": true,
-          "access": true,
-          "trackA": false
-        },
-        "detail": {
-          "context": {
-            "es": "Muchas organizaciones tienen ideas relevantes pero necesitan apoyo para convertirlas en un reto, caso o recurso accionable.",
-            "en": "Many organisations have relevant ideas but need support to turn them into an actionable challenge, case or resource.",
-            "va": "Moltes organitzacions tenen idees rellevants però necessiten suport per a convertir-les en un repte, cas o recurs accionable."
-          },
-          "transferValue": {
-            "es": "La mentoría mejora la calidad de entrada al ecosistema y reduce ruido en la comunidad de práctica.",
-            "en": "Mentoring improves ecosystem inputs and reduces noise in the community of practice.",
-            "va": "La mentoria millora la qualitat d'entrada a l'ecosistema i redueix soroll en la comunitat de pràctica."
-          },
-          "participation": {
-            "audience": {
-              "es": "Entidades culturales, centros educativos, ONG, administraciones locales y pymes creativas.",
-              "en": "Cultural organisations, schools, NGOs, local administrations and creative SMEs.",
-              "va": "Entitats culturals, centres educatius, ONG, administracions locals i pimes creatives."
-            },
-            "modality": {
-              "es": "Sesiones online de 45 minutos y revisión asincrónica de brief.",
-              "en": "45-minute online sessions and asynchronous brief review.",
-              "va": "Sessions online de 45 minuts i revisió asincrònica de brief."
-            }
-          },
-          "people": {
-            "mentors": [
-              {
-                "name": "AI-STEAM Network Mentoring Pool",
-                "role": {
-                  "es": "Mentoría en formulación de retos y ética de IA",
-                  "en": "Mentoring in challenge framing and AI ethics",
-                  "va": "Mentoria en formulació de reptes i ètica d'IA"
-                },
-                "org": "AI-STEAM Network"
-              }
-            ]
-          },
-          "process": {
-            "availability": {
-              "es": "Convocatoria continua mientras haya capacidad de mentoría.",
-              "en": "Rolling call while mentoring capacity is available.",
-              "va": "Convocatòria contínua mentre hi haja capacitat de mentoria."
-            }
-          },
-          "outputs": {
-            "expected": [
-              {
-                "label": {
-                  "es": "Brief Track B listo para publicar o revisar",
-                  "en": "Track B brief ready to publish or review",
-                  "va": "Brief Track B llest per a publicar o revisar"
-                }
-              }
-            ]
-          }
-        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
         "access": {
           "pageVisibility": "public",
           "pageLicense": "CC BY 4.0",
@@ -17327,16 +17297,16 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "La entidad conserva la titularidad de su idea; la red solo ayuda a formularla.",
-            "en": "The organisation keeps ownership of its idea; the network only helps frame it.",
-            "va": "L'entitat conserva la titularitat de la seua idea; la xarxa només ajuda a formular-la."
+            "es": "La entidad conserva la titularidad de su idea. La red solo ayuda a formularla. No deben enviarse datos personales, confidenciales o sensibles a traves de esta web.",
+            "en": "The organisation keeps ownership of its idea. The network only helps frame it. Personal, confidential or sensitive data must not be submitted through this website.",
+            "va": "L'entitat conserva la titularitat de la seua idea. La xarxa nomes ajuda a formular-la. No s'han d'enviar dades personals, confidencials o sensibles a traves d'esta web."
           },
           "mentoringRequestAccess": "not-available",
           "confidentialityLevel": "standard",
           "publicationNote": {
-            "es": "El resultado solo se publica si la entidad lo autoriza y no contiene informacion sensible.",
-            "en": "The output is only published if the organisation authorises it and it contains no sensitive information.",
-            "va": "El resultat nomes es publica si l entitat ho autoritza i no conte informacio sensible."
+            "es": "El resultado de la mentoria solo se publicara como reto, caso, recurso o validacion si la entidad lo autoriza y no contiene informacion sensible.",
+            "en": "The mentoring output will only be published as a challenge, case, resource or validation if the organisation authorises it and it contains no sensitive information.",
+            "va": "El resultat de la mentoria nomes es publicara com a repte, cas, recurs o validacio si l'entitat ho autoritza i no conte informacio sensible."
           },
           "publicUrl": "",
           "license": "CC BY 4.0",
@@ -17362,18 +17332,62 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringOffer": {
           "purpose": {
-            "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
-            "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AI-STEAM collaboration.",
-            "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AI-STEAM."
+            "es": "Ayudar a entidades de la red a transformar una idea inicial en un brief claro, publicable y accionable dentro del ecosistema AI-STEAM.",
+            "en": "Help network organisations turn an initial idea into a clear, publishable and actionable brief within the AI-STEAM ecosystem.",
+            "va": "Ajudar entitats de la xarxa a transformar una idea inicial en un brief clar, publicable i accionable dins de l'ecosistema AI-STEAM."
           },
           "problemAddressed": {
-            "es": "Muchas organizaciones tienen ideas relevantes pero necesitan apoyo para convertirlas en un reto, caso o recurso accionable.",
-            "en": "Many organisations have relevant ideas but need support to turn them into an actionable challenge, case or resource.",
-            "va": "Moltes organitzacions tenen idees rellevants però necessiten suport per a convertir-les en un repte, cas o recurs accionable."
+            "es": "Muchas organizaciones tienen ideas relevantes, pero necesitan apoyo para convertirlas en un reto, caso, recurso o validacion con alcance, lenguaje y condiciones claras.",
+            "en": "Many organisations have relevant ideas but need support to turn them into a challenge, case, resource or validation with clear scope, language and conditions.",
+            "va": "Moltes organitzacions tenen idees rellevants, pero necessiten suport per a convertir-les en un repte, cas, recurs o validacio amb abast, llenguatge i condicions clares."
           },
           "mentoringScope": {
-            "included": [],
-            "excluded": []
+            "included": [
+              {
+                "label": {
+                  "es": "Formulacion de brief Track B",
+                  "en": "Track B brief framing",
+                  "va": "Formulacio de brief Track B"
+                }
+              },
+              {
+                "label": {
+                  "es": "Revision etica basica de uso de IA",
+                  "en": "Basic ethical review of AI use",
+                  "va": "Revisio etica basica d'us d'IA"
+                }
+              },
+              {
+                "label": {
+                  "es": "Clarificacion de actores, entregables y valor de transferencia",
+                  "en": "Clarification of actors, outputs and transfer value",
+                  "va": "Clarificacio d'actors, entregables i valor de transferencia"
+                }
+              }
+            ],
+            "excluded": [
+              {
+                "label": {
+                  "es": "Evaluacion academica formal",
+                  "en": "Formal academic assessment",
+                  "va": "Avaluacio academica formal"
+                }
+              },
+              {
+                "label": {
+                  "es": "Asesoramiento juridico especializado",
+                  "en": "Specialist legal advice",
+                  "va": "Assessorament juridic especialitzat"
+                }
+              },
+              {
+                "label": {
+                  "es": "Desarrollo tecnico completo de soluciones",
+                  "en": "Full technical development of solutions",
+                  "va": "Desenvolupament tecnic complet de solucions"
+                }
+              }
+            ]
           },
           "format": {
             "modality": "online",
@@ -17385,9 +17399,9 @@ export const MARKETPLACE_CONFIG = {
               "va"
             ],
             "availability": {
-              "es": "Sesiones online de 45 minutos y revisión asincrónica.",
-              "en": "45-minute online sessions and asynchronous review.",
-              "va": "Sessions online de 45 minuts i revisió asincrònica."
+              "es": "Convocatoria continua mientras haya capacidad de mentoria disponible.",
+              "en": "Rolling call while mentoring capacity is available.",
+              "va": "Convocatoria continua mentre hi haja capacitat de mentoria disponible."
             }
           },
           "targetUsers": {
@@ -17396,44 +17410,107 @@ export const MARKETPLACE_CONFIG = {
             "va": "Entitats culturals, centres educatius, ONG, administracions locals i pimes creatives."
           },
           "transferValue": {
-            "es": "La mentoría mejora la calidad de entrada al ecosistema y reduce ruido en la comunidad de práctica.",
-            "en": "Mentoring improves ecosystem inputs and reduces noise in the community of practice.",
-            "va": "La mentoria millora la qualitat d'entrada a l'ecosistema i redueix soroll en la comunitat de pràctica."
+            "es": "La mentoria mejora la calidad de entrada al ecosistema, reduce ruido en la comunidad de practica y ayuda a convertir ideas iniciales en objetos publicables o revisables.",
+            "en": "Mentoring improves ecosystem inputs, reduces noise in the community of practice and helps convert initial ideas into publishable or reviewable objects.",
+            "va": "La mentoria millora la qualitat d'entrada a l'ecosistema, redueix soroll en la comunitat de practica i ajuda a convertir idees inicials en objectes publicables o revisables."
           }
         },
         "mentors": {
-          "mode": "team",
+          "mode": "pool",
           "items": [
             {
-              "id": "mentor-1",
+              "id": "ai-steam-mentoring-pool",
               "name": "AI-STEAM Network Mentoring Pool",
               "organisation": "AI-STEAM Network",
               "role": {
-                "es": "Mentoría en formulación de retos y ética de IA",
+                "es": "Mentoria en formulacion de retos y etica de IA",
                 "en": "Mentoring in challenge framing and AI ethics",
-                "va": "Mentoria en formulació de reptes i ètica d'IA"
+                "va": "Mentoria en formulacio de reptes i etica d'IA"
               },
               "specialties": [
-                "IA responsable",
-                "Brief creativo",
-                "Co-diseño",
-                "Transferencia Track B"
+                "responsible-ai",
+                "creative-brief",
+                "co-design",
+                "track-b-transfer"
               ]
             }
           ]
         },
         "preparation": {
-          "requiredBeforeRequest": [],
-          "intakeQuestions": []
+          "requiredBeforeRequest": [
+            {
+              "label": {
+                "es": "Descripcion breve de la necesidad o idea inicial",
+                "en": "Short description of the initial need or idea",
+                "va": "Descripcio breu de la necessitat o idea inicial"
+              }
+            },
+            {
+              "label": {
+                "es": "Tipo de resultado deseado; reto, caso, recurso, validacion o piloto",
+                "en": "Desired output type; challenge, case, resource, validation or pilot",
+                "va": "Tipus de resultat desitjat; repte, cas, recurs, validacio o pilotatge"
+              }
+            },
+            {
+              "label": {
+                "es": "Informacion sobre posibles datos sensibles o restricciones de publicacion",
+                "en": "Information about possible sensitive data or publication constraints",
+                "va": "Informacio sobre possibles dades sensibles o restriccions de publicacio"
+              }
+            }
+          ],
+          "intakeQuestions": [
+            {
+              "id": "need",
+              "label": {
+                "es": "Que necesidad quiere formular la entidad?",
+                "en": "What need does the organisation want to frame?",
+                "va": "Quina necessitat vol formular l'entitat?"
+              }
+            },
+            {
+              "id": "stakeholders",
+              "label": {
+                "es": "Que actores deberian participar?",
+                "en": "Which actors should be involved?",
+                "va": "Quins actors haurien de participar?"
+              }
+            },
+            {
+              "id": "expected-output",
+              "label": {
+                "es": "Que producto espera obtener tras la mentoria?",
+                "en": "What product is expected after the mentoring?",
+                "va": "Quin producte s'espera obtindre despres de la mentoria?"
+              }
+            }
+          ]
         },
         "expectedOutputs": {
           "items": [
             {
-              "id": "expected-output-1",
+              "id": "track-b-brief",
               "label": {
                 "es": "Brief Track B listo para publicar o revisar",
                 "en": "Track B brief ready to publish or review",
                 "va": "Brief Track B llest per a publicar o revisar"
+              }
+            },
+            {
+              "id": "refined-scope",
+              "label": {
+                "es": "Alcance, actores y entregables clarificados",
+                "en": "Scope, actors and outputs clarified",
+                "va": "Abast, actors i entregables clarificats"
+              }
+            },
+            {
+              "id": "risk-note",
+              "label": {
+                "es": "Nota inicial sobre datos sensibles, etica e IA responsable",
+                "en": "Initial note on sensitive data, ethics and responsible AI",
+                "va": "Nota inicial sobre dades sensibles, etica i IA responsable"
               }
             }
           ]
@@ -17441,16 +17518,87 @@ export const MARKETPLACE_CONFIG = {
         "downloads": {
           "enabled": false,
           "basePath": "/assets/downloads/mentorings/responsible-ai-creative-briefs/",
-          "items": []
+          "items": [
+            {
+              "id": "brief-template",
+              "type": "brief-template",
+              "title": {
+                "es": "Plantilla de brief Track B",
+                "en": "Track B brief template",
+                "va": "Plantilla de brief Track B"
+              },
+              "description": {
+                "es": "Documento editable para preparar la necesidad, actores, alcance, entregables y condiciones de publicacion antes de la mentoria.",
+                "en": "Editable document to prepare the need, actors, scope, outputs and publication conditions before the mentoring session.",
+                "va": "Document editable per a preparar la necessitat, actors, abast, entregables i condicions de publicacio abans de la mentoria."
+              },
+              "files": [],
+              "license": "",
+              "showOnCard": true,
+              "showOnDetail": true
+            },
+            {
+              "id": "responsible-ai-checklist",
+              "type": "checklist",
+              "title": {
+                "es": "Checklist de IA responsable para briefs creativos",
+                "en": "Responsible AI checklist for creative briefs",
+                "va": "Checklist d'IA responsable per a briefs creatius"
+              },
+              "description": {
+                "es": "Lista breve para revisar finalidad, datos, riesgos, transparencia y limites del uso de IA en una propuesta inicial.",
+                "en": "Short checklist to review purpose, data, risks, transparency and AI-use boundaries in an initial proposal.",
+                "va": "Llista breu per a revisar finalitat, dades, riscos, transparencia i limits de l'us d'IA en una proposta inicial."
+              },
+              "files": [],
+              "license": "",
+              "showOnCard": true,
+              "showOnDetail": true
+            },
+            {
+              "id": "mentoring-preparation-guide",
+              "type": "preparation-guide",
+              "title": {
+                "es": "Guia para preparar la sesion de mentoria",
+                "en": "Guide to prepare the mentoring session",
+                "va": "Guia per a preparar la sessio de mentoria"
+              },
+              "description": {
+                "es": "Orientaciones para llegar a la mentoria con una idea minima, preguntas utiles y limites de publicacion claros.",
+                "en": "Guidance to arrive at the mentoring session with a minimum idea, useful questions and clear publication limits.",
+                "va": "Orientacions per a arribar a la mentoria amb una idea minima, preguntes utils i limits de publicacio clars."
+              },
+              "files": [],
+              "license": "",
+              "showOnCard": false,
+              "showOnDetail": true
+            }
+          ]
         },
         "resources": {
-          "externalLinks": []
+          "externalLinks": [
+            {
+              "id": "request-form",
+              "type": "external-form",
+              "label": {
+                "es": "Formulario externo de solicitud",
+                "en": "External request form",
+                "va": "Formulari extern de sol·licitud"
+              },
+              "url": "",
+              "access": {
+                "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
+                "en": "The request is managed outside this website when an external system is available.",
+                "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
+              }
+            }
+          ]
         },
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar mentoría",
+              "es": "Solicitar mentoria",
               "en": "Request mentoring",
               "va": "Sol·licitar mentoria"
             },
@@ -17465,7 +17613,15 @@ export const MARKETPLACE_CONFIG = {
             },
             "url": ""
           },
-          "secondaryAction": null
+          "secondaryAction": {
+            "label": {
+              "es": "Descargar plantilla de brief",
+              "en": "Download brief template",
+              "va": "Descarregar plantilla de brief"
+            },
+            "downloadId": "brief-template",
+            "url": ""
+          }
         },
         "relations": {
           "relatedChallenges": [],
@@ -17481,7 +17637,7 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "hasDownloads": false,
-        "downloadCount": 0,
+        "downloadCount": 3,
         "cardDownloads": [],
         "presentation": {
           "card": {
@@ -17489,7 +17645,7 @@ export const MARKETPLACE_CONFIG = {
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
-            "showDownloadsIndicator": false,
+            "showDownloadsIndicator": true,
             "showChatBadge": false,
             "mainBlockLabel": {
               "es": "Que ofrece",
@@ -17508,10 +17664,10 @@ export const MARKETPLACE_CONFIG = {
               "preparation": true,
               "expectedOutputs": true,
               "transferValue": true,
-              "downloads": false,
+              "downloads": true,
               "resources": true,
               "access": true,
-              "relations": false
+              "relations": true
             }
           }
         },
