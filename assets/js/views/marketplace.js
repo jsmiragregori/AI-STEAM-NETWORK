@@ -8,11 +8,6 @@ const UI_TEXT = {
     en: 'Active community subsection',
     va: 'Subseccio activa de la comunitat',
   },
-  activitySummary: {
-    es: 'Actividad de la subseccion',
-    en: 'Subsection activity',
-    va: 'Activitat de la subseccio',
-  },
   backCommunity: {
     es: 'Volver a Comunidad',
     en: 'Back to Community',
@@ -98,30 +93,15 @@ const UI_TEXT = {
     en: 'Filter by',
     va: 'Filtrar per',
   },
-  items: {
-    es: 'Elementos',
-    en: 'Items',
-    va: 'Elements',
-  },
   kpi: {
     es: 'KPI',
     en: 'KPI',
     va: 'KPI',
   },
-  latestUpdate: {
-    es: 'Ultima actualizacion',
-    en: 'Latest update',
-    va: 'Ultima actualitzacio',
-  },
   noDate: {
     es: 'Sin fecha',
     en: 'No date',
     va: 'Sense data',
-  },
-  openItems: {
-    es: 'Abiertos',
-    en: 'Open',
-    va: 'Oberts',
   },
   noResults: {
     es: 'No hay elementos con estos filtros',
@@ -609,11 +589,6 @@ function getItemById(id) {
   return getAllItems().find(item => item.id === id);
 }
 
-function getLatestLabel(items) {
-  const latest = items.find(item => item.core?.revisionDateLabel || item.core?.publishedAtLabel);
-  return pickLang(latest?.core?.revisionDateLabel || latest?.core?.publishedAtLabel, uiText('noDate'));
-}
-
 function getItemDateLabel(item) {
   const revised = pickLang(item.core?.revisionDateLabel);
   if (revised) return `${uiText('updated')}: ${revised}`;
@@ -678,25 +653,6 @@ function renderTabs(activeId) {
         }).join('')}
       </div>
     </div>`;
-}
-
-function renderActivitySummary(tab, items) {
-  const openCount = items.filter(item => item.core?.status === 'open').length;
-  const ctaLabel = pickLang(tab.ctaLabel);
-  return `
-    <aside class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
-      <h2 class="text-sm font-extrabold uppercase tracking-wide text-gray-500">${esc(uiText('activitySummary'))}</h2>
-      <dl class="mt-4 grid grid-cols-3 gap-3 lg:grid-cols-1">
-        ${renderSummaryMetric(uiText('items'), items.length)}
-        ${renderSummaryMetric(uiText('openItems'), openCount)}
-        ${renderSummaryMetric(uiText('latestUpdate'), getLatestLabel(items))}
-      </dl>
-      ${ctaLabel ? `
-        <div class="mt-5 flex items-start gap-2 text-sm text-gray-600">
-          <i data-lucide="info" class="mt-0.5 h-4 w-4 shrink-0 text-gray-400"></i>
-          <p class="leading-5">${esc(ctaLabel)}</p>
-        </div>` : ''}
-    </aside>`;
 }
 
 function getFilterStorageKey(tabId) {
@@ -895,14 +851,6 @@ function renderTabResults(tab, items) {
       </div>`;
   }
   return `<div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">${filtered.map(item => renderItemCard(item, tab)).join('')}</div>`;
-}
-
-function renderSummaryMetric(label, value) {
-  return `
-    <div class="rounded-xl border border-eu-border bg-eu-bg px-4 py-3">
-      <dt class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(label)}</dt>
-      <dd class="mt-1 text-lg font-extrabold text-eu-text">${esc(value)}</dd>
-    </div>`;
 }
 
 function renderCardShell(item, tab, body, options = {}) {
@@ -1552,9 +1500,8 @@ function renderTabPanel(tab, items) {
   return `
     <section class="mx-auto max-w-7xl px-6 py-8"
       id="mp-tabpanel-${esc(tab.id)}" role="tabpanel" aria-labelledby="mp-tab-${esc(tab.id)}">
-      <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_18rem]">
-        <div>
-          <div class="rounded-2xl border border-eu-border bg-gradient-to-br ${tone.band} p-6 shadow-sm">
+      <div>
+        <div class="rounded-2xl border border-eu-border bg-gradient-to-br ${tone.band} p-6 shadow-sm">
             <div class="flex items-start gap-4">
               <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${tone.icon}">
                 <i data-lucide="${esc(tab.icon || 'layers-3')}" class="h-5 w-5"></i>
@@ -1572,9 +1519,7 @@ function renderTabPanel(tab, items) {
             ${items.length ? renderTabResults(tab, items) : renderEmptyState(tab)}
           </div>
         </div>
-        ${renderActivitySummary(tab, items)}
-      </div>
-    </section>`;
+      </section>`;
 }
 
 function renderList() {
