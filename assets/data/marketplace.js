@@ -2996,6 +2996,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "",
         "validationType": "",
         "validationStage": "",
+        "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -3182,6 +3183,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "El código puede usarse y modificarse libremente según su licencia. Los datos de consumo de las viviendas son confidenciales y no están incluidos.",
           "en": "The code may be freely used and modified according to its licence. Housing consumption data is confidential and not included.",
           "va": "El codi pot usar-se i modificar-se lliurement segons la seua llicència. Les dades de consum dels habitatges són confidencials i no s'inclouen."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
@@ -3644,6 +3652,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "curriculum-pilot",
         "validationType": "",
         "validationStage": "",
+        "mentoringType": "",
         "helix": [
           "academia",
           "public-sector"
@@ -3741,6 +3750,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "Módulo y dataset publicados bajo CC BY 4.0. Datos de participantes anonimizados.",
           "en": "Module and dataset published under CC BY 4.0. Participant data anonymised.",
           "va": "Mòdul i dataset publicats sota CC BY 4.0. Dades de participants anonimitzades."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
@@ -4171,6 +4187,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "",
         "validationType": "",
         "validationStage": "",
+        "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -4339,6 +4356,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "Los materiales son libres para uso educativo no comercial. Los prompts que referencien obras del IVAM requieren atribución expresa.",
           "en": "Materials are free for non-commercial educational use. Prompts referencing IVAM works require explicit attribution.",
           "va": "Els materials són lliures per a ús educatiu no comercial. Els prompts que referencien obres de l'IVAM requereixen atribució expressa."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY-NC 4.0",
@@ -4756,6 +4780,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "",
         "validationType": "",
         "validationStage": "",
+        "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -4944,6 +4969,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "Las contribuciones públicas deberán poder compartirse como conocimiento abierto o describirse sin datos sensibles.",
           "en": "Public contributions must be shareable as open knowledge or describable without sensitive data.",
           "va": "Les contribucions públiques hauran de poder compartir-se com a coneixement obert o descriure's sense dades sensibles."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
@@ -5224,6 +5256,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "",
         "validationType": "",
         "validationStage": "",
+        "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -5392,6 +5425,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "El dataset no puede usarse con fines comerciales sin acuerdo previo con el IVIA.",
           "en": "The dataset cannot be used for commercial purposes without prior agreement with IVIA.",
           "va": "El dataset no pot usar-se amb fins comercials sense acord previ amb l'IVIA."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY-NC-SA 4.0",
@@ -5853,6 +5893,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "",
         "validationType": "",
         "validationStage": "",
+        "mentoringType": "brief-support",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -5891,6 +5932,31 @@ export const MARKETPLACE_CONFIG = {
           ]
         }
       },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "provider": {
+          "name": "AI-STEAM Network Mentoring Pool",
+          "type": "mentoring-pool",
+          "role": {
+            "es": "Digimentores en formulación de retos y ética de IA",
+            "en": "Digital mentors in challenge framing and AI ethics",
+            "va": "Digimentors en formulació de reptes i ètica d'IA"
+          },
+          "org": "AI-STEAM Network"
+        },
+        "coordinator": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE",
+          "role": {
+            "es": "Coordinacion Track B",
+            "en": "Track B coordination",
+            "va": "Coordinacio Track B"
+          }
+        }
+      },
       "classification": {
         "aiSteamFocus": [
           "creative-ai",
@@ -5913,7 +5979,41 @@ export const MARKETPLACE_CONFIG = {
           "va": "Ajuda membres de la xarxa a formular millor les seues necessitats i augmentar la qualitat de futures col·laboracions."
         },
         "verificationStatus": "",
-        "pilotStatus": ""
+        "pilotStatus": "",
+        "sector": "cci",
+        "sectorLabel": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "stakeholderCategory": "civic",
+        "audience": [
+          "cultural-organisations",
+          "ngos",
+          "creative-smes",
+          "teachers",
+          "local-administration"
+        ],
+        "tags": {
+          "es": [
+            "Mentoría",
+            "Brief creativo",
+            "IA responsable",
+            "Co-diseño"
+          ],
+          "en": [
+            "Mentoring",
+            "Creative brief",
+            "Responsible AI",
+            "Co-design"
+          ],
+          "va": [
+            "Mentoria",
+            "Brief creatiu",
+            "IA responsable",
+            "Codisseny"
+          ]
+        }
       },
       "transfer": {
         "type": "",
@@ -6043,8 +6143,8 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       "access": {
-        "pageVisibility": "network",
-        "pageLicense": "Not applicable",
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
@@ -6059,9 +6159,16 @@ export const MARKETPLACE_CONFIG = {
           "en": "The organisation keeps ownership of its idea; the network only helps frame it.",
           "va": "L'entitat conserva la titularitat de la seua idea; la xarxa només ajuda a formular-la."
         },
+        "mentoringRequestAccess": "not-available",
+        "confidentialityLevel": "standard",
+        "publicationNote": {
+          "es": "El resultado solo se publica si la entidad lo autoriza y no contiene informacion sensible.",
+          "en": "The output is only published if the organisation authorises it and it contains no sensitive information.",
+          "va": "El resultat nomes es publica si l entitat ho autoritza i no conte informacio sensible."
+        },
         "publicUrl": "",
-        "license": "Not applicable",
-        "privacyLevel": "network"
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
       },
       "trackA": {
         "enabled": false,
@@ -6080,6 +6187,161 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "url": ""
+      },
+      "mentoringOffer": {
+        "purpose": {
+          "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
+          "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AI-STEAM collaboration.",
+          "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AI-STEAM."
+        },
+        "problemAddressed": {
+          "es": "Muchas organizaciones tienen ideas relevantes pero necesitan apoyo para convertirlas en un reto, caso o recurso accionable.",
+          "en": "Many organisations have relevant ideas but need support to turn them into an actionable challenge, case or resource.",
+          "va": "Moltes organitzacions tenen idees rellevants però necessiten suport per a convertir-les en un repte, cas o recurs accionable."
+        },
+        "mentoringScope": {
+          "included": [],
+          "excluded": []
+        },
+        "format": {
+          "modality": "online",
+          "sessionDurationMinutes": 45,
+          "asyncReview": true,
+          "languageCodes": [
+            "es",
+            "en",
+            "va"
+          ],
+          "availability": {
+            "es": "Sesiones online de 45 minutos y revisión asincrónica.",
+            "en": "45-minute online sessions and asynchronous review.",
+            "va": "Sessions online de 45 minuts i revisió asincrònica."
+          }
+        },
+        "targetUsers": {
+          "es": "Entidades culturales, centros educativos, ONG, administraciones locales y pymes creativas.",
+          "en": "Cultural organisations, schools, NGOs, local administrations and creative SMEs.",
+          "va": "Entitats culturals, centres educatius, ONG, administracions locals i pimes creatives."
+        },
+        "transferValue": {
+          "es": "La mentoría mejora la calidad de entrada al ecosistema y reduce ruido en la comunidad de práctica.",
+          "en": "Mentoring improves ecosystem inputs and reduces noise in the community of practice.",
+          "va": "La mentoria millora la qualitat d'entrada a l'ecosistema i redueix soroll en la comunitat de pràctica."
+        }
+      },
+      "mentors": {
+        "mode": "team",
+        "items": [
+          {
+            "id": "mentor-1",
+            "name": "AI-STEAM Network Mentoring Pool",
+            "organisation": "AI-STEAM Network",
+            "role": {
+              "es": "Mentoría en formulación de retos y ética de IA",
+              "en": "Mentoring in challenge framing and AI ethics",
+              "va": "Mentoria en formulació de reptes i ètica d'IA"
+            },
+            "specialties": [
+              "IA responsable",
+              "Brief creativo",
+              "Co-diseño",
+              "Transferencia Track B"
+            ]
+          }
+        ]
+      },
+      "preparation": {
+        "requiredBeforeRequest": [],
+        "intakeQuestions": []
+      },
+      "expectedOutputs": {
+        "items": [
+          {
+            "id": "expected-output-1",
+            "label": {
+              "es": "Brief Track B listo para publicar o revisar",
+              "en": "Track B brief ready to publish or review",
+              "va": "Brief Track B llest per a publicar o revisar"
+            }
+          }
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/mentorings/responsible-ai-creative-briefs/",
+        "items": []
+      },
+      "resources": {
+        "externalLinks": []
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Solicitar mentoría",
+            "en": "Request mentoring",
+            "va": "Sol·licitar mentoria"
+          },
+          "url": "",
+          "system": ""
+        },
+        "fallbackAction": {
+          "label": {
+            "es": "Ver mentoria",
+            "en": "View mentoring",
+            "va": "Veure mentoria"
+          },
+          "url": ""
+        },
+        "secondaryAction": null
+      },
+      "relations": {
+        "relatedChallenges": [],
+        "relatedValidations": [],
+        "relatedPilots": [],
+        "relatedCases": [],
+        "relatedResources": [],
+        "possibleOutputs": [
+          "challenge",
+          "validation",
+          "resource",
+          "case"
+        ]
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "presentation": {
+        "card": {
+          "variant": "mentoring",
+          "showProvider": true,
+          "showSpecialties": true,
+          "showAvailability": true,
+          "showDownloadsIndicator": false,
+          "showChatBadge": false,
+          "mainBlockLabel": {
+            "es": "Que ofrece",
+            "en": "What it offers",
+            "va": "Que ofereix"
+          }
+        },
+        "detail": {
+          "sections": {
+            "summary": true,
+            "purpose": true,
+            "scope": true,
+            "targetUsers": true,
+            "format": true,
+            "mentors": true,
+            "preparation": true,
+            "expectedOutputs": true,
+            "transferValue": true,
+            "downloads": false,
+            "resources": true,
+            "access": true,
+            "relations": false
+          }
+        }
       },
       "template": {
         "requiredBlocks": [
@@ -6131,6 +6393,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "",
         "validationType": "",
         "validationStage": "",
+        "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -6297,6 +6560,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "El checklist de seguridad debe revisarse con el coordinador de PRL del centro antes de su uso.",
           "en": "The safety checklist must be reviewed with the centre's health and safety coordinator before use.",
           "va": "El checklist de seguretat s'ha de revisar amb el coordinador de PRL del centre abans del seu ús."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY-SA 4.0",
@@ -6689,6 +6959,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "teacher-training",
         "validationType": "",
         "validationStage": "",
+        "mentoringType": "",
         "helix": [
           "academia",
           "civil-society"
@@ -6786,6 +7057,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "Plantilla y materiales del taller publicados bajo CC BY-SA 4.0.",
           "en": "Workshop template and materials published under CC BY-SA 4.0.",
           "va": "Plantilla i materials del taller publicats sota CC BY-SA 4.0."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY-SA 4.0",
@@ -7242,6 +7520,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "",
         "validationType": "",
         "validationStage": "",
+        "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -7439,6 +7718,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "Los materiales pueden adaptarse libremente con atribución a CEFIREs y EMT Valencia.",
           "en": "Materials may be freely adapted with attribution to CEFIREs and EMT Valencia.",
           "va": "Els materials poden adaptar-se lliurement amb atribució als CEFIREs i EMT València."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
@@ -7851,6 +8137,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "vet-industry",
         "validationType": "",
         "validationStage": "",
+        "mentoringType": "",
         "helix": [
           "academia",
           "industry"
@@ -7948,6 +8235,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "Rúbricas y materiales del módulo publicados bajo CC BY 4.0.",
           "en": "Module rubrics and materials published under CC BY 4.0.",
           "va": "Rúbriques i materials del mòdul publicats sota CC BY 4.0."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
@@ -8397,6 +8691,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "master-bridge",
         "validationType": "",
         "validationStage": "",
+        "mentoringType": "",
         "helix": [
           "academia",
           "industry"
@@ -8491,6 +8786,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "La guía de itinerario se publicará bajo CC BY 4.0 al completarse el piloto.",
           "en": "The itinerary guide will be published under CC BY 4.0 on pilot completion.",
           "va": "La guia d'itinerari es publicarà sota CC BY 4.0 en completar-se el pilot."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
@@ -8916,6 +9218,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "",
         "validationType": "stakeholder-validation",
         "validationStage": "completed",
+        "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -9005,6 +9308,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "El dataset multispectral de cítricos se publica bajo licencia open data para reuso académico y de red.",
           "en": "The citrus multispectral dataset is published under an open data licence for academic and network reuse.",
           "va": "El dataset multiespectral de cítrics es publica sota llicència open data per a reús acadèmic i de xarxa."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
@@ -9433,6 +9743,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "",
         "validationType": "stakeholder-validation",
         "validationStage": "completed",
+        "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -9525,6 +9836,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "La ficha de competencias se publica bajo licencia CC BY 4.0 para reuso por centros FP y empresas del sector.",
           "en": "The competency sheet is published under a CC BY 4.0 licence for reuse by VET centres and sector companies.",
           "va": "La fitxa de competències es publica sota llicència CC BY 4.0 per a reús per centres FP i empreses del sector."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
@@ -9960,6 +10278,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "",
           "validationType": "",
           "validationStage": "",
+          "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -10148,6 +10467,13 @@ export const MARKETPLACE_CONFIG = {
             "es": "Las contribuciones públicas deberán poder compartirse como conocimiento abierto o describirse sin datos sensibles.",
             "en": "Public contributions must be shareable as open knowledge or describable without sensitive data.",
             "va": "Les contribucions públiques hauran de poder compartir-se com a coneixement obert o descriure's sense dades sensibles."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
           "license": "CC BY 4.0",
@@ -10430,6 +10756,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "",
           "validationType": "",
           "validationStage": "",
+          "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -10616,6 +10943,13 @@ export const MARKETPLACE_CONFIG = {
             "es": "El código puede usarse y modificarse libremente según su licencia. Los datos de consumo de las viviendas son confidenciales y no están incluidos.",
             "en": "The code may be freely used and modified according to its licence. Housing consumption data is confidential and not included.",
             "va": "El codi pot usar-se i modificar-se lliurement segons la seua llicència. Les dades de consum dels habitatges són confidencials i no s'inclouen."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
           "license": "CC BY 4.0",
@@ -11076,6 +11410,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "",
           "validationType": "",
           "validationStage": "",
+          "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -11244,6 +11579,13 @@ export const MARKETPLACE_CONFIG = {
             "es": "Los materiales son libres para uso educativo no comercial. Los prompts que referencien obras del IVAM requieren atribución expresa.",
             "en": "Materials are free for non-commercial educational use. Prompts referencing IVAM works require explicit attribution.",
             "va": "Els materials són lliures per a ús educatiu no comercial. Els prompts que referencien obres de l'IVAM requereixen atribució expressa."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
           "license": "CC BY-NC 4.0",
@@ -11661,6 +12003,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "",
           "validationType": "",
           "validationStage": "",
+          "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -11829,6 +12172,13 @@ export const MARKETPLACE_CONFIG = {
             "es": "El dataset no puede usarse con fines comerciales sin acuerdo previo con el IVIA.",
             "en": "The dataset cannot be used for commercial purposes without prior agreement with IVIA.",
             "va": "El dataset no pot usar-se amb fins comercials sense acord previ amb l'IVIA."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
           "license": "CC BY-NC-SA 4.0",
@@ -12290,6 +12640,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "",
           "validationType": "",
           "validationStage": "",
+          "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -12456,6 +12807,13 @@ export const MARKETPLACE_CONFIG = {
             "es": "El checklist de seguridad debe revisarse con el coordinador de PRL del centro antes de su uso.",
             "en": "The safety checklist must be reviewed with the centre's health and safety coordinator before use.",
             "va": "El checklist de seguretat s'ha de revisar amb el coordinador de PRL del centre abans del seu ús."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
           "license": "CC BY-SA 4.0",
@@ -12845,6 +13203,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "",
           "validationType": "",
           "validationStage": "",
+          "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -13042,6 +13401,13 @@ export const MARKETPLACE_CONFIG = {
             "es": "Los materiales pueden adaptarse libremente con atribución a CEFIREs y EMT Valencia.",
             "en": "Materials may be freely adapted with attribution to CEFIREs and EMT Valencia.",
             "va": "Els materials poden adaptar-se lliurement amb atribució als CEFIREs i EMT València."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
           "license": "CC BY 4.0",
@@ -13456,6 +13822,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "curriculum-pilot",
           "validationType": "",
           "validationStage": "",
+          "mentoringType": "",
           "helix": [
             "academia",
             "public-sector"
@@ -13553,6 +13920,13 @@ export const MARKETPLACE_CONFIG = {
             "es": "Módulo y dataset publicados bajo CC BY 4.0. Datos de participantes anonimizados.",
             "en": "Module and dataset published under CC BY 4.0. Participant data anonymised.",
             "va": "Mòdul i dataset publicats sota CC BY 4.0. Dades de participants anonimitzades."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
           "license": "CC BY 4.0",
@@ -13986,6 +14360,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "teacher-training",
           "validationType": "",
           "validationStage": "",
+          "mentoringType": "",
           "helix": [
             "academia",
             "civil-society"
@@ -14083,6 +14458,13 @@ export const MARKETPLACE_CONFIG = {
             "es": "Plantilla y materiales del taller publicados bajo CC BY-SA 4.0.",
             "en": "Workshop template and materials published under CC BY-SA 4.0.",
             "va": "Plantilla i materials del taller publicats sota CC BY-SA 4.0."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
           "license": "CC BY-SA 4.0",
@@ -14541,6 +14923,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "vet-industry",
           "validationType": "",
           "validationStage": "",
+          "mentoringType": "",
           "helix": [
             "academia",
             "industry"
@@ -14638,6 +15021,13 @@ export const MARKETPLACE_CONFIG = {
             "es": "Rúbricas y materiales del módulo publicados bajo CC BY 4.0.",
             "en": "Module rubrics and materials published under CC BY 4.0.",
             "va": "Rúbriques i materials del mòdul publicats sota CC BY 4.0."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
           "license": "CC BY 4.0",
@@ -15087,6 +15477,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "master-bridge",
           "validationType": "",
           "validationStage": "",
+          "mentoringType": "",
           "helix": [
             "academia",
             "industry"
@@ -15181,6 +15572,13 @@ export const MARKETPLACE_CONFIG = {
             "es": "La guía de itinerario se publicará bajo CC BY 4.0 al completarse el piloto.",
             "en": "The itinerary guide will be published under CC BY 4.0 on pilot completion.",
             "va": "La guia d'itinerari es publicarà sota CC BY 4.0 en completar-se el pilot."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
           "license": "CC BY 4.0",
@@ -15608,6 +16006,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "",
           "validationType": "stakeholder-validation",
           "validationStage": "completed",
+          "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -15697,6 +16096,13 @@ export const MARKETPLACE_CONFIG = {
             "es": "El dataset multispectral de cítricos se publica bajo licencia open data para reuso académico y de red.",
             "en": "The citrus multispectral dataset is published under an open data licence for academic and network reuse.",
             "va": "El dataset multiespectral de cítrics es publica sota llicència open data per a reús acadèmic i de xarxa."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
           "license": "CC BY 4.0",
@@ -16125,6 +16531,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "",
           "validationType": "stakeholder-validation",
           "validationStage": "completed",
+          "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -16217,6 +16624,13 @@ export const MARKETPLACE_CONFIG = {
             "es": "La ficha de competencias se publica bajo licencia CC BY 4.0 para reuso por centros FP y empresas del sector.",
             "en": "The competency sheet is published under a CC BY 4.0 licence for reuse by VET centres and sector companies.",
             "va": "La fitxa de competències es publica sota llicència CC BY 4.0 per a reús per centres FP i empreses del sector."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
           "license": "CC BY 4.0",
@@ -16651,6 +17065,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotType": "",
           "validationType": "",
           "validationStage": "",
+          "mentoringType": "brief-support",
           "helix": [],
           "relatedDeliverable": "",
           "relatedOerId": "",
@@ -16689,6 +17104,31 @@ export const MARKETPLACE_CONFIG = {
             ]
           }
         },
+        "ownership": {
+          "publisher": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE"
+          },
+          "provider": {
+            "name": "AI-STEAM Network Mentoring Pool",
+            "type": "mentoring-pool",
+            "role": {
+              "es": "Digimentores en formulación de retos y ética de IA",
+              "en": "Digital mentors in challenge framing and AI ethics",
+              "va": "Digimentors en formulació de reptes i ètica d'IA"
+            },
+            "org": "AI-STEAM Network"
+          },
+          "coordinator": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE",
+            "role": {
+              "es": "Coordinacion Track B",
+              "en": "Track B coordination",
+              "va": "Coordinacio Track B"
+            }
+          }
+        },
         "classification": {
           "aiSteamFocus": [
             "creative-ai",
@@ -16711,7 +17151,41 @@ export const MARKETPLACE_CONFIG = {
             "va": "Ajuda membres de la xarxa a formular millor les seues necessitats i augmentar la qualitat de futures col·laboracions."
           },
           "verificationStatus": "",
-          "pilotStatus": ""
+          "pilotStatus": "",
+          "sector": "cci",
+          "sectorLabel": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "stakeholderCategory": "civic",
+          "audience": [
+            "cultural-organisations",
+            "ngos",
+            "creative-smes",
+            "teachers",
+            "local-administration"
+          ],
+          "tags": {
+            "es": [
+              "Mentoría",
+              "Brief creativo",
+              "IA responsable",
+              "Co-diseño"
+            ],
+            "en": [
+              "Mentoring",
+              "Creative brief",
+              "Responsible AI",
+              "Co-design"
+            ],
+            "va": [
+              "Mentoria",
+              "Brief creatiu",
+              "IA responsable",
+              "Codisseny"
+            ]
+          }
         },
         "transfer": {
           "type": "",
@@ -16841,8 +17315,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "access": {
-          "pageVisibility": "network",
-          "pageLicense": "Not applicable",
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
@@ -16857,9 +17331,16 @@ export const MARKETPLACE_CONFIG = {
             "en": "The organisation keeps ownership of its idea; the network only helps frame it.",
             "va": "L'entitat conserva la titularitat de la seua idea; la xarxa només ajuda a formular-la."
           },
+          "mentoringRequestAccess": "not-available",
+          "confidentialityLevel": "standard",
+          "publicationNote": {
+            "es": "El resultado solo se publica si la entidad lo autoriza y no contiene informacion sensible.",
+            "en": "The output is only published if the organisation authorises it and it contains no sensitive information.",
+            "va": "El resultat nomes es publica si l entitat ho autoritza i no conte informacio sensible."
+          },
           "publicUrl": "",
-          "license": "Not applicable",
-          "privacyLevel": "network"
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
         },
         "trackA": {
           "enabled": false,
@@ -16878,6 +17359,161 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "url": ""
+        },
+        "mentoringOffer": {
+          "purpose": {
+            "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
+            "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AI-STEAM collaboration.",
+            "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AI-STEAM."
+          },
+          "problemAddressed": {
+            "es": "Muchas organizaciones tienen ideas relevantes pero necesitan apoyo para convertirlas en un reto, caso o recurso accionable.",
+            "en": "Many organisations have relevant ideas but need support to turn them into an actionable challenge, case or resource.",
+            "va": "Moltes organitzacions tenen idees rellevants però necessiten suport per a convertir-les en un repte, cas o recurs accionable."
+          },
+          "mentoringScope": {
+            "included": [],
+            "excluded": []
+          },
+          "format": {
+            "modality": "online",
+            "sessionDurationMinutes": 45,
+            "asyncReview": true,
+            "languageCodes": [
+              "es",
+              "en",
+              "va"
+            ],
+            "availability": {
+              "es": "Sesiones online de 45 minutos y revisión asincrónica.",
+              "en": "45-minute online sessions and asynchronous review.",
+              "va": "Sessions online de 45 minuts i revisió asincrònica."
+            }
+          },
+          "targetUsers": {
+            "es": "Entidades culturales, centros educativos, ONG, administraciones locales y pymes creativas.",
+            "en": "Cultural organisations, schools, NGOs, local administrations and creative SMEs.",
+            "va": "Entitats culturals, centres educatius, ONG, administracions locals i pimes creatives."
+          },
+          "transferValue": {
+            "es": "La mentoría mejora la calidad de entrada al ecosistema y reduce ruido en la comunidad de práctica.",
+            "en": "Mentoring improves ecosystem inputs and reduces noise in the community of practice.",
+            "va": "La mentoria millora la qualitat d'entrada a l'ecosistema i redueix soroll en la comunitat de pràctica."
+          }
+        },
+        "mentors": {
+          "mode": "team",
+          "items": [
+            {
+              "id": "mentor-1",
+              "name": "AI-STEAM Network Mentoring Pool",
+              "organisation": "AI-STEAM Network",
+              "role": {
+                "es": "Mentoría en formulación de retos y ética de IA",
+                "en": "Mentoring in challenge framing and AI ethics",
+                "va": "Mentoria en formulació de reptes i ètica d'IA"
+              },
+              "specialties": [
+                "IA responsable",
+                "Brief creativo",
+                "Co-diseño",
+                "Transferencia Track B"
+              ]
+            }
+          ]
+        },
+        "preparation": {
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
+        },
+        "expectedOutputs": {
+          "items": [
+            {
+              "id": "expected-output-1",
+              "label": {
+                "es": "Brief Track B listo para publicar o revisar",
+                "en": "Track B brief ready to publish or review",
+                "va": "Brief Track B llest per a publicar o revisar"
+              }
+            }
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/mentorings/responsible-ai-creative-briefs/",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Solicitar mentoría",
+              "en": "Request mentoring",
+              "va": "Sol·licitar mentoria"
+            },
+            "url": "",
+            "system": ""
+          },
+          "fallbackAction": {
+            "label": {
+              "es": "Ver mentoria",
+              "en": "View mentoring",
+              "va": "Veure mentoria"
+            },
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "relatedChallenges": [],
+          "relatedValidations": [],
+          "relatedPilots": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "possibleOutputs": [
+            "challenge",
+            "validation",
+            "resource",
+            "case"
+          ]
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "mentoring",
+            "showProvider": true,
+            "showSpecialties": true,
+            "showAvailability": true,
+            "showDownloadsIndicator": false,
+            "showChatBadge": false,
+            "mainBlockLabel": {
+              "es": "Que ofrece",
+              "en": "What it offers",
+              "va": "Que ofereix"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "purpose": true,
+              "scope": true,
+              "targetUsers": true,
+              "format": true,
+              "mentors": true,
+              "preparation": true,
+              "expectedOutputs": true,
+              "transferValue": true,
+              "downloads": false,
+              "resources": true,
+              "access": true,
+              "relations": false
+            }
+          }
         },
         "template": {
           "requiredBlocks": [
@@ -16932,6 +17568,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotType": "",
         "validationType": "",
         "validationStage": "",
+        "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
         "relatedOerId": "",
@@ -17086,6 +17723,13 @@ export const MARKETPLACE_CONFIG = {
           "es": "Reutilizable con atribución. No incluir datos personales ni información confidencial en briefs públicos.",
           "en": "Reusable with attribution. Do not include personal data or confidential information in public briefs.",
           "va": "Reutilitzable amb atribució. No incloure dades personals ni informació confidencial en briefs públics."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
