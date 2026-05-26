@@ -379,6 +379,33 @@ export const MARKETPLACE_CONFIG = {
         "en": "Resolved",
         "va": "Resolt"
       }
+    },
+    {
+      "id": "published",
+      "visible": true,
+      "label": {
+        "es": "Publicado",
+        "en": "Published",
+        "va": "Publicat"
+      }
+    },
+    {
+      "id": "documented",
+      "visible": true,
+      "label": {
+        "es": "Documentado",
+        "en": "Documented",
+        "va": "Documentat"
+      }
+    },
+    {
+      "id": "archived",
+      "visible": true,
+      "label": {
+        "es": "Archivado",
+        "en": "Archived",
+        "va": "Arxivat"
+      }
     }
   ],
   "typeLabels": [
@@ -1597,6 +1624,60 @@ export const MARKETPLACE_CONFIG = {
         "en": "Public administration",
         "va": "Administració pública"
       }
+    },
+    {
+      "id": "cultural-organisations",
+      "visible": true,
+      "label": {
+        "es": "Entidades culturales",
+        "en": "Cultural organisations",
+        "va": "Entitats culturals"
+      }
+    },
+    {
+      "id": "ngos",
+      "visible": true,
+      "label": {
+        "es": "ONG",
+        "en": "NGOs",
+        "va": "ONG"
+      }
+    },
+    {
+      "id": "creative-smes",
+      "visible": true,
+      "label": {
+        "es": "Pymes creativas",
+        "en": "Creative SMEs",
+        "va": "Pimes creatives"
+      }
+    },
+    {
+      "id": "local-administration",
+      "visible": true,
+      "label": {
+        "es": "Administraciones locales",
+        "en": "Local administrations",
+        "va": "Administracions locals"
+      }
+    },
+    {
+      "id": "facilitators",
+      "visible": true,
+      "label": {
+        "es": "Facilitadores",
+        "en": "Facilitators",
+        "va": "Facilitadors"
+      }
+    },
+    {
+      "id": "sector-associations",
+      "visible": true,
+      "label": {
+        "es": "Asociaciones sectoriales",
+        "en": "Sector associations",
+        "va": "Associacions sectorials"
+      }
     }
   ],
   "competenceLabels": [
@@ -2786,7 +2867,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "co-design",
       "visible": true,
       "label": {
-        "es": "Co-diseno",
+        "es": "Co-diseño",
         "en": "Co-design",
         "va": "Codisseny"
       }
@@ -2797,16 +2878,16 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Transferencia Track B",
         "en": "Track B transfer",
-        "va": "Transferencia Track B"
+        "va": "Transferència Track B"
       }
     },
     {
       "id": "ai-ethics",
       "visible": true,
       "label": {
-        "es": "Etica de IA",
+        "es": "Ética de IA",
         "en": "AI ethics",
-        "va": "Etica d'IA"
+        "va": "Ètica d'IA"
       }
     },
     {
@@ -2822,16 +2903,16 @@ export const MARKETPLACE_CONFIG = {
       "id": "data-protection",
       "visible": true,
       "label": {
-        "es": "Proteccion de datos",
+        "es": "Protección de datos",
         "en": "Data protection",
-        "va": "Proteccio de dades"
+        "va": "Protecció de dades"
       }
     },
     {
       "id": "curriculum-design",
       "visible": true,
       "label": {
-        "es": "Diseno curricular",
+        "es": "Diseño curricular",
         "en": "Curriculum design",
         "va": "Disseny curricular"
       }
@@ -2840,9 +2921,45 @@ export const MARKETPLACE_CONFIG = {
       "id": "resource-design",
       "visible": true,
       "label": {
-        "es": "Diseno de recursos",
+        "es": "Diseño de recursos",
         "en": "Resource design",
         "va": "Disseny de recursos"
+      }
+    },
+    {
+      "id": "challenge-framing",
+      "visible": true,
+      "label": {
+        "es": "Formulación de retos",
+        "en": "Challenge framing",
+        "va": "Formulació de reptes"
+      }
+    },
+    {
+      "id": "vet-design",
+      "visible": true,
+      "label": {
+        "es": "Diseño FP",
+        "en": "VET design",
+        "va": "Disseny FP"
+      }
+    },
+    {
+      "id": "pedagogy",
+      "visible": true,
+      "label": {
+        "es": "Pedagogía",
+        "en": "Pedagogy",
+        "va": "Pedagogia"
+      }
+    },
+    {
+      "id": "transfer-support",
+      "visible": true,
+      "label": {
+        "es": "Apoyo a la transferencia",
+        "en": "Transfer support",
+        "va": "Suport a la transferència"
       }
     }
   ],
@@ -2957,6 +3074,62 @@ export const MARKETPLACE_CONFIG = {
         "es": "Requiere NDA",
         "en": "NDA required",
         "va": "Requereix NDA"
+      }
+    }
+  ],
+  "objectTypeLabels": [
+    {
+      "id": "challenge",
+      "visible": true,
+      "label": {
+        "es": "Reto",
+        "en": "Challenge",
+        "va": "Repte"
+      }
+    },
+    {
+      "id": "resource",
+      "visible": true,
+      "label": {
+        "es": "Recurso",
+        "en": "Resource",
+        "va": "Recurs"
+      }
+    },
+    {
+      "id": "pilot",
+      "visible": true,
+      "label": {
+        "es": "Pilotaje",
+        "en": "Pilot",
+        "va": "Pilotatge"
+      }
+    },
+    {
+      "id": "case",
+      "visible": true,
+      "label": {
+        "es": "Caso",
+        "en": "Case",
+        "va": "Cas"
+      }
+    },
+    {
+      "id": "proposal",
+      "visible": true,
+      "label": {
+        "es": "Propuesta",
+        "en": "Proposal",
+        "va": "Proposta"
+      }
+    },
+    {
+      "id": "mentoring",
+      "visible": true,
+      "label": {
+        "es": "Mentoría",
+        "en": "Mentoring",
+        "va": "Mentoria"
       }
     }
   ],
@@ -17953,6 +18126,33 @@ export const MARKETPLACE_CONFIG = {
           "en": "Resolved",
           "va": "Resolt"
         }
+      },
+      {
+        "id": "published",
+        "visible": true,
+        "label": {
+          "es": "Publicado",
+          "en": "Published",
+          "va": "Publicat"
+        }
+      },
+      {
+        "id": "documented",
+        "visible": true,
+        "label": {
+          "es": "Documentado",
+          "en": "Documented",
+          "va": "Documentat"
+        }
+      },
+      {
+        "id": "archived",
+        "visible": true,
+        "label": {
+          "es": "Archivado",
+          "en": "Archived",
+          "va": "Arxivat"
+        }
       }
     ],
     "type": [
@@ -19371,6 +19571,60 @@ export const MARKETPLACE_CONFIG = {
           "en": "Public administration",
           "va": "Administració pública"
         }
+      },
+      {
+        "id": "cultural-organisations",
+        "visible": true,
+        "label": {
+          "es": "Entidades culturales",
+          "en": "Cultural organisations",
+          "va": "Entitats culturals"
+        }
+      },
+      {
+        "id": "ngos",
+        "visible": true,
+        "label": {
+          "es": "ONG",
+          "en": "NGOs",
+          "va": "ONG"
+        }
+      },
+      {
+        "id": "creative-smes",
+        "visible": true,
+        "label": {
+          "es": "Pymes creativas",
+          "en": "Creative SMEs",
+          "va": "Pimes creatives"
+        }
+      },
+      {
+        "id": "local-administration",
+        "visible": true,
+        "label": {
+          "es": "Administraciones locales",
+          "en": "Local administrations",
+          "va": "Administracions locals"
+        }
+      },
+      {
+        "id": "facilitators",
+        "visible": true,
+        "label": {
+          "es": "Facilitadores",
+          "en": "Facilitators",
+          "va": "Facilitadors"
+        }
+      },
+      {
+        "id": "sector-associations",
+        "visible": true,
+        "label": {
+          "es": "Asociaciones sectoriales",
+          "en": "Sector associations",
+          "va": "Associacions sectorials"
+        }
       }
     ],
     "competences": [
@@ -19872,7 +20126,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "co-design",
         "visible": true,
         "label": {
-          "es": "Co-diseno",
+          "es": "Co-diseño",
           "en": "Co-design",
           "va": "Codisseny"
         }
@@ -19883,16 +20137,16 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Transferencia Track B",
           "en": "Track B transfer",
-          "va": "Transferencia Track B"
+          "va": "Transferència Track B"
         }
       },
       {
         "id": "ai-ethics",
         "visible": true,
         "label": {
-          "es": "Etica de IA",
+          "es": "Ética de IA",
           "en": "AI ethics",
-          "va": "Etica d'IA"
+          "va": "Ètica d'IA"
         }
       },
       {
@@ -19908,16 +20162,16 @@ export const MARKETPLACE_CONFIG = {
         "id": "data-protection",
         "visible": true,
         "label": {
-          "es": "Proteccion de datos",
+          "es": "Protección de datos",
           "en": "Data protection",
-          "va": "Proteccio de dades"
+          "va": "Protecció de dades"
         }
       },
       {
         "id": "curriculum-design",
         "visible": true,
         "label": {
-          "es": "Diseno curricular",
+          "es": "Diseño curricular",
           "en": "Curriculum design",
           "va": "Disseny curricular"
         }
@@ -19926,9 +20180,45 @@ export const MARKETPLACE_CONFIG = {
         "id": "resource-design",
         "visible": true,
         "label": {
-          "es": "Diseno de recursos",
+          "es": "Diseño de recursos",
           "en": "Resource design",
           "va": "Disseny de recursos"
+        }
+      },
+      {
+        "id": "challenge-framing",
+        "visible": true,
+        "label": {
+          "es": "Formulación de retos",
+          "en": "Challenge framing",
+          "va": "Formulació de reptes"
+        }
+      },
+      {
+        "id": "vet-design",
+        "visible": true,
+        "label": {
+          "es": "Diseño FP",
+          "en": "VET design",
+          "va": "Disseny FP"
+        }
+      },
+      {
+        "id": "pedagogy",
+        "visible": true,
+        "label": {
+          "es": "Pedagogía",
+          "en": "Pedagogy",
+          "va": "Pedagogia"
+        }
+      },
+      {
+        "id": "transfer-support",
+        "visible": true,
+        "label": {
+          "es": "Apoyo a la transferencia",
+          "en": "Transfer support",
+          "va": "Suport a la transferència"
         }
       }
     ],
