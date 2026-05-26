@@ -2766,12 +2766,13 @@ function renderValidationDetail(item) {
   // ── S1: Objeto de validación ──────────────────────────────────────────────
   const objectTitle = pickLang(validation.objectTitle);
   const objectType = validation.objectType || '';
+  const objectTypeLabel = getLabelFromArray(MARKETPLACE_CONFIG.objectTypeLabels, objectType, objectType);
   const validationQ = pickLang(validation.validationQuestion);
   let objectHtml = '';
   if (pres.object !== false && (objectTitle || validationQ)) {
     objectHtml = `
       <div class="mt-2 space-y-4">
-        ${objectType ? `<p class="text-xs font-bold uppercase tracking-wide text-eu-blue">${esc(objectType)}</p>` : ''}
+        ${objectTypeLabel ? `<p class="text-xs font-bold uppercase tracking-wide text-eu-blue">${esc(objectTypeLabel)}</p>` : ''}
         ${objectTitle ? `<p class="text-base font-bold leading-snug text-eu-text">${esc(objectTitle)}</p>` : ''}
         ${validationQ ? `
           <div class="rounded-lg border-l-4 border-eu-blue bg-eu-bg px-4 py-3">
@@ -3006,7 +3007,7 @@ function renderValidationChipPanel(item) {
     pickLang(item.validationTypeLabel),
     pickLang(item.validationStageLabel),
     pickLang(item.decisionOutcomeLabel),
-    ...asArray(item.classification?.tripleTransition).map(id => pickLang({ es: id, en: id, va: id })),
+    ...asArray(item.classification?.tripleTransition).map(id => getLabelFromArray(MARKETPLACE_CONFIG.transitionLabels, id)).filter(Boolean),
     ...asArray(tags),
   ].filter(Boolean);
   if (!chips.length) return '';
