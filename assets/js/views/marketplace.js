@@ -1315,8 +1315,8 @@ function renderValidationCard(item, tab) {
       </div>`
     : '';
 
-  // ── Ventana de validación ─────────────────────────────────────────────────
-  const windowLabel = pres.showWindow !== false ? pickLang(core.validationWindow?.label) : '';
+  // ── Ventana de validación (computed top-level, not in core) ──────────────
+  const windowLabel = pres.showWindow !== false ? pickLang(item.validationWindow?.label) : '';
 
   // ── Entorno de validación (max 3 chips) ───────────────────────────────────
   let envHtml = '';
@@ -1344,11 +1344,12 @@ function renderValidationCard(item, tab) {
     dlHtml = `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500"><i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i><span>${esc(n === 1 ? `1 ${uiText('downloadable')}` : `${n} ${uiText('downloadables')}`)}</span></div>`;
   }
 
-  // ── Ventana + nivel de evidencia (mini-meta) ──────────────────────────────
-  const evidenceLevelLabel = pres.showEvidenceLevel !== false ? getEvidenceLevelLabel(core.evidenceLevel || item.evidence?.evidenceLevel) : '';
+  // ── Mini-meta: ventana + etapa de validación (ya traducida en computed field) ──
+  const stageLabel = pres.showEvidenceLevel !== false ? pickLang(item.validationStageLabel) : '';
+  const stageMetaLabel = pickLang({ es: 'Etapa', en: 'Stage', va: 'Etapa' });
   const miniMetaHtml = renderCardMiniMeta([
     windowLabel ? { label: uiText('window'), value: windowLabel } : null,
-    evidenceLevelLabel ? { label: pickLang({ es: 'Evidencia', en: 'Evidence', va: 'Evidència' }), value: evidenceLevelLabel } : null,
+    stageLabel ? { label: stageMetaLabel, value: stageLabel } : null,
   ].filter(Boolean));
 
   // ── CTA: "Ver validación" siempre singular ────────────────────────────────
@@ -1358,9 +1359,8 @@ function renderValidationCard(item, tab) {
     ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(ctaLabel)}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
     : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(ctaLabel)}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
 
-  // ── Badge extra: tipo de validación o sector ──────────────────────────────
-  const validationTypeLabel = getValidationTypeLabel(core.validationType);
-  const extraBadge = validationTypeLabel || getSectorLabel(core.sector);
+  // ── Badge extra: sector (validationType ya aparece como badge de estado) ──
+  const extraBadge = getSectorLabel(core.sector);
 
   const body = `
     ${mainBlockHtml}
