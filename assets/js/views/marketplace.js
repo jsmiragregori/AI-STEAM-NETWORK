@@ -1801,7 +1801,8 @@ function renderDetailHeader(item) {
 function renderDetail(item) {
   if (item.type === 'challenge') return renderChallengeDetail(item);
   if (item.type === 'case') return renderCaseDetail(item);
-  if (item.type === 'pilot' || item.type === 'validation') return renderPilotDetail(item);
+  if (item.type === 'validation') return renderValidationDetail(item);
+  if (item.type === 'pilot') return renderPilotDetail(item);
   if (item.type === 'mentoring') return renderMentoringDetail(item);
   return renderGenericDetail(item);
 }
@@ -2620,6 +2621,277 @@ function renderCaseDetail(item) {
   return renderDetailLayout(item, mainHtml, renderDetailChipPanel(item));
 }
 
+/* ─── Validation v2 detail ─── */
+
+function renderValidationDetail(item) {
+  const core = item.core || {};
+  const pres = item.presentation?.detail?.sections || {};
+  const validation = item.validation || {};
+  const criteria = item.criteria || {};
+  const evidence = item.evidence || {};
+  const decision = item.decision || {};
+  const trackRouting = item.trackRouting || {};
+  const ownership = item.ownership || {};
+  const downloads = item.downloads || {};
+  const resources = item.resources || {};
+  const relations = item.relations || {};
+
+  // ── S1: Objeto de validación ──────────────────────────────────────────────
+  const objectTitle = pickLang(validation.objectTitle);
+  const objectType = validation.objectType || '';
+  const validationQ = pickLang(validation.validationQuestion);
+  let objectHtml = '';
+  if (pres.object !== false && (objectTitle || validationQ)) {
+    objectHtml = `
+      <div class="mt-2 space-y-4">
+        ${objectType ? `<p class="text-xs font-bold uppercase tracking-wide text-eu-blue">${esc(objectType)}</p>` : ''}
+        ${objectTitle ? `<p class="text-base font-bold leading-snug text-eu-text">${esc(objectTitle)}</p>` : ''}
+        ${validationQ ? `
+          <div class="rounded-lg border-l-4 border-eu-blue bg-eu-bg px-4 py-3">
+            <p class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Pregunta de validación', en: 'Validation question', va: 'Pregunta de validació' }))}</p>
+            <p class="mt-1 text-sm leading-6 text-gray-700">${esc(validationQ)}</p>
+          </div>` : ''}
+      </div>`;
+  }
+  const objectSection = renderStructuredSection({ es: 'Objeto de validación', en: 'Validation object', va: 'Objecte de validació' }, 'clipboard-check', objectHtml);
+
+  // ── S2: Necesidad y contexto ──────────────────────────────────────────────
+  const need = pickLang(validation.need);
+  const context = pickLang(validation.context);
+  let needContextHtml = '';
+  if ((pres.need !== false || pres.context !== false) && (need || context)) {
+    needContextHtml = `
+      <div class="mt-2 space-y-4">
+        ${need && pres.need !== false ? `
+          <div>
+            <p class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Necesidad identificada', en: 'Identified need', va: 'Necessitat identificada' }))}</p>
+            <p class="mt-1 text-sm leading-7 text-gray-700">${esc(need)}</p>
+          </div>` : ''}
+        ${context && pres.context !== false ? `
+          <div class="border-t border-eu-border pt-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Contexto', en: 'Context', va: 'Context' }))}</p>
+            <p class="mt-1 text-sm leading-7 text-gray-700">${esc(context)}</p>
+          </div>` : ''}
+      </div>`;
+  }
+  const needContextSection = renderStructuredSection({ es: 'Necesidad y contexto', en: 'Need and context', va: 'Necessitat i context' }, 'help-circle', needContextHtml);
+
+  // ── S3: Método de validación ──────────────────────────────────────────────
+  const method = pickLang(validation.method);
+  const envItems = asArray(validation.validationEnvironment).map(e => pickLang(e.label)).filter(Boolean);
+  let methodHtml = '';
+  if (pres.method !== false && (method || envItems.length)) {
+    methodHtml = `
+      <div class="mt-2 space-y-4">
+        ${method ? `<p class="text-sm leading-7 text-gray-700">${esc(method)}</p>` : ''}
+        ${envItems.length ? `
+          <div class="border-t border-eu-border pt-4">
+            <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Entorno de validación', en: 'Validation environment', va: 'Entorn de validació' }))}</p>
+            <div class="flex flex-wrap gap-2">${envItems.map(l => renderBadge(l, 'bg-slate-50 text-slate-700 border-slate-200')).join('')}</div>
+          </div>` : ''}
+      </div>`;
+  }
+  const methodSection = renderStructuredSection({ es: 'Método de validación', en: 'Validation method', va: 'Mètode de validació' }, 'search', methodHtml);
+
+  // ── S4: Criterios de validación ───────────────────────────────────────────
+  const CRITERIA_TONES = {
+    positive:   { badge: 'bg-green-50 text-green-800 border-green-200', icon: 'check-circle-2', iconColor: 'text-green-600' },
+    medium:     { badge: 'bg-amber-50 text-amber-800 border-amber-200', icon: 'minus-circle', iconColor: 'text-amber-500' },
+    manageable: { badge: 'bg-blue-50 text-blue-800 border-blue-200', icon: 'info', iconColor: 'text-blue-500' },
+    negative:   { badge: 'bg-red-50 text-red-700 border-red-200', icon: 'x-circle', iconColor: 'text-red-500' },
+  };
+  const CRITERIA_RESULT_LABELS = {
+    positive:   { es: 'Positivo', en: 'Positive', va: 'Positiu' },
+    medium:     { es: 'Medio', en: 'Medium', va: 'Mitjà' },
+    manageable: { es: 'Manejable', en: 'Manageable', va: 'Manejable' },
+    negative:   { es: 'Negativo', en: 'Negative', va: 'Negatiu' },
+  };
+  const criteriaItems = asArray(criteria.items);
+  let criteriaHtml = '';
+  if (pres.criteria !== false && criteriaItems.length) {
+    criteriaHtml = `
+      <div class="mt-2 space-y-3">
+        ${criteriaItems.map(c => {
+          const tone = CRITERIA_TONES[c.result] || CRITERIA_TONES.medium;
+          const resultLabel = pickLang(CRITERIA_RESULT_LABELS[c.result]) || c.result || '';
+          const label = pickLang(c.label);
+          const note = pickLang(c.note);
+          return `
+            <div class="rounded-xl border border-eu-border bg-eu-bg p-4">
+              <div class="flex items-center justify-between gap-3">
+                <p class="text-sm font-bold text-eu-text">${esc(label)}</p>
+                <span class="inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-bold ${tone.badge}">
+                  <i data-lucide="${tone.icon}" class="h-3 w-3 ${tone.iconColor}"></i>
+                  ${esc(resultLabel)}
+                </span>
+              </div>
+              ${note ? `<p class="mt-2 text-xs leading-5 text-gray-600">${esc(note)}</p>` : ''}
+            </div>`;
+        }).join('')}
+      </div>`;
+  }
+  const criteriaSection = renderStructuredSection({ es: 'Criterios de validación', en: 'Validation criteria', va: 'Criteris de validació' }, 'list-checks', criteriaHtml);
+
+  // ── S5: Evidencia utilizada ───────────────────────────────────────────────
+  const collectionMethod = pickLang(evidence.collectionMethod);
+  const indicators = asArray(evidence.indicators);
+  const limitations = pickLang(evidence.limitations);
+  let evidenceHtml = '';
+  if (pres.evidence !== false && (collectionMethod || indicators.length || limitations)) {
+    evidenceHtml = `
+      <div class="mt-2 space-y-4">
+        ${collectionMethod ? `<p class="text-sm leading-7 text-gray-700">${esc(collectionMethod)}</p>` : ''}
+        ${indicators.length ? `
+          <div class="border-t border-eu-border pt-4">
+            <p class="mb-2 text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Indicadores', en: 'Indicators', va: 'Indicadors' }))}</p>
+            <div class="space-y-2">
+              ${indicators.map(ind => {
+                const indLabel = pickLang(ind.label);
+                const metric = pickLang(ind.metric);
+                return `
+                  <div class="flex items-baseline justify-between gap-3 rounded-lg border border-eu-border bg-white px-3 py-2">
+                    <span class="text-xs font-bold text-eu-text">${esc(indLabel)}</span>
+                    ${metric ? `<span class="text-right text-xs text-gray-500">${esc(metric)}</span>` : ''}
+                  </div>`;
+              }).join('')}
+            </div>
+          </div>` : ''}
+        ${limitations ? `
+          <div class="border-t border-eu-border pt-4">
+            <p class="text-xs font-bold uppercase tracking-wide text-amber-600">${esc(pickLang({ es: 'Límites y confidencialidad', en: 'Limitations and confidentiality', va: 'Límits i confidencialitat' }))}</p>
+            <p class="mt-1 text-xs leading-5 text-amber-700">${esc(limitations)}</p>
+          </div>` : ''}
+      </div>`;
+  }
+  const evidenceSection = renderStructuredSection({ es: 'Evidencia utilizada', en: 'Evidence used', va: 'Evidència utilitzada' }, 'bar-chart-3', evidenceHtml);
+
+  // ── S6: Decisión y justificación ──────────────────────────────────────────
+  const decisionLabel = pickLang(decision.label);
+  const decisionRationale = pickLang(decision.rationale);
+  const decisionOutcomeLabel = pickLang(item.decisionOutcomeLabel);
+  const nextStepLabel = pickLang(decision.nextStep?.label);
+  let decisionHtml = '';
+  if (pres.decision !== false && (decisionLabel || decisionRationale)) {
+    const outcomeTone = (decision.outcome || '').includes('track-a') || (decision.outcome || '').includes('track-b') || (decision.outcome || '').includes('validated')
+      ? 'bg-green-50 text-green-800 border-green-200'
+      : (decision.outcome || '').includes('rejected') ? 'bg-red-50 text-red-700 border-red-200'
+      : 'bg-eu-bg text-gray-700 border-eu-border';
+    decisionHtml = `
+      <div class="mt-2 space-y-4">
+        ${decisionOutcomeLabel ? `<span class="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-sm font-bold ${outcomeTone}"><i data-lucide="check-circle-2" class="h-4 w-4"></i>${esc(decisionOutcomeLabel)}</span>` : ''}
+        ${decisionLabel ? `<p class="text-base font-bold text-eu-text">${esc(decisionLabel)}</p>` : ''}
+        ${decisionRationale ? `<p class="text-sm leading-7 text-gray-700">${esc(decisionRationale)}</p>` : ''}
+        ${nextStepLabel ? `
+          <div class="flex items-start gap-2 rounded-lg border border-eu-blue/20 bg-eu-blue/5 px-4 py-3">
+            <i data-lucide="arrow-right-circle" class="mt-0.5 h-4 w-4 shrink-0 text-eu-blue"></i>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wide text-eu-blue">${esc(pickLang({ es: 'Próximo paso', en: 'Next step', va: 'Pròxim pas' }))}</p>
+              <p class="mt-0.5 text-sm text-gray-700">${esc(nextStepLabel)}</p>
+            </div>
+          </div>` : ''}
+      </div>`;
+  }
+  const decisionSection = renderStructuredSection({ es: 'Decisión y justificación', en: 'Decision and rationale', va: 'Decisió i justificació' }, 'gavel', decisionHtml);
+
+  // ── S7: Descargables ──────────────────────────────────────────────────────
+  const downloadsSection = pres.downloads !== false ? renderCaseDownloadsBlock(item) : '';
+
+  // ── S8: Recursos externos ─────────────────────────────────────────────────
+  const resourcesSection = pres.resources !== false ? renderCaseResourcesBlock(item) : '';
+
+  // ── S9: Personas y entidades ──────────────────────────────────────────────
+  const proposer = ownership.proposer;
+  const validators = asArray(ownership.validators);
+  let peopleHtml = '';
+  if (pres.people !== false && (proposer?.name || validators.length)) {
+    const proposerHtml = proposer?.name ? `
+      <div class="rounded-xl border border-eu-border bg-eu-bg p-4 mb-4">
+        <span class="text-xs font-bold text-gray-400 block mb-1">${esc(pickLang({ es: 'Proponente del reto', en: 'Challenge proposer', va: 'Proponent del repte' }))}</span>
+        <p class="text-sm font-bold text-eu-text">${esc(pickLang(proposer.name) || proposer.name)}</p>
+        ${proposer.role ? `<p class="mt-0.5 text-xs leading-5 text-gray-500">${esc(pickLang(proposer.role))}</p>` : ''}
+      </div>` : '';
+    const validatorsHtml = validators.length ? `
+      <div class="rounded-xl border border-eu-border bg-eu-bg p-4">
+        <span class="text-xs font-bold text-gray-400 block mb-2">${esc(pickLang({ es: 'Entidades validadoras', en: 'Validating entities', va: 'Entitats validadores' }))}</span>
+        <div class="space-y-3">
+          ${validators.map(v => `
+            <div class="flex items-start gap-2 border-b border-eu-border pb-2 last:border-b-0 last:pb-0">
+              <i data-lucide="shield-check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-eu-blue"></i>
+              <div>
+                <p class="text-xs font-bold text-eu-text">${esc(v.name || '')}</p>
+                ${v.role ? `<p class="mt-0.5 text-[11px] leading-4 text-gray-500">${esc(pickLang(v.role))}</p>` : ''}
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>` : '';
+    peopleHtml = `<div class="mt-2 min-w-0">${proposerHtml}${validatorsHtml}</div>`;
+  }
+  const peopleSection = renderStructuredSection({ es: 'Personas y entidades', en: 'Entities involved', va: 'Persones i entitats' }, 'user-round-check', peopleHtml);
+
+  // ── S10: Derivación Track A / Track B ─────────────────────────────────────
+  const routeLabel = pickLang(trackRouting.label);
+  const academicReview = trackRouting.academicReview;
+  let trackHtml = '';
+  if (pres.trackRouting !== false && (routeLabel || trackRouting.route)) {
+    const routeBadgeTone = trackRouting.route === 'track-a'
+      ? 'bg-purple-50 text-purple-800 border-purple-200'
+      : trackRouting.route === 'track-b'
+        ? 'bg-blue-50 text-blue-800 border-blue-200'
+        : 'bg-eu-bg text-gray-700 border-eu-border';
+    const routeBadgeLabel = trackRouting.route === 'track-a' ? 'Track A' : trackRouting.route === 'track-b' ? 'Track B' : trackRouting.route;
+    trackHtml = `
+      <div class="mt-2 space-y-4">
+        ${routeBadgeLabel ? renderBadge(routeBadgeLabel, routeBadgeTone) : ''}
+        ${routeLabel ? `<p class="text-sm leading-7 text-gray-700">${esc(routeLabel)}</p>` : ''}
+        ${academicReview?.enabled && academicReview?.reviewer?.name ? `
+          <div class="flex items-start gap-2 rounded-lg border border-eu-border bg-eu-bg px-4 py-3">
+            <i data-lucide="graduation-cap" class="mt-0.5 h-4 w-4 shrink-0 text-gray-400"></i>
+            <div>
+              <p class="text-xs font-bold text-gray-500">${esc(pickLang({ es: 'Revisión académica', en: 'Academic review', va: 'Revisió acadèmica' }))}</p>
+              <p class="mt-0.5 text-sm font-bold text-eu-text">${esc(academicReview.reviewer.name)}</p>
+              ${academicReview.note ? `<p class="mt-0.5 text-xs text-gray-500">${esc(pickLang(academicReview.note))}</p>` : ''}
+            </div>
+          </div>` : ''}
+      </div>`;
+  }
+  const trackSection = renderStructuredSection({ es: 'Derivación Track A / Track B', en: 'Track A / Track B routing', va: 'Derivació Track A / Track B' }, 'git-branch', trackHtml);
+
+  const mainHtml = [
+    objectSection,
+    needContextSection,
+    methodSection,
+    criteriaSection,
+    evidenceSection,
+    decisionSection,
+    downloadsSection,
+    resourcesSection,
+    peopleSection,
+    trackSection,
+  ].filter(Boolean).join('');
+
+  return renderDetailLayout(item, mainHtml, renderValidationChipPanel(item));
+}
+
+function renderValidationChipPanel(item) {
+  const tags = pickLang(item.core?.tags) || pickLang(item.classification?.tags) || [];
+  const chips = [
+    getSectorLabel(item.core?.sector),
+    pickLang(item.validationTypeLabel),
+    pickLang(item.validationStageLabel),
+    pickLang(item.decisionOutcomeLabel),
+    ...asArray(item.classification?.tripleTransition).map(id => pickLang({ es: id, en: id, va: id })),
+    ...asArray(tags),
+  ].filter(Boolean);
+  if (!chips.length) return '';
+  return `
+    <section class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
+      <h2 class="text-base font-extrabold text-eu-text">${esc(uiText('tags'))}</h2>
+      <div class="mt-3 flex flex-wrap gap-2">
+        ${chips.slice(0, 8).map(chip => renderBadge(chip)).join('')}
+      </div>
+    </section>`;
+}
+
 function renderPilotDetail(item) {
   const isV2 = item.pilotPlan != null || item.ownership?.lead != null;
   return isV2 ? renderPilotDetailV2(item) : renderPilotDetailLegacy(item);
@@ -3060,14 +3332,14 @@ function renderDetailEmpty() {
 function renderDetailChipPanel(item) {
   const focus = asArray(item.classification?.aiSteamFocus).map(getFocusLabel).filter(Boolean);
   const tags = pickLang(item.core?.tags, []);
-  const isPilotOrValidation = item.type === 'pilot' || item.type === 'validation';
-  const helixChips = isPilotOrValidation ? asArray(item.core?.helix).map(getHelixLabel).filter(Boolean) : [];
+  const isPilot = item.type === 'pilot';
+  const helixChips = isPilot ? asArray(item.core?.helix).map(getHelixLabel).filter(Boolean) : [];
   const chips = [
     getSectorLabel(item.core?.sector),
     getEvidenceLabel(item.classification?.evidenceMaturity),
     getEngagementLabel(item.classification?.engagementLevel),
-    isPilotOrValidation ? getPilotTypeLabel(item.core?.pilotType) : null,
-    isPilotOrValidation ? getPilotStatusLabel(item.classification?.pilotStatus) : null,
+    isPilot ? getPilotTypeLabel(item.core?.pilotType) : null,
+    isPilot ? getPilotStatusLabel(item.classification?.pilotStatus) : null,
     ...helixChips,
     ...focus,
     ...asArray(tags),
@@ -3089,15 +3361,17 @@ function renderAccessPanel(item) {
   const url = pickLang(access.url) || (typeof access.publicUrl === 'string' && access.publicUrl ? access.publicUrl : '');
   
   const isCase = item.type === 'case';
-  const pageLicense = isCase ? access.pageLicense : null;
+  const isValidation = item.type === 'validation';
+  const pageLicense = (isCase || isValidation) ? access.pageLicense : null;
   const codeLicense = isCase ? access.codeLicense : null;
-  const dataAvailability = isCase ? getDataAvailabilityLabel(access.dataAvailability) : null;
+  const materialLicense = isValidation ? access.materialLicense : null;
+  const dataAvailability = (isCase || isValidation) ? getDataAvailabilityLabel(access.dataAvailability) : null;
   
   const license = pageLicense || (typeof access.license === 'string' ? access.license : pickLang(access.license));
   const rightsNote = pickLang(access.rightsNote);
   const privacyLevel = access.privacyLevel || access.pageVisibility;
 
-  if (!url && !instructions && !license && !rightsNote && !privacyLevel && !codeLicense && !dataAvailability) return '';
+  if (!url && !instructions && !license && !rightsNote && !privacyLevel && !codeLicense && !materialLicense && !dataAvailability) return '';
 
   const PRIVACY = {
     public:     { icon: 'globe',      label: { es: 'Acceso público',      en: 'Public access',      va: 'Accés públic' } },
@@ -3117,17 +3391,22 @@ function renderAccessPanel(item) {
           ${license ? `<span class="ml-auto rounded-full bg-eu-bg px-2.5 py-0.5 text-xs font-bold text-gray-600" style="border:1px solid rgba(0,0,0,0.08)">${esc(license)}</span>` : ''}
         </div>` : ''}
 
-      <!-- Licencias adicionales y disponibilidad de datos para Casos v2 -->
-      ${isCase ? `
+      <!-- Licencias adicionales y disponibilidad de datos -->
+      ${(isCase || isValidation) ? `
         <dl class="mt-4 space-y-2 border-t border-eu-border pt-4">
           ${codeLicense ? `
             <div class="flex items-baseline justify-between gap-2">
               <dt class="shrink-0 text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Licencia código', en: 'Code license', va: 'Llicència codi' }))}</dt>
               <dd class="text-right text-xs font-semibold text-gray-700">${esc(codeLicense)}</dd>
             </div>` : ''}
+          ${materialLicense ? `
+            <div class="flex items-baseline justify-between gap-2">
+              <dt class="shrink-0 text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Licencia materiales', en: 'Material license', va: 'Llicència materials' }))}</dt>
+              <dd class="text-right text-xs font-semibold text-gray-700">${esc(materialLicense)}</dd>
+            </div>` : ''}
           ${dataAvailability ? `
             <div class="flex items-baseline justify-between gap-2">
-              <dt class="shrink-0 text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Datos del caso', en: 'Case data', va: 'Dades del cas' }))}</dt>
+              <dt class="shrink-0 text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Disponibilidad de datos', en: 'Data availability', va: 'Disponibilitat de dades' }))}</dt>
               <dd class="text-right text-xs font-semibold text-gray-700">${esc(dataAvailability)}</dd>
             </div>` : ''}
         </dl>` : ''}
@@ -3177,17 +3456,26 @@ function renderTraceabilityPanel(item) {
 }
 
 function renderOperationalSummary(item) {
-  const entity = pickLang(item.core?.entity?.name);
-  const status = getStatusLabel(item.core?.status);
-  const typeLabel = getTypeLabel(item.type);
+  const isValidation = item.type === 'validation';
+  const entity = isValidation
+    ? (pickLang(item.ownership?.proposer?.name) || pickLang(item.core?.entity?.name))
+    : pickLang(item.core?.entity?.name);
+  const status = isValidation
+    ? (pickLang(item.validationStageLabel) || getStatusLabel(item.core?.status))
+    : getStatusLabel(item.core?.status);
+  const typeLabel = isValidation
+    ? (pickLang(item.validationTypeLabel) || getTypeLabel(item.type))
+    : getTypeLabel(item.type);
   const sector = getSectorLabel(item.core?.sector);
-  const maturity = getEvidenceLabel(item.classification?.evidenceMaturity);
-  const engagement = getEngagementLabel(item.classification?.engagementLevel);
+  const maturity = isValidation ? '' : getEvidenceLabel(item.classification?.evidenceMaturity);
+  const engagement = isValidation ? '' : getEngagementLabel(item.classification?.engagementLevel);
   const created = pickLang(item.core?.publishedAtLabel);
   const updated = pickLang(item.core?.revisionDateLabel);
+  const window = isValidation ? pickLang(item.validationWindow?.label) : '';
 
   const metaRows = [
     sector && [uiText('sector') || 'Sector', sector],
+    window && [pickLang({ es: 'Ventana', en: 'Window', va: 'Finestra' }), window],
     maturity && [pickLang({ es: 'Madurez', en: 'Maturity', va: 'Maduresa' }), maturity],
     engagement && [pickLang({ es: 'Participación', en: 'Participation', va: 'Participació' }), engagement],
     created && [pickLang(UI_TEXT.created), created],
