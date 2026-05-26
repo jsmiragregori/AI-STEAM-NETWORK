@@ -1840,27 +1840,27 @@ export const MARKETPLACE_CONFIG = {
       "id": "preparation-guide",
       "visible": true,
       "label": {
-        "es": "GuÃ­a de preparaciÃ³n",
+        "es": "Guia de preparacion",
         "en": "Preparation guide",
-        "va": "Guia de preparaciÃ³"
+        "va": "Guia de preparacio"
       }
     },
     {
       "id": "intake-form",
       "visible": true,
       "label": {
-        "es": "Formulario de preparaciÃ³n",
+        "es": "Formulario de preparacion",
         "en": "Intake form",
-        "va": "Formulari de preparaciÃ³"
+        "va": "Formulari de preparacio"
       }
     },
     {
       "id": "ethics-note",
       "visible": true,
       "label": {
-        "es": "Nota Ã©tica",
+        "es": "Nota etica",
         "en": "Ethics note",
-        "va": "Nota Ã¨tica"
+        "va": "Nota etica"
       }
     },
     {
@@ -1876,9 +1876,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "publication-note",
       "visible": true,
       "label": {
-        "es": "Nota de publicaciÃ³n",
+        "es": "Nota de publicacion",
         "en": "Publication note",
-        "va": "Nota de publicaciÃ³"
+        "va": "Nota de publicacio"
       }
     },
     {
@@ -2683,18 +2683,18 @@ export const MARKETPLACE_CONFIG = {
       "id": "technical-mentoring",
       "visible": true,
       "label": {
-        "es": "MentorÃ­a tÃ©cnica",
+        "es": "Mentoria tecnica",
         "en": "Technical mentoring",
-        "va": "Mentoria tÃ¨cnica"
+        "va": "Mentoria tecnica"
       }
     },
     {
       "id": "pedagogical-mentoring",
       "visible": true,
       "label": {
-        "es": "MentorÃ­a pedagÃ³gica",
+        "es": "Mentoria pedagogica",
         "en": "Pedagogical mentoring",
-        "va": "Mentoria pedagÃ²gica"
+        "va": "Mentoria pedagogica"
       }
     },
     {
@@ -2703,14 +2703,14 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Apoyo a transferencia",
         "en": "Transfer support",
-        "va": "Suport a transferÃ¨ncia"
+        "va": "Suport a transferencia"
       }
     },
     {
       "id": "resource-design",
       "visible": true,
       "label": {
-        "es": "DiseÃ±o de recursos",
+        "es": "Diseno de recursos",
         "en": "Resource design",
         "va": "Disseny de recursos"
       }
@@ -2719,9 +2719,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "challenge-framing",
       "visible": true,
       "label": {
-        "es": "FormulaciÃ³n de retos",
+        "es": "Formulacion de retos",
         "en": "Challenge framing",
-        "va": "FormulaciÃ³ de reptes"
+        "va": "Formulacio de reptes"
       }
     }
   ],
@@ -2757,9 +2757,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "upcoming",
       "visible": true,
       "label": {
-        "es": "PrÃ³ximamente",
+        "es": "Proximamente",
         "en": "Upcoming",
-        "va": "PrÃ²ximament"
+        "va": "Proximament"
       }
     }
   ],
@@ -2786,7 +2786,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "co-design",
       "visible": true,
       "label": {
-        "es": "Co-diseÃ±o",
+        "es": "Co-diseno",
         "en": "Co-design",
         "va": "Codisseny"
       }
@@ -2797,16 +2797,16 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Transferencia Track B",
         "en": "Track B transfer",
-        "va": "TransferÃ¨ncia Track B"
+        "va": "Transferencia Track B"
       }
     },
     {
       "id": "ai-ethics",
       "visible": true,
       "label": {
-        "es": "Ã‰tica de IA",
+        "es": "Etica de IA",
         "en": "AI ethics",
-        "va": "Ãˆtica d'IA"
+        "va": "Etica d'IA"
       }
     },
     {
@@ -2822,16 +2822,16 @@ export const MARKETPLACE_CONFIG = {
       "id": "data-protection",
       "visible": true,
       "label": {
-        "es": "ProtecciÃ³n de datos",
+        "es": "Proteccion de datos",
         "en": "Data protection",
-        "va": "ProtecciÃ³ de dades"
+        "va": "Proteccio de dades"
       }
     },
     {
       "id": "curriculum-design",
       "visible": true,
       "label": {
-        "es": "DiseÃ±o curricular",
+        "es": "Diseno curricular",
         "en": "Curriculum design",
         "va": "Disseny curricular"
       }
@@ -2840,7 +2840,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "resource-design",
       "visible": true,
       "label": {
-        "es": "DiseÃ±o de recursos",
+        "es": "Diseno de recursos",
         "en": "Resource design",
         "va": "Disseny de recursos"
       }
@@ -2853,16 +2853,16 @@ export const MARKETPLACE_CONFIG = {
       "label": {
         "es": "Online",
         "en": "Online",
-        "va": "En lÃ­nia"
+        "va": "En linia"
       }
     },
     {
       "id": "hybrid",
       "visible": true,
       "label": {
-        "es": "HÃ­brida",
+        "es": "Hibrida",
         "en": "Hybrid",
-        "va": "HÃ­brida"
+        "va": "Hibrida"
       }
     },
     {
@@ -2878,9 +2878,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "asynchronous",
       "visible": true,
       "label": {
-        "es": "AsÃ­ncrona",
+        "es": "Asincrona",
         "en": "Asynchronous",
-        "va": "AsÃ­ncrona"
+        "va": "Asincrona"
       }
     }
   ],
@@ -2927,18 +2927,18 @@ export const MARKETPLACE_CONFIG = {
       "id": "public-guidance",
       "visible": true,
       "label": {
-        "es": "OrientaciÃ³n pÃºblica",
+        "es": "Orientacion publica",
         "en": "Public guidance",
-        "va": "OrientaciÃ³ pÃºblica"
+        "va": "Orientacio publica"
       }
     },
     {
       "id": "standard",
       "visible": true,
       "label": {
-        "es": "EstÃ¡ndar",
+        "es": "Estandar",
         "en": "Standard",
-        "va": "EstÃ ndard"
+        "va": "Estandard"
       }
     },
     {
@@ -19614,27 +19614,27 @@ export const MARKETPLACE_CONFIG = {
         "id": "preparation-guide",
         "visible": true,
         "label": {
-          "es": "GuÃ­a de preparaciÃ³n",
+          "es": "Guia de preparacion",
           "en": "Preparation guide",
-          "va": "Guia de preparaciÃ³"
+          "va": "Guia de preparacio"
         }
       },
       {
         "id": "intake-form",
         "visible": true,
         "label": {
-          "es": "Formulario de preparaciÃ³n",
+          "es": "Formulario de preparacion",
           "en": "Intake form",
-          "va": "Formulari de preparaciÃ³"
+          "va": "Formulari de preparacio"
         }
       },
       {
         "id": "ethics-note",
         "visible": true,
         "label": {
-          "es": "Nota Ã©tica",
+          "es": "Nota etica",
           "en": "Ethics note",
-          "va": "Nota Ã¨tica"
+          "va": "Nota etica"
         }
       },
       {
@@ -19650,9 +19650,9 @@ export const MARKETPLACE_CONFIG = {
         "id": "publication-note",
         "visible": true,
         "label": {
-          "es": "Nota de publicaciÃ³n",
+          "es": "Nota de publicacion",
           "en": "Publication note",
-          "va": "Nota de publicaciÃ³"
+          "va": "Nota de publicacio"
         }
       },
       {
@@ -19769,18 +19769,18 @@ export const MARKETPLACE_CONFIG = {
         "id": "technical-mentoring",
         "visible": true,
         "label": {
-          "es": "MentorÃ­a tÃ©cnica",
+          "es": "Mentoria tecnica",
           "en": "Technical mentoring",
-          "va": "Mentoria tÃ¨cnica"
+          "va": "Mentoria tecnica"
         }
       },
       {
         "id": "pedagogical-mentoring",
         "visible": true,
         "label": {
-          "es": "MentorÃ­a pedagÃ³gica",
+          "es": "Mentoria pedagogica",
           "en": "Pedagogical mentoring",
-          "va": "Mentoria pedagÃ²gica"
+          "va": "Mentoria pedagogica"
         }
       },
       {
@@ -19789,14 +19789,14 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Apoyo a transferencia",
           "en": "Transfer support",
-          "va": "Suport a transferÃ¨ncia"
+          "va": "Suport a transferencia"
         }
       },
       {
         "id": "resource-design",
         "visible": true,
         "label": {
-          "es": "DiseÃ±o de recursos",
+          "es": "Diseno de recursos",
           "en": "Resource design",
           "va": "Disseny de recursos"
         }
@@ -19805,9 +19805,9 @@ export const MARKETPLACE_CONFIG = {
         "id": "challenge-framing",
         "visible": true,
         "label": {
-          "es": "FormulaciÃ³n de retos",
+          "es": "Formulacion de retos",
           "en": "Challenge framing",
-          "va": "FormulaciÃ³ de reptes"
+          "va": "Formulacio de reptes"
         }
       }
     ],
@@ -19843,9 +19843,9 @@ export const MARKETPLACE_CONFIG = {
         "id": "upcoming",
         "visible": true,
         "label": {
-          "es": "PrÃ³ximamente",
+          "es": "Proximamente",
           "en": "Upcoming",
-          "va": "PrÃ²ximament"
+          "va": "Proximament"
         }
       }
     ],
@@ -19872,7 +19872,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "co-design",
         "visible": true,
         "label": {
-          "es": "Co-diseÃ±o",
+          "es": "Co-diseno",
           "en": "Co-design",
           "va": "Codisseny"
         }
@@ -19883,16 +19883,16 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Transferencia Track B",
           "en": "Track B transfer",
-          "va": "TransferÃ¨ncia Track B"
+          "va": "Transferencia Track B"
         }
       },
       {
         "id": "ai-ethics",
         "visible": true,
         "label": {
-          "es": "Ã‰tica de IA",
+          "es": "Etica de IA",
           "en": "AI ethics",
-          "va": "Ãˆtica d'IA"
+          "va": "Etica d'IA"
         }
       },
       {
@@ -19908,16 +19908,16 @@ export const MARKETPLACE_CONFIG = {
         "id": "data-protection",
         "visible": true,
         "label": {
-          "es": "ProtecciÃ³n de datos",
+          "es": "Proteccion de datos",
           "en": "Data protection",
-          "va": "ProtecciÃ³ de dades"
+          "va": "Proteccio de dades"
         }
       },
       {
         "id": "curriculum-design",
         "visible": true,
         "label": {
-          "es": "DiseÃ±o curricular",
+          "es": "Diseno curricular",
           "en": "Curriculum design",
           "va": "Disseny curricular"
         }
@@ -19926,7 +19926,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "resource-design",
         "visible": true,
         "label": {
-          "es": "DiseÃ±o de recursos",
+          "es": "Diseno de recursos",
           "en": "Resource design",
           "va": "Disseny de recursos"
         }
@@ -19939,16 +19939,16 @@ export const MARKETPLACE_CONFIG = {
         "label": {
           "es": "Online",
           "en": "Online",
-          "va": "En lÃ­nia"
+          "va": "En linia"
         }
       },
       {
         "id": "hybrid",
         "visible": true,
         "label": {
-          "es": "HÃ­brida",
+          "es": "Hibrida",
           "en": "Hybrid",
-          "va": "HÃ­brida"
+          "va": "Hibrida"
         }
       },
       {
@@ -19964,9 +19964,9 @@ export const MARKETPLACE_CONFIG = {
         "id": "asynchronous",
         "visible": true,
         "label": {
-          "es": "AsÃ­ncrona",
+          "es": "Asincrona",
           "en": "Asynchronous",
-          "va": "AsÃ­ncrona"
+          "va": "Asincrona"
         }
       }
     ],
@@ -20013,18 +20013,18 @@ export const MARKETPLACE_CONFIG = {
         "id": "public-guidance",
         "visible": true,
         "label": {
-          "es": "OrientaciÃ³n pÃºblica",
+          "es": "Orientacion publica",
           "en": "Public guidance",
-          "va": "OrientaciÃ³ pÃºblica"
+          "va": "Orientacio publica"
         }
       },
       {
         "id": "standard",
         "visible": true,
         "label": {
-          "es": "EstÃ¡ndar",
+          "es": "Estandar",
           "en": "Standard",
-          "va": "EstÃ ndard"
+          "va": "Estandard"
         }
       },
       {
