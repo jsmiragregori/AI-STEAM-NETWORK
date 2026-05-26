@@ -1899,7 +1899,7 @@ function renderDetailHeader(item) {
           ${renderBadge(pickLang(tab?.label, item.tab), 'bg-white/10 text-white border-white/20')}
           ${renderBadge(getTypeLabel(item.type), 'bg-white/10 text-white border-white/20')}
           ${renderBadge(getStatusLabel(item.core?.status), 'bg-white/10 text-white border-white/20')}
-          ${renderBadge(getEvidenceLabel(item.classification?.evidenceMaturity), 'bg-white/10 text-white border-white/20')}
+          ${item.type === 'challenge' ? renderBadge(getEvidenceLabel(item.classification?.evidenceMaturity), 'bg-white/10 text-white border-white/20') : ''}
         </div>
         <h1 class="mt-5 max-w-4xl text-3xl font-extrabold leading-tight md:text-4xl">${esc(title)}</h1>
         ${summary ? `<p class="mt-4 max-w-4xl text-base leading-7 text-white/80">${esc(summary)}</p>` : ''}
@@ -3901,8 +3901,13 @@ function renderOperationalSummary(item) {
     ? (pickLang(item.validationTypeLabel) || getTypeLabel(item.type))
     : getTypeLabel(item.type);
   const sector = getSectorLabel(item.core?.sector);
-  const maturity = isValidation ? '' : getEvidenceLabel(item.classification?.evidenceMaturity);
-  const engagement = isValidation ? '' : getEngagementLabel(item.classification?.engagementLevel);
+  const isChallenge = item.type === 'challenge';
+  const maturity = isChallenge ? getEvidenceLabel(item.classification?.evidenceMaturity) : '';
+  const engagement = isChallenge
+    ? asArray(item.classification?.contributionTypes)
+        .map(id => getLabelFromArray(MARKETPLACE_CONFIG.contributionTypeLabels, id))
+        .filter(Boolean).join(' · ')
+    : '';
   const created = pickLang(item.core?.publishedAtLabel);
   const updated = pickLang(item.core?.revisionDateLabel);
   const window = isValidation ? pickLang(item.validationWindow?.label) : '';
@@ -3911,7 +3916,7 @@ function renderOperationalSummary(item) {
     sector && [uiText('sector') || 'Sector', sector],
     window && [pickLang({ es: 'Ventana', en: 'Window', va: 'Finestra' }), window],
     maturity && [pickLang({ es: 'Madurez', en: 'Maturity', va: 'Maduresa' }), maturity],
-    engagement && [pickLang({ es: 'Participación', en: 'Participation', va: 'Participació' }), engagement],
+    engagement && [pickLang({ es: 'Contribución esperada', en: 'Expected contribution', va: 'Contribució esperada' }), engagement],
     created && [pickLang(UI_TEXT.created), created],
     updated && [pickLang(UI_TEXT.updated), updated],
   ].filter(Boolean);
