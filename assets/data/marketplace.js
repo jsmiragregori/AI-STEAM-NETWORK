@@ -6387,7 +6387,7 @@ export const MARKETPLACE_CONFIG = {
         ]
       },
       "hasDownloads": false,
-      "downloadCount": 3,
+      "downloadCount": 0,
       "cardDownloads": [],
       "presentation": {
         "card": {
@@ -17637,7 +17637,7 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "hasDownloads": false,
-        "downloadCount": 3,
+        "downloadCount": 0,
         "cardDownloads": [],
         "presentation": {
           "card": {

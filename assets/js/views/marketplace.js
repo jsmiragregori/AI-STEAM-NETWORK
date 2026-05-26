@@ -2057,7 +2057,8 @@ function renderChallengeParticipationSection(item) {
 function renderDownloadsSection(item) {
   const dl = item.downloads || {};
   const basePath = dl.basePath || '';
-  const dlItems = asArray(dl.items).filter(i => i.showOnDetail !== false);
+  const hasTarget = dlItem => Boolean(dlItem?.url || asArray(dlItem?.files).some(file => file?.file || file?.url));
+  const dlItems = asArray(dl.items).filter(i => i.showOnDetail !== false && hasTarget(i));
   if (!dlItems.length) return '';
   return `
     <section class="rounded-2xl bg-white border border-eu-border p-6">
@@ -2068,11 +2069,17 @@ function renderDownloadsSection(item) {
           const dlTitle = pickLang(dlItem.title);
           const dlDesc = pickLang(dlItem.description);
           const dlFiles = asArray(dlItem.files);
+          const dlMeta = [dlItem.format?.toUpperCase(), dlItem.language?.toUpperCase(), dlItem.license].filter(Boolean).join(' / ');
+          const itemUrlHtml = dlItem.url
+            ? `<a href="${esc(dlItem.url)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 rounded border border-eu-border bg-white px-2.5 py-1 text-xs font-semibold text-gray-700 transition-colors hover:border-eu-blue hover:bg-eu-blue hover:text-white focus:outline-none focus:ring-2 focus:ring-eu-blue"><i data-lucide="external-link" class="h-3.5 w-3.5"></i>${esc(pickLang({ es: 'Abrir', en: 'Open', va: 'Obrir' }))}</a>`
+            : '';
           const filesHtml = dlFiles.map(f => {
-            if (!f.file) return '';
-            const href = `${basePath}${f.file}`;
-            const badge = [f.format?.toUpperCase(), f.language?.toUpperCase()].filter(Boolean).join(' · ');
-            return `<a href="${esc(href)}" download class="inline-flex items-center gap-1.5 rounded border border-eu-border bg-white px-2.5 py-1 text-xs font-semibold text-gray-700 hover:bg-eu-blue hover:text-white hover:border-eu-blue transition-colors focus:outline-none focus:ring-2 focus:ring-eu-blue"><i data-lucide="download" class="h-3.5 w-3.5"></i>${esc(badge)}</a>`;
+            const href = f.url || (f.file ? `${basePath}${f.file}` : '');
+            if (!href) return '';
+          const badge = [f.format?.toUpperCase(), f.language?.toUpperCase()].filter(Boolean).join(' / ') || pickLang({ es: 'Descargar', en: 'Download', va: 'Descarregar' });
+            const attrs = f.url ? 'target="_blank" rel="noopener noreferrer"' : 'download';
+            const icon = f.url ? 'external-link' : 'download';
+            return `<a href="${esc(href)}" ${attrs} class="inline-flex items-center gap-1.5 rounded border border-eu-border bg-white px-2.5 py-1 text-xs font-semibold text-gray-700 hover:bg-eu-blue hover:text-white hover:border-eu-blue transition-colors focus:outline-none focus:ring-2 focus:ring-eu-blue"><i data-lucide="${icon}" class="h-3.5 w-3.5"></i>${esc(badge)}</a>`;
           }).filter(Boolean).join('');
           return `
             <div class="rounded-xl border border-eu-border bg-eu-bg p-4">
@@ -2081,8 +2088,8 @@ function renderDownloadsSection(item) {
                 ${typeLabel ? renderBadge(typeLabel, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20') : ''}
               </div>
               ${dlDesc ? `<p class="mt-1 text-xs leading-5 text-gray-500">${esc(dlDesc)}</p>` : ''}
-              ${filesHtml ? `<div class="mt-3 flex flex-wrap gap-2">${filesHtml}</div>` : ''}
-              ${dlItem.license ? `<p class="mt-2 text-xs text-gray-400">${esc(dlItem.license)}</p>` : ''}
+              ${dlMeta ? `<p class="mt-2 text-xs text-gray-400">${esc(dlMeta)}</p>` : ''}
+              ${itemUrlHtml || filesHtml ? `<div class="mt-3 flex flex-wrap gap-2">${itemUrlHtml}${filesHtml}</div>` : ''}
             </div>`;
         }).join('')}
       </div>
@@ -2324,7 +2331,7 @@ function renderCaseDownloadsBlock(item) {
         const filesHtml = dlFiles.map(f => {
           if (!f.file) return '';
           const url = f.url || (basePath ? `${basePath.replace(/\/$/, '')}/${f.file}` : f.file);
-          const badge = [f.format?.toUpperCase(), f.language?.toUpperCase()].filter(Boolean).join(' · ');
+            const badge = [f.format?.toUpperCase(), f.language?.toUpperCase()].filter(Boolean).join(' / ') || pickLang({ es: 'Descargar', en: 'Download', va: 'Descarregar' });
           return `<a href="${esc(url)}" download class="inline-flex items-center gap-1.5 rounded border border-eu-border bg-white px-2.5 py-1 text-xs font-semibold text-gray-700 hover:bg-eu-blue hover:text-white hover:border-eu-blue transition-colors focus:outline-none focus:ring-2 focus:ring-eu-blue"><i data-lucide="download" class="h-3.5 w-3.5"></i>${esc(badge)}</a>`;
         }).filter(Boolean).join('');
 
