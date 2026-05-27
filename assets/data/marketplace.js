@@ -3136,6 +3136,1382 @@ export const MARKETPLACE_CONFIG = {
   "modelVersion": "community-practice-mvp-1",
   "items": [
     {
+      "id": "pilot-ia-diagnostico-cancer-piel-nts",
+      "type": "pilot",
+      "tab": "pilots",
+      "sortDate": "2026-05-20",
+      "visible": true,
+      "sourcePath": "content/challenges/items/pilots/pilot-ia-diagnostico-cancer-piel-nts.yml",
+      "core": {
+        "status": "in-progress",
+        "maturity": "idea",
+        "title": {
+          "es": "Piloto — IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
+          "en": "Pilot — AI for dermatological diagnosis support in Health VET settings",
+          "va": "Pilot — IA per al suport al diagnòstic dermatològic en entorns de FP Sanitari"
+        },
+        "summary": {
+          "es": "Validación de un módulo de IA para la clasificación de lesiones cutáneas sospechosas (malignas/benignas) a partir de imágenes dermoscópicas, integrado en el itinerario formativo del ciclo de Imagen para el Diagnóstico de FP Sanitario, con supervisión clínica del Hospital La Fe y evaluación de competencias digitales en salud.",
+          "en": "Validation of an AI module for classifying suspicious skin lesions (malignant/benign) from dermoscopic images, integrated into the Diagnostic Imaging Health VET cycle curriculum, with clinical supervision from Hospital La Fe and digital health competency assessment.",
+          "va": "Validació d'un mòdul d'IA per a la classificació de lesions cutànies sospitoses (malignes/benignes) a partir d'imatges dermoscòpiques, integrat en l'itinerari formatiu del cicle d'Imatge per al Diagnòstic de FP Sanitari, amb supervisió clínica de l'Hospital La Fe i avaluació de competències digitals en salut."
+        },
+        "entity": {
+          "name": "",
+          "type": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "sector": "nts",
+        "stakeholderCategory": "knowledge",
+        "levels": [
+          "FP",
+          "Docentes"
+        ],
+        "pilotType": "vet-industry",
+        "validationType": "",
+        "validationStage": "",
+        "mentoringType": "",
+        "helix": [
+          "academia",
+          "industry",
+          "public-sector"
+        ],
+        "relatedDeliverable": "Módulo formativo IA-Dermoscopia para FP Sanitario — versión validada",
+        "relatedOerId": "",
+        "publishedAt": "2026-02-01",
+        "revisionDate": "2026-05-20",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "Feb 2026",
+          "en": "Feb 2026",
+          "va": "Feb 2026"
+        },
+        "revisionDateLabel": {
+          "es": "May 2026",
+          "en": "May 2026",
+          "va": "Mai 2026"
+        },
+        "deadlineLabel": null,
+        "tags": {
+          "es": [
+            "Dermoscopia",
+            "IA médica",
+            "FP Sanitario",
+            "Diagnóstico cutáneo",
+            "Competencias digitales"
+          ],
+          "en": [
+            "Dermoscopy",
+            "Medical AI",
+            "Health VET",
+            "Skin diagnosis",
+            "Digital competences"
+          ],
+          "va": [
+            "Dermoscòpia",
+            "IA mèdica",
+            "FP Sanitari",
+            "Diagnòstic cutani",
+            "Competències digitals"
+          ]
+        }
+      },
+      "classification": {
+        "aiSteamFocus": [
+          "data-ai",
+          "responsible-ai"
+        ],
+        "tripleTransition": [
+          "digital",
+          "social"
+        ],
+        "policyCluster": [
+          "integrated-pedagogy",
+          "equity-inclusion",
+          "infrastructure-evidence"
+        ],
+        "engagementLevel": "hosting",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "verificationStatus": "",
+        "pilotStatus": ""
+      },
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "pilots",
+        "audience": [
+          "vet-centres",
+          "teachers",
+          "researchers"
+        ]
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "available-in-repository",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "rightsNote": {
+          "es": "El módulo y el test de competencias se publican bajo licencia CC BY 4.0. El dataset HAM10000 es de libre acceso bajo licencia CC BY-NC 4.0 de ISIC.",
+          "en": "The module and competency test are published under CC BY 4.0. The HAM10000 dataset is freely accessible under ISIC's CC BY-NC 4.0 licence.",
+          "va": "El mòdul i el test de competències es publiquen sota llicència CC BY 4.0. El dataset HAM10000 és d'accés lliure sota llicència CC BY-NC 4.0 d'ISIC."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "",
+          "org": ""
+        },
+        "lead": {
+          "name": "Hospital Universitari i Politècnic La Fe — Servicio de Dermatología",
+          "type": {
+            "es": "Hospital público universitario",
+            "en": "University public hospital",
+            "va": "Hospital públic universitari"
+          },
+          "role": {
+            "es": "Entidad clínica líder — validación del módulo y supervisión de contenidos médicos",
+            "en": "Lead clinical entity — module validation and medical content supervision",
+            "va": "Entitat clínica líder — validació del mòdul i supervisió de continguts mèdics"
+          }
+        },
+        "coordinator": {
+          "name": "AI-STEAM Network — Comité Técnico Salud Digital",
+          "role": {
+            "es": "Coordinación del piloto y evaluación de competencias digitales",
+            "en": "Pilot coordination and digital competency assessment",
+            "va": "Coordinació del pilot i avaluació de competències digitals"
+          }
+        },
+        "pilotSites": [
+          {
+            "name": "IES Federica Montseny (Valencia)",
+            "type": "",
+            "role": {
+              "es": "Centro educativo piloto principal — ciclo de Imagen para el Diagnóstico",
+              "en": "Main pilot educational centre — Diagnostic Imaging cycle",
+              "va": "Centre educatiu pilot principal — cicle d'Imatge per al Diagnòstic"
+            }
+          },
+          {
+            "name": "IES Enric Valor (Petrer)",
+            "type": "",
+            "role": {
+              "es": "Centro educativo secundario — replicación del piloto",
+              "en": "Secondary educational centre — pilot replication",
+              "va": "Centre educatiu secundari — replicació del pilot"
+            }
+          }
+        ],
+        "partners": [
+          {
+            "name": "ISIC (International Skin Imaging Collaboration)",
+            "type": "",
+            "role": {
+              "es": "Proveedor del dataset dermoscópico de referencia (HAM10000)",
+              "en": "Provider of the reference dermoscopic dataset (HAM10000)",
+              "va": "Proveïdor del dataset dermoscòpic de referència (HAM10000)"
+            }
+          }
+        ]
+      },
+      "pilotPlan": {
+        "hypothesis": {
+          "es": "Si los alumnos de 2.º curso del ciclo de Imagen para el Diagnóstico trabajan con un módulo de clasificación de lesiones cutáneas mediante IA durante 8 sesiones supervisadas, alcanzarán competencia básica en interpretación de modelos de IA médica y serán capaces de identificar sus limitaciones éticas y clínicas.",
+          "en": "If 2nd-year Diagnostic Imaging cycle students work with an AI skin lesion classification module over 8 supervised sessions, they will achieve basic competency in interpreting medical AI models and will be able to identify their ethical and clinical limitations.",
+          "va": "Si els alumnes de 2n curs del cicle d'Imatge per al Diagnòstic treballen amb un mòdul de classificació de lesions cutànies mitjançant IA durant 8 sessions supervisades, assoliran competència bàsica en interpretació de models d'IA mèdica i seran capaços d'identificar-ne les limitacions ètiques i clíniques."
+        },
+        "objective": {
+          "es": "Validar la integración del módulo de IA dermoscópica en el currículo de FP Sanitario, medir la adquisición de competencias digitales en salud de los alumnos y evaluar la confianza del profesorado para impartir contenidos de IA médica de forma autónoma.",
+          "en": "Validate the integration of the dermoscopic AI module into the Health VET curriculum, measure students' acquisition of digital health competencies and evaluate teacher confidence to deliver medical AI content autonomously.",
+          "va": "Validar la integració del mòdul d'IA dermoscòpica en el currículum de FP Sanitari, mesurar l'adquisició de competències digitals en salut dels alumnes i avaluar la confiança del professorat per impartir continguts d'IA mèdica de forma autònoma."
+        },
+        "context": {
+          "es": "El ciclo de Imagen para el Diagnóstico y Medicina Nuclear (CFGS) forma técnicos que operarán equipos de diagnóstico en entornos hospitalarios donde la IA ya es parte de los flujos de trabajo clínicos. La formación actual no incluye ningún módulo sobre IA, lo que genera una brecha de competencia creciente. El Hospital La Fe ha desarrollado un módulo de formación interno para residentes que, adaptado, puede funcionar en FP.",
+          "en": "The Diagnostic Imaging and Nuclear Medicine (HND) cycle trains technicians who will operate diagnostic equipment in hospital settings where AI is already part of clinical workflows. Current training includes no AI module, creating a growing competency gap. Hospital La Fe has developed an internal training module for residents which, when adapted, can work in VET.",
+          "va": "El cicle d'Imatge per al Diagnòstic i Medicina Nuclear (CFGS) forma tècnics que operaran equips de diagnòstic en entorns hospitalaris on l'IA ja és part dels fluxos de treball clínics. La formació actual no inclou cap mòdul sobre IA, la qual cosa genera una bretxa de competència creixent. L'Hospital La Fe ha desenvolupat un mòdul de formació intern per a residents que, adaptat, pot funcionar en FP."
+        },
+        "targetParticipants": {
+          "es": "104 alumnos de 2.º de CFGS Imagen para el Diagnóstico de los dos centros participantes y 6 docentes del área sanitaria.",
+          "en": "104 2nd-year HND Diagnostic Imaging students from both participating centres and 6 healthcare area teachers.",
+          "va": "104 alumnes de 2n de CFGS Imatge per al Diagnòstic dels dos centres participants i 6 docents de l'àrea sanitària."
+        },
+        "methodology": {
+          "es": "Diseño cuasi-experimental con grupo control (sin módulo IA) y grupo experimental (con módulo IA). Evaluación pre-post con test de competencias digitales en salud validado por el Comité Técnico. 8 sesiones de 90 minutos integrando el módulo en la UD de 'Nuevas tecnologías en diagnóstico'. Supervisión clínica remota por dermatólogos del La Fe en las sesiones 4 y 7.",
+          "en": "Quasi-experimental design with control group (no AI module) and experimental group (with AI module). Pre-post evaluation using a digital health competency test validated by the Technical Committee. 8 sessions of 90 minutes integrating the module into the 'New diagnostic technologies' learning unit. Remote clinical supervision by La Fe dermatologists in sessions 4 and 7.",
+          "va": "Disseny quasiexperimental amb grup control (sense mòdul IA) i grup experimental (amb mòdul IA). Avaluació pre-post amb test de competències digitals en salut validat pel Comité Tècnic. 8 sessions de 90 minuts integrant el mòdul en la UD de 'Noves tecnologies en diagnòstic'. Supervisió clínica remota per dermatòlegs del La Fe en les sessions 4 i 7."
+        },
+        "successCriteria": [
+          {
+            "id": "sc1",
+            "label": {
+              "es": "El 80% de los alumnos del grupo experimental supera el umbral de competencia básica en el test post-intervención",
+              "en": "80% of experimental group students exceed the basic competency threshold in the post-intervention test",
+              "va": "El 80% dels alumnes del grup experimental supera el llindar de competència bàsica en el test post-intervenció"
+            }
+          },
+          {
+            "id": "sc2",
+            "label": {
+              "es": "El profesorado participante obtiene una confianza media de 7,5/10 o superior para impartir el módulo de forma autónoma",
+              "en": "Participating teachers achieve an average confidence of 7.5/10 or higher to deliver the module autonomously",
+              "va": "El professorat participant obté una confiança mitjana de 7,5/10 o superior per impartir el mòdul de forma autònoma"
+            }
+          },
+          {
+            "id": "sc3",
+            "label": {
+              "es": "El módulo se puede instalar y ejecutar sin intervención técnica del Hospital La Fe en menos de 2 horas",
+              "en": "The module can be installed and run without Hospital La Fe technical intervention in under 2 hours",
+              "va": "El mòdul es pot instal·lar i executar sense intervenció tècnica de l'Hospital La Fe en menys de 2 hores"
+            }
+          }
+        ]
+      },
+      "implementation": {
+        "readiness": {
+          "technologyReadiness": {
+            "enabled": true,
+            "level": 6,
+            "label": {
+              "es": "TRL 6 — Demostración en entorno relevante (aula de FP)",
+              "en": "TRL 6 — Demonstration in relevant environment (VET classroom)",
+              "va": "TRL 6 — Demostració en entorn rellevant (aula de FP)"
+            }
+          },
+          "educationalReadiness": {
+            "enabled": true,
+            "level": "classroom-tested",
+            "label": {
+              "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
+              "en": "Classroom-tested — previously tested with La Fe residents, first VET validation",
+              "va": "Provat en aula — testejat prèviament amb residents del La Fe, primera validació en FP"
+            }
+          }
+        },
+        "infrastructure": [
+          {
+            "id": "computer-lab",
+            "label": {
+              "es": "Aula informática con ordenadores básicos (sin GPU dedicada)",
+              "en": "Computer lab with basic computers (no dedicated GPU)",
+              "va": "Aula informàtica amb ordinadors bàsics (sense GPU dedicada)"
+            }
+          },
+          {
+            "id": "gradio-interface",
+            "label": {
+              "es": "Interfaz web Gradio desplegada localmente",
+              "en": "Locally deployed Gradio web interface",
+              "va": "Interfície web Gradio desplegada localment"
+            }
+          }
+        ],
+        "tools": [
+          {
+            "id": "gradio",
+            "label": {
+              "es": "Gradio — interfaz web de clasificación",
+              "en": "Gradio — classification web interface",
+              "va": "Gradio — interfície web de classificació"
+            }
+          },
+          {
+            "id": "pytorch",
+            "label": {
+              "es": "PyTorch + torchvision — motor de inferencia",
+              "en": "PyTorch + torchvision — inference engine",
+              "va": "PyTorch + torchvision — motor d'inferència"
+            }
+          },
+          {
+            "id": "ham10000",
+            "label": {
+              "es": "Dataset HAM10000 — 10.000 imágenes dermoscópicas etiquetadas",
+              "en": "HAM10000 dataset — 10,000 labelled dermoscopic images",
+              "va": "Dataset HAM10000 — 10.000 imatges dermoscòpiques etiquetades"
+            }
+          }
+        ],
+        "dataManagement": {
+          "sensitiveDataIncluded": false,
+          "personalDataIncluded": false,
+          "note": {
+            "es": "Se utiliza únicamente el dataset público HAM10000 con imágenes anonimizadas. No se procesan datos de pacientes reales durante el piloto.",
+            "en": "Only the public HAM10000 dataset with anonymised images is used. No real patient data is processed during the pilot.",
+            "va": "S'utilitza únicament el dataset públic HAM10000 amb imatges anonimitzades. No es processen dades de pacients reals durant el pilot."
+          }
+        }
+      },
+      "evidence": {
+        "evidenceLevel": "measured",
+        "verificationStatus": "peer-reviewed",
+        "collectionMethod": {
+          "es": "Test de competencias digitales en salud validado (pre y post intervención), encuesta de confianza docente, logs de actividad de la plataforma Gradio anonimizados y registros de evaluación de los centros.",
+          "en": "Validated digital health competency test (pre and post intervention), teacher confidence survey, anonymised Gradio platform activity logs and centre assessment records.",
+          "va": "Test de competències digitals en salut validat (pre i post intervenció), enquesta de confiança docent, logs d'activitat de la plataforma Gradio anonimitzats i registres d'avaluació dels centres."
+        },
+        "primaryMetric": {
+          "id": "student-competency-gain",
+          "value": "+31",
+          "unit": {
+            "es": "puntos percentil (media grupo experimental vs. control)",
+            "en": "percentile points (experimental vs. control group mean)",
+            "va": "punts percentil (mitjana grup experimental vs. control)"
+          },
+          "label": {
+            "es": "Ganancia de competencia en el grupo experimental respecto al grupo control",
+            "en": "Competency gain in the experimental group relative to the control group",
+            "va": "Guany de competència en el grup experimental respecte al grup control"
+          }
+        },
+        "secondaryMetrics": [
+          {
+            "id": "teacher-confidence",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Confianza media del profesorado para impartir el módulo autónomamente (escala 1-10)",
+              "en": "Average teacher confidence to deliver the module autonomously (1-10 scale)",
+              "va": "Confiança mitjana del professorat per impartir el mòdul autònomament (escala 1-10)"
+            }
+          },
+          {
+            "id": "installation-time",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Tiempo de instalación autónoma del módulo sin asistencia técnica externa",
+              "en": "Autonomous module installation time without external technical assistance",
+              "va": "Temps d'instal·lació autònom del mòdul sense assistència tècnica externa"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "Los resultados reflejan competencia técnica con datos simulados. No miden la capacidad clínica real con pacientes. El grupo control es de conveniencia (diferente centro), lo que puede introducir sesgos de contexto.",
+          "en": "Results reflect technical competency with simulated data. They do not measure real clinical capability with patients. The control group is a convenience sample (different centre), which may introduce context bias.",
+          "va": "Els resultats reflecteixen competència tècnica amb dades simulades. No mesuren la capacitat clínica real amb pacients. El grup control és de conveniència (diferent centre), la qual cosa pot introduir biaixos de context."
+        }
+      },
+      "results": {
+        "headline": {
+          "es": "El grupo experimental supera al control en +31 puntos percentil; 89% de los alumnos supera el umbral de competencia básica en IA dermoscópica.",
+          "en": "Experimental group outperforms control by +31 percentile points; 89% of students exceed the basic dermoscopic AI competency threshold.",
+          "va": "El grup experimental supera el control en +31 punts percentil; el 89% dels alumnes supera el llindar de competència bàsica en IA dermoscòpica."
+        },
+        "outputs": [
+          {
+            "id": "validated-module",
+            "label": {
+              "es": "Módulo IA-Dermoscopia validado con rúbrica y soluciones para docentes",
+              "en": "Validated AI-Dermoscopy module with rubric and teacher solutions",
+              "va": "Mòdul IA-Dermoscòpia validat amb rúbrica i solucions per a docents"
+            }
+          },
+          {
+            "id": "competency-test",
+            "label": {
+              "es": "Test de competencias digitales en salud validado — versión FP",
+              "en": "Validated digital health competency test — VET version",
+              "va": "Test de competències digitals en salut validat — versió FP"
+            }
+          },
+          {
+            "id": "pilot-report",
+            "label": {
+              "es": "Informe de piloto con análisis comparativo grupo experimental vs. control",
+              "en": "Pilot report with comparative experimental vs. control group analysis",
+              "va": "Informe de pilot amb anàlisi comparativa grup experimental vs. control"
+            }
+          }
+        ],
+        "decision": {
+          "outcome": "convert-to-case",
+          "label": {
+            "es": "Publicar como caso verificado en el Marketplace AI-STEAM y escalar a 5 centros adicionales en curso 2026-27",
+            "en": "Publish as a verified case in the AI-STEAM Marketplace and scale to 5 additional centres in academic year 2026-27",
+            "va": "Publicar com a cas verificat al Marketplace AI-STEAM i escalar a 5 centres addicionals en curs 2026-27"
+          }
+        }
+      },
+      "transferability": {
+        "whyTransferable": {
+          "es": "El dataset HAM10000 es público y de libre acceso. Gradio es agnóstico al hardware. El módulo fue diseñado desde el inicio para funcionar sin GPU dedicada en aulas estándar de FP.",
+          "en": "The HAM10000 dataset is public and freely accessible. Gradio is hardware-agnostic. The module was designed from the outset to work without a dedicated GPU in standard VET classrooms.",
+          "va": "El dataset HAM10000 és públic i d'accés lliure. Gradio és agnòstic al maquinari. El mòdul va ser dissenyat des de l'inici per funcionar sense GPU dedicada en aules estàndard de FP."
+        },
+        "suitableFor": [
+          "vet-centres",
+          "teachers"
+        ],
+        "requirements": [
+          {
+            "label": {
+              "es": "Aula informática con Python 3.10+ o acceso a Google Colab",
+              "en": "Computer lab with Python 3.10+ or Google Colab access",
+              "va": "Aula informàtica amb Python 3.10+ o accés a Google Colab"
+            }
+          },
+          {
+            "label": {
+              "es": "Docente con conocimientos básicos de IA y contexto clínico sanitario",
+              "en": "Teacher with basic AI knowledge and healthcare clinical context",
+              "va": "Docent amb coneixements bàsics d'IA i context clínic sanitari"
+            }
+          }
+        ],
+        "replicationSteps": [
+          {
+            "label": {
+              "es": "Descargar el módulo y el dataset HAM10000 siguiendo la guía de instalación",
+              "en": "Download the module and HAM10000 dataset following the installation guide",
+              "va": "Descarregar el mòdul i el dataset HAM10000 seguint la guia d'instal·lació"
+            }
+          },
+          {
+            "label": {
+              "es": "Asistir a la sesión de formación docente de 4 horas (presencial u online)",
+              "en": "Attend the 4-hour teacher training session (in-person or online)",
+              "va": "Assistir a la sessió de formació docent de 4 hores (presencial o en línia)"
+            }
+          },
+          {
+            "label": {
+              "es": "Integrar las 8 sesiones en la UD de Nuevas tecnologías en diagnóstico",
+              "en": "Integrate the 8 sessions into the New diagnostic technologies learning unit",
+              "va": "Integrar les 8 sessions a la UD de Noves tecnologies en diagnòstic"
+            }
+          }
+        ],
+        "risks": [
+          {
+            "label": {
+              "es": "El material requiere actualización cuando cambien las versiones de PyTorch o Gradio",
+              "en": "Material requires updating when PyTorch or Gradio versions change",
+              "va": "El material requereix actualització quan canvien les versions de PyTorch o Gradio"
+            }
+          },
+          {
+            "label": {
+              "es": "Algunos docentes pueden necesitar refuerzo en conceptos de métricas de clasificación (sensibilidad/especificidad)",
+              "en": "Some teachers may need reinforcement on classification metric concepts (sensitivity/specificity)",
+              "va": "Alguns docents poden necessitar reforç en conceptes de mètriques de classificació (sensibilitat/especificitat)"
+            }
+          }
+        ]
+      },
+      "downloads": {
+        "enabled": true,
+        "basePath": "/assets/downloads/pilots/pilot-ia-diagnostico-cancer-piel-nts/",
+        "items": [
+          {
+            "id": "pilot-report",
+            "type": "evidence-sheet",
+            "title": {
+              "es": "Informe del piloto — IA en diagnóstico dermatológico FP",
+              "en": "Pilot report — AI in VET dermatological diagnosis",
+              "va": "Informe del pilot — IA en diagnòstic dermatològic FP"
+            },
+            "description": {
+              "es": "Informe completo del piloto con diseño metodológico, resultados comparativos grupo experimental vs. control y recomendaciones de escalado.",
+              "en": "Full pilot report with methodological design, comparative results experimental vs. control group and scaling recommendations.",
+              "va": "Informe complet del pilot amb disseny metodològic, resultats comparatius grup experimental vs. control i recomanacions d'escalat."
+            },
+            "files": [
+              {
+                "file": "informe-piloto-ia-dermoscopia-fp.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "showOnCard": true,
+            "showOnDetail": true
+          },
+          {
+            "id": "teacher-guide",
+            "type": "guide",
+            "title": {
+              "es": "Guía docente — Módulo IA-Dermoscopia para FP Sanitario",
+              "en": "Teacher guide — AI-Dermoscopy module for Health VET",
+              "va": "Guia docent — Mòdul IA-Dermoscòpia per a FP Sanitari"
+            },
+            "description": {
+              "es": "Guía completa para docentes con planificación de las 8 sesiones, soluciones, criterios de evaluación y respuestas a preguntas frecuentes de los alumnos.",
+              "en": "Full teacher guide with 8-session planning, solutions, evaluation criteria and answers to frequently asked student questions.",
+              "va": "Guia completa per a docents amb planificació de les 8 sessions, solucions, criteris d'avaluació i respostes a preguntes freqüents dels alumnes."
+            },
+            "files": [
+              {
+                "file": "guia-docente-ia-dermoscopia-fp.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY-SA 4.0"
+              }
+            ],
+            "showOnCard": false,
+            "showOnDetail": true
+          }
+        ]
+      },
+      "resources": {
+        "externalLinks": [
+          {
+            "id": "ham10000",
+            "type": "dataset",
+            "label": {
+              "es": "Dataset HAM10000 — ISIC Archive",
+              "en": "HAM10000 Dataset — ISIC Archive",
+              "va": "Dataset HAM10000 — ISIC Archive"
+            },
+            "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T",
+            "license": "CC BY-NC 4.0"
+          }
+        ]
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver piloto",
+            "en": "View pilot",
+            "va": "Veure pilot"
+          },
+          "system": "",
+          "url": ""
+        },
+        "secondaryAction": null
+      },
+      "relations": {
+        "originChallengeId": "",
+        "relatedValidations": [],
+        "relatedCases": [
+          "diagnostico-ia-fp-sanitario-nts"
+        ],
+        "relatedResources": [],
+        "relatedMentorships": [],
+        "nextPossibleItems": []
+      },
+      "hasDownloads": true,
+      "downloadCount": 2,
+      "cardDownloads": [
+        {
+          "id": "pilot-report",
+          "type": "evidence-sheet",
+          "title": {
+            "es": "Informe del piloto — IA en diagnóstico dermatológico FP",
+            "en": "Pilot report — AI in VET dermatological diagnosis",
+            "va": "Informe del pilot — IA en diagnòstic dermatològic FP"
+          },
+          "description": {
+            "es": "Informe completo del piloto con diseño metodológico, resultados comparativos grupo experimental vs. control y recomendaciones de escalado.",
+            "en": "Full pilot report with methodological design, comparative results experimental vs. control group and scaling recommendations.",
+            "va": "Informe complet del pilot amb disseny metodològic, resultats comparatius grup experimental vs. control i recomanacions d'escalat."
+          },
+          "files": [
+            {
+              "file": "informe-piloto-ia-dermoscopia-fp.pdf",
+              "format": "pdf",
+              "language": "es",
+              "license": "CC BY 4.0"
+            }
+          ],
+          "showOnCard": true,
+          "showOnDetail": true
+        }
+      ],
+      "presentation": {
+        "card": {
+          "variant": "pilot",
+          "showPilotStage": true,
+          "showPilotType": true,
+          "showReadiness": true,
+          "showWindow": true,
+          "showInfrastructure": true,
+          "showPrimaryMetric": true,
+          "showDownloadsIndicator": true,
+          "resultBlockLabel": {
+            "es": "Qué se prueba",
+            "en": "What is being tested",
+            "va": "Què es prova"
+          }
+        },
+        "detail": {
+          "sections": {
+            "summary": true,
+            "pilotPlan": true,
+            "methodology": true,
+            "implementation": true,
+            "evidence": true,
+            "results": true,
+            "transferability": true,
+            "downloads": true,
+            "resources": true,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": false,
+            "relations": false
+          }
+        }
+      },
+      "template": {
+        "requiredBlocks": [
+          "pilotPlan",
+          "implementation",
+          "evidence",
+          "results",
+          "transferability"
+        ],
+        "optionalBlocks": [
+          "downloads",
+          "resources",
+          "process",
+          "people",
+          "access",
+          "externalFlow",
+          "relations"
+        ],
+        "cardSignal": "pilotPlan"
+      }
+    },
+    {
+      "id": "pilot-living-lab-eficiencia-energetica-hou",
+      "type": "pilot",
+      "tab": "pilots",
+      "sortDate": "2026-05-20",
+      "visible": true,
+      "sourcePath": "content/challenges/items/pilots/pilot-living-lab-eficiencia-energetica-hou.yml",
+      "core": {
+        "status": "in-progress",
+        "maturity": "idea",
+        "title": {
+          "es": "Living Lab — IA para la gestión energética adaptativa en edificio universitario",
+          "en": "Living Lab — AI for adaptive energy management in a university building",
+          "va": "Living Lab — IA per a la gestió energètica adaptativa en edifici universitari"
+        },
+        "summary": {
+          "es": "La Universitat Politècnica de València convierte el edificio 4I de la ETSII en un Living Lab donde alumnos de máster y FP de Instalaciones Eléctricas trabajan junto a ingenieros de Siemens Smart Infrastructure para entrenar y validar un sistema de gestión energética adaptativa basado en aprendizaje por refuerzo, con el objetivo de reducir el consumo eléctrico del edificio en un 20% sin pérdida de confort.",
+          "en": "The Universitat Politècnica de València turns building 4I of ETSII into a Living Lab where master's and Electrical Installations VET students work alongside Siemens Smart Infrastructure engineers to train and validate an adaptive energy management system based on reinforcement learning, aiming to reduce the building's electricity consumption by 20% without loss of comfort.",
+          "va": "La Universitat Politècnica de València converteix l'edifici 4I de l'ETSII en un Living Lab on alumnes de màster i FP d'Instal·lacions Elèctriques treballen juntament amb enginyers de Siemens Smart Infrastructure per entrenar i validar un sistema de gestió energètica adaptativa basat en aprenentatge per reforç, amb l'objectiu de reduir el consum elèctric de l'edifici en un 20% sense pèrdua de confort."
+        },
+        "entity": {
+          "name": "",
+          "type": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "sector": "hou",
+        "stakeholderCategory": "knowledge",
+        "levels": [
+          "FP",
+          "Máster"
+        ],
+        "pilotType": "living-lab",
+        "validationType": "",
+        "validationStage": "",
+        "mentoringType": "",
+        "helix": [
+          "academia",
+          "industry",
+          "public-sector"
+        ],
+        "relatedDeliverable": "Sistema de gestión energética adaptativa con RL — prototipo validado en edificio real",
+        "relatedOerId": "",
+        "publishedAt": "2026-01-15",
+        "revisionDate": "2026-05-20",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "Ene 2026",
+          "en": "Jan 2026",
+          "va": "Gen 2026"
+        },
+        "revisionDateLabel": {
+          "es": "May 2026",
+          "en": "May 2026",
+          "va": "Mai 2026"
+        },
+        "deadlineLabel": null,
+        "tags": {
+          "es": [
+            "Eficiencia energética",
+            "Aprendizaje por refuerzo",
+            "Living Lab",
+            "Edificio inteligente",
+            "FP Electricidad"
+          ],
+          "en": [
+            "Energy efficiency",
+            "Reinforcement learning",
+            "Living Lab",
+            "Smart building",
+            "Electrical VET"
+          ],
+          "va": [
+            "Eficiència energètica",
+            "Aprenentatge per reforç",
+            "Living Lab",
+            "Edifici intel·ligent",
+            "FP Electricitat"
+          ]
+        }
+      },
+      "classification": {
+        "aiSteamFocus": [
+          "data-ai",
+          "maker-steam"
+        ],
+        "tripleTransition": [
+          "digital",
+          "green"
+        ],
+        "policyCluster": [
+          "integrated-pedagogy",
+          "infrastructure-evidence"
+        ],
+        "engagementLevel": "hosting",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "verificationStatus": "",
+        "pilotStatus": ""
+      },
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "pilots",
+        "audience": [
+          "companies",
+          "vet-centres",
+          "universities",
+          "researchers"
+        ]
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "available-in-repository",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "rightsNote": {
+          "es": "El dataset del edificio 4I se publica bajo licencia CC BY 4.0. Los agentes RL desarrollados por los equipos participantes se publican bajo licencia MIT. Los datos de consumo son propiedad de la UPV.",
+          "en": "The building 4I dataset is published under CC BY 4.0 licence. RL agents developed by participating teams are published under MIT licence. Consumption data is owned by UPV.",
+          "va": "El dataset de l'edifici 4I es publica sota llicència CC BY 4.0. Els agents RL desenvolupats pels equips participants es publiquen sota llicència MIT. Les dades de consum són propietat de la UPV."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "",
+          "org": ""
+        },
+        "lead": {
+          "name": "Universitat Politècnica de València — Instituto de Ingeniería Energética (IIE)",
+          "type": {
+            "es": "Universidad pública con instituto de investigación energética",
+            "en": "Public university with energy research institute",
+            "va": "Universitat pública amb institut de recerca energètica"
+          },
+          "role": {
+            "es": "Entidad anfitriona del Living Lab — facilita el edificio, los datos y la supervisión académica",
+            "en": "Living Lab host entity — provides the building, data and academic supervision",
+            "va": "Entitat amfitriona del Living Lab — facilita l'edifici, les dades i la supervisió acadèmica"
+          }
+        },
+        "coordinator": {
+          "name": "Siemens Smart Infrastructure — División Iberia",
+          "role": {
+            "es": "Empresa socia tecnológica — plataforma Desigo CC y mentores de ingeniería",
+            "en": "Technology partner company — Desigo CC platform and engineering mentors",
+            "va": "Empresa sòcia tecnològica — plataforma Desigo CC i mentors d'enginyeria"
+          }
+        },
+        "pilotSites": [
+          {
+            "name": "Edificio 4I — ETSII, Campus de Vera (Valencia)",
+            "type": "",
+            "role": {
+              "es": "Edificio piloto — 8.200 m², 14 aulas, laboratorios y espacios de trabajo, ocupación variable",
+              "en": "Pilot building — 8,200 m², 14 classrooms, laboratories and workspaces, variable occupancy",
+              "va": "Edifici pilot — 8.200 m², 14 aules, laboratoris i espais de treball, ocupació variable"
+            }
+          }
+        ],
+        "partners": [
+          {
+            "name": "IES Politècnic (Valencia)",
+            "type": "",
+            "role": {
+              "es": "Centro de FP participante — alumnos de ciclo de Instalaciones Eléctricas y Automáticas",
+              "en": "Participating VET centre — Electrical and Automatic Installations cycle students",
+              "va": "Centre de FP participant — alumnes de cicle d'Instal·lacions Elèctriques i Automàtiques"
+            }
+          },
+          {
+            "name": "Iberdrola — División Clientes Empresariales",
+            "type": "",
+            "role": {
+              "es": "Socio energético — datos de consumo histórico y tarifas dinámicas de electricidad",
+              "en": "Energy partner — historical consumption data and dynamic electricity tariffs",
+              "va": "Soci energètic — dades de consum històric i tarifes dinàmiques d'electricitat"
+            }
+          }
+        ]
+      },
+      "pilotPlan": {
+        "hypothesis": {
+          "es": "Un agente de aprendizaje por refuerzo entrenado con datos reales de ocupación, temperatura y tarifas eléctricas del edificio 4I puede reducir el consumo eléctrico total del edificio en al menos un 20% en condiciones de uso habitual, sin que el índice de confort térmico percibido por los ocupantes caiga por debajo de 7/10.",
+          "en": "A reinforcement learning agent trained on real occupancy, temperature and electricity tariff data from building 4I can reduce total building electricity consumption by at least 20% under normal use conditions, without the perceived thermal comfort index falling below 7/10.",
+          "va": "Un agent d'aprenentatge per reforç entrenat amb dades reals d'ocupació, temperatura i tarifes elèctriques de l'edifici 4I pot reduir el consum elèctric total de l'edifici en almenys un 20% en condicions d'ús habitual, sense que l'índex de confort tèrmic percebut pels ocupants caiga per davall de 7/10."
+        },
+        "objective": {
+          "es": "Demostrar la viabilidad del aprendizaje por refuerzo para la gestión energética adaptativa en edificios universitarios con ocupación variable, generar datos de entrenamiento y validación públicos, y desarrollar un módulo formativo conjunto FP-máster sobre IA en eficiencia energética.",
+          "en": "Demonstrate the feasibility of reinforcement learning for adaptive energy management in university buildings with variable occupancy, generate public training and validation data, and develop a joint VET-master training module on AI in energy efficiency.",
+          "va": "Demostrar la viabilitat de l'aprenentatge per reforç per a la gestió energètica adaptativa en edificis universitaris amb ocupació variable, generar dades d'entrenament i validació públiques, i desenvolupar un mòdul formatiu conjunt FP-màster sobre IA en eficiència energètica."
+        },
+        "context": {
+          "es": "El edificio 4I consume actualmente 850.000 kWh/año con una gestión basada en horarios fijos. El IIE-UPV dispone de 2 años de datos históricos de consumo a nivel de circuito, sensores de CO₂, temperatura y ocupación en cada espacio. Siemens aporta la plataforma de Building Management System Desigo CC y mentores de ingeniería energética para los equipos participantes.",
+          "en": "Building 4I currently consumes 850,000 kWh/year with management based on fixed schedules. IIE-UPV has 2 years of historical consumption data at circuit level, CO₂ sensors, temperature and occupancy data for each space. Siemens provides the Desigo CC Building Management System platform and energy engineering mentors for participating teams.",
+          "va": "L'edifici 4I consumeix actualment 850.000 kWh/any amb una gestió basada en horaris fixos. L'IIE-UPV disposa de 2 anys de dades històriques de consum a nivell de circuit, sensors de CO₂, temperatura i ocupació en cada espai. Siemens aporta la plataforma de Building Management System Desigo CC i mentors d'enginyeria energètica per als equips participants."
+        },
+        "targetParticipants": {
+          "es": "18 alumnos de máster en Ingeniería de Sistemas Energéticos (UPV), 22 alumnos de FP de Instalaciones Eléctricas del IES Politècnic y 4 ingenieros de Siemens como mentores técnicos.",
+          "en": "18 Master's in Energy Systems Engineering students (UPV), 22 Electrical Installations VET students from IES Politècnic and 4 Siemens engineers as technical mentors.",
+          "va": "18 alumnes de màster en Enginyeria de Sistemes Energètics (UPV), 22 alumnes de FP d'Instal·lacions Elèctriques de l'IES Politècnic i 4 enginyers de Siemens com a mentors tècnics."
+        },
+        "methodology": {
+          "es": "El piloto tiene estructura de Living Lab con tres capas simultáneas: (1) capa técnica — equipos mixtos máster+FP entrenan agentes RL con datos históricos y validan en entorno simulado del edificio (EnergyPlus); (2) capa operacional — el agente con mejor rendimiento simulado se despliega en el edificio real durante 3 meses con supervisión; (3) capa formativa — los equipos documentan sus experimentos, comparten metodologías en sesiones quincenales y publican sus resultados como recurso abierto.",
+          "en": "The pilot has a Living Lab structure with three simultaneous layers: (1) technical layer — mixed master+VET teams train RL agents on historical data and validate in a simulated building environment (EnergyPlus); (2) operational layer — the best-performing simulated agent is deployed in the real building for 3 months under supervision; (3) training layer — teams document their experiments, share methodologies in fortnightly sessions and publish their results as open resources.",
+          "va": "El pilot té estructura de Living Lab amb tres capes simultànies: (1) capa tècnica — equips mixtos màster+FP entrenen agents RL amb dades històriques i validen en entorn simulat de l'edifici (EnergyPlus); (2) capa operacional — l'agent amb millor rendiment simulat es desplega en l'edifici real durant 3 mesos amb supervisió; (3) capa formativa — els equips documenten els seus experiments, comparteixen metodologies en sessions quinzenals i publiquen els seus resultats com a recurs obert."
+        },
+        "successCriteria": [
+          {
+            "id": "sc1",
+            "label": {
+              "es": "El agente desplegado en el edificio real reduce el consumo eléctrico en al menos un 20% respecto a la línea base",
+              "en": "The agent deployed in the real building reduces electricity consumption by at least 20% against the baseline",
+              "va": "L'agent desplegat en l'edifici real redueix el consum elèctric en almenys un 20% respecte a la línia base"
+            }
+          },
+          {
+            "id": "sc2",
+            "label": {
+              "es": "El índice de confort térmico percibido por los ocupantes no baja de 7/10 durante los 3 meses de despliegue",
+              "en": "The perceived thermal comfort index does not fall below 7/10 during the 3 months of deployment",
+              "va": "L'índex de confort tèrmic percebut pels ocupants no baixa de 7/10 durant els 3 mesos de desplegament"
+            }
+          },
+          {
+            "id": "sc3",
+            "label": {
+              "es": "Los datos de entrenamiento y el código del agente se publican en abierto antes del cierre del piloto",
+              "en": "Training data and agent code are published openly before the pilot closes",
+              "va": "Les dades d'entrenament i el codi de l'agent es publiquen en obert abans del tancament del pilot"
+            }
+          }
+        ]
+      },
+      "implementation": {
+        "readiness": {
+          "technologyReadiness": {
+            "enabled": true,
+            "level": 6,
+            "label": {
+              "es": "TRL 6 — Demostración en entorno relevante real (edificio universitario)",
+              "en": "TRL 6 — Demonstration in real relevant environment (university building)",
+              "va": "TRL 6 — Demostració en entorn rellevant real (edifici universitari)"
+            }
+          },
+          "educationalReadiness": {
+            "enabled": true,
+            "level": "designed",
+            "label": {
+              "es": "Diseñado — módulo conjunto FP-máster en fase de primera implementación",
+              "en": "Designed — joint VET-master module in first implementation phase",
+              "va": "Dissenyat — mòdul conjunt FP-màster en fase de primera implementació"
+            }
+          }
+        },
+        "infrastructure": [
+          {
+            "id": "bms-desigo",
+            "label": {
+              "es": "Siemens Desigo CC — plataforma de Building Management System",
+              "en": "Siemens Desigo CC — Building Management System platform",
+              "va": "Siemens Desigo CC — plataforma de Building Management System"
+            }
+          },
+          {
+            "id": "iot-sensors",
+            "label": {
+              "es": "Red de 180 sensores IoT de CO₂, temperatura, humedad y ocupación",
+              "en": "Network of 180 IoT sensors for CO₂, temperature, humidity and occupancy",
+              "va": "Xarxa de 180 sensors IoT de CO₂, temperatura, humitat i ocupació"
+            }
+          },
+          {
+            "id": "energyplus",
+            "label": {
+              "es": "Simulador EnergyPlus — entorno de entrenamiento y validación del agente RL",
+              "en": "EnergyPlus simulator — RL agent training and validation environment",
+              "va": "Simulador EnergyPlus — entorn d'entrenament i validació de l'agent RL"
+            }
+          }
+        ],
+        "tools": [
+          {
+            "id": "stable-baselines3",
+            "label": {
+              "es": "Stable Baselines3 — biblioteca de algoritmos de aprendizaje por refuerzo",
+              "en": "Stable Baselines3 — reinforcement learning algorithm library",
+              "va": "Stable Baselines3 — biblioteca d'algorismes d'aprenentatge per reforç"
+            }
+          },
+          {
+            "id": "energyplus-gym",
+            "label": {
+              "es": "Sinergym — entorno Gym para entrenamiento RL con EnergyPlus",
+              "en": "Sinergym — Gym environment for RL training with EnergyPlus",
+              "va": "Sinergym — entorn Gym per a entrenament RL amb EnergyPlus"
+            }
+          }
+        ],
+        "dataManagement": {
+          "sensitiveDataIncluded": false,
+          "personalDataIncluded": false,
+          "note": {
+            "es": "Los datos de ocupación son agregados por espacio (no individualizados). No se registran datos personales de los ocupantes. Los datos de consumo histórico se publicarán anonimizados.",
+            "en": "Occupancy data is aggregated by space (not individualised). No personal data of occupants is recorded. Historical consumption data will be published in anonymised form.",
+            "va": "Les dades d'ocupació són agregades per espai (no individualitzades). No es registren dades personals dels ocupants. Les dades de consum històric es publicaran anonimitzades."
+          }
+        }
+      },
+      "evidence": {
+        "evidenceLevel": "observed",
+        "verificationStatus": "self-reported",
+        "collectionMethod": {
+          "es": "Medición continua del consumo eléctrico a nivel de circuito mediante el BMS Desigo CC. Encuesta de confort térmico semanal a ocupantes (escala 1-10). Registro de experimentos de los equipos participantes en cuaderno de laboratorio compartido.",
+          "en": "Continuous electricity consumption measurement at circuit level via the Desigo CC BMS. Weekly thermal comfort survey of occupants (1-10 scale). Experiment log by participating teams in shared laboratory notebook.",
+          "va": "Mesurament continu del consum elèctric a nivell de circuit mitjançant el BMS Desigo CC. Enquesta de confort tèrmic setmanal als ocupants (escala 1-10). Registre d'experiments dels equips participants en quadern de laboratori compartit."
+        },
+        "primaryMetric": {
+          "id": "energy-reduction",
+          "value": "22.4",
+          "unit": {
+            "es": "% de reducción del consumo eléctrico (primeros 3 meses de despliegue)",
+            "en": "% electricity consumption reduction (first 3 months of deployment)",
+            "va": "% de reducció del consum elèctric (primers 3 mesos de desplegament)"
+          },
+          "label": {
+            "es": "Reducción del consumo eléctrico del edificio 4I respecto a la línea base",
+            "en": "Building 4I electricity consumption reduction against baseline",
+            "va": "Reducció del consum elèctric de l'edifici 4I respecte a la línia base"
+          }
+        },
+        "secondaryMetrics": [
+          {
+            "id": "comfort-index",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Índice de confort térmico medio de los ocupantes durante el despliegue (escala 1-10)",
+              "en": "Average occupant thermal comfort index during deployment (1-10 scale)",
+              "va": "Índex de confort tèrmic mitjà dels ocupants durant el desplegament (escala 1-10)"
+            }
+          },
+          {
+            "id": "student-rl-competence",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Número de equipos que publican un agente RL funcional con documentación completa",
+              "en": "Number of teams publishing a functional RL agent with full documentation",
+              "va": "Nombre d'equips que publiquen un agent RL funcional amb documentació completa"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "Los resultados de los primeros 3 meses pueden no ser representativos de todo el año por la variabilidad estacional. El agente actual no gestiona la iluminación, solo la climatización. Los datos de ocupación real pueden diferir de los sensores en espacios con baja densidad.",
+          "en": "Results from the first 3 months may not be representative of the full year due to seasonal variability. The current agent does not manage lighting, only HVAC. Real occupancy data may differ from sensors in low-density spaces.",
+          "va": "Els resultats dels primers 3 mesos poden no ser representatius de tot l'any per la variabilitat estacional. L'agent actual no gestiona la il·luminació, només la climatització. Les dades d'ocupació real poden diferir dels sensors en espais amb baixa densitat."
+        }
+      },
+      "results": {
+        "headline": {
+          "es": "22,4% de reducción de consumo eléctrico en los primeros 3 meses; confort térmico medio de 8,1/10. 7 equipos publican agentes RL funcionales en abierto.",
+          "en": "22.4% electricity consumption reduction in the first 3 months; average thermal comfort of 8.1/10. 7 teams publish functional RL agents as open source.",
+          "va": "22,4% de reducció de consum elèctric en els primers 3 mesos; confort tèrmic mitjà de 8,1/10. 7 equips publiquen agents RL funcionals en obert."
+        },
+        "outputs": [
+          {
+            "id": "rl-agents",
+            "label": {
+              "es": "7 agentes RL funcionales publicados en GitHub con documentación y datos de entrenamiento",
+              "en": "7 functional RL agents published on GitHub with documentation and training data",
+              "va": "7 agents RL funcionals publicats a GitHub amb documentació i dades d'entrenament"
+            }
+          },
+          {
+            "id": "building-dataset",
+            "label": {
+              "es": "Dataset público de 2 años de consumo, ocupación y confort del edificio 4I",
+              "en": "Public 2-year dataset of building 4I consumption, occupancy and comfort",
+              "va": "Dataset públic de 2 anys de consum, ocupació i confort de l'edifici 4I"
+            }
+          },
+          {
+            "id": "joint-module",
+            "label": {
+              "es": "Módulo formativo conjunto FP-máster sobre RL aplicado a eficiencia energética (10 sesiones)",
+              "en": "Joint VET-master training module on RL applied to energy efficiency (10 sessions)",
+              "va": "Mòdul formatiu conjunt FP-màster sobre RL aplicat a eficiència energètica (10 sessions)"
+            }
+          }
+        ],
+        "decision": {
+          "outcome": "scale",
+          "label": {
+            "es": "Ampliar a 3 edificios adicionales del campus y publicar el dataset y los agentes como recursos de referencia para el sector de la construcción sostenible",
+            "en": "Expand to 3 additional campus buildings and publish the dataset and agents as reference resources for the sustainable construction sector",
+            "va": "Ampliar a 3 edificis addicionals del campus i publicar el dataset i els agents com a recursos de referència per al sector de la construcció sostenible"
+          }
+        }
+      },
+      "transferability": {
+        "whyTransferable": {
+          "es": "Sinergym y EnergyPlus son software de código abierto. El dataset del edificio 4I se publica con licencia abierta. El enfoque Living Lab es replicable en cualquier edificio universitario o institucional con BMS y sensores IoT básicos.",
+          "en": "Sinergym and EnergyPlus are open-source software. The building 4I dataset is published under an open licence. The Living Lab approach is replicable in any university or institutional building with a BMS and basic IoT sensors.",
+          "va": "Sinergym i EnergyPlus són programari de codi obert. El dataset de l'edifici 4I es publica amb llicència oberta. L'enfocament Living Lab és replicable en qualsevol edifici universitari o institucional amb BMS i sensors IoT bàsics."
+        },
+        "suitableFor": [
+          "universities",
+          "vet-centres",
+          "researchers",
+          "companies"
+        ],
+        "requirements": [
+          {
+            "label": {
+              "es": "Edificio con BMS (Building Management System) y datos de consumo histórico accesibles",
+              "en": "Building with BMS (Building Management System) and accessible historical consumption data",
+              "va": "Edifici amb BMS (Building Management System) i dades de consum històric accessibles"
+            }
+          },
+          {
+            "label": {
+              "es": "Red de sensores IoT de ocupación y temperatura (mínimo 1 sensor por espacio)",
+              "en": "IoT occupancy and temperature sensor network (minimum 1 sensor per space)",
+              "va": "Xarxa de sensors IoT d'ocupació i temperatura (mínim 1 sensor per espai)"
+            }
+          }
+        ],
+        "replicationSteps": [
+          {
+            "label": {
+              "es": "Descargar el dataset del edificio 4I y explorar la arquitectura del agente RL base",
+              "en": "Download the building 4I dataset and explore the baseline RL agent architecture",
+              "va": "Descarregar el dataset de l'edifici 4I i explorar l'arquitectura de l'agent RL base"
+            }
+          },
+          {
+            "label": {
+              "es": "Adaptar el entorno Sinergym al modelo energético del edificio objetivo",
+              "en": "Adapt the Sinergym environment to the target building's energy model",
+              "va": "Adaptar l'entorn Sinergym al model energètic de l'edifici objectiu"
+            }
+          },
+          {
+            "label": {
+              "es": "Ejecutar el módulo formativo conjunto con equipos FP-máster para co-desarrollar el agente",
+              "en": "Run the joint training module with VET-master teams to co-develop the agent",
+              "va": "Executar el mòdul formatiu conjunt amb equips FP-màster per co-desenvolupar l'agent"
+            }
+          }
+        ],
+        "risks": [
+          {
+            "label": {
+              "es": "Los resultados son sensibles al modelo de ocupación; edificios con patrones irregulares requieren más datos de entrenamiento",
+              "en": "Results are sensitive to the occupancy model; buildings with irregular patterns require more training data",
+              "va": "Els resultats són sensibles al model d'ocupació; edificis amb patrons irregulars requereixen més dades d'entrenament"
+            }
+          },
+          {
+            "label": {
+              "es": "La integración con BMSs de otros fabricantes (Honeywell, Schneider) puede requerir adaptación del conector de datos",
+              "en": "Integration with BMS from other manufacturers (Honeywell, Schneider) may require data connector adaptation",
+              "va": "La integració amb BMS d'altres fabricants (Honeywell, Schneider) pot requerir adaptació del connector de dades"
+            }
+          }
+        ]
+      },
+      "downloads": {
+        "enabled": true,
+        "basePath": "/assets/downloads/pilots/pilot-living-lab-eficiencia-energetica-hou/",
+        "items": [
+          {
+            "id": "pilot-report",
+            "type": "evidence-sheet",
+            "title": {
+              "es": "Informe intermedio del Living Lab — edificio 4I UPV",
+              "en": "Living Lab interim report — UPV building 4I",
+              "va": "Informe intermedi del Living Lab — edifici 4I UPV"
+            },
+            "description": {
+              "es": "Informe de los primeros 3 meses de despliegue con resultados de reducción de consumo, índice de confort y descripción de los 7 agentes RL participantes.",
+              "en": "Report on the first 3 months of deployment with consumption reduction results, comfort index and description of the 7 participating RL agents.",
+              "va": "Informe dels primers 3 mesos de desplegament amb resultats de reducció de consum, índex de confort i descripció dels 7 agents RL participants."
+            },
+            "files": [
+              {
+                "file": "informe-intermedio-living-lab-hou.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "showOnCard": true,
+            "showOnDetail": true
+          },
+          {
+            "id": "onboarding-guide",
+            "type": "guide",
+            "title": {
+              "es": "Guía de incorporación al Living Lab — para equipos FP y máster",
+              "en": "Living Lab onboarding guide — for VET and master's teams",
+              "va": "Guia d'incorporació al Living Lab — per a equips FP i màster"
+            },
+            "description": {
+              "es": "Guía para que nuevos equipos se sumen al Living Lab, con acceso al dataset, descripción del entorno Sinergym configurado y estructura de las sesiones quincenales.",
+              "en": "Guide for new teams to join the Living Lab, with dataset access, description of the configured Sinergym environment and structure of fortnightly sessions.",
+              "va": "Guia perquè nous equips s'unisquen al Living Lab, amb accés al dataset, descripció de l'entorn Sinergym configurat i estructura de les sessions quinzenals."
+            },
+            "files": [
+              {
+                "file": "guia-onboarding-living-lab-eficiencia.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "showOnCard": false,
+            "showOnDetail": true
+          }
+        ]
+      },
+      "resources": {
+        "externalLinks": [
+          {
+            "id": "sinergym",
+            "type": "repository",
+            "label": {
+              "es": "Sinergym — Entorno Gym para RL con EnergyPlus (GitHub)",
+              "en": "Sinergym — Gym environment for RL with EnergyPlus (GitHub)",
+              "va": "Sinergym — Entorn Gym per a RL amb EnergyPlus (GitHub)"
+            },
+            "url": "https://github.com/ugr-sail/sinergym",
+            "license": "MIT"
+          }
+        ]
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver piloto",
+            "en": "View pilot",
+            "va": "Veure pilot"
+          },
+          "system": "",
+          "url": ""
+        },
+        "secondaryAction": null
+      },
+      "relations": {
+        "originChallengeId": "",
+        "relatedValidations": [],
+        "relatedCases": [],
+        "relatedResources": [],
+        "relatedMentorships": [],
+        "nextPossibleItems": []
+      },
+      "hasDownloads": true,
+      "downloadCount": 2,
+      "cardDownloads": [
+        {
+          "id": "pilot-report",
+          "type": "evidence-sheet",
+          "title": {
+            "es": "Informe intermedio del Living Lab — edificio 4I UPV",
+            "en": "Living Lab interim report — UPV building 4I",
+            "va": "Informe intermedi del Living Lab — edifici 4I UPV"
+          },
+          "description": {
+            "es": "Informe de los primeros 3 meses de despliegue con resultados de reducción de consumo, índice de confort y descripción de los 7 agentes RL participantes.",
+            "en": "Report on the first 3 months of deployment with consumption reduction results, comfort index and description of the 7 participating RL agents.",
+            "va": "Informe dels primers 3 mesos de desplegament amb resultats de reducció de consum, índex de confort i descripció dels 7 agents RL participants."
+          },
+          "files": [
+            {
+              "file": "informe-intermedio-living-lab-hou.pdf",
+              "format": "pdf",
+              "language": "es",
+              "license": "CC BY 4.0"
+            }
+          ],
+          "showOnCard": true,
+          "showOnDetail": true
+        }
+      ],
+      "presentation": {
+        "card": {
+          "variant": "pilot",
+          "showPilotStage": true,
+          "showPilotType": true,
+          "showReadiness": true,
+          "showWindow": true,
+          "showInfrastructure": true,
+          "showPrimaryMetric": true,
+          "showDownloadsIndicator": true,
+          "resultBlockLabel": {
+            "es": "Qué se prueba",
+            "en": "What is being tested",
+            "va": "Què es prova"
+          }
+        },
+        "detail": {
+          "sections": {
+            "summary": true,
+            "pilotPlan": true,
+            "methodology": true,
+            "implementation": true,
+            "evidence": true,
+            "results": true,
+            "transferability": true,
+            "downloads": true,
+            "resources": true,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": false,
+            "relations": false
+          }
+        }
+      },
+      "template": {
+        "requiredBlocks": [
+          "pilotPlan",
+          "implementation",
+          "evidence",
+          "results",
+          "transferability"
+        ],
+        "optionalBlocks": [
+          "downloads",
+          "resources",
+          "process",
+          "people",
+          "access",
+          "externalFlow",
+          "relations"
+        ],
+        "cardSignal": "pilotPlan"
+      }
+    },
+    {
       "id": "reto-personalizacion-itinerarios-fp-edu",
       "type": "challenge",
       "tab": "challenges",
@@ -10277,6 +11653,707 @@ export const MARKETPLACE_CONFIG = {
           "trackA"
         ],
         "cardSignal": "transferValue"
+      }
+    },
+    {
+      "id": "pilot-drones-inspeccion-infraestructura-mob",
+      "type": "pilot",
+      "tab": "pilots",
+      "sortDate": "2026-04-15",
+      "visible": true,
+      "sourcePath": "content/challenges/items/pilots/pilot-drones-inspeccion-infraestructura-mob.yml",
+      "core": {
+        "status": "resolved",
+        "maturity": "idea",
+        "title": {
+          "es": "Piloto — Drones con IA para la inspección automatizada de infraestructuras viarias",
+          "en": "Pilot — AI drones for automated road infrastructure inspection",
+          "va": "Pilot — Drons amb IA per a la inspecció automatitzada d'infraestructures viàries"
+        },
+        "summary": {
+          "es": "Validación de un sistema de inspección autónoma de carreteras y puentes mediante drones equipados con visión artificial para detectar grietas, baches y deterioro superficial, desarrollado junto al IVACE y tres centros de FP de Transporte, que reduce el tiempo de inspección manual de un tramo de 10 km de 8 horas a 45 minutos.",
+          "en": "Validation of an autonomous road and bridge inspection system using drones equipped with computer vision to detect cracks, potholes and surface deterioration, developed with IVACE and three Transport VET centres, reducing manual inspection time for a 10-km stretch from 8 hours to 45 minutes.",
+          "va": "Validació d'un sistema d'inspecció autònom de carreteres i ponts mitjançant drons equipats amb visió artificial per detectar esquerdes, clots i deteriorament superficial, desenvolupat juntament amb l'IVACE i tres centres de FP de Transport, que redueix el temps d'inspecció manual d'un tram de 10 km de 8 hores a 45 minuts."
+        },
+        "entity": {
+          "name": "",
+          "type": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "sector": "mob",
+        "stakeholderCategory": "institutional",
+        "levels": [
+          "FP"
+        ],
+        "pilotType": "vet-industry",
+        "validationType": "",
+        "validationStage": "",
+        "mentoringType": "",
+        "helix": [
+          "academia",
+          "industry",
+          "public-sector"
+        ],
+        "relatedDeliverable": "Sistema de inspección viaria con drones IA — versión piloto validada",
+        "relatedOerId": "",
+        "publishedAt": "2025-10-01",
+        "revisionDate": "2026-04-15",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "Oct 2025",
+          "en": "Oct 2025",
+          "va": "Oct 2025"
+        },
+        "revisionDateLabel": {
+          "es": "Abr 2026",
+          "en": "Apr 2026",
+          "va": "Abr 2026"
+        },
+        "deadlineLabel": null,
+        "tags": {
+          "es": [
+            "Drones",
+            "Inspección viaria",
+            "Visión artificial",
+            "FP Transporte",
+            "Infraestructura"
+          ],
+          "en": [
+            "Drones",
+            "Road inspection",
+            "Computer vision",
+            "Transport VET",
+            "Infrastructure"
+          ],
+          "va": [
+            "Drons",
+            "Inspecció viària",
+            "Visió artificial",
+            "FP Transport",
+            "Infraestructura"
+          ]
+        }
+      },
+      "classification": {
+        "aiSteamFocus": [
+          "data-ai",
+          "maker-steam"
+        ],
+        "tripleTransition": [
+          "digital",
+          "green"
+        ],
+        "policyCluster": [
+          "integrated-pedagogy",
+          "infrastructure-evidence"
+        ],
+        "engagementLevel": "hosting",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "verificationStatus": "",
+        "pilotStatus": ""
+      },
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "pilots",
+        "audience": [
+          "companies",
+          "vet-centres",
+          "teachers",
+          "public-admin"
+        ]
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "available-on-request",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "rightsNote": {
+          "es": "El modelo YOLOv8 de deterioros viarios y el protocolo de replicación se publican bajo licencia MIT. Los informes de inspección del tramo CV-35 pertenecen a la Conselleria de Política Territorial.",
+          "en": "The road deterioration YOLOv8 model and replication protocol are published under MIT licence. CV-35 stretch inspection reports belong to the Conselleria de Política Territorial.",
+          "va": "El model YOLOv8 de deterioraments viaris i el protocol de replicació es publiquen sota llicència MIT. Els informes d'inspecció del tram CV-35 pertanyen a la Conselleria de Política Territorial."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "",
+          "org": ""
+        },
+        "lead": {
+          "name": "IVACE — Institut Valencià de Competitivitat Empresarial",
+          "type": {
+            "es": "Agencia pública de competitividad empresarial e innovación",
+            "en": "Public agency for business competitiveness and innovation",
+            "va": "Agència pública de competitivitat empresarial i innovació"
+          },
+          "role": {
+            "es": "Entidad promotora — financiación y coordinación del piloto técnico",
+            "en": "Promoting entity — funding and coordination of the technical pilot",
+            "va": "Entitat promotora — finançament i coordinació del pilot tècnic"
+          }
+        },
+        "coordinator": {
+          "name": "Drontech Solutions S.L. (Valencia)",
+          "role": {
+            "es": "Empresa tecnológica socia — desarrollo del sistema de drones y algoritmos de detección",
+            "en": "Partner technology company — development of the drone system and detection algorithms",
+            "va": "Empresa tecnològica sòcia — desenvolupament del sistema de drons i algorismes de detecció"
+          }
+        },
+        "pilotSites": [
+          {
+            "name": "IES Cavanilles (Valencia)",
+            "type": "",
+            "role": {
+              "es": "Centro educativo piloto — integración en ciclo de Conducción de Vehículos de Transporte por Carretera",
+              "en": "Pilot educational centre — integration into Road Transport Vehicle Driving cycle",
+              "va": "Centre educatiu pilot — integració en cicle de Conducció de Vehicles de Transport per Carretera"
+            }
+          },
+          {
+            "name": "Tramo viario CV-35 (Valencia — Lliria, km 12-22)",
+            "type": "",
+            "role": {
+              "es": "Entorno real de pruebas — 10 km de carretera autonómica con variedad de deterioros",
+              "en": "Real test environment — 10 km of regional road with varied deterioration",
+              "va": "Entorn real de proves — 10 km de carretera autonòmica amb varietat de deterioraments"
+            }
+          }
+        ],
+        "partners": [
+          {
+            "name": "Conselleria de Política Territorial, Obres Públiques i Mobilitat",
+            "type": "",
+            "role": {
+              "es": "Administración propietaria de la infraestructura viaria utilizada para las pruebas",
+              "en": "Administration owning the road infrastructure used for tests",
+              "va": "Administració propietària de la infraestructura viària usada per a les proves"
+            }
+          }
+        ]
+      },
+      "pilotPlan": {
+        "hypothesis": {
+          "es": "Un sistema de drones con IA entrenado para detectar deterioros superficiales en carreteras puede alcanzar una precisión de detección superior al 92% respecto al inventario manual de referencia, reducir el tiempo de inspección en más de un 85% y ser operado por alumnos de FP de Transporte tras una formación de 2 días.",
+          "en": "A drone system with AI trained to detect surface road deterioration can achieve detection accuracy exceeding 92% against the manual reference inventory, reduce inspection time by more than 85% and be operated by Transport VET students after 2 days of training.",
+          "va": "Un sistema de drons amb IA entrenat per detectar deterioraments superficials en carreteres pot assolir una precisió de detecció superior al 92% respecte a l'inventari manual de referència, reduir el temps d'inspecció en més d'un 85% i ser operat per alumnes de FP de Transport després d'una formació de 2 dies."
+        },
+        "objective": {
+          "es": "Demostrar la viabilidad operativa y educativa del sistema de inspección con drones IA en un entorno real de carretera autonómica valenciana, validar la integración curricular en FP de Transporte y generar un protocolo de inspección replicable por otras consejerías de obras públicas.",
+          "en": "Demonstrate the operational and educational feasibility of the AI drone inspection system in a real Valencian regional road environment, validate curricular integration in Transport VET and generate a replicable inspection protocol for other public works departments.",
+          "va": "Demostrar la viabilitat operativa i educativa del sistema d'inspecció amb drons IA en un entorn real de carretera autonòmica valenciana, validar la integració curricular en FP de Transport i generar un protocol d'inspecció replicable per altres conselleries d'obres públiques."
+        },
+        "context": {
+          "es": "La inspección manual de carreteras de la Comunitat Valenciana requiere 4.200 horas/año de operarios especializados. El deterioro no detectado a tiempo genera sobrecostes de mantenimiento de 3,7 M€ anuales según datos de la Conselleria. El sistema de drones IA desarrollado por Drontech combina un modelo YOLOv8 personalizado con 15 clases de deterioro y un pipeline de generación automática de informes geolocalizados.",
+          "en": "Manual inspection of roads in the Valencian Community requires 4,200 specialist operator hours/year. Untimely undetected deterioration generates maintenance overcosts of €3.7M annually according to Conselleria data. Drontech's AI drone system combines a custom YOLOv8 model with 15 deterioration classes and an automatic georeferenced report generation pipeline.",
+          "va": "La inspecció manual de carreteres de la Comunitat Valenciana requereix 4.200 hores/any d'operaris especialitzats. El deteriorament no detectat a temps genera sobrecostos de manteniment de 3,7 M€ anuals segons dades de la Conselleria. El sistema de drons IA desenvolupat per Drontech combina un model YOLOv8 personalitzat amb 15 classes de deteriorament i un pipeline de generació automàtica d'informes geolocalitzats."
+        },
+        "targetParticipants": {
+          "es": "Equipo técnico de Drontech (5 ingenieros), 28 alumnos de 2.º de FP de Transporte del IES Cavanilles y 4 técnicos de la Conselleria de Política Territorial.",
+          "en": "Drontech technical team (5 engineers), 28 2nd-year Transport VET students from IES Cavanilles and 4 Conselleria de Política Territorial technicians.",
+          "va": "Equip tècnic de Drontech (5 enginyers), 28 alumnes de 2n de FP de Transport de l'IES Cavanilles i 4 tècnics de la Conselleria de Política Territorial."
+        },
+        "methodology": {
+          "es": "El piloto se ejecuta en tres fases: (1) formación de 2 días para alumnos de FP en operación de drones y lectura de informes de IA; (2) inspección real del tramo CV-35 por equipos mixtos alumnos-técnicos con el sistema IA; (3) comparación ciega de los resultados del sistema con el inventario manual de referencia elaborado previamente por la Conselleria.",
+          "en": "The pilot runs in three phases: (1) 2-day training for VET students in drone operation and AI report reading; (2) real inspection of the CV-35 stretch by mixed student-technician teams with the AI system; (3) blind comparison of system results with the manual reference inventory previously compiled by the Conselleria.",
+          "va": "El pilot s'executa en tres fases: (1) formació de 2 dies per a alumnes de FP en operació de drons i lectura d'informes d'IA; (2) inspecció real del tram CV-35 per equips mixtos alumnes-tècnics amb el sistema IA; (3) comparació cega dels resultats del sistema amb l'inventari manual de referència elaborat prèviament per la Conselleria."
+        },
+        "successCriteria": [
+          {
+            "id": "sc1",
+            "label": {
+              "es": "Precisión de detección de deterioros ≥ 92% respecto al inventario manual de referencia",
+              "en": "Deterioration detection accuracy ≥ 92% against the manual reference inventory",
+              "va": "Precisió de detecció de deterioraments ≥ 92% respecte a l'inventari manual de referència"
+            }
+          },
+          {
+            "id": "sc2",
+            "label": {
+              "es": "Reducción del tiempo de inspección del tramo de 10 km en más de un 85% respecto a la inspección manual",
+              "en": "Reduction of inspection time for the 10-km stretch by more than 85% relative to manual inspection",
+              "va": "Reducció del temps d'inspecció del tram de 10 km en més d'un 85% respecte a la inspecció manual"
+            }
+          },
+          {
+            "id": "sc3",
+            "label": {
+              "es": "Los alumnos de FP son capaces de operar el sistema y interpretar los informes tras la formación de 2 días",
+              "en": "VET students are able to operate the system and interpret reports after 2 days of training",
+              "va": "Els alumnes de FP són capaços d'operar el sistema i interpretar els informes després de la formació de 2 dies"
+            }
+          }
+        ]
+      },
+      "implementation": {
+        "readiness": {
+          "technologyReadiness": {
+            "enabled": true,
+            "level": 7,
+            "label": {
+              "es": "TRL 7 — Demostración del prototipo en entorno operacional real (carretera CV-35)",
+              "en": "TRL 7 — Prototype demonstration in real operational environment (CV-35 road)",
+              "va": "TRL 7 — Demostració del prototip en entorn operacional real (carretera CV-35)"
+            }
+          },
+          "educationalReadiness": {
+            "enabled": true,
+            "level": "validated-in-real-context",
+            "label": {
+              "es": "Validado en contexto real — alumnos de FP en entorno de carretera autonómica",
+              "en": "Validated in real context — VET students in regional road environment",
+              "va": "Validat en context real — alumnes de FP en entorn de carretera autonòmica"
+            }
+          }
+        },
+        "infrastructure": [
+          {
+            "id": "dji-m300",
+            "label": {
+              "es": "Drones DJI Matrice 300 RTK con cámara Zenmuse H20T",
+              "en": "DJI Matrice 300 RTK drones with Zenmuse H20T camera",
+              "va": "Drons DJI Matrice 300 RTK amb càmera Zenmuse H20T"
+            }
+          },
+          {
+            "id": "edge-laptop",
+            "label": {
+              "es": "Portátil con GPU dedicada para inferencia en campo",
+              "en": "Laptop with dedicated GPU for field inference",
+              "va": "Portàtil amb GPU dedicada per a inferència en camp"
+            }
+          },
+          {
+            "id": "gis-platform",
+            "label": {
+              "es": "Plataforma GIS para geolocalización y visualización de deterioros",
+              "en": "GIS platform for deterioration geolocalisation and visualisation",
+              "va": "Plataforma GIS per a geolocalització i visualització de deterioraments"
+            }
+          }
+        ],
+        "tools": [
+          {
+            "id": "yolov8",
+            "label": {
+              "es": "YOLOv8 custom — modelo de detección de deterioros viarios",
+              "en": "Custom YOLOv8 — road deterioration detection model",
+              "va": "YOLOv8 custom — model de detecció de deterioraments viaris"
+            }
+          },
+          {
+            "id": "qgis",
+            "label": {
+              "es": "QGIS — visualización geoespacial de informes de inspección",
+              "en": "QGIS — geospatial visualisation of inspection reports",
+              "va": "QGIS — visualització geoespacial d'informes d'inspecció"
+            }
+          }
+        ],
+        "dataManagement": {
+          "sensitiveDataIncluded": false,
+          "personalDataIncluded": false,
+          "note": {
+            "es": "Las imágenes capturadas son de infraestructura viaria pública. No se capturan datos personales. Los informes generados son propiedad de la Conselleria de Política Territorial.",
+            "en": "Captured images are of public road infrastructure. No personal data is captured. Generated reports are the property of the Conselleria de Política Territorial.",
+            "va": "Les imatges capturades són d'infraestructura viària pública. No es capturen dades personals. Els informes generats són propietat de la Conselleria de Política Territorial."
+          }
+        }
+      },
+      "evidence": {
+        "evidenceLevel": "verified",
+        "verificationStatus": "externally-verified",
+        "collectionMethod": {
+          "es": "Comparación ciega del inventario de deterioros generado por el sistema IA con el inventario manual de referencia elaborado previamente por técnicos de la Conselleria. Cronometrado de la inspección. Evaluación de competencias de los alumnos tras la formación.",
+          "en": "Blind comparison of the deterioration inventory generated by the AI system with the manual reference inventory previously compiled by Conselleria technicians. Timed inspection. Student competency assessment after training.",
+          "va": "Comparació cega de l'inventari de deterioraments generat pel sistema IA amb l'inventari manual de referència elaborat prèviament per tècnics de la Conselleria. Cronometrat de la inspecció. Avaluació de competències dels alumnes després de la formació."
+        },
+        "primaryMetric": {
+          "id": "detection-accuracy",
+          "value": "94.2",
+          "unit": {
+            "es": "% de coincidencia con el inventario manual de referencia",
+            "en": "% agreement with manual reference inventory",
+            "va": "% de coincidència amb l'inventari manual de referència"
+          },
+          "label": {
+            "es": "Precisión de detección del sistema respecto al inventario manual",
+            "en": "System detection accuracy against the manual inventory",
+            "va": "Precisió de detecció del sistema respecte a l'inventari manual"
+          }
+        },
+        "secondaryMetrics": [
+          {
+            "id": "time-reduction",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Reducción del tiempo de inspección del tramo de 10 km (horas)",
+              "en": "Inspection time reduction for the 10-km stretch (hours)",
+              "va": "Reducció del temps d'inspecció del tram de 10 km (hores)"
+            }
+          },
+          {
+            "id": "student-operational-competence",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Porcentaje de alumnos de FP capaces de operar el sistema autónomamente tras la formación",
+              "en": "Percentage of VET students able to operate the system autonomously after training",
+              "va": "Percentatge d'alumnes de FP capaços d'operar el sistema autònomament després de la formació"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "El piloto cubre un único tipo de superficie (asfalto convencional). La precisión puede variar en superficies de hormigón o adoquín. Las condiciones meteorológicas adversas (lluvia, viento fuerte) requieren protocolos adicionales.",
+          "en": "The pilot covers a single surface type (conventional asphalt). Accuracy may vary on concrete or cobbled surfaces. Adverse weather conditions (rain, strong wind) require additional protocols.",
+          "va": "El pilot cobreix un únic tipus de superfície (asfalt convencional). La precisió pot variar en superfícies de formigó o empedrat. Les condicions meteorològiques adverses (pluja, vent fort) requereixen protocols addicionals."
+        }
+      },
+      "results": {
+        "headline": {
+          "es": "94,2% de precisión de detección; el tiempo de inspección de 10 km se reduce de 8 horas a 43 minutos (–91%). El 89% de los alumnos opera el sistema autónomamente tras la formación de 2 días.",
+          "en": "94.2% detection accuracy; 10-km inspection time reduced from 8 hours to 43 minutes (–91%). 89% of students operate the system autonomously after 2-day training.",
+          "va": "94,2% de precisió de detecció; el temps d'inspecció de 10 km es redueix de 8 hores a 43 minuts (–91%). El 89% dels alumnes opera el sistema autònomament després de la formació de 2 dies."
+        },
+        "outputs": [
+          {
+            "id": "inspection-report",
+            "label": {
+              "es": "Informe de inspección geolocalizdo del tramo CV-35 con 847 deterioros catalogados",
+              "en": "Georeferenced inspection report for the CV-35 stretch with 847 catalogued deteriorations",
+              "va": "Informe d'inspecció geolocalitzat del tram CV-35 amb 847 deterioraments catalogats"
+            }
+          },
+          {
+            "id": "detection-model",
+            "label": {
+              "es": "Modelo YOLOv8 de detección de deterioros viarios publicado en abierto (MIT)",
+              "en": "Open-source (MIT) road deterioration detection YOLOv8 model",
+              "va": "Model YOLOv8 de detecció de deterioraments viaris publicat en obert (MIT)"
+            }
+          },
+          {
+            "id": "fp-training-module",
+            "label": {
+              "es": "Módulo formativo de 2 días para operadores de drones IA en FP de Transporte",
+              "en": "2-day AI drone operator training module for Transport VET",
+              "va": "Mòdul formatiu de 2 dies per a operadors de drons IA en FP de Transport"
+            }
+          },
+          {
+            "id": "replication-protocol",
+            "label": {
+              "es": "Protocolo de inspección replicable para administraciones de obras públicas",
+              "en": "Replicable inspection protocol for public works administrations",
+              "va": "Protocol d'inspecció replicable per a administracions d'obres públiques"
+            }
+          }
+        ],
+        "decision": {
+          "outcome": "scale",
+          "label": {
+            "es": "Escalar a 5 tramos adicionales de carretera autonómica y publicar el modelo como caso de referencia en el sector de infraestructuras",
+            "en": "Scale to 5 additional regional road stretches and publish the model as a reference case in the infrastructure sector",
+            "va": "Escalar a 5 trams addicionals de carretera autonòmica i publicar el model com a cas de referència en el sector d'infraestructures"
+          }
+        }
+      },
+      "transferability": {
+        "whyTransferable": {
+          "es": "YOLOv8 es un modelo de código abierto con comunidad activa. El pipeline de informes GIS usa QGIS (software libre). El sistema puede adaptarse a cualquier tipo de infraestructura lineal (ferroviaria, hidráulica) con reentrenamiento del modelo.",
+          "en": "YOLOv8 is an open-source model with an active community. The GIS report pipeline uses QGIS (free software). The system can be adapted to any type of linear infrastructure (railway, hydraulic) with model retraining.",
+          "va": "YOLOv8 és un model de codi obert amb comunitat activa. El pipeline d'informes GIS usa QGIS (programari lliure). El sistema pot adaptar-se a qualsevol tipus d'infraestructura lineal (ferroviària, hidràulica) amb reentrament del model."
+        },
+        "suitableFor": [
+          "companies",
+          "public-admin",
+          "vet-centres"
+        ],
+        "requirements": [
+          {
+            "label": {
+              "es": "Dron con cámara de alta resolución (mínimo 20 MP) y GPS RTK",
+              "en": "Drone with high-resolution camera (minimum 20 MP) and RTK GPS",
+              "va": "Dron amb càmera d'alta resolució (mínim 20 MP) i GPS RTK"
+            }
+          },
+          {
+            "label": {
+              "es": "Portátil con GPU NVIDIA (GTX 1660 o superior) para inferencia en campo",
+              "en": "Laptop with NVIDIA GPU (GTX 1660 or higher) for field inference",
+              "va": "Portàtil amb GPU NVIDIA (GTX 1660 o superior) per a inferència en camp"
+            }
+          },
+          {
+            "label": {
+              "es": "Piloto de drones con licencia AESA A2 o superior",
+              "en": "Drone pilot with AESA A2 licence or higher",
+              "va": "Pilot de drons amb llicència AESA A2 o superior"
+            }
+          }
+        ],
+        "replicationSteps": [
+          {
+            "label": {
+              "es": "Obtener las autorizaciones AESA necesarias para el espacio aéreo del tramo a inspeccionar",
+              "en": "Obtain the necessary AESA authorisations for the airspace of the stretch to be inspected",
+              "va": "Obtenir les autoritzacions AESA necessàries per a l'espai aeri del tram a inspeccionar"
+            }
+          },
+          {
+            "label": {
+              "es": "Adaptar el modelo YOLOv8 al tipo de superficie específico mediante fine-tuning con 200-500 imágenes etiquetadas",
+              "en": "Adapt the YOLOv8 model to the specific surface type via fine-tuning with 200-500 labelled images",
+              "va": "Adaptar el model YOLOv8 al tipus de superfície específic mitjançant fine-tuning amb 200-500 imatges etiquetades"
+            }
+          },
+          {
+            "label": {
+              "es": "Formar al equipo de operadores siguiendo el módulo de 2 días publicado",
+              "en": "Train the operator team following the published 2-day module",
+              "va": "Formar l'equip d'operadors seguint el mòdul de 2 dies publicat"
+            }
+          }
+        ],
+        "risks": [
+          {
+            "label": {
+              "es": "La regulación AESA puede limitar el espacio aéreo disponible en zonas urbanas densas",
+              "en": "AESA regulation may restrict available airspace in dense urban areas",
+              "va": "La regulació AESA pot limitar l'espai aeri disponible en zones urbanes denses"
+            }
+          },
+          {
+            "label": {
+              "es": "La precisión baja significativamente con luminosidad insuficiente o niebla",
+              "en": "Accuracy drops significantly with insufficient lighting or fog",
+              "va": "La precisió baixa significativament amb lluminositat insuficient o boira"
+            }
+          }
+        ]
+      },
+      "downloads": {
+        "enabled": true,
+        "basePath": "/assets/downloads/pilots/pilot-drones-inspeccion-infraestructura-mob/",
+        "items": [
+          {
+            "id": "pilot-report",
+            "type": "evidence-sheet",
+            "title": {
+              "es": "Informe del piloto — Drones IA en inspección viaria",
+              "en": "Pilot report — AI drones in road inspection",
+              "va": "Informe del pilot — Drons IA en inspecció viària"
+            },
+            "description": {
+              "es": "Informe técnico completo del piloto con metodología, resultados de precisión, análisis de coste-tiempo y protocolo de replicación.",
+              "en": "Full technical pilot report with methodology, accuracy results, cost-time analysis and replication protocol.",
+              "va": "Informe tècnic complet del pilot amb metodologia, resultats de precisió, anàlisi de cost-temps i protocol de replicació."
+            },
+            "files": [
+              {
+                "file": "informe-piloto-drones-inspeccion-viaria.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "showOnCard": true,
+            "showOnDetail": true
+          },
+          {
+            "id": "replication-protocol",
+            "type": "guide",
+            "title": {
+              "es": "Protocolo de replicación — inspección con drones IA",
+              "en": "Replication protocol — AI drone inspection",
+              "va": "Protocol de replicació — inspecció amb drons IA"
+            },
+            "description": {
+              "es": "Guía paso a paso para replicar el sistema en cualquier tramo de infraestructura lineal, con checklist de requisitos, modelo de solicitud AESA y plantilla de informe GIS.",
+              "en": "Step-by-step guide to replicate the system on any linear infrastructure stretch, with requirements checklist, AESA application template and GIS report template.",
+              "va": "Guia pas a pas per replicar el sistema en qualsevol tram d'infraestructura lineal, amb checklist de requisits, model de sol·licitud AESA i plantilla d'informe GIS."
+            },
+            "files": [
+              {
+                "file": "protocolo-replicacion-drones-inspeccion.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "showOnCard": false,
+            "showOnDetail": true
+          }
+        ]
+      },
+      "resources": {
+        "externalLinks": [
+          {
+            "id": "yolov8-ultralytics",
+            "type": "repository",
+            "label": {
+              "es": "YOLOv8 — Ultralytics GitHub",
+              "en": "YOLOv8 — Ultralytics GitHub",
+              "va": "YOLOv8 — Ultralytics GitHub"
+            },
+            "url": "https://github.com/ultralytics/ultralytics",
+            "license": "AGPL-3.0"
+          }
+        ]
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver piloto",
+            "en": "View pilot",
+            "va": "Veure pilot"
+          },
+          "system": "",
+          "url": ""
+        },
+        "secondaryAction": null
+      },
+      "relations": {
+        "originChallengeId": "",
+        "relatedValidations": [],
+        "relatedCases": [],
+        "relatedResources": [],
+        "relatedMentorships": [],
+        "nextPossibleItems": []
+      },
+      "hasDownloads": true,
+      "downloadCount": 2,
+      "cardDownloads": [
+        {
+          "id": "pilot-report",
+          "type": "evidence-sheet",
+          "title": {
+            "es": "Informe del piloto — Drones IA en inspección viaria",
+            "en": "Pilot report — AI drones in road inspection",
+            "va": "Informe del pilot — Drons IA en inspecció viària"
+          },
+          "description": {
+            "es": "Informe técnico completo del piloto con metodología, resultados de precisión, análisis de coste-tiempo y protocolo de replicación.",
+            "en": "Full technical pilot report with methodology, accuracy results, cost-time analysis and replication protocol.",
+            "va": "Informe tècnic complet del pilot amb metodologia, resultats de precisió, anàlisi de cost-temps i protocol de replicació."
+          },
+          "files": [
+            {
+              "file": "informe-piloto-drones-inspeccion-viaria.pdf",
+              "format": "pdf",
+              "language": "es",
+              "license": "CC BY 4.0"
+            }
+          ],
+          "showOnCard": true,
+          "showOnDetail": true
+        }
+      ],
+      "presentation": {
+        "card": {
+          "variant": "pilot",
+          "showPilotStage": true,
+          "showPilotType": true,
+          "showReadiness": true,
+          "showWindow": true,
+          "showInfrastructure": true,
+          "showPrimaryMetric": true,
+          "showDownloadsIndicator": true,
+          "resultBlockLabel": {
+            "es": "Qué se prueba",
+            "en": "What is being tested",
+            "va": "Què es prova"
+          }
+        },
+        "detail": {
+          "sections": {
+            "summary": true,
+            "pilotPlan": true,
+            "methodology": true,
+            "implementation": true,
+            "evidence": true,
+            "results": true,
+            "transferability": true,
+            "downloads": true,
+            "resources": true,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": false,
+            "relations": false
+          }
+        }
+      },
+      "template": {
+        "requiredBlocks": [
+          "pilotPlan",
+          "implementation",
+          "evidence",
+          "results",
+          "transferability"
+        ],
+        "optionalBlocks": [
+          "downloads",
+          "resources",
+          "process",
+          "people",
+          "access",
+          "externalFlow",
+          "relations"
+        ],
+        "cardSignal": "pilotPlan"
       }
     },
     {
@@ -29496,6 +31573,1382 @@ export const MARKETPLACE_CONFIG = {
     ],
     "pilots": [
       {
+        "id": "pilot-ia-diagnostico-cancer-piel-nts",
+        "type": "pilot",
+        "tab": "pilots",
+        "sortDate": "2026-05-20",
+        "visible": true,
+        "sourcePath": "content/challenges/items/pilots/pilot-ia-diagnostico-cancer-piel-nts.yml",
+        "core": {
+          "status": "in-progress",
+          "maturity": "idea",
+          "title": {
+            "es": "Piloto — IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
+            "en": "Pilot — AI for dermatological diagnosis support in Health VET settings",
+            "va": "Pilot — IA per al suport al diagnòstic dermatològic en entorns de FP Sanitari"
+          },
+          "summary": {
+            "es": "Validación de un módulo de IA para la clasificación de lesiones cutáneas sospechosas (malignas/benignas) a partir de imágenes dermoscópicas, integrado en el itinerario formativo del ciclo de Imagen para el Diagnóstico de FP Sanitario, con supervisión clínica del Hospital La Fe y evaluación de competencias digitales en salud.",
+            "en": "Validation of an AI module for classifying suspicious skin lesions (malignant/benign) from dermoscopic images, integrated into the Diagnostic Imaging Health VET cycle curriculum, with clinical supervision from Hospital La Fe and digital health competency assessment.",
+            "va": "Validació d'un mòdul d'IA per a la classificació de lesions cutànies sospitoses (malignes/benignes) a partir d'imatges dermoscòpiques, integrat en l'itinerari formatiu del cicle d'Imatge per al Diagnòstic de FP Sanitari, amb supervisió clínica de l'Hospital La Fe i avaluació de competències digitals en salut."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "sector": "nts",
+          "stakeholderCategory": "knowledge",
+          "levels": [
+            "FP",
+            "Docentes"
+          ],
+          "pilotType": "vet-industry",
+          "validationType": "",
+          "validationStage": "",
+          "mentoringType": "",
+          "helix": [
+            "academia",
+            "industry",
+            "public-sector"
+          ],
+          "relatedDeliverable": "Módulo formativo IA-Dermoscopia para FP Sanitario — versión validada",
+          "relatedOerId": "",
+          "publishedAt": "2026-02-01",
+          "revisionDate": "2026-05-20",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "Feb 2026",
+            "en": "Feb 2026",
+            "va": "Feb 2026"
+          },
+          "revisionDateLabel": {
+            "es": "May 2026",
+            "en": "May 2026",
+            "va": "Mai 2026"
+          },
+          "deadlineLabel": null,
+          "tags": {
+            "es": [
+              "Dermoscopia",
+              "IA médica",
+              "FP Sanitario",
+              "Diagnóstico cutáneo",
+              "Competencias digitales"
+            ],
+            "en": [
+              "Dermoscopy",
+              "Medical AI",
+              "Health VET",
+              "Skin diagnosis",
+              "Digital competences"
+            ],
+            "va": [
+              "Dermoscòpia",
+              "IA mèdica",
+              "FP Sanitari",
+              "Diagnòstic cutani",
+              "Competències digitals"
+            ]
+          }
+        },
+        "classification": {
+          "aiSteamFocus": [
+            "data-ai",
+            "responsible-ai"
+          ],
+          "tripleTransition": [
+            "digital",
+            "social"
+          ],
+          "policyCluster": [
+            "integrated-pedagogy",
+            "equity-inclusion",
+            "infrastructure-evidence"
+          ],
+          "engagementLevel": "hosting",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "pilots",
+          "audience": [
+            "vet-centres",
+            "teachers",
+            "researchers"
+          ]
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "",
+          "dataAvailability": "available-in-repository",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "El módulo y el test de competencias se publican bajo licencia CC BY 4.0. El dataset HAM10000 es de libre acceso bajo licencia CC BY-NC 4.0 de ISIC.",
+            "en": "The module and competency test are published under CC BY 4.0. The HAM10000 dataset is freely accessible under ISIC's CC BY-NC 4.0 licence.",
+            "va": "El mòdul i el test de competències es publiquen sota llicència CC BY 4.0. El dataset HAM10000 és d'accés lliure sota llicència CC BY-NC 4.0 d'ISIC."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "Hospital Universitari i Politècnic La Fe — Servicio de Dermatología",
+            "type": {
+              "es": "Hospital público universitario",
+              "en": "University public hospital",
+              "va": "Hospital públic universitari"
+            },
+            "role": {
+              "es": "Entidad clínica líder — validación del módulo y supervisión de contenidos médicos",
+              "en": "Lead clinical entity — module validation and medical content supervision",
+              "va": "Entitat clínica líder — validació del mòdul i supervisió de continguts mèdics"
+            }
+          },
+          "coordinator": {
+            "name": "AI-STEAM Network — Comité Técnico Salud Digital",
+            "role": {
+              "es": "Coordinación del piloto y evaluación de competencias digitales",
+              "en": "Pilot coordination and digital competency assessment",
+              "va": "Coordinació del pilot i avaluació de competències digitals"
+            }
+          },
+          "pilotSites": [
+            {
+              "name": "IES Federica Montseny (Valencia)",
+              "type": "",
+              "role": {
+                "es": "Centro educativo piloto principal — ciclo de Imagen para el Diagnóstico",
+                "en": "Main pilot educational centre — Diagnostic Imaging cycle",
+                "va": "Centre educatiu pilot principal — cicle d'Imatge per al Diagnòstic"
+              }
+            },
+            {
+              "name": "IES Enric Valor (Petrer)",
+              "type": "",
+              "role": {
+                "es": "Centro educativo secundario — replicación del piloto",
+                "en": "Secondary educational centre — pilot replication",
+                "va": "Centre educatiu secundari — replicació del pilot"
+              }
+            }
+          ],
+          "partners": [
+            {
+              "name": "ISIC (International Skin Imaging Collaboration)",
+              "type": "",
+              "role": {
+                "es": "Proveedor del dataset dermoscópico de referencia (HAM10000)",
+                "en": "Provider of the reference dermoscopic dataset (HAM10000)",
+                "va": "Proveïdor del dataset dermoscòpic de referència (HAM10000)"
+              }
+            }
+          ]
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Si los alumnos de 2.º curso del ciclo de Imagen para el Diagnóstico trabajan con un módulo de clasificación de lesiones cutáneas mediante IA durante 8 sesiones supervisadas, alcanzarán competencia básica en interpretación de modelos de IA médica y serán capaces de identificar sus limitaciones éticas y clínicas.",
+            "en": "If 2nd-year Diagnostic Imaging cycle students work with an AI skin lesion classification module over 8 supervised sessions, they will achieve basic competency in interpreting medical AI models and will be able to identify their ethical and clinical limitations.",
+            "va": "Si els alumnes de 2n curs del cicle d'Imatge per al Diagnòstic treballen amb un mòdul de classificació de lesions cutànies mitjançant IA durant 8 sessions supervisades, assoliran competència bàsica en interpretació de models d'IA mèdica i seran capaços d'identificar-ne les limitacions ètiques i clíniques."
+          },
+          "objective": {
+            "es": "Validar la integración del módulo de IA dermoscópica en el currículo de FP Sanitario, medir la adquisición de competencias digitales en salud de los alumnos y evaluar la confianza del profesorado para impartir contenidos de IA médica de forma autónoma.",
+            "en": "Validate the integration of the dermoscopic AI module into the Health VET curriculum, measure students' acquisition of digital health competencies and evaluate teacher confidence to deliver medical AI content autonomously.",
+            "va": "Validar la integració del mòdul d'IA dermoscòpica en el currículum de FP Sanitari, mesurar l'adquisició de competències digitals en salut dels alumnes i avaluar la confiança del professorat per impartir continguts d'IA mèdica de forma autònoma."
+          },
+          "context": {
+            "es": "El ciclo de Imagen para el Diagnóstico y Medicina Nuclear (CFGS) forma técnicos que operarán equipos de diagnóstico en entornos hospitalarios donde la IA ya es parte de los flujos de trabajo clínicos. La formación actual no incluye ningún módulo sobre IA, lo que genera una brecha de competencia creciente. El Hospital La Fe ha desarrollado un módulo de formación interno para residentes que, adaptado, puede funcionar en FP.",
+            "en": "The Diagnostic Imaging and Nuclear Medicine (HND) cycle trains technicians who will operate diagnostic equipment in hospital settings where AI is already part of clinical workflows. Current training includes no AI module, creating a growing competency gap. Hospital La Fe has developed an internal training module for residents which, when adapted, can work in VET.",
+            "va": "El cicle d'Imatge per al Diagnòstic i Medicina Nuclear (CFGS) forma tècnics que operaran equips de diagnòstic en entorns hospitalaris on l'IA ja és part dels fluxos de treball clínics. La formació actual no inclou cap mòdul sobre IA, la qual cosa genera una bretxa de competència creixent. L'Hospital La Fe ha desenvolupat un mòdul de formació intern per a residents que, adaptat, pot funcionar en FP."
+          },
+          "targetParticipants": {
+            "es": "104 alumnos de 2.º de CFGS Imagen para el Diagnóstico de los dos centros participantes y 6 docentes del área sanitaria.",
+            "en": "104 2nd-year HND Diagnostic Imaging students from both participating centres and 6 healthcare area teachers.",
+            "va": "104 alumnes de 2n de CFGS Imatge per al Diagnòstic dels dos centres participants i 6 docents de l'àrea sanitària."
+          },
+          "methodology": {
+            "es": "Diseño cuasi-experimental con grupo control (sin módulo IA) y grupo experimental (con módulo IA). Evaluación pre-post con test de competencias digitales en salud validado por el Comité Técnico. 8 sesiones de 90 minutos integrando el módulo en la UD de 'Nuevas tecnologías en diagnóstico'. Supervisión clínica remota por dermatólogos del La Fe en las sesiones 4 y 7.",
+            "en": "Quasi-experimental design with control group (no AI module) and experimental group (with AI module). Pre-post evaluation using a digital health competency test validated by the Technical Committee. 8 sessions of 90 minutes integrating the module into the 'New diagnostic technologies' learning unit. Remote clinical supervision by La Fe dermatologists in sessions 4 and 7.",
+            "va": "Disseny quasiexperimental amb grup control (sense mòdul IA) i grup experimental (amb mòdul IA). Avaluació pre-post amb test de competències digitals en salut validat pel Comité Tècnic. 8 sessions de 90 minuts integrant el mòdul en la UD de 'Noves tecnologies en diagnòstic'. Supervisió clínica remota per dermatòlegs del La Fe en les sessions 4 i 7."
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "El 80% de los alumnos del grupo experimental supera el umbral de competencia básica en el test post-intervención",
+                "en": "80% of experimental group students exceed the basic competency threshold in the post-intervention test",
+                "va": "El 80% dels alumnes del grup experimental supera el llindar de competència bàsica en el test post-intervenció"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "El profesorado participante obtiene una confianza media de 7,5/10 o superior para impartir el módulo de forma autónoma",
+                "en": "Participating teachers achieve an average confidence of 7.5/10 or higher to deliver the module autonomously",
+                "va": "El professorat participant obté una confiança mitjana de 7,5/10 o superior per impartir el mòdul de forma autònoma"
+              }
+            },
+            {
+              "id": "sc3",
+              "label": {
+                "es": "El módulo se puede instalar y ejecutar sin intervención técnica del Hospital La Fe en menos de 2 horas",
+                "en": "The module can be installed and run without Hospital La Fe technical intervention in under 2 hours",
+                "va": "El mòdul es pot instal·lar i executar sense intervenció tècnica de l'Hospital La Fe en menys de 2 hores"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 6,
+              "label": {
+                "es": "TRL 6 — Demostración en entorno relevante (aula de FP)",
+                "en": "TRL 6 — Demonstration in relevant environment (VET classroom)",
+                "va": "TRL 6 — Demostració en entorn rellevant (aula de FP)"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": true,
+              "level": "classroom-tested",
+              "label": {
+                "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
+                "en": "Classroom-tested — previously tested with La Fe residents, first VET validation",
+                "va": "Provat en aula — testejat prèviament amb residents del La Fe, primera validació en FP"
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "id": "computer-lab",
+              "label": {
+                "es": "Aula informática con ordenadores básicos (sin GPU dedicada)",
+                "en": "Computer lab with basic computers (no dedicated GPU)",
+                "va": "Aula informàtica amb ordinadors bàsics (sense GPU dedicada)"
+              }
+            },
+            {
+              "id": "gradio-interface",
+              "label": {
+                "es": "Interfaz web Gradio desplegada localmente",
+                "en": "Locally deployed Gradio web interface",
+                "va": "Interfície web Gradio desplegada localment"
+              }
+            }
+          ],
+          "tools": [
+            {
+              "id": "gradio",
+              "label": {
+                "es": "Gradio — interfaz web de clasificación",
+                "en": "Gradio — classification web interface",
+                "va": "Gradio — interfície web de classificació"
+              }
+            },
+            {
+              "id": "pytorch",
+              "label": {
+                "es": "PyTorch + torchvision — motor de inferencia",
+                "en": "PyTorch + torchvision — inference engine",
+                "va": "PyTorch + torchvision — motor d'inferència"
+              }
+            },
+            {
+              "id": "ham10000",
+              "label": {
+                "es": "Dataset HAM10000 — 10.000 imágenes dermoscópicas etiquetadas",
+                "en": "HAM10000 dataset — 10,000 labelled dermoscopic images",
+                "va": "Dataset HAM10000 — 10.000 imatges dermoscòpiques etiquetades"
+              }
+            }
+          ],
+          "dataManagement": {
+            "sensitiveDataIncluded": false,
+            "personalDataIncluded": false,
+            "note": {
+              "es": "Se utiliza únicamente el dataset público HAM10000 con imágenes anonimizadas. No se procesan datos de pacientes reales durante el piloto.",
+              "en": "Only the public HAM10000 dataset with anonymised images is used. No real patient data is processed during the pilot.",
+              "va": "S'utilitza únicament el dataset públic HAM10000 amb imatges anonimitzades. No es processen dades de pacients reals durant el pilot."
+            }
+          }
+        },
+        "evidence": {
+          "evidenceLevel": "measured",
+          "verificationStatus": "peer-reviewed",
+          "collectionMethod": {
+            "es": "Test de competencias digitales en salud validado (pre y post intervención), encuesta de confianza docente, logs de actividad de la plataforma Gradio anonimizados y registros de evaluación de los centros.",
+            "en": "Validated digital health competency test (pre and post intervention), teacher confidence survey, anonymised Gradio platform activity logs and centre assessment records.",
+            "va": "Test de competències digitals en salut validat (pre i post intervenció), enquesta de confiança docent, logs d'activitat de la plataforma Gradio anonimitzats i registres d'avaluació dels centres."
+          },
+          "primaryMetric": {
+            "id": "student-competency-gain",
+            "value": "+31",
+            "unit": {
+              "es": "puntos percentil (media grupo experimental vs. control)",
+              "en": "percentile points (experimental vs. control group mean)",
+              "va": "punts percentil (mitjana grup experimental vs. control)"
+            },
+            "label": {
+              "es": "Ganancia de competencia en el grupo experimental respecto al grupo control",
+              "en": "Competency gain in the experimental group relative to the control group",
+              "va": "Guany de competència en el grup experimental respecte al grup control"
+            }
+          },
+          "secondaryMetrics": [
+            {
+              "id": "teacher-confidence",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Confianza media del profesorado para impartir el módulo autónomamente (escala 1-10)",
+                "en": "Average teacher confidence to deliver the module autonomously (1-10 scale)",
+                "va": "Confiança mitjana del professorat per impartir el mòdul autònomament (escala 1-10)"
+              }
+            },
+            {
+              "id": "installation-time",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Tiempo de instalación autónoma del módulo sin asistencia técnica externa",
+                "en": "Autonomous module installation time without external technical assistance",
+                "va": "Temps d'instal·lació autònom del mòdul sense assistència tècnica externa"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "Los resultados reflejan competencia técnica con datos simulados. No miden la capacidad clínica real con pacientes. El grupo control es de conveniencia (diferente centro), lo que puede introducir sesgos de contexto.",
+            "en": "Results reflect technical competency with simulated data. They do not measure real clinical capability with patients. The control group is a convenience sample (different centre), which may introduce context bias.",
+            "va": "Els resultats reflecteixen competència tècnica amb dades simulades. No mesuren la capacitat clínica real amb pacients. El grup control és de conveniència (diferent centre), la qual cosa pot introduir biaixos de context."
+          }
+        },
+        "results": {
+          "headline": {
+            "es": "El grupo experimental supera al control en +31 puntos percentil; 89% de los alumnos supera el umbral de competencia básica en IA dermoscópica.",
+            "en": "Experimental group outperforms control by +31 percentile points; 89% of students exceed the basic dermoscopic AI competency threshold.",
+            "va": "El grup experimental supera el control en +31 punts percentil; el 89% dels alumnes supera el llindar de competència bàsica en IA dermoscòpica."
+          },
+          "outputs": [
+            {
+              "id": "validated-module",
+              "label": {
+                "es": "Módulo IA-Dermoscopia validado con rúbrica y soluciones para docentes",
+                "en": "Validated AI-Dermoscopy module with rubric and teacher solutions",
+                "va": "Mòdul IA-Dermoscòpia validat amb rúbrica i solucions per a docents"
+              }
+            },
+            {
+              "id": "competency-test",
+              "label": {
+                "es": "Test de competencias digitales en salud validado — versión FP",
+                "en": "Validated digital health competency test — VET version",
+                "va": "Test de competències digitals en salut validat — versió FP"
+              }
+            },
+            {
+              "id": "pilot-report",
+              "label": {
+                "es": "Informe de piloto con análisis comparativo grupo experimental vs. control",
+                "en": "Pilot report with comparative experimental vs. control group analysis",
+                "va": "Informe de pilot amb anàlisi comparativa grup experimental vs. control"
+              }
+            }
+          ],
+          "decision": {
+            "outcome": "convert-to-case",
+            "label": {
+              "es": "Publicar como caso verificado en el Marketplace AI-STEAM y escalar a 5 centros adicionales en curso 2026-27",
+              "en": "Publish as a verified case in the AI-STEAM Marketplace and scale to 5 additional centres in academic year 2026-27",
+              "va": "Publicar com a cas verificat al Marketplace AI-STEAM i escalar a 5 centres addicionals en curs 2026-27"
+            }
+          }
+        },
+        "transferability": {
+          "whyTransferable": {
+            "es": "El dataset HAM10000 es público y de libre acceso. Gradio es agnóstico al hardware. El módulo fue diseñado desde el inicio para funcionar sin GPU dedicada en aulas estándar de FP.",
+            "en": "The HAM10000 dataset is public and freely accessible. Gradio is hardware-agnostic. The module was designed from the outset to work without a dedicated GPU in standard VET classrooms.",
+            "va": "El dataset HAM10000 és públic i d'accés lliure. Gradio és agnòstic al maquinari. El mòdul va ser dissenyat des de l'inici per funcionar sense GPU dedicada en aules estàndard de FP."
+          },
+          "suitableFor": [
+            "vet-centres",
+            "teachers"
+          ],
+          "requirements": [
+            {
+              "label": {
+                "es": "Aula informática con Python 3.10+ o acceso a Google Colab",
+                "en": "Computer lab with Python 3.10+ or Google Colab access",
+                "va": "Aula informàtica amb Python 3.10+ o accés a Google Colab"
+              }
+            },
+            {
+              "label": {
+                "es": "Docente con conocimientos básicos de IA y contexto clínico sanitario",
+                "en": "Teacher with basic AI knowledge and healthcare clinical context",
+                "va": "Docent amb coneixements bàsics d'IA i context clínic sanitari"
+              }
+            }
+          ],
+          "replicationSteps": [
+            {
+              "label": {
+                "es": "Descargar el módulo y el dataset HAM10000 siguiendo la guía de instalación",
+                "en": "Download the module and HAM10000 dataset following the installation guide",
+                "va": "Descarregar el mòdul i el dataset HAM10000 seguint la guia d'instal·lació"
+              }
+            },
+            {
+              "label": {
+                "es": "Asistir a la sesión de formación docente de 4 horas (presencial u online)",
+                "en": "Attend the 4-hour teacher training session (in-person or online)",
+                "va": "Assistir a la sessió de formació docent de 4 hores (presencial o en línia)"
+              }
+            },
+            {
+              "label": {
+                "es": "Integrar las 8 sesiones en la UD de Nuevas tecnologías en diagnóstico",
+                "en": "Integrate the 8 sessions into the New diagnostic technologies learning unit",
+                "va": "Integrar les 8 sessions a la UD de Noves tecnologies en diagnòstic"
+              }
+            }
+          ],
+          "risks": [
+            {
+              "label": {
+                "es": "El material requiere actualización cuando cambien las versiones de PyTorch o Gradio",
+                "en": "Material requires updating when PyTorch or Gradio versions change",
+                "va": "El material requereix actualització quan canvien les versions de PyTorch o Gradio"
+              }
+            },
+            {
+              "label": {
+                "es": "Algunos docentes pueden necesitar refuerzo en conceptos de métricas de clasificación (sensibilidad/especificidad)",
+                "en": "Some teachers may need reinforcement on classification metric concepts (sensitivity/specificity)",
+                "va": "Alguns docents poden necessitar reforç en conceptes de mètriques de classificació (sensibilitat/especificitat)"
+              }
+            }
+          ]
+        },
+        "downloads": {
+          "enabled": true,
+          "basePath": "/assets/downloads/pilots/pilot-ia-diagnostico-cancer-piel-nts/",
+          "items": [
+            {
+              "id": "pilot-report",
+              "type": "evidence-sheet",
+              "title": {
+                "es": "Informe del piloto — IA en diagnóstico dermatológico FP",
+                "en": "Pilot report — AI in VET dermatological diagnosis",
+                "va": "Informe del pilot — IA en diagnòstic dermatològic FP"
+              },
+              "description": {
+                "es": "Informe completo del piloto con diseño metodológico, resultados comparativos grupo experimental vs. control y recomendaciones de escalado.",
+                "en": "Full pilot report with methodological design, comparative results experimental vs. control group and scaling recommendations.",
+                "va": "Informe complet del pilot amb disseny metodològic, resultats comparatius grup experimental vs. control i recomanacions d'escalat."
+              },
+              "files": [
+                {
+                  "file": "informe-piloto-ia-dermoscopia-fp.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": "CC BY 4.0"
+                }
+              ],
+              "showOnCard": true,
+              "showOnDetail": true
+            },
+            {
+              "id": "teacher-guide",
+              "type": "guide",
+              "title": {
+                "es": "Guía docente — Módulo IA-Dermoscopia para FP Sanitario",
+                "en": "Teacher guide — AI-Dermoscopy module for Health VET",
+                "va": "Guia docent — Mòdul IA-Dermoscòpia per a FP Sanitari"
+              },
+              "description": {
+                "es": "Guía completa para docentes con planificación de las 8 sesiones, soluciones, criterios de evaluación y respuestas a preguntas frecuentes de los alumnos.",
+                "en": "Full teacher guide with 8-session planning, solutions, evaluation criteria and answers to frequently asked student questions.",
+                "va": "Guia completa per a docents amb planificació de les 8 sessions, solucions, criteris d'avaluació i respostes a preguntes freqüents dels alumnes."
+              },
+              "files": [
+                {
+                  "file": "guia-docente-ia-dermoscopia-fp.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": "CC BY-SA 4.0"
+                }
+              ],
+              "showOnCard": false,
+              "showOnDetail": true
+            }
+          ]
+        },
+        "resources": {
+          "externalLinks": [
+            {
+              "id": "ham10000",
+              "type": "dataset",
+              "label": {
+                "es": "Dataset HAM10000 — ISIC Archive",
+                "en": "HAM10000 Dataset — ISIC Archive",
+                "va": "Dataset HAM10000 — ISIC Archive"
+              },
+              "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T",
+              "license": "CC BY-NC 4.0"
+            }
+          ]
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver piloto",
+              "en": "View pilot",
+              "va": "Veure pilot"
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [
+            "diagnostico-ia-fp-sanitario-nts"
+          ],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": true,
+        "downloadCount": 2,
+        "cardDownloads": [
+          {
+            "id": "pilot-report",
+            "type": "evidence-sheet",
+            "title": {
+              "es": "Informe del piloto — IA en diagnóstico dermatológico FP",
+              "en": "Pilot report — AI in VET dermatological diagnosis",
+              "va": "Informe del pilot — IA en diagnòstic dermatològic FP"
+            },
+            "description": {
+              "es": "Informe completo del piloto con diseño metodológico, resultados comparativos grupo experimental vs. control y recomendaciones de escalado.",
+              "en": "Full pilot report with methodological design, comparative results experimental vs. control group and scaling recommendations.",
+              "va": "Informe complet del pilot amb disseny metodològic, resultats comparatius grup experimental vs. control i recomanacions d'escalat."
+            },
+            "files": [
+              {
+                "file": "informe-piloto-ia-dermoscopia-fp.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "showOnCard": true,
+            "showOnDetail": true
+          }
+        ],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": true,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": true,
+              "resources": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "pilotPlan",
+            "implementation",
+            "evidence",
+            "results",
+            "transferability"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
+            "people",
+            "access",
+            "externalFlow",
+            "relations"
+          ],
+          "cardSignal": "pilotPlan"
+        }
+      },
+      {
+        "id": "pilot-living-lab-eficiencia-energetica-hou",
+        "type": "pilot",
+        "tab": "pilots",
+        "sortDate": "2026-05-20",
+        "visible": true,
+        "sourcePath": "content/challenges/items/pilots/pilot-living-lab-eficiencia-energetica-hou.yml",
+        "core": {
+          "status": "in-progress",
+          "maturity": "idea",
+          "title": {
+            "es": "Living Lab — IA para la gestión energética adaptativa en edificio universitario",
+            "en": "Living Lab — AI for adaptive energy management in a university building",
+            "va": "Living Lab — IA per a la gestió energètica adaptativa en edifici universitari"
+          },
+          "summary": {
+            "es": "La Universitat Politècnica de València convierte el edificio 4I de la ETSII en un Living Lab donde alumnos de máster y FP de Instalaciones Eléctricas trabajan junto a ingenieros de Siemens Smart Infrastructure para entrenar y validar un sistema de gestión energética adaptativa basado en aprendizaje por refuerzo, con el objetivo de reducir el consumo eléctrico del edificio en un 20% sin pérdida de confort.",
+            "en": "The Universitat Politècnica de València turns building 4I of ETSII into a Living Lab where master's and Electrical Installations VET students work alongside Siemens Smart Infrastructure engineers to train and validate an adaptive energy management system based on reinforcement learning, aiming to reduce the building's electricity consumption by 20% without loss of comfort.",
+            "va": "La Universitat Politècnica de València converteix l'edifici 4I de l'ETSII en un Living Lab on alumnes de màster i FP d'Instal·lacions Elèctriques treballen juntament amb enginyers de Siemens Smart Infrastructure per entrenar i validar un sistema de gestió energètica adaptativa basat en aprenentatge per reforç, amb l'objectiu de reduir el consum elèctric de l'edifici en un 20% sense pèrdua de confort."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "sector": "hou",
+          "stakeholderCategory": "knowledge",
+          "levels": [
+            "FP",
+            "Máster"
+          ],
+          "pilotType": "living-lab",
+          "validationType": "",
+          "validationStage": "",
+          "mentoringType": "",
+          "helix": [
+            "academia",
+            "industry",
+            "public-sector"
+          ],
+          "relatedDeliverable": "Sistema de gestión energética adaptativa con RL — prototipo validado en edificio real",
+          "relatedOerId": "",
+          "publishedAt": "2026-01-15",
+          "revisionDate": "2026-05-20",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "Ene 2026",
+            "en": "Jan 2026",
+            "va": "Gen 2026"
+          },
+          "revisionDateLabel": {
+            "es": "May 2026",
+            "en": "May 2026",
+            "va": "Mai 2026"
+          },
+          "deadlineLabel": null,
+          "tags": {
+            "es": [
+              "Eficiencia energética",
+              "Aprendizaje por refuerzo",
+              "Living Lab",
+              "Edificio inteligente",
+              "FP Electricidad"
+            ],
+            "en": [
+              "Energy efficiency",
+              "Reinforcement learning",
+              "Living Lab",
+              "Smart building",
+              "Electrical VET"
+            ],
+            "va": [
+              "Eficiència energètica",
+              "Aprenentatge per reforç",
+              "Living Lab",
+              "Edifici intel·ligent",
+              "FP Electricitat"
+            ]
+          }
+        },
+        "classification": {
+          "aiSteamFocus": [
+            "data-ai",
+            "maker-steam"
+          ],
+          "tripleTransition": [
+            "digital",
+            "green"
+          ],
+          "policyCluster": [
+            "integrated-pedagogy",
+            "infrastructure-evidence"
+          ],
+          "engagementLevel": "hosting",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "pilots",
+          "audience": [
+            "companies",
+            "vet-centres",
+            "universities",
+            "researchers"
+          ]
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "",
+          "dataAvailability": "available-in-repository",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "El dataset del edificio 4I se publica bajo licencia CC BY 4.0. Los agentes RL desarrollados por los equipos participantes se publican bajo licencia MIT. Los datos de consumo son propiedad de la UPV.",
+            "en": "The building 4I dataset is published under CC BY 4.0 licence. RL agents developed by participating teams are published under MIT licence. Consumption data is owned by UPV.",
+            "va": "El dataset de l'edifici 4I es publica sota llicència CC BY 4.0. Els agents RL desenvolupats pels equips participants es publiquen sota llicència MIT. Les dades de consum són propietat de la UPV."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "Universitat Politècnica de València — Instituto de Ingeniería Energética (IIE)",
+            "type": {
+              "es": "Universidad pública con instituto de investigación energética",
+              "en": "Public university with energy research institute",
+              "va": "Universitat pública amb institut de recerca energètica"
+            },
+            "role": {
+              "es": "Entidad anfitriona del Living Lab — facilita el edificio, los datos y la supervisión académica",
+              "en": "Living Lab host entity — provides the building, data and academic supervision",
+              "va": "Entitat amfitriona del Living Lab — facilita l'edifici, les dades i la supervisió acadèmica"
+            }
+          },
+          "coordinator": {
+            "name": "Siemens Smart Infrastructure — División Iberia",
+            "role": {
+              "es": "Empresa socia tecnológica — plataforma Desigo CC y mentores de ingeniería",
+              "en": "Technology partner company — Desigo CC platform and engineering mentors",
+              "va": "Empresa sòcia tecnològica — plataforma Desigo CC i mentors d'enginyeria"
+            }
+          },
+          "pilotSites": [
+            {
+              "name": "Edificio 4I — ETSII, Campus de Vera (Valencia)",
+              "type": "",
+              "role": {
+                "es": "Edificio piloto — 8.200 m², 14 aulas, laboratorios y espacios de trabajo, ocupación variable",
+                "en": "Pilot building — 8,200 m², 14 classrooms, laboratories and workspaces, variable occupancy",
+                "va": "Edifici pilot — 8.200 m², 14 aules, laboratoris i espais de treball, ocupació variable"
+              }
+            }
+          ],
+          "partners": [
+            {
+              "name": "IES Politècnic (Valencia)",
+              "type": "",
+              "role": {
+                "es": "Centro de FP participante — alumnos de ciclo de Instalaciones Eléctricas y Automáticas",
+                "en": "Participating VET centre — Electrical and Automatic Installations cycle students",
+                "va": "Centre de FP participant — alumnes de cicle d'Instal·lacions Elèctriques i Automàtiques"
+              }
+            },
+            {
+              "name": "Iberdrola — División Clientes Empresariales",
+              "type": "",
+              "role": {
+                "es": "Socio energético — datos de consumo histórico y tarifas dinámicas de electricidad",
+                "en": "Energy partner — historical consumption data and dynamic electricity tariffs",
+                "va": "Soci energètic — dades de consum històric i tarifes dinàmiques d'electricitat"
+              }
+            }
+          ]
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Un agente de aprendizaje por refuerzo entrenado con datos reales de ocupación, temperatura y tarifas eléctricas del edificio 4I puede reducir el consumo eléctrico total del edificio en al menos un 20% en condiciones de uso habitual, sin que el índice de confort térmico percibido por los ocupantes caiga por debajo de 7/10.",
+            "en": "A reinforcement learning agent trained on real occupancy, temperature and electricity tariff data from building 4I can reduce total building electricity consumption by at least 20% under normal use conditions, without the perceived thermal comfort index falling below 7/10.",
+            "va": "Un agent d'aprenentatge per reforç entrenat amb dades reals d'ocupació, temperatura i tarifes elèctriques de l'edifici 4I pot reduir el consum elèctric total de l'edifici en almenys un 20% en condicions d'ús habitual, sense que l'índex de confort tèrmic percebut pels ocupants caiga per davall de 7/10."
+          },
+          "objective": {
+            "es": "Demostrar la viabilidad del aprendizaje por refuerzo para la gestión energética adaptativa en edificios universitarios con ocupación variable, generar datos de entrenamiento y validación públicos, y desarrollar un módulo formativo conjunto FP-máster sobre IA en eficiencia energética.",
+            "en": "Demonstrate the feasibility of reinforcement learning for adaptive energy management in university buildings with variable occupancy, generate public training and validation data, and develop a joint VET-master training module on AI in energy efficiency.",
+            "va": "Demostrar la viabilitat de l'aprenentatge per reforç per a la gestió energètica adaptativa en edificis universitaris amb ocupació variable, generar dades d'entrenament i validació públiques, i desenvolupar un mòdul formatiu conjunt FP-màster sobre IA en eficiència energètica."
+          },
+          "context": {
+            "es": "El edificio 4I consume actualmente 850.000 kWh/año con una gestión basada en horarios fijos. El IIE-UPV dispone de 2 años de datos históricos de consumo a nivel de circuito, sensores de CO₂, temperatura y ocupación en cada espacio. Siemens aporta la plataforma de Building Management System Desigo CC y mentores de ingeniería energética para los equipos participantes.",
+            "en": "Building 4I currently consumes 850,000 kWh/year with management based on fixed schedules. IIE-UPV has 2 years of historical consumption data at circuit level, CO₂ sensors, temperature and occupancy data for each space. Siemens provides the Desigo CC Building Management System platform and energy engineering mentors for participating teams.",
+            "va": "L'edifici 4I consumeix actualment 850.000 kWh/any amb una gestió basada en horaris fixos. L'IIE-UPV disposa de 2 anys de dades històriques de consum a nivell de circuit, sensors de CO₂, temperatura i ocupació en cada espai. Siemens aporta la plataforma de Building Management System Desigo CC i mentors d'enginyeria energètica per als equips participants."
+          },
+          "targetParticipants": {
+            "es": "18 alumnos de máster en Ingeniería de Sistemas Energéticos (UPV), 22 alumnos de FP de Instalaciones Eléctricas del IES Politècnic y 4 ingenieros de Siemens como mentores técnicos.",
+            "en": "18 Master's in Energy Systems Engineering students (UPV), 22 Electrical Installations VET students from IES Politècnic and 4 Siemens engineers as technical mentors.",
+            "va": "18 alumnes de màster en Enginyeria de Sistemes Energètics (UPV), 22 alumnes de FP d'Instal·lacions Elèctriques de l'IES Politècnic i 4 enginyers de Siemens com a mentors tècnics."
+          },
+          "methodology": {
+            "es": "El piloto tiene estructura de Living Lab con tres capas simultáneas: (1) capa técnica — equipos mixtos máster+FP entrenan agentes RL con datos históricos y validan en entorno simulado del edificio (EnergyPlus); (2) capa operacional — el agente con mejor rendimiento simulado se despliega en el edificio real durante 3 meses con supervisión; (3) capa formativa — los equipos documentan sus experimentos, comparten metodologías en sesiones quincenales y publican sus resultados como recurso abierto.",
+            "en": "The pilot has a Living Lab structure with three simultaneous layers: (1) technical layer — mixed master+VET teams train RL agents on historical data and validate in a simulated building environment (EnergyPlus); (2) operational layer — the best-performing simulated agent is deployed in the real building for 3 months under supervision; (3) training layer — teams document their experiments, share methodologies in fortnightly sessions and publish their results as open resources.",
+            "va": "El pilot té estructura de Living Lab amb tres capes simultànies: (1) capa tècnica — equips mixtos màster+FP entrenen agents RL amb dades històriques i validen en entorn simulat de l'edifici (EnergyPlus); (2) capa operacional — l'agent amb millor rendiment simulat es desplega en l'edifici real durant 3 mesos amb supervisió; (3) capa formativa — els equips documenten els seus experiments, comparteixen metodologies en sessions quinzenals i publiquen els seus resultats com a recurs obert."
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "El agente desplegado en el edificio real reduce el consumo eléctrico en al menos un 20% respecto a la línea base",
+                "en": "The agent deployed in the real building reduces electricity consumption by at least 20% against the baseline",
+                "va": "L'agent desplegat en l'edifici real redueix el consum elèctric en almenys un 20% respecte a la línia base"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "El índice de confort térmico percibido por los ocupantes no baja de 7/10 durante los 3 meses de despliegue",
+                "en": "The perceived thermal comfort index does not fall below 7/10 during the 3 months of deployment",
+                "va": "L'índex de confort tèrmic percebut pels ocupants no baixa de 7/10 durant els 3 mesos de desplegament"
+              }
+            },
+            {
+              "id": "sc3",
+              "label": {
+                "es": "Los datos de entrenamiento y el código del agente se publican en abierto antes del cierre del piloto",
+                "en": "Training data and agent code are published openly before the pilot closes",
+                "va": "Les dades d'entrenament i el codi de l'agent es publiquen en obert abans del tancament del pilot"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 6,
+              "label": {
+                "es": "TRL 6 — Demostración en entorno relevante real (edificio universitario)",
+                "en": "TRL 6 — Demonstration in real relevant environment (university building)",
+                "va": "TRL 6 — Demostració en entorn rellevant real (edifici universitari)"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": true,
+              "level": "designed",
+              "label": {
+                "es": "Diseñado — módulo conjunto FP-máster en fase de primera implementación",
+                "en": "Designed — joint VET-master module in first implementation phase",
+                "va": "Dissenyat — mòdul conjunt FP-màster en fase de primera implementació"
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "id": "bms-desigo",
+              "label": {
+                "es": "Siemens Desigo CC — plataforma de Building Management System",
+                "en": "Siemens Desigo CC — Building Management System platform",
+                "va": "Siemens Desigo CC — plataforma de Building Management System"
+              }
+            },
+            {
+              "id": "iot-sensors",
+              "label": {
+                "es": "Red de 180 sensores IoT de CO₂, temperatura, humedad y ocupación",
+                "en": "Network of 180 IoT sensors for CO₂, temperature, humidity and occupancy",
+                "va": "Xarxa de 180 sensors IoT de CO₂, temperatura, humitat i ocupació"
+              }
+            },
+            {
+              "id": "energyplus",
+              "label": {
+                "es": "Simulador EnergyPlus — entorno de entrenamiento y validación del agente RL",
+                "en": "EnergyPlus simulator — RL agent training and validation environment",
+                "va": "Simulador EnergyPlus — entorn d'entrenament i validació de l'agent RL"
+              }
+            }
+          ],
+          "tools": [
+            {
+              "id": "stable-baselines3",
+              "label": {
+                "es": "Stable Baselines3 — biblioteca de algoritmos de aprendizaje por refuerzo",
+                "en": "Stable Baselines3 — reinforcement learning algorithm library",
+                "va": "Stable Baselines3 — biblioteca d'algorismes d'aprenentatge per reforç"
+              }
+            },
+            {
+              "id": "energyplus-gym",
+              "label": {
+                "es": "Sinergym — entorno Gym para entrenamiento RL con EnergyPlus",
+                "en": "Sinergym — Gym environment for RL training with EnergyPlus",
+                "va": "Sinergym — entorn Gym per a entrenament RL amb EnergyPlus"
+              }
+            }
+          ],
+          "dataManagement": {
+            "sensitiveDataIncluded": false,
+            "personalDataIncluded": false,
+            "note": {
+              "es": "Los datos de ocupación son agregados por espacio (no individualizados). No se registran datos personales de los ocupantes. Los datos de consumo histórico se publicarán anonimizados.",
+              "en": "Occupancy data is aggregated by space (not individualised). No personal data of occupants is recorded. Historical consumption data will be published in anonymised form.",
+              "va": "Les dades d'ocupació són agregades per espai (no individualitzades). No es registren dades personals dels ocupants. Les dades de consum històric es publicaran anonimitzades."
+            }
+          }
+        },
+        "evidence": {
+          "evidenceLevel": "observed",
+          "verificationStatus": "self-reported",
+          "collectionMethod": {
+            "es": "Medición continua del consumo eléctrico a nivel de circuito mediante el BMS Desigo CC. Encuesta de confort térmico semanal a ocupantes (escala 1-10). Registro de experimentos de los equipos participantes en cuaderno de laboratorio compartido.",
+            "en": "Continuous electricity consumption measurement at circuit level via the Desigo CC BMS. Weekly thermal comfort survey of occupants (1-10 scale). Experiment log by participating teams in shared laboratory notebook.",
+            "va": "Mesurament continu del consum elèctric a nivell de circuit mitjançant el BMS Desigo CC. Enquesta de confort tèrmic setmanal als ocupants (escala 1-10). Registre d'experiments dels equips participants en quadern de laboratori compartit."
+          },
+          "primaryMetric": {
+            "id": "energy-reduction",
+            "value": "22.4",
+            "unit": {
+              "es": "% de reducción del consumo eléctrico (primeros 3 meses de despliegue)",
+              "en": "% electricity consumption reduction (first 3 months of deployment)",
+              "va": "% de reducció del consum elèctric (primers 3 mesos de desplegament)"
+            },
+            "label": {
+              "es": "Reducción del consumo eléctrico del edificio 4I respecto a la línea base",
+              "en": "Building 4I electricity consumption reduction against baseline",
+              "va": "Reducció del consum elèctric de l'edifici 4I respecte a la línia base"
+            }
+          },
+          "secondaryMetrics": [
+            {
+              "id": "comfort-index",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Índice de confort térmico medio de los ocupantes durante el despliegue (escala 1-10)",
+                "en": "Average occupant thermal comfort index during deployment (1-10 scale)",
+                "va": "Índex de confort tèrmic mitjà dels ocupants durant el desplegament (escala 1-10)"
+              }
+            },
+            {
+              "id": "student-rl-competence",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Número de equipos que publican un agente RL funcional con documentación completa",
+                "en": "Number of teams publishing a functional RL agent with full documentation",
+                "va": "Nombre d'equips que publiquen un agent RL funcional amb documentació completa"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "Los resultados de los primeros 3 meses pueden no ser representativos de todo el año por la variabilidad estacional. El agente actual no gestiona la iluminación, solo la climatización. Los datos de ocupación real pueden diferir de los sensores en espacios con baja densidad.",
+            "en": "Results from the first 3 months may not be representative of the full year due to seasonal variability. The current agent does not manage lighting, only HVAC. Real occupancy data may differ from sensors in low-density spaces.",
+            "va": "Els resultats dels primers 3 mesos poden no ser representatius de tot l'any per la variabilitat estacional. L'agent actual no gestiona la il·luminació, només la climatització. Les dades d'ocupació real poden diferir dels sensors en espais amb baixa densitat."
+          }
+        },
+        "results": {
+          "headline": {
+            "es": "22,4% de reducción de consumo eléctrico en los primeros 3 meses; confort térmico medio de 8,1/10. 7 equipos publican agentes RL funcionales en abierto.",
+            "en": "22.4% electricity consumption reduction in the first 3 months; average thermal comfort of 8.1/10. 7 teams publish functional RL agents as open source.",
+            "va": "22,4% de reducció de consum elèctric en els primers 3 mesos; confort tèrmic mitjà de 8,1/10. 7 equips publiquen agents RL funcionals en obert."
+          },
+          "outputs": [
+            {
+              "id": "rl-agents",
+              "label": {
+                "es": "7 agentes RL funcionales publicados en GitHub con documentación y datos de entrenamiento",
+                "en": "7 functional RL agents published on GitHub with documentation and training data",
+                "va": "7 agents RL funcionals publicats a GitHub amb documentació i dades d'entrenament"
+              }
+            },
+            {
+              "id": "building-dataset",
+              "label": {
+                "es": "Dataset público de 2 años de consumo, ocupación y confort del edificio 4I",
+                "en": "Public 2-year dataset of building 4I consumption, occupancy and comfort",
+                "va": "Dataset públic de 2 anys de consum, ocupació i confort de l'edifici 4I"
+              }
+            },
+            {
+              "id": "joint-module",
+              "label": {
+                "es": "Módulo formativo conjunto FP-máster sobre RL aplicado a eficiencia energética (10 sesiones)",
+                "en": "Joint VET-master training module on RL applied to energy efficiency (10 sessions)",
+                "va": "Mòdul formatiu conjunt FP-màster sobre RL aplicat a eficiència energètica (10 sessions)"
+              }
+            }
+          ],
+          "decision": {
+            "outcome": "scale",
+            "label": {
+              "es": "Ampliar a 3 edificios adicionales del campus y publicar el dataset y los agentes como recursos de referencia para el sector de la construcción sostenible",
+              "en": "Expand to 3 additional campus buildings and publish the dataset and agents as reference resources for the sustainable construction sector",
+              "va": "Ampliar a 3 edificis addicionals del campus i publicar el dataset i els agents com a recursos de referència per al sector de la construcció sostenible"
+            }
+          }
+        },
+        "transferability": {
+          "whyTransferable": {
+            "es": "Sinergym y EnergyPlus son software de código abierto. El dataset del edificio 4I se publica con licencia abierta. El enfoque Living Lab es replicable en cualquier edificio universitario o institucional con BMS y sensores IoT básicos.",
+            "en": "Sinergym and EnergyPlus are open-source software. The building 4I dataset is published under an open licence. The Living Lab approach is replicable in any university or institutional building with a BMS and basic IoT sensors.",
+            "va": "Sinergym i EnergyPlus són programari de codi obert. El dataset de l'edifici 4I es publica amb llicència oberta. L'enfocament Living Lab és replicable en qualsevol edifici universitari o institucional amb BMS i sensors IoT bàsics."
+          },
+          "suitableFor": [
+            "universities",
+            "vet-centres",
+            "researchers",
+            "companies"
+          ],
+          "requirements": [
+            {
+              "label": {
+                "es": "Edificio con BMS (Building Management System) y datos de consumo histórico accesibles",
+                "en": "Building with BMS (Building Management System) and accessible historical consumption data",
+                "va": "Edifici amb BMS (Building Management System) i dades de consum històric accessibles"
+              }
+            },
+            {
+              "label": {
+                "es": "Red de sensores IoT de ocupación y temperatura (mínimo 1 sensor por espacio)",
+                "en": "IoT occupancy and temperature sensor network (minimum 1 sensor per space)",
+                "va": "Xarxa de sensors IoT d'ocupació i temperatura (mínim 1 sensor per espai)"
+              }
+            }
+          ],
+          "replicationSteps": [
+            {
+              "label": {
+                "es": "Descargar el dataset del edificio 4I y explorar la arquitectura del agente RL base",
+                "en": "Download the building 4I dataset and explore the baseline RL agent architecture",
+                "va": "Descarregar el dataset de l'edifici 4I i explorar l'arquitectura de l'agent RL base"
+              }
+            },
+            {
+              "label": {
+                "es": "Adaptar el entorno Sinergym al modelo energético del edificio objetivo",
+                "en": "Adapt the Sinergym environment to the target building's energy model",
+                "va": "Adaptar l'entorn Sinergym al model energètic de l'edifici objectiu"
+              }
+            },
+            {
+              "label": {
+                "es": "Ejecutar el módulo formativo conjunto con equipos FP-máster para co-desarrollar el agente",
+                "en": "Run the joint training module with VET-master teams to co-develop the agent",
+                "va": "Executar el mòdul formatiu conjunt amb equips FP-màster per co-desenvolupar l'agent"
+              }
+            }
+          ],
+          "risks": [
+            {
+              "label": {
+                "es": "Los resultados son sensibles al modelo de ocupación; edificios con patrones irregulares requieren más datos de entrenamiento",
+                "en": "Results are sensitive to the occupancy model; buildings with irregular patterns require more training data",
+                "va": "Els resultats són sensibles al model d'ocupació; edificis amb patrons irregulars requereixen més dades d'entrenament"
+              }
+            },
+            {
+              "label": {
+                "es": "La integración con BMSs de otros fabricantes (Honeywell, Schneider) puede requerir adaptación del conector de datos",
+                "en": "Integration with BMS from other manufacturers (Honeywell, Schneider) may require data connector adaptation",
+                "va": "La integració amb BMS d'altres fabricants (Honeywell, Schneider) pot requerir adaptació del connector de dades"
+              }
+            }
+          ]
+        },
+        "downloads": {
+          "enabled": true,
+          "basePath": "/assets/downloads/pilots/pilot-living-lab-eficiencia-energetica-hou/",
+          "items": [
+            {
+              "id": "pilot-report",
+              "type": "evidence-sheet",
+              "title": {
+                "es": "Informe intermedio del Living Lab — edificio 4I UPV",
+                "en": "Living Lab interim report — UPV building 4I",
+                "va": "Informe intermedi del Living Lab — edifici 4I UPV"
+              },
+              "description": {
+                "es": "Informe de los primeros 3 meses de despliegue con resultados de reducción de consumo, índice de confort y descripción de los 7 agentes RL participantes.",
+                "en": "Report on the first 3 months of deployment with consumption reduction results, comfort index and description of the 7 participating RL agents.",
+                "va": "Informe dels primers 3 mesos de desplegament amb resultats de reducció de consum, índex de confort i descripció dels 7 agents RL participants."
+              },
+              "files": [
+                {
+                  "file": "informe-intermedio-living-lab-hou.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": "CC BY 4.0"
+                }
+              ],
+              "showOnCard": true,
+              "showOnDetail": true
+            },
+            {
+              "id": "onboarding-guide",
+              "type": "guide",
+              "title": {
+                "es": "Guía de incorporación al Living Lab — para equipos FP y máster",
+                "en": "Living Lab onboarding guide — for VET and master's teams",
+                "va": "Guia d'incorporació al Living Lab — per a equips FP i màster"
+              },
+              "description": {
+                "es": "Guía para que nuevos equipos se sumen al Living Lab, con acceso al dataset, descripción del entorno Sinergym configurado y estructura de las sesiones quincenales.",
+                "en": "Guide for new teams to join the Living Lab, with dataset access, description of the configured Sinergym environment and structure of fortnightly sessions.",
+                "va": "Guia perquè nous equips s'unisquen al Living Lab, amb accés al dataset, descripció de l'entorn Sinergym configurat i estructura de les sessions quinzenals."
+              },
+              "files": [
+                {
+                  "file": "guia-onboarding-living-lab-eficiencia.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": "CC BY 4.0"
+                }
+              ],
+              "showOnCard": false,
+              "showOnDetail": true
+            }
+          ]
+        },
+        "resources": {
+          "externalLinks": [
+            {
+              "id": "sinergym",
+              "type": "repository",
+              "label": {
+                "es": "Sinergym — Entorno Gym para RL con EnergyPlus (GitHub)",
+                "en": "Sinergym — Gym environment for RL with EnergyPlus (GitHub)",
+                "va": "Sinergym — Entorn Gym per a RL amb EnergyPlus (GitHub)"
+              },
+              "url": "https://github.com/ugr-sail/sinergym",
+              "license": "MIT"
+            }
+          ]
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver piloto",
+              "en": "View pilot",
+              "va": "Veure pilot"
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": true,
+        "downloadCount": 2,
+        "cardDownloads": [
+          {
+            "id": "pilot-report",
+            "type": "evidence-sheet",
+            "title": {
+              "es": "Informe intermedio del Living Lab — edificio 4I UPV",
+              "en": "Living Lab interim report — UPV building 4I",
+              "va": "Informe intermedi del Living Lab — edifici 4I UPV"
+            },
+            "description": {
+              "es": "Informe de los primeros 3 meses de despliegue con resultados de reducción de consumo, índice de confort y descripción de los 7 agentes RL participantes.",
+              "en": "Report on the first 3 months of deployment with consumption reduction results, comfort index and description of the 7 participating RL agents.",
+              "va": "Informe dels primers 3 mesos de desplegament amb resultats de reducció de consum, índex de confort i descripció dels 7 agents RL participants."
+            },
+            "files": [
+              {
+                "file": "informe-intermedio-living-lab-hou.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "showOnCard": true,
+            "showOnDetail": true
+          }
+        ],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": true,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": true,
+              "resources": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "pilotPlan",
+            "implementation",
+            "evidence",
+            "results",
+            "transferability"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
+            "people",
+            "access",
+            "externalFlow",
+            "relations"
+          ],
+          "cardSignal": "pilotPlan"
+        }
+      },
+      {
         "id": "pilot-fp-energia-costera",
         "type": "pilot",
         "tab": "pilots",
@@ -30004,6 +33457,707 @@ export const MARKETPLACE_CONFIG = {
               "transferability": true,
               "downloads": false,
               "resources": false,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "pilotPlan",
+            "implementation",
+            "evidence",
+            "results",
+            "transferability"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
+            "people",
+            "access",
+            "externalFlow",
+            "relations"
+          ],
+          "cardSignal": "pilotPlan"
+        }
+      },
+      {
+        "id": "pilot-drones-inspeccion-infraestructura-mob",
+        "type": "pilot",
+        "tab": "pilots",
+        "sortDate": "2026-04-15",
+        "visible": true,
+        "sourcePath": "content/challenges/items/pilots/pilot-drones-inspeccion-infraestructura-mob.yml",
+        "core": {
+          "status": "resolved",
+          "maturity": "idea",
+          "title": {
+            "es": "Piloto — Drones con IA para la inspección automatizada de infraestructuras viarias",
+            "en": "Pilot — AI drones for automated road infrastructure inspection",
+            "va": "Pilot — Drons amb IA per a la inspecció automatitzada d'infraestructures viàries"
+          },
+          "summary": {
+            "es": "Validación de un sistema de inspección autónoma de carreteras y puentes mediante drones equipados con visión artificial para detectar grietas, baches y deterioro superficial, desarrollado junto al IVACE y tres centros de FP de Transporte, que reduce el tiempo de inspección manual de un tramo de 10 km de 8 horas a 45 minutos.",
+            "en": "Validation of an autonomous road and bridge inspection system using drones equipped with computer vision to detect cracks, potholes and surface deterioration, developed with IVACE and three Transport VET centres, reducing manual inspection time for a 10-km stretch from 8 hours to 45 minutes.",
+            "va": "Validació d'un sistema d'inspecció autònom de carreteres i ponts mitjançant drons equipats amb visió artificial per detectar esquerdes, clots i deteriorament superficial, desenvolupat juntament amb l'IVACE i tres centres de FP de Transport, que redueix el temps d'inspecció manual d'un tram de 10 km de 8 hores a 45 minuts."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "sector": "mob",
+          "stakeholderCategory": "institutional",
+          "levels": [
+            "FP"
+          ],
+          "pilotType": "vet-industry",
+          "validationType": "",
+          "validationStage": "",
+          "mentoringType": "",
+          "helix": [
+            "academia",
+            "industry",
+            "public-sector"
+          ],
+          "relatedDeliverable": "Sistema de inspección viaria con drones IA — versión piloto validada",
+          "relatedOerId": "",
+          "publishedAt": "2025-10-01",
+          "revisionDate": "2026-04-15",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "Oct 2025",
+            "en": "Oct 2025",
+            "va": "Oct 2025"
+          },
+          "revisionDateLabel": {
+            "es": "Abr 2026",
+            "en": "Apr 2026",
+            "va": "Abr 2026"
+          },
+          "deadlineLabel": null,
+          "tags": {
+            "es": [
+              "Drones",
+              "Inspección viaria",
+              "Visión artificial",
+              "FP Transporte",
+              "Infraestructura"
+            ],
+            "en": [
+              "Drones",
+              "Road inspection",
+              "Computer vision",
+              "Transport VET",
+              "Infrastructure"
+            ],
+            "va": [
+              "Drons",
+              "Inspecció viària",
+              "Visió artificial",
+              "FP Transport",
+              "Infraestructura"
+            ]
+          }
+        },
+        "classification": {
+          "aiSteamFocus": [
+            "data-ai",
+            "maker-steam"
+          ],
+          "tripleTransition": [
+            "digital",
+            "green"
+          ],
+          "policyCluster": [
+            "integrated-pedagogy",
+            "infrastructure-evidence"
+          ],
+          "engagementLevel": "hosting",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "pilots",
+          "audience": [
+            "companies",
+            "vet-centres",
+            "teachers",
+            "public-admin"
+          ]
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "",
+          "dataAvailability": "available-on-request",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "El modelo YOLOv8 de deterioros viarios y el protocolo de replicación se publican bajo licencia MIT. Los informes de inspección del tramo CV-35 pertenecen a la Conselleria de Política Territorial.",
+            "en": "The road deterioration YOLOv8 model and replication protocol are published under MIT licence. CV-35 stretch inspection reports belong to the Conselleria de Política Territorial.",
+            "va": "El model YOLOv8 de deterioraments viaris i el protocol de replicació es publiquen sota llicència MIT. Els informes d'inspecció del tram CV-35 pertanyen a la Conselleria de Política Territorial."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "IVACE — Institut Valencià de Competitivitat Empresarial",
+            "type": {
+              "es": "Agencia pública de competitividad empresarial e innovación",
+              "en": "Public agency for business competitiveness and innovation",
+              "va": "Agència pública de competitivitat empresarial i innovació"
+            },
+            "role": {
+              "es": "Entidad promotora — financiación y coordinación del piloto técnico",
+              "en": "Promoting entity — funding and coordination of the technical pilot",
+              "va": "Entitat promotora — finançament i coordinació del pilot tècnic"
+            }
+          },
+          "coordinator": {
+            "name": "Drontech Solutions S.L. (Valencia)",
+            "role": {
+              "es": "Empresa tecnológica socia — desarrollo del sistema de drones y algoritmos de detección",
+              "en": "Partner technology company — development of the drone system and detection algorithms",
+              "va": "Empresa tecnològica sòcia — desenvolupament del sistema de drons i algorismes de detecció"
+            }
+          },
+          "pilotSites": [
+            {
+              "name": "IES Cavanilles (Valencia)",
+              "type": "",
+              "role": {
+                "es": "Centro educativo piloto — integración en ciclo de Conducción de Vehículos de Transporte por Carretera",
+                "en": "Pilot educational centre — integration into Road Transport Vehicle Driving cycle",
+                "va": "Centre educatiu pilot — integració en cicle de Conducció de Vehicles de Transport per Carretera"
+              }
+            },
+            {
+              "name": "Tramo viario CV-35 (Valencia — Lliria, km 12-22)",
+              "type": "",
+              "role": {
+                "es": "Entorno real de pruebas — 10 km de carretera autonómica con variedad de deterioros",
+                "en": "Real test environment — 10 km of regional road with varied deterioration",
+                "va": "Entorn real de proves — 10 km de carretera autonòmica amb varietat de deterioraments"
+              }
+            }
+          ],
+          "partners": [
+            {
+              "name": "Conselleria de Política Territorial, Obres Públiques i Mobilitat",
+              "type": "",
+              "role": {
+                "es": "Administración propietaria de la infraestructura viaria utilizada para las pruebas",
+                "en": "Administration owning the road infrastructure used for tests",
+                "va": "Administració propietària de la infraestructura viària usada per a les proves"
+              }
+            }
+          ]
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Un sistema de drones con IA entrenado para detectar deterioros superficiales en carreteras puede alcanzar una precisión de detección superior al 92% respecto al inventario manual de referencia, reducir el tiempo de inspección en más de un 85% y ser operado por alumnos de FP de Transporte tras una formación de 2 días.",
+            "en": "A drone system with AI trained to detect surface road deterioration can achieve detection accuracy exceeding 92% against the manual reference inventory, reduce inspection time by more than 85% and be operated by Transport VET students after 2 days of training.",
+            "va": "Un sistema de drons amb IA entrenat per detectar deterioraments superficials en carreteres pot assolir una precisió de detecció superior al 92% respecte a l'inventari manual de referència, reduir el temps d'inspecció en més d'un 85% i ser operat per alumnes de FP de Transport després d'una formació de 2 dies."
+          },
+          "objective": {
+            "es": "Demostrar la viabilidad operativa y educativa del sistema de inspección con drones IA en un entorno real de carretera autonómica valenciana, validar la integración curricular en FP de Transporte y generar un protocolo de inspección replicable por otras consejerías de obras públicas.",
+            "en": "Demonstrate the operational and educational feasibility of the AI drone inspection system in a real Valencian regional road environment, validate curricular integration in Transport VET and generate a replicable inspection protocol for other public works departments.",
+            "va": "Demostrar la viabilitat operativa i educativa del sistema d'inspecció amb drons IA en un entorn real de carretera autonòmica valenciana, validar la integració curricular en FP de Transport i generar un protocol d'inspecció replicable per altres conselleries d'obres públiques."
+          },
+          "context": {
+            "es": "La inspección manual de carreteras de la Comunitat Valenciana requiere 4.200 horas/año de operarios especializados. El deterioro no detectado a tiempo genera sobrecostes de mantenimiento de 3,7 M€ anuales según datos de la Conselleria. El sistema de drones IA desarrollado por Drontech combina un modelo YOLOv8 personalizado con 15 clases de deterioro y un pipeline de generación automática de informes geolocalizados.",
+            "en": "Manual inspection of roads in the Valencian Community requires 4,200 specialist operator hours/year. Untimely undetected deterioration generates maintenance overcosts of €3.7M annually according to Conselleria data. Drontech's AI drone system combines a custom YOLOv8 model with 15 deterioration classes and an automatic georeferenced report generation pipeline.",
+            "va": "La inspecció manual de carreteres de la Comunitat Valenciana requereix 4.200 hores/any d'operaris especialitzats. El deteriorament no detectat a temps genera sobrecostos de manteniment de 3,7 M€ anuals segons dades de la Conselleria. El sistema de drons IA desenvolupat per Drontech combina un model YOLOv8 personalitzat amb 15 classes de deteriorament i un pipeline de generació automàtica d'informes geolocalitzats."
+          },
+          "targetParticipants": {
+            "es": "Equipo técnico de Drontech (5 ingenieros), 28 alumnos de 2.º de FP de Transporte del IES Cavanilles y 4 técnicos de la Conselleria de Política Territorial.",
+            "en": "Drontech technical team (5 engineers), 28 2nd-year Transport VET students from IES Cavanilles and 4 Conselleria de Política Territorial technicians.",
+            "va": "Equip tècnic de Drontech (5 enginyers), 28 alumnes de 2n de FP de Transport de l'IES Cavanilles i 4 tècnics de la Conselleria de Política Territorial."
+          },
+          "methodology": {
+            "es": "El piloto se ejecuta en tres fases: (1) formación de 2 días para alumnos de FP en operación de drones y lectura de informes de IA; (2) inspección real del tramo CV-35 por equipos mixtos alumnos-técnicos con el sistema IA; (3) comparación ciega de los resultados del sistema con el inventario manual de referencia elaborado previamente por la Conselleria.",
+            "en": "The pilot runs in three phases: (1) 2-day training for VET students in drone operation and AI report reading; (2) real inspection of the CV-35 stretch by mixed student-technician teams with the AI system; (3) blind comparison of system results with the manual reference inventory previously compiled by the Conselleria.",
+            "va": "El pilot s'executa en tres fases: (1) formació de 2 dies per a alumnes de FP en operació de drons i lectura d'informes d'IA; (2) inspecció real del tram CV-35 per equips mixtos alumnes-tècnics amb el sistema IA; (3) comparació cega dels resultats del sistema amb l'inventari manual de referència elaborat prèviament per la Conselleria."
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "Precisión de detección de deterioros ≥ 92% respecto al inventario manual de referencia",
+                "en": "Deterioration detection accuracy ≥ 92% against the manual reference inventory",
+                "va": "Precisió de detecció de deterioraments ≥ 92% respecte a l'inventari manual de referència"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "Reducción del tiempo de inspección del tramo de 10 km en más de un 85% respecto a la inspección manual",
+                "en": "Reduction of inspection time for the 10-km stretch by more than 85% relative to manual inspection",
+                "va": "Reducció del temps d'inspecció del tram de 10 km en més d'un 85% respecte a la inspecció manual"
+              }
+            },
+            {
+              "id": "sc3",
+              "label": {
+                "es": "Los alumnos de FP son capaces de operar el sistema y interpretar los informes tras la formación de 2 días",
+                "en": "VET students are able to operate the system and interpret reports after 2 days of training",
+                "va": "Els alumnes de FP són capaços d'operar el sistema i interpretar els informes després de la formació de 2 dies"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 7,
+              "label": {
+                "es": "TRL 7 — Demostración del prototipo en entorno operacional real (carretera CV-35)",
+                "en": "TRL 7 — Prototype demonstration in real operational environment (CV-35 road)",
+                "va": "TRL 7 — Demostració del prototip en entorn operacional real (carretera CV-35)"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": true,
+              "level": "validated-in-real-context",
+              "label": {
+                "es": "Validado en contexto real — alumnos de FP en entorno de carretera autonómica",
+                "en": "Validated in real context — VET students in regional road environment",
+                "va": "Validat en context real — alumnes de FP en entorn de carretera autonòmica"
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "id": "dji-m300",
+              "label": {
+                "es": "Drones DJI Matrice 300 RTK con cámara Zenmuse H20T",
+                "en": "DJI Matrice 300 RTK drones with Zenmuse H20T camera",
+                "va": "Drons DJI Matrice 300 RTK amb càmera Zenmuse H20T"
+              }
+            },
+            {
+              "id": "edge-laptop",
+              "label": {
+                "es": "Portátil con GPU dedicada para inferencia en campo",
+                "en": "Laptop with dedicated GPU for field inference",
+                "va": "Portàtil amb GPU dedicada per a inferència en camp"
+              }
+            },
+            {
+              "id": "gis-platform",
+              "label": {
+                "es": "Plataforma GIS para geolocalización y visualización de deterioros",
+                "en": "GIS platform for deterioration geolocalisation and visualisation",
+                "va": "Plataforma GIS per a geolocalització i visualització de deterioraments"
+              }
+            }
+          ],
+          "tools": [
+            {
+              "id": "yolov8",
+              "label": {
+                "es": "YOLOv8 custom — modelo de detección de deterioros viarios",
+                "en": "Custom YOLOv8 — road deterioration detection model",
+                "va": "YOLOv8 custom — model de detecció de deterioraments viaris"
+              }
+            },
+            {
+              "id": "qgis",
+              "label": {
+                "es": "QGIS — visualización geoespacial de informes de inspección",
+                "en": "QGIS — geospatial visualisation of inspection reports",
+                "va": "QGIS — visualització geoespacial d'informes d'inspecció"
+              }
+            }
+          ],
+          "dataManagement": {
+            "sensitiveDataIncluded": false,
+            "personalDataIncluded": false,
+            "note": {
+              "es": "Las imágenes capturadas son de infraestructura viaria pública. No se capturan datos personales. Los informes generados son propiedad de la Conselleria de Política Territorial.",
+              "en": "Captured images are of public road infrastructure. No personal data is captured. Generated reports are the property of the Conselleria de Política Territorial.",
+              "va": "Les imatges capturades són d'infraestructura viària pública. No es capturen dades personals. Els informes generats són propietat de la Conselleria de Política Territorial."
+            }
+          }
+        },
+        "evidence": {
+          "evidenceLevel": "verified",
+          "verificationStatus": "externally-verified",
+          "collectionMethod": {
+            "es": "Comparación ciega del inventario de deterioros generado por el sistema IA con el inventario manual de referencia elaborado previamente por técnicos de la Conselleria. Cronometrado de la inspección. Evaluación de competencias de los alumnos tras la formación.",
+            "en": "Blind comparison of the deterioration inventory generated by the AI system with the manual reference inventory previously compiled by Conselleria technicians. Timed inspection. Student competency assessment after training.",
+            "va": "Comparació cega de l'inventari de deterioraments generat pel sistema IA amb l'inventari manual de referència elaborat prèviament per tècnics de la Conselleria. Cronometrat de la inspecció. Avaluació de competències dels alumnes després de la formació."
+          },
+          "primaryMetric": {
+            "id": "detection-accuracy",
+            "value": "94.2",
+            "unit": {
+              "es": "% de coincidencia con el inventario manual de referencia",
+              "en": "% agreement with manual reference inventory",
+              "va": "% de coincidència amb l'inventari manual de referència"
+            },
+            "label": {
+              "es": "Precisión de detección del sistema respecto al inventario manual",
+              "en": "System detection accuracy against the manual inventory",
+              "va": "Precisió de detecció del sistema respecte a l'inventari manual"
+            }
+          },
+          "secondaryMetrics": [
+            {
+              "id": "time-reduction",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Reducción del tiempo de inspección del tramo de 10 km (horas)",
+                "en": "Inspection time reduction for the 10-km stretch (hours)",
+                "va": "Reducció del temps d'inspecció del tram de 10 km (hores)"
+              }
+            },
+            {
+              "id": "student-operational-competence",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Porcentaje de alumnos de FP capaces de operar el sistema autónomamente tras la formación",
+                "en": "Percentage of VET students able to operate the system autonomously after training",
+                "va": "Percentatge d'alumnes de FP capaços d'operar el sistema autònomament després de la formació"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "El piloto cubre un único tipo de superficie (asfalto convencional). La precisión puede variar en superficies de hormigón o adoquín. Las condiciones meteorológicas adversas (lluvia, viento fuerte) requieren protocolos adicionales.",
+            "en": "The pilot covers a single surface type (conventional asphalt). Accuracy may vary on concrete or cobbled surfaces. Adverse weather conditions (rain, strong wind) require additional protocols.",
+            "va": "El pilot cobreix un únic tipus de superfície (asfalt convencional). La precisió pot variar en superfícies de formigó o empedrat. Les condicions meteorològiques adverses (pluja, vent fort) requereixen protocols addicionals."
+          }
+        },
+        "results": {
+          "headline": {
+            "es": "94,2% de precisión de detección; el tiempo de inspección de 10 km se reduce de 8 horas a 43 minutos (–91%). El 89% de los alumnos opera el sistema autónomamente tras la formación de 2 días.",
+            "en": "94.2% detection accuracy; 10-km inspection time reduced from 8 hours to 43 minutes (–91%). 89% of students operate the system autonomously after 2-day training.",
+            "va": "94,2% de precisió de detecció; el temps d'inspecció de 10 km es redueix de 8 hores a 43 minuts (–91%). El 89% dels alumnes opera el sistema autònomament després de la formació de 2 dies."
+          },
+          "outputs": [
+            {
+              "id": "inspection-report",
+              "label": {
+                "es": "Informe de inspección geolocalizdo del tramo CV-35 con 847 deterioros catalogados",
+                "en": "Georeferenced inspection report for the CV-35 stretch with 847 catalogued deteriorations",
+                "va": "Informe d'inspecció geolocalitzat del tram CV-35 amb 847 deterioraments catalogats"
+              }
+            },
+            {
+              "id": "detection-model",
+              "label": {
+                "es": "Modelo YOLOv8 de detección de deterioros viarios publicado en abierto (MIT)",
+                "en": "Open-source (MIT) road deterioration detection YOLOv8 model",
+                "va": "Model YOLOv8 de detecció de deterioraments viaris publicat en obert (MIT)"
+              }
+            },
+            {
+              "id": "fp-training-module",
+              "label": {
+                "es": "Módulo formativo de 2 días para operadores de drones IA en FP de Transporte",
+                "en": "2-day AI drone operator training module for Transport VET",
+                "va": "Mòdul formatiu de 2 dies per a operadors de drons IA en FP de Transport"
+              }
+            },
+            {
+              "id": "replication-protocol",
+              "label": {
+                "es": "Protocolo de inspección replicable para administraciones de obras públicas",
+                "en": "Replicable inspection protocol for public works administrations",
+                "va": "Protocol d'inspecció replicable per a administracions d'obres públiques"
+              }
+            }
+          ],
+          "decision": {
+            "outcome": "scale",
+            "label": {
+              "es": "Escalar a 5 tramos adicionales de carretera autonómica y publicar el modelo como caso de referencia en el sector de infraestructuras",
+              "en": "Scale to 5 additional regional road stretches and publish the model as a reference case in the infrastructure sector",
+              "va": "Escalar a 5 trams addicionals de carretera autonòmica i publicar el model com a cas de referència en el sector d'infraestructures"
+            }
+          }
+        },
+        "transferability": {
+          "whyTransferable": {
+            "es": "YOLOv8 es un modelo de código abierto con comunidad activa. El pipeline de informes GIS usa QGIS (software libre). El sistema puede adaptarse a cualquier tipo de infraestructura lineal (ferroviaria, hidráulica) con reentrenamiento del modelo.",
+            "en": "YOLOv8 is an open-source model with an active community. The GIS report pipeline uses QGIS (free software). The system can be adapted to any type of linear infrastructure (railway, hydraulic) with model retraining.",
+            "va": "YOLOv8 és un model de codi obert amb comunitat activa. El pipeline d'informes GIS usa QGIS (programari lliure). El sistema pot adaptar-se a qualsevol tipus d'infraestructura lineal (ferroviària, hidràulica) amb reentrament del model."
+          },
+          "suitableFor": [
+            "companies",
+            "public-admin",
+            "vet-centres"
+          ],
+          "requirements": [
+            {
+              "label": {
+                "es": "Dron con cámara de alta resolución (mínimo 20 MP) y GPS RTK",
+                "en": "Drone with high-resolution camera (minimum 20 MP) and RTK GPS",
+                "va": "Dron amb càmera d'alta resolució (mínim 20 MP) i GPS RTK"
+              }
+            },
+            {
+              "label": {
+                "es": "Portátil con GPU NVIDIA (GTX 1660 o superior) para inferencia en campo",
+                "en": "Laptop with NVIDIA GPU (GTX 1660 or higher) for field inference",
+                "va": "Portàtil amb GPU NVIDIA (GTX 1660 o superior) per a inferència en camp"
+              }
+            },
+            {
+              "label": {
+                "es": "Piloto de drones con licencia AESA A2 o superior",
+                "en": "Drone pilot with AESA A2 licence or higher",
+                "va": "Pilot de drons amb llicència AESA A2 o superior"
+              }
+            }
+          ],
+          "replicationSteps": [
+            {
+              "label": {
+                "es": "Obtener las autorizaciones AESA necesarias para el espacio aéreo del tramo a inspeccionar",
+                "en": "Obtain the necessary AESA authorisations for the airspace of the stretch to be inspected",
+                "va": "Obtenir les autoritzacions AESA necessàries per a l'espai aeri del tram a inspeccionar"
+              }
+            },
+            {
+              "label": {
+                "es": "Adaptar el modelo YOLOv8 al tipo de superficie específico mediante fine-tuning con 200-500 imágenes etiquetadas",
+                "en": "Adapt the YOLOv8 model to the specific surface type via fine-tuning with 200-500 labelled images",
+                "va": "Adaptar el model YOLOv8 al tipus de superfície específic mitjançant fine-tuning amb 200-500 imatges etiquetades"
+              }
+            },
+            {
+              "label": {
+                "es": "Formar al equipo de operadores siguiendo el módulo de 2 días publicado",
+                "en": "Train the operator team following the published 2-day module",
+                "va": "Formar l'equip d'operadors seguint el mòdul de 2 dies publicat"
+              }
+            }
+          ],
+          "risks": [
+            {
+              "label": {
+                "es": "La regulación AESA puede limitar el espacio aéreo disponible en zonas urbanas densas",
+                "en": "AESA regulation may restrict available airspace in dense urban areas",
+                "va": "La regulació AESA pot limitar l'espai aeri disponible en zones urbanes denses"
+              }
+            },
+            {
+              "label": {
+                "es": "La precisión baja significativamente con luminosidad insuficiente o niebla",
+                "en": "Accuracy drops significantly with insufficient lighting or fog",
+                "va": "La precisió baixa significativament amb lluminositat insuficient o boira"
+              }
+            }
+          ]
+        },
+        "downloads": {
+          "enabled": true,
+          "basePath": "/assets/downloads/pilots/pilot-drones-inspeccion-infraestructura-mob/",
+          "items": [
+            {
+              "id": "pilot-report",
+              "type": "evidence-sheet",
+              "title": {
+                "es": "Informe del piloto — Drones IA en inspección viaria",
+                "en": "Pilot report — AI drones in road inspection",
+                "va": "Informe del pilot — Drons IA en inspecció viària"
+              },
+              "description": {
+                "es": "Informe técnico completo del piloto con metodología, resultados de precisión, análisis de coste-tiempo y protocolo de replicación.",
+                "en": "Full technical pilot report with methodology, accuracy results, cost-time analysis and replication protocol.",
+                "va": "Informe tècnic complet del pilot amb metodologia, resultats de precisió, anàlisi de cost-temps i protocol de replicació."
+              },
+              "files": [
+                {
+                  "file": "informe-piloto-drones-inspeccion-viaria.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": "CC BY 4.0"
+                }
+              ],
+              "showOnCard": true,
+              "showOnDetail": true
+            },
+            {
+              "id": "replication-protocol",
+              "type": "guide",
+              "title": {
+                "es": "Protocolo de replicación — inspección con drones IA",
+                "en": "Replication protocol — AI drone inspection",
+                "va": "Protocol de replicació — inspecció amb drons IA"
+              },
+              "description": {
+                "es": "Guía paso a paso para replicar el sistema en cualquier tramo de infraestructura lineal, con checklist de requisitos, modelo de solicitud AESA y plantilla de informe GIS.",
+                "en": "Step-by-step guide to replicate the system on any linear infrastructure stretch, with requirements checklist, AESA application template and GIS report template.",
+                "va": "Guia pas a pas per replicar el sistema en qualsevol tram d'infraestructura lineal, amb checklist de requisits, model de sol·licitud AESA i plantilla d'informe GIS."
+              },
+              "files": [
+                {
+                  "file": "protocolo-replicacion-drones-inspeccion.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": "CC BY 4.0"
+                }
+              ],
+              "showOnCard": false,
+              "showOnDetail": true
+            }
+          ]
+        },
+        "resources": {
+          "externalLinks": [
+            {
+              "id": "yolov8-ultralytics",
+              "type": "repository",
+              "label": {
+                "es": "YOLOv8 — Ultralytics GitHub",
+                "en": "YOLOv8 — Ultralytics GitHub",
+                "va": "YOLOv8 — Ultralytics GitHub"
+              },
+              "url": "https://github.com/ultralytics/ultralytics",
+              "license": "AGPL-3.0"
+            }
+          ]
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver piloto",
+              "en": "View pilot",
+              "va": "Veure pilot"
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": true,
+        "downloadCount": 2,
+        "cardDownloads": [
+          {
+            "id": "pilot-report",
+            "type": "evidence-sheet",
+            "title": {
+              "es": "Informe del piloto — Drones IA en inspección viaria",
+              "en": "Pilot report — AI drones in road inspection",
+              "va": "Informe del pilot — Drons IA en inspecció viària"
+            },
+            "description": {
+              "es": "Informe técnico completo del piloto con metodología, resultados de precisión, análisis de coste-tiempo y protocolo de replicación.",
+              "en": "Full technical pilot report with methodology, accuracy results, cost-time analysis and replication protocol.",
+              "va": "Informe tècnic complet del pilot amb metodologia, resultats de precisió, anàlisi de cost-temps i protocol de replicació."
+            },
+            "files": [
+              {
+                "file": "informe-piloto-drones-inspeccion-viaria.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "showOnCard": true,
+            "showOnDetail": true
+          }
+        ],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": true,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": true,
+              "resources": true,
               "process": true,
               "people": true,
               "access": true,
