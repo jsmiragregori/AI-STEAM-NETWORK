@@ -16,33 +16,63 @@ export const MARKETPLACE_CONFIG = {
     },
     "stats": [
       {
-        "id": "open-contributions",
+        "id": "challenges",
+        "visible": true,
+        "value": 8,
+        "realValue": 8,
+        "valueOverride": null,
+        "label": {
+          "es": "Retos",
+          "en": "Challenges",
+          "va": "Reptes"
+        }
+      },
+      {
+        "id": "cases",
+        "visible": true,
+        "value": 12,
+        "realValue": 12,
+        "valueOverride": null,
+        "label": {
+          "es": "Casos",
+          "en": "Cases",
+          "va": "Casos"
+        }
+      },
+      {
+        "id": "pilots",
+        "visible": true,
+        "value": 7,
+        "realValue": 7,
+        "valueOverride": null,
+        "label": {
+          "es": "Pilotos",
+          "en": "Pilots",
+          "va": "Pilotatges"
+        }
+      },
+      {
+        "id": "validations",
         "visible": true,
         "value": 9,
+        "realValue": 9,
+        "valueOverride": null,
         "label": {
-          "es": "Abiertas",
-          "en": "Open",
-          "va": "Obertes"
+          "es": "Validaciones",
+          "en": "Validations",
+          "va": "Validacions"
         }
       },
       {
-        "id": "in-progress-contributions",
+        "id": "mentorings",
         "visible": true,
-        "value": 3,
+        "value": 9,
+        "realValue": 9,
+        "valueOverride": null,
         "label": {
-          "es": "En Proceso",
-          "en": "In Progress",
-          "va": "En Procés"
-        }
-      },
-      {
-        "id": "completed-contributions",
-        "visible": true,
-        "value": 5,
-        "label": {
-          "es": "Completadas",
-          "en": "Completed",
-          "va": "Completades"
+          "es": "Mentorías",
+          "en": "Mentoring",
+          "va": "Mentories"
         }
       }
     ],
@@ -79,9 +109,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Reptes"
       },
       "intro": {
-        "es": "Necesidades reales de empresas, centros y administraciones que pueden convertirse en aprendizaje basado en retos y transferencia aplicada.",
-        "en": "Real needs from companies, schools and public administrations that can become challenge-based learning and applied transfer.",
-        "va": "Necessitats reals d'empreses, centres i administracions que poden convertir-se en aprenentatge basat en reptes i transferència aplicada."
+        "es": "Comparte una necesidad real y conviértela en una oportunidad de colaboración. Aquí empresas, centros y administraciones pueden proponer retos que activen aprendizaje, innovación y transferencia aplicada.",
+        "en": "Share a real need and turn it into a collaboration opportunity. Companies, schools and public bodies can propose challenges that activate learning, innovation and applied transfer.",
+        "va": "Comparteix una necessitat real i convertix-la en una oportunitat de col·laboració. Ací empreses, centres i administracions poden proposar reptes que activen aprenentatge, innovació i transferència aplicada."
       },
       "ctaLabel": {
         "es": "Solicitar participación",
@@ -99,6 +129,31 @@ export const MARKETPLACE_CONFIG = {
           "en": "Challenges will appear here when an organisation frames a need ready for collaboration.",
           "va": "Els reptes apareixeran ací quan una entitat formule una necessitat preparada per a col·laboració."
         }
+      },
+      "pagination": {
+        "pageSize": 6,
+        "pageSizeOptions": [
+          6,
+          12,
+          24,
+          48
+        ],
+        "showAllOption": true,
+        "showAllLabel": {
+          "es": "Todos",
+          "en": "All",
+          "va": "Tots"
+        },
+        "paginationPrev": {
+          "es": "Anterior",
+          "en": "Previous",
+          "va": "Anterior"
+        },
+        "paginationNext": {
+          "es": "Siguiente",
+          "en": "Next",
+          "va": "SegÃ¼ent"
+        }
       }
     },
     {
@@ -112,9 +167,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Casos"
       },
       "intro": {
-        "es": "Soluciones implementadas y documentadas como memoria transferible para que otros centros, pymes y agentes puedan replicarlas.",
-        "en": "Implemented solutions documented as transferable memory so other schools, SMEs and actors can replicate them.",
-        "va": "Solucions implementades i documentades com a memòria transferible perquè altres centres, pimes i agents puguen replicar-les."
+        "es": "Haz visible lo que ya funciona. Los casos documentan experiencias con resultados y evidencias para que otras entidades puedan aprender, adaptar o replicar buenas prácticas.",
+        "en": "Show what already works. Cases document experiences with results and evidence so that other organisations can learn from them, adapt them or replicate them.",
+        "va": "Fes visible allò que ja funciona. Els casos documenten experiències amb resultats i evidències perquè altres entitats puguen aprendre, adaptar o replicar bones pràctiques."
       },
       "ctaLabel": {
         "es": "Ver evidencia",
@@ -132,6 +187,31 @@ export const MARKETPLACE_CONFIG = {
           "en": "Cases will be published when validated and reusable results are available.",
           "va": "Els casos es publicaran quan hi haja resultats validats i reutilitzables."
         }
+      },
+      "pagination": {
+        "pageSize": 6,
+        "pageSizeOptions": [
+          6,
+          12,
+          24,
+          48
+        ],
+        "showAllOption": true,
+        "showAllLabel": {
+          "es": "Todos",
+          "en": "All",
+          "va": "Tots"
+        },
+        "paginationPrev": {
+          "es": "Anterior",
+          "en": "Previous",
+          "va": "Anterior"
+        },
+        "paginationNext": {
+          "es": "Siguiente",
+          "en": "Next",
+          "va": "SegÃ¼ent"
+        }
       }
     },
     {
@@ -145,9 +225,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Pilots"
       },
       "intro": {
-        "es": "Actividades piloto educativas — módulos FP, formación docente, puentes al máster y cooperación de red — donde se prueba y valida la transferencia de conocimiento AI-STEAM.",
-        "en": "Educational pilot activities — VET modules, teacher training, master bridges and network cooperation — where AI-STEAM knowledge transfer is tested and validated.",
-        "va": "Activitats pilot educatives — mòduls FP, formació docent, ponts al màster i cooperació de xarxa — on es prova i valida la transferència de coneixement AI-STEAM."
+        "es": "Prueba una solución en contexto real. Los pilotos permiten ensayar metodologías, recursos o tecnologías con centros, empresas y entidades antes de escalarlas o transferirlas.",
+        "en": "Try a solution in a real context. Pilots help test methods, resources or technologies with schools, companies and organisations before scaling or transferring them.",
+        "va": "Prova una solució en context real. Els pilotatges permeten assajar metodologies, recursos o tecnologies amb centres, empreses i entitats abans d’escalar-les o transferir-les."
       },
       "ctaLabel": {
         "es": "Ver pilotos",
@@ -165,6 +245,31 @@ export const MARKETPLACE_CONFIG = {
           "en": "Pilots will appear when documented test activities are available in the network.",
           "va": "Els pilots apareixeran quan hi haja activitats de prova documentades a la xarxa."
         }
+      },
+      "pagination": {
+        "pageSize": 6,
+        "pageSizeOptions": [
+          6,
+          12,
+          24,
+          48
+        ],
+        "showAllOption": true,
+        "showAllLabel": {
+          "es": "Todos",
+          "en": "All",
+          "va": "Tots"
+        },
+        "paginationPrev": {
+          "es": "Anterior",
+          "en": "Previous",
+          "va": "Anterior"
+        },
+        "paginationNext": {
+          "es": "Siguiente",
+          "en": "Next",
+          "va": "SegÃ¼ent"
+        }
       }
     },
     {
@@ -178,9 +283,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Validacions"
       },
       "intro": {
-        "es": "Procesos de contraste y validación de retos propuestos por empresas, asociaciones y administraciones — determinando su clasificación Track A o Track B en la red.",
-        "en": "Validation and review processes for challenges proposed by companies, associations and administrations — determining their Track A or Track B classification in the network.",
-        "va": "Processos de contrast i validació de reptes proposats per empreses, associacions i administracions — determinant la seua classificació Track A o Track B a la xarxa."
+        "es": "Contrasta una propuesta antes de hacerla crecer. Las validaciones ayudan a decidir si una necesidad, recurso o línea de trabajo tiene encaje, viabilidad y recorrido dentro de AI-STEAM.",
+        "en": "Test the value of a proposal before taking it further. Validations help decide whether a need, resource or work line is relevant, feasible and suitable for AI-STEAM.",
+        "va": "Contrasta una proposta abans de fer-la créixer. Les validacions ajuden a decidir si una necessitat, recurs o línia de treball té encaix, viabilitat i recorregut dins d’AI-STEAM."
       },
       "ctaLabel": {
         "es": "Ver validaciones",
@@ -198,6 +303,31 @@ export const MARKETPLACE_CONFIG = {
           "en": "Validations will appear when sectoral challenges have been reviewed and classified.",
           "va": "Les validacions apareixeran quan hi haja reptes sectorials contrastats i classificats."
         }
+      },
+      "pagination": {
+        "pageSize": 6,
+        "pageSizeOptions": [
+          6,
+          12,
+          24,
+          48
+        ],
+        "showAllOption": true,
+        "showAllLabel": {
+          "es": "Todos",
+          "en": "All",
+          "va": "Tots"
+        },
+        "paginationPrev": {
+          "es": "Anterior",
+          "en": "Previous",
+          "va": "Anterior"
+        },
+        "paginationNext": {
+          "es": "Siguiente",
+          "en": "Next",
+          "va": "SegÃ¼ent"
+        }
       }
     },
     {
@@ -211,9 +341,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Mentories"
       },
       "intro": {
-        "es": "Digimentores y equipos expertos que ayudan a transformar ideas, prototipos y necesidades en colaboraciones de transferencia viables.",
-        "en": "Digital mentors and expert teams helping turn ideas, prototypes and needs into viable transfer collaborations.",
-        "va": "Digimentors i equips experts que ajuden a transformar idees, prototips i necessitats en col·laboracions de transferència viables."
+        "es": "Da forma a tu idea antes de publicarla. Las mentorías ayudan a convertir una necesidad inicial en un reto, caso, recurso o propuesta clara, útil y preparada para la comunidad.",
+        "en": "Shape your idea before publishing it. Mentoring helps turn an initial need into a clear and useful challenge, case, resource or proposal ready for the community.",
+        "va": "Dona forma a la teua idea abans de publicar-la. Les mentories ajuden a convertir una necessitat inicial en un repte, cas, recurs o proposta clara, útil i preparada per a la comunitat."
       },
       "ctaLabel": {
         "es": "Solicitar mentoría",
@@ -230,6 +360,31 @@ export const MARKETPLACE_CONFIG = {
           "es": "Las mentorías aparecerán cuando haya disponibilidad de apoyo experto para la comunidad.",
           "en": "Mentoring opportunities will appear when expert support is available for the community.",
           "va": "Les mentories apareixeran quan hi haja disponibilitat de suport expert per a la comunitat."
+        }
+      },
+      "pagination": {
+        "pageSize": 6,
+        "pageSizeOptions": [
+          6,
+          12,
+          24,
+          48
+        ],
+        "showAllOption": true,
+        "showAllLabel": {
+          "es": "Todos",
+          "en": "All",
+          "va": "Tots"
+        },
+        "paginationPrev": {
+          "es": "Anterior",
+          "en": "Previous",
+          "va": "Anterior"
+        },
+        "paginationNext": {
+          "es": "Siguiente",
+          "en": "Next",
+          "va": "SegÃ¼ent"
         }
       }
     }
@@ -378,6 +533,15 @@ export const MARKETPLACE_CONFIG = {
         "es": "Resuelto",
         "en": "Resolved",
         "va": "Resolt"
+      }
+    },
+    {
+      "id": "validated",
+      "visible": true,
+      "label": {
+        "es": "Validado",
+        "en": "Validated",
+        "va": "Validat"
       }
     },
     {
@@ -3163,7 +3327,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural i sectors creatius"
           }
         },
-        "sector": "tur",
+        "sector": "cci",
         "stakeholderCategory": "enterprise",
         "levels": [],
         "pilotType": "",
@@ -3261,7 +3425,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "verificationStatus": "",
         "pilotStatus": "",
-        "sector": "tur",
+        "sector": "cci",
         "sectorLabel": {
           "es": "Turismo, hostelería y ocio",
           "en": "Tourism, hospitality and leisure",
@@ -3687,7 +3851,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb experiència en transformació digital d'administracions públiques, dades obertes i col·laboració públic-privada en innovació"
           }
         },
-        "sector": "adm",
+        "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -3785,7 +3949,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "verificationStatus": "",
         "pilotStatus": "",
-        "sector": "adm",
+        "sector": "nts",
         "sectorLabel": {
           "es": "Administración pública y servicios ciudadanos",
           "en": "Public administration and citizen services",
@@ -4731,7 +4895,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb perfil dual investigador-docent, amb experiència en traducció de resultats de recerca a continguts formatius de FP"
           }
         },
-        "sector": "edu",
+        "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -4830,7 +4994,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "verificationStatus": "",
         "pilotStatus": "",
-        "sector": "edu",
+        "sector": "nts",
         "sectorLabel": {
           "es": "Educación, formación profesional e innovación pedagógica",
           "en": "Education, vocational training and pedagogical innovation",
@@ -5252,7 +5416,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb formació en ètica digital, protecció de dades educatives i ús responsable d'IA a l'aula"
           }
         },
-        "sector": "edu",
+        "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -5350,7 +5514,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "verificationStatus": "",
         "pilotStatus": "",
-        "sector": "edu",
+        "sector": "nts",
         "sectorLabel": {
           "es": "Educación, formación profesional e innovación pedagógica",
           "en": "Education, vocational training and pedagogical innovation",
@@ -7670,7 +7834,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Administració educativa autonòmica responsable de la FP a la Comunitat Valenciana"
           }
         },
-        "sector": "edu",
+        "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -8191,7 +8355,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb perfil dual pedagògic-tècnic, amb experiència en disseny de pilots FP-empresa"
           }
         },
-        "sector": "edu",
+        "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -8289,7 +8453,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "verificationStatus": "",
         "pilotStatus": "",
-        "sector": "edu",
+        "sector": "nts",
         "sectorLabel": {
           "es": "Educación, formación profesional e innovación pedagógica",
           "en": "Education, vocational training and pedagogical innovation",
@@ -8710,7 +8874,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Administració provincial que impulsa la transformació digital municipal"
           }
         },
-        "sector": "adm",
+        "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -9751,7 +9915,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Agència pública responsable de la promoció i gestió del turisme a la Comunitat Valenciana"
           }
         },
-        "sector": "tur",
+        "sector": "cci",
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -12470,7 +12634,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
-        "sector": "adm",
+        "sector": "nts",
         "stakeholderCategory": "",
         "levels": [
           "Máster"
@@ -21493,7 +21657,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
-        "sector": "tur",
+        "sector": "cci",
         "stakeholderCategory": "",
         "levels": [
           "FP",
@@ -27960,7 +28124,7 @@ export const MARKETPLACE_CONFIG = {
               "va": "Administració educativa autonòmica responsable de la FP a la Comunitat Valenciana"
             }
           },
-          "sector": "edu",
+          "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -28481,7 +28645,7 @@ export const MARKETPLACE_CONFIG = {
               "va": "Administració provincial que impulsa la transformació digital municipal"
             }
           },
-          "sector": "adm",
+          "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -29005,7 +29169,7 @@ export const MARKETPLACE_CONFIG = {
               "va": "Agència pública responsable de la promoció i gestió del turisme a la Comunitat Valenciana"
             }
           },
-          "sector": "tur",
+          "sector": "cci",
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -43491,7 +43655,7 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
-          "sector": "adm",
+          "sector": "nts",
           "stakeholderCategory": "",
           "levels": [
             "Máster"
@@ -44961,7 +45125,7 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
-          "sector": "tur",
+          "sector": "cci",
           "stakeholderCategory": "",
           "levels": [
             "FP",
@@ -48017,7 +48181,7 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural i sectors creatius"
             }
           },
-          "sector": "tur",
+          "sector": "cci",
           "stakeholderCategory": "enterprise",
           "levels": [],
           "pilotType": "",
@@ -48115,7 +48279,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "verificationStatus": "",
           "pilotStatus": "",
-          "sector": "tur",
+          "sector": "cci",
           "sectorLabel": {
             "es": "Turismo, hostelería y ocio",
             "en": "Tourism, hospitality and leisure",
@@ -48541,7 +48705,7 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb experiència en transformació digital d'administracions públiques, dades obertes i col·laboració públic-privada en innovació"
             }
           },
-          "sector": "adm",
+          "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -48639,7 +48803,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "verificationStatus": "",
           "pilotStatus": "",
-          "sector": "adm",
+          "sector": "nts",
           "sectorLabel": {
             "es": "Administración pública y servicios ciudadanos",
             "en": "Public administration and citizen services",
@@ -49585,7 +49749,7 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb perfil dual investigador-docent, amb experiència en traducció de resultats de recerca a continguts formatius de FP"
             }
           },
-          "sector": "edu",
+          "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -49684,7 +49848,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "verificationStatus": "",
           "pilotStatus": "",
-          "sector": "edu",
+          "sector": "nts",
           "sectorLabel": {
             "es": "Educación, formación profesional e innovación pedagógica",
             "en": "Education, vocational training and pedagogical innovation",
@@ -50106,7 +50270,7 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb formació en ètica digital, protecció de dades educatives i ús responsable d'IA a l'aula"
             }
           },
-          "sector": "edu",
+          "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -50204,7 +50368,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "verificationStatus": "",
           "pilotStatus": "",
-          "sector": "edu",
+          "sector": "nts",
           "sectorLabel": {
             "es": "Educación, formación profesional e innovación pedagógica",
             "en": "Education, vocational training and pedagogical innovation",
@@ -51148,7 +51312,7 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb perfil dual pedagògic-tècnic, amb experiència en disseny de pilots FP-empresa"
             }
           },
-          "sector": "edu",
+          "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -51246,7 +51410,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "verificationStatus": "",
           "pilotStatus": "",
-          "sector": "edu",
+          "sector": "nts",
           "sectorLabel": {
             "es": "Educación, formación profesional e innovación pedagógica",
             "en": "Education, vocational training and pedagogical innovation",
@@ -52999,6 +53163,15 @@ export const MARKETPLACE_CONFIG = {
           "es": "Resuelto",
           "en": "Resolved",
           "va": "Resolt"
+        }
+      },
+      {
+        "id": "validated",
+        "visible": true,
+        "label": {
+          "es": "Validado",
+          "en": "Validated",
+          "va": "Validat"
         }
       },
       {

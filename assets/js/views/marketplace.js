@@ -3,11 +3,6 @@ import { getState, setState } from '../state.js';
 import { MARKETPLACE_CONFIG } from '../../data/marketplace.js';
 
 const UI_TEXT = {
-  activeTabHint: {
-    es: 'Subseccion activa de la comunidad',
-    en: 'Active community subsection',
-    va: 'Subseccio activa de la comunitat',
-  },
   backCommunity: {
     es: 'Volver a Comunidad',
     en: 'Back to Community',
@@ -22,6 +17,21 @@ const UI_TEXT = {
     es: 'Limpiar filtros',
     en: 'Clear filters',
     va: 'Netejar filtres',
+  },
+  clearSearch: {
+    es: 'Borrar busqueda',
+    en: 'Clear search',
+    va: 'Netejar cerca',
+  },
+  activeFilters: {
+    es: 'Filtros activos',
+    en: 'Active filters',
+    va: 'Filtres actius',
+  },
+  moreFilters: {
+    es: 'Filtros',
+    en: 'Filters',
+    va: 'Filtres',
   },
   detailEmpty: {
     es: 'Este elemento todavia no tiene bloques de detalle publicados.',
@@ -336,31 +346,31 @@ const LEVEL_STYLES = {
   teacher:  'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
 };
 
+const SECTOR_FALLBACK_LABELS = {
+  agr: { es: 'Agroalimentario', en: 'Agrifood', va: 'Agroalimentari' },
+  cci: { es: 'Industrias culturales y creativas', en: 'Cultural and creative industries', va: 'Industries culturals i creatives' },
+  ene: { es: 'Energia y Medio Ambiente', en: 'Energy and Environment', va: 'Energia i Medi Ambient' },
+  hou: { es: 'Vivienda', en: 'Housing', va: 'Habitatge' },
+  mfg: { es: 'Manufactura', en: 'Manufacturing', va: 'Manufactura' },
+  mob: { es: 'Movilidad y Transporte', en: 'Mobility and Transport', va: 'Mobilitat i Transport' },
+  nts: { es: 'Servicios No Turisticos', en: 'Non-Touristic Services', va: 'Serveis No Turistics' },
+};
+
 const TAB_TONES = {
   challenges: {
-    band: 'from-eu-blue/10 via-blue-50 to-white',
     badge: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
-    icon: 'bg-eu-blue text-white',
   },
   cases: {
-    band: 'from-eu-orange/10 via-orange-50 to-white',
     badge: 'bg-eu-orange/10 text-eu-orange border-eu-orange/20',
-    icon: 'bg-eu-orange text-white',
   },
   pilots: {
-    band: 'from-emerald-100 via-green-50 to-white',
-    badge: 'bg-green-100 text-green-800 border-green-200',
-    icon: 'bg-green-700 text-white',
+    badge: 'bg-eu-teal/10 text-eu-teal border-eu-teal/20',
   },
   validations: {
-    band: 'from-teal-100 via-cyan-50 to-white',
-    badge: 'bg-teal-100 text-teal-800 border-teal-200',
-    icon: 'bg-teal-700 text-white',
+    badge: 'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
   },
   mentorings: {
-    band: 'from-slate-200 via-slate-50 to-white',
-    badge: 'bg-slate-100 text-slate-700 border-slate-200',
-    icon: 'bg-slate-800 text-white',
+    badge: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
   },
 };
 
@@ -543,6 +553,9 @@ function getDecisionOutcomeLabel(id) {
 
 function getSectorCode(value) {
   const map = {
+    adm: 'nts',
+    edu: 'nts',
+    tur: 'cci',
     Manufacturing: 'mfg',
     'Mobility and Transport': 'mob',
     'Energy and Environment': 'ene',
@@ -555,7 +568,8 @@ function getSectorCode(value) {
 }
 
 function getSectorLabel(value) {
-  return (t('sectors.sectorNames') || {})[getSectorCode(value)] || value;
+  const code = getSectorCode(value);
+  return (t('sectors.sectorNames') || {})[code] || pickLang(SECTOR_FALLBACK_LABELS[code], code);
 }
 
 function getTabs() {
@@ -613,18 +627,18 @@ function renderHero() {
   return `
     <section class="bg-eu-blue px-6 py-12 text-white">
       <div class="mx-auto max-w-7xl">
-        <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-end">
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
           <div>
             <p class="text-sm font-bold uppercase tracking-[0.2em] text-eu-yellow">${esc(pickLang(MARKETPLACE_CONFIG.publicSectionName?.nav, 'Comunidad'))}</p>
             <h1 class="mt-3 max-w-4xl text-3xl font-extrabold leading-tight md:text-4xl">${esc(title)}</h1>
             ${description ? `<p class="mt-4 max-w-3xl text-base leading-7 text-white/80">${esc(description)}</p>` : ''}
           </div>
           ${stats.length ? `
-            <div class="grid grid-cols-3 gap-3">
+            <div class="flex flex-wrap justify-start gap-2 lg:justify-end">
               ${stats.map(stat => `
-                <div class="rounded-xl bg-white/10 px-4 py-3 text-center ring-1 ring-white/10">
-                  <p class="text-2xl font-extrabold text-eu-yellow">${esc(stat.value)}</p>
-                  <p class="mt-1 text-xs font-semibold uppercase leading-4 text-white/70">${esc(pickLang(stat.label))}</p>
+                <div class="min-w-24 rounded-lg bg-white/10 px-3 py-2 text-center ring-1 ring-white/10">
+                  <p class="text-xl font-extrabold leading-none text-eu-yellow">${esc(stat.value)}</p>
+                  <p class="mt-1 text-[0.68rem] font-semibold uppercase leading-3 text-white/70">${esc(pickLang(stat.label))}</p>
                 </div>`).join('')}
             </div>` : ''}
         </div>
@@ -634,9 +648,10 @@ function renderHero() {
 
 function renderTabs(activeId) {
   const tabs = getTabs();
+  const ariaLabel = pickLang(MARKETPLACE_CONFIG.publicSectionName?.nav, 'Comunidad');
   return `
     <div class="mx-auto max-w-7xl px-6 pt-8">
-      <div class="flex flex-wrap gap-1 border-b border-eu-border" role="tablist" aria-label="${esc(uiText('activeTabHint'))}">
+      <div class="flex flex-wrap gap-1 border-b border-eu-border" role="tablist" aria-label="${esc(ariaLabel)}">
         ${tabs.map(tab => {
           const active = tab.id === activeId;
           return `
@@ -804,53 +819,192 @@ function getFilteredTabItems(tabId, items) {
   return items.filter(item => itemMatchesTabFilters(item, filterState, definitions));
 }
 
+function getTabPageStateKey(tabId) {
+  return `marketplacePage:${tabId}`;
+}
+
+function getTabPageSizeStateKey(tabId) {
+  return `marketplacePageSize:${tabId}`;
+}
+
+function getTabPagination(tab) {
+  const cfg = tab.pagination || {};
+  const pageSizeOptions = Array.isArray(cfg.pageSizeOptions) && cfg.pageSizeOptions.length ? cfg.pageSizeOptions : [6, 12, 24, 48];
+  return {
+    pageSize: Number.isFinite(Number(cfg.pageSize)) ? Number(cfg.pageSize) : pageSizeOptions[0],
+    pageSizeOptions,
+    showAllOption: cfg.showAllOption !== false,
+    showAllLabel: cfg.showAllLabel || { es: 'Todos', en: 'All', va: 'Tots' },
+    paginationPrev: cfg.paginationPrev || { es: 'Anterior', en: 'Previous', va: 'Anterior' },
+    paginationNext: cfg.paginationNext || { es: 'Siguiente', en: 'Next', va: 'Seguent' },
+  };
+}
+
+function resetTabPagination(tabId) {
+  setState(getTabPageStateKey(tabId), 0);
+}
+
+function getActiveFilterChips(tabId, items) {
+  const state = getTabFilterState(tabId);
+  const definitions = getFilterDefinitions(tabId);
+  const chips = [];
+  const search = (state.search || '').trim();
+
+  if (search) {
+    chips.push({
+      key: 'search',
+      label: `${uiText('search')}: ${search}`,
+      value: '',
+    });
+  }
+
+  definitions.forEach(definition => {
+    const selected = state.values?.[definition.key];
+    if (!selected) return;
+    const option = getFilterOptions(items, definition).find(entry => String(entry.value) === String(selected));
+    chips.push({
+      key: definition.key,
+      label: option?.label ? `${definition.label}: ${option.label}` : `${definition.label}: ${selected}`,
+      value: selected,
+    });
+  });
+
+  return chips;
+}
+
+function renderActiveFilterChips(tab, items) {
+  const chips = getActiveFilterChips(tab.id, items);
+  if (!chips.length) return '';
+  return `
+    <div class="mt-3 flex flex-wrap items-center gap-2 rounded-lg border border-eu-blue/20 bg-eu-blue/5 px-3 py-2">
+      <span class="text-xs font-bold text-gray-600">${esc(uiText('activeFilters'))}:</span>
+      ${chips.map(chip => `
+        <button type="button"
+          data-mp-remove-filter="${esc(chip.key)}"
+          ${chip.value ? `data-mp-filter-value="${esc(chip.value)}"` : ''}
+          class="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-eu-blue/25 bg-white px-3 py-1 text-xs font-semibold text-eu-blue transition-colors hover:border-eu-blue hover:bg-eu-blue/10 focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
+          <span>${esc(chip.label)}</span>
+          <i data-lucide="x" class="h-3.5 w-3.5"></i>
+        </button>`).join('')}
+      <button id="mp-clear-tab-filters" type="button"
+        class="ml-auto inline-flex min-h-8 items-center gap-1.5 rounded-full border border-red-200 bg-white px-3 py-1 text-xs font-bold text-red-600 transition-colors hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-offset-2">
+        <i data-lucide="x-circle" class="h-3.5 w-3.5"></i>
+        ${esc(uiText('clearFilters'))}
+      </button>
+    </div>`;
+}
+
+function renderFilterCountSuffix(count) {
+  return count ? ` (${count})` : '';
+}
+
+function getFilterPanelStateKey(tabId) {
+  return `marketplaceFiltersOpen:${tabId}`;
+}
+
 function renderTabFilters(tab, items) {
   const state = getTabFilterState(tab.id);
   const definitions = getFilterDefinitions(tab.id);
-  const activeCount = Object.values(state.values || {}).filter(Boolean).length + (state.search ? 1 : 0);
+  const activeCount = getActiveFilterChips(tab.id, items).length;
+  const filtersOpen = getState(getFilterPanelStateKey(tab.id)) === true;
+  const filterControls = definitions.map(definition => {
+    const options = getFilterOptions(items, definition);
+    if (!options.length) return '';
+    return `
+      <label class="block">
+        <span class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(definition.label)}</span>
+        <select data-mp-filter="${esc(definition.key)}" class="mt-1 min-h-11 w-full rounded-lg border border-eu-border bg-white px-3 py-2 text-sm outline-none focus:border-eu-blue focus:ring-2 focus:ring-eu-blue">
+          <option value="">${esc(uiText('all'))}</option>
+          ${options.map(option => `<option value="${esc(option.value)}" ${String(state.values?.[definition.key] || '') === String(option.value) ? 'selected' : ''}>${esc(option.label)}</option>`).join('')}
+        </select>
+      </label>`;
+  }).join('');
+
   return `
-    <div class="mt-6 rounded-xl border border-eu-border bg-white p-4 shadow-sm">
-      <div class="grid gap-3 lg:grid-cols-[minmax(14rem,1fr)_auto] lg:items-end">
-        <label class="block">
-          <span class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('search'))}</span>
-          <span class="relative mt-1 block">
+    <div class="mt-5">
+      <div class="grid gap-3 sm:grid-cols-[minmax(18rem,1fr)_auto] sm:items-start">
+        <label class="block w-full">
+          <span class="sr-only">${esc(uiText('search'))}</span>
+          <span class="relative flex h-10 w-full items-center rounded-full border border-eu-border bg-white shadow-sm transition-colors focus-within:border-eu-blue focus-within:ring-2 focus-within:ring-eu-blue">
             <i data-lucide="search" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400"></i>
-            <input id="mp-tab-search" type="search" value="${esc(state.search)}" placeholder="${esc(uiText('searchPlaceholder'))}"
-              class="min-h-11 w-full rounded-lg border border-eu-border bg-white py-2 pl-9 pr-3 text-sm outline-none focus:border-eu-blue focus:ring-2 focus:ring-eu-blue">
+            <input id="mp-tab-search" type="text" value="${esc(state.search)}" placeholder="${esc(uiText('searchPlaceholder'))}"
+              class="h-full min-w-0 flex-1 rounded-full border-0 bg-transparent py-2 pl-9 pr-1 text-sm outline-none">
+            <button id="mp-clear-search" type="button" title="${esc(uiText('clearSearch'))}" aria-label="${esc(uiText('clearSearch'))}"
+              class="mr-2 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-transparent bg-white text-gray-400 transition-colors hover:border-eu-border hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-eu-blue ${state.search ? '' : 'hidden'}">
+              <i data-lucide="x" class="h-3.5 w-3.5"></i>
+            </button>
           </span>
         </label>
-        <button id="mp-clear-tab-filters" type="button" class="inline-flex min-h-11 items-center justify-center rounded-lg border border-eu-border px-3 py-2 text-xs font-bold text-gray-600 transition-colors hover:border-eu-blue hover:text-eu-blue focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 ${activeCount ? '' : 'opacity-50'}">
-          ${esc(uiText('clearFilters'))}${activeCount ? ` (${activeCount})` : ''}
-        </button>
+        ${filterControls ? `
+          <button id="mp-toggle-filters" type="button" aria-expanded="${filtersOpen ? 'true' : 'false'}"
+            class="inline-flex min-h-10 w-fit cursor-pointer items-center gap-2 rounded-full border border-eu-border bg-white px-3 py-2 text-sm font-bold text-gray-700 shadow-sm transition-colors hover:border-eu-blue hover:text-eu-blue focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
+              <i data-lucide="sliders-horizontal" class="h-4 w-4"></i>
+              <span>${esc(uiText('moreFilters'))}<span id="mp-filter-count">${esc(renderFilterCountSuffix(activeCount))}</span></span>
+              <i data-lucide="chevron-down" class="h-4 w-4 transition-transform ${filtersOpen ? 'rotate-180' : ''}"></i>
+          </button>` : ''}
       </div>
-      <div class="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-        ${definitions.map(definition => {
-          const options = getFilterOptions(items, definition);
-          if (!options.length) return '';
-          return `
-            <label class="block">
-              <span class="text-xs font-bold uppercase tracking-wide text-gray-500">${esc(definition.label)}</span>
-              <select data-mp-filter="${esc(definition.key)}" class="mt-1 min-h-11 w-full rounded-lg border border-eu-border bg-white px-3 py-2 text-sm outline-none focus:border-eu-blue focus:ring-2 focus:ring-eu-blue">
-                <option value="">${esc(uiText('all'))}</option>
-                ${options.map(option => `<option value="${esc(option.value)}" ${String(state.values?.[definition.key] || '') === String(option.value) ? 'selected' : ''}>${esc(option.label)}</option>`).join('')}
-              </select>
-            </label>`;
-        }).join('')}
-      </div>
+      ${filterControls && filtersOpen ? `
+        <div class="mt-3 rounded-xl border border-eu-border bg-white p-3 shadow-sm sm:p-4">
+          <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            ${filterControls}
+          </div>
+        </div>` : ''}
+      <div id="mp-active-filters">${renderActiveFilterChips(tab, items)}</div>
     </div>`;
 }
 
 function renderTabResults(tab, items) {
   const filtered = getFilteredTabItems(tab.id, items);
+  const pagination = getTabPagination(tab);
+  const pageSize = getState(getTabPageSizeStateKey(tab.id)) || pagination.pageSize;
+  const isAll = pageSize === 'all';
+  const totalPages = isAll ? 1 : Math.max(1, Math.ceil(filtered.length / pageSize));
+  const currentPage = Math.min(getState(getTabPageStateKey(tab.id)) || 0, totalPages - 1);
+  const paginated = isAll ? filtered : filtered.slice(currentPage * pageSize, (currentPage + 1) * pageSize);
+  const pageSizeSelector = `
+    <div class="flex flex-wrap items-center gap-1">
+      ${pagination.pageSizeOptions.map(option => `
+        <button type="button" data-mp-pagesize="${esc(option)}"
+          class="rounded border px-2 py-1 text-xs font-semibold transition-colors ${pageSize === option ? 'border-eu-blue bg-eu-blue text-white' : 'border-eu-border bg-white text-gray-700 hover:border-eu-blue'}">
+          ${esc(option)}
+        </button>`).join('')}
+      ${pagination.showAllOption ? `
+        <button type="button" data-mp-pagesize="all"
+          class="rounded border px-2 py-1 text-xs font-semibold transition-colors ${pageSize === 'all' ? 'border-eu-blue bg-eu-blue text-white' : 'border-eu-border bg-white text-gray-700 hover:border-eu-blue'}">
+          ${esc(pickLang(pagination.showAllLabel, uiText('all')))}
+        </button>` : ''}
+    </div>`;
+  const paginationControls = !isAll && totalPages > 1 ? `
+    <div class="mt-6 flex items-center justify-center gap-2">
+      <button type="button" data-mp-page="prev"
+        class="rounded border border-eu-border px-3 py-1.5 text-sm font-semibold transition-colors ${currentPage === 0 ? 'pointer-events-none opacity-40' : 'hover:border-eu-blue hover:text-eu-blue'}">
+        ${esc(pickLang(pagination.paginationPrev, 'Anterior'))}
+      </button>
+      <span class="px-2 text-xs font-semibold text-gray-500">${currentPage + 1} / ${totalPages}</span>
+      <button type="button" data-mp-page="next"
+        class="rounded border border-eu-border px-3 py-1.5 text-sm font-semibold transition-colors ${currentPage >= totalPages - 1 ? 'pointer-events-none opacity-40' : 'hover:border-eu-blue hover:text-eu-blue'}">
+        ${esc(pickLang(pagination.paginationNext, 'Siguiente'))}
+      </button>
+    </div>` : '';
+  const resultsHeader = `
+    <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+      <span class="text-xs font-semibold text-gray-500">${filtered.length} ${filtered.length === 1 ? 'item' : 'items'}</span>
+      ${pageSizeSelector}
+    </div>`;
+
   if (!filtered.length) {
     return `
+      ${resultsHeader}
       <div class="rounded-2xl border border-dashed border-eu-border bg-white p-8 text-center shadow-sm">
         <i data-lucide="search-x" class="mx-auto h-8 w-8 text-gray-400"></i>
         <h3 class="mt-3 text-lg font-extrabold text-eu-text">${esc(uiText('noResults'))}</h3>
         <p class="mx-auto mt-2 max-w-xl text-sm leading-6 text-gray-500">${esc(pickLang(tab.emptyState?.message))}</p>
       </div>`;
   }
-  return `<div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">${filtered.map(item => renderItemCard(item, tab)).join('')}</div>`;
+  return `
+    ${resultsHeader}
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">${paginated.map(item => renderItemCard(item, tab)).join('')}</div>
+    ${paginationControls}`;
 }
 
 function renderCardShell(item, tab, body, options = {}) {
@@ -1454,7 +1608,7 @@ function renderMentoringCard(item, tab) {
   const badges = asArray(card.badges).map(badge => badge?.label || badge);
   const body = `
     <div class="mt-4 flex items-start gap-4 rounded-lg bg-eu-bg p-4">
-      <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-slate-800 text-sm font-extrabold text-white">${esc(getMentorInitials(mentorName))}</span>
+      <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-eu-blue text-sm font-extrabold text-white">${esc(getMentorInitials(mentorName))}</span>
       <div>
         <p class="text-sm font-bold text-eu-text">${esc(mentorName)}</p>
         <p class="mt-1 text-sm leading-5 text-gray-600">${esc(mentorRole)}</p>
@@ -1495,24 +1649,43 @@ function renderEmptyState(tab) {
     </div>`;
 }
 
+function renderTabIntroIcon(tabId) {
+  const common = 'class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+  const icons = {
+    cases: `<svg ${common}><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v4a5 5 0 0 1-10 0V4Z"/><path d="M5 5H3v2a4 4 0 0 0 4 4"/><path d="M19 5h2v2a4 4 0 0 1-4 4"/></svg>`,
+    pilots: `<svg ${common}><path d="M9 3h6"/><path d="M10 3v5l-5 9a3 3 0 0 0 2.6 4.5h8.8A3 3 0 0 0 19 17l-5-9V3"/><path d="M8 15h8"/></svg>`,
+    validations: `<svg ${common}><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>`,
+    mentorings: `<svg ${common}><path d="M21 12a7 7 0 0 1-7 7H8l-5 3 2-5a7 7 0 1 1 16-5Z"/><path d="M8 10h8"/><path d="M8 14h5"/></svg>`,
+  };
+  return icons[tabId] || `<svg ${common}><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12c.8.7 1 1.4 1 2h6c0-.6.2-1.3 1-2a7 7 0 0 0-4-12Z"/></svg>`;
+}
+
+function renderTabIntroCard(tab, items) {
+  const title = pickLang(tab.label, tab.id);
+  const intro = pickLang(tab.intro);
+  return `
+    <div class="relative overflow-hidden rounded-xl border border-eu-border bg-white shadow-sm">
+      <div class="absolute inset-y-0 left-0 w-1.5 bg-eu-blue"></div>
+      <div class="p-5 pl-6 sm:p-6 sm:pl-7">
+        <div class="min-w-0">
+          <div class="flex items-center gap-3">
+            <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-eu-blue text-white shadow-sm">
+              ${renderTabIntroIcon(tab.id)}
+            </span>
+            <h2 class="min-w-0 text-2xl font-extrabold leading-tight text-eu-text">${esc(title)}</h2>
+          </div>
+          ${intro ? `<p class="mt-4 max-w-4xl text-base leading-7 text-gray-650">${esc(intro)}</p>` : ''}
+        </div>
+      </div>
+    </div>`;
+}
+
 function renderTabPanel(tab, items) {
-  const tone = TAB_TONES[tab.id] || TAB_TONES.challenges;
   return `
     <section class="mx-auto max-w-7xl px-6 py-8"
       id="mp-tabpanel-${esc(tab.id)}" role="tabpanel" aria-labelledby="mp-tab-${esc(tab.id)}">
       <div>
-        <div class="rounded-2xl border border-eu-border bg-gradient-to-br ${tone.band} p-6 shadow-sm">
-            <div class="flex items-start gap-4">
-              <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${tone.icon}">
-                <i data-lucide="${esc(tab.icon || 'layers-3')}" class="h-5 w-5"></i>
-              </span>
-              <div>
-                <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-gray-500">${esc(uiText('activeTabHint'))}</p>
-                <h2 class="mt-2 text-2xl font-extrabold text-eu-text">${esc(pickLang(tab.label, tab.id))}</h2>
-                <p class="mt-3 max-w-3xl text-sm leading-6 text-gray-700">${esc(pickLang(tab.intro))}</p>
-              </div>
-            </div>
-          </div>
+        ${renderTabIntroCard(tab, items)}
 
           ${items.length ? renderTabFilters(tab, items) : ''}
           <div id="mp-tab-results" class="mt-6">
@@ -3984,7 +4157,25 @@ export function mount() {
     const state = getTabFilterState(tabId);
     state.search = event.target.value;
     setTabFilterState(tabId, state);
+    resetTabPagination(tabId);
+    document.getElementById('mp-clear-search')?.classList.toggle('hidden', !state.search);
     updateTabResults();
+  });
+
+  document.getElementById('mp-clear-search')?.addEventListener('click', () => {
+    const tabId = getActiveTabId();
+    const state = getTabFilterState(tabId);
+    state.search = '';
+    setTabFilterState(tabId, state);
+    resetTabPagination(tabId);
+    rerender();
+  });
+
+  document.getElementById('mp-toggle-filters')?.addEventListener('click', () => {
+    const tabId = getActiveTabId();
+    const key = getFilterPanelStateKey(tabId);
+    setState(key, getState(key) !== true);
+    rerender();
   });
 
   document.querySelectorAll('[data-mp-filter]').forEach(select => {
@@ -3994,21 +4185,46 @@ export function mount() {
       state.values = { ...(state.values || {}), [select.dataset.mpFilter]: select.value };
       if (!select.value) delete state.values[select.dataset.mpFilter];
       setTabFilterState(tabId, state);
+      resetTabPagination(tabId);
       updateTabResults();
     });
   });
 
-  document.getElementById('mp-clear-tab-filters')?.addEventListener('click', () => {
-    const tabId = getActiveTabId();
-    clearTabFilterState(tabId);
-    rerender();
-  });
+  attachMarketplaceFilterActionListeners();
+  attachMarketplacePaginationListeners();
 
   window.onpopstate = () => {
     if (!getState('selectedChallengeId')) return;
     setState('selectedChallengeId', null);
     rerender();
   };
+}
+
+function attachMarketplaceFilterActionListeners() {
+  document.querySelectorAll('#mp-clear-tab-filters').forEach(button => {
+    button.addEventListener('click', () => {
+      const tabId = getActiveTabId();
+      clearTabFilterState(tabId);
+      resetTabPagination(tabId);
+      rerender();
+    });
+  });
+
+  document.querySelectorAll('[data-mp-remove-filter]').forEach(button => {
+    button.addEventListener('click', () => {
+      const tabId = getActiveTabId();
+      const state = getTabFilterState(tabId);
+      const key = button.dataset.mpRemoveFilter;
+      if (key === 'search') {
+        state.search = '';
+      } else if (state.values) {
+        delete state.values[key];
+      }
+      setTabFilterState(tabId, state);
+      resetTabPagination(tabId);
+      rerender();
+    });
+  });
 }
 
 function updateTabResults() {
@@ -4018,6 +4234,12 @@ function updateTabResults() {
   const target = document.getElementById('mp-tab-results');
   if (!target) return;
   target.innerHTML = renderTabResults(activeTab, items);
+  const activeFilters = document.getElementById('mp-active-filters');
+  if (activeFilters) activeFilters.innerHTML = renderActiveFilterChips(activeTab, items);
+  const filterCount = document.getElementById('mp-filter-count');
+  if (filterCount) filterCount.textContent = renderFilterCountSuffix(getActiveFilterChips(activeTab.id, items).length);
+  attachMarketplaceFilterActionListeners();
+  attachMarketplacePaginationListeners();
   document.querySelectorAll('#mp-tab-results .mp-view-detail').forEach(button => {
     button.addEventListener('click', () => {
       setState('selectedChallengeId', button.dataset.id);
@@ -4027,6 +4249,27 @@ function updateTabResults() {
     });
   });
   if (window.lucide) window.lucide.createIcons();
+}
+
+function attachMarketplacePaginationListeners() {
+  document.querySelectorAll('[data-mp-pagesize]').forEach(button => {
+    button.addEventListener('click', () => {
+      const tabId = getActiveTabId();
+      const raw = button.dataset.mpPagesize;
+      setState(getTabPageSizeStateKey(tabId), raw === 'all' ? 'all' : Number(raw));
+      resetTabPagination(tabId);
+      updateTabResults();
+    });
+  });
+
+  document.querySelectorAll('[data-mp-page]').forEach(button => {
+    button.addEventListener('click', () => {
+      const tabId = getActiveTabId();
+      const current = getState(getTabPageStateKey(tabId)) || 0;
+      setState(getTabPageStateKey(tabId), button.dataset.mpPage === 'next' ? current + 1 : Math.max(0, current - 1));
+      updateTabResults();
+    });
+  });
 }
 
 function rerender() {
