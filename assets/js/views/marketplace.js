@@ -3896,7 +3896,6 @@ function renderDetailEmpty() {
 
 function renderDetailChipPanel(item) {
   const focus = asArray(item.classification?.aiSteamFocus).map(getFocusLabel).filter(Boolean);
-  const tags = pickLang(item.core?.tags, []);
   const isPilot = item.type === 'pilot';
   const helixChips = isPilot ? asArray(item.core?.helix).map(getHelixLabel).filter(Boolean) : [];
   const chips = [
@@ -3907,7 +3906,6 @@ function renderDetailChipPanel(item) {
     isPilot ? getPilotStatusLabel(item.classification?.pilotStatus) : null,
     ...helixChips,
     ...focus,
-    ...asArray(tags),
   ].filter(Boolean);
   if (!chips.length) return '';
   return `

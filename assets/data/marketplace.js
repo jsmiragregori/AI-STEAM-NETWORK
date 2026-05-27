@@ -499,7 +499,6 @@ export const MARKETPLACE_CONFIG = {
     "helixRole": true,
     "tripleTransition": true,
     "sector": true,
-    "tags": true,
     "level": true,
     "transferType": true,
     "verificationStatus": true,
@@ -3464,30 +3463,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 22, 2026",
           "va": "22 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "IA generativa",
-            "Turismo",
-            "Cultura",
-            "Industrias creativas",
-            "Contenidos IA"
-          ],
-          "en": [
-            "Generative AI",
-            "Tourism",
-            "Culture",
-            "Creative industries",
-            "AI content"
-          ],
-          "va": [
-            "IA generativa",
-            "Turisme",
-            "Cultura",
-            "Indústries creatives",
-            "Continguts IA"
-          ]
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -3550,30 +3526,7 @@ export const MARKETPLACE_CONFIG = {
           "companies",
           "civic-organisations",
           "industry-partners"
-        ],
-        "tags": {
-          "es": [
-            "IA generativa",
-            "Turismo",
-            "Cultura",
-            "Industrias creativas",
-            "Contenidos IA"
-          ],
-          "en": [
-            "Generative AI",
-            "Tourism",
-            "Culture",
-            "Creative industries",
-            "AI content"
-          ],
-          "va": [
-            "IA generativa",
-            "Turisme",
-            "Cultura",
-            "Indústries creatives",
-            "Continguts IA"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "",
@@ -3989,30 +3942,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 22, 2026",
           "va": "22 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Administración pública",
-            "Participación institucional",
-            "Datos abiertos",
-            "Retos públicos",
-            "Gobernanza"
-          ],
-          "en": [
-            "Public administration",
-            "Institutional participation",
-            "Open data",
-            "Public challenges",
-            "Governance"
-          ],
-          "va": [
-            "Administració pública",
-            "Participació institucional",
-            "Dades obertes",
-            "Reptes públics",
-            "Governança"
-          ]
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -4075,30 +4005,7 @@ export const MARKETPLACE_CONFIG = {
           "public-bodies",
           "companies",
           "vet-centres"
-        ],
-        "tags": {
-          "es": [
-            "Administración pública",
-            "Participación institucional",
-            "Datos abiertos",
-            "Retos públicos",
-            "Gobernanza"
-          ],
-          "en": [
-            "Public administration",
-            "Institutional participation",
-            "Open data",
-            "Public challenges",
-            "Governance"
-          ],
-          "va": [
-            "Administració pública",
-            "Participació institucional",
-            "Dades obertes",
-            "Reptes públics",
-            "Governança"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "",
@@ -4513,30 +4420,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 22, 2026",
           "va": "22 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Replicación",
-            "Agroalimentario",
-            "Cooperativas",
-            "IA agrícola",
-            "Transferencia"
-          ],
-          "en": [
-            "Replication",
-            "Agri-food",
-            "Cooperatives",
-            "Agricultural AI",
-            "Transfer"
-          ],
-          "va": [
-            "Replicació",
-            "Agroalimentari",
-            "Cooperatives",
-            "IA agrícola",
-            "Transferència"
-          ]
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -4600,30 +4484,7 @@ export const MARKETPLACE_CONFIG = {
           "companies",
           "vet-centres",
           "industry-partners"
-        ],
-        "tags": {
-          "es": [
-            "Replicación",
-            "Agroalimentario",
-            "Cooperativas",
-            "IA agrícola",
-            "Transferencia"
-          ],
-          "en": [
-            "Replication",
-            "Agri-food",
-            "Cooperatives",
-            "Agricultural AI",
-            "Transfer"
-          ],
-          "va": [
-            "Replicació",
-            "Agroalimentari",
-            "Cooperatives",
-            "IA agrícola",
-            "Transferència"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "",
@@ -5035,30 +4896,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 22, 2026",
           "va": "22 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Investigación",
-            "Transferencia tecnológica",
-            "FP",
-            "Universidad",
-            "Colaboración academia-empresa"
-          ],
-          "en": [
-            "Research",
-            "Technology transfer",
-            "VET",
-            "University",
-            "Academy-industry collaboration"
-          ],
-          "va": [
-            "Recerca",
-            "Transferència tecnològica",
-            "FP",
-            "Universitat",
-            "Col·laboració acadèmia-empresa"
-          ]
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -5122,30 +4960,7 @@ export const MARKETPLACE_CONFIG = {
           "researchers",
           "teachers",
           "vet-centres"
-        ],
-        "tags": {
-          "es": [
-            "Investigación",
-            "Transferencia tecnológica",
-            "FP",
-            "Universidad",
-            "Colaboración academia-empresa"
-          ],
-          "en": [
-            "Research",
-            "Technology transfer",
-            "VET",
-            "University",
-            "Academy-industry collaboration"
-          ],
-          "va": [
-            "Recerca",
-            "Transferència tecnològica",
-            "FP",
-            "Universitat",
-            "Col·laboració acadèmia-empresa"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "",
@@ -5557,30 +5372,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 20, 2026",
           "va": "20 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Ética IA",
-            "Educación",
-            "Datos de alumnos",
-            "IA generativa",
-            "Sesgos algorítmicos"
-          ],
-          "en": [
-            "AI ethics",
-            "Education",
-            "Student data",
-            "Generative AI",
-            "Algorithmic bias"
-          ],
-          "va": [
-            "Ètica IA",
-            "Educació",
-            "Dades d'alumnes",
-            "IA generativa",
-            "Biaixos algorítmics"
-          ]
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -5643,30 +5435,7 @@ export const MARKETPLACE_CONFIG = {
           "teachers",
           "vet-centres",
           "researchers"
-        ],
-        "tags": {
-          "es": [
-            "Ética IA",
-            "Educación",
-            "Datos de alumnos",
-            "IA generativa",
-            "Sesgos algorítmicos"
-          ],
-          "en": [
-            "AI ethics",
-            "Education",
-            "Student data",
-            "Generative AI",
-            "Algorithmic bias"
-          ],
-          "va": [
-            "Ètica IA",
-            "Educació",
-            "Dades d'alumnes",
-            "IA generativa",
-            "Biaixos algorítmics"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "",
@@ -6077,30 +5846,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 20, 2026",
           "va": "20 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "IA sanitaria",
-            "Diagnóstico asistido",
-            "Datos clínicos",
-            "FP sanidad",
-            "Soporte técnico"
-          ],
-          "en": [
-            "Health AI",
-            "Assisted diagnosis",
-            "Clinical data",
-            "Health VET",
-            "Technical support"
-          ],
-          "va": [
-            "IA sanitària",
-            "Diagnòstic assistit",
-            "Dades clíniques",
-            "FP sanitat",
-            "Suport tècnic"
-          ]
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -6164,30 +5910,7 @@ export const MARKETPLACE_CONFIG = {
           "vet-centres",
           "companies",
           "researchers"
-        ],
-        "tags": {
-          "es": [
-            "IA sanitaria",
-            "Diagnóstico asistido",
-            "Datos clínicos",
-            "FP sanidad",
-            "Soporte técnico"
-          ],
-          "en": [
-            "Health AI",
-            "Assisted diagnosis",
-            "Clinical data",
-            "Health VET",
-            "Technical support"
-          ],
-          "va": [
-            "IA sanitària",
-            "Diagnòstic assistit",
-            "Dades clíniques",
-            "FP sanitat",
-            "Suport tècnic"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "",
@@ -6608,30 +6331,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 20, 2026",
           "va": "20 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Dermoscopia",
-            "IA médica",
-            "FP Sanitario",
-            "Diagnóstico cutáneo",
-            "Competencias digitales"
-          ],
-          "en": [
-            "Dermoscopy",
-            "Medical AI",
-            "Health VET",
-            "Skin diagnosis",
-            "Digital competences"
-          ],
-          "va": [
-            "Dermoscòpia",
-            "IA mèdica",
-            "FP Sanitari",
-            "Diagnòstic cutani",
-            "Competències digitals"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -7297,30 +6997,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 20, 2026",
           "va": "20 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Eficiencia energética",
-            "Aprendizaje por refuerzo",
-            "Living Lab",
-            "Edificio inteligente",
-            "FP Electricidad"
-          ],
-          "en": [
-            "Energy efficiency",
-            "Reinforcement learning",
-            "Living Lab",
-            "Smart building",
-            "Electrical VET"
-          ],
-          "va": [
-            "Eficiència energètica",
-            "Aprenentatge per reforç",
-            "Living Lab",
-            "Edifici intel·ligent",
-            "FP Electricitat"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -7983,29 +7660,6 @@ export const MARKETPLACE_CONFIG = {
           "es": "1 de mayo de 2026",
           "en": "May 1, 2026",
           "va": "1 de maig de 2026"
-        },
-        "tags": {
-          "es": [
-            "Personalización",
-            "FP",
-            "Itinerarios formativos",
-            "Sistema de recomendación",
-            "EdTech"
-          ],
-          "en": [
-            "Personalisation",
-            "VET",
-            "Learning pathways",
-            "Recommendation system",
-            "EdTech"
-          ],
-          "va": [
-            "Personalització",
-            "FP",
-            "Itineraris formatius",
-            "Sistema de recomanació",
-            "EdTech"
-          ]
         }
       },
       "ownership": {
@@ -8501,30 +8155,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 15, 2026",
           "va": "15 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Mentoría",
-            "Piloto FP-empresa",
-            "Diseño pedagógico",
-            "Co-diseño",
-            "IA en FP"
-          ],
-          "en": [
-            "Mentoring",
-            "VET-industry pilot",
-            "Pedagogical design",
-            "Co-design",
-            "AI in VET"
-          ],
-          "va": [
-            "Mentoria",
-            "Pilot FP-empresa",
-            "Disseny pedagògic",
-            "Co-disseny",
-            "IA en FP"
-          ]
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -8587,30 +8218,7 @@ export const MARKETPLACE_CONFIG = {
           "vet-centres",
           "teachers",
           "companies"
-        ],
-        "tags": {
-          "es": [
-            "Mentoría",
-            "Piloto FP-empresa",
-            "Diseño pedagógico",
-            "Co-diseño",
-            "IA en FP"
-          ],
-          "en": [
-            "Mentoring",
-            "VET-industry pilot",
-            "Pedagogical design",
-            "Co-design",
-            "AI in VET"
-          ],
-          "va": [
-            "Mentoria",
-            "Pilot FP-empresa",
-            "Disseny pedagògic",
-            "Co-disseny",
-            "IA en FP"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "",
@@ -9025,29 +8633,6 @@ export const MARKETPLACE_CONFIG = {
           "es": "28 de noviembre de 2026",
           "en": "November 28, 2026",
           "va": "28 de novembre de 2026"
-        },
-        "tags": {
-          "es": [
-            "Chatbot",
-            "IA generativa",
-            "Administración pública",
-            "RAG",
-            "Atención ciudadana"
-          ],
-          "en": [
-            "Chatbot",
-            "Generative AI",
-            "Public administration",
-            "RAG",
-            "Citizen service"
-          ],
-          "va": [
-            "Chatbot",
-            "IA generativa",
-            "Administració pública",
-            "RAG",
-            "Atenció ciutadana"
-          ]
         }
       },
       "ownership": {
@@ -9546,30 +9131,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 10, 2026",
           "va": "10 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Mentoría",
-            "Retos industriales",
-            "Formulación",
-            "Pymes",
-            "Track B"
-          ],
-          "en": [
-            "Mentoring",
-            "Industrial challenges",
-            "Framing",
-            "SMEs",
-            "Track B"
-          ],
-          "va": [
-            "Mentoria",
-            "Reptes industrials",
-            "Formulació",
-            "Pimes",
-            "Track B"
-          ]
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -9631,30 +9193,7 @@ export const MARKETPLACE_CONFIG = {
           "companies",
           "vet-centres",
           "industry-partners"
-        ],
-        "tags": {
-          "es": [
-            "Mentoría",
-            "Retos industriales",
-            "Formulación",
-            "Pymes",
-            "Track B"
-          ],
-          "en": [
-            "Mentoring",
-            "Industrial challenges",
-            "Framing",
-            "SMEs",
-            "Track B"
-          ],
-          "va": [
-            "Mentoria",
-            "Reptes industrials",
-            "Formulació",
-            "Pimes",
-            "Track B"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "",
@@ -10068,29 +9607,6 @@ export const MARKETPLACE_CONFIG = {
           "es": "15 de septiembre de 2026",
           "en": "September 15, 2026",
           "va": "15 de setembre de 2026"
-        },
-        "tags": {
-          "es": [
-            "Análisis de sentimiento",
-            "Turismo",
-            "NLP",
-            "Reputación online",
-            "Múltiples idiomas"
-          ],
-          "en": [
-            "Sentiment analysis",
-            "Tourism",
-            "NLP",
-            "Online reputation",
-            "Multiple languages"
-          ],
-          "va": [
-            "Anàlisi de sentiment",
-            "Turisme",
-            "NLP",
-            "Reputació en línia",
-            "Múltiples idiomes"
-          ]
         }
       },
       "ownership": {
@@ -10551,12 +10067,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 2, 2026",
           "va": "2 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [],
-          "en": [],
-          "va": []
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -10653,30 +10164,7 @@ export const MARKETPLACE_CONFIG = {
           7,
           11,
           13
-        ],
-        "tags": {
-          "es": [
-            "Eficiencia energética",
-            "IA predictiva",
-            "Vivienda social",
-            "IoT",
-            "Sostenibilidad"
-          ],
-          "en": [
-            "Energy efficiency",
-            "Predictive AI",
-            "Social housing",
-            "IoT",
-            "Sustainability"
-          ],
-          "va": [
-            "Eficiència energètica",
-            "IA predictiva",
-            "Habitatge social",
-            "IoT",
-            "Sostenibilitat"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "scaled",
@@ -11211,27 +10699,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 2, 2026",
           "va": "2 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Eficiencia energética",
-            "IA",
-            "FP",
-            "OER"
-          ],
-          "en": [
-            "Energy efficiency",
-            "AI",
-            "VET",
-            "OER"
-          ],
-          "va": [
-            "Eficiència energètica",
-            "IA",
-            "FP",
-            "OER"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -11748,29 +11216,6 @@ export const MARKETPLACE_CONFIG = {
           "es": "30 de septiembre de 2026",
           "en": "September 30, 2026",
           "va": "30 de setembre de 2026"
-        },
-        "tags": {
-          "es": [
-            "Gemelo digital",
-            "Red eléctrica",
-            "Fotovoltaica",
-            "IA predictiva",
-            "Energía"
-          ],
-          "en": [
-            "Digital twin",
-            "Electricity grid",
-            "Photovoltaic",
-            "Predictive AI",
-            "Energy"
-          ],
-          "va": [
-            "Bessona digital",
-            "Xarxa elèctrica",
-            "Fotovoltaica",
-            "IA predictiva",
-            "Energia"
-          ]
         }
       },
       "ownership": {
@@ -12270,29 +11715,6 @@ export const MARKETPLACE_CONFIG = {
           "es": "31 de octubre de 2026",
           "en": "October 31, 2026",
           "va": "31 d'octubre de 2026"
-        },
-        "tags": {
-          "es": [
-            "Logística urbana",
-            "Última milla",
-            "Optimización de rutas",
-            "ZBE",
-            "Movilidad sostenible"
-          ],
-          "en": [
-            "Urban logistics",
-            "Last mile",
-            "Route optimisation",
-            "LEZ",
-            "Sustainable mobility"
-          ],
-          "va": [
-            "Logística urbana",
-            "Última milla",
-            "Optimització de rutes",
-            "ZBE",
-            "Mobilitat sostenible"
-          ]
         }
       },
       "ownership": {
@@ -12790,30 +12212,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "May 1, 2026",
           "va": "1 de maig de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "IA en RRHH",
-            "Selección pública",
-            "Validación ética",
-            "Sesgos algorítmicos",
-            "Administración pública"
-          ],
-          "en": [
-            "AI in HR",
-            "Public recruitment",
-            "Ethical validation",
-            "Algorithmic bias",
-            "Public administration"
-          ],
-          "va": [
-            "IA en RRHH",
-            "Selecció pública",
-            "Validació ètica",
-            "Biaixos algorítmics",
-            "Administració pública"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -13283,12 +12682,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "April 30, 2026",
           "va": "30 d'abril de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [],
-          "en": [],
-          "va": []
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -13372,30 +12766,7 @@ export const MARKETPLACE_CONFIG = {
         "sdgs": [
           4,
           10
-        ],
-        "tags": {
-          "es": [
-            "IA generativa",
-            "Narrativas digitales",
-            "Educación artística",
-            "Museos",
-            "Creatividad"
-          ],
-          "en": [
-            "Generative AI",
-            "Digital narratives",
-            "Arts education",
-            "Museums",
-            "Creativity"
-          ],
-          "va": [
-            "IA generativa",
-            "Narratives digitals",
-            "Educació artística",
-            "Museus",
-            "Creativitat"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "adapted",
@@ -13881,26 +13252,6 @@ export const MARKETPLACE_CONFIG = {
           "es": "30 de septiembre de 2026",
           "en": "September 30, 2026",
           "va": "30 de setembre de 2026"
-        },
-        "tags": {
-          "es": [
-            "IA generativa",
-            "Campus verde",
-            "Creatividad",
-            "Datos"
-          ],
-          "en": [
-            "Generative AI",
-            "Green campus",
-            "Creativity",
-            "Data"
-          ],
-          "va": [
-            "IA generativa",
-            "Campus verd",
-            "Creativitat",
-            "Dades"
-          ]
         }
       },
       "ownership": {
@@ -14350,12 +13701,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "April 25, 2026",
           "va": "25 d'abril de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [],
-          "en": [],
-          "va": []
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -14439,33 +13785,7 @@ export const MARKETPLACE_CONFIG = {
           7,
           11,
           13
-        ],
-        "tags": {
-          "es": [
-            "Auditoría energética",
-            "IA",
-            "Edificación",
-            "Certificación energética",
-            "FP Construcción",
-            "Renovación"
-          ],
-          "en": [
-            "Energy audit",
-            "AI",
-            "Building",
-            "Energy certification",
-            "Construction VET",
-            "Renovation"
-          ],
-          "va": [
-            "Auditoria energètica",
-            "IA",
-            "Edificació",
-            "Certificació energètica",
-            "FP Construcció",
-            "Renovació"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "adapted",
@@ -14928,12 +14248,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "April 20, 2026",
           "va": "20 d'abril de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [],
-          "en": [],
-          "va": []
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -15017,30 +14332,7 @@ export const MARKETPLACE_CONFIG = {
           2,
           4,
           15
-        ],
-        "tags": {
-          "es": [
-            "IA agrícola",
-            "Detección de plagas",
-            "Visión por computador",
-            "FP Agroalimentario",
-            "Sostenibilidad"
-          ],
-          "en": [
-            "Agricultural AI",
-            "Pest detection",
-            "Computer vision",
-            "Agrifood VET",
-            "Sustainability"
-          ],
-          "va": [
-            "IA agrícola",
-            "Detecció de plagues",
-            "Visió por computador",
-            "FP Agroalimentari",
-            "Sostenibilitat"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "adapted",
@@ -15570,29 +14862,6 @@ export const MARKETPLACE_CONFIG = {
           "es": "31 de agosto de 2026",
           "en": "August 31, 2026",
           "va": "31 d'agost de 2026"
-        },
-        "tags": {
-          "es": [
-            "Visión artificial",
-            "Control de calidad",
-            "Cerámica",
-            "Defectos superficiales",
-            "Manufactura"
-          ],
-          "en": [
-            "Computer vision",
-            "Quality control",
-            "Ceramics",
-            "Surface defects",
-            "Manufacturing"
-          ],
-          "va": [
-            "Visió artificial",
-            "Control de qualitat",
-            "Ceràmica",
-            "Defectes superficials",
-            "Manufactura"
-          ]
         }
       },
       "ownership": {
@@ -16087,12 +15356,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "April 20, 2026",
           "va": "20 d'abril de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [],
-          "en": [],
-          "va": []
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -16174,33 +15438,7 @@ export const MARKETPLACE_CONFIG = {
           4,
           9,
           11
-        ],
-        "tags": {
-          "es": [
-            "Conducción autónoma",
-            "ADAS",
-            "CARLA",
-            "ROS 2",
-            "FP Transporte",
-            "Simulación"
-          ],
-          "en": [
-            "Autonomous driving",
-            "ADAS",
-            "CARLA",
-            "ROS 2",
-            "Transport VET",
-            "Simulation"
-          ],
-          "va": [
-            "Conducció autònoma",
-            "ADAS",
-            "CARLA",
-            "ROS 2",
-            "FP Transport",
-            "Simulació"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "replicated",
@@ -16668,30 +15906,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "April 15, 2026",
           "va": "15 d'abril de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Drones",
-            "Inspección viaria",
-            "Visión artificial",
-            "FP Transporte",
-            "Infraestructura"
-          ],
-          "en": [
-            "Drones",
-            "Road inspection",
-            "Computer vision",
-            "Transport VET",
-            "Infrastructure"
-          ],
-          "va": [
-            "Drons",
-            "Inspecció viària",
-            "Visió artificial",
-            "FP Transport",
-            "Infraestructura"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -17364,12 +16579,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "April 10, 2026",
           "va": "10 d'abril de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [],
-          "en": [],
-          "va": []
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -17463,33 +16673,7 @@ export const MARKETPLACE_CONFIG = {
           4,
           13,
           15
-        ],
-        "tags": {
-          "es": [
-            "Drones",
-            "NDVI",
-            "Agricultura de precisión",
-            "Teledetección",
-            "FP Agraria",
-            "Cítricos"
-          ],
-          "en": [
-            "Drones",
-            "NDVI",
-            "Precision agriculture",
-            "Remote sensing",
-            "Agrarian VET",
-            "Citrus"
-          ],
-          "va": [
-            "Drons",
-            "NDVI",
-            "Agricultura de precisió",
-            "Teledetecció",
-            "FP Agrària",
-            "Cítrics"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "scaled",
@@ -17965,30 +17149,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "April 10, 2026",
           "va": "10 d'abril de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Mentoría",
-            "Brief creativo",
-            "IA responsable",
-            "Co-diseño",
-            "Transferencia Track B"
-          ],
-          "en": [
-            "Mentoring",
-            "Creative brief",
-            "Responsible AI",
-            "Co-design",
-            "Track B transfer"
-          ],
-          "va": [
-            "Mentoría",
-            "Brief creatiu",
-            "IA responsable",
-            "Codisseny",
-            "Transferència Track B"
-          ]
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -18053,30 +17214,7 @@ export const MARKETPLACE_CONFIG = {
           "creative-smes",
           "teachers",
           "local-administration"
-        ],
-        "tags": {
-          "es": [
-            "Mentoría",
-            "Brief creativo",
-            "IA responsable",
-            "Co-diseño",
-            "Transferencia Track B"
-          ],
-          "en": [
-            "Mentoring",
-            "Creative brief",
-            "Responsible AI",
-            "Co-design",
-            "Track B transfer"
-          ],
-          "va": [
-            "Mentoría",
-            "Brief creatiu",
-            "IA responsable",
-            "Codisseny",
-            "Transferència Track B"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "",
@@ -18548,29 +17686,6 @@ export const MARKETPLACE_CONFIG = {
           "es": "15 de octubre de 2026",
           "en": "October 15, 2026",
           "va": "15 d'octubre de 2026"
-        },
-        "tags": {
-          "es": [
-            "Visión artificial",
-            "Cítricos",
-            "Plagas",
-            "Agricultura de precisión",
-            "Smartphone"
-          ],
-          "en": [
-            "Computer vision",
-            "Citrus",
-            "Pests",
-            "Precision agriculture",
-            "Smartphone"
-          ],
-          "va": [
-            "Visió artificial",
-            "Cítrics",
-            "Plagues",
-            "Agricultura de precisió",
-            "Smartphone"
-          ]
         }
       },
       "ownership": {
@@ -19042,12 +18157,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "April 5, 2026",
           "va": "5 d'abril de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [],
-          "en": [],
-          "va": []
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -19139,30 +18249,7 @@ export const MARKETPLACE_CONFIG = {
           4,
           7,
           13
-        ],
-        "tags": {
-          "es": [
-            "Gemelo digital",
-            "Fotovoltaica",
-            "FP Energía",
-            "Simulación",
-            "Renovables"
-          ],
-          "en": [
-            "Digital twin",
-            "Photovoltaic",
-            "Energy VET",
-            "Simulation",
-            "Renewables"
-          ],
-          "va": [
-            "Bessó digital",
-            "Fotovoltaica",
-            "FP Energia",
-            "Simulació",
-            "Renovables"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "validated",
@@ -19662,30 +18749,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "April 5, 2026",
           "va": "5 d'abril de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "RGPD",
-            "Datos de movilidad",
-            "Correos",
-            "Última milla",
-            "Validación legal"
-          ],
-          "en": [
-            "GDPR",
-            "Mobility data",
-            "Correos",
-            "Last mile",
-            "Legal validation"
-          ],
-          "va": [
-            "RGPD",
-            "Dades de mobilitat",
-            "Correos",
-            "Última milla",
-            "Validació legal"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -20144,30 +19208,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "April 1, 2026",
           "va": "1 d'abril de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Gemelo digital",
-            "Red eléctrica",
-            "Validación técnica",
-            "SCADA",
-            "Endesa"
-          ],
-          "en": [
-            "Digital twin",
-            "Electricity grid",
-            "Technical validation",
-            "SCADA",
-            "Endesa"
-          ],
-          "va": [
-            "Bessona digital",
-            "Xarxa elèctrica",
-            "Validació tècnica",
-            "SCADA",
-            "Endesa"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -20638,12 +19679,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "March 30, 2026",
           "va": "30 de març de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [],
-          "en": [],
-          "va": []
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -20726,33 +19762,7 @@ export const MARKETPLACE_CONFIG = {
           4,
           10,
           11
-        ],
-        "tags": {
-          "es": [
-            "Realidad aumentada",
-            "Museos",
-            "Mediación cultural",
-            "AR",
-            "FP Arte",
-            "Patrimonio"
-          ],
-          "en": [
-            "Augmented reality",
-            "Museums",
-            "Cultural mediation",
-            "AR",
-            "Art VET",
-            "Heritage"
-          ],
-          "va": [
-            "Realitat augmentada",
-            "Museus",
-            "Mediació cultural",
-            "AR",
-            "FP Art",
-            "Patrimoni"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "validated",
@@ -21222,12 +20232,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "March 22, 2026",
           "va": "22 de març de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [],
-          "en": [],
-          "va": []
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -21319,33 +20324,7 @@ export const MARKETPLACE_CONFIG = {
           4,
           8,
           9
-        ],
-        "tags": {
-          "es": [
-            "Mantenimiento predictivo",
-            "ML",
-            "IoT",
-            "Industria 4.0",
-            "LSTM",
-            "Vibración"
-          ],
-          "en": [
-            "Predictive maintenance",
-            "ML",
-            "IoT",
-            "Industry 4.0",
-            "LSTM",
-            "Vibration"
-          ],
-          "va": [
-            "Manteniment predictiu",
-            "ML",
-            "IoT",
-            "Indústria 4.0",
-            "LSTM",
-            "Vibració"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "scaled",
@@ -21823,30 +20802,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "March 20, 2026",
           "va": "20 de març de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Turismo inteligente",
-            "Personalización",
-            "IA",
-            "Análisis de sentimiento",
-            "Destinos turísticos"
-          ],
-          "en": [
-            "Smart tourism",
-            "Personalisation",
-            "AI",
-            "Sentiment analysis",
-            "Tourist destinations"
-          ],
-          "va": [
-            "Turisme intel·ligent",
-            "Personalització",
-            "IA",
-            "Anàlisi de sentiment",
-            "Destinacions turístiques"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -22313,12 +21269,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "March 10, 2026",
           "va": "10 de març de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [],
-          "en": [],
-          "va": []
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -22400,30 +21351,7 @@ export const MARKETPLACE_CONFIG = {
         "sdgs": [
           4,
           8
-        ],
-        "tags": {
-          "es": [
-            "Cobots",
-            "Soldadura",
-            "Robótica colaborativa",
-            "FP Industrial",
-            "Seguridad laboral"
-          ],
-          "en": [
-            "Cobots",
-            "Welding",
-            "Collaborative robotics",
-            "Industrial VET",
-            "Workplace safety"
-          ],
-          "va": [
-            "Cobots",
-            "Soldadura",
-            "Robòtica col·laborativa",
-            "FP Industrial",
-            "Seguretat laboral"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "pilot-result",
@@ -22880,30 +21808,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "March 10, 2026",
           "va": "10 de març de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Visión artificial",
-            "Control de calidad",
-            "FP Fabricación",
-            "Validación pedagógica",
-            "Cerámica"
-          ],
-          "en": [
-            "Computer vision",
-            "Quality control",
-            "Manufacturing VET",
-            "Pedagogical validation",
-            "Ceramics"
-          ],
-          "va": [
-            "Visió artificial",
-            "Control de qualitat",
-            "FP Fabricació",
-            "Validació pedagògica",
-            "Ceràmica"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -23381,27 +22286,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "March 1, 2026",
           "va": "1 de març de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Sesgos algorítmicos",
-            "Equidad en IA",
-            "Formación docente",
-            "Máster"
-          ],
-          "en": [
-            "Algorithmic bias",
-            "AI fairness",
-            "Teacher training",
-            "Master"
-          ],
-          "va": [
-            "Biaixos algorítmics",
-            "Equitat en IA",
-            "Formació docent",
-            "Màster"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -23940,12 +22825,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "February 28, 2026",
           "va": "28 de febrer de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [],
-          "en": [],
-          "va": []
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -24048,30 +22928,7 @@ export const MARKETPLACE_CONFIG = {
         "sdgs": [
           4,
           11
-        ],
-        "tags": {
-          "es": [
-            "Formación docente",
-            "Movilidad sostenible",
-            "IA predictiva",
-            "STEAM",
-            "Datos abiertos"
-          ],
-          "en": [
-            "Teacher training",
-            "Sustainable mobility",
-            "Predictive AI",
-            "STEAM",
-            "Open data"
-          ],
-          "va": [
-            "Formació docent",
-            "Mobilitat sostenible",
-            "IA predictiva",
-            "STEAM",
-            "Dades obertes"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "replicated",
@@ -24560,30 +23417,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "February 20, 2026",
           "va": "20 de febrer de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Competencias digitales",
-            "FP Sanitario",
-            "Salud digital",
-            "Validación sectorial",
-            "IA médica"
-          ],
-          "en": [
-            "Digital competences",
-            "Health VET",
-            "Digital health",
-            "Sectoral validation",
-            "Medical AI"
-          ],
-          "va": [
-            "Competències digitals",
-            "FP Sanitari",
-            "Salut digital",
-            "Validació sectorial",
-            "IA mèdica"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -25058,12 +23892,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "February 14, 2026",
           "va": "14 de febrer de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [],
-          "en": [],
-          "va": []
-        }
+        "deadlineLabel": null
       },
       "ownership": {
         "publisher": {
@@ -25147,30 +23976,7 @@ export const MARKETPLACE_CONFIG = {
           3,
           4,
           10
-        ],
-        "tags": {
-          "es": [
-            "IA médica",
-            "Diagnóstico por imagen",
-            "FP Sanitario",
-            "Dataset sintético",
-            "Radiología"
-          ],
-          "en": [
-            "Medical AI",
-            "Diagnostic imaging",
-            "Health VET",
-            "Synthetic dataset",
-            "Radiology"
-          ],
-          "va": [
-            "IA mèdica",
-            "Diagnòstic per imatge",
-            "FP Sanitari",
-            "Dataset sintètic",
-            "Radiologia"
-          ]
-        }
+        ]
       },
       "transfer": {
         "type": "adapted",
@@ -25652,27 +24458,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "February 10, 2026",
           "va": "10 de febrer de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Cobots",
-            "Mecatrónica",
-            "FP dual",
-            "Robótica colaborativa"
-          ],
-          "en": [
-            "Cobots",
-            "Mechatronics",
-            "Dual VET",
-            "Collaborative robotics"
-          ],
-          "va": [
-            "Cobots",
-            "Mecatrònica",
-            "FP dual",
-            "Robòtica col·laborativa"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -26203,27 +24989,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "1 de febrer de 2026"
         },
         "revisionDateLabel": null,
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Puente FP-Máster",
-            "Gemelos digitales",
-            "IA industrial",
-            "Itinerario"
-          ],
-          "en": [
-            "VET-Master bridge",
-            "Digital twins",
-            "Industrial AI",
-            "Itinerary"
-          ],
-          "va": [
-            "Pont FP-Màster",
-            "Bessons digitals",
-            "IA industrial",
-            "Itinerari"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -26732,27 +25498,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "January 25, 2026",
           "va": "25 de gener de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Agricultura de precisión",
-            "IA",
-            "Track A",
-            "Validación sectorial"
-          ],
-          "en": [
-            "Precision agriculture",
-            "AI",
-            "Track A",
-            "Sectoral validation"
-          ],
-          "va": [
-            "Agricultura de precisió",
-            "IA",
-            "Track A",
-            "Validació sectorial"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -27259,30 +26005,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "January 10, 2026",
           "va": "10 de gener de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Aprendizaje por refuerzo",
-            "Eficiencia energética",
-            "Living Lab",
-            "Validación académica",
-            "Edificios"
-          ],
-          "en": [
-            "Reinforcement learning",
-            "Energy efficiency",
-            "Living Lab",
-            "Academic validation",
-            "Buildings"
-          ],
-          "va": [
-            "Aprenentatge per reforç",
-            "Eficiència energètica",
-            "Living Lab",
-            "Validació acadèmica",
-            "Edificis"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -27763,30 +26486,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "October 20, 2025",
           "va": "20 d'octubre de 2025"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Vehículo eléctrico",
-            "Movilidad sostenible",
-            "FP dual",
-            "Track B",
-            "Validación sectorial"
-          ],
-          "en": [
-            "Electric vehicle",
-            "Sustainable mobility",
-            "Dual VET",
-            "Track B",
-            "Sectoral validation"
-          ],
-          "va": [
-            "Vehicle elèctric",
-            "Mobilitat sostenible",
-            "FP dual",
-            "Track B",
-            "Validació sectorial"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
@@ -28303,29 +27003,6 @@ export const MARKETPLACE_CONFIG = {
             "es": "1 de mayo de 2026",
             "en": "May 1, 2026",
             "va": "1 de maig de 2026"
-          },
-          "tags": {
-            "es": [
-              "Personalización",
-              "FP",
-              "Itinerarios formativos",
-              "Sistema de recomendación",
-              "EdTech"
-            ],
-            "en": [
-              "Personalisation",
-              "VET",
-              "Learning pathways",
-              "Recommendation system",
-              "EdTech"
-            ],
-            "va": [
-              "Personalització",
-              "FP",
-              "Itineraris formatius",
-              "Sistema de recomanació",
-              "EdTech"
-            ]
           }
         },
         "ownership": {
@@ -28825,29 +27502,6 @@ export const MARKETPLACE_CONFIG = {
             "es": "28 de noviembre de 2026",
             "en": "November 28, 2026",
             "va": "28 de novembre de 2026"
-          },
-          "tags": {
-            "es": [
-              "Chatbot",
-              "IA generativa",
-              "Administración pública",
-              "RAG",
-              "Atención ciudadana"
-            ],
-            "en": [
-              "Chatbot",
-              "Generative AI",
-              "Public administration",
-              "RAG",
-              "Citizen service"
-            ],
-            "va": [
-              "Chatbot",
-              "IA generativa",
-              "Administració pública",
-              "RAG",
-              "Atenció ciutadana"
-            ]
           }
         },
         "ownership": {
@@ -29350,29 +28004,6 @@ export const MARKETPLACE_CONFIG = {
             "es": "15 de septiembre de 2026",
             "en": "September 15, 2026",
             "va": "15 de setembre de 2026"
-          },
-          "tags": {
-            "es": [
-              "Análisis de sentimiento",
-              "Turismo",
-              "NLP",
-              "Reputación online",
-              "Múltiples idiomas"
-            ],
-            "en": [
-              "Sentiment analysis",
-              "Tourism",
-              "NLP",
-              "Online reputation",
-              "Multiple languages"
-            ],
-            "va": [
-              "Anàlisi de sentiment",
-              "Turisme",
-              "NLP",
-              "Reputació en línia",
-              "Múltiples idiomes"
-            ]
           }
         },
         "ownership": {
@@ -29837,29 +28468,6 @@ export const MARKETPLACE_CONFIG = {
             "es": "30 de septiembre de 2026",
             "en": "September 30, 2026",
             "va": "30 de setembre de 2026"
-          },
-          "tags": {
-            "es": [
-              "Gemelo digital",
-              "Red eléctrica",
-              "Fotovoltaica",
-              "IA predictiva",
-              "Energía"
-            ],
-            "en": [
-              "Digital twin",
-              "Electricity grid",
-              "Photovoltaic",
-              "Predictive AI",
-              "Energy"
-            ],
-            "va": [
-              "Bessona digital",
-              "Xarxa elèctrica",
-              "Fotovoltaica",
-              "IA predictiva",
-              "Energia"
-            ]
           }
         },
         "ownership": {
@@ -30359,29 +28967,6 @@ export const MARKETPLACE_CONFIG = {
             "es": "31 de octubre de 2026",
             "en": "October 31, 2026",
             "va": "31 d'octubre de 2026"
-          },
-          "tags": {
-            "es": [
-              "Logística urbana",
-              "Última milla",
-              "Optimización de rutas",
-              "ZBE",
-              "Movilidad sostenible"
-            ],
-            "en": [
-              "Urban logistics",
-              "Last mile",
-              "Route optimisation",
-              "LEZ",
-              "Sustainable mobility"
-            ],
-            "va": [
-              "Logística urbana",
-              "Última milla",
-              "Optimització de rutes",
-              "ZBE",
-              "Mobilitat sostenible"
-            ]
           }
         },
         "ownership": {
@@ -30881,26 +29466,6 @@ export const MARKETPLACE_CONFIG = {
             "es": "30 de septiembre de 2026",
             "en": "September 30, 2026",
             "va": "30 de setembre de 2026"
-          },
-          "tags": {
-            "es": [
-              "IA generativa",
-              "Campus verde",
-              "Creatividad",
-              "Datos"
-            ],
-            "en": [
-              "Generative AI",
-              "Green campus",
-              "Creativity",
-              "Data"
-            ],
-            "va": [
-              "IA generativa",
-              "Campus verd",
-              "Creativitat",
-              "Dades"
-            ]
           }
         },
         "ownership": {
@@ -31354,29 +29919,6 @@ export const MARKETPLACE_CONFIG = {
             "es": "31 de agosto de 2026",
             "en": "August 31, 2026",
             "va": "31 d'agost de 2026"
-          },
-          "tags": {
-            "es": [
-              "Visión artificial",
-              "Control de calidad",
-              "Cerámica",
-              "Defectos superficiales",
-              "Manufactura"
-            ],
-            "en": [
-              "Computer vision",
-              "Quality control",
-              "Ceramics",
-              "Surface defects",
-              "Manufacturing"
-            ],
-            "va": [
-              "Visió artificial",
-              "Control de qualitat",
-              "Ceràmica",
-              "Defectes superficials",
-              "Manufactura"
-            ]
           }
         },
         "ownership": {
@@ -31875,29 +30417,6 @@ export const MARKETPLACE_CONFIG = {
             "es": "15 de octubre de 2026",
             "en": "October 15, 2026",
             "va": "15 d'octubre de 2026"
-          },
-          "tags": {
-            "es": [
-              "Visión artificial",
-              "Cítricos",
-              "Plagas",
-              "Agricultura de precisión",
-              "Smartphone"
-            ],
-            "en": [
-              "Computer vision",
-              "Citrus",
-              "Pests",
-              "Precision agriculture",
-              "Smartphone"
-            ],
-            "va": [
-              "Visió artificial",
-              "Cítrics",
-              "Plagues",
-              "Agricultura de precisió",
-              "Smartphone"
-            ]
           }
         },
         "ownership": {
@@ -32371,12 +30890,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 2, 2026",
             "va": "2 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [],
-            "en": [],
-            "va": []
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -32473,30 +30987,7 @@ export const MARKETPLACE_CONFIG = {
             7,
             11,
             13
-          ],
-          "tags": {
-            "es": [
-              "Eficiencia energética",
-              "IA predictiva",
-              "Vivienda social",
-              "IoT",
-              "Sostenibilidad"
-            ],
-            "en": [
-              "Energy efficiency",
-              "Predictive AI",
-              "Social housing",
-              "IoT",
-              "Sustainability"
-            ],
-            "va": [
-              "Eficiència energètica",
-              "IA predictiva",
-              "Habitatge social",
-              "IoT",
-              "Sostenibilitat"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "scaled",
@@ -33026,12 +31517,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "April 30, 2026",
             "va": "30 d'abril de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [],
-            "en": [],
-            "va": []
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -33115,30 +31601,7 @@ export const MARKETPLACE_CONFIG = {
           "sdgs": [
             4,
             10
-          ],
-          "tags": {
-            "es": [
-              "IA generativa",
-              "Narrativas digitales",
-              "Educación artística",
-              "Museos",
-              "Creatividad"
-            ],
-            "en": [
-              "Generative AI",
-              "Digital narratives",
-              "Arts education",
-              "Museums",
-              "Creativity"
-            ],
-            "va": [
-              "IA generativa",
-              "Narratives digitals",
-              "Educació artística",
-              "Museus",
-              "Creativitat"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "adapted",
@@ -33620,12 +32083,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "April 25, 2026",
             "va": "25 d'abril de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [],
-            "en": [],
-            "va": []
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -33709,33 +32167,7 @@ export const MARKETPLACE_CONFIG = {
             7,
             11,
             13
-          ],
-          "tags": {
-            "es": [
-              "Auditoría energética",
-              "IA",
-              "Edificación",
-              "Certificación energética",
-              "FP Construcción",
-              "Renovación"
-            ],
-            "en": [
-              "Energy audit",
-              "AI",
-              "Building",
-              "Energy certification",
-              "Construction VET",
-              "Renovation"
-            ],
-            "va": [
-              "Auditoria energètica",
-              "IA",
-              "Edificació",
-              "Certificació energètica",
-              "FP Construcció",
-              "Renovació"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "adapted",
@@ -34198,12 +32630,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "April 20, 2026",
             "va": "20 d'abril de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [],
-            "en": [],
-            "va": []
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -34287,30 +32714,7 @@ export const MARKETPLACE_CONFIG = {
             2,
             4,
             15
-          ],
-          "tags": {
-            "es": [
-              "IA agrícola",
-              "Detección de plagas",
-              "Visión por computador",
-              "FP Agroalimentario",
-              "Sostenibilidad"
-            ],
-            "en": [
-              "Agricultural AI",
-              "Pest detection",
-              "Computer vision",
-              "Agrifood VET",
-              "Sustainability"
-            ],
-            "va": [
-              "IA agrícola",
-              "Detecció de plagues",
-              "Visió por computador",
-              "FP Agroalimentari",
-              "Sostenibilitat"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "adapted",
@@ -34836,12 +33240,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "April 20, 2026",
             "va": "20 d'abril de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [],
-            "en": [],
-            "va": []
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -34923,33 +33322,7 @@ export const MARKETPLACE_CONFIG = {
             4,
             9,
             11
-          ],
-          "tags": {
-            "es": [
-              "Conducción autónoma",
-              "ADAS",
-              "CARLA",
-              "ROS 2",
-              "FP Transporte",
-              "Simulación"
-            ],
-            "en": [
-              "Autonomous driving",
-              "ADAS",
-              "CARLA",
-              "ROS 2",
-              "Transport VET",
-              "Simulation"
-            ],
-            "va": [
-              "Conducció autònoma",
-              "ADAS",
-              "CARLA",
-              "ROS 2",
-              "FP Transport",
-              "Simulació"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "replicated",
@@ -35411,12 +33784,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "April 10, 2026",
             "va": "10 d'abril de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [],
-            "en": [],
-            "va": []
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -35510,33 +33878,7 @@ export const MARKETPLACE_CONFIG = {
             4,
             13,
             15
-          ],
-          "tags": {
-            "es": [
-              "Drones",
-              "NDVI",
-              "Agricultura de precisión",
-              "Teledetección",
-              "FP Agraria",
-              "Cítricos"
-            ],
-            "en": [
-              "Drones",
-              "NDVI",
-              "Precision agriculture",
-              "Remote sensing",
-              "Agrarian VET",
-              "Citrus"
-            ],
-            "va": [
-              "Drons",
-              "NDVI",
-              "Agricultura de precisió",
-              "Teledetecció",
-              "FP Agrària",
-              "Cítrics"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "scaled",
@@ -36012,12 +34354,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "April 5, 2026",
             "va": "5 d'abril de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [],
-            "en": [],
-            "va": []
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -36109,30 +34446,7 @@ export const MARKETPLACE_CONFIG = {
             4,
             7,
             13
-          ],
-          "tags": {
-            "es": [
-              "Gemelo digital",
-              "Fotovoltaica",
-              "FP Energía",
-              "Simulación",
-              "Renovables"
-            ],
-            "en": [
-              "Digital twin",
-              "Photovoltaic",
-              "Energy VET",
-              "Simulation",
-              "Renewables"
-            ],
-            "va": [
-              "Bessó digital",
-              "Fotovoltaica",
-              "FP Energia",
-              "Simulació",
-              "Renovables"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "validated",
@@ -36630,12 +34944,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "March 30, 2026",
             "va": "30 de març de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [],
-            "en": [],
-            "va": []
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -36718,33 +35027,7 @@ export const MARKETPLACE_CONFIG = {
             4,
             10,
             11
-          ],
-          "tags": {
-            "es": [
-              "Realidad aumentada",
-              "Museos",
-              "Mediación cultural",
-              "AR",
-              "FP Arte",
-              "Patrimonio"
-            ],
-            "en": [
-              "Augmented reality",
-              "Museums",
-              "Cultural mediation",
-              "AR",
-              "Art VET",
-              "Heritage"
-            ],
-            "va": [
-              "Realitat augmentada",
-              "Museus",
-              "Mediació cultural",
-              "AR",
-              "FP Art",
-              "Patrimoni"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "validated",
@@ -37214,12 +35497,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "March 22, 2026",
             "va": "22 de març de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [],
-            "en": [],
-            "va": []
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -37311,33 +35589,7 @@ export const MARKETPLACE_CONFIG = {
             4,
             8,
             9
-          ],
-          "tags": {
-            "es": [
-              "Mantenimiento predictivo",
-              "ML",
-              "IoT",
-              "Industria 4.0",
-              "LSTM",
-              "Vibración"
-            ],
-            "en": [
-              "Predictive maintenance",
-              "ML",
-              "IoT",
-              "Industry 4.0",
-              "LSTM",
-              "Vibration"
-            ],
-            "va": [
-              "Manteniment predictiu",
-              "ML",
-              "IoT",
-              "Indústria 4.0",
-              "LSTM",
-              "Vibració"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "scaled",
@@ -37812,12 +36064,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "March 10, 2026",
             "va": "10 de març de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [],
-            "en": [],
-            "va": []
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -37899,30 +36146,7 @@ export const MARKETPLACE_CONFIG = {
           "sdgs": [
             4,
             8
-          ],
-          "tags": {
-            "es": [
-              "Cobots",
-              "Soldadura",
-              "Robótica colaborativa",
-              "FP Industrial",
-              "Seguridad laboral"
-            ],
-            "en": [
-              "Cobots",
-              "Welding",
-              "Collaborative robotics",
-              "Industrial VET",
-              "Workplace safety"
-            ],
-            "va": [
-              "Cobots",
-              "Soldadura",
-              "Robòtica col·laborativa",
-              "FP Industrial",
-              "Seguretat laboral"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "pilot-result",
@@ -38376,12 +36600,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "February 28, 2026",
             "va": "28 de febrer de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [],
-            "en": [],
-            "va": []
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -38484,30 +36703,7 @@ export const MARKETPLACE_CONFIG = {
           "sdgs": [
             4,
             11
-          ],
-          "tags": {
-            "es": [
-              "Formación docente",
-              "Movilidad sostenible",
-              "IA predictiva",
-              "STEAM",
-              "Datos abiertos"
-            ],
-            "en": [
-              "Teacher training",
-              "Sustainable mobility",
-              "Predictive AI",
-              "STEAM",
-              "Open data"
-            ],
-            "va": [
-              "Formació docent",
-              "Mobilitat sostenible",
-              "IA predictiva",
-              "STEAM",
-              "Dades obertes"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "replicated",
@@ -38992,12 +37188,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "February 14, 2026",
             "va": "14 de febrer de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [],
-            "en": [],
-            "va": []
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -39081,30 +37272,7 @@ export const MARKETPLACE_CONFIG = {
             3,
             4,
             10
-          ],
-          "tags": {
-            "es": [
-              "IA médica",
-              "Diagnóstico por imagen",
-              "FP Sanitario",
-              "Dataset sintético",
-              "Radiología"
-            ],
-            "en": [
-              "Medical AI",
-              "Diagnostic imaging",
-              "Health VET",
-              "Synthetic dataset",
-              "Radiology"
-            ],
-            "va": [
-              "IA mèdica",
-              "Diagnòstic per imatge",
-              "FP Sanitari",
-              "Dataset sintètic",
-              "Radiologia"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "adapted",
@@ -39590,30 +37758,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 20, 2026",
             "va": "20 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Dermoscopia",
-              "IA médica",
-              "FP Sanitario",
-              "Diagnóstico cutáneo",
-              "Competencias digitales"
-            ],
-            "en": [
-              "Dermoscopy",
-              "Medical AI",
-              "Health VET",
-              "Skin diagnosis",
-              "Digital competences"
-            ],
-            "va": [
-              "Dermoscòpia",
-              "IA mèdica",
-              "FP Sanitari",
-              "Diagnòstic cutani",
-              "Competències digitals"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -40279,30 +38424,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 20, 2026",
             "va": "20 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Eficiencia energética",
-              "Aprendizaje por refuerzo",
-              "Living Lab",
-              "Edificio inteligente",
-              "FP Electricidad"
-            ],
-            "en": [
-              "Energy efficiency",
-              "Reinforcement learning",
-              "Living Lab",
-              "Smart building",
-              "Electrical VET"
-            ],
-            "va": [
-              "Eficiència energètica",
-              "Aprenentatge per reforç",
-              "Living Lab",
-              "Edifici intel·ligent",
-              "FP Electricitat"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -40966,27 +39088,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 2, 2026",
             "va": "2 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Eficiencia energética",
-              "IA",
-              "FP",
-              "OER"
-            ],
-            "en": [
-              "Energy efficiency",
-              "AI",
-              "VET",
-              "OER"
-            ],
-            "va": [
-              "Eficiència energètica",
-              "IA",
-              "FP",
-              "OER"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -41505,30 +39607,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "April 15, 2026",
             "va": "15 d'abril de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Drones",
-              "Inspección viaria",
-              "Visión artificial",
-              "FP Transporte",
-              "Infraestructura"
-            ],
-            "en": [
-              "Drones",
-              "Road inspection",
-              "Computer vision",
-              "Transport VET",
-              "Infrastructure"
-            ],
-            "va": [
-              "Drons",
-              "Inspecció viària",
-              "Visió artificial",
-              "FP Transport",
-              "Infraestructura"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -42207,27 +40286,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "March 1, 2026",
             "va": "1 de març de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Sesgos algorítmicos",
-              "Equidad en IA",
-              "Formación docente",
-              "Máster"
-            ],
-            "en": [
-              "Algorithmic bias",
-              "AI fairness",
-              "Teacher training",
-              "Master"
-            ],
-            "va": [
-              "Biaixos algorítmics",
-              "Equitat en IA",
-              "Formació docent",
-              "Màster"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -42771,27 +40830,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "February 10, 2026",
             "va": "10 de febrer de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Cobots",
-              "Mecatrónica",
-              "FP dual",
-              "Robótica colaborativa"
-            ],
-            "en": [
-              "Cobots",
-              "Mechatronics",
-              "Dual VET",
-              "Collaborative robotics"
-            ],
-            "va": [
-              "Cobots",
-              "Mecatrònica",
-              "FP dual",
-              "Robòtica col·laborativa"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -43322,27 +41361,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "1 de febrer de 2026"
           },
           "revisionDateLabel": null,
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Puente FP-Máster",
-              "Gemelos digitales",
-              "IA industrial",
-              "Itinerario"
-            ],
-            "en": [
-              "VET-Master bridge",
-              "Digital twins",
-              "Industrial AI",
-              "Itinerary"
-            ],
-            "va": [
-              "Pont FP-Màster",
-              "Bessons digitals",
-              "IA industrial",
-              "Itinerari"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -43852,30 +41871,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 1, 2026",
             "va": "1 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "IA en RRHH",
-              "Selección pública",
-              "Validación ética",
-              "Sesgos algorítmicos",
-              "Administración pública"
-            ],
-            "en": [
-              "AI in HR",
-              "Public recruitment",
-              "Ethical validation",
-              "Algorithmic bias",
-              "Public administration"
-            ],
-            "va": [
-              "IA en RRHH",
-              "Selecció pública",
-              "Validació ètica",
-              "Biaixos algorítmics",
-              "Administració pública"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -44347,30 +42343,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "April 5, 2026",
             "va": "5 d'abril de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "RGPD",
-              "Datos de movilidad",
-              "Correos",
-              "Última milla",
-              "Validación legal"
-            ],
-            "en": [
-              "GDPR",
-              "Mobility data",
-              "Correos",
-              "Last mile",
-              "Legal validation"
-            ],
-            "va": [
-              "RGPD",
-              "Dades de mobilitat",
-              "Correos",
-              "Última milla",
-              "Validació legal"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -44829,30 +42802,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "April 1, 2026",
             "va": "1 d'abril de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Gemelo digital",
-              "Red eléctrica",
-              "Validación técnica",
-              "SCADA",
-              "Endesa"
-            ],
-            "en": [
-              "Digital twin",
-              "Electricity grid",
-              "Technical validation",
-              "SCADA",
-              "Endesa"
-            ],
-            "va": [
-              "Bessona digital",
-              "Xarxa elèctrica",
-              "Validació tècnica",
-              "SCADA",
-              "Endesa"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -45326,30 +43276,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "March 20, 2026",
             "va": "20 de març de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Turismo inteligente",
-              "Personalización",
-              "IA",
-              "Análisis de sentimiento",
-              "Destinos turísticos"
-            ],
-            "en": [
-              "Smart tourism",
-              "Personalisation",
-              "AI",
-              "Sentiment analysis",
-              "Tourist destinations"
-            ],
-            "va": [
-              "Turisme intel·ligent",
-              "Personalització",
-              "IA",
-              "Anàlisi de sentiment",
-              "Destinacions turístiques"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -45819,30 +43746,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "March 10, 2026",
             "va": "10 de març de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Visión artificial",
-              "Control de calidad",
-              "FP Fabricación",
-              "Validación pedagógica",
-              "Cerámica"
-            ],
-            "en": [
-              "Computer vision",
-              "Quality control",
-              "Manufacturing VET",
-              "Pedagogical validation",
-              "Ceramics"
-            ],
-            "va": [
-              "Visió artificial",
-              "Control de qualitat",
-              "FP Fabricació",
-              "Validació pedagògica",
-              "Ceràmica"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -46318,30 +44222,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "February 20, 2026",
             "va": "20 de febrer de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Competencias digitales",
-              "FP Sanitario",
-              "Salud digital",
-              "Validación sectorial",
-              "IA médica"
-            ],
-            "en": [
-              "Digital competences",
-              "Health VET",
-              "Digital health",
-              "Sectoral validation",
-              "Medical AI"
-            ],
-            "va": [
-              "Competències digitals",
-              "FP Sanitari",
-              "Salut digital",
-              "Validació sectorial",
-              "IA mèdica"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -46819,27 +44700,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "January 25, 2026",
             "va": "25 de gener de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Agricultura de precisión",
-              "IA",
-              "Track A",
-              "Validación sectorial"
-            ],
-            "en": [
-              "Precision agriculture",
-              "AI",
-              "Track A",
-              "Sectoral validation"
-            ],
-            "va": [
-              "Agricultura de precisió",
-              "IA",
-              "Track A",
-              "Validació sectorial"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -47346,30 +45207,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "January 10, 2026",
             "va": "10 de gener de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Aprendizaje por refuerzo",
-              "Eficiencia energética",
-              "Living Lab",
-              "Validación académica",
-              "Edificios"
-            ],
-            "en": [
-              "Reinforcement learning",
-              "Energy efficiency",
-              "Living Lab",
-              "Academic validation",
-              "Buildings"
-            ],
-            "va": [
-              "Aprenentatge per reforç",
-              "Eficiència energètica",
-              "Living Lab",
-              "Validació acadèmica",
-              "Edificis"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -47850,30 +45688,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "October 20, 2025",
             "va": "20 d'octubre de 2025"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Vehículo eléctrico",
-              "Movilidad sostenible",
-              "FP dual",
-              "Track B",
-              "Validación sectorial"
-            ],
-            "en": [
-              "Electric vehicle",
-              "Sustainable mobility",
-              "Dual VET",
-              "Track B",
-              "Sectoral validation"
-            ],
-            "va": [
-              "Vehicle elèctric",
-              "Mobilitat sostenible",
-              "FP dual",
-              "Track B",
-              "Validació sectorial"
-            ]
-          }
+          "deadlineLabel": null
         },
         "classification": {
           "aiSteamFocus": [
@@ -48385,30 +46200,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 22, 2026",
             "va": "22 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "IA generativa",
-              "Turismo",
-              "Cultura",
-              "Industrias creativas",
-              "Contenidos IA"
-            ],
-            "en": [
-              "Generative AI",
-              "Tourism",
-              "Culture",
-              "Creative industries",
-              "AI content"
-            ],
-            "va": [
-              "IA generativa",
-              "Turisme",
-              "Cultura",
-              "Indústries creatives",
-              "Continguts IA"
-            ]
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -48471,30 +46263,7 @@ export const MARKETPLACE_CONFIG = {
             "companies",
             "civic-organisations",
             "industry-partners"
-          ],
-          "tags": {
-            "es": [
-              "IA generativa",
-              "Turismo",
-              "Cultura",
-              "Industrias creativas",
-              "Contenidos IA"
-            ],
-            "en": [
-              "Generative AI",
-              "Tourism",
-              "Culture",
-              "Creative industries",
-              "AI content"
-            ],
-            "va": [
-              "IA generativa",
-              "Turisme",
-              "Cultura",
-              "Indústries creatives",
-              "Continguts IA"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "",
@@ -48910,30 +46679,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 22, 2026",
             "va": "22 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Administración pública",
-              "Participación institucional",
-              "Datos abiertos",
-              "Retos públicos",
-              "Gobernanza"
-            ],
-            "en": [
-              "Public administration",
-              "Institutional participation",
-              "Open data",
-              "Public challenges",
-              "Governance"
-            ],
-            "va": [
-              "Administració pública",
-              "Participació institucional",
-              "Dades obertes",
-              "Reptes públics",
-              "Governança"
-            ]
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -48996,30 +46742,7 @@ export const MARKETPLACE_CONFIG = {
             "public-bodies",
             "companies",
             "vet-centres"
-          ],
-          "tags": {
-            "es": [
-              "Administración pública",
-              "Participación institucional",
-              "Datos abiertos",
-              "Retos públicos",
-              "Gobernanza"
-            ],
-            "en": [
-              "Public administration",
-              "Institutional participation",
-              "Open data",
-              "Public challenges",
-              "Governance"
-            ],
-            "va": [
-              "Administració pública",
-              "Participació institucional",
-              "Dades obertes",
-              "Reptes públics",
-              "Governança"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "",
@@ -49434,30 +47157,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 22, 2026",
             "va": "22 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Replicación",
-              "Agroalimentario",
-              "Cooperativas",
-              "IA agrícola",
-              "Transferencia"
-            ],
-            "en": [
-              "Replication",
-              "Agri-food",
-              "Cooperatives",
-              "Agricultural AI",
-              "Transfer"
-            ],
-            "va": [
-              "Replicació",
-              "Agroalimentari",
-              "Cooperatives",
-              "IA agrícola",
-              "Transferència"
-            ]
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -49521,30 +47221,7 @@ export const MARKETPLACE_CONFIG = {
             "companies",
             "vet-centres",
             "industry-partners"
-          ],
-          "tags": {
-            "es": [
-              "Replicación",
-              "Agroalimentario",
-              "Cooperativas",
-              "IA agrícola",
-              "Transferencia"
-            ],
-            "en": [
-              "Replication",
-              "Agri-food",
-              "Cooperatives",
-              "Agricultural AI",
-              "Transfer"
-            ],
-            "va": [
-              "Replicació",
-              "Agroalimentari",
-              "Cooperatives",
-              "IA agrícola",
-              "Transferència"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "",
@@ -49956,30 +47633,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 22, 2026",
             "va": "22 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Investigación",
-              "Transferencia tecnológica",
-              "FP",
-              "Universidad",
-              "Colaboración academia-empresa"
-            ],
-            "en": [
-              "Research",
-              "Technology transfer",
-              "VET",
-              "University",
-              "Academy-industry collaboration"
-            ],
-            "va": [
-              "Recerca",
-              "Transferència tecnològica",
-              "FP",
-              "Universitat",
-              "Col·laboració acadèmia-empresa"
-            ]
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -50043,30 +47697,7 @@ export const MARKETPLACE_CONFIG = {
             "researchers",
             "teachers",
             "vet-centres"
-          ],
-          "tags": {
-            "es": [
-              "Investigación",
-              "Transferencia tecnológica",
-              "FP",
-              "Universidad",
-              "Colaboración academia-empresa"
-            ],
-            "en": [
-              "Research",
-              "Technology transfer",
-              "VET",
-              "University",
-              "Academy-industry collaboration"
-            ],
-            "va": [
-              "Recerca",
-              "Transferència tecnològica",
-              "FP",
-              "Universitat",
-              "Col·laboració acadèmia-empresa"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "",
@@ -50478,30 +48109,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 20, 2026",
             "va": "20 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Ética IA",
-              "Educación",
-              "Datos de alumnos",
-              "IA generativa",
-              "Sesgos algorítmicos"
-            ],
-            "en": [
-              "AI ethics",
-              "Education",
-              "Student data",
-              "Generative AI",
-              "Algorithmic bias"
-            ],
-            "va": [
-              "Ètica IA",
-              "Educació",
-              "Dades d'alumnes",
-              "IA generativa",
-              "Biaixos algorítmics"
-            ]
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -50564,30 +48172,7 @@ export const MARKETPLACE_CONFIG = {
             "teachers",
             "vet-centres",
             "researchers"
-          ],
-          "tags": {
-            "es": [
-              "Ética IA",
-              "Educación",
-              "Datos de alumnos",
-              "IA generativa",
-              "Sesgos algorítmicos"
-            ],
-            "en": [
-              "AI ethics",
-              "Education",
-              "Student data",
-              "Generative AI",
-              "Algorithmic bias"
-            ],
-            "va": [
-              "Ètica IA",
-              "Educació",
-              "Dades d'alumnes",
-              "IA generativa",
-              "Biaixos algorítmics"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "",
@@ -50998,30 +48583,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 20, 2026",
             "va": "20 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "IA sanitaria",
-              "Diagnóstico asistido",
-              "Datos clínicos",
-              "FP sanidad",
-              "Soporte técnico"
-            ],
-            "en": [
-              "Health AI",
-              "Assisted diagnosis",
-              "Clinical data",
-              "Health VET",
-              "Technical support"
-            ],
-            "va": [
-              "IA sanitària",
-              "Diagnòstic assistit",
-              "Dades clíniques",
-              "FP sanitat",
-              "Suport tècnic"
-            ]
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -51085,30 +48647,7 @@ export const MARKETPLACE_CONFIG = {
             "vet-centres",
             "companies",
             "researchers"
-          ],
-          "tags": {
-            "es": [
-              "IA sanitaria",
-              "Diagnóstico asistido",
-              "Datos clínicos",
-              "FP sanidad",
-              "Soporte técnico"
-            ],
-            "en": [
-              "Health AI",
-              "Assisted diagnosis",
-              "Clinical data",
-              "Health VET",
-              "Technical support"
-            ],
-            "va": [
-              "IA sanitària",
-              "Diagnòstic assistit",
-              "Dades clíniques",
-              "FP sanitat",
-              "Suport tècnic"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "",
@@ -51522,30 +49061,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 15, 2026",
             "va": "15 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Mentoría",
-              "Piloto FP-empresa",
-              "Diseño pedagógico",
-              "Co-diseño",
-              "IA en FP"
-            ],
-            "en": [
-              "Mentoring",
-              "VET-industry pilot",
-              "Pedagogical design",
-              "Co-design",
-              "AI in VET"
-            ],
-            "va": [
-              "Mentoria",
-              "Pilot FP-empresa",
-              "Disseny pedagògic",
-              "Co-disseny",
-              "IA en FP"
-            ]
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -51608,30 +49124,7 @@ export const MARKETPLACE_CONFIG = {
             "vet-centres",
             "teachers",
             "companies"
-          ],
-          "tags": {
-            "es": [
-              "Mentoría",
-              "Piloto FP-empresa",
-              "Diseño pedagógico",
-              "Co-diseño",
-              "IA en FP"
-            ],
-            "en": [
-              "Mentoring",
-              "VET-industry pilot",
-              "Pedagogical design",
-              "Co-design",
-              "AI in VET"
-            ],
-            "va": [
-              "Mentoria",
-              "Pilot FP-empresa",
-              "Disseny pedagògic",
-              "Co-disseny",
-              "IA en FP"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "",
@@ -52042,30 +49535,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 10, 2026",
             "va": "10 de maig de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Mentoría",
-              "Retos industriales",
-              "Formulación",
-              "Pymes",
-              "Track B"
-            ],
-            "en": [
-              "Mentoring",
-              "Industrial challenges",
-              "Framing",
-              "SMEs",
-              "Track B"
-            ],
-            "va": [
-              "Mentoria",
-              "Reptes industrials",
-              "Formulació",
-              "Pimes",
-              "Track B"
-            ]
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -52127,30 +49597,7 @@ export const MARKETPLACE_CONFIG = {
             "companies",
             "vet-centres",
             "industry-partners"
-          ],
-          "tags": {
-            "es": [
-              "Mentoría",
-              "Retos industriales",
-              "Formulación",
-              "Pymes",
-              "Track B"
-            ],
-            "en": [
-              "Mentoring",
-              "Industrial challenges",
-              "Framing",
-              "SMEs",
-              "Track B"
-            ],
-            "va": [
-              "Mentoria",
-              "Reptes industrials",
-              "Formulació",
-              "Pimes",
-              "Track B"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "",
@@ -52560,30 +50007,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "April 10, 2026",
             "va": "10 d'abril de 2026"
           },
-          "deadlineLabel": null,
-          "tags": {
-            "es": [
-              "Mentoría",
-              "Brief creativo",
-              "IA responsable",
-              "Co-diseño",
-              "Transferencia Track B"
-            ],
-            "en": [
-              "Mentoring",
-              "Creative brief",
-              "Responsible AI",
-              "Co-design",
-              "Track B transfer"
-            ],
-            "va": [
-              "Mentoría",
-              "Brief creatiu",
-              "IA responsable",
-              "Codisseny",
-              "Transferència Track B"
-            ]
-          }
+          "deadlineLabel": null
         },
         "ownership": {
           "publisher": {
@@ -52648,30 +50072,7 @@ export const MARKETPLACE_CONFIG = {
             "creative-smes",
             "teachers",
             "local-administration"
-          ],
-          "tags": {
-            "es": [
-              "Mentoría",
-              "Brief creativo",
-              "IA responsable",
-              "Co-diseño",
-              "Transferencia Track B"
-            ],
-            "en": [
-              "Mentoring",
-              "Creative brief",
-              "Responsible AI",
-              "Co-design",
-              "Track B transfer"
-            ],
-            "va": [
-              "Mentoría",
-              "Brief creatiu",
-              "IA responsable",
-              "Codisseny",
-              "Transferència Track B"
-            ]
-          }
+          ]
         },
         "transfer": {
           "type": "",
@@ -53142,27 +50543,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "January 18, 2026",
           "va": "18 de gener de 2026"
         },
-        "deadlineLabel": null,
-        "tags": {
-          "es": [
-            "Plantilla",
-            "Track B",
-            "Transferencia",
-            "Recurso abierto"
-          ],
-          "en": [
-            "Template",
-            "Track B",
-            "Transfer",
-            "Open resource"
-          ],
-          "va": [
-            "Plantilla",
-            "Track B",
-            "Transferència",
-            "Recurs obert"
-          ]
-        }
+        "deadlineLabel": null
       },
       "classification": {
         "aiSteamFocus": [
