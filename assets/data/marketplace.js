@@ -8276,6 +8276,500 @@ export const MARKETPLACE_CONFIG = {
       }
     },
     {
+      "id": "validation-etica-ia-seleccion-personal-adm",
+      "type": "validation",
+      "tab": "validations",
+      "sortDate": "2026-05-01",
+      "visible": true,
+      "sourcePath": "content/challenges/items/validations/validation-etica-ia-seleccion-personal-adm.yml",
+      "core": {
+        "status": "resolved",
+        "maturity": "idea",
+        "title": {
+          "es": "Validación ética — Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
+          "en": "Ethical validation — Use of AI for candidate screening in public administration selection processes",
+          "va": "Validació ètica — Ús d'IA per al cribratge de candidats en processos selectius de l'administració pública"
+        },
+        "summary": {
+          "es": "Validación ética de una propuesta de sistema de IA para el cribado automático de candidatos en oposiciones y concursos de méritos de la administración pública valenciana. La validación concluye con una recomendación de reformulación sustancial antes de poder considerarse apto para piloto.",
+          "en": "Ethical validation of a proposed AI system for automatic candidate screening in public administration competitive examinations and merit competitions in the Valencian Community. The validation concludes with a recommendation for substantial reformulation before being considered suitable for piloting.",
+          "va": "Validació ètica d'una proposta de sistema d'IA per al cribratge automàtic de candidats en oposicions i concursos de mèrits de l'administració pública valenciana. La validació conclou amb una recomanació de reformulació substancial abans de poder considerar-se apte per a pilot."
+        },
+        "entity": {
+          "name": "",
+          "type": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "sector": "adm",
+        "stakeholderCategory": "",
+        "levels": [
+          "Máster"
+        ],
+        "pilotType": "",
+        "validationType": "ethical-validation",
+        "validationStage": "completed",
+        "mentoringType": "",
+        "helix": [],
+        "relatedDeliverable": "",
+        "relatedOerId": "",
+        "publishedAt": "2026-03-01",
+        "revisionDate": "2026-05-01",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "Mar 2026",
+          "en": "Mar 2026",
+          "va": "Mar 2026"
+        },
+        "revisionDateLabel": {
+          "es": "May 2026",
+          "en": "May 2026",
+          "va": "Mai 2026"
+        },
+        "deadlineLabel": null,
+        "tags": {
+          "es": [
+            "IA en RRHH",
+            "Selección pública",
+            "Validación ética",
+            "Sesgos algorítmicos",
+            "Administración pública"
+          ],
+          "en": [
+            "AI in HR",
+            "Public recruitment",
+            "Ethical validation",
+            "Algorithmic bias",
+            "Public administration"
+          ],
+          "va": [
+            "IA en RRHH",
+            "Selecció pública",
+            "Validació ètica",
+            "Biaixos algorítmics",
+            "Administració pública"
+          ]
+        }
+      },
+      "classification": {
+        "aiSteamFocus": [
+          "responsible-ai",
+          "ai-ethics"
+        ],
+        "tripleTransition": [
+          "digital",
+          "social"
+        ],
+        "policyCluster": [
+          "equity-inclusion"
+        ],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "verificationStatus": "",
+        "pilotStatus": ""
+      },
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "validations"
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "summary-only",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "rightsNote": {
+          "es": "La ficha de validación y el resumen del análisis ético se publican bajo CC BY 4.0. El informe completo ALTAI y el análisis legal son documentos internos de la Generalitat y no se publican.",
+          "en": "The validation sheet and ethical analysis summary are published under CC BY 4.0. The full ALTAI report and legal analysis are internal Generalitat documents and are not published.",
+          "va": "La fitxa de validació i el resum de l'anàlisi ètica es publiquen sota CC BY 4.0. L'informe complet ALTAI i l'anàlisi legal són documents interns de la Generalitat i no es publiquen."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "proposer": {
+          "name": "Dirección General de Función Pública — Generalitat Valenciana",
+          "type": "public-admin",
+          "role": {
+            "es": "Entidad proponente — exploración de IA para optimización de procesos selectivos masivos",
+            "en": "Proposing entity — exploration of AI for optimising large-scale selection processes",
+            "va": "Entitat proponent — exploració d'IA per a l'optimització de processos selectius massius"
+          }
+        },
+        "validators": [
+          {
+            "name": "Comité de Ética Digital de la Generalitat Valenciana",
+            "type": "public-admin",
+            "role": {
+              "es": "Órgano evaluador de impacto ético y riesgos de sesgo algorítmico",
+              "en": "Evaluating body for ethical impact and algorithmic bias risks",
+              "va": "Òrgan avaluador d'impacte ètic i riscos de biaix algorítmic"
+            }
+          },
+          {
+            "name": "AI-STEAM Comité Técnico Ética IA",
+            "type": "sector-association",
+            "role": {
+              "es": "Revisión independiente del análisis ético y clasificación de la propuesta",
+              "en": "Independent review of the ethical analysis and proposal classification",
+              "va": "Revisió independent de l'anàlisi ètica i classificació de la proposta"
+            }
+          }
+        ]
+      },
+      "validation": {
+        "objectType": "need",
+        "objectTitle": {
+          "es": "Propuesta de sistema IA para cribado automático de candidatos en oposiciones y concursos de méritos",
+          "en": "Proposed AI system for automatic candidate screening in competitive examinations and merit competitions",
+          "va": "Proposta de sistema IA per al cribratge automàtic de candidats en oposicions i concursos de mèrits"
+        },
+        "validationQuestion": {
+          "es": "¿Cumple la propuesta de sistema de IA para cribado de candidatos en la administración pública los requisitos éticos mínimos para ser considerada apta para un piloto, teniendo en cuenta el contexto de igualdad de acceso al empleo público y el Reglamento Europeo de IA?",
+          "en": "Does the proposed AI system for public administration candidate screening meet the minimum ethical requirements to be considered suitable for a pilot, taking into account the context of equal access to public employment and the European AI Act?",
+          "va": "La proposta de sistema d'IA per al cribratge de candidats en l'administració pública compleix els requisits ètics mínims per a ser considerada apta per a un pilot, tenint en compte el context d'igualtat d'accés a l'ocupació pública i el Reglament Europeu d'IA?"
+        },
+        "need": {
+          "es": "La Dirección General de Función Pública gestiona anualmente más de 15.000 solicitudes en procesos selectivos de la Generalitat. El proceso manual de cribado inicial genera cuellos de botella de 3-6 meses. Se exploró el uso de IA para acelerar el cribado preliminar de requisitos formales antes de la fase de oposición.",
+          "en": "The General Directorate of Public Employment manages more than 15,000 applications annually in Generalitat selection processes. The manual initial screening process creates 3-6 month bottlenecks. The use of AI was explored to accelerate preliminary screening of formal requirements before the examination stage.",
+          "va": "La Direcció General de Funció Pública gestiona anualment més de 15.000 sol·licituds en processos selectius de la Generalitat. El procés manual de cribratge inicial genera colls d'ampolla de 3-6 mesos. Es va explorar l'ús d'IA per accelerar el cribratge preliminar de requisits formals abans de la fase d'oposició."
+        },
+        "context": {
+          "es": "El Comité de Ética Digital evaluó la propuesta respecto al Reglamento Europeo de IA (clasificación de riesgo alto en sistemas de selección de personal), la Ley de Empleo Público y los principios de igualdad, mérito y capacidad que rigen el acceso a la función pública española. Se analizaron tres escenarios de uso del sistema propuesto con diferente nivel de autonomía del algoritmo.",
+          "en": "The Digital Ethics Committee assessed the proposal against the European AI Act (high-risk classification in personnel selection systems), the Public Employment Law and the principles of equality, merit and ability governing access to Spanish public service. Three usage scenarios of the proposed system with different levels of algorithmic autonomy were analysed.",
+          "va": "El Comité d'Ètica Digital va avaluar la proposta respecte al Reglament Europeu d'IA (classificació de risc alt en sistemes de selecció de personal), la Llei d'Ocupació Pública i els principis d'igualtat, mèrit i capacitat que regeixen l'accés a la funció pública espanyola. Es van analitzar tres escenaris d'ús del sistema proposat amb diferent nivell d'autonomia de l'algorisme."
+        },
+        "method": {
+          "es": "Análisis de impacto ético por el Comité de Ética Digital (metodología ALTAI adaptada), análisis legal por el Servicio Jurídico de la Generalitat, revisión por el Comité Técnico de Ética IA de AI-STEAM y consulta con sindicatos representativos de empleados públicos.",
+          "en": "Ethical impact analysis by the Digital Ethics Committee (adapted ALTAI methodology), legal analysis by the Generalitat Legal Service, review by the AI-STEAM AI Ethics Technical Committee and consultation with representative public employee unions.",
+          "va": "Anàlisi d'impacte ètic pel Comité d'Ètica Digital (metodologia ALTAI adaptada), anàlisi legal pel Servei Jurídic de la Generalitat, revisió pel Comité Tècnic d'Ètica IA d'AI-STEAM i consulta amb sindicats representatius d'empleats públics."
+        },
+        "validationEnvironment": [
+          {
+            "label": {
+              "es": "Análisis ALTAI — Comité de Ética Digital de la Generalitat",
+              "en": "ALTAI analysis — Generalitat Digital Ethics Committee",
+              "va": "Anàlisi ALTAI — Comité d'Ètica Digital de la Generalitat"
+            }
+          },
+          {
+            "label": {
+              "es": "Análisis legal — Servicio Jurídico de la Generalitat Valenciana",
+              "en": "Legal analysis — Valencian Generalitat Legal Service",
+              "va": "Anàlisi legal — Servei Jurídic de la Generalitat Valenciana"
+            }
+          },
+          {
+            "label": {
+              "es": "Consulta sindical — CSIF y UGT-PV",
+              "en": "Union consultation — CSIF and UGT-PV",
+              "va": "Consulta sindical — CSIF i UGT-PV"
+            }
+          }
+        ]
+      },
+      "criteria": {
+        "items": [
+          {
+            "id": "legal-compliance",
+            "label": {
+              "es": "Cumplimiento del Reglamento Europeo de IA y normativa de empleo público",
+              "en": "Compliance with the European AI Act and public employment regulations",
+              "va": "Compliment del Reglament Europeu d'IA i normativa d'ocupació pública"
+            },
+            "result": "negative",
+            "note": {
+              "es": "El sistema propuesto se clasifica como de riesgo alto según el Reglamento de IA (Art. 6, Anexo III). Requiere evaluación de conformidad obligatoria antes de cualquier despliegue, que la propuesta actual no contempla.",
+              "en": "The proposed system is classified as high-risk under the AI Act (Art. 6, Annex III). It requires mandatory conformity assessment before any deployment, which the current proposal does not include.",
+              "va": "El sistema proposat es classifica com de risc alt segons el Reglament d'IA (Art. 6, Annex III). Requereix avaluació de conformitat obligatòria abans de qualsevol desplegament, que la proposta actual no contempla."
+            }
+          },
+          {
+            "id": "bias-risk",
+            "label": {
+              "es": "Riesgo de sesgo algorítmico en poblaciones protegidas",
+              "en": "Algorithmic bias risk in protected population groups",
+              "va": "Risc de biaix algorítmic en poblacions protegides"
+            },
+            "result": "negative",
+            "note": {
+              "es": "El análisis de los datos históricos de candidatos revela correlaciones entre variables proxy (zona de residencia, nombre) y categorías protegidas. Sin mitigación técnica demostrada, el riesgo de discriminación indirecta es inaceptable para un sistema de acceso a empleo público.",
+              "en": "Analysis of historical candidate data reveals correlations between proxy variables (residential area, name) and protected categories. Without demonstrated technical mitigation, the risk of indirect discrimination is unacceptable for a public employment access system.",
+              "va": "L'anàlisi de les dades històriques de candidats revela correlacions entre variables proxy (zona de residència, nom) i categories protegides. Sense mitigació tècnica demostrada, el risc de discriminació indirecta és inacceptable per a un sistema d'accés a l'ocupació pública."
+            }
+          },
+          {
+            "id": "transparency",
+            "label": {
+              "es": "Transparencia y explicabilidad de las decisiones del sistema",
+              "en": "Transparency and explainability of system decisions",
+              "va": "Transparència i explicabilitat de les decisions del sistema"
+            },
+            "result": "manageable",
+            "note": {
+              "es": "La propuesta contempla un modelo explicable (árbol de decisión regularizado), pero no incluye mecanismo de revisión humana obligatoria ni protocolo de recurso para candidatos afectados.",
+              "en": "The proposal includes an explainable model (regularised decision tree), but does not include a mandatory human review mechanism or an appeal protocol for affected candidates.",
+              "va": "La proposta contempla un model explicable (arbre de decisió regularitzat), però no inclou mecanisme de revisió humana obligatòria ni protocol de recurs per a candidats afectats."
+            }
+          },
+          {
+            "id": "union-acceptance",
+            "label": {
+              "es": "Aceptación por parte de los sindicatos representativos",
+              "en": "Acceptance by representative trade unions",
+              "va": "Acceptació per part dels sindicats representatius"
+            },
+            "result": "negative",
+            "note": {
+              "es": "CSIF y UGT-PV rechazan cualquier uso de IA en la fase de cribado sin garantías explícitas de revisión humana total de cada exclusión y derecho de impugnación documentada.",
+              "en": "CSIF and UGT-PV reject any AI use in the screening phase without explicit guarantees of full human review of each exclusion and documented appeal rights.",
+              "va": "CSIF i UGT-PV rebutgen qualsevol ús d'IA en la fase de cribratge sense garanties explícites de revisió humana total de cada exclusió i dret d'impugnació documentada."
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "evidenceLevel": "reviewed",
+        "collectionMethod": {
+          "es": "Análisis de impacto ético ALTAI, análisis legal del Servicio Jurídico, consulta sindical con CSIF y UGT-PV, y análisis de correlaciones en datos históricos anonimizados de candidatos (2021-2024).",
+          "en": "ALTAI ethical impact analysis, Legal Service legal analysis, union consultation with CSIF and UGT-PV, and correlation analysis on anonymised historical candidate data (2021-2024).",
+          "va": "Anàlisi d'impacte ètic ALTAI, anàlisi legal del Servei Jurídic, consulta sindical amb CSIF i UGT-PV, i anàlisi de correlacions en dades històriques anonimitzades de candidats (2021-2024)."
+        },
+        "indicators": [
+          {
+            "id": "bias-detection",
+            "label": {
+              "es": "Correlaciones proxy-categoría protegida detectadas en datos históricos",
+              "en": "Proxy-protected category correlations detected in historical data",
+              "va": "Correlacions proxy-categoria protegida detectades en dades històriques"
+            },
+            "metric": {
+              "es": "3 variables proxy con correlación significativa (p<0.05) con género o origen geográfico",
+              "en": "3 proxy variables with significant correlation (p<0.05) with gender or geographic origin",
+              "va": "3 variables proxy amb correlació significativa (p<0.05) amb gènere o origen geogràfic"
+            }
+          },
+          {
+            "id": "legal-classification",
+            "label": {
+              "es": "Clasificación de riesgo bajo el Reglamento Europeo de IA",
+              "en": "Risk classification under the European AI Act",
+              "va": "Classificació de risc sota el Reglament Europeu d'IA"
+            },
+            "metric": {
+              "es": "Riesgo ALTO — Art. 6, Anexo III (sistemas de selección de personas para empleo)",
+              "en": "HIGH risk — Art. 6, Annex III (systems for selecting persons for employment)",
+              "va": "Risc ALT — Art. 6, Annex III (sistemes de selecció de persones per a ocupació)"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "El análisis se realizó sobre la propuesta conceptual. No se evaluó ningún prototipo funcional. Una reformulación que aborde los problemas identificados requeriría una nueva validación ética.",
+          "en": "The analysis was conducted on the conceptual proposal. No functional prototype was evaluated. A reformulation addressing the identified issues would require a new ethical validation.",
+          "va": "L'anàlisi es va realitzar sobre la proposta conceptual. No es va avaluar cap prototip funcional. Una reformulació que adreça els problemes identificats requeriria una nova validació ètica."
+        }
+      },
+      "decision": {
+        "outcome": "needs-reformulation",
+        "label": {
+          "es": "Requiere reformulación sustancial — no apto para piloto en estado actual",
+          "en": "Requires substantial reformulation — not suitable for piloting in current state",
+          "va": "Requereix reformulació substancial — no apte per a pilot en estat actual"
+        },
+        "rationale": {
+          "es": "La propuesta presenta riesgos éticos y legales inaceptables en su estado actual debido a la clasificación de riesgo alto del Reglamento de IA, el riesgo de discriminación indirecta documentado y el rechazo sindical. Se propone una reformulación que restrinja el uso de IA a verificación de requisitos formales documentales (no evaluación de mérito) con revisión humana obligatoria de cada exclusión.",
+          "en": "The proposal presents unacceptable ethical and legal risks in its current state due to its AI Act high-risk classification, the documented indirect discrimination risk and trade union rejection. A reformulation is proposed that restricts AI use to verification of formal documentary requirements (not merit evaluation) with mandatory human review of each exclusion.",
+          "va": "La proposta presenta riscos ètics i legals inacceptables en el seu estat actual a causa de la classificació de risc alt del Reglament d'IA, el risc de discriminació indirecta documentat i el rebuig sindical. Es proposa una reformulació que restringisca l'ús d'IA a la verificació de requisits formals documentals (no avaluació de mèrit) amb revisió humana obligatòria de cada exclusió."
+        },
+        "nextStep": {
+          "type": "reformulate",
+          "label": {
+            "es": "Reformular la propuesta restringiendo el alcance a verificación documental formal con revisión humana total y nueva validación ética",
+            "en": "Reformulate the proposal restricting scope to formal documentary verification with full human review and new ethical validation",
+            "va": "Reformular la proposta restringint l'abast a verificació documental formal amb revisió humana total i nova validació ètica"
+          }
+        }
+      },
+      "trackRouting": {
+        "route": "not-routed",
+        "label": {
+          "es": "No enrutado — propuesta devuelta para reformulación sustancial",
+          "en": "Not routed — proposal returned for substantial reformulation",
+          "va": "No enrutat — proposta retornada per a reformulació substancial"
+        },
+        "academicReview": {
+          "enabled": false,
+          "reviewer": null,
+          "note": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        }
+      },
+      "relations": {
+        "validatedChallengeId": "",
+        "resultingPilotIds": [],
+        "resultingCaseIds": [],
+        "resultingResourceIds": [],
+        "relatedMentorshipIds": [],
+        "nextPossibleItems": [
+          "pilot"
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/validations/validation-etica-ia-seleccion-personal-adm/",
+        "items": []
+      },
+      "resources": {
+        "externalLinks": []
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver validación",
+            "en": "View validation",
+            "va": "Veure validació"
+          },
+          "url": "",
+          "system": ""
+        },
+        "secondaryAction": null
+      },
+      "presentation": {
+        "card": {
+          "variant": "validation",
+          "showValidationType": true,
+          "showDecision": true,
+          "showEvidenceLevel": true,
+          "showWindow": true,
+          "showValidationEnvironment": true,
+          "showDownloadsIndicator": false,
+          "mainBlockLabel": {
+            "es": "Qué se valida",
+            "en": "What is validated",
+            "va": "Què es valida"
+          }
+        },
+        "detail": {
+          "sections": {
+            "object": true,
+            "need": true,
+            "context": true,
+            "method": true,
+            "criteria": true,
+            "evidence": true,
+            "decision": true,
+            "downloads": false,
+            "resources": true,
+            "people": true,
+            "access": true,
+            "trackRouting": true,
+            "relations": false
+          }
+        }
+      },
+      "validationWindow": {
+        "start": "2026-01-10",
+        "end": "2026-02-28",
+        "label": {
+          "es": "Ene – Feb 2026",
+          "en": "Jan – Feb 2026",
+          "va": "Gen – Feb 2026"
+        }
+      },
+      "criteriaCount": 4,
+      "validationTypeLabel": {
+        "es": "Validación ética",
+        "en": "Ethical validation",
+        "va": "Validació ètica"
+      },
+      "validationStageLabel": {
+        "es": "Completada",
+        "en": "Completed",
+        "va": "Completada"
+      },
+      "decisionOutcomeLabel": {
+        "es": "Requiere reformulación",
+        "en": "Needs reformulation",
+        "va": "Requereix reformulació"
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "template": {
+        "requiredBlocks": [
+          "validation",
+          "criteria",
+          "evidence",
+          "decision"
+        ],
+        "optionalBlocks": [
+          "downloads",
+          "resources",
+          "access",
+          "trackRouting",
+          "relations",
+          "people",
+          "externalFlow"
+        ],
+        "cardSignal": "validation"
+      }
+    },
+    {
       "id": "narrativas-digitales-ia-cci",
       "type": "case",
       "tab": "cases",
@@ -14649,6 +15143,982 @@ export const MARKETPLACE_CONFIG = {
       }
     },
     {
+      "id": "validation-legal-datos-movilidad-mob",
+      "type": "validation",
+      "tab": "validations",
+      "sortDate": "2026-04-05",
+      "visible": true,
+      "sourcePath": "content/challenges/items/validations/validation-legal-datos-movilidad-mob.yml",
+      "core": {
+        "status": "validated",
+        "maturity": "idea",
+        "title": {
+          "es": "Validación legal — Uso de datos de movilidad urbana de Correos para el reto de optimización de rutas",
+          "en": "Legal validation — Use of Correos urban mobility data for the route optimisation challenge",
+          "va": "Validació legal — Ús de dades de mobilitat urbana de Correos per al repte d'optimització de rutes"
+        },
+        "summary": {
+          "es": "Validación legal del marco de cesión y anonimización de los datos de rutas y entregas de Correos necesarios para el reto de optimización de última milla, confirmando la viabilidad de la cesión bajo el RGPD y estableciendo las condiciones específicas de anonimización y uso que deben incluirse en las bases del reto.",
+          "en": "Legal validation of the framework for transferring and anonymising Correos route and delivery data needed for the last-mile optimisation challenge, confirming the feasibility of transfer under GDPR and establishing the specific anonymisation and use conditions to be included in the challenge terms.",
+          "va": "Validació legal del marc de cessió i anonimització de les dades de rutes i lliuraments de Correos necessàries per al repte d'optimització d'última milla, confirmant la viabilitat de la cessió sota el RGPD i establint les condicions específiques d'anonimització i ús que han d'incloure's en les bases del repte."
+        },
+        "entity": {
+          "name": "",
+          "type": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "sector": "mob",
+        "stakeholderCategory": "",
+        "levels": [
+          "Máster"
+        ],
+        "pilotType": "",
+        "validationType": "legal-validation",
+        "validationStage": "completed",
+        "mentoringType": "",
+        "helix": [],
+        "relatedDeliverable": "",
+        "relatedOerId": "",
+        "publishedAt": "2026-02-20",
+        "revisionDate": "2026-04-05",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "Feb 2026",
+          "en": "Feb 2026",
+          "va": "Feb 2026"
+        },
+        "revisionDateLabel": {
+          "es": "Abr 2026",
+          "en": "Apr 2026",
+          "va": "Abr 2026"
+        },
+        "deadlineLabel": null,
+        "tags": {
+          "es": [
+            "RGPD",
+            "Datos de movilidad",
+            "Correos",
+            "Última milla",
+            "Validación legal"
+          ],
+          "en": [
+            "GDPR",
+            "Mobility data",
+            "Correos",
+            "Last mile",
+            "Legal validation"
+          ],
+          "va": [
+            "RGPD",
+            "Dades de mobilitat",
+            "Correos",
+            "Última milla",
+            "Validació legal"
+          ]
+        }
+      },
+      "classification": {
+        "aiSteamFocus": [
+          "responsible-ai",
+          "data-ai"
+        ],
+        "tripleTransition": [
+          "digital",
+          "green"
+        ],
+        "policyCluster": [
+          "infrastructure-evidence"
+        ],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "verificationStatus": "",
+        "pilotStatus": ""
+      },
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "validations"
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "summary-only",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "rightsNote": {
+          "es": "La ficha de validación legal se publica bajo CC BY 4.0. La EIPD completa y el protocolo de anonimización son documentos internos de Correos y no se publican. El acuerdo de uso se facilita a los equipos inscritos bajo NDA.",
+          "en": "The legal validation sheet is published under CC BY 4.0. The full DPIA and anonymisation protocol are internal Correos documents and are not published. The usage agreement is provided to registered teams under NDA.",
+          "va": "La fitxa de validació legal es publica sota CC BY 4.0. L'AIPD completa i el protocol d'anonimització són documents interns de Correos i no es publiquen. L'acord d'ús es facilita als equips inscrits sota NDA."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "proposer": {
+          "name": "Correos — Dirección de Operaciones Zona Mediterráneo",
+          "type": "industry",
+          "role": {
+            "es": "Empresa proponente — solicitó validación legal antes de comprometerse a facilitar los datos",
+            "en": "Proposing company — requested legal validation before committing to provide the data",
+            "va": "Empresa proponent — va sol·licitar validació legal abans de comprometre's a facilitar les dades"
+          }
+        },
+        "validators": [
+          {
+            "name": "Correos — Delegado de Protección de Datos",
+            "type": "industry",
+            "role": {
+              "es": "DPO de Correos — revisión del marco legal de cesión de datos",
+              "en": "Correos DPO — review of the legal data transfer framework",
+              "va": "DPO de Correos — revisió del marc legal de cessió de dades"
+            }
+          },
+          {
+            "name": "AI-STEAM Asesoría Legal",
+            "type": "sector-association",
+            "role": {
+              "es": "Revisión independiente del cumplimiento RGPD y condiciones de uso para el reto",
+              "en": "Independent review of GDPR compliance and use conditions for the challenge",
+              "va": "Revisió independent del compliment RGPD i condicions d'ús per al repte"
+            }
+          }
+        ]
+      },
+      "validation": {
+        "objectType": "challenge",
+        "objectTitle": {
+          "es": "Reto — Optimización de rutas de última milla con IA para logística urbana sostenible (uso del dataset de Correos)",
+          "en": "Challenge — AI last-mile route optimisation for sustainable urban logistics (use of Correos dataset)",
+          "va": "Repte — Optimització de rutes d'última milla amb IA per a logística urbana sostenible (ús del dataset de Correos)"
+        },
+        "validationQuestion": {
+          "es": "¿Es legalmente viable la cesión del dataset de rutas y entregas de Correos a equipos participantes en el reto bajo el RGPD, y cuáles son las condiciones mínimas de anonimización y uso que deben establecerse en las bases?",
+          "en": "Is the transfer of Correos routes and deliveries dataset to challenge-participating teams legally feasible under GDPR, and what are the minimum anonymisation and use conditions to be established in the challenge terms?",
+          "va": "És legalment viable la cessió del dataset de rutes i lliuraments de Correos a equips participants en el repte sota el RGPD, i quines són les condicions mínimes d'anonimització i ús que han d'establir-se en les bases?"
+        },
+        "need": {
+          "es": "El reto de optimización de rutas requiere que los equipos accedan a datos reales de rutas de Correos para entrenar y validar sus algoritmos. Sin datos reales, el reto pierde relevancia práctica. La cesión de datos de entregas puede implicar información de clientes (destinatarios) y datos operativos sensibles que requieren análisis legal previo.",
+          "en": "The route optimisation challenge requires teams to access real Correos route data to train and validate their algorithms. Without real data, the challenge loses practical relevance. The transfer of delivery data may involve customer information (recipients) and sensitive operational data requiring prior legal analysis.",
+          "va": "El repte d'optimització de rutes requereix que els equips accedisquen a dades reals de rutes de Correos per entrenar i validar els seus algorismes. Sense dades reals, el repte perd rellevància pràctica. La cessió de dades de lliuraments pot implicar informació de clients (destinataris) i dades operatives sensibles que requereixen anàlisi legal prèvia."
+        },
+        "context": {
+          "es": "El DPO de Correos y la Asesoría Legal de AI-STEAM analizaron conjuntamente el dataset propuesto para el reto (6 meses de rutas del centro histórico de Valencia) identificando las categorías de datos presentes, los riesgos de re-identificación y las medidas técnicas y organizativas necesarias para una cesión RGPD-conforme a equipos externos.",
+          "en": "The Correos DPO and AI-STEAM Legal Advisory jointly analysed the proposed challenge dataset (6 months of Valencia historic centre routes) identifying the data categories present, re-identification risks and the technical and organisational measures required for GDPR-compliant transfer to external teams.",
+          "va": "El DPO de Correos i l'Assessoria Legal d'AI-STEAM van analitzar conjuntament el dataset proposat per al repte (6 mesos de rutes del centre històric de València) identificant les categories de dades presents, els riscos de re-identificació i les mesures tècniques i organitzatives necessàries per a una cessió RGPD-conforme a equips externs."
+        },
+        "method": {
+          "es": "Análisis de categorías de datos del dataset por el DPO de Correos, evaluación de impacto relativa a la protección de datos (EIPD simplificada), definición del protocolo de anonimización de k-anonimato y revisión de las condiciones de uso propuestas por la Asesoría Legal de AI-STEAM.",
+          "en": "Data category analysis of the dataset by the Correos DPO, data protection impact assessment (simplified DPIA), definition of k-anonymity anonymisation protocol and review of proposed use conditions by the AI-STEAM Legal Advisory.",
+          "va": "Anàlisi de categories de dades del dataset pel DPO de Correos, avaluació d'impacte relativa a la protecció de dades (AIPD simplificada), definició del protocol d'anonimització de k-anonimat i revisió de les condicions d'ús proposades per l'Assessoria Legal d'AI-STEAM."
+        },
+        "validationEnvironment": [
+          {
+            "label": {
+              "es": "EIPD simplificada — DPO de Correos",
+              "en": "Simplified DPIA — Correos DPO",
+              "va": "AIPD simplificada — DPO de Correos"
+            }
+          },
+          {
+            "label": {
+              "es": "Revisión de condiciones de uso — AI-STEAM Asesoría Legal",
+              "en": "Use conditions review — AI-STEAM Legal Advisory",
+              "va": "Revisió de condicions d'ús — AI-STEAM Assessoria Legal"
+            }
+          },
+          {
+            "label": {
+              "es": "Protocolo de anonimización k-anonimato — DPO + Asesoría Legal",
+              "en": "K-anonymity anonymisation protocol — DPO + Legal Advisory",
+              "va": "Protocol d'anonimització k-anonimat — DPO + Assessoria Legal"
+            }
+          }
+        ]
+      },
+      "criteria": {
+        "items": [
+          {
+            "id": "gdpr-compliance",
+            "label": {
+              "es": "Viabilidad de la cesión bajo el RGPD con las medidas propuestas",
+              "en": "Feasibility of data transfer under GDPR with the proposed measures",
+              "va": "Viabilitat de la cessió sota el RGPD amb les mesures proposades"
+            },
+            "result": "positive",
+            "note": {
+              "es": "La EIPD concluye que la cesión es viable bajo los artículos 6(1)(f) (interés legítimo) y 89 (tratamiento con fines de investigación) del RGPD, siempre que se apliquen las medidas de anonimización documentadas en el protocolo adjunto.",
+              "en": "The DPIA concludes that transfer is feasible under GDPR articles 6(1)(f) (legitimate interest) and 89 (processing for research purposes), provided the anonymisation measures documented in the attached protocol are applied.",
+              "va": "L'AIPD conclou que la cessió és viable sota els articles 6(1)(f) (interès legítim) i 89 (tractament amb fins de recerca) del RGPD, sempre que s'apliquen les mesures d'anonimització documentades en el protocol adjunt."
+            }
+          },
+          {
+            "id": "re-identification-risk",
+            "label": {
+              "es": "Riesgo residual de re-identificación tras la anonimización",
+              "en": "Residual re-identification risk after anonymisation",
+              "va": "Risc residual de re-identificació després de l'anonimització"
+            },
+            "result": "manageable",
+            "note": {
+              "es": "El k-anonimato (k=5) aplicado a nivel de segmento de ruta y ventana temporal de 30 minutos reduce el riesgo de re-identificación a nivel aceptable. Las coordenadas de entrega se agregan al nivel de código postal, eliminando la posibilidad de identificar domicilios individuales.",
+              "en": "K-anonymity (k=5) applied at route segment and 30-minute time window level reduces re-identification risk to an acceptable level. Delivery coordinates are aggregated to postcode level, eliminating the possibility of identifying individual addresses.",
+              "va": "El k-anonimat (k=5) aplicat a nivell de segment de ruta i finestra temporal de 30 minuts redueix el risc de re-identificació a un nivell acceptable. Les coordenades de lliurament s'agreguen al nivell de codi postal, eliminant la possibilitat d'identificar domicilis individuals."
+            }
+          },
+          {
+            "id": "use-restrictions",
+            "label": {
+              "es": "Adecuación de las restricciones de uso propuestas para los equipos participantes",
+              "en": "Adequacy of the proposed use restrictions for participating teams",
+              "va": "Adequació de les restriccions d'ús proposades per als equips participants"
+            },
+            "result": "positive",
+            "note": {
+              "es": "El acuerdo de uso propuesto (no redistribución, uso exclusivo para el reto, destrucción certificada al finalizar) es compatible con el RGPD y con las políticas de datos operativos de Correos.",
+              "en": "The proposed usage agreement (no redistribution, exclusive use for the challenge, certified destruction upon completion) is compatible with GDPR and Correos operational data policies.",
+              "va": "L'acord d'ús proposat (no redistribució, ús exclusiu per al repte, destrucció certificada en finalitzar) és compatible amb el RGPD i amb les polítiques de dades operatives de Correos."
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "evidenceLevel": "documented",
+        "collectionMethod": {
+          "es": "EIPD simplificada documentada por el DPO de Correos, protocolo de anonimización k-anonimato con especificaciones técnicas y revisión de las condiciones de uso por la Asesoría Legal de AI-STEAM.",
+          "en": "Simplified DPIA documented by the Correos DPO, k-anonymity anonymisation protocol with technical specifications and use conditions review by AI-STEAM Legal Advisory.",
+          "va": "AIPD simplificada documentada pel DPO de Correos, protocol d'anonimització k-anonimat amb especificacions tècniques i revisió de les condicions d'ús per l'Assessoria Legal d'AI-STEAM."
+        },
+        "indicators": [
+          {
+            "id": "legal-basis",
+            "label": {
+              "es": "Base legal identificada para la cesión del dataset",
+              "en": "Legal basis identified for dataset transfer",
+              "va": "Base legal identificada per a la cessió del dataset"
+            },
+            "metric": {
+              "es": "RGPD Art. 6(1)(f) + Art. 89 — interés legítimo e investigación",
+              "en": "GDPR Art. 6(1)(f) + Art. 89 — legitimate interest and research",
+              "va": "RGPD Art. 6(1)(f) + Art. 89 — interès legítim i recerca"
+            }
+          },
+          {
+            "id": "anonymisation-level",
+            "label": {
+              "es": "Nivel de k-anonimato aplicado",
+              "en": "K-anonymity level applied",
+              "va": "Nivell de k-anonimat aplicat"
+            },
+            "metric": {
+              "es": "k=5 a nivel de segmento de ruta + agregación a código postal para coordenadas de entrega",
+              "en": "k=5 at route segment level + postcode aggregation for delivery coordinates",
+              "va": "k=5 a nivell de segment de ruta + agregació a codi postal per a coordenades de lliurament"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "La validación cubre únicamente el dataset del reto. Cualquier uso posterior de los algoritmos desarrollados con datos de Correos en producción requeriría una EIPD completa separada.",
+          "en": "The validation covers only the challenge dataset. Any subsequent use of algorithms developed with Correos data in production would require a separate full DPIA.",
+          "va": "La validació cobreix únicament el dataset del repte. Qualsevol ús posterior dels algorismes desenvolupats amb dades de Correos en producció requeriria una AIPD completa separada."
+        }
+      },
+      "decision": {
+        "outcome": "validated-track-b",
+        "label": {
+          "es": "Validado — datos aptos para cesión en el reto con el protocolo de anonimización documentado",
+          "en": "Validated — data suitable for challenge transfer with the documented anonymisation protocol",
+          "va": "Validat — dades aptes per a cessió en el repte amb el protocol d'anonimització documentat"
+        },
+        "rationale": {
+          "es": "La EIPD y el análisis legal confirman que la cesión del dataset de Correos a equipos participantes es legalmente viable bajo el RGPD aplicando el protocolo de k-anonimato documentado y las restricciones de uso acordadas. Se puede proceder a publicar el reto en el Marketplace e incluir el acceso al dataset como incentivo para los equipos inscritos.",
+          "en": "The DPIA and legal analysis confirm that transfer of the Correos dataset to participating teams is legally feasible under GDPR by applying the documented k-anonymity protocol and agreed use restrictions. The challenge can be published on the Marketplace and dataset access included as an incentive for registered teams.",
+          "va": "L'AIPD i l'anàlisi legal confirmen que la cessió del dataset de Correos a equips participants és legalment viable sota el RGPD aplicant el protocol de k-anonimat documentat i les restriccions d'ús acordades. Es pot procedir a publicar el repte al Marketplace i incloure l'accés al dataset com a incentiu per als equips inscrits."
+        },
+        "nextStep": {
+          "type": "launch-pilot",
+          "label": {
+            "es": "Publicar el reto en el Marketplace con acceso condicionado al dataset tras firma del acuerdo de uso",
+            "en": "Publish the challenge on the Marketplace with conditional dataset access after signing the usage agreement",
+            "va": "Publicar el repte al Marketplace amb accés condicionat al dataset després de la signatura de l'acord d'ús"
+          }
+        }
+      },
+      "trackRouting": {
+        "route": "track-b",
+        "label": {
+          "es": "Clasificado Track B — reto viable con condiciones de acceso a datos documentadas",
+          "en": "Classified as Track B — viable challenge with documented data access conditions",
+          "va": "Classificat Track B — repte viable amb condicions d'accés a dades documentades"
+        },
+        "academicReview": {
+          "enabled": false,
+          "reviewer": null,
+          "note": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        }
+      },
+      "relations": {
+        "validatedChallengeId": "reto-optimizacion-rutas-logistica-mob",
+        "resultingPilotIds": [],
+        "resultingCaseIds": [],
+        "resultingResourceIds": [],
+        "relatedMentorshipIds": [],
+        "nextPossibleItems": [
+          "pilot",
+          "case"
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/validations/validation-legal-datos-movilidad-mob/",
+        "items": []
+      },
+      "resources": {
+        "externalLinks": []
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver validación",
+            "en": "View validation",
+            "va": "Veure validació"
+          },
+          "url": "",
+          "system": ""
+        },
+        "secondaryAction": null
+      },
+      "presentation": {
+        "card": {
+          "variant": "validation",
+          "showValidationType": true,
+          "showDecision": true,
+          "showEvidenceLevel": true,
+          "showWindow": true,
+          "showValidationEnvironment": true,
+          "showDownloadsIndicator": false,
+          "mainBlockLabel": {
+            "es": "Qué se valida",
+            "en": "What is validated",
+            "va": "Què es valida"
+          }
+        },
+        "detail": {
+          "sections": {
+            "object": true,
+            "need": true,
+            "context": true,
+            "method": true,
+            "criteria": true,
+            "evidence": true,
+            "decision": true,
+            "downloads": false,
+            "resources": true,
+            "people": true,
+            "access": true,
+            "trackRouting": true,
+            "relations": false
+          }
+        }
+      },
+      "validationWindow": {
+        "start": "2026-01-05",
+        "end": "2026-02-15",
+        "label": {
+          "es": "Ene – Feb 2026",
+          "en": "Jan – Feb 2026",
+          "va": "Gen – Feb 2026"
+        }
+      },
+      "criteriaCount": 3,
+      "validationTypeLabel": {
+        "es": "Validación legal",
+        "en": "Legal validation",
+        "va": "Validació legal"
+      },
+      "validationStageLabel": {
+        "es": "Completada",
+        "en": "Completed",
+        "va": "Completada"
+      },
+      "decisionOutcomeLabel": {
+        "es": "Validado — Track B",
+        "en": "Validated — Track B",
+        "va": "Validat — Track B"
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "template": {
+        "requiredBlocks": [
+          "validation",
+          "criteria",
+          "evidence",
+          "decision"
+        ],
+        "optionalBlocks": [
+          "downloads",
+          "resources",
+          "access",
+          "trackRouting",
+          "relations",
+          "people",
+          "externalFlow"
+        ],
+        "cardSignal": "validation"
+      }
+    },
+    {
+      "id": "validation-tecnica-gemelo-digital-ene",
+      "type": "validation",
+      "tab": "validations",
+      "sortDate": "2026-04-01",
+      "visible": true,
+      "sourcePath": "content/challenges/items/validations/validation-tecnica-gemelo-digital-ene.yml",
+      "core": {
+        "status": "validated",
+        "maturity": "idea",
+        "title": {
+          "es": "Validación técnica — Viabilidad del gemelo digital para la gestión predictiva de la red eléctrica urbana",
+          "en": "Technical validation — Feasibility of digital twin for predictive urban electricity grid management",
+          "va": "Validació tècnica — Viabilitat de la bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
+        },
+        "summary": {
+          "es": "Validación técnica del reto de gemelo digital para la red eléctrica promovido por Endesa Distribución, confirmando la viabilidad de CARLA y ROS 2 como stack tecnológico y la disponibilidad de datos SCADA anonimizables para el desarrollo del prototipo.",
+          "en": "Technical validation of the electricity grid digital twin challenge promoted by Endesa Distribución, confirming the viability of CARLA and ROS 2 as the technology stack and the availability of anonymisable SCADA data for prototype development.",
+          "va": "Validació tècnica del repte de bessona digital per a la xarxa elèctrica promogut per Endesa Distribució, confirmant la viabilitat de CARLA i ROS 2 com a stack tecnològic i la disponibilitat de dades SCADA anonimitzables per al desenvolupament del prototip."
+        },
+        "entity": {
+          "name": "",
+          "type": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "sector": "ene",
+        "stakeholderCategory": "",
+        "levels": [
+          "Máster"
+        ],
+        "pilotType": "",
+        "validationType": "technical-validation",
+        "validationStage": "completed",
+        "mentoringType": "",
+        "helix": [],
+        "relatedDeliverable": "",
+        "relatedOerId": "",
+        "publishedAt": "2026-02-15",
+        "revisionDate": "2026-04-01",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "Feb 2026",
+          "en": "Feb 2026",
+          "va": "Feb 2026"
+        },
+        "revisionDateLabel": {
+          "es": "Abr 2026",
+          "en": "Apr 2026",
+          "va": "Abr 2026"
+        },
+        "deadlineLabel": null,
+        "tags": {
+          "es": [
+            "Gemelo digital",
+            "Red eléctrica",
+            "Validación técnica",
+            "SCADA",
+            "Endesa"
+          ],
+          "en": [
+            "Digital twin",
+            "Electricity grid",
+            "Technical validation",
+            "SCADA",
+            "Endesa"
+          ],
+          "va": [
+            "Bessona digital",
+            "Xarxa elèctrica",
+            "Validació tècnica",
+            "SCADA",
+            "Endesa"
+          ]
+        }
+      },
+      "classification": {
+        "aiSteamFocus": [
+          "data-ai",
+          "maker-steam"
+        ],
+        "tripleTransition": [
+          "digital",
+          "green"
+        ],
+        "policyCluster": [
+          "infrastructure-evidence"
+        ],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "verificationStatus": "",
+        "pilotStatus": ""
+      },
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "validations"
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "summary-only",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "rightsNote": {
+          "es": "La ficha de validación se publica bajo CC BY 4.0. El informe técnico detallado del ITE es confidencial y no se publica.",
+          "en": "The validation sheet is published under CC BY 4.0. The detailed ITE technical report is confidential and not published.",
+          "va": "La fitxa de validació es publica sota CC BY 4.0. L'informe tècnic detallat de l'ITE és confidencial i no es publica."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "proposer": {
+          "name": "Endesa Distribución S.A. — Área de Innovación Redes",
+          "type": "industry",
+          "role": {
+            "es": "Empresa proponente del reto y facilitadora del entorno técnico de validación",
+            "en": "Challenge-proposing company and technical validation environment facilitator",
+            "va": "Empresa proponent del repte i facilitadora de l'entorn tècnic de validació"
+          }
+        },
+        "validators": [
+          {
+            "name": "Instituto Tecnológico de la Energía (ITE)",
+            "type": "university",
+            "role": {
+              "es": "Revisión técnica independiente del stack tecnológico propuesto",
+              "en": "Independent technical review of the proposed technology stack",
+              "va": "Revisió tècnica independent de l'stack tecnològic proposat"
+            }
+          },
+          {
+            "name": "AI-STEAM Comité Técnico Energía",
+            "type": "sector-association",
+            "role": {
+              "es": "Validación de la pertinencia del reto y triage de clasificación",
+              "en": "Challenge relevance validation and classification triage",
+              "va": "Validació de la pertinència del repte i triatge de classificació"
+            }
+          }
+        ]
+      },
+      "validation": {
+        "objectType": "challenge",
+        "objectTitle": {
+          "es": "Reto — Gemelo digital para la gestión predictiva de la red eléctrica urbana",
+          "en": "Challenge — Digital twin for predictive urban electricity grid management",
+          "va": "Repte — Bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
+        },
+        "validationQuestion": {
+          "es": "¿Son técnicamente viables los prototipos de gemelo digital de red eléctrica urbana con datos SCADA anonimizados y stack CARLA+ROS 2 en el contexto de un reto educativo de 6 meses?",
+          "en": "Are urban electricity grid digital twin prototypes technically feasible using anonymised SCADA data and CARLA+ROS 2 stack in the context of a 6-month educational challenge?",
+          "va": "Són tècnicament viables els prototips de bessona digital de xarxa elèctrica urbana amb dades SCADA anonimitzades i stack CARLA+ROS 2 en el context d'un repte educatiu de 6 mesos?"
+        },
+        "need": {
+          "es": "El reto requiere que los equipos participantes puedan acceder a datos reales del sistema de distribución de Endesa y a un entorno de simulación suficientemente realista para validar sus modelos predictivos antes de proponerlos para integración con SCADA real.",
+          "en": "The challenge requires participating teams to access real data from Endesa's distribution system and a sufficiently realistic simulation environment to validate their predictive models before proposing them for integration with real SCADA.",
+          "va": "El repte requereix que els equips participants puguen accedir a dades reals del sistema de distribució d'Endesa i a un entorn de simulació suficientment realista per validar els seus models predictius abans de proposar-los per a integració amb SCADA real."
+        },
+        "context": {
+          "es": "El ITE realizó una revisión técnica del stack propuesto (CARLA+ROS 2+datos SCADA anonimizados) y de la calidad y completitud del dataset histórico de 3 años proporcionado por Endesa. Se analizó la viabilidad de anonimización de datos a nivel de transformador manteniendo la utilidad estadística para el desarrollo de modelos predictivos.",
+          "en": "ITE conducted a technical review of the proposed stack (CARLA+ROS 2+anonymised SCADA data) and the quality and completeness of the 3-year historical dataset provided by Endesa. The feasibility of anonymising data at transformer level while maintaining statistical utility for predictive model development was analysed.",
+          "va": "L'ITE va realitzar una revisió tècnica de l'stack proposat (CARLA+ROS 2+dades SCADA anonimitzades) i de la qualitat i completitud del dataset històric de 3 anys proporcionat per Endesa. Es va analitzar la viabilitat d'anonimització de dades a nivell de transformador mantenint la utilitat estadística per al desenvolupament de models predictius."
+        },
+        "method": {
+          "es": "Revisión técnica del dataset por el ITE (calidad, completitud, anonimizabilidad), prueba de concepto en entorno sandboxed con muestra del 5% de los datos, revisión de la arquitectura de integración SCADA propuesta y triage ConsensUE para clasificación del reto.",
+          "en": "ITE technical review of the dataset (quality, completeness, anonymisability), proof of concept in sandboxed environment with 5% data sample, review of the proposed SCADA integration architecture and ConsensUE triage for challenge classification.",
+          "va": "Revisió tècnica del dataset per l'ITE (qualitat, completitud, anonimitzabilitat), prova de concepte en entorn sandboxed amb mostra del 5% de les dades, revisió de l'arquitectura d'integració SCADA proposada i triatge ConsensUE per a classificació del repte."
+        },
+        "validationEnvironment": [
+          {
+            "label": {
+              "es": "Revisión técnica ITE — dataset histórico SCADA (muestra 5%)",
+              "en": "ITE technical review — historical SCADA dataset (5% sample)",
+              "va": "Revisió tècnica ITE — dataset històric SCADA (mostra 5%)"
+            }
+          },
+          {
+            "label": {
+              "es": "Prueba de concepto en entorno sandboxed de Endesa",
+              "en": "Proof of concept in Endesa sandboxed environment",
+              "va": "Prova de concepte en entorn sandboxed d'Endesa"
+            }
+          },
+          {
+            "label": {
+              "es": "Sesión de triage ConsensUE con Comité Técnico Energía",
+              "en": "ConsensUE triage session with Energy Technical Committee",
+              "va": "Sessió de triatge ConsensUE amb Comité Tècnic Energia"
+            }
+          }
+        ]
+      },
+      "criteria": {
+        "items": [
+          {
+            "id": "data-quality",
+            "label": {
+              "es": "Calidad y utilidad del dataset SCADA anonimizado",
+              "en": "Anonymised SCADA dataset quality and utility",
+              "va": "Qualitat i utilitat del dataset SCADA anonimitzat"
+            },
+            "result": "positive",
+            "note": {
+              "es": "El ITE confirma que el dataset de 3 años a nivel de transformador, una vez anonimizado, mantiene suficiente utilidad estadística para entrenar modelos de predicción de sobrecargas.",
+              "en": "ITE confirms that the 3-year transformer-level dataset, once anonymised, retains sufficient statistical utility for training overload prediction models.",
+              "va": "L'ITE confirma que el dataset de 3 anys a nivell de transformador, una vegada anonimitzat, manté suficient utilitat estadística per entrenar models de predicció de sobrecàrregues."
+            }
+          },
+          {
+            "id": "stack-feasibility",
+            "label": {
+              "es": "Viabilidad del stack tecnológico propuesto",
+              "en": "Feasibility of the proposed technology stack",
+              "va": "Viabilitat de l'stack tecnològic proposat"
+            },
+            "result": "positive",
+            "note": {
+              "es": "CARLA+ROS 2 es un stack maduro usado en investigación académica con comunidad activa. La integración conceptual con SCADA es técnicamente viable en fase de prototipo.",
+              "en": "CARLA+ROS 2 is a mature stack used in academic research with an active community. The conceptual integration with SCADA is technically feasible at prototype stage.",
+              "va": "CARLA+ROS 2 és un stack madur usat en recerca acadèmica amb comunitat activa. La integració conceptual amb SCADA és tècnicament viable en fase de prototip."
+            }
+          },
+          {
+            "id": "anonymisation-risk",
+            "label": {
+              "es": "Riesgo de re-identificación en el dataset anonimizado",
+              "en": "Re-identification risk in the anonymised dataset",
+              "va": "Risc de re-identificació en el dataset anonimitzat"
+            },
+            "result": "manageable",
+            "note": {
+              "es": "La agregación a nivel de transformador reduce el riesgo, pero se requiere aplicar k-anonimato antes de la distribución a los equipos participantes. ITE proporciona el protocolo de anonimización.",
+              "en": "Aggregation at transformer level reduces the risk, but k-anonymity must be applied before distribution to participating teams. ITE provides the anonymisation protocol.",
+              "va": "L'agregació a nivell de transformador redueix el risc, però cal aplicar k-anonimat abans de la distribució als equips participants. L'ITE proporciona el protocol d'anonimització."
+            }
+          },
+          {
+            "id": "timeline-feasibility",
+            "label": {
+              "es": "Viabilidad del calendario del reto (6 meses para prototipo funcional)",
+              "en": "Challenge timeline feasibility (6 months for functional prototype)",
+              "va": "Viabilitat del calendari del repte (6 mesos per a prototip funcional)"
+            },
+            "result": "medium",
+            "note": {
+              "es": "6 meses es ajustado para equipos sin experiencia previa en CARLA. Se recomienda añadir una sesión de onboarding técnico de 2 días antes del inicio oficial del reto.",
+              "en": "6 months is tight for teams without prior CARLA experience. Adding a 2-day technical onboarding session before the official challenge start is recommended.",
+              "va": "6 mesos és ajustat per a equips sense experiència prèvia en CARLA. Es recomana afegir una sessió d'onboarding tècnic de 2 dies abans de l'inici oficial del repte."
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "evidenceLevel": "reviewed",
+        "collectionMethod": {
+          "es": "Revisión documental del dataset SCADA por el ITE, prueba de concepto sandboxed y sesión de triage ConsensUE con el Comité Técnico de Energía de AI-STEAM.",
+          "en": "ITE documentary review of the SCADA dataset, sandboxed proof of concept and ConsensUE triage session with the AI-STEAM Energy Technical Committee.",
+          "va": "Revisió documental del dataset SCADA per l'ITE, prova de concepte sandboxed i sessió de triatge ConsensUE amb el Comité Tècnic d'Energia d'AI-STEAM."
+        },
+        "indicators": [
+          {
+            "id": "dataset-completeness",
+            "label": {
+              "es": "Completitud del dataset histórico (% de series temporales sin lagunas)",
+              "en": "Historical dataset completeness (% time series without gaps)",
+              "va": "Completitud del dataset històric (% de sèries temporals sense llacunes)"
+            },
+            "metric": {
+              "es": "94,3% de series completas — suficiente para entrenamiento",
+              "en": "94.3% complete series — sufficient for training",
+              "va": "94,3% de sèries completes — suficient per a entrenament"
+            }
+          },
+          {
+            "id": "poc-result",
+            "label": {
+              "es": "Resultado de la prueba de concepto sandboxed",
+              "en": "Sandboxed proof of concept result",
+              "va": "Resultat de la prova de concepte sandboxed"
+            },
+            "metric": {
+              "es": "Prototipo base logra RMSE de 12 kW en predicción a 4h — supera umbral de 15 kW establecido",
+              "en": "Base prototype achieves 12 kW RMSE in 4h prediction — exceeds the set threshold of 15 kW",
+              "va": "Prototip base assoleix RMSE de 12 kW en predicció a 4h — supera el llindar de 15 kW establert"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "La validación cubre únicamente la viabilidad técnica del reto. La evaluación pedagógica de los contenidos formativos asociados no forma parte de esta validación.",
+          "en": "The validation covers only the technical feasibility of the challenge. The pedagogical evaluation of associated training content is not part of this validation.",
+          "va": "La validació cobreix únicament la viabilitat tècnica del repte. L'avaluació pedagògica dels continguts formatius associats no forma part d'aquesta validació."
+        }
+      },
+      "decision": {
+        "outcome": "validated-track-b",
+        "label": {
+          "es": "Validado — clasificado Track B para reto abierto al ecosistema",
+          "en": "Validated — classified as Track B for open ecosystem challenge",
+          "va": "Validat — classificat Track B per a repte obert a l'ecosistema"
+        },
+        "rationale": {
+          "es": "La validación técnica confirma la viabilidad del reto y la calidad del dataset. El Comité Técnico concluye que el reto es más adecuado como contribución abierta (Track B) que como módulo académico, dado su carácter aplicado y la diversidad de perfiles que puede atraer.",
+          "en": "Technical validation confirms challenge feasibility and dataset quality. The Technical Committee concludes the challenge is more appropriate as an open contribution (Track B) than as an academic module, given its applied nature and the diversity of profiles it can attract.",
+          "va": "La validació tècnica confirma la viabilitat del repte i la qualitat del dataset. El Comité Tècnic conclou que el repte és més adequat com a contribució oberta (Track B) que com a mòdul acadèmic, atès el seu caràcter aplicat i la diversitat de perfils que pot atraure."
+        },
+        "nextStep": {
+          "type": "launch-pilot",
+          "label": {
+            "es": "Publicar el reto en el Marketplace y abrir inscripciones para la convocatoria 2026",
+            "en": "Publish the challenge on the Marketplace and open registrations for the 2026 call",
+            "va": "Publicar el repte al Marketplace i obrir inscripcions per a la convocatòria 2026"
+          }
+        }
+      },
+      "trackRouting": {
+        "route": "track-b",
+        "label": {
+          "es": "Clasificado Track B — reto abierto al ecosistema publicado en el Marketplace",
+          "en": "Classified as Track B — open ecosystem challenge published on the Marketplace",
+          "va": "Classificat Track B — repte obert a l'ecosistema publicat al Marketplace"
+        },
+        "academicReview": {
+          "enabled": false,
+          "reviewer": null,
+          "note": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        }
+      },
+      "relations": {
+        "validatedChallengeId": "reto-gemelo-digital-red-electrica-ene",
+        "resultingPilotIds": [],
+        "resultingCaseIds": [],
+        "resultingResourceIds": [],
+        "relatedMentorshipIds": [],
+        "nextPossibleItems": [
+          "pilot",
+          "case"
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/validations/validation-tecnica-gemelo-digital-ene/",
+        "items": []
+      },
+      "resources": {
+        "externalLinks": []
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver validación",
+            "en": "View validation",
+            "va": "Veure validació"
+          },
+          "url": "",
+          "system": ""
+        },
+        "secondaryAction": null
+      },
+      "presentation": {
+        "card": {
+          "variant": "validation",
+          "showValidationType": true,
+          "showDecision": true,
+          "showEvidenceLevel": true,
+          "showWindow": true,
+          "showValidationEnvironment": true,
+          "showDownloadsIndicator": false,
+          "mainBlockLabel": {
+            "es": "Qué se valida",
+            "en": "What is validated",
+            "va": "Què es valida"
+          }
+        },
+        "detail": {
+          "sections": {
+            "object": true,
+            "need": true,
+            "context": true,
+            "method": true,
+            "criteria": true,
+            "evidence": true,
+            "decision": true,
+            "downloads": false,
+            "resources": true,
+            "people": true,
+            "access": true,
+            "trackRouting": true,
+            "relations": false
+          }
+        }
+      },
+      "validationWindow": {
+        "start": "2025-12-01",
+        "end": "2026-02-10",
+        "label": {
+          "es": "Dic 2025 – Feb 2026",
+          "en": "Dec 2025 – Feb 2026",
+          "va": "Des 2025 – Feb 2026"
+        }
+      },
+      "criteriaCount": 4,
+      "validationTypeLabel": {
+        "es": "Validación técnica",
+        "en": "Technical validation",
+        "va": "Validació tècnica"
+      },
+      "validationStageLabel": {
+        "es": "Completada",
+        "en": "Completed",
+        "va": "Completada"
+      },
+      "decisionOutcomeLabel": {
+        "es": "Validado — Track B",
+        "en": "Validated — Track B",
+        "va": "Validat — Track B"
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "template": {
+        "requiredBlocks": [
+          "validation",
+          "criteria",
+          "evidence",
+          "decision"
+        ],
+        "optionalBlocks": [
+          "downloads",
+          "resources",
+          "access",
+          "trackRouting",
+          "relations",
+          "people",
+          "externalFlow"
+        ],
+        "cardSignal": "validation"
+      }
+    },
+    {
       "id": "realidad-aumentada-museos-cci",
       "type": "case",
       "tab": "cases",
@@ -15829,6 +17299,498 @@ export const MARKETPLACE_CONFIG = {
       }
     },
     {
+      "id": "validation-stakeholder-turismo-inteligente-tur",
+      "type": "validation",
+      "tab": "validations",
+      "sortDate": "2026-03-20",
+      "visible": true,
+      "sourcePath": "content/challenges/items/validations/validation-stakeholder-turismo-inteligente-tur.yml",
+      "core": {
+        "status": "validated",
+        "maturity": "idea",
+        "title": {
+          "es": "Validación stakeholder — Necesidad de personalización con IA en la oferta turística valenciana",
+          "en": "Stakeholder validation — Need for AI personalisation in the Valencian tourism offer",
+          "va": "Validació stakeholder — Necessitat de personalització amb IA en l'oferta turística valenciana"
+        },
+        "summary": {
+          "es": "Validación con la Agència Valenciana del Turisme, asociaciones hoteleras y plataformas de reservas de la demanda real de sistemas de personalización de experiencias turísticas con IA, que derivó en la publicación del reto de análisis de sentimiento y en el inicio de dos pilotos de personalización de recomendaciones en destinos piloto de la Costa Blanca.",
+          "en": "Validation with the Valencian Tourism Agency, hotel associations and booking platforms of the real demand for AI tourism experience personalisation systems, leading to the publication of the sentiment analysis challenge and the launch of two recommendation personalisation pilots in Costa Blanca pilot destinations.",
+          "va": "Validació amb l'Agència Valenciana del Turisme, associacions hoteleres i plataformes de reserves de la demanda real de sistemes de personalització d'experiències turístiques amb IA, que va derivar en la publicació del repte d'anàlisi de sentiment i en l'inici de dos pilots de personalització de recomanacions en destinacions pilot de la Costa Blanca."
+        },
+        "entity": {
+          "name": "",
+          "type": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "sector": "tur",
+        "stakeholderCategory": "",
+        "levels": [
+          "FP",
+          "Máster"
+        ],
+        "pilotType": "",
+        "validationType": "stakeholder-validation",
+        "validationStage": "completed",
+        "mentoringType": "",
+        "helix": [],
+        "relatedDeliverable": "",
+        "relatedOerId": "",
+        "publishedAt": "2026-01-10",
+        "revisionDate": "2026-03-20",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "Ene 2026",
+          "en": "Jan 2026",
+          "va": "Gen 2026"
+        },
+        "revisionDateLabel": {
+          "es": "Mar 2026",
+          "en": "Mar 2026",
+          "va": "Mar 2026"
+        },
+        "deadlineLabel": null,
+        "tags": {
+          "es": [
+            "Turismo inteligente",
+            "Personalización",
+            "IA",
+            "Análisis de sentimiento",
+            "Destinos turísticos"
+          ],
+          "en": [
+            "Smart tourism",
+            "Personalisation",
+            "AI",
+            "Sentiment analysis",
+            "Tourist destinations"
+          ],
+          "va": [
+            "Turisme intel·ligent",
+            "Personalització",
+            "IA",
+            "Anàlisi de sentiment",
+            "Destinacions turístiques"
+          ]
+        }
+      },
+      "classification": {
+        "aiSteamFocus": [
+          "data-ai",
+          "responsible-ai"
+        ],
+        "tripleTransition": [
+          "digital",
+          "social"
+        ],
+        "policyCluster": [
+          "integrated-pedagogy",
+          "infrastructure-evidence"
+        ],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "verificationStatus": "",
+        "pilotStatus": ""
+      },
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "validations"
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "summary-only",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "rightsNote": {
+          "es": "Los datos de Booking.com se presentan únicamente en forma agregada. Las respuestas del panel HOSBEC son confidenciales a nivel individual. La ficha de validación se publica bajo CC BY 4.0.",
+          "en": "Booking.com data is presented only in aggregate form. HOSBEC panel responses are confidential at individual level. The validation sheet is published under CC BY 4.0.",
+          "va": "Les dades de Booking.com es presenten únicament en forma agregada. Les respostes del panell HOSBEC són confidencials a nivell individual. La fitxa de validació es publica sota CC BY 4.0."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "proposer": {
+          "name": "Agència Valenciana del Turisme (Turisme Comunitat Valenciana)",
+          "type": "public-admin",
+          "role": {
+            "es": "Agencia pública proponente — identificó la necesidad de IA para la gestión de la reputación y la personalización",
+            "en": "Proposing public agency — identified the need for AI in reputation management and personalisation",
+            "va": "Agència pública proponent — va identificar la necessitat d'IA per a la gestió de la reputació i la personalització"
+          }
+        },
+        "validators": [
+          {
+            "name": "HOSBEC — Asociación Empresarial Hotelera de Benidorm, Costa Blanca y Comunidad Valenciana",
+            "type": "sector-association",
+            "role": {
+              "es": "Asociación sectorial — validó la demanda de IA para personalización desde la perspectiva hotelera",
+              "en": "Sector association — validated AI personalisation demand from the hotel perspective",
+              "va": "Associació sectorial — va validar la demanda d'IA per a personalització des de la perspectiva hotelera"
+            }
+          },
+          {
+            "name": "Booking.com — Partnerships Iberia",
+            "type": "industry",
+            "role": {
+              "es": "Plataforma de reservas — compartió datos agregados de comportamiento de búsqueda para el análisis de demanda",
+              "en": "Booking platform — shared aggregated search behaviour data for demand analysis",
+              "va": "Plataforma de reserves — va compartir dades agregades de comportament de cerca per a l'anàlisi de demanda"
+            }
+          },
+          {
+            "name": "AI-STEAM Comité Técnico Turismo y Cultura",
+            "type": "sector-association",
+            "role": {
+              "es": "Triage ConsensUE y clasificación del reto resultante",
+              "en": "ConsensUE triage and resulting challenge classification",
+              "va": "Triatge ConsensUE i classificació del repte resultant"
+            }
+          }
+        ]
+      },
+      "validation": {
+        "objectType": "need",
+        "objectTitle": {
+          "es": "Necesidad de sistemas de IA para análisis de reputación y personalización de la experiencia turística en la Comunitat Valenciana",
+          "en": "Need for AI systems for reputation analysis and tourism experience personalisation in the Valencian Community",
+          "va": "Necessitat de sistemes d'IA per a anàlisi de reputació i personalització de l'experiència turística a la Comunitat Valenciana"
+        },
+        "validationQuestion": {
+          "es": "¿Existe suficiente demanda del sector turístico valenciano para sistemas de IA de análisis de sentimiento y personalización, y son los destinos y operadores turísticos valencianos capaces de absorber y beneficiarse de estos sistemas en un horizonte de 2 años?",
+          "en": "Is there sufficient demand from the Valencian tourism sector for AI sentiment analysis and personalisation systems, and are Valencian tourism destinations and operators capable of absorbing and benefiting from these systems within a 2-year horizon?",
+          "va": "Existeix suficient demanda del sector turístic valencià per a sistemes d'IA d'anàlisi de sentiment i personalització, i els destins i operadors turístics valencians són capaços d'absorbir-ne i beneficiar-se en un horitzó de 2 anys?"
+        },
+        "need": {
+          "es": "La Comunitat Valenciana recibió 37,8 millones de visitantes en 2025 (+12% respecto a 2019). Los gestores de destinos y hoteleros dedican recursos crecientes a monitorizar la reputación online y personalizar la oferta, pero lo hacen de forma manual o con herramientas genéricas que no están adaptadas al contexto multilingüe y multicultural del turismo valenciano.",
+          "en": "The Valencian Community received 37.8 million visitors in 2025 (+12% compared to 2019). Destination managers and hoteliers dedicate increasing resources to monitoring online reputation and personalising their offer, but do so manually or with generic tools not adapted to the multilingual and multicultural context of Valencian tourism.",
+          "va": "La Comunitat Valenciana va rebre 37,8 milions de visitants el 2025 (+12% respecte a 2019). Els gestors de destinació i hoteleros dediquen recursos creixents a monitoritzar la reputació en línia i personalitzar l'oferta, però ho fan manualment o amb eines genèriques que no estan adaptades al context multilingüe i multicultural del turisme valencià."
+        },
+        "context": {
+          "es": "HOSBEC representó la perspectiva de 1.200 establecimientos hoteleros de la Costa Blanca. Booking.com compartió datos agregados sobre las 5 principales quejas y motivaciones de búsqueda en destinos valencianos (2024-2025). El Comité Técnico identificó dos necesidades diferenciadas — análisis de sentimiento (operativa, Track B) y personalización profunda (investigación, Track A) — que se abordan por vías distintas.",
+          "en": "HOSBEC represented the perspective of 1,200 hotel establishments in Costa Blanca. Booking.com shared aggregated data on the 5 main complaints and search motivations in Valencian destinations (2024-2025). The Technical Committee identified two distinct needs — sentiment analysis (operational, Track B) and deep personalisation (research, Track A) — to be addressed through different routes.",
+          "va": "HOSBEC va representar la perspectiva de 1.200 establiments hotelers de la Costa Blanca. Booking.com va compartir dades agregades sobre les 5 principals queixes i motivacions de cerca en destinacions valencianes (2024-2025). El Comité Tècnic va identificar dues necessitats diferenciades — anàlisi de sentiment (operativa, Track B) i personalització profunda (recerca, Track A) — que s'aborden per vies distintes."
+        },
+        "method": {
+          "es": "Panel de expertos con HOSBEC (12 directivos hoteleros), análisis de datos agregados de Booking.com, entrevistas con los técnicos de Turisme CV y triage ConsensUE con el Comité Técnico de Turismo y Cultura.",
+          "en": "Expert panel with HOSBEC (12 hotel executives), Booking.com aggregated data analysis, interviews with Turisme CV technicians and ConsensUE triage with the Tourism and Culture Technical Committee.",
+          "va": "Panell d'experts amb HOSBEC (12 directius hotelers), anàlisi de dades agregades de Booking.com, entrevistes amb els tècnics de Turisme CV i triatge ConsensUE amb el Comité Tècnic de Turisme i Cultura."
+        },
+        "validationEnvironment": [
+          {
+            "label": {
+              "es": "Panel de expertos hoteleros — HOSBEC (n=12)",
+              "en": "Hotel expert panel — HOSBEC (n=12)",
+              "va": "Panell d'experts hotelers — HOSBEC (n=12)"
+            }
+          },
+          {
+            "label": {
+              "es": "Análisis de datos agregados de búsqueda — Booking.com (destinos valencianos, 2024-2025)",
+              "en": "Aggregated search data analysis — Booking.com (Valencian destinations, 2024-2025)",
+              "va": "Anàlisi de dades agregades de cerca — Booking.com (destinacions valencianes, 2024-2025)"
+            }
+          },
+          {
+            "label": {
+              "es": "Triage ConsensUE — Comité Técnico Turismo y Cultura",
+              "en": "ConsensUE triage — Tourism and Culture Technical Committee",
+              "va": "Triatge ConsensUE — Comité Tècnic Turisme i Cultura"
+            }
+          }
+        ]
+      },
+      "criteria": {
+        "items": [
+          {
+            "id": "operator-demand",
+            "label": {
+              "es": "Demanda real de los operadores turísticos valencianos",
+              "en": "Real demand from Valencian tourism operators",
+              "va": "Demanda real dels operadors turístics valencians"
+            },
+            "result": "positive",
+            "note": {
+              "es": "El 92% de los hoteleros del panel HOSBEC declaran usar herramientas de monitorización de reseñas, pero solo el 18% está satisfecho con las soluciones actuales. La demanda de IA es alta y el presupuesto disponible en hoteles de 3-5 estrellas es suficiente para soluciones SaaS.",
+              "en": "92% of HOSBEC panel hoteliers declare using review monitoring tools, but only 18% are satisfied with current solutions. AI demand is high and available budget in 3-5 star hotels is sufficient for SaaS solutions.",
+              "va": "El 92% dels hotelers del panell HOSBEC declaren usar eines de monitorització de ressenyes, però només el 18% està satisfet amb les solucions actuals. La demanda d'IA és alta i el pressupost disponible en hotels de 3-5 estrelles és suficient per a solucions SaaS."
+            }
+          },
+          {
+            "id": "data-availability",
+            "label": {
+              "es": "Disponibilidad de datos de reseñas para entrenar y validar los sistemas",
+              "en": "Availability of review data to train and validate the systems",
+              "va": "Disponibilitat de dades de ressenyes per entrenar i validar els sistemes"
+            },
+            "result": "positive",
+            "note": {
+              "es": "Turisme CV dispone de un corpus de 280.000 reseñas etiquetadas en 10 idiomas (2023-2025). Booking.com confirma acceso a la API para destinos oficialmente colaboradores.",
+              "en": "Turisme CV has a corpus of 280,000 labelled reviews in 10 languages (2023-2025). Booking.com confirms API access for officially collaborating destinations.",
+              "va": "Turisme CV disposa d'un corpus de 280.000 ressenyes etiquetades en 10 idiomes (2023-2025). Booking.com confirma accés a l'API per a destinacions oficialment col·laboradores."
+            }
+          },
+          {
+            "id": "absorptive-capacity",
+            "label": {
+              "es": "Capacidad de absorción del sector para adoptar las soluciones desarrolladas",
+              "en": "Sector absorptive capacity to adopt developed solutions",
+              "va": "Capacitat d'absorció del sector per adoptar les solucions desenvolupades"
+            },
+            "result": "medium",
+            "note": {
+              "es": "Los hoteles grandes (>100 habitaciones) tienen capacidad técnica para adoptar las soluciones. Los establecimientos pequeños y rurales necesitan versiones SaaS simplificadas sin integración técnica propia. El Comité recomienda diseñar una versión \"plug and play\" para establecimientos pequeños.",
+              "en": "Large hotels (>100 rooms) have the technical capacity to adopt the solutions. Small and rural establishments need simplified SaaS versions without their own technical integration. The Committee recommends designing a \"plug and play\" version for small establishments.",
+              "va": "Els hotels grans (>100 habitacions) tenen capacitat tècnica per adoptar les solucions. Els establiments menuts i rurals necessiten versions SaaS simplificades sense integració tècnica pròpia. El Comité recomana dissenyar una versió \"plug and play\" per a establiments menuts."
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "evidenceLevel": "reviewed",
+        "collectionMethod": {
+          "es": "Panel HOSBEC (n=12, estructura cuestionario Delphi), análisis de datos agregados de Booking.com y revisión documental de los planes de digitalización turística de la Conselleria de Turisme.",
+          "en": "HOSBEC panel (n=12, Delphi questionnaire structure), Booking.com aggregated data analysis and documentary review of Conselleria de Turisme tourism digitalisation plans.",
+          "va": "Panell HOSBEC (n=12, estructura qüestionari Delphi), anàlisi de dades agregades de Booking.com i revisió documental dels plans de digitalització turística de la Conselleria de Turisme."
+        },
+        "indicators": [
+          {
+            "id": "tool-satisfaction",
+            "label": {
+              "es": "Satisfacción con herramientas actuales de monitorización de reseñas",
+              "en": "Satisfaction with current review monitoring tools",
+              "va": "Satisfacció amb eines actuals de monitorització de ressenyes"
+            },
+            "metric": {
+              "es": "18% de hoteleros satisfechos con sus soluciones actuales (panel HOSBEC, n=12)",
+              "en": "18% of hoteliers satisfied with their current solutions (HOSBEC panel, n=12)",
+              "va": "18% d'hotelers satisfets amb les seues solucions actuals (panell HOSBEC, n=12)"
+            }
+          },
+          {
+            "id": "corpus-size",
+            "label": {
+              "es": "Tamaño del corpus de reseñas disponible para entrenamiento",
+              "en": "Size of available review corpus for training",
+              "va": "Grandària del corpus de ressenyes disponible per a entrenament"
+            },
+            "metric": {
+              "es": "280.000 reseñas etiquetadas en 10 idiomas (Turisme CV, 2023-2025)",
+              "en": "280,000 labelled reviews in 10 languages (Turisme CV, 2023-2025)",
+              "va": "280.000 ressenyes etiquetades en 10 idiomes (Turisme CV, 2023-2025)"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "El panel HOSBEC representa principalmente hoteles de la Costa Blanca y la ciudad de Valencia. Las necesidades de destinos de interior, turismo rural y oferta cultural pueden ser diferentes. El análisis de capacidad de absorción no incluye agencias de viajes ni tour operadores.",
+          "en": "The HOSBEC panel mainly represents hotels in Costa Blanca and Valencia city. The needs of inland destinations, rural tourism and cultural offer may differ. The absorption capacity analysis does not include travel agencies or tour operators.",
+          "va": "El panell HOSBEC representa principalment hotels de la Costa Blanca i la ciutat de València. Les necessitats de destinacions d'interior, turisme rural i oferta cultural poden ser diferents. L'anàlisi de capacitat d'absorció no inclou agències de viatge ni tour operadors."
+        }
+      },
+      "decision": {
+        "outcome": "validated-for-case",
+        "label": {
+          "es": "Validado — necesidad confirmada; se deriva a reto Track B (análisis de sentimiento) y piloto de personalización",
+          "en": "Validated — need confirmed; derived to Track B challenge (sentiment analysis) and personalisation pilot",
+          "va": "Validat — necessitat confirmada; es deriva a repte Track B (anàlisi de sentiment) i pilot de personalització"
+        },
+        "rationale": {
+          "es": "La validación confirma demanda alta y disponibilidad de datos de calidad. El Comité distingue dos líneas de acción — el reto de análisis de sentimiento (Track B, publicado en el Marketplace) para dar respuesta inmediata al sector, y un piloto de personalización profunda (Track A) con dos destinos de la Costa Blanca para investigación aplicada.",
+          "en": "Validation confirms high demand and availability of quality data. The Committee distinguishes two lines of action — the sentiment analysis challenge (Track B, published on the Marketplace) for immediate sector response, and a deep personalisation pilot (Track A) with two Costa Blanca destinations for applied research.",
+          "va": "La validació confirma demanda alta i disponibilitat de dades de qualitat. El Comité distingeix dues línies d'acció — el repte d'anàlisi de sentiment (Track B, publicat al Marketplace) per a donar resposta immediata al sector, i un pilot de personalització profunda (Track A) amb dues destinacions de la Costa Blanca per a recerca aplicada."
+        },
+        "nextStep": {
+          "type": "launch-pilot",
+          "label": {
+            "es": "Publicar el reto de análisis de sentimiento e iniciar el piloto de personalización en Benidorm y Calpe",
+            "en": "Publish the sentiment analysis challenge and launch the personalisation pilot in Benidorm and Calpe",
+            "va": "Publicar el repte d'anàlisi de sentiment i iniciar el pilot de personalització a Benidorm i Calpe"
+          }
+        }
+      },
+      "trackRouting": {
+        "route": "track-b",
+        "label": {
+          "es": "Clasificado Track B (reto análisis de sentimiento) + piloto Track A en destinos Costa Blanca",
+          "en": "Classified as Track B (sentiment analysis challenge) + Track A pilot in Costa Blanca destinations",
+          "va": "Classificat Track B (repte anàlisi de sentiment) + pilot Track A en destinacions Costa Blanca"
+        },
+        "academicReview": {
+          "enabled": false,
+          "reviewer": null,
+          "note": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        }
+      },
+      "relations": {
+        "validatedChallengeId": "reto-analisis-sentimiento-turismo-tur",
+        "resultingPilotIds": [],
+        "resultingCaseIds": [],
+        "resultingResourceIds": [],
+        "relatedMentorshipIds": [],
+        "nextPossibleItems": [
+          "pilot",
+          "case"
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/validations/validation-stakeholder-turismo-inteligente-tur/",
+        "items": []
+      },
+      "resources": {
+        "externalLinks": []
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver validación",
+            "en": "View validation",
+            "va": "Veure validació"
+          },
+          "url": "",
+          "system": ""
+        },
+        "secondaryAction": null
+      },
+      "presentation": {
+        "card": {
+          "variant": "validation",
+          "showValidationType": true,
+          "showDecision": true,
+          "showEvidenceLevel": true,
+          "showWindow": true,
+          "showValidationEnvironment": true,
+          "showDownloadsIndicator": false,
+          "mainBlockLabel": {
+            "es": "Qué se valida",
+            "en": "What is validated",
+            "va": "Què es valida"
+          }
+        },
+        "detail": {
+          "sections": {
+            "object": true,
+            "need": true,
+            "context": true,
+            "method": true,
+            "criteria": true,
+            "evidence": true,
+            "decision": true,
+            "downloads": false,
+            "resources": true,
+            "people": true,
+            "access": true,
+            "trackRouting": true,
+            "relations": false
+          }
+        }
+      },
+      "validationWindow": {
+        "start": "2025-10-15",
+        "end": "2025-12-20",
+        "label": {
+          "es": "Oct – Dic 2025",
+          "en": "Oct – Dec 2025",
+          "va": "Oct – Des 2025"
+        }
+      },
+      "criteriaCount": 3,
+      "validationTypeLabel": {
+        "es": "Validación stakeholder",
+        "en": "Stakeholder validation",
+        "va": "Validació stakeholder"
+      },
+      "validationStageLabel": {
+        "es": "Completada",
+        "en": "Completed",
+        "va": "Completada"
+      },
+      "decisionOutcomeLabel": {
+        "es": "Validado — documentar como caso",
+        "en": "Validated — document as case",
+        "va": "Validat — documentar com a cas"
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "template": {
+        "requiredBlocks": [
+          "validation",
+          "criteria",
+          "evidence",
+          "decision"
+        ],
+        "optionalBlocks": [
+          "downloads",
+          "resources",
+          "access",
+          "trackRouting",
+          "relations",
+          "people",
+          "externalFlow"
+        ],
+        "cardSignal": "validation"
+      }
+    },
+    {
       "id": "cobot-soldadura-fp",
       "type": "case",
       "tab": "cases",
@@ -16389,6 +18351,503 @@ export const MARKETPLACE_CONFIG = {
           "trackA"
         ],
         "cardSignal": "transferValue"
+      }
+    },
+    {
+      "id": "validation-pedagogica-control-calidad-mfg",
+      "type": "validation",
+      "tab": "validations",
+      "sortDate": "2026-03-10",
+      "visible": true,
+      "sourcePath": "content/challenges/items/validations/validation-pedagogica-control-calidad-mfg.yml",
+      "core": {
+        "status": "validated",
+        "maturity": "idea",
+        "title": {
+          "es": "Validación pedagógica — Integración de visión artificial en ciclos de FP de Fabricación Mecánica",
+          "en": "Pedagogical validation — Integration of computer vision in Mechanical Manufacturing VET cycles",
+          "va": "Validació pedagògica — Integració de visió artificial en cicles de FP de Fabricació Mecànica"
+        },
+        "summary": {
+          "es": "Validación del encaje curricular de un módulo de visión artificial para control de calidad en los ciclos de FP de Fabricación Mecánica y Mecatrónica, confirmando la pertinencia pedagógica y definiendo los requisitos de formación docente necesarios para la implantación autónoma.",
+          "en": "Validation of the curricular fit of a computer vision quality control module in Mechanical Manufacturing and Mechatronics VET cycles, confirming pedagogical relevance and defining teacher training requirements for autonomous implementation.",
+          "va": "Validació de l'encaix curricular d'un mòdul de visió artificial per a control de qualitat en els cicles de FP de Fabricació Mecànica i Mecatrònica, confirmant la pertinència pedagògica i definint els requisits de formació docent necessaris per a la implantació autònoma."
+        },
+        "entity": {
+          "name": "",
+          "type": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "sector": "mfg",
+        "stakeholderCategory": "",
+        "levels": [
+          "FP",
+          "Docentes"
+        ],
+        "pilotType": "",
+        "validationType": "pedagogical-validation",
+        "validationStage": "completed",
+        "mentoringType": "",
+        "helix": [],
+        "relatedDeliverable": "",
+        "relatedOerId": "",
+        "publishedAt": "2026-01-20",
+        "revisionDate": "2026-03-10",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "Ene 2026",
+          "en": "Jan 2026",
+          "va": "Gen 2026"
+        },
+        "revisionDateLabel": {
+          "es": "Mar 2026",
+          "en": "Mar 2026",
+          "va": "Mar 2026"
+        },
+        "deadlineLabel": null,
+        "tags": {
+          "es": [
+            "Visión artificial",
+            "Control de calidad",
+            "FP Fabricación",
+            "Validación pedagógica",
+            "Cerámica"
+          ],
+          "en": [
+            "Computer vision",
+            "Quality control",
+            "Manufacturing VET",
+            "Pedagogical validation",
+            "Ceramics"
+          ],
+          "va": [
+            "Visió artificial",
+            "Control de qualitat",
+            "FP Fabricació",
+            "Validació pedagògica",
+            "Ceràmica"
+          ]
+        }
+      },
+      "classification": {
+        "aiSteamFocus": [
+          "data-ai",
+          "maker-steam"
+        ],
+        "tripleTransition": [
+          "digital",
+          "green"
+        ],
+        "policyCluster": [
+          "integrated-pedagogy",
+          "learning-ecosystems"
+        ],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "verificationStatus": "",
+        "pilotStatus": ""
+      },
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "validations"
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "summary-only",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "rightsNote": {
+          "es": "La ficha de validación y el análisis curricular resumido se publican bajo CC BY 4.0. Las respuestas individuales de la encuesta docente son confidenciales.",
+          "en": "The validation sheet and summarised curriculum analysis are published under CC BY 4.0. Individual teacher survey responses are confidential.",
+          "va": "La fitxa de validació i l'anàlisi curricular resumida es publiquen sota CC BY 4.0. Les respostes individuals de l'enquesta docent són confidencials."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "proposer": {
+          "name": "Pamesa Cerámica S.A. — Dirección de Ingeniería de Proceso",
+          "type": "industry",
+          "role": {
+            "es": "Empresa proponente del reto — aportó el dataset y el contexto industrial",
+            "en": "Challenge-proposing company — provided the dataset and industrial context",
+            "va": "Empresa proponent del repte — va aportar el dataset i el context industrial"
+          }
+        },
+        "validators": [
+          {
+            "name": "AI-STEAM Comité Técnico Pedagogía FP",
+            "type": "sector-association",
+            "role": {
+              "es": "Revisión del encaje curricular en ciclos de FP de Fabricación y Mecatrónica",
+              "en": "Curricular fit review for Manufacturing and Mechatronics VET cycles",
+              "va": "Revisió de l'encaix curricular en cicles de FP de Fabricació i Mecatrònica"
+            }
+          },
+          {
+            "name": "IES Ausiàs March (Manises)",
+            "type": "university",
+            "role": {
+              "es": "Centro de FP piloto — revisión docente del módulo y estimación de carga lectiva",
+              "en": "Pilot VET centre — teacher review of the module and teaching load estimate",
+              "va": "Centre de FP pilot — revisió docent del mòdul i estimació de càrrega lectiva"
+            }
+          }
+        ]
+      },
+      "validation": {
+        "objectType": "challenge",
+        "objectTitle": {
+          "es": "Reto — Control de calidad visual con IA en línea de producción de componentes cerámicos",
+          "en": "Challenge — AI visual quality control on ceramic component production line",
+          "va": "Repte — Control de qualitat visual amb IA en línia de producció de components ceràmics"
+        },
+        "validationQuestion": {
+          "es": "¿El módulo de visión artificial para control de calidad tiene encaje curricular en los ciclos de FP de Fabricación Mecánica y Mecatrónica, y puede implantarse de forma autónoma por los docentes tras una formación de 2 días?",
+          "en": "Does the computer vision quality control module have curricular fit in Mechanical Manufacturing and Mechatronics VET cycles, and can it be implemented autonomously by teachers after 2 days of training?",
+          "va": "El mòdul de visió artificial per a control de qualitat té encaix curricular en els cicles de FP de Fabricació Mecànica i Mecatrònica, i pot implantar-se de forma autònoma pel professorat després d'una formació de 2 dies?"
+        },
+        "need": {
+          "es": "Los ciclos de FP de Fabricación Mecánica y Mecatrónica incluyen unidades de trabajo sobre control de calidad que actualmente no contemplan herramientas de visión artificial. La industria cerámica y metalmecánica valenciana demanda técnicos con estas competencias que los ciclos actuales no cubren.",
+          "en": "Mechanical Manufacturing and Mechatronics VET cycles include quality control learning units that currently do not include computer vision tools. The Valencian ceramic and metalworking industry demands technicians with these competencies that current cycles do not cover.",
+          "va": "Els cicles de FP de Fabricació Mecànica i Mecatrònica inclouen unitats de treball sobre control de qualitat que actualment no contemplen eines de visió artificial. La indústria ceràmica i metal·lomecànica valenciana demanda tècnics amb estes competències que els cicles actuals no cobreixen."
+        },
+        "context": {
+          "es": "El Comité Técnico de Pedagogía FP realizó un análisis de alineación del módulo propuesto con los Reales Decretos de los ciclos de Fabricación Mecánica (RD 1687/2011) y Mecatrónica Industrial (RD 1039/2011), identificando las unidades de trabajo donde se puede integrar el contenido. El IES Ausiàs March estimó la carga lectiva necesaria y los requisitos de equipamiento.",
+          "en": "The FP Pedagogy Technical Committee analysed the alignment of the proposed module with the Royal Decrees for Mechanical Manufacturing (RD 1687/2011) and Industrial Mechatronics (RD 1039/2011) cycles, identifying the learning units where content can be integrated. IES Ausiàs March estimated the required teaching load and equipment requirements.",
+          "va": "El Comité Tècnic de Pedagogia FP va realitzar una anàlisi d'alineació del mòdul proposat amb els Reials Decrets dels cicles de Fabricació Mecànica (RD 1687/2011) i Mecatrònica Industrial (RD 1039/2011), identificant les unitats de treball on es pot integrar el contingut. L'IES Ausiàs March va estimar la càrrega lectiva necessària i els requisits d'equipament."
+        },
+        "method": {
+          "es": "Análisis curricular por el Comité Técnico, revisión docente por el IES Ausiàs March, encuesta a 12 docentes de FP de Fabricación sobre percepción de dificultad y viabilidad de implantación, y triage ConsensUE para routing.",
+          "en": "Curriculum analysis by the Technical Committee, teacher review by IES Ausiàs March, survey of 12 Manufacturing VET teachers on perceived difficulty and implementation feasibility, and ConsensUE triage for routing.",
+          "va": "Anàlisi curricular pel Comité Tècnic, revisió docent per l'IES Ausiàs March, enquesta a 12 docents de FP de Fabricació sobre percepció de dificultat i viabilitat d'implantació, i triatge ConsensUE per a enrutament."
+        },
+        "validationEnvironment": [
+          {
+            "label": {
+              "es": "Análisis curricular — Reales Decretos FP Fabricación y Mecatrónica",
+              "en": "Curriculum analysis — Royal Decrees for Manufacturing and Mechatronics VET",
+              "va": "Anàlisi curricular — Reials Decrets FP Fabricació i Mecatrònica"
+            }
+          },
+          {
+            "label": {
+              "es": "Encuesta a 12 docentes de FP de Fabricación Mecánica",
+              "en": "Survey of 12 Mechanical Manufacturing VET teachers",
+              "va": "Enquesta a 12 docents de FP de Fabricació Mecànica"
+            }
+          },
+          {
+            "label": {
+              "es": "Sesión de revisión docente en IES Ausiàs March",
+              "en": "Teacher review session at IES Ausiàs March",
+              "va": "Sessió de revisió docent a l'IES Ausiàs March"
+            }
+          }
+        ]
+      },
+      "criteria": {
+        "items": [
+          {
+            "id": "curricular-fit",
+            "label": {
+              "es": "Encaje curricular en los ciclos de FP identificados",
+              "en": "Curricular fit in the identified VET cycles",
+              "va": "Encaix curricular en els cicles de FP identificats"
+            },
+            "result": "positive",
+            "note": {
+              "es": "El módulo se integra directamente en la UD de \"Control dimensional y de calidad\" presente en ambos ciclos. El Comité identifica 8-10 horas de integración natural sin modificar el currículo.",
+              "en": "The module integrates directly into the \"Dimensional and quality control\" learning unit present in both cycles. The Committee identifies 8-10 hours of natural integration without curriculum modification.",
+              "va": "El mòdul s'integra directament en la UD de \"Control dimensional i de qualitat\" present en tots dos cicles. El Comité identifica 8-10 hores d'integració natural sense modificar el currículum."
+            }
+          },
+          {
+            "id": "teacher-confidence",
+            "label": {
+              "es": "Confianza del profesorado para implantar el módulo autónomamente",
+              "en": "Teacher confidence to implement the module autonomously",
+              "va": "Confiança del professorat per implantar el mòdul autònomament"
+            },
+            "result": "medium",
+            "note": {
+              "es": "El 67% de los docentes encuestados declara baja confianza inicial en visión artificial. Se requiere formación docente de 2 días; los docentes que la reciben suben a 8,2/10 de confianza (dato del piloto previo de Pamesa).",
+              "en": "67% of surveyed teachers declare low initial confidence in computer vision. 2-day teacher training is required; those who receive it rise to 8.2/10 confidence (data from the prior Pamesa pilot).",
+              "va": "El 67% dels docents enquestats declara baixa confiança inicial en visió artificial. Es requereix formació docent de 2 dies; els docents que la reben pugen a 8,2/10 de confiança (dada del pilot previ de Pamesa)."
+            }
+          },
+          {
+            "id": "equipment-requirements",
+            "label": {
+              "es": "Viabilidad de los requisitos de equipamiento en centros estándar",
+              "en": "Feasibility of equipment requirements in standard centres",
+              "va": "Viabilitat dels requisits d'equipament en centres estàndard"
+            },
+            "result": "manageable",
+            "note": {
+              "es": "El módulo requiere GPU dedicada o cámara industrial para la práctica completa. Se define una versión reducida que funciona con cámaras USB estándar para centros sin equipamiento especializado.",
+              "en": "The module requires a dedicated GPU or industrial camera for the full practice. A reduced version is defined that works with standard USB cameras for centres without specialist equipment.",
+              "va": "El mòdul requereix GPU dedicada o càmera industrial per a la pràctica completa. Es defineix una versió reduïda que funciona amb càmeres USB estàndard per a centres sense equipament especialitzat."
+            }
+          },
+          {
+            "id": "industry-relevance",
+            "label": {
+              "es": "Relevancia industrial del contenido para el mercado laboral valenciano",
+              "en": "Industrial relevance of the content for the Valencian labour market",
+              "va": "Rellevància industrial del contingut per al mercat laboral valencià"
+            },
+            "result": "positive",
+            "note": {
+              "es": "La industria cerámica valenciana (Tile of Spain, ASCER) confirma que la visión artificial para control de calidad es una competencia prioritaria en sus planes de contratación para 2026-2028.",
+              "en": "The Valencian ceramics industry (Tile of Spain, ASCER) confirms that computer vision for quality control is a priority competency in their 2026-2028 hiring plans.",
+              "va": "La indústria ceràmica valenciana (Tile of Spain, ASCER) confirma que la visió artificial per a control de qualitat és una competència prioritària en els seus plans de contractació per a 2026-2028."
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "evidenceLevel": "reviewed",
+        "collectionMethod": {
+          "es": "Análisis curricular documental, encuesta a 12 docentes (Likert 5 puntos), revisión en IES Ausiàs March y datos del piloto previo de Pamesa con residentes industriales.",
+          "en": "Documentary curriculum analysis, survey of 12 teachers (5-point Likert), review at IES Ausiàs March and data from the prior Pamesa pilot with industrial residents.",
+          "va": "Anàlisi curricular documental, enquesta a 12 docents (Likert 5 punts), revisió a l'IES Ausiàs March i dades del pilot previ de Pamesa amb residents industrials."
+        },
+        "indicators": [
+          {
+            "id": "curricular-alignment",
+            "label": {
+              "es": "Número de unidades de trabajo donde se puede integrar el módulo",
+              "en": "Number of learning units where the module can be integrated",
+              "va": "Nombre d'unitats de treball on es pot integrar el mòdul"
+            },
+            "metric": {
+              "es": "3 unidades de trabajo en Fabricación Mecánica, 2 en Mecatrónica",
+              "en": "3 learning units in Mechanical Manufacturing, 2 in Mechatronics",
+              "va": "3 unitats de treball en Fabricació Mecànica, 2 en Mecatrònica"
+            }
+          },
+          {
+            "id": "teacher-survey",
+            "label": {
+              "es": "Confianza media del profesorado encuestado para implantar el módulo (sin formación previa)",
+              "en": "Average confidence of surveyed teachers to implement the module (without prior training)",
+              "va": "Confiança mitjana del professorat enquestàt per implantar el mòdul (sense formació prèvia)"
+            },
+            "metric": {
+              "es": "4,2/10 antes de formación; 8,2/10 después de formación docente de 2 días (dato piloto Pamesa)",
+              "en": "4.2/10 before training; 8.2/10 after 2-day teacher training (Pamesa pilot data)",
+              "va": "4,2/10 abans de la formació; 8,2/10 després de formació docent de 2 dies (dada pilot Pamesa)"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "La encuesta se realizó con 12 docentes de 3 centros, lo que puede no ser representativo del conjunto de docentes de FP de Fabricación de la Comunitat. La versión reducida (cámara USB) no ha sido testada pedagógicamente.",
+          "en": "The survey was conducted with 12 teachers from 3 centres, which may not be representative of all Manufacturing VET teachers in the Community. The reduced version (USB camera) has not been pedagogically tested.",
+          "va": "L'enquesta es va realitzar amb 12 docents de 3 centres, la qual cosa pot no ser representativa del conjunt de docents de FP de Fabricació de la Comunitat. La versió reduïda (càmera USB) no ha sigut testada pedagògicament."
+        }
+      },
+      "decision": {
+        "outcome": "validated-track-b",
+        "label": {
+          "es": "Validado — clasificado Track B con requisito de formación docente previa",
+          "en": "Validated — classified as Track B with prior teacher training requirement",
+          "va": "Validat — classificat Track B amb requisit de formació docent prèvia"
+        },
+        "rationale": {
+          "es": "La validación confirma encaje curricular claro y alta relevancia industrial. El requisito de formación docente de 2 días se considera manejable y se añade como condición para la replicación. Se clasifica como Track B dado su carácter de recurso educativo aplicado.",
+          "en": "Validation confirms clear curricular fit and high industrial relevance. The 2-day teacher training requirement is considered manageable and is added as a replication condition. Classified as Track B given its applied educational resource nature.",
+          "va": "La validació confirma encaix curricular clar i alta rellevància industrial. El requisit de formació docent de 2 dies es considera manejable i s'afegeix com a condició per a la replicació. Es classifica com a Track B atès el seu caràcter de recurs educatiu aplicat."
+        },
+        "nextStep": {
+          "type": "design-module",
+          "label": {
+            "es": "Diseñar el módulo de formación docente de 2 días y publicar la guía de integración curricular",
+            "en": "Design the 2-day teacher training module and publish the curricular integration guide",
+            "va": "Dissenyar el mòdul de formació docent de 2 dies i publicar la guia d'integració curricular"
+          }
+        }
+      },
+      "trackRouting": {
+        "route": "track-b",
+        "label": {
+          "es": "Clasificado Track B — recurso educativo para FP de Fabricación con requisito de formación docente",
+          "en": "Classified as Track B — educational resource for Manufacturing VET with teacher training requirement",
+          "va": "Classificat Track B — recurs educatiu per a FP de Fabricació amb requisit de formació docent"
+        },
+        "academicReview": {
+          "enabled": false,
+          "reviewer": null,
+          "note": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        }
+      },
+      "relations": {
+        "validatedChallengeId": "reto-control-calidad-vision-ia-mfg",
+        "resultingPilotIds": [],
+        "resultingCaseIds": [],
+        "resultingResourceIds": [],
+        "relatedMentorshipIds": [],
+        "nextPossibleItems": [
+          "pilot",
+          "resource"
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/validations/validation-pedagogica-control-calidad-mfg/",
+        "items": []
+      },
+      "resources": {
+        "externalLinks": []
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver validación",
+            "en": "View validation",
+            "va": "Veure validació"
+          },
+          "url": "",
+          "system": ""
+        },
+        "secondaryAction": null
+      },
+      "presentation": {
+        "card": {
+          "variant": "validation",
+          "showValidationType": true,
+          "showDecision": true,
+          "showEvidenceLevel": true,
+          "showWindow": true,
+          "showValidationEnvironment": true,
+          "showDownloadsIndicator": false,
+          "mainBlockLabel": {
+            "es": "Qué se valida",
+            "en": "What is validated",
+            "va": "Què es valida"
+          }
+        },
+        "detail": {
+          "sections": {
+            "object": true,
+            "need": true,
+            "context": true,
+            "method": true,
+            "criteria": true,
+            "evidence": true,
+            "decision": true,
+            "downloads": false,
+            "resources": true,
+            "people": true,
+            "access": true,
+            "trackRouting": true,
+            "relations": false
+          }
+        }
+      },
+      "validationWindow": {
+        "start": "2025-11-01",
+        "end": "2026-01-15",
+        "label": {
+          "es": "Nov 2025 – Ene 2026",
+          "en": "Nov 2025 – Jan 2026",
+          "va": "Nov 2025 – Gen 2026"
+        }
+      },
+      "criteriaCount": 4,
+      "validationTypeLabel": {
+        "es": "Validación pedagógica",
+        "en": "Pedagogical validation",
+        "va": "Validació pedagògica"
+      },
+      "validationStageLabel": {
+        "es": "Completada",
+        "en": "Completed",
+        "va": "Completada"
+      },
+      "decisionOutcomeLabel": {
+        "es": "Validado — Track B",
+        "en": "Validated — Track B",
+        "va": "Validat — Track B"
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "template": {
+        "requiredBlocks": [
+          "validation",
+          "criteria",
+          "evidence",
+          "decision"
+        ],
+        "optionalBlocks": [
+          "downloads",
+          "resources",
+          "access",
+          "trackRouting",
+          "relations",
+          "people",
+          "externalFlow"
+        ],
+        "cardSignal": "validation"
       }
     },
     {
@@ -17568,6 +20027,507 @@ export const MARKETPLACE_CONFIG = {
           "trackA"
         ],
         "cardSignal": "transferValue"
+      }
+    },
+    {
+      "id": "validation-stakeholder-salud-digital-nts",
+      "type": "validation",
+      "tab": "validations",
+      "sortDate": "2026-02-20",
+      "visible": true,
+      "sourcePath": "content/challenges/items/validations/validation-stakeholder-salud-digital-nts.yml",
+      "core": {
+        "status": "validated",
+        "maturity": "idea",
+        "title": {
+          "es": "Validación stakeholder — Necesidad de competencias digitales en salud en la FP Sanitaria valenciana",
+          "en": "Stakeholder validation — Digital health competency needs in Valencian Health VET",
+          "va": "Validació stakeholder — Necessitat de competències digitals en salut en la FP Sanitària valenciana"
+        },
+        "summary": {
+          "es": "Validación con hospitales públicos, colegios profesionales sanitarios y centros de FP de la Comunitat Valenciana de la brecha de competencias digitales en salud que existe entre la formación recibida en FP Sanitario y las competencias que demandan los entornos clínicos actuales, con clasificación Track A para el máster universitario.",
+          "en": "Validation with public hospitals, healthcare professional associations and VET centres in the Valencian Community of the digital health competency gap between Health VET training and the competencies demanded by current clinical settings, with Track A classification for the university master's programme.",
+          "va": "Validació amb hospitals públics, col·legis professionals sanitaris i centres de FP de la Comunitat Valenciana de la bretxa de competències digitals en salut que existeix entre la formació rebuda en FP Sanitari i les competències que demanden els entorns clínics actuals, amb classificació Track A per al màster universitari."
+        },
+        "entity": {
+          "name": "",
+          "type": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "sector": "nts",
+        "stakeholderCategory": "",
+        "levels": [
+          "FP",
+          "Máster",
+          "Docentes"
+        ],
+        "pilotType": "",
+        "validationType": "stakeholder-validation",
+        "validationStage": "completed",
+        "mentoringType": "",
+        "helix": [],
+        "relatedDeliverable": "",
+        "relatedOerId": "",
+        "publishedAt": "2025-12-01",
+        "revisionDate": "2026-02-20",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "Dic 2025",
+          "en": "Dec 2025",
+          "va": "Des 2025"
+        },
+        "revisionDateLabel": {
+          "es": "Feb 2026",
+          "en": "Feb 2026",
+          "va": "Feb 2026"
+        },
+        "deadlineLabel": null,
+        "tags": {
+          "es": [
+            "Competencias digitales",
+            "FP Sanitario",
+            "Salud digital",
+            "Validación sectorial",
+            "IA médica"
+          ],
+          "en": [
+            "Digital competences",
+            "Health VET",
+            "Digital health",
+            "Sectoral validation",
+            "Medical AI"
+          ],
+          "va": [
+            "Competències digitals",
+            "FP Sanitari",
+            "Salut digital",
+            "Validació sectorial",
+            "IA mèdica"
+          ]
+        }
+      },
+      "classification": {
+        "aiSteamFocus": [
+          "data-ai",
+          "responsible-ai"
+        ],
+        "tripleTransition": [
+          "digital",
+          "social"
+        ],
+        "policyCluster": [
+          "equity-inclusion",
+          "integrated-pedagogy"
+        ],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "verificationStatus": "",
+        "pilotStatus": ""
+      },
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "validations"
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "summary-only",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "rightsNote": {
+          "es": "Los datos de la encuesta se publican en forma agregada. Las respuestas individuales y las actas de las entrevistas son confidenciales.",
+          "en": "Survey data is published in aggregate form. Individual responses and interview minutes are confidential.",
+          "va": "Les dades de l'enquesta es publiquen en forma agregada. Les respostes individuals i les actes de les entrevistes són confidencials."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "proposer": {
+          "name": "Consell Valencià d'Infermeria",
+          "type": "sector-association",
+          "role": {
+            "es": "Colegio profesional proponente — identificó la brecha de competencias digitales en sus colegiados recientes",
+            "en": "Proposing professional association — identified the digital competency gap in its recent members",
+            "va": "Col·legi professional proponent — va identificar la bretxa de competències digitals en els seus col·legiats recents"
+          }
+        },
+        "validators": [
+          {
+            "name": "Hospital Universitari i Politècnic La Fe",
+            "type": "public-entity",
+            "role": {
+              "es": "Hospital validador — confirmó la brecha desde la perspectiva del empleador clínico",
+              "en": "Validating hospital — confirmed the gap from the clinical employer perspective",
+              "va": "Hospital validador — va confirmar la bretxa des de la perspectiva de l'empleador clínic"
+            }
+          },
+          {
+            "name": "Conselleria de Sanitat Universal i Salut Pública",
+            "type": "public-admin",
+            "role": {
+              "es": "Administración sanitaria — validó la alineación con el Plan de Transformación Digital Sanitaria",
+              "en": "Health administration — validated alignment with the Healthcare Digital Transformation Plan",
+              "va": "Administració sanitària — va validar l'alineació amb el Pla de Transformació Digital Sanitària"
+            }
+          },
+          {
+            "name": "AI-STEAM Comité Técnico Salud Digital",
+            "type": "sector-association",
+            "role": {
+              "es": "Triage ConsensUE y clasificación Track A",
+              "en": "ConsensUE triage and Track A classification",
+              "va": "Triatge ConsensUE i classificació Track A"
+            }
+          }
+        ]
+      },
+      "validation": {
+        "objectType": "need",
+        "objectTitle": {
+          "es": "Brecha de competencias digitales en salud en los graduados de FP Sanitario valenciano",
+          "en": "Digital health competency gap in Valencian Health VET graduates",
+          "va": "Bretxa de competències digitals en salut en els graduats de FP Sanitari valencià"
+        },
+        "validationQuestion": {
+          "es": "¿Existe una brecha de competencias digitales en salud entre lo que forman actualmente los ciclos de FP Sanitario y lo que demandan los entornos clínicos valencianos, y es esta brecha suficientemente significativa para justificar una intervención sistemática en el currículo de FP y en el máster?",
+          "en": "Is there a digital health competency gap between what current Health VET cycles train and what Valencian clinical settings demand, and is this gap significant enough to justify a systematic intervention in the VET curriculum and the master's programme?",
+          "va": "Existeix una bretxa de competències digitals en salut entre el que formen actualment els cicles de FP Sanitari i el que demanden els entorns clínics valencians, i és aquesta bretxa suficientment significativa per a justificar una intervenció sistemàtica en el currículum de FP i en el màster?"
+        },
+        "need": {
+          "es": "El Consell Valencià d'Infermeria detectó en su encuesta anual de inserción laboral 2025 que el 71% de los nuevos colegiados que habían cursado FP Sanitario declaraba sentirse \"poco preparado\" o \"nada preparado\" para trabajar con herramientas de IA y sistemas de apoyo a la decisión clínica presentes en sus centros de trabajo.",
+          "en": "The Consell Valencià d'Infermeria detected in its 2025 annual job placement survey that 71% of new members who had studied Health VET declared feeling \"poorly prepared\" or \"not at all prepared\" to work with AI tools and clinical decision support systems present in their workplaces.",
+          "va": "El Consell Valencià d'Infermeria va detectar en la seua enquesta anual d'inserció laboral 2025 que el 71% dels nous col·legiats que havien cursat FP Sanitari declarava sentir-se \"poc preparat\" o \"gens preparat\" per a treballar amb eines d'IA i sistemes de suport a la decisió clínica presents en els seus llocs de treball."
+        },
+        "context": {
+          "es": "El Hospital La Fe y la Conselleria de Sanitat confirmaron la brecha desde sus perspectivas institucionales. La encuesta se extendió a una muestra de 180 supervisores clínicos de 8 hospitales de la red pública valenciana, y el 83% identificó la competencia digital como una prioridad de formación continua para los técnicos de FP Sanitario.",
+          "en": "Hospital La Fe and the Conselleria de Sanitat confirmed the gap from their institutional perspectives. The survey was extended to a sample of 180 clinical supervisors from 8 hospitals in the Valencian public network, and 83% identified digital competence as a continuing education priority for Health VET technicians.",
+          "va": "L'Hospital La Fe i la Conselleria de Sanitat van confirmar la bretxa des de les seues perspectives institucionals. L'enquesta es va estendre a una mostra de 180 supervisors clínics de 8 hospitals de la xarxa pública valenciana, i el 83% va identificar la competència digital com una prioritat de formació contínua per als tècnics de FP Sanitari."
+        },
+        "method": {
+          "es": "Encuesta al Consell Valencià d'Infermeria (inserción laboral 2025), entrevistas con supervisores clínicos del Hospital La Fe, análisis de los planes de transformación digital de la Conselleria de Sanitat y triage ConsensUE para clasificación Track A / Track B.",
+          "en": "Consell Valencià d'Infermeria survey (2025 job placement), interviews with La Fe clinical supervisors, analysis of Conselleria de Sanitat digital transformation plans and ConsensUE triage for Track A / Track B classification.",
+          "va": "Enquesta del Consell Valencià d'Infermeria (inserció laboral 2025), entrevistes amb supervisors clínics de l'Hospital La Fe, anàlisi dels plans de transformació digital de la Conselleria de Sanitat i triatge ConsensUE per a classificació Track A / Track B."
+        },
+        "validationEnvironment": [
+          {
+            "label": {
+              "es": "Encuesta de inserción laboral 2025 — Consell Valencià d'Infermeria (n=312)",
+              "en": "2025 job placement survey — Consell Valencià d'Infermeria (n=312)",
+              "va": "Enquesta d'inserció laboral 2025 — Consell Valencià d'Infermeria (n=312)"
+            }
+          },
+          {
+            "label": {
+              "es": "Entrevistas con 180 supervisores clínicos — 8 hospitales red pública valenciana",
+              "en": "Interviews with 180 clinical supervisors — 8 Valencian public hospital network hospitals",
+              "va": "Entrevistes amb 180 supervisors clínics — 8 hospitals xarxa pública valenciana"
+            }
+          },
+          {
+            "label": {
+              "es": "Triage ConsensUE — Comité Técnico Salud Digital",
+              "en": "ConsensUE triage — Digital Health Technical Committee",
+              "va": "Triatge ConsensUE — Comité Tècnic Salut Digital"
+            }
+          }
+        ]
+      },
+      "criteria": {
+        "items": [
+          {
+            "id": "competency-gap-size",
+            "label": {
+              "es": "Magnitud de la brecha de competencias detectada",
+              "en": "Magnitude of the detected competency gap",
+              "va": "Magnitud de la bretxa de competències detectada"
+            },
+            "result": "positive",
+            "note": {
+              "es": "El 71% de los nuevos colegiados de FP Sanitario y el 83% de los supervisores clínicos confirman la brecha. La magnitud justifica una intervención curricular sistemática.",
+              "en": "71% of new Health VET professional members and 83% of clinical supervisors confirm the gap. The magnitude justifies a systematic curricular intervention.",
+              "va": "El 71% dels nous col·legiats de FP Sanitari i el 83% dels supervisors clínics confirmen la bretxa. La magnitud justifica una intervenció curricular sistemàtica."
+            }
+          },
+          {
+            "id": "employer-demand",
+            "label": {
+              "es": "Demanda del empleador clínico de competencias digitales en nuevos técnicos",
+              "en": "Clinical employer demand for digital competences in new technicians",
+              "va": "Demanda de l'empleador clínic de competències digitals en nous tècnics"
+            },
+            "result": "positive",
+            "note": {
+              "es": "Los 8 hospitales de la muestra identifican IA en diagnóstico, sistemas de información clínica y ciberseguridad sanitaria como competencias prioritarias para los nuevos técnicos contratados.",
+              "en": "All 8 hospitals in the sample identify AI in diagnosis, clinical information systems and healthcare cybersecurity as priority competences for newly hired technicians.",
+              "va": "Els 8 hospitals de la mostra identifiquen IA en diagnòstic, sistemes d'informació clínica i ciberseguretat sanitària com a competències prioritàries per als nous tècnics contractats."
+            }
+          },
+          {
+            "id": "academic-track-fit",
+            "label": {
+              "es": "Pertinencia de la vía académica (Track A) para abordar la brecha",
+              "en": "Relevance of the academic route (Track A) to address the gap",
+              "va": "Pertinència de la via acadèmica (Track A) per a abordar la bretxa"
+            },
+            "result": "positive",
+            "note": {
+              "es": "El Comité concluye que la profundidad de la brecha justifica tanto una intervención en FP (Track B, módulos de 8-10 horas) como un tratamiento académico más profundo en el máster (Track A).",
+              "en": "The Committee concludes that the depth of the gap justifies both a VET intervention (Track B, 8-10 hour modules) and deeper academic treatment at master's level (Track A).",
+              "va": "El Comité conclou que la profunditat de la bretxa justifica tant una intervenció en FP (Track B, mòduls de 8-10 hores) com un tractament acadèmic més profund en el màster (Track A)."
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "evidenceLevel": "reviewed",
+        "collectionMethod": {
+          "es": "Encuesta de inserción laboral del Consell Valencià d'Infermeria (n=312), entrevistas semiestructuradas con 180 supervisores clínicos de 8 hospitales y análisis de planes de transformación digital de la Conselleria de Sanitat.",
+          "en": "Consell Valencià d'Infermeria job placement survey (n=312), semi-structured interviews with 180 clinical supervisors from 8 hospitals and analysis of Conselleria de Sanitat digital transformation plans.",
+          "va": "Enquesta d'inserció laboral del Consell Valencià d'Infermeria (n=312), entrevistes semiestructurades amb 180 supervisors clínics de 8 hospitals i anàlisi de plans de transformació digital de la Conselleria de Sanitat."
+        },
+        "indicators": [
+          {
+            "id": "graduate-unpreparedness",
+            "label": {
+              "es": "Porcentaje de nuevos colegiados de FP que se declaran poco o nada preparados digitalmente",
+              "en": "Percentage of new VET professional members declaring themselves poorly or not at all digitally prepared",
+              "va": "Percentatge de nous col·legiats de FP que es declaren poc o gens preparats digitalment"
+            },
+            "metric": {
+              "es": "71% (encuesta inserción laboral 2025, n=312)",
+              "en": "71% (2025 job placement survey, n=312)",
+              "va": "71% (enquesta inserció laboral 2025, n=312)"
+            }
+          },
+          {
+            "id": "supervisor-demand",
+            "label": {
+              "es": "Porcentaje de supervisores clínicos que identifican la competencia digital como prioritaria",
+              "en": "Percentage of clinical supervisors identifying digital competence as a priority",
+              "va": "Percentatge de supervisors clínics que identifiquen la competència digital com a prioritària"
+            },
+            "metric": {
+              "es": "83% (entrevistas, n=180)",
+              "en": "83% (interviews, n=180)",
+              "va": "83% (entrevistes, n=180)"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "La muestra de supervisores clínicos está sesgada hacia hospitales grandes de la red pública. Centros de atención primaria y clínicas privadas pueden tener perfiles de demanda diferentes.",
+          "en": "The clinical supervisor sample is biased towards large public network hospitals. Primary care centres and private clinics may have different demand profiles.",
+          "va": "La mostra de supervisors clínics està esbiaixada cap a hospitals grans de la xarxa pública. Centres d'atenció primària i clíniques privades poden tenir perfils de demanda diferents."
+        }
+      },
+      "decision": {
+        "outcome": "validated-track-a",
+        "label": {
+          "es": "Validado — clasificado Track A para tratamiento académico en máster y Track B para intervención en FP",
+          "en": "Validated — classified as Track A for academic treatment at master's level and Track B for VET intervention",
+          "va": "Validat — classificat Track A per a tractament acadèmic en màster i Track B per a intervenció en FP"
+        },
+        "rationale": {
+          "es": "La magnitud de la brecha y la demanda del empleador justifican una intervención en dos velocidades. La intervención en FP (Track B) abordará los módulos básicos de 8-10 horas para los ciclos de Imagen para el Diagnóstico y Cuidados Auxiliares de Enfermería. La intervención académica (Track A) desarrollará una asignatura optativa en el máster universitario de Gestión de Servicios Sanitarios.",
+          "en": "The magnitude of the gap and employer demand justify a two-speed intervention. The VET intervention (Track B) will address 8-10 hour basic modules for Diagnostic Imaging and Nursing Care cycles. The academic intervention (Track A) will develop an optional subject in the university master's in Healthcare Services Management.",
+          "va": "La magnitud de la bretxa i la demanda de l'empleador justifiquen una intervenció en dues velocitats. La intervenció en FP (Track B) abordarà els mòduls bàsics de 8-10 hores per als cicles d'Imatge per al Diagnòstic i Cures Auxiliars d'Infermeria. La intervenció acadèmica (Track A) desenvoluparà una assignatura optativa en el màster universitari de Gestió de Serveis Sanitaris."
+        },
+        "nextStep": {
+          "type": "design-module",
+          "label": {
+            "es": "Diseñar los módulos de FP (Track B) y la asignatura optativa de máster (Track A) de competencias digitales en salud",
+            "en": "Design VET modules (Track B) and the optional master's subject (Track A) in digital health competencies",
+            "va": "Dissenyar els mòduls de FP (Track B) i l'assignatura optativa de màster (Track A) de competències digitals en salut"
+          }
+        }
+      },
+      "trackRouting": {
+        "route": "track-a",
+        "label": {
+          "es": "Clasificado Track A (máster) + Track B (FP) — intervención en dos niveles educativos",
+          "en": "Classified as Track A (master's) + Track B (VET) — two-level educational intervention",
+          "va": "Classificat Track A (màster) + Track B (FP) — intervenció en dos nivells educatius"
+        },
+        "academicReview": {
+          "enabled": true,
+          "reviewer": {
+            "name": "AI-STEAM Comité Técnico Salud Digital",
+            "type": "sector-association"
+          },
+          "note": {
+            "es": "El Comité Técnico validó la clasificación doble Track A + Track B como respuesta adecuada a la escala de la brecha detectada.",
+            "en": "The Technical Committee validated the dual Track A + Track B classification as an appropriate response to the scale of the detected gap.",
+            "va": "El Comité Tècnic va validar la classificació doble Track A + Track B com a resposta adequada a l'escala de la bretxa detectada."
+          }
+        }
+      },
+      "relations": {
+        "validatedChallengeId": "",
+        "resultingPilotIds": [
+          "pilot-ia-diagnostico-cancer-piel-nts"
+        ],
+        "resultingCaseIds": [
+          "diagnostico-ia-fp-sanitario-nts"
+        ],
+        "resultingResourceIds": [],
+        "relatedMentorshipIds": [],
+        "nextPossibleItems": [
+          "pilot",
+          "case",
+          "resource"
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/validations/validation-stakeholder-salud-digital-nts/",
+        "items": []
+      },
+      "resources": {
+        "externalLinks": []
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver validación",
+            "en": "View validation",
+            "va": "Veure validació"
+          },
+          "url": "",
+          "system": ""
+        },
+        "secondaryAction": null
+      },
+      "presentation": {
+        "card": {
+          "variant": "validation",
+          "showValidationType": true,
+          "showDecision": true,
+          "showEvidenceLevel": true,
+          "showWindow": true,
+          "showValidationEnvironment": true,
+          "showDownloadsIndicator": false,
+          "mainBlockLabel": {
+            "es": "Qué se valida",
+            "en": "What is validated",
+            "va": "Què es valida"
+          }
+        },
+        "detail": {
+          "sections": {
+            "object": true,
+            "need": true,
+            "context": true,
+            "method": true,
+            "criteria": true,
+            "evidence": true,
+            "decision": true,
+            "downloads": false,
+            "resources": true,
+            "people": true,
+            "access": true,
+            "trackRouting": true,
+            "relations": false
+          }
+        }
+      },
+      "validationWindow": {
+        "start": "2025-09-15",
+        "end": "2025-11-30",
+        "label": {
+          "es": "Sep – Nov 2025",
+          "en": "Sep – Nov 2025",
+          "va": "Set – Nov 2025"
+        }
+      },
+      "criteriaCount": 3,
+      "validationTypeLabel": {
+        "es": "Validación stakeholder",
+        "en": "Stakeholder validation",
+        "va": "Validació stakeholder"
+      },
+      "validationStageLabel": {
+        "es": "Completada",
+        "en": "Completed",
+        "va": "Completada"
+      },
+      "decisionOutcomeLabel": {
+        "es": "Validado — Track A",
+        "en": "Validated — Track A",
+        "va": "Validat — Track A"
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "template": {
+        "requiredBlocks": [
+          "validation",
+          "criteria",
+          "evidence",
+          "decision"
+        ],
+        "optionalBlocks": [
+          "downloads",
+          "resources",
+          "access",
+          "trackRouting",
+          "relations",
+          "people",
+          "externalFlow"
+        ],
+        "cardSignal": "validation"
       }
     },
     {
@@ -19741,6 +22701,510 @@ export const MARKETPLACE_CONFIG = {
         "es": "Validado — Track A",
         "en": "Validated — Track A",
         "va": "Validat — Track A"
+      },
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "template": {
+        "requiredBlocks": [
+          "validation",
+          "criteria",
+          "evidence",
+          "decision"
+        ],
+        "optionalBlocks": [
+          "downloads",
+          "resources",
+          "access",
+          "trackRouting",
+          "relations",
+          "people",
+          "externalFlow"
+        ],
+        "cardSignal": "validation"
+      }
+    },
+    {
+      "id": "validation-academica-rl-edificios-hou",
+      "type": "validation",
+      "tab": "validations",
+      "sortDate": "2026-01-10",
+      "visible": true,
+      "sourcePath": "content/challenges/items/validations/validation-academica-rl-edificios-hou.yml",
+      "core": {
+        "status": "validated",
+        "maturity": "idea",
+        "title": {
+          "es": "Validación académica — Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
+          "en": "Academic validation — Reinforcement learning applied to energy management of university buildings",
+          "va": "Validació acadèmica — Aprenentatge per reforç aplicat a la gestió energètica d'edificis universitaris"
+        },
+        "summary": {
+          "es": "Validación académica por el Instituto de Ingeniería Energética de la UPV y el grupo de investigación SAIL de la UCLM de la pertinencia científica y formativa del uso de aprendizaje por refuerzo para la gestión energética adaptativa en edificios, confirmando su encaje como contenido de máster y justificando la creación del Living Lab como entorno de investigación-formación.",
+          "en": "Academic validation by UPV's Institute of Energy Engineering and UCLM's SAIL research group of the scientific and educational relevance of reinforcement learning for adaptive building energy management, confirming its fit as master's content and justifying the creation of the Living Lab as a research-training environment.",
+          "va": "Validació acadèmica per l'Institut d'Enginyeria Energètica de la UPV i el grup de recerca SAIL de la UCLM de la pertinència científica i formativa de l'ús d'aprenentatge per reforç per a la gestió energètica adaptativa en edificis, confirmant el seu encaix com a contingut de màster i justificant la creació del Living Lab com a entorn de recerca-formació."
+        },
+        "entity": {
+          "name": "",
+          "type": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "sector": "hou",
+        "stakeholderCategory": "",
+        "levels": [
+          "Máster",
+          "FP"
+        ],
+        "pilotType": "",
+        "validationType": "academic-validation",
+        "validationStage": "completed",
+        "mentoringType": "",
+        "helix": [],
+        "relatedDeliverable": "",
+        "relatedOerId": "",
+        "publishedAt": "2025-11-20",
+        "revisionDate": "2026-01-10",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "Nov 2025",
+          "en": "Nov 2025",
+          "va": "Nov 2025"
+        },
+        "revisionDateLabel": {
+          "es": "Ene 2026",
+          "en": "Jan 2026",
+          "va": "Gen 2026"
+        },
+        "deadlineLabel": null,
+        "tags": {
+          "es": [
+            "Aprendizaje por refuerzo",
+            "Eficiencia energética",
+            "Living Lab",
+            "Validación académica",
+            "Edificios"
+          ],
+          "en": [
+            "Reinforcement learning",
+            "Energy efficiency",
+            "Living Lab",
+            "Academic validation",
+            "Buildings"
+          ],
+          "va": [
+            "Aprenentatge per reforç",
+            "Eficiència energètica",
+            "Living Lab",
+            "Validació acadèmica",
+            "Edificis"
+          ]
+        }
+      },
+      "classification": {
+        "aiSteamFocus": [
+          "data-ai",
+          "maker-steam"
+        ],
+        "tripleTransition": [
+          "digital",
+          "green"
+        ],
+        "policyCluster": [
+          "infrastructure-evidence",
+          "integrated-pedagogy"
+        ],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "verificationStatus": "",
+        "pilotStatus": ""
+      },
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "validations"
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "summary-only",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "rightsNote": {
+          "es": "La ficha de validación y el resumen de la revisión bibliométrica se publican bajo CC BY 4.0. El informe completo de revisión de SAIL-UCLM es un documento académico confidencial.",
+          "en": "The validation sheet and bibliometric review summary are published under CC BY 4.0. The full SAIL-UCLM review report is a confidential academic document.",
+          "va": "La fitxa de validació i el resum de la revisió bibliomètrica es publiquen sota CC BY 4.0. L'informe complet de revisió de SAIL-UCLM és un document acadèmic confidencial."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "proposer": {
+          "name": "Instituto de Ingeniería Energética — Universitat Politècnica de València",
+          "type": "university",
+          "role": {
+            "es": "Grupo académico proponente — investigación en control energético con IA",
+            "en": "Proposing academic group — research in AI-based energy control",
+            "va": "Grup acadèmic proponent — recerca en control energètic amb IA"
+          }
+        },
+        "validators": [
+          {
+            "name": "Grupo SAIL — Universidad de Castilla-La Mancha",
+            "type": "university",
+            "role": {
+              "es": "Revisión académica externa — autores del entorno Sinergym, referencia mundial en RL para edificios",
+              "en": "External academic review — Sinergym environment authors, world reference in RL for buildings",
+              "va": "Revisió acadèmica externa — autors de l'entorn Sinergym, referència mundial en RL per a edificis"
+            }
+          },
+          {
+            "name": "AI-STEAM Comité Técnico Investigación",
+            "type": "sector-association",
+            "role": {
+              "es": "Validación del encaje en el ecosistema AI-STEAM y clasificación Track A",
+              "en": "Validation of fit within the AI-STEAM ecosystem and Track A classification",
+              "va": "Validació de l'encaix en l'ecosistema AI-STEAM i classificació Track A"
+            }
+          }
+        ]
+      },
+      "validation": {
+        "objectType": "methodology",
+        "objectTitle": {
+          "es": "Metodología Living Lab para el entrenamiento y validación de agentes RL de gestión energética con participación de estudiantes de FP y máster",
+          "en": "Living Lab methodology for training and validating RL energy management agents with VET and master's student participation",
+          "va": "Metodologia Living Lab per a l'entrenament i validació d'agents RL de gestió energètica amb participació d'estudiants de FP i màster"
+        },
+        "validationQuestion": {
+          "es": "¿Tiene suficiente base científica y potencial formativo el enfoque Living Lab con RL para la gestión energética de edificios universitarios como para justificar su desarrollo como piloto de investigación-formación con participación conjunta de alumnos de FP y máster?",
+          "en": "Does the Living Lab approach with RL for university building energy management have sufficient scientific basis and educational potential to justify its development as a research-training pilot with joint participation of VET and master's students?",
+          "va": "Té suficient base científica i potencial formatiu l'enfocament Living Lab amb RL per a la gestió energètica d'edificis universitaris per a justificar el seu desenvolupament com a pilot de recerca-formació amb participació conjunta d'alumnes de FP i màster?"
+        },
+        "need": {
+          "es": "Los programas de máster en ingeniería energética y FP de instalaciones eléctricas carecen de entornos reales donde los alumnos puedan aplicar algoritmos de IA con datos y consecuencias energéticas reales. La simulación pura no transmite las restricciones operativas y los compromisos entre confort y eficiencia que se dan en un edificio real.",
+          "en": "Master's programmes in energy engineering and electrical installations VET lack real environments where students can apply AI algorithms with real energy data and consequences. Pure simulation does not convey the operational constraints and comfort-efficiency trade-offs that occur in a real building.",
+          "va": "Els programes de màster en enginyeria energètica i FP d'instal·lacions elèctriques manquen d'entorns reals on els alumnes puguen aplicar algorismes d'IA amb dades i conseqüències energètiques reals. La simulació pura no transmet les restriccions operatives i els compromisos entre confort i eficiència que es donen en un edifici real."
+        },
+        "context": {
+          "es": "El grupo SAIL de la UCLM, autores del entorno Sinergym (referencia mundial en RL para edificios con más de 800 citas), validó que la metodología propuesta sigue las mejores prácticas del campo y que el edificio 4I de la UPV ofrece condiciones experimentales de alta calidad (diversidad de usos, sensor density, acceso a datos SCADA). La revisión incluyó un análisis de la literatura de los últimos 3 años sobre RL en gestión energética de edificios.",
+          "en": "UCLM's SAIL group, authors of the Sinergym environment (world reference in building RL with over 800 citations), validated that the proposed methodology follows field best practices and that UPV's building 4I offers high-quality experimental conditions (use diversity, sensor density, SCADA data access). The review included a literature analysis of the last 3 years on RL in building energy management.",
+          "va": "El grup SAIL de la UCLM, autors de l'entorn Sinergym (referència mundial en RL per a edificis amb més de 800 cites), va validar que la metodologia proposada segueix les millors pràctiques del camp i que l'edifici 4I de la UPV ofereix condicions experimentals d'alta qualitat (diversitat d'usos, densitat de sensors, accés a dades SCADA). La revisió va incloure una anàlisi de la literatura dels últims 3 anys sobre RL en gestió energètica d'edificis."
+        },
+        "method": {
+          "es": "Revisión de la literatura de los últimos 3 años sobre RL en gestión energética (SAIL-UCLM), evaluación de las condiciones experimentales del edificio 4I (IIE-UPV) y sesión de valoración del potencial formativo con el Comité Técnico de Investigación de AI-STEAM.",
+          "en": "Review of the last 3 years of literature on RL in energy management (SAIL-UCLM), evaluation of the experimental conditions of building 4I (IIE-UPV) and assessment session on educational potential with the AI-STEAM Research Technical Committee.",
+          "va": "Revisió de la literatura dels últims 3 anys sobre RL en gestió energètica (SAIL-UCLM), avaluació de les condicions experimentals de l'edifici 4I (IIE-UPV) i sessió de valoració del potencial formatiu amb el Comité Tècnic de Recerca d'AI-STEAM."
+        },
+        "validationEnvironment": [
+          {
+            "label": {
+              "es": "Revisión bibliométrica SAIL-UCLM — 3 años de literatura sobre RL en edificios",
+              "en": "SAIL-UCLM bibliometric review — 3 years of RL in buildings literature",
+              "va": "Revisió bibliomètrica SAIL-UCLM — 3 anys de literatura sobre RL en edificis"
+            }
+          },
+          {
+            "label": {
+              "es": "Evaluación experimental del edificio 4I — IIE-UPV",
+              "en": "Building 4I experimental evaluation — IIE-UPV",
+              "va": "Avaluació experimental de l'edifici 4I — IIE-UPV"
+            }
+          },
+          {
+            "label": {
+              "es": "Sesión de valoración formativa — Comité Técnico Investigación AI-STEAM",
+              "en": "Educational value assessment session — AI-STEAM Research Technical Committee",
+              "va": "Sessió de valoració formativa — Comité Tècnic Recerca AI-STEAM"
+            }
+          }
+        ]
+      },
+      "criteria": {
+        "items": [
+          {
+            "id": "scientific-basis",
+            "label": {
+              "es": "Base científica del enfoque RL para gestión energética de edificios",
+              "en": "Scientific basis of the RL approach for building energy management",
+              "va": "Base científica de l'enfocament RL per a gestió energètica d'edificis"
+            },
+            "result": "positive",
+            "note": {
+              "es": "SAIL-UCLM confirma que RL es la metodología más activa en el campo (47% de los artículos de los últimos 3 años), con resultados de reducción de consumo del 15-30% en entornos comparables al edificio 4I.",
+              "en": "SAIL-UCLM confirms that RL is the most active methodology in the field (47% of articles in the last 3 years), with consumption reduction results of 15-30% in environments comparable to building 4I.",
+              "va": "SAIL-UCLM confirma que RL és la metodologia més activa en el camp (47% dels articles dels últims 3 anys), amb resultats de reducció de consum del 15-30% en entorns comparables a l'edifici 4I."
+            }
+          },
+          {
+            "id": "experimental-quality",
+            "label": {
+              "es": "Calidad experimental del edificio 4I como entorno de Living Lab",
+              "en": "Experimental quality of building 4I as a Living Lab environment",
+              "va": "Qualitat experimental de l'edifici 4I com a entorn de Living Lab"
+            },
+            "result": "positive",
+            "note": {
+              "es": "El edificio 4I supera los estándares de la literatura en densidad de sensores y diversidad de patrones de ocupación. La integración con EnergyPlus para simulación paralela es directamente viable.",
+              "en": "Building 4I exceeds literature standards in sensor density and occupancy pattern diversity. Integration with EnergyPlus for parallel simulation is directly feasible.",
+              "va": "L'edifici 4I supera els estàndards de la literatura en densitat de sensors i diversitat de patrons d'ocupació. La integració amb EnergyPlus per a simulació paral·lela és directament viable."
+            }
+          },
+          {
+            "id": "educational-potential",
+            "label": {
+              "es": "Potencial formativo de la metodología Living Lab para FP y máster",
+              "en": "Educational potential of the Living Lab methodology for VET and master's",
+              "va": "Potencial formatiu de la metodologia Living Lab per a FP i màster"
+            },
+            "result": "positive",
+            "note": {
+              "es": "El Comité valora positivamente el modelo de co-desarrollo entre alumnos de FP (operación, sensores) y máster (algoritmos), que permite a cada nivel contribuir desde sus competencias propias.",
+              "en": "The Committee positively values the co-development model between VET students (operations, sensors) and master's students (algorithms), allowing each level to contribute from their own competencies.",
+              "va": "El Comité valora positivament el model de co-desenvolupament entre alumnes de FP (operació, sensors) i màster (algorismes), que permet a cada nivell contribuir des de les seues competències pròpies."
+            }
+          }
+        ]
+      },
+      "evidence": {
+        "evidenceLevel": "reviewed",
+        "collectionMethod": {
+          "es": "Revisión bibliométrica sistemática (SAIL-UCLM, n=87 artículos 2022-2025), evaluación experimental de las condiciones del edificio 4I y sesión de valoración formativa con el Comité Técnico.",
+          "en": "Systematic bibliometric review (SAIL-UCLM, n=87 articles 2022-2025), experimental evaluation of building 4I conditions and educational value assessment session with the Technical Committee.",
+          "va": "Revisió bibliomètrica sistemàtica (SAIL-UCLM, n=87 articles 2022-2025), avaluació experimental de les condicions de l'edifici 4I i sessió de valoració formativa amb el Comité Tècnic."
+        },
+        "indicators": [
+          {
+            "id": "literature-activity",
+            "label": {
+              "es": "Porcentaje de artículos sobre RL en gestión energética de edificios en los últimos 3 años",
+              "en": "Percentage of articles on RL in building energy management in the last 3 years",
+              "va": "Percentatge d'articles sobre RL en gestió energètica d'edificis en els últims 3 anys"
+            },
+            "metric": {
+              "es": "47% del total de publicaciones sobre IA en gestión energética (SAIL-UCLM, 2022-2025)",
+              "en": "47% of total AI in energy management publications (SAIL-UCLM, 2022-2025)",
+              "va": "47% del total de publicacions sobre IA en gestió energètica (SAIL-UCLM, 2022-2025)"
+            }
+          },
+          {
+            "id": "comparable-results",
+            "label": {
+              "es": "Rango de reducción de consumo reportado en entornos comparables",
+              "en": "Consumption reduction range reported in comparable environments",
+              "va": "Rang de reducció de consum reportat en entorns comparables"
+            },
+            "metric": {
+              "es": "15-30% en edificios universitarios con BMS y datos SCADA (revisión SAIL-UCLM)",
+              "en": "15-30% in university buildings with BMS and SCADA data (SAIL-UCLM review)",
+              "va": "15-30% en edificis universitaris amb BMS i dades SCADA (revisió SAIL-UCLM)"
+            }
+          }
+        ],
+        "limitations": {
+          "es": "La revisión académica valida la metodología y el potencial, no los resultados del piloto (que aún no se ha ejecutado en el momento de la validación). Los resultados reales pueden diferir de los rangos bibliográficos por condiciones específicas del edificio 4I.",
+          "en": "The academic review validates the methodology and potential, not the pilot results (which had not yet been executed at the time of validation). Actual results may differ from bibliographic ranges due to specific building 4I conditions.",
+          "va": "La revisió acadèmica valida la metodologia i el potencial, no els resultats del pilot (que encara no s'havia executat en el moment de la validació). Els resultats reals poden diferir dels rangs bibliogràfics per condicions específiques de l'edifici 4I."
+        }
+      },
+      "decision": {
+        "outcome": "validated-for-pilot",
+        "label": {
+          "es": "Validado — apto para piloto Living Lab con apertura a publicación de resultados como caso",
+          "en": "Validated — suitable for Living Lab pilot with openness to publishing results as a case",
+          "va": "Validat — apte per a pilot Living Lab amb obertura a publicació de resultats com a cas"
+        },
+        "rationale": {
+          "es": "La revisión académica confirma base científica sólida y condiciones experimentales de alta calidad en el edificio 4I. El Comité recomienda proceder con el piloto Living Lab y publicar los resultados como caso de referencia si se supera el umbral de reducción del 20%.",
+          "en": "The academic review confirms a solid scientific basis and high-quality experimental conditions in building 4I. The Committee recommends proceeding with the Living Lab pilot and publishing results as a reference case if the 20% reduction threshold is exceeded.",
+          "va": "La revisió acadèmica confirma base científica sòlida i condicions experimentals d'alta qualitat en l'edifici 4I. El Comité recomana procedir amb el pilot Living Lab i publicar els resultats com a cas de referència si se supera el llindar de reducció del 20%."
+        },
+        "nextStep": {
+          "type": "launch-pilot",
+          "label": {
+            "es": "Iniciar el piloto Living Lab en el edificio 4I con equipos mixtos FP-máster",
+            "en": "Launch the Living Lab pilot in building 4I with mixed VET-master's teams",
+            "va": "Iniciar el pilot Living Lab en l'edifici 4I amb equips mixtos FP-màster"
+          }
+        }
+      },
+      "trackRouting": {
+        "route": "track-b",
+        "label": {
+          "es": "Clasificado Track B — piloto Living Lab con potencial de conversión a caso verificado",
+          "en": "Classified as Track B — Living Lab pilot with potential for conversion to verified case",
+          "va": "Classificat Track B — pilot Living Lab amb potencial de conversió a cas verificat"
+        },
+        "academicReview": {
+          "enabled": true,
+          "reviewer": {
+            "name": "Grupo SAIL — Universidad de Castilla-La Mancha",
+            "type": "university"
+          },
+          "note": {
+            "es": "Revisión bibliométrica sistemática sobre RL en gestión energética de edificios realizada por los autores de Sinergym.",
+            "en": "Systematic bibliometric review on RL in building energy management conducted by the Sinergym authors.",
+            "va": "Revisió bibliomètrica sistemàtica sobre RL en gestió energètica d'edificis realitzada pels autors de Sinergym."
+          }
+        }
+      },
+      "relations": {
+        "validatedChallengeId": "",
+        "resultingPilotIds": [
+          "pilot-living-lab-eficiencia-energetica-hou"
+        ],
+        "resultingCaseIds": [],
+        "resultingResourceIds": [],
+        "relatedMentorshipIds": [],
+        "nextPossibleItems": [
+          "case",
+          "resource"
+        ]
+      },
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/validations/validation-academica-rl-edificios-hou/",
+        "items": []
+      },
+      "resources": {
+        "externalLinks": [
+          {
+            "id": "sinergym-paper",
+            "type": "external-system",
+            "label": {
+              "es": "Sinergym — artículo de referencia (SAIL-UCLM)",
+              "en": "Sinergym — reference paper (SAIL-UCLM)",
+              "va": "Sinergym — article de referència (SAIL-UCLM)"
+            },
+            "url": "https://github.com/ugr-sail/sinergym",
+            "access": {
+              "es": "Repositorio público con documentación y paper asociado",
+              "en": "Public repository with documentation and associated paper",
+              "va": "Repositori públic amb documentació i article associat"
+            }
+          }
+        ]
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Ver validación",
+            "en": "View validation",
+            "va": "Veure validació"
+          },
+          "url": "",
+          "system": ""
+        },
+        "secondaryAction": null
+      },
+      "presentation": {
+        "card": {
+          "variant": "validation",
+          "showValidationType": true,
+          "showDecision": true,
+          "showEvidenceLevel": true,
+          "showWindow": true,
+          "showValidationEnvironment": true,
+          "showDownloadsIndicator": false,
+          "mainBlockLabel": {
+            "es": "Qué se valida",
+            "en": "What is validated",
+            "va": "Què es valida"
+          }
+        },
+        "detail": {
+          "sections": {
+            "object": true,
+            "need": true,
+            "context": true,
+            "method": true,
+            "criteria": true,
+            "evidence": true,
+            "decision": true,
+            "downloads": false,
+            "resources": true,
+            "people": true,
+            "access": true,
+            "trackRouting": true,
+            "relations": false
+          }
+        }
+      },
+      "validationWindow": {
+        "start": "2025-09-01",
+        "end": "2025-11-15",
+        "label": {
+          "es": "Sep – Nov 2025",
+          "en": "Sep – Nov 2025",
+          "va": "Set – Nov 2025"
+        }
+      },
+      "criteriaCount": 3,
+      "validationTypeLabel": {
+        "es": "Validación académica",
+        "en": "Academic validation",
+        "va": "Validació acadèmica"
+      },
+      "validationStageLabel": {
+        "es": "Completada",
+        "en": "Completed",
+        "va": "Completada"
+      },
+      "decisionOutcomeLabel": {
+        "es": "Validado — derivar a piloto",
+        "en": "Validated — refer to pilot",
+        "va": "Validat — derivar a pilot"
       },
       "hasDownloads": false,
       "downloadCount": 0,
@@ -35833,6 +39297,2966 @@ export const MARKETPLACE_CONFIG = {
     ],
     "validations": [
       {
+        "id": "validation-etica-ia-seleccion-personal-adm",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-05-01",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-etica-ia-seleccion-personal-adm.yml",
+        "core": {
+          "status": "resolved",
+          "maturity": "idea",
+          "title": {
+            "es": "Validación ética — Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
+            "en": "Ethical validation — Use of AI for candidate screening in public administration selection processes",
+            "va": "Validació ètica — Ús d'IA per al cribratge de candidats en processos selectius de l'administració pública"
+          },
+          "summary": {
+            "es": "Validación ética de una propuesta de sistema de IA para el cribado automático de candidatos en oposiciones y concursos de méritos de la administración pública valenciana. La validación concluye con una recomendación de reformulación sustancial antes de poder considerarse apto para piloto.",
+            "en": "Ethical validation of a proposed AI system for automatic candidate screening in public administration competitive examinations and merit competitions in the Valencian Community. The validation concludes with a recommendation for substantial reformulation before being considered suitable for piloting.",
+            "va": "Validació ètica d'una proposta de sistema d'IA per al cribratge automàtic de candidats en oposicions i concursos de mèrits de l'administració pública valenciana. La validació conclou amb una recomanació de reformulació substancial abans de poder considerar-se apte per a pilot."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "sector": "adm",
+          "stakeholderCategory": "",
+          "levels": [
+            "Máster"
+          ],
+          "pilotType": "",
+          "validationType": "ethical-validation",
+          "validationStage": "completed",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-03-01",
+          "revisionDate": "2026-05-01",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "Mar 2026",
+            "en": "Mar 2026",
+            "va": "Mar 2026"
+          },
+          "revisionDateLabel": {
+            "es": "May 2026",
+            "en": "May 2026",
+            "va": "Mai 2026"
+          },
+          "deadlineLabel": null,
+          "tags": {
+            "es": [
+              "IA en RRHH",
+              "Selección pública",
+              "Validación ética",
+              "Sesgos algorítmicos",
+              "Administración pública"
+            ],
+            "en": [
+              "AI in HR",
+              "Public recruitment",
+              "Ethical validation",
+              "Algorithmic bias",
+              "Public administration"
+            ],
+            "va": [
+              "IA en RRHH",
+              "Selecció pública",
+              "Validació ètica",
+              "Biaixos algorítmics",
+              "Administració pública"
+            ]
+          }
+        },
+        "classification": {
+          "aiSteamFocus": [
+            "responsible-ai",
+            "ai-ethics"
+          ],
+          "tripleTransition": [
+            "digital",
+            "social"
+          ],
+          "policyCluster": [
+            "equity-inclusion"
+          ],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "",
+          "dataAvailability": "summary-only",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "La ficha de validación y el resumen del análisis ético se publican bajo CC BY 4.0. El informe completo ALTAI y el análisis legal son documentos internos de la Generalitat y no se publican.",
+            "en": "The validation sheet and ethical analysis summary are published under CC BY 4.0. The full ALTAI report and legal analysis are internal Generalitat documents and are not published.",
+            "va": "La fitxa de validació i el resum de l'anàlisi ètica es publiquen sota CC BY 4.0. L'informe complet ALTAI i l'anàlisi legal són documents interns de la Generalitat i no es publiquen."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE"
+          },
+          "proposer": {
+            "name": "Dirección General de Función Pública — Generalitat Valenciana",
+            "type": "public-admin",
+            "role": {
+              "es": "Entidad proponente — exploración de IA para optimización de procesos selectivos masivos",
+              "en": "Proposing entity — exploration of AI for optimising large-scale selection processes",
+              "va": "Entitat proponent — exploració d'IA per a l'optimització de processos selectius massius"
+            }
+          },
+          "validators": [
+            {
+              "name": "Comité de Ética Digital de la Generalitat Valenciana",
+              "type": "public-admin",
+              "role": {
+                "es": "Órgano evaluador de impacto ético y riesgos de sesgo algorítmico",
+                "en": "Evaluating body for ethical impact and algorithmic bias risks",
+                "va": "Òrgan avaluador d'impacte ètic i riscos de biaix algorítmic"
+              }
+            },
+            {
+              "name": "AI-STEAM Comité Técnico Ética IA",
+              "type": "sector-association",
+              "role": {
+                "es": "Revisión independiente del análisis ético y clasificación de la propuesta",
+                "en": "Independent review of the ethical analysis and proposal classification",
+                "va": "Revisió independent de l'anàlisi ètica i classificació de la proposta"
+              }
+            }
+          ]
+        },
+        "validation": {
+          "objectType": "need",
+          "objectTitle": {
+            "es": "Propuesta de sistema IA para cribado automático de candidatos en oposiciones y concursos de méritos",
+            "en": "Proposed AI system for automatic candidate screening in competitive examinations and merit competitions",
+            "va": "Proposta de sistema IA per al cribratge automàtic de candidats en oposicions i concursos de mèrits"
+          },
+          "validationQuestion": {
+            "es": "¿Cumple la propuesta de sistema de IA para cribado de candidatos en la administración pública los requisitos éticos mínimos para ser considerada apta para un piloto, teniendo en cuenta el contexto de igualdad de acceso al empleo público y el Reglamento Europeo de IA?",
+            "en": "Does the proposed AI system for public administration candidate screening meet the minimum ethical requirements to be considered suitable for a pilot, taking into account the context of equal access to public employment and the European AI Act?",
+            "va": "La proposta de sistema d'IA per al cribratge de candidats en l'administració pública compleix els requisits ètics mínims per a ser considerada apta per a un pilot, tenint en compte el context d'igualtat d'accés a l'ocupació pública i el Reglament Europeu d'IA?"
+          },
+          "need": {
+            "es": "La Dirección General de Función Pública gestiona anualmente más de 15.000 solicitudes en procesos selectivos de la Generalitat. El proceso manual de cribado inicial genera cuellos de botella de 3-6 meses. Se exploró el uso de IA para acelerar el cribado preliminar de requisitos formales antes de la fase de oposición.",
+            "en": "The General Directorate of Public Employment manages more than 15,000 applications annually in Generalitat selection processes. The manual initial screening process creates 3-6 month bottlenecks. The use of AI was explored to accelerate preliminary screening of formal requirements before the examination stage.",
+            "va": "La Direcció General de Funció Pública gestiona anualment més de 15.000 sol·licituds en processos selectius de la Generalitat. El procés manual de cribratge inicial genera colls d'ampolla de 3-6 mesos. Es va explorar l'ús d'IA per accelerar el cribratge preliminar de requisits formals abans de la fase d'oposició."
+          },
+          "context": {
+            "es": "El Comité de Ética Digital evaluó la propuesta respecto al Reglamento Europeo de IA (clasificación de riesgo alto en sistemas de selección de personal), la Ley de Empleo Público y los principios de igualdad, mérito y capacidad que rigen el acceso a la función pública española. Se analizaron tres escenarios de uso del sistema propuesto con diferente nivel de autonomía del algoritmo.",
+            "en": "The Digital Ethics Committee assessed the proposal against the European AI Act (high-risk classification in personnel selection systems), the Public Employment Law and the principles of equality, merit and ability governing access to Spanish public service. Three usage scenarios of the proposed system with different levels of algorithmic autonomy were analysed.",
+            "va": "El Comité d'Ètica Digital va avaluar la proposta respecte al Reglament Europeu d'IA (classificació de risc alt en sistemes de selecció de personal), la Llei d'Ocupació Pública i els principis d'igualtat, mèrit i capacitat que regeixen l'accés a la funció pública espanyola. Es van analitzar tres escenaris d'ús del sistema proposat amb diferent nivell d'autonomia de l'algorisme."
+          },
+          "method": {
+            "es": "Análisis de impacto ético por el Comité de Ética Digital (metodología ALTAI adaptada), análisis legal por el Servicio Jurídico de la Generalitat, revisión por el Comité Técnico de Ética IA de AI-STEAM y consulta con sindicatos representativos de empleados públicos.",
+            "en": "Ethical impact analysis by the Digital Ethics Committee (adapted ALTAI methodology), legal analysis by the Generalitat Legal Service, review by the AI-STEAM AI Ethics Technical Committee and consultation with representative public employee unions.",
+            "va": "Anàlisi d'impacte ètic pel Comité d'Ètica Digital (metodologia ALTAI adaptada), anàlisi legal pel Servei Jurídic de la Generalitat, revisió pel Comité Tècnic d'Ètica IA d'AI-STEAM i consulta amb sindicats representatius d'empleats públics."
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Análisis ALTAI — Comité de Ética Digital de la Generalitat",
+                "en": "ALTAI analysis — Generalitat Digital Ethics Committee",
+                "va": "Anàlisi ALTAI — Comité d'Ètica Digital de la Generalitat"
+              }
+            },
+            {
+              "label": {
+                "es": "Análisis legal — Servicio Jurídico de la Generalitat Valenciana",
+                "en": "Legal analysis — Valencian Generalitat Legal Service",
+                "va": "Anàlisi legal — Servei Jurídic de la Generalitat Valenciana"
+              }
+            },
+            {
+              "label": {
+                "es": "Consulta sindical — CSIF y UGT-PV",
+                "en": "Union consultation — CSIF and UGT-PV",
+                "va": "Consulta sindical — CSIF i UGT-PV"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": [
+            {
+              "id": "legal-compliance",
+              "label": {
+                "es": "Cumplimiento del Reglamento Europeo de IA y normativa de empleo público",
+                "en": "Compliance with the European AI Act and public employment regulations",
+                "va": "Compliment del Reglament Europeu d'IA i normativa d'ocupació pública"
+              },
+              "result": "negative",
+              "note": {
+                "es": "El sistema propuesto se clasifica como de riesgo alto según el Reglamento de IA (Art. 6, Anexo III). Requiere evaluación de conformidad obligatoria antes de cualquier despliegue, que la propuesta actual no contempla.",
+                "en": "The proposed system is classified as high-risk under the AI Act (Art. 6, Annex III). It requires mandatory conformity assessment before any deployment, which the current proposal does not include.",
+                "va": "El sistema proposat es classifica com de risc alt segons el Reglament d'IA (Art. 6, Annex III). Requereix avaluació de conformitat obligatòria abans de qualsevol desplegament, que la proposta actual no contempla."
+              }
+            },
+            {
+              "id": "bias-risk",
+              "label": {
+                "es": "Riesgo de sesgo algorítmico en poblaciones protegidas",
+                "en": "Algorithmic bias risk in protected population groups",
+                "va": "Risc de biaix algorítmic en poblacions protegides"
+              },
+              "result": "negative",
+              "note": {
+                "es": "El análisis de los datos históricos de candidatos revela correlaciones entre variables proxy (zona de residencia, nombre) y categorías protegidas. Sin mitigación técnica demostrada, el riesgo de discriminación indirecta es inaceptable para un sistema de acceso a empleo público.",
+                "en": "Analysis of historical candidate data reveals correlations between proxy variables (residential area, name) and protected categories. Without demonstrated technical mitigation, the risk of indirect discrimination is unacceptable for a public employment access system.",
+                "va": "L'anàlisi de les dades històriques de candidats revela correlacions entre variables proxy (zona de residència, nom) i categories protegides. Sense mitigació tècnica demostrada, el risc de discriminació indirecta és inacceptable per a un sistema d'accés a l'ocupació pública."
+              }
+            },
+            {
+              "id": "transparency",
+              "label": {
+                "es": "Transparencia y explicabilidad de las decisiones del sistema",
+                "en": "Transparency and explainability of system decisions",
+                "va": "Transparència i explicabilitat de les decisions del sistema"
+              },
+              "result": "manageable",
+              "note": {
+                "es": "La propuesta contempla un modelo explicable (árbol de decisión regularizado), pero no incluye mecanismo de revisión humana obligatoria ni protocolo de recurso para candidatos afectados.",
+                "en": "The proposal includes an explainable model (regularised decision tree), but does not include a mandatory human review mechanism or an appeal protocol for affected candidates.",
+                "va": "La proposta contempla un model explicable (arbre de decisió regularitzat), però no inclou mecanisme de revisió humana obligatòria ni protocol de recurs per a candidats afectats."
+              }
+            },
+            {
+              "id": "union-acceptance",
+              "label": {
+                "es": "Aceptación por parte de los sindicatos representativos",
+                "en": "Acceptance by representative trade unions",
+                "va": "Acceptació per part dels sindicats representatius"
+              },
+              "result": "negative",
+              "note": {
+                "es": "CSIF y UGT-PV rechazan cualquier uso de IA en la fase de cribado sin garantías explícitas de revisión humana total de cada exclusión y derecho de impugnación documentada.",
+                "en": "CSIF and UGT-PV reject any AI use in the screening phase without explicit guarantees of full human review of each exclusion and documented appeal rights.",
+                "va": "CSIF i UGT-PV rebutgen qualsevol ús d'IA en la fase de cribratge sense garanties explícites de revisió humana total de cada exclusió i dret d'impugnació documentada."
+              }
+            }
+          ]
+        },
+        "evidence": {
+          "evidenceLevel": "reviewed",
+          "collectionMethod": {
+            "es": "Análisis de impacto ético ALTAI, análisis legal del Servicio Jurídico, consulta sindical con CSIF y UGT-PV, y análisis de correlaciones en datos históricos anonimizados de candidatos (2021-2024).",
+            "en": "ALTAI ethical impact analysis, Legal Service legal analysis, union consultation with CSIF and UGT-PV, and correlation analysis on anonymised historical candidate data (2021-2024).",
+            "va": "Anàlisi d'impacte ètic ALTAI, anàlisi legal del Servei Jurídic, consulta sindical amb CSIF i UGT-PV, i anàlisi de correlacions en dades històriques anonimitzades de candidats (2021-2024)."
+          },
+          "indicators": [
+            {
+              "id": "bias-detection",
+              "label": {
+                "es": "Correlaciones proxy-categoría protegida detectadas en datos históricos",
+                "en": "Proxy-protected category correlations detected in historical data",
+                "va": "Correlacions proxy-categoria protegida detectades en dades històriques"
+              },
+              "metric": {
+                "es": "3 variables proxy con correlación significativa (p<0.05) con género o origen geográfico",
+                "en": "3 proxy variables with significant correlation (p<0.05) with gender or geographic origin",
+                "va": "3 variables proxy amb correlació significativa (p<0.05) amb gènere o origen geogràfic"
+              }
+            },
+            {
+              "id": "legal-classification",
+              "label": {
+                "es": "Clasificación de riesgo bajo el Reglamento Europeo de IA",
+                "en": "Risk classification under the European AI Act",
+                "va": "Classificació de risc sota el Reglament Europeu d'IA"
+              },
+              "metric": {
+                "es": "Riesgo ALTO — Art. 6, Anexo III (sistemas de selección de personas para empleo)",
+                "en": "HIGH risk — Art. 6, Annex III (systems for selecting persons for employment)",
+                "va": "Risc ALT — Art. 6, Annex III (sistemes de selecció de persones per a ocupació)"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "El análisis se realizó sobre la propuesta conceptual. No se evaluó ningún prototipo funcional. Una reformulación que aborde los problemas identificados requeriría una nueva validación ética.",
+            "en": "The analysis was conducted on the conceptual proposal. No functional prototype was evaluated. A reformulation addressing the identified issues would require a new ethical validation.",
+            "va": "L'anàlisi es va realitzar sobre la proposta conceptual. No es va avaluar cap prototip funcional. Una reformulació que adreça els problemes identificats requeriria una nova validació ètica."
+          }
+        },
+        "decision": {
+          "outcome": "needs-reformulation",
+          "label": {
+            "es": "Requiere reformulación sustancial — no apto para piloto en estado actual",
+            "en": "Requires substantial reformulation — not suitable for piloting in current state",
+            "va": "Requereix reformulació substancial — no apte per a pilot en estat actual"
+          },
+          "rationale": {
+            "es": "La propuesta presenta riesgos éticos y legales inaceptables en su estado actual debido a la clasificación de riesgo alto del Reglamento de IA, el riesgo de discriminación indirecta documentado y el rechazo sindical. Se propone una reformulación que restrinja el uso de IA a verificación de requisitos formales documentales (no evaluación de mérito) con revisión humana obligatoria de cada exclusión.",
+            "en": "The proposal presents unacceptable ethical and legal risks in its current state due to its AI Act high-risk classification, the documented indirect discrimination risk and trade union rejection. A reformulation is proposed that restricts AI use to verification of formal documentary requirements (not merit evaluation) with mandatory human review of each exclusion.",
+            "va": "La proposta presenta riscos ètics i legals inacceptables en el seu estat actual a causa de la classificació de risc alt del Reglament d'IA, el risc de discriminació indirecta documentat i el rebuig sindical. Es proposa una reformulació que restringisca l'ús d'IA a la verificació de requisits formals documentals (no avaluació de mèrit) amb revisió humana obligatòria de cada exclusió."
+          },
+          "nextStep": {
+            "type": "reformulate",
+            "label": {
+              "es": "Reformular la propuesta restringiendo el alcance a verificación documental formal con revisión humana total y nueva validación ética",
+              "en": "Reformulate the proposal restricting scope to formal documentary verification with full human review and new ethical validation",
+              "va": "Reformular la proposta restringint l'abast a verificació documental formal amb revisió humana total i nova validació ètica"
+            }
+          }
+        },
+        "trackRouting": {
+          "route": "not-routed",
+          "label": {
+            "es": "No enrutado — propuesta devuelta para reformulación sustancial",
+            "en": "Not routed — proposal returned for substantial reformulation",
+            "va": "No enrutat — proposta retornada per a reformulació substancial"
+          },
+          "academicReview": {
+            "enabled": false,
+            "reviewer": null,
+            "note": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        },
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": [
+            "pilot"
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/validations/validation-etica-ia-seleccion-personal-adm/",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showValidationType": true,
+            "showDecision": true,
+            "showEvidenceLevel": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": false,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2026-01-10",
+          "end": "2026-02-28",
+          "label": {
+            "es": "Ene – Feb 2026",
+            "en": "Jan – Feb 2026",
+            "va": "Gen – Feb 2026"
+          }
+        },
+        "criteriaCount": 4,
+        "validationTypeLabel": {
+          "es": "Validación ética",
+          "en": "Ethical validation",
+          "va": "Validació ètica"
+        },
+        "validationStageLabel": {
+          "es": "Completada",
+          "en": "Completed",
+          "va": "Completada"
+        },
+        "decisionOutcomeLabel": {
+          "es": "Requiere reformulación",
+          "en": "Needs reformulation",
+          "va": "Requereix reformulació"
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-legal-datos-movilidad-mob",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-04-05",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-legal-datos-movilidad-mob.yml",
+        "core": {
+          "status": "validated",
+          "maturity": "idea",
+          "title": {
+            "es": "Validación legal — Uso de datos de movilidad urbana de Correos para el reto de optimización de rutas",
+            "en": "Legal validation — Use of Correos urban mobility data for the route optimisation challenge",
+            "va": "Validació legal — Ús de dades de mobilitat urbana de Correos per al repte d'optimització de rutes"
+          },
+          "summary": {
+            "es": "Validación legal del marco de cesión y anonimización de los datos de rutas y entregas de Correos necesarios para el reto de optimización de última milla, confirmando la viabilidad de la cesión bajo el RGPD y estableciendo las condiciones específicas de anonimización y uso que deben incluirse en las bases del reto.",
+            "en": "Legal validation of the framework for transferring and anonymising Correos route and delivery data needed for the last-mile optimisation challenge, confirming the feasibility of transfer under GDPR and establishing the specific anonymisation and use conditions to be included in the challenge terms.",
+            "va": "Validació legal del marc de cessió i anonimització de les dades de rutes i lliuraments de Correos necessàries per al repte d'optimització d'última milla, confirmant la viabilitat de la cessió sota el RGPD i establint les condicions específiques d'anonimització i ús que han d'incloure's en les bases del repte."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "sector": "mob",
+          "stakeholderCategory": "",
+          "levels": [
+            "Máster"
+          ],
+          "pilotType": "",
+          "validationType": "legal-validation",
+          "validationStage": "completed",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-02-20",
+          "revisionDate": "2026-04-05",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "Feb 2026",
+            "en": "Feb 2026",
+            "va": "Feb 2026"
+          },
+          "revisionDateLabel": {
+            "es": "Abr 2026",
+            "en": "Apr 2026",
+            "va": "Abr 2026"
+          },
+          "deadlineLabel": null,
+          "tags": {
+            "es": [
+              "RGPD",
+              "Datos de movilidad",
+              "Correos",
+              "Última milla",
+              "Validación legal"
+            ],
+            "en": [
+              "GDPR",
+              "Mobility data",
+              "Correos",
+              "Last mile",
+              "Legal validation"
+            ],
+            "va": [
+              "RGPD",
+              "Dades de mobilitat",
+              "Correos",
+              "Última milla",
+              "Validació legal"
+            ]
+          }
+        },
+        "classification": {
+          "aiSteamFocus": [
+            "responsible-ai",
+            "data-ai"
+          ],
+          "tripleTransition": [
+            "digital",
+            "green"
+          ],
+          "policyCluster": [
+            "infrastructure-evidence"
+          ],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "",
+          "dataAvailability": "summary-only",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "La ficha de validación legal se publica bajo CC BY 4.0. La EIPD completa y el protocolo de anonimización son documentos internos de Correos y no se publican. El acuerdo de uso se facilita a los equipos inscritos bajo NDA.",
+            "en": "The legal validation sheet is published under CC BY 4.0. The full DPIA and anonymisation protocol are internal Correos documents and are not published. The usage agreement is provided to registered teams under NDA.",
+            "va": "La fitxa de validació legal es publica sota CC BY 4.0. L'AIPD completa i el protocol d'anonimització són documents interns de Correos i no es publiquen. L'acord d'ús es facilita als equips inscrits sota NDA."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE"
+          },
+          "proposer": {
+            "name": "Correos — Dirección de Operaciones Zona Mediterráneo",
+            "type": "industry",
+            "role": {
+              "es": "Empresa proponente — solicitó validación legal antes de comprometerse a facilitar los datos",
+              "en": "Proposing company — requested legal validation before committing to provide the data",
+              "va": "Empresa proponent — va sol·licitar validació legal abans de comprometre's a facilitar les dades"
+            }
+          },
+          "validators": [
+            {
+              "name": "Correos — Delegado de Protección de Datos",
+              "type": "industry",
+              "role": {
+                "es": "DPO de Correos — revisión del marco legal de cesión de datos",
+                "en": "Correos DPO — review of the legal data transfer framework",
+                "va": "DPO de Correos — revisió del marc legal de cessió de dades"
+              }
+            },
+            {
+              "name": "AI-STEAM Asesoría Legal",
+              "type": "sector-association",
+              "role": {
+                "es": "Revisión independiente del cumplimiento RGPD y condiciones de uso para el reto",
+                "en": "Independent review of GDPR compliance and use conditions for the challenge",
+                "va": "Revisió independent del compliment RGPD i condicions d'ús per al repte"
+              }
+            }
+          ]
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Reto — Optimización de rutas de última milla con IA para logística urbana sostenible (uso del dataset de Correos)",
+            "en": "Challenge — AI last-mile route optimisation for sustainable urban logistics (use of Correos dataset)",
+            "va": "Repte — Optimització de rutes d'última milla amb IA per a logística urbana sostenible (ús del dataset de Correos)"
+          },
+          "validationQuestion": {
+            "es": "¿Es legalmente viable la cesión del dataset de rutas y entregas de Correos a equipos participantes en el reto bajo el RGPD, y cuáles son las condiciones mínimas de anonimización y uso que deben establecerse en las bases?",
+            "en": "Is the transfer of Correos routes and deliveries dataset to challenge-participating teams legally feasible under GDPR, and what are the minimum anonymisation and use conditions to be established in the challenge terms?",
+            "va": "És legalment viable la cessió del dataset de rutes i lliuraments de Correos a equips participants en el repte sota el RGPD, i quines són les condicions mínimes d'anonimització i ús que han d'establir-se en les bases?"
+          },
+          "need": {
+            "es": "El reto de optimización de rutas requiere que los equipos accedan a datos reales de rutas de Correos para entrenar y validar sus algoritmos. Sin datos reales, el reto pierde relevancia práctica. La cesión de datos de entregas puede implicar información de clientes (destinatarios) y datos operativos sensibles que requieren análisis legal previo.",
+            "en": "The route optimisation challenge requires teams to access real Correos route data to train and validate their algorithms. Without real data, the challenge loses practical relevance. The transfer of delivery data may involve customer information (recipients) and sensitive operational data requiring prior legal analysis.",
+            "va": "El repte d'optimització de rutes requereix que els equips accedisquen a dades reals de rutes de Correos per entrenar i validar els seus algorismes. Sense dades reals, el repte perd rellevància pràctica. La cessió de dades de lliuraments pot implicar informació de clients (destinataris) i dades operatives sensibles que requereixen anàlisi legal prèvia."
+          },
+          "context": {
+            "es": "El DPO de Correos y la Asesoría Legal de AI-STEAM analizaron conjuntamente el dataset propuesto para el reto (6 meses de rutas del centro histórico de Valencia) identificando las categorías de datos presentes, los riesgos de re-identificación y las medidas técnicas y organizativas necesarias para una cesión RGPD-conforme a equipos externos.",
+            "en": "The Correos DPO and AI-STEAM Legal Advisory jointly analysed the proposed challenge dataset (6 months of Valencia historic centre routes) identifying the data categories present, re-identification risks and the technical and organisational measures required for GDPR-compliant transfer to external teams.",
+            "va": "El DPO de Correos i l'Assessoria Legal d'AI-STEAM van analitzar conjuntament el dataset proposat per al repte (6 mesos de rutes del centre històric de València) identificant les categories de dades presents, els riscos de re-identificació i les mesures tècniques i organitzatives necessàries per a una cessió RGPD-conforme a equips externs."
+          },
+          "method": {
+            "es": "Análisis de categorías de datos del dataset por el DPO de Correos, evaluación de impacto relativa a la protección de datos (EIPD simplificada), definición del protocolo de anonimización de k-anonimato y revisión de las condiciones de uso propuestas por la Asesoría Legal de AI-STEAM.",
+            "en": "Data category analysis of the dataset by the Correos DPO, data protection impact assessment (simplified DPIA), definition of k-anonymity anonymisation protocol and review of proposed use conditions by the AI-STEAM Legal Advisory.",
+            "va": "Anàlisi de categories de dades del dataset pel DPO de Correos, avaluació d'impacte relativa a la protecció de dades (AIPD simplificada), definició del protocol d'anonimització de k-anonimat i revisió de les condicions d'ús proposades per l'Assessoria Legal d'AI-STEAM."
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "EIPD simplificada — DPO de Correos",
+                "en": "Simplified DPIA — Correos DPO",
+                "va": "AIPD simplificada — DPO de Correos"
+              }
+            },
+            {
+              "label": {
+                "es": "Revisión de condiciones de uso — AI-STEAM Asesoría Legal",
+                "en": "Use conditions review — AI-STEAM Legal Advisory",
+                "va": "Revisió de condicions d'ús — AI-STEAM Assessoria Legal"
+              }
+            },
+            {
+              "label": {
+                "es": "Protocolo de anonimización k-anonimato — DPO + Asesoría Legal",
+                "en": "K-anonymity anonymisation protocol — DPO + Legal Advisory",
+                "va": "Protocol d'anonimització k-anonimat — DPO + Assessoria Legal"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": [
+            {
+              "id": "gdpr-compliance",
+              "label": {
+                "es": "Viabilidad de la cesión bajo el RGPD con las medidas propuestas",
+                "en": "Feasibility of data transfer under GDPR with the proposed measures",
+                "va": "Viabilitat de la cessió sota el RGPD amb les mesures proposades"
+              },
+              "result": "positive",
+              "note": {
+                "es": "La EIPD concluye que la cesión es viable bajo los artículos 6(1)(f) (interés legítimo) y 89 (tratamiento con fines de investigación) del RGPD, siempre que se apliquen las medidas de anonimización documentadas en el protocolo adjunto.",
+                "en": "The DPIA concludes that transfer is feasible under GDPR articles 6(1)(f) (legitimate interest) and 89 (processing for research purposes), provided the anonymisation measures documented in the attached protocol are applied.",
+                "va": "L'AIPD conclou que la cessió és viable sota els articles 6(1)(f) (interès legítim) i 89 (tractament amb fins de recerca) del RGPD, sempre que s'apliquen les mesures d'anonimització documentades en el protocol adjunt."
+              }
+            },
+            {
+              "id": "re-identification-risk",
+              "label": {
+                "es": "Riesgo residual de re-identificación tras la anonimización",
+                "en": "Residual re-identification risk after anonymisation",
+                "va": "Risc residual de re-identificació després de l'anonimització"
+              },
+              "result": "manageable",
+              "note": {
+                "es": "El k-anonimato (k=5) aplicado a nivel de segmento de ruta y ventana temporal de 30 minutos reduce el riesgo de re-identificación a nivel aceptable. Las coordenadas de entrega se agregan al nivel de código postal, eliminando la posibilidad de identificar domicilios individuales.",
+                "en": "K-anonymity (k=5) applied at route segment and 30-minute time window level reduces re-identification risk to an acceptable level. Delivery coordinates are aggregated to postcode level, eliminating the possibility of identifying individual addresses.",
+                "va": "El k-anonimat (k=5) aplicat a nivell de segment de ruta i finestra temporal de 30 minuts redueix el risc de re-identificació a un nivell acceptable. Les coordenades de lliurament s'agreguen al nivell de codi postal, eliminant la possibilitat d'identificar domicilis individuals."
+              }
+            },
+            {
+              "id": "use-restrictions",
+              "label": {
+                "es": "Adecuación de las restricciones de uso propuestas para los equipos participantes",
+                "en": "Adequacy of the proposed use restrictions for participating teams",
+                "va": "Adequació de les restriccions d'ús proposades per als equips participants"
+              },
+              "result": "positive",
+              "note": {
+                "es": "El acuerdo de uso propuesto (no redistribución, uso exclusivo para el reto, destrucción certificada al finalizar) es compatible con el RGPD y con las políticas de datos operativos de Correos.",
+                "en": "The proposed usage agreement (no redistribution, exclusive use for the challenge, certified destruction upon completion) is compatible with GDPR and Correos operational data policies.",
+                "va": "L'acord d'ús proposat (no redistribució, ús exclusiu per al repte, destrucció certificada en finalitzar) és compatible amb el RGPD i amb les polítiques de dades operatives de Correos."
+              }
+            }
+          ]
+        },
+        "evidence": {
+          "evidenceLevel": "documented",
+          "collectionMethod": {
+            "es": "EIPD simplificada documentada por el DPO de Correos, protocolo de anonimización k-anonimato con especificaciones técnicas y revisión de las condiciones de uso por la Asesoría Legal de AI-STEAM.",
+            "en": "Simplified DPIA documented by the Correos DPO, k-anonymity anonymisation protocol with technical specifications and use conditions review by AI-STEAM Legal Advisory.",
+            "va": "AIPD simplificada documentada pel DPO de Correos, protocol d'anonimització k-anonimat amb especificacions tècniques i revisió de les condicions d'ús per l'Assessoria Legal d'AI-STEAM."
+          },
+          "indicators": [
+            {
+              "id": "legal-basis",
+              "label": {
+                "es": "Base legal identificada para la cesión del dataset",
+                "en": "Legal basis identified for dataset transfer",
+                "va": "Base legal identificada per a la cessió del dataset"
+              },
+              "metric": {
+                "es": "RGPD Art. 6(1)(f) + Art. 89 — interés legítimo e investigación",
+                "en": "GDPR Art. 6(1)(f) + Art. 89 — legitimate interest and research",
+                "va": "RGPD Art. 6(1)(f) + Art. 89 — interès legítim i recerca"
+              }
+            },
+            {
+              "id": "anonymisation-level",
+              "label": {
+                "es": "Nivel de k-anonimato aplicado",
+                "en": "K-anonymity level applied",
+                "va": "Nivell de k-anonimat aplicat"
+              },
+              "metric": {
+                "es": "k=5 a nivel de segmento de ruta + agregación a código postal para coordenadas de entrega",
+                "en": "k=5 at route segment level + postcode aggregation for delivery coordinates",
+                "va": "k=5 a nivell de segment de ruta + agregació a codi postal per a coordenades de lliurament"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "La validación cubre únicamente el dataset del reto. Cualquier uso posterior de los algoritmos desarrollados con datos de Correos en producción requeriría una EIPD completa separada.",
+            "en": "The validation covers only the challenge dataset. Any subsequent use of algorithms developed with Correos data in production would require a separate full DPIA.",
+            "va": "La validació cobreix únicament el dataset del repte. Qualsevol ús posterior dels algorismes desenvolupats amb dades de Correos en producció requeriria una AIPD completa separada."
+          }
+        },
+        "decision": {
+          "outcome": "validated-track-b",
+          "label": {
+            "es": "Validado — datos aptos para cesión en el reto con el protocolo de anonimización documentado",
+            "en": "Validated — data suitable for challenge transfer with the documented anonymisation protocol",
+            "va": "Validat — dades aptes per a cessió en el repte amb el protocol d'anonimització documentat"
+          },
+          "rationale": {
+            "es": "La EIPD y el análisis legal confirman que la cesión del dataset de Correos a equipos participantes es legalmente viable bajo el RGPD aplicando el protocolo de k-anonimato documentado y las restricciones de uso acordadas. Se puede proceder a publicar el reto en el Marketplace e incluir el acceso al dataset como incentivo para los equipos inscritos.",
+            "en": "The DPIA and legal analysis confirm that transfer of the Correos dataset to participating teams is legally feasible under GDPR by applying the documented k-anonymity protocol and agreed use restrictions. The challenge can be published on the Marketplace and dataset access included as an incentive for registered teams.",
+            "va": "L'AIPD i l'anàlisi legal confirmen que la cessió del dataset de Correos a equips participants és legalment viable sota el RGPD aplicant el protocol de k-anonimat documentat i les restriccions d'ús acordades. Es pot procedir a publicar el repte al Marketplace i incloure l'accés al dataset com a incentiu per als equips inscrits."
+          },
+          "nextStep": {
+            "type": "launch-pilot",
+            "label": {
+              "es": "Publicar el reto en el Marketplace con acceso condicionado al dataset tras firma del acuerdo de uso",
+              "en": "Publish the challenge on the Marketplace with conditional dataset access after signing the usage agreement",
+              "va": "Publicar el repte al Marketplace amb accés condicionat al dataset després de la signatura de l'acord d'ús"
+            }
+          }
+        },
+        "trackRouting": {
+          "route": "track-b",
+          "label": {
+            "es": "Clasificado Track B — reto viable con condiciones de acceso a datos documentadas",
+            "en": "Classified as Track B — viable challenge with documented data access conditions",
+            "va": "Classificat Track B — repte viable amb condicions d'accés a dades documentades"
+          },
+          "academicReview": {
+            "enabled": false,
+            "reviewer": null,
+            "note": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        },
+        "relations": {
+          "validatedChallengeId": "reto-optimizacion-rutas-logistica-mob",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": [
+            "pilot",
+            "case"
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/validations/validation-legal-datos-movilidad-mob/",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showValidationType": true,
+            "showDecision": true,
+            "showEvidenceLevel": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": false,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2026-01-05",
+          "end": "2026-02-15",
+          "label": {
+            "es": "Ene – Feb 2026",
+            "en": "Jan – Feb 2026",
+            "va": "Gen – Feb 2026"
+          }
+        },
+        "criteriaCount": 3,
+        "validationTypeLabel": {
+          "es": "Validación legal",
+          "en": "Legal validation",
+          "va": "Validació legal"
+        },
+        "validationStageLabel": {
+          "es": "Completada",
+          "en": "Completed",
+          "va": "Completada"
+        },
+        "decisionOutcomeLabel": {
+          "es": "Validado — Track B",
+          "en": "Validated — Track B",
+          "va": "Validat — Track B"
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-tecnica-gemelo-digital-ene",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-04-01",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-tecnica-gemelo-digital-ene.yml",
+        "core": {
+          "status": "validated",
+          "maturity": "idea",
+          "title": {
+            "es": "Validación técnica — Viabilidad del gemelo digital para la gestión predictiva de la red eléctrica urbana",
+            "en": "Technical validation — Feasibility of digital twin for predictive urban electricity grid management",
+            "va": "Validació tècnica — Viabilitat de la bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
+          },
+          "summary": {
+            "es": "Validación técnica del reto de gemelo digital para la red eléctrica promovido por Endesa Distribución, confirmando la viabilidad de CARLA y ROS 2 como stack tecnológico y la disponibilidad de datos SCADA anonimizables para el desarrollo del prototipo.",
+            "en": "Technical validation of the electricity grid digital twin challenge promoted by Endesa Distribución, confirming the viability of CARLA and ROS 2 as the technology stack and the availability of anonymisable SCADA data for prototype development.",
+            "va": "Validació tècnica del repte de bessona digital per a la xarxa elèctrica promogut per Endesa Distribució, confirmant la viabilitat de CARLA i ROS 2 com a stack tecnològic i la disponibilitat de dades SCADA anonimitzables per al desenvolupament del prototip."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "sector": "ene",
+          "stakeholderCategory": "",
+          "levels": [
+            "Máster"
+          ],
+          "pilotType": "",
+          "validationType": "technical-validation",
+          "validationStage": "completed",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-02-15",
+          "revisionDate": "2026-04-01",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "Feb 2026",
+            "en": "Feb 2026",
+            "va": "Feb 2026"
+          },
+          "revisionDateLabel": {
+            "es": "Abr 2026",
+            "en": "Apr 2026",
+            "va": "Abr 2026"
+          },
+          "deadlineLabel": null,
+          "tags": {
+            "es": [
+              "Gemelo digital",
+              "Red eléctrica",
+              "Validación técnica",
+              "SCADA",
+              "Endesa"
+            ],
+            "en": [
+              "Digital twin",
+              "Electricity grid",
+              "Technical validation",
+              "SCADA",
+              "Endesa"
+            ],
+            "va": [
+              "Bessona digital",
+              "Xarxa elèctrica",
+              "Validació tècnica",
+              "SCADA",
+              "Endesa"
+            ]
+          }
+        },
+        "classification": {
+          "aiSteamFocus": [
+            "data-ai",
+            "maker-steam"
+          ],
+          "tripleTransition": [
+            "digital",
+            "green"
+          ],
+          "policyCluster": [
+            "infrastructure-evidence"
+          ],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "",
+          "dataAvailability": "summary-only",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "La ficha de validación se publica bajo CC BY 4.0. El informe técnico detallado del ITE es confidencial y no se publica.",
+            "en": "The validation sheet is published under CC BY 4.0. The detailed ITE technical report is confidential and not published.",
+            "va": "La fitxa de validació es publica sota CC BY 4.0. L'informe tècnic detallat de l'ITE és confidencial i no es publica."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE"
+          },
+          "proposer": {
+            "name": "Endesa Distribución S.A. — Área de Innovación Redes",
+            "type": "industry",
+            "role": {
+              "es": "Empresa proponente del reto y facilitadora del entorno técnico de validación",
+              "en": "Challenge-proposing company and technical validation environment facilitator",
+              "va": "Empresa proponent del repte i facilitadora de l'entorn tècnic de validació"
+            }
+          },
+          "validators": [
+            {
+              "name": "Instituto Tecnológico de la Energía (ITE)",
+              "type": "university",
+              "role": {
+                "es": "Revisión técnica independiente del stack tecnológico propuesto",
+                "en": "Independent technical review of the proposed technology stack",
+                "va": "Revisió tècnica independent de l'stack tecnològic proposat"
+              }
+            },
+            {
+              "name": "AI-STEAM Comité Técnico Energía",
+              "type": "sector-association",
+              "role": {
+                "es": "Validación de la pertinencia del reto y triage de clasificación",
+                "en": "Challenge relevance validation and classification triage",
+                "va": "Validació de la pertinència del repte i triatge de classificació"
+              }
+            }
+          ]
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Reto — Gemelo digital para la gestión predictiva de la red eléctrica urbana",
+            "en": "Challenge — Digital twin for predictive urban electricity grid management",
+            "va": "Repte — Bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
+          },
+          "validationQuestion": {
+            "es": "¿Son técnicamente viables los prototipos de gemelo digital de red eléctrica urbana con datos SCADA anonimizados y stack CARLA+ROS 2 en el contexto de un reto educativo de 6 meses?",
+            "en": "Are urban electricity grid digital twin prototypes technically feasible using anonymised SCADA data and CARLA+ROS 2 stack in the context of a 6-month educational challenge?",
+            "va": "Són tècnicament viables els prototips de bessona digital de xarxa elèctrica urbana amb dades SCADA anonimitzades i stack CARLA+ROS 2 en el context d'un repte educatiu de 6 mesos?"
+          },
+          "need": {
+            "es": "El reto requiere que los equipos participantes puedan acceder a datos reales del sistema de distribución de Endesa y a un entorno de simulación suficientemente realista para validar sus modelos predictivos antes de proponerlos para integración con SCADA real.",
+            "en": "The challenge requires participating teams to access real data from Endesa's distribution system and a sufficiently realistic simulation environment to validate their predictive models before proposing them for integration with real SCADA.",
+            "va": "El repte requereix que els equips participants puguen accedir a dades reals del sistema de distribució d'Endesa i a un entorn de simulació suficientment realista per validar els seus models predictius abans de proposar-los per a integració amb SCADA real."
+          },
+          "context": {
+            "es": "El ITE realizó una revisión técnica del stack propuesto (CARLA+ROS 2+datos SCADA anonimizados) y de la calidad y completitud del dataset histórico de 3 años proporcionado por Endesa. Se analizó la viabilidad de anonimización de datos a nivel de transformador manteniendo la utilidad estadística para el desarrollo de modelos predictivos.",
+            "en": "ITE conducted a technical review of the proposed stack (CARLA+ROS 2+anonymised SCADA data) and the quality and completeness of the 3-year historical dataset provided by Endesa. The feasibility of anonymising data at transformer level while maintaining statistical utility for predictive model development was analysed.",
+            "va": "L'ITE va realitzar una revisió tècnica de l'stack proposat (CARLA+ROS 2+dades SCADA anonimitzades) i de la qualitat i completitud del dataset històric de 3 anys proporcionat per Endesa. Es va analitzar la viabilitat d'anonimització de dades a nivell de transformador mantenint la utilitat estadística per al desenvolupament de models predictius."
+          },
+          "method": {
+            "es": "Revisión técnica del dataset por el ITE (calidad, completitud, anonimizabilidad), prueba de concepto en entorno sandboxed con muestra del 5% de los datos, revisión de la arquitectura de integración SCADA propuesta y triage ConsensUE para clasificación del reto.",
+            "en": "ITE technical review of the dataset (quality, completeness, anonymisability), proof of concept in sandboxed environment with 5% data sample, review of the proposed SCADA integration architecture and ConsensUE triage for challenge classification.",
+            "va": "Revisió tècnica del dataset per l'ITE (qualitat, completitud, anonimitzabilitat), prova de concepte en entorn sandboxed amb mostra del 5% de les dades, revisió de l'arquitectura d'integració SCADA proposada i triatge ConsensUE per a classificació del repte."
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Revisión técnica ITE — dataset histórico SCADA (muestra 5%)",
+                "en": "ITE technical review — historical SCADA dataset (5% sample)",
+                "va": "Revisió tècnica ITE — dataset històric SCADA (mostra 5%)"
+              }
+            },
+            {
+              "label": {
+                "es": "Prueba de concepto en entorno sandboxed de Endesa",
+                "en": "Proof of concept in Endesa sandboxed environment",
+                "va": "Prova de concepte en entorn sandboxed d'Endesa"
+              }
+            },
+            {
+              "label": {
+                "es": "Sesión de triage ConsensUE con Comité Técnico Energía",
+                "en": "ConsensUE triage session with Energy Technical Committee",
+                "va": "Sessió de triatge ConsensUE amb Comité Tècnic Energia"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": [
+            {
+              "id": "data-quality",
+              "label": {
+                "es": "Calidad y utilidad del dataset SCADA anonimizado",
+                "en": "Anonymised SCADA dataset quality and utility",
+                "va": "Qualitat i utilitat del dataset SCADA anonimitzat"
+              },
+              "result": "positive",
+              "note": {
+                "es": "El ITE confirma que el dataset de 3 años a nivel de transformador, una vez anonimizado, mantiene suficiente utilidad estadística para entrenar modelos de predicción de sobrecargas.",
+                "en": "ITE confirms that the 3-year transformer-level dataset, once anonymised, retains sufficient statistical utility for training overload prediction models.",
+                "va": "L'ITE confirma que el dataset de 3 anys a nivell de transformador, una vegada anonimitzat, manté suficient utilitat estadística per entrenar models de predicció de sobrecàrregues."
+              }
+            },
+            {
+              "id": "stack-feasibility",
+              "label": {
+                "es": "Viabilidad del stack tecnológico propuesto",
+                "en": "Feasibility of the proposed technology stack",
+                "va": "Viabilitat de l'stack tecnològic proposat"
+              },
+              "result": "positive",
+              "note": {
+                "es": "CARLA+ROS 2 es un stack maduro usado en investigación académica con comunidad activa. La integración conceptual con SCADA es técnicamente viable en fase de prototipo.",
+                "en": "CARLA+ROS 2 is a mature stack used in academic research with an active community. The conceptual integration with SCADA is technically feasible at prototype stage.",
+                "va": "CARLA+ROS 2 és un stack madur usat en recerca acadèmica amb comunitat activa. La integració conceptual amb SCADA és tècnicament viable en fase de prototip."
+              }
+            },
+            {
+              "id": "anonymisation-risk",
+              "label": {
+                "es": "Riesgo de re-identificación en el dataset anonimizado",
+                "en": "Re-identification risk in the anonymised dataset",
+                "va": "Risc de re-identificació en el dataset anonimitzat"
+              },
+              "result": "manageable",
+              "note": {
+                "es": "La agregación a nivel de transformador reduce el riesgo, pero se requiere aplicar k-anonimato antes de la distribución a los equipos participantes. ITE proporciona el protocolo de anonimización.",
+                "en": "Aggregation at transformer level reduces the risk, but k-anonymity must be applied before distribution to participating teams. ITE provides the anonymisation protocol.",
+                "va": "L'agregació a nivell de transformador redueix el risc, però cal aplicar k-anonimat abans de la distribució als equips participants. L'ITE proporciona el protocol d'anonimització."
+              }
+            },
+            {
+              "id": "timeline-feasibility",
+              "label": {
+                "es": "Viabilidad del calendario del reto (6 meses para prototipo funcional)",
+                "en": "Challenge timeline feasibility (6 months for functional prototype)",
+                "va": "Viabilitat del calendari del repte (6 mesos per a prototip funcional)"
+              },
+              "result": "medium",
+              "note": {
+                "es": "6 meses es ajustado para equipos sin experiencia previa en CARLA. Se recomienda añadir una sesión de onboarding técnico de 2 días antes del inicio oficial del reto.",
+                "en": "6 months is tight for teams without prior CARLA experience. Adding a 2-day technical onboarding session before the official challenge start is recommended.",
+                "va": "6 mesos és ajustat per a equips sense experiència prèvia en CARLA. Es recomana afegir una sessió d'onboarding tècnic de 2 dies abans de l'inici oficial del repte."
+              }
+            }
+          ]
+        },
+        "evidence": {
+          "evidenceLevel": "reviewed",
+          "collectionMethod": {
+            "es": "Revisión documental del dataset SCADA por el ITE, prueba de concepto sandboxed y sesión de triage ConsensUE con el Comité Técnico de Energía de AI-STEAM.",
+            "en": "ITE documentary review of the SCADA dataset, sandboxed proof of concept and ConsensUE triage session with the AI-STEAM Energy Technical Committee.",
+            "va": "Revisió documental del dataset SCADA per l'ITE, prova de concepte sandboxed i sessió de triatge ConsensUE amb el Comité Tècnic d'Energia d'AI-STEAM."
+          },
+          "indicators": [
+            {
+              "id": "dataset-completeness",
+              "label": {
+                "es": "Completitud del dataset histórico (% de series temporales sin lagunas)",
+                "en": "Historical dataset completeness (% time series without gaps)",
+                "va": "Completitud del dataset històric (% de sèries temporals sense llacunes)"
+              },
+              "metric": {
+                "es": "94,3% de series completas — suficiente para entrenamiento",
+                "en": "94.3% complete series — sufficient for training",
+                "va": "94,3% de sèries completes — suficient per a entrenament"
+              }
+            },
+            {
+              "id": "poc-result",
+              "label": {
+                "es": "Resultado de la prueba de concepto sandboxed",
+                "en": "Sandboxed proof of concept result",
+                "va": "Resultat de la prova de concepte sandboxed"
+              },
+              "metric": {
+                "es": "Prototipo base logra RMSE de 12 kW en predicción a 4h — supera umbral de 15 kW establecido",
+                "en": "Base prototype achieves 12 kW RMSE in 4h prediction — exceeds the set threshold of 15 kW",
+                "va": "Prototip base assoleix RMSE de 12 kW en predicció a 4h — supera el llindar de 15 kW establert"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "La validación cubre únicamente la viabilidad técnica del reto. La evaluación pedagógica de los contenidos formativos asociados no forma parte de esta validación.",
+            "en": "The validation covers only the technical feasibility of the challenge. The pedagogical evaluation of associated training content is not part of this validation.",
+            "va": "La validació cobreix únicament la viabilitat tècnica del repte. L'avaluació pedagògica dels continguts formatius associats no forma part d'aquesta validació."
+          }
+        },
+        "decision": {
+          "outcome": "validated-track-b",
+          "label": {
+            "es": "Validado — clasificado Track B para reto abierto al ecosistema",
+            "en": "Validated — classified as Track B for open ecosystem challenge",
+            "va": "Validat — classificat Track B per a repte obert a l'ecosistema"
+          },
+          "rationale": {
+            "es": "La validación técnica confirma la viabilidad del reto y la calidad del dataset. El Comité Técnico concluye que el reto es más adecuado como contribución abierta (Track B) que como módulo académico, dado su carácter aplicado y la diversidad de perfiles que puede atraer.",
+            "en": "Technical validation confirms challenge feasibility and dataset quality. The Technical Committee concludes the challenge is more appropriate as an open contribution (Track B) than as an academic module, given its applied nature and the diversity of profiles it can attract.",
+            "va": "La validació tècnica confirma la viabilitat del repte i la qualitat del dataset. El Comité Tècnic conclou que el repte és més adequat com a contribució oberta (Track B) que com a mòdul acadèmic, atès el seu caràcter aplicat i la diversitat de perfils que pot atraure."
+          },
+          "nextStep": {
+            "type": "launch-pilot",
+            "label": {
+              "es": "Publicar el reto en el Marketplace y abrir inscripciones para la convocatoria 2026",
+              "en": "Publish the challenge on the Marketplace and open registrations for the 2026 call",
+              "va": "Publicar el repte al Marketplace i obrir inscripcions per a la convocatòria 2026"
+            }
+          }
+        },
+        "trackRouting": {
+          "route": "track-b",
+          "label": {
+            "es": "Clasificado Track B — reto abierto al ecosistema publicado en el Marketplace",
+            "en": "Classified as Track B — open ecosystem challenge published on the Marketplace",
+            "va": "Classificat Track B — repte obert a l'ecosistema publicat al Marketplace"
+          },
+          "academicReview": {
+            "enabled": false,
+            "reviewer": null,
+            "note": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        },
+        "relations": {
+          "validatedChallengeId": "reto-gemelo-digital-red-electrica-ene",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": [
+            "pilot",
+            "case"
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/validations/validation-tecnica-gemelo-digital-ene/",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showValidationType": true,
+            "showDecision": true,
+            "showEvidenceLevel": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": false,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-12-01",
+          "end": "2026-02-10",
+          "label": {
+            "es": "Dic 2025 – Feb 2026",
+            "en": "Dec 2025 – Feb 2026",
+            "va": "Des 2025 – Feb 2026"
+          }
+        },
+        "criteriaCount": 4,
+        "validationTypeLabel": {
+          "es": "Validación técnica",
+          "en": "Technical validation",
+          "va": "Validació tècnica"
+        },
+        "validationStageLabel": {
+          "es": "Completada",
+          "en": "Completed",
+          "va": "Completada"
+        },
+        "decisionOutcomeLabel": {
+          "es": "Validado — Track B",
+          "en": "Validated — Track B",
+          "va": "Validat — Track B"
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-stakeholder-turismo-inteligente-tur",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-03-20",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-stakeholder-turismo-inteligente-tur.yml",
+        "core": {
+          "status": "validated",
+          "maturity": "idea",
+          "title": {
+            "es": "Validación stakeholder — Necesidad de personalización con IA en la oferta turística valenciana",
+            "en": "Stakeholder validation — Need for AI personalisation in the Valencian tourism offer",
+            "va": "Validació stakeholder — Necessitat de personalització amb IA en l'oferta turística valenciana"
+          },
+          "summary": {
+            "es": "Validación con la Agència Valenciana del Turisme, asociaciones hoteleras y plataformas de reservas de la demanda real de sistemas de personalización de experiencias turísticas con IA, que derivó en la publicación del reto de análisis de sentimiento y en el inicio de dos pilotos de personalización de recomendaciones en destinos piloto de la Costa Blanca.",
+            "en": "Validation with the Valencian Tourism Agency, hotel associations and booking platforms of the real demand for AI tourism experience personalisation systems, leading to the publication of the sentiment analysis challenge and the launch of two recommendation personalisation pilots in Costa Blanca pilot destinations.",
+            "va": "Validació amb l'Agència Valenciana del Turisme, associacions hoteleres i plataformes de reserves de la demanda real de sistemes de personalització d'experiències turístiques amb IA, que va derivar en la publicació del repte d'anàlisi de sentiment i en l'inici de dos pilots de personalització de recomanacions en destinacions pilot de la Costa Blanca."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "sector": "tur",
+          "stakeholderCategory": "",
+          "levels": [
+            "FP",
+            "Máster"
+          ],
+          "pilotType": "",
+          "validationType": "stakeholder-validation",
+          "validationStage": "completed",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-01-10",
+          "revisionDate": "2026-03-20",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "Ene 2026",
+            "en": "Jan 2026",
+            "va": "Gen 2026"
+          },
+          "revisionDateLabel": {
+            "es": "Mar 2026",
+            "en": "Mar 2026",
+            "va": "Mar 2026"
+          },
+          "deadlineLabel": null,
+          "tags": {
+            "es": [
+              "Turismo inteligente",
+              "Personalización",
+              "IA",
+              "Análisis de sentimiento",
+              "Destinos turísticos"
+            ],
+            "en": [
+              "Smart tourism",
+              "Personalisation",
+              "AI",
+              "Sentiment analysis",
+              "Tourist destinations"
+            ],
+            "va": [
+              "Turisme intel·ligent",
+              "Personalització",
+              "IA",
+              "Anàlisi de sentiment",
+              "Destinacions turístiques"
+            ]
+          }
+        },
+        "classification": {
+          "aiSteamFocus": [
+            "data-ai",
+            "responsible-ai"
+          ],
+          "tripleTransition": [
+            "digital",
+            "social"
+          ],
+          "policyCluster": [
+            "integrated-pedagogy",
+            "infrastructure-evidence"
+          ],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "",
+          "dataAvailability": "summary-only",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "Los datos de Booking.com se presentan únicamente en forma agregada. Las respuestas del panel HOSBEC son confidenciales a nivel individual. La ficha de validación se publica bajo CC BY 4.0.",
+            "en": "Booking.com data is presented only in aggregate form. HOSBEC panel responses are confidential at individual level. The validation sheet is published under CC BY 4.0.",
+            "va": "Les dades de Booking.com es presenten únicament en forma agregada. Les respostes del panell HOSBEC són confidencials a nivell individual. La fitxa de validació es publica sota CC BY 4.0."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE"
+          },
+          "proposer": {
+            "name": "Agència Valenciana del Turisme (Turisme Comunitat Valenciana)",
+            "type": "public-admin",
+            "role": {
+              "es": "Agencia pública proponente — identificó la necesidad de IA para la gestión de la reputación y la personalización",
+              "en": "Proposing public agency — identified the need for AI in reputation management and personalisation",
+              "va": "Agència pública proponent — va identificar la necessitat d'IA per a la gestió de la reputació i la personalització"
+            }
+          },
+          "validators": [
+            {
+              "name": "HOSBEC — Asociación Empresarial Hotelera de Benidorm, Costa Blanca y Comunidad Valenciana",
+              "type": "sector-association",
+              "role": {
+                "es": "Asociación sectorial — validó la demanda de IA para personalización desde la perspectiva hotelera",
+                "en": "Sector association — validated AI personalisation demand from the hotel perspective",
+                "va": "Associació sectorial — va validar la demanda d'IA per a personalització des de la perspectiva hotelera"
+              }
+            },
+            {
+              "name": "Booking.com — Partnerships Iberia",
+              "type": "industry",
+              "role": {
+                "es": "Plataforma de reservas — compartió datos agregados de comportamiento de búsqueda para el análisis de demanda",
+                "en": "Booking platform — shared aggregated search behaviour data for demand analysis",
+                "va": "Plataforma de reserves — va compartir dades agregades de comportament de cerca per a l'anàlisi de demanda"
+              }
+            },
+            {
+              "name": "AI-STEAM Comité Técnico Turismo y Cultura",
+              "type": "sector-association",
+              "role": {
+                "es": "Triage ConsensUE y clasificación del reto resultante",
+                "en": "ConsensUE triage and resulting challenge classification",
+                "va": "Triatge ConsensUE i classificació del repte resultant"
+              }
+            }
+          ]
+        },
+        "validation": {
+          "objectType": "need",
+          "objectTitle": {
+            "es": "Necesidad de sistemas de IA para análisis de reputación y personalización de la experiencia turística en la Comunitat Valenciana",
+            "en": "Need for AI systems for reputation analysis and tourism experience personalisation in the Valencian Community",
+            "va": "Necessitat de sistemes d'IA per a anàlisi de reputació i personalització de l'experiència turística a la Comunitat Valenciana"
+          },
+          "validationQuestion": {
+            "es": "¿Existe suficiente demanda del sector turístico valenciano para sistemas de IA de análisis de sentimiento y personalización, y son los destinos y operadores turísticos valencianos capaces de absorber y beneficiarse de estos sistemas en un horizonte de 2 años?",
+            "en": "Is there sufficient demand from the Valencian tourism sector for AI sentiment analysis and personalisation systems, and are Valencian tourism destinations and operators capable of absorbing and benefiting from these systems within a 2-year horizon?",
+            "va": "Existeix suficient demanda del sector turístic valencià per a sistemes d'IA d'anàlisi de sentiment i personalització, i els destins i operadors turístics valencians són capaços d'absorbir-ne i beneficiar-se en un horitzó de 2 anys?"
+          },
+          "need": {
+            "es": "La Comunitat Valenciana recibió 37,8 millones de visitantes en 2025 (+12% respecto a 2019). Los gestores de destinos y hoteleros dedican recursos crecientes a monitorizar la reputación online y personalizar la oferta, pero lo hacen de forma manual o con herramientas genéricas que no están adaptadas al contexto multilingüe y multicultural del turismo valenciano.",
+            "en": "The Valencian Community received 37.8 million visitors in 2025 (+12% compared to 2019). Destination managers and hoteliers dedicate increasing resources to monitoring online reputation and personalising their offer, but do so manually or with generic tools not adapted to the multilingual and multicultural context of Valencian tourism.",
+            "va": "La Comunitat Valenciana va rebre 37,8 milions de visitants el 2025 (+12% respecte a 2019). Els gestors de destinació i hoteleros dediquen recursos creixents a monitoritzar la reputació en línia i personalitzar l'oferta, però ho fan manualment o amb eines genèriques que no estan adaptades al context multilingüe i multicultural del turisme valencià."
+          },
+          "context": {
+            "es": "HOSBEC representó la perspectiva de 1.200 establecimientos hoteleros de la Costa Blanca. Booking.com compartió datos agregados sobre las 5 principales quejas y motivaciones de búsqueda en destinos valencianos (2024-2025). El Comité Técnico identificó dos necesidades diferenciadas — análisis de sentimiento (operativa, Track B) y personalización profunda (investigación, Track A) — que se abordan por vías distintas.",
+            "en": "HOSBEC represented the perspective of 1,200 hotel establishments in Costa Blanca. Booking.com shared aggregated data on the 5 main complaints and search motivations in Valencian destinations (2024-2025). The Technical Committee identified two distinct needs — sentiment analysis (operational, Track B) and deep personalisation (research, Track A) — to be addressed through different routes.",
+            "va": "HOSBEC va representar la perspectiva de 1.200 establiments hotelers de la Costa Blanca. Booking.com va compartir dades agregades sobre les 5 principals queixes i motivacions de cerca en destinacions valencianes (2024-2025). El Comité Tècnic va identificar dues necessitats diferenciades — anàlisi de sentiment (operativa, Track B) i personalització profunda (recerca, Track A) — que s'aborden per vies distintes."
+          },
+          "method": {
+            "es": "Panel de expertos con HOSBEC (12 directivos hoteleros), análisis de datos agregados de Booking.com, entrevistas con los técnicos de Turisme CV y triage ConsensUE con el Comité Técnico de Turismo y Cultura.",
+            "en": "Expert panel with HOSBEC (12 hotel executives), Booking.com aggregated data analysis, interviews with Turisme CV technicians and ConsensUE triage with the Tourism and Culture Technical Committee.",
+            "va": "Panell d'experts amb HOSBEC (12 directius hotelers), anàlisi de dades agregades de Booking.com, entrevistes amb els tècnics de Turisme CV i triatge ConsensUE amb el Comité Tècnic de Turisme i Cultura."
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Panel de expertos hoteleros — HOSBEC (n=12)",
+                "en": "Hotel expert panel — HOSBEC (n=12)",
+                "va": "Panell d'experts hotelers — HOSBEC (n=12)"
+              }
+            },
+            {
+              "label": {
+                "es": "Análisis de datos agregados de búsqueda — Booking.com (destinos valencianos, 2024-2025)",
+                "en": "Aggregated search data analysis — Booking.com (Valencian destinations, 2024-2025)",
+                "va": "Anàlisi de dades agregades de cerca — Booking.com (destinacions valencianes, 2024-2025)"
+              }
+            },
+            {
+              "label": {
+                "es": "Triage ConsensUE — Comité Técnico Turismo y Cultura",
+                "en": "ConsensUE triage — Tourism and Culture Technical Committee",
+                "va": "Triatge ConsensUE — Comité Tècnic Turisme i Cultura"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": [
+            {
+              "id": "operator-demand",
+              "label": {
+                "es": "Demanda real de los operadores turísticos valencianos",
+                "en": "Real demand from Valencian tourism operators",
+                "va": "Demanda real dels operadors turístics valencians"
+              },
+              "result": "positive",
+              "note": {
+                "es": "El 92% de los hoteleros del panel HOSBEC declaran usar herramientas de monitorización de reseñas, pero solo el 18% está satisfecho con las soluciones actuales. La demanda de IA es alta y el presupuesto disponible en hoteles de 3-5 estrellas es suficiente para soluciones SaaS.",
+                "en": "92% of HOSBEC panel hoteliers declare using review monitoring tools, but only 18% are satisfied with current solutions. AI demand is high and available budget in 3-5 star hotels is sufficient for SaaS solutions.",
+                "va": "El 92% dels hotelers del panell HOSBEC declaren usar eines de monitorització de ressenyes, però només el 18% està satisfet amb les solucions actuals. La demanda d'IA és alta i el pressupost disponible en hotels de 3-5 estrelles és suficient per a solucions SaaS."
+              }
+            },
+            {
+              "id": "data-availability",
+              "label": {
+                "es": "Disponibilidad de datos de reseñas para entrenar y validar los sistemas",
+                "en": "Availability of review data to train and validate the systems",
+                "va": "Disponibilitat de dades de ressenyes per entrenar i validar els sistemes"
+              },
+              "result": "positive",
+              "note": {
+                "es": "Turisme CV dispone de un corpus de 280.000 reseñas etiquetadas en 10 idiomas (2023-2025). Booking.com confirma acceso a la API para destinos oficialmente colaboradores.",
+                "en": "Turisme CV has a corpus of 280,000 labelled reviews in 10 languages (2023-2025). Booking.com confirms API access for officially collaborating destinations.",
+                "va": "Turisme CV disposa d'un corpus de 280.000 ressenyes etiquetades en 10 idiomes (2023-2025). Booking.com confirma accés a l'API per a destinacions oficialment col·laboradores."
+              }
+            },
+            {
+              "id": "absorptive-capacity",
+              "label": {
+                "es": "Capacidad de absorción del sector para adoptar las soluciones desarrolladas",
+                "en": "Sector absorptive capacity to adopt developed solutions",
+                "va": "Capacitat d'absorció del sector per adoptar les solucions desenvolupades"
+              },
+              "result": "medium",
+              "note": {
+                "es": "Los hoteles grandes (>100 habitaciones) tienen capacidad técnica para adoptar las soluciones. Los establecimientos pequeños y rurales necesitan versiones SaaS simplificadas sin integración técnica propia. El Comité recomienda diseñar una versión \"plug and play\" para establecimientos pequeños.",
+                "en": "Large hotels (>100 rooms) have the technical capacity to adopt the solutions. Small and rural establishments need simplified SaaS versions without their own technical integration. The Committee recommends designing a \"plug and play\" version for small establishments.",
+                "va": "Els hotels grans (>100 habitacions) tenen capacitat tècnica per adoptar les solucions. Els establiments menuts i rurals necessiten versions SaaS simplificades sense integració tècnica pròpia. El Comité recomana dissenyar una versió \"plug and play\" per a establiments menuts."
+              }
+            }
+          ]
+        },
+        "evidence": {
+          "evidenceLevel": "reviewed",
+          "collectionMethod": {
+            "es": "Panel HOSBEC (n=12, estructura cuestionario Delphi), análisis de datos agregados de Booking.com y revisión documental de los planes de digitalización turística de la Conselleria de Turisme.",
+            "en": "HOSBEC panel (n=12, Delphi questionnaire structure), Booking.com aggregated data analysis and documentary review of Conselleria de Turisme tourism digitalisation plans.",
+            "va": "Panell HOSBEC (n=12, estructura qüestionari Delphi), anàlisi de dades agregades de Booking.com i revisió documental dels plans de digitalització turística de la Conselleria de Turisme."
+          },
+          "indicators": [
+            {
+              "id": "tool-satisfaction",
+              "label": {
+                "es": "Satisfacción con herramientas actuales de monitorización de reseñas",
+                "en": "Satisfaction with current review monitoring tools",
+                "va": "Satisfacció amb eines actuals de monitorització de ressenyes"
+              },
+              "metric": {
+                "es": "18% de hoteleros satisfechos con sus soluciones actuales (panel HOSBEC, n=12)",
+                "en": "18% of hoteliers satisfied with their current solutions (HOSBEC panel, n=12)",
+                "va": "18% d'hotelers satisfets amb les seues solucions actuals (panell HOSBEC, n=12)"
+              }
+            },
+            {
+              "id": "corpus-size",
+              "label": {
+                "es": "Tamaño del corpus de reseñas disponible para entrenamiento",
+                "en": "Size of available review corpus for training",
+                "va": "Grandària del corpus de ressenyes disponible per a entrenament"
+              },
+              "metric": {
+                "es": "280.000 reseñas etiquetadas en 10 idiomas (Turisme CV, 2023-2025)",
+                "en": "280,000 labelled reviews in 10 languages (Turisme CV, 2023-2025)",
+                "va": "280.000 ressenyes etiquetades en 10 idiomes (Turisme CV, 2023-2025)"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "El panel HOSBEC representa principalmente hoteles de la Costa Blanca y la ciudad de Valencia. Las necesidades de destinos de interior, turismo rural y oferta cultural pueden ser diferentes. El análisis de capacidad de absorción no incluye agencias de viajes ni tour operadores.",
+            "en": "The HOSBEC panel mainly represents hotels in Costa Blanca and Valencia city. The needs of inland destinations, rural tourism and cultural offer may differ. The absorption capacity analysis does not include travel agencies or tour operators.",
+            "va": "El panell HOSBEC representa principalment hotels de la Costa Blanca i la ciutat de València. Les necessitats de destinacions d'interior, turisme rural i oferta cultural poden ser diferents. L'anàlisi de capacitat d'absorció no inclou agències de viatge ni tour operadors."
+          }
+        },
+        "decision": {
+          "outcome": "validated-for-case",
+          "label": {
+            "es": "Validado — necesidad confirmada; se deriva a reto Track B (análisis de sentimiento) y piloto de personalización",
+            "en": "Validated — need confirmed; derived to Track B challenge (sentiment analysis) and personalisation pilot",
+            "va": "Validat — necessitat confirmada; es deriva a repte Track B (anàlisi de sentiment) i pilot de personalització"
+          },
+          "rationale": {
+            "es": "La validación confirma demanda alta y disponibilidad de datos de calidad. El Comité distingue dos líneas de acción — el reto de análisis de sentimiento (Track B, publicado en el Marketplace) para dar respuesta inmediata al sector, y un piloto de personalización profunda (Track A) con dos destinos de la Costa Blanca para investigación aplicada.",
+            "en": "Validation confirms high demand and availability of quality data. The Committee distinguishes two lines of action — the sentiment analysis challenge (Track B, published on the Marketplace) for immediate sector response, and a deep personalisation pilot (Track A) with two Costa Blanca destinations for applied research.",
+            "va": "La validació confirma demanda alta i disponibilitat de dades de qualitat. El Comité distingeix dues línies d'acció — el repte d'anàlisi de sentiment (Track B, publicat al Marketplace) per a donar resposta immediata al sector, i un pilot de personalització profunda (Track A) amb dues destinacions de la Costa Blanca per a recerca aplicada."
+          },
+          "nextStep": {
+            "type": "launch-pilot",
+            "label": {
+              "es": "Publicar el reto de análisis de sentimiento e iniciar el piloto de personalización en Benidorm y Calpe",
+              "en": "Publish the sentiment analysis challenge and launch the personalisation pilot in Benidorm and Calpe",
+              "va": "Publicar el repte d'anàlisi de sentiment i iniciar el pilot de personalització a Benidorm i Calpe"
+            }
+          }
+        },
+        "trackRouting": {
+          "route": "track-b",
+          "label": {
+            "es": "Clasificado Track B (reto análisis de sentimiento) + piloto Track A en destinos Costa Blanca",
+            "en": "Classified as Track B (sentiment analysis challenge) + Track A pilot in Costa Blanca destinations",
+            "va": "Classificat Track B (repte anàlisi de sentiment) + pilot Track A en destinacions Costa Blanca"
+          },
+          "academicReview": {
+            "enabled": false,
+            "reviewer": null,
+            "note": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        },
+        "relations": {
+          "validatedChallengeId": "reto-analisis-sentimiento-turismo-tur",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": [
+            "pilot",
+            "case"
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/validations/validation-stakeholder-turismo-inteligente-tur/",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showValidationType": true,
+            "showDecision": true,
+            "showEvidenceLevel": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": false,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-10-15",
+          "end": "2025-12-20",
+          "label": {
+            "es": "Oct – Dic 2025",
+            "en": "Oct – Dec 2025",
+            "va": "Oct – Des 2025"
+          }
+        },
+        "criteriaCount": 3,
+        "validationTypeLabel": {
+          "es": "Validación stakeholder",
+          "en": "Stakeholder validation",
+          "va": "Validació stakeholder"
+        },
+        "validationStageLabel": {
+          "es": "Completada",
+          "en": "Completed",
+          "va": "Completada"
+        },
+        "decisionOutcomeLabel": {
+          "es": "Validado — documentar como caso",
+          "en": "Validated — document as case",
+          "va": "Validat — documentar com a cas"
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-pedagogica-control-calidad-mfg",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-03-10",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-pedagogica-control-calidad-mfg.yml",
+        "core": {
+          "status": "validated",
+          "maturity": "idea",
+          "title": {
+            "es": "Validación pedagógica — Integración de visión artificial en ciclos de FP de Fabricación Mecánica",
+            "en": "Pedagogical validation — Integration of computer vision in Mechanical Manufacturing VET cycles",
+            "va": "Validació pedagògica — Integració de visió artificial en cicles de FP de Fabricació Mecànica"
+          },
+          "summary": {
+            "es": "Validación del encaje curricular de un módulo de visión artificial para control de calidad en los ciclos de FP de Fabricación Mecánica y Mecatrónica, confirmando la pertinencia pedagógica y definiendo los requisitos de formación docente necesarios para la implantación autónoma.",
+            "en": "Validation of the curricular fit of a computer vision quality control module in Mechanical Manufacturing and Mechatronics VET cycles, confirming pedagogical relevance and defining teacher training requirements for autonomous implementation.",
+            "va": "Validació de l'encaix curricular d'un mòdul de visió artificial per a control de qualitat en els cicles de FP de Fabricació Mecànica i Mecatrònica, confirmant la pertinència pedagògica i definint els requisits de formació docent necessaris per a la implantació autònoma."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "sector": "mfg",
+          "stakeholderCategory": "",
+          "levels": [
+            "FP",
+            "Docentes"
+          ],
+          "pilotType": "",
+          "validationType": "pedagogical-validation",
+          "validationStage": "completed",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-01-20",
+          "revisionDate": "2026-03-10",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "Ene 2026",
+            "en": "Jan 2026",
+            "va": "Gen 2026"
+          },
+          "revisionDateLabel": {
+            "es": "Mar 2026",
+            "en": "Mar 2026",
+            "va": "Mar 2026"
+          },
+          "deadlineLabel": null,
+          "tags": {
+            "es": [
+              "Visión artificial",
+              "Control de calidad",
+              "FP Fabricación",
+              "Validación pedagógica",
+              "Cerámica"
+            ],
+            "en": [
+              "Computer vision",
+              "Quality control",
+              "Manufacturing VET",
+              "Pedagogical validation",
+              "Ceramics"
+            ],
+            "va": [
+              "Visió artificial",
+              "Control de qualitat",
+              "FP Fabricació",
+              "Validació pedagògica",
+              "Ceràmica"
+            ]
+          }
+        },
+        "classification": {
+          "aiSteamFocus": [
+            "data-ai",
+            "maker-steam"
+          ],
+          "tripleTransition": [
+            "digital",
+            "green"
+          ],
+          "policyCluster": [
+            "integrated-pedagogy",
+            "learning-ecosystems"
+          ],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "",
+          "dataAvailability": "summary-only",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "La ficha de validación y el análisis curricular resumido se publican bajo CC BY 4.0. Las respuestas individuales de la encuesta docente son confidenciales.",
+            "en": "The validation sheet and summarised curriculum analysis are published under CC BY 4.0. Individual teacher survey responses are confidential.",
+            "va": "La fitxa de validació i l'anàlisi curricular resumida es publiquen sota CC BY 4.0. Les respostes individuals de l'enquesta docent són confidencials."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE"
+          },
+          "proposer": {
+            "name": "Pamesa Cerámica S.A. — Dirección de Ingeniería de Proceso",
+            "type": "industry",
+            "role": {
+              "es": "Empresa proponente del reto — aportó el dataset y el contexto industrial",
+              "en": "Challenge-proposing company — provided the dataset and industrial context",
+              "va": "Empresa proponent del repte — va aportar el dataset i el context industrial"
+            }
+          },
+          "validators": [
+            {
+              "name": "AI-STEAM Comité Técnico Pedagogía FP",
+              "type": "sector-association",
+              "role": {
+                "es": "Revisión del encaje curricular en ciclos de FP de Fabricación y Mecatrónica",
+                "en": "Curricular fit review for Manufacturing and Mechatronics VET cycles",
+                "va": "Revisió de l'encaix curricular en cicles de FP de Fabricació i Mecatrònica"
+              }
+            },
+            {
+              "name": "IES Ausiàs March (Manises)",
+              "type": "university",
+              "role": {
+                "es": "Centro de FP piloto — revisión docente del módulo y estimación de carga lectiva",
+                "en": "Pilot VET centre — teacher review of the module and teaching load estimate",
+                "va": "Centre de FP pilot — revisió docent del mòdul i estimació de càrrega lectiva"
+              }
+            }
+          ]
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Reto — Control de calidad visual con IA en línea de producción de componentes cerámicos",
+            "en": "Challenge — AI visual quality control on ceramic component production line",
+            "va": "Repte — Control de qualitat visual amb IA en línia de producció de components ceràmics"
+          },
+          "validationQuestion": {
+            "es": "¿El módulo de visión artificial para control de calidad tiene encaje curricular en los ciclos de FP de Fabricación Mecánica y Mecatrónica, y puede implantarse de forma autónoma por los docentes tras una formación de 2 días?",
+            "en": "Does the computer vision quality control module have curricular fit in Mechanical Manufacturing and Mechatronics VET cycles, and can it be implemented autonomously by teachers after 2 days of training?",
+            "va": "El mòdul de visió artificial per a control de qualitat té encaix curricular en els cicles de FP de Fabricació Mecànica i Mecatrònica, i pot implantar-se de forma autònoma pel professorat després d'una formació de 2 dies?"
+          },
+          "need": {
+            "es": "Los ciclos de FP de Fabricación Mecánica y Mecatrónica incluyen unidades de trabajo sobre control de calidad que actualmente no contemplan herramientas de visión artificial. La industria cerámica y metalmecánica valenciana demanda técnicos con estas competencias que los ciclos actuales no cubren.",
+            "en": "Mechanical Manufacturing and Mechatronics VET cycles include quality control learning units that currently do not include computer vision tools. The Valencian ceramic and metalworking industry demands technicians with these competencies that current cycles do not cover.",
+            "va": "Els cicles de FP de Fabricació Mecànica i Mecatrònica inclouen unitats de treball sobre control de qualitat que actualment no contemplen eines de visió artificial. La indústria ceràmica i metal·lomecànica valenciana demanda tècnics amb estes competències que els cicles actuals no cobreixen."
+          },
+          "context": {
+            "es": "El Comité Técnico de Pedagogía FP realizó un análisis de alineación del módulo propuesto con los Reales Decretos de los ciclos de Fabricación Mecánica (RD 1687/2011) y Mecatrónica Industrial (RD 1039/2011), identificando las unidades de trabajo donde se puede integrar el contenido. El IES Ausiàs March estimó la carga lectiva necesaria y los requisitos de equipamiento.",
+            "en": "The FP Pedagogy Technical Committee analysed the alignment of the proposed module with the Royal Decrees for Mechanical Manufacturing (RD 1687/2011) and Industrial Mechatronics (RD 1039/2011) cycles, identifying the learning units where content can be integrated. IES Ausiàs March estimated the required teaching load and equipment requirements.",
+            "va": "El Comité Tècnic de Pedagogia FP va realitzar una anàlisi d'alineació del mòdul proposat amb els Reials Decrets dels cicles de Fabricació Mecànica (RD 1687/2011) i Mecatrònica Industrial (RD 1039/2011), identificant les unitats de treball on es pot integrar el contingut. L'IES Ausiàs March va estimar la càrrega lectiva necessària i els requisits d'equipament."
+          },
+          "method": {
+            "es": "Análisis curricular por el Comité Técnico, revisión docente por el IES Ausiàs March, encuesta a 12 docentes de FP de Fabricación sobre percepción de dificultad y viabilidad de implantación, y triage ConsensUE para routing.",
+            "en": "Curriculum analysis by the Technical Committee, teacher review by IES Ausiàs March, survey of 12 Manufacturing VET teachers on perceived difficulty and implementation feasibility, and ConsensUE triage for routing.",
+            "va": "Anàlisi curricular pel Comité Tècnic, revisió docent per l'IES Ausiàs March, enquesta a 12 docents de FP de Fabricació sobre percepció de dificultat i viabilitat d'implantació, i triatge ConsensUE per a enrutament."
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Análisis curricular — Reales Decretos FP Fabricación y Mecatrónica",
+                "en": "Curriculum analysis — Royal Decrees for Manufacturing and Mechatronics VET",
+                "va": "Anàlisi curricular — Reials Decrets FP Fabricació i Mecatrònica"
+              }
+            },
+            {
+              "label": {
+                "es": "Encuesta a 12 docentes de FP de Fabricación Mecánica",
+                "en": "Survey of 12 Mechanical Manufacturing VET teachers",
+                "va": "Enquesta a 12 docents de FP de Fabricació Mecànica"
+              }
+            },
+            {
+              "label": {
+                "es": "Sesión de revisión docente en IES Ausiàs March",
+                "en": "Teacher review session at IES Ausiàs March",
+                "va": "Sessió de revisió docent a l'IES Ausiàs March"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": [
+            {
+              "id": "curricular-fit",
+              "label": {
+                "es": "Encaje curricular en los ciclos de FP identificados",
+                "en": "Curricular fit in the identified VET cycles",
+                "va": "Encaix curricular en els cicles de FP identificats"
+              },
+              "result": "positive",
+              "note": {
+                "es": "El módulo se integra directamente en la UD de \"Control dimensional y de calidad\" presente en ambos ciclos. El Comité identifica 8-10 horas de integración natural sin modificar el currículo.",
+                "en": "The module integrates directly into the \"Dimensional and quality control\" learning unit present in both cycles. The Committee identifies 8-10 hours of natural integration without curriculum modification.",
+                "va": "El mòdul s'integra directament en la UD de \"Control dimensional i de qualitat\" present en tots dos cicles. El Comité identifica 8-10 hores d'integració natural sense modificar el currículum."
+              }
+            },
+            {
+              "id": "teacher-confidence",
+              "label": {
+                "es": "Confianza del profesorado para implantar el módulo autónomamente",
+                "en": "Teacher confidence to implement the module autonomously",
+                "va": "Confiança del professorat per implantar el mòdul autònomament"
+              },
+              "result": "medium",
+              "note": {
+                "es": "El 67% de los docentes encuestados declara baja confianza inicial en visión artificial. Se requiere formación docente de 2 días; los docentes que la reciben suben a 8,2/10 de confianza (dato del piloto previo de Pamesa).",
+                "en": "67% of surveyed teachers declare low initial confidence in computer vision. 2-day teacher training is required; those who receive it rise to 8.2/10 confidence (data from the prior Pamesa pilot).",
+                "va": "El 67% dels docents enquestats declara baixa confiança inicial en visió artificial. Es requereix formació docent de 2 dies; els docents que la reben pugen a 8,2/10 de confiança (dada del pilot previ de Pamesa)."
+              }
+            },
+            {
+              "id": "equipment-requirements",
+              "label": {
+                "es": "Viabilidad de los requisitos de equipamiento en centros estándar",
+                "en": "Feasibility of equipment requirements in standard centres",
+                "va": "Viabilitat dels requisits d'equipament en centres estàndard"
+              },
+              "result": "manageable",
+              "note": {
+                "es": "El módulo requiere GPU dedicada o cámara industrial para la práctica completa. Se define una versión reducida que funciona con cámaras USB estándar para centros sin equipamiento especializado.",
+                "en": "The module requires a dedicated GPU or industrial camera for the full practice. A reduced version is defined that works with standard USB cameras for centres without specialist equipment.",
+                "va": "El mòdul requereix GPU dedicada o càmera industrial per a la pràctica completa. Es defineix una versió reduïda que funciona amb càmeres USB estàndard per a centres sense equipament especialitzat."
+              }
+            },
+            {
+              "id": "industry-relevance",
+              "label": {
+                "es": "Relevancia industrial del contenido para el mercado laboral valenciano",
+                "en": "Industrial relevance of the content for the Valencian labour market",
+                "va": "Rellevància industrial del contingut per al mercat laboral valencià"
+              },
+              "result": "positive",
+              "note": {
+                "es": "La industria cerámica valenciana (Tile of Spain, ASCER) confirma que la visión artificial para control de calidad es una competencia prioritaria en sus planes de contratación para 2026-2028.",
+                "en": "The Valencian ceramics industry (Tile of Spain, ASCER) confirms that computer vision for quality control is a priority competency in their 2026-2028 hiring plans.",
+                "va": "La indústria ceràmica valenciana (Tile of Spain, ASCER) confirma que la visió artificial per a control de qualitat és una competència prioritària en els seus plans de contractació per a 2026-2028."
+              }
+            }
+          ]
+        },
+        "evidence": {
+          "evidenceLevel": "reviewed",
+          "collectionMethod": {
+            "es": "Análisis curricular documental, encuesta a 12 docentes (Likert 5 puntos), revisión en IES Ausiàs March y datos del piloto previo de Pamesa con residentes industriales.",
+            "en": "Documentary curriculum analysis, survey of 12 teachers (5-point Likert), review at IES Ausiàs March and data from the prior Pamesa pilot with industrial residents.",
+            "va": "Anàlisi curricular documental, enquesta a 12 docents (Likert 5 punts), revisió a l'IES Ausiàs March i dades del pilot previ de Pamesa amb residents industrials."
+          },
+          "indicators": [
+            {
+              "id": "curricular-alignment",
+              "label": {
+                "es": "Número de unidades de trabajo donde se puede integrar el módulo",
+                "en": "Number of learning units where the module can be integrated",
+                "va": "Nombre d'unitats de treball on es pot integrar el mòdul"
+              },
+              "metric": {
+                "es": "3 unidades de trabajo en Fabricación Mecánica, 2 en Mecatrónica",
+                "en": "3 learning units in Mechanical Manufacturing, 2 in Mechatronics",
+                "va": "3 unitats de treball en Fabricació Mecànica, 2 en Mecatrònica"
+              }
+            },
+            {
+              "id": "teacher-survey",
+              "label": {
+                "es": "Confianza media del profesorado encuestado para implantar el módulo (sin formación previa)",
+                "en": "Average confidence of surveyed teachers to implement the module (without prior training)",
+                "va": "Confiança mitjana del professorat enquestàt per implantar el mòdul (sense formació prèvia)"
+              },
+              "metric": {
+                "es": "4,2/10 antes de formación; 8,2/10 después de formación docente de 2 días (dato piloto Pamesa)",
+                "en": "4.2/10 before training; 8.2/10 after 2-day teacher training (Pamesa pilot data)",
+                "va": "4,2/10 abans de la formació; 8,2/10 després de formació docent de 2 dies (dada pilot Pamesa)"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "La encuesta se realizó con 12 docentes de 3 centros, lo que puede no ser representativo del conjunto de docentes de FP de Fabricación de la Comunitat. La versión reducida (cámara USB) no ha sido testada pedagógicamente.",
+            "en": "The survey was conducted with 12 teachers from 3 centres, which may not be representative of all Manufacturing VET teachers in the Community. The reduced version (USB camera) has not been pedagogically tested.",
+            "va": "L'enquesta es va realitzar amb 12 docents de 3 centres, la qual cosa pot no ser representativa del conjunt de docents de FP de Fabricació de la Comunitat. La versió reduïda (càmera USB) no ha sigut testada pedagògicament."
+          }
+        },
+        "decision": {
+          "outcome": "validated-track-b",
+          "label": {
+            "es": "Validado — clasificado Track B con requisito de formación docente previa",
+            "en": "Validated — classified as Track B with prior teacher training requirement",
+            "va": "Validat — classificat Track B amb requisit de formació docent prèvia"
+          },
+          "rationale": {
+            "es": "La validación confirma encaje curricular claro y alta relevancia industrial. El requisito de formación docente de 2 días se considera manejable y se añade como condición para la replicación. Se clasifica como Track B dado su carácter de recurso educativo aplicado.",
+            "en": "Validation confirms clear curricular fit and high industrial relevance. The 2-day teacher training requirement is considered manageable and is added as a replication condition. Classified as Track B given its applied educational resource nature.",
+            "va": "La validació confirma encaix curricular clar i alta rellevància industrial. El requisit de formació docent de 2 dies es considera manejable i s'afegeix com a condició per a la replicació. Es classifica com a Track B atès el seu caràcter de recurs educatiu aplicat."
+          },
+          "nextStep": {
+            "type": "design-module",
+            "label": {
+              "es": "Diseñar el módulo de formación docente de 2 días y publicar la guía de integración curricular",
+              "en": "Design the 2-day teacher training module and publish the curricular integration guide",
+              "va": "Dissenyar el mòdul de formació docent de 2 dies i publicar la guia d'integració curricular"
+            }
+          }
+        },
+        "trackRouting": {
+          "route": "track-b",
+          "label": {
+            "es": "Clasificado Track B — recurso educativo para FP de Fabricación con requisito de formación docente",
+            "en": "Classified as Track B — educational resource for Manufacturing VET with teacher training requirement",
+            "va": "Classificat Track B — recurs educatiu per a FP de Fabricació amb requisit de formació docent"
+          },
+          "academicReview": {
+            "enabled": false,
+            "reviewer": null,
+            "note": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        },
+        "relations": {
+          "validatedChallengeId": "reto-control-calidad-vision-ia-mfg",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": [
+            "pilot",
+            "resource"
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/validations/validation-pedagogica-control-calidad-mfg/",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showValidationType": true,
+            "showDecision": true,
+            "showEvidenceLevel": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": false,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-11-01",
+          "end": "2026-01-15",
+          "label": {
+            "es": "Nov 2025 – Ene 2026",
+            "en": "Nov 2025 – Jan 2026",
+            "va": "Nov 2025 – Gen 2026"
+          }
+        },
+        "criteriaCount": 4,
+        "validationTypeLabel": {
+          "es": "Validación pedagógica",
+          "en": "Pedagogical validation",
+          "va": "Validació pedagògica"
+        },
+        "validationStageLabel": {
+          "es": "Completada",
+          "en": "Completed",
+          "va": "Completada"
+        },
+        "decisionOutcomeLabel": {
+          "es": "Validado — Track B",
+          "en": "Validated — Track B",
+          "va": "Validat — Track B"
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-stakeholder-salud-digital-nts",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-02-20",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-stakeholder-salud-digital-nts.yml",
+        "core": {
+          "status": "validated",
+          "maturity": "idea",
+          "title": {
+            "es": "Validación stakeholder — Necesidad de competencias digitales en salud en la FP Sanitaria valenciana",
+            "en": "Stakeholder validation — Digital health competency needs in Valencian Health VET",
+            "va": "Validació stakeholder — Necessitat de competències digitals en salut en la FP Sanitària valenciana"
+          },
+          "summary": {
+            "es": "Validación con hospitales públicos, colegios profesionales sanitarios y centros de FP de la Comunitat Valenciana de la brecha de competencias digitales en salud que existe entre la formación recibida en FP Sanitario y las competencias que demandan los entornos clínicos actuales, con clasificación Track A para el máster universitario.",
+            "en": "Validation with public hospitals, healthcare professional associations and VET centres in the Valencian Community of the digital health competency gap between Health VET training and the competencies demanded by current clinical settings, with Track A classification for the university master's programme.",
+            "va": "Validació amb hospitals públics, col·legis professionals sanitaris i centres de FP de la Comunitat Valenciana de la bretxa de competències digitals en salut que existeix entre la formació rebuda en FP Sanitari i les competències que demanden els entorns clínics actuals, amb classificació Track A per al màster universitari."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "sector": "nts",
+          "stakeholderCategory": "",
+          "levels": [
+            "FP",
+            "Máster",
+            "Docentes"
+          ],
+          "pilotType": "",
+          "validationType": "stakeholder-validation",
+          "validationStage": "completed",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2025-12-01",
+          "revisionDate": "2026-02-20",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "Dic 2025",
+            "en": "Dec 2025",
+            "va": "Des 2025"
+          },
+          "revisionDateLabel": {
+            "es": "Feb 2026",
+            "en": "Feb 2026",
+            "va": "Feb 2026"
+          },
+          "deadlineLabel": null,
+          "tags": {
+            "es": [
+              "Competencias digitales",
+              "FP Sanitario",
+              "Salud digital",
+              "Validación sectorial",
+              "IA médica"
+            ],
+            "en": [
+              "Digital competences",
+              "Health VET",
+              "Digital health",
+              "Sectoral validation",
+              "Medical AI"
+            ],
+            "va": [
+              "Competències digitals",
+              "FP Sanitari",
+              "Salut digital",
+              "Validació sectorial",
+              "IA mèdica"
+            ]
+          }
+        },
+        "classification": {
+          "aiSteamFocus": [
+            "data-ai",
+            "responsible-ai"
+          ],
+          "tripleTransition": [
+            "digital",
+            "social"
+          ],
+          "policyCluster": [
+            "equity-inclusion",
+            "integrated-pedagogy"
+          ],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "",
+          "dataAvailability": "summary-only",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "Los datos de la encuesta se publican en forma agregada. Las respuestas individuales y las actas de las entrevistas son confidenciales.",
+            "en": "Survey data is published in aggregate form. Individual responses and interview minutes are confidential.",
+            "va": "Les dades de l'enquesta es publiquen en forma agregada. Les respostes individuals i les actes de les entrevistes són confidencials."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE"
+          },
+          "proposer": {
+            "name": "Consell Valencià d'Infermeria",
+            "type": "sector-association",
+            "role": {
+              "es": "Colegio profesional proponente — identificó la brecha de competencias digitales en sus colegiados recientes",
+              "en": "Proposing professional association — identified the digital competency gap in its recent members",
+              "va": "Col·legi professional proponent — va identificar la bretxa de competències digitals en els seus col·legiats recents"
+            }
+          },
+          "validators": [
+            {
+              "name": "Hospital Universitari i Politècnic La Fe",
+              "type": "public-entity",
+              "role": {
+                "es": "Hospital validador — confirmó la brecha desde la perspectiva del empleador clínico",
+                "en": "Validating hospital — confirmed the gap from the clinical employer perspective",
+                "va": "Hospital validador — va confirmar la bretxa des de la perspectiva de l'empleador clínic"
+              }
+            },
+            {
+              "name": "Conselleria de Sanitat Universal i Salut Pública",
+              "type": "public-admin",
+              "role": {
+                "es": "Administración sanitaria — validó la alineación con el Plan de Transformación Digital Sanitaria",
+                "en": "Health administration — validated alignment with the Healthcare Digital Transformation Plan",
+                "va": "Administració sanitària — va validar l'alineació amb el Pla de Transformació Digital Sanitària"
+              }
+            },
+            {
+              "name": "AI-STEAM Comité Técnico Salud Digital",
+              "type": "sector-association",
+              "role": {
+                "es": "Triage ConsensUE y clasificación Track A",
+                "en": "ConsensUE triage and Track A classification",
+                "va": "Triatge ConsensUE i classificació Track A"
+              }
+            }
+          ]
+        },
+        "validation": {
+          "objectType": "need",
+          "objectTitle": {
+            "es": "Brecha de competencias digitales en salud en los graduados de FP Sanitario valenciano",
+            "en": "Digital health competency gap in Valencian Health VET graduates",
+            "va": "Bretxa de competències digitals en salut en els graduats de FP Sanitari valencià"
+          },
+          "validationQuestion": {
+            "es": "¿Existe una brecha de competencias digitales en salud entre lo que forman actualmente los ciclos de FP Sanitario y lo que demandan los entornos clínicos valencianos, y es esta brecha suficientemente significativa para justificar una intervención sistemática en el currículo de FP y en el máster?",
+            "en": "Is there a digital health competency gap between what current Health VET cycles train and what Valencian clinical settings demand, and is this gap significant enough to justify a systematic intervention in the VET curriculum and the master's programme?",
+            "va": "Existeix una bretxa de competències digitals en salut entre el que formen actualment els cicles de FP Sanitari i el que demanden els entorns clínics valencians, i és aquesta bretxa suficientment significativa per a justificar una intervenció sistemàtica en el currículum de FP i en el màster?"
+          },
+          "need": {
+            "es": "El Consell Valencià d'Infermeria detectó en su encuesta anual de inserción laboral 2025 que el 71% de los nuevos colegiados que habían cursado FP Sanitario declaraba sentirse \"poco preparado\" o \"nada preparado\" para trabajar con herramientas de IA y sistemas de apoyo a la decisión clínica presentes en sus centros de trabajo.",
+            "en": "The Consell Valencià d'Infermeria detected in its 2025 annual job placement survey that 71% of new members who had studied Health VET declared feeling \"poorly prepared\" or \"not at all prepared\" to work with AI tools and clinical decision support systems present in their workplaces.",
+            "va": "El Consell Valencià d'Infermeria va detectar en la seua enquesta anual d'inserció laboral 2025 que el 71% dels nous col·legiats que havien cursat FP Sanitari declarava sentir-se \"poc preparat\" o \"gens preparat\" per a treballar amb eines d'IA i sistemes de suport a la decisió clínica presents en els seus llocs de treball."
+          },
+          "context": {
+            "es": "El Hospital La Fe y la Conselleria de Sanitat confirmaron la brecha desde sus perspectivas institucionales. La encuesta se extendió a una muestra de 180 supervisores clínicos de 8 hospitales de la red pública valenciana, y el 83% identificó la competencia digital como una prioridad de formación continua para los técnicos de FP Sanitario.",
+            "en": "Hospital La Fe and the Conselleria de Sanitat confirmed the gap from their institutional perspectives. The survey was extended to a sample of 180 clinical supervisors from 8 hospitals in the Valencian public network, and 83% identified digital competence as a continuing education priority for Health VET technicians.",
+            "va": "L'Hospital La Fe i la Conselleria de Sanitat van confirmar la bretxa des de les seues perspectives institucionals. L'enquesta es va estendre a una mostra de 180 supervisors clínics de 8 hospitals de la xarxa pública valenciana, i el 83% va identificar la competència digital com una prioritat de formació contínua per als tècnics de FP Sanitari."
+          },
+          "method": {
+            "es": "Encuesta al Consell Valencià d'Infermeria (inserción laboral 2025), entrevistas con supervisores clínicos del Hospital La Fe, análisis de los planes de transformación digital de la Conselleria de Sanitat y triage ConsensUE para clasificación Track A / Track B.",
+            "en": "Consell Valencià d'Infermeria survey (2025 job placement), interviews with La Fe clinical supervisors, analysis of Conselleria de Sanitat digital transformation plans and ConsensUE triage for Track A / Track B classification.",
+            "va": "Enquesta del Consell Valencià d'Infermeria (inserció laboral 2025), entrevistes amb supervisors clínics de l'Hospital La Fe, anàlisi dels plans de transformació digital de la Conselleria de Sanitat i triatge ConsensUE per a classificació Track A / Track B."
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Encuesta de inserción laboral 2025 — Consell Valencià d'Infermeria (n=312)",
+                "en": "2025 job placement survey — Consell Valencià d'Infermeria (n=312)",
+                "va": "Enquesta d'inserció laboral 2025 — Consell Valencià d'Infermeria (n=312)"
+              }
+            },
+            {
+              "label": {
+                "es": "Entrevistas con 180 supervisores clínicos — 8 hospitales red pública valenciana",
+                "en": "Interviews with 180 clinical supervisors — 8 Valencian public hospital network hospitals",
+                "va": "Entrevistes amb 180 supervisors clínics — 8 hospitals xarxa pública valenciana"
+              }
+            },
+            {
+              "label": {
+                "es": "Triage ConsensUE — Comité Técnico Salud Digital",
+                "en": "ConsensUE triage — Digital Health Technical Committee",
+                "va": "Triatge ConsensUE — Comité Tècnic Salut Digital"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": [
+            {
+              "id": "competency-gap-size",
+              "label": {
+                "es": "Magnitud de la brecha de competencias detectada",
+                "en": "Magnitude of the detected competency gap",
+                "va": "Magnitud de la bretxa de competències detectada"
+              },
+              "result": "positive",
+              "note": {
+                "es": "El 71% de los nuevos colegiados de FP Sanitario y el 83% de los supervisores clínicos confirman la brecha. La magnitud justifica una intervención curricular sistemática.",
+                "en": "71% of new Health VET professional members and 83% of clinical supervisors confirm the gap. The magnitude justifies a systematic curricular intervention.",
+                "va": "El 71% dels nous col·legiats de FP Sanitari i el 83% dels supervisors clínics confirmen la bretxa. La magnitud justifica una intervenció curricular sistemàtica."
+              }
+            },
+            {
+              "id": "employer-demand",
+              "label": {
+                "es": "Demanda del empleador clínico de competencias digitales en nuevos técnicos",
+                "en": "Clinical employer demand for digital competences in new technicians",
+                "va": "Demanda de l'empleador clínic de competències digitals en nous tècnics"
+              },
+              "result": "positive",
+              "note": {
+                "es": "Los 8 hospitales de la muestra identifican IA en diagnóstico, sistemas de información clínica y ciberseguridad sanitaria como competencias prioritarias para los nuevos técnicos contratados.",
+                "en": "All 8 hospitals in the sample identify AI in diagnosis, clinical information systems and healthcare cybersecurity as priority competences for newly hired technicians.",
+                "va": "Els 8 hospitals de la mostra identifiquen IA en diagnòstic, sistemes d'informació clínica i ciberseguretat sanitària com a competències prioritàries per als nous tècnics contractats."
+              }
+            },
+            {
+              "id": "academic-track-fit",
+              "label": {
+                "es": "Pertinencia de la vía académica (Track A) para abordar la brecha",
+                "en": "Relevance of the academic route (Track A) to address the gap",
+                "va": "Pertinència de la via acadèmica (Track A) per a abordar la bretxa"
+              },
+              "result": "positive",
+              "note": {
+                "es": "El Comité concluye que la profundidad de la brecha justifica tanto una intervención en FP (Track B, módulos de 8-10 horas) como un tratamiento académico más profundo en el máster (Track A).",
+                "en": "The Committee concludes that the depth of the gap justifies both a VET intervention (Track B, 8-10 hour modules) and deeper academic treatment at master's level (Track A).",
+                "va": "El Comité conclou que la profunditat de la bretxa justifica tant una intervenció en FP (Track B, mòduls de 8-10 hores) com un tractament acadèmic més profund en el màster (Track A)."
+              }
+            }
+          ]
+        },
+        "evidence": {
+          "evidenceLevel": "reviewed",
+          "collectionMethod": {
+            "es": "Encuesta de inserción laboral del Consell Valencià d'Infermeria (n=312), entrevistas semiestructuradas con 180 supervisores clínicos de 8 hospitales y análisis de planes de transformación digital de la Conselleria de Sanitat.",
+            "en": "Consell Valencià d'Infermeria job placement survey (n=312), semi-structured interviews with 180 clinical supervisors from 8 hospitals and analysis of Conselleria de Sanitat digital transformation plans.",
+            "va": "Enquesta d'inserció laboral del Consell Valencià d'Infermeria (n=312), entrevistes semiestructurades amb 180 supervisors clínics de 8 hospitals i anàlisi de plans de transformació digital de la Conselleria de Sanitat."
+          },
+          "indicators": [
+            {
+              "id": "graduate-unpreparedness",
+              "label": {
+                "es": "Porcentaje de nuevos colegiados de FP que se declaran poco o nada preparados digitalmente",
+                "en": "Percentage of new VET professional members declaring themselves poorly or not at all digitally prepared",
+                "va": "Percentatge de nous col·legiats de FP que es declaren poc o gens preparats digitalment"
+              },
+              "metric": {
+                "es": "71% (encuesta inserción laboral 2025, n=312)",
+                "en": "71% (2025 job placement survey, n=312)",
+                "va": "71% (enquesta inserció laboral 2025, n=312)"
+              }
+            },
+            {
+              "id": "supervisor-demand",
+              "label": {
+                "es": "Porcentaje de supervisores clínicos que identifican la competencia digital como prioritaria",
+                "en": "Percentage of clinical supervisors identifying digital competence as a priority",
+                "va": "Percentatge de supervisors clínics que identifiquen la competència digital com a prioritària"
+              },
+              "metric": {
+                "es": "83% (entrevistas, n=180)",
+                "en": "83% (interviews, n=180)",
+                "va": "83% (entrevistes, n=180)"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "La muestra de supervisores clínicos está sesgada hacia hospitales grandes de la red pública. Centros de atención primaria y clínicas privadas pueden tener perfiles de demanda diferentes.",
+            "en": "The clinical supervisor sample is biased towards large public network hospitals. Primary care centres and private clinics may have different demand profiles.",
+            "va": "La mostra de supervisors clínics està esbiaixada cap a hospitals grans de la xarxa pública. Centres d'atenció primària i clíniques privades poden tenir perfils de demanda diferents."
+          }
+        },
+        "decision": {
+          "outcome": "validated-track-a",
+          "label": {
+            "es": "Validado — clasificado Track A para tratamiento académico en máster y Track B para intervención en FP",
+            "en": "Validated — classified as Track A for academic treatment at master's level and Track B for VET intervention",
+            "va": "Validat — classificat Track A per a tractament acadèmic en màster i Track B per a intervenció en FP"
+          },
+          "rationale": {
+            "es": "La magnitud de la brecha y la demanda del empleador justifican una intervención en dos velocidades. La intervención en FP (Track B) abordará los módulos básicos de 8-10 horas para los ciclos de Imagen para el Diagnóstico y Cuidados Auxiliares de Enfermería. La intervención académica (Track A) desarrollará una asignatura optativa en el máster universitario de Gestión de Servicios Sanitarios.",
+            "en": "The magnitude of the gap and employer demand justify a two-speed intervention. The VET intervention (Track B) will address 8-10 hour basic modules for Diagnostic Imaging and Nursing Care cycles. The academic intervention (Track A) will develop an optional subject in the university master's in Healthcare Services Management.",
+            "va": "La magnitud de la bretxa i la demanda de l'empleador justifiquen una intervenció en dues velocitats. La intervenció en FP (Track B) abordarà els mòduls bàsics de 8-10 hores per als cicles d'Imatge per al Diagnòstic i Cures Auxiliars d'Infermeria. La intervenció acadèmica (Track A) desenvoluparà una assignatura optativa en el màster universitari de Gestió de Serveis Sanitaris."
+          },
+          "nextStep": {
+            "type": "design-module",
+            "label": {
+              "es": "Diseñar los módulos de FP (Track B) y la asignatura optativa de máster (Track A) de competencias digitales en salud",
+              "en": "Design VET modules (Track B) and the optional master's subject (Track A) in digital health competencies",
+              "va": "Dissenyar els mòduls de FP (Track B) i l'assignatura optativa de màster (Track A) de competències digitals en salut"
+            }
+          }
+        },
+        "trackRouting": {
+          "route": "track-a",
+          "label": {
+            "es": "Clasificado Track A (máster) + Track B (FP) — intervención en dos niveles educativos",
+            "en": "Classified as Track A (master's) + Track B (VET) — two-level educational intervention",
+            "va": "Classificat Track A (màster) + Track B (FP) — intervenció en dos nivells educatius"
+          },
+          "academicReview": {
+            "enabled": true,
+            "reviewer": {
+              "name": "AI-STEAM Comité Técnico Salud Digital",
+              "type": "sector-association"
+            },
+            "note": {
+              "es": "El Comité Técnico validó la clasificación doble Track A + Track B como respuesta adecuada a la escala de la brecha detectada.",
+              "en": "The Technical Committee validated the dual Track A + Track B classification as an appropriate response to the scale of the detected gap.",
+              "va": "El Comité Tècnic va validar la classificació doble Track A + Track B com a resposta adequada a l'escala de la bretxa detectada."
+            }
+          }
+        },
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [
+            "pilot-ia-diagnostico-cancer-piel-nts"
+          ],
+          "resultingCaseIds": [
+            "diagnostico-ia-fp-sanitario-nts"
+          ],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": [
+            "pilot",
+            "case",
+            "resource"
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/validations/validation-stakeholder-salud-digital-nts/",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showValidationType": true,
+            "showDecision": true,
+            "showEvidenceLevel": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": false,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-09-15",
+          "end": "2025-11-30",
+          "label": {
+            "es": "Sep – Nov 2025",
+            "en": "Sep – Nov 2025",
+            "va": "Set – Nov 2025"
+          }
+        },
+        "criteriaCount": 3,
+        "validationTypeLabel": {
+          "es": "Validación stakeholder",
+          "en": "Stakeholder validation",
+          "va": "Validació stakeholder"
+        },
+        "validationStageLabel": {
+          "es": "Completada",
+          "en": "Completed",
+          "va": "Completada"
+        },
+        "decisionOutcomeLabel": {
+          "es": "Validado — Track A",
+          "en": "Validated — Track A",
+          "va": "Validat — Track A"
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
         "id": "validation-stakeholder-agr-asaja",
         "type": "validation",
         "tab": "validations",
@@ -36335,6 +42759,510 @@ export const MARKETPLACE_CONFIG = {
           "es": "Validado — Track A",
           "en": "Validated — Track A",
           "va": "Validat — Track A"
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-academica-rl-edificios-hou",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-01-10",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-academica-rl-edificios-hou.yml",
+        "core": {
+          "status": "validated",
+          "maturity": "idea",
+          "title": {
+            "es": "Validación académica — Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
+            "en": "Academic validation — Reinforcement learning applied to energy management of university buildings",
+            "va": "Validació acadèmica — Aprenentatge per reforç aplicat a la gestió energètica d'edificis universitaris"
+          },
+          "summary": {
+            "es": "Validación académica por el Instituto de Ingeniería Energética de la UPV y el grupo de investigación SAIL de la UCLM de la pertinencia científica y formativa del uso de aprendizaje por refuerzo para la gestión energética adaptativa en edificios, confirmando su encaje como contenido de máster y justificando la creación del Living Lab como entorno de investigación-formación.",
+            "en": "Academic validation by UPV's Institute of Energy Engineering and UCLM's SAIL research group of the scientific and educational relevance of reinforcement learning for adaptive building energy management, confirming its fit as master's content and justifying the creation of the Living Lab as a research-training environment.",
+            "va": "Validació acadèmica per l'Institut d'Enginyeria Energètica de la UPV i el grup de recerca SAIL de la UCLM de la pertinència científica i formativa de l'ús d'aprenentatge per reforç per a la gestió energètica adaptativa en edificis, confirmant el seu encaix com a contingut de màster i justificant la creació del Living Lab com a entorn de recerca-formació."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "sector": "hou",
+          "stakeholderCategory": "",
+          "levels": [
+            "Máster",
+            "FP"
+          ],
+          "pilotType": "",
+          "validationType": "academic-validation",
+          "validationStage": "completed",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2025-11-20",
+          "revisionDate": "2026-01-10",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "Nov 2025",
+            "en": "Nov 2025",
+            "va": "Nov 2025"
+          },
+          "revisionDateLabel": {
+            "es": "Ene 2026",
+            "en": "Jan 2026",
+            "va": "Gen 2026"
+          },
+          "deadlineLabel": null,
+          "tags": {
+            "es": [
+              "Aprendizaje por refuerzo",
+              "Eficiencia energética",
+              "Living Lab",
+              "Validación académica",
+              "Edificios"
+            ],
+            "en": [
+              "Reinforcement learning",
+              "Energy efficiency",
+              "Living Lab",
+              "Academic validation",
+              "Buildings"
+            ],
+            "va": [
+              "Aprenentatge per reforç",
+              "Eficiència energètica",
+              "Living Lab",
+              "Validació acadèmica",
+              "Edificis"
+            ]
+          }
+        },
+        "classification": {
+          "aiSteamFocus": [
+            "data-ai",
+            "maker-steam"
+          ],
+          "tripleTransition": [
+            "digital",
+            "green"
+          ],
+          "policyCluster": [
+            "infrastructure-evidence",
+            "integrated-pedagogy"
+          ],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "",
+          "dataAvailability": "summary-only",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "La ficha de validación y el resumen de la revisión bibliométrica se publican bajo CC BY 4.0. El informe completo de revisión de SAIL-UCLM es un documento académico confidencial.",
+            "en": "The validation sheet and bibliometric review summary are published under CC BY 4.0. The full SAIL-UCLM review report is a confidential academic document.",
+            "va": "La fitxa de validació i el resum de la revisió bibliomètrica es publiquen sota CC BY 4.0. L'informe complet de revisió de SAIL-UCLM és un document acadèmic confidencial."
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "AI-STEAM Network",
+            "org": "CEICE"
+          },
+          "proposer": {
+            "name": "Instituto de Ingeniería Energética — Universitat Politècnica de València",
+            "type": "university",
+            "role": {
+              "es": "Grupo académico proponente — investigación en control energético con IA",
+              "en": "Proposing academic group — research in AI-based energy control",
+              "va": "Grup acadèmic proponent — recerca en control energètic amb IA"
+            }
+          },
+          "validators": [
+            {
+              "name": "Grupo SAIL — Universidad de Castilla-La Mancha",
+              "type": "university",
+              "role": {
+                "es": "Revisión académica externa — autores del entorno Sinergym, referencia mundial en RL para edificios",
+                "en": "External academic review — Sinergym environment authors, world reference in RL for buildings",
+                "va": "Revisió acadèmica externa — autors de l'entorn Sinergym, referència mundial en RL per a edificis"
+              }
+            },
+            {
+              "name": "AI-STEAM Comité Técnico Investigación",
+              "type": "sector-association",
+              "role": {
+                "es": "Validación del encaje en el ecosistema AI-STEAM y clasificación Track A",
+                "en": "Validation of fit within the AI-STEAM ecosystem and Track A classification",
+                "va": "Validació de l'encaix en l'ecosistema AI-STEAM i classificació Track A"
+              }
+            }
+          ]
+        },
+        "validation": {
+          "objectType": "methodology",
+          "objectTitle": {
+            "es": "Metodología Living Lab para el entrenamiento y validación de agentes RL de gestión energética con participación de estudiantes de FP y máster",
+            "en": "Living Lab methodology for training and validating RL energy management agents with VET and master's student participation",
+            "va": "Metodologia Living Lab per a l'entrenament i validació d'agents RL de gestió energètica amb participació d'estudiants de FP i màster"
+          },
+          "validationQuestion": {
+            "es": "¿Tiene suficiente base científica y potencial formativo el enfoque Living Lab con RL para la gestión energética de edificios universitarios como para justificar su desarrollo como piloto de investigación-formación con participación conjunta de alumnos de FP y máster?",
+            "en": "Does the Living Lab approach with RL for university building energy management have sufficient scientific basis and educational potential to justify its development as a research-training pilot with joint participation of VET and master's students?",
+            "va": "Té suficient base científica i potencial formatiu l'enfocament Living Lab amb RL per a la gestió energètica d'edificis universitaris per a justificar el seu desenvolupament com a pilot de recerca-formació amb participació conjunta d'alumnes de FP i màster?"
+          },
+          "need": {
+            "es": "Los programas de máster en ingeniería energética y FP de instalaciones eléctricas carecen de entornos reales donde los alumnos puedan aplicar algoritmos de IA con datos y consecuencias energéticas reales. La simulación pura no transmite las restricciones operativas y los compromisos entre confort y eficiencia que se dan en un edificio real.",
+            "en": "Master's programmes in energy engineering and electrical installations VET lack real environments where students can apply AI algorithms with real energy data and consequences. Pure simulation does not convey the operational constraints and comfort-efficiency trade-offs that occur in a real building.",
+            "va": "Els programes de màster en enginyeria energètica i FP d'instal·lacions elèctriques manquen d'entorns reals on els alumnes puguen aplicar algorismes d'IA amb dades i conseqüències energètiques reals. La simulació pura no transmet les restriccions operatives i els compromisos entre confort i eficiència que es donen en un edifici real."
+          },
+          "context": {
+            "es": "El grupo SAIL de la UCLM, autores del entorno Sinergym (referencia mundial en RL para edificios con más de 800 citas), validó que la metodología propuesta sigue las mejores prácticas del campo y que el edificio 4I de la UPV ofrece condiciones experimentales de alta calidad (diversidad de usos, sensor density, acceso a datos SCADA). La revisión incluyó un análisis de la literatura de los últimos 3 años sobre RL en gestión energética de edificios.",
+            "en": "UCLM's SAIL group, authors of the Sinergym environment (world reference in building RL with over 800 citations), validated that the proposed methodology follows field best practices and that UPV's building 4I offers high-quality experimental conditions (use diversity, sensor density, SCADA data access). The review included a literature analysis of the last 3 years on RL in building energy management.",
+            "va": "El grup SAIL de la UCLM, autors de l'entorn Sinergym (referència mundial en RL per a edificis amb més de 800 cites), va validar que la metodologia proposada segueix les millors pràctiques del camp i que l'edifici 4I de la UPV ofereix condicions experimentals d'alta qualitat (diversitat d'usos, densitat de sensors, accés a dades SCADA). La revisió va incloure una anàlisi de la literatura dels últims 3 anys sobre RL en gestió energètica d'edificis."
+          },
+          "method": {
+            "es": "Revisión de la literatura de los últimos 3 años sobre RL en gestión energética (SAIL-UCLM), evaluación de las condiciones experimentales del edificio 4I (IIE-UPV) y sesión de valoración del potencial formativo con el Comité Técnico de Investigación de AI-STEAM.",
+            "en": "Review of the last 3 years of literature on RL in energy management (SAIL-UCLM), evaluation of the experimental conditions of building 4I (IIE-UPV) and assessment session on educational potential with the AI-STEAM Research Technical Committee.",
+            "va": "Revisió de la literatura dels últims 3 anys sobre RL en gestió energètica (SAIL-UCLM), avaluació de les condicions experimentals de l'edifici 4I (IIE-UPV) i sessió de valoració del potencial formatiu amb el Comité Tècnic de Recerca d'AI-STEAM."
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Revisión bibliométrica SAIL-UCLM — 3 años de literatura sobre RL en edificios",
+                "en": "SAIL-UCLM bibliometric review — 3 years of RL in buildings literature",
+                "va": "Revisió bibliomètrica SAIL-UCLM — 3 anys de literatura sobre RL en edificis"
+              }
+            },
+            {
+              "label": {
+                "es": "Evaluación experimental del edificio 4I — IIE-UPV",
+                "en": "Building 4I experimental evaluation — IIE-UPV",
+                "va": "Avaluació experimental de l'edifici 4I — IIE-UPV"
+              }
+            },
+            {
+              "label": {
+                "es": "Sesión de valoración formativa — Comité Técnico Investigación AI-STEAM",
+                "en": "Educational value assessment session — AI-STEAM Research Technical Committee",
+                "va": "Sessió de valoració formativa — Comité Tècnic Recerca AI-STEAM"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": [
+            {
+              "id": "scientific-basis",
+              "label": {
+                "es": "Base científica del enfoque RL para gestión energética de edificios",
+                "en": "Scientific basis of the RL approach for building energy management",
+                "va": "Base científica de l'enfocament RL per a gestió energètica d'edificis"
+              },
+              "result": "positive",
+              "note": {
+                "es": "SAIL-UCLM confirma que RL es la metodología más activa en el campo (47% de los artículos de los últimos 3 años), con resultados de reducción de consumo del 15-30% en entornos comparables al edificio 4I.",
+                "en": "SAIL-UCLM confirms that RL is the most active methodology in the field (47% of articles in the last 3 years), with consumption reduction results of 15-30% in environments comparable to building 4I.",
+                "va": "SAIL-UCLM confirma que RL és la metodologia més activa en el camp (47% dels articles dels últims 3 anys), amb resultats de reducció de consum del 15-30% en entorns comparables a l'edifici 4I."
+              }
+            },
+            {
+              "id": "experimental-quality",
+              "label": {
+                "es": "Calidad experimental del edificio 4I como entorno de Living Lab",
+                "en": "Experimental quality of building 4I as a Living Lab environment",
+                "va": "Qualitat experimental de l'edifici 4I com a entorn de Living Lab"
+              },
+              "result": "positive",
+              "note": {
+                "es": "El edificio 4I supera los estándares de la literatura en densidad de sensores y diversidad de patrones de ocupación. La integración con EnergyPlus para simulación paralela es directamente viable.",
+                "en": "Building 4I exceeds literature standards in sensor density and occupancy pattern diversity. Integration with EnergyPlus for parallel simulation is directly feasible.",
+                "va": "L'edifici 4I supera els estàndards de la literatura en densitat de sensors i diversitat de patrons d'ocupació. La integració amb EnergyPlus per a simulació paral·lela és directament viable."
+              }
+            },
+            {
+              "id": "educational-potential",
+              "label": {
+                "es": "Potencial formativo de la metodología Living Lab para FP y máster",
+                "en": "Educational potential of the Living Lab methodology for VET and master's",
+                "va": "Potencial formatiu de la metodologia Living Lab per a FP i màster"
+              },
+              "result": "positive",
+              "note": {
+                "es": "El Comité valora positivamente el modelo de co-desarrollo entre alumnos de FP (operación, sensores) y máster (algoritmos), que permite a cada nivel contribuir desde sus competencias propias.",
+                "en": "The Committee positively values the co-development model between VET students (operations, sensors) and master's students (algorithms), allowing each level to contribute from their own competencies.",
+                "va": "El Comité valora positivament el model de co-desenvolupament entre alumnes de FP (operació, sensors) i màster (algorismes), que permet a cada nivell contribuir des de les seues competències pròpies."
+              }
+            }
+          ]
+        },
+        "evidence": {
+          "evidenceLevel": "reviewed",
+          "collectionMethod": {
+            "es": "Revisión bibliométrica sistemática (SAIL-UCLM, n=87 artículos 2022-2025), evaluación experimental de las condiciones del edificio 4I y sesión de valoración formativa con el Comité Técnico.",
+            "en": "Systematic bibliometric review (SAIL-UCLM, n=87 articles 2022-2025), experimental evaluation of building 4I conditions and educational value assessment session with the Technical Committee.",
+            "va": "Revisió bibliomètrica sistemàtica (SAIL-UCLM, n=87 articles 2022-2025), avaluació experimental de les condicions de l'edifici 4I i sessió de valoració formativa amb el Comité Tècnic."
+          },
+          "indicators": [
+            {
+              "id": "literature-activity",
+              "label": {
+                "es": "Porcentaje de artículos sobre RL en gestión energética de edificios en los últimos 3 años",
+                "en": "Percentage of articles on RL in building energy management in the last 3 years",
+                "va": "Percentatge d'articles sobre RL en gestió energètica d'edificis en els últims 3 anys"
+              },
+              "metric": {
+                "es": "47% del total de publicaciones sobre IA en gestión energética (SAIL-UCLM, 2022-2025)",
+                "en": "47% of total AI in energy management publications (SAIL-UCLM, 2022-2025)",
+                "va": "47% del total de publicacions sobre IA en gestió energètica (SAIL-UCLM, 2022-2025)"
+              }
+            },
+            {
+              "id": "comparable-results",
+              "label": {
+                "es": "Rango de reducción de consumo reportado en entornos comparables",
+                "en": "Consumption reduction range reported in comparable environments",
+                "va": "Rang de reducció de consum reportat en entorns comparables"
+              },
+              "metric": {
+                "es": "15-30% en edificios universitarios con BMS y datos SCADA (revisión SAIL-UCLM)",
+                "en": "15-30% in university buildings with BMS and SCADA data (SAIL-UCLM review)",
+                "va": "15-30% en edificis universitaris amb BMS i dades SCADA (revisió SAIL-UCLM)"
+              }
+            }
+          ],
+          "limitations": {
+            "es": "La revisión académica valida la metodología y el potencial, no los resultados del piloto (que aún no se ha ejecutado en el momento de la validación). Los resultados reales pueden diferir de los rangos bibliográficos por condiciones específicas del edificio 4I.",
+            "en": "The academic review validates the methodology and potential, not the pilot results (which had not yet been executed at the time of validation). Actual results may differ from bibliographic ranges due to specific building 4I conditions.",
+            "va": "La revisió acadèmica valida la metodologia i el potencial, no els resultats del pilot (que encara no s'havia executat en el moment de la validació). Els resultats reals poden diferir dels rangs bibliogràfics per condicions específiques de l'edifici 4I."
+          }
+        },
+        "decision": {
+          "outcome": "validated-for-pilot",
+          "label": {
+            "es": "Validado — apto para piloto Living Lab con apertura a publicación de resultados como caso",
+            "en": "Validated — suitable for Living Lab pilot with openness to publishing results as a case",
+            "va": "Validat — apte per a pilot Living Lab amb obertura a publicació de resultats com a cas"
+          },
+          "rationale": {
+            "es": "La revisión académica confirma base científica sólida y condiciones experimentales de alta calidad en el edificio 4I. El Comité recomienda proceder con el piloto Living Lab y publicar los resultados como caso de referencia si se supera el umbral de reducción del 20%.",
+            "en": "The academic review confirms a solid scientific basis and high-quality experimental conditions in building 4I. The Committee recommends proceeding with the Living Lab pilot and publishing results as a reference case if the 20% reduction threshold is exceeded.",
+            "va": "La revisió acadèmica confirma base científica sòlida i condicions experimentals d'alta qualitat en l'edifici 4I. El Comité recomana procedir amb el pilot Living Lab i publicar els resultats com a cas de referència si se supera el llindar de reducció del 20%."
+          },
+          "nextStep": {
+            "type": "launch-pilot",
+            "label": {
+              "es": "Iniciar el piloto Living Lab en el edificio 4I con equipos mixtos FP-máster",
+              "en": "Launch the Living Lab pilot in building 4I with mixed VET-master's teams",
+              "va": "Iniciar el pilot Living Lab en l'edifici 4I amb equips mixtos FP-màster"
+            }
+          }
+        },
+        "trackRouting": {
+          "route": "track-b",
+          "label": {
+            "es": "Clasificado Track B — piloto Living Lab con potencial de conversión a caso verificado",
+            "en": "Classified as Track B — Living Lab pilot with potential for conversion to verified case",
+            "va": "Classificat Track B — pilot Living Lab amb potencial de conversió a cas verificat"
+          },
+          "academicReview": {
+            "enabled": true,
+            "reviewer": {
+              "name": "Grupo SAIL — Universidad de Castilla-La Mancha",
+              "type": "university"
+            },
+            "note": {
+              "es": "Revisión bibliométrica sistemática sobre RL en gestión energética de edificios realizada por los autores de Sinergym.",
+              "en": "Systematic bibliometric review on RL in building energy management conducted by the Sinergym authors.",
+              "va": "Revisió bibliomètrica sistemàtica sobre RL en gestió energètica d'edificis realitzada pels autors de Sinergym."
+            }
+          }
+        },
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [
+            "pilot-living-lab-eficiencia-energetica-hou"
+          ],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": [
+            "case",
+            "resource"
+          ]
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/validations/validation-academica-rl-edificios-hou/",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": [
+            {
+              "id": "sinergym-paper",
+              "type": "external-system",
+              "label": {
+                "es": "Sinergym — artículo de referencia (SAIL-UCLM)",
+                "en": "Sinergym — reference paper (SAIL-UCLM)",
+                "va": "Sinergym — article de referència (SAIL-UCLM)"
+              },
+              "url": "https://github.com/ugr-sail/sinergym",
+              "access": {
+                "es": "Repositorio público con documentación y paper asociado",
+                "en": "Public repository with documentation and associated paper",
+                "va": "Repositori públic amb documentació i article associat"
+              }
+            }
+          ]
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showValidationType": true,
+            "showDecision": true,
+            "showEvidenceLevel": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": false,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-09-01",
+          "end": "2025-11-15",
+          "label": {
+            "es": "Sep – Nov 2025",
+            "en": "Sep – Nov 2025",
+            "va": "Set – Nov 2025"
+          }
+        },
+        "criteriaCount": 3,
+        "validationTypeLabel": {
+          "es": "Validación académica",
+          "en": "Academic validation",
+          "va": "Validació acadèmica"
+        },
+        "validationStageLabel": {
+          "es": "Completada",
+          "en": "Completed",
+          "va": "Completada"
+        },
+        "decisionOutcomeLabel": {
+          "es": "Validado — derivar a piloto",
+          "en": "Validated — refer to pilot",
+          "va": "Validat — derivar a pilot"
         },
         "hasDownloads": false,
         "downloadCount": 0,
