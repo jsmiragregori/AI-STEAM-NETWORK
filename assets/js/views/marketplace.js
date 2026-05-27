@@ -618,6 +618,14 @@ function renderBadge(label, tone = 'bg-white text-gray-700 border-eu-border') {
   return `<span class="inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold ${tone}">${esc(text)}</span>`;
 }
 
+const STAT_ICONS = {
+  challenges:  'zap',
+  cases:       'briefcase',
+  pilots:      'rocket',
+  validations: 'shield-check',
+  mentorings:  'users',
+};
+
 function renderHero() {
   const hero = MARKETPLACE_CONFIG.heroBlock || {};
   const stats = (hero.stats || []).filter(stat => stat.visible !== false);
@@ -627,21 +635,20 @@ function renderHero() {
   return `
     <section class="bg-eu-blue px-6 py-12 text-white">
       <div class="mx-auto max-w-7xl">
-        <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
-          <div>
-            <p class="text-sm font-bold uppercase tracking-[0.2em] text-eu-yellow">${esc(pickLang(MARKETPLACE_CONFIG.publicSectionName?.nav, 'Comunidad'))}</p>
-            <h1 class="mt-3 max-w-4xl text-3xl font-extrabold leading-tight md:text-4xl">${esc(title)}</h1>
-            ${description ? `<p class="mt-4 max-w-3xl text-base leading-7 text-white/80">${esc(description)}</p>` : ''}
-          </div>
-          ${stats.length ? `
-            <div class="flex flex-wrap justify-start gap-2 lg:justify-end">
-              ${stats.map(stat => `
-                <div class="min-w-24 rounded-lg bg-white/10 px-3 py-2 text-center ring-1 ring-white/10">
-                  <p class="text-xl font-extrabold leading-none text-eu-yellow">${esc(stat.value)}</p>
-                  <p class="mt-1 text-[0.68rem] font-semibold uppercase leading-3 text-white/70">${esc(pickLang(stat.label))}</p>
-                </div>`).join('')}
-            </div>` : ''}
+        <div class="mb-6 lg:mb-8">
+          <p class="text-sm font-bold uppercase tracking-[0.2em] text-eu-yellow">${esc(pickLang(MARKETPLACE_CONFIG.publicSectionName?.nav, 'Comunidad'))}</p>
+          <h1 class="mt-3 max-w-4xl text-3xl font-extrabold leading-tight md:text-4xl">${esc(title)}</h1>
+          ${description ? `<p class="mt-4 max-w-3xl text-base leading-7 text-white/80">${esc(description)}</p>` : ''}
         </div>
+        ${stats.length ? `
+          <div class="flex flex-wrap gap-3">
+            ${stats.map(stat => `
+              <div class="flex flex-col rounded-xl bg-white/10 p-4 backdrop-blur min-w-[7rem]">
+                <i data-lucide="${STAT_ICONS[stat.id] || 'bar-chart-2'}" class="mb-2 h-5 w-5 text-eu-yellow"></i>
+                <p class="text-2xl font-extrabold leading-none text-white">${esc(stat.value)}</p>
+                <p class="mt-1.5 text-xs font-semibold uppercase tracking-wide text-white/70">${esc(pickLang(stat.label))}</p>
+              </div>`).join('')}
+          </div>` : ''}
       </div>
     </section>`;
 }
