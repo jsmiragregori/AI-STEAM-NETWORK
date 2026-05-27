@@ -575,6 +575,15 @@ export const MARKETPLACE_CONFIG = {
         "en": "Archived",
         "va": "Arxivat"
       }
+    },
+    {
+      "id": "closed",
+      "visible": true,
+      "label": {
+        "es": "Cerrado",
+        "en": "Closed",
+        "va": "Tancat"
+      }
     }
   ],
   "typeLabels": [
@@ -807,6 +816,24 @@ export const MARKETPLACE_CONFIG = {
       }
     },
     {
+      "id": "prototype",
+      "visible": true,
+      "label": {
+        "es": "Prototipo",
+        "en": "Prototype",
+        "va": "Prototip"
+      }
+    },
+    {
+      "id": "pilot",
+      "visible": true,
+      "label": {
+        "es": "En Piloto",
+        "en": "In Pilot",
+        "va": "En Pilot"
+      }
+    },
+    {
       "id": "completed",
       "visible": true,
       "label": {
@@ -837,6 +864,33 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "Docentes",
+      "visible": true,
+      "label": {
+        "es": "Docentes",
+        "en": "Teachers",
+        "va": "Docents"
+      }
+    },
+    {
+      "id": "vet",
+      "visible": true,
+      "label": {
+        "es": "FP",
+        "en": "VET",
+        "va": "FP"
+      }
+    },
+    {
+      "id": "master",
+      "visible": true,
+      "label": {
+        "es": "Máster",
+        "en": "Master",
+        "va": "Màster"
+      }
+    },
+    {
+      "id": "teacher",
       "visible": true,
       "label": {
         "es": "Docentes",
@@ -1902,6 +1956,60 @@ export const MARKETPLACE_CONFIG = {
         "es": "Sostenibilidad",
         "en": "Sustainability",
         "va": "Sostenibilitat"
+      }
+    },
+    {
+      "id": "data-ai",
+      "visible": true,
+      "label": {
+        "es": "Datos e IA",
+        "en": "Data & AI",
+        "va": "Dades i IA"
+      }
+    },
+    {
+      "id": "responsible-ai",
+      "visible": true,
+      "label": {
+        "es": "IA responsable",
+        "en": "Responsible AI",
+        "va": "IA responsable"
+      }
+    },
+    {
+      "id": "digital",
+      "visible": true,
+      "label": {
+        "es": "Competencia digital",
+        "en": "Digital competence",
+        "va": "Competència digital"
+      }
+    },
+    {
+      "id": "social",
+      "visible": true,
+      "label": {
+        "es": "Competencia social",
+        "en": "Social competence",
+        "va": "Competència social"
+      }
+    },
+    {
+      "id": "integrated-pedagogy",
+      "visible": true,
+      "label": {
+        "es": "Pedagogía integrada",
+        "en": "Integrated pedagogy",
+        "va": "Pedagogia integrada"
+      }
+    },
+    {
+      "id": "equity-inclusion",
+      "visible": true,
+      "label": {
+        "es": "Equidad e inclusión",
+        "en": "Equity & inclusion",
+        "va": "Equitat i inclusió"
       }
     }
   ],
@@ -3313,6 +3421,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/mentorings/mentoring-ia-creativa-turismo-cultura.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Mentoría — IA generativa y creativa para turismo, cultura e industrias creativas",
@@ -3346,14 +3455,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-22",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "15 de abril de 2026",
+          "en": "April 15, 2026",
+          "va": "15 d'abril de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "22 de mayo de 2026",
+          "en": "May 22, 2026",
+          "va": "22 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -3837,6 +3946,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/mentorings/mentoring-participacion-administracion-publica.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Mentoría — Cómo incorporar una administración pública al ecosistema AI-STEAM",
@@ -3870,14 +3980,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-22",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "10 de abril de 2026",
+          "en": "April 10, 2026",
+          "va": "10 d'abril de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "22 de mayo de 2026",
+          "en": "May 22, 2026",
+          "va": "22 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -4360,6 +4470,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/mentorings/mentoring-replicacion-casos-agr.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Mentoría — Replicación de casos AI-STEAM en el sector agroalimentario",
@@ -4393,14 +4504,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-22",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Mar 2026",
-          "en": "Mar 2026",
-          "va": "Mar 2026"
+          "es": "20 de marzo de 2026",
+          "en": "March 20, 2026",
+          "va": "20 de març de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "22 de mayo de 2026",
+          "en": "May 22, 2026",
+          "va": "22 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -4881,6 +4992,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/mentorings/mentoring-transferencia-investigacion-fp.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Mentoría — De la investigación al aula de FP: transferencia de resultados con IA",
@@ -4914,14 +5026,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-22",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "1 de abril de 2026",
+          "en": "April 1, 2026",
+          "va": "1 d'abril de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "22 de mayo de 2026",
+          "en": "May 22, 2026",
+          "va": "22 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -5402,6 +5514,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/mentorings/mentoring-etica-ia-proyectos-educativos.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Mentoría — Ética de la IA en proyectos educativos y formativos",
@@ -5435,14 +5548,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-20",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Mar 2026",
-          "en": "Mar 2026",
-          "va": "Mar 2026"
+          "es": "1 de marzo de 2026",
+          "en": "March 1, 2026",
+          "va": "1 de març de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "20 de mayo de 2026",
+          "en": "May 20, 2026",
+          "va": "20 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -5921,6 +6034,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/mentorings/mentoring-soporte-tecnico-implementacion-ia-nts.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Mentoría — Soporte técnico para implementar IA en entornos sanitarios y sociosanitarios",
@@ -5954,14 +6068,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-20",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Mar 2026",
-          "en": "Mar 2026",
-          "va": "Mar 2026"
+          "es": "15 de marzo de 2026",
+          "en": "March 15, 2026",
+          "va": "15 de març de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "20 de mayo de 2026",
+          "en": "May 20, 2026",
+          "va": "20 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -6444,6 +6558,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-ia-diagnostico-cancer-piel-nts.yml",
       "core": {
         "status": "in-progress",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Piloto — IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
@@ -6484,14 +6599,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-20",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Feb 2026",
-          "en": "Feb 2026",
-          "va": "Feb 2026"
+          "es": "1 de febrero de 2026",
+          "en": "February 1, 2026",
+          "va": "1 de febrer de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "20 de mayo de 2026",
+          "en": "May 20, 2026",
+          "va": "20 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -7132,6 +7247,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-living-lab-eficiencia-energetica-hou.yml",
       "core": {
         "status": "in-progress",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Living Lab — IA para la gestión energética adaptativa en edificio universitario",
@@ -7172,14 +7288,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-20",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Ene 2026",
-          "en": "Jan 2026",
-          "va": "Gen 2026"
+          "es": "15 de enero de 2026",
+          "en": "January 15, 2026",
+          "va": "15 de gener de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "20 de mayo de 2026",
+          "en": "May 20, 2026",
+          "va": "20 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -7819,7 +7935,8 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/challenges/reto-personalizacion-itinerarios-fp-edu.yml",
       "core": {
-        "status": "open",
+        "status": "closed",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "IA para la personalización de itinerarios formativos en ciclos de FP",
@@ -7851,21 +7968,21 @@ export const MARKETPLACE_CONFIG = {
         "relatedOerId": "",
         "publishedAt": "2026-04-01",
         "revisionDate": "2026-05-20",
-        "deadline": "2026-12-15",
+        "deadline": "2026-05-01",
         "publishedAtLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "1 de abril de 2026",
+          "en": "April 1, 2026",
+          "va": "1 d'abril de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "20 de mayo de 2026",
+          "en": "May 20, 2026",
+          "va": "20 de maig de 2026"
         },
         "deadlineLabel": {
-          "es": "Dic 2026",
-          "en": "Dec 2026",
-          "va": "Des 2026"
+          "es": "1 de mayo de 2026",
+          "en": "May 1, 2026",
+          "va": "1 de maig de 2026"
         },
         "tags": {
           "es": [
@@ -8341,6 +8458,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/mentorings/mentoring-diseno-pilotos-fp-empresa.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Mentoría — Diseño de pilotos de colaboración FP-empresa con IA",
@@ -8374,14 +8492,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-15",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Feb 2026",
-          "en": "Feb 2026",
-          "va": "Feb 2026"
+          "es": "1 de febrero de 2026",
+          "en": "February 1, 2026",
+          "va": "1 de febrer de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "15 de mayo de 2026",
+          "en": "May 15, 2026",
+          "va": "15 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -8860,6 +8978,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/challenges/reto-chatbot-atencion-ciudadana-adm.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "prototype",
         "title": {
           "es": "Chatbot de atención ciudadana con IA generativa para ayuntamientos pequeños",
@@ -8893,19 +9012,19 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-15",
         "deadline": "2026-11-28",
         "publishedAtLabel": {
-          "es": "Mar 2026",
-          "en": "Mar 2026",
-          "va": "Mar 2026"
+          "es": "1 de marzo de 2026",
+          "en": "March 1, 2026",
+          "va": "1 de març de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "15 de mayo de 2026",
+          "en": "May 15, 2026",
+          "va": "15 de maig de 2026"
         },
         "deadlineLabel": {
-          "es": "Nov 2026",
-          "en": "Nov 2026",
-          "va": "Nov 2026"
+          "es": "28 de noviembre de 2026",
+          "en": "November 28, 2026",
+          "va": "28 de novembre de 2026"
         },
         "tags": {
           "es": [
@@ -9384,6 +9503,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/mentorings/mentoring-formulacion-retos-industria.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Mentoría — Cómo formular un reto industrial para el ecosistema AI-STEAM",
@@ -9417,14 +9537,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-10",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Ene 2026",
-          "en": "Jan 2026",
-          "va": "Gen 2026"
+          "es": "15 de enero de 2026",
+          "en": "January 15, 2026",
+          "va": "15 de gener de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "10 de mayo de 2026",
+          "en": "May 10, 2026",
+          "va": "10 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -9901,6 +10021,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/challenges/reto-analisis-sentimiento-turismo-tur.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Sistema de análisis de sentimiento multilingüe para la gestión de la reputación turística",
@@ -9934,19 +10055,19 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-10",
         "deadline": "2026-09-15",
         "publishedAtLabel": {
-          "es": "Mar 2026",
-          "en": "Mar 2026",
-          "va": "Mar 2026"
+          "es": "15 de marzo de 2026",
+          "en": "March 15, 2026",
+          "va": "15 de març de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "10 de mayo de 2026",
+          "en": "May 10, 2026",
+          "va": "10 de maig de 2026"
         },
         "deadlineLabel": {
-          "es": "Sep 2026",
-          "en": "Sep 2026",
-          "va": "Set 2026"
+          "es": "15 de septiembre de 2026",
+          "en": "September 15, 2026",
+          "va": "15 de setembre de 2026"
         },
         "tags": {
           "es": [
@@ -10387,6 +10508,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/eficiencia-energetica-edificios-hou.yml",
       "core": {
         "status": "published",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Escalado de sistema de monitorización energética con IA desde edificio piloto a red de viviendas sociales",
@@ -10420,14 +10542,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-02",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Ago 2025",
-          "en": "Aug 2025",
-          "va": "Ago 2025"
+          "es": "1 de agosto de 2025",
+          "en": "August 1, 2025",
+          "va": "1 d'agost de 2025"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "2 de mayo de 2026",
+          "en": "May 2, 2026",
+          "va": "2 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -11041,6 +11163,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-fp-energia-costera.yml",
       "core": {
         "status": "resolved",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Piloto FP — IA para eficiencia energética en centros educativos",
@@ -11079,14 +11202,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-02",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Ene 2026",
-          "en": "Jan 2026",
-          "va": "Gen 2026"
+          "es": "15 de enero de 2026",
+          "en": "January 15, 2026",
+          "va": "15 de gener de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "2 de mayo de 2026",
+          "en": "May 2, 2026",
+          "va": "2 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -11578,6 +11701,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/challenges/reto-gemelo-digital-red-electrica-ene.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "prototype",
         "title": {
           "es": "Gemelo digital para la gestión predictiva de la red eléctrica urbana",
@@ -11611,19 +11735,19 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-01",
         "deadline": "2026-09-30",
         "publishedAtLabel": {
-          "es": "Feb 2026",
-          "en": "Feb 2026",
-          "va": "Feb 2026"
+          "es": "1 de febrero de 2026",
+          "en": "February 1, 2026",
+          "va": "1 de febrer de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "1 de mayo de 2026",
+          "en": "May 1, 2026",
+          "va": "1 de maig de 2026"
         },
         "deadlineLabel": {
-          "es": "Sep 2026",
-          "en": "Sep 2026",
-          "va": "Set 2026"
+          "es": "30 de septiembre de 2026",
+          "en": "September 30, 2026",
+          "va": "30 de setembre de 2026"
         },
         "tags": {
           "es": [
@@ -12099,6 +12223,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/challenges/reto-optimizacion-rutas-logistica-mob.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "prototype",
         "title": {
           "es": "Optimización de rutas de última milla con IA para logística urbana sostenible",
@@ -12132,19 +12257,19 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-01",
         "deadline": "2026-10-31",
         "publishedAtLabel": {
-          "es": "Feb 2026",
-          "en": "Feb 2026",
-          "va": "Feb 2026"
+          "es": "15 de febrero de 2026",
+          "en": "February 15, 2026",
+          "va": "15 de febrer de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "1 de mayo de 2026",
+          "en": "May 1, 2026",
+          "va": "1 de maig de 2026"
         },
         "deadlineLabel": {
-          "es": "Oct 2026",
-          "en": "Oct 2026",
-          "va": "Oct 2026"
+          "es": "31 de octubre de 2026",
+          "en": "October 31, 2026",
+          "va": "31 d'octubre de 2026"
         },
         "tags": {
           "es": [
@@ -12620,6 +12745,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/validations/validation-etica-ia-seleccion-personal-adm.yml",
       "core": {
         "status": "resolved",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Validación ética — Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
@@ -12655,14 +12781,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-05-01",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Mar 2026",
-          "en": "Mar 2026",
-          "va": "Mar 2026"
+          "es": "1 de marzo de 2026",
+          "en": "March 1, 2026",
+          "va": "1 de març de 2026"
         },
         "revisionDateLabel": {
-          "es": "May 2026",
-          "en": "May 2026",
-          "va": "Mai 2026"
+          "es": "1 de mayo de 2026",
+          "en": "May 1, 2026",
+          "va": "1 de maig de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -13114,6 +13240,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/narrativas-digitales-ia-cci.yml",
       "core": {
         "status": "published",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Narrativas digitales con IA generativa: del museo al aula de formación artística",
@@ -13147,14 +13274,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-30",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Ene 2026",
-          "en": "Jan 2026",
-          "va": "Gen 2026"
+          "es": "15 de enero de 2026",
+          "en": "January 15, 2026",
+          "va": "15 de gener de 2026"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "30 de abril de 2026",
+          "en": "April 30, 2026",
+          "va": "30 d'abril de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -13707,6 +13834,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/challenges/creative-ai-green-campus.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Co-diseñar un campus verde con IA generativa y prácticas STEAM",
@@ -13740,19 +13868,19 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-28",
         "deadline": "2026-09-30",
         "publishedAtLabel": {
-          "es": "Sep 2025",
-          "en": "Sep 2025",
-          "va": "Set 2025"
+          "es": "18 de septiembre de 2025",
+          "en": "September 18, 2025",
+          "va": "18 de setembre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "28 de abril de 2026",
+          "en": "April 28, 2026",
+          "va": "28 d'abril de 2026"
         },
         "deadlineLabel": {
-          "es": "Sep 2026",
-          "en": "Sep 2026",
-          "va": "Set 2026"
+          "es": "30 de septiembre de 2026",
+          "en": "September 30, 2026",
+          "va": "30 de setembre de 2026"
         },
         "tags": {
           "es": [
@@ -13971,14 +14099,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
-        "fallbackContact": {
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        }
+        "fallbackContact": null
       },
       "relations": {
         "originChallengeId": "",
@@ -14186,6 +14307,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/auditoria-energetica-ia-hou.yml",
       "core": {
         "status": "published",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Herramienta de auditoría energética doméstica con IA adaptada a FP de Edificación",
@@ -14219,14 +14341,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-25",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Feb 2026",
-          "en": "Feb 2026",
-          "va": "Feb 2026"
+          "es": "10 de febrero de 2026",
+          "en": "February 10, 2026",
+          "va": "10 de febrer de 2026"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "25 de abril de 2026",
+          "en": "April 25, 2026",
+          "va": "25 d'abril de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -14763,6 +14885,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/ia-deteccion-plagas-agr.yml",
       "core": {
         "status": "published",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "IA para detección temprana de plagas en cultivos: adaptación del modelo IVIA a FP Agroalimentario",
@@ -14796,14 +14919,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-20",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Nov 2025",
-          "en": "Nov 2025",
-          "va": "Nov 2025"
+          "es": "3 de noviembre de 2025",
+          "en": "November 3, 2025",
+          "va": "3 de novembre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "20 de abril de 2026",
+          "en": "April 20, 2026",
+          "va": "20 d'abril de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -15400,6 +15523,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/challenges/reto-control-calidad-vision-ia-mfg.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "pilot",
         "title": {
           "es": "Control de calidad visual con IA en línea de producción de componentes cerámicos",
@@ -15433,19 +15557,19 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-20",
         "deadline": "2026-08-31",
         "publishedAtLabel": {
-          "es": "Ene 2026",
-          "en": "Jan 2026",
-          "va": "Gen 2026"
+          "es": "10 de enero de 2026",
+          "en": "January 10, 2026",
+          "va": "10 de gener de 2026"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "20 de abril de 2026",
+          "en": "April 20, 2026",
+          "va": "20 d'abril de 2026"
         },
         "deadlineLabel": {
-          "es": "Ago 2026",
-          "en": "Aug 2026",
-          "va": "Ago 2026"
+          "es": "31 de agosto de 2026",
+          "en": "August 31, 2026",
+          "va": "31 d'agost de 2026"
         },
         "tags": {
           "es": [
@@ -15920,6 +16044,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/simulacion-conduccion-autonoma-mob.yml",
       "core": {
         "status": "published",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Simulación de conducción autónoma adaptada al ciclo de FP de Transporte",
@@ -15953,14 +16078,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-20",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Ene 2026",
-          "en": "Jan 2026",
-          "va": "Gen 2026"
+          "es": "15 de enero de 2026",
+          "en": "January 15, 2026",
+          "va": "15 de gener de 2026"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "20 de abril de 2026",
+          "en": "April 20, 2026",
+          "va": "20 d'abril de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -16494,6 +16619,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-drones-inspeccion-infraestructura-mob.yml",
       "core": {
         "status": "resolved",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Piloto — Drones con IA para la inspección automatizada de infraestructuras viarias",
@@ -16533,14 +16659,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-15",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Oct 2025",
-          "en": "Oct 2025",
-          "va": "Oct 2025"
+          "es": "1 de octubre de 2025",
+          "en": "October 1, 2025",
+          "va": "1 d'octubre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "15 de abril de 2026",
+          "en": "April 15, 2026",
+          "va": "15 d'abril de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -17195,6 +17321,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/drones-agricultura-precision-agr.yml",
       "core": {
         "status": "published",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Drones y agricultura de precisión con IA para índices NDVI transferidos a FP Agraria",
@@ -17228,14 +17355,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-10",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Sep 2025",
-          "en": "Sep 2025",
-          "va": "Set 2025"
+          "es": "1 de septiembre de 2025",
+          "en": "September 1, 2025",
+          "va": "1 de setembre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "10 de abril de 2026",
+          "en": "April 10, 2026",
+          "va": "10 d'abril de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -17795,6 +17922,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/mentorings/responsible-ai-creative-briefs.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Mentoría para briefs creativos con IA responsable",
@@ -17828,14 +17956,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-10",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Dic 2025",
-          "en": "Dec 2025",
-          "va": "Des 2025"
+          "es": "10 de diciembre de 2025",
+          "en": "December 10, 2025",
+          "va": "10 de desembre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "10 de abril de 2026",
+          "en": "April 10, 2026",
+          "va": "10 d'abril de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -18373,6 +18501,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/challenges/reto-ia-deteccion-plagas-agr.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "IA para la detección temprana de plagas y enfermedades en cítricos valencianos",
@@ -18406,19 +18535,19 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-10",
         "deadline": "2026-10-15",
         "publishedAtLabel": {
-          "es": "Ene 2026",
-          "en": "Jan 2026",
-          "va": "Gen 2026"
+          "es": "20 de enero de 2026",
+          "en": "January 20, 2026",
+          "va": "20 de gener de 2026"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "10 de abril de 2026",
+          "en": "April 10, 2026",
+          "va": "10 d'abril de 2026"
         },
         "deadlineLabel": {
-          "es": "Oct 2026",
-          "en": "Oct 2026",
-          "va": "Oct 2026"
+          "es": "15 de octubre de 2026",
+          "en": "October 15, 2026",
+          "va": "15 d'octubre de 2026"
         },
         "tags": {
           "es": [
@@ -18870,6 +18999,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/solar-fotovoltaica-gemelo-digital-ene.yml",
       "core": {
         "status": "published",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Gemelo digital de instalación fotovoltaica en FP de Energía",
@@ -18903,14 +19033,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-05",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Nov 2025",
-          "en": "Nov 2025",
-          "va": "Nov 2025"
+          "es": "20 de noviembre de 2025",
+          "en": "November 20, 2025",
+          "va": "20 de novembre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "5 de abril de 2026",
+          "en": "April 5, 2026",
+          "va": "5 d'abril de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -19487,6 +19617,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/validations/validation-legal-datos-movilidad-mob.yml",
       "core": {
         "status": "validated",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Validación legal — Uso de datos de movilidad urbana de Correos para el reto de optimización de rutas",
@@ -19522,14 +19653,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-05",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Feb 2026",
-          "en": "Feb 2026",
-          "va": "Feb 2026"
+          "es": "20 de febrero de 2026",
+          "en": "February 20, 2026",
+          "va": "20 de febrer de 2026"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "5 de abril de 2026",
+          "en": "April 5, 2026",
+          "va": "5 d'abril de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -19968,6 +20099,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/validations/validation-tecnica-gemelo-digital-ene.yml",
       "core": {
         "status": "validated",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Validación técnica — Viabilidad del gemelo digital para la gestión predictiva de la red eléctrica urbana",
@@ -20003,14 +20135,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-04-01",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Feb 2026",
-          "en": "Feb 2026",
-          "va": "Feb 2026"
+          "es": "15 de febrero de 2026",
+          "en": "February 15, 2026",
+          "va": "15 de febrer de 2026"
         },
         "revisionDateLabel": {
-          "es": "Abr 2026",
-          "en": "Apr 2026",
-          "va": "Abr 2026"
+          "es": "1 de abril de 2026",
+          "en": "April 1, 2026",
+          "va": "1 d'abril de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -20463,6 +20595,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/realidad-aumentada-museos-cci.yml",
       "core": {
         "status": "published",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Realidad aumentada para mediación cultural en museos adaptada a FP de Arte y Diseño",
@@ -20496,14 +20629,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-03-30",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Dic 2025",
-          "en": "Dec 2025",
-          "va": "Des 2025"
+          "es": "1 de diciembre de 2025",
+          "en": "December 1, 2025",
+          "va": "1 de desembre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Mar 2026",
-          "en": "Mar 2026",
-          "va": "Mar 2026"
+          "es": "30 de marzo de 2026",
+          "en": "March 30, 2026",
+          "va": "30 de març de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -21046,6 +21179,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/mantenimiento-predictivo-ml-mfg.yml",
       "core": {
         "status": "published",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Mantenimiento predictivo con ML en industria auxiliar del automóvil transferido a FP",
@@ -21079,14 +21213,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-03-22",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Ago 2025",
-          "en": "Aug 2025",
-          "va": "Ago 2025"
+          "es": "1 de agosto de 2025",
+          "en": "August 1, 2025",
+          "va": "1 d'agost de 2025"
         },
         "revisionDateLabel": {
-          "es": "Mar 2026",
-          "en": "Mar 2026",
-          "va": "Mar 2026"
+          "es": "22 de marzo de 2026",
+          "en": "March 22, 2026",
+          "va": "22 de març de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -21643,6 +21777,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-turismo-inteligente-tur.yml",
       "core": {
         "status": "validated",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Validación stakeholder — Necesidad de personalización con IA en la oferta turística valenciana",
@@ -21679,14 +21814,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-03-20",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Ene 2026",
-          "en": "Jan 2026",
-          "va": "Gen 2026"
+          "es": "10 de enero de 2026",
+          "en": "January 10, 2026",
+          "va": "10 de gener de 2026"
         },
         "revisionDateLabel": {
-          "es": "Mar 2026",
-          "en": "Mar 2026",
-          "va": "Mar 2026"
+          "es": "20 de marzo de 2026",
+          "en": "March 20, 2026",
+          "va": "20 de març de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -22135,6 +22270,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/cobot-soldadura-fp.yml",
       "core": {
         "status": "published",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Integración de cobots colaborativos en soldadura para FP Industrial",
@@ -22168,14 +22304,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-03-10",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Sep 2025",
-          "en": "Sep 2025",
-          "va": "Set 2025"
+          "es": "15 de septiembre de 2025",
+          "en": "September 15, 2025",
+          "va": "15 de setembre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Mar 2026",
-          "en": "Mar 2026",
-          "va": "Mar 2026"
+          "es": "10 de marzo de 2026",
+          "en": "March 10, 2026",
+          "va": "10 de març de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -22698,6 +22834,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/validations/validation-pedagogica-control-calidad-mfg.yml",
       "core": {
         "status": "validated",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Validación pedagógica — Integración de visión artificial en ciclos de FP de Fabricación Mecánica",
@@ -22734,14 +22871,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-03-10",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Ene 2026",
-          "en": "Jan 2026",
-          "va": "Gen 2026"
+          "es": "20 de enero de 2026",
+          "en": "January 20, 2026",
+          "va": "20 de gener de 2026"
         },
         "revisionDateLabel": {
-          "es": "Mar 2026",
-          "en": "Mar 2026",
-          "va": "Mar 2026"
+          "es": "10 de marzo de 2026",
+          "en": "March 10, 2026",
+          "va": "10 de març de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -23195,6 +23332,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-teacher-sesgos-ia-uveg.yml",
       "core": {
         "status": "resolved",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Formación Docente — Análisis de sesgos en IA para profesorado de Máster",
@@ -23234,14 +23372,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-03-01",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Dic 2025",
-          "en": "Dec 2025",
-          "va": "Des 2025"
+          "es": "1 de diciembre de 2025",
+          "en": "December 1, 2025",
+          "va": "1 de desembre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Mar 2026",
-          "en": "Mar 2026",
-          "va": "Mar 2026"
+          "es": "1 de marzo de 2026",
+          "en": "March 1, 2026",
+          "va": "1 de març de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -23759,6 +23897,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/movilidad-sostenible-formacion-docente.yml",
       "core": {
         "status": "published",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Programa de capacitación docente en movilidad sostenible e inteligencia artificial",
@@ -23792,14 +23931,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-02-28",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Oct 2025",
-          "en": "Oct 2025",
-          "va": "Oct 2025"
+          "es": "20 de octubre de 2025",
+          "en": "October 20, 2025",
+          "va": "20 d'octubre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Feb 2026",
-          "en": "Feb 2026",
-          "va": "Feb 2026"
+          "es": "28 de febrero de 2026",
+          "en": "February 28, 2026",
+          "va": "28 de febrer de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -24374,6 +24513,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-salud-digital-nts.yml",
       "core": {
         "status": "validated",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Validación stakeholder — Necesidad de competencias digitales en salud en la FP Sanitaria valenciana",
@@ -24411,14 +24551,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-02-20",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Dic 2025",
-          "en": "Dec 2025",
-          "va": "Des 2025"
+          "es": "1 de diciembre de 2025",
+          "en": "December 1, 2025",
+          "va": "1 de desembre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Feb 2026",
-          "en": "Feb 2026",
-          "va": "Feb 2026"
+          "es": "20 de febrero de 2026",
+          "en": "February 20, 2026",
+          "va": "20 de febrer de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -24875,6 +25015,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/cases/diagnostico-ia-fp-sanitario-nts.yml",
       "core": {
         "status": "published",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "IA para diagnóstico de imagen médica adaptada a FP Sanitario",
@@ -24908,14 +25049,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-02-14",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Oct 2025",
-          "en": "Oct 2025",
-          "va": "Oct 2025"
+          "es": "8 de octubre de 2025",
+          "en": "October 8, 2025",
+          "va": "8 d'octubre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Feb 2026",
-          "en": "Feb 2026",
-          "va": "Feb 2026"
+          "es": "14 de febrero de 2026",
+          "en": "February 14, 2026",
+          "va": "14 de febrer de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -25463,6 +25604,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-fp-cobots-mecatronica.yml",
       "core": {
         "status": "resolved",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Piloto FP — Cobots y robótica colaborativa en ciclos de mecatrónica",
@@ -25501,14 +25643,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-02-10",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Sep 2025",
-          "en": "Sep 2025",
-          "va": "Set 2025"
+          "es": "1 de septiembre de 2025",
+          "en": "September 1, 2025",
+          "va": "1 de setembre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Feb 2026",
-          "en": "Feb 2026",
-          "va": "Feb 2026"
+          "es": "10 de febrero de 2026",
+          "en": "February 10, 2026",
+          "va": "10 de febrer de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -26016,6 +26158,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/pilots/pilot-master-bridge-gemelos-digitales.yml",
       "core": {
         "status": "in-progress",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Piloto Máster — Puente FP-Máster en IA aplicada a gemelos digitales",
@@ -26055,9 +26198,9 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": null,
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Feb 2026",
-          "en": "Feb 2026",
-          "va": "Feb 2026"
+          "es": "1 de febrero de 2026",
+          "en": "February 1, 2026",
+          "va": "1 de febrer de 2026"
         },
         "revisionDateLabel": null,
         "deadlineLabel": null,
@@ -26543,6 +26686,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-agr-asaja.yml",
       "core": {
         "status": "resolved",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Validación stakeholder — Reto de agricultura de precisión con IA",
@@ -26579,14 +26723,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-01-25",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Nov 2025",
-          "en": "Nov 2025",
-          "va": "Nov 2025"
+          "es": "10 de noviembre de 2025",
+          "en": "November 10, 2025",
+          "va": "10 de novembre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Ene 2026",
-          "en": "Jan 2026",
-          "va": "Gen 2026"
+          "es": "25 de enero de 2026",
+          "en": "January 25, 2026",
+          "va": "25 de gener de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -27069,6 +27213,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/validations/validation-academica-rl-edificios-hou.yml",
       "core": {
         "status": "validated",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Validación académica — Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
@@ -27105,14 +27250,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-01-10",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Nov 2025",
-          "en": "Nov 2025",
-          "va": "Nov 2025"
+          "es": "20 de noviembre de 2025",
+          "en": "November 20, 2025",
+          "va": "20 de novembre de 2025"
         },
         "revisionDateLabel": {
-          "es": "Ene 2026",
-          "en": "Jan 2026",
-          "va": "Gen 2026"
+          "es": "10 de enero de 2026",
+          "en": "January 10, 2026",
+          "va": "10 de gener de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -27573,6 +27718,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
       "core": {
         "status": "resolved",
+        "forceOpen": false,
         "maturity": "idea",
         "title": {
           "es": "Validación stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
@@ -27608,14 +27754,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2025-10-20",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Jul 2025",
-          "en": "Jul 2025",
-          "va": "Jul 2025"
+          "es": "1 de julio de 2025",
+          "en": "July 1, 2025",
+          "va": "1 de juliol de 2025"
         },
         "revisionDateLabel": {
-          "es": "Oct 2025",
-          "en": "Oct 2025",
-          "va": "Oct 2025"
+          "es": "20 de octubre de 2025",
+          "en": "October 20, 2025",
+          "va": "20 d'octubre de 2025"
         },
         "deadlineLabel": null,
         "tags": {
@@ -28109,7 +28255,8 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/challenges/reto-personalizacion-itinerarios-fp-edu.yml",
         "core": {
-          "status": "open",
+          "status": "closed",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "IA para la personalización de itinerarios formativos en ciclos de FP",
@@ -28141,21 +28288,21 @@ export const MARKETPLACE_CONFIG = {
           "relatedOerId": "",
           "publishedAt": "2026-04-01",
           "revisionDate": "2026-05-20",
-          "deadline": "2026-12-15",
+          "deadline": "2026-05-01",
           "publishedAtLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "1 de abril de 2026",
+            "en": "April 1, 2026",
+            "va": "1 d'abril de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "20 de mayo de 2026",
+            "en": "May 20, 2026",
+            "va": "20 de maig de 2026"
           },
           "deadlineLabel": {
-            "es": "Dic 2026",
-            "en": "Dec 2026",
-            "va": "Des 2026"
+            "es": "1 de mayo de 2026",
+            "en": "May 1, 2026",
+            "va": "1 de maig de 2026"
           },
           "tags": {
             "es": [
@@ -28631,6 +28778,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/challenges/reto-chatbot-atencion-ciudadana-adm.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "prototype",
           "title": {
             "es": "Chatbot de atención ciudadana con IA generativa para ayuntamientos pequeños",
@@ -28664,19 +28812,19 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-15",
           "deadline": "2026-11-28",
           "publishedAtLabel": {
-            "es": "Mar 2026",
-            "en": "Mar 2026",
-            "va": "Mar 2026"
+            "es": "1 de marzo de 2026",
+            "en": "March 1, 2026",
+            "va": "1 de març de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "15 de mayo de 2026",
+            "en": "May 15, 2026",
+            "va": "15 de maig de 2026"
           },
           "deadlineLabel": {
-            "es": "Nov 2026",
-            "en": "Nov 2026",
-            "va": "Nov 2026"
+            "es": "28 de noviembre de 2026",
+            "en": "November 28, 2026",
+            "va": "28 de novembre de 2026"
           },
           "tags": {
             "es": [
@@ -29155,6 +29303,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/challenges/reto-analisis-sentimiento-turismo-tur.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Sistema de análisis de sentimiento multilingüe para la gestión de la reputación turística",
@@ -29188,19 +29337,19 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-10",
           "deadline": "2026-09-15",
           "publishedAtLabel": {
-            "es": "Mar 2026",
-            "en": "Mar 2026",
-            "va": "Mar 2026"
+            "es": "15 de marzo de 2026",
+            "en": "March 15, 2026",
+            "va": "15 de març de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "10 de mayo de 2026",
+            "en": "May 10, 2026",
+            "va": "10 de maig de 2026"
           },
           "deadlineLabel": {
-            "es": "Sep 2026",
-            "en": "Sep 2026",
-            "va": "Set 2026"
+            "es": "15 de septiembre de 2026",
+            "en": "September 15, 2026",
+            "va": "15 de setembre de 2026"
           },
           "tags": {
             "es": [
@@ -29641,6 +29790,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/challenges/reto-gemelo-digital-red-electrica-ene.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "prototype",
           "title": {
             "es": "Gemelo digital para la gestión predictiva de la red eléctrica urbana",
@@ -29674,19 +29824,19 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-01",
           "deadline": "2026-09-30",
           "publishedAtLabel": {
-            "es": "Feb 2026",
-            "en": "Feb 2026",
-            "va": "Feb 2026"
+            "es": "1 de febrero de 2026",
+            "en": "February 1, 2026",
+            "va": "1 de febrer de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "1 de mayo de 2026",
+            "en": "May 1, 2026",
+            "va": "1 de maig de 2026"
           },
           "deadlineLabel": {
-            "es": "Sep 2026",
-            "en": "Sep 2026",
-            "va": "Set 2026"
+            "es": "30 de septiembre de 2026",
+            "en": "September 30, 2026",
+            "va": "30 de setembre de 2026"
           },
           "tags": {
             "es": [
@@ -30162,6 +30312,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/challenges/reto-optimizacion-rutas-logistica-mob.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "prototype",
           "title": {
             "es": "Optimización de rutas de última milla con IA para logística urbana sostenible",
@@ -30195,19 +30346,19 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-01",
           "deadline": "2026-10-31",
           "publishedAtLabel": {
-            "es": "Feb 2026",
-            "en": "Feb 2026",
-            "va": "Feb 2026"
+            "es": "15 de febrero de 2026",
+            "en": "February 15, 2026",
+            "va": "15 de febrer de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "1 de mayo de 2026",
+            "en": "May 1, 2026",
+            "va": "1 de maig de 2026"
           },
           "deadlineLabel": {
-            "es": "Oct 2026",
-            "en": "Oct 2026",
-            "va": "Oct 2026"
+            "es": "31 de octubre de 2026",
+            "en": "October 31, 2026",
+            "va": "31 d'octubre de 2026"
           },
           "tags": {
             "es": [
@@ -30683,6 +30834,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/challenges/creative-ai-green-campus.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Co-diseñar un campus verde con IA generativa y prácticas STEAM",
@@ -30716,19 +30868,19 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-28",
           "deadline": "2026-09-30",
           "publishedAtLabel": {
-            "es": "Sep 2025",
-            "en": "Sep 2025",
-            "va": "Set 2025"
+            "es": "18 de septiembre de 2025",
+            "en": "September 18, 2025",
+            "va": "18 de setembre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "28 de abril de 2026",
+            "en": "April 28, 2026",
+            "va": "28 d'abril de 2026"
           },
           "deadlineLabel": {
-            "es": "Sep 2026",
-            "en": "Sep 2026",
-            "va": "Set 2026"
+            "es": "30 de septiembre de 2026",
+            "en": "September 30, 2026",
+            "va": "30 de setembre de 2026"
           },
           "tags": {
             "es": [
@@ -30947,14 +31099,7 @@ export const MARKETPLACE_CONFIG = {
             },
             "url": ""
           },
-          "fallbackContact": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "url": ""
-          }
+          "fallbackContact": null
         },
         "relations": {
           "originChallengeId": "",
@@ -31162,6 +31307,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/challenges/reto-control-calidad-vision-ia-mfg.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "pilot",
           "title": {
             "es": "Control de calidad visual con IA en línea de producción de componentes cerámicos",
@@ -31195,19 +31341,19 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-20",
           "deadline": "2026-08-31",
           "publishedAtLabel": {
-            "es": "Ene 2026",
-            "en": "Jan 2026",
-            "va": "Gen 2026"
+            "es": "10 de enero de 2026",
+            "en": "January 10, 2026",
+            "va": "10 de gener de 2026"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "20 de abril de 2026",
+            "en": "April 20, 2026",
+            "va": "20 d'abril de 2026"
           },
           "deadlineLabel": {
-            "es": "Ago 2026",
-            "en": "Aug 2026",
-            "va": "Ago 2026"
+            "es": "31 de agosto de 2026",
+            "en": "August 31, 2026",
+            "va": "31 d'agost de 2026"
           },
           "tags": {
             "es": [
@@ -31682,6 +31828,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/challenges/reto-ia-deteccion-plagas-agr.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "IA para la detección temprana de plagas y enfermedades en cítricos valencianos",
@@ -31715,19 +31862,19 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-10",
           "deadline": "2026-10-15",
           "publishedAtLabel": {
-            "es": "Ene 2026",
-            "en": "Jan 2026",
-            "va": "Gen 2026"
+            "es": "20 de enero de 2026",
+            "en": "January 20, 2026",
+            "va": "20 de gener de 2026"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "10 de abril de 2026",
+            "en": "April 10, 2026",
+            "va": "10 d'abril de 2026"
           },
           "deadlineLabel": {
-            "es": "Oct 2026",
-            "en": "Oct 2026",
-            "va": "Oct 2026"
+            "es": "15 de octubre de 2026",
+            "en": "October 15, 2026",
+            "va": "15 d'octubre de 2026"
           },
           "tags": {
             "es": [
@@ -32181,6 +32328,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/eficiencia-energetica-edificios-hou.yml",
         "core": {
           "status": "published",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Escalado de sistema de monitorización energética con IA desde edificio piloto a red de viviendas sociales",
@@ -32214,14 +32362,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-02",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Ago 2025",
-            "en": "Aug 2025",
-            "va": "Ago 2025"
+            "es": "1 de agosto de 2025",
+            "en": "August 1, 2025",
+            "va": "1 d'agost de 2025"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "2 de mayo de 2026",
+            "en": "May 2, 2026",
+            "va": "2 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -32835,6 +32983,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/narrativas-digitales-ia-cci.yml",
         "core": {
           "status": "published",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Narrativas digitales con IA generativa: del museo al aula de formación artística",
@@ -32868,14 +33017,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-30",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Ene 2026",
-            "en": "Jan 2026",
-            "va": "Gen 2026"
+            "es": "15 de enero de 2026",
+            "en": "January 15, 2026",
+            "va": "15 de gener de 2026"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "30 de abril de 2026",
+            "en": "April 30, 2026",
+            "va": "30 d'abril de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -33428,6 +33577,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/auditoria-energetica-ia-hou.yml",
         "core": {
           "status": "published",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Herramienta de auditoría energética doméstica con IA adaptada a FP de Edificación",
@@ -33461,14 +33611,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-25",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Feb 2026",
-            "en": "Feb 2026",
-            "va": "Feb 2026"
+            "es": "10 de febrero de 2026",
+            "en": "February 10, 2026",
+            "va": "10 de febrer de 2026"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "25 de abril de 2026",
+            "en": "April 25, 2026",
+            "va": "25 d'abril de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -34005,6 +34155,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/ia-deteccion-plagas-agr.yml",
         "core": {
           "status": "published",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "IA para detección temprana de plagas en cultivos: adaptación del modelo IVIA a FP Agroalimentario",
@@ -34038,14 +34189,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-20",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Nov 2025",
-            "en": "Nov 2025",
-            "va": "Nov 2025"
+            "es": "3 de noviembre de 2025",
+            "en": "November 3, 2025",
+            "va": "3 de novembre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "20 de abril de 2026",
+            "en": "April 20, 2026",
+            "va": "20 d'abril de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -34642,6 +34793,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/simulacion-conduccion-autonoma-mob.yml",
         "core": {
           "status": "published",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Simulación de conducción autónoma adaptada al ciclo de FP de Transporte",
@@ -34675,14 +34827,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-20",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Ene 2026",
-            "en": "Jan 2026",
-            "va": "Gen 2026"
+            "es": "15 de enero de 2026",
+            "en": "January 15, 2026",
+            "va": "15 de gener de 2026"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "20 de abril de 2026",
+            "en": "April 20, 2026",
+            "va": "20 d'abril de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -35216,6 +35368,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/drones-agricultura-precision-agr.yml",
         "core": {
           "status": "published",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Drones y agricultura de precisión con IA para índices NDVI transferidos a FP Agraria",
@@ -35249,14 +35402,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-10",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Sep 2025",
-            "en": "Sep 2025",
-            "va": "Set 2025"
+            "es": "1 de septiembre de 2025",
+            "en": "September 1, 2025",
+            "va": "1 de setembre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "10 de abril de 2026",
+            "en": "April 10, 2026",
+            "va": "10 d'abril de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -35816,6 +35969,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/solar-fotovoltaica-gemelo-digital-ene.yml",
         "core": {
           "status": "published",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Gemelo digital de instalación fotovoltaica en FP de Energía",
@@ -35849,14 +36003,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-05",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Nov 2025",
-            "en": "Nov 2025",
-            "va": "Nov 2025"
+            "es": "20 de noviembre de 2025",
+            "en": "November 20, 2025",
+            "va": "20 de novembre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "5 de abril de 2026",
+            "en": "April 5, 2026",
+            "va": "5 d'abril de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -36433,6 +36587,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/realidad-aumentada-museos-cci.yml",
         "core": {
           "status": "published",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Realidad aumentada para mediación cultural en museos adaptada a FP de Arte y Diseño",
@@ -36466,14 +36621,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-03-30",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Dic 2025",
-            "en": "Dec 2025",
-            "va": "Des 2025"
+            "es": "1 de diciembre de 2025",
+            "en": "December 1, 2025",
+            "va": "1 de desembre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Mar 2026",
-            "en": "Mar 2026",
-            "va": "Mar 2026"
+            "es": "30 de marzo de 2026",
+            "en": "March 30, 2026",
+            "va": "30 de març de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -37016,6 +37171,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/mantenimiento-predictivo-ml-mfg.yml",
         "core": {
           "status": "published",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Mantenimiento predictivo con ML en industria auxiliar del automóvil transferido a FP",
@@ -37049,14 +37205,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-03-22",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Ago 2025",
-            "en": "Aug 2025",
-            "va": "Ago 2025"
+            "es": "1 de agosto de 2025",
+            "en": "August 1, 2025",
+            "va": "1 d'agost de 2025"
           },
           "revisionDateLabel": {
-            "es": "Mar 2026",
-            "en": "Mar 2026",
-            "va": "Mar 2026"
+            "es": "22 de marzo de 2026",
+            "en": "March 22, 2026",
+            "va": "22 de març de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -37613,6 +37769,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/cobot-soldadura-fp.yml",
         "core": {
           "status": "published",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Integración de cobots colaborativos en soldadura para FP Industrial",
@@ -37646,14 +37803,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-03-10",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Sep 2025",
-            "en": "Sep 2025",
-            "va": "Set 2025"
+            "es": "15 de septiembre de 2025",
+            "en": "September 15, 2025",
+            "va": "15 de setembre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Mar 2026",
-            "en": "Mar 2026",
-            "va": "Mar 2026"
+            "es": "10 de marzo de 2026",
+            "en": "March 10, 2026",
+            "va": "10 de març de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -38176,6 +38333,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/movilidad-sostenible-formacion-docente.yml",
         "core": {
           "status": "published",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Programa de capacitación docente en movilidad sostenible e inteligencia artificial",
@@ -38209,14 +38367,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-02-28",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Oct 2025",
-            "en": "Oct 2025",
-            "va": "Oct 2025"
+            "es": "20 de octubre de 2025",
+            "en": "October 20, 2025",
+            "va": "20 d'octubre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Feb 2026",
-            "en": "Feb 2026",
-            "va": "Feb 2026"
+            "es": "28 de febrero de 2026",
+            "en": "February 28, 2026",
+            "va": "28 de febrer de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -38791,6 +38949,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/cases/diagnostico-ia-fp-sanitario-nts.yml",
         "core": {
           "status": "published",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "IA para diagnóstico de imagen médica adaptada a FP Sanitario",
@@ -38824,14 +38983,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-02-14",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Oct 2025",
-            "en": "Oct 2025",
-            "va": "Oct 2025"
+            "es": "8 de octubre de 2025",
+            "en": "October 8, 2025",
+            "va": "8 d'octubre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Feb 2026",
-            "en": "Feb 2026",
-            "va": "Feb 2026"
+            "es": "14 de febrero de 2026",
+            "en": "February 14, 2026",
+            "va": "14 de febrer de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -39381,6 +39540,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-ia-diagnostico-cancer-piel-nts.yml",
         "core": {
           "status": "in-progress",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Piloto — IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
@@ -39421,14 +39581,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-20",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Feb 2026",
-            "en": "Feb 2026",
-            "va": "Feb 2026"
+            "es": "1 de febrero de 2026",
+            "en": "February 1, 2026",
+            "va": "1 de febrer de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "20 de mayo de 2026",
+            "en": "May 20, 2026",
+            "va": "20 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -40069,6 +40229,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-living-lab-eficiencia-energetica-hou.yml",
         "core": {
           "status": "in-progress",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Living Lab — IA para la gestión energética adaptativa en edificio universitario",
@@ -40109,14 +40270,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-20",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Ene 2026",
-            "en": "Jan 2026",
-            "va": "Gen 2026"
+            "es": "15 de enero de 2026",
+            "en": "January 15, 2026",
+            "va": "15 de gener de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "20 de mayo de 2026",
+            "en": "May 20, 2026",
+            "va": "20 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -40757,6 +40918,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-fp-energia-costera.yml",
         "core": {
           "status": "resolved",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Piloto FP — IA para eficiencia energética en centros educativos",
@@ -40795,14 +40957,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-02",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Ene 2026",
-            "en": "Jan 2026",
-            "va": "Gen 2026"
+            "es": "15 de enero de 2026",
+            "en": "January 15, 2026",
+            "va": "15 de gener de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "2 de mayo de 2026",
+            "en": "May 2, 2026",
+            "va": "2 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -41294,6 +41456,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-drones-inspeccion-infraestructura-mob.yml",
         "core": {
           "status": "resolved",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Piloto — Drones con IA para la inspección automatizada de infraestructuras viarias",
@@ -41333,14 +41496,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-15",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Oct 2025",
-            "en": "Oct 2025",
-            "va": "Oct 2025"
+            "es": "1 de octubre de 2025",
+            "en": "October 1, 2025",
+            "va": "1 d'octubre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "15 de abril de 2026",
+            "en": "April 15, 2026",
+            "va": "15 d'abril de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -41995,6 +42158,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-teacher-sesgos-ia-uveg.yml",
         "core": {
           "status": "resolved",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Formación Docente — Análisis de sesgos en IA para profesorado de Máster",
@@ -42034,14 +42198,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-03-01",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Dic 2025",
-            "en": "Dec 2025",
-            "va": "Des 2025"
+            "es": "1 de diciembre de 2025",
+            "en": "December 1, 2025",
+            "va": "1 de desembre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Mar 2026",
-            "en": "Mar 2026",
-            "va": "Mar 2026"
+            "es": "1 de marzo de 2026",
+            "en": "March 1, 2026",
+            "va": "1 de març de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -42559,6 +42723,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-fp-cobots-mecatronica.yml",
         "core": {
           "status": "resolved",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Piloto FP — Cobots y robótica colaborativa en ciclos de mecatrónica",
@@ -42597,14 +42762,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-02-10",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Sep 2025",
-            "en": "Sep 2025",
-            "va": "Set 2025"
+            "es": "1 de septiembre de 2025",
+            "en": "September 1, 2025",
+            "va": "1 de setembre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Feb 2026",
-            "en": "Feb 2026",
-            "va": "Feb 2026"
+            "es": "10 de febrero de 2026",
+            "en": "February 10, 2026",
+            "va": "10 de febrer de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -43112,6 +43277,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/pilots/pilot-master-bridge-gemelos-digitales.yml",
         "core": {
           "status": "in-progress",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Piloto Máster — Puente FP-Máster en IA aplicada a gemelos digitales",
@@ -43151,9 +43317,9 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": null,
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Feb 2026",
-            "en": "Feb 2026",
-            "va": "Feb 2026"
+            "es": "1 de febrero de 2026",
+            "en": "February 1, 2026",
+            "va": "1 de febrer de 2026"
           },
           "revisionDateLabel": null,
           "deadlineLabel": null,
@@ -43641,6 +43807,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/validations/validation-etica-ia-seleccion-personal-adm.yml",
         "core": {
           "status": "resolved",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Validación ética — Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
@@ -43676,14 +43843,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-01",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Mar 2026",
-            "en": "Mar 2026",
-            "va": "Mar 2026"
+            "es": "1 de marzo de 2026",
+            "en": "March 1, 2026",
+            "va": "1 de març de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "1 de mayo de 2026",
+            "en": "May 1, 2026",
+            "va": "1 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -44135,6 +44302,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/validations/validation-legal-datos-movilidad-mob.yml",
         "core": {
           "status": "validated",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Validación legal — Uso de datos de movilidad urbana de Correos para el reto de optimización de rutas",
@@ -44170,14 +44338,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-05",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Feb 2026",
-            "en": "Feb 2026",
-            "va": "Feb 2026"
+            "es": "20 de febrero de 2026",
+            "en": "February 20, 2026",
+            "va": "20 de febrer de 2026"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "5 de abril de 2026",
+            "en": "April 5, 2026",
+            "va": "5 d'abril de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -44616,6 +44784,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/validations/validation-tecnica-gemelo-digital-ene.yml",
         "core": {
           "status": "validated",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Validación técnica — Viabilidad del gemelo digital para la gestión predictiva de la red eléctrica urbana",
@@ -44651,14 +44820,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-01",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Feb 2026",
-            "en": "Feb 2026",
-            "va": "Feb 2026"
+            "es": "15 de febrero de 2026",
+            "en": "February 15, 2026",
+            "va": "15 de febrer de 2026"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "1 de abril de 2026",
+            "en": "April 1, 2026",
+            "va": "1 d'abril de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -45111,6 +45280,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-turismo-inteligente-tur.yml",
         "core": {
           "status": "validated",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Validación stakeholder — Necesidad de personalización con IA en la oferta turística valenciana",
@@ -45147,14 +45317,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-03-20",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Ene 2026",
-            "en": "Jan 2026",
-            "va": "Gen 2026"
+            "es": "10 de enero de 2026",
+            "en": "January 10, 2026",
+            "va": "10 de gener de 2026"
           },
           "revisionDateLabel": {
-            "es": "Mar 2026",
-            "en": "Mar 2026",
-            "va": "Mar 2026"
+            "es": "20 de marzo de 2026",
+            "en": "March 20, 2026",
+            "va": "20 de març de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -45603,6 +45773,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/validations/validation-pedagogica-control-calidad-mfg.yml",
         "core": {
           "status": "validated",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Validación pedagógica — Integración de visión artificial en ciclos de FP de Fabricación Mecánica",
@@ -45639,14 +45810,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-03-10",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Ene 2026",
-            "en": "Jan 2026",
-            "va": "Gen 2026"
+            "es": "20 de enero de 2026",
+            "en": "January 20, 2026",
+            "va": "20 de gener de 2026"
           },
           "revisionDateLabel": {
-            "es": "Mar 2026",
-            "en": "Mar 2026",
-            "va": "Mar 2026"
+            "es": "10 de marzo de 2026",
+            "en": "March 10, 2026",
+            "va": "10 de març de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -46100,6 +46271,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-salud-digital-nts.yml",
         "core": {
           "status": "validated",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Validación stakeholder — Necesidad de competencias digitales en salud en la FP Sanitaria valenciana",
@@ -46137,14 +46309,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-02-20",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Dic 2025",
-            "en": "Dec 2025",
-            "va": "Des 2025"
+            "es": "1 de diciembre de 2025",
+            "en": "December 1, 2025",
+            "va": "1 de desembre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Feb 2026",
-            "en": "Feb 2026",
-            "va": "Feb 2026"
+            "es": "20 de febrero de 2026",
+            "en": "February 20, 2026",
+            "va": "20 de febrer de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -46601,6 +46773,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-agr-asaja.yml",
         "core": {
           "status": "resolved",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Validación stakeholder — Reto de agricultura de precisión con IA",
@@ -46637,14 +46810,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-01-25",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Nov 2025",
-            "en": "Nov 2025",
-            "va": "Nov 2025"
+            "es": "10 de noviembre de 2025",
+            "en": "November 10, 2025",
+            "va": "10 de novembre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Ene 2026",
-            "en": "Jan 2026",
-            "va": "Gen 2026"
+            "es": "25 de enero de 2026",
+            "en": "January 25, 2026",
+            "va": "25 de gener de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -47127,6 +47300,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/validations/validation-academica-rl-edificios-hou.yml",
         "core": {
           "status": "validated",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Validación académica — Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
@@ -47163,14 +47337,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-01-10",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Nov 2025",
-            "en": "Nov 2025",
-            "va": "Nov 2025"
+            "es": "20 de noviembre de 2025",
+            "en": "November 20, 2025",
+            "va": "20 de novembre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Ene 2026",
-            "en": "Jan 2026",
-            "va": "Gen 2026"
+            "es": "10 de enero de 2026",
+            "en": "January 10, 2026",
+            "va": "10 de gener de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -47631,6 +47805,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
         "core": {
           "status": "resolved",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Validación stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
@@ -47666,14 +47841,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2025-10-20",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Jul 2025",
-            "en": "Jul 2025",
-            "va": "Jul 2025"
+            "es": "1 de julio de 2025",
+            "en": "July 1, 2025",
+            "va": "1 de juliol de 2025"
           },
           "revisionDateLabel": {
-            "es": "Oct 2025",
-            "en": "Oct 2025",
-            "va": "Oct 2025"
+            "es": "20 de octubre de 2025",
+            "en": "October 20, 2025",
+            "va": "20 d'octubre de 2025"
           },
           "deadlineLabel": null,
           "tags": {
@@ -48167,6 +48342,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/mentorings/mentoring-ia-creativa-turismo-cultura.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Mentoría — IA generativa y creativa para turismo, cultura e industrias creativas",
@@ -48200,14 +48376,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-22",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "15 de abril de 2026",
+            "en": "April 15, 2026",
+            "va": "15 d'abril de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "22 de mayo de 2026",
+            "en": "May 22, 2026",
+            "va": "22 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -48691,6 +48867,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/mentorings/mentoring-participacion-administracion-publica.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Mentoría — Cómo incorporar una administración pública al ecosistema AI-STEAM",
@@ -48724,14 +48901,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-22",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "10 de abril de 2026",
+            "en": "April 10, 2026",
+            "va": "10 d'abril de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "22 de mayo de 2026",
+            "en": "May 22, 2026",
+            "va": "22 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -49214,6 +49391,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/mentorings/mentoring-replicacion-casos-agr.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Mentoría — Replicación de casos AI-STEAM en el sector agroalimentario",
@@ -49247,14 +49425,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-22",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Mar 2026",
-            "en": "Mar 2026",
-            "va": "Mar 2026"
+            "es": "20 de marzo de 2026",
+            "en": "March 20, 2026",
+            "va": "20 de març de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "22 de mayo de 2026",
+            "en": "May 22, 2026",
+            "va": "22 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -49735,6 +49913,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/mentorings/mentoring-transferencia-investigacion-fp.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Mentoría — De la investigación al aula de FP: transferencia de resultados con IA",
@@ -49768,14 +49947,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-22",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "1 de abril de 2026",
+            "en": "April 1, 2026",
+            "va": "1 d'abril de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "22 de mayo de 2026",
+            "en": "May 22, 2026",
+            "va": "22 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -50256,6 +50435,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/mentorings/mentoring-etica-ia-proyectos-educativos.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Mentoría — Ética de la IA en proyectos educativos y formativos",
@@ -50289,14 +50469,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-20",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Mar 2026",
-            "en": "Mar 2026",
-            "va": "Mar 2026"
+            "es": "1 de marzo de 2026",
+            "en": "March 1, 2026",
+            "va": "1 de març de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "20 de mayo de 2026",
+            "en": "May 20, 2026",
+            "va": "20 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -50775,6 +50955,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/mentorings/mentoring-soporte-tecnico-implementacion-ia-nts.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Mentoría — Soporte técnico para implementar IA en entornos sanitarios y sociosanitarios",
@@ -50808,14 +50989,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-20",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Mar 2026",
-            "en": "Mar 2026",
-            "va": "Mar 2026"
+            "es": "15 de marzo de 2026",
+            "en": "March 15, 2026",
+            "va": "15 de març de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "20 de mayo de 2026",
+            "en": "May 20, 2026",
+            "va": "20 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -51298,6 +51479,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/mentorings/mentoring-diseno-pilotos-fp-empresa.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Mentoría — Diseño de pilotos de colaboración FP-empresa con IA",
@@ -51331,14 +51513,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-15",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Feb 2026",
-            "en": "Feb 2026",
-            "va": "Feb 2026"
+            "es": "1 de febrero de 2026",
+            "en": "February 1, 2026",
+            "va": "1 de febrer de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "15 de mayo de 2026",
+            "en": "May 15, 2026",
+            "va": "15 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -51817,6 +51999,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/mentorings/mentoring-formulacion-retos-industria.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Mentoría — Cómo formular un reto industrial para el ecosistema AI-STEAM",
@@ -51850,14 +52033,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-05-10",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Ene 2026",
-            "en": "Jan 2026",
-            "va": "Gen 2026"
+            "es": "15 de enero de 2026",
+            "en": "January 15, 2026",
+            "va": "15 de gener de 2026"
           },
           "revisionDateLabel": {
-            "es": "May 2026",
-            "en": "May 2026",
-            "va": "Mai 2026"
+            "es": "10 de mayo de 2026",
+            "en": "May 10, 2026",
+            "va": "10 de maig de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -52334,6 +52517,7 @@ export const MARKETPLACE_CONFIG = {
         "sourcePath": "content/challenges/items/mentorings/responsible-ai-creative-briefs.yml",
         "core": {
           "status": "open",
+          "forceOpen": false,
           "maturity": "idea",
           "title": {
             "es": "Mentoría para briefs creativos con IA responsable",
@@ -52367,14 +52551,14 @@ export const MARKETPLACE_CONFIG = {
           "revisionDate": "2026-04-10",
           "deadline": null,
           "publishedAtLabel": {
-            "es": "Dic 2025",
-            "en": "Dec 2025",
-            "va": "Des 2025"
+            "es": "10 de diciembre de 2025",
+            "en": "December 10, 2025",
+            "va": "10 de desembre de 2025"
           },
           "revisionDateLabel": {
-            "es": "Abr 2026",
-            "en": "Apr 2026",
-            "va": "Abr 2026"
+            "es": "10 de abril de 2026",
+            "en": "April 10, 2026",
+            "va": "10 d'abril de 2026"
           },
           "deadlineLabel": null,
           "tags": {
@@ -52915,6 +53099,7 @@ export const MARKETPLACE_CONFIG = {
       "sourcePath": "content/challenges/items/resources/ai-steam-brief-template.yml",
       "core": {
         "status": "open",
+        "forceOpen": false,
         "maturity": "validated",
         "title": {
           "es": "Plantilla de brief Track B para necesidades AI-STEAM",
@@ -52948,14 +53133,14 @@ export const MARKETPLACE_CONFIG = {
         "revisionDate": "2026-01-18",
         "deadline": null,
         "publishedAtLabel": {
-          "es": "Ago 2025",
-          "en": "Aug 2025",
-          "va": "Ago 2025"
+          "es": "1 de agosto de 2025",
+          "en": "August 1, 2025",
+          "va": "1 d'agost de 2025"
         },
         "revisionDateLabel": {
-          "es": "Ene 2026",
-          "en": "Jan 2026",
-          "va": "Gen 2026"
+          "es": "18 de enero de 2026",
+          "en": "January 18, 2026",
+          "va": "18 de gener de 2026"
         },
         "deadlineLabel": null,
         "tags": {
@@ -53204,6 +53389,15 @@ export const MARKETPLACE_CONFIG = {
           "es": "Archivado",
           "en": "Archived",
           "va": "Arxivat"
+        }
+      },
+      {
+        "id": "closed",
+        "visible": true,
+        "label": {
+          "es": "Cerrado",
+          "en": "Closed",
+          "va": "Tancat"
         }
       }
     ],
@@ -53467,6 +53661,24 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "inPilot",
+        "visible": true,
+        "label": {
+          "es": "En Piloto",
+          "en": "In Pilot",
+          "va": "En Pilot"
+        }
+      },
+      {
+        "id": "prototype",
+        "visible": true,
+        "label": {
+          "es": "Prototipo",
+          "en": "Prototype",
+          "va": "Prototip"
+        }
+      },
+      {
+        "id": "pilot",
         "visible": true,
         "label": {
           "es": "En Piloto",
@@ -53759,6 +53971,33 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "Docentes",
+        "visible": true,
+        "label": {
+          "es": "Docentes",
+          "en": "Teachers",
+          "va": "Docents"
+        }
+      },
+      {
+        "id": "vet",
+        "visible": true,
+        "label": {
+          "es": "FP",
+          "en": "VET",
+          "va": "FP"
+        }
+      },
+      {
+        "id": "master",
+        "visible": true,
+        "label": {
+          "es": "Máster",
+          "en": "Master",
+          "va": "Màster"
+        }
+      },
+      {
+        "id": "teacher",
         "visible": true,
         "label": {
           "es": "Docentes",
@@ -54733,6 +54972,60 @@ export const MARKETPLACE_CONFIG = {
           "en": "Sustainability",
           "va": "Sostenibilitat"
         }
+      },
+      {
+        "id": "data-ai",
+        "visible": true,
+        "label": {
+          "es": "Datos e IA",
+          "en": "Data & AI",
+          "va": "Dades i IA"
+        }
+      },
+      {
+        "id": "responsible-ai",
+        "visible": true,
+        "label": {
+          "es": "IA responsable",
+          "en": "Responsible AI",
+          "va": "IA responsable"
+        }
+      },
+      {
+        "id": "digital",
+        "visible": true,
+        "label": {
+          "es": "Competencia digital",
+          "en": "Digital competence",
+          "va": "Competència digital"
+        }
+      },
+      {
+        "id": "social",
+        "visible": true,
+        "label": {
+          "es": "Competencia social",
+          "en": "Social competence",
+          "va": "Competència social"
+        }
+      },
+      {
+        "id": "integrated-pedagogy",
+        "visible": true,
+        "label": {
+          "es": "Pedagogía integrada",
+          "en": "Integrated pedagogy",
+          "va": "Pedagogia integrada"
+        }
+      },
+      {
+        "id": "equity-inclusion",
+        "visible": true,
+        "label": {
+          "es": "Equidad e inclusión",
+          "en": "Equity & inclusion",
+          "va": "Equitat i inclusió"
+        }
       }
     ],
     "downloadTypes": [
@@ -55389,6 +55682,7 @@ export const MARKETPLACE_CONFIG = {
       }
     ]
   },
+  "cardChipMax": 4,
   "legacyLabels": {
     "typeLabels": [
       {
@@ -55612,6 +55906,33 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "Docentes",
+        "visible": true,
+        "label": {
+          "es": "Docentes",
+          "en": "Teachers",
+          "va": "Docents"
+        }
+      },
+      {
+        "id": "vet",
+        "visible": true,
+        "label": {
+          "es": "FP",
+          "en": "VET",
+          "va": "FP"
+        }
+      },
+      {
+        "id": "master",
+        "visible": true,
+        "label": {
+          "es": "Máster",
+          "en": "Master",
+          "va": "Màster"
+        }
+      },
+      {
+        "id": "teacher",
         "visible": true,
         "label": {
           "es": "Docentes",

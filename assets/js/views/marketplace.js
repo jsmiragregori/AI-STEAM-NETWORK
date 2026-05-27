@@ -337,6 +337,8 @@ const TRANSFER_TYPE_ICONS = {
   escalado: 'trending-up',
 };
 
+const CARD_CHIP_MAX = MARKETPLACE_CONFIG.cardChipMax ?? 4;
+
 const LEVEL_STYLES = {
   FP:       'bg-yellow-100 text-yellow-800 border-yellow-200',
   vet:      'bg-yellow-100 text-yellow-800 border-yellow-200',
@@ -611,11 +613,14 @@ function getItemDateLabel(item) {
   return '';
 }
 
-function renderBadge(label, tone = 'bg-white text-gray-700 border-eu-border') {
+function renderBadge(label, tone = 'bg-white text-gray-700 border-eu-border', filterKey = '', filterValue = '') {
   const text = pickLang(label);
-  if (Array.isArray(text)) return text.map(entry => renderBadge(entry, tone)).join('');
+  if (Array.isArray(text)) return text.map(entry => renderBadge(entry, tone, filterKey, filterValue)).join('');
   if (!text) return '';
-  return `<span class="inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold ${tone}">${esc(text)}</span>`;
+  if (!filterKey) return `<span class="inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold ${tone}">${esc(text)}</span>`;
+  const isActive = String(getTabFilterState(getActiveTabId()).values?.[filterKey]) === String(filterValue);
+  const activeCls = isActive ? ' ring-1 ring-inset ring-current' : '';
+  return `<span class="inline-flex items-center rounded border px-2 py-0.5 text-xs font-semibold cursor-pointer select-none ${tone}${activeCls}" data-mp-chip-filter="${esc(filterKey)}" data-mp-chip-value="${esc(String(filterValue))}">${esc(text)}</span>`;
 }
 
 function renderHero() {
@@ -726,8 +731,9 @@ function getItemFilterValue(item, key) {
   if (key === 'status') return item.core?.status;
   if (key === 'contributionType') return asArray(item.classification?.contributionTypes);
   if (key === 'audience') return asArray(item.classification?.audience);
-  if (key === 'competency') return asArray(card.setCompetences);
-  if (key === 'sdg') return asArray(card.sdgs || card.validatedSdgs).map(sdg => sdg?.id ? String(sdg.id) : pickLang(sdg?.label || sdg));
+  if (key === 'competency') return asArray(card.setCompetences).length ? asArray(card.setCompetences) : asArray(item.classification?.competences);
+  if (key === 'sdg') return asArray(card.sdgs || card.validatedSdgs || item.classification?.sdgs).map(sdg => sdg?.id != null ? String(sdg.id) : (typeof sdg === 'number' ? String(sdg) : pickLang(sdg?.label || sdg)));
+  if (key === 'maturity') return item.core?.maturity || '';
   if (key === 'impact') return item.classification?.evidenceMaturity || (card.highlightKpi || card.impactKpi ? 'with-kpi' : '');
   if (key === 'trl') return card.trl?.level ? String(card.trl.level) : '';
   if (key === 'infrastructure') return asArray(card.infrastructure);
@@ -756,8 +762,11 @@ function getFilterDefinitions(tabId) {
     return [
       common.sector,
       common.status,
+      { key: 'maturity', label: uiText('filterBy') + ' ' + pickLang({ es: 'Madurez', en: 'Maturity', va: 'Maduresa' }), labeler: getEvidenceLabel },
       { key: 'contributionType', label: uiText('filterBy') + ' ' + uiText('contributionType'), labeler: getContributionTypeLabel },
       { key: 'audience', label: uiText('filterBy') + ' ' + uiText('audience'), labeler: getAudienceLabel },
+      { key: 'sdg', label: uiText('filterBy') + ' ' + uiText('sdgs'), labeler: value => `ODS ${value}` },
+      { key: 'competency', label: uiText('filterBy') + ' ' + pickLang({ es: 'Competencia', en: 'Competency', va: 'Competència' }), labeler: getCompetenceLabel },
     ];
   }
   if (tabId === 'cases') {
@@ -1011,13 +1020,16 @@ function renderCardShell(item, tab, body, options = {}) {
   const entity = options.entity !== undefined ? options.entity : pickLang(item.core?.entity?.name);
   const dateLabel = getItemDateLabel(item);
   const tone = TAB_TONES[tab.id] || TAB_TONES.challenges;
+  const statusRaw = item.core?.status;
+  const statusLabel = options.statusLabel !== undefined ? options.statusLabel : getStatusLabel(statusRaw);
+  const statusFilterKey = getFilterDefinitions(tab.id).some(d => d.key === 'status') ? 'status' : '';
 
   return `
     <article class="group flex h-full flex-col rounded-xl border border-eu-border bg-white p-6 shadow-sm transition-colors hover:border-eu-blue">
       <div class="flex flex-wrap gap-2">
-        ${renderBadge(getTypeLabel(item.type), tone.badge)}
-        ${renderBadge(options.statusLabel !== undefined ? options.statusLabel : getStatusLabel(item.core?.status))}
-        ${options.extraBadge ? renderBadge(options.extraBadge) : ''}
+        ${options.hideTypeBadge ? '' : renderBadge(getTypeLabel(item.type), tone.badge)}
+        ${renderBadge(statusLabel, 'bg-white text-gray-700 border-eu-border', statusFilterKey, statusRaw)}
+        ${options.extraBadge ? renderBadge(options.extraBadge, 'bg-white text-gray-700 border-eu-border', options.extraBadgeFilterKey || '', options.extraBadgeFilterValue || '') : ''}
       </div>
       <div class="mt-4 flex-1">
         <h3 class="text-lg font-bold leading-snug text-eu-text group-hover:text-eu-blue">${esc(title)}</h3>
@@ -1068,21 +1080,20 @@ function renderCardMiniMeta(items) {
     </div>`;
 }
 
-function renderChipList(values, tone = 'bg-eu-bg text-gray-700 border-eu-border', limit = 4) {
+function renderChipList(values, tone = 'bg-eu-bg text-gray-700 border-eu-border', limit = CARD_CHIP_MAX) {
   const chips = values.map(value => pickLang(value)).filter(Boolean).slice(0, limit);
   if (!chips.length) return '';
   return `<div class="mt-4 flex flex-wrap gap-2">${chips.map(chip => renderBadge(chip, tone)).join('')}</div>`;
 }
 
-function renderSdgs(sdgs, limit = 3) {
-  const values = asArray(sdgs)
-    .map(sdg => {
-      if (sdg?.id != null) return `ODS ${sdg.id}`;
-      if (typeof sdg === 'number' || (typeof sdg === 'string' && /^\d+$/.test(String(sdg)))) return `ODS ${sdg}`;
-      return pickLang(sdg?.label || sdg);
-    })
-    .filter(Boolean);
-  return renderChipList(values, 'bg-green-50 text-green-800 border-green-200', limit);
+function renderSdgs(sdgs, limit = CARD_CHIP_MAX, filterKey = '') {
+  const items = asArray(sdgs).slice(0, limit).map(sdg => {
+    const rawId = sdg?.id != null ? String(sdg.id) : (typeof sdg === 'number' || /^\d+$/.test(String(sdg ?? '')) ? String(sdg) : null);
+    const label = rawId ? `ODS ${rawId}` : pickLang(sdg?.label || sdg);
+    return label ? { label, value: rawId || label } : null;
+  }).filter(Boolean);
+  if (!items.length) return '';
+  return `<div class="mt-4 flex flex-wrap gap-2">${items.map(({ label, value }) => renderBadge(label, 'bg-green-50 text-green-800 border-green-200', filterKey, value)).join('')}</div>`;
 }
 
 function renderActorNames(actors) {
@@ -1124,35 +1135,25 @@ function renderChallengeCard(item, tab) {
   const ef = item.externalFlow || {};
   const ownership = item.ownership || {};
 
-  // Chips de tipos de contribución (max 2)
   const contribChips = asArray(cl.contributionTypes)
-    .map(id => getContributionTypeLabel(id))
-    .filter(Boolean);
+    .map(id => ({ id, label: getContributionTypeLabel(id) }))
+    .filter(c => c.label)
+    .slice(0, CARD_CHIP_MAX);
 
-  // Chips de audiencia (max 2)
   const audienceChips = asArray(cl.audience)
-    .map(id => getAudienceLabel(id))
-    .filter(Boolean);
+    .map(id => ({ id, label: getAudienceLabel(id) }))
+    .filter(c => c.label)
+    .slice(0, CARD_CHIP_MAX);
 
-  // Chips de competencias (max 3)
   const compChips = asArray(cl.competences)
-    .map(id => getCompetenceLabel(id))
-    .filter(Boolean);
+    .map(id => ({ id, label: getCompetenceLabel(id) }))
+    .filter(c => c.label)
+    .slice(0, CARD_CHIP_MAX);
 
   // Fecha límite
   const deadlineLabel = pres.showDeadline !== false ? pickLang(item.core?.deadlineLabel) : null;
 
-  // Indicador de descargables
-  let dlIndicator = '';
-  if (pres.showDownloadsIndicator !== false && item.hasDownloads && asArray(item.cardDownloads).length) {
-    const count = item.cardDownloads.length;
-    if (count === 1) {
-      const typeLabel = getDownloadTypeLabel(item.cardDownloads[0]?.type);
-      dlIndicator = typeLabel ? `1 ${typeLabel.toLowerCase()}` : `1 ${uiText('downloadable')}`;
-    } else {
-      dlIndicator = `${count} ${uiText('downloadables')}`;
-    }
-  }
+  const dlIndicator = '';
 
   // CTA: externo si hay URL real, interno (Ver reto) si no — NUNCA usar tab.ctaLabel
   const extUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : null;
@@ -1169,19 +1170,23 @@ function renderChallengeCard(item, tab) {
     ${contribChips.length ? `
       <div class="mt-4">
         <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('seeking'))}</p>
-        <div class="flex flex-wrap gap-2">${contribChips.slice(0, 2).map(chip => renderBadge(chip, tone.badge)).join('')}${contribChips.length > 2 ? renderBadge(`+${contribChips.length - 2}`, 'bg-eu-bg text-gray-500 border-eu-border') : ''}</div>
+        <div class="flex flex-wrap gap-2">${contribChips.map(c => renderBadge(c.label, tone.badge, 'contributionType', c.id)).join('')}</div>
       </div>` : ''}
-    ${audienceChips.length ? `<div class="mt-3 flex flex-wrap gap-2">${audienceChips.slice(0, 2).map(chip => renderBadge(chip, 'bg-eu-bg text-gray-700 border-eu-border')).join('')}${audienceChips.length > 2 ? renderBadge(`+${audienceChips.length - 2}`, 'bg-eu-bg text-gray-500 border-eu-border') : ''}</div>` : ''}
-    ${deadlineLabel ? renderCardMiniMeta([{ label: uiText('deadline'), value: deadlineLabel }]) : ''}
+    ${audienceChips.length ? `<div class="mt-3 flex flex-wrap gap-2">${audienceChips.map(c => renderBadge(c.label, 'bg-eu-bg text-gray-700 border-eu-border', 'audience', c.id)).join('')}</div>` : ''}
+    ${deadlineLabel ? `<div class="mt-4 flex items-center gap-2 rounded-lg border border-eu-border px-3 py-2 text-sm text-gray-600"><i data-lucide="clock" class="h-4 w-4 shrink-0 text-gray-400"></i><span class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(uiText('deadline'))}</span><span class="font-semibold">${esc(deadlineLabel)}</span></div>` : ''}
     ${dlIndicator ? `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500"><i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i><span>${esc(dlIndicator)}</span></div>` : ''}
-    ${renderSdgs(cl.sdgs, 3)}
-    ${compChips.length ? `<div class="mt-3 flex flex-wrap gap-2">${compChips.slice(0, 3).map(chip => renderBadge(chip, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20')).join('')}${compChips.length > 3 ? renderBadge(`+${compChips.length - 3}`, 'bg-eu-bg text-gray-500 border-eu-border') : ''}</div>` : ''}
+    ${renderSdgs(cl.sdgs, CARD_CHIP_MAX, 'sdg')}
+    ${compChips.length ? `<div class="mt-3 flex flex-wrap gap-2">${compChips.map(c => renderBadge(c.label, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20', 'competency', c.id)).join('')}</div>` : ''}
   `;
 
+  const challengeSectorCode = getSectorCode(item.core?.sector || cl.sector);
   return renderCardShell(item, tab, body, {
     title: item.core?.title,
     subtitle: item.core?.summary,
+    hideTypeBadge: true,
     extraBadge: getEvidenceLabel(item.core?.maturity) || getSectorLabel(item.core?.sector),
+    extraBadgeFilterKey: item.core?.maturity ? 'maturity' : 'sector',
+    extraBadgeFilterValue: item.core?.maturity || challengeSectorCode,
     entity: entityLabel,
     ctaHtml,
   });
@@ -1202,7 +1207,7 @@ function renderCaseCard(item, tab) {
 
   const caseStageLabel = getCaseStageLabel(core.caseStage);
   const evidenceLevelLabel = getEvidenceLevelLabel(core.evidenceLevel);
-  const sectorLabel = getSectorLabel(cl.sector || core.sector);
+  const sectorLabel = pickLang(cl.sectorLabel) || getSectorLabel(cl.sector || core.sector);
 
   const resultBlockLabel = cardPres.resultBlockLabel || {
     es: 'Resultado clave',
@@ -1257,11 +1262,14 @@ function renderCaseCard(item, tab) {
   // 4. Badges (Sector, Niveles, Evidencia/Verificación)
   const levels = asArray(cl.levels);
   const verifiedLabel = evidenceLevelLabel ? `${evidencePrefix}${evidenceLevelLabel}` : '';
+  const caseSectorCode = getSectorCode(cl.sector || core.sector);
+  const verifStatus = cl.verificationStatus || '';
+  const verifActive = verifStatus && String(getTabFilterState(getActiveTabId()).values?.verificationStatus) === verifStatus;
   const badgesHtml = `
     <div class="mt-4 flex flex-wrap gap-2">
-      ${sectorLabel ? renderBadge(sectorLabel, 'bg-eu-orange/10 text-eu-orange border-eu-orange/20') : ''}
-      ${(cardPres.showLevels !== false && levels.length) ? levels.map(lvl => renderBadge(getLevelLabel(lvl) || lvl, LEVEL_STYLES[lvl] || 'bg-eu-bg text-gray-700 border-eu-border')).join('') : ''}
-      ${(cardPres.showEvidenceBadge !== false && verifiedLabel) ? `<span class="inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-bold text-green-700"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifiedLabel)}</span>` : ''}
+      ${sectorLabel ? renderBadge(sectorLabel, 'bg-eu-orange/10 text-eu-orange border-eu-orange/20', 'sector', caseSectorCode) : ''}
+      ${(cardPres.showLevels !== false && levels.length) ? levels.map(lvl => renderBadge(getLevelLabel(lvl) || lvl, LEVEL_STYLES[lvl] || 'bg-eu-bg text-gray-700 border-eu-border', 'level', lvl)).join('') : ''}
+      ${(cardPres.showEvidenceBadge !== false && verifiedLabel && verifStatus) ? `<span class="inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-bold text-green-700 cursor-pointer select-none${verifActive ? ' ring-1 ring-inset ring-green-600' : ''}" data-mp-chip-filter="verificationStatus" data-mp-chip-value="${esc(verifStatus)}"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifiedLabel)}</span>` : ''}
     </div>`;
 
   // 5. Indicador de descargables
@@ -1295,7 +1303,7 @@ function renderCaseCard(item, tab) {
   const shellOptions = {
     title: core.title,
     subtitle: core.summary,
-    extraBadge: caseStageLabel ? `${caseBadgeText}: ${caseStageLabel}` : caseBadgeText,
+    extraBadge: caseStageLabel || '',
     entity: originName || publisherName,
   };
 
@@ -1343,7 +1351,7 @@ function renderPilotCard(item, tab) {
   // ── Infraestructura (max 3 chips) ─────────────────────────────────────────
   let infraHtml = '';
   if (pres.showInfrastructure !== false) {
-    const infraLabels = asArray(impl.infrastructure).slice(0, 3)
+    const infraLabels = asArray(impl.infrastructure).slice(0, CARD_CHIP_MAX)
       .map(i => typeof i === 'string' ? i : pickLang(i.label, i.label)).filter(Boolean);
     if (infraLabels.length) {
       infraHtml = `<div class="mt-4 flex flex-wrap gap-2">${infraLabels.map(l => renderBadge(l, 'bg-slate-50 text-slate-700 border-slate-200')).join('')}</div>`;
@@ -1374,7 +1382,7 @@ function renderPilotCard(item, tab) {
   const stageTone = getPilotStageTone(core.pilotStage);
   const bottomBadges = [
     stageLabel ? renderBadge(stageLabel, stageTone) : '',
-    pilotTypeLabel ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200') : '',
+    pilotTypeLabel ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200', 'pilotType', core.pilotType) : '',
   ].filter(Boolean);
   const badgesHtml = bottomBadges.length
     ? `<div class="mt-4 flex flex-wrap gap-2">${bottomBadges.join('')}</div>`
@@ -1400,6 +1408,8 @@ function renderPilotCard(item, tab) {
     title: core.title,
     subtitle: core.summary,
     extraBadge: getSectorLabel(core.sector),
+    extraBadgeFilterKey: 'sector',
+    extraBadgeFilterValue: getSectorCode(core.sector),
     entity: item.ownership?.lead?.name || '',
     ctaHtml,
   });
@@ -1409,18 +1419,18 @@ function renderPilotCardLegacy(item, tab) {
   const card = item.card || {};
   const pilotTypeLabel = getPilotTypeLabel(item.core?.pilotType);
   const pilotStatusLabel = getPilotStatusLabel(item.classification?.pilotStatus);
-  const helixChips = asArray(item.core?.helix).map(h => renderBadge(getHelixLabel(h), 'bg-eu-bg text-gray-700 border-eu-border')).filter(Boolean).join('');
+  const helixChips = asArray(item.core?.helix).map(h => renderBadge(getHelixLabel(h), 'bg-eu-bg text-gray-700 border-eu-border', 'helix', h)).filter(Boolean).join('');
   const body = `
     ${renderCardCallout(uiText('direction'), card.collaborationDirection || item.core?.summary, 'route')}
     ${renderCardMiniMeta([
       { label: uiText('trl'), value: getTrlLabel(card.trl) },
       { label: uiText('window'), value: pickLang(card.executionWindow?.label) || pickLang(card.validationStatus) },
-      { label: uiText('infrastructure'), value: asArray(card.infrastructure).slice(0, 3).join(' / ') },
+      { label: uiText('infrastructure'), value: asArray(card.infrastructure).slice(0, CARD_CHIP_MAX).join(' / ') },
     ])}
     ${pilotTypeLabel || pilotStatusLabel || helixChips ? `
       <div class="mt-4 flex flex-wrap gap-2">
-        ${pilotTypeLabel ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200') : ''}
-        ${pilotStatusLabel ? renderBadge(pilotStatusLabel, 'bg-emerald-50 text-emerald-800 border-emerald-200') : ''}
+        ${pilotTypeLabel ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200', 'pilotType', item.core?.pilotType) : ''}
+        ${pilotStatusLabel ? renderBadge(pilotStatusLabel, 'bg-emerald-50 text-emerald-800 border-emerald-200', 'pilotStatus', item.classification?.pilotStatus) : ''}
         ${helixChips}
       </div>` : ''}
   `;
@@ -1428,6 +1438,8 @@ function renderPilotCardLegacy(item, tab) {
     title: item.core?.title,
     subtitle: card.validationStatus || item.core?.summary,
     extraBadge: pilotTypeLabel || getTrlLabel(card.trl) || getSectorLabel(item.core?.sector),
+    extraBadgeFilterKey: pilotTypeLabel ? 'pilotType' : (!getTrlLabel(card.trl) ? 'sector' : ''),
+    extraBadgeFilterValue: pilotTypeLabel ? item.core?.pilotType : getSectorCode(item.core?.sector),
   });
 }
 
@@ -1457,7 +1469,7 @@ function renderValidationCard(item, tab) {
   // ── Entorno de validación (max 3 chips) ───────────────────────────────────
   let envHtml = '';
   if (pres.showValidationEnvironment !== false) {
-    const envItems = asArray(validation.validationEnvironment).slice(0, 3)
+    const envItems = asArray(validation.validationEnvironment).slice(0, CARD_CHIP_MAX)
       .map(e => pickLang(e.label)).filter(Boolean);
     if (envItems.length) {
       envHtml = `<div class="mt-4 flex flex-wrap gap-2">${envItems.map(l => renderBadge(l, 'bg-slate-50 text-slate-700 border-slate-200')).join('')}</div>`;
@@ -1512,6 +1524,8 @@ function renderValidationCard(item, tab) {
     title: core.title,
     subtitle: core.summary,
     extraBadge,
+    extraBadgeFilterKey: 'sector',
+    extraBadgeFilterValue: getSectorCode(core.sector),
     entity: proposerName,
     ctaHtml,
   });
@@ -4199,6 +4213,26 @@ export function mount() {
 }
 
 function attachMarketplaceFilterActionListeners() {
+  document.querySelectorAll('[data-mp-chip-filter]').forEach(chip => {
+    chip.addEventListener('click', e => {
+      e.stopPropagation();
+      const key = chip.dataset.mpChipFilter;
+      const value = chip.dataset.mpChipValue;
+      const tabId = getActiveTabId();
+      if (!getFilterDefinitions(tabId).some(d => d.key === key)) return;
+      const state = getTabFilterState(tabId);
+      if (!state.values) state.values = {};
+      if (String(state.values[key]) === String(value)) {
+        delete state.values[key];
+      } else {
+        state.values[key] = value;
+      }
+      setTabFilterState(tabId, state);
+      resetTabPagination(tabId);
+      rerender();
+    });
+  });
+
   document.querySelectorAll('#mp-clear-tab-filters').forEach(button => {
     button.addEventListener('click', () => {
       const tabId = getActiveTabId();
