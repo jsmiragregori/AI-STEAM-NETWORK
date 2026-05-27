@@ -1683,7 +1683,7 @@ function renderTabPanel(tab, items) {
     <section class="mx-auto max-w-7xl px-6 py-8"
       id="mp-tabpanel-${esc(tab.id)}" role="tabpanel" aria-labelledby="mp-tab-${esc(tab.id)}">
       <div>
-        ${renderTabIntroCard(tab, items)}
+        ${tab.introVisible !== false ? renderTabIntroCard(tab, items) : ''}
 
           ${items.length ? renderTabFilters(tab, items) : ''}
           <div id="mp-tab-results" class="mt-6">

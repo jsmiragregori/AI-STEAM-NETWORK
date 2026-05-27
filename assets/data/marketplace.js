@@ -101,6 +101,7 @@ export const MARKETPLACE_CONFIG = {
     {
       "id": "challenges",
       "visible": true,
+      "introVisible": true,
       "order": 1,
       "icon": "lightbulb",
       "label": {
@@ -159,6 +160,7 @@ export const MARKETPLACE_CONFIG = {
     {
       "id": "cases",
       "visible": true,
+      "introVisible": true,
       "order": 2,
       "icon": "trophy",
       "label": {
@@ -217,6 +219,7 @@ export const MARKETPLACE_CONFIG = {
     {
       "id": "pilots",
       "visible": true,
+      "introVisible": true,
       "order": 3,
       "icon": "flask-conical",
       "label": {
@@ -275,6 +278,7 @@ export const MARKETPLACE_CONFIG = {
     {
       "id": "validations",
       "visible": true,
+      "introVisible": true,
       "order": 4,
       "icon": "check-circle",
       "label": {
@@ -333,6 +337,7 @@ export const MARKETPLACE_CONFIG = {
     {
       "id": "mentorings",
       "visible": true,
+      "introVisible": true,
       "order": 5,
       "icon": "messages-square",
       "label": {
