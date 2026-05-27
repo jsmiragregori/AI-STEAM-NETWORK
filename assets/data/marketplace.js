@@ -153,7 +153,7 @@ export const MARKETPLACE_CONFIG = {
         "paginationNext": {
           "es": "Siguiente",
           "en": "Next",
-          "va": "SegÃ¼ent"
+          "va": "Següent"
         }
       }
     },
@@ -212,7 +212,7 @@ export const MARKETPLACE_CONFIG = {
         "paginationNext": {
           "es": "Siguiente",
           "en": "Next",
-          "va": "SegÃ¼ent"
+          "va": "Següent"
         }
       }
     },
@@ -271,7 +271,7 @@ export const MARKETPLACE_CONFIG = {
         "paginationNext": {
           "es": "Siguiente",
           "en": "Next",
-          "va": "SegÃ¼ent"
+          "va": "Següent"
         }
       }
     },
@@ -330,7 +330,7 @@ export const MARKETPLACE_CONFIG = {
         "paginationNext": {
           "es": "Siguiente",
           "en": "Next",
-          "va": "SegÃ¼ent"
+          "va": "Següent"
         }
       }
     },
@@ -389,7 +389,7 @@ export const MARKETPLACE_CONFIG = {
         "paginationNext": {
           "es": "Siguiente",
           "en": "Next",
-          "va": "SegÃ¼ent"
+          "va": "Següent"
         }
       }
     }
