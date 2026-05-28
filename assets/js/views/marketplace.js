@@ -1264,7 +1264,8 @@ function renderCaseCard(item, tab) {
   const showActors       = ccv.ch_case_actors        !== false && cardPres.showActors       !== false;
   const showSectorFlag   = ccv.ch_case_sector        !== false;
   const showLevelsFlag   = ccv.ch_case_levels       !== false && cardPres.showLevels       !== false;
-  const showEvidBadge    = ccv.ch_case_evidenceBadge !== false && cardPres.showEvidenceBadge !== false;
+  const showEvidBadge      = ccv.ch_case_evidenceBadge  !== false && cardPres.showEvidenceBadge !== false;
+  const showEvidLevel      = ccv.ch_case_evidenceLevel  !== false;
   const showSdgsFlag     = ccv.ch_case_sdgs         !== false && cardPres.showSdgs         !== false;
 
   // 1. Cadena de transferencia (origen → beneficiarios)
@@ -1324,7 +1325,7 @@ function renderCaseCard(item, tab) {
   const verifiedLabel = evidenceLevelLabel ? `${evidencePrefix}${evidenceLevelLabel}` : '';
   const verifStatus = core.verificationStatus || cl.verificationStatus || '';
   const verifActive = verifStatus && String(getTabFilterState(getActiveTabId()).values?.verificationStatus) === verifStatus;
-  const verifBadge = (showEvidBadge && verifiedLabel && verifStatus)
+  const verifBadge = (showEvidBadge && showEvidLevel && verifiedLabel && verifStatus)
     ? `<span class="inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-bold text-green-700 cursor-pointer select-none${verifActive ? ' ring-1 ring-inset ring-green-600' : ''}" data-mp-chip-filter="verificationStatus" data-mp-chip-value="${esc(verifStatus)}"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifiedLabel)}</span>`
     : '';
   const verifHtml = verifBadge
