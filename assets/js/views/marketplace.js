@@ -288,6 +288,8 @@ const UI_TEXT = {
     en: 'Key criterion',
     va: 'Criteri clau',
   },
+  levels: { es: 'Niveles', en: 'Levels', va: 'Nivells' },
+  verification: { es: 'Verificación', en: 'Verification', va: 'Verificació' },
 };
 
 const FIELD_LABELS = {
@@ -308,10 +310,8 @@ const FIELD_LABELS = {
   organisation: { es: 'Organizacion', en: 'Organisation', va: 'Organitzacio' },
   requirements: { es: 'Requisitos', en: 'Requirements', va: 'Requisits' },
   reward: { es: 'Recompensa', en: 'Reward', va: 'Recompensa' },
-  levels: { es: 'Niveles', en: 'Levels', va: 'Nivells' },
   sdgs: { es: 'ODS', en: 'SDGs', va: 'ODS' },
   setCompetences: { es: 'Competencias STEAM', en: 'STEAM competences', va: 'Competències STEAM' },
-  verification: { es: 'Verificación', en: 'Verification', va: 'Verificació' },
   specialties: { es: 'Especialidades', en: 'Specialties', va: 'Especialitats' },
   trl: { es: 'TRL', en: 'TRL', va: 'TRL' },
   valorisation: { es: 'Valorizacion', en: 'Valorisation', va: 'Valoritzacio' },
