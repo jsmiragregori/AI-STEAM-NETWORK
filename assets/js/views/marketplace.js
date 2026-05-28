@@ -781,6 +781,7 @@ function getFilterDefinitions(tabId) {
   if (tabId === 'cases') {
     return [
       common.sector,
+      common.status,
       { key: 'transferType', label: uiText('filterBy') + ' ' + uiText('transferType'), labeler: getTransferTypeLabel },
       { key: 'level', label: uiText('filterBy') + ' ' + uiText('level'), labeler: id => getLevelLabel(id) || id },
       { key: 'verificationStatus', label: uiText('filterBy') + ' ' + uiText('verificationStatus'), labeler: getVerificationLabel },
@@ -1368,6 +1369,7 @@ function renderCaseCard(item, tab) {
     extraBadge: caseStageLabel || '',
     entity: ccv.ch_entity !== false ? (originName || publisherName) : null,
     ctaHtml,
+    hideTypeBadge: true,
   };
 
   return renderCardShell(item, tab, body, shellOptions);
