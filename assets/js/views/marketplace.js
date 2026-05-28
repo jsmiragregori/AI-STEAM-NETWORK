@@ -290,6 +290,7 @@ const UI_TEXT = {
   },
   levels: { es: 'Niveles', en: 'Levels', va: 'Nivells' },
   verification: { es: 'Verificación', en: 'Verification', va: 'Verificació' },
+  transferChain: { es: 'Cadena de transferencia', en: 'Transfer chain', va: 'Cadena de transferència' },
 };
 
 const FIELD_LABELS = {
@@ -1261,13 +1262,16 @@ function renderCaseCard(item, tab) {
   const showEvidBadge    = ccv.ch_case_evidenceBadge !== false && cardPres.showEvidenceBadge !== false;
   const showSdgsFlag     = ccv.ch_case_sdgs         !== false && cardPres.showSdgs         !== false;
 
-  // 1. Línea de actores (flujo de origen a beneficiarios)
+  // 1. Cadena de transferencia (origen → beneficiarios)
   let actorLineHtml = '';
   if (showActors && (originName || beneficiaries.length)) {
     actorLineHtml = `
-      <div class="mt-4 flex items-start gap-2 rounded-lg bg-eu-bg px-3 py-2 text-sm text-gray-700">
-        <i data-lucide="building-2" class="mt-0.5 h-4 w-4 shrink-0 text-gray-400"></i>
-        <span class="line-clamp-2">${esc(originName || publisherName)}${beneficiaries.length ? ' → ' + beneficiaries.slice(0, 2).join(', ') : ''}</span>
+      <div class="mt-4">
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('transferChain'))}</p>
+        <div class="flex items-start gap-2 rounded-lg bg-eu-bg px-3 py-2 text-sm text-gray-700">
+          <i data-lucide="building-2" class="mt-0.5 h-4 w-4 shrink-0 text-gray-400"></i>
+          <span class="line-clamp-2">${esc(originName || publisherName)}${beneficiaries.length ? ' → ' + beneficiaries.slice(0, 2).join(', ') : ''}</span>
+        </div>
       </div>`;
   }
 
