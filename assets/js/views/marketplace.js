@@ -1258,6 +1258,7 @@ function renderCaseCard(item, tab) {
   });
 
   const showActors       = ccv.ch_case_actors       !== false && cardPres.showActors       !== false;
+  const showSectorFlag   = ccv.ch_case_sector       !== false;
   const showLevelsFlag   = ccv.ch_case_levels       !== false && cardPres.showLevels       !== false;
   const showEvidBadge    = ccv.ch_case_evidenceBadge !== false && cardPres.showEvidenceBadge !== false;
   const showSdgsFlag     = ccv.ch_case_sdgs         !== false && cardPres.showSdgs         !== false;
@@ -1299,7 +1300,7 @@ function renderCaseCard(item, tab) {
 
   // 4. Sector
   const caseSectorCode = getSectorCode(cl.sector || core.sector);
-  const sectorHtml = sectorLabel
+  const sectorHtml = (showSectorFlag && sectorLabel)
     ? `<div class="mt-4">
         <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('sector'))}</p>
         <div class="flex flex-wrap gap-2">${renderBadge(sectorLabel, 'bg-eu-orange/10 text-eu-orange border-eu-orange/20', 'sector', caseSectorCode)}</div>
