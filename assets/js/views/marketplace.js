@@ -1325,21 +1325,6 @@ function renderCaseCard(item, tab) {
       </div>`
     : '';
 
-  // 7. Indicador de descargables
-  let dlIndicatorHtml = '';
-  if (cardPres.showDownloadsIndicator !== false && downloads.enabled !== false && Array.isArray(downloads.items) && downloads.items.length > 0) {
-    const count = downloads.items.length;
-    const dlText = pickLang({
-      es: `Incluye ${count} recurso${count > 1 ? 's' : ''} descargable${count > 1 ? 's' : ''}`,
-      en: `Includes ${count} downloadable resource${count > 1 ? 's' : ''}`,
-      va: `Inclou ${count} recurs${count > 1 ? 's' : ''} descarregable${count > 1 ? 's' : ''}`,
-    });
-    dlIndicatorHtml = `
-      <div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500">
-        <i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i>
-        <span>${esc(dlText)}</span>
-      </div>`;
-  }
 
   // 8. ODS
   const _sdgInner = (showSdgsFlag && cl.sdgs) ? renderSdgs(cl.sdgs, 3, 'sdg', true) : '';
@@ -1357,7 +1342,6 @@ function renderCaseCard(item, tab) {
     ${sectorHtml}
     ${levelsHtml}
     ${verifHtml}
-    ${dlIndicatorHtml}
     ${sdgsHtml}
   `;
 
