@@ -758,6 +758,7 @@ function getItemFilterValue(item, key) {
   if (key === 'pilotStatus') return item.classification?.pilotStatus || '';
   if (key === 'validationType') return item.core?.validationType || '';
   if (key === 'validationStage') return item.core?.validationStage || '';
+  if (key === 'caseStage') return item.core?.caseStage || '';
   return '';
 }
 
@@ -783,6 +784,7 @@ function getFilterDefinitions(tabId) {
     return [
       common.sector,
       common.status,
+      { key: 'caseStage', label: uiText('filterBy') + ' ' + pickLang({ es: 'Etapa', en: 'Stage', va: 'Etapa' }), labeler: getCaseStageLabel },
       { key: 'transferType', label: uiText('filterBy') + ' ' + uiText('transferType'), labeler: getTransferTypeLabel },
       { key: 'level', label: uiText('filterBy') + ' ' + uiText('level'), labeler: id => getLevelLabel(id) || id },
       { key: 'verificationStatus', label: uiText('filterBy') + ' ' + uiText('verificationStatus'), labeler: getVerificationLabel },
@@ -1258,6 +1260,7 @@ function renderCaseCard(item, tab) {
   });
 
   const showStatusBadge  = ccv.ch_case_status        !== false;
+  const showStageBadge   = ccv.ch_case_stage         !== false;
   const showActors       = ccv.ch_case_actors        !== false && cardPres.showActors       !== false;
   const showSectorFlag   = ccv.ch_case_sector        !== false;
   const showLevelsFlag   = ccv.ch_case_levels       !== false && cardPres.showLevels       !== false;
@@ -1357,7 +1360,10 @@ function renderCaseCard(item, tab) {
     title: core.title,
     subtitle: core.summary,
     showStatusBadge,
-    extraBadge: caseStageLabel || '',
+    extraBadge: showStageBadge ? (caseStageLabel || '') : '',
+    extraBadgeTone: 'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
+    extraBadgeFilterKey: (showStageBadge && caseStageLabel) ? 'caseStage' : '',
+    extraBadgeFilterValue: (showStageBadge && caseStageLabel) ? (core.caseStage || '') : '',
     entity: ccv.ch_entity !== false ? (originName || publisherName) : null,
     ctaHtml,
     hideTypeBadge: true,
@@ -1367,6 +1373,7 @@ function renderCaseCard(item, tab) {
 }
 
 function renderPilotCard(item, tab) {
+  const ccv = MARKETPLACE_CONFIG.cardChipVisibility || {};
   // Detección v2: pilotPlan presente → esquema nuevo
   const isV2 = item.pilotPlan != null || item.ownership?.lead != null;
   if (!isV2) return renderPilotCardLegacy(item, tab);
@@ -1463,15 +1470,16 @@ function renderPilotCard(item, tab) {
   return renderCardShell(item, tab, body, {
     title: core.title,
     subtitle: core.summary,
-    extraBadge: getSectorLabel(core.sector),
-    extraBadgeFilterKey: 'sector',
-    extraBadgeFilterValue: getSectorCode(core.sector),
+    extraBadge: ccv.ch_pilot_extraBadge !== false ? getSectorLabel(core.sector) : '',
+    extraBadgeFilterKey: ccv.ch_pilot_extraBadge !== false ? 'sector' : '',
+    extraBadgeFilterValue: ccv.ch_pilot_extraBadge !== false ? getSectorCode(core.sector) : '',
     entity: item.ownership?.lead?.name || '',
     ctaHtml,
   });
 }
 
 function renderPilotCardLegacy(item, tab) {
+  const ccv = MARKETPLACE_CONFIG.cardChipVisibility || {};
   const card = item.card || {};
   const pilotTypeLabel = getPilotTypeLabel(item.core?.pilotType);
   const pilotStatusLabel = getPilotStatusLabel(item.classification?.pilotStatus);
@@ -1493,13 +1501,14 @@ function renderPilotCardLegacy(item, tab) {
   return renderCardShell(item, tab, body, {
     title: item.core?.title,
     subtitle: card.validationStatus || item.core?.summary,
-    extraBadge: pilotTypeLabel || getTrlLabel(card.trl) || getSectorLabel(item.core?.sector),
-    extraBadgeFilterKey: pilotTypeLabel ? 'pilotType' : (!getTrlLabel(card.trl) ? 'sector' : ''),
-    extraBadgeFilterValue: pilotTypeLabel ? item.core?.pilotType : getSectorCode(item.core?.sector),
+    extraBadge: ccv.ch_pilot_extraBadge !== false ? (pilotTypeLabel || getTrlLabel(card.trl) || getSectorLabel(item.core?.sector)) : '',
+    extraBadgeFilterKey: ccv.ch_pilot_extraBadge !== false ? (pilotTypeLabel ? 'pilotType' : (!getTrlLabel(card.trl) ? 'sector' : '')) : '',
+    extraBadgeFilterValue: ccv.ch_pilot_extraBadge !== false ? (pilotTypeLabel ? item.core?.pilotType : getSectorCode(item.core?.sector)) : '',
   });
 }
 
 function renderValidationCard(item, tab) {
+  const ccv = MARKETPLACE_CONFIG.cardChipVisibility || {};
   const core = item.core || {};
   const pres = item.presentation?.card || {};
   const validation = item.validation || {};
@@ -1564,7 +1573,7 @@ function renderValidationCard(item, tab) {
     : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(ctaLabel)}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
 
   // ── Badge extra: sector (validationType ya aparece como badge de estado) ──
-  const extraBadge = getSectorLabel(core.sector);
+  const extraBadge = ccv.ch_val_extraBadge !== false ? getSectorLabel(core.sector) : '';
 
   const body = `
     ${mainBlockHtml}
@@ -1580,14 +1589,15 @@ function renderValidationCard(item, tab) {
     title: core.title,
     subtitle: core.summary,
     extraBadge,
-    extraBadgeFilterKey: 'sector',
-    extraBadgeFilterValue: getSectorCode(core.sector),
+    extraBadgeFilterKey: ccv.ch_val_extraBadge !== false ? 'sector' : '',
+    extraBadgeFilterValue: ccv.ch_val_extraBadge !== false ? getSectorCode(core.sector) : '',
     entity: proposerName,
     ctaHtml,
   });
 }
 
 function renderMentoringCard(item, tab) {
+  const ccv = MARKETPLACE_CONFIG.cardChipVisibility || {};
   const core = item.core || {};
   const pres = item.presentation?.card || {};
   const offer = item.mentoringOffer || {};
@@ -1661,7 +1671,7 @@ function renderMentoringCard(item, tab) {
       title: core.title,
       subtitle: core.summary,
       statusLabel: getMentoringStatusLabel(core.status),
-      extraBadge: getMentoringTypeLabel(core.mentoringType),
+      extraBadge: ccv.ch_mentoring_type !== false ? getMentoringTypeLabel(core.mentoringType) : '',
       entity: '',
       ctaHtml,
     });
@@ -1691,7 +1701,7 @@ function renderMentoringCard(item, tab) {
   return renderCardShell(item, tab, body, {
     title: item.core?.title,
     subtitle: card.organisation || item.core?.summary,
-    extraBadge: (primaryUrl && item.presentation?.card?.showChatBadge) ? 'Chat' : getSectorLabel(item.core?.sector),
+    extraBadge: ccv.ch_mentoring_type !== false ? ((primaryUrl && item.presentation?.card?.showChatBadge) ? 'Chat' : getSectorLabel(item.core?.sector)) : '',
     ctaHtml,
   });
 }
