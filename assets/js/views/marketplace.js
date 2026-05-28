@@ -1323,11 +1323,14 @@ function renderCaseCard(item, tab) {
     ${sdgsHtml}
   `;
 
+  const ctaHtml = `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang({ es: 'Ver caso', en: 'View case', va: 'Veure cas' }))} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
+
   const shellOptions = {
     title: core.title,
     subtitle: core.summary,
     extraBadge: caseStageLabel || '',
     entity: originName || publisherName,
+    ctaHtml,
   };
 
   return renderCardShell(item, tab, body, shellOptions);
