@@ -515,11 +515,16 @@ export const MARKETPLACE_CONFIG = {
     "ch_reviewDate": true,
     "ch_entity": true,
     "ch_case_status": true,
+    "ch_case_stage": false,
     "ch_case_actors": true,
     "ch_case_sector": true,
     "ch_case_levels": true,
+    "ch_case_evidenceLevel": true,
     "ch_case_evidenceBadge": true,
-    "ch_case_sdgs": true
+    "ch_case_sdgs": true,
+    "ch_pilot_extraBadge": true,
+    "ch_val_extraBadge": true,
+    "ch_mentoring_type": true
   },
   "searchBlock": {
     "visible": true,
