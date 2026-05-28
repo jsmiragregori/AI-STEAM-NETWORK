@@ -752,7 +752,7 @@ function getItemFilterValue(item, key) {
   if (key === 'organisation') return card.organisation || pickLang(item.core?.entity?.name);
   if (key === 'transferType') return item.transfer?.type || '';
   if (key === 'level') return asArray(item.classification?.levels || item.core?.levels);
-  if (key === 'verificationStatus') return item.classification?.verificationStatus || '';
+  if (key === 'verificationStatus') return item.core?.verificationStatus || item.classification?.verificationStatus || '';
   if (key === 'pilotType') return item.core?.pilotType || '';
   if (key === 'helix') return asArray(item.core?.helix);
   if (key === 'pilotStatus') return item.classification?.pilotStatus || '';
@@ -1319,7 +1319,7 @@ function renderCaseCard(item, tab) {
 
   // 6. Verificación / Evidencia
   const verifiedLabel = evidenceLevelLabel ? `${evidencePrefix}${evidenceLevelLabel}` : '';
-  const verifStatus = cl.verificationStatus || '';
+  const verifStatus = core.verificationStatus || cl.verificationStatus || '';
   const verifActive = verifStatus && String(getTabFilterState(getActiveTabId()).values?.verificationStatus) === verifStatus;
   const verifBadge = (showEvidBadge && verifiedLabel && verifStatus)
     ? `<span class="inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-bold text-green-700 cursor-pointer select-none${verifActive ? ' ring-1 ring-inset ring-green-600' : ''}" data-mp-chip-filter="verificationStatus" data-mp-chip-value="${esc(verifStatus)}"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifiedLabel)}</span>`
