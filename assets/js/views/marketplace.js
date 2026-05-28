@@ -1224,8 +1224,9 @@ function renderCaseCard(item, tab) {
   const presentation = item.presentation || {};
   const cardPres = presentation.card || {};
 
-  const originName = pickLang(ownership.origin?.name) || '';
-  const publisherName = pickLang(ownership.publisher?.name) || '';
+  const ccv = MARKETPLACE_CONFIG.cardChipVisibility || {};
+  const originName = ownership.origin?.name || '';
+  const publisherName = ownership.publisher?.name || '';
   const beneficiaries = asArray(ownership.beneficiaries).map(b => pickLang(b.name)).filter(Boolean);
 
   const caseStageLabel = getCaseStageLabel(core.caseStage);
@@ -1329,7 +1330,7 @@ function renderCaseCard(item, tab) {
     title: core.title,
     subtitle: core.summary,
     extraBadge: caseStageLabel || '',
-    entity: originName || publisherName,
+    entity: ccv.ch_entity !== false ? (originName || publisherName) : null,
     ctaHtml,
   };
 
