@@ -515,7 +515,7 @@ export const MARKETPLACE_CONFIG = {
     "ch_reviewDate": true,
     "ch_entity": true,
     "ch_case_status": true,
-    "ch_case_stage": false,
+    "ch_case_stage": true,
     "ch_case_actors": true,
     "ch_case_sector": true,
     "ch_case_levels": true,
@@ -3460,6 +3460,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
@@ -3962,6 +3964,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "cci",
@@ -4444,6 +4448,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
@@ -4925,6 +4931,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "agr",
@@ -5404,6 +5412,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
@@ -5883,6 +5893,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
@@ -6360,6 +6372,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
@@ -6841,6 +6855,16 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "in-progress",
+        "executionWindow": {
+          "start": "2026-02-01",
+          "end": "2026-07-31",
+          "label": {
+            "es": "Feb – Jul 2026",
+            "en": "Feb – Jul 2026",
+            "va": "Feb – Jul 2026"
+          }
+        },
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
@@ -7510,6 +7534,16 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "in-progress",
+        "executionWindow": {
+          "start": "2026-01-15",
+          "end": "2026-12-15",
+          "label": {
+            "es": "Ene – Dic 2026",
+            "en": "Jan – Dec 2026",
+            "va": "Gen – Des 2026"
+          }
+        },
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "hou",
@@ -8179,6 +8213,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
@@ -8656,6 +8692,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
@@ -9161,6 +9199,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "mfg",
@@ -9636,6 +9676,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "cci",
@@ -10103,6 +10145,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "scaled",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "verified",
         "sector": "",
@@ -10733,6 +10777,16 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "published",
+        "executionWindow": {
+          "start": "2025-11-01",
+          "end": "2026-01-15",
+          "label": {
+            "es": "Nov 2025 – Ene 2026",
+            "en": "Nov 2025 – Jan 2026",
+            "va": "Nov 2025 – Gen 2026"
+          }
+        },
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "ene",
@@ -11254,6 +11308,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "ene",
@@ -11756,6 +11812,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "mob",
@@ -12258,6 +12316,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "nts",
@@ -12733,6 +12793,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "adapted",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "self-reported",
         "sector": "",
@@ -13302,6 +13364,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "ene",
@@ -13758,6 +13822,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "adapted",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "reviewed",
         "sector": "",
@@ -14306,6 +14372,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "adapted",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "verified",
         "sector": "",
@@ -14919,6 +14987,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "mfg",
@@ -15420,6 +15490,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "replicated",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "documented",
         "verificationStatus": "reviewed",
         "sector": "",
@@ -15967,6 +16039,16 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "published",
+        "executionWindow": {
+          "start": "2025-10-01",
+          "end": "2026-03-31",
+          "label": {
+            "es": "Oct 2025 – Mar 2026",
+            "en": "Oct 2025 – Mar 2026",
+            "va": "Oct 2025 – Mar 2026"
+          }
+        },
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "mob",
@@ -16649,6 +16731,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "scaled",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "verified",
         "sector": "",
@@ -17222,6 +17306,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "cci",
@@ -17758,6 +17844,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "agr",
@@ -18236,6 +18324,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "validated",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "verified",
         "sector": "",
@@ -18829,6 +18919,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "documented",
         "verificationStatus": "",
         "sector": "mob",
@@ -19291,6 +19383,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "ene",
@@ -19767,6 +19861,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "validated",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "documented",
         "verificationStatus": "reviewed",
         "sector": "",
@@ -20323,6 +20419,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "scaled",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "verified",
         "verificationStatus": "verified",
         "sector": "",
@@ -20893,6 +20991,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "cci",
@@ -21366,6 +21466,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "pilot-result",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "verified",
         "sector": "",
@@ -21905,6 +22007,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "mfg",
@@ -22383,6 +22487,16 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "published",
+        "executionWindow": {
+          "start": "2025-11-01",
+          "end": "2025-12-15",
+          "label": {
+            "es": "Nov – Dic 2025",
+            "en": "Nov – Dec 2025",
+            "va": "Nov – Des 2025"
+          }
+        },
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
@@ -22931,6 +23045,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "replicated",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "self-reported",
         "sector": "",
@@ -23522,6 +23638,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "nts",
@@ -24004,6 +24122,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "adapted",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "documented",
         "verificationStatus": "reviewed",
         "sector": "",
@@ -24568,6 +24688,16 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "published",
+        "executionWindow": {
+          "start": "2025-09-01",
+          "end": "2026-01-31",
+          "label": {
+            "es": "Sep 2025 – Ene 2026",
+            "en": "Sep 2025 – Jan 2026",
+            "va": "Set 2025 – Gen 2026"
+          }
+        },
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "mfg",
@@ -25105,6 +25235,16 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "in-progress",
+        "executionWindow": {
+          "start": "2026-02-01",
+          "end": "2026-09-30",
+          "label": {
+            "es": "Feb – Sep 2026",
+            "en": "Feb – Sep 2026",
+            "va": "Feb – Set 2026"
+          }
+        },
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "mfg",
@@ -25616,6 +25756,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "agr",
@@ -26126,6 +26268,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "hou",
@@ -26611,6 +26755,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "mob",
@@ -27129,6 +27275,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
@@ -27631,6 +27779,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
@@ -28136,6 +28286,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "cci",
@@ -28603,6 +28755,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "ene",
@@ -29105,6 +29259,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "mob",
@@ -29607,6 +29763,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "ene",
@@ -30063,6 +30221,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "mfg",
@@ -30564,6 +30724,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "agr",
@@ -31044,6 +31206,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "scaled",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "verified",
           "sector": "",
@@ -31674,6 +31838,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "adapted",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "self-reported",
           "sector": "",
@@ -32243,6 +32409,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "adapted",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "reviewed",
           "sector": "",
@@ -32791,6 +32959,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "adapted",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "verified",
           "sector": "",
@@ -33404,6 +33574,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "replicated",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "documented",
           "verificationStatus": "reviewed",
           "sector": "",
@@ -33951,6 +34123,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "scaled",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "verified",
           "sector": "",
@@ -34524,6 +34698,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "validated",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "verified",
           "sector": "",
@@ -35117,6 +35293,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "validated",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "documented",
           "verificationStatus": "reviewed",
           "sector": "",
@@ -35673,6 +35851,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "scaled",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "verified",
           "verificationStatus": "verified",
           "sector": "",
@@ -36243,6 +36423,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "pilot-result",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "verified",
           "sector": "",
@@ -36782,6 +36964,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "replicated",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "self-reported",
           "sector": "",
@@ -37373,6 +37557,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "adapted",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "documented",
           "verificationStatus": "reviewed",
           "sector": "",
@@ -37939,6 +38125,16 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "in-progress",
+          "executionWindow": {
+            "start": "2026-02-01",
+            "end": "2026-07-31",
+            "label": {
+              "es": "Feb – Jul 2026",
+              "en": "Feb – Jul 2026",
+              "va": "Feb – Jul 2026"
+            }
+          },
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
@@ -38608,6 +38804,16 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "in-progress",
+          "executionWindow": {
+            "start": "2026-01-15",
+            "end": "2026-12-15",
+            "label": {
+              "es": "Ene – Dic 2026",
+              "en": "Jan – Dec 2026",
+              "va": "Gen – Des 2026"
+            }
+          },
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "hou",
@@ -39277,6 +39483,16 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "published",
+          "executionWindow": {
+            "start": "2025-11-01",
+            "end": "2026-01-15",
+            "label": {
+              "es": "Nov 2025 – Ene 2026",
+              "en": "Nov 2025 – Jan 2026",
+              "va": "Nov 2025 – Gen 2026"
+            }
+          },
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "ene",
@@ -39798,6 +40014,16 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "published",
+          "executionWindow": {
+            "start": "2025-10-01",
+            "end": "2026-03-31",
+            "label": {
+              "es": "Oct 2025 – Mar 2026",
+              "en": "Oct 2025 – Mar 2026",
+              "va": "Oct 2025 – Mar 2026"
+            }
+          },
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "mob",
@@ -40480,6 +40706,16 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "published",
+          "executionWindow": {
+            "start": "2025-11-01",
+            "end": "2025-12-15",
+            "label": {
+              "es": "Nov – Dic 2025",
+              "en": "Nov – Dec 2025",
+              "va": "Nov – Des 2025"
+            }
+          },
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
@@ -41028,6 +41264,16 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "published",
+          "executionWindow": {
+            "start": "2025-09-01",
+            "end": "2026-01-31",
+            "label": {
+              "es": "Sep 2025 – Ene 2026",
+              "en": "Sep 2025 – Jan 2026",
+              "va": "Set 2025 – Gen 2026"
+            }
+          },
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "mfg",
@@ -41565,6 +41811,16 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "in-progress",
+          "executionWindow": {
+            "start": "2026-02-01",
+            "end": "2026-09-30",
+            "label": {
+              "es": "Feb – Sep 2026",
+              "en": "Feb – Sep 2026",
+              "va": "Feb – Set 2026"
+            }
+          },
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "mfg",
@@ -42078,6 +42334,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "nts",
@@ -42553,6 +42811,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "documented",
           "verificationStatus": "",
           "sector": "mob",
@@ -43015,6 +43275,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "ene",
@@ -43491,6 +43753,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "cci",
@@ -43964,6 +44228,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "mfg",
@@ -44442,6 +44708,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "nts",
@@ -44924,6 +45192,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "agr",
@@ -45434,6 +45704,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "hou",
@@ -45919,6 +46191,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "mob",
@@ -46436,6 +46710,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "cci",
@@ -46918,6 +47194,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
@@ -47399,6 +47677,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "agr",
@@ -47878,6 +48158,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
@@ -48357,6 +48639,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
@@ -48834,6 +49118,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
@@ -49315,6 +49601,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
@@ -49792,6 +50080,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "mfg",
@@ -50267,6 +50557,8 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "cci",
@@ -50806,6 +51098,8 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",

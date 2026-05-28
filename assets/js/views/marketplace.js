@@ -1322,11 +1322,11 @@ function renderCaseCard(item, tab) {
     : '';
 
   // 6. Verificación / Evidencia
-  const verifiedLabel = evidenceLevelLabel ? `${evidencePrefix}${evidenceLevelLabel}` : '';
   const verifStatus = core.verificationStatus || cl.verificationStatus || '';
+  const verifStatusLabel = getVerificationLabel(verifStatus);
   const verifActive = verifStatus && String(getTabFilterState(getActiveTabId()).values?.verificationStatus) === verifStatus;
-  const verifBadge = (showEvidBadge && showEvidLevel && verifiedLabel && verifStatus)
-    ? `<span class="inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-bold text-green-700 cursor-pointer select-none${verifActive ? ' ring-1 ring-inset ring-green-600' : ''}" data-mp-chip-filter="verificationStatus" data-mp-chip-value="${esc(verifStatus)}"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifiedLabel)}</span>`
+  const verifBadge = (showEvidBadge && verifStatus && verifStatusLabel)
+    ? `<span class="inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-bold text-green-700 cursor-pointer select-none${verifActive ? ' ring-1 ring-inset ring-green-600' : ''}" data-mp-chip-filter="verificationStatus" data-mp-chip-value="${esc(verifStatus)}"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifStatusLabel)}</span>`
     : '';
   const verifHtml = verifBadge
     ? `<div class="mt-3">
