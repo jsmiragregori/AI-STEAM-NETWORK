@@ -1257,8 +1257,9 @@ function renderCaseCard(item, tab) {
     va: 'Evidència: ',
   });
 
-  const showActors       = ccv.ch_case_actors       !== false && cardPres.showActors       !== false;
-  const showSectorFlag   = ccv.ch_case_sector       !== false;
+  const showStatusBadge  = ccv.ch_case_status        !== false;
+  const showActors       = ccv.ch_case_actors        !== false && cardPres.showActors       !== false;
+  const showSectorFlag   = ccv.ch_case_sector        !== false;
   const showLevelsFlag   = ccv.ch_case_levels       !== false && cardPres.showLevels       !== false;
   const showEvidBadge    = ccv.ch_case_evidenceBadge !== false && cardPres.showEvidenceBadge !== false;
   const showSdgsFlag     = ccv.ch_case_sdgs         !== false && cardPres.showSdgs         !== false;
@@ -1355,6 +1356,7 @@ function renderCaseCard(item, tab) {
   const shellOptions = {
     title: core.title,
     subtitle: core.summary,
+    showStatusBadge,
     extraBadge: caseStageLabel || '',
     entity: ccv.ch_entity !== false ? (originName || publisherName) : null,
     ctaHtml,
