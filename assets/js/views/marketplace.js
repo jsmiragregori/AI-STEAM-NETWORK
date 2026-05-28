@@ -735,7 +735,7 @@ function renderPlainValue(value) {
 
 function getItemFilterValue(item, key) {
   const card = item.card || {};
-  if (key === 'sector') return getSectorCode(item.core?.sector);
+  if (key === 'sector') return getSectorCode(item.classification?.sector || item.core?.sector);
   if (key === 'status') return item.core?.status;
   if (key === 'contributionType') return asArray(item.classification?.contributionTypes);
   if (key === 'audience') return asArray(item.classification?.audience);
@@ -750,7 +750,7 @@ function getItemFilterValue(item, key) {
   if (key === 'availability') return pickLang(item.mentoringOffer?.format?.availability) || pickLang(card.availability);
   if (key === 'organisation') return card.organisation || pickLang(item.core?.entity?.name);
   if (key === 'transferType') return item.transfer?.type || '';
-  if (key === 'level') return asArray(item.core?.levels);
+  if (key === 'level') return asArray(item.classification?.levels || item.core?.levels);
   if (key === 'verificationStatus') return item.classification?.verificationStatus || '';
   if (key === 'pilotType') return item.core?.pilotType || '';
   if (key === 'helix') return asArray(item.core?.helix);
@@ -761,10 +761,11 @@ function getItemFilterValue(item, key) {
 }
 
 function getFilterDefinitions(tabId) {
+  const sdgPrefix = pickLang({ es: 'ODS', en: 'SDG', va: 'ODS' });
   const common = {
     sector: { key: 'sector', label: uiText('filterBy') + ' ' + uiText('sector'), labeler: getSectorLabel },
     status: { key: 'status', label: uiText('filterBy') + ' ' + uiText('status'), labeler: getStatusLabel },
-    sdg: { label: uiText('filterBy') + ' ' + uiText('sdgs'), labeler: value => `ODS ${value}` },
+    sdg: { key: 'sdg', label: uiText('filterBy') + ' ' + uiText('sdgs'), labeler: value => `${sdgPrefix} ${value}` },
   };
   if (tabId === 'challenges') {
     return [
@@ -783,6 +784,7 @@ function getFilterDefinitions(tabId) {
       { key: 'transferType', label: uiText('filterBy') + ' ' + uiText('transferType'), labeler: getTransferTypeLabel },
       { key: 'level', label: uiText('filterBy') + ' ' + uiText('level'), labeler: id => getLevelLabel(id) || id },
       { key: 'verificationStatus', label: uiText('filterBy') + ' ' + uiText('verificationStatus'), labeler: getVerificationLabel },
+      common.sdg,
     ];
   }
   if (tabId === 'pilots') {
