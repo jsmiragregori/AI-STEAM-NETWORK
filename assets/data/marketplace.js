@@ -505,7 +505,15 @@ export const MARKETPLACE_CONFIG = {
     "pilotType": true,
     "pilotStatus": true,
     "pilotStage": true,
-    "helix": true
+    "helix": true,
+    "ch_statusBadge": true,
+    "ch_maturityBadge": true,
+    "ch_contributions": true,
+    "ch_audience": true,
+    "ch_sdgs": true,
+    "ch_competences": true,
+    "ch_reviewDate": true,
+    "ch_entity": true
   },
   "searchBlock": {
     "visible": true,
@@ -3411,6 +3419,505 @@ export const MARKETPLACE_CONFIG = {
   ],
   "modelVersion": "community-practice-mvp-1",
   "items": [
+    {
+      "id": "reto-personalizacion-itinerarios-fp-edu",
+      "type": "challenge",
+      "tab": "challenges",
+      "sortDate": "2026-05-28",
+      "visible": true,
+      "sourcePath": "content/challenges/items/challenges/reto-personalizacion-itinerarios-fp-edu.yml",
+      "core": {
+        "status": "closed",
+        "forceOpen": false,
+        "maturity": "idea",
+        "title": {
+          "es": "IA para la personalización de itinerarios formativos en ciclos de FP",
+          "en": "AI for personalising learning pathways in VET cycles",
+          "va": "IA per a la personalització d'itineraris formatius en cicles de FP"
+        },
+        "summary": {
+          "es": "El CEICE convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
+          "en": "CEICE calls on VET centres, EdTech companies and educational research groups to develop a personalised learning pathway recommendation system based on the student's academic and competency history, suggesting optional modules, specialisations and professional pathways aligned with the Valencian labour market.",
+          "va": "El CEICE convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
+        },
+        "entity": {
+          "name": "CEICE — Direcció General de Formació Professional i Ensenyaments de Règim Especial",
+          "type": {
+            "es": "Administración educativa autonómica responsable de la FP en la Comunitat Valenciana",
+            "en": "Regional education administration responsible for VET in the Valencian Community",
+            "va": "Administració educativa autonòmica responsable de la FP a la Comunitat Valenciana"
+          }
+        },
+        "sector": "nts",
+        "stakeholderCategory": "institutional",
+        "levels": [],
+        "pilotType": "",
+        "validationType": "",
+        "validationStage": "",
+        "mentoringType": "",
+        "helix": [],
+        "relatedDeliverable": "",
+        "relatedOerId": "",
+        "publishedAt": "2026-04-01",
+        "revisionDate": "2026-05-28",
+        "deadline": "2026-05-28",
+        "publishedAtLabel": {
+          "es": "1 de abril de 2026",
+          "en": "April 1, 2026",
+          "va": "1 d'abril de 2026"
+        },
+        "revisionDateLabel": {
+          "es": "28 de mayo de 2026",
+          "en": "May 28, 2026",
+          "va": "28 de maig de 2026"
+        },
+        "deadlineLabel": {
+          "es": "28 de mayo de 2026",
+          "en": "May 28, 2026",
+          "va": "28 de maig de 2026"
+        }
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AI-STEAM Network",
+          "org": "CEICE"
+        },
+        "origin": null,
+        "requester": {
+          "name": "CEICE — Direcció General de Formació Professional i Ensenyaments de Règim Especial",
+          "publicLabel": {
+            "es": "Administración educativa autonómica responsable de la FP en la Comunitat Valenciana",
+            "en": "Regional education administration responsible for VET in the Valencian Community",
+            "va": "Administració educativa autonòmica responsable de la FP a la Comunitat Valenciana"
+          }
+        },
+        "leadTeam": null,
+        "contact": {
+          "name": "Coordinación AI-STEAM",
+          "org": "CEICE",
+          "role": {
+            "es": "Punto de contacto para expresiones de interés",
+            "en": "Contact point for expressions of interest",
+            "va": "Punt de contacte per a expressions d'interès"
+          }
+        },
+        "beneficiaries": []
+      },
+      "classification": {
+        "aiSteamFocus": [
+          "data-ai",
+          "responsible-ai"
+        ],
+        "tripleTransition": [
+          "digital",
+          "social"
+        ],
+        "policyCluster": [
+          "equity-inclusion",
+          "integrated-pedagogy"
+        ],
+        "engagementLevel": "challenge-contribution",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "Motor de recomendación de itinerarios de FP publicado en abierto, adaptable a cualquier comunidad autónoma con datos de matrícula y mercado laboral propios.",
+          "en": "Open-source VET pathway recommendation engine, adaptable to any autonomous community with their own enrolment and labour market data.",
+          "va": "Motor de recomanació d'itineraris de FP publicat en obert, adaptable a qualsevol comunitat autònoma amb dades de matrícula i mercat laboral propis."
+        },
+        "verificationStatus": "",
+        "pilotStatus": "",
+        "contributionTypes": [
+          "prototypes",
+          "methodologies",
+          "ideas"
+        ],
+        "audience": [
+          "vet-centres",
+          "teachers",
+          "researchers",
+          "public-admin"
+        ],
+        "competences": [
+          "data-analysis",
+          "ai-ethics",
+          "systems-thinking"
+        ],
+        "sdgs": [
+          4,
+          8,
+          10
+        ]
+      },
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "challenges",
+        "featuredSignal": {
+          "es": "Convocatoria CEICE — FP personalizada",
+          "en": "CEICE call — personalised VET",
+          "va": "Convocatòria CEICE — FP personalitzada"
+        }
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {
+        "briefTitle": {
+          "es": "¿Puede la IA recomendar el itinerario de FP más adecuado para cada alumno?",
+          "en": "Can AI recommend the most suitable VET pathway for each student?",
+          "va": "Pot la IA recomanar l'itinerari de FP més adequat per a cada alumne?"
+        },
+        "need": {
+          "es": "El 34% de los alumnos de FP no finalizan su ciclo. La orientación vocacional actual se basa en tutorías grupales con información genérica. Los alumnos necesitan recomendaciones personalizadas que combinen su historial de competencias, intereses declarados y datos actualizados del mercado laboral local para tomar mejores decisiones formativas.",
+          "en": "34% of VET students do not complete their cycle. Current vocational guidance relies on group tutorials with generic information. Students need personalised recommendations combining their competency history, declared interests and up-to-date local labour market data to make better training decisions.",
+          "va": "El 34% dels alumnes de FP no finalitzen el seu cicle. L'orientació vocacional actual es basa en tutories grupals amb informació genèrica. Els alumnes necessiten recomanacions personalitzades que combinen el seu historial de competències, interessos declarats i dades actualitzades del mercat laboral local per prendre millors decisions formatives."
+        },
+        "context": {
+          "es": "CEICE facilita datos anonimizados de matrícula, historial académico y tasas de inserción laboral de 3 años de los ciclos de FP de la Comunitat Valenciana, junto con datos del Observatorio Laboral de la Generalitat. El sistema debe cumplir el RGPD, ser explicable (no caja negra) y mostrar siempre la fuente de sus recomendaciones.",
+          "en": "CEICE provides anonymised enrolment, academic history and job placement rate data for 3 years of VET cycles in the Valencian Community, together with data from the Generalitat's Labour Observatory. The system must comply with GDPR, be explainable (not a black box) and always display the source of its recommendations.",
+          "va": "El CEICE facilita dades anonimitzades de matrícula, historial acadèmic i taxes d'inserció laboral de 3 anys dels cicles de FP de la Comunitat Valenciana, juntament amb dades de l'Observatori Laboral de la Generalitat. El sistema ha de complir el RGPD, ser explicable (no caixa negra) i mostrar sempre la font de les seues recomanacions."
+        },
+        "participation": {
+          "audienceText": {
+            "es": "Equipos multidisciplinares de 3 a 8 personas que incluyan al menos un perfil de ciencia de datos y uno de pedagogía o orientación educativa. Se valorará la colaboración entre empresa y centro educativo.",
+            "en": "Multidisciplinary teams of 3 to 8 people including at least one data science profile and one pedagogy or educational guidance profile. Collaboration between a company and an educational centre is valued.",
+            "va": "Equips multidisciplinaris de 3 a 8 persones que incloguen almenys un perfil de ciència de dades i un de pedagogia o orientació educativa. Es valorarà la col·laboració entre empresa i centre educatiu."
+          },
+          "formatText": {
+            "es": "Las propuestas se presentan en dos fases. Primera fase — memoria conceptual de 5 páginas con arquitectura propuesta y consideraciones éticas. Segunda fase (equipos seleccionados) — prototipo funcional con 50 alumnos de prueba y evaluación de satisfacción.",
+            "en": "Proposals are presented in two phases. First phase — 5-page conceptual memo with proposed architecture and ethical considerations. Second phase (selected teams) — functional prototype with 50 test students and satisfaction evaluation.",
+            "va": "Les propostes es presenten en dues fases. Primera fase — memòria conceptual de 5 pàgines amb arquitectura proposada i consideracions ètiques. Segona fase (equips seleccionats) — prototip funcional amb 50 alumnes de prova i avaluació de satisfacció."
+          },
+          "transferValue": {
+            "es": "El sistema resultante se incorporará al portfolio de herramientas digitales de orientación de CEICE. Los datos anonimizados generados durante el piloto se publicarán como dataset abierto de referencia.",
+            "en": "The resulting system will be incorporated into CEICE's digital guidance tool portfolio. The anonymised data generated during the pilot will be published as an open reference dataset.",
+            "va": "El sistema resultant s'incorporarà al portfolio d'eines digitals d'orientació del CEICE. Les dades anonimitzades generades durant el pilot es publicaran com a dataset obert de referència."
+          }
+        },
+        "reward": {
+          "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CEICE, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AI-STEAM y en la red estatal de innovación en FP.",
+          "en": "The winning team receives: (1) development and implementation contract with CEICE, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AI-STEAM Marketplace and in the national VET innovation network.",
+          "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CEICE, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AI-STEAM i a la xarxa estatal d'innovació en FP."
+        }
+      },
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "external-managed",
+        "sensitiveDataPolicy": {
+          "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
+          "en": "Personal, confidential or sensitive data must not be submitted through this site.",
+          "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+        },
+        "rightsNote": {
+          "es": "Los sistemas desarrollados deben ser de código abierto. Los datos de alumnos piloto se tratan bajo estricto cumplimiento del RGPD y de la legislación de protección de datos educativos.",
+          "en": "Developed systems must be open-source. Pilot student data is processed under strict GDPR compliance and educational data protection legislation.",
+          "va": "Els sistemes desenvolupats han de ser de codi obert. Les dades d'alumnes pilot es tracten sota estricte compliment del RGPD i de la legislació de protecció de dades educatives."
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "Solicitar participación",
+            "en": "Request participation",
+            "va": "Sol·licitar participació"
+          },
+          "system": "",
+          "url": ""
+        },
+        "secondaryAction": null,
+        "fallbackAction": {
+          "label": {
+            "es": "Ver reto",
+            "en": "View challenge",
+            "va": "Veure repte"
+          },
+          "url": ""
+        },
+        "fallbackContact": {
+          "label": {
+            "es": "Contactar con la coordinación del reto",
+            "en": "Contact the challenge coordination desk",
+            "va": "Contactar amb la coordinació del repte"
+          },
+          "url": ""
+        }
+      },
+      "relations": {
+        "originChallengeId": "",
+        "validations": [],
+        "pilots": [],
+        "cases": [],
+        "mentorships": [],
+        "resources": []
+      },
+      "resources": {
+        "available": [
+          {
+            "label": {
+              "es": "Dataset anonimizado de matrícula y resultados FP (2022-2025)",
+              "en": "Anonymised VET enrolment and outcomes dataset (2022-2025)",
+              "va": "Dataset anonimitzat de matrícula i resultats FP (2022-2025)"
+            },
+            "format": "CSV",
+            "license": "Uso restringido al reto"
+          },
+          {
+            "label": {
+              "es": "Informe del Observatorio Laboral — demanda de perfiles FP 2025",
+              "en": "Labour Observatory report — VET profile demand 2025",
+              "va": "Informe de l'Observatori Laboral — demanda de perfils FP 2025"
+            },
+            "format": "PDF",
+            "license": "CC BY 4.0"
+          }
+        ]
+      },
+      "downloads": {
+        "enabled": true,
+        "basePath": "/assets/downloads/challenges/reto-personalizacion-itinerarios-fp-edu/",
+        "items": [
+          {
+            "id": "challenge-brief",
+            "type": "brief",
+            "title": {
+              "es": "Ficha del reto — Personalización de itinerarios FP",
+              "en": "Challenge brief — VET pathway personalisation",
+              "va": "Fitxa del repte — Personalització d'itineraris FP"
+            },
+            "description": {
+              "es": "Descripción del reto, bases de la convocatoria, criterios de evaluación y acceso a los datos.",
+              "en": "Challenge description, call terms, evaluation criteria and data access details.",
+              "va": "Descripció del repte, bases de la convocatòria, criteris d'avaluació i accés a les dades."
+            },
+            "files": [
+              {
+                "file": "ficha-reto-personalizacion-itinerarios-fp.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "license": "",
+            "showOnCard": true,
+            "showOnDetail": true
+          },
+          {
+            "id": "ethics-guide",
+            "type": "guide",
+            "title": {
+              "es": "Guía de consideraciones éticas para sistemas de recomendación educativa",
+              "en": "Ethical considerations guide for educational recommendation systems",
+              "va": "Guia de consideracions ètiques per a sistemes de recomanació educativa"
+            },
+            "description": {
+              "es": "Marco de referencia sobre sesgos algorítmicos, privacidad del estudiante y transparencia en sistemas de IA aplicados a la orientación educativa.",
+              "en": "Reference framework on algorithmic bias, student privacy and transparency in AI systems applied to educational guidance.",
+              "va": "Marc de referència sobre biaixos algorítmics, privacitat de l'estudiant i transparència en sistemes d'IA aplicats a l'orientació educativa."
+            },
+            "files": [
+              {
+                "file": "guia-etica-recomendacion-educativa.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY-SA 4.0"
+              }
+            ],
+            "license": "",
+            "showOnCard": false,
+            "showOnDetail": true
+          }
+        ]
+      },
+      "outputs": {
+        "expected": [
+          {
+            "id": "concept-memo",
+            "label": {
+              "es": "Memoria conceptual con arquitectura propuesta y análisis ético (fase 1)",
+              "en": "Conceptual memo with proposed architecture and ethical analysis (phase 1)",
+              "va": "Memòria conceptual amb arquitectura proposada i anàlisi ètica (fase 1)"
+            }
+          },
+          {
+            "id": "functional-prototype",
+            "label": {
+              "es": "Prototipo funcional evaluado con 50 alumnos piloto (fase 2)",
+              "en": "Functional prototype evaluated with 50 pilot students (phase 2)",
+              "va": "Prototip funcional avaluat amb 50 alumnes pilot (fase 2)"
+            }
+          },
+          {
+            "id": "explainability-report",
+            "label": {
+              "es": "Informe de explicabilidad — cómo se generan las recomendaciones",
+              "en": "Explainability report — how recommendations are generated",
+              "va": "Informe d'explicabilitat — com es generen les recomanacions"
+            }
+          }
+        ]
+      },
+      "process": {
+        "milestones": [
+          {
+            "date": "2026-06-01",
+            "label": {
+              "es": "Cierre de inscripciones y acceso a datos (fase 1)",
+              "en": "Registration deadline and data access (phase 1)",
+              "va": "Tancament d'inscripcions i accés a dades (fase 1)"
+            }
+          },
+          {
+            "date": "2026-09-01",
+            "label": {
+              "es": "Entrega de memorias conceptuales (fase 1)",
+              "en": "Conceptual memo submission (phase 1)",
+              "va": "Lliurament de memòries conceptuals (fase 1)"
+            }
+          },
+          {
+            "date": "2026-10-01",
+            "label": {
+              "es": "Comunicación de equipos seleccionados para fase 2",
+              "en": "Announcement of teams selected for phase 2",
+              "va": "Comunicació d'equips seleccionats per a fase 2"
+            }
+          },
+          {
+            "date": "2026-12-15",
+            "label": {
+              "es": "Entrega de prototipo funcional y resolución (fase 2)",
+              "en": "Functional prototype submission and resolution (phase 2)",
+              "va": "Lliurament de prototip funcional i resolució (fase 2)"
+            }
+          }
+        ]
+      },
+      "hasDownloads": true,
+      "downloadCount": 2,
+      "cardDownloads": [
+        {
+          "id": "challenge-brief",
+          "type": "brief",
+          "title": {
+            "es": "Ficha del reto — Personalización de itinerarios FP",
+            "en": "Challenge brief — VET pathway personalisation",
+            "va": "Fitxa del repte — Personalització d'itineraris FP"
+          },
+          "description": {
+            "es": "Descripción del reto, bases de la convocatoria, criterios de evaluación y acceso a los datos.",
+            "en": "Challenge description, call terms, evaluation criteria and data access details.",
+            "va": "Descripció del repte, bases de la convocatòria, criteris d'avaluació i accés a les dades."
+          },
+          "files": [
+            {
+              "file": "ficha-reto-personalizacion-itinerarios-fp.pdf",
+              "format": "pdf",
+              "language": "es",
+              "license": "CC BY 4.0"
+            }
+          ],
+          "showOnCard": true,
+          "showOnDetail": true
+        }
+      ],
+      "presentation": {
+        "card": {
+          "variant": "challenge",
+          "showActors": true,
+          "showPrimaryMetric": true,
+          "showEvidenceBadge": true,
+          "showReward": true,
+          "showSdgs": true,
+          "showCompetences": true,
+          "showDeadline": true,
+          "showDownloadsIndicator": true,
+          "showChatBadge": false,
+          "showLevels": true,
+          "resultBlockLabel": null
+        },
+        "detail": {
+          "sections": {
+            "brief": true,
+            "need": true,
+            "context": true,
+            "participation": true,
+            "transferValue": true,
+            "resources": true,
+            "downloads": true,
+            "outputs": true,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": false,
+            "relations": false,
+            "evidence": false,
+            "transferability": true,
+            "summary": true,
+            "originContext": true,
+            "intervention": true,
+            "transferPath": true
+          }
+        }
+      },
+      "caseStudy": null,
+      "evidence": null,
+      "transferability": null,
+      "template": {
+        "requiredBlocks": [
+          "need",
+          "context",
+          "transferValue",
+          "participation",
+          "resources",
+          "outputs",
+          "process"
+        ],
+        "optionalBlocks": [
+          "people",
+          "evidence",
+          "access",
+          "trackA",
+          "downloads",
+          "relations"
+        ],
+        "cardSignal": "need"
+      }
+    },
     {
       "id": "mentoring-ia-creativa-turismo-cultura",
       "type": "mentoring",
@@ -7602,505 +8109,6 @@ export const MARKETPLACE_CONFIG = {
           "relations"
         ],
         "cardSignal": "pilotPlan"
-      }
-    },
-    {
-      "id": "reto-personalizacion-itinerarios-fp-edu",
-      "type": "challenge",
-      "tab": "challenges",
-      "sortDate": "2026-05-20",
-      "visible": true,
-      "sourcePath": "content/challenges/items/challenges/reto-personalizacion-itinerarios-fp-edu.yml",
-      "core": {
-        "status": "closed",
-        "forceOpen": false,
-        "maturity": "idea",
-        "title": {
-          "es": "IA para la personalización de itinerarios formativos en ciclos de FP",
-          "en": "AI for personalising learning pathways in VET cycles",
-          "va": "IA per a la personalització d'itineraris formatius en cicles de FP"
-        },
-        "summary": {
-          "es": "El CEICE convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
-          "en": "CEICE calls on VET centres, EdTech companies and educational research groups to develop a personalised learning pathway recommendation system based on the student's academic and competency history, suggesting optional modules, specialisations and professional pathways aligned with the Valencian labour market.",
-          "va": "El CEICE convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
-        },
-        "entity": {
-          "name": "CEICE — Direcció General de Formació Professional i Ensenyaments de Règim Especial",
-          "type": {
-            "es": "Administración educativa autonómica responsable de la FP en la Comunitat Valenciana",
-            "en": "Regional education administration responsible for VET in the Valencian Community",
-            "va": "Administració educativa autonòmica responsable de la FP a la Comunitat Valenciana"
-          }
-        },
-        "sector": "nts",
-        "stakeholderCategory": "institutional",
-        "levels": [],
-        "pilotType": "",
-        "validationType": "",
-        "validationStage": "",
-        "mentoringType": "",
-        "helix": [],
-        "relatedDeliverable": "",
-        "relatedOerId": "",
-        "publishedAt": "2026-04-01",
-        "revisionDate": "2026-05-20",
-        "deadline": "2026-05-01",
-        "publishedAtLabel": {
-          "es": "1 de abril de 2026",
-          "en": "April 1, 2026",
-          "va": "1 d'abril de 2026"
-        },
-        "revisionDateLabel": {
-          "es": "20 de mayo de 2026",
-          "en": "May 20, 2026",
-          "va": "20 de maig de 2026"
-        },
-        "deadlineLabel": {
-          "es": "1 de mayo de 2026",
-          "en": "May 1, 2026",
-          "va": "1 de maig de 2026"
-        }
-      },
-      "ownership": {
-        "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
-        },
-        "origin": null,
-        "requester": {
-          "name": "CEICE — Direcció General de Formació Professional i Ensenyaments de Règim Especial",
-          "publicLabel": {
-            "es": "Administración educativa autonómica responsable de la FP en la Comunitat Valenciana",
-            "en": "Regional education administration responsible for VET in the Valencian Community",
-            "va": "Administració educativa autonòmica responsable de la FP a la Comunitat Valenciana"
-          }
-        },
-        "leadTeam": null,
-        "contact": {
-          "name": "Coordinación AI-STEAM",
-          "org": "CEICE",
-          "role": {
-            "es": "Punto de contacto para expresiones de interés",
-            "en": "Contact point for expressions of interest",
-            "va": "Punt de contacte per a expressions d'interès"
-          }
-        },
-        "beneficiaries": []
-      },
-      "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "responsible-ai"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "equity-inclusion",
-          "integrated-pedagogy"
-        ],
-        "engagementLevel": "challenge-contribution",
-        "evidenceMaturity": "idea",
-        "lbdStage": "input",
-        "trackBValue": {
-          "es": "Motor de recomendación de itinerarios de FP publicado en abierto, adaptable a cualquier comunidad autónoma con datos de matrícula y mercado laboral propios.",
-          "en": "Open-source VET pathway recommendation engine, adaptable to any autonomous community with their own enrolment and labour market data.",
-          "va": "Motor de recomanació d'itineraris de FP publicat en obert, adaptable a qualsevol comunitat autònoma amb dades de matrícula i mercat laboral propis."
-        },
-        "verificationStatus": "",
-        "pilotStatus": "",
-        "contributionTypes": [
-          "prototypes",
-          "methodologies",
-          "ideas"
-        ],
-        "audience": [
-          "vet-centres",
-          "teachers",
-          "researchers",
-          "public-admin"
-        ],
-        "competences": [
-          "data-analysis",
-          "ai-ethics",
-          "systems-thinking"
-        ],
-        "sdgs": [
-          4,
-          8,
-          10
-        ]
-      },
-      "transfer": {
-        "type": "",
-        "originOrganization": "",
-        "beneficiaryOrganizations": []
-      },
-      "community": {
-        "tab": "challenges",
-        "featuredSignal": {
-          "es": "Convocatoria CEICE — FP personalizada",
-          "en": "CEICE call — personalised VET",
-          "va": "Convocatòria CEICE — FP personalitzada"
-        }
-      },
-      "card": {},
-      "visibility": {},
-      "detail": {
-        "briefTitle": {
-          "es": "¿Puede la IA recomendar el itinerario de FP más adecuado para cada alumno?",
-          "en": "Can AI recommend the most suitable VET pathway for each student?",
-          "va": "Pot la IA recomanar l'itinerari de FP més adequat per a cada alumne?"
-        },
-        "need": {
-          "es": "El 34% de los alumnos de FP no finalizan su ciclo. La orientación vocacional actual se basa en tutorías grupales con información genérica. Los alumnos necesitan recomendaciones personalizadas que combinen su historial de competencias, intereses declarados y datos actualizados del mercado laboral local para tomar mejores decisiones formativas.",
-          "en": "34% of VET students do not complete their cycle. Current vocational guidance relies on group tutorials with generic information. Students need personalised recommendations combining their competency history, declared interests and up-to-date local labour market data to make better training decisions.",
-          "va": "El 34% dels alumnes de FP no finalitzen el seu cicle. L'orientació vocacional actual es basa en tutories grupals amb informació genèrica. Els alumnes necessiten recomanacions personalitzades que combinen el seu historial de competències, interessos declarats i dades actualitzades del mercat laboral local per prendre millors decisions formatives."
-        },
-        "context": {
-          "es": "CEICE facilita datos anonimizados de matrícula, historial académico y tasas de inserción laboral de 3 años de los ciclos de FP de la Comunitat Valenciana, junto con datos del Observatorio Laboral de la Generalitat. El sistema debe cumplir el RGPD, ser explicable (no caja negra) y mostrar siempre la fuente de sus recomendaciones.",
-          "en": "CEICE provides anonymised enrolment, academic history and job placement rate data for 3 years of VET cycles in the Valencian Community, together with data from the Generalitat's Labour Observatory. The system must comply with GDPR, be explainable (not a black box) and always display the source of its recommendations.",
-          "va": "El CEICE facilita dades anonimitzades de matrícula, historial acadèmic i taxes d'inserció laboral de 3 anys dels cicles de FP de la Comunitat Valenciana, juntament amb dades de l'Observatori Laboral de la Generalitat. El sistema ha de complir el RGPD, ser explicable (no caixa negra) i mostrar sempre la font de les seues recomanacions."
-        },
-        "participation": {
-          "audienceText": {
-            "es": "Equipos multidisciplinares de 3 a 8 personas que incluyan al menos un perfil de ciencia de datos y uno de pedagogía o orientación educativa. Se valorará la colaboración entre empresa y centro educativo.",
-            "en": "Multidisciplinary teams of 3 to 8 people including at least one data science profile and one pedagogy or educational guidance profile. Collaboration between a company and an educational centre is valued.",
-            "va": "Equips multidisciplinaris de 3 a 8 persones que incloguen almenys un perfil de ciència de dades i un de pedagogia o orientació educativa. Es valorarà la col·laboració entre empresa i centre educatiu."
-          },
-          "formatText": {
-            "es": "Las propuestas se presentan en dos fases. Primera fase — memoria conceptual de 5 páginas con arquitectura propuesta y consideraciones éticas. Segunda fase (equipos seleccionados) — prototipo funcional con 50 alumnos de prueba y evaluación de satisfacción.",
-            "en": "Proposals are presented in two phases. First phase — 5-page conceptual memo with proposed architecture and ethical considerations. Second phase (selected teams) — functional prototype with 50 test students and satisfaction evaluation.",
-            "va": "Les propostes es presenten en dues fases. Primera fase — memòria conceptual de 5 pàgines amb arquitectura proposada i consideracions ètiques. Segona fase (equips seleccionats) — prototip funcional amb 50 alumnes de prova i avaluació de satisfacció."
-          },
-          "transferValue": {
-            "es": "El sistema resultante se incorporará al portfolio de herramientas digitales de orientación de CEICE. Los datos anonimizados generados durante el piloto se publicarán como dataset abierto de referencia.",
-            "en": "The resulting system will be incorporated into CEICE's digital guidance tool portfolio. The anonymised data generated during the pilot will be published as an open reference dataset.",
-            "va": "El sistema resultant s'incorporarà al portfolio d'eines digitals d'orientació del CEICE. Les dades anonimitzades generades durant el pilot es publicaran com a dataset obert de referència."
-          }
-        },
-        "reward": {
-          "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CEICE, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AI-STEAM y en la red estatal de innovación en FP.",
-          "en": "The winning team receives: (1) development and implementation contract with CEICE, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AI-STEAM Marketplace and in the national VET innovation network.",
-          "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CEICE, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AI-STEAM i a la xarxa estatal d'innovació en FP."
-        }
-      },
-      "access": {
-        "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
-        "codeLicense": "",
-        "dataAvailability": "",
-        "sensitiveDataIncluded": false,
-        "contributionVisibility": "external-managed",
-        "sensitiveDataPolicy": {
-          "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-          "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-          "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
-        },
-        "rightsNote": {
-          "es": "Los sistemas desarrollados deben ser de código abierto. Los datos de alumnos piloto se tratan bajo estricto cumplimiento del RGPD y de la legislación de protección de datos educativos.",
-          "en": "Developed systems must be open-source. Pilot student data is processed under strict GDPR compliance and educational data protection legislation.",
-          "va": "Els sistemes desenvolupats han de ser de codi obert. Les dades d'alumnes pilot es tracten sota estricte compliment del RGPD i de la legislació de protecció de dades educatives."
-        },
-        "mentoringRequestAccess": "",
-        "confidentialityLevel": "",
-        "publicationNote": {
-          "es": "",
-          "en": "",
-          "va": ""
-        },
-        "publicUrl": "",
-        "license": "CC BY 4.0",
-        "privacyLevel": "public"
-      },
-      "trackA": {
-        "enabled": false,
-        "label": {
-          "es": "",
-          "en": "",
-          "va": ""
-        },
-        "url": ""
-      },
-      "trackALink": {
-        "enabled": false,
-        "label": {
-          "es": "",
-          "en": "",
-          "va": ""
-        },
-        "url": ""
-      },
-      "externalFlow": {
-        "enabled": false,
-        "primaryAction": {
-          "label": {
-            "es": "Solicitar participación",
-            "en": "Request participation",
-            "va": "Sol·licitar participació"
-          },
-          "system": "",
-          "url": ""
-        },
-        "secondaryAction": null,
-        "fallbackAction": {
-          "label": {
-            "es": "Ver reto",
-            "en": "View challenge",
-            "va": "Veure repte"
-          },
-          "url": ""
-        },
-        "fallbackContact": {
-          "label": {
-            "es": "Contactar con la coordinación del reto",
-            "en": "Contact the challenge coordination desk",
-            "va": "Contactar amb la coordinació del repte"
-          },
-          "url": ""
-        }
-      },
-      "relations": {
-        "originChallengeId": "",
-        "validations": [],
-        "pilots": [],
-        "cases": [],
-        "mentorships": [],
-        "resources": []
-      },
-      "resources": {
-        "available": [
-          {
-            "label": {
-              "es": "Dataset anonimizado de matrícula y resultados FP (2022-2025)",
-              "en": "Anonymised VET enrolment and outcomes dataset (2022-2025)",
-              "va": "Dataset anonimitzat de matrícula i resultats FP (2022-2025)"
-            },
-            "format": "CSV",
-            "license": "Uso restringido al reto"
-          },
-          {
-            "label": {
-              "es": "Informe del Observatorio Laboral — demanda de perfiles FP 2025",
-              "en": "Labour Observatory report — VET profile demand 2025",
-              "va": "Informe de l'Observatori Laboral — demanda de perfils FP 2025"
-            },
-            "format": "PDF",
-            "license": "CC BY 4.0"
-          }
-        ]
-      },
-      "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/challenges/reto-personalizacion-itinerarios-fp-edu/",
-        "items": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Personalización de itinerarios FP",
-              "en": "Challenge brief — VET pathway personalisation",
-              "va": "Fitxa del repte — Personalització d'itineraris FP"
-            },
-            "description": {
-              "es": "Descripción del reto, bases de la convocatoria, criterios de evaluación y acceso a los datos.",
-              "en": "Challenge description, call terms, evaluation criteria and data access details.",
-              "va": "Descripció del repte, bases de la convocatòria, criteris d'avaluació i accés a les dades."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-personalizacion-itinerarios-fp.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "ethics-guide",
-            "type": "guide",
-            "title": {
-              "es": "Guía de consideraciones éticas para sistemas de recomendación educativa",
-              "en": "Ethical considerations guide for educational recommendation systems",
-              "va": "Guia de consideracions ètiques per a sistemes de recomanació educativa"
-            },
-            "description": {
-              "es": "Marco de referencia sobre sesgos algorítmicos, privacidad del estudiante y transparencia en sistemas de IA aplicados a la orientación educativa.",
-              "en": "Reference framework on algorithmic bias, student privacy and transparency in AI systems applied to educational guidance.",
-              "va": "Marc de referència sobre biaixos algorítmics, privacitat de l'estudiant i transparència en sistemes d'IA aplicats a l'orientació educativa."
-            },
-            "files": [
-              {
-                "file": "guia-etica-recomendacion-educativa.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-SA 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
-      },
-      "outputs": {
-        "expected": [
-          {
-            "id": "concept-memo",
-            "label": {
-              "es": "Memoria conceptual con arquitectura propuesta y análisis ético (fase 1)",
-              "en": "Conceptual memo with proposed architecture and ethical analysis (phase 1)",
-              "va": "Memòria conceptual amb arquitectura proposada i anàlisi ètica (fase 1)"
-            }
-          },
-          {
-            "id": "functional-prototype",
-            "label": {
-              "es": "Prototipo funcional evaluado con 50 alumnos piloto (fase 2)",
-              "en": "Functional prototype evaluated with 50 pilot students (phase 2)",
-              "va": "Prototip funcional avaluat amb 50 alumnes pilot (fase 2)"
-            }
-          },
-          {
-            "id": "explainability-report",
-            "label": {
-              "es": "Informe de explicabilidad — cómo se generan las recomendaciones",
-              "en": "Explainability report — how recommendations are generated",
-              "va": "Informe d'explicabilitat — com es generen les recomanacions"
-            }
-          }
-        ]
-      },
-      "process": {
-        "milestones": [
-          {
-            "date": "2026-06-01",
-            "label": {
-              "es": "Cierre de inscripciones y acceso a datos (fase 1)",
-              "en": "Registration deadline and data access (phase 1)",
-              "va": "Tancament d'inscripcions i accés a dades (fase 1)"
-            }
-          },
-          {
-            "date": "2026-09-01",
-            "label": {
-              "es": "Entrega de memorias conceptuales (fase 1)",
-              "en": "Conceptual memo submission (phase 1)",
-              "va": "Lliurament de memòries conceptuals (fase 1)"
-            }
-          },
-          {
-            "date": "2026-10-01",
-            "label": {
-              "es": "Comunicación de equipos seleccionados para fase 2",
-              "en": "Announcement of teams selected for phase 2",
-              "va": "Comunicació d'equips seleccionats per a fase 2"
-            }
-          },
-          {
-            "date": "2026-12-15",
-            "label": {
-              "es": "Entrega de prototipo funcional y resolución (fase 2)",
-              "en": "Functional prototype submission and resolution (phase 2)",
-              "va": "Lliurament de prototip funcional i resolució (fase 2)"
-            }
-          }
-        ]
-      },
-      "hasDownloads": true,
-      "downloadCount": 2,
-      "cardDownloads": [
-        {
-          "id": "challenge-brief",
-          "type": "brief",
-          "title": {
-            "es": "Ficha del reto — Personalización de itinerarios FP",
-            "en": "Challenge brief — VET pathway personalisation",
-            "va": "Fitxa del repte — Personalització d'itineraris FP"
-          },
-          "description": {
-            "es": "Descripción del reto, bases de la convocatoria, criterios de evaluación y acceso a los datos.",
-            "en": "Challenge description, call terms, evaluation criteria and data access details.",
-            "va": "Descripció del repte, bases de la convocatòria, criteris d'avaluació i accés a les dades."
-          },
-          "files": [
-            {
-              "file": "ficha-reto-personalizacion-itinerarios-fp.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
-      "presentation": {
-        "card": {
-          "variant": "challenge",
-          "showActors": true,
-          "showPrimaryMetric": true,
-          "showEvidenceBadge": true,
-          "showReward": true,
-          "showSdgs": true,
-          "showCompetences": true,
-          "showDeadline": true,
-          "showDownloadsIndicator": true,
-          "showChatBadge": false,
-          "showLevels": true,
-          "resultBlockLabel": null
-        },
-        "detail": {
-          "sections": {
-            "brief": true,
-            "need": true,
-            "context": true,
-            "participation": true,
-            "transferValue": true,
-            "resources": true,
-            "downloads": true,
-            "outputs": true,
-            "process": true,
-            "people": true,
-            "access": true,
-            "trackA": false,
-            "relations": false,
-            "evidence": false,
-            "transferability": true,
-            "summary": true,
-            "originContext": true,
-            "intervention": true,
-            "transferPath": true
-          }
-        }
-      },
-      "caseStudy": null,
-      "evidence": null,
-      "transferability": null,
-      "template": {
-        "requiredBlocks": [
-          "need",
-          "context",
-          "transferValue",
-          "participation",
-          "resources",
-          "outputs",
-          "process"
-        ],
-        "optionalBlocks": [
-          "people",
-          "evidence",
-          "access",
-          "trackA",
-          "downloads",
-          "relations"
-        ],
-        "cardSignal": "need"
       }
     },
     {
@@ -26951,7 +26959,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "reto-personalizacion-itinerarios-fp-edu",
         "type": "challenge",
         "tab": "challenges",
-        "sortDate": "2026-05-20",
+        "sortDate": "2026-05-28",
         "visible": true,
         "sourcePath": "content/challenges/items/challenges/reto-personalizacion-itinerarios-fp-edu.yml",
         "core": {
@@ -26987,22 +26995,22 @@ export const MARKETPLACE_CONFIG = {
           "relatedDeliverable": "",
           "relatedOerId": "",
           "publishedAt": "2026-04-01",
-          "revisionDate": "2026-05-20",
-          "deadline": "2026-05-01",
+          "revisionDate": "2026-05-28",
+          "deadline": "2026-05-28",
           "publishedAtLabel": {
             "es": "1 de abril de 2026",
             "en": "April 1, 2026",
             "va": "1 d'abril de 2026"
           },
           "revisionDateLabel": {
-            "es": "20 de mayo de 2026",
-            "en": "May 20, 2026",
-            "va": "20 de maig de 2026"
+            "es": "28 de mayo de 2026",
+            "en": "May 28, 2026",
+            "va": "28 de maig de 2026"
           },
           "deadlineLabel": {
-            "es": "1 de mayo de 2026",
-            "en": "May 1, 2026",
-            "va": "1 de maig de 2026"
+            "es": "28 de mayo de 2026",
+            "en": "May 28, 2026",
+            "va": "28 de maig de 2026"
           }
         },
         "ownership": {

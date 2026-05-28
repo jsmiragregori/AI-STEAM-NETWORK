@@ -79,9 +79,9 @@ const UI_TEXT = {
     va: 'Disponibilitat',
   },
   competencies: {
-    es: 'Competencias SET',
-    en: 'SET competences',
-    va: 'Competencies SET',
+    es: 'Competencias STEAM',
+    en: 'STEAM competences',
+    va: 'Competències STEAM',
   },
   deadline: {
     es: 'Fecha limite',
@@ -309,7 +309,7 @@ const FIELD_LABELS = {
   requirements: { es: 'Requisitos', en: 'Requirements', va: 'Requisits' },
   reward: { es: 'Recompensa', en: 'Reward', va: 'Recompensa' },
   sdgs: { es: 'ODS', en: 'SDGs', va: 'ODS' },
-  setCompetences: { es: 'Competencias SET', en: 'SET competences', va: 'Competencies SET' },
+  setCompetences: { es: 'Competencias STEAM', en: 'STEAM competences', va: 'Competències STEAM' },
   specialties: { es: 'Especialidades', en: 'Specialties', va: 'Especialitats' },
   trl: { es: 'TRL', en: 'TRL', va: 'TRL' },
   valorisation: { es: 'Valorizacion', en: 'Valorisation', va: 'Valoritzacio' },
@@ -396,6 +396,13 @@ function pickLang(value, fallback = '') {
     if (Array.isArray(resolved) ? resolved.length : resolved) return resolved;
   }
   return fallback;
+}
+
+function pickLangStrict(value) {
+  if (!value || typeof value !== 'object') return '';
+  const lang = getLang();
+  const v = value[lang];
+  return (v != null && v !== '') ? String(v) : '';
 }
 
 function uiText(key) {
@@ -606,11 +613,10 @@ function getItemById(id) {
 }
 
 function getItemDateLabel(item) {
+  const ccv = MARKETPLACE_CONFIG.cardChipVisibility || {};
+  if (ccv.ch_reviewDate === false) return '';
   const revised = pickLang(item.core?.revisionDateLabel);
-  if (revised) return `${uiText('updated')}: ${revised}`;
-  const created = pickLang(item.core?.publishedAtLabel);
-  if (created) return `${uiText('created')}: ${created}`;
-  return '';
+  return revised ? `${uiText('updated')}: ${revised}` : '';
 }
 
 function renderBadge(label, tone = 'bg-white text-gray-700 border-eu-border', filterKey = '', filterValue = '') {
@@ -1028,8 +1034,8 @@ function renderCardShell(item, tab, body, options = {}) {
     <article class="group flex h-full flex-col rounded-xl border border-eu-border bg-white p-6 shadow-sm transition-colors hover:border-eu-blue">
       <div class="flex flex-wrap gap-2">
         ${options.hideTypeBadge ? '' : renderBadge(getTypeLabel(item.type), tone.badge)}
-        ${renderBadge(statusLabel, 'bg-white text-gray-700 border-eu-border', statusFilterKey, statusRaw)}
-        ${options.extraBadge ? renderBadge(options.extraBadge, 'bg-white text-gray-700 border-eu-border', options.extraBadgeFilterKey || '', options.extraBadgeFilterValue || '') : ''}
+        ${options.showStatusBadge !== false ? renderBadge(statusLabel, 'bg-white text-gray-700 border-eu-border', statusFilterKey, statusRaw) : ''}
+        ${options.extraBadge ? renderBadge(options.extraBadge, options.extraBadgeTone || 'bg-white text-gray-700 border-eu-border', options.extraBadgeFilterKey || '', options.extraBadgeFilterValue || '') : ''}
       </div>
       <div class="mt-4 flex-1">
         <h3 class="text-lg font-bold leading-snug text-eu-text group-hover:text-eu-blue">${esc(title)}</h3>
@@ -1041,21 +1047,21 @@ function renderCardShell(item, tab, body, options = {}) {
 }
 
 function renderCardFooter(item, tab, entity, dateLabel, ctaHtml = null) {
+  const defaultCta = `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang(tab.ctaLabel, uiText('viewDetail')))} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
+  const cta = ctaHtml || defaultCta;
+  const hasInfo = entity || dateLabel;
   return `
-    <div class="mt-5 flex items-center justify-between gap-4 border-t border-eu-border pt-4">
-      <div class="min-w-0 text-xs font-semibold text-gray-500">
-        ${entity ? `<p class="truncate">${esc(entity)}</p>` : ''}
-        ${dateLabel ? `<p class="mt-1 truncate">${esc(dateLabel)}</p>` : ''}
-      </div>
-      ${ctaHtml || `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
-        ${esc(pickLang(tab.ctaLabel, uiText('viewDetail')))}
-        <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i>
-      </button>`}
+    <div class="mt-5 border-t border-eu-border pt-4">
+      ${hasInfo ? `<div class="mb-3 text-xs text-gray-500">
+        ${entity ? `<p class="font-bold uppercase tracking-wide text-gray-400">${esc(pickLang(FIELD_LABELS.entity))}</p><p class="mt-0.5 font-semibold">${esc(entity)}</p>` : ''}
+        ${dateLabel ? `<p class="${entity ? 'mt-2' : ''} font-semibold">${esc(dateLabel)}</p>` : ''}
+      </div>` : ''}
+      <div class="flex justify-end">${cta}</div>
     </div>`;
 }
 
-function renderCardCallout(label, value, icon = 'sparkles') {
-  const text = pickLang(value);
+function renderCardCallout(label, value, icon = 'sparkles', strict = false) {
+  const text = strict ? pickLangStrict(value) : pickLang(value);
   if (!text) return '';
   return `
     <div class="mt-4 rounded-lg bg-eu-bg p-4">
@@ -1086,14 +1092,16 @@ function renderChipList(values, tone = 'bg-eu-bg text-gray-700 border-eu-border'
   return `<div class="mt-4 flex flex-wrap gap-2">${chips.map(chip => renderBadge(chip, tone)).join('')}</div>`;
 }
 
-function renderSdgs(sdgs, limit = CARD_CHIP_MAX, filterKey = '') {
+function renderSdgs(sdgs, limit = CARD_CHIP_MAX, filterKey = '', noWrap = false) {
   const items = asArray(sdgs).slice(0, limit).map(sdg => {
     const rawId = sdg?.id != null ? String(sdg.id) : (typeof sdg === 'number' || /^\d+$/.test(String(sdg ?? '')) ? String(sdg) : null);
-    const label = rawId ? `ODS ${rawId}` : pickLang(sdg?.label || sdg);
+    const sdgPrefix = pickLang({ es: 'ODS', en: 'SDG', va: 'ODS' });
+    const label = rawId ? `${sdgPrefix} ${rawId}` : pickLang(sdg?.label || sdg);
     return label ? { label, value: rawId || label } : null;
   }).filter(Boolean);
   if (!items.length) return '';
-  return `<div class="mt-4 flex flex-wrap gap-2">${items.map(({ label, value }) => renderBadge(label, 'bg-green-50 text-green-800 border-green-200', filterKey, value)).join('')}</div>`;
+  const inner = items.map(({ label, value }) => renderBadge(label, 'bg-green-50 text-green-800 border-green-200', filterKey, value)).join('');
+  return noWrap ? inner : `<div class="mt-4 flex flex-wrap gap-2">${inner}</div>`;
 }
 
 function renderActorNames(actors) {
@@ -1134,21 +1142,22 @@ function renderChallengeCard(item, tab) {
   const pres = item.presentation?.card || {};
   const ef = item.externalFlow || {};
   const ownership = item.ownership || {};
+  const ccv = MARKETPLACE_CONFIG.cardChipVisibility || {};
 
-  const contribChips = asArray(cl.contributionTypes)
+  const contribChips = ccv.ch_contributions !== false ? asArray(cl.contributionTypes)
     .map(id => ({ id, label: getContributionTypeLabel(id) }))
     .filter(c => c.label)
-    .slice(0, CARD_CHIP_MAX);
+    .slice(0, CARD_CHIP_MAX) : [];
 
-  const audienceChips = asArray(cl.audience)
+  const audienceChips = ccv.ch_audience !== false ? asArray(cl.audience)
     .map(id => ({ id, label: getAudienceLabel(id) }))
     .filter(c => c.label)
-    .slice(0, CARD_CHIP_MAX);
+    .slice(0, CARD_CHIP_MAX) : [];
 
-  const compChips = asArray(cl.competences)
+  const compChips = ccv.ch_competences !== false ? asArray(cl.competences)
     .map(id => ({ id, label: getCompetenceLabel(id) }))
     .filter(c => c.label)
-    .slice(0, CARD_CHIP_MAX);
+    .slice(0, CARD_CHIP_MAX) : [];
 
   // Fecha límite
   const deadlineLabel = pres.showDeadline !== false ? pickLang(item.core?.deadlineLabel) : null;
@@ -1159,34 +1168,48 @@ function renderChallengeCard(item, tab) {
   const extUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : null;
   const ctaHtml = extUrl
     ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang(ef.primaryAction?.label) || uiText('viewDetail'))}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
-    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang({ es: 'Ver reto', en: 'View challenge', va: 'Veure repte' }))}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
+    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang({ es: 'Ver reto', en: 'View challenge', va: 'Veure repte' }))} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
 
-  // Entidad pública desde ownership (v2) o legacy
-  const entityLabel = pickLang(ownership.requester?.publicLabel) || pickLang(item.core?.entity?.name);
+  // Entidad promotora — solo si global visibility lo permite
+  const entityLabel = ccv.ch_entity !== false
+    ? (pickLang(ownership.requester?.publicLabel) || pickLang(item.core?.entity?.name))
+    : null;
 
   const body = `
-    ${renderCardCallout(uiText('challengeBrief'), item.detail?.briefTitle, 'target')}
-    ${renderCardCallout(uiText('reward'), item.detail?.reward, 'award')}
+    ${renderCardCallout(uiText('challengeBrief'), item.detail?.briefTitle, 'target', true)}
+    ${renderCardCallout(uiText('reward'), item.detail?.reward, 'award', true)}
     ${contribChips.length ? `
       <div class="mt-4">
         <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('seeking'))}</p>
         <div class="flex flex-wrap gap-2">${contribChips.map(c => renderBadge(c.label, tone.badge, 'contributionType', c.id)).join('')}</div>
       </div>` : ''}
-    ${audienceChips.length ? `<div class="mt-3 flex flex-wrap gap-2">${audienceChips.map(c => renderBadge(c.label, 'bg-eu-bg text-gray-700 border-eu-border', 'audience', c.id)).join('')}</div>` : ''}
+    ${audienceChips.length ? `
+      <div class="mt-3">
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('audience'))}</p>
+        <div class="flex flex-wrap gap-2">${audienceChips.map(c => renderBadge(c.label, 'bg-eu-purple/10 text-eu-purple border-eu-purple/20', 'audience', c.id)).join('')}</div>
+      </div>` : ''}
     ${deadlineLabel ? `<div class="mt-4 flex items-center gap-2 rounded-lg border border-eu-border px-3 py-2 text-sm text-gray-600"><i data-lucide="clock" class="h-4 w-4 shrink-0 text-gray-400"></i><span class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(uiText('deadline'))}</span><span class="font-semibold">${esc(deadlineLabel)}</span></div>` : ''}
     ${dlIndicator ? `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500"><i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i><span>${esc(dlIndicator)}</span></div>` : ''}
-    ${renderSdgs(cl.sdgs, CARD_CHIP_MAX, 'sdg')}
-    ${compChips.length ? `<div class="mt-3 flex flex-wrap gap-2">${compChips.map(c => renderBadge(c.label, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20', 'competency', c.id)).join('')}</div>` : ''}
+    ${(() => { const _sdgInner = ccv.ch_sdgs !== false ? renderSdgs(cl.sdgs, CARD_CHIP_MAX, 'sdg', true) : ''; return _sdgInner ? `<div class="mt-3"><p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('sdgs'))}</p><div class="flex flex-wrap gap-2">${_sdgInner}</div></div>` : ''; })()}
+    ${compChips.length ? `
+      <div class="mt-3">
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('competencies'))}</p>
+        <div class="flex flex-wrap gap-2">${compChips.map(c => renderBadge(c.label, 'bg-green-50 text-green-700 border-green-200', 'competency', c.id)).join('')}</div>
+      </div>` : ''}
   `;
 
+  const showMat = ccv.ch_maturityBadge !== false;
+  const maturityLabel = showMat ? getEvidenceLabel(item.core?.maturity) : null;
   const challengeSectorCode = getSectorCode(item.core?.sector || cl.sector);
   return renderCardShell(item, tab, body, {
     title: item.core?.title,
     subtitle: item.core?.summary,
     hideTypeBadge: true,
-    extraBadge: getEvidenceLabel(item.core?.maturity) || getSectorLabel(item.core?.sector),
-    extraBadgeFilterKey: item.core?.maturity ? 'maturity' : 'sector',
-    extraBadgeFilterValue: item.core?.maturity || challengeSectorCode,
+    showStatusBadge: ccv.ch_statusBadge !== false,
+    extraBadge: maturityLabel || null,
+    extraBadgeTone: 'bg-eu-teal/10 text-eu-teal border-eu-teal/20',
+    extraBadgeFilterKey: maturityLabel ? 'maturity' : '',
+    extraBadgeFilterValue: maturityLabel ? (item.core?.maturity || '') : '',
     entity: entityLabel,
     ctaHtml,
   });
