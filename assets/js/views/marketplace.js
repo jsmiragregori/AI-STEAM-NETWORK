@@ -1266,12 +1266,12 @@ function renderCaseCard(item, tab) {
   let actorLineHtml = '';
   if (showActors && (originName || beneficiaries.length)) {
     actorLineHtml = `
-      <div class="mt-4">
-        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('transferChain'))}</p>
-        <div class="flex items-start gap-2 rounded-lg bg-eu-bg px-3 py-2 text-sm text-gray-700">
-          <i data-lucide="building-2" class="mt-0.5 h-4 w-4 shrink-0 text-gray-400"></i>
-          <span class="line-clamp-2">${esc(originName || publisherName)}${beneficiaries.length ? ' → ' + beneficiaries.slice(0, 2).join(', ') : ''}</span>
-        </div>
+      <div class="mt-4 rounded-lg bg-eu-bg p-4">
+        <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-gray-500">
+          <i data-lucide="building-2" class="h-3.5 w-3.5"></i>
+          ${esc(uiText('transferChain'))}
+        </p>
+        <p class="mt-1 text-sm font-semibold leading-6 text-gray-700 line-clamp-2">${esc(originName || publisherName)}${beneficiaries.length ? ' → ' + beneficiaries.slice(0, 2).join(', ') : ''}</p>
       </div>`;
   }
 
