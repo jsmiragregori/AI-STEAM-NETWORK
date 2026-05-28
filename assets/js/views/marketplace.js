@@ -1253,9 +1253,14 @@ function renderCaseCard(item, tab) {
     va: 'Evidència: ',
   });
 
+  const showActors       = ccv.ch_case_actors       !== false && cardPres.showActors       !== false;
+  const showLevelsFlag   = ccv.ch_case_levels       !== false && cardPres.showLevels       !== false;
+  const showEvidBadge    = ccv.ch_case_evidenceBadge !== false && cardPres.showEvidenceBadge !== false;
+  const showSdgsFlag     = ccv.ch_case_sdgs         !== false && cardPres.showSdgs         !== false;
+
   // 1. Línea de actores (flujo de origen a beneficiarios)
   let actorLineHtml = '';
-  if (cardPres.showActors !== false && (originName || beneficiaries.length)) {
+  if (showActors && (originName || beneficiaries.length)) {
     actorLineHtml = `
       <div class="mt-4 flex items-start gap-2 rounded-lg bg-eu-bg px-3 py-2 text-sm text-gray-700">
         <i data-lucide="building-2" class="mt-0.5 h-4 w-4 shrink-0 text-gray-400"></i>
@@ -1296,7 +1301,7 @@ function renderCaseCard(item, tab) {
 
   // 5. Niveles formativos
   const levels = asArray(cl.levels);
-  const levelsHtml = (cardPres.showLevels !== false && levels.length)
+  const levelsHtml = (showLevelsFlag && levels.length)
     ? `<div class="mt-3">
         <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('levels'))}</p>
         <div class="flex flex-wrap gap-2">${levels.map(lvl => renderBadge(getLevelLabel(lvl) || lvl, LEVEL_STYLES[lvl] || 'bg-eu-bg text-gray-700 border-eu-border', 'level', lvl)).join('')}</div>
@@ -1307,7 +1312,7 @@ function renderCaseCard(item, tab) {
   const verifiedLabel = evidenceLevelLabel ? `${evidencePrefix}${evidenceLevelLabel}` : '';
   const verifStatus = cl.verificationStatus || '';
   const verifActive = verifStatus && String(getTabFilterState(getActiveTabId()).values?.verificationStatus) === verifStatus;
-  const verifBadge = (cardPres.showEvidenceBadge !== false && verifiedLabel && verifStatus)
+  const verifBadge = (showEvidBadge && verifiedLabel && verifStatus)
     ? `<span class="inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-bold text-green-700 cursor-pointer select-none${verifActive ? ' ring-1 ring-inset ring-green-600' : ''}" data-mp-chip-filter="verificationStatus" data-mp-chip-value="${esc(verifStatus)}"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifiedLabel)}</span>`
     : '';
   const verifHtml = verifBadge
@@ -1334,7 +1339,7 @@ function renderCaseCard(item, tab) {
   }
 
   // 8. ODS
-  const _sdgInner = (cardPres.showSdgs !== false && cl.sdgs) ? renderSdgs(cl.sdgs, 3, 'sdg', true) : '';
+  const _sdgInner = (showSdgsFlag && cl.sdgs) ? renderSdgs(cl.sdgs, 3, 'sdg', true) : '';
   const sdgsHtml = _sdgInner
     ? `<div class="mt-3">
         <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('sdgs'))}</p>
