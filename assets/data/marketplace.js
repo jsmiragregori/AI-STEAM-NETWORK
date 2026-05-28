@@ -513,7 +513,13 @@ export const MARKETPLACE_CONFIG = {
     "ch_sdgs": true,
     "ch_competences": true,
     "ch_reviewDate": true,
-    "ch_entity": true
+    "ch_entity": true,
+    "ch_case_status": true,
+    "ch_case_actors": true,
+    "ch_case_sector": true,
+    "ch_case_levels": true,
+    "ch_case_evidenceBadge": true,
+    "ch_case_sdgs": true
   },
   "searchBlock": {
     "visible": true,
@@ -3448,6 +3454,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Administració educativa autonòmica responsable de la FP a la Comunitat Valenciana"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
@@ -3947,6 +3956,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural i sectors creatius"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "cci",
         "stakeholderCategory": "enterprise",
         "levels": [],
@@ -4426,6 +4438,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb experiència en transformació digital d'administracions públiques, dades obertes i col·laboració públic-privada en innovació"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
@@ -4904,6 +4919,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb experiència en projectes d'IA en agricultura de precisió, visió computacional agrícola i formació agroalimentària"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "agr",
         "stakeholderCategory": "enterprise",
         "levels": [],
@@ -5380,6 +5398,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb perfil dual investigador-docent, amb experiència en traducció de resultats de recerca a continguts formatius de FP"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
@@ -5856,6 +5877,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb formació en ètica digital, protecció de dades educatives i ús responsable d'IA a l'aula"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
@@ -6330,6 +6354,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb perfil tècnic en ciència de dades clíniques, visió computacional mèdica i compliment normatiu sanitari"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
@@ -6808,6 +6835,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "nts",
         "stakeholderCategory": "knowledge",
         "levels": [
@@ -7474,6 +7504,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "hou",
         "stakeholderCategory": "knowledge",
         "levels": [
@@ -8140,6 +8173,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb perfil dual pedagògic-tècnic, amb experiència en disseny de pilots FP-empresa"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
@@ -8614,6 +8650,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Administració provincial que impulsa la transformació digital municipal"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "nts",
         "stakeholderCategory": "institutional",
         "levels": [],
@@ -9116,6 +9155,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Mentors amb experiència en formulació de reptes en contextos industrials i de FP"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "mfg",
         "stakeholderCategory": "enterprise",
         "levels": [],
@@ -9588,6 +9630,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Agència pública responsable de la promoció i gestió del turisme a la Comunitat Valenciana"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "cci",
         "stakeholderCategory": "institutional",
         "levels": [],
@@ -10052,8 +10097,11 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "scaled",
+        "evidenceLevel": "measured",
+        "verificationStatus": "verified",
         "sector": "",
-        "stakeholderCategory": "",
+        "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -10679,6 +10727,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "ene",
         "stakeholderCategory": "institutional",
         "levels": [
@@ -11197,6 +11248,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Gran empresa distribuïdora d'energia elèctrica"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "ene",
         "stakeholderCategory": "enterprise",
         "levels": [],
@@ -11696,6 +11750,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Operador postal i logístic de referència a Espanya"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "mob",
         "stakeholderCategory": "enterprise",
         "levels": [],
@@ -12195,6 +12252,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "reviewed",
+        "verificationStatus": "",
         "sector": "nts",
         "stakeholderCategory": "",
         "levels": [
@@ -12667,8 +12727,11 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "adapted",
+        "evidenceLevel": "measured",
+        "verificationStatus": "self-reported",
         "sector": "",
-        "stakeholderCategory": "",
+        "stakeholderCategory": "knowledge",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -13233,6 +13296,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Institució educativa"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "ene",
         "stakeholderCategory": "institutional",
         "levels": [],
@@ -13686,8 +13752,11 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "adapted",
+        "evidenceLevel": "measured",
+        "verificationStatus": "reviewed",
         "sector": "",
-        "stakeholderCategory": "",
+        "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -13781,9 +13850,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "Habitat and sustainable construction",
           "va": "Hàbitat i construcció sostenible"
         },
-        "levels": [
-          "vet"
-        ],
+        "levels": [],
         "audience": [
           "vet-centres",
           "public-administration"
@@ -14233,8 +14300,11 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "adapted",
+        "evidenceLevel": "measured",
+        "verificationStatus": "verified",
         "sector": "",
-        "stakeholderCategory": "",
+        "stakeholderCategory": "knowledge",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -14843,6 +14913,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Empresa líder en fabricació de paviment i revestiment ceràmic"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "mfg",
         "stakeholderCategory": "enterprise",
         "levels": [],
@@ -15341,8 +15414,11 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "replicated",
+        "evidenceLevel": "documented",
+        "verificationStatus": "reviewed",
         "sector": "",
-        "stakeholderCategory": "",
+        "stakeholderCategory": "economic",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -15885,6 +15961,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "mob",
         "stakeholderCategory": "institutional",
         "levels": [
@@ -16564,8 +16643,11 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "scaled",
+        "evidenceLevel": "measured",
+        "verificationStatus": "verified",
         "sector": "",
-        "stakeholderCategory": "",
+        "stakeholderCategory": "economic",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -17134,6 +17216,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Equip de mentoria en formulació de reptes i ètica d'IA"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "cci",
         "stakeholderCategory": "civic",
         "levels": [],
@@ -17667,6 +17752,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Cooperativa agrícola citrícola del nord de Castelló"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "agr",
         "stakeholderCategory": "enterprise",
         "levels": [],
@@ -18142,8 +18230,11 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "validated",
+        "evidenceLevel": "measured",
+        "verificationStatus": "verified",
         "sector": "",
-        "stakeholderCategory": "",
+        "stakeholderCategory": "economic",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -18732,6 +18823,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "documented",
+        "verificationStatus": "",
         "sector": "mob",
         "stakeholderCategory": "",
         "levels": [
@@ -19191,6 +19285,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "reviewed",
+        "verificationStatus": "",
         "sector": "ene",
         "stakeholderCategory": "",
         "levels": [
@@ -19664,8 +19761,11 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "validated",
+        "evidenceLevel": "documented",
+        "verificationStatus": "reviewed",
         "sector": "",
-        "stakeholderCategory": "",
+        "stakeholderCategory": "civic",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -20217,8 +20317,11 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "scaled",
+        "evidenceLevel": "verified",
+        "verificationStatus": "verified",
         "sector": "",
-        "stakeholderCategory": "",
+        "stakeholderCategory": "economic",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -20784,6 +20887,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "reviewed",
+        "verificationStatus": "",
         "sector": "cci",
         "stakeholderCategory": "",
         "levels": [
@@ -21254,8 +21360,11 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "pilot-result",
+        "evidenceLevel": "measured",
+        "verificationStatus": "verified",
         "sector": "",
-        "stakeholderCategory": "",
+        "stakeholderCategory": "economic",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -21790,6 +21899,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "reviewed",
+        "verificationStatus": "",
         "sector": "mfg",
         "stakeholderCategory": "",
         "levels": [
@@ -22265,6 +22377,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "nts",
         "stakeholderCategory": "knowledge",
         "levels": [
@@ -22810,8 +22925,11 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "replicated",
+        "evidenceLevel": "measured",
+        "verificationStatus": "self-reported",
         "sector": "",
-        "stakeholderCategory": "",
+        "stakeholderCategory": "knowledge",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -23398,6 +23516,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "reviewed",
+        "verificationStatus": "",
         "sector": "nts",
         "stakeholderCategory": "",
         "levels": [
@@ -23877,8 +23998,11 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "adapted",
+        "evidenceLevel": "documented",
+        "verificationStatus": "reviewed",
         "sector": "",
-        "stakeholderCategory": "",
+        "stakeholderCategory": "knowledge",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -24438,6 +24562,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "mfg",
         "stakeholderCategory": "economic",
         "levels": [
@@ -24972,6 +25099,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "mfg",
         "stakeholderCategory": "knowledge",
         "levels": [
@@ -25480,6 +25610,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "reviewed",
+        "verificationStatus": "",
         "sector": "agr",
         "stakeholderCategory": "",
         "levels": [
@@ -25987,6 +26120,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "reviewed",
+        "verificationStatus": "",
         "sector": "hou",
         "stakeholderCategory": "",
         "levels": [
@@ -26469,6 +26605,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "reviewed",
+        "verificationStatus": "",
         "sector": "mob",
         "stakeholderCategory": "",
         "levels": [
@@ -26984,6 +27123,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Administració educativa autonòmica responsable de la FP a la Comunitat Valenciana"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
@@ -27483,6 +27625,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Administració provincial que impulsa la transformació digital municipal"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
@@ -27985,6 +28130,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Agència pública responsable de la promoció i gestió del turisme a la Comunitat Valenciana"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "cci",
           "stakeholderCategory": "institutional",
           "levels": [],
@@ -28449,6 +28597,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Gran empresa distribuïdora d'energia elèctrica"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "ene",
           "stakeholderCategory": "enterprise",
           "levels": [],
@@ -28948,6 +29099,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Operador postal i logístic de referència a Espanya"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "mob",
           "stakeholderCategory": "enterprise",
           "levels": [],
@@ -29447,6 +29601,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Institució educativa"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "ene",
           "stakeholderCategory": "institutional",
           "levels": [],
@@ -29900,6 +30057,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Empresa líder en fabricació de paviment i revestiment ceràmic"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "mfg",
           "stakeholderCategory": "enterprise",
           "levels": [],
@@ -30398,6 +30558,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Cooperativa agrícola citrícola del nord de Castelló"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "agr",
           "stakeholderCategory": "enterprise",
           "levels": [],
@@ -30875,8 +31038,11 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "scaled",
+          "evidenceLevel": "measured",
+          "verificationStatus": "verified",
           "sector": "",
-          "stakeholderCategory": "",
+          "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -31502,8 +31668,11 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "adapted",
+          "evidenceLevel": "measured",
+          "verificationStatus": "self-reported",
           "sector": "",
-          "stakeholderCategory": "",
+          "stakeholderCategory": "knowledge",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -32068,8 +32237,11 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "adapted",
+          "evidenceLevel": "measured",
+          "verificationStatus": "reviewed",
           "sector": "",
-          "stakeholderCategory": "",
+          "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -32163,9 +32335,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "Habitat and sustainable construction",
             "va": "Hàbitat i construcció sostenible"
           },
-          "levels": [
-            "vet"
-          ],
+          "levels": [],
           "audience": [
             "vet-centres",
             "public-administration"
@@ -32615,8 +32785,11 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "adapted",
+          "evidenceLevel": "measured",
+          "verificationStatus": "verified",
           "sector": "",
-          "stakeholderCategory": "",
+          "stakeholderCategory": "knowledge",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -33225,8 +33398,11 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "replicated",
+          "evidenceLevel": "documented",
+          "verificationStatus": "reviewed",
           "sector": "",
-          "stakeholderCategory": "",
+          "stakeholderCategory": "economic",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -33769,8 +33945,11 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "scaled",
+          "evidenceLevel": "measured",
+          "verificationStatus": "verified",
           "sector": "",
-          "stakeholderCategory": "",
+          "stakeholderCategory": "economic",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -34339,8 +34518,11 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "validated",
+          "evidenceLevel": "measured",
+          "verificationStatus": "verified",
           "sector": "",
-          "stakeholderCategory": "",
+          "stakeholderCategory": "economic",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -34929,8 +35111,11 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "validated",
+          "evidenceLevel": "documented",
+          "verificationStatus": "reviewed",
           "sector": "",
-          "stakeholderCategory": "",
+          "stakeholderCategory": "civic",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -35482,8 +35667,11 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "scaled",
+          "evidenceLevel": "verified",
+          "verificationStatus": "verified",
           "sector": "",
-          "stakeholderCategory": "",
+          "stakeholderCategory": "economic",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -36049,8 +36237,11 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "pilot-result",
+          "evidenceLevel": "measured",
+          "verificationStatus": "verified",
           "sector": "",
-          "stakeholderCategory": "",
+          "stakeholderCategory": "economic",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -36585,8 +36776,11 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "replicated",
+          "evidenceLevel": "measured",
+          "verificationStatus": "self-reported",
           "sector": "",
-          "stakeholderCategory": "",
+          "stakeholderCategory": "knowledge",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -37173,8 +37367,11 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "adapted",
+          "evidenceLevel": "documented",
+          "verificationStatus": "reviewed",
           "sector": "",
-          "stakeholderCategory": "",
+          "stakeholderCategory": "knowledge",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -37736,6 +37933,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "nts",
           "stakeholderCategory": "knowledge",
           "levels": [
@@ -38402,6 +38602,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "hou",
           "stakeholderCategory": "knowledge",
           "levels": [
@@ -39068,6 +39271,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "ene",
           "stakeholderCategory": "institutional",
           "levels": [
@@ -39586,6 +39792,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "mob",
           "stakeholderCategory": "institutional",
           "levels": [
@@ -40265,6 +40474,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "nts",
           "stakeholderCategory": "knowledge",
           "levels": [
@@ -40810,6 +41022,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "mfg",
           "stakeholderCategory": "economic",
           "levels": [
@@ -41344,6 +41559,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "mfg",
           "stakeholderCategory": "knowledge",
           "levels": [
@@ -41854,6 +42072,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "reviewed",
+          "verificationStatus": "",
           "sector": "nts",
           "stakeholderCategory": "",
           "levels": [
@@ -42326,6 +42547,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "documented",
+          "verificationStatus": "",
           "sector": "mob",
           "stakeholderCategory": "",
           "levels": [
@@ -42785,6 +43009,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "reviewed",
+          "verificationStatus": "",
           "sector": "ene",
           "stakeholderCategory": "",
           "levels": [
@@ -43258,6 +43485,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "reviewed",
+          "verificationStatus": "",
           "sector": "cci",
           "stakeholderCategory": "",
           "levels": [
@@ -43728,6 +43958,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "reviewed",
+          "verificationStatus": "",
           "sector": "mfg",
           "stakeholderCategory": "",
           "levels": [
@@ -44203,6 +44436,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "reviewed",
+          "verificationStatus": "",
           "sector": "nts",
           "stakeholderCategory": "",
           "levels": [
@@ -44682,6 +44918,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "reviewed",
+          "verificationStatus": "",
           "sector": "agr",
           "stakeholderCategory": "",
           "levels": [
@@ -45189,6 +45428,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "reviewed",
+          "verificationStatus": "",
           "sector": "hou",
           "stakeholderCategory": "",
           "levels": [
@@ -45671,6 +45913,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "reviewed",
+          "verificationStatus": "",
           "sector": "mob",
           "stakeholderCategory": "",
           "levels": [
@@ -46185,6 +46430,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural i sectors creatius"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "cci",
           "stakeholderCategory": "enterprise",
           "levels": [],
@@ -46664,6 +46912,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb experiència en transformació digital d'administracions públiques, dades obertes i col·laboració públic-privada en innovació"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
@@ -47142,6 +47393,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb experiència en projectes d'IA en agricultura de precisió, visió computacional agrícola i formació agroalimentària"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "agr",
           "stakeholderCategory": "enterprise",
           "levels": [],
@@ -47618,6 +47872,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb perfil dual investigador-docent, amb experiència en traducció de resultats de recerca a continguts formatius de FP"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
@@ -48094,6 +48351,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb formació en ètica digital, protecció de dades educatives i ús responsable d'IA a l'aula"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
@@ -48568,6 +48828,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb perfil tècnic en ciència de dades clíniques, visió computacional mèdica i compliment normatiu sanitari"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
@@ -49046,6 +49309,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb perfil dual pedagògic-tècnic, amb experiència en disseny de pilots FP-empresa"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "nts",
           "stakeholderCategory": "institutional",
           "levels": [],
@@ -49520,6 +49786,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors amb experiència en formulació de reptes en contextos industrials i de FP"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "mfg",
           "stakeholderCategory": "enterprise",
           "levels": [],
@@ -49992,6 +50261,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Equip de mentoria en formulació de reptes i ètica d'IA"
             }
           },
+          "caseStage": "",
+          "evidenceLevel": "",
+          "verificationStatus": "",
           "sector": "cci",
           "stakeholderCategory": "civic",
           "levels": [],
@@ -50528,6 +50800,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Repositori Track B"
           }
         },
+        "caseStage": "",
+        "evidenceLevel": "",
+        "verificationStatus": "",
         "sector": "nts",
         "stakeholderCategory": "community",
         "levels": [],
