@@ -308,8 +308,10 @@ const FIELD_LABELS = {
   organisation: { es: 'Organizacion', en: 'Organisation', va: 'Organitzacio' },
   requirements: { es: 'Requisitos', en: 'Requirements', va: 'Requisits' },
   reward: { es: 'Recompensa', en: 'Reward', va: 'Recompensa' },
+  levels: { es: 'Niveles', en: 'Levels', va: 'Nivells' },
   sdgs: { es: 'ODS', en: 'SDGs', va: 'ODS' },
   setCompetences: { es: 'Competencias STEAM', en: 'STEAM competences', va: 'Competències STEAM' },
+  verification: { es: 'Verificación', en: 'Verification', va: 'Verificació' },
   specialties: { es: 'Especialidades', en: 'Specialties', va: 'Especialitats' },
   trl: { es: 'TRL', en: 'TRL', va: 'TRL' },
   valorisation: { es: 'Valorizacion', en: 'Valorisation', va: 'Valoritzacio' },
@@ -1283,20 +1285,39 @@ function renderCaseCard(item, tab) {
     }]);
   }
 
-  // 4. Badges (Sector, Niveles, Evidencia/Verificación)
-  const levels = asArray(cl.levels);
-  const verifiedLabel = evidenceLevelLabel ? `${evidencePrefix}${evidenceLevelLabel}` : '';
+  // 4. Sector
   const caseSectorCode = getSectorCode(cl.sector || core.sector);
+  const sectorHtml = sectorLabel
+    ? `<div class="mt-4">
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('sector'))}</p>
+        <div class="flex flex-wrap gap-2">${renderBadge(sectorLabel, 'bg-eu-orange/10 text-eu-orange border-eu-orange/20', 'sector', caseSectorCode)}</div>
+      </div>`
+    : '';
+
+  // 5. Niveles formativos
+  const levels = asArray(cl.levels);
+  const levelsHtml = (cardPres.showLevels !== false && levels.length)
+    ? `<div class="mt-3">
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('levels'))}</p>
+        <div class="flex flex-wrap gap-2">${levels.map(lvl => renderBadge(getLevelLabel(lvl) || lvl, LEVEL_STYLES[lvl] || 'bg-eu-bg text-gray-700 border-eu-border', 'level', lvl)).join('')}</div>
+      </div>`
+    : '';
+
+  // 6. Verificación / Evidencia
+  const verifiedLabel = evidenceLevelLabel ? `${evidencePrefix}${evidenceLevelLabel}` : '';
   const verifStatus = cl.verificationStatus || '';
   const verifActive = verifStatus && String(getTabFilterState(getActiveTabId()).values?.verificationStatus) === verifStatus;
-  const badgesHtml = `
-    <div class="mt-4 flex flex-wrap gap-2">
-      ${sectorLabel ? renderBadge(sectorLabel, 'bg-eu-orange/10 text-eu-orange border-eu-orange/20', 'sector', caseSectorCode) : ''}
-      ${(cardPres.showLevels !== false && levels.length) ? levels.map(lvl => renderBadge(getLevelLabel(lvl) || lvl, LEVEL_STYLES[lvl] || 'bg-eu-bg text-gray-700 border-eu-border', 'level', lvl)).join('') : ''}
-      ${(cardPres.showEvidenceBadge !== false && verifiedLabel && verifStatus) ? `<span class="inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-bold text-green-700 cursor-pointer select-none${verifActive ? ' ring-1 ring-inset ring-green-600' : ''}" data-mp-chip-filter="verificationStatus" data-mp-chip-value="${esc(verifStatus)}"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifiedLabel)}</span>` : ''}
-    </div>`;
+  const verifBadge = (cardPres.showEvidenceBadge !== false && verifiedLabel && verifStatus)
+    ? `<span class="inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-bold text-green-700 cursor-pointer select-none${verifActive ? ' ring-1 ring-inset ring-green-600' : ''}" data-mp-chip-filter="verificationStatus" data-mp-chip-value="${esc(verifStatus)}"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifiedLabel)}</span>`
+    : '';
+  const verifHtml = verifBadge
+    ? `<div class="mt-3">
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('verification'))}</p>
+        <div class="flex flex-wrap gap-2">${verifBadge}</div>
+      </div>`
+    : '';
 
-  // 5. Indicador de descargables
+  // 7. Indicador de descargables
   let dlIndicatorHtml = '';
   if (cardPres.showDownloadsIndicator !== false && downloads.enabled !== false && Array.isArray(downloads.items) && downloads.items.length > 0) {
     const count = downloads.items.length;
@@ -1312,14 +1333,22 @@ function renderCaseCard(item, tab) {
       </div>`;
   }
 
-  // 6. ODS
-  const sdgsHtml = (cardPres.showSdgs !== false && cl.sdgs) ? renderSdgs(cl.sdgs, 3) : '';
+  // 8. ODS
+  const _sdgInner = (cardPres.showSdgs !== false && cl.sdgs) ? renderSdgs(cl.sdgs, 3, 'sdg', true) : '';
+  const sdgsHtml = _sdgInner
+    ? `<div class="mt-3">
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('sdgs'))}</p>
+        <div class="flex flex-wrap gap-2">${_sdgInner}</div>
+      </div>`
+    : '';
 
   const body = `
     ${actorLineHtml}
     ${resultCalloutHtml}
     ${miniMetaHtml}
-    ${badgesHtml}
+    ${sectorHtml}
+    ${levelsHtml}
+    ${verifHtml}
     ${dlIndicatorHtml}
     ${sdgsHtml}
   `;
