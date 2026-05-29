@@ -519,8 +519,8 @@ export const MARKETPLACE_CONFIG = {
     "ch_case_actors": true,
     "ch_case_sector": true,
     "ch_case_levels": true,
-    "ch_case_evidenceLevel": true,
-    "ch_case_evidenceBadge": true,
+    "ch_case_evidenceLevel": false,
+    "ch_case_evidenceBadge": false,
     "ch_case_sdgs": true,
     "ch_pilot_extraBadge": true,
     "ch_val_extraBadge": true,
@@ -3465,6 +3465,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
+        "sectors": [],
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -3875,6 +3876,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "challenge",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -3969,6 +3972,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "cci",
+        "sectors": [],
         "stakeholderCategory": "enterprise",
         "levels": [],
         "pilotType": "",
@@ -4453,6 +4457,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
+        "sectors": [],
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -4936,6 +4941,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "agr",
+        "sectors": [],
         "stakeholderCategory": "enterprise",
         "levels": [],
         "pilotType": "",
@@ -5417,6 +5423,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
+        "sectors": [],
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -5898,6 +5905,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
+        "sectors": [],
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -6377,6 +6385,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
+        "sectors": [],
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -6868,6 +6877,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
+        "sectors": [],
         "stakeholderCategory": "knowledge",
         "levels": [
           "FP",
@@ -7547,6 +7557,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "hou",
+        "sectors": [],
         "stakeholderCategory": "knowledge",
         "levels": [
           "FP",
@@ -8218,6 +8229,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
+        "sectors": [],
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -8697,6 +8709,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
+        "sectors": [],
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -9110,6 +9123,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "challenge",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -9204,6 +9219,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "mfg",
+        "sectors": [],
         "stakeholderCategory": "enterprise",
         "levels": [],
         "pilotType": "",
@@ -9681,6 +9697,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "cci",
+        "sectors": [],
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -10056,6 +10073,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "challenge",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -10149,8 +10168,11 @@ export const MARKETPLACE_CONFIG = {
         "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "verified",
-        "sector": "",
-        "stakeholderCategory": "institutional",
+        "sector": "mfg",
+        "sectors": [
+          "mfg",
+          "ene"
+        ],
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -10180,8 +10202,7 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "origin": {
-          "name": "Universitat Politècnica de València (UPV)",
-          "type": "public-university"
+          "name": "Universitat Politècnica de València (UPV)"
         },
         "requester": null,
         "leadTeam": {
@@ -10249,15 +10270,19 @@ export const MARKETPLACE_CONFIG = {
         },
         "verificationStatus": "",
         "pilotStatus": "",
-        "sector": "housing-energy",
+        "sector": "mfg",
+        "sectors": [
+          "mfg",
+          "ene"
+        ],
         "sectorLabel": {
-          "es": "Vivienda y eficiencia energética",
-          "en": "Housing and energy efficiency",
-          "va": "Habitatge i eficiència energètica"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "levels": [
-          "vet",
-          "master"
+          "FP",
+          "Docentes"
         ],
         "audience": [
           "vet-centres",
@@ -10528,6 +10553,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "case",
           "showActors": true,
+          "showSector": true,
+          "showEntity": false,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -10790,6 +10817,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "ene",
+        "sectors": [],
         "stakeholderCategory": "institutional",
         "levels": [
           "FP"
@@ -11313,6 +11341,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "ene",
+        "sectors": [],
         "stakeholderCategory": "enterprise",
         "levels": [],
         "pilotType": "",
@@ -11723,6 +11752,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "challenge",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -11817,6 +11848,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "mob",
+        "sectors": [],
         "stakeholderCategory": "enterprise",
         "levels": [],
         "pilotType": "",
@@ -12227,6 +12259,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "challenge",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -12321,6 +12355,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "nts",
+        "sectors": [],
         "stakeholderCategory": "",
         "levels": [
           "Máster"
@@ -12797,8 +12832,10 @@ export const MARKETPLACE_CONFIG = {
         "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "self-reported",
-        "sector": "",
-        "stakeholderCategory": "knowledge",
+        "sector": "cci",
+        "sectors": [
+          "cci"
+        ],
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -12828,8 +12865,7 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "origin": {
-          "name": "IVAM — Institut Valencià d'Art Modern",
-          "type": "public-entity"
+          "name": "IVAM — Institut Valencià d'Art Modern"
         },
         "requester": null,
         "leadTeam": {
@@ -12888,10 +12924,13 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "pilotStatus": "",
         "sector": "cci",
+        "sectors": [
+          "cci"
+        ],
         "sectorLabel": {
-          "es": "Industrias culturales y creativas",
-          "en": "Cultural and creative industries",
-          "va": "Indústries culturals i creatives"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "levels": [
           "master",
@@ -13144,6 +13183,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "case",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -13369,6 +13410,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "ene",
+        "sectors": [],
         "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
@@ -13733,6 +13775,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "challenge",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -13826,8 +13870,10 @@ export const MARKETPLACE_CONFIG = {
         "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "reviewed",
-        "sector": "",
-        "stakeholderCategory": "institutional",
+        "sector": "mob",
+        "sectors": [
+          "mob"
+        ],
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -13857,8 +13903,7 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "origin": {
-          "name": "Enertika, S.L.",
-          "type": "company"
+          "name": "Enertika, S.L."
         },
         "requester": null,
         "leadTeam": {
@@ -13915,11 +13960,14 @@ export const MARKETPLACE_CONFIG = {
         },
         "verificationStatus": "",
         "pilotStatus": "",
-        "sector": "hou",
+        "sector": "mob",
+        "sectors": [
+          "mob"
+        ],
         "sectorLabel": {
-          "es": "Hábitat y construcción sostenible",
-          "en": "Habitat and sustainable construction",
-          "va": "Hàbitat i construcció sostenible"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "levels": [],
         "audience": [
@@ -14153,6 +14201,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "case",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -14376,8 +14426,10 @@ export const MARKETPLACE_CONFIG = {
         "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "verified",
-        "sector": "",
-        "stakeholderCategory": "knowledge",
+        "sector": "agr",
+        "sectors": [
+          "agr"
+        ],
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -14407,8 +14459,7 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "origin": {
-          "name": "IVIA — Institut Valencià d'Investigacions Agràries",
-          "type": "research-centre"
+          "name": "IVIA — Institut Valencià d'Investigacions Agràries"
         },
         "requester": null,
         "leadTeam": {
@@ -14466,10 +14517,13 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "pilotStatus": "",
         "sector": "agr",
+        "sectors": [
+          "agr"
+        ],
         "sectorLabel": {
-          "es": "Agroalimentario y sector primario",
-          "en": "Agrifood and primary sector",
-          "va": "Agroalimentari i sector primario"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "levels": [
           "vet",
@@ -14761,6 +14815,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "case",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -14992,6 +15048,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "mfg",
+        "sectors": [],
         "stakeholderCategory": "enterprise",
         "levels": [],
         "pilotType": "",
@@ -15401,6 +15458,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "challenge",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -15494,8 +15553,10 @@ export const MARKETPLACE_CONFIG = {
         "executionWindow": null,
         "evidenceLevel": "documented",
         "verificationStatus": "reviewed",
-        "sector": "",
-        "stakeholderCategory": "economic",
+        "sector": "mob",
+        "sectors": [
+          "mob"
+        ],
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -15525,8 +15586,7 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "origin": {
-          "name": "Renault España — Centro de Ingeniería de Valladolid",
-          "type": "company"
+          "name": "Renault España — Centro de Ingeniería de Valladolid"
         },
         "requester": null,
         "leadTeam": {
@@ -15583,10 +15643,13 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "pilotStatus": "",
         "sector": "mob",
+        "sectors": [
+          "mob"
+        ],
         "sectorLabel": {
-          "es": "Movilidad sostenible y transporte",
-          "en": "Sustainable mobility and transport",
-          "va": "Mobilitat sostenible i transport"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "levels": [
           "vet"
@@ -15821,6 +15884,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "case",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -16052,6 +16117,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "mob",
+        "sectors": [],
         "stakeholderCategory": "institutional",
         "levels": [
           "FP"
@@ -16735,8 +16801,10 @@ export const MARKETPLACE_CONFIG = {
         "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "verified",
-        "sector": "",
-        "stakeholderCategory": "economic",
+        "sector": "agr",
+        "sectors": [
+          "agr"
+        ],
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -16766,8 +16834,7 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "origin": {
-          "name": "Anecoop, S. Coop.",
-          "type": "association"
+          "name": "Anecoop, S. Coop."
         },
         "requester": null,
         "leadTeam": {
@@ -16834,10 +16901,13 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "pilotStatus": "",
         "sector": "agr",
+        "sectors": [
+          "agr"
+        ],
         "sectorLabel": {
-          "es": "Agroalimentario y gestión del medio natural",
-          "en": "Agri-food and natural environment management",
-          "va": "Agroalimentari i gestió del medi natural"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "levels": [
           "vet"
@@ -17079,6 +17149,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "case",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -17311,6 +17383,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "cci",
+        "sectors": [],
         "stakeholderCategory": "civic",
         "levels": [],
         "pilotType": "",
@@ -17849,6 +17922,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "agr",
+        "sectors": [],
         "stakeholderCategory": "enterprise",
         "levels": [],
         "pilotType": "",
@@ -18235,6 +18309,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "challenge",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -18328,8 +18404,10 @@ export const MARKETPLACE_CONFIG = {
         "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "verified",
-        "sector": "",
-        "stakeholderCategory": "economic",
+        "sector": "ene",
+        "sectors": [
+          "ene"
+        ],
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -18359,8 +18437,7 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "origin": {
-          "name": "Solarius Energy S.L.",
-          "type": "company"
+          "name": "Solarius Energy S.L."
         },
         "requester": null,
         "leadTeam": {
@@ -18427,10 +18504,13 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "pilotStatus": "",
         "sector": "ene",
+        "sectors": [
+          "ene"
+        ],
         "sectorLabel": {
-          "es": "Energía y transición ecológica",
-          "en": "Energy and ecological transition",
-          "va": "Energia i transició ecològica"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "levels": [
           "vet"
@@ -18676,6 +18756,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "case",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -18924,6 +19006,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "documented",
         "verificationStatus": "",
         "sector": "mob",
+        "sectors": [],
         "stakeholderCategory": "",
         "levels": [
           "Máster"
@@ -19388,6 +19471,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "ene",
+        "sectors": [],
         "stakeholderCategory": "",
         "levels": [
           "Máster"
@@ -19865,8 +19949,10 @@ export const MARKETPLACE_CONFIG = {
         "executionWindow": null,
         "evidenceLevel": "documented",
         "verificationStatus": "reviewed",
-        "sector": "",
-        "stakeholderCategory": "civic",
+        "sector": "cci",
+        "sectors": [
+          "cci"
+        ],
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -19896,8 +19982,7 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "origin": {
-          "name": "Museu de Belles Arts de València",
-          "type": "public-entity"
+          "name": "Museu de Belles Arts de València"
         },
         "requester": null,
         "leadTeam": {
@@ -19954,10 +20039,13 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "pilotStatus": "",
         "sector": "cci",
+        "sectors": [
+          "cci"
+        ],
         "sectorLabel": {
-          "es": "Industrias culturales y creativas",
-          "en": "Cultural and creative industries",
-          "va": "Indústries culturals i creatives"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "levels": [
           "vet",
@@ -20193,6 +20281,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "case",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -20423,8 +20513,10 @@ export const MARKETPLACE_CONFIG = {
         "executionWindow": null,
         "evidenceLevel": "verified",
         "verificationStatus": "verified",
-        "sector": "",
-        "stakeholderCategory": "economic",
+        "sector": "mfg",
+        "sectors": [
+          "mfg"
+        ],
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -20454,8 +20546,7 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "origin": {
-          "name": "Grupo Antolin (Planta Valencia)",
-          "type": "company"
+          "name": "Grupo Antolin (Planta Valencia)"
         },
         "requester": null,
         "leadTeam": {
@@ -20522,10 +20613,13 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "pilotStatus": "",
         "sector": "mfg",
+        "sectors": [
+          "mfg"
+        ],
         "sectorLabel": {
-          "es": "Fabricación avanzada e Industria 4.0",
-          "en": "Advanced manufacturing and Industry 4.0",
-          "va": "Fabricació avançada i Indústria 4.0"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "levels": [
           "vet"
@@ -20765,6 +20859,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "case",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -20996,6 +21092,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "cci",
+        "sectors": [],
         "stakeholderCategory": "",
         "levels": [
           "FP",
@@ -21470,8 +21567,10 @@ export const MARKETPLACE_CONFIG = {
         "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "verified",
-        "sector": "",
-        "stakeholderCategory": "economic",
+        "sector": "mfg",
+        "sectors": [
+          "mfg"
+        ],
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -21501,8 +21600,7 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "origin": {
-          "name": "IVECO Valencia",
-          "type": "company"
+          "name": "IVECO Valencia"
         },
         "requester": null,
         "leadTeam": {
@@ -21560,10 +21658,13 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "pilotStatus": "",
         "sector": "mfg",
+        "sectors": [
+          "mfg"
+        ],
         "sectorLabel": {
-          "es": "Fabricación avanzada",
-          "en": "Advanced manufacturing",
-          "va": "Fabricació avançada"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "levels": [
           "vet"
@@ -21796,6 +21897,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "case",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -22012,6 +22115,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "mfg",
+        "sectors": [],
         "stakeholderCategory": "",
         "levels": [
           "FP",
@@ -22500,6 +22604,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
+        "sectors": [],
         "stakeholderCategory": "knowledge",
         "levels": [
           "Docentes",
@@ -23049,8 +23154,10 @@ export const MARKETPLACE_CONFIG = {
         "executionWindow": null,
         "evidenceLevel": "measured",
         "verificationStatus": "self-reported",
-        "sector": "",
-        "stakeholderCategory": "knowledge",
+        "sector": "mob",
+        "sectors": [
+          "mob"
+        ],
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -23080,8 +23187,7 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "origin": {
-          "name": "Conselleria d'Educació — CEFIREs",
-          "type": "public-admin"
+          "name": "Conselleria d'Educació — CEFIREs"
         },
         "requester": null,
         "leadTeam": {
@@ -23159,10 +23265,13 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "pilotStatus": "",
         "sector": "mob",
+        "sectors": [
+          "mob"
+        ],
         "sectorLabel": {
-          "es": "Movilidad y transporte sostenible",
-          "en": "Mobility and sustainable transport",
-          "va": "Mobilitat i transport sostenible"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "levels": [
           "teacher"
@@ -23425,6 +23534,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "case",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -23643,6 +23754,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "nts",
+        "sectors": [],
         "stakeholderCategory": "",
         "levels": [
           "FP",
@@ -24126,8 +24238,10 @@ export const MARKETPLACE_CONFIG = {
         "executionWindow": null,
         "evidenceLevel": "documented",
         "verificationStatus": "reviewed",
-        "sector": "",
-        "stakeholderCategory": "knowledge",
+        "sector": "nts",
+        "sectors": [
+          "nts"
+        ],
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -24157,8 +24271,7 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "origin": {
-          "name": "Hospital Universitari i Politècnic La Fe",
-          "type": "public-entity"
+          "name": "Hospital Universitari i Politècnic La Fe"
         },
         "requester": null,
         "leadTeam": {
@@ -24216,10 +24329,13 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "pilotStatus": "",
         "sector": "nts",
+        "sectors": [
+          "nts"
+        ],
         "sectorLabel": {
-          "es": "Nuevas tecnologías en salud y bienestar",
-          "en": "New technologies in health and wellbeing",
-          "va": "Noves tecnologies en salut i benestar"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "levels": [
           "vet",
@@ -24455,6 +24571,8 @@ export const MARKETPLACE_CONFIG = {
         "card": {
           "variant": "case",
           "showActors": true,
+          "showSector": true,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showEvidenceBadge": true,
           "showReward": true,
@@ -24701,6 +24819,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "mfg",
+        "sectors": [],
         "stakeholderCategory": "economic",
         "levels": [
           "FP"
@@ -25248,6 +25367,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "mfg",
+        "sectors": [],
         "stakeholderCategory": "knowledge",
         "levels": [
           "FP",
@@ -25761,6 +25881,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "agr",
+        "sectors": [],
         "stakeholderCategory": "",
         "levels": [
           "FP",
@@ -26273,6 +26394,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "hou",
+        "sectors": [],
         "stakeholderCategory": "",
         "levels": [
           "Máster",
@@ -26760,6 +26882,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "reviewed",
         "verificationStatus": "",
         "sector": "mob",
+        "sectors": [],
         "stakeholderCategory": "",
         "levels": [
           "FP"
@@ -27280,6 +27403,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
+          "sectors": [],
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -27690,6 +27814,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "challenge",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -27784,6 +27910,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
+          "sectors": [],
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -28197,6 +28324,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "challenge",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -28291,6 +28420,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "cci",
+          "sectors": [],
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -28666,6 +28796,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "challenge",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -28760,6 +28892,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "ene",
+          "sectors": [],
           "stakeholderCategory": "enterprise",
           "levels": [],
           "pilotType": "",
@@ -29170,6 +29303,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "challenge",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -29264,6 +29399,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "mob",
+          "sectors": [],
           "stakeholderCategory": "enterprise",
           "levels": [],
           "pilotType": "",
@@ -29674,6 +29810,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "challenge",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -29768,6 +29906,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "ene",
+          "sectors": [],
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -30132,6 +30271,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "challenge",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -30226,6 +30367,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "mfg",
+          "sectors": [],
           "stakeholderCategory": "enterprise",
           "levels": [],
           "pilotType": "",
@@ -30635,6 +30777,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "challenge",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -30729,6 +30873,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "agr",
+          "sectors": [],
           "stakeholderCategory": "enterprise",
           "levels": [],
           "pilotType": "",
@@ -31115,6 +31260,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "challenge",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -31210,8 +31357,11 @@ export const MARKETPLACE_CONFIG = {
           "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "verified",
-          "sector": "",
-          "stakeholderCategory": "institutional",
+          "sector": "mfg",
+          "sectors": [
+            "mfg",
+            "ene"
+          ],
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -31241,8 +31391,7 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "origin": {
-            "name": "Universitat Politècnica de València (UPV)",
-            "type": "public-university"
+            "name": "Universitat Politècnica de València (UPV)"
           },
           "requester": null,
           "leadTeam": {
@@ -31310,15 +31459,19 @@ export const MARKETPLACE_CONFIG = {
           },
           "verificationStatus": "",
           "pilotStatus": "",
-          "sector": "housing-energy",
+          "sector": "mfg",
+          "sectors": [
+            "mfg",
+            "ene"
+          ],
           "sectorLabel": {
-            "es": "Vivienda y eficiencia energética",
-            "en": "Housing and energy efficiency",
-            "va": "Habitatge i eficiència energètica"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "levels": [
-            "vet",
-            "master"
+            "FP",
+            "Docentes"
           ],
           "audience": [
             "vet-centres",
@@ -31589,6 +31742,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "case",
             "showActors": true,
+            "showSector": true,
+            "showEntity": false,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -31842,8 +31997,10 @@ export const MARKETPLACE_CONFIG = {
           "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "self-reported",
-          "sector": "",
-          "stakeholderCategory": "knowledge",
+          "sector": "cci",
+          "sectors": [
+            "cci"
+          ],
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -31873,8 +32030,7 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "origin": {
-            "name": "IVAM — Institut Valencià d'Art Modern",
-            "type": "public-entity"
+            "name": "IVAM — Institut Valencià d'Art Modern"
           },
           "requester": null,
           "leadTeam": {
@@ -31933,10 +32089,13 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "pilotStatus": "",
           "sector": "cci",
+          "sectors": [
+            "cci"
+          ],
           "sectorLabel": {
-            "es": "Industrias culturales y creativas",
-            "en": "Cultural and creative industries",
-            "va": "Indústries culturals i creatives"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "levels": [
             "master",
@@ -32189,6 +32348,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "case",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -32413,8 +32574,10 @@ export const MARKETPLACE_CONFIG = {
           "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "reviewed",
-          "sector": "",
-          "stakeholderCategory": "institutional",
+          "sector": "mob",
+          "sectors": [
+            "mob"
+          ],
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -32444,8 +32607,7 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "origin": {
-            "name": "Enertika, S.L.",
-            "type": "company"
+            "name": "Enertika, S.L."
           },
           "requester": null,
           "leadTeam": {
@@ -32502,11 +32664,14 @@ export const MARKETPLACE_CONFIG = {
           },
           "verificationStatus": "",
           "pilotStatus": "",
-          "sector": "hou",
+          "sector": "mob",
+          "sectors": [
+            "mob"
+          ],
           "sectorLabel": {
-            "es": "Hábitat y construcción sostenible",
-            "en": "Habitat and sustainable construction",
-            "va": "Hàbitat i construcció sostenible"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "levels": [],
           "audience": [
@@ -32740,6 +32905,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "case",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -32963,8 +33130,10 @@ export const MARKETPLACE_CONFIG = {
           "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "verified",
-          "sector": "",
-          "stakeholderCategory": "knowledge",
+          "sector": "agr",
+          "sectors": [
+            "agr"
+          ],
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -32994,8 +33163,7 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "origin": {
-            "name": "IVIA — Institut Valencià d'Investigacions Agràries",
-            "type": "research-centre"
+            "name": "IVIA — Institut Valencià d'Investigacions Agràries"
           },
           "requester": null,
           "leadTeam": {
@@ -33053,10 +33221,13 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "pilotStatus": "",
           "sector": "agr",
+          "sectors": [
+            "agr"
+          ],
           "sectorLabel": {
-            "es": "Agroalimentario y sector primario",
-            "en": "Agrifood and primary sector",
-            "va": "Agroalimentari i sector primario"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "levels": [
             "vet",
@@ -33348,6 +33519,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "case",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -33578,8 +33751,10 @@ export const MARKETPLACE_CONFIG = {
           "executionWindow": null,
           "evidenceLevel": "documented",
           "verificationStatus": "reviewed",
-          "sector": "",
-          "stakeholderCategory": "economic",
+          "sector": "mob",
+          "sectors": [
+            "mob"
+          ],
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -33609,8 +33784,7 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "origin": {
-            "name": "Renault España — Centro de Ingeniería de Valladolid",
-            "type": "company"
+            "name": "Renault España — Centro de Ingeniería de Valladolid"
           },
           "requester": null,
           "leadTeam": {
@@ -33667,10 +33841,13 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "pilotStatus": "",
           "sector": "mob",
+          "sectors": [
+            "mob"
+          ],
           "sectorLabel": {
-            "es": "Movilidad sostenible y transporte",
-            "en": "Sustainable mobility and transport",
-            "va": "Mobilitat sostenible i transport"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "levels": [
             "vet"
@@ -33905,6 +34082,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "case",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -34127,8 +34306,10 @@ export const MARKETPLACE_CONFIG = {
           "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "verified",
-          "sector": "",
-          "stakeholderCategory": "economic",
+          "sector": "agr",
+          "sectors": [
+            "agr"
+          ],
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -34158,8 +34339,7 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "origin": {
-            "name": "Anecoop, S. Coop.",
-            "type": "association"
+            "name": "Anecoop, S. Coop."
           },
           "requester": null,
           "leadTeam": {
@@ -34226,10 +34406,13 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "pilotStatus": "",
           "sector": "agr",
+          "sectors": [
+            "agr"
+          ],
           "sectorLabel": {
-            "es": "Agroalimentario y gestión del medio natural",
-            "en": "Agri-food and natural environment management",
-            "va": "Agroalimentari i gestió del medi natural"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "levels": [
             "vet"
@@ -34471,6 +34654,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "case",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -34702,8 +34887,10 @@ export const MARKETPLACE_CONFIG = {
           "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "verified",
-          "sector": "",
-          "stakeholderCategory": "economic",
+          "sector": "ene",
+          "sectors": [
+            "ene"
+          ],
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -34733,8 +34920,7 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "origin": {
-            "name": "Solarius Energy S.L.",
-            "type": "company"
+            "name": "Solarius Energy S.L."
           },
           "requester": null,
           "leadTeam": {
@@ -34801,10 +34987,13 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "pilotStatus": "",
           "sector": "ene",
+          "sectors": [
+            "ene"
+          ],
           "sectorLabel": {
-            "es": "Energía y transición ecológica",
-            "en": "Energy and ecological transition",
-            "va": "Energia i transició ecològica"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "levels": [
             "vet"
@@ -35050,6 +35239,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "case",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -35297,8 +35488,10 @@ export const MARKETPLACE_CONFIG = {
           "executionWindow": null,
           "evidenceLevel": "documented",
           "verificationStatus": "reviewed",
-          "sector": "",
-          "stakeholderCategory": "civic",
+          "sector": "cci",
+          "sectors": [
+            "cci"
+          ],
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -35328,8 +35521,7 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "origin": {
-            "name": "Museu de Belles Arts de València",
-            "type": "public-entity"
+            "name": "Museu de Belles Arts de València"
           },
           "requester": null,
           "leadTeam": {
@@ -35386,10 +35578,13 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "pilotStatus": "",
           "sector": "cci",
+          "sectors": [
+            "cci"
+          ],
           "sectorLabel": {
-            "es": "Industrias culturales y creativas",
-            "en": "Cultural and creative industries",
-            "va": "Indústries culturals i creatives"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "levels": [
             "vet",
@@ -35625,6 +35820,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "case",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -35855,8 +36052,10 @@ export const MARKETPLACE_CONFIG = {
           "executionWindow": null,
           "evidenceLevel": "verified",
           "verificationStatus": "verified",
-          "sector": "",
-          "stakeholderCategory": "economic",
+          "sector": "mfg",
+          "sectors": [
+            "mfg"
+          ],
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -35886,8 +36085,7 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "origin": {
-            "name": "Grupo Antolin (Planta Valencia)",
-            "type": "company"
+            "name": "Grupo Antolin (Planta Valencia)"
           },
           "requester": null,
           "leadTeam": {
@@ -35954,10 +36152,13 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "pilotStatus": "",
           "sector": "mfg",
+          "sectors": [
+            "mfg"
+          ],
           "sectorLabel": {
-            "es": "Fabricación avanzada e Industria 4.0",
-            "en": "Advanced manufacturing and Industry 4.0",
-            "va": "Fabricació avançada i Indústria 4.0"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "levels": [
             "vet"
@@ -36197,6 +36398,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "case",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -36427,8 +36630,10 @@ export const MARKETPLACE_CONFIG = {
           "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "verified",
-          "sector": "",
-          "stakeholderCategory": "economic",
+          "sector": "mfg",
+          "sectors": [
+            "mfg"
+          ],
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -36458,8 +36663,7 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "origin": {
-            "name": "IVECO Valencia",
-            "type": "company"
+            "name": "IVECO Valencia"
           },
           "requester": null,
           "leadTeam": {
@@ -36517,10 +36721,13 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "pilotStatus": "",
           "sector": "mfg",
+          "sectors": [
+            "mfg"
+          ],
           "sectorLabel": {
-            "es": "Fabricación avanzada",
-            "en": "Advanced manufacturing",
-            "va": "Fabricació avançada"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "levels": [
             "vet"
@@ -36753,6 +36960,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "case",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -36968,8 +37177,10 @@ export const MARKETPLACE_CONFIG = {
           "executionWindow": null,
           "evidenceLevel": "measured",
           "verificationStatus": "self-reported",
-          "sector": "",
-          "stakeholderCategory": "knowledge",
+          "sector": "mob",
+          "sectors": [
+            "mob"
+          ],
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -36999,8 +37210,7 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "origin": {
-            "name": "Conselleria d'Educació — CEFIREs",
-            "type": "public-admin"
+            "name": "Conselleria d'Educació — CEFIREs"
           },
           "requester": null,
           "leadTeam": {
@@ -37078,10 +37288,13 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "pilotStatus": "",
           "sector": "mob",
+          "sectors": [
+            "mob"
+          ],
           "sectorLabel": {
-            "es": "Movilidad y transporte sostenible",
-            "en": "Mobility and sustainable transport",
-            "va": "Mobilitat i transport sostenible"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "levels": [
             "teacher"
@@ -37344,6 +37557,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "case",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -37561,8 +37776,10 @@ export const MARKETPLACE_CONFIG = {
           "executionWindow": null,
           "evidenceLevel": "documented",
           "verificationStatus": "reviewed",
-          "sector": "",
-          "stakeholderCategory": "knowledge",
+          "sector": "nts",
+          "sectors": [
+            "nts"
+          ],
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -37592,8 +37809,7 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "origin": {
-            "name": "Hospital Universitari i Politècnic La Fe",
-            "type": "public-entity"
+            "name": "Hospital Universitari i Politècnic La Fe"
           },
           "requester": null,
           "leadTeam": {
@@ -37651,10 +37867,13 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "pilotStatus": "",
           "sector": "nts",
+          "sectors": [
+            "nts"
+          ],
           "sectorLabel": {
-            "es": "Nuevas tecnologías en salud y bienestar",
-            "en": "New technologies in health and wellbeing",
-            "va": "Noves tecnologies en salut i benestar"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "levels": [
             "vet",
@@ -37890,6 +38109,8 @@ export const MARKETPLACE_CONFIG = {
           "card": {
             "variant": "case",
             "showActors": true,
+            "showSector": true,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showEvidenceBadge": true,
             "showReward": true,
@@ -38138,6 +38359,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
+          "sectors": [],
           "stakeholderCategory": "knowledge",
           "levels": [
             "FP",
@@ -38817,6 +39039,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "hou",
+          "sectors": [],
           "stakeholderCategory": "knowledge",
           "levels": [
             "FP",
@@ -39496,6 +39719,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "ene",
+          "sectors": [],
           "stakeholderCategory": "institutional",
           "levels": [
             "FP"
@@ -40027,6 +40251,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "mob",
+          "sectors": [],
           "stakeholderCategory": "institutional",
           "levels": [
             "FP"
@@ -40719,6 +40944,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
+          "sectors": [],
           "stakeholderCategory": "knowledge",
           "levels": [
             "Docentes",
@@ -41277,6 +41503,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "mfg",
+          "sectors": [],
           "stakeholderCategory": "economic",
           "levels": [
             "FP"
@@ -41824,6 +42051,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "mfg",
+          "sectors": [],
           "stakeholderCategory": "knowledge",
           "levels": [
             "FP",
@@ -42339,6 +42567,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "nts",
+          "sectors": [],
           "stakeholderCategory": "",
           "levels": [
             "Máster"
@@ -42816,6 +43045,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "documented",
           "verificationStatus": "",
           "sector": "mob",
+          "sectors": [],
           "stakeholderCategory": "",
           "levels": [
             "Máster"
@@ -43280,6 +43510,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "ene",
+          "sectors": [],
           "stakeholderCategory": "",
           "levels": [
             "Máster"
@@ -43758,6 +43989,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "cci",
+          "sectors": [],
           "stakeholderCategory": "",
           "levels": [
             "FP",
@@ -44233,6 +44465,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "mfg",
+          "sectors": [],
           "stakeholderCategory": "",
           "levels": [
             "FP",
@@ -44713,6 +44946,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "nts",
+          "sectors": [],
           "stakeholderCategory": "",
           "levels": [
             "FP",
@@ -45197,6 +45431,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "agr",
+          "sectors": [],
           "stakeholderCategory": "",
           "levels": [
             "FP",
@@ -45709,6 +45944,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "hou",
+          "sectors": [],
           "stakeholderCategory": "",
           "levels": [
             "Máster",
@@ -46196,6 +46432,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "reviewed",
           "verificationStatus": "",
           "sector": "mob",
+          "sectors": [],
           "stakeholderCategory": "",
           "levels": [
             "FP"
@@ -46715,6 +46952,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "cci",
+          "sectors": [],
           "stakeholderCategory": "enterprise",
           "levels": [],
           "pilotType": "",
@@ -47199,6 +47437,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
+          "sectors": [],
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -47682,6 +47921,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "agr",
+          "sectors": [],
           "stakeholderCategory": "enterprise",
           "levels": [],
           "pilotType": "",
@@ -48163,6 +48403,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
+          "sectors": [],
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -48644,6 +48885,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
+          "sectors": [],
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -49123,6 +49365,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
+          "sectors": [],
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -49606,6 +49849,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "nts",
+          "sectors": [],
           "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
@@ -50085,6 +50329,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "mfg",
+          "sectors": [],
           "stakeholderCategory": "enterprise",
           "levels": [],
           "pilotType": "",
@@ -50562,6 +50807,7 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "",
           "verificationStatus": "",
           "sector": "cci",
+          "sectors": [],
           "stakeholderCategory": "civic",
           "levels": [],
           "pilotType": "",
@@ -51103,6 +51349,7 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "",
         "verificationStatus": "",
         "sector": "nts",
+        "sectors": [],
         "stakeholderCategory": "community",
         "levels": [],
         "pilotType": "",

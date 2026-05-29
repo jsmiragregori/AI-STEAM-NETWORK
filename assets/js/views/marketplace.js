@@ -143,6 +143,11 @@ const UI_TEXT = {
     en: 'Sector',
     va: 'Sector',
   },
+  sectors: {
+    es: 'Sectores',
+    en: 'Sectors',
+    va: 'Sectors',
+  },
   status: {
     es: 'Estado',
     en: 'Status',
@@ -289,6 +294,8 @@ const UI_TEXT = {
     va: 'Criteri clau',
   },
   levels: { es: 'Niveles', en: 'Levels', va: 'Nivells' },
+  level: { es: 'Nivel', en: 'Level', va: 'Nivell' },
+  evidenceLevel: { es: 'Nivel de evidencia', en: 'Evidence level', va: "Nivell d'evidència" },
   verification: { es: 'Verificación', en: 'Verification', va: 'Verificació' },
   transferChain: { es: 'Cadena de transferencia', en: 'Transfer chain', va: 'Cadena de transferència' },
 };
@@ -350,6 +357,8 @@ const LEVEL_STYLES = {
   Docentes: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
   teacher:  'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
 };
+
+const CASE_LEVEL_TONE = 'bg-eu-blue/10 text-eu-blue border-eu-blue/20';
 
 const SECTOR_FALLBACK_LABELS = {
   agr: { es: 'Agroalimentario', en: 'Agrifood', va: 'Agroalimentari' },
@@ -564,6 +573,7 @@ function getDecisionOutcomeLabel(id) {
 }
 
 function getSectorCode(value) {
+  if (Array.isArray(value)) return value.map(getSectorCode).filter(Boolean);
   const map = {
     adm: 'nts',
     edu: 'nts',
@@ -581,7 +591,19 @@ function getSectorCode(value) {
 
 function getSectorLabel(value) {
   const code = getSectorCode(value);
+  if (Array.isArray(code)) return code.map(getSectorLabel).filter(Boolean);
   return (t('sectors.sectorNames') || {})[code] || pickLang(SECTOR_FALLBACK_LABELS[code], code);
+}
+
+function getItemSectorCodes(item) {
+  const sources = [
+    item.core?.sectors,
+    item.core?.sector,
+    item.classification?.sectors,
+    item.classification?.sector,
+  ];
+  const value = sources.find(source => asArray(source).filter(Boolean).length);
+  return asArray(getSectorCode(value)).filter(Boolean);
 }
 
 function getTabs() {
@@ -736,7 +758,7 @@ function renderPlainValue(value) {
 
 function getItemFilterValue(item, key) {
   const card = item.card || {};
-  if (key === 'sector') return getSectorCode(item.classification?.sector || item.core?.sector);
+  if (key === 'sector') return getItemSectorCodes(item);
   if (key === 'status') return item.core?.status;
   if (key === 'contributionType') return asArray(item.classification?.contributionTypes);
   if (key === 'audience') return asArray(item.classification?.audience);
@@ -752,6 +774,7 @@ function getItemFilterValue(item, key) {
   if (key === 'organisation') return card.organisation || pickLang(item.core?.entity?.name);
   if (key === 'transferType') return item.transfer?.type || '';
   if (key === 'level') return asArray(item.classification?.levels || item.core?.levels);
+  if (key === 'evidenceLevel') return item.core?.evidenceLevel || item.evidence?.evidenceLevel || '';
   if (key === 'verificationStatus') return item.core?.verificationStatus || item.classification?.verificationStatus || '';
   if (key === 'pilotType') return item.core?.pilotType || '';
   if (key === 'helix') return asArray(item.core?.helix);
@@ -787,6 +810,7 @@ function getFilterDefinitions(tabId) {
       { key: 'caseStage', label: uiText('filterBy') + ' ' + pickLang({ es: 'Etapa', en: 'Stage', va: 'Etapa' }), labeler: getCaseStageLabel },
       { key: 'transferType', label: uiText('filterBy') + ' ' + uiText('transferType'), labeler: getTransferTypeLabel },
       { key: 'level', label: uiText('filterBy') + ' ' + uiText('level'), labeler: id => getLevelLabel(id) || id },
+      { key: 'evidenceLevel', label: uiText('filterBy') + ' ' + uiText('evidenceLevel'), labeler: getEvidenceLevelLabel },
       { key: 'verificationStatus', label: uiText('filterBy') + ' ' + uiText('verificationStatus'), labeler: getVerificationLabel },
       common.sdg,
     ];
@@ -1239,7 +1263,8 @@ function renderCaseCard(item, tab) {
 
   const caseStageLabel = getCaseStageLabel(core.caseStage);
   const evidenceLevelLabel = getEvidenceLevelLabel(core.evidenceLevel);
-  const sectorLabel = pickLang(cl.sectorLabel) || getSectorLabel(cl.sector || core.sector);
+  const sectorCodes = getItemSectorCodes(item);
+  const sectorLabels = sectorCodes.map(code => getSectorLabel(code)).filter(Boolean);
 
   const resultBlockLabel = cardPres.resultBlockLabel || {
     es: 'Resultado clave',
@@ -1253,16 +1278,10 @@ function renderCaseCard(item, tab) {
     va: 'Cas transferible',
   });
 
-  const evidencePrefix = pickLang({
-    es: 'Evidencia: ',
-    en: 'Evidence: ',
-    va: 'Evidència: ',
-  });
-
   const showStatusBadge  = ccv.ch_case_status        !== false;
   const showStageBadge   = ccv.ch_case_stage         !== false;
   const showActors       = ccv.ch_case_actors        !== false && cardPres.showActors       !== false;
-  const showSectorFlag   = ccv.ch_case_sector        !== false;
+  const showSectorFlag   = ccv.ch_case_sector        !== false && cardPres.showSector !== false;
   const showLevelsFlag   = ccv.ch_case_levels       !== false && cardPres.showLevels       !== false;
   const showEvidBadge      = ccv.ch_case_evidenceBadge  !== false && cardPres.showEvidenceBadge !== false;
   const showEvidLevel      = ccv.ch_case_evidenceLevel  !== false;
@@ -1304,11 +1323,10 @@ function renderCaseCard(item, tab) {
   }
 
   // 4. Sector
-  const caseSectorCode = getSectorCode(cl.sector || core.sector);
-  const sectorHtml = (showSectorFlag && sectorLabel)
+  const sectorHtml = (showSectorFlag && sectorLabels.length)
     ? `<div class="mt-4">
-        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('sector'))}</p>
-        <div class="flex flex-wrap gap-2">${renderBadge(sectorLabel, 'bg-eu-orange/10 text-eu-orange border-eu-orange/20', 'sector', caseSectorCode)}</div>
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText(sectorLabels.length > 1 ? 'sectors' : 'sector'))}</p>
+        <div class="flex flex-wrap gap-2">${sectorCodes.map((code, index) => renderBadge(sectorLabels[index], 'bg-eu-orange/10 text-eu-orange border-eu-orange/20', 'sector', code)).join('')}</div>
       </div>`
     : '';
 
@@ -1316,17 +1334,24 @@ function renderCaseCard(item, tab) {
   const levels = asArray(cl.levels);
   const levelsHtml = (showLevelsFlag && levels.length)
     ? `<div class="mt-3">
-        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('levels'))}</p>
-        <div class="flex flex-wrap gap-2">${levels.map(lvl => renderBadge(getLevelLabel(lvl) || lvl, LEVEL_STYLES[lvl] || 'bg-eu-bg text-gray-700 border-eu-border', 'level', lvl)).join('')}</div>
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText(levels.length > 1 ? 'levels' : 'level'))}</p>
+        <div class="flex flex-wrap gap-2">${levels.map(lvl => renderBadge(getLevelLabel(lvl) || lvl, CASE_LEVEL_TONE, 'level', lvl)).join('')}</div>
       </div>`
     : '';
 
-  // 6. Verificación / Evidencia
+  // 6. Nivel de evidencia / Verificación
+  const evidenceLevelHtml = (showEvidLevel && evidenceLevelLabel)
+    ? `<div class="mt-3">
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('evidenceLevel'))}</p>
+        <div class="flex flex-wrap gap-2">${renderBadge(evidenceLevelLabel, 'bg-blue-50 text-blue-700 border-blue-200', 'evidenceLevel', core.evidenceLevel)}</div>
+      </div>`
+    : '';
+
   const verifStatus = core.verificationStatus || cl.verificationStatus || '';
   const verifStatusLabel = getVerificationLabel(verifStatus);
   const verifActive = verifStatus && String(getTabFilterState(getActiveTabId()).values?.verificationStatus) === verifStatus;
   const verifBadge = (showEvidBadge && verifStatus && verifStatusLabel)
-    ? `<span class="inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-2.5 py-1 text-xs font-bold text-green-700 cursor-pointer select-none${verifActive ? ' ring-1 ring-inset ring-green-600' : ''}" data-mp-chip-filter="verificationStatus" data-mp-chip-value="${esc(verifStatus)}"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifStatusLabel)}</span>`
+    ? `<span class="inline-flex items-center gap-1.5 rounded border border-green-200 bg-green-50 px-2 py-0.5 text-xs font-semibold text-green-700 cursor-pointer select-none${verifActive ? ' ring-1 ring-inset ring-current' : ''}" data-mp-chip-filter="verificationStatus" data-mp-chip-value="${esc(verifStatus)}"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifStatusLabel)}</span>`
     : '';
   const verifHtml = verifBadge
     ? `<div class="mt-3">
@@ -1351,6 +1376,7 @@ function renderCaseCard(item, tab) {
     ${miniMetaHtml}
     ${sectorHtml}
     ${levelsHtml}
+    ${evidenceLevelHtml}
     ${verifHtml}
     ${sdgsHtml}
   `;
@@ -1365,7 +1391,7 @@ function renderCaseCard(item, tab) {
     extraBadgeTone: 'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
     extraBadgeFilterKey: (showStageBadge && caseStageLabel) ? 'caseStage' : '',
     extraBadgeFilterValue: (showStageBadge && caseStageLabel) ? (core.caseStage || '') : '',
-    entity: ccv.ch_entity !== false ? (originName || publisherName) : null,
+    entity: (ccv.ch_entity !== false && cardPres.showEntity !== false) ? (originName || publisherName) : null,
     ctaHtml,
     hideTypeBadge: true,
   };
@@ -2602,7 +2628,6 @@ function renderCasePeopleBlock(item) {
       <div class="rounded-xl border border-eu-border bg-eu-bg p-4 mb-4">
         <span class="text-xs font-bold text-gray-400 block mb-1">${esc(pickLang({ es: 'Entidad de origen', en: 'Originating organisation', va: 'Entitat d\'origen' }))}</span>
         <p class="text-sm font-bold text-eu-text leading-snug">${esc(originName)}</p>
-        ${ownership.origin?.type ? `<p class="mt-1 text-xs leading-5 text-gray-500">${esc(ownership.origin.type)}</p>` : ''}
       </div>`;
   }
 
