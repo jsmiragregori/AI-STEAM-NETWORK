@@ -1520,6 +1520,7 @@ function renderPilotCard(item, tab) {
     extraBadgeFilterValue: showSectorBadge && sectorLabel ? getSectorCode(sectorCode) : '',
     entity: entityLabel,
     ctaHtml,
+    hideTypeBadge: true,
   });
 }
 
@@ -1549,6 +1550,7 @@ function renderPilotCardLegacy(item, tab) {
     extraBadge: ccv.ch_pilot_extraBadge !== false ? (pilotTypeLabel || getTrlLabel(card.trl) || getSectorLabel(item.core?.sector)) : '',
     extraBadgeFilterKey: ccv.ch_pilot_extraBadge !== false ? (pilotTypeLabel ? 'pilotType' : (!getTrlLabel(card.trl) ? 'sector' : '')) : '',
     extraBadgeFilterValue: ccv.ch_pilot_extraBadge !== false ? (pilotTypeLabel ? item.core?.pilotType : getSectorCode(item.core?.sector)) : '',
+    hideTypeBadge: true,
   });
 }
 
