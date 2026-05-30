@@ -1211,6 +1211,15 @@ export const MARKETPLACE_CONFIG = {
         "en": "Validated",
         "va": "Validat"
       }
+    },
+    {
+      "id": "closed",
+      "visible": true,
+      "label": {
+        "es": "Cerrado",
+        "en": "Closed",
+        "va": "Tancat"
+      }
     }
   ],
   "trackBFilterVisibility": {
@@ -11401,7 +11410,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/pilots/pilot-fp-energia-costera.yml",
       "core": {
-        "status": "resolved",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -16962,7 +16971,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/pilots/pilot-drones-inspeccion-infraestructura-mob.yml",
       "core": {
-        "status": "resolved",
+        "status": "documented",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -23750,7 +23759,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/pilots/pilot-teacher-sesgos-ia-uveg.yml",
       "core": {
-        "status": "resolved",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -26237,7 +26246,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/pilots/pilot-fp-cobots-mecatronica.yml",
       "core": {
-        "status": "resolved",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -42240,7 +42249,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/pilots/pilot-fp-energia-costera.yml",
         "core": {
-          "status": "resolved",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -43033,7 +43042,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/pilots/pilot-drones-inspeccion-infraestructura-mob.yml",
         "core": {
-          "status": "resolved",
+          "status": "documented",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -44027,7 +44036,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/pilots/pilot-teacher-sesgos-ia-uveg.yml",
         "core": {
-          "status": "resolved",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -44858,7 +44867,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/pilots/pilot-fp-cobots-mecatronica.yml",
         "core": {
-          "status": "resolved",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -56336,6 +56345,15 @@ export const MARKETPLACE_CONFIG = {
           "es": "Validado",
           "en": "Validated",
           "va": "Validat"
+        }
+      },
+      {
+        "id": "closed",
+        "visible": true,
+        "label": {
+          "es": "Cerrado",
+          "en": "Closed",
+          "va": "Tancat"
         }
       }
     ],
