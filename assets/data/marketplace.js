@@ -7434,13 +7434,13 @@ export const MARKETPLACE_CONFIG = {
             "enabled": true,
             "level": 6,
             "pilotLabel": {
-              "es": "TRL 6 — Demostración en entorno relevante (aula de FP)",
+              "es": "TRL 6 — Demonstration in relevant environment (VET classroom)",
               "en": "TRL 6 — Demonstration in relevant environment (VET classroom)",
               "va": "TRL 6 — Demostració en entorn rellevant (aula de FP)"
             }
           },
           "educationalReadiness": {
-            "enabled": true,
+            "enabled": false,
             "level": "classroom-tested",
             "pilotLabel": {
               "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
@@ -7451,19 +7451,19 @@ export const MARKETPLACE_CONFIG = {
         },
         "infrastructure": [
           {
-            "id": "computer-lab",
+            "id": null,
             "label": {
               "es": "Aula informática con ordenadores básicos (sin GPU dedicada)",
-              "en": "Computer lab with basic computers (no dedicated GPU)",
-              "va": "Aula informàtica amb ordinadors bàsics (sense GPU dedicada)"
+              "en": "Aula informática con ordenadores básicos (sin GPU dedicada)",
+              "va": "Aula informática con ordenadores básicos (sin GPU dedicada)"
             }
           },
           {
-            "id": "gradio-interface",
+            "id": null,
             "label": {
               "es": "Interfaz web Gradio desplegada localmente",
-              "en": "Locally deployed Gradio web interface",
-              "va": "Interfície web Gradio desplegada localment"
+              "en": "Interfaz web Gradio desplegada localmente",
+              "va": "Interfaz web Gradio desplegada localmente"
             }
           }
         ],
@@ -17540,7 +17540,7 @@ export const MARKETPLACE_CONFIG = {
         "readiness": {
           "technologyReadiness": {
             "enabled": true,
-            "level": "7",
+            "level": "6",
             "pilotLabel": {
               "es": "TRL 7 — Demostración del prototipo en entorno operacional real (carretera CV-35)",
               "en": "TRL 7 — Prototype demonstration in real operational environment (CV-35 road)",
@@ -17548,7 +17548,7 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "educationalReadiness": {
-            "enabled": true,
+            "enabled": false,
             "level": "validated-in-real-context",
             "pilotLabel": {
               "es": "Validado en contexto real — alumnos de FP en entorno de carretera autonómica",
@@ -40853,13 +40853,13 @@ export const MARKETPLACE_CONFIG = {
               "enabled": true,
               "level": 6,
               "pilotLabel": {
-                "es": "TRL 6 — Demostración en entorno relevante (aula de FP)",
+                "es": "TRL 6 — Demonstration in relevant environment (VET classroom)",
                 "en": "TRL 6 — Demonstration in relevant environment (VET classroom)",
                 "va": "TRL 6 — Demostració en entorn rellevant (aula de FP)"
               }
             },
             "educationalReadiness": {
-              "enabled": true,
+              "enabled": false,
               "level": "classroom-tested",
               "pilotLabel": {
                 "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
@@ -40870,19 +40870,19 @@ export const MARKETPLACE_CONFIG = {
           },
           "infrastructure": [
             {
-              "id": "computer-lab",
+              "id": null,
               "label": {
                 "es": "Aula informática con ordenadores básicos (sin GPU dedicada)",
-                "en": "Computer lab with basic computers (no dedicated GPU)",
-                "va": "Aula informàtica amb ordinadors bàsics (sense GPU dedicada)"
+                "en": "Aula informática con ordenadores básicos (sin GPU dedicada)",
+                "va": "Aula informática con ordenadores básicos (sin GPU dedicada)"
               }
             },
             {
-              "id": "gradio-interface",
+              "id": null,
               "label": {
                 "es": "Interfaz web Gradio desplegada localmente",
-                "en": "Locally deployed Gradio web interface",
-                "va": "Interfície web Gradio desplegada localment"
+                "en": "Interfaz web Gradio desplegada localmente",
+                "va": "Interfaz web Gradio desplegada localmente"
               }
             }
           ],
@@ -43611,7 +43611,7 @@ export const MARKETPLACE_CONFIG = {
           "readiness": {
             "technologyReadiness": {
               "enabled": true,
-              "level": "7",
+              "level": "6",
               "pilotLabel": {
                 "es": "TRL 7 — Demostración del prototipo en entorno operacional real (carretera CV-35)",
                 "en": "TRL 7 — Prototype demonstration in real operational environment (CV-35 road)",
@@ -43619,7 +43619,7 @@ export const MARKETPLACE_CONFIG = {
               }
             },
             "educationalReadiness": {
-              "enabled": true,
+              "enabled": false,
               "level": "validated-in-real-context",
               "pilotLabel": {
                 "es": "Validado en contexto real — alumnos de FP en entorno de carretera autonómica",
