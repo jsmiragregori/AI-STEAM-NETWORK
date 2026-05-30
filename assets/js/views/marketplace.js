@@ -778,7 +778,7 @@ function getItemFilterValue(item, key) {
   if (key === 'impact') return item.classification?.evidenceMaturity || (card.highlightKpi || card.impactKpi ? 'with-kpi' : '');
   if (key === 'trl') return card.trl?.level ? String(card.trl.level) : '';
   if (key === 'infrastructure') return asArray(card.infrastructure);
-  if (key === 'window') return item.core?.status || pickLang(card.validationStatus) || pickLang(card.executionWindow?.label);
+  if (key === 'window') return item.core?.status || pickLang(card.validationStatus) || formatExecutionWindow(card.executionWindow);
   if (key === 'specialty') return asArray(card.specialties);
   if (key === 'availability') return pickLang(item.mentoringOffer?.format?.availability) || pickLang(card.availability);
   if (key === 'organisation') return card.organisation || pickLang(item.core?.entity?.name);
@@ -1561,7 +1561,7 @@ function renderPilotCard(item, tab) {
   const readinessMeta = showReadiness ? getPilotReadinessMeta(readiness) : null;
 
   // ── Ventana temporal ──────────────────────────────────────────────────────
-  const windowLabel = showWindow ? pickLang(core.executionWindow?.label) : '';
+  const windowLabel = showWindow ? formatExecutionWindow(core.executionWindow) : '';
 
   // ── Mini-meta: readiness + ventana ────────────────────────────────────────
   const miniMetaHtml = renderCardMiniMeta([
@@ -1684,7 +1684,7 @@ function renderPilotCardLegacy(item, tab) {
     ${renderCardCallout(uiText('direction'), card.collaborationDirection || item.core?.summary, 'route')}
     ${renderCardMiniMeta([
       { label: uiText('trl'), value: getTrlLabel(card.trl) },
-      { label: uiText('window'), value: pickLang(card.executionWindow?.label) || pickLang(card.validationStatus) },
+      { label: uiText('window'), value: formatExecutionWindow(card.executionWindow) || pickLang(card.validationStatus) },
       { label: uiText('infrastructure'), value: asArray(card.infrastructure).slice(0, CARD_CHIP_MAX).join(' / ') },
     ])}
     ${pilotTypeLabel || helixChips ? `
@@ -1990,6 +1990,47 @@ function formatDateShort(isoStr) {
   } catch {
     return isoStr;
   }
+}
+
+function formatDateLong(isoStr) {
+  if (!isoStr) return '';
+  try {
+    const d = new Date(isoStr + 'T00:00:00');
+    const lang = getLang();
+    const locale = lang === 'en' ? 'en-GB' : lang === 'va' ? 'ca-ES' : 'es-ES';
+    return d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
+  } catch {
+    return isoStr;
+  }
+}
+
+function formatExecutionWindow(window) {
+  const start = window?.start || '';
+  const end = window?.end || '';
+  if (!start && !end) return '';
+
+  const startLabel = formatDateLong(start);
+  const endLabel = formatDateLong(end);
+
+  if (startLabel && endLabel) {
+    return pickLang({
+      es: `del ${startLabel} al ${endLabel}`,
+      en: `from ${startLabel} to ${endLabel}`,
+      va: `del ${startLabel} al ${endLabel}`,
+    });
+  }
+  if (startLabel) {
+    return pickLang({
+      es: `desde ${startLabel}`,
+      en: `from ${startLabel}`,
+      va: `des de ${startLabel}`,
+    });
+  }
+  return pickLang({
+    es: `hasta ${endLabel}`,
+    en: `until ${endLabel}`,
+    va: `fins a ${endLabel}`,
+  });
 }
 
 function renderStructuredSection(title, icon, contentHtml) {

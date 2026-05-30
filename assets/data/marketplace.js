@@ -7031,13 +7031,12 @@ export const MARKETPLACE_CONFIG = {
               "enabled": true,
               "level": 6,
               "pilotLabel": {
-                "es": "TRL 6 — Demostración en entorno relevante (aula de FP)",
-                "en": "TRL 6 — Demonstration in relevant environment (VET classroom)",
-                "va": "TRL 6 — Demostració en entorn rellevant (aula de FP)"
+                "en": "Demonstration in relevant environment (VET classroom)",
+                "va": "Demostració en entorn rellevant (aula de FP)"
               }
             },
             "educationalReadiness": {
-              "enabled": true,
+              "enabled": false,
               "level": "classroom-tested",
               "pilotLabel": {
                 "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
@@ -7431,16 +7430,16 @@ export const MARKETPLACE_CONFIG = {
       "implementation": {
         "readiness": {
           "technologyReadiness": {
-            "enabled": true,
-            "level": 6,
+            "enabled": false,
+            "level": "6",
             "pilotLabel": {
-              "es": "TRL 6 — Demonstration in relevant environment (VET classroom)",
-              "en": "TRL 6 — Demonstration in relevant environment (VET classroom)",
-              "va": "TRL 6 — Demostració en entorn rellevant (aula de FP)"
+              "es": "Demostración en entorno de aula de FP",
+              "en": "Demonstration in relevant environment (VET classroom)",
+              "va": "Demostració en entorn d'aula d'FP"
             }
           },
           "educationalReadiness": {
-            "enabled": false,
+            "enabled": true,
             "level": "classroom-tested",
             "pilotLabel": {
               "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
@@ -40450,13 +40449,12 @@ export const MARKETPLACE_CONFIG = {
                 "enabled": true,
                 "level": 6,
                 "pilotLabel": {
-                  "es": "TRL 6 — Demostración en entorno relevante (aula de FP)",
-                  "en": "TRL 6 — Demonstration in relevant environment (VET classroom)",
-                  "va": "TRL 6 — Demostració en entorn rellevant (aula de FP)"
+                  "en": "Demonstration in relevant environment (VET classroom)",
+                  "va": "Demostració en entorn rellevant (aula de FP)"
                 }
               },
               "educationalReadiness": {
-                "enabled": true,
+                "enabled": false,
                 "level": "classroom-tested",
                 "pilotLabel": {
                   "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
@@ -40850,16 +40848,16 @@ export const MARKETPLACE_CONFIG = {
         "implementation": {
           "readiness": {
             "technologyReadiness": {
-              "enabled": true,
-              "level": 6,
+              "enabled": false,
+              "level": "6",
               "pilotLabel": {
-                "es": "TRL 6 — Demonstration in relevant environment (VET classroom)",
-                "en": "TRL 6 — Demonstration in relevant environment (VET classroom)",
-                "va": "TRL 6 — Demostració en entorn rellevant (aula de FP)"
+                "es": "Demostración en entorno de aula de FP",
+                "en": "Demonstration in relevant environment (VET classroom)",
+                "va": "Demostració en entorn d'aula d'FP"
               }
             },
             "educationalReadiness": {
-              "enabled": false,
+              "enabled": true,
               "level": "classroom-tested",
               "pilotLabel": {
                 "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
