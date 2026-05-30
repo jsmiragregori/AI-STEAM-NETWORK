@@ -7030,7 +7030,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": true,
               "level": 6,
-              "label": {
+              "pilotLabel": {
                 "es": "TRL 6 — Demostración en entorno relevante (aula de FP)",
                 "en": "TRL 6 — Demonstration in relevant environment (VET classroom)",
                 "va": "TRL 6 — Demostració en entorn rellevant (aula de FP)"
@@ -7039,7 +7039,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": true,
               "level": "classroom-tested",
-              "label": {
+              "pilotLabel": {
                 "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
                 "en": "Classroom-tested — previously tested with La Fe residents, first VET validation",
                 "va": "Provat en aula — testejat prèviament amb residents del La Fe, primera validació en FP"
@@ -7433,7 +7433,7 @@ export const MARKETPLACE_CONFIG = {
           "technologyReadiness": {
             "enabled": true,
             "level": 6,
-            "label": {
+            "pilotLabel": {
               "es": "TRL 6 — Demostración en entorno relevante (aula de FP)",
               "en": "TRL 6 — Demonstration in relevant environment (VET classroom)",
               "va": "TRL 6 — Demostració en entorn rellevant (aula de FP)"
@@ -7442,7 +7442,7 @@ export const MARKETPLACE_CONFIG = {
           "educationalReadiness": {
             "enabled": true,
             "level": "classroom-tested",
-            "label": {
+            "pilotLabel": {
               "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
               "en": "Classroom-tested — previously tested with La Fe residents, first VET validation",
               "va": "Provat en aula — testejat prèviament amb residents del La Fe, primera validació en FP"
@@ -8015,7 +8015,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": true,
               "level": 6,
-              "label": {
+              "pilotLabel": {
                 "es": "TRL 6 — Demostración en entorno relevante real (edificio universitario)",
                 "en": "TRL 6 — Demonstration in real relevant environment (university building)",
                 "va": "TRL 6 — Demostració en entorn rellevant real (edifici universitari)"
@@ -8024,7 +8024,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": true,
               "level": "designed",
-              "label": {
+              "pilotLabel": {
                 "es": "Diseñado — módulo conjunto FP-máster en fase de primera implementación",
                 "en": "Designed — joint VET-master module in first implementation phase",
                 "va": "Dissenyat — mòdul conjunt FP-màster en fase de primera implementació"
@@ -8420,7 +8420,7 @@ export const MARKETPLACE_CONFIG = {
           "technologyReadiness": {
             "enabled": true,
             "level": 6,
-            "label": {
+            "pilotLabel": {
               "es": "TRL 6 — Demostración en entorno relevante real (edificio universitario)",
               "en": "TRL 6 — Demonstration in real relevant environment (university building)",
               "va": "TRL 6 — Demostració en entorn rellevant real (edifici universitari)"
@@ -8429,7 +8429,7 @@ export const MARKETPLACE_CONFIG = {
           "educationalReadiness": {
             "enabled": true,
             "level": "designed",
-            "label": {
+            "pilotLabel": {
               "es": "Diseñado — módulo conjunto FP-máster en fase de primera implementación",
               "en": "Designed — joint VET-master module in first implementation phase",
               "va": "Dissenyat — mòdul conjunt FP-màster en fase de primera implementació"
@@ -11571,7 +11571,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": true,
               "level": 7,
-              "label": {
+              "pilotLabel": {
                 "es": "Demostración en entorno operacional",
                 "en": "Demonstration in operational environment",
                 "va": "Demostració en entorn operacional"
@@ -11580,7 +11580,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": true,
               "level": "validated-in-real-context",
-              "label": {
+              "pilotLabel": {
                 "es": "Validado en contexto real",
                 "en": "Validated in real context",
                 "va": "Validat en context real"
@@ -11904,7 +11904,7 @@ export const MARKETPLACE_CONFIG = {
           "technologyReadiness": {
             "enabled": true,
             "level": 7,
-            "label": {
+            "pilotLabel": {
               "es": "Demostración en entorno operacional",
               "en": "Demonstration in operational environment",
               "va": "Demostració en entorn operacional"
@@ -11913,7 +11913,7 @@ export const MARKETPLACE_CONFIG = {
           "educationalReadiness": {
             "enabled": true,
             "level": "validated-in-real-context",
-            "label": {
+            "pilotLabel": {
               "es": "Validado en contexto real",
               "en": "Validated in real context",
               "va": "Validat en context real"
@@ -17142,7 +17142,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": true,
               "level": "7",
-              "label": {
+              "pilotLabel": {
                 "es": "TRL 7 — Demostración del prototipo en entorno operacional real (carretera CV-35)",
                 "en": "TRL 7 — Prototype demonstration in real operational environment (CV-35 road)",
                 "va": "TRL 7 — Demostració del prototip en entorn operacional real (carretera CV-35)"
@@ -17151,7 +17151,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": true,
               "level": "validated-in-real-context",
-              "label": {
+              "pilotLabel": {
                 "es": "Validado en contexto real — alumnos de FP en entorno de carretera autonómica",
                 "en": "Validated in real context — VET students in regional road environment",
                 "va": "Validat en context real — alumnes de FP en entorn de carretera autonòmica"
@@ -17541,7 +17541,7 @@ export const MARKETPLACE_CONFIG = {
           "technologyReadiness": {
             "enabled": true,
             "level": "7",
-            "label": {
+            "pilotLabel": {
               "es": "TRL 7 — Demostración del prototipo en entorno operacional real (carretera CV-35)",
               "en": "TRL 7 — Prototype demonstration in real operational environment (CV-35 road)",
               "va": "TRL 7 — Demostració del prototip en entorn operacional real (carretera CV-35)"
@@ -17550,7 +17550,7 @@ export const MARKETPLACE_CONFIG = {
           "educationalReadiness": {
             "enabled": true,
             "level": "validated-in-real-context",
-            "label": {
+            "pilotLabel": {
               "es": "Validado en contexto real — alumnos de FP en entorno de carretera autonómica",
               "en": "Validated in real context — VET students in regional road environment",
               "va": "Validat en context real — alumnes de FP en entorn de carretera autonòmica"
@@ -23924,7 +23924,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": true,
               "level": "validated-in-real-context",
-              "label": {
+              "pilotLabel": {
                 "es": "Validado en contexto real",
                 "en": "Validated in real context",
                 "va": "Validat en context real"
@@ -24274,7 +24274,7 @@ export const MARKETPLACE_CONFIG = {
           "technologyReadiness": {
             "enabled": false,
             "level": null,
-            "label": {
+            "pilotLabel": {
               "es": "",
               "en": "",
               "va": ""
@@ -24283,7 +24283,7 @@ export const MARKETPLACE_CONFIG = {
           "educationalReadiness": {
             "enabled": true,
             "level": "validated-in-real-context",
-            "label": {
+            "pilotLabel": {
               "es": "Validado en contexto real",
               "en": "Validated in real context",
               "va": "Validat en context real"
@@ -26407,7 +26407,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": true,
               "level": 7,
-              "label": {
+              "pilotLabel": {
                 "es": "Demostración en entorno operacional",
                 "en": "Demonstration in operational environment",
                 "va": "Demostració en entorn operacional"
@@ -26749,7 +26749,7 @@ export const MARKETPLACE_CONFIG = {
           "technologyReadiness": {
             "enabled": true,
             "level": 7,
-            "label": {
+            "pilotLabel": {
               "es": "Demostración en entorno operacional",
               "en": "Demonstration in operational environment",
               "va": "Demostració en entorn operacional"
@@ -26758,7 +26758,7 @@ export const MARKETPLACE_CONFIG = {
           "educationalReadiness": {
             "enabled": false,
             "level": null,
-            "label": {
+            "pilotLabel": {
               "es": "",
               "en": "",
               "va": ""
@@ -27204,7 +27204,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": true,
               "level": 5,
-              "label": {
+              "pilotLabel": {
                 "es": "Validación en entorno relevante",
                 "en": "Validation in relevant environment",
                 "va": "Validació en entorn rellevant"
@@ -27213,7 +27213,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": true,
               "level": "designed",
-              "label": {
+              "pilotLabel": {
                 "es": "Diseñado",
                 "en": "Designed",
                 "va": "Dissenyat"
@@ -27525,7 +27525,7 @@ export const MARKETPLACE_CONFIG = {
           "technologyReadiness": {
             "enabled": true,
             "level": 5,
-            "label": {
+            "pilotLabel": {
               "es": "Validación en entorno relevante",
               "en": "Validation in relevant environment",
               "va": "Validació en entorn rellevant"
@@ -27534,7 +27534,7 @@ export const MARKETPLACE_CONFIG = {
           "educationalReadiness": {
             "enabled": true,
             "level": "designed",
-            "label": {
+            "pilotLabel": {
               "es": "Diseñado",
               "en": "Designed",
               "va": "Dissenyat"
@@ -40449,7 +40449,7 @@ export const MARKETPLACE_CONFIG = {
               "technologyReadiness": {
                 "enabled": true,
                 "level": 6,
-                "label": {
+                "pilotLabel": {
                   "es": "TRL 6 — Demostración en entorno relevante (aula de FP)",
                   "en": "TRL 6 — Demonstration in relevant environment (VET classroom)",
                   "va": "TRL 6 — Demostració en entorn rellevant (aula de FP)"
@@ -40458,7 +40458,7 @@ export const MARKETPLACE_CONFIG = {
               "educationalReadiness": {
                 "enabled": true,
                 "level": "classroom-tested",
-                "label": {
+                "pilotLabel": {
                   "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
                   "en": "Classroom-tested — previously tested with La Fe residents, first VET validation",
                   "va": "Provat en aula — testejat prèviament amb residents del La Fe, primera validació en FP"
@@ -40852,7 +40852,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": true,
               "level": 6,
-              "label": {
+              "pilotLabel": {
                 "es": "TRL 6 — Demostración en entorno relevante (aula de FP)",
                 "en": "TRL 6 — Demonstration in relevant environment (VET classroom)",
                 "va": "TRL 6 — Demostració en entorn rellevant (aula de FP)"
@@ -40861,7 +40861,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": true,
               "level": "classroom-tested",
-              "label": {
+              "pilotLabel": {
                 "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
                 "en": "Classroom-tested — previously tested with La Fe residents, first VET validation",
                 "va": "Provat en aula — testejat prèviament amb residents del La Fe, primera validació en FP"
@@ -41434,7 +41434,7 @@ export const MARKETPLACE_CONFIG = {
               "technologyReadiness": {
                 "enabled": true,
                 "level": 6,
-                "label": {
+                "pilotLabel": {
                   "es": "TRL 6 — Demostración en entorno relevante real (edificio universitario)",
                   "en": "TRL 6 — Demonstration in real relevant environment (university building)",
                   "va": "TRL 6 — Demostració en entorn rellevant real (edifici universitari)"
@@ -41443,7 +41443,7 @@ export const MARKETPLACE_CONFIG = {
               "educationalReadiness": {
                 "enabled": true,
                 "level": "designed",
-                "label": {
+                "pilotLabel": {
                   "es": "Diseñado — módulo conjunto FP-máster en fase de primera implementación",
                   "en": "Designed — joint VET-master module in first implementation phase",
                   "va": "Dissenyat — mòdul conjunt FP-màster en fase de primera implementació"
@@ -41839,7 +41839,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": true,
               "level": 6,
-              "label": {
+              "pilotLabel": {
                 "es": "TRL 6 — Demostración en entorno relevante real (edificio universitario)",
                 "en": "TRL 6 — Demonstration in real relevant environment (university building)",
                 "va": "TRL 6 — Demostració en entorn rellevant real (edifici universitari)"
@@ -41848,7 +41848,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": true,
               "level": "designed",
-              "label": {
+              "pilotLabel": {
                 "es": "Diseñado — módulo conjunto FP-máster en fase de primera implementación",
                 "en": "Designed — joint VET-master module in first implementation phase",
                 "va": "Dissenyat — mòdul conjunt FP-màster en fase de primera implementació"
@@ -42410,7 +42410,7 @@ export const MARKETPLACE_CONFIG = {
               "technologyReadiness": {
                 "enabled": true,
                 "level": 7,
-                "label": {
+                "pilotLabel": {
                   "es": "Demostración en entorno operacional",
                   "en": "Demonstration in operational environment",
                   "va": "Demostració en entorn operacional"
@@ -42419,7 +42419,7 @@ export const MARKETPLACE_CONFIG = {
               "educationalReadiness": {
                 "enabled": true,
                 "level": "validated-in-real-context",
-                "label": {
+                "pilotLabel": {
                   "es": "Validado en contexto real",
                   "en": "Validated in real context",
                   "va": "Validat en context real"
@@ -42743,7 +42743,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": true,
               "level": 7,
-              "label": {
+              "pilotLabel": {
                 "es": "Demostración en entorno operacional",
                 "en": "Demonstration in operational environment",
                 "va": "Demostració en entorn operacional"
@@ -42752,7 +42752,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": true,
               "level": "validated-in-real-context",
-              "label": {
+              "pilotLabel": {
                 "es": "Validado en contexto real",
                 "en": "Validated in real context",
                 "va": "Validat en context real"
@@ -43213,7 +43213,7 @@ export const MARKETPLACE_CONFIG = {
               "technologyReadiness": {
                 "enabled": true,
                 "level": "7",
-                "label": {
+                "pilotLabel": {
                   "es": "TRL 7 — Demostración del prototipo en entorno operacional real (carretera CV-35)",
                   "en": "TRL 7 — Prototype demonstration in real operational environment (CV-35 road)",
                   "va": "TRL 7 — Demostració del prototip en entorn operacional real (carretera CV-35)"
@@ -43222,7 +43222,7 @@ export const MARKETPLACE_CONFIG = {
               "educationalReadiness": {
                 "enabled": true,
                 "level": "validated-in-real-context",
-                "label": {
+                "pilotLabel": {
                   "es": "Validado en contexto real — alumnos de FP en entorno de carretera autonómica",
                   "en": "Validated in real context — VET students in regional road environment",
                   "va": "Validat en context real — alumnes de FP en entorn de carretera autonòmica"
@@ -43612,7 +43612,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": true,
               "level": "7",
-              "label": {
+              "pilotLabel": {
                 "es": "TRL 7 — Demostración del prototipo en entorno operacional real (carretera CV-35)",
                 "en": "TRL 7 — Prototype demonstration in real operational environment (CV-35 road)",
                 "va": "TRL 7 — Demostració del prototip en entorn operacional real (carretera CV-35)"
@@ -43621,7 +43621,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": true,
               "level": "validated-in-real-context",
-              "label": {
+              "pilotLabel": {
                 "es": "Validado en contexto real — alumnos de FP en entorno de carretera autonómica",
                 "en": "Validated in real context — VET students in regional road environment",
                 "va": "Validat en context real — alumnes de FP en entorn de carretera autonòmica"
@@ -44201,7 +44201,7 @@ export const MARKETPLACE_CONFIG = {
               "educationalReadiness": {
                 "enabled": true,
                 "level": "validated-in-real-context",
-                "label": {
+                "pilotLabel": {
                   "es": "Validado en contexto real",
                   "en": "Validated in real context",
                   "va": "Validat en context real"
@@ -44551,7 +44551,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": false,
               "level": null,
-              "label": {
+              "pilotLabel": {
                 "es": "",
                 "en": "",
                 "va": ""
@@ -44560,7 +44560,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": true,
               "level": "validated-in-real-context",
-              "label": {
+              "pilotLabel": {
                 "es": "Validado en contexto real",
                 "en": "Validated in real context",
                 "va": "Validat en context real"
@@ -45028,7 +45028,7 @@ export const MARKETPLACE_CONFIG = {
               "technologyReadiness": {
                 "enabled": true,
                 "level": 7,
-                "label": {
+                "pilotLabel": {
                   "es": "Demostración en entorno operacional",
                   "en": "Demonstration in operational environment",
                   "va": "Demostració en entorn operacional"
@@ -45370,7 +45370,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": true,
               "level": 7,
-              "label": {
+              "pilotLabel": {
                 "es": "Demostración en entorno operacional",
                 "en": "Demonstration in operational environment",
                 "va": "Demostració en entorn operacional"
@@ -45379,7 +45379,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": false,
               "level": null,
-              "label": {
+              "pilotLabel": {
                 "es": "",
                 "en": "",
                 "va": ""
@@ -45825,7 +45825,7 @@ export const MARKETPLACE_CONFIG = {
               "technologyReadiness": {
                 "enabled": true,
                 "level": 5,
-                "label": {
+                "pilotLabel": {
                   "es": "Validación en entorno relevante",
                   "en": "Validation in relevant environment",
                   "va": "Validació en entorn rellevant"
@@ -45834,7 +45834,7 @@ export const MARKETPLACE_CONFIG = {
               "educationalReadiness": {
                 "enabled": true,
                 "level": "designed",
-                "label": {
+                "pilotLabel": {
                   "es": "Diseñado",
                   "en": "Designed",
                   "va": "Dissenyat"
@@ -46146,7 +46146,7 @@ export const MARKETPLACE_CONFIG = {
             "technologyReadiness": {
               "enabled": true,
               "level": 5,
-              "label": {
+              "pilotLabel": {
                 "es": "Validación en entorno relevante",
                 "en": "Validation in relevant environment",
                 "va": "Validació en entorn rellevant"
@@ -46155,7 +46155,7 @@ export const MARKETPLACE_CONFIG = {
             "educationalReadiness": {
               "enabled": true,
               "level": "designed",
-              "label": {
+              "pilotLabel": {
                 "es": "Diseñado",
                 "en": "Designed",
                 "va": "Dissenyat"

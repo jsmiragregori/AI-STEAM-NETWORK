@@ -159,9 +159,9 @@ const UI_TEXT = {
     va: 'Etiquetes',
   },
   trl: {
-    es: 'TRL',
-    en: 'TRL',
-    va: 'TRL',
+    es: 'Madurez tecnológica',
+    en: 'Technology readiness',
+    va: 'Maduresa tecnològica',
   },
   valorisation: {
     es: 'Valorizacion',
@@ -325,7 +325,7 @@ const FIELD_LABELS = {
   sdgs: { es: 'ODS', en: 'SDGs', va: 'ODS' },
   setCompetences: { es: 'Competencias STEAM', en: 'STEAM competences', va: 'Competències STEAM' },
   specialties: { es: 'Especialidades', en: 'Specialties', va: 'Especialitats' },
-  trl: { es: 'TRL', en: 'TRL', va: 'TRL' },
+  trl: { es: 'Madurez tecnológica', en: 'Technology readiness', va: 'Maduresa tecnològica' },
   valorisation: { es: 'Valorizacion', en: 'Valorisation', va: 'Valoritzacio' },
   validationStatus: { es: 'Estado de validacion', en: 'Validation status', va: 'Estat de validacio' },
 };
@@ -542,6 +542,10 @@ function getPilotStageTone(stage) {
 
 function getEducationalReadinessLabel(id) {
   return getLabelFromArray(MARKETPLACE_CONFIG.labels?.educationalReadiness, id);
+}
+
+function getTechnologyReadinessLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.labels?.technologyReadiness || MARKETPLACE_CONFIG.technologyReadinessLabels, id);
 }
 
 function getHelixLabel(id) {
@@ -1155,9 +1159,43 @@ function renderActorNames(actors) {
 }
 
 function getTrlLabel(trl) {
-  if (!trl) return '';
-  const label = pickLang(trl.label);
-  return trl.level ? `TRL ${trl.level}${label ? ` / ${label}` : ''}` : label;
+    if (!trl) return '';
+    const level = trl.level ? String(trl.level) : '';
+    const officialLabel = getTechnologyReadinessLabel(level);
+    if (level) return officialLabel ? `Nivel TRL ${level} · ${officialLabel}` : `Nivel TRL ${level}`;
+    return officialLabel;
+  }
+  
+function getPilotReadinessMeta(readiness) {
+    const trl = readiness?.technologyReadiness;
+    if (trl?.enabled && trl?.level) {
+      const level = String(trl.level);
+      const pilotLabel = pickLang(trl.pilotLabel);
+      return {
+        label: pickLang({
+          es: 'Madurez tecnológica',
+          en: 'Technology readiness',
+          va: 'Maduresa tecnològica',
+        }),
+        value: pilotLabel || getTrlLabel(trl),
+      };
+    }
+  
+    const er = readiness?.educationalReadiness;
+    if (er?.enabled && er?.level) {
+      const officialLabel = getEducationalReadinessLabel(er.level);
+      const pilotLabel = pickLang(er.pilotLabel);
+      return {
+        label: pickLang({
+          es: 'Madurez educativa',
+          en: 'Educational readiness',
+          va: 'Maduresa educativa',
+        }),
+        value: pilotLabel || officialLabel || er.level,
+      };
+    }
+
+  return null;
 }
 
 function getMentorInitials(name) {
@@ -1446,26 +1484,16 @@ function renderPilotCard(item, tab) {
   );
 
   // ── Madurez (TRL o educacional) ───────────────────────────────────────────
-  let readinessStr = '';
-  const trl = readiness.technologyReadiness;
-  const er = readiness.educationalReadiness;
-  if (showReadiness) {
-    if (trl?.enabled && trl?.level) {
-      const trlLbl = pickLang(trl.label);
-      readinessStr = `TRL ${trl.level}${trlLbl ? ` — ${trlLbl}` : ''}`;
-    } else if (er?.enabled && er?.level) {
-      readinessStr = getEducationalReadinessLabel(er.level) || pickLang(er.label) || er.level;
-    }
-  }
+  const readinessMeta = showReadiness ? getPilotReadinessMeta(readiness) : null;
 
   // ── Ventana temporal ──────────────────────────────────────────────────────
   const windowLabel = showWindow ? pickLang(core.executionWindow?.label) : '';
 
   // ── Mini-meta: readiness + ventana ────────────────────────────────────────
   const miniMetaHtml = renderCardMiniMeta([
-    readinessStr ? {
-      label: uiText('readiness'),
-      value: readinessStr,
+    readinessMeta ? {
+      label: readinessMeta.label,
+      value: readinessMeta.value,
       boxClass: 'border-eu-orange/20 bg-eu-orange/5',
       labelClass: 'text-eu-orange',
       valueClass: 'text-eu-text',
@@ -1572,7 +1600,6 @@ function renderPilotCardLegacy(item, tab) {
   const ccv = MARKETPLACE_CONFIG.cardChipVisibility || {};
   const card = item.card || {};
   const pilotTypeLabel = getPilotTypeLabel(item.core?.pilotType);
-  const pilotStatusLabel = getPilotStatusLabel(item.classification?.pilotStatus);
   const helixChips = asArray(item.core?.helix).map(h => renderBadge(getHelixLabel(h), 'bg-eu-bg text-gray-700 border-eu-border', 'helix', h)).filter(Boolean).join('');
   const body = `
     ${renderCardCallout(uiText('direction'), card.collaborationDirection || item.core?.summary, 'route')}
@@ -1581,10 +1608,9 @@ function renderPilotCardLegacy(item, tab) {
       { label: uiText('window'), value: pickLang(card.executionWindow?.label) || pickLang(card.validationStatus) },
       { label: uiText('infrastructure'), value: asArray(card.infrastructure).slice(0, CARD_CHIP_MAX).join(' / ') },
     ])}
-    ${pilotTypeLabel || pilotStatusLabel || helixChips ? `
+    ${pilotTypeLabel || helixChips ? `
       <div class="mt-4 flex flex-wrap gap-2">
         ${pilotTypeLabel ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200', 'pilotType', item.core?.pilotType) : ''}
-        ${pilotStatusLabel ? renderBadge(pilotStatusLabel, 'bg-emerald-50 text-emerald-800 border-emerald-200', 'pilotStatus', item.classification?.pilotStatus) : ''}
         ${helixChips}
       </div>` : ''}
   `;
@@ -3389,15 +3415,18 @@ function renderPilotDetailV2(item) {
     const trl = readiness.technologyReadiness;
     const er = readiness.educationalReadiness;
     const trlHtml = trl?.enabled ? `
-      <div class="rounded-lg border border-eu-border bg-eu-bg px-4 py-3">
-        <p class="text-xs font-bold uppercase tracking-wide text-gray-400">TRL</p>
-        <p class="mt-0.5 text-base font-bold text-eu-blue">TRL ${trl.level || ''}${pickLang(trl.label) ? ` — ${pickLang(trl.label)}` : ''}</p>
-      </div>` : '';
+        <div class="rounded-lg border border-eu-border bg-eu-bg px-4 py-3">
+          <p class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Madurez tecnológica', en: 'Technology readiness', va: 'Maduresa tecnològica' }))}</p>
+          <p class="mt-0.5 text-base font-bold text-eu-blue">${esc(`Nivel TRL ${trl.level || ''}`.trim())}</p>
+        ${getTechnologyReadinessLabel(trl.level) ? `<p class="mt-1 text-sm leading-6 text-gray-600">${esc(getTechnologyReadinessLabel(trl.level))}</p>` : ''}
+        ${pickLang(trl.pilotLabel) ? `<p class="mt-1 text-sm leading-6 text-gray-500">${esc(pickLang(trl.pilotLabel))}</p>` : ''}
+        </div>` : '';
     const erHtml = er?.enabled ? `
-      <div class="rounded-lg border border-eu-border bg-eu-bg px-4 py-3">
-        <p class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Madurez educativa', en: 'Educational readiness', va: 'Maduresa educativa' }))}</p>
-        <p class="mt-0.5 text-base font-bold text-eu-blue">${esc(getEducationalReadinessLabel(er.level) || pickLang(er.label) || er.level || '')}</p>
-      </div>` : '';
+        <div class="rounded-lg border border-eu-border bg-eu-bg px-4 py-3">
+          <p class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Madurez educativa', en: 'Educational readiness', va: 'Maduresa educativa' }))}</p>
+          <p class="mt-0.5 text-base font-bold text-eu-blue">${esc(getEducationalReadinessLabel(er.level) || er.level || '')}</p>
+          ${pickLang(er.pilotLabel) ? `<p class="mt-1 text-sm leading-6 text-gray-500">${esc(pickLang(er.pilotLabel))}</p>` : ''}
+        </div>` : '';
     const readinessRow = (trlHtml || erHtml) ? `<div class="grid gap-3 md:grid-cols-2">${trlHtml}${erHtml}</div>` : '';
 
     const infraLabels = asArray(impl.infrastructure).map(i => pickLang(i.label)).filter(Boolean);
@@ -4053,13 +4082,14 @@ function renderDetailEmpty() {
 function renderDetailChipPanel(item) {
   const focus = asArray(item.classification?.aiSteamFocus).map(getFocusLabel).filter(Boolean);
   const isPilot = item.type === 'pilot';
+  const isPilotV2 = isPilot && (item.pilotPlan != null || item.ownership?.lead != null);
   const helixChips = isPilot ? asArray(item.core?.helix).map(getHelixLabel).filter(Boolean) : [];
   const chips = [
     getSectorLabel(item.core?.sector),
     getEvidenceLabel(item.classification?.evidenceMaturity),
     getEngagementLabel(item.classification?.engagementLevel),
     isPilot ? getPilotTypeLabel(item.core?.pilotType) : null,
-    isPilot ? getPilotStatusLabel(item.classification?.pilotStatus) : null,
+    (isPilot && !isPilotV2) ? getPilotStatusLabel(item.classification?.pilotStatus) : null,
     ...helixChips,
     ...focus,
   ].filter(Boolean);
