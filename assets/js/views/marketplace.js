@@ -1162,36 +1162,57 @@ function getTrlLabel(trl) {
     if (!trl) return '';
     const level = trl.level ? String(trl.level) : '';
     const officialLabel = getTechnologyReadinessLabel(level);
-    if (level) return officialLabel ? `Nivel TRL ${level} · ${officialLabel}` : `Nivel TRL ${level}`;
+    const levelPrefix = level ? pickLang({
+      es: `Nivel TRL ${level}`,
+      en: `TRL level ${level}`,
+      va: `Nivell TRL ${level}`,
+    }) : '';
+    if (level) return officialLabel ? `${levelPrefix} · ${officialLabel}` : levelPrefix;
     return officialLabel;
+  }
+
+function getEducationalReadinessDisplay(er) {
+    if (!er) return '';
+    const officialLabel = getEducationalReadinessLabel(er.level);
+    return officialLabel || er.level || '';
+  }
+
+function getPilotSpecificReadinessText(pilotLabel, fallbackLabel = '') {
+    const text = String(pilotLabel || '').trim();
+    const fallback = String(fallbackLabel || '').trim();
+    if (!text) return '';
+    if (fallback && text === fallback) return '';
+    return pickLang({
+      es: `En este piloto: ${text}`,
+      en: `For this pilot: ${text}`,
+      va: `En aquest pilot: ${text}`,
+    });
   }
   
 function getPilotReadinessMeta(readiness) {
     const trl = readiness?.technologyReadiness;
     if (trl?.enabled && trl?.level) {
-      const level = String(trl.level);
-      const pilotLabel = pickLang(trl.pilotLabel);
+      const officialValue = getTrlLabel(trl);
       return {
         label: pickLang({
-          es: 'Madurez tecnológica',
-          en: 'Technology readiness',
-          va: 'Maduresa tecnològica',
+          es: 'Nivel de madurez tecnológica',
+          en: 'Technology readiness level',
+          va: 'Nivell de maduresa tecnològica',
         }),
-        value: pilotLabel || getTrlLabel(trl),
+        value: officialValue,
       };
     }
   
     const er = readiness?.educationalReadiness;
     if (er?.enabled && er?.level) {
-      const officialLabel = getEducationalReadinessLabel(er.level);
-      const pilotLabel = pickLang(er.pilotLabel);
+      const officialValue = getEducationalReadinessDisplay(er);
       return {
         label: pickLang({
-          es: 'Madurez educativa',
-          en: 'Educational readiness',
-          va: 'Maduresa educativa',
+          es: 'Nivel de madurez educativa',
+          en: 'Educational readiness level',
+          va: 'Nivell de maduresa educativa',
         }),
-        value: pilotLabel || officialLabel || er.level,
+        value: officialValue,
       };
     }
 
@@ -3414,18 +3435,21 @@ function renderPilotDetailV2(item) {
   const s3Html = pres.implementation !== false ? (() => {
     const trl = readiness.technologyReadiness;
     const er = readiness.educationalReadiness;
+    const trlOfficialLabel = getTechnologyReadinessLabel(trl?.level);
+    const trlPilotText = getPilotSpecificReadinessText(pickLang(trl?.pilotLabel), trlOfficialLabel);
+    const erOfficialValue = getEducationalReadinessDisplay(er);
+    const erPilotText = getPilotSpecificReadinessText(pickLang(er?.pilotLabel), erOfficialValue);
     const trlHtml = trl?.enabled ? `
         <div class="rounded-lg border border-eu-border bg-eu-bg px-4 py-3">
           <p class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Madurez tecnológica', en: 'Technology readiness', va: 'Maduresa tecnològica' }))}</p>
-          <p class="mt-0.5 text-base font-bold text-eu-blue">${esc(`Nivel TRL ${trl.level || ''}`.trim())}</p>
-        ${getTechnologyReadinessLabel(trl.level) ? `<p class="mt-1 text-sm leading-6 text-gray-600">${esc(getTechnologyReadinessLabel(trl.level))}</p>` : ''}
-        ${pickLang(trl.pilotLabel) ? `<p class="mt-1 text-sm leading-6 text-gray-500">${esc(pickLang(trl.pilotLabel))}</p>` : ''}
+          <p class="mt-0.5 text-base font-bold text-eu-blue">${esc(getTrlLabel(trl))}</p>
+        ${trlPilotText ? `<p class="mt-1 text-sm leading-6 text-gray-500">${esc(trlPilotText)}</p>` : ''}
         </div>` : '';
     const erHtml = er?.enabled ? `
         <div class="rounded-lg border border-eu-border bg-eu-bg px-4 py-3">
           <p class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(pickLang({ es: 'Madurez educativa', en: 'Educational readiness', va: 'Maduresa educativa' }))}</p>
-          <p class="mt-0.5 text-base font-bold text-eu-blue">${esc(getEducationalReadinessLabel(er.level) || er.level || '')}</p>
-          ${pickLang(er.pilotLabel) ? `<p class="mt-1 text-sm leading-6 text-gray-500">${esc(pickLang(er.pilotLabel))}</p>` : ''}
+          <p class="mt-0.5 text-base font-bold text-eu-blue">${esc(erOfficialValue)}</p>
+          ${erPilotText ? `<p class="mt-1 text-sm leading-6 text-gray-500">${esc(erPilotText)}</p>` : ''}
         </div>` : '';
     const readinessRow = (trlHtml || erHtml) ? `<div class="grid gap-3 md:grid-cols-2">${trlHtml}${erHtml}</div>` : '';
 
