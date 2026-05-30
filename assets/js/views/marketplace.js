@@ -1073,7 +1073,7 @@ function renderCardShell(item, tab, body, options = {}) {
     <article class="group flex h-full flex-col rounded-xl border border-eu-border bg-white p-6 shadow-sm transition-colors hover:border-eu-blue">
       <div class="flex flex-wrap gap-2">
         ${options.hideTypeBadge ? '' : renderBadge(getTypeLabel(item.type), tone.badge)}
-        ${options.showStatusBadge !== false ? renderBadge(statusLabel, 'bg-white text-gray-700 border-eu-border', statusFilterKey, statusRaw) : ''}
+        ${options.showStatusBadge !== false ? renderBadge(statusLabel, options.statusBadgeTone || 'bg-white text-gray-700 border-eu-border', statusFilterKey, statusRaw) : ''}
         ${options.extraBadge ? renderBadge(options.extraBadge, options.extraBadgeTone || 'bg-white text-gray-700 border-eu-border', options.extraBadgeFilterKey || '', options.extraBadgeFilterValue || '') : ''}
       </div>
       <div class="mt-4 flex-1">
@@ -1099,16 +1099,19 @@ function renderCardFooter(item, tab, entity, dateLabel, ctaHtml = null) {
     </div>`;
 }
 
-function renderCardCallout(label, value, icon = 'sparkles', strict = false) {
+function renderCardCallout(label, value, icon = 'sparkles', strict = false, tone = {}) {
   const text = strict ? pickLangStrict(value) : pickLang(value);
   if (!text) return '';
+  const boxClass = tone.boxClass || 'bg-eu-bg';
+  const labelClass = tone.labelClass || 'text-gray-500';
+  const valueClass = tone.valueClass || 'text-eu-text';
   return `
-    <div class="mt-4 rounded-lg bg-eu-bg p-4">
-      <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-gray-500">
+    <div class="mt-4 rounded-lg p-4 ${boxClass}">
+      <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide ${labelClass}">
         <i data-lucide="${esc(icon)}" class="h-3.5 w-3.5"></i>
         ${esc(label)}
       </p>
-      <p class="mt-1 text-sm font-semibold leading-6 text-eu-text">${esc(text)}</p>
+      <p class="mt-1 text-sm font-semibold leading-6 ${valueClass}">${esc(text)}</p>
     </div>`;
 }
 
@@ -1118,9 +1121,9 @@ function renderCardMiniMeta(items) {
   return `
     <div class="mt-4 grid gap-3">
       ${visible.map(item => `
-        <div class="rounded-lg border border-eu-border bg-white px-3 py-2">
-          <p class="text-[11px] font-bold uppercase tracking-wide text-gray-500">${esc(item.label)}</p>
-          <p class="mt-0.5 text-sm font-semibold leading-5 text-gray-700">${esc(item.value)}</p>
+        <div class="rounded-lg border px-3 py-2 ${item.boxClass || 'border-eu-border bg-white'}">
+          <p class="text-[11px] font-bold uppercase tracking-wide ${item.labelClass || 'text-gray-500'}">${esc(item.label)}</p>
+          <p class="mt-0.5 text-sm font-semibold leading-5 ${item.valueClass || 'text-gray-700'}">${esc(item.value)}</p>
         </div>`).join('')}
     </div>`;
 }
@@ -1430,7 +1433,17 @@ function renderPilotCard(item, tab) {
 
   // ── Hypothesis (bloque principal de la card) ──────────────────────────────
   const resultBlockLabel = pickLang(pres.resultBlockLabel) || uiText('whatIsTested');
-  const hypothesisHtml = renderCardCallout(resultBlockLabel, pilotPlan.hypothesis || core.summary, 'flask-conical');
+  const hypothesisHtml = renderCardCallout(
+    resultBlockLabel,
+    pilotPlan.hypothesis || core.summary,
+    'flask-conical',
+    false,
+    {
+      boxClass: 'bg-eu-blue/8 border border-eu-blue/15',
+      labelClass: 'text-eu-blue',
+      valueClass: 'text-eu-text',
+    },
+  );
 
   // ── Madurez (TRL o educacional) ───────────────────────────────────────────
   let readinessStr = '';
@@ -1450,8 +1463,20 @@ function renderPilotCard(item, tab) {
 
   // ── Mini-meta: readiness + ventana ────────────────────────────────────────
   const miniMetaHtml = renderCardMiniMeta([
-    readinessStr ? { label: uiText('readiness'), value: readinessStr } : null,
-    windowLabel ? { label: uiText('window'), value: windowLabel } : null,
+    readinessStr ? {
+      label: uiText('readiness'),
+      value: readinessStr,
+      boxClass: 'border-eu-orange/20 bg-eu-orange/5',
+      labelClass: 'text-eu-orange',
+      valueClass: 'text-eu-text',
+    } : null,
+    windowLabel ? {
+      label: uiText('window'),
+      value: windowLabel,
+      boxClass: 'border-teal-200 bg-teal-50/70',
+      labelClass: 'text-teal-700',
+      valueClass: 'text-eu-text',
+    } : null,
   ].filter(Boolean));
 
   // ── Infraestructura (max 3 chips) ─────────────────────────────────────────
@@ -1462,7 +1487,7 @@ function renderPilotCard(item, tab) {
     if (infraLabels.length) {
       infraHtml = `<div class="mt-4">
         <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText(infraLabels.length > 1 ? 'infrastructures' : 'infrastructure'))}</p>
-        <div class="flex flex-wrap gap-2">${infraLabels.map(l => renderBadge(l, 'bg-slate-50 text-slate-700 border-slate-200')).join('')}</div>
+        <div class="flex flex-wrap gap-2">${infraLabels.map(l => renderBadge(l, 'bg-teal-50 text-teal-700 border-teal-200')).join('')}</div>
       </div>`;
     }
   }
@@ -1474,17 +1499,34 @@ function renderPilotCard(item, tab) {
     if (isFinished && results.headline) {
       kpiHtml = renderCardCallout(uiText('pilotResult'), results.headline, 'check-circle');
     } else if (!isFinished && pilotPlan.successCriteria?.length) {
-      kpiHtml = renderCardCallout(uiText('pilotCriteria'), pilotPlan.successCriteria[0].label, 'target');
+      kpiHtml = renderCardCallout(uiText('pilotCriteria'), pilotPlan.successCriteria[0].label, 'target', false, {
+        boxClass: 'bg-purple-50/70 border border-purple-200',
+        labelClass: 'text-purple-700',
+        valueClass: 'text-eu-text',
+      });
     }
   }
 
-  // ── Badges: stage + tipo (colores diferenciados) ─────────────────────────
+  // ── Badges: stage + type as parallel pilot metadata ──────────────────────
   const pilotTypeLabel = getPilotTypeLabel(core.pilotType);
   const stageLabel = getPilotStageLabel(core.pilotStage);
-  const stageTone = getPilotStageTone(core.pilotStage);
   const pilotMetaBadges = [
-    (showPilotStage && stageLabel) ? renderBadge(stageLabel, stageTone, 'pilotStage', core.pilotStage) : '',
-    (showPilotType && pilotTypeLabel) ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200', 'pilotType', core.pilotType) : '',
+    (showPilotStage && stageLabel)
+      ? renderBadge(
+          `${uiText('pilotStageLabel')}: ${stageLabel}`,
+          'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
+          'pilotStage',
+          core.pilotStage,
+        )
+      : '',
+    (showPilotType && pilotTypeLabel)
+      ? renderBadge(
+          `${uiText('pilotType')}: ${pilotTypeLabel}`,
+          'bg-eu-orange/10 text-eu-orange border-eu-orange/20',
+          'pilotType',
+          core.pilotType,
+        )
+      : '',
   ].filter(Boolean);
   const badgesHtml = pilotMetaBadges.length
     ? `<div class="mt-4">
@@ -1515,7 +1557,9 @@ function renderPilotCard(item, tab) {
     title: core.title,
     subtitle: core.summary,
     showStatusBadge: ccv.ch_pilot_status !== false,
+    statusBadgeTone: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
     extraBadge: showSectorBadge ? sectorLabel : '',
+    extraBadgeTone: 'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
     extraBadgeFilterKey: showSectorBadge && sectorLabel ? 'sector' : '',
     extraBadgeFilterValue: showSectorBadge && sectorLabel ? getSectorCode(sectorCode) : '',
     entity: entityLabel,
