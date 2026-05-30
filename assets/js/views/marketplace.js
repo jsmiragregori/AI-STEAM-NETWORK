@@ -1129,7 +1129,7 @@ function renderCardMiniMeta(items) {
       ${visible.map(item => `
         <div class="rounded-lg border px-3 py-2 ${item.boxClass || 'border-eu-border bg-white'}">
           <p class="text-[11px] font-bold uppercase tracking-wide ${item.labelClass || 'text-gray-500'}">${esc(item.label)}</p>
-          <p class="mt-0.5 text-sm font-semibold leading-5 ${item.valueClass || 'text-gray-700'}">${esc(item.value)}</p>
+          <p class="mt-0.5 text-sm leading-5 ${item.valueClass || 'font-semibold text-gray-700'}">${esc(item.value)}</p>
           ${item.secondaryValue ? `<p class="mt-1 text-sm leading-5 ${item.secondaryValueClass || 'text-gray-600'}">${esc(item.secondaryValue)}</p>` : ''}
           ${item.tertiaryValue ? `<div class="${item.tertiaryWrapClass || 'mt-2 border-t border-slate-100 pt-2'}"><p class="text-sm leading-5 ${item.tertiaryValueClass || 'text-gray-700'}">${esc(item.tertiaryValue)}</p></div>` : ''}
         </div>`).join('')}
@@ -1582,7 +1582,7 @@ function renderPilotCard(item, tab) {
       value: windowLabel,
       boxClass: 'border-teal-200 bg-teal-50/70',
       labelClass: 'text-teal-700',
-      valueClass: 'text-eu-text',
+      valueClass: 'font-normal text-eu-text',
     } : null,
   ].filter(Boolean));
 
@@ -1997,7 +1997,7 @@ function formatDateLong(isoStr) {
   try {
     const d = new Date(isoStr + 'T00:00:00');
     const lang = getLang();
-    const locale = lang === 'en' ? 'en-GB' : lang === 'va' ? 'ca-ES' : 'es-ES';
+    const locale = lang === 'en' ? 'en-US' : lang === 'va' ? 'ca-ES' : 'es-ES';
     return d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
   } catch {
     return isoStr;

@@ -6883,12 +6883,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotStage": "in-progress",
         "executionWindow": {
           "start": "2026-02-01",
-          "end": "2026-07-31",
-          "label": {
-            "es": "Feb – Jul 2026",
-            "en": "Feb – Jul 2026",
-            "va": "Feb – Jul 2026"
-          }
+          "end": "2026-07-31"
         },
         "evidenceLevel": "",
         "verificationStatus": "",
@@ -7867,12 +7862,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotStage": "in-progress",
         "executionWindow": {
           "start": "2026-01-15",
-          "end": "2026-12-15",
-          "label": {
-            "es": "Ene – Dic 2026",
-            "en": "Jan – Dec 2026",
-            "va": "Gen – Des 2026"
-          }
+          "end": "2026-12-15"
         },
         "evidenceLevel": "",
         "verificationStatus": "",
@@ -11434,12 +11424,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotStage": "published",
         "executionWindow": {
           "start": "2025-11-01",
-          "end": "2026-01-15",
-          "label": {
-            "es": "Nov 2025 – Ene 2026",
-            "en": "Nov 2025 – Jan 2026",
-            "va": "Nov 2025 – Gen 2026"
-          }
+          "end": "2026-01-15"
         },
         "evidenceLevel": "",
         "verificationStatus": "",
@@ -16995,12 +16980,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotStage": "published",
         "executionWindow": {
           "start": "2025-10-01",
-          "end": "2026-03-31",
-          "label": {
-            "es": "Oct 2025 – Mar 2026",
-            "en": "Oct 2025 – Mar 2026",
-            "va": "Oct 2025 – Mar 2026"
-          }
+          "end": "2026-03-31"
         },
         "evidenceLevel": "",
         "verificationStatus": "",
@@ -23783,12 +23763,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotStage": "published",
         "executionWindow": {
           "start": "2025-11-01",
-          "end": "2025-12-15",
-          "label": {
-            "es": "Nov – Dic 2025",
-            "en": "Nov – Dec 2025",
-            "va": "Nov – Des 2025"
-          }
+          "end": "2025-12-15"
         },
         "evidenceLevel": "",
         "verificationStatus": "",
@@ -26270,12 +26245,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotStage": "published",
         "executionWindow": {
           "start": "2025-09-01",
-          "end": "2026-01-31",
-          "label": {
-            "es": "Sep 2025 – Ene 2026",
-            "en": "Sep 2025 – Jan 2026",
-            "va": "Set 2025 – Gen 2026"
-          }
+          "end": "2026-01-31"
         },
         "evidenceLevel": "",
         "verificationStatus": "",
@@ -27069,12 +27039,7 @@ export const MARKETPLACE_CONFIG = {
         "pilotStage": "in-progress",
         "executionWindow": {
           "start": "2026-02-01",
-          "end": "2026-09-30",
-          "label": {
-            "es": "Feb – Sep 2026",
-            "en": "Feb – Sep 2026",
-            "va": "Feb – Set 2026"
-          }
+          "end": "2026-09-30"
         },
         "evidenceLevel": "",
         "verificationStatus": "",
@@ -40301,12 +40266,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotStage": "in-progress",
           "executionWindow": {
             "start": "2026-02-01",
-            "end": "2026-07-31",
-            "label": {
-              "es": "Feb – Jul 2026",
-              "en": "Feb – Jul 2026",
-              "va": "Feb – Jul 2026"
-            }
+            "end": "2026-07-31"
           },
           "evidenceLevel": "",
           "verificationStatus": "",
@@ -41285,12 +41245,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotStage": "in-progress",
           "executionWindow": {
             "start": "2026-01-15",
-            "end": "2026-12-15",
-            "label": {
-              "es": "Ene – Dic 2026",
-              "en": "Jan – Dec 2026",
-              "va": "Gen – Des 2026"
-            }
+            "end": "2026-12-15"
           },
           "evidenceLevel": "",
           "verificationStatus": "",
@@ -42272,12 +42227,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotStage": "published",
           "executionWindow": {
             "start": "2025-11-01",
-            "end": "2026-01-15",
-            "label": {
-              "es": "Nov 2025 – Ene 2026",
-              "en": "Nov 2025 – Jan 2026",
-              "va": "Nov 2025 – Gen 2026"
-            }
+            "end": "2026-01-15"
           },
           "evidenceLevel": "",
           "verificationStatus": "",
@@ -43065,12 +43015,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotStage": "published",
           "executionWindow": {
             "start": "2025-10-01",
-            "end": "2026-03-31",
-            "label": {
-              "es": "Oct 2025 – Mar 2026",
-              "en": "Oct 2025 – Mar 2026",
-              "va": "Oct 2025 – Mar 2026"
-            }
+            "end": "2026-03-31"
           },
           "evidenceLevel": "",
           "verificationStatus": "",
@@ -44059,12 +44004,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotStage": "published",
           "executionWindow": {
             "start": "2025-11-01",
-            "end": "2025-12-15",
-            "label": {
-              "es": "Nov – Dic 2025",
-              "en": "Nov – Dec 2025",
-              "va": "Nov – Des 2025"
-            }
+            "end": "2025-12-15"
           },
           "evidenceLevel": "",
           "verificationStatus": "",
@@ -44890,12 +44830,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotStage": "published",
           "executionWindow": {
             "start": "2025-09-01",
-            "end": "2026-01-31",
-            "label": {
-              "es": "Sep 2025 – Ene 2026",
-              "en": "Sep 2025 – Jan 2026",
-              "va": "Set 2025 – Gen 2026"
-            }
+            "end": "2026-01-31"
           },
           "evidenceLevel": "",
           "verificationStatus": "",
@@ -45689,12 +45624,7 @@ export const MARKETPLACE_CONFIG = {
           "pilotStage": "in-progress",
           "executionWindow": {
             "start": "2026-02-01",
-            "end": "2026-09-30",
-            "label": {
-              "es": "Feb – Sep 2026",
-              "en": "Feb – Sep 2026",
-              "va": "Feb – Set 2026"
-            }
+            "end": "2026-09-30"
           },
           "evidenceLevel": "",
           "verificationStatus": "",
