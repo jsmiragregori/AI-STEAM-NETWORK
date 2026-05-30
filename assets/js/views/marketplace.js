@@ -1490,9 +1490,12 @@ function renderPilotCard(item, tab) {
   // ── CTA ───────────────────────────────────────────────────────────────────
   const ef = item.externalFlow || {};
   const extUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : null;
+  const ctaLabel = pickLang({ es: 'Ver pilotaje', en: 'View pilot', va: 'Veure pilot' });
   const ctaHtml = extUrl
-    ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang(ef.primaryAction?.label) || uiText('viewDetail'))}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
-    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang({ es: 'Ver pilotaje', en: 'View pilot', va: 'Veure pilot' }))}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
+    ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang(ef.primaryAction?.label) || ctaLabel)} <i data-lucide="external-link" class="h-4 w-4"></i></a>`
+    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(ctaLabel)} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
+  const leadName = pickLang(item.ownership?.lead?.name, item.ownership?.lead?.name || '');
+  const entityLabel = (ccv.ch_entity !== false && pres.showEntity !== false) ? leadName : null;
 
   return renderCardShell(item, tab, body, {
     title: core.title,
@@ -1500,7 +1503,7 @@ function renderPilotCard(item, tab) {
     extraBadge: ccv.ch_pilot_extraBadge !== false ? getSectorLabel(core.sector) : '',
     extraBadgeFilterKey: ccv.ch_pilot_extraBadge !== false ? 'sector' : '',
     extraBadgeFilterValue: ccv.ch_pilot_extraBadge !== false ? getSectorCode(core.sector) : '',
-    entity: item.ownership?.lead?.name || '',
+    entity: entityLabel,
     ctaHtml,
   });
 }
