@@ -278,6 +278,10 @@ const UI_TEXT = {
     en: 'Readiness',
     va: 'Maduresa',
   },
+  infrastructure: { es: 'Infraestructura', en: 'Infrastructure', va: 'Infraestructura' },
+  infrastructures: { es: 'Infraestructuras', en: 'Infrastructure', va: 'Infraestructures' },
+  pilotMetadata: { es: 'Datos del piloto', en: 'Pilot details', va: 'Dades del pilot' },
+  pilotMetadataSingle: { es: 'Dato del piloto', en: 'Pilot detail', va: 'Dada del pilot' },
   pilotStageLabel: {
     es: 'Fase',
     en: 'Stage',
@@ -777,6 +781,7 @@ function getItemFilterValue(item, key) {
   if (key === 'evidenceLevel') return item.core?.evidenceLevel || item.evidence?.evidenceLevel || '';
   if (key === 'verificationStatus') return item.core?.verificationStatus || item.classification?.verificationStatus || '';
   if (key === 'pilotType') return item.core?.pilotType || '';
+  if (key === 'pilotStage') return item.core?.pilotStage || '';
   if (key === 'helix') return asArray(item.core?.helix);
   if (key === 'pilotStatus') return item.classification?.pilotStatus || '';
   if (key === 'validationType') return item.core?.validationType || '';
@@ -817,10 +822,12 @@ function getFilterDefinitions(tabId) {
   }
   if (tabId === 'pilots') {
     return [
+      common.sector,
+      common.status,
+      { key: 'pilotStage', label: uiText('filterBy') + ' ' + uiText('pilotStageLabel'), labeler: getPilotStageLabel },
       { key: 'pilotType', label: uiText('filterBy') + ' ' + uiText('pilotType'), labeler: getPilotTypeLabel },
       { key: 'pilotStatus', label: uiText('filterBy') + ' ' + uiText('pilotStatus'), labeler: getPilotStatusLabel },
       { key: 'helix', label: uiText('filterBy') + ' ' + uiText('helix'), labeler: getHelixLabel },
-      common.sector,
     ];
   }
   if (tabId === 'validations') {
@@ -1411,6 +1418,10 @@ function renderPilotCard(item, tab) {
   const impl = item.implementation || {};
   const readiness = impl.readiness || {};
   const results = item.results || {};
+  const classification = item.classification || {};
+  const sectorCode = core.sector || classification.sector || '';
+  const sectorLabel = getSectorLabel(sectorCode);
+  const showSectorBadge = ccv.ch_pilot_sector !== false && pres.showSector !== false;
 
   // ── Hypothesis (bloque principal de la card) ──────────────────────────────
   const resultBlockLabel = pickLang(pres.resultBlockLabel) || uiText('whatIsTested');
@@ -1444,7 +1455,10 @@ function renderPilotCard(item, tab) {
     const infraLabels = asArray(impl.infrastructure).slice(0, CARD_CHIP_MAX)
       .map(i => typeof i === 'string' ? i : pickLang(i.label, i.label)).filter(Boolean);
     if (infraLabels.length) {
-      infraHtml = `<div class="mt-4 flex flex-wrap gap-2">${infraLabels.map(l => renderBadge(l, 'bg-slate-50 text-slate-700 border-slate-200')).join('')}</div>`;
+      infraHtml = `<div class="mt-4">
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText(infraLabels.length > 1 ? 'infrastructures' : 'infrastructure'))}</p>
+        <div class="flex flex-wrap gap-2">${infraLabels.map(l => renderBadge(l, 'bg-slate-50 text-slate-700 border-slate-200')).join('')}</div>
+      </div>`;
     }
   }
 
@@ -1459,23 +1473,19 @@ function renderPilotCard(item, tab) {
     }
   }
 
-  // ── Descargables ──────────────────────────────────────────────────────────
-  let dlHtml = '';
-  if (pres.showDownloadsIndicator && item.hasDownloads && item.downloadCount) {
-    const n = item.downloadCount;
-    dlHtml = `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500"><i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i><span>${esc(n === 1 ? `1 ${uiText('downloadable')}` : `${n} ${uiText('downloadables')}`)}</span></div>`;
-  }
-
   // ── Badges: stage + tipo (colores diferenciados) ─────────────────────────
   const pilotTypeLabel = getPilotTypeLabel(core.pilotType);
   const stageLabel = getPilotStageLabel(core.pilotStage);
   const stageTone = getPilotStageTone(core.pilotStage);
-  const bottomBadges = [
-    stageLabel ? renderBadge(stageLabel, stageTone) : '',
-    pilotTypeLabel ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200', 'pilotType', core.pilotType) : '',
+  const pilotMetaBadges = [
+    (pres.showPilotStage !== false && stageLabel) ? renderBadge(stageLabel, stageTone, 'pilotStage', core.pilotStage) : '',
+    (pres.showPilotType !== false && pilotTypeLabel) ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200', 'pilotType', core.pilotType) : '',
   ].filter(Boolean);
-  const badgesHtml = bottomBadges.length
-    ? `<div class="mt-4 flex flex-wrap gap-2">${bottomBadges.join('')}</div>`
+  const badgesHtml = pilotMetaBadges.length
+    ? `<div class="mt-4">
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText(pilotMetaBadges.length > 1 ? 'pilotMetadata' : 'pilotMetadataSingle'))}</p>
+        <div class="flex flex-wrap gap-2">${pilotMetaBadges.join('')}</div>
+      </div>`
     : '';
 
   const body = `
@@ -1483,7 +1493,6 @@ function renderPilotCard(item, tab) {
     ${miniMetaHtml}
     ${infraHtml}
     ${kpiHtml}
-    ${dlHtml}
     ${badgesHtml}
   `;
 
@@ -1500,9 +1509,9 @@ function renderPilotCard(item, tab) {
   return renderCardShell(item, tab, body, {
     title: core.title,
     subtitle: core.summary,
-    extraBadge: ccv.ch_pilot_extraBadge !== false ? getSectorLabel(core.sector) : '',
-    extraBadgeFilterKey: ccv.ch_pilot_extraBadge !== false ? 'sector' : '',
-    extraBadgeFilterValue: ccv.ch_pilot_extraBadge !== false ? getSectorCode(core.sector) : '',
+    extraBadge: showSectorBadge ? sectorLabel : '',
+    extraBadgeFilterKey: showSectorBadge && sectorLabel ? 'sector' : '',
+    extraBadgeFilterValue: showSectorBadge && sectorLabel ? getSectorCode(sectorCode) : '',
     entity: entityLabel,
     ctaHtml,
   });
