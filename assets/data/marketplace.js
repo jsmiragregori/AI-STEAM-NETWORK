@@ -6878,7 +6878,6 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "nts",
         "sectors": [],
-        "stakeholderCategory": "knowledge",
         "levels": [
           "FP",
           "Docentes"
@@ -7558,7 +7557,6 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "hou",
         "sectors": [],
-        "stakeholderCategory": "knowledge",
         "levels": [
           "FP",
           "Máster"
@@ -10818,7 +10816,6 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "ene",
         "sectors": [],
-        "stakeholderCategory": "institutional",
         "levels": [
           "FP"
         ],
@@ -16118,7 +16115,6 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "mob",
         "sectors": [],
-        "stakeholderCategory": "institutional",
         "levels": [
           "FP"
         ],
@@ -22605,7 +22601,6 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "nts",
         "sectors": [],
-        "stakeholderCategory": "knowledge",
         "levels": [
           "Docentes",
           "Máster"
@@ -24820,7 +24815,6 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "mfg",
         "sectors": [],
-        "stakeholderCategory": "economic",
         "levels": [
           "FP"
         ],
@@ -25368,7 +25362,6 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "mfg",
         "sectors": [],
-        "stakeholderCategory": "knowledge",
         "levels": [
           "FP",
           "Máster"
@@ -38360,7 +38353,6 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "nts",
           "sectors": [],
-          "stakeholderCategory": "knowledge",
           "levels": [
             "FP",
             "Docentes"
@@ -39040,7 +39032,6 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "hou",
           "sectors": [],
-          "stakeholderCategory": "knowledge",
           "levels": [
             "FP",
             "Máster"
@@ -39720,7 +39711,6 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "ene",
           "sectors": [],
-          "stakeholderCategory": "institutional",
           "levels": [
             "FP"
           ],
@@ -40252,7 +40242,6 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "mob",
           "sectors": [],
-          "stakeholderCategory": "institutional",
           "levels": [
             "FP"
           ],
@@ -40945,7 +40934,6 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "nts",
           "sectors": [],
-          "stakeholderCategory": "knowledge",
           "levels": [
             "Docentes",
             "Máster"
@@ -41504,7 +41492,6 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "mfg",
           "sectors": [],
-          "stakeholderCategory": "economic",
           "levels": [
             "FP"
           ],
@@ -42052,7 +42039,6 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "mfg",
           "sectors": [],
-          "stakeholderCategory": "knowledge",
           "levels": [
             "FP",
             "Máster"
