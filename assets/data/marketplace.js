@@ -2593,9 +2593,9 @@ export const MARKETPLACE_CONFIG = {
       "id": 1,
       "visible": true,
       "label": {
-        "es": "Principios básicos observados",
+        "es": "Idea científica inicial",
         "en": "Basic principles observed",
-        "va": "Principis bàsics observats"
+        "va": "Idea científica inicial"
       }
     },
     {
@@ -2611,36 +2611,36 @@ export const MARKETPLACE_CONFIG = {
       "id": 3,
       "visible": true,
       "label": {
-        "es": "Prueba de concepto experimental",
+        "es": "Primera prueba experimental de concepto",
         "en": "Experimental proof of concept",
-        "va": "Prova de concepte experimental"
+        "va": "Primera prova experimental de concepte"
       }
     },
     {
       "id": 4,
       "visible": true,
       "label": {
-        "es": "Tecnología validada en laboratorio",
+        "es": "Validación en laboratorio",
         "en": "Technology validated in lab",
-        "va": "Tecnologia validada en laboratori"
+        "va": "Validació en laboratori"
       }
     },
     {
       "id": 5,
       "visible": true,
       "label": {
-        "es": "Tecnología validada en entorno relevante",
+        "es": "Validación en entorno relevante o simulado",
         "en": "Technology validated in relevant environment",
-        "va": "Tecnologia validada en entorn rellevant"
+        "va": "Validació en entorn rellevant o simulat"
       }
     },
     {
       "id": 6,
       "visible": true,
       "label": {
-        "es": "Tecnología demostrada en entorno relevante",
+        "es": "Demostración de prototipo en entorno relevante",
         "en": "Technology demonstrated in relevant environment",
-        "va": "Tecnologia demostrada en entorn rellevant"
+        "va": "Demostració de prototip en entorn rellevant"
       }
     },
     {
@@ -2657,7 +2657,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "label": {
         "es": "Sistema completo y cualificado",
-        "en": "System complete and qualified",
+        "en": "Complete and qualified system",
         "va": "Sistema complet i qualificat"
       }
     },
@@ -2665,9 +2665,9 @@ export const MARKETPLACE_CONFIG = {
       "id": 9,
       "visible": true,
       "label": {
-        "es": "Sistema probado con éxito en entorno operacional",
-        "en": "Actual system proven in operational environment",
-        "va": "Sistema provat amb èxit en entorn operacional"
+        "es": "Sistema probado y funcionando en condiciones reales de uso",
+        "en": "System proven in real operating conditions",
+        "va": "Sistema provat i funcionant en condicions reals d'ús"
       }
     }
   ],
@@ -56539,9 +56539,9 @@ export const MARKETPLACE_CONFIG = {
         "id": 1,
         "visible": true,
         "label": {
-          "es": "Principios básicos observados",
+          "es": "Idea científica inicial",
           "en": "Basic principles observed",
-          "va": "Principis bàsics observats"
+          "va": "Idea científica inicial"
         }
       },
       {
@@ -56557,36 +56557,36 @@ export const MARKETPLACE_CONFIG = {
         "id": 3,
         "visible": true,
         "label": {
-          "es": "Prueba de concepto experimental",
+          "es": "Primera prueba experimental de concepto",
           "en": "Experimental proof of concept",
-          "va": "Prova de concepte experimental"
+          "va": "Primera prova experimental de concepte"
         }
       },
       {
         "id": 4,
         "visible": true,
         "label": {
-          "es": "Tecnología validada en laboratorio",
+          "es": "Validación en laboratorio",
           "en": "Technology validated in lab",
-          "va": "Tecnologia validada en laboratori"
+          "va": "Validació en laboratori"
         }
       },
       {
         "id": 5,
         "visible": true,
         "label": {
-          "es": "Tecnología validada en entorno relevante",
+          "es": "Validación en entorno relevante o simulado",
           "en": "Technology validated in relevant environment",
-          "va": "Tecnologia validada en entorn rellevant"
+          "va": "Validació en entorn rellevant o simulat"
         }
       },
       {
         "id": 6,
         "visible": true,
         "label": {
-          "es": "Tecnología demostrada en entorno relevante",
+          "es": "Demostración de prototipo en entorno relevante",
           "en": "Technology demonstrated in relevant environment",
-          "va": "Tecnologia demostrada en entorn rellevant"
+          "va": "Demostració de prototip en entorn rellevant"
         }
       },
       {
@@ -56603,7 +56603,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "label": {
           "es": "Sistema completo y cualificado",
-          "en": "System complete and qualified",
+          "en": "Complete and qualified system",
           "va": "Sistema complet i qualificat"
         }
       },
@@ -56611,9 +56611,9 @@ export const MARKETPLACE_CONFIG = {
         "id": 9,
         "visible": true,
         "label": {
-          "es": "Sistema probado con éxito en entorno operacional",
-          "en": "Actual system proven in operational environment",
-          "va": "Sistema provat amb èxit en entorn operacional"
+          "es": "Sistema probado y funcionando en condiciones reales de uso",
+          "en": "System proven in real operating conditions",
+          "va": "Sistema provat i funcionant en condicions reals d'ús"
         }
       }
     ],
