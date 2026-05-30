@@ -1422,6 +1422,11 @@ function renderPilotCard(item, tab) {
   const sectorCode = core.sector || classification.sector || '';
   const sectorLabel = getSectorLabel(sectorCode);
   const showSectorBadge = ccv.ch_pilot_sector !== false && pres.showSector !== false;
+  const showReadiness = ccv.ch_pilot_readiness !== false && pres.showReadiness !== false;
+  const showWindow = ccv.ch_pilot_window !== false && pres.showWindow !== false;
+  const showInfrastructure = ccv.ch_pilot_infrastructure !== false && pres.showInfrastructure !== false;
+  const showPilotStage = ccv.ch_pilot_stage !== false && pres.showPilotStage !== false;
+  const showPilotType = ccv.ch_pilot_type !== false && pres.showPilotType !== false;
 
   // ── Hypothesis (bloque principal de la card) ──────────────────────────────
   const resultBlockLabel = pickLang(pres.resultBlockLabel) || uiText('whatIsTested');
@@ -1431,7 +1436,7 @@ function renderPilotCard(item, tab) {
   let readinessStr = '';
   const trl = readiness.technologyReadiness;
   const er = readiness.educationalReadiness;
-  if (pres.showReadiness !== false) {
+  if (showReadiness) {
     if (trl?.enabled && trl?.level) {
       const trlLbl = pickLang(trl.label);
       readinessStr = `TRL ${trl.level}${trlLbl ? ` — ${trlLbl}` : ''}`;
@@ -1441,7 +1446,7 @@ function renderPilotCard(item, tab) {
   }
 
   // ── Ventana temporal ──────────────────────────────────────────────────────
-  const windowLabel = pres.showWindow !== false ? pickLang(core.executionWindow?.label) : '';
+  const windowLabel = showWindow ? pickLang(core.executionWindow?.label) : '';
 
   // ── Mini-meta: readiness + ventana ────────────────────────────────────────
   const miniMetaHtml = renderCardMiniMeta([
@@ -1451,7 +1456,7 @@ function renderPilotCard(item, tab) {
 
   // ── Infraestructura (max 3 chips) ─────────────────────────────────────────
   let infraHtml = '';
-  if (pres.showInfrastructure !== false) {
+  if (showInfrastructure) {
     const infraLabels = asArray(impl.infrastructure).slice(0, CARD_CHIP_MAX)
       .map(i => typeof i === 'string' ? i : pickLang(i.label, i.label)).filter(Boolean);
     if (infraLabels.length) {
@@ -1478,8 +1483,8 @@ function renderPilotCard(item, tab) {
   const stageLabel = getPilotStageLabel(core.pilotStage);
   const stageTone = getPilotStageTone(core.pilotStage);
   const pilotMetaBadges = [
-    (pres.showPilotStage !== false && stageLabel) ? renderBadge(stageLabel, stageTone, 'pilotStage', core.pilotStage) : '',
-    (pres.showPilotType !== false && pilotTypeLabel) ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200', 'pilotType', core.pilotType) : '',
+    (showPilotStage && stageLabel) ? renderBadge(stageLabel, stageTone, 'pilotStage', core.pilotStage) : '',
+    (showPilotType && pilotTypeLabel) ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200', 'pilotType', core.pilotType) : '',
   ].filter(Boolean);
   const badgesHtml = pilotMetaBadges.length
     ? `<div class="mt-4">
@@ -1509,6 +1514,7 @@ function renderPilotCard(item, tab) {
   return renderCardShell(item, tab, body, {
     title: core.title,
     subtitle: core.summary,
+    showStatusBadge: ccv.ch_pilot_status !== false,
     extraBadge: showSectorBadge ? sectorLabel : '',
     extraBadgeFilterKey: showSectorBadge && sectorLabel ? 'sector' : '',
     extraBadgeFilterValue: showSectorBadge && sectorLabel ? getSectorCode(sectorCode) : '',

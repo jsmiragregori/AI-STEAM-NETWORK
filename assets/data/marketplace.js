@@ -522,6 +522,13 @@ export const MARKETPLACE_CONFIG = {
     "ch_case_evidenceLevel": false,
     "ch_case_evidenceBadge": false,
     "ch_case_sdgs": true,
+    "ch_pilot_status": true,
+    "ch_pilot_sector": true,
+    "ch_pilot_readiness": true,
+    "ch_pilot_window": true,
+    "ch_pilot_infrastructure": true,
+    "ch_pilot_stage": true,
+    "ch_pilot_type": true,
     "ch_pilot_extraBadge": true,
     "ch_val_extraBadge": true,
     "ch_mentoring_type": true
