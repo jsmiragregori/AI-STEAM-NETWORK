@@ -1536,12 +1536,12 @@ function renderPilotCard(item, tab) {
   const classification = item.classification || {};
   const sectorCode = core.sector || classification.sector || '';
   const sectorLabel = getSectorLabel(sectorCode);
-  const showSectorBadge = ccv.ch_pilot_sector !== false && pres.showSector !== false;
+  const showSectorBadge = ccv.ch_pilot_sector !== false;
   const showReadiness = ccv.ch_pilot_readiness !== false && pres.showReadiness !== false;
   const showWindow = ccv.ch_pilot_window !== false && pres.showWindow !== false;
   const showInfrastructure = ccv.ch_pilot_infrastructure !== false && pres.showInfrastructure !== false;
-  const showPilotStage = ccv.ch_pilot_stage !== false && pres.showPilotStage !== false;
-  const showPilotType = ccv.ch_pilot_type !== false && pres.showPilotType !== false;
+  const showPilotStage = ccv.ch_pilot_stage !== false;
+  const showPilotType = ccv.ch_pilot_type !== false;
 
   // ── Hypothesis (bloque principal de la card) ──────────────────────────────
   const resultBlockLabel = pickLang(pres.resultBlockLabel) || uiText('whatIsTested');
