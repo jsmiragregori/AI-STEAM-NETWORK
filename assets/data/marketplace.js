@@ -531,6 +531,10 @@ export const MARKETPLACE_CONFIG = {
     "ch_pilot_type": true,
     "ch_pilot_extraBadge": true,
     "ch_val_extraBadge": true,
+    "ch_val_window": true,
+    "ch_val_stage": true,
+    "ch_val_environment": true,
+    "ch_val_decision": true,
     "ch_mentoring_type": true
   },
   "searchBlock": {

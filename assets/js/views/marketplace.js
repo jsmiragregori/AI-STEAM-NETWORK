@@ -1726,11 +1726,12 @@ function renderValidationCard(item, tab) {
     : '';
 
   // ── Ventana de validación (computed top-level, not in core) ──────────────
-  const windowLabel = pres.showWindow !== false ? pickLang(item.validationWindow?.label) : '';
+  const showWindow = ccv.ch_val_window !== false && pres.showWindow !== false;
+  const windowLabel = showWindow ? pickLang(item.validationWindow?.label) : '';
 
   // ── Entorno de validación (max 3 chips) ───────────────────────────────────
   let envHtml = '';
-  if (pres.showValidationEnvironment !== false) {
+  if (ccv.ch_val_environment !== false && pres.showValidationEnvironment !== false) {
     const envItems = asArray(validation.validationEnvironment).slice(0, CARD_CHIP_MAX)
       .map(e => pickLang(e.label)).filter(Boolean);
     if (envItems.length) {
@@ -1740,7 +1741,7 @@ function renderValidationCard(item, tab) {
 
   // ── Decisión ──────────────────────────────────────────────────────────────
   const decisionLabel = pickLang(decision.label);
-  const decisionHtml = (pres.showDecision !== false && decisionLabel)
+  const decisionHtml = (ccv.ch_val_decision !== false && pres.showDecision !== false && decisionLabel)
     ? `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500">
         <i data-lucide="check-circle-2" class="h-3.5 w-3.5 shrink-0 text-green-600"></i>
         <span>${esc(decisionLabel)}</span>
@@ -1755,7 +1756,7 @@ function renderValidationCard(item, tab) {
   }
 
   // ── Mini-meta: ventana + etapa de validación (ya traducida en computed field) ──
-  const stageLabel = pres.showValidationStage !== false ? pickLang(item.validationStageLabel) : '';
+  const stageLabel = (ccv.ch_val_stage !== false && pres.showValidationStage !== false) ? pickLang(item.validationStageLabel) : '';
   const stageMetaLabel = pickLang({ es: 'Etapa', en: 'Stage', va: 'Etapa' });
   const miniMetaHtml = renderCardMiniMeta([
     windowLabel ? { label: uiText('window'), value: windowLabel } : null,
@@ -1783,7 +1784,7 @@ function renderValidationCard(item, tab) {
     ${dlHtml}
   `;
 
-  const proposerName = pickLang(item.ownership?.proposer?.name) || '';
+  const proposerName = ccv.ch_entity !== false ? (pickLang(item.ownership?.proposer?.name) || '') : '';
 
   return renderCardShell(item, tab, body, {
     title: core.title,
