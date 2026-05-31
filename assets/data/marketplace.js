@@ -7448,16 +7448,16 @@ export const MARKETPLACE_CONFIG = {
             "id": null,
             "label": {
               "es": "Aula informática con ordenadores básicos (sin GPU dedicada)",
-              "en": "Aula informática con ordenadores básicos (sin GPU dedicada)",
-              "va": "Aula informática con ordenadores básicos (sin GPU dedicada)"
+              "en": "Computer lab with standard workstations (no dedicated GPU)",
+              "va": "Aula d'informàtica amb ordinadors bàsics (sense GPU dedicada)"
             }
           },
           {
             "id": null,
             "label": {
               "es": "Interfaz web Gradio desplegada localmente",
-              "en": "Interfaz web Gradio desplegada localmente",
-              "va": "Interfaz web Gradio desplegada localmente"
+              "en": "Locally deployed Gradio web interface",
+              "va": "Interfície web Gradio desplegada localment"
             }
           }
         ],
@@ -11574,15 +11574,27 @@ export const MARKETPLACE_CONFIG = {
           "infrastructure": [
             {
               "id": "aules",
-              "label": "Plataforma Aules"
+              "label": {
+                "es": "Plataforma Aules",
+                "en": "Aules platform",
+                "va": "Plataforma Aules"
+              }
             },
             {
               "id": "iot-sensors",
-              "label": "Sensores IoT aula"
+              "label": {
+                "es": "Sensores IoT aula",
+                "en": "Classroom IoT sensors",
+                "va": "Sensors IoT d'aula"
+              }
             },
             {
               "id": "energy-dataset",
-              "label": "Dataset energético anonimizado"
+              "label": {
+                "es": "Dataset energético anonimizado",
+                "en": "Anonymised energy dataset",
+                "va": "Dataset energètic anonimitzat"
+              }
             }
           ],
           "tools": [
@@ -11909,7 +11921,7 @@ export const MARKETPLACE_CONFIG = {
             "id": "aules",
             "label": {
               "es": "Plataforma Aules",
-              "en": "Plataforma Aules",
+              "en": "Aules platform",
               "va": "Plataforma Aules"
             }
           },
@@ -11917,16 +11929,16 @@ export const MARKETPLACE_CONFIG = {
             "id": "iot-sensors",
             "label": {
               "es": "Sensores IoT aula",
-              "en": "Sensores IoT aula",
-              "va": "Sensores IoT aula"
+              "en": "Classroom IoT sensors",
+              "va": "Sensors IoT d'aula"
             }
           },
           {
             "id": "energy-dataset",
             "label": {
               "es": "Dataset energético anonimizado",
-              "en": "Dataset energético anonimizado",
-              "va": "Dataset energético anonimizado"
+              "en": "Anonymised energy dataset",
+              "va": "Dataset energètic anonimitzat"
             }
           }
         ],
@@ -17541,24 +17553,24 @@ export const MARKETPLACE_CONFIG = {
             "id": null,
             "label": {
               "es": "Drones DJI Matrice 300 RTK con cámara Zenmuse H20T",
-              "en": "Drones DJI Matrice 300 RTK con cámara Zenmuse H20T",
-              "va": "Drones DJI Matrice 300 RTK con cámara Zenmuse H20T"
+              "en": "DJI Matrice 300 RTK drones with Zenmuse H20T camera",
+              "va": "Drones DJI Matrice 300 RTK amb càmera Zenmuse H20T"
             }
           },
           {
             "id": null,
             "label": {
               "es": "Portátil con GPU dedicada para inferencia en campo",
-              "en": "Portátil con GPU dedicada para inferencia en campo",
-              "va": "Portátil con GPU dedicada para inferencia en campo"
+              "en": "Laptop with dedicated GPU for field inference",
+              "va": "Portàtil amb GPU dedicada per a inferència en camp"
             }
           },
           {
             "id": null,
             "label": {
               "es": "Plataforma GIS para geolocalización y visualización de deterioros",
-              "en": "Plataforma GIS para geolocalización y visualización de deterioros",
-              "va": "Plataforma GIS para geolocalización y visualización de deterioros"
+              "en": "GIS platform for geolocation and deterioration visualisation",
+              "va": "Plataforma GIS per a geolocalització i visualització de deterioraments"
             }
           }
         ],
@@ -23908,15 +23920,27 @@ export const MARKETPLACE_CONFIG = {
           "infrastructure": [
             {
               "id": "classroom",
-              "label": "Aula universitaria equipada"
+              "label": {
+                "es": "Aula universitaria equipada",
+                "en": "Equipped university classroom",
+                "va": "Aula universitària equipada"
+              }
             },
             {
               "id": "audit-datasets",
-              "label": "Datasets reales de auditoría"
+              "label": {
+                "es": "Datasets reales de auditoría",
+                "en": "Real audit datasets",
+                "va": "Datasets reals d'auditoria"
+              }
             },
             {
               "id": "ai-steam-repo",
-              "label": "Repositorio AI-STEAM"
+              "label": {
+                "es": "Repositorio AI-STEAM",
+                "en": "AI-STEAM repository",
+                "va": "Repositori AI-STEAM"
+              }
             }
           ],
           "tools": [
@@ -24269,24 +24293,24 @@ export const MARKETPLACE_CONFIG = {
             "id": "classroom",
             "label": {
               "es": "Aula universitaria equipada",
-              "en": "Aula universitaria equipada",
-              "va": "Aula universitaria equipada"
+              "en": "Equipped university classroom",
+              "va": "Aula universitària equipada"
             }
           },
           {
             "id": "audit-datasets",
             "label": {
               "es": "Datasets reales de auditoría",
-              "en": "Datasets reales de auditoría",
-              "va": "Datasets reales de auditoría"
+              "en": "Real audit datasets",
+              "va": "Datasets reals d'auditoria"
             }
           },
           {
             "id": "ai-steam-repo",
             "label": {
               "es": "Repositorio AI-STEAM",
-              "en": "Repositorio AI-STEAM",
-              "va": "Repositorio AI-STEAM"
+              "en": "AI-STEAM repository",
+              "va": "Repositori AI-STEAM"
             }
           }
         ],
@@ -26389,15 +26413,27 @@ export const MARKETPLACE_CONFIG = {
           "infrastructure": [
             {
               "id": "ford-plant",
-              "label": "Planta Ford Valencia"
+              "label": {
+                "es": "Planta Ford Valencia",
+                "en": "Ford Valencia plant",
+                "va": "Planta Ford València"
+              }
             },
             {
               "id": "cobots-ur10",
-              "label": "Cobots industriales (UR10)"
+              "label": {
+                "es": "Cobots industriales (UR10)",
+                "en": "Industrial cobots (UR10)",
+                "va": "Cobots industrials (UR10)"
+              }
             },
             {
               "id": "fp-workshop",
-              "label": "Taller FP Mecatrónica"
+              "label": {
+                "es": "Taller FP Mecatrónica",
+                "en": "VET mechatronics workshop",
+                "va": "Taller FP Mecatrònica"
+              }
             }
           ],
           "tools": [
@@ -26739,24 +26775,24 @@ export const MARKETPLACE_CONFIG = {
             "id": "ford-plant",
             "label": {
               "es": "Planta Ford Valencia",
-              "en": "Planta Ford Valencia",
-              "va": "Planta Ford Valencia"
+              "en": "Ford Valencia plant",
+              "va": "Planta Ford València"
             }
           },
           {
             "id": "cobots-ur10",
             "label": {
               "es": "Cobots industriales (UR10)",
-              "en": "Cobots industriales (UR10)",
-              "va": "Cobots industriales (UR10)"
+              "en": "Industrial cobots (UR10)",
+              "va": "Cobots industrials (UR10)"
             }
           },
           {
             "id": "fp-workshop",
             "label": {
               "es": "Taller FP Mecatrónica",
-              "en": "Taller FP Mecatrónica",
-              "va": "Taller FP Mecatrónica"
+              "en": "VET mechatronics workshop",
+              "va": "Taller FP Mecatrònica"
             }
           }
         ],
@@ -27187,15 +27223,27 @@ export const MARKETPLACE_CONFIG = {
           "infrastructure": [
             {
               "id": "upv-lms",
-              "label": "Plataforma LMS UPV"
+              "label": {
+                "es": "Plataforma LMS UPV",
+                "en": "UPV LMS platform",
+                "va": "Plataforma LMS UPV"
+              }
             },
             {
               "id": "digital-twins-lab",
-              "label": "Laboratorio de gemelos digitales INESC TEC"
+              "label": {
+                "es": "Laboratorio de gemelos digitales INESC TEC",
+                "en": "INESC TEC digital twins lab",
+                "va": "Laboratori de bessons digitals INESC TEC"
+              }
             },
             {
               "id": "aules-fp",
-              "label": "Entorno Aules FP"
+              "label": {
+                "es": "Entorno Aules FP",
+                "en": "Aules VET environment",
+                "va": "Entorn Aules FP"
+              }
             }
           ],
           "tools": [
@@ -27510,7 +27558,7 @@ export const MARKETPLACE_CONFIG = {
             "id": "upv-lms",
             "label": {
               "es": "Plataforma LMS UPV",
-              "en": "Plataforma LMS UPV",
+              "en": "UPV LMS platform",
               "va": "Plataforma LMS UPV"
             }
           },
@@ -27518,16 +27566,16 @@ export const MARKETPLACE_CONFIG = {
             "id": "digital-twins-lab",
             "label": {
               "es": "Laboratorio de gemelos digitales INESC TEC",
-              "en": "Laboratorio de gemelos digitales INESC TEC",
-              "va": "Laboratorio de gemelos digitales INESC TEC"
+              "en": "INESC TEC digital twins lab",
+              "va": "Laboratori de bessons digitals INESC TEC"
             }
           },
           {
             "id": "aules-fp",
             "label": {
               "es": "Entorno Aules FP",
-              "en": "Entorno Aules FP",
-              "va": "Entorno Aules FP"
+              "en": "Aules VET environment",
+              "va": "Entorn Aules FP"
             }
           }
         ],
@@ -40831,16 +40879,16 @@ export const MARKETPLACE_CONFIG = {
               "id": null,
               "label": {
                 "es": "Aula informática con ordenadores básicos (sin GPU dedicada)",
-                "en": "Aula informática con ordenadores básicos (sin GPU dedicada)",
-                "va": "Aula informática con ordenadores básicos (sin GPU dedicada)"
+                "en": "Computer lab with standard workstations (no dedicated GPU)",
+                "va": "Aula d'informàtica amb ordinadors bàsics (sense GPU dedicada)"
               }
             },
             {
               "id": null,
               "label": {
                 "es": "Interfaz web Gradio desplegada localmente",
-                "en": "Interfaz web Gradio desplegada localmente",
-                "va": "Interfaz web Gradio desplegada localmente"
+                "en": "Locally deployed Gradio web interface",
+                "va": "Interfície web Gradio desplegada localment"
               }
             }
           ],
@@ -42377,15 +42425,27 @@ export const MARKETPLACE_CONFIG = {
             "infrastructure": [
               {
                 "id": "aules",
-                "label": "Plataforma Aules"
+                "label": {
+                  "es": "Plataforma Aules",
+                  "en": "Aules platform",
+                  "va": "Plataforma Aules"
+                }
               },
               {
                 "id": "iot-sensors",
-                "label": "Sensores IoT aula"
+                "label": {
+                  "es": "Sensores IoT aula",
+                  "en": "Classroom IoT sensors",
+                  "va": "Sensors IoT d'aula"
+                }
               },
               {
                 "id": "energy-dataset",
-                "label": "Dataset energético anonimizado"
+                "label": {
+                  "es": "Dataset energético anonimizado",
+                  "en": "Anonymised energy dataset",
+                  "va": "Dataset energètic anonimitzat"
+                }
               }
             ],
             "tools": [
@@ -42712,7 +42772,7 @@ export const MARKETPLACE_CONFIG = {
               "id": "aules",
               "label": {
                 "es": "Plataforma Aules",
-                "en": "Plataforma Aules",
+                "en": "Aules platform",
                 "va": "Plataforma Aules"
               }
             },
@@ -42720,16 +42780,16 @@ export const MARKETPLACE_CONFIG = {
               "id": "iot-sensors",
               "label": {
                 "es": "Sensores IoT aula",
-                "en": "Sensores IoT aula",
-                "va": "Sensores IoT aula"
+                "en": "Classroom IoT sensors",
+                "va": "Sensors IoT d'aula"
               }
             },
             {
               "id": "energy-dataset",
               "label": {
                 "es": "Dataset energético anonimizado",
-                "en": "Dataset energético anonimizado",
-                "va": "Dataset energético anonimizado"
+                "en": "Anonymised energy dataset",
+                "va": "Dataset energètic anonimitzat"
               }
             }
           ],
@@ -43576,24 +43636,24 @@ export const MARKETPLACE_CONFIG = {
               "id": null,
               "label": {
                 "es": "Drones DJI Matrice 300 RTK con cámara Zenmuse H20T",
-                "en": "Drones DJI Matrice 300 RTK con cámara Zenmuse H20T",
-                "va": "Drones DJI Matrice 300 RTK con cámara Zenmuse H20T"
+                "en": "DJI Matrice 300 RTK drones with Zenmuse H20T camera",
+                "va": "Drones DJI Matrice 300 RTK amb càmera Zenmuse H20T"
               }
             },
             {
               "id": null,
               "label": {
                 "es": "Portátil con GPU dedicada para inferencia en campo",
-                "en": "Portátil con GPU dedicada para inferencia en campo",
-                "va": "Portátil con GPU dedicada para inferencia en campo"
+                "en": "Laptop with dedicated GPU for field inference",
+                "va": "Portàtil amb GPU dedicada per a inferència en camp"
               }
             },
             {
               "id": null,
               "label": {
                 "es": "Plataforma GIS para geolocalización y visualización de deterioros",
-                "en": "Plataforma GIS para geolocalización y visualización de deterioros",
-                "va": "Plataforma GIS para geolocalización y visualización de deterioros"
+                "en": "GIS platform for geolocation and deterioration visualisation",
+                "va": "Plataforma GIS per a geolocalització i visualització de deterioraments"
               }
             }
           ],
@@ -44149,15 +44209,27 @@ export const MARKETPLACE_CONFIG = {
             "infrastructure": [
               {
                 "id": "classroom",
-                "label": "Aula universitaria equipada"
+                "label": {
+                  "es": "Aula universitaria equipada",
+                  "en": "Equipped university classroom",
+                  "va": "Aula universitària equipada"
+                }
               },
               {
                 "id": "audit-datasets",
-                "label": "Datasets reales de auditoría"
+                "label": {
+                  "es": "Datasets reales de auditoría",
+                  "en": "Real audit datasets",
+                  "va": "Datasets reals d'auditoria"
+                }
               },
               {
                 "id": "ai-steam-repo",
-                "label": "Repositorio AI-STEAM"
+                "label": {
+                  "es": "Repositorio AI-STEAM",
+                  "en": "AI-STEAM repository",
+                  "va": "Repositori AI-STEAM"
+                }
               }
             ],
             "tools": [
@@ -44510,24 +44582,24 @@ export const MARKETPLACE_CONFIG = {
               "id": "classroom",
               "label": {
                 "es": "Aula universitaria equipada",
-                "en": "Aula universitaria equipada",
-                "va": "Aula universitaria equipada"
+                "en": "Equipped university classroom",
+                "va": "Aula universitària equipada"
               }
             },
             {
               "id": "audit-datasets",
               "label": {
                 "es": "Datasets reales de auditoría",
-                "en": "Datasets reales de auditoría",
-                "va": "Datasets reales de auditoría"
+                "en": "Real audit datasets",
+                "va": "Datasets reals d'auditoria"
               }
             },
             {
               "id": "ai-steam-repo",
               "label": {
                 "es": "Repositorio AI-STEAM",
-                "en": "Repositorio AI-STEAM",
-                "va": "Repositorio AI-STEAM"
+                "en": "AI-STEAM repository",
+                "va": "Repositori AI-STEAM"
               }
             }
           ],
@@ -44974,15 +45046,27 @@ export const MARKETPLACE_CONFIG = {
             "infrastructure": [
               {
                 "id": "ford-plant",
-                "label": "Planta Ford Valencia"
+                "label": {
+                  "es": "Planta Ford Valencia",
+                  "en": "Ford Valencia plant",
+                  "va": "Planta Ford València"
+                }
               },
               {
                 "id": "cobots-ur10",
-                "label": "Cobots industriales (UR10)"
+                "label": {
+                  "es": "Cobots industriales (UR10)",
+                  "en": "Industrial cobots (UR10)",
+                  "va": "Cobots industrials (UR10)"
+                }
               },
               {
                 "id": "fp-workshop",
-                "label": "Taller FP Mecatrónica"
+                "label": {
+                  "es": "Taller FP Mecatrónica",
+                  "en": "VET mechatronics workshop",
+                  "va": "Taller FP Mecatrònica"
+                }
               }
             ],
             "tools": [
@@ -45324,24 +45408,24 @@ export const MARKETPLACE_CONFIG = {
               "id": "ford-plant",
               "label": {
                 "es": "Planta Ford Valencia",
-                "en": "Planta Ford Valencia",
-                "va": "Planta Ford Valencia"
+                "en": "Ford Valencia plant",
+                "va": "Planta Ford València"
               }
             },
             {
               "id": "cobots-ur10",
               "label": {
                 "es": "Cobots industriales (UR10)",
-                "en": "Cobots industriales (UR10)",
-                "va": "Cobots industriales (UR10)"
+                "en": "Industrial cobots (UR10)",
+                "va": "Cobots industrials (UR10)"
               }
             },
             {
               "id": "fp-workshop",
               "label": {
                 "es": "Taller FP Mecatrónica",
-                "en": "Taller FP Mecatrónica",
-                "va": "Taller FP Mecatrónica"
+                "en": "VET mechatronics workshop",
+                "va": "Taller FP Mecatrònica"
               }
             }
           ],
@@ -45772,15 +45856,27 @@ export const MARKETPLACE_CONFIG = {
             "infrastructure": [
               {
                 "id": "upv-lms",
-                "label": "Plataforma LMS UPV"
+                "label": {
+                  "es": "Plataforma LMS UPV",
+                  "en": "UPV LMS platform",
+                  "va": "Plataforma LMS UPV"
+                }
               },
               {
                 "id": "digital-twins-lab",
-                "label": "Laboratorio de gemelos digitales INESC TEC"
+                "label": {
+                  "es": "Laboratorio de gemelos digitales INESC TEC",
+                  "en": "INESC TEC digital twins lab",
+                  "va": "Laboratori de bessons digitals INESC TEC"
+                }
               },
               {
                 "id": "aules-fp",
-                "label": "Entorno Aules FP"
+                "label": {
+                  "es": "Entorno Aules FP",
+                  "en": "Aules VET environment",
+                  "va": "Entorn Aules FP"
+                }
               }
             ],
             "tools": [
@@ -46095,7 +46191,7 @@ export const MARKETPLACE_CONFIG = {
               "id": "upv-lms",
               "label": {
                 "es": "Plataforma LMS UPV",
-                "en": "Plataforma LMS UPV",
+                "en": "UPV LMS platform",
                 "va": "Plataforma LMS UPV"
               }
             },
@@ -46103,16 +46199,16 @@ export const MARKETPLACE_CONFIG = {
               "id": "digital-twins-lab",
               "label": {
                 "es": "Laboratorio de gemelos digitales INESC TEC",
-                "en": "Laboratorio de gemelos digitales INESC TEC",
-                "va": "Laboratorio de gemelos digitales INESC TEC"
+                "en": "INESC TEC digital twins lab",
+                "va": "Laboratori de bessons digitals INESC TEC"
               }
             },
             {
               "id": "aules-fp",
               "label": {
                 "es": "Entorno Aules FP",
-                "en": "Entorno Aules FP",
-                "va": "Entorno Aules FP"
+                "en": "Aules VET environment",
+                "va": "Entorn Aules FP"
               }
             }
           ],
