@@ -13598,9 +13598,7 @@ export const MARKETPLACE_CONFIG = {
         "basePath": "/assets/downloads/validations/validation-etica-ia-seleccion-personal-adm/",
         "items": []
       },
-      "resources": {
-        "externalLinks": []
-      },
+      "resources": null,
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
@@ -20543,9 +20541,7 @@ export const MARKETPLACE_CONFIG = {
         "basePath": "/assets/downloads/validations/validation-legal-datos-movilidad-mob/",
         "items": []
       },
-      "resources": {
-        "externalLinks": []
-      },
+      "resources": null,
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
@@ -21033,9 +21029,7 @@ export const MARKETPLACE_CONFIG = {
         "basePath": "/assets/downloads/validations/validation-tecnica-gemelo-digital-ene/",
         "items": []
       },
-      "resources": {
-        "externalLinks": []
-      },
+      "resources": null,
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
@@ -22662,9 +22656,7 @@ export const MARKETPLACE_CONFIG = {
         "basePath": "/assets/downloads/validations/validation-stakeholder-turismo-inteligente-tur/",
         "items": []
       },
-      "resources": {
-        "externalLinks": []
-      },
+      "resources": null,
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
@@ -23701,9 +23693,7 @@ export const MARKETPLACE_CONFIG = {
         "basePath": "/assets/downloads/validations/validation-pedagogica-control-calidad-mfg/",
         "items": []
       },
-      "resources": {
-        "externalLinks": []
-      },
+      "resources": null,
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
@@ -25634,9 +25624,7 @@ export const MARKETPLACE_CONFIG = {
         "basePath": "/assets/downloads/validations/validation-stakeholder-salud-digital-nts/",
         "items": []
       },
-      "resources": {
-        "externalLinks": []
-      },
+      "resources": null,
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
@@ -46938,9 +46926,7 @@ export const MARKETPLACE_CONFIG = {
           "basePath": "/assets/downloads/validations/validation-etica-ia-seleccion-personal-adm/",
           "items": []
         },
-        "resources": {
-          "externalLinks": []
-        },
+        "resources": null,
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
@@ -47414,9 +47400,7 @@ export const MARKETPLACE_CONFIG = {
           "basePath": "/assets/downloads/validations/validation-legal-datos-movilidad-mob/",
           "items": []
         },
-        "resources": {
-          "externalLinks": []
-        },
+        "resources": null,
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
@@ -47904,9 +47888,7 @@ export const MARKETPLACE_CONFIG = {
           "basePath": "/assets/downloads/validations/validation-tecnica-gemelo-digital-ene/",
           "items": []
         },
-        "resources": {
-          "externalLinks": []
-        },
+        "resources": null,
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
@@ -48391,9 +48373,7 @@ export const MARKETPLACE_CONFIG = {
           "basePath": "/assets/downloads/validations/validation-stakeholder-turismo-inteligente-tur/",
           "items": []
         },
-        "resources": {
-          "externalLinks": []
-        },
+        "resources": null,
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
@@ -48883,9 +48863,7 @@ export const MARKETPLACE_CONFIG = {
           "basePath": "/assets/downloads/validations/validation-pedagogica-control-calidad-mfg/",
           "items": []
         },
-        "resources": {
-          "externalLinks": []
-        },
+        "resources": null,
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
@@ -49379,9 +49357,7 @@ export const MARKETPLACE_CONFIG = {
           "basePath": "/assets/downloads/validations/validation-stakeholder-salud-digital-nts/",
           "items": []
         },
-        "resources": {
-          "externalLinks": []
-        },
+        "resources": null,
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
