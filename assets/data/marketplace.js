@@ -13231,11 +13231,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació ètica d'una proposta de sistema d'IA per al cribratge automàtic de candidats en oposicions i concursos de mèrits de l'administració pública valenciana. La validació conclou amb una recomanació de reformulació substancial abans de poder considerar-se apte per a pilot."
         },
         "entity": {
-          "name": "Dirección General de Función Pública — Generalitat Valenciana",
+          "name": "",
           "type": {
-            "es": "Administración pública",
-            "en": "Public administration",
-            "va": "Administració pública"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "caseStage": "",
@@ -13245,7 +13245,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "nts",
         "sectors": [],
-        "stakeholderCategory": "public-admin",
+        "stakeholderCategory": "",
         "levels": [
           "Máster"
         ],
@@ -13302,18 +13302,7 @@ export const MARKETPLACE_CONFIG = {
       "community": {
         "tab": "validations"
       },
-      "card": {
-        "title": {
-          "es": "Validación ética demo",
-          "en": "Demo ethical validation",
-          "va": "Validació ètica demo"
-        },
-        "summary": {
-          "es": "Caso demo de validación ética para completar el esquema v2 de validaciones.",
-          "en": "Demo ethical validation case to complete the v2 validation schema.",
-          "va": "Cas demo de validació ètica per a completar l'esquema v2 de validacions."
-        }
-      },
+      "card": {},
       "visibility": {},
       "detail": {},
       "access": {
@@ -20186,11 +20175,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació legal del marc de cessió i anonimització de les dades de rutes i lliuraments de Correos necessàries per al repte d'optimització d'última milla, confirmant la viabilitat de la cessió sota el RGPD i establint les condicions específiques d'anonimització i ús que han d'incloure's en les bases del repte."
         },
         "entity": {
-          "name": "Correos — Dirección de Operaciones Zona Mediterráneo",
+          "name": "",
           "type": {
-            "es": "Empresa",
-            "en": "Company",
-            "va": "Empresa"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "caseStage": "",
@@ -20200,7 +20189,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "mob",
         "sectors": [],
-        "stakeholderCategory": "industry",
+        "stakeholderCategory": "",
         "levels": [
           "Máster"
         ],
@@ -20257,18 +20246,7 @@ export const MARKETPLACE_CONFIG = {
       "community": {
         "tab": "validations"
       },
-      "card": {
-        "title": {
-          "es": "Validación legal demo",
-          "en": "Demo legal validation",
-          "va": "Validació legal demo"
-        },
-        "summary": {
-          "es": "Caso demo de validación legal para completar el esquema v2 de validaciones.",
-          "en": "Demo legal validation case to complete the v2 validation schema.",
-          "va": "Cas demo de validació legal per a completar l'esquema v2 de validacions."
-        }
-      },
+      "card": {},
       "visibility": {},
       "detail": {},
       "access": {
@@ -20659,11 +20637,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació tècnica del repte de bessona digital per a la xarxa elèctrica promogut per Endesa Distribució, confirmant la viabilitat de CARLA i ROS 2 com a stack tecnològic i la disponibilitat de dades SCADA anonimitzables per al desenvolupament del prototip."
         },
         "entity": {
-          "name": "Endesa Distribución S.A. — Área de Innovación Redes",
+          "name": "",
           "type": {
-            "es": "Empresa",
-            "en": "Company",
-            "va": "Empresa"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "caseStage": "",
@@ -20673,7 +20651,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "ene",
         "sectors": [],
-        "stakeholderCategory": "industry",
+        "stakeholderCategory": "",
         "levels": [
           "Máster"
         ],
@@ -20730,18 +20708,7 @@ export const MARKETPLACE_CONFIG = {
       "community": {
         "tab": "validations"
       },
-      "card": {
-        "title": {
-          "es": "Validación técnica demo",
-          "en": "Demo technical validation",
-          "va": "Validació tècnica demo"
-        },
-        "summary": {
-          "es": "Caso demo de validación técnica para completar el esquema v2 de validaciones.",
-          "en": "Demo technical validation case to complete the v2 validation schema.",
-          "va": "Cas demo de validació tècnica per a completar l'esquema v2 de validacions."
-        }
-      },
+      "card": {},
       "visibility": {},
       "detail": {},
       "access": {
@@ -22288,11 +22255,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació amb l'Agència Valenciana del Turisme, associacions hoteleres i plataformes de reserves de la demanda real de sistemes de personalització d'experiències turístiques amb IA, que va derivar en la publicació del repte d'anàlisi de sentiment i en l'inici de dos pilots de personalització de recomanacions en destinacions pilot de la Costa Blanca."
         },
         "entity": {
-          "name": "HOSBEC",
+          "name": "",
           "type": {
-            "es": "Asociación sectorial",
-            "en": "Sector association",
-            "va": "Associació sectorial"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "caseStage": "",
@@ -22302,7 +22269,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "cci",
         "sectors": [],
-        "stakeholderCategory": "sector-association",
+        "stakeholderCategory": "",
         "levels": [
           "FP",
           "Máster"
@@ -22361,18 +22328,7 @@ export const MARKETPLACE_CONFIG = {
       "community": {
         "tab": "validations"
       },
-      "card": {
-        "title": {
-          "es": "Validación turística demo",
-          "en": "Demo tourism validation",
-          "va": "Validació turística demo"
-        },
-        "summary": {
-          "es": "Caso demo de validación turística para completar el esquema v2 de validaciones.",
-          "en": "Demo tourism validation case to complete the v2 validation schema.",
-          "va": "Cas demo de validació turística per a completar l'esquema v2 de validacions."
-        }
-      },
+      "card": {},
       "visibility": {},
       "detail": {},
       "access": {
@@ -23319,11 +23275,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació de l'encaix curricular d'un mòdul de visió artificial per a control de qualitat en els cicles de FP de Fabricació Mecànica i Mecatrònica, confirmant la pertinència pedagògica i definint els requisits de formació docent necessaris per a la implantació autònoma."
         },
         "entity": {
-          "name": "Universitat de València — Departament de Didàctica",
+          "name": "",
           "type": {
-            "es": "Universidad",
-            "en": "University",
-            "va": "Universitat"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "caseStage": "",
@@ -23333,7 +23289,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "mfg",
         "sectors": [],
-        "stakeholderCategory": "university",
+        "stakeholderCategory": "",
         "levels": [
           "FP",
           "Docentes"
@@ -23392,18 +23348,7 @@ export const MARKETPLACE_CONFIG = {
       "community": {
         "tab": "validations"
       },
-      "card": {
-        "title": {
-          "es": "Validación pedagógica demo",
-          "en": "Demo pedagogical validation",
-          "va": "Validació pedagògica demo"
-        },
-        "summary": {
-          "es": "Caso demo de validación pedagógica para completar el esquema v2 de validaciones.",
-          "en": "Demo pedagogical validation case to complete the v2 validation schema.",
-          "va": "Cas demo de validació pedagògica per a completar l'esquema v2 de validacions."
-        }
-      },
+      "card": {},
       "visibility": {},
       "detail": {},
       "access": {
@@ -25245,11 +25190,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació amb hospitals públics, col·legis professionals sanitaris i centres de FP de la Comunitat Valenciana de la bretxa de competències digitals en salut que existeix entre la formació rebuda en FP Sanitari i les competències que demanden els entorns clínics actuals, amb classificació Track A per al màster universitari."
         },
         "entity": {
-          "name": "Consell Valencià d'Infermeria",
+          "name": "",
           "type": {
-            "es": "Entidad pública",
-            "en": "Public entity",
-            "va": "Entitat pública"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "caseStage": "",
@@ -25259,7 +25204,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "nts",
         "sectors": [],
-        "stakeholderCategory": "public-admin",
+        "stakeholderCategory": "",
         "levels": [
           "FP",
           "Máster",
@@ -25319,18 +25264,7 @@ export const MARKETPLACE_CONFIG = {
       "community": {
         "tab": "validations"
       },
-      "card": {
-        "title": {
-          "es": "Validación dual demo",
-          "en": "Demo dual validation",
-          "va": "Validació dual demo"
-        },
-        "summary": {
-          "es": "Caso demo de validación dual Track A + Track B para completar el esquema v2.",
-          "en": "Demo dual Track A + Track B validation case to complete the v2 schema.",
-          "va": "Cas demo de validació dual Track A + Track B per a completar l'esquema v2."
-        }
-      },
+      "card": {},
       "visibility": {},
       "detail": {},
       "access": {
@@ -27885,11 +27819,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació amb AVA-ASAJA i UVEG del repte sectorial sobre agricultura de precisió. Classificat Track A per a tractament acadèmic en el Màster."
         },
         "entity": {
-          "name": "AVA-ASAJA",
+          "name": "",
           "type": {
-            "es": "Asociación sectorial",
-            "en": "Sector association",
-            "va": "Associació sectorial"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "caseStage": "",
@@ -27899,7 +27833,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "agr",
         "sectors": [],
-        "stakeholderCategory": "sector-association",
+        "stakeholderCategory": "",
         "levels": [
           "FP",
           "Máster"
@@ -27958,18 +27892,7 @@ export const MARKETPLACE_CONFIG = {
       "community": {
         "tab": "validations"
       },
-      "card": {
-        "title": {
-          "es": "Validación sectorial demo",
-          "en": "Demo sectoral validation",
-          "va": "Validació sectorial demo"
-        },
-        "summary": {
-          "es": "Caso demo de validación sectorial para completar el esquema v2 de validaciones.",
-          "en": "Demo sectoral validation case to complete the v2 validation schema.",
-          "va": "Cas demo de validació sectorial per a completar l'esquema v2 de validacions."
-        }
-      },
+      "card": {},
       "visibility": {},
       "detail": {},
       "access": {
@@ -28408,11 +28331,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació acadèmica per l'Institut d'Enginyeria Energètica de la UPV i el grup de recerca SAIL de la UCLM de la pertinència científica i formativa de l'ús d'aprenentatge per reforç per a la gestió energètica adaptativa en edificis, confirmant el seu encaix com a contingut de màster i justificant la creació del Living Lab com a entorn de recerca-formació."
         },
         "entity": {
-          "name": "Instituto de Ingeniería Energética — Universitat Politècnica de València",
+          "name": "",
           "type": {
-            "es": "Universidad",
-            "en": "University",
-            "va": "Universitat"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "caseStage": "",
@@ -28422,7 +28345,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "hou",
         "sectors": [],
-        "stakeholderCategory": "university",
+        "stakeholderCategory": "",
         "levels": [
           "Máster",
           "FP"
@@ -28481,18 +28404,7 @@ export const MARKETPLACE_CONFIG = {
       "community": {
         "tab": "validations"
       },
-      "card": {
-        "title": {
-          "es": "Validación académica demo",
-          "en": "Demo academic validation",
-          "va": "Validació acadèmica demo"
-        },
-        "summary": {
-          "es": "Caso demo de validación académica para completar el esquema v2 de validaciones.",
-          "en": "Demo academic validation case to complete the v2 validation schema.",
-          "va": "Cas demo de validació acadèmica per a completar l'esquema v2 de validacions."
-        }
-      },
+      "card": {},
       "visibility": {},
       "detail": {},
       "access": {
@@ -28906,11 +28818,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació amb ASEVA i concessionaris valencians del repte sectorial sobre vehicle elèctric i formació dual. Classificat Track B per al disseny de mòdul FP dual en 2026-27."
         },
         "entity": {
-          "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
+          "name": "",
           "type": {
-            "es": "Asociación sectorial",
-            "en": "Sector association",
-            "va": "Associació sectorial"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "caseStage": "",
@@ -28920,7 +28832,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "mob",
         "sectors": [],
-        "stakeholderCategory": "sector-association",
+        "stakeholderCategory": "",
         "levels": [
           "FP"
         ],
@@ -28978,18 +28890,7 @@ export const MARKETPLACE_CONFIG = {
       "community": {
         "tab": "validations"
       },
-      "card": {
-        "title": {
-          "es": "Validación sectorial demo",
-          "en": "Demo sectoral validation",
-          "va": "Validació sectorial demo"
-        },
-        "summary": {
-          "es": "Caso demo de validación sectorial para completar el esquema v2 de validaciones.",
-          "en": "Demo sectoral validation case to complete the v2 validation schema.",
-          "va": "Cas demo de validació sectorial per a completar l'esquema v2 de validacions."
-        }
-      },
+      "card": {},
       "visibility": {},
       "detail": {},
       "access": {
@@ -46550,11 +46451,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Validació ètica d'una proposta de sistema d'IA per al cribratge automàtic de candidats en oposicions i concursos de mèrits de l'administració pública valenciana. La validació conclou amb una recomanació de reformulació substancial abans de poder considerar-se apte per a pilot."
           },
           "entity": {
-            "name": "Dirección General de Función Pública — Generalitat Valenciana",
+            "name": "",
             "type": {
-              "es": "Administración pública",
-              "en": "Public administration",
-              "va": "Administració pública"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "caseStage": "",
@@ -46564,7 +46465,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "nts",
           "sectors": [],
-          "stakeholderCategory": "public-admin",
+          "stakeholderCategory": "",
           "levels": [
             "Máster"
           ],
@@ -46621,18 +46522,7 @@ export const MARKETPLACE_CONFIG = {
         "community": {
           "tab": "validations"
         },
-        "card": {
-          "title": {
-            "es": "Validación ética demo",
-            "en": "Demo ethical validation",
-            "va": "Validació ètica demo"
-          },
-          "summary": {
-            "es": "Caso demo de validación ética para completar el esquema v2 de validaciones.",
-            "en": "Demo ethical validation case to complete the v2 validation schema.",
-            "va": "Cas demo de validació ètica per a completar l'esquema v2 de validacions."
-          }
-        },
+        "card": {},
         "visibility": {},
         "detail": {},
         "access": {
@@ -47036,11 +46926,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Validació legal del marc de cessió i anonimització de les dades de rutes i lliuraments de Correos necessàries per al repte d'optimització d'última milla, confirmant la viabilitat de la cessió sota el RGPD i establint les condicions específiques d'anonimització i ús que han d'incloure's en les bases del repte."
           },
           "entity": {
-            "name": "Correos — Dirección de Operaciones Zona Mediterráneo",
+            "name": "",
             "type": {
-              "es": "Empresa",
-              "en": "Company",
-              "va": "Empresa"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "caseStage": "",
@@ -47050,7 +46940,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "mob",
           "sectors": [],
-          "stakeholderCategory": "industry",
+          "stakeholderCategory": "",
           "levels": [
             "Máster"
           ],
@@ -47107,18 +46997,7 @@ export const MARKETPLACE_CONFIG = {
         "community": {
           "tab": "validations"
         },
-        "card": {
-          "title": {
-            "es": "Validación legal demo",
-            "en": "Demo legal validation",
-            "va": "Validació legal demo"
-          },
-          "summary": {
-            "es": "Caso demo de validación legal para completar el esquema v2 de validaciones.",
-            "en": "Demo legal validation case to complete the v2 validation schema.",
-            "va": "Cas demo de validació legal per a completar l'esquema v2 de validacions."
-          }
-        },
+        "card": {},
         "visibility": {},
         "detail": {},
         "access": {
@@ -47509,11 +47388,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Validació tècnica del repte de bessona digital per a la xarxa elèctrica promogut per Endesa Distribució, confirmant la viabilitat de CARLA i ROS 2 com a stack tecnològic i la disponibilitat de dades SCADA anonimitzables per al desenvolupament del prototip."
           },
           "entity": {
-            "name": "Endesa Distribución S.A. — Área de Innovación Redes",
+            "name": "",
             "type": {
-              "es": "Empresa",
-              "en": "Company",
-              "va": "Empresa"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "caseStage": "",
@@ -47523,7 +47402,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "ene",
           "sectors": [],
-          "stakeholderCategory": "industry",
+          "stakeholderCategory": "",
           "levels": [
             "Máster"
           ],
@@ -47580,18 +47459,7 @@ export const MARKETPLACE_CONFIG = {
         "community": {
           "tab": "validations"
         },
-        "card": {
-          "title": {
-            "es": "Validación técnica demo",
-            "en": "Demo technical validation",
-            "va": "Validació tècnica demo"
-          },
-          "summary": {
-            "es": "Caso demo de validación técnica para completar el esquema v2 de validaciones.",
-            "en": "Demo technical validation case to complete the v2 validation schema.",
-            "va": "Cas demo de validació tècnica per a completar l'esquema v2 de validacions."
-          }
-        },
+        "card": {},
         "visibility": {},
         "detail": {},
         "access": {
@@ -47996,11 +47864,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Validació amb l'Agència Valenciana del Turisme, associacions hoteleres i plataformes de reserves de la demanda real de sistemes de personalització d'experiències turístiques amb IA, que va derivar en la publicació del repte d'anàlisi de sentiment i en l'inici de dos pilots de personalització de recomanacions en destinacions pilot de la Costa Blanca."
           },
           "entity": {
-            "name": "HOSBEC",
+            "name": "",
             "type": {
-              "es": "Asociación sectorial",
-              "en": "Sector association",
-              "va": "Associació sectorial"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "caseStage": "",
@@ -48010,7 +47878,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "cci",
           "sectors": [],
-          "stakeholderCategory": "sector-association",
+          "stakeholderCategory": "",
           "levels": [
             "FP",
             "Máster"
@@ -48069,18 +47937,7 @@ export const MARKETPLACE_CONFIG = {
         "community": {
           "tab": "validations"
         },
-        "card": {
-          "title": {
-            "es": "Validación turística demo",
-            "en": "Demo tourism validation",
-            "va": "Validació turística demo"
-          },
-          "summary": {
-            "es": "Caso demo de validación turística para completar el esquema v2 de validaciones.",
-            "en": "Demo tourism validation case to complete the v2 validation schema.",
-            "va": "Cas demo de validació turística per a completar l'esquema v2 de validacions."
-          }
-        },
+        "card": {},
         "visibility": {},
         "detail": {},
         "access": {
@@ -48480,11 +48337,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Validació de l'encaix curricular d'un mòdul de visió artificial per a control de qualitat en els cicles de FP de Fabricació Mecànica i Mecatrònica, confirmant la pertinència pedagògica i definint els requisits de formació docent necessaris per a la implantació autònoma."
           },
           "entity": {
-            "name": "Universitat de València — Departament de Didàctica",
+            "name": "",
             "type": {
-              "es": "Universidad",
-              "en": "University",
-              "va": "Universitat"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "caseStage": "",
@@ -48494,7 +48351,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "mfg",
           "sectors": [],
-          "stakeholderCategory": "university",
+          "stakeholderCategory": "",
           "levels": [
             "FP",
             "Docentes"
@@ -48553,18 +48410,7 @@ export const MARKETPLACE_CONFIG = {
         "community": {
           "tab": "validations"
         },
-        "card": {
-          "title": {
-            "es": "Validación pedagógica demo",
-            "en": "Demo pedagogical validation",
-            "va": "Validació pedagògica demo"
-          },
-          "summary": {
-            "es": "Caso demo de validación pedagógica para completar el esquema v2 de validaciones.",
-            "en": "Demo pedagogical validation case to complete the v2 validation schema.",
-            "va": "Cas demo de validació pedagògica per a completar l'esquema v2 de validacions."
-          }
-        },
+        "card": {},
         "visibility": {},
         "detail": {},
         "access": {
@@ -48969,11 +48815,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Validació amb hospitals públics, col·legis professionals sanitaris i centres de FP de la Comunitat Valenciana de la bretxa de competències digitals en salut que existeix entre la formació rebuda en FP Sanitari i les competències que demanden els entorns clínics actuals, amb classificació Track A per al màster universitari."
           },
           "entity": {
-            "name": "Consell Valencià d'Infermeria",
+            "name": "",
             "type": {
-              "es": "Entidad pública",
-              "en": "Public entity",
-              "va": "Entitat pública"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "caseStage": "",
@@ -48983,7 +48829,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "nts",
           "sectors": [],
-          "stakeholderCategory": "public-admin",
+          "stakeholderCategory": "",
           "levels": [
             "FP",
             "Máster",
@@ -49043,18 +48889,7 @@ export const MARKETPLACE_CONFIG = {
         "community": {
           "tab": "validations"
         },
-        "card": {
-          "title": {
-            "es": "Validación dual demo",
-            "en": "Demo dual validation",
-            "va": "Validació dual demo"
-          },
-          "summary": {
-            "es": "Caso demo de validación dual Track A + Track B para completar el esquema v2.",
-            "en": "Demo dual Track A + Track B validation case to complete the v2 schema.",
-            "va": "Cas demo de validació dual Track A + Track B per a completar l'esquema v2."
-          }
-        },
+        "card": {},
         "visibility": {},
         "detail": {},
         "access": {
@@ -49462,11 +49297,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Validació amb AVA-ASAJA i UVEG del repte sectorial sobre agricultura de precisió. Classificat Track A per a tractament acadèmic en el Màster."
           },
           "entity": {
-            "name": "AVA-ASAJA",
+            "name": "",
             "type": {
-              "es": "Asociación sectorial",
-              "en": "Sector association",
-              "va": "Associació sectorial"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "caseStage": "",
@@ -49476,7 +49311,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "agr",
           "sectors": [],
-          "stakeholderCategory": "sector-association",
+          "stakeholderCategory": "",
           "levels": [
             "FP",
             "Máster"
@@ -49535,18 +49370,7 @@ export const MARKETPLACE_CONFIG = {
         "community": {
           "tab": "validations"
         },
-        "card": {
-          "title": {
-            "es": "Validación sectorial demo",
-            "en": "Demo sectoral validation",
-            "va": "Validació sectorial demo"
-          },
-          "summary": {
-            "es": "Caso demo de validación sectorial para completar el esquema v2 de validaciones.",
-            "en": "Demo sectoral validation case to complete the v2 validation schema.",
-            "va": "Cas demo de validació sectorial per a completar l'esquema v2 de validacions."
-          }
-        },
+        "card": {},
         "visibility": {},
         "detail": {},
         "access": {
@@ -49985,11 +49809,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Validació acadèmica per l'Institut d'Enginyeria Energètica de la UPV i el grup de recerca SAIL de la UCLM de la pertinència científica i formativa de l'ús d'aprenentatge per reforç per a la gestió energètica adaptativa en edificis, confirmant el seu encaix com a contingut de màster i justificant la creació del Living Lab com a entorn de recerca-formació."
           },
           "entity": {
-            "name": "Instituto de Ingeniería Energética — Universitat Politècnica de València",
+            "name": "",
             "type": {
-              "es": "Universidad",
-              "en": "University",
-              "va": "Universitat"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "caseStage": "",
@@ -49999,7 +49823,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "hou",
           "sectors": [],
-          "stakeholderCategory": "university",
+          "stakeholderCategory": "",
           "levels": [
             "Máster",
             "FP"
@@ -50058,18 +49882,7 @@ export const MARKETPLACE_CONFIG = {
         "community": {
           "tab": "validations"
         },
-        "card": {
-          "title": {
-            "es": "Validación académica demo",
-            "en": "Demo academic validation",
-            "va": "Validació acadèmica demo"
-          },
-          "summary": {
-            "es": "Caso demo de validación académica para completar el esquema v2 de validaciones.",
-            "en": "Demo academic validation case to complete the v2 validation schema.",
-            "va": "Cas demo de validació acadèmica per a completar l'esquema v2 de validacions."
-          }
-        },
+        "card": {},
         "visibility": {},
         "detail": {},
         "access": {
@@ -50483,11 +50296,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Validació amb ASEVA i concessionaris valencians del repte sectorial sobre vehicle elèctric i formació dual. Classificat Track B per al disseny de mòdul FP dual en 2026-27."
           },
           "entity": {
-            "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
+            "name": "",
             "type": {
-              "es": "Asociación sectorial",
-              "en": "Sector association",
-              "va": "Associació sectorial"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           "caseStage": "",
@@ -50497,7 +50310,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "mob",
           "sectors": [],
-          "stakeholderCategory": "sector-association",
+          "stakeholderCategory": "",
           "levels": [
             "FP"
           ],
@@ -50555,18 +50368,7 @@ export const MARKETPLACE_CONFIG = {
         "community": {
           "tab": "validations"
         },
-        "card": {
-          "title": {
-            "es": "Validación sectorial demo",
-            "en": "Demo sectoral validation",
-            "va": "Validació sectorial demo"
-          },
-          "summary": {
-            "es": "Caso demo de validación sectorial para completar el esquema v2 de validaciones.",
-            "en": "Demo sectoral validation case to complete the v2 validation schema.",
-            "va": "Cas demo de validació sectorial per a completar l'esquema v2 de validacions."
-          }
-        },
+        "card": {},
         "visibility": {},
         "detail": {},
         "access": {
