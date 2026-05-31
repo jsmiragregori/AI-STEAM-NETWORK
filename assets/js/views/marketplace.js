@@ -833,7 +833,6 @@ function getFilterDefinitions(tabId) {
       { key: 'pilotStage', label: uiText('filterBy') + ' ' + uiText('pilotStageLabel'), labeler: getPilotStageLabel },
       { key: 'pilotType', label: uiText('filterBy') + ' ' + uiText('pilotType'), labeler: getPilotTypeLabel },
       { key: 'pilotStatus', label: uiText('filterBy') + ' ' + uiText('pilotStatus'), labeler: getPilotStatusLabel },
-      { key: 'helix', label: uiText('filterBy') + ' ' + uiText('helix'), labeler: getHelixLabel },
     ];
   }
   if (tabId === 'validations') {
@@ -3722,6 +3721,7 @@ function renderPilotDetailV2(item) {
 
   // ── Sidebar: Personas y entidades ─────────────────────────────────────────
   const sidebarPeopleHtml = pres.people !== false ? (() => {
+    const helixLabels = asArray(core.helix).map(getHelixLabel).filter(Boolean);
     const leadHtml = ownership.lead?.name ? `
       <div>
         <p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-2">${esc(pickLang({ es: 'Entidad líder', en: 'Lead entity', va: 'Entitat líder' }))}</p>
@@ -3746,7 +3746,13 @@ function renderPilotDetailV2(item) {
         <div class="space-y-2">${orgList(partnerOrgs)}</div>
       </div>` : '';
 
-    const content = [leadHtml, sitesHtml, partnersHtml].filter(Boolean).join('');
+    const helixHtml = helixLabels.length ? `
+      <div class="mt-4">
+        <p class="text-xs font-bold uppercase tracking-wide text-gray-400 mb-2">${esc(pickLang({ es: 'Hélices implicadas', en: 'Helices involved', va: 'Hèlix implicades' }))}</p>
+        <div class="flex flex-wrap gap-2">${helixLabels.map(label => renderBadge(label, 'bg-eu-bg text-gray-700 border-eu-border')).join('')}</div>
+      </div>` : '';
+
+    const content = [leadHtml, sitesHtml, partnersHtml, helixHtml].filter(Boolean).join('');
     if (!content) return '';
     return `
       <section class="rounded-2xl border border-eu-border bg-white p-5 shadow-sm">
