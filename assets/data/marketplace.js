@@ -13615,9 +13615,8 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "validation",
-          "showValidationType": true,
           "showDecision": true,
-          "showEvidenceLevel": true,
+          "showValidationStage": true,
           "showWindow": true,
           "showValidationEnvironment": true,
           "showDownloadsIndicator": false,
@@ -20558,9 +20557,8 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "validation",
-          "showValidationType": true,
           "showDecision": true,
-          "showEvidenceLevel": true,
+          "showValidationStage": true,
           "showWindow": true,
           "showValidationEnvironment": true,
           "showDownloadsIndicator": false,
@@ -21046,9 +21044,8 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "validation",
-          "showValidationType": true,
           "showDecision": true,
-          "showEvidenceLevel": true,
+          "showValidationStage": true,
           "showWindow": true,
           "showValidationEnvironment": true,
           "showDownloadsIndicator": false,
@@ -22673,9 +22670,8 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "validation",
-          "showValidationType": true,
           "showDecision": true,
-          "showEvidenceLevel": true,
+          "showValidationStage": true,
           "showWindow": true,
           "showValidationEnvironment": true,
           "showDownloadsIndicator": false,
@@ -23710,9 +23706,8 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "validation",
-          "showValidationType": true,
           "showDecision": true,
-          "showEvidenceLevel": true,
+          "showValidationStage": true,
           "showWindow": true,
           "showValidationEnvironment": true,
           "showDownloadsIndicator": false,
@@ -25641,9 +25636,8 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "validation",
-          "showValidationType": true,
           "showDecision": true,
-          "showEvidenceLevel": true,
+          "showValidationStage": true,
           "showWindow": true,
           "showValidationEnvironment": true,
           "showDownloadsIndicator": false,
@@ -28312,9 +28306,8 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "validation",
-          "showValidationType": true,
           "showDecision": true,
-          "showEvidenceLevel": true,
+          "showValidationStage": true,
           "showWindow": true,
           "showValidationEnvironment": true,
           "showDownloadsIndicator": false,
@@ -28811,9 +28804,8 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "validation",
-          "showValidationType": true,
           "showDecision": true,
-          "showEvidenceLevel": true,
+          "showValidationStage": true,
           "showWindow": true,
           "showValidationEnvironment": true,
           "showDownloadsIndicator": false,
@@ -29340,9 +29332,8 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "validation",
-          "showValidationType": true,
           "showDecision": true,
-          "showEvidenceLevel": true,
+          "showValidationStage": true,
           "showWindow": true,
           "showValidationEnvironment": true,
           "showDownloadsIndicator": false,
@@ -46943,9 +46934,8 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "validation",
-            "showValidationType": true,
             "showDecision": true,
-            "showEvidenceLevel": true,
+            "showValidationStage": true,
             "showWindow": true,
             "showValidationEnvironment": true,
             "showDownloadsIndicator": false,
@@ -47417,9 +47407,8 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "validation",
-            "showValidationType": true,
             "showDecision": true,
-            "showEvidenceLevel": true,
+            "showValidationStage": true,
             "showWindow": true,
             "showValidationEnvironment": true,
             "showDownloadsIndicator": false,
@@ -47905,9 +47894,8 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "validation",
-            "showValidationType": true,
             "showDecision": true,
-            "showEvidenceLevel": true,
+            "showValidationStage": true,
             "showWindow": true,
             "showValidationEnvironment": true,
             "showDownloadsIndicator": false,
@@ -48390,9 +48378,8 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "validation",
-            "showValidationType": true,
             "showDecision": true,
-            "showEvidenceLevel": true,
+            "showValidationStage": true,
             "showWindow": true,
             "showValidationEnvironment": true,
             "showDownloadsIndicator": false,
@@ -48880,9 +48867,8 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "validation",
-            "showValidationType": true,
             "showDecision": true,
-            "showEvidenceLevel": true,
+            "showValidationStage": true,
             "showWindow": true,
             "showValidationEnvironment": true,
             "showDownloadsIndicator": false,
@@ -49374,9 +49360,8 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "validation",
-            "showValidationType": true,
             "showDecision": true,
-            "showEvidenceLevel": true,
+            "showValidationStage": true,
             "showWindow": true,
             "showValidationEnvironment": true,
             "showDownloadsIndicator": false,
@@ -49898,9 +49883,8 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "validation",
-            "showValidationType": true,
             "showDecision": true,
-            "showEvidenceLevel": true,
+            "showValidationStage": true,
             "showWindow": true,
             "showValidationEnvironment": true,
             "showDownloadsIndicator": false,
@@ -50397,9 +50381,8 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "validation",
-            "showValidationType": true,
             "showDecision": true,
-            "showEvidenceLevel": true,
+            "showValidationStage": true,
             "showWindow": true,
             "showValidationEnvironment": true,
             "showDownloadsIndicator": false,
@@ -50926,9 +50909,8 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "validation",
-            "showValidationType": true,
             "showDecision": true,
-            "showEvidenceLevel": true,
+            "showValidationStage": true,
             "showWindow": true,
             "showValidationEnvironment": true,
             "showDownloadsIndicator": false,

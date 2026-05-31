@@ -1070,9 +1070,11 @@ function renderCardShell(item, tab, body, options = {}) {
   const entity = options.entity !== undefined ? options.entity : pickLang(item.core?.entity?.name);
   const dateLabel = getItemDateLabel(item);
   const tone = TAB_TONES[tab.id] || TAB_TONES.challenges;
-  const statusRaw = item.core?.status;
+  const statusRaw = options.statusValue !== undefined ? options.statusValue : item.core?.status;
   const statusLabel = options.statusLabel !== undefined ? options.statusLabel : getStatusLabel(statusRaw);
-  const statusFilterKey = getFilterDefinitions(tab.id).some(d => d.key === 'status') ? 'status' : '';
+  const statusFilterKey = options.statusFilterKey !== undefined
+    ? options.statusFilterKey
+    : (getFilterDefinitions(tab.id).some(d => d.key === 'status') ? 'status' : '');
 
   return `
     <article class="group flex h-full flex-col rounded-xl border border-eu-border bg-white p-6 shadow-sm transition-colors hover:border-eu-blue">
@@ -1753,7 +1755,7 @@ function renderValidationCard(item, tab) {
   }
 
   // ── Mini-meta: ventana + etapa de validación (ya traducida en computed field) ──
-  const stageLabel = pres.showEvidenceLevel !== false ? pickLang(item.validationStageLabel) : '';
+  const stageLabel = pres.showValidationStage !== false ? pickLang(item.validationStageLabel) : '';
   const stageMetaLabel = pickLang({ es: 'Etapa', en: 'Stage', va: 'Etapa' });
   const miniMetaHtml = renderCardMiniMeta([
     windowLabel ? { label: uiText('window'), value: windowLabel } : null,
@@ -1767,7 +1769,10 @@ function renderValidationCard(item, tab) {
     ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(ctaLabel)}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
     : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(ctaLabel)}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
 
-  // ── Badge extra: sector (validationType ya aparece como badge de estado) ──
+  const validationTypeLabel = pickLang(item.validationTypeLabel) || getValidationTypeLabel(core.validationType);
+  const showSectorBadge = ccv.ch_val_extraBadge !== false;
+
+  // ── Badge extra: sector ───────────────────────────────────────────────────
   const extraBadge = ccv.ch_val_extraBadge !== false ? getSectorLabel(core.sector) : '';
 
   const body = `
@@ -1783,11 +1788,16 @@ function renderValidationCard(item, tab) {
   return renderCardShell(item, tab, body, {
     title: core.title,
     subtitle: core.summary,
+    statusLabel: validationTypeLabel,
+    statusValue: core.validationType || '',
+    statusFilterKey: validationTypeLabel ? 'validationType' : '',
+    statusBadgeTone: 'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
     extraBadge,
-    extraBadgeFilterKey: ccv.ch_val_extraBadge !== false ? 'sector' : '',
-    extraBadgeFilterValue: ccv.ch_val_extraBadge !== false ? getSectorCode(core.sector) : '',
+    extraBadgeFilterKey: showSectorBadge ? 'sector' : '',
+    extraBadgeFilterValue: showSectorBadge ? getSectorCode(core.sector) : '',
     entity: proposerName,
     ctaHtml,
+    hideTypeBadge: true,
   });
 }
 
