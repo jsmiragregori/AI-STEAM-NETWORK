@@ -1727,7 +1727,7 @@ function renderValidationCard(item, tab) {
 
   // ── Ventana de validación (computed top-level, not in core) ──────────────
   const showWindow = ccv.ch_val_window !== false && pres.showWindow !== false;
-  const windowLabel = showWindow ? pickLang(item.validationWindow?.label) : '';
+  const windowLabel = showWindow ? formatExecutionWindow(item.validationWindow) : '';
 
   // ── Entorno de validación (max 3 chips) ───────────────────────────────────
   let envHtml = '';
@@ -4377,7 +4377,7 @@ function renderOperationalSummary(item) {
     : '';
   const created = pickLang(item.core?.publishedAtLabel);
   const updated = pickLang(item.core?.revisionDateLabel);
-  const window = isValidation ? pickLang(item.validationWindow?.label) : '';
+  const window = isValidation ? formatExecutionWindow(item.validationWindow) : '';
 
   const metaRows = [
     sector && [uiText('sector') || 'Sector', sector],

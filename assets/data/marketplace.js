@@ -13639,12 +13639,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "validationWindow": {
         "start": "2026-01-10",
-        "end": "2026-02-28",
-        "label": {
-          "es": "Ene – Feb 2026",
-          "en": "Jan – Feb 2026",
-          "va": "Gen – Feb 2026"
-        }
+        "end": "2026-02-28"
       },
       "criteriaCount": 4,
       "validationTypeLabel": {
@@ -20570,12 +20565,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "validationWindow": {
         "start": "2026-01-05",
-        "end": "2026-02-15",
-        "label": {
-          "es": "Ene – Feb 2026",
-          "en": "Jan – Feb 2026",
-          "va": "Gen – Feb 2026"
-        }
+        "end": "2026-02-15"
       },
       "criteriaCount": 3,
       "validationTypeLabel": {
@@ -21046,12 +21036,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "validationWindow": {
         "start": "2025-12-01",
-        "end": "2026-02-10",
-        "label": {
-          "es": "Dic 2025 – Feb 2026",
-          "en": "Dec 2025 – Feb 2026",
-          "va": "Des 2025 – Feb 2026"
-        }
+        "end": "2026-02-10"
       },
       "criteriaCount": 4,
       "validationTypeLabel": {
@@ -22661,12 +22646,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "validationWindow": {
         "start": "2025-10-15",
-        "end": "2025-12-20",
-        "label": {
-          "es": "Oct – Dic 2025",
-          "en": "Oct – Dec 2025",
-          "va": "Oct – Des 2025"
-        }
+        "end": "2025-12-20"
       },
       "criteriaCount": 3,
       "validationTypeLabel": {
@@ -23686,12 +23666,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "validationWindow": {
         "start": "2025-11-01",
-        "end": "2026-01-15",
-        "label": {
-          "es": "Nov 2025 – Ene 2026",
-          "en": "Nov 2025 – Jan 2026",
-          "va": "Nov 2025 – Gen 2026"
-        }
+        "end": "2026-01-15"
       },
       "criteriaCount": 4,
       "validationTypeLabel": {
@@ -25605,12 +25580,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "validationWindow": {
         "start": "2025-09-15",
-        "end": "2025-11-30",
-        "label": {
-          "es": "Sep – Nov 2025",
-          "en": "Sep – Nov 2025",
-          "va": "Set – Nov 2025"
-        }
+        "end": "2025-11-30"
       },
       "criteriaCount": 3,
       "validationTypeLabel": {
@@ -28264,12 +28234,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "validationWindow": {
         "start": "2025-10-01",
-        "end": "2026-01-25",
-        "label": {
-          "es": "Oct 2025 – Ene 2026",
-          "en": "Oct 2025 – Jan 2026",
-          "va": "Oct 2025 – Gen 2026"
-        }
+        "end": "2026-01-25"
       },
       "criteriaCount": 4,
       "validationTypeLabel": {
@@ -28751,12 +28716,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "validationWindow": {
         "start": "2025-09-01",
-        "end": "2025-11-15",
-        "label": {
-          "es": "Sep – Nov 2025",
-          "en": "Sep – Nov 2025",
-          "va": "Set – Nov 2025"
-        }
+        "end": "2025-11-15"
       },
       "criteriaCount": 3,
       "validationTypeLabel": {
@@ -29268,12 +29228,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "validationWindow": {
         "start": "2025-06-01",
-        "end": "2025-10-20",
-        "label": {
-          "es": "Jun – Oct 2025",
-          "en": "Jun – Oct 2025",
-          "va": "Jun – Oct 2025"
-        }
+        "end": "2025-10-20"
       },
       "criteriaCount": 4,
       "validationTypeLabel": {
@@ -46859,12 +46814,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "validationWindow": {
           "start": "2026-01-10",
-          "end": "2026-02-28",
-          "label": {
-            "es": "Ene – Feb 2026",
-            "en": "Jan – Feb 2026",
-            "va": "Gen – Feb 2026"
-          }
+          "end": "2026-02-28"
         },
         "criteriaCount": 4,
         "validationTypeLabel": {
@@ -47321,12 +47271,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "validationWindow": {
           "start": "2026-01-05",
-          "end": "2026-02-15",
-          "label": {
-            "es": "Ene – Feb 2026",
-            "en": "Jan – Feb 2026",
-            "va": "Gen – Feb 2026"
-          }
+          "end": "2026-02-15"
         },
         "criteriaCount": 3,
         "validationTypeLabel": {
@@ -47797,12 +47742,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "validationWindow": {
           "start": "2025-12-01",
-          "end": "2026-02-10",
-          "label": {
-            "es": "Dic 2025 – Feb 2026",
-            "en": "Dec 2025 – Feb 2026",
-            "va": "Des 2025 – Feb 2026"
-          }
+          "end": "2026-02-10"
         },
         "criteriaCount": 4,
         "validationTypeLabel": {
@@ -48270,12 +48210,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "validationWindow": {
           "start": "2025-10-15",
-          "end": "2025-12-20",
-          "label": {
-            "es": "Oct – Dic 2025",
-            "en": "Oct – Dec 2025",
-            "va": "Oct – Des 2025"
-          }
+          "end": "2025-12-20"
         },
         "criteriaCount": 3,
         "validationTypeLabel": {
@@ -48748,12 +48683,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "validationWindow": {
           "start": "2025-11-01",
-          "end": "2026-01-15",
-          "label": {
-            "es": "Nov 2025 – Ene 2026",
-            "en": "Nov 2025 – Jan 2026",
-            "va": "Nov 2025 – Gen 2026"
-          }
+          "end": "2026-01-15"
         },
         "criteriaCount": 4,
         "validationTypeLabel": {
@@ -49230,12 +49160,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "validationWindow": {
           "start": "2025-09-15",
-          "end": "2025-11-30",
-          "label": {
-            "es": "Sep – Nov 2025",
-            "en": "Sep – Nov 2025",
-            "va": "Set – Nov 2025"
-          }
+          "end": "2025-11-30"
         },
         "criteriaCount": 3,
         "validationTypeLabel": {
@@ -49742,12 +49667,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "validationWindow": {
           "start": "2025-10-01",
-          "end": "2026-01-25",
-          "label": {
-            "es": "Oct 2025 – Ene 2026",
-            "en": "Oct 2025 – Jan 2026",
-            "va": "Oct 2025 – Gen 2026"
-          }
+          "end": "2026-01-25"
         },
         "criteriaCount": 4,
         "validationTypeLabel": {
@@ -50229,12 +50149,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "validationWindow": {
           "start": "2025-09-01",
-          "end": "2025-11-15",
-          "label": {
-            "es": "Sep – Nov 2025",
-            "en": "Sep – Nov 2025",
-            "va": "Set – Nov 2025"
-          }
+          "end": "2025-11-15"
         },
         "criteriaCount": 3,
         "validationTypeLabel": {
@@ -50746,12 +50661,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "validationWindow": {
           "start": "2025-06-01",
-          "end": "2025-10-20",
-          "label": {
-            "es": "Jun – Oct 2025",
-            "en": "Jun – Oct 2025",
-            "va": "Jun – Oct 2025"
-          }
+          "end": "2025-10-20"
         },
         "criteriaCount": 4,
         "validationTypeLabel": {
