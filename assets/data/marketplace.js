@@ -13221,9 +13221,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Validación ética — Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
-          "en": "Ethical validation — Use of AI for candidate screening in public administration selection processes",
-          "va": "Validació ètica — Ús d'IA per al cribratge de candidats en processos selectius de l'administració pública"
+          "es": "Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
+          "en": "Use of AI for candidate screening in public administration selection processes",
+          "va": "Ús d'IA per al cribratge de candidats en processos selectius de l'administració pública"
         },
         "summary": {
           "es": "Validación ética de una propuesta de sistema de IA para el cribado automático de candidatos en oposiciones y concursos de méritos de la administración pública valenciana. La validación concluye con una recomendación de reformulación sustancial antes de poder considerarse apto para piloto.",
@@ -13245,11 +13245,11 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "nts",
         "sectors": [],
-        "stakeholderCategory": "",
+        "stakeholderCategory": "institutional",
         "levels": [
           "Máster"
         ],
-        "pilotType": "",
+        "pilotType": "stakeholder-validation",
         "validationType": "ethical-validation",
         "validationStage": "completed",
         "mentoringType": "",
@@ -13442,9 +13442,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "legal-compliance",
             "label": {
-              "es": "Cumplimiento del Reglamento Europeo de IA y normativa de empleo público",
-              "en": "Compliance with the European AI Act and public employment regulations",
-              "va": "Compliment del Reglament Europeu d'IA i normativa d'ocupació pública"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "negative",
             "note": {
@@ -13456,9 +13456,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "bias-risk",
             "label": {
-              "es": "Riesgo de sesgo algorítmico en poblaciones protegidas",
-              "en": "Algorithmic bias risk in protected population groups",
-              "va": "Risc de biaix algorítmic en poblacions protegides"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "negative",
             "note": {
@@ -13470,9 +13470,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "transparency",
             "label": {
-              "es": "Transparencia y explicabilidad de las decisiones del sistema",
-              "en": "Transparency and explainability of system decisions",
-              "va": "Transparència i explicabilitat de les decisions del sistema"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "manageable",
             "note": {
@@ -13484,9 +13484,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "union-acceptance",
             "label": {
-              "es": "Aceptación por parte de los sindicatos representativos",
-              "en": "Acceptance by representative trade unions",
-              "va": "Acceptació per part dels sindicats representatius"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "negative",
             "note": {
@@ -13508,9 +13508,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "bias-detection",
             "label": {
-              "es": "Correlaciones proxy-categoría protegida detectadas en datos históricos",
-              "en": "Proxy-protected category correlations detected in historical data",
-              "va": "Correlacions proxy-categoria protegida detectades en dades històriques"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "3 variables proxy con correlación significativa (p<0.05) con género o origen geográfico",
@@ -13521,9 +13521,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "legal-classification",
             "label": {
-              "es": "Clasificación de riesgo bajo el Reglamento Europeo de IA",
-              "en": "Risk classification under the European AI Act",
-              "va": "Classificació de risc sota el Reglament Europeu d'IA"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "Riesgo ALTO — Art. 6, Anexo III (sistemas de selección de personas para empleo)",
@@ -20386,9 +20386,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "gdpr-compliance",
             "label": {
-              "es": "Viabilidad de la cesión bajo el RGPD con las medidas propuestas",
-              "en": "Feasibility of data transfer under GDPR with the proposed measures",
-              "va": "Viabilitat de la cessió sota el RGPD amb les mesures proposades"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -20400,9 +20400,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "re-identification-risk",
             "label": {
-              "es": "Riesgo residual de re-identificación tras la anonimización",
-              "en": "Residual re-identification risk after anonymisation",
-              "va": "Risc residual de re-identificació després de l'anonimització"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "manageable",
             "note": {
@@ -20414,9 +20414,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "use-restrictions",
             "label": {
-              "es": "Adecuación de las restricciones de uso propuestas para los equipos participantes",
-              "en": "Adequacy of the proposed use restrictions for participating teams",
-              "va": "Adequació de les restriccions d'ús proposades per als equips participants"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -20438,9 +20438,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "legal-basis",
             "label": {
-              "es": "Base legal identificada para la cesión del dataset",
-              "en": "Legal basis identified for dataset transfer",
-              "va": "Base legal identificada per a la cessió del dataset"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "RGPD Art. 6(1)(f) + Art. 89 — interés legítimo e investigación",
@@ -20451,9 +20451,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "anonymisation-level",
             "label": {
-              "es": "Nivel de k-anonimato aplicado",
-              "en": "K-anonymity level applied",
-              "va": "Nivell de k-anonimat aplicat"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "k=5 a nivel de segmento de ruta + agregación a código postal para coordenadas de entrega",
@@ -20483,9 +20483,9 @@ export const MARKETPLACE_CONFIG = {
         "nextStep": {
           "type": "launch-pilot",
           "label": {
-            "es": "Publicar el reto en el Marketplace con acceso condicionado al dataset tras firma del acuerdo de uso",
-            "en": "Publish the challenge on the Marketplace with conditional dataset access after signing the usage agreement",
-            "va": "Publicar el repte al Marketplace amb accés condicionat al dataset després de la signatura de l'acord d'ús"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         }
       },
@@ -20848,9 +20848,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "data-quality",
             "label": {
-              "es": "Calidad y utilidad del dataset SCADA anonimizado",
-              "en": "Anonymised SCADA dataset quality and utility",
-              "va": "Qualitat i utilitat del dataset SCADA anonimitzat"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -20862,9 +20862,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "stack-feasibility",
             "label": {
-              "es": "Viabilidad del stack tecnológico propuesto",
-              "en": "Feasibility of the proposed technology stack",
-              "va": "Viabilitat de l'stack tecnològic proposat"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -20876,9 +20876,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "anonymisation-risk",
             "label": {
-              "es": "Riesgo de re-identificación en el dataset anonimizado",
-              "en": "Re-identification risk in the anonymised dataset",
-              "va": "Risc de re-identificació en el dataset anonimitzat"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "manageable",
             "note": {
@@ -20890,9 +20890,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "timeline-feasibility",
             "label": {
-              "es": "Viabilidad del calendario del reto (6 meses para prototipo funcional)",
-              "en": "Challenge timeline feasibility (6 months for functional prototype)",
-              "va": "Viabilitat del calendari del repte (6 mesos per a prototip funcional)"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "medium",
             "note": {
@@ -20914,9 +20914,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "dataset-completeness",
             "label": {
-              "es": "Completitud del dataset histórico (% de series temporales sin lagunas)",
-              "en": "Historical dataset completeness (% time series without gaps)",
-              "va": "Completitud del dataset històric (% de sèries temporals sense llacunes)"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "94,3% de series completas — suficiente para entrenamiento",
@@ -20927,9 +20927,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "poc-result",
             "label": {
-              "es": "Resultado de la prueba de concepto sandboxed",
-              "en": "Sandboxed proof of concept result",
-              "va": "Resultat de la prova de concepte sandboxed"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "Prototipo base logra RMSE de 12 kW en predicción a 4h — supera umbral de 15 kW establecido",
@@ -20959,9 +20959,9 @@ export const MARKETPLACE_CONFIG = {
         "nextStep": {
           "type": "launch-pilot",
           "label": {
-            "es": "Publicar el reto en el Marketplace y abrir inscripciones para la convocatoria 2026",
-            "en": "Publish the challenge on the Marketplace and open registrations for the 2026 call",
-            "va": "Publicar el repte al Marketplace i obrir inscripcions per a la convocatòria 2026"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         }
       },
@@ -22477,9 +22477,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "operator-demand",
             "label": {
-              "es": "Demanda real de los operadores turísticos valencianos",
-              "en": "Real demand from Valencian tourism operators",
-              "va": "Demanda real dels operadors turístics valencians"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -22491,9 +22491,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "data-availability",
             "label": {
-              "es": "Disponibilidad de datos de reseñas para entrenar y validar los sistemas",
-              "en": "Availability of review data to train and validate the systems",
-              "va": "Disponibilitat de dades de ressenyes per entrenar i validar els sistemes"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -22505,9 +22505,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "absorptive-capacity",
             "label": {
-              "es": "Capacidad de absorción del sector para adoptar las soluciones desarrolladas",
-              "en": "Sector absorptive capacity to adopt developed solutions",
-              "va": "Capacitat d'absorció del sector per adoptar les solucions desenvolupades"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "medium",
             "note": {
@@ -22529,9 +22529,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "tool-satisfaction",
             "label": {
-              "es": "Satisfacción con herramientas actuales de monitorización de reseñas",
-              "en": "Satisfaction with current review monitoring tools",
-              "va": "Satisfacció amb eines actuals de monitorització de ressenyes"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "18% de hoteleros satisfechos con sus soluciones actuales (panel HOSBEC, n=12)",
@@ -22542,9 +22542,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "corpus-size",
             "label": {
-              "es": "Tamaño del corpus de reseñas disponible para entrenamiento",
-              "en": "Size of available review corpus for training",
-              "va": "Grandària del corpus de ressenyes disponible per a entrenament"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "280.000 reseñas etiquetadas en 10 idiomas (Turisme CV, 2023-2025)",
@@ -22574,9 +22574,9 @@ export const MARKETPLACE_CONFIG = {
         "nextStep": {
           "type": "launch-pilot",
           "label": {
-            "es": "Publicar el reto de análisis de sentimiento e iniciar el piloto de personalización en Benidorm y Calpe",
-            "en": "Publish the sentiment analysis challenge and launch the personalisation pilot in Benidorm and Calpe",
-            "va": "Publicar el repte d'anàlisi de sentiment i iniciar el pilot de personalització a Benidorm i Calpe"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         }
       },
@@ -23488,9 +23488,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "curricular-fit",
             "label": {
-              "es": "Encaje curricular en los ciclos de FP identificados",
-              "en": "Curricular fit in the identified VET cycles",
-              "va": "Encaix curricular en els cicles de FP identificats"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -23502,9 +23502,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "teacher-confidence",
             "label": {
-              "es": "Confianza del profesorado para implantar el módulo autónomamente",
-              "en": "Teacher confidence to implement the module autonomously",
-              "va": "Confiança del professorat per implantar el mòdul autònomament"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "medium",
             "note": {
@@ -23516,9 +23516,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "equipment-requirements",
             "label": {
-              "es": "Viabilidad de los requisitos de equipamiento en centros estándar",
-              "en": "Feasibility of equipment requirements in standard centres",
-              "va": "Viabilitat dels requisits d'equipament en centres estàndard"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "manageable",
             "note": {
@@ -23530,9 +23530,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "industry-relevance",
             "label": {
-              "es": "Relevancia industrial del contenido para el mercado laboral valenciano",
-              "en": "Industrial relevance of the content for the Valencian labour market",
-              "va": "Rellevància industrial del contingut per al mercat laboral valencià"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -23554,9 +23554,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "curricular-alignment",
             "label": {
-              "es": "Número de unidades de trabajo donde se puede integrar el módulo",
-              "en": "Number of learning units where the module can be integrated",
-              "va": "Nombre d'unitats de treball on es pot integrar el mòdul"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "3 unidades de trabajo en Fabricación Mecánica, 2 en Mecatrónica",
@@ -23567,9 +23567,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "teacher-survey",
             "label": {
-              "es": "Confianza media del profesorado encuestado para implantar el módulo (sin formación previa)",
-              "en": "Average confidence of surveyed teachers to implement the module (without prior training)",
-              "va": "Confiança mitjana del professorat enquestàt per implantar el mòdul (sense formació prèvia)"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "4,2/10 antes de formación; 8,2/10 después de formación docente de 2 días (dato piloto Pamesa)",
@@ -23599,9 +23599,9 @@ export const MARKETPLACE_CONFIG = {
         "nextStep": {
           "type": "design-module",
           "label": {
-            "es": "Diseñar el módulo de formación docente de 2 días y publicar la guía de integración curricular",
-            "en": "Design the 2-day teacher training module and publish the curricular integration guide",
-            "va": "Dissenyar el mòdul de formació docent de 2 dies i publicar la guia d'integració curricular"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         }
       },
@@ -25413,9 +25413,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "competency-gap-size",
             "label": {
-              "es": "Magnitud de la brecha de competencias detectada",
-              "en": "Magnitude of the detected competency gap",
-              "va": "Magnitud de la bretxa de competències detectada"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -25427,9 +25427,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "employer-demand",
             "label": {
-              "es": "Demanda del empleador clínico de competencias digitales en nuevos técnicos",
-              "en": "Clinical employer demand for digital competences in new technicians",
-              "va": "Demanda de l'empleador clínic de competències digitals en nous tècnics"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -25441,9 +25441,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "academic-track-fit",
             "label": {
-              "es": "Pertinencia de la vía académica (Track A) para abordar la brecha",
-              "en": "Relevance of the academic route (Track A) to address the gap",
-              "va": "Pertinència de la via acadèmica (Track A) per a abordar la bretxa"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -25465,9 +25465,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "graduate-unpreparedness",
             "label": {
-              "es": "Porcentaje de nuevos colegiados de FP que se declaran poco o nada preparados digitalmente",
-              "en": "Percentage of new VET professional members declaring themselves poorly or not at all digitally prepared",
-              "va": "Percentatge de nous col·legiats de FP que es declaren poc o gens preparats digitalment"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "71% (encuesta inserción laboral 2025, n=312)",
@@ -25478,9 +25478,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "supervisor-demand",
             "label": {
-              "es": "Porcentaje de supervisores clínicos que identifican la competencia digital como prioritaria",
-              "en": "Percentage of clinical supervisors identifying digital competence as a priority",
-              "va": "Percentatge de supervisors clínics que identifiquen la competència digital com a prioritària"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "83% (entrevistas, n=180)",
@@ -25510,9 +25510,9 @@ export const MARKETPLACE_CONFIG = {
         "nextStep": {
           "type": "design-module",
           "label": {
-            "es": "Diseñar los módulos de FP (Track B) y la asignatura optativa de máster (Track A) de competencias digitales en salud",
-            "en": "Design VET modules (Track B) and the optional master's subject (Track A) in digital health competencies",
-            "va": "Dissenyar els mòduls de FP (Track B) i l'assignatura optativa de màster (Track A) de competències digitals en salut"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         }
       },
@@ -28032,9 +28032,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "sector-demand",
             "label": {
-              "es": "Demanda sectorial",
-              "en": "Sector demand",
-              "va": "Demanda sectorial"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -28046,9 +28046,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "vet-fit",
             "label": {
-              "es": "Encaje con FP y Máster",
-              "en": "VET and Master fit",
-              "va": "Encaix amb FP i Màster"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -28060,9 +28060,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "academic-relevance",
             "label": {
-              "es": "Relevancia académica",
-              "en": "Academic relevance",
-              "va": "Rellevància acadèmica"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -28074,9 +28074,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "feasibility",
             "label": {
-              "es": "Viabilidad de desarrollo",
-              "en": "Development feasibility",
-              "va": "Viabilitat de desenvolupament"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "medium",
             "note": {
@@ -28098,9 +28098,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "competence-gap",
             "label": {
-              "es": "Brecha de competencias identificada",
-              "en": "Competence gap identified",
-              "va": "Bretxa de competències identificada"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "Análisis experto AVA-ASAJA",
@@ -28111,9 +28111,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "consensue-classification",
             "label": {
-              "es": "Clasificación ConsensUE",
-              "en": "ConsensUE classification",
-              "va": "Classificació ConsensUE"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "Track A (contribución académica)",
@@ -28124,9 +28124,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "dataset-availability",
             "label": {
-              "es": "Recurso académico disponible",
-              "en": "Academic resource available",
-              "va": "Recurs acadèmic disponible"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "Dataset multispectral de cítricos (UVEG, open data)",
@@ -28156,9 +28156,9 @@ export const MARKETPLACE_CONFIG = {
         "nextStep": {
           "type": "design-module",
           "label": {
-            "es": "Integrar el dataset multispectral como caso práctico en el Máster UVEG 2026-27",
-            "en": "Integrate the multispectral dataset as a practical case in the UVEG Master 2026-27",
-            "va": "Integrar el dataset multiespectral com a cas pràctic en el Màster UVEG 2026-27"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         }
       },
@@ -28204,9 +28204,9 @@ export const MARKETPLACE_CONFIG = {
             "id": "uveg-dataset",
             "type": "external-system",
             "label": {
-              "es": "Dataset multispectral de cítricos (UVEG)",
-              "en": "Citrus multispectral dataset (UVEG)",
-              "va": "Dataset multiespectral de cítrics (UVEG)"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": "",
             "access": {
@@ -28544,9 +28544,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "scientific-basis",
             "label": {
-              "es": "Base científica del enfoque RL para gestión energética de edificios",
-              "en": "Scientific basis of the RL approach for building energy management",
-              "va": "Base científica de l'enfocament RL per a gestió energètica d'edificis"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -28558,9 +28558,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "experimental-quality",
             "label": {
-              "es": "Calidad experimental del edificio 4I como entorno de Living Lab",
-              "en": "Experimental quality of building 4I as a Living Lab environment",
-              "va": "Qualitat experimental de l'edifici 4I com a entorn de Living Lab"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -28572,9 +28572,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "educational-potential",
             "label": {
-              "es": "Potencial formativo de la metodología Living Lab para FP y máster",
-              "en": "Educational potential of the Living Lab methodology for VET and master's",
-              "va": "Potencial formatiu de la metodologia Living Lab per a FP i màster"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -28596,9 +28596,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "literature-activity",
             "label": {
-              "es": "Porcentaje de artículos sobre RL en gestión energética de edificios en los últimos 3 años",
-              "en": "Percentage of articles on RL in building energy management in the last 3 years",
-              "va": "Percentatge d'articles sobre RL en gestió energètica d'edificis en els últims 3 anys"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "47% del total de publicaciones sobre IA en gestión energética (SAIL-UCLM, 2022-2025)",
@@ -28609,9 +28609,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "comparable-results",
             "label": {
-              "es": "Rango de reducción de consumo reportado en entornos comparables",
-              "en": "Consumption reduction range reported in comparable environments",
-              "va": "Rang de reducció de consum reportat en entorns comparables"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "15-30% en edificios universitarios con BMS y datos SCADA (revisión SAIL-UCLM)",
@@ -28641,9 +28641,9 @@ export const MARKETPLACE_CONFIG = {
         "nextStep": {
           "type": "launch-pilot",
           "label": {
-            "es": "Iniciar el piloto Living Lab en el edificio 4I con equipos mixtos FP-máster",
-            "en": "Launch the Living Lab pilot in building 4I with mixed VET-master's teams",
-            "va": "Iniciar el pilot Living Lab en l'edifici 4I amb equips mixtos FP-màster"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         }
       },
@@ -28691,9 +28691,9 @@ export const MARKETPLACE_CONFIG = {
             "id": "sinergym-paper",
             "type": "external-system",
             "label": {
-              "es": "Sinergym — artículo de referencia (SAIL-UCLM)",
-              "en": "Sinergym — reference paper (SAIL-UCLM)",
-              "va": "Sinergym — article de referència (SAIL-UCLM)"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": "https://github.com/ugr-sail/sinergym",
             "access": {
@@ -29039,9 +29039,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "sector-demand",
             "label": {
-              "es": "Demanda sectorial",
-              "en": "Sector demand",
-              "va": "Demanda sectorial"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -29053,9 +29053,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "vet-fit",
             "label": {
-              "es": "Encaje con FP",
-              "en": "VET fit",
-              "va": "Encaix amb FP"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -29067,9 +29067,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "ecosystem-relevance",
             "label": {
-              "es": "Relevancia para el ecosistema",
-              "en": "Ecosystem relevance",
-              "va": "Rellevància per a l'ecosistema"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "positive",
             "note": {
@@ -29081,9 +29081,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "feasibility",
             "label": {
-              "es": "Viabilidad de desarrollo",
-              "en": "Development feasibility",
-              "va": "Viabilitat de desenvolupament"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "result": "medium",
             "note": {
@@ -29105,9 +29105,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "competence-gap",
             "label": {
-              "es": "Brecha de competencias identificada",
-              "en": "Competence gap identified",
-              "va": "Bretxa de competències identificada"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "Análisis experto ASEVA + concesionarios",
@@ -29118,9 +29118,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "consensue-classification",
             "label": {
-              "es": "Clasificación ConsensUE",
-              "en": "ConsensUE classification",
-              "va": "Classificació ConsensUE"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "Track B (propuesta de ecosistema — módulo FP dual)",
@@ -29131,9 +29131,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "sector-willingness",
             "label": {
-              "es": "Disposición empresarial para formación dual",
-              "en": "Business willingness for dual training",
-              "va": "Disposició empresarial per a formació dual"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "metric": {
               "es": "Concesionarios ASEVA dispuestos a acoger alumnado FP",
@@ -29163,9 +29163,9 @@ export const MARKETPLACE_CONFIG = {
         "nextStep": {
           "type": "design-module",
           "label": {
-            "es": "Diseñar módulo FP dual con ASEVA y concesionarios para el curso 2026-27",
-            "en": "Design dual VET module with ASEVA and dealers for 2026-27",
-            "va": "Dissenyar mòdul FP dual amb ASEVA i concessionaris per al curs 2026-27"
+            "es": "",
+            "en": "",
+            "va": ""
           }
         }
       },
@@ -29208,9 +29208,9 @@ export const MARKETPLACE_CONFIG = {
             "id": "competency-sheet",
             "type": "external-system",
             "label": {
-              "es": "Ficha de competencias para instalación VE",
-              "en": "EV installation competency sheet",
-              "va": "Fitxa de competències per a instal·lació VE"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": "",
             "access": {
@@ -46441,9 +46441,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Validación ética — Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
-            "en": "Ethical validation — Use of AI for candidate screening in public administration selection processes",
-            "va": "Validació ètica — Ús d'IA per al cribratge de candidats en processos selectius de l'administració pública"
+            "es": "Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
+            "en": "Use of AI for candidate screening in public administration selection processes",
+            "va": "Ús d'IA per al cribratge de candidats en processos selectius de l'administració pública"
           },
           "summary": {
             "es": "Validación ética de una propuesta de sistema de IA para el cribado automático de candidatos en oposiciones y concursos de méritos de la administración pública valenciana. La validación concluye con una recomendación de reformulación sustancial antes de poder considerarse apto para piloto.",
@@ -46465,11 +46465,11 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "nts",
           "sectors": [],
-          "stakeholderCategory": "",
+          "stakeholderCategory": "institutional",
           "levels": [
             "Máster"
           ],
-          "pilotType": "",
+          "pilotType": "stakeholder-validation",
           "validationType": "ethical-validation",
           "validationStage": "completed",
           "mentoringType": "",
@@ -46662,9 +46662,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "legal-compliance",
               "label": {
-                "es": "Cumplimiento del Reglamento Europeo de IA y normativa de empleo público",
-                "en": "Compliance with the European AI Act and public employment regulations",
-                "va": "Compliment del Reglament Europeu d'IA i normativa d'ocupació pública"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "negative",
               "note": {
@@ -46676,9 +46676,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "bias-risk",
               "label": {
-                "es": "Riesgo de sesgo algorítmico en poblaciones protegidas",
-                "en": "Algorithmic bias risk in protected population groups",
-                "va": "Risc de biaix algorítmic en poblacions protegides"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "negative",
               "note": {
@@ -46690,9 +46690,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "transparency",
               "label": {
-                "es": "Transparencia y explicabilidad de las decisiones del sistema",
-                "en": "Transparency and explainability of system decisions",
-                "va": "Transparència i explicabilitat de les decisions del sistema"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "manageable",
               "note": {
@@ -46704,9 +46704,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "union-acceptance",
               "label": {
-                "es": "Aceptación por parte de los sindicatos representativos",
-                "en": "Acceptance by representative trade unions",
-                "va": "Acceptació per part dels sindicats representatius"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "negative",
               "note": {
@@ -46728,9 +46728,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "bias-detection",
               "label": {
-                "es": "Correlaciones proxy-categoría protegida detectadas en datos históricos",
-                "en": "Proxy-protected category correlations detected in historical data",
-                "va": "Correlacions proxy-categoria protegida detectades en dades històriques"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "3 variables proxy con correlación significativa (p<0.05) con género o origen geográfico",
@@ -46741,9 +46741,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "legal-classification",
               "label": {
-                "es": "Clasificación de riesgo bajo el Reglamento Europeo de IA",
-                "en": "Risk classification under the European AI Act",
-                "va": "Classificació de risc sota el Reglament Europeu d'IA"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "Riesgo ALTO — Art. 6, Anexo III (sistemas de selección de personas para empleo)",
@@ -47137,9 +47137,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "gdpr-compliance",
               "label": {
-                "es": "Viabilidad de la cesión bajo el RGPD con las medidas propuestas",
-                "en": "Feasibility of data transfer under GDPR with the proposed measures",
-                "va": "Viabilitat de la cessió sota el RGPD amb les mesures proposades"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -47151,9 +47151,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "re-identification-risk",
               "label": {
-                "es": "Riesgo residual de re-identificación tras la anonimización",
-                "en": "Residual re-identification risk after anonymisation",
-                "va": "Risc residual de re-identificació després de l'anonimització"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "manageable",
               "note": {
@@ -47165,9 +47165,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "use-restrictions",
               "label": {
-                "es": "Adecuación de las restricciones de uso propuestas para los equipos participantes",
-                "en": "Adequacy of the proposed use restrictions for participating teams",
-                "va": "Adequació de les restriccions d'ús proposades per als equips participants"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -47189,9 +47189,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "legal-basis",
               "label": {
-                "es": "Base legal identificada para la cesión del dataset",
-                "en": "Legal basis identified for dataset transfer",
-                "va": "Base legal identificada per a la cessió del dataset"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "RGPD Art. 6(1)(f) + Art. 89 — interés legítimo e investigación",
@@ -47202,9 +47202,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "anonymisation-level",
               "label": {
-                "es": "Nivel de k-anonimato aplicado",
-                "en": "K-anonymity level applied",
-                "va": "Nivell de k-anonimat aplicat"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "k=5 a nivel de segmento de ruta + agregación a código postal para coordenadas de entrega",
@@ -47234,9 +47234,9 @@ export const MARKETPLACE_CONFIG = {
           "nextStep": {
             "type": "launch-pilot",
             "label": {
-              "es": "Publicar el reto en el Marketplace con acceso condicionado al dataset tras firma del acuerdo de uso",
-              "en": "Publish the challenge on the Marketplace with conditional dataset access after signing the usage agreement",
-              "va": "Publicar el repte al Marketplace amb accés condicionat al dataset després de la signatura de l'acord d'ús"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         },
@@ -47599,9 +47599,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "data-quality",
               "label": {
-                "es": "Calidad y utilidad del dataset SCADA anonimizado",
-                "en": "Anonymised SCADA dataset quality and utility",
-                "va": "Qualitat i utilitat del dataset SCADA anonimitzat"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -47613,9 +47613,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "stack-feasibility",
               "label": {
-                "es": "Viabilidad del stack tecnológico propuesto",
-                "en": "Feasibility of the proposed technology stack",
-                "va": "Viabilitat de l'stack tecnològic proposat"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -47627,9 +47627,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "anonymisation-risk",
               "label": {
-                "es": "Riesgo de re-identificación en el dataset anonimizado",
-                "en": "Re-identification risk in the anonymised dataset",
-                "va": "Risc de re-identificació en el dataset anonimitzat"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "manageable",
               "note": {
@@ -47641,9 +47641,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "timeline-feasibility",
               "label": {
-                "es": "Viabilidad del calendario del reto (6 meses para prototipo funcional)",
-                "en": "Challenge timeline feasibility (6 months for functional prototype)",
-                "va": "Viabilitat del calendari del repte (6 mesos per a prototip funcional)"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "medium",
               "note": {
@@ -47665,9 +47665,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "dataset-completeness",
               "label": {
-                "es": "Completitud del dataset histórico (% de series temporales sin lagunas)",
-                "en": "Historical dataset completeness (% time series without gaps)",
-                "va": "Completitud del dataset històric (% de sèries temporals sense llacunes)"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "94,3% de series completas — suficiente para entrenamiento",
@@ -47678,9 +47678,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "poc-result",
               "label": {
-                "es": "Resultado de la prueba de concepto sandboxed",
-                "en": "Sandboxed proof of concept result",
-                "va": "Resultat de la prova de concepte sandboxed"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "Prototipo base logra RMSE de 12 kW en predicción a 4h — supera umbral de 15 kW establecido",
@@ -47710,9 +47710,9 @@ export const MARKETPLACE_CONFIG = {
           "nextStep": {
             "type": "launch-pilot",
             "label": {
-              "es": "Publicar el reto en el Marketplace y abrir inscripciones para la convocatoria 2026",
-              "en": "Publish the challenge on the Marketplace and open registrations for the 2026 call",
-              "va": "Publicar el repte al Marketplace i obrir inscripcions per a la convocatòria 2026"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         },
@@ -48086,9 +48086,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "operator-demand",
               "label": {
-                "es": "Demanda real de los operadores turísticos valencianos",
-                "en": "Real demand from Valencian tourism operators",
-                "va": "Demanda real dels operadors turístics valencians"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -48100,9 +48100,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "data-availability",
               "label": {
-                "es": "Disponibilidad de datos de reseñas para entrenar y validar los sistemas",
-                "en": "Availability of review data to train and validate the systems",
-                "va": "Disponibilitat de dades de ressenyes per entrenar i validar els sistemes"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -48114,9 +48114,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "absorptive-capacity",
               "label": {
-                "es": "Capacidad de absorción del sector para adoptar las soluciones desarrolladas",
-                "en": "Sector absorptive capacity to adopt developed solutions",
-                "va": "Capacitat d'absorció del sector per adoptar les solucions desenvolupades"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "medium",
               "note": {
@@ -48138,9 +48138,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "tool-satisfaction",
               "label": {
-                "es": "Satisfacción con herramientas actuales de monitorización de reseñas",
-                "en": "Satisfaction with current review monitoring tools",
-                "va": "Satisfacció amb eines actuals de monitorització de ressenyes"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "18% de hoteleros satisfechos con sus soluciones actuales (panel HOSBEC, n=12)",
@@ -48151,9 +48151,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "corpus-size",
               "label": {
-                "es": "Tamaño del corpus de reseñas disponible para entrenamiento",
-                "en": "Size of available review corpus for training",
-                "va": "Grandària del corpus de ressenyes disponible per a entrenament"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "280.000 reseñas etiquetadas en 10 idiomas (Turisme CV, 2023-2025)",
@@ -48183,9 +48183,9 @@ export const MARKETPLACE_CONFIG = {
           "nextStep": {
             "type": "launch-pilot",
             "label": {
-              "es": "Publicar el reto de análisis de sentimiento e iniciar el piloto de personalización en Benidorm y Calpe",
-              "en": "Publish the sentiment analysis challenge and launch the personalisation pilot in Benidorm and Calpe",
-              "va": "Publicar el repte d'anàlisi de sentiment i iniciar el pilot de personalització a Benidorm i Calpe"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         },
@@ -48550,9 +48550,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "curricular-fit",
               "label": {
-                "es": "Encaje curricular en los ciclos de FP identificados",
-                "en": "Curricular fit in the identified VET cycles",
-                "va": "Encaix curricular en els cicles de FP identificats"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -48564,9 +48564,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "teacher-confidence",
               "label": {
-                "es": "Confianza del profesorado para implantar el módulo autónomamente",
-                "en": "Teacher confidence to implement the module autonomously",
-                "va": "Confiança del professorat per implantar el mòdul autònomament"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "medium",
               "note": {
@@ -48578,9 +48578,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "equipment-requirements",
               "label": {
-                "es": "Viabilidad de los requisitos de equipamiento en centros estándar",
-                "en": "Feasibility of equipment requirements in standard centres",
-                "va": "Viabilitat dels requisits d'equipament en centres estàndard"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "manageable",
               "note": {
@@ -48592,9 +48592,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "industry-relevance",
               "label": {
-                "es": "Relevancia industrial del contenido para el mercado laboral valenciano",
-                "en": "Industrial relevance of the content for the Valencian labour market",
-                "va": "Rellevància industrial del contingut per al mercat laboral valencià"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -48616,9 +48616,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "curricular-alignment",
               "label": {
-                "es": "Número de unidades de trabajo donde se puede integrar el módulo",
-                "en": "Number of learning units where the module can be integrated",
-                "va": "Nombre d'unitats de treball on es pot integrar el mòdul"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "3 unidades de trabajo en Fabricación Mecánica, 2 en Mecatrónica",
@@ -48629,9 +48629,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "teacher-survey",
               "label": {
-                "es": "Confianza media del profesorado encuestado para implantar el módulo (sin formación previa)",
-                "en": "Average confidence of surveyed teachers to implement the module (without prior training)",
-                "va": "Confiança mitjana del professorat enquestàt per implantar el mòdul (sense formació prèvia)"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "4,2/10 antes de formación; 8,2/10 después de formación docente de 2 días (dato piloto Pamesa)",
@@ -48661,9 +48661,9 @@ export const MARKETPLACE_CONFIG = {
           "nextStep": {
             "type": "design-module",
             "label": {
-              "es": "Diseñar el módulo de formación docente de 2 días y publicar la guía de integración curricular",
-              "en": "Design the 2-day teacher training module and publish the curricular integration guide",
-              "va": "Dissenyar el mòdul de formació docent de 2 dies i publicar la guia d'integració curricular"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         },
@@ -49038,9 +49038,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "competency-gap-size",
               "label": {
-                "es": "Magnitud de la brecha de competencias detectada",
-                "en": "Magnitude of the detected competency gap",
-                "va": "Magnitud de la bretxa de competències detectada"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -49052,9 +49052,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "employer-demand",
               "label": {
-                "es": "Demanda del empleador clínico de competencias digitales en nuevos técnicos",
-                "en": "Clinical employer demand for digital competences in new technicians",
-                "va": "Demanda de l'empleador clínic de competències digitals en nous tècnics"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -49066,9 +49066,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "academic-track-fit",
               "label": {
-                "es": "Pertinencia de la vía académica (Track A) para abordar la brecha",
-                "en": "Relevance of the academic route (Track A) to address the gap",
-                "va": "Pertinència de la via acadèmica (Track A) per a abordar la bretxa"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -49090,9 +49090,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "graduate-unpreparedness",
               "label": {
-                "es": "Porcentaje de nuevos colegiados de FP que se declaran poco o nada preparados digitalmente",
-                "en": "Percentage of new VET professional members declaring themselves poorly or not at all digitally prepared",
-                "va": "Percentatge de nous col·legiats de FP que es declaren poc o gens preparats digitalment"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "71% (encuesta inserción laboral 2025, n=312)",
@@ -49103,9 +49103,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "supervisor-demand",
               "label": {
-                "es": "Porcentaje de supervisores clínicos que identifican la competencia digital como prioritaria",
-                "en": "Percentage of clinical supervisors identifying digital competence as a priority",
-                "va": "Percentatge de supervisors clínics que identifiquen la competència digital com a prioritària"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "83% (entrevistas, n=180)",
@@ -49135,9 +49135,9 @@ export const MARKETPLACE_CONFIG = {
           "nextStep": {
             "type": "design-module",
             "label": {
-              "es": "Diseñar los módulos de FP (Track B) y la asignatura optativa de máster (Track A) de competencias digitales en salud",
-              "en": "Design VET modules (Track B) and the optional master's subject (Track A) in digital health competencies",
-              "va": "Dissenyar els mòduls de FP (Track B) i l'assignatura optativa de màster (Track A) de competències digitals en salut"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         },
@@ -49510,9 +49510,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "sector-demand",
               "label": {
-                "es": "Demanda sectorial",
-                "en": "Sector demand",
-                "va": "Demanda sectorial"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -49524,9 +49524,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "vet-fit",
               "label": {
-                "es": "Encaje con FP y Máster",
-                "en": "VET and Master fit",
-                "va": "Encaix amb FP i Màster"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -49538,9 +49538,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "academic-relevance",
               "label": {
-                "es": "Relevancia académica",
-                "en": "Academic relevance",
-                "va": "Rellevància acadèmica"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -49552,9 +49552,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "feasibility",
               "label": {
-                "es": "Viabilidad de desarrollo",
-                "en": "Development feasibility",
-                "va": "Viabilitat de desenvolupament"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "medium",
               "note": {
@@ -49576,9 +49576,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "competence-gap",
               "label": {
-                "es": "Brecha de competencias identificada",
-                "en": "Competence gap identified",
-                "va": "Bretxa de competències identificada"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "Análisis experto AVA-ASAJA",
@@ -49589,9 +49589,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "consensue-classification",
               "label": {
-                "es": "Clasificación ConsensUE",
-                "en": "ConsensUE classification",
-                "va": "Classificació ConsensUE"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "Track A (contribución académica)",
@@ -49602,9 +49602,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "dataset-availability",
               "label": {
-                "es": "Recurso académico disponible",
-                "en": "Academic resource available",
-                "va": "Recurs acadèmic disponible"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "Dataset multispectral de cítricos (UVEG, open data)",
@@ -49634,9 +49634,9 @@ export const MARKETPLACE_CONFIG = {
           "nextStep": {
             "type": "design-module",
             "label": {
-              "es": "Integrar el dataset multispectral como caso práctico en el Máster UVEG 2026-27",
-              "en": "Integrate the multispectral dataset as a practical case in the UVEG Master 2026-27",
-              "va": "Integrar el dataset multiespectral com a cas pràctic en el Màster UVEG 2026-27"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         },
@@ -49682,9 +49682,9 @@ export const MARKETPLACE_CONFIG = {
               "id": "uveg-dataset",
               "type": "external-system",
               "label": {
-                "es": "Dataset multispectral de cítricos (UVEG)",
-                "en": "Citrus multispectral dataset (UVEG)",
-                "va": "Dataset multiespectral de cítrics (UVEG)"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "url": "",
               "access": {
@@ -50022,9 +50022,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "scientific-basis",
               "label": {
-                "es": "Base científica del enfoque RL para gestión energética de edificios",
-                "en": "Scientific basis of the RL approach for building energy management",
-                "va": "Base científica de l'enfocament RL per a gestió energètica d'edificis"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -50036,9 +50036,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "experimental-quality",
               "label": {
-                "es": "Calidad experimental del edificio 4I como entorno de Living Lab",
-                "en": "Experimental quality of building 4I as a Living Lab environment",
-                "va": "Qualitat experimental de l'edifici 4I com a entorn de Living Lab"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -50050,9 +50050,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "educational-potential",
               "label": {
-                "es": "Potencial formativo de la metodología Living Lab para FP y máster",
-                "en": "Educational potential of the Living Lab methodology for VET and master's",
-                "va": "Potencial formatiu de la metodologia Living Lab per a FP i màster"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -50074,9 +50074,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "literature-activity",
               "label": {
-                "es": "Porcentaje de artículos sobre RL en gestión energética de edificios en los últimos 3 años",
-                "en": "Percentage of articles on RL in building energy management in the last 3 years",
-                "va": "Percentatge d'articles sobre RL en gestió energètica d'edificis en els últims 3 anys"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "47% del total de publicaciones sobre IA en gestión energética (SAIL-UCLM, 2022-2025)",
@@ -50087,9 +50087,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "comparable-results",
               "label": {
-                "es": "Rango de reducción de consumo reportado en entornos comparables",
-                "en": "Consumption reduction range reported in comparable environments",
-                "va": "Rang de reducció de consum reportat en entorns comparables"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "15-30% en edificios universitarios con BMS y datos SCADA (revisión SAIL-UCLM)",
@@ -50119,9 +50119,9 @@ export const MARKETPLACE_CONFIG = {
           "nextStep": {
             "type": "launch-pilot",
             "label": {
-              "es": "Iniciar el piloto Living Lab en el edificio 4I con equipos mixtos FP-máster",
-              "en": "Launch the Living Lab pilot in building 4I with mixed VET-master's teams",
-              "va": "Iniciar el pilot Living Lab en l'edifici 4I amb equips mixtos FP-màster"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         },
@@ -50169,9 +50169,9 @@ export const MARKETPLACE_CONFIG = {
               "id": "sinergym-paper",
               "type": "external-system",
               "label": {
-                "es": "Sinergym — artículo de referencia (SAIL-UCLM)",
-                "en": "Sinergym — reference paper (SAIL-UCLM)",
-                "va": "Sinergym — article de referència (SAIL-UCLM)"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "url": "https://github.com/ugr-sail/sinergym",
               "access": {
@@ -50517,9 +50517,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "sector-demand",
               "label": {
-                "es": "Demanda sectorial",
-                "en": "Sector demand",
-                "va": "Demanda sectorial"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -50531,9 +50531,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "vet-fit",
               "label": {
-                "es": "Encaje con FP",
-                "en": "VET fit",
-                "va": "Encaix amb FP"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -50545,9 +50545,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "ecosystem-relevance",
               "label": {
-                "es": "Relevancia para el ecosistema",
-                "en": "Ecosystem relevance",
-                "va": "Rellevància per a l'ecosistema"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "positive",
               "note": {
@@ -50559,9 +50559,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "feasibility",
               "label": {
-                "es": "Viabilidad de desarrollo",
-                "en": "Development feasibility",
-                "va": "Viabilitat de desenvolupament"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "result": "medium",
               "note": {
@@ -50583,9 +50583,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "competence-gap",
               "label": {
-                "es": "Brecha de competencias identificada",
-                "en": "Competence gap identified",
-                "va": "Bretxa de competències identificada"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "Análisis experto ASEVA + concesionarios",
@@ -50596,9 +50596,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "consensue-classification",
               "label": {
-                "es": "Clasificación ConsensUE",
-                "en": "ConsensUE classification",
-                "va": "Classificació ConsensUE"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "Track B (propuesta de ecosistema — módulo FP dual)",
@@ -50609,9 +50609,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "sector-willingness",
               "label": {
-                "es": "Disposición empresarial para formación dual",
-                "en": "Business willingness for dual training",
-                "va": "Disposició empresarial per a formació dual"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "metric": {
                 "es": "Concesionarios ASEVA dispuestos a acoger alumnado FP",
@@ -50641,9 +50641,9 @@ export const MARKETPLACE_CONFIG = {
           "nextStep": {
             "type": "design-module",
             "label": {
-              "es": "Diseñar módulo FP dual con ASEVA y concesionarios para el curso 2026-27",
-              "en": "Design dual VET module with ASEVA and dealers for 2026-27",
-              "va": "Dissenyar mòdul FP dual amb ASEVA i concessionaris per al curs 2026-27"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         },
@@ -50686,9 +50686,9 @@ export const MARKETPLACE_CONFIG = {
               "id": "competency-sheet",
               "type": "external-system",
               "label": {
-                "es": "Ficha de competencias para instalación VE",
-                "en": "EV installation competency sheet",
-                "va": "Fitxa de competències per a instal·lació VE"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "url": "",
               "access": {
