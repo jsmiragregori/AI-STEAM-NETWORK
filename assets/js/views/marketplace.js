@@ -1082,6 +1082,7 @@ function renderCardShell(item, tab, body, options = {}) {
         ${options.hideTypeBadge ? '' : renderBadge(getTypeLabel(item.type), tone.badge)}
         ${options.showStatusBadge !== false ? renderBadge(statusLabel, options.statusBadgeTone || 'bg-white text-gray-700 border-eu-border', statusFilterKey, statusRaw) : ''}
         ${options.extraBadge ? renderBadge(options.extraBadge, options.extraBadgeTone || 'bg-white text-gray-700 border-eu-border', options.extraBadgeFilterKey || '', options.extraBadgeFilterValue || '') : ''}
+        ${options.extraBadge2 ? renderBadge(options.extraBadge2, options.extraBadge2Tone || 'bg-white text-gray-700 border-eu-border', options.extraBadge2FilterKey || '', options.extraBadge2FilterValue || '') : ''}
       </div>
       <div class="mt-4 flex-1">
         <h3 class="text-lg font-bold leading-snug text-eu-text group-hover:text-eu-blue">${esc(title)}</h3>
@@ -1755,12 +1756,9 @@ function renderValidationCard(item, tab) {
     dlHtml = `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500"><i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i><span>${esc(n === 1 ? `1 ${uiText('downloadable')}` : `${n} ${uiText('downloadables')}`)}</span></div>`;
   }
 
-  // ── Mini-meta: ventana + etapa de validación (ya traducida en computed field) ──
-  const stageLabel = (ccv.ch_val_stage !== false && pres.showValidationStage !== false) ? pickLang(item.validationStageLabel) : '';
-  const stageMetaLabel = pickLang({ es: 'Etapa', en: 'Stage', va: 'Etapa' });
+  // ── Mini-meta: solo ventana ───────────────────────────────────────────────
   const miniMetaHtml = renderCardMiniMeta([
-    windowLabel ? { label: uiText('window'), value: windowLabel } : null,
-    stageLabel ? { label: stageMetaLabel, value: stageLabel } : null,
+    windowLabel ? { label: uiText('window'), value: windowLabel, valueClass: 'font-normal text-eu-text' } : null,
   ].filter(Boolean));
 
   // ── CTA: "Ver validación" siempre singular ────────────────────────────────
@@ -1771,10 +1769,8 @@ function renderValidationCard(item, tab) {
     : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(ctaLabel)}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
 
   const validationTypeLabel = pickLang(item.validationTypeLabel) || getValidationTypeLabel(core.validationType);
+  const stageLabel = (ccv.ch_val_stage !== false && pres.showValidationStage !== false) ? pickLang(item.validationStageLabel) : '';
   const showSectorBadge = ccv.ch_val_extraBadge !== false;
-
-  // ── Badge extra: sector ───────────────────────────────────────────────────
-  const extraBadge = ccv.ch_val_extraBadge !== false ? getSectorLabel(core.sector) : '';
 
   const body = `
     ${mainBlockHtml}
@@ -1789,13 +1785,17 @@ function renderValidationCard(item, tab) {
   return renderCardShell(item, tab, body, {
     title: core.title,
     subtitle: core.summary,
-    statusLabel: validationTypeLabel,
-    statusValue: core.validationType || '',
-    statusFilterKey: validationTypeLabel ? 'validationType' : '',
-    statusBadgeTone: 'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
-    extraBadge,
-    extraBadgeFilterKey: showSectorBadge ? 'sector' : '',
-    extraBadgeFilterValue: showSectorBadge ? getSectorCode(core.sector) : '',
+    statusLabel: stageLabel,
+    statusValue: core.validationStage || '',
+    statusFilterKey: stageLabel ? 'validationStage' : '',
+    statusBadgeTone: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
+    extraBadge: validationTypeLabel,
+    extraBadgeTone: 'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
+    extraBadgeFilterKey: validationTypeLabel ? 'validationType' : '',
+    extraBadgeFilterValue: validationTypeLabel ? (core.validationType || '') : '',
+    extraBadge2: showSectorBadge ? getSectorLabel(core.sector) : '',
+    extraBadge2FilterKey: showSectorBadge ? 'sector' : '',
+    extraBadge2FilterValue: showSectorBadge ? getSectorCode(core.sector) : '',
     entity: proposerName,
     ctaHtml,
     hideTypeBadge: true,
