@@ -2980,6 +2980,15 @@ export const MARKETPLACE_CONFIG = {
         "en": "Archived",
         "va": "Arxivada"
       }
+    },
+    {
+      "id": "finished",
+      "visible": true,
+      "label": {
+        "es": "Finalizada",
+        "en": "Finished",
+        "va": "Finalitzada"
+      }
     }
   ],
   "decisionOutcomeLabels": [
