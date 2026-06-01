@@ -13189,7 +13189,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-etica-ia-seleccion-personal-adm.yml",
       "core": {
-        "status": "completed",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -13619,9 +13619,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Validació ètica"
       },
       "validationStageLabel": {
-        "es": "Completada",
-        "en": "Completed",
-        "va": "Completada"
+        "es": "Cerrada",
+        "en": "Closed",
+        "va": "Tancada"
       },
       "decisionOutcomeLabel": {
         "es": "Requiere reformulación",
@@ -20116,7 +20116,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-legal-datos-movilidad-mob.yml",
       "core": {
-        "status": "completed",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -20533,9 +20533,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Validació legal"
       },
       "validationStageLabel": {
-        "es": "Completada",
-        "en": "Completed",
-        "va": "Completada"
+        "es": "Cerrada",
+        "en": "Closed",
+        "va": "Tancada"
       },
       "decisionOutcomeLabel": {
         "es": "Validado — Track B",
@@ -20572,7 +20572,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-tecnica-gemelo-digital-ene.yml",
       "core": {
-        "status": "completed",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -21003,9 +21003,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Validació tècnica"
       },
       "validationStageLabel": {
-        "es": "Completada",
-        "en": "Completed",
-        "va": "Completada"
+        "es": "Cerrada",
+        "en": "Closed",
+        "va": "Tancada"
       },
       "decisionOutcomeLabel": {
         "es": "Validado — Track B",
@@ -22182,7 +22182,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-turismo-inteligente-tur.yml",
       "core": {
-        "status": "completed",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -22610,9 +22610,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Validació stakeholder"
       },
       "validationStageLabel": {
-        "es": "Completada",
-        "en": "Completed",
-        "va": "Completada"
+        "es": "Cerrada",
+        "en": "Closed",
+        "va": "Tancada"
       },
       "decisionOutcomeLabel": {
         "es": "Validado — documentar como caso",
@@ -23195,7 +23195,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-pedagogica-control-calidad-mfg.yml",
       "core": {
-        "status": "completed",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -23628,9 +23628,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Validació pedagògica"
       },
       "validationStageLabel": {
-        "es": "Completada",
-        "en": "Completed",
-        "va": "Completada"
+        "es": "Cerrada",
+        "en": "Closed",
+        "va": "Tancada"
       },
       "decisionOutcomeLabel": {
         "es": "Validado — Track B",
@@ -25102,7 +25102,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-salud-digital-nts.yml",
       "core": {
-        "status": "completed",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -25539,9 +25539,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Validació stakeholder"
       },
       "validationStageLabel": {
-        "es": "Completada",
-        "en": "Completed",
-        "va": "Completada"
+        "es": "Cerrada",
+        "en": "Closed",
+        "va": "Tancada"
       },
       "decisionOutcomeLabel": {
         "es": "Validado — Track A",
@@ -27722,7 +27722,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-agr-asaja.yml",
       "core": {
-        "status": "completed",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -28189,9 +28189,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Validació stakeholder"
       },
       "validationStageLabel": {
-        "es": "Completada",
-        "en": "Completed",
-        "va": "Completada"
+        "es": "Cerrada",
+        "en": "Closed",
+        "va": "Tancada"
       },
       "decisionOutcomeLabel": {
         "es": "Validado — Track A",
@@ -28228,7 +28228,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-academica-rl-edificios-hou.yml",
       "core": {
-        "status": "completed",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -28670,9 +28670,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Validació acadèmica"
       },
       "validationStageLabel": {
-        "es": "Completada",
-        "en": "Completed",
-        "va": "Completada"
+        "es": "Cerrada",
+        "en": "Closed",
+        "va": "Tancada"
       },
       "decisionOutcomeLabel": {
         "es": "Validado — derivar a piloto",
@@ -28709,7 +28709,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
       "core": {
-        "status": "completed",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -29181,9 +29181,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Validació stakeholder"
       },
       "validationStageLabel": {
-        "es": "Completada",
-        "en": "Completed",
-        "va": "Completada"
+        "es": "Cerrada",
+        "en": "Closed",
+        "va": "Tancada"
       },
       "decisionOutcomeLabel": {
         "es": "Validado — Track B",
@@ -46309,7 +46309,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-etica-ia-seleccion-personal-adm.yml",
         "core": {
-          "status": "completed",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -46739,9 +46739,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació ètica"
         },
         "validationStageLabel": {
-          "es": "Completada",
-          "en": "Completed",
-          "va": "Completada"
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
         },
         "decisionOutcomeLabel": {
           "es": "Requiere reformulación",
@@ -46778,7 +46778,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-legal-datos-movilidad-mob.yml",
         "core": {
-          "status": "completed",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -47195,9 +47195,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació legal"
         },
         "validationStageLabel": {
-          "es": "Completada",
-          "en": "Completed",
-          "va": "Completada"
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
         },
         "decisionOutcomeLabel": {
           "es": "Validado — Track B",
@@ -47234,7 +47234,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-tecnica-gemelo-digital-ene.yml",
         "core": {
-          "status": "completed",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -47665,9 +47665,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació tècnica"
         },
         "validationStageLabel": {
-          "es": "Completada",
-          "en": "Completed",
-          "va": "Completada"
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
         },
         "decisionOutcomeLabel": {
           "es": "Validado — Track B",
@@ -47704,7 +47704,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-turismo-inteligente-tur.yml",
         "core": {
-          "status": "completed",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -48132,9 +48132,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació stakeholder"
         },
         "validationStageLabel": {
-          "es": "Completada",
-          "en": "Completed",
-          "va": "Completada"
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
         },
         "decisionOutcomeLabel": {
           "es": "Validado — documentar como caso",
@@ -48171,7 +48171,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-pedagogica-control-calidad-mfg.yml",
         "core": {
-          "status": "completed",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -48604,9 +48604,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació pedagògica"
         },
         "validationStageLabel": {
-          "es": "Completada",
-          "en": "Completed",
-          "va": "Completada"
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
         },
         "decisionOutcomeLabel": {
           "es": "Validado — Track B",
@@ -48643,7 +48643,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-salud-digital-nts.yml",
         "core": {
-          "status": "completed",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -49080,9 +49080,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació stakeholder"
         },
         "validationStageLabel": {
-          "es": "Completada",
-          "en": "Completed",
-          "va": "Completada"
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
         },
         "decisionOutcomeLabel": {
           "es": "Validado — Track A",
@@ -49119,7 +49119,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-agr-asaja.yml",
         "core": {
-          "status": "completed",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -49586,9 +49586,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació stakeholder"
         },
         "validationStageLabel": {
-          "es": "Completada",
-          "en": "Completed",
-          "va": "Completada"
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
         },
         "decisionOutcomeLabel": {
           "es": "Validado — Track A",
@@ -49625,7 +49625,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-academica-rl-edificios-hou.yml",
         "core": {
-          "status": "completed",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -50067,9 +50067,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació acadèmica"
         },
         "validationStageLabel": {
-          "es": "Completada",
-          "en": "Completed",
-          "va": "Completada"
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
         },
         "decisionOutcomeLabel": {
           "es": "Validado — derivar a piloto",
@@ -50106,7 +50106,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
         "core": {
-          "status": "completed",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -50578,9 +50578,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació stakeholder"
         },
         "validationStageLabel": {
-          "es": "Completada",
-          "en": "Completed",
-          "va": "Completada"
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
         },
         "decisionOutcomeLabel": {
           "es": "Validado — Track B",
