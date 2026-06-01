@@ -303,6 +303,7 @@ const UI_TEXT = {
   verification: { es: 'Verificación', en: 'Verification', va: 'Verificació' },
   transferChain: { es: 'Cadena de transferencia', en: 'Transfer chain', va: 'Cadena de transferència' },
   validationEnvironment: { es: 'Entorno de validación', en: 'Validation environment', va: "Entorn de validació" },
+  decisionSection: { es: 'Decisión', en: 'Decision', va: 'Decisió' },
 };
 
 const FIELD_LABELS = {
@@ -1750,10 +1751,20 @@ function renderValidationCard(item, tab) {
 
   // ── Decisión ──────────────────────────────────────────────────────────────
   const decisionLabel = pickLang(decision.label);
+  const _decOutcome = decision.outcome || '';
+  const _decTone = _decOutcome.includes('validated') || _decOutcome.includes('track-')
+    ? 'bg-green-50 text-green-800 border-green-200'
+    : _decOutcome.includes('rejected') || _decOutcome.includes('not-')
+      ? 'bg-red-50 text-red-700 border-red-200'
+      : 'bg-slate-50 text-slate-700 border-slate-200';
+  const _decIcon = _decOutcome.includes('rejected') || _decOutcome.includes('not-') ? 'x-circle' : 'check-circle-2';
   const decisionHtml = (ccv.ch_val_decision !== false && pres.showDecision !== false && decisionLabel)
-    ? `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500">
-        <i data-lucide="check-circle-2" class="h-3.5 w-3.5 shrink-0 text-green-600"></i>
-        <span>${esc(decisionLabel)}</span>
+    ? `<div class="mt-4 rounded-lg border px-3 py-2 ${_decTone}">
+        <p class="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide opacity-70">
+          <i data-lucide="${esc(_decIcon)}" class="h-3.5 w-3.5 shrink-0"></i>
+          ${esc(uiText('decisionSection'))}
+        </p>
+        <p class="mt-0.5 text-sm font-semibold leading-5">${esc(decisionLabel)}</p>
       </div>`
     : '';
 
