@@ -546,72 +546,126 @@ export const MARKETPLACE_CONFIG = {
       "id": "open",
       "visible": true,
       "label": {
-        "es": "Abierto",
+        "es": "Abierta",
         "en": "Open",
-        "va": "Obert"
+        "va": "Oberta"
       }
     },
     {
       "id": "in-progress",
       "visible": true,
       "label": {
-        "es": "En Resolución",
+        "es": "En resolución",
         "en": "In Progress",
-        "va": "En Resolució"
+        "va": "En resolució"
       }
     },
     {
       "id": "resolved",
       "visible": true,
       "label": {
-        "es": "Resuelto",
+        "es": "Resuelta",
         "en": "Resolved",
-        "va": "Resolt"
+        "va": "Resolta"
       }
     },
     {
       "id": "validated",
       "visible": true,
       "label": {
-        "es": "Validado",
+        "es": "Validada",
         "en": "Validated",
-        "va": "Validat"
+        "va": "Validada"
       }
     },
     {
       "id": "published",
       "visible": true,
       "label": {
-        "es": "Publicado",
+        "es": "Publicada",
         "en": "Published",
-        "va": "Publicat"
+        "va": "Publicada"
       }
     },
     {
       "id": "documented",
       "visible": true,
       "label": {
-        "es": "Documentado",
+        "es": "Documentada",
         "en": "Documented",
-        "va": "Documentat"
+        "va": "Documentada"
       }
     },
     {
       "id": "archived",
       "visible": true,
       "label": {
-        "es": "Archivado",
+        "es": "Archivada",
         "en": "Archived",
-        "va": "Arxivat"
+        "va": "Arxivada"
       }
     },
     {
       "id": "closed",
       "visible": true,
       "label": {
-        "es": "Cerrado",
+        "es": "Cerrada",
         "en": "Closed",
-        "va": "Tancat"
+        "va": "Tancada"
+      }
+    },
+    {
+      "id": "planned",
+      "visible": true,
+      "label": {
+        "es": "Planificada",
+        "en": "Planned",
+        "va": "Planificada"
+      }
+    },
+    {
+      "id": "in-review",
+      "visible": true,
+      "label": {
+        "es": "En revisión",
+        "en": "In review",
+        "va": "En revisió"
+      }
+    },
+    {
+      "id": "not-validated",
+      "visible": true,
+      "label": {
+        "es": "No validada",
+        "en": "Not validated",
+        "va": "No validada"
+      }
+    },
+    {
+      "id": "needs-reformulation",
+      "visible": true,
+      "label": {
+        "es": "Requiere reformulación",
+        "en": "Needs reformulation",
+        "va": "Requereix reformulació"
+      }
+    },
+    {
+      "id": "completed",
+      "visible": true,
+      "label": {
+        "es": "Completada",
+        "en": "Completed",
+        "va": "Completada"
+      }
+    },
+    {
+      "id": "finished",
+      "visible": true,
+      "label": {
+        "es": "Finalizada",
+        "en": "Finished",
+        "va": "Finalitzada"
       }
     }
   ],
@@ -2917,80 +2971,6 @@ export const MARKETPLACE_CONFIG = {
       }
     }
   ],
-  "validationStageLabels": [
-    {
-      "id": "planned",
-      "visible": true,
-      "label": {
-        "es": "Planificada",
-        "en": "Planned",
-        "va": "Planificada"
-      }
-    },
-    {
-      "id": "in-review",
-      "visible": true,
-      "label": {
-        "es": "En revisión",
-        "en": "In review",
-        "va": "En revisió"
-      }
-    },
-    {
-      "id": "validated",
-      "visible": true,
-      "label": {
-        "es": "Validada",
-        "en": "Validated",
-        "va": "Validada"
-      }
-    },
-    {
-      "id": "not-validated",
-      "visible": true,
-      "label": {
-        "es": "No validada",
-        "en": "Not validated",
-        "va": "No validada"
-      }
-    },
-    {
-      "id": "needs-reformulation",
-      "visible": true,
-      "label": {
-        "es": "Requiere reformulación",
-        "en": "Needs reformulation",
-        "va": "Requereix reformulació"
-      }
-    },
-    {
-      "id": "completed",
-      "visible": true,
-      "label": {
-        "es": "Completada",
-        "en": "Completed",
-        "va": "Completada"
-      }
-    },
-    {
-      "id": "archived",
-      "visible": true,
-      "label": {
-        "es": "Archivada",
-        "en": "Archived",
-        "va": "Arxivada"
-      }
-    },
-    {
-      "id": "finished",
-      "visible": true,
-      "label": {
-        "es": "Finalizada",
-        "en": "Finished",
-        "va": "Finalitzada"
-      }
-    }
-  ],
   "decisionOutcomeLabels": [
     {
       "id": "validated-track-a",
@@ -3499,7 +3479,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -4006,7 +3985,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "creative-ai-support",
         "helix": [],
         "relatedDeliverable": "",
@@ -4491,7 +4469,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "stakeholder-engagement",
         "helix": [],
         "relatedDeliverable": "",
@@ -4975,7 +4952,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "replication-support",
         "helix": [],
         "relatedDeliverable": "",
@@ -5457,7 +5433,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "research-transfer",
         "helix": [],
         "relatedDeliverable": "",
@@ -5939,7 +5914,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "ethics-review",
         "helix": [],
         "relatedDeliverable": "",
@@ -6419,7 +6393,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "technical-support",
         "helix": [],
         "relatedDeliverable": "",
@@ -6908,7 +6881,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "vet-industry",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [
           "academia",
@@ -7887,7 +7859,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "living-lab",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [
           "academia",
@@ -8864,7 +8835,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "pilot-design",
         "helix": [],
         "relatedDeliverable": "",
@@ -9344,7 +9314,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -9854,7 +9823,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "brief-support",
         "helix": [],
         "relatedDeliverable": "",
@@ -10332,7 +10300,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -10806,7 +10773,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -11448,7 +11414,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "curriculum-pilot",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [
           "academia",
@@ -12244,7 +12209,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -12751,7 +12715,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -13226,7 +13189,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-etica-ia-seleccion-personal-adm.yml",
       "core": {
-        "status": "resolved",
+        "status": "completed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -13260,7 +13223,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "stakeholder-validation",
         "validationType": "ethical-validation",
-        "validationStage": "completed",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -13729,7 +13691,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -14305,7 +14266,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -14767,7 +14727,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -15323,7 +15282,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -15943,7 +15901,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -16450,7 +16407,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -17008,7 +16964,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "vet-industry",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [
           "academia",
@@ -17994,7 +17949,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -18574,7 +18528,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "brief-support",
         "helix": [],
         "relatedDeliverable": "",
@@ -19113,7 +19066,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -19597,7 +19549,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -20165,7 +20116,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-legal-datos-movilidad-mob.yml",
       "core": {
-        "status": "validated",
+        "status": "completed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -20199,7 +20150,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "",
         "validationType": "legal-validation",
-        "validationStage": "completed",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -20622,7 +20572,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-tecnica-gemelo-digital-ene.yml",
       "core": {
-        "status": "validated",
+        "status": "completed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -20656,7 +20606,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "",
         "validationType": "technical-validation",
-        "validationStage": "completed",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -21126,7 +21075,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -21690,7 +21638,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -22235,7 +22182,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-turismo-inteligente-tur.yml",
       "core": {
-        "status": "validated",
+        "status": "completed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -22270,7 +22217,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "",
         "validationType": "stakeholder-validation",
-        "validationStage": "completed",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -22736,7 +22682,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -23250,7 +23195,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-pedagogica-control-calidad-mfg.yml",
       "core": {
-        "status": "validated",
+        "status": "completed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -23285,7 +23230,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "",
         "validationType": "pedagogical-validation",
-        "validationStage": "completed",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -23760,7 +23704,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "teacher-training",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [
           "academia",
@@ -24594,7 +24537,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -25160,7 +25102,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-salud-digital-nts.yml",
       "core": {
-        "status": "validated",
+        "status": "completed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -25196,7 +25138,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "",
         "validationType": "stakeholder-validation",
-        "validationStage": "completed",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -25670,7 +25611,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -26245,7 +26185,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "vet-industry",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [
           "academia",
@@ -27052,7 +26991,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "master-bridge",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [
           "academia",
@@ -27784,7 +27722,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-agr-asaja.yml",
       "core": {
-        "status": "resolved",
+        "status": "completed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -27819,7 +27757,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "",
         "validationType": "stakeholder-validation",
-        "validationStage": "completed",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -28291,7 +28228,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-academica-rl-edificios-hou.yml",
       "core": {
-        "status": "validated",
+        "status": "completed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -28326,7 +28263,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "",
         "validationType": "academic-validation",
-        "validationStage": "completed",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -28773,7 +28709,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
       "core": {
-        "status": "resolved",
+        "status": "completed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -28807,7 +28743,6 @@ export const MARKETPLACE_CONFIG = {
         ],
         "pilotType": "",
         "validationType": "stakeholder-validation",
-        "validationStage": "completed",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -29320,7 +29255,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -29827,7 +29761,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -30337,7 +30270,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -30809,7 +30741,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -31316,7 +31247,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -31823,7 +31753,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -32284,7 +32213,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -32790,7 +32718,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -33277,7 +33204,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -33916,7 +33842,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -34493,7 +34418,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -35049,7 +34973,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -35670,7 +35593,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -36225,7 +36147,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -36806,7 +36727,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -37407,7 +37327,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -37971,7 +37890,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -38549,7 +38467,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -39096,7 +39013,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -39695,7 +39611,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -40273,7 +40188,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "vet-industry",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [
             "academia",
@@ -41252,7 +41166,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "living-lab",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [
             "academia",
@@ -42233,7 +42146,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "curriculum-pilot",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [
             "academia",
@@ -43033,7 +42945,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "vet-industry",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [
             "academia",
@@ -44023,7 +43934,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "teacher-training",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [
             "academia",
@@ -44860,7 +44770,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "vet-industry",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [
             "academia",
@@ -45667,7 +45576,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "master-bridge",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "",
           "helix": [
             "academia",
@@ -46401,7 +46309,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-etica-ia-seleccion-personal-adm.yml",
         "core": {
-          "status": "resolved",
+          "status": "completed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -46435,7 +46343,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "stakeholder-validation",
           "validationType": "ethical-validation",
-          "validationStage": "completed",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -46871,7 +46778,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-legal-datos-movilidad-mob.yml",
         "core": {
-          "status": "validated",
+          "status": "completed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -46905,7 +46812,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "",
           "validationType": "legal-validation",
-          "validationStage": "completed",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -47328,7 +47234,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-tecnica-gemelo-digital-ene.yml",
         "core": {
-          "status": "validated",
+          "status": "completed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -47362,7 +47268,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "",
           "validationType": "technical-validation",
-          "validationStage": "completed",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -47799,7 +47704,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-turismo-inteligente-tur.yml",
         "core": {
-          "status": "validated",
+          "status": "completed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -47834,7 +47739,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "",
           "validationType": "stakeholder-validation",
-          "validationStage": "completed",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -48267,7 +48171,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-pedagogica-control-calidad-mfg.yml",
         "core": {
-          "status": "validated",
+          "status": "completed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -48302,7 +48206,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "",
           "validationType": "pedagogical-validation",
-          "validationStage": "completed",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -48740,7 +48643,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-salud-digital-nts.yml",
         "core": {
-          "status": "validated",
+          "status": "completed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -48776,7 +48679,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "",
           "validationType": "stakeholder-validation",
-          "validationStage": "completed",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -49217,7 +49119,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-agr-asaja.yml",
         "core": {
-          "status": "resolved",
+          "status": "completed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -49252,7 +49154,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "",
           "validationType": "stakeholder-validation",
-          "validationStage": "completed",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -49724,7 +49625,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-academica-rl-edificios-hou.yml",
         "core": {
-          "status": "validated",
+          "status": "completed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -49759,7 +49660,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "",
           "validationType": "academic-validation",
-          "validationStage": "completed",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -50206,7 +50106,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
         "core": {
-          "status": "resolved",
+          "status": "completed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -50240,7 +50140,6 @@ export const MARKETPLACE_CONFIG = {
           ],
           "pilotType": "",
           "validationType": "stakeholder-validation",
-          "validationStage": "completed",
           "mentoringType": "",
           "helix": [],
           "relatedDeliverable": "",
@@ -50752,7 +50651,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "creative-ai-support",
           "helix": [],
           "relatedDeliverable": "",
@@ -51237,7 +51135,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "stakeholder-engagement",
           "helix": [],
           "relatedDeliverable": "",
@@ -51721,7 +51618,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "replication-support",
           "helix": [],
           "relatedDeliverable": "",
@@ -52203,7 +52099,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "research-transfer",
           "helix": [],
           "relatedDeliverable": "",
@@ -52685,7 +52580,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "ethics-review",
           "helix": [],
           "relatedDeliverable": "",
@@ -53165,7 +53059,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "technical-support",
           "helix": [],
           "relatedDeliverable": "",
@@ -53649,7 +53542,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "pilot-design",
           "helix": [],
           "relatedDeliverable": "",
@@ -54129,7 +54021,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "brief-support",
           "helix": [],
           "relatedDeliverable": "",
@@ -54607,7 +54498,6 @@ export const MARKETPLACE_CONFIG = {
           "levels": [],
           "pilotType": "",
           "validationType": "",
-          "validationStage": "",
           "mentoringType": "brief-support",
           "helix": [],
           "relatedDeliverable": "",
@@ -55149,7 +55039,6 @@ export const MARKETPLACE_CONFIG = {
         "levels": [],
         "pilotType": "",
         "validationType": "",
-        "validationStage": "",
         "mentoringType": "",
         "helix": [],
         "relatedDeliverable": "",
@@ -55337,72 +55226,126 @@ export const MARKETPLACE_CONFIG = {
         "id": "open",
         "visible": true,
         "label": {
-          "es": "Abierto",
+          "es": "Abierta",
           "en": "Open",
-          "va": "Obert"
+          "va": "Oberta"
         }
       },
       {
         "id": "in-progress",
         "visible": true,
         "label": {
-          "es": "En Resolución",
+          "es": "En resolución",
           "en": "In Progress",
-          "va": "En Resolució"
+          "va": "En resolució"
         }
       },
       {
         "id": "resolved",
         "visible": true,
         "label": {
-          "es": "Resuelto",
+          "es": "Resuelta",
           "en": "Resolved",
-          "va": "Resolt"
+          "va": "Resolta"
         }
       },
       {
         "id": "validated",
         "visible": true,
         "label": {
-          "es": "Validado",
+          "es": "Validada",
           "en": "Validated",
-          "va": "Validat"
+          "va": "Validada"
         }
       },
       {
         "id": "published",
         "visible": true,
         "label": {
-          "es": "Publicado",
+          "es": "Publicada",
           "en": "Published",
-          "va": "Publicat"
+          "va": "Publicada"
         }
       },
       {
         "id": "documented",
         "visible": true,
         "label": {
-          "es": "Documentado",
+          "es": "Documentada",
           "en": "Documented",
-          "va": "Documentat"
+          "va": "Documentada"
         }
       },
       {
         "id": "archived",
         "visible": true,
         "label": {
-          "es": "Archivado",
+          "es": "Archivada",
           "en": "Archived",
-          "va": "Arxivat"
+          "va": "Arxivada"
         }
       },
       {
         "id": "closed",
         "visible": true,
         "label": {
-          "es": "Cerrado",
+          "es": "Cerrada",
           "en": "Closed",
-          "va": "Tancat"
+          "va": "Tancada"
+        }
+      },
+      {
+        "id": "planned",
+        "visible": true,
+        "label": {
+          "es": "Planificada",
+          "en": "Planned",
+          "va": "Planificada"
+        }
+      },
+      {
+        "id": "in-review",
+        "visible": true,
+        "label": {
+          "es": "En revisión",
+          "en": "In review",
+          "va": "En revisió"
+        }
+      },
+      {
+        "id": "not-validated",
+        "visible": true,
+        "label": {
+          "es": "No validada",
+          "en": "Not validated",
+          "va": "No validada"
+        }
+      },
+      {
+        "id": "needs-reformulation",
+        "visible": true,
+        "label": {
+          "es": "Requiere reformulación",
+          "en": "Needs reformulation",
+          "va": "Requereix reformulació"
+        }
+      },
+      {
+        "id": "completed",
+        "visible": true,
+        "label": {
+          "es": "Completada",
+          "en": "Completed",
+          "va": "Completada"
+        }
+      },
+      {
+        "id": "finished",
+        "visible": true,
+        "label": {
+          "es": "Finalizada",
+          "en": "Finished",
+          "va": "Finalitzada"
         }
       }
     ],

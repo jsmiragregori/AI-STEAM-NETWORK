@@ -575,7 +575,7 @@ function getValidationTypeLabel(id) {
 }
 
 function getValidationStageLabel(id) {
-  return getLabelFromArray(MARKETPLACE_CONFIG.validationStageLabels, id);
+  return getStatusLabel(id);
 }
 
 function getDecisionOutcomeLabel(id) {
@@ -791,7 +791,7 @@ function getItemFilterValue(item, key) {
   if (key === 'helix') return asArray(item.core?.helix);
   if (key === 'pilotStatus') return item.classification?.pilotStatus || '';
   if (key === 'validationType') return item.core?.validationType || '';
-  if (key === 'validationStage') return item.core?.validationStage || '';
+  if (key === 'validationStage') return item.core?.status || '';
   if (key === 'caseStage') return item.core?.caseStage || '';
   return '';
 }
@@ -838,7 +838,7 @@ function getFilterDefinitions(tabId) {
   if (tabId === 'validations') {
     return [
       { key: 'validationType', label: uiText('filterBy') + ' ' + pickLang({ es: 'Tipo', en: 'Type', va: 'Tipus' }), labeler: getValidationTypeLabel },
-      { key: 'validationStage', label: uiText('filterBy') + ' ' + pickLang({ es: 'Etapa', en: 'Stage', va: 'Etapa' }), labeler: getValidationStageLabel },
+      common.status,
       common.sector,
     ];
   }
@@ -1786,8 +1786,8 @@ function renderValidationCard(item, tab) {
     title: core.title,
     subtitle: core.summary,
     statusLabel: stageLabel,
-    statusValue: core.validationStage || '',
-    statusFilterKey: stageLabel ? 'validationStage' : '',
+    statusValue: core.status || '',
+    statusFilterKey: stageLabel ? 'status' : '',
     statusBadgeTone: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
     extraBadge: validationTypeLabel,
     extraBadgeTone: 'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
@@ -4361,9 +4361,7 @@ function renderOperationalSummary(item) {
   const entity = isValidation
     ? (pickLang(item.ownership?.proposer?.name) || pickLang(item.core?.entity?.name))
     : pickLang(item.core?.entity?.name);
-  const status = isValidation
-    ? (pickLang(item.validationStageLabel) || getStatusLabel(item.core?.status))
-    : getStatusLabel(item.core?.status);
+  const status = getStatusLabel(item.core?.status);
   const typeLabel = isValidation
     ? (pickLang(item.validationTypeLabel) || getTypeLabel(item.type))
     : getTypeLabel(item.type);
