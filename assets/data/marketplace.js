@@ -28386,7 +28386,7 @@ export const MARKETPLACE_CONFIG = {
           },
           {
             "label": {
-              "es": "Sesión de valoración formativa — Comité Técnico Investigación AI-STEAM",
+              "es": "Sessión de valoración formativa — Comité Técnico Búsqueda AI-STEAM",
               "en": "Educational value assessment session — AI-STEAM Research Technical Committee",
               "va": "Sessió de valoració formativa — Comité Tècnic Recerca AI-STEAM"
             }
@@ -49713,7 +49713,7 @@ export const MARKETPLACE_CONFIG = {
             },
             {
               "label": {
-                "es": "Sesión de valoración formativa — Comité Técnico Investigación AI-STEAM",
+                "es": "Sessión de valoración formativa — Comité Técnico Búsqueda AI-STEAM",
                 "en": "Educational value assessment session — AI-STEAM Research Technical Committee",
                 "va": "Sessió de valoració formativa — Comité Tècnic Recerca AI-STEAM"
               }

@@ -302,6 +302,7 @@ const UI_TEXT = {
   evidenceLevel: { es: 'Nivel de evidencia', en: 'Evidence level', va: "Nivell d'evidència" },
   verification: { es: 'Verificación', en: 'Verification', va: 'Verificació' },
   transferChain: { es: 'Cadena de transferencia', en: 'Transfer chain', va: 'Cadena de transferència' },
+  validationEnvironment: { es: 'Entorno de validación', en: 'Validation environment', va: "Entorn de validació" },
 };
 
 const FIELD_LABELS = {
@@ -1734,9 +1735,16 @@ function renderValidationCard(item, tab) {
   let envHtml = '';
   if (ccv.ch_val_environment !== false && pres.showValidationEnvironment !== false) {
     const envItems = asArray(validation.validationEnvironment).slice(0, CARD_CHIP_MAX)
-      .map(e => pickLang(e.label)).filter(Boolean);
+      .map(e => pickLangStrict(e.label)).filter(Boolean);
     if (envItems.length) {
-      envHtml = `<div class="mt-4 flex flex-wrap gap-2">${envItems.map(l => renderBadge(l, 'bg-slate-50 text-slate-700 border-slate-200')).join('')}</div>`;
+      const envSectionLabel = uiText('validationEnvironment');
+      envHtml = `<div class="mt-4">
+        <p class="mb-1.5 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-gray-500">
+          <i data-lucide="layers" class="h-3.5 w-3.5 shrink-0"></i>
+          ${esc(envSectionLabel)}
+        </p>
+        <div class="flex flex-wrap gap-2">${envItems.map(l => renderBadge(l, 'bg-slate-50 text-slate-700 border-slate-200')).join('')}</div>
+      </div>`;
     }
   }
 
@@ -3255,7 +3263,7 @@ function renderValidationDetail(item) {
 
   // ── S3: Método de validación ──────────────────────────────────────────────
   const method = pickLang(validation.method);
-  const envItems = asArray(validation.validationEnvironment).map(e => pickLang(e.label)).filter(Boolean);
+  const envItems = asArray(validation.validationEnvironment).map(e => pickLangStrict(e.label)).filter(Boolean);
   let methodHtml = '';
   if (pres.method !== false && (method || envItems.length)) {
     methodHtml = `
