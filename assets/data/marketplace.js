@@ -13411,59 +13411,45 @@ export const MARKETPLACE_CONFIG = {
       "criteria": {
         "items": [
           {
-            "id": "legal-compliance",
+            "id": "",
             "label": {
+              "es": "Cumplimiento normativo IA (Reglamento UE)",
+              "en": "AI regulatory compliance (EU AI Act)",
+              "va": "Compliment normatiu IA (Reglament UE)"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "negative",
-            "note": {
-              "es": "El sistema propuesto se clasifica como de riesgo alto según el Reglamento de IA (Art. 6, Anexo III). Requiere evaluación de conformidad obligatoria antes de cualquier despliegue, que la propuesta actual no contempla.",
-              "en": "The proposed system is classified as high-risk under the AI Act (Art. 6, Annex III). It requires mandatory conformity assessment before any deployment, which the current proposal does not include.",
-              "va": "El sistema proposat es classifica com de risc alt segons el Reglament d'IA (Art. 6, Annex III). Requereix avaluació de conformitat obligatòria abans de qualsevol desplegament, que la proposta actual no contempla."
             }
           },
           {
-            "id": "bias-risk",
+            "id": "",
             "label": {
+              "es": "Riesgo de sesgo discriminatorio",
+              "en": "Discriminatory bias risk",
+              "va": "Risc de biaix discriminatori"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "negative",
-            "note": {
-              "es": "El análisis de los datos históricos de candidatos revela correlaciones entre variables proxy (zona de residencia, nombre) y categorías protegidas. Sin mitigación técnica demostrada, el riesgo de discriminación indirecta es inaceptable para un sistema de acceso a empleo público.",
-              "en": "Analysis of historical candidate data reveals correlations between proxy variables (residential area, name) and protected categories. Without demonstrated technical mitigation, the risk of indirect discrimination is unacceptable for a public employment access system.",
-              "va": "L'anàlisi de les dades històriques de candidats revela correlacions entre variables proxy (zona de residència, nom) i categories protegides. Sense mitigació tècnica demostrada, el risc de discriminació indirecta és inacceptable per a un sistema d'accés a l'ocupació pública."
             }
           },
           {
-            "id": "transparency",
+            "id": "",
             "label": {
+              "es": "Transparencia y explicabilidad insuficientes",
+              "en": "Insufficient transparency and explainability",
+              "va": "Transparència i explicabilitat insuficients"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "manageable",
-            "note": {
-              "es": "La propuesta contempla un modelo explicable (árbol de decisión regularizado), pero no incluye mecanismo de revisión humana obligatoria ni protocolo de recurso para candidatos afectados.",
-              "en": "The proposal includes an explainable model (regularised decision tree), but does not include a mandatory human review mechanism or an appeal protocol for affected candidates.",
-              "va": "La proposta contempla un model explicable (arbre de decisió regularitzat), però no inclou mecanisme de revisió humana obligatòria ni protocol de recurs per a candidats afectats."
-            }
-          },
-          {
-            "id": "union-acceptance",
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "result": "negative",
-            "note": {
-              "es": "CSIF y UGT-PV rechazan cualquier uso de IA en la fase de cribado sin garantías explícitas de revisión humana total de cada exclusión y derecho de impugnación documentada.",
-              "en": "CSIF and UGT-PV reject any AI use in the screening phase without explicit guarantees of full human review of each exclusion and documented appeal rights.",
-              "va": "CSIF i UGT-PV rebutgen qualsevol ús d'IA en la fase de cribratge sense garanties explícites de revisió humana total de cada exclusió i dret d'impugnació documentada."
             }
           }
         ]
@@ -13612,7 +13598,7 @@ export const MARKETPLACE_CONFIG = {
         "start": "2026-01-10",
         "end": "2026-02-28"
       },
-      "criteriaCount": 4,
+      "criteriaCount": 3,
       "validationTypeLabel": {
         "es": "Validación ética",
         "en": "Ethical validation",
@@ -20338,45 +20324,45 @@ export const MARKETPLACE_CONFIG = {
       "criteria": {
         "items": [
           {
-            "id": "gdpr-compliance",
+            "id": "",
             "label": {
+              "es": "Viabilidad RGPD confirmada",
+              "en": "GDPR feasibility confirmed",
+              "va": "Viabilitat RGPD confirmada"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "La EIPD concluye que la cesión es viable bajo los artículos 6(1)(f) (interés legítimo) y 89 (tratamiento con fines de investigación) del RGPD, siempre que se apliquen las medidas de anonimización documentadas en el protocolo adjunto.",
-              "en": "The DPIA concludes that transfer is feasible under GDPR articles 6(1)(f) (legitimate interest) and 89 (processing for research purposes), provided the anonymisation measures documented in the attached protocol are applied.",
-              "va": "L'AIPD conclou que la cessió és viable sota els articles 6(1)(f) (interès legítim) i 89 (tractament amb fins de recerca) del RGPD, sempre que s'apliquen les mesures d'anonimització documentades en el protocol adjunt."
             }
           },
           {
-            "id": "re-identification-risk",
+            "id": "",
             "label": {
+              "es": "Riesgo de re-identificación gestionable",
+              "en": "Manageable re-identification risk",
+              "va": "Risc de re-identificació gestionable"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "manageable",
-            "note": {
-              "es": "El k-anonimato (k=5) aplicado a nivel de segmento de ruta y ventana temporal de 30 minutos reduce el riesgo de re-identificación a nivel aceptable. Las coordenadas de entrega se agregan al nivel de código postal, eliminando la posibilidad de identificar domicilios individuales.",
-              "en": "K-anonymity (k=5) applied at route segment and 30-minute time window level reduces re-identification risk to an acceptable level. Delivery coordinates are aggregated to postcode level, eliminating the possibility of identifying individual addresses.",
-              "va": "El k-anonimat (k=5) aplicat a nivell de segment de ruta i finestra temporal de 30 minuts redueix el risc de re-identificació a un nivell acceptable. Les coordenades de lliurament s'agreguen al nivell de codi postal, eliminant la possibilitat d'identificar domicilis individuals."
             }
           },
           {
-            "id": "use-restrictions",
+            "id": "",
             "label": {
+              "es": "Acuerdo de uso compatible con Correos",
+              "en": "Usage agreement compatible with Correos",
+              "va": "Acord d'ús compatible amb Correos"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "El acuerdo de uso propuesto (no redistribución, uso exclusivo para el reto, destrucción certificada al finalizar) es compatible con el RGPD y con las políticas de datos operativos de Correos.",
-              "en": "The proposed usage agreement (no redistribution, exclusive use for the challenge, certified destruction upon completion) is compatible with GDPR and Correos operational data policies.",
-              "va": "L'acord d'ús proposat (no redistribució, ús exclusiu per al repte, destrucció certificada en finalitzar) és compatible amb el RGPD i amb les polítiques de dades operatives de Correos."
             }
           }
         ]
@@ -20794,59 +20780,45 @@ export const MARKETPLACE_CONFIG = {
       "criteria": {
         "items": [
           {
-            "id": "data-quality",
+            "id": "",
             "label": {
+              "es": "Calidad estadística del dataset SCADA confirmada",
+              "en": "Confirmed SCADA dataset statistical quality",
+              "va": "Qualitat estadística del dataset SCADA confirmada"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "El ITE confirma que el dataset de 3 años a nivel de transformador, una vez anonimizado, mantiene suficiente utilidad estadística para entrenar modelos de predicción de sobrecargas.",
-              "en": "ITE confirms that the 3-year transformer-level dataset, once anonymised, retains sufficient statistical utility for training overload prediction models.",
-              "va": "L'ITE confirma que el dataset de 3 anys a nivell de transformador, una vegada anonimitzat, manté suficient utilitat estadística per entrenar models de predicció de sobrecàrregues."
             }
           },
           {
-            "id": "stack-feasibility",
+            "id": "",
             "label": {
+              "es": "Stack técnico CARLA+ROS 2 viable",
+              "en": "CARLA+ROS 2 technical stack feasible",
+              "va": "Stack tècnic CARLA+ROS 2 viable"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "CARLA+ROS 2 es un stack maduro usado en investigación académica con comunidad activa. La integración conceptual con SCADA es técnicamente viable en fase de prototipo.",
-              "en": "CARLA+ROS 2 is a mature stack used in academic research with an active community. The conceptual integration with SCADA is technically feasible at prototype stage.",
-              "va": "CARLA+ROS 2 és un stack madur usat en recerca acadèmica amb comunitat activa. La integració conceptual amb SCADA és tècnicament viable en fase de prototip."
             }
           },
           {
-            "id": "anonymisation-risk",
+            "id": "",
             "label": {
+              "es": "Riesgo de anonimización gestionable (ITE)",
+              "en": "Manageable anonymisation risk (ITE)",
+              "va": "Risc d'anonimització gestionable (ITE)"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "manageable",
-            "note": {
-              "es": "La agregación a nivel de transformador reduce el riesgo, pero se requiere aplicar k-anonimato antes de la distribución a los equipos participantes. ITE proporciona el protocolo de anonimización.",
-              "en": "Aggregation at transformer level reduces the risk, but k-anonymity must be applied before distribution to participating teams. ITE provides the anonymisation protocol.",
-              "va": "L'agregació a nivell de transformador redueix el risc, però cal aplicar k-anonimat abans de la distribució als equips participants. L'ITE proporciona el protocol d'anonimització."
-            }
-          },
-          {
-            "id": "timeline-feasibility",
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "result": "medium",
-            "note": {
-              "es": "6 meses es ajustado para equipos sin experiencia previa en CARLA. Se recomienda añadir una sesión de onboarding técnico de 2 días antes del inicio oficial del reto.",
-              "en": "6 months is tight for teams without prior CARLA experience. Adding a 2-day technical onboarding session before the official challenge start is recommended.",
-              "va": "6 mesos és ajustat per a equips sense experiència prèvia en CARLA. Es recomana afegir una sessió d'onboarding tècnic de 2 dies abans de l'inici oficial del repte."
             }
           }
         ]
@@ -20996,7 +20968,7 @@ export const MARKETPLACE_CONFIG = {
         "start": "2025-12-01",
         "end": "2026-02-10"
       },
-      "criteriaCount": 4,
+      "criteriaCount": 3,
       "validationTypeLabel": {
         "es": "Validación técnica",
         "en": "Technical validation",
@@ -22415,45 +22387,45 @@ export const MARKETPLACE_CONFIG = {
       "criteria": {
         "items": [
           {
-            "id": "operator-demand",
+            "id": "",
             "label": {
+              "es": "Alta demanda insatisfecha de operadores hoteleros",
+              "en": "High unmet demand from hotel operators",
+              "va": "Alta demanda insatisfeta d'operadors hotelers"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "El 92% de los hoteleros del panel HOSBEC declaran usar herramientas de monitorización de reseñas, pero solo el 18% está satisfecho con las soluciones actuales. La demanda de IA es alta y el presupuesto disponible en hoteles de 3-5 estrellas es suficiente para soluciones SaaS.",
-              "en": "92% of HOSBEC panel hoteliers declare using review monitoring tools, but only 18% are satisfied with current solutions. AI demand is high and available budget in 3-5 star hotels is sufficient for SaaS solutions.",
-              "va": "El 92% dels hotelers del panell HOSBEC declaren usar eines de monitorització de ressenyes, però només el 18% està satisfet amb les solucions actuals. La demanda d'IA és alta i el pressupost disponible en hotels de 3-5 estrelles és suficient per a solucions SaaS."
             }
           },
           {
-            "id": "data-availability",
+            "id": "",
             "label": {
+              "es": "Corpus de reseñas multilingüe disponible",
+              "en": "Multilingual review corpus available",
+              "va": "Corpus de ressenyes multilingüe disponible"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "Turisme CV dispone de un corpus de 280.000 reseñas etiquetadas en 10 idiomas (2023-2025). Booking.com confirma acceso a la API para destinos oficialmente colaboradores.",
-              "en": "Turisme CV has a corpus of 280,000 labelled reviews in 10 languages (2023-2025). Booking.com confirms API access for officially collaborating destinations.",
-              "va": "Turisme CV disposa d'un corpus de 280.000 ressenyes etiquetades en 10 idiomes (2023-2025). Booking.com confirma accés a l'API per a destinacions oficialment col·laboradores."
             }
           },
           {
-            "id": "absorptive-capacity",
+            "id": "",
             "label": {
+              "es": "Capacidad de absorción diferencial por tamaño",
+              "en": "Differential absorptive capacity by hotel size",
+              "va": "Capacitat d'absorció diferencial per mida"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "medium",
-            "note": {
-              "es": "Los hoteles grandes (>100 habitaciones) tienen capacidad técnica para adoptar las soluciones. Los establecimientos pequeños y rurales necesitan versiones SaaS simplificadas sin integración técnica propia. El Comité recomienda diseñar una versión \"plug and play\" para establecimientos pequeños.",
-              "en": "Large hotels (>100 rooms) have the technical capacity to adopt the solutions. Small and rural establishments need simplified SaaS versions without their own technical integration. The Committee recommends designing a \"plug and play\" version for small establishments.",
-              "va": "Els hotels grans (>100 habitacions) tenen capacitat tècnica per adoptar les solucions. Els establiments menuts i rurals necessiten versions SaaS simplificades sense integració tècnica pròpia. El Comité recomana dissenyar una versió \"plug and play\" per a establiments menuts."
             }
           }
         ]
@@ -23419,59 +23391,45 @@ export const MARKETPLACE_CONFIG = {
       "criteria": {
         "items": [
           {
-            "id": "curricular-fit",
+            "id": "",
             "label": {
+              "es": "Integración curricular viable (8-10h)",
+              "en": "Viable curricular integration (8-10h)",
+              "va": "Integració curricular viable (8-10h)"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "El módulo se integra directamente en la UD de \"Control dimensional y de calidad\" presente en ambos ciclos. El Comité identifica 8-10 horas de integración natural sin modificar el currículo.",
-              "en": "The module integrates directly into the \"Dimensional and quality control\" learning unit present in both cycles. The Committee identifies 8-10 hours of natural integration without curriculum modification.",
-              "va": "El mòdul s'integra directament en la UD de \"Control dimensional i de qualitat\" present en tots dos cicles. El Comité identifica 8-10 hores d'integració natural sense modificar el currículum."
             }
           },
           {
-            "id": "teacher-confidence",
+            "id": "",
             "label": {
+              "es": "Formación docente previa necesaria",
+              "en": "Prior teacher training required",
+              "va": "Formació docent prèvia necessària"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "medium",
-            "note": {
-              "es": "El 67% de los docentes encuestados declara baja confianza inicial en visión artificial. Se requiere formación docente de 2 días; los docentes que la reciben suben a 8,2/10 de confianza (dato del piloto previo de Pamesa).",
-              "en": "67% of surveyed teachers declare low initial confidence in computer vision. 2-day teacher training is required; those who receive it rise to 8.2/10 confidence (data from the prior Pamesa pilot).",
-              "va": "El 67% dels docents enquestats declara baixa confiança inicial en visió artificial. Es requereix formació docent de 2 dies; els docents que la reben pugen a 8,2/10 de confiança (dada del pilot previ de Pamesa)."
             }
           },
           {
-            "id": "equipment-requirements",
+            "id": "",
             "label": {
+              "es": "Competencia prioritaria para el sector cerámico",
+              "en": "Priority competency for the ceramics sector",
+              "va": "Competència prioritària per al sector ceràmic"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "manageable",
-            "note": {
-              "es": "El módulo requiere GPU dedicada o cámara industrial para la práctica completa. Se define una versión reducida que funciona con cámaras USB estándar para centros sin equipamiento especializado.",
-              "en": "The module requires a dedicated GPU or industrial camera for the full practice. A reduced version is defined that works with standard USB cameras for centres without specialist equipment.",
-              "va": "El mòdul requereix GPU dedicada o càmera industrial per a la pràctica completa. Es defineix una versió reduïda que funciona amb càmeres USB estàndard per a centres sense equipament especialitzat."
-            }
-          },
-          {
-            "id": "industry-relevance",
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "La industria cerámica valenciana (Tile of Spain, ASCER) confirma que la visión artificial para control de calidad es una competencia prioritaria en sus planes de contratación para 2026-2028.",
-              "en": "The Valencian ceramics industry (Tile of Spain, ASCER) confirms that computer vision for quality control is a priority competency in their 2026-2028 hiring plans.",
-              "va": "La indústria ceràmica valenciana (Tile of Spain, ASCER) confirma que la visió artificial per a control de qualitat és una competència prioritària en els seus plans de contractació per a 2026-2028."
             }
           }
         ]
@@ -23621,7 +23579,7 @@ export const MARKETPLACE_CONFIG = {
         "start": "2025-11-01",
         "end": "2026-01-15"
       },
-      "criteriaCount": 4,
+      "criteriaCount": 3,
       "validationTypeLabel": {
         "es": "Validación pedagógica",
         "en": "Pedagogical validation",
@@ -25336,45 +25294,45 @@ export const MARKETPLACE_CONFIG = {
       "criteria": {
         "items": [
           {
-            "id": "competency-gap-size",
+            "id": "",
             "label": {
+              "es": "Brecha de competencias digitales significativa",
+              "en": "Significant digital competency gap",
+              "va": "Bretxa de competències digitals significativa"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "El 71% de los nuevos colegiados de FP Sanitario y el 83% de los supervisores clínicos confirman la brecha. La magnitud justifica una intervención curricular sistemática.",
-              "en": "71% of new Health VET professional members and 83% of clinical supervisors confirm the gap. The magnitude justifies a systematic curricular intervention.",
-              "va": "El 71% dels nous col·legiats de FP Sanitari i el 83% dels supervisors clínics confirmen la bretxa. La magnitud justifica una intervenció curricular sistemàtica."
             }
           },
           {
-            "id": "employer-demand",
+            "id": "",
             "label": {
+              "es": "Demanda hospitalaria contrastada (8 centros)",
+              "en": "Confirmed hospital demand (8 centres)",
+              "va": "Demanda hospitalària contrastada (8 centres)"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "Los 8 hospitales de la muestra identifican IA en diagnóstico, sistemas de información clínica y ciberseguridad sanitaria como competencias prioritarias para los nuevos técnicos contratados.",
-              "en": "All 8 hospitals in the sample identify AI in diagnosis, clinical information systems and healthcare cybersecurity as priority competences for newly hired technicians.",
-              "va": "Els 8 hospitals de la mostra identifiquen IA en diagnòstic, sistemes d'informació clínica i ciberseguretat sanitària com a competències prioritàries per als nous tècnics contractats."
             }
           },
           {
-            "id": "academic-track-fit",
+            "id": "",
             "label": {
+              "es": "Pertinente en FP Sanitario y Máster",
+              "en": "Relevant for Health VET and master's",
+              "va": "Pertinent en FP Sanitari i Màster"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "El Comité concluye que la profundidad de la brecha justifica tanto una intervención en FP (Track B, módulos de 8-10 horas) como un tratamiento académico más profundo en el máster (Track A).",
-              "en": "The Committee concludes that the depth of the gap justifies both a VET intervention (Track B, 8-10 hour modules) and deeper academic treatment at master's level (Track A).",
-              "va": "El Comité conclou que la profunditat de la bretxa justifica tant una intervenció en FP (Track B, mòduls de 8-10 hores) com un tractament acadèmic més profund en el màster (Track A)."
             }
           }
         ]
@@ -27946,59 +27904,45 @@ export const MARKETPLACE_CONFIG = {
       "criteria": {
         "items": [
           {
-            "id": "sector-demand",
+            "id": "",
             "label": {
+              "es": "Demanda sectorial confirmada (AVA-ASAJA)",
+              "en": "Confirmed sector demand (AVA-ASAJA)",
+              "va": "Demanda sectorial confirmada (AVA-ASAJA)"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "AVA-ASAJA confirma necesidad creciente de técnicos con competencias en visión artificial y drones para gestión de cultivos.",
-              "en": "AVA-ASAJA confirms growing need for technicians with computer vision and drone skills for crop management.",
-              "va": "AVA-ASAJA confirma la necessitat creixent de tècnics amb competències en visió artificial i drons per a gestió de cultius."
             }
           },
           {
-            "id": "vet-fit",
+            "id": "",
             "label": {
+              "es": "Encaje en FP Agraria y Máster UVEG",
+              "en": "Fit with Agrarian VET and UVEG master's",
+              "va": "Encaix en FP Agrària i Màster UVEG"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "El reto encaja con el Máster en Agricultura de Precisión de la UVEG y con módulos de FP Agraria.",
-              "en": "The challenge fits the UVEG Master in Precision Agriculture and Agrarian VET modules.",
-              "va": "El repte encaixa amb el Màster en Agricultura de Precisió de la UVEG i amb mòduls de FP Agrària."
             }
           },
           {
-            "id": "academic-relevance",
+            "id": "",
             "label": {
+              "es": "Dataset multispectral disponible para investigación",
+              "en": "Multispectral dataset available for research",
+              "va": "Dataset multiespectral disponible per a recerca"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "UVEG confirma interés investigador y disponibilidad de dataset multispectral de cítricos para uso académico.",
-              "en": "UVEG confirms research interest and availability of citrus multispectral dataset for academic use.",
-              "va": "UVEG confirma interès investigador i disponibilitat de dataset multiespectral de cítrics per a ús acadèmic."
-            }
-          },
-          {
-            "id": "feasibility",
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "result": "medium",
-            "note": {
-              "es": "Requiere acceso a drones y dataset real; la UVEG puede facilitar el recurso como dataset abierto.",
-              "en": "Requires access to drones and a real dataset; UVEG can provide the resource as an open dataset.",
-              "va": "Requereix accés a drons i dataset real; la UVEG pot facilitar el recurs com a dataset obert."
             }
           }
         ]
@@ -28182,7 +28126,7 @@ export const MARKETPLACE_CONFIG = {
         "start": "2025-10-01",
         "end": "2026-01-25"
       },
-      "criteriaCount": 4,
+      "criteriaCount": 3,
       "validationTypeLabel": {
         "es": "Validación stakeholder",
         "en": "Stakeholder validation",
@@ -28228,13 +28172,13 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/validations/validation-academica-rl-edificios-hou.yml",
       "core": {
-        "status": "closed",
+        "status": "documented",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Validación académica — Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
-          "en": "Academic validation — Reinforcement learning applied to energy management of university buildings",
-          "va": "Validació acadèmica — Aprenentatge per reforç aplicat a la gestió energètica d'edificis universitaris"
+          "es": "Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
+          "en": "Reinforcement learning applied to energy management of university buildings",
+          "va": "Aprenentatge per reforç aplicat a la gestió energètica d'edificis universitaris"
         },
         "summary": {
           "es": "Validación académica por el Instituto de Ingeniería Energética de la UPV y el grupo de investigación SAIL de la UCLM de la pertinencia científica y formativa del uso de aprendizaje por refuerzo para la gestión energética adaptativa en edificios, confirmando su encaje como contenido de máster y justificando la creación del Living Lab como entorno de investigación-formación.",
@@ -28256,12 +28200,12 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "hou",
         "sectors": [],
-        "stakeholderCategory": "",
+        "stakeholderCategory": "institutional",
         "levels": [
           "Máster",
           "FP"
         ],
-        "pilotType": "",
+        "pilotType": "stakeholder-validation",
         "validationType": "academic-validation",
         "mentoringType": "",
         "helix": [],
@@ -28452,45 +28396,45 @@ export const MARKETPLACE_CONFIG = {
       "criteria": {
         "items": [
           {
-            "id": "scientific-basis",
+            "id": "",
             "label": {
+              "es": "Base científica contrastada",
+              "en": "Validated scientific basis",
+              "va": "Base científica contrastada"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "SAIL-UCLM confirma que RL es la metodología más activa en el campo (47% de los artículos de los últimos 3 años), con resultados de reducción de consumo del 15-30% en entornos comparables al edificio 4I.",
-              "en": "SAIL-UCLM confirms that RL is the most active methodology in the field (47% of articles in the last 3 years), with consumption reduction results of 15-30% in environments comparable to building 4I.",
-              "va": "SAIL-UCLM confirma que RL és la metodologia més activa en el camp (47% dels articles dels últims 3 anys), amb resultats de reducció de consum del 15-30% en entorns comparables a l'edifici 4I."
             }
           },
           {
-            "id": "experimental-quality",
+            "id": "",
             "label": {
+              "es": "Calidad experimental del entorno",
+              "en": "High-quality experimental environment",
+              "va": "Qualitat experimental de l'entorn"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "El edificio 4I supera los estándares de la literatura en densidad de sensores y diversidad de patrones de ocupación. La integración con EnergyPlus para simulación paralela es directamente viable.",
-              "en": "Building 4I exceeds literature standards in sensor density and occupancy pattern diversity. Integration with EnergyPlus for parallel simulation is directly feasible.",
-              "va": "L'edifici 4I supera els estàndards de la literatura en densitat de sensors i diversitat de patrons d'ocupació. La integració amb EnergyPlus per a simulació paral·lela és directament viable."
             }
           },
           {
-            "id": "educational-potential",
+            "id": "",
             "label": {
+              "es": "Potencial formativo demostrado",
+              "en": "Demonstrated educational potential",
+              "va": "Potencial formatiu demostrat"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "El Comité valora positivamente el modelo de co-desarrollo entre alumnos de FP (operación, sensores) y máster (algoritmos), que permite a cada nivel contribuir desde sus competencias propias.",
-              "en": "The Committee positively values the co-development model between VET students (operations, sensors) and master's students (algorithms), allowing each level to contribute from their own competencies.",
-              "va": "El Comité valora positivament el model de co-desenvolupament entre alumnes de FP (operació, sensors) i màster (algorismes), que permet a cada nivell contribuir des de les seues competències pròpies."
             }
           }
         ]
@@ -28670,9 +28614,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Validació acadèmica"
       },
       "validationStageLabel": {
-        "es": "Cerrada",
-        "en": "Closed",
-        "va": "Tancada"
+        "es": "Documentada",
+        "en": "Documented",
+        "va": "Documentada"
       },
       "decisionOutcomeLabel": {
         "es": "Validado — derivar a piloto",
@@ -28941,59 +28885,45 @@ export const MARKETPLACE_CONFIG = {
       "criteria": {
         "items": [
           {
-            "id": "sector-demand",
+            "id": "",
             "label": {
+              "es": "Demanda creciente de técnicos EV (ASEVA)",
+              "en": "Growing EV technician demand (ASEVA)",
+              "va": "Demanda creixent de tècnics EV (ASEVA)"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "ASEVA y los concesionarios confirman demanda creciente de técnicos para instalación y mantenimiento de cargadores VE, especialmente puntos de carga rápida.",
-              "en": "ASEVA and dealers confirm growing demand for technicians in EV charger installation and maintenance, especially fast charging points.",
-              "va": "ASEVA i els concessionaris confirmen demanda creixent de tècnics per a instal·lació i manteniment de carregadors VE, especialment punts de càrrega ràpida."
             }
           },
           {
-            "id": "vet-fit",
+            "id": "",
             "label": {
+              "es": "Encaje en FP Automoción y Electromovilidad",
+              "en": "Fit with Automotive and Electromobility VET",
+              "va": "Encaix en FP Automoció i Electromovilitat"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "El reto encaja directamente con el ciclo de Automoción y Electromovilidad de FP, con posibilidad de formación dual empresa-centro.",
-              "en": "The challenge fits directly with the Automotive and Electromobility VET cycle, with the possibility of dual company-centre training.",
-              "va": "El repte encaixa directament amb el cicle d'Automoció i Electromovilitat de FP, amb possibilitat de formació dual empresa-centre."
             }
           },
           {
-            "id": "ecosystem-relevance",
+            "id": "",
             "label": {
+              "es": "Co-diseño ecosistema empresa-centro FP",
+              "en": "Company-VET centre ecosystem co-design",
+              "va": "Co-disseny ecosistema empresa-centre FP"
+            },
+            "result": "",
+            "note": {
               "es": "",
               "en": "",
               "va": ""
-            },
-            "result": "positive",
-            "note": {
-              "es": "La clasificación Track B permite la co-diseño del módulo entre ASEVA, concesionarios y centros FP, con mayor impacto en el ecosistema local.",
-              "en": "The Track B classification allows co-design of the module between ASEVA, dealers and VET centres, with greater impact on the local ecosystem.",
-              "va": "La classificació Track B permet el co-disseny del mòdul entre ASEVA, concessionaris i centres FP, amb major impacte en l'ecosistema local."
-            }
-          },
-          {
-            "id": "feasibility",
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "result": "medium",
-            "note": {
-              "es": "Requiere acuerdo formal empresa-centro FP para formación dual; ASEVA facilita la conexión con concesionarios dispuestos a participar.",
-              "en": "Requires a formal company-VET centre agreement for dual training; ASEVA facilitates connection with dealers willing to participate.",
-              "va": "Requereix acord formal empresa-centre FP per a formació dual; ASEVA facilita la connexió amb concessionaris disposats a participar."
             }
           }
         ]
@@ -29174,7 +29104,7 @@ export const MARKETPLACE_CONFIG = {
         "start": "2025-06-01",
         "end": "2025-10-20"
       },
-      "criteriaCount": 4,
+      "criteriaCount": 3,
       "validationTypeLabel": {
         "es": "Validación stakeholder",
         "en": "Stakeholder validation",
@@ -46531,59 +46461,45 @@ export const MARKETPLACE_CONFIG = {
         "criteria": {
           "items": [
             {
-              "id": "legal-compliance",
+              "id": "",
               "label": {
+                "es": "Cumplimiento normativo IA (Reglamento UE)",
+                "en": "AI regulatory compliance (EU AI Act)",
+                "va": "Compliment normatiu IA (Reglament UE)"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "negative",
-              "note": {
-                "es": "El sistema propuesto se clasifica como de riesgo alto según el Reglamento de IA (Art. 6, Anexo III). Requiere evaluación de conformidad obligatoria antes de cualquier despliegue, que la propuesta actual no contempla.",
-                "en": "The proposed system is classified as high-risk under the AI Act (Art. 6, Annex III). It requires mandatory conformity assessment before any deployment, which the current proposal does not include.",
-                "va": "El sistema proposat es classifica com de risc alt segons el Reglament d'IA (Art. 6, Annex III). Requereix avaluació de conformitat obligatòria abans de qualsevol desplegament, que la proposta actual no contempla."
               }
             },
             {
-              "id": "bias-risk",
+              "id": "",
               "label": {
+                "es": "Riesgo de sesgo discriminatorio",
+                "en": "Discriminatory bias risk",
+                "va": "Risc de biaix discriminatori"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "negative",
-              "note": {
-                "es": "El análisis de los datos históricos de candidatos revela correlaciones entre variables proxy (zona de residencia, nombre) y categorías protegidas. Sin mitigación técnica demostrada, el riesgo de discriminación indirecta es inaceptable para un sistema de acceso a empleo público.",
-                "en": "Analysis of historical candidate data reveals correlations between proxy variables (residential area, name) and protected categories. Without demonstrated technical mitigation, the risk of indirect discrimination is unacceptable for a public employment access system.",
-                "va": "L'anàlisi de les dades històriques de candidats revela correlacions entre variables proxy (zona de residència, nom) i categories protegides. Sense mitigació tècnica demostrada, el risc de discriminació indirecta és inacceptable per a un sistema d'accés a l'ocupació pública."
               }
             },
             {
-              "id": "transparency",
+              "id": "",
               "label": {
+                "es": "Transparencia y explicabilidad insuficientes",
+                "en": "Insufficient transparency and explainability",
+                "va": "Transparència i explicabilitat insuficients"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "manageable",
-              "note": {
-                "es": "La propuesta contempla un modelo explicable (árbol de decisión regularizado), pero no incluye mecanismo de revisión humana obligatoria ni protocolo de recurso para candidatos afectados.",
-                "en": "The proposal includes an explainable model (regularised decision tree), but does not include a mandatory human review mechanism or an appeal protocol for affected candidates.",
-                "va": "La proposta contempla un model explicable (arbre de decisió regularitzat), però no inclou mecanisme de revisió humana obligatòria ni protocol de recurs per a candidats afectats."
-              }
-            },
-            {
-              "id": "union-acceptance",
-              "label": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "result": "negative",
-              "note": {
-                "es": "CSIF y UGT-PV rechazan cualquier uso de IA en la fase de cribado sin garantías explícitas de revisión humana total de cada exclusión y derecho de impugnación documentada.",
-                "en": "CSIF and UGT-PV reject any AI use in the screening phase without explicit guarantees of full human review of each exclusion and documented appeal rights.",
-                "va": "CSIF i UGT-PV rebutgen qualsevol ús d'IA en la fase de cribratge sense garanties explícites de revisió humana total de cada exclusió i dret d'impugnació documentada."
               }
             }
           ]
@@ -46732,7 +46648,7 @@ export const MARKETPLACE_CONFIG = {
           "start": "2026-01-10",
           "end": "2026-02-28"
         },
-        "criteriaCount": 4,
+        "criteriaCount": 3,
         "validationTypeLabel": {
           "es": "Validación ética",
           "en": "Ethical validation",
@@ -47000,45 +46916,45 @@ export const MARKETPLACE_CONFIG = {
         "criteria": {
           "items": [
             {
-              "id": "gdpr-compliance",
+              "id": "",
               "label": {
+                "es": "Viabilidad RGPD confirmada",
+                "en": "GDPR feasibility confirmed",
+                "va": "Viabilitat RGPD confirmada"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "La EIPD concluye que la cesión es viable bajo los artículos 6(1)(f) (interés legítimo) y 89 (tratamiento con fines de investigación) del RGPD, siempre que se apliquen las medidas de anonimización documentadas en el protocolo adjunto.",
-                "en": "The DPIA concludes that transfer is feasible under GDPR articles 6(1)(f) (legitimate interest) and 89 (processing for research purposes), provided the anonymisation measures documented in the attached protocol are applied.",
-                "va": "L'AIPD conclou que la cessió és viable sota els articles 6(1)(f) (interès legítim) i 89 (tractament amb fins de recerca) del RGPD, sempre que s'apliquen les mesures d'anonimització documentades en el protocol adjunt."
               }
             },
             {
-              "id": "re-identification-risk",
+              "id": "",
               "label": {
+                "es": "Riesgo de re-identificación gestionable",
+                "en": "Manageable re-identification risk",
+                "va": "Risc de re-identificació gestionable"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "manageable",
-              "note": {
-                "es": "El k-anonimato (k=5) aplicado a nivel de segmento de ruta y ventana temporal de 30 minutos reduce el riesgo de re-identificación a nivel aceptable. Las coordenadas de entrega se agregan al nivel de código postal, eliminando la posibilidad de identificar domicilios individuales.",
-                "en": "K-anonymity (k=5) applied at route segment and 30-minute time window level reduces re-identification risk to an acceptable level. Delivery coordinates are aggregated to postcode level, eliminating the possibility of identifying individual addresses.",
-                "va": "El k-anonimat (k=5) aplicat a nivell de segment de ruta i finestra temporal de 30 minuts redueix el risc de re-identificació a un nivell acceptable. Les coordenades de lliurament s'agreguen al nivell de codi postal, eliminant la possibilitat d'identificar domicilis individuals."
               }
             },
             {
-              "id": "use-restrictions",
+              "id": "",
               "label": {
+                "es": "Acuerdo de uso compatible con Correos",
+                "en": "Usage agreement compatible with Correos",
+                "va": "Acord d'ús compatible amb Correos"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "El acuerdo de uso propuesto (no redistribución, uso exclusivo para el reto, destrucción certificada al finalizar) es compatible con el RGPD y con las políticas de datos operativos de Correos.",
-                "en": "The proposed usage agreement (no redistribution, exclusive use for the challenge, certified destruction upon completion) is compatible with GDPR and Correos operational data policies.",
-                "va": "L'acord d'ús proposat (no redistribució, ús exclusiu per al repte, destrucció certificada en finalitzar) és compatible amb el RGPD i amb les polítiques de dades operatives de Correos."
               }
             }
           ]
@@ -47456,59 +47372,45 @@ export const MARKETPLACE_CONFIG = {
         "criteria": {
           "items": [
             {
-              "id": "data-quality",
+              "id": "",
               "label": {
+                "es": "Calidad estadística del dataset SCADA confirmada",
+                "en": "Confirmed SCADA dataset statistical quality",
+                "va": "Qualitat estadística del dataset SCADA confirmada"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "El ITE confirma que el dataset de 3 años a nivel de transformador, una vez anonimizado, mantiene suficiente utilidad estadística para entrenar modelos de predicción de sobrecargas.",
-                "en": "ITE confirms that the 3-year transformer-level dataset, once anonymised, retains sufficient statistical utility for training overload prediction models.",
-                "va": "L'ITE confirma que el dataset de 3 anys a nivell de transformador, una vegada anonimitzat, manté suficient utilitat estadística per entrenar models de predicció de sobrecàrregues."
               }
             },
             {
-              "id": "stack-feasibility",
+              "id": "",
               "label": {
+                "es": "Stack técnico CARLA+ROS 2 viable",
+                "en": "CARLA+ROS 2 technical stack feasible",
+                "va": "Stack tècnic CARLA+ROS 2 viable"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "CARLA+ROS 2 es un stack maduro usado en investigación académica con comunidad activa. La integración conceptual con SCADA es técnicamente viable en fase de prototipo.",
-                "en": "CARLA+ROS 2 is a mature stack used in academic research with an active community. The conceptual integration with SCADA is technically feasible at prototype stage.",
-                "va": "CARLA+ROS 2 és un stack madur usat en recerca acadèmica amb comunitat activa. La integració conceptual amb SCADA és tècnicament viable en fase de prototip."
               }
             },
             {
-              "id": "anonymisation-risk",
+              "id": "",
               "label": {
+                "es": "Riesgo de anonimización gestionable (ITE)",
+                "en": "Manageable anonymisation risk (ITE)",
+                "va": "Risc d'anonimització gestionable (ITE)"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "manageable",
-              "note": {
-                "es": "La agregación a nivel de transformador reduce el riesgo, pero se requiere aplicar k-anonimato antes de la distribución a los equipos participantes. ITE proporciona el protocolo de anonimización.",
-                "en": "Aggregation at transformer level reduces the risk, but k-anonymity must be applied before distribution to participating teams. ITE provides the anonymisation protocol.",
-                "va": "L'agregació a nivell de transformador redueix el risc, però cal aplicar k-anonimat abans de la distribució als equips participants. L'ITE proporciona el protocol d'anonimització."
-              }
-            },
-            {
-              "id": "timeline-feasibility",
-              "label": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "result": "medium",
-              "note": {
-                "es": "6 meses es ajustado para equipos sin experiencia previa en CARLA. Se recomienda añadir una sesión de onboarding técnico de 2 días antes del inicio oficial del reto.",
-                "en": "6 months is tight for teams without prior CARLA experience. Adding a 2-day technical onboarding session before the official challenge start is recommended.",
-                "va": "6 mesos és ajustat per a equips sense experiència prèvia en CARLA. Es recomana afegir una sessió d'onboarding tècnic de 2 dies abans de l'inici oficial del repte."
               }
             }
           ]
@@ -47658,7 +47560,7 @@ export const MARKETPLACE_CONFIG = {
           "start": "2025-12-01",
           "end": "2026-02-10"
         },
-        "criteriaCount": 4,
+        "criteriaCount": 3,
         "validationTypeLabel": {
           "es": "Validación técnica",
           "en": "Technical validation",
@@ -47937,45 +47839,45 @@ export const MARKETPLACE_CONFIG = {
         "criteria": {
           "items": [
             {
-              "id": "operator-demand",
+              "id": "",
               "label": {
+                "es": "Alta demanda insatisfecha de operadores hoteleros",
+                "en": "High unmet demand from hotel operators",
+                "va": "Alta demanda insatisfeta d'operadors hotelers"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "El 92% de los hoteleros del panel HOSBEC declaran usar herramientas de monitorización de reseñas, pero solo el 18% está satisfecho con las soluciones actuales. La demanda de IA es alta y el presupuesto disponible en hoteles de 3-5 estrellas es suficiente para soluciones SaaS.",
-                "en": "92% of HOSBEC panel hoteliers declare using review monitoring tools, but only 18% are satisfied with current solutions. AI demand is high and available budget in 3-5 star hotels is sufficient for SaaS solutions.",
-                "va": "El 92% dels hotelers del panell HOSBEC declaren usar eines de monitorització de ressenyes, però només el 18% està satisfet amb les solucions actuals. La demanda d'IA és alta i el pressupost disponible en hotels de 3-5 estrelles és suficient per a solucions SaaS."
               }
             },
             {
-              "id": "data-availability",
+              "id": "",
               "label": {
+                "es": "Corpus de reseñas multilingüe disponible",
+                "en": "Multilingual review corpus available",
+                "va": "Corpus de ressenyes multilingüe disponible"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "Turisme CV dispone de un corpus de 280.000 reseñas etiquetadas en 10 idiomas (2023-2025). Booking.com confirma acceso a la API para destinos oficialmente colaboradores.",
-                "en": "Turisme CV has a corpus of 280,000 labelled reviews in 10 languages (2023-2025). Booking.com confirms API access for officially collaborating destinations.",
-                "va": "Turisme CV disposa d'un corpus de 280.000 ressenyes etiquetades en 10 idiomes (2023-2025). Booking.com confirma accés a l'API per a destinacions oficialment col·laboradores."
               }
             },
             {
-              "id": "absorptive-capacity",
+              "id": "",
               "label": {
+                "es": "Capacidad de absorción diferencial por tamaño",
+                "en": "Differential absorptive capacity by hotel size",
+                "va": "Capacitat d'absorció diferencial per mida"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "medium",
-              "note": {
-                "es": "Los hoteles grandes (>100 habitaciones) tienen capacidad técnica para adoptar las soluciones. Los establecimientos pequeños y rurales necesitan versiones SaaS simplificadas sin integración técnica propia. El Comité recomienda diseñar una versión \"plug and play\" para establecimientos pequeños.",
-                "en": "Large hotels (>100 rooms) have the technical capacity to adopt the solutions. Small and rural establishments need simplified SaaS versions without their own technical integration. The Committee recommends designing a \"plug and play\" version for small establishments.",
-                "va": "Els hotels grans (>100 habitacions) tenen capacitat tècnica per adoptar les solucions. Els establiments menuts i rurals necessiten versions SaaS simplificades sense integració tècnica pròpia. El Comité recomana dissenyar una versió \"plug and play\" per a establiments menuts."
               }
             }
           ]
@@ -48395,59 +48297,45 @@ export const MARKETPLACE_CONFIG = {
         "criteria": {
           "items": [
             {
-              "id": "curricular-fit",
+              "id": "",
               "label": {
+                "es": "Integración curricular viable (8-10h)",
+                "en": "Viable curricular integration (8-10h)",
+                "va": "Integració curricular viable (8-10h)"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "El módulo se integra directamente en la UD de \"Control dimensional y de calidad\" presente en ambos ciclos. El Comité identifica 8-10 horas de integración natural sin modificar el currículo.",
-                "en": "The module integrates directly into the \"Dimensional and quality control\" learning unit present in both cycles. The Committee identifies 8-10 hours of natural integration without curriculum modification.",
-                "va": "El mòdul s'integra directament en la UD de \"Control dimensional i de qualitat\" present en tots dos cicles. El Comité identifica 8-10 hores d'integració natural sense modificar el currículum."
               }
             },
             {
-              "id": "teacher-confidence",
+              "id": "",
               "label": {
+                "es": "Formación docente previa necesaria",
+                "en": "Prior teacher training required",
+                "va": "Formació docent prèvia necessària"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "medium",
-              "note": {
-                "es": "El 67% de los docentes encuestados declara baja confianza inicial en visión artificial. Se requiere formación docente de 2 días; los docentes que la reciben suben a 8,2/10 de confianza (dato del piloto previo de Pamesa).",
-                "en": "67% of surveyed teachers declare low initial confidence in computer vision. 2-day teacher training is required; those who receive it rise to 8.2/10 confidence (data from the prior Pamesa pilot).",
-                "va": "El 67% dels docents enquestats declara baixa confiança inicial en visió artificial. Es requereix formació docent de 2 dies; els docents que la reben pugen a 8,2/10 de confiança (dada del pilot previ de Pamesa)."
               }
             },
             {
-              "id": "equipment-requirements",
+              "id": "",
               "label": {
+                "es": "Competencia prioritaria para el sector cerámico",
+                "en": "Priority competency for the ceramics sector",
+                "va": "Competència prioritària per al sector ceràmic"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "manageable",
-              "note": {
-                "es": "El módulo requiere GPU dedicada o cámara industrial para la práctica completa. Se define una versión reducida que funciona con cámaras USB estándar para centros sin equipamiento especializado.",
-                "en": "The module requires a dedicated GPU or industrial camera for the full practice. A reduced version is defined that works with standard USB cameras for centres without specialist equipment.",
-                "va": "El mòdul requereix GPU dedicada o càmera industrial per a la pràctica completa. Es defineix una versió reduïda que funciona amb càmeres USB estàndard per a centres sense equipament especialitzat."
-              }
-            },
-            {
-              "id": "industry-relevance",
-              "label": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "La industria cerámica valenciana (Tile of Spain, ASCER) confirma que la visión artificial para control de calidad es una competencia prioritaria en sus planes de contratación para 2026-2028.",
-                "en": "The Valencian ceramics industry (Tile of Spain, ASCER) confirms that computer vision for quality control is a priority competency in their 2026-2028 hiring plans.",
-                "va": "La indústria ceràmica valenciana (Tile of Spain, ASCER) confirma que la visió artificial per a control de qualitat és una competència prioritària en els seus plans de contractació per a 2026-2028."
               }
             }
           ]
@@ -48597,7 +48485,7 @@ export const MARKETPLACE_CONFIG = {
           "start": "2025-11-01",
           "end": "2026-01-15"
         },
-        "criteriaCount": 4,
+        "criteriaCount": 3,
         "validationTypeLabel": {
           "es": "Validación pedagógica",
           "en": "Pedagogical validation",
@@ -48877,45 +48765,45 @@ export const MARKETPLACE_CONFIG = {
         "criteria": {
           "items": [
             {
-              "id": "competency-gap-size",
+              "id": "",
               "label": {
+                "es": "Brecha de competencias digitales significativa",
+                "en": "Significant digital competency gap",
+                "va": "Bretxa de competències digitals significativa"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "El 71% de los nuevos colegiados de FP Sanitario y el 83% de los supervisores clínicos confirman la brecha. La magnitud justifica una intervención curricular sistemática.",
-                "en": "71% of new Health VET professional members and 83% of clinical supervisors confirm the gap. The magnitude justifies a systematic curricular intervention.",
-                "va": "El 71% dels nous col·legiats de FP Sanitari i el 83% dels supervisors clínics confirmen la bretxa. La magnitud justifica una intervenció curricular sistemàtica."
               }
             },
             {
-              "id": "employer-demand",
+              "id": "",
               "label": {
+                "es": "Demanda hospitalaria contrastada (8 centros)",
+                "en": "Confirmed hospital demand (8 centres)",
+                "va": "Demanda hospitalària contrastada (8 centres)"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "Los 8 hospitales de la muestra identifican IA en diagnóstico, sistemas de información clínica y ciberseguridad sanitaria como competencias prioritarias para los nuevos técnicos contratados.",
-                "en": "All 8 hospitals in the sample identify AI in diagnosis, clinical information systems and healthcare cybersecurity as priority competences for newly hired technicians.",
-                "va": "Els 8 hospitals de la mostra identifiquen IA en diagnòstic, sistemes d'informació clínica i ciberseguretat sanitària com a competències prioritàries per als nous tècnics contractats."
               }
             },
             {
-              "id": "academic-track-fit",
+              "id": "",
               "label": {
+                "es": "Pertinente en FP Sanitario y Máster",
+                "en": "Relevant for Health VET and master's",
+                "va": "Pertinent en FP Sanitari i Màster"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "El Comité concluye que la profundidad de la brecha justifica tanto una intervención en FP (Track B, módulos de 8-10 horas) como un tratamiento académico más profundo en el máster (Track A).",
-                "en": "The Committee concludes that the depth of the gap justifies both a VET intervention (Track B, 8-10 hour modules) and deeper academic treatment at master's level (Track A).",
-                "va": "El Comité conclou que la profunditat de la bretxa justifica tant una intervenció en FP (Track B, mòduls de 8-10 hores) com un tractament acadèmic més profund en el màster (Track A)."
               }
             }
           ]
@@ -49343,59 +49231,45 @@ export const MARKETPLACE_CONFIG = {
         "criteria": {
           "items": [
             {
-              "id": "sector-demand",
+              "id": "",
               "label": {
+                "es": "Demanda sectorial confirmada (AVA-ASAJA)",
+                "en": "Confirmed sector demand (AVA-ASAJA)",
+                "va": "Demanda sectorial confirmada (AVA-ASAJA)"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "AVA-ASAJA confirma necesidad creciente de técnicos con competencias en visión artificial y drones para gestión de cultivos.",
-                "en": "AVA-ASAJA confirms growing need for technicians with computer vision and drone skills for crop management.",
-                "va": "AVA-ASAJA confirma la necessitat creixent de tècnics amb competències en visió artificial i drons per a gestió de cultius."
               }
             },
             {
-              "id": "vet-fit",
+              "id": "",
               "label": {
+                "es": "Encaje en FP Agraria y Máster UVEG",
+                "en": "Fit with Agrarian VET and UVEG master's",
+                "va": "Encaix en FP Agrària i Màster UVEG"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "El reto encaja con el Máster en Agricultura de Precisión de la UVEG y con módulos de FP Agraria.",
-                "en": "The challenge fits the UVEG Master in Precision Agriculture and Agrarian VET modules.",
-                "va": "El repte encaixa amb el Màster en Agricultura de Precisió de la UVEG i amb mòduls de FP Agrària."
               }
             },
             {
-              "id": "academic-relevance",
+              "id": "",
               "label": {
+                "es": "Dataset multispectral disponible para investigación",
+                "en": "Multispectral dataset available for research",
+                "va": "Dataset multiespectral disponible per a recerca"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "UVEG confirma interés investigador y disponibilidad de dataset multispectral de cítricos para uso académico.",
-                "en": "UVEG confirms research interest and availability of citrus multispectral dataset for academic use.",
-                "va": "UVEG confirma interès investigador i disponibilitat de dataset multiespectral de cítrics per a ús acadèmic."
-              }
-            },
-            {
-              "id": "feasibility",
-              "label": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "result": "medium",
-              "note": {
-                "es": "Requiere acceso a drones y dataset real; la UVEG puede facilitar el recurso como dataset abierto.",
-                "en": "Requires access to drones and a real dataset; UVEG can provide the resource as an open dataset.",
-                "va": "Requereix accés a drons i dataset real; la UVEG pot facilitar el recurs com a dataset obert."
               }
             }
           ]
@@ -49579,7 +49453,7 @@ export const MARKETPLACE_CONFIG = {
           "start": "2025-10-01",
           "end": "2026-01-25"
         },
-        "criteriaCount": 4,
+        "criteriaCount": 3,
         "validationTypeLabel": {
           "es": "Validación stakeholder",
           "en": "Stakeholder validation",
@@ -49625,13 +49499,13 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/validations/validation-academica-rl-edificios-hou.yml",
         "core": {
-          "status": "closed",
+          "status": "documented",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Validación académica — Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
-            "en": "Academic validation — Reinforcement learning applied to energy management of university buildings",
-            "va": "Validació acadèmica — Aprenentatge per reforç aplicat a la gestió energètica d'edificis universitaris"
+            "es": "Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
+            "en": "Reinforcement learning applied to energy management of university buildings",
+            "va": "Aprenentatge per reforç aplicat a la gestió energètica d'edificis universitaris"
           },
           "summary": {
             "es": "Validación académica por el Instituto de Ingeniería Energética de la UPV y el grupo de investigación SAIL de la UCLM de la pertinencia científica y formativa del uso de aprendizaje por refuerzo para la gestión energética adaptativa en edificios, confirmando su encaje como contenido de máster y justificando la creación del Living Lab como entorno de investigación-formación.",
@@ -49653,12 +49527,12 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "hou",
           "sectors": [],
-          "stakeholderCategory": "",
+          "stakeholderCategory": "institutional",
           "levels": [
             "Máster",
             "FP"
           ],
-          "pilotType": "",
+          "pilotType": "stakeholder-validation",
           "validationType": "academic-validation",
           "mentoringType": "",
           "helix": [],
@@ -49849,45 +49723,45 @@ export const MARKETPLACE_CONFIG = {
         "criteria": {
           "items": [
             {
-              "id": "scientific-basis",
+              "id": "",
               "label": {
+                "es": "Base científica contrastada",
+                "en": "Validated scientific basis",
+                "va": "Base científica contrastada"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "SAIL-UCLM confirma que RL es la metodología más activa en el campo (47% de los artículos de los últimos 3 años), con resultados de reducción de consumo del 15-30% en entornos comparables al edificio 4I.",
-                "en": "SAIL-UCLM confirms that RL is the most active methodology in the field (47% of articles in the last 3 years), with consumption reduction results of 15-30% in environments comparable to building 4I.",
-                "va": "SAIL-UCLM confirma que RL és la metodologia més activa en el camp (47% dels articles dels últims 3 anys), amb resultats de reducció de consum del 15-30% en entorns comparables a l'edifici 4I."
               }
             },
             {
-              "id": "experimental-quality",
+              "id": "",
               "label": {
+                "es": "Calidad experimental del entorno",
+                "en": "High-quality experimental environment",
+                "va": "Qualitat experimental de l'entorn"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "El edificio 4I supera los estándares de la literatura en densidad de sensores y diversidad de patrones de ocupación. La integración con EnergyPlus para simulación paralela es directamente viable.",
-                "en": "Building 4I exceeds literature standards in sensor density and occupancy pattern diversity. Integration with EnergyPlus for parallel simulation is directly feasible.",
-                "va": "L'edifici 4I supera els estàndards de la literatura en densitat de sensors i diversitat de patrons d'ocupació. La integració amb EnergyPlus per a simulació paral·lela és directament viable."
               }
             },
             {
-              "id": "educational-potential",
+              "id": "",
               "label": {
+                "es": "Potencial formativo demostrado",
+                "en": "Demonstrated educational potential",
+                "va": "Potencial formatiu demostrat"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "El Comité valora positivamente el modelo de co-desarrollo entre alumnos de FP (operación, sensores) y máster (algoritmos), que permite a cada nivel contribuir desde sus competencias propias.",
-                "en": "The Committee positively values the co-development model between VET students (operations, sensors) and master's students (algorithms), allowing each level to contribute from their own competencies.",
-                "va": "El Comité valora positivament el model de co-desenvolupament entre alumnes de FP (operació, sensors) i màster (algorismes), que permet a cada nivell contribuir des de les seues competències pròpies."
               }
             }
           ]
@@ -50067,9 +49941,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Validació acadèmica"
         },
         "validationStageLabel": {
-          "es": "Cerrada",
-          "en": "Closed",
-          "va": "Tancada"
+          "es": "Documentada",
+          "en": "Documented",
+          "va": "Documentada"
         },
         "decisionOutcomeLabel": {
           "es": "Validado — derivar a piloto",
@@ -50338,59 +50212,45 @@ export const MARKETPLACE_CONFIG = {
         "criteria": {
           "items": [
             {
-              "id": "sector-demand",
+              "id": "",
               "label": {
+                "es": "Demanda creciente de técnicos EV (ASEVA)",
+                "en": "Growing EV technician demand (ASEVA)",
+                "va": "Demanda creixent de tècnics EV (ASEVA)"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "ASEVA y los concesionarios confirman demanda creciente de técnicos para instalación y mantenimiento de cargadores VE, especialmente puntos de carga rápida.",
-                "en": "ASEVA and dealers confirm growing demand for technicians in EV charger installation and maintenance, especially fast charging points.",
-                "va": "ASEVA i els concessionaris confirmen demanda creixent de tècnics per a instal·lació i manteniment de carregadors VE, especialment punts de càrrega ràpida."
               }
             },
             {
-              "id": "vet-fit",
+              "id": "",
               "label": {
+                "es": "Encaje en FP Automoción y Electromovilidad",
+                "en": "Fit with Automotive and Electromobility VET",
+                "va": "Encaix en FP Automoció i Electromovilitat"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "El reto encaja directamente con el ciclo de Automoción y Electromovilidad de FP, con posibilidad de formación dual empresa-centro.",
-                "en": "The challenge fits directly with the Automotive and Electromobility VET cycle, with the possibility of dual company-centre training.",
-                "va": "El repte encaixa directament amb el cicle d'Automoció i Electromovilitat de FP, amb possibilitat de formació dual empresa-centre."
               }
             },
             {
-              "id": "ecosystem-relevance",
+              "id": "",
               "label": {
+                "es": "Co-diseño ecosistema empresa-centro FP",
+                "en": "Company-VET centre ecosystem co-design",
+                "va": "Co-disseny ecosistema empresa-centre FP"
+              },
+              "result": "",
+              "note": {
                 "es": "",
                 "en": "",
                 "va": ""
-              },
-              "result": "positive",
-              "note": {
-                "es": "La clasificación Track B permite la co-diseño del módulo entre ASEVA, concesionarios y centros FP, con mayor impacto en el ecosistema local.",
-                "en": "The Track B classification allows co-design of the module between ASEVA, dealers and VET centres, with greater impact on the local ecosystem.",
-                "va": "La classificació Track B permet el co-disseny del mòdul entre ASEVA, concessionaris i centres FP, amb major impacte en l'ecosistema local."
-              }
-            },
-            {
-              "id": "feasibility",
-              "label": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "result": "medium",
-              "note": {
-                "es": "Requiere acuerdo formal empresa-centro FP para formación dual; ASEVA facilita la conexión con concesionarios dispuestos a participar.",
-                "en": "Requires a formal company-VET centre agreement for dual training; ASEVA facilitates connection with dealers willing to participate.",
-                "va": "Requereix acord formal empresa-centre FP per a formació dual; ASEVA facilita la connexió amb concessionaris disposats a participar."
               }
             }
           ]
@@ -50571,7 +50431,7 @@ export const MARKETPLACE_CONFIG = {
           "start": "2025-06-01",
           "end": "2025-10-20"
         },
-        "criteriaCount": 4,
+        "criteriaCount": 3,
         "validationTypeLabel": {
           "es": "Validación stakeholder",
           "en": "Stakeholder validation",

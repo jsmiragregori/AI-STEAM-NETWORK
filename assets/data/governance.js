@@ -2232,7 +2232,7 @@ export const GOVERNANCE_CONFIG = {
       "buttonExternal": true
     },
     "meetingsSection": {
-      "visible": true,
+      "visible": false,
       "title": {
         "es": "Red de Stakeholders (SN) – Próximas Reuniones",
         "en": "Stakeholder Network (SN) – Upcoming Meetings",
