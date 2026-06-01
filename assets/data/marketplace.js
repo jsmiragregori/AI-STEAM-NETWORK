@@ -13497,6 +13497,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "decision": {
         "outcome": "needs-reformulation",
+        "tone": "neutral",
         "label": {
           "es": "Requiere reformulación sustancial — no apto para piloto en estado actual",
           "en": "Requires substantial reformulation — not suitable for piloting in current state",
@@ -20410,6 +20411,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "decision": {
         "outcome": "validated-track-b",
+        "tone": "neutral",
         "label": {
           "es": "Validado — datos aptos para cesión en el reto con el protocolo de anonimización documentado",
           "en": "Validated — data suitable for challenge transfer with the documented anonymisation protocol",
@@ -20866,6 +20868,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "decision": {
         "outcome": "validated-track-b",
+        "tone": "neutral",
         "label": {
           "es": "Validado — clasificado Track B para reto abierto al ecosistema",
           "en": "Validated — classified as Track B for open ecosystem challenge",
@@ -22473,6 +22476,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "decision": {
         "outcome": "validated-for-case",
+        "tone": "neutral",
         "label": {
           "es": "Validado — necesidad confirmada; se deriva a reto Track B (análisis de sentimiento) y piloto de personalización",
           "en": "Validated — need confirmed; derived to Track B challenge (sentiment analysis) and personalisation pilot",
@@ -23477,6 +23481,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "decision": {
         "outcome": "validated-track-b",
+        "tone": "neutral",
         "label": {
           "es": "Validado — clasificado Track B con requisito de formación docente previa",
           "en": "Validated — classified as Track B with prior teacher training requirement",
@@ -25380,6 +25385,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "decision": {
         "outcome": "validated-track-a",
+        "tone": "neutral",
         "label": {
           "es": "Validado — clasificado Track A para tratamiento académico en máster y Track B para intervención en FP",
           "en": "Validated — classified as Track A for academic treatment at master's level and Track B for VET intervention",
@@ -28003,6 +28009,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "decision": {
         "outcome": "validated-track-a",
+        "tone": "neutral",
         "label": {
           "es": "Validado — clasificado Track A para tratamiento académico",
           "en": "Validated — classified as Track A for academic treatment",
@@ -28482,6 +28489,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "decision": {
         "outcome": "validated-for-pilot",
+        "tone": "positive",
         "label": {
           "es": "Validado — apto para piloto Living Lab con apertura a publicación de resultados como caso",
           "en": "Validated — suitable for Living Lab pilot with openness to publishing results as a case",
@@ -28984,6 +28992,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "decision": {
         "outcome": "validated-track-b",
+        "tone": "neutral",
         "label": {
           "es": "Validado — clasificado Track B para diseño de módulo FP dual",
           "en": "Validated — classified as Track B for dual VET module design",
@@ -46547,6 +46556,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "decision": {
           "outcome": "needs-reformulation",
+          "tone": "neutral",
           "label": {
             "es": "Requiere reformulación sustancial — no apto para piloto en estado actual",
             "en": "Requires substantial reformulation — not suitable for piloting in current state",
@@ -47002,6 +47012,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "decision": {
           "outcome": "validated-track-b",
+          "tone": "neutral",
           "label": {
             "es": "Validado — datos aptos para cesión en el reto con el protocolo de anonimización documentado",
             "en": "Validated — data suitable for challenge transfer with the documented anonymisation protocol",
@@ -47458,6 +47469,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "decision": {
           "outcome": "validated-track-b",
+          "tone": "neutral",
           "label": {
             "es": "Validado — clasificado Track B para reto abierto al ecosistema",
             "en": "Validated — classified as Track B for open ecosystem challenge",
@@ -47925,6 +47937,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "decision": {
           "outcome": "validated-for-case",
+          "tone": "neutral",
           "label": {
             "es": "Validado — necesidad confirmada; se deriva a reto Track B (análisis de sentimiento) y piloto de personalización",
             "en": "Validated — need confirmed; derived to Track B challenge (sentiment analysis) and personalisation pilot",
@@ -48383,6 +48396,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "decision": {
           "outcome": "validated-track-b",
+          "tone": "neutral",
           "label": {
             "es": "Validado — clasificado Track B con requisito de formación docente previa",
             "en": "Validated — classified as Track B with prior teacher training requirement",
@@ -48851,6 +48865,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "decision": {
           "outcome": "validated-track-a",
+          "tone": "neutral",
           "label": {
             "es": "Validado — clasificado Track A para tratamiento académico en máster y Track B para intervención en FP",
             "en": "Validated — classified as Track A for academic treatment at master's level and Track B for VET intervention",
@@ -49330,6 +49345,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "decision": {
           "outcome": "validated-track-a",
+          "tone": "neutral",
           "label": {
             "es": "Validado — clasificado Track A para tratamiento académico",
             "en": "Validated — classified as Track A for academic treatment",
@@ -49809,6 +49825,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "decision": {
           "outcome": "validated-for-pilot",
+          "tone": "positive",
           "label": {
             "es": "Validado — apto para piloto Living Lab con apertura a publicación de resultados como caso",
             "en": "Validated — suitable for Living Lab pilot with openness to publishing results as a case",
@@ -50311,6 +50328,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "decision": {
           "outcome": "validated-track-b",
+          "tone": "neutral",
           "label": {
             "es": "Validado — clasificado Track B para diseño de módulo FP dual",
             "en": "Validated — classified as Track B for dual VET module design",

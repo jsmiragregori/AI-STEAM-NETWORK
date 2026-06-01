@@ -1751,13 +1751,13 @@ function renderValidationCard(item, tab) {
 
   // ── Decisión ──────────────────────────────────────────────────────────────
   const decisionLabel = pickLang(decision.label);
-  const _decOutcome = decision.outcome || '';
-  const _decTone = _decOutcome.includes('validated') || _decOutcome.includes('track-')
+  const _decToneKey = decision.tone || 'neutral';
+  const _decTone = _decToneKey === 'positive'
     ? 'bg-green-50 text-green-800 border-green-200'
-    : _decOutcome.includes('rejected') || _decOutcome.includes('not-')
+    : _decToneKey === 'negative'
       ? 'bg-red-50 text-red-700 border-red-200'
       : 'bg-slate-50 text-slate-700 border-slate-200';
-  const _decIcon = _decOutcome.includes('rejected') || _decOutcome.includes('not-') ? 'x-circle' : 'check-circle-2';
+  const _decIcon = _decToneKey === 'positive' ? 'check-circle-2' : _decToneKey === 'negative' ? 'x-circle' : 'circle-dot';
   const decisionHtml = (ccv.ch_val_decision !== false && pres.showDecision !== false && decisionLabel)
     ? `<div class="mt-4 rounded-lg border px-3 py-2 ${_decTone}">
         <p class="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide opacity-70">
@@ -1784,8 +1784,8 @@ function renderValidationCard(item, tab) {
   const extUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : null;
   const ctaLabel = pickLang({ es: 'Ver validación', en: 'View validation', va: 'Veure validació' });
   const ctaHtml = extUrl
-    ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(ctaLabel)}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
-    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(ctaLabel)}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
+    ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(ctaLabel)} <i data-lucide="external-link" class="h-4 w-4"></i></a>`
+    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(ctaLabel)} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
 
   const validationTypeLabel = pickLang(item.validationTypeLabel) || getValidationTypeLabel(core.validationType);
   const stageLabel = (ccv.ch_val_stage !== false && pres.showValidationStage !== false) ? pickLang(item.validationStageLabel) : '';
