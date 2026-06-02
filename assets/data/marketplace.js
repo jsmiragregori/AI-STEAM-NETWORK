@@ -4223,8 +4223,8 @@ export const MARKETPLACE_CONFIG = {
         "mentoringTeam": {
           "name": {
             "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
-            "en": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo"
+            "en": "AI-STEAM Network Mentoring Pool — Creative AI and Tourism Specialists",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme"
           },
           "type": "mentoring-pool",
           "role": {
@@ -4703,8 +4703,8 @@ export const MARKETPLACE_CONFIG = {
         "mentoringTeam": {
           "name": {
             "es": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
-            "en": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA"
+            "en": "AI-STEAM Network Mentoring Pool — Public Innovation and AI Specialists",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistes en Innovació Pública i IA"
           },
           "type": "mentoring-pool",
           "role": {
@@ -5182,8 +5182,8 @@ export const MARKETPLACE_CONFIG = {
         "mentoringTeam": {
           "name": {
             "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
-            "en": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria"
+            "en": "AI-STEAM Network Mentoring Pool — Agri-food AI Specialists",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Agroalimentària"
           },
           "type": "mentoring-pool",
           "role": {
@@ -5659,8 +5659,8 @@ export const MARKETPLACE_CONFIG = {
         "mentoringTeam": {
           "name": {
             "es": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
-            "en": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP"
+            "en": "AI-STEAM Network Mentoring Pool — Research-to-VET Transfer Specialists",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistes en Transferència Recerca-FP"
           },
           "type": "mentoring-pool",
           "role": {
@@ -6136,8 +6136,8 @@ export const MARKETPLACE_CONFIG = {
         "mentoringTeam": {
           "name": {
             "es": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
-            "en": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación"
+            "en": "AI-STEAM Network Mentoring Pool — AI Ethics and Education Specialists",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistes en Ètica IA i Educació"
           },
           "type": "mentoring-pool",
           "role": {
@@ -6611,8 +6611,8 @@ export const MARKETPLACE_CONFIG = {
         "mentoringTeam": {
           "name": {
             "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
-            "en": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria"
+            "en": "AI-STEAM Network Mentoring Pool — Healthcare AI Specialists",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Sanitària"
           },
           "type": "mentoring-pool",
           "role": {
@@ -9049,8 +9049,8 @@ export const MARKETPLACE_CONFIG = {
         "mentoringTeam": {
           "name": {
             "es": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
-            "en": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación"
+            "en": "AI-STEAM Network Mentoring Pool — VET Pedagogy and Innovation Specialists",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistes en Pedagogia FP i Innovació"
           },
           "type": "mentoring-pool",
           "role": {
@@ -10033,8 +10033,8 @@ export const MARKETPLACE_CONFIG = {
         "mentoringTeam": {
           "name": {
             "es": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
-            "en": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0"
+            "en": "AI-STEAM Network Mentoring Pool — Industry 4.0 Specialists",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistes en Indústria 4.0"
           },
           "type": "mentoring-pool",
           "role": {
@@ -50739,8 +50739,8 @@ export const MARKETPLACE_CONFIG = {
           "mentoringTeam": {
             "name": {
               "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
-              "en": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo"
+              "en": "AI-STEAM Network Mentoring Pool — Creative AI and Tourism Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme"
             },
             "type": "mentoring-pool",
             "role": {
@@ -51219,8 +51219,8 @@ export const MARKETPLACE_CONFIG = {
           "mentoringTeam": {
             "name": {
               "es": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
-              "en": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA"
+              "en": "AI-STEAM Network Mentoring Pool — Public Innovation and AI Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Innovació Pública i IA"
             },
             "type": "mentoring-pool",
             "role": {
@@ -51698,8 +51698,8 @@ export const MARKETPLACE_CONFIG = {
           "mentoringTeam": {
             "name": {
               "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
-              "en": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria"
+              "en": "AI-STEAM Network Mentoring Pool — Agri-food AI Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Agroalimentària"
             },
             "type": "mentoring-pool",
             "role": {
@@ -52175,8 +52175,8 @@ export const MARKETPLACE_CONFIG = {
           "mentoringTeam": {
             "name": {
               "es": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
-              "en": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP"
+              "en": "AI-STEAM Network Mentoring Pool — Research-to-VET Transfer Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Transferència Recerca-FP"
             },
             "type": "mentoring-pool",
             "role": {
@@ -52652,8 +52652,8 @@ export const MARKETPLACE_CONFIG = {
           "mentoringTeam": {
             "name": {
               "es": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
-              "en": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación"
+              "en": "AI-STEAM Network Mentoring Pool — AI Ethics and Education Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Ètica IA i Educació"
             },
             "type": "mentoring-pool",
             "role": {
@@ -53127,8 +53127,8 @@ export const MARKETPLACE_CONFIG = {
           "mentoringTeam": {
             "name": {
               "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
-              "en": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria"
+              "en": "AI-STEAM Network Mentoring Pool — Healthcare AI Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Sanitària"
             },
             "type": "mentoring-pool",
             "role": {
@@ -53606,8 +53606,8 @@ export const MARKETPLACE_CONFIG = {
           "mentoringTeam": {
             "name": {
               "es": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
-              "en": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación"
+              "en": "AI-STEAM Network Mentoring Pool — VET Pedagogy and Innovation Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Pedagogia FP i Innovació"
             },
             "type": "mentoring-pool",
             "role": {
@@ -54081,8 +54081,8 @@ export const MARKETPLACE_CONFIG = {
           "mentoringTeam": {
             "name": {
               "es": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
-              "en": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0"
+              "en": "AI-STEAM Network Mentoring Pool — Industry 4.0 Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Indústria 4.0"
             },
             "type": "mentoring-pool",
             "role": {
