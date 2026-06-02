@@ -4190,7 +4190,6 @@ function renderMentoringRelationsSection(item, sections) {
     ...asArray(relations.relatedValidations),
     ...asArray(relations.relatedPilots),
     ...asArray(relations.relatedCases),
-    ...asArray(relations.relatedResources),
   ].map(entry => pickLang(entry?.label || entry?.title || entry)).filter(Boolean);
   const outputs = asArray(relations.possibleOutputs).map(getTypeLabel).filter(Boolean);
   const body = [
