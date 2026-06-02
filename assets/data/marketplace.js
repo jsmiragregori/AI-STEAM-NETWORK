@@ -3060,57 +3060,48 @@ export const MARKETPLACE_CONFIG = {
       }
     },
     {
-      "id": "ethical-ai-support",
+      "id": "pilot-design",
       "visible": true,
       "label": {
-        "es": "Apoyo en IA responsable",
-        "en": "Responsible AI support",
-        "va": "Suport en IA responsable"
+        "es": "Diseno de pilotos",
+        "en": "Pilot design",
+        "va": "Disseny de pilots"
       }
     },
     {
-      "id": "technical-mentoring",
+      "id": "stakeholder-engagement",
       "visible": true,
       "label": {
-        "es": "Mentoria tecnica",
-        "en": "Technical mentoring",
-        "va": "Mentoria tecnica"
+        "es": "Participacion institucional",
+        "en": "Stakeholder engagement",
+        "va": "Participacio institucional"
       }
     },
     {
-      "id": "pedagogical-mentoring",
+      "id": "ethics-review",
       "visible": true,
       "label": {
-        "es": "Mentoria pedagogica",
-        "en": "Pedagogical mentoring",
-        "va": "Mentoria pedagogica"
+        "es": "Revision etica",
+        "en": "Ethics review",
+        "va": "Revisio etica"
       }
     },
     {
-      "id": "transfer-support",
+      "id": "replication-support",
       "visible": true,
       "label": {
-        "es": "Apoyo a transferencia",
-        "en": "Transfer support",
-        "va": "Suport a transferencia"
+        "es": "Apoyo a replicacion",
+        "en": "Replication support",
+        "va": "Suport a replicacio"
       }
     },
     {
-      "id": "resource-design",
+      "id": "technical-support",
       "visible": true,
       "label": {
-        "es": "Diseno de recursos",
-        "en": "Resource design",
-        "va": "Disseny de recursos"
-      }
-    },
-    {
-      "id": "challenge-framing",
-      "visible": true,
-      "label": {
-        "es": "Formulacion de retos",
-        "en": "Challenge framing",
-        "va": "Formulacio de reptes"
+        "es": "Soporte tecnico",
+        "en": "Technical support",
+        "va": "Suport tecnic"
       }
     },
     {
@@ -3120,6 +3111,15 @@ export const MARKETPLACE_CONFIG = {
         "es": "IA creativa",
         "en": "Creative AI",
         "va": "IA creativa"
+      }
+    },
+    {
+      "id": "research-transfer",
+      "visible": true,
+      "label": {
+        "es": "Transferencia de investigacion",
+        "en": "Research transfer",
+        "va": "Transferencia d'investigacio"
       }
     }
   ],
@@ -57204,57 +57204,48 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       {
-        "id": "ethical-ai-support",
+        "id": "pilot-design",
         "visible": true,
         "label": {
-          "es": "Apoyo en IA responsable",
-          "en": "Responsible AI support",
-          "va": "Suport en IA responsable"
+          "es": "Diseno de pilotos",
+          "en": "Pilot design",
+          "va": "Disseny de pilots"
         }
       },
       {
-        "id": "technical-mentoring",
+        "id": "stakeholder-engagement",
         "visible": true,
         "label": {
-          "es": "Mentoria tecnica",
-          "en": "Technical mentoring",
-          "va": "Mentoria tecnica"
+          "es": "Participacion institucional",
+          "en": "Stakeholder engagement",
+          "va": "Participacio institucional"
         }
       },
       {
-        "id": "pedagogical-mentoring",
+        "id": "ethics-review",
         "visible": true,
         "label": {
-          "es": "Mentoria pedagogica",
-          "en": "Pedagogical mentoring",
-          "va": "Mentoria pedagogica"
+          "es": "Revision etica",
+          "en": "Ethics review",
+          "va": "Revisio etica"
         }
       },
       {
-        "id": "transfer-support",
+        "id": "replication-support",
         "visible": true,
         "label": {
-          "es": "Apoyo a transferencia",
-          "en": "Transfer support",
-          "va": "Suport a transferencia"
+          "es": "Apoyo a replicacion",
+          "en": "Replication support",
+          "va": "Suport a replicacio"
         }
       },
       {
-        "id": "resource-design",
+        "id": "technical-support",
         "visible": true,
         "label": {
-          "es": "Diseno de recursos",
-          "en": "Resource design",
-          "va": "Disseny de recursos"
-        }
-      },
-      {
-        "id": "challenge-framing",
-        "visible": true,
-        "label": {
-          "es": "Formulacion de retos",
-          "en": "Challenge framing",
-          "va": "Formulacio de reptes"
+          "es": "Soporte tecnico",
+          "en": "Technical support",
+          "va": "Suport tecnic"
         }
       },
       {
@@ -57264,6 +57255,15 @@ export const MARKETPLACE_CONFIG = {
           "es": "IA creativa",
           "en": "Creative AI",
           "va": "IA creativa"
+        }
+      },
+      {
+        "id": "research-transfer",
+        "visible": true,
+        "label": {
+          "es": "Transferencia de investigacion",
+          "en": "Research transfer",
+          "va": "Transferencia d'investigacio"
         }
       }
     ],

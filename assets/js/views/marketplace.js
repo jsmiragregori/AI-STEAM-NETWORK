@@ -456,15 +456,15 @@ function getStatusLabel(id) {
 }
 
 function getMentoringTypeLabel(id) {
-  return getLabelFromArray(MARKETPLACE_CONFIG.mentoringTypeLabels || MARKETPLACE_CONFIG.labels?.mentoringType, id);
+  return getLabelFromArray(MARKETPLACE_CONFIG.mentoringTypeLabels || MARKETPLACE_CONFIG.labels?.mentoringType, id, '');
 }
 
 function getMentoringStatusLabel(id) {
-  return getLabelFromArray(MARKETPLACE_CONFIG.mentoringStatusLabels || MARKETPLACE_CONFIG.statusLabels, id);
+  return getLabelFromArray(MARKETPLACE_CONFIG.mentoringStatusLabels || MARKETPLACE_CONFIG.statusLabels, id, '');
 }
 
 function getMentoringSpecialtyLabel(id) {
-  return getLabelFromArray(MARKETPLACE_CONFIG.mentoringSpecialtyLabels || MARKETPLACE_CONFIG.labels?.mentoringSpecialty, id);
+  return getLabelFromArray(MARKETPLACE_CONFIG.mentoringSpecialtyLabels || MARKETPLACE_CONFIG.labels?.mentoringSpecialty, id, '');
 }
 
 function getModalityLabel(id) {
