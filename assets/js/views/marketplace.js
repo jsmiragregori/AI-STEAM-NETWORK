@@ -1133,14 +1133,16 @@ function renderCardCallout(label, value, icon = 'sparkles', strict = false, tone
 }
 
 function renderCardMiniMeta(items) {
-  const visible = items.filter(item => item.value !== undefined && item.value !== null && item.value !== '');
+  const visible = items.filter(item => item.htmlValue || (item.value !== undefined && item.value !== null && item.value !== ''));
   if (!visible.length) return '';
   return `
     <div class="mt-4 grid gap-3">
       ${visible.map(item => `
         <div class="rounded-lg border px-3 py-2 ${item.boxClass || 'border-eu-border bg-white'}">
-          <p class="text-[11px] font-bold uppercase tracking-wide ${item.labelClass || 'text-gray-500'}">${esc(item.label)}</p>
-          <p class="mt-0.5 text-sm leading-5 ${item.valueClass || 'font-semibold text-gray-700'}">${esc(item.value)}</p>
+          <p class="text-[11px] font-semibold uppercase tracking-wide ${item.labelClass || 'text-gray-400'}">${esc(item.label)}</p>
+          ${item.htmlValue
+            ? `<div class="mt-1 ${item.valueClass || 'text-sm text-gray-600'}">${item.htmlValue}</div>`
+            : `<p class="mt-0.5 text-sm leading-5 ${item.valueClass || 'text-gray-700'}">${esc(item.value)}</p>`}
           ${item.secondaryValue ? `<p class="mt-1 text-sm leading-5 ${item.secondaryValueClass || 'text-gray-600'}">${esc(item.secondaryValue)}</p>` : ''}
           ${item.tertiaryValue ? `<div class="${item.tertiaryWrapClass || 'mt-2 border-t border-slate-100 pt-2'}"><p class="text-sm leading-5 ${item.tertiaryValueClass || 'text-gray-700'}">${esc(item.tertiaryValue)}</p></div>` : ''}
         </div>`).join('')}
@@ -1841,7 +1843,7 @@ function renderMentoringCard(item, tab) {
 
   if (offer.purpose || item.mentors || item.expectedOutputs || item.presentation) {
     const providerName = pickLang(provider.name) || pickLang(core.entity?.name);
-    const providerRole = pickLang(provider.role);
+    const providerRole = pickLangStrict(provider.role);
     const purposeLabel = pickLang(pres.mainBlockLabel) || pickLang({ es: 'Que ofrece', en: 'What it offers', va: 'Que ofereix' });
     const purpose = pickLang(offer.purpose);
     const specialties = asArray(item.mentors?.items)
@@ -1849,22 +1851,7 @@ function renderMentoringCard(item, tab) {
       .map(specialty => ({ value: specialty, label: getMentoringSpecialtyLabel(specialty) || pickLang(specialty) }))
       .filter(specialty => specialty.label)
       .filter((specialty, index, all) => all.findIndex(entry => entry.value === specialty.value) === index);
-    const modality = getModalityLabel(format.modality);
-    const duration = format.sessionDurationMinutes
-      ? pickLang({
-          es: `${format.sessionDurationMinutes} min`,
-          en: `${format.sessionDurationMinutes} min`,
-          va: `${format.sessionDurationMinutes} min`,
-        })
-      : '';
-    const asyncReview = format.asyncReview
-      ? pickLang({
-          es: 'revision asincronica',
-          en: 'async review',
-          va: 'revisio asincronica',
-        })
-      : '';
-    const formatSummary = [modality, duration, asyncReview].filter(Boolean).join(' / ');
+    const formatSummary = getMentoringFormatSummary(format);
     const cardDownloads = asArray(item.cardDownloads).filter(download => download?.showOnCard !== false);
     const dlHtml = pres.showDownloadsIndicator !== false && item.downloads?.enabled && item.hasDownloads && cardDownloads.length
       ? `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500"><i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i><span>${esc(cardDownloads.length === 1 ? `1 ${uiText('downloadable')}` : `${cardDownloads.length} ${uiText('downloadables')}`)}</span></div>`
@@ -1895,7 +1882,7 @@ function renderMentoringCard(item, tab) {
       : '';
 
     const body = `
-      ${purpose ? `
+      ${purpose && pres.showPurpose !== false ? `
         <div class="mt-4 rounded-lg bg-eu-bg p-4">
           <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-gray-500">
             <i data-lucide="handshake" class="h-3.5 w-3.5"></i>
@@ -1907,7 +1894,7 @@ function renderMentoringCard(item, tab) {
       ${specialtiesHtml}
       ${renderCardMiniMeta([
         { label: uiText('availability'), value: ccv.ch_mentoring_availability !== false && pres.showAvailability !== false ? pickLang(format.availability) : '' },
-        { label: pickLang({ es: 'Formato', en: 'Format', va: 'Format' }), value: formatSummary },
+        { label: pickLang({ es: 'Formato', en: 'Format', va: 'Format' }), htmlValue: asArray(format.sessions).map(s => { const count = s.sessionCount ? `${s.sessionCount} sess.` : ''; const parts = [getModalityLabel(s.modality), count, formatSessionDuration(s.sessionDurationHours, s.sessionDurationMinutes), getMentoringSessionTypesSummary(s.sessionTypes)].filter(Boolean); return `<p class="flex items-center gap-2 leading-5 text-sm text-gray-600"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400"></span>${esc(parts.join(' · '))}</p>`; }).join('') },
       ])}
       ${dlHtml}
     `;
@@ -3995,13 +3982,34 @@ function renderMentoringDetailHeader(item) {
     </section>`;
 }
 
+const SESSION_TYPE_LABELS = {
+  sync:           { es: 'síncrona',           en: 'synchronous',   va: 'síncrona'           },
+  async:          { es: 'asíncrona',          en: 'asynchronous',  va: 'asíncrona'          },
+  workshop:       { es: 'taller',             en: 'workshop',      va: 'taller'             },
+  'async-review': { es: 'revisión asíncrona', en: 'async review',  va: 'revisió asíncrona'  },
+};
+
+function formatSessionDuration(h, m) {
+  if (!h && !m) return '';
+  if (h && m) return `${h}h ${m}min`;
+  return h ? `${h}h` : `${m}min`;
+}
+
+function getMentoringSessionTypesSummary(types) {
+  return asArray(types).map(t => pickLang(SESSION_TYPE_LABELS[t]) || t).filter(Boolean).join(', ');
+}
+
 function getMentoringFormatSummary(format = {}) {
-  const parts = [
-    getModalityLabel(format.modality),
-    format.sessionDurationMinutes ? `${format.sessionDurationMinutes} min` : '',
-    format.asyncReview ? pickLang({ es: 'revision asincronica', en: 'async review', va: 'revisio asincronica' }) : '',
-  ].filter(Boolean);
-  return parts.join(' / ');
+  return asArray(format.sessions).map(s => {
+    const count = s.sessionCount ? `${s.sessionCount} ${pickLang({ es: 'ses.', en: 'sess.', va: 'sess.' })}` : '';
+    const parts = [
+      getModalityLabel(s.modality),
+      count,
+      formatSessionDuration(s.sessionDurationHours, s.sessionDurationMinutes),
+      getMentoringSessionTypesSummary(s.sessionTypes),
+    ].filter(Boolean);
+    return parts.join(' · ');
+  }).filter(Boolean).join(' / ');
 }
 
 function renderMentoringSection(sections, key, icon, title, body, accent = false) {
@@ -4080,8 +4088,10 @@ function renderMentoringFormatSection(item, sections) {
   const body = `
     <dl class="grid gap-3 md:grid-cols-2">
       ${renderDetailPair(pickLang({ es: 'Modalidad', en: 'Modality', va: 'Modalitat' }), getModalityLabel(format.modality))}
-      ${renderDetailPair(pickLang({ es: 'Duracion', en: 'Duration', va: 'Duracio' }), format.sessionDurationMinutes ? `${format.sessionDurationMinutes} min` : '')}
-      ${renderDetailPair(pickLang({ es: 'Revision asincronica', en: 'Async review', va: 'Revisio asincronica' }), format.asyncReview ? pickLang({ es: 'Si', en: 'Yes', va: 'Si' }) : '')}
+      ${asArray(format.sessions).map((s, i) => renderDetailPair(
+        `${pickLang({ es: 'Bloque', en: 'Block', va: 'Bloc' })} ${i + 1}`,
+        [getModalityLabel(s.modality), s.sessionCount ? `${s.sessionCount} ${pickLang({ es: 'sesiones', en: 'sessions', va: 'sessions' })}` : '', formatSessionDuration(s.sessionDurationHours, s.sessionDurationMinutes), getMentoringSessionTypesSummary(s.sessionTypes)].filter(Boolean).join(' · ')
+      )).join('')}
       ${renderDetailPair(pickLang({ es: 'Idiomas', en: 'Languages', va: 'Idiomes' }), languages)}
     </dl>
     ${pickLang(format.availability) ? `<p class="mt-4 text-sm leading-7 text-gray-700">${esc(pickLang(format.availability))}</p>` : ''}`;
@@ -4201,7 +4211,7 @@ function renderMentoringSummaryPanel(item) {
     provider && [pickLang({ es: 'Proveedor', en: 'Provider', va: 'Proveidor' }), provider],
     getMentoringStatusLabel(item.core?.status) && [uiText('status'), getMentoringStatusLabel(item.core?.status)],
     getMentoringTypeLabel(item.core?.mentoringType) && [pickLang({ es: 'Subtipo', en: 'Subtype', va: 'Subtipus' }), getMentoringTypeLabel(item.core?.mentoringType)],
-    getModalityLabel(format.modality) && [pickLang({ es: 'Modalidad', en: 'Modality', va: 'Modalitat' }), getModalityLabel(format.modality)],
+    getMentoringFormatSummary(format) && [pickLang({ es: 'Formato', en: 'Format', va: 'Format' }), getMentoringFormatSummary(format)],
     pickLang(format.availability) && [uiText('availability'), pickLang(format.availability)],
   ].filter(Boolean);
   if (!rows.length) return '';

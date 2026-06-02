@@ -4192,7 +4192,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "cci",
         "sectors": [],
-        "stakeholderCategory": "institutional",
+        "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -4399,9 +4399,24 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "format": {
-          "modality": "online",
-          "sessionDurationMinutes": 60,
-          "asyncReview": true,
+          "sessions": [
+            {
+              "modality": "online",
+              "sessionCount": 2,
+              "sessionDurationHours": 1,
+              "sessionDurationMinutes": null,
+              "sessionTypes": [
+                "sync"
+              ]
+            },
+            {
+              "modality": "in-person",
+              "sessionCount": 1,
+              "sessionDurationHours": null,
+              "sessionDurationMinutes": 30,
+              "sessionTypes": []
+            }
+          ],
           "languageCodes": [
             "es",
             "va",
@@ -4437,10 +4452,9 @@ export const MARKETPLACE_CONFIG = {
               "va": "Mentors especialitzats en IA generativa aplicada a turisme, patrimoni cultural i indústries creatives"
             },
             "specialties": [
-              "generative-ai-creative",
-              "tourism-ai",
-              "cultural-heritage-ai",
-              "ai-copyright"
+              "responsible-ai",
+              "ai-ethics",
+              "industry-4-0"
             ]
           }
         ]
@@ -4591,6 +4605,7 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "mentoring",
+          "showPurpose": true,
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
@@ -4879,9 +4894,18 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "format": {
-          "modality": "hybrid",
-          "sessionDurationMinutes": 75,
-          "asyncReview": true,
+          "sessions": [
+            {
+              "modality": "hybrid",
+              "sessionCount": 3,
+              "sessionDurationHours": 1,
+              "sessionDurationMinutes": 15,
+              "sessionTypes": [
+                "sync",
+                "async-review"
+              ]
+            }
+          ],
           "languageCodes": [
             "es",
             "va"
@@ -5070,6 +5094,7 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "mentoring",
+          "showPurpose": true,
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
@@ -5359,9 +5384,18 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "format": {
-          "modality": "hybrid",
-          "sessionDurationMinutes": 60,
-          "asyncReview": true,
+          "sessions": [
+            {
+              "modality": "hybrid",
+              "sessionCount": 4,
+              "sessionDurationHours": 1,
+              "sessionDurationMinutes": null,
+              "sessionTypes": [
+                "sync",
+                "async"
+              ]
+            }
+          ],
           "languageCodes": [
             "es",
             "va"
@@ -5547,6 +5581,7 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "mentoring",
+          "showPurpose": true,
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
@@ -5836,9 +5871,18 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "format": {
-          "modality": "online",
-          "sessionDurationMinutes": 90,
-          "asyncReview": true,
+          "sessions": [
+            {
+              "modality": "online",
+              "sessionCount": 3,
+              "sessionDurationHours": 1,
+              "sessionDurationMinutes": 30,
+              "sessionTypes": [
+                "sync",
+                "async"
+              ]
+            }
+          ],
           "languageCodes": [
             "es",
             "va",
@@ -6024,6 +6068,7 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "mentoring",
+          "showPurpose": true,
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
@@ -6312,9 +6357,18 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "format": {
-          "modality": "online",
-          "sessionDurationMinutes": 60,
-          "asyncReview": true,
+          "sessions": [
+            {
+              "modality": "online",
+              "sessionCount": 4,
+              "sessionDurationHours": 1,
+              "sessionDurationMinutes": null,
+              "sessionTypes": [
+                "sync",
+                "async-review"
+              ]
+            }
+          ],
           "languageCodes": [
             "es",
             "va",
@@ -6499,6 +6553,7 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "mentoring",
+          "showPurpose": true,
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
@@ -6788,9 +6843,18 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "format": {
-          "modality": "online",
-          "sessionDurationMinutes": 75,
-          "asyncReview": true,
+          "sessions": [
+            {
+              "modality": "online",
+              "sessionCount": 2,
+              "sessionDurationHours": 1,
+              "sessionDurationMinutes": 15,
+              "sessionTypes": [
+                "sync",
+                "async-review"
+              ]
+            }
+          ],
           "languageCodes": [
             "es",
             "va",
@@ -6978,6 +7042,7 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "mentoring",
+          "showPurpose": true,
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
@@ -9018,7 +9083,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "nts",
         "sectors": [],
-        "stakeholderCategory": "institutional",
+        "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -9225,9 +9290,18 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "format": {
-          "modality": "hybrid",
-          "sessionDurationMinutes": 90,
-          "asyncReview": true,
+          "sessions": [
+            {
+              "modality": "hybrid",
+              "sessionCount": 3,
+              "sessionDurationHours": 1,
+              "sessionDurationMinutes": 30,
+              "sessionTypes": [
+                "sync",
+                "async-review"
+              ]
+            }
+          ],
           "languageCodes": [
             "es",
             "va"
@@ -9412,6 +9486,7 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "mentoring",
+          "showPurpose": true,
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
@@ -10208,9 +10283,18 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "format": {
-          "modality": "hybrid",
-          "sessionDurationMinutes": 60,
-          "asyncReview": true,
+          "sessions": [
+            {
+              "modality": "hybrid",
+              "sessionCount": 3,
+              "sessionDurationHours": 1,
+              "sessionDurationMinutes": null,
+              "sessionTypes": [
+                "sync",
+                "async"
+              ]
+            }
+          ],
           "languageCodes": [
             "es",
             "va"
@@ -10394,6 +10478,7 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "mentoring",
+          "showPurpose": true,
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
@@ -18899,9 +18984,18 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "format": {
-          "modality": "online",
-          "sessionDurationMinutes": 45,
-          "asyncReview": true,
+          "sessions": [
+            {
+              "modality": "online",
+              "sessionCount": 4,
+              "sessionDurationHours": null,
+              "sessionDurationMinutes": 45,
+              "sessionTypes": [
+                "sync",
+                "async-review"
+              ]
+            }
+          ],
           "languageCodes": [
             "es",
             "en",
@@ -19151,6 +19245,7 @@ export const MARKETPLACE_CONFIG = {
       "presentation": {
         "card": {
           "variant": "mentoring",
+          "showPurpose": true,
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
@@ -50708,7 +50803,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "cci",
           "sectors": [],
-          "stakeholderCategory": "institutional",
+          "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -50915,9 +51010,24 @@ export const MARKETPLACE_CONFIG = {
             ]
           },
           "format": {
-            "modality": "online",
-            "sessionDurationMinutes": 60,
-            "asyncReview": true,
+            "sessions": [
+              {
+                "modality": "online",
+                "sessionCount": 2,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": null,
+                "sessionTypes": [
+                  "sync"
+                ]
+              },
+              {
+                "modality": "in-person",
+                "sessionCount": 1,
+                "sessionDurationHours": null,
+                "sessionDurationMinutes": 30,
+                "sessionTypes": []
+              }
+            ],
             "languageCodes": [
               "es",
               "va",
@@ -50953,10 +51063,9 @@ export const MARKETPLACE_CONFIG = {
                 "va": "Mentors especialitzats en IA generativa aplicada a turisme, patrimoni cultural i indústries creatives"
               },
               "specialties": [
-                "generative-ai-creative",
-                "tourism-ai",
-                "cultural-heritage-ai",
-                "ai-copyright"
+                "responsible-ai",
+                "ai-ethics",
+                "industry-4-0"
               ]
             }
           ]
@@ -51107,6 +51216,7 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "mentoring",
+            "showPurpose": true,
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
@@ -51395,9 +51505,18 @@ export const MARKETPLACE_CONFIG = {
             ]
           },
           "format": {
-            "modality": "hybrid",
-            "sessionDurationMinutes": 75,
-            "asyncReview": true,
+            "sessions": [
+              {
+                "modality": "hybrid",
+                "sessionCount": 3,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": 15,
+                "sessionTypes": [
+                  "sync",
+                  "async-review"
+                ]
+              }
+            ],
             "languageCodes": [
               "es",
               "va"
@@ -51586,6 +51705,7 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "mentoring",
+            "showPurpose": true,
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
@@ -51875,9 +51995,18 @@ export const MARKETPLACE_CONFIG = {
             ]
           },
           "format": {
-            "modality": "hybrid",
-            "sessionDurationMinutes": 60,
-            "asyncReview": true,
+            "sessions": [
+              {
+                "modality": "hybrid",
+                "sessionCount": 4,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": null,
+                "sessionTypes": [
+                  "sync",
+                  "async"
+                ]
+              }
+            ],
             "languageCodes": [
               "es",
               "va"
@@ -52063,6 +52192,7 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "mentoring",
+            "showPurpose": true,
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
@@ -52352,9 +52482,18 @@ export const MARKETPLACE_CONFIG = {
             ]
           },
           "format": {
-            "modality": "online",
-            "sessionDurationMinutes": 90,
-            "asyncReview": true,
+            "sessions": [
+              {
+                "modality": "online",
+                "sessionCount": 3,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": 30,
+                "sessionTypes": [
+                  "sync",
+                  "async"
+                ]
+              }
+            ],
             "languageCodes": [
               "es",
               "va",
@@ -52540,6 +52679,7 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "mentoring",
+            "showPurpose": true,
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
@@ -52828,9 +52968,18 @@ export const MARKETPLACE_CONFIG = {
             ]
           },
           "format": {
-            "modality": "online",
-            "sessionDurationMinutes": 60,
-            "asyncReview": true,
+            "sessions": [
+              {
+                "modality": "online",
+                "sessionCount": 4,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": null,
+                "sessionTypes": [
+                  "sync",
+                  "async-review"
+                ]
+              }
+            ],
             "languageCodes": [
               "es",
               "va",
@@ -53015,6 +53164,7 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "mentoring",
+            "showPurpose": true,
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
@@ -53304,9 +53454,18 @@ export const MARKETPLACE_CONFIG = {
             ]
           },
           "format": {
-            "modality": "online",
-            "sessionDurationMinutes": 75,
-            "asyncReview": true,
+            "sessions": [
+              {
+                "modality": "online",
+                "sessionCount": 2,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": 15,
+                "sessionTypes": [
+                  "sync",
+                  "async-review"
+                ]
+              }
+            ],
             "languageCodes": [
               "es",
               "va",
@@ -53494,6 +53653,7 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "mentoring",
+            "showPurpose": true,
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
@@ -53575,7 +53735,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "nts",
           "sectors": [],
-          "stakeholderCategory": "institutional",
+          "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -53782,9 +53942,18 @@ export const MARKETPLACE_CONFIG = {
             ]
           },
           "format": {
-            "modality": "hybrid",
-            "sessionDurationMinutes": 90,
-            "asyncReview": true,
+            "sessions": [
+              {
+                "modality": "hybrid",
+                "sessionCount": 3,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": 30,
+                "sessionTypes": [
+                  "sync",
+                  "async-review"
+                ]
+              }
+            ],
             "languageCodes": [
               "es",
               "va"
@@ -53969,6 +54138,7 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "mentoring",
+            "showPurpose": true,
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
@@ -54256,9 +54426,18 @@ export const MARKETPLACE_CONFIG = {
             ]
           },
           "format": {
-            "modality": "hybrid",
-            "sessionDurationMinutes": 60,
-            "asyncReview": true,
+            "sessions": [
+              {
+                "modality": "hybrid",
+                "sessionCount": 3,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": null,
+                "sessionTypes": [
+                  "sync",
+                  "async"
+                ]
+              }
+            ],
             "languageCodes": [
               "es",
               "va"
@@ -54442,6 +54621,7 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "mentoring",
+            "showPurpose": true,
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
@@ -54732,9 +54912,18 @@ export const MARKETPLACE_CONFIG = {
             ]
           },
           "format": {
-            "modality": "online",
-            "sessionDurationMinutes": 45,
-            "asyncReview": true,
+            "sessions": [
+              {
+                "modality": "online",
+                "sessionCount": 4,
+                "sessionDurationHours": null,
+                "sessionDurationMinutes": 45,
+                "sessionTypes": [
+                  "sync",
+                  "async-review"
+                ]
+              }
+            ],
             "languageCodes": [
               "es",
               "en",
@@ -54984,6 +55173,7 @@ export const MARKETPLACE_CONFIG = {
         "presentation": {
           "card": {
             "variant": "mentoring",
+            "showPurpose": true,
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
