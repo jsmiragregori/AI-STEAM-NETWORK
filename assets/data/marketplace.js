@@ -3667,9 +3667,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "IA per a la personalització d'itineraris formatius en cicles de FP"
         },
         "summary": {
-          "es": "El CEICE convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
+          "es": "CEICE convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
           "en": "CEICE calls on VET centres, EdTech companies and educational research groups to develop a personalised learning pathway recommendation system based on the student's academic and competency history, suggesting optional modules, specialisations and professional pathways aligned with the Valencian labour market.",
-          "va": "El CEICE convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
+          "va": "CEICE convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
         },
         "entity": {
           "name": "CEICE — Direcció General de Formació Professional i Ensenyaments de Règim Especial",
@@ -3737,7 +3737,35 @@ export const MARKETPLACE_CONFIG = {
             "va": "Punt de contacte per a expressions d'interès"
           }
         },
-        "beneficiaries": []
+        "beneficiaries": [
+          {
+            "name": "Alumnado de FP de la Comunitat Valenciana",
+            "type": "educational-group",
+            "role": {
+              "es": "Destinatarios directos del sistema de recomendación personalizada",
+              "en": "Direct beneficiaries of the personalised recommendation system",
+              "va": "Destinataris directes del sistema de recomanació personalitzada"
+            }
+          },
+          {
+            "name": "Orientadores y tutores de FP",
+            "type": "educational-staff",
+            "role": {
+              "es": "Profesionales que usarán la herramienta como apoyo a la orientación vocacional",
+              "en": "Professionals who will use the tool to support vocational guidance",
+              "va": "Professionals que usaran l'eina com a suport a l'orientació vocacional"
+            }
+          },
+          {
+            "name": "Centros de FP de la Comunitat Valenciana",
+            "type": "educational-centre",
+            "role": {
+              "es": "Instituciones adoptantes del sistema resultante",
+              "en": "Institutions adopting the resulting system",
+              "va": "Institucions adoptants del sistema resultant"
+            }
+          }
+        ]
       },
       "classification": {
         "aiSteamFocus": [
@@ -3787,10 +3815,27 @@ export const MARKETPLACE_CONFIG = {
       "transfer": {
         "type": "",
         "originOrganization": "",
-        "beneficiaryOrganizations": []
+        "beneficiaryOrganizations": [
+          {
+            "name": "Alumnado de FP de la Comunitat Valenciana",
+            "sector": "",
+            "type": "educational-group"
+          },
+          {
+            "name": "Orientadores y tutores de FP",
+            "sector": "",
+            "type": "educational-staff"
+          },
+          {
+            "name": "Centros de FP de la Comunitat Valenciana",
+            "sector": "",
+            "type": "educational-centre"
+          }
+        ]
       },
       "community": {
         "tab": "challenges",
+        "publicMvp": true,
         "featuredSignal": {
           "es": "Convocatoria CEICE — FP personalizada",
           "en": "CEICE call — personalised VET",
@@ -3836,13 +3881,23 @@ export const MARKETPLACE_CONFIG = {
           "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CEICE, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AI-STEAM y en la red estatal de innovación en FP.",
           "en": "The winning team receives: (1) development and implementation contract with CEICE, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AI-STEAM Marketplace and in the national VET innovation network.",
           "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CEICE, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AI-STEAM i a la xarxa estatal d'innovació en FP."
+        },
+        "evidence": {
+          "es": "Los prototipos en fase 2 serán evaluados por un panel independiente de orientadores educativos de tres centros de FP piloto. Los criterios son precisión de las recomendaciones (comparación con la decisión real del alumno a seis meses), satisfacción del usuario (escala Likert, n=50) y una auditoría de sesgos algorítmicos realizada por el Comité de Ética de Datos del CEICE. Las memorias conceptuales de fase 1 se evalúan por pertinencia, viabilidad técnica y calidad del análisis ético.",
+          "en": "Phase 2 prototypes will be evaluated by an independent panel of educational guidance counsellors from three pilot VET centres. Criteria are recommendation accuracy (comparison with the student's actual decision at six months), user satisfaction (Likert scale, n=50) and an algorithmic bias audit conducted by the CEICE Data Ethics Committee. Phase 1 conceptual memos are assessed on relevance, technical feasibility and quality of ethical analysis.",
+          "va": "Els prototips en fase 2 seran avaluats per un panel independent d'orientadors educatius de tres centres de FP pilot. Els criteris són precisió de les recomanacions (comparació amb la decisió real de l'alumne a sis mesos), satisfacció de l'usuari (escala Likert, n=50) i una auditoria de biaixos algorítmics realitzada pel Comitè d'Ètica de Dades del CEICE. Les memòries conceptuals de fase 1 s'avaluen per pertinència, viabilitat tècnica i qualitat de l'anàlisi ètica."
+        },
+        "people": {
+          "es": "El reto es impulsado por la Direcció General de Formació Professional del CEICE, con la colaboración del Observatori Laboral de la Generalitat Valenciana como proveedor de datos. La evaluación de propuestas la realiza un jurado mixto formado por orientadores educativos de FP, investigadores en ciencias del aprendizaje, representantes de empresas EdTech y un experto en ética de datos. La coordinación técnica recae en el equipo de la Red AI-STEAM.",
+          "en": "The challenge is driven by the CEICE Directorate General for Vocational Training, with the Valencian Government Labour Observatory as data provider. Proposals are evaluated by a mixed jury of VET educational counsellors, learning sciences researchers, EdTech company representatives and a data ethics expert. Technical coordination falls to the AI-STEAM Network team.",
+          "va": "El repte és impulsat per la Direcció General de Formació Professional del CEICE, amb la col·laboració de l'Observatori Laboral de la Generalitat Valenciana com a proveïdor de dades. L'avaluació de propostes la realitza un jurat mixt format per orientadors educatius de FP, investigadors en ciències de l'aprenentatge, representants d'empreses EdTech i un expert en ètica de dades. La coordinació tècnica recau en l'equip de la Xarxa AI-STEAM."
         }
       },
       "access": {
         "pageVisibility": "public",
         "pageLicense": "CC BY 4.0",
-        "codeLicense": "",
-        "dataAvailability": "",
+        "codeLicense": "Apache 2.0",
+        "dataAvailability": "restricted",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "external-managed",
         "sensitiveDataPolicy": {
@@ -3851,41 +3906,41 @@ export const MARKETPLACE_CONFIG = {
           "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
         },
         "rightsNote": {
-          "es": "Los sistemas desarrollados deben ser de código abierto. Los datos de alumnos piloto se tratan bajo estricto cumplimiento del RGPD y de la legislación de protección de datos educativos.",
-          "en": "Developed systems must be open-source. Pilot student data is processed under strict GDPR compliance and educational data protection legislation.",
-          "va": "Els sistemes desenvolupats han de ser de codi obert. Les dades d'alumnes pilot es tracten sota estricte compliment del RGPD i de la legislació de protecció de dades educatives."
+          "es": "Los sistemas desarrollados deben ser de código abierto (licencia Apache 2.0). Los datos de alumnos piloto se tratan bajo estricto cumplimiento del RGPD y de la legislación de protección de datos educativos.",
+          "en": "Developed systems must be open-source (Apache 2.0 licence). Pilot student data is processed under strict GDPR compliance and educational data protection legislation.",
+          "va": "Els sistemes desenvolupats han de ser de codi obert (llicència Apache 2.0). Les dades d'alumnes pilot es tracten sota estricte compliment del RGPD i de la legislació de protecció de dades educatives."
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
         "publicationNote": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Los resultados del reto se publicarán en el Marketplace AI-STEAM y en el repositorio de innovación educativa de la Generalitat Valenciana. Los equipos participantes conservan la autoría de sus propuestas.",
+          "en": "Challenge results will be published on the AI-STEAM Marketplace and in the Valencian Government's educational innovation repository. Participating teams retain authorship of their proposals.",
+          "va": "Els resultats del repte es publicaran al Marketplace AI-STEAM i al repositori d'innovació educativa de la Generalitat Valenciana. Els equips participants conserven l'autoria de les seues propostes."
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
         "privacyLevel": "public"
       },
       "trackA": {
-        "enabled": false,
+        "enabled": true,
         "label": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Investigación en sistemas de recomendación adaptativa para orientación en FP",
+          "en": "Research on adaptive recommendation systems for VET guidance",
+          "va": "Recerca en sistemes de recomanació adaptativa per a orientació en FP"
         },
-        "url": ""
+        "url": "https://ceice.gva.es/reto-fp-ia/track-a-investigacion"
       },
       "trackALink": {
-        "enabled": false,
+        "enabled": true,
         "label": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Investigación en sistemas de recomendación adaptativa para orientación en FP",
+          "en": "Research on adaptive recommendation systems for VET guidance",
+          "va": "Recerca en sistemes de recomanació adaptativa per a orientació en FP"
         },
-        "url": ""
+        "url": "https://ceice.gva.es/reto-fp-ia/track-a-investigacion"
       },
       "externalFlow": {
-        "enabled": false,
+        "enabled": true,
         "primaryAction": {
           "label": {
             "es": "Solicitar participación",
@@ -3893,9 +3948,16 @@ export const MARKETPLACE_CONFIG = {
             "va": "Sol·licitar participació"
           },
           "system": "",
-          "url": ""
+          "url": "https://ceice.gva.es/formulari-inscripcio-reto-fp-ia"
         },
-        "secondaryAction": null,
+        "secondaryAction": {
+          "label": {
+            "es": "Preguntas frecuentes",
+            "en": "Frequently asked questions",
+            "va": "Preguntes freqüents"
+          },
+          "url": "https://ceice.gva.es/reto-fp-ia/preguntas-frecuentes"
+        },
         "fallbackAction": {
           "label": {
             "es": "Ver reto",
@@ -3910,7 +3972,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "Contact the challenge coordination desk",
             "va": "Contactar amb la coordinació del repte"
           },
-          "url": ""
+          "url": "mailto:aisteam.retos@ceice.gva.es"
         }
       },
       "relations": {
@@ -3918,7 +3980,16 @@ export const MARKETPLACE_CONFIG = {
         "validations": [],
         "pilots": [],
         "cases": [],
-        "mentorships": [],
+        "mentorships": [
+          {
+            "id": "mentoring-diseno-pilotos-fp-empresa",
+            "label": {
+              "es": "Mentoría — Diseño de pilotos de colaboración FP-empresa con IA",
+              "en": "Mentoring — Designing VET-industry AI collaboration pilots",
+              "va": "Mentoria — Disseny de pilots de col·laboració FP-empresa amb IA"
+            }
+          }
+        ],
         "resources": []
       },
       "resources": {
@@ -3930,7 +4001,8 @@ export const MARKETPLACE_CONFIG = {
               "va": "Dataset anonimitzat de matrícula i resultats FP (2022-2025)"
             },
             "format": "CSV",
-            "license": "Uso restringido al reto"
+            "license": "Uso restringido al reto",
+            "url": "https://ceice.gva.es/datasets/reto-fp-ia/matricula-resultados-2022-2025"
           },
           {
             "label": {
@@ -3939,7 +4011,18 @@ export const MARKETPLACE_CONFIG = {
               "va": "Informe de l'Observatori Laboral — demanda de perfils FP 2025"
             },
             "format": "PDF",
-            "license": "CC BY 4.0"
+            "license": "CC BY 4.0",
+            "url": "https://labora.gva.es/observatori/informes/demanda-fp-2025"
+          },
+          {
+            "label": {
+              "es": "Documentación técnica de la API de datos del CEICE",
+              "en": "CEICE data API technical documentation",
+              "va": "Documentació tècnica de l'API de dades del CEICE"
+            },
+            "format": "HTML",
+            "license": "CC BY 4.0",
+            "url": "https://ceice.gva.es/api/docs/fp-data-v1"
           }
         ]
       },
@@ -3965,6 +4048,12 @@ export const MARKETPLACE_CONFIG = {
                 "file": "ficha-reto-personalizacion-itinerarios-fp.pdf",
                 "format": "pdf",
                 "language": "es",
+                "license": "CC BY 4.0"
+              },
+              {
+                "file": "challenge-brief-vet-pathway-personalisation.pdf",
+                "format": "pdf",
+                "language": "en",
                 "license": "CC BY 4.0"
               }
             ],
@@ -4085,6 +4174,12 @@ export const MARKETPLACE_CONFIG = {
               "format": "pdf",
               "language": "es",
               "license": "CC BY 4.0"
+            },
+            {
+              "file": "challenge-brief-vet-pathway-personalisation.pdf",
+              "format": "pdf",
+              "language": "en",
+              "license": "CC BY 4.0"
             }
           ],
           "showOnCard": true,
@@ -4121,9 +4216,9 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
+            "trackA": true,
             "relations": false,
-            "evidence": false,
+            "evidence": true,
             "transferability": true,
             "summary": true,
             "originContext": true,
@@ -29449,9 +29544,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "IA per a la personalització d'itineraris formatius en cicles de FP"
           },
           "summary": {
-            "es": "El CEICE convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
+            "es": "CEICE convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
             "en": "CEICE calls on VET centres, EdTech companies and educational research groups to develop a personalised learning pathway recommendation system based on the student's academic and competency history, suggesting optional modules, specialisations and professional pathways aligned with the Valencian labour market.",
-            "va": "El CEICE convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
+            "va": "CEICE convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
           },
           "entity": {
             "name": "CEICE — Direcció General de Formació Professional i Ensenyaments de Règim Especial",
@@ -29519,7 +29614,35 @@ export const MARKETPLACE_CONFIG = {
               "va": "Punt de contacte per a expressions d'interès"
             }
           },
-          "beneficiaries": []
+          "beneficiaries": [
+            {
+              "name": "Alumnado de FP de la Comunitat Valenciana",
+              "type": "educational-group",
+              "role": {
+                "es": "Destinatarios directos del sistema de recomendación personalizada",
+                "en": "Direct beneficiaries of the personalised recommendation system",
+                "va": "Destinataris directes del sistema de recomanació personalitzada"
+              }
+            },
+            {
+              "name": "Orientadores y tutores de FP",
+              "type": "educational-staff",
+              "role": {
+                "es": "Profesionales que usarán la herramienta como apoyo a la orientación vocacional",
+                "en": "Professionals who will use the tool to support vocational guidance",
+                "va": "Professionals que usaran l'eina com a suport a l'orientació vocacional"
+              }
+            },
+            {
+              "name": "Centros de FP de la Comunitat Valenciana",
+              "type": "educational-centre",
+              "role": {
+                "es": "Instituciones adoptantes del sistema resultante",
+                "en": "Institutions adopting the resulting system",
+                "va": "Institucions adoptants del sistema resultant"
+              }
+            }
+          ]
         },
         "classification": {
           "aiSteamFocus": [
@@ -29569,10 +29692,27 @@ export const MARKETPLACE_CONFIG = {
         "transfer": {
           "type": "",
           "originOrganization": "",
-          "beneficiaryOrganizations": []
+          "beneficiaryOrganizations": [
+            {
+              "name": "Alumnado de FP de la Comunitat Valenciana",
+              "sector": "",
+              "type": "educational-group"
+            },
+            {
+              "name": "Orientadores y tutores de FP",
+              "sector": "",
+              "type": "educational-staff"
+            },
+            {
+              "name": "Centros de FP de la Comunitat Valenciana",
+              "sector": "",
+              "type": "educational-centre"
+            }
+          ]
         },
         "community": {
           "tab": "challenges",
+          "publicMvp": true,
           "featuredSignal": {
             "es": "Convocatoria CEICE — FP personalizada",
             "en": "CEICE call — personalised VET",
@@ -29618,13 +29758,23 @@ export const MARKETPLACE_CONFIG = {
             "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CEICE, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AI-STEAM y en la red estatal de innovación en FP.",
             "en": "The winning team receives: (1) development and implementation contract with CEICE, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AI-STEAM Marketplace and in the national VET innovation network.",
             "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CEICE, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AI-STEAM i a la xarxa estatal d'innovació en FP."
+          },
+          "evidence": {
+            "es": "Los prototipos en fase 2 serán evaluados por un panel independiente de orientadores educativos de tres centros de FP piloto. Los criterios son precisión de las recomendaciones (comparación con la decisión real del alumno a seis meses), satisfacción del usuario (escala Likert, n=50) y una auditoría de sesgos algorítmicos realizada por el Comité de Ética de Datos del CEICE. Las memorias conceptuales de fase 1 se evalúan por pertinencia, viabilidad técnica y calidad del análisis ético.",
+            "en": "Phase 2 prototypes will be evaluated by an independent panel of educational guidance counsellors from three pilot VET centres. Criteria are recommendation accuracy (comparison with the student's actual decision at six months), user satisfaction (Likert scale, n=50) and an algorithmic bias audit conducted by the CEICE Data Ethics Committee. Phase 1 conceptual memos are assessed on relevance, technical feasibility and quality of ethical analysis.",
+            "va": "Els prototips en fase 2 seran avaluats per un panel independent d'orientadors educatius de tres centres de FP pilot. Els criteris són precisió de les recomanacions (comparació amb la decisió real de l'alumne a sis mesos), satisfacció de l'usuari (escala Likert, n=50) i una auditoria de biaixos algorítmics realitzada pel Comitè d'Ètica de Dades del CEICE. Les memòries conceptuals de fase 1 s'avaluen per pertinència, viabilitat tècnica i qualitat de l'anàlisi ètica."
+          },
+          "people": {
+            "es": "El reto es impulsado por la Direcció General de Formació Professional del CEICE, con la colaboración del Observatori Laboral de la Generalitat Valenciana como proveedor de datos. La evaluación de propuestas la realiza un jurado mixto formado por orientadores educativos de FP, investigadores en ciencias del aprendizaje, representantes de empresas EdTech y un experto en ética de datos. La coordinación técnica recae en el equipo de la Red AI-STEAM.",
+            "en": "The challenge is driven by the CEICE Directorate General for Vocational Training, with the Valencian Government Labour Observatory as data provider. Proposals are evaluated by a mixed jury of VET educational counsellors, learning sciences researchers, EdTech company representatives and a data ethics expert. Technical coordination falls to the AI-STEAM Network team.",
+            "va": "El repte és impulsat per la Direcció General de Formació Professional del CEICE, amb la col·laboració de l'Observatori Laboral de la Generalitat Valenciana com a proveïdor de dades. L'avaluació de propostes la realitza un jurat mixt format per orientadors educatius de FP, investigadors en ciències de l'aprenentatge, representants d'empreses EdTech i un expert en ètica de dades. La coordinació tècnica recau en l'equip de la Xarxa AI-STEAM."
           }
         },
         "access": {
           "pageVisibility": "public",
           "pageLicense": "CC BY 4.0",
-          "codeLicense": "",
-          "dataAvailability": "",
+          "codeLicense": "Apache 2.0",
+          "dataAvailability": "restricted",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "external-managed",
           "sensitiveDataPolicy": {
@@ -29633,41 +29783,41 @@ export const MARKETPLACE_CONFIG = {
             "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
           },
           "rightsNote": {
-            "es": "Los sistemas desarrollados deben ser de código abierto. Los datos de alumnos piloto se tratan bajo estricto cumplimiento del RGPD y de la legislación de protección de datos educativos.",
-            "en": "Developed systems must be open-source. Pilot student data is processed under strict GDPR compliance and educational data protection legislation.",
-            "va": "Els sistemes desenvolupats han de ser de codi obert. Les dades d'alumnes pilot es tracten sota estricte compliment del RGPD i de la legislació de protecció de dades educatives."
+            "es": "Los sistemas desarrollados deben ser de código abierto (licencia Apache 2.0). Los datos de alumnos piloto se tratan bajo estricto cumplimiento del RGPD y de la legislación de protección de datos educativos.",
+            "en": "Developed systems must be open-source (Apache 2.0 licence). Pilot student data is processed under strict GDPR compliance and educational data protection legislation.",
+            "va": "Els sistemes desenvolupats han de ser de codi obert (llicència Apache 2.0). Les dades d'alumnes pilot es tracten sota estricte compliment del RGPD i de la legislació de protecció de dades educatives."
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
           "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
+            "es": "Los resultados del reto se publicarán en el Marketplace AI-STEAM y en el repositorio de innovación educativa de la Generalitat Valenciana. Los equipos participantes conservan la autoría de sus propuestas.",
+            "en": "Challenge results will be published on the AI-STEAM Marketplace and in the Valencian Government's educational innovation repository. Participating teams retain authorship of their proposals.",
+            "va": "Els resultats del repte es publicaran al Marketplace AI-STEAM i al repositori d'innovació educativa de la Generalitat Valenciana. Els equips participants conserven l'autoria de les seues propostes."
           },
           "publicUrl": "",
           "license": "CC BY 4.0",
           "privacyLevel": "public"
         },
         "trackA": {
-          "enabled": false,
+          "enabled": true,
           "label": {
-            "es": "",
-            "en": "",
-            "va": ""
+            "es": "Investigación en sistemas de recomendación adaptativa para orientación en FP",
+            "en": "Research on adaptive recommendation systems for VET guidance",
+            "va": "Recerca en sistemes de recomanació adaptativa per a orientació en FP"
           },
-          "url": ""
+          "url": "https://ceice.gva.es/reto-fp-ia/track-a-investigacion"
         },
         "trackALink": {
-          "enabled": false,
+          "enabled": true,
           "label": {
-            "es": "",
-            "en": "",
-            "va": ""
+            "es": "Investigación en sistemas de recomendación adaptativa para orientación en FP",
+            "en": "Research on adaptive recommendation systems for VET guidance",
+            "va": "Recerca en sistemes de recomanació adaptativa per a orientació en FP"
           },
-          "url": ""
+          "url": "https://ceice.gva.es/reto-fp-ia/track-a-investigacion"
         },
         "externalFlow": {
-          "enabled": false,
+          "enabled": true,
           "primaryAction": {
             "label": {
               "es": "Solicitar participación",
@@ -29675,9 +29825,16 @@ export const MARKETPLACE_CONFIG = {
               "va": "Sol·licitar participació"
             },
             "system": "",
-            "url": ""
+            "url": "https://ceice.gva.es/formulari-inscripcio-reto-fp-ia"
           },
-          "secondaryAction": null,
+          "secondaryAction": {
+            "label": {
+              "es": "Preguntas frecuentes",
+              "en": "Frequently asked questions",
+              "va": "Preguntes freqüents"
+            },
+            "url": "https://ceice.gva.es/reto-fp-ia/preguntas-frecuentes"
+          },
           "fallbackAction": {
             "label": {
               "es": "Ver reto",
@@ -29692,7 +29849,7 @@ export const MARKETPLACE_CONFIG = {
               "en": "Contact the challenge coordination desk",
               "va": "Contactar amb la coordinació del repte"
             },
-            "url": ""
+            "url": "mailto:aisteam.retos@ceice.gva.es"
           }
         },
         "relations": {
@@ -29700,7 +29857,16 @@ export const MARKETPLACE_CONFIG = {
           "validations": [],
           "pilots": [],
           "cases": [],
-          "mentorships": [],
+          "mentorships": [
+            {
+              "id": "mentoring-diseno-pilotos-fp-empresa",
+              "label": {
+                "es": "Mentoría — Diseño de pilotos de colaboración FP-empresa con IA",
+                "en": "Mentoring — Designing VET-industry AI collaboration pilots",
+                "va": "Mentoria — Disseny de pilots de col·laboració FP-empresa amb IA"
+              }
+            }
+          ],
           "resources": []
         },
         "resources": {
@@ -29712,7 +29878,8 @@ export const MARKETPLACE_CONFIG = {
                 "va": "Dataset anonimitzat de matrícula i resultats FP (2022-2025)"
               },
               "format": "CSV",
-              "license": "Uso restringido al reto"
+              "license": "Uso restringido al reto",
+              "url": "https://ceice.gva.es/datasets/reto-fp-ia/matricula-resultados-2022-2025"
             },
             {
               "label": {
@@ -29721,7 +29888,18 @@ export const MARKETPLACE_CONFIG = {
                 "va": "Informe de l'Observatori Laboral — demanda de perfils FP 2025"
               },
               "format": "PDF",
-              "license": "CC BY 4.0"
+              "license": "CC BY 4.0",
+              "url": "https://labora.gva.es/observatori/informes/demanda-fp-2025"
+            },
+            {
+              "label": {
+                "es": "Documentación técnica de la API de datos del CEICE",
+                "en": "CEICE data API technical documentation",
+                "va": "Documentació tècnica de l'API de dades del CEICE"
+              },
+              "format": "HTML",
+              "license": "CC BY 4.0",
+              "url": "https://ceice.gva.es/api/docs/fp-data-v1"
             }
           ]
         },
@@ -29747,6 +29925,12 @@ export const MARKETPLACE_CONFIG = {
                   "file": "ficha-reto-personalizacion-itinerarios-fp.pdf",
                   "format": "pdf",
                   "language": "es",
+                  "license": "CC BY 4.0"
+                },
+                {
+                  "file": "challenge-brief-vet-pathway-personalisation.pdf",
+                  "format": "pdf",
+                  "language": "en",
                   "license": "CC BY 4.0"
                 }
               ],
@@ -29867,6 +30051,12 @@ export const MARKETPLACE_CONFIG = {
                 "format": "pdf",
                 "language": "es",
                 "license": "CC BY 4.0"
+              },
+              {
+                "file": "challenge-brief-vet-pathway-personalisation.pdf",
+                "format": "pdf",
+                "language": "en",
+                "license": "CC BY 4.0"
               }
             ],
             "showOnCard": true,
@@ -29903,9 +30093,9 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
+              "trackA": true,
               "relations": false,
-              "evidence": false,
+              "evidence": true,
               "transferability": true,
               "summary": true,
               "originContext": true,

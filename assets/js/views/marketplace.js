@@ -1331,11 +1331,8 @@ function renderChallengeCard(item, tab) {
 
   const dlIndicator = '';
 
-  // CTA: externo si hay URL real, interno (Ver reto) si no — NUNCA usar tab.ctaLabel
-  const extUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : null;
-  const ctaHtml = extUrl
-    ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang(ef.primaryAction?.label) || uiText('viewDetail'))}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
-    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang({ es: 'Ver reto', en: 'View challenge', va: 'Veure repte' }))} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
+  // CTA de card: siempre abre el detalle — el enlace de inscripción vive en el header del detalle
+  const ctaHtml = `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang({ es: 'Ver reto', en: 'View challenge', va: 'Veure repte' }))} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
 
   // Entidad promotora — solo si global visibility lo permite
   const entityLabel = ccv.ch_entity !== false
