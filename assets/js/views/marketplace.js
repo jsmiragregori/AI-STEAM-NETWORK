@@ -1833,7 +1833,7 @@ function renderMentoringCard(item, tab) {
   const pres = item.presentation?.card || {};
   const offer = item.mentoringOffer || {};
   const format = offer.format || {};
-  const provider = item.ownership?.provider || {};
+  const provider = item.ownership?.mentoringTeam || {};
   const ef = item.externalFlow || {};
   const primaryUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : '';
   const fallbackLabel = pickLang(ef.fallbackAction?.label) || pickLang({ es: 'Ver mentoria', en: 'View mentoring', va: 'Veure mentoria' });
@@ -1877,7 +1877,7 @@ function renderMentoringCard(item, tab) {
 
     const providerHtml = showProvider && providerName
       ? `<div class="mt-4 rounded-lg border border-eu-border bg-white px-3 py-2">
-          <p class="text-[11px] font-bold uppercase tracking-wide text-gray-500">${esc(pickLang({ es: 'Proveedor', en: 'Provider', va: 'Proveidor' }))}</p>
+          <p class="text-[11px] font-bold uppercase tracking-wide text-gray-500">${esc(pickLang({ es: 'Equipo mentor', en: 'Mentoring team', va: 'Equip mentor' }))}</p>
           <p class="mt-0.5 text-sm font-semibold leading-5 text-gray-700">${esc(providerName)}</p>
           ${providerRole ? `<p class="mt-1 text-xs leading-5 text-gray-500">${esc(providerRole)}</p>` : ''}
         </div>`
@@ -1932,8 +1932,8 @@ function renderMentoringCard(item, tab) {
   const ctaHtml = primaryUrl
     ? `<a href="${esc(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang(ef.primaryAction?.label) || fallbackLabel)} <i data-lucide="external-link" class="h-4 w-4"></i></a>`
     : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(fallbackLabel)} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
-  const mentorName = pickLang(card.mentorName, pickLang(item.ownership?.provider?.name) || pickLang(item.core?.entity?.name));
-  const mentorRole = pickLang(card.mentorRole || item.ownership?.provider?.role || item.core?.summary);
+  const mentorName = pickLang(card.mentorName, pickLang(item.ownership?.mentoringTeam?.name) || pickLang(item.core?.entity?.name));
+  const mentorRole = pickLang(card.mentorRole || item.ownership?.mentoringTeam?.role || item.core?.summary);
   const badges = asArray(card.badges).map(badge => badge?.label || badge);
   const body = `
     <div class="mt-4 flex items-start gap-4 rounded-lg bg-eu-bg p-4">
@@ -3947,7 +3947,7 @@ function renderMentoringDetailHeader(item) {
   const core = item.core || {};
   const offer = item.mentoringOffer || {};
   const format = offer.format || {};
-  const provider = item.ownership?.provider || {};
+  const provider = item.ownership?.mentoringTeam || {};
   const ef = item.externalFlow || {};
   const tab = getTabs().find(candidate => candidate.id === item.tab) || getActiveTab();
   const title = pickLang(core.title, item.id);
@@ -4191,7 +4191,7 @@ function renderMentoringRelationsSection(item, sections) {
 
 function renderMentoringSummaryPanel(item) {
   const format = item.mentoringOffer?.format || {};
-  const provider = pickLang(item.ownership?.provider?.name);
+  const provider = pickLang(item.ownership?.mentoringTeam?.name);
   const rows = [
     provider && [pickLang({ es: 'Proveedor', en: 'Provider', va: 'Proveidor' }), provider],
     getMentoringStatusLabel(item.core?.status) && [uiText('status'), getMentoringStatusLabel(item.core?.status)],

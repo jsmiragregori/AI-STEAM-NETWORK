@@ -4168,9 +4168,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Mentoría — IA generativa y creativa para turismo, cultura e industrias creativas",
-          "en": "Mentoring — Generative and creative AI for tourism, culture and creative industries",
-          "va": "Mentoria — IA generativa i creativa per a turisme, cultura i indústries creatives"
+          "es": "IA generativa y creativa para turismo, cultura e industrias creativas",
+          "en": "Generative and creative AI for tourism, culture and creative industries",
+          "va": "IA generativa i creativa per a turisme, cultura i indústries creatives"
         },
         "summary": {
           "es": "Acompañamiento para empresas turísticas, entidades culturales, museos y agencias creativas que quieren integrar IA generativa (texto, imagen, audio, vídeo) en sus productos, servicios o procesos creativos, orientándose sobre herramientas adecuadas a su escala, derechos de autor en contenidos generados por IA, y cómo usar la IA sin perder la identidad creativa de la organización.",
@@ -4192,7 +4192,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "cci",
         "sectors": [],
-        "stakeholderCategory": "enterprise",
+        "stakeholderCategory": "institutional",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -4220,7 +4220,7 @@ export const MARKETPLACE_CONFIG = {
           "name": "AI-STEAM Network",
           "org": "CEICE"
         },
-        "provider": {
+        "mentoringTeam": {
           "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
           "type": "mentoring-pool",
           "role": {
@@ -4563,15 +4563,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
-        "secondaryAction": {
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "downloadId": "",
-          "url": ""
-        }
+        "secondaryAction": null
       },
       "relations": {
         "relatedChallenges": [
@@ -4704,7 +4696,7 @@ export const MARKETPLACE_CONFIG = {
           "name": "AI-STEAM Network",
           "org": "CEICE"
         },
-        "provider": {
+        "mentoringTeam": {
           "name": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
           "type": "mentoring-pool",
           "role": {
@@ -5046,15 +5038,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
-        "secondaryAction": {
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "downloadId": "",
-          "url": ""
-        }
+        "secondaryAction": null
       },
       "relations": {
         "relatedChallenges": [
@@ -5187,7 +5171,7 @@ export const MARKETPLACE_CONFIG = {
           "name": "AI-STEAM Network",
           "org": "CEICE"
         },
-        "provider": {
+        "mentoringTeam": {
           "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
           "type": "mentoring-pool",
           "role": {
@@ -5530,15 +5514,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
-        "secondaryAction": {
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "downloadId": "",
-          "url": ""
-        }
+        "secondaryAction": null
       },
       "relations": {
         "relatedChallenges": [
@@ -5668,7 +5644,7 @@ export const MARKETPLACE_CONFIG = {
           "name": "AI-STEAM Network",
           "org": "CEICE"
         },
-        "provider": {
+        "mentoringTeam": {
           "name": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
           "type": "mentoring-pool",
           "role": {
@@ -6012,15 +5988,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
-        "secondaryAction": {
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "downloadId": "",
-          "url": ""
-        }
+        "secondaryAction": null
       },
       "relations": {
         "relatedChallenges": [],
@@ -6149,7 +6117,7 @@ export const MARKETPLACE_CONFIG = {
           "name": "AI-STEAM Network",
           "org": "CEICE"
         },
-        "provider": {
+        "mentoringTeam": {
           "name": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
           "type": "mentoring-pool",
           "role": {
@@ -6492,15 +6460,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
-        "secondaryAction": {
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "downloadId": "",
-          "url": ""
-        }
+        "secondaryAction": null
       },
       "relations": {
         "relatedChallenges": [],
@@ -6628,7 +6588,7 @@ export const MARKETPLACE_CONFIG = {
           "name": "AI-STEAM Network",
           "org": "CEICE"
         },
-        "provider": {
+        "mentoringTeam": {
           "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
           "type": "mentoring-pool",
           "role": {
@@ -6972,15 +6932,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
-        "secondaryAction": {
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "downloadId": "",
-          "url": ""
-        }
+        "secondaryAction": null
       },
       "relations": {
         "relatedChallenges": [],
@@ -9070,7 +9022,7 @@ export const MARKETPLACE_CONFIG = {
           "name": "AI-STEAM Network",
           "org": "CEICE"
         },
-        "provider": {
+        "mentoringTeam": {
           "name": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
           "type": "mentoring-pool",
           "role": {
@@ -9412,15 +9364,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
-        "secondaryAction": {
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "downloadId": "",
-          "url": ""
-        }
+        "secondaryAction": null
       },
       "relations": {
         "relatedChallenges": [],
@@ -10058,7 +10002,7 @@ export const MARKETPLACE_CONFIG = {
           "name": "AI-STEAM Network",
           "org": "CEICE"
         },
-        "provider": {
+        "mentoringTeam": {
           "name": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
           "type": "mentoring-pool",
           "role": {
@@ -10399,15 +10343,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
-        "secondaryAction": {
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "downloadId": "",
-          "url": ""
-        }
+        "secondaryAction": null
       },
       "relations": {
         "relatedChallenges": [],
@@ -18750,7 +18686,7 @@ export const MARKETPLACE_CONFIG = {
           "name": "AI-STEAM Network",
           "org": "CEICE"
         },
-        "provider": {
+        "mentoringTeam": {
           "name": "AI-STEAM Network Mentoring Pool",
           "type": "mentoring-pool",
           "role": {
@@ -50712,9 +50648,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Mentoría — IA generativa y creativa para turismo, cultura e industrias creativas",
-            "en": "Mentoring — Generative and creative AI for tourism, culture and creative industries",
-            "va": "Mentoria — IA generativa i creativa per a turisme, cultura i indústries creatives"
+            "es": "IA generativa y creativa para turismo, cultura e industrias creativas",
+            "en": "Generative and creative AI for tourism, culture and creative industries",
+            "va": "IA generativa i creativa per a turisme, cultura i indústries creatives"
           },
           "summary": {
             "es": "Acompañamiento para empresas turísticas, entidades culturales, museos y agencias creativas que quieren integrar IA generativa (texto, imagen, audio, vídeo) en sus productos, servicios o procesos creativos, orientándose sobre herramientas adecuadas a su escala, derechos de autor en contenidos generados por IA, y cómo usar la IA sin perder la identidad creativa de la organización.",
@@ -50736,7 +50672,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "cci",
           "sectors": [],
-          "stakeholderCategory": "enterprise",
+          "stakeholderCategory": "institutional",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -50764,7 +50700,7 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Network",
             "org": "CEICE"
           },
-          "provider": {
+          "mentoringTeam": {
             "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
             "type": "mentoring-pool",
             "role": {
@@ -51107,15 +51043,7 @@ export const MARKETPLACE_CONFIG = {
             },
             "url": ""
           },
-          "secondaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "downloadId": "",
-            "url": ""
-          }
+          "secondaryAction": null
         },
         "relations": {
           "relatedChallenges": [
@@ -51248,7 +51176,7 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Network",
             "org": "CEICE"
           },
-          "provider": {
+          "mentoringTeam": {
             "name": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
             "type": "mentoring-pool",
             "role": {
@@ -51590,15 +51518,7 @@ export const MARKETPLACE_CONFIG = {
             },
             "url": ""
           },
-          "secondaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "downloadId": "",
-            "url": ""
-          }
+          "secondaryAction": null
         },
         "relations": {
           "relatedChallenges": [
@@ -51731,7 +51651,7 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Network",
             "org": "CEICE"
           },
-          "provider": {
+          "mentoringTeam": {
             "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
             "type": "mentoring-pool",
             "role": {
@@ -52074,15 +51994,7 @@ export const MARKETPLACE_CONFIG = {
             },
             "url": ""
           },
-          "secondaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "downloadId": "",
-            "url": ""
-          }
+          "secondaryAction": null
         },
         "relations": {
           "relatedChallenges": [
@@ -52212,7 +52124,7 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Network",
             "org": "CEICE"
           },
-          "provider": {
+          "mentoringTeam": {
             "name": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
             "type": "mentoring-pool",
             "role": {
@@ -52556,15 +52468,7 @@ export const MARKETPLACE_CONFIG = {
             },
             "url": ""
           },
-          "secondaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "downloadId": "",
-            "url": ""
-          }
+          "secondaryAction": null
         },
         "relations": {
           "relatedChallenges": [],
@@ -52693,7 +52597,7 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Network",
             "org": "CEICE"
           },
-          "provider": {
+          "mentoringTeam": {
             "name": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
             "type": "mentoring-pool",
             "role": {
@@ -53036,15 +52940,7 @@ export const MARKETPLACE_CONFIG = {
             },
             "url": ""
           },
-          "secondaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "downloadId": "",
-            "url": ""
-          }
+          "secondaryAction": null
         },
         "relations": {
           "relatedChallenges": [],
@@ -53172,7 +53068,7 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Network",
             "org": "CEICE"
           },
-          "provider": {
+          "mentoringTeam": {
             "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
             "type": "mentoring-pool",
             "role": {
@@ -53516,15 +53412,7 @@ export const MARKETPLACE_CONFIG = {
             },
             "url": ""
           },
-          "secondaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "downloadId": "",
-            "url": ""
-          }
+          "secondaryAction": null
         },
         "relations": {
           "relatedChallenges": [],
@@ -53655,7 +53543,7 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Network",
             "org": "CEICE"
           },
-          "provider": {
+          "mentoringTeam": {
             "name": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
             "type": "mentoring-pool",
             "role": {
@@ -53997,15 +53885,7 @@ export const MARKETPLACE_CONFIG = {
             },
             "url": ""
           },
-          "secondaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "downloadId": "",
-            "url": ""
-          }
+          "secondaryAction": null
         },
         "relations": {
           "relatedChallenges": [],
@@ -54134,7 +54014,7 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Network",
             "org": "CEICE"
           },
-          "provider": {
+          "mentoringTeam": {
             "name": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
             "type": "mentoring-pool",
             "role": {
@@ -54475,15 +54355,7 @@ export const MARKETPLACE_CONFIG = {
             },
             "url": ""
           },
-          "secondaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "downloadId": "",
-            "url": ""
-          }
+          "secondaryAction": null
         },
         "relations": {
           "relatedChallenges": [],
@@ -54611,7 +54483,7 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Network",
             "org": "CEICE"
           },
-          "provider": {
+          "mentoringTeam": {
             "name": "AI-STEAM Network Mentoring Pool",
             "type": "mentoring-pool",
             "role": {
