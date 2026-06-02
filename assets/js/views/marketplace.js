@@ -781,7 +781,13 @@ function getItemFilterValue(item, key) {
   if (key === 'trl') return card.trl?.level ? String(card.trl.level) : '';
   if (key === 'infrastructure') return asArray(card.infrastructure);
   if (key === 'window') return item.core?.status || pickLang(card.validationStatus) || formatExecutionWindow(card.executionWindow);
-  if (key === 'specialty') return asArray(card.specialties);
+  if (key === 'specialty') {
+    if (item.type === 'mentoring' && asArray(item.mentors?.items).length) {
+      return [...new Set(asArray(item.mentors?.items).flatMap(m => asArray(m?.specialties)))];
+    }
+    return asArray(card.specialties);
+  }
+  if (key === 'mentoringType') return item.core?.mentoringType || '';
   if (key === 'availability') return pickLang(item.mentoringOffer?.format?.availability) || pickLang(card.availability);
   if (key === 'organisation') return card.organisation || pickLang(item.core?.entity?.name);
   if (key === 'transferType') return item.transfer?.type || '';
@@ -846,9 +852,9 @@ function getFilterDefinitions(tabId) {
   }
   if (tabId === 'mentorings') {
     return [
-      { key: 'specialty', label: uiText('filterBy') + ' ' + pickLang(FIELD_LABELS.specialties), labeler: value => value },
-      { key: 'availability', label: uiText('filterBy') + ' ' + uiText('availability'), labeler: value => value === 'chat' ? 'Chat' : value },
-      { key: 'organisation', label: uiText('filterBy') + ' ' + pickLang(FIELD_LABELS.organisation), labeler: value => value },
+      { key: 'mentoringType', label: uiText('filterBy') + ' ' + pickLang({ es: 'Tipo', en: 'Type', va: 'Tipus' }), labeler: getMentoringTypeLabel },
+      common.status,
+      { key: 'specialty', label: uiText('filterBy') + ' ' + pickLang(FIELD_LABELS.specialties), labeler: value => getMentoringSpecialtyLabel(value) || value },
     ];
   }
   return [common.sector, common.status];
@@ -1863,14 +1869,27 @@ function renderMentoringCard(item, tab) {
       ? `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500"><i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i><span>${esc(cardDownloads.length === 1 ? `1 ${uiText('downloadable')}` : `${cardDownloads.length} ${uiText('downloadables')}`)}</span></div>`
       : '';
     const ctaHtml = primaryUrl
-      ? `<a href="${esc(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang(ef.primaryAction?.label) || fallbackLabel)}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
-      : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(fallbackLabel)}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
+      ? `<a href="${esc(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang(ef.primaryAction?.label) || fallbackLabel)} <i data-lucide="external-link" class="h-4 w-4"></i></a>`
+      : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(fallbackLabel)} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
 
-    const providerHtml = providerName
+    const showProvider = ccv.ch_mentoring_provider !== false && pres.showProvider !== false;
+    const showSpecialties = ccv.ch_mentoring_specialties !== false && pres.showSpecialties !== false;
+
+    const providerHtml = showProvider && providerName
       ? `<div class="mt-4 rounded-lg border border-eu-border bg-white px-3 py-2">
           <p class="text-[11px] font-bold uppercase tracking-wide text-gray-500">${esc(pickLang({ es: 'Proveedor', en: 'Provider', va: 'Proveidor' }))}</p>
           <p class="mt-0.5 text-sm font-semibold leading-5 text-gray-700">${esc(providerName)}</p>
           ${providerRole ? `<p class="mt-1 text-xs leading-5 text-gray-500">${esc(providerRole)}</p>` : ''}
+        </div>`
+      : '';
+
+    const specialtiesHtml = showSpecialties && specialties.length
+      ? `<div class="mt-4">
+          <p class="mb-1.5 flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-gray-500">
+            <i data-lucide="graduation-cap" class="h-3.5 w-3.5 shrink-0"></i>
+            ${esc(pickLang({ es: 'Especialidades', en: 'Specialties', va: 'Especialitats' }))}
+          </p>
+          <div class="flex flex-wrap gap-2">${specialties.map(s => renderBadge(s, 'bg-slate-100 text-slate-700 border-slate-200')).join('')}</div>
         </div>`
       : '';
 
@@ -1884,7 +1903,7 @@ function renderMentoringCard(item, tab) {
           <p class="mt-1 text-sm font-semibold leading-6 text-eu-text">${esc(purpose)}</p>
         </div>` : ''}
       ${providerHtml}
-      ${renderChipList(specialties, 'bg-slate-100 text-slate-700 border-slate-200', 4)}
+      ${specialtiesHtml}
       ${renderCardMiniMeta([
         { label: uiText('availability'), value: pickLang(format.availability) },
         { label: pickLang({ es: 'Formato', en: 'Format', va: 'Format' }), value: formatSummary },
@@ -1892,11 +1911,17 @@ function renderMentoringCard(item, tab) {
       ${dlHtml}
     `;
 
+    const showStatusBadge = ccv.ch_mentoring_status !== false;
+
     return renderCardShell(item, tab, body, {
       title: core.title,
       subtitle: core.summary,
-      statusLabel: getMentoringStatusLabel(core.status),
+      statusLabel: showStatusBadge ? getMentoringStatusLabel(core.status) : '',
+      statusValue: core.status || '',
+      statusFilterKey: showStatusBadge ? 'status' : '',
       extraBadge: ccv.ch_mentoring_type !== false ? getMentoringTypeLabel(core.mentoringType) : '',
+      extraBadgeFilterKey: ccv.ch_mentoring_type !== false && core.mentoringType ? 'mentoringType' : '',
+      extraBadgeFilterValue: core.mentoringType || '',
       entity: '',
       ctaHtml,
     });
@@ -1904,8 +1929,8 @@ function renderMentoringCard(item, tab) {
 
   const card = item.card || {};
   const ctaHtml = primaryUrl
-    ? `<a href="${esc(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(pickLang(ef.primaryAction?.label) || fallbackLabel)}<i data-lucide="external-link" class="h-3.5 w-3.5"></i></a>`
-    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-eu-blue px-3 py-2 text-xs font-bold text-white transition-colors hover:bg-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">${esc(fallbackLabel)}<i data-lucide="arrow-right" class="h-3.5 w-3.5"></i></button>`;
+    ? `<a href="${esc(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang(ef.primaryAction?.label) || fallbackLabel)} <i data-lucide="external-link" class="h-4 w-4"></i></a>`
+    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(fallbackLabel)} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
   const mentorName = pickLang(card.mentorName, pickLang(item.ownership?.provider?.name) || pickLang(item.core?.entity?.name));
   const mentorRole = pickLang(card.mentorRole || item.ownership?.provider?.role || item.core?.summary);
   const badges = asArray(card.badges).map(badge => badge?.label || badge);
