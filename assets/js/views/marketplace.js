@@ -854,6 +854,7 @@ function getFilterDefinitions(tabId) {
     return [
       { key: 'mentoringType', label: uiText('filterBy') + ' ' + pickLang({ es: 'Tipo', en: 'Type', va: 'Tipus' }), labeler: getMentoringTypeLabel },
       common.status,
+      common.sector,
       { key: 'specialty', label: uiText('filterBy') + ' ' + pickLang(FIELD_LABELS.specialties), labeler: value => getMentoringSpecialtyLabel(value) || value },
     ];
   }
@@ -1912,6 +1913,7 @@ function renderMentoringCard(item, tab) {
     `;
 
     const showStatusBadge = ccv.ch_mentoring_status !== false;
+    const showSectorBadge = ccv.ch_mentoring_sector !== false;
 
     return renderCardShell(item, tab, body, {
       title: core.title,
@@ -1922,6 +1924,9 @@ function renderMentoringCard(item, tab) {
       extraBadge: ccv.ch_mentoring_type !== false ? getMentoringTypeLabel(core.mentoringType) : '',
       extraBadgeFilterKey: ccv.ch_mentoring_type !== false && core.mentoringType ? 'mentoringType' : '',
       extraBadgeFilterValue: core.mentoringType || '',
+      extraBadge2: showSectorBadge ? getSectorLabel(core.sector) : '',
+      extraBadge2FilterKey: showSectorBadge ? 'sector' : '',
+      extraBadge2FilterValue: showSectorBadge ? getSectorCode(core.sector) : '',
       entity: '',
       ctaHtml,
       hideTypeBadge: true,
