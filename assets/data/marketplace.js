@@ -535,7 +535,11 @@ export const MARKETPLACE_CONFIG = {
     "ch_val_stage": true,
     "ch_val_environment": true,
     "ch_val_decision": true,
-    "ch_mentoring_type": true
+    "ch_mentoring_status": true,
+    "ch_mentoring_type": true,
+    "ch_mentoring_provider": true,
+    "ch_mentoring_specialties": true,
+    "ch_mentoring_availability": true
   },
   "searchBlock": {
     "visible": true,
@@ -3107,6 +3111,15 @@ export const MARKETPLACE_CONFIG = {
         "es": "Formulacion de retos",
         "en": "Challenge framing",
         "va": "Formulacio de reptes"
+      }
+    },
+    {
+      "id": "creative-ai-support",
+      "visible": true,
+      "label": {
+        "es": "IA creativa",
+        "en": "Creative AI",
+        "va": "IA creativa"
       }
     }
   ],
@@ -57242,6 +57255,15 @@ export const MARKETPLACE_CONFIG = {
           "es": "Formulacion de retos",
           "en": "Challenge framing",
           "va": "Formulacio de reptes"
+        }
+      },
+      {
+        "id": "creative-ai-support",
+        "visible": true,
+        "label": {
+          "es": "IA creativa",
+          "en": "Creative AI",
+          "va": "IA creativa"
         }
       }
     ],
