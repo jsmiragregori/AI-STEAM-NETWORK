@@ -4221,7 +4221,11 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "mentoringTeam": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
+          "name": {
+            "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
+            "en": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo"
+          },
           "type": "mentoring-pool",
           "role": {
             "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural y sectores creativos",
@@ -4697,7 +4701,11 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "mentoringTeam": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
+          "name": {
+            "es": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
+            "en": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA"
+          },
           "type": "mentoring-pool",
           "role": {
             "es": "Mentores con experiencia en transformación digital de administraciones públicas, datos abiertos y colaboración público-privada en innovación",
@@ -5172,7 +5180,11 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "mentoringTeam": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
+          "name": {
+            "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
+            "en": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria"
+          },
           "type": "mentoring-pool",
           "role": {
             "es": "Mentores con experiencia en proyectos de IA en agricultura de precisión, visión computacional agrícola y formación agroalimentaria",
@@ -5645,7 +5657,11 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "mentoringTeam": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
+          "name": {
+            "es": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
+            "en": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP"
+          },
           "type": "mentoring-pool",
           "role": {
             "es": "Mentores con perfil dual investigador-docente, con experiencia en traducción de resultados de investigación a contenidos formativos de FP",
@@ -6118,7 +6134,11 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "mentoringTeam": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
+          "name": {
+            "es": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
+            "en": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación"
+          },
           "type": "mentoring-pool",
           "role": {
             "es": "Mentores con formación en ética digital, protección de datos educativos y uso responsable de IA en el aula",
@@ -6589,7 +6609,11 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "mentoringTeam": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
+          "name": {
+            "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
+            "en": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria"
+          },
           "type": "mentoring-pool",
           "role": {
             "es": "Mentores con perfil técnico en ciencia de datos clínicos, visión computacional médica y cumplimiento normativo sanitario",
@@ -9023,7 +9047,11 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "mentoringTeam": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
+          "name": {
+            "es": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
+            "en": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación"
+          },
           "type": "mentoring-pool",
           "role": {
             "es": "Mentores con perfil dual pedagógico-técnico, con experiencia en diseño de pilotos FP-empresa",
@@ -10003,7 +10031,11 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "mentoringTeam": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
+          "name": {
+            "es": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
+            "en": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0"
+          },
           "type": "mentoring-pool",
           "role": {
             "es": "Mentores con experiencia en formulación de retos en contextos industriales y de FP",
@@ -18687,7 +18719,11 @@ export const MARKETPLACE_CONFIG = {
           "org": "CEICE"
         },
         "mentoringTeam": {
-          "name": "AI-STEAM Network Mentoring Pool",
+          "name": {
+            "es": "AI-STEAM Network Mentoring Pool",
+            "en": "AI-STEAM Network Mentoring Pool",
+            "va": "AI-STEAM Network Mentoring Pool"
+          },
           "type": "mentoring-pool",
           "role": {
             "es": "Equipo de mentoría en formulación de retos y ética de IA",
@@ -50701,7 +50737,11 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "mentoringTeam": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
+              "en": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo"
+            },
             "type": "mentoring-pool",
             "role": {
               "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural y sectores creativos",
@@ -51177,7 +51217,11 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "mentoringTeam": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
+              "en": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA"
+            },
             "type": "mentoring-pool",
             "role": {
               "es": "Mentores con experiencia en transformación digital de administraciones públicas, datos abiertos y colaboración público-privada en innovación",
@@ -51652,7 +51696,11 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "mentoringTeam": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
+              "en": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria"
+            },
             "type": "mentoring-pool",
             "role": {
               "es": "Mentores con experiencia en proyectos de IA en agricultura de precisión, visión computacional agrícola y formación agroalimentaria",
@@ -52125,7 +52173,11 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "mentoringTeam": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
+              "en": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP"
+            },
             "type": "mentoring-pool",
             "role": {
               "es": "Mentores con perfil dual investigador-docente, con experiencia en traducción de resultados de investigación a contenidos formativos de FP",
@@ -52598,7 +52650,11 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "mentoringTeam": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
+              "en": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación"
+            },
             "type": "mentoring-pool",
             "role": {
               "es": "Mentores con formación en ética digital, protección de datos educativos y uso responsable de IA en el aula",
@@ -53069,7 +53125,11 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "mentoringTeam": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
+              "en": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria"
+            },
             "type": "mentoring-pool",
             "role": {
               "es": "Mentores con perfil técnico en ciencia de datos clínicos, visión computacional médica y cumplimiento normativo sanitario",
@@ -53544,7 +53604,11 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "mentoringTeam": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
+              "en": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación"
+            },
             "type": "mentoring-pool",
             "role": {
               "es": "Mentores con perfil dual pedagógico-técnico, con experiencia en diseño de pilotos FP-empresa",
@@ -54015,7 +54079,11 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "mentoringTeam": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
+              "en": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0"
+            },
             "type": "mentoring-pool",
             "role": {
               "es": "Mentores con experiencia en formulación de retos en contextos industriales y de FP",
@@ -54484,7 +54552,11 @@ export const MARKETPLACE_CONFIG = {
             "org": "CEICE"
           },
           "mentoringTeam": {
-            "name": "AI-STEAM Network Mentoring Pool",
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool",
+              "en": "AI-STEAM Network Mentoring Pool",
+              "va": "AI-STEAM Network Mentoring Pool"
+            },
             "type": "mentoring-pool",
             "role": {
               "es": "Equipo de mentoría en formulación de retos y ética de IA",
