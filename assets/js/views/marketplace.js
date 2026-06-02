@@ -1845,9 +1845,9 @@ function renderMentoringCard(item, tab) {
     const purpose = pickLang(offer.purpose);
     const specialties = asArray(item.mentors?.items)
       .flatMap(mentor => asArray(mentor?.specialties))
-      .map(specialty => getMentoringSpecialtyLabel(specialty) || pickLang(specialty))
-      .filter(Boolean)
-      .filter((specialty, index, all) => all.indexOf(specialty) === index);
+      .map(specialty => ({ value: specialty, label: getMentoringSpecialtyLabel(specialty) || pickLang(specialty) }))
+      .filter(specialty => specialty.label)
+      .filter((specialty, index, all) => all.findIndex(entry => entry.value === specialty.value) === index);
     const modality = getModalityLabel(format.modality);
     const duration = format.sessionDurationMinutes
       ? pickLang({
@@ -1889,7 +1889,7 @@ function renderMentoringCard(item, tab) {
             <i data-lucide="graduation-cap" class="h-3.5 w-3.5 shrink-0"></i>
             ${esc(pickLang({ es: 'Especialidades', en: 'Specialties', va: 'Especialitats' }))}
           </p>
-          <div class="flex flex-wrap gap-2">${specialties.map(s => renderBadge(s, 'bg-slate-100 text-slate-700 border-slate-200')).join('')}</div>
+          <div class="flex flex-wrap gap-2">${specialties.map(s => renderBadge(s.label, 'bg-slate-100 text-slate-700 border-slate-200', 'specialty', s.value)).join('')}</div>
         </div>`
       : '';
 
@@ -1905,7 +1905,7 @@ function renderMentoringCard(item, tab) {
       ${providerHtml}
       ${specialtiesHtml}
       ${renderCardMiniMeta([
-        { label: uiText('availability'), value: pickLang(format.availability) },
+        { label: uiText('availability'), value: ccv.ch_mentoring_availability !== false && pres.showAvailability !== false ? pickLang(format.availability) : '' },
         { label: pickLang({ es: 'Formato', en: 'Format', va: 'Format' }), value: formatSummary },
       ])}
       ${dlHtml}
@@ -1924,6 +1924,7 @@ function renderMentoringCard(item, tab) {
       extraBadgeFilterValue: core.mentoringType || '',
       entity: '',
       ctaHtml,
+      hideTypeBadge: true,
     });
   }
 
