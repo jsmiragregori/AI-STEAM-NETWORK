@@ -3208,42 +3208,6 @@ export const MARKETPLACE_CONFIG = {
       }
     },
     {
-      "id": "lbd",
-      "visible": true,
-      "label": {
-        "es": "Learning by Developing",
-        "en": "Learning by Developing",
-        "va": "Learning by Developing"
-      }
-    },
-    {
-      "id": "data-protection",
-      "visible": true,
-      "label": {
-        "es": "Protección de datos",
-        "en": "Data protection",
-        "va": "Protecció de dades"
-      }
-    },
-    {
-      "id": "curriculum-design",
-      "visible": true,
-      "label": {
-        "es": "Diseño curricular",
-        "en": "Curriculum design",
-        "va": "Disseny curricular"
-      }
-    },
-    {
-      "id": "resource-design",
-      "visible": true,
-      "label": {
-        "es": "Diseño de recursos",
-        "en": "Resource design",
-        "va": "Disseny de recursos"
-      }
-    },
-    {
       "id": "challenge-framing",
       "visible": true,
       "label": {
@@ -3253,30 +3217,264 @@ export const MARKETPLACE_CONFIG = {
       }
     },
     {
-      "id": "vet-design",
+      "id": "pilot-design",
       "visible": true,
       "label": {
-        "es": "Diseño FP",
-        "en": "VET design",
-        "va": "Disseny FP"
+        "es": "Diseño de pilotos",
+        "en": "Pilot design",
+        "va": "Disseny de pilots"
       }
     },
     {
-      "id": "pedagogy",
+      "id": "vet-curriculum",
       "visible": true,
       "label": {
-        "es": "Pedagogía",
-        "en": "Pedagogy",
-        "va": "Pedagogia"
+        "es": "Currículo FP",
+        "en": "VET curriculum",
+        "va": "Currículum FP"
       }
     },
     {
-      "id": "transfer-support",
+      "id": "evidence-collection",
       "visible": true,
       "label": {
-        "es": "Apoyo a la transferencia",
-        "en": "Transfer support",
-        "va": "Suport a la transferència"
+        "es": "Recogida de evidencias",
+        "en": "Evidence collection",
+        "va": "Recollida d'evidències"
+      }
+    },
+    {
+      "id": "vet-industry-collaboration",
+      "visible": true,
+      "label": {
+        "es": "Colaboración FP-empresa",
+        "en": "VET-industry collaboration",
+        "va": "Col·laboració FP-empresa"
+      }
+    },
+    {
+      "id": "educational-data-protection",
+      "visible": true,
+      "label": {
+        "es": "Protección de datos educativos",
+        "en": "Educational data protection",
+        "va": "Protecció de dades educatives"
+      }
+    },
+    {
+      "id": "generative-ai-in-education",
+      "visible": true,
+      "label": {
+        "es": "IA generativa en educación",
+        "en": "Generative AI in education",
+        "va": "IA generativa en educació"
+      }
+    },
+    {
+      "id": "algorithmic-bias",
+      "visible": true,
+      "label": {
+        "es": "Sesgos algorítmicos",
+        "en": "Algorithmic bias",
+        "va": "Biaix algorísmic"
+      }
+    },
+    {
+      "id": "industry-4-0",
+      "visible": true,
+      "label": {
+        "es": "Industria 4.0",
+        "en": "Industry 4.0",
+        "va": "Indústria 4.0"
+      }
+    },
+    {
+      "id": "data-sharing",
+      "visible": true,
+      "label": {
+        "es": "Intercambio de datos",
+        "en": "Data sharing",
+        "va": "Intercanvi de dades"
+      }
+    },
+    {
+      "id": "generative-ai-creative",
+      "visible": true,
+      "label": {
+        "es": "IA generativa creativa",
+        "en": "Creative generative AI",
+        "va": "IA generativa creativa"
+      }
+    },
+    {
+      "id": "tourism-ai",
+      "visible": true,
+      "label": {
+        "es": "IA en turismo",
+        "en": "Tourism AI",
+        "va": "IA en turisme"
+      }
+    },
+    {
+      "id": "cultural-heritage-ai",
+      "visible": true,
+      "label": {
+        "es": "IA y patrimonio cultural",
+        "en": "Cultural heritage AI",
+        "va": "IA i patrimoni cultural"
+      }
+    },
+    {
+      "id": "ai-copyright",
+      "visible": true,
+      "label": {
+        "es": "Propiedad intelectual e IA",
+        "en": "AI and copyright",
+        "va": "Propietat intel·lectual i IA"
+      }
+    },
+    {
+      "id": "public-sector-ai",
+      "visible": true,
+      "label": {
+        "es": "IA en sector público",
+        "en": "Public sector AI",
+        "va": "IA en sector públic"
+      }
+    },
+    {
+      "id": "open-data",
+      "visible": true,
+      "label": {
+        "es": "Datos abiertos",
+        "en": "Open data",
+        "va": "Dades obertes"
+      }
+    },
+    {
+      "id": "public-private-collaboration",
+      "visible": true,
+      "label": {
+        "es": "Colaboración público-privada",
+        "en": "Public-private collaboration",
+        "va": "Col·laboració públic-privada"
+      }
+    },
+    {
+      "id": "administrative-procedures",
+      "visible": true,
+      "label": {
+        "es": "Procedimientos administrativos",
+        "en": "Administrative procedures",
+        "va": "Procediments administratius"
+      }
+    },
+    {
+      "id": "precision-agriculture",
+      "visible": true,
+      "label": {
+        "es": "Agricultura de precisión",
+        "en": "Precision agriculture",
+        "va": "Agricultura de precisió"
+      }
+    },
+    {
+      "id": "agricultural-computer-vision",
+      "visible": true,
+      "label": {
+        "es": "Visión computacional agrícola",
+        "en": "Agricultural computer vision",
+        "va": "Visió computacional agrícola"
+      }
+    },
+    {
+      "id": "case-replication",
+      "visible": true,
+      "label": {
+        "es": "Replicación de casos",
+        "en": "Case replication",
+        "va": "Replicació de casos"
+      }
+    },
+    {
+      "id": "vet-agri-food",
+      "visible": true,
+      "label": {
+        "es": "FP agroalimentaria",
+        "en": "Agri-food VET",
+        "va": "FP agroalimentària"
+      }
+    },
+    {
+      "id": "clinical-data-science",
+      "visible": true,
+      "label": {
+        "es": "Ciencia de datos clínicos",
+        "en": "Clinical data science",
+        "va": "Ciència de dades clíniques"
+      }
+    },
+    {
+      "id": "medical-imaging-ai",
+      "visible": true,
+      "label": {
+        "es": "IA en imagen médica",
+        "en": "Medical imaging AI",
+        "va": "IA en imatge mèdica"
+      }
+    },
+    {
+      "id": "ai-act-samd",
+      "visible": true,
+      "label": {
+        "es": "AI Act y SaMD",
+        "en": "AI Act and SaMD",
+        "va": "AI Act i SaMD"
+      }
+    },
+    {
+      "id": "hl7-fhir",
+      "visible": true,
+      "label": {
+        "es": "HL7/FHIR",
+        "en": "HL7/FHIR",
+        "va": "HL7/FHIR"
+      }
+    },
+    {
+      "id": "research-transfer",
+      "visible": true,
+      "label": {
+        "es": "Transferencia de investigación",
+        "en": "Research transfer",
+        "va": "Transferència d'investigació"
+      }
+    },
+    {
+      "id": "vet-curriculum-design",
+      "visible": true,
+      "label": {
+        "es": "Diseño curricular FP",
+        "en": "VET curriculum design",
+        "va": "Disseny curricular FP"
+      }
+    },
+    {
+      "id": "ai-research-translation",
+      "visible": true,
+      "label": {
+        "es": "Traducción de investigación en IA",
+        "en": "AI research translation",
+        "va": "Traducció de recerca en IA"
+      }
+    },
+    {
+      "id": "academic-industry-bridge",
+      "visible": true,
+      "label": {
+        "es": "Puente academia-industria",
+        "en": "Academic-industry bridge",
+        "va": "Pont acadèmia-indústria"
       }
     }
   ],
@@ -57352,42 +57550,6 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       {
-        "id": "lbd",
-        "visible": true,
-        "label": {
-          "es": "Learning by Developing",
-          "en": "Learning by Developing",
-          "va": "Learning by Developing"
-        }
-      },
-      {
-        "id": "data-protection",
-        "visible": true,
-        "label": {
-          "es": "Protección de datos",
-          "en": "Data protection",
-          "va": "Protecció de dades"
-        }
-      },
-      {
-        "id": "curriculum-design",
-        "visible": true,
-        "label": {
-          "es": "Diseño curricular",
-          "en": "Curriculum design",
-          "va": "Disseny curricular"
-        }
-      },
-      {
-        "id": "resource-design",
-        "visible": true,
-        "label": {
-          "es": "Diseño de recursos",
-          "en": "Resource design",
-          "va": "Disseny de recursos"
-        }
-      },
-      {
         "id": "challenge-framing",
         "visible": true,
         "label": {
@@ -57397,30 +57559,264 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       {
-        "id": "vet-design",
+        "id": "pilot-design",
         "visible": true,
         "label": {
-          "es": "Diseño FP",
-          "en": "VET design",
-          "va": "Disseny FP"
+          "es": "Diseño de pilotos",
+          "en": "Pilot design",
+          "va": "Disseny de pilots"
         }
       },
       {
-        "id": "pedagogy",
+        "id": "vet-curriculum",
         "visible": true,
         "label": {
-          "es": "Pedagogía",
-          "en": "Pedagogy",
-          "va": "Pedagogia"
+          "es": "Currículo FP",
+          "en": "VET curriculum",
+          "va": "Currículum FP"
         }
       },
       {
-        "id": "transfer-support",
+        "id": "evidence-collection",
         "visible": true,
         "label": {
-          "es": "Apoyo a la transferencia",
-          "en": "Transfer support",
-          "va": "Suport a la transferència"
+          "es": "Recogida de evidencias",
+          "en": "Evidence collection",
+          "va": "Recollida d'evidències"
+        }
+      },
+      {
+        "id": "vet-industry-collaboration",
+        "visible": true,
+        "label": {
+          "es": "Colaboración FP-empresa",
+          "en": "VET-industry collaboration",
+          "va": "Col·laboració FP-empresa"
+        }
+      },
+      {
+        "id": "educational-data-protection",
+        "visible": true,
+        "label": {
+          "es": "Protección de datos educativos",
+          "en": "Educational data protection",
+          "va": "Protecció de dades educatives"
+        }
+      },
+      {
+        "id": "generative-ai-in-education",
+        "visible": true,
+        "label": {
+          "es": "IA generativa en educación",
+          "en": "Generative AI in education",
+          "va": "IA generativa en educació"
+        }
+      },
+      {
+        "id": "algorithmic-bias",
+        "visible": true,
+        "label": {
+          "es": "Sesgos algorítmicos",
+          "en": "Algorithmic bias",
+          "va": "Biaix algorísmic"
+        }
+      },
+      {
+        "id": "industry-4-0",
+        "visible": true,
+        "label": {
+          "es": "Industria 4.0",
+          "en": "Industry 4.0",
+          "va": "Indústria 4.0"
+        }
+      },
+      {
+        "id": "data-sharing",
+        "visible": true,
+        "label": {
+          "es": "Intercambio de datos",
+          "en": "Data sharing",
+          "va": "Intercanvi de dades"
+        }
+      },
+      {
+        "id": "generative-ai-creative",
+        "visible": true,
+        "label": {
+          "es": "IA generativa creativa",
+          "en": "Creative generative AI",
+          "va": "IA generativa creativa"
+        }
+      },
+      {
+        "id": "tourism-ai",
+        "visible": true,
+        "label": {
+          "es": "IA en turismo",
+          "en": "Tourism AI",
+          "va": "IA en turisme"
+        }
+      },
+      {
+        "id": "cultural-heritage-ai",
+        "visible": true,
+        "label": {
+          "es": "IA y patrimonio cultural",
+          "en": "Cultural heritage AI",
+          "va": "IA i patrimoni cultural"
+        }
+      },
+      {
+        "id": "ai-copyright",
+        "visible": true,
+        "label": {
+          "es": "Propiedad intelectual e IA",
+          "en": "AI and copyright",
+          "va": "Propietat intel·lectual i IA"
+        }
+      },
+      {
+        "id": "public-sector-ai",
+        "visible": true,
+        "label": {
+          "es": "IA en sector público",
+          "en": "Public sector AI",
+          "va": "IA en sector públic"
+        }
+      },
+      {
+        "id": "open-data",
+        "visible": true,
+        "label": {
+          "es": "Datos abiertos",
+          "en": "Open data",
+          "va": "Dades obertes"
+        }
+      },
+      {
+        "id": "public-private-collaboration",
+        "visible": true,
+        "label": {
+          "es": "Colaboración público-privada",
+          "en": "Public-private collaboration",
+          "va": "Col·laboració públic-privada"
+        }
+      },
+      {
+        "id": "administrative-procedures",
+        "visible": true,
+        "label": {
+          "es": "Procedimientos administrativos",
+          "en": "Administrative procedures",
+          "va": "Procediments administratius"
+        }
+      },
+      {
+        "id": "precision-agriculture",
+        "visible": true,
+        "label": {
+          "es": "Agricultura de precisión",
+          "en": "Precision agriculture",
+          "va": "Agricultura de precisió"
+        }
+      },
+      {
+        "id": "agricultural-computer-vision",
+        "visible": true,
+        "label": {
+          "es": "Visión computacional agrícola",
+          "en": "Agricultural computer vision",
+          "va": "Visió computacional agrícola"
+        }
+      },
+      {
+        "id": "case-replication",
+        "visible": true,
+        "label": {
+          "es": "Replicación de casos",
+          "en": "Case replication",
+          "va": "Replicació de casos"
+        }
+      },
+      {
+        "id": "vet-agri-food",
+        "visible": true,
+        "label": {
+          "es": "FP agroalimentaria",
+          "en": "Agri-food VET",
+          "va": "FP agroalimentària"
+        }
+      },
+      {
+        "id": "clinical-data-science",
+        "visible": true,
+        "label": {
+          "es": "Ciencia de datos clínicos",
+          "en": "Clinical data science",
+          "va": "Ciència de dades clíniques"
+        }
+      },
+      {
+        "id": "medical-imaging-ai",
+        "visible": true,
+        "label": {
+          "es": "IA en imagen médica",
+          "en": "Medical imaging AI",
+          "va": "IA en imatge mèdica"
+        }
+      },
+      {
+        "id": "ai-act-samd",
+        "visible": true,
+        "label": {
+          "es": "AI Act y SaMD",
+          "en": "AI Act and SaMD",
+          "va": "AI Act i SaMD"
+        }
+      },
+      {
+        "id": "hl7-fhir",
+        "visible": true,
+        "label": {
+          "es": "HL7/FHIR",
+          "en": "HL7/FHIR",
+          "va": "HL7/FHIR"
+        }
+      },
+      {
+        "id": "research-transfer",
+        "visible": true,
+        "label": {
+          "es": "Transferencia de investigación",
+          "en": "Research transfer",
+          "va": "Transferència d'investigació"
+        }
+      },
+      {
+        "id": "vet-curriculum-design",
+        "visible": true,
+        "label": {
+          "es": "Diseño curricular FP",
+          "en": "VET curriculum design",
+          "va": "Disseny curricular FP"
+        }
+      },
+      {
+        "id": "ai-research-translation",
+        "visible": true,
+        "label": {
+          "es": "Traducción de investigación en IA",
+          "en": "AI research translation",
+          "va": "Traducció de recerca en IA"
+        }
+      },
+      {
+        "id": "academic-industry-bridge",
+        "visible": true,
+        "label": {
+          "es": "Puente academia-industria",
+          "en": "Academic-industry bridge",
+          "va": "Pont acadèmia-indústria"
         }
       }
     ],
