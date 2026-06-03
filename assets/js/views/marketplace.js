@@ -1120,17 +1120,18 @@ function renderCardActions(item) {
 }
 
 function renderCardFooter(item, tab, entity, dateLabel, ctaHtml = null) {
-  const defaultCta = `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang(tab.ctaLabel, uiText('viewDetail')))} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
-  const cta = ctaHtml || defaultCta;
+  // El CTA al detalle interno se retiró (Fase 2). La card solo ofrece las
+  // acciones de ficha/adhesión; si no hay ninguna, el bloque de acciones queda vacío.
   const actions = renderCardActions(item);
   const hasInfo = entity || dateLabel;
+  if (!hasInfo && !actions) return '';
   return `
     <div class="mt-5 border-t border-eu-border pt-4">
       ${hasInfo ? `<div class="mb-3 text-xs text-gray-500">
         ${entity ? `<p class="font-bold uppercase tracking-wide text-gray-400">${esc(pickLang(FIELD_LABELS.entity))}</p><p class="mt-0.5 font-semibold">${esc(entity)}</p>` : ''}
         ${dateLabel ? `<p class="${entity ? 'mt-2' : ''} font-semibold">${esc(dateLabel)}</p>` : ''}
       </div>` : ''}
-      <div class="flex flex-wrap items-center justify-end gap-x-4 gap-y-2">${actions}${cta}</div>
+      ${actions ? `<div class="flex flex-wrap items-center justify-end gap-x-4 gap-y-2">${actions}</div>` : ''}
     </div>`;
 }
 
@@ -4526,8 +4527,9 @@ function scrollToTop(preferredBehavior = 'auto') {
 }
 
 export function render() {
-  const selected = getItemById(getState('selectedChallengeId'));
-  return selected ? renderDetail(selected) : renderList();
+  // El segundo nivel de detalle se retiró (Fase 2). Las cards solo ofrecen la
+  // descarga de ficha y el formulario de adhesión; no hay vista de detalle.
+  return renderList();
 }
 
 export function mount() {
@@ -4554,22 +4556,6 @@ export function mount() {
         scrollToTop('smooth');
       }
     });
-  });
-
-  document.querySelectorAll('.mp-view-detail').forEach(button => {
-    button.addEventListener('click', () => {
-      setState('selectedChallengeId', button.dataset.id);
-      window.history.pushState({ itemId: button.dataset.id }, '', window.location.pathname);
-      rerender();
-      scrollToTop();
-    });
-  });
-
-  document.getElementById('mp-back')?.addEventListener('click', () => {
-    setState('selectedChallengeId', null);
-    window.history.pushState({}, '', window.location.pathname);
-    rerender();
-    scrollToTop();
   });
 
   document.getElementById('mp-tab-search')?.addEventListener('input', event => {
@@ -4612,12 +4598,6 @@ export function mount() {
 
   attachMarketplaceFilterActionListeners();
   attachMarketplacePaginationListeners();
-
-  window.onpopstate = () => {
-    if (!getState('selectedChallengeId')) return;
-    setState('selectedChallengeId', null);
-    rerender();
-  };
 }
 
 function attachMarketplaceFilterActionListeners() {
@@ -4680,14 +4660,6 @@ function updateTabResults() {
   if (filterCount) filterCount.textContent = renderFilterCountSuffix(getActiveFilterChips(activeTab.id, items).length);
   attachMarketplaceFilterActionListeners();
   attachMarketplacePaginationListeners();
-  document.querySelectorAll('#mp-tab-results .mp-view-detail').forEach(button => {
-    button.addEventListener('click', () => {
-      setState('selectedChallengeId', button.dataset.id);
-      window.history.pushState({ itemId: button.dataset.id }, '', window.location.pathname);
-      rerender();
-      scrollToTop();
-    });
-  });
   if (window.lucide) window.lucide.createIcons();
 }
 
