@@ -10615,7 +10615,7 @@ export const MARKETPLACE_CONFIG = {
       "core": {
         "status": "published",
         "forceOpen": false,
-        "maturity": "completed",
+        "maturity": "idea",
         "title": {
           "es": "Escalado de sistema de monitorización energética con IA desde edificio piloto a red de viviendas sociales",
           "en": "Scaling of AI-powered energy monitoring system from pilot building to social housing network",
@@ -10682,70 +10682,51 @@ export const MARKETPLACE_CONFIG = {
           "name": "Universitat Politècnica de València (UPV)"
         },
         "requester": null,
-        "leadTeam": {
-          "name": "UPV — Grupo de Investigación IBIME",
-          "role": {
-            "es": "Investigación, desarrollo y escalado del sistema",
-            "en": "Research, development and scaling of the system",
-            "va": "Recerca, desenvolupament i escalat del sistema"
-          }
-        },
+        "leadTeam": null,
         "contact": null,
         "beneficiaries": [
           {
             "name": "Entitat Valenciana d'Habitatge i Sòl (EVha)",
-            "type": "public-entity",
+            "type": "",
             "role": {
-              "es": "Despliegue en parque de viviendas sociales del área metropolitana de Valencia",
-              "en": "Deployment across the social housing stock in the Valencia metropolitan area",
-              "va": "Desplegament al parc d'habitatges socials de l'àrea metropolitana de València"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "IES Mestre Ramón Esteve",
-            "type": "educational-centre",
+            "type": "",
             "role": {
-              "es": "Centro piloto de adaptación didáctica y pilotaje educativo en FP de Instalaciones Eléctricas",
-              "en": "Pilot centre for didactic adaptation and educational piloting in Electrical Installations VET",
-              "va": "Centre pilot d'adaptació didàctica i pilotatge educatiu en FP d'Instal·lacions Elèctriques"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "Fundación Laboral de la Construcción",
-            "type": "association",
+            "type": "",
             "role": {
-              "es": "Transferencia sectorial al sector de la construcción y la eficiencia energética en edificación",
-              "en": "Sectoral transfer to the construction and building energy efficiency sector",
-              "va": "Transferència sectorial al sector de la construcció i l'eficiència energètica en edificació"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         ]
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "predictive-ai",
-          "institutional-readiness"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green",
-          "social"
-        ],
-        "policyCluster": [
-          "triple-transition",
-          "learning-ecosystems",
-          "infrastructure-evidence"
-        ],
-        "engagementLevel": "challenge-contribution",
-        "evidenceMaturity": "completed",
-        "lbdStage": "output",
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
         "trackBValue": {
-          "es": "Arquitectura de despliegue documentada y replicable para edge computing energético con Raspberry Pi 4 + MQTT + modelo LSTM reentrenable, validada en 240 viviendas sociales. Incluye módulo didáctico de 6 sesiones para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética. Licencia abierta Apache 2.0 (código) + CC BY 4.0 (materiales educativos).",
-          "en": "Documented and replicable deployment architecture for energy edge computing with Raspberry Pi 4 + MQTT + retrainable LSTM model, validated across 240 social housing units. Includes a 6-session teaching module for Electrical Installations VET and Energy Efficiency Master's. Open licence Apache 2.0 (code) + CC BY 4.0 (educational materials).",
-          "va": "Arquitectura de desplegament documentada i replicable per a edge computing energètic amb Raspberry Pi 4 + MQTT + model LSTM reentrenable, validada en 240 habitatges socials. Inclou mòdul didàctic de 6 sessions per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica. Llicència oberta Apache 2.0 (codi) + CC BY 4.0 (materials educatius)."
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "verificationStatus": "verified",
+        "verificationStatus": "",
         "pilotStatus": "",
         "sector": "mfg",
         "sectors": [
@@ -10762,12 +10743,7 @@ export const MARKETPLACE_CONFIG = {
           "Máster",
           "Docentes"
         ],
-        "audience": [
-          "vet-centres",
-          "public-administration",
-          "industry-partners",
-          "research-centres"
-        ],
+        "audience": [],
         "sdgs": [
           7,
           11,
@@ -10781,51 +10757,31 @@ export const MARKETPLACE_CONFIG = {
           {
             "name": "Entitat Valenciana d'Habitatge i Sòl (EVha)",
             "sector": "",
-            "type": "public-entity"
+            "type": ""
           },
           {
             "name": "IES Mestre Ramón Esteve",
             "sector": "",
-            "type": "educational-centre"
+            "type": ""
           },
           {
             "name": "Fundación Laboral de la Construcción",
             "sector": "",
-            "type": "association"
+            "type": ""
           }
         ]
       },
       "community": {
-        "tab": "cases",
-        "audience": [
-          "vet-centres",
-          "public-administration",
-          "research-centres",
-          "industry-partners"
-        ],
-        "primaryCta": {
-          "es": "Acceder al caso",
-          "en": "Access the case",
-          "va": "Accedir al cas"
-        },
-        "featuredSignal": {
-          "es": "Primer caso documentado de escalado de edge computing energético desde edificio universitario a 240 viviendas sociales en la Comunitat Valenciana. Reducción del 23 % en consumo energético en el primer año con hardware de bajo coste y arquitectura completamente replicable bajo licencia abierta.",
-          "en": "First documented case of energy edge computing scaling from a university building to 240 social housing units in the Valencian Community. 23% reduction in energy consumption in the first year using low-cost hardware and a fully replicable architecture under an open licence.",
-          "va": "Primer cas documentat d'escalat d'edge computing energètic des d'edifici universitari a 240 habitatges socials a la Comunitat Valenciana. Reducció del 23 % en consum energètic en el primer any amb maquinari de baix cost i arquitectura completament replicable sota llicència oberta."
-        },
-        "relationIds": [
-          "auditoria-energetica-ia-hou",
-          "solar-fotovoltaica-gemelo-digital-ene"
-        ]
+        "tab": "cases"
       },
       "card": {},
       "visibility": {},
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
-        "codeLicense": "Apache 2.0",
-        "dataAvailability": "confidential-not-included",
+        "pageLicense": "",
+        "codeLicense": "",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -10834,9 +10790,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "El código del sistema puede usarse y modificarse libremente según la licencia Apache 2.0. Los materiales educativos están bajo CC BY 4.0. Los datos de consumo individuales por vivienda son confidenciales y no están incluidos; el dataset de muestra anonimizado (30 viviendas) está disponible en la sección de descargables para uso didáctico.",
-          "en": "The system code may be freely used and modified under the Apache 2.0 licence. Educational materials are under CC BY 4.0. Individual consumption data per housing unit is confidential and not included; the anonymised sample dataset (30 units) is available in the downloads section for didactic use.",
-          "va": "El codi del sistema pot usar-se i modificar-se lliurement segons la llicència Apache 2.0. Els materials educatius estan sota CC BY 4.0. Les dades de consum individuals per habitatge són confidencials i no s'inclouen; el dataset de mostra anonimitzat (30 habitatges) està disponible en la secció de descàrregues per a ús didàctic."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -10846,266 +10802,61 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
-        "enabled": true,
+        "enabled": false,
         "label": {
-          "es": "Trabajo final de Máster sobre modelos LSTM aplicados a la predicción de consumo energético en edificios de vivienda social",
-          "en": "Master's final project on LSTM models applied to energy consumption prediction in social housing buildings",
-          "va": "Treball final de Màster sobre models LSTM aplicats a la predicció de consum energètic en edificis d'habitatge social"
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "url": "https://riunet.upv.es/handle/10251/198742"
+        "url": ""
       },
       "trackALink": {
-        "enabled": true,
+        "enabled": false,
         "label": {
-          "es": "Trabajo final de Máster sobre modelos LSTM aplicados a la predicción de consumo energético en edificios de vivienda social",
-          "en": "Master's final project on LSTM models applied to energy consumption prediction in social housing buildings",
-          "va": "Treball final de Màster sobre models LSTM aplicats a la predicció de consum energètic en edificis d'habitatge social"
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "url": "https://riunet.upv.es/handle/10251/198742"
+        "url": ""
       },
       "externalFlow": {
-        "enabled": true,
+        "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Ver caso completo",
-            "en": "View full case",
-            "va": "Veure cas complet"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
-          "url": "https://aisteam.gva.es/marketplace/casos/eficiencia-energetica-edificios-hou"
+          "url": ""
         },
         "secondaryAction": null,
-        "fallbackAction": {
-          "label": {
-            "es": "Acceder al repositorio GitHub",
-            "en": "Access GitHub repository",
-            "va": "Accedir al repositori GitHub"
-          },
-          "url": "https://github.com/ibime-upv/energy-monitoring-edge"
-        },
-        "fallbackContact": {
-          "label": {
-            "es": "Contactar con el equipo IBIME-UPV para consultas sobre adaptación",
-            "en": "Contact the IBIME-UPV team for adaptation enquiries",
-            "va": "Contactar amb l'equip IBIME-UPV per a consultes sobre adaptació"
-          },
-          "url": "mailto:ibime@upv.es"
-        }
+        "fallbackAction": null,
+        "fallbackContact": null
       },
       "relations": {
         "originChallengeId": "",
-        "validations": [
-          "validacion-monitorizacion-energetica-hou"
-        ],
-        "pilots": [
-          "piloto-edge-computing-vivienda-social-evha"
-        ],
-        "cases": [
-          "auditoria-energetica-ia-hou",
-          "solar-fotovoltaica-gemelo-digital-ene"
-        ],
+        "validations": [],
+        "pilots": [],
+        "cases": [],
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "externalLinks": [
-          {
-            "id": "github-repository",
-            "type": "repository",
-            "label": {
-              "es": "Repositorio del sistema en GitHub (código, configuración y documentación técnica)",
-              "en": "System repository on GitHub (code, configuration and technical documentation)",
-              "va": "Repositori del sistema a GitHub (codi, configuració i documentació tècnica)"
-            },
-            "url": "https://github.com/ibime-upv/energy-monitoring-edge",
-            "license": "Apache 2.0"
-          },
-          {
-            "id": "ibime-research-group",
-            "type": "website",
-            "label": {
-              "es": "Grupo de Investigación IBIME — Universitat Politècnica de València",
-              "en": "IBIME Research Group — Universitat Politècnica de València",
-              "va": "Grup de Recerca IBIME — Universitat Politècnica de València"
-            },
-            "url": "https://www.ibime.upv.es"
-          },
-          {
-            "id": "evha-website",
-            "type": "website",
-            "label": {
-              "es": "Entitat Valenciana d'Habitatge i Sòl (EVha) — portal institucional",
-              "en": "Entitat Valenciana d'Habitatge i Sòl (EVha) — institutional website",
-              "va": "Entitat Valenciana d'Habitatge i Sòl (EVha) — portal institucional"
-            },
-            "url": "https://evha.gva.es"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/cases/eficiencia-energetica-edificios-hou/",
-        "items": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha completa del caso",
-              "en": "Full case brief",
-              "va": "Fitxa completa del cas"
-            },
-            "description": {
-              "es": "Documento resumen del caso con contexto de origen, proceso de escalado, actores, resultados y condiciones de replicación.",
-              "en": "Case summary document with origin context, scaling process, actors, results and replication conditions.",
-              "va": "Document resum del cas amb context d'origen, procés d'escalat, actors, resultats i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "cas-monitorizacion-energetica-hou.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          },
-          {
-            "id": "replication-guide",
-            "type": "replication-guide",
-            "title": {
-              "es": "Guía de replicación técnica",
-              "en": "Technical replication guide",
-              "va": "Guia de replicació tècnica"
-            },
-            "description": {
-              "es": "Guía paso a paso para desplegar la arquitectura edge computing en un edificio o conjunto de viviendas. Incluye lista de materiales, comandos de instalación y checklist de validación.",
-              "en": "Step-by-step guide to deploying the edge computing architecture in a building or housing estate. Includes a bill of materials, installation commands and validation checklist.",
-              "va": "Guia pas a pas per desplegar l'arquitectura edge computing en un edifici o conjunt d'habitatges. Inclou llista de materials, ordres d'instal·lació i checklist de validació."
-            },
-            "files": [
-              {
-                "file": "guia-replicacion-monitorizacion-energetica.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Módulo didáctico para FP de Instalaciones Eléctricas (6 sesiones)",
-              "en": "Teaching module for Electrical Installations VET (6 sessions)",
-              "va": "Mòdul didàctic per a FP d'Instal·lacions Elèctriques (6 sessions)"
-            },
-            "description": {
-              "es": "Secuencia de seis sesiones para el módulo de Instalaciones de Energías Renovables de FP de Instalaciones Eléctricas y Automáticas. Incluye fichas del alumno, rúbrica de evaluación y datos de consumo de práctica.",
-              "en": "Six-session sequence for the Renewable Energy Installations module in Electrical and Automated Installations VET. Includes student worksheets, evaluation rubric and practice consumption data.",
-              "va": "Seqüència de sis sessions per al mòdul d'Instal·lacions d'Energies Renovables de FP d'Instal·lacions Elèctriques i Automàtiques. Inclou fitxes de l'alumne, rúbrica d'avaluació i dades de consum de pràctica."
-            },
-            "files": [
-              {
-                "file": "modulo-didactico-fp-instalaciones-electricas.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "dataset-sample",
-            "type": "dataset",
-            "title": {
-              "es": "Dataset de muestra anonimizado (30 viviendas, 12 meses)",
-              "en": "Anonymised sample dataset (30 units, 12 months)",
-              "va": "Dataset de mostra anonimitzat (30 habitatges, 12 mesos)"
-            },
-            "description": {
-              "es": "Subconjunto anonimizado del dataset de consumo agregado por hora. Preparado para uso didáctico y pruebas de reentrenamiento del modelo LSTM.",
-              "en": "Anonymised subset of the hourly aggregated consumption dataset. Prepared for didactic use and LSTM model retraining tests.",
-              "va": "Subconjunt anonimitzat del dataset de consum agregat per hora. Preparat per a ús didàctic i proves de reentrenament del model LSTM."
-            },
-            "files": [
-              {
-                "file": "dataset-muestra-30-viviendas-12-meses.csv",
-                "format": "csv",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "outputs": null,
       "process": null,
-      "hasDownloads": true,
-      "downloadCount": 4,
-      "cardDownloads": [
-        {
-          "id": "replication-guide",
-          "type": "replication-guide",
-          "title": {
-            "es": "Guía de replicación técnica",
-            "en": "Technical replication guide",
-            "va": "Guia de replicació tècnica"
-          },
-          "description": {
-            "es": "Guía paso a paso para desplegar la arquitectura edge computing en un edificio o conjunto de viviendas. Incluye lista de materiales, comandos de instalación y checklist de validación.",
-            "en": "Step-by-step guide to deploying the edge computing architecture in a building or housing estate. Includes a bill of materials, installation commands and validation checklist.",
-            "va": "Guia pas a pas per desplegar l'arquitectura edge computing en un edifici o conjunt d'habitatges. Inclou llista de materials, ordres d'instal·lació i checklist de validació."
-          },
-          "files": [
-            {
-              "file": "guia-replicacion-monitorizacion-energetica.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        },
-        {
-          "id": "teaching-module",
-          "type": "teaching-module",
-          "title": {
-            "es": "Módulo didáctico para FP de Instalaciones Eléctricas (6 sesiones)",
-            "en": "Teaching module for Electrical Installations VET (6 sessions)",
-            "va": "Mòdul didàctic per a FP d'Instal·lacions Elèctriques (6 sessions)"
-          },
-          "description": {
-            "es": "Secuencia de seis sesiones para el módulo de Instalaciones de Energías Renovables de FP de Instalaciones Eléctricas y Automáticas. Incluye fichas del alumno, rúbrica de evaluación y datos de consumo de práctica.",
-            "en": "Six-session sequence for the Renewable Energy Installations module in Electrical and Automated Installations VET. Includes student worksheets, evaluation rubric and practice consumption data.",
-            "va": "Seqüència de sis sessions per al mòdul d'Instal·lacions d'Energies Renovables de FP d'Instal·lacions Elèctriques i Automàtiques. Inclou fitxes de l'alumne, rúbrica d'avaluació i dades de consum de pràctica."
-          },
-          "files": [
-            {
-              "file": "modulo-didactico-fp-instalaciones-electricas.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "case",
@@ -11118,7 +10869,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": {
@@ -11141,7 +10892,7 @@ export const MARKETPLACE_CONFIG = {
             "people": true,
             "access": true,
             "trackA": true,
-            "relations": true,
+            "relations": false,
             "evidence": true,
             "transferability": true,
             "summary": true,
@@ -11151,34 +10902,7 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "caseStudy": {
-        "type": "scaling",
-        "originContext": {
-          "es": "El grupo IBIME de la UPV desarrolló un sistema de monitorización y predicción de consumo energético basado en sensores IoT y modelos LSTM para el edificio 5I del campus. El sistema operó durante dos años, generando una base de datos longitudinal de consumo eléctrico y térmico con resolución horaria.",
-          "en": "UPV's IBIME group developed an IoT sensor-based energy monitoring and LSTM prediction system for the 5I campus building. The system operated for two years, generating a longitudinal database of hourly electrical and thermal consumption data.",
-          "va": "El grup IBIME de la UPV va desenvolupar un sistema de monitorització i predicció de consum energètic basat en sensors IoT i models LSTM per a l'edifici 5I del campus. El sistema va operar durant dos anys, generant una base de dades longitudinal de consum elèctric i tèrmic amb resolució horària."
-        },
-        "transferContext": {
-          "es": "Tras dos años de operación y datos contrastados, la EVha propuso escalarlo a su parque de 240 viviendas de protección oficial en el área metropolitana de Valencia, donde el coste energético representa un factor crítico de habitabilidad para las familias beneficiarias.",
-          "en": "After two years of operation and validated data, EVha proposed scaling it to its stock of 240 social housing units in the Valencia metropolitan area, where energy costs represent a critical affordability factor for beneficiary families.",
-          "va": "Després de dos anys d'operació i dades contrastades, l'EVha va proposar escalar-lo al seu parc de 240 habitatges de protecció oficial a l'àrea metropolitana de València, on el cost energètic representa un factor crític d'habitabilitat per a les famílies beneficiàries."
-        },
-        "intervention": {
-          "es": "Despliegue de nodos edge con Raspberry Pi 4, protocolo MQTT, dashboard Grafana y modelo LSTM reentrenado con datos de los nuevos edificios. Se instalaron sensores de consumo en cuadros eléctricos y se configuró un servidor central de agregación en las oficinas de la EVha. El IES Mestre Ramón Esteve participó en la validación didáctica del módulo educativo asociado.",
-          "en": "Deployment of Raspberry Pi 4 edge nodes, MQTT protocol, Grafana dashboard and LSTM model retrained with data from the new buildings. Consumption sensors were installed in electrical panels and a central aggregation server was set up at EVha's offices. IES Mestre Ramón Esteve participated in the didactic validation of the associated teaching module.",
-          "va": "Desplegament de nodes edge amb Raspberry Pi 4, protocol MQTT, dashboard Grafana i model LSTM reentrenat amb dades dels nous edificis. Es van instal·lar sensors de consum en quadres elèctrics i es va configurar un servidor central d'agregació a les oficines de l'EVha. L'IES Mestre Ramón Esteve va participar en la validació didàctica del mòdul educatiu associat."
-        },
-        "transferPath": {
-          "es": "Del edificio piloto universitario 5I a 240 viviendas sociales en tres fases — instalación de sensores y configuración de nodos edge (3 meses), reentrenamiento del modelo LSTM con datos locales (3 semanas), puesta en marcha del dashboard y formación de técnicos de la EVha (2 semanas) — con adaptación didáctica paralela para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética.",
-          "en": "From the 5I university pilot building to 240 social housing units in three phases — sensor installation and edge node configuration (3 months), LSTM model retraining with local data (3 weeks), dashboard deployment and EVha technician training (2 weeks) — with parallel didactic adaptation for Electrical Installations VET and Energy Efficiency Master's.",
-          "va": "De l'edifici pilot universitari 5I a 240 habitatges socials en tres fases — instal·lació de sensors i configuració de nodes edge (3 mesos), reentrenament del model LSTM amb dades locals (3 setmanes), posada en marxa del dashboard i formació de tècnics de l'EVha (2 setmanes) — amb adaptació didàctica paral·lela per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica."
-        },
-        "trackBValue": {
-          "es": "Arquitectura de despliegue documentada para edge computing con Raspberry Pi 4 + MQTT + LSTM, adaptable a cualquier edificio con medidores inteligentes o sensores básicos de consumo. Incluye módulo didáctico de 6 sesiones para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética. Todo el código está disponible en GitHub con licencia Apache 2.0.",
-          "en": "Documented deployment architecture for edge computing with Raspberry Pi 4 + MQTT + LSTM, adaptable to any building with smart meters or basic consumption sensors. Includes a 6-session teaching module for Electrical Installations VET and Energy Efficiency Master's. All code is available on GitHub under Apache 2.0 licence.",
-          "va": "Arquitectura de desplegament documentada per a edge computing amb Raspberry Pi 4 + MQTT + LSTM, adaptable a qualsevol edifici amb comptadors intel·ligents o sensors bàsics de consum. Inclou mòdul didàctic de 6 sessions per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica. Tot el codi està disponible a GitHub amb llicència Apache 2.0."
-        }
-      },
+      "caseStudy": null,
       "evidence": {
         "headline": {
           "es": "Reducción del 23 % en consumo energético en el primer año de despliegue en las 240 viviendas sociales.",
@@ -11195,175 +10919,15 @@ export const MARKETPLACE_CONFIG = {
             "va": "Reducció de consum energètic en el primer any de desplegament"
           }
         },
-        "secondaryMetrics": [
-          {
-            "id": "economic-saving",
-            "value": 340,
-            "unit": "EUR/vivienda/año",
-            "label": {
-              "es": "Ahorro medio por vivienda y año en la factura energética",
-              "en": "Average annual saving per home on the energy bill",
-              "va": "Estalvi mitjà per habitatge i any en la factura energètica"
-            }
-          },
-          {
-            "id": "retraining-time",
-            "value": 3,
-            "unit": "semanas",
-            "label": {
-              "es": "Tiempo de reentrenamiento del modelo LSTM con nuevos datos de edificios",
-              "en": "Time to retrain the LSTM model with new building data",
-              "va": "Temps de reentrenament del model LSTM amb noves dades d'edificis"
-            }
-          },
-          {
-            "id": "co2-reduction",
-            "value": 18.4,
-            "unit": "t CO₂/año",
-            "label": {
-              "es": "Reducción estimada de emisiones de CO₂ en el conjunto del parque",
-              "en": "Estimated CO₂ emission reduction across the housing stock",
-              "va": "Reducció estimada d'emissions de CO₂ en el conjunt del parc"
-            }
-          },
-          {
-            "id": "deployment-time",
-            "value": 3,
-            "unit": "meses",
-            "label": {
-              "es": "Tiempo total de despliegue de sensores y nodos edge en las 240 viviendas",
-              "en": "Total deployment time for sensors and edge nodes across the 240 units",
-              "va": "Temps total de desplegament de sensors i nodes edge en els 240 habitatges"
-            }
-          }
-        ],
-        "verification": {
-          "status": "verified",
-          "verifiedBy": "Comité Técnico AI-STEAM — Área de Energía y Hábitat",
-          "verifiedAt": "2026-05-10",
-          "method": {
-            "es": "Revisión de documentación técnica del despliegue, registros de consumo agregados proporcionados por la EVha y comparación con la línea base de los dos años anteriores al escalado.",
-            "en": "Review of technical deployment documentation, aggregated consumption records provided by EVha and comparison with the two-year baseline prior to scaling.",
-            "va": "Revisió de documentació tècnica del desplegament, registres de consum agregats proporcionats per l'EVha i comparació amb la línia base dels dos anys anteriors a l'escalat."
-          }
-        },
+        "secondaryMetrics": [],
+        "verification": null,
         "limitations": {
-          "es": "Los datos de consumo individualizados por vivienda son confidenciales y no se publican. Las métricas publicadas son datos agregados anonimizados. La reducción del 23 % puede variar según tipología constructiva, orientación y hábitos de los residentes.",
-          "en": "Individualised consumption data per housing unit is confidential and not published. Published metrics are anonymised aggregated data. The 23% reduction may vary depending on building typology, orientation and residents' habits.",
-          "va": "Les dades de consum individualitzades per habitatge són confidencials i no es publiquen. Les mètriques publicades són dades agregades anonimitzades. La reducció del 23 % pot variar segons tipologia constructiva, orientació i hàbits dels residents."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
-      "transferability": {
-        "whyTransferable": {
-          "es": "La arquitectura está basada en componentes de hardware de bajo coste disponibles comercialmente (Raspberry Pi 4, sensores de pinza de clip) y software de código abierto (MQTT, Grafana, TensorFlow Lite). No requiere infraestructura de red propietaria. La documentación cubre todos los pasos de instalación, configuración y reentrenamiento del modelo.",
-          "en": "The architecture is based on commercially available low-cost hardware (Raspberry Pi 4, clip-on sensors) and open-source software (MQTT, Grafana, TensorFlow Lite). No proprietary network infrastructure is required. The documentation covers all installation, configuration and model retraining steps.",
-          "va": "L'arquitectura està basada en components de maquinari de baix cost disponibles comercialment (Raspberry Pi 4, sensors de pinça de clip) i programari de codi obert (MQTT, Grafana, TensorFlow Lite). No requereix infraestructura de xarxa propietària. La documentació cobreix tots els passos d'instal·lació, configuració i reentrenament del model."
-        },
-        "suitableFor": [
-          "vet-centres",
-          "public-housing",
-          "municipal-buildings",
-          "energy-training",
-          "research-centres"
-        ],
-        "requirements": [
-          {
-            "label": {
-              "es": "Medidores inteligentes o sensores de consumo instalables en el cuadro eléctrico",
-              "en": "Smart meters or consumption sensors installable in the electrical panel",
-              "va": "Comptadors intel·ligents o sensors de consum instal·lables en el quadre elèctric"
-            }
-          },
-          {
-            "label": {
-              "es": "Nodo edge (Raspberry Pi 4 o equivalente) con conectividad a internet básica",
-              "en": "Edge node (Raspberry Pi 4 or equivalent) with basic internet connectivity",
-              "va": "Node edge (Raspberry Pi 4 o equivalent) amb connectivitat a internet bàsica"
-            }
-          },
-          {
-            "label": {
-              "es": "Capacidad técnica mínima para instalación de hardware y configuración de software en los técnicos responsables",
-              "en": "Minimum technical capacity for hardware installation and software configuration in the responsible technicians",
-              "va": "Capacitat tècnica mínima per a instal·lació de maquinari i configuració de programari en els tècnics responsables"
-            }
-          },
-          {
-            "label": {
-              "es": "Acceso a datos históricos de consumo del edificio o conjunto (mínimo 3-6 meses) para reentrenamiento del modelo",
-              "en": "Access to historical consumption data for the building or estate (minimum 3-6 months) for model retraining",
-              "va": "Accés a dades històriques de consum de l'edifici o conjunt (mínim 3-6 mesos) per al reentrenament del model"
-            }
-          }
-        ],
-        "adaptationSteps": [
-          {
-            "label": {
-              "es": "Diagnóstico energético del edificio o conjunto de viviendas — identificar puntos de medición y tipología de contadores",
-              "en": "Energy diagnosis of the building or housing stock — identify measurement points and meter typology",
-              "va": "Diagnòstic energètic de l'edifici o conjunt d'habitatges — identificar punts de mesurament i tipologia de comptadors"
-            }
-          },
-          {
-            "label": {
-              "es": "Instalación de sensores de consumo en cuadros eléctricos y configuración de nodos edge Raspberry Pi 4",
-              "en": "Installation of consumption sensors in electrical panels and configuration of Raspberry Pi 4 edge nodes",
-              "va": "Instal·lació de sensors de consum en quadres elèctrics i configuració de nodes edge Raspberry Pi 4"
-            }
-          },
-          {
-            "label": {
-              "es": "Configuración del broker MQTT y el dashboard Grafana en el servidor central de agregación",
-              "en": "Configuration of the MQTT broker and Grafana dashboard on the central aggregation server",
-              "va": "Configuració del broker MQTT i el dashboard Grafana en el servidor central d'agregació"
-            }
-          },
-          {
-            "label": {
-              "es": "Reentrenamiento del modelo LSTM con datos locales del primer mes de operación",
-              "en": "Retraining of the LSTM model with local data from the first month of operation",
-              "va": "Reentrenament del model LSTM amb dades locals del primer mes d'operació"
-            }
-          },
-          {
-            "label": {
-              "es": "Formación de técnicos responsables del mantenimiento y lectura del dashboard (jornada de 4 horas)",
-              "en": "Training of technicians responsible for maintenance and dashboard reading (4-hour session)",
-              "va": "Formació de tècnics responsables del manteniment i lectura del dashboard (sessió de 4 hores)"
-            }
-          },
-          {
-            "label": {
-              "es": "Adaptación didáctica del módulo de 6 sesiones para FP o educación superior si el contexto lo requiere",
-              "en": "Didactic adaptation of the 6-session module for VET or higher education if the context requires it",
-              "va": "Adaptació didàctica del mòdul de 6 sessions per a FP o educació superior si el context ho requereix"
-            }
-          }
-        ],
-        "risks": [
-          {
-            "label": {
-              "es": "Confidencialidad de los datos energéticos por vivienda — gestionar conforme al RGPD con datos solo agregados en producción",
-              "en": "Confidentiality of energy data per housing unit — manage in compliance with GDPR using only aggregated data in production",
-              "va": "Confidencialitat de les dades energètiques per habitatge — gestionar conforme al RGPD amb dades només agregades en producció"
-            }
-          },
-          {
-            "label": {
-              "es": "Variabilidad en la calidad de sensores y conectividad según la antigüedad y tipología del edificio",
-              "en": "Variability in sensor quality and connectivity depending on the age and typology of the building",
-              "va": "Variabilitat en la qualitat de sensors i connectivitat segons l'antiguitat i tipologia de l'edifici"
-            }
-          },
-          {
-            "label": {
-              "es": "Reentrenamiento del modelo puede requerir ajuste manual si los patrones de consumo son muy distintos al edificio piloto",
-              "en": "Model retraining may require manual adjustment if consumption patterns differ significantly from the pilot building",
-              "va": "El reentrenament del model pot requerir ajust manual si els patrons de consum són molt distints a l'edifici pilot"
-            }
-          }
-        ]
-      },
+      "transferability": null,
       "template": {
         "requiredBlocks": [
           "context",
@@ -13516,51 +13080,33 @@ export const MARKETPLACE_CONFIG = {
           "name": "IVAM — Institut Valencià d'Art Modern"
         },
         "requester": null,
-        "leadTeam": {
-          "name": "IVAM — Departament d'Educació i Creació Digital",
-          "role": {
-            "es": "Diseño metodológico y banco de prompts original",
-            "en": "Methodological design and original prompt bank",
-            "va": "Disseny metodològic i banc de prompts original"
-          }
-        },
+        "leadTeam": null,
         "contact": null,
         "beneficiaries": [
           {
             "name": "Màster en Educació Artística — Universitat de València",
-            "type": "public-university",
+            "type": "",
             "role": {
-              "es": "Adaptación y pilotaje en formación docente",
-              "en": "Adaptation and piloting in teacher training",
-              "va": "Adaptació i pilotatge en formació docent"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "Centre de Formació de Persones Adultes La Coma",
-            "type": "educational-centre",
+            "type": "",
             "role": {
-              "es": "Co-pilotaje en educación permanente y de adultos",
-              "en": "Co-piloting in lifelong and adult education",
-              "va": "Co-pilotatge en educació permanent i d'adults"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         ]
       },
       "classification": {
-        "aiSteamFocus": [
-          "creative-ai",
-          "responsible-ai",
-          "ai-literacy"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "equity-inclusion",
-          "lifelong-learning"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -13584,10 +13130,7 @@ export const MARKETPLACE_CONFIG = {
           "master",
           "teacher"
         ],
-        "audience": [
-          "teachers",
-          "advanced-learners"
-        ],
+        "audience": [],
         "sdgs": [
           4,
           10
@@ -13600,12 +13143,12 @@ export const MARKETPLACE_CONFIG = {
           {
             "name": "Màster en Educació Artística — Universitat de València",
             "sector": "",
-            "type": "public-university"
+            "type": ""
           },
           {
             "name": "Centre de Formació de Persones Adultes La Coma",
             "sector": "",
-            "type": "educational-centre"
+            "type": ""
           }
         ]
       },
@@ -13617,9 +13160,9 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY-NC 4.0",
-        "codeLicense": "other",
-        "dataAvailability": "open",
+        "pageLicense": "",
+        "codeLicense": "",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -13628,9 +13171,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "Los materiales son libres para uso educativo no comercial. Los prompts que referencien obras del IVAM requieren atribución expresa.",
-          "en": "Materials are free for non-commercial educational use. Prompts referencing IVAM works require explicit attribution.",
-          "va": "Els materials són lliures per a ús educatiu no comercial. Els prompts que referencien obres de l'IVAM requereixen atribució expressa."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -13640,7 +13183,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY-NC 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -13662,24 +13205,17 @@ export const MARKETPLACE_CONFIG = {
         "url": ""
       },
       "externalFlow": {
-        "enabled": true,
+        "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Replicar caso",
-            "en": "Replicate case",
-            "va": "Replicar cas"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
         },
-        "secondaryAction": {
-          "label": {
-            "es": "Contactar para adaptación",
-            "en": "Contact for adaptation",
-            "va": "Contactar per a adaptació"
-          },
-          "url": ""
-        },
+        "secondaryAction": null,
         "fallbackAction": null,
         "fallbackContact": null
       },
@@ -13693,140 +13229,15 @@ export const MARKETPLACE_CONFIG = {
       },
       "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/cases/narrativas-digitales-ia-cci/",
-        "items": [
-          {
-            "id": "replication-guide",
-            "type": "replication-guide",
-            "title": {
-              "es": "Guía completa del marco metodológico",
-              "en": "Complete methodological framework guide",
-              "va": "Guia completa del marc metodològic"
-            },
-            "description": {
-              "es": "Detalle de las 5 fases paso a paso para la replicación del caso.",
-              "en": "Step-by-step detail of the 5 phases for case replication.",
-              "va": "Detall de les 5 fases pas a pas per a la replicació del cas."
-            },
-            "files": [
-              {
-                "file": "guia-marco-metodologico-narrativas.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-NC 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "dataset-sample",
-            "type": "dataset-sample",
-            "title": {
-              "es": "Banco de 120 prompts comentados",
-              "en": "Bank of 120 annotated prompts",
-              "va": "Banc de 120 prompts comentats"
-            },
-            "description": {
-              "es": "Prompts optimizados para imagen, texto y voz con explicaciones éticas.",
-              "en": "Optimized prompts for image, text and voice with ethical explanations.",
-              "va": "Prompts optimitzats per a imatge, text i veu amb explicacions ètiques."
-            },
-            "files": [
-              {
-                "file": "banco-prompts-narrativas-ia.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-NC 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "other",
-            "type": "other",
-            "title": {
-              "es": "Rúbrica de evaluación transmedia",
-              "en": "Transmedia assessment rubric",
-              "va": "Rúbrica d'avaluació transmèdia"
-            },
-            "description": {
-              "es": "Matriz de evaluación para calificar las creaciones transmedia y el uso crítico de la IA.",
-              "en": "Assessment matrix to grade transmedia creations and critical AI use.",
-              "va": "Plantilles per a avaluar les creacions transmèdia i l'ús crític de la IA."
-            },
-            "files": [
-              {
-                "file": "rubricas-evaluacion-transmedia.odt",
-                "format": "docx",
-                "language": "es",
-                "license": "CC BY-NC 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "outputs": null,
       "process": null,
-      "hasDownloads": true,
-      "downloadCount": 3,
-      "cardDownloads": [
-        {
-          "id": "replication-guide",
-          "type": "replication-guide",
-          "title": {
-            "es": "Guía completa del marco metodológico",
-            "en": "Complete methodological framework guide",
-            "va": "Guia completa del marc metodològic"
-          },
-          "description": {
-            "es": "Detalle de las 5 fases paso a paso para la replicación del caso.",
-            "en": "Step-by-step detail of the 5 phases for case replication.",
-            "va": "Detall de les 5 fases pas a pas per a la replicació del cas."
-          },
-          "files": [
-            {
-              "file": "guia-marco-metodologico-narrativas.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY-NC 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        },
-        {
-          "id": "dataset-sample",
-          "type": "dataset-sample",
-          "title": {
-            "es": "Banco de 120 prompts comentados",
-            "en": "Bank of 120 annotated prompts",
-            "va": "Banc de 120 prompts comentats"
-          },
-          "description": {
-            "es": "Prompts optimizados para imagen, texto y voz con explicaciones éticas.",
-            "en": "Optimized prompts for image, text and voice with ethical explanations.",
-            "va": "Prompts optimitzats per a imatge, text i veu amb explicacions ètiques."
-          },
-          "files": [
-            {
-              "file": "banco-prompts-narrativas-ia.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY-NC 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "case",
@@ -13839,7 +13250,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": {
@@ -13861,8 +13272,8 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
-            "relations": true,
+            "trackA": true,
+            "relations": false,
             "evidence": true,
             "transferability": true,
             "summary": true,
@@ -13872,34 +13283,7 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "caseStudy": {
-        "type": "adaptation",
-        "originContext": {
-          "es": "El IVAM desarrolló internamente un flujo de trabajo con herramientas de IA generativa (Stable Diffusion, GPT-4o, ElevenLabs) para crear narrativas digitales sobre obras de su colección.",
-          "en": "IVAM internally developed a workflow using generative AI tools (Stable Diffusion, GPT-4o, ElevenLabs) to create digital narratives about works from its collection.",
-          "va": "L'IVAM va desenvolupar internament un flux de treball amb eines d'IA generativa (Stable Diffusion, GPT-4o, ElevenLabs) per crear narratives digitals sobre obres de la seua col·lecció."
-        },
-        "transferContext": {
-          "es": "El Máster en Educació Artística de la UV propuso adaptarlo como metodología de formación docente, manteniendo la esencia creativa pero haciéndolo reproducible sin acceso a las APIs de pago del museo.",
-          "en": "The UV Master's in Arts Education proposed adapting it as a teacher training methodology, preserving the creative essence while making it reproducible without access to the museum's paid APIs.",
-          "va": "El Máster en Educació Artística de la UV va proposar adaptar-lo como a metodologia de formació docent, mantenint l'essència creativa pero fent-lo reproduïble sense accés a les APIs de pagament del museu."
-        },
-        "intervention": {
-          "es": "El marco adaptado sustituye las APIs de pago por alternativas abiertas y locales (SDXL local, Mistral 7B, Bark TTS). Estructura el proceso en 5 fases de trabajo secuencial.",
-          "en": "The adapted framework replaces paid APIs with open and local alternatives (local SDXL, Mistral 7B, Bark TTS). It structures the process into 5 sequential work phases.",
-          "va": "El marc adaptat substitueix les APIs de pagament per alternatives obertes i locals (SDXL local, Mistral 7B, Bark TTS). Estructura el procés en 5 fases de treball seqüencial."
-        },
-        "transferPath": {
-          "es": "Transferencia de un flujo de trabajo cultural/museístico profesional hacia la formación de futuros educadores y docentes de arte.",
-          "en": "Transfer of a professional cultural/museum workflow towards the training of future art educators and teachers.",
-          "va": "Transferència d'un flux de treball cultural/museístic professional cap a la formació de futurs educadors i docents d'art."
-        },
-        "trackBValue": {
-          "es": "Marco metodológico de 5 fases para crear narrativas multimodales con IA generativa, adaptable a cualquier colección cultural o temática. Incluye guía de uso ético, banco de prompts comentados y rúbrica de evaluación de narrativa transmedia.",
-          "en": "5-phase methodological framework for creating multimodal narratives with generative AI, adaptable to any cultural collection or theme. Includes ethical use guide, annotated prompt bank and transmedia narrative assessment rubric.",
-          "va": "Marc metodològic de 5 fases per crear narratives multimodals amb IA generativa, adaptable a qualsevol col·lecció cultural o temàtica. Inclou guia d'ús ètic, banc de prompts comentats i rúbrica d'avaluació de narrativa transmèdia."
-        }
-      },
+      "caseStudy": null,
       "evidence": {
         "headline": {
           "es": "28 narrativas creadas en el piloto inicial y 86% de autonomía metodológica docente conseguida.",
@@ -13916,97 +13300,15 @@ export const MARKETPLACE_CONFIG = {
             "va": "Narratives transmèdia originals creades pels estudiants"
           }
         },
-        "secondaryMetrics": [
-          {
-            "id": "autonomy-rating",
-            "value": 86,
-            "unit": "%",
-            "label": {
-              "es": "Participantes capacitados para replicarlo autónomamente",
-              "en": "Participants trained to replicate it autonomously",
-              "va": "Participants capacitats per a replicar-lo de manera autònoma"
-            }
-          },
-          {
-            "id": "license-savings",
-            "value": 800,
-            "unit": "EUR/licence",
-            "label": {
-              "es": "Ahorro en software propietario por sustitución por herramientas libres",
-              "en": "Proprietary software savings through open tools replacement",
-              "va": "Estalvi en software propietari per substitució per eines lliures"
-            }
-          }
-        ],
-        "verification": {
-          "status": "self-reported",
-          "verifiedBy": "Coordinación Máster Educación Artística UV",
-          "verifiedAt": "2026-04-30",
-          "method": {
-            "es": "Evaluación final de los portfolios docentes y cuestionario de autopercepción.",
-            "en": "Final assessment of teaching portfolios and self-perception questionnaire.",
-            "va": "Avaluació final dels portfolios docents i qüestionari d'autopercepció."
-          }
-        },
+        "secondaryMetrics": [],
+        "verification": null,
         "limitations": {
-          "es": "El uso local de SDXL requiere ordenadores con suficiente capacidad gráfica o servicios online alternativos.",
-          "en": "Local use of SDXL requires computers with sufficient graphics capacity or alternative online services.",
-          "va": "L'ús local de SDXL requereix ordinadors amb prou capacitat gràfica o serveis online alternatius."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
-      "transferability": {
-        "whyTransferable": {
-          "es": "Se basa por completo en herramientas de código abierto o accesos gratuitos, y su diseño metodológico se desacopla del contenido temático específico.",
-          "en": "It is entirely based on open-source or free-access tools, and its methodological design is decoupled from specific thematic content.",
-          "va": "Es basa completament en eines de codi obert o accesos gratuïts, i el seu disseny metodològic es desacobla del contingut temàtic específic."
-        },
-        "suitableFor": [
-          "teacher-training",
-          "cultural-organisations",
-          "vet-centres"
-        ],
-        "requirements": [
-          {
-            "label": {
-              "es": "Conectividad a internet y ordenadores de gama media-alta para inferencia local (o uso en la nube)",
-              "en": "Internet connectivity and medium-high end computers for local inference (or cloud use)",
-              "va": "Connectivitat a internet i ordinadors de gamma mitjana-alta per a inferència local (o ús al núvol)"
-            }
-          }
-        ],
-        "adaptationSteps": [
-          {
-            "label": {
-              "es": "Configuración del repositorio local de Stable Diffusion o selección de alternativas cloud libres",
-              "en": "Local Stable Diffusion repository configuration or selection of free cloud alternatives",
-              "va": "Configuració del repositori local de Stable Diffusion o selecció d'alternatives cloud lliures"
-            }
-          },
-          {
-            "label": {
-              "es": "Selección de la colección de partida (del IVAM o del propio centro educativo)",
-              "en": "Starting collection selection (from IVAM or the educational centre itself)",
-              "va": "Selecció de la col·lecció de partida (de l'IVAM o del propi centre educatiu)"
-            }
-          },
-          {
-            "label": {
-              "es": "Taller práctico de generación de prompts y estructuración narrativa transmedia",
-              "en": "Practical workshop on prompt generation and transmedia narrative structuring",
-              "va": "Taller pràctic de generació de prompts i estructuració narrativa transmèdia"
-            }
-          }
-        ],
-        "risks": [
-          {
-            "label": {
-              "es": "Sesgos intrínsecos de los modelos generativos de imagen y texto",
-              "en": "Intrinsic biases in generative image and text models",
-              "va": "Biaixos intrínsecs dels models generatius d'imatge i text"
-            }
-          }
-        ]
-      },
+      "transferability": null,
       "template": {
         "requiredBlocks": [
           "context",
@@ -14400,50 +13702,33 @@ export const MARKETPLACE_CONFIG = {
           "name": "Enertika, S.L."
         },
         "requester": null,
-        "leadTeam": {
-          "name": "Dpto. de Producto e Innovación, Enertika",
-          "role": {
-            "es": "Empresa origen — desarrollo de la herramienta y preparación del kit educativo",
-            "en": "Origin company — tool development and educational kit preparation",
-            "va": "Empresa origen — desenvolupament de l'eina i preparació del kit educatiu"
-          }
-        },
+        "leadTeam": null,
         "contact": null,
         "beneficiaries": [
           {
             "name": "IES Luis Vives (Valencia)",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro piloto — proyecto de auditoría energética en el módulo de Certificación Energética",
-              "en": "Pilot centre — energy audit project in the Energy Certification module",
-              "va": "Centre pilot — projecte d'auditoria energètica en el mòdul de Certificació Energètica"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "IES Salvador Gadea (Aldaia)",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro receptor — adaptación al módulo de Instalaciones en Edificación",
-              "en": "Receiving centre — adaptation to the Building Installations module",
-              "va": "Centre receptor — adaptació al mòdul d'Instal·lacions en Edificació"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         ]
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "institutional-readiness"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green"
-        ],
-        "policyCluster": [
-          "triple-transition",
-          "integrated-pedagogy",
-          "infrastructure-evidence"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -14464,10 +13749,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "levels": [],
-        "audience": [
-          "vet-centres",
-          "public-administration"
-        ],
+        "audience": [],
         "sdgs": [
           4,
           7,
@@ -14482,12 +13764,12 @@ export const MARKETPLACE_CONFIG = {
           {
             "name": "IES Luis Vives (Valencia)",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           },
           {
             "name": "IES Salvador Gadea (Aldaia)",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           }
         ]
       },
@@ -14499,9 +13781,9 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
-        "dataAvailability": "anonymised",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -14510,9 +13792,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "El dataset de auditorías ha sido anonimizado conforme al RGPD. La herramienta Enertika tiene propiedad intelectual protegida; el acceso educativo se gestiona mediante solicitud al equipo del caso.",
-          "en": "The audit dataset has been anonymised in accordance with GDPR. The Enertika tool has protected intellectual property; educational access is managed through a request to the case team.",
-          "va": "El dataset d'auditories ha sigut anonimitzat d'acord amb el RGPD. L'eina Enertika té propietat intel·lectual protegida; l'accés educatiu es gestiona mitjançant sol·licitud a l'equip del cas."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -14522,7 +13804,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -14547,9 +13829,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Ver caso",
-            "en": "View case",
-            "va": "Veure cas"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -14566,131 +13848,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "externalLinks": [
-          {
-            "id": "ce3x-mincotur",
-            "type": "website",
-            "label": {
-              "es": "CE3X — Herramienta oficial de certificación energética del Ministerio",
-              "en": "CE3X — Official Ministry energy certification tool",
-              "va": "CE3X — Eina oficial de certificació energètica del Ministeri"
-            },
-            "url": "https://www.idae.es/tecnologia-y-financiacion/eficiencia-energetica/edificios/ce3x"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/cases/auditoria-energetica-ia-hou/",
-        "items": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso",
-              "en": "Case brief",
-              "va": "Fitxa del cas"
-            },
-            "description": {
-              "es": "Resumen ejecutivo del caso con resultados de impacto, actores y condiciones de replicación.",
-              "en": "Executive summary with impact results, actors and replication conditions.",
-              "va": "Resum executiu del cas amb resultats d'impacte, actors i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-auditoria-energetica-ia-edificacion.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "3 casos de estudio con solución y rúbrica",
-              "en": "3 case studies with solution and rubric",
-              "va": "3 casos d'estudi amb solució i rúbrica"
-            },
-            "description": {
-              "es": "Enunciados, datos de entrada, informe de referencia y rúbrica de evaluación para los tres casos de estudio incluidos en el kit.",
-              "en": "Prompts, input data, reference report and evaluation rubric for the three case studies included in the kit.",
-              "va": "Enunciats, dades d'entrada, informe de referència i rúbrica d'avaluació per als tres casos d'estudi inclosos en el kit."
-            },
-            "files": [
-              {
-                "file": "casos-estudio-auditoria-energetica-ia-solucion.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-SA 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          },
-          {
-            "id": "replication-guide",
-            "type": "replication-guide",
-            "title": {
-              "es": "Guía de replicación — Acceso y uso de la herramienta educativa",
-              "en": "Replication guide — Access and use of the educational tool",
-              "va": "Guia de replicació — Accés i ús de l'eina educativa"
-            },
-            "description": {
-              "es": "Instrucciones para solicitar acceso a la instancia educativa, navegar la interfaz y utilizar el dataset anonimizado con los alumnos.",
-              "en": "Instructions for requesting access to the educational instance, navigating the interface and using the anonymised dataset with students.",
-              "va": "Instruccions per sol·licitar accés a la instància educativa, navegar la interfície i usar el dataset anonimitzat amb els alumnes."
-            },
-            "files": [
-              {
-                "file": "guia-replicacion-herramienta-auditoria-energetica.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "outputs": null,
       "process": null,
-      "hasDownloads": true,
-      "downloadCount": 3,
-      "cardDownloads": [
-        {
-          "id": "case-brief",
-          "type": "case-brief",
-          "title": {
-            "es": "Ficha del caso",
-            "en": "Case brief",
-            "va": "Fitxa del cas"
-          },
-          "description": {
-            "es": "Resumen ejecutivo del caso con resultados de impacto, actores y condiciones de replicación.",
-            "en": "Executive summary with impact results, actors and replication conditions.",
-            "va": "Resum executiu del cas amb resultats d'impacte, actors i condicions de replicació."
-          },
-          "files": [
-            {
-              "file": "ficha-caso-auditoria-energetica-ia-edificacion.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "case",
@@ -14703,7 +13871,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": {
@@ -14725,8 +13893,8 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
-            "relations": true,
+            "trackA": true,
+            "relations": false,
             "evidence": true,
             "transferability": true,
             "summary": true,
@@ -14736,34 +13904,7 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "caseStudy": {
-        "type": "adaptation",
-        "originContext": {
-          "es": "Enertika comercializa un servicio de auditoría energética doméstica express en 48 horas que combina OCR de facturas eléctricas y de gas, análisis de imagen de fachada con modelo de visión por computador para detectar transmitancia y puentes térmicos, y un modelo de recomendación que prioriza actuaciones por ROI esperado y normativa CE3X.",
-          "en": "Enertika markets an express home energy audit service in 48 hours combining OCR of electricity and gas bills, facade image analysis with a computer vision model to detect transmittance and thermal bridges, and a recommendation model that prioritises actions by expected ROI and CE3X regulation.",
-          "va": "Enertika comercialitza un servei d'auditoria energètica domèstica express en 48 hores que combina OCR de factures elèctriques i de gas, anàlisi d'imatge de façana amb model de visió per computador per detectar transmitància i ponts tèrmics, i un model de recomanació que prioritza actuacions per ROI esperat i normativa CE3X."
-        },
-        "transferContext": {
-          "es": "El módulo de Certificación Energética de los ciclos de Edificación trabaja con la herramienta CE3X del Ministerio, que es potente pero compleja y no automatiza el análisis de imagen ni la generación del informe de mejora. Los alumnos aprenden a usar CE3X pero raramente entienden cómo la IA puede apoyar el proceso de auditoría real.",
-          "en": "The Energy Certification module in Building cycles works with the Ministry's CE3X tool, which is powerful but complex and does not automate image analysis or improvement report generation. Students learn to use CE3X but rarely understand how AI can support the real audit process.",
-          "va": "El mòdul de Certificació Energètica dels cicles d'Edificació treballa amb l'eina CE3X del Ministeri, que és potent però complexa i no automatitza l'anàlisi d'imatge ni la generació de l'informe de millora. Els alumnes aprenen a usar CE3X però rarament entenen com la IA pot suportar el procés d'auditoria real."
-        },
-        "intervention": {
-          "es": "Se desarrolló una versión educativa de la herramienta Enertika con interfaz Streamlit, accesible desde navegador. El kit incluye: (1) dataset anonimizado de 300 auditorías con facturas, fotos y resultados reales, (2) 3 casos de estudio guiados (vivienda unifamiliar años 70, bloque plurifamiliar años 90, edificio rehabilitado 2015), (3) ejercicios de validación cruzada del modelo vs. CE3X tradicional, (4) rúbrica de evaluación del informe de auditoría.",
-          "en": "An educational version of the Enertika tool was developed with a Streamlit interface, accessible from the browser. The kit includes: (1) anonymised dataset of 300 audits with real bills, photos and results, (2) 3 guided case studies (1970s single-family home, 1990s apartment block, 2015 refurbished building), (3) cross-validation exercises of the model vs. traditional CE3X, (4) audit report evaluation rubric.",
-          "va": "Es va desenvolupar una versió educativa de l'eina Enertika amb interfície Streamlit, accessible des del navegador. El kit inclou: (1) dataset anonimitzat de 300 auditories amb factures, fotos i resultats reals, (2) 3 casos d'estudi guiats (habitatge unifamiliar anys 70, bloc plurifamiliar anys 90, edifici rehabilitat 2015), (3) exercicis de validació creuada del model vs. CE3X tradicional, (4) rúbrica d'avaluació de l'informe d'auditoria."
-        },
-        "transferPath": {
-          "es": "Jornada de formación en Enertika para docentes → despliegue web de la herramienta en el aula → 3 casos de estudio guiados → proyecto de auditoría real de una vivienda del entorno del centro → informe final evaluado con rúbrica compartida con Enertika.",
-          "en": "Teacher training day at Enertika → web deployment of the tool in the classroom → 3 guided case studies → real audit project of a home near the centre → final report assessed with a rubric shared with Enertika.",
-          "va": "Jornada de formació a Enertika per a docents → desplegament web de l'eina a l'aula → 3 casos d'estudi guiats → projecte d'auditoria real d'un habitatge de l'entorn del centre → informe final avaluat amb rúbrica compartida amb Enertika."
-        },
-        "trackBValue": {
-          "es": "Interfaz Streamlit lista para desplegar, dataset de 300 auditorías anonimizadas, 3 casos de estudio resueltos, rúbrica de informe de auditoría y guía de comparación modelo IA vs CE3X. No requiere instalación local; funciona en navegador.",
-          "en": "Ready-to-deploy Streamlit interface, dataset of 300 anonymised audits, 3 solved case studies, audit report rubric and AI model vs CE3X comparison guide. Requires no local installation; runs in browser.",
-          "va": "Interfície Streamlit llesta per desplegar, dataset de 300 auditories anonimitzades, 3 casos d'estudi resolts, rúbrica d'informe d'auditoria i guia de comparació model IA vs CE3X. No requereix instal·lació local; funciona en navegador."
-        }
-      },
+      "caseStudy": null,
       "evidence": {
         "headline": {
           "es": "Reducción media del 27% en el tiempo de elaboración de un informe de certificación energética completo por parte de los alumnos.",
@@ -14780,96 +13921,15 @@ export const MARKETPLACE_CONFIG = {
             "va": "Reducció en temps d'elaboració de l'informe de certificació energètica"
           }
         },
-        "secondaryMetrics": [
-          {
-            "id": "report-quality-score",
-            "value": 8.4,
-            "unit": "/10",
-            "label": {
-              "es": "Puntuación media del informe de auditoría evaluado por técnicos de Enertika",
-              "en": "Average audit report score evaluated by Enertika technicians",
-              "va": "Puntuació mitjana de l'informe d'auditoria avaluat per tècnics d'Enertika"
-            }
-          },
-          {
-            "id": "avg-roi-identified",
-            "value": 4200,
-            "unit": "EUR/vivienda",
-            "label": {
-              "es": "Ahorro energético medio identificado por vivienda en los proyectos del alumnado",
-              "en": "Average energy saving identified per home in student projects",
-              "va": "Estalvi energètic mitjà identificat per habitatge en els projectes de l'alumnat"
-            }
-          }
-        ],
-        "verification": {
-          "status": "reviewed",
-          "verifiedBy": "AI-STEAM Comité Técnico Hábitat + Enertika",
-          "verifiedAt": "2026-04-10",
-          "method": {
-            "es": "Revisión de informes finales por técnicos certificadores de Enertika y comparación con tiempos de referencia del módulo de Certificación Energética.",
-            "en": "Final report review by Enertika certified technicians and comparison with reference times from the Energy Certification module.",
-            "va": "Revisió d'informes finals per tècnics certificadors d'Enertika i comparació amb temps de referència del mòdul de Certificació Energètica."
-          }
-        },
+        "secondaryMetrics": [],
+        "verification": null,
         "limitations": {
-          "es": "La herramienta está calibrada para tipologías constructivas mediterráneas (mampostería, hormigón, fachada ventilada). La precisión del modelo de imagen puede reducirse con fachadas muy deterioradas o con vegetación que tape la fachada.",
-          "en": "The tool is calibrated for Mediterranean building typologies (masonry, concrete, ventilated facade). Image model accuracy may decrease with heavily deteriorated facades or vegetation covering the facade.",
-          "va": "L'eina està calibrada per a tipologies constructives mediterrànies (maçoneria, formigó, façana ventilada). La precisió del model d'imatge pot reduir-se amb façanes molt deteriorades o amb vegetació que tapi la façana."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
-      "transferability": {
-        "whyTransferable": {
-          "es": "La interfaz Streamlit no requiere instalación y es accesible desde cualquier dispositivo con navegador. Los tres casos de estudio cubren las tipologías constructivas más comunes en España (años 70-90 y rehabilitada).",
-          "en": "The Streamlit interface requires no installation and is accessible from any browser-enabled device. The three case studies cover the most common building typologies in Spain (1970s-90s and refurbished).",
-          "va": "La interfície Streamlit no requereix instal·lació i és accessible des de qualsevol dispositiu amb navegador. Els tres casos d'estudi cobreixen les tipologies constructives més comunes a Espanya (anys 70-90 i rehabilitada)."
-        },
-        "suitableFor": [
-          "vet-centres",
-          "public-administration"
-        ],
-        "requirements": [
-          {
-            "label": {
-              "es": "Acceso a internet (la herramienta es web; no requiere instalación local)",
-              "en": "Internet access (the tool is web-based; no local installation required)",
-              "va": "Accés a internet (l'eina és web; no requereix instal·lació local)"
-            }
-          },
-          {
-            "label": {
-              "es": "Conocimiento básico del proceso de certificación energética CE3X (previo al módulo)",
-              "en": "Basic knowledge of the CE3X energy certification process (prior to the module)",
-              "va": "Coneixement bàsic del procés de certificació energètica CE3X (previ al mòdul)"
-            }
-          }
-        ],
-        "adaptationSteps": [
-          {
-            "label": {
-              "es": "Solicitar acceso a la instancia educativa de la herramienta a través del formulario del caso",
-              "en": "Request access to the educational instance of the tool via the case contact form",
-              "va": "Sol·licitar accés a la instància educativa de l'eina mitjançant el formulari del cas"
-            }
-          },
-          {
-            "label": {
-              "es": "Adaptar el caso de estudio de proyecto final a una vivienda real próxima al centro",
-              "en": "Adapt the final project case study to a real home near the centre",
-              "va": "Adaptar el cas d'estudi del projecte final a un habitatge real proper al centre"
-            }
-          }
-        ],
-        "risks": [
-          {
-            "label": {
-              "es": "La instancia educativa de la herramienta tiene capacidad limitada; coordinar el calendario de uso con Enertika",
-              "en": "The educational instance of the tool has limited capacity; coordinate the usage calendar with Enertika",
-              "va": "La instància educativa de l'eina té capacitat limitada; coordinar el calendari d'ús amb Enertika"
-            }
-          }
-        ]
-      },
+      "transferability": null,
       "template": {
         "requiredBlocks": [
           "context",
@@ -14959,50 +14019,33 @@ export const MARKETPLACE_CONFIG = {
           "name": "IVIA — Institut Valencià d'Investigacions Agràries"
         },
         "requester": null,
-        "leadTeam": {
-          "name": "IVIA — Equipo de Visión por Computador y Protección de Cultivos",
-          "role": {
-            "es": "Investigación origen y validación del dataset",
-            "en": "Origin research and dataset validation",
-            "va": "Recerca origen i validació del dataset"
-          }
-        },
+        "leadTeam": null,
         "contact": null,
         "beneficiaries": [
           {
             "name": "CIFP Medi Natural",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Adaptación didáctica y pilotaje",
-              "en": "Didactic adaptation and piloting",
-              "va": "Adaptació didàctica i pilotatge"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "Cooperativa Anecoop",
-            "type": "company",
+            "type": "",
             "role": {
-              "es": "Colaborador en pruebas de campo y transferencia",
-              "en": "Collaborator in field tests and transfer",
-              "va": "Col·laborador en proves de camp i transferència"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         ]
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "responsible-ai"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green"
-        ],
-        "policyCluster": [
-          "triple-transition",
-          "integrated-pedagogy",
-          "infrastructure-evidence"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -15026,10 +14069,7 @@ export const MARKETPLACE_CONFIG = {
           "vet",
           "master"
         ],
-        "audience": [
-          "vet-centres",
-          "research-centres"
-        ],
+        "audience": [],
         "sdgs": [
           2,
           4,
@@ -15043,12 +14083,12 @@ export const MARKETPLACE_CONFIG = {
           {
             "name": "CIFP Medi Natural",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           },
           {
             "name": "Cooperativa Anecoop",
             "sector": "",
-            "type": "company"
+            "type": ""
           }
         ]
       },
@@ -15060,9 +14100,9 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY-NC-SA 4.0",
-        "codeLicense": "MIT",
-        "dataAvailability": "open",
+        "pageLicense": "",
+        "codeLicense": "",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -15071,9 +14111,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "El dataset no puede usarse con fines comerciales sin acuerdo previo con el IVIA.",
-          "en": "The dataset cannot be used for commercial purposes without prior agreement with IVIA.",
-          "va": "El dataset no pot usar-se amb fins comercials sense acord previ amb l'IVIA."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -15083,7 +14123,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY-NC-SA 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -15105,24 +14145,17 @@ export const MARKETPLACE_CONFIG = {
         "url": ""
       },
       "externalFlow": {
-        "enabled": true,
+        "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Replicar caso",
-            "en": "Replicate case",
-            "va": "Replicar cas"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
         },
-        "secondaryAction": {
-          "label": {
-            "es": "Contactar para adaptación",
-            "en": "Contact for adaptation",
-            "va": "Contactar per a adaptació"
-          },
-          "url": ""
-        },
+        "secondaryAction": null,
         "fallbackAction": null,
         "fallbackContact": null
       },
@@ -15134,180 +14167,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "externalLinks": [
-          {
-            "id": "original-model",
-            "type": "website",
-            "label": {
-              "es": "Publicación original del modelo IVIA",
-              "en": "Original IVIA model publication",
-              "va": "Publicació original del model IVIA"
-            },
-            "url": "https://www.ivia.gva.es",
-            "license": "other"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/cases/ia-deteccion-plagas-agr/",
-        "items": [
-          {
-            "id": "dataset-sample",
-            "type": "dataset-sample",
-            "title": {
-              "es": "Dataset etiquetado COCO-lite",
-              "en": "COCO-lite labelled dataset",
-              "va": "Dataset etiquetat COCO-lite"
-            },
-            "description": {
-              "es": "Selección de 4.200 imágenes de plagas anotadas.",
-              "en": "Selection of 4,200 annotated pest images.",
-              "va": "Selecció de 4.200 imatges de plagues anotades."
-            },
-            "files": [
-              {
-                "file": "dataset-coco-lite-plagas.zip",
-                "format": "zip",
-                "language": "mixed",
-                "license": "CC BY-NC-SA 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "source-code",
-            "type": "source-code",
-            "title": {
-              "es": "Cuaderno Jupyter de inferencia",
-              "en": "Jupyter notebook for inference",
-              "va": "Quadern Jupyter d'inferència"
-            },
-            "description": {
-              "es": "Pipeline completo de inferencia YOLOv8 en CPU.",
-              "en": "Full YOLOv8 inference pipeline on CPU.",
-              "va": "Pipeline complet d'inferència YOLOv8 en CPU."
-            },
-            "files": [
-              {
-                "file": "inference-pipeline.ipynb",
-                "format": "ipynb",
-                "language": "es",
-                "license": "MIT"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Unidad didáctica de 4 sesiones",
-              "en": "4-session teaching unit",
-              "va": "Unitat didàctica de 4 sessions"
-            },
-            "description": {
-              "es": "Guía pedagógica para el docente y ejercicios para el alumnado.",
-              "en": "Pedagogical guide for teachers and student exercises.",
-              "va": "Guia pedagògica per al docent i exercicis per a l'alumnat."
-            },
-            "files": [
-              {
-                "file": "unidad-didactica-deteccion-plagas.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-NC-SA 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "outputs": null,
       "process": null,
-      "hasDownloads": true,
-      "downloadCount": 3,
-      "cardDownloads": [
-        {
-          "id": "dataset-sample",
-          "type": "dataset-sample",
-          "title": {
-            "es": "Dataset etiquetado COCO-lite",
-            "en": "COCO-lite labelled dataset",
-            "va": "Dataset etiquetat COCO-lite"
-          },
-          "description": {
-            "es": "Selección de 4.200 imágenes de plagas anotadas.",
-            "en": "Selection of 4,200 annotated pest images.",
-            "va": "Selecció de 4.200 imatges de plagues anotades."
-          },
-          "files": [
-            {
-              "file": "dataset-coco-lite-plagas.zip",
-              "format": "zip",
-              "language": "mixed",
-              "license": "CC BY-NC-SA 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        },
-        {
-          "id": "source-code",
-          "type": "source-code",
-          "title": {
-            "es": "Cuaderno Jupyter de inferencia",
-            "en": "Jupyter notebook for inference",
-            "va": "Quadern Jupyter d'inferència"
-          },
-          "description": {
-            "es": "Pipeline completo de inferencia YOLOv8 en CPU.",
-            "en": "Full YOLOv8 inference pipeline on CPU.",
-            "va": "Pipeline complet d'inferència YOLOv8 en CPU."
-          },
-          "files": [
-            {
-              "file": "inference-pipeline.ipynb",
-              "format": "ipynb",
-              "language": "es",
-              "license": "MIT"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        },
-        {
-          "id": "teaching-module",
-          "type": "teaching-module",
-          "title": {
-            "es": "Unidad didáctica de 4 sesiones",
-            "en": "4-session teaching unit",
-            "va": "Unitat didàctica de 4 sessions"
-          },
-          "description": {
-            "es": "Guía pedagógica para el docente y ejercicios para el alumnado.",
-            "en": "Pedagogical guide for teachers and student exercises.",
-            "va": "Guia pedagògica per al docent i exercicis per a l'alumnat."
-          },
-          "files": [
-            {
-              "file": "unidad-didactica-deteccion-plagas.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY-NC-SA 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "case",
@@ -15320,7 +14190,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": {
@@ -15342,8 +14212,8 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
-            "relations": true,
+            "trackA": true,
+            "relations": false,
             "evidence": true,
             "transferability": true,
             "summary": true,
@@ -15353,34 +14223,7 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "caseStudy": {
-        "type": "adaptation",
-        "originContext": {
-          "es": "El IVIA desarrolló un modelo de visión por computador (YOLOv8 fine-tuned) para detectar Tuta absoluta en imágenes de hoja de tomate. El modelo se usaba internamente en campo.",
-          "en": "IVIA developed a computer vision model (fine-tuned YOLOv8) to detect Tuta absoluta in tomato leaf images, used internally in the field.",
-          "va": "L'IVIA va desenvolupar un model de visió per computador (YOLOv8 fine-tuned) per detectar Tuta absoluta en imatges de fulla de tomàquet, usat internament en camp."
-        },
-        "transferContext": {
-          "es": "El CIFP Medi Natural propuso adaptarlo para que estudiantes de FP pudieran entender y aplicar detección automática de plagas sin necesidad de infraestructura de investigación.",
-          "en": "CIFP Medi Natural proposed adapting it so VET students could understand and apply automatic pest detection without research infrastructure.",
-          "va": "El CIFP Medi Natural va proposar adaptar-lo perquè estudiants de FP poguessen entendre i aplicar detecció automàtica de plagues sense infraestructura de recerca."
-        },
-        "intervention": {
-          "es": "Reducción del dataset de investigación a un subconjunto balanceado optimizado para CPU y desarrollo de un cuaderno Jupyter interactivo paso a paso para el aula.",
-          "en": "Reduction of the research dataset to a balanced subset optimized for CPU and development of a step-by-step interactive Jupyter notebook for the classroom.",
-          "va": "Reducció del dataset de recerca a un subconjunt balancejat optimitzat per a CPU i desenvolupament d'un quadern Jupyter interactiu pas a pas per a l'aula."
-        },
-        "transferPath": {
-          "es": "Del centro de investigación de excelencia IVIA al aula del CIFP Medi Natural con la colaboración de Anecoop para contraste de campo.",
-          "en": "From the IVIA research centre of excellence to the CIFP Medi Natural classroom with Anecoop's collaboration for field contrast.",
-          "va": "Del centre de recerca d'excel·lència IVIA a l'aula del CIFP Medi Natural amb la col·laboració d'Anecoop per a contrast de camp."
-        },
-        "trackBValue": {
-          "es": "Dataset etiquetado de 4.200 imágenes de plagas y cuaderno Jupyter con pipeline de inferencia adaptados para uso sin GPU. Permite introducir visión por computador en aulas de FP sin infraestructura de investigación.",
-          "en": "Labelled dataset of 4,200 pest images and Jupyter notebook with inference pipeline adapted for CPU-only use. Enables computer vision in VET classrooms without research infrastructure.",
-          "va": "Dataset etiquetat de 4.200 imatges de plagues i quadern Jupyter amb pipeline d'inferència adaptat per a ús sense GPU. Permet introduir visió per computador en aules de FP sense infraestructura de recerca."
-        }
-      },
+      "caseStudy": null,
       "evidence": {
         "headline": {
           "es": "Modelo adaptado con 87% de precisión en CPU estándar implementado en 3 grupos piloto.",
@@ -15397,103 +14240,15 @@ export const MARKETPLACE_CONFIG = {
             "va": "Imatges etiquetades disponibles per a ús educatiu"
           }
         },
-        "secondaryMetrics": [
-          {
-            "id": "model-accuracy",
-            "value": 87,
-            "unit": "%",
-            "label": {
-              "es": "Precisión en condiciones de aula",
-              "en": "Accuracy under classroom conditions",
-              "va": "Precisió en condicions d'aula"
-            }
-          },
-          {
-            "id": "estimated-savings",
-            "value": 18000,
-            "unit": "EUR",
-            "label": {
-              "es": "Ahorro estimado de desarrollo de dataset por centro",
-              "en": "Estimated dataset development savings per centre",
-              "va": "Estalvi estimat de desenvolupament de dataset per centre"
-            }
-          }
-        ],
-        "verification": {
-          "status": "verified",
-          "verifiedBy": "Comité Técnico AI-STEAM",
-          "verifiedAt": "2026-04-20",
-          "method": {
-            "es": "Validación de los notebooks y del dataset en el repositorio oficial.",
-            "en": "Validation of the notebooks and the dataset in the official repository.",
-            "va": "Validació dels notebooks i del dataset en el repositori oficial."
-          }
-        },
+        "secondaryMetrics": [],
+        "verification": null,
         "limitations": {
-          "es": "El dataset se enfoca en Tuta absoluta; otras plagas requieren ampliación de fotos locales.",
-          "en": "The dataset focuses on Tuta absoluta; other pests require local photo expansion.",
-          "va": "El dataset s'enfoca en Tuta absoluta; altres plagues requereixen ampliació de fotos locals."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
-      "transferability": {
-        "whyTransferable": {
-          "es": "Al funcionar en CPU estándar sin GPU, cualquier aula con ordenadores básicos y Python puede replicar la práctica completa utilizando el dataset abierto.",
-          "en": "As it runs on a standard CPU without GPU, any classroom with basic computers and Python can replicate the entire practice using the open dataset.",
-          "va": "En funcionar en CPU estàndard sense GPU, qualsevol aula amb ordinadors bàsics i Python pot replicar la pràctica completa utilitzant el dataset obert."
-        },
-        "suitableFor": [
-          "vet-centres",
-          "agrifood-sector"
-        ],
-        "requirements": [
-          {
-            "label": {
-              "es": "Aula de ordenadores con Python / Jupyter Notebook",
-              "en": "Computer lab with Python / Jupyter Notebook",
-              "va": "Aula d'ordinadors amb Python / Jupyter Notebook"
-            }
-          },
-          {
-            "label": {
-              "es": "Conexión a internet básica para descarga inicial del dataset (opcional si se descarga previamente en local)",
-              "en": "Basic internet connection for initial dataset download (optional if pre-downloaded locally)",
-              "va": "Connexió a internet bàsica per a descàrrega inicial del dataset (opcional si es descarrega prèviament en local)"
-            }
-          }
-        ],
-        "adaptationSteps": [
-          {
-            "label": {
-              "es": "Descarga de los materiales didácticos y del dataset COCO-lite",
-              "en": "Download of the didactic materials and COCO-lite dataset",
-              "va": "Descàrrega dels materials didàctics i del dataset COCO-lite"
-            }
-          },
-          {
-            "label": {
-              "es": "Configuración del entorno de ejecución (Jupyter) en las máquinas de los alumnos",
-              "en": "Execution environment setup (Jupyter) on students' machines",
-              "va": "Configuració de l'entorn de execució (Jupyter) a les màquines dels alumnes"
-            }
-          },
-          {
-            "label": {
-              "es": "Realización de la práctica guiada de inferencia y etiquetado",
-              "en": "Execution of the guided inference and labelling practice",
-              "va": "Realització de la pràctica guiada d'inferència i etiquetatge"
-            }
-          }
-        ],
-        "risks": [
-          {
-            "label": {
-              "es": "Familiaridad inicial de los alumnos con cuadernos Jupyter y terminal",
-              "en": "Initial students' familiarity with Jupyter notebooks and terminal",
-              "va": "Familiaritat inicial dels alumnes amb quaderns Jupyter i terminal"
-            }
-          }
-        ]
-      },
+      "transferability": null,
       "template": {
         "requiredBlocks": [
           "context",
@@ -15887,49 +14642,33 @@ export const MARKETPLACE_CONFIG = {
           "name": "Renault España — Centro de Ingeniería de Valladolid"
         },
         "requester": null,
-        "leadTeam": {
-          "name": "Dpto. ADAS & Autonomous Driving, Renault España",
-          "role": {
-            "es": "Empresa origen — adaptación del simulador y formación de docentes",
-            "en": "Origin company — simulator adaptation and teacher training",
-            "va": "Empresa origen — adaptació del simulador i formació de docents"
-          }
-        },
+        "leadTeam": null,
         "contact": null,
         "beneficiaries": [
           {
             "name": "IES Cavanilles (Valencia)",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro piloto principal — integración en el módulo de Sistemas de Ayuda a la Conducción",
-              "en": "Main pilot centre — integration in the Driver Assistance Systems module",
-              "va": "Centre pilot principal — integració en el mòdul de Sistemes d'Ajuda a la Conducció"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "IES La Senia (Tortosa)",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro receptor — replicación autónoma",
-              "en": "Receiving centre — autonomous replication",
-              "va": "Centre receptor — replicació autònoma"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         ]
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "maker-steam"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "infrastructure-evidence"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -15952,10 +14691,7 @@ export const MARKETPLACE_CONFIG = {
         "levels": [
           "vet"
         ],
-        "audience": [
-          "vet-centres",
-          "industry-partners"
-        ],
+        "audience": [],
         "sdgs": [
           4,
           9,
@@ -15969,12 +14705,12 @@ export const MARKETPLACE_CONFIG = {
           {
             "name": "IES Cavanilles (Valencia)",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           },
           {
             "name": "IES La Senia (Tortosa)",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           }
         ]
       },
@@ -15986,9 +14722,9 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
-        "codeLicense": "MIT",
-        "dataAvailability": "not-applicable",
+        "pageLicense": "",
+        "codeLicense": "",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -15997,9 +14733,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "El entorno CARLA configurado se publica bajo licencia MIT. Los escenarios urbanos están modelados con datos cartográficos de OpenStreetMap (ODbL).",
-          "en": "The configured CARLA environment is published under MIT licence. Urban scenarios are modelled with OpenStreetMap cartographic data (ODbL).",
-          "va": "L'entorn CARLA configurat es publica sota llicència MIT. Els escenaris urbans estan modelats amb dades cartogràfiques d'OpenStreetMap (ODbL)."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -16009,7 +14745,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -16034,9 +14770,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Ver caso",
-            "en": "View case",
-            "va": "Veure cas"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -16053,131 +14789,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "externalLinks": [
-          {
-            "id": "carla-simulator",
-            "type": "website",
-            "label": {
-              "es": "CARLA — Simulador de conducción autónoma de código abierto",
-              "en": "CARLA — Open-source autonomous driving simulator",
-              "va": "CARLA — Simulador de conducció autònoma de codi obert"
-            },
-            "url": "https://carla.org"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/cases/simulacion-conduccion-autonoma-mob/",
-        "items": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso",
-              "en": "Case brief",
-              "va": "Fitxa del cas"
-            },
-            "description": {
-              "es": "Resumen ejecutivo con resultados, actores clave y condiciones de replicación.",
-              "en": "Executive summary with results, key actors and replication conditions.",
-              "va": "Resum executiu amb resultats, actors clau i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-simulacion-conduccion-autonoma.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "replication-guide",
-            "type": "replication-guide",
-            "title": {
-              "es": "Guía de instalación de CARLA para centros FP",
-              "en": "CARLA installation guide for VET centres",
-              "va": "Guia d'instal·lació de CARLA per a centres FP"
-            },
-            "description": {
-              "es": "Instrucciones detalladas de instalación en Linux y Windows, resolución de errores frecuentes y configuración de los escenarios preconfigurados.",
-              "en": "Detailed installation instructions for Linux and Windows, common error resolution and configuration of pre-configured scenarios.",
-              "va": "Instruccions detallades d'instal·lació en Linux i Windows, resolució d'errors freqüents i configuració dels escenaris preconfigurats."
-            },
-            "files": [
-              {
-                "file": "guia-instalacion-carla-fp-transporte.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          },
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Guión de los 6 retos con rúbricas",
-              "en": "6-challenge script with rubrics",
-              "va": "Guió dels 6 reptes amb rúbriques"
-            },
-            "description": {
-              "es": "Descripción de cada reto, criterios de evaluación, código Python de referencia y discusión de aspectos éticos.",
-              "en": "Description of each challenge, evaluation criteria, reference Python code and discussion of ethical aspects.",
-              "va": "Descripció de cada repte, criteris d'avaluació, codi Python de referència i discussió d'aspectes ètics."
-            },
-            "files": [
-              {
-                "file": "guion-retos-carla-conduccion-autonoma-fp.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-SA 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "outputs": null,
       "process": null,
-      "hasDownloads": true,
-      "downloadCount": 3,
-      "cardDownloads": [
-        {
-          "id": "case-brief",
-          "type": "case-brief",
-          "title": {
-            "es": "Ficha del caso",
-            "en": "Case brief",
-            "va": "Fitxa del cas"
-          },
-          "description": {
-            "es": "Resumen ejecutivo con resultados, actores clave y condiciones de replicación.",
-            "en": "Executive summary with results, key actors and replication conditions.",
-            "va": "Resum executiu amb resultats, actors clau i condicions de replicació."
-          },
-          "files": [
-            {
-              "file": "ficha-caso-simulacion-conduccion-autonoma.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "case",
@@ -16190,7 +14812,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": {
@@ -16212,8 +14834,8 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
-            "relations": true,
+            "trackA": true,
+            "relations": false,
             "evidence": true,
             "transferability": true,
             "summary": true,
@@ -16223,34 +14845,7 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "caseStudy": {
-        "type": "adaptation",
-        "originContext": {
-          "es": "El equipo de ADAS de Renault España usa el simulador CARLA con ROS 2 para validar algoritmos de conducción autónoma antes de trasladarlos a vehículos de prueba reales. El entorno incluye mapas urbanos realistas, tráfico generado proceduralmente y sensores simulados (LiDAR, cámara, radar).",
-          "en": "Renault España's ADAS team uses the CARLA simulator with ROS 2 to validate autonomous driving algorithms before moving them to real test vehicles. The environment includes realistic urban maps, procedurally generated traffic and simulated sensors (LiDAR, camera, radar).",
-          "va": "L'equip d'ADAS de Renault Espanya usa el simulador CARLA amb ROS 2 per validar algorismes de conducció autònoma abans de traslladar-los a vehicles de prova reals. L'entorn inclou mapes urbans realistes, trànsit generat proceduralment i sensors simulats (LiDAR, càmera, radar)."
-        },
-        "transferContext": {
-          "es": "Los ciclos de FP de Transporte y Logística abordan los sistemas ADAS de forma teórica o con diagnóstico de vehículos ya fabricados. Los alumnos nunca tienen la oportunidad de entender cómo se diseña y valida un sistema de asistencia a la conducción desde la perspectiva de la ingeniería.",
-          "en": "Transport and Logistics VET cycles address ADAS systems theoretically or through diagnostics of already-manufactured vehicles. Students never have the opportunity to understand how a driver assistance system is designed and validated from an engineering perspective.",
-          "va": "Els cicles de FP de Transport i Logística aborden els sistemes ADAS de forma teòrica o amb diagnòstic de vehicles ja fabricats. Els alumnes mai no tenen l'oportunitat d'entendre com es dissenya i valida un sistema d'assistència a la conducció des de la perspectiva de l'enginyeria."
-        },
-        "intervention": {
-          "es": "Se creó una versión educativa del entorno CARLA con 3 escenarios preconfigurados (ciudad, autovía, zona escolar), una interfaz simplificada en Python para programar comportamientos básicos de conducción autónoma y 6 retos evaluables: frenada de emergencia, detección de peatones, respeto de semáforos, adelantamiento seguro, aparcamiento automático y gestión de rotondas.",
-          "en": "An educational version of the CARLA environment was created with 3 pre-configured scenarios (city, motorway, school zone), a simplified Python interface for programming basic autonomous driving behaviours and 6 assessable challenges: emergency braking, pedestrian detection, traffic light compliance, safe overtaking, automatic parking and roundabout management.",
-          "va": "Es va crear una versió educativa de l'entorn CARLA amb 3 escenaris preconfigurats (ciutat, autovia, zona escolar), una interfície simplificada en Python per programar comportaments bàsics de conducció autònoma i 6 reptes avaluables: frenada d'emergència, detecció de vianants, respecte de semàfors, avançament segur, aparcament automàtic i gestió de rotondes."
-        },
-        "transferPath": {
-          "es": "Formación de 1 jornada para docentes en Renault → guía de instalación autónoma → 6 sesiones en el aula de informática → competición interna entre grupos → presentación de resultados y reflexión sobre ética del vehículo autónomo.",
-          "en": "1-day teacher training at Renault → autonomous installation guide → 6 sessions in the computer classroom → internal group competition → results presentation and reflection on autonomous vehicle ethics.",
-          "va": "Formació d'1 jornada per a docents a Renault → guia d'instal·lació autònoma → 6 sessions a l'aula d'informàtica → competició interna entre grups → presentació de resultats i reflexió sobre ètica del vehicle autònom."
-        },
-        "trackBValue": {
-          "es": "Entorno CARLA preconfigurado con 3 escenarios españoles, 6 retos evaluables, interfaz Python simplificada y rúbrica de evaluación por reto. Adaptable a cualquier ciclo de Transporte o Automoción que quiera incorporar IA en su currículo.",
-          "en": "Pre-configured CARLA environment with 3 Spanish scenarios, 6 assessable challenges, simplified Python interface and per-challenge evaluation rubric. Adaptable to any Transport or Automotive cycle seeking to incorporate AI into its curriculum.",
-          "va": "Entorn CARLA preconfigurat amb 3 escenaris espanyols, 6 reptes avaluables, interfície Python simplificada i rúbrica d'avaluació per repte. Adaptable a qualsevol cicle de Transport o Automoció que vullga incorporar IA en el seu currículum."
-        }
-      },
+      "caseStudy": null,
       "evidence": {
         "headline": {
           "es": "5 centros replicaron el entorno de forma autónoma en menos de 4 horas; los alumnos completan los 6 retos con un 83% de tasa de éxito.",
@@ -16267,95 +14862,15 @@ export const MARKETPLACE_CONFIG = {
             "va": "Temps màxim per replicar l'entorn de forma autònoma"
           }
         },
-        "secondaryMetrics": [
-          {
-            "id": "challenge-success-rate",
-            "value": 83,
-            "unit": "%",
-            "label": {
-              "es": "Tasa de éxito en los 6 retos evaluables",
-              "en": "Success rate across the 6 assessable challenges",
-              "va": "Taxa d'èxit als 6 reptes avaluables"
-            }
-          },
-          {
-            "id": "teacher-confidence",
-            "value": 8.7,
-            "unit": "/10",
-            "label": {
-              "es": "Confianza del docente para impartir el contenido de forma autónoma",
-              "en": "Teacher confidence to deliver the content autonomously",
-              "va": "Confiança del docent per impartir el contingut de forma autònoma"
-            }
-          }
-        ],
-        "verification": {
-          "status": "reviewed",
-          "verifiedBy": "AI-STEAM Comité Técnico Movilidad",
-          "verifiedAt": "2026-04-01",
-          "method": {
-            "es": "Revisión de actas de evaluación de los 5 centros y encuesta de confianza docente realizada por el Comité Técnico de Movilidad de AI-STEAM.",
-            "en": "Review of assessment records from the 5 centres and teacher confidence survey conducted by the AI-STEAM Mobility Technical Committee.",
-            "va": "Revisió d'actes d'avaluació dels 5 centres i enquesta de confiança docent realitzada pel Comité Tècnic de Mobilitat d'AI-STEAM."
-          }
-        },
+        "secondaryMetrics": [],
+        "verification": null,
         "limitations": {
-          "es": "CARLA requiere una GPU dedicada para experiencia fluida (recomendado NVIDIA GTX 1060 o superior). En aulas sin GPU, los escenarios funcionan a velocidad reducida pero son suficientes para las prácticas.",
-          "en": "CARLA requires a dedicated GPU for a smooth experience (NVIDIA GTX 1060 or higher recommended). In classrooms without GPU, scenarios run at reduced speed but are sufficient for practice.",
-          "va": "CARLA requereix una GPU dedicada per a una experiència fluïda (recomanat NVIDIA GTX 1060 o superior). En aules sense GPU, els escenaris funcionen a velocitat reduïda però són suficients per a les pràctiques."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
-      "transferability": {
-        "whyTransferable": {
-          "es": "CARLA es software de código abierto mantenido por una comunidad activa. Los escenarios urbanos españoles facilitan la contextualización para alumnos de FP. La interfaz Python simplificada no requiere conocimientos de ROS.",
-          "en": "CARLA is open-source software maintained by an active community. The Spanish urban scenarios facilitate contextualisation for VET students. The simplified Python interface does not require ROS knowledge.",
-          "va": "CARLA és programari de codi obert mantingut per una comunitat activa. Els escenaris urbans espanyols faciliten la contextualització per a alumnes de FP. La interfície Python simplificada no requereix coneixements de ROS."
-        },
-        "suitableFor": [
-          "vet-centres"
-        ],
-        "requirements": [
-          {
-            "label": {
-              "es": "Ordenador con GPU (recomendado) o acceso a servicio cloud con GPU",
-              "en": "Computer with GPU (recommended) or access to cloud service with GPU",
-              "va": "Ordinador amb GPU (recomanat) o accés a servei cloud amb GPU"
-            }
-          },
-          {
-            "label": {
-              "es": "Sistema operativo Linux o Windows 10/11 con WSL2",
-              "en": "Linux or Windows 10/11 with WSL2 operating system",
-              "va": "Sistema operatiu Linux o Windows 10/11 amb WSL2"
-            }
-          }
-        ],
-        "adaptationSteps": [
-          {
-            "label": {
-              "es": "Instalar CARLA siguiendo la guía de replicación proporcionada",
-              "en": "Install CARLA following the replication guide provided",
-              "va": "Instal·lar CARLA seguint la guia de replicació proporcionada"
-            }
-          },
-          {
-            "label": {
-              "es": "Seleccionar los retos más relevantes para el módulo donde se integra",
-              "en": "Select the most relevant challenges for the module where it is integrated",
-              "va": "Seleccionar els reptes més rellevants per al mòdul on s'integra"
-            }
-          }
-        ],
-        "risks": [
-          {
-            "label": {
-              "es": "Dependencia de GPU; aulas sin tarjeta gráfica dedicada necesitan configuración alternativa",
-              "en": "GPU dependency; classrooms without dedicated graphics cards need alternative configuration",
-              "va": "Dependència de GPU; aules sense targeta gràfica dedicada necessiten configuració alternativa"
-            }
-          }
-        ]
-      },
+      "transferability": null,
       "template": {
         "requiredBlocks": [
           "context",
@@ -17435,59 +15950,42 @@ export const MARKETPLACE_CONFIG = {
           "name": "Anecoop, S. Coop."
         },
         "requester": null,
-        "leadTeam": {
-          "name": "Dpto. de Innovación y Agricultura de Precisión, Anecoop",
-          "role": {
-            "es": "Cooperativa origen — desarrollo del flujo de trabajo e infraestructura de datos",
-            "en": "Origin cooperative — workflow development and data infrastructure",
-            "va": "Cooperativa origen — desenvolupament del flux de treball i infraestructura de dades"
-          }
-        },
+        "leadTeam": null,
         "contact": null,
         "beneficiaries": [
           {
             "name": "IES L'Alcúdia",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro piloto — integración curricular y prácticas de campo",
-              "en": "Pilot centre — curricular integration and field practices",
-              "va": "Centre pilot — integració curricular i pràctiques de camp"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "CIFP Agroforestal de Llombai",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro receptor — ampliación a producción forestal",
-              "en": "Receiving centre — extension to forestry production",
-              "va": "Centre receptor — ampliació a producció forestal"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "IES Camp de Morvedre",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro receptor — adaptación a cultivos de secano",
-              "en": "Receiving centre — adaptation to dryland crops",
-              "va": "Centre receptor — adaptació a cultius de secà"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         ]
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "maker-steam"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "triple-transition",
-          "infrastructure-evidence"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -17510,11 +16008,7 @@ export const MARKETPLACE_CONFIG = {
         "levels": [
           "vet"
         ],
-        "audience": [
-          "vet-centres",
-          "industry-partners",
-          "public-administration"
-        ],
+        "audience": [],
         "sdgs": [
           2,
           4,
@@ -17529,17 +16023,17 @@ export const MARKETPLACE_CONFIG = {
           {
             "name": "IES L'Alcúdia",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           },
           {
             "name": "CIFP Agroforestal de Llombai",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           },
           {
             "name": "IES Camp de Morvedre",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           }
         ]
       },
@@ -17551,9 +16045,9 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
-        "codeLicense": "Apache 2.0",
-        "dataAvailability": "anonymised",
+        "pageLicense": "",
+        "codeLicense": "",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -17562,9 +16056,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "Las imágenes multiespectrales han sido anonimizadas (sin referencia catastral ni datos de socio). El uso del dataset queda restringido a fines formativos y de investigación no comercial.",
-          "en": "Multispectral images have been anonymised (no cadastral reference or member data). Dataset use is restricted to training and non-commercial research purposes.",
-          "va": "Les imatges multiespectrals han sigut anonimitzades (sense referència cadastral ni dades de soci). L'ús del dataset queda restringit a fins formatius i d'investigació no comercial."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -17574,7 +16068,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -17599,9 +16093,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Ver caso",
-            "en": "View case",
-            "va": "Veure cas"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -17618,131 +16112,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "externalLinks": [
-          {
-            "id": "qgis-docs",
-            "type": "website",
-            "label": {
-              "es": "QGIS — Sistema de información geográfica de código abierto",
-              "en": "QGIS — Open-source geographic information system",
-              "va": "QGIS — Sistema d'informació geogràfica de codi obert"
-            },
-            "url": "https://www.qgis.org"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/cases/drones-agricultura-precision-agr/",
-        "items": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso",
-              "en": "Case brief",
-              "va": "Fitxa del cas"
-            },
-            "description": {
-              "es": "Resumen ejecutivo del caso con resultados de impacto, actores y condiciones de replicación.",
-              "en": "Executive summary with impact results, actors and replication conditions.",
-              "va": "Resum executiu del cas amb resultats d'impacte, actors i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-drones-ndvi-fp-agraria.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Guía de práctica de campo con drone y análisis NDVI",
-              "en": "Drone field practice and NDVI analysis guide",
-              "va": "Guia de pràctica de camp amb dron i anàlisi NDVI"
-            },
-            "description": {
-              "es": "Manual paso a paso para planificar el vuelo, capturar imágenes y procesarlas con el pipeline Python, incluyendo preguntas de reflexión para el alumnado.",
-              "en": "Step-by-step manual for planning the flight, capturing images and processing them with the Python pipeline, including reflection questions for students.",
-              "va": "Manual pas a pas per planificar el vol, capturar imatges i processar-les amb el pipeline Python, incloent preguntes de reflexió per a l'alumnat."
-            },
-            "files": [
-              {
-                "file": "guia-practica-campo-drone-ndvi.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          },
-          {
-            "id": "dataset-sample",
-            "type": "dataset-sample",
-            "title": {
-              "es": "Muestra del dataset multiespectral (10 imágenes)",
-              "en": "Multispectral dataset sample (10 images)",
-              "va": "Mostra del dataset multiespectral (10 imatges)"
-            },
-            "description": {
-              "es": "Selección de 10 imágenes del dataset completo para verificar la compatibilidad con el pipeline antes de solicitar acceso al dataset íntegro.",
-              "en": "Selection of 10 images from the complete dataset to verify compatibility with the pipeline before requesting access to the full dataset.",
-              "va": "Selecció de 10 imatges del dataset complet per verificar la compatibilitat amb el pipeline abans de sol·licitar accés al dataset íntegre."
-            },
-            "files": [
-              {
-                "file": "muestra-dataset-ndvi-citricos-10img.zip",
-                "format": "zip",
-                "language": "mixed",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "outputs": null,
       "process": null,
-      "hasDownloads": true,
-      "downloadCount": 3,
-      "cardDownloads": [
-        {
-          "id": "case-brief",
-          "type": "case-brief",
-          "title": {
-            "es": "Ficha del caso",
-            "en": "Case brief",
-            "va": "Fitxa del cas"
-          },
-          "description": {
-            "es": "Resumen ejecutivo del caso con resultados de impacto, actores y condiciones de replicación.",
-            "en": "Executive summary with impact results, actors and replication conditions.",
-            "va": "Resum executiu del cas amb resultats d'impacte, actors i condicions de replicació."
-          },
-          "files": [
-            {
-              "file": "ficha-caso-drones-ndvi-fp-agraria.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "case",
@@ -17755,7 +16135,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": {
@@ -17777,8 +16157,8 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
-            "relations": true,
+            "trackA": true,
+            "relations": false,
             "evidence": true,
             "transferability": true,
             "summary": true,
@@ -17788,34 +16168,7 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "caseStudy": {
-        "type": "scaling",
-        "originContext": {
-          "es": "Anecoop opera un servicio de vigilancia aérea de sus explotaciones asociadas con drones multiespectrales DJI Matrice 300 RTK + cámara MicaSense RedEdge. El servicio genera mapas NDVI semanales que los agrónomos usan para detectar estrés hídrico y nutricional con 7-10 días de anticipación a la sintomatología visual.",
-          "en": "Anecoop operates an aerial surveillance service for its associated farms using DJI Matrice 300 RTK drones with MicaSense RedEdge cameras. The service generates weekly NDVI maps that agronomists use to detect water and nutritional stress 7-10 days before visual symptoms appear.",
-          "va": "Anecoop opera un servei de vigilància aèria de les seues explotacions associades amb drons multiespectrals DJI Matrice 300 RTK + càmera MicaSense RedEdge. El servei genera mapes NDVI setmanals que els agrònoms usen per detectar estrès hídric i nutricional amb 7-10 dies d'antelació a la simptomatologia visual."
-        },
-        "transferContext": {
-          "es": "Los ciclos de FP Agraria de la Comunitat Valenciana trabajan con técnicas de teledetección básica, pero sin acceso a drones multiespectrales ni a flujos de trabajo de análisis de imagen con IA. El sector agroalimentario valenciano demanda técnicos capaces de interpretar y actuar sobre mapas NDVI, pero la FP no lo forma.",
-          "en": "Agrarian VET cycles in the Valencian Community work with basic remote sensing techniques but have no access to multispectral drones or AI image analysis workflows. The Valencian agri-food sector demands technicians capable of interpreting and acting on NDVI maps, but VET does not train this.",
-          "va": "Els cicles de FP Agrària de la Comunitat Valenciana treballen amb tècniques de teledetecció bàsica, però sense accés a drons multiespectrals ni a fluxos de treball d'anàlisi d'imatge amb IA. El sector agroalimentari valencià demanda tècnics capaços d'interpretar i actuar sobre mapes NDVI, però la FP no ho forma."
-        },
-        "intervention": {
-          "es": "Se preparó un kit formativo con: (1) dataset de 200 imágenes multiespectrales reales de parcelas citrícolas de 4 campañas (anonimizadas por parcela), (2) notebook Python con pipeline completo NDVI (carga → normalización → cálculo índice → umbralización → mapa de actuación), (3) 4 estudios de caso con diagnóstico real vs predicción del modelo, (4) práctica de campo con drone de bajo coste (DJI Mini 3) y cámara RGB para introducción a la teledetección.",
-          "en": "A training kit was prepared with: (1) dataset of 200 real multispectral images from citrus parcels over 4 seasons (anonymised by parcel), (2) Python notebook with complete NDVI pipeline (loading → normalisation → index calculation → thresholding → action map), (3) 4 case studies with real diagnosis vs model prediction, (4) field practice with low-cost drone (DJI Mini 3) and RGB camera for introduction to remote sensing.",
-          "va": "Es va preparar un kit formatiu amb: (1) dataset de 200 imatges multiespectrals reals de parcel·les citrícoles de 4 campanyes (anonimitzades per parcel·la), (2) notebook Python amb pipeline complet NDVI (càrrega → normalització → càlcul índex → umbralització → mapa d'actuació), (3) 4 estudis de cas amb diagnòstic real vs predicció del model, (4) pràctica de camp amb dron de baix cost (DJI Mini 3) i càmera RGB per a introducció a la teledetecció."
-        },
-        "transferPath": {
-          "es": "Jornada de formación en sede de Anecoop → despliegue del kit en el centro → sesiones de aula con notebook → práctica de campo con drone del centro → análisis de datos propios → presentación de resultados a cooperativa local.",
-          "en": "Training day at Anecoop headquarters → kit deployment in the centre → classroom sessions with notebook → field practice with the centre's drone → analysis of own data → results presentation to local cooperative.",
-          "va": "Jornada de formació a la seu d'Anecoop → desplegament del kit en el centre → sessions d'aula amb notebook → pràctica de camp amb dron del centre → anàlisi de dades pròpies → presentació de resultats a cooperativa local."
-        },
-        "trackBValue": {
-          "es": "Dataset de 200 imágenes multiespectrales de cítricos, pipeline Python NDVI completo, 4 estudios de caso con solución y guía de práctica de campo con drone RGB. Adaptable a cualquier ciclo agrario con acceso a un drone básico.",
-          "en": "Dataset of 200 citrus multispectral images, complete Python NDVI pipeline, 4 case studies with solutions and field practice guide with RGB drone. Adaptable to any agrarian cycle with access to a basic drone.",
-          "va": "Dataset de 200 imatges multiespectrals de cítrics, pipeline Python NDVI complet, 4 estudis de cas amb solució i guia de pràctica de camp amb dron RGB. Adaptable a qualsevol cicle agrari amb accés a un dron bàsic."
-        }
-      },
+      "caseStudy": null,
       "evidence": {
         "headline": {
           "es": "Los tres centros integran el flujo NDVI en sus prácticas; reducción media del 18% en el uso de agua de riego en las parcelas monitorizadas por alumnos en prácticas.",
@@ -17832,104 +16185,15 @@ export const MARKETPLACE_CONFIG = {
             "va": "Reducció en ús d'aigua de reg en parcel·les pilot"
           }
         },
-        "secondaryMetrics": [
-          {
-            "id": "early-detection-rate",
-            "value": 91,
-            "unit": "%",
-            "label": {
-              "es": "Tasa de detección anticipada de estrés hídrico (7-10 días antes)",
-              "en": "Early detection rate for water stress (7-10 days in advance)",
-              "va": "Taxa de detecció anticipada d'estrès hídric (7-10 dies abans)"
-            }
-          },
-          {
-            "id": "student-job-placement",
-            "value": 73,
-            "unit": "%",
-            "label": {
-              "es": "Alumnos egresados con competencia NDVI contratados en sector agrario",
-              "en": "Graduated students with NDVI competence hired in the agrarian sector",
-              "va": "Alumnes egressats amb competència NDVI contractats en sector agrari"
-            }
-          }
-        ],
-        "verification": {
-          "status": "verified",
-          "verifiedBy": "Dpto. de Innovación Anecoop + Conselleria d'Agricultura",
-          "verifiedAt": "2026-03-15",
-          "method": {
-            "es": "Seguimiento de contadores de riego en parcelas piloto durante dos campañas y auditoría de inserción laboral por Conselleria d'Agricultura.",
-            "en": "Monitoring of irrigation meters on pilot parcels over two seasons and employment audit by Conselleria d'Agricultura.",
-            "va": "Seguiment de comptadors de reg en parcel·les pilot durant dos campanyes i auditoria d'inserció laboral per Conselleria d'Agricultura."
-          }
-        },
+        "secondaryMetrics": [],
+        "verification": null,
         "limitations": {
-          "es": "Los modelos NDVI han sido calibrados para cítricos (naranjos y mandarinos) de la zona litoral valenciana. La transferencia a otros cultivos o zonas climáticas requiere nueva calibración del umbral de estrés.",
-          "en": "NDVI models have been calibrated for citrus (orange and mandarin) in the Valencian coastal zone. Transfer to other crops or climate zones requires new stress threshold calibration.",
-          "va": "Els models NDVI han sigut calibrats per a cítrics (tarongers i mandarins) de la zona litoral valenciana. La transferència a altres cultius o zones climàtiques requereix nova calibració del llindar d'estrès."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
-      "transferability": {
-        "whyTransferable": {
-          "es": "El pipeline Python es totalmente agnóstico al tipo de drone utilizado. El dataset permite trabajar sin drone propio. La guía de campo es compatible con cualquier drone con cámara RGB básica, lo que elimina la barrera económica del drone multiespectral.",
-          "en": "The Python pipeline is completely agnostic to the drone type used. The dataset allows working without an own drone. The field guide is compatible with any drone with a basic RGB camera, eliminating the economic barrier of the multispectral drone.",
-          "va": "El pipeline Python és totalment agnòstic al tipus de dron utilitzat. El dataset permet treballar sense dron propi. La guia de camp és compatible amb qualsevol dron amb càmera RGB bàsica, la qual cosa elimina la barrera econòmica del dron multiespectral."
-        },
-        "suitableFor": [
-          "vet-centres",
-          "public-administration",
-          "industry-partners"
-        ],
-        "requirements": [
-          {
-            "label": {
-              "es": "Drone de bajo coste con cámara RGB (p.ej. DJI Mini 3) o acceso al dataset proporcionado",
-              "en": "Low-cost drone with RGB camera (e.g. DJI Mini 3) or access to provided dataset",
-              "va": "Dron de baix cost amb càmera RGB (p. ex. DJI Mini 3) o accés al dataset proporcionat"
-            }
-          },
-          {
-            "label": {
-              "es": "Ordenador con Python y QGIS instalado",
-              "en": "Computer with Python and QGIS installed",
-              "va": "Ordinador amb Python i QGIS instal·lat"
-            }
-          }
-        ],
-        "adaptationSteps": [
-          {
-            "label": {
-              "es": "Descargar el dataset y el notebook del repositorio",
-              "en": "Download the dataset and notebook from the repository",
-              "va": "Descarregar el dataset i el notebook del repositori"
-            }
-          },
-          {
-            "label": {
-              "es": "Adaptar los umbrales NDVI al cultivo y zona climática del centro",
-              "en": "Adapt NDVI thresholds to the crop and climate zone of the centre",
-              "va": "Adaptar els llindars NDVI al cultiu i zona climàtica del centre"
-            }
-          },
-          {
-            "label": {
-              "es": "Coordinar con una cooperativa local para presentación de resultados como actividad de cierre",
-              "en": "Coordinate with a local cooperative for results presentation as closing activity",
-              "va": "Coordinar amb una cooperativa local per a la presentació de resultats com activitat de tancament"
-            }
-          }
-        ],
-        "risks": [
-          {
-            "label": {
-              "es": "La normativa de vuelo de drones en España (AESA) puede restringir los vuelos en algunos entornos del centro",
-              "en": "Spanish drone flight regulation (AESA) may restrict flights in some centre environments",
-              "va": "La normativa de vol de drons a Espanya (AESA) pot restringir els vols en alguns entorns del centre"
-            }
-          }
-        ]
-      },
+      "transferability": null,
       "template": {
         "requiredBlocks": [
           "context",
@@ -18877,59 +17141,42 @@ export const MARKETPLACE_CONFIG = {
           "name": "Solarius Energy S.L."
         },
         "requester": null,
-        "leadTeam": {
-          "name": "Departamento de Ingeniería Solarius",
-          "role": {
-            "es": "Empresa desarrolladora del gemelo digital y formadora inicial",
-            "en": "Company that developed the digital twin and provided initial training",
-            "va": "Empresa desenvolupadora del bessó digital i formadora inicial"
-          }
-        },
+        "leadTeam": null,
         "contact": null,
         "beneficiaries": [
           {
             "name": "IES Mislata-Alfafar",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro piloto principal — integración curricular",
-              "en": "Main pilot centre — curricular integration",
-              "va": "Centre pilot principal — integració curricular"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "IES La Costera",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro receptor — adaptación de materiales",
-              "en": "Receiving centre — material adaptation",
-              "va": "Centre receptor — adaptació de materials"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "IES Sixte Vicent Genovés",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro receptor — implantación autónoma",
-              "en": "Receiving centre — autonomous deployment",
-              "va": "Centre receptor — implantació autònoma"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         ]
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "maker-steam"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "infrastructure-evidence",
-          "triple-transition"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -18952,10 +17199,7 @@ export const MARKETPLACE_CONFIG = {
         "levels": [
           "vet"
         ],
-        "audience": [
-          "vet-centres",
-          "industry-partners"
-        ],
+        "audience": [],
         "sdgs": [
           4,
           7,
@@ -18969,17 +17213,17 @@ export const MARKETPLACE_CONFIG = {
           {
             "name": "IES Mislata-Alfafar",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           },
           {
             "name": "IES La Costera",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           },
           {
             "name": "IES Sixte Vicent Genovés",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           }
         ]
       },
@@ -18991,9 +17235,9 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
-        "codeLicense": "Apache 2.0",
-        "dataAvailability": "anonymised",
+        "pageLicense": "",
+        "codeLicense": "",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -19002,9 +17246,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "Los datos de producción real han sido anonimizados conforme al RGPD. El código fuente del gemelo digital se publica bajo licencia Apache 2.0.",
-          "en": "Real production data has been anonymised in accordance with GDPR. The digital twin source code is published under Apache 2.0 licence.",
-          "va": "Les dades de producció real han sigut anonimitzades d'acord amb el RGPD. El codi font del bessó digital es publica sota llicència Apache 2.0."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -19014,7 +17258,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -19039,9 +17283,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Ver caso",
-            "en": "View case",
-            "va": "Veure cas"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -19058,137 +17302,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "externalLinks": [
-          {
-            "id": "pvlib-docs",
-            "type": "document",
-            "label": {
-              "es": "Documentación oficial PVLib",
-              "en": "Official PVLib documentation",
-              "va": "Documentació oficial PVLib"
-            },
-            "url": "https://pvlib-python.readthedocs.io/"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/cases/solar-fotovoltaica-gemelo-digital-ene/",
-        "items": [
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Guía docente — Gemelo digital fotovoltaico",
-              "en": "Teacher guide — Photovoltaic digital twin",
-              "va": "Guia docent — Bessó digital fotovoltaic"
-            },
-            "description": {
-              "es": "Manual completo para el docente con instrucciones de despliegue, descripción de los 12 escenarios y rúbrica de evaluación.",
-              "en": "Complete teacher manual with deployment instructions, description of 12 scenarios and evaluation rubric.",
-              "va": "Manual complet per al docent amb instruccions de desplegament, descripció dels 12 escenaris i rúbrica d'avaluació."
-            },
-            "files": [
-              {
-                "file": "guia-docente-gemelo-digital-fotovoltaico.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso",
-              "en": "Case brief",
-              "va": "Fitxa del cas"
-            },
-            "description": {
-              "es": "Resumen ejecutivo del caso para presentación a equipos directivos y coordinadores de ciclos.",
-              "en": "Executive summary of the case for presentation to management teams and cycle coordinators.",
-              "va": "Resum executiu del cas per a presentació a equips directius i coordinadors de cicles."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-solar-fotovoltaica.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              },
-              {
-                "file": "case-brief-solar-photovoltaic.pdf",
-                "format": "pdf",
-                "language": "en",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          },
-          {
-            "id": "replication-guide",
-            "type": "replication-guide",
-            "title": {
-              "es": "Guía de replicación — Despliegue Docker",
-              "en": "Replication guide — Docker deployment",
-              "va": "Guia de replicació — Desplegament Docker"
-            },
-            "description": {
-              "es": "Instrucciones técnicas paso a paso para instalar y configurar el gemelo digital en un nuevo centro.",
-              "en": "Step-by-step technical instructions to install and configure the digital twin in a new centre.",
-              "va": "Instruccions tècniques pas a pas per instal·lar i configurar el bessó digital en un nou centre."
-            },
-            "files": [
-              {
-                "file": "guia-replicacion-docker-gemelo-digital.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "outputs": null,
       "process": null,
-      "hasDownloads": true,
-      "downloadCount": 3,
-      "cardDownloads": [
-        {
-          "id": "teaching-module",
-          "type": "teaching-module",
-          "title": {
-            "es": "Guía docente — Gemelo digital fotovoltaico",
-            "en": "Teacher guide — Photovoltaic digital twin",
-            "va": "Guia docent — Bessó digital fotovoltaic"
-          },
-          "description": {
-            "es": "Manual completo para el docente con instrucciones de despliegue, descripción de los 12 escenarios y rúbrica de evaluación.",
-            "en": "Complete teacher manual with deployment instructions, description of 12 scenarios and evaluation rubric.",
-            "va": "Manual complet per al docent amb instruccions de desplegament, descripció dels 12 escenaris i rúbrica d'avaluació."
-          },
-          "files": [
-            {
-              "file": "guia-docente-gemelo-digital-fotovoltaico.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "case",
@@ -19201,7 +17325,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": {
@@ -19223,8 +17347,8 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
-            "relations": true,
+            "trackA": true,
+            "relations": false,
             "evidence": true,
             "transferability": true,
             "summary": true,
@@ -19234,34 +17358,7 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "caseStudy": {
-        "type": "scaling",
-        "originContext": {
-          "es": "Solarius Energy utilizaba internamente un gemelo digital (Python + PVLib + interfaz web) para monitorizar y optimizar una instalación solar de 50 kWp en Paterna. El modelo acumuló datos de dos años de producción real y series de fallos controlados.",
-          "en": "Solarius Energy used internally a digital twin (Python + PVLib + web interface) to monitor and optimise a 50 kWp solar installation in Paterna. The model accumulated two years of real production data and controlled fault series.",
-          "va": "Solarius Energy utilitzava internament un bessó digital (Python + PVLib + interfície web) per monitoritzar i optimitzar una instal·lació solar de 50 kWp a Paterna. El model va acumular dos anys de dades de producció real i sèries de fallades controlades."
-        },
-        "transferContext": {
-          "es": "Los centros de FP de Electricidad y Energía carecen de instalaciones fotovoltaicas reales suficientemente grandes para prácticas avanzadas de optimización y diagnóstico de fallos. La simulación era el único recurso disponible, pero sin datos industriales reales.",
-          "en": "VET centres in Electricity and Energy lack real photovoltaic installations large enough for advanced optimisation and fault diagnosis practice. Simulation was the only available resource, but without real industrial data.",
-          "va": "Els centres de FP d'Electricitat i Energia no disposen d'instal·lacions fotovoltaiques reals prou grans per a pràctiques avançades d'optimització i diagnòstic de fallades. La simulació era l'únic recurs disponible, però sense dades industrials reals."
-        },
-        "intervention": {
-          "es": "Se empaquetó el gemelo digital en un contenedor Docker con interfaz Streamlit. Se crearon 12 escenarios de fallo predefinidos (módulo defectuoso, sombreado parcial, inversor degradado, etc.) y una suite de ejercicios resueltos. El despliegue en cada centro se realiza con un único comando y no requiere hardware fotovoltaico.",
-          "en": "The digital twin was packaged in a Docker container with a Streamlit interface. Twelve predefined fault scenarios (defective module, partial shading, degraded inverter, etc.) and a suite of resolved exercises were created. Deployment in each centre is done with a single command and requires no photovoltaic hardware.",
-          "va": "El bessó digital es va empaquetar en un contenidor Docker amb interfície Streamlit. Es van crear 12 escenaris de fallada predefinits (mòdul defectuós, ombreig parcial, inversor degradat, etc.) i una suite d'exercicis resolts. El desplegament en cada centre es realitza amb una única comanda i no requereix maquinari fotovoltaic."
-        },
-        "transferPath": {
-          "es": "Taller inicial de 4 horas con docentes → despliegue autónomo en cada centro → 3 sesiones de prácticas guiadas con alumnos de 2.º de CFGS → evaluación formativa con rúbrica compartida.",
-          "en": "Initial 4-hour workshop with teachers → autonomous deployment in each centre → 3 guided practice sessions with 2nd year HND students → formative assessment with shared rubric.",
-          "va": "Taller inicial de 4 hores amb docents → desplegament autònom en cada centre → 3 sessions de pràctiques guiades amb alumnes de 2n de CFGS → avaluació formativa amb rúbrica compartida."
-        },
-        "trackBValue": {
-          "es": "Contenedor Docker listo para desplegar con datos reales de dos años, 12 escenarios de fallo, rúbrica y guia docente. Replicable en cualquier centro con un ordenador y acceso a internet.",
-          "en": "Docker container ready to deploy with two years of real data, 12 fault scenarios, rubric and teacher guide. Replicable in any centre with a computer and internet access.",
-          "va": "Contenidor Docker llest per desplegar amb dades reals de dos anys, 12 escenaris de fallada, rúbrica i guia docent. Replicable en qualsevol centre amb un ordinador i accés a internet."
-        }
-      },
+      "caseStudy": null,
       "evidence": {
         "headline": {
           "es": "Los tres centros integran el gemelo digital en sus unidades de CFGS con un 94% de satisfacción docente.",
@@ -19278,120 +17375,15 @@ export const MARKETPLACE_CONFIG = {
             "va": "Satisfacció docent amb el material"
           }
         },
-        "secondaryMetrics": [
-          {
-            "id": "centres-active",
-            "value": 3,
-            "unit": "centros",
-            "label": {
-              "es": "Centros con gemelo digital operativo",
-              "en": "Centres with active digital twin",
-              "va": "Centres amb bessó digital operatiu"
-            }
-          },
-          {
-            "id": "fault-scenarios",
-            "value": 12,
-            "unit": "escenarios",
-            "label": {
-              "es": "Escenarios de fallo disponibles para prácticas",
-              "en": "Fault scenarios available for practice",
-              "va": "Escenaris de fallada disponibles per a pràctiques"
-            }
-          },
-          {
-            "id": "student-competency-gain",
-            "value": 31,
-            "unit": "%",
-            "label": {
-              "es": "Mejora en competencia de diagnóstico de fallos (pre/post)",
-              "en": "Improvement in fault diagnosis competency (pre/post)",
-              "va": "Millora en competència de diagnòstic de fallades (pre/post)"
-            }
-          }
-        ],
-        "verification": {
-          "status": "verified",
-          "verifiedBy": "Departament d'Educació — Inspecció d'Electricitat i Energia",
-          "verifiedAt": "2026-03-28",
-          "method": {
-            "es": "Evaluación pre/post del módulo \"Instalaciones solares fotovoltaicas\" y encuestas de satisfacción validadas por la inspección educativa.",
-            "en": "Pre/post evaluation of the \"Solar photovoltaic installations\" module and satisfaction surveys validated by educational inspection.",
-            "va": "Avaluació pre/post del mòdul \"Instal·lacions solars fotovoltaiques\" i enquestes de satisfacció validades per la inspecció educativa."
-          }
-        },
+        "secondaryMetrics": [],
+        "verification": null,
         "limitations": {
-          "es": "Los datos de producción real están anonimizados y corresponden a una única ubicación geográfica (Paterna, Valencia). La extrapolación a otras zonas climáticas requiere recalibración del modelo de irradiación.",
-          "en": "Real production data is anonymised and corresponds to a single geographic location (Paterna, Valencia). Extrapolation to other climate zones requires recalibration of the irradiance model.",
-          "va": "Les dades de producció real estan anonimitzades i corresponen a una única ubicació geogràfica (Paterna, València). L'extrapolació a altres zones climàtiques requereix recalibrar el model d'irradiació."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
-      "transferability": {
-        "whyTransferable": {
-          "es": "El empaquetado Docker elimina cualquier dependencia de infraestructura. Los 12 escenarios cubren los fallos más comunes en instalaciones residenciales y de pequeña industria, que son los contextos que trabajan los centros de FP de Electricidad.",
-          "en": "Docker packaging eliminates any infrastructure dependency. The 12 scenarios cover the most common faults in residential and small-industry installations, which are the contexts that Electricity VET centres work with.",
-          "va": "L'empaquetat Docker elimina qualsevol dependència d'infraestructura. Els 12 escenaris cobreixen les fallades més comunes en instal·lacions residencials i de petita indústria, que són els contextos en què treballen els centres de FP d'Electricitat."
-        },
-        "suitableFor": [
-          "vet-centres",
-          "research-centres"
-        ],
-        "requirements": [
-          {
-            "label": {
-              "es": "Ordenador con Docker instalado (Windows/Linux/Mac)",
-              "en": "Computer with Docker installed (Windows/Linux/Mac)",
-              "va": "Ordinador amb Docker instal·lat (Windows/Linux/Mac)"
-            }
-          },
-          {
-            "label": {
-              "es": "Conocimientos básicos de Python del docente (nivel usuario)",
-              "en": "Basic Python knowledge for the teacher (user level)",
-              "va": "Coneixements bàsics de Python del docent (nivell usuari)"
-            }
-          }
-        ],
-        "adaptationSteps": [
-          {
-            "label": {
-              "es": "Descargar la imagen Docker del repositorio oficial del caso",
-              "en": "Download the Docker image from the official case repository",
-              "va": "Descarregar la imatge Docker del repositori oficial del cas"
-            }
-          },
-          {
-            "label": {
-              "es": "Configurar los parámetros de irradiación para la zona geográfica del centro",
-              "en": "Configure irradiance parameters for the centre's geographic zone",
-              "va": "Configurar els paràmetres d'irradiació per a la zona geogràfica del centre"
-            }
-          },
-          {
-            "label": {
-              "es": "Seleccionar los escenarios de fallo relevantes para cada unidad formativa",
-              "en": "Select the fault scenarios relevant for each training unit",
-              "va": "Seleccionar els escenaris de fallada rellevants per a cada unitat formativa"
-            }
-          }
-        ],
-        "risks": [
-          {
-            "label": {
-              "es": "Requiere conocimientos mínimos de Docker para el despliegue inicial",
-              "en": "Requires minimal Docker knowledge for initial deployment",
-              "va": "Requereix coneixements mínims de Docker per al desplegament inicial"
-            }
-          },
-          {
-            "label": {
-              "es": "Los datos de producción no contemplan climatología extrema (nevadas, granizo)",
-              "en": "Production data does not cover extreme weather (snow, hail)",
-              "va": "Les dades de producció no contemplen climatologia extrema (nevades, calamarsa)"
-            }
-          }
-        ]
-      },
+      "transferability": null,
       "template": {
         "requiredBlocks": [
           "context",
@@ -20403,49 +18395,33 @@ export const MARKETPLACE_CONFIG = {
           "name": "Museu de Belles Arts de València"
         },
         "requester": null,
-        "leadTeam": {
-          "name": "Departament d'Innovació i Mediació Cultural, MuBelles",
-          "role": {
-            "es": "Entidad origen — desarrollo del sistema AR y cesión de licencias para uso educativo",
-            "en": "Origin entity — AR system development and licence grant for educational use",
-            "va": "Entitat origen — desenvolupament del sistema AR i cessió de llicències per a ús educatiu"
-          }
-        },
+        "leadTeam": null,
         "contact": null,
         "beneficiaries": [
           {
             "name": "Escola d'Art i Superior de Disseny de València (EASD)",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro piloto — proyecto integrador en el ciclo de Animación 3D",
-              "en": "Pilot centre — integrative project in the 3D Animation cycle",
-              "va": "Centre pilot — projecte integrador en el cicle d'Animació 3D"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "IES Lluis Vives (Valencia)",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro receptor — adaptación al módulo de aplicaciones multiplataforma",
-              "en": "Receiving centre — adaptation to the cross-platform applications module",
-              "va": "Centre receptor — adaptació al mòdul d'aplicacions multiplataforma"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         ]
       },
       "classification": {
-        "aiSteamFocus": [
-          "creative-ai",
-          "maker-steam"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "equity-inclusion"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -20469,10 +18445,7 @@ export const MARKETPLACE_CONFIG = {
           "vet",
           "master"
         ],
-        "audience": [
-          "vet-centres",
-          "public-administration"
-        ],
+        "audience": [],
         "sdgs": [
           4,
           10,
@@ -20486,12 +18459,12 @@ export const MARKETPLACE_CONFIG = {
           {
             "name": "Escola d'Art i Superior de Disseny de València (EASD)",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           },
           {
             "name": "IES Lluis Vives (Valencia)",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           }
         ]
       },
@@ -20503,9 +18476,9 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
-        "codeLicense": "MIT",
-        "dataAvailability": "not-applicable",
+        "pageLicense": "",
+        "codeLicense": "",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -20514,9 +18487,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "Los assets 3D del museo se ceden exclusivamente bajo licencia educativa y no están incluidos en los descargables públicos. El código fuente de la aplicación AR se publica bajo licencia MIT.",
-          "en": "The museum's 3D assets are granted exclusively under educational licence and are not included in public downloads. The AR application source code is published under MIT licence.",
-          "va": "Els assets 3D del museu es cedeixen exclusivament sota llicència educativa i no estan inclosos en els descarregables públics. El codi font de l'aplicació AR es publica sota llicència MIT."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -20526,7 +18499,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -20551,9 +18524,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Ver caso",
-            "en": "View case",
-            "va": "Veure cas"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -20570,131 +18543,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "externalLinks": [
-          {
-            "id": "arfoundation-docs",
-            "type": "document",
-            "label": {
-              "es": "Documentación oficial AR Foundation (Unity)",
-              "en": "Official AR Foundation documentation (Unity)",
-              "va": "Documentació oficial AR Foundation (Unity)"
-            },
-            "url": "https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@latest"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/cases/realidad-aumentada-museos-cci/",
-        "items": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso",
-              "en": "Case brief",
-              "va": "Fitxa del cas"
-            },
-            "description": {
-              "es": "Resumen ejecutivo del caso con resultados, actores y condiciones de replicación.",
-              "en": "Executive summary with results, actors and replication conditions.",
-              "va": "Resum executiu del cas amb resultats, actors i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-ar-museos-fp-arte.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Kit del proyecto integrador AR para patrimonio",
-              "en": "AR integrative project kit for heritage",
-              "va": "Kit del projecte integrador AR per al patrimoni"
-            },
-            "description": {
-              "es": "Briefing tipo, guía técnica Unity+ARFoundation, rúbrica trifásica y plantilla de documentación de proyecto. No incluye assets 3D del museo (requieren acuerdo específico).",
-              "en": "Template briefing, Unity+ARFoundation technical guide, three-phase rubric and project documentation template. Does not include museum 3D assets (require specific agreement).",
-              "va": "Briefing tipus, guia tècnica Unity+ARFoundation, rúbrica trifàsica i plantilla de documentació de projecte. No inclou assets 3D del museu (requereixen acord específic)."
-            },
-            "files": [
-              {
-                "file": "kit-proyecto-integrador-ar-patrimonio.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          },
-          {
-            "id": "slide-deck",
-            "type": "slide-deck",
-            "title": {
-              "es": "Presentación de la demo pública (resultados del alumnado)",
-              "en": "Public demo presentation (student results)",
-              "va": "Presentació de la demo pública (resultats de l'alumnat)"
-            },
-            "description": {
-              "es": "Diapositivas usadas en la presentación pública en el museo, con capturas del prototipo AR y feedback de visitantes.",
-              "en": "Slides used in the public presentation at the museum, with screenshots of the AR prototype and visitor feedback.",
-              "va": "Diapositives usades en la presentació pública al museu, amb captures del prototip AR i feedback de visitants."
-            },
-            "files": [
-              {
-                "file": "presentacion-demo-publica-ar-museu-belles-arts.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "outputs": null,
       "process": null,
-      "hasDownloads": true,
-      "downloadCount": 3,
-      "cardDownloads": [
-        {
-          "id": "case-brief",
-          "type": "case-brief",
-          "title": {
-            "es": "Ficha del caso",
-            "en": "Case brief",
-            "va": "Fitxa del cas"
-          },
-          "description": {
-            "es": "Resumen ejecutivo del caso con resultados, actores y condiciones de replicación.",
-            "en": "Executive summary with results, actors and replication conditions.",
-            "va": "Resum executiu del cas amb resultats, actors i condicions de replicació."
-          },
-          "files": [
-            {
-              "file": "ficha-caso-ar-museos-fp-arte.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "case",
@@ -20707,7 +18566,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": {
@@ -20729,8 +18588,8 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
-            "relations": true,
+            "trackA": true,
+            "relations": false,
             "evidence": true,
             "transferability": true,
             "summary": true,
@@ -20740,34 +18599,7 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "caseStudy": {
-        "type": "adaptation",
-        "originContext": {
-          "es": "El Museu de Belles Arts financiado por GVA desarrolló entre 2023 y 2024 un sistema de mediación AR con Unity + ARFoundation para tres salas del museo. El sistema permite superponer capas de información histórica, visualizar restauraciones virtuales de obras deterioradas e iniciar rutas temáticas personalizadas desde un smartphone.",
-          "en": "The Museu de Belles Arts, funded by GVA, developed between 2023 and 2024 an AR mediation system with Unity + ARFoundation for three museum rooms. The system allows overlaying historical information layers, visualising virtual restorations of damaged works and starting personalised themed routes from a smartphone.",
-          "va": "El Museu de Belles Arts finançat per GVA va desenvolupar entre 2023 i 2024 un sistema de mediació AR amb Unity + ARFoundation per a tres sales del museu. El sistema permet superposar capes d'informació històrica, visualitzar restauracions virtuals d'obres deteriorades i iniciar rutes temàtiques personalitzades des d'un smartphone."
-        },
-        "transferContext": {
-          "es": "Los ciclos de Animación 3D y Diseño de la EASD forman profesionales con alta capacidad técnica en 3D y interactividad, pero que pocas veces trabajan con clientes culturales públicos y no conocen las particularidades del diseño para patrimonio (accesibilidad, narrativa histórica, limitaciones de conservación).",
-          "en": "The 3D Animation and Design cycles at EASD train professionals with high technical skills in 3D and interactivity, but who rarely work with public cultural clients and are unfamiliar with the specificities of heritage design (accessibility, historical narrative, conservation constraints).",
-          "va": "Els cicles d'Animació 3D i Disseny de l'EASD formen professionals amb alta capacitat tècnica en 3D i interactivitat, però que poques vegades treballen amb clients culturals públics i no coneixen les particularitats del disseny per al patrimoni (accessibilitat, narrativa històrica, limitacions de conservació)."
-        },
-        "intervention": {
-          "es": "Se preparó un proyecto integrador de 40 horas con tres fases: (1) análisis de la obra real (El Marqués de la Ensenada, de Amigoni) con contextualización histórica, (2) diseño y prototipado de 3 capas AR (restauración virtual, contexto histórico, ruta temática conectada), (3) presentación pública en el museo con público real. Los alumnos usaron Unity + ARFoundation + Vuforia con assets 3D del museo cedidos en licencia educativa.",
-          "en": "An integrative project of 40 hours was prepared in three phases: (1) real work analysis (The Marqués de la Ensenada, by Amigoni) with historical contextualisation, (2) design and prototyping of 3 AR layers (virtual restoration, historical context, connected thematic route), (3) public presentation in the museum with real audience. Students used Unity + ARFoundation + Vuforia with 3D assets from the museum granted under educational licence.",
-          "va": "Es va preparar un projecte integrador de 40 hores amb tres fases: (1) anàlisi de l'obra real (El Marqués de la Ensenada, d'Amigoni) amb contextualització històrica, (2) disseny i prototipat de 3 capes AR (restauració virtual, context històric, ruta temàtica connectada), (3) presentació pública al museu amb públic real. Els alumnes van usar Unity + ARFoundation + Vuforia amb assets 3D del museu cedits en llicència educativa."
-        },
-        "transferPath": {
-          "es": "Briefing del museo a los alumnos (1 sesión) → formación técnica AR (4 sesiones) → diseño y prototipado (10 sesiones) → revisión con conservadores del museo (1 sesión) → demo pública en el museo → reflexión y documentación.",
-          "en": "Museum briefing to students (1 session) → AR technical training (4 sessions) → design and prototyping (10 sessions) → review with museum conservators (1 session) → public demo in the museum → reflection and documentation.",
-          "va": "Briefing del museu als alumnes (1 sessió) → formació tècnica AR (4 sessions) → disseny i prototipat (10 sessions) → revisió amb conservadors del museu (1 sessió) → demo pública al museu → reflexió i documentació."
-        },
-        "trackBValue": {
-          "es": "Kit de proyecto integrador AR para patrimonio: briefing museístico tipo, guía técnica Unity+ARFoundation, 3 assets 3D del museo en licencia educativa, rúbrica de evaluación trifásica y plantilla de documentación de proyecto. Replicable en cualquier museo con colección digitalizada parcialmente.",
-          "en": "AR integrative project kit for heritage: template museum briefing, Unity+ARFoundation technical guide, 3 museum 3D assets under educational licence, three-phase evaluation rubric and project documentation template. Replicable in any museum with a partially digitised collection.",
-          "va": "Kit de projecte integrador AR per al patrimoni: briefing museístic tipus, guia tècnica Unity+ARFoundation, 3 assets 3D del museu en llicència educativa, rúbrica d'avaluació trifàsica i plantilla de documentació de projecte. Replicable en qualsevol museu amb col·lecció parcialment digitalitzada."
-        }
-      },
+      "caseStudy": null,
       "evidence": {
         "headline": {
           "es": "El 91% de los visitantes del museo que probó el prototipo del alumnado lo valoró como \"muy útil o útil\" para comprender la obra.",
@@ -20784,103 +18616,15 @@ export const MARKETPLACE_CONFIG = {
             "va": "Visitants que valoren positivament el prototip AR de l'alumnat"
           }
         },
-        "secondaryMetrics": [
-          {
-            "id": "project-excellence-rate",
-            "value": 76,
-            "unit": "%",
-            "label": {
-              "es": "Proyectos del alumnado valorados con \"Excelente\" por los conservadores del museo",
-              "en": "Student projects rated \"Excellent\" by museum conservators",
-              "va": "Projectes de l'alumnat valorats amb \"Excel·lent\" pels conservadors del museu"
-            }
-          },
-          {
-            "id": "collaboration-hours",
-            "value": 40,
-            "unit": "horas",
-            "label": {
-              "es": "Horas de proyecto integrador con cliente cultural real",
-              "en": "Integrative project hours with a real cultural client",
-              "va": "Hores de projecte integrador amb client cultural real"
-            }
-          }
-        ],
-        "verification": {
-          "status": "reviewed",
-          "verifiedBy": "Museu de Belles Arts de València + AI-STEAM Comité Técnico Industrias Creativas",
-          "verifiedAt": "2026-02-28",
-          "method": {
-            "es": "Encuestas de satisfacción de visitantes realizadas por el personal del museo durante la demo pública y rúbricas de evaluación de los conservadores.",
-            "en": "Visitor satisfaction surveys conducted by museum staff during the public demo and conservator evaluation rubrics.",
-            "va": "Enquestes de satisfacció de visitants realitzades pel personal del museu durant la demo pública i rúbriques d'avaluació dels conservadors."
-          }
-        },
+        "secondaryMetrics": [],
+        "verification": null,
         "limitations": {
-          "es": "Los assets 3D del museo están cedidos en licencia educativa y no pueden redistribuirse fuera del contexto formativo. Para replicar el proyecto con otras obras, el centro debe negociar el acceso a los assets directamente con el museo correspondiente.",
-          "en": "The museum's 3D assets are granted under educational licence and may not be redistributed outside the training context. To replicate the project with other works, the centre must negotiate asset access directly with the relevant museum.",
-          "va": "Els assets 3D del museu estan cedits en llicència educativa i no es poden redistribuir fora del context formatiu. Per replicar el projecte amb altres obres, el centre ha de negociar l'accés als assets directament amb el museu corresponent."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
-      "transferability": {
-        "whyTransferable": {
-          "es": "Unity + ARFoundation es la plataforma AR más usada en el sector creativo español. El formato de proyecto integrador con cliente cultural real es transferible a cualquier museo con colección digitalizada, sin necesidad de replicar los mismos assets.",
-          "en": "Unity + ARFoundation is the most widely used AR platform in the Spanish creative sector. The integrative project format with a real cultural client is transferable to any museum with a digitised collection, without needing to replicate the same assets.",
-          "va": "Unity + ARFoundation és la plataforma AR més usada en el sector creatiu espanyol. El format de projecte integrador amb client cultural real és transferible a qualsevol museu amb col·lecció digitalitzada, sense necessitat de replicar els mateixos assets."
-        },
-        "suitableFor": [
-          "vet-centres",
-          "public-administration"
-        ],
-        "requirements": [
-          {
-            "label": {
-              "es": "Licencias Unity Pro (la versión gratuita es suficiente para estudiantes)",
-              "en": "Unity Pro licences (the free version is sufficient for students)",
-              "va": "Llicències Unity Pro (la versió gratuïta és suficient per a estudiants)"
-            }
-          },
-          {
-            "label": {
-              "es": "Acceso a un museo o entidad cultural con colección parcialmente digitalizada",
-              "en": "Access to a museum or cultural entity with a partially digitised collection",
-              "va": "Accés a un museu o entitat cultural amb col·lecció parcialment digitalitzada"
-            }
-          }
-        ],
-        "adaptationSteps": [
-          {
-            "label": {
-              "es": "Identificar un museo o patrimonio local dispuesto a colaborar como cliente del proyecto",
-              "en": "Identify a local museum or heritage site willing to collaborate as project client",
-              "va": "Identificar un museu o patrimoni local disposat a col·laborar com a client del projecte"
-            }
-          },
-          {
-            "label": {
-              "es": "Adaptar el briefing tipo al contexto y las obras del museo colaborador",
-              "en": "Adapt the template briefing to the context and works of the collaborating museum",
-              "va": "Adaptar el briefing tipus al context i les obres del museu col·laborador"
-            }
-          },
-          {
-            "label": {
-              "es": "Formar a los alumnos en ARFoundation con la guía técnica proporcionada antes de iniciar el proyecto",
-              "en": "Train students in ARFoundation with the provided technical guide before starting the project",
-              "va": "Formar els alumnes en ARFoundation amb la guia tècnica proporcionada abans d'iniciar el projecte"
-            }
-          }
-        ],
-        "risks": [
-          {
-            "label": {
-              "es": "La negociación con el museo puede llevar varias semanas; iniciar el contacto al menos 2 meses antes",
-              "en": "Negotiation with the museum can take several weeks; start contact at least 2 months before",
-              "va": "La negociació amb el museu pot durar diverses setmanes; iniciar el contacte almenys 2 mesos abans"
-            }
-          }
-        ]
-      },
+      "transferability": null,
       "template": {
         "requiredBlocks": [
           "context",
@@ -20970,59 +18714,42 @@ export const MARKETPLACE_CONFIG = {
           "name": "Grupo Antolin (Planta Valencia)"
         },
         "requester": null,
-        "leadTeam": {
-          "name": "Dpto. de Industria 4.0 y Transformación Digital, Grupo Antolin",
-          "role": {
-            "es": "Empresa origen — desarrollo del sistema y preparación de datos formativos",
-            "en": "Origin company — system development and preparation of training data",
-            "va": "Empresa origen — desenvolupament del sistema i preparació de dades formatives"
-          }
-        },
+        "leadTeam": null,
         "contact": null,
         "beneficiaries": [
           {
             "name": "IES Ciutat de l'Aprenent",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro piloto — integración en el módulo de sensórica e IoT",
-              "en": "Pilot centre — integration in the sensors and IoT module",
-              "va": "Centre pilot — integració en el mòdul de sensòrica i IoT"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "IES Benlliure",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro receptor — adaptación para mantenimiento de maquinaria",
-              "en": "Receiving centre — adaptation for machinery maintenance",
-              "va": "Centre receptor — adaptació per a manteniment de maquinària"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "IES Politècnic de Gandia",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro receptor — implantación autónoma",
-              "en": "Receiving centre — autonomous deployment",
-              "va": "Centre receptor — implantació autònoma"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         ]
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "institutional-readiness"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "infrastructure-evidence",
-          "teacher-capacity"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -21045,10 +18772,7 @@ export const MARKETPLACE_CONFIG = {
         "levels": [
           "vet"
         ],
-        "audience": [
-          "vet-centres",
-          "industry-partners"
-        ],
+        "audience": [],
         "sdgs": [
           4,
           8,
@@ -21062,17 +18786,17 @@ export const MARKETPLACE_CONFIG = {
           {
             "name": "IES Ciutat de l'Aprenent",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           },
           {
             "name": "IES Benlliure",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           },
           {
             "name": "IES Politècnic de Gandia",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           }
         ]
       },
@@ -21084,9 +18808,9 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
-        "codeLicense": "Apache 2.0",
-        "dataAvailability": "anonymised",
+        "pageLicense": "",
+        "codeLicense": "",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -21095,9 +18819,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "Los datos de producción han sido anonimizados y validados por el Dpto. Legal de Grupo Antolin. Se autoriza su uso exclusivamente con fines formativos y de investigación no comercial.",
-          "en": "Production data has been anonymised and validated by Grupo Antolin's Legal Department. Its use is authorised exclusively for training and non-commercial research purposes.",
-          "va": "Les dades de producció han sigut anonimitzades i validades pel Dept. Legal de Grupo Antolin. S'autoritza el seu ús exclusivament amb fins formatius i d'investigació no comercial."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -21107,7 +18831,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -21132,9 +18856,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Ver caso",
-            "en": "View case",
-            "va": "Veure cas"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -21151,131 +18875,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "externalLinks": [
-          {
-            "id": "tensorflow-lstm",
-            "type": "document",
-            "label": {
-              "es": "Tutorial oficial LSTM con TensorFlow/Keras",
-              "en": "Official LSTM tutorial with TensorFlow/Keras",
-              "va": "Tutorial oficial LSTM amb TensorFlow/Keras"
-            },
-            "url": "https://www.tensorflow.org/tutorials/structured_data/time_series"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/cases/mantenimiento-predictivo-ml-mfg/",
-        "items": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso",
-              "en": "Case brief",
-              "va": "Fitxa del cas"
-            },
-            "description": {
-              "es": "Resumen ejecutivo con resultados, actores y condiciones de replicación.",
-              "en": "Executive summary with results, actors and replication conditions.",
-              "va": "Resum executiu amb resultats, actors i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-mantenimiento-predictivo-ml.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Cuaderno de 6 prácticas con soluciones",
-              "en": "6-practice workbook with solutions",
-              "va": "Quadern de 6 pràctiques amb solucions"
-            },
-            "description": {
-              "es": "Notebooks Jupyter exportados a PDF con enunciados, código completo y comentarios didácticos para el docente.",
-              "en": "Jupyter notebooks exported to PDF with prompts, complete code and teaching comments for the teacher.",
-              "va": "Notebooks Jupyter exportats a PDF amb enunciats, codi complet i comentaris didàctics per al docent."
-            },
-            "files": [
-              {
-                "file": "cuaderno-practicas-ml-mantenimiento-predictivo.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-SA 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          },
-          {
-            "id": "replication-guide",
-            "type": "replication-guide",
-            "title": {
-              "es": "Guía de replicación — Setup del entorno",
-              "en": "Replication guide — Environment setup",
-              "va": "Guia de replicació — Configuració de l'entorn"
-            },
-            "description": {
-              "es": "Instrucciones paso a paso para preparar el entorno Python, descargar el dataset y configurar (opcionalmente) la Raspberry Pi.",
-              "en": "Step-by-step instructions to prepare the Python environment, download the dataset and (optionally) configure the Raspberry Pi.",
-              "va": "Instruccions pas a pas per preparar l'entorn Python, descarregar el dataset i configurar (opcionalment) la Raspberry Pi."
-            },
-            "files": [
-              {
-                "file": "guia-replicacion-mantenimiento-predictivo.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "outputs": null,
       "process": null,
-      "hasDownloads": true,
-      "downloadCount": 3,
-      "cardDownloads": [
-        {
-          "id": "case-brief",
-          "type": "case-brief",
-          "title": {
-            "es": "Ficha del caso",
-            "en": "Case brief",
-            "va": "Fitxa del cas"
-          },
-          "description": {
-            "es": "Resumen ejecutivo con resultados, actores y condiciones de replicación.",
-            "en": "Executive summary with results, actors and replication conditions.",
-            "va": "Resum executiu amb resultats, actors i condicions de replicació."
-          },
-          "files": [
-            {
-              "file": "ficha-caso-mantenimiento-predictivo-ml.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "case",
@@ -21288,7 +18898,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": {
@@ -21310,8 +18920,8 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
-            "relations": true,
+            "trackA": true,
+            "relations": false,
             "evidence": true,
             "transferability": true,
             "summary": true,
@@ -21321,34 +18931,7 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "caseStudy": {
-        "type": "adaptation",
-        "originContext": {
-          "es": "Grupo Antolin implementó en 2023 un sistema de mantenimiento predictivo en sus líneas de inyección de plástico de la planta de Valencia. El sistema usa sensores de vibración triaxiales conectados a un servidor Edge que alimenta modelos LSTM para detectar fallos con 48–72 horas de antelación. Ha reducido las paradas no planificadas en un 62%.",
-          "en": "In 2023, Grupo Antolin implemented a predictive maintenance system in the plastic injection lines of its Valencia plant. The system uses triaxial vibration sensors connected to an Edge server feeding LSTM models to detect faults 48–72 hours in advance. It has reduced unplanned downtime by 62%.",
-          "va": "Grupo Antolin va implementar el 2023 un sistema de manteniment predictiu en les seues línies d'injecció de plàstic de la planta de València. El sistema usa sensors de vibració triaxials connectats a un servidor Edge que alimenta models LSTM per detectar fallades amb 48–72 hores d'antelació. Ha reduït les aturades no planificades en un 62%."
-        },
-        "transferContext": {
-          "es": "Los ciclos de Mantenimiento de Instalaciones y Sistemas de FP trabajan con conceptos de mantenimiento correctivo y preventivo, pero apenas abordan el mantenimiento predictivo basado en datos. Los docentes identificaron este hueco al analizar las ofertas de empleo del sector en la Comunitat Valenciana.",
-          "en": "The Maintenance of Installations and Systems VET cycles work with corrective and preventive maintenance concepts but barely address data-driven predictive maintenance. Teachers identified this gap by analysing job offers in the sector in the Valencian Community.",
-          "va": "Els cicles de Manteniment d'Instal·lacions i Sistemes de FP treballen amb conceptes de manteniment correctiu i preventiu, però gairebé no aborden el manteniment predictiu basat en dades. Els docents van identificar aquest buit en analitzar les ofertes d'ocupació del sector a la Comunitat Valenciana."
-        },
-        "intervention": {
-          "es": "Se preparó un dataset formativo de 120.000 registros de sensores (anonimizados, con etiquetas de fallo añadidas artificialmente para prácticas) y un notebook Jupyter con 6 prácticas progresivas: exploración de datos, feature engineering, entrenamiento de un modelo LSTM simplificado, evaluación y alerta. También se incluyó un simulador de sensor en tiempo real con Raspberry Pi.",
-          "en": "A training dataset of 120,000 sensor records was prepared (anonymised, with artificially added fault labels for practice) and a Jupyter notebook with 6 progressive practices: data exploration, feature engineering, training a simplified LSTM model, evaluation and alerting. A real-time sensor simulator with Raspberry Pi was also included.",
-          "va": "Es va preparar un dataset formatiu de 120.000 registres de sensors (anonimitzats, amb etiquetes de fallada afegides artificialment per a pràctiques) i un notebook Jupyter amb 6 pràctiques progressives: exploració de dades, feature engineering, entrenament d'un model LSTM simplificat, avaluació i alerta. També s'hi va incloure un simulador de sensor en temps real amb Raspberry Pi."
-        },
-        "transferPath": {
-          "es": "Visita de docentes a la planta de Grupo Antolin → taller de 8 horas → despliegue de notebooks en aula → 6 sesiones de prácticas → proyecto final de grupo con informe técnico.",
-          "en": "Teacher visit to Grupo Antolin plant → 8-hour workshop → notebook deployment in classroom → 6 practice sessions → group final project with technical report.",
-          "va": "Visita de docents a la planta de Grupo Antolin → taller de 8 hores → desplegament de notebooks a l'aula → 6 sessions de pràctiques → projecte final de grup amb informe tècnic."
-        },
-        "trackBValue": {
-          "es": "Dataset de 120.000 registros de vibraciones industriales reales (anonimizados), notebooks Jupyter con 6 prácticas resueltas, simulador Raspberry Pi y rúbrica de evaluación del proyecto final. Adaptable a cualquier ciclo con componente de sensórica o automatización.",
-          "en": "Dataset of 120,000 real industrial vibration records (anonymised), Jupyter notebooks with 6 solved practices, Raspberry Pi simulator and project evaluation rubric. Adaptable to any cycle with a sensors or automation component.",
-          "va": "Dataset de 120.000 registres de vibracions industrials reals (anonimitzats), notebooks Jupyter amb 6 pràctiques resoltes, simulador Raspberry Pi i rúbrica d'avaluació del projecte final. Adaptable a qualsevol cicle amb component de sensòrica o automatització."
-        }
-      },
+      "caseStudy": null,
       "evidence": {
         "headline": {
           "es": "Reducción del 62% en paradas no planificadas en Grupo Antolin; 89% de los alumnos completan el proyecto final con nota superior a 7.",
@@ -21365,103 +18948,15 @@ export const MARKETPLACE_CONFIG = {
             "va": "Reducció d'aturades no planificades en planta"
           }
         },
-        "secondaryMetrics": [
-          {
-            "id": "student-pass-rate",
-            "value": 89,
-            "unit": "%",
-            "label": {
-              "es": "Alumnos que superan el proyecto final con nota ≥ 7",
-              "en": "Students passing the final project with grade ≥ 7",
-              "va": "Alumnes que superen el projecte final amb nota ≥ 7"
-            }
-          },
-          {
-            "id": "annual-savings",
-            "value": 380000,
-            "unit": "EUR/año",
-            "label": {
-              "es": "Ahorro anual estimado en mantenimiento en planta",
-              "en": "Estimated annual maintenance saving in plant",
-              "va": "Estalvi anual estimat en manteniment en planta"
-            }
-          }
-        ],
-        "verification": {
-          "status": "verified",
-          "verifiedBy": "Dpto. Producción Grupo Antolin + AI-STEAM Comité Técnico",
-          "verifiedAt": "2026-02-18",
-          "method": {
-            "es": "Auditoría de KPIs de producción de Grupo Antolin y revisión de actas de evaluación de los centros de FP por el Comité Técnico de AI-STEAM.",
-            "en": "Audit of Grupo Antolin production KPIs and review of VET centre assessment records by the AI-STEAM Technical Committee.",
-            "va": "Auditoria de KPIs de producció de Grupo Antolin i revisió d'actes d'avaluació dels centres de FP pel Comité Tècnic d'AI-STEAM."
-          }
-        },
+        "secondaryMetrics": [],
+        "verification": null,
         "limitations": {
-          "es": "El dataset de vibraciones corresponde exclusivamente a maquinaria de inyección de plástico. Los modelos entrenados no son directamente transferibles a otros tipos de maquinaria sin reentrenamiento.",
-          "en": "The vibration dataset corresponds exclusively to plastic injection machinery. Trained models are not directly transferable to other machinery types without retraining.",
-          "va": "El dataset de vibracions correspon exclusivament a maquinària d'injecció de plàstic. Els models entrenats no són directament transferibles a altres tipus de maquinària sense reentrenant."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
-      "transferability": {
-        "whyTransferable": {
-          "es": "El enfoque metodológico (datos de sensor → feature engineering → modelo supervisado → alerta) es genérico a cualquier sistema con sensórica IoT. El dataset anonimizado elimina restricciones de confidencialidad industrial.",
-          "en": "The methodological approach (sensor data → feature engineering → supervised model → alert) is generic to any system with IoT sensors. The anonymised dataset eliminates industrial confidentiality restrictions.",
-          "va": "L'enfocament metodològic (dades de sensor → feature engineering → model supervisat → alerta) és genèric a qualsevol sistema amb sensòrica IoT. El dataset anonimitzat elimina restriccions de confidencialitat industrial."
-        },
-        "suitableFor": [
-          "vet-centres",
-          "industry-partners"
-        ],
-        "requirements": [
-          {
-            "label": {
-              "es": "Aula informática con Python/Jupyter instalado (o Google Colab)",
-              "en": "Computer lab with Python/Jupyter installed (or Google Colab)",
-              "va": "Aula informàtica amb Python/Jupyter instal·lat (o Google Colab)"
-            }
-          },
-          {
-            "label": {
-              "es": "Raspberry Pi 4 (opcional, para el simulador de sensor en tiempo real)",
-              "en": "Raspberry Pi 4 (optional, for the real-time sensor simulator)",
-              "va": "Raspberry Pi 4 (opcional, per al simulador de sensor en temps real)"
-            }
-          }
-        ],
-        "adaptationSteps": [
-          {
-            "label": {
-              "es": "Descargar el dataset y los notebooks del repositorio",
-              "en": "Download the dataset and notebooks from the repository",
-              "va": "Descarregar el dataset i els notebooks del repositori"
-            }
-          },
-          {
-            "label": {
-              "es": "Ajustar las prácticas al programa del módulo de automatización o sensórica",
-              "en": "Adjust practices to the automation or sensors module programme",
-              "va": "Ajustar les pràctiques al programa del mòdul d'automatització o sensòrica"
-            }
-          },
-          {
-            "label": {
-              "es": "Preparar la Raspberry Pi con el script de simulación si se desea la parte hardware",
-              "en": "Prepare the Raspberry Pi with the simulation script if the hardware component is desired",
-              "va": "Preparar la Raspberry Pi amb el script de simulació si es desitja la part de maquinari"
-            }
-          }
-        ],
-        "risks": [
-          {
-            "label": {
-              "es": "Los modelos LSTM requieren tiempo de entrenamiento elevado en CPUs sin GPU; usar Google Colab minimiza este riesgo",
-              "en": "LSTM models require significant training time on CPUs without GPU; using Google Colab minimises this risk",
-              "va": "Els models LSTM requereixen temps d'entrenament elevat en CPUs sense GPU; usar Google Colab minimitza aquest risc"
-            }
-          }
-        ]
-      },
+      "transferability": null,
       "template": {
         "requiredBlocks": [
           "context",
@@ -22023,50 +19518,33 @@ export const MARKETPLACE_CONFIG = {
           "name": "IVECO Valencia"
         },
         "requester": null,
-        "leadTeam": {
-          "name": "IVECO Valencia",
-          "role": {
-            "es": "Empresa origen, formación y validación",
-            "en": "Origin company, training and validation",
-            "va": "Empresa origen, formació i validació"
-          }
-        },
+        "leadTeam": null,
         "contact": null,
         "beneficiaries": [
           {
             "name": "IES La Marxadella",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro piloto receptor",
-              "en": "Pilot receiving centre",
-              "va": "Centre pilot receptor"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "IES Serpis",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro receptor",
-              "en": "Receiving centre",
-              "va": "Centre receptor"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         ]
       },
       "classification": {
-        "aiSteamFocus": [
-          "maker-steam",
-          "institutional-readiness"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "teacher-capacity",
-          "infrastructure-evidence"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -22089,10 +19567,7 @@ export const MARKETPLACE_CONFIG = {
         "levels": [
           "vet"
         ],
-        "audience": [
-          "vet-centres",
-          "industry-partners"
-        ],
+        "audience": [],
         "sdgs": [
           4,
           8
@@ -22105,12 +19580,12 @@ export const MARKETPLACE_CONFIG = {
           {
             "name": "IES La Marxadella",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           },
           {
             "name": "IES Serpis",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           }
         ]
       },
@@ -22122,9 +19597,9 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY-SA 4.0",
+        "pageLicense": "",
         "codeLicense": "",
-        "dataAvailability": "not-applicable",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -22133,9 +19608,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "El checklist de seguridad debe revisarse con el coordinador de PRL del centro antes de su uso.",
-          "en": "The safety checklist must be reviewed with the centre's health and safety coordinator before use.",
-          "va": "El checklist de seguretat s'ha de revisar amb el coordinador de PRL del centre abans del seu ús."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -22145,7 +19620,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY-SA 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -22167,12 +19642,12 @@ export const MARKETPLACE_CONFIG = {
         "url": ""
       },
       "externalFlow": {
-        "enabled": true,
+        "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Ver caso",
-            "en": "View case",
-            "va": "Veure cas"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -22189,130 +19664,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "externalLinks": [
-          {
-            "id": "ur-technical-sheet",
-            "type": "website",
-            "label": {
-              "es": "Ficha técnica del cobot UR10e",
-              "en": "UR10e cobot technical sheet",
-              "va": "Fitxa tècnica del cobot UR10e"
-            },
-            "url": "https://www.universal-robots.com/products/ur10-robot/"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/cases/cobot-soldadura-fp/",
-        "items": [
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Guion de 8 sesiones prácticas",
-              "en": "8-session practical script",
-              "va": "Guió de 8 sessions pràctiques"
-            },
-            "description": {
-              "es": "Plan didáctico completo para FP con ejercicios progresivos de programación y soldadura.",
-              "en": "Complete teaching plan for VET with progressive programming and welding exercises.",
-              "va": "Plan didàctic complet per a FP amb exercicis progressius de programació i soldadura."
-            },
-            "files": [
-              {
-                "file": "guion-practicas-cobot-soldadura.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-SA 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "replication-guide",
-            "type": "replication-guide",
-            "title": {
-              "es": "Checklist de seguridad EN ISO 10218-2",
-              "en": "EN ISO 10218-2 safety checklist",
-              "va": "Checklist de seguretat EN ISO 10218-2"
-            },
-            "description": {
-              "es": "Lista de comprobación obligatoria para operar cobots en aulas con alumnos.",
-              "en": "Mandatory checklist to operate cobots in classrooms with students.",
-              "va": "Llista de comprovació obligatòria per a operar cobots en aules amb alumnes."
-            },
-            "files": [
-              {
-                "file": "checklist-seguridad-cobot-fp.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-SA 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "outputs": null,
       "process": null,
-      "hasDownloads": true,
-      "downloadCount": 2,
-      "cardDownloads": [
-        {
-          "id": "teaching-module",
-          "type": "teaching-module",
-          "title": {
-            "es": "Guion de 8 sesiones prácticas",
-            "en": "8-session practical script",
-            "va": "Guió de 8 sessions pràctiques"
-          },
-          "description": {
-            "es": "Plan didáctico completo para FP con ejercicios progresivos de programación y soldadura.",
-            "en": "Complete teaching plan for VET with progressive programming and welding exercises.",
-            "va": "Plan didàctic complet per a FP amb exercicis progressius de programació i soldadura."
-          },
-          "files": [
-            {
-              "file": "guion-practicas-cobot-soldadura.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY-SA 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        },
-        {
-          "id": "replication-guide",
-          "type": "replication-guide",
-          "title": {
-            "es": "Checklist de seguridad EN ISO 10218-2",
-            "en": "EN ISO 10218-2 safety checklist",
-            "va": "Checklist de seguretat EN ISO 10218-2"
-          },
-          "description": {
-            "es": "Lista de comprobación obligatoria para operar cobots en aulas con alumnos.",
-            "en": "Mandatory checklist to operate cobots in classrooms with students.",
-            "va": "Llista de comprovació obligatòria per a operar cobots en aules amb alumnes."
-          },
-          "files": [
-            {
-              "file": "checklist-seguridad-cobot-fp.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY-SA 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "case",
@@ -22325,7 +19687,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": {
@@ -22347,8 +19709,8 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
-            "relations": true,
+            "trackA": true,
+            "relations": false,
             "evidence": true,
             "transferability": true,
             "summary": true,
@@ -22358,34 +19720,7 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "caseStudy": {
-        "type": "piloting",
-        "originContext": {
-          "es": "IVECO Valencia desarrolló un protocolo interno de formación en cobots UR10e para integrar operarios en líneas de soldadura colaborativa.",
-          "en": "IVECO Valencia developed an internal UR10e cobot training protocol to integrate operators into collaborative welding lines.",
-          "va": "IVECO València va desenvolupar un protocol intern de formació en cobots UR10e per integrar operaris en línies de soldadura col·laborativa."
-        },
-        "transferContext": {
-          "es": "Tras validarlo con éxito, la empresa propuso compartirlo con centros de FP como material de transferencia del ecosistema industrial.",
-          "en": "After successful validation, the company proposed sharing it with VET centres as industrial ecosystem transfer material.",
-          "va": "Després de validar-lo amb èxit, l'empresa va proposar compartir-lo amb centres de FP com a material de transferència de l'ecosistema industrial."
-        },
-        "intervention": {
-          "es": "El protocolo incluye guion de 8 sesiones prácticas, checklist de seguridad EN ISO 10218-2 adaptado a aula-taller, y rúbrica de evaluación de competencias.",
-          "en": "The protocol includes an 8-session practical script, EN ISO 10218-2 safety checklist adapted for workshop classrooms, and a competency assessment rubric.",
-          "va": "El protocol inclou un guió de 8 sessions pràctiques, checklist de seguretat EN ISO 10218-2 adaptat a aula-taller, i rúbrica d'avaluació de competències."
-        },
-        "transferPath": {
-          "es": "Transferencia directa desde entorno fabril real a aula-taller de FP con equipamiento básico de soldadura.",
-          "en": "Direct transfer from real manufacturing environment to VET workshop with basic welding equipment.",
-          "va": "Transferència directa des d'entorn fabril real a aula-taller de FP amb equipament bàsic de soldadura."
-        },
-        "trackBValue": {
-          "es": "Protocolo de onboarding en cobots replicable en cualquier taller de FP con equipamiento básico de soldadura. Incluye guion de prácticas y checklist de seguridad validado en entorno industrial real.",
-          "en": "Cobot onboarding protocol replicable in any VET workshop with basic welding equipment. Includes a practice script and safety checklist validated in a real industrial setting.",
-          "va": "Protocol d'onboarding en cobots replicable en qualsevol taller de FP amb equipament bàsic de soldadura. Inclou guió de pràctiques i checklist de seguretat validat en entorn industrial real."
-        }
-      },
+      "caseStudy": null,
       "evidence": {
         "headline": {
           "es": "3 centros de FP con protocolo cobot operativo en el primer trimestre.",
@@ -22402,88 +19737,15 @@ export const MARKETPLACE_CONFIG = {
             "va": "Centres de FP amb protocol cobot operatiu"
           }
         },
-        "secondaryMetrics": [
-          {
-            "id": "economic-saving",
-            "value": 12000,
-            "unit": "EUR/centre/year",
-            "label": {
-              "es": "Ahorro estimado en formación externa por centro al año",
-              "en": "Estimated annual external training saving per centre",
-              "va": "Estalvi estimat en formació externa per centre a l'any"
-            }
-          },
-          {
-            "id": "teacher-satisfaction",
-            "value": 9.1,
-            "unit": "/10",
-            "label": {
-              "es": "Satisfacción docente con el material de transferencia",
-              "en": "Teacher satisfaction with transfer material",
-              "va": "Satisfacció docent amb el material de transferència"
-            }
-          }
-        ],
-        "verification": {
-          "status": "verified",
-          "verifiedBy": "IVECO Formación Técnica",
-          "verifiedAt": "2026-03-01",
-          "method": {
-            "es": "Auditoría técnica y pruebas de uso en el aula-taller del IES La Marxadella.",
-            "en": "Technical audit and usability tests in IES La Marxadella's workshop.",
-            "va": "Auditoria tècnica i proves d'ús en l'aula-taller de l'IES La Marxadella."
-          }
-        },
+        "secondaryMetrics": [],
+        "verification": null,
         "limitations": {
-          "es": "El checklist de seguridad debe revisarse con el coordinador de PRL del centro antes de su uso.",
-          "en": "The safety checklist must be reviewed with the centre's health and safety coordinator before use.",
-          "va": "El checklist de seguretat s'ha de revisar amb el coordinador de PRL del centre abans del seu ús."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
-      "transferability": {
-        "whyTransferable": {
-          "es": "El protocolo se puede adaptar de forma económica en cualquier taller de soldadura que incorpore un brazo robótico colaborativo.",
-          "en": "The protocol can be cheaply adapted in any welding workshop incorporating a collaborative robotic arm.",
-          "va": "El protocol es pot adaptar de forma econòmica en qualsevol taller de soldadura que incorpore un braç robòtic col·laboratiu."
-        },
-        "suitableFor": [
-          "vet-centres",
-          "industry-partners"
-        ],
-        "requirements": [
-          {
-            "label": {
-              "es": "Brazo robótico colaborativo (cobot) tipo UR10e o similar",
-              "en": "Collaborative robotic arm (cobot) UR10e or similar",
-              "va": "Braç robòtic col·laboratiu (cobot) UR10e o similar"
-            }
-          },
-          {
-            "label": {
-              "es": "Taller de soldadura equipado",
-              "en": "Equipped welding workshop",
-              "va": "Taller de soldadura equipat"
-            }
-          }
-        ],
-        "adaptationSteps": [
-          {
-            "label": {
-              "es": "Adecuación del checklist de seguridad a la normativa local del centro",
-              "en": "Adapting the safety checklist to local regulations",
-              "va": "Adequació del checklist de seguretat a la normativa local del centre"
-            }
-          },
-          {
-            "label": {
-              "es": "Carga del guion de prácticas en el controlador del cobot",
-              "en": "Loading the practice script into the cobot controller",
-              "va": "Càrrega del guió de pràctiques en el controlador del cobot"
-            }
-          }
-        ],
-        "risks": []
-      },
+      "transferability": null,
       "template": {
         "requiredBlocks": [
           "context",
@@ -23877,70 +21139,51 @@ export const MARKETPLACE_CONFIG = {
           "name": "Conselleria d'Educació — CEFIREs"
         },
         "requester": null,
-        "leadTeam": {
-          "name": "CEFIREs (Valencia, Alicante, Castellón)",
-          "role": {
-            "es": "Diseño, coordinación y ejecución del itinerario",
-            "en": "Itinerary design, coordination and delivery",
-            "va": "Disseny, coordinació i execució de l'itinerari"
-          }
-        },
+        "leadTeam": null,
         "contact": null,
         "beneficiaries": [
           {
             "name": "EMT Valencia",
-            "type": "company",
+            "type": "",
             "role": {
-              "es": "Provisión de datos reales de movilidad y validación técnica",
-              "en": "Real mobility data provider and technical validation",
-              "va": "Provisió de dades reals de mobilitat i validació tècnica"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "CEFIRE de Valencia",
-            "type": "public-entity",
+            "type": "",
             "role": {
-              "es": "Centro piloto y ejecutor provincial",
-              "en": "Pilot centre and provincial delivery agent",
-              "va": "Centre pilot i executor provincial"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "CEFIRE de Alicante",
-            "type": "public-entity",
+            "type": "",
             "role": {
-              "es": "Centro piloto y ejecutor provincial",
-              "en": "Pilot centre and provincial delivery agent",
-              "va": "Centre pilot i executor provincial"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "CEFIRE de Castellón",
-            "type": "public-entity",
+            "type": "",
             "role": {
-              "es": "Centro piloto y ejecutor provincial",
-              "en": "Pilot centre and provincial delivery agent",
-              "va": "Centre pilot i executor provincial"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         ]
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "ai-literacy",
-          "institutional-readiness"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green",
-          "social"
-        ],
-        "policyCluster": [
-          "teacher-capacity",
-          "integrated-pedagogy",
-          "triple-transition"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -23963,11 +21206,7 @@ export const MARKETPLACE_CONFIG = {
         "levels": [
           "teacher"
         ],
-        "audience": [
-          "teachers",
-          "public-administration",
-          "vet-centres"
-        ],
+        "audience": [],
         "sdgs": [
           4,
           11
@@ -23980,22 +21219,22 @@ export const MARKETPLACE_CONFIG = {
           {
             "name": "EMT Valencia",
             "sector": "",
-            "type": "company"
+            "type": ""
           },
           {
             "name": "CEFIRE de Valencia",
             "sector": "",
-            "type": "public-entity"
+            "type": ""
           },
           {
             "name": "CEFIRE de Alicante",
             "sector": "",
-            "type": "public-entity"
+            "type": ""
           },
           {
             "name": "CEFIRE de Castellón",
             "sector": "",
-            "type": "public-entity"
+            "type": ""
           }
         ]
       },
@@ -24007,9 +21246,9 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
-        "codeLicense": "Apache 2.0",
-        "dataAvailability": "open",
+        "pageLicense": "",
+        "codeLicense": "",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -24018,9 +21257,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "Los materiales pueden adaptarse libremente con atribución a CEFIREs y EMT Valencia.",
-          "en": "Materials may be freely adapted with attribution to CEFIREs and EMT Valencia.",
-          "va": "Els materials poden adaptar-se lliurement amb atribució als CEFIREs i EMT València."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -24030,7 +21269,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -24052,24 +21291,17 @@ export const MARKETPLACE_CONFIG = {
         "url": ""
       },
       "externalFlow": {
-        "enabled": true,
+        "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Replicar caso",
-            "en": "Replicate case",
-            "va": "Replicar cas"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
         },
-        "secondaryAction": {
-          "label": {
-            "es": "Contactar para adaptación",
-            "en": "Contact for adaptation",
-            "va": "Contactar per a adaptació"
-          },
-          "url": ""
-        },
+        "secondaryAction": null,
         "fallbackAction": null,
         "fallbackContact": null
       },
@@ -24083,140 +21315,15 @@ export const MARKETPLACE_CONFIG = {
       },
       "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/cases/movilidad-sostenible-formacion-docente/",
-        "items": [
-          {
-            "id": "replication-guide",
-            "type": "replication-guide",
-            "title": {
-              "es": "Guía de los módulos formativos",
-              "en": "Training modules guide",
-              "va": "Guia dels mòduls formatius"
-            },
-            "description": {
-              "es": "Guiones completos de las sesiones de formación docente.",
-              "en": "Full scripts of the teacher training sessions.",
-              "va": "Guions complets de les sessions de formació docent."
-            },
-            "files": [
-              {
-                "file": "guia-modulos-formativos-movilidad.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Actividades prácticas con datos EMT",
-              "en": "Practical activities with EMT data",
-              "va": "Activitats pràctiques amb dades EMT"
-            },
-            "description": {
-              "es": "Paquete con notebooks de Python y datasets de muestra de la flota.",
-              "en": "Package with Python notebooks and sample fleet datasets.",
-              "va": "Paquet amb notebooks de Python i datasets de mostra de la flota."
-            },
-            "files": [
-              {
-                "file": "practicas-datos-emt.zip",
-                "format": "zip",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "other",
-            "type": "other",
-            "title": {
-              "es": "Rúbricas de evaluación",
-              "en": "Assessment rubrics",
-              "va": "Rúbriques d'avaluació"
-            },
-            "description": {
-              "es": "Plantillas editables para evaluar el desempeño por competencias.",
-              "en": "Editable templates to evaluate competency-based performance.",
-              "va": "Plantilles editables per a avaluar l'exercici per competències."
-            },
-            "files": [
-              {
-                "file": "rubricas-evaluacion.odt",
-                "format": "docx",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "outputs": null,
       "process": null,
-      "hasDownloads": true,
-      "downloadCount": 3,
-      "cardDownloads": [
-        {
-          "id": "replication-guide",
-          "type": "replication-guide",
-          "title": {
-            "es": "Guía de los módulos formativos",
-            "en": "Training modules guide",
-            "va": "Guia dels mòduls formatius"
-          },
-          "description": {
-            "es": "Guiones completos de las sesiones de formación docente.",
-            "en": "Full scripts of the teacher training sessions.",
-            "va": "Guions complets de les sessions de formació docent."
-          },
-          "files": [
-            {
-              "file": "guia-modulos-formativos-movilidad.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        },
-        {
-          "id": "teaching-module",
-          "type": "teaching-module",
-          "title": {
-            "es": "Actividades prácticas con datos EMT",
-            "en": "Practical activities with EMT data",
-            "va": "Activitats pràctiques amb dades EMT"
-          },
-          "description": {
-            "es": "Paquete con notebooks de Python y datasets de muestra de la flota.",
-            "en": "Package with Python notebooks and sample fleet datasets.",
-            "va": "Paquet amb notebooks de Python i datasets de mostra de la flota."
-          },
-          "files": [
-            {
-              "file": "practicas-datos-emt.zip",
-              "format": "zip",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "case",
@@ -24229,7 +21336,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": {
@@ -24251,8 +21358,8 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
-            "relations": true,
+            "trackA": true,
+            "relations": false,
             "evidence": true,
             "transferability": true,
             "summary": true,
@@ -24262,34 +21369,7 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "caseStudy": {
-        "type": "capacity-building",
-        "originContext": {
-          "es": "Los CEFIREs detectaron una demanda creciente de formación docente en IA aplicada a contextos reales de sostenibilidad urbana.",
-          "en": "CEFIREs identified growing demand for teacher training in AI applied to real urban sustainability contexts.",
-          "va": "Els CEFIREs van detectar una demanda creixent de formació docent en IA aplicada a contextos reals de sostenibilitat urbana."
-        },
-        "transferContext": {
-          "es": "La EMT Valencia ofreció acceso a su API de datos de flota y ocupación en tiempo real para ser utilizada con fines educativos y de concienciación.",
-          "en": "EMT Valencia offered access to its real-time fleet and occupancy data API to be used for educational and awareness purposes.",
-          "va": "L'EMT València va oferir accés a la seua API de dades de flota i ocupació en temps real per a ser utilitzada amb fins educatius i de conscienciació."
-        },
-        "intervention": {
-          "es": "Diseño y desarrollo de un itinerario formativo de 30 horas estructurado en 6 módulos de 5 horas cada uno, combinando teoría, exploración de datos reales y talleres prácticos.",
-          "en": "Design and development of a 30-hour training itinerary structured in 6 modules of 5 hours each, combining theory, real data exploration and practical workshops.",
-          "va": "Disseny i desenvolupament d'un itinerari formatiu de 30 hores estructurat en 6 mòduls de 5 hores cadascun, combinant teoria, exploració de dades reals i tallers pràctics."
-        },
-        "transferPath": {
-          "es": "Colaboración entre administración educativa (CEFIRE) y empresa pública de transporte (EMT) para transferir conocimiento técnico al aula de secundaria y FP.",
-          "en": "Collaboration between educational administration (CEFIRE) and public transport company (EMT) to transfer technical knowledge to secondary and VET classrooms.",
-          "va": "Col·laboració entre administració educativa (CEFIRE) i empresa pública de transport (EMT) per transferir coneixement tècnic a l'aula de secundària i FP."
-        },
-        "trackBValue": {
-          "es": "Itinerario formativo completo con 6 módulos, datos reales de EMT Valencia y actividades de aula listas para adaptarse a diferentes etapas educativas. Reproducible por cualquier CEFIRE sin coste adicional.",
-          "en": "Complete training itinerary with 6 modules, real EMT Valencia data and classroom activities ready to adapt to different educational stages. Reproducible by any CEFIRE at no extra cost.",
-          "va": "Itinerari formatiu complet amb 6 mòduls, dades reals d'EMT València i activitats d'aula llestes per adaptar-se a diferents etapes educatives. Reproduïble por qualsevol CEFIRE sense cost addicional."
-        }
-      },
+      "caseStudy": null,
       "evidence": {
         "headline": {
           "es": "140 docentes capacitados en 3 provincias con un 8.4/10 de satisfacción general.",
@@ -24306,90 +21386,15 @@ export const MARKETPLACE_CONFIG = {
             "va": "Docents formats el primer any"
           }
         },
-        "secondaryMetrics": [
-          {
-            "id": "global-satisfaction",
-            "value": 8.4,
-            "unit": "/10",
-            "label": {
-              "es": "Satisfacción global media ponderada",
-              "en": "Overall weighted average satisfaction",
-              "va": "Satisfacció global mitjana ponderada"
-            }
-          },
-          {
-            "id": "economic-efficiency",
-            "value": 4,
-            "unit": "x cheaper",
-            "label": {
-              "es": "Eficiencia de coste por docente frente a formación externa",
-              "en": "Cost efficiency per teacher compared to external training",
-              "va": "Eficiència de cost per docent enfront de formació externa"
-            }
-          }
-        ],
-        "verification": {
-          "status": "self-reported",
-          "verifiedBy": "Coordinación Pedagógica CEFIRE",
-          "verifiedAt": "2026-02-28",
-          "method": {
-            "es": "Encuestas de satisfacción oficiales de la Conselleria d'Educació.",
-            "en": "Official satisfaction surveys from the Conselleria d'Educació.",
-            "va": "Enquestes de satisfacció oficials de la Conselleria d'Educació."
-          }
-        },
+        "secondaryMetrics": [],
+        "verification": null,
         "limitations": {
-          "es": "El uso del API en tiempo real requiere claves de desarrollador proporcionadas por EMT.",
-          "en": "Use of real-time API requires developer keys provided by EMT.",
-          "va": "L'ús del API en temps real requereix claus de desenvolupador proporcionades per EMT."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
-      "transferability": {
-        "whyTransferable": {
-          "es": "Los materiales didácticos están totalmente detallados y las actividades se basan en APIs públicas o datasets históricos libres de coste.",
-          "en": "The teaching materials are fully detailed and the activities are based on public APIs or free historical datasets.",
-          "va": "Els materials didàctics estan totalment detallats i les activitats es basen en APIs públiques o datasets històrics lliures de cost."
-        },
-        "suitableFor": [
-          "teacher-training",
-          "public-administration",
-          "vet-centres"
-        ],
-        "requirements": [
-          {
-            "label": {
-              "es": "Entorno de desarrollo básico (Python / REST client)",
-              "en": "Basic development environment (Python / REST client)",
-              "va": "Entorn de desenvolupament bàsic (Python / REST client)"
-            }
-          }
-        ],
-        "adaptationSteps": [
-          {
-            "label": {
-              "es": "Registro para obtener el API Key de EMT Valencia (o usar los mocks del curso)",
-              "en": "Registration to obtain the EMT Valencia API Key (or use course mocks)",
-              "va": "Registre per a obtindre l'API Key de EMT València (o usar els mocks del curs)"
-            }
-          },
-          {
-            "label": {
-              "es": "Selección y adaptación de las rúbricas según el nivel de los alumnos",
-              "en": "Selection and adaptation of rubrics depending on student level",
-              "va": "Selecció i adaptació de les rúbriques segons el nivell dels alumnes"
-            }
-          }
-        ],
-        "risks": [
-          {
-            "label": {
-              "es": "Cambios en la especificación del API de EMT que requieran actualizar cuadernos",
-              "en": "Changes in EMT API specification requiring notebook updates",
-              "va": "Canvis en l'especificació del API de EMT que requerisquen actualitzar quaderns"
-            }
-          }
-        ]
-      },
+      "transferability": null,
       "template": {
         "requiredBlocks": [
           "context",
@@ -24960,50 +21965,33 @@ export const MARKETPLACE_CONFIG = {
           "name": "Hospital Universitari i Politècnic La Fe"
         },
         "requester": null,
-        "leadTeam": {
-          "name": "Servicio de Radiología e Innovación Digital, La Fe",
-          "role": {
-            "es": "Entidad origen — desarrollo del módulo de IA y dataset sintético",
-            "en": "Origin entity — development of AI module and synthetic dataset",
-            "va": "Entitat origen — desenvolupament del mòdul d'IA i dataset sintètic"
-          }
-        },
+        "leadTeam": null,
         "contact": null,
         "beneficiaries": [
           {
             "name": "IES Federica Montseny",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro piloto — integración en el ciclo de Imagen para el Diagnóstico",
-              "en": "Pilot centre — integration in the Diagnostic Imaging cycle",
-              "va": "Centre pilot — integració en el cicle d'Imatge per al Diagnòstic"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           },
           {
             "name": "IES Enric Valor (Petrer)",
-            "type": "vet-centre",
+            "type": "",
             "role": {
-              "es": "Centro receptor — adaptación al contexto rural",
-              "en": "Receiving centre — adaptation to rural context",
-              "va": "Centre receptor — adaptació al context rural"
+              "es": "",
+              "en": "",
+              "va": ""
             }
           }
         ]
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "responsible-ai"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "equity-inclusion",
-          "infrastructure-evidence"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -25027,10 +22015,7 @@ export const MARKETPLACE_CONFIG = {
           "vet",
           "master"
         ],
-        "audience": [
-          "vet-centres",
-          "research-centres"
-        ],
+        "audience": [],
         "sdgs": [
           3,
           4,
@@ -25044,12 +22029,12 @@ export const MARKETPLACE_CONFIG = {
           {
             "name": "IES Federica Montseny",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           },
           {
             "name": "IES Enric Valor (Petrer)",
             "sector": "",
-            "type": "vet-centre"
+            "type": ""
           }
         ]
       },
@@ -25061,9 +22046,9 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
-        "codeLicense": "Apache 2.0",
-        "dataAvailability": "open",
+        "pageLicense": "",
+        "codeLicense": "",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -25072,9 +22057,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "El dataset sintético no contiene datos de pacientes reales y es de uso libre. Las imágenes han sido generadas computacionalmente y validadas por profesionales clínicos.",
-          "en": "The synthetic dataset contains no real patient data and is freely usable. Images were computationally generated and validated by clinical professionals.",
-          "va": "El dataset sintètic no conté dades de pacients reals i és d'ús lliure. Les imatges han sigut generades computacionalment i validades per professionals clínics."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -25084,7 +22069,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -25109,9 +22094,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Ver caso",
-            "en": "View case",
-            "va": "Veure cas"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -25128,131 +22113,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "externalLinks": [
-          {
-            "id": "gradio-docs",
-            "type": "website",
-            "label": {
-              "es": "Documentación oficial Gradio",
-              "en": "Official Gradio documentation",
-              "va": "Documentació oficial Gradio"
-            },
-            "url": "https://www.gradio.app/docs"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/cases/diagnostico-ia-fp-sanitario-nts/",
-        "items": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso — IA en FP Sanitario",
-              "en": "Case brief — AI in Health VET",
-              "va": "Fitxa del cas — IA en FP Sanitari"
-            },
-            "description": {
-              "es": "Resumen ejecutivo del caso con resultados, metodología y condiciones de replicación.",
-              "en": "Executive summary of the case with results, methodology and replication conditions.",
-              "va": "Resum executiu del cas amb resultats, metodologia i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-ia-diagnostico-fp-sanitario.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "5 prácticas guiadas con soluciones",
-              "en": "5 guided practices with solutions",
-              "va": "5 pràctiques guiades amb solucions"
-            },
-            "description": {
-              "es": "Cuaderno de prácticas en formato PDF con enunciados, capturas de pantalla esperadas y soluciones comentadas para el docente.",
-              "en": "Practice workbook in PDF format with prompts, expected screenshots and commented solutions for the teacher.",
-              "va": "Quadern de pràctiques en format PDF amb enunciats, captures de pantalla esperades i solucions comentades per al docent."
-            },
-            "files": [
-              {
-                "file": "practicas-ia-diagnostico-imagen-docente.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-SA 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          },
-          {
-            "id": "slide-deck",
-            "type": "slide-deck",
-            "title": {
-              "es": "Presentación introductoria — IA en radiología",
-              "en": "Introductory slides — AI in radiology",
-              "va": "Presentació introductòria — IA en radiologia"
-            },
-            "description": {
-              "es": "Diapositivas para la sesión de presentación a los alumnos, con ejemplos reales de IA en entornos hospitalarios y discusión ética.",
-              "en": "Slides for the student introduction session, with real examples of AI in hospital settings and ethical discussion.",
-              "va": "Diapositives per a la sessió de presentació als alumnes, amb exemples reals d'IA en entorns hospitalaris i discussió ètica."
-            },
-            "files": [
-              {
-                "file": "presentacion-ia-radiologia-fp.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "outputs": null,
       "process": null,
-      "hasDownloads": true,
-      "downloadCount": 3,
-      "cardDownloads": [
-        {
-          "id": "case-brief",
-          "type": "case-brief",
-          "title": {
-            "es": "Ficha del caso — IA en FP Sanitario",
-            "en": "Case brief — AI in Health VET",
-            "va": "Fitxa del cas — IA en FP Sanitari"
-          },
-          "description": {
-            "es": "Resumen ejecutivo del caso con resultados, metodología y condiciones de replicación.",
-            "en": "Executive summary of the case with results, methodology and replication conditions.",
-            "va": "Resum executiu del cas amb resultats, metodologia i condicions de replicació."
-          },
-          "files": [
-            {
-              "file": "ficha-caso-ia-diagnostico-fp-sanitario.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "case",
@@ -25265,7 +22136,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": {
@@ -25287,8 +22158,8 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
-            "relations": true,
+            "trackA": true,
+            "relations": false,
             "evidence": true,
             "transferability": true,
             "summary": true,
@@ -25298,34 +22169,7 @@ export const MARKETPLACE_CONFIG = {
           }
         }
       },
-      "caseStudy": {
-        "type": "adaptation",
-        "originContext": {
-          "es": "La Unidad de Innovación Digital del Hospital La Fe diseñó un programa interno de capacitación para residentes en el uso de herramientas de IA aplicadas al diagnóstico radiológico. El programa incluye un dataset sintético de 8.000 imágenes de tórax generadas con simuladores, libre de datos de pacientes reales.",
-          "en": "The Digital Innovation Unit at Hospital La Fe designed an internal training programme for residents on AI tools applied to radiological diagnosis. The programme includes a synthetic dataset of 8,000 chest images generated with simulators, free of real patient data.",
-          "va": "La Unitat d'Innovació Digital de l'Hospital La Fe va dissenyar un programa intern de capacitació per a residents en l'ús d'eines d'IA aplicades al diagnòstic radiològic. El programa inclou un dataset sintètic de 8.000 imatges de tòrax generades amb simuladors, lliure de dades de pacients reals."
-        },
-        "transferContext": {
-          "es": "Los centros de FP Sanitario que imparten el ciclo de Imagen para el Diagnóstico no tienen acceso a datasets médicos reales debido a normativa de protección de datos. Los alumnos acaban el ciclo sin haber trabajado con herramientas de IA, que ya son parte de la práctica clínica diaria.",
-          "en": "Health VET centres offering the Diagnostic Imaging cycle have no access to real medical datasets due to data protection regulations. Students complete the cycle without having worked with AI tools, which are already part of daily clinical practice.",
-          "va": "Els centres de FP Sanitari que imparteixen el cicle d'Imatge per al Diagnòstic no tenen accés a datasets mèdics reals a causa de la normativa de protecció de dades. Els alumnes acaben el cicle sense haver treballat amb eines d'IA, que ja formen part de la pràctica clínica diària."
-        },
-        "intervention": {
-          "es": "Se desarrolló una versión educativa del módulo con el dataset sintético, una interfaz web simplificada (Gradio) y 5 prácticas guiadas que cubren: preprocesado de imágenes, entrenamiento de un clasificador binario, evaluación de métricas (sensibilidad/especificidad), análisis de sesgos y documentación de un informe automatizado.",
-          "en": "An educational version of the module was developed with the synthetic dataset, a simplified web interface (Gradio) and 5 guided practices covering: image preprocessing, binary classifier training, metric evaluation (sensitivity/specificity), bias analysis and automated report documentation.",
-          "va": "Es va desenvolupar una versió educativa del mòdul amb el dataset sintètic, una interfície web simplificada (Gradio) i 5 pràctiques guiades que cobreixen: preprocessat d'imatges, entrenament d'un classificador binari, avaluació de mètriques (sensibilitat/especificitat), anàlisi de biaixos i documentació d'un informe automatitzat."
-        },
-        "transferPath": {
-          "es": "Sesión de formación de 6 horas para docentes del ciclo → despliegue local en el aula informática → 5 sesiones de prácticas distribuidas en la UD de \"Nuevas tecnologías en diagnóstico\" → evaluación con rúbrica compartida.",
-          "en": "6-hour training session for cycle teachers → local deployment in the computer classroom → 5 practice sessions distributed across the \"New diagnostic technologies\" learning unit → assessment with shared rubric.",
-          "va": "Sessió de formació de 6 hores per a docents del cicle → desplegament local a l'aula d'informàtica → 5 sessions de pràctiques distribuïdes a la UD de \"Noves tecnologies en diagnòstic\" → avaluació amb rúbrica compartida."
-        },
-        "trackBValue": {
-          "es": "Dataset sintético de 8.000 imágenes de tórax con etiquetas clínicas simuladas, interfaz Gradio lista para usar y 5 prácticas guiadas con soluciones. Replicable en cualquier centro con un aula informática básica.",
-          "en": "Synthetic dataset of 8,000 chest images with simulated clinical labels, ready-to-use Gradio interface and 5 guided practices with solutions. Replicable in any centre with a basic computer classroom.",
-          "va": "Dataset sintètic de 8.000 imatges de tòrax amb etiquetes clíniques simulades, interfície Gradio llesta per usar i 5 pràctiques guiades amb solucions. Replicable en qualsevol centre amb una aula d'informàtica bàsica."
-        }
-      },
+      "caseStudy": null,
       "evidence": {
         "headline": {
           "es": "El 87% de los alumnos supera el umbral de competencia en clasificación de imágenes con IA tras las 5 sesiones.",
@@ -25342,110 +22186,15 @@ export const MARKETPLACE_CONFIG = {
             "va": "Alumnes que superen el llindar de competència"
           }
         },
-        "secondaryMetrics": [
-          {
-            "id": "hours-saved",
-            "value": 40,
-            "unit": "horas/docente",
-            "label": {
-              "es": "Horas de preparación ahorradas por docente gracias al material listo",
-              "en": "Preparation hours saved per teacher thanks to ready-made material",
-              "va": "Hores de preparació estalviades per docent gràcies al material llest"
-            }
-          },
-          {
-            "id": "bias-awareness",
-            "value": 78,
-            "unit": "%",
-            "label": {
-              "es": "Alumnos que identifican correctamente sesgos en el modelo entrenado",
-              "en": "Students correctly identifying biases in the trained model",
-              "va": "Alumnes que identifiquen correctament biaixos en el model entrenat"
-            }
-          }
-        ],
-        "verification": {
-          "status": "reviewed",
-          "verifiedBy": "AI-STEAM Comité Técnico Salud Digital",
-          "verifiedAt": "2026-01-30",
-          "method": {
-            "es": "Revisión de rúbricas de evaluación por el Comité Técnico y análisis de logs de actividad anonimizados de la plataforma Gradio.",
-            "en": "Evaluation rubric review by the Technical Committee and analysis of anonymised activity logs from the Gradio platform.",
-            "va": "Revisió de rúbriques d'avaluació pel Comité Tècnic i anàlisi de logs d'activitat anonimitzats de la plataforma Gradio."
-          }
-        },
+        "secondaryMetrics": [],
+        "verification": null,
         "limitations": {
-          "es": "El dataset sintético no sustituye la exposición clínica real. Las métricas de desempeño de los alumnos reflejan competencia técnica con datos simulados, no con pacientes reales.",
-          "en": "The synthetic dataset does not replace real clinical exposure. Student performance metrics reflect technical competency with simulated data, not real patients.",
-          "va": "El dataset sintètic no substitueix l'exposició clínica real. Les mètriques de rendiment dels alumnes reflecteixen competència tècnica amb dades simulades, no amb pacients reals."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
-      "transferability": {
-        "whyTransferable": {
-          "es": "El dataset sintético elimina cualquier restricción legal de protección de datos. La interfaz Gradio es agnóstica al hardware y funciona en ordenadores básicos. El enfoque en métricas clínicas (sensibilidad/especificidad) conecta directamente con el temario del ciclo.",
-          "en": "The synthetic dataset eliminates any legal data protection restrictions. The Gradio interface is hardware-agnostic and runs on basic computers. The focus on clinical metrics (sensitivity/specificity) connects directly with the cycle curriculum.",
-          "va": "El dataset sintètic elimina qualsevol restricció legal de protecció de dades. La interfície Gradio és agnòstica al maquinari i funciona en ordinadors bàsics. L'enfocament en mètriques clíniques (sensibilitat/especificitat) connecta directament amb el temari del cicle."
-        },
-        "suitableFor": [
-          "vet-centres",
-          "research-centres"
-        ],
-        "requirements": [
-          {
-            "label": {
-              "es": "Aula con ordenadores (sin GPU dedicada necesaria)",
-              "en": "Classroom with computers (no dedicated GPU required)",
-              "va": "Aula amb ordinadors (sense GPU dedicada necessària)"
-            }
-          },
-          {
-            "label": {
-              "es": "Python 3.10+ instalado o acceso a entorno web (Google Colab)",
-              "en": "Python 3.10+ installed or access to web environment (Google Colab)",
-              "va": "Python 3.10+ instal·lat o accés a entorn web (Google Colab)"
-            }
-          }
-        ],
-        "adaptationSteps": [
-          {
-            "label": {
-              "es": "Descargar el dataset sintético y el notebook de prácticas del repositorio",
-              "en": "Download the synthetic dataset and practice notebook from the repository",
-              "va": "Descarregar el dataset sintètic i el notebook de pràctiques del repositori"
-            }
-          },
-          {
-            "label": {
-              "es": "Ajustar las prácticas al número de sesiones disponibles en la programación del módulo",
-              "en": "Adjust the practices to the number of sessions available in the module schedule",
-              "va": "Ajustar les pràctiques al nombre de sessions disponibles en la programació del mòdul"
-            }
-          },
-          {
-            "label": {
-              "es": "Revisar con el coordinador del ciclo la integración en la UD correspondiente",
-              "en": "Review with the cycle coordinator the integration in the corresponding learning unit",
-              "va": "Revisar amb el coordinador del cicle la integració en la UD corresponent"
-            }
-          }
-        ],
-        "risks": [
-          {
-            "label": {
-              "es": "El material requiere actualización si cambian las versiones de las bibliotecas (scikit-learn, Gradio)",
-              "en": "The material requires updating if library versions change (scikit-learn, Gradio)",
-              "va": "El material requereix actualització si canvien les versions de les biblioteques (scikit-learn, Gradio)"
-            }
-          },
-          {
-            "label": {
-              "es": "Algunos alumnos pueden carecer de conocimientos básicos de Python; se recomienda sesión introductoria previa",
-              "en": "Some students may lack basic Python knowledge; an introductory session is recommended beforehand",
-              "va": "Alguns alumnes poden mancar de coneixements bàsics de Python; es recomana una sessió introductòria prèvia"
-            }
-          }
-        ]
-      },
+      "transferability": null,
       "template": {
         "requiredBlocks": [
           "context",
@@ -30965,7 +27714,7 @@ export const MARKETPLACE_CONFIG = {
         "core": {
           "status": "published",
           "forceOpen": false,
-          "maturity": "completed",
+          "maturity": "idea",
           "title": {
             "es": "Escalado de sistema de monitorización energética con IA desde edificio piloto a red de viviendas sociales",
             "en": "Scaling of AI-powered energy monitoring system from pilot building to social housing network",
@@ -31032,70 +27781,51 @@ export const MARKETPLACE_CONFIG = {
             "name": "Universitat Politècnica de València (UPV)"
           },
           "requester": null,
-          "leadTeam": {
-            "name": "UPV — Grupo de Investigación IBIME",
-            "role": {
-              "es": "Investigación, desarrollo y escalado del sistema",
-              "en": "Research, development and scaling of the system",
-              "va": "Recerca, desenvolupament i escalat del sistema"
-            }
-          },
+          "leadTeam": null,
           "contact": null,
           "beneficiaries": [
             {
               "name": "Entitat Valenciana d'Habitatge i Sòl (EVha)",
-              "type": "public-entity",
+              "type": "",
               "role": {
-                "es": "Despliegue en parque de viviendas sociales del área metropolitana de Valencia",
-                "en": "Deployment across the social housing stock in the Valencia metropolitan area",
-                "va": "Desplegament al parc d'habitatges socials de l'àrea metropolitana de València"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "IES Mestre Ramón Esteve",
-              "type": "educational-centre",
+              "type": "",
               "role": {
-                "es": "Centro piloto de adaptación didáctica y pilotaje educativo en FP de Instalaciones Eléctricas",
-                "en": "Pilot centre for didactic adaptation and educational piloting in Electrical Installations VET",
-                "va": "Centre pilot d'adaptació didàctica i pilotatge educatiu en FP d'Instal·lacions Elèctriques"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "Fundación Laboral de la Construcción",
-              "type": "association",
+              "type": "",
               "role": {
-                "es": "Transferencia sectorial al sector de la construcción y la eficiencia energética en edificación",
-                "en": "Sectoral transfer to the construction and building energy efficiency sector",
-                "va": "Transferència sectorial al sector de la construcció i l'eficiència energètica en edificació"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             }
           ]
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "predictive-ai",
-            "institutional-readiness"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green",
-            "social"
-          ],
-          "policyCluster": [
-            "triple-transition",
-            "learning-ecosystems",
-            "infrastructure-evidence"
-          ],
-          "engagementLevel": "challenge-contribution",
-          "evidenceMaturity": "completed",
-          "lbdStage": "output",
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
           "trackBValue": {
-            "es": "Arquitectura de despliegue documentada y replicable para edge computing energético con Raspberry Pi 4 + MQTT + modelo LSTM reentrenable, validada en 240 viviendas sociales. Incluye módulo didáctico de 6 sesiones para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética. Licencia abierta Apache 2.0 (código) + CC BY 4.0 (materiales educativos).",
-            "en": "Documented and replicable deployment architecture for energy edge computing with Raspberry Pi 4 + MQTT + retrainable LSTM model, validated across 240 social housing units. Includes a 6-session teaching module for Electrical Installations VET and Energy Efficiency Master's. Open licence Apache 2.0 (code) + CC BY 4.0 (educational materials).",
-            "va": "Arquitectura de desplegament documentada i replicable per a edge computing energètic amb Raspberry Pi 4 + MQTT + model LSTM reentrenable, validada en 240 habitatges socials. Inclou mòdul didàctic de 6 sessions per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica. Llicència oberta Apache 2.0 (codi) + CC BY 4.0 (materials educatius)."
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "verificationStatus": "verified",
+          "verificationStatus": "",
           "pilotStatus": "",
           "sector": "mfg",
           "sectors": [
@@ -31112,12 +27842,7 @@ export const MARKETPLACE_CONFIG = {
             "Máster",
             "Docentes"
           ],
-          "audience": [
-            "vet-centres",
-            "public-administration",
-            "industry-partners",
-            "research-centres"
-          ],
+          "audience": [],
           "sdgs": [
             7,
             11,
@@ -31131,51 +27856,31 @@ export const MARKETPLACE_CONFIG = {
             {
               "name": "Entitat Valenciana d'Habitatge i Sòl (EVha)",
               "sector": "",
-              "type": "public-entity"
+              "type": ""
             },
             {
               "name": "IES Mestre Ramón Esteve",
               "sector": "",
-              "type": "educational-centre"
+              "type": ""
             },
             {
               "name": "Fundación Laboral de la Construcción",
               "sector": "",
-              "type": "association"
+              "type": ""
             }
           ]
         },
         "community": {
-          "tab": "cases",
-          "audience": [
-            "vet-centres",
-            "public-administration",
-            "research-centres",
-            "industry-partners"
-          ],
-          "primaryCta": {
-            "es": "Acceder al caso",
-            "en": "Access the case",
-            "va": "Accedir al cas"
-          },
-          "featuredSignal": {
-            "es": "Primer caso documentado de escalado de edge computing energético desde edificio universitario a 240 viviendas sociales en la Comunitat Valenciana. Reducción del 23 % en consumo energético en el primer año con hardware de bajo coste y arquitectura completamente replicable bajo licencia abierta.",
-            "en": "First documented case of energy edge computing scaling from a university building to 240 social housing units in the Valencian Community. 23% reduction in energy consumption in the first year using low-cost hardware and a fully replicable architecture under an open licence.",
-            "va": "Primer cas documentat d'escalat d'edge computing energètic des d'edifici universitari a 240 habitatges socials a la Comunitat Valenciana. Reducció del 23 % en consum energètic en el primer any amb maquinari de baix cost i arquitectura completament replicable sota llicència oberta."
-          },
-          "relationIds": [
-            "auditoria-energetica-ia-hou",
-            "solar-fotovoltaica-gemelo-digital-ene"
-          ]
+          "tab": "cases"
         },
         "card": {},
         "visibility": {},
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
-          "codeLicense": "Apache 2.0",
-          "dataAvailability": "confidential-not-included",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -31184,9 +27889,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "El código del sistema puede usarse y modificarse libremente según la licencia Apache 2.0. Los materiales educativos están bajo CC BY 4.0. Los datos de consumo individuales por vivienda son confidenciales y no están incluidos; el dataset de muestra anonimizado (30 viviendas) está disponible en la sección de descargables para uso didáctico.",
-            "en": "The system code may be freely used and modified under the Apache 2.0 licence. Educational materials are under CC BY 4.0. Individual consumption data per housing unit is confidential and not included; the anonymised sample dataset (30 units) is available in the downloads section for didactic use.",
-            "va": "El codi del sistema pot usar-se i modificar-se lliurement segons la llicència Apache 2.0. Els materials educatius estan sota CC BY 4.0. Les dades de consum individuals per habitatge són confidencials i no s'inclouen; el dataset de mostra anonimitzat (30 habitatges) està disponible en la secció de descàrregues per a ús didàctic."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -31196,266 +27901,61 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
-          "enabled": true,
+          "enabled": false,
           "label": {
-            "es": "Trabajo final de Máster sobre modelos LSTM aplicados a la predicción de consumo energético en edificios de vivienda social",
-            "en": "Master's final project on LSTM models applied to energy consumption prediction in social housing buildings",
-            "va": "Treball final de Màster sobre models LSTM aplicats a la predicció de consum energètic en edificis d'habitatge social"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "url": "https://riunet.upv.es/handle/10251/198742"
+          "url": ""
         },
         "trackALink": {
-          "enabled": true,
+          "enabled": false,
           "label": {
-            "es": "Trabajo final de Máster sobre modelos LSTM aplicados a la predicción de consumo energético en edificios de vivienda social",
-            "en": "Master's final project on LSTM models applied to energy consumption prediction in social housing buildings",
-            "va": "Treball final de Màster sobre models LSTM aplicats a la predicció de consum energètic en edificis d'habitatge social"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "url": "https://riunet.upv.es/handle/10251/198742"
+          "url": ""
         },
         "externalFlow": {
-          "enabled": true,
+          "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Ver caso completo",
-              "en": "View full case",
-              "va": "Veure cas complet"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
-            "url": "https://aisteam.gva.es/marketplace/casos/eficiencia-energetica-edificios-hou"
+            "url": ""
           },
           "secondaryAction": null,
-          "fallbackAction": {
-            "label": {
-              "es": "Acceder al repositorio GitHub",
-              "en": "Access GitHub repository",
-              "va": "Accedir al repositori GitHub"
-            },
-            "url": "https://github.com/ibime-upv/energy-monitoring-edge"
-          },
-          "fallbackContact": {
-            "label": {
-              "es": "Contactar con el equipo IBIME-UPV para consultas sobre adaptación",
-              "en": "Contact the IBIME-UPV team for adaptation enquiries",
-              "va": "Contactar amb l'equip IBIME-UPV per a consultes sobre adaptació"
-            },
-            "url": "mailto:ibime@upv.es"
-          }
+          "fallbackAction": null,
+          "fallbackContact": null
         },
         "relations": {
           "originChallengeId": "",
-          "validations": [
-            "validacion-monitorizacion-energetica-hou"
-          ],
-          "pilots": [
-            "piloto-edge-computing-vivienda-social-evha"
-          ],
-          "cases": [
-            "auditoria-energetica-ia-hou",
-            "solar-fotovoltaica-gemelo-digital-ene"
-          ],
+          "validations": [],
+          "pilots": [],
+          "cases": [],
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "externalLinks": [
-            {
-              "id": "github-repository",
-              "type": "repository",
-              "label": {
-                "es": "Repositorio del sistema en GitHub (código, configuración y documentación técnica)",
-                "en": "System repository on GitHub (code, configuration and technical documentation)",
-                "va": "Repositori del sistema a GitHub (codi, configuració i documentació tècnica)"
-              },
-              "url": "https://github.com/ibime-upv/energy-monitoring-edge",
-              "license": "Apache 2.0"
-            },
-            {
-              "id": "ibime-research-group",
-              "type": "website",
-              "label": {
-                "es": "Grupo de Investigación IBIME — Universitat Politècnica de València",
-                "en": "IBIME Research Group — Universitat Politècnica de València",
-                "va": "Grup de Recerca IBIME — Universitat Politècnica de València"
-              },
-              "url": "https://www.ibime.upv.es"
-            },
-            {
-              "id": "evha-website",
-              "type": "website",
-              "label": {
-                "es": "Entitat Valenciana d'Habitatge i Sòl (EVha) — portal institucional",
-                "en": "Entitat Valenciana d'Habitatge i Sòl (EVha) — institutional website",
-                "va": "Entitat Valenciana d'Habitatge i Sòl (EVha) — portal institucional"
-              },
-              "url": "https://evha.gva.es"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/cases/eficiencia-energetica-edificios-hou/",
-          "items": [
-            {
-              "id": "case-brief",
-              "type": "case-brief",
-              "title": {
-                "es": "Ficha completa del caso",
-                "en": "Full case brief",
-                "va": "Fitxa completa del cas"
-              },
-              "description": {
-                "es": "Documento resumen del caso con contexto de origen, proceso de escalado, actores, resultados y condiciones de replicación.",
-                "en": "Case summary document with origin context, scaling process, actors, results and replication conditions.",
-                "va": "Document resum del cas amb context d'origen, procés d'escalat, actors, resultats i condicions de replicació."
-              },
-              "files": [
-                {
-                  "file": "cas-monitorizacion-energetica-hou.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            },
-            {
-              "id": "replication-guide",
-              "type": "replication-guide",
-              "title": {
-                "es": "Guía de replicación técnica",
-                "en": "Technical replication guide",
-                "va": "Guia de replicació tècnica"
-              },
-              "description": {
-                "es": "Guía paso a paso para desplegar la arquitectura edge computing en un edificio o conjunto de viviendas. Incluye lista de materiales, comandos de instalación y checklist de validación.",
-                "en": "Step-by-step guide to deploying the edge computing architecture in a building or housing estate. Includes a bill of materials, installation commands and validation checklist.",
-                "va": "Guia pas a pas per desplegar l'arquitectura edge computing en un edifici o conjunt d'habitatges. Inclou llista de materials, ordres d'instal·lació i checklist de validació."
-              },
-              "files": [
-                {
-                  "file": "guia-replicacion-monitorizacion-energetica.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "teaching-module",
-              "type": "teaching-module",
-              "title": {
-                "es": "Módulo didáctico para FP de Instalaciones Eléctricas (6 sesiones)",
-                "en": "Teaching module for Electrical Installations VET (6 sessions)",
-                "va": "Mòdul didàctic per a FP d'Instal·lacions Elèctriques (6 sessions)"
-              },
-              "description": {
-                "es": "Secuencia de seis sesiones para el módulo de Instalaciones de Energías Renovables de FP de Instalaciones Eléctricas y Automáticas. Incluye fichas del alumno, rúbrica de evaluación y datos de consumo de práctica.",
-                "en": "Six-session sequence for the Renewable Energy Installations module in Electrical and Automated Installations VET. Includes student worksheets, evaluation rubric and practice consumption data.",
-                "va": "Seqüència de sis sessions per al mòdul d'Instal·lacions d'Energies Renovables de FP d'Instal·lacions Elèctriques i Automàtiques. Inclou fitxes de l'alumne, rúbrica d'avaluació i dades de consum de pràctica."
-              },
-              "files": [
-                {
-                  "file": "modulo-didactico-fp-instalaciones-electricas.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "dataset-sample",
-              "type": "dataset",
-              "title": {
-                "es": "Dataset de muestra anonimizado (30 viviendas, 12 meses)",
-                "en": "Anonymised sample dataset (30 units, 12 months)",
-                "va": "Dataset de mostra anonimitzat (30 habitatges, 12 mesos)"
-              },
-              "description": {
-                "es": "Subconjunto anonimizado del dataset de consumo agregado por hora. Preparado para uso didáctico y pruebas de reentrenamiento del modelo LSTM.",
-                "en": "Anonymised subset of the hourly aggregated consumption dataset. Prepared for didactic use and LSTM model retraining tests.",
-                "va": "Subconjunt anonimitzat del dataset de consum agregat per hora. Preparat per a ús didàctic i proves de reentrenament del model LSTM."
-              },
-              "files": [
-                {
-                  "file": "dataset-muestra-30-viviendas-12-meses.csv",
-                  "format": "csv",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "outputs": null,
         "process": null,
-        "hasDownloads": true,
-        "downloadCount": 4,
-        "cardDownloads": [
-          {
-            "id": "replication-guide",
-            "type": "replication-guide",
-            "title": {
-              "es": "Guía de replicación técnica",
-              "en": "Technical replication guide",
-              "va": "Guia de replicació tècnica"
-            },
-            "description": {
-              "es": "Guía paso a paso para desplegar la arquitectura edge computing en un edificio o conjunto de viviendas. Incluye lista de materiales, comandos de instalación y checklist de validación.",
-              "en": "Step-by-step guide to deploying the edge computing architecture in a building or housing estate. Includes a bill of materials, installation commands and validation checklist.",
-              "va": "Guia pas a pas per desplegar l'arquitectura edge computing en un edifici o conjunt d'habitatges. Inclou llista de materials, ordres d'instal·lació i checklist de validació."
-            },
-            "files": [
-              {
-                "file": "guia-replicacion-monitorizacion-energetica.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Módulo didáctico para FP de Instalaciones Eléctricas (6 sesiones)",
-              "en": "Teaching module for Electrical Installations VET (6 sessions)",
-              "va": "Mòdul didàctic per a FP d'Instal·lacions Elèctriques (6 sessions)"
-            },
-            "description": {
-              "es": "Secuencia de seis sesiones para el módulo de Instalaciones de Energías Renovables de FP de Instalaciones Eléctricas y Automáticas. Incluye fichas del alumno, rúbrica de evaluación y datos de consumo de práctica.",
-              "en": "Six-session sequence for the Renewable Energy Installations module in Electrical and Automated Installations VET. Includes student worksheets, evaluation rubric and practice consumption data.",
-              "va": "Seqüència de sis sessions per al mòdul d'Instal·lacions d'Energies Renovables de FP d'Instal·lacions Elèctriques i Automàtiques. Inclou fitxes de l'alumne, rúbrica d'avaluació i dades de consum de pràctica."
-            },
-            "files": [
-              {
-                "file": "modulo-didactico-fp-instalaciones-electricas.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "case",
@@ -31468,7 +27968,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": {
@@ -31491,7 +27991,7 @@ export const MARKETPLACE_CONFIG = {
               "people": true,
               "access": true,
               "trackA": true,
-              "relations": true,
+              "relations": false,
               "evidence": true,
               "transferability": true,
               "summary": true,
@@ -31501,34 +28001,7 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "caseStudy": {
-          "type": "scaling",
-          "originContext": {
-            "es": "El grupo IBIME de la UPV desarrolló un sistema de monitorización y predicción de consumo energético basado en sensores IoT y modelos LSTM para el edificio 5I del campus. El sistema operó durante dos años, generando una base de datos longitudinal de consumo eléctrico y térmico con resolución horaria.",
-            "en": "UPV's IBIME group developed an IoT sensor-based energy monitoring and LSTM prediction system for the 5I campus building. The system operated for two years, generating a longitudinal database of hourly electrical and thermal consumption data.",
-            "va": "El grup IBIME de la UPV va desenvolupar un sistema de monitorització i predicció de consum energètic basat en sensors IoT i models LSTM per a l'edifici 5I del campus. El sistema va operar durant dos anys, generant una base de dades longitudinal de consum elèctric i tèrmic amb resolució horària."
-          },
-          "transferContext": {
-            "es": "Tras dos años de operación y datos contrastados, la EVha propuso escalarlo a su parque de 240 viviendas de protección oficial en el área metropolitana de Valencia, donde el coste energético representa un factor crítico de habitabilidad para las familias beneficiarias.",
-            "en": "After two years of operation and validated data, EVha proposed scaling it to its stock of 240 social housing units in the Valencia metropolitan area, where energy costs represent a critical affordability factor for beneficiary families.",
-            "va": "Després de dos anys d'operació i dades contrastades, l'EVha va proposar escalar-lo al seu parc de 240 habitatges de protecció oficial a l'àrea metropolitana de València, on el cost energètic representa un factor crític d'habitabilitat per a les famílies beneficiàries."
-          },
-          "intervention": {
-            "es": "Despliegue de nodos edge con Raspberry Pi 4, protocolo MQTT, dashboard Grafana y modelo LSTM reentrenado con datos de los nuevos edificios. Se instalaron sensores de consumo en cuadros eléctricos y se configuró un servidor central de agregación en las oficinas de la EVha. El IES Mestre Ramón Esteve participó en la validación didáctica del módulo educativo asociado.",
-            "en": "Deployment of Raspberry Pi 4 edge nodes, MQTT protocol, Grafana dashboard and LSTM model retrained with data from the new buildings. Consumption sensors were installed in electrical panels and a central aggregation server was set up at EVha's offices. IES Mestre Ramón Esteve participated in the didactic validation of the associated teaching module.",
-            "va": "Desplegament de nodes edge amb Raspberry Pi 4, protocol MQTT, dashboard Grafana i model LSTM reentrenat amb dades dels nous edificis. Es van instal·lar sensors de consum en quadres elèctrics i es va configurar un servidor central d'agregació a les oficines de l'EVha. L'IES Mestre Ramón Esteve va participar en la validació didàctica del mòdul educatiu associat."
-          },
-          "transferPath": {
-            "es": "Del edificio piloto universitario 5I a 240 viviendas sociales en tres fases — instalación de sensores y configuración de nodos edge (3 meses), reentrenamiento del modelo LSTM con datos locales (3 semanas), puesta en marcha del dashboard y formación de técnicos de la EVha (2 semanas) — con adaptación didáctica paralela para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética.",
-            "en": "From the 5I university pilot building to 240 social housing units in three phases — sensor installation and edge node configuration (3 months), LSTM model retraining with local data (3 weeks), dashboard deployment and EVha technician training (2 weeks) — with parallel didactic adaptation for Electrical Installations VET and Energy Efficiency Master's.",
-            "va": "De l'edifici pilot universitari 5I a 240 habitatges socials en tres fases — instal·lació de sensors i configuració de nodes edge (3 mesos), reentrenament del model LSTM amb dades locals (3 setmanes), posada en marxa del dashboard i formació de tècnics de l'EVha (2 setmanes) — amb adaptació didàctica paral·lela per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica."
-          },
-          "trackBValue": {
-            "es": "Arquitectura de despliegue documentada para edge computing con Raspberry Pi 4 + MQTT + LSTM, adaptable a cualquier edificio con medidores inteligentes o sensores básicos de consumo. Incluye módulo didáctico de 6 sesiones para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética. Todo el código está disponible en GitHub con licencia Apache 2.0.",
-            "en": "Documented deployment architecture for edge computing with Raspberry Pi 4 + MQTT + LSTM, adaptable to any building with smart meters or basic consumption sensors. Includes a 6-session teaching module for Electrical Installations VET and Energy Efficiency Master's. All code is available on GitHub under Apache 2.0 licence.",
-            "va": "Arquitectura de desplegament documentada per a edge computing amb Raspberry Pi 4 + MQTT + LSTM, adaptable a qualsevol edifici amb comptadors intel·ligents o sensors bàsics de consum. Inclou mòdul didàctic de 6 sessions per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica. Tot el codi està disponible a GitHub amb llicència Apache 2.0."
-          }
-        },
+        "caseStudy": null,
         "evidence": {
           "headline": {
             "es": "Reducción del 23 % en consumo energético en el primer año de despliegue en las 240 viviendas sociales.",
@@ -31545,175 +28018,15 @@ export const MARKETPLACE_CONFIG = {
               "va": "Reducció de consum energètic en el primer any de desplegament"
             }
           },
-          "secondaryMetrics": [
-            {
-              "id": "economic-saving",
-              "value": 340,
-              "unit": "EUR/vivienda/año",
-              "label": {
-                "es": "Ahorro medio por vivienda y año en la factura energética",
-                "en": "Average annual saving per home on the energy bill",
-                "va": "Estalvi mitjà per habitatge i any en la factura energètica"
-              }
-            },
-            {
-              "id": "retraining-time",
-              "value": 3,
-              "unit": "semanas",
-              "label": {
-                "es": "Tiempo de reentrenamiento del modelo LSTM con nuevos datos de edificios",
-                "en": "Time to retrain the LSTM model with new building data",
-                "va": "Temps de reentrenament del model LSTM amb noves dades d'edificis"
-              }
-            },
-            {
-              "id": "co2-reduction",
-              "value": 18.4,
-              "unit": "t CO₂/año",
-              "label": {
-                "es": "Reducción estimada de emisiones de CO₂ en el conjunto del parque",
-                "en": "Estimated CO₂ emission reduction across the housing stock",
-                "va": "Reducció estimada d'emissions de CO₂ en el conjunt del parc"
-              }
-            },
-            {
-              "id": "deployment-time",
-              "value": 3,
-              "unit": "meses",
-              "label": {
-                "es": "Tiempo total de despliegue de sensores y nodos edge en las 240 viviendas",
-                "en": "Total deployment time for sensors and edge nodes across the 240 units",
-                "va": "Temps total de desplegament de sensors i nodes edge en els 240 habitatges"
-              }
-            }
-          ],
-          "verification": {
-            "status": "verified",
-            "verifiedBy": "Comité Técnico AI-STEAM — Área de Energía y Hábitat",
-            "verifiedAt": "2026-05-10",
-            "method": {
-              "es": "Revisión de documentación técnica del despliegue, registros de consumo agregados proporcionados por la EVha y comparación con la línea base de los dos años anteriores al escalado.",
-              "en": "Review of technical deployment documentation, aggregated consumption records provided by EVha and comparison with the two-year baseline prior to scaling.",
-              "va": "Revisió de documentació tècnica del desplegament, registres de consum agregats proporcionats per l'EVha i comparació amb la línia base dels dos anys anteriors a l'escalat."
-            }
-          },
+          "secondaryMetrics": [],
+          "verification": null,
           "limitations": {
-            "es": "Los datos de consumo individualizados por vivienda son confidenciales y no se publican. Las métricas publicadas son datos agregados anonimizados. La reducción del 23 % puede variar según tipología constructiva, orientación y hábitos de los residentes.",
-            "en": "Individualised consumption data per housing unit is confidential and not published. Published metrics are anonymised aggregated data. The 23% reduction may vary depending on building typology, orientation and residents' habits.",
-            "va": "Les dades de consum individualitzades per habitatge són confidencials i no es publiquen. Les mètriques publicades són dades agregades anonimitzades. La reducció del 23 % pot variar segons tipologia constructiva, orientació i hàbits dels residents."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
-        "transferability": {
-          "whyTransferable": {
-            "es": "La arquitectura está basada en componentes de hardware de bajo coste disponibles comercialmente (Raspberry Pi 4, sensores de pinza de clip) y software de código abierto (MQTT, Grafana, TensorFlow Lite). No requiere infraestructura de red propietaria. La documentación cubre todos los pasos de instalación, configuración y reentrenamiento del modelo.",
-            "en": "The architecture is based on commercially available low-cost hardware (Raspberry Pi 4, clip-on sensors) and open-source software (MQTT, Grafana, TensorFlow Lite). No proprietary network infrastructure is required. The documentation covers all installation, configuration and model retraining steps.",
-            "va": "L'arquitectura està basada en components de maquinari de baix cost disponibles comercialment (Raspberry Pi 4, sensors de pinça de clip) i programari de codi obert (MQTT, Grafana, TensorFlow Lite). No requereix infraestructura de xarxa propietària. La documentació cobreix tots els passos d'instal·lació, configuració i reentrenament del model."
-          },
-          "suitableFor": [
-            "vet-centres",
-            "public-housing",
-            "municipal-buildings",
-            "energy-training",
-            "research-centres"
-          ],
-          "requirements": [
-            {
-              "label": {
-                "es": "Medidores inteligentes o sensores de consumo instalables en el cuadro eléctrico",
-                "en": "Smart meters or consumption sensors installable in the electrical panel",
-                "va": "Comptadors intel·ligents o sensors de consum instal·lables en el quadre elèctric"
-              }
-            },
-            {
-              "label": {
-                "es": "Nodo edge (Raspberry Pi 4 o equivalente) con conectividad a internet básica",
-                "en": "Edge node (Raspberry Pi 4 or equivalent) with basic internet connectivity",
-                "va": "Node edge (Raspberry Pi 4 o equivalent) amb connectivitat a internet bàsica"
-              }
-            },
-            {
-              "label": {
-                "es": "Capacidad técnica mínima para instalación de hardware y configuración de software en los técnicos responsables",
-                "en": "Minimum technical capacity for hardware installation and software configuration in the responsible technicians",
-                "va": "Capacitat tècnica mínima per a instal·lació de maquinari i configuració de programari en els tècnics responsables"
-              }
-            },
-            {
-              "label": {
-                "es": "Acceso a datos históricos de consumo del edificio o conjunto (mínimo 3-6 meses) para reentrenamiento del modelo",
-                "en": "Access to historical consumption data for the building or estate (minimum 3-6 months) for model retraining",
-                "va": "Accés a dades històriques de consum de l'edifici o conjunt (mínim 3-6 mesos) per al reentrenament del model"
-              }
-            }
-          ],
-          "adaptationSteps": [
-            {
-              "label": {
-                "es": "Diagnóstico energético del edificio o conjunto de viviendas — identificar puntos de medición y tipología de contadores",
-                "en": "Energy diagnosis of the building or housing stock — identify measurement points and meter typology",
-                "va": "Diagnòstic energètic de l'edifici o conjunt d'habitatges — identificar punts de mesurament i tipologia de comptadors"
-              }
-            },
-            {
-              "label": {
-                "es": "Instalación de sensores de consumo en cuadros eléctricos y configuración de nodos edge Raspberry Pi 4",
-                "en": "Installation of consumption sensors in electrical panels and configuration of Raspberry Pi 4 edge nodes",
-                "va": "Instal·lació de sensors de consum en quadres elèctrics i configuració de nodes edge Raspberry Pi 4"
-              }
-            },
-            {
-              "label": {
-                "es": "Configuración del broker MQTT y el dashboard Grafana en el servidor central de agregación",
-                "en": "Configuration of the MQTT broker and Grafana dashboard on the central aggregation server",
-                "va": "Configuració del broker MQTT i el dashboard Grafana en el servidor central d'agregació"
-              }
-            },
-            {
-              "label": {
-                "es": "Reentrenamiento del modelo LSTM con datos locales del primer mes de operación",
-                "en": "Retraining of the LSTM model with local data from the first month of operation",
-                "va": "Reentrenament del model LSTM amb dades locals del primer mes d'operació"
-              }
-            },
-            {
-              "label": {
-                "es": "Formación de técnicos responsables del mantenimiento y lectura del dashboard (jornada de 4 horas)",
-                "en": "Training of technicians responsible for maintenance and dashboard reading (4-hour session)",
-                "va": "Formació de tècnics responsables del manteniment i lectura del dashboard (sessió de 4 hores)"
-              }
-            },
-            {
-              "label": {
-                "es": "Adaptación didáctica del módulo de 6 sesiones para FP o educación superior si el contexto lo requiere",
-                "en": "Didactic adaptation of the 6-session module for VET or higher education if the context requires it",
-                "va": "Adaptació didàctica del mòdul de 6 sessions per a FP o educació superior si el context ho requereix"
-              }
-            }
-          ],
-          "risks": [
-            {
-              "label": {
-                "es": "Confidencialidad de los datos energéticos por vivienda — gestionar conforme al RGPD con datos solo agregados en producción",
-                "en": "Confidentiality of energy data per housing unit — manage in compliance with GDPR using only aggregated data in production",
-                "va": "Confidencialitat de les dades energètiques per habitatge — gestionar conforme al RGPD amb dades només agregades en producció"
-              }
-            },
-            {
-              "label": {
-                "es": "Variabilidad en la calidad de sensores y conectividad según la antigüedad y tipología del edificio",
-                "en": "Variability in sensor quality and connectivity depending on the age and typology of the building",
-                "va": "Variabilitat en la qualitat de sensors i connectivitat segons l'antiguitat i tipologia de l'edifici"
-              }
-            },
-            {
-              "label": {
-                "es": "Reentrenamiento del modelo puede requerir ajuste manual si los patrones de consumo son muy distintos al edificio piloto",
-                "en": "Model retraining may require manual adjustment if consumption patterns differ significantly from the pilot building",
-                "va": "El reentrenament del model pot requerir ajust manual si els patrons de consum són molt distints a l'edifici pilot"
-              }
-            }
-          ]
-        },
+        "transferability": null,
         "template": {
           "requiredBlocks": [
             "context",
@@ -31803,51 +28116,33 @@ export const MARKETPLACE_CONFIG = {
             "name": "IVAM — Institut Valencià d'Art Modern"
           },
           "requester": null,
-          "leadTeam": {
-            "name": "IVAM — Departament d'Educació i Creació Digital",
-            "role": {
-              "es": "Diseño metodológico y banco de prompts original",
-              "en": "Methodological design and original prompt bank",
-              "va": "Disseny metodològic i banc de prompts original"
-            }
-          },
+          "leadTeam": null,
           "contact": null,
           "beneficiaries": [
             {
               "name": "Màster en Educació Artística — Universitat de València",
-              "type": "public-university",
+              "type": "",
               "role": {
-                "es": "Adaptación y pilotaje en formación docente",
-                "en": "Adaptation and piloting in teacher training",
-                "va": "Adaptació i pilotatge en formació docent"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "Centre de Formació de Persones Adultes La Coma",
-              "type": "educational-centre",
+              "type": "",
               "role": {
-                "es": "Co-pilotaje en educación permanente y de adultos",
-                "en": "Co-piloting in lifelong and adult education",
-                "va": "Co-pilotatge en educació permanent i d'adults"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             }
           ]
         },
         "classification": {
-          "aiSteamFocus": [
-            "creative-ai",
-            "responsible-ai",
-            "ai-literacy"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "equity-inclusion",
-            "lifelong-learning"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -31871,10 +28166,7 @@ export const MARKETPLACE_CONFIG = {
             "master",
             "teacher"
           ],
-          "audience": [
-            "teachers",
-            "advanced-learners"
-          ],
+          "audience": [],
           "sdgs": [
             4,
             10
@@ -31887,12 +28179,12 @@ export const MARKETPLACE_CONFIG = {
             {
               "name": "Màster en Educació Artística — Universitat de València",
               "sector": "",
-              "type": "public-university"
+              "type": ""
             },
             {
               "name": "Centre de Formació de Persones Adultes La Coma",
               "sector": "",
-              "type": "educational-centre"
+              "type": ""
             }
           ]
         },
@@ -31904,9 +28196,9 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY-NC 4.0",
-          "codeLicense": "other",
-          "dataAvailability": "open",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -31915,9 +28207,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "Los materiales son libres para uso educativo no comercial. Los prompts que referencien obras del IVAM requieren atribución expresa.",
-            "en": "Materials are free for non-commercial educational use. Prompts referencing IVAM works require explicit attribution.",
-            "va": "Els materials són lliures per a ús educatiu no comercial. Els prompts que referencien obres de l'IVAM requereixen atribució expressa."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -31927,7 +28219,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY-NC 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -31949,24 +28241,17 @@ export const MARKETPLACE_CONFIG = {
           "url": ""
         },
         "externalFlow": {
-          "enabled": true,
+          "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Replicar caso",
-              "en": "Replicate case",
-              "va": "Replicar cas"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
           },
-          "secondaryAction": {
-            "label": {
-              "es": "Contactar para adaptación",
-              "en": "Contact for adaptation",
-              "va": "Contactar per a adaptació"
-            },
-            "url": ""
-          },
+          "secondaryAction": null,
           "fallbackAction": null,
           "fallbackContact": null
         },
@@ -31980,140 +28265,15 @@ export const MARKETPLACE_CONFIG = {
         },
         "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/cases/narrativas-digitales-ia-cci/",
-          "items": [
-            {
-              "id": "replication-guide",
-              "type": "replication-guide",
-              "title": {
-                "es": "Guía completa del marco metodológico",
-                "en": "Complete methodological framework guide",
-                "va": "Guia completa del marc metodològic"
-              },
-              "description": {
-                "es": "Detalle de las 5 fases paso a paso para la replicación del caso.",
-                "en": "Step-by-step detail of the 5 phases for case replication.",
-                "va": "Detall de les 5 fases pas a pas per a la replicació del cas."
-              },
-              "files": [
-                {
-                  "file": "guia-marco-metodologico-narrativas.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY-NC 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "dataset-sample",
-              "type": "dataset-sample",
-              "title": {
-                "es": "Banco de 120 prompts comentados",
-                "en": "Bank of 120 annotated prompts",
-                "va": "Banc de 120 prompts comentats"
-              },
-              "description": {
-                "es": "Prompts optimizados para imagen, texto y voz con explicaciones éticas.",
-                "en": "Optimized prompts for image, text and voice with ethical explanations.",
-                "va": "Prompts optimitzats per a imatge, text i veu amb explicacions ètiques."
-              },
-              "files": [
-                {
-                  "file": "banco-prompts-narrativas-ia.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY-NC 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "other",
-              "type": "other",
-              "title": {
-                "es": "Rúbrica de evaluación transmedia",
-                "en": "Transmedia assessment rubric",
-                "va": "Rúbrica d'avaluació transmèdia"
-              },
-              "description": {
-                "es": "Matriz de evaluación para calificar las creaciones transmedia y el uso crítico de la IA.",
-                "en": "Assessment matrix to grade transmedia creations and critical AI use.",
-                "va": "Plantilles per a avaluar les creacions transmèdia i l'ús crític de la IA."
-              },
-              "files": [
-                {
-                  "file": "rubricas-evaluacion-transmedia.odt",
-                  "format": "docx",
-                  "language": "es",
-                  "license": "CC BY-NC 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "outputs": null,
         "process": null,
-        "hasDownloads": true,
-        "downloadCount": 3,
-        "cardDownloads": [
-          {
-            "id": "replication-guide",
-            "type": "replication-guide",
-            "title": {
-              "es": "Guía completa del marco metodológico",
-              "en": "Complete methodological framework guide",
-              "va": "Guia completa del marc metodològic"
-            },
-            "description": {
-              "es": "Detalle de las 5 fases paso a paso para la replicación del caso.",
-              "en": "Step-by-step detail of the 5 phases for case replication.",
-              "va": "Detall de les 5 fases pas a pas per a la replicació del cas."
-            },
-            "files": [
-              {
-                "file": "guia-marco-metodologico-narrativas.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-NC 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "dataset-sample",
-            "type": "dataset-sample",
-            "title": {
-              "es": "Banco de 120 prompts comentados",
-              "en": "Bank of 120 annotated prompts",
-              "va": "Banc de 120 prompts comentats"
-            },
-            "description": {
-              "es": "Prompts optimizados para imagen, texto y voz con explicaciones éticas.",
-              "en": "Optimized prompts for image, text and voice with ethical explanations.",
-              "va": "Prompts optimitzats per a imatge, text i veu amb explicacions ètiques."
-            },
-            "files": [
-              {
-                "file": "banco-prompts-narrativas-ia.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-NC 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "case",
@@ -32126,7 +28286,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": {
@@ -32148,8 +28308,8 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
-              "relations": true,
+              "trackA": true,
+              "relations": false,
               "evidence": true,
               "transferability": true,
               "summary": true,
@@ -32159,34 +28319,7 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "caseStudy": {
-          "type": "adaptation",
-          "originContext": {
-            "es": "El IVAM desarrolló internamente un flujo de trabajo con herramientas de IA generativa (Stable Diffusion, GPT-4o, ElevenLabs) para crear narrativas digitales sobre obras de su colección.",
-            "en": "IVAM internally developed a workflow using generative AI tools (Stable Diffusion, GPT-4o, ElevenLabs) to create digital narratives about works from its collection.",
-            "va": "L'IVAM va desenvolupar internament un flux de treball amb eines d'IA generativa (Stable Diffusion, GPT-4o, ElevenLabs) per crear narratives digitals sobre obres de la seua col·lecció."
-          },
-          "transferContext": {
-            "es": "El Máster en Educació Artística de la UV propuso adaptarlo como metodología de formación docente, manteniendo la esencia creativa pero haciéndolo reproducible sin acceso a las APIs de pago del museo.",
-            "en": "The UV Master's in Arts Education proposed adapting it as a teacher training methodology, preserving the creative essence while making it reproducible without access to the museum's paid APIs.",
-            "va": "El Máster en Educació Artística de la UV va proposar adaptar-lo como a metodologia de formació docent, mantenint l'essència creativa pero fent-lo reproduïble sense accés a les APIs de pagament del museu."
-          },
-          "intervention": {
-            "es": "El marco adaptado sustituye las APIs de pago por alternativas abiertas y locales (SDXL local, Mistral 7B, Bark TTS). Estructura el proceso en 5 fases de trabajo secuencial.",
-            "en": "The adapted framework replaces paid APIs with open and local alternatives (local SDXL, Mistral 7B, Bark TTS). It structures the process into 5 sequential work phases.",
-            "va": "El marc adaptat substitueix les APIs de pagament per alternatives obertes i locals (SDXL local, Mistral 7B, Bark TTS). Estructura el procés en 5 fases de treball seqüencial."
-          },
-          "transferPath": {
-            "es": "Transferencia de un flujo de trabajo cultural/museístico profesional hacia la formación de futuros educadores y docentes de arte.",
-            "en": "Transfer of a professional cultural/museum workflow towards the training of future art educators and teachers.",
-            "va": "Transferència d'un flux de treball cultural/museístic professional cap a la formació de futurs educadors i docents d'art."
-          },
-          "trackBValue": {
-            "es": "Marco metodológico de 5 fases para crear narrativas multimodales con IA generativa, adaptable a cualquier colección cultural o temática. Incluye guía de uso ético, banco de prompts comentados y rúbrica de evaluación de narrativa transmedia.",
-            "en": "5-phase methodological framework for creating multimodal narratives with generative AI, adaptable to any cultural collection or theme. Includes ethical use guide, annotated prompt bank and transmedia narrative assessment rubric.",
-            "va": "Marc metodològic de 5 fases per crear narratives multimodals amb IA generativa, adaptable a qualsevol col·lecció cultural o temàtica. Inclou guia d'ús ètic, banc de prompts comentats i rúbrica d'avaluació de narrativa transmèdia."
-          }
-        },
+        "caseStudy": null,
         "evidence": {
           "headline": {
             "es": "28 narrativas creadas en el piloto inicial y 86% de autonomía metodológica docente conseguida.",
@@ -32203,97 +28336,15 @@ export const MARKETPLACE_CONFIG = {
               "va": "Narratives transmèdia originals creades pels estudiants"
             }
           },
-          "secondaryMetrics": [
-            {
-              "id": "autonomy-rating",
-              "value": 86,
-              "unit": "%",
-              "label": {
-                "es": "Participantes capacitados para replicarlo autónomamente",
-                "en": "Participants trained to replicate it autonomously",
-                "va": "Participants capacitats per a replicar-lo de manera autònoma"
-              }
-            },
-            {
-              "id": "license-savings",
-              "value": 800,
-              "unit": "EUR/licence",
-              "label": {
-                "es": "Ahorro en software propietario por sustitución por herramientas libres",
-                "en": "Proprietary software savings through open tools replacement",
-                "va": "Estalvi en software propietari per substitució per eines lliures"
-              }
-            }
-          ],
-          "verification": {
-            "status": "self-reported",
-            "verifiedBy": "Coordinación Máster Educación Artística UV",
-            "verifiedAt": "2026-04-30",
-            "method": {
-              "es": "Evaluación final de los portfolios docentes y cuestionario de autopercepción.",
-              "en": "Final assessment of teaching portfolios and self-perception questionnaire.",
-              "va": "Avaluació final dels portfolios docents i qüestionari d'autopercepció."
-            }
-          },
+          "secondaryMetrics": [],
+          "verification": null,
           "limitations": {
-            "es": "El uso local de SDXL requiere ordenadores con suficiente capacidad gráfica o servicios online alternativos.",
-            "en": "Local use of SDXL requires computers with sufficient graphics capacity or alternative online services.",
-            "va": "L'ús local de SDXL requereix ordinadors amb prou capacitat gràfica o serveis online alternatius."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
-        "transferability": {
-          "whyTransferable": {
-            "es": "Se basa por completo en herramientas de código abierto o accesos gratuitos, y su diseño metodológico se desacopla del contenido temático específico.",
-            "en": "It is entirely based on open-source or free-access tools, and its methodological design is decoupled from specific thematic content.",
-            "va": "Es basa completament en eines de codi obert o accesos gratuïts, i el seu disseny metodològic es desacobla del contingut temàtic específic."
-          },
-          "suitableFor": [
-            "teacher-training",
-            "cultural-organisations",
-            "vet-centres"
-          ],
-          "requirements": [
-            {
-              "label": {
-                "es": "Conectividad a internet y ordenadores de gama media-alta para inferencia local (o uso en la nube)",
-                "en": "Internet connectivity and medium-high end computers for local inference (or cloud use)",
-                "va": "Connectivitat a internet i ordinadors de gamma mitjana-alta per a inferència local (o ús al núvol)"
-              }
-            }
-          ],
-          "adaptationSteps": [
-            {
-              "label": {
-                "es": "Configuración del repositorio local de Stable Diffusion o selección de alternativas cloud libres",
-                "en": "Local Stable Diffusion repository configuration or selection of free cloud alternatives",
-                "va": "Configuració del repositori local de Stable Diffusion o selecció d'alternatives cloud lliures"
-              }
-            },
-            {
-              "label": {
-                "es": "Selección de la colección de partida (del IVAM o del propio centro educativo)",
-                "en": "Starting collection selection (from IVAM or the educational centre itself)",
-                "va": "Selecció de la col·lecció de partida (de l'IVAM o del propi centre educatiu)"
-              }
-            },
-            {
-              "label": {
-                "es": "Taller práctico de generación de prompts y estructuración narrativa transmedia",
-                "en": "Practical workshop on prompt generation and transmedia narrative structuring",
-                "va": "Taller pràctic de generació de prompts i estructuració narrativa transmèdia"
-              }
-            }
-          ],
-          "risks": [
-            {
-              "label": {
-                "es": "Sesgos intrínsecos de los modelos generativos de imagen y texto",
-                "en": "Intrinsic biases in generative image and text models",
-                "va": "Biaixos intrínsecs dels models generatius d'imatge i text"
-              }
-            }
-          ]
-        },
+        "transferability": null,
         "template": {
           "requiredBlocks": [
             "context",
@@ -32383,50 +28434,33 @@ export const MARKETPLACE_CONFIG = {
             "name": "Enertika, S.L."
           },
           "requester": null,
-          "leadTeam": {
-            "name": "Dpto. de Producto e Innovación, Enertika",
-            "role": {
-              "es": "Empresa origen — desarrollo de la herramienta y preparación del kit educativo",
-              "en": "Origin company — tool development and educational kit preparation",
-              "va": "Empresa origen — desenvolupament de l'eina i preparació del kit educatiu"
-            }
-          },
+          "leadTeam": null,
           "contact": null,
           "beneficiaries": [
             {
               "name": "IES Luis Vives (Valencia)",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro piloto — proyecto de auditoría energética en el módulo de Certificación Energética",
-                "en": "Pilot centre — energy audit project in the Energy Certification module",
-                "va": "Centre pilot — projecte d'auditoria energètica en el mòdul de Certificació Energètica"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "IES Salvador Gadea (Aldaia)",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro receptor — adaptación al módulo de Instalaciones en Edificación",
-                "en": "Receiving centre — adaptation to the Building Installations module",
-                "va": "Centre receptor — adaptació al mòdul d'Instal·lacions en Edificació"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             }
           ]
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "institutional-readiness"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green"
-          ],
-          "policyCluster": [
-            "triple-transition",
-            "integrated-pedagogy",
-            "infrastructure-evidence"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -32447,10 +28481,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "levels": [],
-          "audience": [
-            "vet-centres",
-            "public-administration"
-          ],
+          "audience": [],
           "sdgs": [
             4,
             7,
@@ -32465,12 +28496,12 @@ export const MARKETPLACE_CONFIG = {
             {
               "name": "IES Luis Vives (Valencia)",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             },
             {
               "name": "IES Salvador Gadea (Aldaia)",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             }
           ]
         },
@@ -32482,9 +28513,9 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
-          "dataAvailability": "anonymised",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -32493,9 +28524,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "El dataset de auditorías ha sido anonimizado conforme al RGPD. La herramienta Enertika tiene propiedad intelectual protegida; el acceso educativo se gestiona mediante solicitud al equipo del caso.",
-            "en": "The audit dataset has been anonymised in accordance with GDPR. The Enertika tool has protected intellectual property; educational access is managed through a request to the case team.",
-            "va": "El dataset d'auditories ha sigut anonimitzat d'acord amb el RGPD. L'eina Enertika té propietat intel·lectual protegida; l'accés educatiu es gestiona mitjançant sol·licitud a l'equip del cas."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -32505,7 +28536,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -32530,9 +28561,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Ver caso",
-              "en": "View case",
-              "va": "Veure cas"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -32549,131 +28580,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "externalLinks": [
-            {
-              "id": "ce3x-mincotur",
-              "type": "website",
-              "label": {
-                "es": "CE3X — Herramienta oficial de certificación energética del Ministerio",
-                "en": "CE3X — Official Ministry energy certification tool",
-                "va": "CE3X — Eina oficial de certificació energètica del Ministeri"
-              },
-              "url": "https://www.idae.es/tecnologia-y-financiacion/eficiencia-energetica/edificios/ce3x"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/cases/auditoria-energetica-ia-hou/",
-          "items": [
-            {
-              "id": "case-brief",
-              "type": "case-brief",
-              "title": {
-                "es": "Ficha del caso",
-                "en": "Case brief",
-                "va": "Fitxa del cas"
-              },
-              "description": {
-                "es": "Resumen ejecutivo del caso con resultados de impacto, actores y condiciones de replicación.",
-                "en": "Executive summary with impact results, actors and replication conditions.",
-                "va": "Resum executiu del cas amb resultats d'impacte, actors i condicions de replicació."
-              },
-              "files": [
-                {
-                  "file": "ficha-caso-auditoria-energetica-ia-edificacion.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "teaching-module",
-              "type": "teaching-module",
-              "title": {
-                "es": "3 casos de estudio con solución y rúbrica",
-                "en": "3 case studies with solution and rubric",
-                "va": "3 casos d'estudi amb solució i rúbrica"
-              },
-              "description": {
-                "es": "Enunciados, datos de entrada, informe de referencia y rúbrica de evaluación para los tres casos de estudio incluidos en el kit.",
-                "en": "Prompts, input data, reference report and evaluation rubric for the three case studies included in the kit.",
-                "va": "Enunciats, dades d'entrada, informe de referència i rúbrica d'avaluació per als tres casos d'estudi inclosos en el kit."
-              },
-              "files": [
-                {
-                  "file": "casos-estudio-auditoria-energetica-ia-solucion.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY-SA 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            },
-            {
-              "id": "replication-guide",
-              "type": "replication-guide",
-              "title": {
-                "es": "Guía de replicación — Acceso y uso de la herramienta educativa",
-                "en": "Replication guide — Access and use of the educational tool",
-                "va": "Guia de replicació — Accés i ús de l'eina educativa"
-              },
-              "description": {
-                "es": "Instrucciones para solicitar acceso a la instancia educativa, navegar la interfaz y utilizar el dataset anonimizado con los alumnos.",
-                "en": "Instructions for requesting access to the educational instance, navigating the interface and using the anonymised dataset with students.",
-                "va": "Instruccions per sol·licitar accés a la instància educativa, navegar la interfície i usar el dataset anonimitzat amb els alumnes."
-              },
-              "files": [
-                {
-                  "file": "guia-replicacion-herramienta-auditoria-energetica.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "outputs": null,
         "process": null,
-        "hasDownloads": true,
-        "downloadCount": 3,
-        "cardDownloads": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso",
-              "en": "Case brief",
-              "va": "Fitxa del cas"
-            },
-            "description": {
-              "es": "Resumen ejecutivo del caso con resultados de impacto, actores y condiciones de replicación.",
-              "en": "Executive summary with impact results, actors and replication conditions.",
-              "va": "Resum executiu del cas amb resultats d'impacte, actors i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-auditoria-energetica-ia-edificacion.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "case",
@@ -32686,7 +28603,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": {
@@ -32708,8 +28625,8 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
-              "relations": true,
+              "trackA": true,
+              "relations": false,
               "evidence": true,
               "transferability": true,
               "summary": true,
@@ -32719,34 +28636,7 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "caseStudy": {
-          "type": "adaptation",
-          "originContext": {
-            "es": "Enertika comercializa un servicio de auditoría energética doméstica express en 48 horas que combina OCR de facturas eléctricas y de gas, análisis de imagen de fachada con modelo de visión por computador para detectar transmitancia y puentes térmicos, y un modelo de recomendación que prioriza actuaciones por ROI esperado y normativa CE3X.",
-            "en": "Enertika markets an express home energy audit service in 48 hours combining OCR of electricity and gas bills, facade image analysis with a computer vision model to detect transmittance and thermal bridges, and a recommendation model that prioritises actions by expected ROI and CE3X regulation.",
-            "va": "Enertika comercialitza un servei d'auditoria energètica domèstica express en 48 hores que combina OCR de factures elèctriques i de gas, anàlisi d'imatge de façana amb model de visió per computador per detectar transmitància i ponts tèrmics, i un model de recomanació que prioritza actuacions per ROI esperat i normativa CE3X."
-          },
-          "transferContext": {
-            "es": "El módulo de Certificación Energética de los ciclos de Edificación trabaja con la herramienta CE3X del Ministerio, que es potente pero compleja y no automatiza el análisis de imagen ni la generación del informe de mejora. Los alumnos aprenden a usar CE3X pero raramente entienden cómo la IA puede apoyar el proceso de auditoría real.",
-            "en": "The Energy Certification module in Building cycles works with the Ministry's CE3X tool, which is powerful but complex and does not automate image analysis or improvement report generation. Students learn to use CE3X but rarely understand how AI can support the real audit process.",
-            "va": "El mòdul de Certificació Energètica dels cicles d'Edificació treballa amb l'eina CE3X del Ministeri, que és potent però complexa i no automatitza l'anàlisi d'imatge ni la generació de l'informe de millora. Els alumnes aprenen a usar CE3X però rarament entenen com la IA pot suportar el procés d'auditoria real."
-          },
-          "intervention": {
-            "es": "Se desarrolló una versión educativa de la herramienta Enertika con interfaz Streamlit, accesible desde navegador. El kit incluye: (1) dataset anonimizado de 300 auditorías con facturas, fotos y resultados reales, (2) 3 casos de estudio guiados (vivienda unifamiliar años 70, bloque plurifamiliar años 90, edificio rehabilitado 2015), (3) ejercicios de validación cruzada del modelo vs. CE3X tradicional, (4) rúbrica de evaluación del informe de auditoría.",
-            "en": "An educational version of the Enertika tool was developed with a Streamlit interface, accessible from the browser. The kit includes: (1) anonymised dataset of 300 audits with real bills, photos and results, (2) 3 guided case studies (1970s single-family home, 1990s apartment block, 2015 refurbished building), (3) cross-validation exercises of the model vs. traditional CE3X, (4) audit report evaluation rubric.",
-            "va": "Es va desenvolupar una versió educativa de l'eina Enertika amb interfície Streamlit, accessible des del navegador. El kit inclou: (1) dataset anonimitzat de 300 auditories amb factures, fotos i resultats reals, (2) 3 casos d'estudi guiats (habitatge unifamiliar anys 70, bloc plurifamiliar anys 90, edifici rehabilitat 2015), (3) exercicis de validació creuada del model vs. CE3X tradicional, (4) rúbrica d'avaluació de l'informe d'auditoria."
-          },
-          "transferPath": {
-            "es": "Jornada de formación en Enertika para docentes → despliegue web de la herramienta en el aula → 3 casos de estudio guiados → proyecto de auditoría real de una vivienda del entorno del centro → informe final evaluado con rúbrica compartida con Enertika.",
-            "en": "Teacher training day at Enertika → web deployment of the tool in the classroom → 3 guided case studies → real audit project of a home near the centre → final report assessed with a rubric shared with Enertika.",
-            "va": "Jornada de formació a Enertika per a docents → desplegament web de l'eina a l'aula → 3 casos d'estudi guiats → projecte d'auditoria real d'un habitatge de l'entorn del centre → informe final avaluat amb rúbrica compartida amb Enertika."
-          },
-          "trackBValue": {
-            "es": "Interfaz Streamlit lista para desplegar, dataset de 300 auditorías anonimizadas, 3 casos de estudio resueltos, rúbrica de informe de auditoría y guía de comparación modelo IA vs CE3X. No requiere instalación local; funciona en navegador.",
-            "en": "Ready-to-deploy Streamlit interface, dataset of 300 anonymised audits, 3 solved case studies, audit report rubric and AI model vs CE3X comparison guide. Requires no local installation; runs in browser.",
-            "va": "Interfície Streamlit llesta per desplegar, dataset de 300 auditories anonimitzades, 3 casos d'estudi resolts, rúbrica d'informe d'auditoria i guia de comparació model IA vs CE3X. No requereix instal·lació local; funciona en navegador."
-          }
-        },
+        "caseStudy": null,
         "evidence": {
           "headline": {
             "es": "Reducción media del 27% en el tiempo de elaboración de un informe de certificación energética completo por parte de los alumnos.",
@@ -32763,96 +28653,15 @@ export const MARKETPLACE_CONFIG = {
               "va": "Reducció en temps d'elaboració de l'informe de certificació energètica"
             }
           },
-          "secondaryMetrics": [
-            {
-              "id": "report-quality-score",
-              "value": 8.4,
-              "unit": "/10",
-              "label": {
-                "es": "Puntuación media del informe de auditoría evaluado por técnicos de Enertika",
-                "en": "Average audit report score evaluated by Enertika technicians",
-                "va": "Puntuació mitjana de l'informe d'auditoria avaluat per tècnics d'Enertika"
-              }
-            },
-            {
-              "id": "avg-roi-identified",
-              "value": 4200,
-              "unit": "EUR/vivienda",
-              "label": {
-                "es": "Ahorro energético medio identificado por vivienda en los proyectos del alumnado",
-                "en": "Average energy saving identified per home in student projects",
-                "va": "Estalvi energètic mitjà identificat per habitatge en els projectes de l'alumnat"
-              }
-            }
-          ],
-          "verification": {
-            "status": "reviewed",
-            "verifiedBy": "AI-STEAM Comité Técnico Hábitat + Enertika",
-            "verifiedAt": "2026-04-10",
-            "method": {
-              "es": "Revisión de informes finales por técnicos certificadores de Enertika y comparación con tiempos de referencia del módulo de Certificación Energética.",
-              "en": "Final report review by Enertika certified technicians and comparison with reference times from the Energy Certification module.",
-              "va": "Revisió d'informes finals per tècnics certificadors d'Enertika i comparació amb temps de referència del mòdul de Certificació Energètica."
-            }
-          },
+          "secondaryMetrics": [],
+          "verification": null,
           "limitations": {
-            "es": "La herramienta está calibrada para tipologías constructivas mediterráneas (mampostería, hormigón, fachada ventilada). La precisión del modelo de imagen puede reducirse con fachadas muy deterioradas o con vegetación que tape la fachada.",
-            "en": "The tool is calibrated for Mediterranean building typologies (masonry, concrete, ventilated facade). Image model accuracy may decrease with heavily deteriorated facades or vegetation covering the facade.",
-            "va": "L'eina està calibrada per a tipologies constructives mediterrànies (maçoneria, formigó, façana ventilada). La precisió del model d'imatge pot reduir-se amb façanes molt deteriorades o amb vegetació que tapi la façana."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
-        "transferability": {
-          "whyTransferable": {
-            "es": "La interfaz Streamlit no requiere instalación y es accesible desde cualquier dispositivo con navegador. Los tres casos de estudio cubren las tipologías constructivas más comunes en España (años 70-90 y rehabilitada).",
-            "en": "The Streamlit interface requires no installation and is accessible from any browser-enabled device. The three case studies cover the most common building typologies in Spain (1970s-90s and refurbished).",
-            "va": "La interfície Streamlit no requereix instal·lació i és accessible des de qualsevol dispositiu amb navegador. Els tres casos d'estudi cobreixen les tipologies constructives més comunes a Espanya (anys 70-90 i rehabilitada)."
-          },
-          "suitableFor": [
-            "vet-centres",
-            "public-administration"
-          ],
-          "requirements": [
-            {
-              "label": {
-                "es": "Acceso a internet (la herramienta es web; no requiere instalación local)",
-                "en": "Internet access (the tool is web-based; no local installation required)",
-                "va": "Accés a internet (l'eina és web; no requereix instal·lació local)"
-              }
-            },
-            {
-              "label": {
-                "es": "Conocimiento básico del proceso de certificación energética CE3X (previo al módulo)",
-                "en": "Basic knowledge of the CE3X energy certification process (prior to the module)",
-                "va": "Coneixement bàsic del procés de certificació energètica CE3X (previ al mòdul)"
-              }
-            }
-          ],
-          "adaptationSteps": [
-            {
-              "label": {
-                "es": "Solicitar acceso a la instancia educativa de la herramienta a través del formulario del caso",
-                "en": "Request access to the educational instance of the tool via the case contact form",
-                "va": "Sol·licitar accés a la instància educativa de l'eina mitjançant el formulari del cas"
-              }
-            },
-            {
-              "label": {
-                "es": "Adaptar el caso de estudio de proyecto final a una vivienda real próxima al centro",
-                "en": "Adapt the final project case study to a real home near the centre",
-                "va": "Adaptar el cas d'estudi del projecte final a un habitatge real proper al centre"
-              }
-            }
-          ],
-          "risks": [
-            {
-              "label": {
-                "es": "La instancia educativa de la herramienta tiene capacidad limitada; coordinar el calendario de uso con Enertika",
-                "en": "The educational instance of the tool has limited capacity; coordinate the usage calendar with Enertika",
-                "va": "La instància educativa de l'eina té capacitat limitada; coordinar el calendari d'ús amb Enertika"
-              }
-            }
-          ]
-        },
+        "transferability": null,
         "template": {
           "requiredBlocks": [
             "context",
@@ -32942,50 +28751,33 @@ export const MARKETPLACE_CONFIG = {
             "name": "IVIA — Institut Valencià d'Investigacions Agràries"
           },
           "requester": null,
-          "leadTeam": {
-            "name": "IVIA — Equipo de Visión por Computador y Protección de Cultivos",
-            "role": {
-              "es": "Investigación origen y validación del dataset",
-              "en": "Origin research and dataset validation",
-              "va": "Recerca origen i validació del dataset"
-            }
-          },
+          "leadTeam": null,
           "contact": null,
           "beneficiaries": [
             {
               "name": "CIFP Medi Natural",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Adaptación didáctica y pilotaje",
-                "en": "Didactic adaptation and piloting",
-                "va": "Adaptació didàctica i pilotatge"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "Cooperativa Anecoop",
-              "type": "company",
+              "type": "",
               "role": {
-                "es": "Colaborador en pruebas de campo y transferencia",
-                "en": "Collaborator in field tests and transfer",
-                "va": "Col·laborador en proves de camp i transferència"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             }
           ]
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "responsible-ai"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green"
-          ],
-          "policyCluster": [
-            "triple-transition",
-            "integrated-pedagogy",
-            "infrastructure-evidence"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -33009,10 +28801,7 @@ export const MARKETPLACE_CONFIG = {
             "vet",
             "master"
           ],
-          "audience": [
-            "vet-centres",
-            "research-centres"
-          ],
+          "audience": [],
           "sdgs": [
             2,
             4,
@@ -33026,12 +28815,12 @@ export const MARKETPLACE_CONFIG = {
             {
               "name": "CIFP Medi Natural",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             },
             {
               "name": "Cooperativa Anecoop",
               "sector": "",
-              "type": "company"
+              "type": ""
             }
           ]
         },
@@ -33043,9 +28832,9 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY-NC-SA 4.0",
-          "codeLicense": "MIT",
-          "dataAvailability": "open",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -33054,9 +28843,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "El dataset no puede usarse con fines comerciales sin acuerdo previo con el IVIA.",
-            "en": "The dataset cannot be used for commercial purposes without prior agreement with IVIA.",
-            "va": "El dataset no pot usar-se amb fins comercials sense acord previ amb l'IVIA."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -33066,7 +28855,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY-NC-SA 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -33088,24 +28877,17 @@ export const MARKETPLACE_CONFIG = {
           "url": ""
         },
         "externalFlow": {
-          "enabled": true,
+          "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Replicar caso",
-              "en": "Replicate case",
-              "va": "Replicar cas"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
           },
-          "secondaryAction": {
-            "label": {
-              "es": "Contactar para adaptación",
-              "en": "Contact for adaptation",
-              "va": "Contactar per a adaptació"
-            },
-            "url": ""
-          },
+          "secondaryAction": null,
           "fallbackAction": null,
           "fallbackContact": null
         },
@@ -33117,180 +28899,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "externalLinks": [
-            {
-              "id": "original-model",
-              "type": "website",
-              "label": {
-                "es": "Publicación original del modelo IVIA",
-                "en": "Original IVIA model publication",
-                "va": "Publicació original del model IVIA"
-              },
-              "url": "https://www.ivia.gva.es",
-              "license": "other"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/cases/ia-deteccion-plagas-agr/",
-          "items": [
-            {
-              "id": "dataset-sample",
-              "type": "dataset-sample",
-              "title": {
-                "es": "Dataset etiquetado COCO-lite",
-                "en": "COCO-lite labelled dataset",
-                "va": "Dataset etiquetat COCO-lite"
-              },
-              "description": {
-                "es": "Selección de 4.200 imágenes de plagas anotadas.",
-                "en": "Selection of 4,200 annotated pest images.",
-                "va": "Selecció de 4.200 imatges de plagues anotades."
-              },
-              "files": [
-                {
-                  "file": "dataset-coco-lite-plagas.zip",
-                  "format": "zip",
-                  "language": "mixed",
-                  "license": "CC BY-NC-SA 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "source-code",
-              "type": "source-code",
-              "title": {
-                "es": "Cuaderno Jupyter de inferencia",
-                "en": "Jupyter notebook for inference",
-                "va": "Quadern Jupyter d'inferència"
-              },
-              "description": {
-                "es": "Pipeline completo de inferencia YOLOv8 en CPU.",
-                "en": "Full YOLOv8 inference pipeline on CPU.",
-                "va": "Pipeline complet d'inferència YOLOv8 en CPU."
-              },
-              "files": [
-                {
-                  "file": "inference-pipeline.ipynb",
-                  "format": "ipynb",
-                  "language": "es",
-                  "license": "MIT"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "teaching-module",
-              "type": "teaching-module",
-              "title": {
-                "es": "Unidad didáctica de 4 sesiones",
-                "en": "4-session teaching unit",
-                "va": "Unitat didàctica de 4 sessions"
-              },
-              "description": {
-                "es": "Guía pedagógica para el docente y ejercicios para el alumnado.",
-                "en": "Pedagogical guide for teachers and student exercises.",
-                "va": "Guia pedagògica per al docent i exercicis per a l'alumnat."
-              },
-              "files": [
-                {
-                  "file": "unidad-didactica-deteccion-plagas.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY-NC-SA 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "outputs": null,
         "process": null,
-        "hasDownloads": true,
-        "downloadCount": 3,
-        "cardDownloads": [
-          {
-            "id": "dataset-sample",
-            "type": "dataset-sample",
-            "title": {
-              "es": "Dataset etiquetado COCO-lite",
-              "en": "COCO-lite labelled dataset",
-              "va": "Dataset etiquetat COCO-lite"
-            },
-            "description": {
-              "es": "Selección de 4.200 imágenes de plagas anotadas.",
-              "en": "Selection of 4,200 annotated pest images.",
-              "va": "Selecció de 4.200 imatges de plagues anotades."
-            },
-            "files": [
-              {
-                "file": "dataset-coco-lite-plagas.zip",
-                "format": "zip",
-                "language": "mixed",
-                "license": "CC BY-NC-SA 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "source-code",
-            "type": "source-code",
-            "title": {
-              "es": "Cuaderno Jupyter de inferencia",
-              "en": "Jupyter notebook for inference",
-              "va": "Quadern Jupyter d'inferència"
-            },
-            "description": {
-              "es": "Pipeline completo de inferencia YOLOv8 en CPU.",
-              "en": "Full YOLOv8 inference pipeline on CPU.",
-              "va": "Pipeline complet d'inferència YOLOv8 en CPU."
-            },
-            "files": [
-              {
-                "file": "inference-pipeline.ipynb",
-                "format": "ipynb",
-                "language": "es",
-                "license": "MIT"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Unidad didáctica de 4 sesiones",
-              "en": "4-session teaching unit",
-              "va": "Unitat didàctica de 4 sessions"
-            },
-            "description": {
-              "es": "Guía pedagógica para el docente y ejercicios para el alumnado.",
-              "en": "Pedagogical guide for teachers and student exercises.",
-              "va": "Guia pedagògica per al docent i exercicis per a l'alumnat."
-            },
-            "files": [
-              {
-                "file": "unidad-didactica-deteccion-plagas.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-NC-SA 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "case",
@@ -33303,7 +28922,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": {
@@ -33325,8 +28944,8 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
-              "relations": true,
+              "trackA": true,
+              "relations": false,
               "evidence": true,
               "transferability": true,
               "summary": true,
@@ -33336,34 +28955,7 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "caseStudy": {
-          "type": "adaptation",
-          "originContext": {
-            "es": "El IVIA desarrolló un modelo de visión por computador (YOLOv8 fine-tuned) para detectar Tuta absoluta en imágenes de hoja de tomate. El modelo se usaba internamente en campo.",
-            "en": "IVIA developed a computer vision model (fine-tuned YOLOv8) to detect Tuta absoluta in tomato leaf images, used internally in the field.",
-            "va": "L'IVIA va desenvolupar un model de visió per computador (YOLOv8 fine-tuned) per detectar Tuta absoluta en imatges de fulla de tomàquet, usat internament en camp."
-          },
-          "transferContext": {
-            "es": "El CIFP Medi Natural propuso adaptarlo para que estudiantes de FP pudieran entender y aplicar detección automática de plagas sin necesidad de infraestructura de investigación.",
-            "en": "CIFP Medi Natural proposed adapting it so VET students could understand and apply automatic pest detection without research infrastructure.",
-            "va": "El CIFP Medi Natural va proposar adaptar-lo perquè estudiants de FP poguessen entendre i aplicar detecció automàtica de plagues sense infraestructura de recerca."
-          },
-          "intervention": {
-            "es": "Reducción del dataset de investigación a un subconjunto balanceado optimizado para CPU y desarrollo de un cuaderno Jupyter interactivo paso a paso para el aula.",
-            "en": "Reduction of the research dataset to a balanced subset optimized for CPU and development of a step-by-step interactive Jupyter notebook for the classroom.",
-            "va": "Reducció del dataset de recerca a un subconjunt balancejat optimitzat per a CPU i desenvolupament d'un quadern Jupyter interactiu pas a pas per a l'aula."
-          },
-          "transferPath": {
-            "es": "Del centro de investigación de excelencia IVIA al aula del CIFP Medi Natural con la colaboración de Anecoop para contraste de campo.",
-            "en": "From the IVIA research centre of excellence to the CIFP Medi Natural classroom with Anecoop's collaboration for field contrast.",
-            "va": "Del centre de recerca d'excel·lència IVIA a l'aula del CIFP Medi Natural amb la col·laboració d'Anecoop per a contrast de camp."
-          },
-          "trackBValue": {
-            "es": "Dataset etiquetado de 4.200 imágenes de plagas y cuaderno Jupyter con pipeline de inferencia adaptados para uso sin GPU. Permite introducir visión por computador en aulas de FP sin infraestructura de investigación.",
-            "en": "Labelled dataset of 4,200 pest images and Jupyter notebook with inference pipeline adapted for CPU-only use. Enables computer vision in VET classrooms without research infrastructure.",
-            "va": "Dataset etiquetat de 4.200 imatges de plagues i quadern Jupyter amb pipeline d'inferència adaptat per a ús sense GPU. Permet introduir visió per computador en aules de FP sense infraestructura de recerca."
-          }
-        },
+        "caseStudy": null,
         "evidence": {
           "headline": {
             "es": "Modelo adaptado con 87% de precisión en CPU estándar implementado en 3 grupos piloto.",
@@ -33380,103 +28972,15 @@ export const MARKETPLACE_CONFIG = {
               "va": "Imatges etiquetades disponibles per a ús educatiu"
             }
           },
-          "secondaryMetrics": [
-            {
-              "id": "model-accuracy",
-              "value": 87,
-              "unit": "%",
-              "label": {
-                "es": "Precisión en condiciones de aula",
-                "en": "Accuracy under classroom conditions",
-                "va": "Precisió en condicions d'aula"
-              }
-            },
-            {
-              "id": "estimated-savings",
-              "value": 18000,
-              "unit": "EUR",
-              "label": {
-                "es": "Ahorro estimado de desarrollo de dataset por centro",
-                "en": "Estimated dataset development savings per centre",
-                "va": "Estalvi estimat de desenvolupament de dataset per centre"
-              }
-            }
-          ],
-          "verification": {
-            "status": "verified",
-            "verifiedBy": "Comité Técnico AI-STEAM",
-            "verifiedAt": "2026-04-20",
-            "method": {
-              "es": "Validación de los notebooks y del dataset en el repositorio oficial.",
-              "en": "Validation of the notebooks and the dataset in the official repository.",
-              "va": "Validació dels notebooks i del dataset en el repositori oficial."
-            }
-          },
+          "secondaryMetrics": [],
+          "verification": null,
           "limitations": {
-            "es": "El dataset se enfoca en Tuta absoluta; otras plagas requieren ampliación de fotos locales.",
-            "en": "The dataset focuses on Tuta absoluta; other pests require local photo expansion.",
-            "va": "El dataset s'enfoca en Tuta absoluta; altres plagues requereixen ampliació de fotos locals."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
-        "transferability": {
-          "whyTransferable": {
-            "es": "Al funcionar en CPU estándar sin GPU, cualquier aula con ordenadores básicos y Python puede replicar la práctica completa utilizando el dataset abierto.",
-            "en": "As it runs on a standard CPU without GPU, any classroom with basic computers and Python can replicate the entire practice using the open dataset.",
-            "va": "En funcionar en CPU estàndard sense GPU, qualsevol aula amb ordinadors bàsics i Python pot replicar la pràctica completa utilitzant el dataset obert."
-          },
-          "suitableFor": [
-            "vet-centres",
-            "agrifood-sector"
-          ],
-          "requirements": [
-            {
-              "label": {
-                "es": "Aula de ordenadores con Python / Jupyter Notebook",
-                "en": "Computer lab with Python / Jupyter Notebook",
-                "va": "Aula d'ordinadors amb Python / Jupyter Notebook"
-              }
-            },
-            {
-              "label": {
-                "es": "Conexión a internet básica para descarga inicial del dataset (opcional si se descarga previamente en local)",
-                "en": "Basic internet connection for initial dataset download (optional if pre-downloaded locally)",
-                "va": "Connexió a internet bàsica per a descàrrega inicial del dataset (opcional si es descarrega prèviament en local)"
-              }
-            }
-          ],
-          "adaptationSteps": [
-            {
-              "label": {
-                "es": "Descarga de los materiales didácticos y del dataset COCO-lite",
-                "en": "Download of the didactic materials and COCO-lite dataset",
-                "va": "Descàrrega dels materials didàctics i del dataset COCO-lite"
-              }
-            },
-            {
-              "label": {
-                "es": "Configuración del entorno de ejecución (Jupyter) en las máquinas de los alumnos",
-                "en": "Execution environment setup (Jupyter) on students' machines",
-                "va": "Configuració de l'entorn de execució (Jupyter) a les màquines dels alumnes"
-              }
-            },
-            {
-              "label": {
-                "es": "Realización de la práctica guiada de inferencia y etiquetado",
-                "en": "Execution of the guided inference and labelling practice",
-                "va": "Realització de la pràctica guiada d'inferència i etiquetatge"
-              }
-            }
-          ],
-          "risks": [
-            {
-              "label": {
-                "es": "Familiaridad inicial de los alumnos con cuadernos Jupyter y terminal",
-                "en": "Initial students' familiarity with Jupyter notebooks and terminal",
-                "va": "Familiaritat inicial dels alumnes amb quaderns Jupyter i terminal"
-              }
-            }
-          ]
-        },
+        "transferability": null,
         "template": {
           "requiredBlocks": [
             "context",
@@ -33566,49 +29070,33 @@ export const MARKETPLACE_CONFIG = {
             "name": "Renault España — Centro de Ingeniería de Valladolid"
           },
           "requester": null,
-          "leadTeam": {
-            "name": "Dpto. ADAS & Autonomous Driving, Renault España",
-            "role": {
-              "es": "Empresa origen — adaptación del simulador y formación de docentes",
-              "en": "Origin company — simulator adaptation and teacher training",
-              "va": "Empresa origen — adaptació del simulador i formació de docents"
-            }
-          },
+          "leadTeam": null,
           "contact": null,
           "beneficiaries": [
             {
               "name": "IES Cavanilles (Valencia)",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro piloto principal — integración en el módulo de Sistemas de Ayuda a la Conducción",
-                "en": "Main pilot centre — integration in the Driver Assistance Systems module",
-                "va": "Centre pilot principal — integració en el mòdul de Sistemes d'Ajuda a la Conducció"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "IES La Senia (Tortosa)",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro receptor — replicación autónoma",
-                "en": "Receiving centre — autonomous replication",
-                "va": "Centre receptor — replicació autònoma"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             }
           ]
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "maker-steam"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "infrastructure-evidence"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -33631,10 +29119,7 @@ export const MARKETPLACE_CONFIG = {
           "levels": [
             "vet"
           ],
-          "audience": [
-            "vet-centres",
-            "industry-partners"
-          ],
+          "audience": [],
           "sdgs": [
             4,
             9,
@@ -33648,12 +29133,12 @@ export const MARKETPLACE_CONFIG = {
             {
               "name": "IES Cavanilles (Valencia)",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             },
             {
               "name": "IES La Senia (Tortosa)",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             }
           ]
         },
@@ -33665,9 +29150,9 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
-          "codeLicense": "MIT",
-          "dataAvailability": "not-applicable",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -33676,9 +29161,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "El entorno CARLA configurado se publica bajo licencia MIT. Los escenarios urbanos están modelados con datos cartográficos de OpenStreetMap (ODbL).",
-            "en": "The configured CARLA environment is published under MIT licence. Urban scenarios are modelled with OpenStreetMap cartographic data (ODbL).",
-            "va": "L'entorn CARLA configurat es publica sota llicència MIT. Els escenaris urbans estan modelats amb dades cartogràfiques d'OpenStreetMap (ODbL)."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -33688,7 +29173,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -33713,9 +29198,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Ver caso",
-              "en": "View case",
-              "va": "Veure cas"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -33732,131 +29217,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "externalLinks": [
-            {
-              "id": "carla-simulator",
-              "type": "website",
-              "label": {
-                "es": "CARLA — Simulador de conducción autónoma de código abierto",
-                "en": "CARLA — Open-source autonomous driving simulator",
-                "va": "CARLA — Simulador de conducció autònoma de codi obert"
-              },
-              "url": "https://carla.org"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/cases/simulacion-conduccion-autonoma-mob/",
-          "items": [
-            {
-              "id": "case-brief",
-              "type": "case-brief",
-              "title": {
-                "es": "Ficha del caso",
-                "en": "Case brief",
-                "va": "Fitxa del cas"
-              },
-              "description": {
-                "es": "Resumen ejecutivo con resultados, actores clave y condiciones de replicación.",
-                "en": "Executive summary with results, key actors and replication conditions.",
-                "va": "Resum executiu amb resultats, actors clau i condicions de replicació."
-              },
-              "files": [
-                {
-                  "file": "ficha-caso-simulacion-conduccion-autonoma.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "replication-guide",
-              "type": "replication-guide",
-              "title": {
-                "es": "Guía de instalación de CARLA para centros FP",
-                "en": "CARLA installation guide for VET centres",
-                "va": "Guia d'instal·lació de CARLA per a centres FP"
-              },
-              "description": {
-                "es": "Instrucciones detalladas de instalación en Linux y Windows, resolución de errores frecuentes y configuración de los escenarios preconfigurados.",
-                "en": "Detailed installation instructions for Linux and Windows, common error resolution and configuration of pre-configured scenarios.",
-                "va": "Instruccions detallades d'instal·lació en Linux i Windows, resolució d'errors freqüents i configuració dels escenaris preconfigurats."
-              },
-              "files": [
-                {
-                  "file": "guia-instalacion-carla-fp-transporte.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            },
-            {
-              "id": "teaching-module",
-              "type": "teaching-module",
-              "title": {
-                "es": "Guión de los 6 retos con rúbricas",
-                "en": "6-challenge script with rubrics",
-                "va": "Guió dels 6 reptes amb rúbriques"
-              },
-              "description": {
-                "es": "Descripción de cada reto, criterios de evaluación, código Python de referencia y discusión de aspectos éticos.",
-                "en": "Description of each challenge, evaluation criteria, reference Python code and discussion of ethical aspects.",
-                "va": "Descripció de cada repte, criteris d'avaluació, codi Python de referència i discussió d'aspectes ètics."
-              },
-              "files": [
-                {
-                  "file": "guion-retos-carla-conduccion-autonoma-fp.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY-SA 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "outputs": null,
         "process": null,
-        "hasDownloads": true,
-        "downloadCount": 3,
-        "cardDownloads": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso",
-              "en": "Case brief",
-              "va": "Fitxa del cas"
-            },
-            "description": {
-              "es": "Resumen ejecutivo con resultados, actores clave y condiciones de replicación.",
-              "en": "Executive summary with results, key actors and replication conditions.",
-              "va": "Resum executiu amb resultats, actors clau i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-simulacion-conduccion-autonoma.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "case",
@@ -33869,7 +29240,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": {
@@ -33891,8 +29262,8 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
-              "relations": true,
+              "trackA": true,
+              "relations": false,
               "evidence": true,
               "transferability": true,
               "summary": true,
@@ -33902,34 +29273,7 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "caseStudy": {
-          "type": "adaptation",
-          "originContext": {
-            "es": "El equipo de ADAS de Renault España usa el simulador CARLA con ROS 2 para validar algoritmos de conducción autónoma antes de trasladarlos a vehículos de prueba reales. El entorno incluye mapas urbanos realistas, tráfico generado proceduralmente y sensores simulados (LiDAR, cámara, radar).",
-            "en": "Renault España's ADAS team uses the CARLA simulator with ROS 2 to validate autonomous driving algorithms before moving them to real test vehicles. The environment includes realistic urban maps, procedurally generated traffic and simulated sensors (LiDAR, camera, radar).",
-            "va": "L'equip d'ADAS de Renault Espanya usa el simulador CARLA amb ROS 2 per validar algorismes de conducció autònoma abans de traslladar-los a vehicles de prova reals. L'entorn inclou mapes urbans realistes, trànsit generat proceduralment i sensors simulats (LiDAR, càmera, radar)."
-          },
-          "transferContext": {
-            "es": "Los ciclos de FP de Transporte y Logística abordan los sistemas ADAS de forma teórica o con diagnóstico de vehículos ya fabricados. Los alumnos nunca tienen la oportunidad de entender cómo se diseña y valida un sistema de asistencia a la conducción desde la perspectiva de la ingeniería.",
-            "en": "Transport and Logistics VET cycles address ADAS systems theoretically or through diagnostics of already-manufactured vehicles. Students never have the opportunity to understand how a driver assistance system is designed and validated from an engineering perspective.",
-            "va": "Els cicles de FP de Transport i Logística aborden els sistemes ADAS de forma teòrica o amb diagnòstic de vehicles ja fabricats. Els alumnes mai no tenen l'oportunitat d'entendre com es dissenya i valida un sistema d'assistència a la conducció des de la perspectiva de l'enginyeria."
-          },
-          "intervention": {
-            "es": "Se creó una versión educativa del entorno CARLA con 3 escenarios preconfigurados (ciudad, autovía, zona escolar), una interfaz simplificada en Python para programar comportamientos básicos de conducción autónoma y 6 retos evaluables: frenada de emergencia, detección de peatones, respeto de semáforos, adelantamiento seguro, aparcamiento automático y gestión de rotondas.",
-            "en": "An educational version of the CARLA environment was created with 3 pre-configured scenarios (city, motorway, school zone), a simplified Python interface for programming basic autonomous driving behaviours and 6 assessable challenges: emergency braking, pedestrian detection, traffic light compliance, safe overtaking, automatic parking and roundabout management.",
-            "va": "Es va crear una versió educativa de l'entorn CARLA amb 3 escenaris preconfigurats (ciutat, autovia, zona escolar), una interfície simplificada en Python per programar comportaments bàsics de conducció autònoma i 6 reptes avaluables: frenada d'emergència, detecció de vianants, respecte de semàfors, avançament segur, aparcament automàtic i gestió de rotondes."
-          },
-          "transferPath": {
-            "es": "Formación de 1 jornada para docentes en Renault → guía de instalación autónoma → 6 sesiones en el aula de informática → competición interna entre grupos → presentación de resultados y reflexión sobre ética del vehículo autónomo.",
-            "en": "1-day teacher training at Renault → autonomous installation guide → 6 sessions in the computer classroom → internal group competition → results presentation and reflection on autonomous vehicle ethics.",
-            "va": "Formació d'1 jornada per a docents a Renault → guia d'instal·lació autònoma → 6 sessions a l'aula d'informàtica → competició interna entre grups → presentació de resultats i reflexió sobre ètica del vehicle autònom."
-          },
-          "trackBValue": {
-            "es": "Entorno CARLA preconfigurado con 3 escenarios españoles, 6 retos evaluables, interfaz Python simplificada y rúbrica de evaluación por reto. Adaptable a cualquier ciclo de Transporte o Automoción que quiera incorporar IA en su currículo.",
-            "en": "Pre-configured CARLA environment with 3 Spanish scenarios, 6 assessable challenges, simplified Python interface and per-challenge evaluation rubric. Adaptable to any Transport or Automotive cycle seeking to incorporate AI into its curriculum.",
-            "va": "Entorn CARLA preconfigurat amb 3 escenaris espanyols, 6 reptes avaluables, interfície Python simplificada i rúbrica d'avaluació per repte. Adaptable a qualsevol cicle de Transport o Automoció que vullga incorporar IA en el seu currículum."
-          }
-        },
+        "caseStudy": null,
         "evidence": {
           "headline": {
             "es": "5 centros replicaron el entorno de forma autónoma en menos de 4 horas; los alumnos completan los 6 retos con un 83% de tasa de éxito.",
@@ -33946,95 +29290,15 @@ export const MARKETPLACE_CONFIG = {
               "va": "Temps màxim per replicar l'entorn de forma autònoma"
             }
           },
-          "secondaryMetrics": [
-            {
-              "id": "challenge-success-rate",
-              "value": 83,
-              "unit": "%",
-              "label": {
-                "es": "Tasa de éxito en los 6 retos evaluables",
-                "en": "Success rate across the 6 assessable challenges",
-                "va": "Taxa d'èxit als 6 reptes avaluables"
-              }
-            },
-            {
-              "id": "teacher-confidence",
-              "value": 8.7,
-              "unit": "/10",
-              "label": {
-                "es": "Confianza del docente para impartir el contenido de forma autónoma",
-                "en": "Teacher confidence to deliver the content autonomously",
-                "va": "Confiança del docent per impartir el contingut de forma autònoma"
-              }
-            }
-          ],
-          "verification": {
-            "status": "reviewed",
-            "verifiedBy": "AI-STEAM Comité Técnico Movilidad",
-            "verifiedAt": "2026-04-01",
-            "method": {
-              "es": "Revisión de actas de evaluación de los 5 centros y encuesta de confianza docente realizada por el Comité Técnico de Movilidad de AI-STEAM.",
-              "en": "Review of assessment records from the 5 centres and teacher confidence survey conducted by the AI-STEAM Mobility Technical Committee.",
-              "va": "Revisió d'actes d'avaluació dels 5 centres i enquesta de confiança docent realitzada pel Comité Tècnic de Mobilitat d'AI-STEAM."
-            }
-          },
+          "secondaryMetrics": [],
+          "verification": null,
           "limitations": {
-            "es": "CARLA requiere una GPU dedicada para experiencia fluida (recomendado NVIDIA GTX 1060 o superior). En aulas sin GPU, los escenarios funcionan a velocidad reducida pero son suficientes para las prácticas.",
-            "en": "CARLA requires a dedicated GPU for a smooth experience (NVIDIA GTX 1060 or higher recommended). In classrooms without GPU, scenarios run at reduced speed but are sufficient for practice.",
-            "va": "CARLA requereix una GPU dedicada per a una experiència fluïda (recomanat NVIDIA GTX 1060 o superior). En aules sense GPU, els escenaris funcionen a velocitat reduïda però són suficients per a les pràctiques."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
-        "transferability": {
-          "whyTransferable": {
-            "es": "CARLA es software de código abierto mantenido por una comunidad activa. Los escenarios urbanos españoles facilitan la contextualización para alumnos de FP. La interfaz Python simplificada no requiere conocimientos de ROS.",
-            "en": "CARLA is open-source software maintained by an active community. The Spanish urban scenarios facilitate contextualisation for VET students. The simplified Python interface does not require ROS knowledge.",
-            "va": "CARLA és programari de codi obert mantingut per una comunitat activa. Els escenaris urbans espanyols faciliten la contextualització per a alumnes de FP. La interfície Python simplificada no requereix coneixements de ROS."
-          },
-          "suitableFor": [
-            "vet-centres"
-          ],
-          "requirements": [
-            {
-              "label": {
-                "es": "Ordenador con GPU (recomendado) o acceso a servicio cloud con GPU",
-                "en": "Computer with GPU (recommended) or access to cloud service with GPU",
-                "va": "Ordinador amb GPU (recomanat) o accés a servei cloud amb GPU"
-              }
-            },
-            {
-              "label": {
-                "es": "Sistema operativo Linux o Windows 10/11 con WSL2",
-                "en": "Linux or Windows 10/11 with WSL2 operating system",
-                "va": "Sistema operatiu Linux o Windows 10/11 amb WSL2"
-              }
-            }
-          ],
-          "adaptationSteps": [
-            {
-              "label": {
-                "es": "Instalar CARLA siguiendo la guía de replicación proporcionada",
-                "en": "Install CARLA following the replication guide provided",
-                "va": "Instal·lar CARLA seguint la guia de replicació proporcionada"
-              }
-            },
-            {
-              "label": {
-                "es": "Seleccionar los retos más relevantes para el módulo donde se integra",
-                "en": "Select the most relevant challenges for the module where it is integrated",
-                "va": "Seleccionar els reptes més rellevants per al mòdul on s'integra"
-              }
-            }
-          ],
-          "risks": [
-            {
-              "label": {
-                "es": "Dependencia de GPU; aulas sin tarjeta gráfica dedicada necesitan configuración alternativa",
-                "en": "GPU dependency; classrooms without dedicated graphics cards need alternative configuration",
-                "va": "Dependència de GPU; aules sense targeta gràfica dedicada necessiten configuració alternativa"
-              }
-            }
-          ]
-        },
+        "transferability": null,
         "template": {
           "requiredBlocks": [
             "context",
@@ -34124,59 +29388,42 @@ export const MARKETPLACE_CONFIG = {
             "name": "Anecoop, S. Coop."
           },
           "requester": null,
-          "leadTeam": {
-            "name": "Dpto. de Innovación y Agricultura de Precisión, Anecoop",
-            "role": {
-              "es": "Cooperativa origen — desarrollo del flujo de trabajo e infraestructura de datos",
-              "en": "Origin cooperative — workflow development and data infrastructure",
-              "va": "Cooperativa origen — desenvolupament del flux de treball i infraestructura de dades"
-            }
-          },
+          "leadTeam": null,
           "contact": null,
           "beneficiaries": [
             {
               "name": "IES L'Alcúdia",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro piloto — integración curricular y prácticas de campo",
-                "en": "Pilot centre — curricular integration and field practices",
-                "va": "Centre pilot — integració curricular i pràctiques de camp"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "CIFP Agroforestal de Llombai",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro receptor — ampliación a producción forestal",
-                "en": "Receiving centre — extension to forestry production",
-                "va": "Centre receptor — ampliació a producció forestal"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "IES Camp de Morvedre",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro receptor — adaptación a cultivos de secano",
-                "en": "Receiving centre — adaptation to dryland crops",
-                "va": "Centre receptor — adaptació a cultius de secà"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             }
           ]
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "maker-steam"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "triple-transition",
-            "infrastructure-evidence"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -34199,11 +29446,7 @@ export const MARKETPLACE_CONFIG = {
           "levels": [
             "vet"
           ],
-          "audience": [
-            "vet-centres",
-            "industry-partners",
-            "public-administration"
-          ],
+          "audience": [],
           "sdgs": [
             2,
             4,
@@ -34218,17 +29461,17 @@ export const MARKETPLACE_CONFIG = {
             {
               "name": "IES L'Alcúdia",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             },
             {
               "name": "CIFP Agroforestal de Llombai",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             },
             {
               "name": "IES Camp de Morvedre",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             }
           ]
         },
@@ -34240,9 +29483,9 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
-          "codeLicense": "Apache 2.0",
-          "dataAvailability": "anonymised",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -34251,9 +29494,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "Las imágenes multiespectrales han sido anonimizadas (sin referencia catastral ni datos de socio). El uso del dataset queda restringido a fines formativos y de investigación no comercial.",
-            "en": "Multispectral images have been anonymised (no cadastral reference or member data). Dataset use is restricted to training and non-commercial research purposes.",
-            "va": "Les imatges multiespectrals han sigut anonimitzades (sense referència cadastral ni dades de soci). L'ús del dataset queda restringit a fins formatius i d'investigació no comercial."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -34263,7 +29506,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -34288,9 +29531,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Ver caso",
-              "en": "View case",
-              "va": "Veure cas"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -34307,131 +29550,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "externalLinks": [
-            {
-              "id": "qgis-docs",
-              "type": "website",
-              "label": {
-                "es": "QGIS — Sistema de información geográfica de código abierto",
-                "en": "QGIS — Open-source geographic information system",
-                "va": "QGIS — Sistema d'informació geogràfica de codi obert"
-              },
-              "url": "https://www.qgis.org"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/cases/drones-agricultura-precision-agr/",
-          "items": [
-            {
-              "id": "case-brief",
-              "type": "case-brief",
-              "title": {
-                "es": "Ficha del caso",
-                "en": "Case brief",
-                "va": "Fitxa del cas"
-              },
-              "description": {
-                "es": "Resumen ejecutivo del caso con resultados de impacto, actores y condiciones de replicación.",
-                "en": "Executive summary with impact results, actors and replication conditions.",
-                "va": "Resum executiu del cas amb resultats d'impacte, actors i condicions de replicació."
-              },
-              "files": [
-                {
-                  "file": "ficha-caso-drones-ndvi-fp-agraria.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "teaching-module",
-              "type": "teaching-module",
-              "title": {
-                "es": "Guía de práctica de campo con drone y análisis NDVI",
-                "en": "Drone field practice and NDVI analysis guide",
-                "va": "Guia de pràctica de camp amb dron i anàlisi NDVI"
-              },
-              "description": {
-                "es": "Manual paso a paso para planificar el vuelo, capturar imágenes y procesarlas con el pipeline Python, incluyendo preguntas de reflexión para el alumnado.",
-                "en": "Step-by-step manual for planning the flight, capturing images and processing them with the Python pipeline, including reflection questions for students.",
-                "va": "Manual pas a pas per planificar el vol, capturar imatges i processar-les amb el pipeline Python, incloent preguntes de reflexió per a l'alumnat."
-              },
-              "files": [
-                {
-                  "file": "guia-practica-campo-drone-ndvi.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            },
-            {
-              "id": "dataset-sample",
-              "type": "dataset-sample",
-              "title": {
-                "es": "Muestra del dataset multiespectral (10 imágenes)",
-                "en": "Multispectral dataset sample (10 images)",
-                "va": "Mostra del dataset multiespectral (10 imatges)"
-              },
-              "description": {
-                "es": "Selección de 10 imágenes del dataset completo para verificar la compatibilidad con el pipeline antes de solicitar acceso al dataset íntegro.",
-                "en": "Selection of 10 images from the complete dataset to verify compatibility with the pipeline before requesting access to the full dataset.",
-                "va": "Selecció de 10 imatges del dataset complet per verificar la compatibilitat amb el pipeline abans de sol·licitar accés al dataset íntegre."
-              },
-              "files": [
-                {
-                  "file": "muestra-dataset-ndvi-citricos-10img.zip",
-                  "format": "zip",
-                  "language": "mixed",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "outputs": null,
         "process": null,
-        "hasDownloads": true,
-        "downloadCount": 3,
-        "cardDownloads": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso",
-              "en": "Case brief",
-              "va": "Fitxa del cas"
-            },
-            "description": {
-              "es": "Resumen ejecutivo del caso con resultados de impacto, actores y condiciones de replicación.",
-              "en": "Executive summary with impact results, actors and replication conditions.",
-              "va": "Resum executiu del cas amb resultats d'impacte, actors i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-drones-ndvi-fp-agraria.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "case",
@@ -34444,7 +29573,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": {
@@ -34466,8 +29595,8 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
-              "relations": true,
+              "trackA": true,
+              "relations": false,
               "evidence": true,
               "transferability": true,
               "summary": true,
@@ -34477,34 +29606,7 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "caseStudy": {
-          "type": "scaling",
-          "originContext": {
-            "es": "Anecoop opera un servicio de vigilancia aérea de sus explotaciones asociadas con drones multiespectrales DJI Matrice 300 RTK + cámara MicaSense RedEdge. El servicio genera mapas NDVI semanales que los agrónomos usan para detectar estrés hídrico y nutricional con 7-10 días de anticipación a la sintomatología visual.",
-            "en": "Anecoop operates an aerial surveillance service for its associated farms using DJI Matrice 300 RTK drones with MicaSense RedEdge cameras. The service generates weekly NDVI maps that agronomists use to detect water and nutritional stress 7-10 days before visual symptoms appear.",
-            "va": "Anecoop opera un servei de vigilància aèria de les seues explotacions associades amb drons multiespectrals DJI Matrice 300 RTK + càmera MicaSense RedEdge. El servei genera mapes NDVI setmanals que els agrònoms usen per detectar estrès hídric i nutricional amb 7-10 dies d'antelació a la simptomatologia visual."
-          },
-          "transferContext": {
-            "es": "Los ciclos de FP Agraria de la Comunitat Valenciana trabajan con técnicas de teledetección básica, pero sin acceso a drones multiespectrales ni a flujos de trabajo de análisis de imagen con IA. El sector agroalimentario valenciano demanda técnicos capaces de interpretar y actuar sobre mapas NDVI, pero la FP no lo forma.",
-            "en": "Agrarian VET cycles in the Valencian Community work with basic remote sensing techniques but have no access to multispectral drones or AI image analysis workflows. The Valencian agri-food sector demands technicians capable of interpreting and acting on NDVI maps, but VET does not train this.",
-            "va": "Els cicles de FP Agrària de la Comunitat Valenciana treballen amb tècniques de teledetecció bàsica, però sense accés a drons multiespectrals ni a fluxos de treball d'anàlisi d'imatge amb IA. El sector agroalimentari valencià demanda tècnics capaços d'interpretar i actuar sobre mapes NDVI, però la FP no ho forma."
-          },
-          "intervention": {
-            "es": "Se preparó un kit formativo con: (1) dataset de 200 imágenes multiespectrales reales de parcelas citrícolas de 4 campañas (anonimizadas por parcela), (2) notebook Python con pipeline completo NDVI (carga → normalización → cálculo índice → umbralización → mapa de actuación), (3) 4 estudios de caso con diagnóstico real vs predicción del modelo, (4) práctica de campo con drone de bajo coste (DJI Mini 3) y cámara RGB para introducción a la teledetección.",
-            "en": "A training kit was prepared with: (1) dataset of 200 real multispectral images from citrus parcels over 4 seasons (anonymised by parcel), (2) Python notebook with complete NDVI pipeline (loading → normalisation → index calculation → thresholding → action map), (3) 4 case studies with real diagnosis vs model prediction, (4) field practice with low-cost drone (DJI Mini 3) and RGB camera for introduction to remote sensing.",
-            "va": "Es va preparar un kit formatiu amb: (1) dataset de 200 imatges multiespectrals reals de parcel·les citrícoles de 4 campanyes (anonimitzades per parcel·la), (2) notebook Python amb pipeline complet NDVI (càrrega → normalització → càlcul índex → umbralització → mapa d'actuació), (3) 4 estudis de cas amb diagnòstic real vs predicció del model, (4) pràctica de camp amb dron de baix cost (DJI Mini 3) i càmera RGB per a introducció a la teledetecció."
-          },
-          "transferPath": {
-            "es": "Jornada de formación en sede de Anecoop → despliegue del kit en el centro → sesiones de aula con notebook → práctica de campo con drone del centro → análisis de datos propios → presentación de resultados a cooperativa local.",
-            "en": "Training day at Anecoop headquarters → kit deployment in the centre → classroom sessions with notebook → field practice with the centre's drone → analysis of own data → results presentation to local cooperative.",
-            "va": "Jornada de formació a la seu d'Anecoop → desplegament del kit en el centre → sessions d'aula amb notebook → pràctica de camp amb dron del centre → anàlisi de dades pròpies → presentació de resultats a cooperativa local."
-          },
-          "trackBValue": {
-            "es": "Dataset de 200 imágenes multiespectrales de cítricos, pipeline Python NDVI completo, 4 estudios de caso con solución y guía de práctica de campo con drone RGB. Adaptable a cualquier ciclo agrario con acceso a un drone básico.",
-            "en": "Dataset of 200 citrus multispectral images, complete Python NDVI pipeline, 4 case studies with solutions and field practice guide with RGB drone. Adaptable to any agrarian cycle with access to a basic drone.",
-            "va": "Dataset de 200 imatges multiespectrals de cítrics, pipeline Python NDVI complet, 4 estudis de cas amb solució i guia de pràctica de camp amb dron RGB. Adaptable a qualsevol cicle agrari amb accés a un dron bàsic."
-          }
-        },
+        "caseStudy": null,
         "evidence": {
           "headline": {
             "es": "Los tres centros integran el flujo NDVI en sus prácticas; reducción media del 18% en el uso de agua de riego en las parcelas monitorizadas por alumnos en prácticas.",
@@ -34521,104 +29623,15 @@ export const MARKETPLACE_CONFIG = {
               "va": "Reducció en ús d'aigua de reg en parcel·les pilot"
             }
           },
-          "secondaryMetrics": [
-            {
-              "id": "early-detection-rate",
-              "value": 91,
-              "unit": "%",
-              "label": {
-                "es": "Tasa de detección anticipada de estrés hídrico (7-10 días antes)",
-                "en": "Early detection rate for water stress (7-10 days in advance)",
-                "va": "Taxa de detecció anticipada d'estrès hídric (7-10 dies abans)"
-              }
-            },
-            {
-              "id": "student-job-placement",
-              "value": 73,
-              "unit": "%",
-              "label": {
-                "es": "Alumnos egresados con competencia NDVI contratados en sector agrario",
-                "en": "Graduated students with NDVI competence hired in the agrarian sector",
-                "va": "Alumnes egressats amb competència NDVI contractats en sector agrari"
-              }
-            }
-          ],
-          "verification": {
-            "status": "verified",
-            "verifiedBy": "Dpto. de Innovación Anecoop + Conselleria d'Agricultura",
-            "verifiedAt": "2026-03-15",
-            "method": {
-              "es": "Seguimiento de contadores de riego en parcelas piloto durante dos campañas y auditoría de inserción laboral por Conselleria d'Agricultura.",
-              "en": "Monitoring of irrigation meters on pilot parcels over two seasons and employment audit by Conselleria d'Agricultura.",
-              "va": "Seguiment de comptadors de reg en parcel·les pilot durant dos campanyes i auditoria d'inserció laboral per Conselleria d'Agricultura."
-            }
-          },
+          "secondaryMetrics": [],
+          "verification": null,
           "limitations": {
-            "es": "Los modelos NDVI han sido calibrados para cítricos (naranjos y mandarinos) de la zona litoral valenciana. La transferencia a otros cultivos o zonas climáticas requiere nueva calibración del umbral de estrés.",
-            "en": "NDVI models have been calibrated for citrus (orange and mandarin) in the Valencian coastal zone. Transfer to other crops or climate zones requires new stress threshold calibration.",
-            "va": "Els models NDVI han sigut calibrats per a cítrics (tarongers i mandarins) de la zona litoral valenciana. La transferència a altres cultius o zones climàtiques requereix nova calibració del llindar d'estrès."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
-        "transferability": {
-          "whyTransferable": {
-            "es": "El pipeline Python es totalmente agnóstico al tipo de drone utilizado. El dataset permite trabajar sin drone propio. La guía de campo es compatible con cualquier drone con cámara RGB básica, lo que elimina la barrera económica del drone multiespectral.",
-            "en": "The Python pipeline is completely agnostic to the drone type used. The dataset allows working without an own drone. The field guide is compatible with any drone with a basic RGB camera, eliminating the economic barrier of the multispectral drone.",
-            "va": "El pipeline Python és totalment agnòstic al tipus de dron utilitzat. El dataset permet treballar sense dron propi. La guia de camp és compatible amb qualsevol dron amb càmera RGB bàsica, la qual cosa elimina la barrera econòmica del dron multiespectral."
-          },
-          "suitableFor": [
-            "vet-centres",
-            "public-administration",
-            "industry-partners"
-          ],
-          "requirements": [
-            {
-              "label": {
-                "es": "Drone de bajo coste con cámara RGB (p.ej. DJI Mini 3) o acceso al dataset proporcionado",
-                "en": "Low-cost drone with RGB camera (e.g. DJI Mini 3) or access to provided dataset",
-                "va": "Dron de baix cost amb càmera RGB (p. ex. DJI Mini 3) o accés al dataset proporcionat"
-              }
-            },
-            {
-              "label": {
-                "es": "Ordenador con Python y QGIS instalado",
-                "en": "Computer with Python and QGIS installed",
-                "va": "Ordinador amb Python i QGIS instal·lat"
-              }
-            }
-          ],
-          "adaptationSteps": [
-            {
-              "label": {
-                "es": "Descargar el dataset y el notebook del repositorio",
-                "en": "Download the dataset and notebook from the repository",
-                "va": "Descarregar el dataset i el notebook del repositori"
-              }
-            },
-            {
-              "label": {
-                "es": "Adaptar los umbrales NDVI al cultivo y zona climática del centro",
-                "en": "Adapt NDVI thresholds to the crop and climate zone of the centre",
-                "va": "Adaptar els llindars NDVI al cultiu i zona climàtica del centre"
-              }
-            },
-            {
-              "label": {
-                "es": "Coordinar con una cooperativa local para presentación de resultados como actividad de cierre",
-                "en": "Coordinate with a local cooperative for results presentation as closing activity",
-                "va": "Coordinar amb una cooperativa local per a la presentació de resultats com activitat de tancament"
-              }
-            }
-          ],
-          "risks": [
-            {
-              "label": {
-                "es": "La normativa de vuelo de drones en España (AESA) puede restringir los vuelos en algunos entornos del centro",
-                "en": "Spanish drone flight regulation (AESA) may restrict flights in some centre environments",
-                "va": "La normativa de vol de drons a Espanya (AESA) pot restringir els vols en alguns entorns del centre"
-              }
-            }
-          ]
-        },
+        "transferability": null,
         "template": {
           "requiredBlocks": [
             "context",
@@ -34708,59 +29721,42 @@ export const MARKETPLACE_CONFIG = {
             "name": "Solarius Energy S.L."
           },
           "requester": null,
-          "leadTeam": {
-            "name": "Departamento de Ingeniería Solarius",
-            "role": {
-              "es": "Empresa desarrolladora del gemelo digital y formadora inicial",
-              "en": "Company that developed the digital twin and provided initial training",
-              "va": "Empresa desenvolupadora del bessó digital i formadora inicial"
-            }
-          },
+          "leadTeam": null,
           "contact": null,
           "beneficiaries": [
             {
               "name": "IES Mislata-Alfafar",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro piloto principal — integración curricular",
-                "en": "Main pilot centre — curricular integration",
-                "va": "Centre pilot principal — integració curricular"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "IES La Costera",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro receptor — adaptación de materiales",
-                "en": "Receiving centre — material adaptation",
-                "va": "Centre receptor — adaptació de materials"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "IES Sixte Vicent Genovés",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro receptor — implantación autónoma",
-                "en": "Receiving centre — autonomous deployment",
-                "va": "Centre receptor — implantació autònoma"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             }
           ]
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "maker-steam"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "infrastructure-evidence",
-            "triple-transition"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -34783,10 +29779,7 @@ export const MARKETPLACE_CONFIG = {
           "levels": [
             "vet"
           ],
-          "audience": [
-            "vet-centres",
-            "industry-partners"
-          ],
+          "audience": [],
           "sdgs": [
             4,
             7,
@@ -34800,17 +29793,17 @@ export const MARKETPLACE_CONFIG = {
             {
               "name": "IES Mislata-Alfafar",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             },
             {
               "name": "IES La Costera",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             },
             {
               "name": "IES Sixte Vicent Genovés",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             }
           ]
         },
@@ -34822,9 +29815,9 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
-          "codeLicense": "Apache 2.0",
-          "dataAvailability": "anonymised",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -34833,9 +29826,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "Los datos de producción real han sido anonimizados conforme al RGPD. El código fuente del gemelo digital se publica bajo licencia Apache 2.0.",
-            "en": "Real production data has been anonymised in accordance with GDPR. The digital twin source code is published under Apache 2.0 licence.",
-            "va": "Les dades de producció real han sigut anonimitzades d'acord amb el RGPD. El codi font del bessó digital es publica sota llicència Apache 2.0."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -34845,7 +29838,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -34870,9 +29863,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Ver caso",
-              "en": "View case",
-              "va": "Veure cas"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -34889,137 +29882,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "externalLinks": [
-            {
-              "id": "pvlib-docs",
-              "type": "document",
-              "label": {
-                "es": "Documentación oficial PVLib",
-                "en": "Official PVLib documentation",
-                "va": "Documentació oficial PVLib"
-              },
-              "url": "https://pvlib-python.readthedocs.io/"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/cases/solar-fotovoltaica-gemelo-digital-ene/",
-          "items": [
-            {
-              "id": "teaching-module",
-              "type": "teaching-module",
-              "title": {
-                "es": "Guía docente — Gemelo digital fotovoltaico",
-                "en": "Teacher guide — Photovoltaic digital twin",
-                "va": "Guia docent — Bessó digital fotovoltaic"
-              },
-              "description": {
-                "es": "Manual completo para el docente con instrucciones de despliegue, descripción de los 12 escenarios y rúbrica de evaluación.",
-                "en": "Complete teacher manual with deployment instructions, description of 12 scenarios and evaluation rubric.",
-                "va": "Manual complet per al docent amb instruccions de desplegament, descripció dels 12 escenaris i rúbrica d'avaluació."
-              },
-              "files": [
-                {
-                  "file": "guia-docente-gemelo-digital-fotovoltaico.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "case-brief",
-              "type": "case-brief",
-              "title": {
-                "es": "Ficha del caso",
-                "en": "Case brief",
-                "va": "Fitxa del cas"
-              },
-              "description": {
-                "es": "Resumen ejecutivo del caso para presentación a equipos directivos y coordinadores de ciclos.",
-                "en": "Executive summary of the case for presentation to management teams and cycle coordinators.",
-                "va": "Resum executiu del cas per a presentació a equips directius i coordinadors de cicles."
-              },
-              "files": [
-                {
-                  "file": "ficha-caso-solar-fotovoltaica.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                },
-                {
-                  "file": "case-brief-solar-photovoltaic.pdf",
-                  "format": "pdf",
-                  "language": "en",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            },
-            {
-              "id": "replication-guide",
-              "type": "replication-guide",
-              "title": {
-                "es": "Guía de replicación — Despliegue Docker",
-                "en": "Replication guide — Docker deployment",
-                "va": "Guia de replicació — Desplegament Docker"
-              },
-              "description": {
-                "es": "Instrucciones técnicas paso a paso para instalar y configurar el gemelo digital en un nuevo centro.",
-                "en": "Step-by-step technical instructions to install and configure the digital twin in a new centre.",
-                "va": "Instruccions tècniques pas a pas per instal·lar i configurar el bessó digital en un nou centre."
-              },
-              "files": [
-                {
-                  "file": "guia-replicacion-docker-gemelo-digital.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "outputs": null,
         "process": null,
-        "hasDownloads": true,
-        "downloadCount": 3,
-        "cardDownloads": [
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Guía docente — Gemelo digital fotovoltaico",
-              "en": "Teacher guide — Photovoltaic digital twin",
-              "va": "Guia docent — Bessó digital fotovoltaic"
-            },
-            "description": {
-              "es": "Manual completo para el docente con instrucciones de despliegue, descripción de los 12 escenarios y rúbrica de evaluación.",
-              "en": "Complete teacher manual with deployment instructions, description of 12 scenarios and evaluation rubric.",
-              "va": "Manual complet per al docent amb instruccions de desplegament, descripció dels 12 escenaris i rúbrica d'avaluació."
-            },
-            "files": [
-              {
-                "file": "guia-docente-gemelo-digital-fotovoltaico.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "case",
@@ -35032,7 +29905,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": {
@@ -35054,8 +29927,8 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
-              "relations": true,
+              "trackA": true,
+              "relations": false,
               "evidence": true,
               "transferability": true,
               "summary": true,
@@ -35065,34 +29938,7 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "caseStudy": {
-          "type": "scaling",
-          "originContext": {
-            "es": "Solarius Energy utilizaba internamente un gemelo digital (Python + PVLib + interfaz web) para monitorizar y optimizar una instalación solar de 50 kWp en Paterna. El modelo acumuló datos de dos años de producción real y series de fallos controlados.",
-            "en": "Solarius Energy used internally a digital twin (Python + PVLib + web interface) to monitor and optimise a 50 kWp solar installation in Paterna. The model accumulated two years of real production data and controlled fault series.",
-            "va": "Solarius Energy utilitzava internament un bessó digital (Python + PVLib + interfície web) per monitoritzar i optimitzar una instal·lació solar de 50 kWp a Paterna. El model va acumular dos anys de dades de producció real i sèries de fallades controlades."
-          },
-          "transferContext": {
-            "es": "Los centros de FP de Electricidad y Energía carecen de instalaciones fotovoltaicas reales suficientemente grandes para prácticas avanzadas de optimización y diagnóstico de fallos. La simulación era el único recurso disponible, pero sin datos industriales reales.",
-            "en": "VET centres in Electricity and Energy lack real photovoltaic installations large enough for advanced optimisation and fault diagnosis practice. Simulation was the only available resource, but without real industrial data.",
-            "va": "Els centres de FP d'Electricitat i Energia no disposen d'instal·lacions fotovoltaiques reals prou grans per a pràctiques avançades d'optimització i diagnòstic de fallades. La simulació era l'únic recurs disponible, però sense dades industrials reals."
-          },
-          "intervention": {
-            "es": "Se empaquetó el gemelo digital en un contenedor Docker con interfaz Streamlit. Se crearon 12 escenarios de fallo predefinidos (módulo defectuoso, sombreado parcial, inversor degradado, etc.) y una suite de ejercicios resueltos. El despliegue en cada centro se realiza con un único comando y no requiere hardware fotovoltaico.",
-            "en": "The digital twin was packaged in a Docker container with a Streamlit interface. Twelve predefined fault scenarios (defective module, partial shading, degraded inverter, etc.) and a suite of resolved exercises were created. Deployment in each centre is done with a single command and requires no photovoltaic hardware.",
-            "va": "El bessó digital es va empaquetar en un contenidor Docker amb interfície Streamlit. Es van crear 12 escenaris de fallada predefinits (mòdul defectuós, ombreig parcial, inversor degradat, etc.) i una suite d'exercicis resolts. El desplegament en cada centre es realitza amb una única comanda i no requereix maquinari fotovoltaic."
-          },
-          "transferPath": {
-            "es": "Taller inicial de 4 horas con docentes → despliegue autónomo en cada centro → 3 sesiones de prácticas guiadas con alumnos de 2.º de CFGS → evaluación formativa con rúbrica compartida.",
-            "en": "Initial 4-hour workshop with teachers → autonomous deployment in each centre → 3 guided practice sessions with 2nd year HND students → formative assessment with shared rubric.",
-            "va": "Taller inicial de 4 hores amb docents → desplegament autònom en cada centre → 3 sessions de pràctiques guiades amb alumnes de 2n de CFGS → avaluació formativa amb rúbrica compartida."
-          },
-          "trackBValue": {
-            "es": "Contenedor Docker listo para desplegar con datos reales de dos años, 12 escenarios de fallo, rúbrica y guia docente. Replicable en cualquier centro con un ordenador y acceso a internet.",
-            "en": "Docker container ready to deploy with two years of real data, 12 fault scenarios, rubric and teacher guide. Replicable in any centre with a computer and internet access.",
-            "va": "Contenidor Docker llest per desplegar amb dades reals de dos anys, 12 escenaris de fallada, rúbrica i guia docent. Replicable en qualsevol centre amb un ordinador i accés a internet."
-          }
-        },
+        "caseStudy": null,
         "evidence": {
           "headline": {
             "es": "Los tres centros integran el gemelo digital en sus unidades de CFGS con un 94% de satisfacción docente.",
@@ -35109,120 +29955,15 @@ export const MARKETPLACE_CONFIG = {
               "va": "Satisfacció docent amb el material"
             }
           },
-          "secondaryMetrics": [
-            {
-              "id": "centres-active",
-              "value": 3,
-              "unit": "centros",
-              "label": {
-                "es": "Centros con gemelo digital operativo",
-                "en": "Centres with active digital twin",
-                "va": "Centres amb bessó digital operatiu"
-              }
-            },
-            {
-              "id": "fault-scenarios",
-              "value": 12,
-              "unit": "escenarios",
-              "label": {
-                "es": "Escenarios de fallo disponibles para prácticas",
-                "en": "Fault scenarios available for practice",
-                "va": "Escenaris de fallada disponibles per a pràctiques"
-              }
-            },
-            {
-              "id": "student-competency-gain",
-              "value": 31,
-              "unit": "%",
-              "label": {
-                "es": "Mejora en competencia de diagnóstico de fallos (pre/post)",
-                "en": "Improvement in fault diagnosis competency (pre/post)",
-                "va": "Millora en competència de diagnòstic de fallades (pre/post)"
-              }
-            }
-          ],
-          "verification": {
-            "status": "verified",
-            "verifiedBy": "Departament d'Educació — Inspecció d'Electricitat i Energia",
-            "verifiedAt": "2026-03-28",
-            "method": {
-              "es": "Evaluación pre/post del módulo \"Instalaciones solares fotovoltaicas\" y encuestas de satisfacción validadas por la inspección educativa.",
-              "en": "Pre/post evaluation of the \"Solar photovoltaic installations\" module and satisfaction surveys validated by educational inspection.",
-              "va": "Avaluació pre/post del mòdul \"Instal·lacions solars fotovoltaiques\" i enquestes de satisfacció validades per la inspecció educativa."
-            }
-          },
+          "secondaryMetrics": [],
+          "verification": null,
           "limitations": {
-            "es": "Los datos de producción real están anonimizados y corresponden a una única ubicación geográfica (Paterna, Valencia). La extrapolación a otras zonas climáticas requiere recalibración del modelo de irradiación.",
-            "en": "Real production data is anonymised and corresponds to a single geographic location (Paterna, Valencia). Extrapolation to other climate zones requires recalibration of the irradiance model.",
-            "va": "Les dades de producció real estan anonimitzades i corresponen a una única ubicació geogràfica (Paterna, València). L'extrapolació a altres zones climàtiques requereix recalibrar el model d'irradiació."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
-        "transferability": {
-          "whyTransferable": {
-            "es": "El empaquetado Docker elimina cualquier dependencia de infraestructura. Los 12 escenarios cubren los fallos más comunes en instalaciones residenciales y de pequeña industria, que son los contextos que trabajan los centros de FP de Electricidad.",
-            "en": "Docker packaging eliminates any infrastructure dependency. The 12 scenarios cover the most common faults in residential and small-industry installations, which are the contexts that Electricity VET centres work with.",
-            "va": "L'empaquetat Docker elimina qualsevol dependència d'infraestructura. Els 12 escenaris cobreixen les fallades més comunes en instal·lacions residencials i de petita indústria, que són els contextos en què treballen els centres de FP d'Electricitat."
-          },
-          "suitableFor": [
-            "vet-centres",
-            "research-centres"
-          ],
-          "requirements": [
-            {
-              "label": {
-                "es": "Ordenador con Docker instalado (Windows/Linux/Mac)",
-                "en": "Computer with Docker installed (Windows/Linux/Mac)",
-                "va": "Ordinador amb Docker instal·lat (Windows/Linux/Mac)"
-              }
-            },
-            {
-              "label": {
-                "es": "Conocimientos básicos de Python del docente (nivel usuario)",
-                "en": "Basic Python knowledge for the teacher (user level)",
-                "va": "Coneixements bàsics de Python del docent (nivell usuari)"
-              }
-            }
-          ],
-          "adaptationSteps": [
-            {
-              "label": {
-                "es": "Descargar la imagen Docker del repositorio oficial del caso",
-                "en": "Download the Docker image from the official case repository",
-                "va": "Descarregar la imatge Docker del repositori oficial del cas"
-              }
-            },
-            {
-              "label": {
-                "es": "Configurar los parámetros de irradiación para la zona geográfica del centro",
-                "en": "Configure irradiance parameters for the centre's geographic zone",
-                "va": "Configurar els paràmetres d'irradiació per a la zona geogràfica del centre"
-              }
-            },
-            {
-              "label": {
-                "es": "Seleccionar los escenarios de fallo relevantes para cada unidad formativa",
-                "en": "Select the fault scenarios relevant for each training unit",
-                "va": "Seleccionar els escenaris de fallada rellevants per a cada unitat formativa"
-              }
-            }
-          ],
-          "risks": [
-            {
-              "label": {
-                "es": "Requiere conocimientos mínimos de Docker para el despliegue inicial",
-                "en": "Requires minimal Docker knowledge for initial deployment",
-                "va": "Requereix coneixements mínims de Docker per al desplegament inicial"
-              }
-            },
-            {
-              "label": {
-                "es": "Los datos de producción no contemplan climatología extrema (nevadas, granizo)",
-                "en": "Production data does not cover extreme weather (snow, hail)",
-                "va": "Les dades de producció no contemplen climatologia extrema (nevades, calamarsa)"
-              }
-            }
-          ]
-        },
+        "transferability": null,
         "template": {
           "requiredBlocks": [
             "context",
@@ -35312,49 +30053,33 @@ export const MARKETPLACE_CONFIG = {
             "name": "Museu de Belles Arts de València"
           },
           "requester": null,
-          "leadTeam": {
-            "name": "Departament d'Innovació i Mediació Cultural, MuBelles",
-            "role": {
-              "es": "Entidad origen — desarrollo del sistema AR y cesión de licencias para uso educativo",
-              "en": "Origin entity — AR system development and licence grant for educational use",
-              "va": "Entitat origen — desenvolupament del sistema AR i cessió de llicències per a ús educatiu"
-            }
-          },
+          "leadTeam": null,
           "contact": null,
           "beneficiaries": [
             {
               "name": "Escola d'Art i Superior de Disseny de València (EASD)",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro piloto — proyecto integrador en el ciclo de Animación 3D",
-                "en": "Pilot centre — integrative project in the 3D Animation cycle",
-                "va": "Centre pilot — projecte integrador en el cicle d'Animació 3D"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "IES Lluis Vives (Valencia)",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro receptor — adaptación al módulo de aplicaciones multiplataforma",
-                "en": "Receiving centre — adaptation to the cross-platform applications module",
-                "va": "Centre receptor — adaptació al mòdul d'aplicacions multiplataforma"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             }
           ]
         },
         "classification": {
-          "aiSteamFocus": [
-            "creative-ai",
-            "maker-steam"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "equity-inclusion"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -35378,10 +30103,7 @@ export const MARKETPLACE_CONFIG = {
             "vet",
             "master"
           ],
-          "audience": [
-            "vet-centres",
-            "public-administration"
-          ],
+          "audience": [],
           "sdgs": [
             4,
             10,
@@ -35395,12 +30117,12 @@ export const MARKETPLACE_CONFIG = {
             {
               "name": "Escola d'Art i Superior de Disseny de València (EASD)",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             },
             {
               "name": "IES Lluis Vives (Valencia)",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             }
           ]
         },
@@ -35412,9 +30134,9 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
-          "codeLicense": "MIT",
-          "dataAvailability": "not-applicable",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -35423,9 +30145,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "Los assets 3D del museo se ceden exclusivamente bajo licencia educativa y no están incluidos en los descargables públicos. El código fuente de la aplicación AR se publica bajo licencia MIT.",
-            "en": "The museum's 3D assets are granted exclusively under educational licence and are not included in public downloads. The AR application source code is published under MIT licence.",
-            "va": "Els assets 3D del museu es cedeixen exclusivament sota llicència educativa i no estan inclosos en els descarregables públics. El codi font de l'aplicació AR es publica sota llicència MIT."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -35435,7 +30157,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -35460,9 +30182,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Ver caso",
-              "en": "View case",
-              "va": "Veure cas"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -35479,131 +30201,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "externalLinks": [
-            {
-              "id": "arfoundation-docs",
-              "type": "document",
-              "label": {
-                "es": "Documentación oficial AR Foundation (Unity)",
-                "en": "Official AR Foundation documentation (Unity)",
-                "va": "Documentació oficial AR Foundation (Unity)"
-              },
-              "url": "https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@latest"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/cases/realidad-aumentada-museos-cci/",
-          "items": [
-            {
-              "id": "case-brief",
-              "type": "case-brief",
-              "title": {
-                "es": "Ficha del caso",
-                "en": "Case brief",
-                "va": "Fitxa del cas"
-              },
-              "description": {
-                "es": "Resumen ejecutivo del caso con resultados, actores y condiciones de replicación.",
-                "en": "Executive summary with results, actors and replication conditions.",
-                "va": "Resum executiu del cas amb resultats, actors i condicions de replicació."
-              },
-              "files": [
-                {
-                  "file": "ficha-caso-ar-museos-fp-arte.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "teaching-module",
-              "type": "teaching-module",
-              "title": {
-                "es": "Kit del proyecto integrador AR para patrimonio",
-                "en": "AR integrative project kit for heritage",
-                "va": "Kit del projecte integrador AR per al patrimoni"
-              },
-              "description": {
-                "es": "Briefing tipo, guía técnica Unity+ARFoundation, rúbrica trifásica y plantilla de documentación de proyecto. No incluye assets 3D del museo (requieren acuerdo específico).",
-                "en": "Template briefing, Unity+ARFoundation technical guide, three-phase rubric and project documentation template. Does not include museum 3D assets (require specific agreement).",
-                "va": "Briefing tipus, guia tècnica Unity+ARFoundation, rúbrica trifàsica i plantilla de documentació de projecte. No inclou assets 3D del museu (requereixen acord específic)."
-              },
-              "files": [
-                {
-                  "file": "kit-proyecto-integrador-ar-patrimonio.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            },
-            {
-              "id": "slide-deck",
-              "type": "slide-deck",
-              "title": {
-                "es": "Presentación de la demo pública (resultados del alumnado)",
-                "en": "Public demo presentation (student results)",
-                "va": "Presentació de la demo pública (resultats de l'alumnat)"
-              },
-              "description": {
-                "es": "Diapositivas usadas en la presentación pública en el museo, con capturas del prototipo AR y feedback de visitantes.",
-                "en": "Slides used in the public presentation at the museum, with screenshots of the AR prototype and visitor feedback.",
-                "va": "Diapositives usades en la presentació pública al museu, amb captures del prototip AR i feedback de visitants."
-              },
-              "files": [
-                {
-                  "file": "presentacion-demo-publica-ar-museu-belles-arts.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "outputs": null,
         "process": null,
-        "hasDownloads": true,
-        "downloadCount": 3,
-        "cardDownloads": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso",
-              "en": "Case brief",
-              "va": "Fitxa del cas"
-            },
-            "description": {
-              "es": "Resumen ejecutivo del caso con resultados, actores y condiciones de replicación.",
-              "en": "Executive summary with results, actors and replication conditions.",
-              "va": "Resum executiu del cas amb resultats, actors i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-ar-museos-fp-arte.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "case",
@@ -35616,7 +30224,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": {
@@ -35638,8 +30246,8 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
-              "relations": true,
+              "trackA": true,
+              "relations": false,
               "evidence": true,
               "transferability": true,
               "summary": true,
@@ -35649,34 +30257,7 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "caseStudy": {
-          "type": "adaptation",
-          "originContext": {
-            "es": "El Museu de Belles Arts financiado por GVA desarrolló entre 2023 y 2024 un sistema de mediación AR con Unity + ARFoundation para tres salas del museo. El sistema permite superponer capas de información histórica, visualizar restauraciones virtuales de obras deterioradas e iniciar rutas temáticas personalizadas desde un smartphone.",
-            "en": "The Museu de Belles Arts, funded by GVA, developed between 2023 and 2024 an AR mediation system with Unity + ARFoundation for three museum rooms. The system allows overlaying historical information layers, visualising virtual restorations of damaged works and starting personalised themed routes from a smartphone.",
-            "va": "El Museu de Belles Arts finançat per GVA va desenvolupar entre 2023 i 2024 un sistema de mediació AR amb Unity + ARFoundation per a tres sales del museu. El sistema permet superposar capes d'informació històrica, visualitzar restauracions virtuals d'obres deteriorades i iniciar rutes temàtiques personalitzades des d'un smartphone."
-          },
-          "transferContext": {
-            "es": "Los ciclos de Animación 3D y Diseño de la EASD forman profesionales con alta capacidad técnica en 3D y interactividad, pero que pocas veces trabajan con clientes culturales públicos y no conocen las particularidades del diseño para patrimonio (accesibilidad, narrativa histórica, limitaciones de conservación).",
-            "en": "The 3D Animation and Design cycles at EASD train professionals with high technical skills in 3D and interactivity, but who rarely work with public cultural clients and are unfamiliar with the specificities of heritage design (accessibility, historical narrative, conservation constraints).",
-            "va": "Els cicles d'Animació 3D i Disseny de l'EASD formen professionals amb alta capacitat tècnica en 3D i interactivitat, però que poques vegades treballen amb clients culturals públics i no coneixen les particularitats del disseny per al patrimoni (accessibilitat, narrativa històrica, limitacions de conservació)."
-          },
-          "intervention": {
-            "es": "Se preparó un proyecto integrador de 40 horas con tres fases: (1) análisis de la obra real (El Marqués de la Ensenada, de Amigoni) con contextualización histórica, (2) diseño y prototipado de 3 capas AR (restauración virtual, contexto histórico, ruta temática conectada), (3) presentación pública en el museo con público real. Los alumnos usaron Unity + ARFoundation + Vuforia con assets 3D del museo cedidos en licencia educativa.",
-            "en": "An integrative project of 40 hours was prepared in three phases: (1) real work analysis (The Marqués de la Ensenada, by Amigoni) with historical contextualisation, (2) design and prototyping of 3 AR layers (virtual restoration, historical context, connected thematic route), (3) public presentation in the museum with real audience. Students used Unity + ARFoundation + Vuforia with 3D assets from the museum granted under educational licence.",
-            "va": "Es va preparar un projecte integrador de 40 hores amb tres fases: (1) anàlisi de l'obra real (El Marqués de la Ensenada, d'Amigoni) amb contextualització històrica, (2) disseny i prototipat de 3 capes AR (restauració virtual, context històric, ruta temàtica connectada), (3) presentació pública al museu amb públic real. Els alumnes van usar Unity + ARFoundation + Vuforia amb assets 3D del museu cedits en llicència educativa."
-          },
-          "transferPath": {
-            "es": "Briefing del museo a los alumnos (1 sesión) → formación técnica AR (4 sesiones) → diseño y prototipado (10 sesiones) → revisión con conservadores del museo (1 sesión) → demo pública en el museo → reflexión y documentación.",
-            "en": "Museum briefing to students (1 session) → AR technical training (4 sessions) → design and prototyping (10 sessions) → review with museum conservators (1 session) → public demo in the museum → reflection and documentation.",
-            "va": "Briefing del museu als alumnes (1 sessió) → formació tècnica AR (4 sessions) → disseny i prototipat (10 sessions) → revisió amb conservadors del museu (1 sessió) → demo pública al museu → reflexió i documentació."
-          },
-          "trackBValue": {
-            "es": "Kit de proyecto integrador AR para patrimonio: briefing museístico tipo, guía técnica Unity+ARFoundation, 3 assets 3D del museo en licencia educativa, rúbrica de evaluación trifásica y plantilla de documentación de proyecto. Replicable en cualquier museo con colección digitalizada parcialmente.",
-            "en": "AR integrative project kit for heritage: template museum briefing, Unity+ARFoundation technical guide, 3 museum 3D assets under educational licence, three-phase evaluation rubric and project documentation template. Replicable in any museum with a partially digitised collection.",
-            "va": "Kit de projecte integrador AR per al patrimoni: briefing museístic tipus, guia tècnica Unity+ARFoundation, 3 assets 3D del museu en llicència educativa, rúbrica d'avaluació trifàsica i plantilla de documentació de projecte. Replicable en qualsevol museu amb col·lecció parcialment digitalitzada."
-          }
-        },
+        "caseStudy": null,
         "evidence": {
           "headline": {
             "es": "El 91% de los visitantes del museo que probó el prototipo del alumnado lo valoró como \"muy útil o útil\" para comprender la obra.",
@@ -35693,103 +30274,15 @@ export const MARKETPLACE_CONFIG = {
               "va": "Visitants que valoren positivament el prototip AR de l'alumnat"
             }
           },
-          "secondaryMetrics": [
-            {
-              "id": "project-excellence-rate",
-              "value": 76,
-              "unit": "%",
-              "label": {
-                "es": "Proyectos del alumnado valorados con \"Excelente\" por los conservadores del museo",
-                "en": "Student projects rated \"Excellent\" by museum conservators",
-                "va": "Projectes de l'alumnat valorats amb \"Excel·lent\" pels conservadors del museu"
-              }
-            },
-            {
-              "id": "collaboration-hours",
-              "value": 40,
-              "unit": "horas",
-              "label": {
-                "es": "Horas de proyecto integrador con cliente cultural real",
-                "en": "Integrative project hours with a real cultural client",
-                "va": "Hores de projecte integrador amb client cultural real"
-              }
-            }
-          ],
-          "verification": {
-            "status": "reviewed",
-            "verifiedBy": "Museu de Belles Arts de València + AI-STEAM Comité Técnico Industrias Creativas",
-            "verifiedAt": "2026-02-28",
-            "method": {
-              "es": "Encuestas de satisfacción de visitantes realizadas por el personal del museo durante la demo pública y rúbricas de evaluación de los conservadores.",
-              "en": "Visitor satisfaction surveys conducted by museum staff during the public demo and conservator evaluation rubrics.",
-              "va": "Enquestes de satisfacció de visitants realitzades pel personal del museu durant la demo pública i rúbriques d'avaluació dels conservadors."
-            }
-          },
+          "secondaryMetrics": [],
+          "verification": null,
           "limitations": {
-            "es": "Los assets 3D del museo están cedidos en licencia educativa y no pueden redistribuirse fuera del contexto formativo. Para replicar el proyecto con otras obras, el centro debe negociar el acceso a los assets directamente con el museo correspondiente.",
-            "en": "The museum's 3D assets are granted under educational licence and may not be redistributed outside the training context. To replicate the project with other works, the centre must negotiate asset access directly with the relevant museum.",
-            "va": "Els assets 3D del museu estan cedits en llicència educativa i no es poden redistribuir fora del context formatiu. Per replicar el projecte amb altres obres, el centre ha de negociar l'accés als assets directament amb el museu corresponent."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
-        "transferability": {
-          "whyTransferable": {
-            "es": "Unity + ARFoundation es la plataforma AR más usada en el sector creativo español. El formato de proyecto integrador con cliente cultural real es transferible a cualquier museo con colección digitalizada, sin necesidad de replicar los mismos assets.",
-            "en": "Unity + ARFoundation is the most widely used AR platform in the Spanish creative sector. The integrative project format with a real cultural client is transferable to any museum with a digitised collection, without needing to replicate the same assets.",
-            "va": "Unity + ARFoundation és la plataforma AR més usada en el sector creatiu espanyol. El format de projecte integrador amb client cultural real és transferible a qualsevol museu amb col·lecció digitalitzada, sense necessitat de replicar els mateixos assets."
-          },
-          "suitableFor": [
-            "vet-centres",
-            "public-administration"
-          ],
-          "requirements": [
-            {
-              "label": {
-                "es": "Licencias Unity Pro (la versión gratuita es suficiente para estudiantes)",
-                "en": "Unity Pro licences (the free version is sufficient for students)",
-                "va": "Llicències Unity Pro (la versió gratuïta és suficient per a estudiants)"
-              }
-            },
-            {
-              "label": {
-                "es": "Acceso a un museo o entidad cultural con colección parcialmente digitalizada",
-                "en": "Access to a museum or cultural entity with a partially digitised collection",
-                "va": "Accés a un museu o entitat cultural amb col·lecció parcialment digitalitzada"
-              }
-            }
-          ],
-          "adaptationSteps": [
-            {
-              "label": {
-                "es": "Identificar un museo o patrimonio local dispuesto a colaborar como cliente del proyecto",
-                "en": "Identify a local museum or heritage site willing to collaborate as project client",
-                "va": "Identificar un museu o patrimoni local disposat a col·laborar com a client del projecte"
-              }
-            },
-            {
-              "label": {
-                "es": "Adaptar el briefing tipo al contexto y las obras del museo colaborador",
-                "en": "Adapt the template briefing to the context and works of the collaborating museum",
-                "va": "Adaptar el briefing tipus al context i les obres del museu col·laborador"
-              }
-            },
-            {
-              "label": {
-                "es": "Formar a los alumnos en ARFoundation con la guía técnica proporcionada antes de iniciar el proyecto",
-                "en": "Train students in ARFoundation with the provided technical guide before starting the project",
-                "va": "Formar els alumnes en ARFoundation amb la guia tècnica proporcionada abans d'iniciar el projecte"
-              }
-            }
-          ],
-          "risks": [
-            {
-              "label": {
-                "es": "La negociación con el museo puede llevar varias semanas; iniciar el contacto al menos 2 meses antes",
-                "en": "Negotiation with the museum can take several weeks; start contact at least 2 months before",
-                "va": "La negociació amb el museu pot durar diverses setmanes; iniciar el contacte almenys 2 mesos abans"
-              }
-            }
-          ]
-        },
+        "transferability": null,
         "template": {
           "requiredBlocks": [
             "context",
@@ -35879,59 +30372,42 @@ export const MARKETPLACE_CONFIG = {
             "name": "Grupo Antolin (Planta Valencia)"
           },
           "requester": null,
-          "leadTeam": {
-            "name": "Dpto. de Industria 4.0 y Transformación Digital, Grupo Antolin",
-            "role": {
-              "es": "Empresa origen — desarrollo del sistema y preparación de datos formativos",
-              "en": "Origin company — system development and preparation of training data",
-              "va": "Empresa origen — desenvolupament del sistema i preparació de dades formatives"
-            }
-          },
+          "leadTeam": null,
           "contact": null,
           "beneficiaries": [
             {
               "name": "IES Ciutat de l'Aprenent",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro piloto — integración en el módulo de sensórica e IoT",
-                "en": "Pilot centre — integration in the sensors and IoT module",
-                "va": "Centre pilot — integració en el mòdul de sensòrica i IoT"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "IES Benlliure",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro receptor — adaptación para mantenimiento de maquinaria",
-                "en": "Receiving centre — adaptation for machinery maintenance",
-                "va": "Centre receptor — adaptació per a manteniment de maquinària"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "IES Politècnic de Gandia",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro receptor — implantación autónoma",
-                "en": "Receiving centre — autonomous deployment",
-                "va": "Centre receptor — implantació autònoma"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             }
           ]
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "institutional-readiness"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "infrastructure-evidence",
-            "teacher-capacity"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -35954,10 +30430,7 @@ export const MARKETPLACE_CONFIG = {
           "levels": [
             "vet"
           ],
-          "audience": [
-            "vet-centres",
-            "industry-partners"
-          ],
+          "audience": [],
           "sdgs": [
             4,
             8,
@@ -35971,17 +30444,17 @@ export const MARKETPLACE_CONFIG = {
             {
               "name": "IES Ciutat de l'Aprenent",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             },
             {
               "name": "IES Benlliure",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             },
             {
               "name": "IES Politècnic de Gandia",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             }
           ]
         },
@@ -35993,9 +30466,9 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
-          "codeLicense": "Apache 2.0",
-          "dataAvailability": "anonymised",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -36004,9 +30477,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "Los datos de producción han sido anonimizados y validados por el Dpto. Legal de Grupo Antolin. Se autoriza su uso exclusivamente con fines formativos y de investigación no comercial.",
-            "en": "Production data has been anonymised and validated by Grupo Antolin's Legal Department. Its use is authorised exclusively for training and non-commercial research purposes.",
-            "va": "Les dades de producció han sigut anonimitzades i validades pel Dept. Legal de Grupo Antolin. S'autoritza el seu ús exclusivament amb fins formatius i d'investigació no comercial."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -36016,7 +30489,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -36041,9 +30514,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Ver caso",
-              "en": "View case",
-              "va": "Veure cas"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -36060,131 +30533,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "externalLinks": [
-            {
-              "id": "tensorflow-lstm",
-              "type": "document",
-              "label": {
-                "es": "Tutorial oficial LSTM con TensorFlow/Keras",
-                "en": "Official LSTM tutorial with TensorFlow/Keras",
-                "va": "Tutorial oficial LSTM amb TensorFlow/Keras"
-              },
-              "url": "https://www.tensorflow.org/tutorials/structured_data/time_series"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/cases/mantenimiento-predictivo-ml-mfg/",
-          "items": [
-            {
-              "id": "case-brief",
-              "type": "case-brief",
-              "title": {
-                "es": "Ficha del caso",
-                "en": "Case brief",
-                "va": "Fitxa del cas"
-              },
-              "description": {
-                "es": "Resumen ejecutivo con resultados, actores y condiciones de replicación.",
-                "en": "Executive summary with results, actors and replication conditions.",
-                "va": "Resum executiu amb resultats, actors i condicions de replicació."
-              },
-              "files": [
-                {
-                  "file": "ficha-caso-mantenimiento-predictivo-ml.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "teaching-module",
-              "type": "teaching-module",
-              "title": {
-                "es": "Cuaderno de 6 prácticas con soluciones",
-                "en": "6-practice workbook with solutions",
-                "va": "Quadern de 6 pràctiques amb solucions"
-              },
-              "description": {
-                "es": "Notebooks Jupyter exportados a PDF con enunciados, código completo y comentarios didácticos para el docente.",
-                "en": "Jupyter notebooks exported to PDF with prompts, complete code and teaching comments for the teacher.",
-                "va": "Notebooks Jupyter exportats a PDF amb enunciats, codi complet i comentaris didàctics per al docent."
-              },
-              "files": [
-                {
-                  "file": "cuaderno-practicas-ml-mantenimiento-predictivo.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY-SA 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            },
-            {
-              "id": "replication-guide",
-              "type": "replication-guide",
-              "title": {
-                "es": "Guía de replicación — Setup del entorno",
-                "en": "Replication guide — Environment setup",
-                "va": "Guia de replicació — Configuració de l'entorn"
-              },
-              "description": {
-                "es": "Instrucciones paso a paso para preparar el entorno Python, descargar el dataset y configurar (opcionalmente) la Raspberry Pi.",
-                "en": "Step-by-step instructions to prepare the Python environment, download the dataset and (optionally) configure the Raspberry Pi.",
-                "va": "Instruccions pas a pas per preparar l'entorn Python, descarregar el dataset i configurar (opcionalment) la Raspberry Pi."
-              },
-              "files": [
-                {
-                  "file": "guia-replicacion-mantenimiento-predictivo.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "outputs": null,
         "process": null,
-        "hasDownloads": true,
-        "downloadCount": 3,
-        "cardDownloads": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso",
-              "en": "Case brief",
-              "va": "Fitxa del cas"
-            },
-            "description": {
-              "es": "Resumen ejecutivo con resultados, actores y condiciones de replicación.",
-              "en": "Executive summary with results, actors and replication conditions.",
-              "va": "Resum executiu amb resultats, actors i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-mantenimiento-predictivo-ml.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "case",
@@ -36197,7 +30556,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": {
@@ -36219,8 +30578,8 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
-              "relations": true,
+              "trackA": true,
+              "relations": false,
               "evidence": true,
               "transferability": true,
               "summary": true,
@@ -36230,34 +30589,7 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "caseStudy": {
-          "type": "adaptation",
-          "originContext": {
-            "es": "Grupo Antolin implementó en 2023 un sistema de mantenimiento predictivo en sus líneas de inyección de plástico de la planta de Valencia. El sistema usa sensores de vibración triaxiales conectados a un servidor Edge que alimenta modelos LSTM para detectar fallos con 48–72 horas de antelación. Ha reducido las paradas no planificadas en un 62%.",
-            "en": "In 2023, Grupo Antolin implemented a predictive maintenance system in the plastic injection lines of its Valencia plant. The system uses triaxial vibration sensors connected to an Edge server feeding LSTM models to detect faults 48–72 hours in advance. It has reduced unplanned downtime by 62%.",
-            "va": "Grupo Antolin va implementar el 2023 un sistema de manteniment predictiu en les seues línies d'injecció de plàstic de la planta de València. El sistema usa sensors de vibració triaxials connectats a un servidor Edge que alimenta models LSTM per detectar fallades amb 48–72 hores d'antelació. Ha reduït les aturades no planificades en un 62%."
-          },
-          "transferContext": {
-            "es": "Los ciclos de Mantenimiento de Instalaciones y Sistemas de FP trabajan con conceptos de mantenimiento correctivo y preventivo, pero apenas abordan el mantenimiento predictivo basado en datos. Los docentes identificaron este hueco al analizar las ofertas de empleo del sector en la Comunitat Valenciana.",
-            "en": "The Maintenance of Installations and Systems VET cycles work with corrective and preventive maintenance concepts but barely address data-driven predictive maintenance. Teachers identified this gap by analysing job offers in the sector in the Valencian Community.",
-            "va": "Els cicles de Manteniment d'Instal·lacions i Sistemes de FP treballen amb conceptes de manteniment correctiu i preventiu, però gairebé no aborden el manteniment predictiu basat en dades. Els docents van identificar aquest buit en analitzar les ofertes d'ocupació del sector a la Comunitat Valenciana."
-          },
-          "intervention": {
-            "es": "Se preparó un dataset formativo de 120.000 registros de sensores (anonimizados, con etiquetas de fallo añadidas artificialmente para prácticas) y un notebook Jupyter con 6 prácticas progresivas: exploración de datos, feature engineering, entrenamiento de un modelo LSTM simplificado, evaluación y alerta. También se incluyó un simulador de sensor en tiempo real con Raspberry Pi.",
-            "en": "A training dataset of 120,000 sensor records was prepared (anonymised, with artificially added fault labels for practice) and a Jupyter notebook with 6 progressive practices: data exploration, feature engineering, training a simplified LSTM model, evaluation and alerting. A real-time sensor simulator with Raspberry Pi was also included.",
-            "va": "Es va preparar un dataset formatiu de 120.000 registres de sensors (anonimitzats, amb etiquetes de fallada afegides artificialment per a pràctiques) i un notebook Jupyter amb 6 pràctiques progressives: exploració de dades, feature engineering, entrenament d'un model LSTM simplificat, avaluació i alerta. També s'hi va incloure un simulador de sensor en temps real amb Raspberry Pi."
-          },
-          "transferPath": {
-            "es": "Visita de docentes a la planta de Grupo Antolin → taller de 8 horas → despliegue de notebooks en aula → 6 sesiones de prácticas → proyecto final de grupo con informe técnico.",
-            "en": "Teacher visit to Grupo Antolin plant → 8-hour workshop → notebook deployment in classroom → 6 practice sessions → group final project with technical report.",
-            "va": "Visita de docents a la planta de Grupo Antolin → taller de 8 hores → desplegament de notebooks a l'aula → 6 sessions de pràctiques → projecte final de grup amb informe tècnic."
-          },
-          "trackBValue": {
-            "es": "Dataset de 120.000 registros de vibraciones industriales reales (anonimizados), notebooks Jupyter con 6 prácticas resueltas, simulador Raspberry Pi y rúbrica de evaluación del proyecto final. Adaptable a cualquier ciclo con componente de sensórica o automatización.",
-            "en": "Dataset of 120,000 real industrial vibration records (anonymised), Jupyter notebooks with 6 solved practices, Raspberry Pi simulator and project evaluation rubric. Adaptable to any cycle with a sensors or automation component.",
-            "va": "Dataset de 120.000 registres de vibracions industrials reals (anonimitzats), notebooks Jupyter amb 6 pràctiques resoltes, simulador Raspberry Pi i rúbrica d'avaluació del projecte final. Adaptable a qualsevol cicle amb component de sensòrica o automatització."
-          }
-        },
+        "caseStudy": null,
         "evidence": {
           "headline": {
             "es": "Reducción del 62% en paradas no planificadas en Grupo Antolin; 89% de los alumnos completan el proyecto final con nota superior a 7.",
@@ -36274,103 +30606,15 @@ export const MARKETPLACE_CONFIG = {
               "va": "Reducció d'aturades no planificades en planta"
             }
           },
-          "secondaryMetrics": [
-            {
-              "id": "student-pass-rate",
-              "value": 89,
-              "unit": "%",
-              "label": {
-                "es": "Alumnos que superan el proyecto final con nota ≥ 7",
-                "en": "Students passing the final project with grade ≥ 7",
-                "va": "Alumnes que superen el projecte final amb nota ≥ 7"
-              }
-            },
-            {
-              "id": "annual-savings",
-              "value": 380000,
-              "unit": "EUR/año",
-              "label": {
-                "es": "Ahorro anual estimado en mantenimiento en planta",
-                "en": "Estimated annual maintenance saving in plant",
-                "va": "Estalvi anual estimat en manteniment en planta"
-              }
-            }
-          ],
-          "verification": {
-            "status": "verified",
-            "verifiedBy": "Dpto. Producción Grupo Antolin + AI-STEAM Comité Técnico",
-            "verifiedAt": "2026-02-18",
-            "method": {
-              "es": "Auditoría de KPIs de producción de Grupo Antolin y revisión de actas de evaluación de los centros de FP por el Comité Técnico de AI-STEAM.",
-              "en": "Audit of Grupo Antolin production KPIs and review of VET centre assessment records by the AI-STEAM Technical Committee.",
-              "va": "Auditoria de KPIs de producció de Grupo Antolin i revisió d'actes d'avaluació dels centres de FP pel Comité Tècnic d'AI-STEAM."
-            }
-          },
+          "secondaryMetrics": [],
+          "verification": null,
           "limitations": {
-            "es": "El dataset de vibraciones corresponde exclusivamente a maquinaria de inyección de plástico. Los modelos entrenados no son directamente transferibles a otros tipos de maquinaria sin reentrenamiento.",
-            "en": "The vibration dataset corresponds exclusively to plastic injection machinery. Trained models are not directly transferable to other machinery types without retraining.",
-            "va": "El dataset de vibracions correspon exclusivament a maquinària d'injecció de plàstic. Els models entrenats no són directament transferibles a altres tipus de maquinària sense reentrenant."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
-        "transferability": {
-          "whyTransferable": {
-            "es": "El enfoque metodológico (datos de sensor → feature engineering → modelo supervisado → alerta) es genérico a cualquier sistema con sensórica IoT. El dataset anonimizado elimina restricciones de confidencialidad industrial.",
-            "en": "The methodological approach (sensor data → feature engineering → supervised model → alert) is generic to any system with IoT sensors. The anonymised dataset eliminates industrial confidentiality restrictions.",
-            "va": "L'enfocament metodològic (dades de sensor → feature engineering → model supervisat → alerta) és genèric a qualsevol sistema amb sensòrica IoT. El dataset anonimitzat elimina restriccions de confidencialitat industrial."
-          },
-          "suitableFor": [
-            "vet-centres",
-            "industry-partners"
-          ],
-          "requirements": [
-            {
-              "label": {
-                "es": "Aula informática con Python/Jupyter instalado (o Google Colab)",
-                "en": "Computer lab with Python/Jupyter installed (or Google Colab)",
-                "va": "Aula informàtica amb Python/Jupyter instal·lat (o Google Colab)"
-              }
-            },
-            {
-              "label": {
-                "es": "Raspberry Pi 4 (opcional, para el simulador de sensor en tiempo real)",
-                "en": "Raspberry Pi 4 (optional, for the real-time sensor simulator)",
-                "va": "Raspberry Pi 4 (opcional, per al simulador de sensor en temps real)"
-              }
-            }
-          ],
-          "adaptationSteps": [
-            {
-              "label": {
-                "es": "Descargar el dataset y los notebooks del repositorio",
-                "en": "Download the dataset and notebooks from the repository",
-                "va": "Descarregar el dataset i els notebooks del repositori"
-              }
-            },
-            {
-              "label": {
-                "es": "Ajustar las prácticas al programa del módulo de automatización o sensórica",
-                "en": "Adjust practices to the automation or sensors module programme",
-                "va": "Ajustar les pràctiques al programa del mòdul d'automatització o sensòrica"
-              }
-            },
-            {
-              "label": {
-                "es": "Preparar la Raspberry Pi con el script de simulación si se desea la parte hardware",
-                "en": "Prepare the Raspberry Pi with the simulation script if the hardware component is desired",
-                "va": "Preparar la Raspberry Pi amb el script de simulació si es desitja la part de maquinari"
-              }
-            }
-          ],
-          "risks": [
-            {
-              "label": {
-                "es": "Los modelos LSTM requieren tiempo de entrenamiento elevado en CPUs sin GPU; usar Google Colab minimiza este riesgo",
-                "en": "LSTM models require significant training time on CPUs without GPU; using Google Colab minimises this risk",
-                "va": "Els models LSTM requereixen temps d'entrenament elevat en CPUs sense GPU; usar Google Colab minimitza aquest risc"
-              }
-            }
-          ]
-        },
+        "transferability": null,
         "template": {
           "requiredBlocks": [
             "context",
@@ -36460,50 +30704,33 @@ export const MARKETPLACE_CONFIG = {
             "name": "IVECO Valencia"
           },
           "requester": null,
-          "leadTeam": {
-            "name": "IVECO Valencia",
-            "role": {
-              "es": "Empresa origen, formación y validación",
-              "en": "Origin company, training and validation",
-              "va": "Empresa origen, formació i validació"
-            }
-          },
+          "leadTeam": null,
           "contact": null,
           "beneficiaries": [
             {
               "name": "IES La Marxadella",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro piloto receptor",
-                "en": "Pilot receiving centre",
-                "va": "Centre pilot receptor"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "IES Serpis",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro receptor",
-                "en": "Receiving centre",
-                "va": "Centre receptor"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             }
           ]
         },
         "classification": {
-          "aiSteamFocus": [
-            "maker-steam",
-            "institutional-readiness"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "teacher-capacity",
-            "infrastructure-evidence"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -36526,10 +30753,7 @@ export const MARKETPLACE_CONFIG = {
           "levels": [
             "vet"
           ],
-          "audience": [
-            "vet-centres",
-            "industry-partners"
-          ],
+          "audience": [],
           "sdgs": [
             4,
             8
@@ -36542,12 +30766,12 @@ export const MARKETPLACE_CONFIG = {
             {
               "name": "IES La Marxadella",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             },
             {
               "name": "IES Serpis",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             }
           ]
         },
@@ -36559,9 +30783,9 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY-SA 4.0",
+          "pageLicense": "",
           "codeLicense": "",
-          "dataAvailability": "not-applicable",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -36570,9 +30794,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "El checklist de seguridad debe revisarse con el coordinador de PRL del centro antes de su uso.",
-            "en": "The safety checklist must be reviewed with the centre's health and safety coordinator before use.",
-            "va": "El checklist de seguretat s'ha de revisar amb el coordinador de PRL del centre abans del seu ús."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -36582,7 +30806,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY-SA 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -36604,12 +30828,12 @@ export const MARKETPLACE_CONFIG = {
           "url": ""
         },
         "externalFlow": {
-          "enabled": true,
+          "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Ver caso",
-              "en": "View case",
-              "va": "Veure cas"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -36626,130 +30850,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "externalLinks": [
-            {
-              "id": "ur-technical-sheet",
-              "type": "website",
-              "label": {
-                "es": "Ficha técnica del cobot UR10e",
-                "en": "UR10e cobot technical sheet",
-                "va": "Fitxa tècnica del cobot UR10e"
-              },
-              "url": "https://www.universal-robots.com/products/ur10-robot/"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/cases/cobot-soldadura-fp/",
-          "items": [
-            {
-              "id": "teaching-module",
-              "type": "teaching-module",
-              "title": {
-                "es": "Guion de 8 sesiones prácticas",
-                "en": "8-session practical script",
-                "va": "Guió de 8 sessions pràctiques"
-              },
-              "description": {
-                "es": "Plan didáctico completo para FP con ejercicios progresivos de programación y soldadura.",
-                "en": "Complete teaching plan for VET with progressive programming and welding exercises.",
-                "va": "Plan didàctic complet per a FP amb exercicis progressius de programació i soldadura."
-              },
-              "files": [
-                {
-                  "file": "guion-practicas-cobot-soldadura.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY-SA 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "replication-guide",
-              "type": "replication-guide",
-              "title": {
-                "es": "Checklist de seguridad EN ISO 10218-2",
-                "en": "EN ISO 10218-2 safety checklist",
-                "va": "Checklist de seguretat EN ISO 10218-2"
-              },
-              "description": {
-                "es": "Lista de comprobación obligatoria para operar cobots en aulas con alumnos.",
-                "en": "Mandatory checklist to operate cobots in classrooms with students.",
-                "va": "Llista de comprovació obligatòria per a operar cobots en aules amb alumnes."
-              },
-              "files": [
-                {
-                  "file": "checklist-seguridad-cobot-fp.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY-SA 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "outputs": null,
         "process": null,
-        "hasDownloads": true,
-        "downloadCount": 2,
-        "cardDownloads": [
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Guion de 8 sesiones prácticas",
-              "en": "8-session practical script",
-              "va": "Guió de 8 sessions pràctiques"
-            },
-            "description": {
-              "es": "Plan didáctico completo para FP con ejercicios progresivos de programación y soldadura.",
-              "en": "Complete teaching plan for VET with progressive programming and welding exercises.",
-              "va": "Plan didàctic complet per a FP amb exercicis progressius de programació i soldadura."
-            },
-            "files": [
-              {
-                "file": "guion-practicas-cobot-soldadura.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-SA 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "replication-guide",
-            "type": "replication-guide",
-            "title": {
-              "es": "Checklist de seguridad EN ISO 10218-2",
-              "en": "EN ISO 10218-2 safety checklist",
-              "va": "Checklist de seguretat EN ISO 10218-2"
-            },
-            "description": {
-              "es": "Lista de comprobación obligatoria para operar cobots en aulas con alumnos.",
-              "en": "Mandatory checklist to operate cobots in classrooms with students.",
-              "va": "Llista de comprovació obligatòria per a operar cobots en aules amb alumnes."
-            },
-            "files": [
-              {
-                "file": "checklist-seguridad-cobot-fp.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-SA 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "case",
@@ -36762,7 +30873,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": {
@@ -36784,8 +30895,8 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
-              "relations": true,
+              "trackA": true,
+              "relations": false,
               "evidence": true,
               "transferability": true,
               "summary": true,
@@ -36795,34 +30906,7 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "caseStudy": {
-          "type": "piloting",
-          "originContext": {
-            "es": "IVECO Valencia desarrolló un protocolo interno de formación en cobots UR10e para integrar operarios en líneas de soldadura colaborativa.",
-            "en": "IVECO Valencia developed an internal UR10e cobot training protocol to integrate operators into collaborative welding lines.",
-            "va": "IVECO València va desenvolupar un protocol intern de formació en cobots UR10e per integrar operaris en línies de soldadura col·laborativa."
-          },
-          "transferContext": {
-            "es": "Tras validarlo con éxito, la empresa propuso compartirlo con centros de FP como material de transferencia del ecosistema industrial.",
-            "en": "After successful validation, the company proposed sharing it with VET centres as industrial ecosystem transfer material.",
-            "va": "Després de validar-lo amb èxit, l'empresa va proposar compartir-lo amb centres de FP com a material de transferència de l'ecosistema industrial."
-          },
-          "intervention": {
-            "es": "El protocolo incluye guion de 8 sesiones prácticas, checklist de seguridad EN ISO 10218-2 adaptado a aula-taller, y rúbrica de evaluación de competencias.",
-            "en": "The protocol includes an 8-session practical script, EN ISO 10218-2 safety checklist adapted for workshop classrooms, and a competency assessment rubric.",
-            "va": "El protocol inclou un guió de 8 sessions pràctiques, checklist de seguretat EN ISO 10218-2 adaptat a aula-taller, i rúbrica d'avaluació de competències."
-          },
-          "transferPath": {
-            "es": "Transferencia directa desde entorno fabril real a aula-taller de FP con equipamiento básico de soldadura.",
-            "en": "Direct transfer from real manufacturing environment to VET workshop with basic welding equipment.",
-            "va": "Transferència directa des d'entorn fabril real a aula-taller de FP amb equipament bàsic de soldadura."
-          },
-          "trackBValue": {
-            "es": "Protocolo de onboarding en cobots replicable en cualquier taller de FP con equipamiento básico de soldadura. Incluye guion de prácticas y checklist de seguridad validado en entorno industrial real.",
-            "en": "Cobot onboarding protocol replicable in any VET workshop with basic welding equipment. Includes a practice script and safety checklist validated in a real industrial setting.",
-            "va": "Protocol d'onboarding en cobots replicable en qualsevol taller de FP amb equipament bàsic de soldadura. Inclou guió de pràctiques i checklist de seguretat validat en entorn industrial real."
-          }
-        },
+        "caseStudy": null,
         "evidence": {
           "headline": {
             "es": "3 centros de FP con protocolo cobot operativo en el primer trimestre.",
@@ -36839,88 +30923,15 @@ export const MARKETPLACE_CONFIG = {
               "va": "Centres de FP amb protocol cobot operatiu"
             }
           },
-          "secondaryMetrics": [
-            {
-              "id": "economic-saving",
-              "value": 12000,
-              "unit": "EUR/centre/year",
-              "label": {
-                "es": "Ahorro estimado en formación externa por centro al año",
-                "en": "Estimated annual external training saving per centre",
-                "va": "Estalvi estimat en formació externa per centre a l'any"
-              }
-            },
-            {
-              "id": "teacher-satisfaction",
-              "value": 9.1,
-              "unit": "/10",
-              "label": {
-                "es": "Satisfacción docente con el material de transferencia",
-                "en": "Teacher satisfaction with transfer material",
-                "va": "Satisfacció docent amb el material de transferència"
-              }
-            }
-          ],
-          "verification": {
-            "status": "verified",
-            "verifiedBy": "IVECO Formación Técnica",
-            "verifiedAt": "2026-03-01",
-            "method": {
-              "es": "Auditoría técnica y pruebas de uso en el aula-taller del IES La Marxadella.",
-              "en": "Technical audit and usability tests in IES La Marxadella's workshop.",
-              "va": "Auditoria tècnica i proves d'ús en l'aula-taller de l'IES La Marxadella."
-            }
-          },
+          "secondaryMetrics": [],
+          "verification": null,
           "limitations": {
-            "es": "El checklist de seguridad debe revisarse con el coordinador de PRL del centro antes de su uso.",
-            "en": "The safety checklist must be reviewed with the centre's health and safety coordinator before use.",
-            "va": "El checklist de seguretat s'ha de revisar amb el coordinador de PRL del centre abans del seu ús."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
-        "transferability": {
-          "whyTransferable": {
-            "es": "El protocolo se puede adaptar de forma económica en cualquier taller de soldadura que incorpore un brazo robótico colaborativo.",
-            "en": "The protocol can be cheaply adapted in any welding workshop incorporating a collaborative robotic arm.",
-            "va": "El protocol es pot adaptar de forma econòmica en qualsevol taller de soldadura que incorpore un braç robòtic col·laboratiu."
-          },
-          "suitableFor": [
-            "vet-centres",
-            "industry-partners"
-          ],
-          "requirements": [
-            {
-              "label": {
-                "es": "Brazo robótico colaborativo (cobot) tipo UR10e o similar",
-                "en": "Collaborative robotic arm (cobot) UR10e or similar",
-                "va": "Braç robòtic col·laboratiu (cobot) UR10e o similar"
-              }
-            },
-            {
-              "label": {
-                "es": "Taller de soldadura equipado",
-                "en": "Equipped welding workshop",
-                "va": "Taller de soldadura equipat"
-              }
-            }
-          ],
-          "adaptationSteps": [
-            {
-              "label": {
-                "es": "Adecuación del checklist de seguridad a la normativa local del centro",
-                "en": "Adapting the safety checklist to local regulations",
-                "va": "Adequació del checklist de seguretat a la normativa local del centre"
-              }
-            },
-            {
-              "label": {
-                "es": "Carga del guion de prácticas en el controlador del cobot",
-                "en": "Loading the practice script into the cobot controller",
-                "va": "Càrrega del guió de pràctiques en el controlador del cobot"
-              }
-            }
-          ],
-          "risks": []
-        },
+        "transferability": null,
         "template": {
           "requiredBlocks": [
             "context",
@@ -37010,70 +31021,51 @@ export const MARKETPLACE_CONFIG = {
             "name": "Conselleria d'Educació — CEFIREs"
           },
           "requester": null,
-          "leadTeam": {
-            "name": "CEFIREs (Valencia, Alicante, Castellón)",
-            "role": {
-              "es": "Diseño, coordinación y ejecución del itinerario",
-              "en": "Itinerary design, coordination and delivery",
-              "va": "Disseny, coordinació i execució de l'itinerari"
-            }
-          },
+          "leadTeam": null,
           "contact": null,
           "beneficiaries": [
             {
               "name": "EMT Valencia",
-              "type": "company",
+              "type": "",
               "role": {
-                "es": "Provisión de datos reales de movilidad y validación técnica",
-                "en": "Real mobility data provider and technical validation",
-                "va": "Provisió de dades reals de mobilitat i validació tècnica"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "CEFIRE de Valencia",
-              "type": "public-entity",
+              "type": "",
               "role": {
-                "es": "Centro piloto y ejecutor provincial",
-                "en": "Pilot centre and provincial delivery agent",
-                "va": "Centre pilot i executor provincial"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "CEFIRE de Alicante",
-              "type": "public-entity",
+              "type": "",
               "role": {
-                "es": "Centro piloto y ejecutor provincial",
-                "en": "Pilot centre and provincial delivery agent",
-                "va": "Centre pilot i executor provincial"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "CEFIRE de Castellón",
-              "type": "public-entity",
+              "type": "",
               "role": {
-                "es": "Centro piloto y ejecutor provincial",
-                "en": "Pilot centre and provincial delivery agent",
-                "va": "Centre pilot i executor provincial"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             }
           ]
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "ai-literacy",
-            "institutional-readiness"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green",
-            "social"
-          ],
-          "policyCluster": [
-            "teacher-capacity",
-            "integrated-pedagogy",
-            "triple-transition"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -37096,11 +31088,7 @@ export const MARKETPLACE_CONFIG = {
           "levels": [
             "teacher"
           ],
-          "audience": [
-            "teachers",
-            "public-administration",
-            "vet-centres"
-          ],
+          "audience": [],
           "sdgs": [
             4,
             11
@@ -37113,22 +31101,22 @@ export const MARKETPLACE_CONFIG = {
             {
               "name": "EMT Valencia",
               "sector": "",
-              "type": "company"
+              "type": ""
             },
             {
               "name": "CEFIRE de Valencia",
               "sector": "",
-              "type": "public-entity"
+              "type": ""
             },
             {
               "name": "CEFIRE de Alicante",
               "sector": "",
-              "type": "public-entity"
+              "type": ""
             },
             {
               "name": "CEFIRE de Castellón",
               "sector": "",
-              "type": "public-entity"
+              "type": ""
             }
           ]
         },
@@ -37140,9 +31128,9 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
-          "codeLicense": "Apache 2.0",
-          "dataAvailability": "open",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -37151,9 +31139,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "Los materiales pueden adaptarse libremente con atribución a CEFIREs y EMT Valencia.",
-            "en": "Materials may be freely adapted with attribution to CEFIREs and EMT Valencia.",
-            "va": "Els materials poden adaptar-se lliurement amb atribució als CEFIREs i EMT València."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -37163,7 +31151,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -37185,24 +31173,17 @@ export const MARKETPLACE_CONFIG = {
           "url": ""
         },
         "externalFlow": {
-          "enabled": true,
+          "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Replicar caso",
-              "en": "Replicate case",
-              "va": "Replicar cas"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
           },
-          "secondaryAction": {
-            "label": {
-              "es": "Contactar para adaptación",
-              "en": "Contact for adaptation",
-              "va": "Contactar per a adaptació"
-            },
-            "url": ""
-          },
+          "secondaryAction": null,
           "fallbackAction": null,
           "fallbackContact": null
         },
@@ -37216,140 +31197,15 @@ export const MARKETPLACE_CONFIG = {
         },
         "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/cases/movilidad-sostenible-formacion-docente/",
-          "items": [
-            {
-              "id": "replication-guide",
-              "type": "replication-guide",
-              "title": {
-                "es": "Guía de los módulos formativos",
-                "en": "Training modules guide",
-                "va": "Guia dels mòduls formatius"
-              },
-              "description": {
-                "es": "Guiones completos de las sesiones de formación docente.",
-                "en": "Full scripts of the teacher training sessions.",
-                "va": "Guions complets de les sessions de formació docent."
-              },
-              "files": [
-                {
-                  "file": "guia-modulos-formativos-movilidad.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "teaching-module",
-              "type": "teaching-module",
-              "title": {
-                "es": "Actividades prácticas con datos EMT",
-                "en": "Practical activities with EMT data",
-                "va": "Activitats pràctiques amb dades EMT"
-              },
-              "description": {
-                "es": "Paquete con notebooks de Python y datasets de muestra de la flota.",
-                "en": "Package with Python notebooks and sample fleet datasets.",
-                "va": "Paquet amb notebooks de Python i datasets de mostra de la flota."
-              },
-              "files": [
-                {
-                  "file": "practicas-datos-emt.zip",
-                  "format": "zip",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "other",
-              "type": "other",
-              "title": {
-                "es": "Rúbricas de evaluación",
-                "en": "Assessment rubrics",
-                "va": "Rúbriques d'avaluació"
-              },
-              "description": {
-                "es": "Plantillas editables para evaluar el desempeño por competencias.",
-                "en": "Editable templates to evaluate competency-based performance.",
-                "va": "Plantilles editables per a avaluar l'exercici per competències."
-              },
-              "files": [
-                {
-                  "file": "rubricas-evaluacion.odt",
-                  "format": "docx",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "outputs": null,
         "process": null,
-        "hasDownloads": true,
-        "downloadCount": 3,
-        "cardDownloads": [
-          {
-            "id": "replication-guide",
-            "type": "replication-guide",
-            "title": {
-              "es": "Guía de los módulos formativos",
-              "en": "Training modules guide",
-              "va": "Guia dels mòduls formatius"
-            },
-            "description": {
-              "es": "Guiones completos de las sesiones de formación docente.",
-              "en": "Full scripts of the teacher training sessions.",
-              "va": "Guions complets de les sessions de formació docent."
-            },
-            "files": [
-              {
-                "file": "guia-modulos-formativos-movilidad.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "teaching-module",
-            "type": "teaching-module",
-            "title": {
-              "es": "Actividades prácticas con datos EMT",
-              "en": "Practical activities with EMT data",
-              "va": "Activitats pràctiques amb dades EMT"
-            },
-            "description": {
-              "es": "Paquete con notebooks de Python y datasets de muestra de la flota.",
-              "en": "Package with Python notebooks and sample fleet datasets.",
-              "va": "Paquet amb notebooks de Python i datasets de mostra de la flota."
-            },
-            "files": [
-              {
-                "file": "practicas-datos-emt.zip",
-                "format": "zip",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "case",
@@ -37362,7 +31218,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": {
@@ -37384,8 +31240,8 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
-              "relations": true,
+              "trackA": true,
+              "relations": false,
               "evidence": true,
               "transferability": true,
               "summary": true,
@@ -37395,34 +31251,7 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "caseStudy": {
-          "type": "capacity-building",
-          "originContext": {
-            "es": "Los CEFIREs detectaron una demanda creciente de formación docente en IA aplicada a contextos reales de sostenibilidad urbana.",
-            "en": "CEFIREs identified growing demand for teacher training in AI applied to real urban sustainability contexts.",
-            "va": "Els CEFIREs van detectar una demanda creixent de formació docent en IA aplicada a contextos reals de sostenibilitat urbana."
-          },
-          "transferContext": {
-            "es": "La EMT Valencia ofreció acceso a su API de datos de flota y ocupación en tiempo real para ser utilizada con fines educativos y de concienciación.",
-            "en": "EMT Valencia offered access to its real-time fleet and occupancy data API to be used for educational and awareness purposes.",
-            "va": "L'EMT València va oferir accés a la seua API de dades de flota i ocupació en temps real per a ser utilitzada amb fins educatius i de conscienciació."
-          },
-          "intervention": {
-            "es": "Diseño y desarrollo de un itinerario formativo de 30 horas estructurado en 6 módulos de 5 horas cada uno, combinando teoría, exploración de datos reales y talleres prácticos.",
-            "en": "Design and development of a 30-hour training itinerary structured in 6 modules of 5 hours each, combining theory, real data exploration and practical workshops.",
-            "va": "Disseny i desenvolupament d'un itinerari formatiu de 30 hores estructurat en 6 mòduls de 5 hores cadascun, combinant teoria, exploració de dades reals i tallers pràctics."
-          },
-          "transferPath": {
-            "es": "Colaboración entre administración educativa (CEFIRE) y empresa pública de transporte (EMT) para transferir conocimiento técnico al aula de secundaria y FP.",
-            "en": "Collaboration between educational administration (CEFIRE) and public transport company (EMT) to transfer technical knowledge to secondary and VET classrooms.",
-            "va": "Col·laboració entre administració educativa (CEFIRE) i empresa pública de transport (EMT) per transferir coneixement tècnic a l'aula de secundària i FP."
-          },
-          "trackBValue": {
-            "es": "Itinerario formativo completo con 6 módulos, datos reales de EMT Valencia y actividades de aula listas para adaptarse a diferentes etapas educativas. Reproducible por cualquier CEFIRE sin coste adicional.",
-            "en": "Complete training itinerary with 6 modules, real EMT Valencia data and classroom activities ready to adapt to different educational stages. Reproducible by any CEFIRE at no extra cost.",
-            "va": "Itinerari formatiu complet amb 6 mòduls, dades reals d'EMT València i activitats d'aula llestes per adaptar-se a diferents etapes educatives. Reproduïble por qualsevol CEFIRE sense cost addicional."
-          }
-        },
+        "caseStudy": null,
         "evidence": {
           "headline": {
             "es": "140 docentes capacitados en 3 provincias con un 8.4/10 de satisfacción general.",
@@ -37439,90 +31268,15 @@ export const MARKETPLACE_CONFIG = {
               "va": "Docents formats el primer any"
             }
           },
-          "secondaryMetrics": [
-            {
-              "id": "global-satisfaction",
-              "value": 8.4,
-              "unit": "/10",
-              "label": {
-                "es": "Satisfacción global media ponderada",
-                "en": "Overall weighted average satisfaction",
-                "va": "Satisfacció global mitjana ponderada"
-              }
-            },
-            {
-              "id": "economic-efficiency",
-              "value": 4,
-              "unit": "x cheaper",
-              "label": {
-                "es": "Eficiencia de coste por docente frente a formación externa",
-                "en": "Cost efficiency per teacher compared to external training",
-                "va": "Eficiència de cost per docent enfront de formació externa"
-              }
-            }
-          ],
-          "verification": {
-            "status": "self-reported",
-            "verifiedBy": "Coordinación Pedagógica CEFIRE",
-            "verifiedAt": "2026-02-28",
-            "method": {
-              "es": "Encuestas de satisfacción oficiales de la Conselleria d'Educació.",
-              "en": "Official satisfaction surveys from the Conselleria d'Educació.",
-              "va": "Enquestes de satisfacció oficials de la Conselleria d'Educació."
-            }
-          },
+          "secondaryMetrics": [],
+          "verification": null,
           "limitations": {
-            "es": "El uso del API en tiempo real requiere claves de desarrollador proporcionadas por EMT.",
-            "en": "Use of real-time API requires developer keys provided by EMT.",
-            "va": "L'ús del API en temps real requereix claus de desenvolupador proporcionades per EMT."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
-        "transferability": {
-          "whyTransferable": {
-            "es": "Los materiales didácticos están totalmente detallados y las actividades se basan en APIs públicas o datasets históricos libres de coste.",
-            "en": "The teaching materials are fully detailed and the activities are based on public APIs or free historical datasets.",
-            "va": "Els materials didàctics estan totalment detallats i les activitats es basen en APIs públiques o datasets històrics lliures de cost."
-          },
-          "suitableFor": [
-            "teacher-training",
-            "public-administration",
-            "vet-centres"
-          ],
-          "requirements": [
-            {
-              "label": {
-                "es": "Entorno de desarrollo básico (Python / REST client)",
-                "en": "Basic development environment (Python / REST client)",
-                "va": "Entorn de desenvolupament bàsic (Python / REST client)"
-              }
-            }
-          ],
-          "adaptationSteps": [
-            {
-              "label": {
-                "es": "Registro para obtener el API Key de EMT Valencia (o usar los mocks del curso)",
-                "en": "Registration to obtain the EMT Valencia API Key (or use course mocks)",
-                "va": "Registre per a obtindre l'API Key de EMT València (o usar els mocks del curs)"
-              }
-            },
-            {
-              "label": {
-                "es": "Selección y adaptación de las rúbricas según el nivel de los alumnos",
-                "en": "Selection and adaptation of rubrics depending on student level",
-                "va": "Selecció i adaptació de les rúbriques segons el nivell dels alumnes"
-              }
-            }
-          ],
-          "risks": [
-            {
-              "label": {
-                "es": "Cambios en la especificación del API de EMT que requieran actualizar cuadernos",
-                "en": "Changes in EMT API specification requiring notebook updates",
-                "va": "Canvis en l'especificació del API de EMT que requerisquen actualitzar quaderns"
-              }
-            }
-          ]
-        },
+        "transferability": null,
         "template": {
           "requiredBlocks": [
             "context",
@@ -37612,50 +31366,33 @@ export const MARKETPLACE_CONFIG = {
             "name": "Hospital Universitari i Politècnic La Fe"
           },
           "requester": null,
-          "leadTeam": {
-            "name": "Servicio de Radiología e Innovación Digital, La Fe",
-            "role": {
-              "es": "Entidad origen — desarrollo del módulo de IA y dataset sintético",
-              "en": "Origin entity — development of AI module and synthetic dataset",
-              "va": "Entitat origen — desenvolupament del mòdul d'IA i dataset sintètic"
-            }
-          },
+          "leadTeam": null,
           "contact": null,
           "beneficiaries": [
             {
               "name": "IES Federica Montseny",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro piloto — integración en el ciclo de Imagen para el Diagnóstico",
-                "en": "Pilot centre — integration in the Diagnostic Imaging cycle",
-                "va": "Centre pilot — integració en el cicle d'Imatge per al Diagnòstic"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             },
             {
               "name": "IES Enric Valor (Petrer)",
-              "type": "vet-centre",
+              "type": "",
               "role": {
-                "es": "Centro receptor — adaptación al contexto rural",
-                "en": "Receiving centre — adaptation to rural context",
-                "va": "Centre receptor — adaptació al context rural"
+                "es": "",
+                "en": "",
+                "va": ""
               }
             }
           ]
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "responsible-ai"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "equity-inclusion",
-            "infrastructure-evidence"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -37679,10 +31416,7 @@ export const MARKETPLACE_CONFIG = {
             "vet",
             "master"
           ],
-          "audience": [
-            "vet-centres",
-            "research-centres"
-          ],
+          "audience": [],
           "sdgs": [
             3,
             4,
@@ -37696,12 +31430,12 @@ export const MARKETPLACE_CONFIG = {
             {
               "name": "IES Federica Montseny",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             },
             {
               "name": "IES Enric Valor (Petrer)",
               "sector": "",
-              "type": "vet-centre"
+              "type": ""
             }
           ]
         },
@@ -37713,9 +31447,9 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
-          "codeLicense": "Apache 2.0",
-          "dataAvailability": "open",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -37724,9 +31458,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "El dataset sintético no contiene datos de pacientes reales y es de uso libre. Las imágenes han sido generadas computacionalmente y validadas por profesionales clínicos.",
-            "en": "The synthetic dataset contains no real patient data and is freely usable. Images were computationally generated and validated by clinical professionals.",
-            "va": "El dataset sintètic no conté dades de pacients reals i és d'ús lliure. Les imatges han sigut generades computacionalment i validades per professionals clínics."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -37736,7 +31470,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -37761,9 +31495,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Ver caso",
-              "en": "View case",
-              "va": "Veure cas"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -37780,131 +31514,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "externalLinks": [
-            {
-              "id": "gradio-docs",
-              "type": "website",
-              "label": {
-                "es": "Documentación oficial Gradio",
-                "en": "Official Gradio documentation",
-                "va": "Documentació oficial Gradio"
-              },
-              "url": "https://www.gradio.app/docs"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/cases/diagnostico-ia-fp-sanitario-nts/",
-          "items": [
-            {
-              "id": "case-brief",
-              "type": "case-brief",
-              "title": {
-                "es": "Ficha del caso — IA en FP Sanitario",
-                "en": "Case brief — AI in Health VET",
-                "va": "Fitxa del cas — IA en FP Sanitari"
-              },
-              "description": {
-                "es": "Resumen ejecutivo del caso con resultados, metodología y condiciones de replicación.",
-                "en": "Executive summary of the case with results, methodology and replication conditions.",
-                "va": "Resum executiu del cas amb resultats, metodologia i condicions de replicació."
-              },
-              "files": [
-                {
-                  "file": "ficha-caso-ia-diagnostico-fp-sanitario.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "teaching-module",
-              "type": "teaching-module",
-              "title": {
-                "es": "5 prácticas guiadas con soluciones",
-                "en": "5 guided practices with solutions",
-                "va": "5 pràctiques guiades amb solucions"
-              },
-              "description": {
-                "es": "Cuaderno de prácticas en formato PDF con enunciados, capturas de pantalla esperadas y soluciones comentadas para el docente.",
-                "en": "Practice workbook in PDF format with prompts, expected screenshots and commented solutions for the teacher.",
-                "va": "Quadern de pràctiques en format PDF amb enunciats, captures de pantalla esperades i solucions comentades per al docent."
-              },
-              "files": [
-                {
-                  "file": "practicas-ia-diagnostico-imagen-docente.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY-SA 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            },
-            {
-              "id": "slide-deck",
-              "type": "slide-deck",
-              "title": {
-                "es": "Presentación introductoria — IA en radiología",
-                "en": "Introductory slides — AI in radiology",
-                "va": "Presentació introductòria — IA en radiologia"
-              },
-              "description": {
-                "es": "Diapositivas para la sesión de presentación a los alumnos, con ejemplos reales de IA en entornos hospitalarios y discusión ética.",
-                "en": "Slides for the student introduction session, with real examples of AI in hospital settings and ethical discussion.",
-                "va": "Diapositives per a la sessió de presentació als alumnes, amb exemples reals d'IA en entorns hospitalaris i discussió ètica."
-              },
-              "files": [
-                {
-                  "file": "presentacion-ia-radiologia-fp.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "outputs": null,
         "process": null,
-        "hasDownloads": true,
-        "downloadCount": 3,
-        "cardDownloads": [
-          {
-            "id": "case-brief",
-            "type": "case-brief",
-            "title": {
-              "es": "Ficha del caso — IA en FP Sanitario",
-              "en": "Case brief — AI in Health VET",
-              "va": "Fitxa del cas — IA en FP Sanitari"
-            },
-            "description": {
-              "es": "Resumen ejecutivo del caso con resultados, metodología y condiciones de replicación.",
-              "en": "Executive summary of the case with results, methodology and replication conditions.",
-              "va": "Resum executiu del cas amb resultats, metodologia i condicions de replicació."
-            },
-            "files": [
-              {
-                "file": "ficha-caso-ia-diagnostico-fp-sanitario.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "case",
@@ -37917,7 +31537,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": {
@@ -37939,8 +31559,8 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
-              "relations": true,
+              "trackA": true,
+              "relations": false,
               "evidence": true,
               "transferability": true,
               "summary": true,
@@ -37950,34 +31570,7 @@ export const MARKETPLACE_CONFIG = {
             }
           }
         },
-        "caseStudy": {
-          "type": "adaptation",
-          "originContext": {
-            "es": "La Unidad de Innovación Digital del Hospital La Fe diseñó un programa interno de capacitación para residentes en el uso de herramientas de IA aplicadas al diagnóstico radiológico. El programa incluye un dataset sintético de 8.000 imágenes de tórax generadas con simuladores, libre de datos de pacientes reales.",
-            "en": "The Digital Innovation Unit at Hospital La Fe designed an internal training programme for residents on AI tools applied to radiological diagnosis. The programme includes a synthetic dataset of 8,000 chest images generated with simulators, free of real patient data.",
-            "va": "La Unitat d'Innovació Digital de l'Hospital La Fe va dissenyar un programa intern de capacitació per a residents en l'ús d'eines d'IA aplicades al diagnòstic radiològic. El programa inclou un dataset sintètic de 8.000 imatges de tòrax generades amb simuladors, lliure de dades de pacients reals."
-          },
-          "transferContext": {
-            "es": "Los centros de FP Sanitario que imparten el ciclo de Imagen para el Diagnóstico no tienen acceso a datasets médicos reales debido a normativa de protección de datos. Los alumnos acaban el ciclo sin haber trabajado con herramientas de IA, que ya son parte de la práctica clínica diaria.",
-            "en": "Health VET centres offering the Diagnostic Imaging cycle have no access to real medical datasets due to data protection regulations. Students complete the cycle without having worked with AI tools, which are already part of daily clinical practice.",
-            "va": "Els centres de FP Sanitari que imparteixen el cicle d'Imatge per al Diagnòstic no tenen accés a datasets mèdics reals a causa de la normativa de protecció de dades. Els alumnes acaben el cicle sense haver treballat amb eines d'IA, que ja formen part de la pràctica clínica diària."
-          },
-          "intervention": {
-            "es": "Se desarrolló una versión educativa del módulo con el dataset sintético, una interfaz web simplificada (Gradio) y 5 prácticas guiadas que cubren: preprocesado de imágenes, entrenamiento de un clasificador binario, evaluación de métricas (sensibilidad/especificidad), análisis de sesgos y documentación de un informe automatizado.",
-            "en": "An educational version of the module was developed with the synthetic dataset, a simplified web interface (Gradio) and 5 guided practices covering: image preprocessing, binary classifier training, metric evaluation (sensitivity/specificity), bias analysis and automated report documentation.",
-            "va": "Es va desenvolupar una versió educativa del mòdul amb el dataset sintètic, una interfície web simplificada (Gradio) i 5 pràctiques guiades que cobreixen: preprocessat d'imatges, entrenament d'un classificador binari, avaluació de mètriques (sensibilitat/especificitat), anàlisi de biaixos i documentació d'un informe automatitzat."
-          },
-          "transferPath": {
-            "es": "Sesión de formación de 6 horas para docentes del ciclo → despliegue local en el aula informática → 5 sesiones de prácticas distribuidas en la UD de \"Nuevas tecnologías en diagnóstico\" → evaluación con rúbrica compartida.",
-            "en": "6-hour training session for cycle teachers → local deployment in the computer classroom → 5 practice sessions distributed across the \"New diagnostic technologies\" learning unit → assessment with shared rubric.",
-            "va": "Sessió de formació de 6 hores per a docents del cicle → desplegament local a l'aula d'informàtica → 5 sessions de pràctiques distribuïdes a la UD de \"Noves tecnologies en diagnòstic\" → avaluació amb rúbrica compartida."
-          },
-          "trackBValue": {
-            "es": "Dataset sintético de 8.000 imágenes de tórax con etiquetas clínicas simuladas, interfaz Gradio lista para usar y 5 prácticas guiadas con soluciones. Replicable en cualquier centro con un aula informática básica.",
-            "en": "Synthetic dataset of 8,000 chest images with simulated clinical labels, ready-to-use Gradio interface and 5 guided practices with solutions. Replicable in any centre with a basic computer classroom.",
-            "va": "Dataset sintètic de 8.000 imatges de tòrax amb etiquetes clíniques simulades, interfície Gradio llesta per usar i 5 pràctiques guiades amb solucions. Replicable en qualsevol centre amb una aula d'informàtica bàsica."
-          }
-        },
+        "caseStudy": null,
         "evidence": {
           "headline": {
             "es": "El 87% de los alumnos supera el umbral de competencia en clasificación de imágenes con IA tras las 5 sesiones.",
@@ -37994,110 +31587,15 @@ export const MARKETPLACE_CONFIG = {
               "va": "Alumnes que superen el llindar de competència"
             }
           },
-          "secondaryMetrics": [
-            {
-              "id": "hours-saved",
-              "value": 40,
-              "unit": "horas/docente",
-              "label": {
-                "es": "Horas de preparación ahorradas por docente gracias al material listo",
-                "en": "Preparation hours saved per teacher thanks to ready-made material",
-                "va": "Hores de preparació estalviades per docent gràcies al material llest"
-              }
-            },
-            {
-              "id": "bias-awareness",
-              "value": 78,
-              "unit": "%",
-              "label": {
-                "es": "Alumnos que identifican correctamente sesgos en el modelo entrenado",
-                "en": "Students correctly identifying biases in the trained model",
-                "va": "Alumnes que identifiquen correctament biaixos en el model entrenat"
-              }
-            }
-          ],
-          "verification": {
-            "status": "reviewed",
-            "verifiedBy": "AI-STEAM Comité Técnico Salud Digital",
-            "verifiedAt": "2026-01-30",
-            "method": {
-              "es": "Revisión de rúbricas de evaluación por el Comité Técnico y análisis de logs de actividad anonimizados de la plataforma Gradio.",
-              "en": "Evaluation rubric review by the Technical Committee and analysis of anonymised activity logs from the Gradio platform.",
-              "va": "Revisió de rúbriques d'avaluació pel Comité Tècnic i anàlisi de logs d'activitat anonimitzats de la plataforma Gradio."
-            }
-          },
+          "secondaryMetrics": [],
+          "verification": null,
           "limitations": {
-            "es": "El dataset sintético no sustituye la exposición clínica real. Las métricas de desempeño de los alumnos reflejan competencia técnica con datos simulados, no con pacientes reales.",
-            "en": "The synthetic dataset does not replace real clinical exposure. Student performance metrics reflect technical competency with simulated data, not real patients.",
-            "va": "El dataset sintètic no substitueix l'exposició clínica real. Les mètriques de rendiment dels alumnes reflecteixen competència tècnica amb dades simulades, no amb pacients reals."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
-        "transferability": {
-          "whyTransferable": {
-            "es": "El dataset sintético elimina cualquier restricción legal de protección de datos. La interfaz Gradio es agnóstica al hardware y funciona en ordenadores básicos. El enfoque en métricas clínicas (sensibilidad/especificidad) conecta directamente con el temario del ciclo.",
-            "en": "The synthetic dataset eliminates any legal data protection restrictions. The Gradio interface is hardware-agnostic and runs on basic computers. The focus on clinical metrics (sensitivity/specificity) connects directly with the cycle curriculum.",
-            "va": "El dataset sintètic elimina qualsevol restricció legal de protecció de dades. La interfície Gradio és agnòstica al maquinari i funciona en ordinadors bàsics. L'enfocament en mètriques clíniques (sensibilitat/especificitat) connecta directament amb el temari del cicle."
-          },
-          "suitableFor": [
-            "vet-centres",
-            "research-centres"
-          ],
-          "requirements": [
-            {
-              "label": {
-                "es": "Aula con ordenadores (sin GPU dedicada necesaria)",
-                "en": "Classroom with computers (no dedicated GPU required)",
-                "va": "Aula amb ordinadors (sense GPU dedicada necessària)"
-              }
-            },
-            {
-              "label": {
-                "es": "Python 3.10+ instalado o acceso a entorno web (Google Colab)",
-                "en": "Python 3.10+ installed or access to web environment (Google Colab)",
-                "va": "Python 3.10+ instal·lat o accés a entorn web (Google Colab)"
-              }
-            }
-          ],
-          "adaptationSteps": [
-            {
-              "label": {
-                "es": "Descargar el dataset sintético y el notebook de prácticas del repositorio",
-                "en": "Download the synthetic dataset and practice notebook from the repository",
-                "va": "Descarregar el dataset sintètic i el notebook de pràctiques del repositori"
-              }
-            },
-            {
-              "label": {
-                "es": "Ajustar las prácticas al número de sesiones disponibles en la programación del módulo",
-                "en": "Adjust the practices to the number of sessions available in the module schedule",
-                "va": "Ajustar les pràctiques al nombre de sessions disponibles en la programació del mòdul"
-              }
-            },
-            {
-              "label": {
-                "es": "Revisar con el coordinador del ciclo la integración en la UD correspondiente",
-                "en": "Review with the cycle coordinator the integration in the corresponding learning unit",
-                "va": "Revisar amb el coordinador del cicle la integració en la UD corresponent"
-              }
-            }
-          ],
-          "risks": [
-            {
-              "label": {
-                "es": "El material requiere actualización si cambian las versiones de las bibliotecas (scikit-learn, Gradio)",
-                "en": "The material requires updating if library versions change (scikit-learn, Gradio)",
-                "va": "El material requereix actualització si canvien les versions de les biblioteques (scikit-learn, Gradio)"
-              }
-            },
-            {
-              "label": {
-                "es": "Algunos alumnos pueden carecer de conocimientos básicos de Python; se recomienda sesión introductoria previa",
-                "en": "Some students may lack basic Python knowledge; an introductory session is recommended beforehand",
-                "va": "Alguns alumnes poden mancar de coneixements bàsics de Python; es recomana una sessió introductòria prèvia"
-              }
-            }
-          ]
-        },
+        "transferability": null,
         "template": {
           "requiredBlocks": [
             "context",
