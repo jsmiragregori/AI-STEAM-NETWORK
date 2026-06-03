@@ -3672,7 +3672,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "CEICE convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
         },
         "entity": {
-          "name": "CEICE — Direcció General de Formació Professional i Ensenyaments de Règim Especial",
+          "name": "",
           "type": {
             "es": "Administración educativa autonómica responsable de la FP en la Comunitat Valenciana",
             "en": "Regional education administration responsible for VET in the Valencian Community",
@@ -3722,12 +3722,12 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "origin": null,
         "requester": {
-          "name": "CEICE — Direcció General de Formació Professional i Ensenyaments de Règim Especial",
+          "name": "",
           "publicLabel": {
             "es": "Administración educativa autonómica responsable de la FP en la Comunitat Valenciana",
             "en": "Regional education administration responsible for VET in the Valencian Community",
@@ -3735,65 +3735,20 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "leadTeam": null,
-        "contact": {
-          "name": "Coordinación AI-STEAM",
-          "org": "CEICE",
-          "role": {
-            "es": "Punto de contacto para expresiones de interés",
-            "en": "Contact point for expressions of interest",
-            "va": "Punt de contacte per a expressions d'interès"
-          }
-        },
-        "beneficiaries": [
-          {
-            "name": "Alumnado de FP de la Comunitat Valenciana",
-            "type": "educational-group",
-            "role": {
-              "es": "Destinatarios directos del sistema de recomendación personalizada",
-              "en": "Direct beneficiaries of the personalised recommendation system",
-              "va": "Destinataris directes del sistema de recomanació personalitzada"
-            }
-          },
-          {
-            "name": "Orientadores y tutores de FP",
-            "type": "educational-staff",
-            "role": {
-              "es": "Profesionales que usarán la herramienta como apoyo a la orientación vocacional",
-              "en": "Professionals who will use the tool to support vocational guidance",
-              "va": "Professionals que usaran l'eina com a suport a l'orientació vocacional"
-            }
-          },
-          {
-            "name": "Centros de FP de la Comunitat Valenciana",
-            "type": "educational-centre",
-            "role": {
-              "es": "Instituciones adoptantes del sistema resultante",
-              "en": "Institutions adopting the resulting system",
-              "va": "Institucions adoptants del sistema resultant"
-            }
-          }
-        ]
+        "contact": null,
+        "beneficiaries": []
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "responsible-ai"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "equity-inclusion",
-          "integrated-pedagogy"
-        ],
-        "engagementLevel": "challenge-contribution",
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
+        "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
         "trackBValue": {
-          "es": "Motor de recomendación de itinerarios de FP publicado en abierto, adaptable a cualquier comunidad autónoma con datos de matrícula y mercado laboral propios.",
-          "en": "Open-source VET pathway recommendation engine, adaptable to any autonomous community with their own enrolment and labour market data.",
-          "va": "Motor de recomanació d'itineraris de FP publicat en obert, adaptable a qualsevol comunitat autònoma amb dades de matrícula i mercat laboral propis."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
         "pilotStatus": "",
@@ -3822,32 +3777,10 @@ export const MARKETPLACE_CONFIG = {
       "transfer": {
         "type": "",
         "originOrganization": "",
-        "beneficiaryOrganizations": [
-          {
-            "name": "Alumnado de FP de la Comunitat Valenciana",
-            "sector": "",
-            "type": "educational-group"
-          },
-          {
-            "name": "Orientadores y tutores de FP",
-            "sector": "",
-            "type": "educational-staff"
-          },
-          {
-            "name": "Centros de FP de la Comunitat Valenciana",
-            "sector": "",
-            "type": "educational-centre"
-          }
-        ]
+        "beneficiaryOrganizations": []
       },
       "community": {
-        "tab": "challenges",
-        "publicMvp": true,
-        "featuredSignal": {
-          "es": "Convocatoria CEICE — FP personalizada",
-          "en": "CEICE call — personalised VET",
-          "va": "Convocatòria CEICE — FP personalitzada"
-        }
+        "tab": "challenges"
       },
       "card": {},
       "visibility": {},
@@ -3857,114 +3790,70 @@ export const MARKETPLACE_CONFIG = {
           "en": "Can AI recommend the most suitable VET pathway for each student?",
           "va": "Pot la IA recomanar l'itinerari de FP més adequat per a cada alumne?"
         },
-        "need": {
-          "es": "El 34% de los alumnos de FP no finalizan su ciclo. La orientación vocacional actual se basa en tutorías grupales con información genérica. Los alumnos necesitan recomendaciones personalizadas que combinen su historial de competencias, intereses declarados y datos actualizados del mercado laboral local para tomar mejores decisiones formativas.",
-          "en": "34% of VET students do not complete their cycle. Current vocational guidance relies on group tutorials with generic information. Students need personalised recommendations combining their competency history, declared interests and up-to-date local labour market data to make better training decisions.",
-          "va": "El 34% dels alumnes de FP no finalitzen el seu cicle. L'orientació vocacional actual es basa en tutories grupals amb informació genèrica. Els alumnes necessiten recomanacions personalitzades que combinen el seu historial de competències, interessos declarats i dades actualitzades del mercat laboral local per prendre millors decisions formatives."
-        },
-        "context": {
-          "es": "CEICE facilita datos anonimizados de matrícula, historial académico y tasas de inserción laboral de 3 años de los ciclos de FP de la Comunitat Valenciana, junto con datos del Observatorio Laboral de la Generalitat. El sistema debe cumplir el RGPD, ser explicable (no caja negra) y mostrar siempre la fuente de sus recomendaciones.",
-          "en": "CEICE provides anonymised enrolment, academic history and job placement rate data for 3 years of VET cycles in the Valencian Community, together with data from the Generalitat's Labour Observatory. The system must comply with GDPR, be explainable (not a black box) and always display the source of its recommendations.",
-          "va": "El CEICE facilita dades anonimitzades de matrícula, historial acadèmic i taxes d'inserció laboral de 3 anys dels cicles de FP de la Comunitat Valenciana, juntament amb dades de l'Observatori Laboral de la Generalitat. El sistema ha de complir el RGPD, ser explicable (no caixa negra) i mostrar sempre la font de les seues recomanacions."
-        },
-        "participation": {
-          "audienceText": {
-            "es": "Equipos multidisciplinares de 3 a 8 personas que incluyan al menos un perfil de ciencia de datos y uno de pedagogía o orientación educativa. Se valorará la colaboración entre empresa y centro educativo.",
-            "en": "Multidisciplinary teams of 3 to 8 people including at least one data science profile and one pedagogy or educational guidance profile. Collaboration between a company and an educational centre is valued.",
-            "va": "Equips multidisciplinaris de 3 a 8 persones que incloguen almenys un perfil de ciència de dades i un de pedagogia o orientació educativa. Es valorarà la col·laboració entre empresa i centre educatiu."
-          },
-          "formatText": {
-            "es": "Las propuestas se presentan en dos fases. Primera fase — memoria conceptual de 5 páginas con arquitectura propuesta y consideraciones éticas. Segunda fase (equipos seleccionados) — prototipo funcional con 50 alumnos de prueba y evaluación de satisfacción.",
-            "en": "Proposals are presented in two phases. First phase — 5-page conceptual memo with proposed architecture and ethical considerations. Second phase (selected teams) — functional prototype with 50 test students and satisfaction evaluation.",
-            "va": "Les propostes es presenten en dues fases. Primera fase — memòria conceptual de 5 pàgines amb arquitectura proposada i consideracions ètiques. Segona fase (equips seleccionats) — prototip funcional amb 50 alumnes de prova i avaluació de satisfacció."
-          },
-          "transferValue": {
-            "es": "El sistema resultante se incorporará al portfolio de herramientas digitales de orientación de CEICE. Los datos anonimizados generados durante el piloto se publicarán como dataset abierto de referencia.",
-            "en": "The resulting system will be incorporated into CEICE's digital guidance tool portfolio. The anonymised data generated during the pilot will be published as an open reference dataset.",
-            "va": "El sistema resultant s'incorporarà al portfolio d'eines digitals d'orientació del CEICE. Les dades anonimitzades generades durant el pilot es publicaran com a dataset obert de referència."
-          }
-        },
         "reward": {
           "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CEICE, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AI-STEAM y en la red estatal de innovación en FP.",
           "en": "The winning team receives: (1) development and implementation contract with CEICE, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AI-STEAM Marketplace and in the national VET innovation network.",
           "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CEICE, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AI-STEAM i a la xarxa estatal d'innovació en FP."
-        },
-        "evidence": {
-          "es": "Los prototipos en fase 2 serán evaluados por un panel independiente de orientadores educativos de tres centros de FP piloto. Los criterios son precisión de las recomendaciones (comparación con la decisión real del alumno a seis meses), satisfacción del usuario (escala Likert, n=50) y una auditoría de sesgos algorítmicos realizada por el Comité de Ética de Datos del CEICE. Las memorias conceptuales de fase 1 se evalúan por pertinencia, viabilidad técnica y calidad del análisis ético.",
-          "en": "Phase 2 prototypes will be evaluated by an independent panel of educational guidance counsellors from three pilot VET centres. Criteria are recommendation accuracy (comparison with the student's actual decision at six months), user satisfaction (Likert scale, n=50) and an algorithmic bias audit conducted by the CEICE Data Ethics Committee. Phase 1 conceptual memos are assessed on relevance, technical feasibility and quality of ethical analysis.",
-          "va": "Els prototips en fase 2 seran avaluats per un panel independent d'orientadors educatius de tres centres de FP pilot. Els criteris són precisió de les recomanacions (comparació amb la decisió real de l'alumne a sis mesos), satisfacció de l'usuari (escala Likert, n=50) i una auditoria de biaixos algorítmics realitzada pel Comitè d'Ètica de Dades del CEICE. Les memòries conceptuals de fase 1 s'avaluen per pertinència, viabilitat tècnica i qualitat de l'anàlisi ètica."
-        },
-        "people": {
-          "es": "El reto es impulsado por la Direcció General de Formació Professional del CEICE, con la colaboración del Observatori Laboral de la Generalitat Valenciana como proveedor de datos. La evaluación de propuestas la realiza un jurado mixto formado por orientadores educativos de FP, investigadores en ciencias del aprendizaje, representantes de empresas EdTech y un experto en ética de datos. La coordinación técnica recae en el equipo de la Red AI-STEAM.",
-          "en": "The challenge is driven by the CEICE Directorate General for Vocational Training, with the Valencian Government Labour Observatory as data provider. Proposals are evaluated by a mixed jury of VET educational counsellors, learning sciences researchers, EdTech company representatives and a data ethics expert. Technical coordination falls to the AI-STEAM Network team.",
-          "va": "El repte és impulsat per la Direcció General de Formació Professional del CEICE, amb la col·laboració de l'Observatori Laboral de la Generalitat Valenciana com a proveïdor de dades. L'avaluació de propostes la realitza un jurat mixt format per orientadors educatius de FP, investigadors en ciències de l'aprenentatge, representants d'empreses EdTech i un expert en ètica de dades. La coordinació tècnica recau en l'equip de la Xarxa AI-STEAM."
         }
       },
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
-        "codeLicense": "Apache 2.0",
-        "dataAvailability": "restricted",
+        "pageLicense": "",
+        "codeLicense": "",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
-        "contributionVisibility": "external-managed",
+        "contributionVisibility": "",
         "sensitiveDataPolicy": {
-          "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-          "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-          "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "rightsNote": {
-          "es": "Los sistemas desarrollados deben ser de código abierto (licencia Apache 2.0). Los datos de alumnos piloto se tratan bajo estricto cumplimiento del RGPD y de la legislación de protección de datos educativos.",
-          "en": "Developed systems must be open-source (Apache 2.0 licence). Pilot student data is processed under strict GDPR compliance and educational data protection legislation.",
-          "va": "Els sistemes desenvolupats han de ser de codi obert (llicència Apache 2.0). Les dades d'alumnes pilot es tracten sota estricte compliment del RGPD i de la legislació de protecció de dades educatives."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
         "publicationNote": {
-          "es": "Los resultados del reto se publicarán en el Marketplace AI-STEAM y en el repositorio de innovación educativa de la Generalitat Valenciana. Los equipos participantes conservan la autoría de sus propuestas.",
-          "en": "Challenge results will be published on the AI-STEAM Marketplace and in the Valencian Government's educational innovation repository. Participating teams retain authorship of their proposals.",
-          "va": "Els resultats del repte es publicaran al Marketplace AI-STEAM i al repositori d'innovació educativa de la Generalitat Valenciana. Els equips participants conserven l'autoria de les seues propostes."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
-        "enabled": true,
+        "enabled": false,
         "label": {
-          "es": "Investigación en sistemas de recomendación adaptativa para orientación en FP",
-          "en": "Research on adaptive recommendation systems for VET guidance",
-          "va": "Recerca en sistemes de recomanació adaptativa per a orientació en FP"
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "url": "https://ceice.gva.es/reto-fp-ia/track-a-investigacion"
+        "url": ""
       },
       "trackALink": {
-        "enabled": true,
+        "enabled": false,
         "label": {
-          "es": "Investigación en sistemas de recomendación adaptativa para orientación en FP",
-          "en": "Research on adaptive recommendation systems for VET guidance",
-          "va": "Recerca en sistemes de recomanació adaptativa per a orientació en FP"
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "url": "https://ceice.gva.es/reto-fp-ia/track-a-investigacion"
+        "url": ""
       },
       "externalFlow": {
-        "enabled": true,
+        "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar participación",
-            "en": "Request participation",
-            "va": "Sol·licitar participació"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
-          "url": "https://ceice.gva.es/formulari-inscripcio-reto-fp-ia"
+          "url": ""
         },
-        "secondaryAction": {
-          "label": {
-            "es": "Preguntas frecuentes",
-            "en": "Frequently asked questions",
-            "va": "Preguntes freqüents"
-          },
-          "url": "https://ceice.gva.es/reto-fp-ia/preguntas-frecuentes"
-        },
+        "secondaryAction": null,
         "fallbackAction": {
           "label": {
             "es": "Ver reto",
@@ -3975,11 +3864,11 @@ export const MARKETPLACE_CONFIG = {
         },
         "fallbackContact": {
           "label": {
-            "es": "Contactar con la coordinación del reto",
-            "en": "Contact the challenge coordination desk",
-            "va": "Contactar amb la coordinació del repte"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "url": "mailto:aisteam.retos@ceice.gva.es"
+          "url": ""
         }
       },
       "relations": {
@@ -3987,212 +3876,20 @@ export const MARKETPLACE_CONFIG = {
         "validations": [],
         "pilots": [],
         "cases": [],
-        "mentorships": [
-          {
-            "id": "mentoring-diseno-pilotos-fp-empresa",
-            "label": {
-              "es": "Mentoría — Diseño de pilotos de colaboración FP-empresa con IA",
-              "en": "Mentoring — Designing VET-industry AI collaboration pilots",
-              "va": "Mentoria — Disseny de pilots de col·laboració FP-empresa amb IA"
-            }
-          }
-        ],
+        "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "available": [
-          {
-            "label": {
-              "es": "Dataset anonimizado de matrícula y resultados FP (2022-2025)",
-              "en": "Anonymised VET enrolment and outcomes dataset (2022-2025)",
-              "va": "Dataset anonimitzat de matrícula i resultats FP (2022-2025)"
-            },
-            "format": "CSV",
-            "license": "Uso restringido al reto",
-            "url": "https://ceice.gva.es/datasets/reto-fp-ia/matricula-resultados-2022-2025"
-          },
-          {
-            "label": {
-              "es": "Informe del Observatorio Laboral — demanda de perfiles FP 2025",
-              "en": "Labour Observatory report — VET profile demand 2025",
-              "va": "Informe de l'Observatori Laboral — demanda de perfils FP 2025"
-            },
-            "format": "PDF",
-            "license": "CC BY 4.0",
-            "url": "https://labora.gva.es/observatori/informes/demanda-fp-2025"
-          },
-          {
-            "label": {
-              "es": "Documentación técnica de la API de datos del CEICE",
-              "en": "CEICE data API technical documentation",
-              "va": "Documentació tècnica de l'API de dades del CEICE"
-            },
-            "format": "HTML",
-            "license": "CC BY 4.0",
-            "url": "https://ceice.gva.es/api/docs/fp-data-v1"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/challenges/reto-personalizacion-itinerarios-fp-edu/",
-        "items": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Personalización de itinerarios FP",
-              "en": "Challenge brief — VET pathway personalisation",
-              "va": "Fitxa del repte — Personalització d'itineraris FP"
-            },
-            "description": {
-              "es": "Descripción del reto, bases de la convocatoria, criterios de evaluación y acceso a los datos.",
-              "en": "Challenge description, call terms, evaluation criteria and data access details.",
-              "va": "Descripció del repte, bases de la convocatòria, criteris d'avaluació i accés a les dades."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-personalizacion-itinerarios-fp.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              },
-              {
-                "file": "challenge-brief-vet-pathway-personalisation.pdf",
-                "format": "pdf",
-                "language": "en",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "ethics-guide",
-            "type": "guide",
-            "title": {
-              "es": "Guía de consideraciones éticas para sistemas de recomendación educativa",
-              "en": "Ethical considerations guide for educational recommendation systems",
-              "va": "Guia de consideracions ètiques per a sistemes de recomanació educativa"
-            },
-            "description": {
-              "es": "Marco de referencia sobre sesgos algorítmicos, privacidad del estudiante y transparencia en sistemas de IA aplicados a la orientación educativa.",
-              "en": "Reference framework on algorithmic bias, student privacy and transparency in AI systems applied to educational guidance.",
-              "va": "Marc de referència sobre biaixos algorítmics, privacitat de l'estudiant i transparència en sistemes d'IA aplicats a l'orientació educativa."
-            },
-            "files": [
-              {
-                "file": "guia-etica-recomendacion-educativa.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY-SA 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
-      "outputs": {
-        "expected": [
-          {
-            "id": "concept-memo",
-            "label": {
-              "es": "Memoria conceptual con arquitectura propuesta y análisis ético (fase 1)",
-              "en": "Conceptual memo with proposed architecture and ethical analysis (phase 1)",
-              "va": "Memòria conceptual amb arquitectura proposada i anàlisi ètica (fase 1)"
-            }
-          },
-          {
-            "id": "functional-prototype",
-            "label": {
-              "es": "Prototipo funcional evaluado con 50 alumnos piloto (fase 2)",
-              "en": "Functional prototype evaluated with 50 pilot students (phase 2)",
-              "va": "Prototip funcional avaluat amb 50 alumnes pilot (fase 2)"
-            }
-          },
-          {
-            "id": "explainability-report",
-            "label": {
-              "es": "Informe de explicabilidad — cómo se generan las recomendaciones",
-              "en": "Explainability report — how recommendations are generated",
-              "va": "Informe d'explicabilitat — com es generen les recomanacions"
-            }
-          }
-        ]
-      },
-      "process": {
-        "milestones": [
-          {
-            "date": "2026-06-01",
-            "label": {
-              "es": "Cierre de inscripciones y acceso a datos (fase 1)",
-              "en": "Registration deadline and data access (phase 1)",
-              "va": "Tancament d'inscripcions i accés a dades (fase 1)"
-            }
-          },
-          {
-            "date": "2026-09-01",
-            "label": {
-              "es": "Entrega de memorias conceptuales (fase 1)",
-              "en": "Conceptual memo submission (phase 1)",
-              "va": "Lliurament de memòries conceptuals (fase 1)"
-            }
-          },
-          {
-            "date": "2026-10-01",
-            "label": {
-              "es": "Comunicación de equipos seleccionados para fase 2",
-              "en": "Announcement of teams selected for phase 2",
-              "va": "Comunicació d'equips seleccionats per a fase 2"
-            }
-          },
-          {
-            "date": "2026-12-15",
-            "label": {
-              "es": "Entrega de prototipo funcional y resolución (fase 2)",
-              "en": "Functional prototype submission and resolution (phase 2)",
-              "va": "Lliurament de prototip funcional i resolució (fase 2)"
-            }
-          }
-        ]
-      },
-      "hasDownloads": true,
-      "downloadCount": 2,
-      "cardDownloads": [
-        {
-          "id": "challenge-brief",
-          "type": "brief",
-          "title": {
-            "es": "Ficha del reto — Personalización de itinerarios FP",
-            "en": "Challenge brief — VET pathway personalisation",
-            "va": "Fitxa del repte — Personalització d'itineraris FP"
-          },
-          "description": {
-            "es": "Descripción del reto, bases de la convocatoria, criterios de evaluación y acceso a los datos.",
-            "en": "Challenge description, call terms, evaluation criteria and data access details.",
-            "va": "Descripció del repte, bases de la convocatòria, criteris d'avaluació i accés a les dades."
-          },
-          "files": [
-            {
-              "file": "ficha-reto-personalizacion-itinerarios-fp.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            },
-            {
-              "file": "challenge-brief-vet-pathway-personalisation.pdf",
-              "format": "pdf",
-              "language": "en",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "outputs": null,
+      "process": null,
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "challenge",
@@ -4205,7 +3902,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": null
@@ -9839,7 +9536,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "La Diputació de València convoca equips de FP, universitats i startups per dissenyar un chatbot d'atenció ciutadana basat en IA generativa que responga preguntes sobre tràmits municipals en castellà, valencià i anglès, usant únicament documentació oficial pública i sense risc d'al·lucinacions en respostes amb conseqüències legals."
         },
         "entity": {
-          "name": "Diputación Provincial de Valencia — Área de Innovación Digital",
+          "name": "",
           "type": {
             "es": "Administración provincial que impulsa la transformación digital municipal",
             "en": "Provincial administration driving municipal digital transformation",
@@ -9886,12 +9583,12 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "origin": null,
         "requester": {
-          "name": "Diputación Provincial de Valencia — Área de Innovación Digital",
+          "name": "",
           "publicLabel": {
             "es": "Administración provincial que impulsa la transformación digital municipal",
             "en": "Provincial administration driving municipal digital transformation",
@@ -9899,39 +9596,20 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "leadTeam": null,
-        "contact": {
-          "name": "Coordinación AI-STEAM",
-          "org": "CEICE",
-          "role": {
-            "es": "Punto de contacto para expresiones de interés",
-            "en": "Contact point for expressions of interest",
-            "va": "Punt de contacte per a expressions d'interès"
-          }
-        },
+        "contact": null,
         "beneficiaries": []
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "responsible-ai",
-          "ai-ethics"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "equity-inclusion",
-          "integrated-pedagogy",
-          "infrastructure-evidence"
-        ],
-        "engagementLevel": "challenge-contribution",
-        "evidenceMaturity": "prototype",
-        "lbdStage": "output",
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
         "trackBValue": {
-          "es": "Sistema RAG de código abierto adaptable a cualquier ayuntamiento con documentación pública en formato PDF o web.",
-          "en": "Open-source RAG system adaptable to any municipality with public documentation in PDF or web format.",
-          "va": "Sistema RAG de codi obert adaptable a qualsevol ajuntament amb documentació pública en format PDF o web."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
         "pilotStatus": "",
@@ -9964,12 +9642,7 @@ export const MARKETPLACE_CONFIG = {
         "beneficiaryOrganizations": []
       },
       "community": {
-        "tab": "challenges",
-        "featuredSignal": {
-          "es": "Reto destacado — Administración pública",
-          "en": "Featured challenge — Public administration",
-          "va": "Repte destacat — Administració pública"
-        }
+        "tab": "challenges"
       },
       "card": {},
       "visibility": {},
@@ -9979,33 +9652,6 @@ export const MARKETPLACE_CONFIG = {
           "en": "Can AI answer questions about municipal procedures with legal reliability?",
           "va": "Pot la IA respondre preguntes sobre tràmits municipals amb fiabilitat legal?"
         },
-        "need": {
-          "es": "Los 266 municipios de menos de 5.000 habitantes de la provincia de Valencia no pueden permitirse un servicio de atención telefónica 24/7. El 68% de los ciudadanos consulta trámites fuera del horario de oficina. Se necesita un sistema que responda con fiabilidad total sobre documentos oficiales, que indique cuándo no sabe la respuesta y que nunca invente información con consecuencias legales.",
-          "en": "The 266 municipalities of fewer than 5,000 inhabitants in the province of Valencia cannot afford a 24/7 telephone service. 68% of citizens consult procedures outside office hours. A system is needed that answers with total reliability from official documents, indicates when it does not know the answer, and never fabricates information with legal consequences.",
-          "va": "Els 266 municipis de menys de 5.000 habitants de la província de València no poden permetre's un servei d'atenció telefònica 24/7. El 68% dels ciutadans consulta tràmits fora de l'horari d'oficina. Es necessita un sistema que responga amb fiabilitat total sobre documents oficials, que indique quan no sap la resposta i que mai invente informació amb conseqüències legals."
-        },
-        "context": {
-          "es": "La Diputación proporciona el corpus documental completo en formato PDF y HTML de los trámites más frecuentes de 10 ayuntamientos piloto. El sistema debe usar arquitectura RAG (Retrieval-Augmented Generation) para limitar las respuestas a documentos verificados, con una interfaz web accesible WCAG 2.1 nivel AA y soporte para los tres idiomas.",
-          "en": "The Diputación provides the complete documentary corpus in PDF and HTML format for the most frequent procedures from 10 pilot municipalities. The system must use RAG (Retrieval-Augmented Generation) architecture to limit responses to verified documents, with a WCAG 2.1 level AA accessible web interface and support for all three languages.",
-          "va": "La Diputació proporciona el corpus documental complet en format PDF i HTML dels tràmits més freqüents de 10 ajuntaments pilot. El sistema ha d'usar arquitectura RAG (Retrieval-Augmented Generation) per limitar les respostes a documents verificats, amb una interfície web accessible WCAG 2.1 nivell AA i suport per als tres idiomes."
-        },
-        "participation": {
-          "audienceText": {
-            "es": "Equipos de 2 a 6 personas con experiencia en LLMs, RAG o desarrollo web accesible. Se valorará especialmente la presencia de perfil jurídico-administrativo en el equipo para evaluar la fiabilidad de las respuestas.",
-            "en": "Teams of 2 to 6 people with experience in LLMs, RAG or accessible web development. Particular value will be given to the presence of a legal-administrative profile in the team to evaluate response reliability.",
-            "va": "Equips de 2 a 6 persones amb experiència en LLMs, RAG o desenvolupament web accessible. Es valorarà especialment la presència d'un perfil juridicoadministratiu en l'equip per avaluar la fiabilitat de les respostes."
-          },
-          "formatText": {
-            "es": "Entrega de: sistema desplegable en servidor local (Docker Compose), corpus de prueba con 200 preguntas anotadas y evaluación de fiabilidad. La evaluación técnica incluye una auditoría de alucinaciones con preguntas trampa.",
-            "en": "Submission of: system deployable on local server (Docker Compose), test corpus with 200 annotated questions and reliability evaluation. Technical evaluation includes a hallucination audit with trick questions.",
-            "va": "Lliurament de: sistema desplegable en servidor local (Docker Compose), corpus de prova amb 200 preguntes anotades i avaluació de fiabilitat. L'avaluació tècnica inclou una auditoria d'al·lucinacions amb preguntes trampa."
-          },
-          "transferValue": {
-            "es": "La solución ganadora se pilotará en 3 ayuntamientos durante 6 meses. Si supera el umbral de fiabilidad del 95%, la Diputación la desplegará en los 266 municipios elegibles.",
-            "en": "The winning solution will be piloted in 3 municipalities for 6 months. If it exceeds the 95% reliability threshold, the Diputación will deploy it across all 266 eligible municipalities.",
-            "va": "La solució guanyadora es pilotarà en 3 ajuntaments durant 6 mesos. Si supera el llindar de fiabilitat del 95%, la Diputació la desplegarà als 266 municipis elegibles."
-          }
-        },
         "reward": {
           "es": "El equipo ganador recibe: (1) contrato de despliegue con la Diputación por valor de 25.000 €, (2) mentoría de 4 meses con el equipo de innovación digital, (3) publicación del caso como referencia nacional en administración digital.",
           "en": "The winning team receives: (1) deployment contract with the Diputación worth €25,000, (2) 4-month mentoring with the digital innovation team, (3) publication of the case as a national reference in digital administration.",
@@ -10014,20 +9660,20 @@ export const MARKETPLACE_CONFIG = {
       },
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
-        "contributionVisibility": "external-managed",
+        "contributionVisibility": "",
         "sensitiveDataPolicy": {
-          "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-          "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-          "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "rightsNote": {
-          "es": "Las soluciones desarrolladas deben publicarse bajo licencia de código abierto compatible con uso por administraciones públicas (EUPL o Apache 2.0).",
-          "en": "Developed solutions must be published under an open-source licence compatible with use by public administrations (EUPL or Apache 2.0).",
-          "va": "Les solucions desenvolupades han de publicar-se sota llicència de codi obert compatible amb ús per administracions públiques (EUPL o Apache 2.0)."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -10037,7 +9683,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -10062,9 +9708,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar participación",
-            "en": "Request participation",
-            "va": "Sol·licitar participació"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -10080,9 +9726,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "fallbackContact": {
           "label": {
-            "es": "Contactar con la coordinación del reto",
-            "en": "Contact the challenge coordination desk",
-            "va": "Contactar amb la coordinació del repte"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": ""
         }
@@ -10095,176 +9741,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "available": [
-          {
-            "label": {
-              "es": "Corpus documental de trámsites — 10 ayuntamientos piloto (PDF + HTML)",
-              "en": "Procedural documentary corpus — 10 pilot municipalities (PDF + HTML)",
-              "va": "Corpus documental de tràmits — 10 ajuntaments pilot (PDF + HTML)"
-            },
-            "format": "ZIP",
-            "license": "Dominio público"
-          },
-          {
-            "label": {
-              "es": "Corpus de evaluación — 200 preguntas con respuesta esperada anotada",
-              "en": "Evaluation corpus — 200 questions with annotated expected answers",
-              "va": "Corpus d'avaluació — 200 preguntes amb resposta esperada anotada"
-            },
-            "format": "CSV",
-            "license": "CC BY 4.0"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/challenges/reto-chatbot-atencion-ciudadana-adm/",
-        "items": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Chatbot ciudadano con IA",
-              "en": "Challenge brief — AI citizen chatbot",
-              "va": "Fitxa del repte — Chatbot ciutadà amb IA"
-            },
-            "description": {
-              "es": "Especificaciones técnicas completas, criterios de evaluación de fiabilidad y protocolo de auditoría de alucinaciones.",
-              "en": "Full technical specifications, reliability evaluation criteria and hallucination audit protocol.",
-              "va": "Especificacions tècniques completes, criteris d'avaluació de fiabilitat i protocol d'auditoria d'al·lucinacions."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-chatbot-ciudadano-adm.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "evaluation-corpus",
-            "type": "dataset",
-            "title": {
-              "es": "Corpus de evaluación — 200 preguntas",
-              "en": "Evaluation corpus — 200 questions",
-              "va": "Corpus d'avaluació — 200 preguntes"
-            },
-            "description": {
-              "es": "Fichero CSV con las 200 preguntas de evaluación, respuesta esperada y tipo de pregunta (informativa, procedimental, trampa).",
-              "en": "CSV file with the 200 evaluation questions, expected answer and question type (informational, procedural, trick).",
-              "va": "Fitxer CSV amb les 200 preguntes d'avaluació, resposta esperada i tipus de pregunta (informativa, procedimental, trampa)."
-            },
-            "files": [
-              {
-                "file": "corpus-evaluacion-chatbot-200-preguntas.csv",
-                "format": "csv",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
-      "outputs": {
-        "expected": [
-          {
-            "id": "docker-system",
-            "label": {
-              "es": "Sistema desplegable con Docker Compose y documentación de instalación",
-              "en": "Docker Compose deployable system with installation documentation",
-              "va": "Sistema desplegable amb Docker Compose i documentació d'instal·lació"
-            }
-          },
-          {
-            "id": "test-results",
-            "label": {
-              "es": "Resultados de evaluación sobre el corpus de 200 preguntas",
-              "en": "Evaluation results on the 200-question corpus",
-              "va": "Resultats d'avaluació sobre el corpus de 200 preguntes"
-            }
-          },
-          {
-            "id": "hallucination-audit",
-            "label": {
-              "es": "Informe de auditoría de alucinaciones con metodología documentada",
-              "en": "Hallucination audit report with documented methodology",
-              "va": "Informe d'auditoria d'al·lucinacions amb metodologia documentada"
-            }
-          }
-        ]
-      },
-      "process": {
-        "milestones": [
-          {
-            "date": "2026-05-31",
-            "label": {
-              "es": "Cierre de inscripciones",
-              "en": "Registration deadline",
-              "va": "Tancament d'inscripcions"
-            }
-          },
-          {
-            "date": "2026-06-15",
-            "label": {
-              "es": "Acceso al corpus documental para equipos inscritos",
-              "en": "Documentary corpus access for registered teams",
-              "va": "Accés al corpus documental per a equips inscrits"
-            }
-          },
-          {
-            "date": "2026-11-28",
-            "label": {
-              "es": "Entrega de sistemas y documentación",
-              "en": "System and documentation submission",
-              "va": "Lliurament de sistemes i documentació"
-            }
-          },
-          {
-            "date": "2026-12-15",
-            "label": {
-              "es": "Evaluación técnica y auditoría de alucinaciones",
-              "en": "Technical evaluation and hallucination audit",
-              "va": "Avaluació tècnica i auditoria d'al·lucinacions"
-            }
-          }
-        ]
-      },
-      "hasDownloads": true,
-      "downloadCount": 2,
-      "cardDownloads": [
-        {
-          "id": "challenge-brief",
-          "type": "brief",
-          "title": {
-            "es": "Ficha del reto — Chatbot ciudadano con IA",
-            "en": "Challenge brief — AI citizen chatbot",
-            "va": "Fitxa del repte — Chatbot ciutadà amb IA"
-          },
-          "description": {
-            "es": "Especificaciones técnicas completas, criterios de evaluación de fiabilidad y protocolo de auditoría de alucinaciones.",
-            "en": "Full technical specifications, reliability evaluation criteria and hallucination audit protocol.",
-            "va": "Especificacions tècniques completes, criteris d'avaluació de fiabilitat i protocol d'auditoria d'al·lucinacions."
-          },
-          "files": [
-            {
-              "file": "ficha-reto-chatbot-ciudadano-adm.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "outputs": null,
+      "process": null,
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "challenge",
@@ -10277,7 +9764,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": null
@@ -10295,9 +9782,9 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
+            "trackA": true,
             "relations": false,
-            "evidence": false,
+            "evidence": true,
             "transferability": true,
             "summary": true,
             "originContext": true,
@@ -10839,7 +10326,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "Turisme Comunitat Valenciana convoca equips per crear un sistema d'anàlisi de ressenyes turístiques en múltiples idiomes i plataformes que identifique tendències de satisfacció, detecte problemes emergents per destinació i genere informes automàtics per a gestors municipals de turisme, reduint el temps d'anàlisi manual de 40 hores setmanals a menys de 2."
         },
         "entity": {
-          "name": "Agència Valenciana del Turisme (Turisme Comunitat Valenciana)",
+          "name": "",
           "type": {
             "es": "Agencia pública responsable de la promoción y gestión del turismo en la Comunitat Valenciana",
             "en": "Public agency responsible for tourism promotion and management in the Valencian Community",
@@ -10886,12 +10373,12 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "origin": null,
         "requester": {
-          "name": "Agència Valenciana del Turisme (Turisme Comunitat Valenciana)",
+          "name": "",
           "publicLabel": {
             "es": "Agencia pública responsable de la promoción y gestión del turismo en la Comunitat Valenciana",
             "en": "Public agency responsible for tourism promotion and management in the Valencian Community",
@@ -10899,37 +10386,20 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "leadTeam": null,
-        "contact": {
-          "name": "Coordinación AI-STEAM",
-          "org": "CEICE",
-          "role": {
-            "es": "Punto de contacto para expresiones de interés",
-            "en": "Contact point for expressions of interest",
-            "va": "Punt de contacte per a expressions d'interès"
-          }
-        },
+        "contact": null,
         "beneficiaries": []
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "responsible-ai"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "equity-inclusion"
-        ],
-        "engagementLevel": "challenge-contribution",
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
+        "engagementLevel": "",
         "evidenceMaturity": "idea",
-        "lbdStage": "output",
+        "lbdStage": "input",
         "trackBValue": {
-          "es": "Pipeline de análisis de sentimiento turístico multilingüe publicado en abierto, adaptable a cualquier destino con presencia en plataformas de reseñas.",
-          "en": "Open-source multilingual tourism sentiment analysis pipeline, adaptable to any destination with presence on review platforms.",
-          "va": "Pipeline d'anàlisi de sentiment turístic multilingüe publicat en obert, adaptable a qualsevol destinació amb presència en plataformes de ressenyes."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
         "pilotStatus": "",
@@ -10960,12 +10430,7 @@ export const MARKETPLACE_CONFIG = {
         "beneficiaryOrganizations": []
       },
       "community": {
-        "tab": "challenges",
-        "featuredSignal": {
-          "es": "Reto abierto — verano 2026",
-          "en": "Open challenge — summer 2026",
-          "va": "Repte obert — estiu 2026"
-        }
+        "tab": "challenges"
       },
       "card": {},
       "visibility": {},
@@ -10975,33 +10440,6 @@ export const MARKETPLACE_CONFIG = {
           "en": "Can AI analyse thousands of tourism reviews in 10 languages in real time?",
           "va": "Pot la IA analitzar milers de ressenyes turístiques en 10 idiomes en temps real?"
         },
-        "need": {
-          "es": "Los técnicos de Turisme analizan manualmente reseñas de Google, TripAdvisor y Booking para 120 destinos turísticos valencianos. El volumen ha crecido un 340% desde 2022 y ya supone 40 horas semanales de análisis por técnico. Se necesita un sistema que procese reseñas en al menos 10 idiomas, agrupe por temática (alojamiento, gastronomía, movilidad, oferta cultural) y detecte cambios de tendencia en menos de 24 horas.",
-          "en": "Turisme technicians manually analyse Google, TripAdvisor and Booking reviews for 120 Valencian tourist destinations. Volume has grown 340% since 2022 and now requires 40 analyst hours per week. A system is needed to process reviews in at least 10 languages, group by topic (accommodation, gastronomy, mobility, cultural offer) and detect trend changes within 24 hours.",
-          "va": "Els tècnics de Turisme analitzen manualment ressenyes de Google, TripAdvisor i Booking per a 120 destinacions turístiques valencianes. El volum ha crescut un 340% des de 2022 i ja suposa 40 hores setmanals d'anàlisi per tècnic. Es necessita un sistema que processe ressenyes en almenys 10 idiomes, agrupe per temàtica (allotjament, gastronomia, mobilitat, oferta cultural) i detecte canvis de tendència en menys de 24 hores."
-        },
-        "context": {
-          "es": "Turisme facilita un corpus de 280.000 reseñas etiquetadas manualmente de 2023-2025 en 10 idiomas para entrenamiento y evaluación. El sistema debe procesar las APIs públicas de Google My Business y TripAdvisor (acceso proporcionado) y generar informes en formato PDF y dashboard web para alcaldes y técnicos de turismo municipal.",
-          "en": "Turisme provides a corpus of 280,000 manually labelled reviews from 2023-2025 in 10 languages for training and evaluation. The system must process public Google My Business and TripAdvisor APIs (access provided) and generate reports in PDF format and a web dashboard for mayors and municipal tourism technicians.",
-          "va": "Turisme facilita un corpus de 280.000 ressenyes etiquetades manualment de 2023-2025 en 10 idiomes per a entrenament i avaluació. El sistema ha de processar les APIs públiques de Google My Business i TripAdvisor (accés proporcionat) i generar informes en format PDF i dashboard web per a alcaldes i tècnics de turisme municipal."
-        },
-        "participation": {
-          "audienceText": {
-            "es": "Equipos de 1 a 4 personas con experiencia en NLP, procesamiento multilingüe o desarrollo de dashboards. Se valoran propuestas de empresas turísticas o destinos que quieran co-diseñar la solución.",
-            "en": "Teams of 1 to 4 people with experience in NLP, multilingual processing or dashboard development. Proposals from tourism companies or destinations wanting to co-design the solution are valued.",
-            "va": "Equips d'1 a 4 persones amb experiència en NLP, processament multilingüe o desenvolupament de dashboards. Es valoren propostes d'empreses turístiques o destinacions que vulguen co-dissenyar la solució."
-          },
-          "formatText": {
-            "es": "Entrega de sistema desplegable (Docker) + demo del dashboard con datos reales + informe de precisión del análisis de sentimiento por idioma y categoría. Evaluación basada en precisión técnica y utilidad percibida por gestores municipales (encuesta).",
-            "en": "Submission of deployable system (Docker) + dashboard demo with real data + sentiment analysis accuracy report by language and category. Evaluation based on technical accuracy and perceived utility by municipal managers (survey).",
-            "va": "Lliurament de sistema desplegable (Docker) + demo del dashboard amb dades reals + informe de precisió de l'anàlisi de sentiment per idioma i categoria. Avaluació basada en precisió tècnica i utilitat percebuda per gestors municipals (enquesta)."
-          },
-          "transferValue": {
-            "es": "El sistema se integrará en el portal de datos de Turisme Comunitat Valenciana y estará disponible para cualquier destino europeo bajo licencia abierta. Los datos de entrenamiento enriquecidos se publicarán como dataset de referencia para NLP turístico.",
-            "en": "The system will be integrated into the Turisme Comunitat Valenciana data portal and will be available to any European destination under an open licence. The enriched training data will be published as a reference dataset for tourism NLP.",
-            "va": "El sistema s'integrarà al portal de dades de Turisme Comunitat Valenciana i estarà disponible per a qualsevol destinació europea sota llicència oberta. Les dades d'entrenament enriquides es publicaran com a dataset de referència per a NLP turístic."
-          }
-        },
         "reward": {
           "es": "El equipo ganador recibe: (1) contrato de implementación y mantenimiento con Turisme por valor de 18.000 €/año, (2) acceso a los datos de visitantes de los 120 destinos para investigación, (3) visibilidad en la Feria Internacional de Turismo ITB 2027.",
           "en": "The winning team receives: (1) implementation and maintenance contract with Turisme worth €18,000/year, (2) access to visitor data from all 120 destinations for research, (3) visibility at the ITB 2027 International Tourism Fair.",
@@ -11010,20 +10448,20 @@ export const MARKETPLACE_CONFIG = {
       },
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
-        "contributionVisibility": "external-managed",
+        "contributionVisibility": "",
         "sensitiveDataPolicy": {
-          "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-          "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-          "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "rightsNote": {
-          "es": "Los sistemas desarrollados se publicarán bajo licencia Apache 2.0. El corpus de reseñas es propiedad de Turisme y no puede redistribuirse fuera del contexto del reto.",
-          "en": "Developed systems will be published under Apache 2.0 licence. The review corpus is owned by Turisme and may not be redistributed outside the challenge context.",
-          "va": "Els sistemes desenvolupats es publicaran sota llicència Apache 2.0. El corpus de ressenyes és propietat de Turisme i no pot redistribuir-se fora del context del repte."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -11033,7 +10471,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -11058,9 +10496,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar participación",
-            "en": "Request participation",
-            "va": "Sol·licitar participació"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -11076,9 +10514,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "fallbackContact": {
           "label": {
-            "es": "Contactar con la coordinación del reto",
-            "en": "Contact the challenge coordination desk",
-            "va": "Contactar amb la coordinació del repte"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": ""
         }
@@ -11091,142 +10529,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "available": [
-          {
-            "label": {
-              "es": "Corpus de 280.000 reseñas etiquetadas en 10 idiomas (2023-2025)",
-              "en": "Corpus of 280,000 labelled reviews in 10 languages (2023-2025)",
-              "va": "Corpus de 280.000 ressenyes etiquetades en 10 idiomes (2023-2025)"
-            },
-            "format": "JSON + CSV",
-            "license": "Uso restringido al reto"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/challenges/reto-analisis-sentimiento-turismo-tur/",
-        "items": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Análisis de sentimiento turístico",
-              "en": "Challenge brief — Tourism sentiment analysis",
-              "va": "Fitxa del repte — Anàlisi de sentiment turístic"
-            },
-            "description": {
-              "es": "Descripción del reto, estructura del corpus, criterios de evaluación técnica y de utilidad, y condiciones de la API.",
-              "en": "Challenge description, corpus structure, technical and utility evaluation criteria, and API conditions.",
-              "va": "Descripció del repte, estructura del corpus, criteris d'avaluació tècnica i d'utilitat, i condicions de l'API."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-sentimiento-turismo.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
-      "outputs": {
-        "expected": [
-          {
-            "id": "nlp-system",
-            "label": {
-              "es": "Sistema NLP desplegable con soporte para 10 idiomas",
-              "en": "Deployable NLP system with 10-language support",
-              "va": "Sistema NLP desplegable amb suport per a 10 idiomes"
-            }
-          },
-          {
-            "id": "dashboard",
-            "label": {
-              "es": "Dashboard web para gestores municipales con filtros por destino y categoría",
-              "en": "Web dashboard for municipal managers with destination and category filters",
-              "va": "Dashboard web per a gestors municipals amb filtres per destinació i categoria"
-            }
-          },
-          {
-            "id": "accuracy-report",
-            "label": {
-              "es": "Informe de precisión del análisis de sentimiento por idioma y categoría temática",
-              "en": "Sentiment analysis accuracy report by language and thematic category",
-              "va": "Informe de precisió de l'anàlisi de sentiment per idioma i categoria temàtica"
-            }
-          }
-        ]
-      },
-      "process": {
-        "milestones": [
-          {
-            "date": "2026-05-31",
-            "label": {
-              "es": "Cierre de inscripciones",
-              "en": "Registration deadline",
-              "va": "Tancament d'inscripcions"
-            }
-          },
-          {
-            "date": "2026-06-10",
-            "label": {
-              "es": "Acceso al corpus y APIs para equipos inscritos",
-              "en": "Corpus and API access for registered teams",
-              "va": "Accés al corpus i APIs per a equips inscrits"
-            }
-          },
-          {
-            "date": "2026-09-15",
-            "label": {
-              "es": "Entrega de sistemas y demos",
-              "en": "System and demo submission",
-              "va": "Lliurament de sistemes i demos"
-            }
-          },
-          {
-            "date": "2026-10-01",
-            "label": {
-              "es": "Evaluación por gestores municipales y resolución",
-              "en": "Municipal manager evaluation and resolution",
-              "va": "Avaluació per gestors municipals i resolució"
-            }
-          }
-        ]
-      },
-      "hasDownloads": true,
-      "downloadCount": 1,
-      "cardDownloads": [
-        {
-          "id": "challenge-brief",
-          "type": "brief",
-          "title": {
-            "es": "Ficha del reto — Análisis de sentimiento turístico",
-            "en": "Challenge brief — Tourism sentiment analysis",
-            "va": "Fitxa del repte — Anàlisi de sentiment turístic"
-          },
-          "description": {
-            "es": "Descripción del reto, estructura del corpus, criterios de evaluación técnica y de utilidad, y condiciones de la API.",
-            "en": "Challenge description, corpus structure, technical and utility evaluation criteria, and API conditions.",
-            "va": "Descripció del repte, estructura del corpus, criteris d'avaluació tècnica i d'utilitat, i condicions de l'API."
-          },
-          "files": [
-            {
-              "file": "ficha-reto-sentimiento-turismo.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "outputs": null,
+      "process": null,
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "challenge",
@@ -11239,7 +10552,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": null
@@ -11257,9 +10570,9 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
+            "trackA": true,
             "relations": false,
-            "evidence": false,
+            "evidence": true,
             "transferability": true,
             "summary": true,
             "originContext": true,
@@ -11353,9 +10666,12 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
-      "ficha": null,
+      "ficha": {
+        "file": "eficiencia-energetica-edificios-hou.pdf",
+        "publicPath": "/assets/downloads/marketplace/cases/eficiencia-energetica-edificios-hou.pdf"
+      },
       "adhesionForm": {
-        "url": ""
+        "url": "https://forms.cloud.microsoft/e/fSBRuSr0sM"
       },
       "ownership": {
         "publisher": {
@@ -12889,7 +12205,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "Endesa Distribució cerca equips de centres educatius i empreses tecnològiques que desenvolupen un prototip de bessona digital capaç de predir sobrecàrregues en la xarxa elèctrica de barris valencians amb alta penetració d'instal·lacions fotovoltaiques, usant dades obertes de consum i generació."
         },
         "entity": {
-          "name": "Endesa Distribución S.A. — Área de Innovación Redes",
+          "name": "",
           "type": {
             "es": "Gran empresa distribuidora de energía eléctrica",
             "en": "Large electricity distribution company",
@@ -12936,12 +12252,12 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "origin": null,
         "requester": {
-          "name": "Endesa Distribución S.A. — Área de Innovación Redes",
+          "name": "",
           "publicLabel": {
             "es": "Gran empresa distribuidora de energía eléctrica",
             "en": "Large electricity distribution company",
@@ -12949,37 +12265,20 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "leadTeam": null,
-        "contact": {
-          "name": "Coordinación AI-STEAM",
-          "org": "CEICE",
-          "role": {
-            "es": "Punto de contacto para expresiones de interés",
-            "en": "Contact point for expressions of interest",
-            "va": "Punt de contacte per a expressions d'interès"
-          }
-        },
+        "contact": null,
         "beneficiaries": []
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "maker-steam"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "infrastructure-evidence"
-        ],
-        "engagementLevel": "challenge-contribution",
-        "evidenceMaturity": "prototype",
-        "lbdStage": "process",
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
         "trackBValue": {
-          "es": "Prototipo de gemelo digital replicable para cualquier operador de red de distribución con datos SCADA disponibles.",
-          "en": "Replicable digital twin prototype for any distribution network operator with available SCADA data.",
-          "va": "Prototip de bessona digital replicable per a qualsevol operador de xarxa de distribució amb dades SCADA disponibles."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
         "pilotStatus": "",
@@ -13011,12 +12310,7 @@ export const MARKETPLACE_CONFIG = {
         "beneficiaryOrganizations": []
       },
       "community": {
-        "tab": "challenges",
-        "featuredSignal": {
-          "es": "Reto abierto — hasta 30 sept. 2026",
-          "en": "Open challenge — until 30 Sept. 2026",
-          "va": "Repte obert — fins al 30 set. 2026"
-        }
+        "tab": "challenges"
       },
       "card": {},
       "visibility": {},
@@ -13026,33 +12320,6 @@ export const MARKETPLACE_CONFIG = {
           "en": "Can a digital twin predict and prevent overloads in the distribution grid?",
           "va": "Pot una bessona digital predir i prevenir sobrecàrregues en la xarxa de distribució?"
         },
-        "need": {
-          "es": "La creciente instalación de paneles fotovoltaicos en viviendas genera flujos bidireccionales de energía que los modelos actuales de gestión de red no anticipan correctamente. En barrios con alta concentración solar, los transformadores de media tensión registran sobrecargas hasta 3 veces por semana en verano. Necesitamos modelos predictivos que anticipen estos picos con al menos 4 horas de antelación.",
-          "en": "The growing installation of photovoltaic panels in homes generates bidirectional energy flows that current grid management models do not correctly anticipate. In neighbourhoods with high solar concentration, medium-voltage transformers record overloads up to 3 times per week in summer. We need predictive models that anticipate these peaks at least 4 hours in advance.",
-          "va": "La creixent instal·lació de panells fotovoltaics en habitatges genera fluxos bidireccionals d'energia que els models actuals de gestió de xarxa no anticipen correctament. En barris amb alta concentració solar, els transformadors de mitja tensió registren sobrecàrregues fins a 3 vegades per setmana a l'estiu. Necessitem models predictius que anticipen estos pics amb almenys 4 hores d'antelació."
-        },
-        "context": {
-          "es": "Endesa Distribución opera más de 2.400 km de red de distribución en la Comunitat Valenciana. Dispone de datos históricos anonimizados de consumo y generación a nivel de transformador para los años 2022-2025, junto con datos meteorológicos de AEMET. El prototipo debe integrarse conceptualmente con los sistemas SCADA existentes y demostrar su funcionalidad en un barrio piloto real de Valencia capital.",
-          "en": "Endesa Distribución operates more than 2,400 km of distribution network in the Valencian Community. It has anonymised historical consumption and generation data at transformer level for 2022-2025, along with AEMET meteorological data. The prototype must conceptually integrate with existing SCADA systems and demonstrate its functionality in a real pilot neighbourhood in Valencia city.",
-          "va": "Endesa Distribució opera més de 2.400 km de xarxa de distribució a la Comunitat Valenciana. Disposa de dades històriques anonimitzades de consum i generació a nivell de transformador per als anys 2022-2025, juntament amb dades meteorològiques d'AEMET. El prototip ha d'integrar-se conceptualment amb els sistemes SCADA existents i demostrar la seua funcionalitat en un barri pilot real de València capital."
-        },
-        "participation": {
-          "audienceText": {
-            "es": "Equipos multidisciplinares de 2 a 5 personas con experiencia en modelado de datos o sistemas de control. Se valora especialmente la participación de equipos mixtos empresa–centro educativo.",
-            "en": "Multidisciplinary teams of 2 to 5 people with experience in data modelling or control systems. Mixed company–educational centre teams are particularly valued.",
-            "va": "Equips multidisciplinaris de 2 a 5 persones amb experiència en modelatge de dades o sistemes de control. Es valora especialment la participació d'equips mixtos empresa–centre educatiu."
-          },
-          "formatText": {
-            "es": "Entrega de prototipo funcional (repositorio GitHub) + documento de arquitectura (máx. 10 páginas) + vídeo demostración de 3 minutos. La evaluación se realiza en dos fases — revisión técnica y presentación ante el jurado de Endesa.",
-            "en": "Submission of functional prototype (GitHub repository) + architecture document (max. 10 pages) + 3-minute demonstration video. Evaluation takes place in two phases — technical review and presentation before the Endesa jury.",
-            "va": "Lliurament de prototip funcional (repositori GitHub) + document d'arquitectura (màx. 10 pàgines) + vídeo demostració de 3 minuts. L'avaluació es realitza en dues fases — revisió tècnica i presentació davant el jurat d'Endesa."
-          },
-          "transferValue": {
-            "es": "El prototipo seleccionado se incorporará al programa Track B de AI-STEAM como caso de referencia en el sector energético. Todos los repositorios se publicarán en abierto bajo licencia MIT con atribución a los autores.",
-            "en": "The selected prototype will be incorporated into AI-STEAM's Track B programme as a reference case in the energy sector. All repositories will be published openly under MIT licence with attribution to the authors.",
-            "va": "El prototip seleccionat s'incorporarà al programa Track B d'AI-STEAM com a cas de referència en el sector energètic. Tots els repositoris es publicaran en obert sota llicència MIT amb atribució als autors."
-          }
-        },
         "reward": {
           "es": "El equipo ganador recibe: (1) contrato de prueba de concepto con Endesa por valor de 15.000 €, (2) mentoría técnica de 3 meses con el equipo de innovación de redes, (3) publicación del caso en el Marketplace AI-STEAM como caso verificado.",
           "en": "The winning team receives: (1) proof-of-concept contract with Endesa worth €15,000, (2) 3-month technical mentoring with the grid innovation team, (3) publication of the case in the AI-STEAM Marketplace as a verified case.",
@@ -13061,20 +12328,20 @@ export const MARKETPLACE_CONFIG = {
       },
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
-        "contributionVisibility": "external-managed",
+        "contributionVisibility": "",
         "sensitiveDataPolicy": {
-          "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-          "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-          "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "rightsNote": {
-          "es": "Los prototipos presentados se publicarán bajo licencia MIT con atribución. El dataset proporcionado por Endesa es de uso exclusivo para este reto y no puede redistribuirse.",
-          "en": "Submitted prototypes will be published under MIT licence with attribution. The dataset provided by Endesa is for exclusive use in this challenge and may not be redistributed.",
-          "va": "Els prototips presentats es publicaran sota llicència MIT amb atribució. El dataset proporcionat per Endesa és d'ús exclusiu per a este repte i no pot redistribuir-se."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -13084,7 +12351,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -13109,9 +12376,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar participación",
-            "en": "Request participation",
-            "va": "Sol·licitar participació"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -13127,9 +12394,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "fallbackContact": {
           "label": {
-            "es": "Contactar con la coordinación del reto",
-            "en": "Contact the challenge coordination desk",
-            "va": "Contactar amb la coordinació del repte"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": ""
         }
@@ -13142,176 +12409,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "available": [
-          {
-            "label": {
-              "es": "Dataset histórico de consumo y generación (2022-2025) — anonimizado",
-              "en": "Historical consumption and generation dataset (2022-2025) — anonymised",
-              "va": "Dataset històric de consum i generació (2022-2025) — anonimitzat"
-            },
-            "format": "CSV",
-            "license": "Uso restringido al reto"
-          },
-          {
-            "label": {
-              "es": "Documentación de la API conceptual SCADA para integración",
-              "en": "Conceptual SCADA API documentation for integration",
-              "va": "Documentació de l'API conceptual SCADA per a integració"
-            },
-            "format": "PDF",
-            "license": "CC BY 4.0"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/challenges/reto-gemelo-digital-red-electrica-ene/",
-        "items": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Gemelo digital red eléctrica",
-              "en": "Challenge brief — Electricity grid digital twin",
-              "va": "Fitxa del repte — Bessona digital xarxa elèctrica"
-            },
-            "description": {
-              "es": "Descripción completa del reto, criterios de evaluación, condiciones de participación y calendario.",
-              "en": "Full challenge description, evaluation criteria, participation conditions and calendar.",
-              "va": "Descripció completa del repte, criteris d'avaluació, condicions de participació i calendari."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-gemelo-digital-ene.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "evaluation-criteria",
-            "type": "criteria",
-            "title": {
-              "es": "Criterios de evaluación técnica",
-              "en": "Technical evaluation criteria",
-              "va": "Criteris d'avaluació tècnica"
-            },
-            "description": {
-              "es": "Rúbrica detallada con los criterios técnicos y de impacto que usará el jurado de Endesa para evaluar los prototipos.",
-              "en": "Detailed rubric with the technical and impact criteria the Endesa jury will use to evaluate prototypes.",
-              "va": "Rúbrica detallada amb els criteris tècnics i d'impacte que usarà el jurat d'Endesa per avaluar els prototips."
-            },
-            "files": [
-              {
-                "file": "criterios-evaluacion-gemelo-digital.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
-      "outputs": {
-        "expected": [
-          {
-            "id": "prototype-repo",
-            "label": {
-              "es": "Repositorio GitHub con el prototipo funcional y README detallado",
-              "en": "GitHub repository with functional prototype and detailed README",
-              "va": "Repositori GitHub amb el prototip funcional i README detallat"
-            }
-          },
-          {
-            "id": "architecture-doc",
-            "label": {
-              "es": "Documento de arquitectura del gemelo digital (máx. 10 páginas)",
-              "en": "Digital twin architecture document (max. 10 pages)",
-              "va": "Document d'arquitectura de la bessona digital (màx. 10 pàgines)"
-            }
-          },
-          {
-            "id": "demo-video",
-            "label": {
-              "es": "Vídeo demostración de 3 minutos con escenario de sobrecarga simulado",
-              "en": "3-minute demonstration video with simulated overload scenario",
-              "va": "Vídeo demostració de 3 minuts amb escenari de sobrecàrrega simulat"
-            }
-          }
-        ]
-      },
-      "process": {
-        "milestones": [
-          {
-            "date": "2026-06-15",
-            "label": {
-              "es": "Cierre de inscripciones de equipos",
-              "en": "Team registration deadline",
-              "va": "Tancament d'inscripcions d'equips"
-            }
-          },
-          {
-            "date": "2026-07-01",
-            "label": {
-              "es": "Acceso al dataset histórico para equipos inscritos",
-              "en": "Access to historical dataset for registered teams",
-              "va": "Accés al dataset històric per a equips inscrits"
-            }
-          },
-          {
-            "date": "2026-09-30",
-            "label": {
-              "es": "Entrega de prototipos",
-              "en": "Prototype submission",
-              "va": "Lliurament de prototips"
-            }
-          },
-          {
-            "date": "2026-10-20",
-            "label": {
-              "es": "Presentación ante jurado y resolución",
-              "en": "Jury presentation and resolution",
-              "va": "Presentació davant el jurat i resolució"
-            }
-          }
-        ]
-      },
-      "hasDownloads": true,
-      "downloadCount": 2,
-      "cardDownloads": [
-        {
-          "id": "challenge-brief",
-          "type": "brief",
-          "title": {
-            "es": "Ficha del reto — Gemelo digital red eléctrica",
-            "en": "Challenge brief — Electricity grid digital twin",
-            "va": "Fitxa del repte — Bessona digital xarxa elèctrica"
-          },
-          "description": {
-            "es": "Descripción completa del reto, criterios de evaluación, condiciones de participación y calendario.",
-            "en": "Full challenge description, evaluation criteria, participation conditions and calendar.",
-            "va": "Descripció completa del repte, criteris d'avaluació, condicions de participació i calendari."
-          },
-          "files": [
-            {
-              "file": "ficha-reto-gemelo-digital-ene.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "outputs": null,
+      "process": null,
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "challenge",
@@ -13324,7 +12432,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": null
@@ -13342,9 +12450,9 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
+            "trackA": true,
             "relations": false,
-            "evidence": false,
+            "evidence": true,
             "transferability": true,
             "summary": true,
             "originContext": true,
@@ -13399,7 +12507,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "Correos i l'Ajuntament de València busquen solucions d'IA per optimitzar les rutes de repartiment d'última milla al centre històric, combinant dades de trànsit en temps real, restriccions d'accés a zones de baixes emissions, disponibilitat de punts de consigna i preferències de lliurament dels destinataris, amb l'objectiu de reduir les emissions de CO₂ un 25% en 18 mesos."
         },
         "entity": {
-          "name": "Correos — Dirección de Operaciones Zona Mediterráneo",
+          "name": "",
           "type": {
             "es": "Operador postal y logístico de referencia en España",
             "en": "Reference postal and logistics operator in Spain",
@@ -13446,12 +12554,12 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "origin": null,
         "requester": {
-          "name": "Correos — Dirección de Operaciones Zona Mediterráneo",
+          "name": "",
           "publicLabel": {
             "es": "Operador postal y logístico de referencia en España",
             "en": "Reference postal and logistics operator in Spain",
@@ -13459,38 +12567,20 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "leadTeam": null,
-        "contact": {
-          "name": "Coordinación AI-STEAM",
-          "org": "CEICE",
-          "role": {
-            "es": "Punto de contacto para expresiones de interés",
-            "en": "Contact point for expressions of interest",
-            "va": "Punt de contacte per a expressions d'interès"
-          }
-        },
+        "contact": null,
         "beneficiaries": []
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "maker-steam"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green",
-          "social"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "infrastructure-evidence"
-        ],
-        "engagementLevel": "challenge-contribution",
-        "evidenceMaturity": "prototype",
-        "lbdStage": "process",
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
         "trackBValue": {
-          "es": "Algoritmo de optimización de rutas publicado en abierto, adaptable a cualquier operador logístico urbano con datos de tráfico y restricciones de zona.",
-          "en": "Open-source route optimisation algorithm, adaptable to any urban logistics operator with traffic data and zone restrictions.",
-          "va": "Algorisme d'optimització de rutes publicat en obert, adaptable a qualsevol operador logístic urbà amb dades de trànsit i restriccions de zona."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
         "pilotStatus": "",
@@ -13521,12 +12611,7 @@ export const MARKETPLACE_CONFIG = {
         "beneficiaryOrganizations": []
       },
       "community": {
-        "tab": "challenges",
-        "featuredSignal": {
-          "es": "Reto abierto — última milla sostenible",
-          "en": "Open challenge — sustainable last mile",
-          "va": "Repte obert — última milla sostenible"
-        }
+        "tab": "challenges"
       },
       "card": {},
       "visibility": {},
@@ -13536,33 +12621,6 @@ export const MARKETPLACE_CONFIG = {
           "en": "Can AI reduce urban delivery emissions while complying with LEZ restrictions?",
           "va": "Pot la IA reduir les emissions del repartiment urbà respectant les ZBE?"
         },
-        "need": {
-          "es": "El centro histórico de Valencia tiene 14 km² con restricciones de acceso horario, 3 zonas de bajas emisiones y más de 200 puntos de consigna automatizados. Los repartidores de Correos utilizan actualmente rutas estáticas planificadas el día anterior. La variabilidad del tráfico, los intentos fallidos de entrega y los cambios en las restricciones generan un sobrecoste operativo del 18% y emisiones evitables de CO₂.",
-          "en": "Valencia's historic centre covers 14 km² with time-restricted access, 3 low-emission zones and more than 200 automated parcel lockers. Correos delivery staff currently use static routes planned the previous day. Traffic variability, failed delivery attempts and changes in restrictions generate an 18% operational overcost and avoidable CO₂ emissions.",
-          "va": "El centre històric de València té 14 km² amb restriccions d'accés horari, 3 zones de baixes emissions i més de 200 punts de consigna automatitzats. Els repartidors de Correos utilitzen actualment rutes estàtiques planificades el dia anterior. La variabilitat del trànsit, els intents fallits de lliurament i els canvis en les restriccions generen un sobrecost operatiu del 18% i emissions evitables de CO₂."
-        },
-        "context": {
-          "es": "Correos facilita datos anonimizados de 6 meses de rutas reales, tiempos de entrega, intentos fallidos y coordenadas de puntos de consigna. El Ayuntamiento proporciona los datos de restricciones de acceso a ZBE en tiempo real. La solución debe integrarse con los terminales Android de los repartidores y funcionar sin conexión en caso de pérdida de señal.",
-          "en": "Correos provides 6 months of anonymised data on real routes, delivery times, failed attempts and parcel locker coordinates. The City Council provides real-time LEZ access restriction data. The solution must integrate with delivery staff's Android terminals and work offline in case of signal loss.",
-          "va": "Correos facilita dades anonimitzades de 6 mesos de rutes reals, temps de lliurament, intents fallits i coordenades de punts de consigna. L'Ajuntament proporciona les dades de restriccions d'accés a ZBE en temps real. La solució ha d'integrar-se amb els terminals Android dels repartidors i funcionar sense connexió en cas de pèrdua de senyal."
-        },
-        "participation": {
-          "audienceText": {
-            "es": "Equipos de 2 a 5 personas con experiencia en optimización combinatoria, aprendizaje por refuerzo o sistemas de información geográfica. Se valoran especialmente soluciones que involucren a alumnos de FP de Transporte y Logística.",
-            "en": "Teams of 2 to 5 people with experience in combinatorial optimisation, reinforcement learning or geographic information systems. Solutions involving Transport and Logistics VET students are particularly valued.",
-            "va": "Equips de 2 a 5 persones amb experiència en optimització combinatòria, aprenentatge per reforç o sistemes d'informació geogràfica. Es valoren especialment solucions que involucren alumnes de FP de Transport i Logística."
-          },
-          "formatText": {
-            "es": "Entrega de: algoritmo documentado (repositorio GitHub), simulación sobre los datos históricos proporcionados con métricas de reducción de distancia y emisiones, y demostración en una ruta real de Valencia durante 1 semana.",
-            "en": "Submission of: documented algorithm (GitHub repository), simulation on the provided historical data with distance and emissions reduction metrics, and demonstration on a real Valencia route for 1 week.",
-            "va": "Lliurament de: algorisme documentat (repositori GitHub), simulació sobre les dades històriques proporcionades amb mètriques de reducció de distància i emissions, i demostració en una ruta real de València durant 1 setmana."
-          },
-          "transferValue": {
-            "es": "La solución seleccionada se pilotará en 5 rutas reales de Valencia durante 3 meses, con medición de emisiones certificada. Los resultados se publicarán como caso de referencia en movilidad sostenible.",
-            "en": "The selected solution will be piloted on 5 real Valencia routes for 3 months, with certified emissions measurement. Results will be published as a sustainable mobility reference case.",
-            "va": "La solució seleccionada es pilotarà en 5 rutes reals de València durant 3 mesos, amb mesurament d'emissions certificat. Els resultats es publicaran com a cas de referència en mobilitat sostenible."
-          }
-        },
         "reward": {
           "es": "El equipo ganador recibe: (1) contrato de piloto con Correos con retribución de 20.000 €, (2) acceso a la red de operadores logísticos ALIA para escalado, (3) certificación de impacto ambiental emitida por el Ayuntamiento de Valencia.",
           "en": "The winning team receives: (1) pilot contract with Correos worth €20,000, (2) access to the ALIA logistics operator network for scaling, (3) environmental impact certification issued by Valencia City Council.",
@@ -13571,20 +12629,20 @@ export const MARKETPLACE_CONFIG = {
       },
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
-        "contributionVisibility": "external-managed",
+        "contributionVisibility": "",
         "sensitiveDataPolicy": {
-          "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-          "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-          "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "rightsNote": {
-          "es": "Los algoritmos desarrollados se publicarán bajo licencia MIT. Los datos de Correos son de uso exclusivo para el reto y no pueden redistribuirse ni usarse fuera del contexto de la competición.",
-          "en": "Developed algorithms will be published under MIT licence. Correos data is for exclusive use in the challenge and may not be redistributed or used outside the competition context.",
-          "va": "Els algorismes desenvolupats es publicaran sota llicència MIT. Les dades de Correos són d'ús exclusiu per al repte i no poden redistribuir-se ni usar-se fora del context de la competició."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -13594,7 +12652,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -13619,9 +12677,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar participación",
-            "en": "Request participation",
-            "va": "Sol·licitar participació"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -13637,9 +12695,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "fallbackContact": {
           "label": {
-            "es": "Contactar con la coordinación del reto",
-            "en": "Contact the challenge coordination desk",
-            "va": "Contactar amb la coordinació del repte"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": ""
         }
@@ -13652,176 +12710,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "available": [
-          {
-            "label": {
-              "es": "Dataset de rutas y entregas Correos — centro histórico Valencia (6 meses, anonimizado)",
-              "en": "Correos routes and deliveries dataset — Valencia historic centre (6 months, anonymised)",
-              "va": "Dataset de rutes i lliuraments Correos — centre històric València (6 mesos, anonimitzat)"
-            },
-            "format": "GeoJSON + CSV",
-            "license": "Uso restringido al reto"
-          },
-          {
-            "label": {
-              "es": "API de restricciones de acceso ZBE Valencia — datos en tiempo real",
-              "en": "Valencia LEZ access restrictions API — real-time data",
-              "va": "API de restriccions d'accés ZBE València — dades en temps real"
-            },
-            "format": "REST API (JSON)",
-            "license": "Open Data Valencia"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/challenges/reto-optimizacion-rutas-logistica-mob/",
-        "items": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Optimización de rutas última milla",
-              "en": "Challenge brief — Last-mile route optimisation",
-              "va": "Fitxa del repte — Optimització de rutes última milla"
-            },
-            "description": {
-              "es": "Descripción completa del reto, formato de los datos, métricas de evaluación y condiciones del piloto.",
-              "en": "Full challenge description, data format, evaluation metrics and pilot conditions.",
-              "va": "Descripció completa del repte, format de les dades, mètriques d'avaluació i condicions del pilot."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-rutas-logistica-mob.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "data-dictionary",
-            "type": "guide",
-            "title": {
-              "es": "Diccionario de datos — Dataset rutas Correos",
-              "en": "Data dictionary — Correos routes dataset",
-              "va": "Diccionari de dades — Dataset rutes Correos"
-            },
-            "description": {
-              "es": "Descripción de los campos, formatos y estructuras del dataset de rutas y entregas proporcionado por Correos.",
-              "en": "Description of fields, formats and structures of the routes and deliveries dataset provided by Correos.",
-              "va": "Descripció dels camps, formats i estructures del dataset de rutes i lliuraments proporcionat per Correos."
-            },
-            "files": [
-              {
-                "file": "diccionario-datos-rutas-correos.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
-      "outputs": {
-        "expected": [
-          {
-            "id": "algorithm-repo",
-            "label": {
-              "es": "Repositorio GitHub con el algoritmo de optimización documentado",
-              "en": "GitHub repository with the documented optimisation algorithm",
-              "va": "Repositori GitHub amb l'algorisme d'optimització documentat"
-            }
-          },
-          {
-            "id": "simulation-results",
-            "label": {
-              "es": "Simulación sobre datos históricos con métricas de reducción de emisiones",
-              "en": "Simulation on historical data with emissions reduction metrics",
-              "va": "Simulació sobre dades històriques amb mètriques de reducció d'emissions"
-            }
-          },
-          {
-            "id": "android-integration",
-            "label": {
-              "es": "Módulo de integración con terminales Android de repartidores",
-              "en": "Integration module for delivery staff Android terminals",
-              "va": "Mòdul d'integració amb terminals Android de repartidors"
-            }
-          }
-        ]
-      },
-      "process": {
-        "milestones": [
-          {
-            "date": "2026-06-01",
-            "label": {
-              "es": "Cierre de inscripciones y acceso al dataset",
-              "en": "Registration deadline and dataset access",
-              "va": "Tancament d'inscripcions i accés al dataset"
-            }
-          },
-          {
-            "date": "2026-10-31",
-            "label": {
-              "es": "Entrega de algoritmos y simulaciones",
-              "en": "Algorithm and simulation submission",
-              "va": "Lliurament d'algorismes i simulacions"
-            }
-          },
-          {
-            "date": "2026-11-15",
-            "label": {
-              "es": "Selección de finalistas y prueba piloto en ruta real",
-              "en": "Finalist selection and real-route pilot test",
-              "va": "Selecció de finalistes i prova pilot en ruta real"
-            }
-          },
-          {
-            "date": "2026-12-10",
-            "label": {
-              "es": "Resolución y anuncio del equipo ganador",
-              "en": "Resolution and announcement of winning team",
-              "va": "Resolució i anunci de l'equip guanyador"
-            }
-          }
-        ]
-      },
-      "hasDownloads": true,
-      "downloadCount": 2,
-      "cardDownloads": [
-        {
-          "id": "challenge-brief",
-          "type": "brief",
-          "title": {
-            "es": "Ficha del reto — Optimización de rutas última milla",
-            "en": "Challenge brief — Last-mile route optimisation",
-            "va": "Fitxa del repte — Optimització de rutes última milla"
-          },
-          "description": {
-            "es": "Descripción completa del reto, formato de los datos, métricas de evaluación y condiciones del piloto.",
-            "en": "Full challenge description, data format, evaluation metrics and pilot conditions.",
-            "va": "Descripció completa del repte, format de les dades, mètriques d'avaluació i condicions del pilot."
-          },
-          "files": [
-            {
-              "file": "ficha-reto-rutas-logistica-mob.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "outputs": null,
+      "process": null,
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "challenge",
@@ -13834,7 +12733,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": null
@@ -13852,9 +12751,9 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
+            "trackA": true,
             "relations": false,
-            "evidence": false,
+            "evidence": true,
             "transferability": true,
             "summary": true,
             "originContext": true,
@@ -15193,8 +14092,8 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "origin": null,
         "requester": {
@@ -15206,40 +14105,20 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "leadTeam": null,
-        "contact": {
-          "name": "AI-STEAM Network Desk",
-          "org": "CEICE",
-          "role": {
-            "es": "Punto de coordinación Track B",
-            "en": "Track B coordination point",
-            "va": "Punt de coordinació Track B"
-          }
-        },
+        "contact": null,
         "beneficiaries": []
       },
       "classification": {
-        "aiSteamFocus": [
-          "creative-ai",
-          "data-ai",
-          "maker-steam"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green",
-          "social"
-        ],
-        "policyCluster": [
-          "triple-transition",
-          "learning-ecosystems",
-          "infrastructure-evidence"
-        ],
-        "engagementLevel": "challenge-contribution",
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
+        "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
         "trackBValue": {
-          "es": "Convierte una necesidad institucional en una oportunidad abierta para colaboración entre centros, empresas creativas y expertos en IA responsable.",
-          "en": "Turns an institutional need into an open collaboration opportunity for schools, creative companies and responsible AI experts.",
-          "va": "Converteix una necessitat institucional en una oportunitat oberta de col·laboració entre centres, empreses creatives i experts en IA responsable."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
         "pilotStatus": "",
@@ -15273,12 +14152,7 @@ export const MARKETPLACE_CONFIG = {
         "beneficiaryOrganizations": []
       },
       "community": {
-        "tab": "challenges",
-        "featuredSignal": {
-          "es": "Reto abierto hasta septiembre de 2026",
-          "en": "Challenge open until September 2026",
-          "va": "Repte obert fins a setembre de 2026"
-        }
+        "tab": "challenges"
       },
       "card": {},
       "visibility": {},
@@ -15288,33 +14162,6 @@ export const MARKETPLACE_CONFIG = {
           "en": "Design green interventions with generative AI",
           "va": "Dissenyar intervencions verdes amb IA generativa"
         },
-        "need": {
-          "es": "Identificar intervenciones viables para mejorar sostenibilidad y bienestar en espacios educativos usando IA como apoyo creativo, no como sustituto de la deliberación humana.",
-          "en": "Identify feasible interventions to improve sustainability and wellbeing in learning spaces using AI as a creative support, not as a replacement for human deliberation.",
-          "va": "Identificar intervencions viables per a millorar sostenibilitat i benestar en espais educatius usant IA com a suport creatiu, no com a substitut de la deliberació humana."
-        },
-        "context": {
-          "es": "El reto se sitúa en el espacio Track B de la red y busca propuestas transferibles a centros educativos con diferente capacidad tecnológica.",
-          "en": "The challenge sits in the Track B network space and seeks proposals transferable to educational centres with different levels of technological capacity.",
-          "va": "El repte se situa en l'espai Track B de la xarxa i busca propostes transferibles a centres educatius amb diferent capacitat tecnològica."
-        },
-        "participation": {
-          "audienceText": {
-            "es": "Centros educativos, administraciones, empresas de energía, estudios creativos, docentes y alumnado avanzado.",
-            "en": "Educational centres, public administrations, energy companies, creative studios, teachers and advanced learners.",
-            "va": "Centres educatius, administracions, empreses d'energia, estudis creatius, docents i alumnat avançat."
-          },
-          "formatText": {
-            "es": "Contribución abierta de ideas, datos de contexto, prototipos o metodologías.",
-            "en": "Open contribution of ideas, contextual data, prototypes or methodologies.",
-            "va": "Contribució oberta d'idees, dades de context, prototips o metodologies."
-          },
-          "transferValue": {
-            "es": "La red obtiene un brief común, ejemplos de intervención y criterios de transferencia para otros centros interesados en IA, creatividad y sostenibilidad.",
-            "en": "The network gains a shared brief, intervention examples and transfer criteria for other centres interested in AI, creativity and sustainability.",
-            "va": "La xarxa obté un brief comú, exemples d'intervenció i criteris de transferència per a altres centres interessats en IA, creativitat i sostenibilitat."
-          }
-        },
         "reward": {
           "es": "Reconocimiento de participación y posibilidad de derivación a actividad LbD.",
           "en": "Participation recognition and possible routing into an LbD activity.",
@@ -15323,20 +14170,20 @@ export const MARKETPLACE_CONFIG = {
       },
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
-        "contributionVisibility": "external-managed",
+        "contributionVisibility": "",
         "sensitiveDataPolicy": {
-          "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-          "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-          "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "rightsNote": {
-          "es": "Las contribuciones públicas deberán poder compartirse como conocimiento abierto o describirse sin datos sensibles.",
-          "en": "Public contributions must be shareable as open knowledge or describable without sensitive data.",
-          "va": "Les contribucions públiques hauran de poder compartir-se com a coneixement obert o descriure's sense dades sensibles."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -15346,7 +14193,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -15387,7 +14234,14 @@ export const MARKETPLACE_CONFIG = {
           },
           "url": ""
         },
-        "fallbackContact": null
+        "fallbackContact": {
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        }
       },
       "relations": {
         "originChallengeId": "",
@@ -15397,132 +14251,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "available": [
-          {
-            "label": {
-              "es": "Plantilla de diagnóstico de espacios",
-              "en": "Learning-space diagnosis template",
-              "va": "Plantilla de diagnòstic d'espais"
-            },
-            "format": [
-              "odt",
-              "pdf"
-            ],
-            "license": "CC BY 4.0"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/challenges/creative-ai-green-campus/",
-        "items": [
-          {
-            "id": "proposal-template",
-            "type": "template",
-            "title": {
-              "es": "Plantilla de propuesta",
-              "en": "Proposal template",
-              "va": "Plantilla de proposta"
-            },
-            "description": {
-              "es": "Documento editable para estructurar una propuesta de intervención.",
-              "en": "Editable document to structure an intervention proposal.",
-              "va": "Document editable per a estructurar una proposta d'intervenció."
-            },
-            "files": [
-              {
-                "file": "plantilla-propuesta-campus-verde.odt",
-                "format": "odt",
-                "language": "es",
-                "license": ""
-              },
-              {
-                "file": "plantilla-propuesta-campus-verde.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": ""
-              }
-            ],
-            "license": "CC BY 4.0",
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
-      "outputs": {
-        "expected": [
-          {
-            "id": "opportunity-map",
-            "label": {
-              "es": "Mapa de oportunidades de mejora",
-              "en": "Opportunity map for improvements",
-              "va": "Mapa d'oportunitats de millora"
-            }
-          },
-          {
-            "id": "intervention-prototype",
-            "label": {
-              "es": "Prototipo visual o narrativo de intervención",
-              "en": "Visual or narrative intervention prototype",
-              "va": "Prototip visual o narratiu d'intervenció"
-            }
-          }
-        ]
-      },
-      "process": {
-        "milestones": [
-          {
-            "date": "2026-06-15",
-            "label": {
-              "es": "Apertura de contribuciones",
-              "en": "Contribution window opens",
-              "va": "Obertura de contribucions"
-            }
-          },
-          {
-            "date": "2026-09-30",
-            "label": {
-              "es": "Cierre de recepción de propuestas",
-              "en": "Submission window closes",
-              "va": "Tancament de recepció de propostes"
-            }
-          }
-        ]
-      },
-      "hasDownloads": true,
-      "downloadCount": 1,
-      "cardDownloads": [
-        {
-          "id": "proposal-template",
-          "type": "template",
-          "title": {
-            "es": "Plantilla de propuesta",
-            "en": "Proposal template",
-            "va": "Plantilla de proposta"
-          },
-          "description": {
-            "es": "Documento editable para estructurar una propuesta de intervención.",
-            "en": "Editable document to structure an intervention proposal.",
-            "va": "Document editable per a estructurar una proposta d'intervenció."
-          },
-          "files": [
-            {
-              "file": "plantilla-propuesta-campus-verde.odt",
-              "format": "odt",
-              "language": "es"
-            },
-            {
-              "file": "plantilla-propuesta-campus-verde.pdf",
-              "format": "pdf",
-              "language": "es"
-            }
-          ],
-          "license": "CC BY 4.0",
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "outputs": null,
+      "process": null,
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "challenge",
@@ -15535,7 +14274,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": null
@@ -15553,9 +14292,9 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
+            "trackA": true,
             "relations": false,
-            "evidence": false,
+            "evidence": true,
             "transferability": true,
             "summary": true,
             "originContext": true,
@@ -16793,7 +15532,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "Pamesa Ceràmica cerca un sistema de visió artificial capaç de detectar defectes superficials (esquerdes, bambolles, irregularitats d'esmalt) en rajoles ceràmiques a velocitats de producció de 80 peces per minut, superant la taxa de detecció humana actual del 94% i reduint el malbaratament de material en un 15%."
         },
         "entity": {
-          "name": "Pamesa Cerámica S.A. — Dirección de Ingeniería de Proceso",
+          "name": "",
           "type": {
             "es": "Empresa líder en fabricación de pavimento y revestimiento cerámico",
             "en": "Leading company in ceramic floor and wall tile manufacturing",
@@ -16843,12 +15582,12 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "origin": null,
         "requester": {
-          "name": "Pamesa Cerámica S.A. — Dirección de Ingeniería de Proceso",
+          "name": "",
           "publicLabel": {
             "es": "Empresa líder en fabricación de pavimento y revestimiento cerámico",
             "en": "Leading company in ceramic floor and wall tile manufacturing",
@@ -16856,37 +15595,20 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "leadTeam": null,
-        "contact": {
-          "name": "Coordinación AI-STEAM",
-          "org": "CEICE",
-          "role": {
-            "es": "Punto de contacto para expresiones de interés",
-            "en": "Contact point for expressions of interest",
-            "va": "Punt de contacte per a expressions d'interès"
-          }
-        },
+        "contact": null,
         "beneficiaries": []
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "maker-steam"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "infrastructure-evidence"
-        ],
-        "engagementLevel": "challenge-contribution",
-        "evidenceMaturity": "pilot",
-        "lbdStage": "process",
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
         "trackBValue": {
-          "es": "Sistema de visión artificial para defectos cerámicos publicado en abierto, adaptable a cualquier fabricante del sector Tile of Spain con líneas de producción similares.",
-          "en": "Open-source ceramic defect computer vision system, adaptable to any Tile of Spain manufacturer with similar production lines.",
-          "va": "Sistema de visió artificial per a defectes ceràmics publicat en obert, adaptable a qualsevol fabricant del sector Tile of Spain amb línies de producció similars."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
         "pilotStatus": "",
@@ -16917,12 +15639,7 @@ export const MARKETPLACE_CONFIG = {
         "beneficiaryOrganizations": []
       },
       "community": {
-        "tab": "challenges",
-        "featuredSignal": {
-          "es": "Piloto en planta — sector cerámico valenciano",
-          "en": "Factory pilot — Valencian ceramic sector",
-          "va": "Pilot en planta — sector ceràmic valencià"
-        }
+        "tab": "challenges"
       },
       "card": {},
       "visibility": {},
@@ -16932,33 +15649,6 @@ export const MARKETPLACE_CONFIG = {
           "en": "Can AI exceed human defect detection in ceramics at 80 pieces/min?",
           "va": "Pot la IA superar la detecció humana de defectes en ceràmica a 80 peces/min?"
         },
-        "need": {
-          "es": "El control de calidad visual actual de Pamesa se realiza con 3 operarios por turno que inspeccionan cada baldosa durante el proceso de selección y embalaje. La fatiga visual después de 4 horas reduce la tasa de detección del 97% al 89%. Los defectos no detectados generan reclamaciones de clientes valoradas en 2,3 M€ anuales. Se necesita un sistema que mantenga una tasa de detección superior al 96% durante las 8 horas del turno.",
-          "en": "Pamesa's current visual quality control uses 3 operators per shift inspecting each tile during the selection and packaging process. Visual fatigue after 4 hours reduces the detection rate from 97% to 89%. Undetected defects generate customer claims valued at €2.3M annually. A system is needed that maintains a detection rate above 96% throughout the 8-hour shift.",
-          "va": "El control de qualitat visual actual de Pamesa es realitza amb 3 operaris per torn que inspeccionen cada rajola durant el procés de selecció i embalatge. La fatiga visual després de 4 hores redueix la taxa de detecció del 97% al 89%. Els defectes no detectats generen reclamacions de clients valorades en 2,3 M€ anuals. Es necessita un sistema que mantinga una taxa de detecció superior al 96% durant les 8 hores del torn."
-        },
-        "context": {
-          "es": "Pamesa dispone de una línea de producción piloto instrumentada con cámaras de alta velocidad (10.000 fps) y sistema de iluminación UV ya instalados. Facilita un dataset de 50.000 imágenes etiquetadas con 12 tipos de defectos cerámicos y acceso a la línea piloto para validación real durante 2 semanas. El sistema debe funcionar en tiempo real con una latencia máxima de 12 ms por imagen.",
-          "en": "Pamesa has a pilot production line instrumented with high-speed cameras (10,000 fps) and UV lighting system already installed. It provides a dataset of 50,000 labelled images with 12 types of ceramic defects and access to the pilot line for real validation for 2 weeks. The system must work in real time with a maximum latency of 12 ms per image.",
-          "va": "Pamesa disposa d'una línia de producció pilot instrumentada amb càmeres d'alta velocitat (10.000 fps) i sistema d'il·luminació UV ja instal·lats. Facilita un dataset de 50.000 imatges etiquetades amb 12 tipus de defectes ceràmics i accés a la línia pilot per a validació real durant 2 setmanes. El sistema ha de funcionar en temps real amb una latència màxima de 12 ms per imatge."
-        },
-        "participation": {
-          "audienceText": {
-            "es": "Equipos de 2 a 5 personas con experiencia en visión por computador en tiempo real y despliegue en edge computing (GPU industrial). Se valorará la participación de alumnos de FP de Fabricación Mecánica o Mecatrónica.",
-            "en": "Teams of 2 to 5 people with experience in real-time computer vision and edge computing deployment (industrial GPU). Participation of Mechanical Manufacturing or Mechatronics VET students is valued.",
-            "va": "Equips de 2 a 5 persones amb experiència en visió per computador en temps real i desplegament en edge computing (GPU industrial). Es valorarà la participació d'alumnes de FP de Fabricació Mecànica o Mecatrònica."
-          },
-          "formatText": {
-            "es": "Entrega de: modelo exportado a ONNX o TensorRT, sistema de inferencia con latencia documentada, evaluación sobre el conjunto de test con matriz de confusión por tipo de defecto, y demostración en línea piloto real de Pamesa.",
-            "en": "Submission of: model exported to ONNX or TensorRT, inference system with documented latency, evaluation on the test set with confusion matrix by defect type, and demonstration on Pamesa's real pilot line.",
-            "va": "Lliurament de: model exportat a ONNX o TensorRT, sistema d'inferència amb latència documentada, avaluació sobre el conjunt de test amb matriu de confusió per tipus de defecte, i demostració en línia pilot real de Pamesa."
-          },
-          "transferValue": {
-            "es": "El sistema validado se publicará como solución de referencia para el sector cerámico español (Tile of Spain, ASCER). Los datos de defectos enriquecidos con las anotaciones del equipo ganador se publicarán como dataset abierto.",
-            "en": "The validated system will be published as a reference solution for the Spanish ceramic sector (Tile of Spain, ASCER). The defect data enriched with the winning team's annotations will be published as an open dataset.",
-            "va": "El sistema validat es publicarà com a solució de referència per al sector ceràmic espanyol (Tile of Spain, ASCER). Les dades de defectes enriquides amb les anotacions de l'equip guanyador es publicaran com a dataset obert."
-          }
-        },
         "reward": {
           "es": "El equipo ganador recibe: (1) contrato de implementación en planta valorado en 30.000 €, (2) acceso a las instalaciones de Pamesa para investigación en manufactura avanzada, (3) reconocimiento de ASCER como solución de referencia del sector.",
           "en": "The winning team receives: (1) factory implementation contract valued at €30,000, (2) access to Pamesa facilities for advanced manufacturing research, (3) recognition from ASCER as a sector reference solution.",
@@ -16967,20 +15657,20 @@ export const MARKETPLACE_CONFIG = {
       },
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
-        "contributionVisibility": "external-managed",
+        "contributionVisibility": "",
         "sensitiveDataPolicy": {
-          "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-          "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-          "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "rightsNote": {
-          "es": "Los modelos desarrollados se publicarán bajo licencia MIT con atribución. El dataset de imágenes de defectos es propiedad de Pamesa; la versión enriquecida se publicará bajo licencia CC BY-SA 4.0 con atribución.",
-          "en": "Developed models will be published under MIT licence with attribution. The defect image dataset is owned by Pamesa; the enriched version will be published under CC BY-SA 4.0 licence with attribution.",
-          "va": "Els models desenvolupats es publicaran sota llicència MIT amb atribució. El dataset d'imatges de defectes és propietat de Pamesa; la versió enriquida es publicarà sota llicència CC BY-SA 4.0 amb atribució."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -16990,7 +15680,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -17015,9 +15705,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar participación",
-            "en": "Request participation",
-            "va": "Sol·licitar participació"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -17033,9 +15723,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "fallbackContact": {
           "label": {
-            "es": "Contactar con la coordinación del reto",
-            "en": "Contact the challenge coordination desk",
-            "va": "Contactar amb la coordinació del repte"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": ""
         }
@@ -17048,176 +15738,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "available": [
-          {
-            "label": {
-              "es": "Dataset de 50.000 imágenes etiquetadas — 12 tipos de defectos cerámicos",
-              "en": "Dataset of 50,000 labelled images — 12 types of ceramic defects",
-              "va": "Dataset de 50.000 imatges etiquetades — 12 tipus de defectes ceràmics"
-            },
-            "format": "ZIP (PNG 1024x1024 + JSON)",
-            "license": "Uso restringido al reto"
-          },
-          {
-            "label": {
-              "es": "Especificaciones técnicas de las cámaras y sistema de iluminación instalado",
-              "en": "Technical specifications of the installed cameras and lighting system",
-              "va": "Especificacions tècniques de les càmeres i sistema d'il·luminació instal·lat"
-            },
-            "format": "PDF",
-            "license": "Confidencial — compartido con equipos inscritos"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/challenges/reto-control-calidad-vision-ia-mfg/",
-        "items": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Control de calidad visual cerámica",
-              "en": "Challenge brief — Ceramic visual quality control",
-              "va": "Fitxa del repte — Control de qualitat visual ceràmica"
-            },
-            "description": {
-              "es": "Descripción técnica completa del reto, especificaciones de latencia y precisión, estructura del dataset y condiciones del piloto en planta.",
-              "en": "Full technical description of the challenge, latency and accuracy specifications, dataset structure and factory pilot conditions.",
-              "va": "Descripció tècnica completa del repte, especificacions de latència i precisió, estructura del dataset i condicions del pilot en planta."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-vision-calidad-ceramica.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "defect-taxonomy",
-            "type": "guide",
-            "title": {
-              "es": "Taxonomía de defectos cerámicos — guía de anotación",
-              "en": "Ceramic defect taxonomy — annotation guide",
-              "va": "Taxonomia de defectes ceràmics — guia d'anotació"
-            },
-            "description": {
-              "es": "Guía visual con ejemplos de los 12 tipos de defectos cerámicos considerados en el reto, con criterios de anotación y casos límite.",
-              "en": "Visual guide with examples of the 12 ceramic defect types considered in the challenge, with annotation criteria and borderline cases.",
-              "va": "Guia visual amb exemples dels 12 tipus de defectes ceràmics considerats al repte, amb criteris d'anotació i casos límit."
-            },
-            "files": [
-              {
-                "file": "taxonomia-defectos-ceramicos-anotacion.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
-      "outputs": {
-        "expected": [
-          {
-            "id": "vision-model",
-            "label": {
-              "es": "Modelo ONNX o TensorRT con inferencia documentada a menos de 12 ms por imagen",
-              "en": "ONNX or TensorRT model with documented inference under 12 ms per image",
-              "va": "Model ONNX o TensorRT amb inferència documentada a menys de 12 ms per imatge"
-            }
-          },
-          {
-            "id": "test-evaluation",
-            "label": {
-              "es": "Evaluación sobre conjunto de test con matriz de confusión por tipo de defecto",
-              "en": "Test set evaluation with confusion matrix per defect type",
-              "va": "Avaluació sobre conjunt de test amb matriu de confusió per tipus de defecte"
-            }
-          },
-          {
-            "id": "factory-demo",
-            "label": {
-              "es": "Demostración en línea piloto real de Pamesa durante mínimo 4 horas",
-              "en": "Demonstration on Pamesa's real pilot line for a minimum of 4 hours",
-              "va": "Demostració en línia pilot real de Pamesa durant mínim 4 hores"
-            }
-          }
-        ]
-      },
-      "process": {
-        "milestones": [
-          {
-            "date": "2026-03-31",
-            "label": {
-              "es": "Cierre de inscripciones y acceso al dataset",
-              "en": "Registration deadline and dataset access",
-              "va": "Tancament d'inscripcions i accés al dataset"
-            }
-          },
-          {
-            "date": "2026-08-01",
-            "label": {
-              "es": "Entrega de modelos y evaluación técnica",
-              "en": "Model submission and technical evaluation",
-              "va": "Lliurament de models i avaluació tècnica"
-            }
-          },
-          {
-            "date": "2026-08-15",
-            "label": {
-              "es": "Demostración en planta — equipos finalistas",
-              "en": "Factory demonstration — finalist teams",
-              "va": "Demostració en planta — equips finalistes"
-            }
-          },
-          {
-            "date": "2026-08-31",
-            "label": {
-              "es": "Resolución y anuncio del equipo ganador",
-              "en": "Resolution and announcement of winning team",
-              "va": "Resolució i anunci de l'equip guanyador"
-            }
-          }
-        ]
-      },
-      "hasDownloads": true,
-      "downloadCount": 2,
-      "cardDownloads": [
-        {
-          "id": "challenge-brief",
-          "type": "brief",
-          "title": {
-            "es": "Ficha del reto — Control de calidad visual cerámica",
-            "en": "Challenge brief — Ceramic visual quality control",
-            "va": "Fitxa del repte — Control de qualitat visual ceràmica"
-          },
-          "description": {
-            "es": "Descripción técnica completa del reto, especificaciones de latencia y precisión, estructura del dataset y condiciones del piloto en planta.",
-            "en": "Full technical description of the challenge, latency and accuracy specifications, dataset structure and factory pilot conditions.",
-            "va": "Descripció tècnica completa del repte, especificacions de latència i precisió, estructura del dataset i condicions del pilot en planta."
-          },
-          "files": [
-            {
-              "file": "ficha-reto-vision-calidad-ceramica.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "outputs": null,
+      "process": null,
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "challenge",
@@ -17230,7 +15761,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": null
@@ -17248,9 +15779,9 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
+            "trackA": true,
             "relations": false,
-            "evidence": false,
+            "evidence": true,
             "transferability": true,
             "summary": true,
             "originContext": true,
@@ -19993,7 +18524,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "La Cooperativa Agrícola de Castelló cerca solucions de visió artificial capaces d'identificar símptomes inicials de les principals plagues i malalties del taronger i llimoner a partir d'imatges preses amb smartphone, abans que siguen visibles a simple vista, reduint l'ús de fitosanitaris."
         },
         "entity": {
-          "name": "Cooperativa Agrícola Sant Isidre de Castelló",
+          "name": "",
           "type": {
             "es": "Cooperativa agrícola citrícola del norte de Castellón",
             "en": "Citrus agricultural cooperative from northern Castellón",
@@ -20040,12 +18571,12 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "origin": null,
         "requester": {
-          "name": "Cooperativa Agrícola Sant Isidre de Castelló",
+          "name": "",
           "publicLabel": {
             "es": "Cooperativa agrícola citrícola del norte de Castellón",
             "en": "Citrus agricultural cooperative from northern Castellón",
@@ -20053,38 +18584,20 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "leadTeam": null,
-        "contact": {
-          "name": "Coordinación AI-STEAM",
-          "org": "CEICE",
-          "role": {
-            "es": "Punto de contacto para expresiones de interés",
-            "en": "Contact point for expressions of interest",
-            "va": "Punt de contacte per a expressions d'interès"
-          }
-        },
+        "contact": null,
         "beneficiaries": []
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "maker-steam"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green",
-          "social"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "equity-inclusion"
-        ],
-        "engagementLevel": "challenge-contribution",
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
+        "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
         "trackBValue": {
-          "es": "Dataset etiquetado de plagas en cítricos y modelo de clasificación publicado en abierto para uso de cualquier cooperativa o centro de FP Agraria.",
-          "en": "Labelled citrus pest dataset and open-source classification model for use by any cooperative or Agricultural VET centre.",
-          "va": "Dataset etiquetat de plagues en cítrics i model de classificació publicat en obert per a ús de qualsevol cooperativa o centre de FP Agrària."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "verificationStatus": "",
         "pilotStatus": "",
@@ -20116,12 +18629,7 @@ export const MARKETPLACE_CONFIG = {
         "beneficiaryOrganizations": []
       },
       "community": {
-        "tab": "challenges",
-        "featuredSignal": {
-          "es": "Reto abierto — hasta 15 oct. 2026",
-          "en": "Open challenge — until 15 Oct. 2026",
-          "va": "Repte obert — fins al 15 oct. 2026"
-        }
+        "tab": "challenges"
       },
       "card": {},
       "visibility": {},
@@ -20131,33 +18639,6 @@ export const MARKETPLACE_CONFIG = {
           "en": "Can a smartphone detect orange tree pests before the farmer sees them?",
           "va": "Pot un smartphone detectar plagues de taronger abans que l'agricultor les veja?"
         },
-        "need": {
-          "es": "Las plagas como la Phyllocnistis citrella (minador de hojas) y la Alternaria alternata (mancha marrón) pueden destruir hasta el 40% de la cosecha si no se detectan en las primeras 72 horas. Los agricultores de la cooperativa realizan inspecciones visuales semanales, pero la detección temprana automatizada reduciría el uso de fitosanitarios en un 30-50% según estimaciones propias.",
-          "en": "Pests such as Phyllocnistis citrella (leafminer) and Alternaria alternata (brown spot) can destroy up to 40% of the harvest if not detected within the first 72 hours. Cooperative farmers carry out weekly visual inspections, but early automated detection would reduce phytosanitary use by 30-50% according to their own estimates.",
-          "va": "Les plagues com la Phyllocnistis citrella (minador de fulles) i l'Alternaria alternata (taca marró) poden destruir fins al 40% de la collita si no es detecten en les primeres 72 hores. Els agricultors de la cooperativa realitzen inspeccions visuals setmanals, però la detecció primerenca automatitzada reduiria l'ús de fitosanitaris en un 30-50% segons estimacions pròpies."
-        },
-        "context": {
-          "es": "La cooperativa gestiona 1.200 hectáreas de cítricos en el norte de Castellón. Dispone de un banco de 4.000 imágenes etiquetadas de hojas y frutos con 8 tipos de plagas y enfermedades, tomadas entre 2023 y 2025 por técnicos agrícolas. El modelo resultante debe funcionar sin conexión a internet en condiciones de campo (Android 10+).",
-          "en": "The cooperative manages 1,200 hectares of citrus in northern Castellón. It has a bank of 4,000 labelled images of leaves and fruits with 8 types of pests and diseases, taken between 2023 and 2025 by agricultural technicians. The resulting model must work offline in field conditions (Android 10+).",
-          "va": "La cooperativa gestiona 1.200 hectàrees de cítrics al nord de Castelló. Disposa d'un banc de 4.000 imatges etiquetades de fulles i fruits amb 8 tipus de plagues i malalties, preses entre 2023 i 2025 per tècnics agrícoles. El model resultant ha de funcionar sense connexió a internet en condicions de camp (Android 10+)."
-        },
-        "participation": {
-          "audienceText": {
-            "es": "Equipos de 1 a 4 personas con conocimientos de visión por computador (TensorFlow Lite / ONNX). Se valoran propuestas de FP Agraria o equipos con experiencia en despliegue móvil.",
-            "en": "Teams of 1 to 4 people with knowledge of computer vision (TensorFlow Lite / ONNX). Proposals from Agricultural VET or teams with mobile deployment experience are valued.",
-            "va": "Equips d'1 a 4 persones amb coneixements de visió per computador (TensorFlow Lite / ONNX). Es valoren propostes de FP Agrària o equips amb experiència en desplegament mòbil."
-          },
-          "formatText": {
-            "es": "Entrega de modelo TFLite o ONNX exportado + aplicación Android de demostración + informe de rendimiento (precisión, recall por clase). Competición en línea con acceso al dataset tras inscripción.",
-            "en": "Submission of exported TFLite or ONNX model + Android demonstration app + performance report (accuracy, recall per class). Online competition with dataset access after registration.",
-            "va": "Lliurament de model TFLite o ONNX exportat + aplicació Android de demostració + informe de rendiment (precisió, recall per classe). Competició en línia amb accés al dataset després de la inscripció."
-          },
-          "transferValue": {
-            "es": "El modelo y el dataset ampliado se publicarán como recurso abierto en el repositorio AI-STEAM. El caso se documentará como piloto en el Marketplace si supera el umbral de precisión del 85%.",
-            "en": "The model and expanded dataset will be published as an open resource in the AI-STEAM repository. The case will be documented as a pilot in the Marketplace if it exceeds the 85% accuracy threshold.",
-            "va": "El model i el dataset ampliat es publicaran com a recurs obert al repositori AI-STEAM. El cas es documentarà com a pilot al Marketplace si supera el llindar de precisió del 85%."
-          }
-        },
         "reward": {
           "es": "El equipo ganador recibe: (1) acuerdo de colaboración para pilotar la solución en campo durante la campaña 2027, (2) acceso a mentores del IVIA (Instituto Valenciano de Investigaciones Agrarias), (3) publicación del caso en el Marketplace AI-STEAM.",
           "en": "The winning team receives: (1) collaboration agreement to pilot the solution in the field during the 2027 campaign, (2) access to mentors from IVIA (Valencian Institute of Agrarian Research), (3) publication of the case in the AI-STEAM Marketplace.",
@@ -20166,20 +18647,20 @@ export const MARKETPLACE_CONFIG = {
       },
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
-        "contributionVisibility": "external-managed",
+        "contributionVisibility": "",
         "sensitiveDataPolicy": {
-          "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-          "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-          "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "rightsNote": {
-          "es": "Los modelos entrenados con el dataset de la cooperativa podrán publicarse libremente siempre que incluyan atribución. El dataset original permanece bajo custodia de la cooperativa.",
-          "en": "Models trained on the cooperative's dataset may be freely published provided they include attribution. The original dataset remains under the cooperative's custody.",
-          "va": "Els models entrenats amb el dataset de la cooperativa podran publicar-se lliurement sempre que incloguen atribució. El dataset original roman sota custòdia de la cooperativa."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -20189,7 +18670,7 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -20214,9 +18695,9 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar participación",
-            "en": "Request participation",
-            "va": "Sol·licitar participació"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "system": "",
           "url": ""
@@ -20232,9 +18713,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "fallbackContact": {
           "label": {
-            "es": "Contactar con la coordinación del reto",
-            "en": "Contact the challenge coordination desk",
-            "va": "Contactar amb la coordinació del repte"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": ""
         }
@@ -20247,151 +18728,17 @@ export const MARKETPLACE_CONFIG = {
         "mentorships": [],
         "resources": []
       },
-      "resources": {
-        "available": [
-          {
-            "label": {
-              "es": "Dataset de 4.000 imágenes etiquetadas de plagas en cítricos",
-              "en": "Dataset of 4,000 labelled citrus pest images",
-              "va": "Dataset de 4.000 imatges etiquetades de plagues en cítrics"
-            },
-            "format": "ZIP (JPEG + CSV)",
-            "license": "Uso restringido al reto"
-          },
-          {
-            "label": {
-              "es": "Guía de plagas y enfermedades del cítrico valenciano — IVIA",
-              "en": "Guide to pests and diseases of Valencian citrus — IVIA",
-              "va": "Guia de plagues i malalties del cítric valencià — IVIA"
-            },
-            "format": "PDF",
-            "license": "CC BY 4.0"
-          }
-        ]
-      },
+      "resources": null,
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/challenges/reto-ia-deteccion-plagas-agr/",
-        "items": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — IA en detección de plagas",
-              "en": "Challenge brief — AI pest detection",
-              "va": "Fitxa del repte — IA en detecció de plagues"
-            },
-            "description": {
-              "es": "Descripción completa del reto, reglas de participación, acceso al dataset y criterios de evaluación.",
-              "en": "Full challenge description, participation rules, dataset access and evaluation criteria.",
-              "va": "Descripció completa del repte, regles de participació, accés al dataset i criteris d'avaluació."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-ia-plagas-citricos.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
-      "outputs": {
-        "expected": [
-          {
-            "id": "ml-model",
-            "label": {
-              "es": "Modelo TFLite o ONNX exportado con rendimiento documentado",
-              "en": "Exported TFLite or ONNX model with documented performance",
-              "va": "Model TFLite o ONNX exportat amb rendiment documentat"
-            }
-          },
-          {
-            "id": "android-demo",
-            "label": {
-              "es": "APK de demostración para Android 10+",
-              "en": "Android 10+ demonstration APK",
-              "va": "APK de demostració per a Android 10+"
-            }
-          },
-          {
-            "id": "performance-report",
-            "label": {
-              "es": "Informe de rendimiento con matriz de confusión por clase de plaga",
-              "en": "Performance report with confusion matrix per pest class",
-              "va": "Informe de rendiment amb matriu de confusió per classe de plaga"
-            }
-          }
-        ]
-      },
-      "process": {
-        "milestones": [
-          {
-            "date": "2026-05-30",
-            "label": {
-              "es": "Cierre de inscripciones",
-              "en": "Registration deadline",
-              "va": "Tancament d'inscripcions"
-            }
-          },
-          {
-            "date": "2026-06-10",
-            "label": {
-              "es": "Distribución del dataset a equipos inscritos",
-              "en": "Dataset distribution to registered teams",
-              "va": "Distribució del dataset a equips inscrits"
-            }
-          },
-          {
-            "date": "2026-10-15",
-            "label": {
-              "es": "Entrega de modelos y aplicaciones",
-              "en": "Model and application submission",
-              "va": "Lliurament de models i aplicacions"
-            }
-          },
-          {
-            "date": "2026-11-05",
-            "label": {
-              "es": "Evaluación en campo y resolución del reto",
-              "en": "Field evaluation and challenge resolution",
-              "va": "Avaluació en camp i resolució del repte"
-            }
-          }
-        ]
-      },
-      "hasDownloads": true,
-      "downloadCount": 1,
-      "cardDownloads": [
-        {
-          "id": "challenge-brief",
-          "type": "brief",
-          "title": {
-            "es": "Ficha del reto — IA en detección de plagas",
-            "en": "Challenge brief — AI pest detection",
-            "va": "Fitxa del repte — IA en detecció de plagues"
-          },
-          "description": {
-            "es": "Descripción completa del reto, reglas de participación, acceso al dataset y criterios de evaluación.",
-            "en": "Full challenge description, participation rules, dataset access and evaluation criteria.",
-            "va": "Descripció completa del repte, regles de participació, accés al dataset i criteris d'avaluació."
-          },
-          "files": [
-            {
-              "file": "ficha-reto-ia-plagas-citricos.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true,
-          "showOnDetail": true
-        }
-      ],
+      "outputs": null,
+      "process": null,
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "challenge",
@@ -20404,7 +18751,7 @@ export const MARKETPLACE_CONFIG = {
           "showSdgs": true,
           "showCompetences": true,
           "showDeadline": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "showLevels": true,
           "resultBlockLabel": null
@@ -20422,9 +18769,9 @@ export const MARKETPLACE_CONFIG = {
             "process": true,
             "people": true,
             "access": true,
-            "trackA": false,
+            "trackA": true,
             "relations": false,
-            "evidence": false,
+            "evidence": true,
             "transferability": true,
             "summary": true,
             "originContext": true,
@@ -30206,7 +28553,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "CEICE convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
           },
           "entity": {
-            "name": "CEICE — Direcció General de Formació Professional i Ensenyaments de Règim Especial",
+            "name": "",
             "type": {
               "es": "Administración educativa autonómica responsable de la FP en la Comunitat Valenciana",
               "en": "Regional education administration responsible for VET in the Valencian Community",
@@ -30256,12 +28603,12 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "origin": null,
           "requester": {
-            "name": "CEICE — Direcció General de Formació Professional i Ensenyaments de Règim Especial",
+            "name": "",
             "publicLabel": {
               "es": "Administración educativa autonómica responsable de la FP en la Comunitat Valenciana",
               "en": "Regional education administration responsible for VET in the Valencian Community",
@@ -30269,65 +28616,20 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "leadTeam": null,
-          "contact": {
-            "name": "Coordinación AI-STEAM",
-            "org": "CEICE",
-            "role": {
-              "es": "Punto de contacto para expresiones de interés",
-              "en": "Contact point for expressions of interest",
-              "va": "Punt de contacte per a expressions d'interès"
-            }
-          },
-          "beneficiaries": [
-            {
-              "name": "Alumnado de FP de la Comunitat Valenciana",
-              "type": "educational-group",
-              "role": {
-                "es": "Destinatarios directos del sistema de recomendación personalizada",
-                "en": "Direct beneficiaries of the personalised recommendation system",
-                "va": "Destinataris directes del sistema de recomanació personalitzada"
-              }
-            },
-            {
-              "name": "Orientadores y tutores de FP",
-              "type": "educational-staff",
-              "role": {
-                "es": "Profesionales que usarán la herramienta como apoyo a la orientación vocacional",
-                "en": "Professionals who will use the tool to support vocational guidance",
-                "va": "Professionals que usaran l'eina com a suport a l'orientació vocacional"
-              }
-            },
-            {
-              "name": "Centros de FP de la Comunitat Valenciana",
-              "type": "educational-centre",
-              "role": {
-                "es": "Instituciones adoptantes del sistema resultante",
-                "en": "Institutions adopting the resulting system",
-                "va": "Institucions adoptants del sistema resultant"
-              }
-            }
-          ]
+          "contact": null,
+          "beneficiaries": []
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "responsible-ai"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "equity-inclusion",
-            "integrated-pedagogy"
-          ],
-          "engagementLevel": "challenge-contribution",
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
           "trackBValue": {
-            "es": "Motor de recomendación de itinerarios de FP publicado en abierto, adaptable a cualquier comunidad autónoma con datos de matrícula y mercado laboral propios.",
-            "en": "Open-source VET pathway recommendation engine, adaptable to any autonomous community with their own enrolment and labour market data.",
-            "va": "Motor de recomanació d'itineraris de FP publicat en obert, adaptable a qualsevol comunitat autònoma amb dades de matrícula i mercat laboral propis."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
           "pilotStatus": "",
@@ -30356,32 +28658,10 @@ export const MARKETPLACE_CONFIG = {
         "transfer": {
           "type": "",
           "originOrganization": "",
-          "beneficiaryOrganizations": [
-            {
-              "name": "Alumnado de FP de la Comunitat Valenciana",
-              "sector": "",
-              "type": "educational-group"
-            },
-            {
-              "name": "Orientadores y tutores de FP",
-              "sector": "",
-              "type": "educational-staff"
-            },
-            {
-              "name": "Centros de FP de la Comunitat Valenciana",
-              "sector": "",
-              "type": "educational-centre"
-            }
-          ]
+          "beneficiaryOrganizations": []
         },
         "community": {
-          "tab": "challenges",
-          "publicMvp": true,
-          "featuredSignal": {
-            "es": "Convocatoria CEICE — FP personalizada",
-            "en": "CEICE call — personalised VET",
-            "va": "Convocatòria CEICE — FP personalitzada"
-          }
+          "tab": "challenges"
         },
         "card": {},
         "visibility": {},
@@ -30391,114 +28671,70 @@ export const MARKETPLACE_CONFIG = {
             "en": "Can AI recommend the most suitable VET pathway for each student?",
             "va": "Pot la IA recomanar l'itinerari de FP més adequat per a cada alumne?"
           },
-          "need": {
-            "es": "El 34% de los alumnos de FP no finalizan su ciclo. La orientación vocacional actual se basa en tutorías grupales con información genérica. Los alumnos necesitan recomendaciones personalizadas que combinen su historial de competencias, intereses declarados y datos actualizados del mercado laboral local para tomar mejores decisiones formativas.",
-            "en": "34% of VET students do not complete their cycle. Current vocational guidance relies on group tutorials with generic information. Students need personalised recommendations combining their competency history, declared interests and up-to-date local labour market data to make better training decisions.",
-            "va": "El 34% dels alumnes de FP no finalitzen el seu cicle. L'orientació vocacional actual es basa en tutories grupals amb informació genèrica. Els alumnes necessiten recomanacions personalitzades que combinen el seu historial de competències, interessos declarats i dades actualitzades del mercat laboral local per prendre millors decisions formatives."
-          },
-          "context": {
-            "es": "CEICE facilita datos anonimizados de matrícula, historial académico y tasas de inserción laboral de 3 años de los ciclos de FP de la Comunitat Valenciana, junto con datos del Observatorio Laboral de la Generalitat. El sistema debe cumplir el RGPD, ser explicable (no caja negra) y mostrar siempre la fuente de sus recomendaciones.",
-            "en": "CEICE provides anonymised enrolment, academic history and job placement rate data for 3 years of VET cycles in the Valencian Community, together with data from the Generalitat's Labour Observatory. The system must comply with GDPR, be explainable (not a black box) and always display the source of its recommendations.",
-            "va": "El CEICE facilita dades anonimitzades de matrícula, historial acadèmic i taxes d'inserció laboral de 3 anys dels cicles de FP de la Comunitat Valenciana, juntament amb dades de l'Observatori Laboral de la Generalitat. El sistema ha de complir el RGPD, ser explicable (no caixa negra) i mostrar sempre la font de les seues recomanacions."
-          },
-          "participation": {
-            "audienceText": {
-              "es": "Equipos multidisciplinares de 3 a 8 personas que incluyan al menos un perfil de ciencia de datos y uno de pedagogía o orientación educativa. Se valorará la colaboración entre empresa y centro educativo.",
-              "en": "Multidisciplinary teams of 3 to 8 people including at least one data science profile and one pedagogy or educational guidance profile. Collaboration between a company and an educational centre is valued.",
-              "va": "Equips multidisciplinaris de 3 a 8 persones que incloguen almenys un perfil de ciència de dades i un de pedagogia o orientació educativa. Es valorarà la col·laboració entre empresa i centre educatiu."
-            },
-            "formatText": {
-              "es": "Las propuestas se presentan en dos fases. Primera fase — memoria conceptual de 5 páginas con arquitectura propuesta y consideraciones éticas. Segunda fase (equipos seleccionados) — prototipo funcional con 50 alumnos de prueba y evaluación de satisfacción.",
-              "en": "Proposals are presented in two phases. First phase — 5-page conceptual memo with proposed architecture and ethical considerations. Second phase (selected teams) — functional prototype with 50 test students and satisfaction evaluation.",
-              "va": "Les propostes es presenten en dues fases. Primera fase — memòria conceptual de 5 pàgines amb arquitectura proposada i consideracions ètiques. Segona fase (equips seleccionats) — prototip funcional amb 50 alumnes de prova i avaluació de satisfacció."
-            },
-            "transferValue": {
-              "es": "El sistema resultante se incorporará al portfolio de herramientas digitales de orientación de CEICE. Los datos anonimizados generados durante el piloto se publicarán como dataset abierto de referencia.",
-              "en": "The resulting system will be incorporated into CEICE's digital guidance tool portfolio. The anonymised data generated during the pilot will be published as an open reference dataset.",
-              "va": "El sistema resultant s'incorporarà al portfolio d'eines digitals d'orientació del CEICE. Les dades anonimitzades generades durant el pilot es publicaran com a dataset obert de referència."
-            }
-          },
           "reward": {
             "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CEICE, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AI-STEAM y en la red estatal de innovación en FP.",
             "en": "The winning team receives: (1) development and implementation contract with CEICE, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AI-STEAM Marketplace and in the national VET innovation network.",
             "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CEICE, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AI-STEAM i a la xarxa estatal d'innovació en FP."
-          },
-          "evidence": {
-            "es": "Los prototipos en fase 2 serán evaluados por un panel independiente de orientadores educativos de tres centros de FP piloto. Los criterios son precisión de las recomendaciones (comparación con la decisión real del alumno a seis meses), satisfacción del usuario (escala Likert, n=50) y una auditoría de sesgos algorítmicos realizada por el Comité de Ética de Datos del CEICE. Las memorias conceptuales de fase 1 se evalúan por pertinencia, viabilidad técnica y calidad del análisis ético.",
-            "en": "Phase 2 prototypes will be evaluated by an independent panel of educational guidance counsellors from three pilot VET centres. Criteria are recommendation accuracy (comparison with the student's actual decision at six months), user satisfaction (Likert scale, n=50) and an algorithmic bias audit conducted by the CEICE Data Ethics Committee. Phase 1 conceptual memos are assessed on relevance, technical feasibility and quality of ethical analysis.",
-            "va": "Els prototips en fase 2 seran avaluats per un panel independent d'orientadors educatius de tres centres de FP pilot. Els criteris són precisió de les recomanacions (comparació amb la decisió real de l'alumne a sis mesos), satisfacció de l'usuari (escala Likert, n=50) i una auditoria de biaixos algorítmics realitzada pel Comitè d'Ètica de Dades del CEICE. Les memòries conceptuals de fase 1 s'avaluen per pertinència, viabilitat tècnica i qualitat de l'anàlisi ètica."
-          },
-          "people": {
-            "es": "El reto es impulsado por la Direcció General de Formació Professional del CEICE, con la colaboración del Observatori Laboral de la Generalitat Valenciana como proveedor de datos. La evaluación de propuestas la realiza un jurado mixto formado por orientadores educativos de FP, investigadores en ciencias del aprendizaje, representantes de empresas EdTech y un experto en ética de datos. La coordinación técnica recae en el equipo de la Red AI-STEAM.",
-            "en": "The challenge is driven by the CEICE Directorate General for Vocational Training, with the Valencian Government Labour Observatory as data provider. Proposals are evaluated by a mixed jury of VET educational counsellors, learning sciences researchers, EdTech company representatives and a data ethics expert. Technical coordination falls to the AI-STEAM Network team.",
-            "va": "El repte és impulsat per la Direcció General de Formació Professional del CEICE, amb la col·laboració de l'Observatori Laboral de la Generalitat Valenciana com a proveïdor de dades. L'avaluació de propostes la realitza un jurat mixt format per orientadors educatius de FP, investigadors en ciències de l'aprenentatge, representants d'empreses EdTech i un expert en ètica de dades. La coordinació tècnica recau en l'equip de la Xarxa AI-STEAM."
           }
         },
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
-          "codeLicense": "Apache 2.0",
-          "dataAvailability": "restricted",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
-          "contributionVisibility": "external-managed",
+          "contributionVisibility": "",
           "sensitiveDataPolicy": {
-            "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-            "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-            "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "rightsNote": {
-            "es": "Los sistemas desarrollados deben ser de código abierto (licencia Apache 2.0). Los datos de alumnos piloto se tratan bajo estricto cumplimiento del RGPD y de la legislación de protección de datos educativos.",
-            "en": "Developed systems must be open-source (Apache 2.0 licence). Pilot student data is processed under strict GDPR compliance and educational data protection legislation.",
-            "va": "Els sistemes desenvolupats han de ser de codi obert (llicència Apache 2.0). Les dades d'alumnes pilot es tracten sota estricte compliment del RGPD i de la legislació de protecció de dades educatives."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
           "publicationNote": {
-            "es": "Los resultados del reto se publicarán en el Marketplace AI-STEAM y en el repositorio de innovación educativa de la Generalitat Valenciana. Los equipos participantes conservan la autoría de sus propuestas.",
-            "en": "Challenge results will be published on the AI-STEAM Marketplace and in the Valencian Government's educational innovation repository. Participating teams retain authorship of their proposals.",
-            "va": "Els resultats del repte es publicaran al Marketplace AI-STEAM i al repositori d'innovació educativa de la Generalitat Valenciana. Els equips participants conserven l'autoria de les seues propostes."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
-          "enabled": true,
+          "enabled": false,
           "label": {
-            "es": "Investigación en sistemas de recomendación adaptativa para orientación en FP",
-            "en": "Research on adaptive recommendation systems for VET guidance",
-            "va": "Recerca en sistemes de recomanació adaptativa per a orientació en FP"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "url": "https://ceice.gva.es/reto-fp-ia/track-a-investigacion"
+          "url": ""
         },
         "trackALink": {
-          "enabled": true,
+          "enabled": false,
           "label": {
-            "es": "Investigación en sistemas de recomendación adaptativa para orientación en FP",
-            "en": "Research on adaptive recommendation systems for VET guidance",
-            "va": "Recerca en sistemes de recomanació adaptativa per a orientació en FP"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "url": "https://ceice.gva.es/reto-fp-ia/track-a-investigacion"
+          "url": ""
         },
         "externalFlow": {
-          "enabled": true,
+          "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar participación",
-              "en": "Request participation",
-              "va": "Sol·licitar participació"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
-            "url": "https://ceice.gva.es/formulari-inscripcio-reto-fp-ia"
+            "url": ""
           },
-          "secondaryAction": {
-            "label": {
-              "es": "Preguntas frecuentes",
-              "en": "Frequently asked questions",
-              "va": "Preguntes freqüents"
-            },
-            "url": "https://ceice.gva.es/reto-fp-ia/preguntas-frecuentes"
-          },
+          "secondaryAction": null,
           "fallbackAction": {
             "label": {
               "es": "Ver reto",
@@ -30509,11 +28745,11 @@ export const MARKETPLACE_CONFIG = {
           },
           "fallbackContact": {
             "label": {
-              "es": "Contactar con la coordinación del reto",
-              "en": "Contact the challenge coordination desk",
-              "va": "Contactar amb la coordinació del repte"
+              "es": "",
+              "en": "",
+              "va": ""
             },
-            "url": "mailto:aisteam.retos@ceice.gva.es"
+            "url": ""
           }
         },
         "relations": {
@@ -30521,212 +28757,20 @@ export const MARKETPLACE_CONFIG = {
           "validations": [],
           "pilots": [],
           "cases": [],
-          "mentorships": [
-            {
-              "id": "mentoring-diseno-pilotos-fp-empresa",
-              "label": {
-                "es": "Mentoría — Diseño de pilotos de colaboración FP-empresa con IA",
-                "en": "Mentoring — Designing VET-industry AI collaboration pilots",
-                "va": "Mentoria — Disseny de pilots de col·laboració FP-empresa amb IA"
-              }
-            }
-          ],
+          "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "available": [
-            {
-              "label": {
-                "es": "Dataset anonimizado de matrícula y resultados FP (2022-2025)",
-                "en": "Anonymised VET enrolment and outcomes dataset (2022-2025)",
-                "va": "Dataset anonimitzat de matrícula i resultats FP (2022-2025)"
-              },
-              "format": "CSV",
-              "license": "Uso restringido al reto",
-              "url": "https://ceice.gva.es/datasets/reto-fp-ia/matricula-resultados-2022-2025"
-            },
-            {
-              "label": {
-                "es": "Informe del Observatorio Laboral — demanda de perfiles FP 2025",
-                "en": "Labour Observatory report — VET profile demand 2025",
-                "va": "Informe de l'Observatori Laboral — demanda de perfils FP 2025"
-              },
-              "format": "PDF",
-              "license": "CC BY 4.0",
-              "url": "https://labora.gva.es/observatori/informes/demanda-fp-2025"
-            },
-            {
-              "label": {
-                "es": "Documentación técnica de la API de datos del CEICE",
-                "en": "CEICE data API technical documentation",
-                "va": "Documentació tècnica de l'API de dades del CEICE"
-              },
-              "format": "HTML",
-              "license": "CC BY 4.0",
-              "url": "https://ceice.gva.es/api/docs/fp-data-v1"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/challenges/reto-personalizacion-itinerarios-fp-edu/",
-          "items": [
-            {
-              "id": "challenge-brief",
-              "type": "brief",
-              "title": {
-                "es": "Ficha del reto — Personalización de itinerarios FP",
-                "en": "Challenge brief — VET pathway personalisation",
-                "va": "Fitxa del repte — Personalització d'itineraris FP"
-              },
-              "description": {
-                "es": "Descripción del reto, bases de la convocatoria, criterios de evaluación y acceso a los datos.",
-                "en": "Challenge description, call terms, evaluation criteria and data access details.",
-                "va": "Descripció del repte, bases de la convocatòria, criteris d'avaluació i accés a les dades."
-              },
-              "files": [
-                {
-                  "file": "ficha-reto-personalizacion-itinerarios-fp.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                },
-                {
-                  "file": "challenge-brief-vet-pathway-personalisation.pdf",
-                  "format": "pdf",
-                  "language": "en",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "ethics-guide",
-              "type": "guide",
-              "title": {
-                "es": "Guía de consideraciones éticas para sistemas de recomendación educativa",
-                "en": "Ethical considerations guide for educational recommendation systems",
-                "va": "Guia de consideracions ètiques per a sistemes de recomanació educativa"
-              },
-              "description": {
-                "es": "Marco de referencia sobre sesgos algorítmicos, privacidad del estudiante y transparencia en sistemas de IA aplicados a la orientación educativa.",
-                "en": "Reference framework on algorithmic bias, student privacy and transparency in AI systems applied to educational guidance.",
-                "va": "Marc de referència sobre biaixos algorítmics, privacitat de l'estudiant i transparència en sistemes d'IA aplicats a l'orientació educativa."
-              },
-              "files": [
-                {
-                  "file": "guia-etica-recomendacion-educativa.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY-SA 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
-        "outputs": {
-          "expected": [
-            {
-              "id": "concept-memo",
-              "label": {
-                "es": "Memoria conceptual con arquitectura propuesta y análisis ético (fase 1)",
-                "en": "Conceptual memo with proposed architecture and ethical analysis (phase 1)",
-                "va": "Memòria conceptual amb arquitectura proposada i anàlisi ètica (fase 1)"
-              }
-            },
-            {
-              "id": "functional-prototype",
-              "label": {
-                "es": "Prototipo funcional evaluado con 50 alumnos piloto (fase 2)",
-                "en": "Functional prototype evaluated with 50 pilot students (phase 2)",
-                "va": "Prototip funcional avaluat amb 50 alumnes pilot (fase 2)"
-              }
-            },
-            {
-              "id": "explainability-report",
-              "label": {
-                "es": "Informe de explicabilidad — cómo se generan las recomendaciones",
-                "en": "Explainability report — how recommendations are generated",
-                "va": "Informe d'explicabilitat — com es generen les recomanacions"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2026-06-01",
-              "label": {
-                "es": "Cierre de inscripciones y acceso a datos (fase 1)",
-                "en": "Registration deadline and data access (phase 1)",
-                "va": "Tancament d'inscripcions i accés a dades (fase 1)"
-              }
-            },
-            {
-              "date": "2026-09-01",
-              "label": {
-                "es": "Entrega de memorias conceptuales (fase 1)",
-                "en": "Conceptual memo submission (phase 1)",
-                "va": "Lliurament de memòries conceptuals (fase 1)"
-              }
-            },
-            {
-              "date": "2026-10-01",
-              "label": {
-                "es": "Comunicación de equipos seleccionados para fase 2",
-                "en": "Announcement of teams selected for phase 2",
-                "va": "Comunicació d'equips seleccionats per a fase 2"
-              }
-            },
-            {
-              "date": "2026-12-15",
-              "label": {
-                "es": "Entrega de prototipo funcional y resolución (fase 2)",
-                "en": "Functional prototype submission and resolution (phase 2)",
-                "va": "Lliurament de prototip funcional i resolució (fase 2)"
-              }
-            }
-          ]
-        },
-        "hasDownloads": true,
-        "downloadCount": 2,
-        "cardDownloads": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Personalización de itinerarios FP",
-              "en": "Challenge brief — VET pathway personalisation",
-              "va": "Fitxa del repte — Personalització d'itineraris FP"
-            },
-            "description": {
-              "es": "Descripción del reto, bases de la convocatoria, criterios de evaluación y acceso a los datos.",
-              "en": "Challenge description, call terms, evaluation criteria and data access details.",
-              "va": "Descripció del repte, bases de la convocatòria, criteris d'avaluació i accés a les dades."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-personalizacion-itinerarios-fp.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              },
-              {
-                "file": "challenge-brief-vet-pathway-personalisation.pdf",
-                "format": "pdf",
-                "language": "en",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "outputs": null,
+        "process": null,
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "challenge",
@@ -30739,7 +28783,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": null
@@ -30814,7 +28858,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "La Diputació de València convoca equips de FP, universitats i startups per dissenyar un chatbot d'atenció ciutadana basat en IA generativa que responga preguntes sobre tràmits municipals en castellà, valencià i anglès, usant únicament documentació oficial pública i sense risc d'al·lucinacions en respostes amb conseqüències legals."
           },
           "entity": {
-            "name": "Diputación Provincial de Valencia — Área de Innovación Digital",
+            "name": "",
             "type": {
               "es": "Administración provincial que impulsa la transformación digital municipal",
               "en": "Provincial administration driving municipal digital transformation",
@@ -30861,12 +28905,12 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "origin": null,
           "requester": {
-            "name": "Diputación Provincial de Valencia — Área de Innovación Digital",
+            "name": "",
             "publicLabel": {
               "es": "Administración provincial que impulsa la transformación digital municipal",
               "en": "Provincial administration driving municipal digital transformation",
@@ -30874,39 +28918,20 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "leadTeam": null,
-          "contact": {
-            "name": "Coordinación AI-STEAM",
-            "org": "CEICE",
-            "role": {
-              "es": "Punto de contacto para expresiones de interés",
-              "en": "Contact point for expressions of interest",
-              "va": "Punt de contacte per a expressions d'interès"
-            }
-          },
+          "contact": null,
           "beneficiaries": []
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "responsible-ai",
-            "ai-ethics"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "equity-inclusion",
-            "integrated-pedagogy",
-            "infrastructure-evidence"
-          ],
-          "engagementLevel": "challenge-contribution",
-          "evidenceMaturity": "prototype",
-          "lbdStage": "output",
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
           "trackBValue": {
-            "es": "Sistema RAG de código abierto adaptable a cualquier ayuntamiento con documentación pública en formato PDF o web.",
-            "en": "Open-source RAG system adaptable to any municipality with public documentation in PDF or web format.",
-            "va": "Sistema RAG de codi obert adaptable a qualsevol ajuntament amb documentació pública en format PDF o web."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
           "pilotStatus": "",
@@ -30939,12 +28964,7 @@ export const MARKETPLACE_CONFIG = {
           "beneficiaryOrganizations": []
         },
         "community": {
-          "tab": "challenges",
-          "featuredSignal": {
-            "es": "Reto destacado — Administración pública",
-            "en": "Featured challenge — Public administration",
-            "va": "Repte destacat — Administració pública"
-          }
+          "tab": "challenges"
         },
         "card": {},
         "visibility": {},
@@ -30954,33 +28974,6 @@ export const MARKETPLACE_CONFIG = {
             "en": "Can AI answer questions about municipal procedures with legal reliability?",
             "va": "Pot la IA respondre preguntes sobre tràmits municipals amb fiabilitat legal?"
           },
-          "need": {
-            "es": "Los 266 municipios de menos de 5.000 habitantes de la provincia de Valencia no pueden permitirse un servicio de atención telefónica 24/7. El 68% de los ciudadanos consulta trámites fuera del horario de oficina. Se necesita un sistema que responda con fiabilidad total sobre documentos oficiales, que indique cuándo no sabe la respuesta y que nunca invente información con consecuencias legales.",
-            "en": "The 266 municipalities of fewer than 5,000 inhabitants in the province of Valencia cannot afford a 24/7 telephone service. 68% of citizens consult procedures outside office hours. A system is needed that answers with total reliability from official documents, indicates when it does not know the answer, and never fabricates information with legal consequences.",
-            "va": "Els 266 municipis de menys de 5.000 habitants de la província de València no poden permetre's un servei d'atenció telefònica 24/7. El 68% dels ciutadans consulta tràmits fora de l'horari d'oficina. Es necessita un sistema que responga amb fiabilitat total sobre documents oficials, que indique quan no sap la resposta i que mai invente informació amb conseqüències legals."
-          },
-          "context": {
-            "es": "La Diputación proporciona el corpus documental completo en formato PDF y HTML de los trámites más frecuentes de 10 ayuntamientos piloto. El sistema debe usar arquitectura RAG (Retrieval-Augmented Generation) para limitar las respuestas a documentos verificados, con una interfaz web accesible WCAG 2.1 nivel AA y soporte para los tres idiomas.",
-            "en": "The Diputación provides the complete documentary corpus in PDF and HTML format for the most frequent procedures from 10 pilot municipalities. The system must use RAG (Retrieval-Augmented Generation) architecture to limit responses to verified documents, with a WCAG 2.1 level AA accessible web interface and support for all three languages.",
-            "va": "La Diputació proporciona el corpus documental complet en format PDF i HTML dels tràmits més freqüents de 10 ajuntaments pilot. El sistema ha d'usar arquitectura RAG (Retrieval-Augmented Generation) per limitar les respostes a documents verificats, amb una interfície web accessible WCAG 2.1 nivell AA i suport per als tres idiomes."
-          },
-          "participation": {
-            "audienceText": {
-              "es": "Equipos de 2 a 6 personas con experiencia en LLMs, RAG o desarrollo web accesible. Se valorará especialmente la presencia de perfil jurídico-administrativo en el equipo para evaluar la fiabilidad de las respuestas.",
-              "en": "Teams of 2 to 6 people with experience in LLMs, RAG or accessible web development. Particular value will be given to the presence of a legal-administrative profile in the team to evaluate response reliability.",
-              "va": "Equips de 2 a 6 persones amb experiència en LLMs, RAG o desenvolupament web accessible. Es valorarà especialment la presència d'un perfil juridicoadministratiu en l'equip per avaluar la fiabilitat de les respostes."
-            },
-            "formatText": {
-              "es": "Entrega de: sistema desplegable en servidor local (Docker Compose), corpus de prueba con 200 preguntas anotadas y evaluación de fiabilidad. La evaluación técnica incluye una auditoría de alucinaciones con preguntas trampa.",
-              "en": "Submission of: system deployable on local server (Docker Compose), test corpus with 200 annotated questions and reliability evaluation. Technical evaluation includes a hallucination audit with trick questions.",
-              "va": "Lliurament de: sistema desplegable en servidor local (Docker Compose), corpus de prova amb 200 preguntes anotades i avaluació de fiabilitat. L'avaluació tècnica inclou una auditoria d'al·lucinacions amb preguntes trampa."
-            },
-            "transferValue": {
-              "es": "La solución ganadora se pilotará en 3 ayuntamientos durante 6 meses. Si supera el umbral de fiabilidad del 95%, la Diputación la desplegará en los 266 municipios elegibles.",
-              "en": "The winning solution will be piloted in 3 municipalities for 6 months. If it exceeds the 95% reliability threshold, the Diputación will deploy it across all 266 eligible municipalities.",
-              "va": "La solució guanyadora es pilotarà en 3 ajuntaments durant 6 mesos. Si supera el llindar de fiabilitat del 95%, la Diputació la desplegarà als 266 municipis elegibles."
-            }
-          },
           "reward": {
             "es": "El equipo ganador recibe: (1) contrato de despliegue con la Diputación por valor de 25.000 €, (2) mentoría de 4 meses con el equipo de innovación digital, (3) publicación del caso como referencia nacional en administración digital.",
             "en": "The winning team receives: (1) deployment contract with the Diputación worth €25,000, (2) 4-month mentoring with the digital innovation team, (3) publication of the case as a national reference in digital administration.",
@@ -30989,20 +28982,20 @@ export const MARKETPLACE_CONFIG = {
         },
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
-          "contributionVisibility": "external-managed",
+          "contributionVisibility": "",
           "sensitiveDataPolicy": {
-            "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-            "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-            "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "rightsNote": {
-            "es": "Las soluciones desarrolladas deben publicarse bajo licencia de código abierto compatible con uso por administraciones públicas (EUPL o Apache 2.0).",
-            "en": "Developed solutions must be published under an open-source licence compatible with use by public administrations (EUPL or Apache 2.0).",
-            "va": "Les solucions desenvolupades han de publicar-se sota llicència de codi obert compatible amb ús per administracions públiques (EUPL o Apache 2.0)."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -31012,7 +29005,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -31037,9 +29030,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar participación",
-              "en": "Request participation",
-              "va": "Sol·licitar participació"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -31055,9 +29048,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "fallbackContact": {
             "label": {
-              "es": "Contactar con la coordinación del reto",
-              "en": "Contact the challenge coordination desk",
-              "va": "Contactar amb la coordinació del repte"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": ""
           }
@@ -31070,176 +29063,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "available": [
-            {
-              "label": {
-                "es": "Corpus documental de trámsites — 10 ayuntamientos piloto (PDF + HTML)",
-                "en": "Procedural documentary corpus — 10 pilot municipalities (PDF + HTML)",
-                "va": "Corpus documental de tràmits — 10 ajuntaments pilot (PDF + HTML)"
-              },
-              "format": "ZIP",
-              "license": "Dominio público"
-            },
-            {
-              "label": {
-                "es": "Corpus de evaluación — 200 preguntas con respuesta esperada anotada",
-                "en": "Evaluation corpus — 200 questions with annotated expected answers",
-                "va": "Corpus d'avaluació — 200 preguntes amb resposta esperada anotada"
-              },
-              "format": "CSV",
-              "license": "CC BY 4.0"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/challenges/reto-chatbot-atencion-ciudadana-adm/",
-          "items": [
-            {
-              "id": "challenge-brief",
-              "type": "brief",
-              "title": {
-                "es": "Ficha del reto — Chatbot ciudadano con IA",
-                "en": "Challenge brief — AI citizen chatbot",
-                "va": "Fitxa del repte — Chatbot ciutadà amb IA"
-              },
-              "description": {
-                "es": "Especificaciones técnicas completas, criterios de evaluación de fiabilidad y protocolo de auditoría de alucinaciones.",
-                "en": "Full technical specifications, reliability evaluation criteria and hallucination audit protocol.",
-                "va": "Especificacions tècniques completes, criteris d'avaluació de fiabilitat i protocol d'auditoria d'al·lucinacions."
-              },
-              "files": [
-                {
-                  "file": "ficha-reto-chatbot-ciudadano-adm.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "evaluation-corpus",
-              "type": "dataset",
-              "title": {
-                "es": "Corpus de evaluación — 200 preguntas",
-                "en": "Evaluation corpus — 200 questions",
-                "va": "Corpus d'avaluació — 200 preguntes"
-              },
-              "description": {
-                "es": "Fichero CSV con las 200 preguntas de evaluación, respuesta esperada y tipo de pregunta (informativa, procedimental, trampa).",
-                "en": "CSV file with the 200 evaluation questions, expected answer and question type (informational, procedural, trick).",
-                "va": "Fitxer CSV amb les 200 preguntes d'avaluació, resposta esperada i tipus de pregunta (informativa, procedimental, trampa)."
-              },
-              "files": [
-                {
-                  "file": "corpus-evaluacion-chatbot-200-preguntas.csv",
-                  "format": "csv",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
-        "outputs": {
-          "expected": [
-            {
-              "id": "docker-system",
-              "label": {
-                "es": "Sistema desplegable con Docker Compose y documentación de instalación",
-                "en": "Docker Compose deployable system with installation documentation",
-                "va": "Sistema desplegable amb Docker Compose i documentació d'instal·lació"
-              }
-            },
-            {
-              "id": "test-results",
-              "label": {
-                "es": "Resultados de evaluación sobre el corpus de 200 preguntas",
-                "en": "Evaluation results on the 200-question corpus",
-                "va": "Resultats d'avaluació sobre el corpus de 200 preguntes"
-              }
-            },
-            {
-              "id": "hallucination-audit",
-              "label": {
-                "es": "Informe de auditoría de alucinaciones con metodología documentada",
-                "en": "Hallucination audit report with documented methodology",
-                "va": "Informe d'auditoria d'al·lucinacions amb metodologia documentada"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2026-05-31",
-              "label": {
-                "es": "Cierre de inscripciones",
-                "en": "Registration deadline",
-                "va": "Tancament d'inscripcions"
-              }
-            },
-            {
-              "date": "2026-06-15",
-              "label": {
-                "es": "Acceso al corpus documental para equipos inscritos",
-                "en": "Documentary corpus access for registered teams",
-                "va": "Accés al corpus documental per a equips inscrits"
-              }
-            },
-            {
-              "date": "2026-11-28",
-              "label": {
-                "es": "Entrega de sistemas y documentación",
-                "en": "System and documentation submission",
-                "va": "Lliurament de sistemes i documentació"
-              }
-            },
-            {
-              "date": "2026-12-15",
-              "label": {
-                "es": "Evaluación técnica y auditoría de alucinaciones",
-                "en": "Technical evaluation and hallucination audit",
-                "va": "Avaluació tècnica i auditoria d'al·lucinacions"
-              }
-            }
-          ]
-        },
-        "hasDownloads": true,
-        "downloadCount": 2,
-        "cardDownloads": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Chatbot ciudadano con IA",
-              "en": "Challenge brief — AI citizen chatbot",
-              "va": "Fitxa del repte — Chatbot ciutadà amb IA"
-            },
-            "description": {
-              "es": "Especificaciones técnicas completas, criterios de evaluación de fiabilidad y protocolo de auditoría de alucinaciones.",
-              "en": "Full technical specifications, reliability evaluation criteria and hallucination audit protocol.",
-              "va": "Especificacions tècniques completes, criteris d'avaluació de fiabilitat i protocol d'auditoria d'al·lucinacions."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-chatbot-ciudadano-adm.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "outputs": null,
+        "process": null,
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "challenge",
@@ -31252,7 +29086,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": null
@@ -31270,9 +29104,9 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
+              "trackA": true,
               "relations": false,
-              "evidence": false,
+              "evidence": true,
               "transferability": true,
               "summary": true,
               "originContext": true,
@@ -31327,7 +29161,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Turisme Comunitat Valenciana convoca equips per crear un sistema d'anàlisi de ressenyes turístiques en múltiples idiomes i plataformes que identifique tendències de satisfacció, detecte problemes emergents per destinació i genere informes automàtics per a gestors municipals de turisme, reduint el temps d'anàlisi manual de 40 hores setmanals a menys de 2."
           },
           "entity": {
-            "name": "Agència Valenciana del Turisme (Turisme Comunitat Valenciana)",
+            "name": "",
             "type": {
               "es": "Agencia pública responsable de la promoción y gestión del turismo en la Comunitat Valenciana",
               "en": "Public agency responsible for tourism promotion and management in the Valencian Community",
@@ -31374,12 +29208,12 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "origin": null,
           "requester": {
-            "name": "Agència Valenciana del Turisme (Turisme Comunitat Valenciana)",
+            "name": "",
             "publicLabel": {
               "es": "Agencia pública responsable de la promoción y gestión del turismo en la Comunitat Valenciana",
               "en": "Public agency responsible for tourism promotion and management in the Valencian Community",
@@ -31387,37 +29221,20 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "leadTeam": null,
-          "contact": {
-            "name": "Coordinación AI-STEAM",
-            "org": "CEICE",
-            "role": {
-              "es": "Punto de contacto para expresiones de interés",
-              "en": "Contact point for expressions of interest",
-              "va": "Punt de contacte per a expressions d'interès"
-            }
-          },
+          "contact": null,
           "beneficiaries": []
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "responsible-ai"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "equity-inclusion"
-          ],
-          "engagementLevel": "challenge-contribution",
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
           "evidenceMaturity": "idea",
-          "lbdStage": "output",
+          "lbdStage": "input",
           "trackBValue": {
-            "es": "Pipeline de análisis de sentimiento turístico multilingüe publicado en abierto, adaptable a cualquier destino con presencia en plataformas de reseñas.",
-            "en": "Open-source multilingual tourism sentiment analysis pipeline, adaptable to any destination with presence on review platforms.",
-            "va": "Pipeline d'anàlisi de sentiment turístic multilingüe publicat en obert, adaptable a qualsevol destinació amb presència en plataformes de ressenyes."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
           "pilotStatus": "",
@@ -31448,12 +29265,7 @@ export const MARKETPLACE_CONFIG = {
           "beneficiaryOrganizations": []
         },
         "community": {
-          "tab": "challenges",
-          "featuredSignal": {
-            "es": "Reto abierto — verano 2026",
-            "en": "Open challenge — summer 2026",
-            "va": "Repte obert — estiu 2026"
-          }
+          "tab": "challenges"
         },
         "card": {},
         "visibility": {},
@@ -31463,33 +29275,6 @@ export const MARKETPLACE_CONFIG = {
             "en": "Can AI analyse thousands of tourism reviews in 10 languages in real time?",
             "va": "Pot la IA analitzar milers de ressenyes turístiques en 10 idiomes en temps real?"
           },
-          "need": {
-            "es": "Los técnicos de Turisme analizan manualmente reseñas de Google, TripAdvisor y Booking para 120 destinos turísticos valencianos. El volumen ha crecido un 340% desde 2022 y ya supone 40 horas semanales de análisis por técnico. Se necesita un sistema que procese reseñas en al menos 10 idiomas, agrupe por temática (alojamiento, gastronomía, movilidad, oferta cultural) y detecte cambios de tendencia en menos de 24 horas.",
-            "en": "Turisme technicians manually analyse Google, TripAdvisor and Booking reviews for 120 Valencian tourist destinations. Volume has grown 340% since 2022 and now requires 40 analyst hours per week. A system is needed to process reviews in at least 10 languages, group by topic (accommodation, gastronomy, mobility, cultural offer) and detect trend changes within 24 hours.",
-            "va": "Els tècnics de Turisme analitzen manualment ressenyes de Google, TripAdvisor i Booking per a 120 destinacions turístiques valencianes. El volum ha crescut un 340% des de 2022 i ja suposa 40 hores setmanals d'anàlisi per tècnic. Es necessita un sistema que processe ressenyes en almenys 10 idiomes, agrupe per temàtica (allotjament, gastronomia, mobilitat, oferta cultural) i detecte canvis de tendència en menys de 24 hores."
-          },
-          "context": {
-            "es": "Turisme facilita un corpus de 280.000 reseñas etiquetadas manualmente de 2023-2025 en 10 idiomas para entrenamiento y evaluación. El sistema debe procesar las APIs públicas de Google My Business y TripAdvisor (acceso proporcionado) y generar informes en formato PDF y dashboard web para alcaldes y técnicos de turismo municipal.",
-            "en": "Turisme provides a corpus of 280,000 manually labelled reviews from 2023-2025 in 10 languages for training and evaluation. The system must process public Google My Business and TripAdvisor APIs (access provided) and generate reports in PDF format and a web dashboard for mayors and municipal tourism technicians.",
-            "va": "Turisme facilita un corpus de 280.000 ressenyes etiquetades manualment de 2023-2025 en 10 idiomes per a entrenament i avaluació. El sistema ha de processar les APIs públiques de Google My Business i TripAdvisor (accés proporcionat) i generar informes en format PDF i dashboard web per a alcaldes i tècnics de turisme municipal."
-          },
-          "participation": {
-            "audienceText": {
-              "es": "Equipos de 1 a 4 personas con experiencia en NLP, procesamiento multilingüe o desarrollo de dashboards. Se valoran propuestas de empresas turísticas o destinos que quieran co-diseñar la solución.",
-              "en": "Teams of 1 to 4 people with experience in NLP, multilingual processing or dashboard development. Proposals from tourism companies or destinations wanting to co-design the solution are valued.",
-              "va": "Equips d'1 a 4 persones amb experiència en NLP, processament multilingüe o desenvolupament de dashboards. Es valoren propostes d'empreses turístiques o destinacions que vulguen co-dissenyar la solució."
-            },
-            "formatText": {
-              "es": "Entrega de sistema desplegable (Docker) + demo del dashboard con datos reales + informe de precisión del análisis de sentimiento por idioma y categoría. Evaluación basada en precisión técnica y utilidad percibida por gestores municipales (encuesta).",
-              "en": "Submission of deployable system (Docker) + dashboard demo with real data + sentiment analysis accuracy report by language and category. Evaluation based on technical accuracy and perceived utility by municipal managers (survey).",
-              "va": "Lliurament de sistema desplegable (Docker) + demo del dashboard amb dades reals + informe de precisió de l'anàlisi de sentiment per idioma i categoria. Avaluació basada en precisió tècnica i utilitat percebuda per gestors municipals (enquesta)."
-            },
-            "transferValue": {
-              "es": "El sistema se integrará en el portal de datos de Turisme Comunitat Valenciana y estará disponible para cualquier destino europeo bajo licencia abierta. Los datos de entrenamiento enriquecidos se publicarán como dataset de referencia para NLP turístico.",
-              "en": "The system will be integrated into the Turisme Comunitat Valenciana data portal and will be available to any European destination under an open licence. The enriched training data will be published as a reference dataset for tourism NLP.",
-              "va": "El sistema s'integrarà al portal de dades de Turisme Comunitat Valenciana i estarà disponible per a qualsevol destinació europea sota llicència oberta. Les dades d'entrenament enriquides es publicaran com a dataset de referència per a NLP turístic."
-            }
-          },
           "reward": {
             "es": "El equipo ganador recibe: (1) contrato de implementación y mantenimiento con Turisme por valor de 18.000 €/año, (2) acceso a los datos de visitantes de los 120 destinos para investigación, (3) visibilidad en la Feria Internacional de Turismo ITB 2027.",
             "en": "The winning team receives: (1) implementation and maintenance contract with Turisme worth €18,000/year, (2) access to visitor data from all 120 destinations for research, (3) visibility at the ITB 2027 International Tourism Fair.",
@@ -31498,20 +29283,20 @@ export const MARKETPLACE_CONFIG = {
         },
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
-          "contributionVisibility": "external-managed",
+          "contributionVisibility": "",
           "sensitiveDataPolicy": {
-            "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-            "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-            "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "rightsNote": {
-            "es": "Los sistemas desarrollados se publicarán bajo licencia Apache 2.0. El corpus de reseñas es propiedad de Turisme y no puede redistribuirse fuera del contexto del reto.",
-            "en": "Developed systems will be published under Apache 2.0 licence. The review corpus is owned by Turisme and may not be redistributed outside the challenge context.",
-            "va": "Els sistemes desenvolupats es publicaran sota llicència Apache 2.0. El corpus de ressenyes és propietat de Turisme i no pot redistribuir-se fora del context del repte."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -31521,7 +29306,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -31546,9 +29331,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar participación",
-              "en": "Request participation",
-              "va": "Sol·licitar participació"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -31564,9 +29349,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "fallbackContact": {
             "label": {
-              "es": "Contactar con la coordinación del reto",
-              "en": "Contact the challenge coordination desk",
-              "va": "Contactar amb la coordinació del repte"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": ""
           }
@@ -31579,142 +29364,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "available": [
-            {
-              "label": {
-                "es": "Corpus de 280.000 reseñas etiquetadas en 10 idiomas (2023-2025)",
-                "en": "Corpus of 280,000 labelled reviews in 10 languages (2023-2025)",
-                "va": "Corpus de 280.000 ressenyes etiquetades en 10 idiomes (2023-2025)"
-              },
-              "format": "JSON + CSV",
-              "license": "Uso restringido al reto"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/challenges/reto-analisis-sentimiento-turismo-tur/",
-          "items": [
-            {
-              "id": "challenge-brief",
-              "type": "brief",
-              "title": {
-                "es": "Ficha del reto — Análisis de sentimiento turístico",
-                "en": "Challenge brief — Tourism sentiment analysis",
-                "va": "Fitxa del repte — Anàlisi de sentiment turístic"
-              },
-              "description": {
-                "es": "Descripción del reto, estructura del corpus, criterios de evaluación técnica y de utilidad, y condiciones de la API.",
-                "en": "Challenge description, corpus structure, technical and utility evaluation criteria, and API conditions.",
-                "va": "Descripció del repte, estructura del corpus, criteris d'avaluació tècnica i d'utilitat, i condicions de l'API."
-              },
-              "files": [
-                {
-                  "file": "ficha-reto-sentimiento-turismo.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
-        "outputs": {
-          "expected": [
-            {
-              "id": "nlp-system",
-              "label": {
-                "es": "Sistema NLP desplegable con soporte para 10 idiomas",
-                "en": "Deployable NLP system with 10-language support",
-                "va": "Sistema NLP desplegable amb suport per a 10 idiomes"
-              }
-            },
-            {
-              "id": "dashboard",
-              "label": {
-                "es": "Dashboard web para gestores municipales con filtros por destino y categoría",
-                "en": "Web dashboard for municipal managers with destination and category filters",
-                "va": "Dashboard web per a gestors municipals amb filtres per destinació i categoria"
-              }
-            },
-            {
-              "id": "accuracy-report",
-              "label": {
-                "es": "Informe de precisión del análisis de sentimiento por idioma y categoría temática",
-                "en": "Sentiment analysis accuracy report by language and thematic category",
-                "va": "Informe de precisió de l'anàlisi de sentiment per idioma i categoria temàtica"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2026-05-31",
-              "label": {
-                "es": "Cierre de inscripciones",
-                "en": "Registration deadline",
-                "va": "Tancament d'inscripcions"
-              }
-            },
-            {
-              "date": "2026-06-10",
-              "label": {
-                "es": "Acceso al corpus y APIs para equipos inscritos",
-                "en": "Corpus and API access for registered teams",
-                "va": "Accés al corpus i APIs per a equips inscrits"
-              }
-            },
-            {
-              "date": "2026-09-15",
-              "label": {
-                "es": "Entrega de sistemas y demos",
-                "en": "System and demo submission",
-                "va": "Lliurament de sistemes i demos"
-              }
-            },
-            {
-              "date": "2026-10-01",
-              "label": {
-                "es": "Evaluación por gestores municipales y resolución",
-                "en": "Municipal manager evaluation and resolution",
-                "va": "Avaluació per gestors municipals i resolució"
-              }
-            }
-          ]
-        },
-        "hasDownloads": true,
-        "downloadCount": 1,
-        "cardDownloads": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Análisis de sentimiento turístico",
-              "en": "Challenge brief — Tourism sentiment analysis",
-              "va": "Fitxa del repte — Anàlisi de sentiment turístic"
-            },
-            "description": {
-              "es": "Descripción del reto, estructura del corpus, criterios de evaluación técnica y de utilidad, y condiciones de la API.",
-              "en": "Challenge description, corpus structure, technical and utility evaluation criteria, and API conditions.",
-              "va": "Descripció del repte, estructura del corpus, criteris d'avaluació tècnica i d'utilitat, i condicions de l'API."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-sentimiento-turismo.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "outputs": null,
+        "process": null,
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "challenge",
@@ -31727,7 +29387,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": null
@@ -31745,9 +29405,9 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
+              "trackA": true,
               "relations": false,
-              "evidence": false,
+              "evidence": true,
               "transferability": true,
               "summary": true,
               "originContext": true,
@@ -31802,7 +29462,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Endesa Distribució cerca equips de centres educatius i empreses tecnològiques que desenvolupen un prototip de bessona digital capaç de predir sobrecàrregues en la xarxa elèctrica de barris valencians amb alta penetració d'instal·lacions fotovoltaiques, usant dades obertes de consum i generació."
           },
           "entity": {
-            "name": "Endesa Distribución S.A. — Área de Innovación Redes",
+            "name": "",
             "type": {
               "es": "Gran empresa distribuidora de energía eléctrica",
               "en": "Large electricity distribution company",
@@ -31849,12 +29509,12 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "origin": null,
           "requester": {
-            "name": "Endesa Distribución S.A. — Área de Innovación Redes",
+            "name": "",
             "publicLabel": {
               "es": "Gran empresa distribuidora de energía eléctrica",
               "en": "Large electricity distribution company",
@@ -31862,37 +29522,20 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "leadTeam": null,
-          "contact": {
-            "name": "Coordinación AI-STEAM",
-            "org": "CEICE",
-            "role": {
-              "es": "Punto de contacto para expresiones de interés",
-              "en": "Contact point for expressions of interest",
-              "va": "Punt de contacte per a expressions d'interès"
-            }
-          },
+          "contact": null,
           "beneficiaries": []
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "maker-steam"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "infrastructure-evidence"
-          ],
-          "engagementLevel": "challenge-contribution",
-          "evidenceMaturity": "prototype",
-          "lbdStage": "process",
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
           "trackBValue": {
-            "es": "Prototipo de gemelo digital replicable para cualquier operador de red de distribución con datos SCADA disponibles.",
-            "en": "Replicable digital twin prototype for any distribution network operator with available SCADA data.",
-            "va": "Prototip de bessona digital replicable per a qualsevol operador de xarxa de distribució amb dades SCADA disponibles."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
           "pilotStatus": "",
@@ -31924,12 +29567,7 @@ export const MARKETPLACE_CONFIG = {
           "beneficiaryOrganizations": []
         },
         "community": {
-          "tab": "challenges",
-          "featuredSignal": {
-            "es": "Reto abierto — hasta 30 sept. 2026",
-            "en": "Open challenge — until 30 Sept. 2026",
-            "va": "Repte obert — fins al 30 set. 2026"
-          }
+          "tab": "challenges"
         },
         "card": {},
         "visibility": {},
@@ -31939,33 +29577,6 @@ export const MARKETPLACE_CONFIG = {
             "en": "Can a digital twin predict and prevent overloads in the distribution grid?",
             "va": "Pot una bessona digital predir i prevenir sobrecàrregues en la xarxa de distribució?"
           },
-          "need": {
-            "es": "La creciente instalación de paneles fotovoltaicos en viviendas genera flujos bidireccionales de energía que los modelos actuales de gestión de red no anticipan correctamente. En barrios con alta concentración solar, los transformadores de media tensión registran sobrecargas hasta 3 veces por semana en verano. Necesitamos modelos predictivos que anticipen estos picos con al menos 4 horas de antelación.",
-            "en": "The growing installation of photovoltaic panels in homes generates bidirectional energy flows that current grid management models do not correctly anticipate. In neighbourhoods with high solar concentration, medium-voltage transformers record overloads up to 3 times per week in summer. We need predictive models that anticipate these peaks at least 4 hours in advance.",
-            "va": "La creixent instal·lació de panells fotovoltaics en habitatges genera fluxos bidireccionals d'energia que els models actuals de gestió de xarxa no anticipen correctament. En barris amb alta concentració solar, els transformadors de mitja tensió registren sobrecàrregues fins a 3 vegades per setmana a l'estiu. Necessitem models predictius que anticipen estos pics amb almenys 4 hores d'antelació."
-          },
-          "context": {
-            "es": "Endesa Distribución opera más de 2.400 km de red de distribución en la Comunitat Valenciana. Dispone de datos históricos anonimizados de consumo y generación a nivel de transformador para los años 2022-2025, junto con datos meteorológicos de AEMET. El prototipo debe integrarse conceptualmente con los sistemas SCADA existentes y demostrar su funcionalidad en un barrio piloto real de Valencia capital.",
-            "en": "Endesa Distribución operates more than 2,400 km of distribution network in the Valencian Community. It has anonymised historical consumption and generation data at transformer level for 2022-2025, along with AEMET meteorological data. The prototype must conceptually integrate with existing SCADA systems and demonstrate its functionality in a real pilot neighbourhood in Valencia city.",
-            "va": "Endesa Distribució opera més de 2.400 km de xarxa de distribució a la Comunitat Valenciana. Disposa de dades històriques anonimitzades de consum i generació a nivell de transformador per als anys 2022-2025, juntament amb dades meteorològiques d'AEMET. El prototip ha d'integrar-se conceptualment amb els sistemes SCADA existents i demostrar la seua funcionalitat en un barri pilot real de València capital."
-          },
-          "participation": {
-            "audienceText": {
-              "es": "Equipos multidisciplinares de 2 a 5 personas con experiencia en modelado de datos o sistemas de control. Se valora especialmente la participación de equipos mixtos empresa–centro educativo.",
-              "en": "Multidisciplinary teams of 2 to 5 people with experience in data modelling or control systems. Mixed company–educational centre teams are particularly valued.",
-              "va": "Equips multidisciplinaris de 2 a 5 persones amb experiència en modelatge de dades o sistemes de control. Es valora especialment la participació d'equips mixtos empresa–centre educatiu."
-            },
-            "formatText": {
-              "es": "Entrega de prototipo funcional (repositorio GitHub) + documento de arquitectura (máx. 10 páginas) + vídeo demostración de 3 minutos. La evaluación se realiza en dos fases — revisión técnica y presentación ante el jurado de Endesa.",
-              "en": "Submission of functional prototype (GitHub repository) + architecture document (max. 10 pages) + 3-minute demonstration video. Evaluation takes place in two phases — technical review and presentation before the Endesa jury.",
-              "va": "Lliurament de prototip funcional (repositori GitHub) + document d'arquitectura (màx. 10 pàgines) + vídeo demostració de 3 minuts. L'avaluació es realitza en dues fases — revisió tècnica i presentació davant el jurat d'Endesa."
-            },
-            "transferValue": {
-              "es": "El prototipo seleccionado se incorporará al programa Track B de AI-STEAM como caso de referencia en el sector energético. Todos los repositorios se publicarán en abierto bajo licencia MIT con atribución a los autores.",
-              "en": "The selected prototype will be incorporated into AI-STEAM's Track B programme as a reference case in the energy sector. All repositories will be published openly under MIT licence with attribution to the authors.",
-              "va": "El prototip seleccionat s'incorporarà al programa Track B d'AI-STEAM com a cas de referència en el sector energètic. Tots els repositoris es publicaran en obert sota llicència MIT amb atribució als autors."
-            }
-          },
           "reward": {
             "es": "El equipo ganador recibe: (1) contrato de prueba de concepto con Endesa por valor de 15.000 €, (2) mentoría técnica de 3 meses con el equipo de innovación de redes, (3) publicación del caso en el Marketplace AI-STEAM como caso verificado.",
             "en": "The winning team receives: (1) proof-of-concept contract with Endesa worth €15,000, (2) 3-month technical mentoring with the grid innovation team, (3) publication of the case in the AI-STEAM Marketplace as a verified case.",
@@ -31974,20 +29585,20 @@ export const MARKETPLACE_CONFIG = {
         },
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
-          "contributionVisibility": "external-managed",
+          "contributionVisibility": "",
           "sensitiveDataPolicy": {
-            "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-            "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-            "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "rightsNote": {
-            "es": "Los prototipos presentados se publicarán bajo licencia MIT con atribución. El dataset proporcionado por Endesa es de uso exclusivo para este reto y no puede redistribuirse.",
-            "en": "Submitted prototypes will be published under MIT licence with attribution. The dataset provided by Endesa is for exclusive use in this challenge and may not be redistributed.",
-            "va": "Els prototips presentats es publicaran sota llicència MIT amb atribució. El dataset proporcionat per Endesa és d'ús exclusiu per a este repte i no pot redistribuir-se."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -31997,7 +29608,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -32022,9 +29633,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar participación",
-              "en": "Request participation",
-              "va": "Sol·licitar participació"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -32040,9 +29651,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "fallbackContact": {
             "label": {
-              "es": "Contactar con la coordinación del reto",
-              "en": "Contact the challenge coordination desk",
-              "va": "Contactar amb la coordinació del repte"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": ""
           }
@@ -32055,176 +29666,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "available": [
-            {
-              "label": {
-                "es": "Dataset histórico de consumo y generación (2022-2025) — anonimizado",
-                "en": "Historical consumption and generation dataset (2022-2025) — anonymised",
-                "va": "Dataset històric de consum i generació (2022-2025) — anonimitzat"
-              },
-              "format": "CSV",
-              "license": "Uso restringido al reto"
-            },
-            {
-              "label": {
-                "es": "Documentación de la API conceptual SCADA para integración",
-                "en": "Conceptual SCADA API documentation for integration",
-                "va": "Documentació de l'API conceptual SCADA per a integració"
-              },
-              "format": "PDF",
-              "license": "CC BY 4.0"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/challenges/reto-gemelo-digital-red-electrica-ene/",
-          "items": [
-            {
-              "id": "challenge-brief",
-              "type": "brief",
-              "title": {
-                "es": "Ficha del reto — Gemelo digital red eléctrica",
-                "en": "Challenge brief — Electricity grid digital twin",
-                "va": "Fitxa del repte — Bessona digital xarxa elèctrica"
-              },
-              "description": {
-                "es": "Descripción completa del reto, criterios de evaluación, condiciones de participación y calendario.",
-                "en": "Full challenge description, evaluation criteria, participation conditions and calendar.",
-                "va": "Descripció completa del repte, criteris d'avaluació, condicions de participació i calendari."
-              },
-              "files": [
-                {
-                  "file": "ficha-reto-gemelo-digital-ene.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "evaluation-criteria",
-              "type": "criteria",
-              "title": {
-                "es": "Criterios de evaluación técnica",
-                "en": "Technical evaluation criteria",
-                "va": "Criteris d'avaluació tècnica"
-              },
-              "description": {
-                "es": "Rúbrica detallada con los criterios técnicos y de impacto que usará el jurado de Endesa para evaluar los prototipos.",
-                "en": "Detailed rubric with the technical and impact criteria the Endesa jury will use to evaluate prototypes.",
-                "va": "Rúbrica detallada amb els criteris tècnics i d'impacte que usarà el jurat d'Endesa per avaluar els prototips."
-              },
-              "files": [
-                {
-                  "file": "criterios-evaluacion-gemelo-digital.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
-        "outputs": {
-          "expected": [
-            {
-              "id": "prototype-repo",
-              "label": {
-                "es": "Repositorio GitHub con el prototipo funcional y README detallado",
-                "en": "GitHub repository with functional prototype and detailed README",
-                "va": "Repositori GitHub amb el prototip funcional i README detallat"
-              }
-            },
-            {
-              "id": "architecture-doc",
-              "label": {
-                "es": "Documento de arquitectura del gemelo digital (máx. 10 páginas)",
-                "en": "Digital twin architecture document (max. 10 pages)",
-                "va": "Document d'arquitectura de la bessona digital (màx. 10 pàgines)"
-              }
-            },
-            {
-              "id": "demo-video",
-              "label": {
-                "es": "Vídeo demostración de 3 minutos con escenario de sobrecarga simulado",
-                "en": "3-minute demonstration video with simulated overload scenario",
-                "va": "Vídeo demostració de 3 minuts amb escenari de sobrecàrrega simulat"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2026-06-15",
-              "label": {
-                "es": "Cierre de inscripciones de equipos",
-                "en": "Team registration deadline",
-                "va": "Tancament d'inscripcions d'equips"
-              }
-            },
-            {
-              "date": "2026-07-01",
-              "label": {
-                "es": "Acceso al dataset histórico para equipos inscritos",
-                "en": "Access to historical dataset for registered teams",
-                "va": "Accés al dataset històric per a equips inscrits"
-              }
-            },
-            {
-              "date": "2026-09-30",
-              "label": {
-                "es": "Entrega de prototipos",
-                "en": "Prototype submission",
-                "va": "Lliurament de prototips"
-              }
-            },
-            {
-              "date": "2026-10-20",
-              "label": {
-                "es": "Presentación ante jurado y resolución",
-                "en": "Jury presentation and resolution",
-                "va": "Presentació davant el jurat i resolució"
-              }
-            }
-          ]
-        },
-        "hasDownloads": true,
-        "downloadCount": 2,
-        "cardDownloads": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Gemelo digital red eléctrica",
-              "en": "Challenge brief — Electricity grid digital twin",
-              "va": "Fitxa del repte — Bessona digital xarxa elèctrica"
-            },
-            "description": {
-              "es": "Descripción completa del reto, criterios de evaluación, condiciones de participación y calendario.",
-              "en": "Full challenge description, evaluation criteria, participation conditions and calendar.",
-              "va": "Descripció completa del repte, criteris d'avaluació, condicions de participació i calendari."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-gemelo-digital-ene.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "outputs": null,
+        "process": null,
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "challenge",
@@ -32237,7 +29689,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": null
@@ -32255,9 +29707,9 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
+              "trackA": true,
               "relations": false,
-              "evidence": false,
+              "evidence": true,
               "transferability": true,
               "summary": true,
               "originContext": true,
@@ -32312,7 +29764,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Correos i l'Ajuntament de València busquen solucions d'IA per optimitzar les rutes de repartiment d'última milla al centre històric, combinant dades de trànsit en temps real, restriccions d'accés a zones de baixes emissions, disponibilitat de punts de consigna i preferències de lliurament dels destinataris, amb l'objectiu de reduir les emissions de CO₂ un 25% en 18 mesos."
           },
           "entity": {
-            "name": "Correos — Dirección de Operaciones Zona Mediterráneo",
+            "name": "",
             "type": {
               "es": "Operador postal y logístico de referencia en España",
               "en": "Reference postal and logistics operator in Spain",
@@ -32359,12 +29811,12 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "origin": null,
           "requester": {
-            "name": "Correos — Dirección de Operaciones Zona Mediterráneo",
+            "name": "",
             "publicLabel": {
               "es": "Operador postal y logístico de referencia en España",
               "en": "Reference postal and logistics operator in Spain",
@@ -32372,38 +29824,20 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "leadTeam": null,
-          "contact": {
-            "name": "Coordinación AI-STEAM",
-            "org": "CEICE",
-            "role": {
-              "es": "Punto de contacto para expresiones de interés",
-              "en": "Contact point for expressions of interest",
-              "va": "Punt de contacte per a expressions d'interès"
-            }
-          },
+          "contact": null,
           "beneficiaries": []
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "maker-steam"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green",
-            "social"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "infrastructure-evidence"
-          ],
-          "engagementLevel": "challenge-contribution",
-          "evidenceMaturity": "prototype",
-          "lbdStage": "process",
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
           "trackBValue": {
-            "es": "Algoritmo de optimización de rutas publicado en abierto, adaptable a cualquier operador logístico urbano con datos de tráfico y restricciones de zona.",
-            "en": "Open-source route optimisation algorithm, adaptable to any urban logistics operator with traffic data and zone restrictions.",
-            "va": "Algorisme d'optimització de rutes publicat en obert, adaptable a qualsevol operador logístic urbà amb dades de trànsit i restriccions de zona."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
           "pilotStatus": "",
@@ -32434,12 +29868,7 @@ export const MARKETPLACE_CONFIG = {
           "beneficiaryOrganizations": []
         },
         "community": {
-          "tab": "challenges",
-          "featuredSignal": {
-            "es": "Reto abierto — última milla sostenible",
-            "en": "Open challenge — sustainable last mile",
-            "va": "Repte obert — última milla sostenible"
-          }
+          "tab": "challenges"
         },
         "card": {},
         "visibility": {},
@@ -32449,33 +29878,6 @@ export const MARKETPLACE_CONFIG = {
             "en": "Can AI reduce urban delivery emissions while complying with LEZ restrictions?",
             "va": "Pot la IA reduir les emissions del repartiment urbà respectant les ZBE?"
           },
-          "need": {
-            "es": "El centro histórico de Valencia tiene 14 km² con restricciones de acceso horario, 3 zonas de bajas emisiones y más de 200 puntos de consigna automatizados. Los repartidores de Correos utilizan actualmente rutas estáticas planificadas el día anterior. La variabilidad del tráfico, los intentos fallidos de entrega y los cambios en las restricciones generan un sobrecoste operativo del 18% y emisiones evitables de CO₂.",
-            "en": "Valencia's historic centre covers 14 km² with time-restricted access, 3 low-emission zones and more than 200 automated parcel lockers. Correos delivery staff currently use static routes planned the previous day. Traffic variability, failed delivery attempts and changes in restrictions generate an 18% operational overcost and avoidable CO₂ emissions.",
-            "va": "El centre històric de València té 14 km² amb restriccions d'accés horari, 3 zones de baixes emissions i més de 200 punts de consigna automatitzats. Els repartidors de Correos utilitzen actualment rutes estàtiques planificades el dia anterior. La variabilitat del trànsit, els intents fallits de lliurament i els canvis en les restriccions generen un sobrecost operatiu del 18% i emissions evitables de CO₂."
-          },
-          "context": {
-            "es": "Correos facilita datos anonimizados de 6 meses de rutas reales, tiempos de entrega, intentos fallidos y coordenadas de puntos de consigna. El Ayuntamiento proporciona los datos de restricciones de acceso a ZBE en tiempo real. La solución debe integrarse con los terminales Android de los repartidores y funcionar sin conexión en caso de pérdida de señal.",
-            "en": "Correos provides 6 months of anonymised data on real routes, delivery times, failed attempts and parcel locker coordinates. The City Council provides real-time LEZ access restriction data. The solution must integrate with delivery staff's Android terminals and work offline in case of signal loss.",
-            "va": "Correos facilita dades anonimitzades de 6 mesos de rutes reals, temps de lliurament, intents fallits i coordenades de punts de consigna. L'Ajuntament proporciona les dades de restriccions d'accés a ZBE en temps real. La solució ha d'integrar-se amb els terminals Android dels repartidors i funcionar sense connexió en cas de pèrdua de senyal."
-          },
-          "participation": {
-            "audienceText": {
-              "es": "Equipos de 2 a 5 personas con experiencia en optimización combinatoria, aprendizaje por refuerzo o sistemas de información geográfica. Se valoran especialmente soluciones que involucren a alumnos de FP de Transporte y Logística.",
-              "en": "Teams of 2 to 5 people with experience in combinatorial optimisation, reinforcement learning or geographic information systems. Solutions involving Transport and Logistics VET students are particularly valued.",
-              "va": "Equips de 2 a 5 persones amb experiència en optimització combinatòria, aprenentatge per reforç o sistemes d'informació geogràfica. Es valoren especialment solucions que involucren alumnes de FP de Transport i Logística."
-            },
-            "formatText": {
-              "es": "Entrega de: algoritmo documentado (repositorio GitHub), simulación sobre los datos históricos proporcionados con métricas de reducción de distancia y emisiones, y demostración en una ruta real de Valencia durante 1 semana.",
-              "en": "Submission of: documented algorithm (GitHub repository), simulation on the provided historical data with distance and emissions reduction metrics, and demonstration on a real Valencia route for 1 week.",
-              "va": "Lliurament de: algorisme documentat (repositori GitHub), simulació sobre les dades històriques proporcionades amb mètriques de reducció de distància i emissions, i demostració en una ruta real de València durant 1 setmana."
-            },
-            "transferValue": {
-              "es": "La solución seleccionada se pilotará en 5 rutas reales de Valencia durante 3 meses, con medición de emisiones certificada. Los resultados se publicarán como caso de referencia en movilidad sostenible.",
-              "en": "The selected solution will be piloted on 5 real Valencia routes for 3 months, with certified emissions measurement. Results will be published as a sustainable mobility reference case.",
-              "va": "La solució seleccionada es pilotarà en 5 rutes reals de València durant 3 mesos, amb mesurament d'emissions certificat. Els resultats es publicaran com a cas de referència en mobilitat sostenible."
-            }
-          },
           "reward": {
             "es": "El equipo ganador recibe: (1) contrato de piloto con Correos con retribución de 20.000 €, (2) acceso a la red de operadores logísticos ALIA para escalado, (3) certificación de impacto ambiental emitida por el Ayuntamiento de Valencia.",
             "en": "The winning team receives: (1) pilot contract with Correos worth €20,000, (2) access to the ALIA logistics operator network for scaling, (3) environmental impact certification issued by Valencia City Council.",
@@ -32484,20 +29886,20 @@ export const MARKETPLACE_CONFIG = {
         },
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
-          "contributionVisibility": "external-managed",
+          "contributionVisibility": "",
           "sensitiveDataPolicy": {
-            "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-            "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-            "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "rightsNote": {
-            "es": "Los algoritmos desarrollados se publicarán bajo licencia MIT. Los datos de Correos son de uso exclusivo para el reto y no pueden redistribuirse ni usarse fuera del contexto de la competición.",
-            "en": "Developed algorithms will be published under MIT licence. Correos data is for exclusive use in the challenge and may not be redistributed or used outside the competition context.",
-            "va": "Els algorismes desenvolupats es publicaran sota llicència MIT. Les dades de Correos són d'ús exclusiu per al repte i no poden redistribuir-se ni usar-se fora del context de la competició."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -32507,7 +29909,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -32532,9 +29934,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar participación",
-              "en": "Request participation",
-              "va": "Sol·licitar participació"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -32550,9 +29952,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "fallbackContact": {
             "label": {
-              "es": "Contactar con la coordinación del reto",
-              "en": "Contact the challenge coordination desk",
-              "va": "Contactar amb la coordinació del repte"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": ""
           }
@@ -32565,176 +29967,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "available": [
-            {
-              "label": {
-                "es": "Dataset de rutas y entregas Correos — centro histórico Valencia (6 meses, anonimizado)",
-                "en": "Correos routes and deliveries dataset — Valencia historic centre (6 months, anonymised)",
-                "va": "Dataset de rutes i lliuraments Correos — centre històric València (6 mesos, anonimitzat)"
-              },
-              "format": "GeoJSON + CSV",
-              "license": "Uso restringido al reto"
-            },
-            {
-              "label": {
-                "es": "API de restricciones de acceso ZBE Valencia — datos en tiempo real",
-                "en": "Valencia LEZ access restrictions API — real-time data",
-                "va": "API de restriccions d'accés ZBE València — dades en temps real"
-              },
-              "format": "REST API (JSON)",
-              "license": "Open Data Valencia"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/challenges/reto-optimizacion-rutas-logistica-mob/",
-          "items": [
-            {
-              "id": "challenge-brief",
-              "type": "brief",
-              "title": {
-                "es": "Ficha del reto — Optimización de rutas última milla",
-                "en": "Challenge brief — Last-mile route optimisation",
-                "va": "Fitxa del repte — Optimització de rutes última milla"
-              },
-              "description": {
-                "es": "Descripción completa del reto, formato de los datos, métricas de evaluación y condiciones del piloto.",
-                "en": "Full challenge description, data format, evaluation metrics and pilot conditions.",
-                "va": "Descripció completa del repte, format de les dades, mètriques d'avaluació i condicions del pilot."
-              },
-              "files": [
-                {
-                  "file": "ficha-reto-rutas-logistica-mob.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "data-dictionary",
-              "type": "guide",
-              "title": {
-                "es": "Diccionario de datos — Dataset rutas Correos",
-                "en": "Data dictionary — Correos routes dataset",
-                "va": "Diccionari de dades — Dataset rutes Correos"
-              },
-              "description": {
-                "es": "Descripción de los campos, formatos y estructuras del dataset de rutas y entregas proporcionado por Correos.",
-                "en": "Description of fields, formats and structures of the routes and deliveries dataset provided by Correos.",
-                "va": "Descripció dels camps, formats i estructures del dataset de rutes i lliuraments proporcionat per Correos."
-              },
-              "files": [
-                {
-                  "file": "diccionario-datos-rutas-correos.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
-        "outputs": {
-          "expected": [
-            {
-              "id": "algorithm-repo",
-              "label": {
-                "es": "Repositorio GitHub con el algoritmo de optimización documentado",
-                "en": "GitHub repository with the documented optimisation algorithm",
-                "va": "Repositori GitHub amb l'algorisme d'optimització documentat"
-              }
-            },
-            {
-              "id": "simulation-results",
-              "label": {
-                "es": "Simulación sobre datos históricos con métricas de reducción de emisiones",
-                "en": "Simulation on historical data with emissions reduction metrics",
-                "va": "Simulació sobre dades històriques amb mètriques de reducció d'emissions"
-              }
-            },
-            {
-              "id": "android-integration",
-              "label": {
-                "es": "Módulo de integración con terminales Android de repartidores",
-                "en": "Integration module for delivery staff Android terminals",
-                "va": "Mòdul d'integració amb terminals Android de repartidors"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2026-06-01",
-              "label": {
-                "es": "Cierre de inscripciones y acceso al dataset",
-                "en": "Registration deadline and dataset access",
-                "va": "Tancament d'inscripcions i accés al dataset"
-              }
-            },
-            {
-              "date": "2026-10-31",
-              "label": {
-                "es": "Entrega de algoritmos y simulaciones",
-                "en": "Algorithm and simulation submission",
-                "va": "Lliurament d'algorismes i simulacions"
-              }
-            },
-            {
-              "date": "2026-11-15",
-              "label": {
-                "es": "Selección de finalistas y prueba piloto en ruta real",
-                "en": "Finalist selection and real-route pilot test",
-                "va": "Selecció de finalistes i prova pilot en ruta real"
-              }
-            },
-            {
-              "date": "2026-12-10",
-              "label": {
-                "es": "Resolución y anuncio del equipo ganador",
-                "en": "Resolution and announcement of winning team",
-                "va": "Resolució i anunci de l'equip guanyador"
-              }
-            }
-          ]
-        },
-        "hasDownloads": true,
-        "downloadCount": 2,
-        "cardDownloads": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Optimización de rutas última milla",
-              "en": "Challenge brief — Last-mile route optimisation",
-              "va": "Fitxa del repte — Optimització de rutes última milla"
-            },
-            "description": {
-              "es": "Descripción completa del reto, formato de los datos, métricas de evaluación y condiciones del piloto.",
-              "en": "Full challenge description, data format, evaluation metrics and pilot conditions.",
-              "va": "Descripció completa del repte, format de les dades, mètriques d'avaluació i condicions del pilot."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-rutas-logistica-mob.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "outputs": null,
+        "process": null,
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "challenge",
@@ -32747,7 +29990,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": null
@@ -32765,9 +30008,9 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
+              "trackA": true,
               "relations": false,
-              "evidence": false,
+              "evidence": true,
               "transferability": true,
               "summary": true,
               "originContext": true,
@@ -32869,8 +30112,8 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "origin": null,
           "requester": {
@@ -32882,40 +30125,20 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "leadTeam": null,
-          "contact": {
-            "name": "AI-STEAM Network Desk",
-            "org": "CEICE",
-            "role": {
-              "es": "Punto de coordinación Track B",
-              "en": "Track B coordination point",
-              "va": "Punt de coordinació Track B"
-            }
-          },
+          "contact": null,
           "beneficiaries": []
         },
         "classification": {
-          "aiSteamFocus": [
-            "creative-ai",
-            "data-ai",
-            "maker-steam"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green",
-            "social"
-          ],
-          "policyCluster": [
-            "triple-transition",
-            "learning-ecosystems",
-            "infrastructure-evidence"
-          ],
-          "engagementLevel": "challenge-contribution",
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
           "trackBValue": {
-            "es": "Convierte una necesidad institucional en una oportunidad abierta para colaboración entre centros, empresas creativas y expertos en IA responsable.",
-            "en": "Turns an institutional need into an open collaboration opportunity for schools, creative companies and responsible AI experts.",
-            "va": "Converteix una necessitat institucional en una oportunitat oberta de col·laboració entre centres, empreses creatives i experts en IA responsable."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
           "pilotStatus": "",
@@ -32949,12 +30172,7 @@ export const MARKETPLACE_CONFIG = {
           "beneficiaryOrganizations": []
         },
         "community": {
-          "tab": "challenges",
-          "featuredSignal": {
-            "es": "Reto abierto hasta septiembre de 2026",
-            "en": "Challenge open until September 2026",
-            "va": "Repte obert fins a setembre de 2026"
-          }
+          "tab": "challenges"
         },
         "card": {},
         "visibility": {},
@@ -32964,33 +30182,6 @@ export const MARKETPLACE_CONFIG = {
             "en": "Design green interventions with generative AI",
             "va": "Dissenyar intervencions verdes amb IA generativa"
           },
-          "need": {
-            "es": "Identificar intervenciones viables para mejorar sostenibilidad y bienestar en espacios educativos usando IA como apoyo creativo, no como sustituto de la deliberación humana.",
-            "en": "Identify feasible interventions to improve sustainability and wellbeing in learning spaces using AI as a creative support, not as a replacement for human deliberation.",
-            "va": "Identificar intervencions viables per a millorar sostenibilitat i benestar en espais educatius usant IA com a suport creatiu, no com a substitut de la deliberació humana."
-          },
-          "context": {
-            "es": "El reto se sitúa en el espacio Track B de la red y busca propuestas transferibles a centros educativos con diferente capacidad tecnológica.",
-            "en": "The challenge sits in the Track B network space and seeks proposals transferable to educational centres with different levels of technological capacity.",
-            "va": "El repte se situa en l'espai Track B de la xarxa i busca propostes transferibles a centres educatius amb diferent capacitat tecnològica."
-          },
-          "participation": {
-            "audienceText": {
-              "es": "Centros educativos, administraciones, empresas de energía, estudios creativos, docentes y alumnado avanzado.",
-              "en": "Educational centres, public administrations, energy companies, creative studios, teachers and advanced learners.",
-              "va": "Centres educatius, administracions, empreses d'energia, estudis creatius, docents i alumnat avançat."
-            },
-            "formatText": {
-              "es": "Contribución abierta de ideas, datos de contexto, prototipos o metodologías.",
-              "en": "Open contribution of ideas, contextual data, prototypes or methodologies.",
-              "va": "Contribució oberta d'idees, dades de context, prototips o metodologies."
-            },
-            "transferValue": {
-              "es": "La red obtiene un brief común, ejemplos de intervención y criterios de transferencia para otros centros interesados en IA, creatividad y sostenibilidad.",
-              "en": "The network gains a shared brief, intervention examples and transfer criteria for other centres interested in AI, creativity and sustainability.",
-              "va": "La xarxa obté un brief comú, exemples d'intervenció i criteris de transferència per a altres centres interessats en IA, creativitat i sostenibilitat."
-            }
-          },
           "reward": {
             "es": "Reconocimiento de participación y posibilidad de derivación a actividad LbD.",
             "en": "Participation recognition and possible routing into an LbD activity.",
@@ -32999,20 +30190,20 @@ export const MARKETPLACE_CONFIG = {
         },
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
-          "contributionVisibility": "external-managed",
+          "contributionVisibility": "",
           "sensitiveDataPolicy": {
-            "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-            "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-            "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "rightsNote": {
-            "es": "Las contribuciones públicas deberán poder compartirse como conocimiento abierto o describirse sin datos sensibles.",
-            "en": "Public contributions must be shareable as open knowledge or describable without sensitive data.",
-            "va": "Les contribucions públiques hauran de poder compartir-se com a coneixement obert o descriure's sense dades sensibles."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -33022,7 +30213,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -33063,7 +30254,14 @@ export const MARKETPLACE_CONFIG = {
             },
             "url": ""
           },
-          "fallbackContact": null
+          "fallbackContact": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "url": ""
+          }
         },
         "relations": {
           "originChallengeId": "",
@@ -33073,132 +30271,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "available": [
-            {
-              "label": {
-                "es": "Plantilla de diagnóstico de espacios",
-                "en": "Learning-space diagnosis template",
-                "va": "Plantilla de diagnòstic d'espais"
-              },
-              "format": [
-                "odt",
-                "pdf"
-              ],
-              "license": "CC BY 4.0"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/challenges/creative-ai-green-campus/",
-          "items": [
-            {
-              "id": "proposal-template",
-              "type": "template",
-              "title": {
-                "es": "Plantilla de propuesta",
-                "en": "Proposal template",
-                "va": "Plantilla de proposta"
-              },
-              "description": {
-                "es": "Documento editable para estructurar una propuesta de intervención.",
-                "en": "Editable document to structure an intervention proposal.",
-                "va": "Document editable per a estructurar una proposta d'intervenció."
-              },
-              "files": [
-                {
-                  "file": "plantilla-propuesta-campus-verde.odt",
-                  "format": "odt",
-                  "language": "es",
-                  "license": ""
-                },
-                {
-                  "file": "plantilla-propuesta-campus-verde.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": ""
-                }
-              ],
-              "license": "CC BY 4.0",
-              "showOnCard": true,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
-        "outputs": {
-          "expected": [
-            {
-              "id": "opportunity-map",
-              "label": {
-                "es": "Mapa de oportunidades de mejora",
-                "en": "Opportunity map for improvements",
-                "va": "Mapa d'oportunitats de millora"
-              }
-            },
-            {
-              "id": "intervention-prototype",
-              "label": {
-                "es": "Prototipo visual o narrativo de intervención",
-                "en": "Visual or narrative intervention prototype",
-                "va": "Prototip visual o narratiu d'intervenció"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2026-06-15",
-              "label": {
-                "es": "Apertura de contribuciones",
-                "en": "Contribution window opens",
-                "va": "Obertura de contribucions"
-              }
-            },
-            {
-              "date": "2026-09-30",
-              "label": {
-                "es": "Cierre de recepción de propuestas",
-                "en": "Submission window closes",
-                "va": "Tancament de recepció de propostes"
-              }
-            }
-          ]
-        },
-        "hasDownloads": true,
-        "downloadCount": 1,
-        "cardDownloads": [
-          {
-            "id": "proposal-template",
-            "type": "template",
-            "title": {
-              "es": "Plantilla de propuesta",
-              "en": "Proposal template",
-              "va": "Plantilla de proposta"
-            },
-            "description": {
-              "es": "Documento editable para estructurar una propuesta de intervención.",
-              "en": "Editable document to structure an intervention proposal.",
-              "va": "Document editable per a estructurar una proposta d'intervenció."
-            },
-            "files": [
-              {
-                "file": "plantilla-propuesta-campus-verde.odt",
-                "format": "odt",
-                "language": "es"
-              },
-              {
-                "file": "plantilla-propuesta-campus-verde.pdf",
-                "format": "pdf",
-                "language": "es"
-              }
-            ],
-            "license": "CC BY 4.0",
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "outputs": null,
+        "process": null,
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "challenge",
@@ -33211,7 +30294,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": null
@@ -33229,9 +30312,9 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
+              "trackA": true,
               "relations": false,
-              "evidence": false,
+              "evidence": true,
               "transferability": true,
               "summary": true,
               "originContext": true,
@@ -33286,7 +30369,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Pamesa Ceràmica cerca un sistema de visió artificial capaç de detectar defectes superficials (esquerdes, bambolles, irregularitats d'esmalt) en rajoles ceràmiques a velocitats de producció de 80 peces per minut, superant la taxa de detecció humana actual del 94% i reduint el malbaratament de material en un 15%."
           },
           "entity": {
-            "name": "Pamesa Cerámica S.A. — Dirección de Ingeniería de Proceso",
+            "name": "",
             "type": {
               "es": "Empresa líder en fabricación de pavimento y revestimiento cerámico",
               "en": "Leading company in ceramic floor and wall tile manufacturing",
@@ -33336,12 +30419,12 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "origin": null,
           "requester": {
-            "name": "Pamesa Cerámica S.A. — Dirección de Ingeniería de Proceso",
+            "name": "",
             "publicLabel": {
               "es": "Empresa líder en fabricación de pavimento y revestimiento cerámico",
               "en": "Leading company in ceramic floor and wall tile manufacturing",
@@ -33349,37 +30432,20 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "leadTeam": null,
-          "contact": {
-            "name": "Coordinación AI-STEAM",
-            "org": "CEICE",
-            "role": {
-              "es": "Punto de contacto para expresiones de interés",
-              "en": "Contact point for expressions of interest",
-              "va": "Punt de contacte per a expressions d'interès"
-            }
-          },
+          "contact": null,
           "beneficiaries": []
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "maker-steam"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "infrastructure-evidence"
-          ],
-          "engagementLevel": "challenge-contribution",
-          "evidenceMaturity": "pilot",
-          "lbdStage": "process",
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
           "trackBValue": {
-            "es": "Sistema de visión artificial para defectos cerámicos publicado en abierto, adaptable a cualquier fabricante del sector Tile of Spain con líneas de producción similares.",
-            "en": "Open-source ceramic defect computer vision system, adaptable to any Tile of Spain manufacturer with similar production lines.",
-            "va": "Sistema de visió artificial per a defectes ceràmics publicat en obert, adaptable a qualsevol fabricant del sector Tile of Spain amb línies de producció similars."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
           "pilotStatus": "",
@@ -33410,12 +30476,7 @@ export const MARKETPLACE_CONFIG = {
           "beneficiaryOrganizations": []
         },
         "community": {
-          "tab": "challenges",
-          "featuredSignal": {
-            "es": "Piloto en planta — sector cerámico valenciano",
-            "en": "Factory pilot — Valencian ceramic sector",
-            "va": "Pilot en planta — sector ceràmic valencià"
-          }
+          "tab": "challenges"
         },
         "card": {},
         "visibility": {},
@@ -33425,33 +30486,6 @@ export const MARKETPLACE_CONFIG = {
             "en": "Can AI exceed human defect detection in ceramics at 80 pieces/min?",
             "va": "Pot la IA superar la detecció humana de defectes en ceràmica a 80 peces/min?"
           },
-          "need": {
-            "es": "El control de calidad visual actual de Pamesa se realiza con 3 operarios por turno que inspeccionan cada baldosa durante el proceso de selección y embalaje. La fatiga visual después de 4 horas reduce la tasa de detección del 97% al 89%. Los defectos no detectados generan reclamaciones de clientes valoradas en 2,3 M€ anuales. Se necesita un sistema que mantenga una tasa de detección superior al 96% durante las 8 horas del turno.",
-            "en": "Pamesa's current visual quality control uses 3 operators per shift inspecting each tile during the selection and packaging process. Visual fatigue after 4 hours reduces the detection rate from 97% to 89%. Undetected defects generate customer claims valued at €2.3M annually. A system is needed that maintains a detection rate above 96% throughout the 8-hour shift.",
-            "va": "El control de qualitat visual actual de Pamesa es realitza amb 3 operaris per torn que inspeccionen cada rajola durant el procés de selecció i embalatge. La fatiga visual després de 4 hores redueix la taxa de detecció del 97% al 89%. Els defectes no detectats generen reclamacions de clients valorades en 2,3 M€ anuals. Es necessita un sistema que mantinga una taxa de detecció superior al 96% durant les 8 hores del torn."
-          },
-          "context": {
-            "es": "Pamesa dispone de una línea de producción piloto instrumentada con cámaras de alta velocidad (10.000 fps) y sistema de iluminación UV ya instalados. Facilita un dataset de 50.000 imágenes etiquetadas con 12 tipos de defectos cerámicos y acceso a la línea piloto para validación real durante 2 semanas. El sistema debe funcionar en tiempo real con una latencia máxima de 12 ms por imagen.",
-            "en": "Pamesa has a pilot production line instrumented with high-speed cameras (10,000 fps) and UV lighting system already installed. It provides a dataset of 50,000 labelled images with 12 types of ceramic defects and access to the pilot line for real validation for 2 weeks. The system must work in real time with a maximum latency of 12 ms per image.",
-            "va": "Pamesa disposa d'una línia de producció pilot instrumentada amb càmeres d'alta velocitat (10.000 fps) i sistema d'il·luminació UV ja instal·lats. Facilita un dataset de 50.000 imatges etiquetades amb 12 tipus de defectes ceràmics i accés a la línia pilot per a validació real durant 2 setmanes. El sistema ha de funcionar en temps real amb una latència màxima de 12 ms per imatge."
-          },
-          "participation": {
-            "audienceText": {
-              "es": "Equipos de 2 a 5 personas con experiencia en visión por computador en tiempo real y despliegue en edge computing (GPU industrial). Se valorará la participación de alumnos de FP de Fabricación Mecánica o Mecatrónica.",
-              "en": "Teams of 2 to 5 people with experience in real-time computer vision and edge computing deployment (industrial GPU). Participation of Mechanical Manufacturing or Mechatronics VET students is valued.",
-              "va": "Equips de 2 a 5 persones amb experiència en visió per computador en temps real i desplegament en edge computing (GPU industrial). Es valorarà la participació d'alumnes de FP de Fabricació Mecànica o Mecatrònica."
-            },
-            "formatText": {
-              "es": "Entrega de: modelo exportado a ONNX o TensorRT, sistema de inferencia con latencia documentada, evaluación sobre el conjunto de test con matriz de confusión por tipo de defecto, y demostración en línea piloto real de Pamesa.",
-              "en": "Submission of: model exported to ONNX or TensorRT, inference system with documented latency, evaluation on the test set with confusion matrix by defect type, and demonstration on Pamesa's real pilot line.",
-              "va": "Lliurament de: model exportat a ONNX o TensorRT, sistema d'inferència amb latència documentada, avaluació sobre el conjunt de test amb matriu de confusió per tipus de defecte, i demostració en línia pilot real de Pamesa."
-            },
-            "transferValue": {
-              "es": "El sistema validado se publicará como solución de referencia para el sector cerámico español (Tile of Spain, ASCER). Los datos de defectos enriquecidos con las anotaciones del equipo ganador se publicarán como dataset abierto.",
-              "en": "The validated system will be published as a reference solution for the Spanish ceramic sector (Tile of Spain, ASCER). The defect data enriched with the winning team's annotations will be published as an open dataset.",
-              "va": "El sistema validat es publicarà com a solució de referència per al sector ceràmic espanyol (Tile of Spain, ASCER). Les dades de defectes enriquides amb les anotacions de l'equip guanyador es publicaran com a dataset obert."
-            }
-          },
           "reward": {
             "es": "El equipo ganador recibe: (1) contrato de implementación en planta valorado en 30.000 €, (2) acceso a las instalaciones de Pamesa para investigación en manufactura avanzada, (3) reconocimiento de ASCER como solución de referencia del sector.",
             "en": "The winning team receives: (1) factory implementation contract valued at €30,000, (2) access to Pamesa facilities for advanced manufacturing research, (3) recognition from ASCER as a sector reference solution.",
@@ -33460,20 +30494,20 @@ export const MARKETPLACE_CONFIG = {
         },
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
-          "contributionVisibility": "external-managed",
+          "contributionVisibility": "",
           "sensitiveDataPolicy": {
-            "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-            "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-            "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "rightsNote": {
-            "es": "Los modelos desarrollados se publicarán bajo licencia MIT con atribución. El dataset de imágenes de defectos es propiedad de Pamesa; la versión enriquecida se publicará bajo licencia CC BY-SA 4.0 con atribución.",
-            "en": "Developed models will be published under MIT licence with attribution. The defect image dataset is owned by Pamesa; the enriched version will be published under CC BY-SA 4.0 licence with attribution.",
-            "va": "Els models desenvolupats es publicaran sota llicència MIT amb atribució. El dataset d'imatges de defectes és propietat de Pamesa; la versió enriquida es publicarà sota llicència CC BY-SA 4.0 amb atribució."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -33483,7 +30517,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -33508,9 +30542,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar participación",
-              "en": "Request participation",
-              "va": "Sol·licitar participació"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -33526,9 +30560,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "fallbackContact": {
             "label": {
-              "es": "Contactar con la coordinación del reto",
-              "en": "Contact the challenge coordination desk",
-              "va": "Contactar amb la coordinació del repte"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": ""
           }
@@ -33541,176 +30575,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "available": [
-            {
-              "label": {
-                "es": "Dataset de 50.000 imágenes etiquetadas — 12 tipos de defectos cerámicos",
-                "en": "Dataset of 50,000 labelled images — 12 types of ceramic defects",
-                "va": "Dataset de 50.000 imatges etiquetades — 12 tipus de defectes ceràmics"
-              },
-              "format": "ZIP (PNG 1024x1024 + JSON)",
-              "license": "Uso restringido al reto"
-            },
-            {
-              "label": {
-                "es": "Especificaciones técnicas de las cámaras y sistema de iluminación instalado",
-                "en": "Technical specifications of the installed cameras and lighting system",
-                "va": "Especificacions tècniques de les càmeres i sistema d'il·luminació instal·lat"
-              },
-              "format": "PDF",
-              "license": "Confidencial — compartido con equipos inscritos"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/challenges/reto-control-calidad-vision-ia-mfg/",
-          "items": [
-            {
-              "id": "challenge-brief",
-              "type": "brief",
-              "title": {
-                "es": "Ficha del reto — Control de calidad visual cerámica",
-                "en": "Challenge brief — Ceramic visual quality control",
-                "va": "Fitxa del repte — Control de qualitat visual ceràmica"
-              },
-              "description": {
-                "es": "Descripción técnica completa del reto, especificaciones de latencia y precisión, estructura del dataset y condiciones del piloto en planta.",
-                "en": "Full technical description of the challenge, latency and accuracy specifications, dataset structure and factory pilot conditions.",
-                "va": "Descripció tècnica completa del repte, especificacions de latència i precisió, estructura del dataset i condicions del pilot en planta."
-              },
-              "files": [
-                {
-                  "file": "ficha-reto-vision-calidad-ceramica.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "defect-taxonomy",
-              "type": "guide",
-              "title": {
-                "es": "Taxonomía de defectos cerámicos — guía de anotación",
-                "en": "Ceramic defect taxonomy — annotation guide",
-                "va": "Taxonomia de defectes ceràmics — guia d'anotació"
-              },
-              "description": {
-                "es": "Guía visual con ejemplos de los 12 tipos de defectos cerámicos considerados en el reto, con criterios de anotación y casos límite.",
-                "en": "Visual guide with examples of the 12 ceramic defect types considered in the challenge, with annotation criteria and borderline cases.",
-                "va": "Guia visual amb exemples dels 12 tipus de defectes ceràmics considerats al repte, amb criteris d'anotació i casos límit."
-              },
-              "files": [
-                {
-                  "file": "taxonomia-defectos-ceramicos-anotacion.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
-        "outputs": {
-          "expected": [
-            {
-              "id": "vision-model",
-              "label": {
-                "es": "Modelo ONNX o TensorRT con inferencia documentada a menos de 12 ms por imagen",
-                "en": "ONNX or TensorRT model with documented inference under 12 ms per image",
-                "va": "Model ONNX o TensorRT amb inferència documentada a menys de 12 ms per imatge"
-              }
-            },
-            {
-              "id": "test-evaluation",
-              "label": {
-                "es": "Evaluación sobre conjunto de test con matriz de confusión por tipo de defecto",
-                "en": "Test set evaluation with confusion matrix per defect type",
-                "va": "Avaluació sobre conjunt de test amb matriu de confusió per tipus de defecte"
-              }
-            },
-            {
-              "id": "factory-demo",
-              "label": {
-                "es": "Demostración en línea piloto real de Pamesa durante mínimo 4 horas",
-                "en": "Demonstration on Pamesa's real pilot line for a minimum of 4 hours",
-                "va": "Demostració en línia pilot real de Pamesa durant mínim 4 hores"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2026-03-31",
-              "label": {
-                "es": "Cierre de inscripciones y acceso al dataset",
-                "en": "Registration deadline and dataset access",
-                "va": "Tancament d'inscripcions i accés al dataset"
-              }
-            },
-            {
-              "date": "2026-08-01",
-              "label": {
-                "es": "Entrega de modelos y evaluación técnica",
-                "en": "Model submission and technical evaluation",
-                "va": "Lliurament de models i avaluació tècnica"
-              }
-            },
-            {
-              "date": "2026-08-15",
-              "label": {
-                "es": "Demostración en planta — equipos finalistas",
-                "en": "Factory demonstration — finalist teams",
-                "va": "Demostració en planta — equips finalistes"
-              }
-            },
-            {
-              "date": "2026-08-31",
-              "label": {
-                "es": "Resolución y anuncio del equipo ganador",
-                "en": "Resolution and announcement of winning team",
-                "va": "Resolució i anunci de l'equip guanyador"
-              }
-            }
-          ]
-        },
-        "hasDownloads": true,
-        "downloadCount": 2,
-        "cardDownloads": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — Control de calidad visual cerámica",
-              "en": "Challenge brief — Ceramic visual quality control",
-              "va": "Fitxa del repte — Control de qualitat visual ceràmica"
-            },
-            "description": {
-              "es": "Descripción técnica completa del reto, especificaciones de latencia y precisión, estructura del dataset y condiciones del piloto en planta.",
-              "en": "Full technical description of the challenge, latency and accuracy specifications, dataset structure and factory pilot conditions.",
-              "va": "Descripció tècnica completa del repte, especificacions de latència i precisió, estructura del dataset i condicions del pilot en planta."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-vision-calidad-ceramica.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "outputs": null,
+        "process": null,
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "challenge",
@@ -33723,7 +30598,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": null
@@ -33741,9 +30616,9 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
+              "trackA": true,
               "relations": false,
-              "evidence": false,
+              "evidence": true,
               "transferability": true,
               "summary": true,
               "originContext": true,
@@ -33798,7 +30673,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "La Cooperativa Agrícola de Castelló cerca solucions de visió artificial capaces d'identificar símptomes inicials de les principals plagues i malalties del taronger i llimoner a partir d'imatges preses amb smartphone, abans que siguen visibles a simple vista, reduint l'ús de fitosanitaris."
           },
           "entity": {
-            "name": "Cooperativa Agrícola Sant Isidre de Castelló",
+            "name": "",
             "type": {
               "es": "Cooperativa agrícola citrícola del norte de Castellón",
               "en": "Citrus agricultural cooperative from northern Castellón",
@@ -33845,12 +30720,12 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "origin": null,
           "requester": {
-            "name": "Cooperativa Agrícola Sant Isidre de Castelló",
+            "name": "",
             "publicLabel": {
               "es": "Cooperativa agrícola citrícola del norte de Castellón",
               "en": "Citrus agricultural cooperative from northern Castellón",
@@ -33858,38 +30733,20 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "leadTeam": null,
-          "contact": {
-            "name": "Coordinación AI-STEAM",
-            "org": "CEICE",
-            "role": {
-              "es": "Punto de contacto para expresiones de interés",
-              "en": "Contact point for expressions of interest",
-              "va": "Punt de contacte per a expressions d'interès"
-            }
-          },
+          "contact": null,
           "beneficiaries": []
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "maker-steam"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green",
-            "social"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "equity-inclusion"
-          ],
-          "engagementLevel": "challenge-contribution",
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
           "trackBValue": {
-            "es": "Dataset etiquetado de plagas en cítricos y modelo de clasificación publicado en abierto para uso de cualquier cooperativa o centro de FP Agraria.",
-            "en": "Labelled citrus pest dataset and open-source classification model for use by any cooperative or Agricultural VET centre.",
-            "va": "Dataset etiquetat de plagues en cítrics i model de classificació publicat en obert per a ús de qualsevol cooperativa o centre de FP Agrària."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "verificationStatus": "",
           "pilotStatus": "",
@@ -33921,12 +30778,7 @@ export const MARKETPLACE_CONFIG = {
           "beneficiaryOrganizations": []
         },
         "community": {
-          "tab": "challenges",
-          "featuredSignal": {
-            "es": "Reto abierto — hasta 15 oct. 2026",
-            "en": "Open challenge — until 15 Oct. 2026",
-            "va": "Repte obert — fins al 15 oct. 2026"
-          }
+          "tab": "challenges"
         },
         "card": {},
         "visibility": {},
@@ -33936,33 +30788,6 @@ export const MARKETPLACE_CONFIG = {
             "en": "Can a smartphone detect orange tree pests before the farmer sees them?",
             "va": "Pot un smartphone detectar plagues de taronger abans que l'agricultor les veja?"
           },
-          "need": {
-            "es": "Las plagas como la Phyllocnistis citrella (minador de hojas) y la Alternaria alternata (mancha marrón) pueden destruir hasta el 40% de la cosecha si no se detectan en las primeras 72 horas. Los agricultores de la cooperativa realizan inspecciones visuales semanales, pero la detección temprana automatizada reduciría el uso de fitosanitarios en un 30-50% según estimaciones propias.",
-            "en": "Pests such as Phyllocnistis citrella (leafminer) and Alternaria alternata (brown spot) can destroy up to 40% of the harvest if not detected within the first 72 hours. Cooperative farmers carry out weekly visual inspections, but early automated detection would reduce phytosanitary use by 30-50% according to their own estimates.",
-            "va": "Les plagues com la Phyllocnistis citrella (minador de fulles) i l'Alternaria alternata (taca marró) poden destruir fins al 40% de la collita si no es detecten en les primeres 72 hores. Els agricultors de la cooperativa realitzen inspeccions visuals setmanals, però la detecció primerenca automatitzada reduiria l'ús de fitosanitaris en un 30-50% segons estimacions pròpies."
-          },
-          "context": {
-            "es": "La cooperativa gestiona 1.200 hectáreas de cítricos en el norte de Castellón. Dispone de un banco de 4.000 imágenes etiquetadas de hojas y frutos con 8 tipos de plagas y enfermedades, tomadas entre 2023 y 2025 por técnicos agrícolas. El modelo resultante debe funcionar sin conexión a internet en condiciones de campo (Android 10+).",
-            "en": "The cooperative manages 1,200 hectares of citrus in northern Castellón. It has a bank of 4,000 labelled images of leaves and fruits with 8 types of pests and diseases, taken between 2023 and 2025 by agricultural technicians. The resulting model must work offline in field conditions (Android 10+).",
-            "va": "La cooperativa gestiona 1.200 hectàrees de cítrics al nord de Castelló. Disposa d'un banc de 4.000 imatges etiquetades de fulles i fruits amb 8 tipus de plagues i malalties, preses entre 2023 i 2025 per tècnics agrícoles. El model resultant ha de funcionar sense connexió a internet en condicions de camp (Android 10+)."
-          },
-          "participation": {
-            "audienceText": {
-              "es": "Equipos de 1 a 4 personas con conocimientos de visión por computador (TensorFlow Lite / ONNX). Se valoran propuestas de FP Agraria o equipos con experiencia en despliegue móvil.",
-              "en": "Teams of 1 to 4 people with knowledge of computer vision (TensorFlow Lite / ONNX). Proposals from Agricultural VET or teams with mobile deployment experience are valued.",
-              "va": "Equips d'1 a 4 persones amb coneixements de visió per computador (TensorFlow Lite / ONNX). Es valoren propostes de FP Agrària o equips amb experiència en desplegament mòbil."
-            },
-            "formatText": {
-              "es": "Entrega de modelo TFLite o ONNX exportado + aplicación Android de demostración + informe de rendimiento (precisión, recall por clase). Competición en línea con acceso al dataset tras inscripción.",
-              "en": "Submission of exported TFLite or ONNX model + Android demonstration app + performance report (accuracy, recall per class). Online competition with dataset access after registration.",
-              "va": "Lliurament de model TFLite o ONNX exportat + aplicació Android de demostració + informe de rendiment (precisió, recall per classe). Competició en línia amb accés al dataset després de la inscripció."
-            },
-            "transferValue": {
-              "es": "El modelo y el dataset ampliado se publicarán como recurso abierto en el repositorio AI-STEAM. El caso se documentará como piloto en el Marketplace si supera el umbral de precisión del 85%.",
-              "en": "The model and expanded dataset will be published as an open resource in the AI-STEAM repository. The case will be documented as a pilot in the Marketplace if it exceeds the 85% accuracy threshold.",
-              "va": "El model i el dataset ampliat es publicaran com a recurs obert al repositori AI-STEAM. El cas es documentarà com a pilot al Marketplace si supera el llindar de precisió del 85%."
-            }
-          },
           "reward": {
             "es": "El equipo ganador recibe: (1) acuerdo de colaboración para pilotar la solución en campo durante la campaña 2027, (2) acceso a mentores del IVIA (Instituto Valenciano de Investigaciones Agrarias), (3) publicación del caso en el Marketplace AI-STEAM.",
             "en": "The winning team receives: (1) collaboration agreement to pilot the solution in the field during the 2027 campaign, (2) access to mentors from IVIA (Valencian Institute of Agrarian Research), (3) publication of the case in the AI-STEAM Marketplace.",
@@ -33971,20 +30796,20 @@ export const MARKETPLACE_CONFIG = {
         },
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
-          "contributionVisibility": "external-managed",
+          "contributionVisibility": "",
           "sensitiveDataPolicy": {
-            "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
-            "en": "Personal, confidential or sensitive data must not be submitted through this site.",
-            "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "rightsNote": {
-            "es": "Los modelos entrenados con el dataset de la cooperativa podrán publicarse libremente siempre que incluyan atribución. El dataset original permanece bajo custodia de la cooperativa.",
-            "en": "Models trained on the cooperative's dataset may be freely published provided they include attribution. The original dataset remains under the cooperative's custody.",
-            "va": "Els models entrenats amb el dataset de la cooperativa podran publicar-se lliurement sempre que incloguen atribució. El dataset original roman sota custòdia de la cooperativa."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -33994,7 +30819,7 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -34019,9 +30844,9 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar participación",
-              "en": "Request participation",
-              "va": "Sol·licitar participació"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "system": "",
             "url": ""
@@ -34037,9 +30862,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "fallbackContact": {
             "label": {
-              "es": "Contactar con la coordinación del reto",
-              "en": "Contact the challenge coordination desk",
-              "va": "Contactar amb la coordinació del repte"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": ""
           }
@@ -34052,151 +30877,17 @@ export const MARKETPLACE_CONFIG = {
           "mentorships": [],
           "resources": []
         },
-        "resources": {
-          "available": [
-            {
-              "label": {
-                "es": "Dataset de 4.000 imágenes etiquetadas de plagas en cítricos",
-                "en": "Dataset of 4,000 labelled citrus pest images",
-                "va": "Dataset de 4.000 imatges etiquetades de plagues en cítrics"
-              },
-              "format": "ZIP (JPEG + CSV)",
-              "license": "Uso restringido al reto"
-            },
-            {
-              "label": {
-                "es": "Guía de plagas y enfermedades del cítrico valenciano — IVIA",
-                "en": "Guide to pests and diseases of Valencian citrus — IVIA",
-                "va": "Guia de plagues i malalties del cítric valencià — IVIA"
-              },
-              "format": "PDF",
-              "license": "CC BY 4.0"
-            }
-          ]
-        },
+        "resources": null,
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/challenges/reto-ia-deteccion-plagas-agr/",
-          "items": [
-            {
-              "id": "challenge-brief",
-              "type": "brief",
-              "title": {
-                "es": "Ficha del reto — IA en detección de plagas",
-                "en": "Challenge brief — AI pest detection",
-                "va": "Fitxa del repte — IA en detecció de plagues"
-              },
-              "description": {
-                "es": "Descripción completa del reto, reglas de participación, acceso al dataset y criterios de evaluación.",
-                "en": "Full challenge description, participation rules, dataset access and evaluation criteria.",
-                "va": "Descripció completa del repte, regles de participació, accés al dataset i criteris d'avaluació."
-              },
-              "files": [
-                {
-                  "file": "ficha-reto-ia-plagas-citricos.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0"
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
-        "outputs": {
-          "expected": [
-            {
-              "id": "ml-model",
-              "label": {
-                "es": "Modelo TFLite o ONNX exportado con rendimiento documentado",
-                "en": "Exported TFLite or ONNX model with documented performance",
-                "va": "Model TFLite o ONNX exportat amb rendiment documentat"
-              }
-            },
-            {
-              "id": "android-demo",
-              "label": {
-                "es": "APK de demostración para Android 10+",
-                "en": "Android 10+ demonstration APK",
-                "va": "APK de demostració per a Android 10+"
-              }
-            },
-            {
-              "id": "performance-report",
-              "label": {
-                "es": "Informe de rendimiento con matriz de confusión por clase de plaga",
-                "en": "Performance report with confusion matrix per pest class",
-                "va": "Informe de rendiment amb matriu de confusió per classe de plaga"
-              }
-            }
-          ]
-        },
-        "process": {
-          "milestones": [
-            {
-              "date": "2026-05-30",
-              "label": {
-                "es": "Cierre de inscripciones",
-                "en": "Registration deadline",
-                "va": "Tancament d'inscripcions"
-              }
-            },
-            {
-              "date": "2026-06-10",
-              "label": {
-                "es": "Distribución del dataset a equipos inscritos",
-                "en": "Dataset distribution to registered teams",
-                "va": "Distribució del dataset a equips inscrits"
-              }
-            },
-            {
-              "date": "2026-10-15",
-              "label": {
-                "es": "Entrega de modelos y aplicaciones",
-                "en": "Model and application submission",
-                "va": "Lliurament de models i aplicacions"
-              }
-            },
-            {
-              "date": "2026-11-05",
-              "label": {
-                "es": "Evaluación en campo y resolución del reto",
-                "en": "Field evaluation and challenge resolution",
-                "va": "Avaluació en camp i resolució del repte"
-              }
-            }
-          ]
-        },
-        "hasDownloads": true,
-        "downloadCount": 1,
-        "cardDownloads": [
-          {
-            "id": "challenge-brief",
-            "type": "brief",
-            "title": {
-              "es": "Ficha del reto — IA en detección de plagas",
-              "en": "Challenge brief — AI pest detection",
-              "va": "Fitxa del repte — IA en detecció de plagues"
-            },
-            "description": {
-              "es": "Descripción completa del reto, reglas de participación, acceso al dataset y criterios de evaluación.",
-              "en": "Full challenge description, participation rules, dataset access and evaluation criteria.",
-              "va": "Descripció completa del repte, regles de participació, accés al dataset i criteris d'avaluació."
-            },
-            "files": [
-              {
-                "file": "ficha-reto-ia-plagas-citricos.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true,
-            "showOnDetail": true
-          }
-        ],
+        "outputs": null,
+        "process": null,
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "challenge",
@@ -34209,7 +30900,7 @@ export const MARKETPLACE_CONFIG = {
             "showSdgs": true,
             "showCompetences": true,
             "showDeadline": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "showLevels": true,
             "resultBlockLabel": null
@@ -34227,9 +30918,9 @@ export const MARKETPLACE_CONFIG = {
               "process": true,
               "people": true,
               "access": true,
-              "trackA": false,
+              "trackA": true,
               "relations": false,
-              "evidence": false,
+              "evidence": true,
               "transferability": true,
               "summary": true,
               "originContext": true,
@@ -34325,9 +31016,12 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
-        "ficha": null,
+        "ficha": {
+          "file": "eficiencia-energetica-edificios-hou.pdf",
+          "publicPath": "/assets/downloads/marketplace/cases/eficiencia-energetica-edificios-hou.pdf"
+        },
         "adhesionForm": {
-          "url": ""
+          "url": "https://forms.cloud.microsoft/e/fSBRuSr0sM"
         },
         "ownership": {
           "publisher": {
