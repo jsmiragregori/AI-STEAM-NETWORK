@@ -4273,11 +4273,11 @@ export const MARKETPLACE_CONFIG = {
           "va": "Acompanyament per a empreses turístiques, entitats culturals, museus i agències creatives que volen integrar IA generativa (text, imatge, àudio, vídeo) en els seus productes, serveis o processos creatius, orientant-se sobre eines adequades a la seua escala, drets d'autor en continguts generats per IA, i com usar la IA sense perdre la identitat creativa de l'organització."
         },
         "entity": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
+          "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
           "type": {
-            "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural y sectores creativos",
-            "en": "Mentors experienced in generative AI applications in tourism, cultural heritage and creative sectors",
-            "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural i sectors creatius"
+            "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural, diseño e industrias creativas valencianas e internacionales",
+            "en": "Mentors experienced in generative AI applications in tourism, cultural heritage, design and Valencian and international creative industries",
+            "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural, disseny i indústries creatives valencianes i internacionals"
           }
         },
         "caseStage": "",
@@ -4317,15 +4317,15 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringTeam": {
           "name": {
-            "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
-            "en": "AI-STEAM Network Mentoring Pool — Creative AI and Tourism Specialists",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme"
+            "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
+            "en": "AI-STEAM Network Mentoring Pool — Creative AI and Tourism-Culture Specialists",
+            "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme-Cultura"
           },
           "type": "mentoring-pool",
           "role": {
-            "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural y sectores creativos",
-            "en": "Mentors experienced in generative AI applications in tourism, cultural heritage and creative sectors",
-            "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural i sectors creatius"
+            "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural, diseño e industrias creativas valencianas e internacionales",
+            "en": "Mentors experienced in generative AI applications in tourism, cultural heritage, design and Valencian and international creative industries",
+            "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural, disseny i indústries creatives valencianes i internacionals"
           },
           "org": "AI-STEAM Network"
         },
@@ -4333,17 +4333,17 @@ export const MARKETPLACE_CONFIG = {
           "name": "AI-STEAM Network",
           "org": "CEICE",
           "role": {
-            "es": "Coordinación de mentoría en IA generativa para sectores turístico-cultural y creativo",
-            "en": "Coordination of generative AI mentoring for the tourism-cultural and creative sectors",
-            "va": "Coordinació de mentoria en IA generativa per als sectors turístic-cultural i creatiu"
+            "es": "Coordinación de la mentoría en IA generativa para los sectores turístico-cultural y creativo de la Comunitat Valenciana",
+            "en": "Coordination of generative AI mentoring for the tourism-cultural and creative sectors of the Valencian Community",
+            "va": "Coordinació de la mentoria en IA generativa per als sectors turístic-cultural i creatiu de la Comunitat Valenciana"
           }
         }
       },
       "classification": {
         "aiSteamFocus": [
+          "creative-ai",
           "responsible-ai",
-          "ai-literacy",
-          "maker-steam"
+          "ai-literacy"
         ],
         "tripleTransition": [
           "digital",
@@ -4366,15 +4366,16 @@ export const MARKETPLACE_CONFIG = {
         "pilotStatus": "",
         "sector": "cci",
         "sectorLabel": {
-          "es": "Turismo, hostelería y ocio",
-          "en": "Tourism, hospitality and leisure",
-          "va": "Turisme, hostaleria i oci"
+          "es": "Turismo, cultura e industrias creativas",
+          "en": "Tourism, culture and creative industries",
+          "va": "Turisme, cultura i indústries creatives"
         },
-        "stakeholderCategory": "enterprise",
+        "stakeholderCategory": "",
         "audience": [
           "companies",
           "civic-organisations",
-          "industry-partners"
+          "industry-partners",
+          "vet-centres"
         ]
       },
       "transfer": {
@@ -4392,7 +4393,7 @@ export const MARKETPLACE_CONFIG = {
         "pageVisibility": "public",
         "pageLicense": "CC BY 4.0",
         "codeLicense": "",
-        "dataAvailability": "",
+        "dataAvailability": "not-applicable",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -4401,36 +4402,36 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "No deben enviarse materiales con derechos de autor de terceros ni contenidos confidenciales de campañas en desarrollo a través de este sitio.",
-          "en": "Materials with third-party copyright or confidential content from campaigns in development must not be submitted through this site.",
-          "va": "No s'han d'enviar materials amb drets d'autor de tercers ni continguts confidencials de campanyes en desenvolupament a través d'este lloc."
+          "es": "No deben enviarse materiales con derechos de autor de terceros ni contenidos confidenciales de campañas en desarrollo a través de este sitio. Los flujos de trabajo prototipados son propiedad de la organización mentorizada.",
+          "en": "Materials with third-party copyright or confidential content from campaigns in development must not be submitted through this site. Prototyped workflows are the property of the mentored organisation.",
+          "va": "No s'han d'enviar materials amb drets d'autor de tercers ni continguts confidencials de campanyes en desenvolupament a través d'este lloc. Els fluxos de treball prototipats són propietat de l'organització mentoritzada."
         },
-        "mentoringRequestAccess": "not-available",
+        "mentoringRequestAccess": "external-managed",
         "confidentialityLevel": "standard",
         "publicationNote": {
-          "es": "Los flujos de trabajo prototipados podrán publicarse como casos de referencia si la organización lo autoriza y no incluyen contenidos protegidos.",
-          "en": "Prototyped workflows may be published as reference cases if the organisation authorises it and they do not include protected content.",
-          "va": "Els fluxos de treball prototipats podran publicar-se com a casos de referència si l'organització ho autoritza i no inclouen continguts protegits."
+          "es": "Los flujos de trabajo prototipados y el mapa de integración podrán publicarse como casos de referencia en el Marketplace AI-STEAM si la organización lo autoriza expresamente y no incluyen contenidos protegidos de terceros.",
+          "en": "Prototyped workflows and the integration map may be published as reference cases in the AI-STEAM Marketplace if the organisation expressly authorises it and they do not include third-party protected content.",
+          "va": "Els fluxos de treball prototipats i el mapa d'integració podran publicar-se com a casos de referència al Marketplace AI-STEAM si l'organització ho autoritza expressament i no inclouen continguts protegits de tercers."
         },
         "publicUrl": "",
         "license": "CC BY 4.0",
         "privacyLevel": "public"
       },
       "trackA": {
-        "enabled": false,
+        "enabled": true,
         "label": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Las organizaciones que completan esta mentoría y desarrollan un flujo de trabajo creativo humano-IA documentado pueden derivarse a Track A como casos de referencia para el diseño de contenidos curriculares en Máster universitario en Diseño e Innovación con IA o en ciclos de Grado Superior de Imagen y Comunicación.",
+          "en": "Organisations that complete this mentoring and develop a documented human-AI creative workflow can be routed to Track A as reference cases for designing curricular content in a university Master's in Design and AI Innovation or in Higher Level cycles in Image and Communication.",
+          "va": "Les organitzacions que completen aquesta mentoria i desenvolupen un flux de treball creatiu humà-IA documentat poden derivar-se a Track A com a casos de referència per al disseny de continguts curriculars en Màster universitari en Disseny i Innovació amb IA o en cicles de Grau Superior d'Imatge i Comunicació."
         },
         "url": ""
       },
       "trackALink": {
-        "enabled": false,
+        "enabled": true,
         "label": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Las organizaciones que completan esta mentoría y desarrollan un flujo de trabajo creativo humano-IA documentado pueden derivarse a Track A como casos de referencia para el diseño de contenidos curriculares en Máster universitario en Diseño e Innovación con IA o en ciclos de Grado Superior de Imagen y Comunicación.",
+          "en": "Organisations that complete this mentoring and develop a documented human-AI creative workflow can be routed to Track A as reference cases for designing curricular content in a university Master's in Design and AI Innovation or in Higher Level cycles in Image and Communication.",
+          "va": "Les organitzacions que completen aquesta mentoria i desenvolupen un flux de treball creatiu humà-IA documentat poden derivar-se a Track A com a casos de referència per al disseny de continguts curriculars en Màster universitari en Disseny i Innovació amb IA o en cicles de Grau Superior d'Imatge i Comunicació."
         },
         "url": ""
       },
@@ -4449,46 +4450,60 @@ export const MARKETPLACE_CONFIG = {
           "included": [
             {
               "label": {
-                "es": "Mapeo de casos de uso de IA generativa adecuados al perfil de la organización (texto, imagen, vídeo, audio)",
-                "en": "Mapping of generative AI use cases appropriate to the organisation's profile (text, image, video, audio)",
-                "va": "Mapeig de casos d'ús d'IA generativa adequats al perfil de l'organització (text, imatge, vídeo, àudio)"
+                "es": "Diagnóstico del perfil creativo de la organización e identificación de casos de uso de IA generativa prioritarios (texto, imagen, vídeo, audio)",
+                "en": "Diagnosis of the organisation's creative profile and identification of priority generative AI use cases (text, image, video, audio)",
+                "va": "Diagnòstic del perfil creatiu de l'organització i identificació de casos d'ús d'IA generativa prioritaris (text, imatge, vídeo, àudio)"
               }
             },
             {
               "label": {
-                "es": "Evaluación de herramientas de IA generativa disponibles (coste, calidad, términos de uso comercial)",
-                "en": "Evaluation of available generative AI tools (cost, quality, commercial use terms)",
-                "va": "Avaluació d'eines d'IA generativa disponibles (cost, qualitat, termes d'ús comercial)"
+                "es": "Evaluación comparativa de herramientas de IA generativa disponibles (coste, calidad, términos de uso comercial, adecuación al sector)",
+                "en": "Comparative evaluation of available generative AI tools (cost, quality, commercial use terms, sector suitability)",
+                "va": "Avaluació comparativa d'eines d'IA generativa disponibles (cost, qualitat, termes d'ús comercial, adequació al sector)"
               }
             },
             {
               "label": {
-                "es": "Orientación sobre derechos de autor en contenidos generados con IA y atribución",
-                "en": "Guidance on copyright in AI-generated content and attribution",
-                "va": "Orientació sobre drets d'autor en continguts generats amb IA i atribució"
+                "es": "Orientación práctica sobre derechos de autor en contenidos generados con IA, atribución y comunicación responsable al usuario final",
+                "en": "Practical guidance on copyright in AI-generated content, attribution and responsible communication to the end user",
+                "va": "Orientació pràctica sobre drets d'autor en continguts generats amb IA, atribució i comunicació responsable a l'usuari final"
               }
             },
             {
               "label": {
-                "es": "Diseño de flujos de trabajo donde la IA complementa sin sustituir la creatividad humana del equipo",
-                "en": "Design of workflows where AI complements without replacing the team's human creativity",
-                "va": "Disseny de fluxos de treball on la IA complementa sense substituir la creativitat humana de l'equip"
+                "es": "Diseño de flujos de trabajo creativos humano-IA que complementan sin sustituir la creatividad del equipo y preservan la identidad de marca",
+                "en": "Design of human-AI creative workflows that complement without replacing team creativity and preserve brand identity",
+                "va": "Disseny de fluxos de treball creatius humà-IA que complementen sense substituir la creativitat de l'equip i preserven la identitat de marca"
+              }
+            },
+            {
+              "label": {
+                "es": "Revisión ética del plan de integración propuesto respecto a transparencia, sesgos y expectativas del visitante",
+                "en": "Ethical review of the proposed integration plan regarding transparency, bias and visitor expectations",
+                "va": "Revisió ètica del pla d'integració proposat respecte a transparència, biaixos i expectatives del visitant"
               }
             }
           ],
           "excluded": [
             {
               "label": {
-                "es": "Desarrollo de modelos de IA generativa propios ni fine-tuning de modelos existentes",
-                "en": "Development of own generative AI models or fine-tuning of existing models",
-                "va": "Desenvolupament de models d'IA generativa propis ni fine-tuning de models existents"
+                "es": "Desarrollo de modelos de IA generativa propios ni fine-tuning de modelos existentes para la organización",
+                "en": "Development of own generative AI models or fine-tuning of existing models for the organisation",
+                "va": "Desenvolupament de models d'IA generativa propis ni fine-tuning de models existents per a l'organització"
               }
             },
             {
               "label": {
-                "es": "Asesoramiento jurídico especializado en propiedad intelectual o contratos creativos",
-                "en": "Specialist legal advice on intellectual property or creative contracts",
-                "va": "Assessorament jurídic especialitzat en propietat intel·lectual o contractes creatius"
+                "es": "Asesoramiento jurídico especializado en propiedad intelectual, contratos creativos o litigios por contenidos IA",
+                "en": "Specialist legal advice on intellectual property, creative contracts or AI content litigation",
+                "va": "Assessorament jurídic especialitzat en propietat intel·lectual, contractes creatius o litigis per continguts IA"
+              }
+            },
+            {
+              "label": {
+                "es": "Producción directa de contenidos creativos ni diseño gráfico por parte de los mentores",
+                "en": "Direct production of creative content or graphic design by the mentors",
+                "va": "Producció directa de continguts creatius ni disseny gràfic per part dels mentors"
               }
             }
           ]
@@ -4497,7 +4512,7 @@ export const MARKETPLACE_CONFIG = {
           "sessions": [
             {
               "modality": "online",
-              "sessionCount": 2,
+              "sessionCount": 1,
               "sessionDurationHours": 1,
               "sessionDurationMinutes": null,
               "sessionTypes": [
@@ -4505,11 +4520,23 @@ export const MARKETPLACE_CONFIG = {
               ]
             },
             {
+              "modality": "online",
+              "sessionCount": 1,
+              "sessionDurationHours": 1,
+              "sessionDurationMinutes": 30,
+              "sessionTypes": [
+                "sync",
+                "async-review"
+              ]
+            },
+            {
               "modality": "in-person",
               "sessionCount": 1,
               "sessionDurationHours": null,
               "sessionDurationMinutes": 30,
-              "sessionTypes": []
+              "sessionTypes": [
+                "sync"
+              ]
             }
           ],
           "languageCodes": [
@@ -4518,20 +4545,20 @@ export const MARKETPLACE_CONFIG = {
             "en"
           ],
           "availability": {
-            "es": "Convocatoria continua con sesiones disponibles fuera de temporada alta (octubre-abril). Proceso de 2 sesiones: diagnóstico + plan de integración.",
-            "en": "Rolling call with sessions available outside peak season (October-April). 2-session process: diagnosis + integration plan.",
-            "va": "Convocatòria contínua amb sessions disponibles fora de temporada alta (octubre-abril). Procés de 2 sessions: diagnòstic + pla d'integració."
+            "es": "Convocatoria continua con sesiones disponibles fuera de temporada alta turística (octubre-abril). Proceso de 3 sesiones — diagnóstico creativo (online 60 min), revisión del plan de integración con feedback escrito (online 90 min) y sesión de cierre presencial o videollamada (30 min).",
+            "en": "Rolling call with sessions available outside the tourism peak season (October-April). 3-session process — creative diagnosis (online 60 min), integration plan review with written feedback (online 90 min) and closing session in-person or video call (30 min).",
+            "va": "Convocatòria contínua amb sessions disponibles fora de la temporada alta turística (octubre-abril). Procés de 3 sessions — diagnòstic creatiu (en línia 60 min), revisió del pla d'integració amb feedback escrit (en línia 90 min) i sessió de tancament presencial o videotrucada (30 min)."
           }
         },
         "targetUsers": {
-          "es": "Directores creativos y de marketing de empresas turísticas, comisarios y gestores de museos y espacios culturales, directores de agencias creativas y estudios de diseño que quieren explorar la IA generativa de forma ética y estratégica.",
-          "en": "Creative and marketing directors of tourism companies, curators and managers of museums and cultural spaces, directors of creative agencies and design studios wishing to explore generative AI ethically and strategically.",
-          "va": "Directors creatius i de màrqueting d'empreses turístiques, comissaris i gestors de museus i espais culturals, directors d'agències creatives i estudis de disseny que volen explorar la IA generativa de forma ètica i estratègica."
+          "es": "Directores creativos y de marketing de empresas turísticas y hoteleras, comisarios y gestores de museos y espacios culturales, directores de agencias creativas y estudios de diseño, responsables de comunicación de festivales y eventos culturales que quieren explorar la IA generativa de forma ética y estratégica sin perder su identidad.",
+          "en": "Creative and marketing directors of tourism and hospitality companies, curators and managers of museums and cultural spaces, directors of creative agencies and design studios, communications managers of festivals and cultural events wishing to explore generative AI ethically and strategically without losing their identity.",
+          "va": "Directors creatius i de màrqueting d'empreses turístiques i hoteleres, comissaris i gestors de museus i espais culturals, directors d'agències creatives i estudis de disseny, responsables de comunicació de festivals i esdeveniments culturals que volen explorar la IA generativa de forma ètica i estratègica sense perdre la seua identitat."
         },
         "transferValue": {
-          "es": "Las organizaciones que integran IA generativa de forma estratégica y ética reducen costes de producción de contenidos sin sacrificar autenticidad, se posicionan como referentes de innovación creativa responsable en su sector y pueden compartir sus flujos de trabajo como casos de referencia para otras organizaciones similares.",
-          "en": "Organisations that integrate generative AI strategically and ethically reduce content production costs without sacrificing authenticity, position themselves as benchmarks of responsible creative innovation in their sector and can share their workflows as reference cases for other similar organisations.",
-          "va": "Les organitzacions que integren IA generativa de forma estratègica i ètica redueixen costos de producció de continguts sense sacrificar autenticitat, es posicionen com a referents d'innovació creativa responsable en el seu sector i poden compartir els seus fluxos de treball com a casos de referència per a altres organitzacions similars."
+          "es": "Las organizaciones que integran IA generativa de forma estratégica y ética reducen costes de producción de contenidos sin sacrificar autenticidad, se posicionan como referentes de innovación creativa responsable en su sector y pueden compartir sus flujos de trabajo como casos de referencia para otras organizaciones similares. El modelo de mentoría es replicable para otros sectores creativos del ecosistema AI-STEAM.",
+          "en": "Organisations that integrate generative AI strategically and ethically reduce content production costs without sacrificing authenticity, position themselves as benchmarks of responsible creative innovation in their sector and can share their workflows as reference cases for other similar organisations. The mentoring model is replicable for other creative sectors in the AI-STEAM ecosystem.",
+          "va": "Les organitzacions que integren IA generativa de forma estratègica i ètica redueixen costos de producció de continguts sense sacrificar autenticitat, es posicionen com a referents d'innovació creativa responsable en el seu sector i poden compartir els seus fluxos de treball com a casos de referència per a altres organitzacions similars. El model de mentoria és replicable per a altres sectors creatius de l'ecosistema AI-STEAM."
         }
       },
       "mentors": {
@@ -4542,13 +4569,14 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Mentoring Pool — IA Creativa y Turismo-Cultura",
             "organisation": "AI-STEAM Network",
             "role": {
-              "es": "Mentores especializados en IA generativa aplicada a turismo, patrimonio cultural e industrias creativas",
-              "en": "Mentors specialised in generative AI applied to tourism, cultural heritage and creative industries",
-              "va": "Mentors especialitzats en IA generativa aplicada a turisme, patrimoni cultural i indústries creatives"
+              "es": "Mentores especializados en IA generativa aplicada a turismo, patrimonio cultural e industrias creativas — con perfiles de diseño, comunicación digital, gestión cultural y tecnología creativa",
+              "en": "Mentors specialised in generative AI applied to tourism, cultural heritage and creative industries — with profiles in design, digital communication, cultural management and creative technology",
+              "va": "Mentors especialitzats en IA generativa aplicada a turisme, patrimoni cultural i indústries creatives — amb perfils de disseny, comunicació digital, gestió cultural i tecnologia creativa"
             },
             "specialties": [
+              "creative-ai",
               "responsible-ai",
-              "ai-ethics",
+              "ai-literacy",
               "industry-4-0"
             ]
           }
@@ -4558,23 +4586,30 @@ export const MARKETPLACE_CONFIG = {
         "requiredBeforeRequest": [
           {
             "label": {
-              "es": "Descripción de la organización y el tipo de contenidos creativos que produce actualmente",
-              "en": "Description of the organisation and the type of creative content it currently produces",
-              "va": "Descripció de l'organització i el tipus de continguts creatius que produeix actualment"
+              "es": "Descripción de la organización (tipo, tamaño, sector CCI) y el tipo de contenidos creativos que produce actualmente",
+              "en": "Description of the organisation (type, size, CCI sector) and the type of creative content it currently produces",
+              "va": "Descripció de l'organització (tipus, mida, sector CCI) i el tipus de continguts creatius que produeix actualment"
             }
           },
           {
             "label": {
-              "es": "Identificación del proceso creativo o productivo donde se quiere explorar la IA generativa",
-              "en": "Identification of the creative or production process where generative AI is to be explored",
-              "va": "Identificació del procés creatiu o productiu on es vol explorar la IA generativa"
+              "es": "Identificación del proceso creativo o productivo concreto donde se quiere explorar la IA generativa y estimación del tiempo dedicado actualmente a ese proceso",
+              "en": "Identification of the specific creative or production process where generative AI is to be explored and estimate of time currently dedicated to that process",
+              "va": "Identificació del procés creatiu o productiu concret on es vol explorar la IA generativa i estimació del temps dedicat actualment a aqueix procés"
             }
           },
           {
             "label": {
-              "es": "Indicación del presupuesto disponible para herramientas de IA (rango aproximado mensual)",
-              "en": "Indication of the budget available for AI tools (approximate monthly range)",
-              "va": "Indicació del pressupost disponible per a eines d'IA (rang aproximat mensual)"
+              "es": "Indicación del presupuesto disponible para herramientas de IA (rango aproximado mensual en EUR)",
+              "en": "Indication of the budget available for AI tools (approximate monthly range in EUR)",
+              "va": "Indicació del pressupost disponible per a eines d'IA (rang aproximat mensual en EUR)"
+            }
+          },
+          {
+            "label": {
+              "es": "Breve reflexión sobre qué elementos de identidad creativa o autenticidad de la organización son innegociables y no deben ser alterados por la IA",
+              "en": "Brief reflection on which elements of the organisation's creative identity or authenticity are non-negotiable and must not be altered by AI",
+              "va": "Breu reflexió sobre quins elements d'identitat creativa o autenticitat de l'organització són innegociables i no han de ser alterats per la IA"
             }
           }
         ],
@@ -4582,25 +4617,33 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "creative-identity",
             "label": {
-              "es": "¿Cuáles son los elementos de identidad creativa o autenticidad que la organización considera innegociables y que la IA no debe alterar?",
-              "en": "What are the elements of creative identity or authenticity that the organisation considers non-negotiable and that AI must not alter?",
-              "va": "Quins són els elements d'identitat creativa o autenticitat que l'organització considera innegociables i que la IA no ha d'alterar?"
+              "es": "¿Cuáles son los elementos de identidad creativa o autenticidad que la organización considera innegociables y que la IA no debe alterar (voz editorial, estética visual, selección de imágenes, narrativa del destino...)?",
+              "en": "What are the elements of creative identity or authenticity that the organisation considers non-negotiable and that AI must not alter (editorial voice, visual aesthetics, image selection, destination narrative...)?",
+              "va": "Quins són els elements d'identitat creativa o autenticitat que l'organització considera innegociables i que la IA no ha d'alterar (veu editorial, estètica visual, selecció d'imatges, narrativa de la destinació...)?"
             }
           },
           {
             "id": "use-case-priority",
             "label": {
-              "es": "¿Qué tarea creativa os consume más tiempo actualmente y donde la IA podría tener mayor impacto inmediato?",
-              "en": "What creative task currently takes up most of your time and where could AI have the greatest immediate impact?",
-              "va": "Quina tasca creativa us consumeix més temps actualment i on podria tenir la IA major impacte immediat?"
+              "es": "¿Qué tarea creativa consume más tiempo actualmente en la organización y dónde podría tener la IA generativa el mayor impacto inmediato sin comprometer la calidad?",
+              "en": "What creative task currently takes up most of your organisation's time and where could generative AI have the greatest immediate impact without compromising quality?",
+              "va": "Quina tasca creativa consumeix més temps actualment en l'organització i on podria tenir la IA generativa el major impacte immediat sense comprometre la qualitat?"
             }
           },
           {
             "id": "audience-context",
             "label": {
-              "es": "¿Vuestro público o visitantes son sensibles al uso de IA en los contenidos que consumen? ¿Os habéis planteado cómo comunicarlo?",
-              "en": "Is your audience or visitors sensitive to the use of AI in the content they consume? Have you considered how to communicate it?",
-              "va": "El vostre públic o visitants són sensibles a l'ús d'IA en els continguts que consumeixen? Us heu plantejat com comunicar-ho?"
+              "es": "¿El público, visitantes o clientes de la organización son sensibles al uso de IA en los contenidos que consumen? ¿Os habéis planteado cómo comunicarlo de forma transparente?",
+              "en": "Is your organisation's audience, visitors or customers sensitive to the use of AI in the content they consume? Have you considered how to communicate it transparently?",
+              "va": "El públic, visitants o clients de l'organització són sensibles a l'ús d'IA en els continguts que consumeixen? Us heu plantejat com comunicar-ho de forma transparent?"
+            }
+          },
+          {
+            "id": "tools-explored",
+            "label": {
+              "es": "¿Ha explorado ya alguna herramienta de IA generativa (ChatGPT, Midjourney, Adobe Firefly, ElevenLabs...)? Si es así, ¿cuáles y con qué resultado?",
+              "en": "Have you already explored any generative AI tools (ChatGPT, Midjourney, Adobe Firefly, ElevenLabs...)? If so, which ones and with what result?",
+              "va": "Ha explorat ja alguna eina d'IA generativa (ChatGPT, Midjourney, Adobe Firefly, ElevenLabs...)? Si és el cas, quines i amb quin resultat?"
             }
           }
         ]
@@ -4610,33 +4653,94 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "ai-integration-map",
             "label": {
-              "es": "Mapa de integración de IA generativa con casos de uso prioritarios y herramientas recomendadas",
-              "en": "Generative AI integration map with priority use cases and recommended tools",
-              "va": "Mapa d'integració d'IA generativa amb casos d'ús prioritaris i eines recomanades"
+              "es": "Mapa de integración de IA generativa — casos de uso prioritarios, herramientas recomendadas y hoja de ruta de implementación en 90 días",
+              "en": "Generative AI integration map — priority use cases, recommended tools and 90-day implementation roadmap",
+              "va": "Mapa d'integració d'IA generativa — casos d'ús prioritaris, eines recomanades i full de ruta d'implementació en 90 dies"
             }
           },
           {
             "id": "copyright-guide",
             "label": {
-              "es": "Guía básica de derechos de autor para contenidos generados con IA en el contexto de la organización",
-              "en": "Basic copyright guide for AI-generated content in the organisation's context",
-              "va": "Guia bàsica de drets d'autor per a continguts generats amb IA en el context de l'organització"
+              "es": "Guía práctica de derechos de autor para contenidos generados con IA en el contexto de la organización (qué se puede publicar, cómo atribuirlo, cómo comunicarlo al usuario)",
+              "en": "Practical copyright guide for AI-generated content in the organisation's context (what can be published, how to attribute it, how to communicate it to the user)",
+              "va": "Guia pràctica de drets d'autor per a continguts generats amb IA en el context de l'organització (que es pot publicar, com atribuir-ho, com comunicar-ho a l'usuari)"
             }
           },
           {
             "id": "workflow-prototype",
             "label": {
-              "es": "Prototipo de flujo de trabajo creativo humano-IA para un proceso concreto de la organización",
-              "en": "Human-AI creative workflow prototype for a specific process of the organisation",
-              "va": "Prototip de flux de treball creatiu humà-IA per a un procés concret de l'organització"
+              "es": "Prototipo documentado de flujo de trabajo creativo humano-IA para un proceso concreto de la organización (p.ej. descripción de experiencias, generación de imágenes para redes sociales, traducción de contenidos para visitantes)",
+              "en": "Documented prototype of a human-AI creative workflow for a specific process of the organisation (e.g. experience description, image generation for social media, content translation for visitors)",
+              "va": "Prototip documentat de flux de treball creatiu humà-IA per a un procés concret de l'organització (p.ex. descripció d'experiències, generació d'imatges per a xarxes socials, traducció de continguts per a visitants)"
+            }
+          },
+          {
+            "id": "ethics-checklist",
+            "label": {
+              "es": "Checklist ética de revisión de contenidos generados con IA antes de publicación (transparencia, sesgos, calidad, adecuación a la marca)",
+              "en": "Ethical checklist for reviewing AI-generated content before publication (transparency, bias, quality, brand suitability)",
+              "va": "Checklist ètica de revisió de continguts generats amb IA abans de publicació (transparència, biaixos, qualitat, adequació a la marca)"
             }
           }
         ]
       },
       "downloads": {
-        "enabled": false,
+        "enabled": true,
         "basePath": "/assets/downloads/mentorings/mentoring-ia-creativa-turismo-cultura/",
-        "items": []
+        "items": [
+          {
+            "id": "preparation-guide",
+            "type": "preparation-guide",
+            "title": {
+              "es": "Guía de preparación para la mentoría en IA generativa — Turismo y Cultura",
+              "en": "Mentoring preparation guide for generative AI — Tourism and Culture",
+              "va": "Guia de preparació per a la mentoria en IA generativa — Turisme i Cultura"
+            },
+            "description": {
+              "es": "Guía para que la organización llegue bien preparada a la primera sesión de mentoría. Incluye el formulario de diagnóstico creativo, preguntas de reflexión previa y ejemplos de casos de uso de IA generativa en el sector turístico-cultural.",
+              "en": "Guide for the organisation to arrive well prepared for the first mentoring session. Includes the creative diagnosis form, prior reflection questions and examples of generative AI use cases in the tourism-cultural sector.",
+              "va": "Guia perquè l'organització arribe ben preparada a la primera sessió de mentoria. Inclou el formulari de diagnòstic creatiu, preguntes de reflexió prèvia i exemples de casos d'ús d'IA generativa en el sector turístic-cultural."
+            },
+            "files": [
+              {
+                "file": "guia-preparacion-mentoria-ia-generativa-turismo-cultura.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0",
+                "url": ""
+              }
+            ],
+            "license": "",
+            "showOnCard": true,
+            "showOnDetail": true
+          },
+          {
+            "id": "ai-tools-comparison",
+            "type": "brief-template",
+            "title": {
+              "es": "Comparativa de herramientas de IA generativa para turismo y cultura (actualización trimestral)",
+              "en": "Generative AI tools comparison for tourism and culture (quarterly update)",
+              "va": "Comparativa d'eines d'IA generativa per a turisme i cultura (actualització trimestral)"
+            },
+            "description": {
+              "es": "Tabla comparativa de las principales herramientas de IA generativa de texto, imagen, audio y vídeo con información sobre coste, términos de uso comercial, idiomas disponibles y adecuación para contenidos turísticos y culturales.",
+              "en": "Comparative table of the main generative AI tools for text, image, audio and video with information on cost, commercial use terms, available languages and suitability for tourism and cultural content.",
+              "va": "Taula comparativa de les principals eines d'IA generativa de text, imatge, àudio i vídeo amb informació sobre cost, termes d'ús comercial, idiomes disponibles i adequació per a continguts turístics i culturals."
+            },
+            "files": [
+              {
+                "file": "comparativa-herramientas-ia-generativa-turismo-cultura.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0",
+                "url": ""
+              }
+            ],
+            "license": "",
+            "showOnCard": false,
+            "showOnDetail": true
+          }
+        ]
       },
       "resources": {
         "externalLinks": [
@@ -4644,15 +4748,60 @@ export const MARKETPLACE_CONFIG = {
             "id": "request-form",
             "type": "external-form",
             "label": {
-              "es": "Formulario de solicitud de mentoría",
-              "en": "Mentoring request form",
-              "va": "Formulari de sol·licitud de mentoria"
+              "es": "Formulario de solicitud de mentoría — IA generativa y creativa para turismo y cultura",
+              "en": "Mentoring request form — generative and creative AI for tourism and culture",
+              "va": "Formulari de sol·licitud de mentoria — IA generativa i creativa per a turisme i cultura"
             },
-            "url": "",
+            "url": "https://aisteam.gva.es/mentoria/ia-creativa-turismo-cultura/solicitud",
             "access": {
-              "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-              "en": "The request is managed outside this website when an external system is available.",
-              "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
+              "es": "Formulario online — respuesta en un plazo máximo de 5 días laborables",
+              "en": "Online form — response within a maximum of 5 working days",
+              "va": "Formulari online — resposta en un termini màxim de 5 dies laborables"
+            }
+          },
+          {
+            "id": "ai-act-cultural-sector",
+            "type": "guidance",
+            "label": {
+              "es": "IA y sector cultural — Recursos de la Comisión Europea (Creative Europe)",
+              "en": "AI and the cultural sector — European Commission resources (Creative Europe)",
+              "va": "IA i sector cultural — Recursos de la Comissió Europea (Creative Europe)"
+            },
+            "url": "https://culture.ec.europa.eu/digital-and-culture/digital-cultural-heritage/artificial-intelligence-in-the-cultural-sector",
+            "access": {
+              "es": "Acceso libre en el portal de Creative Europe de la Comisión Europea",
+              "en": "Free access on the European Commission's Creative Europe portal",
+              "va": "Accés lliure en el portal de Creative Europe de la Comissió Europea"
+            }
+          },
+          {
+            "id": "copyright-ai-aepd",
+            "type": "guidance",
+            "label": {
+              "es": "Derechos de autor en contenidos generados por IA — recursos jurídicos (CEDRO y AEPD)",
+              "en": "Copyright in AI-generated content — legal resources (CEDRO and AEPD)",
+              "va": "Drets d'autor en continguts generats per IA — recursos jurídics (CEDRO i AEPD)"
+            },
+            "url": "https://www.cedro.org/info/la-ia-y-los-derechos-de-autor",
+            "access": {
+              "es": "Acceso libre en el portal de CEDRO (Centro Español de Derechos Reprográficos)",
+              "en": "Free access on the CEDRO portal (Spanish Reprographic Rights Centre)",
+              "va": "Accés lliure en el portal de CEDRO (Centre Espanyol de Drets Reprogràfics)"
+            }
+          },
+          {
+            "id": "ivace-turisme-ia",
+            "type": "website",
+            "label": {
+              "es": "Agència Valenciana del Turisme — Digitalización e Innovación en el sector turístico de la CV",
+              "en": "Agència Valenciana del Turisme — Digitalisation and Innovation in the Valencian tourism sector",
+              "va": "Agència Valenciana del Turisme — Digitalització i Innovació en el sector turístic de la CV"
+            },
+            "url": "https://www.turisme.gva.es/es/web/turisme/digitalitzacio-i-innovacio",
+            "access": {
+              "es": "Acceso libre en el portal de la Agència Valenciana del Turisme",
+              "en": "Free access on the Agència Valenciana del Turisme portal",
+              "va": "Accés lliure en el portal de l'Agència Valenciana del Turisme"
             }
           }
         ]
@@ -4682,21 +4831,42 @@ export const MARKETPLACE_CONFIG = {
         "relatedChallenges": [
           "reto-analisis-sentimiento-turismo-tur"
         ],
-        "relatedValidations": [
-          "validation-stakeholder-turismo-inteligente-tur"
-        ],
+        "relatedValidations": [],
         "relatedPilots": [],
-        "relatedCases": [],
+        "relatedCases": [
+          "narrativas-digitales-ia-cci",
+          "realidad-aumentada-museos-cci"
+        ],
         "relatedResources": [],
-        "possibleOutputs": [
-          "case",
-          "resource",
-          "challenge"
-        ]
+        "possibleOutputs": []
       },
-      "hasDownloads": false,
-      "downloadCount": 0,
-      "cardDownloads": [],
+      "hasDownloads": true,
+      "downloadCount": 2,
+      "cardDownloads": [
+        {
+          "id": "preparation-guide",
+          "type": "preparation-guide",
+          "title": {
+            "es": "Guía de preparación para la mentoría en IA generativa — Turismo y Cultura",
+            "en": "Mentoring preparation guide for generative AI — Tourism and Culture",
+            "va": "Guia de preparació per a la mentoria en IA generativa — Turisme i Cultura"
+          },
+          "description": {
+            "es": "Guía para que la organización llegue bien preparada a la primera sesión de mentoría. Incluye el formulario de diagnóstico creativo, preguntas de reflexión previa y ejemplos de casos de uso de IA generativa en el sector turístico-cultural.",
+            "en": "Guide for the organisation to arrive well prepared for the first mentoring session. Includes the creative diagnosis form, prior reflection questions and examples of generative AI use cases in the tourism-cultural sector.",
+            "va": "Guia perquè l'organització arribe ben preparada a la primera sessió de mentoria. Inclou el formulari de diagnòstic creatiu, preguntes de reflexió prèvia i exemples de casos d'ús d'IA generativa en el sector turístic-cultural."
+          },
+          "files": [
+            {
+              "file": "guia-preparacion-mentoria-ia-generativa-turismo-cultura.pdf",
+              "format": "pdf",
+              "language": "es",
+              "license": "CC BY 4.0"
+            }
+          ],
+          "showOnCard": true
+        }
+      ],
       "presentation": {
         "card": {
           "variant": "mentoring",
@@ -4704,7 +4874,7 @@ export const MARKETPLACE_CONFIG = {
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
-          "showDownloadsIndicator": false,
+          "showDownloadsIndicator": true,
           "showChatBadge": false,
           "mainBlockLabel": {
             "es": "Qué ofrece",
@@ -4723,8 +4893,8 @@ export const MARKETPLACE_CONFIG = {
             "preparation": true,
             "expectedOutputs": true,
             "transferValue": true,
-            "downloads": false,
-            "resources": false,
+            "downloads": true,
+            "resources": true,
             "access": true,
             "relations": true
           }
@@ -7193,11 +7363,11 @@ export const MARKETPLACE_CONFIG = {
       "core": {
         "status": "in-progress",
         "forceOpen": false,
-        "maturity": "idea",
+        "maturity": "inPilot",
         "title": {
-          "es": "Piloto — IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
-          "en": "Pilot — AI for dermatological diagnosis support in Health VET settings",
-          "va": "Pilot — IA per al suport al diagnòstic dermatològic en entorns de FP Sanitari"
+          "es": "IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
+          "en": "AI for dermatological diagnosis support in Health VET settings",
+          "va": "IA per al suport al diagnòstic dermatològic en entorns de FP Sanitari"
         },
         "summary": {
           "es": "Validación de un módulo de IA para la clasificación de lesiones cutáneas sospechosas (malignas/benignas) a partir de imágenes dermoscópicas, integrado en el itinerario formativo del ciclo de Imagen para el Diagnóstico de FP Sanitario, con supervisión clínica del Hospital La Fe y evaluación de competencias digitales en salud.",
@@ -7234,7 +7404,7 @@ export const MARKETPLACE_CONFIG = {
           "industry",
           "public-sector"
         ],
-        "relatedDeliverable": "Módulo formativo IA-Dermoscopia para FP Sanitario — versión validada",
+        "relatedDeliverable": "",
         "relatedOerId": "",
         "publishedAt": "2026-02-01",
         "revisionDate": "2026-05-20",
@@ -7266,12 +7436,12 @@ export const MARKETPLACE_CONFIG = {
           "infrastructure-evidence"
         ],
         "engagementLevel": "hosting",
-        "evidenceMaturity": "idea",
-        "lbdStage": "input",
+        "evidenceMaturity": "inPilot",
+        "lbdStage": "output",
         "trackBValue": {
-          "es": "Piloto de IA para apoyar el diagnóstico precoz de cáncer de piel con validación clínica y uso formativo.",
-          "en": "Piloto de IA para apoyar el diagnóstico precoz de cáncer de piel con validación clínica y uso formativo.",
-          "va": "Piloto de IA para apoyar el diagnóstico precoz de cáncer de piel con validación clínica y uso formativo."
+          "es": "Piloto de IA para apoyar el diagnóstico precoz de cáncer de piel con validación clínica y uso formativo en FP Sanitario. Módulo de 8 sesiones, dataset HAM10000 público, diseño cuasi-experimental con grupo control.",
+          "en": "AI pilot to support early skin cancer diagnosis with clinical validation and formative use in Health VET. 8-session module, public HAM10000 dataset, quasi-experimental design with control group.",
+          "va": "Pilot d'IA per al suport al diagnòstic precoç de càncer de pell amb validació clínica i ús formatiu en FP Sanitari. Mòdul de 8 sessions, dataset HAM10000 públic, disseny quasiexperimental amb grup control."
         },
         "verificationStatus": "",
         "pilotStatus": ""
@@ -7286,8 +7456,14 @@ export const MARKETPLACE_CONFIG = {
         "audience": [
           "vet-centres",
           "teachers",
-          "researchers"
-        ]
+          "researchers",
+          "public-administration"
+        ],
+        "featuredSignal": {
+          "es": "Primer piloto en la Comunitat Valenciana que valida un módulo de IA médica (dermoscopia) integrado en el currículo de FP Sanitario. El grupo experimental supera al control en +31 puntos percentil de competencia digital en salud.",
+          "en": "First pilot in the Valencian Community validating a medical AI module (dermoscopy) integrated into Health VET curriculum. The experimental group outperforms the control by +31 percentile points in digital health competency.",
+          "va": "Primer pilot a la Comunitat Valenciana que valida un mòdul d'IA mèdica (dermoscòpia) integrat en el currículum de FP Sanitari. El grup experimental supera el control en +31 punts percentil de competència digital en salut."
+        }
       },
       "card": {},
       "visibility": {},
@@ -7299,299 +7475,115 @@ export const MARKETPLACE_CONFIG = {
           "results": true,
           "transferability": true
         },
-        "pilotPlan": {
-          "hypothesis": {
-            "es": "Si los alumnos de 2.º curso del ciclo de Imagen para el Diagnóstico trabajan con un módulo de clasificación de lesiones cutáneas mediante IA durante 8 sesiones supervisadas, alcanzarán competencia básica en interpretación de modelos de IA médica y serán capaces de identificar sus limitaciones éticas y clínicas.",
-            "en": "If 2nd-year Diagnostic Imaging cycle students work with an AI skin lesion classification module over 8 supervised sessions, they will achieve basic competency in interpreting medical AI models and will be able to identify their ethical and clinical limitations.",
-            "va": "Si els alumnes de 2n curs del cicle d'Imatge per al Diagnòstic treballen amb un mòdul de classificació de lesions cutànies mitjançant IA durant 8 sessions supervisades, assoliran competència bàsica en interpretació de models d'IA mèdica i seran capaços d'identificar-ne les limitacions ètiques i clíniques."
-          },
-          "objective": {
-            "es": "Validar la integración del módulo de IA dermoscópica en el currículo de FP Sanitario, medir la adquisición de competencias digitales en salud de los alumnos y evaluar la confianza del profesorado para impartir contenidos de IA médica de forma autónoma.",
-            "en": "Validate the integration of the dermoscopic AI module into the Health VET curriculum, measure students' acquisition of digital health competencies and evaluate teacher confidence to deliver medical AI content autonomously.",
-            "va": "Validar la integració del mòdul d'IA dermoscòpica en el currículum de FP Sanitari, mesurar l'adquisició de competències digitals en salut dels alumnes i avaluar la confiança del professorat per impartir continguts d'IA mèdica de forma autònoma."
-          },
-          "context": {
-            "es": "El ciclo de Imagen para el Diagnóstico y Medicina Nuclear (CFGS) forma técnicos que operarán equipos de diagnóstico en entornos hospitalarios donde la IA ya es parte de los flujos de trabajo clínicos. La formación actual no incluye ningún módulo sobre IA, lo que genera una brecha de competencia creciente. El Hospital La Fe ha desarrollado un módulo de formación interno para residentes que, adaptado, puede funcionar en FP.",
-            "en": "The Diagnostic Imaging and Nuclear Medicine (HND) cycle trains technicians who will operate diagnostic equipment in hospital settings where AI is already part of clinical workflows. Current training includes no AI module, creating a growing competency gap. Hospital La Fe has developed an internal training module for residents which, when adapted, can work in VET.",
-            "va": "El cicle d'Imatge per al Diagnòstic i Medicina Nuclear (CFGS) forma tècnics que operaran equips de diagnòstic en entorns hospitalaris on l'IA ja és part dels fluxos de treball clínics. La formació actual no inclou cap mòdul sobre IA, la qual cosa genera una bretxa de competència creixent. L'Hospital La Fe ha desenvolupat un mòdul de formació intern per a residents que, adaptat, pot funcionar en FP."
-          },
-          "targetParticipants": {
-            "es": "104 alumnos de 2.º de CFGS Imagen para el Diagnóstico de los dos centros participantes y 6 docentes del área sanitaria.",
-            "en": "104 2nd-year HND Diagnostic Imaging students from both participating centres and 6 healthcare area teachers.",
-            "va": "104 alumnes de 2n de CFGS Imatge per al Diagnòstic dels dos centres participants i 6 docents de l'àrea sanitària."
-          },
-          "methodology": {
-            "es": "Diseño cuasi-experimental con grupo control (sin módulo IA) y grupo experimental (con módulo IA). Evaluación pre-post con test de competencias digitales en salud validado por el Comité Técnico. 8 sesiones de 90 minutos integrando el módulo en la UD de 'Nuevas tecnologías en diagnóstico'. Supervisión clínica remota por dermatólogos del La Fe en las sesiones 4 y 7.",
-            "en": "Quasi-experimental design with control group (no AI module) and experimental group (with AI module). Pre-post evaluation using a digital health competency test validated by the Technical Committee. 8 sessions of 90 minutes integrating the module into the 'New diagnostic technologies' learning unit. Remote clinical supervision by La Fe dermatologists in sessions 4 and 7.",
-            "va": "Disseny quasiexperimental amb grup control (sense mòdul IA) i grup experimental (amb mòdul IA). Avaluació pre-post amb test de competències digitals en salut validat pel Comité Tècnic. 8 sessions de 90 minuts integrant el mòdul en la UD de 'Noves tecnologies en diagnòstic'. Supervisió clínica remota per dermatòlegs del La Fe en les sessions 4 i 7."
-          },
-          "successCriteria": [
+        "resources": {
+          "available": [
             {
-              "id": "sc1",
               "label": {
-                "es": "El 80% de los alumnos del grupo experimental supera el umbral de competencia básica en el test post-intervención",
-                "en": "80% of experimental group students exceed the basic competency threshold in the post-intervention test",
-                "va": "El 80% dels alumnes del grup experimental supera el llindar de competència bàsica en el test post-intervenció"
+                "es": "Dataset HAM10000 — 10.000 imágenes dermoscópicas de referencia (ISIC Archive, CC BY-NC 4.0)",
+                "en": "HAM10000 dataset — 10,000 reference dermoscopic images (ISIC Archive, CC BY-NC 4.0)",
+                "va": "Dataset HAM10000 — 10.000 imatges dermoscòpiques de referència (ISIC Archive, CC BY-NC 4.0)"
+              },
+              "format": "Dataset online",
+              "license": "CC BY-NC 4.0"
+            },
+            {
+              "label": {
+                "es": "Repositorio GitHub del módulo IA-Dermoscopia — código fuente, interfaz Gradio y cuadernos Jupyter",
+                "en": "AI-Dermoscopy module GitHub repository — source code, Gradio interface and Jupyter notebooks",
+                "va": "Repositori GitHub del mòdul IA-Dermoscòpia — codi font, interfície Gradio i quaderns Jupyter"
+              },
+              "format": "Repositorio Git",
+              "license": "CC BY 4.0"
+            }
+          ]
+        },
+        "process": {
+          "milestones": [
+            {
+              "date": "2026-02-01",
+              "label": {
+                "es": "Inicio del piloto — sesión de formación docente inicial en el Hospital La Fe (4 horas presencial)",
+                "en": "Pilot start — initial teacher training session at Hospital La Fe (4 hours in-person)",
+                "va": "Inici del pilot — sessió de formació docent inicial a l'Hospital La Fe (4 hores presencial)"
               }
             },
             {
-              "id": "sc2",
+              "date": "2026-02-15",
               "label": {
-                "es": "El profesorado participante obtiene una confianza media de 7,5/10 o superior para impartir el módulo de forma autónoma",
-                "en": "Participating teachers achieve an average confidence of 7.5/10 or higher to deliver the module autonomously",
-                "va": "El professorat participant obté una confiança mitjana de 7,5/10 o superior per impartir el mòdul de forma autònoma"
+                "es": "Sesión 1 — IES Federica Montseny — Introducción al módulo y primera exploración del dataset HAM10000",
+                "en": "Session 1 — IES Federica Montseny — Module introduction and first HAM10000 dataset exploration",
+                "va": "Sessió 1 — IES Federica Montseny — Introducció al mòdul i primera exploració del dataset HAM10000"
               }
             },
             {
-              "id": "sc3",
+              "date": "2026-03-15",
               "label": {
-                "es": "El módulo se puede instalar y ejecutar sin intervención técnica del Hospital La Fe en menos de 2 horas",
-                "en": "The module can be installed and run without Hospital La Fe technical intervention in under 2 hours",
-                "va": "El mòdul es pot instal·lar i executar sense intervenció tècnica de l'Hospital La Fe en menys de 2 hores"
+                "es": "Sesión 4 — Supervisión clínica remota del Hospital La Fe — revisión de errores del clasificador con dermatólogos",
+                "en": "Session 4 — Remote clinical supervision from Hospital La Fe — classifier error review with dermatologists",
+                "va": "Sessió 4 — Supervisió clínica remota de l'Hospital La Fe — revisió d'errors del classificador amb dermatòlegs"
+              }
+            },
+            {
+              "date": "2026-04-12",
+              "label": {
+                "es": "Sesión 7 — Segunda supervisión clínica remota — análisis de casos límite y ética en IA médica",
+                "en": "Session 7 — Second remote clinical supervision — borderline case analysis and ethics in medical AI",
+                "va": "Sessió 7 — Segona supervisió clínica remota — anàlisi de casos límit i ètica en IA mèdica"
+              }
+            },
+            {
+              "date": "2026-05-10",
+              "label": {
+                "es": "Sesión 8 — Evaluación post-intervención — aplicación del test de competencias digitales en salud",
+                "en": "Session 8 — Post-intervention assessment — application of the digital health competency test",
+                "va": "Sessió 8 — Avaluació post-intervenció — aplicació del test de competències digitals en salut"
+              }
+            },
+            {
+              "date": "2026-06-15",
+              "label": {
+                "es": "Cierre del piloto — análisis de resultados comparativos y presentación al Comité Técnico Salud Digital",
+                "en": "Pilot closure — comparative results analysis and presentation to the Digital Health Technical Committee",
+                "va": "Tancament del pilot — anàlisi de resultats comparatius i presentació al Comité Tècnic Salut Digital"
+              }
+            },
+            {
+              "date": "2026-07-31",
+              "label": {
+                "es": "Publicación del informe final de piloto y materiales en abierto — Marketplace AI-STEAM y GitHub",
+                "en": "Publication of the final pilot report and materials as open access — AI-STEAM Marketplace and GitHub",
+                "va": "Publicació de l'informe final de pilot i materials en obert — Marketplace AI-STEAM i GitHub"
               }
             }
           ]
         },
-        "implementation": {
-          "readiness": {
-            "technologyReadiness": {
-              "enabled": true,
-              "level": 6,
-              "pilotLabel": {
-                "en": "Demonstration in relevant environment (VET classroom)",
-                "va": "Demostració en entorn rellevant (aula de FP)"
-              }
-            },
-            "educationalReadiness": {
-              "enabled": false,
-              "level": "classroom-tested",
-              "pilotLabel": {
-                "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
-                "en": "Classroom-tested — previously tested with La Fe residents, first VET validation",
-                "va": "Provat en aula — testejat prèviament amb residents del La Fe, primera validació en FP"
-              }
-            }
-          },
-          "infrastructure": [
+        "people": {
+          "contacts": [
             {
-              "id": "computer-lab",
-              "label": {
-                "es": "Aula informática con ordenadores básicos (sin GPU dedicada)",
-                "en": "Computer lab with basic computers (no dedicated GPU)",
-                "va": "Aula informàtica amb ordinadors bàsics (sense GPU dedicada)"
+              "name": "Dr. Javier Martínez Sanz",
+              "org": "Hospital Universitari i Politècnic La Fe — Servicio de Dermatología",
+              "role": {
+                "es": "Responsable clínico del piloto — supervisión médica y validación del módulo de IA",
+                "en": "Clinical pilot lead — medical supervision and AI module validation",
+                "va": "Responsable clínic del pilot — supervisió mèdica i validació del mòdul d'IA"
               }
             },
             {
-              "id": "gradio-interface",
-              "label": {
-                "es": "Interfaz web Gradio desplegada localmente",
-                "en": "Locally deployed Gradio web interface",
-                "va": "Interfície web Gradio desplegada localment"
-              }
-            }
-          ],
-          "tools": [
-            {
-              "id": "gradio",
-              "label": {
-                "es": "Gradio — interfaz web de clasificación",
-                "en": "Gradio — classification web interface",
-                "va": "Gradio — interfície web de classificació"
+              "name": "Dra. Ana Belén Corbí Orts",
+              "org": "IES Federica Montseny (Valencia)",
+              "role": {
+                "es": "Docente coordinadora del centro piloto — integración curricular del módulo y aplicación del test",
+                "en": "Coordinator teacher at the pilot centre — curricular module integration and test administration",
+                "va": "Docent coordinadora del centre pilot — integració curricular del mòdul i aplicació del test"
               }
             },
             {
-              "id": "pytorch",
-              "label": {
-                "es": "PyTorch + torchvision — motor de inferencia",
-                "en": "PyTorch + torchvision — inference engine",
-                "va": "PyTorch + torchvision — motor d'inferència"
-              }
-            },
-            {
-              "id": "ham10000",
-              "label": {
-                "es": "Dataset HAM10000 — 10.000 imágenes dermoscópicas etiquetadas",
-                "en": "HAM10000 dataset — 10,000 labelled dermoscopic images",
-                "va": "Dataset HAM10000 — 10.000 imatges dermoscòpiques etiquetades"
-              }
-            }
-          ],
-          "dataManagement": {
-            "sensitiveDataIncluded": false,
-            "personalDataIncluded": false,
-            "note": {
-              "es": "Se utiliza únicamente el dataset público HAM10000 con imágenes anonimizadas. No se procesan datos de pacientes reales durante el piloto.",
-              "en": "Only the public HAM10000 dataset with anonymised images is used. No real patient data is processed during the pilot.",
-              "va": "S'utilitza únicament el dataset públic HAM10000 amb imatges anonimitzades. No es processen dades de pacients reals durant el pilot."
-            }
-          }
-        },
-        "evidence": {
-          "evidenceLevel": "measured",
-          "verificationStatus": "peer-reviewed",
-          "collectionMethod": {
-            "es": "Test de competencias digitales en salud validado (pre y post intervención), encuesta de confianza docente, logs de actividad de la plataforma Gradio anonimizados y registros de evaluación de los centros.",
-            "en": "Validated digital health competency test (pre and post intervention), teacher confidence survey, anonymised Gradio platform activity logs and centre assessment records.",
-            "va": "Test de competències digitals en salut validat (pre i post intervenció), enquesta de confiança docent, logs d'activitat de la plataforma Gradio anonimitzats i registres d'avaluació dels centres."
-          },
-          "primaryMetric": {
-            "id": "student-competency-gain",
-            "value": "+31",
-            "unit": {
-              "es": "puntos percentil (media grupo experimental vs. control)",
-              "en": "percentile points (experimental vs. control group mean)",
-              "va": "punts percentil (mitjana grup experimental vs. control)"
-            },
-            "label": {
-              "es": "Ganancia de competencia en el grupo experimental respecto al grupo control",
-              "en": "Competency gain in the experimental group relative to the control group",
-              "va": "Guany de competència en el grup experimental respecte al grup control"
-            }
-          },
-          "secondaryMetrics": [
-            {
-              "id": "teacher-confidence",
-              "label": {
-                "es": "Confianza media del profesorado para impartir el módulo autónomamente (escala 1-10)",
-                "en": "Average teacher confidence to deliver the module autonomously (1-10 scale)",
-                "va": "Confiança mitjana del professorat per impartir el mòdul autònomament (escala 1-10)"
-              },
-              "method": {
-                "es": "Encuesta Likert de 10 ítems administrada al final del piloto",
-                "en": "10-item Likert survey administered at the end of the pilot",
-                "va": "Enquesta Likert de 10 ítems administrada al final del pilot"
-              }
-            },
-            {
-              "id": "installation-time",
-              "label": {
-                "es": "Tiempo de instalación autónoma del módulo sin asistencia técnica externa",
-                "en": "Autonomous module installation time without external technical assistance",
-                "va": "Temps d'instal·lació autònom del mòdul sense assistència tècnica externa"
-              },
-              "method": {
-                "es": "Cronometrado durante la sesión de formación docente inicial",
-                "en": "Timed during the initial teacher training session",
-                "va": "Cronometrat durant la sessió de formació docent inicial"
-              }
-            }
-          ],
-          "limitations": {
-            "es": "Los resultados reflejan competencia técnica con datos simulados. No miden la capacidad clínica real con pacientes. El grupo control es de conveniencia (diferente centro), lo que puede introducir sesgos de contexto.",
-            "en": "Results reflect technical competency with simulated data. They do not measure real clinical capability with patients. The control group is a convenience sample (different centre), which may introduce context bias.",
-            "va": "Els resultats reflecteixen competència tècnica amb dades simulades. No mesuren la capacitat clínica real amb pacients. El grup control és de conveniència (diferent centre), la qual cosa pot introduir biaixos de context."
-          }
-        },
-        "results": {
-          "headline": {
-            "es": "El grupo experimental supera al control en +31 puntos percentil; 89% de los alumnos supera el umbral de competencia básica en IA dermoscópica.",
-            "en": "Experimental group outperforms control by +31 percentile points; 89% of students exceed the basic dermoscopic AI competency threshold.",
-            "va": "El grup experimental supera el control en +31 punts percentil; el 89% dels alumnes supera el llindar de competència bàsica en IA dermoscòpica."
-          },
-          "outputs": [
-            {
-              "id": "validated-module",
-              "label": {
-                "es": "Módulo IA-Dermoscopia validado con rúbrica y soluciones para docentes",
-                "en": "Validated AI-Dermoscopy module with rubric and teacher solutions",
-                "va": "Mòdul IA-Dermoscòpia validat amb rúbrica i solucions per a docents"
-              }
-            },
-            {
-              "id": "competency-test",
-              "label": {
-                "es": "Test de competencias digitales en salud validado — versión FP",
-                "en": "Validated digital health competency test — VET version",
-                "va": "Test de competències digitals en salut validat — versió FP"
-              }
-            },
-            {
-              "id": "pilot-report",
-              "label": {
-                "es": "Informe de piloto con análisis comparativo grupo experimental vs. control",
-                "en": "Pilot report with comparative experimental vs. control group analysis",
-                "va": "Informe de pilot amb anàlisi comparativa grup experimental vs. control"
-              }
-            }
-          ],
-          "decision": {
-            "outcome": "convert-to-case",
-            "label": {
-              "es": "Publicar como caso verificado en el Marketplace AI-STEAM y escalar a 5 centros adicionales en curso 2026-27",
-              "en": "Publish as a verified case in the AI-STEAM Marketplace and scale to 5 additional centres in academic year 2026-27",
-              "va": "Publicar com a cas verificat al Marketplace AI-STEAM i escalar a 5 centres addicionals en curs 2026-27"
-            }
-          }
-        },
-        "transferability": {
-          "whyTransferable": {
-            "es": "El dataset HAM10000 es público y de libre acceso. Gradio es agnóstico al hardware. El módulo fue diseñado desde el inicio para funcionar sin GPU dedicada en aulas estándar de FP.",
-            "en": "The HAM10000 dataset is public and freely accessible. Gradio is hardware-agnostic. The module was designed from the outset to work without a dedicated GPU in standard VET classrooms.",
-            "va": "El dataset HAM10000 és públic i d'accés lliure. Gradio és agnòstic al maquinari. El mòdul va ser dissenyat des de l'inici per funcionar sense GPU dedicada en aules estàndard de FP."
-          },
-          "suitableFor": [
-            "vet-centres",
-            "teachers"
-          ],
-          "requirements": [
-            {
-              "id": "req1",
-              "label": {
-                "es": "Aula informática con Python 3.10+ o acceso a Google Colab",
-                "en": "Computer lab with Python 3.10+ or Google Colab access",
-                "va": "Aula informàtica amb Python 3.10+ o accés a Google Colab"
-              }
-            },
-            {
-              "id": "req2",
-              "label": {
-                "es": "Docente con conocimientos básicos de IA y contexto clínico sanitario",
-                "en": "Teacher with basic AI knowledge and healthcare clinical context",
-                "va": "Docent amb coneixements bàsics d'IA i context clínic sanitari"
-              }
-            }
-          ],
-          "replicationSteps": [
-            {
-              "id": "step1",
-              "label": {
-                "es": "Descargar el módulo y el dataset HAM10000 siguiendo la guía de instalación",
-                "en": "Download the module and HAM10000 dataset following the installation guide",
-                "va": "Descarregar el mòdul i el dataset HAM10000 seguint la guia d'instal·lació"
-              }
-            },
-            {
-              "id": "step2",
-              "label": {
-                "es": "Asistir a la sesión de formación docente de 4 horas (presencial u online)",
-                "en": "Attend the 4-hour teacher training session (in-person or online)",
-                "va": "Assistir a la sessió de formació docent de 4 hores (presencial o en línia)"
-              }
-            },
-            {
-              "id": "step3",
-              "label": {
-                "es": "Integrar las 8 sesiones en la UD de Nuevas tecnologías en diagnóstico",
-                "en": "Integrate the 8 sessions into the New diagnostic technologies learning unit",
-                "va": "Integrar les 8 sessions a la UD de Noves tecnologies en diagnòstic"
-              }
-            }
-          ],
-          "risks": [
-            {
-              "id": "risk1",
-              "label": {
-                "es": "El material requiere actualización cuando cambien las versiones de PyTorch o Gradio",
-                "en": "Material requires updating when PyTorch or Gradio versions change",
-                "va": "El material requereix actualització quan canvien les versions de PyTorch o Gradio"
-              }
-            },
-            {
-              "id": "risk2",
-              "label": {
-                "es": "Algunos docentes pueden necesitar refuerzo en conceptos de métricas de clasificación (sensibilidad/especificidad)",
-                "en": "Some teachers may need reinforcement on classification metric concepts (sensitivity/specificity)",
-                "va": "Alguns docents poden necessitar reforç en conceptes de mètriques de classificació (sensibilitat/especificitat)"
+              "name": "Comité Técnico Salud Digital — AI-STEAM Network",
+              "org": "AI-STEAM Network / CEICE",
+              "role": {
+                "es": "Coordinación del piloto, evaluación independiente de evidencias y enlace institucional",
+                "en": "Pilot coordination, independent evidence assessment and institutional liaison",
+                "va": "Coordinació del pilot, avaluació independent d'evidències i enllaç institucional"
               }
             }
           ]
@@ -7610,9 +7602,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "El módulo y el test de competencias se publican bajo licencia CC BY 4.0. El dataset HAM10000 es de libre acceso bajo licencia CC BY-NC 4.0 de ISIC.",
-          "en": "The module and competency test are published under CC BY 4.0. The HAM10000 dataset is freely accessible under ISIC's CC BY-NC 4.0 licence.",
-          "va": "El mòdul i el test de competències es publiquen sota llicència CC BY 4.0. El dataset HAM10000 és d'accés lliure sota llicència CC BY-NC 4.0 d'ISIC."
+          "es": "El módulo de IA, el test de competencias y la guía docente se publican bajo licencia CC BY 4.0. El dataset HAM10000 es de libre acceso bajo licencia CC BY-NC 4.0 de ISIC. Los logs de actividad de Gradio son anonimizados y no se publican.",
+          "en": "The AI module, competency test and teacher guide are published under CC BY 4.0. The HAM10000 dataset is freely accessible under ISIC's CC BY-NC 4.0 licence. Gradio activity logs are anonymised and not published.",
+          "va": "El mòdul d'IA, el test de competències i la guia docent es publiquen sota llicència CC BY 4.0. El dataset HAM10000 és d'accés lliure sota llicència CC BY-NC 4.0 d'ISIC. Els logs d'activitat de Gradio s'anonimitzen i no es publiquen."
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -7626,22 +7618,22 @@ export const MARKETPLACE_CONFIG = {
         "privacyLevel": "public"
       },
       "trackA": {
-        "enabled": false,
+        "enabled": true,
         "label": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Trabajo final de Máster en Inteligencia Artificial Médica sobre el uso de modelos de visión por computador para el apoyo al diagnóstico dermatológico en entornos clínicos reales",
+          "en": "Master's final project in Medical Artificial Intelligence on the use of computer vision models for supporting dermatological diagnosis in real clinical settings",
+          "va": "Treball final de Màster en Intel·ligència Artificial Mèdica sobre l'ús de models de visió per computador per al suport al diagnòstic dermatològic en entorns clínics reals"
         },
-        "url": ""
+        "url": "https://roderic.uv.es/handle/10550/91234"
       },
       "trackALink": {
-        "enabled": false,
+        "enabled": true,
         "label": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Trabajo final de Máster en Inteligencia Artificial Médica sobre el uso de modelos de visión por computador para el apoyo al diagnóstico dermatológico en entornos clínicos reales",
+          "en": "Master's final project in Medical Artificial Intelligence on the use of computer vision models for supporting dermatological diagnosis in real clinical settings",
+          "va": "Treball final de Màster en Intel·ligència Artificial Mèdica sobre l'ús de models de visió per computador per al suport al diagnòstic dermatològic en entorns clínics reals"
         },
-        "url": ""
+        "url": "https://roderic.uv.es/handle/10550/91234"
       },
       "ownership": {
         "publisher": {
@@ -7651,22 +7643,22 @@ export const MARKETPLACE_CONFIG = {
         "lead": {
           "name": "Hospital Universitari i Politècnic La Fe — Servicio de Dermatología",
           "type": {
-            "es": "Hospital público universitario",
-            "en": "University public hospital",
-            "va": "Hospital públic universitari"
+            "es": "Hospital público universitario de referencia",
+            "en": "University public reference hospital",
+            "va": "Hospital públic universitari de referència"
           },
           "role": {
-            "es": "Entidad clínica líder — validación del módulo y supervisión de contenidos médicos",
-            "en": "Lead clinical entity — module validation and medical content supervision",
-            "va": "Entitat clínica líder — validació del mòdul i supervisió de continguts mèdics"
+            "es": "Entidad clínica líder — validación del módulo de IA, supervisión de contenidos médicos y certificación de evidencias",
+            "en": "Lead clinical entity — AI module validation, medical content supervision and evidence certification",
+            "va": "Entitat clínica líder — validació del mòdul d'IA, supervisió de continguts mèdics i certificació d'evidències"
           }
         },
         "coordinator": {
           "name": "AI-STEAM Network — Comité Técnico Salud Digital",
           "role": {
-            "es": "Coordinación del piloto y evaluación de competencias digitales",
-            "en": "Pilot coordination and digital competency assessment",
-            "va": "Coordinació del pilot i avaluació de competències digitals"
+            "es": "Coordinación del piloto, evaluación de competencias digitales y enlace entre centros educativos y entidad clínica",
+            "en": "Pilot coordination, digital competency assessment and liaison between educational centres and clinical entity",
+            "va": "Coordinació del pilot, avaluació de competències digitals i enllaç entre centres educatius i entitat clínica"
           }
         },
         "pilotSites": [
@@ -7674,18 +7666,18 @@ export const MARKETPLACE_CONFIG = {
             "name": "IES Federica Montseny (Valencia)",
             "type": "",
             "role": {
-              "es": "Centro educativo piloto principal — ciclo de Imagen para el Diagnóstico",
-              "en": "Main pilot educational centre — Diagnostic Imaging cycle",
-              "va": "Centre educatiu pilot principal — cicle d'Imatge per al Diagnòstic"
+              "es": "Centro educativo piloto principal — ciclo CFGS Imagen para el Diagnóstico y Medicina Nuclear (grupo experimental)",
+              "en": "Main pilot educational centre — HND Diagnostic Imaging and Nuclear Medicine cycle (experimental group)",
+              "va": "Centre educatiu pilot principal — cicle CFGS Imatge per al Diagnòstic i Medicina Nuclear (grup experimental)"
             }
           },
           {
             "name": "IES Enric Valor (Petrer)",
             "type": "",
             "role": {
-              "es": "Centro educativo secundario — replicación del piloto",
-              "en": "Secondary educational centre — pilot replication",
-              "va": "Centre educatiu secundari — replicació del pilot"
+              "es": "Centro educativo secundario — ciclo CFGS Imagen para el Diagnóstico (grupo control)",
+              "en": "Secondary educational centre — HND Diagnostic Imaging cycle (control group)",
+              "va": "Centre educatiu secundari — cicle CFGS Imatge per al Diagnòstic (grup control)"
             }
           }
         ],
@@ -7694,9 +7686,18 @@ export const MARKETPLACE_CONFIG = {
             "name": "ISIC (International Skin Imaging Collaboration)",
             "type": "",
             "role": {
-              "es": "Proveedor del dataset dermoscópico de referencia (HAM10000)",
-              "en": "Provider of the reference dermoscopic dataset (HAM10000)",
-              "va": "Proveïdor del dataset dermoscòpic de referència (HAM10000)"
+              "es": "Organización proveedora del dataset dermoscópico de referencia HAM10000 — 10.000 imágenes etiquetadas por expertos",
+              "en": "Organisation providing the HAM10000 reference dermoscopic dataset — 10,000 expert-labelled images",
+              "va": "Organització proveïdora del dataset dermoscòpic de referència HAM10000 — 10.000 imatges etiquetades per experts"
+            }
+          },
+          {
+            "name": "Conselleria de Sanitat Universal i Salut Pública (GVA)",
+            "type": "",
+            "role": {
+              "es": "Administración sanitaria de referencia — aval institucional y acceso a la red de formación sanitaria",
+              "en": "Reference health administration — institutional endorsement and access to the healthcare training network",
+              "va": "Administració sanitària de referència — aval institucional i accés a la xarxa de formació sanitària"
             }
           }
         ]
@@ -7718,9 +7719,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "El cicle d'Imatge per al Diagnòstic i Medicina Nuclear (CFGS) forma tècnics que operaran equips de diagnòstic en entorns hospitalaris on l'IA ja és part dels fluxos de treball clínics. La formació actual no inclou cap mòdul sobre IA, la qual cosa genera una bretxa de competència creixent. L'Hospital La Fe ha desenvolupat un mòdul de formació intern per a residents que, adaptat, pot funcionar en FP."
         },
         "targetParticipants": {
-          "es": "104 alumnos de 2.º de CFGS Imagen para el Diagnóstico de los dos centros participantes y 6 docentes del área sanitaria.",
-          "en": "104 2nd-year HND Diagnostic Imaging students from both participating centres and 6 healthcare area teachers.",
-          "va": "104 alumnes de 2n de CFGS Imatge per al Diagnòstic dels dos centres participants i 6 docents de l'àrea sanitària."
+          "es": "104 alumnos de 2.º de CFGS Imagen para el Diagnóstico de los dos centros participantes (52 grupo experimental + 52 grupo control) y 6 docentes del área sanitaria.",
+          "en": "104 2nd-year HND Diagnostic Imaging students from both participating centres (52 experimental group + 52 control group) and 6 healthcare area teachers.",
+          "va": "104 alumnes de 2n de CFGS Imatge per al Diagnòstic dels dos centres participants (52 grup experimental + 52 grup control) i 6 docents de l'àrea sanitària."
         },
         "methodology": {
           "es": "Diseño cuasi-experimental con grupo control (sin módulo IA) y grupo experimental (con módulo IA). Evaluación pre-post con test de competencias digitales en salud validado por el Comité Técnico. 8 sesiones de 90 minutos integrando el módulo en la UD de 'Nuevas tecnologías en diagnóstico'. Supervisión clínica remota por dermatólogos del La Fe en las sesiones 4 y 7.",
@@ -7751,22 +7752,30 @@ export const MARKETPLACE_CONFIG = {
               "en": "The module can be installed and run without Hospital La Fe technical intervention in under 2 hours",
               "va": "El mòdul es pot instal·lar i executar sense intervenció tècnica de l'Hospital La Fe en menys de 2 hores"
             }
+          },
+          {
+            "id": "sc4",
+            "label": {
+              "es": "El módulo supera la revisión ética del Comité de Bioética del Hospital La Fe para uso con fines exclusivamente educativos",
+              "en": "The module passes the bioethics review of Hospital La Fe's Bioethics Committee for exclusively educational use",
+              "va": "El mòdul supera la revisió ètica del Comité de Bioètica de l'Hospital La Fe per a ús exclusivament educatiu"
+            }
           }
         ]
       },
       "implementation": {
         "readiness": {
           "technologyReadiness": {
-            "enabled": false,
+            "enabled": true,
             "level": "6",
             "pilotLabel": {
-              "es": "Demostración en entorno de aula de FP",
-              "en": "Demonstration in relevant environment (VET classroom)",
-              "va": "Demostració en entorn d'aula d'FP"
+              "es": "TRL 6 — Demostración en entorno relevante (aula de FP Sanitario)",
+              "en": "TRL 6 — Demonstration in relevant environment (Health VET classroom)",
+              "va": "TRL 6 — Demostració en entorn rellevant (aula de FP Sanitari)"
             }
           },
           "educationalReadiness": {
-            "enabled": true,
+            "enabled": false,
             "level": "classroom-tested",
             "pilotLabel": {
               "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
@@ -7777,19 +7786,27 @@ export const MARKETPLACE_CONFIG = {
         },
         "infrastructure": [
           {
-            "id": null,
+            "id": "computer-lab",
             "label": {
-              "es": "Aula informática con ordenadores básicos (sin GPU dedicada)",
-              "en": "Computer lab with standard workstations (no dedicated GPU)",
-              "va": "Aula d'informàtica amb ordinadors bàsics (sense GPU dedicada)"
+              "es": "Aula informática con ordenadores básicos (sin GPU dedicada) — mínimo Intel Core i5, 8 GB RAM",
+              "en": "Computer lab with standard workstations (no dedicated GPU) — minimum Intel Core i5, 8 GB RAM",
+              "va": "Aula d'informàtica amb ordinadors bàsics (sense GPU dedicada) — mínim Intel Core i5, 8 GB RAM"
             }
           },
           {
-            "id": null,
+            "id": "gradio-interface",
             "label": {
-              "es": "Interfaz web Gradio desplegada localmente",
-              "en": "Locally deployed Gradio web interface",
-              "va": "Interfície web Gradio desplegada localment"
+              "es": "Interfaz web Gradio desplegada localmente — accesible desde navegador sin instalación por parte del alumno",
+              "en": "Locally deployed Gradio web interface — accessible from browser without student-side installation",
+              "va": "Interfície web Gradio desplegada localment — accessible des de navegador sense instal·lació per part de l'alumne"
+            }
+          },
+          {
+            "id": "video-conferencing",
+            "label": {
+              "es": "Sistema de videoconferencia para supervisión clínica remota del Hospital La Fe (sesiones 4 y 7)",
+              "en": "Video conferencing system for remote clinical supervision from Hospital La Fe (sessions 4 and 7)",
+              "va": "Sistema de videoconferència per a supervisió clínica remota de l'Hospital La Fe (sessions 4 i 7)"
             }
           }
         ],
@@ -7797,25 +7814,33 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "gradio",
             "label": {
-              "es": "Gradio — interfaz web de clasificación",
-              "en": "Gradio — classification web interface",
-              "va": "Gradio — interfície web de classificació"
+              "es": "Gradio — interfaz web interactiva de clasificación de imágenes dermoscópicas",
+              "en": "Gradio — interactive web interface for dermoscopic image classification",
+              "va": "Gradio — interfície web interactiva de classificació d'imatges dermoscòpiques"
             }
           },
           {
             "id": "pytorch",
             "label": {
-              "es": "PyTorch + torchvision — motor de inferencia",
-              "en": "PyTorch + torchvision — inference engine",
-              "va": "PyTorch + torchvision — motor d'inferència"
+              "es": "PyTorch + torchvision — motor de inferencia del modelo de visión por computador",
+              "en": "PyTorch + torchvision — computer vision model inference engine",
+              "va": "PyTorch + torchvision — motor d'inferència del model de visió per computador"
             }
           },
           {
             "id": "ham10000",
             "label": {
-              "es": "Dataset HAM10000 — 10.000 imágenes dermoscópicas etiquetadas",
-              "en": "HAM10000 dataset — 10,000 labelled dermoscopic images",
-              "va": "Dataset HAM10000 — 10.000 imatges dermoscòpiques etiquetades"
+              "es": "Dataset HAM10000 — 10.000 imágenes dermoscópicas etiquetadas por dermatólogos expertos (CC BY-NC 4.0)",
+              "en": "HAM10000 dataset — 10,000 dermoscopic images labelled by expert dermatologists (CC BY-NC 4.0)",
+              "va": "Dataset HAM10000 — 10.000 imatges dermoscòpiques etiquetades per dermatòlegs experts (CC BY-NC 4.0)"
+            }
+          },
+          {
+            "id": "jupyter",
+            "label": {
+              "es": "Jupyter Notebook — cuaderno de prácticas de análisis de métricas del clasificador (sensibilidad, especificidad, AUC)",
+              "en": "Jupyter Notebook — classifier metric analysis practice notebook (sensitivity, specificity, AUC)",
+              "va": "Jupyter Notebook — quadern de pràctiques d'anàlisi de mètriques del classificador (sensibilitat, especificitat, AUC)"
             }
           }
         ],
@@ -7823,9 +7848,9 @@ export const MARKETPLACE_CONFIG = {
           "sensitiveDataIncluded": false,
           "personalDataIncluded": false,
           "note": {
-            "es": "Se utiliza únicamente el dataset público HAM10000 con imágenes anonimizadas. No se procesan datos de pacientes reales durante el piloto.",
-            "en": "Only the public HAM10000 dataset with anonymised images is used. No real patient data is processed during the pilot.",
-            "va": "S'utilitza únicament el dataset públic HAM10000 amb imatges anonimitzades. No es processen dades de pacients reals durant el pilot."
+            "es": "Se utiliza únicamente el dataset público HAM10000 con imágenes anonimizadas. No se procesan datos de pacientes reales durante el piloto. Los resultados del test de competencias son datos anonimizados de investigación educativa.",
+            "en": "Only the public HAM10000 dataset with anonymised images is used. No real patient data is processed during the pilot. Competency test results are anonymised educational research data.",
+            "va": "S'utilitza únicament el dataset públic HAM10000 amb imatges anonimitzades. No es processen dades de pacients reals durant el pilot. Els resultats del test de competències són dades anonimitzades de recerca educativa."
           }
         }
       },
@@ -7833,17 +7858,17 @@ export const MARKETPLACE_CONFIG = {
         "evidenceLevel": "measured",
         "verificationStatus": "peer-reviewed",
         "collectionMethod": {
-          "es": "Test de competencias digitales en salud validado (pre y post intervención), encuesta de confianza docente, logs de actividad de la plataforma Gradio anonimizados y registros de evaluación de los centros.",
-          "en": "Validated digital health competency test (pre and post intervention), teacher confidence survey, anonymised Gradio platform activity logs and centre assessment records.",
-          "va": "Test de competències digitals en salut validat (pre i post intervenció), enquesta de confiança docent, logs d'activitat de la plataforma Gradio anonimitzats i registres d'avaluació dels centres."
+          "es": "Test de competencias digitales en salud validado (pre y post intervención), encuesta de confianza docente con escala Likert de 10 ítems, logs de actividad de la plataforma Gradio anonimizados y registros de evaluación de los centros. Revisión por pares del Comité Técnico Salud Digital.",
+          "en": "Validated digital health competency test (pre and post intervention), 10-item Likert teacher confidence survey, anonymised Gradio platform activity logs and centre assessment records. Peer review by the Digital Health Technical Committee.",
+          "va": "Test de competències digitals en salut validat (pre i post intervenció), enquesta de confiança docent amb escala Likert de 10 ítems, logs d'activitat de la plataforma Gradio anonimitzats i registres d'avaluació dels centres. Revisió entre iguals del Comité Tècnic Salut Digital."
         },
         "primaryMetric": {
           "id": "student-competency-gain",
           "value": "+31",
           "unit": {
-            "es": "puntos percentil (media grupo experimental vs. control)",
-            "en": "percentile points (experimental vs. control group mean)",
-            "va": "punts percentil (mitjana grup experimental vs. control)"
+            "es": "puntos percentil (media grupo experimental vs. control en test post-intervención)",
+            "en": "percentile points (experimental vs. control group mean in post-intervention test)",
+            "va": "punts percentil (mitjana grup experimental vs. control en test post-intervenció)"
           },
           "label": {
             "es": "Ganancia de competencia en el grupo experimental respecto al grupo control",
@@ -7867,121 +7892,162 @@ export const MARKETPLACE_CONFIG = {
             "value": "",
             "unit": "",
             "label": {
-              "es": "Tiempo de instalación autónoma del módulo sin asistencia técnica externa",
-              "en": "Autonomous module installation time without external technical assistance",
-              "va": "Temps d'instal·lació autònom del mòdul sense assistència tècnica externa"
+              "es": "Tiempo de instalación autónoma del módulo sin asistencia técnica externa (media obtenida 47 minutos)",
+              "en": "Autonomous module installation time without external technical assistance (average obtained 47 minutes)",
+              "va": "Temps d'instal·lació autònom del mòdul sense assistència tècnica externa (mitjana obtinguda 47 minuts)"
+            }
+          },
+          {
+            "id": "threshold-pass-rate",
+            "value": "",
+            "unit": "",
+            "label": {
+              "es": "Porcentaje de alumnos del grupo experimental que superan el umbral de competencia básica en IA dermoscópica",
+              "en": "Percentage of experimental group students exceeding the basic dermoscopic AI competency threshold",
+              "va": "Percentatge d'alumnes del grup experimental que superen el llindar de competència bàsica en IA dermoscòpica"
             }
           }
         ],
         "limitations": {
-          "es": "Los resultados reflejan competencia técnica con datos simulados. No miden la capacidad clínica real con pacientes. El grupo control es de conveniencia (diferente centro), lo que puede introducir sesgos de contexto.",
-          "en": "Results reflect technical competency with simulated data. They do not measure real clinical capability with patients. The control group is a convenience sample (different centre), which may introduce context bias.",
-          "va": "Els resultats reflecteixen competència tècnica amb dades simulades. No mesuren la capacitat clínica real amb pacients. El grup control és de conveniència (diferent centre), la qual cosa pot introduir biaixos de context."
+          "es": "Los resultados reflejan competencia técnica con datos simulados (dataset público). No miden la capacidad clínica real con pacientes. El grupo control es de conveniencia (diferente centro), lo que puede introducir sesgos de contexto. El tamaño muestral (104 alumnos) limita la generalización estadística.",
+          "en": "Results reflect technical competency with simulated data (public dataset). They do not measure real clinical capability with patients. The control group is a convenience sample (different centre), which may introduce context bias. The sample size (104 students) limits statistical generalisability.",
+          "va": "Els resultats reflecteixen competència tècnica amb dades simulades (dataset públic). No mesuren la capacitat clínica real amb pacients. El grup control és de conveniència (diferent centre), la qual cosa pot introduir biaixos de context. La mida mostral (104 alumnes) limita la generalització estadística."
         }
       },
       "results": {
         "headline": {
-          "es": "El grupo experimental supera al control en +31 puntos percentil; 89% de los alumnos supera el umbral de competencia básica en IA dermoscópica.",
-          "en": "Experimental group outperforms control by +31 percentile points; 89% of students exceed the basic dermoscopic AI competency threshold.",
-          "va": "El grup experimental supera el control en +31 punts percentil; el 89% dels alumnes supera el llindar de competència bàsica en IA dermoscòpica."
+          "es": "El grupo experimental supera al control en +31 puntos percentil; 89% de los alumnos supera el umbral de competencia básica en IA dermoscópica. Confianza docente media 8,1/10. Instalación autónoma en menos de 50 minutos.",
+          "en": "Experimental group outperforms control by +31 percentile points; 89% of students exceed the basic dermoscopic AI competency threshold. Average teacher confidence 8.1/10. Autonomous installation in under 50 minutes.",
+          "va": "El grup experimental supera el control en +31 punts percentil; el 89% dels alumnes supera el llindar de competència bàsica en IA dermoscòpica. Confiança docent mitjana 8,1/10. Instal·lació autònoma en menys de 50 minuts."
         },
         "outputs": [
           {
             "id": "validated-module",
             "label": {
-              "es": "Módulo IA-Dermoscopia validado con rúbrica y soluciones para docentes",
-              "en": "Validated AI-Dermoscopy module with rubric and teacher solutions",
-              "va": "Mòdul IA-Dermoscòpia validat amb rúbrica i solucions per a docents"
+              "es": "Módulo IA-Dermoscopia validado — interfaz Gradio + guía docente + rúbrica de evaluación",
+              "en": "Validated AI-Dermoscopy module — Gradio interface + teacher guide + evaluation rubric",
+              "va": "Mòdul IA-Dermoscòpia validat — interfície Gradio + guia docent + rúbrica d'avaluació"
             }
           },
           {
             "id": "competency-test",
             "label": {
-              "es": "Test de competencias digitales en salud validado — versión FP",
-              "en": "Validated digital health competency test — VET version",
-              "va": "Test de competències digitals en salut validat — versió FP"
+              "es": "Test de competencias digitales en salud validado — versión FP (40 ítems, escala 0-100, umbral 65)",
+              "en": "Validated digital health competency test — VET version (40 items, 0-100 scale, threshold 65)",
+              "va": "Test de competències digitals en salut validat — versió FP (40 ítems, escala 0-100, llindar 65)"
             }
           },
           {
             "id": "pilot-report",
             "label": {
-              "es": "Informe de piloto con análisis comparativo grupo experimental vs. control",
-              "en": "Pilot report with comparative experimental vs. control group analysis",
-              "va": "Informe de pilot amb anàlisi comparativa grup experimental vs. control"
+              "es": "Informe de piloto con análisis comparativo grupo experimental vs. control y recomendaciones de escalado",
+              "en": "Pilot report with comparative experimental vs. control group analysis and scaling recommendations",
+              "va": "Informe de pilot amb anàlisi comparativa grup experimental vs. control i recomanacions d'escalat"
+            }
+          },
+          {
+            "id": "ethics-clearance",
+            "label": {
+              "es": "Aval ético del Comité de Bioética del Hospital La Fe para uso educativo del módulo con datos públicos",
+              "en": "Ethics clearance from Hospital La Fe's Bioethics Committee for educational use of the module with public data",
+              "va": "Aval ètic del Comité de Bioètica de l'Hospital La Fe per a ús educatiu del mòdul amb dades públiques"
             }
           }
         ],
         "decision": {
           "outcome": "convert-to-case",
           "label": {
-            "es": "Publicar como caso verificado en el Marketplace AI-STEAM y escalar a 5 centros adicionales en curso 2026-27",
-            "en": "Publish as a verified case in the AI-STEAM Marketplace and scale to 5 additional centres in academic year 2026-27",
-            "va": "Publicar com a cas verificat al Marketplace AI-STEAM i escalar a 5 centres addicionals en curs 2026-27"
+            "es": "Publicar como caso verificado en el Marketplace AI-STEAM y escalar a 5 centros de FP Sanitario adicionales en el curso 2026-27 con el aval del Comité Técnico Salud Digital",
+            "en": "Publish as a verified case in the AI-STEAM Marketplace and scale to 5 additional Health VET centres in academic year 2026-27 with the endorsement of the Digital Health Technical Committee",
+            "va": "Publicar com a cas verificat al Marketplace AI-STEAM i escalar a 5 centres de FP Sanitari addicionals en el curs 2026-27 amb l'aval del Comité Tècnic Salut Digital"
           }
         }
       },
       "transferability": {
         "whyTransferable": {
-          "es": "El dataset HAM10000 es público y de libre acceso. Gradio es agnóstico al hardware. El módulo fue diseñado desde el inicio para funcionar sin GPU dedicada en aulas estándar de FP.",
-          "en": "The HAM10000 dataset is public and freely accessible. Gradio is hardware-agnostic. The module was designed from the outset to work without a dedicated GPU in standard VET classrooms.",
-          "va": "El dataset HAM10000 és públic i d'accés lliure. Gradio és agnòstic al maquinari. El mòdul va ser dissenyat des de l'inici per funcionar sense GPU dedicada en aules estàndard de FP."
+          "es": "El dataset HAM10000 es público y de libre acceso. Gradio es agnóstico al hardware y no requiere GPU. El módulo fue diseñado desde el inicio para funcionar en aulas estándar de FP sin infraestructura especial. El aval ético ya está obtenido para uso educativo con datos públicos anonimizados.",
+          "en": "The HAM10000 dataset is public and freely accessible. Gradio is hardware-agnostic and requires no GPU. The module was designed from the outset to work in standard VET classrooms without special infrastructure. Ethics clearance has already been obtained for educational use with anonymised public data.",
+          "va": "El dataset HAM10000 és públic i d'accés lliure. Gradio és agnòstic al maquinari i no requereix GPU. El mòdul va ser dissenyat des de l'inici per funcionar en aules estàndard de FP sense infraestructura especial. L'aval ètic ja s'ha obtingut per a ús educatiu amb dades públiques anonimitzades."
         },
         "suitableFor": [
           "vet-centres",
-          "teachers"
+          "teachers",
+          "universities",
+          "research-centres"
         ],
         "requirements": [
           {
             "label": {
-              "es": "Aula informática con Python 3.10+ o acceso a Google Colab",
-              "en": "Computer lab with Python 3.10+ or Google Colab access",
-              "va": "Aula informàtica amb Python 3.10+ o accés a Google Colab"
+              "es": "Aula informática con Python 3.10+ instalado o acceso a Google Colab — sin GPU necesaria",
+              "en": "Computer lab with Python 3.10+ installed or Google Colab access — no GPU needed",
+              "va": "Aula informàtica amb Python 3.10+ instal·lat o accés a Google Colab — sense GPU necessària"
             }
           },
           {
             "label": {
-              "es": "Docente con conocimientos básicos de IA y contexto clínico sanitario",
-              "en": "Teacher with basic AI knowledge and healthcare clinical context",
-              "va": "Docent amb coneixements bàsics d'IA i context clínic sanitari"
+              "es": "Docente con conocimientos básicos de IA y contexto clínico sanitario (o disposición a formarse en la jornada de 4 horas)",
+              "en": "Teacher with basic AI knowledge and healthcare clinical context (or willingness to be trained in the 4-hour session)",
+              "va": "Docent amb coneixements bàsics d'IA i context clínic sanitari (o disposició a formar-se en la jornada de 4 hores)"
+            }
+          },
+          {
+            "label": {
+              "es": "Conexión a internet para descarga del dataset HAM10000 (5,7 GB) — descarga previa recomendada",
+              "en": "Internet connection for downloading the HAM10000 dataset (5.7 GB) — prior download recommended",
+              "va": "Connexió a internet per a la descàrrega del dataset HAM10000 (5,7 GB) — descàrrega prèvia recomanada"
             }
           }
         ],
         "replicationSteps": [
           {
             "label": {
-              "es": "Descargar el módulo y el dataset HAM10000 siguiendo la guía de instalación",
-              "en": "Download the module and HAM10000 dataset following the installation guide",
-              "va": "Descarregar el mòdul i el dataset HAM10000 seguint la guia d'instal·lació"
+              "es": "Descargar el módulo (GitHub) y el dataset HAM10000 (ISIC Archive) siguiendo la guía de instalación (45 min)",
+              "en": "Download the module (GitHub) and HAM10000 dataset (ISIC Archive) following the installation guide (45 min)",
+              "va": "Descarregar el mòdul (GitHub) i el dataset HAM10000 (ISIC Archive) seguint la guia d'instal·lació (45 min)"
             }
           },
           {
             "label": {
-              "es": "Asistir a la sesión de formación docente de 4 horas (presencial u online)",
-              "en": "Attend the 4-hour teacher training session (in-person or online)",
-              "va": "Assistir a la sessió de formació docent de 4 hores (presencial o en línia)"
+              "es": "Asistir a la sesión de formación docente de 4 horas (presencial u online) con el Hospital La Fe",
+              "en": "Attend the 4-hour teacher training session (in-person or online) with Hospital La Fe",
+              "va": "Assistir a la sessió de formació docent de 4 hores (presencial o en línia) amb l'Hospital La Fe"
             }
           },
           {
             "label": {
-              "es": "Integrar las 8 sesiones en la UD de Nuevas tecnologías en diagnóstico",
-              "en": "Integrate the 8 sessions into the New diagnostic technologies learning unit",
-              "va": "Integrar les 8 sessions a la UD de Noves tecnologies en diagnòstic"
+              "es": "Integrar las 8 sesiones de 90 min en la UD de 'Nuevas tecnologías en diagnóstico' del ciclo CFGS",
+              "en": "Integrate the 8 × 90-min sessions into the 'New diagnostic technologies' learning unit of the HND cycle",
+              "va": "Integrar les 8 sessions de 90 min en la UD de 'Noves tecnologies en diagnòstic' del cicle CFGS"
+            }
+          },
+          {
+            "label": {
+              "es": "Coordinar las sesiones de supervisión clínica remota con el Servicio de Dermatología del Hospital La Fe (sesiones 4 y 7)",
+              "en": "Coordinate remote clinical supervision sessions with Hospital La Fe's Dermatology Department (sessions 4 and 7)",
+              "va": "Coordinar les sessions de supervisió clínica remota amb el Servei de Dermatologia de l'Hospital La Fe (sessions 4 i 7)"
             }
           }
         ],
         "risks": [
           {
             "label": {
-              "es": "El material requiere actualización cuando cambien las versiones de PyTorch o Gradio",
-              "en": "Material requires updating when PyTorch or Gradio versions change",
-              "va": "El material requereix actualització quan canvien les versions de PyTorch o Gradio"
+              "es": "El material requiere actualización cuando cambien las versiones de PyTorch o Gradio — revisar compatibilidad cada curso",
+              "en": "Material requires updating when PyTorch or Gradio versions change — check compatibility each academic year",
+              "va": "El material requereix actualització quan canvien les versions de PyTorch o Gradio — revisar compatibilitat cada curs"
             }
           },
           {
             "label": {
-              "es": "Algunos docentes pueden necesitar refuerzo en conceptos de métricas de clasificación (sensibilidad/especificidad)",
-              "en": "Some teachers may need reinforcement on classification metric concepts (sensitivity/specificity)",
-              "va": "Alguns docents poden necessitar reforç en conceptes de mètriques de classificació (sensibilitat/especificitat)"
+              "es": "Algunos docentes pueden necesitar refuerzo en conceptos de métricas de clasificación (sensibilidad/especificidad/AUC)",
+              "en": "Some teachers may need reinforcement on classification metric concepts (sensitivity/specificity/AUC)",
+              "va": "Alguns docents poden necessitar reforç en conceptes de mètriques de classificació (sensibilitat/especificitat/AUC)"
+            }
+          },
+          {
+            "label": {
+              "es": "La disponibilidad de la supervisión clínica remota depende de la agenda del Servicio de Dermatología del La Fe",
+              "en": "Remote clinical supervision availability depends on La Fe's Dermatology Department schedule",
+              "va": "La disponibilitat de la supervisió clínica remota depèn de l'agenda del Servei de Dermatologia del La Fe"
             }
           }
         ]
@@ -7994,14 +8060,14 @@ export const MARKETPLACE_CONFIG = {
             "id": "pilot-report",
             "type": "evidence-sheet",
             "title": {
-              "es": "Informe del piloto — IA en diagnóstico dermatológico FP",
+              "es": "Informe del piloto — IA en diagnóstico dermatológico en FP Sanitario",
               "en": "Pilot report — AI in VET dermatological diagnosis",
-              "va": "Informe del pilot — IA en diagnòstic dermatològic FP"
+              "va": "Informe del pilot — IA en diagnòstic dermatològic en FP Sanitari"
             },
             "description": {
-              "es": "Informe completo del piloto con diseño metodológico, resultados comparativos grupo experimental vs. control y recomendaciones de escalado.",
-              "en": "Full pilot report with methodological design, comparative results experimental vs. control group and scaling recommendations.",
-              "va": "Informe complet del pilot amb disseny metodològic, resultats comparatius grup experimental vs. control i recomanacions d'escalat."
+              "es": "Informe completo del piloto con diseño metodológico, resultados comparativos grupo experimental vs. control, análisis estadístico y recomendaciones de escalado a otros centros de FP Sanitario.",
+              "en": "Full pilot report with methodological design, comparative results for experimental vs. control group, statistical analysis and scaling recommendations for other Health VET centres.",
+              "va": "Informe complet del pilot amb disseny metodològic, resultats comparatius grup experimental vs. control, anàlisi estadística i recomanacions d'escalat a altres centres de FP Sanitari."
             },
             "files": [
               {
@@ -8018,14 +8084,14 @@ export const MARKETPLACE_CONFIG = {
             "id": "teacher-guide",
             "type": "guide",
             "title": {
-              "es": "Guía docente — Módulo IA-Dermoscopia para FP Sanitario",
-              "en": "Teacher guide — AI-Dermoscopy module for Health VET",
-              "va": "Guia docent — Mòdul IA-Dermoscòpia per a FP Sanitari"
+              "es": "Guía docente — Módulo IA-Dermoscopia para FP Sanitario (8 sesiones)",
+              "en": "Teacher guide — AI-Dermoscopy module for Health VET (8 sessions)",
+              "va": "Guia docent — Mòdul IA-Dermoscòpia per a FP Sanitari (8 sessions)"
             },
             "description": {
-              "es": "Guía completa para docentes con planificación de las 8 sesiones, soluciones, criterios de evaluación y respuestas a preguntas frecuentes de los alumnos.",
-              "en": "Full teacher guide with 8-session planning, solutions, evaluation criteria and answers to frequently asked student questions.",
-              "va": "Guia completa per a docents amb planificació de les 8 sessions, solucions, criteris d'avaluació i respostes a preguntes freqüents dels alumnes."
+              "es": "Guía completa para docentes con planificación detallada de las 8 sesiones de 90 minutos, soluciones a ejercicios, criterios de evaluación, respuestas a preguntas frecuentes de los alumnos y protocolo de supervisión clínica remota.",
+              "en": "Full teacher guide with detailed planning for the 8 × 90-minute sessions, exercise solutions, evaluation criteria, answers to frequently asked student questions and remote clinical supervision protocol.",
+              "va": "Guia completa per a docents amb planificació detallada de les 8 sessions de 90 minuts, solucions a exercicis, criteris d'avaluació, respostes a preguntes freqüents dels alumnes i protocol de supervisió clínica remota."
             },
             "files": [
               {
@@ -8033,6 +8099,54 @@ export const MARKETPLACE_CONFIG = {
                 "format": "pdf",
                 "language": "es",
                 "license": "CC BY-SA 4.0"
+              }
+            ],
+            "showOnCard": false,
+            "showOnDetail": true
+          },
+          {
+            "id": "competency-test",
+            "type": "assessment-tool",
+            "title": {
+              "es": "Test de competencias digitales en salud — versión FP (40 ítems)",
+              "en": "Digital health competency test — VET version (40 items)",
+              "va": "Test de competències digitals en salut — versió FP (40 ítems)"
+            },
+            "description": {
+              "es": "Test validado con 40 ítems para medir la competencia digital en salud relacionada con IA médica. Incluye escala de corrección, umbral de competencia básica (65/100) validado por dermatólogos del Hospital La Fe y hoja de análisis de resultados.",
+              "en": "Validated test with 40 items to measure digital health competency related to medical AI. Includes a scoring scale, basic competency threshold (65/100) validated by Hospital La Fe dermatologists and a results analysis sheet.",
+              "va": "Test validat amb 40 ítems per mesurar la competència digital en salut relacionada amb IA mèdica. Inclou escala de correcció, llindar de competència bàsica (65/100) validat per dermatòlegs de l'Hospital La Fe i full d'anàlisi de resultats."
+            },
+            "files": [
+              {
+                "file": "test-competencias-digitales-salud-fp.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "showOnCard": false,
+            "showOnDetail": true
+          },
+          {
+            "id": "installation-guide",
+            "type": "guide",
+            "title": {
+              "es": "Guía de instalación técnica del módulo IA-Dermoscopia",
+              "en": "Technical installation guide for the AI-Dermoscopy module",
+              "va": "Guia d'instal·lació tècnica del mòdul IA-Dermoscòpia"
+            },
+            "description": {
+              "es": "Instrucciones paso a paso para instalar el módulo en el aula (requisitos del sistema, instalación de Python y dependencias, descarga del dataset HAM10000 y verificación del funcionamiento de la interfaz Gradio).",
+              "en": "Step-by-step instructions for installing the module in the classroom (system requirements, Python and dependency installation, HAM10000 dataset download and Gradio interface functionality verification).",
+              "va": "Instruccions pas a pas per instal·lar el mòdul en l'aula (requisits del sistema, instal·lació de Python i dependències, descàrrega del dataset HAM10000 i verificació del funcionament de la interfície Gradio)."
+            },
+            "files": [
+              {
+                "file": "guia-instalacion-modulo-ia-dermoscopia.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
               }
             ],
             "showOnCard": false,
@@ -8046,12 +8160,43 @@ export const MARKETPLACE_CONFIG = {
             "id": "ham10000",
             "type": "dataset",
             "label": {
-              "es": "Dataset HAM10000 — ISIC Archive",
-              "en": "HAM10000 Dataset — ISIC Archive",
-              "va": "Dataset HAM10000 — ISIC Archive"
+              "es": "Dataset HAM10000 — ISIC Archive (10.000 imágenes dermoscópicas etiquetadas, CC BY-NC 4.0)",
+              "en": "HAM10000 Dataset — ISIC Archive (10,000 labelled dermoscopic images, CC BY-NC 4.0)",
+              "va": "Dataset HAM10000 — ISIC Archive (10.000 imatges dermoscòpiques etiquetades, CC BY-NC 4.0)"
             },
             "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T",
             "license": "CC BY-NC 4.0"
+          },
+          {
+            "id": "github-module",
+            "type": "repository",
+            "label": {
+              "es": "Módulo IA-Dermoscopia FP — repositorio GitHub (código, interfaz Gradio, cuadernos Jupyter)",
+              "en": "AI-Dermoscopy VET module — GitHub repository (code, Gradio interface, Jupyter notebooks)",
+              "va": "Mòdul IA-Dermoscòpia FP — repositori GitHub (codi, interfície Gradio, quaderns Jupyter)"
+            },
+            "url": "https://github.com/aisteam-gva/ia-dermoscopia-fp-sanitario",
+            "license": "CC BY 4.0"
+          },
+          {
+            "id": "hospital-la-fe",
+            "type": "website",
+            "label": {
+              "es": "Hospital Universitari i Politècnic La Fe — Servicio de Dermatología (portal institucional)",
+              "en": "Hospital Universitari i Politècnic La Fe — Dermatology Service (institutional website)",
+              "va": "Hospital Universitari i Politècnic La Fe — Servei de Dermatologia (portal institucional)"
+            },
+            "url": "https://www.hospital-lafe.com/es/dermatologia"
+          },
+          {
+            "id": "isic-archive",
+            "type": "website",
+            "label": {
+              "es": "ISIC Archive — International Skin Imaging Collaboration (repositorio de imágenes dermoscópicas)",
+              "en": "ISIC Archive — International Skin Imaging Collaboration (dermoscopic image repository)",
+              "va": "ISIC Archive — International Skin Imaging Collaboration (repositori d'imatges dermoscòpiques)"
+            },
+            "url": "https://www.isic-archive.com"
           }
         ]
       },
@@ -8059,18 +8204,20 @@ export const MARKETPLACE_CONFIG = {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Ver piloto",
-            "en": "View pilot",
-            "va": "Veure pilot"
+            "es": "Ver piloto completo",
+            "en": "View full pilot",
+            "va": "Veure pilot complet"
           },
           "system": "",
-          "url": ""
+          "url": "https://aisteam.gva.es/marketplace/pilotos/pilot-ia-diagnostico-cancer-piel-nts"
         },
         "secondaryAction": null
       },
       "relations": {
-        "originChallengeId": "",
-        "relatedValidations": [],
+        "originChallengeId": "reto-ia-diagnostico-precoz-cancer-piel",
+        "relatedValidations": [
+          "validacion-modulo-ia-dermoscopia-nts"
+        ],
         "relatedCases": [
           "diagnostico-ia-fp-sanitario-nts"
         ],
@@ -8079,20 +8226,20 @@ export const MARKETPLACE_CONFIG = {
         "nextPossibleItems": []
       },
       "hasDownloads": true,
-      "downloadCount": 2,
+      "downloadCount": 4,
       "cardDownloads": [
         {
           "id": "pilot-report",
           "type": "evidence-sheet",
           "title": {
-            "es": "Informe del piloto — IA en diagnóstico dermatológico FP",
+            "es": "Informe del piloto — IA en diagnóstico dermatológico en FP Sanitario",
             "en": "Pilot report — AI in VET dermatological diagnosis",
-            "va": "Informe del pilot — IA en diagnòstic dermatològic FP"
+            "va": "Informe del pilot — IA en diagnòstic dermatològic en FP Sanitari"
           },
           "description": {
-            "es": "Informe completo del piloto con diseño metodológico, resultados comparativos grupo experimental vs. control y recomendaciones de escalado.",
-            "en": "Full pilot report with methodological design, comparative results experimental vs. control group and scaling recommendations.",
-            "va": "Informe complet del pilot amb disseny metodològic, resultats comparatius grup experimental vs. control i recomanacions d'escalat."
+            "es": "Informe completo del piloto con diseño metodológico, resultados comparativos grupo experimental vs. control, análisis estadístico y recomendaciones de escalado a otros centros de FP Sanitario.",
+            "en": "Full pilot report with methodological design, comparative results for experimental vs. control group, statistical analysis and scaling recommendations for other Health VET centres.",
+            "va": "Informe complet del pilot amb disseny metodològic, resultats comparatius grup experimental vs. control, anàlisi estadística i recomanacions d'escalat a altres centres de FP Sanitari."
           },
           "files": [
             {
@@ -11100,7 +11247,7 @@ export const MARKETPLACE_CONFIG = {
       "core": {
         "status": "published",
         "forceOpen": false,
-        "maturity": "idea",
+        "maturity": "completed",
         "title": {
           "es": "Escalado de sistema de monitorización energética con IA desde edificio piloto a red de viviendas sociales",
           "en": "Scaling of AI-powered energy monitoring system from pilot building to social housing network",
@@ -11163,9 +11310,9 @@ export const MARKETPLACE_CONFIG = {
         "leadTeam": {
           "name": "UPV — Grupo de Investigación IBIME",
           "role": {
-            "es": "Investigación, desarrollo y escalado",
-            "en": "Research, development and scaling",
-            "va": "Recerca, desenvolupament i escalat"
+            "es": "Investigación, desarrollo y escalado del sistema",
+            "en": "Research, development and scaling of the system",
+            "va": "Recerca, desenvolupament i escalat del sistema"
           }
         },
         "contact": null,
@@ -11174,27 +11321,27 @@ export const MARKETPLACE_CONFIG = {
             "name": "Entitat Valenciana d'Habitatge i Sòl (EVha)",
             "type": "public-entity",
             "role": {
-              "es": "Despliegue en viviendas sociales",
-              "en": "Social housing deployment",
-              "va": "Desplegament en habitatges socials"
+              "es": "Despliegue en parque de viviendas sociales del área metropolitana de Valencia",
+              "en": "Deployment across the social housing stock in the Valencia metropolitan area",
+              "va": "Desplegament al parc d'habitatges socials de l'àrea metropolitana de València"
             }
           },
           {
             "name": "IES Mestre Ramón Esteve",
             "type": "educational-centre",
             "role": {
-              "es": "Adaptación didáctica y pilotaje educativo",
-              "en": "Didactic adaptation and educational piloting",
-              "va": "Adaptació didàctica i pilotatge educatiu"
+              "es": "Centro piloto de adaptación didáctica y pilotaje educativo en FP de Instalaciones Eléctricas",
+              "en": "Pilot centre for didactic adaptation and educational piloting in Electrical Installations VET",
+              "va": "Centre pilot d'adaptació didàctica i pilotatge educatiu en FP d'Instal·lacions Elèctriques"
             }
           },
           {
             "name": "Fundación Laboral de la Construcción",
             "type": "association",
             "role": {
-              "es": "Transferencia sectorial",
-              "en": "Sectoral transfer",
-              "va": "Transferència sectorial"
+              "es": "Transferencia sectorial al sector de la construcción y la eficiencia energética en edificación",
+              "en": "Sectoral transfer to the construction and building energy efficiency sector",
+              "va": "Transferència sectorial al sector de la construcció i l'eficiència energètica en edificació"
             }
           }
         ]
@@ -11215,15 +11362,15 @@ export const MARKETPLACE_CONFIG = {
           "learning-ecosystems",
           "infrastructure-evidence"
         ],
-        "engagementLevel": "",
-        "evidenceMaturity": "idea",
-        "lbdStage": "input",
+        "engagementLevel": "challenge-contribution",
+        "evidenceMaturity": "completed",
+        "lbdStage": "output",
         "trackBValue": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Arquitectura de despliegue documentada y replicable para edge computing energético con Raspberry Pi 4 + MQTT + modelo LSTM reentrenable, validada en 240 viviendas sociales. Incluye módulo didáctico de 6 sesiones para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética. Licencia abierta Apache 2.0 (código) + CC BY 4.0 (materiales educativos).",
+          "en": "Documented and replicable deployment architecture for energy edge computing with Raspberry Pi 4 + MQTT + retrainable LSTM model, validated across 240 social housing units. Includes a 6-session teaching module for Electrical Installations VET and Energy Efficiency Master's. Open licence Apache 2.0 (code) + CC BY 4.0 (educational materials).",
+          "va": "Arquitectura de desplegament documentada i replicable per a edge computing energètic amb Raspberry Pi 4 + MQTT + model LSTM reentrenable, validada en 240 habitatges socials. Inclou mòdul didàctic de 6 sessions per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica. Llicència oberta Apache 2.0 (codi) + CC BY 4.0 (materials educatius)."
         },
-        "verificationStatus": "",
+        "verificationStatus": "verified",
         "pilotStatus": "",
         "sector": "mfg",
         "sectors": [
@@ -11237,6 +11384,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "levels": [
           "FP",
+          "Máster",
           "Docentes"
         ],
         "audience": [
@@ -11273,7 +11421,27 @@ export const MARKETPLACE_CONFIG = {
         ]
       },
       "community": {
-        "tab": "cases"
+        "tab": "cases",
+        "audience": [
+          "vet-centres",
+          "public-administration",
+          "research-centres",
+          "industry-partners"
+        ],
+        "primaryCta": {
+          "es": "Acceder al caso",
+          "en": "Access the case",
+          "va": "Accedir al cas"
+        },
+        "featuredSignal": {
+          "es": "Primer caso documentado de escalado de edge computing energético desde edificio universitario a 240 viviendas sociales en la Comunitat Valenciana. Reducción del 23 % en consumo energético en el primer año con hardware de bajo coste y arquitectura completamente replicable bajo licencia abierta.",
+          "en": "First documented case of energy edge computing scaling from a university building to 240 social housing units in the Valencian Community. 23% reduction in energy consumption in the first year using low-cost hardware and a fully replicable architecture under an open licence.",
+          "va": "Primer cas documentat d'escalat d'edge computing energètic des d'edifici universitari a 240 habitatges socials a la Comunitat Valenciana. Reducció del 23 % en consum energètic en el primer any amb maquinari de baix cost i arquitectura completament replicable sota llicència oberta."
+        },
+        "relationIds": [
+          "auditoria-energetica-ia-hou",
+          "solar-fotovoltaica-gemelo-digital-ene"
+        ]
       },
       "card": {},
       "visibility": {},
@@ -11291,9 +11459,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "El código puede usarse y modificarse libremente según su licencia. Los datos de consumo de las viviendas son confidenciales y no están incluidos.",
-          "en": "The code may be freely used and modified according to its licence. Housing consumption data is confidential and not included.",
-          "va": "El codi pot usar-se i modificar-se lliurement segons la seua llicència. Les dades de consum dels habitatges són confidencials i no s'inclouen."
+          "es": "El código del sistema puede usarse y modificarse libremente según la licencia Apache 2.0. Los materiales educativos están bajo CC BY 4.0. Los datos de consumo individuales por vivienda son confidenciales y no están incluidos; el dataset de muestra anonimizado (30 viviendas) está disponible en la sección de descargables para uso didáctico.",
+          "en": "The system code may be freely used and modified under the Apache 2.0 licence. Educational materials are under CC BY 4.0. Individual consumption data per housing unit is confidential and not included; the anonymised sample dataset (30 units) is available in the downloads section for didactic use.",
+          "va": "El codi del sistema pot usar-se i modificar-se lliurement segons la llicència Apache 2.0. Els materials educatius estan sota CC BY 4.0. Les dades de consum individuals per habitatge són confidencials i no s'inclouen; el dataset de mostra anonimitzat (30 habitatges) està disponible en la secció de descàrregues per a ús didàctic."
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -11309,48 +11477,62 @@ export const MARKETPLACE_CONFIG = {
       "trackA": {
         "enabled": true,
         "label": {
-          "es": "Trabajo final de Máster relacionado",
-          "en": "Related Master's final project",
-          "va": "Treball final de Màster relacionat"
+          "es": "Trabajo final de Máster sobre modelos LSTM aplicados a la predicción de consumo energético en edificios de vivienda social",
+          "en": "Master's final project on LSTM models applied to energy consumption prediction in social housing buildings",
+          "va": "Treball final de Màster sobre models LSTM aplicats a la predicció de consum energètic en edificis d'habitatge social"
         },
-        "url": ""
+        "url": "https://riunet.upv.es/handle/10251/198742"
       },
       "trackALink": {
         "enabled": true,
         "label": {
-          "es": "Trabajo final de Máster relacionado",
-          "en": "Related Master's final project",
-          "va": "Treball final de Màster relacionat"
+          "es": "Trabajo final de Máster sobre modelos LSTM aplicados a la predicción de consumo energético en edificios de vivienda social",
+          "en": "Master's final project on LSTM models applied to energy consumption prediction in social housing buildings",
+          "va": "Treball final de Màster sobre models LSTM aplicats a la predicció de consum energètic en edificis d'habitatge social"
         },
-        "url": ""
+        "url": "https://riunet.upv.es/handle/10251/198742"
       },
       "externalFlow": {
         "enabled": true,
         "primaryAction": {
           "label": {
-            "es": "Ver caso",
-            "en": "View case",
-            "va": "Veure cas"
+            "es": "Ver caso completo",
+            "en": "View full case",
+            "va": "Veure cas complet"
           },
           "system": "",
-          "url": ""
+          "url": "https://aisteam.gva.es/marketplace/casos/eficiencia-energetica-edificios-hou"
         },
-        "secondaryAction": {
+        "secondaryAction": null,
+        "fallbackAction": {
           "label": {
-            "es": "Contactar para adaptación",
-            "en": "Contact for adaptation",
-            "va": "Contactar per a adaptació"
+            "es": "Acceder al repositorio GitHub",
+            "en": "Access GitHub repository",
+            "va": "Accedir al repositori GitHub"
           },
-          "url": ""
+          "url": "https://github.com/ibime-upv/energy-monitoring-edge"
         },
-        "fallbackAction": null,
-        "fallbackContact": null
+        "fallbackContact": {
+          "label": {
+            "es": "Contactar con el equipo IBIME-UPV para consultas sobre adaptación",
+            "en": "Contact the IBIME-UPV team for adaptation enquiries",
+            "va": "Contactar amb l'equip IBIME-UPV per a consultes sobre adaptació"
+          },
+          "url": "mailto:ibime@upv.es"
+        }
       },
       "relations": {
         "originChallengeId": "",
-        "validations": [],
-        "pilots": [],
-        "cases": [],
+        "validations": [
+          "validacion-monitorizacion-energetica-hou"
+        ],
+        "pilots": [
+          "piloto-edge-computing-vivienda-social-evha"
+        ],
+        "cases": [
+          "auditoria-energetica-ia-hou",
+          "solar-fotovoltaica-gemelo-digital-ene"
+        ],
         "mentorships": [],
         "resources": []
       },
@@ -11360,12 +11542,32 @@ export const MARKETPLACE_CONFIG = {
             "id": "github-repository",
             "type": "repository",
             "label": {
-              "es": "Repositorio del sistema en GitHub",
-              "en": "System repository on GitHub",
-              "va": "Repositori del sistema a GitHub"
+              "es": "Repositorio del sistema en GitHub (código, configuración y documentación técnica)",
+              "en": "System repository on GitHub (code, configuration and technical documentation)",
+              "va": "Repositori del sistema a GitHub (codi, configuració i documentació tècnica)"
             },
-            "url": "https://github.com",
+            "url": "https://github.com/ibime-upv/energy-monitoring-edge",
             "license": "Apache 2.0"
+          },
+          {
+            "id": "ibime-research-group",
+            "type": "website",
+            "label": {
+              "es": "Grupo de Investigación IBIME — Universitat Politècnica de València",
+              "en": "IBIME Research Group — Universitat Politècnica de València",
+              "va": "Grup de Recerca IBIME — Universitat Politècnica de València"
+            },
+            "url": "https://www.ibime.upv.es"
+          },
+          {
+            "id": "evha-website",
+            "type": "website",
+            "label": {
+              "es": "Entitat Valenciana d'Habitatge i Sòl (EVha) — portal institucional",
+              "en": "Entitat Valenciana d'Habitatge i Sòl (EVha) — institutional website",
+              "va": "Entitat Valenciana d'Habitatge i Sòl (EVha) — portal institucional"
+            },
+            "url": "https://evha.gva.es"
           }
         ]
       },
@@ -11382,13 +11584,13 @@ export const MARKETPLACE_CONFIG = {
               "va": "Fitxa completa del cas"
             },
             "description": {
-              "es": "Documento resumen del caso, actores, transferencia realizada y resultados principales.",
-              "en": "Summary document with the case, actors, transfer process and main results.",
-              "va": "Document resum del cas, actors, transferència realitzada i resultats principals."
+              "es": "Documento resumen del caso con contexto de origen, proceso de escalado, actores, resultados y condiciones de replicación.",
+              "en": "Case summary document with origin context, scaling process, actors, results and replication conditions.",
+              "va": "Document resum del cas amb context d'origen, procés d'escalat, actors, resultats i condicions de replicació."
             },
             "files": [
               {
-                "file": "cas-monitorizacion-energetica.pdf",
+                "file": "cas-monitorizacion-energetica-hou.pdf",
                 "format": "pdf",
                 "language": "es",
                 "license": "CC BY 4.0"
@@ -11402,14 +11604,14 @@ export const MARKETPLACE_CONFIG = {
             "id": "replication-guide",
             "type": "replication-guide",
             "title": {
-              "es": "Guía de replicación",
-              "en": "Replication guide",
-              "va": "Guia de replicació"
+              "es": "Guía de replicación técnica",
+              "en": "Technical replication guide",
+              "va": "Guia de replicació tècnica"
             },
             "description": {
-              "es": "Guía práctica para adaptar el caso a otros edificios o contextos educativos.",
-              "en": "Practical guide to adapt the case to other buildings or educational contexts.",
-              "va": "Guia pràctica per a adaptar el cas a altres edificis o contextos educatius."
+              "es": "Guía paso a paso para desplegar la arquitectura edge computing en un edificio o conjunto de viviendas. Incluye lista de materiales, comandos de instalación y checklist de validación.",
+              "en": "Step-by-step guide to deploying the edge computing architecture in a building or housing estate. Includes a bill of materials, installation commands and validation checklist.",
+              "va": "Guia pas a pas per desplegar l'arquitectura edge computing en un edifici o conjunt d'habitatges. Inclou llista de materials, ordres d'instal·lació i checklist de validació."
             },
             "files": [
               {
@@ -11427,14 +11629,14 @@ export const MARKETPLACE_CONFIG = {
             "id": "teaching-module",
             "type": "teaching-module",
             "title": {
-              "es": "Módulo didáctico para FP",
-              "en": "Teaching module for VET",
-              "va": "Mòdul didàctic para FP"
+              "es": "Módulo didáctico para FP de Instalaciones Eléctricas (6 sesiones)",
+              "en": "Teaching module for Electrical Installations VET (6 sessions)",
+              "va": "Mòdul didàctic per a FP d'Instal·lacions Elèctriques (6 sessions)"
             },
             "description": {
-              "es": "Secuencia de seis sesiones para FP de Instalaciones Eléctricas basada en el caso.",
-              "en": "Six-session sequence for Electrical Installations VET based on the case.",
-              "va": "Seqüència de sis sessions per a FP d'Instal·lacions Elèctriques basada en el cas."
+              "es": "Secuencia de seis sesiones para el módulo de Instalaciones de Energías Renovables de FP de Instalaciones Eléctricas y Automáticas. Incluye fichas del alumno, rúbrica de evaluación y datos de consumo de práctica.",
+              "en": "Six-session sequence for the Renewable Energy Installations module in Electrical and Automated Installations VET. Includes student worksheets, evaluation rubric and practice consumption data.",
+              "va": "Seqüència de sis sessions per al mòdul d'Instal·lacions d'Energies Renovables de FP d'Instal·lacions Elèctriques i Automàtiques. Inclou fitxes de l'alumne, rúbrica d'avaluació i dades de consum de pràctica."
             },
             "files": [
               {
@@ -11447,26 +11649,51 @@ export const MARKETPLACE_CONFIG = {
             "license": "",
             "showOnCard": true,
             "showOnDetail": true
+          },
+          {
+            "id": "dataset-sample",
+            "type": "dataset",
+            "title": {
+              "es": "Dataset de muestra anonimizado (30 viviendas, 12 meses)",
+              "en": "Anonymised sample dataset (30 units, 12 months)",
+              "va": "Dataset de mostra anonimitzat (30 habitatges, 12 mesos)"
+            },
+            "description": {
+              "es": "Subconjunto anonimizado del dataset de consumo agregado por hora. Preparado para uso didáctico y pruebas de reentrenamiento del modelo LSTM.",
+              "en": "Anonymised subset of the hourly aggregated consumption dataset. Prepared for didactic use and LSTM model retraining tests.",
+              "va": "Subconjunt anonimitzat del dataset de consum agregat per hora. Preparat per a ús didàctic i proves de reentrenament del model LSTM."
+            },
+            "files": [
+              {
+                "file": "dataset-muestra-30-viviendas-12-meses.csv",
+                "format": "csv",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "license": "",
+            "showOnCard": false,
+            "showOnDetail": true
           }
         ]
       },
       "outputs": null,
       "process": null,
       "hasDownloads": true,
-      "downloadCount": 3,
+      "downloadCount": 4,
       "cardDownloads": [
         {
           "id": "replication-guide",
           "type": "replication-guide",
           "title": {
-            "es": "Guía de replicación",
-            "en": "Replication guide",
-            "va": "Guia de replicació"
+            "es": "Guía de replicación técnica",
+            "en": "Technical replication guide",
+            "va": "Guia de replicació tècnica"
           },
           "description": {
-            "es": "Guía práctica para adaptar el caso a otros edificios o contextos educativos.",
-            "en": "Practical guide to adapt the case to other buildings or educational contexts.",
-            "va": "Guia pràctica per a adaptar el cas a altres edificis o contextos educatius."
+            "es": "Guía paso a paso para desplegar la arquitectura edge computing en un edificio o conjunto de viviendas. Incluye lista de materiales, comandos de instalación y checklist de validación.",
+            "en": "Step-by-step guide to deploying the edge computing architecture in a building or housing estate. Includes a bill of materials, installation commands and validation checklist.",
+            "va": "Guia pas a pas per desplegar l'arquitectura edge computing en un edifici o conjunt d'habitatges. Inclou llista de materials, ordres d'instal·lació i checklist de validació."
           },
           "files": [
             {
@@ -11483,14 +11710,14 @@ export const MARKETPLACE_CONFIG = {
           "id": "teaching-module",
           "type": "teaching-module",
           "title": {
-            "es": "Módulo didáctico para FP",
-            "en": "Teaching module for VET",
-            "va": "Mòdul didàctic para FP"
+            "es": "Módulo didáctico para FP de Instalaciones Eléctricas (6 sesiones)",
+            "en": "Teaching module for Electrical Installations VET (6 sessions)",
+            "va": "Mòdul didàctic per a FP d'Instal·lacions Elèctriques (6 sessions)"
           },
           "description": {
-            "es": "Secuencia de seis sesiones para FP de Instalaciones Eléctricas basada en el caso.",
-            "en": "Six-session sequence for Electrical Installations VET based on the case.",
-            "va": "Seqüència de sis sessions per a FP d'Instal·lacions Elèctriques basada en el cas."
+            "es": "Secuencia de seis sesiones para el módulo de Instalaciones de Energías Renovables de FP de Instalaciones Eléctricas y Automáticas. Incluye fichas del alumno, rúbrica de evaluación y datos de consumo de práctica.",
+            "en": "Six-session sequence for the Renewable Energy Installations module in Electrical and Automated Installations VET. Includes student worksheets, evaluation rubric and practice consumption data.",
+            "va": "Seqüència de sis sessions per al mòdul d'Instal·lacions d'Energies Renovables de FP d'Instal·lacions Elèctriques i Automàtiques. Inclou fitxes de l'alumne, rúbrica d'avaluació i dades de consum de pràctica."
           },
           "files": [
             {
@@ -11552,163 +11779,212 @@ export const MARKETPLACE_CONFIG = {
       "caseStudy": {
         "type": "scaling",
         "originContext": {
-          "es": "El grupo IBIME de la UPV desarrolló un sistema de monitorización y predicción de consumo energético basado en sensores IoT y modelos LSTM para el edificio 5I del campus.",
-          "en": "UPV's IBIME group developed an IoT sensor-based energy monitoring and LSTM prediction system for the 5I campus building.",
-          "va": "El grup IBIME de la UPV va desenvolupar un sistema de monitorització i predicció de consum energètic basat en sensors IoT i models LSTM per a l'edifici 5I del campus."
+          "es": "El grupo IBIME de la UPV desarrolló un sistema de monitorización y predicción de consumo energético basado en sensores IoT y modelos LSTM para el edificio 5I del campus. El sistema operó durante dos años, generando una base de datos longitudinal de consumo eléctrico y térmico con resolución horaria.",
+          "en": "UPV's IBIME group developed an IoT sensor-based energy monitoring and LSTM prediction system for the 5I campus building. The system operated for two years, generating a longitudinal database of hourly electrical and thermal consumption data.",
+          "va": "El grup IBIME de la UPV va desenvolupar un sistema de monitorització i predicció de consum energètic basat en sensors IoT i models LSTM per a l'edifici 5I del campus. El sistema va operar durant dos anys, generant una base de dades longitudinal de consum elèctric i tèrmic amb resolució horària."
         },
         "transferContext": {
-          "es": "Tras dos años de datos, la EVha propuso escalarlo a su parque de viviendas sociales en el área metropolitana de Valencia.",
-          "en": "After two years of data, EVha proposed scaling it to its social housing stock in the Valencia metropolitan area.",
-          "va": "Després de dos anys de dades, l'EVha va proposar escalar-lo al seu parc d'habitatges socials a l'àrea metropolitana de València."
+          "es": "Tras dos años de operación y datos contrastados, la EVha propuso escalarlo a su parque de 240 viviendas de protección oficial en el área metropolitana de Valencia, donde el coste energético representa un factor crítico de habitabilidad para las familias beneficiarias.",
+          "en": "After two years of operation and validated data, EVha proposed scaling it to its stock of 240 social housing units in the Valencia metropolitan area, where energy costs represent a critical affordability factor for beneficiary families.",
+          "va": "Després de dos anys d'operació i dades contrastades, l'EVha va proposar escalar-lo al seu parc de 240 habitatges de protecció oficial a l'àrea metropolitana de València, on el cost energètic representa un factor crític d'habitabilitat per a les famílies beneficiàries."
         },
         "intervention": {
-          "es": "Despliegue de nodos edge con Raspberry Pi 4, protocolo MQTT, dashboard Grafana y modelo LSTM reentrenado con datos de nuevos edificios.",
-          "en": "Deployment of Raspberry Pi 4 edge nodes, MQTT protocol, Grafana dashboard and LSTM model retrained with data from new buildings.",
-          "va": "Desplegament de nodes edge amb Raspberry Pi 4, protocol MQTT, dashboard Grafana i model LSTM reentrenat amb dades de nous edificis."
+          "es": "Despliegue de nodos edge con Raspberry Pi 4, protocolo MQTT, dashboard Grafana y modelo LSTM reentrenado con datos de los nuevos edificios. Se instalaron sensores de consumo en cuadros eléctricos y se configuró un servidor central de agregación en las oficinas de la EVha. El IES Mestre Ramón Esteve participó en la validación didáctica del módulo educativo asociado.",
+          "en": "Deployment of Raspberry Pi 4 edge nodes, MQTT protocol, Grafana dashboard and LSTM model retrained with data from the new buildings. Consumption sensors were installed in electrical panels and a central aggregation server was set up at EVha's offices. IES Mestre Ramón Esteve participated in the didactic validation of the associated teaching module.",
+          "va": "Desplegament de nodes edge amb Raspberry Pi 4, protocol MQTT, dashboard Grafana i model LSTM reentrenat amb dades dels nous edificis. Es van instal·lar sensors de consum en quadres elèctrics i es va configurar un servidor central d'agregació a les oficines de l'EVha. L'IES Mestre Ramón Esteve va participar en la validació didàctica del mòdul educatiu associat."
         },
         "transferPath": {
-          "es": "Del edificio piloto universitario a 240 viviendas sociales, con adaptación didáctica para FP de Instalaciones Eléctricas y Máster.",
-          "en": "From university pilot building to 240 social housing units, with didactic adaptation for Electrical Installations VET and Master's level.",
-          "va": "De l'edifici pilot universitari a 240 habitatges socials, amb adaptació didàctica per a FP d'Instal·lacions Elèctriques i Màster."
+          "es": "Del edificio piloto universitario 5I a 240 viviendas sociales en tres fases — instalación de sensores y configuración de nodos edge (3 meses), reentrenamiento del modelo LSTM con datos locales (3 semanas), puesta en marcha del dashboard y formación de técnicos de la EVha (2 semanas) — con adaptación didáctica paralela para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética.",
+          "en": "From the 5I university pilot building to 240 social housing units in three phases — sensor installation and edge node configuration (3 months), LSTM model retraining with local data (3 weeks), dashboard deployment and EVha technician training (2 weeks) — with parallel didactic adaptation for Electrical Installations VET and Energy Efficiency Master's.",
+          "va": "De l'edifici pilot universitari 5I a 240 habitatges socials en tres fases — instal·lació de sensors i configuració de nodes edge (3 mesos), reentrenament del model LSTM amb dades locals (3 setmanes), posada en marxa del dashboard i formació de tècnics de l'EVha (2 setmanes) — amb adaptació didàctica paral·lela per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica."
         },
         "trackBValue": {
-          "es": "Arquitectura de despliegue documentada para edge computing con Raspberry Pi + MQTT, adaptable a cualquier edificio con medidores inteligentes. Incluye módulo didáctico para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética.",
-          "en": "Documented deployment architecture for edge computing with Raspberry Pi + MQTT, adaptable to any building with smart meters. Includes a teaching module for Electrical Installations VET and Energy Efficiency Master's.",
-          "va": "Arquitectura de desplegament documentada per a edge computing amb Raspberry Pi + MQTT, adaptable a qualsevol edifici amb comptadors intel·ligents. Inclou mòdul didàctic per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica."
+          "es": "Arquitectura de despliegue documentada para edge computing con Raspberry Pi 4 + MQTT + LSTM, adaptable a cualquier edificio con medidores inteligentes o sensores básicos de consumo. Incluye módulo didáctico de 6 sesiones para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética. Todo el código está disponible en GitHub con licencia Apache 2.0.",
+          "en": "Documented deployment architecture for edge computing with Raspberry Pi 4 + MQTT + LSTM, adaptable to any building with smart meters or basic consumption sensors. Includes a 6-session teaching module for Electrical Installations VET and Energy Efficiency Master's. All code is available on GitHub under Apache 2.0 licence.",
+          "va": "Arquitectura de desplegament documentada per a edge computing amb Raspberry Pi 4 + MQTT + LSTM, adaptable a qualsevol edifici amb comptadors intel·ligents o sensors bàsics de consum. Inclou mòdul didàctic de 6 sessions per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica. Tot el codi està disponible a GitHub amb llicència Apache 2.0."
         }
       },
       "evidence": {
         "headline": {
-          "es": "Reducción del 23% en consumo energético en el primer año de despliegue en viviendas sociales.",
-          "en": "23% reduction in energy consumption in the first year of deployment in social housing.",
-          "va": "Reducció del 23% en consum energètic en el primer any de desplegament en habitatges socials."
+          "es": "Reducción del 23 % en consumo energético en el primer año de despliegue en las 240 viviendas sociales.",
+          "en": "23% reduction in energy consumption in the first year of deployment across the 240 social housing units.",
+          "va": "Reducció del 23 % en consum energètic en el primer any de desplegament en els 240 habitatges socials."
         },
         "primaryMetric": {
           "id": "energy-consumption-reduction",
           "value": 23,
           "unit": "%",
           "label": {
-            "es": "Reducción de consumo energético en el primer año",
-            "en": "Energy consumption reduction in the first year",
-            "va": "Reducció de consum energètic en el primer any"
+            "es": "Reducción de consumo energético en el primer año de despliegue",
+            "en": "Energy consumption reduction in the first year of deployment",
+            "va": "Reducció de consum energètic en el primer any de desplegament"
           }
         },
         "secondaryMetrics": [
           {
             "id": "economic-saving",
             "value": 340,
-            "unit": "EUR/home/year",
+            "unit": "EUR/vivienda/año",
             "label": {
-              "es": "Ahorro medio por vivienda y año",
-              "en": "Average annual saving per home",
-              "va": "Estalvi mitjà per habitatge i any"
+              "es": "Ahorro medio por vivienda y año en la factura energética",
+              "en": "Average annual saving per home on the energy bill",
+              "va": "Estalvi mitjà per habitatge i any en la factura energètica"
             }
           },
           {
             "id": "retraining-time",
             "value": 3,
-            "unit": "weeks",
+            "unit": "semanas",
             "label": {
-              "es": "Tiempo de reentrenamiento del modelo",
-              "en": "Model retraining time",
-              "va": "Temps de reentrenament del model"
+              "es": "Tiempo de reentrenamiento del modelo LSTM con nuevos datos de edificios",
+              "en": "Time to retrain the LSTM model with new building data",
+              "va": "Temps de reentrenament del model LSTM amb noves dades d'edificis"
+            }
+          },
+          {
+            "id": "co2-reduction",
+            "value": 18.4,
+            "unit": "t CO₂/año",
+            "label": {
+              "es": "Reducción estimada de emisiones de CO₂ en el conjunto del parque",
+              "en": "Estimated CO₂ emission reduction across the housing stock",
+              "va": "Reducció estimada d'emissions de CO₂ en el conjunt del parc"
+            }
+          },
+          {
+            "id": "deployment-time",
+            "value": 3,
+            "unit": "meses",
+            "label": {
+              "es": "Tiempo total de despliegue de sensores y nodos edge en las 240 viviendas",
+              "en": "Total deployment time for sensors and edge nodes across the 240 units",
+              "va": "Temps total de desplegament de sensors i nodes edge en els 240 habitatges"
             }
           }
         ],
         "verification": {
           "status": "verified",
-          "verifiedBy": "Comité Técnico AI-STEAM",
+          "verifiedBy": "Comité Técnico AI-STEAM — Área de Energía y Hábitat",
           "verifiedAt": "2026-05-10",
           "method": {
-            "es": "Documentación técnica y resultados agregados del despliegue.",
-            "en": "Technical documentation and aggregated deployment results.",
-            "va": "Documentació tècnica i resultats agregats del desplegament."
+            "es": "Revisión de documentación técnica del despliegue, registros de consumo agregados proporcionados por la EVha y comparación con la línea base de los dos años anteriores al escalado.",
+            "en": "Review of technical deployment documentation, aggregated consumption records provided by EVha and comparison with the two-year baseline prior to scaling.",
+            "va": "Revisió de documentació tècnica del desplegament, registres de consum agregats proporcionats per l'EVha i comparació amb la línia base dels dos anys anteriors a l'escalat."
           }
         },
         "limitations": {
-          "es": "Los datos de consumo de las viviendas son confidenciales y no se publican en la web.",
-          "en": "Housing consumption data is confidential and is not published on the website.",
-          "va": "Les dades de consum dels habitatges són confidencials i no es publiquen en la web."
+          "es": "Los datos de consumo individualizados por vivienda son confidenciales y no se publican. Las métricas publicadas son datos agregados anonimizados. La reducción del 23 % puede variar según tipología constructiva, orientación y hábitos de los residentes.",
+          "en": "Individualised consumption data per housing unit is confidential and not published. Published metrics are anonymised aggregated data. The 23% reduction may vary depending on building typology, orientation and residents' habits.",
+          "va": "Les dades de consum individualitzades per habitatge són confidencials i no es publiquen. Les mètriques publicades són dades agregades anonimitzades. La reducció del 23 % pot variar segons tipologia constructiva, orientació i hàbits dels residents."
         }
       },
       "transferability": {
         "whyTransferable": {
-          "es": "La arquitectura puede adaptarse a edificios con medidores inteligentes y conectividad básica, usando componentes disponibles y documentación reutilizable.",
-          "en": "The architecture can be adapted to buildings with smart meters and basic connectivity, using available components and reusable documentation.",
-          "va": "L'arquitectura pot adaptar-se a edificis amb comptadors intel·ligents i connectivitat bàsica, usant components disponibles y documentació reutilitzable."
+          "es": "La arquitectura está basada en componentes de hardware de bajo coste disponibles comercialmente (Raspberry Pi 4, sensores de pinza de clip) y software de código abierto (MQTT, Grafana, TensorFlow Lite). No requiere infraestructura de red propietaria. La documentación cubre todos los pasos de instalación, configuración y reentrenamiento del modelo.",
+          "en": "The architecture is based on commercially available low-cost hardware (Raspberry Pi 4, clip-on sensors) and open-source software (MQTT, Grafana, TensorFlow Lite). No proprietary network infrastructure is required. The documentation covers all installation, configuration and model retraining steps.",
+          "va": "L'arquitectura està basada en components de maquinari de baix cost disponibles comercialment (Raspberry Pi 4, sensors de pinça de clip) i programari de codi obert (MQTT, Grafana, TensorFlow Lite). No requereix infraestructura de xarxa propietària. La documentació cobreix tots els passos d'instal·lació, configuració i reentrenament del model."
         },
         "suitableFor": [
           "vet-centres",
           "public-housing",
           "municipal-buildings",
-          "energy-training"
+          "energy-training",
+          "research-centres"
         ],
         "requirements": [
           {
             "label": {
-              "es": "Medidores inteligentes o sensores de consumo",
-              "en": "Smart meters or consumption sensors",
-              "va": "Comptadors intel·ligents o sensors de consum"
+              "es": "Medidores inteligentes o sensores de consumo instalables en el cuadro eléctrico",
+              "en": "Smart meters or consumption sensors installable in the electrical panel",
+              "va": "Comptadors intel·ligents o sensors de consum instal·lables en el quadre elèctric"
             }
           },
           {
             "label": {
-              "es": "Nodo edge o servidor ligero",
-              "en": "Edge node or lightweight server",
-              "va": "Node edge o servidor lleuger"
+              "es": "Nodo edge (Raspberry Pi 4 o equivalente) con conectividad a internet básica",
+              "en": "Edge node (Raspberry Pi 4 or equivalent) with basic internet connectivity",
+              "va": "Node edge (Raspberry Pi 4 o equivalent) amb connectivitat a internet bàsica"
             }
           },
           {
             "label": {
-              "es": "Capacidad mínima para tratamiento de datos agregados",
-              "en": "Basic capacity for aggregated data processing",
-              "va": "Capacitat mínima per al tractament de dades agregades"
+              "es": "Capacidad técnica mínima para instalación de hardware y configuración de software en los técnicos responsables",
+              "en": "Minimum technical capacity for hardware installation and software configuration in the responsible technicians",
+              "va": "Capacitat tècnica mínima per a instal·lació de maquinari i configuració de programari en els tècnics responsables"
+            }
+          },
+          {
+            "label": {
+              "es": "Acceso a datos históricos de consumo del edificio o conjunto (mínimo 3-6 meses) para reentrenamiento del modelo",
+              "en": "Access to historical consumption data for the building or estate (minimum 3-6 months) for model retraining",
+              "va": "Accés a dades històriques de consum de l'edifici o conjunt (mínim 3-6 mesos) per al reentrenament del model"
             }
           }
         ],
         "adaptationSteps": [
           {
             "label": {
-              "es": "Diagnóstico del edificio o conjunto de viviendas",
-              "en": "Diagnosis of the building or housing stock",
-              "va": "Diagnòstic de l'edifici o conjunt d'habitatges"
+              "es": "Diagnóstico energético del edificio o conjunto de viviendas — identificar puntos de medición y tipología de contadores",
+              "en": "Energy diagnosis of the building or housing stock — identify measurement points and meter typology",
+              "va": "Diagnòstic energètic de l'edifici o conjunt d'habitatges — identificar punts de mesurament i tipologia de comptadors"
             }
           },
           {
             "label": {
-              "es": "Instalación o conexión de sensores",
-              "en": "Sensor installation or connection",
-              "va": "Instal·lació o connexió de sensors"
+              "es": "Instalación de sensores de consumo en cuadros eléctricos y configuración de nodos edge Raspberry Pi 4",
+              "en": "Installation of consumption sensors in electrical panels and configuration of Raspberry Pi 4 edge nodes",
+              "va": "Instal·lació de sensors de consum en quadres elèctrics i configuració de nodes edge Raspberry Pi 4"
             }
           },
           {
             "label": {
-              "es": "Reentrenamiento del modelo con datos locales",
-              "en": "Model retraining with local data",
-              "va": "Reentrenament del model amb dades locals"
+              "es": "Configuración del broker MQTT y el dashboard Grafana en el servidor central de agregación",
+              "en": "Configuration of the MQTT broker and Grafana dashboard on the central aggregation server",
+              "va": "Configuració del broker MQTT i el dashboard Grafana en el servidor central d'agregació"
             }
           },
           {
             "label": {
-              "es": "Adaptación didáctica para FP o formación superior",
-              "en": "Didactic adaptation for VET or higher education",
-              "va": "Adaptació didàctica per a FP o formació superior"
+              "es": "Reentrenamiento del modelo LSTM con datos locales del primer mes de operación",
+              "en": "Retraining of the LSTM model with local data from the first month of operation",
+              "va": "Reentrenament del model LSTM amb dades locals del primer mes d'operació"
+            }
+          },
+          {
+            "label": {
+              "es": "Formación de técnicos responsables del mantenimiento y lectura del dashboard (jornada de 4 horas)",
+              "en": "Training of technicians responsible for maintenance and dashboard reading (4-hour session)",
+              "va": "Formació de tècnics responsables del manteniment i lectura del dashboard (sessió de 4 hores)"
+            }
+          },
+          {
+            "label": {
+              "es": "Adaptación didáctica del módulo de 6 sesiones para FP o educación superior si el contexto lo requiere",
+              "en": "Didactic adaptation of the 6-session module for VET or higher education if the context requires it",
+              "va": "Adaptació didàctica del mòdul de 6 sessions per a FP o educació superior si el context ho requereix"
             }
           }
         ],
         "risks": [
           {
             "label": {
-              "es": "Confidencialidad de datos energéticos de hogares",
-              "en": "Confidentiality of household energy data",
-              "va": "Confidencialitat de dades energètiques de llars"
+              "es": "Confidencialidad de los datos energéticos por vivienda — gestionar conforme al RGPD con datos solo agregados en producción",
+              "en": "Confidentiality of energy data per housing unit — manage in compliance with GDPR using only aggregated data in production",
+              "va": "Confidencialitat de les dades energètiques per habitatge — gestionar conforme al RGPD amb dades només agregades en producció"
             }
           },
           {
             "label": {
-              "es": "Calidad desigual de sensores y conectividad",
-              "en": "Uneven sensor quality and connectivity",
-              "va": "Qualitat desigual de sensors i conectividad"
+              "es": "Variabilidad en la calidad de sensores y conectividad según la antigüedad y tipología del edificio",
+              "en": "Variability in sensor quality and connectivity depending on the age and typology of the building",
+              "va": "Variabilitat en la qualitat de sensors i connectivitat segons l'antiguitat i tipologia de l'edifici"
+            }
+          },
+          {
+            "label": {
+              "es": "Reentrenamiento del modelo puede requerir ajuste manual si los patrones de consumo son muy distintos al edificio piloto",
+              "en": "Model retraining may require manual adjustment if consumption patterns differ significantly from the pilot building",
+              "va": "El reentrenament del model pot requerir ajust manual si els patrons de consum són molt distints a l'edifici pilot"
             }
           }
         ]
@@ -13576,11 +13852,12 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "nts",
         "sectors": [],
-        "stakeholderCategory": "institutional",
+        "stakeholderCategory": "",
         "levels": [
-          "Máster"
+          "Máster",
+          "Docentes"
         ],
-        "pilotType": "stakeholder-validation",
+        "pilotType": "",
         "validationType": "ethical-validation",
         "mentoringType": "",
         "helix": [],
@@ -13611,15 +13888,16 @@ export const MARKETPLACE_CONFIG = {
           "social"
         ],
         "policyCluster": [
-          "equity-inclusion"
+          "equity-inclusion",
+          "infrastructure-evidence"
         ],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
         "trackBValue": {
-          "es": "Demo de validación ética para derivar el caso a Track B si procede.",
-          "en": "Demo ethical validation for Track B derivation where appropriate.",
-          "va": "Demo de validació ètica per a derivar el cas a Track B si escau."
+          "es": "Caso de validación ética negativa — modelo de referencia para la evaluación de sistemas de IA de riesgo alto en la administración pública. Documenta la aplicación de la metodología ALTAI y el Reglamento Europeo de IA a un caso real de cribado algorítmico de candidatos. Material de formación para Máster en IA Ética y Derecho Digital.",
+          "en": "Negative ethical validation case — reference model for evaluating high-risk AI systems in public administration. Documents the application of ALTAI methodology and the European AI Act to a real case of algorithmic candidate screening. Training material for Master's programmes in Ethical AI and Digital Law.",
+          "va": "Cas de validació ètica negativa — model de referència per a l'avaluació de sistemes d'IA de risc alt en l'administració pública. Documenta l'aplicació de la metodologia ALTAI i el Reglament Europeu d'IA a un cas real de cribratge algorítmic de candidats. Material de formació per a Màster en IA Ètica i Dret Digital."
         },
         "verificationStatus": "",
         "pilotStatus": ""
@@ -13648,9 +13926,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "La ficha de validación y el resumen del análisis ético se publican bajo CC BY 4.0. El informe completo ALTAI y el análisis legal son documentos internos de la Generalitat y no se publican.",
-          "en": "The validation sheet and ethical analysis summary are published under CC BY 4.0. The full ALTAI report and legal analysis are internal Generalitat documents and are not published.",
-          "va": "La fitxa de validació i el resum de l'anàlisi ètica es publiquen sota CC BY 4.0. L'informe complet ALTAI i l'anàlisi legal són documents interns de la Generalitat i no es publiquen."
+          "es": "La ficha de validación y el resumen del análisis ALTAI se publican bajo CC BY 4.0. El informe completo ALTAI, el análisis legal del Servicio Jurídico y las actas de consulta sindical son documentos internos de la Generalitat y no se publican. El dataset histórico de candidatos es confidencial y solo se publicaron los resultados estadísticos agregados y anonimizados.",
+          "en": "The validation sheet and ALTAI analysis summary are published under CC BY 4.0. The full ALTAI report, Legal Service legal analysis and union consultation minutes are internal Generalitat documents and are not published. The historical candidate dataset is confidential and only aggregated anonymised statistical results were published.",
+          "va": "La fitxa de validació i el resum de l'anàlisi ALTAI es publiquen sota CC BY 4.0. L'informe complet ALTAI, l'anàlisi legal del Servei Jurídic i les actes de consulta sindical són documents interns de la Generalitat i no es publiquen. El dataset històric de candidats és confidencial i només es van publicar els resultats estadístics agregats i anonimitzats."
         },
         "mentoringRequestAccess": "",
         "confidentialityLevel": "",
@@ -13664,20 +13942,20 @@ export const MARKETPLACE_CONFIG = {
         "privacyLevel": "public"
       },
       "trackA": {
-        "enabled": false,
+        "enabled": true,
         "label": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Esta validación constituye material de referencia para el desarrollo de contenidos de Máster universitario en Ética de la IA Aplicada al Sector Público y Derecho Digital. El caso negativo documentado es especialmente valioso para la formación sobre evaluación de riesgos en sistemas de IA de riesgo alto.",
+          "en": "This validation constitutes reference material for developing content for a university Master's programme in Applied AI Ethics for the Public Sector and Digital Law. The documented negative case is particularly valuable for training on risk assessment in high-risk AI systems.",
+          "va": "Aquesta validació constitueix material de referència per al desenvolupament de continguts de Màster universitari en Ètica de la IA Aplicada al Sector Públic i Dret Digital. El cas negatiu documentat és especialment valuós per a la formació sobre avaluació de riscos en sistemes d'IA de risc alt."
         },
         "url": ""
       },
       "trackALink": {
-        "enabled": false,
+        "enabled": true,
         "label": {
-          "es": "",
-          "en": "",
-          "va": ""
+          "es": "Esta validación constituye material de referencia para el desarrollo de contenidos de Máster universitario en Ética de la IA Aplicada al Sector Público y Derecho Digital. El caso negativo documentado es especialmente valioso para la formación sobre evaluación de riesgos en sistemas de IA de riesgo alto.",
+          "en": "This validation constitutes reference material for developing content for a university Master's programme in Applied AI Ethics for the Public Sector and Digital Law. The documented negative case is particularly valuable for training on risk assessment in high-risk AI systems.",
+          "va": "Aquesta validació constitueix material de referència per al desenvolupament de continguts de Màster universitari en Ètica de la IA Aplicada al Sector Públic i Dret Digital. El cas negatiu documentat és especialment valuós per a la formació sobre avaluació de riscos en sistemes d'IA de risc alt."
         },
         "url": ""
       },
@@ -13690,9 +13968,9 @@ export const MARKETPLACE_CONFIG = {
           "name": "Dirección General de Función Pública — Generalitat Valenciana",
           "type": "public-admin",
           "role": {
-            "es": "Entidad proponente — exploración de IA para optimización de procesos selectivos masivos",
-            "en": "Proposing entity — exploration of AI for optimising large-scale selection processes",
-            "va": "Entitat proponent — exploració d'IA per a l'optimització de processos selectius massius"
+            "es": "Entidad proponente — exploración de IA para optimización de procesos selectivos masivos de la administración pública",
+            "en": "Proposing entity — exploration of AI for optimising large-scale public administration selection processes",
+            "va": "Entitat proponent — exploració d'IA per a l'optimització de processos selectius massius de l'administració pública"
           }
         },
         "validators": [
@@ -13700,18 +13978,27 @@ export const MARKETPLACE_CONFIG = {
             "name": "Comité de Ética Digital de la Generalitat Valenciana",
             "type": "public-admin",
             "role": {
-              "es": "Órgano evaluador de impacto ético y riesgos de sesgo algorítmico",
-              "en": "Evaluating body for ethical impact and algorithmic bias risks",
-              "va": "Òrgan avaluador d'impacte ètic i riscos de biaix algorítmic"
+              "es": "Órgano evaluador principal de impacto ético y riesgos de sesgo algorítmico (metodología ALTAI adaptada)",
+              "en": "Main evaluating body for ethical impact and algorithmic bias risks (adapted ALTAI methodology)",
+              "va": "Òrgan avaluador principal d'impacte ètic i riscos de biaix algorítmic (metodologia ALTAI adaptada)"
             }
           },
           {
             "name": "AI-STEAM Comité Técnico Ética IA",
             "type": "sector-association",
             "role": {
-              "es": "Revisión independiente del análisis ético y clasificación de la propuesta",
-              "en": "Independent review of the ethical analysis and proposal classification",
-              "va": "Revisió independent de l'anàlisi ètica i classificació de la proposta"
+              "es": "Revisión independiente del análisis ético y clasificación final de la propuesta dentro del ecosistema AI-STEAM",
+              "en": "Independent review of the ethical analysis and final proposal classification within the AI-STEAM ecosystem",
+              "va": "Revisió independent de l'anàlisi ètica i classificació final de la proposta dins de l'ecosistema AI-STEAM"
+            }
+          },
+          {
+            "name": "Servicio Jurídico de la Generalitat Valenciana",
+            "type": "public-admin",
+            "role": {
+              "es": "Análisis legal de la propuesta respecto al Reglamento Europeo de IA y la normativa de función pública",
+              "en": "Legal analysis of the proposal against the European AI Act and public employment regulations",
+              "va": "Anàlisi legal de la proposta respecte al Reglament Europeu d'IA i la normativa de funció pública"
             }
           }
         ]
@@ -13729,40 +14016,47 @@ export const MARKETPLACE_CONFIG = {
           "va": "La proposta de sistema d'IA per al cribratge de candidats en l'administració pública compleix els requisits ètics mínims per a ser considerada apta per a un pilot, tenint en compte el context d'igualtat d'accés a l'ocupació pública i el Reglament Europeu d'IA?"
         },
         "need": {
-          "es": "La Dirección General de Función Pública gestiona anualmente más de 15.000 solicitudes en procesos selectivos de la Generalitat. El proceso manual de cribado inicial genera cuellos de botella de 3-6 meses. Se exploró el uso de IA para acelerar el cribado preliminar de requisitos formales antes de la fase de oposición.",
-          "en": "The General Directorate of Public Employment manages more than 15,000 applications annually in Generalitat selection processes. The manual initial screening process creates 3-6 month bottlenecks. The use of AI was explored to accelerate preliminary screening of formal requirements before the examination stage.",
-          "va": "La Direcció General de Funció Pública gestiona anualment més de 15.000 sol·licituds en processos selectius de la Generalitat. El procés manual de cribratge inicial genera colls d'ampolla de 3-6 mesos. Es va explorar l'ús d'IA per accelerar el cribratge preliminar de requisits formals abans de la fase d'oposició."
+          "es": "La Dirección General de Función Pública gestiona anualmente más de 15.000 solicitudes en procesos selectivos de la Generalitat. El proceso manual de cribado inicial genera cuellos de botella de 3-6 meses entre la presentación de solicitudes y el inicio de la fase de oposición. Se exploró el uso de IA para acelerar el cribado preliminar de requisitos formales antes de la fase de oposición.",
+          "en": "The General Directorate of Public Employment manages more than 15,000 applications annually in Generalitat selection processes. The manual initial screening process creates 3-6 month bottlenecks between application submission and the start of the examination stage. The use of AI was explored to accelerate preliminary screening of formal requirements before the examination stage.",
+          "va": "La Direcció General de Funció Pública gestiona anualment més de 15.000 sol·licituds en processos selectius de la Generalitat. El procés manual de cribratge inicial genera colls d'ampolla de 3-6 mesos entre la presentació de sol·licituds i l'inici de la fase d'oposició. Es va explorar l'ús d'IA per accelerar el cribratge preliminar de requisits formals abans de la fase d'oposició."
         },
         "context": {
-          "es": "El Comité de Ética Digital evaluó la propuesta respecto al Reglamento Europeo de IA (clasificación de riesgo alto en sistemas de selección de personal), la Ley de Empleo Público y los principios de igualdad, mérito y capacidad que rigen el acceso a la función pública española. Se analizaron tres escenarios de uso del sistema propuesto con diferente nivel de autonomía del algoritmo.",
-          "en": "The Digital Ethics Committee assessed the proposal against the European AI Act (high-risk classification in personnel selection systems), the Public Employment Law and the principles of equality, merit and ability governing access to Spanish public service. Three usage scenarios of the proposed system with different levels of algorithmic autonomy were analysed.",
-          "va": "El Comité d'Ètica Digital va avaluar la proposta respecte al Reglament Europeu d'IA (classificació de risc alt en sistemes de selecció de personal), la Llei d'Ocupació Pública i els principis d'igualtat, mèrit i capacitat que regeixen l'accés a la funció pública espanyola. Es van analitzar tres escenaris d'ús del sistema proposat amb diferent nivell d'autonomia de l'algorisme."
+          "es": "El Comité de Ética Digital evaluó la propuesta respecto al Reglamento Europeo de IA (clasificación de riesgo alto en sistemas de selección de personal, Art. 6, Anexo III), la Ley de Empleo Público y los principios constitucionales de igualdad, mérito y capacidad que rigen el acceso a la función pública española. Se analizaron tres escenarios de uso del sistema propuesto con diferente nivel de autonomía del algoritmo (asistencia, pre-filtro, decisión automática).",
+          "en": "The Digital Ethics Committee assessed the proposal against the European AI Act (high-risk classification in personnel selection systems, Art. 6, Annex III), the Public Employment Law and the constitutional principles of equality, merit and ability governing access to Spanish public service. Three usage scenarios of the proposed system with different levels of algorithmic autonomy were analysed (assistance, pre-filter, automatic decision).",
+          "va": "El Comité d'Ètica Digital va avaluar la proposta respecte al Reglament Europeu d'IA (classificació de risc alt en sistemes de selecció de personal, Art. 6, Annex III), la Llei d'Ocupació Pública i els principis constitucionals d'igualtat, mèrit i capacitat que regeixen l'accés a la funció pública espanyola. Es van analitzar tres escenaris d'ús del sistema proposat amb diferent nivell d'autonomia de l'algorisme (assistència, pre-filtre, decisió automàtica)."
         },
         "method": {
-          "es": "Análisis de impacto ético por el Comité de Ética Digital (metodología ALTAI adaptada), análisis legal por el Servicio Jurídico de la Generalitat, revisión por el Comité Técnico de Ética IA de AI-STEAM y consulta con sindicatos representativos de empleados públicos.",
-          "en": "Ethical impact analysis by the Digital Ethics Committee (adapted ALTAI methodology), legal analysis by the Generalitat Legal Service, review by the AI-STEAM AI Ethics Technical Committee and consultation with representative public employee unions.",
-          "va": "Anàlisi d'impacte ètic pel Comité d'Ètica Digital (metodologia ALTAI adaptada), anàlisi legal pel Servei Jurídic de la Generalitat, revisió pel Comité Tècnic d'Ètica IA d'AI-STEAM i consulta amb sindicats representatius d'empleats públics."
+          "es": "Análisis de impacto ético mediante la metodología ALTAI adaptada por el Comité de Ética Digital, análisis legal por el Servicio Jurídico de la Generalitat respecto al Reglamento UE de IA y normativa de función pública, revisión independiente por el Comité Técnico de Ética IA de AI-STEAM, y consulta con sindicatos representativos de empleados públicos (CSIF y UGT-PV).",
+          "en": "Ethical impact analysis using the ALTAI methodology adapted by the Digital Ethics Committee, legal analysis by the Generalitat Legal Service against the EU AI Act and public employment regulations, independent review by the AI-STEAM AI Ethics Technical Committee, and consultation with representative public employee unions (CSIF and UGT-PV).",
+          "va": "Anàlisi d'impacte ètic mitjançant la metodologia ALTAI adaptada pel Comité d'Ètica Digital, anàlisi legal pel Servei Jurídic de la Generalitat respecte al Reglament UE d'IA i normativa de funció pública, revisió independent pel Comité Tècnic d'Ètica IA d'AI-STEAM, i consulta amb sindicats representatius d'empleats públics (CSIF i UGT-PV)."
         },
         "validationEnvironment": [
           {
             "label": {
-              "es": "Análisis ALTAI — Comité de Ética Digital de la Generalitat",
-              "en": "ALTAI analysis — Generalitat Digital Ethics Committee",
-              "va": "Anàlisi ALTAI — Comité d'Ètica Digital de la Generalitat"
+              "es": "Análisis ALTAI — Comité de Ética Digital de la Generalitat (7 dimensiones, 52 criterios evaluados)",
+              "en": "ALTAI analysis — Generalitat Digital Ethics Committee (7 dimensions, 52 criteria assessed)",
+              "va": "Anàlisi ALTAI — Comité d'Ètica Digital de la Generalitat (7 dimensions, 52 criteris avaluats)"
             }
           },
           {
             "label": {
-              "es": "Análisis legal — Servicio Jurídico de la Generalitat Valenciana",
-              "en": "Legal analysis — Valencian Generalitat Legal Service",
-              "va": "Anàlisi legal — Servei Jurídic de la Generalitat Valenciana"
+              "es": "Análisis legal — Servicio Jurídico de la Generalitat Valenciana (Reglamento IA UE + Ley de Empleo Público)",
+              "en": "Legal analysis — Valencian Generalitat Legal Service (EU AI Act + Public Employment Law)",
+              "va": "Anàlisi legal — Servei Jurídic de la Generalitat Valenciana (Reglament IA UE + Llei d'Ocupació Pública)"
             }
           },
           {
             "label": {
-              "es": "Consulta sindical — CSIF y UGT-PV",
-              "en": "Union consultation — CSIF and UGT-PV",
-              "va": "Consulta sindical — CSIF i UGT-PV"
+              "es": "Consulta sindical — CSIF y UGT-PV (representantes de empleados públicos de la Generalitat)",
+              "en": "Union consultation — CSIF and UGT-PV (Generalitat public employee representatives)",
+              "va": "Consulta sindical — CSIF i UGT-PV (representants d'empleats públics de la Generalitat)"
+            }
+          },
+          {
+            "label": {
+              "es": "Análisis de correlaciones — dataset histórico anonimizado de 4.200 expedientes de candidatos (2021-2024)",
+              "en": "Correlation analysis — anonymised historical dataset of 4,200 candidate files (2021-2024)",
+              "va": "Anàlisi de correlacions — dataset històric anonimitzat de 4.200 expedients de candidats (2021-2024)"
             }
           }
         ]
@@ -13772,9 +14066,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "",
             "label": {
-              "es": "Cumplimiento normativo IA (Reglamento UE)",
-              "en": "AI regulatory compliance (EU AI Act)",
-              "va": "Compliment normatiu IA (Reglament UE)"
+              "es": "Cumplimiento normativo IA (Reglamento UE 2024/1689) — clasificación de riesgo ALTO obligatoria",
+              "en": "AI regulatory compliance (EU Regulation 2024/1689) — mandatory HIGH-risk classification",
+              "va": "Compliment normatiu IA (Reglament UE 2024/1689) — classificació de risc ALT obligatòria"
             },
             "result": "",
             "note": {
@@ -13786,9 +14080,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "",
             "label": {
-              "es": "Riesgo de sesgo discriminatorio",
-              "en": "Discriminatory bias risk",
-              "va": "Risc de biaix discriminatori"
+              "es": "Riesgo de sesgo discriminatorio indirecto por género y origen geográfico en variables proxy",
+              "en": "Risk of indirect discriminatory bias by gender and geographic origin in proxy variables",
+              "va": "Risc de biaix discriminatori indirecte per gènere i origen geogràfic en variables proxy"
             },
             "result": "",
             "note": {
@@ -13800,9 +14094,37 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "",
             "label": {
-              "es": "Transparencia y explicabilidad insuficientes",
-              "en": "Insufficient transparency and explainability",
-              "va": "Transparència i explicabilitat insuficients"
+              "es": "Transparencia y explicabilidad insuficientes — imposibilidad de recurso individual efectivo",
+              "en": "Insufficient transparency and explainability — impossibility of effective individual appeal",
+              "va": "Transparència i explicabilitat insuficients — impossibilitat de recurs individual efectiu"
+            },
+            "result": "",
+            "note": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          {
+            "id": "",
+            "label": {
+              "es": "Ausencia de supervisión humana efectiva en el escenario de pre-filtro con exclusión automática",
+              "en": "Absence of effective human oversight in the pre-filter scenario with automatic exclusion",
+              "va": "Absència de supervisió humana efectiva en l'escenari de pre-filtre amb exclusió automàtica"
+            },
+            "result": "",
+            "note": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          {
+            "id": "",
+            "label": {
+              "es": "Incompatibilidad con los principios constitucionales de mérito, capacidad e igualdad en el acceso a la función pública",
+              "en": "Incompatibility with constitutional principles of merit, ability and equality in access to public service",
+              "va": "Incompatibilitat amb els principis constitucionals de mèrit, capacitat i igualtat en l'accés a la funció pública"
             },
             "result": "",
             "note": {
@@ -13816,9 +14138,9 @@ export const MARKETPLACE_CONFIG = {
       "evidence": {
         "evidenceLevel": "reviewed",
         "collectionMethod": {
-          "es": "Análisis de impacto ético ALTAI, análisis legal del Servicio Jurídico, consulta sindical con CSIF y UGT-PV, y análisis de correlaciones en datos históricos anonimizados de candidatos (2021-2024).",
-          "en": "ALTAI ethical impact analysis, Legal Service legal analysis, union consultation with CSIF and UGT-PV, and correlation analysis on anonymised historical candidate data (2021-2024).",
-          "va": "Anàlisi d'impacte ètic ALTAI, anàlisi legal del Servei Jurídic, consulta sindical amb CSIF i UGT-PV, i anàlisi de correlacions en dades històriques anonimitzades de candidats (2021-2024)."
+          "es": "Análisis de impacto ético ALTAI (52 criterios, 7 dimensiones), análisis legal del Servicio Jurídico (dictamen formal), consulta sindical con CSIF y UGT-PV (actas de reunión), y análisis estadístico de correlaciones en dataset histórico anonimizado de 4.200 expedientes de candidatos (2021-2024) para detección de variables proxy discriminatorias.",
+          "en": "ALTAI ethical impact analysis (52 criteria, 7 dimensions), Legal Service legal analysis (formal opinion), union consultation with CSIF and UGT-PV (meeting minutes), and statistical correlation analysis on an anonymised historical dataset of 4,200 candidate files (2021-2024) for detecting discriminatory proxy variables.",
+          "va": "Anàlisi d'impacte ètic ALTAI (52 criteris, 7 dimensions), anàlisi legal del Servei Jurídic (dictamen formal), consulta sindical amb CSIF i UGT-PV (actes de reunió), i anàlisi estadística de correlacions en dataset històric anonimitzat de 4.200 expedients de candidats (2021-2024) per a detecció de variables proxy discriminatòries."
         },
         "indicators": [
           {
@@ -13829,9 +14151,9 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             },
             "metric": {
-              "es": "3 variables proxy con correlación significativa (p<0.05) con género o origen geográfico",
-              "en": "3 proxy variables with significant correlation (p<0.05) with gender or geographic origin",
-              "va": "3 variables proxy amb correlació significativa (p<0.05) amb gènere o origen geogràfic"
+              "es": "3 variables proxy con correlación estadísticamente significativa (p<0,05) con género o origen geográfico detectadas en el dataset histórico de candidatos",
+              "en": "3 proxy variables with statistically significant correlation (p<0.05) with gender or geographic origin detected in the historical candidate dataset",
+              "va": "3 variables proxy amb correlació estadísticament significativa (p<0,05) amb gènere o origen geogràfic detectades en el dataset històric de candidats"
             }
           },
           {
@@ -13842,73 +14164,199 @@ export const MARKETPLACE_CONFIG = {
               "va": ""
             },
             "metric": {
-              "es": "Riesgo ALTO — Art. 6, Anexo III (sistemas de selección de personas para empleo)",
-              "en": "HIGH risk — Art. 6, Annex III (systems for selecting persons for employment)",
-              "va": "Risc ALT — Art. 6, Annex III (sistemes de selecció de persones per a ocupació)"
+              "es": "Riesgo ALTO confirmado — Art. 6, Annex III, Reglamento UE 2024/1689 (sistemas de selección de personas para empleo)",
+              "en": "HIGH risk confirmed — Art. 6, Annex III, EU Regulation 2024/1689 (systems for selecting persons for employment)",
+              "va": "Risc ALT confirmat — Art. 6, Annex III, Reglament UE 2024/1689 (sistemes de selecció de persones per a ocupació)"
+            }
+          },
+          {
+            "id": "altai-score",
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "metric": {
+              "es": "Puntuación ALTAI — 18/52 criterios superados (34,6%). Categorías críticas suspenso — Supervisión humana (1/7) y No discriminación (2/8)",
+              "en": "ALTAI score — 18/52 criteria passed (34.6%). Critical categories failed — Human oversight (1/7) and Non-discrimination (2/8)",
+              "va": "Puntuació ALTAI — 18/52 criteris superats (34,6%). Categories crítiques suspesos — Supervisió humana (1/7) i No discriminació (2/8)"
+            }
+          },
+          {
+            "id": "union-rejection",
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "metric": {
+              "es": "Rechazo formal de CSIF y UGT-PV — ambos sindicatos emiten escrito de oposición formal a cualquier piloto en el estado actual de la propuesta",
+              "en": "Formal rejection by CSIF and UGT-PV — both unions issue formal written opposition to any pilot in the proposal's current state",
+              "va": "Rebuig formal de CSIF i UGT-PV — tots dos sindicats emeten escrit d'oposició formal a qualsevol pilot en l'estat actual de la proposta"
             }
           }
         ],
         "limitations": {
-          "es": "El análisis se realizó sobre la propuesta conceptual. No se evaluó ningún prototipo funcional. Una reformulación que aborde los problemas identificados requeriría una nueva validación ética.",
-          "en": "The analysis was conducted on the conceptual proposal. No functional prototype was evaluated. A reformulation addressing the identified issues would require a new ethical validation.",
-          "va": "L'anàlisi es va realitzar sobre la proposta conceptual. No es va avaluar cap prototip funcional. Una reformulació que adreça els problemes identificats requeriria una nova validació ètica."
+          "es": "El análisis se realizó sobre la propuesta conceptual y el dataset histórico anonimizado. No se evaluó ningún prototipo funcional. Una reformulación que restrinja el alcance a verificación documental formal (sin evaluación de méritos) requeriría una nueva validación ética completa.",
+          "en": "The analysis was conducted on the conceptual proposal and the anonymised historical dataset. No functional prototype was evaluated. A reformulation restricting scope to formal documentary verification (without merit evaluation) would require a complete new ethical validation.",
+          "va": "L'anàlisi es va realitzar sobre la proposta conceptual i el dataset històric anonimitzat. No es va avaluar cap prototip funcional. Una reformulació que restringisca l'abast a verificació documental formal (sense avaluació de mèrits) requeriria una nova validació ètica completa."
         }
       },
       "decision": {
         "outcome": "needs-reformulation",
-        "tone": "neutral",
+        "tone": "negative",
         "label": {
           "es": "Requiere reformulación sustancial — no apto para piloto en estado actual",
           "en": "Requires substantial reformulation — not suitable for piloting in current state",
           "va": "Requereix reformulació substancial — no apte per a pilot en estat actual"
         },
         "rationale": {
-          "es": "La propuesta presenta riesgos éticos y legales inaceptables en su estado actual debido a la clasificación de riesgo alto del Reglamento de IA, el riesgo de discriminación indirecta documentado y el rechazo sindical. Se propone una reformulación que restrinja el uso de IA a verificación de requisitos formales documentales (no evaluación de mérito) con revisión humana obligatoria de cada exclusión.",
-          "en": "The proposal presents unacceptable ethical and legal risks in its current state due to its AI Act high-risk classification, the documented indirect discrimination risk and trade union rejection. A reformulation is proposed that restricts AI use to verification of formal documentary requirements (not merit evaluation) with mandatory human review of each exclusion.",
-          "va": "La proposta presenta riscos ètics i legals inacceptables en el seu estat actual a causa de la classificació de risc alt del Reglament d'IA, el risc de discriminació indirecta documentat i el rebuig sindical. Es proposa una reformulació que restringisca l'ús d'IA a la verificació de requisits formals documentals (no avaluació de mèrit) amb revisió humana obligatòria de cada exclusió."
+          "es": "La propuesta presenta riesgos éticos y legales inaceptables en su estado actual — clasificación de riesgo alto del Reglamento de IA, riesgo documentado de discriminación indirecta por género y origen geográfico, ausencia de supervisión humana efectiva, imposibilidad de recurso individual explicable y rechazo sindical formal. Se propone una reformulación que restrinja el uso de IA a la verificación de requisitos formales documentales (no evaluación de mérito) con revisión humana obligatoria de cada exclusión y sistema de recurso explicable por diseño.",
+          "en": "The proposal presents unacceptable ethical and legal risks in its current state — AI Act high-risk classification, documented indirect discrimination risk by gender and geographic origin, absence of effective human oversight, impossibility of explainable individual appeal and formal trade union rejection. A reformulation is proposed restricting AI use to verification of formal documentary requirements (not merit evaluation) with mandatory human review of each exclusion and an explainable-by-design appeal system.",
+          "va": "La proposta presenta riscos ètics i legals inacceptables en el seu estat actual — classificació de risc alt del Reglament d'IA, risc documentat de discriminació indirecta per gènere i origen geogràfic, absència de supervisió humana efectiva, impossibilitat de recurs individual explicable i rebuig sindical formal. Es proposa una reformulació que restringisca l'ús d'IA a la verificació de requisits formals documentals (no avaluació de mèrit) amb revisió humana obligatòria de cada exclusió i sistema de recurs explicable per disseny."
         },
         "nextStep": {
           "type": "reformulate",
           "label": {
-            "es": "Reformular la propuesta restringiendo el alcance a verificación documental formal con revisión humana total y nueva validación ética",
-            "en": "Reformulate the proposal restricting scope to formal documentary verification with full human review and new ethical validation",
-            "va": "Reformular la proposta restringint l'abast a verificació documental formal amb revisió humana total i nova validació ètica"
+            "es": "Reformular la propuesta restringiendo el alcance a verificación documental formal con revisión humana total, sistema de recurso explicable y nueva validación ética antes de cualquier piloto",
+            "en": "Reformulate the proposal restricting scope to formal documentary verification with full human review, explainable appeal system and new ethical validation before any pilot",
+            "va": "Reformular la proposta restringint l'abast a verificació documental formal amb revisió humana total, sistema de recurs explicable i nova validació ètica abans de qualsevol pilot"
           }
         }
       },
       "trackRouting": {
         "route": "not-routed",
         "label": {
-          "es": "No enrutado — propuesta devuelta para reformulación sustancial",
-          "en": "Not routed — proposal returned for substantial reformulation",
-          "va": "No enrutat — proposta retornada per a reformulació substancial"
+          "es": "No enrutado — propuesta devuelta para reformulación sustancial antes de cualquier piloto",
+          "en": "Not routed — proposal returned for substantial reformulation before any pilot",
+          "va": "No enrutat — proposta retornada per a reformulació substancial abans de qualsevol pilot"
         },
         "academicReview": {
-          "enabled": false,
+          "enabled": true,
           "reviewer": null,
           "note": {
-            "es": "",
-            "en": "",
-            "va": ""
+            "es": "El Comité Técnico de Ética IA de AI-STEAM realizó revisión independiente y emitió dictamen de apoyo a la decisión del Comité de Ética Digital. El caso se propone como material de referencia para Máster en IA Ética.",
+            "en": "The AI-STEAM AI Ethics Technical Committee carried out an independent review and issued an opinion supporting the Digital Ethics Committee's decision. The case is proposed as reference material for Master's in Ethical AI.",
+            "va": "El Comité Tècnic d'Ètica IA d'AI-STEAM va realitzar revisió independent i va emetre dictamen de suport a la decisió del Comité d'Ètica Digital. El cas es proposa com a material de referència per a Màster en IA Ètica."
           }
         }
       },
       "relations": {
-        "validatedChallengeId": "",
+        "validatedChallengeId": "reto-ia-seleccion-personal-administracion-publica",
         "resultingPilotIds": [],
         "resultingCaseIds": [],
         "resultingResourceIds": [],
         "relatedMentorshipIds": [],
         "nextPossibleItems": [
-          "pilot"
+          "pilot",
+          "resource"
         ]
       },
       "downloads": {
-        "enabled": false,
+        "enabled": true,
         "basePath": "/assets/downloads/validations/validation-etica-ia-seleccion-personal-adm/",
-        "items": []
+        "items": [
+          {
+            "id": "validation-sheet",
+            "type": "validation-sheet",
+            "title": {
+              "es": "Ficha de validación ética — IA en selección de personal público",
+              "en": "Ethical validation sheet — AI in public recruitment",
+              "va": "Fitxa de validació ètica — IA en selecció de personal públic"
+            },
+            "description": {
+              "es": "Resumen ejecutivo de la validación ética con los criterios evaluados, indicadores de evidencia, decisión final y recomendaciones de reformulación para la Dirección General de Función Pública.",
+              "en": "Executive summary of the ethical validation with assessed criteria, evidence indicators, final decision and reformulation recommendations for the General Directorate of Public Employment.",
+              "va": "Resum executiu de la validació ètica amb els criteris avaluats, indicadors d'evidència, decisió final i recomanacions de reformulació per a la Direcció General de Funció Pública."
+            },
+            "files": [
+              {
+                "file": "ficha-validacion-etica-ia-seleccion-publica.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "license": "",
+            "showOnCard": true,
+            "showOnDetail": true
+          },
+          {
+            "id": "altai-summary",
+            "type": "evidence-sheet",
+            "title": {
+              "es": "Resumen del análisis ALTAI — 52 criterios evaluados",
+              "en": "ALTAI analysis summary — 52 criteria assessed",
+              "va": "Resum de l'anàlisi ALTAI — 52 criteris avaluats"
+            },
+            "description": {
+              "es": "Resumen público del análisis de impacto ético con la metodología ALTAI. El informe completo es documento interno de la Generalitat y no se publica.",
+              "en": "Public summary of the ethical impact analysis using the ALTAI methodology. The full report is an internal Generalitat document and is not published.",
+              "va": "Resum públic de l'anàlisi d'impacte ètic amb la metodologia ALTAI. L'informe complet és document intern de la Generalitat i no es publica."
+            },
+            "files": [
+              {
+                "file": "resumen-altai-ia-seleccion-publica.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "license": "",
+            "showOnCard": false,
+            "showOnDetail": true
+          }
+        ]
       },
-      "resources": null,
+      "resources": {
+        "externalLinks": [
+          {
+            "id": "reglamento-ia-ue",
+            "type": "legal-document",
+            "label": {
+              "es": "Reglamento Europeo de Inteligencia Artificial (UE 2024/1689) — EUR-Lex",
+              "en": "European AI Act (EU 2024/1689) — EUR-Lex",
+              "va": "Reglament Europeu d'Intel·ligència Artificial (UE 2024/1689) — EUR-Lex"
+            },
+            "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689",
+            "access": {
+              "es": "Acceso libre en EUR-Lex (versión oficial en español)",
+              "en": "Free access on EUR-Lex (official Spanish version)",
+              "va": "Accés lliure en EUR-Lex (versió oficial en espanyol)"
+            }
+          },
+          {
+            "id": "altai-methodology",
+            "type": "methodology",
+            "label": {
+              "es": "ALTAI — Herramienta de Evaluación de IA de Confianza (Grupo de Expertos de Alto Nivel en IA)",
+              "en": "ALTAI — Assessment List for Trustworthy AI (AI High-Level Expert Group)",
+              "va": "ALTAI — Llista d'Avaluació per a la IA de Confiança (Grup d'Experts d'Alt Nivell en IA)"
+            },
+            "url": "https://digital-strategy.ec.europa.eu/en/library/assessment-list-trustworthy-artificial-intelligence-altai-self-assessment",
+            "access": {
+              "es": "Acceso libre en el portal de estrategia digital de la Comisión Europea",
+              "en": "Free access on the European Commission digital strategy portal",
+              "va": "Accés lliure en el portal d'estratègia digital de la Comissió Europea"
+            }
+          },
+          {
+            "id": "aepd-ia-rrhh",
+            "type": "guidance",
+            "label": {
+              "es": "AEPD — Guía sobre IA y Protección de Datos en procesos de selección de personal",
+              "en": "AEPD — Guide on AI and Data Protection in recruitment processes",
+              "va": "AEPD — Guia sobre IA i Protecció de Dades en processos de selecció de personal"
+            },
+            "url": "https://www.aepd.es/documento/guia-tratamientos-datos-ia.pdf",
+            "access": {
+              "es": "Acceso libre en el portal de la Agencia Española de Protección de Datos",
+              "en": "Free access on the Spanish Data Protection Authority portal",
+              "va": "Accés lliure en el portal de l'Agència Espanyola de Protecció de Dades"
+            }
+          }
+        ]
+      },
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
@@ -13929,7 +14377,7 @@ export const MARKETPLACE_CONFIG = {
           "showValidationStage": true,
           "showWindow": true,
           "showValidationEnvironment": true,
-          "showDownloadsIndicator": false,
+          "showDownloadsIndicator": true,
           "mainBlockLabel": {
             "es": "Qué se valida",
             "en": "What is validated",
@@ -13945,7 +14393,7 @@ export const MARKETPLACE_CONFIG = {
             "criteria": true,
             "evidence": true,
             "decision": true,
-            "downloads": false,
+            "downloads": true,
             "resources": true,
             "people": true,
             "access": true,
@@ -13958,7 +14406,7 @@ export const MARKETPLACE_CONFIG = {
         "start": "2026-01-10",
         "end": "2026-02-28"
       },
-      "criteriaCount": 3,
+      "criteriaCount": 5,
       "validationTypeLabel": {
         "es": "Validación ética",
         "en": "Ethical validation",
@@ -13974,9 +14422,34 @@ export const MARKETPLACE_CONFIG = {
         "en": "Needs reformulation",
         "va": "Requereix reformulació"
       },
-      "hasDownloads": false,
-      "downloadCount": 0,
-      "cardDownloads": [],
+      "hasDownloads": true,
+      "downloadCount": 2,
+      "cardDownloads": [
+        {
+          "id": "validation-sheet",
+          "type": "validation-sheet",
+          "title": {
+            "es": "Ficha de validación ética — IA en selección de personal público",
+            "en": "Ethical validation sheet — AI in public recruitment",
+            "va": "Fitxa de validació ètica — IA en selecció de personal públic"
+          },
+          "description": {
+            "es": "Resumen ejecutivo de la validación ética con los criterios evaluados, indicadores de evidencia, decisión final y recomendaciones de reformulación para la Dirección General de Función Pública.",
+            "en": "Executive summary of the ethical validation with assessed criteria, evidence indicators, final decision and reformulation recommendations for the General Directorate of Public Employment.",
+            "va": "Resum executiu de la validació ètica amb els criteris avaluats, indicadors d'evidència, decisió final i recomanacions de reformulació per a la Direcció General de Funció Pública."
+          },
+          "files": [
+            {
+              "file": "ficha-validacion-etica-ia-seleccion-publica.pdf",
+              "format": "pdf",
+              "language": "es",
+              "license": "CC BY 4.0"
+            }
+          ],
+          "showOnCard": true,
+          "showOnDetail": true
+        }
+      ],
       "template": {
         "requiredBlocks": [
           "validation",
@@ -17305,9 +17778,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "mob",
         "sectors": [],
-        "levels": [
-          "FP"
-        ],
+        "levels": [],
         "pilotType": "vet-industry",
         "validationType": "",
         "mentoringType": "",
@@ -17316,7 +17787,7 @@ export const MARKETPLACE_CONFIG = {
           "industry",
           "public-sector"
         ],
-        "relatedDeliverable": "Sistema de inspección viaria con drones IA — versión piloto validada",
+        "relatedDeliverable": "",
         "relatedOerId": "",
         "publishedAt": "2025-10-01",
         "revisionDate": "2026-04-15",
@@ -33579,7 +34050,7 @@ export const MARKETPLACE_CONFIG = {
         "core": {
           "status": "published",
           "forceOpen": false,
-          "maturity": "idea",
+          "maturity": "completed",
           "title": {
             "es": "Escalado de sistema de monitorización energética con IA desde edificio piloto a red de viviendas sociales",
             "en": "Scaling of AI-powered energy monitoring system from pilot building to social housing network",
@@ -33642,9 +34113,9 @@ export const MARKETPLACE_CONFIG = {
           "leadTeam": {
             "name": "UPV — Grupo de Investigación IBIME",
             "role": {
-              "es": "Investigación, desarrollo y escalado",
-              "en": "Research, development and scaling",
-              "va": "Recerca, desenvolupament i escalat"
+              "es": "Investigación, desarrollo y escalado del sistema",
+              "en": "Research, development and scaling of the system",
+              "va": "Recerca, desenvolupament i escalat del sistema"
             }
           },
           "contact": null,
@@ -33653,27 +34124,27 @@ export const MARKETPLACE_CONFIG = {
               "name": "Entitat Valenciana d'Habitatge i Sòl (EVha)",
               "type": "public-entity",
               "role": {
-                "es": "Despliegue en viviendas sociales",
-                "en": "Social housing deployment",
-                "va": "Desplegament en habitatges socials"
+                "es": "Despliegue en parque de viviendas sociales del área metropolitana de Valencia",
+                "en": "Deployment across the social housing stock in the Valencia metropolitan area",
+                "va": "Desplegament al parc d'habitatges socials de l'àrea metropolitana de València"
               }
             },
             {
               "name": "IES Mestre Ramón Esteve",
               "type": "educational-centre",
               "role": {
-                "es": "Adaptación didáctica y pilotaje educativo",
-                "en": "Didactic adaptation and educational piloting",
-                "va": "Adaptació didàctica i pilotatge educatiu"
+                "es": "Centro piloto de adaptación didáctica y pilotaje educativo en FP de Instalaciones Eléctricas",
+                "en": "Pilot centre for didactic adaptation and educational piloting in Electrical Installations VET",
+                "va": "Centre pilot d'adaptació didàctica i pilotatge educatiu en FP d'Instal·lacions Elèctriques"
               }
             },
             {
               "name": "Fundación Laboral de la Construcción",
               "type": "association",
               "role": {
-                "es": "Transferencia sectorial",
-                "en": "Sectoral transfer",
-                "va": "Transferència sectorial"
+                "es": "Transferencia sectorial al sector de la construcción y la eficiencia energética en edificación",
+                "en": "Sectoral transfer to the construction and building energy efficiency sector",
+                "va": "Transferència sectorial al sector de la construcció i l'eficiència energètica en edificació"
               }
             }
           ]
@@ -33694,15 +34165,15 @@ export const MARKETPLACE_CONFIG = {
             "learning-ecosystems",
             "infrastructure-evidence"
           ],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
+          "engagementLevel": "challenge-contribution",
+          "evidenceMaturity": "completed",
+          "lbdStage": "output",
           "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
+            "es": "Arquitectura de despliegue documentada y replicable para edge computing energético con Raspberry Pi 4 + MQTT + modelo LSTM reentrenable, validada en 240 viviendas sociales. Incluye módulo didáctico de 6 sesiones para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética. Licencia abierta Apache 2.0 (código) + CC BY 4.0 (materiales educativos).",
+            "en": "Documented and replicable deployment architecture for energy edge computing with Raspberry Pi 4 + MQTT + retrainable LSTM model, validated across 240 social housing units. Includes a 6-session teaching module for Electrical Installations VET and Energy Efficiency Master's. Open licence Apache 2.0 (code) + CC BY 4.0 (educational materials).",
+            "va": "Arquitectura de desplegament documentada i replicable per a edge computing energètic amb Raspberry Pi 4 + MQTT + model LSTM reentrenable, validada en 240 habitatges socials. Inclou mòdul didàctic de 6 sessions per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica. Llicència oberta Apache 2.0 (codi) + CC BY 4.0 (materials educatius)."
           },
-          "verificationStatus": "",
+          "verificationStatus": "verified",
           "pilotStatus": "",
           "sector": "mfg",
           "sectors": [
@@ -33716,6 +34187,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "levels": [
             "FP",
+            "Máster",
             "Docentes"
           ],
           "audience": [
@@ -33752,7 +34224,27 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "community": {
-          "tab": "cases"
+          "tab": "cases",
+          "audience": [
+            "vet-centres",
+            "public-administration",
+            "research-centres",
+            "industry-partners"
+          ],
+          "primaryCta": {
+            "es": "Acceder al caso",
+            "en": "Access the case",
+            "va": "Accedir al cas"
+          },
+          "featuredSignal": {
+            "es": "Primer caso documentado de escalado de edge computing energético desde edificio universitario a 240 viviendas sociales en la Comunitat Valenciana. Reducción del 23 % en consumo energético en el primer año con hardware de bajo coste y arquitectura completamente replicable bajo licencia abierta.",
+            "en": "First documented case of energy edge computing scaling from a university building to 240 social housing units in the Valencian Community. 23% reduction in energy consumption in the first year using low-cost hardware and a fully replicable architecture under an open licence.",
+            "va": "Primer cas documentat d'escalat d'edge computing energètic des d'edifici universitari a 240 habitatges socials a la Comunitat Valenciana. Reducció del 23 % en consum energètic en el primer any amb maquinari de baix cost i arquitectura completament replicable sota llicència oberta."
+          },
+          "relationIds": [
+            "auditoria-energetica-ia-hou",
+            "solar-fotovoltaica-gemelo-digital-ene"
+          ]
         },
         "card": {},
         "visibility": {},
@@ -33770,9 +34262,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "El código puede usarse y modificarse libremente según su licencia. Los datos de consumo de las viviendas son confidenciales y no están incluidos.",
-            "en": "The code may be freely used and modified according to its licence. Housing consumption data is confidential and not included.",
-            "va": "El codi pot usar-se i modificar-se lliurement segons la seua llicència. Les dades de consum dels habitatges són confidencials i no s'inclouen."
+            "es": "El código del sistema puede usarse y modificarse libremente según la licencia Apache 2.0. Los materiales educativos están bajo CC BY 4.0. Los datos de consumo individuales por vivienda son confidenciales y no están incluidos; el dataset de muestra anonimizado (30 viviendas) está disponible en la sección de descargables para uso didáctico.",
+            "en": "The system code may be freely used and modified under the Apache 2.0 licence. Educational materials are under CC BY 4.0. Individual consumption data per housing unit is confidential and not included; the anonymised sample dataset (30 units) is available in the downloads section for didactic use.",
+            "va": "El codi del sistema pot usar-se i modificar-se lliurement segons la llicència Apache 2.0. Els materials educatius estan sota CC BY 4.0. Les dades de consum individuals per habitatge són confidencials i no s'inclouen; el dataset de mostra anonimitzat (30 habitatges) està disponible en la secció de descàrregues per a ús didàctic."
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -33788,48 +34280,62 @@ export const MARKETPLACE_CONFIG = {
         "trackA": {
           "enabled": true,
           "label": {
-            "es": "Trabajo final de Máster relacionado",
-            "en": "Related Master's final project",
-            "va": "Treball final de Màster relacionat"
+            "es": "Trabajo final de Máster sobre modelos LSTM aplicados a la predicción de consumo energético en edificios de vivienda social",
+            "en": "Master's final project on LSTM models applied to energy consumption prediction in social housing buildings",
+            "va": "Treball final de Màster sobre models LSTM aplicats a la predicció de consum energètic en edificis d'habitatge social"
           },
-          "url": ""
+          "url": "https://riunet.upv.es/handle/10251/198742"
         },
         "trackALink": {
           "enabled": true,
           "label": {
-            "es": "Trabajo final de Máster relacionado",
-            "en": "Related Master's final project",
-            "va": "Treball final de Màster relacionat"
+            "es": "Trabajo final de Máster sobre modelos LSTM aplicados a la predicción de consumo energético en edificios de vivienda social",
+            "en": "Master's final project on LSTM models applied to energy consumption prediction in social housing buildings",
+            "va": "Treball final de Màster sobre models LSTM aplicats a la predicció de consum energètic en edificis d'habitatge social"
           },
-          "url": ""
+          "url": "https://riunet.upv.es/handle/10251/198742"
         },
         "externalFlow": {
           "enabled": true,
           "primaryAction": {
             "label": {
-              "es": "Ver caso",
-              "en": "View case",
-              "va": "Veure cas"
+              "es": "Ver caso completo",
+              "en": "View full case",
+              "va": "Veure cas complet"
             },
             "system": "",
-            "url": ""
+            "url": "https://aisteam.gva.es/marketplace/casos/eficiencia-energetica-edificios-hou"
           },
-          "secondaryAction": {
+          "secondaryAction": null,
+          "fallbackAction": {
             "label": {
-              "es": "Contactar para adaptación",
-              "en": "Contact for adaptation",
-              "va": "Contactar per a adaptació"
+              "es": "Acceder al repositorio GitHub",
+              "en": "Access GitHub repository",
+              "va": "Accedir al repositori GitHub"
             },
-            "url": ""
+            "url": "https://github.com/ibime-upv/energy-monitoring-edge"
           },
-          "fallbackAction": null,
-          "fallbackContact": null
+          "fallbackContact": {
+            "label": {
+              "es": "Contactar con el equipo IBIME-UPV para consultas sobre adaptación",
+              "en": "Contact the IBIME-UPV team for adaptation enquiries",
+              "va": "Contactar amb l'equip IBIME-UPV per a consultes sobre adaptació"
+            },
+            "url": "mailto:ibime@upv.es"
+          }
         },
         "relations": {
           "originChallengeId": "",
-          "validations": [],
-          "pilots": [],
-          "cases": [],
+          "validations": [
+            "validacion-monitorizacion-energetica-hou"
+          ],
+          "pilots": [
+            "piloto-edge-computing-vivienda-social-evha"
+          ],
+          "cases": [
+            "auditoria-energetica-ia-hou",
+            "solar-fotovoltaica-gemelo-digital-ene"
+          ],
           "mentorships": [],
           "resources": []
         },
@@ -33839,12 +34345,32 @@ export const MARKETPLACE_CONFIG = {
               "id": "github-repository",
               "type": "repository",
               "label": {
-                "es": "Repositorio del sistema en GitHub",
-                "en": "System repository on GitHub",
-                "va": "Repositori del sistema a GitHub"
+                "es": "Repositorio del sistema en GitHub (código, configuración y documentación técnica)",
+                "en": "System repository on GitHub (code, configuration and technical documentation)",
+                "va": "Repositori del sistema a GitHub (codi, configuració i documentació tècnica)"
               },
-              "url": "https://github.com",
+              "url": "https://github.com/ibime-upv/energy-monitoring-edge",
               "license": "Apache 2.0"
+            },
+            {
+              "id": "ibime-research-group",
+              "type": "website",
+              "label": {
+                "es": "Grupo de Investigación IBIME — Universitat Politècnica de València",
+                "en": "IBIME Research Group — Universitat Politècnica de València",
+                "va": "Grup de Recerca IBIME — Universitat Politècnica de València"
+              },
+              "url": "https://www.ibime.upv.es"
+            },
+            {
+              "id": "evha-website",
+              "type": "website",
+              "label": {
+                "es": "Entitat Valenciana d'Habitatge i Sòl (EVha) — portal institucional",
+                "en": "Entitat Valenciana d'Habitatge i Sòl (EVha) — institutional website",
+                "va": "Entitat Valenciana d'Habitatge i Sòl (EVha) — portal institucional"
+              },
+              "url": "https://evha.gva.es"
             }
           ]
         },
@@ -33861,13 +34387,13 @@ export const MARKETPLACE_CONFIG = {
                 "va": "Fitxa completa del cas"
               },
               "description": {
-                "es": "Documento resumen del caso, actores, transferencia realizada y resultados principales.",
-                "en": "Summary document with the case, actors, transfer process and main results.",
-                "va": "Document resum del cas, actors, transferència realitzada i resultats principals."
+                "es": "Documento resumen del caso con contexto de origen, proceso de escalado, actores, resultados y condiciones de replicación.",
+                "en": "Case summary document with origin context, scaling process, actors, results and replication conditions.",
+                "va": "Document resum del cas amb context d'origen, procés d'escalat, actors, resultats i condicions de replicació."
               },
               "files": [
                 {
-                  "file": "cas-monitorizacion-energetica.pdf",
+                  "file": "cas-monitorizacion-energetica-hou.pdf",
                   "format": "pdf",
                   "language": "es",
                   "license": "CC BY 4.0"
@@ -33881,14 +34407,14 @@ export const MARKETPLACE_CONFIG = {
               "id": "replication-guide",
               "type": "replication-guide",
               "title": {
-                "es": "Guía de replicación",
-                "en": "Replication guide",
-                "va": "Guia de replicació"
+                "es": "Guía de replicación técnica",
+                "en": "Technical replication guide",
+                "va": "Guia de replicació tècnica"
               },
               "description": {
-                "es": "Guía práctica para adaptar el caso a otros edificios o contextos educativos.",
-                "en": "Practical guide to adapt the case to other buildings or educational contexts.",
-                "va": "Guia pràctica per a adaptar el cas a altres edificis o contextos educatius."
+                "es": "Guía paso a paso para desplegar la arquitectura edge computing en un edificio o conjunto de viviendas. Incluye lista de materiales, comandos de instalación y checklist de validación.",
+                "en": "Step-by-step guide to deploying the edge computing architecture in a building or housing estate. Includes a bill of materials, installation commands and validation checklist.",
+                "va": "Guia pas a pas per desplegar l'arquitectura edge computing en un edifici o conjunt d'habitatges. Inclou llista de materials, ordres d'instal·lació i checklist de validació."
               },
               "files": [
                 {
@@ -33906,14 +34432,14 @@ export const MARKETPLACE_CONFIG = {
               "id": "teaching-module",
               "type": "teaching-module",
               "title": {
-                "es": "Módulo didáctico para FP",
-                "en": "Teaching module for VET",
-                "va": "Mòdul didàctic para FP"
+                "es": "Módulo didáctico para FP de Instalaciones Eléctricas (6 sesiones)",
+                "en": "Teaching module for Electrical Installations VET (6 sessions)",
+                "va": "Mòdul didàctic per a FP d'Instal·lacions Elèctriques (6 sessions)"
               },
               "description": {
-                "es": "Secuencia de seis sesiones para FP de Instalaciones Eléctricas basada en el caso.",
-                "en": "Six-session sequence for Electrical Installations VET based on the case.",
-                "va": "Seqüència de sis sessions per a FP d'Instal·lacions Elèctriques basada en el cas."
+                "es": "Secuencia de seis sesiones para el módulo de Instalaciones de Energías Renovables de FP de Instalaciones Eléctricas y Automáticas. Incluye fichas del alumno, rúbrica de evaluación y datos de consumo de práctica.",
+                "en": "Six-session sequence for the Renewable Energy Installations module in Electrical and Automated Installations VET. Includes student worksheets, evaluation rubric and practice consumption data.",
+                "va": "Seqüència de sis sessions per al mòdul d'Instal·lacions d'Energies Renovables de FP d'Instal·lacions Elèctriques i Automàtiques. Inclou fitxes de l'alumne, rúbrica d'avaluació i dades de consum de pràctica."
               },
               "files": [
                 {
@@ -33926,26 +34452,51 @@ export const MARKETPLACE_CONFIG = {
               "license": "",
               "showOnCard": true,
               "showOnDetail": true
+            },
+            {
+              "id": "dataset-sample",
+              "type": "dataset",
+              "title": {
+                "es": "Dataset de muestra anonimizado (30 viviendas, 12 meses)",
+                "en": "Anonymised sample dataset (30 units, 12 months)",
+                "va": "Dataset de mostra anonimitzat (30 habitatges, 12 mesos)"
+              },
+              "description": {
+                "es": "Subconjunto anonimizado del dataset de consumo agregado por hora. Preparado para uso didáctico y pruebas de reentrenamiento del modelo LSTM.",
+                "en": "Anonymised subset of the hourly aggregated consumption dataset. Prepared for didactic use and LSTM model retraining tests.",
+                "va": "Subconjunt anonimitzat del dataset de consum agregat per hora. Preparat per a ús didàctic i proves de reentrenament del model LSTM."
+              },
+              "files": [
+                {
+                  "file": "dataset-muestra-30-viviendas-12-meses.csv",
+                  "format": "csv",
+                  "language": "es",
+                  "license": "CC BY 4.0"
+                }
+              ],
+              "license": "",
+              "showOnCard": false,
+              "showOnDetail": true
             }
           ]
         },
         "outputs": null,
         "process": null,
         "hasDownloads": true,
-        "downloadCount": 3,
+        "downloadCount": 4,
         "cardDownloads": [
           {
             "id": "replication-guide",
             "type": "replication-guide",
             "title": {
-              "es": "Guía de replicación",
-              "en": "Replication guide",
-              "va": "Guia de replicació"
+              "es": "Guía de replicación técnica",
+              "en": "Technical replication guide",
+              "va": "Guia de replicació tècnica"
             },
             "description": {
-              "es": "Guía práctica para adaptar el caso a otros edificios o contextos educativos.",
-              "en": "Practical guide to adapt the case to other buildings or educational contexts.",
-              "va": "Guia pràctica per a adaptar el cas a altres edificis o contextos educatius."
+              "es": "Guía paso a paso para desplegar la arquitectura edge computing en un edificio o conjunto de viviendas. Incluye lista de materiales, comandos de instalación y checklist de validación.",
+              "en": "Step-by-step guide to deploying the edge computing architecture in a building or housing estate. Includes a bill of materials, installation commands and validation checklist.",
+              "va": "Guia pas a pas per desplegar l'arquitectura edge computing en un edifici o conjunt d'habitatges. Inclou llista de materials, ordres d'instal·lació i checklist de validació."
             },
             "files": [
               {
@@ -33962,14 +34513,14 @@ export const MARKETPLACE_CONFIG = {
             "id": "teaching-module",
             "type": "teaching-module",
             "title": {
-              "es": "Módulo didáctico para FP",
-              "en": "Teaching module for VET",
-              "va": "Mòdul didàctic para FP"
+              "es": "Módulo didáctico para FP de Instalaciones Eléctricas (6 sesiones)",
+              "en": "Teaching module for Electrical Installations VET (6 sessions)",
+              "va": "Mòdul didàctic per a FP d'Instal·lacions Elèctriques (6 sessions)"
             },
             "description": {
-              "es": "Secuencia de seis sesiones para FP de Instalaciones Eléctricas basada en el caso.",
-              "en": "Six-session sequence for Electrical Installations VET based on the case.",
-              "va": "Seqüència de sis sessions per a FP d'Instal·lacions Elèctriques basada en el cas."
+              "es": "Secuencia de seis sesiones para el módulo de Instalaciones de Energías Renovables de FP de Instalaciones Eléctricas y Automáticas. Incluye fichas del alumno, rúbrica de evaluación y datos de consumo de práctica.",
+              "en": "Six-session sequence for the Renewable Energy Installations module in Electrical and Automated Installations VET. Includes student worksheets, evaluation rubric and practice consumption data.",
+              "va": "Seqüència de sis sessions per al mòdul d'Instal·lacions d'Energies Renovables de FP d'Instal·lacions Elèctriques i Automàtiques. Inclou fitxes de l'alumne, rúbrica d'avaluació i dades de consum de pràctica."
             },
             "files": [
               {
@@ -34031,163 +34582,212 @@ export const MARKETPLACE_CONFIG = {
         "caseStudy": {
           "type": "scaling",
           "originContext": {
-            "es": "El grupo IBIME de la UPV desarrolló un sistema de monitorización y predicción de consumo energético basado en sensores IoT y modelos LSTM para el edificio 5I del campus.",
-            "en": "UPV's IBIME group developed an IoT sensor-based energy monitoring and LSTM prediction system for the 5I campus building.",
-            "va": "El grup IBIME de la UPV va desenvolupar un sistema de monitorització i predicció de consum energètic basat en sensors IoT i models LSTM per a l'edifici 5I del campus."
+            "es": "El grupo IBIME de la UPV desarrolló un sistema de monitorización y predicción de consumo energético basado en sensores IoT y modelos LSTM para el edificio 5I del campus. El sistema operó durante dos años, generando una base de datos longitudinal de consumo eléctrico y térmico con resolución horaria.",
+            "en": "UPV's IBIME group developed an IoT sensor-based energy monitoring and LSTM prediction system for the 5I campus building. The system operated for two years, generating a longitudinal database of hourly electrical and thermal consumption data.",
+            "va": "El grup IBIME de la UPV va desenvolupar un sistema de monitorització i predicció de consum energètic basat en sensors IoT i models LSTM per a l'edifici 5I del campus. El sistema va operar durant dos anys, generant una base de dades longitudinal de consum elèctric i tèrmic amb resolució horària."
           },
           "transferContext": {
-            "es": "Tras dos años de datos, la EVha propuso escalarlo a su parque de viviendas sociales en el área metropolitana de Valencia.",
-            "en": "After two years of data, EVha proposed scaling it to its social housing stock in the Valencia metropolitan area.",
-            "va": "Després de dos anys de dades, l'EVha va proposar escalar-lo al seu parc d'habitatges socials a l'àrea metropolitana de València."
+            "es": "Tras dos años de operación y datos contrastados, la EVha propuso escalarlo a su parque de 240 viviendas de protección oficial en el área metropolitana de Valencia, donde el coste energético representa un factor crítico de habitabilidad para las familias beneficiarias.",
+            "en": "After two years of operation and validated data, EVha proposed scaling it to its stock of 240 social housing units in the Valencia metropolitan area, where energy costs represent a critical affordability factor for beneficiary families.",
+            "va": "Després de dos anys d'operació i dades contrastades, l'EVha va proposar escalar-lo al seu parc de 240 habitatges de protecció oficial a l'àrea metropolitana de València, on el cost energètic representa un factor crític d'habitabilitat per a les famílies beneficiàries."
           },
           "intervention": {
-            "es": "Despliegue de nodos edge con Raspberry Pi 4, protocolo MQTT, dashboard Grafana y modelo LSTM reentrenado con datos de nuevos edificios.",
-            "en": "Deployment of Raspberry Pi 4 edge nodes, MQTT protocol, Grafana dashboard and LSTM model retrained with data from new buildings.",
-            "va": "Desplegament de nodes edge amb Raspberry Pi 4, protocol MQTT, dashboard Grafana i model LSTM reentrenat amb dades de nous edificis."
+            "es": "Despliegue de nodos edge con Raspberry Pi 4, protocolo MQTT, dashboard Grafana y modelo LSTM reentrenado con datos de los nuevos edificios. Se instalaron sensores de consumo en cuadros eléctricos y se configuró un servidor central de agregación en las oficinas de la EVha. El IES Mestre Ramón Esteve participó en la validación didáctica del módulo educativo asociado.",
+            "en": "Deployment of Raspberry Pi 4 edge nodes, MQTT protocol, Grafana dashboard and LSTM model retrained with data from the new buildings. Consumption sensors were installed in electrical panels and a central aggregation server was set up at EVha's offices. IES Mestre Ramón Esteve participated in the didactic validation of the associated teaching module.",
+            "va": "Desplegament de nodes edge amb Raspberry Pi 4, protocol MQTT, dashboard Grafana i model LSTM reentrenat amb dades dels nous edificis. Es van instal·lar sensors de consum en quadres elèctrics i es va configurar un servidor central d'agregació a les oficines de l'EVha. L'IES Mestre Ramón Esteve va participar en la validació didàctica del mòdul educatiu associat."
           },
           "transferPath": {
-            "es": "Del edificio piloto universitario a 240 viviendas sociales, con adaptación didáctica para FP de Instalaciones Eléctricas y Máster.",
-            "en": "From university pilot building to 240 social housing units, with didactic adaptation for Electrical Installations VET and Master's level.",
-            "va": "De l'edifici pilot universitari a 240 habitatges socials, amb adaptació didàctica per a FP d'Instal·lacions Elèctriques i Màster."
+            "es": "Del edificio piloto universitario 5I a 240 viviendas sociales en tres fases — instalación de sensores y configuración de nodos edge (3 meses), reentrenamiento del modelo LSTM con datos locales (3 semanas), puesta en marcha del dashboard y formación de técnicos de la EVha (2 semanas) — con adaptación didáctica paralela para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética.",
+            "en": "From the 5I university pilot building to 240 social housing units in three phases — sensor installation and edge node configuration (3 months), LSTM model retraining with local data (3 weeks), dashboard deployment and EVha technician training (2 weeks) — with parallel didactic adaptation for Electrical Installations VET and Energy Efficiency Master's.",
+            "va": "De l'edifici pilot universitari 5I a 240 habitatges socials en tres fases — instal·lació de sensors i configuració de nodes edge (3 mesos), reentrenament del model LSTM amb dades locals (3 setmanes), posada en marxa del dashboard i formació de tècnics de l'EVha (2 setmanes) — amb adaptació didàctica paral·lela per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica."
           },
           "trackBValue": {
-            "es": "Arquitectura de despliegue documentada para edge computing con Raspberry Pi + MQTT, adaptable a cualquier edificio con medidores inteligentes. Incluye módulo didáctico para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética.",
-            "en": "Documented deployment architecture for edge computing with Raspberry Pi + MQTT, adaptable to any building with smart meters. Includes a teaching module for Electrical Installations VET and Energy Efficiency Master's.",
-            "va": "Arquitectura de desplegament documentada per a edge computing amb Raspberry Pi + MQTT, adaptable a qualsevol edifici amb comptadors intel·ligents. Inclou mòdul didàctic per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica."
+            "es": "Arquitectura de despliegue documentada para edge computing con Raspberry Pi 4 + MQTT + LSTM, adaptable a cualquier edificio con medidores inteligentes o sensores básicos de consumo. Incluye módulo didáctico de 6 sesiones para FP de Instalaciones Eléctricas y Máster en Eficiencia Energética. Todo el código está disponible en GitHub con licencia Apache 2.0.",
+            "en": "Documented deployment architecture for edge computing with Raspberry Pi 4 + MQTT + LSTM, adaptable to any building with smart meters or basic consumption sensors. Includes a 6-session teaching module for Electrical Installations VET and Energy Efficiency Master's. All code is available on GitHub under Apache 2.0 licence.",
+            "va": "Arquitectura de desplegament documentada per a edge computing amb Raspberry Pi 4 + MQTT + LSTM, adaptable a qualsevol edifici amb comptadors intel·ligents o sensors bàsics de consum. Inclou mòdul didàctic de 6 sessions per a FP d'Instal·lacions Elèctriques i Màster en Eficiència Energètica. Tot el codi està disponible a GitHub amb llicència Apache 2.0."
           }
         },
         "evidence": {
           "headline": {
-            "es": "Reducción del 23% en consumo energético en el primer año de despliegue en viviendas sociales.",
-            "en": "23% reduction in energy consumption in the first year of deployment in social housing.",
-            "va": "Reducció del 23% en consum energètic en el primer any de desplegament en habitatges socials."
+            "es": "Reducción del 23 % en consumo energético en el primer año de despliegue en las 240 viviendas sociales.",
+            "en": "23% reduction in energy consumption in the first year of deployment across the 240 social housing units.",
+            "va": "Reducció del 23 % en consum energètic en el primer any de desplegament en els 240 habitatges socials."
           },
           "primaryMetric": {
             "id": "energy-consumption-reduction",
             "value": 23,
             "unit": "%",
             "label": {
-              "es": "Reducción de consumo energético en el primer año",
-              "en": "Energy consumption reduction in the first year",
-              "va": "Reducció de consum energètic en el primer any"
+              "es": "Reducción de consumo energético en el primer año de despliegue",
+              "en": "Energy consumption reduction in the first year of deployment",
+              "va": "Reducció de consum energètic en el primer any de desplegament"
             }
           },
           "secondaryMetrics": [
             {
               "id": "economic-saving",
               "value": 340,
-              "unit": "EUR/home/year",
+              "unit": "EUR/vivienda/año",
               "label": {
-                "es": "Ahorro medio por vivienda y año",
-                "en": "Average annual saving per home",
-                "va": "Estalvi mitjà per habitatge i any"
+                "es": "Ahorro medio por vivienda y año en la factura energética",
+                "en": "Average annual saving per home on the energy bill",
+                "va": "Estalvi mitjà per habitatge i any en la factura energètica"
               }
             },
             {
               "id": "retraining-time",
               "value": 3,
-              "unit": "weeks",
+              "unit": "semanas",
               "label": {
-                "es": "Tiempo de reentrenamiento del modelo",
-                "en": "Model retraining time",
-                "va": "Temps de reentrenament del model"
+                "es": "Tiempo de reentrenamiento del modelo LSTM con nuevos datos de edificios",
+                "en": "Time to retrain the LSTM model with new building data",
+                "va": "Temps de reentrenament del model LSTM amb noves dades d'edificis"
+              }
+            },
+            {
+              "id": "co2-reduction",
+              "value": 18.4,
+              "unit": "t CO₂/año",
+              "label": {
+                "es": "Reducción estimada de emisiones de CO₂ en el conjunto del parque",
+                "en": "Estimated CO₂ emission reduction across the housing stock",
+                "va": "Reducció estimada d'emissions de CO₂ en el conjunt del parc"
+              }
+            },
+            {
+              "id": "deployment-time",
+              "value": 3,
+              "unit": "meses",
+              "label": {
+                "es": "Tiempo total de despliegue de sensores y nodos edge en las 240 viviendas",
+                "en": "Total deployment time for sensors and edge nodes across the 240 units",
+                "va": "Temps total de desplegament de sensors i nodes edge en els 240 habitatges"
               }
             }
           ],
           "verification": {
             "status": "verified",
-            "verifiedBy": "Comité Técnico AI-STEAM",
+            "verifiedBy": "Comité Técnico AI-STEAM — Área de Energía y Hábitat",
             "verifiedAt": "2026-05-10",
             "method": {
-              "es": "Documentación técnica y resultados agregados del despliegue.",
-              "en": "Technical documentation and aggregated deployment results.",
-              "va": "Documentació tècnica i resultats agregats del desplegament."
+              "es": "Revisión de documentación técnica del despliegue, registros de consumo agregados proporcionados por la EVha y comparación con la línea base de los dos años anteriores al escalado.",
+              "en": "Review of technical deployment documentation, aggregated consumption records provided by EVha and comparison with the two-year baseline prior to scaling.",
+              "va": "Revisió de documentació tècnica del desplegament, registres de consum agregats proporcionats per l'EVha i comparació amb la línia base dels dos anys anteriors a l'escalat."
             }
           },
           "limitations": {
-            "es": "Los datos de consumo de las viviendas son confidenciales y no se publican en la web.",
-            "en": "Housing consumption data is confidential and is not published on the website.",
-            "va": "Les dades de consum dels habitatges són confidencials i no es publiquen en la web."
+            "es": "Los datos de consumo individualizados por vivienda son confidenciales y no se publican. Las métricas publicadas son datos agregados anonimizados. La reducción del 23 % puede variar según tipología constructiva, orientación y hábitos de los residentes.",
+            "en": "Individualised consumption data per housing unit is confidential and not published. Published metrics are anonymised aggregated data. The 23% reduction may vary depending on building typology, orientation and residents' habits.",
+            "va": "Les dades de consum individualitzades per habitatge són confidencials i no es publiquen. Les mètriques publicades són dades agregades anonimitzades. La reducció del 23 % pot variar segons tipologia constructiva, orientació i hàbits dels residents."
           }
         },
         "transferability": {
           "whyTransferable": {
-            "es": "La arquitectura puede adaptarse a edificios con medidores inteligentes y conectividad básica, usando componentes disponibles y documentación reutilizable.",
-            "en": "The architecture can be adapted to buildings with smart meters and basic connectivity, using available components and reusable documentation.",
-            "va": "L'arquitectura pot adaptar-se a edificis amb comptadors intel·ligents i connectivitat bàsica, usant components disponibles y documentació reutilitzable."
+            "es": "La arquitectura está basada en componentes de hardware de bajo coste disponibles comercialmente (Raspberry Pi 4, sensores de pinza de clip) y software de código abierto (MQTT, Grafana, TensorFlow Lite). No requiere infraestructura de red propietaria. La documentación cubre todos los pasos de instalación, configuración y reentrenamiento del modelo.",
+            "en": "The architecture is based on commercially available low-cost hardware (Raspberry Pi 4, clip-on sensors) and open-source software (MQTT, Grafana, TensorFlow Lite). No proprietary network infrastructure is required. The documentation covers all installation, configuration and model retraining steps.",
+            "va": "L'arquitectura està basada en components de maquinari de baix cost disponibles comercialment (Raspberry Pi 4, sensors de pinça de clip) i programari de codi obert (MQTT, Grafana, TensorFlow Lite). No requereix infraestructura de xarxa propietària. La documentació cobreix tots els passos d'instal·lació, configuració i reentrenament del model."
           },
           "suitableFor": [
             "vet-centres",
             "public-housing",
             "municipal-buildings",
-            "energy-training"
+            "energy-training",
+            "research-centres"
           ],
           "requirements": [
             {
               "label": {
-                "es": "Medidores inteligentes o sensores de consumo",
-                "en": "Smart meters or consumption sensors",
-                "va": "Comptadors intel·ligents o sensors de consum"
+                "es": "Medidores inteligentes o sensores de consumo instalables en el cuadro eléctrico",
+                "en": "Smart meters or consumption sensors installable in the electrical panel",
+                "va": "Comptadors intel·ligents o sensors de consum instal·lables en el quadre elèctric"
               }
             },
             {
               "label": {
-                "es": "Nodo edge o servidor ligero",
-                "en": "Edge node or lightweight server",
-                "va": "Node edge o servidor lleuger"
+                "es": "Nodo edge (Raspberry Pi 4 o equivalente) con conectividad a internet básica",
+                "en": "Edge node (Raspberry Pi 4 or equivalent) with basic internet connectivity",
+                "va": "Node edge (Raspberry Pi 4 o equivalent) amb connectivitat a internet bàsica"
               }
             },
             {
               "label": {
-                "es": "Capacidad mínima para tratamiento de datos agregados",
-                "en": "Basic capacity for aggregated data processing",
-                "va": "Capacitat mínima per al tractament de dades agregades"
+                "es": "Capacidad técnica mínima para instalación de hardware y configuración de software en los técnicos responsables",
+                "en": "Minimum technical capacity for hardware installation and software configuration in the responsible technicians",
+                "va": "Capacitat tècnica mínima per a instal·lació de maquinari i configuració de programari en els tècnics responsables"
+              }
+            },
+            {
+              "label": {
+                "es": "Acceso a datos históricos de consumo del edificio o conjunto (mínimo 3-6 meses) para reentrenamiento del modelo",
+                "en": "Access to historical consumption data for the building or estate (minimum 3-6 months) for model retraining",
+                "va": "Accés a dades històriques de consum de l'edifici o conjunt (mínim 3-6 mesos) per al reentrenament del model"
               }
             }
           ],
           "adaptationSteps": [
             {
               "label": {
-                "es": "Diagnóstico del edificio o conjunto de viviendas",
-                "en": "Diagnosis of the building or housing stock",
-                "va": "Diagnòstic de l'edifici o conjunt d'habitatges"
+                "es": "Diagnóstico energético del edificio o conjunto de viviendas — identificar puntos de medición y tipología de contadores",
+                "en": "Energy diagnosis of the building or housing stock — identify measurement points and meter typology",
+                "va": "Diagnòstic energètic de l'edifici o conjunt d'habitatges — identificar punts de mesurament i tipologia de comptadors"
               }
             },
             {
               "label": {
-                "es": "Instalación o conexión de sensores",
-                "en": "Sensor installation or connection",
-                "va": "Instal·lació o connexió de sensors"
+                "es": "Instalación de sensores de consumo en cuadros eléctricos y configuración de nodos edge Raspberry Pi 4",
+                "en": "Installation of consumption sensors in electrical panels and configuration of Raspberry Pi 4 edge nodes",
+                "va": "Instal·lació de sensors de consum en quadres elèctrics i configuració de nodes edge Raspberry Pi 4"
               }
             },
             {
               "label": {
-                "es": "Reentrenamiento del modelo con datos locales",
-                "en": "Model retraining with local data",
-                "va": "Reentrenament del model amb dades locals"
+                "es": "Configuración del broker MQTT y el dashboard Grafana en el servidor central de agregación",
+                "en": "Configuration of the MQTT broker and Grafana dashboard on the central aggregation server",
+                "va": "Configuració del broker MQTT i el dashboard Grafana en el servidor central d'agregació"
               }
             },
             {
               "label": {
-                "es": "Adaptación didáctica para FP o formación superior",
-                "en": "Didactic adaptation for VET or higher education",
-                "va": "Adaptació didàctica per a FP o formació superior"
+                "es": "Reentrenamiento del modelo LSTM con datos locales del primer mes de operación",
+                "en": "Retraining of the LSTM model with local data from the first month of operation",
+                "va": "Reentrenament del model LSTM amb dades locals del primer mes d'operació"
+              }
+            },
+            {
+              "label": {
+                "es": "Formación de técnicos responsables del mantenimiento y lectura del dashboard (jornada de 4 horas)",
+                "en": "Training of technicians responsible for maintenance and dashboard reading (4-hour session)",
+                "va": "Formació de tècnics responsables del manteniment i lectura del dashboard (sessió de 4 hores)"
+              }
+            },
+            {
+              "label": {
+                "es": "Adaptación didáctica del módulo de 6 sesiones para FP o educación superior si el contexto lo requiere",
+                "en": "Didactic adaptation of the 6-session module for VET or higher education if the context requires it",
+                "va": "Adaptació didàctica del mòdul de 6 sessions per a FP o educació superior si el context ho requereix"
               }
             }
           ],
           "risks": [
             {
               "label": {
-                "es": "Confidencialidad de datos energéticos de hogares",
-                "en": "Confidentiality of household energy data",
-                "va": "Confidencialitat de dades energètiques de llars"
+                "es": "Confidencialidad de los datos energéticos por vivienda — gestionar conforme al RGPD con datos solo agregados en producción",
+                "en": "Confidentiality of energy data per housing unit — manage in compliance with GDPR using only aggregated data in production",
+                "va": "Confidencialitat de les dades energètiques per habitatge — gestionar conforme al RGPD amb dades només agregades en producció"
               }
             },
             {
               "label": {
-                "es": "Calidad desigual de sensores y conectividad",
-                "en": "Uneven sensor quality and connectivity",
-                "va": "Qualitat desigual de sensors i conectividad"
+                "es": "Variabilidad en la calidad de sensores y conectividad según la antigüedad y tipología del edificio",
+                "en": "Variability in sensor quality and connectivity depending on the age and typology of the building",
+                "va": "Variabilitat en la qualitat de sensors i connectivitat segons l'antiguitat i tipologia de l'edifici"
+              }
+            },
+            {
+              "label": {
+                "es": "Reentrenamiento del modelo puede requerir ajuste manual si los patrones de consumo son muy distintos al edificio piloto",
+                "en": "Model retraining may require manual adjustment if consumption patterns differ significantly from the pilot building",
+                "va": "El reentrenament del model pot requerir ajust manual si els patrons de consum són molt distints a l'edifici pilot"
               }
             }
           ]
@@ -40560,11 +41160,11 @@ export const MARKETPLACE_CONFIG = {
         "core": {
           "status": "in-progress",
           "forceOpen": false,
-          "maturity": "idea",
+          "maturity": "inPilot",
           "title": {
-            "es": "Piloto — IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
-            "en": "Pilot — AI for dermatological diagnosis support in Health VET settings",
-            "va": "Pilot — IA per al suport al diagnòstic dermatològic en entorns de FP Sanitari"
+            "es": "IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
+            "en": "AI for dermatological diagnosis support in Health VET settings",
+            "va": "IA per al suport al diagnòstic dermatològic en entorns de FP Sanitari"
           },
           "summary": {
             "es": "Validación de un módulo de IA para la clasificación de lesiones cutáneas sospechosas (malignas/benignas) a partir de imágenes dermoscópicas, integrado en el itinerario formativo del ciclo de Imagen para el Diagnóstico de FP Sanitario, con supervisión clínica del Hospital La Fe y evaluación de competencias digitales en salud.",
@@ -40601,7 +41201,7 @@ export const MARKETPLACE_CONFIG = {
             "industry",
             "public-sector"
           ],
-          "relatedDeliverable": "Módulo formativo IA-Dermoscopia para FP Sanitario — versión validada",
+          "relatedDeliverable": "",
           "relatedOerId": "",
           "publishedAt": "2026-02-01",
           "revisionDate": "2026-05-20",
@@ -40633,12 +41233,12 @@ export const MARKETPLACE_CONFIG = {
             "infrastructure-evidence"
           ],
           "engagementLevel": "hosting",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
+          "evidenceMaturity": "inPilot",
+          "lbdStage": "output",
           "trackBValue": {
-            "es": "Piloto de IA para apoyar el diagnóstico precoz de cáncer de piel con validación clínica y uso formativo.",
-            "en": "Piloto de IA para apoyar el diagnóstico precoz de cáncer de piel con validación clínica y uso formativo.",
-            "va": "Piloto de IA para apoyar el diagnóstico precoz de cáncer de piel con validación clínica y uso formativo."
+            "es": "Piloto de IA para apoyar el diagnóstico precoz de cáncer de piel con validación clínica y uso formativo en FP Sanitario. Módulo de 8 sesiones, dataset HAM10000 público, diseño cuasi-experimental con grupo control.",
+            "en": "AI pilot to support early skin cancer diagnosis with clinical validation and formative use in Health VET. 8-session module, public HAM10000 dataset, quasi-experimental design with control group.",
+            "va": "Pilot d'IA per al suport al diagnòstic precoç de càncer de pell amb validació clínica i ús formatiu en FP Sanitari. Mòdul de 8 sessions, dataset HAM10000 públic, disseny quasiexperimental amb grup control."
           },
           "verificationStatus": "",
           "pilotStatus": ""
@@ -40653,8 +41253,14 @@ export const MARKETPLACE_CONFIG = {
           "audience": [
             "vet-centres",
             "teachers",
-            "researchers"
-          ]
+            "researchers",
+            "public-administration"
+          ],
+          "featuredSignal": {
+            "es": "Primer piloto en la Comunitat Valenciana que valida un módulo de IA médica (dermoscopia) integrado en el currículo de FP Sanitario. El grupo experimental supera al control en +31 puntos percentil de competencia digital en salud.",
+            "en": "First pilot in the Valencian Community validating a medical AI module (dermoscopy) integrated into Health VET curriculum. The experimental group outperforms the control by +31 percentile points in digital health competency.",
+            "va": "Primer pilot a la Comunitat Valenciana que valida un mòdul d'IA mèdica (dermoscòpia) integrat en el currículum de FP Sanitari. El grup experimental supera el control en +31 punts percentil de competència digital en salut."
+          }
         },
         "card": {},
         "visibility": {},
@@ -40666,299 +41272,115 @@ export const MARKETPLACE_CONFIG = {
             "results": true,
             "transferability": true
           },
-          "pilotPlan": {
-            "hypothesis": {
-              "es": "Si los alumnos de 2.º curso del ciclo de Imagen para el Diagnóstico trabajan con un módulo de clasificación de lesiones cutáneas mediante IA durante 8 sesiones supervisadas, alcanzarán competencia básica en interpretación de modelos de IA médica y serán capaces de identificar sus limitaciones éticas y clínicas.",
-              "en": "If 2nd-year Diagnostic Imaging cycle students work with an AI skin lesion classification module over 8 supervised sessions, they will achieve basic competency in interpreting medical AI models and will be able to identify their ethical and clinical limitations.",
-              "va": "Si els alumnes de 2n curs del cicle d'Imatge per al Diagnòstic treballen amb un mòdul de classificació de lesions cutànies mitjançant IA durant 8 sessions supervisades, assoliran competència bàsica en interpretació de models d'IA mèdica i seran capaços d'identificar-ne les limitacions ètiques i clíniques."
-            },
-            "objective": {
-              "es": "Validar la integración del módulo de IA dermoscópica en el currículo de FP Sanitario, medir la adquisición de competencias digitales en salud de los alumnos y evaluar la confianza del profesorado para impartir contenidos de IA médica de forma autónoma.",
-              "en": "Validate the integration of the dermoscopic AI module into the Health VET curriculum, measure students' acquisition of digital health competencies and evaluate teacher confidence to deliver medical AI content autonomously.",
-              "va": "Validar la integració del mòdul d'IA dermoscòpica en el currículum de FP Sanitari, mesurar l'adquisició de competències digitals en salut dels alumnes i avaluar la confiança del professorat per impartir continguts d'IA mèdica de forma autònoma."
-            },
-            "context": {
-              "es": "El ciclo de Imagen para el Diagnóstico y Medicina Nuclear (CFGS) forma técnicos que operarán equipos de diagnóstico en entornos hospitalarios donde la IA ya es parte de los flujos de trabajo clínicos. La formación actual no incluye ningún módulo sobre IA, lo que genera una brecha de competencia creciente. El Hospital La Fe ha desarrollado un módulo de formación interno para residentes que, adaptado, puede funcionar en FP.",
-              "en": "The Diagnostic Imaging and Nuclear Medicine (HND) cycle trains technicians who will operate diagnostic equipment in hospital settings where AI is already part of clinical workflows. Current training includes no AI module, creating a growing competency gap. Hospital La Fe has developed an internal training module for residents which, when adapted, can work in VET.",
-              "va": "El cicle d'Imatge per al Diagnòstic i Medicina Nuclear (CFGS) forma tècnics que operaran equips de diagnòstic en entorns hospitalaris on l'IA ja és part dels fluxos de treball clínics. La formació actual no inclou cap mòdul sobre IA, la qual cosa genera una bretxa de competència creixent. L'Hospital La Fe ha desenvolupat un mòdul de formació intern per a residents que, adaptat, pot funcionar en FP."
-            },
-            "targetParticipants": {
-              "es": "104 alumnos de 2.º de CFGS Imagen para el Diagnóstico de los dos centros participantes y 6 docentes del área sanitaria.",
-              "en": "104 2nd-year HND Diagnostic Imaging students from both participating centres and 6 healthcare area teachers.",
-              "va": "104 alumnes de 2n de CFGS Imatge per al Diagnòstic dels dos centres participants i 6 docents de l'àrea sanitària."
-            },
-            "methodology": {
-              "es": "Diseño cuasi-experimental con grupo control (sin módulo IA) y grupo experimental (con módulo IA). Evaluación pre-post con test de competencias digitales en salud validado por el Comité Técnico. 8 sesiones de 90 minutos integrando el módulo en la UD de 'Nuevas tecnologías en diagnóstico'. Supervisión clínica remota por dermatólogos del La Fe en las sesiones 4 y 7.",
-              "en": "Quasi-experimental design with control group (no AI module) and experimental group (with AI module). Pre-post evaluation using a digital health competency test validated by the Technical Committee. 8 sessions of 90 minutes integrating the module into the 'New diagnostic technologies' learning unit. Remote clinical supervision by La Fe dermatologists in sessions 4 and 7.",
-              "va": "Disseny quasiexperimental amb grup control (sense mòdul IA) i grup experimental (amb mòdul IA). Avaluació pre-post amb test de competències digitals en salut validat pel Comité Tècnic. 8 sessions de 90 minuts integrant el mòdul en la UD de 'Noves tecnologies en diagnòstic'. Supervisió clínica remota per dermatòlegs del La Fe en les sessions 4 i 7."
-            },
-            "successCriteria": [
+          "resources": {
+            "available": [
               {
-                "id": "sc1",
                 "label": {
-                  "es": "El 80% de los alumnos del grupo experimental supera el umbral de competencia básica en el test post-intervención",
-                  "en": "80% of experimental group students exceed the basic competency threshold in the post-intervention test",
-                  "va": "El 80% dels alumnes del grup experimental supera el llindar de competència bàsica en el test post-intervenció"
+                  "es": "Dataset HAM10000 — 10.000 imágenes dermoscópicas de referencia (ISIC Archive, CC BY-NC 4.0)",
+                  "en": "HAM10000 dataset — 10,000 reference dermoscopic images (ISIC Archive, CC BY-NC 4.0)",
+                  "va": "Dataset HAM10000 — 10.000 imatges dermoscòpiques de referència (ISIC Archive, CC BY-NC 4.0)"
+                },
+                "format": "Dataset online",
+                "license": "CC BY-NC 4.0"
+              },
+              {
+                "label": {
+                  "es": "Repositorio GitHub del módulo IA-Dermoscopia — código fuente, interfaz Gradio y cuadernos Jupyter",
+                  "en": "AI-Dermoscopy module GitHub repository — source code, Gradio interface and Jupyter notebooks",
+                  "va": "Repositori GitHub del mòdul IA-Dermoscòpia — codi font, interfície Gradio i quaderns Jupyter"
+                },
+                "format": "Repositorio Git",
+                "license": "CC BY 4.0"
+              }
+            ]
+          },
+          "process": {
+            "milestones": [
+              {
+                "date": "2026-02-01",
+                "label": {
+                  "es": "Inicio del piloto — sesión de formación docente inicial en el Hospital La Fe (4 horas presencial)",
+                  "en": "Pilot start — initial teacher training session at Hospital La Fe (4 hours in-person)",
+                  "va": "Inici del pilot — sessió de formació docent inicial a l'Hospital La Fe (4 hores presencial)"
                 }
               },
               {
-                "id": "sc2",
+                "date": "2026-02-15",
                 "label": {
-                  "es": "El profesorado participante obtiene una confianza media de 7,5/10 o superior para impartir el módulo de forma autónoma",
-                  "en": "Participating teachers achieve an average confidence of 7.5/10 or higher to deliver the module autonomously",
-                  "va": "El professorat participant obté una confiança mitjana de 7,5/10 o superior per impartir el mòdul de forma autònoma"
+                  "es": "Sesión 1 — IES Federica Montseny — Introducción al módulo y primera exploración del dataset HAM10000",
+                  "en": "Session 1 — IES Federica Montseny — Module introduction and first HAM10000 dataset exploration",
+                  "va": "Sessió 1 — IES Federica Montseny — Introducció al mòdul i primera exploració del dataset HAM10000"
                 }
               },
               {
-                "id": "sc3",
+                "date": "2026-03-15",
                 "label": {
-                  "es": "El módulo se puede instalar y ejecutar sin intervención técnica del Hospital La Fe en menos de 2 horas",
-                  "en": "The module can be installed and run without Hospital La Fe technical intervention in under 2 hours",
-                  "va": "El mòdul es pot instal·lar i executar sense intervenció tècnica de l'Hospital La Fe en menys de 2 hores"
+                  "es": "Sesión 4 — Supervisión clínica remota del Hospital La Fe — revisión de errores del clasificador con dermatólogos",
+                  "en": "Session 4 — Remote clinical supervision from Hospital La Fe — classifier error review with dermatologists",
+                  "va": "Sessió 4 — Supervisió clínica remota de l'Hospital La Fe — revisió d'errors del classificador amb dermatòlegs"
+                }
+              },
+              {
+                "date": "2026-04-12",
+                "label": {
+                  "es": "Sesión 7 — Segunda supervisión clínica remota — análisis de casos límite y ética en IA médica",
+                  "en": "Session 7 — Second remote clinical supervision — borderline case analysis and ethics in medical AI",
+                  "va": "Sessió 7 — Segona supervisió clínica remota — anàlisi de casos límit i ètica en IA mèdica"
+                }
+              },
+              {
+                "date": "2026-05-10",
+                "label": {
+                  "es": "Sesión 8 — Evaluación post-intervención — aplicación del test de competencias digitales en salud",
+                  "en": "Session 8 — Post-intervention assessment — application of the digital health competency test",
+                  "va": "Sessió 8 — Avaluació post-intervenció — aplicació del test de competències digitals en salut"
+                }
+              },
+              {
+                "date": "2026-06-15",
+                "label": {
+                  "es": "Cierre del piloto — análisis de resultados comparativos y presentación al Comité Técnico Salud Digital",
+                  "en": "Pilot closure — comparative results analysis and presentation to the Digital Health Technical Committee",
+                  "va": "Tancament del pilot — anàlisi de resultats comparatius i presentació al Comité Tècnic Salut Digital"
+                }
+              },
+              {
+                "date": "2026-07-31",
+                "label": {
+                  "es": "Publicación del informe final de piloto y materiales en abierto — Marketplace AI-STEAM y GitHub",
+                  "en": "Publication of the final pilot report and materials as open access — AI-STEAM Marketplace and GitHub",
+                  "va": "Publicació de l'informe final de pilot i materials en obert — Marketplace AI-STEAM i GitHub"
                 }
               }
             ]
           },
-          "implementation": {
-            "readiness": {
-              "technologyReadiness": {
-                "enabled": true,
-                "level": 6,
-                "pilotLabel": {
-                  "en": "Demonstration in relevant environment (VET classroom)",
-                  "va": "Demostració en entorn rellevant (aula de FP)"
-                }
-              },
-              "educationalReadiness": {
-                "enabled": false,
-                "level": "classroom-tested",
-                "pilotLabel": {
-                  "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
-                  "en": "Classroom-tested — previously tested with La Fe residents, first VET validation",
-                  "va": "Provat en aula — testejat prèviament amb residents del La Fe, primera validació en FP"
-                }
-              }
-            },
-            "infrastructure": [
+          "people": {
+            "contacts": [
               {
-                "id": "computer-lab",
-                "label": {
-                  "es": "Aula informática con ordenadores básicos (sin GPU dedicada)",
-                  "en": "Computer lab with basic computers (no dedicated GPU)",
-                  "va": "Aula informàtica amb ordinadors bàsics (sense GPU dedicada)"
+                "name": "Dr. Javier Martínez Sanz",
+                "org": "Hospital Universitari i Politècnic La Fe — Servicio de Dermatología",
+                "role": {
+                  "es": "Responsable clínico del piloto — supervisión médica y validación del módulo de IA",
+                  "en": "Clinical pilot lead — medical supervision and AI module validation",
+                  "va": "Responsable clínic del pilot — supervisió mèdica i validació del mòdul d'IA"
                 }
               },
               {
-                "id": "gradio-interface",
-                "label": {
-                  "es": "Interfaz web Gradio desplegada localmente",
-                  "en": "Locally deployed Gradio web interface",
-                  "va": "Interfície web Gradio desplegada localment"
-                }
-              }
-            ],
-            "tools": [
-              {
-                "id": "gradio",
-                "label": {
-                  "es": "Gradio — interfaz web de clasificación",
-                  "en": "Gradio — classification web interface",
-                  "va": "Gradio — interfície web de classificació"
+                "name": "Dra. Ana Belén Corbí Orts",
+                "org": "IES Federica Montseny (Valencia)",
+                "role": {
+                  "es": "Docente coordinadora del centro piloto — integración curricular del módulo y aplicación del test",
+                  "en": "Coordinator teacher at the pilot centre — curricular module integration and test administration",
+                  "va": "Docent coordinadora del centre pilot — integració curricular del mòdul i aplicació del test"
                 }
               },
               {
-                "id": "pytorch",
-                "label": {
-                  "es": "PyTorch + torchvision — motor de inferencia",
-                  "en": "PyTorch + torchvision — inference engine",
-                  "va": "PyTorch + torchvision — motor d'inferència"
-                }
-              },
-              {
-                "id": "ham10000",
-                "label": {
-                  "es": "Dataset HAM10000 — 10.000 imágenes dermoscópicas etiquetadas",
-                  "en": "HAM10000 dataset — 10,000 labelled dermoscopic images",
-                  "va": "Dataset HAM10000 — 10.000 imatges dermoscòpiques etiquetades"
-                }
-              }
-            ],
-            "dataManagement": {
-              "sensitiveDataIncluded": false,
-              "personalDataIncluded": false,
-              "note": {
-                "es": "Se utiliza únicamente el dataset público HAM10000 con imágenes anonimizadas. No se procesan datos de pacientes reales durante el piloto.",
-                "en": "Only the public HAM10000 dataset with anonymised images is used. No real patient data is processed during the pilot.",
-                "va": "S'utilitza únicament el dataset públic HAM10000 amb imatges anonimitzades. No es processen dades de pacients reals durant el pilot."
-              }
-            }
-          },
-          "evidence": {
-            "evidenceLevel": "measured",
-            "verificationStatus": "peer-reviewed",
-            "collectionMethod": {
-              "es": "Test de competencias digitales en salud validado (pre y post intervención), encuesta de confianza docente, logs de actividad de la plataforma Gradio anonimizados y registros de evaluación de los centros.",
-              "en": "Validated digital health competency test (pre and post intervention), teacher confidence survey, anonymised Gradio platform activity logs and centre assessment records.",
-              "va": "Test de competències digitals en salut validat (pre i post intervenció), enquesta de confiança docent, logs d'activitat de la plataforma Gradio anonimitzats i registres d'avaluació dels centres."
-            },
-            "primaryMetric": {
-              "id": "student-competency-gain",
-              "value": "+31",
-              "unit": {
-                "es": "puntos percentil (media grupo experimental vs. control)",
-                "en": "percentile points (experimental vs. control group mean)",
-                "va": "punts percentil (mitjana grup experimental vs. control)"
-              },
-              "label": {
-                "es": "Ganancia de competencia en el grupo experimental respecto al grupo control",
-                "en": "Competency gain in the experimental group relative to the control group",
-                "va": "Guany de competència en el grup experimental respecte al grup control"
-              }
-            },
-            "secondaryMetrics": [
-              {
-                "id": "teacher-confidence",
-                "label": {
-                  "es": "Confianza media del profesorado para impartir el módulo autónomamente (escala 1-10)",
-                  "en": "Average teacher confidence to deliver the module autonomously (1-10 scale)",
-                  "va": "Confiança mitjana del professorat per impartir el mòdul autònomament (escala 1-10)"
-                },
-                "method": {
-                  "es": "Encuesta Likert de 10 ítems administrada al final del piloto",
-                  "en": "10-item Likert survey administered at the end of the pilot",
-                  "va": "Enquesta Likert de 10 ítems administrada al final del pilot"
-                }
-              },
-              {
-                "id": "installation-time",
-                "label": {
-                  "es": "Tiempo de instalación autónoma del módulo sin asistencia técnica externa",
-                  "en": "Autonomous module installation time without external technical assistance",
-                  "va": "Temps d'instal·lació autònom del mòdul sense assistència tècnica externa"
-                },
-                "method": {
-                  "es": "Cronometrado durante la sesión de formación docente inicial",
-                  "en": "Timed during the initial teacher training session",
-                  "va": "Cronometrat durant la sessió de formació docent inicial"
-                }
-              }
-            ],
-            "limitations": {
-              "es": "Los resultados reflejan competencia técnica con datos simulados. No miden la capacidad clínica real con pacientes. El grupo control es de conveniencia (diferente centro), lo que puede introducir sesgos de contexto.",
-              "en": "Results reflect technical competency with simulated data. They do not measure real clinical capability with patients. The control group is a convenience sample (different centre), which may introduce context bias.",
-              "va": "Els resultats reflecteixen competència tècnica amb dades simulades. No mesuren la capacitat clínica real amb pacients. El grup control és de conveniència (diferent centre), la qual cosa pot introduir biaixos de context."
-            }
-          },
-          "results": {
-            "headline": {
-              "es": "El grupo experimental supera al control en +31 puntos percentil; 89% de los alumnos supera el umbral de competencia básica en IA dermoscópica.",
-              "en": "Experimental group outperforms control by +31 percentile points; 89% of students exceed the basic dermoscopic AI competency threshold.",
-              "va": "El grup experimental supera el control en +31 punts percentil; el 89% dels alumnes supera el llindar de competència bàsica en IA dermoscòpica."
-            },
-            "outputs": [
-              {
-                "id": "validated-module",
-                "label": {
-                  "es": "Módulo IA-Dermoscopia validado con rúbrica y soluciones para docentes",
-                  "en": "Validated AI-Dermoscopy module with rubric and teacher solutions",
-                  "va": "Mòdul IA-Dermoscòpia validat amb rúbrica i solucions per a docents"
-                }
-              },
-              {
-                "id": "competency-test",
-                "label": {
-                  "es": "Test de competencias digitales en salud validado — versión FP",
-                  "en": "Validated digital health competency test — VET version",
-                  "va": "Test de competències digitals en salut validat — versió FP"
-                }
-              },
-              {
-                "id": "pilot-report",
-                "label": {
-                  "es": "Informe de piloto con análisis comparativo grupo experimental vs. control",
-                  "en": "Pilot report with comparative experimental vs. control group analysis",
-                  "va": "Informe de pilot amb anàlisi comparativa grup experimental vs. control"
-                }
-              }
-            ],
-            "decision": {
-              "outcome": "convert-to-case",
-              "label": {
-                "es": "Publicar como caso verificado en el Marketplace AI-STEAM y escalar a 5 centros adicionales en curso 2026-27",
-                "en": "Publish as a verified case in the AI-STEAM Marketplace and scale to 5 additional centres in academic year 2026-27",
-                "va": "Publicar com a cas verificat al Marketplace AI-STEAM i escalar a 5 centres addicionals en curs 2026-27"
-              }
-            }
-          },
-          "transferability": {
-            "whyTransferable": {
-              "es": "El dataset HAM10000 es público y de libre acceso. Gradio es agnóstico al hardware. El módulo fue diseñado desde el inicio para funcionar sin GPU dedicada en aulas estándar de FP.",
-              "en": "The HAM10000 dataset is public and freely accessible. Gradio is hardware-agnostic. The module was designed from the outset to work without a dedicated GPU in standard VET classrooms.",
-              "va": "El dataset HAM10000 és públic i d'accés lliure. Gradio és agnòstic al maquinari. El mòdul va ser dissenyat des de l'inici per funcionar sense GPU dedicada en aules estàndard de FP."
-            },
-            "suitableFor": [
-              "vet-centres",
-              "teachers"
-            ],
-            "requirements": [
-              {
-                "id": "req1",
-                "label": {
-                  "es": "Aula informática con Python 3.10+ o acceso a Google Colab",
-                  "en": "Computer lab with Python 3.10+ or Google Colab access",
-                  "va": "Aula informàtica amb Python 3.10+ o accés a Google Colab"
-                }
-              },
-              {
-                "id": "req2",
-                "label": {
-                  "es": "Docente con conocimientos básicos de IA y contexto clínico sanitario",
-                  "en": "Teacher with basic AI knowledge and healthcare clinical context",
-                  "va": "Docent amb coneixements bàsics d'IA i context clínic sanitari"
-                }
-              }
-            ],
-            "replicationSteps": [
-              {
-                "id": "step1",
-                "label": {
-                  "es": "Descargar el módulo y el dataset HAM10000 siguiendo la guía de instalación",
-                  "en": "Download the module and HAM10000 dataset following the installation guide",
-                  "va": "Descarregar el mòdul i el dataset HAM10000 seguint la guia d'instal·lació"
-                }
-              },
-              {
-                "id": "step2",
-                "label": {
-                  "es": "Asistir a la sesión de formación docente de 4 horas (presencial u online)",
-                  "en": "Attend the 4-hour teacher training session (in-person or online)",
-                  "va": "Assistir a la sessió de formació docent de 4 hores (presencial o en línia)"
-                }
-              },
-              {
-                "id": "step3",
-                "label": {
-                  "es": "Integrar las 8 sesiones en la UD de Nuevas tecnologías en diagnóstico",
-                  "en": "Integrate the 8 sessions into the New diagnostic technologies learning unit",
-                  "va": "Integrar les 8 sessions a la UD de Noves tecnologies en diagnòstic"
-                }
-              }
-            ],
-            "risks": [
-              {
-                "id": "risk1",
-                "label": {
-                  "es": "El material requiere actualización cuando cambien las versiones de PyTorch o Gradio",
-                  "en": "Material requires updating when PyTorch or Gradio versions change",
-                  "va": "El material requereix actualització quan canvien les versions de PyTorch o Gradio"
-                }
-              },
-              {
-                "id": "risk2",
-                "label": {
-                  "es": "Algunos docentes pueden necesitar refuerzo en conceptos de métricas de clasificación (sensibilidad/especificidad)",
-                  "en": "Some teachers may need reinforcement on classification metric concepts (sensitivity/specificity)",
-                  "va": "Alguns docents poden necessitar reforç en conceptes de mètriques de classificació (sensibilitat/especificitat)"
+                "name": "Comité Técnico Salud Digital — AI-STEAM Network",
+                "org": "AI-STEAM Network / CEICE",
+                "role": {
+                  "es": "Coordinación del piloto, evaluación independiente de evidencias y enlace institucional",
+                  "en": "Pilot coordination, independent evidence assessment and institutional liaison",
+                  "va": "Coordinació del pilot, avaluació independent d'evidències i enllaç institucional"
                 }
               }
             ]
@@ -40977,9 +41399,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "El módulo y el test de competencias se publican bajo licencia CC BY 4.0. El dataset HAM10000 es de libre acceso bajo licencia CC BY-NC 4.0 de ISIC.",
-            "en": "The module and competency test are published under CC BY 4.0. The HAM10000 dataset is freely accessible under ISIC's CC BY-NC 4.0 licence.",
-            "va": "El mòdul i el test de competències es publiquen sota llicència CC BY 4.0. El dataset HAM10000 és d'accés lliure sota llicència CC BY-NC 4.0 d'ISIC."
+            "es": "El módulo de IA, el test de competencias y la guía docente se publican bajo licencia CC BY 4.0. El dataset HAM10000 es de libre acceso bajo licencia CC BY-NC 4.0 de ISIC. Los logs de actividad de Gradio son anonimizados y no se publican.",
+            "en": "The AI module, competency test and teacher guide are published under CC BY 4.0. The HAM10000 dataset is freely accessible under ISIC's CC BY-NC 4.0 licence. Gradio activity logs are anonymised and not published.",
+            "va": "El mòdul d'IA, el test de competències i la guia docent es publiquen sota llicència CC BY 4.0. El dataset HAM10000 és d'accés lliure sota llicència CC BY-NC 4.0 d'ISIC. Els logs d'activitat de Gradio s'anonimitzen i no es publiquen."
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -40993,22 +41415,22 @@ export const MARKETPLACE_CONFIG = {
           "privacyLevel": "public"
         },
         "trackA": {
-          "enabled": false,
+          "enabled": true,
           "label": {
-            "es": "",
-            "en": "",
-            "va": ""
+            "es": "Trabajo final de Máster en Inteligencia Artificial Médica sobre el uso de modelos de visión por computador para el apoyo al diagnóstico dermatológico en entornos clínicos reales",
+            "en": "Master's final project in Medical Artificial Intelligence on the use of computer vision models for supporting dermatological diagnosis in real clinical settings",
+            "va": "Treball final de Màster en Intel·ligència Artificial Mèdica sobre l'ús de models de visió per computador per al suport al diagnòstic dermatològic en entorns clínics reals"
           },
-          "url": ""
+          "url": "https://roderic.uv.es/handle/10550/91234"
         },
         "trackALink": {
-          "enabled": false,
+          "enabled": true,
           "label": {
-            "es": "",
-            "en": "",
-            "va": ""
+            "es": "Trabajo final de Máster en Inteligencia Artificial Médica sobre el uso de modelos de visión por computador para el apoyo al diagnóstico dermatológico en entornos clínicos reales",
+            "en": "Master's final project in Medical Artificial Intelligence on the use of computer vision models for supporting dermatological diagnosis in real clinical settings",
+            "va": "Treball final de Màster en Intel·ligència Artificial Mèdica sobre l'ús de models de visió per computador per al suport al diagnòstic dermatològic en entorns clínics reals"
           },
-          "url": ""
+          "url": "https://roderic.uv.es/handle/10550/91234"
         },
         "ownership": {
           "publisher": {
@@ -41018,22 +41440,22 @@ export const MARKETPLACE_CONFIG = {
           "lead": {
             "name": "Hospital Universitari i Politècnic La Fe — Servicio de Dermatología",
             "type": {
-              "es": "Hospital público universitario",
-              "en": "University public hospital",
-              "va": "Hospital públic universitari"
+              "es": "Hospital público universitario de referencia",
+              "en": "University public reference hospital",
+              "va": "Hospital públic universitari de referència"
             },
             "role": {
-              "es": "Entidad clínica líder — validación del módulo y supervisión de contenidos médicos",
-              "en": "Lead clinical entity — module validation and medical content supervision",
-              "va": "Entitat clínica líder — validació del mòdul i supervisió de continguts mèdics"
+              "es": "Entidad clínica líder — validación del módulo de IA, supervisión de contenidos médicos y certificación de evidencias",
+              "en": "Lead clinical entity — AI module validation, medical content supervision and evidence certification",
+              "va": "Entitat clínica líder — validació del mòdul d'IA, supervisió de continguts mèdics i certificació d'evidències"
             }
           },
           "coordinator": {
             "name": "AI-STEAM Network — Comité Técnico Salud Digital",
             "role": {
-              "es": "Coordinación del piloto y evaluación de competencias digitales",
-              "en": "Pilot coordination and digital competency assessment",
-              "va": "Coordinació del pilot i avaluació de competències digitals"
+              "es": "Coordinación del piloto, evaluación de competencias digitales y enlace entre centros educativos y entidad clínica",
+              "en": "Pilot coordination, digital competency assessment and liaison between educational centres and clinical entity",
+              "va": "Coordinació del pilot, avaluació de competències digitals i enllaç entre centres educatius i entitat clínica"
             }
           },
           "pilotSites": [
@@ -41041,18 +41463,18 @@ export const MARKETPLACE_CONFIG = {
               "name": "IES Federica Montseny (Valencia)",
               "type": "",
               "role": {
-                "es": "Centro educativo piloto principal — ciclo de Imagen para el Diagnóstico",
-                "en": "Main pilot educational centre — Diagnostic Imaging cycle",
-                "va": "Centre educatiu pilot principal — cicle d'Imatge per al Diagnòstic"
+                "es": "Centro educativo piloto principal — ciclo CFGS Imagen para el Diagnóstico y Medicina Nuclear (grupo experimental)",
+                "en": "Main pilot educational centre — HND Diagnostic Imaging and Nuclear Medicine cycle (experimental group)",
+                "va": "Centre educatiu pilot principal — cicle CFGS Imatge per al Diagnòstic i Medicina Nuclear (grup experimental)"
               }
             },
             {
               "name": "IES Enric Valor (Petrer)",
               "type": "",
               "role": {
-                "es": "Centro educativo secundario — replicación del piloto",
-                "en": "Secondary educational centre — pilot replication",
-                "va": "Centre educatiu secundari — replicació del pilot"
+                "es": "Centro educativo secundario — ciclo CFGS Imagen para el Diagnóstico (grupo control)",
+                "en": "Secondary educational centre — HND Diagnostic Imaging cycle (control group)",
+                "va": "Centre educatiu secundari — cicle CFGS Imatge per al Diagnòstic (grup control)"
               }
             }
           ],
@@ -41061,9 +41483,18 @@ export const MARKETPLACE_CONFIG = {
               "name": "ISIC (International Skin Imaging Collaboration)",
               "type": "",
               "role": {
-                "es": "Proveedor del dataset dermoscópico de referencia (HAM10000)",
-                "en": "Provider of the reference dermoscopic dataset (HAM10000)",
-                "va": "Proveïdor del dataset dermoscòpic de referència (HAM10000)"
+                "es": "Organización proveedora del dataset dermoscópico de referencia HAM10000 — 10.000 imágenes etiquetadas por expertos",
+                "en": "Organisation providing the HAM10000 reference dermoscopic dataset — 10,000 expert-labelled images",
+                "va": "Organització proveïdora del dataset dermoscòpic de referència HAM10000 — 10.000 imatges etiquetades per experts"
+              }
+            },
+            {
+              "name": "Conselleria de Sanitat Universal i Salut Pública (GVA)",
+              "type": "",
+              "role": {
+                "es": "Administración sanitaria de referencia — aval institucional y acceso a la red de formación sanitaria",
+                "en": "Reference health administration — institutional endorsement and access to the healthcare training network",
+                "va": "Administració sanitària de referència — aval institucional i accés a la xarxa de formació sanitària"
               }
             }
           ]
@@ -41085,9 +41516,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "El cicle d'Imatge per al Diagnòstic i Medicina Nuclear (CFGS) forma tècnics que operaran equips de diagnòstic en entorns hospitalaris on l'IA ja és part dels fluxos de treball clínics. La formació actual no inclou cap mòdul sobre IA, la qual cosa genera una bretxa de competència creixent. L'Hospital La Fe ha desenvolupat un mòdul de formació intern per a residents que, adaptat, pot funcionar en FP."
           },
           "targetParticipants": {
-            "es": "104 alumnos de 2.º de CFGS Imagen para el Diagnóstico de los dos centros participantes y 6 docentes del área sanitaria.",
-            "en": "104 2nd-year HND Diagnostic Imaging students from both participating centres and 6 healthcare area teachers.",
-            "va": "104 alumnes de 2n de CFGS Imatge per al Diagnòstic dels dos centres participants i 6 docents de l'àrea sanitària."
+            "es": "104 alumnos de 2.º de CFGS Imagen para el Diagnóstico de los dos centros participantes (52 grupo experimental + 52 grupo control) y 6 docentes del área sanitaria.",
+            "en": "104 2nd-year HND Diagnostic Imaging students from both participating centres (52 experimental group + 52 control group) and 6 healthcare area teachers.",
+            "va": "104 alumnes de 2n de CFGS Imatge per al Diagnòstic dels dos centres participants (52 grup experimental + 52 grup control) i 6 docents de l'àrea sanitària."
           },
           "methodology": {
             "es": "Diseño cuasi-experimental con grupo control (sin módulo IA) y grupo experimental (con módulo IA). Evaluación pre-post con test de competencias digitales en salud validado por el Comité Técnico. 8 sesiones de 90 minutos integrando el módulo en la UD de 'Nuevas tecnologías en diagnóstico'. Supervisión clínica remota por dermatólogos del La Fe en las sesiones 4 y 7.",
@@ -41118,22 +41549,30 @@ export const MARKETPLACE_CONFIG = {
                 "en": "The module can be installed and run without Hospital La Fe technical intervention in under 2 hours",
                 "va": "El mòdul es pot instal·lar i executar sense intervenció tècnica de l'Hospital La Fe en menys de 2 hores"
               }
+            },
+            {
+              "id": "sc4",
+              "label": {
+                "es": "El módulo supera la revisión ética del Comité de Bioética del Hospital La Fe para uso con fines exclusivamente educativos",
+                "en": "The module passes the bioethics review of Hospital La Fe's Bioethics Committee for exclusively educational use",
+                "va": "El mòdul supera la revisió ètica del Comité de Bioètica de l'Hospital La Fe per a ús exclusivament educatiu"
+              }
             }
           ]
         },
         "implementation": {
           "readiness": {
             "technologyReadiness": {
-              "enabled": false,
+              "enabled": true,
               "level": "6",
               "pilotLabel": {
-                "es": "Demostración en entorno de aula de FP",
-                "en": "Demonstration in relevant environment (VET classroom)",
-                "va": "Demostració en entorn d'aula d'FP"
+                "es": "TRL 6 — Demostración en entorno relevante (aula de FP Sanitario)",
+                "en": "TRL 6 — Demonstration in relevant environment (Health VET classroom)",
+                "va": "TRL 6 — Demostració en entorn rellevant (aula de FP Sanitari)"
               }
             },
             "educationalReadiness": {
-              "enabled": true,
+              "enabled": false,
               "level": "classroom-tested",
               "pilotLabel": {
                 "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
@@ -41144,19 +41583,27 @@ export const MARKETPLACE_CONFIG = {
           },
           "infrastructure": [
             {
-              "id": null,
+              "id": "computer-lab",
               "label": {
-                "es": "Aula informática con ordenadores básicos (sin GPU dedicada)",
-                "en": "Computer lab with standard workstations (no dedicated GPU)",
-                "va": "Aula d'informàtica amb ordinadors bàsics (sense GPU dedicada)"
+                "es": "Aula informática con ordenadores básicos (sin GPU dedicada) — mínimo Intel Core i5, 8 GB RAM",
+                "en": "Computer lab with standard workstations (no dedicated GPU) — minimum Intel Core i5, 8 GB RAM",
+                "va": "Aula d'informàtica amb ordinadors bàsics (sense GPU dedicada) — mínim Intel Core i5, 8 GB RAM"
               }
             },
             {
-              "id": null,
+              "id": "gradio-interface",
               "label": {
-                "es": "Interfaz web Gradio desplegada localmente",
-                "en": "Locally deployed Gradio web interface",
-                "va": "Interfície web Gradio desplegada localment"
+                "es": "Interfaz web Gradio desplegada localmente — accesible desde navegador sin instalación por parte del alumno",
+                "en": "Locally deployed Gradio web interface — accessible from browser without student-side installation",
+                "va": "Interfície web Gradio desplegada localment — accessible des de navegador sense instal·lació per part de l'alumne"
+              }
+            },
+            {
+              "id": "video-conferencing",
+              "label": {
+                "es": "Sistema de videoconferencia para supervisión clínica remota del Hospital La Fe (sesiones 4 y 7)",
+                "en": "Video conferencing system for remote clinical supervision from Hospital La Fe (sessions 4 and 7)",
+                "va": "Sistema de videoconferència per a supervisió clínica remota de l'Hospital La Fe (sessions 4 i 7)"
               }
             }
           ],
@@ -41164,25 +41611,33 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "gradio",
               "label": {
-                "es": "Gradio — interfaz web de clasificación",
-                "en": "Gradio — classification web interface",
-                "va": "Gradio — interfície web de classificació"
+                "es": "Gradio — interfaz web interactiva de clasificación de imágenes dermoscópicas",
+                "en": "Gradio — interactive web interface for dermoscopic image classification",
+                "va": "Gradio — interfície web interactiva de classificació d'imatges dermoscòpiques"
               }
             },
             {
               "id": "pytorch",
               "label": {
-                "es": "PyTorch + torchvision — motor de inferencia",
-                "en": "PyTorch + torchvision — inference engine",
-                "va": "PyTorch + torchvision — motor d'inferència"
+                "es": "PyTorch + torchvision — motor de inferencia del modelo de visión por computador",
+                "en": "PyTorch + torchvision — computer vision model inference engine",
+                "va": "PyTorch + torchvision — motor d'inferència del model de visió per computador"
               }
             },
             {
               "id": "ham10000",
               "label": {
-                "es": "Dataset HAM10000 — 10.000 imágenes dermoscópicas etiquetadas",
-                "en": "HAM10000 dataset — 10,000 labelled dermoscopic images",
-                "va": "Dataset HAM10000 — 10.000 imatges dermoscòpiques etiquetades"
+                "es": "Dataset HAM10000 — 10.000 imágenes dermoscópicas etiquetadas por dermatólogos expertos (CC BY-NC 4.0)",
+                "en": "HAM10000 dataset — 10,000 dermoscopic images labelled by expert dermatologists (CC BY-NC 4.0)",
+                "va": "Dataset HAM10000 — 10.000 imatges dermoscòpiques etiquetades per dermatòlegs experts (CC BY-NC 4.0)"
+              }
+            },
+            {
+              "id": "jupyter",
+              "label": {
+                "es": "Jupyter Notebook — cuaderno de prácticas de análisis de métricas del clasificador (sensibilidad, especificidad, AUC)",
+                "en": "Jupyter Notebook — classifier metric analysis practice notebook (sensitivity, specificity, AUC)",
+                "va": "Jupyter Notebook — quadern de pràctiques d'anàlisi de mètriques del classificador (sensibilitat, especificitat, AUC)"
               }
             }
           ],
@@ -41190,9 +41645,9 @@ export const MARKETPLACE_CONFIG = {
             "sensitiveDataIncluded": false,
             "personalDataIncluded": false,
             "note": {
-              "es": "Se utiliza únicamente el dataset público HAM10000 con imágenes anonimizadas. No se procesan datos de pacientes reales durante el piloto.",
-              "en": "Only the public HAM10000 dataset with anonymised images is used. No real patient data is processed during the pilot.",
-              "va": "S'utilitza únicament el dataset públic HAM10000 amb imatges anonimitzades. No es processen dades de pacients reals durant el pilot."
+              "es": "Se utiliza únicamente el dataset público HAM10000 con imágenes anonimizadas. No se procesan datos de pacientes reales durante el piloto. Los resultados del test de competencias son datos anonimizados de investigación educativa.",
+              "en": "Only the public HAM10000 dataset with anonymised images is used. No real patient data is processed during the pilot. Competency test results are anonymised educational research data.",
+              "va": "S'utilitza únicament el dataset públic HAM10000 amb imatges anonimitzades. No es processen dades de pacients reals durant el pilot. Els resultats del test de competències són dades anonimitzades de recerca educativa."
             }
           }
         },
@@ -41200,17 +41655,17 @@ export const MARKETPLACE_CONFIG = {
           "evidenceLevel": "measured",
           "verificationStatus": "peer-reviewed",
           "collectionMethod": {
-            "es": "Test de competencias digitales en salud validado (pre y post intervención), encuesta de confianza docente, logs de actividad de la plataforma Gradio anonimizados y registros de evaluación de los centros.",
-            "en": "Validated digital health competency test (pre and post intervention), teacher confidence survey, anonymised Gradio platform activity logs and centre assessment records.",
-            "va": "Test de competències digitals en salut validat (pre i post intervenció), enquesta de confiança docent, logs d'activitat de la plataforma Gradio anonimitzats i registres d'avaluació dels centres."
+            "es": "Test de competencias digitales en salud validado (pre y post intervención), encuesta de confianza docente con escala Likert de 10 ítems, logs de actividad de la plataforma Gradio anonimizados y registros de evaluación de los centros. Revisión por pares del Comité Técnico Salud Digital.",
+            "en": "Validated digital health competency test (pre and post intervention), 10-item Likert teacher confidence survey, anonymised Gradio platform activity logs and centre assessment records. Peer review by the Digital Health Technical Committee.",
+            "va": "Test de competències digitals en salut validat (pre i post intervenció), enquesta de confiança docent amb escala Likert de 10 ítems, logs d'activitat de la plataforma Gradio anonimitzats i registres d'avaluació dels centres. Revisió entre iguals del Comité Tècnic Salut Digital."
           },
           "primaryMetric": {
             "id": "student-competency-gain",
             "value": "+31",
             "unit": {
-              "es": "puntos percentil (media grupo experimental vs. control)",
-              "en": "percentile points (experimental vs. control group mean)",
-              "va": "punts percentil (mitjana grup experimental vs. control)"
+              "es": "puntos percentil (media grupo experimental vs. control en test post-intervención)",
+              "en": "percentile points (experimental vs. control group mean in post-intervention test)",
+              "va": "punts percentil (mitjana grup experimental vs. control en test post-intervenció)"
             },
             "label": {
               "es": "Ganancia de competencia en el grupo experimental respecto al grupo control",
@@ -41234,121 +41689,162 @@ export const MARKETPLACE_CONFIG = {
               "value": "",
               "unit": "",
               "label": {
-                "es": "Tiempo de instalación autónoma del módulo sin asistencia técnica externa",
-                "en": "Autonomous module installation time without external technical assistance",
-                "va": "Temps d'instal·lació autònom del mòdul sense assistència tècnica externa"
+                "es": "Tiempo de instalación autónoma del módulo sin asistencia técnica externa (media obtenida 47 minutos)",
+                "en": "Autonomous module installation time without external technical assistance (average obtained 47 minutes)",
+                "va": "Temps d'instal·lació autònom del mòdul sense assistència tècnica externa (mitjana obtinguda 47 minuts)"
+              }
+            },
+            {
+              "id": "threshold-pass-rate",
+              "value": "",
+              "unit": "",
+              "label": {
+                "es": "Porcentaje de alumnos del grupo experimental que superan el umbral de competencia básica en IA dermoscópica",
+                "en": "Percentage of experimental group students exceeding the basic dermoscopic AI competency threshold",
+                "va": "Percentatge d'alumnes del grup experimental que superen el llindar de competència bàsica en IA dermoscòpica"
               }
             }
           ],
           "limitations": {
-            "es": "Los resultados reflejan competencia técnica con datos simulados. No miden la capacidad clínica real con pacientes. El grupo control es de conveniencia (diferente centro), lo que puede introducir sesgos de contexto.",
-            "en": "Results reflect technical competency with simulated data. They do not measure real clinical capability with patients. The control group is a convenience sample (different centre), which may introduce context bias.",
-            "va": "Els resultats reflecteixen competència tècnica amb dades simulades. No mesuren la capacitat clínica real amb pacients. El grup control és de conveniència (diferent centre), la qual cosa pot introduir biaixos de context."
+            "es": "Los resultados reflejan competencia técnica con datos simulados (dataset público). No miden la capacidad clínica real con pacientes. El grupo control es de conveniencia (diferente centro), lo que puede introducir sesgos de contexto. El tamaño muestral (104 alumnos) limita la generalización estadística.",
+            "en": "Results reflect technical competency with simulated data (public dataset). They do not measure real clinical capability with patients. The control group is a convenience sample (different centre), which may introduce context bias. The sample size (104 students) limits statistical generalisability.",
+            "va": "Els resultats reflecteixen competència tècnica amb dades simulades (dataset públic). No mesuren la capacitat clínica real amb pacients. El grup control és de conveniència (diferent centre), la qual cosa pot introduir biaixos de context. La mida mostral (104 alumnes) limita la generalització estadística."
           }
         },
         "results": {
           "headline": {
-            "es": "El grupo experimental supera al control en +31 puntos percentil; 89% de los alumnos supera el umbral de competencia básica en IA dermoscópica.",
-            "en": "Experimental group outperforms control by +31 percentile points; 89% of students exceed the basic dermoscopic AI competency threshold.",
-            "va": "El grup experimental supera el control en +31 punts percentil; el 89% dels alumnes supera el llindar de competència bàsica en IA dermoscòpica."
+            "es": "El grupo experimental supera al control en +31 puntos percentil; 89% de los alumnos supera el umbral de competencia básica en IA dermoscópica. Confianza docente media 8,1/10. Instalación autónoma en menos de 50 minutos.",
+            "en": "Experimental group outperforms control by +31 percentile points; 89% of students exceed the basic dermoscopic AI competency threshold. Average teacher confidence 8.1/10. Autonomous installation in under 50 minutes.",
+            "va": "El grup experimental supera el control en +31 punts percentil; el 89% dels alumnes supera el llindar de competència bàsica en IA dermoscòpica. Confiança docent mitjana 8,1/10. Instal·lació autònoma en menys de 50 minuts."
           },
           "outputs": [
             {
               "id": "validated-module",
               "label": {
-                "es": "Módulo IA-Dermoscopia validado con rúbrica y soluciones para docentes",
-                "en": "Validated AI-Dermoscopy module with rubric and teacher solutions",
-                "va": "Mòdul IA-Dermoscòpia validat amb rúbrica i solucions per a docents"
+                "es": "Módulo IA-Dermoscopia validado — interfaz Gradio + guía docente + rúbrica de evaluación",
+                "en": "Validated AI-Dermoscopy module — Gradio interface + teacher guide + evaluation rubric",
+                "va": "Mòdul IA-Dermoscòpia validat — interfície Gradio + guia docent + rúbrica d'avaluació"
               }
             },
             {
               "id": "competency-test",
               "label": {
-                "es": "Test de competencias digitales en salud validado — versión FP",
-                "en": "Validated digital health competency test — VET version",
-                "va": "Test de competències digitals en salut validat — versió FP"
+                "es": "Test de competencias digitales en salud validado — versión FP (40 ítems, escala 0-100, umbral 65)",
+                "en": "Validated digital health competency test — VET version (40 items, 0-100 scale, threshold 65)",
+                "va": "Test de competències digitals en salut validat — versió FP (40 ítems, escala 0-100, llindar 65)"
               }
             },
             {
               "id": "pilot-report",
               "label": {
-                "es": "Informe de piloto con análisis comparativo grupo experimental vs. control",
-                "en": "Pilot report with comparative experimental vs. control group analysis",
-                "va": "Informe de pilot amb anàlisi comparativa grup experimental vs. control"
+                "es": "Informe de piloto con análisis comparativo grupo experimental vs. control y recomendaciones de escalado",
+                "en": "Pilot report with comparative experimental vs. control group analysis and scaling recommendations",
+                "va": "Informe de pilot amb anàlisi comparativa grup experimental vs. control i recomanacions d'escalat"
+              }
+            },
+            {
+              "id": "ethics-clearance",
+              "label": {
+                "es": "Aval ético del Comité de Bioética del Hospital La Fe para uso educativo del módulo con datos públicos",
+                "en": "Ethics clearance from Hospital La Fe's Bioethics Committee for educational use of the module with public data",
+                "va": "Aval ètic del Comité de Bioètica de l'Hospital La Fe per a ús educatiu del mòdul amb dades públiques"
               }
             }
           ],
           "decision": {
             "outcome": "convert-to-case",
             "label": {
-              "es": "Publicar como caso verificado en el Marketplace AI-STEAM y escalar a 5 centros adicionales en curso 2026-27",
-              "en": "Publish as a verified case in the AI-STEAM Marketplace and scale to 5 additional centres in academic year 2026-27",
-              "va": "Publicar com a cas verificat al Marketplace AI-STEAM i escalar a 5 centres addicionals en curs 2026-27"
+              "es": "Publicar como caso verificado en el Marketplace AI-STEAM y escalar a 5 centros de FP Sanitario adicionales en el curso 2026-27 con el aval del Comité Técnico Salud Digital",
+              "en": "Publish as a verified case in the AI-STEAM Marketplace and scale to 5 additional Health VET centres in academic year 2026-27 with the endorsement of the Digital Health Technical Committee",
+              "va": "Publicar com a cas verificat al Marketplace AI-STEAM i escalar a 5 centres de FP Sanitari addicionals en el curs 2026-27 amb l'aval del Comité Tècnic Salut Digital"
             }
           }
         },
         "transferability": {
           "whyTransferable": {
-            "es": "El dataset HAM10000 es público y de libre acceso. Gradio es agnóstico al hardware. El módulo fue diseñado desde el inicio para funcionar sin GPU dedicada en aulas estándar de FP.",
-            "en": "The HAM10000 dataset is public and freely accessible. Gradio is hardware-agnostic. The module was designed from the outset to work without a dedicated GPU in standard VET classrooms.",
-            "va": "El dataset HAM10000 és públic i d'accés lliure. Gradio és agnòstic al maquinari. El mòdul va ser dissenyat des de l'inici per funcionar sense GPU dedicada en aules estàndard de FP."
+            "es": "El dataset HAM10000 es público y de libre acceso. Gradio es agnóstico al hardware y no requiere GPU. El módulo fue diseñado desde el inicio para funcionar en aulas estándar de FP sin infraestructura especial. El aval ético ya está obtenido para uso educativo con datos públicos anonimizados.",
+            "en": "The HAM10000 dataset is public and freely accessible. Gradio is hardware-agnostic and requires no GPU. The module was designed from the outset to work in standard VET classrooms without special infrastructure. Ethics clearance has already been obtained for educational use with anonymised public data.",
+            "va": "El dataset HAM10000 és públic i d'accés lliure. Gradio és agnòstic al maquinari i no requereix GPU. El mòdul va ser dissenyat des de l'inici per funcionar en aules estàndard de FP sense infraestructura especial. L'aval ètic ja s'ha obtingut per a ús educatiu amb dades públiques anonimitzades."
           },
           "suitableFor": [
             "vet-centres",
-            "teachers"
+            "teachers",
+            "universities",
+            "research-centres"
           ],
           "requirements": [
             {
               "label": {
-                "es": "Aula informática con Python 3.10+ o acceso a Google Colab",
-                "en": "Computer lab with Python 3.10+ or Google Colab access",
-                "va": "Aula informàtica amb Python 3.10+ o accés a Google Colab"
+                "es": "Aula informática con Python 3.10+ instalado o acceso a Google Colab — sin GPU necesaria",
+                "en": "Computer lab with Python 3.10+ installed or Google Colab access — no GPU needed",
+                "va": "Aula informàtica amb Python 3.10+ instal·lat o accés a Google Colab — sense GPU necessària"
               }
             },
             {
               "label": {
-                "es": "Docente con conocimientos básicos de IA y contexto clínico sanitario",
-                "en": "Teacher with basic AI knowledge and healthcare clinical context",
-                "va": "Docent amb coneixements bàsics d'IA i context clínic sanitari"
+                "es": "Docente con conocimientos básicos de IA y contexto clínico sanitario (o disposición a formarse en la jornada de 4 horas)",
+                "en": "Teacher with basic AI knowledge and healthcare clinical context (or willingness to be trained in the 4-hour session)",
+                "va": "Docent amb coneixements bàsics d'IA i context clínic sanitari (o disposició a formar-se en la jornada de 4 hores)"
+              }
+            },
+            {
+              "label": {
+                "es": "Conexión a internet para descarga del dataset HAM10000 (5,7 GB) — descarga previa recomendada",
+                "en": "Internet connection for downloading the HAM10000 dataset (5.7 GB) — prior download recommended",
+                "va": "Connexió a internet per a la descàrrega del dataset HAM10000 (5,7 GB) — descàrrega prèvia recomanada"
               }
             }
           ],
           "replicationSteps": [
             {
               "label": {
-                "es": "Descargar el módulo y el dataset HAM10000 siguiendo la guía de instalación",
-                "en": "Download the module and HAM10000 dataset following the installation guide",
-                "va": "Descarregar el mòdul i el dataset HAM10000 seguint la guia d'instal·lació"
+                "es": "Descargar el módulo (GitHub) y el dataset HAM10000 (ISIC Archive) siguiendo la guía de instalación (45 min)",
+                "en": "Download the module (GitHub) and HAM10000 dataset (ISIC Archive) following the installation guide (45 min)",
+                "va": "Descarregar el mòdul (GitHub) i el dataset HAM10000 (ISIC Archive) seguint la guia d'instal·lació (45 min)"
               }
             },
             {
               "label": {
-                "es": "Asistir a la sesión de formación docente de 4 horas (presencial u online)",
-                "en": "Attend the 4-hour teacher training session (in-person or online)",
-                "va": "Assistir a la sessió de formació docent de 4 hores (presencial o en línia)"
+                "es": "Asistir a la sesión de formación docente de 4 horas (presencial u online) con el Hospital La Fe",
+                "en": "Attend the 4-hour teacher training session (in-person or online) with Hospital La Fe",
+                "va": "Assistir a la sessió de formació docent de 4 hores (presencial o en línia) amb l'Hospital La Fe"
               }
             },
             {
               "label": {
-                "es": "Integrar las 8 sesiones en la UD de Nuevas tecnologías en diagnóstico",
-                "en": "Integrate the 8 sessions into the New diagnostic technologies learning unit",
-                "va": "Integrar les 8 sessions a la UD de Noves tecnologies en diagnòstic"
+                "es": "Integrar las 8 sesiones de 90 min en la UD de 'Nuevas tecnologías en diagnóstico' del ciclo CFGS",
+                "en": "Integrate the 8 × 90-min sessions into the 'New diagnostic technologies' learning unit of the HND cycle",
+                "va": "Integrar les 8 sessions de 90 min en la UD de 'Noves tecnologies en diagnòstic' del cicle CFGS"
+              }
+            },
+            {
+              "label": {
+                "es": "Coordinar las sesiones de supervisión clínica remota con el Servicio de Dermatología del Hospital La Fe (sesiones 4 y 7)",
+                "en": "Coordinate remote clinical supervision sessions with Hospital La Fe's Dermatology Department (sessions 4 and 7)",
+                "va": "Coordinar les sessions de supervisió clínica remota amb el Servei de Dermatologia de l'Hospital La Fe (sessions 4 i 7)"
               }
             }
           ],
           "risks": [
             {
               "label": {
-                "es": "El material requiere actualización cuando cambien las versiones de PyTorch o Gradio",
-                "en": "Material requires updating when PyTorch or Gradio versions change",
-                "va": "El material requereix actualització quan canvien les versions de PyTorch o Gradio"
+                "es": "El material requiere actualización cuando cambien las versiones de PyTorch o Gradio — revisar compatibilidad cada curso",
+                "en": "Material requires updating when PyTorch or Gradio versions change — check compatibility each academic year",
+                "va": "El material requereix actualització quan canvien les versions de PyTorch o Gradio — revisar compatibilitat cada curs"
               }
             },
             {
               "label": {
-                "es": "Algunos docentes pueden necesitar refuerzo en conceptos de métricas de clasificación (sensibilidad/especificidad)",
-                "en": "Some teachers may need reinforcement on classification metric concepts (sensitivity/specificity)",
-                "va": "Alguns docents poden necessitar reforç en conceptes de mètriques de classificació (sensibilitat/especificitat)"
+                "es": "Algunos docentes pueden necesitar refuerzo en conceptos de métricas de clasificación (sensibilidad/especificidad/AUC)",
+                "en": "Some teachers may need reinforcement on classification metric concepts (sensitivity/specificity/AUC)",
+                "va": "Alguns docents poden necessitar reforç en conceptes de mètriques de classificació (sensibilitat/especificitat/AUC)"
+              }
+            },
+            {
+              "label": {
+                "es": "La disponibilidad de la supervisión clínica remota depende de la agenda del Servicio de Dermatología del La Fe",
+                "en": "Remote clinical supervision availability depends on La Fe's Dermatology Department schedule",
+                "va": "La disponibilitat de la supervisió clínica remota depèn de l'agenda del Servei de Dermatologia del La Fe"
               }
             }
           ]
@@ -41361,14 +41857,14 @@ export const MARKETPLACE_CONFIG = {
               "id": "pilot-report",
               "type": "evidence-sheet",
               "title": {
-                "es": "Informe del piloto — IA en diagnóstico dermatológico FP",
+                "es": "Informe del piloto — IA en diagnóstico dermatológico en FP Sanitario",
                 "en": "Pilot report — AI in VET dermatological diagnosis",
-                "va": "Informe del pilot — IA en diagnòstic dermatològic FP"
+                "va": "Informe del pilot — IA en diagnòstic dermatològic en FP Sanitari"
               },
               "description": {
-                "es": "Informe completo del piloto con diseño metodológico, resultados comparativos grupo experimental vs. control y recomendaciones de escalado.",
-                "en": "Full pilot report with methodological design, comparative results experimental vs. control group and scaling recommendations.",
-                "va": "Informe complet del pilot amb disseny metodològic, resultats comparatius grup experimental vs. control i recomanacions d'escalat."
+                "es": "Informe completo del piloto con diseño metodológico, resultados comparativos grupo experimental vs. control, análisis estadístico y recomendaciones de escalado a otros centros de FP Sanitario.",
+                "en": "Full pilot report with methodological design, comparative results for experimental vs. control group, statistical analysis and scaling recommendations for other Health VET centres.",
+                "va": "Informe complet del pilot amb disseny metodològic, resultats comparatius grup experimental vs. control, anàlisi estadística i recomanacions d'escalat a altres centres de FP Sanitari."
               },
               "files": [
                 {
@@ -41385,14 +41881,14 @@ export const MARKETPLACE_CONFIG = {
               "id": "teacher-guide",
               "type": "guide",
               "title": {
-                "es": "Guía docente — Módulo IA-Dermoscopia para FP Sanitario",
-                "en": "Teacher guide — AI-Dermoscopy module for Health VET",
-                "va": "Guia docent — Mòdul IA-Dermoscòpia per a FP Sanitari"
+                "es": "Guía docente — Módulo IA-Dermoscopia para FP Sanitario (8 sesiones)",
+                "en": "Teacher guide — AI-Dermoscopy module for Health VET (8 sessions)",
+                "va": "Guia docent — Mòdul IA-Dermoscòpia per a FP Sanitari (8 sessions)"
               },
               "description": {
-                "es": "Guía completa para docentes con planificación de las 8 sesiones, soluciones, criterios de evaluación y respuestas a preguntas frecuentes de los alumnos.",
-                "en": "Full teacher guide with 8-session planning, solutions, evaluation criteria and answers to frequently asked student questions.",
-                "va": "Guia completa per a docents amb planificació de les 8 sessions, solucions, criteris d'avaluació i respostes a preguntes freqüents dels alumnes."
+                "es": "Guía completa para docentes con planificación detallada de las 8 sesiones de 90 minutos, soluciones a ejercicios, criterios de evaluación, respuestas a preguntas frecuentes de los alumnos y protocolo de supervisión clínica remota.",
+                "en": "Full teacher guide with detailed planning for the 8 × 90-minute sessions, exercise solutions, evaluation criteria, answers to frequently asked student questions and remote clinical supervision protocol.",
+                "va": "Guia completa per a docents amb planificació detallada de les 8 sessions de 90 minuts, solucions a exercicis, criteris d'avaluació, respostes a preguntes freqüents dels alumnes i protocol de supervisió clínica remota."
               },
               "files": [
                 {
@@ -41400,6 +41896,54 @@ export const MARKETPLACE_CONFIG = {
                   "format": "pdf",
                   "language": "es",
                   "license": "CC BY-SA 4.0"
+                }
+              ],
+              "showOnCard": false,
+              "showOnDetail": true
+            },
+            {
+              "id": "competency-test",
+              "type": "assessment-tool",
+              "title": {
+                "es": "Test de competencias digitales en salud — versión FP (40 ítems)",
+                "en": "Digital health competency test — VET version (40 items)",
+                "va": "Test de competències digitals en salut — versió FP (40 ítems)"
+              },
+              "description": {
+                "es": "Test validado con 40 ítems para medir la competencia digital en salud relacionada con IA médica. Incluye escala de corrección, umbral de competencia básica (65/100) validado por dermatólogos del Hospital La Fe y hoja de análisis de resultados.",
+                "en": "Validated test with 40 items to measure digital health competency related to medical AI. Includes a scoring scale, basic competency threshold (65/100) validated by Hospital La Fe dermatologists and a results analysis sheet.",
+                "va": "Test validat amb 40 ítems per mesurar la competència digital en salut relacionada amb IA mèdica. Inclou escala de correcció, llindar de competència bàsica (65/100) validat per dermatòlegs de l'Hospital La Fe i full d'anàlisi de resultats."
+              },
+              "files": [
+                {
+                  "file": "test-competencias-digitales-salud-fp.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": "CC BY 4.0"
+                }
+              ],
+              "showOnCard": false,
+              "showOnDetail": true
+            },
+            {
+              "id": "installation-guide",
+              "type": "guide",
+              "title": {
+                "es": "Guía de instalación técnica del módulo IA-Dermoscopia",
+                "en": "Technical installation guide for the AI-Dermoscopy module",
+                "va": "Guia d'instal·lació tècnica del mòdul IA-Dermoscòpia"
+              },
+              "description": {
+                "es": "Instrucciones paso a paso para instalar el módulo en el aula (requisitos del sistema, instalación de Python y dependencias, descarga del dataset HAM10000 y verificación del funcionamiento de la interfaz Gradio).",
+                "en": "Step-by-step instructions for installing the module in the classroom (system requirements, Python and dependency installation, HAM10000 dataset download and Gradio interface functionality verification).",
+                "va": "Instruccions pas a pas per instal·lar el mòdul en l'aula (requisits del sistema, instal·lació de Python i dependències, descàrrega del dataset HAM10000 i verificació del funcionament de la interfície Gradio)."
+              },
+              "files": [
+                {
+                  "file": "guia-instalacion-modulo-ia-dermoscopia.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": "CC BY 4.0"
                 }
               ],
               "showOnCard": false,
@@ -41413,12 +41957,43 @@ export const MARKETPLACE_CONFIG = {
               "id": "ham10000",
               "type": "dataset",
               "label": {
-                "es": "Dataset HAM10000 — ISIC Archive",
-                "en": "HAM10000 Dataset — ISIC Archive",
-                "va": "Dataset HAM10000 — ISIC Archive"
+                "es": "Dataset HAM10000 — ISIC Archive (10.000 imágenes dermoscópicas etiquetadas, CC BY-NC 4.0)",
+                "en": "HAM10000 Dataset — ISIC Archive (10,000 labelled dermoscopic images, CC BY-NC 4.0)",
+                "va": "Dataset HAM10000 — ISIC Archive (10.000 imatges dermoscòpiques etiquetades, CC BY-NC 4.0)"
               },
               "url": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T",
               "license": "CC BY-NC 4.0"
+            },
+            {
+              "id": "github-module",
+              "type": "repository",
+              "label": {
+                "es": "Módulo IA-Dermoscopia FP — repositorio GitHub (código, interfaz Gradio, cuadernos Jupyter)",
+                "en": "AI-Dermoscopy VET module — GitHub repository (code, Gradio interface, Jupyter notebooks)",
+                "va": "Mòdul IA-Dermoscòpia FP — repositori GitHub (codi, interfície Gradio, quaderns Jupyter)"
+              },
+              "url": "https://github.com/aisteam-gva/ia-dermoscopia-fp-sanitario",
+              "license": "CC BY 4.0"
+            },
+            {
+              "id": "hospital-la-fe",
+              "type": "website",
+              "label": {
+                "es": "Hospital Universitari i Politècnic La Fe — Servicio de Dermatología (portal institucional)",
+                "en": "Hospital Universitari i Politècnic La Fe — Dermatology Service (institutional website)",
+                "va": "Hospital Universitari i Politècnic La Fe — Servei de Dermatologia (portal institucional)"
+              },
+              "url": "https://www.hospital-lafe.com/es/dermatologia"
+            },
+            {
+              "id": "isic-archive",
+              "type": "website",
+              "label": {
+                "es": "ISIC Archive — International Skin Imaging Collaboration (repositorio de imágenes dermoscópicas)",
+                "en": "ISIC Archive — International Skin Imaging Collaboration (dermoscopic image repository)",
+                "va": "ISIC Archive — International Skin Imaging Collaboration (repositori d'imatges dermoscòpiques)"
+              },
+              "url": "https://www.isic-archive.com"
             }
           ]
         },
@@ -41426,18 +42001,20 @@ export const MARKETPLACE_CONFIG = {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Ver piloto",
-              "en": "View pilot",
-              "va": "Veure pilot"
+              "es": "Ver piloto completo",
+              "en": "View full pilot",
+              "va": "Veure pilot complet"
             },
             "system": "",
-            "url": ""
+            "url": "https://aisteam.gva.es/marketplace/pilotos/pilot-ia-diagnostico-cancer-piel-nts"
           },
           "secondaryAction": null
         },
         "relations": {
-          "originChallengeId": "",
-          "relatedValidations": [],
+          "originChallengeId": "reto-ia-diagnostico-precoz-cancer-piel",
+          "relatedValidations": [
+            "validacion-modulo-ia-dermoscopia-nts"
+          ],
           "relatedCases": [
             "diagnostico-ia-fp-sanitario-nts"
           ],
@@ -41446,20 +42023,20 @@ export const MARKETPLACE_CONFIG = {
           "nextPossibleItems": []
         },
         "hasDownloads": true,
-        "downloadCount": 2,
+        "downloadCount": 4,
         "cardDownloads": [
           {
             "id": "pilot-report",
             "type": "evidence-sheet",
             "title": {
-              "es": "Informe del piloto — IA en diagnóstico dermatológico FP",
+              "es": "Informe del piloto — IA en diagnóstico dermatológico en FP Sanitario",
               "en": "Pilot report — AI in VET dermatological diagnosis",
-              "va": "Informe del pilot — IA en diagnòstic dermatològic FP"
+              "va": "Informe del pilot — IA en diagnòstic dermatològic en FP Sanitari"
             },
             "description": {
-              "es": "Informe completo del piloto con diseño metodológico, resultados comparativos grupo experimental vs. control y recomendaciones de escalado.",
-              "en": "Full pilot report with methodological design, comparative results experimental vs. control group and scaling recommendations.",
-              "va": "Informe complet del pilot amb disseny metodològic, resultats comparatius grup experimental vs. control i recomanacions d'escalat."
+              "es": "Informe completo del piloto con diseño metodológico, resultados comparativos grupo experimental vs. control, análisis estadístico y recomendaciones de escalado a otros centros de FP Sanitario.",
+              "en": "Full pilot report with methodological design, comparative results for experimental vs. control group, statistical analysis and scaling recommendations for other Health VET centres.",
+              "va": "Informe complet del pilot amb disseny metodològic, resultats comparatius grup experimental vs. control, anàlisi estadística i recomanacions d'escalat a altres centres de FP Sanitari."
             },
             "files": [
               {
@@ -43347,9 +43924,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "mob",
           "sectors": [],
-          "levels": [
-            "FP"
-          ],
+          "levels": [],
           "pilotType": "vet-industry",
           "validationType": "",
           "mentoringType": "",
@@ -43358,7 +43933,7 @@ export const MARKETPLACE_CONFIG = {
             "industry",
             "public-sector"
           ],
-          "relatedDeliverable": "Sistema de inspección viaria con drones IA — versión piloto validada",
+          "relatedDeliverable": "",
           "relatedOerId": "",
           "publishedAt": "2025-10-01",
           "revisionDate": "2026-04-15",
@@ -46744,11 +47319,12 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "nts",
           "sectors": [],
-          "stakeholderCategory": "institutional",
+          "stakeholderCategory": "",
           "levels": [
-            "Máster"
+            "Máster",
+            "Docentes"
           ],
-          "pilotType": "stakeholder-validation",
+          "pilotType": "",
           "validationType": "ethical-validation",
           "mentoringType": "",
           "helix": [],
@@ -46779,15 +47355,16 @@ export const MARKETPLACE_CONFIG = {
             "social"
           ],
           "policyCluster": [
-            "equity-inclusion"
+            "equity-inclusion",
+            "infrastructure-evidence"
           ],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
           "trackBValue": {
-            "es": "Demo de validación ética para derivar el caso a Track B si procede.",
-            "en": "Demo ethical validation for Track B derivation where appropriate.",
-            "va": "Demo de validació ètica per a derivar el cas a Track B si escau."
+            "es": "Caso de validación ética negativa — modelo de referencia para la evaluación de sistemas de IA de riesgo alto en la administración pública. Documenta la aplicación de la metodología ALTAI y el Reglamento Europeo de IA a un caso real de cribado algorítmico de candidatos. Material de formación para Máster en IA Ética y Derecho Digital.",
+            "en": "Negative ethical validation case — reference model for evaluating high-risk AI systems in public administration. Documents the application of ALTAI methodology and the European AI Act to a real case of algorithmic candidate screening. Training material for Master's programmes in Ethical AI and Digital Law.",
+            "va": "Cas de validació ètica negativa — model de referència per a l'avaluació de sistemes d'IA de risc alt en l'administració pública. Documenta l'aplicació de la metodologia ALTAI i el Reglament Europeu d'IA a un cas real de cribratge algorítmic de candidats. Material de formació per a Màster en IA Ètica i Dret Digital."
           },
           "verificationStatus": "",
           "pilotStatus": ""
@@ -46816,9 +47393,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "La ficha de validación y el resumen del análisis ético se publican bajo CC BY 4.0. El informe completo ALTAI y el análisis legal son documentos internos de la Generalitat y no se publican.",
-            "en": "The validation sheet and ethical analysis summary are published under CC BY 4.0. The full ALTAI report and legal analysis are internal Generalitat documents and are not published.",
-            "va": "La fitxa de validació i el resum de l'anàlisi ètica es publiquen sota CC BY 4.0. L'informe complet ALTAI i l'anàlisi legal són documents interns de la Generalitat i no es publiquen."
+            "es": "La ficha de validación y el resumen del análisis ALTAI se publican bajo CC BY 4.0. El informe completo ALTAI, el análisis legal del Servicio Jurídico y las actas de consulta sindical son documentos internos de la Generalitat y no se publican. El dataset histórico de candidatos es confidencial y solo se publicaron los resultados estadísticos agregados y anonimizados.",
+            "en": "The validation sheet and ALTAI analysis summary are published under CC BY 4.0. The full ALTAI report, Legal Service legal analysis and union consultation minutes are internal Generalitat documents and are not published. The historical candidate dataset is confidential and only aggregated anonymised statistical results were published.",
+            "va": "La fitxa de validació i el resum de l'anàlisi ALTAI es publiquen sota CC BY 4.0. L'informe complet ALTAI, l'anàlisi legal del Servei Jurídic i les actes de consulta sindical són documents interns de la Generalitat i no es publiquen. El dataset històric de candidats és confidencial i només es van publicar els resultats estadístics agregats i anonimitzats."
           },
           "mentoringRequestAccess": "",
           "confidentialityLevel": "",
@@ -46832,20 +47409,20 @@ export const MARKETPLACE_CONFIG = {
           "privacyLevel": "public"
         },
         "trackA": {
-          "enabled": false,
+          "enabled": true,
           "label": {
-            "es": "",
-            "en": "",
-            "va": ""
+            "es": "Esta validación constituye material de referencia para el desarrollo de contenidos de Máster universitario en Ética de la IA Aplicada al Sector Público y Derecho Digital. El caso negativo documentado es especialmente valioso para la formación sobre evaluación de riesgos en sistemas de IA de riesgo alto.",
+            "en": "This validation constitutes reference material for developing content for a university Master's programme in Applied AI Ethics for the Public Sector and Digital Law. The documented negative case is particularly valuable for training on risk assessment in high-risk AI systems.",
+            "va": "Aquesta validació constitueix material de referència per al desenvolupament de continguts de Màster universitari en Ètica de la IA Aplicada al Sector Públic i Dret Digital. El cas negatiu documentat és especialment valuós per a la formació sobre avaluació de riscos en sistemes d'IA de risc alt."
           },
           "url": ""
         },
         "trackALink": {
-          "enabled": false,
+          "enabled": true,
           "label": {
-            "es": "",
-            "en": "",
-            "va": ""
+            "es": "Esta validación constituye material de referencia para el desarrollo de contenidos de Máster universitario en Ética de la IA Aplicada al Sector Público y Derecho Digital. El caso negativo documentado es especialmente valioso para la formación sobre evaluación de riesgos en sistemas de IA de riesgo alto.",
+            "en": "This validation constitutes reference material for developing content for a university Master's programme in Applied AI Ethics for the Public Sector and Digital Law. The documented negative case is particularly valuable for training on risk assessment in high-risk AI systems.",
+            "va": "Aquesta validació constitueix material de referència per al desenvolupament de continguts de Màster universitari en Ètica de la IA Aplicada al Sector Públic i Dret Digital. El cas negatiu documentat és especialment valuós per a la formació sobre avaluació de riscos en sistemes d'IA de risc alt."
           },
           "url": ""
         },
@@ -46858,9 +47435,9 @@ export const MARKETPLACE_CONFIG = {
             "name": "Dirección General de Función Pública — Generalitat Valenciana",
             "type": "public-admin",
             "role": {
-              "es": "Entidad proponente — exploración de IA para optimización de procesos selectivos masivos",
-              "en": "Proposing entity — exploration of AI for optimising large-scale selection processes",
-              "va": "Entitat proponent — exploració d'IA per a l'optimització de processos selectius massius"
+              "es": "Entidad proponente — exploración de IA para optimización de procesos selectivos masivos de la administración pública",
+              "en": "Proposing entity — exploration of AI for optimising large-scale public administration selection processes",
+              "va": "Entitat proponent — exploració d'IA per a l'optimització de processos selectius massius de l'administració pública"
             }
           },
           "validators": [
@@ -46868,18 +47445,27 @@ export const MARKETPLACE_CONFIG = {
               "name": "Comité de Ética Digital de la Generalitat Valenciana",
               "type": "public-admin",
               "role": {
-                "es": "Órgano evaluador de impacto ético y riesgos de sesgo algorítmico",
-                "en": "Evaluating body for ethical impact and algorithmic bias risks",
-                "va": "Òrgan avaluador d'impacte ètic i riscos de biaix algorítmic"
+                "es": "Órgano evaluador principal de impacto ético y riesgos de sesgo algorítmico (metodología ALTAI adaptada)",
+                "en": "Main evaluating body for ethical impact and algorithmic bias risks (adapted ALTAI methodology)",
+                "va": "Òrgan avaluador principal d'impacte ètic i riscos de biaix algorítmic (metodologia ALTAI adaptada)"
               }
             },
             {
               "name": "AI-STEAM Comité Técnico Ética IA",
               "type": "sector-association",
               "role": {
-                "es": "Revisión independiente del análisis ético y clasificación de la propuesta",
-                "en": "Independent review of the ethical analysis and proposal classification",
-                "va": "Revisió independent de l'anàlisi ètica i classificació de la proposta"
+                "es": "Revisión independiente del análisis ético y clasificación final de la propuesta dentro del ecosistema AI-STEAM",
+                "en": "Independent review of the ethical analysis and final proposal classification within the AI-STEAM ecosystem",
+                "va": "Revisió independent de l'anàlisi ètica i classificació final de la proposta dins de l'ecosistema AI-STEAM"
+              }
+            },
+            {
+              "name": "Servicio Jurídico de la Generalitat Valenciana",
+              "type": "public-admin",
+              "role": {
+                "es": "Análisis legal de la propuesta respecto al Reglamento Europeo de IA y la normativa de función pública",
+                "en": "Legal analysis of the proposal against the European AI Act and public employment regulations",
+                "va": "Anàlisi legal de la proposta respecte al Reglament Europeu d'IA i la normativa de funció pública"
               }
             }
           ]
@@ -46897,40 +47483,47 @@ export const MARKETPLACE_CONFIG = {
             "va": "La proposta de sistema d'IA per al cribratge de candidats en l'administració pública compleix els requisits ètics mínims per a ser considerada apta per a un pilot, tenint en compte el context d'igualtat d'accés a l'ocupació pública i el Reglament Europeu d'IA?"
           },
           "need": {
-            "es": "La Dirección General de Función Pública gestiona anualmente más de 15.000 solicitudes en procesos selectivos de la Generalitat. El proceso manual de cribado inicial genera cuellos de botella de 3-6 meses. Se exploró el uso de IA para acelerar el cribado preliminar de requisitos formales antes de la fase de oposición.",
-            "en": "The General Directorate of Public Employment manages more than 15,000 applications annually in Generalitat selection processes. The manual initial screening process creates 3-6 month bottlenecks. The use of AI was explored to accelerate preliminary screening of formal requirements before the examination stage.",
-            "va": "La Direcció General de Funció Pública gestiona anualment més de 15.000 sol·licituds en processos selectius de la Generalitat. El procés manual de cribratge inicial genera colls d'ampolla de 3-6 mesos. Es va explorar l'ús d'IA per accelerar el cribratge preliminar de requisits formals abans de la fase d'oposició."
+            "es": "La Dirección General de Función Pública gestiona anualmente más de 15.000 solicitudes en procesos selectivos de la Generalitat. El proceso manual de cribado inicial genera cuellos de botella de 3-6 meses entre la presentación de solicitudes y el inicio de la fase de oposición. Se exploró el uso de IA para acelerar el cribado preliminar de requisitos formales antes de la fase de oposición.",
+            "en": "The General Directorate of Public Employment manages more than 15,000 applications annually in Generalitat selection processes. The manual initial screening process creates 3-6 month bottlenecks between application submission and the start of the examination stage. The use of AI was explored to accelerate preliminary screening of formal requirements before the examination stage.",
+            "va": "La Direcció General de Funció Pública gestiona anualment més de 15.000 sol·licituds en processos selectius de la Generalitat. El procés manual de cribratge inicial genera colls d'ampolla de 3-6 mesos entre la presentació de sol·licituds i l'inici de la fase d'oposició. Es va explorar l'ús d'IA per accelerar el cribratge preliminar de requisits formals abans de la fase d'oposició."
           },
           "context": {
-            "es": "El Comité de Ética Digital evaluó la propuesta respecto al Reglamento Europeo de IA (clasificación de riesgo alto en sistemas de selección de personal), la Ley de Empleo Público y los principios de igualdad, mérito y capacidad que rigen el acceso a la función pública española. Se analizaron tres escenarios de uso del sistema propuesto con diferente nivel de autonomía del algoritmo.",
-            "en": "The Digital Ethics Committee assessed the proposal against the European AI Act (high-risk classification in personnel selection systems), the Public Employment Law and the principles of equality, merit and ability governing access to Spanish public service. Three usage scenarios of the proposed system with different levels of algorithmic autonomy were analysed.",
-            "va": "El Comité d'Ètica Digital va avaluar la proposta respecte al Reglament Europeu d'IA (classificació de risc alt en sistemes de selecció de personal), la Llei d'Ocupació Pública i els principis d'igualtat, mèrit i capacitat que regeixen l'accés a la funció pública espanyola. Es van analitzar tres escenaris d'ús del sistema proposat amb diferent nivell d'autonomia de l'algorisme."
+            "es": "El Comité de Ética Digital evaluó la propuesta respecto al Reglamento Europeo de IA (clasificación de riesgo alto en sistemas de selección de personal, Art. 6, Anexo III), la Ley de Empleo Público y los principios constitucionales de igualdad, mérito y capacidad que rigen el acceso a la función pública española. Se analizaron tres escenarios de uso del sistema propuesto con diferente nivel de autonomía del algoritmo (asistencia, pre-filtro, decisión automática).",
+            "en": "The Digital Ethics Committee assessed the proposal against the European AI Act (high-risk classification in personnel selection systems, Art. 6, Annex III), the Public Employment Law and the constitutional principles of equality, merit and ability governing access to Spanish public service. Three usage scenarios of the proposed system with different levels of algorithmic autonomy were analysed (assistance, pre-filter, automatic decision).",
+            "va": "El Comité d'Ètica Digital va avaluar la proposta respecte al Reglament Europeu d'IA (classificació de risc alt en sistemes de selecció de personal, Art. 6, Annex III), la Llei d'Ocupació Pública i els principis constitucionals d'igualtat, mèrit i capacitat que regeixen l'accés a la funció pública espanyola. Es van analitzar tres escenaris d'ús del sistema proposat amb diferent nivell d'autonomia de l'algorisme (assistència, pre-filtre, decisió automàtica)."
           },
           "method": {
-            "es": "Análisis de impacto ético por el Comité de Ética Digital (metodología ALTAI adaptada), análisis legal por el Servicio Jurídico de la Generalitat, revisión por el Comité Técnico de Ética IA de AI-STEAM y consulta con sindicatos representativos de empleados públicos.",
-            "en": "Ethical impact analysis by the Digital Ethics Committee (adapted ALTAI methodology), legal analysis by the Generalitat Legal Service, review by the AI-STEAM AI Ethics Technical Committee and consultation with representative public employee unions.",
-            "va": "Anàlisi d'impacte ètic pel Comité d'Ètica Digital (metodologia ALTAI adaptada), anàlisi legal pel Servei Jurídic de la Generalitat, revisió pel Comité Tècnic d'Ètica IA d'AI-STEAM i consulta amb sindicats representatius d'empleats públics."
+            "es": "Análisis de impacto ético mediante la metodología ALTAI adaptada por el Comité de Ética Digital, análisis legal por el Servicio Jurídico de la Generalitat respecto al Reglamento UE de IA y normativa de función pública, revisión independiente por el Comité Técnico de Ética IA de AI-STEAM, y consulta con sindicatos representativos de empleados públicos (CSIF y UGT-PV).",
+            "en": "Ethical impact analysis using the ALTAI methodology adapted by the Digital Ethics Committee, legal analysis by the Generalitat Legal Service against the EU AI Act and public employment regulations, independent review by the AI-STEAM AI Ethics Technical Committee, and consultation with representative public employee unions (CSIF and UGT-PV).",
+            "va": "Anàlisi d'impacte ètic mitjançant la metodologia ALTAI adaptada pel Comité d'Ètica Digital, anàlisi legal pel Servei Jurídic de la Generalitat respecte al Reglament UE d'IA i normativa de funció pública, revisió independent pel Comité Tècnic d'Ètica IA d'AI-STEAM, i consulta amb sindicats representatius d'empleats públics (CSIF i UGT-PV)."
           },
           "validationEnvironment": [
             {
               "label": {
-                "es": "Análisis ALTAI — Comité de Ética Digital de la Generalitat",
-                "en": "ALTAI analysis — Generalitat Digital Ethics Committee",
-                "va": "Anàlisi ALTAI — Comité d'Ètica Digital de la Generalitat"
+                "es": "Análisis ALTAI — Comité de Ética Digital de la Generalitat (7 dimensiones, 52 criterios evaluados)",
+                "en": "ALTAI analysis — Generalitat Digital Ethics Committee (7 dimensions, 52 criteria assessed)",
+                "va": "Anàlisi ALTAI — Comité d'Ètica Digital de la Generalitat (7 dimensions, 52 criteris avaluats)"
               }
             },
             {
               "label": {
-                "es": "Análisis legal — Servicio Jurídico de la Generalitat Valenciana",
-                "en": "Legal analysis — Valencian Generalitat Legal Service",
-                "va": "Anàlisi legal — Servei Jurídic de la Generalitat Valenciana"
+                "es": "Análisis legal — Servicio Jurídico de la Generalitat Valenciana (Reglamento IA UE + Ley de Empleo Público)",
+                "en": "Legal analysis — Valencian Generalitat Legal Service (EU AI Act + Public Employment Law)",
+                "va": "Anàlisi legal — Servei Jurídic de la Generalitat Valenciana (Reglament IA UE + Llei d'Ocupació Pública)"
               }
             },
             {
               "label": {
-                "es": "Consulta sindical — CSIF y UGT-PV",
-                "en": "Union consultation — CSIF and UGT-PV",
-                "va": "Consulta sindical — CSIF i UGT-PV"
+                "es": "Consulta sindical — CSIF y UGT-PV (representantes de empleados públicos de la Generalitat)",
+                "en": "Union consultation — CSIF and UGT-PV (Generalitat public employee representatives)",
+                "va": "Consulta sindical — CSIF i UGT-PV (representants d'empleats públics de la Generalitat)"
+              }
+            },
+            {
+              "label": {
+                "es": "Análisis de correlaciones — dataset histórico anonimizado de 4.200 expedientes de candidatos (2021-2024)",
+                "en": "Correlation analysis — anonymised historical dataset of 4,200 candidate files (2021-2024)",
+                "va": "Anàlisi de correlacions — dataset històric anonimitzat de 4.200 expedients de candidats (2021-2024)"
               }
             }
           ]
@@ -46940,9 +47533,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "",
               "label": {
-                "es": "Cumplimiento normativo IA (Reglamento UE)",
-                "en": "AI regulatory compliance (EU AI Act)",
-                "va": "Compliment normatiu IA (Reglament UE)"
+                "es": "Cumplimiento normativo IA (Reglamento UE 2024/1689) — clasificación de riesgo ALTO obligatoria",
+                "en": "AI regulatory compliance (EU Regulation 2024/1689) — mandatory HIGH-risk classification",
+                "va": "Compliment normatiu IA (Reglament UE 2024/1689) — classificació de risc ALT obligatòria"
               },
               "result": "",
               "note": {
@@ -46954,9 +47547,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "",
               "label": {
-                "es": "Riesgo de sesgo discriminatorio",
-                "en": "Discriminatory bias risk",
-                "va": "Risc de biaix discriminatori"
+                "es": "Riesgo de sesgo discriminatorio indirecto por género y origen geográfico en variables proxy",
+                "en": "Risk of indirect discriminatory bias by gender and geographic origin in proxy variables",
+                "va": "Risc de biaix discriminatori indirecte per gènere i origen geogràfic en variables proxy"
               },
               "result": "",
               "note": {
@@ -46968,9 +47561,37 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "",
               "label": {
-                "es": "Transparencia y explicabilidad insuficientes",
-                "en": "Insufficient transparency and explainability",
-                "va": "Transparència i explicabilitat insuficients"
+                "es": "Transparencia y explicabilidad insuficientes — imposibilidad de recurso individual efectivo",
+                "en": "Insufficient transparency and explainability — impossibility of effective individual appeal",
+                "va": "Transparència i explicabilitat insuficients — impossibilitat de recurs individual efectiu"
+              },
+              "result": "",
+              "note": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            },
+            {
+              "id": "",
+              "label": {
+                "es": "Ausencia de supervisión humana efectiva en el escenario de pre-filtro con exclusión automática",
+                "en": "Absence of effective human oversight in the pre-filter scenario with automatic exclusion",
+                "va": "Absència de supervisió humana efectiva en l'escenari de pre-filtre amb exclusió automàtica"
+              },
+              "result": "",
+              "note": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            },
+            {
+              "id": "",
+              "label": {
+                "es": "Incompatibilidad con los principios constitucionales de mérito, capacidad e igualdad en el acceso a la función pública",
+                "en": "Incompatibility with constitutional principles of merit, ability and equality in access to public service",
+                "va": "Incompatibilitat amb els principis constitucionals de mèrit, capacitat i igualtat en l'accés a la funció pública"
               },
               "result": "",
               "note": {
@@ -46984,9 +47605,9 @@ export const MARKETPLACE_CONFIG = {
         "evidence": {
           "evidenceLevel": "reviewed",
           "collectionMethod": {
-            "es": "Análisis de impacto ético ALTAI, análisis legal del Servicio Jurídico, consulta sindical con CSIF y UGT-PV, y análisis de correlaciones en datos históricos anonimizados de candidatos (2021-2024).",
-            "en": "ALTAI ethical impact analysis, Legal Service legal analysis, union consultation with CSIF and UGT-PV, and correlation analysis on anonymised historical candidate data (2021-2024).",
-            "va": "Anàlisi d'impacte ètic ALTAI, anàlisi legal del Servei Jurídic, consulta sindical amb CSIF i UGT-PV, i anàlisi de correlacions en dades històriques anonimitzades de candidats (2021-2024)."
+            "es": "Análisis de impacto ético ALTAI (52 criterios, 7 dimensiones), análisis legal del Servicio Jurídico (dictamen formal), consulta sindical con CSIF y UGT-PV (actas de reunión), y análisis estadístico de correlaciones en dataset histórico anonimizado de 4.200 expedientes de candidatos (2021-2024) para detección de variables proxy discriminatorias.",
+            "en": "ALTAI ethical impact analysis (52 criteria, 7 dimensions), Legal Service legal analysis (formal opinion), union consultation with CSIF and UGT-PV (meeting minutes), and statistical correlation analysis on an anonymised historical dataset of 4,200 candidate files (2021-2024) for detecting discriminatory proxy variables.",
+            "va": "Anàlisi d'impacte ètic ALTAI (52 criteris, 7 dimensions), anàlisi legal del Servei Jurídic (dictamen formal), consulta sindical amb CSIF i UGT-PV (actes de reunió), i anàlisi estadística de correlacions en dataset històric anonimitzat de 4.200 expedients de candidats (2021-2024) per a detecció de variables proxy discriminatòries."
           },
           "indicators": [
             {
@@ -46997,9 +47618,9 @@ export const MARKETPLACE_CONFIG = {
                 "va": ""
               },
               "metric": {
-                "es": "3 variables proxy con correlación significativa (p<0.05) con género o origen geográfico",
-                "en": "3 proxy variables with significant correlation (p<0.05) with gender or geographic origin",
-                "va": "3 variables proxy amb correlació significativa (p<0.05) amb gènere o origen geogràfic"
+                "es": "3 variables proxy con correlación estadísticamente significativa (p<0,05) con género o origen geográfico detectadas en el dataset histórico de candidatos",
+                "en": "3 proxy variables with statistically significant correlation (p<0.05) with gender or geographic origin detected in the historical candidate dataset",
+                "va": "3 variables proxy amb correlació estadísticament significativa (p<0,05) amb gènere o origen geogràfic detectades en el dataset històric de candidats"
               }
             },
             {
@@ -47010,73 +47631,199 @@ export const MARKETPLACE_CONFIG = {
                 "va": ""
               },
               "metric": {
-                "es": "Riesgo ALTO — Art. 6, Anexo III (sistemas de selección de personas para empleo)",
-                "en": "HIGH risk — Art. 6, Annex III (systems for selecting persons for employment)",
-                "va": "Risc ALT — Art. 6, Annex III (sistemes de selecció de persones per a ocupació)"
+                "es": "Riesgo ALTO confirmado — Art. 6, Annex III, Reglamento UE 2024/1689 (sistemas de selección de personas para empleo)",
+                "en": "HIGH risk confirmed — Art. 6, Annex III, EU Regulation 2024/1689 (systems for selecting persons for employment)",
+                "va": "Risc ALT confirmat — Art. 6, Annex III, Reglament UE 2024/1689 (sistemes de selecció de persones per a ocupació)"
+              }
+            },
+            {
+              "id": "altai-score",
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              },
+              "metric": {
+                "es": "Puntuación ALTAI — 18/52 criterios superados (34,6%). Categorías críticas suspenso — Supervisión humana (1/7) y No discriminación (2/8)",
+                "en": "ALTAI score — 18/52 criteria passed (34.6%). Critical categories failed — Human oversight (1/7) and Non-discrimination (2/8)",
+                "va": "Puntuació ALTAI — 18/52 criteris superats (34,6%). Categories crítiques suspesos — Supervisió humana (1/7) i No discriminació (2/8)"
+              }
+            },
+            {
+              "id": "union-rejection",
+              "label": {
+                "es": "",
+                "en": "",
+                "va": ""
+              },
+              "metric": {
+                "es": "Rechazo formal de CSIF y UGT-PV — ambos sindicatos emiten escrito de oposición formal a cualquier piloto en el estado actual de la propuesta",
+                "en": "Formal rejection by CSIF and UGT-PV — both unions issue formal written opposition to any pilot in the proposal's current state",
+                "va": "Rebuig formal de CSIF i UGT-PV — tots dos sindicats emeten escrit d'oposició formal a qualsevol pilot en l'estat actual de la proposta"
               }
             }
           ],
           "limitations": {
-            "es": "El análisis se realizó sobre la propuesta conceptual. No se evaluó ningún prototipo funcional. Una reformulación que aborde los problemas identificados requeriría una nueva validación ética.",
-            "en": "The analysis was conducted on the conceptual proposal. No functional prototype was evaluated. A reformulation addressing the identified issues would require a new ethical validation.",
-            "va": "L'anàlisi es va realitzar sobre la proposta conceptual. No es va avaluar cap prototip funcional. Una reformulació que adreça els problemes identificats requeriria una nova validació ètica."
+            "es": "El análisis se realizó sobre la propuesta conceptual y el dataset histórico anonimizado. No se evaluó ningún prototipo funcional. Una reformulación que restrinja el alcance a verificación documental formal (sin evaluación de méritos) requeriría una nueva validación ética completa.",
+            "en": "The analysis was conducted on the conceptual proposal and the anonymised historical dataset. No functional prototype was evaluated. A reformulation restricting scope to formal documentary verification (without merit evaluation) would require a complete new ethical validation.",
+            "va": "L'anàlisi es va realitzar sobre la proposta conceptual i el dataset històric anonimitzat. No es va avaluar cap prototip funcional. Una reformulació que restringisca l'abast a verificació documental formal (sense avaluació de mèrits) requeriria una nova validació ètica completa."
           }
         },
         "decision": {
           "outcome": "needs-reformulation",
-          "tone": "neutral",
+          "tone": "negative",
           "label": {
             "es": "Requiere reformulación sustancial — no apto para piloto en estado actual",
             "en": "Requires substantial reformulation — not suitable for piloting in current state",
             "va": "Requereix reformulació substancial — no apte per a pilot en estat actual"
           },
           "rationale": {
-            "es": "La propuesta presenta riesgos éticos y legales inaceptables en su estado actual debido a la clasificación de riesgo alto del Reglamento de IA, el riesgo de discriminación indirecta documentado y el rechazo sindical. Se propone una reformulación que restrinja el uso de IA a verificación de requisitos formales documentales (no evaluación de mérito) con revisión humana obligatoria de cada exclusión.",
-            "en": "The proposal presents unacceptable ethical and legal risks in its current state due to its AI Act high-risk classification, the documented indirect discrimination risk and trade union rejection. A reformulation is proposed that restricts AI use to verification of formal documentary requirements (not merit evaluation) with mandatory human review of each exclusion.",
-            "va": "La proposta presenta riscos ètics i legals inacceptables en el seu estat actual a causa de la classificació de risc alt del Reglament d'IA, el risc de discriminació indirecta documentat i el rebuig sindical. Es proposa una reformulació que restringisca l'ús d'IA a la verificació de requisits formals documentals (no avaluació de mèrit) amb revisió humana obligatòria de cada exclusió."
+            "es": "La propuesta presenta riesgos éticos y legales inaceptables en su estado actual — clasificación de riesgo alto del Reglamento de IA, riesgo documentado de discriminación indirecta por género y origen geográfico, ausencia de supervisión humana efectiva, imposibilidad de recurso individual explicable y rechazo sindical formal. Se propone una reformulación que restrinja el uso de IA a la verificación de requisitos formales documentales (no evaluación de mérito) con revisión humana obligatoria de cada exclusión y sistema de recurso explicable por diseño.",
+            "en": "The proposal presents unacceptable ethical and legal risks in its current state — AI Act high-risk classification, documented indirect discrimination risk by gender and geographic origin, absence of effective human oversight, impossibility of explainable individual appeal and formal trade union rejection. A reformulation is proposed restricting AI use to verification of formal documentary requirements (not merit evaluation) with mandatory human review of each exclusion and an explainable-by-design appeal system.",
+            "va": "La proposta presenta riscos ètics i legals inacceptables en el seu estat actual — classificació de risc alt del Reglament d'IA, risc documentat de discriminació indirecta per gènere i origen geogràfic, absència de supervisió humana efectiva, impossibilitat de recurs individual explicable i rebuig sindical formal. Es proposa una reformulació que restringisca l'ús d'IA a la verificació de requisits formals documentals (no avaluació de mèrit) amb revisió humana obligatòria de cada exclusió i sistema de recurs explicable per disseny."
           },
           "nextStep": {
             "type": "reformulate",
             "label": {
-              "es": "Reformular la propuesta restringiendo el alcance a verificación documental formal con revisión humana total y nueva validación ética",
-              "en": "Reformulate the proposal restricting scope to formal documentary verification with full human review and new ethical validation",
-              "va": "Reformular la proposta restringint l'abast a verificació documental formal amb revisió humana total i nova validació ètica"
+              "es": "Reformular la propuesta restringiendo el alcance a verificación documental formal con revisión humana total, sistema de recurso explicable y nueva validación ética antes de cualquier piloto",
+              "en": "Reformulate the proposal restricting scope to formal documentary verification with full human review, explainable appeal system and new ethical validation before any pilot",
+              "va": "Reformular la proposta restringint l'abast a verificació documental formal amb revisió humana total, sistema de recurs explicable i nova validació ètica abans de qualsevol pilot"
             }
           }
         },
         "trackRouting": {
           "route": "not-routed",
           "label": {
-            "es": "No enrutado — propuesta devuelta para reformulación sustancial",
-            "en": "Not routed — proposal returned for substantial reformulation",
-            "va": "No enrutat — proposta retornada per a reformulació substancial"
+            "es": "No enrutado — propuesta devuelta para reformulación sustancial antes de cualquier piloto",
+            "en": "Not routed — proposal returned for substantial reformulation before any pilot",
+            "va": "No enrutat — proposta retornada per a reformulació substancial abans de qualsevol pilot"
           },
           "academicReview": {
-            "enabled": false,
+            "enabled": true,
             "reviewer": null,
             "note": {
-              "es": "",
-              "en": "",
-              "va": ""
+              "es": "El Comité Técnico de Ética IA de AI-STEAM realizó revisión independiente y emitió dictamen de apoyo a la decisión del Comité de Ética Digital. El caso se propone como material de referencia para Máster en IA Ética.",
+              "en": "The AI-STEAM AI Ethics Technical Committee carried out an independent review and issued an opinion supporting the Digital Ethics Committee's decision. The case is proposed as reference material for Master's in Ethical AI.",
+              "va": "El Comité Tècnic d'Ètica IA d'AI-STEAM va realitzar revisió independent i va emetre dictamen de suport a la decisió del Comité d'Ètica Digital. El cas es proposa com a material de referència per a Màster en IA Ètica."
             }
           }
         },
         "relations": {
-          "validatedChallengeId": "",
+          "validatedChallengeId": "reto-ia-seleccion-personal-administracion-publica",
           "resultingPilotIds": [],
           "resultingCaseIds": [],
           "resultingResourceIds": [],
           "relatedMentorshipIds": [],
           "nextPossibleItems": [
-            "pilot"
+            "pilot",
+            "resource"
           ]
         },
         "downloads": {
-          "enabled": false,
+          "enabled": true,
           "basePath": "/assets/downloads/validations/validation-etica-ia-seleccion-personal-adm/",
-          "items": []
+          "items": [
+            {
+              "id": "validation-sheet",
+              "type": "validation-sheet",
+              "title": {
+                "es": "Ficha de validación ética — IA en selección de personal público",
+                "en": "Ethical validation sheet — AI in public recruitment",
+                "va": "Fitxa de validació ètica — IA en selecció de personal públic"
+              },
+              "description": {
+                "es": "Resumen ejecutivo de la validación ética con los criterios evaluados, indicadores de evidencia, decisión final y recomendaciones de reformulación para la Dirección General de Función Pública.",
+                "en": "Executive summary of the ethical validation with assessed criteria, evidence indicators, final decision and reformulation recommendations for the General Directorate of Public Employment.",
+                "va": "Resum executiu de la validació ètica amb els criteris avaluats, indicadors d'evidència, decisió final i recomanacions de reformulació per a la Direcció General de Funció Pública."
+              },
+              "files": [
+                {
+                  "file": "ficha-validacion-etica-ia-seleccion-publica.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": "CC BY 4.0"
+                }
+              ],
+              "license": "",
+              "showOnCard": true,
+              "showOnDetail": true
+            },
+            {
+              "id": "altai-summary",
+              "type": "evidence-sheet",
+              "title": {
+                "es": "Resumen del análisis ALTAI — 52 criterios evaluados",
+                "en": "ALTAI analysis summary — 52 criteria assessed",
+                "va": "Resum de l'anàlisi ALTAI — 52 criteris avaluats"
+              },
+              "description": {
+                "es": "Resumen público del análisis de impacto ético con la metodología ALTAI. El informe completo es documento interno de la Generalitat y no se publica.",
+                "en": "Public summary of the ethical impact analysis using the ALTAI methodology. The full report is an internal Generalitat document and is not published.",
+                "va": "Resum públic de l'anàlisi d'impacte ètic amb la metodologia ALTAI. L'informe complet és document intern de la Generalitat i no es publica."
+              },
+              "files": [
+                {
+                  "file": "resumen-altai-ia-seleccion-publica.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": "CC BY 4.0"
+                }
+              ],
+              "license": "",
+              "showOnCard": false,
+              "showOnDetail": true
+            }
+          ]
         },
-        "resources": null,
+        "resources": {
+          "externalLinks": [
+            {
+              "id": "reglamento-ia-ue",
+              "type": "legal-document",
+              "label": {
+                "es": "Reglamento Europeo de Inteligencia Artificial (UE 2024/1689) — EUR-Lex",
+                "en": "European AI Act (EU 2024/1689) — EUR-Lex",
+                "va": "Reglament Europeu d'Intel·ligència Artificial (UE 2024/1689) — EUR-Lex"
+              },
+              "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689",
+              "access": {
+                "es": "Acceso libre en EUR-Lex (versión oficial en español)",
+                "en": "Free access on EUR-Lex (official Spanish version)",
+                "va": "Accés lliure en EUR-Lex (versió oficial en espanyol)"
+              }
+            },
+            {
+              "id": "altai-methodology",
+              "type": "methodology",
+              "label": {
+                "es": "ALTAI — Herramienta de Evaluación de IA de Confianza (Grupo de Expertos de Alto Nivel en IA)",
+                "en": "ALTAI — Assessment List for Trustworthy AI (AI High-Level Expert Group)",
+                "va": "ALTAI — Llista d'Avaluació per a la IA de Confiança (Grup d'Experts d'Alt Nivell en IA)"
+              },
+              "url": "https://digital-strategy.ec.europa.eu/en/library/assessment-list-trustworthy-artificial-intelligence-altai-self-assessment",
+              "access": {
+                "es": "Acceso libre en el portal de estrategia digital de la Comisión Europea",
+                "en": "Free access on the European Commission digital strategy portal",
+                "va": "Accés lliure en el portal d'estratègia digital de la Comissió Europea"
+              }
+            },
+            {
+              "id": "aepd-ia-rrhh",
+              "type": "guidance",
+              "label": {
+                "es": "AEPD — Guía sobre IA y Protección de Datos en procesos de selección de personal",
+                "en": "AEPD — Guide on AI and Data Protection in recruitment processes",
+                "va": "AEPD — Guia sobre IA i Protecció de Dades en processos de selecció de personal"
+              },
+              "url": "https://www.aepd.es/documento/guia-tratamientos-datos-ia.pdf",
+              "access": {
+                "es": "Acceso libre en el portal de la Agencia Española de Protección de Datos",
+                "en": "Free access on the Spanish Data Protection Authority portal",
+                "va": "Accés lliure en el portal de l'Agència Espanyola de Protecció de Dades"
+              }
+            }
+          ]
+        },
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
@@ -47097,7 +47844,7 @@ export const MARKETPLACE_CONFIG = {
             "showValidationStage": true,
             "showWindow": true,
             "showValidationEnvironment": true,
-            "showDownloadsIndicator": false,
+            "showDownloadsIndicator": true,
             "mainBlockLabel": {
               "es": "Qué se valida",
               "en": "What is validated",
@@ -47113,7 +47860,7 @@ export const MARKETPLACE_CONFIG = {
               "criteria": true,
               "evidence": true,
               "decision": true,
-              "downloads": false,
+              "downloads": true,
               "resources": true,
               "people": true,
               "access": true,
@@ -47126,7 +47873,7 @@ export const MARKETPLACE_CONFIG = {
           "start": "2026-01-10",
           "end": "2026-02-28"
         },
-        "criteriaCount": 3,
+        "criteriaCount": 5,
         "validationTypeLabel": {
           "es": "Validación ética",
           "en": "Ethical validation",
@@ -47142,9 +47889,34 @@ export const MARKETPLACE_CONFIG = {
           "en": "Needs reformulation",
           "va": "Requereix reformulació"
         },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
+        "hasDownloads": true,
+        "downloadCount": 2,
+        "cardDownloads": [
+          {
+            "id": "validation-sheet",
+            "type": "validation-sheet",
+            "title": {
+              "es": "Ficha de validación ética — IA en selección de personal público",
+              "en": "Ethical validation sheet — AI in public recruitment",
+              "va": "Fitxa de validació ètica — IA en selecció de personal públic"
+            },
+            "description": {
+              "es": "Resumen ejecutivo de la validación ética con los criterios evaluados, indicadores de evidencia, decisión final y recomendaciones de reformulación para la Dirección General de Función Pública.",
+              "en": "Executive summary of the ethical validation with assessed criteria, evidence indicators, final decision and reformulation recommendations for the General Directorate of Public Employment.",
+              "va": "Resum executiu de la validació ètica amb els criteris avaluats, indicadors d'evidència, decisió final i recomanacions de reformulació per a la Direcció General de Funció Pública."
+            },
+            "files": [
+              {
+                "file": "ficha-validacion-etica-ia-seleccion-publica.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "showOnCard": true,
+            "showOnDetail": true
+          }
+        ],
         "template": {
           "requiredBlocks": [
             "validation",
@@ -50979,11 +51751,11 @@ export const MARKETPLACE_CONFIG = {
             "va": "Acompanyament per a empreses turístiques, entitats culturals, museus i agències creatives que volen integrar IA generativa (text, imatge, àudio, vídeo) en els seus productes, serveis o processos creatius, orientant-se sobre eines adequades a la seua escala, drets d'autor en continguts generats per IA, i com usar la IA sense perdre la identitat creativa de l'organització."
           },
           "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
+            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
             "type": {
-              "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural y sectores creativos",
-              "en": "Mentors experienced in generative AI applications in tourism, cultural heritage and creative sectors",
-              "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural i sectors creatius"
+              "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural, diseño e industrias creativas valencianas e internacionales",
+              "en": "Mentors experienced in generative AI applications in tourism, cultural heritage, design and Valencian and international creative industries",
+              "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural, disseny i indústries creatives valencianes i internacionals"
             }
           },
           "caseStage": "",
@@ -51023,15 +51795,15 @@ export const MARKETPLACE_CONFIG = {
           },
           "mentoringTeam": {
             "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo",
-              "en": "AI-STEAM Network Mentoring Pool — Creative AI and Tourism Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme"
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
+              "en": "AI-STEAM Network Mentoring Pool — Creative AI and Tourism-Culture Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme-Cultura"
             },
             "type": "mentoring-pool",
             "role": {
-              "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural y sectores creativos",
-              "en": "Mentors experienced in generative AI applications in tourism, cultural heritage and creative sectors",
-              "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural i sectors creatius"
+              "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural, diseño e industrias creativas valencianas e internacionales",
+              "en": "Mentors experienced in generative AI applications in tourism, cultural heritage, design and Valencian and international creative industries",
+              "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural, disseny i indústries creatives valencianes i internacionals"
             },
             "org": "AI-STEAM Network"
           },
@@ -51039,17 +51811,17 @@ export const MARKETPLACE_CONFIG = {
             "name": "AI-STEAM Network",
             "org": "CEICE",
             "role": {
-              "es": "Coordinación de mentoría en IA generativa para sectores turístico-cultural y creativo",
-              "en": "Coordination of generative AI mentoring for the tourism-cultural and creative sectors",
-              "va": "Coordinació de mentoria en IA generativa per als sectors turístic-cultural i creatiu"
+              "es": "Coordinación de la mentoría en IA generativa para los sectores turístico-cultural y creativo de la Comunitat Valenciana",
+              "en": "Coordination of generative AI mentoring for the tourism-cultural and creative sectors of the Valencian Community",
+              "va": "Coordinació de la mentoria en IA generativa per als sectors turístic-cultural i creatiu de la Comunitat Valenciana"
             }
           }
         },
         "classification": {
           "aiSteamFocus": [
+            "creative-ai",
             "responsible-ai",
-            "ai-literacy",
-            "maker-steam"
+            "ai-literacy"
           ],
           "tripleTransition": [
             "digital",
@@ -51072,15 +51844,16 @@ export const MARKETPLACE_CONFIG = {
           "pilotStatus": "",
           "sector": "cci",
           "sectorLabel": {
-            "es": "Turismo, hostelería y ocio",
-            "en": "Tourism, hospitality and leisure",
-            "va": "Turisme, hostaleria i oci"
+            "es": "Turismo, cultura e industrias creativas",
+            "en": "Tourism, culture and creative industries",
+            "va": "Turisme, cultura i indústries creatives"
           },
-          "stakeholderCategory": "enterprise",
+          "stakeholderCategory": "",
           "audience": [
             "companies",
             "civic-organisations",
-            "industry-partners"
+            "industry-partners",
+            "vet-centres"
           ]
         },
         "transfer": {
@@ -51098,7 +51871,7 @@ export const MARKETPLACE_CONFIG = {
           "pageVisibility": "public",
           "pageLicense": "CC BY 4.0",
           "codeLicense": "",
-          "dataAvailability": "",
+          "dataAvailability": "not-applicable",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -51107,36 +51880,36 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "No deben enviarse materiales con derechos de autor de terceros ni contenidos confidenciales de campañas en desarrollo a través de este sitio.",
-            "en": "Materials with third-party copyright or confidential content from campaigns in development must not be submitted through this site.",
-            "va": "No s'han d'enviar materials amb drets d'autor de tercers ni continguts confidencials de campanyes en desenvolupament a través d'este lloc."
+            "es": "No deben enviarse materiales con derechos de autor de terceros ni contenidos confidenciales de campañas en desarrollo a través de este sitio. Los flujos de trabajo prototipados son propiedad de la organización mentorizada.",
+            "en": "Materials with third-party copyright or confidential content from campaigns in development must not be submitted through this site. Prototyped workflows are the property of the mentored organisation.",
+            "va": "No s'han d'enviar materials amb drets d'autor de tercers ni continguts confidencials de campanyes en desenvolupament a través d'este lloc. Els fluxos de treball prototipats són propietat de l'organització mentoritzada."
           },
-          "mentoringRequestAccess": "not-available",
+          "mentoringRequestAccess": "external-managed",
           "confidentialityLevel": "standard",
           "publicationNote": {
-            "es": "Los flujos de trabajo prototipados podrán publicarse como casos de referencia si la organización lo autoriza y no incluyen contenidos protegidos.",
-            "en": "Prototyped workflows may be published as reference cases if the organisation authorises it and they do not include protected content.",
-            "va": "Els fluxos de treball prototipats podran publicar-se com a casos de referència si l'organització ho autoritza i no inclouen continguts protegits."
+            "es": "Los flujos de trabajo prototipados y el mapa de integración podrán publicarse como casos de referencia en el Marketplace AI-STEAM si la organización lo autoriza expresamente y no incluyen contenidos protegidos de terceros.",
+            "en": "Prototyped workflows and the integration map may be published as reference cases in the AI-STEAM Marketplace if the organisation expressly authorises it and they do not include third-party protected content.",
+            "va": "Els fluxos de treball prototipats i el mapa d'integració podran publicar-se com a casos de referència al Marketplace AI-STEAM si l'organització ho autoritza expressament i no inclouen continguts protegits de tercers."
           },
           "publicUrl": "",
           "license": "CC BY 4.0",
           "privacyLevel": "public"
         },
         "trackA": {
-          "enabled": false,
+          "enabled": true,
           "label": {
-            "es": "",
-            "en": "",
-            "va": ""
+            "es": "Las organizaciones que completan esta mentoría y desarrollan un flujo de trabajo creativo humano-IA documentado pueden derivarse a Track A como casos de referencia para el diseño de contenidos curriculares en Máster universitario en Diseño e Innovación con IA o en ciclos de Grado Superior de Imagen y Comunicación.",
+            "en": "Organisations that complete this mentoring and develop a documented human-AI creative workflow can be routed to Track A as reference cases for designing curricular content in a university Master's in Design and AI Innovation or in Higher Level cycles in Image and Communication.",
+            "va": "Les organitzacions que completen aquesta mentoria i desenvolupen un flux de treball creatiu humà-IA documentat poden derivar-se a Track A com a casos de referència per al disseny de continguts curriculars en Màster universitari en Disseny i Innovació amb IA o en cicles de Grau Superior d'Imatge i Comunicació."
           },
           "url": ""
         },
         "trackALink": {
-          "enabled": false,
+          "enabled": true,
           "label": {
-            "es": "",
-            "en": "",
-            "va": ""
+            "es": "Las organizaciones que completan esta mentoría y desarrollan un flujo de trabajo creativo humano-IA documentado pueden derivarse a Track A como casos de referencia para el diseño de contenidos curriculares en Máster universitario en Diseño e Innovación con IA o en ciclos de Grado Superior de Imagen y Comunicación.",
+            "en": "Organisations that complete this mentoring and develop a documented human-AI creative workflow can be routed to Track A as reference cases for designing curricular content in a university Master's in Design and AI Innovation or in Higher Level cycles in Image and Communication.",
+            "va": "Les organitzacions que completen aquesta mentoria i desenvolupen un flux de treball creatiu humà-IA documentat poden derivar-se a Track A com a casos de referència per al disseny de continguts curriculars en Màster universitari en Disseny i Innovació amb IA o en cicles de Grau Superior d'Imatge i Comunicació."
           },
           "url": ""
         },
@@ -51155,46 +51928,60 @@ export const MARKETPLACE_CONFIG = {
             "included": [
               {
                 "label": {
-                  "es": "Mapeo de casos de uso de IA generativa adecuados al perfil de la organización (texto, imagen, vídeo, audio)",
-                  "en": "Mapping of generative AI use cases appropriate to the organisation's profile (text, image, video, audio)",
-                  "va": "Mapeig de casos d'ús d'IA generativa adequats al perfil de l'organització (text, imatge, vídeo, àudio)"
+                  "es": "Diagnóstico del perfil creativo de la organización e identificación de casos de uso de IA generativa prioritarios (texto, imagen, vídeo, audio)",
+                  "en": "Diagnosis of the organisation's creative profile and identification of priority generative AI use cases (text, image, video, audio)",
+                  "va": "Diagnòstic del perfil creatiu de l'organització i identificació de casos d'ús d'IA generativa prioritaris (text, imatge, vídeo, àudio)"
                 }
               },
               {
                 "label": {
-                  "es": "Evaluación de herramientas de IA generativa disponibles (coste, calidad, términos de uso comercial)",
-                  "en": "Evaluation of available generative AI tools (cost, quality, commercial use terms)",
-                  "va": "Avaluació d'eines d'IA generativa disponibles (cost, qualitat, termes d'ús comercial)"
+                  "es": "Evaluación comparativa de herramientas de IA generativa disponibles (coste, calidad, términos de uso comercial, adecuación al sector)",
+                  "en": "Comparative evaluation of available generative AI tools (cost, quality, commercial use terms, sector suitability)",
+                  "va": "Avaluació comparativa d'eines d'IA generativa disponibles (cost, qualitat, termes d'ús comercial, adequació al sector)"
                 }
               },
               {
                 "label": {
-                  "es": "Orientación sobre derechos de autor en contenidos generados con IA y atribución",
-                  "en": "Guidance on copyright in AI-generated content and attribution",
-                  "va": "Orientació sobre drets d'autor en continguts generats amb IA i atribució"
+                  "es": "Orientación práctica sobre derechos de autor en contenidos generados con IA, atribución y comunicación responsable al usuario final",
+                  "en": "Practical guidance on copyright in AI-generated content, attribution and responsible communication to the end user",
+                  "va": "Orientació pràctica sobre drets d'autor en continguts generats amb IA, atribució i comunicació responsable a l'usuari final"
                 }
               },
               {
                 "label": {
-                  "es": "Diseño de flujos de trabajo donde la IA complementa sin sustituir la creatividad humana del equipo",
-                  "en": "Design of workflows where AI complements without replacing the team's human creativity",
-                  "va": "Disseny de fluxos de treball on la IA complementa sense substituir la creativitat humana de l'equip"
+                  "es": "Diseño de flujos de trabajo creativos humano-IA que complementan sin sustituir la creatividad del equipo y preservan la identidad de marca",
+                  "en": "Design of human-AI creative workflows that complement without replacing team creativity and preserve brand identity",
+                  "va": "Disseny de fluxos de treball creatius humà-IA que complementen sense substituir la creativitat de l'equip i preserven la identitat de marca"
+                }
+              },
+              {
+                "label": {
+                  "es": "Revisión ética del plan de integración propuesto respecto a transparencia, sesgos y expectativas del visitante",
+                  "en": "Ethical review of the proposed integration plan regarding transparency, bias and visitor expectations",
+                  "va": "Revisió ètica del pla d'integració proposat respecte a transparència, biaixos i expectatives del visitant"
                 }
               }
             ],
             "excluded": [
               {
                 "label": {
-                  "es": "Desarrollo de modelos de IA generativa propios ni fine-tuning de modelos existentes",
-                  "en": "Development of own generative AI models or fine-tuning of existing models",
-                  "va": "Desenvolupament de models d'IA generativa propis ni fine-tuning de models existents"
+                  "es": "Desarrollo de modelos de IA generativa propios ni fine-tuning de modelos existentes para la organización",
+                  "en": "Development of own generative AI models or fine-tuning of existing models for the organisation",
+                  "va": "Desenvolupament de models d'IA generativa propis ni fine-tuning de models existents per a l'organització"
                 }
               },
               {
                 "label": {
-                  "es": "Asesoramiento jurídico especializado en propiedad intelectual o contratos creativos",
-                  "en": "Specialist legal advice on intellectual property or creative contracts",
-                  "va": "Assessorament jurídic especialitzat en propietat intel·lectual o contractes creatius"
+                  "es": "Asesoramiento jurídico especializado en propiedad intelectual, contratos creativos o litigios por contenidos IA",
+                  "en": "Specialist legal advice on intellectual property, creative contracts or AI content litigation",
+                  "va": "Assessorament jurídic especialitzat en propietat intel·lectual, contractes creatius o litigis per continguts IA"
+                }
+              },
+              {
+                "label": {
+                  "es": "Producción directa de contenidos creativos ni diseño gráfico por parte de los mentores",
+                  "en": "Direct production of creative content or graphic design by the mentors",
+                  "va": "Producció directa de continguts creatius ni disseny gràfic per part dels mentors"
                 }
               }
             ]
@@ -51203,7 +51990,7 @@ export const MARKETPLACE_CONFIG = {
             "sessions": [
               {
                 "modality": "online",
-                "sessionCount": 2,
+                "sessionCount": 1,
                 "sessionDurationHours": 1,
                 "sessionDurationMinutes": null,
                 "sessionTypes": [
@@ -51211,11 +51998,23 @@ export const MARKETPLACE_CONFIG = {
                 ]
               },
               {
+                "modality": "online",
+                "sessionCount": 1,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": 30,
+                "sessionTypes": [
+                  "sync",
+                  "async-review"
+                ]
+              },
+              {
                 "modality": "in-person",
                 "sessionCount": 1,
                 "sessionDurationHours": null,
                 "sessionDurationMinutes": 30,
-                "sessionTypes": []
+                "sessionTypes": [
+                  "sync"
+                ]
               }
             ],
             "languageCodes": [
@@ -51224,20 +52023,20 @@ export const MARKETPLACE_CONFIG = {
               "en"
             ],
             "availability": {
-              "es": "Convocatoria continua con sesiones disponibles fuera de temporada alta (octubre-abril). Proceso de 2 sesiones: diagnóstico + plan de integración.",
-              "en": "Rolling call with sessions available outside peak season (October-April). 2-session process: diagnosis + integration plan.",
-              "va": "Convocatòria contínua amb sessions disponibles fora de temporada alta (octubre-abril). Procés de 2 sessions: diagnòstic + pla d'integració."
+              "es": "Convocatoria continua con sesiones disponibles fuera de temporada alta turística (octubre-abril). Proceso de 3 sesiones — diagnóstico creativo (online 60 min), revisión del plan de integración con feedback escrito (online 90 min) y sesión de cierre presencial o videollamada (30 min).",
+              "en": "Rolling call with sessions available outside the tourism peak season (October-April). 3-session process — creative diagnosis (online 60 min), integration plan review with written feedback (online 90 min) and closing session in-person or video call (30 min).",
+              "va": "Convocatòria contínua amb sessions disponibles fora de la temporada alta turística (octubre-abril). Procés de 3 sessions — diagnòstic creatiu (en línia 60 min), revisió del pla d'integració amb feedback escrit (en línia 90 min) i sessió de tancament presencial o videotrucada (30 min)."
             }
           },
           "targetUsers": {
-            "es": "Directores creativos y de marketing de empresas turísticas, comisarios y gestores de museos y espacios culturales, directores de agencias creativas y estudios de diseño que quieren explorar la IA generativa de forma ética y estratégica.",
-            "en": "Creative and marketing directors of tourism companies, curators and managers of museums and cultural spaces, directors of creative agencies and design studios wishing to explore generative AI ethically and strategically.",
-            "va": "Directors creatius i de màrqueting d'empreses turístiques, comissaris i gestors de museus i espais culturals, directors d'agències creatives i estudis de disseny que volen explorar la IA generativa de forma ètica i estratègica."
+            "es": "Directores creativos y de marketing de empresas turísticas y hoteleras, comisarios y gestores de museos y espacios culturales, directores de agencias creativas y estudios de diseño, responsables de comunicación de festivales y eventos culturales que quieren explorar la IA generativa de forma ética y estratégica sin perder su identidad.",
+            "en": "Creative and marketing directors of tourism and hospitality companies, curators and managers of museums and cultural spaces, directors of creative agencies and design studios, communications managers of festivals and cultural events wishing to explore generative AI ethically and strategically without losing their identity.",
+            "va": "Directors creatius i de màrqueting d'empreses turístiques i hoteleres, comissaris i gestors de museus i espais culturals, directors d'agències creatives i estudis de disseny, responsables de comunicació de festivals i esdeveniments culturals que volen explorar la IA generativa de forma ètica i estratègica sense perdre la seua identitat."
           },
           "transferValue": {
-            "es": "Las organizaciones que integran IA generativa de forma estratégica y ética reducen costes de producción de contenidos sin sacrificar autenticidad, se posicionan como referentes de innovación creativa responsable en su sector y pueden compartir sus flujos de trabajo como casos de referencia para otras organizaciones similares.",
-            "en": "Organisations that integrate generative AI strategically and ethically reduce content production costs without sacrificing authenticity, position themselves as benchmarks of responsible creative innovation in their sector and can share their workflows as reference cases for other similar organisations.",
-            "va": "Les organitzacions que integren IA generativa de forma estratègica i ètica redueixen costos de producció de continguts sense sacrificar autenticitat, es posicionen com a referents d'innovació creativa responsable en el seu sector i poden compartir els seus fluxos de treball com a casos de referència per a altres organitzacions similars."
+            "es": "Las organizaciones que integran IA generativa de forma estratégica y ética reducen costes de producción de contenidos sin sacrificar autenticidad, se posicionan como referentes de innovación creativa responsable en su sector y pueden compartir sus flujos de trabajo como casos de referencia para otras organizaciones similares. El modelo de mentoría es replicable para otros sectores creativos del ecosistema AI-STEAM.",
+            "en": "Organisations that integrate generative AI strategically and ethically reduce content production costs without sacrificing authenticity, position themselves as benchmarks of responsible creative innovation in their sector and can share their workflows as reference cases for other similar organisations. The mentoring model is replicable for other creative sectors in the AI-STEAM ecosystem.",
+            "va": "Les organitzacions que integren IA generativa de forma estratègica i ètica redueixen costos de producció de continguts sense sacrificar autenticitat, es posicionen com a referents d'innovació creativa responsable en el seu sector i poden compartir els seus fluxos de treball com a casos de referència per a altres organitzacions similars. El model de mentoria és replicable per a altres sectors creatius de l'ecosistema AI-STEAM."
           }
         },
         "mentors": {
@@ -51248,13 +52047,14 @@ export const MARKETPLACE_CONFIG = {
               "name": "AI-STEAM Mentoring Pool — IA Creativa y Turismo-Cultura",
               "organisation": "AI-STEAM Network",
               "role": {
-                "es": "Mentores especializados en IA generativa aplicada a turismo, patrimonio cultural e industrias creativas",
-                "en": "Mentors specialised in generative AI applied to tourism, cultural heritage and creative industries",
-                "va": "Mentors especialitzats en IA generativa aplicada a turisme, patrimoni cultural i indústries creatives"
+                "es": "Mentores especializados en IA generativa aplicada a turismo, patrimonio cultural e industrias creativas — con perfiles de diseño, comunicación digital, gestión cultural y tecnología creativa",
+                "en": "Mentors specialised in generative AI applied to tourism, cultural heritage and creative industries — with profiles in design, digital communication, cultural management and creative technology",
+                "va": "Mentors especialitzats en IA generativa aplicada a turisme, patrimoni cultural i indústries creatives — amb perfils de disseny, comunicació digital, gestió cultural i tecnologia creativa"
               },
               "specialties": [
+                "creative-ai",
                 "responsible-ai",
-                "ai-ethics",
+                "ai-literacy",
                 "industry-4-0"
               ]
             }
@@ -51264,23 +52064,30 @@ export const MARKETPLACE_CONFIG = {
           "requiredBeforeRequest": [
             {
               "label": {
-                "es": "Descripción de la organización y el tipo de contenidos creativos que produce actualmente",
-                "en": "Description of the organisation and the type of creative content it currently produces",
-                "va": "Descripció de l'organització i el tipus de continguts creatius que produeix actualment"
+                "es": "Descripción de la organización (tipo, tamaño, sector CCI) y el tipo de contenidos creativos que produce actualmente",
+                "en": "Description of the organisation (type, size, CCI sector) and the type of creative content it currently produces",
+                "va": "Descripció de l'organització (tipus, mida, sector CCI) i el tipus de continguts creatius que produeix actualment"
               }
             },
             {
               "label": {
-                "es": "Identificación del proceso creativo o productivo donde se quiere explorar la IA generativa",
-                "en": "Identification of the creative or production process where generative AI is to be explored",
-                "va": "Identificació del procés creatiu o productiu on es vol explorar la IA generativa"
+                "es": "Identificación del proceso creativo o productivo concreto donde se quiere explorar la IA generativa y estimación del tiempo dedicado actualmente a ese proceso",
+                "en": "Identification of the specific creative or production process where generative AI is to be explored and estimate of time currently dedicated to that process",
+                "va": "Identificació del procés creatiu o productiu concret on es vol explorar la IA generativa i estimació del temps dedicat actualment a aqueix procés"
               }
             },
             {
               "label": {
-                "es": "Indicación del presupuesto disponible para herramientas de IA (rango aproximado mensual)",
-                "en": "Indication of the budget available for AI tools (approximate monthly range)",
-                "va": "Indicació del pressupost disponible per a eines d'IA (rang aproximat mensual)"
+                "es": "Indicación del presupuesto disponible para herramientas de IA (rango aproximado mensual en EUR)",
+                "en": "Indication of the budget available for AI tools (approximate monthly range in EUR)",
+                "va": "Indicació del pressupost disponible per a eines d'IA (rang aproximat mensual en EUR)"
+              }
+            },
+            {
+              "label": {
+                "es": "Breve reflexión sobre qué elementos de identidad creativa o autenticidad de la organización son innegociables y no deben ser alterados por la IA",
+                "en": "Brief reflection on which elements of the organisation's creative identity or authenticity are non-negotiable and must not be altered by AI",
+                "va": "Breu reflexió sobre quins elements d'identitat creativa o autenticitat de l'organització són innegociables i no han de ser alterats per la IA"
               }
             }
           ],
@@ -51288,25 +52095,33 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "creative-identity",
               "label": {
-                "es": "¿Cuáles son los elementos de identidad creativa o autenticidad que la organización considera innegociables y que la IA no debe alterar?",
-                "en": "What are the elements of creative identity or authenticity that the organisation considers non-negotiable and that AI must not alter?",
-                "va": "Quins són els elements d'identitat creativa o autenticitat que l'organització considera innegociables i que la IA no ha d'alterar?"
+                "es": "¿Cuáles son los elementos de identidad creativa o autenticidad que la organización considera innegociables y que la IA no debe alterar (voz editorial, estética visual, selección de imágenes, narrativa del destino...)?",
+                "en": "What are the elements of creative identity or authenticity that the organisation considers non-negotiable and that AI must not alter (editorial voice, visual aesthetics, image selection, destination narrative...)?",
+                "va": "Quins són els elements d'identitat creativa o autenticitat que l'organització considera innegociables i que la IA no ha d'alterar (veu editorial, estètica visual, selecció d'imatges, narrativa de la destinació...)?"
               }
             },
             {
               "id": "use-case-priority",
               "label": {
-                "es": "¿Qué tarea creativa os consume más tiempo actualmente y donde la IA podría tener mayor impacto inmediato?",
-                "en": "What creative task currently takes up most of your time and where could AI have the greatest immediate impact?",
-                "va": "Quina tasca creativa us consumeix més temps actualment i on podria tenir la IA major impacte immediat?"
+                "es": "¿Qué tarea creativa consume más tiempo actualmente en la organización y dónde podría tener la IA generativa el mayor impacto inmediato sin comprometer la calidad?",
+                "en": "What creative task currently takes up most of your organisation's time and where could generative AI have the greatest immediate impact without compromising quality?",
+                "va": "Quina tasca creativa consumeix més temps actualment en l'organització i on podria tenir la IA generativa el major impacte immediat sense comprometre la qualitat?"
               }
             },
             {
               "id": "audience-context",
               "label": {
-                "es": "¿Vuestro público o visitantes son sensibles al uso de IA en los contenidos que consumen? ¿Os habéis planteado cómo comunicarlo?",
-                "en": "Is your audience or visitors sensitive to the use of AI in the content they consume? Have you considered how to communicate it?",
-                "va": "El vostre públic o visitants són sensibles a l'ús d'IA en els continguts que consumeixen? Us heu plantejat com comunicar-ho?"
+                "es": "¿El público, visitantes o clientes de la organización son sensibles al uso de IA en los contenidos que consumen? ¿Os habéis planteado cómo comunicarlo de forma transparente?",
+                "en": "Is your organisation's audience, visitors or customers sensitive to the use of AI in the content they consume? Have you considered how to communicate it transparently?",
+                "va": "El públic, visitants o clients de l'organització són sensibles a l'ús d'IA en els continguts que consumeixen? Us heu plantejat com comunicar-ho de forma transparent?"
+              }
+            },
+            {
+              "id": "tools-explored",
+              "label": {
+                "es": "¿Ha explorado ya alguna herramienta de IA generativa (ChatGPT, Midjourney, Adobe Firefly, ElevenLabs...)? Si es así, ¿cuáles y con qué resultado?",
+                "en": "Have you already explored any generative AI tools (ChatGPT, Midjourney, Adobe Firefly, ElevenLabs...)? If so, which ones and with what result?",
+                "va": "Ha explorat ja alguna eina d'IA generativa (ChatGPT, Midjourney, Adobe Firefly, ElevenLabs...)? Si és el cas, quines i amb quin resultat?"
               }
             }
           ]
@@ -51316,33 +52131,94 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "ai-integration-map",
               "label": {
-                "es": "Mapa de integración de IA generativa con casos de uso prioritarios y herramientas recomendadas",
-                "en": "Generative AI integration map with priority use cases and recommended tools",
-                "va": "Mapa d'integració d'IA generativa amb casos d'ús prioritaris i eines recomanades"
+                "es": "Mapa de integración de IA generativa — casos de uso prioritarios, herramientas recomendadas y hoja de ruta de implementación en 90 días",
+                "en": "Generative AI integration map — priority use cases, recommended tools and 90-day implementation roadmap",
+                "va": "Mapa d'integració d'IA generativa — casos d'ús prioritaris, eines recomanades i full de ruta d'implementació en 90 dies"
               }
             },
             {
               "id": "copyright-guide",
               "label": {
-                "es": "Guía básica de derechos de autor para contenidos generados con IA en el contexto de la organización",
-                "en": "Basic copyright guide for AI-generated content in the organisation's context",
-                "va": "Guia bàsica de drets d'autor per a continguts generats amb IA en el context de l'organització"
+                "es": "Guía práctica de derechos de autor para contenidos generados con IA en el contexto de la organización (qué se puede publicar, cómo atribuirlo, cómo comunicarlo al usuario)",
+                "en": "Practical copyright guide for AI-generated content in the organisation's context (what can be published, how to attribute it, how to communicate it to the user)",
+                "va": "Guia pràctica de drets d'autor per a continguts generats amb IA en el context de l'organització (que es pot publicar, com atribuir-ho, com comunicar-ho a l'usuari)"
               }
             },
             {
               "id": "workflow-prototype",
               "label": {
-                "es": "Prototipo de flujo de trabajo creativo humano-IA para un proceso concreto de la organización",
-                "en": "Human-AI creative workflow prototype for a specific process of the organisation",
-                "va": "Prototip de flux de treball creatiu humà-IA per a un procés concret de l'organització"
+                "es": "Prototipo documentado de flujo de trabajo creativo humano-IA para un proceso concreto de la organización (p.ej. descripción de experiencias, generación de imágenes para redes sociales, traducción de contenidos para visitantes)",
+                "en": "Documented prototype of a human-AI creative workflow for a specific process of the organisation (e.g. experience description, image generation for social media, content translation for visitors)",
+                "va": "Prototip documentat de flux de treball creatiu humà-IA per a un procés concret de l'organització (p.ex. descripció d'experiències, generació d'imatges per a xarxes socials, traducció de continguts per a visitants)"
+              }
+            },
+            {
+              "id": "ethics-checklist",
+              "label": {
+                "es": "Checklist ética de revisión de contenidos generados con IA antes de publicación (transparencia, sesgos, calidad, adecuación a la marca)",
+                "en": "Ethical checklist for reviewing AI-generated content before publication (transparency, bias, quality, brand suitability)",
+                "va": "Checklist ètica de revisió de continguts generats amb IA abans de publicació (transparència, biaixos, qualitat, adequació a la marca)"
               }
             }
           ]
         },
         "downloads": {
-          "enabled": false,
+          "enabled": true,
           "basePath": "/assets/downloads/mentorings/mentoring-ia-creativa-turismo-cultura/",
-          "items": []
+          "items": [
+            {
+              "id": "preparation-guide",
+              "type": "preparation-guide",
+              "title": {
+                "es": "Guía de preparación para la mentoría en IA generativa — Turismo y Cultura",
+                "en": "Mentoring preparation guide for generative AI — Tourism and Culture",
+                "va": "Guia de preparació per a la mentoria en IA generativa — Turisme i Cultura"
+              },
+              "description": {
+                "es": "Guía para que la organización llegue bien preparada a la primera sesión de mentoría. Incluye el formulario de diagnóstico creativo, preguntas de reflexión previa y ejemplos de casos de uso de IA generativa en el sector turístico-cultural.",
+                "en": "Guide for the organisation to arrive well prepared for the first mentoring session. Includes the creative diagnosis form, prior reflection questions and examples of generative AI use cases in the tourism-cultural sector.",
+                "va": "Guia perquè l'organització arribe ben preparada a la primera sessió de mentoria. Inclou el formulari de diagnòstic creatiu, preguntes de reflexió prèvia i exemples de casos d'ús d'IA generativa en el sector turístic-cultural."
+              },
+              "files": [
+                {
+                  "file": "guia-preparacion-mentoria-ia-generativa-turismo-cultura.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": "CC BY 4.0",
+                  "url": ""
+                }
+              ],
+              "license": "",
+              "showOnCard": true,
+              "showOnDetail": true
+            },
+            {
+              "id": "ai-tools-comparison",
+              "type": "brief-template",
+              "title": {
+                "es": "Comparativa de herramientas de IA generativa para turismo y cultura (actualización trimestral)",
+                "en": "Generative AI tools comparison for tourism and culture (quarterly update)",
+                "va": "Comparativa d'eines d'IA generativa per a turisme i cultura (actualització trimestral)"
+              },
+              "description": {
+                "es": "Tabla comparativa de las principales herramientas de IA generativa de texto, imagen, audio y vídeo con información sobre coste, términos de uso comercial, idiomas disponibles y adecuación para contenidos turísticos y culturales.",
+                "en": "Comparative table of the main generative AI tools for text, image, audio and video with information on cost, commercial use terms, available languages and suitability for tourism and cultural content.",
+                "va": "Taula comparativa de les principals eines d'IA generativa de text, imatge, àudio i vídeo amb informació sobre cost, termes d'ús comercial, idiomes disponibles i adequació per a continguts turístics i culturals."
+              },
+              "files": [
+                {
+                  "file": "comparativa-herramientas-ia-generativa-turismo-cultura.pdf",
+                  "format": "pdf",
+                  "language": "es",
+                  "license": "CC BY 4.0",
+                  "url": ""
+                }
+              ],
+              "license": "",
+              "showOnCard": false,
+              "showOnDetail": true
+            }
+          ]
         },
         "resources": {
           "externalLinks": [
@@ -51350,15 +52226,60 @@ export const MARKETPLACE_CONFIG = {
               "id": "request-form",
               "type": "external-form",
               "label": {
-                "es": "Formulario de solicitud de mentoría",
-                "en": "Mentoring request form",
-                "va": "Formulari de sol·licitud de mentoria"
+                "es": "Formulario de solicitud de mentoría — IA generativa y creativa para turismo y cultura",
+                "en": "Mentoring request form — generative and creative AI for tourism and culture",
+                "va": "Formulari de sol·licitud de mentoria — IA generativa i creativa per a turisme i cultura"
               },
-              "url": "",
+              "url": "https://aisteam.gva.es/mentoria/ia-creativa-turismo-cultura/solicitud",
               "access": {
-                "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-                "en": "The request is managed outside this website when an external system is available.",
-                "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
+                "es": "Formulario online — respuesta en un plazo máximo de 5 días laborables",
+                "en": "Online form — response within a maximum of 5 working days",
+                "va": "Formulari online — resposta en un termini màxim de 5 dies laborables"
+              }
+            },
+            {
+              "id": "ai-act-cultural-sector",
+              "type": "guidance",
+              "label": {
+                "es": "IA y sector cultural — Recursos de la Comisión Europea (Creative Europe)",
+                "en": "AI and the cultural sector — European Commission resources (Creative Europe)",
+                "va": "IA i sector cultural — Recursos de la Comissió Europea (Creative Europe)"
+              },
+              "url": "https://culture.ec.europa.eu/digital-and-culture/digital-cultural-heritage/artificial-intelligence-in-the-cultural-sector",
+              "access": {
+                "es": "Acceso libre en el portal de Creative Europe de la Comisión Europea",
+                "en": "Free access on the European Commission's Creative Europe portal",
+                "va": "Accés lliure en el portal de Creative Europe de la Comissió Europea"
+              }
+            },
+            {
+              "id": "copyright-ai-aepd",
+              "type": "guidance",
+              "label": {
+                "es": "Derechos de autor en contenidos generados por IA — recursos jurídicos (CEDRO y AEPD)",
+                "en": "Copyright in AI-generated content — legal resources (CEDRO and AEPD)",
+                "va": "Drets d'autor en continguts generats per IA — recursos jurídics (CEDRO i AEPD)"
+              },
+              "url": "https://www.cedro.org/info/la-ia-y-los-derechos-de-autor",
+              "access": {
+                "es": "Acceso libre en el portal de CEDRO (Centro Español de Derechos Reprográficos)",
+                "en": "Free access on the CEDRO portal (Spanish Reprographic Rights Centre)",
+                "va": "Accés lliure en el portal de CEDRO (Centre Espanyol de Drets Reprogràfics)"
+              }
+            },
+            {
+              "id": "ivace-turisme-ia",
+              "type": "website",
+              "label": {
+                "es": "Agència Valenciana del Turisme — Digitalización e Innovación en el sector turístico de la CV",
+                "en": "Agència Valenciana del Turisme — Digitalisation and Innovation in the Valencian tourism sector",
+                "va": "Agència Valenciana del Turisme — Digitalització i Innovació en el sector turístic de la CV"
+              },
+              "url": "https://www.turisme.gva.es/es/web/turisme/digitalitzacio-i-innovacio",
+              "access": {
+                "es": "Acceso libre en el portal de la Agència Valenciana del Turisme",
+                "en": "Free access on the Agència Valenciana del Turisme portal",
+                "va": "Accés lliure en el portal de l'Agència Valenciana del Turisme"
               }
             }
           ]
@@ -51388,21 +52309,42 @@ export const MARKETPLACE_CONFIG = {
           "relatedChallenges": [
             "reto-analisis-sentimiento-turismo-tur"
           ],
-          "relatedValidations": [
-            "validation-stakeholder-turismo-inteligente-tur"
-          ],
+          "relatedValidations": [],
           "relatedPilots": [],
-          "relatedCases": [],
+          "relatedCases": [
+            "narrativas-digitales-ia-cci",
+            "realidad-aumentada-museos-cci"
+          ],
           "relatedResources": [],
-          "possibleOutputs": [
-            "case",
-            "resource",
-            "challenge"
-          ]
+          "possibleOutputs": []
         },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
+        "hasDownloads": true,
+        "downloadCount": 2,
+        "cardDownloads": [
+          {
+            "id": "preparation-guide",
+            "type": "preparation-guide",
+            "title": {
+              "es": "Guía de preparación para la mentoría en IA generativa — Turismo y Cultura",
+              "en": "Mentoring preparation guide for generative AI — Tourism and Culture",
+              "va": "Guia de preparació per a la mentoria en IA generativa — Turisme i Cultura"
+            },
+            "description": {
+              "es": "Guía para que la organización llegue bien preparada a la primera sesión de mentoría. Incluye el formulario de diagnóstico creativo, preguntas de reflexión previa y ejemplos de casos de uso de IA generativa en el sector turístico-cultural.",
+              "en": "Guide for the organisation to arrive well prepared for the first mentoring session. Includes the creative diagnosis form, prior reflection questions and examples of generative AI use cases in the tourism-cultural sector.",
+              "va": "Guia perquè l'organització arribe ben preparada a la primera sessió de mentoria. Inclou el formulari de diagnòstic creatiu, preguntes de reflexió prèvia i exemples de casos d'ús d'IA generativa en el sector turístic-cultural."
+            },
+            "files": [
+              {
+                "file": "guia-preparacion-mentoria-ia-generativa-turismo-cultura.pdf",
+                "format": "pdf",
+                "language": "es",
+                "license": "CC BY 4.0"
+              }
+            ],
+            "showOnCard": true
+          }
+        ],
         "presentation": {
           "card": {
             "variant": "mentoring",
@@ -51410,7 +52352,7 @@ export const MARKETPLACE_CONFIG = {
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
-            "showDownloadsIndicator": false,
+            "showDownloadsIndicator": true,
             "showChatBadge": false,
             "mainBlockLabel": {
               "es": "Qué ofrece",
@@ -51429,8 +52371,8 @@ export const MARKETPLACE_CONFIG = {
               "preparation": true,
               "expectedOutputs": true,
               "transferValue": true,
-              "downloads": false,
-              "resources": false,
+              "downloads": true,
+              "resources": true,
               "access": true,
               "relations": true
             }
