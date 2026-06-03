@@ -4014,14 +4014,17 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
-      "ficha": null,
+      "ficha": {
+        "file": "mentoring-ia-creativa-turismo-cultura.pdf",
+        "publicPath": "/assets/downloads/marketplace/mentorings/mentoring-ia-creativa-turismo-cultura.pdf"
+      },
       "adhesionForm": {
-        "url": ""
+        "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufimy8pKaFjvbtEm6P80z2LuPxUNFhSTlNGTFpPMEdWNUwzTk8yVjYzTlpRQS4u"
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "mentoringTeam": {
           "name": {
@@ -4029,42 +4032,23 @@ export const MARKETPLACE_CONFIG = {
             "en": "AI-STEAM Network Mentoring Pool — Creative AI and Tourism-Culture Specialists",
             "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme-Cultura"
           },
-          "type": "mentoring-pool",
+          "type": "",
           "role": {
             "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural, diseño e industrias creativas valencianas e internacionales",
             "en": "Mentors experienced in generative AI applications in tourism, cultural heritage, design and Valencian and international creative industries",
             "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural, disseny i indústries creatives valencianes i internacionals"
           },
-          "org": "AI-STEAM Network"
+          "org": ""
         },
-        "coordinator": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE",
-          "role": {
-            "es": "Coordinación de la mentoría en IA generativa para los sectores turístico-cultural y creativo de la Comunitat Valenciana",
-            "en": "Coordination of generative AI mentoring for the tourism-cultural and creative sectors of the Valencian Community",
-            "va": "Coordinació de la mentoria en IA generativa per als sectors turístic-cultural i creatiu de la Comunitat Valenciana"
-          }
-        }
+        "coordinator": null
       },
       "classification": {
-        "aiSteamFocus": [
-          "creative-ai",
-          "responsible-ai",
-          "ai-literacy"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "responsible-ai",
-          "equity-inclusion",
-          "learning-ecosystems"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
-        "lbdStage": "process",
+        "lbdStage": "input",
         "trackBValue": {
           "es": "",
           "en": "",
@@ -4074,17 +4058,12 @@ export const MARKETPLACE_CONFIG = {
         "pilotStatus": "",
         "sector": "cci",
         "sectorLabel": {
-          "es": "Turismo, cultura e industrias creativas",
-          "en": "Tourism, culture and creative industries",
-          "va": "Turisme, cultura i indústries creatives"
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "stakeholderCategory": "",
-        "audience": [
-          "companies",
-          "civic-organisations",
-          "industry-partners",
-          "vet-centres"
-        ]
+        "audience": []
       },
       "transfer": {
         "type": "",
@@ -4099,9 +4078,9 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
-        "dataAvailability": "not-applicable",
+        "dataAvailability": "",
         "sensitiveDataIncluded": false,
         "contributionVisibility": "",
         "sensitiveDataPolicy": {
@@ -4110,36 +4089,36 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "No deben enviarse materiales con derechos de autor de terceros ni contenidos confidenciales de campañas en desarrollo a través de este sitio. Los flujos de trabajo prototipados son propiedad de la organización mentorizada.",
-          "en": "Materials with third-party copyright or confidential content from campaigns in development must not be submitted through this site. Prototyped workflows are the property of the mentored organisation.",
-          "va": "No s'han d'enviar materials amb drets d'autor de tercers ni continguts confidencials de campanyes en desenvolupament a través d'este lloc. Els fluxos de treball prototipats són propietat de l'organització mentoritzada."
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "mentoringRequestAccess": "external-managed",
-        "confidentialityLevel": "standard",
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
         "publicationNote": {
-          "es": "Los flujos de trabajo prototipados y el mapa de integración podrán publicarse como casos de referencia en el Marketplace AI-STEAM si la organización lo autoriza expresamente y no incluyen contenidos protegidos de terceros.",
-          "en": "Prototyped workflows and the integration map may be published as reference cases in the AI-STEAM Marketplace if the organisation expressly authorises it and they do not include third-party protected content.",
-          "va": "Els fluxos de treball prototipats i el mapa d'integració podran publicar-se com a casos de referència al Marketplace AI-STEAM si l'organització ho autoritza expressament i no inclouen continguts protegits de tercers."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
-        "enabled": true,
+        "enabled": false,
         "label": {
-          "es": "Las organizaciones que completan esta mentoría y desarrollan un flujo de trabajo creativo humano-IA documentado pueden derivarse a Track A como casos de referencia para el diseño de contenidos curriculares en Máster universitario en Diseño e Innovación con IA o en ciclos de Grado Superior de Imagen y Comunicación.",
-          "en": "Organisations that complete this mentoring and develop a documented human-AI creative workflow can be routed to Track A as reference cases for designing curricular content in a university Master's in Design and AI Innovation or in Higher Level cycles in Image and Communication.",
-          "va": "Les organitzacions que completen aquesta mentoria i desenvolupen un flux de treball creatiu humà-IA documentat poden derivar-se a Track A com a casos de referència per al disseny de continguts curriculars en Màster universitari en Disseny i Innovació amb IA o en cicles de Grau Superior d'Imatge i Comunicació."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "url": ""
       },
       "trackALink": {
-        "enabled": true,
+        "enabled": false,
         "label": {
-          "es": "Las organizaciones que completan esta mentoría y desarrollan un flujo de trabajo creativo humano-IA documentado pueden derivarse a Track A como casos de referencia para el diseño de contenidos curriculares en Máster universitario en Diseño e Innovación con IA o en ciclos de Grado Superior de Imagen y Comunicación.",
-          "en": "Organisations that complete this mentoring and develop a documented human-AI creative workflow can be routed to Track A as reference cases for designing curricular content in a university Master's in Design and AI Innovation or in Higher Level cycles in Image and Communication.",
-          "va": "Les organitzacions que completen aquesta mentoria i desenvolupen un flux de treball creatiu humà-IA documentat poden derivar-se a Track A com a casos de referència per al disseny de continguts curriculars en Màster universitari en Disseny i Innovació amb IA o en cicles de Grau Superior d'Imatge i Comunicació."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "url": ""
       },
@@ -4150,71 +4129,13 @@ export const MARKETPLACE_CONFIG = {
           "va": "Orientar organitzacions turístiques i culturals en la selecció i integració ètica d'eines d'IA generativa en els seus processos creatius i de negoci, garantint que els continguts generats respecten els drets d'autor, la identitat de marca i les expectatives del visitant o usuari final."
         },
         "problemAddressed": {
-          "es": "Las empresas turísticas y culturales ven el potencial de la IA generativa pero no saben qué herramientas son adecuadas para su escala y presupuesto, tienen dudas sobre los derechos de los contenidos generados con IA y temen que la IA homogenice su propuesta de valor. La mentoría ayuda a encontrar el equilibrio entre automatización creativa y autenticidad.",
-          "en": "Tourism and cultural companies see the potential of generative AI but do not know which tools are appropriate for their scale and budget, have doubts about the rights of AI-generated content and fear that AI will homogenise their value proposition. Mentoring helps find the balance between creative automation and authenticity.",
-          "va": "Les empreses turístiques i culturals veuen el potencial de la IA generativa però no saben quines eines són adequades per a la seua escala i pressupost, tenen dubtes sobre els drets dels continguts generats amb IA i temen que la IA homogeneïtze la seua proposta de valor. La mentoria ajuda a trobar l'equilibri entre automatització creativa i autenticitat."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringScope": {
-          "included": [
-            {
-              "label": {
-                "es": "Diagnóstico del perfil creativo de la organización e identificación de casos de uso de IA generativa prioritarios (texto, imagen, vídeo, audio)",
-                "en": "Diagnosis of the organisation's creative profile and identification of priority generative AI use cases (text, image, video, audio)",
-                "va": "Diagnòstic del perfil creatiu de l'organització i identificació de casos d'ús d'IA generativa prioritaris (text, imatge, vídeo, àudio)"
-              }
-            },
-            {
-              "label": {
-                "es": "Evaluación comparativa de herramientas de IA generativa disponibles (coste, calidad, términos de uso comercial, adecuación al sector)",
-                "en": "Comparative evaluation of available generative AI tools (cost, quality, commercial use terms, sector suitability)",
-                "va": "Avaluació comparativa d'eines d'IA generativa disponibles (cost, qualitat, termes d'ús comercial, adequació al sector)"
-              }
-            },
-            {
-              "label": {
-                "es": "Orientación práctica sobre derechos de autor en contenidos generados con IA, atribución y comunicación responsable al usuario final",
-                "en": "Practical guidance on copyright in AI-generated content, attribution and responsible communication to the end user",
-                "va": "Orientació pràctica sobre drets d'autor en continguts generats amb IA, atribució i comunicació responsable a l'usuari final"
-              }
-            },
-            {
-              "label": {
-                "es": "Diseño de flujos de trabajo creativos humano-IA que complementan sin sustituir la creatividad del equipo y preservan la identidad de marca",
-                "en": "Design of human-AI creative workflows that complement without replacing team creativity and preserve brand identity",
-                "va": "Disseny de fluxos de treball creatius humà-IA que complementen sense substituir la creativitat de l'equip i preserven la identitat de marca"
-              }
-            },
-            {
-              "label": {
-                "es": "Revisión ética del plan de integración propuesto respecto a transparencia, sesgos y expectativas del visitante",
-                "en": "Ethical review of the proposed integration plan regarding transparency, bias and visitor expectations",
-                "va": "Revisió ètica del pla d'integració proposat respecte a transparència, biaixos i expectatives del visitant"
-              }
-            }
-          ],
-          "excluded": [
-            {
-              "label": {
-                "es": "Desarrollo de modelos de IA generativa propios ni fine-tuning de modelos existentes para la organización",
-                "en": "Development of own generative AI models or fine-tuning of existing models for the organisation",
-                "va": "Desenvolupament de models d'IA generativa propis ni fine-tuning de models existents per a l'organització"
-              }
-            },
-            {
-              "label": {
-                "es": "Asesoramiento jurídico especializado en propiedad intelectual, contratos creativos o litigios por contenidos IA",
-                "en": "Specialist legal advice on intellectual property, creative contracts or AI content litigation",
-                "va": "Assessorament jurídic especialitzat en propietat intel·lectual, contractes creatius o litigis per continguts IA"
-              }
-            },
-            {
-              "label": {
-                "es": "Producción directa de contenidos creativos ni diseño gráfico por parte de los mentores",
-                "en": "Direct production of creative content or graphic design by the mentors",
-                "va": "Producció directa de continguts creatius ni disseny gràfic per part dels mentors"
-              }
-            }
-          ]
+          "included": [],
+          "excluded": []
         },
         "format": {
           "sessions": [
@@ -4247,11 +4168,7 @@ export const MARKETPLACE_CONFIG = {
               ]
             }
           ],
-          "languageCodes": [
-            "es",
-            "va",
-            "en"
-          ],
+          "languageCodes": [],
           "availability": {
             "es": "Convocatoria continua con sesiones disponibles fuera de temporada alta turística (octubre-abril). Proceso de 3 sesiones — diagnóstico creativo (online 60 min), revisión del plan de integración con feedback escrito (online 90 min) y sesión de cierre presencial o videollamada (30 min).",
             "en": "Rolling call with sessions available outside the tourism peak season (October-April). 3-session process — creative diagnosis (online 60 min), integration plan review with written feedback (online 90 min) and closing session in-person or video call (30 min).",
@@ -4259,14 +4176,14 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "targetUsers": {
-          "es": "Directores creativos y de marketing de empresas turísticas y hoteleras, comisarios y gestores de museos y espacios culturales, directores de agencias creativas y estudios de diseño, responsables de comunicación de festivales y eventos culturales que quieren explorar la IA generativa de forma ética y estratégica sin perder su identidad.",
-          "en": "Creative and marketing directors of tourism and hospitality companies, curators and managers of museums and cultural spaces, directors of creative agencies and design studios, communications managers of festivals and cultural events wishing to explore generative AI ethically and strategically without losing their identity.",
-          "va": "Directors creatius i de màrqueting d'empreses turístiques i hoteleres, comissaris i gestors de museus i espais culturals, directors d'agències creatives i estudis de disseny, responsables de comunicació de festivals i esdeveniments culturals que volen explorar la IA generativa de forma ètica i estratègica sense perdre la seua identitat."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "transferValue": {
-          "es": "Las organizaciones que integran IA generativa de forma estratégica y ética reducen costes de producción de contenidos sin sacrificar autenticidad, se posicionan como referentes de innovación creativa responsable en su sector y pueden compartir sus flujos de trabajo como casos de referencia para otras organizaciones similares. El modelo de mentoría es replicable para otros sectores creativos del ecosistema AI-STEAM.",
-          "en": "Organisations that integrate generative AI strategically and ethically reduce content production costs without sacrificing authenticity, position themselves as benchmarks of responsible creative innovation in their sector and can share their workflows as reference cases for other similar organisations. The mentoring model is replicable for other creative sectors in the AI-STEAM ecosystem.",
-          "va": "Les organitzacions que integren IA generativa de forma estratègica i ètica redueixen costos de producció de continguts sense sacrificar autenticitat, es posicionen com a referents d'innovació creativa responsable en el seu sector i poden compartir els seus fluxos de treball com a casos de referència per a altres organitzacions similars. El model de mentoria és replicable per a altres sectors creatius de l'ecosistema AI-STEAM."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
       "mentors": {
@@ -4275,306 +4192,59 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "pool-ia-creativa-tur",
             "name": "AI-STEAM Mentoring Pool — IA Creativa y Turismo-Cultura",
-            "organisation": "AI-STEAM Network",
+            "organisation": "",
             "role": {
-              "es": "Mentores especializados en IA generativa aplicada a turismo, patrimonio cultural e industrias creativas — con perfiles de diseño, comunicación digital, gestión cultural y tecnología creativa",
-              "en": "Mentors specialised in generative AI applied to tourism, cultural heritage and creative industries — with profiles in design, digital communication, cultural management and creative technology",
-              "va": "Mentors especialitzats en IA generativa aplicada a turisme, patrimoni cultural i indústries creatives — amb perfils de disseny, comunicació digital, gestió cultural i tecnologia creativa"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "specialties": [
-              "creative-ai",
               "responsible-ai",
-              "ai-literacy",
               "industry-4-0"
             ]
           }
         ]
       },
       "preparation": {
-        "requiredBeforeRequest": [
-          {
-            "label": {
-              "es": "Descripción de la organización (tipo, tamaño, sector CCI) y el tipo de contenidos creativos que produce actualmente",
-              "en": "Description of the organisation (type, size, CCI sector) and the type of creative content it currently produces",
-              "va": "Descripció de l'organització (tipus, mida, sector CCI) i el tipus de continguts creatius que produeix actualment"
-            }
-          },
-          {
-            "label": {
-              "es": "Identificación del proceso creativo o productivo concreto donde se quiere explorar la IA generativa y estimación del tiempo dedicado actualmente a ese proceso",
-              "en": "Identification of the specific creative or production process where generative AI is to be explored and estimate of time currently dedicated to that process",
-              "va": "Identificació del procés creatiu o productiu concret on es vol explorar la IA generativa i estimació del temps dedicat actualment a aqueix procés"
-            }
-          },
-          {
-            "label": {
-              "es": "Indicación del presupuesto disponible para herramientas de IA (rango aproximado mensual en EUR)",
-              "en": "Indication of the budget available for AI tools (approximate monthly range in EUR)",
-              "va": "Indicació del pressupost disponible per a eines d'IA (rang aproximat mensual en EUR)"
-            }
-          },
-          {
-            "label": {
-              "es": "Breve reflexión sobre qué elementos de identidad creativa o autenticidad de la organización son innegociables y no deben ser alterados por la IA",
-              "en": "Brief reflection on which elements of the organisation's creative identity or authenticity are non-negotiable and must not be altered by AI",
-              "va": "Breu reflexió sobre quins elements d'identitat creativa o autenticitat de l'organització són innegociables i no han de ser alterats per la IA"
-            }
-          }
-        ],
-        "intakeQuestions": [
-          {
-            "id": "creative-identity",
-            "label": {
-              "es": "¿Cuáles son los elementos de identidad creativa o autenticidad que la organización considera innegociables y que la IA no debe alterar (voz editorial, estética visual, selección de imágenes, narrativa del destino...)?",
-              "en": "What are the elements of creative identity or authenticity that the organisation considers non-negotiable and that AI must not alter (editorial voice, visual aesthetics, image selection, destination narrative...)?",
-              "va": "Quins són els elements d'identitat creativa o autenticitat que l'organització considera innegociables i que la IA no ha d'alterar (veu editorial, estètica visual, selecció d'imatges, narrativa de la destinació...)?"
-            }
-          },
-          {
-            "id": "use-case-priority",
-            "label": {
-              "es": "¿Qué tarea creativa consume más tiempo actualmente en la organización y dónde podría tener la IA generativa el mayor impacto inmediato sin comprometer la calidad?",
-              "en": "What creative task currently takes up most of your organisation's time and where could generative AI have the greatest immediate impact without compromising quality?",
-              "va": "Quina tasca creativa consumeix més temps actualment en l'organització i on podria tenir la IA generativa el major impacte immediat sense comprometre la qualitat?"
-            }
-          },
-          {
-            "id": "audience-context",
-            "label": {
-              "es": "¿El público, visitantes o clientes de la organización son sensibles al uso de IA en los contenidos que consumen? ¿Os habéis planteado cómo comunicarlo de forma transparente?",
-              "en": "Is your organisation's audience, visitors or customers sensitive to the use of AI in the content they consume? Have you considered how to communicate it transparently?",
-              "va": "El públic, visitants o clients de l'organització són sensibles a l'ús d'IA en els continguts que consumeixen? Us heu plantejat com comunicar-ho de forma transparent?"
-            }
-          },
-          {
-            "id": "tools-explored",
-            "label": {
-              "es": "¿Ha explorado ya alguna herramienta de IA generativa (ChatGPT, Midjourney, Adobe Firefly, ElevenLabs...)? Si es así, ¿cuáles y con qué resultado?",
-              "en": "Have you already explored any generative AI tools (ChatGPT, Midjourney, Adobe Firefly, ElevenLabs...)? If so, which ones and with what result?",
-              "va": "Ha explorat ja alguna eina d'IA generativa (ChatGPT, Midjourney, Adobe Firefly, ElevenLabs...)? Si és el cas, quines i amb quin resultat?"
-            }
-          }
-        ]
+        "requiredBeforeRequest": [],
+        "intakeQuestions": []
       },
       "expectedOutputs": {
-        "items": [
-          {
-            "id": "ai-integration-map",
-            "label": {
-              "es": "Mapa de integración de IA generativa — casos de uso prioritarios, herramientas recomendadas y hoja de ruta de implementación en 90 días",
-              "en": "Generative AI integration map — priority use cases, recommended tools and 90-day implementation roadmap",
-              "va": "Mapa d'integració d'IA generativa — casos d'ús prioritaris, eines recomanades i full de ruta d'implementació en 90 dies"
-            }
-          },
-          {
-            "id": "copyright-guide",
-            "label": {
-              "es": "Guía práctica de derechos de autor para contenidos generados con IA en el contexto de la organización (qué se puede publicar, cómo atribuirlo, cómo comunicarlo al usuario)",
-              "en": "Practical copyright guide for AI-generated content in the organisation's context (what can be published, how to attribute it, how to communicate it to the user)",
-              "va": "Guia pràctica de drets d'autor per a continguts generats amb IA en el context de l'organització (que es pot publicar, com atribuir-ho, com comunicar-ho a l'usuari)"
-            }
-          },
-          {
-            "id": "workflow-prototype",
-            "label": {
-              "es": "Prototipo documentado de flujo de trabajo creativo humano-IA para un proceso concreto de la organización (p.ej. descripción de experiencias, generación de imágenes para redes sociales, traducción de contenidos para visitantes)",
-              "en": "Documented prototype of a human-AI creative workflow for a specific process of the organisation (e.g. experience description, image generation for social media, content translation for visitors)",
-              "va": "Prototip documentat de flux de treball creatiu humà-IA per a un procés concret de l'organització (p.ex. descripció d'experiències, generació d'imatges per a xarxes socials, traducció de continguts per a visitants)"
-            }
-          },
-          {
-            "id": "ethics-checklist",
-            "label": {
-              "es": "Checklist ética de revisión de contenidos generados con IA antes de publicación (transparencia, sesgos, calidad, adecuación a la marca)",
-              "en": "Ethical checklist for reviewing AI-generated content before publication (transparency, bias, quality, brand suitability)",
-              "va": "Checklist ètica de revisió de continguts generats amb IA abans de publicació (transparència, biaixos, qualitat, adequació a la marca)"
-            }
-          }
-        ]
+        "items": []
       },
       "downloads": {
-        "enabled": true,
-        "basePath": "/assets/downloads/mentorings/mentoring-ia-creativa-turismo-cultura/",
-        "items": [
-          {
-            "id": "preparation-guide",
-            "type": "preparation-guide",
-            "title": {
-              "es": "Guía de preparación para la mentoría en IA generativa — Turismo y Cultura",
-              "en": "Mentoring preparation guide for generative AI — Tourism and Culture",
-              "va": "Guia de preparació per a la mentoria en IA generativa — Turisme i Cultura"
-            },
-            "description": {
-              "es": "Guía para que la organización llegue bien preparada a la primera sesión de mentoría. Incluye el formulario de diagnóstico creativo, preguntas de reflexión previa y ejemplos de casos de uso de IA generativa en el sector turístico-cultural.",
-              "en": "Guide for the organisation to arrive well prepared for the first mentoring session. Includes the creative diagnosis form, prior reflection questions and examples of generative AI use cases in the tourism-cultural sector.",
-              "va": "Guia perquè l'organització arribe ben preparada a la primera sessió de mentoria. Inclou el formulari de diagnòstic creatiu, preguntes de reflexió prèvia i exemples de casos d'ús d'IA generativa en el sector turístic-cultural."
-            },
-            "files": [
-              {
-                "file": "guia-preparacion-mentoria-ia-generativa-turismo-cultura.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0",
-                "url": ""
-              }
-            ],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "ai-tools-comparison",
-            "type": "brief-template",
-            "title": {
-              "es": "Comparativa de herramientas de IA generativa para turismo y cultura (actualización trimestral)",
-              "en": "Generative AI tools comparison for tourism and culture (quarterly update)",
-              "va": "Comparativa d'eines d'IA generativa per a turisme i cultura (actualització trimestral)"
-            },
-            "description": {
-              "es": "Tabla comparativa de las principales herramientas de IA generativa de texto, imagen, audio y vídeo con información sobre coste, términos de uso comercial, idiomas disponibles y adecuación para contenidos turísticos y culturales.",
-              "en": "Comparative table of the main generative AI tools for text, image, audio and video with information on cost, commercial use terms, available languages and suitability for tourism and cultural content.",
-              "va": "Taula comparativa de les principals eines d'IA generativa de text, imatge, àudio i vídeo amb informació sobre cost, termes d'ús comercial, idiomes disponibles i adequació per a continguts turístics i culturals."
-            },
-            "files": [
-              {
-                "file": "comparativa-herramientas-ia-generativa-turismo-cultura.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0",
-                "url": ""
-              }
-            ],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "enabled": false,
+        "basePath": "",
+        "items": []
       },
       "resources": {
-        "externalLinks": [
-          {
-            "id": "request-form",
-            "type": "external-form",
-            "label": {
-              "es": "Formulario de solicitud de mentoría — IA generativa y creativa para turismo y cultura",
-              "en": "Mentoring request form — generative and creative AI for tourism and culture",
-              "va": "Formulari de sol·licitud de mentoria — IA generativa i creativa per a turisme i cultura"
-            },
-            "url": "https://aisteam.gva.es/mentoria/ia-creativa-turismo-cultura/solicitud",
-            "access": {
-              "es": "Formulario online — respuesta en un plazo máximo de 5 días laborables",
-              "en": "Online form — response within a maximum of 5 working days",
-              "va": "Formulari online — resposta en un termini màxim de 5 dies laborables"
-            }
-          },
-          {
-            "id": "ai-act-cultural-sector",
-            "type": "guidance",
-            "label": {
-              "es": "IA y sector cultural — Recursos de la Comisión Europea (Creative Europe)",
-              "en": "AI and the cultural sector — European Commission resources (Creative Europe)",
-              "va": "IA i sector cultural — Recursos de la Comissió Europea (Creative Europe)"
-            },
-            "url": "https://culture.ec.europa.eu/digital-and-culture/digital-cultural-heritage/artificial-intelligence-in-the-cultural-sector",
-            "access": {
-              "es": "Acceso libre en el portal de Creative Europe de la Comisión Europea",
-              "en": "Free access on the European Commission's Creative Europe portal",
-              "va": "Accés lliure en el portal de Creative Europe de la Comissió Europea"
-            }
-          },
-          {
-            "id": "copyright-ai-aepd",
-            "type": "guidance",
-            "label": {
-              "es": "Derechos de autor en contenidos generados por IA — recursos jurídicos (CEDRO y AEPD)",
-              "en": "Copyright in AI-generated content — legal resources (CEDRO and AEPD)",
-              "va": "Drets d'autor en continguts generats per IA — recursos jurídics (CEDRO i AEPD)"
-            },
-            "url": "https://www.cedro.org/info/la-ia-y-los-derechos-de-autor",
-            "access": {
-              "es": "Acceso libre en el portal de CEDRO (Centro Español de Derechos Reprográficos)",
-              "en": "Free access on the CEDRO portal (Spanish Reprographic Rights Centre)",
-              "va": "Accés lliure en el portal de CEDRO (Centre Espanyol de Drets Reprogràfics)"
-            }
-          },
-          {
-            "id": "ivace-turisme-ia",
-            "type": "website",
-            "label": {
-              "es": "Agència Valenciana del Turisme — Digitalización e Innovación en el sector turístico de la CV",
-              "en": "Agència Valenciana del Turisme — Digitalisation and Innovation in the Valencian tourism sector",
-              "va": "Agència Valenciana del Turisme — Digitalització i Innovació en el sector turístic de la CV"
-            },
-            "url": "https://www.turisme.gva.es/es/web/turisme/digitalitzacio-i-innovacio",
-            "access": {
-              "es": "Acceso libre en el portal de la Agència Valenciana del Turisme",
-              "en": "Free access on the Agència Valenciana del Turisme portal",
-              "va": "Accés lliure en el portal de l'Agència Valenciana del Turisme"
-            }
-          }
-        ]
+        "externalLinks": []
       },
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar mentoría",
-            "en": "Request mentoring",
-            "va": "Sol·licitar mentoria"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": "",
           "system": ""
         },
-        "fallbackAction": {
-          "label": {
-            "es": "Ver mentoría",
-            "en": "View mentoring",
-            "va": "Veure mentoria"
-          },
-          "url": ""
-        },
+        "fallbackAction": null,
         "secondaryAction": null
       },
       "relations": {
-        "relatedChallenges": [
-          "reto-analisis-sentimiento-turismo-tur"
-        ],
+        "relatedChallenges": [],
         "relatedValidations": [],
         "relatedPilots": [],
-        "relatedCases": [
-          "narrativas-digitales-ia-cci",
-          "realidad-aumentada-museos-cci"
-        ],
+        "relatedCases": [],
         "relatedResources": [],
         "possibleOutputs": []
       },
-      "hasDownloads": true,
-      "downloadCount": 2,
-      "cardDownloads": [
-        {
-          "id": "preparation-guide",
-          "type": "preparation-guide",
-          "title": {
-            "es": "Guía de preparación para la mentoría en IA generativa — Turismo y Cultura",
-            "en": "Mentoring preparation guide for generative AI — Tourism and Culture",
-            "va": "Guia de preparació per a la mentoria en IA generativa — Turisme i Cultura"
-          },
-          "description": {
-            "es": "Guía para que la organización llegue bien preparada a la primera sesión de mentoría. Incluye el formulario de diagnóstico creativo, preguntas de reflexión previa y ejemplos de casos de uso de IA generativa en el sector turístico-cultural.",
-            "en": "Guide for the organisation to arrive well prepared for the first mentoring session. Includes the creative diagnosis form, prior reflection questions and examples of generative AI use cases in the tourism-cultural sector.",
-            "va": "Guia perquè l'organització arribe ben preparada a la primera sessió de mentoria. Inclou el formulari de diagnòstic creatiu, preguntes de reflexió prèvia i exemples de casos d'ús d'IA generativa en el sector turístic-cultural."
-          },
-          "files": [
-            {
-              "file": "guia-preparacion-mentoria-ia-generativa-turismo-cultura.pdf",
-              "format": "pdf",
-              "language": "es",
-              "license": "CC BY 4.0"
-            }
-          ],
-          "showOnCard": true
-        }
-      ],
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
       "presentation": {
         "card": {
           "variant": "mentoring",
@@ -4582,7 +4252,7 @@ export const MARKETPLACE_CONFIG = {
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "mainBlockLabel": {
             "es": "Qué ofrece",
@@ -4604,7 +4274,7 @@ export const MARKETPLACE_CONFIG = {
             "downloads": true,
             "resources": true,
             "access": true,
-            "relations": true
+            "relations": false
           }
         }
       },
@@ -4660,7 +4330,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "nts",
         "sectors": [],
-        "stakeholderCategory": "institutional",
+        "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -4689,8 +4359,8 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "mentoringTeam": {
           "name": {
@@ -4698,39 +4368,20 @@ export const MARKETPLACE_CONFIG = {
             "en": "AI-STEAM Network Mentoring Pool — Public Innovation and AI Specialists",
             "va": "AI-STEAM Network Mentoring Pool — Especialistes en Innovació Pública i IA"
           },
-          "type": "mentoring-pool",
+          "type": "",
           "role": {
             "es": "Mentores con experiencia en transformación digital de administraciones públicas, datos abiertos y colaboración público-privada en innovación",
             "en": "Mentors experienced in digital transformation of public administrations, open data and public-private innovation collaboration",
             "va": "Mentors amb experiència en transformació digital d'administracions públiques, dades obertes i col·laboració públic-privada en innovació"
           },
-          "org": "AI-STEAM Network"
+          "org": ""
         },
-        "coordinator": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE",
-          "role": {
-            "es": "Coordinación de relaciones institucionales y participación de administraciones públicas en el ecosistema AI-STEAM",
-            "en": "Coordination of institutional relations and public administration participation in the AI-STEAM ecosystem",
-            "va": "Coordinació de relacions institucionals i participació d'administracions públiques en l'ecosistema AI-STEAM"
-          }
-        }
+        "coordinator": null
       },
       "classification": {
-        "aiSteamFocus": [
-          "responsible-ai",
-          "ai-ethics",
-          "challenge-framing"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "responsible-ai",
-          "equity-inclusion",
-          "learning-ecosystems"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -4743,16 +4394,12 @@ export const MARKETPLACE_CONFIG = {
         "pilotStatus": "",
         "sector": "nts",
         "sectorLabel": {
-          "es": "Administración pública y servicios ciudadanos",
-          "en": "Public administration and citizen services",
-          "va": "Administració pública i serveis ciutadans"
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "stakeholderCategory": "institutional",
-        "audience": [
-          "public-bodies",
-          "companies",
-          "vet-centres"
-        ]
+        "stakeholderCategory": "",
+        "audience": []
       },
       "transfer": {
         "type": "",
@@ -4767,7 +4414,7 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
@@ -4778,19 +4425,19 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "No deben enviarse datos de ciudadanos, expedientes administrativos ni información reservada a través de este sitio.",
-          "en": "Citizen data, administrative files or classified information must not be submitted through this site.",
-          "va": "No s'han d'enviar dades de ciutadans, expedients administratius ni informació reservada a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "mentoringRequestAccess": "not-available",
-        "confidentialityLevel": "standard",
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
         "publicationNote": {
-          "es": "La hoja de ruta y carta de participación institucional podrán publicarse como modelo de referencia para otras administraciones si el organismo lo autoriza.",
-          "en": "The roadmap and institutional participation letter may be published as a reference model for other administrations if the body authorises it.",
-          "va": "El full de ruta i carta de participació institucional podran publicar-se com a model de referència per a altres administracions si l'organisme ho autoritza."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -4818,57 +4465,13 @@ export const MARKETPLACE_CONFIG = {
           "va": "Orientar organismes públics sobre com articular la seua participació en l'ecosistema AI-STEAM segons el seu perfil i capacitats — formulant un repte obert amb dades públiques, finançant un pilot educatiu, obrint les seues instal·lacions com a entorn de validació o convertint-se en cas de referència d'innovació pública."
         },
         "problemAddressed": {
-          "es": "Las administraciones públicas tienen datos de enorme valor (movilidad, salud pública, urbanismo, servicios sociales) y problemas complejos que podrían abordarse con IA, pero frecuentemente no saben cómo abrir esos datos de forma segura, cómo formular un reto que respete la legalidad o cómo involucrarse en proyectos educativos sin comprometer sus procedimientos. La mentoría adapta el lenguaje del ecosistema al contexto administrativo.",
-          "en": "Public administrations have enormously valuable data (mobility, public health, urban planning, social services) and complex problems that could be addressed with AI, but often do not know how to open that data securely, how to frame a challenge that complies with the law or how to engage in educational projects without compromising their procedures. Mentoring adapts the ecosystem language to the administrative context.",
-          "va": "Les administracions públiques tenen dades d'enorme valor (mobilitat, salut pública, urbanisme, serveis socials) i problemes complexos que podrien abordar-se amb IA, però freqüentment no saben com obrir eixes dades de forma segura, com formular un repte que respecte la legalitat o com involucrar-se en projectes educatius sense comprometre els seus procediments. La mentoria adapta el llenguatge de l'ecosistema al context administratiu."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringScope": {
-          "included": [
-            {
-              "label": {
-                "es": "Diagnóstico del rol más adecuado para la administración en el ecosistema AI-STEAM",
-                "en": "Diagnosis of the most appropriate role for the administration in the AI-STEAM ecosystem",
-                "va": "Diagnòstic del rol més adequat per a l'administració en l'ecosistema AI-STEAM"
-              }
-            },
-            {
-              "label": {
-                "es": "Orientación sobre apertura segura de datos públicos y licencias de datos abiertos",
-                "en": "Guidance on secure public data opening and open data licences",
-                "va": "Orientació sobre obertura segura de dades públiques i llicències de dades obertes"
-              }
-            },
-            {
-              "label": {
-                "es": "Revisión de los procedimientos administrativos aplicables a la participación en pilotos y retos",
-                "en": "Review of applicable administrative procedures for participation in pilots and challenges",
-                "va": "Revisió dels procediments administratius aplicables a la participació en pilots i reptes"
-              }
-            },
-            {
-              "label": {
-                "es": "Diseño del compromiso institucional (carta de participación, aportación en especie, financiación)",
-                "en": "Institutional commitment design (participation letter, in-kind contribution, funding)",
-                "va": "Disseny del compromís institucional (carta de participació, aportació en espècie, finançament)"
-              }
-            }
-          ],
-          "excluded": [
-            {
-              "label": {
-                "es": "Asesoramiento jurídico-administrativo vinculante ni gestión de contratos públicos",
-                "en": "Binding legal-administrative advice or public contract management",
-                "va": "Assessorament juridicoadministratiu vinculant ni gestió de contractes públics"
-              }
-            },
-            {
-              "label": {
-                "es": "Desarrollo técnico de sistemas de IA para la administración",
-                "en": "Technical development of AI systems for the administration",
-                "va": "Desenvolupament tècnic de sistemes d'IA per a l'administració"
-              }
-            }
-          ]
+          "included": [],
+          "excluded": []
         },
         "format": {
           "sessions": [
@@ -4883,10 +4486,7 @@ export const MARKETPLACE_CONFIG = {
               ]
             }
           ],
-          "languageCodes": [
-            "es",
-            "va"
-          ],
+          "languageCodes": [],
           "availability": {
             "es": "Convocatoria abierta coordinada con los ciclos presupuestarios y de planificación de las administraciones. Sesiones disponibles en horario de funcionario (9:00-15:00).",
             "en": "Open call coordinated with administrative budget and planning cycles. Sessions available during civil service hours (9:00-15:00).",
@@ -4894,14 +4494,14 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "targetUsers": {
-          "es": "Directores y técnicos de innovación de administraciones locales, provinciales y autonómicas, responsables de transformación digital de organismos públicos y gestores de proyectos de datos abiertos de la Comunitat Valenciana.",
-          "en": "Innovation directors and technicians of local, provincial and regional administrations, digital transformation managers of public bodies and open data project managers in the Valencian Community.",
-          "va": "Directors i tècnics d'innovació d'administracions locals, provincials i autonòmiques, responsables de transformació digital d'organismes públics i gestors de projectes de dades obertes de la Comunitat Valenciana."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "transferValue": {
-          "es": "Las administraciones que participan activamente en el ecosistema AI-STEAM generan casos de innovación pública replicables, refuerzan la capacidad técnica de sus equipos a través de la relación con centros de FP y universidades, y contribuyen a demostrar que la IA puede mejorar los servicios públicos de forma transparente y ética.",
-          "en": "Administrations that actively participate in the AI-STEAM ecosystem generate replicable public innovation cases, strengthen the technical capacity of their teams through relationships with VET centres and universities, and help demonstrate that AI can improve public services in a transparent and ethical way.",
-          "va": "Les administracions que participen activament en l'ecosistema AI-STEAM generen casos d'innovació pública replicables, reforcen la capacitat tècnica dels seus equips a través de la relació amb centres de FP i universitats, i contribueixen a demostrar que la IA pot millorar els serveis públics de forma transparent i ètica."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
       "mentors": {
@@ -4910,11 +4510,11 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "pool-innovacion-publica",
             "name": "AI-STEAM Mentoring Pool — Innovación Pública e IA",
-            "organisation": "AI-STEAM Network",
+            "organisation": "",
             "role": {
-              "es": "Mentores con experiencia en transformación digital pública, datos abiertos y colaboración público-privada en proyectos de IA",
-              "en": "Mentors experienced in public digital transformation, open data and public-private AI project collaboration",
-              "va": "Mentors amb experiència en transformació digital pública, dades obertes i col·laboració públic-privada en projectes d'IA"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "specialties": [
               "public-sector-ai",
@@ -4926,144 +4526,41 @@ export const MARKETPLACE_CONFIG = {
         ]
       },
       "preparation": {
-        "requiredBeforeRequest": [
-          {
-            "label": {
-              "es": "Descripción del organismo público (nivel administrativo, área de competencia, tamaño del equipo técnico)",
-              "en": "Description of the public body (administrative level, competence area, technical team size)",
-              "va": "Descripció de l'organisme públic (nivell administratiu, àrea de competència, grandària de l'equip tècnic)"
-            }
-          },
-          {
-            "label": {
-              "es": "Indicación del tipo de datos disponibles y si ya están en portales de datos abiertos o en sistemas internos",
-              "en": "Indication of the type of available data and whether it is already on open data portals or in internal systems",
-              "va": "Indicació del tipus de dades disponibles i si ja estan en portals de dades obertes o en sistemes interns"
-            }
-          },
-          {
-            "label": {
-              "es": "Descripción del problema o servicio público que se querría abordar con IA",
-              "en": "Description of the problem or public service to be addressed with AI",
-              "va": "Descripció del problema o servei públic que es voldria abordar amb IA"
-            }
-          }
-        ],
-        "intakeQuestions": [
-          {
-            "id": "role-preference",
-            "label": {
-              "es": "¿Tenéis preferencia por formular un reto abierto, financiar un piloto existente o abrir vuestras instalaciones o datos como entorno de validación?",
-              "en": "Do you have a preference for framing an open challenge, funding an existing pilot or opening your facilities or data as a validation environment?",
-              "va": "Teniu preferència per formular un repte obert, finançar un pilot existent o obrir les vostres instal·lacions o dades com a entorn de validació?"
-            }
-          },
-          {
-            "id": "data-status",
-            "label": {
-              "es": "¿Qué restricciones legales o de confidencialidad afectan a los datos que podríais aportar al ecosistema?",
-              "en": "What legal or confidentiality restrictions affect the data you could contribute to the ecosystem?",
-              "va": "Quines restriccions legals o de confidencialitat afecten les dades que podríeu aportar a l'ecosistema?"
-            }
-          },
-          {
-            "id": "internal-capacity",
-            "label": {
-              "es": "¿Contáis con técnicos internos con perfil de ciencia de datos o IA, o el proyecto dependería totalmente de capacidades externas?",
-              "en": "Do you have internal technicians with a data science or AI profile, or would the project depend entirely on external capabilities?",
-              "va": "Compteu amb tècnics interns amb perfil de ciència de dades o IA, o el projecte dependria totalment de capacitats externes?"
-            }
-          }
-        ]
+        "requiredBeforeRequest": [],
+        "intakeQuestions": []
       },
       "expectedOutputs": {
-        "items": [
-          {
-            "id": "participation-roadmap",
-            "label": {
-              "es": "Hoja de ruta de participación institucional en el ecosistema AI-STEAM con roles y compromisos definidos",
-              "en": "Institutional participation roadmap in the AI-STEAM ecosystem with defined roles and commitments",
-              "va": "Full de ruta de participació institucional en l'ecosistema AI-STEAM amb rols i compromisos definits"
-            }
-          },
-          {
-            "id": "data-opening-plan",
-            "label": {
-              "es": "Plan básico de apertura de datos con licencia recomendada y pasos para publicación en portal de datos abiertos",
-              "en": "Basic data opening plan with recommended licence and steps for publication on open data portal",
-              "va": "Pla bàsic d'obertura de dades amb llicència recomanada i passos per a publicació en portal de dades obertes"
-            }
-          },
-          {
-            "id": "institutional-commitment-letter",
-            "label": {
-              "es": "Borrador de carta de participación institucional adaptado al rol seleccionado",
-              "en": "Draft institutional participation letter adapted to the selected role",
-              "va": "Esborrany de carta de participació institucional adaptat al rol seleccionat"
-            }
-          }
-        ]
+        "items": []
       },
       "downloads": {
         "enabled": false,
-        "basePath": "/assets/downloads/mentorings/mentoring-participacion-administracion-publica/",
+        "basePath": "",
         "items": []
       },
       "resources": {
-        "externalLinks": [
-          {
-            "id": "request-form",
-            "type": "external-form",
-            "label": {
-              "es": "Formulario de solicitud de mentoría",
-              "en": "Mentoring request form",
-              "va": "Formulari de sol·licitud de mentoria"
-            },
-            "url": "",
-            "access": {
-              "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-              "en": "The request is managed outside this website when an external system is available.",
-              "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-            }
-          }
-        ]
+        "externalLinks": []
       },
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar mentoría",
-            "en": "Request mentoring",
-            "va": "Sol·licitar mentoria"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": "",
           "system": ""
         },
-        "fallbackAction": {
-          "label": {
-            "es": "Ver mentoría",
-            "en": "View mentoring",
-            "va": "Veure mentoria"
-          },
-          "url": ""
-        },
+        "fallbackAction": null,
         "secondaryAction": null
       },
       "relations": {
-        "relatedChallenges": [
-          "reto-chatbot-atencion-ciudadana-adm"
-        ],
-        "relatedValidations": [
-          "validation-etica-ia-seleccion-personal-adm"
-        ],
+        "relatedChallenges": [],
+        "relatedValidations": [],
         "relatedPilots": [],
         "relatedCases": [],
         "relatedResources": [],
-        "possibleOutputs": [
-          "challenge",
-          "pilot",
-          "case"
-        ]
+        "possibleOutputs": []
       },
       "hasDownloads": false,
       "downloadCount": 0,
@@ -5094,10 +4591,10 @@ export const MARKETPLACE_CONFIG = {
             "preparation": true,
             "expectedOutputs": true,
             "transferValue": true,
-            "downloads": false,
-            "resources": false,
+            "downloads": true,
+            "resources": true,
             "access": true,
-            "relations": true
+            "relations": false
           }
         }
       },
@@ -5153,7 +4650,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "agr",
         "sectors": [],
-        "stakeholderCategory": "enterprise",
+        "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -5182,8 +4679,8 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "mentoringTeam": {
           "name": {
@@ -5191,43 +4688,23 @@ export const MARKETPLACE_CONFIG = {
             "en": "AI-STEAM Network Mentoring Pool — Agri-food AI Specialists",
             "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Agroalimentària"
           },
-          "type": "mentoring-pool",
+          "type": "",
           "role": {
             "es": "Mentores con experiencia en proyectos de IA en agricultura de precisión, visión computacional agrícola y formación agroalimentaria",
             "en": "Mentors experienced in AI projects in precision agriculture, agricultural computer vision and agri-food training",
             "va": "Mentors amb experiència en projectes d'IA en agricultura de precisió, visió computacional agrícola i formació agroalimentària"
           },
-          "org": "AI-STEAM Network"
+          "org": ""
         },
-        "coordinator": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE",
-          "role": {
-            "es": "Coordinación de transferencia y replicación de casos en el sector agroalimentario",
-            "en": "Transfer and case replication coordination in the agri-food sector",
-            "va": "Coordinació de transferència i replicació de casos en el sector agroalimentari"
-          }
-        }
+        "coordinator": null
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "maker-steam",
-          "challenge-framing"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green",
-          "social"
-        ],
-        "policyCluster": [
-          "learning-ecosystems",
-          "integrated-pedagogy",
-          "equity-inclusion"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
-        "lbdStage": "output",
+        "lbdStage": "input",
         "trackBValue": {
           "es": "",
           "en": "",
@@ -5237,16 +4714,12 @@ export const MARKETPLACE_CONFIG = {
         "pilotStatus": "",
         "sector": "agr",
         "sectorLabel": {
-          "es": "Agricultura, agroalimentación y medioambiente",
-          "en": "Agriculture, agri-food and environment",
-          "va": "Agricultura, agroalimentació i medi ambient"
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "stakeholderCategory": "enterprise",
-        "audience": [
-          "companies",
-          "vet-centres",
-          "industry-partners"
-        ]
+        "stakeholderCategory": "",
+        "audience": []
       },
       "transfer": {
         "type": "",
@@ -5261,7 +4734,7 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
@@ -5272,19 +4745,19 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "No deben enviarse datos de producción confidenciales ni información comercialmente sensible a través de este sitio.",
-          "en": "Confidential production data or commercially sensitive information must not be submitted through this site.",
-          "va": "No s'han d'enviar dades de producció confidencials ni informació comercialment sensible a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "mentoringRequestAccess": "not-available",
-        "confidentialityLevel": "standard",
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
         "publicationNote": {
-          "es": "El nuevo caso de replicación podrá publicarse en el Marketplace si genera evidencia documentada y la cooperativa o empresa lo autoriza.",
-          "en": "The new replication case may be published on the Marketplace if it generates documented evidence and the cooperative or company authorises it.",
-          "va": "El nou cas de replicació podrà publicar-se al Marketplace si genera evidència documentada i la cooperativa o empresa ho autoritza."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -5312,57 +4785,13 @@ export const MARKETPLACE_CONFIG = {
           "va": "Facilitar l'adaptació i replicació contextualitzada d'un cas AI-STEAM verificat en el sector agroalimentari, identificant les condicions de transferibilitat, els ajustos necessaris en les dades i l'entorn, i assegurant que la nova implementació manté la qualitat d'evidència del cas original."
         },
         "problemAddressed": {
-          "es": "Los centros y cooperativas que encuentran un caso AI-STEAM relevante para su contexto frecuentemente no saben cómo adaptar los datos, qué equipamiento necesitan o cómo involucrar a sus alumnos o trabajadores. Replicar sin mentoría genera proyectos que copian la forma pero no reproducen los resultados del caso original.",
-          "en": "Centres and cooperatives that find a relevant AI-STEAM case for their context often do not know how to adapt the data, what equipment they need or how to involve their students or workers. Replicating without mentoring produces projects that copy the form but do not reproduce the results of the original case.",
-          "va": "Els centres i cooperatives que troben un cas AI-STEAM rellevant per al seu context freqüentment no saben com adaptar les dades, quin equipament necessiten o com involucrar els seus alumnes o treballadors. Replicar sense mentoria genera projectes que copien la forma però no reprodueixen els resultats del cas original."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringScope": {
-          "included": [
-            {
-              "label": {
-                "es": "Análisis comparativo entre el contexto original del caso y el contexto de replicación",
-                "en": "Comparative analysis between the original case context and the replication context",
-                "va": "Anàlisi comparativa entre el context original del cas i el context de replicació"
-              }
-            },
-            {
-              "label": {
-                "es": "Identificación de las condiciones mínimas de datos, equipamiento y perfil de alumnos para la replicación",
-                "en": "Identification of minimum data, equipment and student profile conditions for replication",
-                "va": "Identificació de les condicions mínimes de dades, equipament i perfil d'alumnes per a la replicació"
-              }
-            },
-            {
-              "label": {
-                "es": "Diseño del plan de adaptación y cronograma de replicación",
-                "en": "Adaptation plan and replication timeline design",
-                "va": "Disseny del pla d'adaptació i cronograma de replicació"
-              }
-            },
-            {
-              "label": {
-                "es": "Orientación sobre cómo documentar la replicación como nuevo caso AI-STEAM",
-                "en": "Guidance on how to document the replication as a new AI-STEAM case",
-                "va": "Orientació sobre com documentar la replicació com a nou cas AI-STEAM"
-              }
-            }
-          ],
-          "excluded": [
-            {
-              "label": {
-                "es": "Reproducción del análisis técnico del caso original",
-                "en": "Reproduction of the original case technical analysis",
-                "va": "Reproducció de l'anàlisi tècnica del cas original"
-              }
-            },
-            {
-              "label": {
-                "es": "Provisión de datos o acceso al entorno del caso original",
-                "en": "Provision of data or access to the original case environment",
-                "va": "Provisió de dades o accés a l'entorn del cas original"
-              }
-            }
-          ]
+          "included": [],
+          "excluded": []
         },
         "format": {
           "sessions": [
@@ -5377,10 +4806,7 @@ export const MARKETPLACE_CONFIG = {
               ]
             }
           ],
-          "languageCodes": [
-            "es",
-            "va"
-          ],
+          "languageCodes": [],
           "availability": {
             "es": "Convocatoria abierta vinculada a casos publicados en el Marketplace AI-STEAM. Se requiere identificar el caso de referencia antes de solicitar la mentoría.",
             "en": "Open call linked to cases published on the AI-STEAM Marketplace. The reference case must be identified before requesting mentoring.",
@@ -5388,14 +4814,14 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "targetUsers": {
-          "es": "Técnicos de innovación de cooperativas agrícolas, jefes de estudios de centros de FP agroalimentaria y responsables de formación de empresas del sector que quieren transferir una solución ya probada a su propio entorno productivo o formativo.",
-          "en": "Innovation technicians at agricultural cooperatives, heads of studies at agri-food VET centres and training managers of sector companies wishing to transfer an already-tested solution to their own production or training environment.",
-          "va": "Tècnics d'innovació de cooperatives agrícoles, caps d'estudis de centres de FP agroalimentària i responsables de formació d'empreses del sector que volen transferir una solució ja provada al seu propi entorn productiu o formatiu."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "transferValue": {
-          "es": "La replicación bien documentada genera un nuevo caso AI-STEAM verificado que amplía el alcance territorial del ecosistema, demuestra la escalabilidad de la solución y refuerza la confianza de nuevos actores que no habrían apostado por la innovación sin un antecedente documentado en su sector.",
-          "en": "Well-documented replication generates a new verified AI-STEAM case that expands the ecosystem's territorial reach, demonstrates solution scalability and builds confidence among new actors who would not have committed to innovation without a documented precedent in their sector.",
-          "va": "La replicació ben documentada genera un nou cas AI-STEAM verificat que amplia l'abast territorial de l'ecosistema, demostra l'escalabilitat de la solució i reforça la confiança de nous actors que no haurien apostat per la innovació sense un antecedent documentat en el seu sector."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
       "mentors": {
@@ -5404,11 +4830,11 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "pool-agr-replicacion",
             "name": "AI-STEAM Mentoring Pool — Transferencia Agroalimentaria",
-            "organisation": "AI-STEAM Network",
+            "organisation": "",
             "role": {
-              "es": "Mentores con experiencia en replicación de proyectos de IA agrícola y diseño de formación agroalimentaria",
-              "en": "Mentors experienced in agricultural AI project replication and agri-food training design",
-              "va": "Mentors amb experiència en replicació de projectes d'IA agrícola i disseny de formació agroalimentària"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "specialties": [
               "precision-agriculture",
@@ -5420,141 +4846,41 @@ export const MARKETPLACE_CONFIG = {
         ]
       },
       "preparation": {
-        "requiredBeforeRequest": [
-          {
-            "label": {
-              "es": "Identificación del caso AI-STEAM de referencia que se quiere replicar (ID o título)",
-              "en": "Identification of the reference AI-STEAM case to be replicated (ID or title)",
-              "va": "Identificació del cas AI-STEAM de referència que es vol replicar (ID o títol)"
-            }
-          },
-          {
-            "label": {
-              "es": "Descripción del contexto propio (tipo de cultivo o producción, equipamiento disponible, perfil del equipo)",
-              "en": "Description of own context (crop or production type, available equipment, team profile)",
-              "va": "Descripció del context propi (tipus de cultiu o producció, equipament disponible, perfil de l'equip)"
-            }
-          },
-          {
-            "label": {
-              "es": "Indicación del objetivo principal de la replicación (formación de alumnos, mejora de proceso productivo o ambos)",
-              "en": "Indication of the main replication objective (student training, production process improvement or both)",
-              "va": "Indicació de l'objectiu principal de la replicació (formació d'alumnes, millora de procés productiu o tots dos)"
-            }
-          }
-        ],
-        "intakeQuestions": [
-          {
-            "id": "context-gap",
-            "label": {
-              "es": "¿En qué aspectos clave difiere vuestro contexto del caso de referencia? (especie, clima, equipamiento, volumen de datos)",
-              "en": "In what key respects does your context differ from the reference case? (species, climate, equipment, data volume)",
-              "va": "En quins aspectes clau difereix el vostre context del cas de referència? (espècie, clima, equipament, volum de dades)"
-            }
-          },
-          {
-            "id": "data-availability",
-            "label": {
-              "es": "¿Tenéis datos propios disponibles o necesitaríais recolectarlos como parte del proceso de replicación?",
-              "en": "Do you have your own data available or would you need to collect it as part of the replication process?",
-              "va": "Teniu dades pròpies disponibles o necessitaríeu recollir-les com a part del procés de replicació?"
-            }
-          },
-          {
-            "id": "timeline",
-            "label": {
-              "es": "¿Cuál es el período de campaña agrícola o ciclo formativo en el que queréis ejecutar la replicación?",
-              "en": "What is the agricultural campaign period or training cycle in which you wish to carry out the replication?",
-              "va": "Quin és el període de campanya agrícola o cicle formatiu en el qual voleu executar la replicació?"
-            }
-          }
-        ]
+        "requiredBeforeRequest": [],
+        "intakeQuestions": []
       },
       "expectedOutputs": {
-        "items": [
-          {
-            "id": "replication-plan",
-            "label": {
-              "es": "Plan de replicación con análisis de contexto, adaptaciones necesarias y cronograma",
-              "en": "Replication plan with context analysis, required adaptations and timeline",
-              "va": "Pla de replicació amb anàlisi de context, adaptacions necessàries i cronograma"
-            }
-          },
-          {
-            "id": "minimum-conditions",
-            "label": {
-              "es": "Ficha de condiciones mínimas para la replicación (datos, equipamiento, perfil del equipo)",
-              "en": "Minimum conditions sheet for replication (data, equipment, team profile)",
-              "va": "Fitxa de condicions mínimes per a la replicació (dades, equipament, perfil de l'equip)"
-            }
-          },
-          {
-            "id": "documentation-template",
-            "label": {
-              "es": "Plantilla de documentación del nuevo caso para publicación en el Marketplace AI-STEAM",
-              "en": "New case documentation template for publication on the AI-STEAM Marketplace",
-              "va": "Plantilla de documentació del nou cas per a publicació al Marketplace AI-STEAM"
-            }
-          }
-        ]
+        "items": []
       },
       "downloads": {
         "enabled": false,
-        "basePath": "/assets/downloads/mentorings/mentoring-replicacion-casos-agr/",
+        "basePath": "",
         "items": []
       },
       "resources": {
-        "externalLinks": [
-          {
-            "id": "request-form",
-            "type": "external-form",
-            "label": {
-              "es": "Formulario de solicitud de mentoría",
-              "en": "Mentoring request form",
-              "va": "Formulari de sol·licitud de mentoria"
-            },
-            "url": "",
-            "access": {
-              "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-              "en": "The request is managed outside this website when an external system is available.",
-              "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-            }
-          }
-        ]
+        "externalLinks": []
       },
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar mentoría",
-            "en": "Request mentoring",
-            "va": "Sol·licitar mentoria"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": "",
           "system": ""
         },
-        "fallbackAction": {
-          "label": {
-            "es": "Ver mentoría",
-            "en": "View mentoring",
-            "va": "Veure mentoria"
-          },
-          "url": ""
-        },
+        "fallbackAction": null,
         "secondaryAction": null
       },
       "relations": {
-        "relatedChallenges": [
-          "reto-ia-deteccion-plagas-agr"
-        ],
+        "relatedChallenges": [],
         "relatedValidations": [],
         "relatedPilots": [],
         "relatedCases": [],
         "relatedResources": [],
-        "possibleOutputs": [
-          "case",
-          "pilot"
-        ]
+        "possibleOutputs": []
       },
       "hasDownloads": false,
       "downloadCount": 0,
@@ -5585,10 +4911,10 @@ export const MARKETPLACE_CONFIG = {
             "preparation": true,
             "expectedOutputs": true,
             "transferValue": true,
-            "downloads": false,
-            "resources": false,
+            "downloads": true,
+            "resources": true,
             "access": true,
-            "relations": true
+            "relations": false
           }
         }
       },
@@ -5644,7 +4970,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "nts",
         "sectors": [],
-        "stakeholderCategory": "institutional",
+        "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -5673,8 +4999,8 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "mentoringTeam": {
           "name": {
@@ -5682,40 +5008,20 @@ export const MARKETPLACE_CONFIG = {
             "en": "AI-STEAM Network Mentoring Pool — Research-to-VET Transfer Specialists",
             "va": "AI-STEAM Network Mentoring Pool — Especialistes en Transferència Recerca-FP"
           },
-          "type": "mentoring-pool",
+          "type": "",
           "role": {
             "es": "Mentores con perfil dual investigador-docente, con experiencia en traducción de resultados de investigación a contenidos formativos de FP",
             "en": "Mentors with a dual researcher-teacher profile, experienced in translating research results into VET training content",
             "va": "Mentors amb perfil dual investigador-docent, amb experiència en traducció de resultats de recerca a continguts formatius de FP"
           },
-          "org": "AI-STEAM Network"
+          "org": ""
         },
-        "coordinator": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE",
-          "role": {
-            "es": "Coordinación de programas de transferencia investigación-FP del ecosistema AI-STEAM",
-            "en": "Coordination of research-VET transfer programmes in the AI-STEAM ecosystem",
-            "va": "Coordinació de programes de transferència recerca-FP de l'ecosistema AI-STEAM"
-          }
-        }
+        "coordinator": null
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "responsible-ai",
-          "ai-literacy",
-          "challenge-framing"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "learning-ecosystems",
-          "teacher-capacity",
-          "integrated-pedagogy"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -5728,16 +5034,12 @@ export const MARKETPLACE_CONFIG = {
         "pilotStatus": "",
         "sector": "nts",
         "sectorLabel": {
-          "es": "Educación, formación profesional e innovación pedagógica",
-          "en": "Education, vocational training and pedagogical innovation",
-          "va": "Educació, formació professional i innovació pedagògica"
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "stakeholderCategory": "institutional",
-        "audience": [
-          "researchers",
-          "teachers",
-          "vet-centres"
-        ]
+        "stakeholderCategory": "",
+        "audience": []
       },
       "transfer": {
         "type": "",
@@ -5752,7 +5054,7 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
@@ -5763,19 +5065,19 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "No deben enviarse resultados de investigación no publicados ni datos confidenciales de proyectos activos a través de este sitio.",
-          "en": "Unpublished research results or confidential data from active projects must not be submitted through this site.",
-          "va": "No s'han d'enviar resultats de recerca no publicats ni dades confidencials de projectes actius a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "mentoringRequestAccess": "not-available",
-        "confidentialityLevel": "standard",
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
         "publicationNote": {
-          "es": "El caso pedagógico resultante podrá publicarse en el Marketplace y citarse como impacto de transferencia si el grupo de investigación lo autoriza.",
-          "en": "The resulting pedagogical case may be published on the Marketplace and cited as transfer impact if the research group authorises it.",
-          "va": "El cas pedagògic resultant podrà publicar-se al Marketplace i citar-se com a impacte de transferència si el grup de recerca ho autoritza."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -5803,57 +5105,13 @@ export const MARKETPLACE_CONFIG = {
           "va": "Acompanyar grups de recerca en la traducció dels seus resultats, eines o datasets d'IA a continguts i pràctiques formatives transferibles per a centres de FP, construint la narrativa pedagògica i el pla de col·laboració amb centres educatius."
         },
         "problemAddressed": {
-          "es": "Los grupos de investigación generan resultados de IA de alto valor pero con frecuencia estos quedan en publicaciones académicas sin impacto formativo. Los docentes de FP no tienen tiempo ni perfil para acceder a esos resultados directamente. La brecha academia-FP no se cierra sola: necesita un proceso de traducción activo.",
-          "en": "Research groups generate high-value AI results but these frequently remain in academic publications without training impact. VET teachers do not have the time or profile to access those results directly. The academy-VET gap does not close on its own — it requires an active translation process.",
-          "va": "Els grups de recerca generen resultats d'IA d'alt valor però amb freqüència aquests queden en publicacions acadèmiques sense impacte formatiu. Els docents de FP no tenen temps ni perfil per accedir a eixos resultats directament. La bretxa acadèmia-FP no es tanca sola: necessita un procés de traducció actiu."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringScope": {
-          "included": [
-            {
-              "label": {
-                "es": "Análisis de los resultados o herramientas de IA disponibles y su potencial formativo en FP",
-                "en": "Analysis of available AI results or tools and their VET training potential",
-                "va": "Anàlisi dels resultats o eines d'IA disponibles i el seu potencial formatiu en FP"
-              }
-            },
-            {
-              "label": {
-                "es": "Diseño del caso pedagógico de uso del resultado de investigación en el aula de FP",
-                "en": "Pedagogical case design for using the research result in the VET classroom",
-                "va": "Disseny del cas pedagògic d'ús del resultat de recerca a l'aula de FP"
-              }
-            },
-            {
-              "label": {
-                "es": "Orientación sobre qué familias profesionales y ciclos formativos son más receptivos al resultado de investigación",
-                "en": "Guidance on which professional families and training cycles are most receptive to the research result",
-                "va": "Orientació sobre quines famílies professionals i cicles formatius són més receptius al resultat de recerca"
-              }
-            },
-            {
-              "label": {
-                "es": "Plan de colaboración con centros de FP piloto para validar la transferencia en el aula",
-                "en": "Collaboration plan with pilot VET centres to validate the classroom transfer",
-                "va": "Pla de col·laboració amb centres de FP pilot per validar la transferència a l'aula"
-              }
-            }
-          ],
-          "excluded": [
-            {
-              "label": {
-                "es": "Desarrollo de materiales didácticos completos ni publicación en revistas de educación",
-                "en": "Development of complete didactic materials or publication in education journals",
-                "va": "Desenvolupament de materials didàctics complets ni publicació en revistes d'educació"
-              }
-            },
-            {
-              "label": {
-                "es": "Gestión de convenios de colaboración universidad-centro educativo",
-                "en": "Management of university-educational centre collaboration agreements",
-                "va": "Gestió de convenis de col·laboració universitat-centre educatiu"
-              }
-            }
-          ]
+          "included": [],
+          "excluded": []
         },
         "format": {
           "sessions": [
@@ -5868,11 +5126,7 @@ export const MARKETPLACE_CONFIG = {
               ]
             }
           ],
-          "languageCodes": [
-            "es",
-            "va",
-            "en"
-          ],
+          "languageCodes": [],
           "availability": {
             "es": "Convocatoria vinculada a la apertura del curso académico (septiembre-octubre) y a la convocatoria de proyectos de innovación docente (enero-febrero). Proceso de 3 sesiones.",
             "en": "Call linked to the academic year start (September-October) and to the teaching innovation projects call (January-February). 3-session process.",
@@ -5880,14 +5134,14 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "targetUsers": {
-          "es": "Investigadores principales y personal postdoctoral de grupos de IA universitarios, investigadores de institutos tecnológicos y centros de investigación aplicada que quieren ampliar el impacto de sus proyectos hacia la formación profesional.",
-          "en": "Principal investigators and postdoctoral staff from university AI groups, researchers from technology institutes and applied research centres wishing to extend the impact of their projects towards vocational training.",
-          "va": "Investigadors principals i personal postdoctoral de grups d'IA universitaris, investigadors d'instituts tecnològics i centres de recerca aplicada que volen ampliar l'impacte dels seus projectes cap a la formació professional."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "transferValue": {
-          "es": "Los resultados de investigación que alcanzan las aulas de FP multiplican su impacto social, son elegibles para indicadores de transferencia en evaluaciones de sexenios y convocatorias de I+D+I, y generan nuevas líneas de colaboración con el sector productivo a través de la red de centros de FP.",
-          "en": "Research results that reach VET classrooms multiply their social impact, are eligible for transfer indicators in research assessment and R&D&I funding applications, and generate new lines of collaboration with the productive sector through the VET centre network.",
-          "va": "Els resultats de recerca que arriben a les aules de FP multipliquen el seu impacte social, són elegibles per a indicadors de transferència en avaluacions de sexennis i convocatòries de R+D+I, i generen noves línies de col·laboració amb el sector productiu a través de la xarxa de centres de FP."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
       "mentors": {
@@ -5896,11 +5150,11 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "pool-investigacion-fp",
             "name": "AI-STEAM Mentoring Pool — Transferencia Investigación-FP",
-            "organisation": "AI-STEAM Network",
+            "organisation": "",
             "role": {
-              "es": "Mentores con perfil dual investigador-docente de FP y experiencia en proyectos de transferencia de conocimiento",
-              "en": "Mentors with a dual researcher-VET teacher profile and experience in knowledge transfer projects",
-              "va": "Mentors amb perfil dual investigador-docent de FP i experiència en projectes de transferència de coneixement"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "specialties": [
               "research-transfer",
@@ -5912,127 +5166,32 @@ export const MARKETPLACE_CONFIG = {
         ]
       },
       "preparation": {
-        "requiredBeforeRequest": [
-          {
-            "label": {
-              "es": "Descripción del resultado o herramienta de IA disponible para transferencia (publicación, repositorio o descripción técnica)",
-              "en": "Description of the AI result or tool available for transfer (publication, repository or technical description)",
-              "va": "Descripció del resultat o eina d'IA disponible per a transferència (publicació, repositori o descripció tècnica)"
-            }
-          },
-          {
-            "label": {
-              "es": "Indicación del sector o problema productivo que aborda el resultado de investigación",
-              "en": "Indication of the sector or productive problem addressed by the research result",
-              "va": "Indicació del sector o problema productiu que aborda el resultat de recerca"
-            }
-          },
-          {
-            "label": {
-              "es": "Disponibilidad para una colaboración mínima de 1 curso académico con un centro de FP piloto",
-              "en": "Availability for a minimum 1 academic year collaboration with a pilot VET centre",
-              "va": "Disponibilitat per a una col·laboració mínima d'1 curs acadèmic amb un centre de FP pilot"
-            }
-          }
-        ],
-        "intakeQuestions": [
-          {
-            "id": "translation-gap",
-            "label": {
-              "es": "¿Qué haría falta cambiar o simplificar en vuestros resultados o herramientas para que un alumno de FP pueda trabajar con ellos sin supervisión investigadora?",
-              "en": "What would need to be changed or simplified in your results or tools so that a VET student can work with them without research supervision?",
-              "va": "Què caldria canviar o simplificar en els vostres resultats o eines perquè un alumne de FP puga treballar amb ells sense supervisió investigadora?"
-            }
-          },
-          {
-            "id": "sector-fit",
-            "label": {
-              "es": "¿En qué sector productivo o familia profesional creéis que vuestro resultado tiene más impacto formativo inmediato?",
-              "en": "In which productive sector or professional family do you think your result has the most immediate training impact?",
-              "va": "En quin sector productiu o família professional creieu que el vostre resultat té més impacte formatiu immediat?"
-            }
-          },
-          {
-            "id": "collaboration-type",
-            "label": {
-              "es": "¿Buscáis una colaboración puntual (una práctica de aula) o un proyecto de varios cursos que genere evidencia publicable?",
-              "en": "Are you looking for a one-off collaboration (a classroom activity) or a multi-year project that generates publishable evidence?",
-              "va": "Busqueu una col·laboració puntual (una pràctica d'aula) o un projecte de diversos cursos que genere evidència publicable?"
-            }
-          }
-        ]
+        "requiredBeforeRequest": [],
+        "intakeQuestions": []
       },
       "expectedOutputs": {
-        "items": [
-          {
-            "id": "pedagogical-case",
-            "label": {
-              "es": "Caso de uso pedagógico del resultado de investigación con narrativa para docentes de FP",
-              "en": "Pedagogical use case for the research result with narrative for VET teachers",
-              "va": "Cas d'ús pedagògic del resultat de recerca amb narrativa per a docents de FP"
-            }
-          },
-          {
-            "id": "cycle-mapping",
-            "label": {
-              "es": "Mapa de familias profesionales y ciclos formativos más receptivos al resultado",
-              "en": "Map of professional families and training cycles most receptive to the result",
-              "va": "Mapa de famílies professionals i cicles formatius més receptius al resultat"
-            }
-          },
-          {
-            "id": "pilot-collaboration-plan",
-            "label": {
-              "es": "Plan de colaboración con 1-2 centros de FP piloto para validar la transferencia",
-              "en": "Collaboration plan with 1-2 pilot VET centres to validate the transfer",
-              "va": "Pla de col·laboració amb 1-2 centres de FP pilot per validar la transferència"
-            }
-          }
-        ]
+        "items": []
       },
       "downloads": {
         "enabled": false,
-        "basePath": "/assets/downloads/mentorings/mentoring-transferencia-investigacion-fp/",
+        "basePath": "",
         "items": []
       },
       "resources": {
-        "externalLinks": [
-          {
-            "id": "request-form",
-            "type": "external-form",
-            "label": {
-              "es": "Formulario de solicitud de mentoría",
-              "en": "Mentoring request form",
-              "va": "Formulari de sol·licitud de mentoria"
-            },
-            "url": "",
-            "access": {
-              "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-              "en": "The request is managed outside this website when an external system is available.",
-              "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-            }
-          }
-        ]
+        "externalLinks": []
       },
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar mentoría",
-            "en": "Request mentoring",
-            "va": "Sol·licitar mentoria"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": "",
           "system": ""
         },
-        "fallbackAction": {
-          "label": {
-            "es": "Ver mentoría",
-            "en": "View mentoring",
-            "va": "Veure mentoria"
-          },
-          "url": ""
-        },
+        "fallbackAction": null,
         "secondaryAction": null
       },
       "relations": {
@@ -6041,11 +5200,7 @@ export const MARKETPLACE_CONFIG = {
         "relatedPilots": [],
         "relatedCases": [],
         "relatedResources": [],
-        "possibleOutputs": [
-          "case",
-          "pilot",
-          "resource"
-        ]
+        "possibleOutputs": []
       },
       "hasDownloads": false,
       "downloadCount": 0,
@@ -6076,10 +5231,10 @@ export const MARKETPLACE_CONFIG = {
             "preparation": true,
             "expectedOutputs": true,
             "transferValue": true,
-            "downloads": false,
-            "resources": false,
+            "downloads": true,
+            "resources": true,
             "access": true,
-            "relations": true
+            "relations": false
           }
         }
       },
@@ -6135,7 +5290,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "nts",
         "sectors": [],
-        "stakeholderCategory": "institutional",
+        "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -6164,8 +5319,8 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "mentoringTeam": {
           "name": {
@@ -6173,39 +5328,20 @@ export const MARKETPLACE_CONFIG = {
             "en": "AI-STEAM Network Mentoring Pool — AI Ethics and Education Specialists",
             "va": "AI-STEAM Network Mentoring Pool — Especialistes en Ètica IA i Educació"
           },
-          "type": "mentoring-pool",
+          "type": "",
           "role": {
             "es": "Mentores con formación en ética digital, protección de datos educativos y uso responsable de IA en el aula",
             "en": "Mentors trained in digital ethics, educational data protection and responsible AI use in the classroom",
             "va": "Mentors amb formació en ètica digital, protecció de dades educatives i ús responsable d'IA a l'aula"
           },
-          "org": "AI-STEAM Network"
+          "org": ""
         },
-        "coordinator": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE",
-          "role": {
-            "es": "Coordinación de mentoría en ética y uso responsable de IA",
-            "en": "Coordination of AI ethics and responsible use mentoring",
-            "va": "Coordinació de mentoria en ètica i ús responsable d'IA"
-          }
-        }
+        "coordinator": null
       },
       "classification": {
-        "aiSteamFocus": [
-          "responsible-ai",
-          "ai-ethics",
-          "ai-literacy"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "responsible-ai",
-          "equity-inclusion",
-          "teacher-capacity"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -6218,16 +5354,12 @@ export const MARKETPLACE_CONFIG = {
         "pilotStatus": "",
         "sector": "nts",
         "sectorLabel": {
-          "es": "Educación, formación profesional e innovación pedagógica",
-          "en": "Education, vocational training and pedagogical innovation",
-          "va": "Educació, formació professional i innovació pedagògica"
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "stakeholderCategory": "institutional",
-        "audience": [
-          "teachers",
-          "vet-centres",
-          "researchers"
-        ]
+        "stakeholderCategory": "",
+        "audience": []
       },
       "transfer": {
         "type": "",
@@ -6242,7 +5374,7 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
@@ -6253,19 +5385,19 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "No deben enviarse datos personales de alumnos ni información identificativa a través de este sitio. La revisión ética se realiza sobre descripciones anónimas del proyecto.",
-          "en": "Personal student data or identifying information must not be submitted through this site. The ethics review is conducted on anonymous project descriptions.",
-          "va": "No s'han d'enviar dades personals d'alumnes ni informació identificativa a través d'este lloc. La revisió ètica es realitza sobre descripcions anònimes del projecte."
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "mentoringRequestAccess": "not-available",
-        "confidentialityLevel": "standard",
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
         "publicationNote": {
-          "es": "La nota ética resultante puede publicarse como recurso de referencia si el centro lo autoriza y no incluye información identificativa.",
-          "en": "The resulting ethics note may be published as a reference resource if the centre authorises it and it contains no identifying information.",
-          "va": "La nota ètica resultant pot publicar-se com a recurs de referència si el centre ho autoritza i no inclou informació identificativa."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -6293,57 +5425,13 @@ export const MARKETPLACE_CONFIG = {
           "va": "Proporcionar a docents i equips de centre una revisió ètica accessible i pràctica dels seus projectes amb IA, identificant riscos reals, orientant sobre normativa aplicable (RGPD, Reglament IA) i suggerint salvaguardes proporcionades abans que el projecte s'implante o es publique."
         },
         "problemAddressed": {
-          "es": "Muchos proyectos educativos con IA se diseñan con buena intención pero sin revisar si los datos de los alumnos están protegidos, si las herramientas de IA generativa utilizadas cumplen los términos de servicio para menores o si el sistema de recomendación puede perpetuar sesgos. La mentoría ética no bloquea los proyectos — los mejora.",
-          "en": "Many AI educational projects are designed with good intentions but without reviewing whether student data is protected, whether the generative AI tools used comply with terms of service for minors or whether the recommendation system may perpetuate biases. Ethics mentoring does not block projects — it improves them.",
-          "va": "Molts projectes educatius amb IA es dissenyen amb bona intenció però sense revisar si les dades dels alumnes estan protegides, si les eines de IA generativa usades compleixen els termes de servei per a menors o si el sistema de recomanació pot perpetuar biaixos. La mentoria ètica no bloqueja els projectes — els millora."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringScope": {
-          "included": [
-            {
-              "label": {
-                "es": "Revisión de uso de datos de alumnos y aplicación del RGPD en el contexto educativo",
-                "en": "Review of student data use and GDPR application in the educational context",
-                "va": "Revisió d'ús de dades d'alumnes i aplicació del RGPD en el context educatiu"
-              }
-            },
-            {
-              "label": {
-                "es": "Identificación de sesgos potenciales en los sistemas de IA utilizados",
-                "en": "Identification of potential biases in the AI systems used",
-                "va": "Identificació de biaixos potencials en els sistemes d'IA usats"
-              }
-            },
-            {
-              "label": {
-                "es": "Revisión del uso de IA generativa con menores y gestión de alucinaciones",
-                "en": "Review of generative AI use with minors and hallucination management",
-                "va": "Revisió de l'ús de IA generativa amb menors i gestió d'al·lucinacions"
-              }
-            },
-            {
-              "label": {
-                "es": "Orientación sobre transparencia con familias y alumnos sobre el uso de IA",
-                "en": "Guidance on transparency with families and students about AI use",
-                "va": "Orientació sobre transparència amb famílies i alumnes sobre l'ús de IA"
-              }
-            }
-          ],
-          "excluded": [
-            {
-              "label": {
-                "es": "Asesoramiento jurídico vinculante",
-                "en": "Binding legal advice",
-                "va": "Assessorament jurídic vinculant"
-              }
-            },
-            {
-              "label": {
-                "es": "Auditoría técnica de los modelos de IA utilizados",
-                "en": "Technical audit of the AI models used",
-                "va": "Auditoria tècnica dels models d'IA usats"
-              }
-            }
-          ]
+          "included": [],
+          "excluded": []
         },
         "format": {
           "sessions": [
@@ -6358,11 +5446,7 @@ export const MARKETPLACE_CONFIG = {
               ]
             }
           ],
-          "languageCodes": [
-            "es",
-            "va",
-            "en"
-          ],
+          "languageCodes": [],
           "availability": {
             "es": "Convocatoria continua. Respuesta garantizada en 5 días laborables para solicitudes de centros educativos.",
             "en": "Rolling call. Response guaranteed within 5 working days for educational centre requests.",
@@ -6370,14 +5454,14 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "targetUsers": {
-          "es": "Docentes de FP, equipos de innovación pedagógica de centros, coordinadores de proyectos educativos con IA y equipos directivos que quieren revisar el cumplimiento ético antes de implantar una herramienta de IA.",
-          "en": "VET teachers, school pedagogical innovation teams, educational AI project coordinators and management teams wishing to review ethical compliance before implementing an AI tool.",
-          "va": "Docents de FP, equips d'innovació pedagògica de centres, coordinadors de projectes educatius amb IA i equips directius que volen revisar el compliment ètic abans d'implantar una eina d'IA."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "transferValue": {
-          "es": "Los proyectos revisados éticamente generan más confianza en las familias, cumplen la normativa desde el diseño (privacy by design) y son más fáciles de publicar y replicar en otros centros al tener documentados sus salvaguardas.",
-          "en": "Ethically reviewed projects generate greater family trust, comply with regulations by design (privacy by design) and are easier to publish and replicate in other centres with their safeguards documented.",
-          "va": "Els projectes revisats èticament generen més confiança en les famílies, compleixen la normativa des del disseny (privacy by design) i són més fàcils de publicar i replicar en altres centres en tenir documentades les seues salvaguardes."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
       "mentors": {
@@ -6386,11 +5470,11 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "pool-etica-educacion",
             "name": "AI-STEAM Mentoring Pool — Ética IA y Educación",
-            "organisation": "AI-STEAM Network",
+            "organisation": "",
             "role": {
-              "es": "Mentores con formación en ética digital, protección de datos educativos y uso responsable de IA",
-              "en": "Mentors trained in digital ethics, educational data protection and responsible AI use",
-              "va": "Mentors amb formació en ètica digital, protecció de dades educatives i ús responsable d'IA"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "specialties": [
               "ai-ethics",
@@ -6402,127 +5486,32 @@ export const MARKETPLACE_CONFIG = {
         ]
       },
       "preparation": {
-        "requiredBeforeRequest": [
-          {
-            "label": {
-              "es": "Descripción del proyecto o herramienta de IA que se quiere revisar",
-              "en": "Description of the AI project or tool to be reviewed",
-              "va": "Descripció del projecte o eina d'IA que es vol revisar"
-            }
-          },
-          {
-            "label": {
-              "es": "Indicación del nivel educativo y si hay menores implicados",
-              "en": "Indication of the educational level and whether minors are involved",
-              "va": "Indicació del nivell educatiu i si hi ha menors implicats"
-            }
-          },
-          {
-            "label": {
-              "es": "Listado de herramientas de IA que se usarán (nombre y proveedor)",
-              "en": "List of AI tools to be used (name and provider)",
-              "va": "Llistat d'eines d'IA que s'usaran (nom i proveïdor)"
-            }
-          }
-        ],
-        "intakeQuestions": [
-          {
-            "id": "data-use",
-            "label": {
-              "es": "¿Qué datos de alumnos se recogerán, procesarán o compartirán con las herramientas de IA?",
-              "en": "What student data will be collected, processed or shared with AI tools?",
-              "va": "Quines dades d'alumnes es recolliran, processaran o compartiran amb les eines d'IA?"
-            }
-          },
-          {
-            "id": "ai-tools",
-            "label": {
-              "es": "¿Las herramientas de IA generativa que utilizáis permiten su uso con menores de 18 años según sus términos de servicio?",
-              "en": "Do the generative AI tools you are using allow use with under-18s according to their terms of service?",
-              "va": "Les eines de IA generativa que useu permeten el seu ús amb menors de 18 anys segons els seus termes de servei?"
-            }
-          },
-          {
-            "id": "transparency",
-            "label": {
-              "es": "¿Han sido informados los alumnos y familias del uso de IA en el proyecto?",
-              "en": "Have students and families been informed about AI use in the project?",
-              "va": "Han sigut informats els alumnes i famílies de l'ús d'IA en el projecte?"
-            }
-          }
-        ]
+        "requiredBeforeRequest": [],
+        "intakeQuestions": []
       },
       "expectedOutputs": {
-        "items": [
-          {
-            "id": "ethics-note",
-            "label": {
-              "es": "Nota ética del proyecto con riesgos identificados y salvaguardas recomendadas",
-              "en": "Project ethics note with identified risks and recommended safeguards",
-              "va": "Nota ètica del projecte amb riscos identificats i salvaguardes recomanades"
-            }
-          },
-          {
-            "id": "compliance-checklist",
-            "label": {
-              "es": "Checklist de cumplimiento RGPD y Reglamento IA básico para el proyecto",
-              "en": "Basic GDPR and AI Act compliance checklist for the project",
-              "va": "Checklist de compliment RGPD i Reglament IA bàsic per al projecte"
-            }
-          },
-          {
-            "id": "transparency-template",
-            "label": {
-              "es": "Plantilla de comunicación a familias y alumnos sobre el uso de IA en el aula",
-              "en": "Communication template for families and students about AI use in the classroom",
-              "va": "Plantilla de comunicació a famílies i alumnes sobre l'ús de IA a l'aula"
-            }
-          }
-        ]
+        "items": []
       },
       "downloads": {
         "enabled": false,
-        "basePath": "/assets/downloads/mentorings/mentoring-etica-ia-proyectos-educativos/",
+        "basePath": "",
         "items": []
       },
       "resources": {
-        "externalLinks": [
-          {
-            "id": "request-form",
-            "type": "external-form",
-            "label": {
-              "es": "Formulario de solicitud de mentoría",
-              "en": "Mentoring request form",
-              "va": "Formulari de sol·licitud de mentoria"
-            },
-            "url": "",
-            "access": {
-              "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-              "en": "The request is managed outside this website when an external system is available.",
-              "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-            }
-          }
-        ]
+        "externalLinks": []
       },
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar mentoría",
-            "en": "Request mentoring",
-            "va": "Sol·licitar mentoria"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": "",
           "system": ""
         },
-        "fallbackAction": {
-          "label": {
-            "es": "Ver mentoría",
-            "en": "View mentoring",
-            "va": "Veure mentoria"
-          },
-          "url": ""
-        },
+        "fallbackAction": null,
         "secondaryAction": null
       },
       "relations": {
@@ -6531,10 +5520,7 @@ export const MARKETPLACE_CONFIG = {
         "relatedPilots": [],
         "relatedCases": [],
         "relatedResources": [],
-        "possibleOutputs": [
-          "resource",
-          "pilot"
-        ]
+        "possibleOutputs": []
       },
       "hasDownloads": false,
       "downloadCount": 0,
@@ -6565,10 +5551,10 @@ export const MARKETPLACE_CONFIG = {
             "preparation": true,
             "expectedOutputs": true,
             "transferValue": true,
-            "downloads": false,
-            "resources": false,
+            "downloads": true,
+            "resources": true,
             "access": true,
-            "relations": true
+            "relations": false
           }
         }
       },
@@ -6624,7 +5610,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "nts",
         "sectors": [],
-        "stakeholderCategory": "institutional",
+        "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -6653,8 +5639,8 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "mentoringTeam": {
           "name": {
@@ -6662,42 +5648,23 @@ export const MARKETPLACE_CONFIG = {
             "en": "AI-STEAM Network Mentoring Pool — Healthcare AI Specialists",
             "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Sanitària"
           },
-          "type": "mentoring-pool",
+          "type": "",
           "role": {
             "es": "Mentores con perfil técnico en ciencia de datos clínicos, visión computacional médica y cumplimiento normativo sanitario",
             "en": "Mentors with technical profile in clinical data science, medical computer vision and health regulatory compliance",
             "va": "Mentors amb perfil tècnic en ciència de dades clíniques, visió computacional mèdica i compliment normatiu sanitari"
           },
-          "org": "AI-STEAM Network"
+          "org": ""
         },
-        "coordinator": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE",
-          "role": {
-            "es": "Coordinación de mentoría técnica en sector salud y sociosanitario",
-            "en": "Coordination of technical mentoring in the health and social care sector",
-            "va": "Coordinació de mentoria tècnica en sector salut i sociosanitari"
-          }
-        }
+        "coordinator": null
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "responsible-ai",
-          "ai-ethics"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "responsible-ai",
-          "learning-ecosystems",
-          "teacher-capacity"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
-        "lbdStage": "process",
+        "lbdStage": "input",
         "trackBValue": {
           "es": "",
           "en": "",
@@ -6707,17 +5674,12 @@ export const MARKETPLACE_CONFIG = {
         "pilotStatus": "",
         "sector": "nts",
         "sectorLabel": {
-          "es": "Salud, servicios sociosanitarios y bienestar",
-          "en": "Health, social care and wellbeing",
-          "va": "Salut, serveis sociosanitaris i benestar"
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "stakeholderCategory": "institutional",
-        "audience": [
-          "teachers",
-          "vet-centres",
-          "companies",
-          "researchers"
-        ]
+        "stakeholderCategory": "",
+        "audience": []
       },
       "transfer": {
         "type": "",
@@ -6732,7 +5694,7 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
@@ -6743,19 +5705,19 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "No deben enviarse datos clínicos, imágenes médicas ni información identificativa de pacientes a través de este sitio. La mentoría se realiza sobre descripciones anonimizadas del proyecto.",
-          "en": "Clinical data, medical images or patient-identifying information must not be submitted through this site. Mentoring is conducted on anonymised project descriptions.",
-          "va": "No s'han d'enviar dades clíniques, imatges mèdiques ni informació identificativa de pacients a través d'este lloc. La mentoria es realitza sobre descripcions anonimitzades del projecte."
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "mentoringRequestAccess": "not-available",
-        "confidentialityLevel": "standard",
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
         "publicationNote": {
-          "es": "La nota de arquitectura resultante podrá publicarse como recurso técnico de referencia si el equipo lo autoriza y no incluye información clínica ni de pacientes.",
-          "en": "The resulting architecture note may be published as a technical reference resource if the team authorises it and it contains no clinical or patient information.",
-          "va": "La nota d'arquitectura resultant pot publicar-se com a recurs tècnic de referència si l'equip ho autoritza i no inclou informació clínica ni de pacients."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -6783,57 +5745,13 @@ export const MARKETPLACE_CONFIG = {
           "va": "Guiar equips tècnics i docents en la definició de l'arquitectura de dades, selecció del model d'IA adequat i protocol de validació clínica, garantint el compliment del Reglament IA (classificació de risc alt), RGPD sanitari i estàndards HL7/FHIR des del disseny."
         },
         "problemAddressed": {
-          "es": "Los proyectos de IA en salud frecuentemente se paralizan por incertidumbre técnica o regulatoria. Los equipos de FP sanitaria tienen el contexto clínico pero no siempre la experiencia en gestión de datos médicos, arquitecturas de inferencia o requisitos del Reglamento IA para dispositivos médicos de software (SaMD). La mentoría cierra esa brecha antes de invertir recursos en desarrollo.",
-          "en": "AI projects in health are frequently stalled by technical or regulatory uncertainty. Health VET teams have the clinical context but do not always have experience in medical data management, inference architectures or AI Act requirements for software medical devices (SaMD). Mentoring closes that gap before investing resources in development.",
-          "va": "Els projectes d'IA en salut freqüentment es paralitzen per incertesa tècnica o regulatòria. Els equips de FP sanitària tenen el context clínic però no sempre l'experiència en gestió de dades mèdiques, arquitectures d'inferència o requisits del Reglament IA per a dispositius mèdics de programari (SaMD). La mentoria tanca eixa bretxa abans d'invertir recursos en desenvolupament."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringScope": {
-          "included": [
-            {
-              "label": {
-                "es": "Orientación sobre arquitectura de datos clínicos y estándares de interoperabilidad (HL7, FHIR, DICOM)",
-                "en": "Guidance on clinical data architecture and interoperability standards (HL7, FHIR, DICOM)",
-                "va": "Orientació sobre arquitectura de dades clíniques i estàndards d'interoperabilitat (HL7, FHIR, DICOM)"
-              }
-            },
-            {
-              "label": {
-                "es": "Selección del tipo de modelo de IA adecuado al caso de uso clínico",
-                "en": "Selection of the appropriate AI model type for the clinical use case",
-                "va": "Selecció del tipus de model d'IA adequat al cas d'ús clínic"
-              }
-            },
-            {
-              "label": {
-                "es": "Clasificación del sistema bajo el Reglamento IA y requisitos para dispositivos SaMD",
-                "en": "System classification under the AI Act and SaMD device requirements",
-                "va": "Classificació del sistema sota el Reglament IA i requisits per a dispositius SaMD"
-              }
-            },
-            {
-              "label": {
-                "es": "Diseño del protocolo de validación clínica y métricas de rendimiento diagnóstico",
-                "en": "Clinical validation protocol design and diagnostic performance metrics",
-                "va": "Disseny del protocol de validació clínica i mètriques de rendiment diagnòstic"
-              }
-            }
-          ],
-          "excluded": [
-            {
-              "label": {
-                "es": "Desarrollo del modelo de IA ni acceso a infraestructura de cómputo",
-                "en": "AI model development or access to computing infrastructure",
-                "va": "Desenvolupament del model d'IA ni accés a infraestructura de còmput"
-              }
-            },
-            {
-              "label": {
-                "es": "Certificación regulatoria ni registro de producto sanitario",
-                "en": "Regulatory certification or medical device registration",
-                "va": "Certificació regulatòria ni registre de producte sanitari"
-              }
-            }
-          ]
+          "included": [],
+          "excluded": []
         },
         "format": {
           "sessions": [
@@ -6848,11 +5766,7 @@ export const MARKETPLACE_CONFIG = {
               ]
             }
           ],
-          "languageCodes": [
-            "es",
-            "va",
-            "en"
-          ],
+          "languageCodes": [],
           "availability": {
             "es": "Convocatoria continua. Proceso de 2 sesiones técnicas más revisión asíncrona de documentos. Respuesta inicial en 7 días laborables.",
             "en": "Rolling call. Process of 2 technical sessions plus asynchronous document review. Initial response within 7 working days.",
@@ -6860,14 +5774,14 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "targetUsers": {
-          "es": "Docentes de FP de la familia sanitaria con perfil técnico, responsables de innovación de hospitales o centros de salud, y equipos de investigación clínica que colaboran con centros de FP en proyectos con IA.",
-          "en": "VET teachers from the health family with a technical profile, innovation managers at hospitals or health centres, and clinical research teams collaborating with VET centres on AI projects.",
-          "va": "Docents de FP de la família sanitària amb perfil tècnic, responsables d'innovació d'hospitals o centres de salut, i equips de recerca clínica que col·laboren amb centres de FP en projectes amb IA."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "transferValue": {
-          "es": "Los proyectos con arquitectura técnica sólida desde el inicio reducen el tiempo de validación clínica, son más fáciles de publicar en revistas especializadas y tienen mayor probabilidad de ser adoptados como práctica estándar en más centros de salud.",
-          "en": "Projects with a solid technical architecture from the outset reduce clinical validation time, are easier to publish in specialist journals and are more likely to be adopted as standard practice in more health centres.",
-          "va": "Els projectes amb arquitectura tècnica sòlida des de l'inici redueixen el temps de validació clínica, són més fàcils de publicar en revistes especialitzades i tenen major probabilitat de ser adoptats com a pràctica estàndard en més centres de salut."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
       "mentors": {
@@ -6876,11 +5790,11 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "pool-ia-sanitaria",
             "name": "AI-STEAM Mentoring Pool — IA Sanitaria y Datos Clínicos",
-            "organisation": "AI-STEAM Network",
+            "organisation": "",
             "role": {
-              "es": "Mentores especializados en ciencia de datos clínicos, visión computacional médica y normativa sanitaria",
-              "en": "Mentors specialised in clinical data science, medical computer vision and health regulations",
-              "va": "Mentors especialitzats en ciència de dades clíniques, visió computacional mèdica i normativa sanitària"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "specialties": [
               "clinical-data-science",
@@ -6892,142 +5806,41 @@ export const MARKETPLACE_CONFIG = {
         ]
       },
       "preparation": {
-        "requiredBeforeRequest": [
-          {
-            "label": {
-              "es": "Descripción del caso de uso clínico en 10-15 líneas (qué problema diagnóstico o asistencial se quiere abordar)",
-              "en": "Description of the clinical use case in 10-15 lines (what diagnostic or care problem is to be addressed)",
-              "va": "Descripció del cas d'ús clínic en 10-15 línies (quin problema diagnòstic o assistencial es vol abordar)"
-            }
-          },
-          {
-            "label": {
-              "es": "Tipo y volumen aproximado de datos disponibles (imágenes, registros EHR, señales fisiológicas)",
-              "en": "Type and approximate volume of available data (images, EHR records, physiological signals)",
-              "va": "Tipus i volum aproximat de dades disponibles (imatges, registres EHR, senyals fisiològiques)"
-            }
-          },
-          {
-            "label": {
-              "es": "Indicación de si el proyecto es educativo, de investigación o de implantación clínica real",
-              "en": "Indication of whether the project is educational, research-based or for real clinical implementation",
-              "va": "Indicació de si el projecte és educatiu, de recerca o d'implantació clínica real"
-            }
-          }
-        ],
-        "intakeQuestions": [
-          {
-            "id": "clinical-context",
-            "label": {
-              "es": "¿Quién tomará las decisiones clínicas finales basadas en el sistema de IA? ¿Cómo se integrará el sistema en el flujo de trabajo clínico?",
-              "en": "Who will make the final clinical decisions based on the AI system? How will the system integrate into the clinical workflow?",
-              "va": "Qui prendrà les decisions clíniques finals basades en el sistema d'IA? Com s'integrarà el sistema en el flux de treball clínic?"
-            }
-          },
-          {
-            "id": "data-governance",
-            "label": {
-              "es": "¿Los datos disponibles están anonimizados o seudonimizados? ¿Hay consentimiento informado o base jurídica alternativa para el tratamiento?",
-              "en": "Is the available data anonymised or pseudonymised? Is there informed consent or alternative legal basis for processing?",
-              "va": "Les dades disponibles estan anonimitzades o seudonimitzades? Hi ha consentiment informat o base jurídica alternativa per al tractament?"
-            }
-          },
-          {
-            "id": "validation-plan",
-            "label": {
-              "es": "¿Tenéis acceso a un conjunto de datos de validación independiente del de entrenamiento?",
-              "en": "Do you have access to a validation dataset independent of the training data?",
-              "va": "Teniu accés a un conjunt de dades de validació independent del d'entrenament?"
-            }
-          }
-        ]
+        "requiredBeforeRequest": [],
+        "intakeQuestions": []
       },
       "expectedOutputs": {
-        "items": [
-          {
-            "id": "technical-architecture-note",
-            "label": {
-              "es": "Nota de arquitectura técnica con recomendaciones de modelo, pipeline de datos y entorno de inferencia",
-              "en": "Technical architecture note with model recommendations, data pipeline and inference environment",
-              "va": "Nota d'arquitectura tècnica amb recomanacions de model, pipeline de dades i entorn d'inferència"
-            }
-          },
-          {
-            "id": "regulatory-classification",
-            "label": {
-              "es": "Clasificación regulatoria del sistema bajo el Reglamento IA y checklist de requisitos aplicables",
-              "en": "Regulatory classification of the system under the AI Act and applicable requirements checklist",
-              "va": "Classificació regulatòria del sistema sota el Reglament IA i checklist de requisits aplicables"
-            }
-          },
-          {
-            "id": "validation-protocol",
-            "label": {
-              "es": "Borrador de protocolo de validación clínica con métricas de rendimiento y criterios de aceptación",
-              "en": "Draft clinical validation protocol with performance metrics and acceptance criteria",
-              "va": "Esborrany de protocol de validació clínica amb mètriques de rendiment i criteris d'acceptació"
-            }
-          }
-        ]
+        "items": []
       },
       "downloads": {
         "enabled": false,
-        "basePath": "/assets/downloads/mentorings/mentoring-soporte-tecnico-implementacion-ia-nts/",
+        "basePath": "",
         "items": []
       },
       "resources": {
-        "externalLinks": [
-          {
-            "id": "request-form",
-            "type": "external-form",
-            "label": {
-              "es": "Formulario de solicitud de mentoría",
-              "en": "Mentoring request form",
-              "va": "Formulari de sol·licitud de mentoria"
-            },
-            "url": "",
-            "access": {
-              "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-              "en": "The request is managed outside this website when an external system is available.",
-              "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-            }
-          }
-        ]
+        "externalLinks": []
       },
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar mentoría",
-            "en": "Request mentoring",
-            "va": "Sol·licitar mentoria"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": "",
           "system": ""
         },
-        "fallbackAction": {
-          "label": {
-            "es": "Ver mentoría",
-            "en": "View mentoring",
-            "va": "Veure mentoria"
-          },
-          "url": ""
-        },
+        "fallbackAction": null,
         "secondaryAction": null
       },
       "relations": {
         "relatedChallenges": [],
         "relatedValidations": [],
-        "relatedPilots": [
-          "pilot-ia-diagnostico-cancer-piel-nts"
-        ],
+        "relatedPilots": [],
         "relatedCases": [],
         "relatedResources": [],
-        "possibleOutputs": [
-          "pilot",
-          "validation",
-          "resource"
-        ]
+        "possibleOutputs": []
       },
       "hasDownloads": false,
       "downloadCount": 0,
@@ -7058,10 +5871,10 @@ export const MARKETPLACE_CONFIG = {
             "preparation": true,
             "expectedOutputs": true,
             "transferValue": true,
-            "downloads": false,
-            "resources": false,
+            "downloads": true,
+            "resources": true,
             "access": true,
-            "relations": true
+            "relations": false
           }
         }
       },
@@ -7861,12 +6674,12 @@ export const MARKETPLACE_CONFIG = {
       },
       "ficha": null,
       "adhesionForm": {
-        "url": ""
+        "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufimy8pKaFjvbtEm6P80z2LuPxUNFhSTlNGTFpPMEdWNUwzTk8yVjYzTlpRQS4u"
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "mentoringTeam": {
           "name": {
@@ -7874,42 +6687,23 @@ export const MARKETPLACE_CONFIG = {
             "en": "AI-STEAM Network Mentoring Pool — VET Pedagogy and Innovation Specialists",
             "va": "AI-STEAM Network Mentoring Pool — Especialistes en Pedagogia FP i Innovació"
           },
-          "type": "mentoring-pool",
+          "type": "",
           "role": {
             "es": "Mentores con perfil dual pedagógico-técnico, con experiencia en diseño de pilotos FP-empresa",
             "en": "Mentors with dual pedagogical-technical profile, experienced in designing VET-industry pilots",
             "va": "Mentors amb perfil dual pedagògic-tècnic, amb experiència en disseny de pilots FP-empresa"
           },
-          "org": "AI-STEAM Network"
+          "org": ""
         },
-        "coordinator": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE",
-          "role": {
-            "es": "Coordinación de pilotos educativos Track B",
-            "en": "Track B educational pilot coordination",
-            "va": "Coordinació de pilots educatius Track B"
-          }
-        }
+        "coordinator": null
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "maker-steam",
-          "challenge-framing"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "integrated-pedagogy",
-          "learning-ecosystems",
-          "teacher-capacity"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
-        "lbdStage": "process",
+        "lbdStage": "input",
         "trackBValue": {
           "es": "",
           "en": "",
@@ -7919,16 +6713,12 @@ export const MARKETPLACE_CONFIG = {
         "pilotStatus": "",
         "sector": "nts",
         "sectorLabel": {
-          "es": "Educación, formación profesional e innovación pedagógica",
-          "en": "Education, vocational training and pedagogical innovation",
-          "va": "Educació, formació professional i innovació pedagògica"
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "stakeholderCategory": "institutional",
-        "audience": [
-          "vet-centres",
-          "teachers",
-          "companies"
-        ]
+        "stakeholderCategory": "",
+        "audience": []
       },
       "transfer": {
         "type": "",
@@ -7943,7 +6733,7 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
@@ -7954,19 +6744,19 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "El diseño del piloto es co-propiedad del centro de FP y la empresa participante. No deben enviarse datos de alumnos ni información sensible a través de este sitio.",
-          "en": "The pilot design is co-owned by the VET centre and the participating company. Student data and sensitive information must not be submitted through this site.",
-          "va": "El disseny del pilot és co-propietat del centre de FP i l'empresa participant. No s'han d'enviar dades d'alumnes ni informació sensible a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "mentoringRequestAccess": "not-available",
-        "confidentialityLevel": "standard",
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
         "publicationNote": {
-          "es": "El piloto resultante podrá publicarse en el Marketplace si genera evidencia documentada y ambas partes lo autorizan.",
-          "en": "The resulting pilot may be published on the Marketplace if it generates documented evidence and both parties authorise it.",
-          "va": "El pilot resultant podrà publicar-se al Marketplace si genera evidència documentada i ambdues parts ho autoritzen."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -7994,57 +6784,13 @@ export const MARKETPLACE_CONFIG = {
           "va": "Acompanyar parelles FP-empresa en el disseny d'un pilot educatiu rigorós: amb hipòtesi clara, metodologia adequada al cicle formatiu, mètriques d'èxit avaluables i condicions de transferibilitat perquè altres centres puguen replicar-lo."
         },
         "problemAddressed": {
-          "es": "Los centros de FP y las empresas tienen voluntad de colaborar pero frecuentemente diseñan actividades que no tienen hipótesis medible, no documentan qué aprenden los alumnos o generan contenidos no transferibles a otros contextos. La mentoría introduce el marco de piloto riguroso desde el primer diseño.",
-          "en": "VET centres and companies have the will to collaborate but frequently design activities that lack a measurable hypothesis, do not document what students learn or generate content non-transferable to other contexts. Mentoring introduces the rigorous pilot framework from the first design.",
-          "va": "Els centres de FP i les empreses tenen voluntat de col·laborar però freqüentment dissenyen activitats que no tenen hipòtesi mesurable, no documenten el que aprenen els alumnes o generen continguts no transferibles a altres contextos. La mentoria introdueix el marc de pilot rigorós des del primer disseny."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringScope": {
-          "included": [
-            {
-              "label": {
-                "es": "Definición de hipótesis del piloto y pregunta de investigación educativa",
-                "en": "Pilot hypothesis and educational research question definition",
-                "va": "Definició d'hipòtesi del pilot i pregunta de recerca educativa"
-              }
-            },
-            {
-              "label": {
-                "es": "Diseño de la metodología, cronograma y distribución de roles FP-empresa",
-                "en": "Methodology, timeline and VET-company role distribution design",
-                "va": "Disseny de la metodologia, cronograma i distribució de rols FP-empresa"
-              }
-            },
-            {
-              "label": {
-                "es": "Definición de métricas de éxito y criterios de transferibilidad",
-                "en": "Success metrics and transferability criteria definition",
-                "va": "Definició de mètriques d'èxit i criteris de transferibilitat"
-              }
-            },
-            {
-              "label": {
-                "es": "Revisión del encaje curricular en el ciclo formativo",
-                "en": "Curricular fit review in the training cycle",
-                "va": "Revisió de l'encaix curricular en el cicle formatiu"
-              }
-            }
-          ],
-          "excluded": [
-            {
-              "label": {
-                "es": "Desarrollo del contenido técnico del piloto",
-                "en": "Technical content development of the pilot",
-                "va": "Desenvolupament del contingut tècnic del pilot"
-              }
-            },
-            {
-              "label": {
-                "es": "Formación docente en las herramientas técnicas utilizadas",
-                "en": "Teacher training in the technical tools used",
-                "va": "Formació docent en les eines tècniques usades"
-              }
-            }
-          ]
+          "included": [],
+          "excluded": []
         },
         "format": {
           "sessions": [
@@ -8059,10 +6805,7 @@ export const MARKETPLACE_CONFIG = {
               ]
             }
           ],
-          "languageCodes": [
-            "es",
-            "va"
-          ],
+          "languageCodes": [],
           "availability": {
             "es": "Sesiones disponibles para parejas FP-empresa con proyecto identificado. Proceso de 3 sesiones en 6 semanas.",
             "en": "Sessions available for VET-company pairs with an identified project. 3-session process over 6 weeks.",
@@ -8070,14 +6813,14 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "targetUsers": {
-          "es": "Equipos formados por al menos un docente de FP y un representante de empresa que ya tienen una idea de colaboración pero necesitan estructurarla como piloto evaluable.",
-          "en": "Teams formed by at least one VET teacher and one company representative who already have a collaboration idea but need to structure it as an evaluable pilot.",
-          "va": "Equips formats per almenys un docent de FP i un representant d'empresa que ja tenen una idea de col·laboració però necessiten estructurar-la com a pilot avaluable."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "transferValue": {
-          "es": "Los pilotos bien diseñados desde el inicio generan evidencia publicable, son replicables por otros centros y contribuyen al Marketplace AI-STEAM como casos verificados o recursos reutilizables.",
-          "en": "Well-designed pilots from the outset generate publishable evidence, can be replicated by other centres and contribute to the AI-STEAM Marketplace as verified cases or reusable resources.",
-          "va": "Els pilots ben dissenyats des de l'inici generen evidència publicable, són replicables per altres centres i contribueixen al Marketplace AI-STEAM com a casos verificats o recursos reutilitzables."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
       "mentors": {
@@ -8086,11 +6829,11 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "pool-pedagogia-fp",
             "name": "AI-STEAM Mentoring Pool — Pedagogía FP e Innovación",
-            "organisation": "AI-STEAM Network",
+            "organisation": "",
             "role": {
-              "es": "Mentores especializados en diseño pedagógico de pilotos FP-empresa con IA",
-              "en": "Mentors specialised in pedagogical design of VET-industry AI pilots",
-              "va": "Mentors especialitzats en disseny pedagògic de pilots FP-empresa amb IA"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "specialties": [
               "pilot-design",
@@ -8102,127 +6845,32 @@ export const MARKETPLACE_CONFIG = {
         ]
       },
       "preparation": {
-        "requiredBeforeRequest": [
-          {
-            "label": {
-              "es": "Descripción del proyecto de colaboración FP-empresa en 10-15 líneas",
-              "en": "Description of the VET-company collaboration project in 10-15 lines",
-              "va": "Descripció del projecte de col·laboració FP-empresa en 10-15 línies"
-            }
-          },
-          {
-            "label": {
-              "es": "Identificación del ciclo formativo y módulo o unidad de trabajo donde se integrará",
-              "en": "Identification of the training cycle and module or learning unit where it will be integrated",
-              "va": "Identificació del cicle formatiu i mòdul o unitat de treball on s'integrarà"
-            }
-          },
-          {
-            "label": {
-              "es": "Número estimado de alumnos y sesiones disponibles",
-              "en": "Estimated number of students and available sessions",
-              "va": "Nombre estimat d'alumnes i sessions disponibles"
-            }
-          }
-        ],
-        "intakeQuestions": [
-          {
-            "id": "hypothesis",
-            "label": {
-              "es": "¿Qué cambio esperáis observar en los alumnos al final del piloto?",
-              "en": "What change do you expect to observe in students at the end of the pilot?",
-              "va": "Quin canvi espereu observar en els alumnes al final del pilot?"
-            }
-          },
-          {
-            "id": "company-contribution",
-            "label": {
-              "es": "¿Qué aportará la empresa concretamente? (datos, visitas, equipos, mentores)",
-              "en": "What will the company specifically contribute? (data, visits, equipment, mentors)",
-              "va": "Què aportarà l'empresa concretament? (dades, visites, equips, mentors)"
-            }
-          },
-          {
-            "id": "success",
-            "label": {
-              "es": "¿Cómo sabrías que el piloto ha funcionado? ¿Qué medirías?",
-              "en": "How would you know the pilot has worked? What would you measure?",
-              "va": "Com sabries que el pilot ha funcionat? Què mesuraries?"
-            }
-          }
-        ]
+        "requiredBeforeRequest": [],
+        "intakeQuestions": []
       },
       "expectedOutputs": {
-        "items": [
-          {
-            "id": "pilot-design-doc",
-            "label": {
-              "es": "Documento de diseño del piloto con hipótesis, metodología, cronograma y métricas",
-              "en": "Pilot design document with hypothesis, methodology, timeline and metrics",
-              "va": "Document de disseny del pilot amb hipòtesi, metodologia, cronograma i mètriques"
-            }
-          },
-          {
-            "id": "curricular-fit-note",
-            "label": {
-              "es": "Nota de encaje curricular del piloto en el ciclo formativo identificado",
-              "en": "Pilot curricular fit note for the identified training cycle",
-              "va": "Nota d'encaix curricular del pilot en el cicle formatiu identificat"
-            }
-          },
-          {
-            "id": "replication-conditions",
-            "label": {
-              "es": "Condiciones de transferibilidad y requisitos mínimos para replicación por otros centros",
-              "en": "Transferability conditions and minimum requirements for replication by other centres",
-              "va": "Condicions de transferibilitat i requisits mínims per a replicació per altres centres"
-            }
-          }
-        ]
+        "items": []
       },
       "downloads": {
         "enabled": false,
-        "basePath": "/assets/downloads/mentorings/mentoring-diseno-pilotos-fp-empresa/",
+        "basePath": "",
         "items": []
       },
       "resources": {
-        "externalLinks": [
-          {
-            "id": "request-form",
-            "type": "external-form",
-            "label": {
-              "es": "Formulario de solicitud de mentoría",
-              "en": "Mentoring request form",
-              "va": "Formulari de sol·licitud de mentoria"
-            },
-            "url": "",
-            "access": {
-              "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-              "en": "The request is managed outside this website when an external system is available.",
-              "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-            }
-          }
-        ]
+        "externalLinks": []
       },
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar mentoría",
-            "en": "Request mentoring",
-            "va": "Sol·licitar mentoria"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": "",
           "system": ""
         },
-        "fallbackAction": {
-          "label": {
-            "es": "Ver mentoría",
-            "en": "View mentoring",
-            "va": "Veure mentoria"
-          },
-          "url": ""
-        },
+        "fallbackAction": null,
         "secondaryAction": null
       },
       "relations": {
@@ -8231,11 +6879,7 @@ export const MARKETPLACE_CONFIG = {
         "relatedPilots": [],
         "relatedCases": [],
         "relatedResources": [],
-        "possibleOutputs": [
-          "pilot",
-          "case",
-          "resource"
-        ]
+        "possibleOutputs": []
       },
       "hasDownloads": false,
       "downloadCount": 0,
@@ -8266,10 +6910,10 @@ export const MARKETPLACE_CONFIG = {
             "preparation": true,
             "expectedOutputs": true,
             "transferValue": true,
-            "downloads": false,
-            "resources": false,
+            "downloads": true,
+            "resources": true,
             "access": true,
-            "relations": true
+            "relations": false
           }
         }
       },
@@ -8628,7 +7272,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "mfg",
         "sectors": [],
-        "stakeholderCategory": "enterprise",
+        "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -8657,8 +7301,8 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "mentoringTeam": {
           "name": {
@@ -8666,38 +7310,20 @@ export const MARKETPLACE_CONFIG = {
             "en": "AI-STEAM Network Mentoring Pool — Industry 4.0 Specialists",
             "va": "AI-STEAM Network Mentoring Pool — Especialistes en Indústria 4.0"
           },
-          "type": "mentoring-pool",
+          "type": "",
           "role": {
             "es": "Mentores con experiencia en formulación de retos en contextos industriales y de FP",
             "en": "Mentors experienced in challenge framing in industrial and VET contexts",
             "va": "Mentors amb experiència en formulació de reptes en contextos industrials i de FP"
           },
-          "org": "AI-STEAM Network"
+          "org": ""
         },
-        "coordinator": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE",
-          "role": {
-            "es": "Coordinación Track B — sector industrial",
-            "en": "Track B coordination — industrial sector",
-            "va": "Coordinació Track B — sector industrial"
-          }
-        }
+        "coordinator": null
       },
       "classification": {
-        "aiSteamFocus": [
-          "data-ai",
-          "maker-steam",
-          "challenge-framing"
-        ],
-        "tripleTransition": [
-          "digital",
-          "green"
-        ],
-        "policyCluster": [
-          "learning-ecosystems",
-          "integrated-pedagogy"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -8710,16 +7336,12 @@ export const MARKETPLACE_CONFIG = {
         "pilotStatus": "",
         "sector": "mfg",
         "sectorLabel": {
-          "es": "Fabricación, manufactura e industria 4.0",
-          "en": "Manufacturing and Industry 4.0",
-          "va": "Fabricació, manufactura i indústria 4.0"
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "stakeholderCategory": "enterprise",
-        "audience": [
-          "companies",
-          "vet-centres",
-          "industry-partners"
-        ]
+        "stakeholderCategory": "",
+        "audience": []
       },
       "transfer": {
         "type": "",
@@ -8734,7 +7356,7 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
@@ -8745,19 +7367,19 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "La empresa conserva la titularidad de su necesidad. No deben enviarse datos confidenciales, secretos industriales ni información de clientes a través de este sitio.",
-          "en": "The company retains ownership of its need. Confidential data, trade secrets or customer information must not be submitted through this site.",
-          "va": "L'empresa conserva la titularitat de la seua necessitat. No s'han d'enviar dades confidencials, secrets industrials ni informació de clients a través d'este lloc."
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "mentoringRequestAccess": "not-available",
-        "confidentialityLevel": "standard",
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
         "publicationNote": {
-          "es": "El reto resultante solo se publicará si la empresa lo autoriza y no contiene información sensible o confidencial.",
-          "en": "The resulting challenge will only be published if the company authorises it and it contains no sensitive or confidential information.",
-          "va": "El repte resultant només es publicarà si l'empresa ho autoritza i no conté informació sensible o confidencial."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -8785,57 +7407,13 @@ export const MARKETPLACE_CONFIG = {
           "va": "Ajudar empreses industrials a transformar una necessitat tècnica o de talent en un repte AI-STEAM publicable, amb abast realista, incentius atractius per a la comunitat i condicions clares de dades i propietat intel·lectual."
         },
         "problemAddressed": {
-          "es": "Las empresas tienen necesidades de innovación claras pero frecuentemente las plantean como soluciones técnicas muy específicas (RFP cerradas) o demasiado vagas para generar propuestas de calidad. La mentoría ayuda a encontrar el nivel de especificidad correcto y a construir el caso de valor para los equipos participantes.",
-          "en": "Companies have clear innovation needs but frequently frame them as very specific technical solutions (closed RFPs) or too vaguely to generate quality proposals. Mentoring helps find the right level of specificity and build the value case for participating teams.",
-          "va": "Les empreses tenen necessitats d'innovació clares però freqüentment les plantegen com a solucions tècniques molt específiques (RFP tancades) o massa vagues per generar propostes de qualitat. La mentoria ajuda a trobar el nivell d'especificitat correcte i a construir el cas de valor per als equips participants."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringScope": {
-          "included": [
-            {
-              "label": {
-                "es": "Diagnóstico de la necesidad y traducción a lenguaje de reto abierto",
-                "en": "Need diagnosis and translation into open challenge language",
-                "va": "Diagnòstic de la necessitat i traducció a llenguatge de repte obert"
-              }
-            },
-            {
-              "label": {
-                "es": "Definición del alcance, incentivos y condiciones de propiedad intelectual",
-                "en": "Scope, incentives and intellectual property conditions definition",
-                "va": "Definició de l'abast, incentius i condicions de propietat intel·lectual"
-              }
-            },
-            {
-              "label": {
-                "es": "Revisión de la viabilidad del reto y adecuación al ecosistema AI-STEAM",
-                "en": "Challenge feasibility review and AI-STEAM ecosystem fit assessment",
-                "va": "Revisió de la viabilitat del repte i adequació a l'ecosistema AI-STEAM"
-              }
-            },
-            {
-              "label": {
-                "es": "Orientación sobre cesión de datos y confidencialidad",
-                "en": "Guidance on data sharing and confidentiality",
-                "va": "Orientació sobre cessió de dades i confidencialitat"
-              }
-            }
-          ],
-          "excluded": [
-            {
-              "label": {
-                "es": "Desarrollo técnico de la solución",
-                "en": "Technical solution development",
-                "va": "Desenvolupament tècnic de la solució"
-              }
-            },
-            {
-              "label": {
-                "es": "Asesoramiento jurídico especializado en propiedad industrial",
-                "en": "Specialist legal advice on industrial property",
-                "va": "Assessorament jurídic especialitzat en propietat industrial"
-              }
-            }
-          ]
+          "included": [],
+          "excluded": []
         },
         "format": {
           "sessions": [
@@ -8850,10 +7428,7 @@ export const MARKETPLACE_CONFIG = {
               ]
             }
           ],
-          "languageCodes": [
-            "es",
-            "va"
-          ],
+          "languageCodes": [],
           "availability": {
             "es": "Convocatoria abierta con plazas limitadas. Sesiones disponibles en horario de empresa (9:00-18:00).",
             "en": "Open call with limited places. Sessions available during business hours (9:00-18:00).",
@@ -8861,14 +7436,14 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "targetUsers": {
-          "es": "Directores de innovación, responsables de RRHH y formación, ingenieros de proceso y responsables de operaciones de empresas industriales de la Comunitat Valenciana.",
-          "en": "Innovation directors, HR and training managers, process engineers and operations managers of industrial companies in the Valencian Community.",
-          "va": "Directors d'innovació, responsables de RRHH i formació, enginyers de procés i responsables d'operacions d'empreses industrials de la Comunitat Valenciana."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "transferValue": {
-          "es": "Los retos bien formulados generan más y mejores propuestas de la comunidad, reducen el tiempo de evaluación y aumentan las probabilidades de encontrar una solución pilotable en 6-12 meses.",
-          "en": "Well-framed challenges generate more and better community proposals, reduce evaluation time and increase the chances of finding a pilotable solution within 6-12 months.",
-          "va": "Els reptes ben formulats generen més i millors propostes de la comunitat, redueixen el temps d'avaluació i augmenten les probabilitats de trobar una solució pilotable en 6-12 mesos."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
       "mentors": {
@@ -8877,11 +7452,11 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "pool-industria-40",
             "name": "AI-STEAM Mentoring Pool — Industria 4.0",
-            "organisation": "AI-STEAM Network",
+            "organisation": "",
             "role": {
-              "es": "Mentores especializados en transferencia tecnológica y formulación de retos industriales",
-              "en": "Mentors specialised in technology transfer and industrial challenge framing",
-              "va": "Mentors especialitzats en transferència tecnològica i formulació de reptes industrials"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "specialties": [
               "industry-4-0",
@@ -8893,127 +7468,32 @@ export const MARKETPLACE_CONFIG = {
         ]
       },
       "preparation": {
-        "requiredBeforeRequest": [
-          {
-            "label": {
-              "es": "Descripción de la necesidad técnica o de talento en 5-10 líneas",
-              "en": "Description of the technical or talent need in 5-10 lines",
-              "va": "Descripció de la necessitat tècnica o de talent en 5-10 línies"
-            }
-          },
-          {
-            "label": {
-              "es": "Indicación de si hay datos disponibles para compartir con los equipos participantes",
-              "en": "Indication of whether data is available to share with participating teams",
-              "va": "Indicació de si hi ha dades disponibles per compartir amb els equips participants"
-            }
-          },
-          {
-            "label": {
-              "es": "Idea inicial del incentivo o retribución para el equipo ganador",
-              "en": "Initial idea of the incentive or reward for the winning team",
-              "va": "Idea inicial de l'incentiu o retribució per a l'equip guanyador"
-            }
-          }
-        ],
-        "intakeQuestions": [
-          {
-            "id": "need",
-            "label": {
-              "es": "¿Cuál es el problema concreto que la empresa no puede resolver internamente?",
-              "en": "What is the specific problem the company cannot solve internally?",
-              "va": "Quin és el problema concret que l'empresa no pot resoldre internament?"
-            }
-          },
-          {
-            "id": "data",
-            "label": {
-              "es": "¿Qué datos o acceso al entorno real podría facilitar la empresa a los equipos?",
-              "en": "What data or real-environment access could the company provide to teams?",
-              "va": "Quines dades o accés a l'entorn real podria facilitar l'empresa als equips?"
-            }
-          },
-          {
-            "id": "outcome",
-            "label": {
-              "es": "¿Qué resultado mínimo necesita la empresa para considerar el reto un éxito?",
-              "en": "What minimum result does the company need to consider the challenge a success?",
-              "va": "Quin resultat mínim necessita l'empresa per considerar el repte un èxit?"
-            }
-          }
-        ]
+        "requiredBeforeRequest": [],
+        "intakeQuestions": []
       },
       "expectedOutputs": {
-        "items": [
-          {
-            "id": "challenge-draft",
-            "label": {
-              "es": "Borrador de reto listo para revisión técnica y publicación en el Marketplace",
-              "en": "Challenge draft ready for technical review and Marketplace publication",
-              "va": "Esborrany de repte llest per a revisió tècnica i publicació al Marketplace"
-            }
-          },
-          {
-            "id": "scope-document",
-            "label": {
-              "es": "Documento de alcance con incentivos, datos disponibles y condiciones de PI",
-              "en": "Scope document with incentives, available data and IP conditions",
-              "va": "Document d'abast amb incentius, dades disponibles i condicions de PI"
-            }
-          },
-          {
-            "id": "feasibility-note",
-            "label": {
-              "es": "Nota de viabilidad del reto en el ecosistema AI-STEAM",
-              "en": "Challenge feasibility note within the AI-STEAM ecosystem",
-              "va": "Nota de viabilitat del repte en l'ecosistema AI-STEAM"
-            }
-          }
-        ]
+        "items": []
       },
       "downloads": {
         "enabled": false,
-        "basePath": "/assets/downloads/mentorings/mentoring-formulacion-retos-industria/",
+        "basePath": "",
         "items": []
       },
       "resources": {
-        "externalLinks": [
-          {
-            "id": "request-form",
-            "type": "external-form",
-            "label": {
-              "es": "Formulario de solicitud de mentoría",
-              "en": "Mentoring request form",
-              "va": "Formulari de sol·licitud de mentoria"
-            },
-            "url": "",
-            "access": {
-              "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-              "en": "The request is managed outside this website when an external system is available.",
-              "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-            }
-          }
-        ]
+        "externalLinks": []
       },
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar mentoría",
-            "en": "Request mentoring",
-            "va": "Sol·licitar mentoria"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": "",
           "system": ""
         },
-        "fallbackAction": {
-          "label": {
-            "es": "Ver mentoría",
-            "en": "View mentoring",
-            "va": "Veure mentoria"
-          },
-          "url": ""
-        },
+        "fallbackAction": null,
         "secondaryAction": null
       },
       "relations": {
@@ -9022,10 +7502,7 @@ export const MARKETPLACE_CONFIG = {
         "relatedPilots": [],
         "relatedCases": [],
         "relatedResources": [],
-        "possibleOutputs": [
-          "challenge",
-          "validation"
-        ]
+        "possibleOutputs": []
       },
       "hasDownloads": false,
       "downloadCount": 0,
@@ -9056,10 +7533,10 @@ export const MARKETPLACE_CONFIG = {
             "preparation": true,
             "expectedOutputs": true,
             "transferValue": true,
-            "downloads": false,
-            "resources": false,
+            "downloads": true,
+            "resources": true,
             "access": true,
-            "relations": true
+            "relations": false
           }
         }
       },
@@ -13600,7 +12077,7 @@ export const MARKETPLACE_CONFIG = {
         "verificationStatus": "",
         "sector": "cci",
         "sectors": [],
-        "stakeholderCategory": "civic",
+        "stakeholderCategory": "",
         "levels": [],
         "pilotType": "",
         "validationType": "",
@@ -13629,8 +12106,8 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "name": "",
+          "org": ""
         },
         "mentoringTeam": {
           "name": {
@@ -13638,39 +12115,20 @@ export const MARKETPLACE_CONFIG = {
             "en": "AI-STEAM Network Mentoring Pool",
             "va": "AI-STEAM Network Mentoring Pool"
           },
-          "type": "mentoring-pool",
+          "type": "",
           "role": {
             "es": "Equipo de mentoría en formulación de retos y ética de IA",
             "en": "Mentoring team in challenge framing and AI ethics",
             "va": "Equip de mentoria en formulació de reptes i ètica d'IA"
           },
-          "org": "AI-STEAM Network"
+          "org": ""
         },
-        "coordinator": {
-          "name": "AI-STEAM Network",
-          "org": "CEICE",
-          "role": {
-            "es": "Coordinación Track B",
-            "en": "Track B coordination",
-            "va": "Coordinació Track B"
-          }
-        }
+        "coordinator": null
       },
       "classification": {
-        "aiSteamFocus": [
-          "creative-ai",
-          "responsible-ai",
-          "challenge-framing"
-        ],
-        "tripleTransition": [
-          "digital",
-          "social"
-        ],
-        "policyCluster": [
-          "learning-ecosystems",
-          "teacher-capacity",
-          "responsible-ai"
-        ],
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
         "engagementLevel": "",
         "evidenceMaturity": "idea",
         "lbdStage": "input",
@@ -13683,18 +12141,12 @@ export const MARKETPLACE_CONFIG = {
         "pilotStatus": "",
         "sector": "cci",
         "sectorLabel": {
-          "es": "Industrias culturales y creativas",
-          "en": "Cultural and creative industries",
-          "va": "Industries culturals i creatives"
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "stakeholderCategory": "civic",
-        "audience": [
-          "cultural-organisations",
-          "ngos",
-          "creative-smes",
-          "teachers",
-          "local-administration"
-        ]
+        "stakeholderCategory": "",
+        "audience": []
       },
       "transfer": {
         "type": "",
@@ -13709,7 +12161,7 @@ export const MARKETPLACE_CONFIG = {
       "detail": {},
       "access": {
         "pageVisibility": "public",
-        "pageLicense": "CC BY 4.0",
+        "pageLicense": "",
         "codeLicense": "",
         "dataAvailability": "",
         "sensitiveDataIncluded": false,
@@ -13720,19 +12172,19 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "rightsNote": {
-          "es": "La entidad conserva la titularidad de su idea. La red solo ayuda a formularla. No deben enviarse datos personales, confidenciales o sensibles a traves de esta web.",
-          "en": "The organisation keeps ownership of its idea. The network only helps frame it. Personal, confidential or sensitive data must not be submitted through this website.",
-          "va": "L'entitat conserva la titularitat de la seua idea. La xarxa nomes ajuda a formular-la. No s'han d'enviar dades personals, confidencials o sensibles a traves d'esta web."
+          "es": "",
+          "en": "",
+          "va": ""
         },
-        "mentoringRequestAccess": "not-available",
-        "confidentialityLevel": "standard",
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
         "publicationNote": {
-          "es": "El resultado de la mentoría solo se publicará como reto, caso, recurso o validación si la entidad lo autoriza y no contiene información sensible.",
-          "en": "The mentoring output will only be published as a challenge, case, resource or validation if the organisation authorises it and it contains no sensitive information.",
-          "va": "El resultat de la mentoria nomes es publicara com a repte, cas, recurs o validacio si l'entitat ho autoritza i no conte informacio sensible."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "publicUrl": "",
-        "license": "CC BY 4.0",
+        "license": "",
         "privacyLevel": "public"
       },
       "trackA": {
@@ -13760,57 +12212,13 @@ export const MARKETPLACE_CONFIG = {
           "va": "Ajudar entitats de la xarxa a transformar una idea inicial en un brief clar, publicable i accionable dins de l'ecosistema AI-STEAM."
         },
         "problemAddressed": {
-          "es": "Muchas organizaciones tienen ideas relevantes, pero necesitan apoyo para convertirlas en un reto, caso, recurso o validación con alcance, lenguaje y condiciones claras.",
-          "en": "Many organisations have relevant ideas but need support to turn them into a challenge, case, resource or validation with clear scope, language and conditions.",
-          "va": "Moltes organitzacions tenen idees rellevants, però necessiten suport per a convertir-les en un repte, cas, recurs o validació amb abast, llenguatge i condicions clares."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "mentoringScope": {
-          "included": [
-            {
-              "label": {
-                "es": "Formulación de brief Track B",
-                "en": "Track B brief framing",
-                "va": "Formulació de brief Track B"
-              }
-            },
-            {
-              "label": {
-                "es": "Revisión ética básica de uso de IA",
-                "en": "Basic ethical review of AI use",
-                "va": "Revisió ètica bàsica d'ús d'IA"
-              }
-            },
-            {
-              "label": {
-                "es": "Clarificación de actores, entregables y valor de transferencia",
-                "en": "Clarification of actors, outputs and transfer value",
-                "va": "Clarificació d'actors, entregables i valor de transferència"
-              }
-            }
-          ],
-          "excluded": [
-            {
-              "label": {
-                "es": "Evaluación académica formal",
-                "en": "Formal academic assessment",
-                "va": "Avaluació acadèmica formal"
-              }
-            },
-            {
-              "label": {
-                "es": "Asesoramiento jurídico especializado",
-                "en": "Specialist legal advice",
-                "va": "Assessorament jurídic especialitzat"
-              }
-            },
-            {
-              "label": {
-                "es": "Desarrollo técnico completo de soluciones",
-                "en": "Full technical development of solutions",
-                "va": "Desenvolupament tècnic complet de solucions"
-              }
-            }
-          ]
+          "included": [],
+          "excluded": []
         },
         "format": {
           "sessions": [
@@ -13825,11 +12233,7 @@ export const MARKETPLACE_CONFIG = {
               ]
             }
           ],
-          "languageCodes": [
-            "es",
-            "en",
-            "va"
-          ],
+          "languageCodes": [],
           "availability": {
             "es": "Convocatoria continua mientras haya capacidad de mentoria disponible.",
             "en": "Rolling call while mentoring capacity is available.",
@@ -13837,14 +12241,14 @@ export const MARKETPLACE_CONFIG = {
           }
         },
         "targetUsers": {
-          "es": "Entidades culturales, centros educativos, ONG, administraciones locales y pymes creativas.",
-          "en": "Cultural organisations, schools, NGOs, local administrations and creative SMEs.",
-          "va": "Entitats culturals, centres educatius, ONG, administracions locals i pimes creatives."
+          "es": "",
+          "en": "",
+          "va": ""
         },
         "transferValue": {
-          "es": "La mentoría mejora la calidad de entrada al ecosistema, reduce ruido en la comunidad de práctica y ayuda a convertir ideas iniciales en objetos publicables o revisables.",
-          "en": "Mentoring improves ecosystem inputs, reduces noise in the community of practice and helps convert initial ideas into publishable or reviewable objects.",
-          "va": "La mentoria millora la qualitat d'entrada a l'ecosistema, redueix soroll en la comunitat de pràctica i ajuda a convertir idees inicials en objectes publicables o revisables."
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
       "mentors": {
@@ -13853,11 +12257,11 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "ai-steam-mentoring-pool",
             "name": "AI-STEAM Network Mentoring Pool",
-            "organisation": "AI-STEAM Network",
+            "organisation": "",
             "role": {
-              "es": "Mentoría en formulación de retos y ética de IA",
-              "en": "Mentoring in challenge framing and AI ethics",
-              "va": "Mentoria en formulació de reptes i ètica d'IA"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "specialties": [
               "responsible-ai",
@@ -13869,191 +12273,33 @@ export const MARKETPLACE_CONFIG = {
         ]
       },
       "preparation": {
-        "requiredBeforeRequest": [
-          {
-            "label": {
-              "es": "Descripción breve de la necesidad o idea inicial",
-              "en": "Short description of the initial need or idea",
-              "va": "Descripció breu de la necessitat o idea inicial"
-            }
-          },
-          {
-            "label": {
-              "es": "Tipo de resultado deseado; reto, caso, recurso, validacion o piloto",
-              "en": "Desired output type; challenge, case, resource, validation or pilot",
-              "va": "Tipus de resultat desitjat; repte, cas, recurs, validacio o pilotatge"
-            }
-          },
-          {
-            "label": {
-              "es": "Informacion sobre posibles datos sensibles o restricciones de publicacion",
-              "en": "Information about possible sensitive data or publication constraints",
-              "va": "Informacio sobre possibles dades sensibles o restriccions de publicacio"
-            }
-          }
-        ],
-        "intakeQuestions": [
-          {
-            "id": "need",
-            "label": {
-              "es": "Qué necesidad quiere formular la entidad?",
-              "en": "What need does the organisation want to frame?",
-              "va": "Quina necessitat vol formular l'entitat?"
-            }
-          },
-          {
-            "id": "stakeholders",
-            "label": {
-              "es": "Qué actores deberían participar?",
-              "en": "Which actors should be involved?",
-              "va": "Quins actors haurien de participar?"
-            }
-          },
-          {
-            "id": "expected-output",
-            "label": {
-              "es": "Qué producto espera obtener tras la mentoría?",
-              "en": "What product is expected after the mentoring?",
-              "va": "Quin producte s'espera obtindre després de la mentoria?"
-            }
-          }
-        ]
+        "requiredBeforeRequest": [],
+        "intakeQuestions": []
       },
       "expectedOutputs": {
-        "items": [
-          {
-            "id": "track-b-brief",
-            "label": {
-              "es": "Brief Track B listo para publicar o revisar",
-              "en": "Track B brief ready to publish or review",
-              "va": "Brief Track B llest per a publicar o revisar"
-            }
-          },
-          {
-            "id": "refined-scope",
-            "label": {
-              "es": "Alcance, actores y entregables clarificados",
-              "en": "Scope, actors and outputs clarified",
-              "va": "Abast, actors i entregables clarificats"
-            }
-          },
-          {
-            "id": "risk-note",
-            "label": {
-              "es": "Nota inicial sobre datos sensibles, ética e IA responsable",
-              "en": "Initial note on sensitive data, ethics and responsible AI",
-              "va": "Nota inicial sobre dades sensibles, ètica i IA responsable"
-            }
-          }
-        ]
+        "items": []
       },
       "downloads": {
         "enabled": false,
-        "basePath": "/assets/downloads/mentorings/responsible-ai-creative-briefs/",
-        "items": [
-          {
-            "id": "brief-template",
-            "type": "brief-template",
-            "title": {
-              "es": "Plantilla de brief Track B",
-              "en": "Track B brief template",
-              "va": "Plantilla de brief Track B"
-            },
-            "description": {
-              "es": "Documento editable para preparar la necesidad, actores, alcance, entregables y condiciones de publicacion antes de la mentoria.",
-              "en": "Editable document to prepare the need, actors, scope, outputs and publication conditions before the mentoring session.",
-              "va": "Document editable per a preparar la necessitat, actors, abast, entregables i condicions de publicació abans de la mentoria."
-            },
-            "files": [],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "responsible-ai-checklist",
-            "type": "checklist",
-            "title": {
-              "es": "Checklist de IA responsable para briefs creativos",
-              "en": "Responsible AI checklist for creative briefs",
-              "va": "Checklist d'IA responsable per a briefs creatius"
-            },
-            "description": {
-              "es": "Lista breve para revisar finalidad, datos, riesgos, transparencia y límites del uso de IA en una propuesta inicial.",
-              "en": "Short checklist to review purpose, data, risks, transparency and AI-use boundaries in an initial proposal.",
-              "va": "Llista breu per a revisar finalitat, dades, riscos, transparència i límits de l'ús d'IA en una proposta inicial."
-            },
-            "files": [],
-            "license": "",
-            "showOnCard": true,
-            "showOnDetail": true
-          },
-          {
-            "id": "mentoring-preparation-guide",
-            "type": "preparation-guide",
-            "title": {
-              "es": "Guia para preparar la sesion de mentoria",
-              "en": "Guide to prepare the mentoring session",
-              "va": "Guia per a preparar la sessio de mentoria"
-            },
-            "description": {
-              "es": "Orientaciones para llegar a la mentoría con una idea mínima, preguntas útiles y límites de publicación claros.",
-              "en": "Guidance to arrive at the mentoring session with a minimum idea, useful questions and clear publication limits.",
-              "va": "Orientacions per a arribar a la mentoria amb una idea mínima, preguntes útils i límits de publicació clars."
-            },
-            "files": [],
-            "license": "",
-            "showOnCard": false,
-            "showOnDetail": true
-          }
-        ]
+        "basePath": "",
+        "items": []
       },
       "resources": {
-        "externalLinks": [
-          {
-            "id": "request-form",
-            "type": "external-form",
-            "label": {
-              "es": "Formulario externo de solicitud",
-              "en": "External request form",
-              "va": "Formulari extern de sol·licitud"
-            },
-            "url": "",
-            "access": {
-              "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-              "en": "The request is managed outside this website when an external system is available.",
-              "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-            }
-          }
-        ]
+        "externalLinks": []
       },
       "externalFlow": {
         "enabled": false,
         "primaryAction": {
           "label": {
-            "es": "Solicitar mentoría",
-            "en": "Request mentoring",
-            "va": "Sol·licitar mentoria"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": "",
           "system": ""
         },
-        "fallbackAction": {
-          "label": {
-            "es": "Ver mentoria",
-            "en": "View mentoring",
-            "va": "Veure mentoria"
-          },
-          "url": ""
-        },
-        "secondaryAction": {
-          "label": {
-            "es": "Descargar plantilla de brief",
-            "en": "Download brief template",
-            "va": "Descarregar plantilla de brief"
-          },
-          "downloadId": "brief-template",
-          "url": ""
-        }
+        "fallbackAction": null,
+        "secondaryAction": null
       },
       "relations": {
         "relatedChallenges": [],
@@ -14061,12 +12307,7 @@ export const MARKETPLACE_CONFIG = {
         "relatedPilots": [],
         "relatedCases": [],
         "relatedResources": [],
-        "possibleOutputs": [
-          "challenge",
-          "validation",
-          "resource",
-          "case"
-        ]
+        "possibleOutputs": []
       },
       "hasDownloads": false,
       "downloadCount": 0,
@@ -14078,7 +12319,7 @@ export const MARKETPLACE_CONFIG = {
           "showProvider": true,
           "showSpecialties": true,
           "showAvailability": true,
-          "showDownloadsIndicator": true,
+          "showDownloadsIndicator": false,
           "showChatBadge": false,
           "mainBlockLabel": {
             "es": "Qué ofrece",
@@ -14097,10 +12338,10 @@ export const MARKETPLACE_CONFIG = {
             "preparation": true,
             "expectedOutputs": true,
             "transferValue": true,
-            "downloads": false,
-            "resources": false,
+            "downloads": true,
+            "resources": true,
             "access": true,
-            "relations": true
+            "relations": false
           }
         }
       },
@@ -31706,14 +29947,17 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
-        "ficha": null,
+        "ficha": {
+          "file": "mentoring-ia-creativa-turismo-cultura.pdf",
+          "publicPath": "/assets/downloads/marketplace/mentorings/mentoring-ia-creativa-turismo-cultura.pdf"
+        },
         "adhesionForm": {
-          "url": ""
+          "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufimy8pKaFjvbtEm6P80z2LuPxUNFhSTlNGTFpPMEdWNUwzTk8yVjYzTlpRQS4u"
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "mentoringTeam": {
             "name": {
@@ -31721,42 +29965,23 @@ export const MARKETPLACE_CONFIG = {
               "en": "AI-STEAM Network Mentoring Pool — Creative AI and Tourism-Culture Specialists",
               "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme-Cultura"
             },
-            "type": "mentoring-pool",
+            "type": "",
             "role": {
               "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural, diseño e industrias creativas valencianas e internacionales",
               "en": "Mentors experienced in generative AI applications in tourism, cultural heritage, design and Valencian and international creative industries",
               "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural, disseny i indústries creatives valencianes i internacionals"
             },
-            "org": "AI-STEAM Network"
+            "org": ""
           },
-          "coordinator": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE",
-            "role": {
-              "es": "Coordinación de la mentoría en IA generativa para los sectores turístico-cultural y creativo de la Comunitat Valenciana",
-              "en": "Coordination of generative AI mentoring for the tourism-cultural and creative sectors of the Valencian Community",
-              "va": "Coordinació de la mentoria en IA generativa per als sectors turístic-cultural i creatiu de la Comunitat Valenciana"
-            }
-          }
+          "coordinator": null
         },
         "classification": {
-          "aiSteamFocus": [
-            "creative-ai",
-            "responsible-ai",
-            "ai-literacy"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "responsible-ai",
-            "equity-inclusion",
-            "learning-ecosystems"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
-          "lbdStage": "process",
+          "lbdStage": "input",
           "trackBValue": {
             "es": "",
             "en": "",
@@ -31766,17 +29991,12 @@ export const MARKETPLACE_CONFIG = {
           "pilotStatus": "",
           "sector": "cci",
           "sectorLabel": {
-            "es": "Turismo, cultura e industrias creativas",
-            "en": "Tourism, culture and creative industries",
-            "va": "Turisme, cultura i indústries creatives"
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "stakeholderCategory": "",
-          "audience": [
-            "companies",
-            "civic-organisations",
-            "industry-partners",
-            "vet-centres"
-          ]
+          "audience": []
         },
         "transfer": {
           "type": "",
@@ -31791,9 +30011,9 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
-          "dataAvailability": "not-applicable",
+          "dataAvailability": "",
           "sensitiveDataIncluded": false,
           "contributionVisibility": "",
           "sensitiveDataPolicy": {
@@ -31802,36 +30022,36 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "No deben enviarse materiales con derechos de autor de terceros ni contenidos confidenciales de campañas en desarrollo a través de este sitio. Los flujos de trabajo prototipados son propiedad de la organización mentorizada.",
-            "en": "Materials with third-party copyright or confidential content from campaigns in development must not be submitted through this site. Prototyped workflows are the property of the mentored organisation.",
-            "va": "No s'han d'enviar materials amb drets d'autor de tercers ni continguts confidencials de campanyes en desenvolupament a través d'este lloc. Els fluxos de treball prototipats són propietat de l'organització mentoritzada."
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "mentoringRequestAccess": "external-managed",
-          "confidentialityLevel": "standard",
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
           "publicationNote": {
-            "es": "Los flujos de trabajo prototipados y el mapa de integración podrán publicarse como casos de referencia en el Marketplace AI-STEAM si la organización lo autoriza expresamente y no incluyen contenidos protegidos de terceros.",
-            "en": "Prototyped workflows and the integration map may be published as reference cases in the AI-STEAM Marketplace if the organisation expressly authorises it and they do not include third-party protected content.",
-            "va": "Els fluxos de treball prototipats i el mapa d'integració podran publicar-se com a casos de referència al Marketplace AI-STEAM si l'organització ho autoritza expressament i no inclouen continguts protegits de tercers."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
-          "enabled": true,
+          "enabled": false,
           "label": {
-            "es": "Las organizaciones que completan esta mentoría y desarrollan un flujo de trabajo creativo humano-IA documentado pueden derivarse a Track A como casos de referencia para el diseño de contenidos curriculares en Máster universitario en Diseño e Innovación con IA o en ciclos de Grado Superior de Imagen y Comunicación.",
-            "en": "Organisations that complete this mentoring and develop a documented human-AI creative workflow can be routed to Track A as reference cases for designing curricular content in a university Master's in Design and AI Innovation or in Higher Level cycles in Image and Communication.",
-            "va": "Les organitzacions que completen aquesta mentoria i desenvolupen un flux de treball creatiu humà-IA documentat poden derivar-se a Track A com a casos de referència per al disseny de continguts curriculars en Màster universitari en Disseny i Innovació amb IA o en cicles de Grau Superior d'Imatge i Comunicació."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": ""
         },
         "trackALink": {
-          "enabled": true,
+          "enabled": false,
           "label": {
-            "es": "Las organizaciones que completan esta mentoría y desarrollan un flujo de trabajo creativo humano-IA documentado pueden derivarse a Track A como casos de referencia para el diseño de contenidos curriculares en Máster universitario en Diseño e Innovación con IA o en ciclos de Grado Superior de Imagen y Comunicación.",
-            "en": "Organisations that complete this mentoring and develop a documented human-AI creative workflow can be routed to Track A as reference cases for designing curricular content in a university Master's in Design and AI Innovation or in Higher Level cycles in Image and Communication.",
-            "va": "Les organitzacions que completen aquesta mentoria i desenvolupen un flux de treball creatiu humà-IA documentat poden derivar-se a Track A com a casos de referència per al disseny de continguts curriculars en Màster universitari en Disseny i Innovació amb IA o en cicles de Grau Superior d'Imatge i Comunicació."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "url": ""
         },
@@ -31842,71 +30062,13 @@ export const MARKETPLACE_CONFIG = {
             "va": "Orientar organitzacions turístiques i culturals en la selecció i integració ètica d'eines d'IA generativa en els seus processos creatius i de negoci, garantint que els continguts generats respecten els drets d'autor, la identitat de marca i les expectatives del visitant o usuari final."
           },
           "problemAddressed": {
-            "es": "Las empresas turísticas y culturales ven el potencial de la IA generativa pero no saben qué herramientas son adecuadas para su escala y presupuesto, tienen dudas sobre los derechos de los contenidos generados con IA y temen que la IA homogenice su propuesta de valor. La mentoría ayuda a encontrar el equilibrio entre automatización creativa y autenticidad.",
-            "en": "Tourism and cultural companies see the potential of generative AI but do not know which tools are appropriate for their scale and budget, have doubts about the rights of AI-generated content and fear that AI will homogenise their value proposition. Mentoring helps find the balance between creative automation and authenticity.",
-            "va": "Les empreses turístiques i culturals veuen el potencial de la IA generativa però no saben quines eines són adequades per a la seua escala i pressupost, tenen dubtes sobre els drets dels continguts generats amb IA i temen que la IA homogeneïtze la seua proposta de valor. La mentoria ajuda a trobar l'equilibri entre automatització creativa i autenticitat."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringScope": {
-            "included": [
-              {
-                "label": {
-                  "es": "Diagnóstico del perfil creativo de la organización e identificación de casos de uso de IA generativa prioritarios (texto, imagen, vídeo, audio)",
-                  "en": "Diagnosis of the organisation's creative profile and identification of priority generative AI use cases (text, image, video, audio)",
-                  "va": "Diagnòstic del perfil creatiu de l'organització i identificació de casos d'ús d'IA generativa prioritaris (text, imatge, vídeo, àudio)"
-                }
-              },
-              {
-                "label": {
-                  "es": "Evaluación comparativa de herramientas de IA generativa disponibles (coste, calidad, términos de uso comercial, adecuación al sector)",
-                  "en": "Comparative evaluation of available generative AI tools (cost, quality, commercial use terms, sector suitability)",
-                  "va": "Avaluació comparativa d'eines d'IA generativa disponibles (cost, qualitat, termes d'ús comercial, adequació al sector)"
-                }
-              },
-              {
-                "label": {
-                  "es": "Orientación práctica sobre derechos de autor en contenidos generados con IA, atribución y comunicación responsable al usuario final",
-                  "en": "Practical guidance on copyright in AI-generated content, attribution and responsible communication to the end user",
-                  "va": "Orientació pràctica sobre drets d'autor en continguts generats amb IA, atribució i comunicació responsable a l'usuari final"
-                }
-              },
-              {
-                "label": {
-                  "es": "Diseño de flujos de trabajo creativos humano-IA que complementan sin sustituir la creatividad del equipo y preservan la identidad de marca",
-                  "en": "Design of human-AI creative workflows that complement without replacing team creativity and preserve brand identity",
-                  "va": "Disseny de fluxos de treball creatius humà-IA que complementen sense substituir la creativitat de l'equip i preserven la identitat de marca"
-                }
-              },
-              {
-                "label": {
-                  "es": "Revisión ética del plan de integración propuesto respecto a transparencia, sesgos y expectativas del visitante",
-                  "en": "Ethical review of the proposed integration plan regarding transparency, bias and visitor expectations",
-                  "va": "Revisió ètica del pla d'integració proposat respecte a transparència, biaixos i expectatives del visitant"
-                }
-              }
-            ],
-            "excluded": [
-              {
-                "label": {
-                  "es": "Desarrollo de modelos de IA generativa propios ni fine-tuning de modelos existentes para la organización",
-                  "en": "Development of own generative AI models or fine-tuning of existing models for the organisation",
-                  "va": "Desenvolupament de models d'IA generativa propis ni fine-tuning de models existents per a l'organització"
-                }
-              },
-              {
-                "label": {
-                  "es": "Asesoramiento jurídico especializado en propiedad intelectual, contratos creativos o litigios por contenidos IA",
-                  "en": "Specialist legal advice on intellectual property, creative contracts or AI content litigation",
-                  "va": "Assessorament jurídic especialitzat en propietat intel·lectual, contractes creatius o litigis per continguts IA"
-                }
-              },
-              {
-                "label": {
-                  "es": "Producción directa de contenidos creativos ni diseño gráfico por parte de los mentores",
-                  "en": "Direct production of creative content or graphic design by the mentors",
-                  "va": "Producció directa de continguts creatius ni disseny gràfic per part dels mentors"
-                }
-              }
-            ]
+            "included": [],
+            "excluded": []
           },
           "format": {
             "sessions": [
@@ -31939,11 +30101,7 @@ export const MARKETPLACE_CONFIG = {
                 ]
               }
             ],
-            "languageCodes": [
-              "es",
-              "va",
-              "en"
-            ],
+            "languageCodes": [],
             "availability": {
               "es": "Convocatoria continua con sesiones disponibles fuera de temporada alta turística (octubre-abril). Proceso de 3 sesiones — diagnóstico creativo (online 60 min), revisión del plan de integración con feedback escrito (online 90 min) y sesión de cierre presencial o videollamada (30 min).",
               "en": "Rolling call with sessions available outside the tourism peak season (October-April). 3-session process — creative diagnosis (online 60 min), integration plan review with written feedback (online 90 min) and closing session in-person or video call (30 min).",
@@ -31951,14 +30109,14 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "targetUsers": {
-            "es": "Directores creativos y de marketing de empresas turísticas y hoteleras, comisarios y gestores de museos y espacios culturales, directores de agencias creativas y estudios de diseño, responsables de comunicación de festivales y eventos culturales que quieren explorar la IA generativa de forma ética y estratégica sin perder su identidad.",
-            "en": "Creative and marketing directors of tourism and hospitality companies, curators and managers of museums and cultural spaces, directors of creative agencies and design studios, communications managers of festivals and cultural events wishing to explore generative AI ethically and strategically without losing their identity.",
-            "va": "Directors creatius i de màrqueting d'empreses turístiques i hoteleres, comissaris i gestors de museus i espais culturals, directors d'agències creatives i estudis de disseny, responsables de comunicació de festivals i esdeveniments culturals que volen explorar la IA generativa de forma ètica i estratègica sense perdre la seua identitat."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "transferValue": {
-            "es": "Las organizaciones que integran IA generativa de forma estratégica y ética reducen costes de producción de contenidos sin sacrificar autenticidad, se posicionan como referentes de innovación creativa responsable en su sector y pueden compartir sus flujos de trabajo como casos de referencia para otras organizaciones similares. El modelo de mentoría es replicable para otros sectores creativos del ecosistema AI-STEAM.",
-            "en": "Organisations that integrate generative AI strategically and ethically reduce content production costs without sacrificing authenticity, position themselves as benchmarks of responsible creative innovation in their sector and can share their workflows as reference cases for other similar organisations. The mentoring model is replicable for other creative sectors in the AI-STEAM ecosystem.",
-            "va": "Les organitzacions que integren IA generativa de forma estratègica i ètica redueixen costos de producció de continguts sense sacrificar autenticitat, es posicionen com a referents d'innovació creativa responsable en el seu sector i poden compartir els seus fluxos de treball com a casos de referència per a altres organitzacions similars. El model de mentoria és replicable per a altres sectors creatius de l'ecosistema AI-STEAM."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "mentors": {
@@ -31967,306 +30125,59 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "pool-ia-creativa-tur",
               "name": "AI-STEAM Mentoring Pool — IA Creativa y Turismo-Cultura",
-              "organisation": "AI-STEAM Network",
+              "organisation": "",
               "role": {
-                "es": "Mentores especializados en IA generativa aplicada a turismo, patrimonio cultural e industrias creativas — con perfiles de diseño, comunicación digital, gestión cultural y tecnología creativa",
-                "en": "Mentors specialised in generative AI applied to tourism, cultural heritage and creative industries — with profiles in design, digital communication, cultural management and creative technology",
-                "va": "Mentors especialitzats en IA generativa aplicada a turisme, patrimoni cultural i indústries creatives — amb perfils de disseny, comunicació digital, gestió cultural i tecnologia creativa"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "specialties": [
-                "creative-ai",
                 "responsible-ai",
-                "ai-literacy",
                 "industry-4-0"
               ]
             }
           ]
         },
         "preparation": {
-          "requiredBeforeRequest": [
-            {
-              "label": {
-                "es": "Descripción de la organización (tipo, tamaño, sector CCI) y el tipo de contenidos creativos que produce actualmente",
-                "en": "Description of the organisation (type, size, CCI sector) and the type of creative content it currently produces",
-                "va": "Descripció de l'organització (tipus, mida, sector CCI) i el tipus de continguts creatius que produeix actualment"
-              }
-            },
-            {
-              "label": {
-                "es": "Identificación del proceso creativo o productivo concreto donde se quiere explorar la IA generativa y estimación del tiempo dedicado actualmente a ese proceso",
-                "en": "Identification of the specific creative or production process where generative AI is to be explored and estimate of time currently dedicated to that process",
-                "va": "Identificació del procés creatiu o productiu concret on es vol explorar la IA generativa i estimació del temps dedicat actualment a aqueix procés"
-              }
-            },
-            {
-              "label": {
-                "es": "Indicación del presupuesto disponible para herramientas de IA (rango aproximado mensual en EUR)",
-                "en": "Indication of the budget available for AI tools (approximate monthly range in EUR)",
-                "va": "Indicació del pressupost disponible per a eines d'IA (rang aproximat mensual en EUR)"
-              }
-            },
-            {
-              "label": {
-                "es": "Breve reflexión sobre qué elementos de identidad creativa o autenticidad de la organización son innegociables y no deben ser alterados por la IA",
-                "en": "Brief reflection on which elements of the organisation's creative identity or authenticity are non-negotiable and must not be altered by AI",
-                "va": "Breu reflexió sobre quins elements d'identitat creativa o autenticitat de l'organització són innegociables i no han de ser alterats per la IA"
-              }
-            }
-          ],
-          "intakeQuestions": [
-            {
-              "id": "creative-identity",
-              "label": {
-                "es": "¿Cuáles son los elementos de identidad creativa o autenticidad que la organización considera innegociables y que la IA no debe alterar (voz editorial, estética visual, selección de imágenes, narrativa del destino...)?",
-                "en": "What are the elements of creative identity or authenticity that the organisation considers non-negotiable and that AI must not alter (editorial voice, visual aesthetics, image selection, destination narrative...)?",
-                "va": "Quins són els elements d'identitat creativa o autenticitat que l'organització considera innegociables i que la IA no ha d'alterar (veu editorial, estètica visual, selecció d'imatges, narrativa de la destinació...)?"
-              }
-            },
-            {
-              "id": "use-case-priority",
-              "label": {
-                "es": "¿Qué tarea creativa consume más tiempo actualmente en la organización y dónde podría tener la IA generativa el mayor impacto inmediato sin comprometer la calidad?",
-                "en": "What creative task currently takes up most of your organisation's time and where could generative AI have the greatest immediate impact without compromising quality?",
-                "va": "Quina tasca creativa consumeix més temps actualment en l'organització i on podria tenir la IA generativa el major impacte immediat sense comprometre la qualitat?"
-              }
-            },
-            {
-              "id": "audience-context",
-              "label": {
-                "es": "¿El público, visitantes o clientes de la organización son sensibles al uso de IA en los contenidos que consumen? ¿Os habéis planteado cómo comunicarlo de forma transparente?",
-                "en": "Is your organisation's audience, visitors or customers sensitive to the use of AI in the content they consume? Have you considered how to communicate it transparently?",
-                "va": "El públic, visitants o clients de l'organització són sensibles a l'ús d'IA en els continguts que consumeixen? Us heu plantejat com comunicar-ho de forma transparent?"
-              }
-            },
-            {
-              "id": "tools-explored",
-              "label": {
-                "es": "¿Ha explorado ya alguna herramienta de IA generativa (ChatGPT, Midjourney, Adobe Firefly, ElevenLabs...)? Si es así, ¿cuáles y con qué resultado?",
-                "en": "Have you already explored any generative AI tools (ChatGPT, Midjourney, Adobe Firefly, ElevenLabs...)? If so, which ones and with what result?",
-                "va": "Ha explorat ja alguna eina d'IA generativa (ChatGPT, Midjourney, Adobe Firefly, ElevenLabs...)? Si és el cas, quines i amb quin resultat?"
-              }
-            }
-          ]
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
         },
         "expectedOutputs": {
-          "items": [
-            {
-              "id": "ai-integration-map",
-              "label": {
-                "es": "Mapa de integración de IA generativa — casos de uso prioritarios, herramientas recomendadas y hoja de ruta de implementación en 90 días",
-                "en": "Generative AI integration map — priority use cases, recommended tools and 90-day implementation roadmap",
-                "va": "Mapa d'integració d'IA generativa — casos d'ús prioritaris, eines recomanades i full de ruta d'implementació en 90 dies"
-              }
-            },
-            {
-              "id": "copyright-guide",
-              "label": {
-                "es": "Guía práctica de derechos de autor para contenidos generados con IA en el contexto de la organización (qué se puede publicar, cómo atribuirlo, cómo comunicarlo al usuario)",
-                "en": "Practical copyright guide for AI-generated content in the organisation's context (what can be published, how to attribute it, how to communicate it to the user)",
-                "va": "Guia pràctica de drets d'autor per a continguts generats amb IA en el context de l'organització (que es pot publicar, com atribuir-ho, com comunicar-ho a l'usuari)"
-              }
-            },
-            {
-              "id": "workflow-prototype",
-              "label": {
-                "es": "Prototipo documentado de flujo de trabajo creativo humano-IA para un proceso concreto de la organización (p.ej. descripción de experiencias, generación de imágenes para redes sociales, traducción de contenidos para visitantes)",
-                "en": "Documented prototype of a human-AI creative workflow for a specific process of the organisation (e.g. experience description, image generation for social media, content translation for visitors)",
-                "va": "Prototip documentat de flux de treball creatiu humà-IA per a un procés concret de l'organització (p.ex. descripció d'experiències, generació d'imatges per a xarxes socials, traducció de continguts per a visitants)"
-              }
-            },
-            {
-              "id": "ethics-checklist",
-              "label": {
-                "es": "Checklist ética de revisión de contenidos generados con IA antes de publicación (transparencia, sesgos, calidad, adecuación a la marca)",
-                "en": "Ethical checklist for reviewing AI-generated content before publication (transparency, bias, quality, brand suitability)",
-                "va": "Checklist ètica de revisió de continguts generats amb IA abans de publicació (transparència, biaixos, qualitat, adequació a la marca)"
-              }
-            }
-          ]
+          "items": []
         },
         "downloads": {
-          "enabled": true,
-          "basePath": "/assets/downloads/mentorings/mentoring-ia-creativa-turismo-cultura/",
-          "items": [
-            {
-              "id": "preparation-guide",
-              "type": "preparation-guide",
-              "title": {
-                "es": "Guía de preparación para la mentoría en IA generativa — Turismo y Cultura",
-                "en": "Mentoring preparation guide for generative AI — Tourism and Culture",
-                "va": "Guia de preparació per a la mentoria en IA generativa — Turisme i Cultura"
-              },
-              "description": {
-                "es": "Guía para que la organización llegue bien preparada a la primera sesión de mentoría. Incluye el formulario de diagnóstico creativo, preguntas de reflexión previa y ejemplos de casos de uso de IA generativa en el sector turístico-cultural.",
-                "en": "Guide for the organisation to arrive well prepared for the first mentoring session. Includes the creative diagnosis form, prior reflection questions and examples of generative AI use cases in the tourism-cultural sector.",
-                "va": "Guia perquè l'organització arribe ben preparada a la primera sessió de mentoria. Inclou el formulari de diagnòstic creatiu, preguntes de reflexió prèvia i exemples de casos d'ús d'IA generativa en el sector turístic-cultural."
-              },
-              "files": [
-                {
-                  "file": "guia-preparacion-mentoria-ia-generativa-turismo-cultura.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0",
-                  "url": ""
-                }
-              ],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "ai-tools-comparison",
-              "type": "brief-template",
-              "title": {
-                "es": "Comparativa de herramientas de IA generativa para turismo y cultura (actualización trimestral)",
-                "en": "Generative AI tools comparison for tourism and culture (quarterly update)",
-                "va": "Comparativa d'eines d'IA generativa per a turisme i cultura (actualització trimestral)"
-              },
-              "description": {
-                "es": "Tabla comparativa de las principales herramientas de IA generativa de texto, imagen, audio y vídeo con información sobre coste, términos de uso comercial, idiomas disponibles y adecuación para contenidos turísticos y culturales.",
-                "en": "Comparative table of the main generative AI tools for text, image, audio and video with information on cost, commercial use terms, available languages and suitability for tourism and cultural content.",
-                "va": "Taula comparativa de les principals eines d'IA generativa de text, imatge, àudio i vídeo amb informació sobre cost, termes d'ús comercial, idiomes disponibles i adequació per a continguts turístics i culturals."
-              },
-              "files": [
-                {
-                  "file": "comparativa-herramientas-ia-generativa-turismo-cultura.pdf",
-                  "format": "pdf",
-                  "language": "es",
-                  "license": "CC BY 4.0",
-                  "url": ""
-                }
-              ],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "enabled": false,
+          "basePath": "",
+          "items": []
         },
         "resources": {
-          "externalLinks": [
-            {
-              "id": "request-form",
-              "type": "external-form",
-              "label": {
-                "es": "Formulario de solicitud de mentoría — IA generativa y creativa para turismo y cultura",
-                "en": "Mentoring request form — generative and creative AI for tourism and culture",
-                "va": "Formulari de sol·licitud de mentoria — IA generativa i creativa per a turisme i cultura"
-              },
-              "url": "https://aisteam.gva.es/mentoria/ia-creativa-turismo-cultura/solicitud",
-              "access": {
-                "es": "Formulario online — respuesta en un plazo máximo de 5 días laborables",
-                "en": "Online form — response within a maximum of 5 working days",
-                "va": "Formulari online — resposta en un termini màxim de 5 dies laborables"
-              }
-            },
-            {
-              "id": "ai-act-cultural-sector",
-              "type": "guidance",
-              "label": {
-                "es": "IA y sector cultural — Recursos de la Comisión Europea (Creative Europe)",
-                "en": "AI and the cultural sector — European Commission resources (Creative Europe)",
-                "va": "IA i sector cultural — Recursos de la Comissió Europea (Creative Europe)"
-              },
-              "url": "https://culture.ec.europa.eu/digital-and-culture/digital-cultural-heritage/artificial-intelligence-in-the-cultural-sector",
-              "access": {
-                "es": "Acceso libre en el portal de Creative Europe de la Comisión Europea",
-                "en": "Free access on the European Commission's Creative Europe portal",
-                "va": "Accés lliure en el portal de Creative Europe de la Comissió Europea"
-              }
-            },
-            {
-              "id": "copyright-ai-aepd",
-              "type": "guidance",
-              "label": {
-                "es": "Derechos de autor en contenidos generados por IA — recursos jurídicos (CEDRO y AEPD)",
-                "en": "Copyright in AI-generated content — legal resources (CEDRO and AEPD)",
-                "va": "Drets d'autor en continguts generats per IA — recursos jurídics (CEDRO i AEPD)"
-              },
-              "url": "https://www.cedro.org/info/la-ia-y-los-derechos-de-autor",
-              "access": {
-                "es": "Acceso libre en el portal de CEDRO (Centro Español de Derechos Reprográficos)",
-                "en": "Free access on the CEDRO portal (Spanish Reprographic Rights Centre)",
-                "va": "Accés lliure en el portal de CEDRO (Centre Espanyol de Drets Reprogràfics)"
-              }
-            },
-            {
-              "id": "ivace-turisme-ia",
-              "type": "website",
-              "label": {
-                "es": "Agència Valenciana del Turisme — Digitalización e Innovación en el sector turístico de la CV",
-                "en": "Agència Valenciana del Turisme — Digitalisation and Innovation in the Valencian tourism sector",
-                "va": "Agència Valenciana del Turisme — Digitalització i Innovació en el sector turístic de la CV"
-              },
-              "url": "https://www.turisme.gva.es/es/web/turisme/digitalitzacio-i-innovacio",
-              "access": {
-                "es": "Acceso libre en el portal de la Agència Valenciana del Turisme",
-                "en": "Free access on the Agència Valenciana del Turisme portal",
-                "va": "Accés lliure en el portal de l'Agència Valenciana del Turisme"
-              }
-            }
-          ]
+          "externalLinks": []
         },
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar mentoría",
-              "en": "Request mentoring",
-              "va": "Sol·licitar mentoria"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": "",
             "system": ""
           },
-          "fallbackAction": {
-            "label": {
-              "es": "Ver mentoría",
-              "en": "View mentoring",
-              "va": "Veure mentoria"
-            },
-            "url": ""
-          },
+          "fallbackAction": null,
           "secondaryAction": null
         },
         "relations": {
-          "relatedChallenges": [
-            "reto-analisis-sentimiento-turismo-tur"
-          ],
+          "relatedChallenges": [],
           "relatedValidations": [],
           "relatedPilots": [],
-          "relatedCases": [
-            "narrativas-digitales-ia-cci",
-            "realidad-aumentada-museos-cci"
-          ],
+          "relatedCases": [],
           "relatedResources": [],
           "possibleOutputs": []
         },
-        "hasDownloads": true,
-        "downloadCount": 2,
-        "cardDownloads": [
-          {
-            "id": "preparation-guide",
-            "type": "preparation-guide",
-            "title": {
-              "es": "Guía de preparación para la mentoría en IA generativa — Turismo y Cultura",
-              "en": "Mentoring preparation guide for generative AI — Tourism and Culture",
-              "va": "Guia de preparació per a la mentoria en IA generativa — Turisme i Cultura"
-            },
-            "description": {
-              "es": "Guía para que la organización llegue bien preparada a la primera sesión de mentoría. Incluye el formulario de diagnóstico creativo, preguntas de reflexión previa y ejemplos de casos de uso de IA generativa en el sector turístico-cultural.",
-              "en": "Guide for the organisation to arrive well prepared for the first mentoring session. Includes the creative diagnosis form, prior reflection questions and examples of generative AI use cases in the tourism-cultural sector.",
-              "va": "Guia perquè l'organització arribe ben preparada a la primera sessió de mentoria. Inclou el formulari de diagnòstic creatiu, preguntes de reflexió prèvia i exemples de casos d'ús d'IA generativa en el sector turístic-cultural."
-            },
-            "files": [
-              {
-                "file": "guia-preparacion-mentoria-ia-generativa-turismo-cultura.pdf",
-                "format": "pdf",
-                "language": "es",
-                "license": "CC BY 4.0"
-              }
-            ],
-            "showOnCard": true
-          }
-        ],
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
         "presentation": {
           "card": {
             "variant": "mentoring",
@@ -32274,7 +30185,7 @@ export const MARKETPLACE_CONFIG = {
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "mainBlockLabel": {
               "es": "Qué ofrece",
@@ -32296,7 +30207,7 @@ export const MARKETPLACE_CONFIG = {
               "downloads": true,
               "resources": true,
               "access": true,
-              "relations": true
+              "relations": false
             }
           }
         },
@@ -32352,7 +30263,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "nts",
           "sectors": [],
-          "stakeholderCategory": "institutional",
+          "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -32381,8 +30292,8 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "mentoringTeam": {
             "name": {
@@ -32390,39 +30301,20 @@ export const MARKETPLACE_CONFIG = {
               "en": "AI-STEAM Network Mentoring Pool — Public Innovation and AI Specialists",
               "va": "AI-STEAM Network Mentoring Pool — Especialistes en Innovació Pública i IA"
             },
-            "type": "mentoring-pool",
+            "type": "",
             "role": {
               "es": "Mentores con experiencia en transformación digital de administraciones públicas, datos abiertos y colaboración público-privada en innovación",
               "en": "Mentors experienced in digital transformation of public administrations, open data and public-private innovation collaboration",
               "va": "Mentors amb experiència en transformació digital d'administracions públiques, dades obertes i col·laboració públic-privada en innovació"
             },
-            "org": "AI-STEAM Network"
+            "org": ""
           },
-          "coordinator": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE",
-            "role": {
-              "es": "Coordinación de relaciones institucionales y participación de administraciones públicas en el ecosistema AI-STEAM",
-              "en": "Coordination of institutional relations and public administration participation in the AI-STEAM ecosystem",
-              "va": "Coordinació de relacions institucionals i participació d'administracions públiques en l'ecosistema AI-STEAM"
-            }
-          }
+          "coordinator": null
         },
         "classification": {
-          "aiSteamFocus": [
-            "responsible-ai",
-            "ai-ethics",
-            "challenge-framing"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "responsible-ai",
-            "equity-inclusion",
-            "learning-ecosystems"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -32435,16 +30327,12 @@ export const MARKETPLACE_CONFIG = {
           "pilotStatus": "",
           "sector": "nts",
           "sectorLabel": {
-            "es": "Administración pública y servicios ciudadanos",
-            "en": "Public administration and citizen services",
-            "va": "Administració pública i serveis ciutadans"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "stakeholderCategory": "institutional",
-          "audience": [
-            "public-bodies",
-            "companies",
-            "vet-centres"
-          ]
+          "stakeholderCategory": "",
+          "audience": []
         },
         "transfer": {
           "type": "",
@@ -32459,7 +30347,7 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
@@ -32470,19 +30358,19 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "No deben enviarse datos de ciudadanos, expedientes administrativos ni información reservada a través de este sitio.",
-            "en": "Citizen data, administrative files or classified information must not be submitted through this site.",
-            "va": "No s'han d'enviar dades de ciutadans, expedients administratius ni informació reservada a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "mentoringRequestAccess": "not-available",
-          "confidentialityLevel": "standard",
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
           "publicationNote": {
-            "es": "La hoja de ruta y carta de participación institucional podrán publicarse como modelo de referencia para otras administraciones si el organismo lo autoriza.",
-            "en": "The roadmap and institutional participation letter may be published as a reference model for other administrations if the body authorises it.",
-            "va": "El full de ruta i carta de participació institucional podran publicar-se com a model de referència per a altres administracions si l'organisme ho autoritza."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -32510,57 +30398,13 @@ export const MARKETPLACE_CONFIG = {
             "va": "Orientar organismes públics sobre com articular la seua participació en l'ecosistema AI-STEAM segons el seu perfil i capacitats — formulant un repte obert amb dades públiques, finançant un pilot educatiu, obrint les seues instal·lacions com a entorn de validació o convertint-se en cas de referència d'innovació pública."
           },
           "problemAddressed": {
-            "es": "Las administraciones públicas tienen datos de enorme valor (movilidad, salud pública, urbanismo, servicios sociales) y problemas complejos que podrían abordarse con IA, pero frecuentemente no saben cómo abrir esos datos de forma segura, cómo formular un reto que respete la legalidad o cómo involucrarse en proyectos educativos sin comprometer sus procedimientos. La mentoría adapta el lenguaje del ecosistema al contexto administrativo.",
-            "en": "Public administrations have enormously valuable data (mobility, public health, urban planning, social services) and complex problems that could be addressed with AI, but often do not know how to open that data securely, how to frame a challenge that complies with the law or how to engage in educational projects without compromising their procedures. Mentoring adapts the ecosystem language to the administrative context.",
-            "va": "Les administracions públiques tenen dades d'enorme valor (mobilitat, salut pública, urbanisme, serveis socials) i problemes complexos que podrien abordar-se amb IA, però freqüentment no saben com obrir eixes dades de forma segura, com formular un repte que respecte la legalitat o com involucrar-se en projectes educatius sense comprometre els seus procediments. La mentoria adapta el llenguatge de l'ecosistema al context administratiu."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringScope": {
-            "included": [
-              {
-                "label": {
-                  "es": "Diagnóstico del rol más adecuado para la administración en el ecosistema AI-STEAM",
-                  "en": "Diagnosis of the most appropriate role for the administration in the AI-STEAM ecosystem",
-                  "va": "Diagnòstic del rol més adequat per a l'administració en l'ecosistema AI-STEAM"
-                }
-              },
-              {
-                "label": {
-                  "es": "Orientación sobre apertura segura de datos públicos y licencias de datos abiertos",
-                  "en": "Guidance on secure public data opening and open data licences",
-                  "va": "Orientació sobre obertura segura de dades públiques i llicències de dades obertes"
-                }
-              },
-              {
-                "label": {
-                  "es": "Revisión de los procedimientos administrativos aplicables a la participación en pilotos y retos",
-                  "en": "Review of applicable administrative procedures for participation in pilots and challenges",
-                  "va": "Revisió dels procediments administratius aplicables a la participació en pilots i reptes"
-                }
-              },
-              {
-                "label": {
-                  "es": "Diseño del compromiso institucional (carta de participación, aportación en especie, financiación)",
-                  "en": "Institutional commitment design (participation letter, in-kind contribution, funding)",
-                  "va": "Disseny del compromís institucional (carta de participació, aportació en espècie, finançament)"
-                }
-              }
-            ],
-            "excluded": [
-              {
-                "label": {
-                  "es": "Asesoramiento jurídico-administrativo vinculante ni gestión de contratos públicos",
-                  "en": "Binding legal-administrative advice or public contract management",
-                  "va": "Assessorament juridicoadministratiu vinculant ni gestió de contractes públics"
-                }
-              },
-              {
-                "label": {
-                  "es": "Desarrollo técnico de sistemas de IA para la administración",
-                  "en": "Technical development of AI systems for the administration",
-                  "va": "Desenvolupament tècnic de sistemes d'IA per a l'administració"
-                }
-              }
-            ]
+            "included": [],
+            "excluded": []
           },
           "format": {
             "sessions": [
@@ -32575,10 +30419,7 @@ export const MARKETPLACE_CONFIG = {
                 ]
               }
             ],
-            "languageCodes": [
-              "es",
-              "va"
-            ],
+            "languageCodes": [],
             "availability": {
               "es": "Convocatoria abierta coordinada con los ciclos presupuestarios y de planificación de las administraciones. Sesiones disponibles en horario de funcionario (9:00-15:00).",
               "en": "Open call coordinated with administrative budget and planning cycles. Sessions available during civil service hours (9:00-15:00).",
@@ -32586,14 +30427,14 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "targetUsers": {
-            "es": "Directores y técnicos de innovación de administraciones locales, provinciales y autonómicas, responsables de transformación digital de organismos públicos y gestores de proyectos de datos abiertos de la Comunitat Valenciana.",
-            "en": "Innovation directors and technicians of local, provincial and regional administrations, digital transformation managers of public bodies and open data project managers in the Valencian Community.",
-            "va": "Directors i tècnics d'innovació d'administracions locals, provincials i autonòmiques, responsables de transformació digital d'organismes públics i gestors de projectes de dades obertes de la Comunitat Valenciana."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "transferValue": {
-            "es": "Las administraciones que participan activamente en el ecosistema AI-STEAM generan casos de innovación pública replicables, refuerzan la capacidad técnica de sus equipos a través de la relación con centros de FP y universidades, y contribuyen a demostrar que la IA puede mejorar los servicios públicos de forma transparente y ética.",
-            "en": "Administrations that actively participate in the AI-STEAM ecosystem generate replicable public innovation cases, strengthen the technical capacity of their teams through relationships with VET centres and universities, and help demonstrate that AI can improve public services in a transparent and ethical way.",
-            "va": "Les administracions que participen activament en l'ecosistema AI-STEAM generen casos d'innovació pública replicables, reforcen la capacitat tècnica dels seus equips a través de la relació amb centres de FP i universitats, i contribueixen a demostrar que la IA pot millorar els serveis públics de forma transparent i ètica."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "mentors": {
@@ -32602,11 +30443,11 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "pool-innovacion-publica",
               "name": "AI-STEAM Mentoring Pool — Innovación Pública e IA",
-              "organisation": "AI-STEAM Network",
+              "organisation": "",
               "role": {
-                "es": "Mentores con experiencia en transformación digital pública, datos abiertos y colaboración público-privada en proyectos de IA",
-                "en": "Mentors experienced in public digital transformation, open data and public-private AI project collaboration",
-                "va": "Mentors amb experiència en transformació digital pública, dades obertes i col·laboració públic-privada en projectes d'IA"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "specialties": [
                 "public-sector-ai",
@@ -32618,144 +30459,41 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "preparation": {
-          "requiredBeforeRequest": [
-            {
-              "label": {
-                "es": "Descripción del organismo público (nivel administrativo, área de competencia, tamaño del equipo técnico)",
-                "en": "Description of the public body (administrative level, competence area, technical team size)",
-                "va": "Descripció de l'organisme públic (nivell administratiu, àrea de competència, grandària de l'equip tècnic)"
-              }
-            },
-            {
-              "label": {
-                "es": "Indicación del tipo de datos disponibles y si ya están en portales de datos abiertos o en sistemas internos",
-                "en": "Indication of the type of available data and whether it is already on open data portals or in internal systems",
-                "va": "Indicació del tipus de dades disponibles i si ja estan en portals de dades obertes o en sistemes interns"
-              }
-            },
-            {
-              "label": {
-                "es": "Descripción del problema o servicio público que se querría abordar con IA",
-                "en": "Description of the problem or public service to be addressed with AI",
-                "va": "Descripció del problema o servei públic que es voldria abordar amb IA"
-              }
-            }
-          ],
-          "intakeQuestions": [
-            {
-              "id": "role-preference",
-              "label": {
-                "es": "¿Tenéis preferencia por formular un reto abierto, financiar un piloto existente o abrir vuestras instalaciones o datos como entorno de validación?",
-                "en": "Do you have a preference for framing an open challenge, funding an existing pilot or opening your facilities or data as a validation environment?",
-                "va": "Teniu preferència per formular un repte obert, finançar un pilot existent o obrir les vostres instal·lacions o dades com a entorn de validació?"
-              }
-            },
-            {
-              "id": "data-status",
-              "label": {
-                "es": "¿Qué restricciones legales o de confidencialidad afectan a los datos que podríais aportar al ecosistema?",
-                "en": "What legal or confidentiality restrictions affect the data you could contribute to the ecosystem?",
-                "va": "Quines restriccions legals o de confidencialitat afecten les dades que podríeu aportar a l'ecosistema?"
-              }
-            },
-            {
-              "id": "internal-capacity",
-              "label": {
-                "es": "¿Contáis con técnicos internos con perfil de ciencia de datos o IA, o el proyecto dependería totalmente de capacidades externas?",
-                "en": "Do you have internal technicians with a data science or AI profile, or would the project depend entirely on external capabilities?",
-                "va": "Compteu amb tècnics interns amb perfil de ciència de dades o IA, o el projecte dependria totalment de capacitats externes?"
-              }
-            }
-          ]
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
         },
         "expectedOutputs": {
-          "items": [
-            {
-              "id": "participation-roadmap",
-              "label": {
-                "es": "Hoja de ruta de participación institucional en el ecosistema AI-STEAM con roles y compromisos definidos",
-                "en": "Institutional participation roadmap in the AI-STEAM ecosystem with defined roles and commitments",
-                "va": "Full de ruta de participació institucional en l'ecosistema AI-STEAM amb rols i compromisos definits"
-              }
-            },
-            {
-              "id": "data-opening-plan",
-              "label": {
-                "es": "Plan básico de apertura de datos con licencia recomendada y pasos para publicación en portal de datos abiertos",
-                "en": "Basic data opening plan with recommended licence and steps for publication on open data portal",
-                "va": "Pla bàsic d'obertura de dades amb llicència recomanada i passos per a publicació en portal de dades obertes"
-              }
-            },
-            {
-              "id": "institutional-commitment-letter",
-              "label": {
-                "es": "Borrador de carta de participación institucional adaptado al rol seleccionado",
-                "en": "Draft institutional participation letter adapted to the selected role",
-                "va": "Esborrany de carta de participació institucional adaptat al rol seleccionat"
-              }
-            }
-          ]
+          "items": []
         },
         "downloads": {
           "enabled": false,
-          "basePath": "/assets/downloads/mentorings/mentoring-participacion-administracion-publica/",
+          "basePath": "",
           "items": []
         },
         "resources": {
-          "externalLinks": [
-            {
-              "id": "request-form",
-              "type": "external-form",
-              "label": {
-                "es": "Formulario de solicitud de mentoría",
-                "en": "Mentoring request form",
-                "va": "Formulari de sol·licitud de mentoria"
-              },
-              "url": "",
-              "access": {
-                "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-                "en": "The request is managed outside this website when an external system is available.",
-                "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-              }
-            }
-          ]
+          "externalLinks": []
         },
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar mentoría",
-              "en": "Request mentoring",
-              "va": "Sol·licitar mentoria"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": "",
             "system": ""
           },
-          "fallbackAction": {
-            "label": {
-              "es": "Ver mentoría",
-              "en": "View mentoring",
-              "va": "Veure mentoria"
-            },
-            "url": ""
-          },
+          "fallbackAction": null,
           "secondaryAction": null
         },
         "relations": {
-          "relatedChallenges": [
-            "reto-chatbot-atencion-ciudadana-adm"
-          ],
-          "relatedValidations": [
-            "validation-etica-ia-seleccion-personal-adm"
-          ],
+          "relatedChallenges": [],
+          "relatedValidations": [],
           "relatedPilots": [],
           "relatedCases": [],
           "relatedResources": [],
-          "possibleOutputs": [
-            "challenge",
-            "pilot",
-            "case"
-          ]
+          "possibleOutputs": []
         },
         "hasDownloads": false,
         "downloadCount": 0,
@@ -32786,10 +30524,10 @@ export const MARKETPLACE_CONFIG = {
               "preparation": true,
               "expectedOutputs": true,
               "transferValue": true,
-              "downloads": false,
-              "resources": false,
+              "downloads": true,
+              "resources": true,
               "access": true,
-              "relations": true
+              "relations": false
             }
           }
         },
@@ -32845,7 +30583,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "agr",
           "sectors": [],
-          "stakeholderCategory": "enterprise",
+          "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -32874,8 +30612,8 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "mentoringTeam": {
             "name": {
@@ -32883,43 +30621,23 @@ export const MARKETPLACE_CONFIG = {
               "en": "AI-STEAM Network Mentoring Pool — Agri-food AI Specialists",
               "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Agroalimentària"
             },
-            "type": "mentoring-pool",
+            "type": "",
             "role": {
               "es": "Mentores con experiencia en proyectos de IA en agricultura de precisión, visión computacional agrícola y formación agroalimentaria",
               "en": "Mentors experienced in AI projects in precision agriculture, agricultural computer vision and agri-food training",
               "va": "Mentors amb experiència en projectes d'IA en agricultura de precisió, visió computacional agrícola i formació agroalimentària"
             },
-            "org": "AI-STEAM Network"
+            "org": ""
           },
-          "coordinator": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE",
-            "role": {
-              "es": "Coordinación de transferencia y replicación de casos en el sector agroalimentario",
-              "en": "Transfer and case replication coordination in the agri-food sector",
-              "va": "Coordinació de transferència i replicació de casos en el sector agroalimentari"
-            }
-          }
+          "coordinator": null
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "maker-steam",
-            "challenge-framing"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green",
-            "social"
-          ],
-          "policyCluster": [
-            "learning-ecosystems",
-            "integrated-pedagogy",
-            "equity-inclusion"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
-          "lbdStage": "output",
+          "lbdStage": "input",
           "trackBValue": {
             "es": "",
             "en": "",
@@ -32929,16 +30647,12 @@ export const MARKETPLACE_CONFIG = {
           "pilotStatus": "",
           "sector": "agr",
           "sectorLabel": {
-            "es": "Agricultura, agroalimentación y medioambiente",
-            "en": "Agriculture, agri-food and environment",
-            "va": "Agricultura, agroalimentació i medi ambient"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "stakeholderCategory": "enterprise",
-          "audience": [
-            "companies",
-            "vet-centres",
-            "industry-partners"
-          ]
+          "stakeholderCategory": "",
+          "audience": []
         },
         "transfer": {
           "type": "",
@@ -32953,7 +30667,7 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
@@ -32964,19 +30678,19 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "No deben enviarse datos de producción confidenciales ni información comercialmente sensible a través de este sitio.",
-            "en": "Confidential production data or commercially sensitive information must not be submitted through this site.",
-            "va": "No s'han d'enviar dades de producció confidencials ni informació comercialment sensible a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "mentoringRequestAccess": "not-available",
-          "confidentialityLevel": "standard",
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
           "publicationNote": {
-            "es": "El nuevo caso de replicación podrá publicarse en el Marketplace si genera evidencia documentada y la cooperativa o empresa lo autoriza.",
-            "en": "The new replication case may be published on the Marketplace if it generates documented evidence and the cooperative or company authorises it.",
-            "va": "El nou cas de replicació podrà publicar-se al Marketplace si genera evidència documentada i la cooperativa o empresa ho autoritza."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -33004,57 +30718,13 @@ export const MARKETPLACE_CONFIG = {
             "va": "Facilitar l'adaptació i replicació contextualitzada d'un cas AI-STEAM verificat en el sector agroalimentari, identificant les condicions de transferibilitat, els ajustos necessaris en les dades i l'entorn, i assegurant que la nova implementació manté la qualitat d'evidència del cas original."
           },
           "problemAddressed": {
-            "es": "Los centros y cooperativas que encuentran un caso AI-STEAM relevante para su contexto frecuentemente no saben cómo adaptar los datos, qué equipamiento necesitan o cómo involucrar a sus alumnos o trabajadores. Replicar sin mentoría genera proyectos que copian la forma pero no reproducen los resultados del caso original.",
-            "en": "Centres and cooperatives that find a relevant AI-STEAM case for their context often do not know how to adapt the data, what equipment they need or how to involve their students or workers. Replicating without mentoring produces projects that copy the form but do not reproduce the results of the original case.",
-            "va": "Els centres i cooperatives que troben un cas AI-STEAM rellevant per al seu context freqüentment no saben com adaptar les dades, quin equipament necessiten o com involucrar els seus alumnes o treballadors. Replicar sense mentoria genera projectes que copien la forma però no reprodueixen els resultats del cas original."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringScope": {
-            "included": [
-              {
-                "label": {
-                  "es": "Análisis comparativo entre el contexto original del caso y el contexto de replicación",
-                  "en": "Comparative analysis between the original case context and the replication context",
-                  "va": "Anàlisi comparativa entre el context original del cas i el context de replicació"
-                }
-              },
-              {
-                "label": {
-                  "es": "Identificación de las condiciones mínimas de datos, equipamiento y perfil de alumnos para la replicación",
-                  "en": "Identification of minimum data, equipment and student profile conditions for replication",
-                  "va": "Identificació de les condicions mínimes de dades, equipament i perfil d'alumnes per a la replicació"
-                }
-              },
-              {
-                "label": {
-                  "es": "Diseño del plan de adaptación y cronograma de replicación",
-                  "en": "Adaptation plan and replication timeline design",
-                  "va": "Disseny del pla d'adaptació i cronograma de replicació"
-                }
-              },
-              {
-                "label": {
-                  "es": "Orientación sobre cómo documentar la replicación como nuevo caso AI-STEAM",
-                  "en": "Guidance on how to document the replication as a new AI-STEAM case",
-                  "va": "Orientació sobre com documentar la replicació com a nou cas AI-STEAM"
-                }
-              }
-            ],
-            "excluded": [
-              {
-                "label": {
-                  "es": "Reproducción del análisis técnico del caso original",
-                  "en": "Reproduction of the original case technical analysis",
-                  "va": "Reproducció de l'anàlisi tècnica del cas original"
-                }
-              },
-              {
-                "label": {
-                  "es": "Provisión de datos o acceso al entorno del caso original",
-                  "en": "Provision of data or access to the original case environment",
-                  "va": "Provisió de dades o accés a l'entorn del cas original"
-                }
-              }
-            ]
+            "included": [],
+            "excluded": []
           },
           "format": {
             "sessions": [
@@ -33069,10 +30739,7 @@ export const MARKETPLACE_CONFIG = {
                 ]
               }
             ],
-            "languageCodes": [
-              "es",
-              "va"
-            ],
+            "languageCodes": [],
             "availability": {
               "es": "Convocatoria abierta vinculada a casos publicados en el Marketplace AI-STEAM. Se requiere identificar el caso de referencia antes de solicitar la mentoría.",
               "en": "Open call linked to cases published on the AI-STEAM Marketplace. The reference case must be identified before requesting mentoring.",
@@ -33080,14 +30747,14 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "targetUsers": {
-            "es": "Técnicos de innovación de cooperativas agrícolas, jefes de estudios de centros de FP agroalimentaria y responsables de formación de empresas del sector que quieren transferir una solución ya probada a su propio entorno productivo o formativo.",
-            "en": "Innovation technicians at agricultural cooperatives, heads of studies at agri-food VET centres and training managers of sector companies wishing to transfer an already-tested solution to their own production or training environment.",
-            "va": "Tècnics d'innovació de cooperatives agrícoles, caps d'estudis de centres de FP agroalimentària i responsables de formació d'empreses del sector que volen transferir una solució ja provada al seu propi entorn productiu o formatiu."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "transferValue": {
-            "es": "La replicación bien documentada genera un nuevo caso AI-STEAM verificado que amplía el alcance territorial del ecosistema, demuestra la escalabilidad de la solución y refuerza la confianza de nuevos actores que no habrían apostado por la innovación sin un antecedente documentado en su sector.",
-            "en": "Well-documented replication generates a new verified AI-STEAM case that expands the ecosystem's territorial reach, demonstrates solution scalability and builds confidence among new actors who would not have committed to innovation without a documented precedent in their sector.",
-            "va": "La replicació ben documentada genera un nou cas AI-STEAM verificat que amplia l'abast territorial de l'ecosistema, demostra l'escalabilitat de la solució i reforça la confiança de nous actors que no haurien apostat per la innovació sense un antecedent documentat en el seu sector."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "mentors": {
@@ -33096,11 +30763,11 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "pool-agr-replicacion",
               "name": "AI-STEAM Mentoring Pool — Transferencia Agroalimentaria",
-              "organisation": "AI-STEAM Network",
+              "organisation": "",
               "role": {
-                "es": "Mentores con experiencia en replicación de proyectos de IA agrícola y diseño de formación agroalimentaria",
-                "en": "Mentors experienced in agricultural AI project replication and agri-food training design",
-                "va": "Mentors amb experiència en replicació de projectes d'IA agrícola i disseny de formació agroalimentària"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "specialties": [
                 "precision-agriculture",
@@ -33112,141 +30779,41 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "preparation": {
-          "requiredBeforeRequest": [
-            {
-              "label": {
-                "es": "Identificación del caso AI-STEAM de referencia que se quiere replicar (ID o título)",
-                "en": "Identification of the reference AI-STEAM case to be replicated (ID or title)",
-                "va": "Identificació del cas AI-STEAM de referència que es vol replicar (ID o títol)"
-              }
-            },
-            {
-              "label": {
-                "es": "Descripción del contexto propio (tipo de cultivo o producción, equipamiento disponible, perfil del equipo)",
-                "en": "Description of own context (crop or production type, available equipment, team profile)",
-                "va": "Descripció del context propi (tipus de cultiu o producció, equipament disponible, perfil de l'equip)"
-              }
-            },
-            {
-              "label": {
-                "es": "Indicación del objetivo principal de la replicación (formación de alumnos, mejora de proceso productivo o ambos)",
-                "en": "Indication of the main replication objective (student training, production process improvement or both)",
-                "va": "Indicació de l'objectiu principal de la replicació (formació d'alumnes, millora de procés productiu o tots dos)"
-              }
-            }
-          ],
-          "intakeQuestions": [
-            {
-              "id": "context-gap",
-              "label": {
-                "es": "¿En qué aspectos clave difiere vuestro contexto del caso de referencia? (especie, clima, equipamiento, volumen de datos)",
-                "en": "In what key respects does your context differ from the reference case? (species, climate, equipment, data volume)",
-                "va": "En quins aspectes clau difereix el vostre context del cas de referència? (espècie, clima, equipament, volum de dades)"
-              }
-            },
-            {
-              "id": "data-availability",
-              "label": {
-                "es": "¿Tenéis datos propios disponibles o necesitaríais recolectarlos como parte del proceso de replicación?",
-                "en": "Do you have your own data available or would you need to collect it as part of the replication process?",
-                "va": "Teniu dades pròpies disponibles o necessitaríeu recollir-les com a part del procés de replicació?"
-              }
-            },
-            {
-              "id": "timeline",
-              "label": {
-                "es": "¿Cuál es el período de campaña agrícola o ciclo formativo en el que queréis ejecutar la replicación?",
-                "en": "What is the agricultural campaign period or training cycle in which you wish to carry out the replication?",
-                "va": "Quin és el període de campanya agrícola o cicle formatiu en el qual voleu executar la replicació?"
-              }
-            }
-          ]
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
         },
         "expectedOutputs": {
-          "items": [
-            {
-              "id": "replication-plan",
-              "label": {
-                "es": "Plan de replicación con análisis de contexto, adaptaciones necesarias y cronograma",
-                "en": "Replication plan with context analysis, required adaptations and timeline",
-                "va": "Pla de replicació amb anàlisi de context, adaptacions necessàries i cronograma"
-              }
-            },
-            {
-              "id": "minimum-conditions",
-              "label": {
-                "es": "Ficha de condiciones mínimas para la replicación (datos, equipamiento, perfil del equipo)",
-                "en": "Minimum conditions sheet for replication (data, equipment, team profile)",
-                "va": "Fitxa de condicions mínimes per a la replicació (dades, equipament, perfil de l'equip)"
-              }
-            },
-            {
-              "id": "documentation-template",
-              "label": {
-                "es": "Plantilla de documentación del nuevo caso para publicación en el Marketplace AI-STEAM",
-                "en": "New case documentation template for publication on the AI-STEAM Marketplace",
-                "va": "Plantilla de documentació del nou cas per a publicació al Marketplace AI-STEAM"
-              }
-            }
-          ]
+          "items": []
         },
         "downloads": {
           "enabled": false,
-          "basePath": "/assets/downloads/mentorings/mentoring-replicacion-casos-agr/",
+          "basePath": "",
           "items": []
         },
         "resources": {
-          "externalLinks": [
-            {
-              "id": "request-form",
-              "type": "external-form",
-              "label": {
-                "es": "Formulario de solicitud de mentoría",
-                "en": "Mentoring request form",
-                "va": "Formulari de sol·licitud de mentoria"
-              },
-              "url": "",
-              "access": {
-                "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-                "en": "The request is managed outside this website when an external system is available.",
-                "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-              }
-            }
-          ]
+          "externalLinks": []
         },
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar mentoría",
-              "en": "Request mentoring",
-              "va": "Sol·licitar mentoria"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": "",
             "system": ""
           },
-          "fallbackAction": {
-            "label": {
-              "es": "Ver mentoría",
-              "en": "View mentoring",
-              "va": "Veure mentoria"
-            },
-            "url": ""
-          },
+          "fallbackAction": null,
           "secondaryAction": null
         },
         "relations": {
-          "relatedChallenges": [
-            "reto-ia-deteccion-plagas-agr"
-          ],
+          "relatedChallenges": [],
           "relatedValidations": [],
           "relatedPilots": [],
           "relatedCases": [],
           "relatedResources": [],
-          "possibleOutputs": [
-            "case",
-            "pilot"
-          ]
+          "possibleOutputs": []
         },
         "hasDownloads": false,
         "downloadCount": 0,
@@ -33277,10 +30844,10 @@ export const MARKETPLACE_CONFIG = {
               "preparation": true,
               "expectedOutputs": true,
               "transferValue": true,
-              "downloads": false,
-              "resources": false,
+              "downloads": true,
+              "resources": true,
               "access": true,
-              "relations": true
+              "relations": false
             }
           }
         },
@@ -33336,7 +30903,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "nts",
           "sectors": [],
-          "stakeholderCategory": "institutional",
+          "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -33365,8 +30932,8 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "mentoringTeam": {
             "name": {
@@ -33374,40 +30941,20 @@ export const MARKETPLACE_CONFIG = {
               "en": "AI-STEAM Network Mentoring Pool — Research-to-VET Transfer Specialists",
               "va": "AI-STEAM Network Mentoring Pool — Especialistes en Transferència Recerca-FP"
             },
-            "type": "mentoring-pool",
+            "type": "",
             "role": {
               "es": "Mentores con perfil dual investigador-docente, con experiencia en traducción de resultados de investigación a contenidos formativos de FP",
               "en": "Mentors with a dual researcher-teacher profile, experienced in translating research results into VET training content",
               "va": "Mentors amb perfil dual investigador-docent, amb experiència en traducció de resultats de recerca a continguts formatius de FP"
             },
-            "org": "AI-STEAM Network"
+            "org": ""
           },
-          "coordinator": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE",
-            "role": {
-              "es": "Coordinación de programas de transferencia investigación-FP del ecosistema AI-STEAM",
-              "en": "Coordination of research-VET transfer programmes in the AI-STEAM ecosystem",
-              "va": "Coordinació de programes de transferència recerca-FP de l'ecosistema AI-STEAM"
-            }
-          }
+          "coordinator": null
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "responsible-ai",
-            "ai-literacy",
-            "challenge-framing"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "learning-ecosystems",
-            "teacher-capacity",
-            "integrated-pedagogy"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -33420,16 +30967,12 @@ export const MARKETPLACE_CONFIG = {
           "pilotStatus": "",
           "sector": "nts",
           "sectorLabel": {
-            "es": "Educación, formación profesional e innovación pedagógica",
-            "en": "Education, vocational training and pedagogical innovation",
-            "va": "Educació, formació professional i innovació pedagògica"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "stakeholderCategory": "institutional",
-          "audience": [
-            "researchers",
-            "teachers",
-            "vet-centres"
-          ]
+          "stakeholderCategory": "",
+          "audience": []
         },
         "transfer": {
           "type": "",
@@ -33444,7 +30987,7 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
@@ -33455,19 +30998,19 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "No deben enviarse resultados de investigación no publicados ni datos confidenciales de proyectos activos a través de este sitio.",
-            "en": "Unpublished research results or confidential data from active projects must not be submitted through this site.",
-            "va": "No s'han d'enviar resultats de recerca no publicats ni dades confidencials de projectes actius a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "mentoringRequestAccess": "not-available",
-          "confidentialityLevel": "standard",
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
           "publicationNote": {
-            "es": "El caso pedagógico resultante podrá publicarse en el Marketplace y citarse como impacto de transferencia si el grupo de investigación lo autoriza.",
-            "en": "The resulting pedagogical case may be published on the Marketplace and cited as transfer impact if the research group authorises it.",
-            "va": "El cas pedagògic resultant podrà publicar-se al Marketplace i citar-se com a impacte de transferència si el grup de recerca ho autoritza."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -33495,57 +31038,13 @@ export const MARKETPLACE_CONFIG = {
             "va": "Acompanyar grups de recerca en la traducció dels seus resultats, eines o datasets d'IA a continguts i pràctiques formatives transferibles per a centres de FP, construint la narrativa pedagògica i el pla de col·laboració amb centres educatius."
           },
           "problemAddressed": {
-            "es": "Los grupos de investigación generan resultados de IA de alto valor pero con frecuencia estos quedan en publicaciones académicas sin impacto formativo. Los docentes de FP no tienen tiempo ni perfil para acceder a esos resultados directamente. La brecha academia-FP no se cierra sola: necesita un proceso de traducción activo.",
-            "en": "Research groups generate high-value AI results but these frequently remain in academic publications without training impact. VET teachers do not have the time or profile to access those results directly. The academy-VET gap does not close on its own — it requires an active translation process.",
-            "va": "Els grups de recerca generen resultats d'IA d'alt valor però amb freqüència aquests queden en publicacions acadèmiques sense impacte formatiu. Els docents de FP no tenen temps ni perfil per accedir a eixos resultats directament. La bretxa acadèmia-FP no es tanca sola: necessita un procés de traducció actiu."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringScope": {
-            "included": [
-              {
-                "label": {
-                  "es": "Análisis de los resultados o herramientas de IA disponibles y su potencial formativo en FP",
-                  "en": "Analysis of available AI results or tools and their VET training potential",
-                  "va": "Anàlisi dels resultats o eines d'IA disponibles i el seu potencial formatiu en FP"
-                }
-              },
-              {
-                "label": {
-                  "es": "Diseño del caso pedagógico de uso del resultado de investigación en el aula de FP",
-                  "en": "Pedagogical case design for using the research result in the VET classroom",
-                  "va": "Disseny del cas pedagògic d'ús del resultat de recerca a l'aula de FP"
-                }
-              },
-              {
-                "label": {
-                  "es": "Orientación sobre qué familias profesionales y ciclos formativos son más receptivos al resultado de investigación",
-                  "en": "Guidance on which professional families and training cycles are most receptive to the research result",
-                  "va": "Orientació sobre quines famílies professionals i cicles formatius són més receptius al resultat de recerca"
-                }
-              },
-              {
-                "label": {
-                  "es": "Plan de colaboración con centros de FP piloto para validar la transferencia en el aula",
-                  "en": "Collaboration plan with pilot VET centres to validate the classroom transfer",
-                  "va": "Pla de col·laboració amb centres de FP pilot per validar la transferència a l'aula"
-                }
-              }
-            ],
-            "excluded": [
-              {
-                "label": {
-                  "es": "Desarrollo de materiales didácticos completos ni publicación en revistas de educación",
-                  "en": "Development of complete didactic materials or publication in education journals",
-                  "va": "Desenvolupament de materials didàctics complets ni publicació en revistes d'educació"
-                }
-              },
-              {
-                "label": {
-                  "es": "Gestión de convenios de colaboración universidad-centro educativo",
-                  "en": "Management of university-educational centre collaboration agreements",
-                  "va": "Gestió de convenis de col·laboració universitat-centre educatiu"
-                }
-              }
-            ]
+            "included": [],
+            "excluded": []
           },
           "format": {
             "sessions": [
@@ -33560,11 +31059,7 @@ export const MARKETPLACE_CONFIG = {
                 ]
               }
             ],
-            "languageCodes": [
-              "es",
-              "va",
-              "en"
-            ],
+            "languageCodes": [],
             "availability": {
               "es": "Convocatoria vinculada a la apertura del curso académico (septiembre-octubre) y a la convocatoria de proyectos de innovación docente (enero-febrero). Proceso de 3 sesiones.",
               "en": "Call linked to the academic year start (September-October) and to the teaching innovation projects call (January-February). 3-session process.",
@@ -33572,14 +31067,14 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "targetUsers": {
-            "es": "Investigadores principales y personal postdoctoral de grupos de IA universitarios, investigadores de institutos tecnológicos y centros de investigación aplicada que quieren ampliar el impacto de sus proyectos hacia la formación profesional.",
-            "en": "Principal investigators and postdoctoral staff from university AI groups, researchers from technology institutes and applied research centres wishing to extend the impact of their projects towards vocational training.",
-            "va": "Investigadors principals i personal postdoctoral de grups d'IA universitaris, investigadors d'instituts tecnològics i centres de recerca aplicada que volen ampliar l'impacte dels seus projectes cap a la formació professional."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "transferValue": {
-            "es": "Los resultados de investigación que alcanzan las aulas de FP multiplican su impacto social, son elegibles para indicadores de transferencia en evaluaciones de sexenios y convocatorias de I+D+I, y generan nuevas líneas de colaboración con el sector productivo a través de la red de centros de FP.",
-            "en": "Research results that reach VET classrooms multiply their social impact, are eligible for transfer indicators in research assessment and R&D&I funding applications, and generate new lines of collaboration with the productive sector through the VET centre network.",
-            "va": "Els resultats de recerca que arriben a les aules de FP multipliquen el seu impacte social, són elegibles per a indicadors de transferència en avaluacions de sexennis i convocatòries de R+D+I, i generen noves línies de col·laboració amb el sector productiu a través de la xarxa de centres de FP."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "mentors": {
@@ -33588,11 +31083,11 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "pool-investigacion-fp",
               "name": "AI-STEAM Mentoring Pool — Transferencia Investigación-FP",
-              "organisation": "AI-STEAM Network",
+              "organisation": "",
               "role": {
-                "es": "Mentores con perfil dual investigador-docente de FP y experiencia en proyectos de transferencia de conocimiento",
-                "en": "Mentors with a dual researcher-VET teacher profile and experience in knowledge transfer projects",
-                "va": "Mentors amb perfil dual investigador-docent de FP i experiència en projectes de transferència de coneixement"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "specialties": [
                 "research-transfer",
@@ -33604,127 +31099,32 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "preparation": {
-          "requiredBeforeRequest": [
-            {
-              "label": {
-                "es": "Descripción del resultado o herramienta de IA disponible para transferencia (publicación, repositorio o descripción técnica)",
-                "en": "Description of the AI result or tool available for transfer (publication, repository or technical description)",
-                "va": "Descripció del resultat o eina d'IA disponible per a transferència (publicació, repositori o descripció tècnica)"
-              }
-            },
-            {
-              "label": {
-                "es": "Indicación del sector o problema productivo que aborda el resultado de investigación",
-                "en": "Indication of the sector or productive problem addressed by the research result",
-                "va": "Indicació del sector o problema productiu que aborda el resultat de recerca"
-              }
-            },
-            {
-              "label": {
-                "es": "Disponibilidad para una colaboración mínima de 1 curso académico con un centro de FP piloto",
-                "en": "Availability for a minimum 1 academic year collaboration with a pilot VET centre",
-                "va": "Disponibilitat per a una col·laboració mínima d'1 curs acadèmic amb un centre de FP pilot"
-              }
-            }
-          ],
-          "intakeQuestions": [
-            {
-              "id": "translation-gap",
-              "label": {
-                "es": "¿Qué haría falta cambiar o simplificar en vuestros resultados o herramientas para que un alumno de FP pueda trabajar con ellos sin supervisión investigadora?",
-                "en": "What would need to be changed or simplified in your results or tools so that a VET student can work with them without research supervision?",
-                "va": "Què caldria canviar o simplificar en els vostres resultats o eines perquè un alumne de FP puga treballar amb ells sense supervisió investigadora?"
-              }
-            },
-            {
-              "id": "sector-fit",
-              "label": {
-                "es": "¿En qué sector productivo o familia profesional creéis que vuestro resultado tiene más impacto formativo inmediato?",
-                "en": "In which productive sector or professional family do you think your result has the most immediate training impact?",
-                "va": "En quin sector productiu o família professional creieu que el vostre resultat té més impacte formatiu immediat?"
-              }
-            },
-            {
-              "id": "collaboration-type",
-              "label": {
-                "es": "¿Buscáis una colaboración puntual (una práctica de aula) o un proyecto de varios cursos que genere evidencia publicable?",
-                "en": "Are you looking for a one-off collaboration (a classroom activity) or a multi-year project that generates publishable evidence?",
-                "va": "Busqueu una col·laboració puntual (una pràctica d'aula) o un projecte de diversos cursos que genere evidència publicable?"
-              }
-            }
-          ]
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
         },
         "expectedOutputs": {
-          "items": [
-            {
-              "id": "pedagogical-case",
-              "label": {
-                "es": "Caso de uso pedagógico del resultado de investigación con narrativa para docentes de FP",
-                "en": "Pedagogical use case for the research result with narrative for VET teachers",
-                "va": "Cas d'ús pedagògic del resultat de recerca amb narrativa per a docents de FP"
-              }
-            },
-            {
-              "id": "cycle-mapping",
-              "label": {
-                "es": "Mapa de familias profesionales y ciclos formativos más receptivos al resultado",
-                "en": "Map of professional families and training cycles most receptive to the result",
-                "va": "Mapa de famílies professionals i cicles formatius més receptius al resultat"
-              }
-            },
-            {
-              "id": "pilot-collaboration-plan",
-              "label": {
-                "es": "Plan de colaboración con 1-2 centros de FP piloto para validar la transferencia",
-                "en": "Collaboration plan with 1-2 pilot VET centres to validate the transfer",
-                "va": "Pla de col·laboració amb 1-2 centres de FP pilot per validar la transferència"
-              }
-            }
-          ]
+          "items": []
         },
         "downloads": {
           "enabled": false,
-          "basePath": "/assets/downloads/mentorings/mentoring-transferencia-investigacion-fp/",
+          "basePath": "",
           "items": []
         },
         "resources": {
-          "externalLinks": [
-            {
-              "id": "request-form",
-              "type": "external-form",
-              "label": {
-                "es": "Formulario de solicitud de mentoría",
-                "en": "Mentoring request form",
-                "va": "Formulari de sol·licitud de mentoria"
-              },
-              "url": "",
-              "access": {
-                "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-                "en": "The request is managed outside this website when an external system is available.",
-                "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-              }
-            }
-          ]
+          "externalLinks": []
         },
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar mentoría",
-              "en": "Request mentoring",
-              "va": "Sol·licitar mentoria"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": "",
             "system": ""
           },
-          "fallbackAction": {
-            "label": {
-              "es": "Ver mentoría",
-              "en": "View mentoring",
-              "va": "Veure mentoria"
-            },
-            "url": ""
-          },
+          "fallbackAction": null,
           "secondaryAction": null
         },
         "relations": {
@@ -33733,11 +31133,7 @@ export const MARKETPLACE_CONFIG = {
           "relatedPilots": [],
           "relatedCases": [],
           "relatedResources": [],
-          "possibleOutputs": [
-            "case",
-            "pilot",
-            "resource"
-          ]
+          "possibleOutputs": []
         },
         "hasDownloads": false,
         "downloadCount": 0,
@@ -33768,10 +31164,10 @@ export const MARKETPLACE_CONFIG = {
               "preparation": true,
               "expectedOutputs": true,
               "transferValue": true,
-              "downloads": false,
-              "resources": false,
+              "downloads": true,
+              "resources": true,
               "access": true,
-              "relations": true
+              "relations": false
             }
           }
         },
@@ -33827,7 +31223,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "nts",
           "sectors": [],
-          "stakeholderCategory": "institutional",
+          "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -33856,8 +31252,8 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "mentoringTeam": {
             "name": {
@@ -33865,39 +31261,20 @@ export const MARKETPLACE_CONFIG = {
               "en": "AI-STEAM Network Mentoring Pool — AI Ethics and Education Specialists",
               "va": "AI-STEAM Network Mentoring Pool — Especialistes en Ètica IA i Educació"
             },
-            "type": "mentoring-pool",
+            "type": "",
             "role": {
               "es": "Mentores con formación en ética digital, protección de datos educativos y uso responsable de IA en el aula",
               "en": "Mentors trained in digital ethics, educational data protection and responsible AI use in the classroom",
               "va": "Mentors amb formació en ètica digital, protecció de dades educatives i ús responsable d'IA a l'aula"
             },
-            "org": "AI-STEAM Network"
+            "org": ""
           },
-          "coordinator": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE",
-            "role": {
-              "es": "Coordinación de mentoría en ética y uso responsable de IA",
-              "en": "Coordination of AI ethics and responsible use mentoring",
-              "va": "Coordinació de mentoria en ètica i ús responsable d'IA"
-            }
-          }
+          "coordinator": null
         },
         "classification": {
-          "aiSteamFocus": [
-            "responsible-ai",
-            "ai-ethics",
-            "ai-literacy"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "responsible-ai",
-            "equity-inclusion",
-            "teacher-capacity"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -33910,16 +31287,12 @@ export const MARKETPLACE_CONFIG = {
           "pilotStatus": "",
           "sector": "nts",
           "sectorLabel": {
-            "es": "Educación, formación profesional e innovación pedagógica",
-            "en": "Education, vocational training and pedagogical innovation",
-            "va": "Educació, formació professional i innovació pedagògica"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "stakeholderCategory": "institutional",
-          "audience": [
-            "teachers",
-            "vet-centres",
-            "researchers"
-          ]
+          "stakeholderCategory": "",
+          "audience": []
         },
         "transfer": {
           "type": "",
@@ -33934,7 +31307,7 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
@@ -33945,19 +31318,19 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "No deben enviarse datos personales de alumnos ni información identificativa a través de este sitio. La revisión ética se realiza sobre descripciones anónimas del proyecto.",
-            "en": "Personal student data or identifying information must not be submitted through this site. The ethics review is conducted on anonymous project descriptions.",
-            "va": "No s'han d'enviar dades personals d'alumnes ni informació identificativa a través d'este lloc. La revisió ètica es realitza sobre descripcions anònimes del projecte."
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "mentoringRequestAccess": "not-available",
-          "confidentialityLevel": "standard",
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
           "publicationNote": {
-            "es": "La nota ética resultante puede publicarse como recurso de referencia si el centro lo autoriza y no incluye información identificativa.",
-            "en": "The resulting ethics note may be published as a reference resource if the centre authorises it and it contains no identifying information.",
-            "va": "La nota ètica resultant pot publicar-se com a recurs de referència si el centre ho autoritza i no inclou informació identificativa."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -33985,57 +31358,13 @@ export const MARKETPLACE_CONFIG = {
             "va": "Proporcionar a docents i equips de centre una revisió ètica accessible i pràctica dels seus projectes amb IA, identificant riscos reals, orientant sobre normativa aplicable (RGPD, Reglament IA) i suggerint salvaguardes proporcionades abans que el projecte s'implante o es publique."
           },
           "problemAddressed": {
-            "es": "Muchos proyectos educativos con IA se diseñan con buena intención pero sin revisar si los datos de los alumnos están protegidos, si las herramientas de IA generativa utilizadas cumplen los términos de servicio para menores o si el sistema de recomendación puede perpetuar sesgos. La mentoría ética no bloquea los proyectos — los mejora.",
-            "en": "Many AI educational projects are designed with good intentions but without reviewing whether student data is protected, whether the generative AI tools used comply with terms of service for minors or whether the recommendation system may perpetuate biases. Ethics mentoring does not block projects — it improves them.",
-            "va": "Molts projectes educatius amb IA es dissenyen amb bona intenció però sense revisar si les dades dels alumnes estan protegides, si les eines de IA generativa usades compleixen els termes de servei per a menors o si el sistema de recomanació pot perpetuar biaixos. La mentoria ètica no bloqueja els projectes — els millora."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringScope": {
-            "included": [
-              {
-                "label": {
-                  "es": "Revisión de uso de datos de alumnos y aplicación del RGPD en el contexto educativo",
-                  "en": "Review of student data use and GDPR application in the educational context",
-                  "va": "Revisió d'ús de dades d'alumnes i aplicació del RGPD en el context educatiu"
-                }
-              },
-              {
-                "label": {
-                  "es": "Identificación de sesgos potenciales en los sistemas de IA utilizados",
-                  "en": "Identification of potential biases in the AI systems used",
-                  "va": "Identificació de biaixos potencials en els sistemes d'IA usats"
-                }
-              },
-              {
-                "label": {
-                  "es": "Revisión del uso de IA generativa con menores y gestión de alucinaciones",
-                  "en": "Review of generative AI use with minors and hallucination management",
-                  "va": "Revisió de l'ús de IA generativa amb menors i gestió d'al·lucinacions"
-                }
-              },
-              {
-                "label": {
-                  "es": "Orientación sobre transparencia con familias y alumnos sobre el uso de IA",
-                  "en": "Guidance on transparency with families and students about AI use",
-                  "va": "Orientació sobre transparència amb famílies i alumnes sobre l'ús de IA"
-                }
-              }
-            ],
-            "excluded": [
-              {
-                "label": {
-                  "es": "Asesoramiento jurídico vinculante",
-                  "en": "Binding legal advice",
-                  "va": "Assessorament jurídic vinculant"
-                }
-              },
-              {
-                "label": {
-                  "es": "Auditoría técnica de los modelos de IA utilizados",
-                  "en": "Technical audit of the AI models used",
-                  "va": "Auditoria tècnica dels models d'IA usats"
-                }
-              }
-            ]
+            "included": [],
+            "excluded": []
           },
           "format": {
             "sessions": [
@@ -34050,11 +31379,7 @@ export const MARKETPLACE_CONFIG = {
                 ]
               }
             ],
-            "languageCodes": [
-              "es",
-              "va",
-              "en"
-            ],
+            "languageCodes": [],
             "availability": {
               "es": "Convocatoria continua. Respuesta garantizada en 5 días laborables para solicitudes de centros educativos.",
               "en": "Rolling call. Response guaranteed within 5 working days for educational centre requests.",
@@ -34062,14 +31387,14 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "targetUsers": {
-            "es": "Docentes de FP, equipos de innovación pedagógica de centros, coordinadores de proyectos educativos con IA y equipos directivos que quieren revisar el cumplimiento ético antes de implantar una herramienta de IA.",
-            "en": "VET teachers, school pedagogical innovation teams, educational AI project coordinators and management teams wishing to review ethical compliance before implementing an AI tool.",
-            "va": "Docents de FP, equips d'innovació pedagògica de centres, coordinadors de projectes educatius amb IA i equips directius que volen revisar el compliment ètic abans d'implantar una eina d'IA."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "transferValue": {
-            "es": "Los proyectos revisados éticamente generan más confianza en las familias, cumplen la normativa desde el diseño (privacy by design) y son más fáciles de publicar y replicar en otros centros al tener documentados sus salvaguardas.",
-            "en": "Ethically reviewed projects generate greater family trust, comply with regulations by design (privacy by design) and are easier to publish and replicate in other centres with their safeguards documented.",
-            "va": "Els projectes revisats èticament generen més confiança en les famílies, compleixen la normativa des del disseny (privacy by design) i són més fàcils de publicar i replicar en altres centres en tenir documentades les seues salvaguardes."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "mentors": {
@@ -34078,11 +31403,11 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "pool-etica-educacion",
               "name": "AI-STEAM Mentoring Pool — Ética IA y Educación",
-              "organisation": "AI-STEAM Network",
+              "organisation": "",
               "role": {
-                "es": "Mentores con formación en ética digital, protección de datos educativos y uso responsable de IA",
-                "en": "Mentors trained in digital ethics, educational data protection and responsible AI use",
-                "va": "Mentors amb formació en ètica digital, protecció de dades educatives i ús responsable d'IA"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "specialties": [
                 "ai-ethics",
@@ -34094,127 +31419,32 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "preparation": {
-          "requiredBeforeRequest": [
-            {
-              "label": {
-                "es": "Descripción del proyecto o herramienta de IA que se quiere revisar",
-                "en": "Description of the AI project or tool to be reviewed",
-                "va": "Descripció del projecte o eina d'IA que es vol revisar"
-              }
-            },
-            {
-              "label": {
-                "es": "Indicación del nivel educativo y si hay menores implicados",
-                "en": "Indication of the educational level and whether minors are involved",
-                "va": "Indicació del nivell educatiu i si hi ha menors implicats"
-              }
-            },
-            {
-              "label": {
-                "es": "Listado de herramientas de IA que se usarán (nombre y proveedor)",
-                "en": "List of AI tools to be used (name and provider)",
-                "va": "Llistat d'eines d'IA que s'usaran (nom i proveïdor)"
-              }
-            }
-          ],
-          "intakeQuestions": [
-            {
-              "id": "data-use",
-              "label": {
-                "es": "¿Qué datos de alumnos se recogerán, procesarán o compartirán con las herramientas de IA?",
-                "en": "What student data will be collected, processed or shared with AI tools?",
-                "va": "Quines dades d'alumnes es recolliran, processaran o compartiran amb les eines d'IA?"
-              }
-            },
-            {
-              "id": "ai-tools",
-              "label": {
-                "es": "¿Las herramientas de IA generativa que utilizáis permiten su uso con menores de 18 años según sus términos de servicio?",
-                "en": "Do the generative AI tools you are using allow use with under-18s according to their terms of service?",
-                "va": "Les eines de IA generativa que useu permeten el seu ús amb menors de 18 anys segons els seus termes de servei?"
-              }
-            },
-            {
-              "id": "transparency",
-              "label": {
-                "es": "¿Han sido informados los alumnos y familias del uso de IA en el proyecto?",
-                "en": "Have students and families been informed about AI use in the project?",
-                "va": "Han sigut informats els alumnes i famílies de l'ús d'IA en el projecte?"
-              }
-            }
-          ]
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
         },
         "expectedOutputs": {
-          "items": [
-            {
-              "id": "ethics-note",
-              "label": {
-                "es": "Nota ética del proyecto con riesgos identificados y salvaguardas recomendadas",
-                "en": "Project ethics note with identified risks and recommended safeguards",
-                "va": "Nota ètica del projecte amb riscos identificats i salvaguardes recomanades"
-              }
-            },
-            {
-              "id": "compliance-checklist",
-              "label": {
-                "es": "Checklist de cumplimiento RGPD y Reglamento IA básico para el proyecto",
-                "en": "Basic GDPR and AI Act compliance checklist for the project",
-                "va": "Checklist de compliment RGPD i Reglament IA bàsic per al projecte"
-              }
-            },
-            {
-              "id": "transparency-template",
-              "label": {
-                "es": "Plantilla de comunicación a familias y alumnos sobre el uso de IA en el aula",
-                "en": "Communication template for families and students about AI use in the classroom",
-                "va": "Plantilla de comunicació a famílies i alumnes sobre l'ús de IA a l'aula"
-              }
-            }
-          ]
+          "items": []
         },
         "downloads": {
           "enabled": false,
-          "basePath": "/assets/downloads/mentorings/mentoring-etica-ia-proyectos-educativos/",
+          "basePath": "",
           "items": []
         },
         "resources": {
-          "externalLinks": [
-            {
-              "id": "request-form",
-              "type": "external-form",
-              "label": {
-                "es": "Formulario de solicitud de mentoría",
-                "en": "Mentoring request form",
-                "va": "Formulari de sol·licitud de mentoria"
-              },
-              "url": "",
-              "access": {
-                "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-                "en": "The request is managed outside this website when an external system is available.",
-                "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-              }
-            }
-          ]
+          "externalLinks": []
         },
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar mentoría",
-              "en": "Request mentoring",
-              "va": "Sol·licitar mentoria"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": "",
             "system": ""
           },
-          "fallbackAction": {
-            "label": {
-              "es": "Ver mentoría",
-              "en": "View mentoring",
-              "va": "Veure mentoria"
-            },
-            "url": ""
-          },
+          "fallbackAction": null,
           "secondaryAction": null
         },
         "relations": {
@@ -34223,10 +31453,7 @@ export const MARKETPLACE_CONFIG = {
           "relatedPilots": [],
           "relatedCases": [],
           "relatedResources": [],
-          "possibleOutputs": [
-            "resource",
-            "pilot"
-          ]
+          "possibleOutputs": []
         },
         "hasDownloads": false,
         "downloadCount": 0,
@@ -34257,10 +31484,10 @@ export const MARKETPLACE_CONFIG = {
               "preparation": true,
               "expectedOutputs": true,
               "transferValue": true,
-              "downloads": false,
-              "resources": false,
+              "downloads": true,
+              "resources": true,
               "access": true,
-              "relations": true
+              "relations": false
             }
           }
         },
@@ -34316,7 +31543,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "nts",
           "sectors": [],
-          "stakeholderCategory": "institutional",
+          "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -34345,8 +31572,8 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "mentoringTeam": {
             "name": {
@@ -34354,42 +31581,23 @@ export const MARKETPLACE_CONFIG = {
               "en": "AI-STEAM Network Mentoring Pool — Healthcare AI Specialists",
               "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Sanitària"
             },
-            "type": "mentoring-pool",
+            "type": "",
             "role": {
               "es": "Mentores con perfil técnico en ciencia de datos clínicos, visión computacional médica y cumplimiento normativo sanitario",
               "en": "Mentors with technical profile in clinical data science, medical computer vision and health regulatory compliance",
               "va": "Mentors amb perfil tècnic en ciència de dades clíniques, visió computacional mèdica i compliment normatiu sanitari"
             },
-            "org": "AI-STEAM Network"
+            "org": ""
           },
-          "coordinator": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE",
-            "role": {
-              "es": "Coordinación de mentoría técnica en sector salud y sociosanitario",
-              "en": "Coordination of technical mentoring in the health and social care sector",
-              "va": "Coordinació de mentoria tècnica en sector salut i sociosanitari"
-            }
-          }
+          "coordinator": null
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "responsible-ai",
-            "ai-ethics"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "responsible-ai",
-            "learning-ecosystems",
-            "teacher-capacity"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
-          "lbdStage": "process",
+          "lbdStage": "input",
           "trackBValue": {
             "es": "",
             "en": "",
@@ -34399,17 +31607,12 @@ export const MARKETPLACE_CONFIG = {
           "pilotStatus": "",
           "sector": "nts",
           "sectorLabel": {
-            "es": "Salud, servicios sociosanitarios y bienestar",
-            "en": "Health, social care and wellbeing",
-            "va": "Salut, serveis sociosanitaris i benestar"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "stakeholderCategory": "institutional",
-          "audience": [
-            "teachers",
-            "vet-centres",
-            "companies",
-            "researchers"
-          ]
+          "stakeholderCategory": "",
+          "audience": []
         },
         "transfer": {
           "type": "",
@@ -34424,7 +31627,7 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
@@ -34435,19 +31638,19 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "No deben enviarse datos clínicos, imágenes médicas ni información identificativa de pacientes a través de este sitio. La mentoría se realiza sobre descripciones anonimizadas del proyecto.",
-            "en": "Clinical data, medical images or patient-identifying information must not be submitted through this site. Mentoring is conducted on anonymised project descriptions.",
-            "va": "No s'han d'enviar dades clíniques, imatges mèdiques ni informació identificativa de pacients a través d'este lloc. La mentoria es realitza sobre descripcions anonimitzades del projecte."
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "mentoringRequestAccess": "not-available",
-          "confidentialityLevel": "standard",
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
           "publicationNote": {
-            "es": "La nota de arquitectura resultante podrá publicarse como recurso técnico de referencia si el equipo lo autoriza y no incluye información clínica ni de pacientes.",
-            "en": "The resulting architecture note may be published as a technical reference resource if the team authorises it and it contains no clinical or patient information.",
-            "va": "La nota d'arquitectura resultant pot publicar-se com a recurs tècnic de referència si l'equip ho autoritza i no inclou informació clínica ni de pacients."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -34475,57 +31678,13 @@ export const MARKETPLACE_CONFIG = {
             "va": "Guiar equips tècnics i docents en la definició de l'arquitectura de dades, selecció del model d'IA adequat i protocol de validació clínica, garantint el compliment del Reglament IA (classificació de risc alt), RGPD sanitari i estàndards HL7/FHIR des del disseny."
           },
           "problemAddressed": {
-            "es": "Los proyectos de IA en salud frecuentemente se paralizan por incertidumbre técnica o regulatoria. Los equipos de FP sanitaria tienen el contexto clínico pero no siempre la experiencia en gestión de datos médicos, arquitecturas de inferencia o requisitos del Reglamento IA para dispositivos médicos de software (SaMD). La mentoría cierra esa brecha antes de invertir recursos en desarrollo.",
-            "en": "AI projects in health are frequently stalled by technical or regulatory uncertainty. Health VET teams have the clinical context but do not always have experience in medical data management, inference architectures or AI Act requirements for software medical devices (SaMD). Mentoring closes that gap before investing resources in development.",
-            "va": "Els projectes d'IA en salut freqüentment es paralitzen per incertesa tècnica o regulatòria. Els equips de FP sanitària tenen el context clínic però no sempre l'experiència en gestió de dades mèdiques, arquitectures d'inferència o requisits del Reglament IA per a dispositius mèdics de programari (SaMD). La mentoria tanca eixa bretxa abans d'invertir recursos en desenvolupament."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringScope": {
-            "included": [
-              {
-                "label": {
-                  "es": "Orientación sobre arquitectura de datos clínicos y estándares de interoperabilidad (HL7, FHIR, DICOM)",
-                  "en": "Guidance on clinical data architecture and interoperability standards (HL7, FHIR, DICOM)",
-                  "va": "Orientació sobre arquitectura de dades clíniques i estàndards d'interoperabilitat (HL7, FHIR, DICOM)"
-                }
-              },
-              {
-                "label": {
-                  "es": "Selección del tipo de modelo de IA adecuado al caso de uso clínico",
-                  "en": "Selection of the appropriate AI model type for the clinical use case",
-                  "va": "Selecció del tipus de model d'IA adequat al cas d'ús clínic"
-                }
-              },
-              {
-                "label": {
-                  "es": "Clasificación del sistema bajo el Reglamento IA y requisitos para dispositivos SaMD",
-                  "en": "System classification under the AI Act and SaMD device requirements",
-                  "va": "Classificació del sistema sota el Reglament IA i requisits per a dispositius SaMD"
-                }
-              },
-              {
-                "label": {
-                  "es": "Diseño del protocolo de validación clínica y métricas de rendimiento diagnóstico",
-                  "en": "Clinical validation protocol design and diagnostic performance metrics",
-                  "va": "Disseny del protocol de validació clínica i mètriques de rendiment diagnòstic"
-                }
-              }
-            ],
-            "excluded": [
-              {
-                "label": {
-                  "es": "Desarrollo del modelo de IA ni acceso a infraestructura de cómputo",
-                  "en": "AI model development or access to computing infrastructure",
-                  "va": "Desenvolupament del model d'IA ni accés a infraestructura de còmput"
-                }
-              },
-              {
-                "label": {
-                  "es": "Certificación regulatoria ni registro de producto sanitario",
-                  "en": "Regulatory certification or medical device registration",
-                  "va": "Certificació regulatòria ni registre de producte sanitari"
-                }
-              }
-            ]
+            "included": [],
+            "excluded": []
           },
           "format": {
             "sessions": [
@@ -34540,11 +31699,7 @@ export const MARKETPLACE_CONFIG = {
                 ]
               }
             ],
-            "languageCodes": [
-              "es",
-              "va",
-              "en"
-            ],
+            "languageCodes": [],
             "availability": {
               "es": "Convocatoria continua. Proceso de 2 sesiones técnicas más revisión asíncrona de documentos. Respuesta inicial en 7 días laborables.",
               "en": "Rolling call. Process of 2 technical sessions plus asynchronous document review. Initial response within 7 working days.",
@@ -34552,14 +31707,14 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "targetUsers": {
-            "es": "Docentes de FP de la familia sanitaria con perfil técnico, responsables de innovación de hospitales o centros de salud, y equipos de investigación clínica que colaboran con centros de FP en proyectos con IA.",
-            "en": "VET teachers from the health family with a technical profile, innovation managers at hospitals or health centres, and clinical research teams collaborating with VET centres on AI projects.",
-            "va": "Docents de FP de la família sanitària amb perfil tècnic, responsables d'innovació d'hospitals o centres de salut, i equips de recerca clínica que col·laboren amb centres de FP en projectes amb IA."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "transferValue": {
-            "es": "Los proyectos con arquitectura técnica sólida desde el inicio reducen el tiempo de validación clínica, son más fáciles de publicar en revistas especializadas y tienen mayor probabilidad de ser adoptados como práctica estándar en más centros de salud.",
-            "en": "Projects with a solid technical architecture from the outset reduce clinical validation time, are easier to publish in specialist journals and are more likely to be adopted as standard practice in more health centres.",
-            "va": "Els projectes amb arquitectura tècnica sòlida des de l'inici redueixen el temps de validació clínica, són més fàcils de publicar en revistes especialitzades i tenen major probabilitat de ser adoptats com a pràctica estàndard en més centres de salut."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "mentors": {
@@ -34568,11 +31723,11 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "pool-ia-sanitaria",
               "name": "AI-STEAM Mentoring Pool — IA Sanitaria y Datos Clínicos",
-              "organisation": "AI-STEAM Network",
+              "organisation": "",
               "role": {
-                "es": "Mentores especializados en ciencia de datos clínicos, visión computacional médica y normativa sanitaria",
-                "en": "Mentors specialised in clinical data science, medical computer vision and health regulations",
-                "va": "Mentors especialitzats en ciència de dades clíniques, visió computacional mèdica i normativa sanitària"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "specialties": [
                 "clinical-data-science",
@@ -34584,142 +31739,41 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "preparation": {
-          "requiredBeforeRequest": [
-            {
-              "label": {
-                "es": "Descripción del caso de uso clínico en 10-15 líneas (qué problema diagnóstico o asistencial se quiere abordar)",
-                "en": "Description of the clinical use case in 10-15 lines (what diagnostic or care problem is to be addressed)",
-                "va": "Descripció del cas d'ús clínic en 10-15 línies (quin problema diagnòstic o assistencial es vol abordar)"
-              }
-            },
-            {
-              "label": {
-                "es": "Tipo y volumen aproximado de datos disponibles (imágenes, registros EHR, señales fisiológicas)",
-                "en": "Type and approximate volume of available data (images, EHR records, physiological signals)",
-                "va": "Tipus i volum aproximat de dades disponibles (imatges, registres EHR, senyals fisiològiques)"
-              }
-            },
-            {
-              "label": {
-                "es": "Indicación de si el proyecto es educativo, de investigación o de implantación clínica real",
-                "en": "Indication of whether the project is educational, research-based or for real clinical implementation",
-                "va": "Indicació de si el projecte és educatiu, de recerca o d'implantació clínica real"
-              }
-            }
-          ],
-          "intakeQuestions": [
-            {
-              "id": "clinical-context",
-              "label": {
-                "es": "¿Quién tomará las decisiones clínicas finales basadas en el sistema de IA? ¿Cómo se integrará el sistema en el flujo de trabajo clínico?",
-                "en": "Who will make the final clinical decisions based on the AI system? How will the system integrate into the clinical workflow?",
-                "va": "Qui prendrà les decisions clíniques finals basades en el sistema d'IA? Com s'integrarà el sistema en el flux de treball clínic?"
-              }
-            },
-            {
-              "id": "data-governance",
-              "label": {
-                "es": "¿Los datos disponibles están anonimizados o seudonimizados? ¿Hay consentimiento informado o base jurídica alternativa para el tratamiento?",
-                "en": "Is the available data anonymised or pseudonymised? Is there informed consent or alternative legal basis for processing?",
-                "va": "Les dades disponibles estan anonimitzades o seudonimitzades? Hi ha consentiment informat o base jurídica alternativa per al tractament?"
-              }
-            },
-            {
-              "id": "validation-plan",
-              "label": {
-                "es": "¿Tenéis acceso a un conjunto de datos de validación independiente del de entrenamiento?",
-                "en": "Do you have access to a validation dataset independent of the training data?",
-                "va": "Teniu accés a un conjunt de dades de validació independent del d'entrenament?"
-              }
-            }
-          ]
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
         },
         "expectedOutputs": {
-          "items": [
-            {
-              "id": "technical-architecture-note",
-              "label": {
-                "es": "Nota de arquitectura técnica con recomendaciones de modelo, pipeline de datos y entorno de inferencia",
-                "en": "Technical architecture note with model recommendations, data pipeline and inference environment",
-                "va": "Nota d'arquitectura tècnica amb recomanacions de model, pipeline de dades i entorn d'inferència"
-              }
-            },
-            {
-              "id": "regulatory-classification",
-              "label": {
-                "es": "Clasificación regulatoria del sistema bajo el Reglamento IA y checklist de requisitos aplicables",
-                "en": "Regulatory classification of the system under the AI Act and applicable requirements checklist",
-                "va": "Classificació regulatòria del sistema sota el Reglament IA i checklist de requisits aplicables"
-              }
-            },
-            {
-              "id": "validation-protocol",
-              "label": {
-                "es": "Borrador de protocolo de validación clínica con métricas de rendimiento y criterios de aceptación",
-                "en": "Draft clinical validation protocol with performance metrics and acceptance criteria",
-                "va": "Esborrany de protocol de validació clínica amb mètriques de rendiment i criteris d'acceptació"
-              }
-            }
-          ]
+          "items": []
         },
         "downloads": {
           "enabled": false,
-          "basePath": "/assets/downloads/mentorings/mentoring-soporte-tecnico-implementacion-ia-nts/",
+          "basePath": "",
           "items": []
         },
         "resources": {
-          "externalLinks": [
-            {
-              "id": "request-form",
-              "type": "external-form",
-              "label": {
-                "es": "Formulario de solicitud de mentoría",
-                "en": "Mentoring request form",
-                "va": "Formulari de sol·licitud de mentoria"
-              },
-              "url": "",
-              "access": {
-                "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-                "en": "The request is managed outside this website when an external system is available.",
-                "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-              }
-            }
-          ]
+          "externalLinks": []
         },
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar mentoría",
-              "en": "Request mentoring",
-              "va": "Sol·licitar mentoria"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": "",
             "system": ""
           },
-          "fallbackAction": {
-            "label": {
-              "es": "Ver mentoría",
-              "en": "View mentoring",
-              "va": "Veure mentoria"
-            },
-            "url": ""
-          },
+          "fallbackAction": null,
           "secondaryAction": null
         },
         "relations": {
           "relatedChallenges": [],
           "relatedValidations": [],
-          "relatedPilots": [
-            "pilot-ia-diagnostico-cancer-piel-nts"
-          ],
+          "relatedPilots": [],
           "relatedCases": [],
           "relatedResources": [],
-          "possibleOutputs": [
-            "pilot",
-            "validation",
-            "resource"
-          ]
+          "possibleOutputs": []
         },
         "hasDownloads": false,
         "downloadCount": 0,
@@ -34750,10 +31804,10 @@ export const MARKETPLACE_CONFIG = {
               "preparation": true,
               "expectedOutputs": true,
               "transferValue": true,
-              "downloads": false,
-              "resources": false,
+              "downloads": true,
+              "resources": true,
               "access": true,
-              "relations": true
+              "relations": false
             }
           }
         },
@@ -34834,12 +31888,12 @@ export const MARKETPLACE_CONFIG = {
         },
         "ficha": null,
         "adhesionForm": {
-          "url": ""
+          "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufimy8pKaFjvbtEm6P80z2LuPxUNFhSTlNGTFpPMEdWNUwzTk8yVjYzTlpRQS4u"
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "mentoringTeam": {
             "name": {
@@ -34847,42 +31901,23 @@ export const MARKETPLACE_CONFIG = {
               "en": "AI-STEAM Network Mentoring Pool — VET Pedagogy and Innovation Specialists",
               "va": "AI-STEAM Network Mentoring Pool — Especialistes en Pedagogia FP i Innovació"
             },
-            "type": "mentoring-pool",
+            "type": "",
             "role": {
               "es": "Mentores con perfil dual pedagógico-técnico, con experiencia en diseño de pilotos FP-empresa",
               "en": "Mentors with dual pedagogical-technical profile, experienced in designing VET-industry pilots",
               "va": "Mentors amb perfil dual pedagògic-tècnic, amb experiència en disseny de pilots FP-empresa"
             },
-            "org": "AI-STEAM Network"
+            "org": ""
           },
-          "coordinator": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE",
-            "role": {
-              "es": "Coordinación de pilotos educativos Track B",
-              "en": "Track B educational pilot coordination",
-              "va": "Coordinació de pilots educatius Track B"
-            }
-          }
+          "coordinator": null
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "maker-steam",
-            "challenge-framing"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "integrated-pedagogy",
-            "learning-ecosystems",
-            "teacher-capacity"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
-          "lbdStage": "process",
+          "lbdStage": "input",
           "trackBValue": {
             "es": "",
             "en": "",
@@ -34892,16 +31927,12 @@ export const MARKETPLACE_CONFIG = {
           "pilotStatus": "",
           "sector": "nts",
           "sectorLabel": {
-            "es": "Educación, formación profesional e innovación pedagógica",
-            "en": "Education, vocational training and pedagogical innovation",
-            "va": "Educació, formació professional i innovació pedagògica"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "stakeholderCategory": "institutional",
-          "audience": [
-            "vet-centres",
-            "teachers",
-            "companies"
-          ]
+          "stakeholderCategory": "",
+          "audience": []
         },
         "transfer": {
           "type": "",
@@ -34916,7 +31947,7 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
@@ -34927,19 +31958,19 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "El diseño del piloto es co-propiedad del centro de FP y la empresa participante. No deben enviarse datos de alumnos ni información sensible a través de este sitio.",
-            "en": "The pilot design is co-owned by the VET centre and the participating company. Student data and sensitive information must not be submitted through this site.",
-            "va": "El disseny del pilot és co-propietat del centre de FP i l'empresa participant. No s'han d'enviar dades d'alumnes ni informació sensible a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "mentoringRequestAccess": "not-available",
-          "confidentialityLevel": "standard",
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
           "publicationNote": {
-            "es": "El piloto resultante podrá publicarse en el Marketplace si genera evidencia documentada y ambas partes lo autorizan.",
-            "en": "The resulting pilot may be published on the Marketplace if it generates documented evidence and both parties authorise it.",
-            "va": "El pilot resultant podrà publicar-se al Marketplace si genera evidència documentada i ambdues parts ho autoritzen."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -34967,57 +31998,13 @@ export const MARKETPLACE_CONFIG = {
             "va": "Acompanyar parelles FP-empresa en el disseny d'un pilot educatiu rigorós: amb hipòtesi clara, metodologia adequada al cicle formatiu, mètriques d'èxit avaluables i condicions de transferibilitat perquè altres centres puguen replicar-lo."
           },
           "problemAddressed": {
-            "es": "Los centros de FP y las empresas tienen voluntad de colaborar pero frecuentemente diseñan actividades que no tienen hipótesis medible, no documentan qué aprenden los alumnos o generan contenidos no transferibles a otros contextos. La mentoría introduce el marco de piloto riguroso desde el primer diseño.",
-            "en": "VET centres and companies have the will to collaborate but frequently design activities that lack a measurable hypothesis, do not document what students learn or generate content non-transferable to other contexts. Mentoring introduces the rigorous pilot framework from the first design.",
-            "va": "Els centres de FP i les empreses tenen voluntat de col·laborar però freqüentment dissenyen activitats que no tenen hipòtesi mesurable, no documenten el que aprenen els alumnes o generen continguts no transferibles a altres contextos. La mentoria introdueix el marc de pilot rigorós des del primer disseny."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringScope": {
-            "included": [
-              {
-                "label": {
-                  "es": "Definición de hipótesis del piloto y pregunta de investigación educativa",
-                  "en": "Pilot hypothesis and educational research question definition",
-                  "va": "Definició d'hipòtesi del pilot i pregunta de recerca educativa"
-                }
-              },
-              {
-                "label": {
-                  "es": "Diseño de la metodología, cronograma y distribución de roles FP-empresa",
-                  "en": "Methodology, timeline and VET-company role distribution design",
-                  "va": "Disseny de la metodologia, cronograma i distribució de rols FP-empresa"
-                }
-              },
-              {
-                "label": {
-                  "es": "Definición de métricas de éxito y criterios de transferibilidad",
-                  "en": "Success metrics and transferability criteria definition",
-                  "va": "Definició de mètriques d'èxit i criteris de transferibilitat"
-                }
-              },
-              {
-                "label": {
-                  "es": "Revisión del encaje curricular en el ciclo formativo",
-                  "en": "Curricular fit review in the training cycle",
-                  "va": "Revisió de l'encaix curricular en el cicle formatiu"
-                }
-              }
-            ],
-            "excluded": [
-              {
-                "label": {
-                  "es": "Desarrollo del contenido técnico del piloto",
-                  "en": "Technical content development of the pilot",
-                  "va": "Desenvolupament del contingut tècnic del pilot"
-                }
-              },
-              {
-                "label": {
-                  "es": "Formación docente en las herramientas técnicas utilizadas",
-                  "en": "Teacher training in the technical tools used",
-                  "va": "Formació docent en les eines tècniques usades"
-                }
-              }
-            ]
+            "included": [],
+            "excluded": []
           },
           "format": {
             "sessions": [
@@ -35032,10 +32019,7 @@ export const MARKETPLACE_CONFIG = {
                 ]
               }
             ],
-            "languageCodes": [
-              "es",
-              "va"
-            ],
+            "languageCodes": [],
             "availability": {
               "es": "Sesiones disponibles para parejas FP-empresa con proyecto identificado. Proceso de 3 sesiones en 6 semanas.",
               "en": "Sessions available for VET-company pairs with an identified project. 3-session process over 6 weeks.",
@@ -35043,14 +32027,14 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "targetUsers": {
-            "es": "Equipos formados por al menos un docente de FP y un representante de empresa que ya tienen una idea de colaboración pero necesitan estructurarla como piloto evaluable.",
-            "en": "Teams formed by at least one VET teacher and one company representative who already have a collaboration idea but need to structure it as an evaluable pilot.",
-            "va": "Equips formats per almenys un docent de FP i un representant d'empresa que ja tenen una idea de col·laboració però necessiten estructurar-la com a pilot avaluable."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "transferValue": {
-            "es": "Los pilotos bien diseñados desde el inicio generan evidencia publicable, son replicables por otros centros y contribuyen al Marketplace AI-STEAM como casos verificados o recursos reutilizables.",
-            "en": "Well-designed pilots from the outset generate publishable evidence, can be replicated by other centres and contribute to the AI-STEAM Marketplace as verified cases or reusable resources.",
-            "va": "Els pilots ben dissenyats des de l'inici generen evidència publicable, són replicables per altres centres i contribueixen al Marketplace AI-STEAM com a casos verificats o recursos reutilitzables."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "mentors": {
@@ -35059,11 +32043,11 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "pool-pedagogia-fp",
               "name": "AI-STEAM Mentoring Pool — Pedagogía FP e Innovación",
-              "organisation": "AI-STEAM Network",
+              "organisation": "",
               "role": {
-                "es": "Mentores especializados en diseño pedagógico de pilotos FP-empresa con IA",
-                "en": "Mentors specialised in pedagogical design of VET-industry AI pilots",
-                "va": "Mentors especialitzats en disseny pedagògic de pilots FP-empresa amb IA"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "specialties": [
                 "pilot-design",
@@ -35075,127 +32059,32 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "preparation": {
-          "requiredBeforeRequest": [
-            {
-              "label": {
-                "es": "Descripción del proyecto de colaboración FP-empresa en 10-15 líneas",
-                "en": "Description of the VET-company collaboration project in 10-15 lines",
-                "va": "Descripció del projecte de col·laboració FP-empresa en 10-15 línies"
-              }
-            },
-            {
-              "label": {
-                "es": "Identificación del ciclo formativo y módulo o unidad de trabajo donde se integrará",
-                "en": "Identification of the training cycle and module or learning unit where it will be integrated",
-                "va": "Identificació del cicle formatiu i mòdul o unitat de treball on s'integrarà"
-              }
-            },
-            {
-              "label": {
-                "es": "Número estimado de alumnos y sesiones disponibles",
-                "en": "Estimated number of students and available sessions",
-                "va": "Nombre estimat d'alumnes i sessions disponibles"
-              }
-            }
-          ],
-          "intakeQuestions": [
-            {
-              "id": "hypothesis",
-              "label": {
-                "es": "¿Qué cambio esperáis observar en los alumnos al final del piloto?",
-                "en": "What change do you expect to observe in students at the end of the pilot?",
-                "va": "Quin canvi espereu observar en els alumnes al final del pilot?"
-              }
-            },
-            {
-              "id": "company-contribution",
-              "label": {
-                "es": "¿Qué aportará la empresa concretamente? (datos, visitas, equipos, mentores)",
-                "en": "What will the company specifically contribute? (data, visits, equipment, mentors)",
-                "va": "Què aportarà l'empresa concretament? (dades, visites, equips, mentors)"
-              }
-            },
-            {
-              "id": "success",
-              "label": {
-                "es": "¿Cómo sabrías que el piloto ha funcionado? ¿Qué medirías?",
-                "en": "How would you know the pilot has worked? What would you measure?",
-                "va": "Com sabries que el pilot ha funcionat? Què mesuraries?"
-              }
-            }
-          ]
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
         },
         "expectedOutputs": {
-          "items": [
-            {
-              "id": "pilot-design-doc",
-              "label": {
-                "es": "Documento de diseño del piloto con hipótesis, metodología, cronograma y métricas",
-                "en": "Pilot design document with hypothesis, methodology, timeline and metrics",
-                "va": "Document de disseny del pilot amb hipòtesi, metodologia, cronograma i mètriques"
-              }
-            },
-            {
-              "id": "curricular-fit-note",
-              "label": {
-                "es": "Nota de encaje curricular del piloto en el ciclo formativo identificado",
-                "en": "Pilot curricular fit note for the identified training cycle",
-                "va": "Nota d'encaix curricular del pilot en el cicle formatiu identificat"
-              }
-            },
-            {
-              "id": "replication-conditions",
-              "label": {
-                "es": "Condiciones de transferibilidad y requisitos mínimos para replicación por otros centros",
-                "en": "Transferability conditions and minimum requirements for replication by other centres",
-                "va": "Condicions de transferibilitat i requisits mínims per a replicació per altres centres"
-              }
-            }
-          ]
+          "items": []
         },
         "downloads": {
           "enabled": false,
-          "basePath": "/assets/downloads/mentorings/mentoring-diseno-pilotos-fp-empresa/",
+          "basePath": "",
           "items": []
         },
         "resources": {
-          "externalLinks": [
-            {
-              "id": "request-form",
-              "type": "external-form",
-              "label": {
-                "es": "Formulario de solicitud de mentoría",
-                "en": "Mentoring request form",
-                "va": "Formulari de sol·licitud de mentoria"
-              },
-              "url": "",
-              "access": {
-                "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-                "en": "The request is managed outside this website when an external system is available.",
-                "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-              }
-            }
-          ]
+          "externalLinks": []
         },
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar mentoría",
-              "en": "Request mentoring",
-              "va": "Sol·licitar mentoria"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": "",
             "system": ""
           },
-          "fallbackAction": {
-            "label": {
-              "es": "Ver mentoría",
-              "en": "View mentoring",
-              "va": "Veure mentoria"
-            },
-            "url": ""
-          },
+          "fallbackAction": null,
           "secondaryAction": null
         },
         "relations": {
@@ -35204,11 +32093,7 @@ export const MARKETPLACE_CONFIG = {
           "relatedPilots": [],
           "relatedCases": [],
           "relatedResources": [],
-          "possibleOutputs": [
-            "pilot",
-            "case",
-            "resource"
-          ]
+          "possibleOutputs": []
         },
         "hasDownloads": false,
         "downloadCount": 0,
@@ -35239,10 +32124,10 @@ export const MARKETPLACE_CONFIG = {
               "preparation": true,
               "expectedOutputs": true,
               "transferValue": true,
-              "downloads": false,
-              "resources": false,
+              "downloads": true,
+              "resources": true,
               "access": true,
-              "relations": true
+              "relations": false
             }
           }
         },
@@ -35298,7 +32183,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "mfg",
           "sectors": [],
-          "stakeholderCategory": "enterprise",
+          "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -35327,8 +32212,8 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "mentoringTeam": {
             "name": {
@@ -35336,38 +32221,20 @@ export const MARKETPLACE_CONFIG = {
               "en": "AI-STEAM Network Mentoring Pool — Industry 4.0 Specialists",
               "va": "AI-STEAM Network Mentoring Pool — Especialistes en Indústria 4.0"
             },
-            "type": "mentoring-pool",
+            "type": "",
             "role": {
               "es": "Mentores con experiencia en formulación de retos en contextos industriales y de FP",
               "en": "Mentors experienced in challenge framing in industrial and VET contexts",
               "va": "Mentors amb experiència en formulació de reptes en contextos industrials i de FP"
             },
-            "org": "AI-STEAM Network"
+            "org": ""
           },
-          "coordinator": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE",
-            "role": {
-              "es": "Coordinación Track B — sector industrial",
-              "en": "Track B coordination — industrial sector",
-              "va": "Coordinació Track B — sector industrial"
-            }
-          }
+          "coordinator": null
         },
         "classification": {
-          "aiSteamFocus": [
-            "data-ai",
-            "maker-steam",
-            "challenge-framing"
-          ],
-          "tripleTransition": [
-            "digital",
-            "green"
-          ],
-          "policyCluster": [
-            "learning-ecosystems",
-            "integrated-pedagogy"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -35380,16 +32247,12 @@ export const MARKETPLACE_CONFIG = {
           "pilotStatus": "",
           "sector": "mfg",
           "sectorLabel": {
-            "es": "Fabricación, manufactura e industria 4.0",
-            "en": "Manufacturing and Industry 4.0",
-            "va": "Fabricació, manufactura i indústria 4.0"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "stakeholderCategory": "enterprise",
-          "audience": [
-            "companies",
-            "vet-centres",
-            "industry-partners"
-          ]
+          "stakeholderCategory": "",
+          "audience": []
         },
         "transfer": {
           "type": "",
@@ -35404,7 +32267,7 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
@@ -35415,19 +32278,19 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "La empresa conserva la titularidad de su necesidad. No deben enviarse datos confidenciales, secretos industriales ni información de clientes a través de este sitio.",
-            "en": "The company retains ownership of its need. Confidential data, trade secrets or customer information must not be submitted through this site.",
-            "va": "L'empresa conserva la titularitat de la seua necessitat. No s'han d'enviar dades confidencials, secrets industrials ni informació de clients a través d'este lloc."
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "mentoringRequestAccess": "not-available",
-          "confidentialityLevel": "standard",
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
           "publicationNote": {
-            "es": "El reto resultante solo se publicará si la empresa lo autoriza y no contiene información sensible o confidencial.",
-            "en": "The resulting challenge will only be published if the company authorises it and it contains no sensitive or confidential information.",
-            "va": "El repte resultant només es publicarà si l'empresa ho autoritza i no conté informació sensible o confidencial."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -35455,57 +32318,13 @@ export const MARKETPLACE_CONFIG = {
             "va": "Ajudar empreses industrials a transformar una necessitat tècnica o de talent en un repte AI-STEAM publicable, amb abast realista, incentius atractius per a la comunitat i condicions clares de dades i propietat intel·lectual."
           },
           "problemAddressed": {
-            "es": "Las empresas tienen necesidades de innovación claras pero frecuentemente las plantean como soluciones técnicas muy específicas (RFP cerradas) o demasiado vagas para generar propuestas de calidad. La mentoría ayuda a encontrar el nivel de especificidad correcto y a construir el caso de valor para los equipos participantes.",
-            "en": "Companies have clear innovation needs but frequently frame them as very specific technical solutions (closed RFPs) or too vaguely to generate quality proposals. Mentoring helps find the right level of specificity and build the value case for participating teams.",
-            "va": "Les empreses tenen necessitats d'innovació clares però freqüentment les plantegen com a solucions tècniques molt específiques (RFP tancades) o massa vagues per generar propostes de qualitat. La mentoria ajuda a trobar el nivell d'especificitat correcte i a construir el cas de valor per als equips participants."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringScope": {
-            "included": [
-              {
-                "label": {
-                  "es": "Diagnóstico de la necesidad y traducción a lenguaje de reto abierto",
-                  "en": "Need diagnosis and translation into open challenge language",
-                  "va": "Diagnòstic de la necessitat i traducció a llenguatge de repte obert"
-                }
-              },
-              {
-                "label": {
-                  "es": "Definición del alcance, incentivos y condiciones de propiedad intelectual",
-                  "en": "Scope, incentives and intellectual property conditions definition",
-                  "va": "Definició de l'abast, incentius i condicions de propietat intel·lectual"
-                }
-              },
-              {
-                "label": {
-                  "es": "Revisión de la viabilidad del reto y adecuación al ecosistema AI-STEAM",
-                  "en": "Challenge feasibility review and AI-STEAM ecosystem fit assessment",
-                  "va": "Revisió de la viabilitat del repte i adequació a l'ecosistema AI-STEAM"
-                }
-              },
-              {
-                "label": {
-                  "es": "Orientación sobre cesión de datos y confidencialidad",
-                  "en": "Guidance on data sharing and confidentiality",
-                  "va": "Orientació sobre cessió de dades i confidencialitat"
-                }
-              }
-            ],
-            "excluded": [
-              {
-                "label": {
-                  "es": "Desarrollo técnico de la solución",
-                  "en": "Technical solution development",
-                  "va": "Desenvolupament tècnic de la solució"
-                }
-              },
-              {
-                "label": {
-                  "es": "Asesoramiento jurídico especializado en propiedad industrial",
-                  "en": "Specialist legal advice on industrial property",
-                  "va": "Assessorament jurídic especialitzat en propietat industrial"
-                }
-              }
-            ]
+            "included": [],
+            "excluded": []
           },
           "format": {
             "sessions": [
@@ -35520,10 +32339,7 @@ export const MARKETPLACE_CONFIG = {
                 ]
               }
             ],
-            "languageCodes": [
-              "es",
-              "va"
-            ],
+            "languageCodes": [],
             "availability": {
               "es": "Convocatoria abierta con plazas limitadas. Sesiones disponibles en horario de empresa (9:00-18:00).",
               "en": "Open call with limited places. Sessions available during business hours (9:00-18:00).",
@@ -35531,14 +32347,14 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "targetUsers": {
-            "es": "Directores de innovación, responsables de RRHH y formación, ingenieros de proceso y responsables de operaciones de empresas industriales de la Comunitat Valenciana.",
-            "en": "Innovation directors, HR and training managers, process engineers and operations managers of industrial companies in the Valencian Community.",
-            "va": "Directors d'innovació, responsables de RRHH i formació, enginyers de procés i responsables d'operacions d'empreses industrials de la Comunitat Valenciana."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "transferValue": {
-            "es": "Los retos bien formulados generan más y mejores propuestas de la comunidad, reducen el tiempo de evaluación y aumentan las probabilidades de encontrar una solución pilotable en 6-12 meses.",
-            "en": "Well-framed challenges generate more and better community proposals, reduce evaluation time and increase the chances of finding a pilotable solution within 6-12 months.",
-            "va": "Els reptes ben formulats generen més i millors propostes de la comunitat, redueixen el temps d'avaluació i augmenten les probabilitats de trobar una solució pilotable en 6-12 mesos."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "mentors": {
@@ -35547,11 +32363,11 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "pool-industria-40",
               "name": "AI-STEAM Mentoring Pool — Industria 4.0",
-              "organisation": "AI-STEAM Network",
+              "organisation": "",
               "role": {
-                "es": "Mentores especializados en transferencia tecnológica y formulación de retos industriales",
-                "en": "Mentors specialised in technology transfer and industrial challenge framing",
-                "va": "Mentors especialitzats en transferència tecnològica i formulació de reptes industrials"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "specialties": [
                 "industry-4-0",
@@ -35563,127 +32379,32 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "preparation": {
-          "requiredBeforeRequest": [
-            {
-              "label": {
-                "es": "Descripción de la necesidad técnica o de talento en 5-10 líneas",
-                "en": "Description of the technical or talent need in 5-10 lines",
-                "va": "Descripció de la necessitat tècnica o de talent en 5-10 línies"
-              }
-            },
-            {
-              "label": {
-                "es": "Indicación de si hay datos disponibles para compartir con los equipos participantes",
-                "en": "Indication of whether data is available to share with participating teams",
-                "va": "Indicació de si hi ha dades disponibles per compartir amb els equips participants"
-              }
-            },
-            {
-              "label": {
-                "es": "Idea inicial del incentivo o retribución para el equipo ganador",
-                "en": "Initial idea of the incentive or reward for the winning team",
-                "va": "Idea inicial de l'incentiu o retribució per a l'equip guanyador"
-              }
-            }
-          ],
-          "intakeQuestions": [
-            {
-              "id": "need",
-              "label": {
-                "es": "¿Cuál es el problema concreto que la empresa no puede resolver internamente?",
-                "en": "What is the specific problem the company cannot solve internally?",
-                "va": "Quin és el problema concret que l'empresa no pot resoldre internament?"
-              }
-            },
-            {
-              "id": "data",
-              "label": {
-                "es": "¿Qué datos o acceso al entorno real podría facilitar la empresa a los equipos?",
-                "en": "What data or real-environment access could the company provide to teams?",
-                "va": "Quines dades o accés a l'entorn real podria facilitar l'empresa als equips?"
-              }
-            },
-            {
-              "id": "outcome",
-              "label": {
-                "es": "¿Qué resultado mínimo necesita la empresa para considerar el reto un éxito?",
-                "en": "What minimum result does the company need to consider the challenge a success?",
-                "va": "Quin resultat mínim necessita l'empresa per considerar el repte un èxit?"
-              }
-            }
-          ]
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
         },
         "expectedOutputs": {
-          "items": [
-            {
-              "id": "challenge-draft",
-              "label": {
-                "es": "Borrador de reto listo para revisión técnica y publicación en el Marketplace",
-                "en": "Challenge draft ready for technical review and Marketplace publication",
-                "va": "Esborrany de repte llest per a revisió tècnica i publicació al Marketplace"
-              }
-            },
-            {
-              "id": "scope-document",
-              "label": {
-                "es": "Documento de alcance con incentivos, datos disponibles y condiciones de PI",
-                "en": "Scope document with incentives, available data and IP conditions",
-                "va": "Document d'abast amb incentius, dades disponibles i condicions de PI"
-              }
-            },
-            {
-              "id": "feasibility-note",
-              "label": {
-                "es": "Nota de viabilidad del reto en el ecosistema AI-STEAM",
-                "en": "Challenge feasibility note within the AI-STEAM ecosystem",
-                "va": "Nota de viabilitat del repte en l'ecosistema AI-STEAM"
-              }
-            }
-          ]
+          "items": []
         },
         "downloads": {
           "enabled": false,
-          "basePath": "/assets/downloads/mentorings/mentoring-formulacion-retos-industria/",
+          "basePath": "",
           "items": []
         },
         "resources": {
-          "externalLinks": [
-            {
-              "id": "request-form",
-              "type": "external-form",
-              "label": {
-                "es": "Formulario de solicitud de mentoría",
-                "en": "Mentoring request form",
-                "va": "Formulari de sol·licitud de mentoria"
-              },
-              "url": "",
-              "access": {
-                "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-                "en": "The request is managed outside this website when an external system is available.",
-                "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-              }
-            }
-          ]
+          "externalLinks": []
         },
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar mentoría",
-              "en": "Request mentoring",
-              "va": "Sol·licitar mentoria"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": "",
             "system": ""
           },
-          "fallbackAction": {
-            "label": {
-              "es": "Ver mentoría",
-              "en": "View mentoring",
-              "va": "Veure mentoria"
-            },
-            "url": ""
-          },
+          "fallbackAction": null,
           "secondaryAction": null
         },
         "relations": {
@@ -35692,10 +32413,7 @@ export const MARKETPLACE_CONFIG = {
           "relatedPilots": [],
           "relatedCases": [],
           "relatedResources": [],
-          "possibleOutputs": [
-            "challenge",
-            "validation"
-          ]
+          "possibleOutputs": []
         },
         "hasDownloads": false,
         "downloadCount": 0,
@@ -35726,10 +32444,10 @@ export const MARKETPLACE_CONFIG = {
               "preparation": true,
               "expectedOutputs": true,
               "transferValue": true,
-              "downloads": false,
-              "resources": false,
+              "downloads": true,
+              "resources": true,
               "access": true,
-              "relations": true
+              "relations": false
             }
           }
         },
@@ -35785,7 +32503,7 @@ export const MARKETPLACE_CONFIG = {
           "verificationStatus": "",
           "sector": "cci",
           "sectors": [],
-          "stakeholderCategory": "civic",
+          "stakeholderCategory": "",
           "levels": [],
           "pilotType": "",
           "validationType": "",
@@ -35814,8 +32532,8 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "name": "",
+            "org": ""
           },
           "mentoringTeam": {
             "name": {
@@ -35823,39 +32541,20 @@ export const MARKETPLACE_CONFIG = {
               "en": "AI-STEAM Network Mentoring Pool",
               "va": "AI-STEAM Network Mentoring Pool"
             },
-            "type": "mentoring-pool",
+            "type": "",
             "role": {
               "es": "Equipo de mentoría en formulación de retos y ética de IA",
               "en": "Mentoring team in challenge framing and AI ethics",
               "va": "Equip de mentoria en formulació de reptes i ètica d'IA"
             },
-            "org": "AI-STEAM Network"
+            "org": ""
           },
-          "coordinator": {
-            "name": "AI-STEAM Network",
-            "org": "CEICE",
-            "role": {
-              "es": "Coordinación Track B",
-              "en": "Track B coordination",
-              "va": "Coordinació Track B"
-            }
-          }
+          "coordinator": null
         },
         "classification": {
-          "aiSteamFocus": [
-            "creative-ai",
-            "responsible-ai",
-            "challenge-framing"
-          ],
-          "tripleTransition": [
-            "digital",
-            "social"
-          ],
-          "policyCluster": [
-            "learning-ecosystems",
-            "teacher-capacity",
-            "responsible-ai"
-          ],
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
           "engagementLevel": "",
           "evidenceMaturity": "idea",
           "lbdStage": "input",
@@ -35868,18 +32567,12 @@ export const MARKETPLACE_CONFIG = {
           "pilotStatus": "",
           "sector": "cci",
           "sectorLabel": {
-            "es": "Industrias culturales y creativas",
-            "en": "Cultural and creative industries",
-            "va": "Industries culturals i creatives"
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "stakeholderCategory": "civic",
-          "audience": [
-            "cultural-organisations",
-            "ngos",
-            "creative-smes",
-            "teachers",
-            "local-administration"
-          ]
+          "stakeholderCategory": "",
+          "audience": []
         },
         "transfer": {
           "type": "",
@@ -35894,7 +32587,7 @@ export const MARKETPLACE_CONFIG = {
         "detail": {},
         "access": {
           "pageVisibility": "public",
-          "pageLicense": "CC BY 4.0",
+          "pageLicense": "",
           "codeLicense": "",
           "dataAvailability": "",
           "sensitiveDataIncluded": false,
@@ -35905,19 +32598,19 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "rightsNote": {
-            "es": "La entidad conserva la titularidad de su idea. La red solo ayuda a formularla. No deben enviarse datos personales, confidenciales o sensibles a traves de esta web.",
-            "en": "The organisation keeps ownership of its idea. The network only helps frame it. Personal, confidential or sensitive data must not be submitted through this website.",
-            "va": "L'entitat conserva la titularitat de la seua idea. La xarxa nomes ajuda a formular-la. No s'han d'enviar dades personals, confidencials o sensibles a traves d'esta web."
+            "es": "",
+            "en": "",
+            "va": ""
           },
-          "mentoringRequestAccess": "not-available",
-          "confidentialityLevel": "standard",
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
           "publicationNote": {
-            "es": "El resultado de la mentoría solo se publicará como reto, caso, recurso o validación si la entidad lo autoriza y no contiene información sensible.",
-            "en": "The mentoring output will only be published as a challenge, case, resource or validation if the organisation authorises it and it contains no sensitive information.",
-            "va": "El resultat de la mentoria nomes es publicara com a repte, cas, recurs o validacio si l'entitat ho autoritza i no conte informacio sensible."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "publicUrl": "",
-          "license": "CC BY 4.0",
+          "license": "",
           "privacyLevel": "public"
         },
         "trackA": {
@@ -35945,57 +32638,13 @@ export const MARKETPLACE_CONFIG = {
             "va": "Ajudar entitats de la xarxa a transformar una idea inicial en un brief clar, publicable i accionable dins de l'ecosistema AI-STEAM."
           },
           "problemAddressed": {
-            "es": "Muchas organizaciones tienen ideas relevantes, pero necesitan apoyo para convertirlas en un reto, caso, recurso o validación con alcance, lenguaje y condiciones claras.",
-            "en": "Many organisations have relevant ideas but need support to turn them into a challenge, case, resource or validation with clear scope, language and conditions.",
-            "va": "Moltes organitzacions tenen idees rellevants, però necessiten suport per a convertir-les en un repte, cas, recurs o validació amb abast, llenguatge i condicions clares."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "mentoringScope": {
-            "included": [
-              {
-                "label": {
-                  "es": "Formulación de brief Track B",
-                  "en": "Track B brief framing",
-                  "va": "Formulació de brief Track B"
-                }
-              },
-              {
-                "label": {
-                  "es": "Revisión ética básica de uso de IA",
-                  "en": "Basic ethical review of AI use",
-                  "va": "Revisió ètica bàsica d'ús d'IA"
-                }
-              },
-              {
-                "label": {
-                  "es": "Clarificación de actores, entregables y valor de transferencia",
-                  "en": "Clarification of actors, outputs and transfer value",
-                  "va": "Clarificació d'actors, entregables i valor de transferència"
-                }
-              }
-            ],
-            "excluded": [
-              {
-                "label": {
-                  "es": "Evaluación académica formal",
-                  "en": "Formal academic assessment",
-                  "va": "Avaluació acadèmica formal"
-                }
-              },
-              {
-                "label": {
-                  "es": "Asesoramiento jurídico especializado",
-                  "en": "Specialist legal advice",
-                  "va": "Assessorament jurídic especialitzat"
-                }
-              },
-              {
-                "label": {
-                  "es": "Desarrollo técnico completo de soluciones",
-                  "en": "Full technical development of solutions",
-                  "va": "Desenvolupament tècnic complet de solucions"
-                }
-              }
-            ]
+            "included": [],
+            "excluded": []
           },
           "format": {
             "sessions": [
@@ -36010,11 +32659,7 @@ export const MARKETPLACE_CONFIG = {
                 ]
               }
             ],
-            "languageCodes": [
-              "es",
-              "en",
-              "va"
-            ],
+            "languageCodes": [],
             "availability": {
               "es": "Convocatoria continua mientras haya capacidad de mentoria disponible.",
               "en": "Rolling call while mentoring capacity is available.",
@@ -36022,14 +32667,14 @@ export const MARKETPLACE_CONFIG = {
             }
           },
           "targetUsers": {
-            "es": "Entidades culturales, centros educativos, ONG, administraciones locales y pymes creativas.",
-            "en": "Cultural organisations, schools, NGOs, local administrations and creative SMEs.",
-            "va": "Entitats culturals, centres educatius, ONG, administracions locals i pimes creatives."
+            "es": "",
+            "en": "",
+            "va": ""
           },
           "transferValue": {
-            "es": "La mentoría mejora la calidad de entrada al ecosistema, reduce ruido en la comunidad de práctica y ayuda a convertir ideas iniciales en objetos publicables o revisables.",
-            "en": "Mentoring improves ecosystem inputs, reduces noise in the community of practice and helps convert initial ideas into publishable or reviewable objects.",
-            "va": "La mentoria millora la qualitat d'entrada a l'ecosistema, redueix soroll en la comunitat de pràctica i ajuda a convertir idees inicials en objectes publicables o revisables."
+            "es": "",
+            "en": "",
+            "va": ""
           }
         },
         "mentors": {
@@ -36038,11 +32683,11 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "ai-steam-mentoring-pool",
               "name": "AI-STEAM Network Mentoring Pool",
-              "organisation": "AI-STEAM Network",
+              "organisation": "",
               "role": {
-                "es": "Mentoría en formulación de retos y ética de IA",
-                "en": "Mentoring in challenge framing and AI ethics",
-                "va": "Mentoria en formulació de reptes i ètica d'IA"
+                "es": "",
+                "en": "",
+                "va": ""
               },
               "specialties": [
                 "responsible-ai",
@@ -36054,191 +32699,33 @@ export const MARKETPLACE_CONFIG = {
           ]
         },
         "preparation": {
-          "requiredBeforeRequest": [
-            {
-              "label": {
-                "es": "Descripción breve de la necesidad o idea inicial",
-                "en": "Short description of the initial need or idea",
-                "va": "Descripció breu de la necessitat o idea inicial"
-              }
-            },
-            {
-              "label": {
-                "es": "Tipo de resultado deseado; reto, caso, recurso, validacion o piloto",
-                "en": "Desired output type; challenge, case, resource, validation or pilot",
-                "va": "Tipus de resultat desitjat; repte, cas, recurs, validacio o pilotatge"
-              }
-            },
-            {
-              "label": {
-                "es": "Informacion sobre posibles datos sensibles o restricciones de publicacion",
-                "en": "Information about possible sensitive data or publication constraints",
-                "va": "Informacio sobre possibles dades sensibles o restriccions de publicacio"
-              }
-            }
-          ],
-          "intakeQuestions": [
-            {
-              "id": "need",
-              "label": {
-                "es": "Qué necesidad quiere formular la entidad?",
-                "en": "What need does the organisation want to frame?",
-                "va": "Quina necessitat vol formular l'entitat?"
-              }
-            },
-            {
-              "id": "stakeholders",
-              "label": {
-                "es": "Qué actores deberían participar?",
-                "en": "Which actors should be involved?",
-                "va": "Quins actors haurien de participar?"
-              }
-            },
-            {
-              "id": "expected-output",
-              "label": {
-                "es": "Qué producto espera obtener tras la mentoría?",
-                "en": "What product is expected after the mentoring?",
-                "va": "Quin producte s'espera obtindre després de la mentoria?"
-              }
-            }
-          ]
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
         },
         "expectedOutputs": {
-          "items": [
-            {
-              "id": "track-b-brief",
-              "label": {
-                "es": "Brief Track B listo para publicar o revisar",
-                "en": "Track B brief ready to publish or review",
-                "va": "Brief Track B llest per a publicar o revisar"
-              }
-            },
-            {
-              "id": "refined-scope",
-              "label": {
-                "es": "Alcance, actores y entregables clarificados",
-                "en": "Scope, actors and outputs clarified",
-                "va": "Abast, actors i entregables clarificats"
-              }
-            },
-            {
-              "id": "risk-note",
-              "label": {
-                "es": "Nota inicial sobre datos sensibles, ética e IA responsable",
-                "en": "Initial note on sensitive data, ethics and responsible AI",
-                "va": "Nota inicial sobre dades sensibles, ètica i IA responsable"
-              }
-            }
-          ]
+          "items": []
         },
         "downloads": {
           "enabled": false,
-          "basePath": "/assets/downloads/mentorings/responsible-ai-creative-briefs/",
-          "items": [
-            {
-              "id": "brief-template",
-              "type": "brief-template",
-              "title": {
-                "es": "Plantilla de brief Track B",
-                "en": "Track B brief template",
-                "va": "Plantilla de brief Track B"
-              },
-              "description": {
-                "es": "Documento editable para preparar la necesidad, actores, alcance, entregables y condiciones de publicacion antes de la mentoria.",
-                "en": "Editable document to prepare the need, actors, scope, outputs and publication conditions before the mentoring session.",
-                "va": "Document editable per a preparar la necessitat, actors, abast, entregables i condicions de publicació abans de la mentoria."
-              },
-              "files": [],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "responsible-ai-checklist",
-              "type": "checklist",
-              "title": {
-                "es": "Checklist de IA responsable para briefs creativos",
-                "en": "Responsible AI checklist for creative briefs",
-                "va": "Checklist d'IA responsable per a briefs creatius"
-              },
-              "description": {
-                "es": "Lista breve para revisar finalidad, datos, riesgos, transparencia y límites del uso de IA en una propuesta inicial.",
-                "en": "Short checklist to review purpose, data, risks, transparency and AI-use boundaries in an initial proposal.",
-                "va": "Llista breu per a revisar finalitat, dades, riscos, transparència i límits de l'ús d'IA en una proposta inicial."
-              },
-              "files": [],
-              "license": "",
-              "showOnCard": true,
-              "showOnDetail": true
-            },
-            {
-              "id": "mentoring-preparation-guide",
-              "type": "preparation-guide",
-              "title": {
-                "es": "Guia para preparar la sesion de mentoria",
-                "en": "Guide to prepare the mentoring session",
-                "va": "Guia per a preparar la sessio de mentoria"
-              },
-              "description": {
-                "es": "Orientaciones para llegar a la mentoría con una idea mínima, preguntas útiles y límites de publicación claros.",
-                "en": "Guidance to arrive at the mentoring session with a minimum idea, useful questions and clear publication limits.",
-                "va": "Orientacions per a arribar a la mentoria amb una idea mínima, preguntes útils i límits de publicació clars."
-              },
-              "files": [],
-              "license": "",
-              "showOnCard": false,
-              "showOnDetail": true
-            }
-          ]
+          "basePath": "",
+          "items": []
         },
         "resources": {
-          "externalLinks": [
-            {
-              "id": "request-form",
-              "type": "external-form",
-              "label": {
-                "es": "Formulario externo de solicitud",
-                "en": "External request form",
-                "va": "Formulari extern de sol·licitud"
-              },
-              "url": "",
-              "access": {
-                "es": "La solicitud se gestiona fuera de esta web cuando exista un sistema externo habilitado.",
-                "en": "The request is managed outside this website when an external system is available.",
-                "va": "La sol·licitud es gestiona fora d'esta web quan existisca un sistema extern habilitat."
-              }
-            }
-          ]
+          "externalLinks": []
         },
         "externalFlow": {
           "enabled": false,
           "primaryAction": {
             "label": {
-              "es": "Solicitar mentoría",
-              "en": "Request mentoring",
-              "va": "Sol·licitar mentoria"
+              "es": "",
+              "en": "",
+              "va": ""
             },
             "url": "",
             "system": ""
           },
-          "fallbackAction": {
-            "label": {
-              "es": "Ver mentoria",
-              "en": "View mentoring",
-              "va": "Veure mentoria"
-            },
-            "url": ""
-          },
-          "secondaryAction": {
-            "label": {
-              "es": "Descargar plantilla de brief",
-              "en": "Download brief template",
-              "va": "Descarregar plantilla de brief"
-            },
-            "downloadId": "brief-template",
-            "url": ""
-          }
+          "fallbackAction": null,
+          "secondaryAction": null
         },
         "relations": {
           "relatedChallenges": [],
@@ -36246,12 +32733,7 @@ export const MARKETPLACE_CONFIG = {
           "relatedPilots": [],
           "relatedCases": [],
           "relatedResources": [],
-          "possibleOutputs": [
-            "challenge",
-            "validation",
-            "resource",
-            "case"
-          ]
+          "possibleOutputs": []
         },
         "hasDownloads": false,
         "downloadCount": 0,
@@ -36263,7 +32745,7 @@ export const MARKETPLACE_CONFIG = {
             "showProvider": true,
             "showSpecialties": true,
             "showAvailability": true,
-            "showDownloadsIndicator": true,
+            "showDownloadsIndicator": false,
             "showChatBadge": false,
             "mainBlockLabel": {
               "es": "Qué ofrece",
@@ -36282,10 +32764,10 @@ export const MARKETPLACE_CONFIG = {
               "preparation": true,
               "expectedOutputs": true,
               "transferValue": true,
-              "downloads": false,
-              "resources": false,
+              "downloads": true,
+              "resources": true,
               "access": true,
-              "relations": true
+              "relations": false
             }
           }
         },
