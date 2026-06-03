@@ -1102,9 +1102,27 @@ function renderCardShell(item, tab, body, options = {}) {
     </article>`;
 }
 
+// Acciones de card: descargar ficha (si hay archivo) y solicitar adhesión (si hay
+// URL). Cada una solo aparece si su dato existe; si no, no ocupa espacio.
+function renderCardActions(item) {
+  const fichaUrl = item.ficha?.publicPath || '';
+  const adhesionUrl = (item.adhesionForm?.url || '').trim();
+  const parts = [];
+  if (fichaUrl) {
+    const label = pickLang({ es: 'Descargar ficha', en: 'Download brief', va: 'Descarregar fitxa' });
+    parts.push(`<a href="${esc(fichaUrl)}" download class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(label)} <i data-lucide="download" class="h-4 w-4"></i></a>`);
+  }
+  if (adhesionUrl) {
+    const label = pickLang({ es: 'Solicitar adhesión', en: 'Request membership', va: 'Sol·licitar adhesió' });
+    parts.push(`<a href="${esc(adhesionUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(label)} <i data-lucide="external-link" class="h-4 w-4"></i></a>`);
+  }
+  return parts.join('');
+}
+
 function renderCardFooter(item, tab, entity, dateLabel, ctaHtml = null) {
   const defaultCta = `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang(tab.ctaLabel, uiText('viewDetail')))} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
   const cta = ctaHtml || defaultCta;
+  const actions = renderCardActions(item);
   const hasInfo = entity || dateLabel;
   return `
     <div class="mt-5 border-t border-eu-border pt-4">
@@ -1112,7 +1130,7 @@ function renderCardFooter(item, tab, entity, dateLabel, ctaHtml = null) {
         ${entity ? `<p class="font-bold uppercase tracking-wide text-gray-400">${esc(pickLang(FIELD_LABELS.entity))}</p><p class="mt-0.5 font-semibold">${esc(entity)}</p>` : ''}
         ${dateLabel ? `<p class="${entity ? 'mt-2' : ''} font-semibold">${esc(dateLabel)}</p>` : ''}
       </div>` : ''}
-      <div class="flex justify-end">${cta}</div>
+      <div class="flex flex-wrap items-center justify-end gap-x-4 gap-y-2">${actions}${cta}</div>
     </div>`;
 }
 

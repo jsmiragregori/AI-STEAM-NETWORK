@@ -3713,6 +3713,13 @@ export const MARKETPLACE_CONFIG = {
           "va": "28 de maig de 2026"
         }
       },
+      "ficha": {
+        "file": "reto-personalizacion-itinerarios-fp-edu.pdf",
+        "publicPath": "/assets/downloads/marketplace/challenges/reto-personalizacion-itinerarios-fp-edu.pdf"
+      },
+      "adhesionForm": {
+        "url": "https://forms.cloud.microsoft/e/rUwScfwTPC"
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -4309,6 +4316,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "22 de maig de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -4975,6 +4986,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -5464,6 +5479,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -5950,6 +5969,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "22 de maig de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -6438,6 +6461,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -6922,6 +6949,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "20 de maig de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -7420,6 +7451,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "20 de maig de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "classification": {
         "aiSteamFocus": [
@@ -8375,6 +8410,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "20 de maig de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "classification": {
         "aiSteamFocus": [
@@ -9348,6 +9387,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -9836,6 +9879,10 @@ export const MARKETPLACE_CONFIG = {
           "en": "November 28, 2026",
           "va": "28 de novembre de 2026"
         }
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -10342,6 +10389,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -10829,6 +10880,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "15 de setembre de 2026"
         }
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -11297,6 +11352,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "2 de maig de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -12070,6 +12129,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "2 de maig de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "classification": {
         "aiSteamFocus": [
@@ -12867,6 +12930,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "30 de setembre de 2026"
         }
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -13373,6 +13440,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "31 d'octubre de 2026"
         }
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -13877,6 +13948,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "1 de maig de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "classification": {
         "aiSteamFocus": [
@@ -14529,6 +14604,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -15108,6 +15187,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "30 de setembre de 2026"
         }
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -15564,6 +15647,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "25 d'abril de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -16119,6 +16206,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "20 d'abril de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -16743,6 +16834,13 @@ export const MARKETPLACE_CONFIG = {
           "va": "31 d'agost de 2026"
         }
       },
+      "ficha": {
+        "file": "reto-control-calidad-vision-ia-mfg.pdf",
+        "publicPath": "/assets/downloads/marketplace/challenges/reto-control-calidad-vision-ia-mfg.pdf"
+      },
+      "adhesionForm": {
+        "url": "https://example.org/adhesion-demo"
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -17244,6 +17342,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "20 d'abril de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -17803,6 +17905,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "15 d'abril de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "classification": {
         "aiSteamFocus": [
@@ -18785,6 +18891,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -19364,6 +19474,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -19920,6 +20034,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "15 d'octubre de 2026"
         }
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -20398,6 +20516,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "5 d'abril de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -21000,6 +21122,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "classification": {
         "aiSteamFocus": [
           "responsible-ai",
@@ -21457,6 +21583,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "classification": {
         "aiSteamFocus": [
           "data-ai",
@@ -21912,6 +22042,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "30 de març de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -22475,6 +22609,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "22 de març de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -23055,6 +23193,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "classification": {
         "aiSteamFocus": [
           "data-ai",
@@ -23520,6 +23662,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "10 de març de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -24069,6 +24215,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "classification": {
         "aiSteamFocus": [
           "data-ai",
@@ -24532,6 +24682,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "1 de març de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "classification": {
         "aiSteamFocus": [
@@ -25363,6 +25517,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
@@ -25964,6 +26122,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "classification": {
         "aiSteamFocus": [
           "data-ai",
@@ -26437,6 +26599,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "14 de febrer de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "ownership": {
         "publisher": {
@@ -27014,6 +27180,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "10 de febrer de 2026"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "classification": {
         "aiSteamFocus": [
@@ -27817,6 +27987,10 @@ export const MARKETPLACE_CONFIG = {
         "revisionDateLabel": null,
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "classification": {
         "aiSteamFocus": [
           "data-ai",
@@ -28584,6 +28758,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "classification": {
         "aiSteamFocus": [
           "data-ai",
@@ -29077,6 +29255,10 @@ export const MARKETPLACE_CONFIG = {
         },
         "deadlineLabel": null
       },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
+      },
       "classification": {
         "aiSteamFocus": [
           "data-ai",
@@ -29557,6 +29739,10 @@ export const MARKETPLACE_CONFIG = {
           "va": "20 d'octubre de 2025"
         },
         "deadlineLabel": null
+      },
+      "ficha": null,
+      "adhesionForm": {
+        "url": ""
       },
       "classification": {
         "aiSteamFocus": [
@@ -30060,6 +30246,13 @@ export const MARKETPLACE_CONFIG = {
             "en": "May 28, 2026",
             "va": "28 de maig de 2026"
           }
+        },
+        "ficha": {
+          "file": "reto-personalizacion-itinerarios-fp-edu.pdf",
+          "publicPath": "/assets/downloads/marketplace/challenges/reto-personalizacion-itinerarios-fp-edu.pdf"
+        },
+        "adhesionForm": {
+          "url": "https://forms.cloud.microsoft/e/rUwScfwTPC"
         },
         "ownership": {
           "publisher": {
@@ -30662,6 +30855,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "28 de novembre de 2026"
           }
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -31171,6 +31368,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "15 de setembre de 2026"
           }
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -31641,6 +31842,10 @@ export const MARKETPLACE_CONFIG = {
             "en": "September 30, 2026",
             "va": "30 de setembre de 2026"
           }
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "ownership": {
           "publisher": {
@@ -32148,6 +32353,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "31 d'octubre de 2026"
           }
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -32654,6 +32863,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "30 de setembre de 2026"
           }
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -33113,6 +33326,13 @@ export const MARKETPLACE_CONFIG = {
             "en": "August 31, 2026",
             "va": "31 d'agost de 2026"
           }
+        },
+        "ficha": {
+          "file": "reto-control-calidad-vision-ia-mfg.pdf",
+          "publicPath": "/assets/downloads/marketplace/challenges/reto-control-calidad-vision-ia-mfg.pdf"
+        },
+        "adhesionForm": {
+          "url": "https://example.org/adhesion-demo"
         },
         "ownership": {
           "publisher": {
@@ -33619,6 +33839,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "15 d'octubre de 2026"
           }
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -34100,6 +34324,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "2 de maig de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "ownership": {
           "publisher": {
@@ -34868,6 +35096,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -35444,6 +35676,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -35998,6 +36234,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "20 d'abril de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "ownership": {
           "publisher": {
@@ -36619,6 +36859,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -37172,6 +37416,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "10 d'abril de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "ownership": {
           "publisher": {
@@ -37752,6 +38000,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "5 d'abril de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "ownership": {
           "publisher": {
@@ -38353,6 +38605,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -38915,6 +39171,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "22 de març de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "ownership": {
           "publisher": {
@@ -39493,6 +39753,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -40038,6 +40302,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "28 de febrer de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "ownership": {
           "publisher": {
@@ -40637,6 +40905,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -41217,6 +41489,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "20 de maig de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "classification": {
           "aiSteamFocus": [
@@ -42172,6 +42448,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "20 de maig de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "classification": {
           "aiSteamFocus": [
@@ -43152,6 +43432,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "classification": {
           "aiSteamFocus": [
             "data-ai",
@@ -43949,6 +44233,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "15 d'abril de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "classification": {
           "aiSteamFocus": [
@@ -44938,6 +45226,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "classification": {
           "aiSteamFocus": [
             "responsible-ai",
@@ -45774,6 +46066,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "classification": {
           "aiSteamFocus": [
             "data-ai",
@@ -46576,6 +46872,10 @@ export const MARKETPLACE_CONFIG = {
           "revisionDateLabel": null,
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "classification": {
           "aiSteamFocus": [
             "data-ai",
@@ -47345,6 +47645,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "classification": {
           "aiSteamFocus": [
             "responsible-ai",
@@ -47997,6 +48301,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "classification": {
           "aiSteamFocus": [
             "responsible-ai",
@@ -48453,6 +48761,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "1 d'abril de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "classification": {
           "aiSteamFocus": [
@@ -48911,6 +49223,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "20 de març de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "classification": {
           "aiSteamFocus": [
@@ -49380,6 +49696,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "classification": {
           "aiSteamFocus": [
             "data-ai",
@@ -49839,6 +50159,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "20 de febrer de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "classification": {
           "aiSteamFocus": [
@@ -50315,6 +50639,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "25 de gener de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "classification": {
           "aiSteamFocus": [
@@ -50809,6 +51137,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "classification": {
           "aiSteamFocus": [
             "data-ai",
@@ -51289,6 +51621,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "20 d'octubre de 2025"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "classification": {
           "aiSteamFocus": [
@@ -51787,6 +52123,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "22 de maig de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "ownership": {
           "publisher": {
@@ -52453,6 +52793,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -52942,6 +53286,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -53428,6 +53776,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "22 de maig de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "ownership": {
           "publisher": {
@@ -53916,6 +54268,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -54400,6 +54756,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "20 de maig de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "ownership": {
           "publisher": {
@@ -54890,6 +55250,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -55375,6 +55739,10 @@ export const MARKETPLACE_CONFIG = {
           },
           "deadlineLabel": null
         },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
@@ -55857,6 +56225,10 @@ export const MARKETPLACE_CONFIG = {
             "va": "10 d'abril de 2026"
           },
           "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
         },
         "ownership": {
           "publisher": {
