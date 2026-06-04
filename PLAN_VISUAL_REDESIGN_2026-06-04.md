@@ -55,32 +55,37 @@ Aliases existentes (no usar para texto pequeño): eu-teal == eu-blue, eu-orange 
 
 NUNCA editar `tailwind-output.css` ni `main.css`. Todo se hace con clases utilitarias.
 
-### DS.2 — Ritmo de bloques (alternación)
+### DS.2 — Color como ANCLA, no como banda  ⚠️ CORREGIDO 2026-06-04
 
-Regla: **dos bloques de color (azul/morado) NUNCA van adyacentes**; siempre se separan con
-un bloque Sand Beige de descanso. El color alterna azul → (beige) → morado → (beige) → azul…
-El hero puede ser degradado azul→morado (firma visual; decisión aprobada por humano).
+DECISIÓN HUMANA (2026-06-04): el modelo de **bloques de color saturados alternos a sangre
+completa** en el cuerpo (probado en F2 v1) se **RECHAZÓ por agresivo y cansado para la vista**.
+Modelo correcto, editorial y sobrio (validado con skill ui-ux-pro-max → estilo editorial/magazine:
+fondos claros + un acento de color + espacio en blanco):
 
-Proporción objetivo en páginas tipo Home: ~50% color, ~40% beige, hero degradado.
-En páginas de sección (Sectores, Formación, etc.): hero de color + cuerpo mayormente Sand Beige
-con como mucho un bloque de color de refuerzo. Esto evita saturación (el skill avisa: evitar
-monotonía/estridencia).
+- **Color fuerte (Electric Blue / Deep Purple) SOLO en ANCLAS**: hero (degradado), barra de
+  navegación y footer. NUNCA secciones de cuerpo saturadas alternas.
+- **Cuerpo de página**: fondos claros y cálidos con alternancia **SUTIL** Sand Beige
+  (`bg-eu-yellow`) ↔ blanco (`bg-white`). Se elimina el gris frío (`bg-eu-bg`). La separación
+  se logra con el cambio sutil de tono + espacio + sombras de card, no con bandas de color.
+- **La marca vive en las CARDS y los acentos**: tintes suaves, bordes superiores de color
+  (`border-t-4 border-eu-*`), iconos de color, eyebrows y botones en color. (Email: "las cards
+  pueden ser lilas/degradados de la paleta".)
+- Los HEROES de sección (Sectores, Formación, etc.) sí son un bloque de color sólido: es un
+  único ancla superior, no una banda alterna → aceptable.
 
-### DS.3 — Regla de cards (ELEVACIÓN)
+### DS.3 — Cards (tonos de marca como acento)
 
-Principio único y consistente: **la card siempre es más clara que el fondo sobre el que se apoya.**
+Las cards son donde vive el color de la paleta en el cuerpo. NO aplanarlas a un solo color.
 
-| Fondo de la sección | Card interna | Texto de la card | Borde | Sombra | Radio |
-|---|---|---|---|---|---|
-| Electric Blue / Deep Purple (oscuro) | **Sand Beige** `bg-eu-yellow` | `text-eu-text` (titulares), `text-gray-700` (cuerpo) | sin borde o `border-transparent` | `shadow-lg` | `rounded-xl` |
-| Sand Beige (claro) | **Blanco** `bg-white` | `text-eu-text` / `text-gray-600` | `border border-eu-border` | `shadow-sm` | `rounded-xl` |
+- Sobre sección clara (beige/blanco): card `bg-white` o **tinte suave de marca** (`bg-eu-blue/5`,
+  pastel) con acento: `border-t-4 border-eu-blue|eu-purple`, icono de color y sombra suave.
+- **Mantener** los degradados pastel suaves existentes (dualFocus) y los bordes de tono
+  (ecosystem): son elegantes y on-brand. NO sustituirlos por beige plano.
+- Radio `rounded-xl`; sombra `shadow-sm`/`shadow-md`; `hover:shadow-lg` si es interactiva + `cursor-pointer`.
+- Cards de ítems Marketplace/course/news/partner: `bg-white` (REGLA_4).
+- NO usar `bg-white/10` translúcido (anti-patrón del skill: ilegible).
 
-- Cards interactivas (link/botón): añadir `hover:shadow-xl transition-shadow duration-200 cursor-pointer`.
-- NO usar `bg-white/10` translúcido (anti-patrón del skill: ilegible). Si se quiere matiz, `bg-white/80`+.
-- Cards de ítems del Marketplace (challenge/case/pilot/validation/mentoring) y course/news/partner:
-  mantienen `bg-white` SIEMPRE (van sobre secciones Sand Beige). Ver REGLA_4.
-- Acento opcional elegante en cards Beige sobre color: barra superior `border-t-4 border-eu-purple`
-  (o eu-blue), reutilizando el patrón `border-t-4` que ya existe en ecosystem cards.
+> DS.4 (texto sobre color) aplica SOLO dentro de las anclas (heroes/nav/footer), no en el cuerpo.
 
 ### DS.4 — Texto sobre fondo de color (oscuro)
 
@@ -228,105 +233,59 @@ OPCIONAL (sólo si la revisión humana lo pide): revisar la barra superior blanc
 
 ---
 
-## FASE_F2: Home — transformación completa  ⭐ (fase grande y visible)
+## FASE_F2: Home — alineación sutil (modelo v3)  ⭐
 
-STATUS: `[~] EN_REVISION`  (aplicado 2026-06-04; verificado por captura a 1440px)
-DEPENDENCIAS: F0, F1 (ya aplicadas)
+STATUS: `[~] EN_REVISION`  (v3 aplicada 2026-06-04; verificada por captura a 1440px en :3000)
+DEPENDENCIAS: F0, F1
 ARCHIVOS: `assets/js/views/home.js`
 
-CONTEXTO: la Home tiene 8 bloques, hoy TODOS en blanco/gris. Orden real en `render()`:
+HISTORIAL: v1 usaba bloques de color saturados alternos → RECHAZADO por agresivo (ver DS.2).
+v3 (actual) = alineación sutil: color sólo en hero (ancla); cuerpo en alternancia cálida
+Sand Beige ↔ blanco; cards conservan sus tonos de marca; titulares y botones editoriales.
+
+CONTEXTO: la Home tiene 8 bloques. Orden real en `render()`:
 Hero → IsNot → Enred → Ecosystem → Sectors → DualFocus → LatestChallenges → Partners.
 
-ASIGNACIÓN_DE_COLOR (aplicar DS.2; dos colores nunca adyacentes, beige intercala):
+ASIGNACIÓN_DE_FONDO (v3 — sutil; alternancia cálida, sin bandas de color):
 
-| # | Bloque | Función | Fondo actual | → Fondo objetivo | Cards internas |
-|---|---|---|---|---|---|
-| 1 | Hero | `renderHeroBlock` (L442) | `bg-linear-to-br from-eu-blue to-eu-purple` | **mantener degradado** | stats: hoy `bg-white/10` → cambiar a `bg-white/15` o Beige `bg-eu-yellow/15`; texto blanco |
-| 2 | IsNot | `renderIsNotBlock` (L129) | `bg-white border-b border-eu-border` | **`bg-eu-purple`** (quitar border-b) | cards Beige (`bg-eu-yellow`), conservar tonos verde/rojo semánticos |
-| 3 | Enred | `renderEnredBlock` (L176) | `bg-eu-bg border-b border-eu-border` | **`bg-eu-yellow`** (Beige, descanso; quitar border-b) | cards blancas (`bg-white`) |
-| 4 | Ecosystem | `renderEcosystemBlock` (L225) | `bg-white border-b border-eu-border` | **`bg-eu-blue`** (quitar border-b) | cards Beige, mantener `border-t-4` de tono |
-| 5 | Sectors | `renderSectorsBlock` (L384) | `bg-eu-bg` | **`bg-eu-yellow`** (Beige, descanso) | tiles blancas (`bg-white`) |
-| 6 | DualFocus | `renderDualFocusBlock` (L297) | `bg-white` | **`bg-eu-purple`** | cards: hoy degradados naranja/morado → Beige sólido `bg-eu-yellow` (ver nota) |
-| 7 | LatestChallenges | `renderLatestChallengesBlock` (L349) | `bg-eu-bg border-t border-eu-border` | **`bg-eu-yellow`** (Beige; quitar border-t) | challenge cards blancas (REGLA_4) |
-| 8 | Partners | `renderConsortiumBlock` (L415) | `bg-white border-t border-eu-border` | **`bg-eu-blue`** (logos en tiles blancas resaltan; quitar border-t) | tiles de logo ya blancas (inline) → mantener |
+| # | Bloque | Función | Fondo v3 |
+|---|---|---|---|
+| 1 | Hero | `renderHeroBlock` | degradado `from-eu-blue to-eu-purple` (ancla; mantener) |
+| 2 | IsNot | `renderIsNotBlock` | `bg-eu-yellow` (Sand Beige) |
+| 3 | Enred | `renderEnredBlock` | `bg-white` |
+| 4 | Ecosystem | `renderEcosystemBlock` | `bg-eu-yellow` |
+| 5 | Sectors | `renderSectorsBlock` | `bg-white` |
+| 6 | DualFocus | `renderDualFocusBlock` | `bg-eu-yellow` |
+| 7 | LatestChallenges | `renderLatestChallengesBlock` | `bg-white` |
+| 8 | Partners | `renderConsortiumBlock` | `bg-eu-yellow` |
 
-Secuencia resultante: degradado → MORADO → beige → AZUL → beige → MORADO → beige → AZUL → (footer navy).
+Secuencia: hero degradado → beige → blanco → beige → blanco → beige → blanco → beige → footer navy.
 
-#### Detalle por bloque
+CAMBIOS APLICADOS (v3):
+- Fondos: se eliminó el gris frío `bg-eu-bg` y los divisores `border-b/t border-eu-border`;
+  alternancia Sand Beige ↔ blanco (sutil, cálida).
+- Hero (ancla, mantiene degradado):
+  - Botones editoriales: primario `bg-eu-yellow text-eu-purple … rounded-sm uppercase tracking-wide`
+    (+ focus ring); secundario `border-2 border-white/60 … rounded-sm uppercase tracking-wide`.
+  - Badge eyebrow `tracking-widest` → `tracking-[0.2em]`. Stat boxes `bg-white/10` → `bg-white/15`.
+- Titulares de sección: `text-2xl font-bold` → `text-3xl md:text-4xl font-extrabold tracking-tight`
+  (todos `text-eu-text`, porque el cuerpo es claro).
+- Eyebrow de Partners: `text-gray-500 tracking-widest` → `text-eu-purple tracking-[0.2em]`.
+- CARDS: se CONSERVAN sus tonos de marca originales (ecosystem `border-t-4` de tono + icono color;
+  enred `thematic` borde morado; dualFocus degradados pastel; isNot neutral azul). NO se aplanaron.
 
-BLOQUE 1 — Hero (`renderHeroBlock`):
-- Mantener `bg-linear-to-br from-eu-blue to-eu-purple text-white`.
-- VERIFICAR que la clase `bg-linear-to-br` renderiza (Tailwind v4). Si NO se viera el degradado,
-  fallback `bg-eu-blue`. (Nota: CLAUDE.md menciona `bg-gradient-to-*`; en v4 es `bg-linear-to-*`.)
-- Botones del hero → DS.5 (sobre color):
-  - Primario "subir reto": `bg-eu-orange …` → `bg-eu-yellow text-eu-purple hover:bg-white rounded-sm px-6 py-3 text-sm font-bold uppercase tracking-wide` + mantener icono Lucide.
-  - Secundario "solicitar adhesión": ya es `border-2 border-white/50 text-white` → ajustar a `border-white/60 hover:bg-white/10 rounded-sm uppercase tracking-wide font-bold`.
-- Badge eyebrow: ya `bg-eu-yellow/20 text-eu-yellow uppercase tracking-widest` → OK (subir a `tracking-[0.2em]`).
-- Stat boxes: `bg-white/10` → `bg-white/15` (mejor legibilidad; el skill desaconseja /10). Icono `text-eu-yellow` OK.
+PENDIENTE / posibles iteraciones (a decisión humana):
+- Reforzar (si se quiere más marca) los tintes de card: p.ej. neutral isNot → `bg-eu-purple/5`.
+- Suavizar aún más la alternancia (todo Sand Beige con cards elevadas) si el blanco contrasta mucho.
 
-BLOQUE 2 — IsNot (`renderIsNotBlock`):
-- Wrapper `section`: `bg-white border-b border-eu-border` → `bg-eu-purple`.
-- h2: `text-eu-text` → `text-white` + subir a `text-3xl md:text-4xl font-extrabold tracking-tight`.
-- Cards: la función usa `cardToneClasses`. Tonos `positive`(verde)/`negative`(rojo) son SEMÁNTICOS → conservar.
-  El tono `neutral` hoy es `bg-white border-eu-border` → cambiar a `bg-eu-yellow border-transparent shadow-lg`.
-  (Las verdes/rojas sobre morado quedan como cards claras legibles; añadir `shadow-lg` a todas para elevación.)
-- Texto de items dentro de cards: se mantiene (van sobre card clara).
+VERIFICACION (F2 v3):
+1. Scroll completo: alternancia cálida sutil, sin bandas de color que cansen. Color sólo en hero/footer.
+2. Sin `bg-eu-bg` ni divisores gris en el cuerpo.
+3. Cards con sus tonos de marca, legibles; tonos verde/rojo is/is-not intactos.
+4. Botones del hero editoriales con foco visible.
+5. 375px y 1440px; ES/EN/VA; contraste AA.
 
-BLOQUE 3 — Enred (`renderEnredBlock`):
-- Wrapper: `bg-eu-bg border-b border-eu-border` → `bg-eu-yellow`.
-- h2: `text-eu-text` (sobre beige) → mantener, subir tamaño editorial (`text-3xl md:text-4xl font-extrabold tracking-tight`).
-- Cards (`enredToneClasses`): hoy `bg-white border…` → mantener `bg-white` (blanco sobre beige = elevación correcta).
-  El tono `institutional`/`neutral` usa `bg-eu-bg` en pills → cambiar pill bg a `bg-white border-eu-border` para no introducir gris.
-- Conector y descripción: texto `text-gray-600` sobre beige OK.
-
-BLOQUE 4 — Ecosystem (`renderEcosystemBlock`):
-- Wrapper: `bg-white border-b border-eu-border` → `bg-eu-blue`.
-- h2 + descripción: → `text-white` / `text-white/85`, h2 editorial.
-- Cards: hoy `bg-white rounded-xl border-t-4 {tone.border} border border-eu-border shadow-sm` →
-  cambiar `bg-white` a `bg-eu-yellow`, quitar `border border-eu-border` (dejar sólo `border-t-4 {tone.border}`),
-  subir a `shadow-lg`. El `border-t-4` de tono (teal/blue/orange/purple) se mantiene como acento elegante.
-- Textos internos de card (title `text-eu-text`, subtitle/desc `text-gray-500/600`) → se mantienen (card clara).
-- Tag `bg-eu-bg` → `bg-white` (evitar gris dentro de card beige).
-
-BLOQUE 5 — Sectors (`renderSectorsBlock`):
-- Wrapper: `bg-eu-bg` → `bg-eu-yellow`.
-- h2 + descripción sobre beige → mantener color, subir titular a editorial.
-- Tiles de sector: `bg-white border-eu-border hover:border-eu-blue` → mantener blancas (elevación sobre beige).
-- "Ver todo" link `text-eu-blue` sobre beige → OK.
-- Emoji de sector: contenido existente, no tocar (fuera de alcance; ver DS.7 excepción).
-
-BLOQUE 6 — DualFocus (`renderDualFocusBlock`):
-- Wrapper: `bg-white` → `bg-eu-purple`.
-- h2 + descripción → blanco / white/85, editorial.
-- Cards (`dualFocusToneClasses`): hoy degradados `from-orange-50…`/`from-purple-50…` →
-  sustituir por `bg-eu-yellow border-transparent shadow-lg` (sólido, sin degradado pastel; coherente
-  con DS.3). Mantener iconos de tono (`bg-eu-orange`/`bg-purple-600`) y bullets — viven en card clara.
-  El tono `neutral` `bg-white` → `bg-eu-yellow`.
-- Textos internos (`text-gray-700`, coordinator de tono) → se mantienen.
-
-BLOQUE 7 — LatestChallenges (`renderLatestChallengesBlock`):
-- Wrapper: `bg-eu-bg border-t border-eu-border` → `bg-eu-yellow`.
-- h2 sobre beige → editorial. "Ver todo" `text-eu-blue` → OK.
-- Challenge cards: `bg-white border-eu-border hover:border-eu-blue` → MANTENER blancas (REGLA_4).
-- Badge interno `bg-eu-bg` (sector) → `bg-white border-eu-border` para no meter gris.
-- Empty state `bg-white border-dashed` → mantener.
-
-BLOQUE 8 — Partners (`renderConsortiumBlock`):
-- Wrapper: `bg-white border-t border-eu-border` → `bg-eu-blue`.
-- Heading "consorcio": `text-gray-500` → `text-eu-yellow` (eyebrow sobre azul), `tracking-[0.2em]`.
-- Tiles de logo: son `background:white;border:1px solid #e5e7eb` inline → mantener (logos necesitan fondo claro).
-  Las tiles blancas sobre azul resaltan bien.
-
-VERIFICACION (F2):
-1. `npx serve` y scroll completo de Home → secuencia degradado/morado/beige/azul/beige/morado/beige/azul perceptible y rítmica.
-2. Ningún `border-b/t border-eu-border` separando secciones (el color separa).
-3. Cards: beige sobre bloques de color, blancas sobre beige; texto legible en todas.
-4. Botones del hero con estilo editorial (mayúsculas, casi rectos) y foco visible.
-5. Tonos semánticos verde/rojo (is/is-not) intactos y legibles.
-6. 375px y 1440px sin desbordes; ES/EN/VA.
-7. Contraste AA (DS.7). Sin texto gris sobre color.
-
-COMMIT: `style(home): bloques de color alternos + cards (regla elevación) + botones editoriales + titulares`
+COMMIT: `style(home): F2 v3 — alineación sutil (color sólo en hero, cuerpo beige/blanco, cards con tono de marca)`
 
 ---
 

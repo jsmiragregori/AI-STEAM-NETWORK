@@ -21,21 +21,21 @@ function localized(value) {
 function cardToneClasses(tone) {
   const tones = {
     positive: {
-      card: 'bg-green-50 border-green-200 shadow-lg',
+      card: 'bg-green-50 border-green-200',
       icon: 'text-green-600',
       title: 'text-green-800',
       bullet: 'bg-green-600',
       item: 'text-green-900',
     },
     negative: {
-      card: 'bg-red-50 border-red-200 shadow-lg',
+      card: 'bg-red-50 border-red-200',
       icon: 'text-red-600',
       title: 'text-red-800',
       bullet: 'bg-red-500',
       item: 'text-red-900',
     },
     neutral: {
-      card: 'bg-eu-yellow border-transparent shadow-lg',
+      card: 'bg-white border-eu-border',
       icon: 'text-eu-blue',
       title: 'text-eu-text',
       bullet: 'bg-eu-blue',
@@ -51,7 +51,7 @@ function enredToneClasses(tone) {
     institutional: {
       card: 'bg-white border border-eu-border shadow-sm',
       title: 'text-gray-500',
-      pill: 'bg-white border border-eu-border text-gray-600',
+      pill: 'bg-eu-bg border border-eu-border text-gray-600',
     },
     thematic: {
       card: 'bg-white border-2 border-eu-purple shadow-md',
@@ -61,7 +61,7 @@ function enredToneClasses(tone) {
     neutral: {
       card: 'bg-white border border-eu-border shadow-sm',
       title: 'text-eu-text',
-      pill: 'bg-white border border-eu-border text-gray-600',
+      pill: 'bg-eu-bg border border-eu-border text-gray-600',
     },
   };
 
@@ -126,9 +126,9 @@ function renderIsNotBlock() {
   if (!cards) return '';
 
   return `
-    <section class="px-6 py-12 bg-eu-purple">
+    <section class="px-6 py-12 bg-eu-yellow">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-8">${localized(block.heading)}</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text mb-8">${localized(block.heading)}</h2>
         <div class="grid gap-6" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
           ${cards}
         </div>
@@ -173,7 +173,7 @@ function renderEnredBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-yellow">
+    <section class="px-6 py-12 bg-white">
       <div class="max-w-7xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text mb-6">${localized(block.heading)}</h2>
         <div class="flex flex-col md:flex-row items-stretch gap-4">
@@ -192,7 +192,7 @@ function renderEcosystemBlock() {
   const cards = (block.cards || []).map(card => {
     const tone = ecosystemToneClasses(card.tone);
     const tag = card.tag?.visible
-      ? `<span class="self-start text-xs font-bold px-2 py-1 bg-white rounded ${tone.tag}">${localized(card.tag.html)}</span>`
+      ? `<span class="self-start text-xs font-bold px-2 py-1 bg-eu-bg rounded ${tone.tag}">${localized(card.tag.html)}</span>`
       : '';
     const attrs = card.href
       ? `href="${card.href}"${card.target ? ` target="${card.target}"` : ''}${card.target === '_blank' ? ' rel="noopener noreferrer"' : ''}`
@@ -201,7 +201,7 @@ function renderEcosystemBlock() {
     const interactive = card.href ? ' hover:shadow-lg transition-all cursor-pointer' : '';
 
     return `
-      <${element} ${attrs} class="bg-eu-yellow rounded-xl border-t-4 ${tone.border} p-6 shadow-lg flex flex-col${interactive}">
+      <${element} ${attrs} class="bg-white rounded-xl border-t-4 ${tone.border} border border-eu-border p-6 shadow-sm flex flex-col${interactive}">
         <div class="flex items-center gap-3 mb-4">
           <div class="w-10 h-10 ${tone.icon} rounded-lg flex items-center justify-center text-white font-bold text-sm">${card.initials}</div>
           <div>
@@ -218,13 +218,13 @@ function renderEcosystemBlock() {
   if (!cards) return '';
 
   const description = block.description?.visible
-    ? `<p class="text-white/85 mb-8 max-w-2xl">${localized(block.description.html)}</p>`
+    ? `<p class="text-gray-600 mb-8 max-w-2xl">${localized(block.description.html)}</p>`
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-blue">
+    <section class="px-6 py-12 bg-eu-yellow">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-2">${localized(block.heading)}</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text mb-2">${localized(block.heading)}</h2>
         ${description}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           ${cards}
@@ -237,19 +237,19 @@ function renderEcosystemBlock() {
 function dualFocusToneClasses(tone) {
   const tones = {
     orange: {
-      card: 'bg-eu-yellow border-transparent shadow-lg',
+      card: 'bg-linear-to-br from-orange-50 to-orange-100/50 border-eu-yellow',
       icon: 'bg-eu-orange',
       coordinator: 'text-eu-orange',
       bullet: 'bg-eu-orange',
     },
     purple: {
-      card: 'bg-eu-yellow border-transparent shadow-lg',
+      card: 'bg-linear-to-br from-purple-50 to-purple-100/50 border-purple-200',
       icon: 'bg-purple-600',
       coordinator: 'text-purple-600',
       bullet: 'bg-purple-600',
     },
     neutral: {
-      card: 'bg-eu-yellow border-transparent shadow-lg',
+      card: 'bg-white border-eu-border',
       icon: 'bg-gray-600',
       coordinator: 'text-gray-600',
       bullet: 'bg-gray-600',
@@ -290,13 +290,13 @@ function renderDualFocusBlock() {
   if (!cards) return '';
 
   const description = block.description?.visible
-    ? `<p class="text-white/85 mb-8 text-sm max-w-2xl">${localized(block.description.html)}</p>`
+    ? `<p class="text-gray-600 mb-8 text-sm max-w-2xl">${localized(block.description.html)}</p>`
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-purple">
+    <section class="px-6 py-12 bg-eu-yellow">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-2">${localized(block.heading)}</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text mb-2">${localized(block.heading)}</h2>
         ${description}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           ${cards}
@@ -335,7 +335,7 @@ function renderLatestChallengesBlock() {
             </div>
             <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug">${localized(ch.title)}</h3>
             <p class="text-xs text-gray-500 mb-3">${localized(ch.org)}</p>
-            <span class="text-sm bg-white border border-eu-border px-2 py-0.5 rounded text-gray-600 font-semibold">${sectorLabel}</span>
+            <span class="text-sm bg-eu-bg border border-eu-border px-2 py-0.5 rounded text-gray-600 font-semibold">${sectorLabel}</span>
           </div>`;
       }).join('');
 
@@ -346,7 +346,7 @@ function renderLatestChallengesBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-yellow">
+    <section class="px-6 py-12 bg-white">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-center justify-between mb-6">
           <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text">${localized(block.heading)}</h2>
@@ -381,7 +381,7 @@ function renderSectorsBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-yellow">
+    <section class="px-6 py-12 bg-white">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-center justify-between mb-8">
           <div>
@@ -412,9 +412,9 @@ function renderConsortiumBlock() {
   }).join('');
 
   return `
-    <section class="px-6 py-10 bg-eu-blue">
+    <section class="px-6 py-10 bg-eu-yellow">
       <div class="max-w-7xl mx-auto">
-        <p class="text-center text-xs font-bold uppercase tracking-[0.2em] text-eu-yellow mb-6">${localized(block.heading)}</p>
+        <p class="text-center text-xs font-bold uppercase tracking-[0.2em] text-eu-purple mb-6">${localized(block.heading)}</p>
         <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;align-items:center;">${partnersHtml}</div>
       </div>
     </section>
