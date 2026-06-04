@@ -21,21 +21,21 @@ function localized(value) {
 function cardToneClasses(tone) {
   const tones = {
     positive: {
-      card: 'bg-green-50 border-green-200',
+      card: 'bg-green-50 border-green-200 shadow-lg',
       icon: 'text-green-600',
       title: 'text-green-800',
       bullet: 'bg-green-600',
       item: 'text-green-900',
     },
     negative: {
-      card: 'bg-red-50 border-red-200',
+      card: 'bg-red-50 border-red-200 shadow-lg',
       icon: 'text-red-600',
       title: 'text-red-800',
       bullet: 'bg-red-500',
       item: 'text-red-900',
     },
     neutral: {
-      card: 'bg-white border-eu-border',
+      card: 'bg-eu-yellow border-transparent shadow-lg',
       icon: 'text-eu-blue',
       title: 'text-eu-text',
       bullet: 'bg-eu-blue',
@@ -51,7 +51,7 @@ function enredToneClasses(tone) {
     institutional: {
       card: 'bg-white border border-eu-border shadow-sm',
       title: 'text-gray-500',
-      pill: 'bg-eu-bg border border-eu-border text-gray-600',
+      pill: 'bg-white border border-eu-border text-gray-600',
     },
     thematic: {
       card: 'bg-white border-2 border-eu-purple shadow-md',
@@ -61,7 +61,7 @@ function enredToneClasses(tone) {
     neutral: {
       card: 'bg-white border border-eu-border shadow-sm',
       title: 'text-eu-text',
-      pill: 'bg-eu-bg border border-eu-border text-gray-600',
+      pill: 'bg-white border border-eu-border text-gray-600',
     },
   };
 
@@ -126,9 +126,9 @@ function renderIsNotBlock() {
   if (!cards) return '';
 
   return `
-    <section class="px-6 py-12 bg-white border-b border-eu-border">
+    <section class="px-6 py-12 bg-eu-purple">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl font-bold text-eu-text mb-8">${localized(block.heading)}</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-8">${localized(block.heading)}</h2>
         <div class="grid gap-6" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
           ${cards}
         </div>
@@ -173,9 +173,9 @@ function renderEnredBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-bg border-b border-eu-border">
+    <section class="px-6 py-12 bg-eu-yellow">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl font-bold text-eu-text mb-6">${localized(block.heading)}</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text mb-6">${localized(block.heading)}</h2>
         <div class="flex flex-col md:flex-row items-stretch gap-4">
           ${body}
         </div>
@@ -192,7 +192,7 @@ function renderEcosystemBlock() {
   const cards = (block.cards || []).map(card => {
     const tone = ecosystemToneClasses(card.tone);
     const tag = card.tag?.visible
-      ? `<span class="self-start text-xs font-bold px-2 py-1 bg-eu-bg rounded ${tone.tag}">${localized(card.tag.html)}</span>`
+      ? `<span class="self-start text-xs font-bold px-2 py-1 bg-white rounded ${tone.tag}">${localized(card.tag.html)}</span>`
       : '';
     const attrs = card.href
       ? `href="${card.href}"${card.target ? ` target="${card.target}"` : ''}${card.target === '_blank' ? ' rel="noopener noreferrer"' : ''}`
@@ -201,7 +201,7 @@ function renderEcosystemBlock() {
     const interactive = card.href ? ' hover:shadow-lg transition-all cursor-pointer' : '';
 
     return `
-      <${element} ${attrs} class="bg-white rounded-xl border-t-4 ${tone.border} border border-eu-border p-6 shadow-sm flex flex-col${interactive}">
+      <${element} ${attrs} class="bg-eu-yellow rounded-xl border-t-4 ${tone.border} p-6 shadow-lg flex flex-col${interactive}">
         <div class="flex items-center gap-3 mb-4">
           <div class="w-10 h-10 ${tone.icon} rounded-lg flex items-center justify-center text-white font-bold text-sm">${card.initials}</div>
           <div>
@@ -218,13 +218,13 @@ function renderEcosystemBlock() {
   if (!cards) return '';
 
   const description = block.description?.visible
-    ? `<p class="text-gray-600 mb-8 max-w-2xl">${localized(block.description.html)}</p>`
+    ? `<p class="text-white/85 mb-8 max-w-2xl">${localized(block.description.html)}</p>`
     : '';
 
   return `
-    <section class="px-6 py-12 bg-white border-b border-eu-border">
+    <section class="px-6 py-12 bg-eu-blue">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl font-bold text-eu-text mb-2">${localized(block.heading)}</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-2">${localized(block.heading)}</h2>
         ${description}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           ${cards}
@@ -237,19 +237,19 @@ function renderEcosystemBlock() {
 function dualFocusToneClasses(tone) {
   const tones = {
     orange: {
-      card: 'bg-linear-to-br from-orange-50 to-orange-100/50 border-eu-yellow',
+      card: 'bg-eu-yellow border-transparent shadow-lg',
       icon: 'bg-eu-orange',
       coordinator: 'text-eu-orange',
       bullet: 'bg-eu-orange',
     },
     purple: {
-      card: 'bg-linear-to-br from-purple-50 to-purple-100/50 border-purple-200',
+      card: 'bg-eu-yellow border-transparent shadow-lg',
       icon: 'bg-purple-600',
       coordinator: 'text-purple-600',
       bullet: 'bg-purple-600',
     },
     neutral: {
-      card: 'bg-white border-eu-border',
+      card: 'bg-eu-yellow border-transparent shadow-lg',
       icon: 'bg-gray-600',
       coordinator: 'text-gray-600',
       bullet: 'bg-gray-600',
@@ -290,13 +290,13 @@ function renderDualFocusBlock() {
   if (!cards) return '';
 
   const description = block.description?.visible
-    ? `<p class="text-gray-600 mb-8 text-sm max-w-2xl">${localized(block.description.html)}</p>`
+    ? `<p class="text-white/85 mb-8 text-sm max-w-2xl">${localized(block.description.html)}</p>`
     : '';
 
   return `
-    <section class="px-6 py-12 bg-white">
+    <section class="px-6 py-12 bg-eu-purple">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl font-bold text-eu-text mb-2">${localized(block.heading)}</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-white mb-2">${localized(block.heading)}</h2>
         ${description}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           ${cards}
@@ -335,7 +335,7 @@ function renderLatestChallengesBlock() {
             </div>
             <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug">${localized(ch.title)}</h3>
             <p class="text-xs text-gray-500 mb-3">${localized(ch.org)}</p>
-            <span class="text-sm bg-eu-bg border border-eu-border px-2 py-0.5 rounded text-gray-600 font-semibold">${sectorLabel}</span>
+            <span class="text-sm bg-white border border-eu-border px-2 py-0.5 rounded text-gray-600 font-semibold">${sectorLabel}</span>
           </div>`;
       }).join('');
 
@@ -346,10 +346,10 @@ function renderLatestChallengesBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-bg border-t border-eu-border">
+    <section class="px-6 py-12 bg-eu-yellow">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-center justify-between mb-6">
-          <h2 class="text-2xl font-bold text-eu-text">${localized(block.heading)}</h2>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text">${localized(block.heading)}</h2>
           ${viewAll}
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">${contributionsHtml}</div>
@@ -381,11 +381,11 @@ function renderSectorsBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-bg">
+    <section class="px-6 py-12 bg-eu-yellow">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-center justify-between mb-8">
           <div>
-            <h2 class="text-2xl font-bold text-eu-text mb-1">${localized(block.heading)}</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text mb-1">${localized(block.heading)}</h2>
             ${description}
           </div>
           ${viewAll}
@@ -412,9 +412,9 @@ function renderConsortiumBlock() {
   }).join('');
 
   return `
-    <section class="px-6 py-10 bg-white border-t border-eu-border">
+    <section class="px-6 py-10 bg-eu-blue">
       <div class="max-w-7xl mx-auto">
-        <p class="text-center text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">${localized(block.heading)}</p>
+        <p class="text-center text-xs font-bold uppercase tracking-[0.2em] text-eu-yellow mb-6">${localized(block.heading)}</p>
         <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;align-items:center;">${partnersHtml}</div>
       </div>
     </section>
@@ -427,14 +427,14 @@ function renderHeroBlock() {
   const lang = getLanguage();
   const loc = v => v?.[lang] || v?.es || '';
   const statsHtml = (hero.stats || []).map(s => `
-    <div class="bg-white/10 backdrop-blur rounded-xl p-5 flex flex-col">
+    <div class="bg-white/15 backdrop-blur rounded-xl p-5 flex flex-col">
       <i data-lucide="${s.icon}" class="w-5 h-5 text-eu-yellow mb-2"></i>
       <div class="text-3xl font-extrabold text-white leading-none mb-1">${s.value}</div>
       <div class="text-xs text-white/70 font-semibold uppercase tracking-wide">${loc(s.label)}</div>
     </div>
   `).join('');
   const requestJoinButton = hero.buttons?.requestJoin?.visible !== false
-    ? `<button data-nav="red" data-membership-cta="true" class="border-2 border-white/50 text-white px-6 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
+    ? `<button data-nav="red" data-membership-cta="true" class="border-2 border-white/60 text-white px-6 py-3 rounded-sm font-bold uppercase tracking-wide hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-eu-purple">
         ${loc(hero.buttons?.requestJoin)}
       </button>`
     : '';
@@ -442,7 +442,7 @@ function renderHeroBlock() {
     <section class="bg-linear-to-br from-eu-blue to-eu-purple text-white px-6 py-16">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
-          <span class="inline-block bg-eu-yellow/20 text-eu-yellow font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+          <span class="inline-block bg-eu-yellow/20 text-eu-yellow font-bold text-xs uppercase tracking-[0.2em] px-3 py-1 rounded-full mb-4">
             ${loc(hero.badge)}
           </span>
           <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-3">${loc(hero.title)}</h1>
@@ -450,7 +450,7 @@ function renderHeroBlock() {
           <p class="text-base text-white/90 mb-4 max-w-xl leading-relaxed border-l-4 border-eu-yellow/60 pl-4">${loc(hero.heroTagline)}</p>
           <p class="text-sm text-white/70 mb-8 max-w-xl">${loc(hero.description)}</p>
           <div class="flex flex-wrap gap-3">
-            <button data-nav="banco-retos" class="bg-eu-orange text-white px-6 py-3 rounded-md font-bold hover:bg-eu-purple transition-colors flex items-center gap-2">
+            <button data-nav="banco-retos" class="bg-eu-yellow text-eu-purple px-6 py-3 rounded-sm font-bold uppercase tracking-wide hover:bg-white transition-colors flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-eu-blue">
               ${loc(hero.buttons?.uploadChallenge)} <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
             ${requestJoinButton}

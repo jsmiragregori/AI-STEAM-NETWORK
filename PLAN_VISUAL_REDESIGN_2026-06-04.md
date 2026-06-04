@@ -187,7 +187,7 @@ cada fase para revisión humana.
 |---|---|---|---|
 | F0 | Fundación — body bg Sand Beige | `[~] EN_REVISION` | — |
 | F1 | Navegación — MAYÚSCULAS editorial | `[~] EN_REVISION` | — |
-| F2 | Home — bloques de color + cards + botones + tipografía | `[ ] PENDIENTE` (v2: reescrito) | — |
+| F2 | Home — bloques de color + cards + botones + tipografía | `[~] EN_REVISION` | — |
 | F3 | Sectores | `[ ] PENDIENTE` | — |
 | F4 | Formación (Training) | `[ ] PENDIENTE` | — |
 | F5 | Actualidad (News) | `[ ] PENDIENTE` | — |
@@ -230,7 +230,7 @@ OPCIONAL (sólo si la revisión humana lo pide): revisar la barra superior blanc
 
 ## FASE_F2: Home — transformación completa  ⭐ (fase grande y visible)
 
-STATUS: `[ ] PENDIENTE`
+STATUS: `[~] EN_REVISION`  (aplicado 2026-06-04; verificado por captura a 1440px)
 DEPENDENCIAS: F0, F1 (ya aplicadas)
 ARCHIVOS: `assets/js/views/home.js`
 
