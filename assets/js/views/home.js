@@ -126,9 +126,9 @@ function renderIsNotBlock() {
   if (!cards) return '';
 
   return `
-    <section class="px-6 py-12 bg-eu-yellow">
+    <section class="px-6 py-12 bg-white border-b border-eu-border">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text mb-8">${localized(block.heading)}</h2>
+        <h2 class="text-2xl font-bold text-eu-text mb-8">${localized(block.heading)}</h2>
         <div class="grid gap-6" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
           ${cards}
         </div>
@@ -173,9 +173,9 @@ function renderEnredBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-white">
+    <section class="px-6 py-12 bg-eu-bg border-b border-eu-border">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text mb-6">${localized(block.heading)}</h2>
+        <h2 class="text-2xl font-bold text-eu-text mb-6">${localized(block.heading)}</h2>
         <div class="flex flex-col md:flex-row items-stretch gap-4">
           ${body}
         </div>
@@ -222,9 +222,9 @@ function renderEcosystemBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-yellow">
+    <section class="px-6 py-12 bg-white border-b border-eu-border">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text mb-2">${localized(block.heading)}</h2>
+        <h2 class="text-2xl font-bold text-eu-text mb-2">${localized(block.heading)}</h2>
         ${description}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           ${cards}
@@ -294,9 +294,9 @@ function renderDualFocusBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-yellow">
+    <section class="px-6 py-12 bg-white">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text mb-2">${localized(block.heading)}</h2>
+        <h2 class="text-2xl font-bold text-eu-text mb-2">${localized(block.heading)}</h2>
         ${description}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           ${cards}
@@ -346,10 +346,10 @@ function renderLatestChallengesBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-white">
+    <section class="px-6 py-12 bg-eu-bg border-t border-eu-border">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-center justify-between mb-6">
-          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text">${localized(block.heading)}</h2>
+          <h2 class="text-2xl font-bold text-eu-text">${localized(block.heading)}</h2>
           ${viewAll}
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">${contributionsHtml}</div>
@@ -381,11 +381,11 @@ function renderSectorsBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-white">
+    <section class="px-6 py-12 bg-eu-bg">
       <div class="max-w-7xl mx-auto">
         <div class="flex items-center justify-between mb-8">
           <div>
-            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-eu-text mb-1">${localized(block.heading)}</h2>
+            <h2 class="text-2xl font-bold text-eu-text mb-1">${localized(block.heading)}</h2>
             ${description}
           </div>
           ${viewAll}
@@ -412,9 +412,9 @@ function renderConsortiumBlock() {
   }).join('');
 
   return `
-    <section class="px-6 py-10 bg-eu-yellow">
+    <section class="px-6 py-10 bg-white border-t border-eu-border">
       <div class="max-w-7xl mx-auto">
-        <p class="text-center text-xs font-bold uppercase tracking-[0.2em] text-eu-purple mb-6">${localized(block.heading)}</p>
+        <p class="text-center text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">${localized(block.heading)}</p>
         <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;align-items:center;">${partnersHtml}</div>
       </div>
     </section>
@@ -427,14 +427,14 @@ function renderHeroBlock() {
   const lang = getLanguage();
   const loc = v => v?.[lang] || v?.es || '';
   const statsHtml = (hero.stats || []).map(s => `
-    <div class="bg-white/15 backdrop-blur rounded-xl p-5 flex flex-col">
+    <div class="bg-white/10 backdrop-blur rounded-xl p-5 flex flex-col">
       <i data-lucide="${s.icon}" class="w-5 h-5 text-eu-yellow mb-2"></i>
       <div class="text-3xl font-extrabold text-white leading-none mb-1">${s.value}</div>
       <div class="text-xs text-white/70 font-semibold uppercase tracking-wide">${loc(s.label)}</div>
     </div>
   `).join('');
   const requestJoinButton = hero.buttons?.requestJoin?.visible !== false
-    ? `<button data-nav="red" data-membership-cta="true" class="border-2 border-white/60 text-white px-6 py-3 rounded-sm font-bold uppercase tracking-wide hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-eu-purple">
+    ? `<button data-nav="red" data-membership-cta="true" class="border-2 border-white/50 text-white px-6 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
         ${loc(hero.buttons?.requestJoin)}
       </button>`
     : '';
@@ -442,7 +442,7 @@ function renderHeroBlock() {
     <section class="bg-linear-to-br from-eu-blue to-eu-purple text-white px-6 py-16">
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
-          <span class="inline-block bg-eu-yellow/20 text-eu-yellow font-bold text-xs uppercase tracking-[0.2em] px-3 py-1 rounded-full mb-4">
+          <span class="inline-block bg-eu-yellow/20 text-eu-yellow font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-4">
             ${loc(hero.badge)}
           </span>
           <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-3">${loc(hero.title)}</h1>
@@ -450,7 +450,7 @@ function renderHeroBlock() {
           <p class="text-base text-white/90 mb-4 max-w-xl leading-relaxed border-l-4 border-eu-yellow/60 pl-4">${loc(hero.heroTagline)}</p>
           <p class="text-sm text-white/70 mb-8 max-w-xl">${loc(hero.description)}</p>
           <div class="flex flex-wrap gap-3">
-            <button data-nav="banco-retos" class="bg-eu-yellow text-eu-purple px-6 py-3 rounded-sm font-bold uppercase tracking-wide hover:bg-white transition-colors flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-eu-blue">
+            <button data-nav="banco-retos" class="bg-eu-orange text-white px-6 py-3 rounded-md font-bold hover:bg-eu-purple transition-colors flex items-center gap-2">
               ${loc(hero.buttons?.uploadChallenge)} <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
             ${requestJoinButton}

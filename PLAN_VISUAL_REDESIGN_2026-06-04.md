@@ -11,6 +11,56 @@
 
 ---
 
+## ⚠️ ERRORES_APRENDIDOS — LEER ANTES DE EJECUTAR F2
+
+### Error F2-v1 (2026-06-04): bloques de color saturados alternos — RECHAZADO
+
+**Qué se intentó:** convertir cada sección de la Home en un bloque de color sólido a sangra
+completa (morado/beige/azul/beige/morado/beige/azul). Inspirado en una lectura literal de
+"intercalar Electric Blue y Deep Purple" del email de Belén Cascales.
+
+**Por qué falló:** el resultado fue una colección de bandas de color intenso que "hace sufrir
+a la vista" (palabras del responsable). Demasiado agresivo visualmente. Los colores #5620F6
+y #4918AD son muy saturados; 8 secciones alternas a pantalla completa es sobrecarga visual.
+
+### Error F2-v3 (2026-06-04): alternancia beige/blanco — TAMBIÉN RECHAZADO
+
+**Qué se intentó:** corrección conservadora — solo alternancia sutil Sand Beige ↔ blanco,
+eliminando el gris frío `bg-eu-bg`. Color fuerte solo en hero. "Sin bandas".
+
+**Por qué falló:** el resultado también dio sensación de "bandas y bandas". El usuario no
+lo encontró fino. Incluso el cambio sutil de tono entre secciones resultó perceptible y
+repetitivo. No se aprobó ninguna versión de F2.
+
+### Estado de home.js a 2026-06-04 EOD
+
+`home.js` está en el estado **original pre-F2** (igual que al inicio del proyecto, a salvo
+de los cambios de nav F1 que son en `header.js`). Los commits 91a1bc9 y c59ca58 existen
+en el historial pero su contenido fue revertido.
+
+### PREGUNTA SIN RESPUESTA para la siguiente sesión
+
+¿Cómo debe verse la Home? Antes de ejecutar F2, el responsable debe aclarar:
+
+1. **¿Qué tiene que cambiar visualmente en la Home respecto al estado original?**
+   El estado actual (gris claro `bg-eu-bg` entre secciones) tampoco era el objetivo.
+   Pero ninguna propuesta de sustitución ha gustado. Necesario: ver un mockup o una
+   referencia visual concreta de AI-SECRETT u otro sitio que muestre el estilo deseado.
+
+2. **Las secciones de la Home ¿deben tener fondo visible diferente entre sí?**
+   Si sí → ¿qué tono/intensidad es aceptable? Si no → ¿solo dividirlas con espacio/línea?
+
+3. **¿Dónde exactamente quiere el responsable ver los colores de la paleta (Electric Blue,
+   Deep Purple, Sand Beige) en el cuerpo de la página?** Solo en tarjetas/chips/botones,
+   o también en fondos de sección.
+
+**RECOMENDACIÓN:** antes de ejecutar F2 de nuevo, hacer una reunión breve (o intercambio
+de capturas de referencia) con Belén Cascales o el responsable para alinear criterio visual.
+Las indicaciones del email son orientativas pero insuficientes para guiar la implementación
+sin feedback iterativo.
+
+---
+
 ## RESUMEN_EJECUTIVO
 
 Adaptar AI-STEAM-VANILLA para que se perciba como parte de la plataforma AI-SECRETT,
@@ -192,7 +242,7 @@ cada fase para revisión humana.
 |---|---|---|---|
 | F0 | Fundación — body bg Sand Beige | `[~] EN_REVISION` | — |
 | F1 | Navegación — MAYÚSCULAS editorial | `[~] EN_REVISION` | — |
-| F2 | Home — bloques de color + cards + botones + tipografía | `[~] EN_REVISION` | — |
+| F2 | Home — bloques de color + cards + botones + tipografía | `[ ] PENDIENTE` ⚠️ VER ERRORES | — |
 | F3 | Sectores | `[ ] PENDIENTE` | — |
 | F4 | Formación (Training) | `[ ] PENDIENTE` | — |
 | F5 | Actualidad (News) | `[ ] PENDIENTE` | — |
