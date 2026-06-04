@@ -80,7 +80,7 @@ export function renderHeader() {
   const mobileLangButtons = languages.map(language => langBtnMobile(language, lang)).join('');
 
   const desktopNav = NAV_CONFIG.items.map(item => `
-    <button data-view="${item.id}" class="text-sm font-medium flex items-center px-3 cursor-pointer border-b-[3px] transition-all duration-200 whitespace-nowrap h-full ${
+    <button data-view="${item.id}" class="text-xs font-bold uppercase tracking-wider flex items-center px-3 cursor-pointer border-b-[3px] transition-all duration-200 whitespace-nowrap h-full ${
       active === item.id
         ? 'text-white border-eu-yellow'
         : 'text-white/80 border-transparent hover:text-white hover:border-white/40'
@@ -88,7 +88,7 @@ export function renderHeader() {
   `).join('');
 
   const mobileNav = NAV_CONFIG.items.map(item => `
-    <button data-view="${item.id}" class="px-6 py-4 text-left font-medium border-l-4 transition-all duration-200 min-h-12 flex items-center text-sm active:scale-95 ${
+    <button data-view="${item.id}" class="px-6 py-4 text-left font-bold uppercase tracking-wider border-l-4 transition-all duration-200 min-h-12 flex items-center text-sm active:scale-95 ${
       active === item.id
         ? 'bg-eu-blue/20 border-eu-yellow text-white shadow-md'
         : 'border-transparent text-white/80 hover:text-white hover:bg-white/10 active:bg-white/20'
