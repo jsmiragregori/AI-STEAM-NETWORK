@@ -1,0 +1,36 @@
+/*
+ * tailwind-input.css — FUENTE del build de Tailwind v4 (F0b, 2026-06-05)
+ * Genera assets/css/tailwind-output.css escaneando TODO el código vanilla.
+ * Build:  npm run build:css   (script en package.json)
+ *
+ * Antes el output estaba "congelado" (compilado desde el React original): faltaban
+ * clases que la vanilla usa (w-14, w-16, xl:*, arbitrarios) → parches inline.
+ * Con este input, cualquier clase presente en js/data/html se compila sola.
+ *
+ * @theme: paleta corporativa eu-* extraída del output anterior (valores idénticos).
+ * El resto de la paleta (gray, blue, green, amber…) viene con Tailwind v4 por defecto.
+ */
+
+@import "https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&display=swap";
+@import "tailwindcss";
+
+/* Fuentes a escanear (además de la autodetección de v4). Cubre TODAS las clases
+   usadas como literales en vistas, componentes y datos → evita purga accidental. */
+@source "../js/**/*.js";
+@source "../data/**/*.js";
+@source "../../index.html";
+
+@theme {
+  /* Fuente del proyecto (REGLA: solo Instrument Sans). Idéntica al output anterior. */
+  --font-sans: "Instrument Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --color-eu-bg:     #f3f6f8;
+  --color-eu-blue:   #5620f6;
+  --color-eu-border: #c9d1e0;
+  --color-eu-footer: #24324a;
+  --color-eu-orange: #4918ad;
+  --color-eu-purple: #4918ad;
+  --color-eu-teal:   #5620f6;
+  --color-eu-text:   #111827;
+  --color-eu-yellow: #fff4e1;
+}

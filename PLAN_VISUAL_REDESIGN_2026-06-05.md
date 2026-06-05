@@ -36,6 +36,65 @@ le pongo", estoy reincidiendo en el error. La diferenciación es **espacio + car
    que el `tailwind-output.css` compilado no contiene (radios grandes, sombras violetas,
    escala tipográfica de `vanilla-fixes.css`, utilidades de card y de nav-pill). NO se
    recompila Tailwind. NO se edita `tailwind-output.css` ni `main.css`.
+3. **Fondos del cuerpo (CLAVE, revisado 2026-06-05):** TODAS las secciones del cuerpo usan
+   el canvas `#FFFDF9` (`rd-canvas`). **NO** se usan secciones de fondo blanco (`bg-white`)
+   como banda: el responsable las rechazó ("han aparecido dos bandas con fondo blanco").
+   El contraste y el relieve los dan las CARDS, no el fondo de sección:
+   - Cards de ítem / la mayoría → **blancas** (`rd-card`), relieve por borde tenue + sombra
+     violeta ("separar con luz, no con oscuridad").
+   - Cards informativas / mega-cards (DualFocus) → **tinte de marca** (lila/azul oficial al
+     ~6%, `tone.tintBg`), nunca beige-sobre-blanco ni naranja/colores de advertencia.
+   - Sand Beige `#FFF4E1` SOLO en círculos de icono, badges y titular del hero.
+   Regla dura: si una sección del cuerpo necesita `bg-white`, es un error → usar `rd-canvas`.
+
+### INDEPENDENCIA DEL CMS (confirmado 2026-06-05)
+
+El rediseño toca SOLO presentación de AI-STEAM-VANILLA (`redesign.css`, `index.html`,
+`components/header.js`, `views/*.js`). NO toca YAML de AI-STEAM-CONTENT, loaders, `assets/data/*.js`
+generados ni el admin Streamlit. Editar contenido en Streamlit y re-ejecutar loaders regenera
+`assets/data/*.js` sin afectar vistas/CSS: son capas separadas. El mapeo id→icono de sector vive
+en la vista (`SECTOR_ICONS` en home.js), no en los datos.
+
+---
+
+## ⚙️ BUILD CSS — OBLIGATORIO EN CADA FASE  (leer SIEMPRE, cualquier PC/agente)
+
+> Desde F0b (2026-06-05) el CSS **se compila con Tailwind v4**; ya NO está congelado.
+> `assets/css/tailwind-output.css` es un **archivo generado** desde
+> `assets/css/tailwind-input.css`. Si añades/cambias clases Tailwind en cualquier
+> `.js`/`.html` y NO recompilas, **los estilos nuevos no aparecerán**.
+
+**Primera vez en un PC nuevo (o tras clonar):**
+```powershell
+cd D:\CEICE\AI-STEAM-VANILLA
+npm install          # instala @tailwindcss/cli (node_modules NO está en git)
+```
+
+**Cada vez que cambies clases (en CADA fase, antes de verificar):**
+```powershell
+npm run build:css    # compila tailwind-input.css → tailwind-output.css (--minify)
+```
+o deja recompilación automática al guardar:
+```powershell
+npm run watch:css
+```
+
+**Reglas duras del build:**
+1. NUNCA editar a mano `assets/css/tailwind-output.css` (se sobrescribe al compilar).
+2. La paleta `eu-*` y la fuente **Instrument Sans** viven en `@theme` dentro de
+   `tailwind-input.css`. Si falta una clase/var, se añade ahí, NO en el output.
+3. `assets/css/redesign.css` es CSS escrito a mano (NO lo toca Tailwind) → editar libremente.
+4. Orden de carga en `index.html`: tailwind-output.css → main.css → redesign.css.
+5. Tras compilar, **commitea el `tailwind-output.css` regenerado** junto al cambio de clases.
+6. Verificación visual con `npx serve -l 3000` + recarga forzada (Ctrl+Shift+R o DevTools
+   "Disable cache"; los módulos ES cachean fuerte).
+7. Si una clase usada "no aparece" tras compilar: Tailwind solo escanea lo declarado en
+   `@source` (js, data, html). Clases por concatenación (`bg-${x}`) NO se detectan → usar la
+   clase como literal completo o añadir `@source inline("…")` en `tailwind-input.css`.
+
+> **Para Codex / otro agente / otro PC:** este proyecto requiere `npm run build:css` tras
+> tocar clases. No asumas que basta con editar el JS. Confirma que el output se regeneró
+> antes de dar una fase por terminada.
 
 ---
 
@@ -160,7 +219,7 @@ Instrument Sans (ya cargada). Roles:
 | Titular h2 | `text-4xl font-extrabold tracking-tight` — color `eu-purple` sobre claro (App.tsx usa #4918AD) |
 | Subtítulo | `text-lg leading-relaxed text-eu-text/80` |
 | Card title h3 | `text-2xl font-extrabold` (eu-purple o eu-text) |
-| Cuerpo | `text-lg leading-relaxed text-eu-text/70` |
+| Cuerpo | **mínimo `text-lg` (1.125rem) `leading-relaxed`** — decisión humana 2026-06-05: textos algo mayores para facilitar la lectura. Evitar `text-sm`/`text-base` en párrafos de contenido (sí permitido en chips/labels/meta) |
 
 > NOTA de color de titular: App.tsx pone los h2 en **Deep Purple #4918AD**, no en near-black.
 > Es un rasgo distintivo del prototipo; adoptarlo.
@@ -199,9 +258,11 @@ INSTRUCCION_LLM: al terminar una fase → `[~] EN_REVISION`. Tras aprobación hu
 | ID | Nombre | Estado | Notas |
 |---|---|---|---|
 | **F0** | **Fundación CSS** — crear `redesign.css` (tokens, utilidades de card, nav-pill, escala tipográfica) + enlazarlo en `index.html` | `[x] APROBADA` | commit `0a3a5b9` |
+| **F0b** | **Recompilar Tailwind** — `tailwind-input.css` (@theme eu-* + @source) + build `build:css`; fin del CSS congelado | `[~] EN_REVISION` | 0 regresiones verificadas; ahora cualquier clase usada se compila sola |
 | F1 | Body bg → canvas `#FFFDF9` | `[x] APROBADA` | commit `0a3a5b9` — Sand Beige liberado a acento |
 | **F1b** | **Nav píldora editorial** (DS.6) — el menú AI-SECRETT real | `[x] APROBADA` | commit `f699468` — rd-nav-desktop/toggle/mobile en redesign.css, umbral 80rem |
-| F2 | Home — espaciado + cards (DS.3) + iconos círculo + hero stats + titulares morados | `[ ] PENDIENTE` | reintento con modelo nuevo; ya NO se tocan fondos de sección como antes |
+| F2 | Home — espaciado + cards (DS.3) + iconos círculo + hero stats + titulares morados | `[x] APROBADA` | commit `bbdc6d0` |
+| **F2b** | Home — correcciones doc estilo + hover por card (lift/edge) + iniciales que respiran + DualFocus beige oficial; "Últimas contribuciones" fuera de home | `[x] APROBADA` | commit `bbdc6d0` |
 | F3 | Sectores — menú de iconos en círculo + cards | `[ ] PENDIENTE` | gradientes de sector intactos |
 | F4 | Formación — hero + course cards (a) + tabs | `[ ] PENDIENTE` | |
 | F5 | Actualidad — news cards (a) | `[ ] PENDIENTE` | |

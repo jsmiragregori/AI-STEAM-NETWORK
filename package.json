@@ -1,6 +1,11 @@
 {
   "type": "module",
+  "scripts": {
+    "build:css": "tailwindcss -i assets/css/tailwind-input.css -o assets/css/tailwind-output.css --minify",
+    "watch:css": "tailwindcss -i assets/css/tailwind-input.css -o assets/css/tailwind-output.css --watch"
+  },
   "devDependencies": {
+    "@tailwindcss/cli": "^4.2.4",
     "tailwindcss": "^4.2.4"
   }
 }

@@ -187,6 +187,23 @@ npx serve -l 3000
 # o: python -m http.server 3000
 ```
 
+### ⚙️ BUILD CSS — Tailwind v4 (desde 2026-06-05, F0b del rediseño visual)
+
+El CSS ya NO está congelado: `assets/css/tailwind-output.css` se **genera** desde
+`assets/css/tailwind-input.css` (que contiene `@theme` con la paleta `eu-*` y la fuente
+Instrument Sans). **Si cambias clases Tailwind en cualquier `.js`/`.html`, recompila:**
+
+```bash
+npm install          # solo la 1ª vez en un PC (node_modules NO está en git)
+npm run build:css    # compila el output (--minify)
+npm run watch:css    # alternativa: recompila al guardar
+```
+
+- NUNCA editar a mano `tailwind-output.css` (se sobrescribe).
+- `assets/css/redesign.css` es CSS a mano (design system v3, utilidades `.rd-*`) → no lo toca Tailwind.
+- Orden en `index.html`: tailwind-output.css → main.css → redesign.css.
+- Plan y reglas completas: `PLAN_VISUAL_REDESIGN_2026-06-05.md` (sección "⚙️ BUILD CSS").
+
 DevTools útiles:
 - Console → errores JS y módulos
 - Application → localStorage → `language`, `cookies-accepted`

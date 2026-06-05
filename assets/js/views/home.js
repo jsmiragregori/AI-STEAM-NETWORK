@@ -172,7 +172,7 @@ function renderEnredBlock() {
     : `${cards[0]}${connector}${cards.slice(1).join('')}`;
 
   const description = block.description?.visible
-    ? `<p class="mt-8 w-full leading-relaxed columns-1 lg:columns-2 gap-10 [column-fill:balance]" style="font-size:1.0625rem;color:rgba(30,27,75,.72)">${localized(block.description.html)}</p>`
+    ? `<p class="mt-8 w-full leading-relaxed" style="font-size:1.1875rem;color:rgba(30,27,75,.74)">${localized(block.description.html)}</p>`
     : '';
 
   return `
@@ -221,7 +221,7 @@ function renderEcosystemBlock() {
             <p class="text-sm text-gray-500 mt-0.5">${localized(card.subtitle)}</p>
           </div>
         </div>
-        <p class="text-base text-gray-600 flex-1 mb-8 leading-relaxed">${localized(card.description)}</p>
+        <p class="text-lg text-gray-600 flex-1 mb-8 leading-relaxed">${localized(card.description)}</p>
         ${tag}
       </${element}>
     `;
@@ -230,7 +230,7 @@ function renderEcosystemBlock() {
   if (!cards) return '';
 
   const description = block.description?.visible
-    ? `<p class="text-gray-600 mb-8 max-w-2xl">${localized(block.description.html)}</p>`
+    ? `<p class="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">${localized(block.description.html)}</p>`
     : '';
 
   return `
@@ -303,7 +303,7 @@ function renderDualFocusBlock() {
   if (!cards) return '';
 
   const description = block.description?.visible
-    ? `<p class="text-gray-600 mb-8 text-sm max-w-2xl">${localized(block.description.html)}</p>`
+    ? `<p class="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">${localized(block.description.html)}</p>`
     : '';
 
   return `
@@ -400,7 +400,7 @@ function renderSectorsBlock() {
   if (!cards) return '';
 
   const description = block.description?.visible
-    ? `<p class="text-gray-600 text-sm">${localized(block.description.html)}</p>`
+    ? `<p class="text-lg text-gray-600 leading-relaxed">${localized(block.description.html)}</p>`
     : '';
 
   const viewAll = block.viewAll?.visible
@@ -479,9 +479,9 @@ function renderHeroBlock() {
             ${loc(hero.badge)}
           </span>
           <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.75rem,5vw,4.25rem);line-height:1.05;max-width:14ch">${loc(hero.title)}</h1>
-          <p class="text-lg font-semibold mb-4" style="color:#FFF4E1">${loc(hero.subtitle)}</p>
-          <p class="text-base mb-4 max-w-xl leading-relaxed border-l-4 pl-4" style="color:rgba(255,255,255,.85);border-color:rgba(255,244,225,.4)">${loc(hero.heroTagline)}</p>
-          <p class="text-sm mb-10 max-w-xl" style="color:rgba(255,255,255,.65)">${loc(hero.description)}</p>
+          <p class="text-2xl font-semibold mb-5" style="color:#FFF4E1">${loc(hero.subtitle)}</p>
+          <p class="text-lg mb-5 max-w-2xl leading-relaxed border-l-4 pl-4" style="color:rgba(255,255,255,.9);border-color:rgba(255,244,225,.4)">${loc(hero.heroTagline)}</p>
+          <p class="text-base mb-10 max-w-2xl leading-relaxed" style="color:rgba(255,255,255,.7)">${loc(hero.description)}</p>
           <div class="flex flex-wrap gap-4">
             <button data-nav="banco-retos" class="rounded-full font-bold flex items-center gap-2 transition-all hover:scale-105" style="background:#FFF4E1;color:#4918AD;padding:.875rem 2rem">
               ${loc(hero.buttons?.uploadChallenge)} <i data-lucide="arrow-right" class="w-4 h-4"></i>
