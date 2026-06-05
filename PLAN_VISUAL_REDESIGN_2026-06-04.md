@@ -1,3 +1,8 @@
+> ⛔ OBSOLETO (2026-06-05). Este plan (v2.0) quedó SUPERSEDIDO por
+> `PLAN_VISUAL_REDESIGN_2026-06-05.md` (v3.0), que toma como fuente de verdad el prototipo
+> AI-STEAM-MIGRATION. Su F2 (alternancia de fondos) se rechazó dos veces. Conservado solo
+> como referencia histórica de ERRORES_APRENDIDOS. NO ejecutar las fases de este archivo.
+
 # PLAN: Visual Redesign AI-STEAM-VANILLA
 # Alineación Paleta + Lenguaje Visual AI-SECRETT — Punto 2 (Belén Cascales, 2026-06-02)
 # Generado: 2026-06-04 | Versión: 2.0 (reescritura granular)

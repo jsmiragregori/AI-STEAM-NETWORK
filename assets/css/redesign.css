@@ -1,0 +1,173 @@
+/*
+ * redesign.css — Design System v3 AI-STEAM-VANILLA
+ * Modelo: AI-STEAM-MIGRATION / App.tsx (prototipo aprobado 2026-06-05)
+ * Carga DESPUÉS de tailwind-output.css y main.css (mayor especificidad).
+ * Solo añade utilidades .rd-* y tokens; NUNCA sobrescribe clases semánticas
+ * del proyecto (colores de sector, gobernanza, hélice, chips marketplace).
+ */
+
+/* ─── TOKENS ──────────────────────────────────────────────────────────────── */
+:root {
+  --rd-canvas:  #FFFDF9;   /* canvas global — off-white cálido */
+  --rd-white:   #FFFFFF;
+  --rd-text:    #1E1B4B;   /* texto principal (Indigo profundo, como App.tsx) */
+  --rd-blue:    #5620F6;   /* Electric Blue */
+  --rd-purple:  #4918AD;   /* Deep Purple */
+  --rd-beige:   #FFF4E1;   /* Sand Beige — SOLO como acento */
+}
+
+/* ─── CANVAS ──────────────────────────────────────────────────────────────── */
+.rd-canvas { background: var(--rd-canvas); }
+
+/* ─── RITMO DE SECCIÓN ────────────────────────────────────────────────────── */
+.rd-section { padding-block: 8rem; }
+
+@media (max-width: 767px) {
+  .rd-section { padding-block: 5rem; }
+}
+
+/* Separador hairline violeta (sustituye border-b/t border-eu-border grises) */
+.rd-divide { border-top: 1px solid rgb(86 32 246 / .10); }
+
+/* ─── CARDS ───────────────────────────────────────────────────────────────── */
+
+/* (a) Card estándar — fondo blanco sobre canvas */
+.rd-card {
+  background: #fff;
+  border: 1px solid rgb(86 32 246 / .10);
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px -12px rgb(86 32 246 / .08);
+  transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+}
+
+/* Lift al hover — añadir a cards interactivas */
+.rd-card-hover:hover {
+  transform: translateY(-.5rem);
+  box-shadow: 0 24px 48px -16px rgb(86 32 246 / .18);
+  border-color: rgb(86 32 246 / .30);
+}
+
+/* (b) Card con barra de acento lateral azul */
+.rd-card-accent {
+  position: relative;
+  overflow: hidden;
+}
+.rd-card-accent::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0;
+  width: .5rem; height: 100%;
+  background: var(--rd-blue);
+  opacity: .85;
+}
+
+/* Variante morada para la card del par */
+.rd-accent-purple::before {
+  background: var(--rd-purple);
+  opacity: .40;
+}
+
+/* (c) Card con tinte de marca */
+.rd-card-tint      { background: rgb(255 244 225 / .35); }  /* Sand Beige tenue */
+.rd-card-tint-blue { background: rgb(86 32 246 / .05);   }  /* Blue tenue */
+
+/* Padding interior amplio (equivale a p-10 de App.tsx) */
+.rd-pad   { padding: 2.5rem; }
+.rd-pad-l { padding: 3.5rem; } /* mega-cards DualFocus / Formación */
+
+/* Radio mayor para mega-cards */
+.rd-card-xl { border-radius: 3rem; }
+
+/* ─── ICONO EN CÍRCULO BEIGE ──────────────────────────────────────────────── */
+.rd-icon-circle {
+  width: 4rem; height: 4rem;
+  border-radius: 9999px;
+  background: var(--rd-beige);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 2px 6px rgb(73 24 173 / .08);
+  transition: transform .3s ease;
+}
+.rd-icon-circle-sm {
+  width: 3rem; height: 3rem;
+  border-radius: 9999px;
+  background: var(--rd-beige);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 2px 6px rgb(73 24 173 / .08);
+}
+/* Escala al hover del padre (añadir group + group-hover al padre) */
+.rd-card-hover:hover .rd-icon-circle { transform: scale(1.10); }
+
+/* ─── HERO GRADIENT ───────────────────────────────────────────────────────── */
+.rd-hero-gradient {
+  background: linear-gradient(135deg, #4918AD 0%, #521DE2 55%, #5620F6 100%);
+}
+
+/* Stats glassmórficas en el hero */
+.rd-hero-stat {
+  background: rgb(255 255 255 / .10);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgb(255 255 255 / .10);
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+.rd-hero-stat-alt {
+  background: rgb(30 27 75 / .30);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgb(255 255 255 / .05);
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+
+/* ─── NAV PÍLDORA EDITORIAL (DS.6 — AI-SECRETT) ──────────────────────────── */
+.rd-navpill {
+  background: var(--rd-purple);
+  border-radius: 9999px;
+  padding: .5rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* ─── TIPOGRAFÍA EDITORIAL ────────────────────────────────────────────────── */
+/* Solo acotada a elementos dentro de .rd-section para no romper layouts */
+.rd-section h2 {
+  font-size: clamp(2rem, 4vw, 2.625rem);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  font-weight: 800;
+  color: var(--rd-purple);
+}
+
+/* Eyebrow label */
+.rd-eyebrow {
+  display: inline-block;
+  font-size: .8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+
+/* ─── BADGES / CHIPS DE ACENTO ────────────────────────────────────────────── */
+.rd-badge-beige {
+  display: inline-block;
+  padding: .35rem 1rem;
+  background: rgb(255 244 225 / .60);
+  border: 1px solid var(--rd-beige);
+  border-radius: .75rem;
+  color: var(--rd-purple);
+  font-size: .875rem;
+  font-weight: 700;
+}
+
+.rd-badge-blue {
+  display: inline-block;
+  padding: .35rem 1rem;
+  background: rgb(86 32 246 / .07);
+  border-radius: 9999px;
+  color: var(--rd-blue);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
