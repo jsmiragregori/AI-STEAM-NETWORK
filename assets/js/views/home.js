@@ -5,14 +5,6 @@ import { HOME_CONFIG } from '../../data/home.js';
 
 
 
-function statusClass(status) {
-  const open = ['Abierto','Open','Obert'];
-  const inProg = ['En Resolución','In Progress','En Resolució'];
-  if (open.includes(status)) return 'open';
-  if (inProg.includes(status)) return 'inProgress';
-  return 'resolved';
-}
-
 function localized(value) {
   const lang = getLanguage();
   return value?.[lang] || value?.es || '';
@@ -314,58 +306,6 @@ function renderDualFocusBlock() {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
           ${cards}
         </div>
-      </div>
-    </section>
-  `;
-}
-
-function renderLatestChallengesBlock() {
-  const block = HOME_CONFIG.latestChallengesBlock;
-  if (!block?.visible) return '';
-
-  const contributions = block.cards || [];
-  const sectorNames = t('marketplace.sectorNames') || {};
-
-  const contributionsHtml = contributions.length === 0
-    ? `<div class="col-span-3 flex flex-col items-center justify-center py-12 px-6 bg-white rounded-xl border border-eu-border border-dashed text-center">
-        <i data-lucide="inbox" class="w-10 h-10 text-gray-300 mb-4"></i>
-        <p class="text-gray-500 text-sm max-w-md">${localized(block.emptyState?.html)}</p>
-      </div>`
-    : contributions.map(ch => {
-        const statusKey = statusClass(localized(ch.status));
-        const statusLabel = t(`marketplace.${statusKey}`);
-        const sectorLabel = sectorNames[ch.sectorCode] || ch.sectorCode;
-        const typeLabel = localized(ch.contributionType);
-        const levelLabel = localized(ch.level);
-        const badgeText = `${typeLabel} (${levelLabel})`;
-        const isFP = levelLabel === 'FP' || levelLabel === 'VET';
-        const typeClass = isFP ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
-        return `
-          <div class="rd-card rd-card-hover flex flex-col" style="padding:2.5rem">
-            <div class="flex items-center justify-between mb-6">
-              <span class="text-xs font-extrabold uppercase tracking-wider ${typeClass}" style="padding:.35rem .75rem;border-radius:.5rem">${badgeText}</span>
-              <span class="rd-badge-blue">● ${statusLabel}</span>
-            </div>
-            <h3 class="font-extrabold text-eu-text text-xl mb-3 leading-snug flex-1">${localized(ch.title)}</h3>
-            <p class="text-sm text-gray-500 mb-6">${localized(ch.org)}</p>
-            <span class="rd-badge-beige">${sectorLabel}</span>
-          </div>`;
-      }).join('');
-
-  const viewAll = block.viewAll?.visible
-    ? `<button data-nav="banco-retos" class="flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline bg-transparent border-none cursor-pointer">
-        ${localized(block.viewAll.html)} <i data-lucide="arrow-right" class="w-4 h-4"></i>
-      </button>`
-    : '';
-
-  return `
-    <section class="px-6 rd-canvas rd-section rd-divide">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex items-end justify-between mb-12">
-          <h2>${localized(block.heading)}</h2>
-          ${viewAll}
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">${contributionsHtml}</div>
       </div>
     </section>
   `;
