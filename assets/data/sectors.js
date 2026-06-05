@@ -63,9 +63,9 @@ export const SECTORS_CONFIG = {
         "va": "Manufactura"
       },
       "description": {
-        "es": "IA aplicada a la fabricación avanzada para apoyar la transición digital y la sostenibilidad industrial. Automatización, mantenimiento predictivo y control de calidad con atención a la seguridad laboral y la ética en sistemas OT/IT.",
-        "en": "AI applied to advanced manufacturing to support digital transition and industrial sustainability. Automation, predictive maintenance and quality control with attention to occupational safety and ethics in OT/IT systems.",
-        "va": "IA aplicada a la fabricació avançada per a recolzar la transició digital i la sostenibilitat industrial. Automatització, manteniment predictiu i control de qualitat amb atenció a la seguretat laboral i l'ètica en sistemes OT/IT."
+        "es": "IA aplicada a fabricación avanzada, mantenimiento predictivo, robótica, control de calidad y sostenibilidad industrial, con atención al uso responsable de datos en entornos OT/IT.",
+        "en": "AI applied to advanced manufacturing, predictive maintenance, robotics, quality control and industrial sustainability, with attention to responsible data use in OT/IT environments.",
+        "va": "IA aplicada a fabricació avançada, manteniment predictiu, robòtica, control de qualitat i sostenibilitat industrial, amb atenció a l'ús responsable de dades en entorns OT/IT."
       },
       "stats": {
         "challenges": 3,
@@ -194,9 +194,9 @@ export const SECTORS_CONFIG = {
         "va": "Automatització, robòtica i IoT per a FP industrial. Ús responsable d'IA en entorns de producció."
       },
       "exampleChallengeLabel": {
-        "es": "Ejemplo de caso",
-        "en": "Example of case",
-        "va": "Exemple de cas"
+        "es": "Evidencia destacada",
+        "en": "Featured evidence",
+        "va": "Evidència destacada"
       },
       "exampleChallenge": {
         "es": "Detección automática de defectos en línea de producción con visión artificial",
@@ -228,9 +228,9 @@ export const SECTORS_CONFIG = {
         "va": "Mobilitat i Transport"
       },
       "description": {
-        "es": "IA al servicio de una movilidad más eficiente, segura y sostenible. Logística verde y transporte intermodal que conectan la transición digital con la reducción de emisiones y el acceso equitativo a la movilidad.",
-        "en": "AI serving more efficient, safe and sustainable mobility. Green logistics and intermodal transport connecting the digital transition with emissions reduction and equitable mobility access.",
-        "va": "IA al servei d'una mobilitat més eficient, segura i sostenible. Logística verda i transport intermodal que connecten la transició digital amb la reducció d'emissions i l'accés equitatiu a la mobilitat."
+        "es": "IA para movilidad eficiente, segura y sostenible: logística verde, transporte intermodal, optimización de rutas y acceso equitativo a servicios de movilidad.",
+        "en": "AI for efficient, safe and sustainable mobility: green logistics, intermodal transport, route optimisation and equitable access to mobility services.",
+        "va": "IA per a mobilitat eficient, segura i sostenible: logística verda, transport intermodal, optimització de rutes i accés equitatiu a servicis de mobilitat."
       },
       "stats": {
         "challenges": 18,
@@ -359,9 +359,9 @@ export const SECTORS_CONFIG = {
         "va": "Mobilitat sostenible i logística verda per a FP transport. La triple transició com a context d'aprenentatge."
       },
       "exampleChallengeLabel": {
-        "es": "Ejemplo de reto",
-        "en": "Example challenge",
-        "va": "Exemple de repte"
+        "es": "Evidencia destacada",
+        "en": "Featured evidence",
+        "va": "Evidència destacada"
       },
       "exampleChallenge": {
         "es": "Predicción de demanda en transporte público para optimización de frecuencias",
@@ -385,9 +385,9 @@ export const SECTORS_CONFIG = {
         "va": "Energia i Medi Ambient"
       },
       "description": {
-        "es": "IA para la monitorización ambiental, las energías renovables y la economía circular. Alineado con el Pacto Verde Europeo y los ODS, con atención a la privacidad de datos en infraestructuras críticas.",
-        "en": "AI for environmental monitoring, renewable energy and circular economy. Aligned with the European Green Deal and SDGs, with attention to data privacy in critical infrastructure.",
-        "va": "IA per a la monitorització ambiental, les energies renovables i l'economia circular. Alineat amb el Pacte Verd Europeu i els ODS, amb atenció a la privacitat de dades en infraestructures crítiques."
+        "es": "IA para monitorización ambiental, energías renovables, economía circular, eficiencia energética y análisis responsable de datos en infraestructuras críticas.",
+        "en": "AI for environmental monitoring, renewable energy, circular economy, energy efficiency and responsible data analysis in critical infrastructures.",
+        "va": "IA per a monitorització ambiental, energies renovables, economia circular, eficiència energètica i anàlisi responsable de dades en infraestructures crítiques."
       },
       "stats": {
         "challenges": 19,
@@ -516,9 +516,9 @@ export const SECTORS_CONFIG = {
         "va": "Economia circular, energies renovables i sensòrica per a FP medi ambient i electricitat."
       },
       "exampleChallengeLabel": {
-        "es": "Ejemplo de reto",
-        "en": "Example challenge",
-        "va": "Exemple de repte"
+        "es": "Evidencia destacada",
+        "en": "Featured evidence",
+        "va": "Evidència destacada"
       },
       "exampleChallenge": {
         "es": "Sistema de monitorización de calidad del aire con sensores IoT y alertas automáticas",
@@ -542,9 +542,9 @@ export const SECTORS_CONFIG = {
         "va": "Agroalimentari"
       },
       "description": {
-        "es": "IA para una agricultura más precisa, sostenible y soberana. Trazabilidad alimentaria, gestión hídrica y reducción de agroquímicos, con consideración al impacto de la concentración tecnológica en el sector.",
-        "en": "AI for more precise, sustainable and sovereign agriculture. Food traceability, water management and reduced agrochemicals, with consideration of technological concentration in the sector.",
-        "va": "IA per a una agricultura més precisa, sostenible i sobirana. Traçabilitat alimentària, gestió hídrica i reducció d'agroquímics, amb consideració de l'impacte de la concentració tecnològica en el sector."
+        "es": "IA para agricultura de precisión, trazabilidad alimentaria, gestión hídrica, reducción de agroquímicos y soberanía tecnológica en el sector agroalimentario.",
+        "en": "AI for precision agriculture, food traceability, water management, reduced agrochemicals and technological sovereignty in the agrifood sector.",
+        "va": "IA per a agricultura de precisió, traçabilitat alimentària, gestió hídrica, reducció d'agroquímics i sobirania tecnològica en el sector agroalimentari."
       },
       "stats": {
         "challenges": 14,
@@ -673,9 +673,9 @@ export const SECTORS_CONFIG = {
         "va": "Agricultura sostenible i sobirania alimentària per a FP agrària. Ús de sensors i drons en contextos reals."
       },
       "exampleChallengeLabel": {
-        "es": "Ejemplo de reto",
-        "en": "Example challenge",
-        "va": "Exemple de repte"
+        "es": "Evidencia destacada",
+        "en": "Featured evidence",
+        "va": "Evidència destacada"
       },
       "exampleChallenge": {
         "es": "Detección de plagas en viñedos mediante análisis de imágenes de dron",
@@ -699,9 +699,9 @@ export const SECTORS_CONFIG = {
         "va": "Indústries Culturals i Creatives"
       },
       "description": {
-        "es": "IA para la preservación, creación y acceso al patrimonio cultural. Con reflexión ética sobre derechos de autor, autoría compartida con IA y acceso justo a tecnologías creativas.",
-        "en": "AI for the preservation, creation and access to cultural heritage and creative industries. With ethical reflection on copyright, shared AI authorship and fair access to creative technologies.",
-        "va": "IA per a la preservació, creació i accés al patrimoni cultural. Amb reflexió ètica sobre drets d'autor, autoria compartida amb IA i accés just a tecnologies creatives."
+        "es": "IA para patrimonio cultural, creación responsable, acceso a contenidos, derechos de autor, autoría compartida y tecnologías creativas abiertas.",
+        "en": "AI for cultural heritage, responsible creation, content access, copyright, shared authorship and open creative technologies.",
+        "va": "IA per a patrimoni cultural, creació responsable, accés a continguts, drets d'autor, autoria compartida i tecnologies creatives obertes."
       },
       "stats": {
         "challenges": 12,
@@ -830,9 +830,9 @@ export const SECTORS_CONFIG = {
         "va": "IA generativa i ètica en contextos creatius. Alfabetització crítica sobre autoria, drets i accés."
       },
       "exampleChallengeLabel": {
-        "es": "Ejemplo de reto",
-        "en": "Example challenge",
-        "va": "Exemple de repte"
+        "es": "Evidencia destacada",
+        "en": "Featured evidence",
+        "va": "Evidència destacada"
       },
       "exampleChallenge": {
         "es": "Digitalización y descripción automática de fondos archivísticos para acceso abierto",
@@ -857,9 +857,9 @@ export const SECTORS_CONFIG = {
         "va": "Habitatge"
       },
       "description": {
-        "es": "IA para la vivienda sostenible, la eficiencia energética y el urbanismo inteligente. Contribuye a la cohesión social con atención a la brecha digital en el acceso a servicios residenciales.",
-        "en": "AI for sustainable housing, energy efficiency and smart urban planning. Contributes to social cohesion with attention to the digital divide in access to smart residential services.",
-        "va": "IA per a l'habitatge sostenible, l'eficiència energètica i l'urbanisme intel·ligent. Contribueix a la cohesió social amb atenció a la bretxa digital en l'accés a serveis residencials."
+        "es": "IA para vivienda sostenible, eficiencia energética, edificios inteligentes, urbanismo social y acceso equitativo a servicios residenciales.",
+        "en": "AI for sustainable housing, energy efficiency, smart buildings, social urban planning and equitable access to residential services.",
+        "va": "IA per a habitatge sostenible, eficiència energètica, edificis intel·ligents, urbanisme social i accés equitatiu a servicis residencials."
       },
       "stats": {
         "challenges": 15,
@@ -988,9 +988,9 @@ export const SECTORS_CONFIG = {
         "va": "Smart buildings i eficiència energètica per a FP construcció. Urbanisme social i sostenible com a context."
       },
       "exampleChallengeLabel": {
-        "es": "Ejemplo de reto",
-        "en": "Example challenge",
-        "va": "Exemple de repte"
+        "es": "Evidencia destacada",
+        "en": "Featured evidence",
+        "va": "Evidència destacada"
       },
       "exampleChallenge": {
         "es": "Optimización del consumo energético en bloque de viviendas sociales con ML",
@@ -1014,9 +1014,9 @@ export const SECTORS_CONFIG = {
         "va": "Serveis No Turístics"
       },
       "description": {
-        "es": "IA en servicios ciudadanos, comercio, finanzas y administración pública. Automatización responsable con especial atención a la privacidad, la equidad algorítmica y el impacto en el empleo.",
-        "en": "AI in citizen services, commerce, finance and public administration. Responsible automation with attention to privacy, algorithmic equity and employment impact.",
-        "va": "IA en serveis ciutadans, comerç, finances i administració pública. Automatització responsable amb especial atenció a la privacitat, l'equitat algorítmica i l'impacte en l'ocupació."
+        "es": "IA para servicios ciudadanos, comercio, finanzas y administración pública, con automatización responsable, privacidad, equidad algorítmica e impacto laboral.",
+        "en": "AI for citizen services, commerce, finance and public administration, with responsible automation, privacy, algorithmic equity and labour impact.",
+        "va": "IA per a servicis ciutadans, comerç, finances i administració pública, amb automatització responsable, privacitat, equitat algorítmica i impacte laboral."
       },
       "stats": {
         "challenges": 16,
@@ -1145,9 +1145,9 @@ export const SECTORS_CONFIG = {
         "va": "Automatització responsable i ètica en dades per a FP administració, comerç i serveis."
       },
       "exampleChallengeLabel": {
-        "es": "Ejemplo de reto",
-        "en": "Example challenge",
-        "va": "Exemple de repte"
+        "es": "Evidencia destacada",
+        "en": "Featured evidence",
+        "va": "Evidència destacada"
       },
       "exampleChallenge": {
         "es": "Chatbot multilingüe para orientación ciudadana en servicios administrativos municipales",
