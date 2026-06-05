@@ -1,6 +1,6 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR DIRECTAMENTE
 // Edita los archivos en content/_ui/*.csv y ejecuta: npm run cms:ui
-// Base: translations.js existente + overrides de 61 entradas CSV
+// Base: translations.js existente + overrides de 82 entradas CSV
 
 export const translations = {
   "es": {
@@ -284,20 +284,25 @@ export const translations = {
         "courses": "Cursos",
         "modules": "Skills FP"
       },
-      "fpModulesLabel": "FP Skills (ejemplos prototipo)",
-      "masterTopicsLabel": "Candidatos a puente académico",
-      "featuredPartnersLabel": "Socios Destacados",
-      "stakeholderTypesLabel": "Tipos de stakeholders",
-      "teacherRelevanceLabel": "Relevancia para formación docente",
-      "exampleChallengeLabel": "Ejemplo de reto",
+      "fpModulesLabel": "Competencias FP prioritarias",
+      "masterTopicsLabel": "Conexiones académicas posibles",
+      "featuredPartnersLabel": "Socios destacados",
+      "stakeholderTypesLabel": "Stakeholders que pueden participar",
+      "teacherRelevanceLabel": "Aplicación didáctica para formación docente",
+      "exampleChallengeLabel": "Evidencia destacada",
       "demoLabel": "demo",
-      "transferChainTitle": "Cadena de transferencia AI-SECRETT",
+      "transferChainTitle": "Ruta de transferencia del sector",
       "transferChainLabels": {
-        "stakeholderNeed": "Necesidad del stakeholder",
-        "fpSkill": "Skill FP",
-        "teacherUse": "Uso docente",
-        "evidence": "Evidencia",
-        "masterBridge": "Puente académico"
+        "stakeholderNeed": "Necesidades sectoriales detectadas",
+        "fpSkill": "Competencias FP prioritarias",
+        "teacherUse": "Aplicación didáctica",
+        "evidence": "Evidencia / caso documentado",
+        "masterBridge": "Conexión académica posible",
+        "sectorNeeds": "Necesidades sectoriales detectadas",
+        "fpCompetences": "Competencias FP prioritarias",
+        "didacticApplication": "Aplicación didáctica",
+        "evidenceCase": "Evidencia / caso documentado",
+        "academicConnection": "Conexión académica posible"
       },
       "sectorNames": {
         "mfg": "Manufactura",
@@ -496,7 +501,12 @@ export const translations = {
           "IA para servicios ciudadanos éticos",
           "Gobernanza de datos en servicios públicos"
         ]
-      }
+      },
+      "stakeholderContributionLabel": "Qué puede aportar un stakeholder",
+      "relatedContentLabel": "Contenidos relacionados",
+      "exploreSectorContent": "Explorar contenidos del sector",
+      "noFeaturedEvidence": "Sin evidencia publicada todavía",
+      "noRelatedContent": "Sin contenidos relacionados publicados todavía"
     },
     "training": {
       "title": "Itinerarios de Transferencia AI-STEAM",
@@ -2154,20 +2164,25 @@ export const translations = {
         "courses": "Courses",
         "modules": "VET Skills"
       },
-      "fpModulesLabel": "VET Skills (prototype examples)",
-      "masterTopicsLabel": "Academic Bridge Candidates",
-      "featuredPartnersLabel": "Featured Partners",
-      "stakeholderTypesLabel": "Stakeholder types",
-      "teacherRelevanceLabel": "Teacher training relevance",
-      "exampleChallengeLabel": "Example challenge",
+      "fpModulesLabel": "Priority VET competences",
+      "masterTopicsLabel": "Possible academic connections",
+      "featuredPartnersLabel": "Featured partners",
+      "stakeholderTypesLabel": "Stakeholders who can participate",
+      "teacherRelevanceLabel": "Didactic application for teacher training",
+      "exampleChallengeLabel": "Featured evidence",
       "demoLabel": "demo",
-      "transferChainTitle": "AI-SECRETT Transfer Chain",
+      "transferChainTitle": "Sector transfer route",
       "transferChainLabels": {
-        "stakeholderNeed": "Stakeholder need",
-        "fpSkill": "VET skill",
-        "teacherUse": "Teacher use",
-        "evidence": "Evidence",
-        "masterBridge": "Academic bridge"
+        "stakeholderNeed": "Detected sector needs",
+        "fpSkill": "Priority VET competences",
+        "teacherUse": "Didactic application",
+        "evidence": "Evidence / documented case",
+        "masterBridge": "Possible academic connection",
+        "sectorNeeds": "Detected sector needs",
+        "fpCompetences": "Priority VET competences",
+        "didacticApplication": "Didactic application",
+        "evidenceCase": "Evidence / documented case",
+        "academicConnection": "Possible academic connection"
       },
       "sectorNames": {
         "mfg": "Manufacturing",
@@ -2366,7 +2381,12 @@ export const translations = {
           "AI for ethical citizen services",
           "Data governance in public services"
         ]
-      }
+      },
+      "stakeholderContributionLabel": "What a stakeholder can contribute",
+      "relatedContentLabel": "Related content",
+      "exploreSectorContent": "Explore sector content",
+      "noFeaturedEvidence": "No published evidence yet",
+      "noRelatedContent": "No related content published yet"
     },
     "training": {
       "title": "AI-STEAM Transfer Pathways",
@@ -4024,20 +4044,25 @@ export const translations = {
         "courses": "Cursos",
         "modules": "Skills FP"
       },
-      "fpModulesLabel": "FP Skills (exemples prototip)",
-      "masterTopicsLabel": "Candidats a pont acadèmic",
-      "featuredPartnersLabel": "Socis Destacats",
-      "stakeholderTypesLabel": "Tipus de stakeholders",
-      "teacherRelevanceLabel": "Rellevància per a formació docent",
-      "exampleChallengeLabel": "Exemple de repte",
+      "fpModulesLabel": "Competències FP prioritàries",
+      "masterTopicsLabel": "Connexions acadèmiques possibles",
+      "featuredPartnersLabel": "Socis destacats",
+      "stakeholderTypesLabel": "Stakeholders que poden participar",
+      "teacherRelevanceLabel": "Aplicació didàctica per a formació docent",
+      "exampleChallengeLabel": "Evidència destacada",
       "demoLabel": "demo",
-      "transferChainTitle": "Cadena de transferència AI-SECRETT",
+      "transferChainTitle": "Ruta de transferència del sector",
       "transferChainLabels": {
-        "stakeholderNeed": "Necessitat del stakeholder",
-        "fpSkill": "Skill FP",
-        "teacherUse": "Ús docent",
-        "evidence": "Evidència",
-        "masterBridge": "Pont acadèmic"
+        "stakeholderNeed": "Necessitats sectorials detectades",
+        "fpSkill": "Competències FP prioritàries",
+        "teacherUse": "Aplicació didàctica",
+        "evidence": "Evidència / cas documentat",
+        "masterBridge": "Connexió acadèmica possible",
+        "sectorNeeds": "Necessitats sectorials detectades",
+        "fpCompetences": "Competències FP prioritàries",
+        "didacticApplication": "Aplicació didàctica",
+        "evidenceCase": "Evidència / cas documentat",
+        "academicConnection": "Connexió acadèmica possible"
       },
       "sectorNames": {
         "mfg": "Manufactura",
@@ -4236,7 +4261,12 @@ export const translations = {
           "IA per a serveis ciutadans ètics",
           "Governança de dades en serveis públics"
         ]
-      }
+      },
+      "stakeholderContributionLabel": "Què pot aportar un stakeholder",
+      "relatedContentLabel": "Continguts relacionats",
+      "exploreSectorContent": "Explorar continguts del sector",
+      "noFeaturedEvidence": "Sense evidència publicada encara",
+      "noRelatedContent": "Sense continguts relacionats publicats encara"
     },
     "training": {
       "title": "Itineraris de Transferència AI-STEAM",
