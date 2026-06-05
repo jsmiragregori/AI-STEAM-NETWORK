@@ -118,7 +118,7 @@ Cada icono de presentación (sectores, features, avatares de bloque) va en un c�
   secundario `border-2 border-white/30 text-white rounded-full hover:bg-white/10`.
   (NOTA: el prototipo usa `rounded-full` en hero; los botones del CUERPO siguen DS.7.)
 
-### DS.6 — Menú / Navegación estilo AI-SECRETT  ⭐ (lo que el prototipo NO logró)
+### DS.6 — Menú / Navegación estilo AI-SECRETT  ⭐ IMPLEMENTADO (F1b, commit f699468)
 
 Referencia visual aportada por el responsable (home de aisecrett.eu): la nav es una
 **píldora oscura** que contiene las entradas en **MAYÚSCULAS**, tamaño grande y con
@@ -198,9 +198,9 @@ INSTRUCCION_LLM: al terminar una fase → `[~] EN_REVISION`. Tras aprobación hu
 
 | ID | Nombre | Estado | Notas |
 |---|---|---|---|
-| **F0** | **Fundación CSS** — crear `redesign.css` (tokens, utilidades de card, nav-pill, escala tipográfica) + enlazarlo en `index.html` | `[ ] PENDIENTE` | **base de todo**; sin esto las demás fases no tienen utilidades |
-| F1 | Body bg → canvas `#FFFDF9` (revisa F0 viejo) | `[~] REVISAR` | el viejo F0 puso `bg-eu-yellow`; cambiar a canvas `#FFFDF9` |
-| **F1b** | **Nav píldora editorial** (DS.6) — el menú AI-SECRETT real | `[ ] PENDIENTE` | mejora sobre el viejo F1 (que solo puso mayúsculas) |
+| **F0** | **Fundación CSS** — crear `redesign.css` (tokens, utilidades de card, nav-pill, escala tipográfica) + enlazarlo en `index.html` | `[x] APROBADA` | commit `0a3a5b9` |
+| F1 | Body bg → canvas `#FFFDF9` | `[x] APROBADA` | commit `0a3a5b9` — Sand Beige liberado a acento |
+| **F1b** | **Nav píldora editorial** (DS.6) — el menú AI-SECRETT real | `[x] APROBADA` | commit `f699468` — rd-nav-desktop/toggle/mobile en redesign.css, umbral 80rem |
 | F2 | Home — espaciado + cards (DS.3) + iconos círculo + hero stats + titulares morados | `[ ] PENDIENTE` | reintento con modelo nuevo; ya NO se tocan fondos de sección como antes |
 | F3 | Sectores — menú de iconos en círculo + cards | `[ ] PENDIENTE` | gradientes de sector intactos |
 | F4 | Formación — hero + course cards (a) + tabs | `[ ] PENDIENTE` | |
