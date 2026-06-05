@@ -258,11 +258,11 @@ INSTRUCCION_LLM: al terminar una fase → `[~] EN_REVISION`. Tras aprobación hu
 | ID | Nombre | Estado | Notas |
 |---|---|---|---|
 | **F0** | **Fundación CSS** — crear `redesign.css` (tokens, utilidades de card, nav-pill, escala tipográfica) + enlazarlo en `index.html` | `[x] APROBADA` | commit `0a3a5b9` |
-| **F0b** | **Recompilar Tailwind** — `tailwind-input.css` (@theme eu-* + @source) + build `build:css`; fin del CSS congelado | `[~] EN_REVISION` | 0 regresiones verificadas; ahora cualquier clase usada se compila sola |
+| **F0b** | **Recompilar Tailwind** — `tailwind-input.css` (@theme eu-* + @source) + build `build:css`; fin del CSS congelado | `[x] APROBADA` | commit `6be028f` — 0 regresiones; Instrument Sans en @theme |
 | F1 | Body bg → canvas `#FFFDF9` | `[x] APROBADA` | commit `0a3a5b9` — Sand Beige liberado a acento |
 | **F1b** | **Nav píldora editorial** (DS.6) — el menú AI-SECRETT real | `[x] APROBADA` | commit `f699468` — rd-nav-desktop/toggle/mobile en redesign.css, umbral 80rem |
 | F2 | Home — espaciado + cards (DS.3) + iconos círculo + hero stats + titulares morados | `[x] APROBADA` | commit `bbdc6d0` |
-| **F2b** | Home — correcciones doc estilo + hover por card (lift/edge) + iniciales que respiran + DualFocus beige oficial; "Últimas contribuciones" fuera de home | `[x] APROBADA` | commit `bbdc6d0` |
+| **F2b** | Home — correcciones doc estilo + hover por card (lift/edge) + iniciales que respiran + DualFocus beige oficial; "Últimas contribuciones" fuera de home y del CMS | `[x] APROBADA` | commits `bbdc6d0` (visual) + `2905c8f` (view) + CONTENT `a92af86` (CMS) |
 | F3 | Sectores — menú de iconos en círculo + cards | `[ ] PENDIENTE` | gradientes de sector intactos |
 | F4 | Formación — hero + course cards (a) + tabs | `[ ] PENDIENTE` | |
 | F5 | Actualidad — news cards (a) | `[ ] PENDIENTE` | |
@@ -460,7 +460,44 @@ COMMIT: `style(global): cierre visual overhaul — modelo AI-STEAM-MIGRATION`
 | `assets/js/views/home.js` | modelo MIGRATION | F2 |
 | `assets/js/views/{sectors,training,news,governance,knowledge,network}.js` | cards/espacio | F3–F8 |
 | `assets/js/views/marketplace.js` | shell + cards | F9, F10 |
-| `assets/css/tailwind-output.css` · `assets/css/main.css` | NO EDITAR | — |
+| `assets/css/tailwind-input.css` | fuente del build (@theme paleta+fuente, @source) | F0b |
+| `assets/css/tailwind-output.css` | GENERADO por `npm run build:css` — NO EDITAR | — |
+| `assets/css/main.css` | prefers-reduced-motion global — NO EDITAR | — |
+
+---
+
+## ESTADO_ACTUAL_PARA_CODEX  (actualizado 2026-06-05)
+
+> Leer esto antes de empezar. Es el resumen ejecutivo de dónde estamos.
+
+### Completado y aprobado (todos commiteados + push pendiente)
+
+| Fase | Qué se hizo | Commit(s) |
+|---|---|---|
+| F0 | `redesign.css` con tokens y utilidades `.rd-*` | `0a3a5b9` |
+| F0b | Tailwind v4 recompilado (`tailwind-input.css`); fin del CSS congelado | `6be028f` |
+| F1 | Body canvas `#FFFDF9` | `0a3a5b9` |
+| F1b | Nav píldora editorial (franja morada, entradas beige, idiomas/CTAs) | `f699468` |
+| F2+F2b | Home completa: hero full-viewport, cards modelo MIGRATION, iconos Lucide, DualFocus beige, ENRED cards con acento, hover lift/edge, tipografía editorial | `bbdc6d0` `2905c8f` |
+| CMS | "Últimas contribuciones" eliminada: YAML, loader, admin, validators, data generada | CONTENT `a92af86`, VANILLA `2905c8f` |
+
+### Siguiente fase a ejecutar: **F3 — Sectores**
+
+Archivo: `assets/js/views/sectors.js`. Ver sección FASE_F3 más abajo.
+Instrucciones generales para F3–F11 en sección CONVENCIONES_PARA_AGENTES_LLM.
+Todas las secciones del cuerpo: `rd-canvas rd-section rd-divide`.
+Cards de ítem: `rd-card rd-card-hover rd-pad` (variante lift).
+Gradientes de sector: PRESERVAR (PRESERVAR_INTACTO).
+Tras editar: `npm run build:css` → verificar → commit → parar para revisión humana.
+
+### Decisiones humanas fijas (no revertir sin consenso)
+
+- Fondos de sección: **siempre `rd-canvas`** (`#FFFDF9`), nunca `bg-white` como banda.
+- Cuerpo texto: **mínimo `text-lg`** (chips/labels/meta pueden ser `text-sm`).
+- Hover: **`.rd-card-hover`** (lift) para cards clicables/ítems; **`.rd-card-edge`** (borde) para cards informativas. Estáticas: sin clase hover.
+- Colores semánticos (verde/rojo/naranja): **eliminados** de la home. Solo gama violeta.
+- Animaciones: exentas de `prefers-reduced-motion` solo en `.rd-card-hover` y `.rd-card-edge` (ver `redesign.css`).
+- Build CSS: **`npm run build:css` OBLIGATORIO** tras tocar clases. Ver sección "⚙️ BUILD CSS".
 
 ---
 
