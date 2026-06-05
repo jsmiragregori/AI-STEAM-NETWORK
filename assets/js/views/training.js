@@ -1,5 +1,6 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
+import { getViewParams } from '../router.js';
 import { TRAINING_CONFIG } from '../../data/training.js';
 
 const COURSE_PARTNERS  = ['UVEG / CEICE', "Ud'A / UVEG", 'CEICE / Inspiring Futures Europe', 'AVA-ASAJA / CINK', 'INESC TEC / HSW', 'Region Värmland / NTNU', 'KEA / ESAD-GV / LPGA', 'LC / CEICE'];
@@ -39,6 +40,16 @@ function getActiveFilters(tab) {
 
 function setActiveFilters(tab, filters) {
   localStorage.setItem(`trainingFilters_${tab}`, JSON.stringify(filters));
+}
+
+function applyRouteParams() {
+  const params = getViewParams() || {};
+  const sectorIds = Array.isArray(params.sectorIds) ? params.sectorIds : [];
+  if (sectorIds.length === 0 || params._appliedTrainingFilters) return;
+  const tab = getState('trainingTab') || 'fp';
+  setActiveFilters(tab, { sectors: sectorIds, modalities: [], tags: [], statuses: [], search: '' });
+  setState('trainingPage', 0);
+  params._appliedTrainingFilters = true;
 }
 
 function filterCourses(courses, filters) {
@@ -519,6 +530,7 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
 
 // ── render ────────────────────────────────────────────────────────────────────
 export function render() {
+  applyRouteParams();
   const trainingT    = t('training') || {};
   const activeTab    = getState('trainingTab') || 'fp';
   const coursesBlock = TRAINING_CONFIG?.coursesBlock || {};

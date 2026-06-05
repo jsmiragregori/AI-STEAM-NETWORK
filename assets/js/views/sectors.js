@@ -391,15 +391,26 @@ function navigateSector(kind, sectorId) {
   }
 
   if (kind === 'training') {
+    const courseSectorIds = sector.navigationTargets?.training?.filters?.sectorIds || [];
+    const filters = { sectors: courseSectorIds, modalities: [], tags: [], statuses: [], search: '' };
+    localStorage.setItem('trainingFilters_fp', JSON.stringify(filters));
+    localStorage.setItem('trainingFilters_teacher', JSON.stringify(filters));
+    localStorage.setItem('trainingFilters_master', JSON.stringify(filters));
     setState('trainingTab', 'fp');
     setState('trainingPage', 0);
-    navigateTo('formacion');
+    navigateTo('formacion', { sectorIds: courseSectorIds, source: 'sectors', sector: sectorId });
     return;
   }
 
-  setState('marketplaceTab', 'challenges');
+  const firstType = sector.relatedContent?.[0]?.type || 'challenge';
+  const tab = CONTENT_TYPE_TABS[firstType] || 'challenges';
+  localStorage.setItem(`mpCommunityFilters:${tab}`, JSON.stringify({
+    search: '',
+    values: { sector: sectorId },
+  }));
+  setState('marketplaceTab', tab);
   setState('selectedChallengeId', null);
-  navigateTo('banco-retos', { sector: sectorId });
+  navigateTo('banco-retos', { sector: sectorId, tab, source: 'sectors' });
 }
 
 export function mount() {

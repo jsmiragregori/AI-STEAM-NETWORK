@@ -1,5 +1,6 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
+import { getViewParams } from '../router.js';
 import { MARKETPLACE_CONFIG } from '../../data/marketplace.js';
 
 const UI_TEXT = {
@@ -741,6 +742,18 @@ function setTabFilterState(tabId, state) {
 
 function clearTabFilterState(tabId) {
   localStorage.removeItem(getFilterStorageKey(tabId));
+}
+
+function applyRouteParams() {
+  const params = getViewParams() || {};
+  if (!params.sector || params._appliedMarketplaceFilters) return;
+  const tabId = params.tab || getState('marketplaceTab') || getActiveTabId();
+  const state = getTabFilterState(tabId);
+  state.values = { ...(state.values || {}), sector: params.sector };
+  setTabFilterState(tabId, state);
+  setState('marketplaceTab', tabId);
+  resetTabPagination(tabId);
+  params._appliedMarketplaceFilters = true;
 }
 
 function normalizeText(value) {
@@ -2138,6 +2151,7 @@ function scrollToTop(preferredBehavior = 'auto') {
 export function render() {
   // El segundo nivel de detalle se retiró (Fase 2). Las cards solo ofrecen la
   // descarga de ficha y el formulario de adhesión; no hay vista de detalle.
+  applyRouteParams();
   return renderList();
 }
 

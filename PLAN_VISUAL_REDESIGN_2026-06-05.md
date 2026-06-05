@@ -268,7 +268,7 @@ INSTRUCCION_LLM: al terminar una fase → `[~] EN_REVISION`. Tras aprobación hu
 | **F1b** | **Nav píldora editorial** (DS.6) — el menú AI-SECRETT real | `[x] APROBADA` | commit `f699468` — rd-nav-desktop/toggle/mobile en redesign.css, umbral 80rem |
 | F2 | Home — espaciado + cards (DS.3) + iconos círculo + hero stats + titulares morados | `[x] APROBADA` | commit `bbdc6d0` |
 | **F2b** | Home — correcciones doc estilo + hover por card (lift/edge) + iniciales que respiran + DualFocus beige oficial; "Últimas contribuciones" fuera de home y del CMS | `[x] APROBADA` | commits `bbdc6d0` (visual) + `2905c8f` (view) + CONTENT `a92af86` (CMS) |
-| F3 | Sectores — paleta unificada + iconos beige + legibilidad detalle | `[~] EN_REVISION` ⚠️ NO cerrada | ver "FASE_F3 — DETALLE Y ESTADO". Paleta corporativa unificada, iconos Lucide en `rd-icon-circle`, detalle a text-base/lg en 2 col. Pendiente OK humano |
+| F3 | Sectores — paleta unificada + iconos beige + legibilidad detalle | `[~] EN_REVISION` ⚠️ NO cerrada | ver "FASE_F3 — DETALLE Y ESTADO". F3 sigue pausada mientras se resuelve la brújula sectorial. |
 | F4 | Formación — hero + course cards (a) + tabs | `[ ] PENDIENTE` | |
 | F5 | Actualidad — news cards (a) | `[ ] PENDIENTE` | |
 | F6 | Gobernanza — cards + tabs; órganos intactos | `[ ] PENDIENTE` | |
@@ -526,7 +526,7 @@ COMMIT: `style(global): cierre visual overhaul — modelo AI-STEAM-MIGRATION`
 Archivo: `assets/js/views/sectors.js`. Trabajo aplicado y commiteado, pero el responsable
 **aún no la ha aprobado** — puede pedir iteraciones. Ver sección "FASE_F3 — DETALLE Y ESTADO"
 para qué está hecho y qué falta revisar. **NO marcar F3 como aprobada ni empezar F4 sin OK
-humano explícito.**
+humano explícito.** La mejora de Sectores se ha tratado aparte y no implica reanudar F3.
 
 Claves de F3 (decisión humana 2026-06-05): sectores **UNIFICADOS a paleta corporativa**
 (morado/azul + beige), iconos Lucide en `rd-icon-circle` (= home), detalle expandido con
