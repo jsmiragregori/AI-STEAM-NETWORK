@@ -19,6 +19,11 @@
 /* ─── CANVAS ──────────────────────────────────────────────────────────────── */
 .rd-canvas { background: var(--rd-canvas); }
 
+/* Padding superior del <main> ajustado a la altura real del header fijo.
+   < 80rem: solo topbar (64px). ≥ 80rem: topbar + navpill (~124px). */
+.rd-main { padding-top: 64px; }
+@media (min-width: 80rem) { .rd-main { padding-top: 128px; } }
+
 /* ─── RITMO DE SECCIÓN ────────────────────────────────────────────────────── */
 .rd-section { padding-block: 8rem; }
 
@@ -37,15 +42,31 @@
   border: 1px solid rgb(86 32 246 / .10);
   border-radius: 2rem;
   box-shadow: 0 10px 30px -12px rgb(86 32 246 / .08);
-  transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+  transition: transform .5s cubic-bezier(.16, 1, .3, 1),
+              box-shadow .5s cubic-bezier(.16, 1, .3, 1),
+              border-color .5s ease;
 }
 
-/* Lift al hover — añadir a cards interactivas */
+/* Lift al hover — muy sutil y suave (ease-out-expo) */
 .rd-card-hover:hover {
-  transform: translateY(-.5rem);
-  box-shadow: 0 24px 48px -16px rgb(86 32 246 / .18);
-  border-color: rgb(86 32 246 / .30);
+  transform: translateY(-.375rem);
+  box-shadow: 0 20px 40px -18px rgb(86 32 246 / .16);
+  border-color: rgb(86 32 246 / .22);
 }
+
+/* Variante de hover SOLO BORDE (sin movimiento): intensifica el color del
+   borde + halo sutil. Para cards donde no se quiere desplazamiento. */
+.rd-card-edge:hover {
+  border-color: rgb(86 32 246 / .55);
+  box-shadow: 0 0 0 1px rgb(86 32 246 / .25), 0 12px 30px -18px rgb(86 32 246 / .15);
+}
+
+/* DECISIÓN_HUMANA (2026-06-05): permitir las microinteracciones de card incluso
+   con prefers-reduced-motion activado. main.css fuerza transition-duration:.01ms
+   !important sobre *; reasertamos la duración SOLO para las cards con hover
+   (mayor especificidad + !important). Las animaciones grandes del resto del sitio
+   siguen respetando reduced-motion. */
+.rd-card-hover, .rd-card-edge { transition-duration: .5s !important; }
 
 /* (b) Card con barra de acento lateral azul */
 .rd-card-accent {
@@ -104,20 +125,30 @@
   background: linear-gradient(135deg, #4918AD 0%, #521DE2 55%, #5620F6 100%);
 }
 
+/* Hero a pantalla completa: solo el azul above-the-fold (alto menos header) */
+.rd-hero-fill {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 80rem) {
+  .rd-hero-fill { min-height: calc(100vh - 128px); }
+}
+
 /* Stats glassmórficas en el hero */
 .rd-hero-stat {
   background: rgb(255 255 255 / .10);
   backdrop-filter: blur(12px);
   border: 1px solid rgb(255 255 255 / .10);
-  border-radius: 1.5rem;
-  padding: 2rem;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
 }
 .rd-hero-stat-alt {
   background: rgb(30 27 75 / .30);
   backdrop-filter: blur(12px);
   border: 1px solid rgb(255 255 255 / .05);
-  border-radius: 1.5rem;
-  padding: 2rem;
+  border-radius: 1.25rem;
+  padding: 1.5rem;
 }
 
 /* ─── NAV PÍLDORA EDITORIAL (DS.6 — AI-SECRETT) ──────────────────────────── */

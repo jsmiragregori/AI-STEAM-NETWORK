@@ -21,25 +21,25 @@ function localized(value) {
 function cardToneClasses(tone) {
   const tones = {
     positive: {
-      card: 'bg-green-50 border-green-200',
-      icon: 'text-green-600',
-      title: 'text-green-800',
-      bullet: 'bg-green-600',
-      item: 'text-green-900',
-    },
-    negative: {
-      card: 'bg-red-50 border-red-200',
-      icon: 'text-red-600',
-      title: 'text-red-800',
-      bullet: 'bg-red-500',
-      item: 'text-red-900',
-    },
-    neutral: {
-      card: 'bg-white border-eu-border',
       icon: 'text-eu-blue',
       title: 'text-eu-text',
-      bullet: 'bg-eu-blue',
+      bulletHex: '#5620F6',
       item: 'text-gray-700',
+      accentExtra: '',
+    },
+    negative: {
+      icon: 'text-eu-purple',
+      title: 'text-eu-purple',
+      bulletHex: '#4918AD',
+      item: 'text-eu-purple',
+      accentExtra: 'rd-accent-purple rd-card-tint',
+    },
+    neutral: {
+      icon: 'text-eu-blue',
+      title: 'text-eu-text',
+      bulletHex: '#5620F6',
+      item: 'text-gray-700',
+      accentExtra: '',
     },
   };
 
@@ -49,19 +49,22 @@ function cardToneClasses(tone) {
 function enredToneClasses(tone) {
   const tones = {
     institutional: {
-      card: 'bg-white border border-eu-border shadow-sm',
-      title: 'text-gray-500',
-      pill: 'bg-eu-bg border border-eu-border text-gray-600',
+      title: 'text-eu-blue',
+      accent: '',
+      pillBg: 'rgb(86 32 246 / .07)',
+      pillColor: '#5620F6',
     },
     thematic: {
-      card: 'bg-white border-2 border-eu-purple shadow-md',
       title: 'text-eu-purple',
-      pill: 'bg-eu-purple/10 border border-eu-purple/30 text-eu-purple font-semibold',
+      accent: 'rd-accent-purple',
+      pillBg: 'rgb(73 24 173 / .08)',
+      pillColor: '#4918AD',
     },
     neutral: {
-      card: 'bg-white border border-eu-border shadow-sm',
-      title: 'text-eu-text',
-      pill: 'bg-eu-bg border border-eu-border text-gray-600',
+      title: 'text-eu-blue',
+      accent: '',
+      pillBg: 'rgb(86 32 246 / .07)',
+      pillColor: '#5620F6',
     },
   };
 
@@ -107,18 +110,18 @@ function renderIsNotBlock() {
   const cards = (block.cards || []).map(card => {
     const tone = cardToneClasses(card.tone);
     const items = (card.items || []).map(item => `
-      <li class="flex items-start gap-2 text-sm ${tone.item}">
-        <span class="w-1.5 h-1.5 ${tone.bullet} rounded-full mt-1.5 shrink-0"></span><span>${localized(item.html)}</span>
+      <li class="flex items-start gap-3 text-base font-medium ${tone.item}">
+        <div style="width:9px;height:9px;border-radius:9999px;background:${tone.bulletHex};margin-top:9px;flex-shrink:0"></div><span>${localized(item.html)}</span>
       </li>
     `).join('');
 
     return `
-      <div class="${tone.card} border rounded-xl p-6">
-        <div class="flex items-center gap-2 mb-4">
-          <i data-lucide="${card.icon}" class="w-5 h-5 ${tone.icon}"></i>
-          <h3 class="font-bold ${tone.title} text-lg">${localized(card.title)}</h3>
+      <div class="rd-card rd-card-accent rd-card-edge ${tone.accentExtra} rd-pad">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="rd-icon-circle-sm"><i data-lucide="${card.icon}" class="w-5 h-5 ${tone.icon}"></i></div>
+          <h3 class="font-extrabold ${tone.title} text-xl">${localized(card.title)}</h3>
         </div>
-        <ul class="space-y-3">${items}</ul>
+        <ul class="space-y-5">${items}</ul>
       </div>
     `;
   }).join('');
@@ -126,10 +129,10 @@ function renderIsNotBlock() {
   if (!cards) return '';
 
   return `
-    <section class="px-6 py-12 bg-white border-b border-eu-border">
+    <section class="px-6 rd-canvas rd-section rd-divide">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl font-bold text-eu-text mb-8">${localized(block.heading)}</h2>
-        <div class="grid gap-6" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <h2 class="mb-12">${localized(block.heading)}</h2>
+        <div class="grid gap-8" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
           ${cards}
         </div>
       </div>
@@ -144,12 +147,12 @@ function renderEnredBlock() {
   const cards = (block.cards || []).map(card => {
     const tone = enredToneClasses(card.tone);
     const pills = (card.pills || []).map(pill =>
-      `<span class="text-xs rounded px-2 py-1 ${tone.pill}">${localized(pill.html)}</span>`
+      `<span class="font-semibold rounded-full" style="font-size:.8125rem;padding:.3rem .85rem;background:${tone.pillBg};color:${tone.pillColor}">${localized(pill.html)}</span>`
     ).join('');
 
     return `
-      <div class="flex-1 ${tone.card} rounded-xl p-6">
-        <p class="text-xs font-bold uppercase tracking-widest ${tone.title} mb-3">${localized(card.title)}</p>
+      <div class="flex-1 rd-card rd-card-accent rd-card-edge ${tone.accent} rd-pad">
+        <p class="text-xs font-bold uppercase ${tone.title} mb-4" style="letter-spacing:.15em">${localized(card.title)}</p>
         <div class="flex flex-wrap gap-2">${pills}</div>
       </div>
     `;
@@ -169,13 +172,13 @@ function renderEnredBlock() {
     : `${cards[0]}${connector}${cards.slice(1).join('')}`;
 
   const description = block.description?.visible
-    ? `<p class="mt-6 text-sm text-gray-600 w-full leading-relaxed columns-1 lg:columns-2 gap-10 [column-fill:balance]">${localized(block.description.html)}</p>`
+    ? `<p class="mt-8 w-full leading-relaxed columns-1 lg:columns-2 gap-10 [column-fill:balance]" style="font-size:1.0625rem;color:rgba(30,27,75,.72)">${localized(block.description.html)}</p>`
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-bg border-b border-eu-border">
+    <section class="px-6 rd-canvas rd-section rd-divide">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl font-bold text-eu-text mb-6">${localized(block.heading)}</h2>
+        <h2 class="mb-10">${localized(block.heading)}</h2>
         <div class="flex flex-col md:flex-row items-stretch gap-4">
           ${body}
         </div>
@@ -190,26 +193,35 @@ function renderEcosystemBlock() {
   if (!block?.visible) return '';
 
   const cards = (block.cards || []).map(card => {
-    const tone = ecosystemToneClasses(card.tone);
+    // La card "activa" es el portal actual (sin enlace externo).
+    const isActive = !card.href;
+    const initialsStyle = isActive
+      ? 'background:linear-gradient(135deg,#5620F6,#4918AD);color:#fff'
+      : 'background:#FFF4E1;color:#4918AD';
+    const tagStyle = isActive
+      ? 'background:#5620F6;color:#fff'
+      : 'background:rgb(86 32 246 / .07);color:#5620F6';
     const tag = card.tag?.visible
-      ? `<span class="self-start text-xs font-bold px-2 py-1 bg-eu-bg rounded ${tone.tag}">${localized(card.tag.html)}</span>`
+      ? `<span class="self-start text-sm font-bold rounded-full" style="padding:.35rem 1rem;${tagStyle}">${localized(card.tag.html)}</span>`
       : '';
     const attrs = card.href
       ? `href="${card.href}"${card.target ? ` target="${card.target}"` : ''}${card.target === '_blank' ? ' rel="noopener noreferrer"' : ''}`
       : '';
     const element = card.href ? 'a' : 'div';
-    const interactive = card.href ? ' hover:shadow-lg transition-all cursor-pointer' : '';
+    const cardStyle = isActive ? ' style="background:rgb(255 244 225 / .45)"' : '';
+    const activeBorder = isActive ? ' border-2 border-eu-purple' : '';
+    const cursor = card.href ? ' cursor-pointer' : '';
 
     return `
-      <${element} ${attrs} class="bg-white rounded-xl border-t-4 ${tone.border} border border-eu-border p-6 shadow-sm flex flex-col${interactive}">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-10 h-10 ${tone.icon} rounded-lg flex items-center justify-center text-white font-bold text-sm">${card.initials}</div>
+      <${element} ${attrs} class="rd-card rd-card-hover rd-pad flex flex-col${activeBorder}${cursor}"${cardStyle}>
+        <div class="flex items-center gap-4 mb-6">
+          <div class="flex items-center justify-center font-extrabold text-lg shrink-0" style="width:3.5rem;height:3.5rem;border-radius:1rem;${initialsStyle}">${card.initials}</div>
           <div>
-            <p class="font-bold text-eu-text">${localized(card.title)}</p>
-            <p class="text-xs text-gray-500">${localized(card.subtitle)}</p>
+            <p class="font-extrabold text-eu-purple text-xl">${localized(card.title)}</p>
+            <p class="text-sm text-gray-500 mt-0.5">${localized(card.subtitle)}</p>
           </div>
         </div>
-        <p class="text-sm text-gray-600 flex-1 mb-4">${localized(card.description)}</p>
+        <p class="text-base text-gray-600 flex-1 mb-8 leading-relaxed">${localized(card.description)}</p>
         ${tag}
       </${element}>
     `;
@@ -222,11 +234,11 @@ function renderEcosystemBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-white border-b border-eu-border">
+    <section class="px-6 rd-canvas rd-section rd-divide">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl font-bold text-eu-text mb-2">${localized(block.heading)}</h2>
+        <h2 class="mb-4">${localized(block.heading)}</h2>
         ${description}
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           ${cards}
         </div>
       </div>
@@ -235,24 +247,25 @@ function renderEcosystemBlock() {
 }
 
 function dualFocusToneClasses(tone) {
+  // Solo gama violeta corporativa (sin naranja/colores de advertencia).
   const tones = {
     orange: {
-      card: 'bg-linear-to-br from-orange-50 to-orange-100/50 border-eu-yellow',
-      icon: 'bg-eu-orange',
-      coordinator: 'text-eu-orange',
-      bullet: 'bg-eu-orange',
+      coordinator: 'text-eu-blue',
+      bulletHex: '#5620F6',
+      accent: '',
+      initialsColor: '#5620F6',
     },
     purple: {
-      card: 'bg-linear-to-br from-purple-50 to-purple-100/50 border-purple-200',
-      icon: 'bg-purple-600',
-      coordinator: 'text-purple-600',
-      bullet: 'bg-purple-600',
+      coordinator: 'text-eu-purple',
+      bulletHex: '#4918AD',
+      accent: 'rd-accent-purple',
+      initialsColor: '#4918AD',
     },
     neutral: {
-      card: 'bg-white border-eu-border',
-      icon: 'bg-gray-600',
-      coordinator: 'text-gray-600',
-      bullet: 'bg-gray-600',
+      coordinator: 'text-eu-blue',
+      bulletHex: '#5620F6',
+      accent: '',
+      initialsColor: '#5620F6',
     },
   };
 
@@ -266,23 +279,23 @@ function renderDualFocusBlock() {
   const cards = (block.cards || []).map(card => {
     const tone = dualFocusToneClasses(card.tone);
     const items = (card.items || []).map(item => `
-      <li class="flex items-center gap-2 text-sm text-gray-700">
-        <span class="w-1.5 h-1.5 ${tone.bullet} rounded-full inline-block"></span>
+      <li class="flex items-center gap-3 text-base font-semibold text-eu-text">
+        <div style="width:10px;height:10px;border-radius:9999px;background:${tone.bulletHex};flex-shrink:0"></div>
         <span>${localized(item.html)}</span>
       </li>
     `).join('');
 
     return `
-      <div class="${tone.card} border rounded-xl p-7">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-12 h-12 ${tone.icon} rounded-xl flex items-center justify-center text-white font-extrabold text-sm">${card.initials}</div>
+      <div class="rd-card rd-card-accent rd-card-edge ${tone.accent} rd-card-xl rd-pad-l" style="background:#FFF4E1">
+        <div class="flex items-center gap-5 mb-8">
+          <div class="flex items-center justify-center font-extrabold text-2xl shrink-0" style="width:4rem;height:4rem;border-radius:1rem;background:#fff;color:${tone.initialsColor};box-shadow:0 6px 16px rgb(73 24 173 / .12)">${card.initials}</div>
           <div>
-            <h3 class="font-bold text-eu-text text-lg">${localized(card.title)}</h3>
-            <p class="text-xs ${tone.coordinator} font-semibold">${localized(card.coordinator)}</p>
+            <h3 class="font-extrabold text-eu-text text-2xl">${localized(card.title)}</h3>
+            <p class="text-base ${tone.coordinator} font-bold mt-0.5">${localized(card.coordinator)}</p>
           </div>
         </div>
-        <p class="text-sm text-gray-700 mb-5">${localized(card.description)}</p>
-        <ul class="space-y-2">${items}</ul>
+        <p class="text-lg text-gray-600 mb-10 leading-relaxed">${localized(card.description)}</p>
+        <ul class="space-y-4">${items}</ul>
       </div>
     `;
   }).join('');
@@ -294,11 +307,11 @@ function renderDualFocusBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-white">
+    <section class="px-6 rd-canvas rd-section rd-divide">
       <div class="max-w-7xl mx-auto">
-        <h2 class="text-2xl font-bold text-eu-text mb-2">${localized(block.heading)}</h2>
+        <h2 class="mb-4">${localized(block.heading)}</h2>
         ${description}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
           ${cards}
         </div>
       </div>
@@ -328,14 +341,14 @@ function renderLatestChallengesBlock() {
         const isFP = levelLabel === 'FP' || levelLabel === 'VET';
         const typeClass = isFP ? 'bg-eu-yellow text-eu-purple' : 'bg-purple-100 text-purple-800';
         return `
-          <div class="bg-white rounded-xl border border-eu-border p-5 hover:border-eu-blue transition-colors shadow-sm">
-            <div class="flex items-center justify-between mb-3">
-              <span class="text-sm font-extrabold uppercase px-2 py-0.5 rounded ${typeClass}">${badgeText}</span>
-              <span class="text-sm text-eu-teal font-bold">● ${statusLabel}</span>
+          <div class="rd-card rd-card-hover flex flex-col" style="padding:2.5rem">
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-xs font-extrabold uppercase tracking-wider ${typeClass}" style="padding:.35rem .75rem;border-radius:.5rem">${badgeText}</span>
+              <span class="rd-badge-blue">● ${statusLabel}</span>
             </div>
-            <h3 class="font-bold text-eu-text text-sm mb-1 leading-snug">${localized(ch.title)}</h3>
-            <p class="text-xs text-gray-500 mb-3">${localized(ch.org)}</p>
-            <span class="text-sm bg-eu-bg border border-eu-border px-2 py-0.5 rounded text-gray-600 font-semibold">${sectorLabel}</span>
+            <h3 class="font-extrabold text-eu-text text-xl mb-3 leading-snug flex-1">${localized(ch.title)}</h3>
+            <p class="text-sm text-gray-500 mb-6">${localized(ch.org)}</p>
+            <span class="rd-badge-beige">${sectorLabel}</span>
           </div>`;
       }).join('');
 
@@ -346,10 +359,10 @@ function renderLatestChallengesBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-bg border-t border-eu-border">
+    <section class="px-6 rd-canvas rd-section rd-divide">
       <div class="max-w-7xl mx-auto">
-        <div class="flex items-center justify-between mb-6">
-          <h2 class="text-2xl font-bold text-eu-text">${localized(block.heading)}</h2>
+        <div class="flex items-end justify-between mb-12">
+          <h2>${localized(block.heading)}</h2>
           ${viewAll}
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">${contributionsHtml}</div>
@@ -358,15 +371,31 @@ function renderLatestChallengesBlock() {
   `;
 }
 
+const SECTOR_ICONS = {
+  mfg: 'factory',
+  mob: 'car',
+  ene: 'zap',
+  agr: 'wheat',
+  cci: 'palette',
+  hou: 'home',
+  nts: 'building-2',
+};
+
 function renderSectorsBlock() {
   const block = HOME_CONFIG.sectorsBlock;
   if (!block?.visible) return '';
 
-  const cards = (block.cards || []).map(card => `
-    <button data-nav="sectores" class="bg-white rounded-xl border border-eu-border p-4 flex flex-col items-center text-center hover:border-eu-blue hover:shadow-md transition-all cursor-pointer" aria-label="${localized(card.label)}">
-      <span class="text-3xl mb-2" role="img" aria-hidden="true">${card.emoji}</span>
+  const cards = (block.cards || []).map(card => {
+    const icon = SECTOR_ICONS[card.id] || 'shapes';
+    return `
+    <button data-nav="sectores" class="rd-card rd-card-hover flex flex-col items-center justify-center text-center cursor-pointer" style="padding:2rem 1rem" aria-label="${localized(card.label)}">
+      <div class="rd-icon-circle mb-4">
+        <i data-lucide="${icon}" class="w-6 h-6 text-eu-blue"></i>
+      </div>
+      <span class="text-sm font-bold text-eu-text leading-tight">${localized(card.label)}</span>
     </button>
-  `).join('');
+  `;
+  }).join('');
 
   if (!cards) return '';
 
@@ -381,11 +410,11 @@ function renderSectorsBlock() {
     : '';
 
   return `
-    <section class="px-6 py-12 bg-eu-bg">
+    <section class="px-6 rd-canvas rd-section rd-divide">
       <div class="max-w-7xl mx-auto">
-        <div class="flex items-center justify-between mb-8">
+        <div class="flex items-end justify-between mb-12">
           <div>
-            <h2 class="text-2xl font-bold text-eu-text mb-1">${localized(block.heading)}</h2>
+            <h2 class="mb-2">${localized(block.heading)}</h2>
             ${description}
           </div>
           ${viewAll}
@@ -412,9 +441,9 @@ function renderConsortiumBlock() {
   }).join('');
 
   return `
-    <section class="px-6 py-10 bg-white border-t border-eu-border">
+    <section class="px-6 rd-canvas rd-section rd-divide">
       <div class="max-w-7xl mx-auto">
-        <p class="text-center text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">${localized(block.heading)}</p>
+        <h2 class="mb-12">${localized(block.heading)}</h2>
         <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;align-items:center;">${partnersHtml}</div>
       </div>
     </section>
@@ -426,37 +455,41 @@ function renderHeroBlock() {
   if (!hero?.visible) return '';
   const lang = getLanguage();
   const loc = v => v?.[lang] || v?.es || '';
-  const statsHtml = (hero.stats || []).map(s => `
-    <div class="bg-white/10 backdrop-blur rounded-xl p-5 flex flex-col">
-      <i data-lucide="${s.icon}" class="w-5 h-5 text-eu-yellow mb-2"></i>
-      <div class="text-3xl font-extrabold text-white leading-none mb-1">${s.value}</div>
-      <div class="text-xs text-white/70 font-semibold uppercase tracking-wide">${loc(s.label)}</div>
-    </div>
-  `).join('');
+  const stats = hero.stats || [];
+  const statsHtml = stats.map((s, i) => {
+    const isOddLast = (i === stats.length - 1) && (stats.length % 2 === 1);
+    const spanStyle = isOddLast ? 'grid-column:1 / -1;' : '';
+    return `
+    <div class="${i % 2 === 0 ? 'rd-hero-stat' : 'rd-hero-stat-alt'} flex flex-col" style="${spanStyle}">
+      <i data-lucide="${s.icon}" class="w-6 h-6 mb-4" style="color:#FFF4E1"></i>
+      <div class="text-4xl font-extrabold text-white leading-none mb-2">${s.value}</div>
+      <div class="text-xs font-bold uppercase tracking-wider" style="color:rgba(255,244,225,.75)">${loc(s.label)}</div>
+    </div>`;
+  }).join('');
   const requestJoinButton = hero.buttons?.requestJoin?.visible !== false
-    ? `<button data-nav="red" data-membership-cta="true" class="border-2 border-white/50 text-white px-6 py-3 rounded-md font-bold hover:bg-white/10 transition-colors">
+    ? `<button data-nav="red" data-membership-cta="true" class="rounded-full font-bold transition-all" style="border:2px solid rgba(255,255,255,.35);color:white;padding:.875rem 2rem">
         ${loc(hero.buttons?.requestJoin)}
       </button>`
     : '';
   return `
-    <section class="bg-linear-to-br from-eu-blue to-eu-purple text-white px-6 py-16">
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+    <section class="rd-hero-gradient rd-hero-fill text-white px-6 py-20">
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div>
-          <span class="inline-block bg-eu-yellow/20 text-eu-yellow font-bold text-xs uppercase tracking-widest px-3 py-1 rounded-full mb-4">
+          <span class="inline-block bg-white/10 border border-white/20 font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-8" style="color:#FFF4E1;backdrop-filter:blur(8px)">
             ${loc(hero.badge)}
           </span>
-          <h1 class="text-4xl lg:text-5xl font-extrabold leading-tight mb-3">${loc(hero.title)}</h1>
-          <p class="text-lg font-semibold text-eu-yellow mb-4">${loc(hero.subtitle)}</p>
-          <p class="text-base text-white/90 mb-4 max-w-xl leading-relaxed border-l-4 border-eu-yellow/60 pl-4">${loc(hero.heroTagline)}</p>
-          <p class="text-sm text-white/70 mb-8 max-w-xl">${loc(hero.description)}</p>
-          <div class="flex flex-wrap gap-3">
-            <button data-nav="banco-retos" class="bg-eu-orange text-white px-6 py-3 rounded-md font-bold hover:bg-eu-purple transition-colors flex items-center gap-2">
+          <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.75rem,5vw,4.25rem);line-height:1.05;max-width:14ch">${loc(hero.title)}</h1>
+          <p class="text-lg font-semibold mb-4" style="color:#FFF4E1">${loc(hero.subtitle)}</p>
+          <p class="text-base mb-4 max-w-xl leading-relaxed border-l-4 pl-4" style="color:rgba(255,255,255,.85);border-color:rgba(255,244,225,.4)">${loc(hero.heroTagline)}</p>
+          <p class="text-sm mb-10 max-w-xl" style="color:rgba(255,255,255,.65)">${loc(hero.description)}</p>
+          <div class="flex flex-wrap gap-4">
+            <button data-nav="banco-retos" class="rounded-full font-bold flex items-center gap-2 transition-all hover:scale-105" style="background:#FFF4E1;color:#4918AD;padding:.875rem 2rem">
               ${loc(hero.buttons?.uploadChallenge)} <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
             ${requestJoinButton}
           </div>
         </div>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">${statsHtml}</div>
+        <div class="grid grid-cols-2 gap-5">${statsHtml}</div>
       </div>
     </section>
   `;
@@ -482,9 +515,6 @@ export function render() {
 
       <!-- Dual Focus -->
       ${renderDualFocusBlock()}
-
-      <!-- Latest Challenges -->
-      ${renderLatestChallengesBlock()}
 
       <!-- Partners -->
       ${renderConsortiumBlock()}
