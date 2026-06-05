@@ -124,10 +124,27 @@
 .rd-navpill {
   background: var(--rd-purple);
   border-radius: 9999px;
-  padding: .5rem 1.75rem;
-  display: inline-flex;
+  padding: .375rem .75rem;
+  display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 0;
+  /* Ancho natural según contenido: NO scroll, NO clip. El breakpoint (80rem)
+     garantiza que cabe; los items nunca se recortan. */
+  flex: 0 1 auto;
+  white-space: nowrap;
+}
+
+/* ── RESPONSIVE DE LA NAV (control propio, no depende de clases Tailwind) ──
+   El CSS compilado no incluye xl:flex / xl:hidden, así que gobernamos la
+   conmutación nav-completa ↔ hamburguesa con media queries propias.
+   Umbral: 80rem (1280px). Por debajo no caben 8 entradas + idiomas + CTAs. */
+.rd-nav-desktop { display: none; }          /* oculta por defecto (móvil/tablet) */
+.rd-nav-toggle  { display: flex; }          /* hamburguesa visible por defecto */
+
+@media (min-width: 80rem) {
+  .rd-nav-desktop { display: flex; }        /* nav completa solo si hay sitio */
+  .rd-nav-toggle  { display: none; }        /* sin hamburguesa */
+  .rd-nav-mobile  { display: none !important; } /* cierra dropdown si se ensancha */
 }
 
 /* ─── TIPOGRAFÍA EDITORIAL ────────────────────────────────────────────────── */

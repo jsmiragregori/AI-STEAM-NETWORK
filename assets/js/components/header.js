@@ -26,9 +26,10 @@ function langBtn(language, lang) {
   const code = language.code;
   const label = language.label || code.toUpperCase();
   const active = lang === code;
-  return `<button data-lang="${code}" lang="${language.bcp47 || code}" aria-label="Cambiar idioma a ${label}" style="min-height:44px;min-width:44px" class="cursor-pointer px-2 rounded transition-colors whitespace-nowrap text-sm font-semibold ${
-    active ? 'text-eu-text font-bold bg-gray-100' : 'text-gray-700 hover:text-eu-blue hover:bg-gray-100'
-  }">${label}</button>`;
+  return `<button data-lang="${code}" lang="${language.bcp47 || code}" aria-label="Cambiar idioma a ${label}" class="cursor-pointer font-bold transition-all whitespace-nowrap" style="min-height:44px;min-width:2rem;font-size:0.8125rem;padding:.25rem .625rem;border-radius:.4rem;background:${active ? 'rgba(255,255,255,0.2)' : 'transparent'};color:${active ? '#FFF4E1' : 'rgba(255,244,225,0.6)'}"
+    onmouseover="if(!${active})this.style.background='rgba(255,255,255,0.1)'"
+    onmouseout="if(!${active})this.style.background='transparent'"
+  >${label}</button>`;
 }
 
 function langBtnMobile(language, lang) {
@@ -48,7 +49,9 @@ function renderDesktopButtons() {
       const href = btn.href;
       if (!href) return '';
       return `<a href="${href}" target="${btn.target || '_self'}" rel="noopener noreferrer"
-               class="bg-eu-teal/10 border border-eu-teal text-eu-teal px-3 py-2 rounded text-sm font-bold cursor-pointer hover:bg-eu-teal hover:text-white transition-colors inline-block">
+               class="rounded-full text-sm font-bold cursor-pointer transition-colors inline-flex items-center" style="min-height:44px;background:#FFF4E1;color:#4918AD;padding:.375rem 1rem"
+               onmouseover="this.style.background='#5620F6';this.style.color='#FFF4E1'"
+               onmouseout="this.style.background='#FFF4E1';this.style.color='#4918AD'">
               ${label}
             </a>`;
     }).join('');
@@ -73,18 +76,15 @@ export function renderHeader() {
   const active = getActiveView();
   const mobileOpen = getState('mobileMenuOpen');
   const languages = getHeaderLanguages();
-  const desktopLangButtons = languages.map((language, index) => `
-            ${index > 0 ? '<span class="text-gray-400">|</span>' : ''}
-            ${langBtn(language, lang)}
-          `).join('');
+  const desktopLangButtons = languages.map(language => langBtn(language, lang)).join('');
   const mobileLangButtons = languages.map(language => langBtnMobile(language, lang)).join('');
 
   const desktopNav = NAV_CONFIG.items.map(item => `
-    <button data-view="${item.id}" class="text-xs font-bold uppercase tracking-wider flex items-center px-3 cursor-pointer border-b-[3px] transition-all duration-200 whitespace-nowrap h-full ${
+    <button data-view="${item.id}" class="font-bold uppercase cursor-pointer transition-all duration-200 rounded-full ${
       active === item.id
-        ? 'text-white border-eu-yellow'
-        : 'text-white/80 border-transparent hover:text-white hover:border-white/40'
-    }">${t(item.key)}</button>
+        ? 'bg-white/20'
+        : 'hover:bg-white/10'
+    }" style="min-height:44px;flex-shrink:0;white-space:nowrap;font-size:0.8125rem;letter-spacing:.03em;padding:.375rem .625rem;color:#FFF4E1">${t(item.key)}</button>
   `).join('');
 
   const mobileNav = NAV_CONFIG.items.map(item => `
@@ -92,7 +92,7 @@ export function renderHeader() {
       active === item.id
         ? 'bg-eu-blue/20 border-eu-yellow text-white shadow-md'
         : 'border-transparent text-white/80 hover:text-white hover:bg-white/10 active:bg-white/20'
-    }">${t(item.key)}</button>
+    }" style="color:#FFF4E1">${t(item.key)}</button>
   `).join('');
 
   const hamburgerPath = mobileOpen
@@ -112,32 +112,30 @@ export function renderHeader() {
           </div>
         </div>
 
-        <!-- Desktop right actions (lg+) -->
-        <div class="hidden lg:flex items-center gap-3">
-          <div class="flex items-center font-semibold text-gray-700 gap-2">
-            ${desktopLangButtons}
-          </div>
-          <div class="flex items-center gap-2 border-l border-eu-border pl-4">
-            ${renderDesktopButtons()}
-          </div>
-        </div>
-
-        <!-- Hamburger (below lg) -->
-        <button id="mobile-menu-toggle" style="min-height:44px;min-width:44px" class="lg:hidden p-2 rounded hover:bg-gray-100 transition-colors flex items-center justify-center" aria-label="Toggle menu">
+        <!-- Hamburger (responsive controlado en redesign.css: rd-nav-toggle) -->
+        <button id="mobile-menu-toggle" style="min-height:44px;min-width:44px" class="rd-nav-toggle p-2 rounded hover:bg-gray-100 transition-colors items-center justify-center" aria-label="Toggle menu">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${hamburgerPath}"/>
           </svg>
         </button>
       </header>
 
-      <!-- Desktop nav bar (lg+) -->
-      <nav class="hidden lg:flex bg-eu-blue h-12 px-6 gap-1">
-        ${desktopNav}
+      <!-- Desktop nav bar — píldora editorial AI-SECRETT (rd-nav-desktop) -->
+      <nav class="rd-nav-desktop bg-eu-purple items-center py-2" style="padding-left:1.25rem;padding-right:1.25rem;gap:.75rem">
+        <div class="rd-navpill">
+          ${desktopNav}
+        </div>
+        <div class="flex items-center gap-1 shrink-0" style="margin-left:auto">
+          ${desktopLangButtons}
+        </div>
+        <div class="flex items-center gap-2 shrink-0 border-l border-white/20" style="padding-left:.75rem">
+          ${renderDesktopButtons()}
+        </div>
       </nav>
 
-      <!-- Mobile/tablet dropdown -->
+      <!-- Mobile/tablet dropdown (rd-nav-mobile) -->
       ${mobileOpen ? `
-      <nav class="lg:hidden bg-eu-blue border-t border-eu-blue/20 max-h-[calc(100vh-128px)] overflow-y-auto">
+      <nav class="rd-nav-mobile bg-eu-blue border-t border-eu-blue/20 max-h-[calc(100vh-128px)] overflow-y-auto">
         <div class="flex flex-col">${mobileNav}</div>
         <div class="border-t border-eu-blue/20 px-6 py-4">
           <p class="text-xs text-white/80 font-bold uppercase mb-3 tracking-wide">${t('header.language')}</p>
