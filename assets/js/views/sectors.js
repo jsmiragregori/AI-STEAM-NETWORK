@@ -13,13 +13,25 @@ const SECTORS_META = [
   { id: 'nts', emoji: '🏢',  color: 'from-slate-600 to-gray-500',      borderColor: 'border-slate-500', tagBg: 'bg-slate-100',  tagText: 'text-slate-800',  challenges: 16, courses: 11, stakeholders: 56,  featuredPartners: ['CEICE', 'LC', 'COGN', 'FIDIT'] },
 ];
 
+// Iconos Lucide por sector (mismo criterio que la home; sustituyen a los emojis)
+const SECTOR_ICONS = {
+  mfg: 'factory',
+  mob: 'car',
+  ene: 'zap',
+  agr: 'wheat',
+  cci: 'palette',
+  hou: 'home',
+  nts: 'building-2',
+};
+
 const CHAIN_ICONS = ['users', 'book-open', 'lightbulb', 'flask-conical', 'graduation-cap'];
+// Solo binomio corporativo (alternando azul/morado) con transparencias suaves.
 const CHAIN_COLORS = [
-  'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
-  'bg-eu-orange/10 text-eu-orange border-eu-orange/20',
-  'bg-blue-50 text-blue-700 border-blue-200',
-  'bg-green-50 text-green-700 border-green-200',
-  'bg-purple-50 text-purple-700 border-purple-200',
+  'bg-eu-blue/5 text-eu-blue border-eu-blue/15',
+  'bg-eu-purple/5 text-eu-purple border-eu-purple/15',
+  'bg-eu-blue/5 text-eu-blue border-eu-blue/15',
+  'bg-eu-purple/5 text-eu-purple border-eu-purple/15',
+  'bg-eu-blue/5 text-eu-blue border-eu-blue/15',
 ];
 
 function enhanceSectorWithMetadata(sector) {
@@ -42,15 +54,15 @@ function renderExpanded(sector, sectorsT) {
     .filter(item => item.visible !== false);
 
   const chainHtml = visibleChainItems.map((chainItem, displayIdx) => `
-    <div class="flex items-start gap-1.5">
-      <div class="flex flex-col gap-1 border rounded-lg px-3 py-2 min-w-32.5 max-w-50 ${CHAIN_COLORS[chainItem.index] || CHAIN_COLORS[0]}">
-        <div class="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide">
-          <i data-lucide="${CHAIN_ICONS[chainItem.index] || 'circle'}" class="w-4 h-4"></i>
+    <div class="flex items-start gap-2">
+      <div class="flex flex-col gap-2 border rounded-xl px-4 py-3.5 ${CHAIN_COLORS[chainItem.index] || CHAIN_COLORS[0]}" style="min-width:13rem;max-width:17rem">
+        <div class="flex items-center gap-2 text-sm font-bold uppercase tracking-wide">
+          <i data-lucide="${CHAIN_ICONS[chainItem.index] || 'circle'}" class="w-5 h-5 shrink-0"></i>
           ${sectorsT?.transferChainLabels?.[chainLabels[chainItem.index]] || ''}
         </div>
-        <p class="text-xs leading-snug">${localized(chainItem.value)}</p>
+        <p class="text-base leading-relaxed">${localized(chainItem.value)}</p>
       </div>
-      ${displayIdx < visibleChainItems.length - 1 ? '<i data-lucide="arrow-right" class="w-4 h-4 text-gray-400 mt-3 shrink-0"></i>' : ''}
+      ${displayIdx < visibleChainItems.length - 1 ? '<i data-lucide="arrow-right" class="w-5 h-5 text-eu-blue/40 mt-4 shrink-0"></i>' : ''}
     </div>
   `).join('');
 
@@ -63,15 +75,15 @@ function renderExpanded(sector, sectorsT) {
 
   if (sections.stakeholderTypes !== false && stakeholderTypes.length > 0) {
     internalCardsHtml.push(`
-      <div class="bg-white rounded-lg border border-eu-border p-4">
-        <h4 class="font-bold text-eu-text text-sm mb-2 flex items-center gap-2">
-          <i data-lucide="users" class="w-4 h-4 text-eu-blue"></i>
+      <div class="bg-white rounded-2xl border border-eu-blue/10 p-6">
+        <h4 class="font-bold text-eu-text text-lg mb-3 flex items-center gap-2">
+          <i data-lucide="users" class="w-5 h-5 text-eu-blue"></i>
           ${sectorsT?.stakeholderTypesLabel || ''}
         </h4>
-        <ul class="space-y-1">
+        <ul class="space-y-2.5">
           ${stakeholderTypes.map(s => `
-            <li class="text-xs text-gray-700 flex items-start gap-1.5">
-              <i data-lucide="arrow-right" class="w-3 h-3 text-eu-blue mt-0.5 shrink-0"></i>${s}
+            <li class="text-base text-gray-700 flex items-start gap-2 leading-relaxed">
+              <i data-lucide="arrow-right" class="w-4 h-4 text-eu-blue mt-1 shrink-0"></i>${s}
             </li>`).join('')}
         </ul>
       </div>
@@ -80,14 +92,14 @@ function renderExpanded(sector, sectorsT) {
 
   if ((sections.keywordsDescription !== false && localized(sector.description)) || (sections.keywords !== false && keywords.length > 0)) {
     internalCardsHtml.push(`
-      <div class="bg-white rounded-lg border border-eu-border p-4">
+      <div class="bg-white rounded-2xl border border-eu-blue/10 p-6">
         ${sections.keywordsDescription !== false && localized(sector.description) ? `
-          <p class="text-xs text-gray-700 ${sections.keywords !== false && keywords.length > 0 ? 'mb-3' : ''}">${localized(sector.description)}</p>
+          <p class="text-base text-gray-700 leading-relaxed ${sections.keywords !== false && keywords.length > 0 ? 'mb-4' : ''}">${localized(sector.description)}</p>
         ` : ''}
         ${sections.keywords !== false && keywords.length > 0 ? `
           <div class="flex flex-wrap gap-1.5">
             ${keywords.map(kw => `
-              <span class="text-xs font-semibold px-2 py-0.5 rounded-full ${sector.tagBg} ${sector.tagText}">${kw}</span>
+              <span class="text-sm font-semibold px-3 py-1 rounded-full text-eu-purple" style="background:rgba(255,244,225,.6)">${kw}</span>
             `).join('')}
           </div>
         ` : ''}
@@ -97,15 +109,15 @@ function renderExpanded(sector, sectorsT) {
 
   if (sections.fpSkills !== false && fpSkills.length > 0) {
     internalCardsHtml.push(`
-      <div class="bg-white rounded-lg border border-eu-border p-4">
-        <h4 class="font-bold text-eu-text text-sm mb-3 flex items-center gap-2">
-          <i data-lucide="book-open" class="w-4 h-4 text-eu-orange"></i>
+      <div class="bg-white rounded-2xl border border-eu-blue/10 p-6">
+        <h4 class="font-bold text-eu-text text-lg mb-4 flex items-center gap-2">
+          <i data-lucide="book-open" class="w-5 h-5 text-eu-purple"></i>
           ${sectorsT?.fpModulesLabel || ''}
         </h4>
         <ul class="space-y-2">
           ${fpSkills.map(m => `
-            <li class="text-xs text-gray-700 flex items-start gap-2">
-              <i data-lucide="arrow-right" class="w-3 h-3 text-eu-orange mt-0.5 shrink-0"></i>${m}
+            <li class="text-base text-gray-700 flex items-start gap-2 leading-relaxed">
+              <i data-lucide="arrow-right" class="w-4 h-4 text-eu-purple mt-1 shrink-0"></i>${m}
             </li>`).join('')}
         </ul>
       </div>
@@ -114,12 +126,12 @@ function renderExpanded(sector, sectorsT) {
 
   if (sections.teacherRelevance !== false && localized(sector.teacherRelevance)) {
     internalCardsHtml.push(`
-      <div class="bg-white rounded-lg border border-eu-border p-4">
-        <h4 class="font-bold text-eu-text text-sm mb-2 flex items-center gap-2">
-          <i data-lucide="lightbulb" class="w-4 h-4 text-blue-600"></i>
+      <div class="bg-white rounded-2xl border border-eu-blue/10 p-6">
+        <h4 class="font-bold text-eu-text text-lg mb-3 flex items-center gap-2">
+          <i data-lucide="lightbulb" class="w-5 h-5 text-eu-blue"></i>
           ${sectorsT?.teacherRelevanceLabel || ''}
         </h4>
-        <p class="text-xs text-gray-700">${localized(sector.teacherRelevance)}</p>
+        <p class="text-base text-gray-700 leading-relaxed">${localized(sector.teacherRelevance)}</p>
       </div>
     `);
   }
@@ -129,25 +141,25 @@ function renderExpanded(sector, sectorsT) {
 
   if (showMasterTopics || showFeaturedPartners) {
     internalCardsHtml.push(`
-      <div class="bg-white rounded-lg border border-purple-100 p-4">
+      <div class="bg-white rounded-2xl border border-eu-blue/10 p-6">
         ${showMasterTopics ? `
-          <h4 class="font-bold text-eu-text text-sm mb-3 flex items-center gap-2">
-            <i data-lucide="graduation-cap" class="w-4 h-4 text-purple-600"></i>
+          <h4 class="font-bold text-eu-text text-lg mb-4 flex items-center gap-2">
+            <i data-lucide="graduation-cap" class="w-5 h-5 text-eu-purple"></i>
             ${sectorsT?.masterTopicsLabel || ''}
           </h4>
           <ul class="space-y-2">
             ${masterTopics.map(topic => `
-              <li class="text-xs text-gray-700 flex items-start gap-2">
-                <i data-lucide="arrow-right" class="w-3 h-3 text-purple-600 mt-0.5 shrink-0"></i>${topic}
+              <li class="text-base text-gray-700 flex items-start gap-2 leading-relaxed">
+                <i data-lucide="arrow-right" class="w-4 h-4 text-eu-purple mt-1 shrink-0"></i>${topic}
               </li>`).join('')}
           </ul>
         ` : ''}
         ${showFeaturedPartners ? `
-          <div class="${showMasterTopics ? 'mt-3 pt-3 border-t border-eu-border' : ''}">
-            <p class="text-xs text-gray-500 font-semibold uppercase mb-1.5">${sectorsT?.featuredPartnersLabel || ''}</p>
-            <div class="flex flex-wrap gap-1">
+          <div class="${showMasterTopics ? 'mt-4 pt-4 border-t border-eu-blue/10' : ''}">
+            <p class="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-2">${sectorsT?.featuredPartnersLabel || ''}</p>
+            <div class="flex flex-wrap gap-1.5">
               ${(sector.featuredPartners || []).map(p => `
-                <span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-bold">${p}</span>
+                <span class="text-sm border border-eu-blue/15 px-3 py-1 rounded-full text-eu-blue font-bold" style="background:rgba(86,32,246,.05)">${p}</span>
               `).join('')}
             </div>
           </div>
@@ -158,28 +170,28 @@ function renderExpanded(sector, sectorsT) {
 
   if (sections.exampleChallenge !== false && localized(sector.exampleChallenge)) {
     internalCardsHtml.push(`
-      <div class="bg-amber-50 rounded-lg border border-amber-200 p-4">
-        <h4 class="font-bold text-amber-800 text-xs mb-1.5 flex items-center gap-1.5">
-          <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i>
+      <div class="rounded-2xl border border-eu-yellow p-5" style="background:rgba(255,244,225,.45)">
+        <h4 class="font-bold text-eu-purple text-base mb-2 flex items-center gap-2">
+          <i data-lucide="flask-conical" class="w-5 h-5 shrink-0"></i>
           ${localized(sector.exampleChallengeLabel) || sectorsT?.exampleChallengeLabel || ''}
         </h4>
-        <p class="text-xs text-amber-700 italic">${localized(sector.exampleChallenge)}</p>
+        <p class="text-base text-eu-text/70 italic leading-relaxed">${localized(sector.exampleChallenge)}</p>
       </div>
     `);
   }
 
   const gridHtml = internalCardsHtml.length ? `
-    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 items-start">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 items-start">
       ${internalCardsHtml.join('')}
     </div>
   ` : '';
 
   return `
-    <div class="border-t border-eu-border px-6 py-6 bg-eu-bg space-y-6">
+    <div class="border-t border-eu-blue/10 px-6 py-8 space-y-6" style="background:rgba(86,32,246,0.03)">
       ${chainHtml ? `
-        <div class="bg-white rounded-xl border border-eu-border p-5">
-          <h4 class="font-bold text-eu-text text-sm mb-4">${sectorsT?.transferChainTitle || ''}</h4>
-          <div class="flex flex-wrap items-start gap-2">${chainHtml}</div>
+        <div class="bg-white rounded-2xl border border-eu-blue/10 p-6">
+          <h4 class="font-bold text-eu-text text-lg mb-5">${sectorsT?.transferChainTitle || ''}</h4>
+          <div class="flex flex-wrap items-start gap-2.5">${chainHtml}</div>
         </div>
       ` : ''}
       ${gridHtml}
@@ -213,20 +225,20 @@ export function render() {
   const heroStats = hero?.stats || [];
   const cta = SECTORS_CONFIG?.ctaBlock;
   const heroHtml = hero?.visible !== false ? `
-      <div class="bg-eu-blue text-white px-6 py-12">
+      <section class="bg-eu-blue text-white px-6 py-20">
         <div class="max-w-7xl mx-auto">
-          <h1 class="text-3xl font-extrabold mb-3">${localized(heroTitle)}</h1>
-          <p class="text-white/80 max-w-3xl text-base mb-8">${localized(heroDescription)}</p>
-          <div class="flex flex-wrap gap-6">
+          <h1 class="font-extrabold mb-5" style="color:#FFF4E1;letter-spacing:-.02em;font-size:clamp(2.5rem,5vw,4rem);line-height:1.05">${localized(heroTitle)}</h1>
+          <p class="max-w-3xl text-lg mb-10 leading-relaxed" style="color:rgba(255,255,255,.85)">${localized(heroDescription)}</p>
+          <div class="flex flex-wrap gap-5">
             ${heroStats.map(s => `
-              <div class="bg-white/10 rounded-xl px-6 py-4 text-center">
-                <p class="text-3xl font-extrabold text-eu-yellow">${s.value}</p>
-                <p class="text-xs text-white/70 font-semibold uppercase mt-1">${localized(s.label)}</p>
+              <div class="rd-hero-stat text-center" style="min-width:9rem">
+                <p class="text-4xl font-extrabold" style="color:#FFF4E1">${s.value}</p>
+                <p class="text-xs font-bold uppercase tracking-wider mt-2" style="color:rgba(255,244,225,.75)">${localized(s.label)}</p>
               </div>
             `).join('')}
           </div>
         </div>
-      </div>
+      </section>
   ` : '';
 
   const sectorList = (SECTORS_CONFIG.cardsBlock || [])
@@ -240,29 +252,32 @@ export function render() {
     const stats = sector.stats || {};
     const sectorLabels = sectorsT?.sectorLabels || {};
 
+    const icon = SECTOR_ICONS[sector.id] || 'shapes';
     return `
-      <div class="bg-white rounded-xl border ${sector.borderColor} border-l-4 shadow-sm overflow-hidden transition-all">
-        <button data-toggle="${sector.id}" class="w-full flex items-center gap-4 p-5 text-left hover:bg-eu-bg transition-colors">
-          <span class="text-4xl">${sector.emoji}</span>
+      <div class="rd-card ${isOpen ? '' : 'rd-card-edge'} overflow-hidden">
+        <button data-toggle="${sector.id}" class="w-full flex items-center gap-5 text-left" style="padding:1.75rem">
+          <div class="rd-icon-circle shrink-0">
+            <i data-lucide="${icon}" class="w-7 h-7 text-eu-blue"></i>
+          </div>
           <div class="flex-1 min-w-0">
-            <h2 class="text-lg font-bold text-eu-text">${name}</h2>
-            <p class="text-sm text-gray-600 line-clamp-2">${description}</p>
+            <h2 class="text-2xl font-extrabold text-eu-purple">${name}</h2>
+            <p class="text-base text-gray-600 line-clamp-2 mt-0.5">${description}</p>
           </div>
-          <div class="hidden sm:flex items-center gap-6 shrink-0">
+          <div class="hidden sm:flex items-center gap-7 shrink-0">
             <div class="text-center">
-              <p class="text-xl font-extrabold text-eu-teal">${stats.challenges ?? ''}</p>
-              <p class="text-xs text-gray-500 uppercase font-semibold">${sectorLabels.challenges || ''}</p>
+              <p class="text-2xl font-extrabold text-eu-blue">${stats.challenges ?? ''}</p>
+              <p class="text-xs text-gray-500 uppercase font-semibold mt-0.5">${sectorLabels.challenges || ''}</p>
             </div>
             <div class="text-center">
-              <p class="text-xl font-extrabold text-purple-600">${stats.stakeholders ?? ''}</p>
-              <p class="text-xs text-gray-500 uppercase font-semibold">${sectorLabels.stakeholders || ''}</p>
+              <p class="text-2xl font-extrabold text-eu-purple">${stats.stakeholders ?? ''}</p>
+              <p class="text-xs text-gray-500 uppercase font-semibold mt-0.5">${sectorLabels.stakeholders || ''}</p>
             </div>
             <div class="text-center">
-              <p class="text-xl font-extrabold text-eu-orange">${stats.courses ?? ''}</p>
-              <p class="text-xs text-gray-500 uppercase font-semibold">${sectorLabels.courses || ''}</p>
+              <p class="text-2xl font-extrabold text-eu-orange">${stats.courses ?? ''}</p>
+              <p class="text-xs text-gray-500 uppercase font-semibold mt-0.5">${sectorLabels.courses || ''}</p>
             </div>
           </div>
-          <i data-lucide="${isOpen ? 'chevron-up' : 'chevron-down'}" class="w-5 h-5 text-gray-400 shrink-0"></i>
+          <i data-lucide="${isOpen ? 'chevron-up' : 'chevron-down'}" class="w-6 h-6 text-eu-blue shrink-0"></i>
         </button>
         ${isOpen ? renderExpanded(sector, sectorsT) : ''}
       </div>
@@ -270,23 +285,23 @@ export function render() {
   }).join('');
 
   return `
-    <div>
+    <div class="rd-canvas">
       <!-- Header (CMS-powered) -->
       ${heroHtml}
 
       <!-- Sector Cards -->
-      <div class="max-w-7xl mx-auto px-6 py-10 space-y-4">${cardsHtml}</div>
+      <div class="max-w-7xl mx-auto px-6 space-y-5" style="padding-block:4rem">${cardsHtml}</div>
 
       ${cta?.visible !== false ? `
         <!-- CTA -->
-        <div class="max-w-7xl mx-auto px-6 pb-12">
-          <div class="bg-eu-blue rounded-xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="max-w-7xl mx-auto px-6 pb-20">
+          <div class="bg-eu-blue text-white flex flex-col md:flex-row items-center justify-between gap-6" style="border-radius:2rem;padding:3rem">
             <div class="${cta?.buttonVisible !== false ? 'max-w-2xl' : 'w-full'}">
-              <h3 class="text-xl font-bold mb-2">${localized(cta?.title) || sectorsT?.cta || ''}</h3>
-              <p class="text-white/80 text-sm">${localized(cta?.description) || sectorsT?.ctaDesc || ''}</p>
+              <h3 class="text-2xl font-extrabold mb-2" style="color:#FFF4E1">${localized(cta?.title) || sectorsT?.cta || ''}</h3>
+              <p class="text-lg leading-relaxed" style="color:rgba(255,255,255,.85)">${localized(cta?.description) || sectorsT?.ctaDesc || ''}</p>
             </div>
             ${cta?.buttonVisible !== false ? `
-              <button id="sectors-cta-btn" class="bg-eu-orange text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0">
+              <button id="sectors-cta-btn" class="rounded-full font-bold transition-colors border-none cursor-pointer shrink-0 hover:bg-white" style="background:#FFF4E1;color:#4918AD;padding:.875rem 2rem">
                 ${localized(cta?.buttonLabel) || sectorsT?.ctaButton || ''}
               </button>
             ` : ''}

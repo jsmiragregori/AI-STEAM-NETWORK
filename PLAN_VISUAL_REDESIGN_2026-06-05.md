@@ -240,11 +240,16 @@ Reglas duras: nunca `text-gray-5xx` sobre color; `prefers-reduced-motion` respet
 
 ## PRESERVAR_INTACTO (colores semánticos — NO tocar)
 
-- 7 gradientes de sector (sectors.js).
-- 5 colores de órganos de gobernanza (governance.js): GA/SC/AB/SN/SB.
-- 4 colores del Cuádruple Hélice (network.js).
+- ~~7 gradientes de sector (sectors.js).~~ **ANULADO 2026-06-05 (decisión humana):** los
+  sectores se **UNIFICAN al binomio corporativo** (morado #5620F6/#4918AD + melocotón #FFF4E1),
+  como en AI-STEAM-MIGRATION. NADA de verde/rojo/amarillo/rosa/slate. Iconos = mismos Lucide que
+  la home en **círculo beige `rd-icon-circle` + icono `text-eu-blue`** (no círculos de gradiente).
+  Aplica también a chips de keyword, stats, cadena de transferencia y cards internas de sectores.
+- 5 colores de órganos de gobernanza (governance.js): GA/SC/AB/SN/SB. *(evaluar si el responsable
+  también quiere unificarlos al revisar F6; por defecto preservar hasta que lo indique).*
+- 4 colores del Cuádruple Hélice (network.js). *(idem: confirmar en F8).*
 - Chips/badges del Marketplace (sector, ODS, competencias, tipo, estado, etapa) = filtros.
-- Tonos verde/rojo de is/is-not en home — semánticos.
+- Tonos verde/rojo de is/is-not en home — **ya eliminados** (F2b), todo en gama violeta.
 
 Sobre el nuevo canvas claro, todos siguen viviendo DENTRO de cards claras → legibles.
 
@@ -263,7 +268,7 @@ INSTRUCCION_LLM: al terminar una fase → `[~] EN_REVISION`. Tras aprobación hu
 | **F1b** | **Nav píldora editorial** (DS.6) — el menú AI-SECRETT real | `[x] APROBADA` | commit `f699468` — rd-nav-desktop/toggle/mobile en redesign.css, umbral 80rem |
 | F2 | Home — espaciado + cards (DS.3) + iconos círculo + hero stats + titulares morados | `[x] APROBADA` | commit `bbdc6d0` |
 | **F2b** | Home — correcciones doc estilo + hover por card (lift/edge) + iniciales que respiran + DualFocus beige oficial; "Últimas contribuciones" fuera de home y del CMS | `[x] APROBADA` | commits `bbdc6d0` (visual) + `2905c8f` (view) + CONTENT `a92af86` (CMS) |
-| F3 | Sectores — menú de iconos en círculo + cards | `[ ] PENDIENTE` | gradientes de sector intactos |
+| F3 | Sectores — paleta unificada + iconos beige + legibilidad detalle | `[~] EN_REVISION` ⚠️ NO cerrada | ver "FASE_F3 — DETALLE Y ESTADO". Paleta corporativa unificada, iconos Lucide en `rd-icon-circle`, detalle a text-base/lg en 2 col. Pendiente OK humano |
 | F4 | Formación — hero + course cards (a) + tabs | `[ ] PENDIENTE` | |
 | F5 | Actualidad — news cards (a) | `[ ] PENDIENTE` | |
 | F6 | Gobernanza — cards + tabs; órganos intactos | `[ ] PENDIENTE` | |
@@ -401,7 +406,7 @@ un único bloque de color sólido arriba (`bg-eu-blue` o `bg-eu-purple` según t
 
 | Fase | Archivo | Hero | Específico a preservar |
 |---|---|---|---|
-| F3 Sectores | `sectors.js` | `bg-eu-blue` | 7 gradientes de sector |
+| F3 Sectores | `sectors.js` | `bg-eu-blue` | ⚠️ NO preservar gradientes: UNIFICADOS a corporativo (ver detalle F3 abajo) |
 | F4 Formación | `training.js` | `bg-eu-purple` | badges modalidad/nivel; course cards (a) |
 | F5 Actualidad | `news.js` | `bg-eu-blue` | news cards (a); featured opcional card tint |
 | F6 Gobernanza | `governance.js` | `bg-eu-purple` | 5 colores de órganos |
@@ -412,6 +417,41 @@ un único bloque de color sólido arriba (`bg-eu-blue` o `bg-eu-purple` según t
 | F11 Revisión global | todos | — | checklist abajo |
 
 COMMITS: `style(<área>): F<n> modelo MIGRATION — cards/espacio/tipografía`
+
+---
+
+## FASE_F3 (Sectores) — DETALLE Y ESTADO  ⏳ `[~] EN_REVISION` (NO cerrada)
+
+ARCHIVO: `assets/js/views/sectors.js`. Verla en `:3000` → Sectores.
+
+**Hecho (commiteado, pendiente de aprobación humana):**
+1. Hero `bg-eu-blue` editorial: título beige `clamp(2.5rem,5vw,4rem)`, descripción `text-lg`,
+   stats en `rd-hero-stat`.
+2. Cards de sector (acordeón) → `rd-card` (+ `rd-card-edge` cuando cerrada). **Icono = Lucide en
+   `rd-icon-circle` (beige + `text-eu-blue`)** — el MISMO criterio que la home (`SECTOR_ICONS`
+   definido también en sectors.js). Se eliminaron los círculos de gradiente colorido.
+3. **PALETA UNIFICADA al binomio corporativo** (decisión humana, ver PRESERVAR_INTACTO):
+   - `CHAIN_COLORS` (cadena transferencia) → solo azul/morado con transparencias (`bg-eu-*/5`,
+     `border-eu-*/15`), sin verde/azul-700/morado-genérico.
+   - chips keyword → beige + `text-eu-purple` (antes color por sector).
+   - stats, iconos internos, ejemplo de reto → corporativo (antes `purple-600`, `blue-600`, ámbar).
+   - Los campos `color/borderColor/tagBg/tagText` de `SECTORS_META` quedan SIN USO (no se borraron
+     del data; no se renderizan). Limpieza opcional pendiente.
+4. **Legibilidad del panel expandido reescrita** (queja: "todo pequeñísimo"):
+   - Detalle a `text-base`/`text-lg` (antes `text-xs`/`text-sm`), `leading-relaxed`, `p-6`.
+   - Grid de cards de detalle: 3 col → **2 col** (`md:grid-cols-2`) para que quepa el texto mayor.
+   - Cadena: etiquetas `text-sm`, cuerpo `text-base`, cajas 13–17rem.
+5. Panel expandido sobre tinte violeta sutil (`rgba(86,32,246,.03)`); cards internas `rd-card`-like.
+6. CTA: radio grande, botón píldora beige (DS.5).
+
+**Pendiente de feedback humano (posibles iteraciones antes de cerrar F3):**
+- Validar legibilidad final del detalle y la composición a 2 columnas.
+- ¿Limpiar campos de color sin uso en `SECTORS_META`? (opcional).
+- Revisar responsive (móvil) del acordeón y la cadena.
+- Confirmar que el hero/CTA convencen.
+
+**Para CODEX:** F3 NO está aprobada. NO marcarla `[x]` ni pasar a F4 sin OK humano explícito.
+Tras cualquier cambio de clases: `npm run build:css`. Commits de F3 ya en `master` (ver git log).
 
 ---
 
@@ -481,14 +521,25 @@ COMMIT: `style(global): cierre visual overhaul — modelo AI-STEAM-MIGRATION`
 | F2+F2b | Home completa: hero full-viewport, cards modelo MIGRATION, iconos Lucide, DualFocus beige, ENRED cards con acento, hover lift/edge, tipografía editorial | `bbdc6d0` `2905c8f` |
 | CMS | "Últimas contribuciones" eliminada: YAML, loader, admin, validators, data generada | CONTENT `a92af86`, VANILLA `2905c8f` |
 
-### Siguiente fase a ejecutar: **F3 — Sectores**
+### Fase en curso: **F3 — Sectores** ⏳ EN_REVISION (NO cerrada, falta OK humano)
 
-Archivo: `assets/js/views/sectors.js`. Ver sección FASE_F3 más abajo.
-Instrucciones generales para F3–F11 en sección CONVENCIONES_PARA_AGENTES_LLM.
+Archivo: `assets/js/views/sectors.js`. Trabajo aplicado y commiteado, pero el responsable
+**aún no la ha aprobado** — puede pedir iteraciones. Ver sección "FASE_F3 — DETALLE Y ESTADO"
+para qué está hecho y qué falta revisar. **NO marcar F3 como aprobada ni empezar F4 sin OK
+humano explícito.**
+
+Claves de F3 (decisión humana 2026-06-05): sectores **UNIFICADOS a paleta corporativa**
+(morado/azul + beige), iconos Lucide en `rd-icon-circle` (= home), detalle expandido con
+texto grande (`text-base`/`text-lg`) en 2 columnas. NADA de gradientes de sector ni colores
+heterogéneos (verde/rojo/ámbar/etc.).
+
+### Reglas para el resto de fases (F4–F11)
+
 Todas las secciones del cuerpo: `rd-canvas rd-section rd-divide`.
-Cards de ítem: `rd-card rd-card-hover rd-pad` (variante lift).
-Gradientes de sector: PRESERVAR (PRESERVAR_INTACTO).
-Tras editar: `npm run build:css` → verificar → commit → parar para revisión humana.
+Cards de ítem: `rd-card rd-card-hover rd-pad` (lift) o `rd-card-edge` (borde) según el caso.
+Tras editar: `npm run build:css` → verificar en `:3000` → commit → **parar para revisión humana**.
+Los "colores semánticos a preservar" de gobernanza (F6) y hélice (F8): **confirmar con el
+responsable** si los quiere unificar como en sectores o mantener (ver PRESERVAR_INTACTO).
 
 ### Decisiones humanas fijas (no revertir sin consenso)
 
