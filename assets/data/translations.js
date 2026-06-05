@@ -1,6 +1,6 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR DIRECTAMENTE
 // Edita los archivos en content/_ui/*.csv y ejecuta: npm run cms:ui
-// Base: translations.js existente + overrides de 82 entradas CSV
+// Base: translations.js existente + overrides de 84 entradas CSV
 
 export const translations = {
   "es": {
@@ -506,7 +506,9 @@ export const translations = {
       "relatedContentLabel": "Contenidos relacionados",
       "exploreSectorContent": "Explorar contenidos del sector",
       "noFeaturedEvidence": "Sin evidencia publicada todavía",
-      "noRelatedContent": "Sin contenidos relacionados publicados todavía"
+      "noRelatedContent": "Sin contenidos relacionados publicados todavía",
+      "expandSector": "Abrir brújula sectorial",
+      "collapseSector": "Cerrar brújula"
     },
     "training": {
       "title": "Itinerarios de Transferencia AI-STEAM",
@@ -2386,7 +2388,9 @@ export const translations = {
       "relatedContentLabel": "Related content",
       "exploreSectorContent": "Explore sector content",
       "noFeaturedEvidence": "No published evidence yet",
-      "noRelatedContent": "No related content published yet"
+      "noRelatedContent": "No related content published yet",
+      "expandSector": "Open sector compass",
+      "collapseSector": "Close compass"
     },
     "training": {
       "title": "AI-STEAM Transfer Pathways",
@@ -4266,7 +4270,9 @@ export const translations = {
       "relatedContentLabel": "Continguts relacionats",
       "exploreSectorContent": "Explorar continguts del sector",
       "noFeaturedEvidence": "Sense evidència publicada encara",
-      "noRelatedContent": "Sense continguts relacionats publicats encara"
+      "noRelatedContent": "Sense continguts relacionats publicats encara",
+      "expandSector": "Obrir brúixola sectorial",
+      "collapseSector": "Tancar brúixola"
     },
     "training": {
       "title": "Itineraris de Transferència AI-STEAM",
