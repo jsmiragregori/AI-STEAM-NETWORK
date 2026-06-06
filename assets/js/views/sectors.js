@@ -65,8 +65,7 @@ function esc(value) {
 }
 
 function enhanceSectorWithMetadata(sector) {
-  const uiMeta = SECTORS_CONFIG?.uiBlock || [];
-  const meta = uiMeta.find(m => m.id === sector.id) || SECTORS_META.find(m => m.id === sector.id);
+  const meta = SECTORS_META.find(m => m.id === sector.id);
   return {
     ...sector,
     emoji: meta?.emoji || '',
