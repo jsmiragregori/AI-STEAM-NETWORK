@@ -268,7 +268,7 @@ INSTRUCCION_LLM: al terminar una fase → `[~] EN_REVISION`. Tras aprobación hu
 | **F1b** | **Nav píldora editorial** (DS.6) — el menú AI-SECRETT real | `[x] APROBADA` | commit `f699468` — rd-nav-desktop/toggle/mobile en redesign.css, umbral 80rem |
 | F2 | Home — espaciado + cards (DS.3) + iconos círculo + hero stats + titulares morados | `[x] APROBADA` | commit `bbdc6d0` |
 | **F2b** | Home — correcciones doc estilo + hover por card (lift/edge) + iniciales que respiran + DualFocus beige oficial; "Últimas contribuciones" fuera de home y del CMS | `[x] APROBADA` | commits `bbdc6d0` (visual) + `2905c8f` (view) + CONTENT `a92af86` (CMS) |
-| F3 | Sectores — paleta unificada + iconos beige + legibilidad detalle | `[~] EN_REVISION` ⚠️ NO cerrada | ver "FASE_F3 — DETALLE Y ESTADO". F3 sigue pausada mientras se resuelve la brújula sectorial. |
+| F3 | Sectores — paleta unificada + iconos beige + legibilidad detalle | `[x] APROBADA` | Cerrado y validado junto con la reestructuración de la brújula sectorial. |
 | F4 | Formación — hero + course cards (a) + tabs | `[ ] PENDIENTE` | |
 | F5 | Actualidad — news cards (a) | `[ ] PENDIENTE` | |
 | F6 | Gobernanza — cards + tabs; órganos intactos | `[ ] PENDIENTE` | |
@@ -420,38 +420,31 @@ COMMITS: `style(<área>): F<n> modelo MIGRATION — cards/espacio/tipografía`
 
 ---
 
-## FASE_F3 (Sectores) — DETALLE Y ESTADO  ⏳ `[~] EN_REVISION` (NO cerrada)
+## FASE_F3 (Sectores) — DETALLE Y ESTADO  ✅ `[x] APROBADA`
 
 ARCHIVO: `assets/js/views/sectors.js`. Verla en `:3000` → Sectores.
 
-**Hecho (commiteado, pendiente de aprobación humana):**
-1. Hero `bg-eu-blue` editorial: título beige `clamp(2.5rem,5vw,4rem)`, descripción `text-lg`,
-   stats en `rd-hero-stat`.
-2. Cards de sector (acordeón) → `rd-card` (+ `rd-card-edge` cuando cerrada). **Icono = Lucide en
-   `rd-icon-circle` (beige + `text-eu-blue`)** — el MISMO criterio que la home (`SECTOR_ICONS`
-   definido también en sectors.js). Se eliminaron los círculos de gradiente colorido.
-3. **PALETA UNIFICADA al binomio corporativo** (decisión humana, ver PRESERVAR_INTACTO):
-   - `CHAIN_COLORS` (cadena transferencia) → solo azul/morado con transparencias (`bg-eu-*/5`,
-     `border-eu-*/15`), sin verde/azul-700/morado-genérico.
-   - chips keyword → beige + `text-eu-purple` (antes color por sector).
-   - stats, iconos internos, ejemplo de reto → corporativo (antes `purple-600`, `blue-600`, ámbar).
-   - Los campos `color/borderColor/tagBg/tagText` de `SECTORS_META` quedan SIN USO (no se borraron
-     del data; no se renderizan). Limpieza opcional pendiente.
-4. **Legibilidad del panel expandido reescrita** (queja: "todo pequeñísimo"):
-   - Detalle a `text-base`/`text-lg` (antes `text-xs`/`text-sm`), `leading-relaxed`, `p-6`.
-   - Grid de cards de detalle: 3 col → **2 col** (`md:grid-cols-2`) para que quepa el texto mayor.
-   - Cadena: etiquetas `text-sm`, cuerpo `text-base`, cajas 13–17rem.
-5. Panel expandido sobre tinte violeta sutil (`rgba(86,32,246,.03)`); cards internas `rd-card`-like.
-6. CTA: radio grande, botón píldora beige (DS.5).
-
-**Pendiente de feedback humano (posibles iteraciones antes de cerrar F3):**
-- Validar legibilidad final del detalle y la composición a 2 columnas.
-- ¿Limpiar campos de color sin uso en `SECTORS_META`? (opcional).
-- Revisar responsive (móvil) del acordeón y la cadena.
-- Confirmar que el hero/CTA convencen.
-
-**Para CODEX:** F3 NO está aprobada. NO marcarla `[x]` ni pasar a F4 sin OK humano explícito.
-Tras cualquier cambio de clases: `npm run build:css`. Commits de F3 ya en `master` (ver git log).
+**Hecho y validado (2026-06-06):**
+1. Hero `bg-eu-blue` editorial: título beige `clamp(2.5rem,5vw,4rem)`, descripción `text-lg`, stats en `rd-hero-stat`.
+2. Cards de sector (acordeón):
+   * Tienen el acento lateral (`rd-card-accent`) en toda la card (abierta y cerrada).
+   * Se intercalan con tintes de marca oficiales: pares usan `.rd-card-tint-blue` con acento azul; impares usan `.rd-card-tint-purple` y `.rd-accent-purple` con acento morado.
+   * Icono = Lucide en `rd-icon-circle` (beige + `text-eu-blue`).
+3. **Ruta de Transferencia:**
+   * Sin acento lateral. Fondo beige oficial (`rd-card-tint`) y resalte de borde al hover (`rd-card-edge`).
+   * Título armonizado a `h4.text-xl.font-extrabold.text-eu-purple`.
+   * Eliminadas las flechas de separación para limpiar diseño.
+   * Cards de fases: fondo canvas `#FFFDF9` (`bg-[#FFFDF9]`), cambian a blanco en hover (`hover:bg-white`) con borde resaltado y sombra. Animación del icono al hover (`scale(1.10)` y rotación).
+4. **Cards Internas (Listas, Texto, Contenidos, Partners):**
+   * Adoptan el mismo estilo: fondo canvas `#FFFDF9` por defecto (`rd-card-canvas-bg`), hover a blanco con borde morado y sombra.
+   * Iconos animados al hover de la card.
+   * En Contenidos Relacionados: eliminado el chip de tipo (`CASE`, `CHALLENGE`) innecesario.
+5. **Socios Destacados (Partners):**
+   * Iniciales/acrónimo reemplazado por la imagen del logo (`assets/images/partners/*`).
+   * Logos recortados (trimmados de márgenes transparentes/blancos con script Python PIL) para maximizar tamaño visual.
+   * Altura máxima y espacio aumentados (`max-h-16`, `min-h-[5rem]`, `max-w-[95%]`).
+   * Eliminado el chip del país.
+6. **Compilación y verificación:** `npm run build:css` ejecutado y sintaxis de JS validada. F3 queda oficialmente cerrada.
 
 ---
 
@@ -521,12 +514,9 @@ COMMIT: `style(global): cierre visual overhaul — modelo AI-STEAM-MIGRATION`
 | F2+F2b | Home completa: hero full-viewport, cards modelo MIGRATION, iconos Lucide, DualFocus beige, ENRED cards con acento, hover lift/edge, tipografía editorial | `bbdc6d0` `2905c8f` |
 | CMS | "Últimas contribuciones" eliminada: YAML, loader, admin, validators, data generada | CONTENT `a92af86`, VANILLA `2905c8f` |
 
-### Fase en curso: **F3 — Sectores** ⏳ EN_REVISION (NO cerrada, falta OK humano)
+### Fase en curso: **F4 — Formación** ⏳ Pendiente de iniciar
 
-Archivo: `assets/js/views/sectors.js`. Trabajo aplicado y commiteado, pero el responsable
-**aún no la ha aprobado** — puede pedir iteraciones. Ver sección "FASE_F3 — DETALLE Y ESTADO"
-para qué está hecho y qué falta revisar. **NO marcar F3 como aprobada ni empezar F4 sin OK
-humano explícito.** La mejora de Sectores se ha tratado aparte y no implica reanudar F3.
+Fase F3 (Sectores) ha sido completamente aprobada por el responsable (2026-06-06). Se procede a preparar la continuación del plan visual hacia F4.
 
 Claves de F3 (decisión humana 2026-06-05): sectores **UNIFICADOS a paleta corporativa**
 (morado/azul + beige), iconos Lucide en `rd-icon-circle` (= home), detalle expandido con

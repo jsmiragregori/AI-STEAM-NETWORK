@@ -121,10 +121,10 @@ function renderRoute(sector, sectorsT) {
   if (!routeIntro && items.length === 0) return '';
 
   return `
-    <section class="rd-card rd-card-accent rd-pad">
+    <section class="rd-card rd-card-tint rd-card-edge rd-pad">
       <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
-          <p class="text-xs font-bold uppercase tracking-[0.2em] text-eu-blue">${esc(sectorsT?.transferChainTitle || '')}</p>
+          <h4 class="text-xl font-extrabold text-eu-purple">${esc(sectorsT?.transferChainTitle || '')}</h4>
           ${routeIntro ? `<p class="mt-3 max-w-3xl text-lg leading-relaxed text-eu-text/75">${esc(routeIntro)}</p>` : ''}
         </div>
       </div>
@@ -133,13 +133,12 @@ function renderRoute(sector, sectorsT) {
           const icon = CHAIN_ICONS[item.id] || 'circle';
           const label = labels[item.id] || '';
           return `
-            <article class="relative rounded-3xl border border-eu-blue/10 bg-eu-blue/[0.035] p-5">
-              <div class="rd-icon-circle-sm">
+            <article class="group relative rounded-3xl border border-eu-blue/10 bg-[#FFFDF9] p-5 transition-all duration-300 hover:border-eu-blue/40 hover:bg-white hover:shadow-sm">
+              <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                 <i data-lucide="${icon}" class="h-5 w-5 text-eu-blue"></i>
               </div>
               <p class="mt-4 text-xs font-bold uppercase tracking-wider text-eu-purple">${esc(label)}</p>
               <p class="mt-3 text-sm leading-relaxed text-eu-text/75">${esc(localized(item.value))}</p>
-              ${index < items.length - 1 ? '<i data-lucide="arrow-right" class="absolute -right-3 top-1/2 hidden h-6 w-6 -translate-y-1/2 text-eu-blue/30 lg:block"></i>' : ''}
             </article>
           `;
         }).join('')}
@@ -152,9 +151,9 @@ function renderListCard(title, icon, items, tone = 'blue') {
   if (!items.length) return '';
   const color = tone === 'purple' ? 'text-eu-purple' : 'text-eu-blue';
   return `
-    <article class="rd-card rd-pad">
+    <article class="rd-card group rd-card-canvas-bg rd-pad">
       <div class="flex items-center gap-3">
-        <div class="rd-icon-circle-sm"><i data-lucide="${icon}" class="h-5 w-5 ${color}"></i></div>
+        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="${icon}" class="h-5 w-5 ${color}"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(title)}</h4>
       </div>
       <ul class="mt-5 space-y-3">
@@ -173,9 +172,9 @@ function renderTextCard(title, icon, text, tone = 'blue') {
   if (!text) return '';
   const color = tone === 'purple' ? 'text-eu-purple' : 'text-eu-blue';
   return `
-    <article class="rd-card rd-pad">
+    <article class="rd-card group rd-card-canvas-bg rd-pad">
       <div class="flex items-center gap-3">
-        <div class="rd-icon-circle-sm"><i data-lucide="${icon}" class="h-5 w-5 ${color}"></i></div>
+        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="${icon}" class="h-5 w-5 ${color}"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(title)}</h4>
       </div>
       <p class="mt-5 text-base leading-relaxed text-eu-text/75">${esc(text)}</p>
@@ -198,10 +197,10 @@ function renderRelatedContent(sector, sectorsT) {
   if (!sector.emptyFlags?.hasRelatedContent || items.length === 0) return '';
 
   return `
-    <article class="rd-card rd-pad">
+    <article class="rd-card group rd-card-canvas-bg rd-pad">
       <div class="flex items-center justify-between gap-4">
         <div class="flex items-center gap-3">
-          <div class="rd-icon-circle-sm"><i data-lucide="folder-kanban" class="h-5 w-5 text-eu-blue"></i></div>
+          <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="folder-kanban" class="h-5 w-5 text-eu-blue"></i></div>
           <h4 class="text-xl font-extrabold text-eu-purple">${esc(sectorsT?.relatedContentLabel || '')}</h4>
         </div>
         <button data-sector-nav="marketplace" data-sector-id="${esc(sector.id)}" class="rounded-full border border-eu-blue/20 px-4 py-2 text-sm font-bold text-eu-blue transition hover:bg-eu-blue/5">
@@ -211,8 +210,7 @@ function renderRelatedContent(sector, sectorsT) {
       <div class="mt-5 space-y-3">
         ${items.map(item => `
           <button data-sector-content="${esc(item.id)}" data-content-type="${esc(item.type)}" class="w-full rounded-2xl border border-eu-blue/10 bg-eu-blue/[0.025] p-4 text-left transition hover:border-eu-blue/30 hover:bg-eu-blue/[0.055]">
-            <span class="text-xs font-bold uppercase tracking-wider text-eu-blue">${esc(item.type)}</span>
-            <span class="mt-1 block font-bold text-eu-text">${esc(localized(item.title) || item.id)}</span>
+            <span class="block font-bold text-eu-text">${esc(localized(item.title) || item.id)}</span>
             ${localized(item.summary) ? `<span class="mt-1 line-clamp-2 block text-sm leading-relaxed text-eu-text/65">${esc(localized(item.summary))}</span>` : ''}
           </button>
         `).join('')}
@@ -226,17 +224,25 @@ function renderPartners(sector, sectorsT) {
   if ((sector.sections || {}).featuredPartners === false || partners.length === 0) return '';
 
   return `
-    <article class="rd-card rd-pad">
+    <article class="rd-card group rd-card-canvas-bg rd-pad">
       <div class="flex items-center gap-3">
-        <div class="rd-icon-circle-sm"><i data-lucide="network" class="h-5 w-5 text-eu-purple"></i></div>
+        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="network" class="h-5 w-5 text-eu-purple"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(sectorsT?.featuredPartnersLabel || '')}</h4>
       </div>
       <div class="mt-5 grid gap-3 sm:grid-cols-2">
         ${partners.map(partner => `
-          <a href="${esc(partner.url || '#')}" ${partner.url ? 'target="_blank" rel="noopener noreferrer"' : ''} class="rounded-2xl border border-eu-blue/10 bg-white p-4 transition hover:border-eu-purple/30 hover:shadow-sm">
-            <span class="block text-sm font-extrabold text-eu-blue">${esc(partner.acronym || partner.id)}</span>
-            <span class="mt-1 block text-sm text-eu-text/75">${esc(localized(partner.name) || partner.id)}</span>
-            ${partner.country ? `<span class="mt-2 inline-flex rounded-full bg-eu-blue/5 px-2 py-1 text-xs font-bold text-eu-purple">${esc(partner.country)}</span>` : ''}
+          <a href="${esc(partner.url || '#')}" ${partner.url ? 'target="_blank" rel="noopener noreferrer"' : ''} class="flex flex-col justify-between rounded-2xl border border-eu-blue/10 bg-white p-5 text-center transition hover:border-eu-purple/30 hover:shadow-sm">
+            <div class="flex flex-1 items-center justify-center min-h-[5rem]">
+              ${partner.logo ? `
+                <img src="assets/images/partners/${esc(partner.logo)}" alt="${esc(partner.acronym || partner.id)}" class="max-h-16 max-w-[95%] object-contain">
+              ` : `
+                <span class="text-sm font-extrabold text-eu-blue">${esc(partner.acronym || partner.id)}</span>
+              `}
+            </div>
+            <div class="mx-auto my-3 w-8 border-t border-eu-blue/15"></div>
+            <div>
+              <span class="block text-sm font-bold leading-tight text-eu-text/85">${esc(localized(partner.name) || partner.id)}</span>
+            </div>
           </a>
         `).join('')}
       </div>
@@ -250,9 +256,9 @@ function renderEvidence(sector, sectorsT) {
   if (!evidence) return '';
 
   return `
-    <article class="rd-card rd-card-tint rd-pad">
+    <article class="rd-card group rd-card-accent rd-card-tint rd-card-tint-hover rd-pad">
       <div class="flex items-center gap-3">
-        <div class="rd-icon-circle-sm"><i data-lucide="badge-check" class="h-5 w-5 text-eu-blue"></i></div>
+        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="badge-check" class="h-5 w-5 text-eu-blue"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(localized(sector.exampleChallengeLabel) || sectorsT?.exampleChallengeLabel || '')}</h4>
       </div>
       <p class="mt-5 text-base italic leading-relaxed text-eu-text/75">${esc(evidence)}</p>
@@ -291,7 +297,7 @@ function renderExpanded(sector, sectorsT) {
   `;
 }
 
-function renderSectorCard(sector, sectorsT) {
+function renderSectorCard(sector, sectorsT, index) {
   const expanded = getState('expandedSector');
   const isOpen = expanded === sector.id;
   const stats = sector.stats || {};
@@ -300,8 +306,12 @@ function renderSectorCard(sector, sectorsT) {
   const icon = SECTOR_ICONS[sector.id] || 'shapes';
   const keywords = renderKeywords(sector);
 
+  const isEven = index % 2 === 0;
+  const accentClass = isEven ? 'rd-card-accent' : 'rd-card-accent rd-accent-purple';
+  const tintClass = isEven ? 'rd-card-tint-blue' : 'rd-card-tint-purple';
+
   return `
-    <article class="rd-card ${isOpen ? '' : 'rd-card-hover'} overflow-hidden">
+    <article class="rd-card ${accentClass} ${tintClass} ${isOpen ? '' : 'rd-card-hover'} overflow-hidden">
       <div class="grid gap-6 p-6 md:grid-cols-[auto_1fr_auto] md:items-start md:p-8">
         <button data-toggle="${esc(sector.id)}" class="grid cursor-pointer grid-cols-[auto_1fr] gap-5 border-0 bg-transparent p-0 text-left md:contents">
           <div class="rd-icon-circle">
@@ -365,7 +375,7 @@ export function render() {
       ${renderHero(SECTORS_CONFIG?.heroBlock)}
       <section class="px-6 py-20">
         <div class="mx-auto max-w-7xl space-y-6">
-          ${sectorList.map(sector => renderSectorCard(sector, sectorsT)).join('')}
+          ${sectorList.map((sector, index) => renderSectorCard(sector, sectorsT, index)).join('')}
         </div>
       </section>
       ${renderCta(SECTORS_CONFIG?.ctaBlock, sectorsT)}

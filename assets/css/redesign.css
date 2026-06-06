@@ -89,8 +89,29 @@
 }
 
 /* (c) Card con tinte de marca */
-.rd-card-tint      { background: rgb(255 244 225 / .35); }  /* Sand Beige tenue */
-.rd-card-tint-blue { background: rgb(86 32 246 / .05);   }  /* Blue tenue */
+.rd-card-tint        { background: rgb(255 244 225 / .35); }  /* Sand Beige tenue */
+.rd-card-tint-blue   { background: rgb(86 32 246 / .05);   }  /* Blue tenue */
+.rd-card-tint-purple { background: rgb(73 24 173 / .045);  }  /* Purple tenue */
+
+/* (d) Card con fondo canvas global y hover a blanco con contorno */
+.rd-card-canvas-bg {
+  background: var(--rd-canvas) !important;
+}
+.rd-card-canvas-bg:hover {
+  background: #ffffff !important;
+  border-color: rgb(86 32 246 / .40) !important;
+  box-shadow: 0 10px 25px -12px rgb(86 32 246 / .12) !important;
+}
+
+/* Card con fondo tintado beige y hover a blanco con contorno */
+.rd-card-tint-hover {
+  transition: all 0.3s ease !important;
+}
+.rd-card-tint-hover:hover {
+  background: #ffffff !important;
+  border-color: rgb(86 32 246 / .40) !important;
+  box-shadow: 0 10px 25px -12px rgb(86 32 246 / .12) !important;
+}
 
 /* Padding interior amplio (equivale a p-10 de App.tsx) */
 .rd-pad   { padding: 2.5rem; }
