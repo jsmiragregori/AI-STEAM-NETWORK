@@ -176,7 +176,7 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
   }).join('') : '';
 
   return `
-    <div class="rd-card rd-card-hover flex flex-col overflow-hidden">
+    <div class="rd-card-v5 rd-card-v5-hover flex flex-col overflow-hidden">
       <div class="rd-pad flex-1">
         <div class="flex items-center justify-between mb-4 gap-2">
           <div class="flex items-center gap-2 flex-wrap">

@@ -36,8 +36,33 @@
 
 /* ─── CARDS ───────────────────────────────────────────────────────────────── */
 
-/* (a) Card estándar — gradiente beige a lila sobre canvas (V5 Style) */
+/* (a) Card estándar — fondo blanco sobre canvas */
 .rd-card {
+  background: #fff;
+  border: 1px solid rgb(86 32 246 / .10);
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px -12px rgb(86 32 246 / .08);
+  transition: transform .5s cubic-bezier(.16, 1, .3, 1),
+              box-shadow .5s cubic-bezier(.16, 1, .3, 1),
+              border-color .5s ease;
+}
+
+/* Lift al hover — muy sutil y suave (ease-out-expo) */
+.rd-card-hover:hover {
+  transform: translateY(-.375rem);
+  box-shadow: 0 20px 40px -18px rgb(86 32 246 / .16);
+  border-color: rgb(86 32 246 / .22);
+}
+
+/* Variante de hover SOLO BORDE (sin movimiento): intensifica el color del
+   borde + halo sutil. Para cards donde no se quiere desplazamiento. */
+.rd-card-edge:hover {
+  border-color: rgb(86 32 246 / .55);
+  box-shadow: 0 0 0 1px rgb(86 32 246 / .25), 0 12px 30px -18px rgb(86 32 246 / .15);
+}
+
+/* Card V5: Gradiente Beige a Lila para cursos y marketplace */
+.rd-card-v5 {
   background: linear-gradient(135deg, rgba(255, 244, 225, 0.35) 0%, rgba(73, 24, 173, 0.10) 100%);
   border: 1.5px solid rgba(73, 24, 173, 0.22);
   border-radius: 2rem;
@@ -47,18 +72,11 @@
               border-color .5s ease;
 }
 
-/* Lift al hover — muy sutil y suave (ease-out-expo) */
-.rd-card-hover:hover {
+/* Lift al hover para .rd-card-v5 */
+.rd-card-v5-hover:hover {
   transform: translateY(-.375rem);
   box-shadow: 0 20px 40px -18px rgba(73, 24, 173, 0.16);
   border-color: rgba(73, 24, 173, 0.35);
-}
-
-/* Variante de hover SOLO BORDE (sin movimiento): intensifica el color del
-   borde + halo sutil. Para cards donde no se quiere desplazamiento. */
-.rd-card-edge:hover {
-  border-color: rgba(73, 24, 173, 0.55);
-  box-shadow: 0 0 0 1px rgba(73, 24, 173, 0.25), 0 12px 30px -18px rgba(73, 24, 173, 0.15);
 }
 
 /* DECISIÓN_HUMANA (2026-06-05): permitir las microinteracciones de card incluso
