@@ -377,14 +377,16 @@ function renderConsortiumBlock() {
     const inner = p.logo
       ? `<img src="${LOGO_BASE}${p.logo}" alt="${p.acronym || p.name}" style="max-height:44px;max-width:140px;width:auto;height:auto;object-fit:contain;display:block;" loading="lazy" />`
       : `<span style="font-size:13px;font-weight:700;color:#6b7280;letter-spacing:0.05em;">${initials}</span>`;
-    return `<div title="${p.name}" style="height:68px;min-width:100px;max-width:180px;display:flex;align-items:center;justify-content:center;padding:10px 18px;overflow:hidden;background:white;border:1px solid #e5e7eb;border-radius:10px;flex-shrink:0;">${inner}</div>`;
+    return `<div title="${p.name}" class="h-[68px] min-w-[100px] max-w-[180px] flex items-center justify-center px-[18px] py-[10px] overflow-hidden bg-white border border-gray-200 rounded-[10px] shrink-0 transition-all duration-300 hover:scale-105 hover:border-eu-purple hover:shadow-[0_4px_12px_rgba(73,24,173,0.15)]">${inner}</div>`;
   }).join('');
 
   return `
     <section class="px-6 rd-canvas rd-section rd-divide">
       <div class="max-w-7xl mx-auto">
-        <h2 class="mb-12">${localized(block.heading)}</h2>
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;align-items:center;">${partnersHtml}</div>
+        <div class="rd-hero-gradient rounded-[2rem] p-10 md:p-12 text-white text-center">
+          <h2 class="mb-12 text-center text-3xl font-extrabold tracking-tight" style="color:#FFF4E1">${localized(block.heading)}</h2>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;align-items:center;">${partnersHtml}</div>
+        </div>
       </div>
     </section>
   `;
