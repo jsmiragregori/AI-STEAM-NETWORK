@@ -36,12 +36,12 @@
 
 /* ─── CARDS ───────────────────────────────────────────────────────────────── */
 
-/* (a) Card estándar — fondo blanco sobre canvas */
+/* (a) Card estándar — gradiente blanco a beige sobre canvas (G4 Style) */
 .rd-card {
-  background: #fff;
-  border: 1px solid rgb(86 32 246 / .10);
+  background: linear-gradient(135deg, #FFFFFF 0%, rgba(255, 244, 225, 0.35) 100%);
+  border: 1px solid rgba(255, 244, 225, 0.60);
   border-radius: 2rem;
-  box-shadow: 0 10px 30px -12px rgb(86 32 246 / .08);
+  box-shadow: 0 10px 30px -12px rgba(73, 24, 173, 0.06);
   transition: transform .5s cubic-bezier(.16, 1, .3, 1),
               box-shadow .5s cubic-bezier(.16, 1, .3, 1),
               border-color .5s ease;
@@ -50,15 +50,15 @@
 /* Lift al hover — muy sutil y suave (ease-out-expo) */
 .rd-card-hover:hover {
   transform: translateY(-.375rem);
-  box-shadow: 0 20px 40px -18px rgb(86 32 246 / .16);
-  border-color: rgb(86 32 246 / .22);
+  box-shadow: 0 20px 40px -18px rgba(73, 24, 173, 0.12);
+  border-color: rgba(73, 24, 173, 0.22);
 }
 
 /* Variante de hover SOLO BORDE (sin movimiento): intensifica el color del
    borde + halo sutil. Para cards donde no se quiere desplazamiento. */
 .rd-card-edge:hover {
-  border-color: rgb(86 32 246 / .55);
-  box-shadow: 0 0 0 1px rgb(86 32 246 / .25), 0 12px 30px -18px rgb(86 32 246 / .15);
+  border-color: rgba(73, 24, 173, 0.55);
+  box-shadow: 0 0 0 1px rgba(73, 24, 173, 0.25), 0 12px 30px -18px rgba(73, 24, 173, 0.15);
 }
 
 /* DECISIÓN_HUMANA (2026-06-05): permitir las microinteracciones de card incluso
@@ -77,15 +77,15 @@
   content: "";
   position: absolute;
   left: 0; top: 0;
-  width: .5rem; height: 100%;
+  width: .375rem; height: 100%;
   background: var(--rd-blue);
   opacity: .85;
 }
 
-/* Variante morada para la card del par */
+/* Variante morada para la card del par (G4 vibrant accent) */
 .rd-accent-purple::before {
   background: var(--rd-purple);
-  opacity: .40;
+  opacity: .85;
 }
 
 /* (c) Card con tinte de marca */
