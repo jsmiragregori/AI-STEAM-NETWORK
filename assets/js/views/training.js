@@ -242,13 +242,10 @@ function renderSkillCloudPanel(theme, icon, title, cloudId) {
 
 // ── Path steps ────────────────────────────────────────────────────────────────
 function pathSteps(steps, color) {
-  return (steps || []).map((step, i, arr) => `
-    <div class="flex items-center gap-3">
-      <div class="flex items-center gap-3 bg-white border border-eu-blue/10 rounded-2xl px-4 py-3 shadow-sm hover:border-eu-blue/30 transition-all duration-300">
-        <div class="w-6 h-6 rounded-full ${color} text-white text-xs font-bold flex items-center justify-center shrink-0 shadow-inner"><span>${i + 1}</span></div>
-        <span class="text-base font-semibold text-eu-text leading-tight">${step}</span>
-      </div>
-      ${i < arr.length - 1 ? '<i data-lucide="arrow-right" class="w-5 h-5 text-eu-blue/40 shrink-0"></i>' : ''}
+  return (steps || []).map((step, i) => `
+    <div class="flex items-center gap-3 bg-white border border-eu-blue/10 rounded-2xl px-4 py-3 shadow-sm hover:border-eu-blue/30 transition-all duration-300">
+      <div class="w-6 h-6 rounded-full ${color} text-white text-xs font-bold flex items-center justify-center shrink-0 shadow-inner"><span>${i + 1}</span></div>
+      <span class="text-base font-semibold text-eu-text leading-tight">${step}</span>
     </div>`).join('');
 }
 
@@ -438,8 +435,8 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
         if (pb && pb.visible === false) return '';
         const pbTitle = pb ? pickLang(pb.title, trainingT?.fpPath || '') : (trainingT?.fpPath || '');
         const pbSteps = pb?.steps?.length > 0 ? pb.steps.map(s => pickLang(s.text, '')) : (trainingT?.fpPathSteps || []);
-        return `<div class="rd-card rd-pad mt-10 bg-[#FFFDF9]">
-          <h3 class="text-2xl font-extrabold text-eu-purple mb-6">${pbTitle}</h3>
+        return `<div class="rd-hero-gradient rounded-[2rem] p-10 md:p-12 mt-10 text-white">
+          <h3 class="text-2xl font-extrabold mb-6" style="color:#FFF4E1">${pbTitle}</h3>
           <div class="flex flex-wrap items-center gap-3">${pathSteps(pbSteps, 'bg-eu-purple')}</div>
         </div>`;
       })()}`;
@@ -521,8 +518,8 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
     ${masterSkillsBlockHtml}
     ${searchControls}${courseGrid}
     ${masterPathBlock?.visible === false ? '' : `
-    <div class="rd-card rd-pad mt-10 bg-[#FFFDF9]">
-      <h3 class="text-2xl font-extrabold text-eu-purple mb-6">${masterPathTitle}</h3>
+    <div class="rd-hero-gradient rounded-[2rem] p-10 md:p-12 mt-10 text-white">
+      <h3 class="text-2xl font-extrabold mb-6" style="color:#FFF4E1">${masterPathTitle}</h3>
       <div class="flex flex-wrap items-center gap-3">${pathSteps(masterPathSteps, 'bg-eu-purple')}</div>
     </div>`}`;
 }
