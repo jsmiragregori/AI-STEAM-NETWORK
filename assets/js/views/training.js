@@ -7,11 +7,11 @@ const COURSE_PARTNERS  = ['UVEG / CEICE', "Ud'A / UVEG", 'CEICE / Inspiring Futu
 const COURSE_MODALITY  = ['Semipresencial', 'Online', 'Online', 'Semipresencial', 'Online', 'Online', 'Online', 'Online'];
 
 const TONE_MAP = {
-  success: { cls: 'text-green-700 bg-green-50',   activeStyle: 'background:#15803d;color:#fff' },
-  warning: { cls: 'text-yellow-700 bg-yellow-50', activeStyle: 'background:#b45309;color:#fff' },
-  danger:  { cls: 'text-red-700 bg-red-50',       activeStyle: 'background:#b91c1c;color:#fff' },
-  info:    { cls: 'text-eu-blue bg-eu-blue/10',   activeStyle: 'background:#1d4ed8;color:#fff' },
-  neutral: { cls: 'text-gray-600 bg-gray-100',    activeStyle: 'background:#4b5563;color:#fff' },
+  success: { cls: 'text-eu-purple bg-eu-purple/5 border border-eu-purple/15 hover:bg-eu-purple/10',   activeStyle: 'background:#4918AD;color:#fff;border-color:#4918AD' },
+  warning: { cls: 'text-eu-purple bg-eu-yellow/60 border border-eu-yellow/80 hover:bg-eu-yellow', activeStyle: 'background:#FFF4E1;color:#4918AD;border-color:#FFF4E1' },
+  danger:  { cls: 'text-eu-purple bg-eu-purple/5 border border-eu-purple/15 hover:bg-eu-purple/10',   activeStyle: 'background:#4918AD;color:#fff;border-color:#4918AD' },
+  info:    { cls: 'text-eu-blue bg-eu-blue/5 border border-eu-blue/15 hover:bg-eu-blue/10',   activeStyle: 'background:#5620F6;color:#fff;border-color:#5620F6' },
+  neutral: { cls: 'text-indigo-900/60 bg-indigo-900/5 border border-indigo-900/10 hover:bg-indigo-900/10',    activeStyle: 'background:#1E1B4B;color:#fff;border-color:#1E1B4B' },
 };
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -182,7 +182,7 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
           <div class="flex items-center gap-2 flex-wrap">
             ${isMaster ? '<span class="text-xs bg-eu-purple text-white px-2.5 py-0.5 rounded-lg font-bold">Track A</span>' : ''}
           </div>
-          ${trShowStatus ? `<button data-filter-status="${course.statusId}" class="text-xs font-extrabold px-2.5 py-0.5 rounded-lg cursor-pointer transition-colors ${isStatusActive ? '' : (TONE_MAP[tone]?.cls || TONE_MAP.neutral.cls)}" ${isStatusActive ? `style="${TONE_MAP[tone]?.activeStyle || TONE_MAP.neutral.activeStyle}"` : ''}>${statusLabel}</button>` : ''}
+          ${trShowStatus ? `<button data-filter-status="${course.statusId}" class="text-xs font-bold px-2.5 py-1 rounded-full cursor-pointer transition-all duration-300 ${isStatusActive ? 'shadow-sm' : (TONE_MAP[tone]?.cls || TONE_MAP.neutral.cls)}" ${isStatusActive ? `style="${TONE_MAP[tone]?.activeStyle || TONE_MAP.neutral.activeStyle}"` : ''}>${statusLabel}</button>` : ''}
         </div>
         <h3 class="font-extrabold text-eu-purple text-lg mb-2 leading-tight">${course.title}</h3>
         <p class="text-base text-eu-text/75 mb-4 leading-relaxed">${course.description}</p>
