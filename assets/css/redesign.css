@@ -36,12 +36,12 @@
 
 /* ─── CARDS ───────────────────────────────────────────────────────────────── */
 
-/* (a) Card estándar — gradiente blanco a beige sobre canvas (G4 Style) */
+/* (a) Card estándar — gradiente blanco a azul sobre canvas (V3 Style) */
 .rd-card {
-  background: linear-gradient(135deg, #FFFFFF 0%, rgba(255, 244, 225, 0.35) 100%);
-  border: 1px solid rgba(255, 244, 225, 0.60);
+  background: linear-gradient(135deg, #FFFFFF 0%, rgba(86, 32, 246, 0.08) 100%);
+  border: 1.5px solid rgba(86, 32, 246, 0.20);
   border-radius: 2rem;
-  box-shadow: 0 10px 30px -12px rgba(73, 24, 173, 0.06);
+  box-shadow: 0 10px 25px -12px rgba(86, 32, 246, 0.10);
   transition: transform .5s cubic-bezier(.16, 1, .3, 1),
               box-shadow .5s cubic-bezier(.16, 1, .3, 1),
               border-color .5s ease;
@@ -50,15 +50,15 @@
 /* Lift al hover — muy sutil y suave (ease-out-expo) */
 .rd-card-hover:hover {
   transform: translateY(-.375rem);
-  box-shadow: 0 20px 40px -18px rgba(73, 24, 173, 0.12);
-  border-color: rgba(73, 24, 173, 0.22);
+  box-shadow: 0 20px 40px -18px rgba(86, 32, 246, 0.20);
+  border-color: rgba(86, 32, 246, 0.35);
 }
 
 /* Variante de hover SOLO BORDE (sin movimiento): intensifica el color del
    borde + halo sutil. Para cards donde no se quiere desplazamiento. */
 .rd-card-edge:hover {
-  border-color: rgba(73, 24, 173, 0.55);
-  box-shadow: 0 0 0 1px rgba(73, 24, 173, 0.25), 0 12px 30px -18px rgba(73, 24, 173, 0.15);
+  border-color: rgba(86, 32, 246, 0.55);
+  box-shadow: 0 0 0 1px rgba(86, 32, 246, 0.25), 0 12px 30px -18px rgba(86, 32, 246, 0.15);
 }
 
 /* DECISIÓN_HUMANA (2026-06-05): permitir las microinteracciones de card incluso
