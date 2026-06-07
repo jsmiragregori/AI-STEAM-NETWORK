@@ -513,8 +513,10 @@ COMMIT: `style(global): cierre visual overhaul — modelo AI-STEAM-MIGRATION`
 | F1b | Nav píldora editorial (franja morada, entradas beige, idiomas/CTAs) | `f699468` |
 | F2+F2b | Home completa: hero full-viewport, cards modelo MIGRATION, iconos Lucide, DualFocus beige, ENRED cards con acento, hover lift/edge, tipografía editorial | `bbdc6d0` `2905c8f` |
 | CMS | "Últimas contribuciones" eliminada: YAML, loader, admin, validators, data generada | CONTENT `a92af86`, VANILLA `2905c8f` |
+| F4 | Formación: Hero morado/beige, tabs en beige oficial, tarjetas de curso en beige plano al 55% sin acento, acento lateral en skills, aviso de master Solid Violet, Itinerario CEICE estilo Sectores CTA sin flechas | CONTENT `1ac72d1`, VANILLA `3e0cd79` `8d50988` `d6e7361` |
 
-### Fase en curso: **F4 — Formación** ⏳ Pendiente de iniciar
+### Fase en curso: **F5 — Prácticas** ⏳ Pendiente de iniciar
+
 
 Fase F3 (Sectores) ha sido completamente aprobada por el responsable (2026-06-06). Se procede a preparar la continuación del plan visual hacia F4.
 
