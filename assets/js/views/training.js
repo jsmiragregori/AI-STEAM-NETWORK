@@ -124,7 +124,6 @@ function getCourses(trainingT) {
       sectors:     (course.sectorIds || []).map(id => pickLang(sectorsMap[id], id)),
       hours:       course.hours    ?? null,
       enrolled:    course.enrolled ?? null,
-      rating:      course.rating   ?? null,
       partner:     COURSE_PARTNERS[idx] || '',
       description: pickLang(course.description, ''),
       modalityId:  course.modalityId || '',
@@ -140,7 +139,7 @@ function getCourses(trainingT) {
   return Object.values(coursesObj).map((course, idx) => ({
     id: `c${idx + 1}`, title: course.title, level: course.level,
     sectorIds: [], sectors: [course.sector] || [],
-    hours: null, enrolled: null, rating: null,
+    hours: null, enrolled: null,
     partner: COURSE_PARTNERS[idx], description: course.desc,
     modalityId: '', modality: COURSE_MODALITY[idx],
     statusId: course.status || '',
@@ -190,7 +189,6 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
         <div class="flex flex-wrap gap-3 text-sm text-eu-text/70 mb-4">
           ${course.hours    != null ? `<span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-eu-blue"></i>${course.hours}${trainingT?.courseHours || ''}</span>` : ''}
           ${course.enrolled != null ? `<span class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-eu-blue"></i>${course.enrolled} ${trainingT?.courseEnrolledLabel || ''}</span>` : ''}
-          ${course.rating   != null ? `<span class="flex items-center gap-1.5"><i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>${course.rating}</span>` : ''}
         </div>
         ${trShowSectors || trShowModality ? `<div class="flex flex-wrap gap-2">
           ${trShowSectors ? (course.sectorIds || []).map((sectorId, idx) => {

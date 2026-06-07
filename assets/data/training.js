@@ -2238,7 +2238,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 25,
         "enrolled": 22,
-        "rating": 4.9,
         "sectorIds": [
           "industria",
           "medio-ambiente"
@@ -2278,7 +2277,6 @@ export const TRAINING_CONFIG = {
         "statusId": "inscripcion",
         "hours": 45,
         "enrolled": 198,
-        "rating": 4.6,
         "sectorIds": [
           "agroalimentario",
           "medio-ambiente"
@@ -2318,7 +2316,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 50,
         "enrolled": 143,
-        "rating": 4.5,
         "sectorIds": [
           "medio-ambiente"
         ],
@@ -2357,7 +2354,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 40,
         "enrolled": 89,
-        "rating": 4.7,
         "sectorIds": [
           "industria",
           "turismo-cultura"
@@ -2395,7 +2391,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 30,
         "enrolled": 312,
-        "rating": 4.6,
         "sectorIds": [
           "turismo-cultura",
           "educacion-sector"
@@ -2433,7 +2428,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 55,
         "enrolled": 67,
-        "rating": 4.8,
         "sectorIds": [
           "industria"
         ],
@@ -2470,7 +2464,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 25,
         "enrolled": 178,
-        "rating": 4.5,
         "sectorIds": [
           "turismo-cultura",
           "educacion-sector"
@@ -2506,7 +2499,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 50,
         "enrolled": 203,
-        "rating": 4.8,
         "sectorIds": [
           "industria",
           "administracion"
@@ -2544,7 +2536,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 45,
         "enrolled": 94,
-        "rating": 4.9,
         "sectorIds": [
           "salud"
         ],
@@ -2581,7 +2572,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 40,
         "enrolled": 121,
-        "rating": 4.7,
         "sectorIds": [
           "turismo-cultura",
           "medio-ambiente"
@@ -2619,7 +2609,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 35,
         "enrolled": 156,
-        "rating": 4.5,
         "sectorIds": [
           "medio-ambiente",
           "administracion"
@@ -2657,7 +2646,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 30,
         "enrolled": 445,
-        "rating": 4.6,
         "sectorIds": [
           "educacion-sector"
         ],
@@ -2694,7 +2682,6 @@ export const TRAINING_CONFIG = {
         "statusId": "inscripcion",
         "hours": 60,
         "enrolled": 38,
-        "rating": 4.6,
         "sectorIds": [
           "industria"
         ],
@@ -2731,7 +2718,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 25,
         "enrolled": 267,
-        "rating": 4.4,
         "sectorIds": [
           "administracion",
           "educacion-sector"
@@ -2769,7 +2755,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 40,
         "enrolled": 112,
-        "rating": 4.7,
         "sectorIds": [
           "agroalimentario",
           "medio-ambiente"
@@ -2805,7 +2790,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 35,
         "enrolled": 88,
-        "rating": 4.8,
         "sectorIds": [
           "turismo-cultura"
         ],
@@ -2842,7 +2826,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 30,
         "enrolled": 189,
-        "rating": 4.7,
         "sectorIds": [
           "salud",
           "educacion-sector"
@@ -2880,7 +2863,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 45,
         "enrolled": 134,
-        "rating": 4.6,
         "sectorIds": [
           "medio-ambiente",
           "industria"
@@ -2918,7 +2900,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 35,
         "enrolled": 76,
-        "rating": 4.5,
         "sectorIds": [
           "industria",
           "agroalimentario"
@@ -2954,7 +2935,6 @@ export const TRAINING_CONFIG = {
         "statusId": "inscripcion",
         "hours": 25,
         "enrolled": 143,
-        "rating": 4.7,
         "sectorIds": [
           "educacion-sector",
           "administracion"
@@ -2992,7 +2972,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 30,
         "enrolled": null,
-        "rating": 4.4,
         "sectorIds": [
           "turismo-cultura",
           "administracion"
@@ -3030,7 +3009,6 @@ export const TRAINING_CONFIG = {
         "statusId": "proximo",
         "hours": 20,
         "enrolled": null,
-        "rating": null,
         "sectorIds": [
           "turismo-cultura",
           "educacion-sector"
@@ -3068,7 +3046,6 @@ export const TRAINING_CONFIG = {
         "statusId": "proximo",
         "hours": 35,
         "enrolled": null,
-        "rating": null,
         "sectorIds": [
           "agroalimentario",
           "salud"
@@ -3106,7 +3083,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 30,
         "enrolled": 524,
-        "rating": 4.8,
         "sectorIds": [
           "educacion-sector"
         ],
@@ -3141,7 +3117,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 40,
         "enrolled": 211,
-        "rating": 4.4,
         "sectorIds": [
           "administracion"
         ],
@@ -3178,7 +3153,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 25,
         "enrolled": 186,
-        "rating": 4.8,
         "sectorIds": [
           "educacion-sector",
           "turismo-cultura"
@@ -3216,7 +3190,6 @@ export const TRAINING_CONFIG = {
         "statusId": "inscripcion",
         "hours": 35,
         "enrolled": 94,
-        "rating": 4.7,
         "sectorIds": [
           "industria"
         ],
@@ -3253,7 +3226,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 30,
         "enrolled": 143,
-        "rating": 4.6,
         "sectorIds": [
           "medio-ambiente",
           "educacion-sector"
@@ -3291,7 +3263,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 20,
         "enrolled": 77,
-        "rating": 4.5,
         "sectorIds": [
           "turismo-cultura"
         ],
@@ -3326,7 +3297,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 32,
         "enrolled": 118,
-        "rating": 4.7,
         "sectorIds": [
           "agroalimentario",
           "medio-ambiente"
@@ -3364,7 +3334,6 @@ export const TRAINING_CONFIG = {
         "statusId": "inscripcion",
         "hours": 28,
         "enrolled": 86,
-        "rating": 4.8,
         "sectorIds": [
           "salud",
           "educacion-sector"
@@ -3400,7 +3369,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 30,
         "enrolled": 124,
-        "rating": 4.5,
         "sectorIds": [
           "administracion",
           "educacion-sector"
@@ -3438,7 +3406,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 22,
         "enrolled": 201,
-        "rating": 4.9,
         "sectorIds": [
           "turismo-cultura",
           "educacion-sector"
@@ -3476,7 +3443,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 40,
         "enrolled": 99,
-        "rating": 4.6,
         "sectorIds": [
           "industria",
           "agroalimentario",
@@ -3513,7 +3479,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 18,
         "enrolled": 163,
-        "rating": 4.7,
         "sectorIds": [
           "educacion-sector"
         ],
@@ -3548,7 +3513,6 @@ export const TRAINING_CONFIG = {
         "statusId": "proximo",
         "hours": 26,
         "enrolled": 0,
-        "rating": null,
         "sectorIds": [
           "industria"
         ],
@@ -3583,7 +3547,6 @@ export const TRAINING_CONFIG = {
         "statusId": "inscripcion",
         "hours": 24,
         "enrolled": 72,
-        "rating": 4.4,
         "sectorIds": [
           "turismo-cultura",
           "educacion-sector"
@@ -3621,7 +3584,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 20,
         "enrolled": 138,
-        "rating": 4.8,
         "sectorIds": [
           "educacion-sector",
           "administracion"
@@ -3657,7 +3619,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 34,
         "enrolled": 81,
-        "rating": 4.6,
         "sectorIds": [
           "industria",
           "administracion",
@@ -3696,7 +3657,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 16,
         "enrolled": 247,
-        "rating": 4.9,
         "sectorIds": [
           "educacion-sector",
           "administracion",
@@ -3733,7 +3693,6 @@ export const TRAINING_CONFIG = {
         "statusId": "finalizado",
         "hours": 18,
         "enrolled": 119,
-        "rating": 4.3,
         "sectorIds": [
           "turismo-cultura",
           "educacion-sector"
@@ -3771,7 +3730,6 @@ export const TRAINING_CONFIG = {
         "statusId": "inscripcion",
         "hours": 28,
         "enrolled": 63,
-        "rating": 4.5,
         "sectorIds": [
           "administracion",
           "medio-ambiente"
@@ -3809,7 +3767,6 @@ export const TRAINING_CONFIG = {
         "statusId": "proximo",
         "hours": 24,
         "enrolled": 0,
-        "rating": null,
         "sectorIds": [
           "agroalimentario",
           "salud"
@@ -3847,7 +3804,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 36,
         "enrolled": 154,
-        "rating": 4.8,
         "sectorIds": [
           "educacion-sector",
           "turismo-cultura",
@@ -3884,7 +3840,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 20,
         "enrolled": 208,
-        "rating": 4.7,
         "sectorIds": [
           "educacion-sector",
           "administracion"
@@ -3920,7 +3875,6 @@ export const TRAINING_CONFIG = {
         "statusId": "inscripcion",
         "hours": 30,
         "enrolled": 58,
-        "rating": 4.6,
         "sectorIds": [
           "industria",
           "turismo-cultura",
@@ -3959,7 +3913,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 15,
         "enrolled": 312,
-        "rating": 4.9,
         "sectorIds": [
           "educacion-sector",
           "administracion"
@@ -3997,7 +3950,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 90,
         "enrolled": 87,
-        "rating": 4.9,
         "sectorIds": [
           "salud"
         ],
@@ -4032,7 +3984,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 80,
         "enrolled": 54,
-        "rating": 4.8,
         "sectorIds": [
           "industria"
         ],
@@ -4067,7 +4018,6 @@ export const TRAINING_CONFIG = {
         "statusId": "proximo",
         "hours": 70,
         "enrolled": 72,
-        "rating": 4.7,
         "sectorIds": [
           "turismo-cultura"
         ],
@@ -4102,7 +4052,6 @@ export const TRAINING_CONFIG = {
         "statusId": "inscripcion",
         "hours": 72,
         "enrolled": 68,
-        "rating": 4.8,
         "sectorIds": [
           "administracion",
           "educacion-sector"
@@ -4140,7 +4089,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 84,
         "enrolled": 91,
-        "rating": 4.9,
         "sectorIds": [
           "turismo-cultura",
           "educacion-sector"
@@ -4178,7 +4126,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 78,
         "enrolled": 76,
-        "rating": 4.7,
         "sectorIds": [
           "industria"
         ],
@@ -4215,7 +4162,6 @@ export const TRAINING_CONFIG = {
         "statusId": "inscripcion",
         "hours": 74,
         "enrolled": 59,
-        "rating": 4.6,
         "sectorIds": [
           "agroalimentario",
           "medio-ambiente"
@@ -4253,7 +4199,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 88,
         "enrolled": 83,
-        "rating": 4.8,
         "sectorIds": [
           "medio-ambiente",
           "administracion"
@@ -4291,7 +4236,6 @@ export const TRAINING_CONFIG = {
         "statusId": "proximo",
         "hours": 76,
         "enrolled": 64,
-        "rating": 4.7,
         "sectorIds": [
           "educacion-sector"
         ],
@@ -4326,7 +4270,6 @@ export const TRAINING_CONFIG = {
         "statusId": "inscripcion",
         "hours": 68,
         "enrolled": 51,
-        "rating": 4.6,
         "sectorIds": [
           "salud",
           "turismo-cultura"
@@ -4362,7 +4305,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 92,
         "enrolled": 47,
-        "rating": 4.8,
         "sectorIds": [
           "industria",
           "educacion-sector"
@@ -4398,7 +4340,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 66,
         "enrolled": 88,
-        "rating": 4.7,
         "sectorIds": [
           "turismo-cultura",
           "medio-ambiente"
@@ -4436,7 +4377,6 @@ export const TRAINING_CONFIG = {
         "statusId": "proximo",
         "hours": 64,
         "enrolled": 42,
-        "rating": 4.5,
         "sectorIds": [
           "administracion",
           "medio-ambiente"
@@ -4474,7 +4414,6 @@ export const TRAINING_CONFIG = {
         "statusId": "inscripcion",
         "hours": 70,
         "enrolled": 73,
-        "rating": 4.7,
         "sectorIds": [
           "agroalimentario",
           "salud"
@@ -4512,7 +4451,6 @@ export const TRAINING_CONFIG = {
         "statusId": "activo",
         "hours": 86,
         "enrolled": 58,
-        "rating": 4.8,
         "sectorIds": [
           "industria",
           "administracion"
@@ -4550,7 +4488,6 @@ export const TRAINING_CONFIG = {
         "statusId": "proximo",
         "hours": 96,
         "enrolled": 39,
-        "rating": 4.9,
         "sectorIds": [
           "salud",
           "industria",
