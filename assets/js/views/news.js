@@ -175,7 +175,7 @@ export function render() {
     { key: 'youtube',   label: newsT?.socialLinks?.youtube  },
     { key: 'substack',  label: newsT?.socialLinks?.substack },
   ].filter(l => l.label).map(l => `
-    <a href="#" class="flex items-center justify-center gap-2 p-3 rounded-full text-xs hover:bg-white hover:text-eu-purple transition-all font-bold shadow-sm border-none" style="background:#FFF4E1;color:#4918AD">
+    <a href="#" class="flex items-center justify-center gap-2 p-3 rounded-full text-xs hover:bg-white hover:text-eu-purple hover:scale-105 transition-all font-bold shadow-sm border-none" style="background:#FFF4E1;color:#4918AD">
       <i data-lucide="external-link" class="w-3.5 h-3.5 shrink-0"></i>${l.label}
     </a>
   `).join('');
