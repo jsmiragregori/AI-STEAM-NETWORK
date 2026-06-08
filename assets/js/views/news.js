@@ -238,14 +238,14 @@ export function render() {
             <!-- Sidebar -->
             <div class="space-y-8">
               <!-- Events -->
-              <div class="rd-card bg-white border border-eu-blue/10">
-                <div class="p-6 pb-2">
+              <div class="rd-card-v5 rd-card-accent">
+                <div class="p-6 pb-2 pl-8">
                   <h3 class="text-xl font-extrabold text-eu-purple flex items-center gap-2">
                     <i data-lucide="calendar" class="w-5 h-5 text-eu-blue"></i>${newsT?.upcomingEvents || ''}
                   </h3>
                 </div>
-                <ul class="divide-y divide-eu-blue/5">${eventsHtml}</ul>
-                <div class="p-4 bg-eu-blue/5 rounded-b-[2rem] text-center border-t border-eu-blue/5">
+                <ul class="divide-y divide-eu-purple/10 pl-4">${eventsHtml}</ul>
+                <div class="p-4 bg-eu-purple/5 rounded-b-[2rem] text-center border-t border-eu-purple/10">
                   <a href="#" class="text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">${newsT?.viewFullCalendar || ''}</a>
                 </div>
               </div>
