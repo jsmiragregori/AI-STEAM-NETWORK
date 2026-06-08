@@ -100,10 +100,9 @@
 }
 
 /* ─── Marketplace · Editorial item card (F10) ──────────────────────────────
-   Superficie limpia blanco → violeta-blanco muy tenue (#FBF7FF) con franja
-   de acento superior en degradado de marca (Electric Blue → Deep Purple).
-   Evita el blanco plano y el beige sucio; aporta identidad de marca y
-   jerarquía. Lift suave al hover (exento de prefers-reduced-motion). */
+   Patrón "ceja" del proyecto: banda púrpura superior con el título (blanco) +
+   cuerpo claro debajo. Sin acento lineal. Lift suave al hover (exento de
+   prefers-reduced-motion). El radio + overflow:hidden recortan la ceja. */
 .rd-card-mp {
   position: relative;
   background: linear-gradient(to bottom, #ffffff 0%, #FBF7FF 100%);
@@ -115,20 +114,25 @@
               box-shadow .5s cubic-bezier(.16, 1, .3, 1),
               border-color .5s ease;
 }
-.rd-card-mp::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--rd-blue) 0%, var(--rd-purple) 100%);
-  z-index: 1;
-}
 .rd-card-mp-hover:hover {
   transform: translateY(-.375rem);
   box-shadow: 0 24px 46px -20px rgb(73 24 173 / .26);
   border-color: rgb(86 32 246 / .32);
 }
 .rd-card-mp-hover { transition-duration: .5s !important; }
+
+/* Ceja púrpura oficial del proyecto (#5222B0), con el título dentro. */
+.rd-card-mp-ceja {
+  background: #5222B0;
+  padding: 1.4rem 1.75rem;
+}
+.rd-card-mp-ceja .rd-card-mp-title {
+  color: #ffffff;
+  font-size: 1.25rem;       /* text-xl */
+  line-height: 1.3;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
 
 /* (b) Card con barra de acento lateral azul */
 .rd-card-accent {

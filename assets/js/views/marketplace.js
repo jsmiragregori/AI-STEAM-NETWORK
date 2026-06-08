@@ -1108,19 +1108,23 @@ function renderCardShell(item, tab, body, options = {}) {
     : (getFilterDefinitions(tab.id).some(d => d.key === 'status') ? 'status' : '');
 
   return `
-    <article class="rd-card-mp rd-card-mp-hover group flex h-full flex-col p-7">
-      <div class="flex flex-wrap gap-2">
-        ${options.hideTypeBadge ? '' : renderBadge(getTypeLabel(item.type), tone.badge)}
-        ${options.showStatusBadge !== false ? renderBadge(statusLabel, options.statusBadgeTone || 'bg-white/70 text-eu-purple border-eu-purple/25', statusFilterKey, statusRaw) : ''}
-        ${options.extraBadge ? renderBadge(options.extraBadge, options.extraBadgeTone || 'bg-white/70 text-eu-purple border-eu-purple/25', options.extraBadgeFilterKey || '', options.extraBadgeFilterValue || '') : ''}
-        ${options.extraBadge2 ? renderBadge(options.extraBadge2, options.extraBadge2Tone || 'bg-white/70 text-eu-purple border-eu-purple/25', options.extraBadge2FilterKey || '', options.extraBadge2FilterValue || '') : ''}
+    <article class="rd-card-mp rd-card-mp-hover group flex h-full flex-col overflow-hidden">
+      <div class="rd-card-mp-ceja">
+        <h3 class="rd-card-mp-title">${esc(title)}</h3>
       </div>
-      <div class="mt-4 flex-1">
-        <h3 class="text-xl font-extrabold leading-snug text-eu-purple group-hover:text-eu-blue" style="letter-spacing:-.01em">${esc(title)}</h3>
-        ${subtitle ? `<p class="mt-2 text-base leading-relaxed text-gray-600">${esc(subtitle)}</p>` : ''}
-        ${body}
+      <div class="flex flex-1 flex-col p-7 pt-5">
+        <div class="flex flex-wrap gap-2">
+          ${options.hideTypeBadge ? '' : renderBadge(getTypeLabel(item.type), tone.badge)}
+          ${options.showStatusBadge !== false ? renderBadge(statusLabel, options.statusBadgeTone || 'bg-white/70 text-eu-purple border-eu-purple/25', statusFilterKey, statusRaw) : ''}
+          ${options.extraBadge ? renderBadge(options.extraBadge, options.extraBadgeTone || 'bg-white/70 text-eu-purple border-eu-purple/25', options.extraBadgeFilterKey || '', options.extraBadgeFilterValue || '') : ''}
+          ${options.extraBadge2 ? renderBadge(options.extraBadge2, options.extraBadge2Tone || 'bg-white/70 text-eu-purple border-eu-purple/25', options.extraBadge2FilterKey || '', options.extraBadge2FilterValue || '') : ''}
+        </div>
+        <div class="mt-4 flex-1">
+          ${subtitle ? `<p class="text-base leading-relaxed text-gray-600">${esc(subtitle)}</p>` : ''}
+          ${body}
+        </div>
+        ${renderCardFooter(item, tab, entity, dateLabel, options.ctaHtml)}
       </div>
-      ${renderCardFooter(item, tab, entity, dateLabel, options.ctaHtml)}
     </article>`;
 }
 
