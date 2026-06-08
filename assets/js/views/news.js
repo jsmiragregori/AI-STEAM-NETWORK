@@ -238,7 +238,7 @@ export function render() {
             <!-- Sidebar -->
             <div class="space-y-8">
               <!-- Events -->
-              <div class="rd-card-v5 rd-card-accent">
+              <div class="rd-card-v5 rd-card-accent" style="background:#FFF4E1">
                 <div class="p-6 pb-2 pl-8">
                   <h3 class="text-xl font-extrabold text-eu-purple flex items-center gap-2">
                     <i data-lucide="calendar" class="w-5 h-5 text-eu-blue"></i>${newsT?.upcomingEvents || ''}
