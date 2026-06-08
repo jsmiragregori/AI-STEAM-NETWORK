@@ -3,15 +3,6 @@ import { navigateTo } from '../router.js';
 import { getState, setState } from '../state.js';
 import { SECTORS_CONFIG } from '../../data/sectors.js';
 
-const SECTORS_META = [
-  { id: 'mfg', emoji: '⚙️', color: 'from-blue-700 to-blue-500', borderColor: 'border-blue-600', tagBg: 'bg-blue-100', tagText: 'text-blue-800' },
-  { id: 'mob', emoji: '🚗', color: 'from-eu-purple to-eu-blue', borderColor: 'border-eu-purple', tagBg: 'bg-eu-yellow', tagText: 'text-eu-purple' },
-  { id: 'ene', emoji: '⚡', color: 'from-green-700 to-emerald-500', borderColor: 'border-green-600', tagBg: 'bg-green-100', tagText: 'text-green-800' },
-  { id: 'agr', emoji: '🌾', color: 'from-yellow-600 to-amber-400', borderColor: 'border-yellow-500', tagBg: 'bg-yellow-100', tagText: 'text-yellow-800' },
-  { id: 'cci', emoji: '🎨', color: 'from-pink-600 to-fuchsia-400', borderColor: 'border-pink-500', tagBg: 'bg-pink-100', tagText: 'text-pink-800' },
-  { id: 'hou', emoji: '🏘️', color: 'from-red-600 to-rose-500', borderColor: 'border-red-500', tagBg: 'bg-red-100', tagText: 'text-red-800' },
-  { id: 'nts', emoji: '🏢', color: 'from-slate-600 to-gray-500', borderColor: 'border-slate-500', tagBg: 'bg-slate-100', tagText: 'text-slate-800' },
-];
 
 const SECTOR_ICONS = {
   mfg: 'factory',
@@ -62,18 +53,6 @@ function esc(value) {
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
-}
-
-function enhanceSectorWithMetadata(sector) {
-  const meta = SECTORS_META.find(m => m.id === sector.id);
-  return {
-    ...sector,
-    emoji: meta?.emoji || '',
-    color: meta?.color || 'from-gray-500 to-gray-400',
-    borderColor: meta?.borderColor || 'border-gray-400',
-    tagBg: meta?.tagBg || 'bg-gray-100',
-    tagText: meta?.tagText || 'text-gray-800',
-  };
 }
 
 function renderHero(hero) {
@@ -366,8 +345,7 @@ function renderCta(cta, sectorsT) {
 export function render() {
   const sectorsT = t('sectors') || {};
   const sectorList = (SECTORS_CONFIG.cardsBlock || [])
-    .filter(sector => sector.visible !== false)
-    .map(enhanceSectorWithMetadata);
+    .filter(sector => sector.visible !== false);
 
   return `
     <div class="rd-canvas">
