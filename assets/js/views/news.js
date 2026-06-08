@@ -169,16 +169,30 @@ export function render() {
     </li>
   `).join('');
 
+  const socialIconMap = {
+    linkedin: 'linkedin',
+    twitter: 'twitter',
+    youtube: 'youtube',
+    substack: 'rss'
+  };
+
   const socialLinks = [
     { key: 'linkedin',  label: newsT?.socialLinks?.linkedin },
     { key: 'twitter',   label: newsT?.socialLinks?.twitter  },
     { key: 'youtube',   label: newsT?.socialLinks?.youtube  },
     { key: 'substack',  label: newsT?.socialLinks?.substack },
-  ].filter(l => l.label).map(l => `
-    <a href="#" class="flex items-center justify-center gap-2 p-3 rounded-full text-xs hover:bg-white hover:text-eu-purple hover:scale-105 transition-all font-bold shadow-sm border-none" style="background:#FFF4E1;color:#4918AD">
-      <i data-lucide="external-link" class="w-3.5 h-3.5 shrink-0"></i>${l.label}
-    </a>
-  `).join('');
+  ].filter(l => l.label).map(l => {
+    const icon = socialIconMap[l.key] || 'external-link';
+    return `
+      <a href="#" class="flex items-center justify-between w-full p-4 rounded-full text-sm hover:bg-white hover:text-eu-purple hover:scale-[1.02] transition-all font-bold shadow-sm border-none" style="background:#FFF4E1;color:#4918AD">
+        <span class="flex items-center gap-3">
+          <i data-lucide="${icon}" class="w-5 h-5 shrink-0"></i>
+          <span>${l.label}</span>
+        </span>
+        <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-60"></i>
+      </a>
+    `;
+  }).join('');
 
   const heroBlock  = NEWS_CONFIG?.heroBlock || {};
   const heroVisible = heroBlock.visible !== false;
@@ -273,7 +287,7 @@ export function render() {
                 <h3 class="font-extrabold text-xl mb-4 text-eu-yellow flex items-center gap-2 relative z-10">
                   <i data-lucide="share-2" class="w-5 h-5 text-white"></i>${newsT?.followUs || ''}
                 </h3>
-                <div class="grid grid-cols-2 gap-3 relative z-10">${socialLinks}</div>
+                <div class="space-y-3 relative z-10">${socialLinks}</div>
               </div>
             </div>
           </div>
