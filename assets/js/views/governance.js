@@ -473,7 +473,7 @@ function tabLbd(govT) {
         <!-- Fases LbD -->
         ${cycleBlock.visible !== false ? `
         <div class="rd-card overflow-hidden mb-8">
-          <div class="px-10 py-6" style="background:#5222B0">
+          <div class="px-10 py-6 rd-ceja-grad">
             <h3 class="text-2xl font-extrabold text-white">${pickLang(cycleBlock.title, s.cycleTitle || '')}</h3>
           </div>
           <div class="p-8 space-y-0 rd-card-grad-beige">${phasesHtml}</div>
@@ -482,7 +482,7 @@ function tabLbd(govT) {
         <!-- Flujo operativo -->
         ${operatingFlowBlock.visible !== false ? `
         <div class="rd-card overflow-hidden mb-8">
-          <div class="px-10 py-6" style="background:#5222B0">
+          <div class="px-10 py-6 rd-ceja-grad">
             <h3 class="text-2xl font-extrabold text-white flex items-center gap-3">
               <div class="w-10 h-10 rounded-full flex items-center justify-center text-white shrink-0" style="background:rgba(255,255,255,0.2)">
                 <i data-lucide="arrow-right" class="w-5 h-5"></i>
@@ -499,7 +499,7 @@ function tabLbd(govT) {
         <!-- Plataformas -->
         ${platformsBlock.visible !== false ? `
         <div class="rd-card overflow-hidden mb-8">
-          <div class="px-10 py-6" style="background:#5222B0">
+          <div class="px-10 py-6 rd-ceja-grad">
             <h3 class="text-2xl font-extrabold text-white">${pickLang(platformsBlock.title, s.platformsTitle || '')}</h3>
           </div>
           <div class="p-8 rd-card-grad-beige">
@@ -511,7 +511,7 @@ function tabLbd(govT) {
         <!-- Escalabilidad -->
         ${scalabilityBlock.visible !== false ? `
         <div class="rd-card overflow-hidden">
-          <div class="px-10 py-6" style="background:#5222B0">
+          <div class="px-10 py-6 rd-ceja-grad">
             <h3 class="text-2xl font-extrabold text-white flex items-center gap-3">
               <div class="w-10 h-10 rounded-full flex items-center justify-center text-white shrink-0" style="background:rgba(255,255,255,0.2)">
                 <i data-lucide="zap" class="w-5 h-5"></i>
@@ -669,7 +669,7 @@ function tabDocumentos(govT) {
     <div class="rd-card overflow-hidden">
       ${cms.visible !== false ? `
       ${cms.headerVisible !== false ? `
-      <div class="px-10 py-6" style="background:#5222B0">
+      <div class="px-10 py-6 rd-ceja-grad">
         <h2 class="text-3xl font-extrabold mb-1" style="color:#ffffff">${pickLang(cms.title, s.title || '')}</h2>
         <p class="text-lg leading-relaxed" style="color:#ffffff">${pickLang(cms.description, s.description || '')}</p>
       </div>
