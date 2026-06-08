@@ -3,14 +3,15 @@ import { NETWORK_CONFIG } from '../../data/network.js';
 
 // ── Static data ─────────────────────────────────────────────────────────────
 
+// Iconos representativos por sector, alineados con sectors.js
 const SECTOR_ICON = {
-  mfg: 'factory',
-  mob: 'car',
-  ene: 'zap',
-  agr: 'wheat',
-  cci: 'palette',
-  hou: 'building',
-  nts: 'stethoscope',
+  mfg: 'factory',      // Manufactura
+  mob: 'car',          // Movilidad y Transporte
+  ene: 'zap',          // Energía y Medio Ambiente
+  agr: 'wheat',        // Agroalimentario
+  cci: 'palette',      // Industrias Culturales y Creativas
+  hou: 'home',         // Vivienda
+  nts: 'briefcase',    // Servicios No Turísticos
 };
 
 const SECTOR_LABEL = {
@@ -58,11 +59,13 @@ const STAKEHOLDERS_BLOCK_VISIBLE = NETWORK_CONFIG?.stakeholdersBlock?.visible !=
 const STAKEHOLDERS = STAKEHOLDERS_BLOCK_VISIBLE ? (NETWORK_CONFIG?.stakeholdersBlock?.stakeholders || []) : [];
 const SHOW_STAKEHOLDERS_TAB = STAKEHOLDERS_BLOCK_VISIBLE;
 
+// Cuádruple hélice homogeneizada a la paleta corporativa (Blue/Purple).
+// Sin verdes/rosas: la distinción se mantiene con icono + alternancia azul/púrpura.
 const CATEGORY_META = {
-  universidad: { icon: 'graduation-cap', color: 'text-purple-700', bg: 'bg-purple-100', border: 'border-purple-300' },
-  empresa:     { icon: 'building-2',     color: 'text-blue-700',   bg: 'bg-blue-100',   border: 'border-blue-300'   },
-  admin:       { icon: 'globe',          color: 'text-green-700',  bg: 'bg-green-100',  border: 'border-green-300'  },
-  sociedad:    { icon: 'heart-handshake',color: 'text-pink-700',   bg: 'bg-pink-100',   border: 'border-pink-300'   },
+  universidad: { icon: 'graduation-cap', color: 'text-eu-purple', bg: 'bg-eu-purple/10', border: 'border-eu-purple/25' },
+  empresa:     { icon: 'building-2',     color: 'text-eu-blue',   bg: 'bg-eu-blue/10',   border: 'border-eu-blue/25'   },
+  admin:       { icon: 'globe',          color: 'text-eu-blue',   bg: 'bg-eu-blue/10',   border: 'border-eu-blue/25'   },
+  sociedad:    { icon: 'heart-handshake',color: 'text-eu-purple', bg: 'bg-eu-purple/10', border: 'border-eu-purple/25' },
 };
 
 const COUNTRIES = [...new Set(ACTIVE_PARTNERS.map(p => p.country))];
@@ -102,25 +105,26 @@ function helixBlock() {
   const sc = counts(STAKEHOLDERS);
 
   const html = (helix.categories || []).map(cat => {
+    const meta = CATEGORY_META[cat.id] || CATEGORY_META.sociedad;
     const total = (pc[cat.id] || 0) + (sc[cat.id] || 0);
     const detailParts = [
       pc[cat.id] ? `${pc[cat.id]} ${loc({es:'socios',en:'partners',va:'socis'})}` : '',
       sc[cat.id] ? `${sc[cat.id]} ${loc({es:'stakeholders',en:'stakeholders',va:'stakeholders'})}` : '',
     ].filter(Boolean);
     return `
-      <div class="${cat.bg} ${cat.border} border rounded-xl p-4 text-center">
-        <i data-lucide="${cat.icon}" class="w-6 h-6 ${cat.color} mx-auto mb-2"></i>
-        <p class="font-bold text-sm ${cat.color}">${loc(cat.label)}</p>
-        <p class="text-2xl font-extrabold text-gray-800 mt-1">${total}</p>
-        ${detailParts.length ? `<p class="text-xs text-gray-500 mt-0.5">${detailParts.join(' · ')}</p>` : ''}
+      <div class="rd-card rd-card-grad-violet rd-card-edge p-5 text-center group">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${meta.icon}" class="w-6 h-6 ${meta.color}"></i></div>
+        <p class="font-extrabold text-base ${meta.color}">${loc(cat.label)}</p>
+        <p class="text-3xl font-extrabold text-eu-text mt-1">${total}</p>
+        ${detailParts.length ? `<p class="text-sm text-gray-500 mt-0.5">${detailParts.join(' · ')}</p>` : ''}
       </div>
     `;
   }).join('');
 
   return `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7 mb-8">
-      <h2 class="text-xl font-bold text-eu-text mb-2">${loc(helix.heading)}</h2>
-      <p class="text-sm text-gray-600 mb-5 max-w-3xl">${loc(helix.description)}</p>
+    <div class="rd-card rd-card-accent rd-pad mb-8" style="background:#FFF4E1">
+      <h2 class="text-2xl font-extrabold text-eu-purple mb-2">${loc(helix.heading)}</h2>
+      <p class="text-lg text-gray-600 mb-6 max-w-3xl leading-relaxed">${loc(helix.description)}</p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">${html}</div>
     </div>
   `;
@@ -146,11 +150,11 @@ function tabSocios(activeCategory, filterCountry) {
   );
 
   const catFilters = `
-    <button data-net-cat="todos" class="px-4 py-1.5 rounded-full text-xs font-bold cursor-pointer border transition-colors ${activeCategory === 'todos' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-eu-text border-eu-border hover:border-eu-blue'}">
+    <button data-net-cat="todos" class="px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer border transition-colors ${activeCategory === 'todos' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow'}">
       ${loc(pb.filterAll) || 'Todos'} (${ACTIVE_PARTNERS.length})
     </button>
     ${Object.entries(CATEGORY_META).map(([key, meta]) => `
-      <button data-net-cat="${key}" class="px-4 py-1.5 rounded-full text-xs font-bold cursor-pointer border transition-colors ${activeCategory === key ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-eu-text border-eu-border hover:border-eu-blue'}">
+      <button data-net-cat="${key}" class="px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer border transition-colors ${activeCategory === key ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow'}">
         ${getCategoryLabel(key)} (${pc[key] || 0})
       </button>
     `).join('')}
@@ -163,7 +167,7 @@ function tabSocios(activeCategory, filterCountry) {
   const pShowRole        = partnerCv.role     !== false;
   const cardsHtml = filtered.map(p => {
     const meta = CATEGORY_META[p.category];
-    const sectorsHtml = p.sectors.map(s => `<span class="text-xs bg-eu-bg border border-eu-border px-1.5 py-0.5 rounded text-gray-600 font-semibold">${localized(s)}</span>`).join('');
+    const sectorsHtml = p.sectors.map(s => `<span class="text-sm px-2 py-0.5 rounded-full font-bold" style="background:rgb(86 32 246/.10); color:#5620F6">${localized(s)}</span>`).join('');
     const categoryLabel = localized(p.categoryLabel) || getCategoryLabel(p.category);
     const roleLabel = loc(pb.roleLabels?.[p.role]) || p.role;
     const consortiumLabel = loc(pb.consortium) || 'CONSORCIO';
@@ -172,15 +176,15 @@ function tabSocios(activeCategory, filterCountry) {
       ? `<img src="${LOGO_BASE}${p.logo}" alt="${p.acronym}" class="max-h-12 max-w-[160px] w-auto h-auto object-contain" loading="lazy" />`
       : `<div class="network-category-tooltip w-12 h-12 rounded-xl ${meta.bg} flex items-center justify-center" data-tooltip="${categoryLabel}" aria-label="${categoryLabel}"><i data-lucide="${meta.icon}" class="w-6 h-6 ${meta.color}"></i></div>`;
     const visitLinkHtml = p.url ? `
-      <div class="border-t border-eu-border px-4 py-3">
-        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-semibold text-eu-blue hover:underline">
+      <div class="border-t border-eu-purple/10 px-4 py-3">
+        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">
           <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${visitLabel}
         </a>
       </div>` : '';
     return `
-      <div class="bg-white rounded-xl border border-eu-border shadow-sm hover:border-eu-blue hover:shadow-md transition-all duration-200 flex flex-col overflow-hidden">
+      <div class="rd-card rd-card-grad-violet rd-card-edge flex flex-col overflow-hidden">
         <!-- Logo area -->
-        <div class="flex items-center justify-center bg-white border-b border-eu-border h-24 px-6 py-4">
+        <div class="flex items-center justify-center bg-white border-b border-eu-purple/10 h-24 px-6 py-4">
           ${logoHtml}
         </div>
         <!-- Meta: categoría (línea 1) · bandera + consorcio (línea 2) -->
@@ -189,7 +193,7 @@ function tabSocios(activeCategory, filterCountry) {
             <div class="w-5 h-5 rounded ${meta.bg} flex items-center justify-center shrink-0">
               <i data-lucide="${meta.icon}" class="w-3 h-3 ${meta.color}"></i>
             </div>
-            <span class="text-xs text-gray-500 font-medium truncate">${categoryLabel}</span>
+            <span class="text-sm text-gray-500 font-medium truncate">${categoryLabel}</span>
           </div>` : ''}
           <div class="flex items-center gap-1.5">
             <img src="https://flagcdn.com/20x15/${p.country.toLowerCase()}.png" alt="${p.country}" class="rounded-sm" />
@@ -198,10 +202,10 @@ function tabSocios(activeCategory, filterCountry) {
         </div>
         <!-- Nombre + info + sectores -->
         <div class="px-4 pb-4 flex-1 flex flex-col">
-          <p class="font-bold text-eu-text text-sm leading-snug mb-0.5">${localized(p.name)}</p>
-          <p class="text-xs text-gray-500 mb-1">${p.acronym} · ${localized(p.city)}</p>
-          ${pShowRole ? `<p class="text-xs text-eu-teal font-semibold mb-3">${roleLabel}</p>` : ''}
-          ${pShowSectors ? `<div class="flex flex-wrap gap-1 mt-auto">${sectorsHtml}</div>` : ''}
+          <p class="font-extrabold text-eu-purple text-base leading-snug mb-0.5">${localized(p.name)}</p>
+          <p class="text-sm text-gray-500 mb-1">${p.acronym} · ${localized(p.city)}</p>
+          ${pShowRole ? `<p class="text-sm text-eu-blue font-bold mb-3">${roleLabel}</p>` : ''}
+          ${pShowSectors ? `<div class="flex flex-wrap gap-1.5 mt-auto">${sectorsHtml}</div>` : ''}
         </div>
         ${visitLinkHtml}
       </div>
@@ -215,10 +219,10 @@ function tabSocios(activeCategory, filterCountry) {
     const isActive = filterCountry === c;
     const name = getCountryName(c);
     return `
-      <button data-net-country="${c}" class="rounded-xl p-4 flex flex-col items-center gap-2 border-2 transition-all cursor-pointer text-center ${isActive ? 'bg-eu-blue border-eu-blue shadow-md' : 'bg-eu-bg border-eu-border hover:border-eu-blue hover:shadow-sm'}">
+      <button data-net-country="${c}" class="rd-card rd-card-grad-violet rd-card-edge p-4 flex flex-col items-center gap-2 cursor-pointer text-center ${isActive ? 'ring-2 ring-eu-blue' : ''}">
         <img src="https://flagcdn.com/48x36/${c.toLowerCase()}.png" alt="${name}" class="w-10 h-auto rounded-sm shadow-sm" />
-        <p class="font-bold text-xs leading-tight ${isActive ? 'text-white' : 'text-eu-text'}">${name}</p>
-        <span class="text-xs font-semibold px-2 py-0.5 rounded-full ${isActive ? 'bg-white/20 text-white' : 'bg-eu-blue/10 text-eu-blue'}">
+        <p class="font-bold text-sm leading-tight text-eu-text">${name}</p>
+        <span class="text-sm font-bold px-2 py-0.5 rounded-full bg-eu-blue/10 text-eu-blue">
           ${cnt} ${cnt === 1 ? (loc(pb.member) || '') : (loc(pb.members) || '')}
         </span>
       </button>
@@ -226,20 +230,20 @@ function tabSocios(activeCategory, filterCountry) {
   }).join('');
 
   const filterNote = filterCountry ? `
-    <p class="text-xs text-gray-500 mt-4">
+    <p class="text-sm text-gray-500 mt-4">
       ${loc(pb.filteringPartners)} <strong>${getCountryName(filterCountry)}</strong>. ${loc(pb.resultsMessage)}
     </p>` : '';
 
   return `
-    <p class="text-sm text-gray-600 mb-5 max-w-3xl">${loc(pb.description)}</p>
+    <p class="text-lg text-gray-600 mb-5 max-w-3xl leading-relaxed">${loc(pb.description)}</p>
     <div class="flex flex-wrap gap-2 mb-5">${catFilters}</div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">${cardsHtml}</div>
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-7">
+    <div class="rd-card rd-card-accent rd-pad" style="background:#FFF4E1">
       <div class="flex items-center justify-between mb-5">
-        <h2 class="text-xl font-bold text-eu-text flex items-center gap-2">
-          <i data-lucide="map-pin" class="w-5 h-5 text-eu-teal"></i>${loc(pb.geographicCoverage)}
+        <h2 class="text-2xl font-extrabold text-eu-purple flex items-center gap-2">
+          <i data-lucide="map-pin" class="w-5 h-5 text-eu-blue"></i>${loc(pb.geographicCoverage)}
         </h2>
-        ${filterCountry ? `<button id="net-clear-country" class="text-xs font-bold text-eu-blue hover:underline cursor-pointer bg-transparent border-none">${loc(pb.clearFilter) || '✕'}</button>` : ''}
+        ${filterCountry ? `<button id="net-clear-country" class="text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors cursor-pointer bg-transparent border-none">${loc(pb.clearFilter) || '✕'}</button>` : ''}
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">${countryGrid}</div>
       ${filterNote}
@@ -286,25 +290,25 @@ function tabStakeholders(activeCategory, showForm) {
   // ── Form HTML (shared by empty-state and full view) ──────────────────────────
   const f = shTexts.form;
   const formHtml = effectiveShowForm ? `
-    <div id="stakeholder-form" class="bg-white rounded-xl border-2 border-eu-orange shadow-sm overflow-hidden mt-8">
-      <div class="bg-eu-orange/10 border-b border-eu-orange/30 px-6 py-4 flex items-center gap-3">
-        <i data-lucide="user-plus" class="w-5 h-5 text-eu-orange"></i>
+    <div id="stakeholder-form" class="rd-card overflow-hidden mt-8" style="border:2px solid rgb(86 32 246/.3)">
+      <div class="px-6 py-4 flex items-center gap-3" style="background:#5222B0">
+        <i data-lucide="user-plus" class="w-5 h-5 text-white"></i>
         <div>
-          <h2 class="text-lg font-bold text-eu-text">${loc(f.title)}</h2>
-          <p class="text-xs text-gray-600 mt-0.5">${loc(f.subtitle)}</p>
+          <h2 class="text-lg font-extrabold text-white">${loc(f.title)}</h2>
+          <p class="text-sm mt-0.5" style="color:rgba(255,255,255,.85)">${loc(f.subtitle)}</p>
         </div>
       </div>
-      <div class="p-6 bg-eu-bg">
-        <p class="text-sm text-gray-600 mb-6 max-w-2xl">${loc(f.description)}</p>
+      <div class="p-6" style="background:#FFF4E1">
+        <p class="text-base text-gray-600 mb-6 max-w-2xl leading-relaxed">${loc(f.description)}</p>
         <form id="net-form" class="space-y-5 max-w-2xl">
           <div class="grid grid-cols-1 gap-y-5 gap-x-4 sm:grid-cols-2">
             <div class="sm:col-span-2">
-              <label for="net-entity" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.entityName)} *</label>
-              <input id="net-entity" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" placeholder="Ej. FEDACOVA, Hospital La Fe..." />
+              <label for="net-entity" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.entityName)} *</label>
+              <input id="net-entity" type="text" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" placeholder="Ej. FEDACOVA, Hospital La Fe..." />
             </div>
             <div>
-              <label for="net-category" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.category)} *</label>
-              <select id="net-category" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
+              <label for="net-category" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.category)} *</label>
+              <select id="net-category" class="w-full rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="border:1px solid rgb(73 24 173/.2)">
                 <option>${loc(f.categoryOptions?.university)}</option>
                 <option>${loc(f.categoryOptions?.company)}</option>
                 <option>${loc(f.categoryOptions?.admin)}</option>
@@ -312,8 +316,8 @@ function tabStakeholders(activeCategory, showForm) {
               </select>
             </div>
             <div>
-              <label for="net-sector" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.sector)} *</label>
-              <select id="net-sector" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
+              <label for="net-sector" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.sector)} *</label>
+              <select id="net-sector" class="w-full rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="border:1px solid rgb(73 24 173/.2)">
                 <option>${loc(f.sectorOptions?.manufacturing)}</option>
                 <option>${loc(f.sectorOptions?.mobility)}</option>
                 <option>${loc(f.sectorOptions?.energy)}</option>
@@ -324,24 +328,24 @@ function tabStakeholders(activeCategory, showForm) {
               </select>
             </div>
             <div>
-              <label for="net-contact" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.contact)} *</label>
-              <input id="net-contact" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" placeholder="Nombre y apellidos" />
+              <label for="net-contact" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.contact)} *</label>
+              <input id="net-contact" type="text" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" placeholder="Nombre y apellidos" />
             </div>
             <div>
-              <label for="net-country" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.country)} *</label>
-              <input id="net-country" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" value="España" />
+              <label for="net-country" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.country)} *</label>
+              <input id="net-country" type="text" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" value="España" />
             </div>
             <div>
-              <label for="net-region" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.region)} *</label>
-              <input id="net-region" type="text" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" placeholder="Comunitat Valenciana..." />
+              <label for="net-region" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.region)} *</label>
+              <input id="net-region" type="text" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" placeholder="Comunitat Valenciana..." />
             </div>
             <div class="sm:col-span-2">
-              <label for="net-email" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.email)} *</label>
-              <input id="net-email" type="email" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" placeholder="correo@entidad.com" />
+              <label for="net-email" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.email)} *</label>
+              <input id="net-email" type="email" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" placeholder="correo@entidad.com" />
             </div>
             <div class="sm:col-span-2">
-              <label for="net-contribution" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.contributionFocus)} *</label>
-              <select id="net-contribution" class="w-full border border-eu-border rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue">
+              <label for="net-contribution" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.contributionFocus)} *</label>
+              <select id="net-contribution" class="w-full rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="border:1px solid rgb(73 24 173/.2)">
                 <option>${loc(f.contributionOptions?.challenge)}</option>
                 <option>${loc(f.contributionOptions?.case)}</option>
                 <option>${loc(f.contributionOptions?.validation)}</option>
@@ -352,18 +356,18 @@ function tabStakeholders(activeCategory, showForm) {
               </select>
             </div>
             <div class="sm:col-span-2">
-              <label for="net-description" class="block text-xs font-bold text-eu-text mb-1">${loc(f.fields?.description)}</label>
-              <textarea id="net-description" rows="3" class="w-full border border-eu-border rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white resize-none" placeholder="Describa su entidad e interés en la red AI-STEAM..."></textarea>
+              <label for="net-description" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.description)}</label>
+              <textarea id="net-description" rows="3" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white resize-none" style="border:1px solid rgb(73 24 173/.2)" placeholder="Describa su entidad e interés en la red AI-STEAM..."></textarea>
             </div>
           </div>
           <div class="flex items-center gap-2">
-            <input type="checkbox" id="net-gdpr" class="rounded border-eu-border" />
-            <label for="net-gdpr" class="text-xs text-gray-600">
+            <input type="checkbox" id="net-gdpr" class="rounded" style="border:1px solid rgb(73 24 173/.2)" />
+            <label for="net-gdpr" class="text-sm text-gray-600">
               ${loc(f.acceptTerms)} <a href="#" class="text-eu-blue hover:underline">${loc(f.privacyPolicy)}</a> ${loc(f.rgpd)}
             </label>
           </div>
           <div class="flex justify-end">
-            <button type="submit" class="bg-eu-orange text-white px-6 py-2.5 rounded-md font-bold border-none hover:bg-eu-purple transition-colors cursor-pointer">
+            <button type="submit" class="bg-eu-blue text-white px-6 py-2.5 rounded-full font-bold border-none hover:bg-eu-purple transition-colors cursor-pointer">
               ${loc(f.submitBtn)}
             </button>
           </div>
@@ -374,8 +378,8 @@ function tabStakeholders(activeCategory, showForm) {
   // ── Header bar (description + membership button) ──────────────────────────────
   const headerBar = `
     <div class="flex items-start justify-between mb-5 flex-wrap gap-4">
-      <p class="text-sm text-gray-600 max-w-3xl">${shTexts.description}</p>
-      ${showToggleButton ? `<button id="net-toggle-form" class="flex items-center gap-2 bg-eu-orange text-white px-4 py-2 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0">
+      <p class="text-lg text-gray-600 max-w-3xl leading-relaxed">${shTexts.description}</p>
+      ${showToggleButton ? `<button id="net-toggle-form" class="flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0">
         <i data-lucide="user-plus" class="w-4 h-4"></i>
         ${effectiveShowForm ? shTexts.closeForm : shTexts.requestMembership}
       </button>` : ''}
@@ -385,11 +389,11 @@ function tabStakeholders(activeCategory, showForm) {
   if (STAKEHOLDERS.length === 0) {
     return `
       ${headerBar}
-      <div class="bg-eu-bg border-2 border-dashed border-eu-border rounded-xl px-6 py-12 sm:px-12 sm:py-16 text-center">
-        <i data-lucide="users" class="w-12 h-12 text-gray-300 mx-auto mb-5"></i>
-        ${shTexts.emptyStateTitle ? `<h3 class="text-base font-bold text-eu-text mb-3">${shTexts.emptyStateTitle}</h3>` : ''}
-        <p class="text-sm text-gray-600 max-w-sm sm:max-w-md mx-auto mb-8">${shTexts.emptyState}</p>
-        ${formVisible ? `<button id="net-toggle-form-empty" class="inline-flex items-center gap-2 bg-eu-orange text-white px-5 py-2.5 rounded-lg font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer">
+      <div class="rd-card rd-card-accent rd-pad text-center" style="background:#FFF4E1">
+        <i data-lucide="users" class="w-12 h-12 text-eu-purple/40 mx-auto mb-5"></i>
+        ${shTexts.emptyStateTitle ? `<h3 class="text-xl font-extrabold text-eu-purple mb-3">${shTexts.emptyStateTitle}</h3>` : ''}
+        <p class="text-base text-gray-600 max-w-sm sm:max-w-md mx-auto mb-8 leading-relaxed">${shTexts.emptyState}</p>
+        ${formVisible ? `<button id="net-toggle-form-empty" class="inline-flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer">
           <i data-lucide="user-plus" class="w-4 h-4"></i>
           ${shTexts.requestMembership}
         </button>` : ''}
@@ -401,11 +405,11 @@ function tabStakeholders(activeCategory, showForm) {
   const sc = counts(STAKEHOLDERS);
 
   const catFilters = `
-    <button data-net-cat="todos" class="px-4 py-1.5 rounded-full text-xs font-bold cursor-pointer border transition-colors ${activeCategory === 'todos' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-eu-text border-eu-border hover:border-eu-blue'}">
+    <button data-net-cat="todos" class="px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer border transition-colors ${activeCategory === 'todos' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow'}">
       ${shTexts.filterAll} (${STAKEHOLDERS.length})
     </button>
     ${Object.entries(CATEGORY_META).filter(([key]) => (sc[key] || 0) > 0).map(([key]) => `
-      <button data-net-cat="${key}" class="px-4 py-1.5 rounded-full text-xs font-bold cursor-pointer border transition-colors ${activeCategory === key ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-eu-text border-eu-border hover:border-eu-blue'}">
+      <button data-net-cat="${key}" class="px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer border transition-colors ${activeCategory === key ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow'}">
         ${getCategoryLabel(key)} (${sc[key] || 0})
       </button>
     `).join('')}
@@ -418,7 +422,7 @@ function tabStakeholders(activeCategory, showForm) {
         type="search"
         value="${(getState('networkSearch') || '').replace(/"/g, '&quot;')}"
         placeholder="${shTexts.searchPlaceholder}"
-        class="w-full sm:w-72 border border-eu-border rounded-full pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" />
+        class="w-full sm:w-72 rounded-full pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="background:#fff;border:1px solid rgb(73 24 173/.2)" />
     </div>`;
 
   return `
@@ -473,7 +477,7 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
   const shShowSectors  = shCv.sectors  !== false;
 
   const cardsHtml = paged.length === 0
-    ? `<div class="col-span-3 py-10 text-center text-sm text-gray-500">${shTexts.noResults}</div>`
+    ? `<div class="col-span-3 py-10 text-center text-base text-gray-500">${shTexts.noResults}</div>`
     : paged.map(s => {
         const meta = CATEGORY_META[s.category] || CATEGORY_META.sociedad;
         const sectorIcon    = SECTOR_ICON[s.primarySector] || 'layers';
@@ -485,18 +489,18 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
         const sectorPills = shShowSectors ? allSectors.map(sec => {
           const label    = localized(SECTOR_LABEL[sec] || { es: sec, en: sec, va: sec });
           const isActive = activeSector === sec;
-          return `<button data-net-sector="${sec}" class="text-xs px-1.5 py-0.5 rounded border font-semibold cursor-pointer transition-colors ${isActive ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-bg border-eu-border text-gray-600 hover:border-eu-blue hover:text-eu-blue'}">${label}</button>`;
+          return `<button data-net-sector="${sec}" class="text-sm px-2 py-0.5 rounded-full font-bold cursor-pointer transition-all ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="background:rgb(86 32 246/.10); color:#5620F6">${label}</button>`;
         }).join('') : '';
 
         const webLink = s.website ? `
-          <a href="${s.website}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1 text-xs text-eu-blue font-semibold hover:underline">
-            <i data-lucide="external-link" class="w-3 h-3"></i>${shTexts.visitWebLabel}
+          <a href="${s.website}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1 text-sm text-eu-blue font-bold hover:text-eu-purple transition-colors">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${shTexts.visitWebLabel}
           </a>` : '';
 
         return `
-          <div class="bg-white rounded-xl border border-eu-border shadow-sm p-4 hover:border-eu-blue hover:shadow-md transition-colors flex flex-col">
+          <div class="rd-card rd-card-grad-violet rd-card-edge p-4 flex flex-col group">
             <div class="flex items-start justify-between mb-3">
-              <div class="network-category-tooltip w-9 h-9 rounded-lg ${meta.bg} flex items-center justify-center shrink-0" data-tooltip="${sectorTooltip}" aria-label="${sectorTooltip}" tabindex="0">
+              <div class="network-category-tooltip w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff" data-tooltip="${sectorTooltip}" aria-label="${sectorTooltip}" tabindex="0">
                 <i data-lucide="${sectorIcon}" class="w-4 h-4 ${meta.color}"></i>
               </div>
               ${shShowCategory ? `<div class="network-category-tooltip flex items-center gap-1.5 ${meta.bg} ${meta.border} border rounded-full px-2 py-0.5" data-tooltip="${categoryLabel}" aria-label="${categoryLabel}" tabindex="0">
@@ -504,44 +508,44 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
                 <span class="text-xs font-bold ${meta.color}">${categoryLabel}</span>
               </div>` : ''}
             </div>
-            <p class="font-bold text-eu-text text-sm leading-snug mb-0.5">${localized(s.name)}</p>
-            ${s.region ? `<p class="text-xs text-eu-teal font-semibold mb-1">📍 ${localized(s.region)}</p>` : ''}
-            ${description ? `<p class="text-xs text-gray-600 mb-2 flex-1">${description}</p>` : ''}
-            ${sectorPills ? `<div class="flex flex-wrap gap-1 mt-auto pt-2">${sectorPills}</div>` : ''}
+            <p class="font-extrabold text-eu-purple text-base leading-snug mb-0.5">${localized(s.name)}</p>
+            ${s.region ? `<p class="text-sm text-eu-blue font-bold mb-1 inline-flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>${localized(s.region)}</p>` : ''}
+            ${description ? `<p class="text-sm text-gray-600 mb-2 flex-1">${description}</p>` : ''}
+            ${sectorPills ? `<div class="flex flex-wrap gap-1.5 mt-auto pt-2">${sectorPills}</div>` : ''}
             ${webLink}
           </div>`;
       }).join('');
 
   const paginationHtml = !isShowAll && totalPages > 1 ? `
     <div class="flex items-center justify-between mt-6">
-      <button id="net-pag-prev" ${safePage === 0 ? 'disabled' : ''} class="px-4 py-1.5 rounded-lg text-xs font-bold border border-eu-border bg-white text-eu-text hover:border-eu-blue disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors">
+      <button id="net-pag-prev" ${safePage === 0 ? 'disabled' : ''} class="px-4 py-1.5 rounded-full text-sm font-bold border border-eu-blue/15 bg-white text-eu-text hover:border-eu-blue disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors">
         ← ${shTexts.paginationPrev}
       </button>
-      <span class="text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
-      <button id="net-pag-next" ${safePage >= totalPages - 1 ? 'disabled' : ''} class="px-4 py-1.5 rounded-lg text-xs font-bold border border-eu-border bg-white text-eu-text hover:border-eu-blue disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors">
+      <span class="text-sm text-gray-500">${safePage + 1} / ${totalPages}</span>
+      <button id="net-pag-next" ${safePage >= totalPages - 1 ? 'disabled' : ''} class="px-4 py-1.5 rounded-full text-sm font-bold border border-eu-blue/15 bg-white text-eu-text hover:border-eu-blue disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors">
         ${shTexts.paginationNext} →
       </button>
     </div>` : '';
 
   const sectorNote = activeSector ? `
-    <p class="text-xs text-gray-500 mb-3">
+    <p class="text-sm text-gray-500 mb-3">
       Sector activo:
-      <button data-net-sector="${activeSector}" class="text-eu-blue font-bold hover:underline cursor-pointer bg-transparent border-none">
+      <button data-net-sector="${activeSector}" class="text-eu-blue font-bold hover:text-eu-purple transition-colors cursor-pointer bg-transparent border-none">
         ${localized(SECTOR_LABEL[activeSector] || { es: activeSector })} ✕
       </button>
     </p>` : '';
 
   const pageSizeSelector = pageSizeOptions && pageSizeOptions.length > 0 ? `
-    <div class="flex items-center gap-2 text-xs">
+    <div class="flex items-center gap-2 text-sm">
       <span class="text-gray-600">Mostrar:</span>
       <div class="flex gap-1">
         ${pageSizeOptions.map(opt => `
-          <button data-net-pagesize="${opt}" class="px-2 py-1 rounded border cursor-pointer transition-colors font-semibold ${actualPageSize === opt ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">
+          <button data-net-pagesize="${opt}" class="px-2 py-1 rounded-full border cursor-pointer transition-colors font-bold ${actualPageSize === opt ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">
             ${opt}
           </button>
         `).join('')}
         ${showAllOption ? `
-          <button data-net-pagesize="all" class="px-2 py-1 rounded border cursor-pointer transition-colors font-semibold ${actualPageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">
+          <button data-net-pagesize="all" class="px-2 py-1 rounded-full border cursor-pointer transition-colors font-bold ${actualPageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">
             Todos
           </button>
         ` : ''}
@@ -616,18 +620,23 @@ function renderNetworkHero() {
   const title = hero.title?.[lang] || hero.title?.es || '';
   const description = hero.description?.[lang] || hero.description?.es || '';
 
-  const statsHtml = (hero.stats || []).map(s => `
-    <div class="bg-white/10 rounded-xl px-5 py-3 text-center">
-      <p class="text-2xl font-extrabold text-eu-yellow">${s.value}</p>
-      <p class="text-xs text-white/70 font-semibold uppercase mt-0.5">${s.label?.[lang] || s.label?.es || ''}</p>
+  const statsHtml = (hero.stats || []).map((s, i) => `
+    <div class="${i % 2 === 0 ? 'rd-hero-stat' : 'rd-hero-stat-alt'} px-6 py-4 text-center">
+      <p class="text-3xl font-extrabold text-white leading-none">${s.value}</p>
+      <p class="text-xs font-bold uppercase tracking-wider mt-1.5" style="color:rgba(255,244,225,.75)">${s.label?.[lang] || s.label?.es || ''}</p>
     </div>`
   ).join('');
 
+  const eyebrow = hero.eyebrow?.[lang] || hero.eyebrow?.es || 'Red AI-STEAM';
+
   return `
-    <div class="bg-eu-blue text-white px-6 py-12">
-      <div class="max-w-7xl mx-auto">
-        <h1 class="text-3xl font-extrabold mb-3">${title}</h1>
-        <p class="text-white/80 max-w-3xl text-base mb-6">${description}</p>
+    <div class="rd-hero-gradient text-white px-6 py-20 relative overflow-hidden">
+      <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-2xl"></div>
+      <div class="absolute left-10 top-5 w-40 h-40 bg-eu-yellow/5 rounded-full blur-xl"></div>
+      <div class="max-w-7xl mx-auto relative z-10">
+        <span class="inline-block bg-white/10 border border-white/20 font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6" style="color:#FFF4E1;backdrop-filter:blur(8px)">${eyebrow}</span>
+        <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${title}</h1>
+        <p class="text-lg leading-relaxed max-w-3xl mb-8" style="color:rgba(255,255,255,.9)">${description}</p>
         <div class="flex flex-wrap gap-4">${statsHtml}</div>
       </div>
     </div>`;
@@ -647,8 +656,8 @@ export function render() {
     const filterCountry = getState('networkCountry');
     const showForm      = getState('networkShowForm') || false;
 
-    const tabBtnClass = (id) => `px-5 py-2.5 text-sm font-semibold border-b-2 -mb-px transition-colors cursor-pointer ${
-      activeTab === id ? 'border-eu-blue text-eu-blue' : 'border-transparent text-gray-600 hover:text-eu-text'
+    const tabBtnClass = (id) => `flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold cursor-pointer border transition-all whitespace-nowrap ${
+      activeTab === id ? 'bg-eu-blue text-white border-eu-blue shadow-sm' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow hover:border-eu-purple/30'
     }`;
 
     const pb = NETWORK_CONFIG?.partnersBlock || {};
@@ -659,12 +668,12 @@ export function render() {
         : '';
     const partnersTab = SHOW_PARTNERS_TAB ? `
           <button data-net-tab="socios" class="${tabBtnClass('socios')}">
-            ${localized(pb.tabTitle) || 'Socios'} (${ACTIVE_PARTNERS.length})
+            <i data-lucide="network" class="w-4 h-4"></i>${localized(pb.tabTitle) || 'Socios'} (${ACTIVE_PARTNERS.length})
           </button>
     ` : '';
     const stakeholdersTab = SHOW_STAKEHOLDERS_TAB ? `
           <button data-net-tab="stakeholders" class="${tabBtnClass('stakeholders')}">
-            ${localized(NETWORK_CONFIG?.stakeholdersBlock?.tabTitle) || 'Stakeholders'} (${STAKEHOLDERS.length})
+            <i data-lucide="users" class="w-4 h-4"></i>${localized(NETWORK_CONFIG?.stakeholdersBlock?.tabTitle) || 'Stakeholders'} (${STAKEHOLDERS.length})
           </button>
     ` : '';
 
@@ -672,15 +681,17 @@ export function render() {
     <div>
       ${renderNetworkHero()}
 
-      <div class="max-w-7xl mx-auto px-6 py-10">
-        ${helixBlock()}
+      <div class="rd-canvas rd-section py-16">
+        <div class="max-w-7xl mx-auto px-6">
+          ${helixBlock()}
 
-        <div class="flex gap-1 border-b border-eu-border mb-6">
-          ${partnersTab}
-          ${stakeholdersTab}
+          <div class="flex flex-wrap gap-2 mb-8">
+            ${partnersTab}
+            ${stakeholdersTab}
+          </div>
+
+          ${content}
         </div>
-
-        ${content}
       </div>
     </div>
     `;
