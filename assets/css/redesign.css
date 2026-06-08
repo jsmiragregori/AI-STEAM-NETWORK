@@ -391,3 +391,14 @@
   transition: transform .5s cubic-bezier(.16, 1, .3, 1);
 }
 
+/* ─── ACCESIBILIDAD (WCAG 2.1 AA) ─────────────────────────────────────────── */
+/* Indicador de foco altamente visible para navegación por teclado */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--rd-blue) !important;
+  outline-offset: 3px !important;
+}

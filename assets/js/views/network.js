@@ -173,7 +173,7 @@ function tabSocios(activeCategory, filterCountry) {
     const consortiumLabel = loc(pb.consortium) || 'CONSORCIO';
     const visitLabel = loc(pb.visitSite) || 'Visit website';
     const logoHtml = p.logo
-      ? `<img src="${LOGO_BASE}${p.logo}" alt="${p.acronym}" class="max-h-12 max-w-[160px] w-auto h-auto object-contain" loading="lazy" />`
+      ? `<img src="${LOGO_BASE}${p.logo}" alt="${(p.acronym || p.name || p.id).replace(/"/g, '&quot;')}" class="max-h-12 max-w-[160px] w-auto h-auto object-contain" loading="lazy" />`
       : `<div class="network-category-tooltip w-12 h-12 rounded-xl ${meta.bg} flex items-center justify-center" data-tooltip="${categoryLabel}" aria-label="${categoryLabel}"><i data-lucide="${meta.icon}" class="w-6 h-6 ${meta.color}"></i></div>`;
     const visitLinkHtml = p.url ? `
       <div class="border-t border-eu-purple/10 px-4 py-3">
@@ -697,7 +697,7 @@ export function render() {
     `;
   } catch (error) {
     console.error('❌ Error rendering network view:', error);
-    return `<div class="p-6"><p class="text-red-600">Error al cargar la sección Red. Revisa la consola.</p><pre>${error.message}</pre></div>`;
+    return `<div class="p-6" role="alert"><p class="text-red-600">Error al cargar la sección Red. Revisa la consola.</p><pre>${error.message}</pre></div>`;
   }
 }
 
