@@ -175,7 +175,7 @@ export function render() {
     { key: 'youtube',   label: newsT?.socialLinks?.youtube  },
     { key: 'substack',  label: newsT?.socialLinks?.substack },
   ].filter(l => l.label).map(l => `
-    <a href="#" class="flex items-center gap-2 p-2.5 rounded-xl bg-eu-blue/5 border border-eu-blue/5 text-xs text-eu-blue hover:text-eu-purple hover:bg-eu-blue/10 hover:border-eu-blue/20 transition-all font-bold">
+    <a href="#" class="flex items-center gap-2 p-3 rounded-full bg-white/10 border border-white/10 text-xs text-white hover:bg-white hover:text-eu-purple transition-all font-bold shadow-sm">
       <i data-lucide="external-link" class="w-3.5 h-3.5 shrink-0"></i>${l.label}
     </a>
   `).join('');
@@ -267,11 +267,13 @@ export function render() {
               </div>
 
               <!-- Social links -->
-              <div class="rd-card bg-white p-6">
-                <h3 class="font-extrabold text-lg text-eu-purple mb-4 flex items-center gap-2">
-                  <i data-lucide="share-2" class="w-5 h-5 text-eu-blue"></i>${newsT?.followUs || ''}
+              <div class="rd-hero-gradient rounded-[2rem] p-8 text-white shadow-lg relative overflow-hidden">
+                <!-- Accent blob -->
+                <div class="absolute -right-8 -top-8 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
+                <h3 class="font-extrabold text-xl mb-4 text-eu-yellow flex items-center gap-2 relative z-10">
+                  <i data-lucide="share-2" class="w-5 h-5 text-white"></i>${newsT?.followUs || ''}
                 </h3>
-                <div class="grid grid-cols-2 gap-3">${socialLinks}</div>
+                <div class="grid grid-cols-2 gap-3 relative z-10">${socialLinks}</div>
               </div>
             </div>
           </div>
