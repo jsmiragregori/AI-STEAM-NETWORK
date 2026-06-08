@@ -134,7 +134,7 @@ function renderRoute(sector, sectorsT) {
           const label = labels[item.id] || '';
           return `
             <article class="group relative rd-card rd-card-grad-beige rd-card-edge rounded-3xl p-5">
-              <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
                 <i data-lucide="${icon}" class="h-5 w-5 text-eu-blue"></i>
               </div>
               <p class="mt-4 text-xs font-bold uppercase tracking-wider text-eu-purple">${esc(label)}</p>
@@ -153,7 +153,7 @@ function renderListCard(title, icon, items, tone = 'blue') {
   return `
     <article class="rd-card group rd-card-grad-violet rd-card-edge rd-pad">
       <div class="flex items-center gap-3">
-        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="${icon}" class="h-5 w-5 ${color}"></i></div>
+        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${icon}" class="h-5 w-5 ${color}"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(title)}</h4>
       </div>
       <ul class="mt-5 space-y-3">
@@ -174,7 +174,7 @@ function renderTextCard(title, icon, text, tone = 'blue') {
   return `
     <article class="rd-card group rd-card-grad-violet rd-card-edge rd-pad">
       <div class="flex items-center gap-3">
-        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="${icon}" class="h-5 w-5 ${color}"></i></div>
+        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${icon}" class="h-5 w-5 ${color}"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(title)}</h4>
       </div>
       <p class="mt-5 text-base leading-relaxed text-eu-text/75">${esc(text)}</p>
@@ -200,7 +200,7 @@ function renderRelatedContent(sector, sectorsT) {
     <article class="rd-card group rd-card-grad-violet rd-card-edge rd-pad">
       <div class="flex items-center justify-between gap-4">
         <div class="flex items-center gap-3">
-          <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="folder-kanban" class="h-5 w-5 text-eu-blue"></i></div>
+          <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="folder-kanban" class="h-5 w-5 text-eu-blue"></i></div>
           <h4 class="text-xl font-extrabold text-eu-purple">${esc(sectorsT?.relatedContentLabel || '')}</h4>
         </div>
         <button data-sector-nav="marketplace" data-sector-id="${esc(sector.id)}" class="rounded-full border border-eu-blue/20 px-4 py-2 text-sm font-bold text-eu-blue transition hover:bg-eu-blue/5">
@@ -226,7 +226,7 @@ function renderPartners(sector, sectorsT) {
   return `
     <article class="rd-card group rd-card-grad-violet rd-card-edge rd-pad">
       <div class="flex items-center gap-3">
-        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="network" class="h-5 w-5 text-eu-purple"></i></div>
+        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="network" class="h-5 w-5 text-eu-purple"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(sectorsT?.featuredPartnersLabel || '')}</h4>
       </div>
       <div class="mt-5 grid gap-3 sm:grid-cols-2">
@@ -258,7 +258,7 @@ function renderEvidence(sector, sectorsT) {
   return `
     <article class="rd-card group rd-card-accent rd-card-grad-violet rd-card-edge rd-pad">
       <div class="flex items-center gap-3">
-        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="badge-check" class="h-5 w-5 text-eu-blue"></i></div>
+        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="badge-check" class="h-5 w-5 text-eu-blue"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(localized(sector.exampleChallengeLabel) || sectorsT?.exampleChallengeLabel || '')}</h4>
       </div>
       <p class="mt-5 text-base italic leading-relaxed text-eu-text/75">${esc(evidence)}</p>
@@ -310,10 +310,10 @@ function renderSectorCard(sector, sectorsT, index) {
   const tintClass = isEven ? 'rd-card-grad-blue' : 'rd-card-grad-violet';
 
   return `
-    <article class="rd-card ${tintClass} ${isOpen ? '' : 'rd-card-hover'} overflow-hidden">
+    <article class="rd-card ${tintClass} ${isOpen ? '' : 'rd-card-hover'} overflow-hidden group">
       <div class="rd-ceja-grad grid gap-6 p-6 md:grid-cols-[auto_1fr_auto] md:items-start md:p-8">
         <button data-toggle="${esc(sector.id)}" class="grid cursor-pointer grid-cols-[auto_1fr] gap-5 border-0 bg-transparent p-0 text-left md:contents">
-          <div class="rd-icon-circle">
+          <div class="rd-icon-circle transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
             <i data-lucide="${icon}" class="h-8 w-8 text-eu-blue"></i>
           </div>
           <div class="min-w-0">

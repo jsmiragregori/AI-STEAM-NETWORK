@@ -2027,11 +2027,11 @@ function renderTabIntroCard(tab, items) {
   const title = pickLang(tab.label, tab.id);
   const intro = pickLang(tab.intro);
   return `
-    <div class="rd-card rd-card-accent rd-card-grad-violet overflow-hidden">
+    <div class="rd-card rd-card-accent rd-card-grad-violet overflow-hidden group">
       <div class="p-6 pl-7 sm:p-8 sm:pl-9">
         <div class="min-w-0">
           <div class="flex items-center gap-3">
-            <span class="rd-icon-circle shrink-0 text-eu-blue transition-transform duration-300">
+            <span class="rd-icon-circle shrink-0 text-eu-blue transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
               <i data-lucide="${esc(tab.icon || 'layers-3')}" class="h-6 w-6"></i>
             </span>
             <h2 class="min-w-0 text-3xl font-extrabold leading-tight text-eu-purple">${esc(title)}</h2>

@@ -108,9 +108,9 @@ function renderIsNotBlock() {
     `).join('');
 
     return `
-      <div class="rd-card rd-card-grad-violet rd-card-accent rd-card-edge ${tone.accentExtra} rd-pad">
+      <div class="rd-card rd-card-grad-violet rd-card-accent rd-card-edge ${tone.accentExtra} rd-pad group">
         <div class="flex items-center gap-3 mb-8">
-          <div class="rd-icon-circle-sm"><i data-lucide="${card.icon}" class="w-5 h-5 ${tone.icon}"></i></div>
+          <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${card.icon}" class="w-5 h-5 ${tone.icon}"></i></div>
           <h3 class="font-extrabold ${tone.title} text-xl">${localized(card.title)}</h3>
         </div>
         <ul class="space-y-5">${items}</ul>
@@ -333,8 +333,8 @@ function renderSectorsBlock() {
   const cards = (block.cards || []).map(card => {
     const icon = SECTOR_ICONS[card.id] || 'shapes';
     return `
-    <button data-nav="sectores" class="rd-card rd-card-grad-violet rd-card-hover flex flex-col items-center justify-center text-center cursor-pointer" style="padding:2rem 1rem" aria-label="${localized(card.label)}">
-      <div class="rd-icon-circle mb-4">
+    <button data-nav="sectores" class="rd-card rd-card-grad-violet rd-card-hover flex flex-col items-center justify-center text-center cursor-pointer group" style="padding:2rem 1rem" aria-label="${localized(card.label)}">
+      <div class="rd-icon-circle mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
         <i data-lucide="${icon}" class="w-6 h-6 text-eu-blue"></i>
       </div>
       <span class="text-sm font-bold text-eu-text leading-tight">${localized(card.label)}</span>

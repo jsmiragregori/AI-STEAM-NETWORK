@@ -214,9 +214,9 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
 
 function renderSkillPanel(theme, icon, title, itemsHtml, gridClass) {
   return `
-    <section class="rd-card rd-card-accent rd-pad relative overflow-hidden rd-card-grad-beige">
+    <section class="rd-card rd-card-accent rd-pad relative overflow-hidden rd-card-grad-beige group">
       <div class="flex items-start gap-4 mb-6">
-        <div class="rd-icon-circle">
+        <div class="rd-icon-circle transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
           <i data-lucide="${icon}" class="w-6 h-6 text-eu-blue"></i>
         </div>
         <div class="min-w-0 flex items-center h-16">
@@ -229,9 +229,9 @@ function renderSkillPanel(theme, icon, title, itemsHtml, gridClass) {
 
 function renderSkillCloudPanel(theme, icon, title, cloudId) {
   return `
-    <section class="rd-card rd-card-accent rd-pad relative overflow-hidden rd-card-grad-beige">
+    <section class="rd-card rd-card-accent rd-pad relative overflow-hidden rd-card-grad-beige group">
       <div class="flex items-start gap-4 mb-6">
-        <div class="rd-icon-circle">
+        <div class="rd-icon-circle transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
           <i data-lucide="${icon}" class="w-6 h-6 text-eu-blue"></i>
         </div>
         <div class="min-w-0 flex items-center h-16">
@@ -415,13 +415,13 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
         const skills = cmsSection?.skillsBlock?.skills || [];
         const skillsHtml = skills.length > 0
           ? skills.map(s => `<div class="group flex items-center gap-3 rounded-2xl border border-eu-blue/10 bg-[#FFFDF9] px-4 py-3 text-base font-semibold text-eu-text shadow-sm hover:bg-white hover:border-eu-blue/30 transition-all duration-300">
-              <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
                 <i data-lucide="${getSkillIcon(s.id)}" class="w-5 h-5 text-eu-blue"></i>
               </div>
               <span class="min-w-0 leading-tight">${pickLang(s.title, '')}</span>
             </div>`).join('')
           : (trainingT?.fpSkills || []).map(s => `<div class="group flex items-center gap-3 rounded-2xl border border-eu-blue/10 bg-[#FFFDF9] px-4 py-3 text-base font-semibold text-eu-text shadow-sm hover:bg-white hover:border-eu-blue/30 transition-all duration-300">
-              <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
                 <i data-lucide="check-circle" class="w-5 h-5 text-eu-blue"></i>
               </div>
               <span class="min-w-0 leading-tight">${s}</span>
@@ -456,13 +456,13 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
         const skills = cmsSection?.skillsBlock?.skills || [];
         const topicsHtml = skills.length > 0
           ? skills.map(s => `<div class="group flex items-center gap-3 rounded-2xl border border-eu-blue/10 bg-[#FFFDF9] px-4 py-3 text-base font-semibold text-eu-text shadow-sm hover:bg-white hover:border-eu-blue/30 transition-all duration-300">
-              <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
                 <i data-lucide="${getSkillIcon(s.id)}" class="w-5 h-5 text-eu-blue"></i>
               </div>
               <span class="min-w-0 leading-tight">${pickLang(s.title, '')}</span>
             </div>`).join('')
           : (trainingT?.teacherTopics || []).map(s => `<div class="group flex items-center gap-3 rounded-2xl border border-eu-blue/10 bg-[#FFFDF9] px-4 py-3 text-base font-semibold text-eu-text shadow-sm hover:bg-white hover:border-eu-blue/30 transition-all duration-300">
-              <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
                 <i data-lucide="check-circle" class="w-5 h-5 text-eu-blue"></i>
               </div>
               <span class="min-w-0 leading-tight">${s}</span>
@@ -487,13 +487,13 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
       const masterSkills = cmsSection?.skillsBlock?.skills || [];
       const masterSkillsHtml = masterSkills.length > 0
         ? masterSkills.map(s => `<div class="group flex items-center gap-3 rounded-2xl border border-eu-blue/10 bg-[#FFFDF9] px-4 py-3 text-base font-semibold text-eu-text shadow-sm hover:bg-white hover:border-eu-blue/30 transition-all duration-300">
-            <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+            <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
               <i data-lucide="${getSkillIcon(s.id)}" class="w-5 h-5 text-eu-blue"></i>
             </div>
             <span class="min-w-0 leading-tight">${pickLang(s.title, '')}</span>
           </div>`).join('')
         : (trainingT?.masterBridgeItems || []).map((item, i) => `<div class="group flex items-center gap-3 rounded-2xl border border-eu-blue/10 bg-[#FFFDF9] px-4 py-3 text-base font-semibold text-eu-text shadow-sm hover:bg-white hover:border-eu-blue/30 transition-all duration-300">
-            <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+            <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
               <span class="text-xs font-extrabold text-eu-blue">${i + 1}</span>
             </div>
             <span class="min-w-0 leading-tight">${item}</span>

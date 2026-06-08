@@ -54,7 +54,7 @@ function tabEstructura(govT) {
   const nodesHtml = hubNodes.map(node => `
     <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col justify-between h-full group">
       <div>
-        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 text-eu-blue shadow-inner shrink-0 rd-icon-circle-gov" style="background:#ffffff">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 text-eu-blue shadow-inner shrink-0 rd-icon-circle-gov transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
           <i data-lucide="${node.icon || 'globe'}" class="w-5 h-5"></i>
         </div>
         <p class="text-xs font-extrabold uppercase tracking-widest text-eu-blue mb-1.5">${pickLang(node.label, node.label || '')}</p>
