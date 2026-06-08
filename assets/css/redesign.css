@@ -264,7 +264,9 @@
 /* Card base con beige al 55% y transición suave */
 .rd-card-gov-beige {
   background-color: rgba(255, 244, 225, 0.55) !important;
-  border: 1.5px solid rgba(73, 24, 173, 0.15) !important;
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: rgba(73, 24, 173, 0.15);
   border-radius: 2rem;
   box-shadow: 0 10px 30px -12px rgba(86, 32, 246, 0.08);
   /* Transición idéntica a .rd-card del Ecosistema de la Home */
