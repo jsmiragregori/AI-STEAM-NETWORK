@@ -219,7 +219,7 @@ export function render() {
             </div>` : ''}
           </div>
           ${ctaButton.visible !== false ? `
-          <button class="flex items-center gap-2 rounded-full font-bold transition-all hover:scale-105 hover:bg-white hover:text-eu-purple border-none cursor-pointer" style="background:#FFF4E1;color:#4918AD;padding:.875rem 2rem shadow-lg">
+          <button class="flex items-center gap-2 rounded-full font-bold transition-all hover:scale-105 hover:bg-white hover:text-eu-purple border-none cursor-pointer shadow-lg" style="background:#FFF4E1;color:#4918AD;padding:1rem 2.5rem">
             <i data-lucide="rss" class="w-4 h-4"></i>${pickLang(ctaButton.label, newsT?.subscribeButton || '')}
           </button>` : ''}
         </div>
