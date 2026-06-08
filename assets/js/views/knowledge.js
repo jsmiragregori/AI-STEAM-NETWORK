@@ -4,15 +4,39 @@ import { KNOWLEDGE_CONFIG } from '../../data/knowledge.js';
 
 const TABS = ['flujo', 'oer', 'plantillas'];
 
-const TYPE_ICONS = { 'Guía': '📖', 'Manual': '📋', 'Dataset': '🗄️', 'Vídeo': '🎬', 'Plantilla': '📝' };
+const TYPE_ICONS = { 'Guía': 'book-open', 'Manual': 'clipboard-list', 'Dataset': 'database', 'Vídeo': 'clapperboard', 'Plantilla': 'file-text' };
+
+// Mapa emoji→Lucide para iconos provenientes del CMS (no usar emojis como iconos)
+const EMOJI_TO_LUCIDE = {
+  '📖': 'book-open', '📋': 'clipboard-list', '🗄️': 'database', '🗄': 'database',
+  '🎬': 'clapperboard', '📝': 'file-text', '📄': 'file', '📁': 'folder',
+  '🏭': 'factory', '🔍': 'search', '👥': 'users', '💻': 'monitor',
+  '✅': 'check-circle', '🌐': 'globe', '📅': 'calendar', '⏱️': 'clock', '⏱': 'clock',
+  '✎': 'pencil', '✓': 'check-circle', '⏳': 'clock', '🏷️': 'tag', '🏷': 'tag',
+  '🎓': 'graduation-cap', '🔹': 'circle', '📊': 'bar-chart-3', '🧰': 'briefcase',
+  '🛠️': 'wrench', '🛠': 'wrench', '⚙️': 'settings', '🚗': 'car', '⚡': 'zap',
+  '🌾': 'wheat', '🎨': 'palette', '🏘️': 'home', '🏢': 'building-2',
+};
+function lucideName(icon, fallback = 'file') {
+  if (!icon) return fallback;
+  if (EMOJI_TO_LUCIDE[icon]) return EMOJI_TO_LUCIDE[icon];
+  // Si ya es un nombre lucide (kebab-case ascii), úsalo tal cual
+  if (/^[a-z0-9-]+$/.test(icon)) return icon;
+  return fallback;
+}
 
 const LEVEL_COLORS = {
-  FP:       'bg-eu-yellow text-eu-purple',
-  Máster:   'bg-purple-100 text-purple-800',
-  Docentes: 'bg-eu-blue/10 text-eu-blue',
-  'VET/FP': 'bg-eu-yellow text-eu-purple',
-  Master:   'bg-purple-100 text-purple-800',
+  FP:       'text-eu-purple',
+  Máster:   'text-eu-purple',
+  Docentes: 'text-eu-blue',
+  'VET/FP': 'text-eu-purple',
+  Master:   'text-eu-purple',
 };
+function levelChipStyle(level) {
+  return LEVEL_COLORS[level] === 'text-eu-blue'
+    ? 'background:rgb(86 32 246/.10); color:#5620F6'
+    : 'background:rgb(73 24 173/.10); color:#4918AD';
+}
 
 const LEVEL_LABELS = {
   FP:       { es: 'FP', en: 'VET', va: 'FP' },
@@ -20,17 +44,12 @@ const LEVEL_LABELS = {
   Docentes: { es: 'Docentes', en: 'Teachers', va: 'Docents' },
 };
 
-const SECTOR_COLORS = {
-  mfg: 'bg-blue-100 text-blue-800',
-  nts: 'bg-purple-100 text-purple-800',
-  agr: 'bg-yellow-100 text-yellow-800',
-  ene: 'bg-green-100 text-green-800',
-  mob: 'bg-sky-100 text-sky-800',
-  cci: 'bg-pink-100 text-pink-800',
-  con: 'bg-orange-100 text-orange-800',
-};
+// Sectores unificados a la paleta corporativa (azul tinte)
+function sectorChipStyle() {
+  return 'background:rgb(86 32 246/.10); color:#5620F6';
+}
 
-const FLOW_ICONS = ['🏭', '🔍', '👥', '💻', '✅', '🌐'];
+const FLOW_ICONS = ['factory', 'search', 'users', 'monitor', 'check-circle', 'globe'];
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
 function pickLang(value, fallback = '') {
@@ -47,16 +66,17 @@ function getSectorName(sectorId) {
 
 function statusIcon(status) {
   if (/completad|completat|completed/i.test(status))
-    return '<i data-lucide="check-circle" class="w-4 h-4 text-green-600 inline-block"></i>';
+    return '<i data-lucide="check-circle" class="w-4 h-4 text-eu-blue inline-block"></i>';
   if (/en curso|en curs|in progress/i.test(status))
-    return '<i data-lucide="clock" class="w-4 h-4 text-eu-orange inline-block"></i>';
+    return '<i data-lucide="clock" class="w-4 h-4 text-eu-purple inline-block"></i>';
   return '<i data-lucide="alert-circle" class="w-4 h-4 text-gray-500 inline-block"></i>';
 }
 
-function statusBadge(status) {
-  if (/completad|completat|completed/i.test(status)) return 'bg-green-100 text-green-800';
-  if (/en curso|en curs|in progress/i.test(status))  return 'bg-orange-100 text-orange-800';
-  return 'bg-gray-100 text-gray-600';
+// Estilo inline de badge de estado, unificado a paleta corporativa
+function statusBadgeStyle(status) {
+  if (status === 'validated') return 'background:rgb(86 32 246/.10); color:#5620F6';
+  if (status === 'pending')   return 'background:rgba(255,244,225,.9); color:#4918AD';
+  return 'background:rgb(73 24 173/.07); color:#4918AD'; // draft
 }
 
 function formatMonthYear(dateStr) {
@@ -80,21 +100,22 @@ function tabBar(activeTab) {
     oer:        t('knowledge.tabOER')       || 'OER',
     plantillas: t('knowledge.tabTemplates') || 'Plantillas',
   };
+  const icons = { flujo: 'git-commit', oer: 'book-open', plantillas: 'file-text' };
   return TABS.map(id => `
-    <button data-know-tab="${id}" class="px-4 py-2.5 text-sm font-semibold border-b-2 -mb-px transition-colors cursor-pointer whitespace-nowrap ${
+    <button data-know-tab="${id}" class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold cursor-pointer border transition-all whitespace-nowrap ${
       activeTab === id
-        ? 'border-eu-blue text-eu-blue'
-        : 'border-transparent text-gray-600 hover:text-eu-text'
-    }">${labels[id]}</button>
+        ? 'bg-eu-blue text-white border-eu-blue shadow-sm'
+        : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow hover:border-eu-purple/30'
+    }"><i data-lucide="${icons[id]}" class="w-4 h-4"></i>${labels[id]}</button>
   `).join('');
 }
 
 // ─── Tab 1: Flujo de transferencia ───────────────────────────────────────────
 
 const PLATFORM_COLORS = {
-  aules:     'border-eu-teal/30 text-eu-teal',
-  network:   'border-eu-blue/30 text-eu-blue',
-  consensue: 'border-eu-orange/30 text-eu-orange',
+  aules:     'border-eu-blue/30 text-eu-blue',
+  network:   'border-eu-purple/30 text-eu-purple',
+  consensue: 'border-eu-blue/30 text-eu-blue',
 };
 
 // ─── OER Filter Functions ────────────────────────────────────────────────────────
@@ -160,28 +181,28 @@ function tabFlujo() {
     if (hasCmsBlock) {
       // CMS activo: renderiza solo los steps visibles (puede ser array vacío)
       stepsHtml = (cycleBlock.steps || []).map((step, idx) => `
-        <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 relative">
+        <div class="rd-card rd-card-grad-violet rd-card-edge p-6 relative group">
           <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${idx + 1}</div>
-          <span class="text-3xl block mb-3">${step.icon || '🔹'}</span>
-          <h3 class="font-bold text-eu-text mb-2">${pickLang(step.title, '')}</h3>
-          <p class="text-sm text-gray-600">${pickLang(step.description, '')}</p>
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${lucideName(step.icon, FLOW_ICONS[idx] || 'circle')}" class="w-6 h-6 text-eu-blue"></i></div>
+          <h3 class="font-extrabold text-eu-purple text-lg mb-2">${pickLang(step.title, '')}</h3>
+          <p class="text-base text-gray-600 leading-relaxed">${pickLang(step.description, '')}</p>
         </div>
       `).join('');
     } else {
       // Legacy fallback (sin bloque CMS)
       const flowSteps = t('knowledge.flowSteps') || [];
       stepsHtml = flowSteps.map((step, idx) => `
-        <div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 relative">
+        <div class="rd-card rd-card-grad-violet rd-card-edge p-6 relative group">
           <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${idx + 1}</div>
-          <span class="text-3xl block mb-3">${FLOW_ICONS[idx] || '🔹'}</span>
-          <h3 class="font-bold text-eu-text mb-2">${step.title || ''}</h3>
-          <p class="text-sm text-gray-600">${step.desc || ''}</p>
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${FLOW_ICONS[idx] || 'circle'}" class="w-6 h-6 text-eu-blue"></i></div>
+          <h3 class="font-extrabold text-eu-purple text-lg mb-2">${step.title || ''}</h3>
+          <p class="text-base text-gray-600 leading-relaxed">${step.desc || ''}</p>
         </div>
       `).join('');
     }
     stepsSection = `
-      <h2 class="text-xl font-bold text-eu-text mb-2">${sectionTitle}</h2>
-      <p class="text-sm text-gray-600 mb-8 max-w-3xl">${sectionDesc}</p>
+      <h2 class="text-2xl font-extrabold text-eu-purple mb-2">${sectionTitle}</h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">${sectionDesc}</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">${stepsHtml}</div>`;
   }
 
@@ -194,36 +215,36 @@ function tabFlujo() {
     if (hasCmsBlock) {
       // CMS activo: el loader ya filtró las plataformas con visible:false
       platformCards = (pb?.platforms || []).map(p => {
-        const colorClass = PLATFORM_COLORS[p.id] || 'border-gray-200 text-gray-700';
+        const colorClass = PLATFORM_COLORS[p.id] || 'border-eu-blue/30 text-eu-blue';
         const [borderCls, textCls] = colorClass.split(' ');
         return `
-          <div class="bg-white rounded-lg border ${borderCls} p-4">
-            <p class="font-bold ${textCls} mb-1">${p.name || ''}</p>
-            <p class="text-gray-600 text-xs">${pickLang(p.description, '')}</p>
+          <div class="rd-card rd-card-grad-violet rd-card-edge p-4">
+            <p class="font-extrabold ${textCls} mb-1">${p.name || ''}</p>
+            <p class="text-gray-600 text-base leading-relaxed">${pickLang(p.description, '')}</p>
           </div>`;
       }).join('');
     } else {
       // Legacy fallback (sin bloque CMS)
       platformCards = `
-        <div class="bg-white rounded-lg border border-eu-teal/30 p-4">
-          <p class="font-bold text-eu-teal mb-1">Aules (Moodle)</p>
-          <p class="text-gray-600 text-xs">${t('knowledge.aulesPlatform') || ''}</p>
+        <div class="rd-card rd-card-grad-violet rd-card-edge p-4">
+          <p class="font-extrabold text-eu-blue mb-1">Aules (Moodle)</p>
+          <p class="text-gray-600 text-base leading-relaxed">${t('knowledge.aulesPlatform') || ''}</p>
         </div>
-        <div class="bg-white rounded-lg border border-eu-blue/30 p-4">
-          <p class="font-bold text-eu-blue mb-1">AI-STEAM Network (CMS)</p>
-          <p class="text-gray-600 text-xs">${t('knowledge.networkPlatform') || ''}</p>
+        <div class="rd-card rd-card-grad-violet rd-card-edge p-4">
+          <p class="font-extrabold text-eu-purple mb-1">AI-STEAM Network (CMS)</p>
+          <p class="text-gray-600 text-base leading-relaxed">${t('knowledge.networkPlatform') || ''}</p>
         </div>
-        <div class="bg-white rounded-lg border border-eu-orange/30 p-4">
-          <p class="font-bold text-eu-orange mb-1">ConsensUE (Decidim)</p>
-          <p class="text-gray-600 text-xs">${t('knowledge.consensuePlatform') || ''}</p>
+        <div class="rd-card rd-card-grad-violet rd-card-edge p-4">
+          <p class="font-extrabold text-eu-blue mb-1">ConsensUE (Decidim)</p>
+          <p class="text-gray-600 text-base leading-relaxed">${t('knowledge.consensuePlatform') || ''}</p>
         </div>`;
     }
     // Solo renderizar el contenedor si hay plataformas que mostrar
     if (platformCards) {
       platformsHtml = `
-        <div class="bg-eu-bg border border-eu-border rounded-xl p-6">
-          <h3 class="font-bold text-eu-text mb-3">${pbTitle}</h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">${platformCards}</div>
+        <div class="rd-card rd-card-accent rd-pad" style="background:#FFF4E1">
+          <h3 class="font-extrabold text-eu-purple text-xl mb-3">${pbTitle}</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">${platformCards}</div>
         </div>`;
     }
   }
@@ -245,9 +266,9 @@ function tabOER(search) {
         ? 'Encara no hi ha contingut disponible en aquesta secció'
         : 'Todavía no hay contenido disponible en esta sección';
     return `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
-      <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
-      <p class="text-gray-500 text-base">${noContentMsg}</p>
+    <div class="rd-card rd-card-grad-violet rd-card-edge p-12 text-center">
+      <i data-lucide="inbox" class="w-12 h-12 text-eu-purple/40 mx-auto mb-4"></i>
+      <p class="text-gray-600 text-base">${noContentMsg}</p>
     </div>`;
   }
 
@@ -259,14 +280,14 @@ function tabOER(search) {
     <div>
       <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
         <div>
-          <h2 class="text-xl font-bold text-eu-text mb-1">${blockTitle}</h2>
-          <p class="text-sm text-gray-600 max-w-2xl">${blockDesc}</p>
+          <h2 class="text-2xl font-extrabold text-eu-purple mb-1">${blockTitle}</h2>
+          <p class="text-lg text-gray-600 max-w-2xl leading-relaxed">${blockDesc}</p>
         </div>
         <div class="flex gap-3 items-center">
           <div class="relative">
             <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
             <input id="oer-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
-              class="border border-eu-border rounded-md pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
+              class="rounded-full pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64" style="background:#fff;border:1px solid rgb(73 24 173/.2)"
               placeholder="${searchPlh}" />
             <button id="oer-search-clear"
               style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)"
@@ -300,8 +321,8 @@ function renderActiveFiltersDisplay() {
       plantilla: 'Plantilla'
     };
     badges.push(`
-      <button data-remove-filter="type" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-eu-blue/10 text-eu-blue border border-eu-blue/30 text-xs font-semibold hover:bg-eu-blue/20 transition-colors cursor-pointer">
-        <span>📋 ${typeLabels[activeFilters.typeId] || activeFilters.typeId}</span>
+      <button data-remove-filter="type" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.25)">
+        <i data-lucide="clipboard-list" class="w-3.5 h-3.5"></i><span>${typeLabels[activeFilters.typeId] || activeFilters.typeId}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>
     `);
@@ -311,8 +332,8 @@ function renderActiveFiltersDisplay() {
   activeFilters.sectors.forEach(sectorId => {
     const label = getSectorName(sectorId);
     badges.push(`
-      <button data-remove-filter="sector" data-filter-value="${sectorId}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-purple-100 text-purple-800 border border-purple-300 text-xs font-semibold hover:bg-purple-200 transition-colors cursor-pointer">
-        <span>🏷️ ${label}</span>
+      <button data-remove-filter="sector" data-filter-value="${sectorId}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.25)">
+        <i data-lucide="tag" class="w-3.5 h-3.5"></i><span>${label}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>
     `);
@@ -322,8 +343,8 @@ function renderActiveFiltersDisplay() {
   activeFilters.levels.forEach(level => {
     const label = LEVEL_LABELS[level] ? pickLang(LEVEL_LABELS[level], level) : level;
     badges.push(`
-      <button data-remove-filter="level" data-filter-value="${level}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-amber-100 text-amber-800 border border-amber-300 text-xs font-semibold hover:bg-amber-200 transition-colors cursor-pointer">
-        <span>🎓 ${label}</span>
+      <button data-remove-filter="level" data-filter-value="${level}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(73 24 173/.10); color:#4918AD; border:1px solid rgb(73 24 173/.25)">
+        <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i><span>${label}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>
     `);
@@ -332,15 +353,10 @@ function renderActiveFiltersDisplay() {
   // Status filter badge
   if (activeFilters.validationStatus) {
     const status = activeFilters.validationStatus;
-    const statusBadges = {
-      validated: { icon: '✓', color: 'bg-green-100 text-green-800 border-green-300' },
-      pending: { icon: '⏳', color: 'bg-amber-100 text-amber-800 border-amber-300' },
-      draft: { icon: '📝', color: 'bg-gray-100 text-gray-700 border-gray-300' }
-    };
-    const badge = statusBadges[status] || statusBadges.validated;
+    const statusIcons = { validated: 'check-circle', pending: 'clock', draft: 'file-text' };
     badges.push(`
-      <button data-remove-filter="status" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded ${badge.color} border text-xs font-semibold hover:opacity-80 transition-opacity cursor-pointer">
-        <span>${badge.icon} ${getStatusLabel(status)}</span>
+      <button data-remove-filter="status" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="${statusBadgeStyle(status)}; border:1px solid rgb(73 24 173/.2)">
+        <i data-lucide="${statusIcons[status] || 'check-circle'}" class="w-3.5 h-3.5"></i><span>${getStatusLabel(status)}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>
     `);
@@ -351,10 +367,10 @@ function renderActiveFiltersDisplay() {
   const clearAllLabel = lang === 'en' ? 'Clear all' : lang === 'va' ? 'Netejar tots' : 'Limpiar todo';
 
   return `
-    <div class="flex flex-wrap items-center gap-2 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-      <span class="text-xs font-semibold text-gray-700">${activeFiltersLabel}</span>
+    <div class="flex flex-wrap items-center gap-2 mb-6 p-4 rounded-2xl" style="background:rgb(86 32 246/.05); border:1px solid rgb(86 32 246/.15)">
+      <span class="text-sm font-bold text-gray-700">${activeFiltersLabel}</span>
       ${badges.join('')}
-      <button id="oer-clear-all-filters" class="ml-auto px-2.5 py-1 rounded text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200">
+      <button id="oer-clear-all-filters" class="ml-auto px-3 py-1 rounded-full text-sm font-bold text-eu-purple hover:bg-eu-purple/10 transition-colors cursor-pointer" style="border:1px solid rgb(73 24 173/.25)">
         ${clearAllLabel}
       </button>
     </div>
@@ -448,17 +464,17 @@ function renderOerGridContent(search) {
 
   const pageSizeHtml = `
     <div class="flex gap-1">
-      ${pageSizeOpts.map(n => `<button data-oer-pagesize="${n}" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${n}</button>`).join('')}
-      ${showAllOpt ? `<button data-oer-pagesize="all" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${showAllLbl}</button>` : ''}
+      ${pageSizeOpts.map(n => `<button data-oer-pagesize="${n}" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${n}</button>`).join('')}
+      ${showAllOpt ? `<button data-oer-pagesize="all" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${showAllLbl}</button>` : ''}
     </div>`;
 
   const paginationHtml = !isAll && totalPages > 1 ? `
     <div class="flex gap-2 justify-center mt-6 items-center">
-      <button id="oer-pag-prev" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
+      <button id="oer-pag-prev" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
         ← ${getOerLabel('previous')}
       </button>
       <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
-      <button id="oer-pag-next" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
+      <button id="oer-pag-next" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
         ${getOerLabel('next')} →
       </button>
     </div>` : '';
@@ -467,14 +483,14 @@ function renderOerGridContent(search) {
     const rTitle  = hasCmsBlock ? pickLang(r.title, '') : (r.title || '');
     const rTypeId = hasCmsBlock ? r.typeId : r.type;
     const rType   = typeLabels[rTypeId] || rTypeId;
-    const rIcon   = typeIcons[rTypeId] || '📄';
+    const rIcon   = lucideName(typeIcons[rTypeId], 'file');
     const activeFilters = getOerFilters();
     const rSectorIds = hasCmsBlock
       ? (Array.isArray(r.sectorIds) ? r.sectorIds : (r.sectorId ? [r.sectorId] : []))
       : (r.sector ? [r.sector] : []);
     const rSectorsHtml = rSectorIds.map(sid => {
       const isActive = activeFilters.sectors.includes(sid);
-      return `<button data-filter-sector="${sid}" class="text-xs font-semibold px-1.5 py-0.5 rounded cursor-pointer transition-all ${SECTOR_COLORS[sid] || 'bg-gray-100 text-gray-600'} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="Filtrar por sector">${getSectorName(sid)}</button>`;
+      return `<button data-filter-sector="${sid}" class="text-sm font-bold px-2.5 py-0.5 rounded-full cursor-pointer transition-all ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="${sectorChipStyle()}" title="Filtrar por sector">${getSectorName(sid)}</button>`;
     }).join(' ');
     const rLevels = hasCmsBlock
       ? (Array.isArray(r.levels) ? r.levels : (r.level && r.level !== 'Todos' ? [r.level] : ['FP', 'Máster', 'Docentes']))
@@ -482,7 +498,7 @@ function renderOerGridContent(search) {
     const rLevelsHtml = rLevels.map(l => {
       const isActive = activeFilters.levels.includes(l);
       const label = LEVEL_LABELS[l] ? pickLang(LEVEL_LABELS[l], l) : l;
-      return `<button data-filter-level="${l}" class="text-xs font-bold px-1.5 py-0.5 rounded cursor-pointer transition-all ${LEVEL_COLORS[l] || 'bg-gray-100 text-gray-600'} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" title="Filtrar por nivel">${label}</button>`;
+      return `<button data-filter-level="${l}" class="text-sm font-bold px-2.5 py-0.5 rounded-full cursor-pointer transition-all ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="${levelChipStyle(l)}" title="Filtrar por nivel">${label}</button>`;
     }).join(' ');
     const rUrl    = r.url || '';
     const rLinkType = r.linkType || 'external';
@@ -496,68 +512,66 @@ function renderOerGridContent(search) {
       : `<span class="flex items-center gap-1 text-gray-400 text-xs font-bold"><i data-lucide="${linkIcon}" class="w-3 h-3"></i>${linkText}</span>`;
 
     return `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm flex flex-col overflow-hidden hover:border-eu-blue hover:shadow-md transition-all">
+    <div class="rd-card rd-card-grad-violet rd-card-edge flex flex-col overflow-hidden group">
       <div class="p-6 flex-1 flex flex-col">
         <!-- Header: Type + Levels (secondary, compact) -->
         <div class="flex items-center gap-2 mb-3">
-          ${oerShowType ? `<span class="text-2xl flex-shrink-0">${rIcon}</span><span class="text-xs font-bold uppercase text-gray-600 tracking-wider">${rType}</span>` : ''}
+          ${oerShowType ? `<span class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${rIcon}" class="w-5 h-5 text-eu-purple"></i></span><span class="text-sm font-bold uppercase text-gray-600 tracking-wider">${rType}</span>` : ''}
           ${oerShowLevels ? `<div class="flex gap-1 ml-auto">${rLevelsHtml}</div>` : ''}
         </div>
 
         <!-- Title: Larger and more prominent -->
-        <h3 class="font-bold text-eu-text text-lg mb-5 leading-tight line-clamp-3">${rTitle}</h3>
+        <h3 class="font-extrabold text-eu-purple text-lg mb-5 leading-tight line-clamp-3">${rTitle}</h3>
 
         <!-- Sectors with visual separation -->
-        ${oerShowSectors ? `<div class="flex flex-wrap gap-2 mb-5 pb-4 border-b border-gray-200">${rSectorsHtml}</div>` : '<div class="mb-5 pb-4 border-b border-gray-200"></div>'}
+        ${oerShowSectors ? `<div class="flex flex-wrap gap-2 mb-5 pb-4 border-b border-eu-purple/10">${rSectorsHtml}</div>` : '<div class="mb-5 pb-4 border-b border-eu-purple/10"></div>'}
 
         <!-- Author + Metadata (compact) -->
-        <div class="mb-4 pb-4 border-b border-gray-200">
-          <div class="text-sm text-gray-800 font-semibold mb-1">
+        <div class="mb-4 pb-4 border-b border-eu-purple/10">
+          <div class="text-base text-gray-800 font-bold mb-1">
             ${r.author ? `${r.author}` : `<span class="text-gray-400">${getOerLabel('noAuthor')}</span>`}
           </div>
-          <div class="text-xs text-gray-500 flex gap-2 flex-wrap">
+          <div class="text-sm text-gray-500 flex gap-2 flex-wrap items-center">
             ${r.license ? `<span>${r.license}</span>` : ''}
-            ${r.lang ? `<span>🌐 ${r.lang}</span>` : ''}
+            ${r.lang ? `<span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i>${r.lang}</span>` : ''}
           </div>
         </div>
 
         <!-- Resource Details (compressed) -->
-        <div class="text-xs text-gray-500 space-y-1">
-          ${r.date || r.duration || r.format ? `<div>
-            ${r.date ? `📅 ${getOerLabel('created')}: ${r.date}` : ''}
-            ${r.duration ? `${r.date ? ' | ' : ''}⏱️ ${r.duration}` : ''}
-            ${r.format ? `${r.date || r.duration ? ' | ' : ''}📄 ${r.format}` : ''}
+        <div class="text-sm text-gray-500 space-y-1">
+          ${r.date || r.duration || r.format ? `<div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+            ${r.date ? `<span class="inline-flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i>${getOerLabel('created')} ${r.date}</span>` : ''}
+            ${r.duration ? `<span class="inline-flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i>${r.duration}</span>` : ''}
+            ${r.format ? `<span class="inline-flex items-center gap-1"><i data-lucide="file" class="w-3 h-3"></i>${r.format}</span>` : ''}
           </div>` : ''}
-          ${r.updatedAt ? `<div class="text-eu-blue font-medium">✎ ${getOerLabel('updated')}: ${r.updatedAt}</div>` : ''}
+          ${r.updatedAt ? `<div class="text-eu-blue font-medium inline-flex items-center gap-1"><i data-lucide="pencil" class="w-3 h-3"></i>${getOerLabel('updated')} ${r.updatedAt}</div>` : ''}
         </div>
       </div>
 
       <!-- Footer: Status badge (compact, clickable) + Link button (primary) -->
-      <div class="border-t border-gray-200 p-4 flex items-center justify-between gap-3 bg-white">
-        ${oerShowValidationStatus ? `<button data-filter-status="${r.validationStatus || 'validated'}" class="text-xs font-semibold px-2.5 py-1 rounded whitespace-nowrap cursor-pointer transition-all ${(() => {
+      <div class="border-t border-eu-purple/10 p-4 flex items-center justify-between gap-3">
+        ${oerShowValidationStatus ? `<button data-filter-status="${r.validationStatus || 'validated'}" class="text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap cursor-pointer transition-all inline-flex items-center gap-1.5 ${(() => {
           const status = r.validationStatus || 'validated';
           const activeFilters = getOerFilters();
-          const baseColors = { validated: 'bg-green-100 text-green-800', pending: 'bg-amber-100 text-amber-800', draft: 'bg-gray-100 text-gray-700' };
-          const color = baseColors[status] || baseColors.validated;
           const isActive = activeFilters.validationStatus === status;
-          return `${color} ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}`;
-        })()}" title="${getOerLabel('filterByStatus')}">
+          return isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : '';
+        })()}" style="${statusBadgeStyle(r.validationStatus || 'validated')}" title="${getOerLabel('filterByStatus')}">
           ${(() => {
             const status = r.validationStatus || 'validated';
-            const icons = { validated: '✓', pending: '⏳', draft: '📝' };
-            return `${icons[status] || '✓'} ${getStatusLabel(status)}`;
+            const icons = { validated: 'check-circle', pending: 'clock', draft: 'file-text' };
+            return `<i data-lucide="${icons[status] || 'check-circle'}" class="w-3.5 h-3.5"></i>${getStatusLabel(status)}`;
           })()}
         </button>` : '<span></span>'}
-        ${rUrl ? `<a href="${rUrl}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-eu-blue text-white text-sm font-bold hover:bg-eu-blue/90 transition-colors"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-400 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</span>`}
+        ${rUrl ? `<a href="${rUrl}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-eu-blue text-white text-sm font-bold hover:bg-eu-purple transition-colors"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-400 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</span>`}
       </div>
     </div>
   `}).join('');
 
   const emptyHtml = filtered.length === 0
     ? `
-    <div class="bg-white rounded-xl border border-eu-border shadow-sm p-12 text-center">
-      <i data-lucide="search" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
-      <p class="text-gray-500 text-base">
+    <div class="rd-card rd-card-grad-violet rd-card-edge p-12 text-center">
+      <i data-lucide="search" class="w-12 h-12 text-eu-purple/40 mx-auto mb-4"></i>
+      <p class="text-gray-600 text-base">
         ${emptyMsg || (getLang() === 'en' ? 'No resources found matching your search'
           : getLang() === 'va' ? 'No s\'han trobat recursos amb la cerca'
           : 'No se encontraron recursos')}
@@ -568,7 +582,7 @@ function renderOerGridContent(search) {
   return `
     ${renderActiveFiltersDisplay()}
     <div class="flex items-center justify-between mb-4">
-      <span class="text-xs text-gray-500 font-medium">${countLabel}</span>
+      <span class="text-sm text-gray-500 font-medium">${countLabel}</span>
       ${pageSizeHtml}
     </div>
     ${paginated.length > 0 ? `
@@ -729,16 +743,16 @@ function tabPlantillas(search) {
   const block = KNOWLEDGE_CONFIG?.templatesBlock;
 
   if (!block) {
-    return `<div class="bg-white rounded-xl border border-eu-border p-8 text-center">
-      <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
-      <p class="text-gray-500 text-base">Sin datos de plantillas.</p>
+    return `<div class="rd-card rd-card-grad-violet rd-card-edge p-8 text-center">
+      <i data-lucide="inbox" class="w-12 h-12 text-eu-purple/40 mx-auto mb-4"></i>
+      <p class="text-gray-600 text-base">Sin datos de plantillas.</p>
     </div>`;
   }
 
   if (!block.visible) {
-    return `<div class="bg-white rounded-xl border border-eu-border p-8 text-center">
-      <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
-      <p class="text-gray-500 text-base">${pickLang(block.emptyMessage, '')}</p>
+    return `<div class="rd-card rd-card-grad-violet rd-card-edge p-8 text-center">
+      <i data-lucide="inbox" class="w-12 h-12 text-eu-purple/40 mx-auto mb-4"></i>
+      <p class="text-gray-600 text-base">${pickLang(block.emptyMessage, '')}</p>
     </div>`;
   }
 
@@ -750,14 +764,14 @@ function tabPlantillas(search) {
     <div>
       <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
         <div>
-          <h2 class="text-xl font-bold text-eu-text mb-1">${blockTitle}</h2>
-          <p class="text-sm text-gray-600 max-w-2xl">${blockDesc}</p>
+          <h2 class="text-2xl font-extrabold text-eu-purple mb-1">${blockTitle}</h2>
+          <p class="text-lg text-gray-600 max-w-2xl leading-relaxed">${blockDesc}</p>
         </div>
         <div class="flex gap-3 items-center">
           <div class="relative">
             <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
             <input id="tmpl-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
-              class="border border-eu-border rounded-md pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64"
+              class="rounded-full pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64" style="background:#fff;border:1px solid rgb(73 24 173/.2)"
               placeholder="${searchPlh}" />
             <button id="tmpl-search-clear"
               style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)"
@@ -833,10 +847,10 @@ function renderTemplatesGridContent(search) {
     if (activeFilters.typeId) {
       const meta = typeLabelMap[activeFilters.typeId];
       const lbl = meta ? pickLang(meta.label, activeFilters.typeId) : activeFilters.typeId;
-      const icon = meta?.icon || '📋';
+      const icon = lucideName(meta?.icon, 'clipboard-list');
       badges.push(`
-        <button data-tmpl-remove-filter="type" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-eu-blue/10 text-eu-blue border border-eu-blue/30 text-xs font-semibold hover:bg-eu-blue/20 transition-colors cursor-pointer">
-          <span>${icon} ${lbl}</span>
+        <button data-tmpl-remove-filter="type" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.25)">
+          <i data-lucide="${icon}" class="w-3.5 h-3.5"></i><span>${lbl}</span>
           <i data-lucide="x" class="w-3.5 h-3.5"></i>
         </button>`);
     }
@@ -844,8 +858,8 @@ function renderTemplatesGridContent(search) {
       const meta = routeLabelMap[rid];
       const lbl = meta ? pickLang(meta.label, rid) : rid;
       badges.push(`
-        <button data-tmpl-remove-filter="route" data-filter-value="${rid}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-purple-100 text-purple-800 border border-purple-300 text-xs font-semibold hover:bg-purple-200 transition-colors cursor-pointer">
-          <span>👥 ${lbl}</span>
+        <button data-tmpl-remove-filter="route" data-filter-value="${rid}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(73 24 173/.10); color:#4918AD; border:1px solid rgb(73 24 173/.25)">
+          <i data-lucide="users" class="w-3.5 h-3.5"></i><span>${lbl}</span>
           <i data-lucide="x" class="w-3.5 h-3.5"></i>
         </button>`);
     });
@@ -856,10 +870,10 @@ function renderTemplatesGridContent(search) {
     const clearAllLabel = lang === 'en' ? 'Clear all' : lang === 'va' ? 'Netejar tots' : 'Limpiar todo';
 
     return `
-      <div class="flex flex-wrap items-center gap-2 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-        <span class="text-xs font-semibold text-gray-700">${activeFiltersLabel}</span>
+      <div class="flex flex-wrap items-center gap-2 mb-6 p-4 rounded-2xl" style="background:rgb(86 32 246/.05); border:1px solid rgb(86 32 246/.15)">
+        <span class="text-sm font-bold text-gray-700">${activeFiltersLabel}</span>
         ${badges.join('')}
-        <button id="tmpl-clear-all-filters" class="ml-auto px-2.5 py-1 rounded text-xs font-semibold text-red-600 hover:bg-red-50 transition-colors cursor-pointer border border-red-200">
+        <button id="tmpl-clear-all-filters" class="ml-auto px-3 py-1 rounded-full text-sm font-bold text-eu-purple hover:bg-eu-purple/10 transition-colors cursor-pointer" style="border:1px solid rgb(73 24 173/.25)">
           ${clearAllLabel}
         </button>
       </div>`;
@@ -867,17 +881,17 @@ function renderTemplatesGridContent(search) {
 
   const pageSizeHtml = `
     <div class="flex gap-1">
-      ${pageSizeOpts.map(n => `<button data-tmpl-pagesize="${n}" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${n}</button>`).join('')}
-      ${showAllOpt ? `<button data-tmpl-pagesize="all" class="px-2 py-1 rounded border cursor-pointer text-xs font-semibold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-border hover:border-eu-blue'}">${showAllLbl}</button>` : ''}
+      ${pageSizeOpts.map(n => `<button data-tmpl-pagesize="${n}" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${n}</button>`).join('')}
+      ${showAllOpt ? `<button data-tmpl-pagesize="all" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${showAllLbl}</button>` : ''}
     </div>`;
 
   const paginationHtml = !isAll && totalPages > 1 ? `
     <div class="flex gap-2 justify-center mt-6 items-center">
-      <button id="tmpl-pag-prev" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
+      <button id="tmpl-pag-prev" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
         ← ${prevLbl}
       </button>
       <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
-      <button id="tmpl-pag-next" class="px-3 py-1.5 rounded border text-sm cursor-pointer transition-colors border-eu-border ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
+      <button id="tmpl-pag-next" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
         ${nextLbl} →
       </button>
     </div>` : '';
@@ -901,21 +915,21 @@ function renderTemplatesGridContent(search) {
 
     const filtersHere = getTemplatesFilters();
 
-    return `<div class="bg-white rounded-xl border border-eu-border shadow-sm p-6 flex flex-col hover:border-eu-blue transition-colors group">
-      <div class="text-4xl mb-4">${iconStr}</div>
-      <h3 class="font-bold text-eu-text text-base mb-2 group-hover:text-eu-blue transition-colors">${pickLang(tpl.title, '')}</h3>
-      <p class="text-sm text-gray-600 mb-4 flex-1">${pickLang(tpl.description, '')}</p>
+    return `<div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col group">
+      <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${lucideName(iconStr, 'file-text')}" class="w-7 h-7 text-eu-purple"></i></div>
+      <h3 class="font-extrabold text-eu-purple text-lg mb-2 group-hover:text-eu-blue transition-colors">${pickLang(tpl.title, '')}</h3>
+      <p class="text-base text-gray-600 mb-4 flex-1 leading-relaxed">${pickLang(tpl.description, '')}</p>
       <div class="flex flex-wrap gap-2 mb-4">
-        ${showType && typeStr ? `<button data-tmpl-filter-type="${tpl.typeId}" class="text-xs px-2 py-0.5 rounded font-semibold cursor-pointer transition-colors border ${filtersHere.typeId === tpl.typeId ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-bg border-eu-border text-gray-600 hover:bg-eu-blue/10 hover:border-eu-blue hover:text-eu-blue'}">${typeStr}</button>` : ''}
-        ${showRoute ? routes.map(r => `<button data-tmpl-filter-route="${r.id}" class="text-xs px-2 py-0.5 rounded font-semibold cursor-pointer transition-colors border ${filtersHere.routeIds.includes(r.id) ? 'bg-purple-600 text-white border-purple-600' : 'bg-eu-blue/10 text-eu-blue border-eu-blue/20 hover:bg-purple-100 hover:text-purple-800 hover:border-purple-300'}">${r.label}</button>`).join('') : ''}
+        ${showType && typeStr ? `<button data-tmpl-filter-type="${tpl.typeId}" class="text-sm px-3 py-1 rounded-full font-bold cursor-pointer transition-all ${filtersHere.typeId === tpl.typeId ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="background:rgb(86 32 246/.10); color:#5620F6">${typeStr}</button>` : ''}
+        ${showRoute ? routes.map(r => `<button data-tmpl-filter-route="${r.id}" class="text-sm px-3 py-1 rounded-full font-bold cursor-pointer transition-all ${filtersHere.routeIds.includes(r.id) ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="background:rgb(73 24 173/.10); color:#4918AD">${r.label}</button>`).join('') : ''}
       </div>
-      <div class="text-xs text-gray-500 space-y-1 mb-3 pt-3 border-t border-gray-100">
-        ${pubFmt ? `<div>📅 ${createdLbl}: ${pubFmt}</div>` : ''}
-        ${revFmt ? `<div class="text-eu-blue font-medium">✎ ${revisedLbl}: ${revFmt}</div>` : ''}
+      <div class="text-sm text-gray-500 space-y-1 mb-3 pt-3 border-t border-eu-purple/10">
+        ${pubFmt ? `<div class="inline-flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i>${createdLbl}: ${pubFmt}</div>` : ''}
+        ${revFmt ? `<div class="text-eu-blue font-medium inline-flex items-center gap-1"><i data-lucide="pencil" class="w-3 h-3"></i>${revisedLbl}: ${revFmt}</div>` : ''}
       </div>
       <div class="flex items-center justify-between">
-        ${showLicense ? `<span class="text-xs font-mono text-eu-teal">${tpl.license || ''}</span>` : '<span></span>'}
-        <a href="${tpl.url}" ${targetAttr} class="flex items-center gap-1.5 text-eu-blue text-xs font-bold hover:underline cursor-pointer">
+        ${showLicense ? `<span class="text-sm font-mono text-eu-purple">${tpl.license || ''}</span>` : '<span></span>'}
+        <a href="${tpl.url}" ${targetAttr} class="flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:text-eu-purple transition-colors cursor-pointer">
           <i data-lucide="${btnIcon}" class="w-3.5 h-3.5"></i>${btnLabel}
         </a>
       </div>
@@ -923,9 +937,9 @@ function renderTemplatesGridContent(search) {
   }).join('');
 
   const emptyHtml = paginated.length === 0
-    ? `<div class="col-span-full bg-white rounded-xl border border-eu-border p-8 text-center">
-        <i data-lucide="inbox" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
-        <p class="text-gray-500 text-base">${emptyMsg}</p>
+    ? `<div class="col-span-full rd-card rd-card-grad-violet rd-card-edge p-8 text-center">
+        <i data-lucide="inbox" class="w-12 h-12 text-eu-purple/40 mx-auto mb-4"></i>
+        <p class="text-gray-600 text-base">${emptyMsg}</p>
       </div>`
     : '';
 
@@ -1040,28 +1054,39 @@ export function render() {
     <div>
       ${heroVisible ? `
       <!-- Header -->
-      <div class="bg-eu-blue text-white px-6 py-12">
-        <div class="max-w-7xl mx-auto">
-          <h1 class="text-3xl font-extrabold mb-2">${pickLang(heroBlock.title, t('knowledge.title') || '')}</h1>
-          <p class="text-white/70 text-sm max-w-3xl mb-1">${pickLang(heroBlock.description, t('knowledge.description') || '')}</p>
-          ${notice ? `<p class="text-xs text-eu-yellow/80 italic mt-2">${notice}</p>` : ''}
-          ${heroStats.length > 0 ? `
-          <div class="flex flex-wrap gap-4 mt-6">
-            ${heroStats.map(stat => `
-            <div class="bg-white/10 rounded-xl px-5 py-3 text-center">
-              <p class="text-2xl font-extrabold text-eu-yellow">${stat.value}</p>
-              <p class="text-sm text-white/70 font-semibold uppercase mt-0.5">${pickLang(stat.label, '')}</p>
-            </div>`).join('')}
-          </div>` : ''}
+      <div class="rd-hero-gradient text-white px-6 py-20 relative overflow-hidden">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-2xl"></div>
+        <div class="absolute left-10 top-5 w-40 h-40 bg-eu-yellow/5 rounded-full blur-xl"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+          <div class="max-w-3xl">
+            <span class="inline-block bg-white/10 border border-white/20 font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6" style="color:#FFF4E1;backdrop-filter:blur(8px)">
+              ${t('knowledge.eyebrow') || 'Conocimiento'}
+            </span>
+            <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${pickLang(heroBlock.title, t('knowledge.title') || '')}</h1>
+            <p class="text-lg mb-6 leading-relaxed" style="color:rgba(255,255,255,.9)">${pickLang(heroBlock.description, t('knowledge.description') || '')}</p>
+            ${notice ? `<p class="text-sm text-eu-yellow/90 italic mt-3 flex items-center gap-1.5 mb-6"><i data-lucide="info" class="w-4 h-4"></i>${notice}</p>` : ''}
+            ${heroStats.length > 0 ? `
+            <div class="flex flex-wrap gap-4 mt-8">
+              ${heroStats.map((stat, i) => `
+              <div class="${i % 2 === 0 ? 'rd-hero-stat' : 'rd-hero-stat-alt'} px-6 py-4 text-center">
+                <p class="text-3xl font-extrabold text-white leading-none">${stat.value}</p>
+                <p class="text-xs font-bold uppercase tracking-wider mt-1.5" style="color:rgba(255,244,225,.75)">${pickLang(stat.label, '')}</p>
+              </div>`).join('')}
+            </div>` : ''}
+          </div>
         </div>
       </div>` : ''}
 
       <!-- Tabs + content -->
-      <div class="max-w-7xl mx-auto px-6 py-8">
-        <div class="flex flex-wrap gap-1 border-b border-eu-border mb-8">
-          ${tabBar(activeTab)}
+      <div class="rd-canvas rd-section py-16">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex flex-wrap gap-2 mb-10">
+            ${tabBar(activeTab)}
+          </div>
+          <div class="rd-divide pt-10">
+            ${contentMap[activeTab] || ''}
+          </div>
         </div>
-        ${contentMap[activeTab] || ''}
       </div>
     </div>
   `;
