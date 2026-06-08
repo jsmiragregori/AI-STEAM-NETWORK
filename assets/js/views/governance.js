@@ -52,9 +52,9 @@ function tabEstructura(govT) {
     ? hubBlock.nodes
     : (s.nodes || []);
   const nodesHtml = hubNodes.map(node => `
-    <div class="rd-card-gov-beige rd-card-gov-static-hover p-6 flex flex-col justify-between h-full group">
+    <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col justify-between h-full group">
       <div>
-        <div class="w-12 h-12 rounded-full bg-eu-yellow/60 flex items-center justify-center mb-4 text-eu-blue shadow-inner shrink-0 rd-icon-circle-gov">
+        <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 text-eu-blue shadow-inner shrink-0 rd-icon-circle-gov" style="background:#ffffff">
           <i data-lucide="${node.icon || 'globe'}" class="w-5 h-5"></i>
         </div>
         <p class="text-xs font-extrabold uppercase tracking-widest text-eu-blue mb-1.5">${pickLang(node.label, node.label || '')}</p>
@@ -125,7 +125,7 @@ function tabEstructura(govT) {
 
   const bodiesHtml = formalBodies.map(body => {
     return `
-      <div class="rd-card-gov-beige rd-card-gov-static-hover p-6 flex flex-col justify-between h-full group">
+      <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col justify-between h-full group">
         <div>
           <div class="flex items-start justify-between mb-4">
             <div>
@@ -149,8 +149,8 @@ function tabEstructura(govT) {
     { icon: 'shield-check', title: s.iso21001Title, desc: s.iso21001Desc },
     { icon: 'globe',        title: s.enredTitle,    desc: s.enredDesc    },
   ]).map(card => `
-    <div class="rd-card rd-card-edge rd-pad flex gap-6 items-start cursor-default group" style="background:rgb(73 24 173/.08)">
-      <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+    <div class="rd-card rd-card-grad-violet rd-card-edge rd-pad flex gap-6 items-start cursor-default group">
+      <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
         <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 text-eu-purple"></i>
       </div>
       <div>
@@ -164,9 +164,9 @@ function tabEstructura(govT) {
     <div class="space-y-12">
       ${hubBlock.visible !== false ? `
       <!-- Hub -->
-      <div class="rd-card rd-card-accent rd-pad bg-white rd-card-edge group">
+      <div class="rd-card rd-card-accent rd-pad rd-card-edge group" style="background:#FFF4E1">
         <h2 class="font-extrabold text-eu-purple mb-3 flex items-center gap-4">
-          <div class="w-14 h-14 rounded-full bg-eu-yellow flex items-center justify-center text-eu-blue shrink-0 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+          <div class="w-14 h-14 rounded-full flex items-center justify-center text-eu-blue shrink-0 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
             <i data-lucide="globe" class="w-7 h-7"></i>
           </div>
           ${pickLang(hubBlock.title, s.hubTitle || '')}
@@ -260,8 +260,8 @@ function tabDualTrack(govT) {
 
   const cmsDataArch = dualTrackBlock.dataArch || {};
   const zoneStyles = {
-    public:  { dot: 'bg-eu-blue',   zone: 'rd-card-edge bg-eu-blue/5 border border-eu-blue/10 rounded-2xl p-6',     h4: 'text-eu-blue'   },
-    private: { dot: 'bg-eu-purple', zone: 'rd-card-edge bg-eu-purple/5 border border-eu-purple/10 rounded-2xl p-6', h4: 'text-eu-purple' },
+    public:  { dot: 'bg-eu-blue',   zone: 'rd-card rd-card-grad-violet rd-card-edge rounded-2xl p-6', h4: 'text-eu-blue'   },
+    private: { dot: 'bg-eu-purple', zone: 'rd-card rd-card-grad-violet rd-card-edge rounded-2xl p-6', h4: 'text-eu-purple' },
   };
   const dataArchZonesHtml = (cmsDataArch.zones || []).map(zone => {
     const st = zoneStyles[zone.id] || zoneStyles.public;
@@ -278,7 +278,7 @@ function tabDualTrack(govT) {
 
   const cmsRB = dualTrackBlock.responsibilityBoundaries || {};
   const responsibilityHtml = (cmsRB.items || []).map(item => `
-    <div class="rd-card rd-card-edge p-6 h-full flex flex-col justify-between" style="background:rgb(73 24 173 / .08)">
+    <div class="rd-card rd-card-grad-violet rd-card-edge p-6 h-full flex flex-col justify-between">
       <div>
         <h4 class="text-xl font-extrabold text-eu-purple mb-2">${pickLang(item.owner)}</h4>
         <p class="text-lg text-gray-700 leading-relaxed">${pickLang(item.scope)}</p>
@@ -288,7 +288,7 @@ function tabDualTrack(govT) {
 
   const cmsAgreement = dualTrackBlock.agreement || {};
   const agreementItemsHtml = (cmsAgreement.items || []).map(c => `
-    <div class="rd-card-gov-beige rd-card-edge p-6 h-full flex flex-col justify-between">
+    <div class="rd-card rd-card-grad-violet rd-card-edge p-6 h-full flex flex-col justify-between">
       <div>
         <h4 class="text-xl font-extrabold text-eu-purple mb-2">${pickLang(c.title)}</h4>
         <p class="text-lg text-gray-700 leading-relaxed">${pickLang(c.desc)}</p>
@@ -305,7 +305,7 @@ function tabDualTrack(govT) {
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           ${trackAVisible ? trackBlock(tracksById['track-a'], 'bg-eu-blue',   'bg-eu-blue/10 text-eu-blue',   'alert-circle',  'text-eu-blue',   'rgb(86 32 246/.07)',   'rgb(86 32 246/.12)'  ) : ''}
-          ${trackBVisible ? trackBlock(tracksById['track-b'], 'bg-eu-orange', 'bg-eu-orange/10 text-eu-orange','check-circle',  'text-eu-orange', 'rgb(255 244 225/.6)',  'rgb(255 163 47/.15)' ) : ''}
+          ${trackBVisible ? trackBlock(tracksById['track-b'], 'bg-eu-orange', 'bg-eu-orange/10 text-eu-orange','check-circle',  'text-eu-orange', 'rgb(255 244 225/.6)',  'rgb(73 24 173/.12)' ) : ''}
         </div>
       </div>` : ''}
       <div>
@@ -715,7 +715,7 @@ function tabParticipar(govT) {
       ];
 
   const consensueGroupsHtml = consensueGroups.map(g => `
-    <div class="rounded-2xl p-5" style="background:rgba(255,244,225,0.7); border:1px solid rgb(73 24 173 / .15)">
+    <div class="rounded-2xl p-5 rd-card-grad-violet" style="border:1px solid rgb(73 24 173 / .15)">
       <p class="text-base font-extrabold uppercase tracking-wider mb-3" style="color:#4918AD">${g.who || ''}</p>
       <ul class="space-y-2.5">
         ${(g.actions || []).map(a => `
@@ -735,15 +735,15 @@ function tabParticipar(govT) {
         const accUrl = (e.accessUrl || '').trim();
         const accExt = e.accessExternal;
         return `
-      <div class="flex flex-col justify-between gap-4 p-6 rd-card-gov-beige rd-card-gov-static-hover h-full group">
+      <div class="flex flex-col justify-between gap-4 p-6 rd-card rd-card-grad-violet rd-card-edge h-full group">
         <div class="flex items-start gap-4">
           <div class="bg-eu-blue text-white rounded-xl px-3 py-2 text-center shrink-0 min-w-[3.5rem] shadow-sm">
             <span class="block text-lg font-extrabold leading-none">${parts[0] || ''}</span>
-            <span class="block text-[10px] font-bold uppercase tracking-wider mt-1">${parts[1] || ''}</span>
+            <span class="block text-xs font-bold uppercase tracking-wider mt-1">${parts[1] || ''}</span>
           </div>
           <div class="min-w-0">
             <p class="font-extrabold text-lg text-eu-purple leading-snug break-words">${pickLang(e.title, e.title?.es || '')}</p>
-            <p class="text-sm text-gray-550 mt-1.5 flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${pickLang(e.location, e.location?.es || '')}</p>
+            <p class="text-sm text-gray-600 mt-1.5 flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${pickLang(e.location, e.location?.es || '')}</p>
           </div>
         </div>
         ${(regUrl || accUrl) ? `
@@ -751,7 +751,7 @@ function tabParticipar(govT) {
           ${regUrl ? `<a href="${regUrl}" ${regExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors bg-eu-blue/5 border border-eu-blue/10 rounded-lg px-3 py-1.5">
             <i data-lucide="clipboard-list" class="w-4 h-4"></i>Registration
           </a>` : ''}
-          ${accUrl ? `<a href="${accUrl}" ${accExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-teal hover:text-eu-purple transition-colors bg-eu-teal/5 border border-eu-teal/10 rounded-lg px-3 py-1.5">
+          ${accUrl ? `<a href="${accUrl}" ${accExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-purple hover:text-eu-blue transition-colors border rounded-lg px-3 py-1.5" style="background:rgb(73 24 173/.06); border-color:rgb(73 24 173/.15)">
             <i data-lucide="video" class="w-4 h-4"></i>Access
           </a>` : ''}
         </div>` : ''}
@@ -761,14 +761,14 @@ function tabParticipar(govT) {
     : (s.meetings || []).map(e => {
         const parts = (e.date || '').split(' ');
         return `
-      <div class="flex items-start gap-4 p-6 rd-card-gov-beige rd-card-gov-static-hover h-full group">
+      <div class="flex items-start gap-4 p-6 rd-card rd-card-grad-violet rd-card-edge h-full group">
         <div class="bg-eu-blue text-white rounded-xl px-3 py-2 text-center shrink-0 min-w-[3.5rem] shadow-sm">
           <span class="block text-lg font-extrabold leading-none">${parts[0] || ''}</span>
-          <span class="block text-[10px] font-bold uppercase tracking-wider mt-1">${parts[1] || ''}</span>
+          <span class="block text-xs font-bold uppercase tracking-wider mt-1">${parts[1] || ''}</span>
         </div>
         <div>
           <p class="font-extrabold text-lg text-eu-purple leading-snug">${e.title || ''}</p>
-          <p class="text-sm text-gray-550 mt-1.5 flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${e.location || ''}</p>
+          <p class="text-sm text-gray-600 mt-1.5 flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${e.location || ''}</p>
         </div>
       </div>
     `;
@@ -787,7 +787,7 @@ function tabParticipar(govT) {
             <h2 class="text-3xl font-extrabold mb-1 leading-snug" style="color:#4918AD">${hasCms ? pickLang(cms.stakeholderCard.title, s.stakeholderTitle || '') : (s.stakeholderTitle || '')}</h2>
             <p class="text-base font-extrabold uppercase tracking-widest mb-4" style="color:#5620F6">${hasCms ? pickLang(cms.stakeholderCard.subtitle, s.stakeholderSubtitle || '') : (s.stakeholderSubtitle || '')}</p>
             <p class="text-lg text-gray-700 mb-6 leading-relaxed">${hasCms ? pickLang(cms.stakeholderCard.description, s.stakeholderDesc || '') : (s.stakeholderDesc || '')}</p>
-            <div class="rounded-2xl p-6 mb-6" style="background:rgb(86 32 246/.08); border:1px solid rgb(86 32 246/.18)">
+            <div class="rounded-2xl p-6 mb-6 rd-card-grad-violet" style="border:1px solid rgb(86 32 246/.18)">
               <p class="text-base font-extrabold uppercase tracking-wider mb-3" style="color:#4918AD">${hasCms ? pickLang(cms.stakeholderCard.benefitsLabel, s.stakeholderBenefitsLabel || '') : (s.stakeholderBenefitsLabel || '')}</p>
               <ul class="space-y-2.5">${stakeholderBenefitsHtml}</ul>
             </div>
