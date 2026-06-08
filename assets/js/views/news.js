@@ -11,32 +11,25 @@ function pickLang(value, fallback = '') {
 
 function getTypeColor(type) {
   const map = {
-    'Presencial': 'bg-blue-100 text-blue-700',
-    'Online': 'bg-green-100 text-green-700',
-    'Híbrido': 'bg-purple-100 text-purple-700',
-    'In-person': 'bg-blue-100 text-blue-700',
-    'En-person': 'bg-blue-100 text-blue-700',
-    'Hybrid': 'bg-purple-100 text-purple-700',
-    'En línia': 'bg-green-100 text-green-700',
-    'Híbrid': 'bg-purple-100 text-purple-700',
+    'Presencial': 'bg-eu-blue/5 text-eu-blue border border-eu-blue/10',
+    'In-person': 'bg-eu-blue/5 text-eu-blue border border-eu-blue/10',
+    'En-person': 'bg-eu-blue/5 text-eu-blue border border-eu-blue/10',
+    'Online': 'bg-eu-purple/5 text-eu-purple border border-eu-purple/10',
+    'En línia': 'bg-eu-purple/5 text-eu-purple border border-eu-purple/10',
+    'Híbrido': 'bg-eu-yellow/60 text-eu-purple border border-eu-yellow/30',
+    'Hybrid': 'bg-eu-yellow/60 text-eu-purple border border-eu-yellow/30',
+    'Híbrid': 'bg-eu-yellow/60 text-eu-purple border border-eu-yellow/30',
   };
-  return map[type] || 'bg-gray-100 text-gray-800';
+  return map[type] || 'bg-gray-50 text-gray-500 border border-gray-100';
 }
 
 function getCategoryColor(category) {
-  const map = {
-    'Institucional': 'text-blue-700', 'Institutional': 'text-blue-700',
-    'Formación': 'text-purple-700', 'Training': 'text-purple-700', 'Formació': 'text-purple-700',
-    'Eventos': 'text-eu-teal', 'Events': 'text-eu-teal',
-    'Retos': 'text-eu-orange', 'Challenges': 'text-eu-orange', 'Reptes': 'text-eu-orange',
-    'Recursos': 'text-green-700', 'Resources': 'text-green-700',
-    'ENRED': 'text-eu-purple',
-    'FP/VET': 'text-yellow-700', 'VET/FP': 'text-yellow-700',
-    'Form. Docent': 'text-pink-700', 'Teacher Training': 'text-pink-700',
-    'Stakeholders': 'text-blue-700',
-    'Retos y Casos': 'text-eu-orange', 'Reptes i Casos': 'text-eu-orange', 'Challenges & Cases': 'text-eu-orange',
-  };
-  return map[category] || 'text-gray-700';
+  const blueCategories = [
+    'Institucional', 'Institutional', 'Stakeholders', 'Recursos', 'Resources',
+    'Retos', 'Challenges', 'Reptes', 'Retos y Casos', 'Reptes i Casos', 'Challenges & Cases',
+    'Eventos', 'Events'
+  ];
+  return blueCategories.includes(category) ? 'text-eu-blue' : 'text-eu-purple';
 }
 
 function getNewsAndEvents(newsT) {
