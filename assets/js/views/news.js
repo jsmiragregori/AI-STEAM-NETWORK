@@ -201,14 +201,22 @@ export function render() {
         <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-2xl"></div>
         <div class="absolute left-10 top-5 w-40 h-40 bg-eu-yellow/5 rounded-full blur-xl"></div>
         
-        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-8 relative z-10">
-          <div>
+        <div class="max-w-7xl mx-auto relative z-10">
+          <div class="max-w-3xl">
             <span class="inline-block bg-white/10 border border-white/20 font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6" style="color:#FFF4E1;backdrop-filter:blur(8px)">
               ${newsT?.eyebrow || 'Actualidad'}
             </span>
             <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${pickLang(heroBlock.title, newsT?.title || '')}</h1>
-            <p class="text-lg mb-6 max-w-2xl leading-relaxed" style="color:rgba(255,255,255,.9)">${pickLang(heroBlock.description, newsT?.description || '')}</p>
-            ${notice ? `<p class="text-sm text-eu-yellow/90 italic mt-3 flex items-center gap-1.5"><i data-lucide="info" class="w-4 h-4"></i>${notice}</p>` : ''}
+            <p class="text-lg mb-6 leading-relaxed" style="color:rgba(255,255,255,.9)">${pickLang(heroBlock.description, newsT?.description || '')}</p>
+            ${notice ? `<p class="text-sm text-eu-yellow/90 italic mt-3 flex items-center gap-1.5 mb-6"><i data-lucide="info" class="w-4 h-4"></i>${notice}</p>` : ''}
+            
+            ${ctaButton.visible !== false ? `
+            <div class="flex flex-wrap gap-4 mb-8">
+              <button class="flex items-center gap-2 rounded-full font-bold transition-all hover:scale-105 hover:bg-white hover:text-eu-purple border-none cursor-pointer shadow-lg" style="background:#FFF4E1;color:#4918AD;padding:1rem 2.5rem">
+                <i data-lucide="rss" class="w-4 h-4"></i>${pickLang(ctaButton.label, newsT?.subscribeButton || '')}
+              </button>
+            </div>` : ''}
+
             ${heroStats.length > 0 ? `
             <div class="flex flex-wrap gap-4 mt-8">
               ${heroStats.map((s, i) => `
@@ -218,10 +226,6 @@ export function render() {
               </div>`).join('')}
             </div>` : ''}
           </div>
-          ${ctaButton.visible !== false ? `
-          <button class="flex items-center gap-2 rounded-full font-bold transition-all hover:scale-105 hover:bg-white hover:text-eu-purple border-none cursor-pointer shadow-lg" style="background:#FFF4E1;color:#4918AD;padding:1rem 2.5rem">
-            <i data-lucide="rss" class="w-4 h-4"></i>${pickLang(ctaButton.label, newsT?.subscribeButton || '')}
-          </button>` : ''}
         </div>
       </div>` : ''}
 
