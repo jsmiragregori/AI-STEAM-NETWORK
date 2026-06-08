@@ -430,7 +430,6 @@ function tabLbd(govT) {
           <i data-lucide="user" class="w-3.5 h-3.5"></i> ${pickLang(p.owner, p.owner || '')}
         </p>
       </div>
-      ${i < arr.length - 1 ? '<div class="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-white border border-eu-blue/10 rounded-full items-center justify-center shadow-md"><i data-lucide="arrow-right" class="w-4 h-4 text-eu-blue"></i></div>' : ''}
     </div>
   `;
   }).join('');
