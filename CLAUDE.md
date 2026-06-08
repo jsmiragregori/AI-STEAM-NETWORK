@@ -1,5 +1,10 @@
 # CLAUDE.md - AI-STEAM Network Vanilla
 
+> 📢 **PUNTO DE ENTRADA PRINCIPAL PARA AGENTES:**
+> El archivo de inicio y guía operativa obligatorio para todo el proyecto es:
+> 👉 **[AI-STEAM-CONTENT/AGENTS.md](file:///d:/CEICE/AI-STEAM-CONTENT/AGENTS.md)**
+> Lee ese archivo primero antes de continuar o realizar cualquier cambio.
+
 **Fecha de inicio:** 2026-05-07  
 **Última sesión:** 2026-06-08  
 **Estado:** Fases 1–5 y Overhaul Visual (F0–F11) COMPLETADOS ✅ — Proyecto funcional, rediseñado y publicado  
