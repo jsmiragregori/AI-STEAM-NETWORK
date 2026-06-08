@@ -116,26 +116,26 @@ export function render() {
   ` : '';
 
   const newsListHtml = rest.map(item => `
-    <article class="rd-card-v5 rd-card-v5-hover rd-pad cursor-pointer group flex flex-col justify-between" data-news-id="${item.id}">
+    <article class="rd-card rd-card-grad-violet rd-card-edge rd-pad cursor-pointer group flex flex-col justify-between" data-news-id="${item.id}">
       <div>
         <div class="flex items-center justify-between mb-4">
           <div class="flex flex-wrap items-center gap-2">
             <span class="text-xs font-bold uppercase tracking-wider ${getCategoryColor(item.category)}">${item.category}</span>
-            ${item.sector ? `<span class="flex items-center gap-1.5 text-sm text-gray-400 font-semibold"><i data-lucide="tag" class="w-3 h-3"></i>${item.sector}</span>` : ''}
+            ${item.sector ? `<span class="flex items-center gap-1.5 text-sm text-gray-500 font-semibold"><i data-lucide="tag" class="w-3 h-3"></i>${item.sector}</span>` : ''}
           </div>
           <div class="flex items-center gap-2">
             ${item.isOfficial !== undefined ? `
-              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${item.isOfficial ? 'bg-eu-blue/5 text-eu-blue border border-eu-blue/10' : 'bg-eu-purple/5 text-eu-purple border border-eu-purple/10'}">
+              <span class="text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${item.isOfficial ? 'bg-eu-blue/5 text-eu-blue border border-eu-blue/10' : 'bg-eu-purple/5 text-eu-purple border border-eu-purple/10'}">
                 ${item.isOfficial ? (newsT?.officialBadge || 'Oficial') : (newsT?.demoBadge || 'Demo')}
               </span>` : ''}
-            <span class="text-sm text-gray-400 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>${item.date}</span>
+            <span class="text-sm text-gray-500 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>${item.date}</span>
           </div>
         </div>
         <h3 class="text-2xl font-extrabold text-eu-purple mb-4 group-hover:text-eu-blue transition-colors leading-snug">${item.title}</h3>
-        <p class="text-base text-gray-500 mb-6 line-clamp-3 leading-relaxed">${item.excerpt}</p>
+        <p class="text-base text-gray-600 mb-6 line-clamp-3 leading-relaxed">${item.excerpt}</p>
       </div>
       <div class="flex items-center justify-between border-t border-eu-blue/5 pt-4 mt-auto">
-        ${item.partner ? `<span class="text-xs font-bold text-gray-400 uppercase tracking-wider">${item.partner}</span>` : '<span></span>'}
+        ${item.partner ? `<span class="text-xs font-bold text-gray-500 uppercase tracking-wider">${item.partner}</span>` : '<span></span>'}
         <span class="inline-flex items-center text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors ml-auto">
           ${newsT?.readMore || ''} <i data-lucide="arrow-right" class="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
         </span>

@@ -271,7 +271,7 @@ INSTRUCCION_LLM: al terminar una fase → `[~] EN_REVISION`. Tras aprobación hu
 | F3 | Sectores — paleta unificada + iconos beige + legibilidad detalle | `[x] APROBADA` | Cerrado y validado junto con la reestructuración de la brújula sectorial. |
 | F4 | Formación — hero + course cards (a) + tabs | `[x] APROBADA` | commit `3e0cd79` |
 | F5 | Actualidad — news cards (a) | `[x] APROBADA` | commits `7bf4d12` to `9cac6dd` |
-| F6 | Gobernanza — cards + tabs; órganos intactos | `[~] EN_REVISION` | Estilos regenerados; validación pendiente |
+| F6 | Gobernanza — cards + tabs; órganos intactos | `[x] APROBADA` | Cerrada 2026-06-08. Estilo `.rd-card-grad-violet` (blanco→#D7C8F3) introducido y unificado en todas las inner cards de las 5 pestañas; contenedores principales beige/ceja púrpura #5222B0; paleta estricta Blue/Purple/Beige (eliminado naranja literal); tipografía min text-base. Extendido a Sectores y a las cards del listado de Actualidad. |
 | F7 | Conocimiento — cards + buscador | `[ ] PENDIENTE` | |
 | F8 | Red — cards socios/stakeholders; hélice intacta | `[ ] PENDIENTE` | |
 | F9 | Marketplace — hero + tabs + filtros | `[ ] PENDIENTE` | |
@@ -311,6 +311,9 @@ CONTENIDO (esqueleto):
 .rd-accent-purple::before{background:var(--rd-purple);opacity:.4}
 .rd-card-tint{background:rgb(255 244 225 / .35)}
 .rd-card-tint-blue{background:rgb(86 32 246 / .05)}
+/* Inner card estándar (F6+): degradado blanco→#D7C8F3. Para tarjetas internas
+   sobre fondo beige/canvas; resuelve el bajo contraste de los tintes planos. */
+.rd-card-grad-violet{background:linear-gradient(to bottom,#fff 0%,#D7C8F3 100%)}
 .rd-pad{padding:2.5rem}
 /* Icono en círculo beige */
 .rd-icon-circle{width:4rem;height:4rem;border-radius:9999px;background:var(--rd-beige);
@@ -515,17 +518,23 @@ COMMIT: `style(global): cierre visual overhaul — modelo AI-STEAM-MIGRATION`
 | CMS | "Últimas contribuciones" eliminada: YAML, loader, admin, validators, data generada | CONTENT `a92af86`, VANILLA `2905c8f` |
 | F4 | Formación: Hero morado/beige, tabs en beige oficial, tarjetas de curso en beige plano al 55% sin acento, acento lateral en skills, aviso de master Solid Violet, Itinerario CEICE estilo Sectores CTA sin flechas | CONTENT `1ac72d1`, VANILLA `3e0cd79` `8d50988` `d6e7361` |
 | F5 | Actualidad / Noticias: Hero con rd-hero-gradient estilo home, primera noticia en morado sólido con acento beige, resto de noticias en beige oficial 55% y fuentes grandes (título 2xl, texto base), barra lateral con eventos en beige 100% y acento lateral, newsletter y social links con rd-hero-gradient e iconos de marca oficiales inline SVG con ancho completo. | VANILLA `7bf4d12` to `9cac6dd` |
-| F6 | Gobernanza: Nav/tabs píldoras (amarillo/morado), Card Principal (Hub Distribuido) con acento borde, acentos limitados a Hub/CEICE/ISO, cards CEICE/UVEG e ISO/ENRED beige 55%→100%, Dual Track ancho completo, CSS compilado. | EN_REVISION — pendiente validación |
 
-### Fase en curso: **F6 — Gobernanza** 🔄 EN PROGRESO (2026-06-08)
+### Fase F6 — Gobernanza ✅ CERRADA Y APROBADA (2026-06-08)
 
-Fase F5 (Actualidad) completamente aprobada. F6 en desarrollo:
+Fase F5 (Actualidad) aprobada. F6 cerrada con el siguiente sistema visual:
 - Nav/Tabs: píldoras (text-sm font-bold, amarillo/morado) + iconos Lucide integrados
-- Card Principal (Hub Distribuido): `.rd-card-accent` + `.rd-card-edge` (borde en hover, sin translateY)
-- Acentos laterales: solo en Hub Principal, CEICE & UVEG, ISO & ENRED
-- Tarjetas CEICE/UVEG e ISO/ENRED: beige 55% → beige 100% en hover + elevación
-- Dual Track description: max-w-3xl removido (ancho completo)
-- CSS compilado: `npm run build:css` ejecutado
+- **Nuevo estilo reutilizable `.rd-card-grad-violet`** (en `redesign.css`): degradado vertical
+  blanco puro → `#D7C8F3`. Es ahora el estándar para TODAS las inner cards del proyecto.
+  Aplicado en las 5 pestañas de Gobernanza, en Sectores (panel expandido) y en el listado
+  de Actualidad. Resuelve el problema de contraste de los tintes planos sobre beige/canvas.
+- Contenedores principales: **ceja púrpura `#5222B0` + cuerpo beige `#FFF4E1`** (LbD, Documentos),
+  o cards tintadas (Dual Track). Cabeceras de color solo en CEICE/UVEG y Track A/B.
+- **Paleta estricta**: Electric Blue `#5620F6` / Deep Purple `#4918AD` / Sand Beige `#FFF4E1`.
+  Eliminado todo naranja literal (`#b45309`, `rgb(255 163 47)`) y el amarillo en cards
+  (queda solo en las píldoras de tabs). NOTA: los tokens tailwind `eu-orange` y `eu-teal`
+  están remapeados a púrpura/azul en `tailwind-input.css` — nunca renderizaron naranja/teal.
+- Tipografía: contenido mínimo `text-base`; eliminados `text-xs`/`text-[10px]` ilegibles.
+- Regla afianzada: **evitar `bg-white` en cards** (contenedores → beige/canvas, inner → grad-violet).
 
 Claves de F3 (decisión humana 2026-06-05): sectores **UNIFICADOS a paleta corporativa**
 (morado/azul + beige), iconos Lucide en `rd-icon-circle` (= home), detalle expandido con
