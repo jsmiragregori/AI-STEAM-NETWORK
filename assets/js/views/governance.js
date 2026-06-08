@@ -152,9 +152,10 @@ function tabEstructura(govT) {
   ]).map(card => {
     const isOrange = card.tone === 'orange';
     const iconColor = isOrange ? 'text-eu-orange' : 'text-eu-blue';
+    const accentBorder = isOrange ? 'border-l-4 border-l-eu-orange' : 'border-l-4 border-l-eu-blue';
     const iconBg = 'bg-white';
     return `
-      <div class="rd-card-gov-beige rd-card-gov-interactive rd-pad flex gap-6 items-start group">
+      <div class="rd-card-gov-beige rd-card-gov-interactive ${accentBorder} rd-pad flex gap-6 items-start group">
         <div class="w-14 h-14 rounded-2xl ${iconBg} flex items-center justify-center shrink-0 shadow-sm rd-icon-circle-gov">
           <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 ${iconColor}"></i>
         </div>
