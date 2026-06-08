@@ -177,10 +177,10 @@ export function render() {
   };
 
   const socialLinks = [
-    { key: 'linkedin',  label: newsT?.socialLinks?.linkedin },
-    { key: 'twitter',   label: newsT?.socialLinks?.twitter  },
-    { key: 'youtube',   label: newsT?.socialLinks?.youtube  },
-    { key: 'substack',  label: newsT?.socialLinks?.substack },
+    { key: 'linkedin',  label: newsT?.socialLinks?.linkedin || 'LinkedIn' },
+    { key: 'twitter',   label: newsT?.socialLinks?.twitter  || 'Twitter/X' },
+    { key: 'youtube',   label: newsT?.socialLinks?.youtube  || 'YouTube' },
+    { key: 'substack',  label: newsT?.socialLinks?.substack || 'Substack' },
   ].filter(l => l.label).map(l => {
     const icon = socialIconMap[l.key] || 'external-link';
     return `
