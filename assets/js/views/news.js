@@ -123,7 +123,7 @@ export function render() {
   ` : '';
 
   const newsListHtml = rest.map(item => `
-    <article class="rd-card rd-card-hover rd-pad bg-white cursor-pointer group flex flex-col justify-between" data-news-id="${item.id}">
+    <article class="rd-card-v5 rd-card-v5-hover rd-pad cursor-pointer group flex flex-col justify-between" data-news-id="${item.id}">
       <div>
         <div class="flex items-center justify-between mb-4">
           <div class="flex flex-wrap items-center gap-2">
