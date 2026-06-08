@@ -405,8 +405,8 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 2,
         "abbr": "SC",
-        "color": "border-eu-teal bg-eu-blue/10",
-        "iconColor": "text-eu-teal",
+        "color": "border-eu-blue bg-eu-blue/10",
+        "iconColor": "text-eu-blue",
         "name": {
           "es": "Comité Directivo",
           "en": "Steering Committee",
@@ -519,8 +519,8 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 5,
         "abbr": "SN",
-        "color": "border-eu-orange bg-eu-yellow/60",
-        "iconColor": "text-eu-orange",
+        "color": "border-eu-purple bg-eu-yellow/60",
+        "iconColor": "text-eu-purple",
         "name": {
           "es": "Red de Stakeholders",
           "en": "Stakeholder Network",

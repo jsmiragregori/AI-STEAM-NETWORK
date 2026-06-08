@@ -355,11 +355,11 @@
 }
 .rd-card-gov-beige.border-l-eu-blue,
 .rd-card-gov-beige.border-blue-600,
-.rd-card-gov-beige.border-eu-teal,
+.rd-card-gov-beige.border-eu-blue,
 .rd-card-gov-beige.border-indigo-600 {
   border-left-color: var(--color-eu-blue, #5620f6) !important;
 }
-.rd-card-gov-beige.border-l-eu-orange,
+.rd-card-gov-beige.border-l-eu-purple,
 .rd-card-gov-beige.border-purple-600 {
   border-left-color: var(--color-eu-purple, #4918ad) !important;
 }

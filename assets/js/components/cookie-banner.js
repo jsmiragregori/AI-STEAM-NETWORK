@@ -8,7 +8,7 @@ export function renderCookieBanner() {
       <div>
         <strong>${t('cookieBanner.legal')}</strong> ${t('cookieBanner.text')}
       </div>
-      <button id="cookie-accept" class="bg-eu-teal text-white border-none px-3 py-1.5 rounded font-semibold cursor-pointer hover:bg-eu-purple ml-4 whitespace-nowrap transition-colors">
+      <button id="cookie-accept" class="bg-eu-blue text-white border-none px-3 py-1.5 rounded font-semibold cursor-pointer hover:bg-eu-purple ml-4 whitespace-nowrap transition-colors">
         ${t('cookieBanner.accept')}
       </button>
     </div>

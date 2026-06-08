@@ -66,19 +66,19 @@ function enredToneClasses(tone) {
 function ecosystemToneClasses(tone) {
   const tones = {
     teal: {
-      border: 'border-eu-teal',
-      icon: 'bg-eu-teal',
-      tag: 'text-eu-teal',
+      border: 'border-eu-blue',
+      icon: 'bg-eu-blue',
+      tag: 'text-eu-blue',
     },
     blue: {
       border: 'border-eu-blue',
       icon: 'bg-eu-blue',
-      tag: 'text-eu-teal',
+      tag: 'text-eu-blue',
     },
     orange: {
-      border: 'border-eu-orange',
-      icon: 'bg-eu-orange',
-      tag: 'text-eu-teal',
+      border: 'border-eu-purple',
+      icon: 'bg-eu-purple',
+      tag: 'text-eu-blue',
     },
     purple: {
       border: 'border-eu-purple',

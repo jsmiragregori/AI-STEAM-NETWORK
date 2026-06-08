@@ -65,7 +65,7 @@ function renderMobileButtons() {
       const href = btn.href;
       if (!href) return '';
       return `<a href="${href}" target="${btn.target || '_self'}" rel="noopener noreferrer"
-             class="flex w-full items-center justify-center bg-white border border-eu-teal text-eu-teal px-4 py-3 rounded text-sm font-bold hover:bg-gray-50 transition-colors min-h-12">
+             class="flex w-full items-center justify-center bg-white border border-eu-blue text-eu-blue px-4 py-3 rounded text-sm font-bold hover:bg-gray-50 transition-colors min-h-12">
             ${label}
           </a>`;
     }).join('');

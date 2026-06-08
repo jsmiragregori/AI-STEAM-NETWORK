@@ -76,9 +76,9 @@ function tabEstructura(govT) {
   const actorCardsHtml = actorCards.map(card => {
     const isOrange = card.tone === 'orange';
     // CEICE = Track B (orange), UVEG = Track A (blue) — mismo código de color que Dual Track
-    const headerBg  = isOrange ? 'bg-eu-orange' : 'bg-eu-blue';
+    const headerBg  = isOrange ? 'bg-eu-purple' : 'bg-eu-blue';
     const bodyBg    = isOrange ? 'rgb(255 244 225/.6)' : 'rgb(86 32 246/.07)';
-    const alertText = isOrange ? 'text-eu-orange' : 'text-eu-blue';
+    const alertText = isOrange ? 'text-eu-purple' : 'text-eu-blue';
 
     const rolesHtml = (Array.isArray(card.roles) ? card.roles : []).map(item => `
       <div class="flex items-start gap-4">
@@ -305,7 +305,7 @@ function tabDualTrack(govT) {
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           ${trackAVisible ? trackBlock(tracksById['track-a'], 'bg-eu-blue',   'bg-eu-blue/10 text-eu-blue',   'alert-circle',  'text-eu-blue',   'rgb(86 32 246/.07)',   'rgb(86 32 246/.12)'  ) : ''}
-          ${trackBVisible ? trackBlock(tracksById['track-b'], 'bg-eu-orange', 'bg-eu-orange/10 text-eu-orange','check-circle',  'text-eu-orange', 'rgb(255 244 225/.6)',  'rgb(73 24 173/.12)' ) : ''}
+          ${trackBVisible ? trackBlock(tracksById['track-b'], 'bg-eu-purple', 'bg-eu-purple/10 text-eu-purple','check-circle',  'text-eu-purple', 'rgb(255 244 225/.6)',  'rgb(73 24 173/.12)' ) : ''}
         </div>
       </div>` : ''}
       <div>

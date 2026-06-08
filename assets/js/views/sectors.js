@@ -108,7 +108,7 @@ function renderStatButton(sector, key, value, label, enabled) {
 
   return `
     <button ${action}${disabled} class="rd-card rd-card-grad-violet rd-card-edge min-w-0 rounded-3xl px-3 py-4 text-center transition sm:px-4 ${enabled ? 'cursor-pointer' : 'cursor-default opacity-55'}">
-      <span class="block text-3xl font-extrabold ${key === 'courses' ? 'text-eu-orange' : key === 'stakeholders' ? 'text-eu-purple' : 'text-eu-blue'}">${esc(value ?? 0)}</span>
+      <span class="block text-3xl font-extrabold ${key === 'courses' ? 'text-eu-purple' : key === 'stakeholders' ? 'text-eu-purple' : 'text-eu-blue'}">${esc(value ?? 0)}</span>
       <span class="mt-1 block max-w-full break-words text-[0.68rem] font-bold uppercase leading-tight tracking-wide text-gray-500 [hyphens:auto] sm:text-xs">${esc(label)}</span>
     </button>
   `;

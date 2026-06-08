@@ -981,8 +981,8 @@ export const translations = {
           "quorum": "Mayoría simple",
           "members": "UVEG (coord.), UMU, CEICE, TUV.IT, LC",
           "desc": "Gestión operativa del proyecto. Supervisa el plan de trabajo, aprueba los informes internos y coordina la coherencia entre Track A (Académico) y Track B (Ecosistema).",
-          "color": "border-eu-teal bg-eu-blue/10",
-          "iconColor": "text-eu-teal"
+          "color": "border-eu-blue bg-eu-blue/10",
+          "iconColor": "text-eu-blue"
         },
         {
           "id": "ab",
@@ -1017,8 +1017,8 @@ export const translations = {
           "quorum": "Participación abierta",
           "members": "Todos los stakeholders adheridos mediante Acuerdo de Colaboración",
           "desc": "Órgano participativo del Track B. Stakeholders informan necesidades, validan relevancia y aportan casos o retos vía ConsensUE. CEICE actúa como Orquestadora de este espacio.",
-          "color": "border-eu-orange bg-eu-yellow/60",
-          "iconColor": "text-eu-orange"
+          "color": "border-eu-purple bg-eu-yellow/60",
+          "iconColor": "text-eu-purple"
         },
         {
           "id": "sb",
@@ -2863,8 +2863,8 @@ export const translations = {
           "quorum": "Simple majority",
           "members": "UVEG (coord.), UMU, CEICE, TUV.IT, LC",
           "desc": "Operational management of the project. Supervises the work plan, approves internal reports, and coordinates coherence between Track A (Academic) and Track B (Ecosystem).",
-          "color": "border-eu-teal bg-eu-blue/10",
-          "iconColor": "text-eu-teal"
+          "color": "border-eu-blue bg-eu-blue/10",
+          "iconColor": "text-eu-blue"
         },
         {
           "id": "ab",
@@ -2899,8 +2899,8 @@ export const translations = {
           "quorum": "Open participation",
           "members": "All stakeholders adhered through Collaboration Agreement",
           "desc": "Participatory body of Track B. Stakeholders inform needs, validate relevance and contribute cases or challenges via ConsensUE. CEICE acts as orchestrator of this space.",
-          "color": "border-eu-orange bg-eu-yellow/60",
-          "iconColor": "text-eu-orange"
+          "color": "border-eu-purple bg-eu-yellow/60",
+          "iconColor": "text-eu-purple"
         },
         {
           "id": "sb",
@@ -4726,8 +4726,8 @@ export const translations = {
           "quorum": "Majoria simple",
           "members": "UVEG (coord.), UMU, CEICE, TUV.IT, LC",
           "desc": "Gestió operativa del projecte. Supervisa el pla de treball, aprova els informes interns i coordina la coherència entre Track A (Acadèmic) i Track B (Ecosistema).",
-          "color": "border-eu-teal bg-eu-blue/10",
-          "iconColor": "text-eu-teal"
+          "color": "border-eu-blue bg-eu-blue/10",
+          "iconColor": "text-eu-blue"
         },
         {
           "id": "ab",
@@ -4762,8 +4762,8 @@ export const translations = {
           "quorum": "Participació oberta",
           "members": "Tots els stakeholders adherits mitjançant Acord de Col·laboració",
           "desc": "Òrgan participatiu del Track B. Els stakeholders informen necessitats, validen la rellevància i aporten casos o reptes via ConsensUE. CEICE actua com Orquestrador d'este espai.",
-          "color": "border-eu-orange bg-eu-yellow/60",
-          "iconColor": "text-eu-orange"
+          "color": "border-eu-purple bg-eu-yellow/60",
+          "iconColor": "text-eu-purple"
         },
         {
           "id": "sb",

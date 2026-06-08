@@ -1416,7 +1416,7 @@ function renderChallengeCard(item, tab) {
     hideTypeBadge: true,
     showStatusBadge: ccv.ch_statusBadge !== false,
     extraBadge: maturityLabel || null,
-    extraBadgeTone: 'bg-eu-teal/10 text-eu-teal border-eu-teal/20',
+    extraBadgeTone: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
     extraBadgeFilterKey: maturityLabel ? 'maturity' : '',
     extraBadgeFilterValue: maturityLabel ? (item.core?.maturity || '') : '',
     entity: entityLabel,
@@ -1503,7 +1503,7 @@ function renderCaseCard(item, tab) {
   const sectorHtml = (showSectorFlag && sectorLabels.length)
     ? `<div class="mt-4">
         <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText(sectorLabels.length > 1 ? 'sectors' : 'sector'))}</p>
-        <div class="flex flex-wrap gap-2">${sectorCodes.map((code, index) => renderBadge(sectorLabels[index], 'bg-eu-orange/10 text-eu-orange border-eu-orange/20', 'sector', code)).join('')}</div>
+        <div class="flex flex-wrap gap-2">${sectorCodes.map((code, index) => renderBadge(sectorLabels[index], 'bg-eu-purple/10 text-eu-purple border-eu-purple/20', 'sector', code)).join('')}</div>
       </div>`
     : '';
 
@@ -1684,7 +1684,7 @@ function renderPilotCard(item, tab) {
     (showPilotType && pilotTypeLabel)
       ? renderBadge(
           `${uiText('pilotType')}: ${pilotTypeLabel}`,
-          'bg-eu-orange/10 text-eu-orange border-eu-orange/20',
+          'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
           'pilotType',
           core.pilotType,
         )
