@@ -61,7 +61,7 @@ function tabEstructura(govT) {
         <p class="font-extrabold text-2xl text-eu-purple leading-tight">${pickLang(node.city, node.city || '')}</p>
         <p class="text-base text-eu-text/80 mt-2 font-bold">${pickLang(node.org, node.org || '')}</p>
       </div>
-      <p class="text-base text-gray-750 mt-5 leading-relaxed">${pickLang(node.role, node.role || '')}</p>
+      <p class="text-lg text-gray-700 mt-5 leading-relaxed">${pickLang(node.role, node.role || '')}</p>
     </div>
   `).join('');
 
@@ -75,36 +75,37 @@ function tabEstructura(govT) {
 
   const actorCardsHtml = actorCards.map(card => {
     const isOrange = card.tone === 'orange';
-    const accentBorder = isOrange ? 'border-l-4 border-l-eu-orange' : 'border-l-4 border-l-eu-blue';
-    const iconColor = isOrange ? 'text-eu-orange' : 'text-eu-blue';
-    const iconBg = isOrange ? 'bg-eu-orange/10' : 'bg-eu-blue/10';
+    // CEICE = Track B (orange), UVEG = Track A (blue) — mismo código de color que Dual Track
+    const headerBg  = isOrange ? 'bg-eu-orange' : 'bg-eu-blue';
+    const bodyBg    = isOrange ? 'rgb(255 244 225/.6)' : 'rgb(86 32 246/.07)';
+    const alertText = isOrange ? 'text-eu-orange' : 'text-eu-blue';
 
     const rolesHtml = (Array.isArray(card.roles) ? card.roles : []).map(item => `
-      <div class="flex items-start gap-4 text-base">
+      <div class="flex items-start gap-4">
         <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-          <i data-lucide="${item.icon || 'globe'}" class="w-4 h-4 text-eu-blue"></i>
+          <i data-lucide="${item.icon || 'globe'}" class="w-4 h-4 ${alertText}"></i>
         </div>
         <div>
           <span class="font-extrabold text-eu-text text-lg">${pickLang(item.label, item.label || '')}: </span>
-          <span class="text-gray-705 text-base md:text-lg leading-relaxed">${pickLang(item.desc, item.desc || '')}</span>
+          <span class="text-lg text-gray-700 leading-relaxed">${pickLang(item.desc, item.desc || '')}</span>
         </div>
       </div>
     `).join('');
 
     return `
-      <div class="rd-card-gov-beige rd-card-gov-interactive ${accentBorder} rd-pad flex flex-col justify-between h-full group">
-        <div>
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-14 h-14 ${iconBg} rounded-2xl flex items-center justify-center shrink-0 rd-icon-circle-gov">
-              <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 ${iconColor}"></i>
+      <div class="rd-card border-none overflow-hidden shadow-lg h-full flex flex-col rd-card-hover cursor-default" style="background:${bodyBg}">
+        <div class="${headerBg} text-white px-6 py-6 shrink-0">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center shrink-0">
+              <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 text-white"></i>
             </div>
             <div>
-              <h3 class="text-3xl font-extrabold text-eu-purple leading-snug">${pickLang(card.title, card.title || '')}</h3>
-              <p class="text-sm ${iconColor} font-extrabold uppercase tracking-wider mt-1">${pickLang(card.subtitle, card.subtitle || '')}</p>
+              <h3 class="font-extrabold text-2xl leading-tight text-white">${pickLang(card.title, card.title || '')}</h3>
+              <p class="text-white/80 text-sm mt-0.5">${pickLang(card.subtitle, card.subtitle || '')}</p>
             </div>
           </div>
-          <div class="space-y-5 mt-6">${rolesHtml}</div>
         </div>
+        <div class="rd-pad space-y-5">${rolesHtml}</div>
       </div>
     `;
   }).join('');
@@ -133,7 +134,7 @@ function tabEstructura(govT) {
             </div>
             <span class="text-3xl font-extrabold ${body.iconColor || 'text-eu-blue'} opacity-25 select-none">${body.abbr || ''}</span>
           </div>
-          <p class="text-base text-gray-750 mb-5 leading-relaxed">${pickLang(body.desc, body.desc || '')}</p>
+          <p class="text-lg text-gray-700 mb-5 leading-relaxed">${pickLang(body.desc, body.desc || '')}</p>
         </div>
         <div class="space-y-2.5 pt-4 border-t border-eu-blue/10">
           ${metaRow(formalLabels.members || { es: 'Miembros', en: 'Members', va: 'Membres' }, body.members)}
@@ -145,46 +146,40 @@ function tabEstructura(govT) {
   }).join('');
 
   const standardCardsHtml = (Array.isArray(standardsBlock.cards) ? standardsBlock.cards : [
-    { icon: 'shield-check', tone: 'blue', title: s.iso21001Title, desc: s.iso21001Desc },
-    { icon: 'globe', tone: 'orange', title: s.enredTitle, desc: s.enredDesc },
-  ]).map(card => {
-    const isOrange = card.tone === 'orange';
-    const iconColor = isOrange ? 'text-eu-orange' : 'text-eu-blue';
-    const accentBorder = isOrange ? 'border-l-4 border-l-eu-orange' : 'border-l-4 border-l-eu-blue';
-    const iconBg = 'bg-white';
-    return `
-      <div class="rd-card-gov-beige rd-card-gov-interactive ${accentBorder} rd-pad flex gap-6 items-start group">
-        <div class="w-14 h-14 rounded-2xl ${iconBg} flex items-center justify-center shrink-0 shadow-sm rd-icon-circle-gov">
-          <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 ${iconColor}"></i>
-        </div>
-        <div>
-          <h3 class="font-extrabold text-eu-purple mb-3 text-2xl leading-snug">${pickLang(card.title, card.title || '')}</h3>
-          <p class="text-base md:text-lg text-gray-700 leading-relaxed">${pickLang(card.desc, card.desc || '')}</p>
-        </div>
+    { icon: 'shield-check', title: s.iso21001Title, desc: s.iso21001Desc },
+    { icon: 'globe',        title: s.enredTitle,    desc: s.enredDesc    },
+  ]).map(card => `
+    <div class="rd-card rd-card-edge rd-pad flex gap-6 items-start cursor-default group" style="background:rgb(73 24 173/.08)">
+      <div class="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+        <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 text-eu-purple"></i>
       </div>
-    `;
-  }).join('');
+      <div>
+        <h3 class="font-extrabold text-eu-purple mb-3 text-2xl leading-snug">${pickLang(card.title, card.title || '')}</h3>
+        <p class="text-lg text-gray-700 leading-relaxed">${pickLang(card.desc, card.desc || '')}</p>
+      </div>
+    </div>
+  `).join('');
 
   return `
     <div class="space-y-12">
       ${hubBlock.visible !== false ? `
       <!-- Hub -->
       <div class="rd-card rd-card-accent rd-pad bg-white rd-card-edge group">
-        <h2 class="text-2xl font-extrabold text-eu-purple mb-3 flex items-center gap-4">
+        <h2 class="font-extrabold text-eu-purple mb-3 flex items-center gap-4">
           <div class="w-14 h-14 rounded-full bg-eu-yellow flex items-center justify-center text-eu-blue shrink-0 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
             <i data-lucide="globe" class="w-7 h-7"></i>
           </div>
           ${pickLang(hubBlock.title, s.hubTitle || '')}
         </h2>
-        <p class="text-base text-gray-600 mb-8 max-w-3xl leading-relaxed">${pickLang(hubBlock.description, s.hubDesc || '')}</p>
+        <p class="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">${pickLang(hubBlock.description, s.hubDesc || '')}</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${nodesHtml}</div>
       </div>` : ''}
 
       ${actorsBlock.visible !== false ? `
       <!-- Actores principales -->
       <div>
-        <h2 class="text-2xl font-extrabold text-eu-purple mb-3">${pickLang(actorsBlock.title, s.actorsTitle || '')}</h2>
-        <p class="text-base text-gray-600 mb-8 max-w-3xl leading-relaxed">${pickLang(actorsBlock.description, s.actorsDesc || '')}</p>
+        <h2 class="font-extrabold text-eu-purple mb-3">${pickLang(actorsBlock.title, s.actorsTitle || '')}</h2>
+        <p class="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">${pickLang(actorsBlock.description, s.actorsDesc || '')}</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           ${actorCardsHtml}
         </div>
@@ -193,8 +188,8 @@ function tabEstructura(govT) {
       ${formalBodiesBlock.visible !== false ? `
       <!-- Órganos formales -->
       <div>
-        <h2 class="text-2xl font-extrabold text-eu-purple mb-3">${pickLang(formalBodiesBlock.title, s.bodiesTitle || '')}</h2>
-        <p class="text-base text-gray-600 mb-8 max-w-3xl leading-relaxed">${pickLang(formalBodiesBlock.description, s.bodiesDesc || '')}</p>
+        <h2 class="font-extrabold text-eu-purple mb-3">${pickLang(formalBodiesBlock.title, s.bodiesTitle || '')}</h2>
+        <p class="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">${pickLang(formalBodiesBlock.description, s.bodiesDesc || '')}</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">${bodiesHtml}</div>
       </div>` : ''}
 
@@ -219,12 +214,12 @@ function tabDualTrack(govT) {
 
   const fl = dualTrackBlock.fieldLabels || {};
 
-  function trackBlock(cmsTrack, colorClass, borderClass, accentClass, alertIcon, alertBg, alertText) {
+  function trackBlock(cmsTrack, colorClass, accentClass, alertIcon, alertText, bodyBg, keyLimitBg) {
     const bodiesHtml = (cmsTrack.activeBodies || []).map(b =>
       `<span class="text-sm ${accentClass} font-bold px-3.5 py-1.5 rounded-full">${pickLang(b.label)}</span>`
     ).join('');
     return `
-      <div class="rd-card border-none bg-white overflow-hidden shadow-lg h-full flex flex-col">
+      <div class="rd-card border-none overflow-hidden shadow-lg h-full flex flex-col rd-card-hover cursor-default" style="background:${bodyBg}">
         <div class="${colorClass} text-white px-6 py-6 shrink-0">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center font-extrabold text-xl shrink-0">${cmsTrack.letter || ''}</div>
@@ -237,24 +232,24 @@ function tabDualTrack(govT) {
         <div class="p-8 space-y-6 flex-1 flex flex-col justify-between">
           <div class="space-y-6">
             <div>
-              <p class="text-[11px] font-extrabold uppercase tracking-widest ${alertText} mb-1.5">${pickLang(fl.scope)}</p>
-              <p class="text-base text-gray-700 leading-relaxed">${pickLang(cmsTrack.scope?.text)}</p>
+              <h4 class="text-xl font-extrabold text-eu-purple mb-2">${pickLang(fl.scope)}</h4>
+              <p class="text-lg text-gray-700 leading-relaxed">${pickLang(cmsTrack.scope?.text)}</p>
             </div>
             <div>
-              <p class="text-[11px] font-extrabold uppercase tracking-widest ${alertText} mb-1.5">${pickLang(fl.normativeFramework)}</p>
-              <p class="text-base text-gray-700 leading-relaxed">${pickLang(cmsTrack.normativeFramework?.text)}</p>
+              <h4 class="text-xl font-extrabold text-eu-purple mb-2">${pickLang(fl.normativeFramework)}</h4>
+              <p class="text-lg text-gray-700 leading-relaxed">${pickLang(cmsTrack.normativeFramework?.text)}</p>
             </div>
           </div>
-          <div class="space-y-6 mt-6 pt-6 border-t border-eu-blue/5">
+          <div class="space-y-6 mt-6 pt-6 border-t border-eu-blue/10">
             <div>
-              <p class="text-[11px] font-extrabold uppercase tracking-widest ${alertText} mb-2">${pickLang(fl.keyLimit)}</p>
-              <div class="flex items-start gap-3 ${alertBg} rounded-xl p-4">
+              <h4 class="text-xl font-extrabold text-eu-purple mb-3">${pickLang(fl.keyLimit)}</h4>
+              <div class="flex items-start gap-3 rounded-2xl p-5 transition-all duration-300 hover:shadow-md hover:scale-[1.015] cursor-default" style="background:${keyLimitBg}">
                 <i data-lucide="${alertIcon}" class="w-5 h-5 ${alertText} shrink-0 mt-0.5"></i>
-                <p class="text-sm ${alertText} font-semibold leading-relaxed">${pickLang(cmsTrack.keyLimit?.text)}</p>
+                <p class="text-base ${alertText} font-semibold leading-relaxed">${pickLang(cmsTrack.keyLimit?.text)}</p>
               </div>
             </div>
             <div>
-              <p class="text-[11px] font-extrabold uppercase tracking-widest ${alertText} mb-2.5">${pickLang(fl.activeBodies)}</p>
+              <h4 class="text-xl font-extrabold text-eu-purple mb-3">${pickLang(fl.activeBodies)}</h4>
               <div class="flex flex-wrap gap-2">${bodiesHtml}</div>
             </div>
           </div>
@@ -265,38 +260,38 @@ function tabDualTrack(govT) {
 
   const cmsDataArch = dualTrackBlock.dataArch || {};
   const zoneStyles = {
-    public:  { dot: 'bg-eu-blue',    zone: 'bg-eu-blue/5 border border-eu-blue/10 rounded-2xl p-6',     title: 'text-eu-blue'    },
-    private: { dot: 'bg-eu-purple', zone: 'bg-eu-purple/5 border border-eu-purple/10 rounded-2xl p-6', title: 'text-eu-purple' },
+    public:  { dot: 'bg-eu-blue',   zone: 'rd-card-edge bg-eu-blue/5 border border-eu-blue/10 rounded-2xl p-6',     h4: 'text-eu-blue'   },
+    private: { dot: 'bg-eu-purple', zone: 'rd-card-edge bg-eu-purple/5 border border-eu-purple/10 rounded-2xl p-6', h4: 'text-eu-purple' },
   };
   const dataArchZonesHtml = (cmsDataArch.zones || []).map(zone => {
     const st = zoneStyles[zone.id] || zoneStyles.public;
     const itemsHtml = (zone.items || []).map(item =>
-      `<li class="flex items-center gap-2.5 text-sm text-gray-700"><span class="w-1.5 h-1.5 rounded-full ${st.dot} shrink-0"></span>${pickLang(item)}</li>`
+      `<li class="flex items-center gap-2.5 text-base text-gray-700"><span class="w-1.5 h-1.5 rounded-full ${st.dot} shrink-0"></span>${pickLang(item)}</li>`
     ).join('');
     return `
       <div class="${st.zone}">
-        <p class="text-xs font-extrabold uppercase ${st.title} tracking-wider mb-2">${pickLang(zone.title)}</p>
-        <p class="text-base text-gray-750 mb-4 leading-relaxed">${pickLang(zone.description)}</p>
+        <h4 class="text-xl font-extrabold ${st.h4} mb-2">${pickLang(zone.title)}</h4>
+        <p class="text-lg text-gray-700 mb-4 leading-relaxed">${pickLang(zone.description)}</p>
         <ul class="space-y-2">${itemsHtml}</ul>
       </div>`;
   }).join('');
 
   const cmsRB = dualTrackBlock.responsibilityBoundaries || {};
   const responsibilityHtml = (cmsRB.items || []).map(item => `
-    <div class="rd-card-gov-beige rd-card-gov-static-hover p-6 h-full flex flex-col justify-between group">
+    <div class="rd-card rd-card-edge p-6 h-full flex flex-col justify-between" style="background:rgb(73 24 173 / .08)">
       <div>
-        <p class="text-xs font-extrabold uppercase tracking-widest text-eu-blue mb-2.5">${pickLang(item.owner)}</p>
-        <p class="text-base text-gray-705 leading-relaxed">${pickLang(item.scope)}</p>
+        <h4 class="text-xl font-extrabold text-eu-purple mb-2">${pickLang(item.owner)}</h4>
+        <p class="text-lg text-gray-700 leading-relaxed">${pickLang(item.scope)}</p>
       </div>
     </div>
   `).join('');
 
   const cmsAgreement = dualTrackBlock.agreement || {};
   const agreementItemsHtml = (cmsAgreement.items || []).map(c => `
-    <div class="rd-card-gov-beige rd-card-gov-static-hover p-6 h-full flex flex-col justify-between group">
+    <div class="rd-card-gov-beige rd-card-edge p-6 h-full flex flex-col justify-between">
       <div>
-        <p class="font-extrabold text-eu-teal text-lg mb-2.5 leading-snug">${pickLang(c.title)}</p>
-        <p class="text-sm text-gray-700 leading-relaxed">${pickLang(c.desc)}</p>
+        <h4 class="text-xl font-extrabold text-eu-purple mb-2">${pickLang(c.title)}</h4>
+        <p class="text-lg text-gray-700 leading-relaxed">${pickLang(c.desc)}</p>
       </div>
     </div>
   `).join('');
@@ -305,52 +300,52 @@ function tabDualTrack(govT) {
     <div class="space-y-12">
       ${dualTrackVisible ? `
       <div>
-        <h2 class="text-2xl font-extrabold text-eu-purple mb-3">${pickLang(dualTrackBlock.title)}</h2>
-        <p class="text-base text-gray-600 mb-8 leading-relaxed">${pickLang(dualTrackBlock.description)}</p>
+        <h2 class="font-extrabold text-eu-purple mb-3">${pickLang(dualTrackBlock.title)}</h2>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${pickLang(dualTrackBlock.description)}</p>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          ${trackAVisible ? trackBlock(tracksById['track-a'], 'bg-eu-blue',   'border-eu-blue',   'bg-eu-blue/10 text-eu-blue',   'alert-circle',  'bg-blue-50',       'text-eu-blue'  ) : ''}
-          ${trackBVisible ? trackBlock(tracksById['track-b'], 'bg-eu-orange',  'border-eu-orange', 'bg-eu-orange/10 text-eu-orange','check-circle',  'bg-eu-yellow/60',  'text-eu-orange') : ''}
+          ${trackAVisible ? trackBlock(tracksById['track-a'], 'bg-eu-blue',   'bg-eu-blue/10 text-eu-blue',   'alert-circle',  'text-eu-blue',   'rgb(86 32 246/.07)',   'rgb(86 32 246/.12)'  ) : ''}
+          ${trackBVisible ? trackBlock(tracksById['track-b'], 'bg-eu-orange', 'bg-eu-orange/10 text-eu-orange','check-circle',  'text-eu-orange', 'rgb(255 244 225/.6)',  'rgb(255 163 47/.15)' ) : ''}
         </div>
       </div>` : ''}
       <div>
 
-        <!-- Zonas de datos -->
+        <!-- Arquitectura de Datos -->
         ${cmsDataArch.visible !== false ? `
-        <div class="rd-card rd-pad bg-white mb-8">
+        <div class="rd-card rd-card-accent rd-card-edge rd-pad mb-8 group" style="background:rgb(86 32 246/.09)">
           <h3 class="text-2xl font-extrabold text-eu-purple mb-4 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-eu-yellow flex items-center justify-center text-eu-blue shrink-0">
-              <i data-lucide="shield-check" class="w-5 h-5"></i>
+            <div class="w-12 h-12 rounded-full flex items-center justify-center text-eu-blue shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:rgba(255,255,255,0.85)">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
             </div>
             ${pickLang(cmsDataArch.title)}
           </h3>
-          <p class="text-base text-gray-600 mb-6 leading-relaxed">${pickLang(cmsDataArch.description)}</p>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(cmsDataArch.description)}</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">${dataArchZonesHtml}</div>
         </div>` : ''}
 
-        <!-- Responsabilidad -->
+        <!-- Datos y límites de responsabilidad -->
         ${cmsRB.visible !== false ? `
-        <div class="rd-card rd-pad bg-white mb-8">
+        <div class="rd-card rd-card-edge rd-pad mb-8 group" style="background:#FFF4E1">
           <h3 class="text-2xl font-extrabold text-eu-purple mb-2 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-eu-yellow flex items-center justify-center text-eu-orange shrink-0">
-              <i data-lucide="shield" class="w-5 h-5"></i>
+            <div class="w-12 h-12 rounded-full flex items-center justify-center text-eu-purple shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:rgba(255,255,255,0.85)">
+              <i data-lucide="shield" class="w-6 h-6"></i>
             </div>
             ${pickLang(cmsRB.title)}
           </h3>
-          <p class="text-base text-gray-600 mb-6 leading-relaxed">${pickLang(cmsRB.description)}</p>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(cmsRB.description)}</p>
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">${responsibilityHtml}</div>
         </div>` : ''}
 
         <!-- Acuerdo de Colaboración -->
         ${cmsAgreement.visible !== false ? `
-        <div class="rd-card rd-pad bg-eu-yellow/30 border border-eu-yellow/50">
+        <div class="rd-card rd-card-edge rd-pad group" style="background:rgb(86 32 246/.09)">
           <h3 class="text-2xl font-extrabold text-eu-purple mb-3 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-eu-yellow flex items-center justify-center text-eu-teal shrink-0">
-              <i data-lucide="file-signature" class="w-5 h-5"></i>
+            <div class="w-12 h-12 rounded-full flex items-center justify-center text-eu-purple shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:rgba(255,255,255,0.85)">
+              <i data-lucide="file-signature" class="w-6 h-6"></i>
             </div>
             ${pickLang(cmsAgreement.title)}
           </h3>
-          <p class="text-base text-gray-600 mb-6 leading-relaxed">${pickLang(cmsAgreement.description)}</p>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(cmsAgreement.description)}</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">${agreementItemsHtml}</div>
         </div>` : ''}
       </div>
@@ -373,30 +368,30 @@ function tabLbd(govT) {
   const scalabilityPhases = Array.isArray(scalabilityBlock.phases) ? scalabilityBlock.phases : null;
 
   const phaseColors = [
-    ['bg-eu-orange', 'border-eu-orange'],
     ['bg-eu-blue', 'border-eu-blue'],
-    ['bg-eu-teal', 'border-eu-teal'],
+    ['bg-eu-purple', 'border-eu-purple'],
+    ['bg-eu-blue', 'border-eu-blue'],
   ];
 
   const phasesHtml = (cyclePhases || s.phases || []).map((phase, i, arr) => {
     const [color, border] = phaseColors[i % phaseColors.length];
     const outputsHtml = (phase.outputs || []).map(o => `
       <span class="flex items-center gap-1.5 text-sm bg-eu-blue/5 border border-eu-blue/10 px-3.5 py-1.5 rounded-full text-gray-750 font-bold">
-        <i data-lucide="check-circle" class="w-4 h-4 text-eu-teal shrink-0"></i>${pickLang(o.label, o)}
+        <i data-lucide="check-circle" class="w-4 h-4 text-eu-blue shrink-0"></i>${pickLang(o.label, o)}
       </span>`).join('');
     return `
       <div class="relative">
-        <div class="flex flex-col md:flex-row gap-6 p-8 rd-card-gov-beige rd-card-gov-static-hover mb-4 border-l-4 ${border} group">
+        <div class="flex flex-col md:flex-row gap-6 p-8 rd-card rd-card-grad-violet rd-card-edge mb-4 border-l-4 ${border} group">
           <div class="w-12 h-12 rounded-full ${color} text-white flex items-center justify-center font-extrabold text-xl shrink-0 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">${phase.step}</div>
           <div class="flex-1 min-w-0">
             <div class="flex flex-wrap items-center gap-3 mb-2">
               <span class="text-xs font-extrabold uppercase px-2.5 py-1 rounded-full ${color} text-white">${pickLang(phase.track, phase.track || '')}</span>
-              <span class="text-xs text-gray-400">·</span>
+              <span class="text-xs text-gray-500">·</span>
               <span class="text-sm font-bold text-eu-purple">${pickLang(phase.platform, phase.platform || '')}</span>
             </div>
             <h4 class="text-2xl font-extrabold text-eu-text mb-2">${pickLang(phase.title, phase.title || '')}</h4>
-            <p class="text-sm text-gray-500 font-bold mb-3 flex items-center gap-1.5"><i data-lucide="user" class="w-3.5 h-3.5"></i> ${pickLang(phase.actor, phase.actor || '')}</p>
-            <p class="text-base text-gray-700 mb-4 leading-relaxed">${pickLang(phase.description, phase.desc || '')}</p>
+            <p class="text-sm text-gray-600 font-bold mb-3 flex items-center gap-1.5"><i data-lucide="user" class="w-3.5 h-3.5"></i> ${pickLang(phase.actor, phase.actor || '')}</p>
+            <p class="text-lg text-gray-700 mb-4 leading-relaxed">${pickLang(phase.description, phase.desc || '')}</p>
             <div class="flex flex-wrap gap-2">${outputsHtml}</div>
           </div>
         </div>
@@ -406,32 +401,32 @@ function tabLbd(govT) {
   }).join('');
 
   const flowStepsHtml = (operatingFlowSteps || s.operatingFlow?.steps || []).map((step, i) => `
-    <div class="rd-card-gov-beige rd-card-gov-static-hover p-6 flex flex-col h-full group">
+    <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col h-full group">
       <div class="w-8 h-8 rounded-lg bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm mb-4 shrink-0 shadow-sm rd-icon-circle-gov">${i + 1}</div>
       <p class="text-base font-extrabold text-eu-text mb-2.5 leading-snug">${pickLang(step.title, step.title || '')}</p>
-      <p class="text-sm text-gray-705 leading-relaxed mt-auto">${pickLang(step.description, step.desc || '')}</p>
+      <p class="text-base text-gray-700 leading-relaxed mt-auto">${pickLang(step.description, step.desc || '')}</p>
     </div>
   `).join('');
 
   const platformTones = [
-    ['bg-eu-orange', 'border-eu-orange', 'text-eu-orange'],
     ['bg-eu-blue', 'border-eu-blue', 'text-eu-blue'],
-    ['bg-eu-teal', 'border-eu-teal', 'text-eu-teal'],
+    ['bg-eu-purple', 'border-eu-purple', 'text-eu-purple'],
+    ['bg-eu-blue', 'border-eu-blue', 'text-eu-blue'],
   ];
 
   const platformsHtml = (platformCards || s.platforms || []).map((p, i, arr) => {
     const [color, border, text] = platformTones[i % platformTones.length];
     return `
     <div class="relative h-full">
-      <div class="rd-card-gov-beige rd-card-gov-static-hover p-6 border-l-4 ${border} h-full flex flex-col group">
+      <div class="rd-card rd-card-grad-violet rd-card-edge p-6 border-l-4 ${border} h-full flex flex-col group">
         <div class="mb-3">
           <span class="inline-block text-xs font-extrabold uppercase px-2.5 py-1 rounded-full ${color} text-white">${pickLang(p.track, p.track || '')}</span>
         </div>
         <p class="font-extrabold text-2xl text-eu-text leading-snug mb-1">${pickLang(p.name, p.name || '')}</p>
-        <p class="text-sm text-gray-400 mb-2 font-bold">${pickLang(p.tech, p.tech || '')}</p>
+        <p class="text-sm text-gray-500 mb-2 font-bold">${pickLang(p.tech, p.tech || '')}</p>
         <p class="text-sm font-extrabold uppercase ${text} mb-3 tracking-wider">${pickLang(p.role, p.role || '')}</p>
-        <p class="text-base text-gray-705 mb-4 leading-relaxed">${pickLang(p.description, p.desc || '')}</p>
-        <p class="text-xs text-gray-500 font-bold bg-eu-blue/5 rounded-full px-3 py-1.5 mt-auto flex items-center gap-1.5 w-fit">
+        <p class="text-lg text-gray-700 mb-4 leading-relaxed">${pickLang(p.description, p.desc || '')}</p>
+        <p class="text-xs text-gray-600 font-bold bg-eu-blue/5 rounded-full px-3 py-1.5 mt-auto flex items-center gap-1.5 w-fit">
           <i data-lucide="user" class="w-3.5 h-3.5"></i> ${pickLang(p.owner, p.owner || '')}
         </p>
       </div>
@@ -442,21 +437,21 @@ function tabLbd(govT) {
 
   const scaleTones = [
     'bg-eu-blue',
-    'bg-eu-teal',
-    'bg-purple-600',
+    'bg-eu-purple',
+    'bg-eu-blue',
   ];
   const scaleHtml = (scalabilityPhases || []).map((f, i) => {
     const color = scaleTones[i % scaleTones.length];
     return `
-    <div class="rd-card-gov-beige rd-card-gov-static-hover p-6 flex flex-col h-full group">
+    <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col h-full group">
       <div class="mb-3 shrink-0">
         <span class="inline-block px-3 py-1 rounded-full text-white text-xs font-extrabold uppercase ${color}">${pickLang(f.label)}</span>
       </div>
       <p class="font-extrabold text-eu-purple text-lg mb-0.5 leading-snug">${pickLang(f.range)}</p>
-      <p class="text-sm text-gray-400 font-bold mb-4">${f.period || ''}</p>
+      <p class="text-sm text-gray-500 font-bold mb-4">${f.period || ''}</p>
       <ul class="space-y-2.5 mt-2">
         ${(f.items || []).map(item => `
-          <li class="flex items-start gap-2.5 text-sm text-gray-700 leading-relaxed">
+          <li class="flex items-start gap-2.5 text-base text-gray-700 leading-relaxed">
             <span class="w-1.5 h-1.5 rounded-full mt-2 shrink-0 ${color}"></span>
             <span>${pickLang(item.label)}</span>
           </li>`).join('')}
@@ -468,50 +463,64 @@ function tabLbd(govT) {
     <div class="space-y-12">
       <div>
         ${lbdBlock.visible !== false ? `
-        <h2 class="text-2xl font-extrabold text-eu-purple mb-3">${pickLang(lbdBlock.title, s.title || '')}</h2>
-        <p class="text-base text-gray-600 mb-4 max-w-3xl leading-relaxed">${pickLang(lbdBlock.description, s.intro_desc || '')}</p>
-        <p class="text-sm text-gray-500 mb-8 max-w-3xl leading-relaxed">${pickLang(lbdBlock.diginetDescription, s.diginetDesc || '')}</p>
+        <h2 class="font-extrabold text-eu-purple mb-3">${pickLang(lbdBlock.title, s.title || '')}</h2>
+        <p class="text-lg text-gray-600 mb-4 leading-relaxed">${pickLang(lbdBlock.description, s.intro_desc || '')}</p>
+        <p class="text-base text-gray-500 mb-8 leading-relaxed">${pickLang(lbdBlock.diginetDescription, s.diginetDesc || '')}</p>
         ` : ''}
 
         <!-- Fases LbD -->
         ${cycleBlock.visible !== false ? `
-        <div class="rd-card rd-pad bg-white mb-8">
-          <h3 class="text-2xl font-extrabold text-eu-purple mb-6">${pickLang(cycleBlock.title, s.cycleTitle || '')}</h3>
-          <div class="space-y-0">${phasesHtml}</div>
+        <div class="rd-card overflow-hidden mb-8">
+          <div class="px-10 py-6" style="background:#5222B0">
+            <h3 class="text-2xl font-extrabold text-white">${pickLang(cycleBlock.title, s.cycleTitle || '')}</h3>
+          </div>
+          <div class="p-8 space-y-0" style="background:#FFF4E1">${phasesHtml}</div>
         </div>` : ''}
 
         <!-- Flujo operativo -->
         ${operatingFlowBlock.visible !== false ? `
-        <div class="rd-card rd-pad mb-8">
-          <h3 class="text-2xl font-extrabold text-eu-purple mb-2 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-eu-yellow flex items-center justify-center text-eu-teal shrink-0">
-              <i data-lucide="arrow-right" class="w-5 h-5"></i>
-            </div>
-            ${pickLang(operatingFlowBlock.title, s.operatingFlow?.title || '')}
-          </h3>
-          <p class="text-base text-gray-600 mb-6 leading-relaxed">${pickLang(operatingFlowBlock.description, s.operatingFlow?.desc || '')}</p>
-          <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-4">${flowStepsHtml}</div>
+        <div class="rd-card overflow-hidden mb-8">
+          <div class="px-10 py-6" style="background:#5222B0">
+            <h3 class="text-2xl font-extrabold text-white flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-white shrink-0" style="background:rgba(255,255,255,0.2)">
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+              </div>
+              ${pickLang(operatingFlowBlock.title, s.operatingFlow?.title || '')}
+            </h3>
+          </div>
+          <div class="p-8" style="background:#FFF4E1">
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(operatingFlowBlock.description, s.operatingFlow?.desc || '')}</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-4">${flowStepsHtml}</div>
+          </div>
         </div>` : ''}
 
         <!-- Plataformas -->
         ${platformsBlock.visible !== false ? `
-        <div class="rd-card rd-pad mb-8">
-          <h3 class="text-2xl font-extrabold text-eu-purple mb-2">${pickLang(platformsBlock.title, s.platformsTitle || '')}</h3>
-          <p class="text-base text-gray-600 mb-6 leading-relaxed">${pickLang(platformsBlock.description, s.platformsDesc || '')}</p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${platformsHtml}</div>
+        <div class="rd-card overflow-hidden mb-8">
+          <div class="px-10 py-6" style="background:#5222B0">
+            <h3 class="text-2xl font-extrabold text-white">${pickLang(platformsBlock.title, s.platformsTitle || '')}</h3>
+          </div>
+          <div class="p-8" style="background:#FFF4E1">
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(platformsBlock.description, s.platformsDesc || '')}</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${platformsHtml}</div>
+          </div>
         </div>` : ''}
 
         <!-- Escalabilidad -->
         ${scalabilityBlock.visible !== false ? `
-        <div class="rd-card rd-pad">
-          <h3 class="text-2xl font-extrabold text-eu-purple mb-2 flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-eu-yellow flex items-center justify-center text-eu-orange shrink-0">
-              <i data-lucide="zap" class="w-5 h-5"></i>
-            </div>
-            ${pickLang(scalabilityBlock.title)}
-          </h3>
-          <p class="text-base text-gray-600 mb-6 leading-relaxed">${pickLang(scalabilityBlock.description)}</p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${scaleHtml}</div>
+        <div class="rd-card overflow-hidden">
+          <div class="px-10 py-6" style="background:#5222B0">
+            <h3 class="text-2xl font-extrabold text-white flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center text-white shrink-0" style="background:rgba(255,255,255,0.2)">
+                <i data-lucide="zap" class="w-5 h-5"></i>
+              </div>
+              ${pickLang(scalabilityBlock.title)}
+            </h3>
+          </div>
+          <div class="p-8" style="background:#FFF4E1">
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(scalabilityBlock.description)}</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${scaleHtml}</div>
+          </div>
         </div>` : ''}
       </div>
     </div>
@@ -589,31 +598,38 @@ function tabDocumentos(govT) {
       const hasUrl = doc.url && doc.url.trim();
       const linkText = pickLang(doc.linkText, doc.linkText?.es || 'Ver');
       return `
-        <div class="rd-card-gov-beige rd-card-gov-interactive p-6 flex flex-col justify-between h-full group">
+        <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col justify-between h-full group">
           <div>
             <div class="flex items-start gap-4 mb-4">
-              <span class="text-4xl shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">${doc.icon || '📄'}</span>
+              <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff; box-shadow: inset 0 2px 6px rgb(73 24 173 / .08)">
+                <i data-lucide="file-text" class="w-6 h-6" style="color:#4918AD"></i>
+              </div>
               <div class="flex-1 min-w-0">
-                <p class="font-extrabold text-lg md:text-xl text-eu-purple leading-snug break-words mb-2">${doc.title || ''}</p>
-                <div class="flex items-center gap-2 flex-wrap">
-                  <span class="text-xs text-gray-500 font-bold">${formatDocDate(doc.date)}</span>
-                  ${(Array.isArray(doc.types) ? doc.types : []).map(type => `
-                    <span class="text-xs bg-eu-blue/5 border border-eu-blue/10 px-2.5 py-0.5 rounded-full text-eu-purple font-bold">${pickLang(type.label, '')}</span>
-                  `).join('')}
-                  <span class="text-xs font-extrabold px-2.5 py-0.5 rounded-full ${pub ? 'bg-green-50 text-green-700 border border-green-100' : 'bg-gray-50 text-gray-500 border border-gray-100'}">
-                    ${pickLang(pub ? accessLabels.public : accessLabels.partners, pub ? (s.accessPublic || 'Público') : (s.accessPartners || 'Partners'))}
-                  </span>
-                </div>
+                <p class="font-extrabold text-lg md:text-xl text-eu-purple leading-snug break-words mb-1.5">${doc.title || ''}</p>
+                <span class="text-sm text-gray-500 font-bold">${formatDocDate(doc.date)}</span>
               </div>
             </div>
+            <div class="flex items-center gap-2 flex-wrap">
+              ${(Array.isArray(doc.types) ? doc.types : []).map((type, ti) => {
+                const chipStyles = [
+                  'background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.18)',
+                  'background:rgb(73 24 173/.10); color:#4918AD; border:1px solid rgb(73 24 173/.18)',
+                ];
+                return `<span class="text-sm px-3 py-1 rounded-full font-bold" style="${chipStyles[ti % chipStyles.length]}">${pickLang(type.label, '')}</span>`;
+              }).join('')}
+              <span class="text-sm font-extrabold px-3 py-1 rounded-full inline-flex items-center gap-1.5" style="${pub ? 'background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.18)' : 'background:rgb(73 24 173/.08); color:#4918AD; border:1px solid rgb(73 24 173/.15)'}">
+                <i data-lucide="${pub ? 'globe' : 'lock'}" class="w-3.5 h-3.5 shrink-0"></i>
+                ${pickLang(pub ? accessLabels.public : accessLabels.partners, pub ? (s.accessPublic || 'Público') : (s.accessPartners || 'Partners')).replace(/[\u{1F300}-\u{1FAFF}]/gu, '').trim()}
+              </span>
+            </div>
           </div>
-          <div class="mt-4 pt-4 border-t border-eu-blue/10">
+          <div class="mt-5 pt-4 border-t border-eu-blue/10">
             ${hasUrl ? `
             <a href="${doc.url}" ${doc.external ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-base font-bold text-eu-blue hover:text-eu-purple transition-colors duration-300">
               <span>${linkText}</span>
               <i data-lucide="external-link" class="w-4 h-4"></i>
             </a>
-            ` : '<span class="text-sm font-bold text-gray-400">Sin enlace</span>'}
+            ` : '<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-400"><i data-lucide="minus-circle" class="w-4 h-4"></i>Sin enlace</span>'}
           </div>
         </div>
       `;
@@ -644,14 +660,18 @@ function tabDocumentos(govT) {
   }
 
   return `
-    <div class="rd-card rd-pad bg-white">
+    <div class="rd-card overflow-hidden">
       ${cms.visible !== false ? `
       ${cms.headerVisible !== false ? `
-      <h2 class="text-3xl font-extrabold text-eu-purple mb-2">${pickLang(cms.title, s.title || '')}</h2>
-      <p class="text-base text-gray-600 mb-6 max-w-2xl leading-relaxed">${pickLang(cms.description, s.description || '')}</p>
+      <div class="px-10 py-6" style="background:#5222B0">
+        <h2 class="text-3xl font-extrabold mb-1" style="color:#ffffff">${pickLang(cms.title, s.title || '')}</h2>
+        <p class="text-lg leading-relaxed" style="color:#ffffff">${pickLang(cms.description, s.description || '')}</p>
+      </div>
       ` : ''}
-      <input type="text" id="gov-doc-search" placeholder="Buscar por título, tipo o ID..." class="w-full px-6 py-4 rounded-full border border-eu-blue/15 focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white text-eu-text placeholder-eu-text/40 shadow-sm transition-all text-sm mb-6" />
-      <div id="gov-docs-results">${renderDocs()}</div>
+      <div class="p-8" style="background:#FFF4E1">
+        <input type="text" id="gov-doc-search" placeholder="Buscar por título, tipo o ID..." class="w-full px-6 py-4 rounded-full border border-eu-purple/20 focus:outline-none focus:ring-2 focus:ring-eu-purple focus:border-eu-purple text-eu-text placeholder-eu-text/40 shadow-sm transition-all text-sm mb-6" style="background:#ffffff" />
+        <div id="gov-docs-results">${renderDocs()}</div>
+      </div>
       ` : ''}
     </div>
   `;
@@ -675,12 +695,12 @@ function tabParticipar(govT) {
 
   const stakeholderBenefitsHtml = (hasCms
     ? (cms.stakeholderCard.benefits || []).map(b => `
-    <li class="flex items-start gap-2.5 text-base text-gray-700 leading-relaxed">
-      <i data-lucide="check-circle" class="w-4 h-4 text-eu-orange mt-1 shrink-0"></i>${pickLang(b.text, b.text?.es || '')}
+    <li class="flex items-start gap-2.5 text-lg text-gray-700 leading-relaxed">
+      <i data-lucide="check-circle" class="w-4 h-4 mt-1 shrink-0" style="color:#5620F6"></i>${pickLang(b.text, b.text?.es || '')}
     </li>`).join('')
     : (s.stakeholderBenefits || []).map(a => `
-    <li class="flex items-start gap-2.5 text-base text-gray-700 leading-relaxed">
-      <i data-lucide="check-circle" class="w-4 h-4 text-eu-orange mt-1 shrink-0"></i>${a}
+    <li class="flex items-start gap-2.5 text-lg text-gray-700 leading-relaxed">
+      <i data-lucide="check-circle" class="w-4 h-4 mt-1 shrink-0" style="color:#5620F6"></i>${a}
     </li>`).join('')
   );
 
@@ -695,12 +715,12 @@ function tabParticipar(govT) {
       ];
 
   const consensueGroupsHtml = consensueGroups.map(g => `
-    <div class="bg-eu-blue/5 border border-eu-blue/10 rounded-2xl p-5">
-      <p class="text-sm font-extrabold uppercase text-eu-teal tracking-wider mb-3">${g.who || ''}</p>
+    <div class="rounded-2xl p-5" style="background:rgba(255,244,225,0.7); border:1px solid rgb(73 24 173 / .15)">
+      <p class="text-base font-extrabold uppercase tracking-wider mb-3" style="color:#4918AD">${g.who || ''}</p>
       <ul class="space-y-2.5">
         ${(g.actions || []).map(a => `
-          <li class="flex items-start gap-2.5 text-base text-gray-700 leading-relaxed">
-            <span class="w-1.5 h-1.5 rounded-full bg-eu-teal shrink-0 mt-2"></span>
+          <li class="flex items-start gap-2.5 text-lg text-gray-700 leading-relaxed">
+            <span class="w-1.5 h-1.5 rounded-full shrink-0 mt-2" style="background:#5620F6"></span>
             <span>${a}</span>
           </li>`).join('')}
       </ul>
@@ -757,56 +777,56 @@ function tabParticipar(govT) {
   return `
     <div class="space-y-12">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- Track B – Stakeholder -->
+        <!-- Track B – Stakeholder (beige) -->
         ${(hasCms ? cms.stakeholderCard.visible !== false : true) ? `
-        <div class="rd-card-gov-beige rd-card-gov-interactive rd-pad flex flex-col justify-between h-full group">
+        <div class="rd-card rd-card-edge rd-pad flex flex-col justify-between h-full group" style="background:#FFF4E1">
           <div>
-            <div class="w-14 h-14 bg-eu-orange/10 rounded-2xl flex items-center justify-center mb-6 rd-icon-circle-gov">
-              <i data-lucide="building-2" class="w-6 h-6 text-eu-orange"></i>
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 rd-icon-circle-gov transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
+              <i data-lucide="building-2" class="w-6 h-6" style="color:#5620F6"></i>
             </div>
-            <h2 class="text-3xl font-extrabold text-eu-purple mb-1 leading-snug">${hasCms ? pickLang(cms.stakeholderCard.title, s.stakeholderTitle || '') : (s.stakeholderTitle || '')}</h2>
-            <p class="text-sm font-extrabold uppercase tracking-widest text-eu-orange mb-4">${hasCms ? pickLang(cms.stakeholderCard.subtitle, s.stakeholderSubtitle || '') : (s.stakeholderSubtitle || '')}</p>
-            <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">${hasCms ? pickLang(cms.stakeholderCard.description, s.stakeholderDesc || '') : (s.stakeholderDesc || '')}</p>
-            <div class="bg-eu-yellow/30 border border-eu-yellow/60 rounded-2xl p-6 mb-6">
-              <p class="text-sm font-extrabold text-eu-orange uppercase tracking-wider mb-3">${hasCms ? pickLang(cms.stakeholderCard.benefitsLabel, s.stakeholderBenefitsLabel || '') : (s.stakeholderBenefitsLabel || '')}</p>
+            <h2 class="text-3xl font-extrabold mb-1 leading-snug" style="color:#4918AD">${hasCms ? pickLang(cms.stakeholderCard.title, s.stakeholderTitle || '') : (s.stakeholderTitle || '')}</h2>
+            <p class="text-base font-extrabold uppercase tracking-widest mb-4" style="color:#5620F6">${hasCms ? pickLang(cms.stakeholderCard.subtitle, s.stakeholderSubtitle || '') : (s.stakeholderSubtitle || '')}</p>
+            <p class="text-lg text-gray-700 mb-6 leading-relaxed">${hasCms ? pickLang(cms.stakeholderCard.description, s.stakeholderDesc || '') : (s.stakeholderDesc || '')}</p>
+            <div class="rounded-2xl p-6 mb-6" style="background:rgb(86 32 246/.08); border:1px solid rgb(86 32 246/.18)">
+              <p class="text-base font-extrabold uppercase tracking-wider mb-3" style="color:#4918AD">${hasCms ? pickLang(cms.stakeholderCard.benefitsLabel, s.stakeholderBenefitsLabel || '') : (s.stakeholderBenefitsLabel || '')}</p>
               <ul class="space-y-2.5">${stakeholderBenefitsHtml}</ul>
             </div>
-            <p class="text-xs text-gray-500 mb-6 flex items-start gap-2.5 leading-relaxed">
-              <i data-lucide="alert-circle" class="w-4 h-4 shrink-0 mt-0.5 text-gray-400"></i>
+            <p class="text-base text-gray-600 mb-6 flex items-start gap-2.5 leading-relaxed">
+              <i data-lucide="alert-circle" class="w-4 h-4 shrink-0 mt-1" style="color:#4918AD"></i>
               <span>${hasCms ? pickLang(cms.stakeholderCard.warning, s.stakeholderWarning || '') : (s.stakeholderWarning || '')}</span>
             </p>
           </div>
-          <div class="pt-4 border-t border-eu-blue/5 shrink-0">
+          <div class="pt-4 shrink-0" style="border-top:1px solid rgb(86 32 246/.15)">
             ${(hasCms && stakeBtnUrl !== '#')
-              ? `<a href="${stakeBtnUrl}" ${stakeBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 bg-eu-orange text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-eu-purple transition-all shadow-md">
+              ? `<a href="${stakeBtnUrl}" ${stakeBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#5620F6">
               <span>${pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || '')}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
             </a>`
-              : `<span class="inline-flex items-center gap-2 bg-eu-orange text-white px-6 py-3 rounded-full font-bold text-sm shadow-md">
-              <span>${pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || '')}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
+              : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#5620F6">
+              <span>${pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || '')}</span>
             </span>`
             }
           </div>
         </div>` : ''}
 
-        <!-- ConsensUE -->
+        <!-- ConsensUE (púrpura) -->
         ${(hasCms ? cms.consensueCard.visible !== false : true) ? `
-        <div class="rd-card-gov-beige rd-card-gov-interactive rd-pad flex flex-col justify-between h-full group">
+        <div class="rd-card rd-card-edge rd-pad flex flex-col justify-between h-full group" style="background:rgb(73 24 173 / .08)">
           <div>
-            <div class="w-14 h-14 bg-eu-teal/10 rounded-2xl flex items-center justify-center mb-6 rd-icon-circle-gov">
-              <i data-lucide="users" class="w-6 h-6 text-eu-teal"></i>
+            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 rd-icon-circle-gov transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#FFF4E1">
+              <i data-lucide="users" class="w-6 h-6" style="color:#4918AD"></i>
             </div>
-            <h2 class="text-3xl font-extrabold text-eu-purple mb-1 leading-snug">${hasCms ? pickLang(cms.consensueCard.title, s.consensueTitle || '') : (s.consensueTitle || '')}</h2>
-            <p class="text-sm font-extrabold uppercase tracking-widest text-eu-teal mb-4">${hasCms ? pickLang(cms.consensueCard.subtitle, s.consensueSubtitle || '') : (s.consensueSubtitle || '')}</p>
-            <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">${hasCms ? pickLang(cms.consensueCard.description, s.consensueDesc || '') : (s.consensueDesc || '')}</p>
+            <h2 class="text-3xl font-extrabold mb-1 leading-snug" style="color:#4918AD">${hasCms ? pickLang(cms.consensueCard.title, s.consensueTitle || '') : (s.consensueTitle || '')}</h2>
+            <p class="text-base font-extrabold uppercase tracking-widest mb-4" style="color:#5620F6">${hasCms ? pickLang(cms.consensueCard.subtitle, s.consensueSubtitle || '') : (s.consensueSubtitle || '')}</p>
+            <p class="text-lg text-gray-700 mb-6 leading-relaxed">${hasCms ? pickLang(cms.consensueCard.description, s.consensueDesc || '') : (s.consensueDesc || '')}</p>
             <div class="space-y-4 mb-6">${consensueGroupsHtml}</div>
           </div>
-          <div class="pt-4 border-t border-eu-blue/5 shrink-0">
+          <div class="pt-4 shrink-0" style="border-top:1px solid rgb(73 24 173 / .15)">
             ${(hasCms && consBtnUrl !== '#')
-              ? `<a href="${consBtnUrl}" ${consBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 bg-eu-teal text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-eu-purple transition-all shadow-md">
+              ? `<a href="${consBtnUrl}" ${consBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#4918AD">
               <span>${pickLang(cms.consensueCard.buttonText, s.consensueButton || '')}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
             </a>`
-              : `<span class="inline-flex items-center gap-2 bg-eu-teal text-white px-6 py-3 rounded-full font-bold text-sm shadow-md">
-              <span>${pickLang(cms.consensueCard.buttonText, s.consensueButton || '')}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
+              : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#4918AD">
+              <span>${pickLang(cms.consensueCard.buttonText, s.consensueButton || '')}</span>
             </span>`
             }
           </div>

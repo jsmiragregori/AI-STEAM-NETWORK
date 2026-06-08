@@ -271,7 +271,7 @@ INSTRUCCION_LLM: al terminar una fase → `[~] EN_REVISION`. Tras aprobación hu
 | F3 | Sectores — paleta unificada + iconos beige + legibilidad detalle | `[x] APROBADA` | Cerrado y validado junto con la reestructuración de la brújula sectorial. |
 | F4 | Formación — hero + course cards (a) + tabs | `[x] APROBADA` | commit `3e0cd79` |
 | F5 | Actualidad — news cards (a) | `[x] APROBADA` | commits `7bf4d12` to `9cac6dd` |
-| F6 | Gobernanza — cards + tabs; órganos intactos | `[ ] PENDIENTE` | |
+| F6 | Gobernanza — cards + tabs; órganos intactos | `[~] EN_REVISION` | Estilos regenerados; validación pendiente |
 | F7 | Conocimiento — cards + buscador | `[ ] PENDIENTE` | |
 | F8 | Red — cards socios/stakeholders; hélice intacta | `[ ] PENDIENTE` | |
 | F9 | Marketplace — hero + tabs + filtros | `[ ] PENDIENTE` | |
@@ -515,10 +515,17 @@ COMMIT: `style(global): cierre visual overhaul — modelo AI-STEAM-MIGRATION`
 | CMS | "Últimas contribuciones" eliminada: YAML, loader, admin, validators, data generada | CONTENT `a92af86`, VANILLA `2905c8f` |
 | F4 | Formación: Hero morado/beige, tabs en beige oficial, tarjetas de curso en beige plano al 55% sin acento, acento lateral en skills, aviso de master Solid Violet, Itinerario CEICE estilo Sectores CTA sin flechas | CONTENT `1ac72d1`, VANILLA `3e0cd79` `8d50988` `d6e7361` |
 | F5 | Actualidad / Noticias: Hero con rd-hero-gradient estilo home, primera noticia en morado sólido con acento beige, resto de noticias en beige oficial 55% y fuentes grandes (título 2xl, texto base), barra lateral con eventos en beige 100% y acento lateral, newsletter y social links con rd-hero-gradient e iconos de marca oficiales inline SVG con ancho completo. | VANILLA `7bf4d12` to `9cac6dd` |
+| F6 | Gobernanza: Nav/tabs píldoras (amarillo/morado), Card Principal (Hub Distribuido) con acento borde, acentos limitados a Hub/CEICE/ISO, cards CEICE/UVEG e ISO/ENRED beige 55%→100%, Dual Track ancho completo, CSS compilado. | EN_REVISION — pendiente validación |
 
-### Fase en curso: **F6 — Gobernanza** ⏳ Pendiente de iniciar
+### Fase en curso: **F6 — Gobernanza** 🔄 EN PROGRESO (2026-06-08)
 
-Fase F5 (Actualidad) ha sido completamente aprobada por el responsable (2026-06-08). Se procede a preparar la continuación del plan visual hacia F6.
+Fase F5 (Actualidad) completamente aprobada. F6 en desarrollo:
+- Nav/Tabs: píldoras (text-sm font-bold, amarillo/morado) + iconos Lucide integrados
+- Card Principal (Hub Distribuido): `.rd-card-accent` + `.rd-card-edge` (borde en hover, sin translateY)
+- Acentos laterales: solo en Hub Principal, CEICE & UVEG, ISO & ENRED
+- Tarjetas CEICE/UVEG e ISO/ENRED: beige 55% → beige 100% en hover + elevación
+- Dual Track description: max-w-3xl removido (ancho completo)
+- CSS compilado: `npm run build:css` ejecutado
 
 Claves de F3 (decisión humana 2026-06-05): sectores **UNIFICADOS a paleta corporativa**
 (morado/azul + beige), iconos Lucide en `rd-icon-circle` (= home), detalle expandido con

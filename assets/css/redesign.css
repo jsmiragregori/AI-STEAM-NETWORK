@@ -86,6 +86,12 @@
    siguen respetando reduced-motion. */
 .rd-card-hover, .rd-card-edge { transition-duration: .5s !important; }
 
+/* Card con degradado vertical blanco → violeta suave (#D7C8F3).
+   Reutilizable: cards internas sobre fondo beige. */
+.rd-card-grad-violet {
+  background: linear-gradient(to bottom, #ffffff 0%, #D7C8F3 100%);
+}
+
 /* (b) Card con barra de acento lateral azul */
 .rd-card-accent {
   position: relative;
