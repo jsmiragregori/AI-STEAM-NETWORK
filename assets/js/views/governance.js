@@ -52,7 +52,7 @@ function tabEstructura(govT) {
     ? hubBlock.nodes
     : (s.nodes || []);
   const nodesHtml = hubNodes.map(node => `
-    <div class="rd-card-gov-beige rd-card-gov-static-hover p-6 border-l-4 border-l-eu-blue flex flex-col justify-between h-full group">
+    <div class="rd-card-gov-beige rd-card-gov-static-hover p-6 flex flex-col justify-between h-full group">
       <div>
         <div class="w-12 h-12 rounded-full bg-eu-yellow/60 flex items-center justify-center mb-4 text-eu-blue shadow-inner shrink-0 rd-icon-circle-gov">
           <i data-lucide="${node.icon || 'globe'}" class="w-5 h-5"></i>
@@ -123,10 +123,8 @@ function tabEstructura(govT) {
   }
 
   const bodiesHtml = formalBodies.map(body => {
-    const colorClasses = body.color || 'border-eu-border';
-    const borderCls = colorClasses.split(' ').filter(c => c.startsWith('border')).join(' ');
     return `
-      <div class="rd-card-gov-beige rd-card-gov-static-hover border-l-4 ${borderCls} p-6 flex flex-col justify-between h-full group">
+      <div class="rd-card-gov-beige rd-card-gov-static-hover p-6 flex flex-col justify-between h-full group">
         <div>
           <div class="flex items-start justify-between mb-4">
             <div>
