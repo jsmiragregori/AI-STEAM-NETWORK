@@ -1009,7 +1009,7 @@ function renderTabFilters(tab, items) {
   }).join('');
 
   return `
-    <div class="mt-6 rounded-[2rem] border border-eu-purple/10 p-4 sm:p-5" style="background:#FFF4E1">
+    <div class="mt-6 rounded-[2rem] border border-eu-purple/10 p-4 sm:p-5 rd-card-grad-beige">
       <div class="grid gap-3 sm:grid-cols-[minmax(18rem,1fr)_auto] sm:items-start">
         <label class="block w-full">
           <span class="sr-only">${esc(uiText('search'))}</span>

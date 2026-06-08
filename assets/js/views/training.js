@@ -176,15 +176,17 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
   }).join('') : '';
 
   return `
-    <div class="rd-card-v5 rd-card-v5-hover flex flex-col overflow-hidden">
-      <div class="rd-pad flex-1">
-        <div class="flex items-center justify-between mb-4 gap-2">
+    <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden">
+      <div class="rd-card-mp-ceja">
+        <h3 class="rd-card-mp-title">${course.title}</h3>
+      </div>
+      <div class="p-7 pt-5 flex-1">
+        <div class="flex items-center justify-between mb-4 gap-2 flex-wrap">
           <div class="flex items-center gap-2 flex-wrap">
             ${isMaster ? '<span class="text-xs bg-eu-purple text-white px-2.5 py-0.5 rounded-lg font-bold">Track A</span>' : ''}
           </div>
           ${trShowStatus ? `<button data-filter-status="${course.statusId}" class="text-xs font-bold px-2.5 py-1 rounded-full cursor-pointer transition-all duration-300 ${isStatusActive ? 'shadow-sm' : (TONE_MAP[tone]?.cls || TONE_MAP.neutral.cls)}" ${isStatusActive ? `style="${TONE_MAP[tone]?.activeStyle || TONE_MAP.neutral.activeStyle}"` : ''}>${statusLabel}</button>` : ''}
         </div>
-        <h3 class="font-extrabold text-eu-purple text-lg mb-2 leading-tight">${course.title}</h3>
         <p class="text-base text-eu-text/75 mb-4 leading-relaxed">${course.description}</p>
         <div class="flex flex-wrap gap-3 text-sm text-eu-text/70 mb-4">
           ${course.hours    != null ? `<span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-eu-blue"></i>${course.hours}${trainingT?.courseHours || ''}</span>` : ''}
@@ -212,7 +214,7 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
 
 function renderSkillPanel(theme, icon, title, itemsHtml, gridClass) {
   return `
-    <section class="rd-card rd-card-accent rd-pad relative overflow-hidden bg-white">
+    <section class="rd-card rd-card-accent rd-pad relative overflow-hidden rd-card-grad-beige">
       <div class="flex items-start gap-4 mb-6">
         <div class="rd-icon-circle">
           <i data-lucide="${icon}" class="w-6 h-6 text-eu-blue"></i>
@@ -227,7 +229,7 @@ function renderSkillPanel(theme, icon, title, itemsHtml, gridClass) {
 
 function renderSkillCloudPanel(theme, icon, title, cloudId) {
   return `
-    <section class="rd-card rd-card-accent rd-pad relative overflow-hidden bg-white">
+    <section class="rd-card rd-card-accent rd-pad relative overflow-hidden rd-card-grad-beige">
       <div class="flex items-start gap-4 mb-6">
         <div class="rd-icon-circle">
           <i data-lucide="${icon}" class="w-6 h-6 text-eu-blue"></i>
@@ -243,7 +245,7 @@ function renderSkillCloudPanel(theme, icon, title, cloudId) {
 // ── Path steps ────────────────────────────────────────────────────────────────
 function pathSteps(steps, color) {
   return (steps || []).map((step, i) => `
-    <div class="flex items-center gap-3 bg-white border border-eu-blue/10 rounded-2xl px-4 py-3 shadow-sm hover:border-eu-blue/30 transition-all duration-300">
+    <div class="flex items-center gap-3 rd-card-grad-violet border border-eu-blue/10 rounded-2xl px-4 py-3 shadow-sm hover:border-eu-blue/30 transition-all duration-300">
       <div class="w-6 h-6 rounded-full ${color} text-white text-xs font-bold flex items-center justify-center shrink-0 shadow-inner"><span>${i + 1}</span></div>
       <span class="text-base font-semibold text-eu-text leading-tight">${step}</span>
     </div>`).join('');
@@ -313,7 +315,7 @@ function renderCourseGridContent(tab, allCourses, trainingT, courseTags, emptyMe
         ${paginated.map(c => courseCard(c, trainingT, isMaster, courseTags, tab, filters)).join('')}
       </div>
       ${paginationHtml}` : `
-      <div class="rd-card rd-pad text-center bg-white">
+      <div class="rd-card rd-pad text-center rd-card-grad-beige">
         <i data-lucide="inbox" class="w-12 h-12 text-eu-blue/50 mx-auto mb-4"></i>
         <p class="text-eu-text/80 text-base font-semibold">${pickLang(emptyMessage, 'No hay cursos disponibles.')}</p>
       </div>`}`;

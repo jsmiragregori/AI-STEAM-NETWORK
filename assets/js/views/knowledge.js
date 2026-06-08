@@ -242,7 +242,7 @@ function tabFlujo() {
     // Solo renderizar el contenedor si hay plataformas que mostrar
     if (platformCards) {
       platformsHtml = `
-        <div class="rd-card rd-card-accent rd-pad" style="background:#FFF4E1">
+        <div class="rd-card rd-card-accent rd-pad rd-card-grad-beige">
           <h3 class="font-extrabold text-eu-purple text-xl mb-3">${pbTitle}</h3>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">${platformCards}</div>
         </div>`;
@@ -512,16 +512,16 @@ function renderOerGridContent(search) {
       : `<span class="flex items-center gap-1 text-gray-400 text-xs font-bold"><i data-lucide="${linkIcon}" class="w-3 h-3"></i>${linkText}</span>`;
 
     return `
-    <div class="rd-card rd-card-grad-violet rd-card-edge flex flex-col overflow-hidden group">
-      <div class="p-6 flex-1 flex flex-col">
+    <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden group">
+      <div class="rd-card-mp-ceja">
+        <h3 class="rd-card-mp-title line-clamp-3">${rTitle}</h3>
+      </div>
+      <div class="p-7 pt-5 flex-1 flex flex-col">
         <!-- Header: Type + Levels (secondary, compact) -->
         <div class="flex items-center gap-2 mb-3">
           ${oerShowType ? `<span class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${rIcon}" class="w-5 h-5 text-eu-purple"></i></span><span class="text-sm font-bold uppercase text-gray-600 tracking-wider">${rType}</span>` : ''}
           ${oerShowLevels ? `<div class="flex gap-1 ml-auto">${rLevelsHtml}</div>` : ''}
         </div>
-
-        <!-- Title: Larger and more prominent -->
-        <h3 class="font-extrabold text-eu-purple text-lg mb-5 leading-tight line-clamp-3">${rTitle}</h3>
 
         <!-- Sectors with visual separation -->
         ${oerShowSectors ? `<div class="flex flex-wrap gap-2 mb-5 pb-4 border-b border-eu-purple/10">${rSectorsHtml}</div>` : '<div class="mb-5 pb-4 border-b border-eu-purple/10"></div>'}
@@ -915,9 +915,12 @@ function renderTemplatesGridContent(search) {
 
     const filtersHere = getTemplatesFilters();
 
-    return `<div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col group">
+    return `<div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden group">
+      <div class="rd-card-mp-ceja">
+        <h3 class="rd-card-mp-title">${pickLang(tpl.title, '')}</h3>
+      </div>
+      <div class="p-7 pt-5 flex flex-col flex-1">
       <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${lucideName(iconStr, 'file-text')}" class="w-7 h-7 text-eu-purple"></i></div>
-      <h3 class="font-extrabold text-eu-purple text-lg mb-2 group-hover:text-eu-blue transition-colors">${pickLang(tpl.title, '')}</h3>
       <p class="text-base text-gray-600 mb-4 flex-1 leading-relaxed">${pickLang(tpl.description, '')}</p>
       <div class="flex flex-wrap gap-2 mb-4">
         ${showType && typeStr ? `<button data-tmpl-filter-type="${tpl.typeId}" class="text-sm px-3 py-1 rounded-full font-bold cursor-pointer transition-all ${filtersHere.typeId === tpl.typeId ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="background:rgb(86 32 246/.10); color:#5620F6">${typeStr}</button>` : ''}
@@ -932,6 +935,7 @@ function renderTemplatesGridContent(search) {
         <a href="${tpl.url}" ${targetAttr} class="flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:text-eu-purple transition-colors cursor-pointer">
           <i data-lucide="${btnIcon}" class="w-3.5 h-3.5"></i>${btnLabel}
         </a>
+      </div>
       </div>
     </div>`;
   }).join('');

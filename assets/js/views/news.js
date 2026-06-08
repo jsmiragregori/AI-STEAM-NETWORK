@@ -252,7 +252,7 @@ export function render() {
             <!-- Sidebar -->
             <div class="space-y-8">
               <!-- Events -->
-              <div class="rd-card-v5 rd-card-accent" style="background:#FFF4E1">
+              <div class="rd-card-v5 rd-card-accent rd-card-grad-beige">
                 <div class="p-6 pb-2 pl-8">
                   <h3 class="text-xl font-extrabold text-eu-purple flex items-center gap-2">
                     <i data-lucide="calendar" class="w-5 h-5 text-eu-blue"></i>${newsT?.upcomingEvents || ''}
@@ -326,7 +326,7 @@ function renderDetail(newsT) {
       </h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         ${(detail.related_news || []).map(related => `
-          <div class="text-left p-6 bg-white border border-eu-blue/10 rounded-2xl hover:border-eu-blue/30 hover:-translate-y-0.5 transition-all shadow-sm cursor-pointer group">
+          <div class="text-left p-6 rd-card-grad-violet border border-eu-blue/10 rounded-2xl hover:border-eu-blue/30 hover:-translate-y-0.5 transition-all shadow-sm cursor-pointer group">
             <p class="font-bold text-eu-text group-hover:text-eu-blue transition-colors leading-snug">${related}</p>
           </div>
         `).join('')}

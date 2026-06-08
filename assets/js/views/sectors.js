@@ -107,7 +107,7 @@ function renderStatButton(sector, key, value, label, enabled) {
   const action = enabled ? `data-sector-nav="${navKind}" data-sector-id="${esc(sector.id)}"` : '';
 
   return `
-    <button ${action}${disabled} class="rd-card rd-card-grad-violet rd-card-edge min-w-0 rounded-3xl px-3 py-4 text-center transition sm:px-4 ${enabled ? 'cursor-pointer' : 'cursor-default opacity-55'}">
+    <button ${action}${disabled} class="rd-card rd-card-grad-beige rd-card-edge min-w-0 rounded-3xl px-3 py-4 text-center transition sm:px-4 ${enabled ? 'cursor-pointer' : 'cursor-default opacity-55'}">
       <span class="block text-3xl font-extrabold ${key === 'courses' ? 'text-eu-purple' : key === 'stakeholders' ? 'text-eu-purple' : 'text-eu-blue'}">${esc(value ?? 0)}</span>
       <span class="mt-1 block max-w-full break-words text-[0.68rem] font-bold uppercase leading-tight tracking-wide text-gray-500 [hyphens:auto] sm:text-xs">${esc(label)}</span>
     </button>
@@ -121,7 +121,7 @@ function renderRoute(sector, sectorsT) {
   if (!routeIntro && items.length === 0) return '';
 
   return `
-    <section class="rd-card rd-card-edge rd-pad" style="background:rgb(86 32 246/.06)">
+    <section class="rd-card rd-card-edge rd-pad rd-card-grad-violet">
       <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
           <h4 class="text-xl font-extrabold text-eu-purple">${esc(sectorsT?.transferChainTitle || '')}</h4>
@@ -133,7 +133,7 @@ function renderRoute(sector, sectorsT) {
           const icon = CHAIN_ICONS[item.id] || 'circle';
           const label = labels[item.id] || '';
           return `
-            <article class="group relative rd-card rd-card-grad-violet rd-card-edge rounded-3xl p-5">
+            <article class="group relative rd-card rd-card-grad-beige rd-card-edge rounded-3xl p-5">
               <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                 <i data-lucide="${icon}" class="h-5 w-5 text-eu-blue"></i>
               </div>
@@ -187,7 +187,7 @@ function renderKeywords(sector) {
   if ((sector.sections || {}).keywords === false || keywords.length === 0) return '';
   return `
     <div class="flex flex-wrap gap-2">
-      ${keywords.map(keyword => `<span class="rounded-full px-3 py-1.5 text-xs font-bold text-eu-purple" style="background:rgba(255,244,225,.72)">${esc(keyword)}</span>`).join('')}
+      ${keywords.map(keyword => `<span class="rounded-full border border-white/20 bg-white/15 px-3 py-1.5 text-xs font-bold text-white backdrop-blur-sm">${esc(keyword)}</span>`).join('')}
     </div>
   `;
 }
@@ -209,7 +209,7 @@ function renderRelatedContent(sector, sectorsT) {
       </div>
       <div class="mt-5 space-y-3">
         ${items.map(item => `
-          <button data-sector-content="${esc(item.id)}" data-content-type="${esc(item.type)}" class="w-full rounded-2xl border border-eu-blue/10 p-4 text-left transition hover:border-eu-blue/30" style="background:rgba(255,244,225,.6)">
+          <button data-sector-content="${esc(item.id)}" data-content-type="${esc(item.type)}" class="w-full rounded-2xl border border-eu-blue/10 p-4 text-left transition hover:border-eu-blue/30 rd-card-grad-beige">
             <span class="block font-bold text-eu-text">${esc(localized(item.title) || item.id)}</span>
             ${localized(item.summary) ? `<span class="mt-1 line-clamp-2 block text-sm leading-relaxed text-eu-text/65">${esc(localized(item.summary))}</span>` : ''}
           </button>
@@ -231,7 +231,7 @@ function renderPartners(sector, sectorsT) {
       </div>
       <div class="mt-5 grid gap-3 sm:grid-cols-2">
         ${partners.map(partner => `
-          <a href="${esc(partner.url || '#')}" ${partner.url ? 'target="_blank" rel="noopener noreferrer"' : ''} class="flex flex-col justify-between rd-card rd-card-grad-violet rd-card-edge rounded-2xl p-5 text-center">
+          <a href="${esc(partner.url || '#')}" ${partner.url ? 'target="_blank" rel="noopener noreferrer"' : ''} class="flex flex-col justify-between rd-card rd-card-grad-beige rd-card-edge rounded-2xl p-5 text-center">
             <div class="flex flex-1 items-center justify-center min-h-[5rem]">
               ${partner.logo ? `
                 <img src="assets/images/partners/${esc(partner.logo)}" alt="${esc(partner.acronym || partner.id)}" class="max-h-16 max-w-[95%] object-contain">
@@ -275,7 +275,7 @@ function renderExpanded(sector, sectorsT) {
   const stakeholderContribution = localized(sector.stakeholderContribution);
 
   return `
-    <div class="border-t border-eu-blue/10 px-5 py-8 md:px-8" style="background:#FFF4E1">
+    <div class="border-t border-eu-blue/10 px-5 py-8 md:px-8 rd-card-grad-beige">
       <div class="space-y-6">
         ${renderRoute(sector, sectorsT)}
 
@@ -307,22 +307,21 @@ function renderSectorCard(sector, sectorsT, index) {
   const keywords = renderKeywords(sector);
 
   const isEven = index % 2 === 0;
-  const accentClass = isEven ? 'rd-card-accent' : 'rd-card-accent rd-accent-purple';
-  const tintClass = isEven ? 'rd-card-tint-blue' : 'rd-card-tint-purple';
+  const tintClass = isEven ? 'rd-card-grad-blue' : 'rd-card-grad-violet';
 
   return `
-    <article class="rd-card ${accentClass} ${tintClass} ${isOpen ? '' : 'rd-card-hover'} overflow-hidden">
-      <div class="grid gap-6 p-6 md:grid-cols-[auto_1fr_auto] md:items-start md:p-8">
+    <article class="rd-card ${tintClass} ${isOpen ? '' : 'rd-card-hover'} overflow-hidden">
+      <div class="rd-ceja-grad grid gap-6 p-6 md:grid-cols-[auto_1fr_auto] md:items-start md:p-8">
         <button data-toggle="${esc(sector.id)}" class="grid cursor-pointer grid-cols-[auto_1fr] gap-5 border-0 bg-transparent p-0 text-left md:contents">
           <div class="rd-icon-circle">
             <i data-lucide="${icon}" class="h-8 w-8 text-eu-blue"></i>
           </div>
           <div class="min-w-0">
             <div class="flex flex-wrap items-center gap-3">
-              <h2 class="text-3xl font-extrabold tracking-tight text-eu-purple">${esc(localized(sector.name) || sector.id)}</h2>
-              <span class="rounded-full border border-eu-blue/10 bg-eu-blue/5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-eu-blue">${esc(sector.id)}</span>
+              <h2 class="text-3xl font-extrabold tracking-tight text-white">${esc(localized(sector.name) || sector.id)}</h2>
+              <span class="rounded-full border border-white/25 bg-white/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">${esc(sector.id)}</span>
             </div>
-            <p class="mt-3 max-w-3xl text-base leading-relaxed text-eu-text/75 md:text-lg">${esc(localized(sector.description))}</p>
+            <p class="mt-3 max-w-3xl text-base leading-relaxed text-white/85 md:text-lg">${esc(localized(sector.description))}</p>
             ${keywords ? `<div class="mt-5">${keywords}</div>` : ''}
           </div>
         </button>

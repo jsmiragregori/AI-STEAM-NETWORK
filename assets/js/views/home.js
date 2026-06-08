@@ -108,7 +108,7 @@ function renderIsNotBlock() {
     `).join('');
 
     return `
-      <div class="rd-card rd-card-accent rd-card-edge ${tone.accentExtra} rd-pad">
+      <div class="rd-card rd-card-grad-violet rd-card-accent rd-card-edge ${tone.accentExtra} rd-pad">
         <div class="flex items-center gap-3 mb-8">
           <div class="rd-icon-circle-sm"><i data-lucide="${card.icon}" class="w-5 h-5 ${tone.icon}"></i></div>
           <h3 class="font-extrabold ${tone.title} text-xl">${localized(card.title)}</h3>
@@ -143,7 +143,7 @@ function renderEnredBlock() {
     ).join('');
 
     return `
-      <div class="flex-1 rd-card rd-card-accent rd-card-edge ${tone.accent} rd-pad">
+      <div class="flex-1 rd-card rd-card-grad-violet rd-card-accent rd-card-edge ${tone.accent} rd-pad">
         <p class="text-xs font-bold uppercase ${tone.title} mb-4" style="letter-spacing:.15em">${localized(card.title)}</p>
         <div class="flex flex-wrap gap-2">${pills}</div>
       </div>
@@ -200,12 +200,12 @@ function renderEcosystemBlock() {
       ? `href="${card.href}"${card.target ? ` target="${card.target}"` : ''}${card.target === '_blank' ? ' rel="noopener noreferrer"' : ''}`
       : '';
     const element = card.href ? 'a' : 'div';
-    const cardStyle = isActive ? ' style="background:rgb(255 244 225 / .45)"' : '';
+    const cardStyle = isActive ? ' style="background:linear-gradient(to bottom,#ffffff 0%,#FFF4E1 100%)"' : '';
     const activeBorder = isActive ? ' border-2 border-eu-purple' : '';
     const cursor = card.href ? ' cursor-pointer' : '';
 
     return `
-      <${element} ${attrs} class="rd-card rd-card-hover rd-pad flex flex-col${activeBorder}${cursor}"${cardStyle}>
+      <${element} ${attrs} class="rd-card rd-card-grad-violet rd-card-hover rd-pad flex flex-col${activeBorder}${cursor}"${cardStyle}>
         <div class="flex items-center gap-4 mb-6">
           <div class="flex items-center justify-center font-extrabold text-lg shrink-0" style="width:3.5rem;height:3.5rem;border-radius:1rem;${initialsStyle}">${card.initials}</div>
           <div>
@@ -244,19 +244,22 @@ function dualFocusToneClasses(tone) {
     orange: {
       coordinator: 'text-eu-blue',
       bulletHex: '#5620F6',
-      accent: '',
+      headerBg: 'bg-eu-blue',
+      bodyGrad: 'rd-card-grad-blue',
       initialsColor: '#5620F6',
     },
     purple: {
       coordinator: 'text-eu-purple',
       bulletHex: '#4918AD',
-      accent: 'rd-accent-purple',
+      headerBg: 'bg-eu-purple',
+      bodyGrad: 'rd-card-grad-beige',
       initialsColor: '#4918AD',
     },
     neutral: {
       coordinator: 'text-eu-blue',
       bulletHex: '#5620F6',
-      accent: '',
+      headerBg: 'bg-eu-blue',
+      bodyGrad: 'rd-card-grad-blue',
       initialsColor: '#5620F6',
     },
   };
@@ -278,16 +281,18 @@ function renderDualFocusBlock() {
     `).join('');
 
     return `
-      <div class="rd-card rd-card-accent rd-card-edge ${tone.accent} rd-card-xl rd-pad-l" style="background:#FFF4E1">
-        <div class="flex items-center gap-5 mb-8">
-          <div class="flex items-center justify-center font-extrabold text-2xl shrink-0" style="width:4rem;height:4rem;border-radius:1rem;background:#fff;color:${tone.initialsColor};box-shadow:0 6px 16px rgb(73 24 173 / .12)">${card.initials}</div>
+      <div class="rd-card rd-card-edge rd-card-xl rd-card-hover flex flex-col overflow-hidden">
+        <div class="${tone.headerBg} text-white px-10 py-7 flex items-center gap-5">
+          <div class="flex items-center justify-center font-extrabold text-2xl shrink-0 bg-white/20" style="width:4rem;height:4rem;border-radius:1rem;color:#fff">${card.initials}</div>
           <div>
-            <h3 class="font-extrabold text-eu-text text-2xl">${localized(card.title)}</h3>
-            <p class="text-base ${tone.coordinator} font-bold mt-0.5">${localized(card.coordinator)}</p>
+            <h3 class="font-extrabold text-white text-2xl leading-tight">${localized(card.title)}</h3>
+            <p class="text-base text-white/80 font-bold mt-0.5">${localized(card.coordinator)}</p>
           </div>
         </div>
-        <p class="text-lg text-gray-600 mb-10 leading-relaxed">${localized(card.description)}</p>
-        <ul class="space-y-4">${items}</ul>
+        <div class="rd-pad-l ${tone.bodyGrad} flex-1">
+          <p class="text-lg text-gray-600 mb-10 leading-relaxed">${localized(card.description)}</p>
+          <ul class="space-y-4">${items}</ul>
+        </div>
       </div>
     `;
   }).join('');
@@ -328,7 +333,7 @@ function renderSectorsBlock() {
   const cards = (block.cards || []).map(card => {
     const icon = SECTOR_ICONS[card.id] || 'shapes';
     return `
-    <button data-nav="sectores" class="rd-card rd-card-hover flex flex-col items-center justify-center text-center cursor-pointer" style="padding:2rem 1rem" aria-label="${localized(card.label)}">
+    <button data-nav="sectores" class="rd-card rd-card-grad-violet rd-card-hover flex flex-col items-center justify-center text-center cursor-pointer" style="padding:2rem 1rem" aria-label="${localized(card.label)}">
       <div class="rd-icon-circle mb-4">
         <i data-lucide="${icon}" class="w-6 h-6 text-eu-blue"></i>
       </div>
@@ -344,22 +349,22 @@ function renderSectorsBlock() {
     : '';
 
   const viewAll = block.viewAll?.visible
-    ? `<button data-nav="sectores" class="hidden md:flex items-center gap-2 text-eu-blue font-bold text-sm hover:underline bg-transparent border-none cursor-pointer">
-        ${localized(block.viewAll.html)} <i data-lucide="arrow-right" class="w-4 h-4"></i>
-      </button>`
+    ? `<div class="mt-10 flex justify-center">
+        <button data-nav="sectores" class="inline-flex items-center gap-2 rounded-full bg-eu-blue text-white px-8 py-3.5 font-bold text-sm hover:bg-eu-purple transition-colors cursor-pointer shadow-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
+          ${localized(block.viewAll.html)} <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </button>
+      </div>`
     : '';
 
   return `
     <section class="px-6 rd-canvas rd-section rd-divide">
       <div class="max-w-7xl mx-auto">
-        <div class="flex items-end justify-between mb-12">
-          <div>
-            <h2 class="mb-2">${localized(block.heading)}</h2>
-            ${description}
-          </div>
-          ${viewAll}
+        <div class="mb-12">
+          <h2 class="mb-2">${localized(block.heading)}</h2>
+          ${description}
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">${cards}</div>
+        ${viewAll}
       </div>
     </section>
   `;

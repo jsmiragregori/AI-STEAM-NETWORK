@@ -125,21 +125,21 @@ function tabEstructura(govT) {
 
   const bodiesHtml = formalBodies.map(body => {
     return `
-      <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col justify-between h-full group">
-        <div>
-          <div class="flex items-start justify-between mb-4">
-            <div>
-              <h3 class="font-extrabold text-2xl text-eu-purple leading-snug">${pickLang(body.name, body.name || '')}</h3>
-              <p class="text-sm font-extrabold uppercase tracking-wider mt-1.5 ${body.iconColor || 'text-eu-blue'}">${pickLang(body.type, body.type || '')}</p>
-            </div>
-            <span class="text-3xl font-extrabold ${body.iconColor || 'text-eu-blue'} opacity-25 select-none">${body.abbr || ''}</span>
-          </div>
-          <p class="text-lg text-gray-700 mb-5 leading-relaxed">${pickLang(body.desc, body.desc || '')}</p>
+      <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden h-full group">
+        <div class="rd-card-mp-ceja flex items-start justify-between gap-3">
+          <h3 class="rd-card-mp-title">${pickLang(body.name, body.name || '')}</h3>
+          <span class="text-2xl font-extrabold text-white/40 select-none shrink-0 leading-none">${body.abbr || ''}</span>
         </div>
-        <div class="space-y-2.5 pt-4 border-t border-eu-blue/10">
-          ${metaRow(formalLabels.members || { es: 'Miembros', en: 'Members', va: 'Membres' }, body.members)}
-          ${metaRow(formalLabels.frequency || { es: 'Frecuencia', en: 'Frequency', va: 'Freqüència' }, body.frequency || body.freq)}
-          ${metaRow(formalLabels.quorum || { es: 'Quórum', en: 'Quorum', va: 'Quòrum' }, body.quorum)}
+        <div class="p-7 pt-5 flex flex-col justify-between flex-1">
+          <div>
+            <p class="text-sm font-extrabold uppercase tracking-wider mb-3 ${body.iconColor || 'text-eu-blue'}">${pickLang(body.type, body.type || '')}</p>
+            <p class="text-lg text-gray-700 mb-5 leading-relaxed">${pickLang(body.desc, body.desc || '')}</p>
+          </div>
+          <div class="space-y-2.5 pt-4 border-t border-eu-blue/10">
+            ${metaRow(formalLabels.members || { es: 'Miembros', en: 'Members', va: 'Membres' }, body.members)}
+            ${metaRow(formalLabels.frequency || { es: 'Frecuencia', en: 'Frequency', va: 'Freqüència' }, body.frequency || body.freq)}
+            ${metaRow(formalLabels.quorum || { es: 'Quórum', en: 'Quorum', va: 'Quòrum' }, body.quorum)}
+          </div>
         </div>
       </div>
     `;
@@ -148,23 +148,27 @@ function tabEstructura(govT) {
   const standardCardsHtml = (Array.isArray(standardsBlock.cards) ? standardsBlock.cards : [
     { icon: 'shield-check', title: s.iso21001Title, desc: s.iso21001Desc },
     { icon: 'globe',        title: s.enredTitle,    desc: s.enredDesc    },
-  ]).map(card => `
-    <div class="rd-card rd-card-grad-violet rd-card-edge rd-pad flex gap-6 items-start cursor-default group">
+  ]).map((card, idx) => {
+    const gradClass = idx % 2 === 0 ? 'rd-card-grad-blue' : 'rd-card-grad-beige';
+    const iconColor = idx % 2 === 0 ? 'text-eu-blue' : 'text-eu-purple';
+    const accentClass = idx % 2 === 0 ? 'rd-card-accent' : 'rd-card-accent rd-accent-purple';
+    return `
+    <div class="rd-card ${gradClass} ${accentClass} rd-card-edge rd-pad flex gap-6 items-start cursor-default group">
       <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
-        <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 text-eu-purple"></i>
+        <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 ${iconColor}"></i>
       </div>
       <div>
         <h3 class="font-extrabold text-eu-purple mb-3 text-2xl leading-snug">${pickLang(card.title, card.title || '')}</h3>
         <p class="text-lg text-gray-700 leading-relaxed">${pickLang(card.desc, card.desc || '')}</p>
       </div>
     </div>
-  `).join('');
+  `;}).join('');
 
   return `
     <div class="space-y-12">
       ${hubBlock.visible !== false ? `
       <!-- Hub -->
-      <div class="rd-card rd-card-accent rd-pad rd-card-edge group" style="background:#FFF4E1">
+      <div class="rd-card rd-card-accent rd-pad rd-card-edge group rd-card-grad-beige">
         <h2 class="font-extrabold text-eu-purple mb-3 flex items-center gap-4">
           <div class="w-14 h-14 rounded-full flex items-center justify-center text-eu-blue shrink-0 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
             <i data-lucide="globe" class="w-7 h-7"></i>
@@ -304,15 +308,15 @@ function tabDualTrack(govT) {
         <p class="text-lg text-gray-600 mb-8 leading-relaxed">${pickLang(dualTrackBlock.description)}</p>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          ${trackAVisible ? trackBlock(tracksById['track-a'], 'bg-eu-blue',   'bg-eu-blue/10 text-eu-blue',   'alert-circle',  'text-eu-blue',   'rgb(86 32 246/.07)',   'rgb(86 32 246/.12)'  ) : ''}
-          ${trackBVisible ? trackBlock(tracksById['track-b'], 'bg-eu-purple', 'bg-eu-purple/10 text-eu-purple','check-circle',  'text-eu-purple', 'rgb(255 244 225/.6)',  'rgb(73 24 173/.12)' ) : ''}
+          ${trackAVisible ? trackBlock(tracksById['track-a'], 'bg-eu-blue',   'bg-eu-blue/10 text-eu-blue',   'alert-circle',  'text-eu-blue',   'linear-gradient(to bottom,#ffffff 0%,#EAE6FF 100%)',   'rgb(86 32 246/.12)'  ) : ''}
+          ${trackBVisible ? trackBlock(tracksById['track-b'], 'bg-eu-purple', 'bg-eu-purple/10 text-eu-purple','check-circle',  'text-eu-purple', 'linear-gradient(to bottom,#ffffff 0%,#FFF4E1 100%)',  'rgb(73 24 173/.12)' ) : ''}
         </div>
       </div>` : ''}
       <div>
 
         <!-- Arquitectura de Datos -->
         ${cmsDataArch.visible !== false ? `
-        <div class="rd-card rd-card-accent rd-card-edge rd-pad mb-8 group" style="background:rgb(86 32 246/.09)">
+        <div class="rd-card rd-card-accent rd-card-edge rd-pad mb-8 group rd-card-grad-beige">
           <h3 class="text-2xl font-extrabold text-eu-purple mb-4 flex items-center gap-3">
             <div class="w-12 h-12 rounded-full flex items-center justify-center text-eu-blue shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:rgba(255,255,255,0.85)">
               <i data-lucide="shield-check" class="w-6 h-6"></i>
@@ -325,7 +329,7 @@ function tabDualTrack(govT) {
 
         <!-- Datos y límites de responsabilidad -->
         ${cmsRB.visible !== false ? `
-        <div class="rd-card rd-card-edge rd-pad mb-8 group" style="background:#FFF4E1">
+        <div class="rd-card rd-card-edge rd-pad mb-8 group rd-card-grad-beige">
           <h3 class="text-2xl font-extrabold text-eu-purple mb-2 flex items-center gap-3">
             <div class="w-12 h-12 rounded-full flex items-center justify-center text-eu-purple shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:rgba(255,255,255,0.85)">
               <i data-lucide="shield" class="w-6 h-6"></i>
@@ -338,7 +342,7 @@ function tabDualTrack(govT) {
 
         <!-- Acuerdo de Colaboración -->
         ${cmsAgreement.visible !== false ? `
-        <div class="rd-card rd-card-edge rd-pad group" style="background:rgb(86 32 246/.09)">
+        <div class="rd-card rd-card-edge rd-pad group rd-card-grad-beige">
           <h3 class="text-2xl font-extrabold text-eu-purple mb-3 flex items-center gap-3">
             <div class="w-12 h-12 rounded-full flex items-center justify-center text-eu-purple shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:rgba(255,255,255,0.85)">
               <i data-lucide="file-signature" class="w-6 h-6"></i>
@@ -472,7 +476,7 @@ function tabLbd(govT) {
           <div class="px-10 py-6" style="background:#5222B0">
             <h3 class="text-2xl font-extrabold text-white">${pickLang(cycleBlock.title, s.cycleTitle || '')}</h3>
           </div>
-          <div class="p-8 space-y-0" style="background:#FFF4E1">${phasesHtml}</div>
+          <div class="p-8 space-y-0 rd-card-grad-beige">${phasesHtml}</div>
         </div>` : ''}
 
         <!-- Flujo operativo -->
@@ -486,7 +490,7 @@ function tabLbd(govT) {
               ${pickLang(operatingFlowBlock.title, s.operatingFlow?.title || '')}
             </h3>
           </div>
-          <div class="p-8" style="background:#FFF4E1">
+          <div class="p-8 rd-card-grad-beige">
             <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(operatingFlowBlock.description, s.operatingFlow?.desc || '')}</p>
             <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-4">${flowStepsHtml}</div>
           </div>
@@ -498,7 +502,7 @@ function tabLbd(govT) {
           <div class="px-10 py-6" style="background:#5222B0">
             <h3 class="text-2xl font-extrabold text-white">${pickLang(platformsBlock.title, s.platformsTitle || '')}</h3>
           </div>
-          <div class="p-8" style="background:#FFF4E1">
+          <div class="p-8 rd-card-grad-beige">
             <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(platformsBlock.description, s.platformsDesc || '')}</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${platformsHtml}</div>
           </div>
@@ -515,7 +519,7 @@ function tabLbd(govT) {
               ${pickLang(scalabilityBlock.title)}
             </h3>
           </div>
-          <div class="p-8" style="background:#FFF4E1">
+          <div class="p-8 rd-card-grad-beige">
             <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(scalabilityBlock.description)}</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${scaleHtml}</div>
           </div>
@@ -596,14 +600,17 @@ function tabDocumentos(govT) {
       const hasUrl = doc.url && doc.url.trim();
       const linkText = pickLang(doc.linkText, doc.linkText?.es || 'Ver');
       return `
-        <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col justify-between h-full group">
+        <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden h-full group">
+          <div class="rd-card-mp-ceja">
+            <h3 class="rd-card-mp-title break-words">${doc.title || ''}</h3>
+          </div>
+          <div class="p-7 pt-5 flex flex-col justify-between flex-1">
           <div>
             <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff; box-shadow: inset 0 2px 6px rgb(73 24 173 / .08)">
                 <i data-lucide="file-text" class="w-6 h-6" style="color:#4918AD"></i>
               </div>
               <div class="flex-1 min-w-0">
-                <p class="font-extrabold text-lg md:text-xl text-eu-purple leading-snug break-words mb-1.5">${doc.title || ''}</p>
                 <span class="text-sm text-gray-500 font-bold">${formatDocDate(doc.date)}</span>
               </div>
             </div>
@@ -628,6 +635,7 @@ function tabDocumentos(govT) {
               <i data-lucide="external-link" class="w-4 h-4"></i>
             </a>
             ` : '<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-400"><i data-lucide="minus-circle" class="w-4 h-4"></i>Sin enlace</span>'}
+          </div>
           </div>
         </div>
       `;
@@ -666,7 +674,7 @@ function tabDocumentos(govT) {
         <p class="text-lg leading-relaxed" style="color:#ffffff">${pickLang(cms.description, s.description || '')}</p>
       </div>
       ` : ''}
-      <div class="p-8" style="background:#FFF4E1">
+      <div class="p-8 rd-card-grad-beige">
         <input type="text" id="gov-doc-search" placeholder="Buscar por título, tipo o ID..." class="w-full px-6 py-4 rounded-full border border-eu-purple/20 focus:outline-none focus:ring-2 focus:ring-eu-purple focus:border-eu-purple text-eu-text placeholder-eu-text/40 shadow-sm transition-all text-sm mb-6" style="background:#ffffff" />
         <div id="gov-docs-results">${renderDocs()}</div>
       </div>
@@ -777,56 +785,68 @@ function tabParticipar(govT) {
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- Track B – Stakeholder (beige) -->
         ${(hasCms ? cms.stakeholderCard.visible !== false : true) ? `
-        <div class="rd-card rd-card-edge rd-pad flex flex-col justify-between h-full group" style="background:#FFF4E1">
-          <div>
-            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 rd-icon-circle-gov transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
-              <i data-lucide="building-2" class="w-6 h-6" style="color:#5620F6"></i>
+        <div class="rd-card rd-card-edge flex flex-col justify-between h-full overflow-hidden group">
+          <div class="bg-eu-blue text-white px-8 py-6 flex items-center gap-4" style="min-height:8.5rem">
+            <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center shrink-0 rd-icon-circle-gov transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <i data-lucide="building-2" class="w-6 h-6 text-white"></i>
             </div>
-            <h2 class="text-3xl font-extrabold mb-1 leading-snug" style="color:#4918AD">${hasCms ? pickLang(cms.stakeholderCard.title, s.stakeholderTitle || '') : (s.stakeholderTitle || '')}</h2>
-            <p class="text-base font-extrabold uppercase tracking-widest mb-4" style="color:#5620F6">${hasCms ? pickLang(cms.stakeholderCard.subtitle, s.stakeholderSubtitle || '') : (s.stakeholderSubtitle || '')}</p>
-            <p class="text-lg text-gray-700 mb-6 leading-relaxed">${hasCms ? pickLang(cms.stakeholderCard.description, s.stakeholderDesc || '') : (s.stakeholderDesc || '')}</p>
-            <div class="rounded-2xl p-6 mb-6 rd-card-grad-violet" style="border:1px solid rgb(86 32 246/.18)">
-              <p class="text-base font-extrabold uppercase tracking-wider mb-3" style="color:#4918AD">${hasCms ? pickLang(cms.stakeholderCard.benefitsLabel, s.stakeholderBenefitsLabel || '') : (s.stakeholderBenefitsLabel || '')}</p>
-              <ul class="space-y-2.5">${stakeholderBenefitsHtml}</ul>
+            <div>
+              <h3 class="text-2xl font-extrabold text-white leading-snug">${hasCms ? pickLang(cms.stakeholderCard.title, s.stakeholderTitle || '') : (s.stakeholderTitle || '')}</h3>
+              <p class="text-sm font-extrabold uppercase tracking-widest text-white/80 mt-0.5">${hasCms ? pickLang(cms.stakeholderCard.subtitle, s.stakeholderSubtitle || '') : (s.stakeholderSubtitle || '')}</p>
             </div>
-            <p class="text-base text-gray-600 mb-6 flex items-start gap-2.5 leading-relaxed">
-              <i data-lucide="alert-circle" class="w-4 h-4 shrink-0 mt-1" style="color:#4918AD"></i>
-              <span>${hasCms ? pickLang(cms.stakeholderCard.warning, s.stakeholderWarning || '') : (s.stakeholderWarning || '')}</span>
-            </p>
           </div>
-          <div class="pt-4 shrink-0" style="border-top:1px solid rgb(86 32 246/.15)">
-            ${(hasCms && stakeBtnUrl !== '#')
-              ? `<a href="${stakeBtnUrl}" ${stakeBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#5620F6">
-              <span>${pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || '')}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
-            </a>`
-              : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#5620F6">
-              <span>${pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || '')}</span>
-            </span>`
-            }
+          <div class="rd-pad rd-card-grad-blue flex-1 flex flex-col justify-between">
+            <div>
+              <p class="text-lg text-gray-700 mb-6 leading-relaxed">${hasCms ? pickLang(cms.stakeholderCard.description, s.stakeholderDesc || '') : (s.stakeholderDesc || '')}</p>
+              <div class="rounded-2xl p-6 mb-6 rd-card-grad-beige" style="border:1px solid rgb(86 32 246/.18)">
+                <p class="text-base font-extrabold uppercase tracking-wider mb-3" style="color:#4918AD">${hasCms ? pickLang(cms.stakeholderCard.benefitsLabel, s.stakeholderBenefitsLabel || '') : (s.stakeholderBenefitsLabel || '')}</p>
+                <ul class="space-y-2.5">${stakeholderBenefitsHtml}</ul>
+              </div>
+              <p class="text-base text-gray-600 mb-6 flex items-start gap-2.5 leading-relaxed">
+                <i data-lucide="alert-circle" class="w-4 h-4 shrink-0 mt-1" style="color:#4918AD"></i>
+                <span>${hasCms ? pickLang(cms.stakeholderCard.warning, s.stakeholderWarning || '') : (s.stakeholderWarning || '')}</span>
+              </p>
+            </div>
+            <div class="pt-4 shrink-0" style="border-top:1px solid rgb(86 32 246/.15)">
+              ${(hasCms && stakeBtnUrl !== '#')
+                ? `<a href="${stakeBtnUrl}" ${stakeBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#5620F6">
+                <span>${pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || '')}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>`
+                : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#5620F6">
+                <span>${pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || '')}</span>
+              </span>`
+              }
+            </div>
           </div>
         </div>` : ''}
 
         <!-- ConsensUE (púrpura) -->
         ${(hasCms ? cms.consensueCard.visible !== false : true) ? `
-        <div class="rd-card rd-card-edge rd-pad flex flex-col justify-between h-full group" style="background:rgb(73 24 173 / .08)">
-          <div>
-            <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 rd-icon-circle-gov transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#FFF4E1">
-              <i data-lucide="users" class="w-6 h-6" style="color:#4918AD"></i>
+        <div class="rd-card rd-card-edge flex flex-col justify-between h-full overflow-hidden group">
+          <div class="bg-eu-purple text-white px-8 py-6 flex items-center gap-4" style="min-height:8.5rem">
+            <div class="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center shrink-0 rd-icon-circle-gov transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+              <i data-lucide="users" class="w-6 h-6 text-white"></i>
             </div>
-            <h2 class="text-3xl font-extrabold mb-1 leading-snug" style="color:#4918AD">${hasCms ? pickLang(cms.consensueCard.title, s.consensueTitle || '') : (s.consensueTitle || '')}</h2>
-            <p class="text-base font-extrabold uppercase tracking-widest mb-4" style="color:#5620F6">${hasCms ? pickLang(cms.consensueCard.subtitle, s.consensueSubtitle || '') : (s.consensueSubtitle || '')}</p>
-            <p class="text-lg text-gray-700 mb-6 leading-relaxed">${hasCms ? pickLang(cms.consensueCard.description, s.consensueDesc || '') : (s.consensueDesc || '')}</p>
-            <div class="space-y-4 mb-6">${consensueGroupsHtml}</div>
+            <div>
+              <h3 class="text-2xl font-extrabold text-white leading-snug">${hasCms ? pickLang(cms.consensueCard.title, s.consensueTitle || '') : (s.consensueTitle || '')}</h3>
+              <p class="text-sm font-extrabold uppercase tracking-widest text-white/80 mt-0.5">${hasCms ? pickLang(cms.consensueCard.subtitle, s.consensueSubtitle || '') : (s.consensueSubtitle || '')}</p>
+            </div>
           </div>
-          <div class="pt-4 shrink-0" style="border-top:1px solid rgb(73 24 173 / .15)">
-            ${(hasCms && consBtnUrl !== '#')
-              ? `<a href="${consBtnUrl}" ${consBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#4918AD">
-              <span>${pickLang(cms.consensueCard.buttonText, s.consensueButton || '')}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
-            </a>`
-              : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#4918AD">
-              <span>${pickLang(cms.consensueCard.buttonText, s.consensueButton || '')}</span>
-            </span>`
-            }
+          <div class="rd-pad rd-card-grad-beige flex-1 flex flex-col justify-between">
+            <div>
+              <p class="text-lg text-gray-700 mb-6 leading-relaxed">${hasCms ? pickLang(cms.consensueCard.description, s.consensueDesc || '') : (s.consensueDesc || '')}</p>
+              <div class="space-y-4 mb-6">${consensueGroupsHtml}</div>
+            </div>
+            <div class="pt-4 shrink-0" style="border-top:1px solid rgb(73 24 173 / .15)">
+              ${(hasCms && consBtnUrl !== '#')
+                ? `<a href="${consBtnUrl}" ${consBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#4918AD">
+                <span>${pickLang(cms.consensueCard.buttonText, s.consensueButton || '')}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>`
+                : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#4918AD">
+                <span>${pickLang(cms.consensueCard.buttonText, s.consensueButton || '')}</span>
+              </span>`
+              }
+            </div>
           </div>
         </div>` : ''}
       </div>

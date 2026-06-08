@@ -93,7 +93,7 @@
      · Contenedor sobre canvas        → .rd-card-grad-beige  (blanco → #FFF4E1)
      · Inner card sobre beige         → .rd-card-grad-violet (blanco → #D7C8F3)
                                         ó .rd-card-grad-blue (blanco → #EAE6FF)
-     · Cards Marketplace              → .rd-card-mp          (blanco → #FBF7FF)
+     · Cards Marketplace              → .rd-card-mp          (blanco → #F6F1FF)
      · Cejas de contenido             → .rd-ceja-grad        (#4E1BC8 → #5520F6)
      · Heroes                         → .rd-hero-gradient    (#4918AD→#521DE2→#5620F6)
    No anidar dos degradados de la MISMA gama sin un borde border-eu-purple/10.
@@ -130,7 +130,7 @@
    prefers-reduced-motion). El radio + overflow:hidden recortan la ceja. */
 .rd-card-mp {
   position: relative;
-  background: linear-gradient(to bottom, #ffffff 0%, #FBF7FF 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #F6F1FF 100%);
   border: 1px solid rgb(86 32 246 / .12);
   border-radius: 1.75rem;
   box-shadow: 0 12px 32px -16px rgb(73 24 173 / .14);

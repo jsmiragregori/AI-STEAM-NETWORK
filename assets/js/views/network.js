@@ -122,7 +122,7 @@ function helixBlock() {
   }).join('');
 
   return `
-    <div class="rd-card rd-card-accent rd-pad mb-8" style="background:#FFF4E1">
+    <div class="rd-card rd-card-accent rd-pad mb-8 rd-card-grad-beige">
       <h2 class="text-2xl font-extrabold text-eu-purple mb-2">${loc(helix.heading)}</h2>
       <p class="text-lg text-gray-600 mb-6 max-w-3xl leading-relaxed">${loc(helix.description)}</p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">${html}</div>
@@ -238,7 +238,7 @@ function tabSocios(activeCategory, filterCountry) {
     <p class="text-lg text-gray-600 mb-5 max-w-3xl leading-relaxed">${loc(pb.description)}</p>
     <div class="flex flex-wrap gap-2 mb-5">${catFilters}</div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">${cardsHtml}</div>
-    <div class="rd-card rd-card-accent rd-pad" style="background:#FFF4E1">
+    <div class="rd-card rd-card-accent rd-pad rd-card-grad-beige">
       <div class="flex items-center justify-between mb-5">
         <h2 class="text-2xl font-extrabold text-eu-purple flex items-center gap-2">
           <i data-lucide="map-pin" class="w-5 h-5 text-eu-blue"></i>${loc(pb.geographicCoverage)}
@@ -298,7 +298,7 @@ function tabStakeholders(activeCategory, showForm) {
           <p class="text-sm mt-0.5" style="color:rgba(255,255,255,.85)">${loc(f.subtitle)}</p>
         </div>
       </div>
-      <div class="p-6" style="background:#FFF4E1">
+      <div class="p-6 rd-card-grad-beige">
         <p class="text-base text-gray-600 mb-6 max-w-2xl leading-relaxed">${loc(f.description)}</p>
         <form id="net-form" class="space-y-5 max-w-2xl">
           <div class="grid grid-cols-1 gap-y-5 gap-x-4 sm:grid-cols-2">
@@ -389,7 +389,7 @@ function tabStakeholders(activeCategory, showForm) {
   if (STAKEHOLDERS.length === 0) {
     return `
       ${headerBar}
-      <div class="rd-card rd-card-accent rd-pad text-center" style="background:#FFF4E1">
+      <div class="rd-card rd-card-accent rd-pad text-center rd-card-grad-beige">
         <i data-lucide="users" class="w-12 h-12 text-eu-purple/40 mx-auto mb-5"></i>
         ${shTexts.emptyStateTitle ? `<h3 class="text-xl font-extrabold text-eu-purple mb-3">${shTexts.emptyStateTitle}</h3>` : ''}
         <p class="text-base text-gray-600 max-w-sm sm:max-w-md mx-auto mb-8 leading-relaxed">${shTexts.emptyState}</p>
