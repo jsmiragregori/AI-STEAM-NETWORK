@@ -107,7 +107,7 @@ function renderStatButton(sector, key, value, label, enabled) {
   const action = enabled ? `data-sector-nav="${navKind}" data-sector-id="${esc(sector.id)}"` : '';
 
   return `
-    <button ${action}${disabled} class="rd-card-hover min-w-0 rounded-3xl border border-eu-blue/10 bg-white px-3 py-4 text-center transition sm:px-4 ${enabled ? 'cursor-pointer hover:border-eu-blue/30' : 'cursor-default opacity-55'}">
+    <button ${action}${disabled} class="rd-card rd-card-grad-violet rd-card-edge min-w-0 rounded-3xl px-3 py-4 text-center transition sm:px-4 ${enabled ? 'cursor-pointer' : 'cursor-default opacity-55'}">
       <span class="block text-3xl font-extrabold ${key === 'courses' ? 'text-eu-orange' : key === 'stakeholders' ? 'text-eu-purple' : 'text-eu-blue'}">${esc(value ?? 0)}</span>
       <span class="mt-1 block max-w-full break-words text-[0.68rem] font-bold uppercase leading-tight tracking-wide text-gray-500 [hyphens:auto] sm:text-xs">${esc(label)}</span>
     </button>
@@ -121,7 +121,7 @@ function renderRoute(sector, sectorsT) {
   if (!routeIntro && items.length === 0) return '';
 
   return `
-    <section class="rd-card rd-card-tint rd-card-edge rd-pad">
+    <section class="rd-card rd-card-edge rd-pad" style="background:rgb(86 32 246/.06)">
       <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
         <div>
           <h4 class="text-xl font-extrabold text-eu-purple">${esc(sectorsT?.transferChainTitle || '')}</h4>
@@ -133,7 +133,7 @@ function renderRoute(sector, sectorsT) {
           const icon = CHAIN_ICONS[item.id] || 'circle';
           const label = labels[item.id] || '';
           return `
-            <article class="group relative rounded-3xl border border-eu-blue/10 bg-[#FFFDF9] p-5 transition-all duration-300 hover:border-eu-blue/40 hover:bg-white hover:shadow-sm">
+            <article class="group relative rd-card rd-card-grad-violet rd-card-edge rounded-3xl p-5">
               <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                 <i data-lucide="${icon}" class="h-5 w-5 text-eu-blue"></i>
               </div>
@@ -151,7 +151,7 @@ function renderListCard(title, icon, items, tone = 'blue') {
   if (!items.length) return '';
   const color = tone === 'purple' ? 'text-eu-purple' : 'text-eu-blue';
   return `
-    <article class="rd-card group rd-card-canvas-bg rd-pad">
+    <article class="rd-card group rd-card-grad-violet rd-card-edge rd-pad">
       <div class="flex items-center gap-3">
         <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="${icon}" class="h-5 w-5 ${color}"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(title)}</h4>
@@ -172,7 +172,7 @@ function renderTextCard(title, icon, text, tone = 'blue') {
   if (!text) return '';
   const color = tone === 'purple' ? 'text-eu-purple' : 'text-eu-blue';
   return `
-    <article class="rd-card group rd-card-canvas-bg rd-pad">
+    <article class="rd-card group rd-card-grad-violet rd-card-edge rd-pad">
       <div class="flex items-center gap-3">
         <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="${icon}" class="h-5 w-5 ${color}"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(title)}</h4>
@@ -197,7 +197,7 @@ function renderRelatedContent(sector, sectorsT) {
   if (!sector.emptyFlags?.hasRelatedContent || items.length === 0) return '';
 
   return `
-    <article class="rd-card group rd-card-canvas-bg rd-pad">
+    <article class="rd-card group rd-card-grad-violet rd-card-edge rd-pad">
       <div class="flex items-center justify-between gap-4">
         <div class="flex items-center gap-3">
           <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="folder-kanban" class="h-5 w-5 text-eu-blue"></i></div>
@@ -209,7 +209,7 @@ function renderRelatedContent(sector, sectorsT) {
       </div>
       <div class="mt-5 space-y-3">
         ${items.map(item => `
-          <button data-sector-content="${esc(item.id)}" data-content-type="${esc(item.type)}" class="w-full rounded-2xl border border-eu-blue/10 bg-eu-blue/[0.025] p-4 text-left transition hover:border-eu-blue/30 hover:bg-eu-blue/[0.055]">
+          <button data-sector-content="${esc(item.id)}" data-content-type="${esc(item.type)}" class="w-full rounded-2xl border border-eu-blue/10 p-4 text-left transition hover:border-eu-blue/30" style="background:rgba(255,244,225,.6)">
             <span class="block font-bold text-eu-text">${esc(localized(item.title) || item.id)}</span>
             ${localized(item.summary) ? `<span class="mt-1 line-clamp-2 block text-sm leading-relaxed text-eu-text/65">${esc(localized(item.summary))}</span>` : ''}
           </button>
@@ -224,14 +224,14 @@ function renderPartners(sector, sectorsT) {
   if ((sector.sections || {}).featuredPartners === false || partners.length === 0) return '';
 
   return `
-    <article class="rd-card group rd-card-canvas-bg rd-pad">
+    <article class="rd-card group rd-card-grad-violet rd-card-edge rd-pad">
       <div class="flex items-center gap-3">
         <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="network" class="h-5 w-5 text-eu-purple"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(sectorsT?.featuredPartnersLabel || '')}</h4>
       </div>
       <div class="mt-5 grid gap-3 sm:grid-cols-2">
         ${partners.map(partner => `
-          <a href="${esc(partner.url || '#')}" ${partner.url ? 'target="_blank" rel="noopener noreferrer"' : ''} class="flex flex-col justify-between rounded-2xl border border-eu-blue/10 bg-white p-5 text-center transition hover:border-eu-purple/30 hover:shadow-sm">
+          <a href="${esc(partner.url || '#')}" ${partner.url ? 'target="_blank" rel="noopener noreferrer"' : ''} class="flex flex-col justify-between rd-card rd-card-grad-violet rd-card-edge rounded-2xl p-5 text-center">
             <div class="flex flex-1 items-center justify-center min-h-[5rem]">
               ${partner.logo ? `
                 <img src="assets/images/partners/${esc(partner.logo)}" alt="${esc(partner.acronym || partner.id)}" class="max-h-16 max-w-[95%] object-contain">
@@ -256,7 +256,7 @@ function renderEvidence(sector, sectorsT) {
   if (!evidence) return '';
 
   return `
-    <article class="rd-card group rd-card-accent rd-card-tint rd-card-tint-hover rd-pad">
+    <article class="rd-card group rd-card-accent rd-card-grad-violet rd-card-edge rd-pad">
       <div class="flex items-center gap-3">
         <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6"><i data-lucide="badge-check" class="h-5 w-5 text-eu-blue"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(localized(sector.exampleChallengeLabel) || sectorsT?.exampleChallengeLabel || '')}</h4>
@@ -275,7 +275,7 @@ function renderExpanded(sector, sectorsT) {
   const stakeholderContribution = localized(sector.stakeholderContribution);
 
   return `
-    <div class="border-t border-eu-blue/10 bg-eu-blue/[0.025] px-5 py-8 md:px-8">
+    <div class="border-t border-eu-blue/10 px-5 py-8 md:px-8" style="background:#FFF4E1">
       <div class="space-y-6">
         ${renderRoute(sector, sectorsT)}
 
