@@ -270,7 +270,7 @@ INSTRUCCION_LLM: al terminar una fase → `[~] EN_REVISION`. Tras aprobación hu
 | **F2b** | Home — correcciones doc estilo + hover por card (lift/edge) + iniciales que respiran + DualFocus beige oficial; "Últimas contribuciones" fuera de home y del CMS | `[x] APROBADA` | commits `bbdc6d0` (visual) + `2905c8f` (view) + CONTENT `a92af86` (CMS) |
 | F3 | Sectores — paleta unificada + iconos beige + legibilidad detalle | `[x] APROBADA` | Cerrado y validado junto con la reestructuración de la brújula sectorial. |
 | F4 | Formación — hero + course cards (a) + tabs | `[x] APROBADA` | commit `3e0cd79` |
-| F5 | Actualidad — news cards (a) | `[~] EN_REVISION` | |
+| F5 | Actualidad — news cards (a) | `[x] APROBADA` | commits `7bf4d12` to `9cac6dd` |
 | F6 | Gobernanza — cards + tabs; órganos intactos | `[ ] PENDIENTE` | |
 | F7 | Conocimiento — cards + buscador | `[ ] PENDIENTE` | |
 | F8 | Red — cards socios/stakeholders; hélice intacta | `[ ] PENDIENTE` | |
@@ -514,11 +514,11 @@ COMMIT: `style(global): cierre visual overhaul — modelo AI-STEAM-MIGRATION`
 | F2+F2b | Home completa: hero full-viewport, cards modelo MIGRATION, iconos Lucide, DualFocus beige, ENRED cards con acento, hover lift/edge, tipografía editorial | `bbdc6d0` `2905c8f` |
 | CMS | "Últimas contribuciones" eliminada: YAML, loader, admin, validators, data generada | CONTENT `a92af86`, VANILLA `2905c8f` |
 | F4 | Formación: Hero morado/beige, tabs en beige oficial, tarjetas de curso en beige plano al 55% sin acento, acento lateral en skills, aviso de master Solid Violet, Itinerario CEICE estilo Sectores CTA sin flechas | CONTENT `1ac72d1`, VANILLA `3e0cd79` `8d50988` `d6e7361` |
+| F5 | Actualidad / Noticias: Hero con rd-hero-gradient estilo home, primera noticia en morado sólido con acento beige, resto de noticias en beige oficial 55% y fuentes grandes (título 2xl, texto base), barra lateral con eventos en beige 100% y acento lateral, newsletter y social links con rd-hero-gradient e iconos de marca oficiales inline SVG con ancho completo. | VANILLA `7bf4d12` to `9cac6dd` |
 
-### Fase en curso: **F5 — Prácticas** ⏳ Pendiente de iniciar
+### Fase en curso: **F6 — Gobernanza** ⏳ Pendiente de iniciar
 
-
-Fase F3 (Sectores) ha sido completamente aprobada por el responsable (2026-06-06). Se procede a preparar la continuación del plan visual hacia F4.
+Fase F5 (Actualidad) ha sido completamente aprobada por el responsable (2026-06-08). Se procede a preparar la continuación del plan visual hacia F6.
 
 Claves de F3 (decisión humana 2026-06-05): sectores **UNIFICADOS a paleta corporativa**
 (morado/azul + beige), iconos Lucide en `rd-icon-circle` (= home), detalle expandido con
