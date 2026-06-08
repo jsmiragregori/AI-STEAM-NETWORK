@@ -2036,7 +2036,7 @@ function renderTabIntroCard(tab, items) {
             </span>
             <h2 class="min-w-0 text-3xl font-extrabold leading-tight text-eu-purple">${esc(title)}</h2>
           </div>
-          ${intro ? `<p class="mt-5 max-w-4xl text-lg leading-relaxed text-gray-600">${esc(intro)}</p>` : ''}
+          ${intro ? `<p class="mt-5 text-lg leading-relaxed text-gray-600">${esc(intro)}</p>` : ''}
         </div>
       </div>
     </div>`;

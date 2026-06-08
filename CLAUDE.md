@@ -1,8 +1,8 @@
 # CLAUDE.md - AI-STEAM Network Vanilla
 
 **Fecha de inicio:** 2026-05-07  
-**Última sesión:** 2026-05-07  
-**Estado:** Fases 1–5 COMPLETADAS ✅ — Proyecto funcional y publicado  
+**Última sesión:** 2026-06-08  
+**Estado:** Fases 1–5 y Overhaul Visual (F0–F11) COMPLETADOS ✅ — Proyecto funcional, rediseñado y publicado  
 **Repo:** https://github.com/jsmiragregori/AI-STEAM-NETWORK
 
 ---
@@ -18,6 +18,9 @@ Hosting estático, sin node_modules en producción.
 - `f81dbb3` — Fase 3: governance, knowledge, network
 - `55e8d48` — Fase 4: marketplace + challenge detail
 - `841f8d6` — Fase 5: Accessibility & UX audit
+- `d287066` — Fase F6: Rediseño Gobernanza (introducción de degradados y paleta corporativa v3)
+- `6f19f89` — Fase F10: Rediseño Marketplace (grid 2 columnas, patrón ceja, lift cards)
+- `P0-P7` — Fase F11: Cierre del overhaul, accesibilidad WCAG 2.1 AA, responsive y correcciones finales de ancho de párrafo.
 
 ---
 

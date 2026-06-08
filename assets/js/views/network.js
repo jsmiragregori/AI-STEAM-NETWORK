@@ -124,7 +124,7 @@ function helixBlock() {
   return `
     <div class="rd-card rd-card-accent rd-pad mb-8 rd-card-grad-beige">
       <h2 class="text-2xl font-extrabold text-eu-purple mb-2">${loc(helix.heading)}</h2>
-      <p class="text-lg text-gray-600 mb-6 max-w-3xl leading-relaxed">${loc(helix.description)}</p>
+      <p class="text-lg text-gray-600 mb-6 leading-relaxed">${loc(helix.description)}</p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">${html}</div>
     </div>
   `;
@@ -235,7 +235,7 @@ function tabSocios(activeCategory, filterCountry) {
     </p>` : '';
 
   return `
-    <p class="text-lg text-gray-600 mb-5 max-w-3xl leading-relaxed">${loc(pb.description)}</p>
+    <p class="text-lg text-gray-600 mb-5 leading-relaxed">${loc(pb.description)}</p>
     <div class="flex flex-wrap gap-2 mb-5">${catFilters}</div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">${cardsHtml}</div>
     <div class="rd-card rd-card-accent rd-pad rd-card-grad-beige">

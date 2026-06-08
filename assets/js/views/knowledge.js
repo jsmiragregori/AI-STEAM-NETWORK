@@ -202,7 +202,7 @@ function tabFlujo() {
     }
     stepsSection = `
       <h2 class="text-2xl font-extrabold text-eu-purple mb-2">${sectionTitle}</h2>
-      <p class="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">${sectionDesc}</p>
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">${sectionDesc}</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">${stepsHtml}</div>`;
   }
 
@@ -281,7 +281,7 @@ function tabOER(search) {
       <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
         <div>
           <h2 class="text-2xl font-extrabold text-eu-purple mb-1">${blockTitle}</h2>
-          <p class="text-lg text-gray-600 max-w-2xl leading-relaxed">${blockDesc}</p>
+          <p class="text-lg text-gray-600 leading-relaxed">${blockDesc}</p>
         </div>
         <div class="flex gap-3 items-center">
           <div class="relative">
@@ -765,7 +765,7 @@ function tabPlantillas(search) {
       <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
         <div>
           <h2 class="text-2xl font-extrabold text-eu-purple mb-1">${blockTitle}</h2>
-          <p class="text-lg text-gray-600 max-w-2xl leading-relaxed">${blockDesc}</p>
+          <p class="text-lg text-gray-600 leading-relaxed">${blockDesc}</p>
         </div>
         <div class="flex gap-3 items-center">
           <div class="relative">

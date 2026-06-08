@@ -183,7 +183,7 @@ function tabEstructura(govT) {
       <!-- Actores principales -->
       <div>
         <h2 class="font-extrabold text-eu-purple mb-3">${pickLang(actorsBlock.title, s.actorsTitle || '')}</h2>
-        <p class="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">${pickLang(actorsBlock.description, s.actorsDesc || '')}</p>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${pickLang(actorsBlock.description, s.actorsDesc || '')}</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           ${actorCardsHtml}
         </div>
@@ -193,7 +193,7 @@ function tabEstructura(govT) {
       <!-- Órganos formales -->
       <div>
         <h2 class="font-extrabold text-eu-purple mb-3">${pickLang(formalBodiesBlock.title, s.bodiesTitle || '')}</h2>
-        <p class="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">${pickLang(formalBodiesBlock.description, s.bodiesDesc || '')}</p>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${pickLang(formalBodiesBlock.description, s.bodiesDesc || '')}</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">${bodiesHtml}</div>
       </div>` : ''}
 
