@@ -170,10 +170,10 @@ function tabEstructura(govT) {
     <div class="space-y-12">
       ${hubBlock.visible !== false ? `
       <!-- Hub -->
-      <div class="rd-card rd-card-accent rd-pad bg-white">
-        <h2 class="text-2xl font-extrabold text-eu-purple mb-3 flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full bg-eu-yellow flex items-center justify-center text-eu-blue shrink-0">
-            <i data-lucide="globe" class="w-5 h-5"></i>
+      <div class="rd-card rd-card-accent rd-pad bg-white rd-card-hover group">
+        <h2 class="text-2xl font-extrabold text-eu-purple mb-3 flex items-center gap-4">
+          <div class="w-14 h-14 rounded-full bg-eu-yellow flex items-center justify-center text-eu-blue shrink-0 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+            <i data-lucide="globe" class="w-7 h-7"></i>
           </div>
           ${pickLang(hubBlock.title, s.hubTitle || '')}
         </h2>
