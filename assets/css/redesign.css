@@ -86,17 +86,42 @@
    siguen respetando reduced-motion. */
 .rd-card-hover, .rd-card-edge { transition-duration: .5s !important; }
 
+/* ───────────────────────────────────────────────────────────────────────────
+   PALETA OFICIAL DE DEGRADADOS (consolidada en F11, 2026-06-08)
+   Línea editorial: NUNCA colores planos en superficies de card; siempre uno de
+   estos degradados verticales de marca. Regla de coherencia (anti bajo-contraste):
+     · Contenedor sobre canvas        → .rd-card-grad-beige  (blanco → #FFF4E1)
+     · Inner card sobre beige         → .rd-card-grad-violet (blanco → #D7C8F3)
+                                        ó .rd-card-grad-blue (blanco → #EAE6FF)
+     · Cards Marketplace              → .rd-card-mp          (blanco → #FBF7FF)
+     · Cejas de contenido             → .rd-ceja-grad        (#4E1BC8 → #5520F6)
+     · Heroes                         → .rd-hero-gradient    (#4918AD→#521DE2→#5620F6)
+   No anidar dos degradados de la MISMA gama sin un borde border-eu-purple/10.
+   Iconos animados → círculo blanco (#ffffff), nunca beige.
+   ─────────────────────────────────────────────────────────────────────────── */
+
 /* Card con degradado vertical blanco → violeta suave (#D7C8F3).
-   Reutilizable: cards internas sobre fondo beige. */
+   Reutilizable: cards internas (gama violeta) sobre fondo beige. */
 .rd-card-grad-violet {
   background: linear-gradient(to bottom, #ffffff 0%, #D7C8F3 100%);
 }
 
 /* Card con degradado vertical blanco puro → Sand Beige oficial (#FFF4E1).
-   Reutilizable: cards contenedoras cálidas sobre canvas. (Disponible pero no
-   usada en Marketplace — ver .rd-card-mp.) */
+   Reutilizable: cards contenedoras cálidas sobre canvas. */
 .rd-card-grad-beige {
   background: linear-gradient(to bottom, #ffffff 0%, #FFF4E1 100%);
+}
+
+/* Card con degradado vertical blanco → azul tenue (#EAE6FF). Gama fría:
+   alternativa a violet/beige para inner cards o contenedores que pidan azul. */
+.rd-card-grad-blue {
+  background: linear-gradient(to bottom, #ffffff 0%, #EAE6FF 100%);
+}
+
+/* Ceja de contenido — degradado vertical de marca (#4E1BC8 → #5520F6).
+   Estándar para TODAS las cejas del proyecto (Marketplace, Gobernanza, Red). */
+.rd-ceja-grad {
+  background: linear-gradient(to bottom, #4E1BC8 0%, #5520F6 100%);
 }
 
 /* ─── Marketplace · Editorial item card (F10) ──────────────────────────────
@@ -121,9 +146,9 @@
 }
 .rd-card-mp-hover { transition-duration: .5s !important; }
 
-/* Ceja púrpura oficial del proyecto (#5222B0), con el título dentro. */
+/* Ceja de la card Marketplace: degradado de marca (.rd-ceja-grad) + título. */
 .rd-card-mp-ceja {
-  background: #5222B0;
+  background: linear-gradient(to bottom, #4E1BC8 0%, #5520F6 100%);
   padding: 1.4rem 1.75rem;
 }
 .rd-card-mp-ceja .rd-card-mp-title {
