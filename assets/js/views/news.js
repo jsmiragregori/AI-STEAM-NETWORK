@@ -125,7 +125,7 @@ export function render() {
           </div>
           <div class="flex items-center gap-2">
             ${item.isOfficial !== undefined ? `
-              <span class="text-xs font-bold px-2 py-0.5 rounded ${item.isOfficial ? 'bg-green-50 text-green-700' : 'bg-purple-50 text-purple-700'}">
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${item.isOfficial ? 'bg-eu-blue/5 text-eu-blue border border-eu-blue/10' : 'bg-eu-purple/5 text-eu-purple border border-eu-purple/10'}">
                 ${item.isOfficial ? (newsT?.officialBadge || 'Oficial') : (newsT?.demoBadge || 'Demo')}
               </span>` : ''}
             <span class="text-sm text-gray-400 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>${item.date}</span>
