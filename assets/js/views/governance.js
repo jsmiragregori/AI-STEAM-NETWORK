@@ -395,7 +395,6 @@ function tabLbd(govT) {
             <div class="flex flex-wrap gap-2">${outputsHtml}</div>
           </div>
         </div>
-        ${i < arr.length - 1 ? '<div class="flex justify-center my-3"><i data-lucide="arrow-down" class="w-6 h-6 text-eu-blue/40"></i></div>' : ''}
       </div>
     `;
   }).join('');
