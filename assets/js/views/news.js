@@ -104,17 +104,18 @@ export function render() {
   `).join('');
 
   const featuredHtml = (activeFilter === firstCat && featured) ? `
-    <article class="rd-card rd-card-hover rd-pad bg-white mb-6 cursor-pointer relative overflow-hidden group" data-news-id="${featured.id}">
-      <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-eu-blue"></div>
-      <div class="flex items-center gap-3 mb-4">
+    <article class="rd-card rd-card-hover rd-pad mb-6 cursor-pointer relative overflow-hidden group border-none shadow-xl text-white" style="background:#4918AD" data-news-id="${featured.id}">
+      <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full blur-xl"></div>
+      
+      <div class="flex items-center gap-3 mb-4 relative z-10">
         <span class="rd-badge-beige">${newsT?.featured || ''}</span>
-        <span class="text-xs text-gray-555 flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>${featured.date}</span>
+        <span class="text-sm text-white/70 flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4"></i>${featured.date}</span>
       </div>
-      <h2 class="text-2xl font-extrabold mb-3 text-eu-purple group-hover:text-eu-blue transition-colors leading-tight">${featured.title}</h2>
-      <p class="text-gray-500 text-sm mb-4 leading-relaxed">${featured.excerpt}</p>
-      <div class="flex items-center justify-between mt-6 pt-4 border-t border-eu-blue/5">
-        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">${featured.partner || ''}</span>
-        <button data-news-id="${featured.id}" class="inline-flex items-center text-eu-blue font-bold text-sm hover:text-eu-purple transition-colors cursor-pointer border-none bg-transparent p-0">
+      <h2 class="text-3xl font-extrabold mb-4 group-hover:text-white transition-colors leading-tight relative z-10" style="color:#FFF4E1">${featured.title}</h2>
+      <p class="text-lg text-white/85 mb-6 leading-relaxed relative z-10">${featured.excerpt}</p>
+      <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/10 relative z-10">
+        <span class="text-xs font-bold text-white/60 uppercase tracking-wider">${featured.partner || ''}</span>
+        <button data-news-id="${featured.id}" class="inline-flex items-center font-bold text-sm hover:text-white transition-colors cursor-pointer border-none bg-transparent p-0" style="color:#FFF4E1">
           ${newsT?.readMore || ''} <i data-lucide="arrow-right" class="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
         </button>
       </div>
@@ -127,21 +128,21 @@ export function render() {
         <div class="flex items-center justify-between mb-4">
           <div class="flex flex-wrap items-center gap-2">
             <span class="text-xs font-bold uppercase tracking-wider ${getCategoryColor(item.category)}">${item.category}</span>
-            ${item.sector ? `<span class="flex items-center gap-1 text-xs text-gray-400 font-semibold"><i data-lucide="tag" class="w-2.5 h-2.5"></i>${item.sector}</span>` : ''}
+            ${item.sector ? `<span class="flex items-center gap-1.5 text-sm text-gray-400 font-semibold"><i data-lucide="tag" class="w-3 h-3"></i>${item.sector}</span>` : ''}
           </div>
           <div class="flex items-center gap-2">
             ${item.isOfficial !== undefined ? `
               <span class="text-xs font-bold px-2 py-0.5 rounded ${item.isOfficial ? 'bg-green-50 text-green-700' : 'bg-purple-50 text-purple-700'}">
                 ${item.isOfficial ? (newsT?.officialBadge || 'Oficial') : (newsT?.demoBadge || 'Demo')}
               </span>` : ''}
-            <span class="text-xs text-gray-400 flex items-center gap-1"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>${item.date}</span>
+            <span class="text-sm text-gray-400 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>${item.date}</span>
           </div>
         </div>
-        <h3 class="text-xl font-extrabold text-eu-text mb-3 group-hover:text-eu-blue transition-colors leading-snug">${item.title}</h3>
-        <p class="text-sm text-gray-500 mb-6 line-clamp-3 leading-relaxed">${item.excerpt}</p>
+        <h3 class="text-2xl font-extrabold text-eu-purple mb-4 group-hover:text-eu-blue transition-colors leading-snug">${item.title}</h3>
+        <p class="text-base text-gray-500 mb-6 line-clamp-3 leading-relaxed">${item.excerpt}</p>
       </div>
       <div class="flex items-center justify-between border-t border-eu-blue/5 pt-4 mt-auto">
-        ${item.partner ? `<span class="text-xs text-gray-400 font-bold uppercase tracking-wider">${item.partner}</span>` : '<span></span>'}
+        ${item.partner ? `<span class="text-xs font-bold text-gray-400 uppercase tracking-wider">${item.partner}</span>` : '<span></span>'}
         <span class="inline-flex items-center text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors ml-auto">
           ${newsT?.readMore || ''} <i data-lucide="arrow-right" class="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
         </span>
