@@ -22,10 +22,10 @@ function tabBar(activeTab, govT) {
     'participar':  govT?.tabParticipar  || 'Participar',
   };
   return TABS.map(id => `
-    <button data-gov-tab="${id}" class="px-5 py-2.5 rounded-full text-xs font-bold cursor-pointer border transition-all whitespace-nowrap ${
+    <button data-gov-tab="${id}" class="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold cursor-pointer transition-all duration-300 ${
       activeTab === id
-        ? 'bg-eu-blue text-white border-eu-blue shadow-sm'
-        : 'bg-white text-eu-text border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'
+        ? 'bg-eu-blue text-white shadow-sm'
+        : 'bg-eu-yellow/70 text-eu-purple border border-eu-yellow hover:bg-eu-yellow hover:border-eu-purple/30'
     }">${labels[id]}</button>
   `).join('');
 }
@@ -45,16 +45,16 @@ function tabEstructura(govT) {
     ? hubBlock.nodes
     : (s.nodes || []);
   const nodesHtml = hubNodes.map(node => `
-    <div class="rd-card rd-card-hover p-6 bg-white border border-eu-blue/10 flex flex-col justify-between h-full">
+    <div class="rd-card p-6 border-l-4 border-l-eu-blue border-y-eu-blue/10 border-r-eu-blue/10 flex flex-col justify-between h-full group hover:-translate-y-1 hover:shadow-lg transition-all duration-300" style="background: rgba(255, 244, 225, 0.55);">
       <div>
-        <div class="w-10 h-10 rounded-full bg-eu-yellow/60 flex items-center justify-center mb-4 text-eu-blue shadow-inner shrink-0">
+        <div class="w-10 h-10 rounded-full bg-eu-yellow/60 flex items-center justify-center mb-4 text-eu-blue shadow-inner shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
           <i data-lucide="${node.icon || 'globe'}" class="w-5 h-5"></i>
         </div>
         <p class="text-[10px] font-extrabold uppercase tracking-widest text-eu-blue mb-1">${pickLang(node.label, node.label || '')}</p>
-        <p class="font-extrabold text-lg text-eu-purple leading-tight">${pickLang(node.city, node.city || '')}</p>
-        <p class="text-xs text-eu-text/60 mt-1 font-bold">${pickLang(node.org, node.org || '')}</p>
+        <p class="font-extrabold text-xl text-eu-purple leading-tight">${pickLang(node.city, node.city || '')}</p>
+        <p class="text-sm text-eu-text/75 mt-1.5 font-bold">${pickLang(node.org, node.org || '')}</p>
       </div>
-      <p class="text-xs text-gray-600 mt-4 leading-relaxed">${pickLang(node.role, node.role || '')}</p>
+      <p class="text-sm text-gray-700 mt-4 leading-relaxed">${pickLang(node.role, node.role || '')}</p>
     </div>
   `).join('');
 
@@ -73,29 +73,29 @@ function tabEstructura(govT) {
     const iconBg = isOrange ? 'bg-eu-orange/10' : 'bg-eu-blue/10';
 
     const rolesHtml = (Array.isArray(card.roles) ? card.roles : []).map(item => `
-      <div class="flex items-start gap-3 text-sm">
-        <div class="w-6 h-6 rounded-full bg-eu-yellow/60 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+      <div class="flex items-start gap-3 text-base">
+        <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
           <i data-lucide="${item.icon || 'globe'}" class="w-3.5 h-3.5 text-eu-blue"></i>
         </div>
         <div>
           <span class="font-bold text-eu-text">${pickLang(item.label, item.label || '')}: </span>
-          <span class="text-gray-600 leading-relaxed">${pickLang(item.desc, item.desc || '')}</span>
+          <span class="text-gray-700 leading-relaxed">${pickLang(item.desc, item.desc || '')}</span>
         </div>
       </div>
     `).join('');
 
     return `
-      <div class="rd-card ${accentBorder} rd-pad bg-white">
+      <div class="rd-card ${accentBorder} rd-pad transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-eu-yellow" style="background: rgba(255, 244, 225, 0.55);">
         <div class="flex items-center gap-4 mb-6">
           <div class="w-12 h-12 ${iconBg} rounded-2xl flex items-center justify-center shrink-0">
             <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 ${iconColor}"></i>
           </div>
           <div>
-            <h3 class="text-xl font-extrabold text-eu-purple leading-snug">${pickLang(card.title, card.title || '')}</h3>
+            <h3 class="text-2xl font-extrabold text-eu-purple leading-snug">${pickLang(card.title, card.title || '')}</h3>
             <p class="text-xs ${iconColor} font-extrabold uppercase tracking-widest mt-1">${pickLang(card.subtitle, card.subtitle || '')}</p>
           </div>
         </div>
-        <div class="space-y-4">${rolesHtml}</div>
+        <div class="space-y-4 text-sm md:text-base">${rolesHtml}</div>
       </div>
     `;
   }).join('');
@@ -113,23 +113,27 @@ function tabEstructura(govT) {
     return `<p><span class="font-bold text-gray-700">${pickLang(label)}:</span> ${text}</p>`;
   }
 
-  const bodiesHtml = formalBodies.map(body => `
-    <div class="rd-card border-l-4 border-y-eu-blue/10 border-r-eu-blue/10 p-6 ${body.color || 'border-eu-border bg-white'}">
-      <div class="flex items-start justify-between mb-4">
-        <div>
-          <h3 class="font-extrabold text-lg text-eu-text leading-snug">${pickLang(body.name, body.name || '')}</h3>
-          <p class="text-[10px] font-extrabold uppercase tracking-widest mt-1 ${body.iconColor || 'text-eu-blue'}">${pickLang(body.type, body.type || '')}</p>
+  const bodiesHtml = formalBodies.map(body => {
+    const colorClasses = body.color || 'border-eu-border';
+    const borderCls = colorClasses.split(' ').filter(c => c.startsWith('border')).join(' ');
+    return `
+      <div class="rd-card border-l-4 ${borderCls} border-y-eu-blue/10 border-r-eu-blue/10 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg" style="background: rgba(255, 244, 225, 0.55);">
+        <div class="flex items-start justify-between mb-4">
+          <div>
+            <h3 class="font-extrabold text-xl text-eu-purple leading-snug">${pickLang(body.name, body.name || '')}</h3>
+            <p class="text-xs font-extrabold uppercase tracking-widest mt-1 ${body.iconColor || 'text-eu-blue'}">${pickLang(body.type, body.type || '')}</p>
+          </div>
+          <span class="text-2xl font-extrabold ${body.iconColor || 'text-eu-blue'} opacity-25 select-none">${body.abbr || ''}</span>
         </div>
-        <span class="text-2xl font-extrabold ${body.iconColor || 'text-eu-blue'} opacity-25 select-none">${body.abbr || ''}</span>
+        <p class="text-sm text-gray-750 mb-5 leading-relaxed">${pickLang(body.desc, body.desc || '')}</p>
+        <div class="space-y-2 text-xs text-gray-600 pt-4 border-t border-eu-blue/10">
+          ${metaRow(formalLabels.members || { es: 'Miembros', en: 'Members', va: 'Membres' }, body.members)}
+          ${metaRow(formalLabels.frequency || { es: 'Frecuencia', en: 'Frequency', va: 'Freqüència' }, body.frequency || body.freq)}
+          ${metaRow(formalLabels.quorum || { es: 'Quórum', en: 'Quorum', va: 'Quòrum' }, body.quorum)}
+        </div>
       </div>
-      <p class="text-sm text-gray-600 mb-5 leading-relaxed">${pickLang(body.desc, body.desc || '')}</p>
-      <div class="space-y-1.5 text-xs text-gray-500 pt-4 border-t border-eu-blue/5">
-        ${metaRow(formalLabels.members || { es: 'Miembros', en: 'Members', va: 'Membres' }, body.members)}
-        ${metaRow(formalLabels.frequency || { es: 'Frecuencia', en: 'Frequency', va: 'Freqüència' }, body.frequency || body.freq)}
-        ${metaRow(formalLabels.quorum || { es: 'Quórum', en: 'Quorum', va: 'Quòrum' }, body.quorum)}
-      </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 
   const standardCardsHtml = (Array.isArray(standardsBlock.cards) ? standardsBlock.cards : [
     { icon: 'shield-check', tone: 'blue', title: s.iso21001Title, desc: s.iso21001Desc },
@@ -137,15 +141,15 @@ function tabEstructura(govT) {
   ]).map(card => {
     const isOrange = card.tone === 'orange';
     const iconColor = isOrange ? 'text-eu-orange' : 'text-eu-blue';
-    const iconBg = isOrange ? 'bg-eu-orange/10' : 'bg-eu-blue/10';
+    const iconBg = 'bg-white';
     return `
-      <div class="rd-card rd-pad bg-white flex gap-5 items-start">
-        <div class="w-12 h-12 rounded-2xl ${iconBg} flex items-center justify-center shrink-0">
+      <div class="rd-card rd-pad transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-eu-yellow flex gap-5 items-start" style="background: rgba(255, 244, 225, 0.55);">
+        <div class="w-12 h-12 rounded-2xl ${iconBg} flex items-center justify-center shrink-0 shadow-sm">
           <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 ${iconColor}"></i>
         </div>
         <div>
-          <h3 class="font-extrabold text-eu-purple mb-2 text-lg leading-snug">${pickLang(card.title, card.title || '')}</h3>
-          <p class="text-sm text-gray-600 leading-relaxed">${pickLang(card.desc, card.desc || '')}</p>
+          <h3 class="font-extrabold text-eu-purple mb-2 text-xl leading-snug">${pickLang(card.title, card.title || '')}</h3>
+          <p class="text-base text-gray-700 leading-relaxed">${pickLang(card.desc, card.desc || '')}</p>
         </div>
       </div>
     `;
