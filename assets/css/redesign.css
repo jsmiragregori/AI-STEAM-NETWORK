@@ -258,3 +258,46 @@
   font-weight: 700;
   letter-spacing: .05em;
 }
+
+/* ─── GOBERNANZA SECCIÓN (DS v3) ────────────────────────────────────────── */
+
+/* Card base con beige al 55% y transición suave */
+.rd-card-gov-beige {
+  background-color: rgba(255, 244, 225, 0.55) !important;
+  border: 1.5px solid rgba(73, 24, 173, 0.15) !important;
+  border-radius: 2rem;
+  box-shadow: 0 10px 25px -12px rgba(73, 24, 173, 0.06);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important,
+              box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important,
+              background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important,
+              border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, box-shadow, background-color, border-color;
+}
+
+/* Hover suave con elevación y cambio a beige 100% (#FFF4E1) */
+.rd-card-gov-interactive:hover {
+  background-color: #FFF4E1 !important;
+  transform: translateY(-0.375rem);
+  box-shadow: 0 20px 40px -18px rgba(73, 24, 173, 0.14) !important;
+  border-color: rgba(73, 24, 173, 0.35) !important;
+}
+
+/* Hover suave para las estáticas (sin cambiar de color de fondo, pero con elevación) */
+.rd-card-gov-static-hover:hover {
+  transform: translateY(-0.375rem);
+  box-shadow: 0 20px 40px -18px rgba(73, 24, 173, 0.12) !important;
+  border-color: rgba(73, 24, 173, 0.28) !important;
+}
+
+/* Animación ultra suave del icono al pasar por encima de la card */
+.rd-card-gov-beige:hover .rd-icon-circle-gov {
+  transform: scale(1.12) rotate(8deg);
+  background-color: rgba(255, 244, 225, 0.95);
+}
+
+.rd-icon-circle-gov {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, background-color;
+}
+
