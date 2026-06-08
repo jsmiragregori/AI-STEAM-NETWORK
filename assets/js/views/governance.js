@@ -306,7 +306,7 @@ function tabDualTrack(govT) {
       ${dualTrackVisible ? `
       <div>
         <h2 class="text-2xl font-extrabold text-eu-purple mb-3">${pickLang(dualTrackBlock.title)}</h2>
-        <p class="text-base text-gray-600 mb-8 max-w-3xl leading-relaxed">${pickLang(dualTrackBlock.description)}</p>
+        <p class="text-base text-gray-600 mb-8 leading-relaxed">${pickLang(dualTrackBlock.description)}</p>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           ${trackAVisible ? trackBlock(tracksById['track-a'], 'bg-eu-blue',   'border-eu-blue',   'bg-eu-blue/10 text-eu-blue',   'alert-circle',  'bg-blue-50',       'text-eu-blue'  ) : ''}
