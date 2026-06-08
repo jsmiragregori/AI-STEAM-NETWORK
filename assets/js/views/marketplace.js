@@ -357,10 +357,10 @@ const TRANSFER_TYPE_ICONS = {
 const CARD_CHIP_MAX = MARKETPLACE_CONFIG.cardChipMax ?? 4;
 
 const LEVEL_STYLES = {
-  FP:       'bg-yellow-100 text-yellow-800 border-yellow-200',
-  vet:      'bg-yellow-100 text-yellow-800 border-yellow-200',
-  Máster:   'bg-purple-100 text-purple-800 border-purple-200',
-  master:   'bg-purple-100 text-purple-800 border-purple-200',
+  FP:       'bg-[#FFF4E1] text-eu-purple border-eu-purple/20',
+  vet:      'bg-[#FFF4E1] text-eu-purple border-eu-purple/20',
+  Máster:   'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
+  master:   'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
   Docentes: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
   teacher:  'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
 };
@@ -379,19 +379,19 @@ const SECTOR_FALLBACK_LABELS = {
 
 const TAB_TONES = {
   challenges: {
-    badge: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
+    badge: 'bg-eu-blue text-white border-eu-blue',
   },
   cases: {
-    badge: 'bg-eu-orange/10 text-eu-orange border-eu-orange/20',
+    badge: 'bg-eu-purple text-white border-eu-purple',
   },
   pilots: {
-    badge: 'bg-eu-teal/10 text-eu-teal border-eu-teal/20',
+    badge: 'bg-eu-blue text-white border-eu-blue',
   },
   validations: {
-    badge: 'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
+    badge: 'bg-eu-purple text-white border-eu-purple',
   },
   mentorings: {
-    badge: 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
+    badge: 'bg-eu-blue text-white border-eu-blue',
   },
 };
 
@@ -534,15 +534,15 @@ function getPilotStageLabel(id) {
 
 function getPilotStageTone(stage) {
   const tones = {
-    planned:    'bg-gray-100 text-gray-700 border-gray-200',
-    open:       'bg-blue-50 text-blue-700 border-blue-200',
-    'in-progress': 'bg-amber-50 text-amber-800 border-amber-200',
-    completed:  'bg-teal-50 text-teal-700 border-teal-200',
-    published:  'bg-green-50 text-green-800 border-green-200',
-    scaled:     'bg-purple-50 text-purple-700 border-purple-200',
-    archived:   'bg-gray-50 text-gray-500 border-gray-200',
+    planned:    'bg-[#FFF4E1] text-eu-purple border-eu-purple/20',
+    open:       'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
+    'in-progress': 'bg-eu-blue/10 text-eu-blue border-eu-blue/20',
+    completed:  'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
+    published:  'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
+    scaled:     'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
+    archived:   'bg-[#FFF4E1] text-eu-purple/70 border-eu-purple/15',
   };
-  return tones[stage] || 'bg-eu-bg text-gray-700 border-eu-border';
+  return tones[stage] || 'bg-[#FFF4E1] text-eu-purple border-eu-purple/20';
 }
 
 function getEducationalReadinessLabel(id) {
@@ -1083,15 +1083,15 @@ function renderTabResults(tab, items) {
   if (!filtered.length) {
     return `
       ${resultsHeader}
-      <div class="rounded-2xl border border-dashed border-eu-border bg-white p-8 text-center shadow-sm">
-        <i data-lucide="search-x" class="mx-auto h-8 w-8 text-gray-400"></i>
+      <div class="rd-card-grad-violet rounded-2xl border border-dashed border-eu-purple/20 p-8 text-center shadow-sm">
+        <i data-lucide="search-x" class="mx-auto h-8 w-8 text-eu-purple/60"></i>
         <h3 class="mt-3 text-lg font-extrabold text-eu-text">${esc(uiText('noResults'))}</h3>
-        <p class="mx-auto mt-2 max-w-xl text-sm leading-6 text-gray-500">${esc(pickLang(tab.emptyState?.message))}</p>
+        <p class="mx-auto mt-2 max-w-xl text-base leading-6 text-gray-600">${esc(pickLang(tab.emptyState?.message))}</p>
       </div>`;
   }
   return `
     ${resultsHeader}
-    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">${paginated.map(item => renderItemCard(item, tab)).join('')}</div>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2">${paginated.map(item => renderItemCard(item, tab)).join('')}</div>
     ${paginationControls}`;
 }
 
@@ -1108,16 +1108,16 @@ function renderCardShell(item, tab, body, options = {}) {
     : (getFilterDefinitions(tab.id).some(d => d.key === 'status') ? 'status' : '');
 
   return `
-    <article class="group flex h-full flex-col rounded-xl border border-eu-border bg-white p-6 shadow-sm transition-colors hover:border-eu-blue">
+    <article class="rd-card-mp rd-card-mp-hover group flex h-full flex-col p-7">
       <div class="flex flex-wrap gap-2">
         ${options.hideTypeBadge ? '' : renderBadge(getTypeLabel(item.type), tone.badge)}
-        ${options.showStatusBadge !== false ? renderBadge(statusLabel, options.statusBadgeTone || 'bg-white text-gray-700 border-eu-border', statusFilterKey, statusRaw) : ''}
-        ${options.extraBadge ? renderBadge(options.extraBadge, options.extraBadgeTone || 'bg-white text-gray-700 border-eu-border', options.extraBadgeFilterKey || '', options.extraBadgeFilterValue || '') : ''}
-        ${options.extraBadge2 ? renderBadge(options.extraBadge2, options.extraBadge2Tone || 'bg-white text-gray-700 border-eu-border', options.extraBadge2FilterKey || '', options.extraBadge2FilterValue || '') : ''}
+        ${options.showStatusBadge !== false ? renderBadge(statusLabel, options.statusBadgeTone || 'bg-white/70 text-eu-purple border-eu-purple/25', statusFilterKey, statusRaw) : ''}
+        ${options.extraBadge ? renderBadge(options.extraBadge, options.extraBadgeTone || 'bg-white/70 text-eu-purple border-eu-purple/25', options.extraBadgeFilterKey || '', options.extraBadgeFilterValue || '') : ''}
+        ${options.extraBadge2 ? renderBadge(options.extraBadge2, options.extraBadge2Tone || 'bg-white/70 text-eu-purple border-eu-purple/25', options.extraBadge2FilterKey || '', options.extraBadge2FilterValue || '') : ''}
       </div>
       <div class="mt-4 flex-1">
-        <h3 class="text-lg font-bold leading-snug text-eu-text group-hover:text-eu-blue">${esc(title)}</h3>
-        ${subtitle ? `<p class="mt-2 text-sm leading-6 text-gray-600">${esc(subtitle)}</p>` : ''}
+        <h3 class="text-xl font-extrabold leading-snug text-eu-purple group-hover:text-eu-blue" style="letter-spacing:-.01em">${esc(title)}</h3>
+        ${subtitle ? `<p class="mt-2 text-base leading-relaxed text-gray-600">${esc(subtitle)}</p>` : ''}
         ${body}
       </div>
       ${renderCardFooter(item, tab, entity, dateLabel, options.ctaHtml)}
@@ -1148,10 +1148,10 @@ function renderCardFooter(item, tab, entity, dateLabel, ctaHtml = null) {
   const hasInfo = entity || dateLabel;
   if (!hasInfo && !actions) return '';
   return `
-    <div class="mt-5 border-t border-eu-border pt-4">
-      ${hasInfo ? `<div class="mb-3 text-xs text-gray-500">
-        ${entity ? `<p class="font-bold uppercase tracking-wide text-gray-400">${esc(pickLang(FIELD_LABELS.entity))}</p><p class="mt-0.5 font-semibold">${esc(entity)}</p>` : ''}
-        ${dateLabel ? `<p class="${entity ? 'mt-2' : ''} font-semibold">${esc(dateLabel)}</p>` : ''}
+    <div class="mt-5 border-t border-eu-purple/12 pt-4">
+      ${hasInfo ? `<div class="mb-3 text-sm text-gray-600">
+        ${entity ? `<p class="text-xs font-bold uppercase tracking-wide text-eu-purple/60">${esc(pickLang(FIELD_LABELS.entity))}</p><p class="mt-0.5 font-semibold text-eu-text">${esc(entity)}</p>` : ''}
+        ${dateLabel ? `<p class="${entity ? 'mt-2' : ''} text-xs font-semibold text-gray-500">${esc(dateLabel)}</p>` : ''}
       </div>` : ''}
       ${actions ? `<div class="flex flex-wrap items-center justify-end gap-x-4 gap-y-2">${actions}</div>` : ''}
     </div>`;
@@ -1160,16 +1160,16 @@ function renderCardFooter(item, tab, entity, dateLabel, ctaHtml = null) {
 function renderCardCallout(label, value, icon = 'sparkles', strict = false, tone = {}) {
   const text = strict ? pickLangStrict(value) : pickLang(value);
   if (!text) return '';
-  const boxClass = tone.boxClass || 'bg-eu-bg';
-  const labelClass = tone.labelClass || 'text-gray-500';
+  const boxClass = tone.boxClass || 'rd-card-grad-violet border border-eu-purple/10 border-l-4 border-l-eu-blue';
+  const labelClass = tone.labelClass || 'text-eu-blue';
   const valueClass = tone.valueClass || 'text-eu-text';
   return `
-    <div class="mt-4 rounded-lg p-4 ${boxClass}">
+    <div class="mt-4 rounded-xl p-4 ${boxClass}">
       <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide ${labelClass}">
         <i data-lucide="${esc(icon)}" class="h-3.5 w-3.5"></i>
         ${esc(label)}
       </p>
-      <p class="mt-1 text-sm font-semibold leading-6 ${valueClass}">${esc(text)}</p>
+      <p class="mt-1 text-base font-semibold leading-relaxed ${valueClass}">${esc(text)}</p>
     </div>`;
 }
 
@@ -1179,12 +1179,12 @@ function renderCardMiniMeta(items) {
   return `
     <div class="mt-4 grid gap-3">
       ${visible.map(item => `
-        <div class="rounded-lg border px-3 py-2 ${item.boxClass || 'border-eu-border bg-white'}">
-          <p class="text-[11px] font-semibold uppercase tracking-wide ${item.labelClass || 'text-gray-400'}">${esc(item.label)}</p>
+        <div class="rounded-xl border px-3.5 py-2.5 ${item.boxClass || 'border-eu-purple/15 bg-white'}">
+          <p class="text-xs font-semibold uppercase tracking-wide ${item.labelClass || 'text-eu-purple/70'}">${esc(item.label)}</p>
           ${item.htmlValue
-            ? `<div class="mt-1 ${item.valueClass || 'text-sm text-gray-600'}">${item.htmlValue}</div>`
-            : `<p class="mt-0.5 text-sm leading-5 ${item.valueClass || 'text-gray-700'}">${esc(item.value)}</p>`}
-          ${item.secondaryValue ? `<p class="mt-1 text-sm leading-5 ${item.secondaryValueClass || 'text-gray-600'}">${esc(item.secondaryValue)}</p>` : ''}
+            ? `<div class="mt-1 ${item.valueClass || 'text-base text-gray-600'}">${item.htmlValue}</div>`
+            : `<p class="mt-0.5 text-base leading-relaxed ${item.valueClass || 'text-gray-700'}">${esc(item.value)}</p>`}
+          ${item.secondaryValue ? `<p class="mt-1 text-base leading-relaxed ${item.secondaryValueClass || 'text-gray-600'}">${esc(item.secondaryValue)}</p>` : ''}
           ${item.tertiaryValue ? `<div class="${item.tertiaryWrapClass || 'mt-2 border-t border-slate-100 pt-2'}"><p class="text-sm leading-5 ${item.tertiaryValueClass || 'text-gray-700'}">${esc(item.tertiaryValue)}</p></div>` : ''}
         </div>`).join('')}
     </div>`;
@@ -1204,7 +1204,7 @@ function renderSdgs(sdgs, limit = CARD_CHIP_MAX, filterKey = '', noWrap = false)
     return label ? { label, value: rawId || label } : null;
   }).filter(Boolean);
   if (!items.length) return '';
-  const inner = items.map(({ label, value }) => renderBadge(label, 'bg-green-50 text-green-800 border-green-200', filterKey, value)).join('');
+  const inner = items.map(({ label, value }) => renderBadge(label, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20', filterKey, value)).join('');
   return noWrap ? inner : `<div class="mt-4 flex flex-wrap gap-2">${inner}</div>`;
 }
 
@@ -1399,7 +1399,7 @@ function renderChallengeCard(item, tab) {
     ${compChips.length ? `
       <div class="mt-3">
         <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('competencies'))}</p>
-        <div class="flex flex-wrap gap-2">${compChips.map(c => renderBadge(c.label, 'bg-green-50 text-green-700 border-green-200', 'competency', c.id)).join('')}</div>
+        <div class="flex flex-wrap gap-2">${compChips.map(c => renderBadge(c.label, 'bg-eu-purple/10 text-eu-purple border-eu-purple/20', 'competency', c.id)).join('')}</div>
       </div>` : ''}
   `;
 
@@ -1464,7 +1464,7 @@ function renderCaseCard(item, tab) {
   let actorLineHtml = '';
   if (showActors && (originName || beneficiaries.length)) {
     actorLineHtml = `
-      <div class="mt-4 rounded-lg bg-eu-bg p-4">
+      <div class="mt-4 rounded-lg rd-card-grad-violet p-4">
         <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-gray-500">
           <i data-lucide="building-2" class="h-3.5 w-3.5"></i>
           ${esc(uiText('transferChain'))}
@@ -1516,7 +1516,7 @@ function renderCaseCard(item, tab) {
   const evidenceLevelHtml = (showEvidLevel && evidenceLevelLabel)
     ? `<div class="mt-3">
         <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('evidenceLevel'))}</p>
-        <div class="flex flex-wrap gap-2">${renderBadge(evidenceLevelLabel, 'bg-blue-50 text-blue-700 border-blue-200', 'evidenceLevel', core.evidenceLevel)}</div>
+        <div class="flex flex-wrap gap-2">${renderBadge(evidenceLevelLabel, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20', 'evidenceLevel', core.evidenceLevel)}</div>
       </div>`
     : '';
 
@@ -1524,7 +1524,7 @@ function renderCaseCard(item, tab) {
   const verifStatusLabel = getVerificationLabel(verifStatus);
   const verifActive = verifStatus && String(getTabFilterState(getActiveTabId()).values?.verificationStatus) === verifStatus;
   const verifBadge = (showEvidBadge && verifStatus && verifStatusLabel)
-    ? `<span class="inline-flex items-center gap-1.5 rounded border border-green-200 bg-green-50 px-2 py-0.5 text-xs font-semibold text-green-700 cursor-pointer select-none${verifActive ? ' ring-1 ring-inset ring-current' : ''}" data-mp-chip-filter="verificationStatus" data-mp-chip-value="${esc(verifStatus)}"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifStatusLabel)}</span>`
+    ? `<span class="inline-flex items-center gap-1.5 rounded border border-eu-blue/20 bg-eu-blue/10 px-2 py-0.5 text-xs font-semibold text-eu-blue cursor-pointer select-none${verifActive ? ' ring-1 ring-inset ring-current' : ''}" data-mp-chip-filter="verificationStatus" data-mp-chip-value="${esc(verifStatus)}"><i data-lucide="shield-check" class="h-3 w-3"></i>${esc(verifStatusLabel)}</span>`
     : '';
   const verifHtml = verifBadge
     ? `<div class="mt-3">
@@ -1621,8 +1621,8 @@ function renderPilotCard(item, tab) {
       value: readinessMeta.value,
       secondaryValue: readinessMeta.secondaryValue,
       tertiaryValue: readinessMeta.tertiaryValue,
-      boxClass: 'border-eu-border bg-white',
-      labelClass: 'text-gray-500',
+      boxClass: 'border-eu-purple/10 rd-card-grad-violet',
+      labelClass: 'text-eu-purple/70',
       valueClass: 'text-slate-900',
       secondaryValueClass: 'text-slate-700',
       tertiaryValueClass: 'text-gray-600',
@@ -1631,8 +1631,8 @@ function renderPilotCard(item, tab) {
     windowLabel ? {
       label: uiText('window'),
       value: windowLabel,
-      boxClass: 'border-teal-200 bg-teal-50/70',
-      labelClass: 'text-teal-700',
+      boxClass: 'border-eu-blue/15 bg-eu-blue/5',
+      labelClass: 'text-eu-blue',
       valueClass: 'font-normal text-eu-text',
     } : null,
   ].filter(Boolean));
@@ -1645,7 +1645,7 @@ function renderPilotCard(item, tab) {
     if (infraLabels.length) {
       infraHtml = `<div class="mt-4">
         <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText(infraLabels.length > 1 ? 'infrastructures' : 'infrastructure'))}</p>
-        <div class="flex flex-wrap gap-2">${infraLabels.map(l => renderBadge(l, 'bg-teal-50 text-teal-700 border-teal-200')).join('')}</div>
+        <div class="flex flex-wrap gap-2">${infraLabels.map(l => renderBadge(l, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20')).join('')}</div>
       </div>`;
     }
   }
@@ -1658,8 +1658,8 @@ function renderPilotCard(item, tab) {
       kpiHtml = renderCardCallout(uiText('pilotResult'), results.headline, 'check-circle');
     } else if (!isFinished && pilotPlan.successCriteria?.length) {
       kpiHtml = renderCardCallout(uiText('pilotCriteria'), pilotPlan.successCriteria[0].label, 'target', false, {
-        boxClass: 'bg-purple-50/70 border border-purple-200',
-        labelClass: 'text-purple-700',
+        boxClass: 'bg-eu-purple/8 border border-eu-purple/20',
+        labelClass: 'text-eu-purple',
         valueClass: 'text-eu-text',
       });
     }
@@ -1740,7 +1740,7 @@ function renderPilotCardLegacy(item, tab) {
     ])}
     ${pilotTypeLabel || helixChips ? `
       <div class="mt-4 flex flex-wrap gap-2">
-        ${pilotTypeLabel ? renderBadge(pilotTypeLabel, 'bg-green-50 text-green-800 border-green-200', 'pilotType', item.core?.pilotType) : ''}
+        ${pilotTypeLabel ? renderBadge(pilotTypeLabel, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20', 'pilotType', item.core?.pilotType) : ''}
         ${helixChips}
       </div>` : ''}
   `;
@@ -1766,7 +1766,7 @@ function renderValidationCard(item, tab) {
   const mainBlockLabel = pickLang(pres.mainBlockLabel) || pickLang({ es: 'Qué se valida', en: 'What is validated', va: 'Què es valida' });
   const objectTitle = pickLang(validation.objectTitle) || pickLang(core.summary);
   const mainBlockHtml = objectTitle
-    ? `<div class="mt-4 rounded-lg bg-eu-bg p-4">
+    ? `<div class="mt-4 rounded-lg rd-card-grad-violet p-4">
         <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-gray-500">
           <i data-lucide="clipboard-check" class="h-3.5 w-3.5"></i>
           ${esc(mainBlockLabel)}
@@ -1791,7 +1791,7 @@ function renderValidationCard(item, tab) {
           <i data-lucide="layers" class="h-3.5 w-3.5 shrink-0"></i>
           ${esc(envSectionLabel)}
         </p>
-        <div class="flex flex-wrap gap-2">${envItems.map(l => renderBadge(l, 'bg-slate-50 text-slate-700 border-slate-200')).join('')}</div>
+        <div class="flex flex-wrap gap-2">${envItems.map(l => renderBadge(l, 'bg-[#FFF4E1] text-eu-purple border-eu-purple/20')).join('')}</div>
       </div>`;
     }
   }
@@ -1800,10 +1800,10 @@ function renderValidationCard(item, tab) {
   const decisionLabel = pickLang(decision.label);
   const _decToneKey = decision.tone || 'neutral';
   const _decTone = _decToneKey === 'positive'
-    ? 'bg-green-50 text-green-800 border-green-200'
+    ? 'bg-eu-blue/10 text-eu-blue border-eu-blue/20'
     : _decToneKey === 'negative'
-      ? 'bg-red-50 text-red-700 border-red-200'
-      : 'bg-slate-50 text-slate-700 border-slate-200';
+      ? 'bg-eu-purple/10 text-eu-purple border-eu-purple/20'
+      : 'bg-[#FFF4E1] text-eu-purple/80 border-eu-purple/15';
   const _decIcon = _decToneKey === 'positive' ? 'check-circle-2' : _decToneKey === 'negative' ? 'x-circle' : 'circle-dot';
   const decisionHtml = (ccv.ch_val_decision !== false && pres.showDecision !== false && decisionLabel)
     ? `<div class="mt-4 rounded-lg border px-3 py-2 ${_decTone}">
@@ -1902,8 +1902,8 @@ function renderMentoringCard(item, tab) {
     const showSpecialties = ccv.ch_mentoring_specialties !== false && pres.showSpecialties !== false;
 
     const providerHtml = showProvider && providerName
-      ? `<div class="mt-4 rounded-lg border border-eu-border bg-white px-3 py-2">
-          <p class="text-[11px] font-bold uppercase tracking-wide text-gray-500">${esc(pickLang({ es: 'Equipo mentor', en: 'Mentoring team', va: 'Equip mentor' }))}</p>
+      ? `<div class="mt-4 rounded-lg border border-eu-purple/10 rd-card-grad-violet px-3 py-2">
+          <p class="text-[11px] font-bold uppercase tracking-wide text-eu-purple/70">${esc(pickLang({ es: 'Equipo mentor', en: 'Mentoring team', va: 'Equip mentor' }))}</p>
           <p class="mt-0.5 text-sm font-semibold leading-5 text-gray-700">${esc(providerName)}</p>
           ${providerRole ? `<p class="mt-1 text-xs leading-5 text-gray-500">${esc(providerRole)}</p>` : ''}
         </div>`
@@ -1921,7 +1921,7 @@ function renderMentoringCard(item, tab) {
 
     const body = `
       ${purpose && pres.showPurpose !== false ? `
-        <div class="mt-4 rounded-lg bg-eu-bg p-4">
+        <div class="mt-4 rounded-lg rd-card-grad-violet p-4">
           <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-gray-500">
             <i data-lucide="handshake" class="h-3.5 w-3.5"></i>
             ${esc(purposeLabel)}
@@ -1966,7 +1966,7 @@ function renderMentoringCard(item, tab) {
   const mentorRole = pickLang(card.mentorRole || item.ownership?.mentoringTeam?.role || item.core?.summary);
   const badges = asArray(card.badges).map(badge => badge?.label || badge);
   const body = `
-    <div class="mt-4 flex items-start gap-4 rounded-lg bg-eu-bg p-4">
+    <div class="mt-4 flex items-start gap-4 rounded-lg rd-card-grad-violet p-4">
       <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-eu-blue text-sm font-extrabold text-white">${esc(getMentorInitials(mentorName))}</span>
       <div>
         <p class="text-sm font-bold text-eu-text">${esc(mentorName)}</p>
