@@ -674,19 +674,21 @@ function renderHero() {
   const description = pickLang(hero.description);
 
   return `
-    <section class="bg-eu-blue px-6 py-12 text-white">
-      <div class="mx-auto max-w-7xl">
-        <div class="mb-8">
-          <p class="text-sm font-bold uppercase tracking-[0.2em] text-eu-yellow">${esc(pickLang(MARKETPLACE_CONFIG.publicSectionName?.nav, 'Comunidad'))}</p>
-          <h1 class="mt-3 max-w-4xl text-3xl font-extrabold leading-tight md:text-4xl">${esc(title)}</h1>
-          ${description ? `<p class="mt-4 max-w-3xl text-base leading-7 text-white/80">${esc(description)}</p>` : ''}
+    <section class="rd-hero-gradient px-6 py-20 text-white relative overflow-hidden">
+      <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-2xl"></div>
+      <div class="absolute left-10 top-5 w-40 h-40 bg-eu-yellow/5 rounded-full blur-xl"></div>
+      <div class="mx-auto max-w-7xl relative z-10">
+        <div class="mb-8 max-w-4xl">
+          <p class="inline-block rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] backdrop-blur" style="color:#FFF4E1">${esc(pickLang(MARKETPLACE_CONFIG.publicSectionName?.nav, 'Comunidad'))}</p>
+          <h1 class="mt-6 max-w-4xl font-extrabold leading-tight" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05">${esc(title)}</h1>
+          ${description ? `<p class="mt-6 max-w-3xl text-lg leading-relaxed text-white/90">${esc(description)}</p>` : ''}
         </div>
         ${stats.length ? `
           <div class="flex flex-wrap gap-4">
             ${stats.map(stat => `
-              <div class="rounded-xl bg-white/10 px-6 py-4 backdrop-blur text-center min-w-[7.5rem]">
-                <p class="text-2xl font-extrabold leading-none text-white">${esc(stat.value)}</p>
-                <p class="mt-2 text-xs font-semibold uppercase tracking-wide text-white/70">${esc(pickLang(stat.label))}</p>
+              <div class="min-w-[8rem] rounded-3xl border border-white/10 bg-white/10 px-6 py-5 text-center backdrop-blur">
+                <p class="text-4xl font-extrabold leading-none text-white">${esc(stat.value)}</p>
+                <p class="mt-2 text-xs font-bold uppercase tracking-wider text-eu-yellow/80">${esc(pickLang(stat.label))}</p>
               </div>`).join('')}
           </div>` : ''}
       </div>
@@ -697,22 +699,25 @@ function renderTabs(activeId) {
   const tabs = getTabs();
   const ariaLabel = pickLang(MARKETPLACE_CONFIG.publicSectionName?.nav, 'Comunidad');
   return `
-    <div class="mx-auto max-w-7xl px-6 pt-8">
-      <div class="flex flex-wrap gap-1 border-b border-eu-border" role="tablist" aria-label="${esc(ariaLabel)}">
+    <div class="rd-canvas px-6 pt-12">
+      <div class="mx-auto max-w-7xl">
+        <div class="flex flex-wrap gap-2" role="tablist" aria-label="${esc(ariaLabel)}">
         ${tabs.map(tab => {
           const active = tab.id === activeId;
           return `
             <button type="button" role="tab" aria-selected="${active ? 'true' : 'false'}"
               id="mp-tab-${esc(tab.id)}" aria-controls="mp-tabpanel-${esc(tab.id)}"
               data-mp-tab="${esc(tab.id)}"
-              class="min-h-11 whitespace-nowrap border-b-2 px-4 py-2.5 text-sm font-semibold transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 ${
+              class="flex min-h-11 items-center gap-2 whitespace-nowrap rounded-full border px-4 py-2 text-sm font-bold transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 ${
                 active
-                  ? 'border-eu-blue text-eu-blue'
-                  : 'border-transparent text-gray-600 hover:text-eu-text'
+                  ? 'border-eu-blue bg-eu-blue text-white shadow-sm'
+                  : 'border-eu-yellow bg-eu-yellow/70 text-eu-purple hover:border-eu-purple/30 hover:bg-eu-yellow'
               }">
+              <i data-lucide="${esc(tab.icon || 'layers-3')}" class="h-4 w-4"></i>
               ${esc(pickLang(tab.label, tab.id))}
             </button>`;
         }).join('')}
+        </div>
       </div>
     </div>`;
 }
@@ -959,18 +964,18 @@ function renderActiveFilterChips(tab, items) {
   const chips = getActiveFilterChips(tab.id, items);
   if (!chips.length) return '';
   return `
-    <div class="mt-3 flex flex-wrap items-center gap-2 rounded-lg border border-eu-blue/20 bg-eu-blue/5 px-3 py-2">
-      <span class="text-xs font-bold text-gray-600">${esc(uiText('activeFilters'))}:</span>
+    <div class="mt-4 flex flex-wrap items-center gap-2 rounded-2xl border border-eu-blue/15 bg-eu-blue/5 px-4 py-3">
+      <span class="text-sm font-bold text-gray-700">${esc(uiText('activeFilters'))}:</span>
       ${chips.map(chip => `
         <button type="button"
           data-mp-remove-filter="${esc(chip.key)}"
           ${chip.value ? `data-mp-filter-value="${esc(chip.value)}"` : ''}
-          class="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-eu-blue/25 bg-white px-3 py-1 text-xs font-semibold text-eu-blue transition-colors hover:border-eu-blue hover:bg-eu-blue/10 focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
+          class="inline-flex min-h-8 items-center gap-1.5 rounded-full border border-eu-blue/25 bg-white px-3 py-1 text-sm font-bold text-eu-blue transition-colors hover:border-eu-blue hover:bg-eu-blue/10 focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
           <span>${esc(chip.label)}</span>
           <i data-lucide="x" class="h-3.5 w-3.5"></i>
         </button>`).join('')}
       <button id="mp-clear-tab-filters" type="button"
-        class="ml-auto inline-flex min-h-8 items-center gap-1.5 rounded-full border border-red-200 bg-white px-3 py-1 text-xs font-bold text-red-600 transition-colors hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-offset-2">
+        class="ml-auto inline-flex min-h-8 items-center gap-1.5 rounded-full border border-eu-purple/25 bg-white px-3 py-1 text-sm font-bold text-eu-purple transition-colors hover:bg-eu-purple/10 focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
         <i data-lucide="x-circle" class="h-3.5 w-3.5"></i>
         ${esc(uiText('clearFilters'))}
       </button>
@@ -1004,11 +1009,11 @@ function renderTabFilters(tab, items) {
   }).join('');
 
   return `
-    <div class="mt-5">
+    <div class="mt-6 rounded-[2rem] border border-eu-purple/10 p-4 sm:p-5" style="background:#FFF4E1">
       <div class="grid gap-3 sm:grid-cols-[minmax(18rem,1fr)_auto] sm:items-start">
         <label class="block w-full">
           <span class="sr-only">${esc(uiText('search'))}</span>
-          <span class="relative flex h-10 w-full items-center rounded-full border border-eu-border bg-white shadow-sm transition-colors focus-within:border-eu-blue focus-within:ring-2 focus-within:ring-eu-blue">
+          <span class="relative flex min-h-11 w-full items-center rounded-full border border-eu-purple/20 bg-white shadow-sm transition-colors focus-within:border-eu-blue focus-within:ring-2 focus-within:ring-eu-blue">
             <i data-lucide="search" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400"></i>
             <input id="mp-tab-search" type="text" value="${esc(state.search)}" placeholder="${esc(uiText('searchPlaceholder'))}"
               class="h-full min-w-0 flex-1 rounded-full border-0 bg-transparent py-2 pl-9 pr-1 text-sm outline-none">
@@ -1020,14 +1025,14 @@ function renderTabFilters(tab, items) {
         </label>
         ${filterControls ? `
           <button id="mp-toggle-filters" type="button" aria-expanded="${filtersOpen ? 'true' : 'false'}"
-            class="inline-flex min-h-10 w-fit cursor-pointer items-center gap-2 rounded-full border border-eu-border bg-white px-3 py-2 text-sm font-bold text-gray-700 shadow-sm transition-colors hover:border-eu-blue hover:text-eu-blue focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
+            class="inline-flex min-h-11 w-fit cursor-pointer items-center gap-2 rounded-full border border-eu-blue/20 bg-white px-4 py-2 text-sm font-bold text-eu-blue shadow-sm transition-colors hover:border-eu-blue hover:bg-eu-blue/5 focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2">
               <i data-lucide="sliders-horizontal" class="h-4 w-4"></i>
               <span>${esc(uiText('moreFilters'))}<span id="mp-filter-count">${esc(renderFilterCountSuffix(activeCount))}</span></span>
               <i data-lucide="chevron-down" class="h-4 w-4 transition-transform ${filtersOpen ? 'rotate-180' : ''}"></i>
           </button>` : ''}
       </div>
       ${filterControls && filtersOpen ? `
-        <div class="mt-3 rounded-xl border border-eu-border bg-white p-3 shadow-sm sm:p-4">
+        <div class="mt-4 rounded-3xl border border-eu-purple/10 bg-white p-4 shadow-sm sm:p-5">
           <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             ${filterControls}
           </div>
@@ -1996,10 +2001,10 @@ function renderGenericCard(item, tab) {
 
 function renderEmptyState(tab) {
   return `
-    <div class="rounded-2xl border border-dashed border-eu-border bg-white p-8 text-center shadow-sm">
-      <i data-lucide="${esc(tab.icon || 'inbox')}" class="mx-auto h-8 w-8 text-gray-400"></i>
-      <h3 class="mt-3 text-lg font-extrabold text-eu-text">${esc(pickLang(tab.emptyState?.title, 'Sin elementos publicados'))}</h3>
-      <p class="mx-auto mt-2 max-w-xl text-sm leading-6 text-gray-500">${esc(pickLang(tab.emptyState?.message))}</p>
+    <div class="rd-card rd-card-grad-violet rd-card-edge p-10 text-center">
+      <i data-lucide="${esc(tab.icon || 'inbox')}" class="mx-auto h-10 w-10 text-eu-purple/50"></i>
+      <h3 class="mt-4 text-xl font-extrabold text-eu-purple">${esc(pickLang(tab.emptyState?.title, 'Sin elementos publicados'))}</h3>
+      <p class="mx-auto mt-2 max-w-xl text-base leading-relaxed text-gray-600">${esc(pickLang(tab.emptyState?.message))}</p>
     </div>`;
 }
 
@@ -2018,17 +2023,16 @@ function renderTabIntroCard(tab, items) {
   const title = pickLang(tab.label, tab.id);
   const intro = pickLang(tab.intro);
   return `
-    <div class="relative overflow-hidden rounded-xl border border-eu-border bg-white shadow-sm">
-      <div class="absolute inset-y-0 left-0 w-1.5 bg-eu-blue"></div>
-      <div class="p-5 pl-6 sm:p-6 sm:pl-7">
+    <div class="rd-card rd-card-accent rd-card-grad-violet overflow-hidden">
+      <div class="p-6 pl-7 sm:p-8 sm:pl-9">
         <div class="min-w-0">
           <div class="flex items-center gap-3">
-            <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-eu-blue text-white shadow-sm">
-              ${renderTabIntroIcon(tab.id)}
+            <span class="rd-icon-circle shrink-0 text-eu-blue transition-transform duration-300">
+              <i data-lucide="${esc(tab.icon || 'layers-3')}" class="h-6 w-6"></i>
             </span>
-            <h2 class="min-w-0 text-2xl font-extrabold leading-tight text-eu-text">${esc(title)}</h2>
+            <h2 class="min-w-0 text-3xl font-extrabold leading-tight text-eu-purple">${esc(title)}</h2>
           </div>
-          ${intro ? `<p class="mt-4 max-w-4xl text-base leading-7 text-gray-650">${esc(intro)}</p>` : ''}
+          ${intro ? `<p class="mt-5 max-w-4xl text-lg leading-relaxed text-gray-600">${esc(intro)}</p>` : ''}
         </div>
       </div>
     </div>`;
@@ -2036,9 +2040,9 @@ function renderTabIntroCard(tab, items) {
 
 function renderTabPanel(tab, items) {
   return `
-    <section class="mx-auto max-w-7xl px-6 py-8"
+    <section class="rd-canvas rd-section" style="padding-top:2.5rem"
       id="mp-tabpanel-${esc(tab.id)}" role="tabpanel" aria-labelledby="mp-tab-${esc(tab.id)}">
-      <div>
+      <div class="mx-auto max-w-7xl px-6">
         ${tab.introVisible !== false ? renderTabIntroCard(tab, items) : ''}
 
           ${items.length ? renderTabFilters(tab, items) : ''}
