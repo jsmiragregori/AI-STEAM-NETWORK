@@ -269,8 +269,8 @@ INSTRUCCION_LLM: al terminar una fase → `[~] EN_REVISION`. Tras aprobación hu
 | F2 | Home — espaciado + cards (DS.3) + iconos círculo + hero stats + titulares morados | `[x] APROBADA` | commit `bbdc6d0` |
 | **F2b** | Home — correcciones doc estilo + hover por card (lift/edge) + iniciales que respiran + DualFocus beige oficial; "Últimas contribuciones" fuera de home y del CMS | `[x] APROBADA` | commits `bbdc6d0` (visual) + `2905c8f` (view) + CONTENT `a92af86` (CMS) |
 | F3 | Sectores — paleta unificada + iconos beige + legibilidad detalle | `[x] APROBADA` | Cerrado y validado junto con la reestructuración de la brújula sectorial. |
-| F4 | Formación — hero + course cards (a) + tabs | `[ ] PENDIENTE` | |
-| F5 | Actualidad — news cards (a) | `[ ] PENDIENTE` | |
+| F4 | Formación — hero + course cards (a) + tabs | `[x] APROBADA` | commit `3e0cd79` |
+| F5 | Actualidad — news cards (a) | `[~] EN_REVISION` | |
 | F6 | Gobernanza — cards + tabs; órganos intactos | `[ ] PENDIENTE` | |
 | F7 | Conocimiento — cards + buscador | `[ ] PENDIENTE` | |
 | F8 | Red — cards socios/stakeholders; hélice intacta | `[ ] PENDIENTE` | |
