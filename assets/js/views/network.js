@@ -106,10 +106,14 @@ function helixBlock() {
 
   const html = (helix.categories || []).map(cat => {
     const meta = CATEGORY_META[cat.id] || CATEGORY_META.sociedad;
-    const total = (pc[cat.id] || 0) + (sc[cat.id] || 0);
+    // El total se resuelve en el loader (computado o manualOverride). Fallback al
+    // cálculo en vista por compatibilidad con datos antiguos sin estos campos.
+    const total = Number.isInteger(cat.value) ? cat.value : (pc[cat.id] || 0) + (sc[cat.id] || 0);
+    const pCount = Number.isInteger(cat.partnersCount) ? cat.partnersCount : (pc[cat.id] || 0);
+    const sCount = Number.isInteger(cat.stakeholdersCount) ? cat.stakeholdersCount : (sc[cat.id] || 0);
     const detailParts = [
-      pc[cat.id] ? `${pc[cat.id]} ${loc({es:'socios',en:'partners',va:'socis'})}` : '',
-      sc[cat.id] ? `${sc[cat.id]} ${loc({es:'stakeholders',en:'stakeholders',va:'stakeholders'})}` : '',
+      pCount ? `${pCount} ${loc({es:'socios',en:'partners',va:'socis'})}` : '',
+      sCount ? `${sCount} ${loc({es:'stakeholders',en:'stakeholders',va:'stakeholders'})}` : '',
     ].filter(Boolean);
     return `
       <div class="rd-card rd-card-grad-violet rd-card-edge p-5 text-center group">
@@ -274,6 +278,8 @@ function tabStakeholders(activeCategory, showForm) {
     searchPlaceholder: loc(shBlock.searchPlaceholder) || '',
     paginationPrev:    loc(shBlock.paginationPrev)    || '←',
     paginationNext:    loc(shBlock.paginationNext)    || '→',
+    showLabel:         loc(shBlock.showLabel)         || loc({ es: 'Mostrar', en: 'Show', va: 'Mostrar' }),
+    showAllLabel:      loc(shBlock.showAllLabel)      || loc({ es: 'Todos', en: 'All', va: 'Tots' }),
     form: shBlock.form || {},
   };
   const pageSize = shBlock.pageSize || 12;
@@ -537,7 +543,7 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
 
   const pageSizeSelector = pageSizeOptions && pageSizeOptions.length > 0 ? `
     <div class="flex items-center gap-2 text-sm">
-      <span class="text-gray-600">Mostrar:</span>
+      <span class="text-gray-600">${shTexts.showLabel}:</span>
       <div class="flex gap-1">
         ${pageSizeOptions.map(opt => `
           <button data-net-pagesize="${opt}" class="px-2 py-1 rounded-full border cursor-pointer transition-colors font-bold ${actualPageSize === opt ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">
@@ -546,7 +552,7 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
         `).join('')}
         ${showAllOption ? `
           <button data-net-pagesize="all" class="px-2 py-1 rounded-full border cursor-pointer transition-colors font-bold ${actualPageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">
-            Todos
+            ${shTexts.showAllLabel}
           </button>
         ` : ''}
       </div>
@@ -596,6 +602,8 @@ function updateShResults() {
       visitWebLabel:  loc(shBlock.visitWebLabel)  || 'Visitar web',
       paginationPrev: loc(shBlock.paginationPrev) || '←',
       paginationNext: loc(shBlock.paginationNext) || '→',
+      showLabel:      loc(shBlock.showLabel)      || loc({ es: 'Mostrar', en: 'Show', va: 'Mostrar' }),
+      showAllLabel:   loc(shBlock.showAllLabel)   || loc({ es: 'Todos', en: 'All', va: 'Tots' }),
     },
     pageSize:       shBlock.pageSize || 12,
     activeCategory: getState('networkCategory') || 'todos',

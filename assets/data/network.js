@@ -90,7 +90,12 @@ export const NETWORK_CONFIG = {
         },
         "color": "text-purple-700",
         "bg": "bg-purple-100",
-        "border": "border-purple-300"
+        "border": "border-purple-300",
+        "manualOverride": false,
+        "value": 12,
+        "computedValue": 12,
+        "partnersCount": 10,
+        "stakeholdersCount": 2
       },
       {
         "id": "empresa",
@@ -102,7 +107,12 @@ export const NETWORK_CONFIG = {
         },
         "color": "text-blue-700",
         "bg": "bg-blue-100",
-        "border": "border-blue-300"
+        "border": "border-blue-300",
+        "manualOverride": false,
+        "value": 11,
+        "computedValue": 11,
+        "partnersCount": 5,
+        "stakeholdersCount": 6
       },
       {
         "id": "admin",
@@ -114,7 +124,12 @@ export const NETWORK_CONFIG = {
         },
         "color": "text-green-700",
         "bg": "bg-green-100",
-        "border": "border-green-300"
+        "border": "border-green-300",
+        "manualOverride": false,
+        "value": 9,
+        "computedValue": 9,
+        "partnersCount": 4,
+        "stakeholdersCount": 5
       },
       {
         "id": "sociedad",
@@ -126,7 +141,12 @@ export const NETWORK_CONFIG = {
         },
         "color": "text-pink-700",
         "bg": "bg-pink-100",
-        "border": "border-pink-300"
+        "border": "border-pink-300",
+        "manualOverride": false,
+        "value": 5,
+        "computedValue": 5,
+        "partnersCount": 4,
+        "stakeholdersCount": 1
       }
     ]
   },
