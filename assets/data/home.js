@@ -46,26 +46,32 @@ export const HOME_CONFIG = {
       {
         "id": "stakeholders",
         "value": 14,
+        "manualOverride": false,
+        "computedValue": 14,
         "icon": "users",
         "label": {
-          "es": "Grupos de interés",
+          "es": "Stakeholders",
           "en": "Stakeholders",
-          "va": "Grups d'interés"
+          "va": "Stakeholders"
         }
       },
       {
-        "id": "totalChallenges",
-        "value": 7,
+        "id": "initiatives",
+        "value": 45,
+        "manualOverride": false,
+        "computedValue": 45,
         "icon": "zap",
         "label": {
-          "es": "Retos y casos",
-          "en": "Challenges and cases",
-          "va": "Reptes i casos"
+          "es": "Iniciativas",
+          "en": "Initiatives",
+          "va": "Iniciatives"
         }
       },
       {
         "id": "consortiumMembers",
         "value": 23,
+        "manualOverride": false,
+        "computedValue": 23,
         "icon": "book-open",
         "label": {
           "es": "Miembros del consorcio",
@@ -76,6 +82,8 @@ export const HOME_CONFIG = {
       {
         "id": "countries",
         "value": 12,
+        "manualOverride": false,
+        "computedValue": 12,
         "icon": "globe",
         "label": {
           "es": "Países",
@@ -84,13 +92,27 @@ export const HOME_CONFIG = {
         }
       },
       {
-        "id": "trainingModules",
-        "value": 68,
+        "id": "totalCourses",
+        "value": 63,
+        "manualOverride": false,
+        "computedValue": 63,
         "icon": "layers",
         "label": {
-          "es": "Módulos formativos",
-          "en": "Training modules",
-          "va": "Mòduls formatius"
+          "es": "Cursos",
+          "en": "Courses",
+          "va": "Cursos"
+        }
+      },
+      {
+        "id": "openKnowledge",
+        "value": 36,
+        "manualOverride": false,
+        "computedValue": 36,
+        "icon": "library",
+        "label": {
+          "es": "Recursos abiertos y toolkits",
+          "en": "Open resources and toolkits",
+          "va": "Recursos oberts i toolkits"
         }
       }
     ]
