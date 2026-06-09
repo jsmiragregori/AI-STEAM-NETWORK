@@ -16,25 +16,36 @@ export const TRAINING_CONFIG = {
     },
     "stats": [
       {
-        "id": "total-courses",
+        "id": "courses-fp",
         "visible": true,
-        "value": 63,
+        "value": 23,
         "manualOverride": false,
         "label": {
-          "es": "Cursos publicados",
-          "en": "Published Courses",
-          "va": "Cursos publicats"
+          "es": "Cursos de FP",
+          "en": "VET Courses",
+          "va": "Cursos de FP"
         }
       },
       {
-        "id": "unique-skills",
+        "id": "courses-teacher",
         "visible": true,
-        "value": 22,
+        "value": 24,
         "manualOverride": false,
         "label": {
-          "es": "Skills desarrolladas",
-          "en": "Skills Developed",
-          "va": "Skills desenvolupades"
+          "es": "Formación del profesorado",
+          "en": "Teacher Training",
+          "va": "Formació del professorat"
+        }
+      },
+      {
+        "id": "courses-master",
+        "visible": true,
+        "value": 16,
+        "manualOverride": false,
+        "label": {
+          "es": "Cursos Track A",
+          "en": "Track A Courses",
+          "va": "Cursos Track A"
         }
       },
       {
@@ -46,17 +57,6 @@ export const TRAINING_CONFIG = {
           "es": "Sectores cubiertos",
           "en": "Covered Sectors",
           "va": "Sectors coberts"
-        }
-      },
-      {
-        "id": "open-courses",
-        "visible": true,
-        "value": 54,
-        "manualOverride": false,
-        "label": {
-          "es": "Activos o en inscripción",
-          "en": "Active or Open Courses",
-          "va": "Actius o en inscripció"
         }
       }
     ],
@@ -2100,59 +2100,59 @@ export const TRAINING_CONFIG = {
     ],
     "sectors": [
       {
-        "id": "industria",
-        "label": {
-          "es": "Industria",
-          "en": "Industry",
-          "va": "Indústria"
-        }
-      },
-      {
-        "id": "salud",
-        "label": {
-          "es": "Salud",
-          "en": "Health",
-          "va": "Salut"
-        }
-      },
-      {
-        "id": "educacion-sector",
-        "label": {
-          "es": "Educación",
-          "en": "Education",
-          "va": "Educació"
-        }
-      },
-      {
-        "id": "agroalimentario",
+        "id": "agr",
         "label": {
           "es": "Agroalimentario",
-          "en": "Agri-food",
+          "en": "Agrifood",
           "va": "Agroalimentari"
         }
       },
       {
-        "id": "medio-ambiente",
+        "id": "cci",
         "label": {
-          "es": "Medio Ambiente",
-          "en": "Environment",
-          "va": "Medi Ambient"
+          "es": "Industrias Culturales y Creativas o ICCs",
+          "en": "Cultural and Creative Industries - CCIs",
+          "va": "Indústries Culturals i Creatives o ICCs"
         }
       },
       {
-        "id": "turismo-cultura",
+        "id": "ene",
         "label": {
-          "es": "Turismo y Cultura",
-          "en": "Tourism and Culture",
-          "va": "Turisme i Cultura"
+          "es": "Energía y Medio Ambiente",
+          "en": "Energy and Environment",
+          "va": "Energia i Medi Ambient"
         }
       },
       {
-        "id": "administracion",
+        "id": "hou",
         "label": {
-          "es": "Administración",
-          "en": "Administration",
-          "va": "Administració"
+          "es": "Vivienda / Sector Inmobiliario",
+          "en": "Housing",
+          "va": "Habitatge / Sector Immobiliari"
+        }
+      },
+      {
+        "id": "mfg",
+        "label": {
+          "es": "Fabricación / Manufactura",
+          "en": "Manufacturing",
+          "va": "Fabricació / Manufactura"
+        }
+      },
+      {
+        "id": "mob",
+        "label": {
+          "es": "Movilidad y Transporte",
+          "en": "Mobility and Transport",
+          "va": "Mobilitat i Transport"
+        }
+      },
+      {
+        "id": "nts",
+        "label": {
+          "es": "Servicios No Turísticos",
+          "en": "Non-Touristic Services",
+          "va": "Serveis No Turístics"
         }
       }
     ],
@@ -2239,8 +2239,8 @@ export const TRAINING_CONFIG = {
         "hours": 25,
         "enrolled": 22,
         "sectorIds": [
-          "industria",
-          "medio-ambiente"
+          "mfg",
+          "ene"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
@@ -2278,8 +2278,9 @@ export const TRAINING_CONFIG = {
         "hours": 45,
         "enrolled": 198,
         "sectorIds": [
-          "agroalimentario",
-          "medio-ambiente"
+          "agr",
+          "ene",
+          "cci"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2317,7 +2318,7 @@ export const TRAINING_CONFIG = {
         "hours": 50,
         "enrolled": 143,
         "sectorIds": [
-          "medio-ambiente"
+          "ene"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2355,8 +2356,8 @@ export const TRAINING_CONFIG = {
         "hours": 40,
         "enrolled": 89,
         "sectorIds": [
-          "industria",
-          "turismo-cultura"
+          "mfg",
+          "cci"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
@@ -2392,8 +2393,8 @@ export const TRAINING_CONFIG = {
         "hours": 30,
         "enrolled": 312,
         "sectorIds": [
-          "turismo-cultura",
-          "educacion-sector"
+          "cci",
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2429,7 +2430,7 @@ export const TRAINING_CONFIG = {
         "hours": 55,
         "enrolled": 67,
         "sectorIds": [
-          "industria"
+          "mfg"
         ],
         "modalityId": "presencial",
         "skillIds": [
@@ -2465,8 +2466,8 @@ export const TRAINING_CONFIG = {
         "hours": 25,
         "enrolled": 178,
         "sectorIds": [
-          "turismo-cultura",
-          "educacion-sector"
+          "cci",
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2500,8 +2501,9 @@ export const TRAINING_CONFIG = {
         "hours": 50,
         "enrolled": 203,
         "sectorIds": [
-          "industria",
-          "administracion"
+          "mfg",
+          "nts",
+          "ene"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2537,7 +2539,7 @@ export const TRAINING_CONFIG = {
         "hours": 45,
         "enrolled": 94,
         "sectorIds": [
-          "salud"
+          "hou"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2573,8 +2575,8 @@ export const TRAINING_CONFIG = {
         "hours": 40,
         "enrolled": 121,
         "sectorIds": [
-          "turismo-cultura",
-          "medio-ambiente"
+          "cci",
+          "ene"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
@@ -2610,8 +2612,9 @@ export const TRAINING_CONFIG = {
         "hours": 35,
         "enrolled": 156,
         "sectorIds": [
-          "medio-ambiente",
-          "administracion"
+          "ene",
+          "nts",
+          "mob"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2647,7 +2650,7 @@ export const TRAINING_CONFIG = {
         "hours": 30,
         "enrolled": 445,
         "sectorIds": [
-          "educacion-sector"
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2683,7 +2686,7 @@ export const TRAINING_CONFIG = {
         "hours": 60,
         "enrolled": 38,
         "sectorIds": [
-          "industria"
+          "mfg"
         ],
         "modalityId": "presencial",
         "skillIds": [
@@ -2719,8 +2722,7 @@ export const TRAINING_CONFIG = {
         "hours": 25,
         "enrolled": 267,
         "sectorIds": [
-          "administracion",
-          "educacion-sector"
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2756,8 +2758,8 @@ export const TRAINING_CONFIG = {
         "hours": 40,
         "enrolled": 112,
         "sectorIds": [
-          "agroalimentario",
-          "medio-ambiente"
+          "agr",
+          "ene"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2791,7 +2793,7 @@ export const TRAINING_CONFIG = {
         "hours": 35,
         "enrolled": 88,
         "sectorIds": [
-          "turismo-cultura"
+          "cci"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
@@ -2827,8 +2829,8 @@ export const TRAINING_CONFIG = {
         "hours": 30,
         "enrolled": 189,
         "sectorIds": [
-          "salud",
-          "educacion-sector"
+          "hou",
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2864,8 +2866,8 @@ export const TRAINING_CONFIG = {
         "hours": 45,
         "enrolled": 134,
         "sectorIds": [
-          "medio-ambiente",
-          "industria"
+          "ene",
+          "mfg"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2901,8 +2903,9 @@ export const TRAINING_CONFIG = {
         "hours": 35,
         "enrolled": 76,
         "sectorIds": [
-          "industria",
-          "agroalimentario"
+          "mfg",
+          "agr",
+          "mob"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2936,8 +2939,7 @@ export const TRAINING_CONFIG = {
         "hours": 25,
         "enrolled": 143,
         "sectorIds": [
-          "educacion-sector",
-          "administracion"
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -2973,8 +2975,9 @@ export const TRAINING_CONFIG = {
         "hours": 30,
         "enrolled": null,
         "sectorIds": [
-          "turismo-cultura",
-          "administracion"
+          "cci",
+          "nts",
+          "ene"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3010,8 +3013,8 @@ export const TRAINING_CONFIG = {
         "hours": 20,
         "enrolled": null,
         "sectorIds": [
-          "turismo-cultura",
-          "educacion-sector"
+          "cci",
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3047,8 +3050,9 @@ export const TRAINING_CONFIG = {
         "hours": 35,
         "enrolled": null,
         "sectorIds": [
-          "agroalimentario",
-          "salud"
+          "agr",
+          "hou",
+          "mfg"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3084,7 +3088,7 @@ export const TRAINING_CONFIG = {
         "hours": 30,
         "enrolled": 524,
         "sectorIds": [
-          "educacion-sector"
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3118,7 +3122,7 @@ export const TRAINING_CONFIG = {
         "hours": 40,
         "enrolled": 211,
         "sectorIds": [
-          "administracion"
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3154,8 +3158,8 @@ export const TRAINING_CONFIG = {
         "hours": 25,
         "enrolled": 186,
         "sectorIds": [
-          "educacion-sector",
-          "turismo-cultura"
+          "nts",
+          "cci"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3191,7 +3195,7 @@ export const TRAINING_CONFIG = {
         "hours": 35,
         "enrolled": 94,
         "sectorIds": [
-          "industria"
+          "mfg"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
@@ -3227,8 +3231,8 @@ export const TRAINING_CONFIG = {
         "hours": 30,
         "enrolled": 143,
         "sectorIds": [
-          "medio-ambiente",
-          "educacion-sector"
+          "ene",
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3264,7 +3268,7 @@ export const TRAINING_CONFIG = {
         "hours": 20,
         "enrolled": 77,
         "sectorIds": [
-          "turismo-cultura"
+          "cci"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3298,8 +3302,9 @@ export const TRAINING_CONFIG = {
         "hours": 32,
         "enrolled": 118,
         "sectorIds": [
-          "agroalimentario",
-          "medio-ambiente"
+          "agr",
+          "ene",
+          "cci"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3335,8 +3340,8 @@ export const TRAINING_CONFIG = {
         "hours": 28,
         "enrolled": 86,
         "sectorIds": [
-          "salud",
-          "educacion-sector"
+          "hou",
+          "nts"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
@@ -3370,8 +3375,7 @@ export const TRAINING_CONFIG = {
         "hours": 30,
         "enrolled": 124,
         "sectorIds": [
-          "administracion",
-          "educacion-sector"
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3407,8 +3411,8 @@ export const TRAINING_CONFIG = {
         "hours": 22,
         "enrolled": 201,
         "sectorIds": [
-          "turismo-cultura",
-          "educacion-sector"
+          "cci",
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3444,9 +3448,9 @@ export const TRAINING_CONFIG = {
         "hours": 40,
         "enrolled": 99,
         "sectorIds": [
-          "industria",
-          "agroalimentario",
-          "medio-ambiente"
+          "mfg",
+          "agr",
+          "ene"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
@@ -3480,7 +3484,8 @@ export const TRAINING_CONFIG = {
         "hours": 18,
         "enrolled": 163,
         "sectorIds": [
-          "educacion-sector"
+          "nts",
+          "cci"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3514,7 +3519,7 @@ export const TRAINING_CONFIG = {
         "hours": 26,
         "enrolled": 0,
         "sectorIds": [
-          "industria"
+          "mfg"
         ],
         "modalityId": "presencial",
         "skillIds": [
@@ -3548,8 +3553,8 @@ export const TRAINING_CONFIG = {
         "hours": 24,
         "enrolled": 72,
         "sectorIds": [
-          "turismo-cultura",
-          "educacion-sector"
+          "cci",
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3585,8 +3590,7 @@ export const TRAINING_CONFIG = {
         "hours": 20,
         "enrolled": 138,
         "sectorIds": [
-          "educacion-sector",
-          "administracion"
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3620,9 +3624,9 @@ export const TRAINING_CONFIG = {
         "hours": 34,
         "enrolled": 81,
         "sectorIds": [
-          "industria",
-          "administracion",
-          "medio-ambiente"
+          "mfg",
+          "nts",
+          "ene"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
@@ -3658,9 +3662,9 @@ export const TRAINING_CONFIG = {
         "hours": 16,
         "enrolled": 247,
         "sectorIds": [
-          "educacion-sector",
-          "administracion",
-          "salud"
+          "nts",
+          "hou",
+          "cci"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3694,8 +3698,8 @@ export const TRAINING_CONFIG = {
         "hours": 18,
         "enrolled": 119,
         "sectorIds": [
-          "turismo-cultura",
-          "educacion-sector"
+          "cci",
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3731,8 +3735,9 @@ export const TRAINING_CONFIG = {
         "hours": 28,
         "enrolled": 63,
         "sectorIds": [
-          "administracion",
-          "medio-ambiente"
+          "nts",
+          "ene",
+          "mob"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3768,8 +3773,9 @@ export const TRAINING_CONFIG = {
         "hours": 24,
         "enrolled": 0,
         "sectorIds": [
-          "agroalimentario",
-          "salud"
+          "agr",
+          "hou",
+          "ene"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3805,9 +3811,9 @@ export const TRAINING_CONFIG = {
         "hours": 36,
         "enrolled": 154,
         "sectorIds": [
-          "educacion-sector",
-          "turismo-cultura",
-          "industria"
+          "nts",
+          "cci",
+          "mfg"
         ],
         "modalityId": "presencial",
         "skillIds": [
@@ -3841,8 +3847,7 @@ export const TRAINING_CONFIG = {
         "hours": 20,
         "enrolled": 208,
         "sectorIds": [
-          "educacion-sector",
-          "administracion"
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3876,9 +3881,9 @@ export const TRAINING_CONFIG = {
         "hours": 30,
         "enrolled": 58,
         "sectorIds": [
-          "industria",
-          "turismo-cultura",
-          "administracion"
+          "mfg",
+          "cci",
+          "nts"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
@@ -3914,8 +3919,7 @@ export const TRAINING_CONFIG = {
         "hours": 15,
         "enrolled": 312,
         "sectorIds": [
-          "educacion-sector",
-          "administracion"
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3951,7 +3955,7 @@ export const TRAINING_CONFIG = {
         "hours": 90,
         "enrolled": 87,
         "sectorIds": [
-          "salud"
+          "hou"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -3985,7 +3989,8 @@ export const TRAINING_CONFIG = {
         "hours": 80,
         "enrolled": 54,
         "sectorIds": [
-          "industria"
+          "mfg",
+          "ene"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -4019,7 +4024,7 @@ export const TRAINING_CONFIG = {
         "hours": 70,
         "enrolled": 72,
         "sectorIds": [
-          "turismo-cultura"
+          "cci"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -4053,8 +4058,7 @@ export const TRAINING_CONFIG = {
         "hours": 72,
         "enrolled": 68,
         "sectorIds": [
-          "administracion",
-          "educacion-sector"
+          "nts"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
@@ -4090,8 +4094,8 @@ export const TRAINING_CONFIG = {
         "hours": 84,
         "enrolled": 91,
         "sectorIds": [
-          "turismo-cultura",
-          "educacion-sector"
+          "cci",
+          "nts"
         ],
         "modalityId": "presencial",
         "skillIds": [
@@ -4127,7 +4131,7 @@ export const TRAINING_CONFIG = {
         "hours": 78,
         "enrolled": 76,
         "sectorIds": [
-          "industria"
+          "mfg"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -4163,8 +4167,9 @@ export const TRAINING_CONFIG = {
         "hours": 74,
         "enrolled": 59,
         "sectorIds": [
-          "agroalimentario",
-          "medio-ambiente"
+          "agr",
+          "ene",
+          "cci"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
@@ -4200,8 +4205,8 @@ export const TRAINING_CONFIG = {
         "hours": 88,
         "enrolled": 83,
         "sectorIds": [
-          "medio-ambiente",
-          "administracion"
+          "ene",
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -4237,7 +4242,7 @@ export const TRAINING_CONFIG = {
         "hours": 76,
         "enrolled": 64,
         "sectorIds": [
-          "educacion-sector"
+          "nts"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -4271,8 +4276,8 @@ export const TRAINING_CONFIG = {
         "hours": 68,
         "enrolled": 51,
         "sectorIds": [
-          "salud",
-          "turismo-cultura"
+          "hou",
+          "cci"
         ],
         "modalityId": "presencial",
         "skillIds": [
@@ -4306,8 +4311,9 @@ export const TRAINING_CONFIG = {
         "hours": 92,
         "enrolled": 47,
         "sectorIds": [
-          "industria",
-          "educacion-sector"
+          "mfg",
+          "nts",
+          "cci"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
@@ -4341,8 +4347,9 @@ export const TRAINING_CONFIG = {
         "hours": 66,
         "enrolled": 88,
         "sectorIds": [
-          "turismo-cultura",
-          "medio-ambiente"
+          "cci",
+          "ene",
+          "mob"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -4378,8 +4385,8 @@ export const TRAINING_CONFIG = {
         "hours": 64,
         "enrolled": 42,
         "sectorIds": [
-          "administracion",
-          "medio-ambiente"
+          "nts",
+          "ene"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -4415,8 +4422,10 @@ export const TRAINING_CONFIG = {
         "hours": 70,
         "enrolled": 73,
         "sectorIds": [
-          "agroalimentario",
-          "salud"
+          "agr",
+          "hou",
+          "ene",
+          "cci"
         ],
         "modalityId": "presencial",
         "skillIds": [
@@ -4452,8 +4461,9 @@ export const TRAINING_CONFIG = {
         "hours": 86,
         "enrolled": 58,
         "sectorIds": [
-          "industria",
-          "administracion"
+          "mfg",
+          "nts",
+          "ene"
         ],
         "modalityId": "online",
         "skillIds": [
@@ -4489,11 +4499,11 @@ export const TRAINING_CONFIG = {
         "hours": 96,
         "enrolled": 39,
         "sectorIds": [
-          "salud",
-          "industria",
-          "educacion-sector",
-          "medio-ambiente",
-          "turismo-cultura"
+          "hou",
+          "mfg",
+          "nts",
+          "ene",
+          "cci"
         ],
         "modalityId": "semipresencial",
         "skillIds": [
