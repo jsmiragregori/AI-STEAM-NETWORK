@@ -18,7 +18,9 @@ export const GOVERNANCE_CONFIG = {
       {
         "id": "governance-bodies",
         "visible": true,
+        "manualOverride": false,
         "value": 6,
+        "computedValue": 6,
         "label": {
           "es": "Órganos de Gobierno",
           "en": "Governance Bodies",
@@ -26,23 +28,27 @@ export const GOVERNANCE_CONFIG = {
         }
       },
       {
-        "id": "active-members",
+        "id": "consortium-partners",
         "visible": true,
-        "value": 45,
+        "manualOverride": false,
+        "value": 23,
+        "computedValue": 23,
         "label": {
-          "es": "Miembros Activos",
-          "en": "Active Members",
-          "va": "Membres Actius"
+          "es": "Socios del Consorcio",
+          "en": "Consortium Partners",
+          "va": "Socis del Consorci"
         }
       },
       {
-        "id": "annual-meetings",
+        "id": "governance-documents",
         "visible": true,
-        "value": 10,
+        "manualOverride": false,
+        "value": 12,
+        "computedValue": 12,
         "label": {
-          "es": "Reuniones Anuales",
-          "en": "Annual Meetings",
-          "va": "Reunions Anuals"
+          "es": "Documentos de Gobernanza",
+          "en": "Governance Documents",
+          "va": "Documents de Governança"
         }
       }
     ],
