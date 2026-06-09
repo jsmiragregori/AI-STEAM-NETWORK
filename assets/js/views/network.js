@@ -627,14 +627,11 @@ function renderNetworkHero() {
     </div>`
   ).join('');
 
-  const eyebrow = hero.eyebrow?.[lang] || hero.eyebrow?.es || 'Red AI-STEAM';
-
   return `
     <div class="rd-hero-gradient text-white px-6 py-20 relative overflow-hidden">
       <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-2xl"></div>
       <div class="absolute left-10 top-5 w-40 h-40 bg-eu-yellow/5 rounded-full blur-xl"></div>
       <div class="max-w-7xl mx-auto relative z-10">
-        <span class="inline-block bg-white/10 border border-white/20 font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6" style="color:#FFF4E1;backdrop-filter:blur(8px)">${eyebrow}</span>
         <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${title}</h1>
         <p class="text-lg leading-relaxed max-w-3xl mb-8" style="color:rgba(255,255,255,.9)">${description}</p>
         <div class="rd-hero-stats-grid">${statsHtml}</div>
