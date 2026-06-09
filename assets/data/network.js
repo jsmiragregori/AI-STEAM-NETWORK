@@ -17,7 +17,9 @@ export const NETWORK_CONFIG = {
     "stats": [
       {
         "id": "consortiumPartners",
-        "value": "23",
+        "value": 23,
+        "manualOverride": false,
+        "computedValue": 23,
         "label": {
           "es": "Socios Consorcio",
           "en": "Consortium Partners",
@@ -26,7 +28,9 @@ export const NETWORK_CONFIG = {
       },
       {
         "id": "stakeholdersNetwork",
-        "value": "14",
+        "value": 14,
+        "manualOverride": false,
+        "computedValue": 14,
         "label": {
           "es": "Stakeholders Red",
           "en": "Network Stakeholders",
@@ -35,7 +39,9 @@ export const NETWORK_CONFIG = {
       },
       {
         "id": "countries",
-        "value": "12",
+        "value": 12,
+        "manualOverride": false,
+        "computedValue": 12,
         "label": {
           "es": "Países",
           "en": "Countries",
@@ -44,7 +50,9 @@ export const NETWORK_CONFIG = {
       },
       {
         "id": "totalOrganizations",
-        "value": "37",
+        "value": 37,
+        "manualOverride": false,
+        "computedValue": 37,
         "label": {
           "es": "Total Organizaciones",
           "en": "Total Organizations",
