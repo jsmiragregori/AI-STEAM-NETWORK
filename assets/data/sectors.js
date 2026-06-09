@@ -16,39 +16,43 @@ export const SECTORS_CONFIG = {
     },
     "stats": [
       {
-        "id": "challenges",
-        "value": "133",
+        "id": "visibleSectors",
+        "icon": "Layers",
+        "value": "7",
         "label": {
-          "es": "Retos y Casos",
-          "en": "Challenges & Cases",
-          "va": "Retos i Casos"
+          "es": "Sectores",
+          "en": "Sectors",
+          "va": "Sectors"
         }
       },
       {
-        "id": "partners",
-        "value": "23",
+        "id": "initiatives",
+        "icon": "Zap",
+        "value": "45",
         "label": {
-          "es": "Socios",
-          "en": "Partners",
-          "va": "Socis"
+          "es": "Iniciativas",
+          "en": "Initiatives",
+          "va": "Iniciatives"
         }
       },
       {
-        "id": "fpSkills",
-        "value": "9",
+        "id": "sectorizedStakeholders",
+        "icon": "Users",
+        "value": "14",
         "label": {
-          "es": "Skills FP",
-          "en": "FP Skills",
-          "va": "Skills FP"
+          "es": "Stakeholders",
+          "en": "Stakeholders",
+          "va": "Stakeholders"
         }
       },
       {
-        "id": "allSkills",
-        "value": "22",
+        "id": "sectorLinkedCourses",
+        "icon": "BookOpen",
+        "value": "63",
         "label": {
-          "es": "Total Skills",
-          "en": "Total Skills",
-          "va": "Total Skills"
+          "es": "Cursos",
+          "en": "Courses",
+          "va": "Cursos"
         }
       }
     ]
@@ -58,9 +62,9 @@ export const SECTORS_CONFIG = {
       "id": "mfg",
       "visible": true,
       "name": {
-        "es": "Manufactura",
+        "es": "Fabricación / Manufactura",
         "en": "Manufacturing",
-        "va": "Manufactura"
+        "va": "Fabricació / Manufactura"
       },
       "description": {
         "es": "IA aplicada a fabricación avanzada, mantenimiento predictivo, robótica, control de calidad y sostenibilidad industrial, con atención al uso responsable de datos en entornos OT/IT.",
@@ -73,10 +77,42 @@ export const SECTORS_CONFIG = {
         "va": "De la necessitat industrial a competències FP, aplicació didàctica, evidència documentada i connexió acadèmica possible."
       },
       "stats": {
-        "challenges": 8,
-        "courses": 18,
-        "stakeholders": 6
+        "initiatives": 8,
+        "stakeholders": 6,
+        "courses": 19
       },
+      "statsList": [
+        {
+          "id": "initiatives",
+          "icon": "Zap",
+          "value": 8,
+          "label": {
+            "es": "Iniciativas",
+            "en": "Initiatives",
+            "va": "Iniciatives"
+          }
+        },
+        {
+          "id": "stakeholders",
+          "icon": "Users",
+          "value": 6,
+          "label": {
+            "es": "Stakeholders",
+            "en": "Stakeholders",
+            "va": "Stakeholders"
+          }
+        },
+        {
+          "id": "courses",
+          "icon": "BookOpen",
+          "value": 19,
+          "label": {
+            "es": "Cursos",
+            "en": "Courses",
+            "va": "Cursos"
+          }
+        }
+      ],
       "transferChain": [
         {
           "id": "sectorNeeds",
@@ -444,10 +480,10 @@ export const SECTORS_CONFIG = {
           "targetRoute": "formacion",
           "filters": {
             "sectorIds": [
-              "industria"
+              "mfg"
             ]
           },
-          "count": 18
+          "count": 19
         },
         "network": {
           "enabled": true,
@@ -498,10 +534,42 @@ export const SECTORS_CONFIG = {
         "va": "De les necessitats de mobilitat a competències FP, ús en formació, evidència aplicada i connexió acadèmica possible."
       },
       "stats": {
-        "challenges": 7,
-        "courses": 0,
-        "stakeholders": 1
+        "initiatives": 7,
+        "stakeholders": 1,
+        "courses": 4
       },
+      "statsList": [
+        {
+          "id": "initiatives",
+          "icon": "Zap",
+          "value": 7,
+          "label": {
+            "es": "Iniciativas",
+            "en": "Initiatives",
+            "va": "Iniciatives"
+          }
+        },
+        {
+          "id": "stakeholders",
+          "icon": "Users",
+          "value": 1,
+          "label": {
+            "es": "Stakeholders",
+            "en": "Stakeholders",
+            "va": "Stakeholders"
+          }
+        },
+        {
+          "id": "courses",
+          "icon": "BookOpen",
+          "value": 4,
+          "label": {
+            "es": "Cursos",
+            "en": "Courses",
+            "va": "Cursos"
+          }
+        }
+      ],
       "transferChain": [
         {
           "id": "sectorNeeds",
@@ -875,12 +943,14 @@ export const SECTORS_CONFIG = {
           "count": 7
         },
         "training": {
-          "enabled": false,
+          "enabled": true,
           "targetRoute": "formacion",
           "filters": {
-            "sectorIds": []
+            "sectorIds": [
+              "mob"
+            ]
           },
-          "count": 0
+          "count": 4
         },
         "network": {
           "enabled": true,
@@ -894,7 +964,7 @@ export const SECTORS_CONFIG = {
       },
       "emptyFlags": {
         "hasRelatedContent": true,
-        "hasCourses": false,
+        "hasCourses": true,
         "hasStakeholders": true,
         "hasEvidenceCase": true,
         "hasAcademicConnections": true,
@@ -922,10 +992,42 @@ export const SECTORS_CONFIG = {
         "va": "De les necessitats ambientals i energètiques a competències FP, aplicació didàctica, evidència i connexió acadèmica."
       },
       "stats": {
-        "challenges": 6,
-        "courses": 17,
-        "stakeholders": 3
+        "initiatives": 6,
+        "stakeholders": 3,
+        "courses": 23
       },
+      "statsList": [
+        {
+          "id": "initiatives",
+          "icon": "Zap",
+          "value": 6,
+          "label": {
+            "es": "Iniciativas",
+            "en": "Initiatives",
+            "va": "Iniciatives"
+          }
+        },
+        {
+          "id": "stakeholders",
+          "icon": "Users",
+          "value": 3,
+          "label": {
+            "es": "Stakeholders",
+            "en": "Stakeholders",
+            "va": "Stakeholders"
+          }
+        },
+        {
+          "id": "courses",
+          "icon": "BookOpen",
+          "value": 23,
+          "label": {
+            "es": "Cursos",
+            "en": "Courses",
+            "va": "Cursos"
+          }
+        }
+      ],
       "transferChain": [
         {
           "id": "sectorNeeds",
@@ -1287,10 +1389,10 @@ export const SECTORS_CONFIG = {
           "targetRoute": "formacion",
           "filters": {
             "sectorIds": [
-              "medio-ambiente"
+              "ene"
             ]
           },
-          "count": 17
+          "count": 23
         },
         "network": {
           "enabled": true,
@@ -1332,10 +1434,42 @@ export const SECTORS_CONFIG = {
         "va": "De les necessitats agroalimentàries a competències FP, pràctiques didàctiques, evidència de camp i connexió acadèmica."
       },
       "stats": {
-        "challenges": 5,
-        "courses": 9,
-        "stakeholders": 3
+        "initiatives": 5,
+        "stakeholders": 3,
+        "courses": 9
       },
+      "statsList": [
+        {
+          "id": "initiatives",
+          "icon": "Zap",
+          "value": 5,
+          "label": {
+            "es": "Iniciativas",
+            "en": "Initiatives",
+            "va": "Iniciatives"
+          }
+        },
+        {
+          "id": "stakeholders",
+          "icon": "Users",
+          "value": 3,
+          "label": {
+            "es": "Stakeholders",
+            "en": "Stakeholders",
+            "va": "Stakeholders"
+          }
+        },
+        {
+          "id": "courses",
+          "icon": "BookOpen",
+          "value": 9,
+          "label": {
+            "es": "Cursos",
+            "en": "Courses",
+            "va": "Cursos"
+          }
+        }
+      ],
       "transferChain": [
         {
           "id": "sectorNeeds",
@@ -1660,7 +1794,7 @@ export const SECTORS_CONFIG = {
           "targetRoute": "formacion",
           "filters": {
             "sectorIds": [
-              "agroalimentario"
+              "agr"
             ]
           },
           "count": 9
@@ -1692,9 +1826,9 @@ export const SECTORS_CONFIG = {
       "id": "cci",
       "visible": true,
       "name": {
-        "es": "Industrias Culturales y Creativas",
-        "en": "Cultural and Creative Industries",
-        "va": "Indústries Culturals i Creatives"
+        "es": "Industrias Culturales y Creativas o ICCs",
+        "en": "Cultural and Creative Industries - CCIs",
+        "va": "Indústries Culturals i Creatives o ICCs"
       },
       "description": {
         "es": "IA para patrimonio cultural, creación responsable, acceso a contenidos, derechos de autor, autoría compartida y tecnologías creativas abiertas.",
@@ -1707,10 +1841,42 @@ export const SECTORS_CONFIG = {
         "va": "De les necessitats culturals i creatives a competències FP, aplicació didàctica, evidència documentada i connexió acadèmica."
       },
       "stats": {
-        "challenges": 6,
-        "courses": 19,
-        "stakeholders": 2
+        "initiatives": 6,
+        "stakeholders": 2,
+        "courses": 26
       },
+      "statsList": [
+        {
+          "id": "initiatives",
+          "icon": "Zap",
+          "value": 6,
+          "label": {
+            "es": "Iniciativas",
+            "en": "Initiatives",
+            "va": "Iniciatives"
+          }
+        },
+        {
+          "id": "stakeholders",
+          "icon": "Users",
+          "value": 2,
+          "label": {
+            "es": "Stakeholders",
+            "en": "Stakeholders",
+            "va": "Stakeholders"
+          }
+        },
+        {
+          "id": "courses",
+          "icon": "BookOpen",
+          "value": 26,
+          "label": {
+            "es": "Cursos",
+            "en": "Courses",
+            "va": "Cursos"
+          }
+        }
+      ],
       "transferChain": [
         {
           "id": "sectorNeeds",
@@ -2098,10 +2264,10 @@ export const SECTORS_CONFIG = {
           "targetRoute": "formacion",
           "filters": {
             "sectorIds": [
-              "turismo-cultura"
+              "cci"
             ]
           },
-          "count": 19
+          "count": 26
         },
         "network": {
           "enabled": true,
@@ -2128,9 +2294,9 @@ export const SECTORS_CONFIG = {
       "id": "hou",
       "visible": true,
       "name": {
-        "es": "Vivienda",
+        "es": "Vivienda / Sector Inmobiliario",
         "en": "Housing",
-        "va": "Habitatge"
+        "va": "Habitatge / Sector Immobiliari"
       },
       "description": {
         "es": "IA para vivienda sostenible, eficiencia energética, edificios inteligentes, urbanismo social y acceso equitativo a servicios residenciales.",
@@ -2143,10 +2309,42 @@ export const SECTORS_CONFIG = {
         "va": "De les necessitats residencials i urbanes a competències FP, aplicació didàctica, evidència d'edifici i connexió acadèmica."
       },
       "stats": {
-        "challenges": 2,
-        "courses": 10,
-        "stakeholders": 1
+        "initiatives": 2,
+        "stakeholders": 1,
+        "courses": 10
       },
+      "statsList": [
+        {
+          "id": "initiatives",
+          "icon": "Zap",
+          "value": 2,
+          "label": {
+            "es": "Iniciativas",
+            "en": "Initiatives",
+            "va": "Iniciatives"
+          }
+        },
+        {
+          "id": "stakeholders",
+          "icon": "Users",
+          "value": 1,
+          "label": {
+            "es": "Stakeholders",
+            "en": "Stakeholders",
+            "va": "Stakeholders"
+          }
+        },
+        {
+          "id": "courses",
+          "icon": "BookOpen",
+          "value": 10,
+          "label": {
+            "es": "Cursos",
+            "en": "Courses",
+            "va": "Cursos"
+          }
+        }
+      ],
       "transferChain": [
         {
           "id": "sectorNeeds",
@@ -2444,7 +2642,7 @@ export const SECTORS_CONFIG = {
           "targetRoute": "formacion",
           "filters": {
             "sectorIds": [
-              "salud"
+              "hou"
             ]
           },
           "count": 10
@@ -2489,10 +2687,42 @@ export const SECTORS_CONFIG = {
         "va": "De les necessitats de servicis i administració a competències FP, ús formatiu, evidència aplicada i connexió acadèmica."
       },
       "stats": {
-        "challenges": 12,
-        "courses": 36,
-        "stakeholders": 4
+        "initiatives": 12,
+        "stakeholders": 4,
+        "courses": 36
       },
+      "statsList": [
+        {
+          "id": "initiatives",
+          "icon": "Zap",
+          "value": 12,
+          "label": {
+            "es": "Iniciativas",
+            "en": "Initiatives",
+            "va": "Iniciatives"
+          }
+        },
+        {
+          "id": "stakeholders",
+          "icon": "Users",
+          "value": 4,
+          "label": {
+            "es": "Stakeholders",
+            "en": "Stakeholders",
+            "va": "Stakeholders"
+          }
+        },
+        {
+          "id": "courses",
+          "icon": "BookOpen",
+          "value": 36,
+          "label": {
+            "es": "Cursos",
+            "en": "Courses",
+            "va": "Cursos"
+          }
+        }
+      ],
       "transferChain": [
         {
           "id": "sectorNeeds",
@@ -2950,8 +3180,7 @@ export const SECTORS_CONFIG = {
           "targetRoute": "formacion",
           "filters": {
             "sectorIds": [
-              "administracion",
-              "educacion-sector"
+              "nts"
             ]
           },
           "count": 36

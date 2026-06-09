@@ -279,7 +279,7 @@ export const translations = {
       "ctaDesc": "La red AI-STEAM está abierta a stakeholders de cualquiera de los 7 sectores. La solicitud se gestiona desde la sección <strong>La Red</strong>, donde se recoge la información necesaria para ubicar tu organización en el ecosistema.",
       "ctaButton": "Ir al formulario de adhesión",
       "sectorLabels": {
-        "challenges": "Retos y casos",
+        "initiatives": "Iniciativas",
         "stakeholders": "Stakeholders",
         "courses": "Cursos",
         "modules": "Skills FP"
@@ -2161,7 +2161,7 @@ export const translations = {
       "ctaDesc": "The AI-STEAM network is open to stakeholders from any of the 7 sectors. The request is managed from the <strong>Network</strong> section, where the information needed to place your organisation in the ecosystem is collected.",
       "ctaButton": "Go to membership form",
       "sectorLabels": {
-        "challenges": "Challenges & cases",
+        "initiatives": "Initiatives",
         "stakeholders": "Stakeholders",
         "courses": "Courses",
         "modules": "VET Skills"
@@ -4043,7 +4043,7 @@ export const translations = {
       "ctaDesc": "La xarxa AI-STEAM és oberta a stakeholders de qualsevol dels 7 sectors. La sol·licitud es gestiona des de la secció <strong>La Xarxa</strong>, on es recull la informació necessària per ubicar la teua organització en l'ecosistema.",
       "ctaButton": "Anar al formulari d'adhesió",
       "sectorLabels": {
-        "challenges": "Reptes i casos",
+        "initiatives": "Iniciatives",
         "stakeholders": "Stakeholders",
         "courses": "Cursos",
         "modules": "Skills FP"

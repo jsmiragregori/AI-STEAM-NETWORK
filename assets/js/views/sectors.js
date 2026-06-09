@@ -81,7 +81,7 @@ function renderHero(hero) {
 }
 
 function renderStatButton(sector, key, value, label, enabled) {
-  const navKind = key === 'challenges' ? 'marketplace' : key === 'courses' ? 'training' : 'network';
+  const navKind = key === 'initiatives' ? 'marketplace' : key === 'courses' ? 'training' : 'network';
   const disabled = enabled ? '' : ' aria-disabled="true"';
   const action = enabled ? `data-sector-nav="${navKind}" data-sector-id="${esc(sector.id)}"` : '';
 
@@ -281,6 +281,12 @@ function renderSectorCard(sector, sectorsT, index) {
   const isOpen = expanded === sector.id;
   const stats = sector.stats || {};
   const sectorLabels = sectorsT?.sectorLabels || {};
+  const statsList = Array.isArray(sector.statsList) ? sector.statsList : [
+    { id: 'initiatives', value: stats.initiatives, label: sectorLabels.initiatives || sectorLabels.challenges || '' },
+    { id: 'stakeholders', value: stats.stakeholders, label: sectorLabels.stakeholders || '' },
+    { id: 'courses', value: stats.courses, label: sectorLabels.courses || '' },
+  ];
+  const statsColumns = Math.max(1, Math.min(statsList.length, 3));
   const navTargets = sector.navigationTargets || {};
   const icon = SECTOR_ICONS[sector.id] || 'shapes';
   const keywords = renderKeywords(sector);
@@ -304,10 +310,11 @@ function renderSectorCard(sector, sectorsT, index) {
             ${keywords ? `<div class="mt-5">${keywords}</div>` : ''}
           </div>
         </button>
-        <div class="grid min-w-0 grid-cols-3 gap-3 md:w-[24rem]">
-          ${renderStatButton(sector, 'challenges', stats.challenges, sectorLabels.challenges || '', navTargets.marketplace?.enabled)}
-          ${renderStatButton(sector, 'stakeholders', stats.stakeholders, sectorLabels.stakeholders || '', navTargets.network?.enabled)}
-          ${renderStatButton(sector, 'courses', stats.courses, sectorLabels.courses || '', navTargets.training?.enabled)}
+        <div class="grid min-w-0 gap-3 md:w-[24rem]" style="grid-template-columns: repeat(${statsColumns}, minmax(0, 1fr))">
+          ${statsList.map(stat => {
+            const target = stat.id === 'initiatives' ? navTargets.marketplace : stat.id === 'courses' ? navTargets.training : navTargets.network;
+            return renderStatButton(sector, stat.id, stat.value, localized(stat.label) || sectorLabels[stat.id] || '', target?.enabled);
+          }).join('')}
         </div>
       </div>
       <button data-toggle="${esc(sector.id)}" class="flex w-full cursor-pointer items-center justify-between border-0 border-t border-eu-blue/10 bg-transparent px-6 py-4 text-left md:px-8">
