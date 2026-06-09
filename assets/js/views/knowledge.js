@@ -1070,9 +1070,9 @@ export function render() {
             <p class="text-lg mb-6 leading-relaxed" style="color:rgba(255,255,255,.9)">${pickLang(heroBlock.description, t('knowledge.description') || '')}</p>
             ${notice ? `<p class="text-sm text-eu-yellow/90 italic mt-3 flex items-center gap-1.5 mb-6"><i data-lucide="info" class="w-4 h-4"></i>${notice}</p>` : ''}
             ${heroStats.length > 0 ? `
-            <div class="flex flex-wrap gap-4 mt-8">
+            <div class="rd-hero-stats-grid mt-8">
               ${heroStats.map((stat, i) => `
-              <div class="${i % 2 === 0 ? 'rd-hero-stat' : 'rd-hero-stat-alt'} px-6 py-4 text-center">
+              <div class="rd-hero-stat text-center">
                 <p class="text-3xl font-extrabold text-white leading-none">${stat.value}</p>
                 <p class="text-xs font-bold uppercase tracking-wider mt-1.5" style="color:rgba(255,244,225,.75)">${pickLang(stat.label, '')}</p>
               </div>`).join('')}

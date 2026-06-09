@@ -684,11 +684,11 @@ function renderHero() {
           ${description ? `<p class="mt-6 max-w-3xl text-lg leading-relaxed text-white/90">${esc(description)}</p>` : ''}
         </div>
         ${stats.length ? `
-          <div class="flex flex-wrap gap-4">
+          <div class="rd-hero-stats-grid">
             ${stats.map(stat => `
-              <div class="min-w-[8rem] rounded-3xl border border-white/10 bg-white/10 px-6 py-5 text-center backdrop-blur">
+              <div class="rd-hero-stat text-center">
                 <p class="text-4xl font-extrabold leading-none text-white">${esc(stat.value)}</p>
-                <p class="mt-2 text-xs font-bold uppercase tracking-wider text-eu-yellow/80">${esc(pickLang(stat.label))}</p>
+                <p class="mt-2 text-xs font-bold uppercase tracking-wider" style="color:rgba(255,244,225,.75)">${esc(pickLang(stat.label))}</p>
               </div>`).join('')}
           </div>` : ''}
       </div>

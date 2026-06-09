@@ -881,9 +881,9 @@ export function render() {
   const ctaButton  = heroBlock.ctaButton || {};
 
   const statsHtml = heroStats.map(s => `
-    <div class="bg-white/10 backdrop-blur border border-white/10 rounded-2xl px-6 py-4 text-center min-w-[12rem] flex-1">
+    <div class="rd-hero-stat text-center">
       <p class="text-3xl font-extrabold text-white leading-tight">${s.value || ''}</p>
-      <p class="text-[10px] text-eu-yellow/80 font-extrabold uppercase tracking-widest mt-2">${pickLang(s.label)}</p>
+      <p class="text-[10px] font-extrabold uppercase tracking-widest mt-2" style="color:rgba(255,244,225,.75)">${pickLang(s.label)}</p>
     </div>
   `).join('');
 
@@ -923,7 +923,7 @@ export function render() {
             </div>` : ''}
           </div>
           ${heroStats.length > 0 ? `
-          <div class="flex flex-wrap gap-4 mt-10 max-w-4xl">${statsHtml}</div>` : ''}
+          <div class="rd-hero-stats-grid mt-10 max-w-4xl">${statsHtml}</div>` : ''}
         </div>
       </div>` : ''}
 

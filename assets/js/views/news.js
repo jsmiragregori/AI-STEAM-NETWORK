@@ -226,9 +226,9 @@ export function render() {
             </div>` : ''}
 
             ${heroStats.length > 0 ? `
-            <div class="flex flex-wrap gap-4 mt-8">
+            <div class="rd-hero-stats-grid mt-8">
               ${heroStats.map((s, i) => `
-              <div class="${i % 2 === 0 ? 'rd-hero-stat' : 'rd-hero-stat-alt'} px-6 py-4 text-center">
+              <div class="rd-hero-stat text-center">
                 <p class="text-3xl font-extrabold text-white leading-none">${s.value}</p>
                 <p class="text-xs font-bold uppercase tracking-wider mt-1.5" style="color:rgba(255,244,225,.75)">${pickLang(s.label)}</p>
               </div>`).join('')}

@@ -247,14 +247,45 @@
   .rd-hero-fill { min-height: calc(100vh - 128px); }
 }
 
-/* Stats glassmórficas en el hero */
+/* Stats glassmórficas en el hero — ESTILO CANÓNICO UNIFICADO (2026-06-09)
+   Una sola caja para TODAS las secciones (Red, Sectores, Marketplace, Formación,
+   Conocimiento, Gobernanza, News). Glass con degradado vertical sutil + hover
+   elegante (glow + borde + micro-lift). Home conserva su alternado propio. */
 .rd-hero-stat {
-  background: rgb(255 255 255 / .10);
+  background: linear-gradient(to bottom, rgb(255 255 255 / .20) 0%, rgb(255 255 255 / .09) 100%);
   backdrop-filter: blur(12px);
-  border: 1px solid rgb(255 255 255 / .10);
+  border: 1px solid rgb(255 255 255 / .28);
   border-radius: 1.25rem;
   padding: 1.5rem;
+  box-shadow: 0 6px 18px -8px rgb(30 27 75 / .35);
+  transition: transform .4s cubic-bezier(.16, 1, .3, 1),
+              box-shadow .4s cubic-bezier(.16, 1, .3, 1),
+              border-color .4s ease,
+              background .4s ease;
 }
+/* Hover: micro-elevación + borde aclarado + halo blanco suave y sombra azul difusa.
+   Reasertamos transition-duration por encima del prefers-reduced-motion de main.css
+   (misma decisión que las cards .rd-card-hover). */
+.rd-hero-stat { transition-duration: .4s !important; }
+.rd-hero-stat:hover {
+  transform: translateY(-.25rem);
+  border-color: rgb(255 255 255 / .50);
+  background: linear-gradient(to bottom, rgb(255 255 255 / .26) 0%, rgb(255 255 255 / .12) 100%);
+  box-shadow: 0 0 24px rgb(255 255 255 / .18),
+              0 16px 34px -18px rgb(86 32 246 / .45);
+}
+
+/* Rejilla unificada para las stats del hero (todas las secciones salvo Home).
+   Columnas de ancho IGUAL acotado: idénticas dentro de la fila y entre secciones,
+   sin estirarse cuando hay pocas (resuelve el flex-1 de Gobernanza) y envolviendo
+   cuando hay muchas. Las cards llenan su celda → mismo tamaño en todo el sitio. */
+.rd-hero-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 12rem));
+  gap: 1rem;
+}
+
+/* Variante oscura — usada SOLO por la Home (caso especial, alternado). */
 .rd-hero-stat-alt {
   background: rgb(30 27 75 / .30);
   backdrop-filter: blur(12px);

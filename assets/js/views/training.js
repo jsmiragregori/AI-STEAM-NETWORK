@@ -554,7 +554,7 @@ export function render() {
   return `
     <div class="rd-canvas">
       ${heroBlock.visible !== false ? `
-      <div class="bg-eu-purple text-white px-6 py-24">
+      <div class="rd-hero-gradient text-white px-6 py-24">
         <div class="max-w-7xl mx-auto">
           <div class="flex flex-wrap items-start justify-between gap-6">
             <div class="max-w-4xl">
@@ -568,17 +568,17 @@ export function render() {
             ${ctaButton.visible !== false ? `
             <div class="shrink-0 mt-2 md:mt-0">
               <a href="${ctaButton.url || 'https://aules.edu.gva.es/'}" target="_blank" rel="noopener noreferrer"
-                 class="inline-flex min-h-11 items-center gap-2 rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white cursor-pointer shadow-sm animate-pulse" style="background:#FFF4E1">
+                 class="inline-flex min-h-11 items-center gap-2 rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white cursor-pointer shadow-sm" style="background:#FFF4E1">
                 <i data-lucide="book-open" class="w-4 h-4"></i>${esc(pickLang(ctaButton.label, trainingT?.accessAules || ''))}<i data-lucide="external-link" class="w-3 h-3"></i>
               </a>
             </div>` : ''}
           </div>
           ${heroStats.length > 0 ? `
-          <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="mt-12 rd-hero-stats-grid">
             ${heroStats.map(stat => `
             <div class="rd-hero-stat text-center">
-              <p class="text-4xl font-extrabold" style="color:#FFF4E1">${esc(stat.value)}</p>
-              <p class="mt-2 text-xs font-bold uppercase tracking-wider text-white/70">${esc(pickLang(stat.label, ''))}</p>
+              <p class="text-4xl font-extrabold text-white">${esc(stat.value)}</p>
+              <p class="mt-2 text-xs font-bold uppercase tracking-wider" style="color:rgba(255,244,225,.75)">${esc(pickLang(stat.label, ''))}</p>
             </div>`).join('')}
           </div>` : ''}
         </div>

@@ -67,11 +67,11 @@ function renderHero(hero) {
         </div>
         <h1 class="mt-7 max-w-5xl text-5xl font-extrabold tracking-tight md:text-7xl" style="color:#FFF4E1;line-height:1.02">${esc(localized(hero.title))}</h1>
         <p class="mt-7 max-w-3xl text-lg leading-relaxed text-white/85 md:text-xl">${esc(localized(hero.description))}</p>
-        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="mt-12 rd-hero-stats-grid">
           ${(hero.stats || []).map(stat => `
-            <div class="rounded-3xl border border-white/10 bg-white/10 p-6 text-center backdrop-blur">
-              <p class="text-4xl font-extrabold" style="color:#FFF4E1">${esc(stat.value)}</p>
-              <p class="mt-2 text-xs font-bold uppercase tracking-wider text-white/70">${esc(localized(stat.label))}</p>
+            <div class="rd-hero-stat text-center">
+              <p class="text-4xl font-extrabold text-white">${esc(stat.value)}</p>
+              <p class="mt-2 text-xs font-bold uppercase tracking-wider" style="color:rgba(255,244,225,.75)">${esc(localized(stat.label))}</p>
             </div>
           `).join('')}
         </div>

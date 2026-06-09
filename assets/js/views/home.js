@@ -407,7 +407,7 @@ function renderHeroBlock() {
     const isOddLast = (i === stats.length - 1) && (stats.length % 2 === 1);
     const spanStyle = isOddLast ? 'grid-column:1 / -1;' : '';
     return `
-    <div class="${i % 2 === 0 ? 'rd-hero-stat' : 'rd-hero-stat-alt'} flex flex-col" style="${spanStyle}">
+    <div class="rd-hero-stat flex flex-col" style="${spanStyle}">
       <i data-lucide="${s.icon}" class="w-6 h-6 mb-4" style="color:#FFF4E1"></i>
       <div class="text-4xl font-extrabold text-white leading-none mb-2">${s.value}</div>
       <div class="text-xs font-bold uppercase tracking-wider" style="color:rgba(255,244,225,.75)">${loc(s.label)}</div>

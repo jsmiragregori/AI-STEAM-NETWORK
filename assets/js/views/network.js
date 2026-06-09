@@ -621,7 +621,7 @@ function renderNetworkHero() {
   const description = hero.description?.[lang] || hero.description?.es || '';
 
   const statsHtml = (hero.stats || []).map((s, i) => `
-    <div class="${i % 2 === 0 ? 'rd-hero-stat' : 'rd-hero-stat-alt'} px-6 py-4 text-center">
+    <div class="rd-hero-stat text-center">
       <p class="text-3xl font-extrabold text-white leading-none">${s.value}</p>
       <p class="text-xs font-bold uppercase tracking-wider mt-1.5" style="color:rgba(255,244,225,.75)">${s.label?.[lang] || s.label?.es || ''}</p>
     </div>`
@@ -637,7 +637,7 @@ function renderNetworkHero() {
         <span class="inline-block bg-white/10 border border-white/20 font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6" style="color:#FFF4E1;backdrop-filter:blur(8px)">${eyebrow}</span>
         <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${title}</h1>
         <p class="text-lg leading-relaxed max-w-3xl mb-8" style="color:rgba(255,255,255,.9)">${description}</p>
-        <div class="flex flex-wrap gap-4">${statsHtml}</div>
+        <div class="rd-hero-stats-grid">${statsHtml}</div>
       </div>
     </div>`;
 }
