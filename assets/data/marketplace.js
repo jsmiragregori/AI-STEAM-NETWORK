@@ -932,33 +932,6 @@ export const MARKETPLACE_CONFIG = {
   ],
   "levelLabels": [
     {
-      "id": "FP",
-      "visible": true,
-      "label": {
-        "es": "FP",
-        "en": "VET",
-        "va": "FP"
-      }
-    },
-    {
-      "id": "Máster",
-      "visible": true,
-      "label": {
-        "es": "Máster",
-        "en": "Master",
-        "va": "Màster"
-      }
-    },
-    {
-      "id": "Docentes",
-      "visible": true,
-      "label": {
-        "es": "Docentes",
-        "en": "Teachers",
-        "va": "Docents"
-      }
-    },
-    {
       "id": "vet",
       "visible": true,
       "label": {
@@ -7991,9 +7964,9 @@ export const MARKETPLACE_CONFIG = {
           "va": ""
         },
         "levels": [
-          "FP",
-          "Máster",
-          "Docentes"
+          "vet",
+          "master",
+          "teacher"
         ],
         "audience": [],
         "sdgs": [
@@ -20774,9 +20747,9 @@ export const MARKETPLACE_CONFIG = {
             "va": ""
           },
           "levels": [
-            "FP",
-            "Máster",
-            "Docentes"
+            "vet",
+            "master",
+            "teacher"
           ],
           "audience": [],
           "sdgs": [
@@ -33470,33 +33443,6 @@ export const MARKETPLACE_CONFIG = {
     },
     "level": [
       {
-        "id": "FP",
-        "visible": true,
-        "label": {
-          "es": "FP",
-          "en": "VET",
-          "va": "FP"
-        }
-      },
-      {
-        "id": "Máster",
-        "visible": true,
-        "label": {
-          "es": "Máster",
-          "en": "Master",
-          "va": "Màster"
-        }
-      },
-      {
-        "id": "Docentes",
-        "visible": true,
-        "label": {
-          "es": "Docentes",
-          "en": "Teachers",
-          "va": "Docents"
-        }
-      },
-      {
         "id": "vet",
         "visible": true,
         "label": {
@@ -35620,33 +35566,6 @@ export const MARKETPLACE_CONFIG = {
       }
     ],
     "levelLabels": [
-      {
-        "id": "FP",
-        "visible": true,
-        "label": {
-          "es": "FP",
-          "en": "VET",
-          "va": "FP"
-        }
-      },
-      {
-        "id": "Máster",
-        "visible": true,
-        "label": {
-          "es": "Máster",
-          "en": "Master",
-          "va": "Màster"
-        }
-      },
-      {
-        "id": "Docentes",
-        "visible": true,
-        "label": {
-          "es": "Docentes",
-          "en": "Teachers",
-          "va": "Docents"
-        }
-      },
       {
         "id": "vet",
         "visible": true,

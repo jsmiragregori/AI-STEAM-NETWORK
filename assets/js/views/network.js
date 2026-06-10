@@ -297,16 +297,16 @@ function tabStakeholders(activeCategory, showForm) {
   const f = shTexts.form;
   const formHtml = effectiveShowForm ? `
     <div id="stakeholder-form" class="rd-card overflow-hidden mt-8" style="border:2px solid rgb(86 32 246/.3)">
-      <div class="px-6 py-4 flex items-center gap-3" style="background:#5222B0">
-        <i data-lucide="user-plus" class="w-5 h-5 text-white"></i>
+      <div class="rd-ceja-grad px-6 py-4 flex items-center gap-3">
+        <i data-lucide="user-plus" class="w-5 h-5" style="color:#fff"></i>
         <div>
-          <h2 class="text-lg font-extrabold text-white">${loc(f.title)}</h2>
+          <h2 class="text-lg font-extrabold" style="color:#fff">${loc(f.title)}</h2>
           <p class="text-sm mt-0.5" style="color:rgba(255,255,255,.85)">${loc(f.subtitle)}</p>
         </div>
       </div>
       <div class="p-6 rd-card-grad-beige">
-        <p class="text-base text-gray-600 mb-6 max-w-2xl leading-relaxed">${loc(f.description)}</p>
-        <form id="net-form" class="space-y-5 max-w-2xl">
+        <p class="text-base text-gray-600 mb-6 leading-relaxed">${loc(f.description)}</p>
+        <form id="net-form" class="space-y-5">
           <div class="grid grid-cols-1 gap-y-5 gap-x-4 sm:grid-cols-2">
             <div class="sm:col-span-2">
               <label for="net-entity" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.entityName)} *</label>
