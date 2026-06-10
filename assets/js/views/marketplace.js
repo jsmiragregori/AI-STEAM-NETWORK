@@ -34,11 +34,6 @@ const UI_TEXT = {
     en: 'Filters',
     va: 'Filtres',
   },
-  detailEmpty: {
-    es: 'Este elemento todavia no tiene bloques de detalle publicados.',
-    en: 'This item does not have published detail blocks yet.',
-    va: 'Aquest element encara no te blocs de detall publicats.',
-  },
   access: {
     es: 'Acceso y siguiente paso',
     en: 'Access and next step',
@@ -53,11 +48,6 @@ const UI_TEXT = {
     es: 'Mapa de colaboracion',
     en: 'Collaboration map',
     va: 'Mapa de col-laboracio',
-  },
-  detailCaseEvidence: {
-    es: 'Evidencia y transferencia',
-    en: 'Evidence and transfer',
-    va: 'Evidencia i transferencia',
   },
   featuredSignal: {
     es: 'Clave para participar',
@@ -204,11 +194,6 @@ const UI_TEXT = {
     en: 'Reviewed',
     va: 'Revisat',
   },
-  viewDetail: {
-    es: 'Ver detalle',
-    en: 'View detail',
-    va: 'Veure detall',
-  },
   transferType: {
     es: 'Tipo de transferencia',
     en: 'Transfer type',
@@ -332,20 +317,6 @@ const FIELD_LABELS = {
   valorisation: { es: 'Valorizacion', en: 'Valorisation', va: 'Valoritzacio' },
   validationStatus: { es: 'Estado de validacion', en: 'Validation status', va: 'Estat de validacio' },
 };
-
-const DETAIL_BLOCKS = [
-  { key: 'need', icon: 'sparkles' },
-  { key: 'context', icon: 'map' },
-  { key: 'transferValue', icon: 'repeat-2' },
-  { key: 'participation', icon: 'users' },
-  { key: 'resources', icon: 'folder-open' },
-  { key: 'outputs', icon: 'package-check' },
-  { key: 'evidence', icon: 'bar-chart-3' },
-  { key: 'process', icon: 'route' },
-  { key: 'people', icon: 'user-round-check' },
-  { key: 'access', icon: 'link' },
-  { key: 'trackA', icon: 'graduation-cap' },
-];
 
 const TRANSFER_TYPE_ICONS = {
   implementación: 'wrench',
@@ -502,10 +473,6 @@ function getEngagementLabel(id) {
 
 function getFocusLabel(id) {
   return getLabelFromArray(MARKETPLACE_CONFIG.aiSteamFocusLabels, id);
-}
-
-function getBlockLabel(id) {
-  return getLabelFromArray(MARKETPLACE_CONFIG.detailBlockLabels, id);
 }
 
 function getTransferTypeLabel(id) {
@@ -1123,7 +1090,7 @@ function renderCardShell(item, tab, body, options = {}) {
           ${subtitle ? `<p class="text-base leading-relaxed text-gray-600">${esc(subtitle)}</p>` : ''}
           ${body}
         </div>
-        ${renderCardFooter(item, tab, entity, dateLabel, options.ctaHtml)}
+        ${renderCardFooter(item, tab, entity, dateLabel)}
       </div>
     </article>`;
 }
@@ -1145,7 +1112,7 @@ function renderCardActions(item) {
   return parts.join('');
 }
 
-function renderCardFooter(item, tab, entity, dateLabel, ctaHtml = null) {
+function renderCardFooter(item, tab, entity, dateLabel) {
   // El CTA al detalle interno se retiró (Fase 2). La card solo ofrece las
   // acciones de ficha/adhesión; si no hay ninguna, el bloque de acciones queda vacío.
   const actions = renderCardActions(item);
@@ -1376,9 +1343,6 @@ function renderChallengeCard(item, tab) {
 
   const dlIndicator = '';
 
-  // CTA de card: siempre abre el detalle — el enlace de inscripción vive en el header del detalle
-  const ctaHtml = `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang({ es: 'Ver reto', en: 'View challenge', va: 'Veure repte' }))} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
-
   // Entidad promotora — solo si global visibility lo permite
   const entityLabel = ccv.ch_entity !== false
     ? (pickLang(ownership.requester?.publicLabel) || pickLang(item.core?.entity?.name))
@@ -1420,7 +1384,6 @@ function renderChallengeCard(item, tab) {
     extraBadgeFilterKey: maturityLabel ? 'maturity' : '',
     extraBadgeFilterValue: maturityLabel ? (item.core?.maturity || '') : '',
     entity: entityLabel,
-    ctaHtml,
   });
 }
 
@@ -1558,8 +1521,6 @@ function renderCaseCard(item, tab) {
     ${sdgsHtml}
   `;
 
-  const ctaHtml = `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang({ es: 'Ver caso', en: 'View case', va: 'Veure cas' }))} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
-
   const shellOptions = {
     title: core.title,
     subtitle: core.summary,
@@ -1569,7 +1530,6 @@ function renderCaseCard(item, tab) {
     extraBadgeFilterKey: (showStageBadge && caseStageLabel) ? 'caseStage' : '',
     extraBadgeFilterValue: (showStageBadge && caseStageLabel) ? (core.caseStage || '') : '',
     entity: (ccv.ch_entity !== false && cardPres.showEntity !== false) ? (originName || publisherName) : null,
-    ctaHtml,
     hideTypeBadge: true,
   };
 
@@ -1705,13 +1665,6 @@ function renderPilotCard(item, tab) {
     ${badgesHtml}
   `;
 
-  // ── CTA ───────────────────────────────────────────────────────────────────
-  const ef = item.externalFlow || {};
-  const extUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : null;
-  const ctaLabel = pickLang({ es: 'Ver pilotaje', en: 'View pilot', va: 'Veure pilot' });
-  const ctaHtml = extUrl
-    ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang(ef.primaryAction?.label) || ctaLabel)} <i data-lucide="external-link" class="h-4 w-4"></i></a>`
-    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(ctaLabel)} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
   const leadName = pickLang(item.ownership?.lead?.name, item.ownership?.lead?.name || '');
   const entityLabel = (ccv.ch_entity !== false && pres.showEntity !== false) ? leadName : null;
 
@@ -1725,7 +1678,6 @@ function renderPilotCard(item, tab) {
     extraBadgeFilterKey: showSectorBadge && sectorLabel ? 'sector' : '',
     extraBadgeFilterValue: showSectorBadge && sectorLabel ? getSectorCode(sectorCode) : '',
     entity: entityLabel,
-    ctaHtml,
     hideTypeBadge: true,
   });
 }
@@ -1831,13 +1783,6 @@ function renderValidationCard(item, tab) {
     windowLabel ? { label: uiText('window'), value: windowLabel, valueClass: 'font-normal text-eu-text' } : null,
   ].filter(Boolean));
 
-  // ── CTA: "Ver validación" siempre singular ────────────────────────────────
-  const extUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : null;
-  const ctaLabel = pickLang({ es: 'Ver validación', en: 'View validation', va: 'Veure validació' });
-  const ctaHtml = extUrl
-    ? `<a href="${esc(extUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(ctaLabel)} <i data-lucide="external-link" class="h-4 w-4"></i></a>`
-    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(ctaLabel)} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
-
   const validationTypeLabel = pickLang(item.validationTypeLabel) || getValidationTypeLabel(core.validationType);
   const stageLabel = (ccv.ch_val_stage !== false && pres.showValidationStage !== false) ? pickLang(item.validationStageLabel) : '';
   const showSectorBadge = ccv.ch_val_extraBadge !== false;
@@ -1867,7 +1812,6 @@ function renderValidationCard(item, tab) {
     extraBadge2FilterKey: showSectorBadge ? 'sector' : '',
     extraBadge2FilterValue: showSectorBadge ? getSectorCode(core.sector) : '',
     entity: proposerName,
-    ctaHtml,
     hideTypeBadge: true,
   });
 }
@@ -1881,7 +1825,6 @@ function renderMentoringCard(item, tab) {
   const provider = item.ownership?.mentoringTeam || {};
   const ef = item.externalFlow || {};
   const primaryUrl = ef.enabled && ef.primaryAction?.url ? ef.primaryAction.url : '';
-  const fallbackLabel = pickLang(ef.fallbackAction?.label) || pickLang({ es: 'Ver mentoria', en: 'View mentoring', va: 'Veure mentoria' });
 
   if (offer.purpose || item.mentors || item.expectedOutputs || item.presentation) {
     const providerName = pickLang(provider.name) || pickLang(core.entity?.name);
@@ -1898,9 +1841,6 @@ function renderMentoringCard(item, tab) {
     const dlHtml = pres.showDownloadsIndicator !== false && item.downloads?.enabled && item.hasDownloads && cardDownloads.length
       ? `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500"><i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i><span>${esc(cardDownloads.length === 1 ? `1 ${uiText('downloadable')}` : `${cardDownloads.length} ${uiText('downloadables')}`)}</span></div>`
       : '';
-    const ctaHtml = primaryUrl
-      ? `<a href="${esc(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang(ef.primaryAction?.label) || fallbackLabel)} <i data-lucide="external-link" class="h-4 w-4"></i></a>`
-      : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(fallbackLabel)} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
 
     const showProvider = ccv.ch_mentoring_provider !== false && pres.showProvider !== false;
     const showSpecialties = ccv.ch_mentoring_specialties !== false && pres.showSpecialties !== false;
@@ -1957,15 +1897,11 @@ function renderMentoringCard(item, tab) {
       extraBadge2FilterKey: showSectorBadge ? 'sector' : '',
       extraBadge2FilterValue: showSectorBadge ? getSectorCode(core.sector) : '',
       entity: '',
-      ctaHtml,
       hideTypeBadge: true,
     });
   }
 
   const card = item.card || {};
-  const ctaHtml = primaryUrl
-    ? `<a href="${esc(primaryUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(pickLang(ef.primaryAction?.label) || fallbackLabel)} <i data-lucide="external-link" class="h-4 w-4"></i></a>`
-    : `<button type="button" data-id="${esc(item.id)}" class="mp-view-detail inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(fallbackLabel)} <i data-lucide="arrow-right" class="h-4 w-4"></i></button>`;
   const mentorName = pickLang(card.mentorName, pickLang(item.ownership?.mentoringTeam?.name) || pickLang(item.core?.entity?.name));
   const mentorRole = pickLang(card.mentorRole || item.ownership?.mentoringTeam?.role || item.core?.summary);
   const badges = asArray(card.badges).map(badge => badge?.label || badge);
@@ -1987,7 +1923,6 @@ function renderMentoringCard(item, tab) {
     title: item.core?.title,
     subtitle: card.organisation || item.core?.summary,
     extraBadge: ccv.ch_mentoring_type !== false ? ((primaryUrl && item.presentation?.card?.showChatBadge) ? 'Chat' : getSectorLabel(item.core?.sector)) : '',
-    ctaHtml,
   });
 }
 
