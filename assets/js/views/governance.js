@@ -666,20 +666,29 @@ function tabDocumentos(govT) {
   }
 
   return `
-    <div class="rd-card overflow-hidden">
-      ${cms.visible !== false ? `
+    ${cms.visible !== false ? `
+    <div class="space-y-8">
       ${cms.headerVisible !== false ? `
-      <div class="px-10 py-6 rd-ceja-grad">
-        <h2 class="text-3xl font-extrabold mb-1" style="color:#ffffff">${pickLang(cms.title, s.title || '')}</h2>
-        <p class="text-lg leading-relaxed" style="color:#ffffff">${pickLang(cms.description, s.description || '')}</p>
+      <div class="rd-card rd-card-accent rd-card-grad-violet overflow-hidden group">
+        <div class="p-6 pl-7 sm:p-8 sm:pl-9">
+          <div class="min-w-0">
+            <div class="flex items-center gap-3">
+              <span class="rd-icon-circle shrink-0 text-eu-blue transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
+                <i data-lucide="file-text" class="h-6 w-6"></i>
+              </span>
+              <h2 class="min-w-0 text-3xl font-extrabold leading-tight text-eu-purple">${pickLang(cms.title, s.title || '')}</h2>
+            </div>
+            ${pickLang(cms.description, s.description || '') ? `<p class="mt-5 text-lg leading-relaxed text-gray-600">${pickLang(cms.description, s.description || '')}</p>` : ''}
+          </div>
+        </div>
       </div>
       ` : ''}
-      <div class="p-8 rd-card-grad-beige">
+      <div>
         <input type="text" id="gov-doc-search" placeholder="Buscar por título, tipo o ID..." class="w-full px-6 py-4 rounded-full border border-eu-purple/20 focus:outline-none focus:ring-2 focus:ring-eu-purple focus:border-eu-purple text-eu-text placeholder-eu-text/40 shadow-sm transition-all text-sm mb-6" style="background:#ffffff" />
         <div id="gov-docs-results">${renderDocs()}</div>
       </div>
-      ` : ''}
     </div>
+    ` : ''}
   `;
 }
 
