@@ -1726,7 +1726,11 @@ export const GOVERNANCE_CONFIG = {
         "id": "internal-progress-q1",
         "visible": true,
         "order": 10,
-        "title": "Informe de Progreso Interno Q1 2026",
+        "title": {
+          "es": "Informe de Progreso Interno Q1 2026",
+          "en": "Internal Progress Report Q1 2026",
+          "va": "Informe de Progrés Intern Q1 2026"
+        },
         "date": "2026-04-15",
         "types": [
           {
@@ -1742,6 +1746,8 @@ export const GOVERNANCE_CONFIG = {
         "icon": "📈",
         "url": "",
         "external": false,
+        "file": "",
+        "filePublicPath": "",
         "linkText": {
           "es": "",
           "en": "",
@@ -1752,7 +1758,11 @@ export const GOVERNANCE_CONFIG = {
         "id": "oer-policy",
         "visible": true,
         "order": 4,
-        "title": "Política de Contenidos y Licencias OER",
+        "title": {
+          "es": "Política de Contenidos y Licencias OER",
+          "en": "OER Content and Licensing Policy",
+          "va": "Política de Continguts i Llicències OER"
+        },
         "date": "2026-03-15",
         "types": [
           {
@@ -1768,6 +1778,8 @@ export const GOVERNANCE_CONFIG = {
         "icon": "📝",
         "url": "",
         "external": false,
+        "file": "",
+        "filePublicPath": "",
         "linkText": {
           "es": "",
           "en": "",
@@ -1778,7 +1790,11 @@ export const GOVERNANCE_CONFIG = {
         "id": "sc-minutes-q1-2026",
         "visible": true,
         "order": 8,
-        "title": "Actas Comité Directivo – Q1 2026",
+        "title": {
+          "es": "Actas Comité Directivo – Q1 2026",
+          "en": "Steering Committee Minutes – Q1 2026",
+          "va": "Actes Comitè Directiu – Q1 2026"
+        },
         "date": "2026-03-15",
         "types": [
           {
@@ -1794,6 +1810,8 @@ export const GOVERNANCE_CONFIG = {
         "icon": "📋",
         "url": "",
         "external": false,
+        "file": "",
+        "filePublicPath": "",
         "linkText": {
           "es": "",
           "en": "",
@@ -1804,7 +1822,11 @@ export const GOVERNANCE_CONFIG = {
         "id": "consensue-manual",
         "visible": true,
         "order": 11,
-        "title": "Manual de Usuario – ConsensUE para Stakeholders",
+        "title": {
+          "es": "Manual de Usuario – ConsensUE para Stakeholders",
+          "en": "User Manual – ConsensUE for Stakeholders",
+          "va": "Manual d'Usuari – ConsensUE per a Stakeholders"
+        },
         "date": "2026-03-15",
         "types": [
           {
@@ -1820,6 +1842,8 @@ export const GOVERNANCE_CONFIG = {
         "icon": "📘",
         "url": "",
         "external": false,
+        "file": "",
+        "filePublicPath": "",
         "linkText": {
           "es": "",
           "en": "",
@@ -1830,7 +1854,11 @@ export const GOVERNANCE_CONFIG = {
         "id": "d1-2-governance",
         "visible": true,
         "order": 2,
-        "title": "D1.2 – AI STEAM Network: Conceptos Iniciales y Gobernanza",
+        "title": {
+          "es": "D1.2 – AI STEAM Network: Conceptos Iniciales y Gobernanza",
+          "en": "D1.2 – AI STEAM Network: Initial Concepts and Governance",
+          "va": "D1.2 – AI STEAM Network: Conceptes Inicials i Governança"
+        },
         "date": "2026-02-15",
         "types": [
           {
@@ -1846,6 +1874,8 @@ export const GOVERNANCE_CONFIG = {
         "icon": "🏛️",
         "url": "https://aules.edu.gva.es/formaciodelprofessorat",
         "external": true,
+        "file": "",
+        "filePublicPath": "",
         "linkText": {
           "es": "",
           "en": "",
@@ -1856,7 +1886,11 @@ export const GOVERNANCE_CONFIG = {
         "id": "collaboration-agreement-model",
         "visible": true,
         "order": 3,
-        "title": "Modelo de Acuerdo de Colaboración – Stakeholders",
+        "title": {
+          "es": "Modelo de Acuerdo de Colaboración – Stakeholders",
+          "en": "Collaboration Agreement Template – Stakeholders",
+          "va": "Model d'Acord de Col·laboració – Stakeholders"
+        },
         "date": "2026-02-15",
         "types": [
           {
@@ -1872,6 +1906,8 @@ export const GOVERNANCE_CONFIG = {
         "icon": "🤝",
         "url": "",
         "external": false,
+        "file": "",
+        "filePublicPath": "",
         "linkText": {
           "es": "",
           "en": "",
@@ -1882,7 +1918,11 @@ export const GOVERNANCE_CONFIG = {
         "id": "ethics-code",
         "visible": true,
         "order": 5,
-        "title": "Código Ético de Retos Industriales",
+        "title": {
+          "es": "Código Ético de Retos Industriales",
+          "en": "Code of Ethics for Industrial Challenges",
+          "va": "Codi Ètic de Reptes Industrials"
+        },
         "date": "2026-02-15",
         "types": [
           {
@@ -1898,6 +1938,8 @@ export const GOVERNANCE_CONFIG = {
         "icon": "⚖️",
         "url": "https://aules.edu.gva.es/formaciodelprofessorat",
         "external": true,
+        "file": "",
+        "filePublicPath": "",
         "linkText": {
           "es": "",
           "en": "",
@@ -1908,7 +1950,11 @@ export const GOVERNANCE_CONFIG = {
         "id": "ga-minutes-1",
         "visible": true,
         "order": 7,
-        "title": "Actas Asamblea General – Sesión 1",
+        "title": {
+          "es": "Actas Asamblea General – Sesión 1",
+          "en": "General Assembly Minutes – Session 1",
+          "va": "Actes Assemblea General – Sessió 1"
+        },
         "date": "2025-11-15",
         "types": [
           {
@@ -1924,6 +1970,8 @@ export const GOVERNANCE_CONFIG = {
         "icon": "📋",
         "url": "",
         "external": false,
+        "file": "",
+        "filePublicPath": "",
         "linkText": {
           "es": "",
           "en": "",
@@ -1934,7 +1982,11 @@ export const GOVERNANCE_CONFIG = {
         "id": "gender-equality-policy",
         "visible": true,
         "order": 12,
-        "title": "Política de Igualdad de Género y Diversidad",
+        "title": {
+          "es": "Política de Igualdad de Género y Diversidad",
+          "en": "Gender Equality and Diversity Policy",
+          "va": "Política d'Igualtat de Gènere i Diversitat"
+        },
         "date": "2025-11-15",
         "types": [
           {
@@ -1950,6 +2002,8 @@ export const GOVERNANCE_CONFIG = {
         "icon": "⚧",
         "url": "",
         "external": false,
+        "file": "",
+        "filePublicPath": "",
         "linkText": {
           "es": "",
           "en": "",
@@ -1960,7 +2014,11 @@ export const GOVERNANCE_CONFIG = {
         "id": "consortium-agreement",
         "visible": true,
         "order": 1,
-        "title": "Acuerdo de Consorcio AI-SECRETT v1.0",
+        "title": {
+          "es": "Acuerdo de Consorcio AI-SECRETT v1.0",
+          "en": "AI-SECRETT Consortium Agreement v1.0",
+          "va": "Acord de Consorci AI-SECRETT v1.0"
+        },
         "date": "2025-10-15",
         "types": [
           {
@@ -1992,6 +2050,8 @@ export const GOVERNANCE_CONFIG = {
         "icon": "📄",
         "url": "https://aules.edu.gva.es/formaciodelprofessorat",
         "external": true,
+        "file": "consortium-agreement.pdf",
+        "filePublicPath": "/assets/downloads/governance/consortium-agreement.pdf",
         "linkText": {
           "es": "",
           "en": "",
@@ -2002,7 +2062,11 @@ export const GOVERNANCE_CONFIG = {
         "id": "dmp",
         "visible": true,
         "order": 6,
-        "title": "Plan de Gestión de Datos (DMP)",
+        "title": {
+          "es": "Plan de Gestión de Datos (DMP)",
+          "en": "Data Management Plan (DMP)",
+          "va": "Pla de Gestió de Dades (DMP)"
+        },
         "date": "2025-10-15",
         "types": [
           {
@@ -2018,6 +2082,8 @@ export const GOVERNANCE_CONFIG = {
         "icon": "🗄️",
         "url": "",
         "external": false,
+        "file": "",
+        "filePublicPath": "",
         "linkText": {
           "es": "",
           "en": "",
@@ -2028,7 +2094,11 @@ export const GOVERNANCE_CONFIG = {
         "id": "ethics-declaration",
         "visible": true,
         "order": 9,
-        "title": "Declaración Ética y Conflictos de Interés",
+        "title": {
+          "es": "Declaración Ética y Conflictos de Interés",
+          "en": "Ethics and Conflict of Interest Declaration",
+          "va": "Declaració Ètica i Conflictes d'Interès"
+        },
         "date": "2025-10-15",
         "types": [
           {
@@ -2044,6 +2114,8 @@ export const GOVERNANCE_CONFIG = {
         "icon": "🔍",
         "url": "",
         "external": false,
+        "file": "",
+        "filePublicPath": "",
         "linkText": {
           "es": "",
           "en": "",

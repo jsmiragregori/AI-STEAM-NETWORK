@@ -569,7 +569,7 @@ function tabDocumentos(govT) {
 
   function docMatchesSearch(doc, term) {
     if (!term) return true;
-    const title = (doc.title || '').toLowerCase();
+    const title = (pickLang(doc.title) || '').toLowerCase();
     const typesStr = (Array.isArray(doc.types) ? doc.types.map(t => (t.label?.es || '').toLowerCase()).join(' ') : '').toLowerCase();
     const id = (doc.id || '').toLowerCase();
     return title.includes(term) || typesStr.includes(term) || id.includes(term);
@@ -597,12 +597,18 @@ function tabDocumentos(govT) {
 
     const cardsHtml = paged.map(doc => {
       const pub = isPublic(doc);
+      const hasFile = doc.filePublicPath && doc.filePublicPath.trim();
       const hasUrl = doc.url && doc.url.trim();
-      const linkText = pickLang(doc.linkText, doc.linkText?.es || 'Ver');
+      const lang = getLang();
+      const customLinkText = pickLang(doc.linkText, '');
+      // Texto del enlace: el personalizado del CMS o un default según el origen.
+      const defaultDownload = lang === 'en' ? 'Download' : lang === 'va' ? 'Descarregar' : 'Descargar';
+      const defaultView = lang === 'en' ? 'View' : lang === 'va' ? 'Veure' : 'Ver';
+      const linkText = customLinkText || (hasFile ? defaultDownload : defaultView);
       return `
         <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden h-full group">
           <div class="rd-card-mp-ceja">
-            <h3 class="rd-card-mp-title break-words">${doc.title || ''}</h3>
+            <h3 class="rd-card-mp-title break-words">${pickLang(doc.title) || ''}</h3>
           </div>
           <div class="p-7 pt-5 flex flex-col justify-between flex-1">
           <div>
@@ -629,12 +635,17 @@ function tabDocumentos(govT) {
             </div>
           </div>
           <div class="mt-5 pt-4 border-t border-eu-blue/10">
-            ${hasUrl ? `
+            ${hasFile ? `
+            <a href="${doc.filePublicPath}" download class="inline-flex items-center gap-1.5 text-base font-bold text-eu-blue hover:text-eu-purple transition-colors duration-300">
+              <span>${linkText}</span>
+              <i data-lucide="download" class="w-4 h-4"></i>
+            </a>
+            ` : hasUrl ? `
             <a href="${doc.url}" ${doc.external ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-base font-bold text-eu-blue hover:text-eu-purple transition-colors duration-300">
               <span>${linkText}</span>
               <i data-lucide="external-link" class="w-4 h-4"></i>
             </a>
-            ` : '<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-400"><i data-lucide="minus-circle" class="w-4 h-4"></i>Sin enlace</span>'}
+            ` : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-400"><i data-lucide="minus-circle" class="w-4 h-4"></i>${lang === 'en' ? 'No link' : lang === 'va' ? 'Sense enllaç' : 'Sin enlace'}</span>`}
           </div>
           </div>
         </div>
