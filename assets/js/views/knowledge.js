@@ -507,10 +507,6 @@ function renderOerGridContent(search) {
     const linkText = rLinkType === 'download'
       ? (getLang() === 'en' ? 'Download' : getLang() === 'va' ? 'Descarregar' : 'Descargar')
       : (getLang() === 'en' ? 'View' : getLang() === 'va' ? 'Veure' : 'Ver');
-    const linkButtonHtml = rUrl
-      ? `<a href="${rUrl}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="flex items-center gap-1 text-eu-blue text-xs font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-3 h-3"></i>${linkText}</a>`
-      : `<span class="flex items-center gap-1 text-gray-400 text-xs font-bold"><i data-lucide="${linkIcon}" class="w-3 h-3"></i>${linkText}</span>`;
-
     return `
     <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden group">
       <div class="rd-card-mp-ceja">
@@ -562,7 +558,7 @@ function renderOerGridContent(search) {
             return `<i data-lucide="${icons[status] || 'check-circle'}" class="w-3.5 h-3.5"></i>${getStatusLabel(status)}`;
           })()}
         </button>` : '<span></span>'}
-        ${rUrl ? `<a href="${rUrl}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-eu-blue text-white text-sm font-bold hover:bg-eu-purple transition-colors"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-400 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</span>`}
+        ${rUrl ? `<a href="${rUrl}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-400 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</span>`}
       </div>
     </div>
   `}).join('');

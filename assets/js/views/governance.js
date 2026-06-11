@@ -175,7 +175,7 @@ function tabEstructura(govT) {
           </div>
           ${pickLang(hubBlock.title, s.hubTitle || '')}
         </h2>
-        <p class="text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed">${pickLang(hubBlock.description, s.hubDesc || '')}</p>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${pickLang(hubBlock.description, s.hubDesc || '')}</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${nodesHtml}</div>
       </div>` : ''}
 

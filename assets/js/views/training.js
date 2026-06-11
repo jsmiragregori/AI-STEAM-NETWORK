@@ -509,8 +509,8 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
   const masterPathSteps = masterPathBlock?.steps?.length > 0 ? masterPathBlock.steps.map(s => pickLang(s.text, '')) : (trainingT?.masterPathSteps || []);
   return `
     ${cmsSection?.disclaimerBlock?.visible === false || !masterDisclaimer ? '' : `
-    <div class="rd-card group border-0 text-white rd-pad flex items-start gap-4 mb-8 shadow-sm" style="background: #5C2FB6 !important;">
-      <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-[#5C2FB6] shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12">
+    <div class="rd-card rd-ceja-grad group border-0 text-white rd-pad flex items-start gap-4 mb-8 shadow-sm">
+      <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" style="color:#5520F6;">
         <i data-lucide="alert-triangle" class="w-6 h-6"></i>
       </div>
       <div class="flex-1">
