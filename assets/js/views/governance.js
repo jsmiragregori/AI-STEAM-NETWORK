@@ -132,7 +132,7 @@ function tabEstructura(govT) {
         </div>
         <div class="p-7 pt-5 flex flex-col justify-between flex-1">
           <div>
-            <p class="text-sm font-extrabold uppercase tracking-wider mb-3 ${body.iconColor || 'text-eu-blue'}">${pickLang(body.type, body.type || '')}</p>
+            <p class="text-sm font-extrabold uppercase tracking-wider mb-3 text-eu-blue">${pickLang(body.type, body.type || '')}</p>
             <p class="text-lg text-gray-700 mb-5 leading-relaxed">${pickLang(body.desc, body.desc || '')}</p>
           </div>
           <div class="space-y-2.5 pt-4 border-t border-eu-blue/10">

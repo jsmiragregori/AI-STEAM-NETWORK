@@ -373,8 +373,6 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 1,
         "abbr": "GA",
-        "color": "border-blue-600 bg-blue-50",
-        "iconColor": "text-blue-700",
         "name": {
           "es": "Asamblea General",
           "en": "General Assembly",
@@ -411,8 +409,6 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 2,
         "abbr": "SC",
-        "color": "border-eu-blue bg-eu-blue/10",
-        "iconColor": "text-eu-blue",
         "name": {
           "es": "Comité Directivo",
           "en": "Steering Committee",
@@ -449,8 +445,6 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 3,
         "abbr": "AB",
-        "color": "border-purple-600 bg-purple-50",
-        "iconColor": "text-purple-700",
         "name": {
           "es": "Consejo Asesor",
           "en": "Advisory Board",
@@ -487,8 +481,6 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 4,
         "abbr": "SCC",
-        "color": "border-indigo-600 bg-indigo-50",
-        "iconColor": "text-indigo-700",
         "name": {
           "es": "Comité Científico",
           "en": "Scientific Committee",
@@ -525,8 +517,6 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 5,
         "abbr": "SN",
-        "color": "border-eu-purple bg-eu-yellow/60",
-        "iconColor": "text-eu-purple",
         "name": {
           "es": "Red de Stakeholders",
           "en": "Stakeholder Network",
@@ -563,8 +553,6 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 6,
         "abbr": "SB",
-        "color": "border-gray-600 bg-gray-50",
-        "iconColor": "text-gray-700",
         "name": {
           "es": "Junta Estratégica",
           "en": "Strategic Board",
