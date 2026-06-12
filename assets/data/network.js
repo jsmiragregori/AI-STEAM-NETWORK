@@ -726,13 +726,13 @@ export const NETWORK_CONFIG = {
         "expertise": [
           {
             "es": "Ciencia de datos e IA",
-            "en": "Ciencia de datos e IA",
-            "va": "Ciencia de datos e IA"
+            "en": "AI & data science",
+            "va": "Ciència de dades i IA"
           },
           {
             "es": "Sistemas ciberfísicos",
-            "en": "Sistemas ciberfísicos",
-            "va": "Sistemas ciberfísicos"
+            "en": "Cyber-physical systems",
+            "va": "Sistemes ciberfísics"
           }
         ],
         "role": "beneficiary",
@@ -853,13 +853,13 @@ export const NETWORK_CONFIG = {
         "expertise": [
           {
             "es": "Ciudad inteligente",
-            "en": "Ciudad inteligente",
-            "va": "Ciudad inteligente"
+            "en": "Smart city",
+            "va": "Ciutat intel·ligent"
           },
           {
             "es": "Innovación turística",
-            "en": "Innovación turística",
-            "va": "Innovación turística"
+            "en": "Tourism innovation",
+            "va": "Innovació turística"
           }
         ],
         "role": "beneficiary",
