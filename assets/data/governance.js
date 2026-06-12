@@ -229,9 +229,9 @@ export const GOVERNANCE_CONFIG = {
                 "va": "Dades de membres"
               },
               "desc": {
-                "es": "Actúa como Responsable del Tratamiento de datos de las organizaciones adheridas al Acuerdo de Colaboración (RGPD).",
-                "en": "Acts as Data Controller for organizations adhered to the Collaboration Agreement (GDPR).",
-                "va": "Actua com a Responsable del Tractament de dades de les organitzacions adscretes a l'Acord de Col·laboració (RGPD)."
+                "es": "Gestiona los datos de las organizaciones adheridas en los sistemas propios de la GVA bajo el marco aplicable de protección de datos. Otros sistemas mantienen sus responsabilidades específicas según su titularidad y finalidad.",
+                "en": "Manages data from adhered organizations in GVA-owned systems under the applicable data-protection framework. Other systems keep their own responsibilities according to their ownership and purpose.",
+                "va": "Gestiona les dades de les organitzacions adherides en els sistemes propis de la GVA sota el marc aplicable de protecció de dades. Altres sistemes mantenen les seues responsabilitats específiques segons la titularitat i la finalitat."
               }
             },
             {
@@ -312,9 +312,9 @@ export const GOVERNANCE_CONFIG = {
                 "va": "Dades acadèmiques"
               },
               "desc": {
-                "es": "Actúa como Responsable del Tratamiento de los expedientes académicos de estudiantes del Máster (RGPD).",
-                "en": "Acts as Data Controller for Master student academic records (GDPR).",
-                "va": "Actua com a Responsable del Tractament dels expedients acadèmics dels estudiants del Màster (RGPD)."
+                "es": "Los expedientes académicos y la información del Máster permanecen bajo la gobernanza académica y de protección de datos de UVEG y de los sistemas autorizados del Track A.",
+                "en": "Academic records and Master information remain under UVEG academic and data-protection governance and the authorised Track A systems.",
+                "va": "Els expedients acadèmics i la informació del Màster romanen sota la governança acadèmica i de protecció de dades d'UVEG i dels sistemes autoritzats del Track A."
               }
             },
             {
@@ -401,9 +401,9 @@ export const GOVERNANCE_CONFIG = {
           "va": "Anual + extraordinària"
         },
         "quorum": {
-          "es": "2/3 beneficiarios",
-          "en": "2/3 beneficiaries",
-          "va": "2/3 beneficiaris"
+          "es": "60% de sus miembros presentes o representados",
+          "en": "60% of its members present or represented",
+          "va": "60% dels seus membres presents o representats"
         }
       },
       {
@@ -429,14 +429,14 @@ export const GOVERNANCE_CONFIG = {
           "va": "Gestió operativa del projecte. Supervisa el pla de treball, aprova els informes interns i coordina la coherència entre Track A (Acadèmic) i Track B (Ecosistema)."
         },
         "members": {
-          "es": "UVEG (coord.), UMU, CEICE, TUV.IT, LC",
-          "en": "UVEG (coord.), UMU, CEICE, TUV.IT, LC",
-          "va": "UVEG (coord.), UMU, CEICE, TUV.IT, LC"
+          "es": "Coordinador, líderes de paquete de trabajo y representantes designados por la Asamblea General",
+          "en": "Coordinator, work package leaders and representatives appointed by the General Assembly",
+          "va": "Coordinador, líders de paquet de treball i representants designats per l'Assemblea General"
         },
         "frequency": {
-          "es": "Trimestral",
-          "en": "Quarterly",
-          "va": "Trimestral"
+          "es": "Al menos bimestral",
+          "en": "At least bimonthly",
+          "va": "Almenys bimestral"
         },
         "quorum": {
           "es": "Mayoría simple",
@@ -510,14 +510,14 @@ export const GOVERNANCE_CONFIG = {
           "va": "Investigadors sènior: UVEG, UMU, NTNU, INESC, Ud'A"
         },
         "frequency": {
-          "es": "Bajo demanda",
-          "en": "On demand",
-          "va": "Sota demanda"
+          "es": "Al menos dos veces al año",
+          "en": "At least twice every year",
+          "va": "Almenys dues vegades a l'any"
         },
         "quorum": {
-          "es": "3 revisores mínimo",
-          "en": "Minimum 3 reviewers",
-          "va": "3 revisors mínim"
+          "es": "Consentimiento unánime; recomendaciones no vinculantes",
+          "en": "Unanimous consent; non-binding recommendations",
+          "va": "Consentiment unànime; recomanacions no vinculants"
         }
       },
       {
@@ -538,24 +538,24 @@ export const GOVERNANCE_CONFIG = {
           "va": "Òrgan participatiu (Track B)"
         },
         "desc": {
-          "es": "Órgano participativo del Track B. Stakeholders informan necesidades, validan relevancia y aportan casos o retos vía ConsensUE. CEICE actúa como Orquestadora de este espacio.",
-          "en": "Participatory body of Track B. Stakeholders inform needs, validate relevance and contribute cases or challenges via ConsensUE. CEICE acts as orchestrator of this space.",
-          "va": "Òrgan participatiu del Track B. Els stakeholders informen necessitats, validen la rellevància i aporten casos o reptes via ConsensUE. CEICE actua com Orquestrador d'este espai."
+          "es": "Órgano estratégico y no decisorio del Track B. Los stakeholders aportan necesidades, conocimiento sectorial y casos o retos; INESC TEC coordina la relación con esta red en consulta con la coordinación del proyecto.",
+          "en": "Strategic, non-decision-making body of Track B. Stakeholders contribute needs, sector expertise and cases or challenges; INESC TEC coordinates the relationship with this network in consultation with the project coordination.",
+          "va": "Òrgan estratègic i no decisori del Track B. Els stakeholders aporten necessitats, coneixement sectorial i casos o reptes; INESC TEC coordina la relació amb esta xarxa en consulta amb la coordinació del projecte."
         },
         "members": {
-          "es": "Todos los stakeholders adheridos mediante Acuerdo de Colaboración",
-          "en": "All stakeholders adhered through Collaboration Agreement",
-          "va": "Tots els stakeholders adherits mitjançant Acord de Col·laboració"
+          "es": "Representantes externos invitados según prioridades, sectores y relevancia del proyecto",
+          "en": "External representatives invited according to project priorities, sectors and relevance",
+          "va": "Representants externs convidats segons prioritats, sectors i rellevància del projecte"
         },
         "frequency": {
-          "es": "Semestral + Online continua",
-          "en": "Biannual + Continuous online",
-          "va": "Semestral + Online contínua"
+          "es": "Al menos cada nueve meses + reuniones temáticas cuando proceda",
+          "en": "At least every nine months + thematic meetings where appropriate",
+          "va": "Almenys cada nou mesos + reunions temàtiques quan pertoque"
         },
         "quorum": {
-          "es": "Participación abierta",
-          "en": "Open participation",
-          "va": "Participació oberta"
+          "es": "Recomendaciones por consenso, no vinculantes",
+          "en": "Consensus-based, non-binding recommendations",
+          "va": "Recomanacions per consens, no vinculants"
         }
       },
       {
@@ -612,9 +612,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "ISO 21001 – Gestió Educativa"
           },
           "desc": {
-            "es": "El consorcio opera bajo ISO 21001 (EOMS), coordinado por UVEG. Garantiza que los procedimientos formativos estén orientados a las necesidades de estudiantes y partes interesadas, con trazabilidad y auditabilidad plena.",
-            "en": "The consortium operates under ISO 21001 (EOMS), coordinated by UVEG. It ensures that training procedures are oriented to the needs of students and stakeholders, with full traceability and auditability.",
-            "va": "El consorci funciona sota ISO 21001 (EOMS), coordinat per UVEG. Garanteix que els procediments formatius estiguen orientats a les necessitats d'estudiants i parts interessades, amb total rastreabilitat i auditabilitat."
+            "es": "Las actividades formativas de AI-SECRETT se orientan por los principios de ISO 21001/EOMS bajo coordinación de UVEG. Cualquier certificación o transferencia posterior requerirá una decisión formal de la Asamblea General.",
+            "en": "AI-SECRETT training activities are guided by ISO 21001/EOMS principles under UVEG coordination. Any later certification or transfer will require a formal decision by the General Assembly.",
+            "va": "Les activitats formatives d'AI-SECRETT s'orienten pels principis d'ISO 21001/EOMS sota coordinació d'UVEG. Qualsevol certificació o transferència posterior requerirà una decisió formal de l'Assemblea General."
           }
         },
         {
@@ -683,9 +683,9 @@ export const GOVERNANCE_CONFIG = {
           "va": "Track A – Espai Acadèmic"
         },
         "subtitle": {
-          "es": "Dirigido por UVEG + Laurea",
-          "en": "Led by UVEG + Laurea",
-          "va": "Dirigit per UVEG + Laurea"
+          "es": "Coordinado por UVEG con socios académicos",
+          "en": "Coordinated by UVEG with academic partners",
+          "va": "Coordinat per UVEG amb socis acadèmics"
         },
         "scope": {
           "text": {
@@ -762,16 +762,16 @@ export const GOVERNANCE_CONFIG = {
         },
         "normativeFramework": {
           "text": {
-            "es": "Acuerdo de Colaboración con Regla de Coste Cero. Espacio abierto y flexible, sin burocracia académica.",
-            "en": "Collaboration Agreement with Zero Cost Rule. Open and flexible space, without academic bureaucracy.",
-            "va": "Acord de Col·laboració amb Regla de Cost Zero. Espai obert i flexible, sense burocràcia acadèmica."
+            "es": "Modelo de Acuerdo de Colaboración con Regla de Coste Cero, pendiente de validación final del proceso y de los roles de participación.",
+            "en": "Collaboration Agreement model with Zero Cost Rule, pending final validation of the process and participation roles.",
+            "va": "Model d'Acord de Col·laboració amb Regla de Cost Zero, pendent de validació final del procés i dels rols de participació."
           }
         },
         "keyLimit": {
           "text": {
-            "es": "La admisión de nuevos miembros y la validación de la relevancia de los retos se deciden colectivamente a través de la Red de Stakeholders (SN) en ConsensUE. CEICE tiene voz principal pero no actúa unilateralmente. La membresía es rápida y no burocrática.",
-            "en": "Admission of new members and validation of challenge relevance are decided collectively through the Stakeholder Network (SN) in ConsensUE. CEICE has principal voice but does not act unilaterally. Membership is rapid and non-bureaucratic.",
-            "va": "L'admissió de nous membres i la validació de la rellevància dels reptes es decideixen col·lectivament a través de la Xarxa de Stakeholders (SN) a ConsensUE. CEICE té veu principal però no actua unilateralment. La membresia és ràpida i no burocràtica."
+            "es": "Las aportaciones de stakeholders pueden canalizarse a través de la Red de Stakeholders y ConsensUE cuando el proceso esté habilitado. Las decisiones formales permanecen en los órganos del consorcio y en los procedimientos aprobados por CEICE y la coordinación del proyecto.",
+            "en": "Stakeholder input may be channelled through the Stakeholder Network and ConsensUE when the process is enabled. Formal decisions remain with the consortium bodies and the procedures approved by CEICE and project coordination.",
+            "va": "Les aportacions de stakeholders poden canalitzar-se a través de la Xarxa de Stakeholders i ConsensUE quan el procés estiga habilitat. Les decisions formals romanen en els òrgans del consorci i en els procediments aprovats per CEICE i la coordinació del projecte."
           }
         },
         "activeBodies": [
@@ -813,9 +813,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Arquitectura de Dades: Zones Diferenciades"
       },
       "description": {
-        "es": "La separación de tracks también se refleja en la arquitectura de datos, garantizando el cumplimiento del RGPD y la compartimentación de la información sensible.",
-        "en": "Track separation is also reflected in data architecture, ensuring GDPR compliance and compartmentalization of sensitive information.",
-        "va": "La separació de tracks també es reflecteix en l'arquitectura de dades, garantint el compliment del RGPD i la compartimentació de la informació sensible."
+        "es": "La separación de tracks también se refleja en la arquitectura de información. La web pública actúa como catálogo y capa de orientación; los datos personales o académicos se gestionan en los sistemas autorizados que correspondan.",
+        "en": "Track separation is also reflected in information architecture. The public website acts as a catalogue and routing layer; personal or academic data are managed in the relevant authorised systems.",
+        "va": "La separació de tracks també es reflecteix en l'arquitectura d'informació. La web pública actua com a catàleg i capa d'orientació; les dades personals o acadèmiques es gestionen en els sistemes autoritzats que corresponguen."
       },
       "zones": [
         {
@@ -828,9 +828,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Zona Pública / Xarxa (Track B)"
           },
           "description": {
-            "es": "Visible para todos los miembros autenticados de la red. Responsable del Tratamiento&#58; CEICE.",
-            "en": "Visible to all authenticated network members. Data Controller&#58; CEICE.",
-            "va": "Visible per a tots els membres autenticats de la xarxa. Responsable del Tractament&#58; CEICE."
+            "es": "Información pública de orientación, catálogo y participación Track B. Los datos tratados en sistemas propios de la GVA se gestionan bajo responsabilidad de la GVA y su marco de protección de datos.",
+            "en": "Public information for Track B orientation, catalogue and participation. Data processed in GVA-owned systems are managed under GVA responsibility and its data-protection framework.",
+            "va": "Informació pública d'orientació, catàleg i participació Track B. Les dades tractades en sistemes propis de la GVA es gestionen sota responsabilitat de la GVA i el seu marc de protecció de dades."
           },
           "items": [
             {
@@ -870,9 +870,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Zona Privada / Acadèmica (Track A)"
           },
           "description": {
-            "es": "Accesible solo para estudiantes matriculados y profesorado. Responsable del Tratamiento&#58; UVEG.",
-            "en": "Accessible only to enrolled students and faculty. Data Controller&#58; UVEG.",
-            "va": "Accessible només per a estudiants matriculats i professorat. Responsable del Tractament&#58; UVEG."
+            "es": "Información académica gestionada en sistemas autorizados del Track A, fuera de la web pública AI-STEAM Network.",
+            "en": "Academic information managed in authorised Track A systems, outside the public AI-STEAM Network website.",
+            "va": "Informació acadèmica gestionada en sistemes autoritzats del Track A, fora de la web pública AI-STEAM Network."
           },
           "items": [
             {
@@ -957,9 +957,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "CONSENSUE (Aules)"
           },
           "scope": {
-            "es": "Participación, deliberaciones, debates, votos y trazabilidad de las contribuciones de la comunidad.",
-            "en": "Participation, deliberations, debates, votes and traceability of community contributions.",
-            "va": "Participació, deliberacions, debats, vots i traçabilitat de les contribucions de la comunitat."
+            "es": "Participación, consultas y contribuciones documentadas de la comunidad cuando el proceso esté habilitado por CEICE y las reglas aplicables.",
+            "en": "Participation, consultations and documented community contributions when the process is enabled by CEICE and the applicable rules.",
+            "va": "Participació, consultes i contribucions documentades de la comunitat quan el procés estiga habilitat per CEICE i les regles aplicables."
           }
         },
         {
@@ -982,14 +982,14 @@ export const GOVERNANCE_CONFIG = {
     "agreement": {
       "visible": true,
       "title": {
-        "es": "Acuerdo de Colaboración – Regla de Coste Cero",
-        "en": "Collaboration Agreement – Zero Cost Rule",
-        "va": "Acord de Col·laboració – Regla de Cost Zero"
+        "es": "Modelo de Acuerdo de Colaboración – Regla de Coste Cero",
+        "en": "Collaboration Agreement Model – Zero Cost Rule",
+        "va": "Model d'Acord de Col·laboració – Regla de Cost Zero"
       },
       "description": {
-        "es": "La membresía en el Track B se formaliza a través del Acuerdo de Colaboración, que establece los siguientes principios&#58;",
-        "en": "Membership in Track B is formalized through the Collaboration Agreement, which establishes the following principles&#58;",
-        "va": "La membresia al Track B es formalitza a través de l'Acord de Col·laboració, que estableix els següents principis&#58;"
+        "es": "Este bloque muestra una propuesta de principios para el futuro proceso de adhesión al Track B. El contenido está pendiente de decisión por CEICE, la coordinación del proyecto y los socios responsables del proceso de stakeholders.",
+        "en": "This block shows a proposed set of principles for the future Track B joining process. The content is pending decision by CEICE, project coordination and the partners responsible for the stakeholder process.",
+        "va": "Este bloc mostra una proposta de principis per al futur procés d'adhesió al Track B. El contingut està pendent de decisió per CEICE, la coordinació del projecte i els socis responsables del procés de stakeholders."
       },
       "items": [
         {
@@ -1002,9 +1002,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Cost Zero"
           },
           "desc": {
-            "es": "Cada signatario asume sus propios costes con recursos ordinarios. La membresía es gratuita.",
-            "en": "Each signatory assumes its own costs from ordinary resources. Membership is free.",
-            "va": "Cada signatori assumeix els seus propis costos amb recursos ordinaris. La membresia és gratuïta."
+            "es": "Propuesta inicial: cada signatario asumiría sus propios costes con recursos ordinarios y la adhesión no tendría cuota.",
+            "en": "Initial proposal: each signatory would assume its own costs from ordinary resources and membership would have no fee.",
+            "va": "Proposta inicial: cada signatari assumiria els seus propis costos amb recursos ordinaris i l'adhesió no tindria quota."
           }
         },
         {
@@ -1017,9 +1017,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Validesa de 4 Anys"
           },
           "desc": {
-            "es": "El acuerdo tiene una duración de 4 años desde la firma, renovable por acuerdo escrito mutuo.",
-            "en": "The agreement has a 4-year duration from signing, renewable by mutual written agreement.",
-            "va": "L'acord té una durada de 4 anys des de la signatura, renovable per acord escrit mutu."
+            "es": "Propuesta inicial: duración orientativa de 4 años desde la firma, renovable por acuerdo escrito mutuo.",
+            "en": "Initial proposal: indicative 4-year duration from signing, renewable by mutual written agreement.",
+            "va": "Proposta inicial: durada orientativa de 4 anys des de la signatura, renovable per acord escrit mutu."
           }
         },
         {
@@ -1032,9 +1032,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Reunió Anual"
           },
           "desc": {
-            "es": "Los signatarios convocan una reunión anual (presencial o virtual) para evaluar los resultados de la colaboración.",
-            "en": "Signatories convene an annual meeting (in-person or virtual) to evaluate collaboration results.",
-            "va": "Els signataris convoquen una reunió anual (presencial o virtual) per avaluar els resultats de la col·laboració."
+            "es": "Propuesta inicial: una reunión anual, presencial o virtual, para revisar resultados y ajustar la colaboración.",
+            "en": "Initial proposal: one annual meeting, in person or online, to review results and adjust collaboration.",
+            "va": "Proposta inicial: una reunió anual, presencial o virtual, per a revisar resultats i ajustar la col·laboració."
           }
         },
         {
@@ -1047,9 +1047,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Resolució de Disputes"
           },
           "desc": {
-            "es": "Aplicación del Reglamento (UE) 2021/694 (Europa Digital) y subsidiariamente la legislación española.",
-            "en": "Application of Regulation (EU) 2021/694 (Digital Europe) and subsidiarily Spanish legislation.",
-            "va": "Aplicació del Reglament (UE) 2021/694 (Europa Digital) i subsidiàriament la legislació espanyola."
+            "es": "Propuesta inicial pendiente de revisión legal y de coordinación del proyecto antes de su publicación como regla aplicable.",
+            "en": "Initial proposal pending legal and project-coordination review before publication as an applicable rule.",
+            "va": "Proposta inicial pendent de revisió legal i de coordinació del projecte abans de publicar-se com a regla aplicable."
           }
         }
       ]
@@ -1063,21 +1063,21 @@ export const GOVERNANCE_CONFIG = {
       "va": "Metodologia Learning by Developing (LbD)"
     },
     "description": {
-      "es": "La AI-STEAM Network no es un repositorio pasivo. La interacción entre los dos Tracks (Académico y Ecosistema) está gobernada por la metodología LbD (Learning by Developing), que convierte los retos reales de las organizaciones en motores de aprendizaje académico con impacto mutuo.",
-      "en": "The AI-STEAM Network is not a passive repository. Interaction between the two Tracks (Academic and Ecosystem) is governed by the LbD methodology, which transforms real challenges into engines of academic learning with mutual impact.",
-      "va": "La xarxa AI-STEAM no és un repositori passiu. La interacció entre els dos Tracks (Acadèmic i Ecosistema) està governada per la metodologia LbD, que transforma els reptes reals en motors d'aprenentatge acadèmic amb impacte mutu."
+      "es": "La AI-STEAM Network no es un repositorio pasivo. La interacción entre los dos Tracks (Académico y Ecosistema) utiliza la metodología LbD (Learning by Developing) como modelo pedagógico de referencia, transformando necesidades reales en oportunidades de aprendizaje, transferencia y evidencia cuando proceda.",
+      "en": "The AI-STEAM Network is not a passive repository. Interaction between the two Tracks (Academic and Ecosystem) uses the LbD methodology as a reference pedagogical model, transforming real needs into learning, transfer and evidence opportunities where appropriate.",
+      "va": "La xarxa AI-STEAM no és un repositori passiu. La interacció entre els dos Tracks (Acadèmic i Ecosistema) utilitza la metodologia LbD com a model pedagògic de referència, transformant necessitats reals en oportunitats d'aprenentatge, transferència i evidència quan pertoque."
     },
     "diginetDescription": {
-      "es": "Este modelo replica el éxito de DigiNet (red educativa finlandesa en salud digital y bienestar), adaptándolo al contexto de la IA aplicada a la triple transición europea.",
-      "en": "This model replicates the success of DigiNet (Finnish educational network in digital health), adapting it to the context of AI applied to Europe's triple transition.",
-      "va": "Este model replica l'èxit de DigiNet (xarxa educativa finlandesa en salut digital), adaptant-lo al context de la IA aplicada a la triple transició europea."
+      "es": "El enfoque se inspira en experiencias como DigiNet y en el modelo LbD aportado por Laurea, adaptándolos con prudencia al contexto de la IA aplicada a la triple transición europea.",
+      "en": "The approach is inspired by experiences such as DigiNet and by the LbD model contributed by Laurea, adapting them carefully to the context of AI applied to Europe's triple transition.",
+      "va": "L'enfocament s'inspira en experiències com DigiNet i en el model LbD aportat per Laurea, adaptant-los amb prudència al context de la IA aplicada a la triple transició europea."
     },
     "cycle": {
       "visible": true,
       "title": {
-        "es": "El ciclo LbD: de la empresa al estudiante y de vuelta",
-        "en": "The LbD Cycle: From Business to Student and Back",
-        "va": "El cicle LbD: de l'empresa a l'estudiant i de tornada"
+        "es": "El ciclo LbD: de necesidades del ecosistema a aprendizaje y evidencia",
+        "en": "The LbD Cycle: From Ecosystem Needs to Learning and Evidence",
+        "va": "El cicle LbD: de necessitats de l'ecosistema a aprenentatge i evidència"
       },
       "phases": [
         {
@@ -1106,9 +1106,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Organitzacions de la xarxa"
           },
           "description": {
-            "es": "Los miembros del ecosistema aportan necesidades, retos y casos de uso a través de ConsensUE. La Red de Stakeholders (SN), con CEICE como orquestadora, valida su relevancia Track B y los clasifica para actividades, recursos, pilotos o posible revisión académica por Track A.",
-            "en": "Ecosystem members contribute needs, challenges and use cases through ConsensUE. The Stakeholder Network, with CEICE as orchestrator, validates Track B relevance and classifies them for activities, resources, pilots or possible academic review by Track A.",
-            "va": "Els membres de l'ecosistema aporten necessitats, reptes i casos d'ús a través de ConsensUE. La Xarxa de Stakeholders, amb CEICE com a orquestradora, valida la rellevància Track B i els classifica per a activitats, recursos, pilots o possible revisió acadèmica per Track A."
+            "es": "Los miembros del ecosistema aportan necesidades, retos y casos de uso a través de los canales habilitados. La Red de Stakeholders (SN), coordinada por INESC TEC y con CEICE como orquestadora del Track B, puede revisar su relevancia y orientar su clasificación para actividades, recursos, pilotos o posible revisión académica por Track A.",
+            "en": "Ecosystem members contribute needs, challenges and use cases through ConsensUE. The Stakeholder Network, coordinated by INESC TEC and with CEICE as Track B orchestrator, may review their relevance and guide classification for activities, resources, pilots or possible academic review by Track A.",
+            "va": "Els membres de l'ecosistema aporten necessitats, reptes i casos d'ús a través dels canals habilitats. La Xarxa de Stakeholders, coordinada per INESC TEC i amb CEICE com a orquestradora del Track B, pot revisar la seua rellevància i orientar-ne la classificació per a activitats, recursos, pilots o possible revisió acadèmica per Track A."
           },
           "outputs": [
             {
@@ -1375,9 +1375,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Les Tres Plataformes en el Flux LbD"
       },
       "description": {
-        "es": "Cada plataforma tiene un rol específico y una autoridad responsable. El contenido fluye unidireccionalmente del ecosistema al aprendizaje.",
-        "en": "Each platform has a specific role. Content flows from ecosystem to learning.",
-        "va": "Cada plataforma té un rol específic. El contingut fluïx de l'ecosistema a l'aprenentatge."
+        "es": "Cada plataforma tiene un rol específico. La web AI-STEAM publica y orienta; ConsensUE apoya la participación cuando esté habilitada; Aules se usa para cursos y actividades del Track B.",
+        "en": "Each platform has a specific role. The AI-STEAM website publishes and routes; ConsensUE supports participation when enabled; Aules is used for Track B courses and activities.",
+        "va": "Cada plataforma té un rol específic. La web AI-STEAM publica i orienta; ConsensUE dona suport a la participació quan estiga habilitada; Aules s'utilitza per a cursos i activitats del Track B."
       },
       "cards": [
         {
@@ -1410,9 +1410,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Participació Democràtica"
           },
           "description": {
-            "es": "Punto de entrada de propuestas. Deliberación comunitaria, votación de prioridades y validación de relevancia de necesidades, casos y retos.",
-            "en": "Entry point for proposals, community deliberation, priority voting and relevance validation of needs, cases and challenges.",
-            "va": "Punt d'entrada de propostes, deliberació comunitària, votació de prioritats i validació de rellevància de necessitats, casos i reptes."
+            "es": "Canal de propuestas, consulta y deliberación comunitaria cuando el proceso esté habilitado, sin sustituir a los órganos formales de decisión.",
+            "en": "Channel for proposals, consultation and community deliberation when the process is enabled, without replacing formal decision-making bodies.",
+            "va": "Canal de propostes, consulta i deliberació comunitària quan el procés estiga habilitat, sense substituir els òrgans formals de decisió."
           }
         },
         {
@@ -1440,14 +1440,14 @@ export const GOVERNANCE_CONFIG = {
             "va": "CEICE + UVEG"
           },
           "role": {
-            "es": "Validación y repositorio",
-            "en": "Validation and Repository",
-            "va": "Validació i Repositori"
+            "es": "Catálogo público y orientación",
+            "en": "Public catalogue and routing",
+            "va": "Catàleg públic i orientació"
           },
           "description": {
-            "es": "Banco de Retos validados, Conocimiento OER, directorio de la red. Punto de encuentro de los dos Tracks.",
-            "en": "Challenge Bank, OER Knowledge, network directory.",
-            "va": "Banc de Reptes, Coneixement OER, directori de la xarxa."
+            "es": "Banco de retos, conocimiento OER y directorio de la red como capa pública de consulta, publicación y orientación.",
+            "en": "Challenge bank, OER knowledge and network directory as a public layer for consultation, publication and routing.",
+            "va": "Banc de reptes, coneixement OER i directori de la xarxa com a capa pública de consulta, publicació i orientació."
           }
         },
         {
@@ -1465,14 +1465,14 @@ export const GOVERNANCE_CONFIG = {
             "va": "Moodle LMS"
           },
           "track": {
-            "es": "Track A + entornos CEICE",
-            "en": "Track A + CEICE environments",
-            "va": "Track A + entorns CEICE"
+            "es": "Track B",
+            "en": "Track B",
+            "va": "Track B"
           },
           "owner": {
-            "es": "UVEG/CEICE según actividad",
-            "en": "UVEG/CEICE by activity",
-            "va": "UVEG/CEICE segons activitat"
+            "es": "CEICE",
+            "en": "CEICE",
+            "va": "CEICE"
           },
           "role": {
             "es": "Entrega formativa",
@@ -1480,9 +1480,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Entrega Formativa"
           },
           "description": {
-            "es": "Entorno de aprendizaje para actividades del Máster, FP o formación docente. La evaluación y los ECTS del Máster permanecen bajo Track A.",
-            "en": "Learning environment for Master, VET or teacher training activities. Master evaluation and ECTS remain under Track A.",
-            "va": "Entorn d'aprenentatge per a activitats del Màster, FP o formació docent. L'avaluació i els ECTS del Màster romanen sota Track A."
+            "es": "Entorno de aprendizaje para cursos, FP, formación docente y otras actividades del Track B gestionadas por CEICE. El Máster AI-SECRETT se desarrolla en su plataforma propia, ValgrAI.",
+            "en": "Learning environment for courses, VET, teacher training and other Track B activities managed by CEICE. The AI-SECRETT Master is delivered in its own platform, ValgrAI.",
+            "va": "Entorn d'aprenentatge per a cursos, FP, formació docent i altres activitats del Track B gestionades per CEICE. El Màster AI-SECRETT es desenvolupa en la seua plataforma pròpia, ValgrAI."
           }
         }
       ]
@@ -1495,9 +1495,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Escalabilitat del Model LbD"
       },
       "description": {
-        "es": "El Dual Track + LbD está diseñado para crecer sin reestructurarse. Cada fase añade capacidad manteniendo la misma lógica de intercambio de valor.",
-        "en": "The Dual Track + LbD model is designed to grow without restructuring. Each phase adds capacity while preserving the same value exchange logic.",
-        "va": "El Dual Track + LbD està dissenyat per a créixer sense reestructurar-se. Cada fase afig capacitat mantenint la mateixa lògica d'intercanvi de valor."
+        "es": "Esta hoja de ruta es una propuesta de validación, todavía no aprobada como compromiso operativo. Se muestra para recoger feedback de socios antes de decidir si se publica, se ajusta o se oculta.",
+        "en": "This roadmap is a validation proposal, not yet approved as an operational commitment. It is shown to collect partner feedback before deciding whether it should be published, adjusted or hidden.",
+        "va": "Este full de ruta és una proposta de validació, encara no aprovada com a compromís operatiu. Es mostra per a recollir feedback de socis abans de decidir si es publica, s'ajusta o s'oculta."
       },
       "phases": [
         {
@@ -1680,9 +1680,9 @@ export const GOVERNANCE_CONFIG = {
       "va": "Documentació de Transparència"
     },
     "description": {
-      "es": "Los documentos públicos están disponibles para descarga directa. Los documentos de socios requieren acceso al Área Privada.",
-      "en": "Public documents are available for direct download. Partner documents require access to the Private Area.",
-      "va": "Els documents públics estan disponibles per a descàrrega directa. Els documents de socis requireixen accés a l'Àrea Privada."
+      "es": "Los documentos públicos estarán disponibles para descarga directa cuando exista un archivo aprobado. Los documentos de socios se gestionan en espacios externos autorizados, como Aules o Basecamp, y esta web solo actúa como catálogo público.",
+      "en": "Public documents will be available for direct download when an approved file exists. Partner documents are managed in authorised external spaces, such as Aules or Basecamp, and this website only acts as a public catalogue.",
+      "va": "Els documents públics estaran disponibles per a descàrrega directa quan existisca un arxiu aprovat. Els documents de socis es gestionen en espais externs autoritzats, com Aules o Basecamp, i esta web només actua com a catàleg públic."
     },
     "noDocsMessage": {
       "es": "Aún no hay documentos disponibles. Por favor, consulta más tarde.",
@@ -1727,9 +1727,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 10,
         "title": {
-          "es": "Informe de Progreso Interno Q1 2026",
-          "en": "Internal Progress Report Q1 2026",
-          "va": "Informe de Progrés Intern Q1 2026"
+          "es": "[DEMO] Informe de Progreso Interno Q1 2026",
+          "en": "[DEMO] Internal Progress Report Q1 2026",
+          "va": "[DEMO] Informe de Progrés Intern Q1 2026"
         },
         "date": "2026-04-15",
         "types": [
@@ -1759,9 +1759,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 4,
         "title": {
-          "es": "Política de Contenidos y Licencias OER",
-          "en": "OER Content and Licensing Policy",
-          "va": "Política de Continguts i Llicències OER"
+          "es": "[DEMO] Política de Contenidos y Licencias OER",
+          "en": "[DEMO] OER Content and Licensing Policy",
+          "va": "[DEMO] Política de Continguts i Llicències OER"
         },
         "date": "2026-03-15",
         "types": [
@@ -1791,9 +1791,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 8,
         "title": {
-          "es": "Actas Comité Directivo – Q1 2026",
-          "en": "Steering Committee Minutes – Q1 2026",
-          "va": "Actes Comitè Directiu – Q1 2026"
+          "es": "[DEMO] Actas Comité Directivo – Q1 2026",
+          "en": "[DEMO] Steering Committee Minutes – Q1 2026",
+          "va": "[DEMO] Actes Comitè Directiu – Q1 2026"
         },
         "date": "2026-03-15",
         "types": [
@@ -1823,9 +1823,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 11,
         "title": {
-          "es": "Manual de Usuario – ConsensUE para Stakeholders",
-          "en": "User Manual – ConsensUE for Stakeholders",
-          "va": "Manual d'Usuari – ConsensUE per a Stakeholders"
+          "es": "[DEMO] Manual de Usuario – ConsensUE para Stakeholders",
+          "en": "[DEMO] User Manual – ConsensUE for Stakeholders",
+          "va": "[DEMO] Manual d'Usuari – ConsensUE per a Stakeholders"
         },
         "date": "2026-03-15",
         "types": [
@@ -1855,9 +1855,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 2,
         "title": {
-          "es": "D1.2 – AI STEAM Network: Conceptos Iniciales y Gobernanza",
-          "en": "D1.2 – AI STEAM Network: Initial Concepts and Governance",
-          "va": "D1.2 – AI STEAM Network: Conceptes Inicials i Governança"
+          "es": "[DEMO] D1.2 – AI STEAM Network: Conceptos Iniciales y Gobernanza",
+          "en": "[DEMO] D1.2 – AI STEAM Network: Initial Concepts and Governance",
+          "va": "[DEMO] D1.2 – AI STEAM Network: Conceptes Inicials i Governança"
         },
         "date": "2026-02-15",
         "types": [
@@ -1887,9 +1887,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 3,
         "title": {
-          "es": "Modelo de Acuerdo de Colaboración – Stakeholders",
-          "en": "Collaboration Agreement Template – Stakeholders",
-          "va": "Model d'Acord de Col·laboració – Stakeholders"
+          "es": "[DEMO] Modelo de Acuerdo de Colaboración – Stakeholders",
+          "en": "[DEMO] Collaboration Agreement Template – Stakeholders",
+          "va": "[DEMO] Model d'Acord de Col·laboració – Stakeholders"
         },
         "date": "2026-02-15",
         "types": [
@@ -1919,9 +1919,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 5,
         "title": {
-          "es": "Código Ético de Retos Industriales",
-          "en": "Code of Ethics for Industrial Challenges",
-          "va": "Codi Ètic de Reptes Industrials"
+          "es": "[DEMO] Código Ético de Retos Industriales",
+          "en": "[DEMO] Code of Ethics for Industrial Challenges",
+          "va": "[DEMO] Codi Ètic de Reptes Industrials"
         },
         "date": "2026-02-15",
         "types": [
@@ -1951,9 +1951,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 7,
         "title": {
-          "es": "Actas Asamblea General – Sesión 1",
-          "en": "General Assembly Minutes – Session 1",
-          "va": "Actes Assemblea General – Sessió 1"
+          "es": "[DEMO] Actas Asamblea General – Sesión 1",
+          "en": "[DEMO] General Assembly Minutes – Session 1",
+          "va": "[DEMO] Actes Assemblea General – Sessió 1"
         },
         "date": "2025-11-15",
         "types": [
@@ -1983,9 +1983,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 12,
         "title": {
-          "es": "Política de Igualdad de Género y Diversidad",
-          "en": "Gender Equality and Diversity Policy",
-          "va": "Política d'Igualtat de Gènere i Diversitat"
+          "es": "[DEMO] Política de Igualdad de Género y Diversidad",
+          "en": "[DEMO] Gender Equality and Diversity Policy",
+          "va": "[DEMO] Política d'Igualtat de Gènere i Diversitat"
         },
         "date": "2025-11-15",
         "types": [
@@ -2015,9 +2015,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 1,
         "title": {
-          "es": "Acuerdo de Consorcio AI-SECRETT v1.0",
-          "en": "AI-SECRETT Consortium Agreement v1.0",
-          "va": "Acord de Consorci AI-SECRETT v1.0"
+          "es": "[DEMO] Acuerdo de Consorcio AI-SECRETT v1.0",
+          "en": "[DEMO] AI-SECRETT Consortium Agreement v1.0",
+          "va": "[DEMO] Acord de Consorci AI-SECRETT v1.0"
         },
         "date": "2025-10-15",
         "types": [
@@ -2063,9 +2063,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 6,
         "title": {
-          "es": "Plan de Gestión de Datos (DMP)",
-          "en": "Data Management Plan (DMP)",
-          "va": "Pla de Gestió de Dades (DMP)"
+          "es": "[DEMO] Plan de Gestión de Datos (DMP)",
+          "en": "[DEMO] Data Management Plan (DMP)",
+          "va": "[DEMO] Pla de Gestió de Dades (DMP)"
         },
         "date": "2025-10-15",
         "types": [
@@ -2095,9 +2095,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 9,
         "title": {
-          "es": "Declaración Ética y Conflictos de Interés",
-          "en": "Ethics and Conflict of Interest Declaration",
-          "va": "Declaració Ètica i Conflictes d'Interès"
+          "es": "[DEMO] Declaración Ética y Conflictos de Interés",
+          "en": "[DEMO] Ethics and Conflict of Interest Declaration",
+          "va": "[DEMO] Declaració Ètica i Conflictes d'Interès"
         },
         "date": "2025-10-15",
         "types": [
@@ -2133,19 +2133,19 @@ export const GOVERNANCE_CONFIG = {
         "va": "Adhesió com a Stakeholder"
       },
       "subtitle": {
-        "es": "Track B · Espacio Ecosistema · Gasto Cero",
-        "en": "Track B · Ecosystem Space · Zero Cost",
-        "va": "Track B · Espai Ecosistema · Cost Zero"
+        "es": "Propuesta Track B · Espacio Ecosistema · Pendiente de validación",
+        "en": "Proposed Track B · Ecosystem Space · Pending validation",
+        "va": "Proposta Track B · Espai Ecosistema · Pendent de validació"
       },
       "description": {
-        "es": "Cualquier organización pública o privada puede adherirse a la red suscribiendo el <strong>Acuerdo de Colaboración</strong>. La adhesión es gratuita (Regla de Gasto Cero), vigente durante 4 años y renovable.",
-        "en": "Any public or private organization can join the network by signing the <strong>Collaboration Agreement</strong>. Membership is free (Zero Cost Rule), valid for 4 years and renewable.",
-        "va": "Qualsevol organització pública o privada pot adherir-se a la xarxa signant l'<strong>Acord de Col·laboració</strong>. L'adhesió és gratuïta (Regla de Cost Zero), vigent durant 4 anys i renovable."
+        "es": "Esta card muestra una <strong>propuesta de contenidos</strong> para el futuro proceso de adhesión de stakeholders al Track B. La adhesión, sus condiciones y el Acuerdo de Colaboración están pendientes de validación por CEICE, la coordinación del proyecto y los socios responsables del proceso.",
+        "en": "This card shows a <strong>content proposal</strong> for the future Track B stakeholder joining process. Membership, its conditions and the Collaboration Agreement are pending validation by CEICE, project coordination and the partners responsible for the process.",
+        "va": "Esta card mostra una <strong>proposta de continguts</strong> per al futur procés d'adhesió de stakeholders al Track B. L'adhesió, les seues condicions i l'Acord de Col·laboració estan pendents de validació per CEICE, la coordinació del projecte i els socis responsables del procés."
       },
       "benefitsLabel": {
-        "es": "Como stakeholder podrás:",
-        "en": "As a stakeholder you can:",
-        "va": "Com a stakeholder podràs:"
+        "es": "La propuesta podría incluir:",
+        "en": "The proposal could include:",
+        "va": "La proposta podria incloure:"
       },
       "benefits": [
         {
@@ -2178,9 +2178,9 @@ export const GOVERNANCE_CONFIG = {
         },
         {
           "text": {
-            "es": "Recibir soluciones prototipadas de equipos del Máster AI-SECRETT",
-            "en": "Receive prototyped solutions from Master AI-SECRETT teams",
-            "va": "Rebre solucions prototipades d'equips del Màster AI-SECRETT"
+            "es": "Proponer necesidades que, si procede, puedan orientarse hacia actividades formativas, recursos o revisión académica",
+            "en": "Propose needs that, where appropriate, may be routed towards training activities, resources or academic review",
+            "va": "Proposar necessitats que, si escau, puguen orientar-se cap a activitats formatives, recursos o revisió acadèmica"
           }
         },
         {
@@ -2192,17 +2192,17 @@ export const GOVERNANCE_CONFIG = {
         }
       ],
       "warning": {
-        "es": "Los stakeholders operan exclusivamente en el Track B. No tienen acceso al espacio académico (Aules/Máster) salvo autorización expresa de UVEG.",
-        "en": "Stakeholders operate exclusively in Track B. They do not have access to the academic space (Aules/Master) unless expressly authorized by UVEG.",
-        "va": "Els stakeholders operen exclusivament en el Track B. No tindran accés a l'espai acadèmic (Aules/Màster) llevat que UVEG ho autorice expressament."
+        "es": "La participación de stakeholders no implica admisión automática, acceso a espacios académicos ni derechos de decisión en los órganos formales del consorcio.",
+        "en": "Stakeholder participation does not imply automatic admission, access to academic spaces or decision rights in the consortium's formal bodies.",
+        "va": "La participació de stakeholders no implica admissió automàtica, accés a espais acadèmics ni drets de decisió en els òrgans formals del consorci."
       },
       "buttonText": {
-        "es": "Solicitar Acuerdo de Colaboración",
-        "en": "Request Collaboration Agreement",
-        "va": "Solicitar Acord de Col·laboració"
+        "es": "Proceso pendiente de validación",
+        "en": "Process pending validation",
+        "va": "Procés pendent de validació"
       },
-      "buttonUrl": "https://portal.edu.gva.es/aules/",
-      "buttonExternal": true
+      "buttonUrl": "#",
+      "buttonExternal": false
     },
     "consensueCard": {
       "visible": true,
@@ -2212,14 +2212,14 @@ export const GOVERNANCE_CONFIG = {
         "va": "Participa vía ConsensUE"
       },
       "subtitle": {
-        "es": "Track B · Plataforma ConsensUE · Democracia Participativa",
-        "en": "Track B · ConsensUE Platform · Participatory Democracy",
-        "va": "Track B · Plataforma ConsensUE · Democràcia Participativa"
+        "es": "Track B · Plataforma ConsensUE · Participación cuando esté habilitada",
+        "en": "Track B · ConsensUE Platform · Participation when enabled",
+        "va": "Track B · Plataforma ConsensUE · Participació quan estiga habilitada"
       },
       "description": {
-        "es": "ConsensUE es la plataforma democrática del ecosistema, basada en <strong>Decidim</strong> y gestionada por CEICE. Es el canal principal para que stakeholders y socios del consorcio propongan y debatan contenidos del Track B.",
-        "en": "ConsensUE is the ecosystem's democratic platform, based on <strong>Decidim</strong> and managed by CEICE. It's the main channel for stakeholders and consortium partners to propose and debate Track B content.",
-        "va": "ConsensUE és la plataforma democràtica de l'ecosistema, basada en <strong>Decidim</strong> i gestionada per CEICE. És el canal principal per a que stakeholders i socis del consorcio propongan i debatem continguts del Track B."
+        "es": "ConsensUE es una plataforma de participación basada en <strong>Decidim</strong> y gestionada por CEICE. Puede servir como canal de consulta, propuesta y deliberación del Track B cuando el proceso esté habilitado, sin sustituir a los órganos formales de decisión del consorcio.",
+        "en": "ConsensUE is a participation platform based on <strong>Decidim</strong> and managed by CEICE. It may serve as a consultation, proposal and deliberation channel for Track B when the process is enabled, without replacing the consortium's formal decision-making bodies.",
+        "va": "ConsensUE és una plataforma de participació basada en <strong>Decidim</strong> i gestionada per CEICE. Pot servir com a canal de consulta, proposta i deliberació del Track B quan el procés estiga habilitat, sense substituir els òrgans formals de decisió del consorci."
       },
       "groups": [
         {
@@ -2240,9 +2240,9 @@ export const GOVERNANCE_CONFIG = {
             },
             {
               "text": {
-                "es": "Votar prioridades del próximo curso",
-                "en": "Vote on next year priorities",
-                "va": "Votar prioritats del pròxim curs"
+                "es": "Comentar o priorizar propuestas cuando el proceso esté habilitado",
+                "en": "Comment on or prioritise proposals when the process is enabled",
+                "va": "Comentar o prioritzar propostes quan el procés estiga habilitat"
               }
             },
             {
@@ -2254,9 +2254,9 @@ export const GOVERNANCE_CONFIG = {
             },
             {
               "text": {
-                "es": "Consultas sobre políticas de la red",
-                "en": "Network policy consultations",
-                "va": "Consultes sobre polítiques de la xarxa"
+                "es": "Responder consultas de la red convocadas por CEICE o los órganos competentes",
+                "en": "Respond to network consultations convened by CEICE or the competent bodies",
+                "va": "Respondre consultes de la xarxa convocades per CEICE o els òrgans competents"
               }
             }
           ]
@@ -2279,16 +2279,16 @@ export const GOVERNANCE_CONFIG = {
             },
             {
               "text": {
-                "es": "Debatir modificaciones de gobernanza",
-                "en": "Debate governance modifications",
-                "va": "Debatre modificacions de governança"
+                "es": "Aportar comentarios a propuestas de gobernanza cuando proceda",
+                "en": "Provide feedback on governance proposals where appropriate",
+                "va": "Aportar comentaris a propostes de governança quan pertoque"
               }
             },
             {
               "text": {
-                "es": "Convocar consultas a la red",
-                "en": "Convene network consultations",
-                "va": "Convocar consultes a la xarxa"
+                "es": "Participar en consultas convocadas por CEICE o por los órganos competentes",
+                "en": "Participate in consultations convened by CEICE or the competent bodies",
+                "va": "Participar en consultes convocades per CEICE o pels òrgans competents"
               }
             },
             {
@@ -2306,8 +2306,8 @@ export const GOVERNANCE_CONFIG = {
         "en": "Go to ConsensUE",
         "va": "Anar a ConsensUE"
       },
-      "buttonUrl": "https://aules.edu.gva.es/formaciodelprofessorat",
-      "buttonExternal": true
+      "buttonUrl": "#",
+      "buttonExternal": false
     },
     "meetingsSection": {
       "visible": false,
