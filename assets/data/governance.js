@@ -477,9 +477,9 @@ export const GOVERNANCE_CONFIG = {
           "va": "Semestral"
         },
         "quorum": {
-          "es": "—",
-          "en": "—",
-          "va": "—"
+          "es": "",
+          "en": "",
+          "va": ""
         }
       },
       {
