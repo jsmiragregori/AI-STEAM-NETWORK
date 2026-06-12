@@ -369,14 +369,14 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Educación",
-            "en": "Education",
-            "va": "Educació"
+            "es": "Agroalimentario",
+            "en": "Agrifood",
+            "va": "Agroalimentari"
           },
           {
-            "es": "Industria",
-            "en": "Industry",
-            "va": "Indústria"
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "role": "coordinator",
@@ -405,14 +405,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Salud",
-            "en": "Health",
-            "va": "Salut"
-          },
-          {
-            "es": "Educación",
-            "en": "Education",
-            "va": "Educació"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
           }
         ],
         "role": "beneficiary",
@@ -441,14 +436,29 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Industria",
-            "en": "Industry",
-            "va": "Indústria"
+            "es": "Agroalimentario",
+            "en": "Agrifood",
+            "va": "Agroalimentari"
           },
           {
-            "es": "Medio Ambiente",
-            "en": "Environment",
-            "va": "Medi Ambient"
+            "es": "Energía y Medio Ambiente",
+            "en": "Energy and Environment",
+            "va": "Energia i Medi Ambient"
+          },
+          {
+            "es": "Vivienda",
+            "en": "Housing",
+            "va": "Habitatge"
+          },
+          {
+            "es": "Manufactura",
+            "en": "Manufacturing",
+            "va": "Manufactura"
+          },
+          {
+            "es": "Movilidad y Transporte",
+            "en": "Mobility and Transport",
+            "va": "Mobilitat i Transport"
           }
         ],
         "role": "beneficiary",
@@ -477,14 +487,24 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Industria",
-            "en": "Industry",
-            "va": "Indústria"
+            "es": "Energía y Medio Ambiente",
+            "en": "Energy and Environment",
+            "va": "Energia i Medi Ambient"
           },
           {
-            "es": "Medio Ambiente",
-            "en": "Environment",
-            "va": "Medi Ambient"
+            "es": "Vivienda",
+            "en": "Housing",
+            "va": "Habitatge"
+          },
+          {
+            "es": "Manufactura",
+            "en": "Manufacturing",
+            "va": "Manufactura"
+          },
+          {
+            "es": "Movilidad y Transporte",
+            "en": "Mobility and Transport",
+            "va": "Mobilitat i Transport"
           }
         ],
         "role": "beneficiary",
@@ -513,14 +533,14 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Industria",
-            "en": "Industry",
-            "va": "Indústria"
+            "es": "Energía y Medio Ambiente",
+            "en": "Energy and Environment",
+            "va": "Energia i Medi Ambient"
           },
           {
-            "es": "Educación",
-            "en": "Education",
-            "va": "Educació"
+            "es": "Vivienda",
+            "en": "Housing",
+            "va": "Habitatge"
           }
         ],
         "role": "beneficiary",
@@ -549,14 +569,14 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Educación",
-            "en": "Education",
-            "va": "Educació"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
           },
           {
-            "es": "Administración",
-            "en": "Administration",
-            "va": "Administració"
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "role": "beneficiary",
@@ -585,14 +605,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Salud",
-            "en": "Health",
-            "va": "Salut"
-          },
-          {
-            "es": "Industria",
-            "en": "Industry",
-            "va": "Indústria"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
           }
         ],
         "role": "beneficiary",
@@ -621,9 +636,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Turismo y Cultura",
-            "en": "Tourism and Culture",
-            "va": "Turisme i Cultura"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
           }
         ],
         "role": "beneficiary",
@@ -652,14 +667,24 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Industria",
-            "en": "Industry",
-            "va": "Indústria"
+            "es": "Agroalimentario",
+            "en": "Agrifood",
+            "va": "Agroalimentari"
           },
           {
-            "es": "Medio Ambiente",
-            "en": "Environment",
-            "va": "Medi Ambient"
+            "es": "Energía y Medio Ambiente",
+            "en": "Energy and Environment",
+            "va": "Energia i Medi Ambient"
+          },
+          {
+            "es": "Manufactura",
+            "en": "Manufacturing",
+            "va": "Manufactura"
+          },
+          {
+            "es": "Movilidad y Transporte",
+            "en": "Mobility and Transport",
+            "va": "Mobilitat i Transport"
           }
         ],
         "role": "beneficiary",
@@ -688,14 +713,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Educación",
-            "en": "Education",
-            "va": "Educació"
-          },
-          {
-            "es": "Industria",
-            "en": "Industry",
-            "va": "Indústria"
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "role": "beneficiary",
@@ -724,14 +744,14 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Educación",
-            "en": "Education",
-            "va": "Educació"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
           },
           {
-            "es": "Administración",
-            "en": "Administration",
-            "va": "Administració"
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "role": "beneficiary",
@@ -760,14 +780,14 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Turismo y Cultura",
-            "en": "Tourism and Culture",
-            "va": "Turisme i Cultura"
+            "es": "Vivienda",
+            "en": "Housing",
+            "va": "Habitatge"
           },
           {
-            "es": "Administración",
-            "en": "Administration",
-            "va": "Administració"
+            "es": "Movilidad y Transporte",
+            "en": "Mobility and Transport",
+            "va": "Mobilitat i Transport"
           }
         ],
         "role": "beneficiary",
@@ -796,14 +816,19 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Medio Ambiente",
-            "en": "Environment",
-            "va": "Medi Ambient"
+            "es": "Energía y Medio Ambiente",
+            "en": "Energy and Environment",
+            "va": "Energia i Medi Ambient"
           },
           {
-            "es": "Administración",
-            "en": "Administration",
-            "va": "Administració"
+            "es": "Movilidad y Transporte",
+            "en": "Mobility and Transport",
+            "va": "Mobilitat i Transport"
+          },
+          {
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "role": "beneficiary",
@@ -832,14 +857,19 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Administración",
-            "en": "Administration",
-            "va": "Administració"
+            "es": "Agroalimentario",
+            "en": "Agrifood",
+            "va": "Agroalimentari"
           },
           {
-            "es": "Industria",
-            "en": "Industry",
-            "va": "Indústria"
+            "es": "Manufactura",
+            "en": "Manufacturing",
+            "va": "Manufactura"
+          },
+          {
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "role": "beneficiary",
@@ -868,14 +898,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Industria",
-            "en": "Industry",
-            "va": "Indústria"
-          },
-          {
-            "es": "Educación",
-            "en": "Education",
-            "va": "Educació"
+            "es": "Vivienda",
+            "en": "Housing",
+            "va": "Habitatge"
           }
         ],
         "role": "beneficiary",
@@ -904,9 +929,19 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Industria",
-            "en": "Industry",
-            "va": "Indústria"
+            "es": "Energía y Medio Ambiente",
+            "en": "Energy and Environment",
+            "va": "Energia i Medi Ambient"
+          },
+          {
+            "es": "Manufactura",
+            "en": "Manufacturing",
+            "va": "Manufactura"
+          },
+          {
+            "es": "Movilidad y Transporte",
+            "en": "Mobility and Transport",
+            "va": "Mobilitat i Transport"
           }
         ],
         "role": "certification",
@@ -935,14 +970,14 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Industria",
-            "en": "Industry",
-            "va": "Indústria"
+            "es": "Manufactura",
+            "en": "Manufacturing",
+            "va": "Manufactura"
           },
           {
-            "es": "Turismo y Cultura",
-            "en": "Tourism and Culture",
-            "va": "Turisme i Cultura"
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "role": "beneficiary",
@@ -971,9 +1006,14 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Turismo y Cultura",
-            "en": "Tourism and Culture",
-            "va": "Turisme i Cultura"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
+          },
+          {
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "role": "beneficiary",
@@ -1002,14 +1042,14 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Industria",
-            "en": "Industry",
-            "va": "Indústria"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
           },
           {
-            "es": "Agroalimentario",
-            "en": "Agrifood",
-            "va": "Agroalimentari"
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "role": "beneficiary",
@@ -1038,14 +1078,19 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Administración",
-            "en": "Administration",
-            "va": "Administració"
+            "es": "Energía y Medio Ambiente",
+            "en": "Energy and Environment",
+            "va": "Energia i Medi Ambient"
           },
           {
-            "es": "Educación",
-            "en": "Education",
-            "va": "Educació"
+            "es": "Movilidad y Transporte",
+            "en": "Mobility and Transport",
+            "va": "Mobilitat i Transport"
+          },
+          {
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "role": "beneficiary",
@@ -1074,9 +1119,14 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Turismo y Cultura",
-            "en": "Tourism and Culture",
-            "va": "Turisme i Cultura"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
+          },
+          {
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "role": "beneficiary",
@@ -1105,9 +1155,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Educación",
-            "en": "Education",
-            "va": "Educació"
+            "es": "Energía y Medio Ambiente",
+            "en": "Energy and Environment",
+            "va": "Energia i Medi Ambient"
           }
         ],
         "role": "beneficiary",
@@ -1136,9 +1186,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Turismo y Cultura",
-            "en": "Tourism and Culture",
-            "va": "Turisme i Cultura"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
           }
         ],
         "role": "associated",
