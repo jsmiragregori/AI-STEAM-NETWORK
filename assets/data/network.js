@@ -1410,9 +1410,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-05-06",
         "partner": "ceice",
         "name": {
-          "es": "AESIA – Agencia Española de Supervisión de IA",
-          "en": "AESIA – Spanish AI Supervisory Agency",
-          "va": "AESIA – Agència Espanyola de Supervisió de la IA"
+          "es": "[DEMO] AESIA – Agencia Española de Supervisión de IA",
+          "en": "[DEMO] AESIA – Spanish AI Supervisory Agency",
+          "va": "[DEMO] AESIA – Agència Espanyola de Supervisió de la IA"
         },
         "category": "admin",
         "primarySector": "nts",
@@ -1435,9 +1435,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-04-25",
         "partner": "ceice",
         "name": {
-          "es": "INVAT·TUR",
-          "en": "INVAT·TUR",
-          "va": "INVAT·TUR"
+          "es": "[DEMO] INVAT·TUR",
+          "en": "[DEMO] INVAT·TUR",
+          "va": "[DEMO] INVAT·TUR"
         },
         "category": "admin",
         "primarySector": "cci",
@@ -1460,9 +1460,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-04-14",
         "partner": "ceice",
         "name": {
-          "es": "Hospital Universitario La Fe",
-          "en": "La Fe University Hospital",
-          "va": "Hospital Universitari La Fe"
+          "es": "[DEMO] Hospital Universitario La Fe",
+          "en": "[DEMO] La Fe University Hospital",
+          "va": "[DEMO] Hospital Universitari La Fe"
         },
         "category": "sociedad",
         "primarySector": "hou",
@@ -1485,9 +1485,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-04-01",
         "partner": "ceice",
         "name": {
-          "es": "REDIT",
-          "en": "REDIT",
-          "va": "REDIT"
+          "es": "[DEMO] REDIT",
+          "en": "[DEMO] REDIT",
+          "va": "[DEMO] REDIT"
         },
         "category": "universidad",
         "primarySector": "mfg",
@@ -1513,9 +1513,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-03-22",
         "partner": "ceice",
         "name": {
-          "es": "ITI – Institut Tecnològic d'Informàtica",
-          "en": "ITI – Technological Institute of Informatics",
-          "va": "ITI – Institut Tecnològic d'Informàtica"
+          "es": "[DEMO] ITI – Institut Tecnològic d'Informàtica",
+          "en": "[DEMO] ITI – Technological Institute of Informatics",
+          "va": "[DEMO] ITI – Institut Tecnològic d'Informàtica"
         },
         "category": "universidad",
         "primarySector": "mfg",
@@ -1540,9 +1540,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-03-12",
         "partner": "ceice",
         "name": {
-          "es": "Brainstorm Multimedia",
-          "en": "Brainstorm Multimedia",
-          "va": "Brainstorm Multimedia"
+          "es": "[DEMO] Brainstorm Multimedia",
+          "en": "[DEMO] Brainstorm Multimedia",
+          "va": "[DEMO] Brainstorm Multimedia"
         },
         "category": "empresa",
         "primarySector": "cci",
@@ -1565,9 +1565,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-03-03",
         "partner": "ceice",
         "name": {
-          "es": "Global Omnium",
-          "en": "Global Omnium",
-          "va": "Global Omnium"
+          "es": "[DEMO] Global Omnium",
+          "en": "[DEMO] Global Omnium",
+          "va": "[DEMO] Global Omnium"
         },
         "category": "empresa",
         "primarySector": "ene",
@@ -1592,9 +1592,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-02-22",
         "partner": "ceice",
         "name": {
-          "es": "ASCER",
-          "en": "ASCER",
-          "va": "ASCER"
+          "es": "[DEMO] ASCER",
+          "en": "[DEMO] ASCER",
+          "va": "[DEMO] ASCER"
         },
         "category": "empresa",
         "primarySector": "mfg",
@@ -1617,9 +1617,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-02-14",
         "partner": "ceice",
         "name": {
-          "es": "FEMEVAL",
-          "en": "FEMEVAL",
-          "va": "FEMEVAL"
+          "es": "[DEMO] FEMEVAL",
+          "en": "[DEMO] FEMEVAL",
+          "va": "[DEMO] FEMEVAL"
         },
         "category": "empresa",
         "primarySector": "mfg",
@@ -1642,9 +1642,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-02-05",
         "partner": "ceice",
         "name": {
-          "es": "AVA-ASAJA",
-          "en": "AVA-ASAJA",
-          "va": "AVA-ASAJA"
+          "es": "[DEMO] AVA-ASAJA",
+          "en": "[DEMO] AVA-ASAJA",
+          "va": "[DEMO] AVA-ASAJA"
         },
         "category": "empresa",
         "primarySector": "agr",
@@ -1667,9 +1667,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-01-28",
         "partner": "ceice",
         "name": {
-          "es": "FEDACOVA",
-          "en": "FEDACOVA",
-          "va": "FEDACOVA"
+          "es": "[DEMO] FEDACOVA",
+          "en": "[DEMO] FEDACOVA",
+          "va": "[DEMO] FEDACOVA"
         },
         "category": "empresa",
         "primarySector": "agr",
@@ -1692,9 +1692,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-01-20",
         "partner": "ceice",
         "name": {
-          "es": "Las Naves",
-          "en": "Las Naves",
-          "va": "Las Naves"
+          "es": "[DEMO] Las Naves",
+          "en": "[DEMO] Las Naves",
+          "va": "[DEMO] Las Naves"
         },
         "category": "admin",
         "primarySector": "ene",
@@ -1719,9 +1719,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-01-19",
         "partner": "ceice",
         "name": {
-          "es": "IVACE+i",
-          "en": "IVACE+i",
-          "va": "IVACE+i"
+          "es": "[DEMO] IVACE+i",
+          "en": "[DEMO] IVACE+i",
+          "va": "[DEMO] IVACE+i"
         },
         "category": "admin",
         "primarySector": "mfg",
@@ -1746,9 +1746,9 @@ export const NETWORK_CONFIG = {
         "joinedAt": "2026-01-12",
         "partner": "ceice",
         "name": {
-          "es": "GVA – DGTIC",
-          "en": "GVA – DGTIC",
-          "va": "GVA – DGTIC"
+          "es": "[DEMO] GVA – DGTIC",
+          "en": "[DEMO] GVA – DGTIC",
+          "va": "[DEMO] GVA – DGTIC"
         },
         "category": "admin",
         "primarySector": "nts",
