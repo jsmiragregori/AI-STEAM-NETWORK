@@ -331,7 +331,8 @@ export const SECTORS_CONFIG = {
             "va": "Porto"
           },
           "categories": [
-            "universidad"
+            "universidad",
+            "empresa"
           ],
           "category": "universidad",
           "categoryLabel": {
@@ -798,7 +799,8 @@ export const SECTORS_CONFIG = {
             "va": "Porto"
           },
           "categories": [
-            "universidad"
+            "universidad",
+            "empresa"
           ],
           "category": "universidad",
           "categoryLabel": {
@@ -1296,7 +1298,8 @@ export const SECTORS_CONFIG = {
             "va": "Porto"
           },
           "categories": [
-            "universidad"
+            "universidad",
+            "empresa"
           ],
           "category": "universidad",
           "categoryLabel": {
@@ -1698,7 +1701,8 @@ export const SECTORS_CONFIG = {
             "va": "Porto"
           },
           "categories": [
-            "universidad"
+            "universidad",
+            "empresa"
           ],
           "category": "universidad",
           "categoryLabel": {
@@ -2083,7 +2087,8 @@ export const SECTORS_CONFIG = {
             "va": "Las Palmas"
           },
           "categories": [
-            "admin"
+            "admin",
+            "empresa"
           ],
           "category": "admin",
           "categoryLabel": {
@@ -2621,7 +2626,8 @@ export const SECTORS_CONFIG = {
             "va": "Porto"
           },
           "categories": [
-            "universidad"
+            "universidad",
+            "empresa"
           ],
           "category": "universidad",
           "categoryLabel": {

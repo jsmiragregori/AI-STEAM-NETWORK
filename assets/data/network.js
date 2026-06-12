@@ -109,9 +109,9 @@ export const NETWORK_CONFIG = {
         "bg": "bg-blue-100",
         "border": "border-blue-300",
         "manualOverride": false,
-        "value": 11,
-        "computedValue": 11,
-        "partnersCount": 5,
+        "value": 13,
+        "computedValue": 13,
+        "partnersCount": 7,
         "stakeholdersCount": 6
       },
       {
@@ -382,6 +382,7 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
+        "expertise": [],
         "role": "coordinator",
         "url": "https://www.uv.es/",
         "logo": "uveg.png"
@@ -416,6 +417,7 @@ export const NETWORK_CONFIG = {
             "va": "Indústries Culturals i Creatives"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://www.um.es/",
         "logo": "umu.png"
@@ -470,6 +472,7 @@ export const NETWORK_CONFIG = {
             "va": "Mobilitat i Transport"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://www.upv.es/",
         "logo": "upv.png"
@@ -519,6 +522,7 @@ export const NETWORK_CONFIG = {
             "va": "Mobilitat i Transport"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://www.ntnu.edu/",
         "logo": "ntnu.png"
@@ -558,6 +562,7 @@ export const NETWORK_CONFIG = {
             "va": "Habitatge"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://www.hs-wismar.de/",
         "logo": "hsw.png"
@@ -597,6 +602,7 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://www.inf.uniri.hr/",
         "logo": "fidit.png"
@@ -631,6 +637,7 @@ export const NETWORK_CONFIG = {
             "va": "Indústries Culturals i Creatives"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://www.unich.it/",
         "logo": "uda.png"
@@ -665,6 +672,7 @@ export const NETWORK_CONFIG = {
             "va": "Indústries Culturals i Creatives"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://esad-gv.fr/",
         "logo": "esad.png"
@@ -684,7 +692,8 @@ export const NETWORK_CONFIG = {
           "va": "Porto"
         },
         "categories": [
-          "universidad"
+          "universidad",
+          "empresa"
         ],
         "category": "universidad",
         "categoryLabel": {
@@ -712,6 +721,18 @@ export const NETWORK_CONFIG = {
             "es": "Movilidad y Transporte",
             "en": "Mobility and Transport",
             "va": "Mobilitat i Transport"
+          }
+        ],
+        "expertise": [
+          {
+            "es": "Ciencia de datos e IA",
+            "en": "AI & data science",
+            "va": "Ciència de dades i IA"
+          },
+          {
+            "es": "Sistemas ciberfísicos",
+            "en": "Cyber-physical systems",
+            "va": "Sistemes ciberfísics"
           }
         ],
         "role": "beneficiary",
@@ -748,6 +769,7 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://www.laurea.fi/en/",
         "logo": "laurea.png"
@@ -787,6 +809,7 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://ceice.gva.es/va/",
         "logo": "ceice.png"
@@ -806,7 +829,8 @@ export const NETWORK_CONFIG = {
           "va": "Las Palmas"
         },
         "categories": [
-          "admin"
+          "admin",
+          "empresa"
         ],
         "category": "admin",
         "categoryLabel": {
@@ -824,6 +848,18 @@ export const NETWORK_CONFIG = {
             "es": "Movilidad y Transporte",
             "en": "Mobility and Transport",
             "va": "Mobilitat i Transport"
+          }
+        ],
+        "expertise": [
+          {
+            "es": "Ciudad inteligente",
+            "en": "Smart city",
+            "va": "Ciutat intel·ligent"
+          },
+          {
+            "es": "Innovación turística",
+            "en": "Tourism innovation",
+            "va": "Innovació turística"
           }
         ],
         "role": "beneficiary",
@@ -870,6 +906,7 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://www.regionvarmland.se/",
         "logo": "varm.png"
@@ -914,6 +951,7 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://razvojnaagencija.predaprijedor.com/",
         "logo": "preda.png"
@@ -948,6 +986,7 @@ export const NETWORK_CONFIG = {
             "va": "Habitatge"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://www.xplainai.eu/",
         "logo": "cogn.png"
@@ -992,6 +1031,7 @@ export const NETWORK_CONFIG = {
             "va": "Mobilitat i Transport"
           }
         ],
+        "expertise": [],
         "role": "certification",
         "url": "https://tuv-thuringen.it/",
         "logo": "tuvit.png"
@@ -1031,6 +1071,7 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://joistpark.eu/",
         "logo": "joist.png"
@@ -1070,6 +1111,7 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://culturalink.net/",
         "logo": "clink.png"
@@ -1109,6 +1151,7 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://cinkventuring.es/",
         "logo": "cink.png"
@@ -1153,6 +1196,7 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://lisboncouncil.net/",
         "logo": "lc.png"
@@ -1192,6 +1236,7 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://keanet.eu/",
         "logo": "kea.png"
@@ -1226,6 +1271,7 @@ export const NETWORK_CONFIG = {
             "va": "Energia i Medi Ambient"
           }
         ],
+        "expertise": [],
         "role": "beneficiary",
         "url": "https://www.inspiringfutures.eu/",
         "logo": "ife.png"
@@ -1260,6 +1306,7 @@ export const NETWORK_CONFIG = {
             "va": "Indústries Culturals i Creatives"
           }
         ],
+        "expertise": [],
         "role": "associated",
         "url": "https://www.relais-culture-europe.eu/",
         "logo": "rce.png"

@@ -179,6 +179,8 @@ function tabSocios(activeCategory, filterCountry) {
     const pCats = itemCats(p);
     const meta = CATEGORY_META[pCats[0]] || CATEGORY_META.sociedad;
     const sectorsHtml = p.sectors.map(s => `<span class="text-sm px-2 py-0.5 rounded-full font-bold" style="background:rgb(86 32 246/.10); color:#5620F6">${localized(s)}</span>`).join('');
+    // Áreas de expertise libres: chip en Deep Purple (#4918AD), distinto del azul de los sectores oficiales.
+    const expertiseHtml = (p.expertise || []).map(e => `<span class="text-sm px-2 py-0.5 rounded-full font-bold" style="background:rgb(73 24 173/.10); color:#4918AD">${localized(e)}</span>`).join('');
     const categoryLabel = pCats.map(c => getCategoryLabel(c)).join(' · ') || localized(p.categoryLabel);
     const roleLabel = loc(pb.roleLabels?.[p.role]) || p.role;
     const consortiumLabel = loc(pb.consortium) || 'CONSORCIO';
@@ -221,6 +223,7 @@ function tabSocios(activeCategory, filterCountry) {
           <p class="text-sm text-gray-500 mb-1">${p.acronym} · ${localized(p.city)}</p>
           ${pShowRole ? `<p class="text-sm text-eu-blue font-bold mb-3">${roleLabel}</p>` : ''}
           ${pShowSectors ? `<div class="flex flex-wrap gap-1.5 mt-auto">${sectorsHtml}</div>` : ''}
+          ${expertiseHtml ? `<div class="flex flex-wrap gap-1.5 ${pShowSectors ? 'mt-2' : 'mt-auto'}">${expertiseHtml}</div>` : ''}
         </div>
         ${visitLinkHtml}
       </div>
