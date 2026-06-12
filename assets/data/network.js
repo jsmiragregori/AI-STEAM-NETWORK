@@ -361,6 +361,9 @@ export const NETWORK_CONFIG = {
           "en": "Valencia",
           "va": "València"
         },
+        "categories": [
+          "universidad"
+        ],
         "category": "universidad",
         "categoryLabel": {
           "es": "Educación Superior e I+D+I",
@@ -397,6 +400,9 @@ export const NETWORK_CONFIG = {
           "en": "Murcia",
           "va": "Múrcia"
         },
+        "categories": [
+          "universidad"
+        ],
         "category": "universidad",
         "categoryLabel": {
           "es": "Educación Superior e I+D+I",
@@ -428,6 +434,9 @@ export const NETWORK_CONFIG = {
           "en": "Valencia",
           "va": "València"
         },
+        "categories": [
+          "universidad"
+        ],
         "category": "universidad",
         "categoryLabel": {
           "es": "Educación Superior e I+D+I",
@@ -479,6 +488,9 @@ export const NETWORK_CONFIG = {
           "en": "Trondheim",
           "va": "Trondheim"
         },
+        "categories": [
+          "universidad"
+        ],
         "category": "universidad",
         "categoryLabel": {
           "es": "Educación Superior e I+D+I",
@@ -525,6 +537,9 @@ export const NETWORK_CONFIG = {
           "en": "Wismar",
           "va": "Wismar"
         },
+        "categories": [
+          "universidad"
+        ],
         "category": "universidad",
         "categoryLabel": {
           "es": "Educación Superior e I+D+I",
@@ -561,6 +576,9 @@ export const NETWORK_CONFIG = {
           "en": "Rijeka",
           "va": "Rijeka"
         },
+        "categories": [
+          "universidad"
+        ],
         "category": "universidad",
         "categoryLabel": {
           "es": "Educación Superior e I+D+I",
@@ -597,6 +615,9 @@ export const NETWORK_CONFIG = {
           "en": "Chieti-Pescara",
           "va": "Chieti-Pescara"
         },
+        "categories": [
+          "universidad"
+        ],
         "category": "universidad",
         "categoryLabel": {
           "es": "Educación Superior e I+D+I",
@@ -628,6 +649,9 @@ export const NETWORK_CONFIG = {
           "en": "Grenoble",
           "va": "Grenoble"
         },
+        "categories": [
+          "universidad"
+        ],
         "category": "universidad",
         "categoryLabel": {
           "es": "Educación Superior e I+D+I",
@@ -659,6 +683,9 @@ export const NETWORK_CONFIG = {
           "en": "Porto",
           "va": "Porto"
         },
+        "categories": [
+          "universidad"
+        ],
         "category": "universidad",
         "categoryLabel": {
           "es": "Educación Superior e I+D+I",
@@ -705,6 +732,9 @@ export const NETWORK_CONFIG = {
           "en": "Espoo",
           "va": "Espoo"
         },
+        "categories": [
+          "universidad"
+        ],
         "category": "universidad",
         "categoryLabel": {
           "es": "Educación Superior e I+D+I",
@@ -736,6 +766,9 @@ export const NETWORK_CONFIG = {
           "en": "Valencia",
           "va": "València"
         },
+        "categories": [
+          "admin"
+        ],
         "category": "admin",
         "categoryLabel": {
           "es": "Administración Pública",
@@ -772,6 +805,9 @@ export const NETWORK_CONFIG = {
           "en": "Las Palmas",
           "va": "Las Palmas"
         },
+        "categories": [
+          "admin"
+        ],
         "category": "admin",
         "categoryLabel": {
           "es": "Administración Pública",
@@ -808,6 +844,9 @@ export const NETWORK_CONFIG = {
           "en": "Karlstad",
           "va": "Karlstad"
         },
+        "categories": [
+          "admin"
+        ],
         "category": "admin",
         "categoryLabel": {
           "es": "Administración Pública",
@@ -849,6 +888,9 @@ export const NETWORK_CONFIG = {
           "en": "Prijedor",
           "va": "Prijedor"
         },
+        "categories": [
+          "admin"
+        ],
         "category": "admin",
         "categoryLabel": {
           "es": "Administración Pública",
@@ -890,6 +932,9 @@ export const NETWORK_CONFIG = {
           "en": "Massa",
           "va": "Massa"
         },
+        "categories": [
+          "empresa"
+        ],
         "category": "empresa",
         "categoryLabel": {
           "es": "Empresa e Innovación",
@@ -921,6 +966,9 @@ export const NETWORK_CONFIG = {
           "en": "Collecchio",
           "va": "Collecchio"
         },
+        "categories": [
+          "empresa"
+        ],
         "category": "empresa",
         "categoryLabel": {
           "es": "Empresa e Innovación",
@@ -962,6 +1010,9 @@ export const NETWORK_CONFIG = {
           "en": "Larissa",
           "va": "Larissa"
         },
+        "categories": [
+          "empresa"
+        ],
         "category": "empresa",
         "categoryLabel": {
           "es": "Empresa e Innovación",
@@ -998,6 +1049,9 @@ export const NETWORK_CONFIG = {
           "en": "Las Palmas",
           "va": "Las Palmas"
         },
+        "categories": [
+          "empresa"
+        ],
         "category": "empresa",
         "categoryLabel": {
           "es": "Empresa e Innovación",
@@ -1034,6 +1088,9 @@ export const NETWORK_CONFIG = {
           "en": "Madrid",
           "va": "Madrid"
         },
+        "categories": [
+          "empresa"
+        ],
         "category": "empresa",
         "categoryLabel": {
           "es": "Empresa e Innovación",
@@ -1070,6 +1127,9 @@ export const NETWORK_CONFIG = {
           "en": "Brussels",
           "va": "Brussel·les"
         },
+        "categories": [
+          "sociedad"
+        ],
         "category": "sociedad",
         "categoryLabel": {
           "es": "Sociedad Civil y ONG",
@@ -1111,6 +1171,9 @@ export const NETWORK_CONFIG = {
           "en": "Brussels",
           "va": "Brussel·les"
         },
+        "categories": [
+          "sociedad"
+        ],
         "category": "sociedad",
         "categoryLabel": {
           "es": "Sociedad Civil y ONG",
@@ -1147,6 +1210,9 @@ export const NETWORK_CONFIG = {
           "en": "Madrid",
           "va": "Madrid"
         },
+        "categories": [
+          "sociedad"
+        ],
         "category": "sociedad",
         "categoryLabel": {
           "es": "Sociedad Civil y ONG",
@@ -1178,6 +1244,9 @@ export const NETWORK_CONFIG = {
           "en": "Paris",
           "va": "París"
         },
+        "categories": [
+          "sociedad"
+        ],
         "category": "sociedad",
         "categoryLabel": {
           "es": "Sociedad Civil y ONG",
@@ -1464,6 +1533,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] AESIA – Spanish AI Supervisory Agency",
           "va": "[DEMO] AESIA – Agència Espanyola de Supervisió de la IA"
         },
+        "categories": [
+          "admin"
+        ],
         "category": "admin",
         "primarySector": "nts",
         "sectors": [],
@@ -1489,6 +1561,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] INVAT·TUR",
           "va": "[DEMO] INVAT·TUR"
         },
+        "categories": [
+          "admin"
+        ],
         "category": "admin",
         "primarySector": "cci",
         "sectors": [],
@@ -1514,6 +1589,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] La Fe University Hospital",
           "va": "[DEMO] Hospital Universitari La Fe"
         },
+        "categories": [
+          "sociedad"
+        ],
         "category": "sociedad",
         "primarySector": "hou",
         "sectors": [],
@@ -1539,6 +1617,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] REDIT",
           "va": "[DEMO] REDIT"
         },
+        "categories": [
+          "universidad"
+        ],
         "category": "universidad",
         "primarySector": "mfg",
         "sectors": [
@@ -1567,6 +1648,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] ITI – Technological Institute of Informatics",
           "va": "[DEMO] ITI – Institut Tecnològic d'Informàtica"
         },
+        "categories": [
+          "universidad"
+        ],
         "category": "universidad",
         "primarySector": "mfg",
         "sectors": [
@@ -1594,6 +1678,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] Brainstorm Multimedia",
           "va": "[DEMO] Brainstorm Multimedia"
         },
+        "categories": [
+          "empresa"
+        ],
         "category": "empresa",
         "primarySector": "cci",
         "sectors": [],
@@ -1619,6 +1706,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] Global Omnium",
           "va": "[DEMO] Global Omnium"
         },
+        "categories": [
+          "empresa"
+        ],
         "category": "empresa",
         "primarySector": "ene",
         "sectors": [
@@ -1646,6 +1736,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] ASCER",
           "va": "[DEMO] ASCER"
         },
+        "categories": [
+          "empresa"
+        ],
         "category": "empresa",
         "primarySector": "mfg",
         "sectors": [],
@@ -1671,6 +1764,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] FEMEVAL",
           "va": "[DEMO] FEMEVAL"
         },
+        "categories": [
+          "empresa"
+        ],
         "category": "empresa",
         "primarySector": "mfg",
         "sectors": [],
@@ -1696,6 +1792,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] AVA-ASAJA",
           "va": "[DEMO] AVA-ASAJA"
         },
+        "categories": [
+          "empresa"
+        ],
         "category": "empresa",
         "primarySector": "agr",
         "sectors": [],
@@ -1721,6 +1820,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] FEDACOVA",
           "va": "[DEMO] FEDACOVA"
         },
+        "categories": [
+          "empresa"
+        ],
         "category": "empresa",
         "primarySector": "agr",
         "sectors": [],
@@ -1746,6 +1848,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] Las Naves",
           "va": "[DEMO] Las Naves"
         },
+        "categories": [
+          "admin"
+        ],
         "category": "admin",
         "primarySector": "ene",
         "sectors": [
@@ -1773,6 +1878,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] IVACE+i",
           "va": "[DEMO] IVACE+i"
         },
+        "categories": [
+          "admin"
+        ],
         "category": "admin",
         "primarySector": "mfg",
         "sectors": [
@@ -1800,6 +1908,9 @@ export const NETWORK_CONFIG = {
           "en": "[DEMO] GVA – DGTIC",
           "va": "[DEMO] GVA – DGTIC"
         },
+        "categories": [
+          "admin"
+        ],
         "category": "admin",
         "primarySector": "nts",
         "sectors": [],

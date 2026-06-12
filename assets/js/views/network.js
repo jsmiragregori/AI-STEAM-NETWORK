@@ -82,13 +82,19 @@ function localized(value) {
   return value?.[lang] || value?.es || '';
 }
 
+// Cuádruple hélice multi-eje: una organización puede pertenecer a uno o más
+// ejes. `categories` (array) es el campo canónico; `category` es fallback.
+function itemCats(x) {
+  if (!x) return [];
+  if (Array.isArray(x.categories) && x.categories.length) return x.categories;
+  return x.category ? [x.category] : [];
+}
+
+// Cada organización suma a CADA eje al que pertenece (los ejes pueden solapar).
 function counts(list) {
-  return {
-    universidad: list.filter(x => x.category === 'universidad').length,
-    empresa:     list.filter(x => x.category === 'empresa').length,
-    admin:       list.filter(x => x.category === 'admin').length,
-    sociedad:    list.filter(x => x.category === 'sociedad').length,
-  };
+  const acc = { universidad: 0, empresa: 0, admin: 0, sociedad: 0 };
+  (list || []).forEach(x => itemCats(x).forEach(c => { if (acc[c] !== undefined) acc[c] += 1; }));
+  return acc;
 }
 
 // ─── Helix block ─────────────────────────────────────────────────────────────
@@ -149,7 +155,7 @@ function tabSocios(activeCategory, filterCountry) {
   const pc = counts(ACTIVE_PARTNERS);
 
   const filtered = ACTIVE_PARTNERS.filter(p =>
-    (activeCategory === 'todos' || p.category === activeCategory) &&
+    (activeCategory === 'todos' || itemCats(p).includes(activeCategory)) &&
     (filterCountry === null || p.country === filterCountry)
   );
 
@@ -170,9 +176,10 @@ function tabSocios(activeCategory, filterCountry) {
   const pShowSectors     = partnerCv.sectors  !== false;
   const pShowRole        = partnerCv.role     !== false;
   const cardsHtml = filtered.map(p => {
-    const meta = CATEGORY_META[p.category];
+    const pCats = itemCats(p);
+    const meta = CATEGORY_META[pCats[0]] || CATEGORY_META.sociedad;
     const sectorsHtml = p.sectors.map(s => `<span class="text-sm px-2 py-0.5 rounded-full font-bold" style="background:rgb(86 32 246/.10); color:#5620F6">${localized(s)}</span>`).join('');
-    const categoryLabel = localized(p.categoryLabel) || getCategoryLabel(p.category);
+    const categoryLabel = pCats.map(c => getCategoryLabel(c)).join(' · ') || localized(p.categoryLabel);
     const roleLabel = loc(pb.roleLabels?.[p.role]) || p.role;
     const consortiumLabel = loc(pb.consortium) || 'CONSORCIO';
     const visitLabel = loc(pb.visitSite) || 'Visit website';
@@ -193,12 +200,16 @@ function tabSocios(activeCategory, filterCountry) {
         </div>
         <!-- Meta: categoría (línea 1) · bandera + consorcio (línea 2) -->
         <div class="px-4 pt-3 pb-2 flex flex-col gap-1.5">
-          ${pShowCategory ? `<div class="network-category-tooltip flex items-center gap-1.5 min-w-0" data-tooltip="${categoryLabel}" aria-label="${categoryLabel}" tabindex="0">
-            <div class="w-5 h-5 rounded ${meta.bg} flex items-center justify-center shrink-0">
-              <i data-lucide="${meta.icon}" class="w-3 h-3 ${meta.color}"></i>
-            </div>
-            <span class="text-sm text-gray-500 font-medium truncate">${categoryLabel}</span>
-          </div>` : ''}
+          ${pShowCategory ? `<div class="flex flex-wrap items-center gap-3 min-w-0">${pCats.map(c => {
+            const m = CATEGORY_META[c] || CATEGORY_META.sociedad;
+            const lbl = getCategoryLabel(c);
+            return `<div class="network-category-tooltip flex items-center gap-1.5 min-w-0" data-tooltip="${lbl}" aria-label="${lbl}" tabindex="0">
+              <div class="w-5 h-5 rounded ${m.bg} flex items-center justify-center shrink-0">
+                <i data-lucide="${m.icon}" class="w-3 h-3 ${m.color}"></i>
+              </div>
+              <span class="text-sm text-gray-500 font-medium truncate">${lbl}</span>
+            </div>`;
+          }).join('')}</div>` : ''}
           <div class="flex items-center gap-1.5">
             <img src="https://flagcdn.com/20x15/${p.country.toLowerCase()}.png" alt="${p.country}" class="rounded-sm" />
             <span class="text-xs bg-eu-blue/10 text-eu-blue font-bold px-1.5 py-0.5 rounded">${consortiumLabel}</span>
@@ -456,7 +467,7 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
 
   // Apply all filters FIRST
   const filtered = STAKEHOLDERS.filter(s => {
-    if (activeCategory !== 'todos' && s.category !== activeCategory) return false;
+    if (activeCategory !== 'todos' && !itemCats(s).includes(activeCategory)) return false;
     if (activeSector && s.primarySector !== activeSector && !(s.sectors || []).includes(activeSector)) return false;
     if (searchQuery) {
       const haystack = [
@@ -485,11 +496,11 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
   const cardsHtml = paged.length === 0
     ? `<div class="col-span-3 py-10 text-center text-base text-gray-500">${shTexts.noResults}</div>`
     : paged.map(s => {
-        const meta = CATEGORY_META[s.category] || CATEGORY_META.sociedad;
+        const sCats = itemCats(s);
+        const meta = CATEGORY_META[sCats[0]] || CATEGORY_META.sociedad;
         const sectorIcon    = SECTOR_ICON[s.primarySector] || 'layers';
         const sectorTooltip = localized(SECTOR_LABEL[s.primarySector] || { es: s.primarySector, en: s.primarySector, va: s.primarySector });
         const description   = s.description?.[lang] || s.description?.es || '';
-        const categoryLabel = getCatLabel(s.category);
         const allSectors    = [s.primarySector, ...(s.sectors || [])].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i);
 
         const sectorPills = shShowSectors ? allSectors.map(sec => {
@@ -509,10 +520,14 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
               <div class="network-category-tooltip w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff" data-tooltip="${sectorTooltip}" aria-label="${sectorTooltip}" tabindex="0">
                 <i data-lucide="${sectorIcon}" class="w-4 h-4 ${meta.color}"></i>
               </div>
-              ${shShowCategory ? `<div class="network-category-tooltip flex items-center gap-1.5 ${meta.bg} ${meta.border} border rounded-full px-2 py-0.5" data-tooltip="${categoryLabel}" aria-label="${categoryLabel}" tabindex="0">
-                <i data-lucide="${meta.icon}" class="w-3 h-3 ${meta.color}"></i>
-                <span class="text-xs font-bold ${meta.color}">${categoryLabel}</span>
-              </div>` : ''}
+              ${shShowCategory ? `<div class="flex flex-wrap justify-end gap-1">${sCats.map(c => {
+                const m = CATEGORY_META[c] || CATEGORY_META.sociedad;
+                const lbl = getCatLabel(c);
+                return `<div class="network-category-tooltip flex items-center gap-1.5 ${m.bg} ${m.border} border rounded-full px-2 py-0.5" data-tooltip="${lbl}" aria-label="${lbl}" tabindex="0">
+                  <i data-lucide="${m.icon}" class="w-3 h-3 ${m.color}"></i>
+                  <span class="text-xs font-bold ${m.color}">${lbl}</span>
+                </div>`;
+              }).join('')}</div>` : ''}
             </div>
             <p class="font-extrabold text-eu-purple text-base leading-snug mb-0.5">${localized(s.name)}</p>
             ${s.region ? `<p class="text-sm text-eu-blue font-bold mb-1 inline-flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>${localized(s.region)}</p>` : ''}

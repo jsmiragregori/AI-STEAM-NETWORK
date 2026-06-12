@@ -274,6 +274,9 @@ export const SECTORS_CONFIG = {
             "en": "Collecchio",
             "va": "Collecchio"
           },
+          "categories": [
+            "empresa"
+          ],
           "category": "empresa",
           "categoryLabel": {
             "es": "Empresa e Innovación",
@@ -299,6 +302,9 @@ export const SECTORS_CONFIG = {
             "en": "Larissa",
             "va": "Larissa"
           },
+          "categories": [
+            "empresa"
+          ],
           "category": "empresa",
           "categoryLabel": {
             "es": "Empresa e Innovación",
@@ -324,6 +330,9 @@ export const SECTORS_CONFIG = {
             "en": "Porto",
             "va": "Porto"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
@@ -732,6 +741,9 @@ export const SECTORS_CONFIG = {
             "en": "Trondheim",
             "va": "Trondheim"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
@@ -757,6 +769,9 @@ export const SECTORS_CONFIG = {
             "en": "Wismar",
             "va": "Wismar"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
@@ -782,6 +797,9 @@ export const SECTORS_CONFIG = {
             "en": "Porto",
             "va": "Porto"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
@@ -807,6 +825,9 @@ export const SECTORS_CONFIG = {
             "en": "Valencia",
             "va": "València"
           },
+          "categories": [
+            "admin"
+          ],
           "category": "admin",
           "categoryLabel": {
             "es": "Administración Pública",
@@ -1190,6 +1211,9 @@ export const SECTORS_CONFIG = {
             "en": "Karlstad",
             "va": "Karlstad"
           },
+          "categories": [
+            "admin"
+          ],
           "category": "admin",
           "categoryLabel": {
             "es": "Administración Pública",
@@ -1215,6 +1239,9 @@ export const SECTORS_CONFIG = {
             "en": "Prijedor",
             "va": "Prijedor"
           },
+          "categories": [
+            "admin"
+          ],
           "category": "admin",
           "categoryLabel": {
             "es": "Administración Pública",
@@ -1240,6 +1267,9 @@ export const SECTORS_CONFIG = {
             "en": "Trondheim",
             "va": "Trondheim"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
@@ -1265,6 +1295,9 @@ export const SECTORS_CONFIG = {
             "en": "Porto",
             "va": "Porto"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
@@ -1636,6 +1669,9 @@ export const SECTORS_CONFIG = {
             "en": "Madrid",
             "va": "Madrid"
           },
+          "categories": [
+            "empresa"
+          ],
           "category": "empresa",
           "categoryLabel": {
             "es": "Empresa e Innovación",
@@ -1661,6 +1697,9 @@ export const SECTORS_CONFIG = {
             "en": "Porto",
             "va": "Porto"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
@@ -1686,6 +1725,9 @@ export const SECTORS_CONFIG = {
             "en": "Valencia",
             "va": "València"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
@@ -2040,6 +2082,9 @@ export const SECTORS_CONFIG = {
             "en": "Las Palmas",
             "va": "Las Palmas"
           },
+          "categories": [
+            "admin"
+          ],
           "category": "admin",
           "categoryLabel": {
             "es": "Administración Pública",
@@ -2065,6 +2110,9 @@ export const SECTORS_CONFIG = {
             "en": "Las Palmas",
             "va": "Las Palmas"
           },
+          "categories": [
+            "empresa"
+          ],
           "category": "empresa",
           "categoryLabel": {
             "es": "Empresa e Innovación",
@@ -2090,6 +2138,9 @@ export const SECTORS_CONFIG = {
             "en": "Brussels",
             "va": "Brussel·les"
           },
+          "categories": [
+            "sociedad"
+          ],
           "category": "sociedad",
           "categoryLabel": {
             "es": "Sociedad Civil y ONG",
@@ -2115,6 +2166,9 @@ export const SECTORS_CONFIG = {
             "en": "Grenoble",
             "va": "Grenoble"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
@@ -2140,6 +2194,9 @@ export const SECTORS_CONFIG = {
             "en": "Paris",
             "va": "París"
           },
+          "categories": [
+            "sociedad"
+          ],
           "category": "sociedad",
           "categoryLabel": {
             "es": "Sociedad Civil y ONG",
@@ -2507,6 +2564,9 @@ export const SECTORS_CONFIG = {
             "en": "Wismar",
             "va": "Wismar"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
@@ -2532,6 +2592,9 @@ export const SECTORS_CONFIG = {
             "en": "Trondheim",
             "va": "Trondheim"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
@@ -2557,6 +2620,9 @@ export const SECTORS_CONFIG = {
             "en": "Porto",
             "va": "Porto"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
@@ -2582,6 +2648,9 @@ export const SECTORS_CONFIG = {
             "en": "Valencia",
             "va": "València"
           },
+          "categories": [
+            "admin"
+          ],
           "category": "admin",
           "categoryLabel": {
             "es": "Administración Pública",
@@ -2885,6 +2954,9 @@ export const SECTORS_CONFIG = {
             "en": "Valencia",
             "va": "València"
           },
+          "categories": [
+            "admin"
+          ],
           "category": "admin",
           "categoryLabel": {
             "es": "Administración Pública",
@@ -2910,6 +2982,9 @@ export const SECTORS_CONFIG = {
             "en": "Brussels",
             "va": "Brussel·les"
           },
+          "categories": [
+            "sociedad"
+          ],
           "category": "sociedad",
           "categoryLabel": {
             "es": "Sociedad Civil y ONG",
@@ -2935,6 +3010,9 @@ export const SECTORS_CONFIG = {
             "en": "Massa",
             "va": "Massa"
           },
+          "categories": [
+            "empresa"
+          ],
           "category": "empresa",
           "categoryLabel": {
             "es": "Empresa e Innovación",
@@ -2960,6 +3038,9 @@ export const SECTORS_CONFIG = {
             "en": "Rijeka",
             "va": "Rijeka"
           },
+          "categories": [
+            "universidad"
+          ],
           "category": "universidad",
           "categoryLabel": {
             "es": "Educación Superior e I+D+I",
