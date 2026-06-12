@@ -250,9 +250,9 @@ export const SECTORS_CONFIG = {
         "va": "Evidència destacada"
       },
       "exampleChallenge": {
-        "es": "Detección automática de defectos en línea de producción con visión artificial",
-        "en": "Automatic defect detection on production line with artificial vision",
-        "va": "Detecció automàtica de defectes en línia de producció amb visió artificial"
+        "es": "[DEMO] Detección automática de defectos en línea de producción con visión artificial",
+        "en": "[DEMO] Automatic defect detection on production line with artificial vision",
+        "va": "[DEMO] Detecció automàtica de defectes en línia de producció amb visió artificial"
       },
       "featuredPartners": [
         "TUV.IT",
@@ -717,9 +717,9 @@ export const SECTORS_CONFIG = {
         "va": "Evidència destacada"
       },
       "exampleChallenge": {
-        "es": "Predicción de demanda en transporte público para optimización de frecuencias",
-        "en": "Demand prediction in public transport for frequency optimisation",
-        "va": "Predicció de demanda en transport públic per a optimització de freqüències"
+        "es": "[DEMO] Predicción de demanda en transporte público para optimización de frecuencias",
+        "en": "[DEMO] Demand prediction in public transport for frequency optimisation",
+        "va": "[DEMO] Predicció de demanda en transport públic per a optimització de freqüències"
       },
       "featuredPartners": [
         "NTNU",
@@ -1188,9 +1188,9 @@ export const SECTORS_CONFIG = {
         "va": "Evidència destacada"
       },
       "exampleChallenge": {
-        "es": "Sistema de monitorización de calidad del aire con sensores IoT y alertas automáticas",
-        "en": "Air quality monitoring system with IoT sensors and automatic alerts",
-        "va": "Sistema de monitorització de qualitat de l'aire amb sensors IoT i alertes automàtiques"
+        "es": "[DEMO] Sistema de monitorización de calidad del aire con sensores IoT y alertas automáticas",
+        "en": "[DEMO] Air quality monitoring system with IoT sensors and automatic alerts",
+        "va": "[DEMO] Sistema de monitorització de qualitat de l'aire amb sensors IoT i alertes automàtiques"
       },
       "featuredPartners": [
         "Region Värmland",
@@ -1643,9 +1643,9 @@ export const SECTORS_CONFIG = {
         "va": "Evidència destacada"
       },
       "exampleChallenge": {
-        "es": "Detección de plagas en viñedos mediante análisis de imágenes de dron",
-        "en": "Pest detection in vineyards through drone image analysis",
-        "va": "Detecció de plagues en vinyes mitjançant anàlisi d'imatges de dron"
+        "es": "[DEMO] Detección de plagas en viñedos mediante análisis de imágenes de dron",
+        "en": "[DEMO] Pest detection in vineyards through drone image analysis",
+        "va": "[DEMO] Detecció de plagues en vinyes mitjançant anàlisi d'imatges de dron"
       },
       "featuredPartners": [
         "AVA-ASAJA",
@@ -2060,9 +2060,9 @@ export const SECTORS_CONFIG = {
         "va": "Evidència destacada"
       },
       "exampleChallenge": {
-        "es": "Digitalización y descripción automática de fondos archivísticos para acceso abierto",
-        "en": "Digitisation and automatic description of archival collections for open access",
-        "va": "Digitalització i descripció automàtica de fons arxivístics per a accés obert"
+        "es": "[DEMO] Digitalización y descripción automática de fondos archivísticos para acceso abierto",
+        "en": "[DEMO] Digitisation and automatic description of archival collections for open access",
+        "va": "[DEMO] Digitalització i descripció automàtica de fons arxivístics per a accés obert"
       },
       "featuredPartners": [
         "LPGA",
@@ -2544,9 +2544,9 @@ export const SECTORS_CONFIG = {
         "va": "Evidència destacada"
       },
       "exampleChallenge": {
-        "es": "Optimización del consumo energético en bloque de viviendas sociales con ML",
-        "en": "Energy consumption optimisation in social housing block with ML",
-        "va": "Optimització del consum energètic en bloc d'habitatges socials amb ML"
+        "es": "[DEMO] Optimización del consumo energético en bloque de viviendas sociales con ML",
+        "en": "[DEMO] Energy consumption optimisation in social housing block with ML",
+        "va": "[DEMO] Optimització del consum energètic en bloc d'habitatges socials amb ML"
       },
       "featuredPartners": [
         "HSW",
@@ -2935,9 +2935,9 @@ export const SECTORS_CONFIG = {
         "va": "Evidència destacada"
       },
       "exampleChallenge": {
-        "es": "Chatbot multilingüe para orientación ciudadana en servicios administrativos municipales",
-        "en": "Multilingual chatbot for citizen guidance in municipal administrative services",
-        "va": "Chatbot multilingüe per a orientació ciutadana en serveis administratius municipals"
+        "es": "[DEMO] Chatbot multilingüe para orientación ciudadana en servicios administrativos municipales",
+        "en": "[DEMO] Multilingual chatbot for citizen guidance in municipal administrative services",
+        "va": "[DEMO] Chatbot multilingüe per a orientació ciutadana en serveis administratius municipals"
       },
       "featuredPartners": [
         "CEICE",
@@ -3302,18 +3302,18 @@ export const SECTORS_CONFIG = {
       "va": "La teua organització treballa en algun d'estos sectors?"
     },
     "description": {
-      "es": "La red AI-STEAM está abierta a stakeholders de cualquiera de los 7 sectores. La solicitud se gestiona desde la sección <strong>La Red</strong>, donde se recoge la información necesaria para ubicar tu organización en el ecosistema.",
-      "en": "The AI-STEAM network is open to stakeholders from any of the 7 sectors. The request is managed from the <strong>Network</strong> section, where the information needed to place your organisation in the ecosystem is collected.",
-      "va": "La xarxa AI-STEAM és oberta a stakeholders de qualsevol dels 7 sectors. La sol·licitud es gestiona des de la secció <strong>La Xarxa</strong>, on es recull la informació necessària per ubicar la teua organització en l'ecosistema."
+      "es": "La red AI-STEAM está abierta a organizaciones interesadas de cualquiera de los 7 sectores. Desde la sección <strong>La Red</strong> puedes <strong>expresar tu interés</strong>: la solicitud se revisa y, cuando proceda, se inicia el proceso de incorporación. No implica adhesión automática ni aceptación inmediata.",
+      "en": "The AI-STEAM network is open to interested organisations from any of the 7 sectors. From the <strong>Network</strong> section you can <strong>register your interest</strong>: the request is reviewed and, where appropriate, the onboarding process begins. It does not imply automatic membership or immediate acceptance.",
+      "va": "La xarxa AI-STEAM és oberta a organitzacions interessades de qualsevol dels 7 sectors. Des de la secció <strong>La Xarxa</strong> pots <strong>expressar el teu interés</strong>: la sol·licitud es revisa i, quan procedisca, s'inicia el procés d'incorporació. No implica adhesió automàtica ni acceptació immediata."
     },
     "buttonVisible": true,
     "configuredButtonVisible": true,
     "membershipFormVisible": true,
     "membershipCtasVisible": true,
     "buttonLabel": {
-      "es": "Ir al formulario de adhesión",
-      "en": "Go to membership form",
-      "va": "Anar al formulari d'adhesió"
+      "es": "Expresar mi interés",
+      "en": "Register my interest",
+      "va": "Expressar el meu interés"
     },
     "targetRoute": "red",
     "targetNetworkTab": "stakeholders",
