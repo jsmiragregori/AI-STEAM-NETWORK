@@ -101,10 +101,10 @@ function renderRoute(sector, sectorsT) {
 
   return `
     <section class="rd-card rd-card-edge rd-pad rd-card-grad-violet">
-      <div class="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-        <div>
+      <div class="flex flex-col gap-3">
+        <div class="w-full">
           <h4 class="text-xl font-extrabold text-eu-purple">${esc(sectorsT?.transferChainTitle || '')}</h4>
-          ${routeIntro ? `<p class="mt-3 max-w-3xl text-lg leading-relaxed text-eu-text/75">${esc(routeIntro)}</p>` : ''}
+          ${routeIntro ? `<p class="mt-3 text-lg leading-relaxed text-eu-text/75">${esc(routeIntro)}</p>` : ''}
         </div>
       </div>
       <div class="mt-8 grid gap-4 lg:grid-cols-5">
