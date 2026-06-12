@@ -1,6 +1,6 @@
 // GENERADO AUTOMÁTICAMENTE — NO EDITAR DIRECTAMENTE
 // Edita los archivos en content/_ui/*.csv y ejecuta: npm run cms:ui
-// Base: translations.js existente + overrides de 84 entradas CSV
+// Base: translations.js existente + overrides de 86 entradas CSV
 
 export const translations = {
   "es": {
@@ -508,7 +508,9 @@ export const translations = {
       "noFeaturedEvidence": "Sin evidencia publicada todavía",
       "noRelatedContent": "Sin contenidos relacionados publicados todavía",
       "expandSector": "Abrir brújula sectorial",
-      "collapseSector": "Cerrar brújula"
+      "collapseSector": "Cerrar brújula",
+      "stakeholderNote": "Tipos de organización orientativos. La participación de stakeholders es voluntaria y futura, sujeta al proceso de incorporación que se defina; la Red de Stakeholders es un órgano consultivo, no decisorio, y no implica publicación directa ni roles automáticos.",
+      "academicNote": "Posibles líneas de conexión académica, pendientes de validación por UVEG. No son contenidos aprobados del Máster AI-SECRETT."
     },
     "training": {
       "title": "Itinerarios de Transferencia AI-STEAM",
@@ -2390,7 +2392,9 @@ export const translations = {
       "noFeaturedEvidence": "No published evidence yet",
       "noRelatedContent": "No related content published yet",
       "expandSector": "Open sector compass",
-      "collapseSector": "Close compass"
+      "collapseSector": "Close compass",
+      "stakeholderNote": "Indicative organisation types. Stakeholder participation is voluntary and prospective, subject to the onboarding process to be defined; the Stakeholders' Network is an advisory, non-decision-making body and does not imply direct publishing or automatic roles.",
+      "academicNote": "Possible academic connection lines, pending validation by UVEG. These are not approved Master AI-SECRETT contents."
     },
     "training": {
       "title": "AI-STEAM Transfer Pathways",
@@ -4272,7 +4276,9 @@ export const translations = {
       "noFeaturedEvidence": "Sense evidència publicada encara",
       "noRelatedContent": "Sense continguts relacionats publicats encara",
       "expandSector": "Obrir brúixola sectorial",
-      "collapseSector": "Tancar brúixola"
+      "collapseSector": "Tancar brúixola",
+      "stakeholderNote": "Tipus d'organització orientatius. La participació de stakeholders és voluntària i futura, subjecta al procés d'incorporació que es definisca; la Xarxa de Stakeholders és un òrgan consultiu, no decisori, i no implica publicació directa ni rols automàtics.",
+      "academicNote": "Possibles línies de connexió acadèmica, pendents de validació per UVEG. No són continguts aprovats del Màster AI-SECRETT."
     },
     "training": {
       "title": "Itineraris de Transferència AI-STEAM",

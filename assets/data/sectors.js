@@ -161,9 +161,9 @@ export const SECTORS_CONFIG = {
         }
       ],
       "stakeholderContribution": {
-        "es": "Las empresas y centros tecnológicos pueden aportar retos, casos reales, datos agregados, espacios piloto o mentoría técnica.",
-        "en": "Companies and technology centres can contribute challenges, real cases, aggregated data, pilot spaces or technical mentoring.",
-        "va": "Les empreses i centres tecnològics poden aportar reptes, casos reals, dades agregades, espais pilot o mentoria tècnica."
+        "es": "En el futuro, empresas y centros tecnológicos podrían contribuir —según el proceso de participación que se valide— con retos, casos, datos agregados, espacios piloto o mentoría técnica.",
+        "en": "In the future, companies and technology centres could contribute —subject to the participation process to be validated— challenges, cases, aggregated data, pilot spaces or technical mentoring.",
+        "va": "En el futur, empreses i centres tecnològics podrien contribuir —segons el procés de participació que es valide— amb reptes, casos, dades agregades, espais pilot o mentoria tècnica."
       },
       "stakeholderTypes": {
         "es": [
@@ -628,9 +628,9 @@ export const SECTORS_CONFIG = {
         }
       ],
       "stakeholderContribution": {
-        "es": "Autoridades, operadores y empresas logísticas pueden aportar datos agregados, retos de planificación, pilotos urbanos o validación de soluciones.",
-        "en": "Authorities, operators and logistics companies can contribute aggregated data, planning challenges, urban pilots or solution validation.",
-        "va": "Autoritats, operadors i empreses logístiques poden aportar dades agregades, reptes de planificació, pilots urbans o validació de solucions."
+        "es": "En el futuro, autoridades, operadores y empresas logísticas podrían contribuir —según el proceso de participación que se valide— con datos agregados, retos de planificación, pilotos urbanos o validación de soluciones.",
+        "en": "In the future, authorities, operators and logistics companies could contribute —subject to the participation process to be validated— aggregated data, planning challenges, urban pilots or solution validation.",
+        "va": "En el futur, autoritats, operadors i empreses logístiques podrien contribuir —segons el procés de participació que es valide— amb dades agregades, reptes de planificació, pilots urbans o validació de solucions."
       },
       "stakeholderTypes": {
         "es": [
@@ -1099,9 +1099,9 @@ export const SECTORS_CONFIG = {
         }
       ],
       "stakeholderContribution": {
-        "es": "Empresas, administraciones y entidades ambientales pueden aportar datos de consumo, sensores, espacios piloto o casos de gestión sostenible.",
-        "en": "Companies, administrations and environmental organisations can contribute consumption data, sensors, pilot spaces or sustainable management cases.",
-        "va": "Empreses, administracions i entitats ambientals poden aportar dades de consum, sensors, espais pilot o casos de gestió sostenible."
+        "es": "En el futuro, empresas, administraciones y entidades ambientales podrían contribuir —según el proceso de participación que se valide— con datos de consumo, sensores, espacios piloto o casos de gestión sostenible.",
+        "en": "In the future, companies, administrations and environmental organisations could contribute —subject to the participation process to be validated— consumption data, sensors, pilot spaces or sustainable management cases.",
+        "va": "En el futur, empreses, administracions i entitats ambientals podrien contribuir —segons el procés de participació que es valide— amb dades de consum, sensors, espais pilot o casos de gestió sostenible."
       },
       "stakeholderTypes": {
         "es": [
@@ -1554,9 +1554,9 @@ export const SECTORS_CONFIG = {
         }
       ],
       "stakeholderContribution": {
-        "es": "Cooperativas, productores y agtech pueden aportar parcelas piloto, imágenes, datos agronómicos, problemas reales o mentoría técnica.",
-        "en": "Cooperatives, producers and agtech organisations can contribute pilot plots, images, agronomic data, real problems or technical mentoring.",
-        "va": "Cooperatives, productors i agtech poden aportar parcel·les pilot, imatges, dades agronòmiques, problemes reals o mentoria tècnica."
+        "es": "En el futuro, cooperativas, productores y agtech podrían contribuir —según el proceso de participación que se valide— con parcelas piloto, imágenes, datos agronómicos, problemas reales o mentoría técnica.",
+        "en": "In the future, cooperatives, producers and agtech organisations could contribute —subject to the participation process to be validated— pilot plots, images, agronomic data, real problems or technical mentoring.",
+        "va": "En el futur, cooperatives, productors i agtech podrien contribuir —segons el procés de participació que es valide— amb parcel·les pilot, imatges, dades agronòmiques, problemes reals o mentoria tècnica."
       },
       "stakeholderTypes": {
         "es": [
@@ -1971,9 +1971,9 @@ export const SECTORS_CONFIG = {
         }
       ],
       "stakeholderContribution": {
-        "es": "Museos, archivos, industrias creativas y administraciones culturales pueden aportar colecciones, retos de acceso, casos de creación o validación ética.",
-        "en": "Museums, archives, creative industries and cultural administrations can contribute collections, access challenges, creation cases or ethical validation.",
-        "va": "Museus, arxius, indústries creatives i administracions culturals poden aportar col·leccions, reptes d'accés, casos de creació o validació ètica."
+        "es": "En el futuro, museos, archivos, industrias creativas y administraciones culturales podrían contribuir —según el proceso de participación que se valide— con colecciones, retos de acceso, casos de creación o validación ética.",
+        "en": "In the future, museums, archives, creative industries and cultural administrations could contribute —subject to the participation process to be validated— collections, access challenges, creation cases or ethical validation.",
+        "va": "En el futur, museus, arxius, indústries creatives i administracions culturals podrien contribuir —segons el procés de participació que es valide— amb col·leccions, reptes d'accés, casos de creació o validació ètica."
       },
       "stakeholderTypes": {
         "es": [
@@ -2455,9 +2455,9 @@ export const SECTORS_CONFIG = {
         }
       ],
       "stakeholderContribution": {
-        "es": "Constructoras, administraciones y entidades de vivienda pueden aportar edificios piloto, datos de consumo, retos de eficiencia o casos de inclusión.",
-        "en": "Construction companies, administrations and housing organisations can contribute pilot buildings, consumption data, efficiency challenges or inclusion cases.",
-        "va": "Constructores, administracions i entitats d'habitatge poden aportar edificis pilot, dades de consum, reptes d'eficiència o casos d'inclusió."
+        "es": "En el futuro, constructoras, administraciones y entidades de vivienda podrían contribuir —según el proceso de participación que se valide— con edificios piloto, datos de consumo, retos de eficiencia o casos de inclusión.",
+        "en": "In the future, construction companies, administrations and housing organisations could contribute —subject to the participation process to be validated— pilot buildings, consumption data, efficiency challenges or inclusion cases.",
+        "va": "En el futur, constructores, administracions i entitats d'habitatge podrien contribuir —segons el procés de participació que es valide— amb edificis pilot, dades de consum, reptes d'eficiència o casos d'inclusió."
       },
       "stakeholderTypes": {
         "es": [
@@ -2846,9 +2846,9 @@ export const SECTORS_CONFIG = {
         }
       ],
       "stakeholderContribution": {
-        "es": "Pymes, administraciones, servicios públicos y entidades sociales pueden aportar procesos reales, datos anonimizados, casos de atención o validación ética.",
-        "en": "SMEs, administrations, public services and social organisations can contribute real processes, anonymised data, service cases or ethical validation.",
-        "va": "Pimes, administracions, servicis públics i entitats socials poden aportar processos reals, dades anonimitzades, casos d'atenció o validació ètica."
+        "es": "En el futuro, pymes, administraciones, servicios públicos y entidades sociales podrían contribuir —según el proceso de participación que se valide— con procesos reales, datos anonimizados, casos de atención o validación ética.",
+        "en": "In the future, SMEs, administrations, public services and social organisations could contribute —subject to the participation process to be validated— real processes, anonymised data, service cases or ethical validation.",
+        "va": "En el futur, pimes, administracions, servicis públics i entitats socials podrien contribuir —segons el procés de participació que es valide— amb processos reals, dades anonimitzades, casos d'atenció o validació ètica."
       },
       "stakeholderTypes": {
         "es": [

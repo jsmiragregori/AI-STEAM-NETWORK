@@ -126,7 +126,12 @@ function renderRoute(sector, sectorsT) {
   `;
 }
 
-function renderListCard(title, icon, items, tone = 'blue') {
+function renderCardNote(note) {
+  if (!note) return '';
+  return `<p class="mt-4 border-t border-eu-blue/10 pt-3 text-xs italic leading-relaxed text-eu-text/55">${esc(note)}</p>`;
+}
+
+function renderListCard(title, icon, items, tone = 'blue', note = '') {
   if (!items.length) return '';
   const color = tone === 'purple' ? 'text-eu-purple' : 'text-eu-blue';
   return `
@@ -143,11 +148,12 @@ function renderListCard(title, icon, items, tone = 'blue') {
           </li>
         `).join('')}
       </ul>
+      ${renderCardNote(note)}
     </article>
   `;
 }
 
-function renderTextCard(title, icon, text, tone = 'blue') {
+function renderTextCard(title, icon, text, tone = 'blue', note = '') {
   if (!text) return '';
   const color = tone === 'purple' ? 'text-eu-purple' : 'text-eu-blue';
   return `
@@ -157,6 +163,7 @@ function renderTextCard(title, icon, text, tone = 'blue') {
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(title)}</h4>
       </div>
       <p class="mt-5 text-base leading-relaxed text-eu-text/75">${esc(text)}</p>
+      ${renderCardNote(note)}
     </article>
   `;
 }
@@ -189,7 +196,7 @@ function renderRelatedContent(sector, sectorsT) {
       <div class="mt-5 space-y-3">
         ${items.map(item => `
           <button data-sector-content="${esc(item.id)}" data-content-type="${esc(item.type)}" class="w-full rounded-2xl border border-eu-blue/10 p-4 text-left transition hover:border-eu-blue/30 rd-card-grad-beige">
-            <span class="block font-bold text-eu-text">${esc(localized(item.title) || item.id)}</span>
+            <span class="block font-bold text-eu-text">[DEMO] ${esc(localized(item.title) || item.id)}</span>
             ${localized(item.summary) ? `<span class="mt-1 line-clamp-2 block text-sm leading-relaxed text-eu-text/65">${esc(localized(item.summary))}</span>` : ''}
           </button>
         `).join('')}
@@ -259,7 +266,7 @@ function renderExpanded(sector, sectorsT) {
         ${renderRoute(sector, sectorsT)}
 
         <section class="grid gap-6 lg:grid-cols-2">
-          ${renderListCard(sectorsT?.stakeholderTypesLabel || '', 'users', stakeholderTypes, 'blue')}
+          ${renderListCard(sectorsT?.stakeholderTypesLabel || '', 'users', stakeholderTypes, 'blue', sectorsT?.stakeholderNote || '')}
           ${renderTextCard(sectorsT?.stakeholderContributionLabel || '', 'handshake', stakeholderContribution, 'purple')}
           ${renderListCard(sectorsT?.fpModulesLabel || '', 'book-open-check', fpSkills, 'purple')}
           ${renderTextCard(sectorsT?.teacherRelevanceLabel || '', 'presentation', teacherRelevance, 'blue')}
@@ -267,7 +274,7 @@ function renderExpanded(sector, sectorsT) {
 
         <section class="grid gap-6 lg:grid-cols-2">
           ${renderEvidence(sector, sectorsT)}
-          ${renderListCard(sectorsT?.masterTopicsLabel || '', 'graduation-cap', masterTopics, 'purple')}
+          ${renderListCard(sectorsT?.masterTopicsLabel || '', 'graduation-cap', masterTopics, 'purple', sectorsT?.academicNote || '')}
           ${renderRelatedContent(sector, sectorsT)}
           ${renderPartners(sector, sectorsT)}
         </section>
