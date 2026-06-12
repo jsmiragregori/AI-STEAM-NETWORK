@@ -196,7 +196,7 @@ function renderRelatedContent(sector, sectorsT) {
       <div class="mt-5 space-y-3">
         ${items.map(item => `
           <button data-sector-content="${esc(item.id)}" data-content-type="${esc(item.type)}" class="w-full rounded-2xl border border-eu-blue/10 p-4 text-left transition hover:border-eu-blue/30 rd-card-grad-beige">
-            <span class="block font-bold text-eu-text">[DEMO] ${esc(localized(item.title) || item.id)}</span>
+            <span class="block font-bold text-eu-text">${esc(localized(item.title) || item.id)}</span>
             ${localized(item.summary) ? `<span class="mt-1 line-clamp-2 block text-sm leading-relaxed text-eu-text/65">${esc(localized(item.summary))}</span>` : ''}
           </button>
         `).join('')}

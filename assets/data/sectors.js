@@ -184,19 +184,19 @@ export const SECTORS_CONFIG = {
       },
       "fpSkills": {
         "es": [
-          "Mantenimiento predictivo con ML",
-          "Visión artificial para control de calidad",
-          "Robótica colaborativa en entornos industriales"
+          "Mantenimiento predictivo con sensores y ML",
+          "Inspección de calidad por visión artificial",
+          "Programación y operación de robótica colaborativa (cobots)"
         ],
         "en": [
-          "Predictive maintenance with ML",
-          "Artificial vision for quality control",
-          "Collaborative robotics in industrial environments"
+          "Predictive maintenance with sensors and ML",
+          "Quality inspection with artificial vision",
+          "Programming and operation of collaborative robotics (cobots)"
         ],
         "va": [
-          "Manteniment predictiu amb ML",
-          "Visió artificial per al control de qualitat",
-          "Robòtica col·laborativa en entorns industrials"
+          "Manteniment predictiu amb sensors i ML",
+          "Inspecció de qualitat per visió artificial",
+          "Programació i operació de robòtica col·laborativa (cobots)"
         ]
       },
       "masterTopics": {
@@ -240,9 +240,9 @@ export const SECTORS_CONFIG = {
         ]
       },
       "teacherRelevance": {
-        "es": "Automatización, robótica e IoT para FP industrial. Uso responsable de IA en entornos de producción.",
-        "en": "Automation, robotics and IoT for industrial VET. Responsible AI use in production environments.",
-        "va": "Automatització, robòtica i IoT per a FP industrial. Ús responsable d'IA en entorns de producció."
+        "es": "Proyectos de aula (ABP) con automatización, robótica e IoT en FP industrial; práctica con datos de producción y uso responsable de IA.",
+        "en": "Classroom projects (PBL) with automation, robotics and IoT in industrial VET; practice with production data and responsible AI use.",
+        "va": "Projectes d'aula (ABP) amb automatització, robòtica i IoT en FP industrial; pràctica amb dades de producció i ús responsable d'IA."
       },
       "exampleChallengeLabel": {
         "es": "Evidencia destacada",
@@ -651,19 +651,19 @@ export const SECTORS_CONFIG = {
       },
       "fpSkills": {
         "es": [
-          "IoT en vehículos y logística verde",
-          "Análisis de datos de movilidad urbana",
-          "Optimización de rutas con algoritmos"
+          "Telemetría e IoT en vehículos y flotas",
+          "Análisis de datos de movilidad y demanda",
+          "Optimización de rutas y logística verde"
         ],
         "en": [
-          "IoT in vehicles and green logistics",
-          "Urban mobility data analysis",
-          "Route optimisation with algorithms"
+          "Telemetry and IoT in vehicles and fleets",
+          "Mobility and demand data analysis",
+          "Route optimisation and green logistics"
         ],
         "va": [
-          "IoT en vehicles i logística verda",
-          "Anàlisi de dades de mobilitat urbana",
-          "Optimització de rutes amb algoritmes"
+          "Telemetria i IoT en vehicles i flotes",
+          "Anàlisi de dades de mobilitat i demanda",
+          "Optimització de rutes i logística verda"
         ]
       },
       "masterTopics": {
@@ -707,9 +707,9 @@ export const SECTORS_CONFIG = {
         ]
       },
       "teacherRelevance": {
-        "es": "Movilidad sostenible y logística verde para FP transporte. La triple transición como contexto de aprendizaje.",
-        "en": "Sustainable mobility and green logistics for transport VET. The triple transition as a learning context.",
-        "va": "Mobilitat sostenible i logística verda per a FP transport. La triple transició com a context d'aprenentatge."
+        "es": "Retos de aula sobre movilidad sostenible y logística verde en FP de transporte, usando datos reales de movilidad como contexto de la triple transición.",
+        "en": "Classroom challenges on sustainable mobility and green logistics in transport VET, using real mobility data as a triple-transition context.",
+        "va": "Reptes d'aula sobre mobilitat sostenible i logística verda en FP de transport, usant dades reals de mobilitat com a context de la triple transició."
       },
       "exampleChallengeLabel": {
         "es": "Evidencia destacada",
@@ -1122,19 +1122,19 @@ export const SECTORS_CONFIG = {
       },
       "fpSkills": {
         "es": [
-          "Sensórica ambiental e IoT para monitorización",
-          "IA para eficiencia energética y gestión de residuos",
-          "Análisis de consumo con ML"
+          "Sensórica ambiental e IoT de monitorización",
+          "Gestión energética inteligente y eficiencia",
+          "Analítica de consumo y mantenimiento de renovables"
         ],
         "en": [
-          "Environmental sensing and IoT for monitoring",
-          "AI for energy efficiency and waste management",
-          "Consumption analysis with ML"
+          "Environmental sensing and IoT monitoring",
+          "Smart energy management and efficiency",
+          "Consumption analytics and renewables maintenance"
         ],
         "va": [
-          "Sensòrica ambiental i IoT per a monitorització",
-          "IA per a eficiència energètica i gestió de residus",
-          "Anàlisi de consum amb ML"
+          "Sensòrica ambiental i IoT de monitorització",
+          "Gestió energètica intel·ligent i eficiència",
+          "Analítica de consum i manteniment de renovables"
         ]
       },
       "masterTopics": {
@@ -1178,9 +1178,9 @@ export const SECTORS_CONFIG = {
         ]
       },
       "teacherRelevance": {
-        "es": "Economía circular, energías renovables y sensórica para FP medioambiente y electricidad.",
-        "en": "Circular economy, renewable energy and sensors for environmental and electrical VET.",
-        "va": "Economia circular, energies renovables i sensòrica per a FP medi ambient i electricitat."
+        "es": "Prácticas con sensórica y datos de consumo en FP de medioambiente y electricidad; economía circular y renovables como proyectos reales de aula.",
+        "en": "Practice with sensors and consumption data in environmental and electrical VET; circular economy and renewables as real classroom projects.",
+        "va": "Pràctiques amb sensòrica i dades de consum en FP de medi ambient i electricitat; economia circular i renovables com a projectes reals d'aula."
       },
       "exampleChallengeLabel": {
         "es": "Evidencia destacada",
@@ -1577,19 +1577,19 @@ export const SECTORS_CONFIG = {
       },
       "fpSkills": {
         "es": [
-          "Drones y sensores en agricultura de precisión",
-          "Detección de plagas por visión artificial",
-          "Trazabilidad alimentaria con datos"
+          "Agricultura de precisión con drones y sensores",
+          "Detección temprana de plagas por visión artificial",
+          "Trazabilidad alimentaria basada en datos"
         ],
         "en": [
-          "Drones and sensors in precision agriculture",
-          "Pest detection by artificial vision",
-          "Food traceability with data"
+          "Precision agriculture with drones and sensors",
+          "Early pest detection with artificial vision",
+          "Data-based food traceability"
         ],
         "va": [
-          "Drones i sensors en agricultura de precisió",
-          "Detecció de plagues per visió artificial",
-          "Traçabilitat alimentària amb dades"
+          "Agricultura de precisió amb drons i sensors",
+          "Detecció precoç de plagues per visió artificial",
+          "Traçabilitat alimentària basada en dades"
         ]
       },
       "masterTopics": {
@@ -1633,9 +1633,9 @@ export const SECTORS_CONFIG = {
         ]
       },
       "teacherRelevance": {
-        "es": "Agricultura sostenible y soberanía alimentaria para FP agraria. Uso de sensores y drones en contextos reales.",
-        "en": "Sustainable agriculture and food sovereignty for agricultural VET. Use of sensors and drones in real contexts.",
-        "va": "Agricultura sostenible i sobirania alimentària per a FP agrària. Ús de sensors i drons en contextos reals."
+        "es": "Proyectos de campo con sensores y drones en FP agraria; agricultura sostenible y soberanía alimentaria como reto interdisciplinar de aula.",
+        "en": "Field projects with sensors and drones in agricultural VET; sustainable agriculture and food sovereignty as an interdisciplinary classroom challenge.",
+        "va": "Projectes de camp amb sensors i drons en FP agrària; agricultura sostenible i sobirania alimentària com a repte interdisciplinari d'aula."
       },
       "exampleChallengeLabel": {
         "es": "Evidencia destacada",
@@ -1994,19 +1994,19 @@ export const SECTORS_CONFIG = {
       },
       "fpSkills": {
         "es": [
-          "Digitalización de patrimonio cultural",
+          "Digitalización y catalogación de patrimonio",
           "Uso ético de IA generativa en creación",
-          "Gestión de metadatos y archivos digitales"
+          "Gestión de metadatos y activos digitales"
         ],
         "en": [
-          "Cultural heritage digitisation",
+          "Heritage digitisation and cataloguing",
           "Ethical use of generative AI in creation",
-          "Metadata and digital archive management"
+          "Metadata and digital asset management"
         ],
         "va": [
-          "Digitalització de patrimoni cultural",
+          "Digitalització i catalogació de patrimoni",
           "Ús ètic d'IA generativa en creació",
-          "Gestió de metadades i arxius digitals"
+          "Gestió de metadades i actius digitals"
         ]
       },
       "masterTopics": {
@@ -2050,9 +2050,9 @@ export const SECTORS_CONFIG = {
         ]
       },
       "teacherRelevance": {
-        "es": "IA generativa y ética en contextos creativos. Alfabetización crítica sobre autoría, derechos y acceso.",
-        "en": "Generative AI and ethics in creative contexts. Critical literacy on authorship, rights and access.",
-        "va": "IA generativa i ètica en contextos creatius. Alfabetització crítica sobre autoria, drets i accés."
+        "es": "Talleres de IA generativa con enfoque ético en FP creativas; alfabetización crítica sobre autoría, derechos y acceso mediante casos de aula.",
+        "en": "Generative AI workshops with an ethical approach in creative VET; critical literacy on authorship, rights and access through classroom cases.",
+        "va": "Tallers d'IA generativa amb enfocament ètic en FP creatives; alfabetització crítica sobre autoria, drets i accés mitjançant casos d'aula."
       },
       "exampleChallengeLabel": {
         "es": "Evidencia destacada",
@@ -2478,19 +2478,19 @@ export const SECTORS_CONFIG = {
       },
       "fpSkills": {
         "es": [
-          "Sistemas IoT para gestión de edificios",
+          "Domótica y sistemas IoT de edificios",
           "Automatización para eficiencia energética",
-          "Análisis de datos de consumo residencial"
+          "Analítica de consumo y confort residencial"
         ],
         "en": [
-          "IoT systems for building management",
+          "Home automation and building IoT systems",
           "Automation for energy efficiency",
-          "Residential consumption data analysis"
+          "Consumption and residential comfort analytics"
         ],
         "va": [
-          "Sistemes IoT per a gestió d'edificis",
+          "Domòtica i sistemes IoT d'edificis",
           "Automatització per a eficiència energètica",
-          "Anàlisi de dades de consum residencial"
+          "Analítica de consum i confort residencial"
         ]
       },
       "masterTopics": {
@@ -2534,9 +2534,9 @@ export const SECTORS_CONFIG = {
         ]
       },
       "teacherRelevance": {
-        "es": "Smart buildings y eficiencia energética para FP construcción. Urbanismo social y sostenible como contexto.",
-        "en": "Smart buildings and energy efficiency for construction VET. Social and sustainable urban planning as context.",
-        "va": "Smart buildings i eficiència energètica per a FP construcció. Urbanisme social i sostenible com a context."
+        "es": "Proyectos de smart buildings y eficiencia energética en FP de construcción; urbanismo social y sostenible como contexto de aprendizaje.",
+        "en": "Smart buildings and energy efficiency projects in construction VET; social and sustainable urban planning as a learning context.",
+        "va": "Projectes de smart buildings i eficiència energètica en FP de construcció; urbanisme social i sostenible com a context d'aprenentatge."
       },
       "exampleChallengeLabel": {
         "es": "Evidencia destacada",
@@ -2869,19 +2869,19 @@ export const SECTORS_CONFIG = {
       },
       "fpSkills": {
         "es": [
-          "Automatización de procesos con RPA",
-          "Análisis de datos para servicios al cliente",
-          "IA en administración y servicios públicos"
+          "Automatización de procesos administrativos (RPA)",
+          "Analítica de datos para atención al cliente",
+          "IA aplicada a servicios públicos y comercio"
         ],
         "en": [
-          "Process automation with RPA",
-          "Data analysis for customer services",
-          "AI in public administration and services"
+          "Administrative process automation (RPA)",
+          "Data analytics for customer service",
+          "AI applied to public services and commerce"
         ],
         "va": [
-          "Automatització de processos amb RPA",
-          "Anàlisi de dades per a serveis al client",
-          "IA en administració i serveis públics"
+          "Automatització de processos administratius (RPA)",
+          "Analítica de dades per a atenció al client",
+          "IA aplicada a serveis públics i comerç"
         ]
       },
       "masterTopics": {
@@ -2925,9 +2925,9 @@ export const SECTORS_CONFIG = {
         ]
       },
       "teacherRelevance": {
-        "es": "Automatización responsable y ética en datos para FP administración, comercio y servicios.",
-        "en": "Responsible automation and data ethics for VET in administration, commerce and services.",
-        "va": "Automatització responsable i ètica en dades per a FP administració, comerç i serveis."
+        "es": "Casos de aula sobre automatización responsable y ética de datos en FP de administración, comercio y servicios; el impacto en el empleo como debate.",
+        "en": "Classroom cases on responsible automation and data ethics in administration, commerce and services VET; employment impact as a debate.",
+        "va": "Casos d'aula sobre automatització responsable i ètica de dades en FP d'administració, comerç i serveis; l'impacte en l'ocupació com a debat."
       },
       "exampleChallengeLabel": {
         "es": "Evidencia destacada",
