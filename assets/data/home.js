@@ -637,7 +637,7 @@ export const HOME_CONFIG = {
         "emoji": "🏢",
         "label": {
           "es": "Servicios No Turísticos",
-          "en": "Non-Tourist Services",
+          "en": "Non-Touristic Services",
           "va": "Serveis No Turístics"
         }
       }
