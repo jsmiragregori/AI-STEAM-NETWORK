@@ -382,7 +382,18 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Educación superior e investigación",
+            "en": "Higher education and research",
+            "va": "Educació superior i investigació"
+          },
+          {
+            "es": "Coordinación de proyectos europeos",
+            "en": "EU project coordination",
+            "va": "Coordinació de projectes europeus"
+          }
+        ],
         "role": "coordinator",
         "url": "https://www.uv.es/",
         "logo": "uveg.png"
@@ -417,7 +428,18 @@ export const NETWORK_CONFIG = {
             "va": "Indústries Culturals i Creatives"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Investigación universitaria",
+            "en": "University research",
+            "va": "Investigació universitària"
+          },
+          {
+            "es": "Salud y bienestar digital",
+            "en": "Digital health and wellbeing",
+            "va": "Salut i benestar digital"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://www.um.es/",
         "logo": "umu.png"
@@ -472,7 +494,18 @@ export const NETWORK_CONFIG = {
             "va": "Mobilitat i Transport"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Ingeniería y tecnología",
+            "en": "Engineering and technology",
+            "va": "Enginyeria i tecnologia"
+          },
+          {
+            "es": "IA y robótica",
+            "en": "AI and robotics",
+            "va": "IA i robòtica"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://www.upv.es/",
         "logo": "upv.png"
@@ -522,7 +555,18 @@ export const NETWORK_CONFIG = {
             "va": "Mobilitat i Transport"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Investigación científico-técnica",
+            "en": "Science and technology research",
+            "va": "Investigació cientificotècnica"
+          },
+          {
+            "es": "IA aplicada",
+            "en": "Applied AI",
+            "va": "IA aplicada"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://www.ntnu.edu/",
         "logo": "ntnu.png"
@@ -562,7 +606,18 @@ export const NETWORK_CONFIG = {
             "va": "Habitatge"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Ciencias aplicadas",
+            "en": "Applied sciences",
+            "va": "Ciències aplicades"
+          },
+          {
+            "es": "Diseño e ingeniería",
+            "en": "Design and engineering",
+            "va": "Disseny i enginyeria"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://www.hs-wismar.de/",
         "logo": "hsw.png"
@@ -602,7 +657,18 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Informática",
+            "en": "Computer science",
+            "va": "Informàtica"
+          },
+          {
+            "es": "Tecnologías digitales",
+            "en": "Digital technologies",
+            "va": "Tecnologies digitals"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://www.inf.uniri.hr/",
         "logo": "fidit.png"
@@ -637,7 +703,18 @@ export const NETWORK_CONFIG = {
             "va": "Indústries Culturals i Creatives"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Investigación universitaria",
+            "en": "University research",
+            "va": "Investigació universitària"
+          },
+          {
+            "es": "Ciencias biomédicas",
+            "en": "Biomedical sciences",
+            "va": "Ciències biomèdiques"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://www.unich.it/",
         "logo": "uda.png"
@@ -672,7 +749,18 @@ export const NETWORK_CONFIG = {
             "va": "Indústries Culturals i Creatives"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Arte y diseño",
+            "en": "Art and design",
+            "va": "Art i disseny"
+          },
+          {
+            "es": "Creatividad aplicada",
+            "en": "Applied creativity",
+            "va": "Creativitat aplicada"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://esad-gv.fr/",
         "logo": "esad.png"
@@ -769,7 +857,18 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Living labs",
+            "en": "Living labs",
+            "va": "Living labs"
+          },
+          {
+            "es": "Diseño de servicios",
+            "en": "Service design",
+            "va": "Disseny de serveis"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://www.laurea.fi/en/",
         "logo": "laurea.png"
@@ -809,7 +908,18 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Política educativa",
+            "en": "Education policy",
+            "va": "Política educativa"
+          },
+          {
+            "es": "FP y formación del profesorado",
+            "en": "VET and teacher training",
+            "va": "FP i formació del professorat"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://ceice.gva.es/va/",
         "logo": "ceice.png"
@@ -906,7 +1016,18 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Desarrollo regional",
+            "en": "Regional development",
+            "va": "Desenvolupament regional"
+          },
+          {
+            "es": "Innovación en el sector público",
+            "en": "Public sector innovation",
+            "va": "Innovació en el sector públic"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://www.regionvarmland.se/",
         "logo": "varm.png"
@@ -951,7 +1072,18 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Desarrollo regional",
+            "en": "Regional development",
+            "va": "Desenvolupament regional"
+          },
+          {
+            "es": "Apoyo a PYMES",
+            "en": "SME support",
+            "va": "Suport a PIMES"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://razvojnaagencija.predaprijedor.com/",
         "logo": "preda.png"
@@ -986,7 +1118,18 @@ export const NETWORK_CONFIG = {
             "va": "Habitatge"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "IA explicable (XAI)",
+            "en": "Explainable AI (XAI)",
+            "va": "IA explicable (XAI)"
+          },
+          {
+            "es": "Innovación tecnológica",
+            "en": "Technological innovation",
+            "va": "Innovació tecnològica"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://www.xplainai.eu/",
         "logo": "cogn.png"
@@ -1031,7 +1174,18 @@ export const NETWORK_CONFIG = {
             "va": "Mobilitat i Transport"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Certificación",
+            "en": "Certification",
+            "va": "Certificació"
+          },
+          {
+            "es": "Aseguramiento de la calidad",
+            "en": "Quality assurance",
+            "va": "Assegurament de la qualitat"
+          }
+        ],
         "role": "certification",
         "url": "https://tuv-thuringen.it/",
         "logo": "tuvit.png"
@@ -1071,7 +1225,18 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Innovación y emprendimiento",
+            "en": "Innovation and entrepreneurship",
+            "va": "Innovació i emprenedoria"
+          },
+          {
+            "es": "Aceleración de startups",
+            "en": "Startup acceleration",
+            "va": "Acceleració de startups"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://joistpark.eu/",
         "logo": "joist.png"
@@ -1111,7 +1276,18 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Gestión cultural",
+            "en": "Cultural management",
+            "va": "Gestió cultural"
+          },
+          {
+            "es": "Comunicación y difusión",
+            "en": "Communication and dissemination",
+            "va": "Comunicació i difusió"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://culturalink.net/",
         "logo": "clink.png"
@@ -1151,7 +1327,18 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Emprendimiento",
+            "en": "Entrepreneurship",
+            "va": "Emprenedoria"
+          },
+          {
+            "es": "Innovación educativa",
+            "en": "Educational innovation",
+            "va": "Innovació educativa"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://cinkventuring.es/",
         "logo": "cink.png"
@@ -1196,7 +1383,18 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Análisis de políticas",
+            "en": "Policy analysis",
+            "va": "Anàlisi de polítiques"
+          },
+          {
+            "es": "Gobernanza económica y digital",
+            "en": "Economic and digital governance",
+            "va": "Governança econòmica i digital"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://lisboncouncil.net/",
         "logo": "lc.png"
@@ -1236,7 +1434,18 @@ export const NETWORK_CONFIG = {
             "va": "Serveis No Turístics"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Políticas culturales",
+            "en": "Cultural policy",
+            "va": "Polítiques culturals"
+          },
+          {
+            "es": "Industrias creativas",
+            "en": "Creative industries",
+            "va": "Indústries creatives"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://keanet.eu/",
         "logo": "kea.png"
@@ -1271,7 +1480,18 @@ export const NETWORK_CONFIG = {
             "va": "Energia i Medi Ambient"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Competencias del futuro",
+            "en": "Future skills",
+            "va": "Competències del futur"
+          },
+          {
+            "es": "Difusión y comunicación",
+            "en": "Dissemination and communication",
+            "va": "Difusió i comunicació"
+          }
+        ],
         "role": "beneficiary",
         "url": "https://www.inspiringfutures.eu/",
         "logo": "ife.png"
@@ -1306,7 +1526,18 @@ export const NETWORK_CONFIG = {
             "va": "Indústries Culturals i Creatives"
           }
         ],
-        "expertise": [],
+        "expertise": [
+          {
+            "es": "Cooperación cultural europea",
+            "en": "European cultural cooperation",
+            "va": "Cooperació cultural europea"
+          },
+          {
+            "es": "Programas culturales",
+            "en": "Cultural programmes",
+            "va": "Programes culturals"
+          }
+        ],
         "role": "associated",
         "url": "https://www.relais-culture-europe.eu/",
         "logo": "rce.png"
