@@ -1883,7 +1883,7 @@ function renderMentoringCard(item, tab) {
       ${specialtiesHtml}
       ${renderCardMiniMeta([
         { label: uiText('availability'), value: ccv.ch_mentoring_availability !== false && pres.showAvailability !== false ? pickLang(format.availability) : '' },
-        { label: pickLang({ es: 'Formato', en: 'Format', va: 'Format' }), htmlValue: asArray(format.sessions).map(s => { const count = s.sessionCount ? `${s.sessionCount} sess.` : ''; const parts = [getModalityLabel(s.modality), count, formatSessionDuration(s.sessionDurationHours, s.sessionDurationMinutes), getMentoringSessionTypesSummary(s.sessionTypes)].filter(Boolean); return `<p class="flex items-center gap-2 leading-5 text-sm text-gray-600"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400"></span>${esc(parts.join(' · '))}</p>`; }).join('') },
+        { label: pickLang({ es: 'Formato', en: 'Format', va: 'Format' }), htmlValue: asArray(format.sessions).map(s => { const count = s.sessionCount ? `${s.sessionCount} ${pickLang({ es: 'ses.', en: 'sess.', va: 'sess.' })}` : ''; const parts = [getModalityLabel(s.modality), count, formatSessionDuration(s.sessionDurationHours, s.sessionDurationMinutes), getMentoringSessionTypesSummary(s.sessionTypes)].filter(Boolean); return `<p class="flex items-center gap-2 leading-5 text-sm text-gray-600"><span class="h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400"></span>${esc(parts.join(' · '))}</p>`; }).join('') },
       ])}
       ${dlHtml}
     `;
