@@ -408,6 +408,13 @@ function esc(value) {
     .replaceAll("'", '&#39;');
 }
 
+function simpleMarkdown(text) {
+  if (!text) return '';
+  return esc(text)
+    .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g, '<em>$1</em>');
+}
+
 function asArray(value) {
   if (!value) return [];
   return Array.isArray(value) ? value : [value];
@@ -1971,7 +1978,7 @@ function renderTabIntroCard(tab, items) {
             </span>
             <h2 class="min-w-0 text-3xl font-extrabold leading-tight text-eu-purple">${esc(title)}</h2>
           </div>
-          ${intro ? `<p class="mt-5 text-lg leading-relaxed text-gray-600">${esc(intro)}</p>` : ''}
+          ${intro ? `<p class="mt-5 text-lg leading-relaxed text-gray-600">${simpleMarkdown(intro)}</p>` : ''}
         </div>
       </div>
     </div>`;

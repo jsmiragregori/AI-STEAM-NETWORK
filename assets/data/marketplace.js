@@ -75,15 +75,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "Mentories"
         }
       }
-    ],
-    "submitButton": {
-      "visible": true,
-      "label": {
-        "es": "Proponer colaboración",
-        "en": "Propose collaboration",
-        "va": "Proposar col·laboració"
-      }
-    }
+    ]
   },
   "publicSectionName": {
     "nav": {
@@ -110,9 +102,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Reptes"
       },
       "intro": {
-        "es": "Comparte una necesidad real y conviértela en una oportunidad de colaboración. Aquí empresas, centros y administraciones pueden proponer retos que activen aprendizaje, innovación y transferencia aplicada.",
-        "en": "Share a real need and turn it into a collaboration opportunity. Companies, schools and public bodies can propose challenges that activate learning, innovation and applied transfer.",
-        "va": "Comparteix una necessitat real i convertix-la en una oportunitat de col·laboració. Ací empreses, centres i administracions poden proposar reptes que activen aprenentatge, innovació i transferència aplicada."
+        "es": "Un **reto** es una necesidad real formulada por una entidad —empresa, centro educativo o administración— que aún no tiene solución y puede resolverse mejor colaborando. En AI-STEAM, proponer un reto significa abrir un proceso de innovación compartida: buscas socios, defines el problema y co-diseñas una respuesta con quienes tienen la competencia, el contexto o los recursos necesarios. Los retos activan *aprendizaje situado*, movilizan equipos mixtos y generan conocimiento transferible para toda la red.",
+        "en": "A **challenge** is a real need formulated by an organisation — a company, school or public body — that has no ready solution and is better addressed through collaboration. In AI-STEAM, proposing a challenge means opening a shared innovation process: you look for partners, frame the problem and co-design a response with those who have the right expertise, context or resources. Challenges activate *situated learning*, mobilise mixed teams and generate transferable knowledge for the whole network.",
+        "va": "Un **repte** és una necessitat real formulada per una entitat —empresa, centre educatiu o administració— que encara no té solució i pot resoldre's millor col·laborant. En AI-STEAM, proposar un repte significa obrir un procés d'innovació compartida: busques socis, defineixes el problema i co-dissenyes una resposta amb qui té la competència, el context o els recursos necessaris. Els reptes activen *aprenentatge situat*, mobilitzen equips mixtos i generen coneixement transferible per a tota la xarxa."
       },
       "ctaLabel": {
         "es": "Solicitar participación",
@@ -169,9 +161,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Casos"
       },
       "intro": {
-        "es": "Haz visible lo que ya funciona. Los casos documentan experiencias con resultados y evidencias para que otras entidades puedan aprender, adaptar o replicar buenas prácticas.",
-        "en": "Show what already works. Cases document experiences with results and evidence so that other organisations can learn from them, adapt them or replicate them.",
-        "va": "Fes visible allò que ja funciona. Els casos documenten experiències amb resultats i evidències perquè altres entitats puguen aprendre, adaptar o replicar bones pràctiques."
+        "es": "Un **caso** documenta una experiencia de colaboración que ha producido resultados concretos, medibles y reutilizables. En AI-STEAM, los casos no son relatos de éxito genéricos: incluyen metodología, evidencias, condiciones de replicabilidad y contexto sectorial para que otras entidades puedan *aprender, adaptar o escalar* lo que ya funciona. Un caso bien documentado reduce la curva de aprendizaje de la red y aumenta la confianza antes de iniciar un piloto propio.",
+        "en": "A **case** documents a collaboration experience that has produced concrete, measurable and reusable results. In AI-STEAM, cases are not generic success stories: they include methodology, evidence, replicability conditions and sector context so that other organisations can *learn from, adapt or scale* what already works. A well-documented case shortens the network's learning curve and builds confidence before launching a pilot of one's own.",
+        "va": "Un **cas** documenta una experiència de col·laboració que ha produït resultats concrets, mesurables i reutilitzables. En AI-STEAM, els casos no són relats d'èxit genèrics: inclouen metodologia, evidències, condicions de replicabilitat i context sectorial perquè altres entitats puguen *aprendre, adaptar o escalar* allò que ja funciona. Un cas ben documentat redueix la corba d'aprenentatge de la xarxa i augmenta la confiança abans d'iniciar un pilot propi."
       },
       "ctaLabel": {
         "es": "Ver evidencia",
@@ -228,9 +220,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Pilots"
       },
       "intro": {
-        "es": "Prueba una solución en contexto real. Los pilotos permiten ensayar metodologías, recursos o tecnologías con centros, empresas y entidades antes de escalarlas o transferirlas.",
-        "en": "Try a solution in a real context. Pilots help test methods, resources or technologies with schools, companies and organisations before scaling or transferring them.",
-        "va": "Prova una solució en context real. Els pilotatges permeten assajar metodologies, recursos o tecnologies amb centres, empreses i entitats abans d’escalar-les o transferir-les."
+        "es": "Un **piloto** es un ensayo acotado de una solución —metodología, herramienta, recurso o tecnología— en un contexto educativo o productivo real. En AI-STEAM, los pilotos no son experimentos aislados: se diseñan con al menos dos tipos de entidades (centro, empresa, institución, agente social), tienen hipótesis claras, métricas definidas y condiciones de escalado o transferencia. El piloto *prueba antes de comprometer* y convierte la incertidumbre en aprendizaje documentado.",
+        "en": "A **pilot** is a bounded trial of a solution — a method, tool, resource or technology — in a real educational or productive context. In AI-STEAM, pilots are not isolated experiments: they are co-designed with at least two types of organisation (school, company, institution, social actor), have clear hypotheses, defined metrics and scaling or transfer conditions. A pilot *tests before committing* and turns uncertainty into documented learning.",
+        "va": "Un **pilot** és un assaig acotat d'una solució —metodologia, eina, recurs o tecnologia— en un context educatiu o productiu real. En AI-STEAM, els pilots no són experiments aïllats: es co-dissenyen amb almenys dos tipus d'entitats (centre, empresa, institució, agent social), tenen hipòtesis clares, mètriques definides i condicions d'escalat o transferència. El pilot *prova abans de comprometre's* i converteix la incertesa en aprenentatge documentat."
       },
       "ctaLabel": {
         "es": "Ver pilotos",
@@ -287,9 +279,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Validacions"
       },
       "intro": {
-        "es": "Contrasta una propuesta antes de hacerla crecer. Las validaciones ayudan a decidir si una necesidad, recurso o línea de trabajo tiene encaje, viabilidad y recorrido dentro de AI-STEAM.",
-        "en": "Test the value of a proposal before taking it further. Validations help decide whether a need, resource or work line is relevant, feasible and suitable for AI-STEAM.",
-        "va": "Contrasta una proposta abans de fer-la créixer. Les validacions ajuden a decidir si una necessitat, recurs o línia de treball té encaix, viabilitat i recorregut dins d’AI-STEAM."
+        "es": "Una **validación** es el proceso por el que la red evalúa si una propuesta —un recurso, una idea de colaboración o una línea de trabajo— tiene encaje, viabilidad y valor antes de invertir más esfuerzo en ella. En AI-STEAM, las validaciones son *deliberadas y colectivas*: aplican criterios explícitos, involucran a expertos con perspectivas complementarias y producen un dictamen razonado con recomendaciones concretas. Validar antes de pilotar ahorra tiempo y orienta mejor la inversión de la red.",
+        "en": "A **validation** is the process by which the network assesses whether a proposal — a resource, collaboration idea or work line — is relevant, feasible and valuable before investing further effort in it. In AI-STEAM, validations are *deliberate and collective*: they apply explicit criteria, involve experts with complementary perspectives and produce a reasoned verdict with concrete recommendations. Validating before piloting saves time and better guides the network's investment.",
+        "va": "Una **validació** és el procés pel qual la xarxa avalua si una proposta —un recurs, una idea de col·laboració o una línia de treball— té encaix, viabilitat i valor abans d'invertir-hi més esforç. En AI-STEAM, les validacions són *deliberades i col·lectives*: apliquen criteris explícits, involucren experts amb perspectives complementàries i produeixen un dictamen raonat amb recomanacions concretes. Validar abans de pilotar estalvia temps i orienta millor la inversió de la xarxa."
       },
       "ctaLabel": {
         "es": "Ver validaciones",
@@ -346,9 +338,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Mentories"
       },
       "intro": {
-        "es": "Da forma a tu idea antes de publicarla. Las mentorías ayudan a convertir una necesidad inicial en un reto, caso, recurso o propuesta clara, útil y preparada para la comunidad.",
-        "en": "Shape your idea before publishing it. Mentoring helps turn an initial need into a clear and useful challenge, case, resource or proposal ready for the community.",
-        "va": "Dona forma a la teua idea abans de publicar-la. Les mentories ajuden a convertir una necessitat inicial en un repte, cas, recurs o proposta clara, útil i preparada per a la comunitat."
+        "es": "Una **mentoría** es un acompañamiento experto para ayudar a una entidad a dar forma a una idea o necesidad antes de formalizarla como reto, caso o piloto. En AI-STEAM, las mentorías no son consultoría ni garantía de resultado: son *sesiones de trabajo estructuradas* donde un equipo con experiencia en la red ayuda a clarificar el problema, identificar el tipo de colaboración más adecuado y preparar una propuesta sólida. El objetivo es que nadie entre en la comunidad sin saber qué pide ni por qué.",
+        "en": "A **mentoring** engagement is expert accompaniment to help an organisation shape an idea or need before formalising it as a challenge, case or pilot. In AI-STEAM, mentoring is neither consultancy nor a guarantee of outcome: it is a set of *structured working sessions* where a team with network experience helps clarify the problem, identify the most appropriate type of collaboration and prepare a solid proposal. The aim is that no one enters the community without knowing what they are asking for or why.",
+        "va": "Una **mentoria** és un acompanyament expert per ajudar una entitat a donar forma a una idea o necessitat abans de formalitzar-la com a repte, cas o pilot. En AI-STEAM, les mentories no són consultoria ni garantia de resultat: són *sessions de treball estructurades* on un equip amb experiència a la xarxa ajuda a clarificar el problema, identificar el tipus de col·laboració més adequat i preparar una proposta sòlida. L'objectiu és que ningú entre a la comunitat sense saber què demana ni per què."
       },
       "ctaLabel": {
         "es": "Solicitar mentoría",
@@ -3635,9 +3627,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "IA para la personalización de itinerarios formativos en ciclos de FP",
-          "en": "AI for personalising learning pathways in VET cycles",
-          "va": "IA per a la personalització d'itineraris formatius en cicles de FP"
+          "es": "[DEMO] IA para la personalización de itinerarios formativos en ciclos de FP",
+          "en": "[DEMO] AI for personalising learning pathways in VET cycles",
+          "va": "[DEMO] IA per a la personalització d'itineraris formatius en cicles de FP"
         },
         "summary": {
           "es": "CEICE convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
@@ -3940,9 +3932,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "IA generativa y creativa para turismo, cultura e industrias creativas",
-          "en": "Generative and creative AI for tourism, culture and creative industries",
-          "va": "IA generativa i creativa per a turisme, cultura i indústries creatives"
+          "es": "[DEMO] IA generativa y creativa para turismo, cultura e industrias creativas",
+          "en": "[DEMO] Generative and creative AI for tourism, culture and creative industries",
+          "va": "[DEMO] IA generativa i creativa per a turisme, cultura i indústries creatives"
         },
         "summary": {
           "es": "Acompañamiento para empresas turísticas, entidades culturales, museos y agencias creativas que quieren integrar IA generativa (texto, imagen, audio, vídeo) en sus productos, servicios o procesos creativos, orientándose sobre herramientas adecuadas a su escala, derechos de autor en contenidos generados por IA, y cómo usar la IA sin perder la identidad creativa de la organización.",
@@ -4279,9 +4271,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Mentoría — Cómo incorporar una administración pública al ecosistema AI-STEAM",
-          "en": "Mentoring — How to bring a public administration into the AI-STEAM ecosystem",
-          "va": "Mentoria — Com incorporar una administració pública a l'ecosistema AI-STEAM"
+          "es": "[DEMO] Mentoría — Cómo incorporar una administración pública al ecosistema AI-STEAM",
+          "en": "[DEMO] Mentoring — How to bring a public administration into the AI-STEAM ecosystem",
+          "va": "[DEMO] Mentoria — Com incorporar una administració pública a l'ecosistema AI-STEAM"
         },
         "summary": {
           "es": "Acompañamiento para organismos públicos, entidades locales y consorcios interadministrativos que quieren participar activamente en el ecosistema AI-STEAM — como demandantes de retos, financiadores de pilotos o entornos de validación — y necesitan orientación sobre roles posibles, compromisos esperados, gestión de datos públicos y encaje con sus procedimientos administrativos habituales.",
@@ -4599,9 +4591,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Mentoría — Replicación de casos AI-STEAM en el sector agroalimentario",
-          "en": "Mentoring — Replicating AI-STEAM cases in the agri-food sector",
-          "va": "Mentoria — Replicació de casos AI-STEAM en el sector agroalimentari"
+          "es": "[DEMO] Mentoría — Replicación de casos AI-STEAM en el sector agroalimentario",
+          "en": "[DEMO] Mentoring — Replicating AI-STEAM cases in the agri-food sector",
+          "va": "[DEMO] Mentoria — Replicació de casos AI-STEAM en el sector agroalimentari"
         },
         "summary": {
           "es": "Acompañamiento para cooperativas agrícolas, agroindustrias y centros de FP agroalimentaria que quieren replicar un caso AI-STEAM verificado en su propio contexto — adaptando los datos, el entorno productivo y las condiciones de formación — sin tener que rediseñar el proyecto desde cero.",
@@ -4919,9 +4911,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Mentoría — De la investigación al aula de FP: transferencia de resultados con IA",
-          "en": "Mentoring — From research to the VET classroom: AI results transfer",
-          "va": "Mentoria — De la recerca a l'aula de FP: transferència de resultats amb IA"
+          "es": "[DEMO] Mentoría — De la investigación al aula de FP: transferencia de resultados con IA",
+          "en": "[DEMO] Mentoring — From research to the VET classroom: AI results transfer",
+          "va": "[DEMO] Mentoria — De la recerca a l'aula de FP: transferència de resultats amb IA"
         },
         "summary": {
           "es": "Acompañamiento para grupos de investigación universitarios y tecnológicos que quieren transferir sus resultados de IA al sistema de FP, adaptando sus metodologías, datasets o herramientas a contextos formativos accesibles para docentes y alumnos sin perfil investigador, y construyendo el caso de valor pedagógico que justifique la colaboración con centros educativos.",
@@ -5239,9 +5231,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Mentoría — Ética de la IA en proyectos educativos y formativos",
-          "en": "Mentoring — AI ethics in educational and training projects",
-          "va": "Mentoria — Ètica de la IA en projectes educatius i formatius"
+          "es": "[DEMO] Mentoría — Ética de la IA en proyectos educativos y formativos",
+          "en": "[DEMO] Mentoring — AI ethics in educational and training projects",
+          "va": "[DEMO] Mentoria — Ètica de la IA en projectes educatius i formatius"
         },
         "summary": {
           "es": "Acompañamiento para docentes, equipos de centro y entidades educativas que introducen IA en sus prácticas formativas y necesitan una revisión ética básica — uso de datos de alumnos, sesgos algorítmicos, transparencia con las familias, IA generativa en el aula — antes de implantar o publicar sus proyectos.",
@@ -5559,9 +5551,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Mentoría — Soporte técnico para implementar IA en entornos sanitarios y sociosanitarios",
-          "en": "Mentoring — Technical support for AI implementation in health and social care settings",
-          "va": "Mentoria — Suport tècnic per implementar IA en entorns sanitaris i sociosanitaris"
+          "es": "[DEMO] Mentoría — Soporte técnico para implementar IA en entornos sanitarios y sociosanitarios",
+          "en": "[DEMO] Mentoring — Technical support for AI implementation in health and social care settings",
+          "va": "[DEMO] Mentoria — Suport tècnic per implementar IA en entorns sanitaris i sociosanitaris"
         },
         "summary": {
           "es": "Acompañamiento técnico para equipos de FP sanitaria, centros de salud y entidades sociosanitarias que quieren implementar un sistema de IA (diagnóstico asistido, triaje automatizado, analítica de pacientes) y necesitan orientación sobre arquitectura de datos, selección de modelos y cumplimiento normativo sanitario antes de lanzar el proyecto.",
@@ -5879,9 +5871,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
-          "en": "AI for dermatological diagnosis support in Health VET settings",
-          "va": "IA per al suport al diagnòstic dermatològic en entorns de FP Sanitari"
+          "es": "[DEMO] IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
+          "en": "[DEMO] AI for dermatological diagnosis support in Health VET settings",
+          "va": "[DEMO] IA per al suport al diagnòstic dermatològic en entorns de FP Sanitari"
         },
         "summary": {
           "es": "Validación de un módulo de IA para la clasificación de lesiones cutáneas sospechosas (malignas/benignas) a partir de imágenes dermoscópicas, integrado en el itinerario formativo del ciclo de Imagen para el Diagnóstico de FP Sanitario, con supervisión clínica del Hospital La Fe y evaluación de competencias digitales en salud.",
@@ -6244,9 +6236,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Living Lab — IA para la gestión energética adaptativa en edificio universitario",
-          "en": "Living Lab — AI for adaptive energy management in a university building",
-          "va": "Living Lab — IA per a la gestió energètica adaptativa en edifici universitari"
+          "es": "[DEMO] Living Lab — IA para la gestión energética adaptativa en edificio universitario",
+          "en": "[DEMO] Living Lab — AI for adaptive energy management in a university building",
+          "va": "[DEMO] Living Lab — IA per a la gestió energètica adaptativa en edifici universitari"
         },
         "summary": {
           "es": "La Universitat Politècnica de València convierte el edificio 4I de la ETSII en un Living Lab donde alumnos de máster y FP de Instalaciones Eléctricas trabajan junto a ingenieros de Siemens Smart Infrastructure para entrenar y validar un sistema de gestión energética adaptativa basado en aprendizaje por refuerzo, con el objetivo de reducir el consumo eléctrico del edificio en un 20% sin pérdida de confort.",
@@ -6598,9 +6590,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Mentoría — Diseño de pilotos de colaboración FP-empresa con IA",
-          "en": "Mentoring — Designing VET-industry AI collaboration pilots",
-          "va": "Mentoria — Disseny de pilots de col·laboració FP-empresa amb IA"
+          "es": "[DEMO] Mentoría — Diseño de pilotos de colaboración FP-empresa con IA",
+          "en": "[DEMO] Mentoring — Designing VET-industry AI collaboration pilots",
+          "va": "[DEMO] Mentoria — Disseny de pilots de col·laboració FP-empresa amb IA"
         },
         "summary": {
           "es": "Acompañamiento para centros de FP y empresas que quieren co-diseñar un piloto educativo real donde los alumnos trabajen con datos, herramientas o entornos industriales con IA, definiendo hipótesis, metodología, métricas de éxito y condiciones de transferibilidad desde el primer momento.",
@@ -6918,9 +6910,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "prototype",
         "title": {
-          "es": "Chatbot de atención ciudadana con IA generativa para ayuntamientos pequeños",
-          "en": "Generative AI citizen-service chatbot for small municipalities",
-          "va": "Chatbot d'atenció ciutadana amb IA generativa per a ajuntaments menuts"
+          "es": "[DEMO] Chatbot de atención ciudadana con IA generativa para ayuntamientos pequeños",
+          "en": "[DEMO] Generative AI citizen-service chatbot for small municipalities",
+          "va": "[DEMO] Chatbot d'atenció ciutadana amb IA generativa per a ajuntaments menuts"
         },
         "summary": {
           "es": "La Diputación de Valencia convoca a equipos de FP, universidades y startups para diseñar un chatbot de atención ciudadana basado en IA generativa que responda preguntas sobre trámites municipales en castellano, valenciano e inglés, utilizando únicamente documentación oficial pública y sin riesgo de alucinaciones en respuestas con consecuencias legales.",
@@ -7221,9 +7213,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Mentoría — Cómo formular un reto industrial para el ecosistema AI-STEAM",
-          "en": "Mentoring — How to frame an industrial challenge for the AI-STEAM ecosystem",
-          "va": "Mentoria — Com formular un repte industrial per a l'ecosistema AI-STEAM"
+          "es": "[DEMO] Mentoría — Cómo formular un reto industrial para el ecosistema AI-STEAM",
+          "en": "[DEMO] Mentoring — How to frame an industrial challenge for the AI-STEAM ecosystem",
+          "va": "[DEMO] Mentoria — Com formular un repte industrial per a l'ecosistema AI-STEAM"
         },
         "summary": {
           "es": "Acompañamiento para empresas industriales y pymes tecnológicas que quieren convertir una necesidad de innovación o una brecha de talento en un reto bien formulado, publicable en el Marketplace AI-STEAM y orientado a obtener prototipos, datos o metodologías de la comunidad de práctica.",
@@ -7541,9 +7533,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Sistema de análisis de sentimiento multilingüe para la gestión de la reputación turística",
-          "en": "Multilingual sentiment analysis system for tourism reputation management",
-          "va": "Sistema d'anàlisi de sentiment multilingüe per a la gestió de la reputació turística"
+          "es": "[DEMO] Sistema de análisis de sentimiento multilingüe para la gestión de la reputación turística",
+          "en": "[DEMO] Multilingual sentiment analysis system for tourism reputation management",
+          "va": "[DEMO] Sistema d'anàlisi de sentiment multilingüe per a la gestió de la reputació turística"
         },
         "summary": {
           "es": "Turisme Comunitat Valenciana convoca a equipos para crear un sistema de análisis de reseñas turísticas en múltiples idiomas y plataformas que identifique tendencias de satisfacción, detecte problemas emergentes por destino y genere informes automáticos para gestores municipales de turismo, reduciendo el tiempo de análisis manual de 40 horas semanales a menos de 2.",
@@ -7842,9 +7834,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Escalado de sistema de monitorización energética con IA desde edificio piloto a red de viviendas sociales",
-          "en": "Scaling of AI-powered energy monitoring system from pilot building to social housing network",
-          "va": "Escalat de sistema de monitorització energètica amb IA des d'edifici pilot a xarxa d'habitatges socials"
+          "es": "[DEMO] Escalado de sistema de monitorización energética con IA desde edificio piloto a red de viviendas sociales",
+          "en": "[DEMO] Scaling of AI-powered energy monitoring system from pilot building to social housing network",
+          "va": "[DEMO] Escalat de sistema de monitorització energètica amb IA des d'edifici pilot a xarxa d'habitatges socials"
         },
         "summary": {
           "es": "El sistema de monitorización y predicción de consumo energético desarrollado por la UPV para el edificio 5I del campus fue escalado para su aplicación en 240 viviendas de protección oficial gestionadas por la Entitat Valenciana d'Habitatge.",
@@ -8181,9 +8173,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Piloto FP — IA para eficiencia energética en centros educativos",
-          "en": "VET Pilot — AI for energy efficiency in educational centres",
-          "va": "Pilot FP — IA per a l'eficiència energètica en centres educatius"
+          "es": "[DEMO] Piloto FP — IA para eficiencia energética en centros educativos",
+          "en": "[DEMO] VET Pilot — AI for energy efficiency in educational centres",
+          "va": "[DEMO] Pilot FP — IA per a l'eficiència energètica en centres educatius"
         },
         "summary": {
           "es": "Módulo OER de eficiencia energética con IA pilotado con alumnado de FP en IES La Costera.",
@@ -8527,9 +8519,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "prototype",
         "title": {
-          "es": "Gemelo digital para la gestión predictiva de la red eléctrica urbana",
-          "en": "Digital twin for predictive urban electricity grid management",
-          "va": "Bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
+          "es": "[DEMO] Gemelo digital para la gestión predictiva de la red eléctrica urbana",
+          "en": "[DEMO] Digital twin for predictive urban electricity grid management",
+          "va": "[DEMO] Bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
         },
         "summary": {
           "es": "Endesa Distribución busca equipos de centros educativos y empresas tecnológicas que desarrollen un prototipo de gemelo digital capaz de predecir sobrecargas en la red eléctrica de barrios valencianos con alta penetración de instalaciones fotovoltaicas, utilizando datos abiertos de consumo y generación.",
@@ -8829,9 +8821,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "prototype",
         "title": {
-          "es": "Optimización de rutas de última milla con IA para logística urbana sostenible",
-          "en": "AI-driven last-mile route optimisation for sustainable urban logistics",
-          "va": "Optimització de rutes d'última milla amb IA per a logística urbana sostenible"
+          "es": "[DEMO] Optimización de rutas de última milla con IA para logística urbana sostenible",
+          "en": "[DEMO] AI-driven last-mile route optimisation for sustainable urban logistics",
+          "va": "[DEMO] Optimització de rutes d'última milla amb IA per a logística urbana sostenible"
         },
         "summary": {
           "es": "Correos y el Ayuntamiento de Valencia buscan soluciones de IA para optimizar las rutas de reparto de última milla en el centro histórico, combinando datos de tráfico en tiempo real, restricciones de acceso a zonas de bajas emisiones, disponibilidad de puntos de consigna y preferencias de entrega de los destinatarios, con el objetivo de reducir las emisiones de CO₂ un 25% en 18 meses.",
@@ -9130,9 +9122,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
-          "en": "Use of AI for candidate screening in public administration selection processes",
-          "va": "Ús d'IA per al cribratge de candidats en processos selectius de l'administració pública"
+          "es": "[DEMO] Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
+          "en": "[DEMO] Use of AI for candidate screening in public administration selection processes",
+          "va": "[DEMO] Ús d'IA per al cribratge de candidats en processos selectius de l'administració pública"
         },
         "summary": {
           "es": "Validación ética de una propuesta de sistema de IA para el cribado automático de candidatos en oposiciones y concursos de méritos de la administración pública valenciana. La validación concluye con una recomendación de reformulación sustancial antes de poder considerarse apto para piloto.",
@@ -9459,9 +9451,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Narrativas digitales con IA generativa: del museo al aula de formación artística",
-          "en": "Digital narratives with generative AI: from the museum to the arts education classroom",
-          "va": "Narratives digitals amb IA generativa: del museu a l'aula de formació artística"
+          "es": "[DEMO] Narrativas digitales con IA generativa: del museo al aula de formación artística",
+          "en": "[DEMO] Digital narratives with generative AI: from the museum to the arts education classroom",
+          "va": "[DEMO] Narratives digitals amb IA generativa: del museu a l'aula de formació artística"
         },
         "summary": {
           "es": "El IVAM adaptó su programa interno de creación de narrativas digitales con IA generativa para que docentes y estudiantes del Máster en Educación Artística pudieran usarlo como metodología en sus propias aulas.",
@@ -9777,9 +9769,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Co-diseñar un campus verde con IA generativa y prácticas STEAM",
-          "en": "Co-designing a green campus with generative AI and STEAM practices",
-          "va": "Codissenyar un campus verd amb IA generativa i pràctiques STEAM"
+          "es": "[DEMO] Co-diseñar un campus verde con IA generativa y prácticas STEAM",
+          "en": "[DEMO] Co-designing a green campus with generative AI and STEAM practices",
+          "va": "[DEMO] Codissenyar un campus verd amb IA generativa i pràctiques STEAM"
         },
         "summary": {
           "es": "Una institución educativa busca ideas aplicables para reducir consumo energético y mejorar espacios de aprendizaje mediante IA, datos y creatividad.",
@@ -10081,9 +10073,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Herramienta de auditoría energética doméstica con IA adaptada a FP de Edificación",
-          "en": "AI-powered home energy audit tool adapted to Building and Construction VET",
-          "va": "Eina d'auditoria energètica domèstica amb IA adaptada a FP d'Edificació"
+          "es": "[DEMO] Herramienta de auditoría energética doméstica con IA adaptada a FP de Edificación",
+          "en": "[DEMO] AI-powered home energy audit tool adapted to Building and Construction VET",
+          "va": "[DEMO] Eina d'auditoria energètica domèstica amb IA adaptada a FP d'Edificació"
         },
         "summary": {
           "es": "La empresa valenciana Enertika desarrolló una herramienta de auditoría energética doméstica basada en IA que procesa facturas de suministro, fotos de fachada y datos de ocupación para generar un informe automático de mejora con ROI. Fue adaptada como proyecto de aprendizaje para el ciclo de Proyectos de Obra Civil y Edificación de FP, con datos reales anonimizados de 300 auditorías en la Comunitat Valenciana.",
@@ -10398,9 +10390,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "IA para detección temprana de plagas en cultivos: adaptación del modelo IVIA a FP Agroalimentario",
-          "en": "AI for early crop pest detection: adapting the IVIA model for Agrifood VET",
-          "va": "IA per a detecció primerenca de plagues en cultius: adaptació del model IVIA a FP Agroalimentari"
+          "es": "[DEMO] IA para detección temprana de plagas en cultivos: adaptación del modelo IVIA a FP Agroalimentario",
+          "en": "[DEMO] AI for early crop pest detection: adapting the IVIA model for Agrifood VET",
+          "va": "[DEMO] IA per a detecció primerenca de plagues en cultius: adaptació del model IVIA a FP Agroalimentari"
         },
         "summary": {
           "es": "El modelo de visión por computador del IVIA para detección de Tuta absoluta en tomate fue adaptado para su uso didáctico en ciclos de FP de producción agropecuaria y jardinería.",
@@ -10717,9 +10709,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "pilot",
         "title": {
-          "es": "Control de calidad visual con IA en línea de producción de componentes cerámicos",
-          "en": "AI visual quality control on ceramic component production line",
-          "va": "Control de qualitat visual amb IA en línia de producció de components ceràmics"
+          "es": "[DEMO] Control de calidad visual con IA en línea de producción de componentes cerámicos",
+          "en": "[DEMO] AI visual quality control on ceramic component production line",
+          "va": "[DEMO] Control de qualitat visual amb IA en línia de producció de components ceràmics"
         },
         "summary": {
           "es": "Pamesa Cerámica busca un sistema de visión artificial capaz de detectar defectos superficiales (grietas, burbujas, irregularidades de esmalte) en baldosas cerámicas a velocidades de producción de 80 piezas por minuto, superando la tasa de detección humana actual del 94% y reduciendo el desperdicio de material en un 15%.",
@@ -11021,9 +11013,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Simulación de conducción autónoma adaptada al ciclo de FP de Transporte",
-          "en": "Autonomous driving simulation adapted to Transport VET cycle",
-          "va": "Simulació de conducció autònoma adaptada al cicle de FP de Transport"
+          "es": "[DEMO] Simulación de conducción autónoma adaptada al ciclo de FP de Transporte",
+          "en": "[DEMO] Autonomous driving simulation adapted to Transport VET cycle",
+          "va": "[DEMO] Simulació de conducció autònoma adaptada al cicle de FP de Transport"
         },
         "summary": {
           "es": "Renault España trasladó su entorno de simulación de conducción autónoma (CARLA + ROS 2) para la validación de ADAS a cinco centros de FP de Transporte y Logística, permitiendo a los alumnos programar y evaluar comportamientos de vehículo autónomo en escenarios de ciudad española sin infraestructura de hardware avanzada.",
@@ -11339,9 +11331,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Piloto — Drones con IA para la inspección automatizada de infraestructuras viarias",
-          "en": "Pilot — AI drones for automated road infrastructure inspection",
-          "va": "Pilot — Drons amb IA per a la inspecció automatitzada d'infraestructures viàries"
+          "es": "[DEMO] Piloto — Drones con IA para la inspección automatizada de infraestructuras viarias",
+          "en": "[DEMO] Pilot — AI drones for automated road infrastructure inspection",
+          "va": "[DEMO] Pilot — Drons amb IA per a la inspecció automatitzada d'infraestructures viàries"
         },
         "summary": {
           "es": "Validación de un sistema de inspección autónoma de carreteras y puentes mediante drones equipados con visión artificial para detectar grietas, baches y deterioro superficial, desarrollado junto al IVACE y tres centros de FP de Transporte, que reduce el tiempo de inspección manual de un tramo de 10 km de 8 horas a 45 minutos.",
@@ -11693,9 +11685,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Drones y agricultura de precisión con IA para índices NDVI transferidos a FP Agraria",
-          "en": "Drones and AI-based precision agriculture with NDVI indices transferred to Agrarian VET",
-          "va": "Drons i agricultura de precisió amb IA per a índexs NDVI transferits a FP Agrària"
+          "es": "[DEMO] Drones y agricultura de precisión con IA para índices NDVI transferidos a FP Agraria",
+          "en": "[DEMO] Drones and AI-based precision agriculture with NDVI indices transferred to Agrarian VET",
+          "va": "[DEMO] Drons i agricultura de precisió amb IA per a índexs NDVI transferits a FP Agrària"
         },
         "summary": {
           "es": "La cooperativa agrícola Anecoop desarrolló un flujo de trabajo completo de telemetría de drones + análisis de imágenes multiespectrales + modelos de IA para mapas NDVI que fue transformado en un módulo formativo para el ciclo de Gestión Forestal y del Medio Natural y de Producción Agropecuaria de FP Agraria, con datos reales de campos de cítricos de la Comunitat Valenciana.",
@@ -12026,9 +12018,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Mentoría para briefs creativos con IA responsable",
-          "en": "Mentoring for responsible AI creative briefs",
-          "va": "Mentoria per a briefs creatius amb IA responsable"
+          "es": "[DEMO] Mentoría para briefs creativos con IA responsable",
+          "en": "[DEMO] Mentoring for responsible AI creative briefs",
+          "va": "[DEMO] Mentoria per a briefs creatius amb IA responsable"
         },
         "summary": {
           "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
@@ -12346,9 +12338,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "IA para la detección temprana de plagas y enfermedades en cítricos valencianos",
-          "en": "AI for early detection of pests and diseases in Valencian citrus crops",
-          "va": "IA per a la detecció primerenca de plagues i malalties en cítrics valencians"
+          "es": "[DEMO] IA para la detección temprana de plagas y enfermedades en cítricos valencianos",
+          "en": "[DEMO] AI for early detection of pests and diseases in Valencian citrus crops",
+          "va": "[DEMO] IA per a la detecció primerenca de plagues i malalties en cítrics valencians"
         },
         "summary": {
           "es": "La Cooperativa Agrícola de Castellón busca soluciones de visión artificial capaces de identificar síntomas iniciales de las principales plagas y enfermedades del naranjo y limonero a partir de imágenes tomadas con smartphone, antes de que sean visibles a simple vista, reduciendo el uso de fitosanitarios.",
@@ -12648,9 +12640,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Gemelo digital de instalación fotovoltaica en FP de Energía",
-          "en": "Digital twin of photovoltaic installation for Energy VET",
-          "va": "Bessó digital d'instal·lació fotovoltaica en FP d'Energia"
+          "es": "[DEMO] Gemelo digital de instalación fotovoltaica en FP de Energía",
+          "en": "[DEMO] Digital twin of photovoltaic installation for Energy VET",
+          "va": "[DEMO] Bessó digital d'instal·lació fotovoltaica en FP d'Energia"
         },
         "summary": {
           "es": "La empresa Solarius Energy trasladó su modelo de gemelo digital de una instalación solar de 50 kWp a tres centros de FP de la familia de Electricidad y Energía, permitiendo simular fallos, optimizar configuraciones y calcular retornos de inversión sin hardware real.",
@@ -12980,9 +12972,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Validación legal — Uso de datos de movilidad urbana de Correos para el reto de optimización de rutas",
-          "en": "Legal validation — Use of Correos urban mobility data for the route optimisation challenge",
-          "va": "Validació legal — Ús de dades de mobilitat urbana de Correos per al repte d'optimització de rutes"
+          "es": "[DEMO] Validación legal — Uso de datos de movilidad urbana de Correos para el reto de optimización de rutas",
+          "en": "[DEMO] Legal validation — Use of Correos urban mobility data for the route optimisation challenge",
+          "va": "[DEMO] Validació legal — Ús de dades de mobilitat urbana de Correos per al repte d'optimització de rutes"
         },
         "summary": {
           "es": "Validación legal del marco de cesión y anonimización de los datos de rutas y entregas de Correos necesarios para el reto de optimización de última milla, confirmando la viabilidad de la cesión bajo el RGPD y estableciendo las condiciones específicas de anonimización y uso que deben incluirse en las bases del reto.",
@@ -13299,9 +13291,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Validación técnica — Viabilidad del gemelo digital para la gestión predictiva de la red eléctrica urbana",
-          "en": "Technical validation — Feasibility of digital twin for predictive urban electricity grid management",
-          "va": "Validació tècnica — Viabilitat de la bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
+          "es": "[DEMO] Validación técnica — Viabilidad del gemelo digital para la gestión predictiva de la red eléctrica urbana",
+          "en": "[DEMO] Technical validation — Feasibility of digital twin for predictive urban electricity grid management",
+          "va": "[DEMO] Validació tècnica — Viabilitat de la bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
         },
         "summary": {
           "es": "Validación técnica del reto de gemelo digital para la red eléctrica promovido por Endesa Distribución, confirmando la viabilidad de CARLA y ROS 2 como stack tecnológico y la disponibilidad de datos SCADA anonimizables para el desarrollo del prototipo.",
@@ -13618,9 +13610,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Realidad aumentada para mediación cultural en museos adaptada a FP de Arte y Diseño",
-          "en": "Augmented reality for cultural mediation in museums adapted to Art and Design VET",
-          "va": "Realitat augmentada per a mediació cultural en museus adaptada a FP d'Art i Disseny"
+          "es": "[DEMO] Realidad aumentada para mediación cultural en museos adaptada a FP de Arte y Diseño",
+          "en": "[DEMO] Augmented reality for cultural mediation in museums adapted to Art and Design VET",
+          "va": "[DEMO] Realitat augmentada per a mediació cultural en museus adaptada a FP d'Art i Disseny"
         },
         "summary": {
           "es": "El Museu de Belles Arts de València desarrolló un sistema de mediación cultural con realidad aumentada (AR) que superpone contexto histórico, restauraciones virtuales y rutas personalizadas sobre obras del museo. Fue adaptado como proyecto integrador para el ciclo de Animación 3D, Juegos y Entornos Interactivos de FP, con acceso al SDK de AR y a tres obras del fondo permanente como casos prácticos.",
@@ -13937,9 +13929,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Mantenimiento predictivo con ML en industria auxiliar del automóvil transferido a FP",
-          "en": "ML-based predictive maintenance in the automotive supply industry transferred to VET",
-          "va": "Manteniment predictiu amb ML en indústria auxiliar de l'automòbil transferit a FP"
+          "es": "[DEMO] Mantenimiento predictivo con ML en industria auxiliar del automóvil transferido a FP",
+          "en": "[DEMO] ML-based predictive maintenance in the automotive supply industry transferred to VET",
+          "va": "[DEMO] Manteniment predictiu amb ML en indústria auxiliar de l'automòbil transferit a FP"
         },
         "summary": {
           "es": "Grupo Antolin adaptó su sistema de mantenimiento predictivo basado en ML (sensores vibración + modelos LSTM) para convertirlo en un caso de estudio formativo para el ciclo de Mantenimiento de Instalaciones y Sistemas de FP, con datos reales anonimizados de 4 líneas de producción.",
@@ -14269,9 +14261,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Validación stakeholder — Necesidad de personalización con IA en la oferta turística valenciana",
-          "en": "Stakeholder validation — Need for AI personalisation in the Valencian tourism offer",
-          "va": "Validació stakeholder — Necessitat de personalització amb IA en l'oferta turística valenciana"
+          "es": "[DEMO] Validación stakeholder — Necesidad de personalización con IA en la oferta turística valenciana",
+          "en": "[DEMO] Stakeholder validation — Need for AI personalisation in the Valencian tourism offer",
+          "va": "[DEMO] Validació stakeholder — Necessitat de personalització amb IA en l'oferta turística valenciana"
         },
         "summary": {
           "es": "Validación con la Agència Valenciana del Turisme, asociaciones hoteleras y plataformas de reservas de la demanda real de sistemas de personalización de experiencias turísticas con IA, que derivó en la publicación del reto de análisis de sentimiento y en el inicio de dos pilotos de personalización de recomendaciones en destinos piloto de la Costa Blanca.",
@@ -14588,9 +14580,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Integración de cobots colaborativos en soldadura para FP Industrial",
-          "en": "Collaborative cobot integration in welding for Industrial VET",
-          "va": "Integració de cobots col·laboratius en soldadura per a FP Industrial"
+          "es": "[DEMO] Integración de cobots colaborativos en soldadura para FP Industrial",
+          "en": "[DEMO] Collaborative cobot integration in welding for Industrial VET",
+          "va": "[DEMO] Integració de cobots col·laboratius en soldadura per a FP Industrial"
         },
         "summary": {
           "es": "Transferencia de la experiencia de IVECO Valencia en robótica colaborativa hacia centros de FP de fabricación, con protocolo de seguridad y currículo adaptado.",
@@ -14905,9 +14897,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Validación pedagógica — Integración de visión artificial en ciclos de FP de Fabricación Mecánica",
-          "en": "Pedagogical validation — Integration of computer vision in Mechanical Manufacturing VET cycles",
-          "va": "Validació pedagògica — Integració de visió artificial en cicles de FP de Fabricació Mecànica"
+          "es": "[DEMO] Validación pedagógica — Integración de visión artificial en ciclos de FP de Fabricación Mecánica",
+          "en": "[DEMO] Pedagogical validation — Integration of computer vision in Mechanical Manufacturing VET cycles",
+          "va": "[DEMO] Validació pedagògica — Integració de visió artificial en cicles de FP de Fabricació Mecànica"
         },
         "summary": {
           "es": "Validación del encaje curricular de un módulo de visión artificial para control de calidad en los ciclos de FP de Fabricación Mecánica y Mecatrónica, confirmando la pertinencia pedagógica y definiendo los requisitos de formación docente necesarios para la implantación autónoma.",
@@ -15224,9 +15216,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Formación Docente — Análisis de sesgos en IA para profesorado de Máster",
-          "en": "Teacher Training — AI bias analysis for Master's programme faculty",
-          "va": "Formació Docent — Anàlisi de biaixos en IA per a professorat de Màster"
+          "es": "[DEMO] Formación Docente — Análisis de sesgos en IA para profesorado de Máster",
+          "en": "[DEMO] Teacher Training — AI bias analysis for Master's programme faculty",
+          "va": "[DEMO] Formació Docent — Anàlisi de biaixos en IA per a professorat de Màster"
         },
         "summary": {
           "es": "Taller intensivo para profesorado universitario sobre detección y mitigación de sesgos algorítmicos en modelos de IA usados en contextos educativos.",
@@ -15570,9 +15562,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Programa de capacitación docente en movilidad sostenible e inteligencia artificial",
-          "en": "Teacher training programme in sustainable mobility and artificial intelligence",
-          "va": "Programa de capacitació docent en mobilitat sostenible i intel·ligència artificial"
+          "es": "[DEMO] Programa de capacitación docente en movilidad sostenible e inteligencia artificial",
+          "en": "[DEMO] Teacher training programme in sustainable mobility and artificial intelligence",
+          "va": "[DEMO] Programa de capacitació docent en mobilitat sostenible i intel·ligència artificial"
         },
         "summary": {
           "es": "La Conselleria y los CEFIREs diseñaron un itinerario de 30 horas para que docentes de secundaria y FP integren datos de movilidad urbana y modelos de IA predictiva en sus asignaturas STEAM.",
@@ -15915,9 +15907,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Validación stakeholder — Necesidad de competencias digitales en salud en la FP Sanitaria valenciana",
-          "en": "Stakeholder validation — Digital health competency needs in Valencian Health VET",
-          "va": "Validació stakeholder — Necessitat de competències digitals en salut en la FP Sanitària valenciana"
+          "es": "[DEMO] Validación stakeholder — Necesidad de competencias digitales en salud en la FP Sanitaria valenciana",
+          "en": "[DEMO] Stakeholder validation — Digital health competency needs in Valencian Health VET",
+          "va": "[DEMO] Validació stakeholder — Necessitat de competències digitals en salut en la FP Sanitària valenciana"
         },
         "summary": {
           "es": "Validación con hospitales públicos, colegios profesionales sanitarios y centros de FP de la Comunitat Valenciana de la brecha de competencias digitales en salud que existe entre la formación recibida en FP Sanitario y las competencias que demandan los entornos clínicos actuales, con clasificación Track A para el máster universitario.",
@@ -16234,9 +16226,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "IA para diagnóstico de imagen médica adaptada a FP Sanitario",
-          "en": "AI for medical image diagnosis adapted to Health VET",
-          "va": "IA per a diagnòstic d'imatge mèdica adaptada a FP Sanitari"
+          "es": "[DEMO] IA para diagnóstico de imagen médica adaptada a FP Sanitario",
+          "en": "[DEMO] AI for medical image diagnosis adapted to Health VET",
+          "va": "[DEMO] IA per a diagnòstic d'imatge mèdica adaptada a FP Sanitari"
         },
         "summary": {
           "es": "El Hospital La Fe de Valencia desarrolló un módulo de formación en IA aplicada a diagnóstico radiológico que ha sido adaptado para el ciclo de Imagen para el Diagnóstico y Medicina Nuclear de FP Sanitario, permitiendo a los alumnos entrenar y evaluar modelos de clasificación de imágenes sin datos clínicos reales.",
@@ -16553,9 +16545,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Piloto FP — Cobots y robótica colaborativa en ciclos de mecatrónica",
-          "en": "VET Pilot — Cobots and collaborative robotics in mechatronics cycles",
-          "va": "Pilot FP — Cobots i robòtica col·laborativa en cicles de mecatrònica"
+          "es": "[DEMO] Piloto FP — Cobots y robótica colaborativa en ciclos de mecatrónica",
+          "en": "[DEMO] VET Pilot — Cobots and collaborative robotics in mechatronics cycles",
+          "va": "[DEMO] Pilot FP — Cobots i robòtica col·laborativa en cicles de mecatrònica"
         },
         "summary": {
           "es": "Integración de cobots industriales en la práctica de taller de FP de Mecatrónica en colaboración con Ford España y tres centros educativos.",
@@ -16899,9 +16891,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Piloto Máster — Puente FP-Máster en IA aplicada a gemelos digitales",
-          "en": "Master Bridge Pilot — VET-to-Master bridge in AI applied to digital twins",
-          "va": "Pilot Pont al Màster — Pont FP-Màster en IA aplicada a bessons digitals"
+          "es": "[DEMO] Piloto Máster — Puente FP-Máster en IA aplicada a gemelos digitales",
+          "en": "[DEMO] Master Bridge Pilot — VET-to-Master bridge in AI applied to digital twins",
+          "va": "[DEMO] Pilot Pont al Màster — Pont FP-Màster en IA aplicada a bessons digitals"
         },
         "summary": {
           "es": "Itinerario de transición entre FP Superior y Máster universitario centrado en gemelos digitales y simulación industrial con IA.",
@@ -17241,9 +17233,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Validación stakeholder — Reto de agricultura de precisión con IA",
-          "en": "Stakeholder validation — Precision agriculture with AI challenge",
-          "va": "Validació stakeholder — Repte d'agricultura de precisió amb IA"
+          "es": "[DEMO] Validación stakeholder — Reto de agricultura de precisión con IA",
+          "en": "[DEMO] Stakeholder validation — Precision agriculture with AI challenge",
+          "va": "[DEMO] Validació stakeholder — Repte d'agricultura de precisió amb IA"
         },
         "summary": {
           "es": "Validación con AVA-ASAJA y UVEG del reto sectorial sobre agricultura de precisión. Clasificado Track A para tratamiento académico en el Máster.",
@@ -17560,9 +17552,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
-          "en": "Reinforcement learning applied to energy management of university buildings",
-          "va": "Aprenentatge per reforç aplicat a la gestió energètica d'edificis universitaris"
+          "es": "[DEMO] Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
+          "en": "[DEMO] Reinforcement learning applied to energy management of university buildings",
+          "va": "[DEMO] Aprenentatge per reforç aplicat a la gestió energètica d'edificis universitaris"
         },
         "summary": {
           "es": "Validación académica por el Instituto de Ingeniería Energética de la UPV y el grupo de investigación SAIL de la UCLM de la pertinencia científica y formativa del uso de aprendizaje por refuerzo para la gestión energética adaptativa en edificios, confirmando su encaje como contenido de máster y justificando la creación del Living Lab como entorno de investigación-formación.",
@@ -17879,9 +17871,9 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "Validación stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
-          "en": "Stakeholder validation — Electric mobility and charging infrastructure challenge",
-          "va": "Validació stakeholder — Repte de mobilitat elèctrica i infraestructura de càrrega"
+          "es": "[DEMO] Validación stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
+          "en": "[DEMO] Stakeholder validation — Electric mobility and charging infrastructure challenge",
+          "va": "[DEMO] Validació stakeholder — Repte de mobilitat elèctrica i infraestructura de càrrega"
         },
         "summary": {
           "es": "Validación con ASEVA y concesionarios valencianos del reto sectorial sobre vehículo eléctrico y formación dual. Clasificado Track B para diseño de módulo FP dual en 2026-27.",
@@ -18201,9 +18193,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "IA para la personalización de itinerarios formativos en ciclos de FP",
-            "en": "AI for personalising learning pathways in VET cycles",
-            "va": "IA per a la personalització d'itineraris formatius en cicles de FP"
+            "es": "[DEMO] IA para la personalización de itinerarios formativos en ciclos de FP",
+            "en": "[DEMO] AI for personalising learning pathways in VET cycles",
+            "va": "[DEMO] IA per a la personalització d'itineraris formatius en cicles de FP"
           },
           "summary": {
             "es": "CEICE convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
@@ -18506,9 +18498,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "prototype",
           "title": {
-            "es": "Chatbot de atención ciudadana con IA generativa para ayuntamientos pequeños",
-            "en": "Generative AI citizen-service chatbot for small municipalities",
-            "va": "Chatbot d'atenció ciutadana amb IA generativa per a ajuntaments menuts"
+            "es": "[DEMO] Chatbot de atención ciudadana con IA generativa para ayuntamientos pequeños",
+            "en": "[DEMO] Generative AI citizen-service chatbot for small municipalities",
+            "va": "[DEMO] Chatbot d'atenció ciutadana amb IA generativa per a ajuntaments menuts"
           },
           "summary": {
             "es": "La Diputación de Valencia convoca a equipos de FP, universidades y startups para diseñar un chatbot de atención ciudadana basado en IA generativa que responda preguntas sobre trámites municipales en castellano, valenciano e inglés, utilizando únicamente documentación oficial pública y sin riesgo de alucinaciones en respuestas con consecuencias legales.",
@@ -18809,9 +18801,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Sistema de análisis de sentimiento multilingüe para la gestión de la reputación turística",
-            "en": "Multilingual sentiment analysis system for tourism reputation management",
-            "va": "Sistema d'anàlisi de sentiment multilingüe per a la gestió de la reputació turística"
+            "es": "[DEMO] Sistema de análisis de sentimiento multilingüe para la gestión de la reputación turística",
+            "en": "[DEMO] Multilingual sentiment analysis system for tourism reputation management",
+            "va": "[DEMO] Sistema d'anàlisi de sentiment multilingüe per a la gestió de la reputació turística"
           },
           "summary": {
             "es": "Turisme Comunitat Valenciana convoca a equipos para crear un sistema de análisis de reseñas turísticas en múltiples idiomas y plataformas que identifique tendencias de satisfacción, detecte problemas emergentes por destino y genere informes automáticos para gestores municipales de turismo, reduciendo el tiempo de análisis manual de 40 horas semanales a menos de 2.",
@@ -19110,9 +19102,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "prototype",
           "title": {
-            "es": "Gemelo digital para la gestión predictiva de la red eléctrica urbana",
-            "en": "Digital twin for predictive urban electricity grid management",
-            "va": "Bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
+            "es": "[DEMO] Gemelo digital para la gestión predictiva de la red eléctrica urbana",
+            "en": "[DEMO] Digital twin for predictive urban electricity grid management",
+            "va": "[DEMO] Bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
           },
           "summary": {
             "es": "Endesa Distribución busca equipos de centros educativos y empresas tecnológicas que desarrollen un prototipo de gemelo digital capaz de predecir sobrecargas en la red eléctrica de barrios valencianos con alta penetración de instalaciones fotovoltaicas, utilizando datos abiertos de consumo y generación.",
@@ -19412,9 +19404,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "prototype",
           "title": {
-            "es": "Optimización de rutas de última milla con IA para logística urbana sostenible",
-            "en": "AI-driven last-mile route optimisation for sustainable urban logistics",
-            "va": "Optimització de rutes d'última milla amb IA per a logística urbana sostenible"
+            "es": "[DEMO] Optimización de rutas de última milla con IA para logística urbana sostenible",
+            "en": "[DEMO] AI-driven last-mile route optimisation for sustainable urban logistics",
+            "va": "[DEMO] Optimització de rutes d'última milla amb IA per a logística urbana sostenible"
           },
           "summary": {
             "es": "Correos y el Ayuntamiento de Valencia buscan soluciones de IA para optimizar las rutas de reparto de última milla en el centro histórico, combinando datos de tráfico en tiempo real, restricciones de acceso a zonas de bajas emisiones, disponibilidad de puntos de consigna y preferencias de entrega de los destinatarios, con el objetivo de reducir las emisiones de CO₂ un 25% en 18 meses.",
@@ -19713,9 +19705,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Co-diseñar un campus verde con IA generativa y prácticas STEAM",
-            "en": "Co-designing a green campus with generative AI and STEAM practices",
-            "va": "Codissenyar un campus verd amb IA generativa i pràctiques STEAM"
+            "es": "[DEMO] Co-diseñar un campus verde con IA generativa y prácticas STEAM",
+            "en": "[DEMO] Co-designing a green campus with generative AI and STEAM practices",
+            "va": "[DEMO] Codissenyar un campus verd amb IA generativa i pràctiques STEAM"
           },
           "summary": {
             "es": "Una institución educativa busca ideas aplicables para reducir consumo energético y mejorar espacios de aprendizaje mediante IA, datos y creatividad.",
@@ -20017,9 +20009,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "pilot",
           "title": {
-            "es": "Control de calidad visual con IA en línea de producción de componentes cerámicos",
-            "en": "AI visual quality control on ceramic component production line",
-            "va": "Control de qualitat visual amb IA en línia de producció de components ceràmics"
+            "es": "[DEMO] Control de calidad visual con IA en línea de producción de componentes cerámicos",
+            "en": "[DEMO] AI visual quality control on ceramic component production line",
+            "va": "[DEMO] Control de qualitat visual amb IA en línia de producció de components ceràmics"
           },
           "summary": {
             "es": "Pamesa Cerámica busca un sistema de visión artificial capaz de detectar defectos superficiales (grietas, burbujas, irregularidades de esmalte) en baldosas cerámicas a velocidades de producción de 80 piezas por minuto, superando la tasa de detección humana actual del 94% y reduciendo el desperdicio de material en un 15%.",
@@ -20321,9 +20313,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "IA para la detección temprana de plagas y enfermedades en cítricos valencianos",
-            "en": "AI for early detection of pests and diseases in Valencian citrus crops",
-            "va": "IA per a la detecció primerenca de plagues i malalties en cítrics valencians"
+            "es": "[DEMO] IA para la detección temprana de plagas y enfermedades en cítricos valencianos",
+            "en": "[DEMO] AI for early detection of pests and diseases in Valencian citrus crops",
+            "va": "[DEMO] IA per a la detecció primerenca de plagues i malalties en cítrics valencians"
           },
           "summary": {
             "es": "La Cooperativa Agrícola de Castellón busca soluciones de visión artificial capaces de identificar síntomas iniciales de las principales plagas y enfermedades del naranjo y limonero a partir de imágenes tomadas con smartphone, antes de que sean visibles a simple vista, reduciendo el uso de fitosanitarios.",
@@ -20625,9 +20617,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Escalado de sistema de monitorización energética con IA desde edificio piloto a red de viviendas sociales",
-            "en": "Scaling of AI-powered energy monitoring system from pilot building to social housing network",
-            "va": "Escalat de sistema de monitorització energètica amb IA des d'edifici pilot a xarxa d'habitatges socials"
+            "es": "[DEMO] Escalado de sistema de monitorización energética con IA desde edificio piloto a red de viviendas sociales",
+            "en": "[DEMO] Scaling of AI-powered energy monitoring system from pilot building to social housing network",
+            "va": "[DEMO] Escalat de sistema de monitorització energètica amb IA des d'edifici pilot a xarxa d'habitatges socials"
           },
           "summary": {
             "es": "El sistema de monitorización y predicción de consumo energético desarrollado por la UPV para el edificio 5I del campus fue escalado para su aplicación en 240 viviendas de protección oficial gestionadas por la Entitat Valenciana d'Habitatge.",
@@ -20964,9 +20956,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Narrativas digitales con IA generativa: del museo al aula de formación artística",
-            "en": "Digital narratives with generative AI: from the museum to the arts education classroom",
-            "va": "Narratives digitals amb IA generativa: del museu a l'aula de formació artística"
+            "es": "[DEMO] Narrativas digitales con IA generativa: del museo al aula de formación artística",
+            "en": "[DEMO] Digital narratives with generative AI: from the museum to the arts education classroom",
+            "va": "[DEMO] Narratives digitals amb IA generativa: del museu a l'aula de formació artística"
           },
           "summary": {
             "es": "El IVAM adaptó su programa interno de creación de narrativas digitales con IA generativa para que docentes y estudiantes del Máster en Educación Artística pudieran usarlo como metodología en sus propias aulas.",
@@ -21282,9 +21274,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Herramienta de auditoría energética doméstica con IA adaptada a FP de Edificación",
-            "en": "AI-powered home energy audit tool adapted to Building and Construction VET",
-            "va": "Eina d'auditoria energètica domèstica amb IA adaptada a FP d'Edificació"
+            "es": "[DEMO] Herramienta de auditoría energética doméstica con IA adaptada a FP de Edificación",
+            "en": "[DEMO] AI-powered home energy audit tool adapted to Building and Construction VET",
+            "va": "[DEMO] Eina d'auditoria energètica domèstica amb IA adaptada a FP d'Edificació"
           },
           "summary": {
             "es": "La empresa valenciana Enertika desarrolló una herramienta de auditoría energética doméstica basada en IA que procesa facturas de suministro, fotos de fachada y datos de ocupación para generar un informe automático de mejora con ROI. Fue adaptada como proyecto de aprendizaje para el ciclo de Proyectos de Obra Civil y Edificación de FP, con datos reales anonimizados de 300 auditorías en la Comunitat Valenciana.",
@@ -21599,9 +21591,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "IA para detección temprana de plagas en cultivos: adaptación del modelo IVIA a FP Agroalimentario",
-            "en": "AI for early crop pest detection: adapting the IVIA model for Agrifood VET",
-            "va": "IA per a detecció primerenca de plagues en cultius: adaptació del model IVIA a FP Agroalimentari"
+            "es": "[DEMO] IA para detección temprana de plagas en cultivos: adaptación del modelo IVIA a FP Agroalimentario",
+            "en": "[DEMO] AI for early crop pest detection: adapting the IVIA model for Agrifood VET",
+            "va": "[DEMO] IA per a detecció primerenca de plagues en cultius: adaptació del model IVIA a FP Agroalimentari"
           },
           "summary": {
             "es": "El modelo de visión por computador del IVIA para detección de Tuta absoluta en tomate fue adaptado para su uso didáctico en ciclos de FP de producción agropecuaria y jardinería.",
@@ -21918,9 +21910,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Simulación de conducción autónoma adaptada al ciclo de FP de Transporte",
-            "en": "Autonomous driving simulation adapted to Transport VET cycle",
-            "va": "Simulació de conducció autònoma adaptada al cicle de FP de Transport"
+            "es": "[DEMO] Simulación de conducción autónoma adaptada al ciclo de FP de Transporte",
+            "en": "[DEMO] Autonomous driving simulation adapted to Transport VET cycle",
+            "va": "[DEMO] Simulació de conducció autònoma adaptada al cicle de FP de Transport"
           },
           "summary": {
             "es": "Renault España trasladó su entorno de simulación de conducción autónoma (CARLA + ROS 2) para la validación de ADAS a cinco centros de FP de Transporte y Logística, permitiendo a los alumnos programar y evaluar comportamientos de vehículo autónomo en escenarios de ciudad española sin infraestructura de hardware avanzada.",
@@ -22236,9 +22228,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Drones y agricultura de precisión con IA para índices NDVI transferidos a FP Agraria",
-            "en": "Drones and AI-based precision agriculture with NDVI indices transferred to Agrarian VET",
-            "va": "Drons i agricultura de precisió amb IA per a índexs NDVI transferits a FP Agrària"
+            "es": "[DEMO] Drones y agricultura de precisión con IA para índices NDVI transferidos a FP Agraria",
+            "en": "[DEMO] Drones and AI-based precision agriculture with NDVI indices transferred to Agrarian VET",
+            "va": "[DEMO] Drons i agricultura de precisió amb IA per a índexs NDVI transferits a FP Agrària"
           },
           "summary": {
             "es": "La cooperativa agrícola Anecoop desarrolló un flujo de trabajo completo de telemetría de drones + análisis de imágenes multiespectrales + modelos de IA para mapas NDVI que fue transformado en un módulo formativo para el ciclo de Gestión Forestal y del Medio Natural y de Producción Agropecuaria de FP Agraria, con datos reales de campos de cítricos de la Comunitat Valenciana.",
@@ -22569,9 +22561,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Gemelo digital de instalación fotovoltaica en FP de Energía",
-            "en": "Digital twin of photovoltaic installation for Energy VET",
-            "va": "Bessó digital d'instal·lació fotovoltaica en FP d'Energia"
+            "es": "[DEMO] Gemelo digital de instalación fotovoltaica en FP de Energía",
+            "en": "[DEMO] Digital twin of photovoltaic installation for Energy VET",
+            "va": "[DEMO] Bessó digital d'instal·lació fotovoltaica en FP d'Energia"
           },
           "summary": {
             "es": "La empresa Solarius Energy trasladó su modelo de gemelo digital de una instalación solar de 50 kWp a tres centros de FP de la familia de Electricidad y Energía, permitiendo simular fallos, optimizar configuraciones y calcular retornos de inversión sin hardware real.",
@@ -22901,9 +22893,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Realidad aumentada para mediación cultural en museos adaptada a FP de Arte y Diseño",
-            "en": "Augmented reality for cultural mediation in museums adapted to Art and Design VET",
-            "va": "Realitat augmentada per a mediació cultural en museus adaptada a FP d'Art i Disseny"
+            "es": "[DEMO] Realidad aumentada para mediación cultural en museos adaptada a FP de Arte y Diseño",
+            "en": "[DEMO] Augmented reality for cultural mediation in museums adapted to Art and Design VET",
+            "va": "[DEMO] Realitat augmentada per a mediació cultural en museus adaptada a FP d'Art i Disseny"
           },
           "summary": {
             "es": "El Museu de Belles Arts de València desarrolló un sistema de mediación cultural con realidad aumentada (AR) que superpone contexto histórico, restauraciones virtuales y rutas personalizadas sobre obras del museo. Fue adaptado como proyecto integrador para el ciclo de Animación 3D, Juegos y Entornos Interactivos de FP, con acceso al SDK de AR y a tres obras del fondo permanente como casos prácticos.",
@@ -23220,9 +23212,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Mantenimiento predictivo con ML en industria auxiliar del automóvil transferido a FP",
-            "en": "ML-based predictive maintenance in the automotive supply industry transferred to VET",
-            "va": "Manteniment predictiu amb ML en indústria auxiliar de l'automòbil transferit a FP"
+            "es": "[DEMO] Mantenimiento predictivo con ML en industria auxiliar del automóvil transferido a FP",
+            "en": "[DEMO] ML-based predictive maintenance in the automotive supply industry transferred to VET",
+            "va": "[DEMO] Manteniment predictiu amb ML en indústria auxiliar de l'automòbil transferit a FP"
           },
           "summary": {
             "es": "Grupo Antolin adaptó su sistema de mantenimiento predictivo basado en ML (sensores vibración + modelos LSTM) para convertirlo en un caso de estudio formativo para el ciclo de Mantenimiento de Instalaciones y Sistemas de FP, con datos reales anonimizados de 4 líneas de producción.",
@@ -23552,9 +23544,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Integración de cobots colaborativos en soldadura para FP Industrial",
-            "en": "Collaborative cobot integration in welding for Industrial VET",
-            "va": "Integració de cobots col·laboratius en soldadura per a FP Industrial"
+            "es": "[DEMO] Integración de cobots colaborativos en soldadura para FP Industrial",
+            "en": "[DEMO] Collaborative cobot integration in welding for Industrial VET",
+            "va": "[DEMO] Integració de cobots col·laboratius en soldadura per a FP Industrial"
           },
           "summary": {
             "es": "Transferencia de la experiencia de IVECO Valencia en robótica colaborativa hacia centros de FP de fabricación, con protocolo de seguridad y currículo adaptado.",
@@ -23869,9 +23861,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Programa de capacitación docente en movilidad sostenible e inteligencia artificial",
-            "en": "Teacher training programme in sustainable mobility and artificial intelligence",
-            "va": "Programa de capacitació docent en mobilitat sostenible i intel·ligència artificial"
+            "es": "[DEMO] Programa de capacitación docente en movilidad sostenible e inteligencia artificial",
+            "en": "[DEMO] Teacher training programme in sustainable mobility and artificial intelligence",
+            "va": "[DEMO] Programa de capacitació docent en mobilitat sostenible i intel·ligència artificial"
           },
           "summary": {
             "es": "La Conselleria y los CEFIREs diseñaron un itinerario de 30 horas para que docentes de secundaria y FP integren datos de movilidad urbana y modelos de IA predictiva en sus asignaturas STEAM.",
@@ -24214,9 +24206,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "IA para diagnóstico de imagen médica adaptada a FP Sanitario",
-            "en": "AI for medical image diagnosis adapted to Health VET",
-            "va": "IA per a diagnòstic d'imatge mèdica adaptada a FP Sanitari"
+            "es": "[DEMO] IA para diagnóstico de imagen médica adaptada a FP Sanitario",
+            "en": "[DEMO] AI for medical image diagnosis adapted to Health VET",
+            "va": "[DEMO] IA per a diagnòstic d'imatge mèdica adaptada a FP Sanitari"
           },
           "summary": {
             "es": "El Hospital La Fe de Valencia desarrolló un módulo de formación en IA aplicada a diagnóstico radiológico que ha sido adaptado para el ciclo de Imagen para el Diagnóstico y Medicina Nuclear de FP Sanitario, permitiendo a los alumnos entrenar y evaluar modelos de clasificación de imágenes sin datos clínicos reales.",
@@ -24535,9 +24527,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
-            "en": "AI for dermatological diagnosis support in Health VET settings",
-            "va": "IA per al suport al diagnòstic dermatològic en entorns de FP Sanitari"
+            "es": "[DEMO] IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
+            "en": "[DEMO] AI for dermatological diagnosis support in Health VET settings",
+            "va": "[DEMO] IA per al suport al diagnòstic dermatològic en entorns de FP Sanitari"
           },
           "summary": {
             "es": "Validación de un módulo de IA para la clasificación de lesiones cutáneas sospechosas (malignas/benignas) a partir de imágenes dermoscópicas, integrado en el itinerario formativo del ciclo de Imagen para el Diagnóstico de FP Sanitario, con supervisión clínica del Hospital La Fe y evaluación de competencias digitales en salud.",
@@ -24900,9 +24892,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Living Lab — IA para la gestión energética adaptativa en edificio universitario",
-            "en": "Living Lab — AI for adaptive energy management in a university building",
-            "va": "Living Lab — IA per a la gestió energètica adaptativa en edifici universitari"
+            "es": "[DEMO] Living Lab — IA para la gestión energética adaptativa en edificio universitario",
+            "en": "[DEMO] Living Lab — AI for adaptive energy management in a university building",
+            "va": "[DEMO] Living Lab — IA per a la gestió energètica adaptativa en edifici universitari"
           },
           "summary": {
             "es": "La Universitat Politècnica de València convierte el edificio 4I de la ETSII en un Living Lab donde alumnos de máster y FP de Instalaciones Eléctricas trabajan junto a ingenieros de Siemens Smart Infrastructure para entrenar y validar un sistema de gestión energética adaptativa basado en aprendizaje por refuerzo, con el objetivo de reducir el consumo eléctrico del edificio en un 20% sin pérdida de confort.",
@@ -25254,9 +25246,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Piloto FP — IA para eficiencia energética en centros educativos",
-            "en": "VET Pilot — AI for energy efficiency in educational centres",
-            "va": "Pilot FP — IA per a l'eficiència energètica en centres educatius"
+            "es": "[DEMO] Piloto FP — IA para eficiencia energética en centros educativos",
+            "en": "[DEMO] VET Pilot — AI for energy efficiency in educational centres",
+            "va": "[DEMO] Pilot FP — IA per a l'eficiència energètica en centres educatius"
           },
           "summary": {
             "es": "Módulo OER de eficiencia energética con IA pilotado con alumnado de FP en IES La Costera.",
@@ -25600,9 +25592,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Piloto — Drones con IA para la inspección automatizada de infraestructuras viarias",
-            "en": "Pilot — AI drones for automated road infrastructure inspection",
-            "va": "Pilot — Drons amb IA per a la inspecció automatitzada d'infraestructures viàries"
+            "es": "[DEMO] Piloto — Drones con IA para la inspección automatizada de infraestructuras viarias",
+            "en": "[DEMO] Pilot — AI drones for automated road infrastructure inspection",
+            "va": "[DEMO] Pilot — Drons amb IA per a la inspecció automatitzada d'infraestructures viàries"
           },
           "summary": {
             "es": "Validación de un sistema de inspección autónoma de carreteras y puentes mediante drones equipados con visión artificial para detectar grietas, baches y deterioro superficial, desarrollado junto al IVACE y tres centros de FP de Transporte, que reduce el tiempo de inspección manual de un tramo de 10 km de 8 horas a 45 minutos.",
@@ -25954,9 +25946,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Formación Docente — Análisis de sesgos en IA para profesorado de Máster",
-            "en": "Teacher Training — AI bias analysis for Master's programme faculty",
-            "va": "Formació Docent — Anàlisi de biaixos en IA per a professorat de Màster"
+            "es": "[DEMO] Formación Docente — Análisis de sesgos en IA para profesorado de Máster",
+            "en": "[DEMO] Teacher Training — AI bias analysis for Master's programme faculty",
+            "va": "[DEMO] Formació Docent — Anàlisi de biaixos en IA per a professorat de Màster"
           },
           "summary": {
             "es": "Taller intensivo para profesorado universitario sobre detección y mitigación de sesgos algorítmicos en modelos de IA usados en contextos educativos.",
@@ -26300,9 +26292,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Piloto FP — Cobots y robótica colaborativa en ciclos de mecatrónica",
-            "en": "VET Pilot — Cobots and collaborative robotics in mechatronics cycles",
-            "va": "Pilot FP — Cobots i robòtica col·laborativa en cicles de mecatrònica"
+            "es": "[DEMO] Piloto FP — Cobots y robótica colaborativa en ciclos de mecatrónica",
+            "en": "[DEMO] VET Pilot — Cobots and collaborative robotics in mechatronics cycles",
+            "va": "[DEMO] Pilot FP — Cobots i robòtica col·laborativa en cicles de mecatrònica"
           },
           "summary": {
             "es": "Integración de cobots industriales en la práctica de taller de FP de Mecatrónica en colaboración con Ford España y tres centros educativos.",
@@ -26646,9 +26638,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Piloto Máster — Puente FP-Máster en IA aplicada a gemelos digitales",
-            "en": "Master Bridge Pilot — VET-to-Master bridge in AI applied to digital twins",
-            "va": "Pilot Pont al Màster — Pont FP-Màster en IA aplicada a bessons digitals"
+            "es": "[DEMO] Piloto Máster — Puente FP-Máster en IA aplicada a gemelos digitales",
+            "en": "[DEMO] Master Bridge Pilot — VET-to-Master bridge in AI applied to digital twins",
+            "va": "[DEMO] Pilot Pont al Màster — Pont FP-Màster en IA aplicada a bessons digitals"
           },
           "summary": {
             "es": "Itinerario de transición entre FP Superior y Máster universitario centrado en gemelos digitales y simulación industrial con IA.",
@@ -26990,9 +26982,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
-            "en": "Use of AI for candidate screening in public administration selection processes",
-            "va": "Ús d'IA per al cribratge de candidats en processos selectius de l'administració pública"
+            "es": "[DEMO] Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
+            "en": "[DEMO] Use of AI for candidate screening in public administration selection processes",
+            "va": "[DEMO] Ús d'IA per al cribratge de candidats en processos selectius de l'administració pública"
           },
           "summary": {
             "es": "Validación ética de una propuesta de sistema de IA para el cribado automático de candidatos en oposiciones y concursos de méritos de la administración pública valenciana. La validación concluye con una recomendación de reformulación sustancial antes de poder considerarse apto para piloto.",
@@ -27319,9 +27311,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Validación legal — Uso de datos de movilidad urbana de Correos para el reto de optimización de rutas",
-            "en": "Legal validation — Use of Correos urban mobility data for the route optimisation challenge",
-            "va": "Validació legal — Ús de dades de mobilitat urbana de Correos per al repte d'optimització de rutes"
+            "es": "[DEMO] Validación legal — Uso de datos de movilidad urbana de Correos para el reto de optimización de rutas",
+            "en": "[DEMO] Legal validation — Use of Correos urban mobility data for the route optimisation challenge",
+            "va": "[DEMO] Validació legal — Ús de dades de mobilitat urbana de Correos per al repte d'optimització de rutes"
           },
           "summary": {
             "es": "Validación legal del marco de cesión y anonimización de los datos de rutas y entregas de Correos necesarios para el reto de optimización de última milla, confirmando la viabilidad de la cesión bajo el RGPD y estableciendo las condiciones específicas de anonimización y uso que deben incluirse en las bases del reto.",
@@ -27638,9 +27630,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Validación técnica — Viabilidad del gemelo digital para la gestión predictiva de la red eléctrica urbana",
-            "en": "Technical validation — Feasibility of digital twin for predictive urban electricity grid management",
-            "va": "Validació tècnica — Viabilitat de la bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
+            "es": "[DEMO] Validación técnica — Viabilidad del gemelo digital para la gestión predictiva de la red eléctrica urbana",
+            "en": "[DEMO] Technical validation — Feasibility of digital twin for predictive urban electricity grid management",
+            "va": "[DEMO] Validació tècnica — Viabilitat de la bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
           },
           "summary": {
             "es": "Validación técnica del reto de gemelo digital para la red eléctrica promovido por Endesa Distribución, confirmando la viabilidad de CARLA y ROS 2 como stack tecnológico y la disponibilidad de datos SCADA anonimizables para el desarrollo del prototipo.",
@@ -27957,9 +27949,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Validación stakeholder — Necesidad de personalización con IA en la oferta turística valenciana",
-            "en": "Stakeholder validation — Need for AI personalisation in the Valencian tourism offer",
-            "va": "Validació stakeholder — Necessitat de personalització amb IA en l'oferta turística valenciana"
+            "es": "[DEMO] Validación stakeholder — Necesidad de personalización con IA en la oferta turística valenciana",
+            "en": "[DEMO] Stakeholder validation — Need for AI personalisation in the Valencian tourism offer",
+            "va": "[DEMO] Validació stakeholder — Necessitat de personalització amb IA en l'oferta turística valenciana"
           },
           "summary": {
             "es": "Validación con la Agència Valenciana del Turisme, asociaciones hoteleras y plataformas de reservas de la demanda real de sistemas de personalización de experiencias turísticas con IA, que derivó en la publicación del reto de análisis de sentimiento y en el inicio de dos pilotos de personalización de recomendaciones en destinos piloto de la Costa Blanca.",
@@ -28276,9 +28268,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Validación pedagógica — Integración de visión artificial en ciclos de FP de Fabricación Mecánica",
-            "en": "Pedagogical validation — Integration of computer vision in Mechanical Manufacturing VET cycles",
-            "va": "Validació pedagògica — Integració de visió artificial en cicles de FP de Fabricació Mecànica"
+            "es": "[DEMO] Validación pedagógica — Integración de visión artificial en ciclos de FP de Fabricación Mecánica",
+            "en": "[DEMO] Pedagogical validation — Integration of computer vision in Mechanical Manufacturing VET cycles",
+            "va": "[DEMO] Validació pedagògica — Integració de visió artificial en cicles de FP de Fabricació Mecànica"
           },
           "summary": {
             "es": "Validación del encaje curricular de un módulo de visión artificial para control de calidad en los ciclos de FP de Fabricación Mecánica y Mecatrónica, confirmando la pertinencia pedagógica y definiendo los requisitos de formación docente necesarios para la implantación autónoma.",
@@ -28595,9 +28587,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Validación stakeholder — Necesidad de competencias digitales en salud en la FP Sanitaria valenciana",
-            "en": "Stakeholder validation — Digital health competency needs in Valencian Health VET",
-            "va": "Validació stakeholder — Necessitat de competències digitals en salut en la FP Sanitària valenciana"
+            "es": "[DEMO] Validación stakeholder — Necesidad de competencias digitales en salud en la FP Sanitaria valenciana",
+            "en": "[DEMO] Stakeholder validation — Digital health competency needs in Valencian Health VET",
+            "va": "[DEMO] Validació stakeholder — Necessitat de competències digitals en salut en la FP Sanitària valenciana"
           },
           "summary": {
             "es": "Validación con hospitales públicos, colegios profesionales sanitarios y centros de FP de la Comunitat Valenciana de la brecha de competencias digitales en salud que existe entre la formación recibida en FP Sanitario y las competencias que demandan los entornos clínicos actuales, con clasificación Track A para el máster universitario.",
@@ -28914,9 +28906,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Validación stakeholder — Reto de agricultura de precisión con IA",
-            "en": "Stakeholder validation — Precision agriculture with AI challenge",
-            "va": "Validació stakeholder — Repte d'agricultura de precisió amb IA"
+            "es": "[DEMO] Validación stakeholder — Reto de agricultura de precisión con IA",
+            "en": "[DEMO] Stakeholder validation — Precision agriculture with AI challenge",
+            "va": "[DEMO] Validació stakeholder — Repte d'agricultura de precisió amb IA"
           },
           "summary": {
             "es": "Validación con AVA-ASAJA y UVEG del reto sectorial sobre agricultura de precisión. Clasificado Track A para tratamiento académico en el Máster.",
@@ -29233,9 +29225,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
-            "en": "Reinforcement learning applied to energy management of university buildings",
-            "va": "Aprenentatge per reforç aplicat a la gestió energètica d'edificis universitaris"
+            "es": "[DEMO] Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
+            "en": "[DEMO] Reinforcement learning applied to energy management of university buildings",
+            "va": "[DEMO] Aprenentatge per reforç aplicat a la gestió energètica d'edificis universitaris"
           },
           "summary": {
             "es": "Validación académica por el Instituto de Ingeniería Energética de la UPV y el grupo de investigación SAIL de la UCLM de la pertinencia científica y formativa del uso de aprendizaje por refuerzo para la gestión energética adaptativa en edificios, confirmando su encaje como contenido de máster y justificando la creación del Living Lab como entorno de investigación-formación.",
@@ -29552,9 +29544,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Validación stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
-            "en": "Stakeholder validation — Electric mobility and charging infrastructure challenge",
-            "va": "Validació stakeholder — Repte de mobilitat elèctrica i infraestructura de càrrega"
+            "es": "[DEMO] Validación stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
+            "en": "[DEMO] Stakeholder validation — Electric mobility and charging infrastructure challenge",
+            "va": "[DEMO] Validació stakeholder — Repte de mobilitat elèctrica i infraestructura de càrrega"
           },
           "summary": {
             "es": "Validación con ASEVA y concesionarios valencianos del reto sectorial sobre vehículo eléctrico y formación dual. Clasificado Track B para diseño de módulo FP dual en 2026-27.",
@@ -29873,9 +29865,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "IA generativa y creativa para turismo, cultura e industrias creativas",
-            "en": "Generative and creative AI for tourism, culture and creative industries",
-            "va": "IA generativa i creativa per a turisme, cultura i indústries creatives"
+            "es": "[DEMO] IA generativa y creativa para turismo, cultura e industrias creativas",
+            "en": "[DEMO] Generative and creative AI for tourism, culture and creative industries",
+            "va": "[DEMO] IA generativa i creativa per a turisme, cultura i indústries creatives"
           },
           "summary": {
             "es": "Acompañamiento para empresas turísticas, entidades culturales, museos y agencias creativas que quieren integrar IA generativa (texto, imagen, audio, vídeo) en sus productos, servicios o procesos creativos, orientándose sobre herramientas adecuadas a su escala, derechos de autor en contenidos generados por IA, y cómo usar la IA sin perder la identidad creativa de la organización.",
@@ -30212,9 +30204,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Mentoría — Cómo incorporar una administración pública al ecosistema AI-STEAM",
-            "en": "Mentoring — How to bring a public administration into the AI-STEAM ecosystem",
-            "va": "Mentoria — Com incorporar una administració pública a l'ecosistema AI-STEAM"
+            "es": "[DEMO] Mentoría — Cómo incorporar una administración pública al ecosistema AI-STEAM",
+            "en": "[DEMO] Mentoring — How to bring a public administration into the AI-STEAM ecosystem",
+            "va": "[DEMO] Mentoria — Com incorporar una administració pública a l'ecosistema AI-STEAM"
           },
           "summary": {
             "es": "Acompañamiento para organismos públicos, entidades locales y consorcios interadministrativos que quieren participar activamente en el ecosistema AI-STEAM — como demandantes de retos, financiadores de pilotos o entornos de validación — y necesitan orientación sobre roles posibles, compromisos esperados, gestión de datos públicos y encaje con sus procedimientos administrativos habituales.",
@@ -30532,9 +30524,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Mentoría — Replicación de casos AI-STEAM en el sector agroalimentario",
-            "en": "Mentoring — Replicating AI-STEAM cases in the agri-food sector",
-            "va": "Mentoria — Replicació de casos AI-STEAM en el sector agroalimentari"
+            "es": "[DEMO] Mentoría — Replicación de casos AI-STEAM en el sector agroalimentario",
+            "en": "[DEMO] Mentoring — Replicating AI-STEAM cases in the agri-food sector",
+            "va": "[DEMO] Mentoria — Replicació de casos AI-STEAM en el sector agroalimentari"
           },
           "summary": {
             "es": "Acompañamiento para cooperativas agrícolas, agroindustrias y centros de FP agroalimentaria que quieren replicar un caso AI-STEAM verificado en su propio contexto — adaptando los datos, el entorno productivo y las condiciones de formación — sin tener que rediseñar el proyecto desde cero.",
@@ -30852,9 +30844,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Mentoría — De la investigación al aula de FP: transferencia de resultados con IA",
-            "en": "Mentoring — From research to the VET classroom: AI results transfer",
-            "va": "Mentoria — De la recerca a l'aula de FP: transferència de resultats amb IA"
+            "es": "[DEMO] Mentoría — De la investigación al aula de FP: transferencia de resultados con IA",
+            "en": "[DEMO] Mentoring — From research to the VET classroom: AI results transfer",
+            "va": "[DEMO] Mentoria — De la recerca a l'aula de FP: transferència de resultats amb IA"
           },
           "summary": {
             "es": "Acompañamiento para grupos de investigación universitarios y tecnológicos que quieren transferir sus resultados de IA al sistema de FP, adaptando sus metodologías, datasets o herramientas a contextos formativos accesibles para docentes y alumnos sin perfil investigador, y construyendo el caso de valor pedagógico que justifique la colaboración con centros educativos.",
@@ -31172,9 +31164,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Mentoría — Ética de la IA en proyectos educativos y formativos",
-            "en": "Mentoring — AI ethics in educational and training projects",
-            "va": "Mentoria — Ètica de la IA en projectes educatius i formatius"
+            "es": "[DEMO] Mentoría — Ética de la IA en proyectos educativos y formativos",
+            "en": "[DEMO] Mentoring — AI ethics in educational and training projects",
+            "va": "[DEMO] Mentoria — Ètica de la IA en projectes educatius i formatius"
           },
           "summary": {
             "es": "Acompañamiento para docentes, equipos de centro y entidades educativas que introducen IA en sus prácticas formativas y necesitan una revisión ética básica — uso de datos de alumnos, sesgos algorítmicos, transparencia con las familias, IA generativa en el aula — antes de implantar o publicar sus proyectos.",
@@ -31492,9 +31484,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Mentoría — Soporte técnico para implementar IA en entornos sanitarios y sociosanitarios",
-            "en": "Mentoring — Technical support for AI implementation in health and social care settings",
-            "va": "Mentoria — Suport tècnic per implementar IA en entorns sanitaris i sociosanitaris"
+            "es": "[DEMO] Mentoría — Soporte técnico para implementar IA en entornos sanitarios y sociosanitarios",
+            "en": "[DEMO] Mentoring — Technical support for AI implementation in health and social care settings",
+            "va": "[DEMO] Mentoria — Suport tècnic per implementar IA en entorns sanitaris i sociosanitaris"
           },
           "summary": {
             "es": "Acompañamiento técnico para equipos de FP sanitaria, centros de salud y entidades sociosanitarias que quieren implementar un sistema de IA (diagnóstico asistido, triaje automatizado, analítica de pacientes) y necesitan orientación sobre arquitectura de datos, selección de modelos y cumplimiento normativo sanitario antes de lanzar el proyecto.",
@@ -31812,9 +31804,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Mentoría — Diseño de pilotos de colaboración FP-empresa con IA",
-            "en": "Mentoring — Designing VET-industry AI collaboration pilots",
-            "va": "Mentoria — Disseny de pilots de col·laboració FP-empresa amb IA"
+            "es": "[DEMO] Mentoría — Diseño de pilotos de colaboración FP-empresa con IA",
+            "en": "[DEMO] Mentoring — Designing VET-industry AI collaboration pilots",
+            "va": "[DEMO] Mentoria — Disseny de pilots de col·laboració FP-empresa amb IA"
           },
           "summary": {
             "es": "Acompañamiento para centros de FP y empresas que quieren co-diseñar un piloto educativo real donde los alumnos trabajen con datos, herramientas o entornos industriales con IA, definiendo hipótesis, metodología, métricas de éxito y condiciones de transferibilidad desde el primer momento.",
@@ -32132,9 +32124,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Mentoría — Cómo formular un reto industrial para el ecosistema AI-STEAM",
-            "en": "Mentoring — How to frame an industrial challenge for the AI-STEAM ecosystem",
-            "va": "Mentoria — Com formular un repte industrial per a l'ecosistema AI-STEAM"
+            "es": "[DEMO] Mentoría — Cómo formular un reto industrial para el ecosistema AI-STEAM",
+            "en": "[DEMO] Mentoring — How to frame an industrial challenge for the AI-STEAM ecosystem",
+            "va": "[DEMO] Mentoria — Com formular un repte industrial per a l'ecosistema AI-STEAM"
           },
           "summary": {
             "es": "Acompañamiento para empresas industriales y pymes tecnológicas que quieren convertir una necesidad de innovación o una brecha de talento en un reto bien formulado, publicable en el Marketplace AI-STEAM y orientado a obtener prototipos, datos o metodologías de la comunidad de práctica.",
@@ -32452,9 +32444,9 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "Mentoría para briefs creativos con IA responsable",
-            "en": "Mentoring for responsible AI creative briefs",
-            "va": "Mentoria per a briefs creatius amb IA responsable"
+            "es": "[DEMO] Mentoría para briefs creativos con IA responsable",
+            "en": "[DEMO] Mentoring for responsible AI creative briefs",
+            "va": "[DEMO] Mentoria per a briefs creatius amb IA responsable"
           },
           "summary": {
             "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
