@@ -2225,9 +2225,9 @@ export const TRAINING_CONFIG = {
         "id": "ai-industria-fp",
         "createdAt": "2026-01-08",
         "title": {
-          "es": "Inteligencia Artificial Aplicada a la Industria 4.0",
-          "en": "Artificial Intelligence Applied to Industry 4.0",
-          "va": "Intel·ligència Artificial Aplicada a la Indústria 4.0"
+          "es": "[DEMO] Inteligencia Artificial Aplicada a la Industria 4.0",
+          "en": "[DEMO] Artificial Intelligence Applied to Industry 4.0",
+          "va": "[DEMO] Intel·ligència Artificial Aplicada a la Indústria 4.0"
         },
         "description": {
           "es": "Módulo de especialización para alumnado de FP. Mantenimiento predictivo, visión artificial y gemelos digitales con casos reales del ecosistema.",
@@ -2264,9 +2264,9 @@ export const TRAINING_CONFIG = {
         "id": "agricultura-precision-fp",
         "createdAt": "2026-02-27",
         "title": {
-          "es": "Agricultura de Precisión con IA y Drones",
-          "en": "Precision Agriculture with AI and Drones",
-          "va": "Agricultura de Precisió amb IA i Drones"
+          "es": "[DEMO] Agricultura de Precisión con IA y Drones",
+          "en": "[DEMO] Precision Agriculture with AI and Drones",
+          "va": "[DEMO] Agricultura de Precisió amb IA i Drones"
         },
         "description": {
           "es": "Módulo FP. Vuelos autónomos, análisis multiespectral y riego inteligente. Incluye prácticas con sensores reales en campo.",
@@ -2304,9 +2304,9 @@ export const TRAINING_CONFIG = {
         "id": "monitorizacion-ambiental-fp",
         "createdAt": "2026-04-02",
         "title": {
-          "es": "Monitorización Ambiental con IoT e IA",
-          "en": "Environmental Monitoring with IoT and AI",
-          "va": "Monitorització Ambiental amb IoT i IA"
+          "es": "[DEMO] Monitorización Ambiental con IoT e IA",
+          "en": "[DEMO] Environmental Monitoring with IoT and AI",
+          "va": "[DEMO] Monitorització Ambiental amb IoT i IA"
         },
         "description": {
           "es": "Módulo FP. Sensores ambientales, series temporales y alertas automáticas. Casos reales de cuencas hidrográficas y calidad del aire.",
@@ -2342,9 +2342,9 @@ export const TRAINING_CONFIG = {
         "id": "diseno-generativo-fp",
         "createdAt": "2026-01-12",
         "title": {
-          "es": "Diseño Generativo e Impresión 3D con IA",
-          "en": "Generative Design and 3D Printing with AI",
-          "va": "Disseny Generatiu i Impressió 3D amb IA"
+          "es": "[DEMO] Diseño Generativo e Impresión 3D con IA",
+          "en": "[DEMO] Generative Design and 3D Printing with AI",
+          "va": "[DEMO] Disseny Generatiu i Impressió 3D amb IA"
         },
         "description": {
           "es": "Módulo FP de Artes Plásticas y Diseño. Modelado paramétrico asistido por IA, slicing inteligente y fabricación digital. Prácticas con impresoras FDM y resina.",
@@ -2379,9 +2379,9 @@ export const TRAINING_CONFIG = {
         "id": "narrativa-digital-fp",
         "createdAt": "2026-01-19",
         "title": {
-          "es": "Narrativa Digital y Creación de Contenidos con IA",
-          "en": "Digital Storytelling and Content Creation with AI",
-          "va": "Narrativa Digital i Creació de Continguts amb IA"
+          "es": "[DEMO] Narrativa Digital y Creación de Contenidos con IA",
+          "en": "[DEMO] Digital Storytelling and Content Creation with AI",
+          "va": "[DEMO] Narrativa Digital i Creació de Continguts amb IA"
         },
         "description": {
           "es": "Módulo FP de Comunicación. Guion aumentado, edición de vídeo con IA y estrategia de contenidos multiplataforma. Casos de estudio en cultura y turismo.",
@@ -2416,9 +2416,9 @@ export const TRAINING_CONFIG = {
         "id": "robotica-colaborativa-fp",
         "createdAt": "2026-01-27",
         "title": {
-          "es": "Robótica Colaborativa e IA Industrial",
-          "en": "Collaborative Robotics and Industrial AI",
-          "va": "Robòtica Col·laborativa i IA Industrial"
+          "es": "[DEMO] Robótica Colaborativa e IA Industrial",
+          "en": "[DEMO] Collaborative Robotics and Industrial AI",
+          "va": "[DEMO] Robòtica Col·laborativa i IA Industrial"
         },
         "description": {
           "es": "Módulo FP de Electrónica y Automatización. Programación de cobots, integración de visión artificial y mantenimiento predictivo en líneas de producción reales.",
@@ -2452,9 +2452,9 @@ export const TRAINING_CONFIG = {
         "id": "produccion-musical-ia-fp",
         "createdAt": "2026-02-03",
         "title": {
-          "es": "Producción Musical y Sonido Asistidos por IA",
-          "en": "AI-Assisted Music Production and Sound Design",
-          "va": "Producció Musical i So Assistits per IA"
+          "es": "[DEMO] Producción Musical y Sonido Asistidos por IA",
+          "en": "[DEMO] AI-Assisted Music Production and Sound Design",
+          "va": "[DEMO] Producció Musical i So Assistits per IA"
         },
         "description": {
           "es": "Módulo FP de Sonido e Imagen. Composición generativa, masterización automática y diseño sonoro para videojuegos, cine y eventos culturales.",
@@ -2487,9 +2487,9 @@ export const TRAINING_CONFIG = {
         "id": "ciberseguridad-ia-fp",
         "createdAt": "2026-02-10",
         "title": {
-          "es": "Ciberseguridad e Inteligencia Artificial",
-          "en": "Cybersecurity and Artificial Intelligence",
-          "va": "Ciberseguretat i Intel·ligència Artificial"
+          "es": "[DEMO] Ciberseguridad e Inteligencia Artificial",
+          "en": "[DEMO] Cybersecurity and Artificial Intelligence",
+          "va": "[DEMO] Ciberseguretat i Intel·ligència Artificial"
         },
         "description": {
           "es": "Módulo FP de Informática. Detección de amenazas con ML, análisis forense automatizado y ética del hacking. Laboratorio con entornos simulados de ataque y defensa.",
@@ -2525,9 +2525,9 @@ export const TRAINING_CONFIG = {
         "id": "imagen-medica-ia-fp",
         "createdAt": "2026-02-14",
         "title": {
-          "es": "Análisis de Imagen Médica con IA",
-          "en": "Medical Image Analysis with AI",
-          "va": "Anàlisi d'Imatge Mèdica amb IA"
+          "es": "[DEMO] Análisis de Imagen Médica con IA",
+          "en": "[DEMO] Medical Image Analysis with AI",
+          "va": "[DEMO] Anàlisi d'Imatge Mèdica amb IA"
         },
         "description": {
           "es": "Módulo FP de Imagen para el Diagnóstico. Redes neuronales aplicadas a radiología y ecografía, preprocesado DICOM y flujos de validación clínica responsable.",
@@ -2561,9 +2561,9 @@ export const TRAINING_CONFIG = {
         "id": "fotogrametria-drones-fp",
         "createdAt": "2026-02-20",
         "title": {
-          "es": "Fotogrametría, Drones y Modelado 3D",
-          "en": "Photogrammetry, Drones and 3D Modelling",
-          "va": "Fotogrametria, Drons i Modelatge 3D"
+          "es": "[DEMO] Fotogrametría, Drones y Modelado 3D",
+          "en": "[DEMO] Photogrammetry, Drones and 3D Modelling",
+          "va": "[DEMO] Fotogrametria, Drons i Modelatge 3D"
         },
         "description": {
           "es": "Módulo FP. Vuelos planificados con IA, procesado fotogramétrico en nube y generación de modelos 3D para patrimonio, urbanismo y medio ambiente.",
@@ -2598,9 +2598,9 @@ export const TRAINING_CONFIG = {
         "id": "gestion-residuos-iot-fp",
         "createdAt": "2026-02-25",
         "title": {
-          "es": "Gestión Inteligente de Residuos con IoT e IA",
-          "en": "Smart Waste Management with IoT and AI",
-          "va": "Gestió Intel·ligent de Residus amb IoT i IA"
+          "es": "[DEMO] Gestión Inteligente de Residuos con IoT e IA",
+          "en": "[DEMO] Smart Waste Management with IoT and AI",
+          "va": "[DEMO] Gestió Intel·ligent de Residus amb IoT i IA"
         },
         "description": {
           "es": "Módulo FP de Medio Ambiente. Sensores de llenado, rutas optimizadas con ML y dashboards de impacto ambiental para municipios y operadores de residuos.",
@@ -2636,9 +2636,9 @@ export const TRAINING_CONFIG = {
         "id": "gamificacion-ra-fp",
         "createdAt": "2026-03-04",
         "title": {
-          "es": "Gamificación y Realidad Aumentada en el Aula",
-          "en": "Gamification and Augmented Reality in the Classroom",
-          "va": "Gamificació i Realitat Augmentada a l'Aula"
+          "es": "[DEMO] Gamificación y Realidad Aumentada en el Aula",
+          "en": "[DEMO] Gamification and Augmented Reality in the Classroom",
+          "va": "[DEMO] Gamificació i Realitat Augmentada a l'Aula"
         },
         "description": {
           "es": "Módulo FP de Educación. Diseño de experiencias de aprendizaje gamificadas, creación de contenidos en RA con IA y métricas de engagement educativo.",
@@ -2672,9 +2672,9 @@ export const TRAINING_CONFIG = {
         "id": "fabricacion-aditiva-ia-fp",
         "createdAt": "2026-03-10",
         "title": {
-          "es": "Fabricación Aditiva e IA para la Industria",
-          "en": "Additive Manufacturing and AI for Industry",
-          "va": "Fabricació Additiva i IA per a la Indústria"
+          "es": "[DEMO] Fabricación Aditiva e IA para la Industria",
+          "en": "[DEMO] Additive Manufacturing and AI for Industry",
+          "va": "[DEMO] Fabricació Additiva i IA per a la Indústria"
         },
         "description": {
           "es": "Módulo FP de Fabricación Mecánica. Optimización topológica con IA, control de calidad por visión artificial y postprocesado de piezas en entorno industrial.",
@@ -2708,9 +2708,9 @@ export const TRAINING_CONFIG = {
         "id": "chatbots-servicios-publicos-fp",
         "createdAt": "2026-03-17",
         "title": {
-          "es": "Asistentes Virtuales y Chatbots para Servicios Públicos",
-          "en": "Virtual Assistants and Chatbots for Public Services",
-          "va": "Assistents Virtuals i Chatbots per a Serveis Públics"
+          "es": "[DEMO] Asistentes Virtuales y Chatbots para Servicios Públicos",
+          "en": "[DEMO] Virtual Assistants and Chatbots for Public Services",
+          "va": "[DEMO] Assistents Virtuals i Chatbots per a Serveis Públics"
         },
         "description": {
           "es": "Módulo FP de Administración. Diseño conversacional, integración de LLMs en trámites ciudadanos y cumplimiento del Reglamento Europeo de IA.",
@@ -2744,9 +2744,9 @@ export const TRAINING_CONFIG = {
         "id": "ml-cultivos-fp",
         "createdAt": "2026-03-24",
         "title": {
-          "es": "Machine Learning para el Análisis de Cultivos",
-          "en": "Machine Learning for Crop Analysis",
-          "va": "Aprenentatge Automàtic per a l'Anàlisi de Cultius"
+          "es": "[DEMO] Machine Learning para el Análisis de Cultivos",
+          "en": "[DEMO] Machine Learning for Crop Analysis",
+          "va": "[DEMO] Aprenentatge Automàtic per a l'Anàlisi de Cultius"
         },
         "description": {
           "es": "Módulo FP de Agropecuaria. Detección de enfermedades vegetales con visión por computador, índices de vegetación NDVI y predicción de rendimiento de cosecha.",
@@ -2779,9 +2779,9 @@ export const TRAINING_CONFIG = {
         "id": "digitalizacion-patrimonio-fp",
         "createdAt": "2026-03-31",
         "title": {
-          "es": "Digitalización del Patrimonio Cultural con IA",
-          "en": "Cultural Heritage Digitisation with AI",
-          "va": "Digitalització del Patrimoni Cultural amb IA"
+          "es": "[DEMO] Digitalización del Patrimonio Cultural con IA",
+          "en": "[DEMO] Cultural Heritage Digitisation with AI",
+          "va": "[DEMO] Digitalització del Patrimoni Cultural amb IA"
         },
         "description": {
           "es": "Módulo FP de Gestión Cultural. Escaneo 3D, colorización neural de archivos históricos y creación de visitas virtuales inmersivas para museos y espacios patrimoniales.",
@@ -2815,9 +2815,9 @@ export const TRAINING_CONFIG = {
         "id": "salud-mental-digital-fp",
         "createdAt": "2026-04-07",
         "title": {
-          "es": "Tecnología y Bienestar — IA en Salud Mental",
-          "en": "Technology and Wellbeing — AI in Mental Health",
-          "va": "Tecnologia i Benestar — IA en Salut Mental"
+          "es": "[DEMO] Tecnología y Bienestar — IA en Salud Mental",
+          "en": "[DEMO] Technology and Wellbeing — AI in Mental Health",
+          "va": "[DEMO] Tecnologia i Benestar — IA en Salut Mental"
         },
         "description": {
           "es": "Módulo FP de Integración Social. Herramientas de detección temprana del estrés, apps de bienestar basadas en IA y límites éticos del uso de datos clínicos.",
@@ -2852,9 +2852,9 @@ export const TRAINING_CONFIG = {
         "id": "energias-renovables-ia-fp",
         "createdAt": "2026-04-11",
         "title": {
-          "es": "Energías Renovables y Optimización con IA",
-          "en": "Renewable Energy and AI Optimisation",
-          "va": "Energies Renovables i Optimització amb IA"
+          "es": "[DEMO] Energías Renovables y Optimización con IA",
+          "en": "[DEMO] Renewable Energy and AI Optimisation",
+          "va": "[DEMO] Energies Renovables i Optimització amb IA"
         },
         "description": {
           "es": "Módulo FP de Energías Renovables. Predicción de producción solar y eólica con ML, gestión de microrredes y almacenamiento inteligente de baterías.",
@@ -2889,9 +2889,9 @@ export const TRAINING_CONFIG = {
         "id": "logistica-supply-chain-fp",
         "createdAt": "2026-04-16",
         "title": {
-          "es": "Logística Inteligente y Cadena de Suministro con IA",
-          "en": "Smart Logistics and Supply Chain with AI",
-          "va": "Logística Intel·ligent i Cadena de Subministrament amb IA"
+          "es": "[DEMO] Logística Inteligente y Cadena de Suministro con IA",
+          "en": "[DEMO] Smart Logistics and Supply Chain with AI",
+          "va": "[DEMO] Logística Intel·ligent i Cadena de Subministrament amb IA"
         },
         "description": {
           "es": "Módulo FP de Transporte y Logística. Optimización de rutas con algoritmos de IA, trazabilidad blockchain y predicción de demanda en tiempo real.",
@@ -2925,9 +2925,9 @@ export const TRAINING_CONFIG = {
         "id": "accesibilidad-ia-fp",
         "createdAt": "2026-04-22",
         "title": {
-          "es": "Accesibilidad Digital e IA Inclusiva",
-          "en": "Digital Accessibility and Inclusive AI",
-          "va": "Accessibilitat Digital i IA Inclusiva"
+          "es": "[DEMO] Accesibilidad Digital e IA Inclusiva",
+          "en": "[DEMO] Digital Accessibility and Inclusive AI",
+          "va": "[DEMO] Accessibilitat Digital i IA Inclusiva"
         },
         "description": {
           "es": "Módulo FP de Diseño Web. Auditorías WCAG automatizadas, generación de subtítulos y audiodescripciones con IA y diseño universal en plataformas educativas y públicas.",
@@ -2961,9 +2961,9 @@ export const TRAINING_CONFIG = {
         "id": "turismo-inteligente-fp",
         "createdAt": "2026-04-28",
         "title": {
-          "es": "Turismo Inteligente — Datos y Experiencia Digital",
-          "en": "Smart Tourism — Data and Digital Experience",
-          "va": "Turisme Intel·ligent — Dades i Experiència Digital"
+          "es": "[DEMO] Turismo Inteligente — Datos y Experiencia Digital",
+          "en": "[DEMO] Smart Tourism — Data and Digital Experience",
+          "va": "[DEMO] Turisme Intel·ligent — Dades i Experiència Digital"
         },
         "description": {
           "es": "Módulo FP de Turismo. Análisis de reseñas con NLP, personalización de itinerarios con IA y visualización de flujos turísticos para la gestión sostenible del destino.",
@@ -2999,9 +2999,9 @@ export const TRAINING_CONFIG = {
         "id": "arte-imagen-generativa-fp",
         "createdAt": "2026-05-05",
         "title": {
-          "es": "Arte e Imagen Generativa con IA",
-          "en": "Art and Generative Imagery with AI",
-          "va": "Art i Imatge Generativa amb IA"
+          "es": "[DEMO] Arte e Imagen Generativa con IA",
+          "en": "[DEMO] Art and Generative Imagery with AI",
+          "va": "[DEMO] Art i Imatge Generativa amb IA"
         },
         "description": {
           "es": "Módulo FP de Artes Gráficas. Creación de imágenes con modelos de difusión, edición vectorial asistida por IA y fundamentos éticos del arte generativo en contextos comerciales y culturales.",
@@ -3036,9 +3036,9 @@ export const TRAINING_CONFIG = {
         "id": "seguridad-alimentaria-ia-fp",
         "createdAt": "2026-05-12",
         "title": {
-          "es": "Seguridad Alimentaria y Trazabilidad con IA",
-          "en": "Food Safety and Traceability with AI",
-          "va": "Seguretat Alimentària i Traçabilitat amb IA"
+          "es": "[DEMO] Seguridad Alimentaria y Trazabilidad con IA",
+          "en": "[DEMO] Food Safety and Traceability with AI",
+          "va": "[DEMO] Seguretat Alimentària i Traçabilitat amb IA"
         },
         "description": {
           "es": "Módulo FP de Industria Alimentaria. Detección de contaminantes por visión artificial, trazabilidad de lote con IA y cumplimiento normativo automatizado en la cadena agroalimentaria.",
@@ -3074,9 +3074,9 @@ export const TRAINING_CONFIG = {
         "id": "ia-etica-aula-docentes",
         "createdAt": "2026-02-11",
         "title": {
-          "es": "IA Ética y Uso Responsable en el Aula",
-          "en": "Ethical AI and Responsible Use in the Classroom",
-          "va": "IA Ètica i Ús Responsable a l'Aula"
+          "es": "[DEMO] IA Ética y Uso Responsable en el Aula",
+          "en": "[DEMO] Ethical AI and Responsible Use in the Classroom",
+          "va": "[DEMO] IA Ètica i Ús Responsable a l'Aula"
         },
         "description": {
           "es": "Formación para docentes de FP. Fundamentos de IA, prompt engineering, detección de sesgos y uso ético en el contexto educativo. Disponible en Aules.",
@@ -3108,9 +3108,9 @@ export const TRAINING_CONFIG = {
         "id": "administracion-electronica-docentes",
         "createdAt": "2026-05-07",
         "title": {
-          "es": "Administración Electrónica e IA para el Sector Público",
-          "en": "Electronic Administration and AI for the Public Sector",
-          "va": "Administració Electrònica i IA per al Sector Públic"
+          "es": "[DEMO] Administración Electrónica e IA para el Sector Público",
+          "en": "[DEMO] Electronic Administration and AI for the Public Sector",
+          "va": "[DEMO] Administració Electrònica i IA per al Sector Públic"
         },
         "description": {
           "es": "Formación docente y funcionarios. IA en servicios públicos, chatbots ciudadanos y reglamento europeo de IA. Disponible en Aules.",
@@ -3144,9 +3144,9 @@ export const TRAINING_CONFIG = {
         "id": "steam-creatividad-generativa-docentes",
         "createdAt": "2026-01-06",
         "title": {
-          "es": "STEAM Creativo e IA Generativa para Proyectos de Aula",
-          "en": "Creative STEAM and Generative AI for Classroom Projects",
-          "va": "STEAM Creatiu i IA Generativa per a Projectes d'Aula"
+          "es": "[DEMO] STEAM Creativo e IA Generativa para Proyectos de Aula",
+          "en": "[DEMO] Creative STEAM and Generative AI for Classroom Projects",
+          "va": "[DEMO] STEAM Creatiu i IA Generativa per a Projectes d'Aula"
         },
         "description": {
           "es": "Diseño de proyectos STEAM donde la A se trabaja como arte, diseño y creatividad. Incluye prompts visuales, prototipado rápido y criterios éticos para evaluar producciones con IA.",
@@ -3181,9 +3181,9 @@ export const TRAINING_CONFIG = {
         "id": "vision-artificial-industria-docentes",
         "createdAt": "2026-01-13",
         "title": {
-          "es": "Visión Artificial para Retos Industriales en FP",
-          "en": "Computer Vision for Industrial Challenges in VET",
-          "va": "Visió Artificial per a Reptes Industrials en FP"
+          "es": "[DEMO] Visión Artificial para Retos Industriales en FP",
+          "en": "[DEMO] Computer Vision for Industrial Challenges in VET",
+          "va": "[DEMO] Visió Artificial per a Reptes Industrials en FP"
         },
         "description": {
           "es": "Formación docente para diseñar actividades con cámaras, datasets de calidad y modelos de clasificación aplicados a mantenimiento, seguridad y control de procesos industriales.",
@@ -3217,9 +3217,9 @@ export const TRAINING_CONFIG = {
         "id": "datos-climaticos-docentes",
         "createdAt": "2026-01-20",
         "title": {
-          "es": "Datos Climáticos, IA y Sostenibilidad en el Aula",
-          "en": "Climate Data, AI and Sustainability in the Classroom",
-          "va": "Dades Climàtiques, IA i Sostenibilitat a l'Aula"
+          "es": "[DEMO] Datos Climáticos, IA y Sostenibilidad en el Aula",
+          "en": "[DEMO] Climate Data, AI and Sustainability in the Classroom",
+          "va": "[DEMO] Dades Climàtiques, IA i Sostenibilitat a l'Aula"
         },
         "description": {
           "es": "Uso didáctico de datos ambientales abiertos para analizar tendencias, crear visualizaciones y plantear retos STEAM sobre energía, agua, residuos y adaptación climática.",
@@ -3254,9 +3254,9 @@ export const TRAINING_CONFIG = {
         "id": "arte-datos-turismo-docentes",
         "createdAt": "2026-01-27",
         "title": {
-          "es": "Arte de Datos e IA para Turismo Cultural",
-          "en": "Data Art and AI for Cultural Tourism",
-          "va": "Art de Dades i IA per al Turisme Cultural"
+          "es": "[DEMO] Arte de Datos e IA para Turismo Cultural",
+          "en": "[DEMO] Data Art and AI for Cultural Tourism",
+          "va": "[DEMO] Art de Dades i IA per al Turisme Cultural"
         },
         "description": {
           "es": "Curso para crear narrativas visuales con datos turísticos, patrimonio digital e IA generativa, conectando pensamiento computacional, cultura local y creatividad aplicada.",
@@ -3288,9 +3288,9 @@ export const TRAINING_CONFIG = {
         "id": "ia-agroalimentaria-docentes",
         "createdAt": "2026-02-03",
         "title": {
-          "es": "IA para Sistemas Agroalimentarios en Proyectos STEAM",
-          "en": "AI for Agri-food Systems in STEAM Projects",
-          "va": "IA per a Sistemes Agroalimentaris en Projectes STEAM"
+          "es": "[DEMO] IA para Sistemas Agroalimentarios en Proyectos STEAM",
+          "en": "[DEMO] AI for Agri-food Systems in STEAM Projects",
+          "va": "[DEMO] IA per a Sistemes Agroalimentaris en Projectes STEAM"
         },
         "description": {
           "es": "Diseño de actividades sobre agricultura de precisión, trazabilidad alimentaria y predicción de cosechas usando datos reales, sensores e interpretación crítica de modelos.",
@@ -3326,9 +3326,9 @@ export const TRAINING_CONFIG = {
         "id": "salud-digital-aula-docentes",
         "createdAt": "2026-02-17",
         "title": {
-          "es": "Salud Digital, IA Responsable y Aprendizaje Basado en Casos",
-          "en": "Digital Health, Responsible AI and Case-based Learning",
-          "va": "Salut Digital, IA Responsable i Aprenentatge Basat en Casos"
+          "es": "[DEMO] Salud Digital, IA Responsable y Aprendizaje Basado en Casos",
+          "en": "[DEMO] Digital Health, Responsible AI and Case-based Learning",
+          "va": "[DEMO] Salut Digital, IA Responsable i Aprenentatge Basat en Casos"
         },
         "description": {
           "es": "Formación para docentes que quieran trabajar diagnóstico asistido, bienestar digital y privacidad con casos simulados, rúbricas de riesgo y debate ético.",
@@ -3361,9 +3361,9 @@ export const TRAINING_CONFIG = {
         "id": "automatizacion-administracion-docentes",
         "createdAt": "2026-02-24",
         "title": {
-          "es": "Automatización Inteligente y Servicios Públicos como Reto de Aula",
-          "en": "Intelligent Automation and Public Services as Classroom Challenges",
-          "va": "Automatització Intel·ligent i Serveis Públics com a Repte d'Aula"
+          "es": "[DEMO] Automatización Inteligente y Servicios Públicos como Reto de Aula",
+          "en": "[DEMO] Intelligent Automation and Public Services as Classroom Challenges",
+          "va": "[DEMO] Automatització Intel·ligent i Serveis Públics com a Repte d'Aula"
         },
         "description": {
           "es": "Curso para transformar trámites públicos, chatbots y análisis documental en proyectos STEAM sobre mejora de servicios, accesibilidad y confianza ciudadana.",
@@ -3397,9 +3397,9 @@ export const TRAINING_CONFIG = {
         "id": "creatividad-aumentada-docentes",
         "createdAt": "2026-03-02",
         "title": {
-          "es": "Creatividad Aumentada, Diseño y Pensamiento Visual con IA",
-          "en": "Augmented Creativity, Design and Visual Thinking with AI",
-          "va": "Creativitat Augmentada, Disseny i Pensament Visual amb IA"
+          "es": "[DEMO] Creatividad Aumentada, Diseño y Pensamiento Visual con IA",
+          "en": "[DEMO] Augmented Creativity, Design and Visual Thinking with AI",
+          "va": "[DEMO] Creativitat Augmentada, Disseny i Pensament Visual amb IA"
         },
         "description": {
           "es": "Estrategias para integrar bocetado, imagen generativa, moodboards y prototipos visuales en secuencias STEAM, con atención a autoría, sesgos y evaluación.",
@@ -3434,9 +3434,9 @@ export const TRAINING_CONFIG = {
         "id": "iot-aula-sectores-docentes",
         "createdAt": "2026-03-09",
         "title": {
-          "es": "IoT, Sensores e IA para Retos Multisectoriales",
-          "en": "IoT, Sensors and AI for Multi-sector Challenges",
-          "va": "IoT, Sensors i IA per a Reptes Multisectorials"
+          "es": "[DEMO] IoT, Sensores e IA para Retos Multisectoriales",
+          "en": "[DEMO] IoT, Sensors and AI for Multi-sector Challenges",
+          "va": "[DEMO] IoT, Sensors i IA per a Reptes Multisectorials"
         },
         "description": {
           "es": "Itinerario docente para conectar sensores sencillos, recogida de datos y modelos predictivos en retos de industria, agroalimentación, salud y medio ambiente.",
@@ -3470,9 +3470,9 @@ export const TRAINING_CONFIG = {
         "id": "evaluacion-ia-steam-docentes",
         "createdAt": "2026-03-16",
         "title": {
-          "es": "Evaluación de Proyectos STEAM con Evidencias Generadas por IA",
-          "en": "Assessing STEAM Projects with AI-generated Evidence",
-          "va": "Avaluació de Projectes STEAM amb Evidències Generades per IA"
+          "es": "[DEMO] Evaluación de Proyectos STEAM con Evidencias Generadas por IA",
+          "en": "[DEMO] Assessing STEAM Projects with AI-generated Evidence",
+          "va": "[DEMO] Avaluació de Projectes STEAM amb Evidències Generades per IA"
         },
         "description": {
           "es": "Diseño de rúbricas, diarios de aprendizaje, portfolios y criterios de transparencia para evaluar procesos creativos, técnicos y colaborativos con apoyo de IA.",
@@ -3505,9 +3505,9 @@ export const TRAINING_CONFIG = {
         "id": "mantenimiento-predictivo-docentes",
         "createdAt": "2026-03-23",
         "title": {
-          "es": "Mantenimiento Predictivo como Proyecto Didáctico",
-          "en": "Predictive Maintenance as a Teaching Project",
-          "va": "Manteniment Predictiu com a Projecte Didàctic"
+          "es": "[DEMO] Mantenimiento Predictivo como Proyecto Didáctico",
+          "en": "[DEMO] Predictive Maintenance as a Teaching Project",
+          "va": "[DEMO] Manteniment Predictiu com a Projecte Didàctic"
         },
         "description": {
           "es": "Curso práctico para convertir datos de máquinas, vibraciones y consumos en actividades de análisis predictivo, visualización y toma de decisiones en FP.",
@@ -3539,9 +3539,9 @@ export const TRAINING_CONFIG = {
         "id": "narrativas-inmersivas-docentes",
         "createdAt": "2026-03-30",
         "title": {
-          "es": "Narrativas Inmersivas con IA para Patrimonio y Cultura",
-          "en": "Immersive AI Narratives for Heritage and Culture",
-          "va": "Narratives Immersives amb IA per a Patrimoni i Cultura"
+          "es": "[DEMO] Narrativas Inmersivas con IA para Patrimonio y Cultura",
+          "en": "[DEMO] Immersive AI Narratives for Heritage and Culture",
+          "va": "[DEMO] Narratives Immersives amb IA per a Patrimoni i Cultura"
         },
         "description": {
           "es": "Formación para crear experiencias educativas con guion, imagen, audio y recorridos interactivos generados con IA a partir de patrimonio cultural local.",
@@ -3576,9 +3576,9 @@ export const TRAINING_CONFIG = {
         "id": "ia-inclusiva-accesibilidad-docentes",
         "createdAt": "2026-04-02",
         "title": {
-          "es": "IA Inclusiva, Accesibilidad y Diseño Universal",
-          "en": "Inclusive AI, Accessibility and Universal Design",
-          "va": "IA Inclusiva, Accessibilitat i Disseny Universal"
+          "es": "[DEMO] IA Inclusiva, Accesibilidad y Diseño Universal",
+          "en": "[DEMO] Inclusive AI, Accessibility and Universal Design",
+          "va": "[DEMO] IA Inclusiva, Accessibilitat i Disseny Universal"
         },
         "description": {
           "es": "Uso de herramientas de IA para adaptar materiales, crear subtítulos, generar alternativas visuales y revisar barreras de accesibilidad en recursos STEAM.",
@@ -3610,9 +3610,9 @@ export const TRAINING_CONFIG = {
         "id": "gemelos-digitales-aula-docentes",
         "createdAt": "2026-04-06",
         "title": {
-          "es": "Gemelos Digitales para Simular Ciudades, Fábricas y Aulas",
-          "en": "Digital Twins to Simulate Cities, Factories and Classrooms",
-          "va": "Bessons Digitals per a Simular Ciutats, Fàbriques i Aules"
+          "es": "[DEMO] Gemelos Digitales para Simular Ciudades, Fábricas y Aulas",
+          "en": "[DEMO] Digital Twins to Simulate Cities, Factories and Classrooms",
+          "va": "[DEMO] Bessons Digitals per a Simular Ciutats, Fàbriques i Aules"
         },
         "description": {
           "es": "Introducción docente a modelos digitales sencillos para simular procesos, comparar escenarios y diseñar retos de mejora con datos de industria, energía y servicios.",
@@ -3648,9 +3648,9 @@ export const TRAINING_CONFIG = {
         "id": "pensamiento-critico-modelos-docentes",
         "createdAt": "2026-04-10",
         "title": {
-          "es": "Pensamiento Crítico ante Modelos de IA en Contextos STEAM",
-          "en": "Critical Thinking about AI Models in STEAM Contexts",
-          "va": "Pensament Crític davant Models d'IA en Contextos STEAM"
+          "es": "[DEMO] Pensamiento Crítico ante Modelos de IA en Contextos STEAM",
+          "en": "[DEMO] Critical Thinking about AI Models in STEAM Contexts",
+          "va": "[DEMO] Pensament Crític davant Models d'IA en Contextos STEAM"
         },
         "description": {
           "es": "Curso transversal para analizar límites, sesgos, alucinaciones y calidad de datos en modelos de IA usados en proyectos técnicos, creativos y sociales.",
@@ -3684,9 +3684,9 @@ export const TRAINING_CONFIG = {
         "id": "musica-sonido-ia-docentes",
         "createdAt": "2026-04-14",
         "title": {
-          "es": "Música, Sonido e IA para Aprendizaje Creativo",
-          "en": "Music, Sound and AI for Creative Learning",
-          "va": "Música, So i IA per a Aprenentatge Creatiu"
+          "es": "[DEMO] Música, Sonido e IA para Aprendizaje Creativo",
+          "en": "[DEMO] Music, Sound and AI for Creative Learning",
+          "va": "[DEMO] Música, So i IA per a Aprenentatge Creatiu"
         },
         "description": {
           "es": "Propuestas para trabajar composición generativa, paisajes sonoros, análisis acústico y narrativas audiovisuales como puente entre arte, tecnología y datos.",
@@ -3721,9 +3721,9 @@ export const TRAINING_CONFIG = {
         "id": "movilidad-datos-urbanos-docentes",
         "createdAt": "2026-04-18",
         "title": {
-          "es": "Movilidad, Datos Urbanos e IA para Retos STEAM",
-          "en": "Mobility, Urban Data and AI for STEAM Challenges",
-          "va": "Mobilitat, Dades Urbanes i IA per a Reptes STEAM"
+          "es": "[DEMO] Movilidad, Datos Urbanos e IA para Retos STEAM",
+          "en": "[DEMO] Mobility, Urban Data and AI for STEAM Challenges",
+          "va": "[DEMO] Mobilitat, Dades Urbanes i IA per a Reptes STEAM"
         },
         "description": {
           "es": "Formación para diseñar retos sobre transporte, rutas, accesibilidad y huella ambiental usando datos urbanos, visualizaciones y modelos predictivos sencillos.",
@@ -3759,9 +3759,9 @@ export const TRAINING_CONFIG = {
         "id": "seguridad-alimentaria-docentes",
         "createdAt": "2026-04-22",
         "title": {
-          "es": "Seguridad Alimentaria, Trazabilidad e IA en el Aula",
-          "en": "Food Safety, Traceability and AI in the Classroom",
-          "va": "Seguretat Alimentària, Traçabilitat i IA a l'Aula"
+          "es": "[DEMO] Seguridad Alimentaria, Trazabilidad e IA en el Aula",
+          "en": "[DEMO] Food Safety, Traceability and AI in the Classroom",
+          "va": "[DEMO] Seguretat Alimentària, Traçabilitat i IA a l'Aula"
         },
         "description": {
           "es": "Curso para convertir control de calidad, visión artificial y trazabilidad de productos en secuencias didácticas vinculadas a sostenibilidad y salud pública.",
@@ -3797,9 +3797,9 @@ export const TRAINING_CONFIG = {
         "id": "laboratorios-creativos-ia-docentes",
         "createdAt": "2026-04-27",
         "title": {
-          "es": "Laboratorios Creativos de IA para Retos del Ecosistema",
-          "en": "Creative AI Labs for Ecosystem Challenges",
-          "va": "Laboratoris Creatius d'IA per a Reptes de l'Ecosistema"
+          "es": "[DEMO] Laboratorios Creativos de IA para Retos del Ecosistema",
+          "en": "[DEMO] Creative AI Labs for Ecosystem Challenges",
+          "va": "[DEMO] Laboratoris Creatius d'IA per a Reptes de l'Ecosistema"
         },
         "description": {
           "es": "Metodología para organizar laboratorios de aula donde alumnado, docentes y agentes externos prototipan soluciones STEAM con IA, datos y narrativas creativas.",
@@ -3833,9 +3833,9 @@ export const TRAINING_CONFIG = {
         "id": "privacidad-datos-aula-docentes",
         "createdAt": "2026-05-01",
         "title": {
-          "es": "Privacidad, Datos y Gobernanza de IA para Docentes",
-          "en": "Privacy, Data and AI Governance for Teachers",
-          "va": "Privacitat, Dades i Governança d'IA per a Docents"
+          "es": "[DEMO] Privacidad, Datos y Gobernanza de IA para Docentes",
+          "en": "[DEMO] Privacy, Data and AI Governance for Teachers",
+          "va": "[DEMO] Privacitat, Dades i Governança d'IA per a Docents"
         },
         "description": {
           "es": "Curso para trabajar protección de datos, consentimiento, trazabilidad de herramientas y uso responsable de plataformas de IA en proyectos educativos.",
@@ -3867,9 +3867,9 @@ export const TRAINING_CONFIG = {
         "id": "emprendimiento-steam-ia-docentes",
         "createdAt": "2026-05-08",
         "title": {
-          "es": "Emprendimiento STEAM con IA, Arte y Prototipos",
-          "en": "STEAM Entrepreneurship with AI, Art and Prototypes",
-          "va": "Emprenedoria STEAM amb IA, Art i Prototips"
+          "es": "[DEMO] Emprendimiento STEAM con IA, Arte y Prototipos",
+          "en": "[DEMO] STEAM Entrepreneurship with AI, Art and Prototypes",
+          "va": "[DEMO] Emprenedoria STEAM amb IA, Art i Prototips"
         },
         "description": {
           "es": "Formación para guiar proyectos emprendedores que combinen creatividad, análisis de mercado, prototipos generativos y validación con usuarios reales.",
@@ -3905,9 +3905,9 @@ export const TRAINING_CONFIG = {
         "id": "bienestar-docente-ia-docentes",
         "createdAt": "2026-05-13",
         "title": {
-          "es": "Bienestar Docente, Organización del Trabajo e IA",
-          "en": "Teacher Wellbeing, Work Organisation and AI",
-          "va": "Benestar Docent, Organització del Treball i IA"
+          "es": "[DEMO] Bienestar Docente, Organización del Trabajo e IA",
+          "en": "[DEMO] Teacher Wellbeing, Work Organisation and AI",
+          "va": "[DEMO] Benestar Docent, Organització del Treball i IA"
         },
         "description": {
           "es": "Uso crítico de asistentes de IA para planificación, adaptación de materiales, gestión de feedback y reducción de carga administrativa sin perder criterio pedagógico.",
@@ -3941,9 +3941,9 @@ export const TRAINING_CONFIG = {
         "id": "ml-diagnostico-master",
         "createdAt": "2026-01-23",
         "title": {
-          "es": "Machine Learning para Diagnóstico Clínico",
-          "en": "Machine Learning for Clinical Diagnosis",
-          "va": "Aprenentatge de Màquina per a Diagnòstic Clínic"
+          "es": "[DEMO] Machine Learning para Diagnóstico Clínico",
+          "en": "[DEMO] Machine Learning for Clinical Diagnosis",
+          "va": "[DEMO] Aprenentatge de Màquina per a Diagnòstic Clínic"
         },
         "description": {
           "es": "Módulo de profundización — candidato a puente con el Track A. CNN aplicadas a radiología, NLP clínico y apoyo a la decisión médica.",
@@ -3975,9 +3975,9 @@ export const TRAINING_CONFIG = {
         "id": "gemelos-digitales-master",
         "createdAt": "2026-03-14",
         "title": {
-          "es": "Gemelos Digitales y Simulación para la Industria",
-          "en": "Digital Twins and Simulation for Industry",
-          "va": "Bessons Digitals i Simulació per a la Indústria"
+          "es": "[DEMO] Gemelos Digitales y Simulación para la Industria",
+          "en": "[DEMO] Digital Twins and Simulation for Industry",
+          "va": "[DEMO] Bessons Digitals i Simulació per a la Indústria"
         },
         "description": {
           "es": "Módulo candidato a puente Track A. Gemelos digitales en entornos industriales, SCADA, IIoT y edge computing.",
@@ -4010,9 +4010,9 @@ export const TRAINING_CONFIG = {
         "id": "patrimonio-cultural-master",
         "createdAt": "2026-04-22",
         "title": {
-          "es": "IA Generativa para Patrimonio Cultural y Turismo",
-          "en": "Generative AI for Cultural Heritage and Tourism",
-          "va": "IA Generativa per al Patrimoni Cultural i Turisme"
+          "es": "[DEMO] IA Generativa para Patrimonio Cultural y Turismo",
+          "en": "[DEMO] Generative AI for Cultural Heritage and Tourism",
+          "va": "[DEMO] IA Generativa per al Patrimoni Cultural i Turisme"
         },
         "description": {
           "es": "Módulo candidato a puente Track A. Modelos de difusión y NLP para museos virtuales y restauración digital.",
@@ -4044,9 +4044,9 @@ export const TRAINING_CONFIG = {
         "id": "agentes-ia-servicios-publicos-master",
         "createdAt": "2026-01-04",
         "title": {
-          "es": "Agentes de IA para Servicios Públicos y Participación Ciudadana",
-          "en": "AI Agents for Public Services and Citizen Participation",
-          "va": "Agents d'IA per a Serveis Públics i Participació Ciutadana"
+          "es": "[DEMO] Agentes de IA para Servicios Públicos y Participación Ciudadana",
+          "en": "[DEMO] AI Agents for Public Services and Citizen Participation",
+          "va": "[DEMO] Agents d'IA per a Serveis Públics i Participació Ciutadana"
         },
         "description": {
           "es": "Diseño de asistentes inteligentes, RAG documental y análisis de trámites para mejorar accesibilidad, transparencia y confianza institucional.",
@@ -4080,9 +4080,9 @@ export const TRAINING_CONFIG = {
         "id": "creatividad-computacional-steam-master",
         "createdAt": "2026-01-10",
         "title": {
-          "es": "Creatividad Computacional e IA Generativa para Proyectos STEAM",
-          "en": "Computational Creativity and Generative AI for STEAM Projects",
-          "va": "Creativitat Computacional i IA Generativa per a Projectes STEAM"
+          "es": "[DEMO] Creatividad Computacional e IA Generativa para Proyectos STEAM",
+          "en": "[DEMO] Computational Creativity and Generative AI for STEAM Projects",
+          "va": "[DEMO] Creativitat Computacional i IA Generativa per a Projectes STEAM"
         },
         "description": {
           "es": "Laboratorio avanzado de modelos generativos, narrativa visual, sonido sintético y evaluación crítica para prototipos creativos con impacto sectorial.",
@@ -4117,9 +4117,9 @@ export const TRAINING_CONFIG = {
         "id": "vision-artificial-calidad-industrial-master",
         "createdAt": "2026-01-18",
         "title": {
-          "es": "Visión Artificial para Calidad, Seguridad y Diseño Industrial",
-          "en": "Computer Vision for Quality, Safety and Industrial Design",
-          "va": "Visió Artificial per a Qualitat, Seguretat i Disseny Industrial"
+          "es": "[DEMO] Visión Artificial para Calidad, Seguridad y Diseño Industrial",
+          "en": "[DEMO] Computer Vision for Quality, Safety and Industrial Design",
+          "va": "[DEMO] Visió Artificial per a Qualitat, Seguretat i Disseny Industrial"
         },
         "description": {
           "es": "Deep learning visual para inspección de producto, prevención de riesgos, diseño asistido y cuadros de mando explicables en planta.",
@@ -4153,9 +4153,9 @@ export const TRAINING_CONFIG = {
         "id": "ia-agroalimentaria-precision-master",
         "createdAt": "2026-01-29",
         "title": {
-          "es": "IA para Agroalimentación de Precisión y Trazabilidad Creativa",
-          "en": "AI for Precision Agri-food and Creative Traceability",
-          "va": "IA per a Agroalimentació de Precisió i Traçabilitat Creativa"
+          "es": "[DEMO] IA para Agroalimentación de Precisión y Trazabilidad Creativa",
+          "en": "[DEMO] AI for Precision Agri-food and Creative Traceability",
+          "va": "[DEMO] IA per a Agroalimentació de Precisió i Traçabilitat Creativa"
         },
         "description": {
           "es": "Modelos predictivos, sensores, visión artificial y relatos de trazabilidad para optimizar cultivos, calidad alimentaria y comunicación con consumidores.",
@@ -4191,9 +4191,9 @@ export const TRAINING_CONFIG = {
         "id": "modelos-climaticos-biodiversidad-master",
         "createdAt": "2026-02-06",
         "title": {
-          "es": "Modelos de IA para Clima, Biodiversidad y Visualización Ambiental",
-          "en": "AI Models for Climate, Biodiversity and Environmental Visualisation",
-          "va": "Models d'IA per a Clima, Biodiversitat i Visualització Ambiental"
+          "es": "[DEMO] Modelos de IA para Clima, Biodiversidad y Visualización Ambiental",
+          "en": "[DEMO] AI Models for Climate, Biodiversity and Environmental Visualisation",
+          "va": "[DEMO] Models d'IA per a Clima, Biodiversitat i Visualització Ambiental"
         },
         "description": {
           "es": "Aprendizaje automático con datos satelitales, sensores y series temporales para anticipar riesgos ambientales y comunicar escenarios complejos.",
@@ -4228,9 +4228,9 @@ export const TRAINING_CONFIG = {
         "id": "learning-analytics-generativa-master",
         "createdAt": "2026-02-15",
         "title": {
-          "es": "Learning Analytics e IA Generativa para Educación Personalizada",
-          "en": "Learning Analytics and Generative AI for Personalised Education",
-          "va": "Learning Analytics i IA Generativa per a Educació Personalitzada"
+          "es": "[DEMO] Learning Analytics e IA Generativa para Educación Personalizada",
+          "en": "[DEMO] Learning Analytics and Generative AI for Personalised Education",
+          "va": "[DEMO] Learning Analytics i IA Generativa per a Educació Personalitzada"
         },
         "description": {
           "es": "Analítica avanzada, tutores generativos, evaluación responsable y diseño de experiencias STEAM adaptativas con evidencias de aprendizaje.",
@@ -4262,9 +4262,9 @@ export const TRAINING_CONFIG = {
         "id": "bioarte-datos-salud-master",
         "createdAt": "2026-02-24",
         "title": {
-          "es": "Bioarte, Datos de Salud e IA Responsable",
-          "en": "Bioart, Health Data and Responsible AI",
-          "va": "Bioart, Dades de Salut i IA Responsable"
+          "es": "[DEMO] Bioarte, Datos de Salud e IA Responsable",
+          "en": "[DEMO] Bioart, Health Data and Responsible AI",
+          "va": "[DEMO] Bioart, Dades de Salut i IA Responsable"
         },
         "description": {
           "es": "Cruce entre ciencia de datos, visualización artística y ética biomédica para explorar señales fisiológicas, bienestar y comunicación pública de salud.",
@@ -4297,9 +4297,9 @@ export const TRAINING_CONFIG = {
         "id": "robots-colaborativos-industria-creativa-master",
         "createdAt": "2026-03-03",
         "title": {
-          "es": "Robots Colaborativos, IA y Fabricación Creativa",
-          "en": "Collaborative Robots, AI and Creative Manufacturing",
-          "va": "Robots Col·laboratius, IA i Fabricació Creativa"
+          "es": "[DEMO] Robots Colaborativos, IA y Fabricación Creativa",
+          "en": "[DEMO] Collaborative Robots, AI and Creative Manufacturing",
+          "va": "[DEMO] Robots Col·laboratius, IA i Fabricació Creativa"
         },
         "description": {
           "es": "Programación inteligente de cobots, percepción multimodal y prototipado creativo para fabricación avanzada, seguridad y personalización de producto.",
@@ -4333,9 +4333,9 @@ export const TRAINING_CONFIG = {
         "id": "turismo-inteligente-experiencias-master",
         "createdAt": "2026-03-21",
         "title": {
-          "es": "Turismo Inteligente, Experiencias Inmersivas e IA Narrativa",
-          "en": "Smart Tourism, Immersive Experiences and Narrative AI",
-          "va": "Turisme Intel·ligent, Experiències Immersives i IA Narrativa"
+          "es": "[DEMO] Turismo Inteligente, Experiencias Inmersivas e IA Narrativa",
+          "en": "[DEMO] Smart Tourism, Immersive Experiences and Narrative AI",
+          "va": "[DEMO] Turisme Intel·ligent, Experiències Immersives i IA Narrativa"
         },
         "description": {
           "es": "Recomendadores, gemelos de destino, generación de contenidos y métricas de experiencia para diseñar rutas culturales inclusivas y sostenibles.",
@@ -4371,9 +4371,9 @@ export const TRAINING_CONFIG = {
         "id": "ia-compras-publicas-sostenibles-master",
         "createdAt": "2026-04-01",
         "title": {
-          "es": "IA para Compra Pública Innovadora y Sostenible",
-          "en": "AI for Innovative and Sustainable Public Procurement",
-          "va": "IA per a Compra Pública Innovadora i Sostenible"
+          "es": "[DEMO] IA para Compra Pública Innovadora y Sostenible",
+          "en": "[DEMO] AI for Innovative and Sustainable Public Procurement",
+          "va": "[DEMO] IA per a Compra Pública Innovadora i Sostenible"
         },
         "description": {
           "es": "Minería de documentos, evaluación multicriterio, detección de riesgos y diseño visual de evidencias para políticas públicas basadas en datos.",
@@ -4408,9 +4408,9 @@ export const TRAINING_CONFIG = {
         "id": "food-design-ia-master",
         "createdAt": "2026-04-12",
         "title": {
-          "es": "Food Design con IA, Sensorización y Experiencia de Usuario",
-          "en": "Food Design with AI, Sensing and User Experience",
-          "va": "Food Design amb IA, Sensorització i Experiència d'Usuari"
+          "es": "[DEMO] Food Design con IA, Sensorización y Experiencia de Usuario",
+          "en": "[DEMO] Food Design with AI, Sensing and User Experience",
+          "va": "[DEMO] Food Design amb IA, Sensorització i Experiència d'Usuari"
         },
         "description": {
           "es": "Generación de recetas, análisis sensorial, optimización nutricional y diseño de productos alimentarios con criterios creativos, saludables y sostenibles.",
@@ -4447,9 +4447,9 @@ export const TRAINING_CONFIG = {
         "id": "ciberseguridad-ia-infraestructuras-master",
         "createdAt": "2026-04-28",
         "title": {
-          "es": "IA para Ciberseguridad de Infraestructuras Críticas STEAM",
-          "en": "AI for Cybersecurity in Critical STEAM Infrastructures",
-          "va": "IA per a Ciberseguretat d'Infraestructures Crítiques STEAM"
+          "es": "[DEMO] IA para Ciberseguridad de Infraestructuras Críticas STEAM",
+          "en": "[DEMO] AI for Cybersecurity in Critical STEAM Infrastructures",
+          "va": "[DEMO] IA per a Ciberseguretat d'Infraestructures Crítiques STEAM"
         },
         "description": {
           "es": "Detección de anomalías, simulación de ataques, explicación de modelos y comunicación visual de riesgos en entornos industriales y públicos.",
@@ -4485,9 +4485,9 @@ export const TRAINING_CONFIG = {
         "id": "laboratorio-retos-multisectoriales-master",
         "createdAt": "2026-05-16",
         "title": {
-          "es": "Laboratorio Master de Retos Multisectoriales con IA",
-          "en": "Master Lab for Multi-sector AI Challenges",
-          "va": "Laboratori Master de Reptes Multisectorials amb IA"
+          "es": "[DEMO] Laboratorio Master de Retos Multisectoriales con IA",
+          "en": "[DEMO] Master Lab for Multi-sector AI Challenges",
+          "va": "[DEMO] Laboratori Master de Reptes Multisectorials amb IA"
         },
         "description": {
           "es": "Proyecto integrador con datos reales, prototipos generativos, evaluación ética y transferencia a retos de salud, industria, educación, ambiente y cultura.",
