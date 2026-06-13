@@ -557,7 +557,7 @@ export const TRAINING_CONFIG = {
             "text": {
               "es": "Caso o reto del ecosistema candidato al Track A",
               "en": "Ecosystem case or challenge candidate for Track A",
-              "va": "Admissió (grau universitari o FP + pont)"
+              "va": "Cas o repte de l'ecosistema candidat al Track A"
             }
           },
           {
@@ -603,7 +603,7 @@ export const TRAINING_CONFIG = {
         "text": {
           "es": "El Máster AI-SECRETT (Track A) es gobernado por UVEG y los socios académicos del consorcio. La AI-STEAM Network (Track B) no asigna ECTS, no certifica títulos universitarios ni define los criterios de evaluación del Máster.",
           "en": "The Master AI-SECRETT (Track A) is governed by UVEG and the academic partners of the consortium. The AI-STEAM Network (Track B) does not award ECTS, does not certify university degrees and does not define Master assessment criteria.",
-          "va": "El Màster AI-SECRETT (Track A) és governat per UVEG. L'accés i el reconeixement de crèdits estan subjectes als criteris d'admissió universitària. AI-STEAM Network (Track B, CEICE) facilita el pont i la preparació."
+          "va": "El Màster AI-SECRETT (Track A) és governat per UVEG i els socis acadèmics del consorci. La AI-STEAM Network (Track B) no atorga ECTS, no certifica títols universitaris ni definix els criteris d'avaluació del Màster."
         }
       }
     },
