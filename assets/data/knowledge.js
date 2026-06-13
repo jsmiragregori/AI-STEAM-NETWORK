@@ -14,11 +14,6 @@ export const KNOWLEDGE_CONFIG = {
       "en": "Open educational resources, use cases, learning evidence and templates for the AI-SECRETT community. Download, adapt and share.",
       "va": "Recursos educatius oberts, casos d'ús, evidències d'aprenentatge i plantilles per a la comunitat AI-SECRETT. Descarrega, adapta i comparteix."
     },
-    "notice": {
-      "es": "⚠️ Los recursos, casos, evidencias y descargas son contenido demo del prototipo. Las cifras son indicativas — no representan resultados reales de AI-SECRETT.",
-      "en": "⚠️ Resources, cases, evidence and downloads are prototype demo content. Figures are indicative — they do not represent real AI-SECRETT results.",
-      "va": "⚠️ Els recursos, casos, evidències i descàrregues són contingut demo del prototip. Les xifres són indicatives — no representen resultats reals d'AI-SECRETT."
-    },
     "stats": [
       {
         "id": "oer-resources",
@@ -51,7 +46,7 @@ export const KNOWLEDGE_CONFIG = {
     "title": {
       "es": "Del Reto Ecosistema al Recurso Educativo Abierto",
       "en": "From Ecosystem Challenge to Open Educational Resource",
-      "va": "Del Repte Industrial al Recurs Educatiu Obert"
+      "va": "Del Repte Ecosistema al Recurs Educatiu Obert"
     },
     "description": {
       "es": "La red transforma los desafíos reales de las organizaciones en conocimiento educativo de calidad, siguiendo un proceso de transferencia validado por el consorcio AI-SECRETT.",
@@ -134,9 +129,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Evidència Registrada"
         },
         "description": {
-          "es": "Se registran indicadores, trazas ConsensUE, recursos, encuestas y participación",
-          "en": "Indicators, ConsensUE traces, resources, surveys and participation are recorded",
-          "va": "Es registren indicadors, traces ConsensUE, recursos, enquestes i participació"
+          "es": "Pueden registrarse indicadores, trazas ConsensUE, recursos, encuestas y participación",
+          "en": "Indicators, ConsensUE traces, resources, surveys and participation may be recorded",
+          "va": "Poden registrar-se indicadors, traces ConsensUE, recursos, enquestes i participació"
         }
       },
       {
@@ -189,9 +184,9 @@ export const KNOWLEDGE_CONFIG = {
           "visible": true,
           "name": "ConsensUE (Aules)",
           "description": {
-            "es": "La comunidad vota qué necesidades y recursos son prioritarios para informar actividades de formación, pilotaje y gobernanza.",
-            "en": "The community votes on which needs and resources are priorities to inform training, piloting and governance activities.",
-            "va": "La comunitat vota quins reptes i recursos són prioritaris per a informar necessitats formatives i possibles activitats."
+            "es": "La comunidad puede proponer y consultar qué necesidades y recursos pueden ser relevantes para la red, con el fin de orientar futuras actividades.",
+            "en": "The community can propose and consult on which needs and resources may be relevant to the network, helping to guide future activities.",
+            "va": "La comunitat pot proposar i consultar quins recursos i necessitats poden ser rellevants per a la xarxa, amb la finalitat d'orientar futures activitats."
           }
         }
       ]
@@ -200,14 +195,14 @@ export const KNOWLEDGE_CONFIG = {
   "oerResourcesBlock": {
     "visible": true,
     "title": {
-      "es": "OER y Recursos de la Red",
-      "en": "OER and Network Resources",
-      "va": "OER i Recursos de la Xarxa"
+      "es": "Recursos Educativos Abiertos",
+      "en": "Open Educational Resources",
+      "va": "Recursos Educatius Oberts"
     },
     "description": {
-      "es": "Recursos abiertos (CC) disponibles en Aules y Obert. Cada recurso indica sector AI-SECRETT, ruta educativa, tipo y estado de validación. Datos demo del prototipo.",
-      "en": "Open resources (CC-licensed) available in Aules and Obert. Each resource shows AI-SECRETT sector, educational route, type and validation status. Prototype demo data.",
-      "va": "Recursos oberts (CC) disponibles a Aules i a Obert. Cada recurs indica sector AI-SECRETT, ruta educativa, tipus i estat de validació. Dades demo del prototip."
+      "es": "Repositorio de recursos educativos abiertos bajo licencias Creative Commons, accesibles a través de Aules. Cada recurso incluye sector AI-SECRETT, ruta educativa, tipo y estado de validación. Contenido demo del prototipo.",
+      "en": "Repository of open educational resources under Creative Commons licences, accessible via Aules. Each resource includes AI-SECRETT sector, educational route, type and validation status. Prototype demo content.",
+      "va": "Repositori de recursos educatius oberts sota llicències Creative Commons, accessibles a través d'Aules. Cada recurs inclou sector AI-SECRETT, ruta educativa, tipus i estat de validació. Contingut demo del prototip."
     },
     "searchPlaceholder": {
       "es": "Buscar recurso...",
@@ -298,9 +293,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2026-05-10",
         "title": {
-          "es": "Guía de Ética en IA para FP",
-          "en": "Guide to AI Ethics for VET",
-          "va": "Guia d'Ètica en IA per a FP"
+          "es": "[DEMO] Guía de Ética en IA para FP",
+          "en": "[DEMO] Guide to AI Ethics for VET",
+          "va": "[DEMO] Guia d'Ètica en IA per a FP"
         },
         "typeId": "guia",
         "sectorIds": [
@@ -328,9 +323,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2026-05-01",
         "title": {
-          "es": "Manual de Gemelos Digitales v2.1",
-          "en": "Digital Twins Manual v2.1",
-          "va": "Manual de Bessons Digitals v2.1"
+          "es": "[DEMO] Manual de Gemelos Digitales v2.1",
+          "en": "[DEMO] Digital Twins Manual v2.1",
+          "va": "[DEMO] Manual de Bessons Digitals v2.1"
         },
         "typeId": "manual",
         "sectorIds": [
@@ -355,9 +350,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2026-04-20",
         "title": {
-          "es": "Dataset Plagas Cítricos CV (10K imágenes)",
-          "en": "Citrus Pest Dataset CV (10K images)",
-          "va": "Dataset Plagues Cítrics CV (10K imatges)"
+          "es": "[DEMO] Dataset Plagas Cítricos CV (10K imágenes)",
+          "en": "[DEMO] Citrus Pest Dataset CV (10K images)",
+          "va": "[DEMO] Dataset Plagues Cítrics CV (10K imatges)"
         },
         "typeId": "dataset",
         "sectorIds": [
@@ -382,9 +377,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2026-04-05",
         "title": {
-          "es": "Plantilla Análisis de Sesgo en Modelos de IA",
-          "en": "AI Model Bias Analysis Template",
-          "va": "Plantilla Anàlisi de Biaix en Models d'IA"
+          "es": "[DEMO] Plantilla Análisis de Sesgo en Modelos de IA",
+          "en": "[DEMO] AI Model Bias Analysis Template",
+          "va": "[DEMO] Plantilla Anàlisi de Biaix en Models d'IA"
         },
         "typeId": "plantilla",
         "sectorIds": [
@@ -412,9 +407,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2026-03-15",
         "title": {
-          "es": "Introducción a ML con Python para FP – Vídeo (12h)",
-          "en": "Introduction to ML with Python for VET – Video (12h)",
-          "va": "Introducció a ML amb Python per a FP – Vídeo (12h)"
+          "es": "[DEMO] Introducción a ML con Python para FP – Vídeo (12h)",
+          "en": "[DEMO] Introduction to ML with Python for VET – Video (12h)",
+          "va": "[DEMO] Introducció a ML amb Python per a FP – Vídeo (12h)"
         },
         "typeId": "video",
         "sectorIds": [
@@ -440,9 +435,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2026-03-01",
         "title": {
-          "es": "Guía Reglamento IA UE para la Administración",
-          "en": "EU AI Act Guide for Public Administration",
-          "va": "Guia Reglament IA UE per a l'Administració"
+          "es": "[DEMO] Guía Reglamento IA UE para la Administración",
+          "en": "[DEMO] EU AI Act Guide for Public Administration",
+          "va": "[DEMO] Guia Reglament IA UE per a l'Administració"
         },
         "typeId": "guia",
         "sectorIds": [
@@ -468,9 +463,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2026-02-14",
         "title": {
-          "es": "Manual de NLP para Análisis Clínico",
-          "en": "NLP Manual for Clinical Analysis",
-          "va": "Manual de NLP per a Anàlisi Clínica"
+          "es": "[DEMO] Manual de NLP para Análisis Clínico",
+          "en": "[DEMO] NLP Manual for Clinical Analysis",
+          "va": "[DEMO] Manual de NLP per a Anàlisi Clínica"
         },
         "typeId": "manual",
         "sectorIds": [
@@ -495,9 +490,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2026-01-15",
         "title": {
-          "es": "Dataset Imágenes Patrimonio Cultural (5K)",
-          "en": "Cultural Heritage Images Dataset (5K)",
-          "va": "Dataset Imatges Patrimoni Cultural (5K)"
+          "es": "[DEMO] Dataset Imágenes Patrimonio Cultural (5K)",
+          "en": "[DEMO] Cultural Heritage Images Dataset (5K)",
+          "va": "[DEMO] Dataset Imatges Patrimoni Cultural (5K)"
         },
         "typeId": "dataset",
         "sectorIds": [
@@ -523,9 +518,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2025-12-09",
         "title": {
-          "es": "Toolkit de IA Generativa para Artes Escénicas",
-          "en": "Generative AI Toolkit for Performing Arts",
-          "va": "Toolkit d'IA Generativa per a Arts Escèniques"
+          "es": "[DEMO] Toolkit de IA Generativa para Artes Escénicas",
+          "en": "[DEMO] Generative AI Toolkit for Performing Arts",
+          "va": "[DEMO] Toolkit d'IA Generativa per a Arts Escèniques"
         },
         "typeId": "plantilla",
         "sectorIds": [
@@ -552,9 +547,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2025-10-27",
         "title": {
-          "es": "Guía de Prompting STEAM para Comunidades de Práctica",
-          "en": "STEAM Prompting Guide for Communities of Practice",
-          "va": "Guia de Prompting STEAM per a Comunitats de Pràctica"
+          "es": "[DEMO] Guía de Prompting STEAM para Comunidades de Práctica",
+          "en": "[DEMO] STEAM Prompting Guide for Communities of Practice",
+          "va": "[DEMO] Guia de Prompting STEAM per a Comunitats de Pràctica"
         },
         "typeId": "guia",
         "sectorIds": [
@@ -583,9 +578,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2025-09-03",
         "title": {
-          "es": "Dataset de Bocetos y Prototipos para Clasificación Creativa",
-          "en": "Sketches and Prototypes Dataset for Creative Classification",
-          "va": "Dataset d'Esbossos i Prototips per a Classificació Creativa"
+          "es": "[DEMO] Dataset de Bocetos y Prototipos para Clasificación Creativa",
+          "en": "[DEMO] Sketches and Prototypes Dataset for Creative Classification",
+          "va": "[DEMO] Dataset d'Esbossos i Prototips per a Classificació Creativa"
         },
         "typeId": "dataset",
         "sectorIds": [
@@ -611,9 +606,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2025-07-22",
         "title": {
-          "es": "Vídeo-laboratorio de IA Visual para Aula STEAM",
-          "en": "Visual AI Video Lab for STEAM Classrooms",
-          "va": "Vídeo-laboratori d'IA Visual per a Aula STEAM"
+          "es": "[DEMO] Vídeo-laboratorio de IA Visual para Aula STEAM",
+          "en": "[DEMO] Visual AI Video Lab for STEAM Classrooms",
+          "va": "[DEMO] Vídeo-laboratori d'IA Visual per a Aula STEAM"
         },
         "typeId": "video",
         "sectorIds": [
@@ -641,9 +636,9 @@ export const KNOWLEDGE_CONFIG = {
         "visible": true,
         "createdAt": "2025-06-12",
         "title": {
-          "es": "Manual de Transferencia de Conocimiento IA-STEAM para Centros FP",
-          "en": "AI-STEAM Knowledge Transfer Manual for VET Centres",
-          "va": "Manual de Transferència de Coneixement IA-STEAM per a Centres FP"
+          "es": "[DEMO] Manual de Transferencia de Conocimiento IA-STEAM para Centros FP",
+          "en": "[DEMO] AI-STEAM Knowledge Transfer Manual for VET Centres",
+          "va": "[DEMO] Manual de Transferència de Coneixement IA-STEAM per a Centres FP"
         },
         "typeId": "manual",
         "sectorIds": [
@@ -683,9 +678,9 @@ export const KNOWLEDGE_CONFIG = {
       "va": "Plantilles i Toolkits"
     },
     "description": {
-      "es": "Plantillas descargables y recursos externos para que stakeholders, docentes y centros de FP contribuyan a la red AI-STEAM.",
-      "en": "Downloadable templates and external resources for stakeholders, teachers and VET centres to contribute to the AI-STEAM network.",
-      "va": "Plantilles descarregables i recursos externs perquè stakeholders, docents i centres de FP contribuesquen a la xarxa AI-STEAM."
+      "es": "Plantillas, listas de verificación y recursos de apoyo que organizaciones, docentes y centros de FP pueden descargar, adaptar y aplicar en sus actividades educativas o de innovación.",
+      "en": "Templates, checklists and support resources that organisations, teachers and VET centres can download, adapt and apply in their educational or innovation activities.",
+      "va": "Plantilles, llistes de verificació i recursos de suport que organitzacions, docents i centres de FP poden descarregar, adaptar i aplicar en les seues activitats educatives o d'innovació."
     },
     "searchPlaceholder": {
       "es": "Buscar plantillas...",
@@ -790,9 +785,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t1",
         "visible": true,
         "title": {
-          "es": "Challenge Intake Template",
-          "en": "Challenge Intake Template",
-          "va": "Challenge Intake Template"
+          "es": "[DEMO] Challenge Intake Template",
+          "en": "[DEMO] Challenge Intake Template",
+          "va": "[DEMO] Challenge Intake Template"
         },
         "description": {
           "es": "Formulario estructurado para que stakeholders propongan un reto, caso o contribución al ecosistema AI-STEAM.",
@@ -818,9 +813,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t21",
         "visible": true,
         "title": {
-          "es": "Plantilla de Itinerario de Formación IA para Docentes",
-          "en": "AI Training Pathway Template for Teachers",
-          "va": "Plantilla d'Itinerari de Formació IA per a Docents"
+          "es": "[DEMO] Plantilla de Itinerario de Formación IA para Docentes",
+          "en": "[DEMO] AI Training Pathway Template for Teachers",
+          "va": "[DEMO] Plantilla d'Itinerari de Formació IA per a Docents"
         },
         "description": {
           "es": "Plantilla para que coordinadores de formación diseñen itinerarios personalizados de desarrollo profesional docente en IA, desde nivel básico a avanzado.",
@@ -845,9 +840,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t4",
         "visible": true,
         "title": {
-          "es": "Guía Rápida de Formación Docente",
-          "en": "Teacher Training Quick Guide",
-          "va": "Guia Ràpida de Formació Docent"
+          "es": "[DEMO] Guía Rápida de Formación Docente",
+          "en": "[DEMO] Teacher Training Quick Guide",
+          "va": "[DEMO] Guia Ràpida de Formació Docent"
         },
         "description": {
           "es": "Plantilla pedagógica con dinámicas y rúbricas para integrar AI-STEAM en programas de formación docente.",
@@ -871,9 +866,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t3",
         "visible": true,
         "title": {
-          "es": "Checklist de Adopción FP",
-          "en": "VET Adoption Checklist",
-          "va": "Checklist d'Adopció FP"
+          "es": "[DEMO] Checklist de Adopción FP",
+          "en": "[DEMO] VET Adoption Checklist",
+          "va": "[DEMO] Checklist d'Adopció FP"
         },
         "description": {
           "es": "Lista de comprobación para centros de FP que quieran adoptar buenas prácticas y casos de transferencia AI-STEAM.",
@@ -897,9 +892,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t16",
         "visible": true,
         "title": {
-          "es": "Checklist de Accesibilidad en Recursos STEAM Digitales",
-          "en": "Digital STEAM Resource Accessibility Checklist",
-          "va": "Checklist d'Accessibilitat en Recursos STEAM Digitals"
+          "es": "[DEMO] Checklist de Accesibilidad en Recursos STEAM Digitales",
+          "en": "[DEMO] Digital STEAM Resource Accessibility Checklist",
+          "va": "[DEMO] Checklist d'Accessibilitat en Recursos STEAM Digitals"
         },
         "description": {
           "es": "Lista de verificación para que docentes y diseñadores instruccionales evalúen la accesibilidad (WCAG, UDL) de recursos y actividades STEAM digitales.",
@@ -924,9 +919,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t10",
         "visible": true,
         "title": {
-          "es": "Formulario de Autoevaluación de Competencias IA",
-          "en": "AI Competency Self-Assessment Form",
-          "va": "Formulari d'Autoavaluació de Competències IA"
+          "es": "[DEMO] Formulario de Autoevaluación de Competencias IA",
+          "en": "[DEMO] AI Competency Self-Assessment Form",
+          "va": "[DEMO] Formulari d'Autoavaluació de Competències IA"
         },
         "description": {
           "es": "Formulario para que docentes y estudiantes evalúen su nivel de competencia en IA según el marco DigComp y el perfil AI-STEAM.",
@@ -952,9 +947,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t18",
         "visible": true,
         "title": {
-          "es": "Formulario de Documentación de Piloto IA en Aula",
-          "en": "Classroom AI Pilot Documentation Form",
-          "va": "Formulari de Documentació de Pilot IA a l'Aula"
+          "es": "[DEMO] Formulario de Documentación de Piloto IA en Aula",
+          "en": "[DEMO] Classroom AI Pilot Documentation Form",
+          "va": "[DEMO] Formulari de Documentació de Pilot IA a l'Aula"
         },
         "description": {
           "es": "Formulario estructurado para registrar el diseño, implementación y resultados de un piloto de herramienta IA en contexto educativo, alineado con el framework AI-SECRETT.",
@@ -979,9 +974,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t14",
         "visible": true,
         "title": {
-          "es": "Formulario de Propuesta de Proyecto STEAM+IA",
-          "en": "STEAM+AI Project Proposal Form",
-          "va": "Formulari de Proposta de Projecte STEAM+IA"
+          "es": "[DEMO] Formulario de Propuesta de Proyecto STEAM+IA",
+          "en": "[DEMO] STEAM+AI Project Proposal Form",
+          "va": "[DEMO] Formulari de Proposta de Projecte STEAM+IA"
         },
         "description": {
           "es": "Formulario para que equipos docentes o de investigación presenten proyectos colaborativos que integren IA y creatividad STEAM en el ecosistema AI-STEAM.",
@@ -1007,9 +1002,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t8",
         "visible": true,
         "title": {
-          "es": "Checklist de Ética en IA para el Aula",
-          "en": "Classroom AI Ethics Checklist",
-          "va": "Checklist d'Ètica en IA per a l'Aula"
+          "es": "[DEMO] Checklist de Ética en IA para el Aula",
+          "en": "[DEMO] Classroom AI Ethics Checklist",
+          "va": "[DEMO] Checklist d'Ètica en IA per a l'Aula"
         },
         "description": {
           "es": "Lista de verificación para que docentes evalúen el uso responsable, justo y accesible de herramientas de IA antes de introducirlas en el aula.",
@@ -1035,9 +1030,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t23",
         "visible": true,
         "title": {
-          "es": "Plantilla de Proyecto Interdisciplinar Arte + Datos",
-          "en": "Interdisciplinary Art + Data Project Template",
-          "va": "Plantilla de Projecte Interdisciplinari Art + Dades"
+          "es": "[DEMO] Plantilla de Proyecto Interdisciplinar Arte + Datos",
+          "en": "[DEMO] Interdisciplinary Art + Data Project Template",
+          "va": "[DEMO] Plantilla de Projecte Interdisciplinari Art + Dades"
         },
         "description": {
           "es": "Plantilla para proyectos que cruzan módulos de análisis de datos y expresión artística, integrando herramientas de IA generativa para la síntesis creativa.",
@@ -1061,9 +1056,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t12",
         "visible": true,
         "title": {
-          "es": "Checklist de Preparación de Aula para IA",
-          "en": "Classroom AI Readiness Checklist",
-          "va": "Checklist de Preparació d'Aula per a IA"
+          "es": "[DEMO] Checklist de Preparación de Aula para IA",
+          "en": "[DEMO] Classroom AI Readiness Checklist",
+          "va": "[DEMO] Checklist de Preparació d'Aula per a IA"
         },
         "description": {
           "es": "Guía de comprobación técnica, pedagógica y normativa para que un centro de FP evalúe si está listo para integrar herramientas de IA en sus aulas.",
@@ -1087,9 +1082,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t22",
         "visible": true,
         "title": {
-          "es": "Formulario de Feedback de Experiencia Piloto",
-          "en": "Pilot Experience Feedback Form",
-          "va": "Formulari de Feedback d'Experiència Pilot"
+          "es": "[DEMO] Formulario de Feedback de Experiencia Piloto",
+          "en": "[DEMO] Pilot Experience Feedback Form",
+          "va": "[DEMO] Formulari de Feedback d'Experiència Pilot"
         },
         "description": {
           "es": "Formulario para recoger valoraciones de participantes (docentes, alumnado, coordinadores) tras una experiencia piloto AI-STEAM, con escala Likert y campo abierto.",
@@ -1113,9 +1108,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t9",
         "visible": true,
         "title": {
-          "es": "Plantilla de Aprendizaje Basado en Retos (ABR) con IA",
-          "en": "AI-enhanced Challenge-Based Learning Template",
-          "va": "Plantilla d'Aprenentatge Basat en Reptes (ABR) amb IA"
+          "es": "[DEMO] Plantilla de Aprendizaje Basado en Retos (ABR) con IA",
+          "en": "[DEMO] AI-enhanced Challenge-Based Learning Template",
+          "va": "[DEMO] Plantilla d'Aprenentatge Basat en Reptes (ABR) amb IA"
         },
         "description": {
           "es": "Marco pedagógico para diseñar experiencias ABR donde la IA actúa como herramienta de investigación, creación y reflexión crítica.",
@@ -1140,9 +1135,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t5",
         "visible": true,
         "title": {
-          "es": "Formulario de Adhesión Stakeholder",
-          "en": "Stakeholder Membership Form",
-          "va": "Formulari d'Adhesió Stakeholder"
+          "es": "[DEMO] Formulario de Adhesión Stakeholder",
+          "en": "[DEMO] Stakeholder Membership Form",
+          "va": "[DEMO] Formulari d'Adhesió Stakeholder"
         },
         "description": {
           "es": "Formulario operativo para incorporar nuevas entidades a la red AI-STEAM con rol, sectores y compromisos.",
@@ -1167,9 +1162,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t20",
         "visible": true,
         "title": {
-          "es": "Checklist de Sostenibilidad de Proyecto STEAM en Centro",
-          "en": "STEAM Project Sustainability Checklist for VET Centres",
-          "va": "Checklist de Sostenibilitat de Projecte STEAM en Centre"
+          "es": "[DEMO] Checklist de Sostenibilidad de Proyecto STEAM en Centro",
+          "en": "[DEMO] STEAM Project Sustainability Checklist for VET Centres",
+          "va": "[DEMO] Checklist de Sostenibilitat de Projecte STEAM en Centre"
         },
         "description": {
           "es": "Herramienta de autoevaluación para que los centros de FP valoren la viabilidad a largo plazo de sus iniciativas STEAM+IA (recursos, comunidad, reconocimiento).",
@@ -1192,9 +1187,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t6",
         "visible": true,
         "title": {
-          "es": "Plantilla de Unidad Didáctica STEAM+IA",
-          "en": "STEAM+AI Didactic Unit Template",
-          "va": "Plantilla d'Unitat Didàctica STEAM+IA"
+          "es": "[DEMO] Plantilla de Unidad Didáctica STEAM+IA",
+          "en": "[DEMO] STEAM+AI Didactic Unit Template",
+          "va": "[DEMO] Plantilla d'Unitat Didàctica STEAM+IA"
         },
         "description": {
           "es": "Plantilla pedagógica para diseñar unidades didácticas que integren IA y arte creativo en módulos de FP o programas docentes.",
@@ -1219,9 +1214,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t19",
         "visible": true,
         "title": {
-          "es": "Toolkit de Narrativa de Datos con Arte",
-          "en": "Data Storytelling with Art Toolkit",
-          "va": "Toolkit de Narrativa de Dades amb Art"
+          "es": "[DEMO] Toolkit de Narrativa de Datos con Arte",
+          "en": "[DEMO] Data Storytelling with Art Toolkit",
+          "va": "[DEMO] Toolkit de Narrativa de Dades amb Art"
         },
         "description": {
           "es": "Recursos y plantillas para transformar conjuntos de datos en visualizaciones artísticas y narrativas, combinando análisis con expresión creativa.",
@@ -1245,9 +1240,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t2",
         "visible": true,
         "title": {
-          "es": "Plantilla AI-SECRETT Track B",
-          "en": "AI-SECRETT Track B Template",
-          "va": "Plantilla AI-SECRETT Track B"
+          "es": "[DEMO] Plantilla AI-SECRETT Track B",
+          "en": "[DEMO] AI-SECRETT Track B Template",
+          "va": "[DEMO] Plantilla AI-SECRETT Track B"
         },
         "description": {
           "es": "Plantilla pedagógica para diseñar y documentar pilotos del Track B (mediante el Aula Sandbox AI-SECRETT).",
@@ -1271,9 +1266,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t17",
         "visible": true,
         "title": {
-          "es": "Plantilla de Lesson Study con IA",
-          "en": "AI-integrated Lesson Study Template",
-          "va": "Plantilla de Lesson Study amb IA"
+          "es": "[DEMO] Plantilla de Lesson Study con IA",
+          "en": "[DEMO] AI-integrated Lesson Study Template",
+          "va": "[DEMO] Plantilla de Lesson Study amb IA"
         },
         "description": {
           "es": "Adaptación del método Lesson Study para ciclos de mejora docente centrados en la integración de IA, con fases de diseño colaborativo, observación y análisis.",
@@ -1296,9 +1291,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t15",
         "visible": true,
         "title": {
-          "es": "Plantilla de Sesión de Co-creación Humano-IA",
-          "en": "Human–AI Co-creation Session Template",
-          "va": "Plantilla de Sessió de Co-creació Humà-IA"
+          "es": "[DEMO] Plantilla de Sesión de Co-creación Humano-IA",
+          "en": "[DEMO] Human–AI Co-creation Session Template",
+          "va": "[DEMO] Plantilla de Sessió de Co-creació Humà-IA"
         },
         "description": {
           "es": "Diseño de taller para facilitar sesiones donde humanos y sistemas de IA colaboran en la creación de artefactos artísticos, narrativos o de diseño.",
@@ -1322,9 +1317,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t13",
         "visible": true,
         "title": {
-          "es": "Plantilla de Portfolio de Aprendizaje IA-STEAM",
-          "en": "AI-STEAM Learning Portfolio Template",
-          "va": "Plantilla de Portafoli d'Aprenentatge IA-STEAM"
+          "es": "[DEMO] Plantilla de Portfolio de Aprendizaje IA-STEAM",
+          "en": "[DEMO] AI-STEAM Learning Portfolio Template",
+          "va": "[DEMO] Plantilla de Portafoli d'Aprenentatge IA-STEAM"
         },
         "description": {
           "es": "Marco estructurado para que el alumnado documente su proceso de aprendizaje STEAM+IA, con secciones de reflexión, evidencias y proyección profesional.",
@@ -1348,9 +1343,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t11",
         "visible": true,
         "title": {
-          "es": "Toolkit de Arte Generativo con IA",
-          "en": "Generative AI Art Toolkit",
-          "va": "Toolkit d'Art Generatiu amb IA"
+          "es": "[DEMO] Toolkit de Arte Generativo con IA",
+          "en": "[DEMO] Generative AI Art Toolkit",
+          "va": "[DEMO] Toolkit d'Art Generatiu amb IA"
         },
         "description": {
           "es": "Guía práctica y plantillas de sesión para explorar la creación artística asistida por IA (imagen, texto, música), con reflexión crítica sobre autoría.",
@@ -1374,9 +1369,9 @@ export const KNOWLEDGE_CONFIG = {
         "id": "t7",
         "visible": true,
         "title": {
-          "es": "Rúbrica de Evaluación de Proyectos STEAM",
-          "en": "STEAM Project Evaluation Rubric",
-          "va": "Rúbrica d'Avaluació de Projectes STEAM"
+          "es": "[DEMO] Rúbrica de Evaluación de Proyectos STEAM",
+          "en": "[DEMO] STEAM Project Evaluation Rubric",
+          "va": "[DEMO] Rúbrica d'Avaluació de Projectes STEAM"
         },
         "description": {
           "es": "Plantilla con criterios de evaluación para proyectos que combinan ciencia, tecnología, arte y datos, con indicadores adaptables por nivel.",

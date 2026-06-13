@@ -1040,7 +1040,6 @@ export function render() {
   const heroBlock = KNOWLEDGE_CONFIG?.heroBlock || {};
   const heroVisible = heroBlock.visible !== false;
   const heroStats = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
-  const notice = pickLang(heroBlock.notice, '');
 
   const templatesSearch = getState('templatesSearch') || '';
 
@@ -1064,7 +1063,6 @@ export function render() {
             </span>
             <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${pickLang(heroBlock.title, t('knowledge.title') || '')}</h1>
             <p class="text-lg mb-6 leading-relaxed" style="color:rgba(255,255,255,.9)">${pickLang(heroBlock.description, t('knowledge.description') || '')}</p>
-            ${notice ? `<p class="text-sm text-eu-yellow/90 italic mt-3 flex items-center gap-1.5 mb-6"><i data-lucide="info" class="w-4 h-4"></i>${notice}</p>` : ''}
             ${heroStats.length > 0 ? `
             <div class="rd-hero-stats-grid mt-8">
               ${heroStats.map((stat, i) => `

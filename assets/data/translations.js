@@ -671,12 +671,13 @@ export const translations = {
       "clearFiltersButton": "Limpiar filtros"
     },
     "knowledge": {
+      "eyebrow": "Conocimiento",
       "title": "Transferencia de Conocimiento",
       "subtitle": "Repositorio de recursos, evidencias y casos de transferencia AI-SECRETT",
       "description": "Repositorio de recursos OER, casos de transferencia, evidencias de pilotos y plantillas útiles para stakeholders, FP, formación docente y puentes académicos.",
       "demoNotice": "Los recursos, casos, evidencias y descargas son contenido demo del prototipo. Las cifras son indicativas — no representan resultados reales de AI-SECRETT.",
       "tabFlow": "Ciclo de Transferencia",
-      "tabOER": "OER y Recursos",
+      "tabOER": "Recursos OER",
       "tabCases": "Casos de Transferencia",
       "tabEvidence": "Evidencias de pilotaje",
       "tabTemplates": "Plantillas y Toolkits",
@@ -702,7 +703,7 @@ export const translations = {
         },
         {
           "title": "Evidencia Registrada",
-          "desc": "Se registran indicadores, trazas ConsensUE, recursos, encuestas y participación"
+          "desc": "Pueden registrarse indicadores, trazas ConsensUE, recursos, encuestas y participación"
         },
         {
           "title": "Caso o Recurso Publicado",
@@ -711,9 +712,9 @@ export const translations = {
       ],
       "aulesPlatform": "Los recursos OER se publican como módulos en Aules, accesibles para alumnos de FP, docentes y, cuando corresponde, del Máster.",
       "networkPlatform": "Este portal centraliza retos, casos, repositorio OER, plantillas y evidencias de piloto para toda la red.",
-      "consensuePlatform": "La comunidad vota qué necesidades y recursos son prioritarios para informar actividades de formación, pilotaje y gobernanza.",
-      "oerTitle": "OER y Recursos de la Red",
-      "oerDesc": "Recursos abiertos (CC) disponibles en Aules. Cada recurso indica sector AI-SECRETT, ruta educativa, tipo y estado de validación. Datos demo del prototipo.",
+      "consensuePlatform": "La comunidad puede proponer y consultar qué necesidades y recursos pueden ser relevantes para la red, con el fin de orientar futuras actividades.",
+      "oerTitle": "Recursos Educativos Abiertos",
+      "oerDesc": "Repositorio de recursos educativos abiertos bajo licencias Creative Commons, accesibles a través de Aules. Cada recurso incluye sector AI-SECRETT, ruta educativa, tipo y estado de validación. Contenido demo del prototipo.",
       "oerSearch": "Buscar recurso...",
       "oerDownloads": "descargas",
       "oerDownloadBtn": "Descargar",
@@ -2555,12 +2556,13 @@ export const translations = {
       "clearFiltersButton": "Clear filters"
     },
     "knowledge": {
+      "eyebrow": "Knowledge",
       "title": "Knowledge Transfer",
       "subtitle": "Repository of OER, transfer cases, pilot evidence and templates",
       "description": "OER resources, transfer cases, pilot evidence and useful templates for stakeholders, VET, teacher training and academic bridges.",
       "demoNotice": "Resources, cases, evidence records and download counts are prototype demo content. Figures are indicative — they do not represent official AI-SECRETT results.",
       "tabFlow": "Transfer Cycle",
-      "tabOER": "OER and Resources",
+      "tabOER": "OER Resources",
       "tabCases": "Transfer Cases",
       "tabEvidence": "Pilot Evidence",
       "tabTemplates": "Templates and Toolkits",
@@ -2586,7 +2588,7 @@ export const translations = {
         },
         {
           "title": "Evidence Recorded",
-          "desc": "Indicators, ConsensUE traces, resources, surveys and participation are recorded"
+          "desc": "Indicators, ConsensUE traces, resources, surveys and participation may be recorded"
         },
         {
           "title": "Case or Resource Published",
@@ -2595,9 +2597,9 @@ export const translations = {
       ],
       "aulesPlatform": "OER resources are published as resources in Aules, accessible for VET students, teachers and, where applicable, Master students.",
       "networkPlatform": "This portal centralises challenges, cases, OER repository, templates and pilot evidence for the entire network.",
-      "consensuePlatform": "The community votes on which needs and resources are priorities to inform training, piloting and governance activities.",
-      "oerTitle": "OER and Network Resources",
-      "oerDesc": "Open resources (CC-licensed) available in Aules. Each resource shows AI-SECRETT sector, educational route, type and validation status. Prototype demo data.",
+      "consensuePlatform": "The community can propose and consult on which needs and resources may be relevant to the network, helping to guide future activities.",
+      "oerTitle": "Open Educational Resources",
+      "oerDesc": "Repository of open educational resources under Creative Commons licences, accessible via Aules. Each resource includes AI-SECRETT sector, educational route, type and validation status. Prototype demo content.",
       "oerSearch": "Search resource...",
       "oerDownloads": "downloads",
       "oerDownloadBtn": "Download",
@@ -4422,16 +4424,17 @@ export const translations = {
       "clearFiltersButton": "Esborrar filtres"
     },
     "knowledge": {
+      "eyebrow": "Coneixement",
       "title": "Transferència de Coneixement",
       "subtitle": "Repositori de recursos OER, casos de transferència, evidències i plantilles",
       "description": "Recursos OER, casos de transferència, evidències de pilot i plantilles útils per a stakeholders, FP, formació docent i ponts acadèmics.",
       "demoNotice": "Els recursos, casos, evidències i descarregues són contingut demo del prototipus. Les xifres són indicatives — no representen resultats reals d'AI-SECRETT.",
       "tabFlow": "Cicle de Transferència",
-      "tabOER": "OER i Recursos",
+      "tabOER": "Recursos OER",
       "tabCases": "Casos de Transferència",
       "tabEvidence": "Evidències de pilotatge",
       "tabTemplates": "Plantilles i Toolkits",
-      "flowTitle": "Del Repte Industrial al Recurs Educatiu Obert",
+      "flowTitle": "Del Repte Ecosistema al Recurs Educatiu Obert",
       "flowDesc": "La xarxa transforma els desafiaments reals de les organitzacions en coneixement educatiu de qualitat, seguint un procés estructurat de 6 etapes validat pel consorci AI-SECRETT.",
       "flowConnection": "Connexió amb les plataformes de l'ecosistema",
       "flowSteps": [
@@ -4462,9 +4465,9 @@ export const translations = {
       ],
       "aulesPlatform": "Els recursos OER es publiquen com a mòduls en Aules, accessibles per a alumnes de FP i del Màster.",
       "networkPlatform": "Aquest portal centralitza els reptes, el repositori OER i els casos d'èxit per a tota la xarxa.",
-      "consensuePlatform": "La comunitat vota quins reptes i recursos són prioritaris per a informar necessitats formatives i possibles activitats.",
-      "oerTitle": "Repositori de Recursos Educatius Oberts",
-      "oerDesc": "Tots els recursos están sota llicències Creative Commons i disponibles en Aules.",
+      "consensuePlatform": "La comunitat pot proposar i consultar quins recursos i necessitats poden ser rellevants per a la xarxa, amb la finalitat d'orientar futures activitats.",
+      "oerTitle": "Recursos Educatius Oberts",
+      "oerDesc": "Repositori de recursos educatius oberts sota llicències Creative Commons, accessibles a través d'Aules. Cada recurs inclou sector AI-SECRETT, ruta educativa, tipus i estat de validació. Contingut demo del prototip.",
       "oerSearch": "Buscar recurs...",
       "oerDownloads": "descarregues",
       "oerDownloadBtn": "Descarregar",
