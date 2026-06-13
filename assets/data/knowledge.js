@@ -49,9 +49,9 @@ export const KNOWLEDGE_CONFIG = {
       "va": "Del Repte Ecosistema al Recurs Educatiu Obert"
     },
     "description": {
-      "es": "La red transforma los desafíos reales de las organizaciones en conocimiento educativo de calidad, siguiendo un proceso de transferencia validado por el consorcio AI-SECRETT.",
-      "en": "The network transforms real organisational needs into quality educational knowledge, following a validated AI-SECRETT transfer process.",
-      "va": "La xarxa transforma els desafiaments reals de les organitzacions en coneixement educatiu de qualitat, seguint un procés de transferència validat pel consorci AI-SECRETT."
+      "es": "Proceso de seis etapas que convierte necesidades detectadas por organizaciones, centros educativos o la red en recursos educativos abiertos o casos de transferencia, clasificados por sector AI-SECRETT y ruta de conocimiento.",
+      "en": "A six-stage process that converts needs detected by organisations, education centres or the network into open educational resources or transfer cases, classified by AI-SECRETT sector and knowledge route.",
+      "va": "Procés de sis etapes que converteix necessitats detectades per organitzacions, centres educatius o la xarxa en recursos educatius oberts o casos de transferència, classificats per sector AI-SECRETT i ruta de coneixement."
     },
     "steps": [
       {
@@ -65,9 +65,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Necessitat Detectada"
         },
         "description": {
-          "es": "Stakeholder, ENRED o centro educativo aporta una necesidad, caso o propuesta",
-          "en": "A stakeholder, ENRED or education centre contributes a need, case or proposal",
-          "va": "Stakeholder, ENRED o centre educatiu aporta una necessitat, cas o proposta"
+          "es": "Una organización sectorial, centro educativo o miembro de la red aporta una necesidad formativa, caso de uso o propuesta de innovación",
+          "en": "A sector organisation, education centre or network member contributes a training need, use case or innovation proposal",
+          "va": "Una organització sectorial, centre educatiu o membre de la xarxa aporta una necessitat formativa, cas d'ús o proposta d'innovació"
         }
       },
       {
@@ -81,9 +81,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Classificació per Ruta"
         },
         "description": {
-          "es": "Se clasifica por sector AI-SECRETT y ruta: FP, docente, recurso, piloto o puente académico",
-          "en": "Classified by AI-SECRETT sector and route: VET, teacher, resource, pilot or academic bridge",
-          "va": "Es classifica per sector AI-SECRETT i ruta: FP, docent, recurs, pilot o pont acadèmic"
+          "es": "CEICE, con consulta a socios según el sector, clasifica la aportación y le asigna una ruta de trabajo (FP, docente, recurso, piloto o puente académico)",
+          "en": "CEICE, consulting partners by sector, classifies the input and assigns a working route (VET, teacher, resource, pilot or academic bridge)",
+          "va": "CEICE, consultant socis per sector, classifica l'aportació i li assigna una ruta de treball (FP, docent, recurs, pilot o pont acadèmic)"
         }
       },
       {
@@ -97,9 +97,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Validació Track B"
         },
         "description": {
-          "es": "La relevancia se contrasta en Track B y, si procede, se deriva a órganos académicos Track A",
-          "en": "Relevance is assessed in Track B and, where applicable, routed to Track A academic bodies",
-          "va": "La rellevància es contrasta en Track B i, si escau, es deriva a òrgans acadèmics Track A"
+          "es": "El Track B de gobernanza contrasta la relevancia educativa; si procede, se deriva al Track A para validación por las instituciones académicas del consorcio",
+          "en": "The Track B governance body assesses educational relevance; where applicable, it is referred to Track A for validation by consortium academic institutions",
+          "va": "El Track B de governança contrasta la rellevància educativa; si escau, es deriva al Track A per a validació per les institucions acadèmiques del consorci"
         }
       },
       {
@@ -113,9 +113,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Activitat / Recurs"
         },
         "description": {
-          "es": "Se genera actividad, OER, debate, piloto o caso documentado según la ruta asignada",
-          "en": "An OER, activity, debate, pilot or documented case is produced according to the assigned route",
-          "va": "Es genera activitat, OER, debat, pilot o cas documentat segons la ruta assignada"
+          "es": "Los socios responsables generan el resultado según la ruta asignada (actividad formativa, OER, debate, piloto o caso documentado)",
+          "en": "The responsible partners produce the output according to the assigned route (training activity, OER, debate, pilot or documented case)",
+          "va": "Els socis responsables generen el resultat segons la ruta assignada (activitat formativa, OER, debat, pilot o cas documentat)"
         }
       },
       {
@@ -129,9 +129,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Evidència Registrada"
         },
         "description": {
-          "es": "Pueden registrarse indicadores, trazas ConsensUE, recursos, encuestas y participación",
-          "en": "Indicators, ConsensUE traces, resources, surveys and participation may be recorded",
-          "va": "Poden registrar-se indicadors, traces ConsensUE, recursos, enquestes i participació"
+          "es": "Si procede, se registran indicadores de impacto, participación y recursos generados; en su caso, mediante las herramientas de seguimiento de la red",
+          "en": "Where applicable, impact indicators, participation data and generated resources may be recorded using the network's monitoring tools",
+          "va": "Si escau, es registren indicadors d'impacte, participació i recursos generats; si és el cas, mitjançant les eines de seguiment de la xarxa"
         }
       },
       {
@@ -145,9 +145,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Cas o Recurs Publicat"
         },
         "description": {
-          "es": "Si procede, el resultado se publica como caso de transferencia o recurso OER abierto",
-          "en": "Where applicable, results are published as a transfer case or open OER resource",
-          "va": "Si escau, el resultat es publica com a cas de transferència o recurs OER obert"
+          "es": "Si supera la validación, el resultado puede publicarse como caso de transferencia o recurso educativo abierto en la red",
+          "en": "Where validated, the result may be published as a transfer case or open educational resource in the network",
+          "va": "Si supera la validació, el resultat pot publicar-se com a cas de transferència o recurs educatiu obert a la xarxa"
         }
       }
     ],
@@ -164,9 +164,9 @@ export const KNOWLEDGE_CONFIG = {
           "visible": true,
           "name": "Aules (Moodle)",
           "description": {
-            "es": "Los recursos OER se publican como módulos en Aules, accesibles para alumnos de FP, docentes y, cuando corresponde, del Máster.",
-            "en": "OER resources are published as resources in Aules, accessible for VET students, teachers and, where applicable, Master students.",
-            "va": "Els recursos OER es publiquen com a mòduls en Aules, accessibles per a alumnes de FP i del Màster."
+            "es": "Plataforma educativa de CEICE para FP y formación del profesorado. Puede alojar recursos OER de la red bajo las condiciones acordadas con los socios autores.",
+            "en": "CEICE's educational platform for VET and teacher training. It may host network OER resources under conditions agreed with the authoring partners.",
+            "va": "Plataforma educativa de CEICE per a FP i formació del professorat. Pot allotjar recursos OER de la xarxa amb les condicions acordades amb els socis autors."
           }
         },
         {
@@ -174,9 +174,9 @@ export const KNOWLEDGE_CONFIG = {
           "visible": true,
           "name": "AI-STEAM Network (CMS)",
           "description": {
-            "es": "Este portal centraliza retos, casos, repositorio OER, plantillas y evidencias de piloto para toda la red.",
-            "en": "This portal centralises challenges, cases, OER repository, templates and pilot evidence for the entire network.",
-            "va": "Aquest portal centralitza els reptes, el repositori OER i els casos d'èxit per a tota la xarxa."
+            "es": "Portal que centraliza retos, casos, repositorio OER, plantillas y evidencias de piloto. Punto de acceso común para todos los miembros de la red.",
+            "en": "Portal centralising challenges, cases, OER repository, templates and pilot evidence. Common access point for all network members.",
+            "va": "Portal que centralitza reptes, casos, repositori OER, plantilles i evidències de pilot. Punt d'accés comú per a tots els membres de la xarxa."
           }
         },
         {
@@ -200,9 +200,9 @@ export const KNOWLEDGE_CONFIG = {
       "va": "Recursos Educatius Oberts"
     },
     "description": {
-      "es": "Repositorio de recursos educativos abiertos bajo licencias Creative Commons, accesibles a través de Aules. Cada recurso incluye sector AI-SECRETT, ruta educativa, tipo y estado de validación. Contenido demo del prototipo.",
-      "en": "Repository of open educational resources under Creative Commons licences, accessible via Aules. Each resource includes AI-SECRETT sector, educational route, type and validation status. Prototype demo content.",
-      "va": "Repositori de recursos educatius oberts sota llicències Creative Commons, accessibles a través d'Aules. Cada recurs inclou sector AI-SECRETT, ruta educativa, tipus i estat de validació. Contingut demo del prototip."
+      "es": "Recursos educativos abiertos bajo licencias abiertas, distribuibles a través de las plataformas educativas de la red. Cada recurso está clasificado por sector AI-SECRETT, ruta educativa, tipo de recurso y estado de validación.",
+      "en": "Open educational resources under open licences, distributable through the network's educational platforms. Each resource is classified by AI-SECRETT sector, educational route, resource type and validation status.",
+      "va": "Recursos educatius oberts sota llicències obertes, distribuïbles a través de les plataformes educatives de la xarxa. Cada recurs està classificat per sector AI-SECRETT, ruta educativa, tipus de recurs i estat de validació."
     },
     "searchPlaceholder": {
       "es": "Buscar recurso...",
@@ -678,9 +678,9 @@ export const KNOWLEDGE_CONFIG = {
       "va": "Plantilles i Toolkits"
     },
     "description": {
-      "es": "Plantillas, listas de verificación y recursos de apoyo que organizaciones, docentes y centros de FP pueden descargar, adaptar y aplicar en sus actividades educativas o de innovación.",
-      "en": "Templates, checklists and support resources that organisations, teachers and VET centres can download, adapt and apply in their educational or innovation activities.",
-      "va": "Plantilles, llistes de verificació i recursos de suport que organitzacions, docents i centres de FP poden descarregar, adaptar i aplicar en les seues activitats educatives o d'innovació."
+      "es": "Documentos de trabajo, listas de verificación y recursos de apoyo bajo licencias abiertas para facilitar la participación en la red AI-STEAM, desde la preparación de retos y propuestas hasta la documentación de actividades, casos y recursos. Disponibles para descarga directa o acceso en línea.",
+      "en": "Working documents, checklists and support resources under open licences to facilitate participation in the AI-STEAM network, from preparing challenges and proposals to documenting activities, cases and resources. Available for direct download or online access.",
+      "va": "Documents de treball, llistes de verificació i recursos de suport sota llicències obertes per facilitar la participació en la xarxa AI-STEAM, des de la preparació de reptes i propostes fins a la documentació d'activitats, casos i recursos. Disponibles per a descàrrega directa o accés en línia."
     },
     "searchPlaceholder": {
       "es": "Buscar plantillas...",

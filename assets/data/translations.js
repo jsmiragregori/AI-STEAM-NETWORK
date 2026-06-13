@@ -682,39 +682,39 @@ export const translations = {
       "tabEvidence": "Evidencias de pilotaje",
       "tabTemplates": "Plantillas y Toolkits",
       "flowTitle": "Del Reto Ecosistema al Recurso Educativo Abierto",
-      "flowDesc": "La red transforma los desafíos reales de las organizaciones en conocimiento educativo de calidad, siguiendo un proceso de transferencia validado por el consorcio AI-SECRETT.",
+      "flowDesc": "Proceso de seis etapas que convierte necesidades detectadas por organizaciones, centros educativos o la red en recursos educativos abiertos o casos de transferencia, clasificados por sector AI-SECRETT y ruta de conocimiento.",
       "flowConnection": "Conexión con las plataformas del ecosistema",
       "flowSteps": [
         {
           "title": "Necesidad Detectada",
-          "desc": "Stakeholder, ENRED o centro educativo aporta una necesidad, caso o propuesta"
+          "desc": "Una organización sectorial, centro educativo o miembro de la red aporta una necesidad formativa, caso de uso o propuesta de innovación"
         },
         {
           "title": "Clasificación por Ruta",
-          "desc": "Se clasifica por sector AI-SECRETT y ruta: FP, docente, recurso, piloto o puente académico"
+          "desc": "CEICE, con consulta a socios según el sector, clasifica la aportación y le asigna una ruta de trabajo (FP, docente, recurso, piloto o puente académico)"
         },
         {
           "title": "Validación Track B",
-          "desc": "La relevancia se contrasta en Track B y, si procede, se deriva a órganos académicos Track A"
+          "desc": "El Track B de gobernanza contrasta la relevancia educativa; si procede, se deriva al Track A para validación por las instituciones académicas del consorcio"
         },
         {
           "title": "Actividad / Recurso",
-          "desc": "Se genera actividad, OER, debate, piloto o caso documentado según la ruta asignada"
+          "desc": "Los socios responsables generan el resultado según la ruta asignada (actividad formativa, OER, debate, piloto o caso documentado)"
         },
         {
           "title": "Evidencia Registrada",
-          "desc": "Pueden registrarse indicadores, trazas ConsensUE, recursos, encuestas y participación"
+          "desc": "Si procede, se registran indicadores de impacto, participación y recursos generados; en su caso, mediante las herramientas de seguimiento de la red"
         },
         {
           "title": "Caso o Recurso Publicado",
-          "desc": "Si procede, el resultado se publica como caso de transferencia o recurso OER abierto"
+          "desc": "Si supera la validación, el resultado puede publicarse como caso de transferencia o recurso educativo abierto en la red"
         }
       ],
-      "aulesPlatform": "Los recursos OER se publican como módulos en Aules, accesibles para alumnos de FP, docentes y, cuando corresponde, del Máster.",
-      "networkPlatform": "Este portal centraliza retos, casos, repositorio OER, plantillas y evidencias de piloto para toda la red.",
+      "aulesPlatform": "Plataforma educativa de CEICE para FP y formación del profesorado. Puede alojar recursos OER de la red bajo las condiciones acordadas con los socios autores.",
+      "networkPlatform": "Portal que centraliza retos, casos, repositorio OER, plantillas y evidencias de piloto. Punto de acceso común para todos los miembros de la red.",
       "consensuePlatform": "La comunidad puede proponer y consultar qué necesidades y recursos pueden ser relevantes para la red, con el fin de orientar futuras actividades.",
       "oerTitle": "Recursos Educativos Abiertos",
-      "oerDesc": "Repositorio de recursos educativos abiertos bajo licencias Creative Commons, accesibles a través de Aules. Cada recurso incluye sector AI-SECRETT, ruta educativa, tipo y estado de validación. Contenido demo del prototipo.",
+      "oerDesc": "Recursos educativos abiertos bajo licencias abiertas, distribuibles a través de las plataformas educativas de la red. Cada recurso está clasificado por sector AI-SECRETT, ruta educativa, tipo de recurso y estado de validación.",
       "oerSearch": "Buscar recurso...",
       "oerDownloads": "descargas",
       "oerDownloadBtn": "Descargar",
@@ -2567,39 +2567,39 @@ export const translations = {
       "tabEvidence": "Pilot Evidence",
       "tabTemplates": "Templates and Toolkits",
       "flowTitle": "From Ecosystem Challenge to Open Educational Resource",
-      "flowDesc": "The network transforms real organisational needs into quality educational knowledge, following a validated AI-SECRETT transfer process.",
+      "flowDesc": "A six-stage process that converts needs detected by organisations, education centres or the network into open educational resources or transfer cases, classified by AI-SECRETT sector and knowledge route.",
       "flowConnection": "Connection with ecosystem platforms",
       "flowSteps": [
         {
           "title": "Need Detected",
-          "desc": "A stakeholder, ENRED or education centre contributes a need, case or proposal"
+          "desc": "A sector organisation, education centre or network member contributes a training need, use case or innovation proposal"
         },
         {
           "title": "Route Classification",
-          "desc": "Classified by AI-SECRETT sector and route: VET, teacher, resource, pilot or academic bridge"
+          "desc": "CEICE, consulting partners by sector, classifies the input and assigns a working route (VET, teacher, resource, pilot or academic bridge)"
         },
         {
           "title": "Track B Validation",
-          "desc": "Relevance is assessed in Track B and, where applicable, routed to Track A academic bodies"
+          "desc": "The Track B governance body assesses educational relevance; where applicable, it is referred to Track A for validation by consortium academic institutions"
         },
         {
           "title": "Activity / Resource",
-          "desc": "An OER, activity, debate, pilot or documented case is produced according to the assigned route"
+          "desc": "The responsible partners produce the output according to the assigned route (training activity, OER, debate, pilot or documented case)"
         },
         {
           "title": "Evidence Recorded",
-          "desc": "Indicators, ConsensUE traces, resources, surveys and participation may be recorded"
+          "desc": "Where applicable, impact indicators, participation data and generated resources may be recorded using the network's monitoring tools"
         },
         {
           "title": "Case or Resource Published",
-          "desc": "Where applicable, results are published as a transfer case or open OER resource"
+          "desc": "Where validated, the result may be published as a transfer case or open educational resource in the network"
         }
       ],
-      "aulesPlatform": "OER resources are published as resources in Aules, accessible for VET students, teachers and, where applicable, Master students.",
-      "networkPlatform": "This portal centralises challenges, cases, OER repository, templates and pilot evidence for the entire network.",
+      "aulesPlatform": "CEICE's educational platform for VET and teacher training. It may host network OER resources under conditions agreed with the authoring partners.",
+      "networkPlatform": "Portal centralising challenges, cases, OER repository, templates and pilot evidence. Common access point for all network members.",
       "consensuePlatform": "The community can propose and consult on which needs and resources may be relevant to the network, helping to guide future activities.",
       "oerTitle": "Open Educational Resources",
-      "oerDesc": "Repository of open educational resources under Creative Commons licences, accessible via Aules. Each resource includes AI-SECRETT sector, educational route, type and validation status. Prototype demo content.",
+      "oerDesc": "Open educational resources under open licences, distributable through the network's educational platforms. Each resource is classified by AI-SECRETT sector, educational route, resource type and validation status.",
       "oerSearch": "Search resource...",
       "oerDownloads": "downloads",
       "oerDownloadBtn": "Download",
@@ -4435,39 +4435,39 @@ export const translations = {
       "tabEvidence": "Evidències de pilotatge",
       "tabTemplates": "Plantilles i Toolkits",
       "flowTitle": "Del Repte Ecosistema al Recurs Educatiu Obert",
-      "flowDesc": "La xarxa transforma els desafiaments reals de les organitzacions en coneixement educatiu de qualitat, seguint un procés estructurat de 6 etapes validat pel consorci AI-SECRETT.",
+      "flowDesc": "Procés de sis etapes que converteix necessitats detectades per organitzacions, centres educatius o la xarxa en recursos educatius oberts o casos de transferència, classificats per sector AI-SECRETT i ruta de coneixement.",
       "flowConnection": "Connexió amb les plataformes de l'ecosistema",
       "flowSteps": [
         {
-          "title": "Repte Detectat",
-          "desc": "Empresa o institució publica un desafiament real al Banc de Reptes"
+          "title": "Necessitat Detectada",
+          "desc": "Una organització sectorial, centre educatiu o membre de la xarxa aporta una necessitat formativa, cas d'ús o proposta d'innovació"
         },
         {
-          "title": "Avaluació de la Xarxa",
-          "desc": "El Comitè Científic valora la viabilitat i assigna nivell (FP/Màster)"
+          "title": "Classificació per Ruta",
+          "desc": "CEICE, consultant socis per sector, classifica l'aportació i li assigna una ruta de treball (FP, docent, recurs, pilot o pont acadèmic)"
         },
         {
-          "title": "Assignació d'Equip",
-          "desc": "Estudiants o grups de recerca es postulen per resoldre el repte"
+          "title": "Validació Track B",
+          "desc": "El Track B de governança contrasta la rellevància educativa; si escau, es deriva al Track A per a validació per les institucions acadèmiques del consorci"
         },
         {
-          "title": "Prototip Acadèmic",
-          "desc": "Es desenvolupa una solució en col·laboració amb tutors universitaris"
+          "title": "Activitat / Recurs",
+          "desc": "Els socis responsables generen el resultat segons la ruta assignada (activitat formativa, OER, debat, pilot o cas documentat)"
         },
         {
-          "title": "Validació Industrial",
-          "desc": "L'empresa valida el prototip i co-certifica els resultats"
+          "title": "Evidència Registrada",
+          "desc": "Si escau, es registren indicadors d'impacte, participació i recursos generats; si és el cas, mitjançant les eines de seguiment de la xarxa"
         },
         {
-          "title": "Cas d'Èxit OER",
-          "desc": "La solució es publica com a recurs obert en el repositori de la xarxa"
+          "title": "Cas o Recurs Publicat",
+          "desc": "Si supera la validació, el resultat pot publicar-se com a cas de transferència o recurs educatiu obert a la xarxa"
         }
       ],
-      "aulesPlatform": "Els recursos OER es publiquen com a mòduls en Aules, accessibles per a alumnes de FP i del Màster.",
-      "networkPlatform": "Aquest portal centralitza els reptes, el repositori OER i els casos d'èxit per a tota la xarxa.",
+      "aulesPlatform": "Plataforma educativa de CEICE per a FP i formació del professorat. Pot allotjar recursos OER de la xarxa amb les condicions acordades amb els socis autors.",
+      "networkPlatform": "Portal que centralitza reptes, casos, repositori OER, plantilles i evidències de pilot. Punt d'accés comú per a tots els membres de la xarxa.",
       "consensuePlatform": "La comunitat pot proposar i consultar quins recursos i necessitats poden ser rellevants per a la xarxa, amb la finalitat d'orientar futures activitats.",
       "oerTitle": "Recursos Educatius Oberts",
-      "oerDesc": "Repositori de recursos educatius oberts sota llicències Creative Commons, accessibles a través d'Aules. Cada recurs inclou sector AI-SECRETT, ruta educativa, tipus i estat de validació. Contingut demo del prototip.",
+      "oerDesc": "Recursos educatius oberts sota llicències obertes, distribuïbles a través de les plataformes educatives de la xarxa. Cada recurs està classificat per sector AI-SECRETT, ruta educativa, tipus de recurs i estat de validació.",
       "oerSearch": "Buscar recurs...",
       "oerDownloads": "descarregues",
       "oerDownloadBtn": "Descarregar",
