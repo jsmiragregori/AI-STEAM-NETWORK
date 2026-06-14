@@ -51,16 +51,7 @@ export const GOVERNANCE_CONFIG = {
           "va": "Documents de Governança"
         }
       }
-    ],
-    "ctaButton": {
-      "visible": true,
-      "label": {
-        "es": "Ver documentos de gobernanza",
-        "en": "View governance documents",
-        "va": "Veure documents de governança"
-      },
-      "url": "#"
-    }
+    ]
   },
   "structureBodiesBlock": {
     "hub": {

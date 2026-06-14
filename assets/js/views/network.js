@@ -315,7 +315,6 @@ function tabStakeholders(activeCategory, showForm) {
         <i data-lucide="user-plus" class="w-5 h-5" style="color:#fff"></i>
         <div>
           <h2 class="text-lg font-extrabold" style="color:#fff">${loc(f.title)}</h2>
-          <p class="text-sm mt-0.5" style="color:rgba(255,255,255,.85)">${loc(f.subtitle)}</p>
         </div>
       </div>
       <div class="p-6 rd-card-grad-beige">

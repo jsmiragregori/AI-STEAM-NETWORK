@@ -898,7 +898,6 @@ export function render() {
   const heroBlock  = GOVERNANCE_CONFIG?.heroBlock || {};
   const heroVisible = heroBlock.visible !== false;
   const heroStats  = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
-  const ctaButton  = heroBlock.ctaButton || {};
 
   const statsHtml = heroStats.map(s => `
     <div class="rd-hero-stat text-center">
@@ -933,14 +932,6 @@ export function render() {
               <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${pickLang(heroBlock.title, govT?.title || '')}</h1>
               <p class="text-lg leading-relaxed max-w-3xl" style="color:rgba(255,255,255,.9)">${pickLang(heroBlock.description, govT?.description || '')}</p>
             </div>
-            ${ctaButton.visible !== false && ctaButton.url ? `
-            <div class="flex items-center mt-4 lg:mt-12">
-              <a href="${ctaButton.url}" target="_blank" rel="noopener noreferrer"
-                 class="flex items-center gap-2 rounded-full font-bold transition-all hover:scale-105 hover:bg-white hover:text-eu-purple border-none cursor-pointer shadow-lg"
-                 style="background:#FFF4E1;color:#4918AD;padding:1rem 2rem;font-size:0.875rem">
-                <i data-lucide="file-text" class="w-4 h-4"></i>${pickLang(ctaButton.label)}<i data-lucide="external-link" class="w-3 h-3"></i>
-              </a>
-            </div>` : ''}
           </div>
           ${heroStats.length > 0 ? `
           <div class="rd-hero-stats-grid mt-10 max-w-4xl">${statsHtml}</div>` : ''}

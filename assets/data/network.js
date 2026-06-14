@@ -1555,9 +1555,9 @@ export const NETWORK_CONFIG = {
       "va": "Grups d'interès de la Xarxa"
     },
     "description": {
-      "es": "Los stakeholders son organizaciones adheridas voluntariamente a la red AI-STEAM. Su adhesión es <strong>gratuita</strong> (acuerdo de gasto cero) y les permite publicar retos, acceder a recursos formativos y participar en la gobernanza a través de ConsensUE.",
-      "en": "Stakeholders are organizations voluntarily joined to the AI-STEAM network. Their membership is <strong>free</strong> (zero-cost agreement) and allows them to publish challenges, access training resources and participate in governance through ConsensUE.",
-      "va": "Els grups d'interès són organitzacions adherides voluntàriament a la xarxa AI-STEAM. La seua adhesió és <strong>gratuïta</strong> (acord de despesa zero) i els permet publicar reptes, accedir a recursos formatius i participar en la governança a través de ConsensUE."
+      "es": "Los stakeholders serán organizaciones externas adheridas voluntariamente a la red AI-STEAM. El <strong>proceso de adhesión está pendiente de validación</strong> por CEICE, la coordinación del proyecto y los socios responsables; sus condiciones (incluido el Acuerdo de Gasto Cero) y las vías de participación se definirán cuando el proceso esté habilitado.",
+      "en": "Stakeholders will be external organizations voluntarily joined to the AI-STEAM network. The <strong>joining process is pending validation</strong> by CEICE, project coordination and the partners responsible for it; its conditions (including the Zero-Cost Agreement) and participation channels will be defined once the process is enabled.",
+      "va": "Els grups d'interès seran organitzacions externes adherides voluntàriament a la xarxa AI-STEAM. El <strong>procés d'adhesió està pendent de validació</strong> per CEICE, la coordinació del projecte i els socis responsables; les seues condicions (inclòs l'Acord de Despesa Zero) i les vies de participació es definiran quan el procés estiga habilitat."
     },
     "filterAll": {
       "es": "Todos",
@@ -1621,17 +1621,12 @@ export const NETWORK_CONFIG = {
       "title": {
         "es": "Formulario de Adhesión como Stakeholder",
         "en": "Stakeholder Membership Form",
-        "va": "Formulari d'Adhesió com a Grup d'interès"
-      },
-      "subtitle": {
-        "es": "Adhesión bajo el Acuerdo de Gasto Cero · Plazo abierto · Solo para organizaciones externas al consorcio",
-        "en": "Zero Cost Agreement · Open deadline · External organizations only",
-        "va": "Adhesió sota l'Acord de Despesa Zero · Termini obert · Solo per a organitzacions externes al consorci"
+        "va": "Formulari d'Adhesió com a Stakeholder"
       },
       "description": {
-        "es": "Al adherirte como stakeholder podrás publicar retos al Banco de Retos, acceder a recursos formativos, participar en la gobernanza vía ConsensUE y conectar con los socios del consorcio AI-SECRETT. Tras la solicitud, un miembro del consorcio contactará con tu organización para completar el proceso y ubicar la adhesión según país, región, sector y tipo de aportación.",
-        "en": "As a stakeholder, you will be able to publish challenges to the Challenge Bank, access training resources, participate in governance via ConsensUE, and connect with AI-SECRETT consortium partners. After the request, a consortium member will contact your organisation to complete the process and place the membership according to country, region, sector and type of contribution.",
-        "va": "En adherir-te com a grup d'interès podràs publicar reptes al Banc de Reptes, accedir a recursos formatius, participar en la governança vía ConsensUE i connectar amb els socis del consorci AI-SECRETT. Després de la sol·licitud, un membre del consorci contactarà amb la teua organització per completar el procés i ubicar l'adhesió segons país, regió, sector i tipus d'aportació."
+        "es": "<strong>ATENCIÓN:</strong> Este formulario es una <strong>previsualización</strong> del futuro proceso de adhesión de stakeholders y <strong>no está operativo</strong> — no recoge ni envía datos. La adhesión, sus condiciones y el flujo real de solicitud están pendientes de validación por CEICE, la coordinación del proyecto y los socios responsables del proceso (con INESC en la coordinación de la Red de Stakeholders), y de la revisión del tratamiento de datos por el DPD de la Generalitat.",
+        "en": "<strong>ATTENTION:</strong> This form is a <strong>preview</strong> of the future stakeholder joining process and is <strong>not operational</strong> — it does not collect or send any data. Membership, its conditions and the real application flow are pending validation by CEICE, project coordination and the partners responsible for the process (with INESC coordinating the Stakeholders' Network), and pending data-processing review by the Generalitat Data Protection Officer.",
+        "va": "<strong>ATENCIÓ:</strong> Aquest formulari és una <strong>previsualització</strong> del futur procés d'adhesió de grups d'interès i <strong>no està operatiu</strong> — no recull ni envia dades. L'adhesió, les seues condicions i el flux real de sol·licitud estan pendents de validació per CEICE, la coordinació del projecte i els socis responsables del procés (amb INESC en la coordinació de la Xarxa de Grups d'interès), i de la revisió del tractament de dades pel DPD de la Generalitat."
       },
       "fields": {
         "entityName": {
