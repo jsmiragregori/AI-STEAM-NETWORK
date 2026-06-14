@@ -370,6 +370,11 @@ export const NETWORK_CONFIG = {
           "en": "Higher Education & R&D&I",
           "va": "Educació Superior i I+D+I"
         },
+        "contribution": {
+          "es": "Coordina el proyecto y asegura la calidad de los programas formativos bajo el marco ISO 21001.",
+          "en": "Coordinates the project and ensures training programme quality under the ISO 21001 framework.",
+          "va": "Coordina el projecte i assegura la qualitat dels programes formatius dins del marc ISO 21001."
+        },
         "sectors": [
           {
             "es": "Agroalimentario",
@@ -421,6 +426,11 @@ export const NETWORK_CONFIG = {
           "en": "Higher Education & R&D&I",
           "va": "Educació Superior i I+D+I"
         },
+        "contribution": {
+          "es": "Lidera comunicación, eventos públicos y convocatorias en cascada, conectando el programa con comunidades educativas y creativas.",
+          "en": "Leads communication, public events and cascade funding calls, connecting the programme with education and creative communities.",
+          "va": "Lidera comunicació, esdeveniments públics i convocatòries en cascada, connectant el programa amb comunitats educatives i creatives."
+        },
         "sectors": [
           {
             "es": "Industrias Culturales y Creativas",
@@ -466,6 +476,11 @@ export const NETWORK_CONFIG = {
           "es": "Educación Superior e I+D+I",
           "en": "Higher Education & R&D&I",
           "va": "Educació Superior i I+D+I"
+        },
+        "contribution": {
+          "es": "Aporta ingeniería y tecnología al diseño del programa, la plataforma y los contenidos AI-STEAM.",
+          "en": "Brings engineering and technology expertise to programme design, the platform and AI-STEAM content.",
+          "va": "Aporta enginyeria i tecnologia al disseny del programa, la plataforma i els continguts AI-STEAM."
         },
         "sectors": [
           {
@@ -533,6 +548,11 @@ export const NETWORK_CONFIG = {
           "en": "Higher Education & R&D&I",
           "va": "Educació Superior i I+D+I"
         },
+        "contribution": {
+          "es": "Contribuye con investigación científico-técnica a los requisitos, el programa formativo y la conexión con iniciativas europeas de IA educativa.",
+          "en": "Contributes science and technology research to requirements, the training programme and links with European AI education initiatives.",
+          "va": "Contribueix amb investigació cientificotècnica als requisits, el programa formatiu i la connexió amb iniciatives europees d'IA educativa."
+        },
         "sectors": [
           {
             "es": "Energía y Medio Ambiente",
@@ -594,6 +614,11 @@ export const NETWORK_CONFIG = {
           "en": "Higher Education & R&D&I",
           "va": "Educació Superior i I+D+I"
         },
+        "contribution": {
+          "es": "Integra ciencias aplicadas, diseño e ingeniería en el programa, con responsabilidad en la gestión de la política de género.",
+          "en": "Integrates applied sciences, design and engineering into the programme, with responsibility for gender policy management.",
+          "va": "Integra ciències aplicades, disseny i enginyeria en el programa, amb responsabilitat en la gestió de la política de gènere."
+        },
         "sectors": [
           {
             "es": "Energía y Medio Ambiente",
@@ -644,6 +669,11 @@ export const NETWORK_CONFIG = {
           "es": "Educación Superior e I+D+I",
           "en": "Higher Education & R&D&I",
           "va": "Educació Superior i I+D+I"
+        },
+        "contribution": {
+          "es": "Aporta informática y tecnologías digitales al programa y lidera la gestión de datos en las fases de coordinación.",
+          "en": "Brings computer science and digital technologies to the programme and leads data management across coordination phases.",
+          "va": "Aporta informàtica i tecnologies digitals al programa i lidera la gestió de dades en les fases de coordinació."
         },
         "sectors": [
           {
@@ -696,6 +726,11 @@ export const NETWORK_CONFIG = {
           "en": "Higher Education & R&D&I",
           "va": "Educació Superior i I+D+I"
         },
+        "contribution": {
+          "es": "Desarrolla módulos formativos autónomos y aporta investigación universitaria aplicada a contenidos creativos y biomédicos.",
+          "en": "Develops self-standing training modules and contributes university research applied to creative and biomedical content.",
+          "va": "Desenvolupa mòduls formatius autònoms i aporta investigació universitària aplicada a continguts creatius i biomèdics."
+        },
         "sectors": [
           {
             "es": "Industrias Culturales y Creativas",
@@ -741,6 +776,11 @@ export const NETWORK_CONFIG = {
           "es": "Educación Superior e I+D+I",
           "en": "Higher Education & R&D&I",
           "va": "Educació Superior i I+D+I"
+        },
+        "contribution": {
+          "es": "Organiza actividades extracurriculares y prácticas, reforzando la dimensión artística y de diseño del aprendizaje AI-STEAM.",
+          "en": "Organises extracurricular activities and placements, strengthening the artistic and design dimension of AI-STEAM learning.",
+          "va": "Organitza activitats extracurriculars i pràctiques, reforçant la dimensió artística i de disseny de l'aprenentatge AI-STEAM."
         },
         "sectors": [
           {
@@ -788,6 +828,11 @@ export const NETWORK_CONFIG = {
           "es": "Educación Superior e I+D+I",
           "en": "Higher Education & R&D&I",
           "va": "Educació Superior i I+D+I"
+        },
+        "contribution": {
+          "es": "Coordina la red de stakeholders y aporta ciencia de datos, IA y sistemas ciberfísicos al ecosistema AI-STEAM.",
+          "en": "Coordinates the stakeholders' network and brings data science, AI and cyber-physical systems to the AI-STEAM ecosystem.",
+          "va": "Coordina la xarxa de stakeholders i aporta ciència de dades, IA i sistemes ciberfísics a l'ecosistema AI-STEAM."
         },
         "sectors": [
           {
@@ -850,6 +895,11 @@ export const NETWORK_CONFIG = {
           "en": "Higher Education & R&D&I",
           "va": "Educació Superior i I+D+I"
         },
+        "contribution": {
+          "es": "Apoya la plataforma y las master classes con living labs y diseño de servicios orientados al aprendizaje aplicado.",
+          "en": "Supports the platform and master classes with living labs and service design for applied learning.",
+          "va": "Dona suport a la plataforma i a les master classes amb living labs i disseny de serveis per a l'aprenentatge aplicat."
+        },
         "sectors": [
           {
             "es": "Servicios No Turísticos",
@@ -895,6 +945,11 @@ export const NETWORK_CONFIG = {
           "es": "Administración Pública",
           "en": "Public Administration",
           "va": "Administració Pública"
+        },
+        "contribution": {
+          "es": "Impulsa la Comunidad AI-STEAM y aporta política educativa, FP y formación docente a la transferencia regional.",
+          "en": "Drives the AI-STEAM Community and brings education policy, VET and teacher training to regional transfer.",
+          "va": "Impulsa la Comunitat AI-STEAM i aporta política educativa, FP i formació docent a la transferència regional."
         },
         "sectors": [
           {
@@ -948,6 +1003,11 @@ export const NETWORK_CONFIG = {
           "en": "Public Administration",
           "va": "Administració Pública"
         },
+        "contribution": {
+          "es": "Conecta la comunidad AI-STEAM con innovación urbana, movilidad y vivienda desde la promoción pública local.",
+          "en": "Connects the AI-STEAM Community with urban innovation, mobility and housing through local public promotion.",
+          "va": "Connecta la Comunitat AI-STEAM amb innovació urbana, mobilitat i habitatge des de la promoció pública local."
+        },
         "sectors": [
           {
             "es": "Vivienda",
@@ -998,6 +1058,11 @@ export const NETWORK_CONFIG = {
           "es": "Administración Pública",
           "en": "Public Administration",
           "va": "Administració Pública"
+        },
+        "contribution": {
+          "es": "Aporta desarrollo regional e innovación pública a la comunidad AI-STEAM y a la validación territorial del programa.",
+          "en": "Brings regional development and public sector innovation to the AI-STEAM Community and territorial programme validation.",
+          "va": "Aporta desenvolupament regional i innovació pública a la Comunitat AI-STEAM i a la validació territorial del programa."
         },
         "sectors": [
           {
@@ -1055,6 +1120,11 @@ export const NETWORK_CONFIG = {
           "en": "Public Administration",
           "va": "Administració Pública"
         },
+        "contribution": {
+          "es": "Refuerza la comunidad AI-STEAM con desarrollo regional, apoyo a pymes y conexión con sectores productivos locales.",
+          "en": "Strengthens the AI-STEAM Community with regional development, SME support and links to local productive sectors.",
+          "va": "Reforça la Comunitat AI-STEAM amb desenvolupament regional, suport a PIMES i connexió amb sectors productius locals."
+        },
         "sectors": [
           {
             "es": "Agroalimentario",
@@ -1111,6 +1181,11 @@ export const NETWORK_CONFIG = {
           "en": "Business & Innovation",
           "va": "Empresa i Innovació"
         },
+        "contribution": {
+          "es": "Desarrolla el marco inicial y revisado de credenciales, aportando IA explicable e innovación tecnológica.",
+          "en": "Develops the initial and revised credentials framework, bringing explainable AI and technological innovation.",
+          "va": "Desenvolupa el marc inicial i revisat de credencials, aportant IA explicable i innovació tecnològica."
+        },
         "sectors": [
           {
             "es": "Vivienda",
@@ -1156,6 +1231,11 @@ export const NETWORK_CONFIG = {
           "es": "Empresa e Innovación",
           "en": "Business & Innovation",
           "va": "Empresa i Innovació"
+        },
+        "contribution": {
+          "es": "Lidera la certificación de competencias y el marco de credenciales, asegurando calidad y reconocimiento del aprendizaje.",
+          "en": "Leads competence certification and the credentials framework, ensuring learning quality and recognition.",
+          "va": "Lidera la certificació de competències i el marc de credencials, assegurant qualitat i reconeixement de l'aprenentatge."
         },
         "sectors": [
           {
@@ -1213,6 +1293,11 @@ export const NETWORK_CONFIG = {
           "en": "Business & Innovation",
           "va": "Empresa i Innovació"
         },
+        "contribution": {
+          "es": "Aporta innovación y emprendimiento al análisis inicial, la construcción de comunidad y la conexión con ecosistemas empresariales.",
+          "en": "Brings innovation and entrepreneurship to the initial analysis, community building and links with business ecosystems.",
+          "va": "Aporta innovació i emprenedoria a l'anàlisi inicial, la construcció de comunitat i la connexió amb ecosistemes empresarials."
+        },
         "sectors": [
           {
             "es": "Manufactura",
@@ -1263,6 +1348,11 @@ export const NETWORK_CONFIG = {
           "es": "Empresa e Innovación",
           "en": "Business & Innovation",
           "va": "Empresa i Innovació"
+        },
+        "contribution": {
+          "es": "Contribuye a la co-creación de contenidos, comunidad y comunicación desde la gestión cultural y la difusión.",
+          "en": "Contributes to content co-creation, community building and communication through cultural management and dissemination.",
+          "va": "Contribueix a la cocreació de continguts, comunitat i comunicació des de la gestió cultural i la difusió."
         },
         "sectors": [
           {
@@ -1315,6 +1405,11 @@ export const NETWORK_CONFIG = {
           "en": "Business & Innovation",
           "va": "Empresa i Innovació"
         },
+        "contribution": {
+          "es": "Impulsa la co-creación de contenidos iniciales y aporta emprendimiento e innovación educativa al ecosistema AI-STEAM.",
+          "en": "Drives initial content co-creation and brings entrepreneurship and educational innovation to the AI-STEAM ecosystem.",
+          "va": "Impulsa la cocreació de continguts inicials i aporta emprenedoria i innovació educativa a l'ecosistema AI-STEAM."
+        },
         "sectors": [
           {
             "es": "Industrias Culturales y Creativas",
@@ -1365,6 +1460,11 @@ export const NETWORK_CONFIG = {
           "es": "Sociedad Civil y ONG",
           "en": "Civil Society & NGOs",
           "va": "Societat Civil i ONG"
+        },
+        "contribution": {
+          "es": "Lidera análisis de políticas STEAM y planes de explotación, aportando visión europea de gobernanza digital.",
+          "en": "Leads STEAM policy analysis and exploitation plans, bringing a European perspective on digital governance.",
+          "va": "Lidera anàlisi de polítiques STEAM i plans d'explotació, aportant visió europea de governança digital."
         },
         "sectors": [
           {
@@ -1422,6 +1522,11 @@ export const NETWORK_CONFIG = {
           "en": "Civil Society & NGOs",
           "va": "Societat Civil i ONG"
         },
+        "contribution": {
+          "es": "Aporta políticas culturales e industrias creativas al análisis europeo de educación STEAM y su transferencia.",
+          "en": "Brings cultural policy and creative industries expertise to European STEAM education analysis and transfer.",
+          "va": "Aporta polítiques culturals i indústries creatives a l'anàlisi europea d'educació STEAM i la seua transferència."
+        },
         "sectors": [
           {
             "es": "Industrias Culturales y Creativas",
@@ -1473,6 +1578,11 @@ export const NETWORK_CONFIG = {
           "en": "Civil Society & NGOs",
           "va": "Societat Civil i ONG"
         },
+        "contribution": {
+          "es": "Conecta el proyecto con competencias de futuro, iniciativas europeas de IA educativa y evaluación de innovación.",
+          "en": "Connects the project with future skills, European AI education initiatives and innovation assessment.",
+          "va": "Connecta el projecte amb competències de futur, iniciatives europees d'IA educativa i avaluació de la innovació."
+        },
         "sectors": [
           {
             "es": "Energía y Medio Ambiente",
@@ -1518,6 +1628,11 @@ export const NETWORK_CONFIG = {
           "es": "Sociedad Civil y ONG",
           "en": "Civil Society & NGOs",
           "va": "Societat Civil i ONG"
+        },
+        "contribution": {
+          "es": "Apoya voluntariamente difusión, explotación y comunidad desde la cooperación cultural europea y los programas creativos.",
+          "en": "Voluntarily supports dissemination, exploitation and community building through European cultural cooperation and creative programmes.",
+          "va": "Dona suport voluntari a difusió, explotació i comunitat des de la cooperació cultural europea i els programes creatius."
         },
         "sectors": [
           {

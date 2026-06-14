@@ -175,6 +175,7 @@ function tabSocios(activeCategory, filterCountry) {
   const pShowCategory    = partnerCv.category !== false;
   const pShowSectors     = partnerCv.sectors  !== false;
   const pShowRole        = partnerCv.role     !== false;
+  const getCountryName = c => loc(pb.countryNames?.[c]) || c;
   const cardsHtml = filtered.map(p => {
     const pCats = itemCats(p);
     const meta = CATEGORY_META[pCats[0]] || CATEGORY_META.sociedad;
@@ -183,7 +184,9 @@ function tabSocios(activeCategory, filterCountry) {
     const expertiseHtml = (p.expertise || []).map(e => `<span class="text-sm px-2 py-0.5 rounded-full font-bold" style="background:rgb(73 24 173/.10); color:#4918AD">${localized(e)}</span>`).join('');
     const categoryLabel = pCats.map(c => getCategoryLabel(c)).join(' · ') || localized(p.categoryLabel);
     const roleLabel = loc(pb.roleLabels?.[p.role]) || p.role;
-    const consortiumLabel = loc(pb.consortium) || 'CONSORCIO';
+    const countryLabel = getCountryName(p.country);
+    const contributionText = localized(p.contribution);
+    const contributionHtml = contributionText ? `<p class="text-sm text-gray-700 leading-snug mb-3">${contributionText}</p>` : '';
     const visitLabel = loc(pb.visitSite) || 'Visit website';
     const logoHtml = p.logo
       ? `<img src="${LOGO_BASE}${p.logo}" alt="${(p.acronym || p.name || p.id).replace(/"/g, '&quot;')}" class="max-h-12 max-w-[160px] w-auto h-auto object-contain" loading="lazy" />`
@@ -200,9 +203,17 @@ function tabSocios(activeCategory, filterCountry) {
         <div class="flex items-center justify-center bg-white border-b border-eu-purple/10 h-24 px-6 py-4">
           ${logoHtml}
         </div>
-        <!-- Meta: categoría (línea 1) · bandera + consorcio (línea 2) -->
-        <div class="px-4 pt-3 pb-2 flex flex-col gap-1.5">
-          ${pShowCategory ? `<div class="flex flex-wrap items-center gap-3 min-w-0">${pCats.map(c => {
+        <!-- Nombre + país + contribución + clasificación -->
+        <div class="px-4 pt-3 pb-4 flex-1 flex flex-col">
+          <p class="font-extrabold text-eu-purple text-base leading-snug mb-0.5">${localized(p.name)}</p>
+          <p class="text-sm text-gray-500 mb-1">${p.acronym} · ${localized(p.city)}</p>
+          <div class="flex items-center gap-1.5">
+            <img src="https://flagcdn.com/20x15/${p.country.toLowerCase()}.png" alt="${countryLabel}" class="rounded-sm" />
+            <span class="text-xs bg-eu-blue/10 text-eu-blue font-bold px-1.5 py-0.5 rounded">${countryLabel}</span>
+          </div>
+          ${pShowRole ? `<p class="text-sm text-eu-blue font-bold mt-2 mb-3">${roleLabel}</p>` : ''}
+          ${contributionHtml}
+          ${pShowCategory ? `<div class="flex flex-wrap items-center gap-3 min-w-0 ${contributionHtml ? 'mb-3' : 'mt-2 mb-3'}">${pCats.map(c => {
             const m = CATEGORY_META[c] || CATEGORY_META.sociedad;
             const lbl = getCategoryLabel(c);
             return `<div class="network-category-tooltip flex items-center gap-1.5 min-w-0" data-tooltip="${lbl}" aria-label="${lbl}" tabindex="0">
@@ -212,16 +223,6 @@ function tabSocios(activeCategory, filterCountry) {
               <span class="text-sm text-gray-500 font-medium truncate">${lbl}</span>
             </div>`;
           }).join('')}</div>` : ''}
-          <div class="flex items-center gap-1.5">
-            <img src="https://flagcdn.com/20x15/${p.country.toLowerCase()}.png" alt="${p.country}" class="rounded-sm" />
-            <span class="text-xs bg-eu-blue/10 text-eu-blue font-bold px-1.5 py-0.5 rounded">${consortiumLabel}</span>
-          </div>
-        </div>
-        <!-- Nombre + info + sectores -->
-        <div class="px-4 pb-4 flex-1 flex flex-col">
-          <p class="font-extrabold text-eu-purple text-base leading-snug mb-0.5">${localized(p.name)}</p>
-          <p class="text-sm text-gray-500 mb-1">${p.acronym} · ${localized(p.city)}</p>
-          ${pShowRole ? `<p class="text-sm text-eu-blue font-bold mb-3">${roleLabel}</p>` : ''}
           ${pShowSectors ? `<div class="flex flex-wrap gap-1.5 mt-auto">${sectorsHtml}</div>` : ''}
           ${expertiseHtml ? `<div class="flex flex-wrap gap-1.5 ${pShowSectors ? 'mt-2' : 'mt-auto'}">${expertiseHtml}</div>` : ''}
         </div>
@@ -229,9 +230,6 @@ function tabSocios(activeCategory, filterCountry) {
       </div>
     `;
   }).join('');
-
-  const getCountryName = c => loc(pb.countryNames?.[c]) || c;
-
   const countryGrid = COUNTRIES.map(c => {
     const cnt = ACTIVE_PARTNERS.filter(p => p.country === c).length;
     const isActive = filterCountry === c;
