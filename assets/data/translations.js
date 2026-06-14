@@ -937,6 +937,7 @@ export const translations = {
       "filterByType": "Filtrar por Tipo"
     },
     "governance": {
+      "eyebrow": "Gobernanza",
       "title": "Gobernanza y Transparencia",
       "subtitle": "Estructura de decisión y participación",
       "description": "La AI-STEAM Network opera bajo un modelo de gobernanza de Doble Vía (Dual Track): un espacio académico liderado por UVEG y un espacio ecosistema orquestado por la Generalitat Valenciana (CEICE).",
@@ -2822,6 +2823,7 @@ export const translations = {
       "filterByType": "Filter by Type"
     },
     "governance": {
+      "eyebrow": "Governance",
       "title": "Governance and Transparency",
       "subtitle": "Decision-making structure and participation",
       "description": "The AI-STEAM Network operates under a Dual Track governance model: an academic space led by UVEG and an ecosystem space orchestrated by the Generalitat Valenciana (CEICE).",
@@ -4688,6 +4690,7 @@ export const translations = {
       "filterByType": "Filtra per Tipus"
     },
     "governance": {
+      "eyebrow": "Governança",
       "title": "Governança i Transparència",
       "subtitle": "Estructura de decisió i participació",
       "description": "La xarxa AI-STEAM funciona sota un model de governança de Doble Vía: un espai acadèmic liderat per UVEG i un espai ecosistema orquestrat per la Generalitat Valenciana (CEICE).",
