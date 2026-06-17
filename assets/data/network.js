@@ -377,14 +377,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Agroalimentario",
-            "en": "Agrifood",
-            "va": "Agroalimentari"
-          },
-          {
-            "es": "Servicios No Turísticos",
-            "en": "Non-Touristic Services",
-            "va": "Serveis No Turístics"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
           }
         ],
         "expertise": [
@@ -836,21 +831,6 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Agroalimentario",
-            "en": "Agrifood",
-            "va": "Agroalimentari"
-          },
-          {
-            "es": "Energía y Medio Ambiente",
-            "en": "Energy and Environment",
-            "va": "Energia i Medi Ambient"
-          },
-          {
-            "es": "Manufactura",
-            "en": "Manufacturing",
-            "va": "Manufactura"
-          },
-          {
             "es": "Movilidad y Transporte",
             "en": "Mobility and Transport",
             "va": "Mobilitat i Transport"
@@ -1239,19 +1219,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Energía y Medio Ambiente",
-            "en": "Energy and Environment",
-            "va": "Energia i Medi Ambient"
-          },
-          {
-            "es": "Manufactura",
-            "en": "Manufacturing",
-            "va": "Manufactura"
-          },
-          {
-            "es": "Movilidad y Transporte",
-            "en": "Mobility and Transport",
-            "va": "Mobilitat i Transport"
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "expertise": [
@@ -1300,14 +1270,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Manufactura",
-            "en": "Manufacturing",
-            "va": "Manufactura"
-          },
-          {
-            "es": "Servicios No Turísticos",
-            "en": "Non-Touristic Services",
-            "va": "Serveis No Turístics"
+            "es": "Agroalimentario",
+            "en": "Agrifood",
+            "va": "Agroalimentari"
           }
         ],
         "expertise": [
@@ -1356,14 +1321,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Industrias Culturales y Creativas",
-            "en": "Cultural and Creative Industries",
-            "va": "Indústries Culturals i Creatives"
-          },
-          {
-            "es": "Servicios No Turísticos",
-            "en": "Non-Touristic Services",
-            "va": "Serveis No Turístics"
+            "es": "Manufactura",
+            "en": "Manufacturing",
+            "va": "Manufactura"
           }
         ],
         "expertise": [
@@ -1412,14 +1372,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Industrias Culturales y Creativas",
-            "en": "Cultural and Creative Industries",
-            "va": "Indústries Culturals i Creatives"
-          },
-          {
-            "es": "Servicios No Turísticos",
-            "en": "Non-Touristic Services",
-            "va": "Serveis No Turístics"
+            "es": "Energía y Medio Ambiente",
+            "en": "Energy and Environment",
+            "va": "Energia i Medi Ambient"
           }
         ],
         "expertise": [
@@ -1468,19 +1423,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Energía y Medio Ambiente",
-            "en": "Energy and Environment",
-            "va": "Energia i Medi Ambient"
-          },
-          {
-            "es": "Movilidad y Transporte",
-            "en": "Mobility and Transport",
-            "va": "Mobilitat i Transport"
-          },
-          {
-            "es": "Servicios No Turísticos",
-            "en": "Non-Touristic Services",
-            "va": "Serveis No Turístics"
+            "es": "Vivienda",
+            "en": "Housing",
+            "va": "Habitatge"
           }
         ],
         "expertise": [

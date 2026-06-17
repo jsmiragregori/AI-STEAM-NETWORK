@@ -255,52 +255,22 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Detecció automàtica de defectes en línia de producció amb visió artificial"
       },
       "featuredPartners": [
-        "TUV.IT",
-        "JOIST",
-        "INESC TEC"
+        "C-LINK"
       ],
       "featuredPartnerDetails": [
         {
-          "id": "tuvit",
-          "acronym": "TUV.IT",
+          "id": "clink",
+          "acronym": "C-LINK",
           "name": {
-            "es": "TÜV Thüringen Italia",
-            "en": "TÜV Thüringen Italia",
-            "va": "TÜV Thüringen Italia"
+            "es": "CulturaLink SL",
+            "en": "CulturaLink SL",
+            "va": "CulturaLink SL"
           },
-          "country": "IT",
+          "country": "ES",
           "city": {
-            "es": "Collecchio",
-            "en": "Collecchio",
-            "va": "Collecchio"
-          },
-          "categories": [
-            "empresa"
-          ],
-          "category": "empresa",
-          "categoryLabel": {
-            "es": "Empresa e Innovación",
-            "en": "Business & Innovation",
-            "va": "Empresa i Innovació"
-          },
-          "role": "certification",
-          "url": "https://tuv-thuringen.it/",
-          "logo": "tuvit.png",
-          "found": true
-        },
-        {
-          "id": "joist",
-          "acronym": "JOIST",
-          "name": {
-            "es": "The Factory IKE (JOIST)",
-            "en": "The Factory IKE (JOIST)",
-            "va": "The Factory IKE (JOIST)"
-          },
-          "country": "GR",
-          "city": {
-            "es": "Larissa",
-            "en": "Larissa",
-            "va": "Larissa"
+            "es": "Las Palmas",
+            "en": "Las Palmas",
+            "va": "Las Palmas"
           },
           "categories": [
             "empresa"
@@ -312,37 +282,8 @@ export const SECTORS_CONFIG = {
             "va": "Empresa i Innovació"
           },
           "role": "beneficiary",
-          "url": "https://joistpark.eu/",
-          "logo": "joist.png",
-          "found": true
-        },
-        {
-          "id": "inesc",
-          "acronym": "INESC",
-          "name": {
-            "es": "INESC TEC",
-            "en": "INESC TEC",
-            "va": "INESC TEC"
-          },
-          "country": "PT",
-          "city": {
-            "es": "Porto",
-            "en": "Porto",
-            "va": "Porto"
-          },
-          "categories": [
-            "universidad",
-            "empresa"
-          ],
-          "category": "universidad",
-          "categoryLabel": {
-            "es": "Educación Superior e I+D+I",
-            "en": "Higher Education & R&D&I",
-            "va": "Educació Superior i I+D+I"
-          },
-          "role": "beneficiary",
-          "url": "https://www.inesctec.pt/",
-          "logo": "inesc.png",
+          "url": "https://culturalink.net/",
+          "logo": "clink.png",
           "found": true
         }
       ],
@@ -722,68 +663,9 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Predicció de demanda en transport públic per a optimització de freqüències"
       },
       "featuredPartners": [
-        "NTNU",
-        "HSW",
-        "INESC TEC",
-        "CEICE"
+        "INESC TEC"
       ],
       "featuredPartnerDetails": [
-        {
-          "id": "ntnu",
-          "acronym": "NTNU",
-          "name": {
-            "es": "NTNU – Norwegian Univ. of S&T",
-            "en": "NTNU – Norwegian Univ. of S&T",
-            "va": "NTNU – Norwegian Univ. of S&T"
-          },
-          "country": "NO",
-          "city": {
-            "es": "Trondheim",
-            "en": "Trondheim",
-            "va": "Trondheim"
-          },
-          "categories": [
-            "universidad"
-          ],
-          "category": "universidad",
-          "categoryLabel": {
-            "es": "Educación Superior e I+D+I",
-            "en": "Higher Education & R&D&I",
-            "va": "Educació Superior i I+D+I"
-          },
-          "role": "beneficiary",
-          "url": "https://www.ntnu.edu/",
-          "logo": "ntnu.png",
-          "found": true
-        },
-        {
-          "id": "hsw",
-          "acronym": "HSW",
-          "name": {
-            "es": "Hochschule Wismar",
-            "en": "Hochschule Wismar",
-            "va": "Hochschule Wismar"
-          },
-          "country": "DE",
-          "city": {
-            "es": "Wismar",
-            "en": "Wismar",
-            "va": "Wismar"
-          },
-          "categories": [
-            "universidad"
-          ],
-          "category": "universidad",
-          "categoryLabel": {
-            "es": "Educación Superior e I+D+I",
-            "en": "Higher Education & R&D&I",
-            "va": "Educació Superior i I+D+I"
-          },
-          "role": "beneficiary",
-          "url": "https://www.hs-wismar.de/",
-          "logo": "hsw.png",
-          "found": true
-        },
         {
           "id": "inesc",
           "acronym": "INESC",
@@ -811,34 +693,6 @@ export const SECTORS_CONFIG = {
           "role": "beneficiary",
           "url": "https://www.inesctec.pt/",
           "logo": "inesc.png",
-          "found": true
-        },
-        {
-          "id": "ceice",
-          "acronym": "CEICE",
-          "name": {
-            "es": "Conselleria de Educación (CEICE)",
-            "en": "Department of Education (CEICE)",
-            "va": "Conselleria d'Educació (CEICE)"
-          },
-          "country": "ES",
-          "city": {
-            "es": "Valencia",
-            "en": "Valencia",
-            "va": "València"
-          },
-          "categories": [
-            "admin"
-          ],
-          "category": "admin",
-          "categoryLabel": {
-            "es": "Administración Pública",
-            "en": "Public Administration",
-            "va": "Administració Pública"
-          },
-          "role": "beneficiary",
-          "url": "https://ceice.gva.es/va/",
-          "logo": "ceice.png",
           "found": true
         }
       ],
@@ -1193,123 +1047,35 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Sistema de monitorització de qualitat de l'aire amb sensors IoT i alertes automàtiques"
       },
       "featuredPartners": [
-        "Region Värmland",
-        "PREDA",
-        "NTNU",
-        "INESC TEC"
+        "CINK"
       ],
       "featuredPartnerDetails": [
         {
-          "id": "varm",
-          "acronym": "VARM",
+          "id": "cink",
+          "acronym": "CINK",
           "name": {
-            "es": "Region Värmland",
-            "en": "Region Värmland",
-            "va": "Region Värmland"
+            "es": "CINK Venturing SL",
+            "en": "CINK Venturing SL",
+            "va": "CINK Venturing SL"
           },
-          "country": "SE",
+          "country": "ES",
           "city": {
-            "es": "Karlstad",
-            "en": "Karlstad",
-            "va": "Karlstad"
+            "es": "Madrid",
+            "en": "Madrid",
+            "va": "Madrid"
           },
           "categories": [
-            "admin"
-          ],
-          "category": "admin",
-          "categoryLabel": {
-            "es": "Administración Pública",
-            "en": "Public Administration",
-            "va": "Administració Pública"
-          },
-          "role": "beneficiary",
-          "url": "https://www.regionvarmland.se/",
-          "logo": "varm.png",
-          "found": true
-        },
-        {
-          "id": "preda",
-          "acronym": "PREDA",
-          "name": {
-            "es": "Agencia Desarrollo Prijedor",
-            "en": "Agencia Desarrollo Prijedor",
-            "va": "Agencia Desarrollo Prijedor"
-          },
-          "country": "BA",
-          "city": {
-            "es": "Prijedor",
-            "en": "Prijedor",
-            "va": "Prijedor"
-          },
-          "categories": [
-            "admin"
-          ],
-          "category": "admin",
-          "categoryLabel": {
-            "es": "Administración Pública",
-            "en": "Public Administration",
-            "va": "Administració Pública"
-          },
-          "role": "beneficiary",
-          "url": "https://razvojnaagencija.predaprijedor.com/",
-          "logo": "preda.png",
-          "found": true
-        },
-        {
-          "id": "ntnu",
-          "acronym": "NTNU",
-          "name": {
-            "es": "NTNU – Norwegian Univ. of S&T",
-            "en": "NTNU – Norwegian Univ. of S&T",
-            "va": "NTNU – Norwegian Univ. of S&T"
-          },
-          "country": "NO",
-          "city": {
-            "es": "Trondheim",
-            "en": "Trondheim",
-            "va": "Trondheim"
-          },
-          "categories": [
-            "universidad"
-          ],
-          "category": "universidad",
-          "categoryLabel": {
-            "es": "Educación Superior e I+D+I",
-            "en": "Higher Education & R&D&I",
-            "va": "Educació Superior i I+D+I"
-          },
-          "role": "beneficiary",
-          "url": "https://www.ntnu.edu/",
-          "logo": "ntnu.png",
-          "found": true
-        },
-        {
-          "id": "inesc",
-          "acronym": "INESC",
-          "name": {
-            "es": "INESC TEC",
-            "en": "INESC TEC",
-            "va": "INESC TEC"
-          },
-          "country": "PT",
-          "city": {
-            "es": "Porto",
-            "en": "Porto",
-            "va": "Porto"
-          },
-          "categories": [
-            "universidad",
             "empresa"
           ],
-          "category": "universidad",
+          "category": "empresa",
           "categoryLabel": {
-            "es": "Educación Superior e I+D+I",
-            "en": "Higher Education & R&D&I",
-            "va": "Educació Superior i I+D+I"
+            "es": "Empresa e Innovación",
+            "en": "Business & Innovation",
+            "va": "Empresa i Innovació"
           },
           "role": "beneficiary",
-          "url": "https://www.inesctec.pt/",
-          "logo": "inesc.png",
+          "url": "https://cinkventuring.es/",
+          "logo": "cink.png",
           "found": true
         }
       ],
@@ -1648,29 +1414,22 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Detecció de plagues en vinyes mitjançant anàlisi d'imatges de dron"
       },
       "featuredPartners": [
-        "AVA-ASAJA",
-        "CINK",
-        "INESC TEC",
-        "UVEG"
+        "JOIST"
       ],
       "featuredPartnerDetails": [
         {
-          "acronym": "AVA-ASAJA",
-          "found": false
-        },
-        {
-          "id": "cink",
-          "acronym": "CINK",
+          "id": "joist",
+          "acronym": "JOIST",
           "name": {
-            "es": "CINK Venturing SL",
-            "en": "CINK Venturing SL",
-            "va": "CINK Venturing SL"
+            "es": "The Factory IKE (JOIST)",
+            "en": "The Factory IKE (JOIST)",
+            "va": "The Factory IKE (JOIST)"
           },
-          "country": "ES",
+          "country": "GR",
           "city": {
-            "es": "Madrid",
-            "en": "Madrid",
-            "va": "Madrid"
+            "es": "Larissa",
+            "en": "Larissa",
+            "va": "Larissa"
           },
           "categories": [
             "empresa"
@@ -1682,65 +1441,8 @@ export const SECTORS_CONFIG = {
             "va": "Empresa i Innovació"
           },
           "role": "beneficiary",
-          "url": "https://cinkventuring.es/",
-          "logo": "cink.png",
-          "found": true
-        },
-        {
-          "id": "inesc",
-          "acronym": "INESC",
-          "name": {
-            "es": "INESC TEC",
-            "en": "INESC TEC",
-            "va": "INESC TEC"
-          },
-          "country": "PT",
-          "city": {
-            "es": "Porto",
-            "en": "Porto",
-            "va": "Porto"
-          },
-          "categories": [
-            "universidad",
-            "empresa"
-          ],
-          "category": "universidad",
-          "categoryLabel": {
-            "es": "Educación Superior e I+D+I",
-            "en": "Higher Education & R&D&I",
-            "va": "Educació Superior i I+D+I"
-          },
-          "role": "beneficiary",
-          "url": "https://www.inesctec.pt/",
-          "logo": "inesc.png",
-          "found": true
-        },
-        {
-          "id": "uveg",
-          "acronym": "UVEG",
-          "name": {
-            "es": "Universitat de València",
-            "en": "University of Valencia",
-            "va": "Universitat de València"
-          },
-          "country": "ES",
-          "city": {
-            "es": "Valencia",
-            "en": "Valencia",
-            "va": "València"
-          },
-          "categories": [
-            "universidad"
-          ],
-          "category": "universidad",
-          "categoryLabel": {
-            "es": "Educación Superior e I+D+I",
-            "en": "Higher Education & R&D&I",
-            "va": "Educació Superior i I+D+I"
-          },
-          "role": "coordinator",
-          "url": "https://www.uv.es/",
-          "logo": "uveg.png",
+          "url": "https://joistpark.eu/",
+          "logo": "joist.png",
           "found": true
         }
       ],
@@ -1862,9 +1564,7 @@ export const SECTORS_CONFIG = {
         "hasEvidenceCase": true,
         "hasAcademicConnections": true,
         "hasFeaturedPartners": true,
-        "unresolvedFeaturedPartners": [
-          "AVA-ASAJA"
-        ]
+        "unresolvedFeaturedPartners": []
       },
       "sections": {}
     },
@@ -2065,111 +1765,22 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Digitalització i descripció automàtica de fons arxivístics per a accés obert"
       },
       "featuredPartners": [
-        "LPGA",
-        "C-LINK",
-        "KEA",
-        "ESAD-GV",
-        "RCE"
+        "UVEG"
       ],
       "featuredPartnerDetails": [
         {
-          "id": "lpga",
-          "acronym": "LPGA",
+          "id": "uveg",
+          "acronym": "UVEG",
           "name": {
-            "es": "Promoción Las Palmas de GC",
-            "en": "Las Palmas de Gran Canaria Promotion",
-            "va": "Promoció Las Palmas de GC"
+            "es": "Universitat de València",
+            "en": "University of Valencia",
+            "va": "Universitat de València"
           },
           "country": "ES",
           "city": {
-            "es": "Las Palmas",
-            "en": "Las Palmas",
-            "va": "Las Palmas"
-          },
-          "categories": [
-            "admin",
-            "empresa"
-          ],
-          "category": "admin",
-          "categoryLabel": {
-            "es": "Administración Pública",
-            "en": "Public Administration",
-            "va": "Administració Pública"
-          },
-          "role": "beneficiary",
-          "url": "https://www.laspalmasgc.es/es/ayuntamiento/organismos-y-empresas/sociedad-de-promocion-de-las-palmas-de-gran-canaria/",
-          "logo": "lpga.png",
-          "found": true
-        },
-        {
-          "id": "clink",
-          "acronym": "C-LINK",
-          "name": {
-            "es": "CulturaLink SL",
-            "en": "CulturaLink SL",
-            "va": "CulturaLink SL"
-          },
-          "country": "ES",
-          "city": {
-            "es": "Las Palmas",
-            "en": "Las Palmas",
-            "va": "Las Palmas"
-          },
-          "categories": [
-            "empresa"
-          ],
-          "category": "empresa",
-          "categoryLabel": {
-            "es": "Empresa e Innovación",
-            "en": "Business & Innovation",
-            "va": "Empresa i Innovació"
-          },
-          "role": "beneficiary",
-          "url": "https://culturalink.net/",
-          "logo": "clink.png",
-          "found": true
-        },
-        {
-          "id": "kea",
-          "acronym": "KEA",
-          "name": {
-            "es": "KEA European Affairs",
-            "en": "KEA European Affairs",
-            "va": "KEA European Affairs"
-          },
-          "country": "BE",
-          "city": {
-            "es": "Bruselas",
-            "en": "Brussels",
-            "va": "Brussel·les"
-          },
-          "categories": [
-            "sociedad"
-          ],
-          "category": "sociedad",
-          "categoryLabel": {
-            "es": "Sociedad Civil y ONG",
-            "en": "Civil Society & NGOs",
-            "va": "Societat Civil i ONG"
-          },
-          "role": "beneficiary",
-          "url": "https://keanet.eu/",
-          "logo": "kea.png",
-          "found": true
-        },
-        {
-          "id": "esad",
-          "acronym": "ESAD-GV",
-          "name": {
-            "es": "ESAD Grenoble-Valence",
-            "en": "ESAD Grenoble-Valence",
-            "va": "ESAD Grenoble-Valence"
-          },
-          "country": "FR",
-          "city": {
-            "es": "Grenoble",
-            "en": "Grenoble",
-            "va": "Grenoble"
+            "es": "Valencia",
+            "en": "Valencia",
+            "va": "València"
           },
           "categories": [
             "universidad"
@@ -2180,37 +1791,9 @@ export const SECTORS_CONFIG = {
             "en": "Higher Education & R&D&I",
             "va": "Educació Superior i I+D+I"
           },
-          "role": "beneficiary",
-          "url": "https://esad-gv.fr/",
-          "logo": "esad.png",
-          "found": true
-        },
-        {
-          "id": "rce",
-          "acronym": "RCE",
-          "name": {
-            "es": "Relais Culture Europe",
-            "en": "Relais Culture Europe",
-            "va": "Relais Culture Europe"
-          },
-          "country": "FR",
-          "city": {
-            "es": "París",
-            "en": "Paris",
-            "va": "París"
-          },
-          "categories": [
-            "sociedad"
-          ],
-          "category": "sociedad",
-          "categoryLabel": {
-            "es": "Sociedad Civil y ONG",
-            "en": "Civil Society & NGOs",
-            "va": "Societat Civil i ONG"
-          },
-          "role": "associated",
-          "url": "https://www.relais-culture-europe.eu/",
-          "logo": "rce.png",
+          "role": "coordinator",
+          "url": "https://www.uv.es/",
+          "logo": "uveg.png",
           "found": true
         }
       ],
@@ -2549,123 +2132,35 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Optimització del consum energètic en bloc d'habitatges socials amb ML"
       },
       "featuredPartners": [
-        "HSW",
-        "NTNU",
-        "INESC TEC",
-        "CEICE"
+        "LC"
       ],
       "featuredPartnerDetails": [
         {
-          "id": "hsw",
-          "acronym": "HSW",
+          "id": "lc",
+          "acronym": "LC",
           "name": {
-            "es": "Hochschule Wismar",
-            "en": "Hochschule Wismar",
-            "va": "Hochschule Wismar"
+            "es": "The Lisbon Council",
+            "en": "The Lisbon Council",
+            "va": "The Lisbon Council"
           },
-          "country": "DE",
+          "country": "BE",
           "city": {
-            "es": "Wismar",
-            "en": "Wismar",
-            "va": "Wismar"
+            "es": "Bruselas",
+            "en": "Brussels",
+            "va": "Brussel·les"
           },
           "categories": [
-            "universidad"
+            "sociedad"
           ],
-          "category": "universidad",
+          "category": "sociedad",
           "categoryLabel": {
-            "es": "Educación Superior e I+D+I",
-            "en": "Higher Education & R&D&I",
-            "va": "Educació Superior i I+D+I"
+            "es": "Sociedad Civil y ONG",
+            "en": "Civil Society & NGOs",
+            "va": "Societat Civil i ONG"
           },
           "role": "beneficiary",
-          "url": "https://www.hs-wismar.de/",
-          "logo": "hsw.png",
-          "found": true
-        },
-        {
-          "id": "ntnu",
-          "acronym": "NTNU",
-          "name": {
-            "es": "NTNU – Norwegian Univ. of S&T",
-            "en": "NTNU – Norwegian Univ. of S&T",
-            "va": "NTNU – Norwegian Univ. of S&T"
-          },
-          "country": "NO",
-          "city": {
-            "es": "Trondheim",
-            "en": "Trondheim",
-            "va": "Trondheim"
-          },
-          "categories": [
-            "universidad"
-          ],
-          "category": "universidad",
-          "categoryLabel": {
-            "es": "Educación Superior e I+D+I",
-            "en": "Higher Education & R&D&I",
-            "va": "Educació Superior i I+D+I"
-          },
-          "role": "beneficiary",
-          "url": "https://www.ntnu.edu/",
-          "logo": "ntnu.png",
-          "found": true
-        },
-        {
-          "id": "inesc",
-          "acronym": "INESC",
-          "name": {
-            "es": "INESC TEC",
-            "en": "INESC TEC",
-            "va": "INESC TEC"
-          },
-          "country": "PT",
-          "city": {
-            "es": "Porto",
-            "en": "Porto",
-            "va": "Porto"
-          },
-          "categories": [
-            "universidad",
-            "empresa"
-          ],
-          "category": "universidad",
-          "categoryLabel": {
-            "es": "Educación Superior e I+D+I",
-            "en": "Higher Education & R&D&I",
-            "va": "Educació Superior i I+D+I"
-          },
-          "role": "beneficiary",
-          "url": "https://www.inesctec.pt/",
-          "logo": "inesc.png",
-          "found": true
-        },
-        {
-          "id": "ceice",
-          "acronym": "CEICE",
-          "name": {
-            "es": "Conselleria de Educación (CEICE)",
-            "en": "Department of Education (CEICE)",
-            "va": "Conselleria d'Educació (CEICE)"
-          },
-          "country": "ES",
-          "city": {
-            "es": "Valencia",
-            "en": "Valencia",
-            "va": "València"
-          },
-          "categories": [
-            "admin"
-          ],
-          "category": "admin",
-          "categoryLabel": {
-            "es": "Administración Pública",
-            "en": "Public Administration",
-            "va": "Administració Pública"
-          },
-          "role": "beneficiary",
-          "url": "https://ceice.gva.es/va/",
-          "logo": "ceice.png",
+          "url": "https://lisboncouncil.net/",
+          "logo": "lc.png",
           "found": true
         }
       ],
@@ -2940,81 +2435,22 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Chatbot multilingüe per a orientació ciutadana en serveis administratius municipals"
       },
       "featuredPartners": [
-        "CEICE",
-        "LC",
-        "COGN",
-        "FIDIT"
+        "TUV.IT"
       ],
       "featuredPartnerDetails": [
         {
-          "id": "ceice",
-          "acronym": "CEICE",
+          "id": "tuvit",
+          "acronym": "TUV.IT",
           "name": {
-            "es": "Conselleria de Educación (CEICE)",
-            "en": "Department of Education (CEICE)",
-            "va": "Conselleria d'Educació (CEICE)"
-          },
-          "country": "ES",
-          "city": {
-            "es": "Valencia",
-            "en": "Valencia",
-            "va": "València"
-          },
-          "categories": [
-            "admin"
-          ],
-          "category": "admin",
-          "categoryLabel": {
-            "es": "Administración Pública",
-            "en": "Public Administration",
-            "va": "Administració Pública"
-          },
-          "role": "beneficiary",
-          "url": "https://ceice.gva.es/va/",
-          "logo": "ceice.png",
-          "found": true
-        },
-        {
-          "id": "lc",
-          "acronym": "LC",
-          "name": {
-            "es": "The Lisbon Council",
-            "en": "The Lisbon Council",
-            "va": "The Lisbon Council"
-          },
-          "country": "BE",
-          "city": {
-            "es": "Bruselas",
-            "en": "Brussels",
-            "va": "Brussel·les"
-          },
-          "categories": [
-            "sociedad"
-          ],
-          "category": "sociedad",
-          "categoryLabel": {
-            "es": "Sociedad Civil y ONG",
-            "en": "Civil Society & NGOs",
-            "va": "Societat Civil i ONG"
-          },
-          "role": "beneficiary",
-          "url": "https://lisboncouncil.net/",
-          "logo": "lc.png",
-          "found": true
-        },
-        {
-          "id": "cogn",
-          "acronym": "COGN",
-          "name": {
-            "es": "Cognito S.R.L.",
-            "en": "Cognito S.R.L.",
-            "va": "Cognito S.R.L."
+            "es": "TÜV Thüringen Italia",
+            "en": "TÜV Thüringen Italia",
+            "va": "TÜV Thüringen Italia"
           },
           "country": "IT",
           "city": {
-            "es": "Massa",
-            "en": "Massa",
-            "va": "Massa"
+            "es": "Collecchio",
+            "en": "Collecchio",
+            "va": "Collecchio"
           },
           "categories": [
             "empresa"
@@ -3025,37 +2461,9 @@ export const SECTORS_CONFIG = {
             "en": "Business & Innovation",
             "va": "Empresa i Innovació"
           },
-          "role": "beneficiary",
-          "url": "https://www.xplainai.eu/",
-          "logo": "cogn.png",
-          "found": true
-        },
-        {
-          "id": "fidit",
-          "acronym": "FIDIT",
-          "name": {
-            "es": "Univ. de Rijeka – FIDIT",
-            "en": "Univ. de Rijeka – FIDIT",
-            "va": "Univ. de Rijeka – FIDIT"
-          },
-          "country": "HR",
-          "city": {
-            "es": "Rijeka",
-            "en": "Rijeka",
-            "va": "Rijeka"
-          },
-          "categories": [
-            "universidad"
-          ],
-          "category": "universidad",
-          "categoryLabel": {
-            "es": "Educación Superior e I+D+I",
-            "en": "Higher Education & R&D&I",
-            "va": "Educació Superior i I+D+I"
-          },
-          "role": "beneficiary",
-          "url": "https://www.inf.uniri.hr/",
-          "logo": "fidit.png",
+          "role": "certification",
+          "url": "https://tuv-thuringen.it/",
+          "logo": "tuvit.png",
           "found": true
         }
       ],
