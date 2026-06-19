@@ -2,7 +2,7 @@ const appState = {
   cookiesAccepted: localStorage.getItem('cookies-accepted') === 'true',
   mobileMenuOpen: false,
   selectedChallengeId: null,
-  marketplaceTab: 'challenges',
+  marketplaceTab: 'mentorings',
   networkTab: 'socios',
   networkCategory: 'todos',
   networkCountry: null,
