@@ -91,10 +91,69 @@ export const MARKETPLACE_CONFIG = {
   },
   "tabs": [
     {
-      "id": "challenges",
+      "id": "mentorings",
       "visible": true,
       "introVisible": true,
       "order": 1,
+      "icon": "messages-square",
+      "label": {
+        "es": "Mentorías",
+        "en": "Mentoring",
+        "va": "Mentories"
+      },
+      "intro": {
+        "es": "Una **mentoría** es un acompañamiento breve y estructurado para organizaciones que tienen una idea o necesidad, pero todavía no saben cómo formularla ni qué tipo de colaboración buscar. No es una consultoría ni un servicio de asesoramiento permanente: son unas pocas sesiones de trabajo con alguien con experiencia en la red, cuyo único objetivo es ayudarte a clarificar qué quieres proponer y cómo hacerlo. El resultado esperado es una propuesta concreta —un reto, un piloto o una validación— lista para compartir con la comunidad.",
+        "en": "A **mentoring** engagement is a brief and structured accompaniment for organisations that have an idea or need but do not yet know how to frame it or what type of collaboration to look for. It is not consultancy or a permanent advisory service: it is a few working sessions with someone experienced in the network, whose sole purpose is to help you clarify what you want to propose and how to go about it. The expected outcome is a concrete proposal — a challenge, a pilot or a validation — ready to share with the community.",
+        "va": "Una **mentoria** és un acompanyament breu i estructurat per a organitzacions que tenen una idea o necessitat, però encara no saben com formular-la ni quin tipus de col·laboració buscar. No és una consultoria ni un servei d'assessorament permanent: són unes poques sessions de treball amb algú amb experiència a la xarxa, l'únic objectiu de la qual és ajudar-te a clarificar què vols proposar i com fer-ho. El resultat esperat és una proposta concreta —un repte, un pilot o una validació— llesta per a compartir amb la comunitat."
+      },
+      "ctaLabel": {
+        "es": "Solicitar mentoría",
+        "en": "Request mentoring",
+        "va": "Sol·licitar mentoria"
+      },
+      "emptyState": {
+        "title": {
+          "es": "No hay mentorías publicadas",
+          "en": "No mentoring opportunities published",
+          "va": "No hi ha mentories publicades"
+        },
+        "message": {
+          "es": "Las mentorías aparecerán cuando haya disponibilidad de apoyo experto para la comunidad.",
+          "en": "Mentoring opportunities will appear when expert support is available for the community.",
+          "va": "Les mentories apareixeran quan hi haja disponibilitat de suport expert per a la comunitat."
+        }
+      },
+      "pagination": {
+        "pageSize": 6,
+        "pageSizeOptions": [
+          6,
+          12,
+          24,
+          48
+        ],
+        "showAllOption": true,
+        "showAllLabel": {
+          "es": "Todos",
+          "en": "All",
+          "va": "Tots"
+        },
+        "paginationPrev": {
+          "es": "Anterior",
+          "en": "Previous",
+          "va": "Anterior"
+        },
+        "paginationNext": {
+          "es": "Siguiente",
+          "en": "Next",
+          "va": "Següent"
+        }
+      }
+    },
+    {
+      "id": "challenges",
+      "visible": true,
+      "introVisible": true,
+      "order": 2,
       "icon": "lightbulb",
       "label": {
         "es": "Retos",
@@ -150,128 +209,10 @@ export const MARKETPLACE_CONFIG = {
       }
     },
     {
-      "id": "cases",
-      "visible": true,
-      "introVisible": true,
-      "order": 2,
-      "icon": "trophy",
-      "label": {
-        "es": "Casos",
-        "en": "Cases",
-        "va": "Casos"
-      },
-      "intro": {
-        "es": "Un **caso** es la documentación de una experiencia de colaboración que ya ha producido resultados. No es un artículo académico ni un informe corporativo: es un relato estructurado que explica qué se hizo, cómo se hizo, qué funcionó y en qué condiciones podría repetirse. Los casos existen para que otras organizaciones de la red puedan aprender de lo que ya ha funcionado, adaptarlo a su propio contexto y no empezar desde cero.",
-        "en": "A **case** is the documentation of a collaboration experience that has already produced results. It is not an academic paper or a corporate report: it is a structured account that explains what was done, how it was done, what worked and under what conditions it could be repeated. Cases exist so that other organisations in the network can learn from what has already worked, adapt it to their own context and avoid starting from scratch.",
-        "va": "Un **cas** és la documentació d'una experiència de col·laboració que ja ha produït resultats. No és un article acadèmic ni un informe corporatiu: és un relat estructurat que explica què es va fer, com es va fer, què va funcionar i en quines condicions podria repetir-se. Els casos existixen perquè altres organitzacions de la xarxa puguen aprendre del que ja ha funcionat, adaptar-ho al seu propi context i no començar des de zero."
-      },
-      "ctaLabel": {
-        "es": "Ver evidencia",
-        "en": "View evidence",
-        "va": "Veure evidència"
-      },
-      "emptyState": {
-        "title": {
-          "es": "No hay casos publicados",
-          "en": "No cases published",
-          "va": "No hi ha casos publicats"
-        },
-        "message": {
-          "es": "Los casos se publicarán cuando haya resultados validados y reutilizables.",
-          "en": "Cases will be published when validated and reusable results are available.",
-          "va": "Els casos es publicaran quan hi haja resultats validats i reutilitzables."
-        }
-      },
-      "pagination": {
-        "pageSize": 6,
-        "pageSizeOptions": [
-          6,
-          12,
-          24,
-          48
-        ],
-        "showAllOption": true,
-        "showAllLabel": {
-          "es": "Todos",
-          "en": "All",
-          "va": "Tots"
-        },
-        "paginationPrev": {
-          "es": "Anterior",
-          "en": "Previous",
-          "va": "Anterior"
-        },
-        "paginationNext": {
-          "es": "Siguiente",
-          "en": "Next",
-          "va": "Següent"
-        }
-      }
-    },
-    {
-      "id": "pilots",
-      "visible": true,
-      "introVisible": true,
-      "order": 3,
-      "icon": "flask-conical",
-      "label": {
-        "es": "Pilotos",
-        "en": "Pilots",
-        "va": "Pilots"
-      },
-      "intro": {
-        "es": "Un **piloto** es una prueba controlada de una solución —una metodología, herramienta o recurso— en un entorno educativo o productivo real, antes de comprometerse a implantarla a mayor escala. En AI-STEAM, un piloto siempre implica al menos dos tipos de organización trabajando juntos —por ejemplo, un centro de FP y una empresa—, con un objetivo concreto y un período de tiempo definido. El resultado no es solo saber si funciona: es aprendizaje documentado que toda la red puede aprovechar.",
-        "en": "A **pilot** is a controlled test of a solution — a method, tool or resource — in a real educational or productive environment, before committing to rolling it out at greater scale. In AI-STEAM, a pilot always involves at least two types of organisation working together — for example, a VET centre and a company —, with a concrete objective and a defined time period. The result is not just knowing whether it works: it is documented learning that the whole network can benefit from.",
-        "va": "Un **pilot** és una prova controlada d'una solució —una metodologia, eina o recurs— en un entorn educatiu o productiu real, abans de comprometre's a implantar-la a major escala. En AI-STEAM, un pilot sempre implica almenys dos tipus d'organització treballant junts —per exemple, un centre de FP i una empresa—, amb un objectiu concret i un període de temps definit. El resultat no és sols saber si funciona: és aprenentatge documentat que tota la xarxa pot aprofitar."
-      },
-      "ctaLabel": {
-        "es": "Ver pilotos",
-        "en": "View pilots",
-        "va": "Veure pilots"
-      },
-      "emptyState": {
-        "title": {
-          "es": "No hay pilotos publicados",
-          "en": "No pilots published",
-          "va": "No hi ha pilots publicats"
-        },
-        "message": {
-          "es": "Los pilotos aparecerán cuando haya actividades de prueba documentadas en la red.",
-          "en": "Pilots will appear when documented test activities are available in the network.",
-          "va": "Els pilots apareixeran quan hi haja activitats de prova documentades a la xarxa."
-        }
-      },
-      "pagination": {
-        "pageSize": 6,
-        "pageSizeOptions": [
-          6,
-          12,
-          24,
-          48
-        ],
-        "showAllOption": true,
-        "showAllLabel": {
-          "es": "Todos",
-          "en": "All",
-          "va": "Tots"
-        },
-        "paginationPrev": {
-          "es": "Anterior",
-          "en": "Previous",
-          "va": "Anterior"
-        },
-        "paginationNext": {
-          "es": "Siguiente",
-          "en": "Next",
-          "va": "Següent"
-        }
-      }
-    },
-    {
       "id": "validations",
       "visible": true,
       "introVisible": true,
-      "order": 4,
+      "order": 3,
       "icon": "check-circle",
       "label": {
         "es": "Validaciones",
@@ -327,36 +268,95 @@ export const MARKETPLACE_CONFIG = {
       }
     },
     {
-      "id": "mentorings",
+      "id": "pilots",
       "visible": true,
       "introVisible": true,
-      "order": 5,
-      "icon": "messages-square",
+      "order": 4,
+      "icon": "flask-conical",
       "label": {
-        "es": "Mentorías",
-        "en": "Mentoring",
-        "va": "Mentories"
+        "es": "Pilotos",
+        "en": "Pilots",
+        "va": "Pilots"
       },
       "intro": {
-        "es": "Una **mentoría** es un acompañamiento breve y estructurado para organizaciones que tienen una idea o necesidad, pero todavía no saben cómo formularla ni qué tipo de colaboración buscar. No es una consultoría ni un servicio de asesoramiento permanente: son unas pocas sesiones de trabajo con alguien con experiencia en la red, cuyo único objetivo es ayudarte a clarificar qué quieres proponer y cómo hacerlo. El resultado esperado es una propuesta concreta —un reto, un piloto o una validación— lista para compartir con la comunidad.",
-        "en": "A **mentoring** engagement is a brief and structured accompaniment for organisations that have an idea or need but do not yet know how to frame it or what type of collaboration to look for. It is not consultancy or a permanent advisory service: it is a few working sessions with someone experienced in the network, whose sole purpose is to help you clarify what you want to propose and how to go about it. The expected outcome is a concrete proposal — a challenge, a pilot or a validation — ready to share with the community.",
-        "va": "Una **mentoria** és un acompanyament breu i estructurat per a organitzacions que tenen una idea o necessitat, però encara no saben com formular-la ni quin tipus de col·laboració buscar. No és una consultoria ni un servei d'assessorament permanent: són unes poques sessions de treball amb algú amb experiència a la xarxa, l'únic objectiu de la qual és ajudar-te a clarificar què vols proposar i com fer-ho. El resultat esperat és una proposta concreta —un repte, un pilot o una validació— llesta per a compartir amb la comunitat."
+        "es": "Un **piloto** es una prueba controlada de una solución —una metodología, herramienta o recurso— en un entorno educativo o productivo real, antes de comprometerse a implantarla a mayor escala. En AI-STEAM, un piloto siempre implica al menos dos tipos de organización trabajando juntos —por ejemplo, un centro de FP y una empresa—, con un objetivo concreto y un período de tiempo definido. El resultado no es solo saber si funciona: es aprendizaje documentado que toda la red puede aprovechar.",
+        "en": "A **pilot** is a controlled test of a solution — a method, tool or resource — in a real educational or productive environment, before committing to rolling it out at greater scale. In AI-STEAM, a pilot always involves at least two types of organisation working together — for example, a VET centre and a company —, with a concrete objective and a defined time period. The result is not just knowing whether it works: it is documented learning that the whole network can benefit from.",
+        "va": "Un **pilot** és una prova controlada d'una solució —una metodologia, eina o recurs— en un entorn educatiu o productiu real, abans de comprometre's a implantar-la a major escala. En AI-STEAM, un pilot sempre implica almenys dos tipus d'organització treballant junts —per exemple, un centre de FP i una empresa—, amb un objectiu concret i un període de temps definit. El resultat no és sols saber si funciona: és aprenentatge documentat que tota la xarxa pot aprofitar."
       },
       "ctaLabel": {
-        "es": "Solicitar mentoría",
-        "en": "Request mentoring",
-        "va": "Sol·licitar mentoria"
+        "es": "Ver pilotos",
+        "en": "View pilots",
+        "va": "Veure pilots"
       },
       "emptyState": {
         "title": {
-          "es": "No hay mentorías publicadas",
-          "en": "No mentoring opportunities published",
-          "va": "No hi ha mentories publicades"
+          "es": "No hay pilotos publicados",
+          "en": "No pilots published",
+          "va": "No hi ha pilots publicats"
         },
         "message": {
-          "es": "Las mentorías aparecerán cuando haya disponibilidad de apoyo experto para la comunidad.",
-          "en": "Mentoring opportunities will appear when expert support is available for the community.",
-          "va": "Les mentories apareixeran quan hi haja disponibilitat de suport expert per a la comunitat."
+          "es": "Los pilotos aparecerán cuando haya actividades de prueba documentadas en la red.",
+          "en": "Pilots will appear when documented test activities are available in the network.",
+          "va": "Els pilots apareixeran quan hi haja activitats de prova documentades a la xarxa."
+        }
+      },
+      "pagination": {
+        "pageSize": 6,
+        "pageSizeOptions": [
+          6,
+          12,
+          24,
+          48
+        ],
+        "showAllOption": true,
+        "showAllLabel": {
+          "es": "Todos",
+          "en": "All",
+          "va": "Tots"
+        },
+        "paginationPrev": {
+          "es": "Anterior",
+          "en": "Previous",
+          "va": "Anterior"
+        },
+        "paginationNext": {
+          "es": "Siguiente",
+          "en": "Next",
+          "va": "Següent"
+        }
+      }
+    },
+    {
+      "id": "cases",
+      "visible": true,
+      "introVisible": true,
+      "order": 5,
+      "icon": "trophy",
+      "label": {
+        "es": "Casos",
+        "en": "Cases",
+        "va": "Casos"
+      },
+      "intro": {
+        "es": "Un **caso** es la documentación de una experiencia de colaboración que ya ha producido resultados. No es un artículo académico ni un informe corporativo: es un relato estructurado que explica qué se hizo, cómo se hizo, qué funcionó y en qué condiciones podría repetirse. Los casos existen para que otras organizaciones de la red puedan aprender de lo que ya ha funcionado, adaptarlo a su propio contexto y no empezar desde cero.",
+        "en": "A **case** is the documentation of a collaboration experience that has already produced results. It is not an academic paper or a corporate report: it is a structured account that explains what was done, how it was done, what worked and under what conditions it could be repeated. Cases exist so that other organisations in the network can learn from what has already worked, adapt it to their own context and avoid starting from scratch.",
+        "va": "Un **cas** és la documentació d'una experiència de col·laboració que ja ha produït resultats. No és un article acadèmic ni un informe corporatiu: és un relat estructurat que explica què es va fer, com es va fer, què va funcionar i en quines condicions podria repetir-se. Els casos existixen perquè altres organitzacions de la xarxa puguen aprendre del que ja ha funcionat, adaptar-ho al seu propi context i no començar des de zero."
+      },
+      "ctaLabel": {
+        "es": "Ver evidencia",
+        "en": "View evidence",
+        "va": "Veure evidència"
+      },
+      "emptyState": {
+        "title": {
+          "es": "No hay casos publicados",
+          "en": "No cases published",
+          "va": "No hi ha casos publicats"
+        },
+        "message": {
+          "es": "Los casos se publicarán cuando haya resultados validados y reutilizables.",
+          "en": "Cases will be published when validated and reusable results are available.",
+          "va": "Els casos es publicaran quan hi haja resultats validats i reutilitzables."
         }
       },
       "pagination": {
@@ -18180,6 +18180,2907 @@ export const MARKETPLACE_CONFIG = {
     }
   ],
   "itemsByTab": {
+    "mentorings": [
+      {
+        "id": "mentoring-ia-creativa-turismo-cultura",
+        "type": "mentoring",
+        "tab": "mentorings",
+        "sortDate": "2026-05-22",
+        "visible": true,
+        "sourcePath": "content/challenges/items/mentorings/mentoring-ia-creativa-turismo-cultura.yml",
+        "core": {
+          "status": "open",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] IA generativa y creativa para turismo, cultura e industrias creativas",
+            "en": "[DEMO] Generative and creative AI for tourism, culture and creative industries",
+            "va": "[DEMO] IA generativa i creativa per a turisme, cultura i indústries creatives"
+          },
+          "summary": {
+            "es": "Acompañamiento para empresas turísticas, entidades culturales, museos y agencias creativas que quieren integrar IA generativa (texto, imagen, audio, vídeo) en sus productos, servicios o procesos creativos, orientándose sobre herramientas adecuadas a su escala, derechos de autor en contenidos generados por IA, y cómo usar la IA sin perder la identidad creativa de la organización.",
+            "en": "Support for tourism companies, cultural organisations, museums and creative agencies wishing to integrate generative AI (text, image, audio, video) into their products, services or creative processes, with guidance on tools appropriate to their scale, copyright in AI-generated content, and how to use AI without losing the organisation's creative identity.",
+            "va": "Acompanyament per a empreses turístiques, entitats culturals, museus i agències creatives que volen integrar IA generativa (text, imatge, àudio, vídeo) en els seus productes, serveis o processos creatius, orientant-se sobre eines adequades a la seua escala, drets d'autor en continguts generats per IA, i com usar la IA sense perdre la identitat creativa de l'organització."
+          },
+          "entity": {
+            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
+            "type": {
+              "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural, diseño e industrias creativas valencianas e internacionales",
+              "en": "Mentors experienced in generative AI applications in tourism, cultural heritage, design and Valencian and international creative industries",
+              "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural, disseny i indústries creatives valencianes i internacionals"
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "cci",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "",
+          "mentoringType": "creative-ai-support",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-04-15",
+          "revisionDate": "2026-05-22",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "15 de abril de 2026",
+            "en": "April 15, 2026",
+            "va": "15 d'abril de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "22 de mayo de 2026",
+            "en": "May 22, 2026",
+            "va": "22 de maig de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": {
+          "file": "mentoring-ia-creativa-turismo-cultura.pdf",
+          "publicPath": "/assets/downloads/marketplace/mentorings/mentoring-ia-creativa-turismo-cultura.pdf"
+        },
+        "adhesionForm": {
+          "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufimy8pKaFjvbtEm6P80z2LuPxUNFhSTlNGTFpPMEdWNUwzTk8yVjYzTlpRQS4u"
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "mentoringTeam": {
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
+              "en": "AI-STEAM Network Mentoring Pool — Creative AI and Tourism-Culture Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme-Cultura"
+            },
+            "type": "",
+            "role": {
+              "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural, diseño e industrias creativas valencianas e internacionales",
+              "en": "Mentors experienced in generative AI applications in tourism, cultural heritage, design and Valencian and international creative industries",
+              "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural, disseny i indústries creatives valencianes i internacionals"
+            },
+            "org": ""
+          },
+          "coordinator": null
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": "",
+          "sector": "cci",
+          "sectorLabel": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "stakeholderCategory": "",
+          "audience": []
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "mentorings"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "mentoringOffer": {
+          "purpose": {
+            "es": "Orientar a organizaciones turísticas y culturales en la selección e integración ética de herramientas de IA generativa en sus procesos creativos y de negocio, garantizando que los contenidos generados respetan los derechos de autor, la identidad de marca y las expectativas del visitante o usuario final.",
+            "en": "Guide tourism and cultural organisations in selecting and ethically integrating generative AI tools into their creative and business processes, ensuring that generated content respects copyright, brand identity and the expectations of the visitor or end user.",
+            "va": "Orientar organitzacions turístiques i culturals en la selecció i integració ètica d'eines d'IA generativa en els seus processos creatius i de negoci, garantint que els continguts generats respecten els drets d'autor, la identitat de marca i les expectatives del visitant o usuari final."
+          },
+          "problemAddressed": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringScope": {
+            "included": [],
+            "excluded": []
+          },
+          "format": {
+            "sessions": [
+              {
+                "modality": "online",
+                "sessionCount": 1,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": null,
+                "sessionTypes": [
+                  "sync"
+                ]
+              },
+              {
+                "modality": "online",
+                "sessionCount": 1,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": 30,
+                "sessionTypes": [
+                  "sync",
+                  "async-review"
+                ]
+              },
+              {
+                "modality": "in-person",
+                "sessionCount": 1,
+                "sessionDurationHours": null,
+                "sessionDurationMinutes": 30,
+                "sessionTypes": [
+                  "sync"
+                ]
+              }
+            ],
+            "languageCodes": [],
+            "availability": {
+              "es": "Convocatoria continua con sesiones disponibles fuera de temporada alta turística (octubre-abril). Proceso de 3 sesiones — diagnóstico creativo (online 60 min), revisión del plan de integración con feedback escrito (online 90 min) y sesión de cierre presencial o videollamada (30 min).",
+              "en": "Rolling call with sessions available outside the tourism peak season (October-April). 3-session process — creative diagnosis (online 60 min), integration plan review with written feedback (online 90 min) and closing session in-person or video call (30 min).",
+              "va": "Convocatòria contínua amb sessions disponibles fora de la temporada alta turística (octubre-abril). Procés de 3 sessions — diagnòstic creatiu (en línia 60 min), revisió del pla d'integració amb feedback escrit (en línia 90 min) i sessió de tancament presencial o videotrucada (30 min)."
+            }
+          },
+          "targetUsers": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "transferValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "mentors": {
+          "mode": "pool",
+          "items": [
+            {
+              "id": "pool-ia-creativa-tur",
+              "name": "AI-STEAM Mentoring Pool — IA Creativa y Turismo-Cultura",
+              "organisation": "",
+              "role": {
+                "es": "",
+                "en": "",
+                "va": ""
+              },
+              "specialties": [
+                "responsible-ai",
+                "industry-4-0"
+              ]
+            }
+          ]
+        },
+        "preparation": {
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
+        },
+        "expectedOutputs": {
+          "items": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "url": "",
+            "system": ""
+          },
+          "fallbackAction": null,
+          "secondaryAction": null
+        },
+        "relations": {
+          "relatedChallenges": [],
+          "relatedValidations": [],
+          "relatedPilots": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "possibleOutputs": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "mentoring",
+            "showPurpose": true,
+            "showProvider": true,
+            "showSpecialties": true,
+            "showAvailability": true,
+            "showDownloadsIndicator": false,
+            "showChatBadge": false,
+            "mainBlockLabel": {
+              "es": "Qué ofrece",
+              "en": "What it offers",
+              "va": "Que ofereix"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "purpose": true,
+              "scope": true,
+              "targetUsers": true,
+              "format": true,
+              "mentors": true,
+              "preparation": true,
+              "expectedOutputs": true,
+              "transferValue": true,
+              "downloads": true,
+              "resources": true,
+              "access": true,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "context",
+            "transferValue",
+            "participation",
+            "people",
+            "process"
+          ],
+          "optionalBlocks": [
+            "outputs",
+            "access",
+            "trackA"
+          ],
+          "cardSignal": "participation"
+        }
+      },
+      {
+        "id": "mentoring-participacion-administracion-publica",
+        "type": "mentoring",
+        "tab": "mentorings",
+        "sortDate": "2026-05-22",
+        "visible": true,
+        "sourcePath": "content/challenges/items/mentorings/mentoring-participacion-administracion-publica.yml",
+        "core": {
+          "status": "open",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Mentoría — Cómo incorporar una administración pública al ecosistema AI-STEAM",
+            "en": "[DEMO] Mentoring — How to bring a public administration into the AI-STEAM ecosystem",
+            "va": "[DEMO] Mentoria — Com incorporar una administració pública a l'ecosistema AI-STEAM"
+          },
+          "summary": {
+            "es": "Acompañamiento para organismos públicos, entidades locales y consorcios interadministrativos que quieren participar activamente en el ecosistema AI-STEAM — como demandantes de retos, financiadores de pilotos o entornos de validación — y necesitan orientación sobre roles posibles, compromisos esperados, gestión de datos públicos y encaje con sus procedimientos administrativos habituales.",
+            "en": "Support for public bodies, local authorities and inter-administrative consortia wishing to actively participate in the AI-STEAM ecosystem — as challenge demanders, pilot funders or validation environments — who need guidance on possible roles, expected commitments, public data management and fit with their usual administrative procedures.",
+            "va": "Acompanyament per a organismes públics, entitats locals i consorcis interadministratius que volen participar activament en l'ecosistema AI-STEAM — com demandants de reptes, finançadors de pilots o entorns de validació — i necessiten orientació sobre rols possibles, compromisos esperats, gestió de dades públiques i encaix amb els seus procediments administratius habituals."
+          },
+          "entity": {
+            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
+            "type": {
+              "es": "Mentores con experiencia en transformación digital de administraciones públicas, datos abiertos y colaboración público-privada en innovación",
+              "en": "Mentors experienced in digital transformation of public administrations, open data and public-private innovation collaboration",
+              "va": "Mentors amb experiència en transformació digital d'administracions públiques, dades obertes i col·laboració públic-privada en innovació"
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "nts",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "",
+          "mentoringType": "stakeholder-engagement",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-04-10",
+          "revisionDate": "2026-05-22",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "10 de abril de 2026",
+            "en": "April 10, 2026",
+            "va": "10 d'abril de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "22 de mayo de 2026",
+            "en": "May 22, 2026",
+            "va": "22 de maig de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "mentoringTeam": {
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
+              "en": "AI-STEAM Network Mentoring Pool — Public Innovation and AI Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Innovació Pública i IA"
+            },
+            "type": "",
+            "role": {
+              "es": "Mentores con experiencia en transformación digital de administraciones públicas, datos abiertos y colaboración público-privada en innovación",
+              "en": "Mentors experienced in digital transformation of public administrations, open data and public-private innovation collaboration",
+              "va": "Mentors amb experiència en transformació digital d'administracions públiques, dades obertes i col·laboració públic-privada en innovació"
+            },
+            "org": ""
+          },
+          "coordinator": null
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": "",
+          "sector": "nts",
+          "sectorLabel": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "stakeholderCategory": "",
+          "audience": []
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "mentorings"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "mentoringOffer": {
+          "purpose": {
+            "es": "Orientar a organismos públicos sobre cómo articular su participación en el ecosistema AI-STEAM según su perfil y capacidades — formulando un reto abierto con datos públicos, financiando un piloto educativo, abriendo sus instalaciones como entorno de validación o convirtiéndose en caso de referencia de innovación pública.",
+            "en": "Guide public bodies on how to articulate their participation in the AI-STEAM ecosystem according to their profile and capabilities — framing an open challenge with public data, funding an educational pilot, opening their facilities as a validation environment or becoming a reference case of public innovation.",
+            "va": "Orientar organismes públics sobre com articular la seua participació en l'ecosistema AI-STEAM segons el seu perfil i capacitats — formulant un repte obert amb dades públiques, finançant un pilot educatiu, obrint les seues instal·lacions com a entorn de validació o convertint-se en cas de referència d'innovació pública."
+          },
+          "problemAddressed": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringScope": {
+            "included": [],
+            "excluded": []
+          },
+          "format": {
+            "sessions": [
+              {
+                "modality": "hybrid",
+                "sessionCount": 3,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": 15,
+                "sessionTypes": [
+                  "sync",
+                  "async-review"
+                ]
+              }
+            ],
+            "languageCodes": [],
+            "availability": {
+              "es": "Convocatoria abierta coordinada con los ciclos presupuestarios y de planificación de las administraciones. Sesiones disponibles en horario de funcionario (9:00-15:00).",
+              "en": "Open call coordinated with administrative budget and planning cycles. Sessions available during civil service hours (9:00-15:00).",
+              "va": "Convocatòria oberta coordinada amb els cicles pressupostaris i de planificació de les administracions. Sessions disponibles en horari de funcionari (9:00-15:00)."
+            }
+          },
+          "targetUsers": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "transferValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "mentors": {
+          "mode": "pool",
+          "items": [
+            {
+              "id": "pool-innovacion-publica",
+              "name": "AI-STEAM Mentoring Pool — Innovación Pública e IA",
+              "organisation": "",
+              "role": {
+                "es": "",
+                "en": "",
+                "va": ""
+              },
+              "specialties": [
+                "public-sector-ai",
+                "open-data",
+                "public-private-collaboration",
+                "administrative-procedures"
+              ]
+            }
+          ]
+        },
+        "preparation": {
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
+        },
+        "expectedOutputs": {
+          "items": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "url": "",
+            "system": ""
+          },
+          "fallbackAction": null,
+          "secondaryAction": null
+        },
+        "relations": {
+          "relatedChallenges": [],
+          "relatedValidations": [],
+          "relatedPilots": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "possibleOutputs": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "mentoring",
+            "showPurpose": true,
+            "showProvider": true,
+            "showSpecialties": true,
+            "showAvailability": true,
+            "showDownloadsIndicator": false,
+            "showChatBadge": false,
+            "mainBlockLabel": {
+              "es": "Qué ofrece",
+              "en": "What it offers",
+              "va": "Que ofereix"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "purpose": true,
+              "scope": true,
+              "targetUsers": true,
+              "format": true,
+              "mentors": true,
+              "preparation": true,
+              "expectedOutputs": true,
+              "transferValue": true,
+              "downloads": true,
+              "resources": true,
+              "access": true,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "context",
+            "transferValue",
+            "participation",
+            "people",
+            "process"
+          ],
+          "optionalBlocks": [
+            "outputs",
+            "access",
+            "trackA"
+          ],
+          "cardSignal": "participation"
+        }
+      },
+      {
+        "id": "mentoring-replicacion-casos-agr",
+        "type": "mentoring",
+        "tab": "mentorings",
+        "sortDate": "2026-05-22",
+        "visible": true,
+        "sourcePath": "content/challenges/items/mentorings/mentoring-replicacion-casos-agr.yml",
+        "core": {
+          "status": "open",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Mentoría — Replicación de casos AI-STEAM en el sector agroalimentario",
+            "en": "[DEMO] Mentoring — Replicating AI-STEAM cases in the agri-food sector",
+            "va": "[DEMO] Mentoria — Replicació de casos AI-STEAM en el sector agroalimentari"
+          },
+          "summary": {
+            "es": "Acompañamiento para cooperativas agrícolas, agroindustrias y centros de FP agroalimentaria que quieren replicar un caso AI-STEAM verificado en su propio contexto — adaptando los datos, el entorno productivo y las condiciones de formación — sin tener que rediseñar el proyecto desde cero.",
+            "en": "Support for agricultural cooperatives, agri-food industries and agri-food VET centres wishing to replicate a verified AI-STEAM case in their own context — adapting data, production environment and training conditions — without having to redesign the project from scratch.",
+            "va": "Acompanyament per a cooperatives agrícoles, agroindustries i centres de FP agroalimentària que volen replicar un cas AI-STEAM verificat en el seu propi context — adaptant les dades, l'entorn productiu i les condicions de formació — sense haver de redissenyar el projecte des de zero."
+          },
+          "entity": {
+            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
+            "type": {
+              "es": "Mentores con experiencia en proyectos de IA en agricultura de precisión, visión computacional agrícola y formación agroalimentaria",
+              "en": "Mentors experienced in AI projects in precision agriculture, agricultural computer vision and agri-food training",
+              "va": "Mentors amb experiència en projectes d'IA en agricultura de precisió, visió computacional agrícola i formació agroalimentària"
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "agr",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "",
+          "mentoringType": "replication-support",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-03-20",
+          "revisionDate": "2026-05-22",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "20 de marzo de 2026",
+            "en": "March 20, 2026",
+            "va": "20 de març de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "22 de mayo de 2026",
+            "en": "May 22, 2026",
+            "va": "22 de maig de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "mentoringTeam": {
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
+              "en": "AI-STEAM Network Mentoring Pool — Agri-food AI Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Agroalimentària"
+            },
+            "type": "",
+            "role": {
+              "es": "Mentores con experiencia en proyectos de IA en agricultura de precisión, visión computacional agrícola y formación agroalimentaria",
+              "en": "Mentors experienced in AI projects in precision agriculture, agricultural computer vision and agri-food training",
+              "va": "Mentors amb experiència en projectes d'IA en agricultura de precisió, visió computacional agrícola i formació agroalimentària"
+            },
+            "org": ""
+          },
+          "coordinator": null
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": "",
+          "sector": "agr",
+          "sectorLabel": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "stakeholderCategory": "",
+          "audience": []
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "mentorings"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "mentoringOffer": {
+          "purpose": {
+            "es": "Facilitar la adaptación y replicación contextualizada de un caso AI-STEAM verificado en el sector agroalimentario, identificando las condiciones de transferibilidad, los ajustes necesarios en los datos y el entorno, y asegurando que la nueva implementación mantiene la calidad de evidencia del caso original.",
+            "en": "Facilitate the contextualised adaptation and replication of a verified AI-STEAM case in the agri-food sector, identifying transferability conditions, required adjustments to data and environment, and ensuring the new implementation maintains the evidential quality of the original case.",
+            "va": "Facilitar l'adaptació i replicació contextualitzada d'un cas AI-STEAM verificat en el sector agroalimentari, identificant les condicions de transferibilitat, els ajustos necessaris en les dades i l'entorn, i assegurant que la nova implementació manté la qualitat d'evidència del cas original."
+          },
+          "problemAddressed": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringScope": {
+            "included": [],
+            "excluded": []
+          },
+          "format": {
+            "sessions": [
+              {
+                "modality": "hybrid",
+                "sessionCount": 4,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": null,
+                "sessionTypes": [
+                  "sync",
+                  "async"
+                ]
+              }
+            ],
+            "languageCodes": [],
+            "availability": {
+              "es": "Convocatoria abierta vinculada a casos publicados en el Marketplace AI-STEAM. Se requiere identificar el caso de referencia antes de solicitar la mentoría.",
+              "en": "Open call linked to cases published on the AI-STEAM Marketplace. The reference case must be identified before requesting mentoring.",
+              "va": "Convocatòria oberta vinculada a casos publicats al Marketplace AI-STEAM. Es requereix identificar el cas de referència abans de sol·licitar la mentoria."
+            }
+          },
+          "targetUsers": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "transferValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "mentors": {
+          "mode": "pool",
+          "items": [
+            {
+              "id": "pool-agr-replicacion",
+              "name": "AI-STEAM Mentoring Pool — Transferencia Agroalimentaria",
+              "organisation": "",
+              "role": {
+                "es": "",
+                "en": "",
+                "va": ""
+              },
+              "specialties": [
+                "precision-agriculture",
+                "agricultural-computer-vision",
+                "case-replication",
+                "vet-agri-food"
+              ]
+            }
+          ]
+        },
+        "preparation": {
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
+        },
+        "expectedOutputs": {
+          "items": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "url": "",
+            "system": ""
+          },
+          "fallbackAction": null,
+          "secondaryAction": null
+        },
+        "relations": {
+          "relatedChallenges": [],
+          "relatedValidations": [],
+          "relatedPilots": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "possibleOutputs": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "mentoring",
+            "showPurpose": true,
+            "showProvider": true,
+            "showSpecialties": true,
+            "showAvailability": true,
+            "showDownloadsIndicator": false,
+            "showChatBadge": false,
+            "mainBlockLabel": {
+              "es": "Qué ofrece",
+              "en": "What it offers",
+              "va": "Que ofereix"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "purpose": true,
+              "scope": true,
+              "targetUsers": true,
+              "format": true,
+              "mentors": true,
+              "preparation": true,
+              "expectedOutputs": true,
+              "transferValue": true,
+              "downloads": true,
+              "resources": true,
+              "access": true,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "context",
+            "transferValue",
+            "participation",
+            "people",
+            "process"
+          ],
+          "optionalBlocks": [
+            "outputs",
+            "access",
+            "trackA"
+          ],
+          "cardSignal": "participation"
+        }
+      },
+      {
+        "id": "mentoring-transferencia-investigacion-fp",
+        "type": "mentoring",
+        "tab": "mentorings",
+        "sortDate": "2026-05-22",
+        "visible": true,
+        "sourcePath": "content/challenges/items/mentorings/mentoring-transferencia-investigacion-fp.yml",
+        "core": {
+          "status": "open",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Mentoría — De la investigación al aula de FP: transferencia de resultados con IA",
+            "en": "[DEMO] Mentoring — From research to the VET classroom: AI results transfer",
+            "va": "[DEMO] Mentoria — De la recerca a l'aula de FP: transferència de resultats amb IA"
+          },
+          "summary": {
+            "es": "Acompañamiento para grupos de investigación universitarios y tecnológicos que quieren transferir sus resultados de IA al sistema de FP, adaptando sus metodologías, datasets o herramientas a contextos formativos accesibles para docentes y alumnos sin perfil investigador, y construyendo el caso de valor pedagógico que justifique la colaboración con centros educativos.",
+            "en": "Support for university and technology research groups wishing to transfer their AI results to the VET system, adapting their methodologies, datasets or tools to training contexts accessible for teachers and students without a research profile, and building the pedagogical value case that justifies collaboration with educational centres.",
+            "va": "Acompanyament per a grups de recerca universitaris i tecnològics que volen transferir els seus resultats d'IA al sistema de FP, adaptant les seues metodologies, datasets o eines a contexts formatius accessibles per a docents i alumnes sense perfil investigador, i construint el cas de valor pedagògic que justifique la col·laboració amb centres educatius."
+          },
+          "entity": {
+            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
+            "type": {
+              "es": "Mentores con perfil dual investigador-docente, con experiencia en traducción de resultados de investigación a contenidos formativos de FP",
+              "en": "Mentors with a dual researcher-teacher profile, experienced in translating research results into VET training content",
+              "va": "Mentors amb perfil dual investigador-docent, amb experiència en traducció de resultats de recerca a continguts formatius de FP"
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "nts",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "",
+          "mentoringType": "research-transfer",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-04-01",
+          "revisionDate": "2026-05-22",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "1 de abril de 2026",
+            "en": "April 1, 2026",
+            "va": "1 d'abril de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "22 de mayo de 2026",
+            "en": "May 22, 2026",
+            "va": "22 de maig de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "mentoringTeam": {
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
+              "en": "AI-STEAM Network Mentoring Pool — Research-to-VET Transfer Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Transferència Recerca-FP"
+            },
+            "type": "",
+            "role": {
+              "es": "Mentores con perfil dual investigador-docente, con experiencia en traducción de resultados de investigación a contenidos formativos de FP",
+              "en": "Mentors with a dual researcher-teacher profile, experienced in translating research results into VET training content",
+              "va": "Mentors amb perfil dual investigador-docent, amb experiència en traducció de resultats de recerca a continguts formatius de FP"
+            },
+            "org": ""
+          },
+          "coordinator": null
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": "",
+          "sector": "nts",
+          "sectorLabel": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "stakeholderCategory": "",
+          "audience": []
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "mentorings"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "mentoringOffer": {
+          "purpose": {
+            "es": "Acompañar a grupos de investigación en la traducción de sus resultados, herramientas o datasets de IA a contenidos y prácticas formativas transferibles para centros de FP, construyendo la narrativa pedagógica y el plan de colaboración con centros educativos.",
+            "en": "Support research groups in translating their AI results, tools or datasets into transferable training content and practices for VET centres, building the pedagogical narrative and collaboration plan with educational centres.",
+            "va": "Acompanyar grups de recerca en la traducció dels seus resultats, eines o datasets d'IA a continguts i pràctiques formatives transferibles per a centres de FP, construint la narrativa pedagògica i el pla de col·laboració amb centres educatius."
+          },
+          "problemAddressed": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringScope": {
+            "included": [],
+            "excluded": []
+          },
+          "format": {
+            "sessions": [
+              {
+                "modality": "online",
+                "sessionCount": 3,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": 30,
+                "sessionTypes": [
+                  "sync",
+                  "async"
+                ]
+              }
+            ],
+            "languageCodes": [],
+            "availability": {
+              "es": "Convocatoria vinculada a la apertura del curso académico (septiembre-octubre) y a la convocatoria de proyectos de innovación docente (enero-febrero). Proceso de 3 sesiones.",
+              "en": "Call linked to the academic year start (September-October) and to the teaching innovation projects call (January-February). 3-session process.",
+              "va": "Convocatòria vinculada a l'obertura del curs acadèmic (setembre-octubre) i a la convocatòria de projectes d'innovació docent (gener-febrer). Procés de 3 sessions."
+            }
+          },
+          "targetUsers": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "transferValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "mentors": {
+          "mode": "pool",
+          "items": [
+            {
+              "id": "pool-investigacion-fp",
+              "name": "AI-STEAM Mentoring Pool — Transferencia Investigación-FP",
+              "organisation": "",
+              "role": {
+                "es": "",
+                "en": "",
+                "va": ""
+              },
+              "specialties": [
+                "research-transfer",
+                "vet-curriculum-design",
+                "ai-research-translation",
+                "academic-industry-bridge"
+              ]
+            }
+          ]
+        },
+        "preparation": {
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
+        },
+        "expectedOutputs": {
+          "items": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "url": "",
+            "system": ""
+          },
+          "fallbackAction": null,
+          "secondaryAction": null
+        },
+        "relations": {
+          "relatedChallenges": [],
+          "relatedValidations": [],
+          "relatedPilots": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "possibleOutputs": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "mentoring",
+            "showPurpose": true,
+            "showProvider": true,
+            "showSpecialties": true,
+            "showAvailability": true,
+            "showDownloadsIndicator": false,
+            "showChatBadge": false,
+            "mainBlockLabel": {
+              "es": "Qué ofrece",
+              "en": "What it offers",
+              "va": "Que ofereix"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "purpose": true,
+              "scope": true,
+              "targetUsers": true,
+              "format": true,
+              "mentors": true,
+              "preparation": true,
+              "expectedOutputs": true,
+              "transferValue": true,
+              "downloads": true,
+              "resources": true,
+              "access": true,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "context",
+            "transferValue",
+            "participation",
+            "people",
+            "process"
+          ],
+          "optionalBlocks": [
+            "outputs",
+            "access",
+            "trackA"
+          ],
+          "cardSignal": "participation"
+        }
+      },
+      {
+        "id": "mentoring-etica-ia-proyectos-educativos",
+        "type": "mentoring",
+        "tab": "mentorings",
+        "sortDate": "2026-05-20",
+        "visible": true,
+        "sourcePath": "content/challenges/items/mentorings/mentoring-etica-ia-proyectos-educativos.yml",
+        "core": {
+          "status": "open",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Mentoría — Ética de la IA en proyectos educativos y formativos",
+            "en": "[DEMO] Mentoring — AI ethics in educational and training projects",
+            "va": "[DEMO] Mentoria — Ètica de la IA en projectes educatius i formatius"
+          },
+          "summary": {
+            "es": "Acompañamiento para docentes, equipos de centro y entidades educativas que introducen IA en sus prácticas formativas y necesitan una revisión ética básica — uso de datos de alumnos, sesgos algorítmicos, transparencia con las familias, IA generativa en el aula — antes de implantar o publicar sus proyectos.",
+            "en": "Support for teachers, school teams and educational organisations introducing AI into their training practices who need a basic ethics review — student data use, algorithmic biases, transparency with families, generative AI in the classroom — before implementing or publishing their projects.",
+            "va": "Acompanyament per a docents, equips de centre i entitats educatives que introdueixen IA en les seues pràctiques formatives i necessiten una revisió ètica bàsica — ús de dades d'alumnes, biaixos algorítmics, transparència amb les famílies, IA generativa a l'aula — abans d'implantar o publicar els seus projectes."
+          },
+          "entity": {
+            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
+            "type": {
+              "es": "Mentores con formación en ética digital, protección de datos educativos y uso responsable de IA en el aula",
+              "en": "Mentors trained in digital ethics, educational data protection and responsible AI use in the classroom",
+              "va": "Mentors amb formació en ètica digital, protecció de dades educatives i ús responsable d'IA a l'aula"
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "nts",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "",
+          "mentoringType": "ethics-review",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-03-01",
+          "revisionDate": "2026-05-20",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "1 de marzo de 2026",
+            "en": "March 1, 2026",
+            "va": "1 de març de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "20 de mayo de 2026",
+            "en": "May 20, 2026",
+            "va": "20 de maig de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "mentoringTeam": {
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
+              "en": "AI-STEAM Network Mentoring Pool — AI Ethics and Education Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Ètica IA i Educació"
+            },
+            "type": "",
+            "role": {
+              "es": "Mentores con formación en ética digital, protección de datos educativos y uso responsable de IA en el aula",
+              "en": "Mentors trained in digital ethics, educational data protection and responsible AI use in the classroom",
+              "va": "Mentors amb formació en ètica digital, protecció de dades educatives i ús responsable d'IA a l'aula"
+            },
+            "org": ""
+          },
+          "coordinator": null
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": "",
+          "sector": "nts",
+          "sectorLabel": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "stakeholderCategory": "",
+          "audience": []
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "mentorings"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "mentoringOffer": {
+          "purpose": {
+            "es": "Proporcionar a docentes y equipos de centro una revisión ética accesible y práctica de sus proyectos con IA, identificando riesgos reales, orientando sobre normativa aplicable (RGPD, Reglamento IA) y sugiriendo salvaguardas proporcionales antes de que el proyecto se implante o se publique.",
+            "en": "Provide teachers and school teams with an accessible and practical ethics review of their AI projects, identifying real risks, guiding on applicable regulations (GDPR, AI Act) and suggesting proportionate safeguards before the project is implemented or published.",
+            "va": "Proporcionar a docents i equips de centre una revisió ètica accessible i pràctica dels seus projectes amb IA, identificant riscos reals, orientant sobre normativa aplicable (RGPD, Reglament IA) i suggerint salvaguardes proporcionades abans que el projecte s'implante o es publique."
+          },
+          "problemAddressed": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringScope": {
+            "included": [],
+            "excluded": []
+          },
+          "format": {
+            "sessions": [
+              {
+                "modality": "online",
+                "sessionCount": 4,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": null,
+                "sessionTypes": [
+                  "sync",
+                  "async-review"
+                ]
+              }
+            ],
+            "languageCodes": [],
+            "availability": {
+              "es": "Convocatoria continua. Respuesta garantizada en 5 días laborables para solicitudes de centros educativos.",
+              "en": "Rolling call. Response guaranteed within 5 working days for educational centre requests.",
+              "va": "Convocatòria contínua. Resposta garantida en 5 dies laborables per a sol·licituds de centres educatius."
+            }
+          },
+          "targetUsers": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "transferValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "mentors": {
+          "mode": "pool",
+          "items": [
+            {
+              "id": "pool-etica-educacion",
+              "name": "AI-STEAM Mentoring Pool — Ética IA y Educación",
+              "organisation": "",
+              "role": {
+                "es": "",
+                "en": "",
+                "va": ""
+              },
+              "specialties": [
+                "ai-ethics",
+                "educational-data-protection",
+                "generative-ai-in-education",
+                "algorithmic-bias"
+              ]
+            }
+          ]
+        },
+        "preparation": {
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
+        },
+        "expectedOutputs": {
+          "items": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "url": "",
+            "system": ""
+          },
+          "fallbackAction": null,
+          "secondaryAction": null
+        },
+        "relations": {
+          "relatedChallenges": [],
+          "relatedValidations": [],
+          "relatedPilots": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "possibleOutputs": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "mentoring",
+            "showPurpose": true,
+            "showProvider": true,
+            "showSpecialties": true,
+            "showAvailability": true,
+            "showDownloadsIndicator": false,
+            "showChatBadge": false,
+            "mainBlockLabel": {
+              "es": "Qué ofrece",
+              "en": "What it offers",
+              "va": "Que ofereix"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "purpose": true,
+              "scope": true,
+              "targetUsers": true,
+              "format": true,
+              "mentors": true,
+              "preparation": true,
+              "expectedOutputs": true,
+              "transferValue": true,
+              "downloads": true,
+              "resources": true,
+              "access": true,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "context",
+            "transferValue",
+            "participation",
+            "people",
+            "process"
+          ],
+          "optionalBlocks": [
+            "outputs",
+            "access",
+            "trackA"
+          ],
+          "cardSignal": "participation"
+        }
+      },
+      {
+        "id": "mentoring-soporte-tecnico-implementacion-ia-nts",
+        "type": "mentoring",
+        "tab": "mentorings",
+        "sortDate": "2026-05-20",
+        "visible": true,
+        "sourcePath": "content/challenges/items/mentorings/mentoring-soporte-tecnico-implementacion-ia-nts.yml",
+        "core": {
+          "status": "open",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Mentoría — Soporte técnico para implementar IA en entornos sanitarios y sociosanitarios",
+            "en": "[DEMO] Mentoring — Technical support for AI implementation in health and social care settings",
+            "va": "[DEMO] Mentoria — Suport tècnic per implementar IA en entorns sanitaris i sociosanitaris"
+          },
+          "summary": {
+            "es": "Acompañamiento técnico para equipos de FP sanitaria, centros de salud y entidades sociosanitarias que quieren implementar un sistema de IA (diagnóstico asistido, triaje automatizado, analítica de pacientes) y necesitan orientación sobre arquitectura de datos, selección de modelos y cumplimiento normativo sanitario antes de lanzar el proyecto.",
+            "en": "Technical support for VET health teams, health centres and social care organisations wishing to implement an AI system (assisted diagnosis, automated triage, patient analytics) who need guidance on data architecture, model selection and health regulatory compliance before launching the project.",
+            "va": "Acompanyament tècnic per a equips de FP sanitària, centres de salut i entitats sociosanitàries que volen implementar un sistema d'IA (diagnòstic assistit, triatge automatitzat, analítica de pacients) i necessiten orientació sobre arquitectura de dades, selecció de models i compliment normatiu sanitari abans de llançar el projecte."
+          },
+          "entity": {
+            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
+            "type": {
+              "es": "Mentores con perfil técnico en ciencia de datos clínicos, visión computacional médica y cumplimiento normativo sanitario",
+              "en": "Mentors with technical profile in clinical data science, medical computer vision and health regulatory compliance",
+              "va": "Mentors amb perfil tècnic en ciència de dades clíniques, visió computacional mèdica i compliment normatiu sanitari"
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "nts",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "",
+          "mentoringType": "technical-support",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-03-15",
+          "revisionDate": "2026-05-20",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "15 de marzo de 2026",
+            "en": "March 15, 2026",
+            "va": "15 de març de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "20 de mayo de 2026",
+            "en": "May 20, 2026",
+            "va": "20 de maig de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "mentoringTeam": {
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
+              "en": "AI-STEAM Network Mentoring Pool — Healthcare AI Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Sanitària"
+            },
+            "type": "",
+            "role": {
+              "es": "Mentores con perfil técnico en ciencia de datos clínicos, visión computacional médica y cumplimiento normativo sanitario",
+              "en": "Mentors with technical profile in clinical data science, medical computer vision and health regulatory compliance",
+              "va": "Mentors amb perfil tècnic en ciència de dades clíniques, visió computacional mèdica i compliment normatiu sanitari"
+            },
+            "org": ""
+          },
+          "coordinator": null
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": "",
+          "sector": "nts",
+          "sectorLabel": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "stakeholderCategory": "",
+          "audience": []
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "mentorings"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "mentoringOffer": {
+          "purpose": {
+            "es": "Guiar a equipos técnicos y docentes en la definición de la arquitectura de datos, selección del modelo de IA adecuado y protocolo de validación clínica, garantizando el cumplimiento del Reglamento IA (clasificación de riesgo alto), RGPD sanitario y estándares HL7/FHIR desde el diseño.",
+            "en": "Guide technical and teaching teams in defining the data architecture, selecting the appropriate AI model and clinical validation protocol, ensuring compliance with the AI Act (high-risk classification), health GDPR and HL7/FHIR standards by design.",
+            "va": "Guiar equips tècnics i docents en la definició de l'arquitectura de dades, selecció del model d'IA adequat i protocol de validació clínica, garantint el compliment del Reglament IA (classificació de risc alt), RGPD sanitari i estàndards HL7/FHIR des del disseny."
+          },
+          "problemAddressed": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringScope": {
+            "included": [],
+            "excluded": []
+          },
+          "format": {
+            "sessions": [
+              {
+                "modality": "online",
+                "sessionCount": 2,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": 15,
+                "sessionTypes": [
+                  "sync",
+                  "async-review"
+                ]
+              }
+            ],
+            "languageCodes": [],
+            "availability": {
+              "es": "Convocatoria continua. Proceso de 2 sesiones técnicas más revisión asíncrona de documentos. Respuesta inicial en 7 días laborables.",
+              "en": "Rolling call. Process of 2 technical sessions plus asynchronous document review. Initial response within 7 working days.",
+              "va": "Convocatòria contínua. Procés de 2 sessions tècniques més revisió asíncrona de documents. Resposta inicial en 7 dies laborables."
+            }
+          },
+          "targetUsers": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "transferValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "mentors": {
+          "mode": "pool",
+          "items": [
+            {
+              "id": "pool-ia-sanitaria",
+              "name": "AI-STEAM Mentoring Pool — IA Sanitaria y Datos Clínicos",
+              "organisation": "",
+              "role": {
+                "es": "",
+                "en": "",
+                "va": ""
+              },
+              "specialties": [
+                "clinical-data-science",
+                "medical-imaging-ai",
+                "ai-act-samd",
+                "hl7-fhir"
+              ]
+            }
+          ]
+        },
+        "preparation": {
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
+        },
+        "expectedOutputs": {
+          "items": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "url": "",
+            "system": ""
+          },
+          "fallbackAction": null,
+          "secondaryAction": null
+        },
+        "relations": {
+          "relatedChallenges": [],
+          "relatedValidations": [],
+          "relatedPilots": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "possibleOutputs": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "mentoring",
+            "showPurpose": true,
+            "showProvider": true,
+            "showSpecialties": true,
+            "showAvailability": true,
+            "showDownloadsIndicator": false,
+            "showChatBadge": false,
+            "mainBlockLabel": {
+              "es": "Qué ofrece",
+              "en": "What it offers",
+              "va": "Que ofereix"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "purpose": true,
+              "scope": true,
+              "targetUsers": true,
+              "format": true,
+              "mentors": true,
+              "preparation": true,
+              "expectedOutputs": true,
+              "transferValue": true,
+              "downloads": true,
+              "resources": true,
+              "access": true,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "context",
+            "transferValue",
+            "participation",
+            "people",
+            "process"
+          ],
+          "optionalBlocks": [
+            "outputs",
+            "access",
+            "trackA"
+          ],
+          "cardSignal": "participation"
+        }
+      },
+      {
+        "id": "mentoring-diseno-pilotos-fp-empresa",
+        "type": "mentoring",
+        "tab": "mentorings",
+        "sortDate": "2026-05-15",
+        "visible": true,
+        "sourcePath": "content/challenges/items/mentorings/mentoring-diseno-pilotos-fp-empresa.yml",
+        "core": {
+          "status": "open",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Mentoría — Diseño de pilotos de colaboración FP-empresa con IA",
+            "en": "[DEMO] Mentoring — Designing VET-industry AI collaboration pilots",
+            "va": "[DEMO] Mentoria — Disseny de pilots de col·laboració FP-empresa amb IA"
+          },
+          "summary": {
+            "es": "Acompañamiento para centros de FP y empresas que quieren co-diseñar un piloto educativo real donde los alumnos trabajen con datos, herramientas o entornos industriales con IA, definiendo hipótesis, metodología, métricas de éxito y condiciones de transferibilidad desde el primer momento.",
+            "en": "Support for VET centres and companies wishing to co-design a real educational pilot where students work with industrial AI data, tools or environments, defining hypotheses, methodology, success metrics and transferability conditions from the outset.",
+            "va": "Acompanyament per a centres de FP i empreses que volen co-dissenyar un pilot educatiu real on els alumnes treballen amb dades, eines o entorns industrials amb IA, definint hipòtesis, metodologia, mètriques d'èxit i condicions de transferibilitat des del primer moment."
+          },
+          "entity": {
+            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
+            "type": {
+              "es": "Mentores con perfil dual pedagógico-técnico, con experiencia en diseño de pilotos FP-empresa",
+              "en": "Mentors with dual pedagogical-technical profile, experienced in designing VET-industry pilots",
+              "va": "Mentors amb perfil dual pedagògic-tècnic, amb experiència en disseny de pilots FP-empresa"
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "nts",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "",
+          "mentoringType": "pilot-design",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-02-01",
+          "revisionDate": "2026-05-15",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "1 de febrero de 2026",
+            "en": "February 1, 2026",
+            "va": "1 de febrer de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "15 de mayo de 2026",
+            "en": "May 15, 2026",
+            "va": "15 de maig de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufimy8pKaFjvbtEm6P80z2LuPxUNFhSTlNGTFpPMEdWNUwzTk8yVjYzTlpRQS4u"
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "mentoringTeam": {
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
+              "en": "AI-STEAM Network Mentoring Pool — VET Pedagogy and Innovation Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Pedagogia FP i Innovació"
+            },
+            "type": "",
+            "role": {
+              "es": "Mentores con perfil dual pedagógico-técnico, con experiencia en diseño de pilotos FP-empresa",
+              "en": "Mentors with dual pedagogical-technical profile, experienced in designing VET-industry pilots",
+              "va": "Mentors amb perfil dual pedagògic-tècnic, amb experiència en disseny de pilots FP-empresa"
+            },
+            "org": ""
+          },
+          "coordinator": null
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": "",
+          "sector": "nts",
+          "sectorLabel": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "stakeholderCategory": "",
+          "audience": []
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "mentorings"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "mentoringOffer": {
+          "purpose": {
+            "es": "Acompañar a parejas FP-empresa en el diseño de un piloto educativo riguroso: con hipótesis clara, metodología adecuada al ciclo formativo, métricas de éxito evaluables y condiciones de transferibilidad para que otros centros puedan replicarlo.",
+            "en": "Support VET-company pairs in designing a rigorous educational pilot: with a clear hypothesis, methodology appropriate to the training cycle, evaluable success metrics and transferability conditions so other centres can replicate it.",
+            "va": "Acompanyar parelles FP-empresa en el disseny d'un pilot educatiu rigorós: amb hipòtesi clara, metodologia adequada al cicle formatiu, mètriques d'èxit avaluables i condicions de transferibilitat perquè altres centres puguen replicar-lo."
+          },
+          "problemAddressed": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringScope": {
+            "included": [],
+            "excluded": []
+          },
+          "format": {
+            "sessions": [
+              {
+                "modality": "hybrid",
+                "sessionCount": 3,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": 30,
+                "sessionTypes": [
+                  "sync",
+                  "async-review"
+                ]
+              }
+            ],
+            "languageCodes": [],
+            "availability": {
+              "es": "Sesiones disponibles para parejas FP-empresa con proyecto identificado. Proceso de 3 sesiones en 6 semanas.",
+              "en": "Sessions available for VET-company pairs with an identified project. 3-session process over 6 weeks.",
+              "va": "Sessions disponibles per a parelles FP-empresa amb projecte identificat. Procés de 3 sessions en 6 setmanes."
+            }
+          },
+          "targetUsers": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "transferValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "mentors": {
+          "mode": "pool",
+          "items": [
+            {
+              "id": "pool-pedagogia-fp",
+              "name": "AI-STEAM Mentoring Pool — Pedagogía FP e Innovación",
+              "organisation": "",
+              "role": {
+                "es": "",
+                "en": "",
+                "va": ""
+              },
+              "specialties": [
+                "pilot-design",
+                "vet-curriculum",
+                "evidence-collection",
+                "vet-industry-collaboration"
+              ]
+            }
+          ]
+        },
+        "preparation": {
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
+        },
+        "expectedOutputs": {
+          "items": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "url": "",
+            "system": ""
+          },
+          "fallbackAction": null,
+          "secondaryAction": null
+        },
+        "relations": {
+          "relatedChallenges": [],
+          "relatedValidations": [],
+          "relatedPilots": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "possibleOutputs": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "mentoring",
+            "showPurpose": true,
+            "showProvider": true,
+            "showSpecialties": true,
+            "showAvailability": true,
+            "showDownloadsIndicator": false,
+            "showChatBadge": false,
+            "mainBlockLabel": {
+              "es": "Qué ofrece",
+              "en": "What it offers",
+              "va": "Que ofereix"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "purpose": true,
+              "scope": true,
+              "targetUsers": true,
+              "format": true,
+              "mentors": true,
+              "preparation": true,
+              "expectedOutputs": true,
+              "transferValue": true,
+              "downloads": true,
+              "resources": true,
+              "access": true,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "context",
+            "transferValue",
+            "participation",
+            "people",
+            "process"
+          ],
+          "optionalBlocks": [
+            "outputs",
+            "access",
+            "trackA"
+          ],
+          "cardSignal": "participation"
+        }
+      },
+      {
+        "id": "mentoring-formulacion-retos-industria",
+        "type": "mentoring",
+        "tab": "mentorings",
+        "sortDate": "2026-05-10",
+        "visible": true,
+        "sourcePath": "content/challenges/items/mentorings/mentoring-formulacion-retos-industria.yml",
+        "core": {
+          "status": "open",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Mentoría — Cómo formular un reto industrial para el ecosistema AI-STEAM",
+            "en": "[DEMO] Mentoring — How to frame an industrial challenge for the AI-STEAM ecosystem",
+            "va": "[DEMO] Mentoria — Com formular un repte industrial per a l'ecosistema AI-STEAM"
+          },
+          "summary": {
+            "es": "Acompañamiento para empresas industriales y pymes tecnológicas que quieren convertir una necesidad de innovación o una brecha de talento en un reto bien formulado, publicable en el Marketplace AI-STEAM y orientado a obtener prototipos, datos o metodologías de la comunidad de práctica.",
+            "en": "Support for industrial companies and technology SMEs wishing to turn an innovation need or talent gap into a well-framed challenge, publishable on the AI-STEAM Marketplace and designed to obtain prototypes, data or methodologies from the community of practice.",
+            "va": "Acompanyament per a empreses industrials i pimes tecnològiques que volen convertir una necessitat d'innovació o una bretxa de talent en un repte ben formulat, publicable al Marketplace AI-STEAM i orientat a obtindre prototips, dades o metodologies de la comunitat de pràctica."
+          },
+          "entity": {
+            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
+            "type": {
+              "es": "Mentores con experiencia en formulación de retos en contextos industriales y de FP",
+              "en": "Mentors experienced in challenge framing in industrial and VET contexts",
+              "va": "Mentors amb experiència en formulació de reptes en contextos industrials i de FP"
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "mfg",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "",
+          "mentoringType": "brief-support",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-01-15",
+          "revisionDate": "2026-05-10",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "15 de enero de 2026",
+            "en": "January 15, 2026",
+            "va": "15 de gener de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "10 de mayo de 2026",
+            "en": "May 10, 2026",
+            "va": "10 de maig de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "mentoringTeam": {
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
+              "en": "AI-STEAM Network Mentoring Pool — Industry 4.0 Specialists",
+              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Indústria 4.0"
+            },
+            "type": "",
+            "role": {
+              "es": "Mentores con experiencia en formulación de retos en contextos industriales y de FP",
+              "en": "Mentors experienced in challenge framing in industrial and VET contexts",
+              "va": "Mentors amb experiència en formulació de reptes en contextos industrials i de FP"
+            },
+            "org": ""
+          },
+          "coordinator": null
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": "",
+          "sector": "mfg",
+          "sectorLabel": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "stakeholderCategory": "",
+          "audience": []
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "mentorings"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "mentoringOffer": {
+          "purpose": {
+            "es": "Ayudar a empresas industriales a transformar una necesidad técnica o de talento en un reto AI-STEAM publicable, con alcance realista, incentivos atractivos para la comunidad y condiciones claras de datos y propiedad intelectual.",
+            "en": "Help industrial companies transform a technical or talent need into a publishable AI-STEAM challenge, with realistic scope, attractive community incentives and clear data and intellectual property conditions.",
+            "va": "Ajudar empreses industrials a transformar una necessitat tècnica o de talent en un repte AI-STEAM publicable, amb abast realista, incentius atractius per a la comunitat i condicions clares de dades i propietat intel·lectual."
+          },
+          "problemAddressed": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringScope": {
+            "included": [],
+            "excluded": []
+          },
+          "format": {
+            "sessions": [
+              {
+                "modality": "hybrid",
+                "sessionCount": 3,
+                "sessionDurationHours": 1,
+                "sessionDurationMinutes": null,
+                "sessionTypes": [
+                  "sync",
+                  "async"
+                ]
+              }
+            ],
+            "languageCodes": [],
+            "availability": {
+              "es": "Convocatoria abierta con plazas limitadas. Sesiones disponibles en horario de empresa (9:00-18:00).",
+              "en": "Open call with limited places. Sessions available during business hours (9:00-18:00).",
+              "va": "Convocatòria oberta amb places limitades. Sessions disponibles en horari d'empresa (9:00-18:00)."
+            }
+          },
+          "targetUsers": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "transferValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "mentors": {
+          "mode": "pool",
+          "items": [
+            {
+              "id": "pool-industria-40",
+              "name": "AI-STEAM Mentoring Pool — Industria 4.0",
+              "organisation": "",
+              "role": {
+                "es": "",
+                "en": "",
+                "va": ""
+              },
+              "specialties": [
+                "industry-4-0",
+                "challenge-framing",
+                "data-sharing",
+                "vet-industry-collaboration"
+              ]
+            }
+          ]
+        },
+        "preparation": {
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
+        },
+        "expectedOutputs": {
+          "items": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "url": "",
+            "system": ""
+          },
+          "fallbackAction": null,
+          "secondaryAction": null
+        },
+        "relations": {
+          "relatedChallenges": [],
+          "relatedValidations": [],
+          "relatedPilots": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "possibleOutputs": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "mentoring",
+            "showPurpose": true,
+            "showProvider": true,
+            "showSpecialties": true,
+            "showAvailability": true,
+            "showDownloadsIndicator": false,
+            "showChatBadge": false,
+            "mainBlockLabel": {
+              "es": "Qué ofrece",
+              "en": "What it offers",
+              "va": "Que ofereix"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "purpose": true,
+              "scope": true,
+              "targetUsers": true,
+              "format": true,
+              "mentors": true,
+              "preparation": true,
+              "expectedOutputs": true,
+              "transferValue": true,
+              "downloads": true,
+              "resources": true,
+              "access": true,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "context",
+            "transferValue",
+            "participation",
+            "people",
+            "process"
+          ],
+          "optionalBlocks": [
+            "outputs",
+            "access",
+            "trackA"
+          ],
+          "cardSignal": "participation"
+        }
+      },
+      {
+        "id": "responsible-ai-creative-briefs",
+        "type": "mentoring",
+        "tab": "mentorings",
+        "sortDate": "2026-04-10",
+        "visible": true,
+        "sourcePath": "content/challenges/items/mentorings/responsible-ai-creative-briefs.yml",
+        "core": {
+          "status": "open",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Mentoría para briefs creativos con IA responsable",
+            "en": "[DEMO] Mentoring for responsible AI creative briefs",
+            "va": "[DEMO] Mentoria per a briefs creatius amb IA responsable"
+          },
+          "summary": {
+            "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
+            "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AI-STEAM collaboration.",
+            "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AI-STEAM."
+          },
+          "entity": {
+            "name": "AI-STEAM Network Mentoring Pool",
+            "type": {
+              "es": "Equipo de mentoría en formulación de retos y ética de IA",
+              "en": "Mentoring team in challenge framing and AI ethics",
+              "va": "Equip de mentoria en formulació de reptes i ètica d'IA"
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "cci",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "",
+          "mentoringType": "brief-support",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2025-12-10",
+          "revisionDate": "2026-04-10",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "10 de diciembre de 2025",
+            "en": "December 10, 2025",
+            "va": "10 de desembre de 2025"
+          },
+          "revisionDateLabel": {
+            "es": "10 de abril de 2026",
+            "en": "April 10, 2026",
+            "va": "10 d'abril de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "mentoringTeam": {
+            "name": {
+              "es": "AI-STEAM Network Mentoring Pool",
+              "en": "AI-STEAM Network Mentoring Pool",
+              "va": "AI-STEAM Network Mentoring Pool"
+            },
+            "type": "",
+            "role": {
+              "es": "Equipo de mentoría en formulación de retos y ética de IA",
+              "en": "Mentoring team in challenge framing and AI ethics",
+              "va": "Equip de mentoria en formulació de reptes i ètica d'IA"
+            },
+            "org": ""
+          },
+          "coordinator": null
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": "",
+          "sector": "cci",
+          "sectorLabel": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "stakeholderCategory": "",
+          "audience": []
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "mentorings"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "mentoringOffer": {
+          "purpose": {
+            "es": "Ayudar a entidades de la red a transformar una idea inicial en un brief claro, publicable y accionable dentro del ecosistema AI-STEAM.",
+            "en": "Help network organisations turn an initial idea into a clear, publishable and actionable brief within the AI-STEAM ecosystem.",
+            "va": "Ajudar entitats de la xarxa a transformar una idea inicial en un brief clar, publicable i accionable dins de l'ecosistema AI-STEAM."
+          },
+          "problemAddressed": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringScope": {
+            "included": [],
+            "excluded": []
+          },
+          "format": {
+            "sessions": [
+              {
+                "modality": "online",
+                "sessionCount": 4,
+                "sessionDurationHours": null,
+                "sessionDurationMinutes": 45,
+                "sessionTypes": [
+                  "sync",
+                  "async-review"
+                ]
+              }
+            ],
+            "languageCodes": [],
+            "availability": {
+              "es": "Convocatoria continua mientras haya capacidad de mentoria disponible.",
+              "en": "Rolling call while mentoring capacity is available.",
+              "va": "Convocatoria continua mentre hi haja capacitat de mentoria disponible."
+            }
+          },
+          "targetUsers": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "transferValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "mentors": {
+          "mode": "pool",
+          "items": [
+            {
+              "id": "ai-steam-mentoring-pool",
+              "name": "AI-STEAM Network Mentoring Pool",
+              "organisation": "",
+              "role": {
+                "es": "",
+                "en": "",
+                "va": ""
+              },
+              "specialties": [
+                "responsible-ai",
+                "creative-brief",
+                "co-design",
+                "track-b-transfer"
+              ]
+            }
+          ]
+        },
+        "preparation": {
+          "requiredBeforeRequest": [],
+          "intakeQuestions": []
+        },
+        "expectedOutputs": {
+          "items": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": {
+          "externalLinks": []
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "url": "",
+            "system": ""
+          },
+          "fallbackAction": null,
+          "secondaryAction": null
+        },
+        "relations": {
+          "relatedChallenges": [],
+          "relatedValidations": [],
+          "relatedPilots": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "possibleOutputs": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "mentoring",
+            "showPurpose": true,
+            "showProvider": true,
+            "showSpecialties": true,
+            "showAvailability": true,
+            "showDownloadsIndicator": false,
+            "showChatBadge": false,
+            "mainBlockLabel": {
+              "es": "Qué ofrece",
+              "en": "What it offers",
+              "va": "Que ofereix"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "purpose": true,
+              "scope": true,
+              "targetUsers": true,
+              "format": true,
+              "mentors": true,
+              "preparation": true,
+              "expectedOutputs": true,
+              "transferValue": true,
+              "downloads": true,
+              "resources": true,
+              "access": true,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "context",
+            "transferValue",
+            "participation",
+            "people",
+            "process"
+          ],
+          "optionalBlocks": [
+            "outputs",
+            "access",
+            "trackA"
+          ],
+          "cardSignal": "participation"
+        }
+      }
+    ],
     "challenges": [
       {
         "id": "reto-personalizacion-itinerarios-fp-edu",
@@ -20601,6 +23502,5344 @@ export const MARKETPLACE_CONFIG = {
             "relations"
           ],
           "cardSignal": "need"
+        }
+      }
+    ],
+    "validations": [
+      {
+        "id": "validation-etica-ia-seleccion-personal-adm",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-05-01",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-etica-ia-seleccion-personal-adm.yml",
+        "core": {
+          "status": "closed",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
+            "en": "[DEMO] Use of AI for candidate screening in public administration selection processes",
+            "va": "[DEMO] Ús d'IA per al cribratge de candidats en processos selectius de l'administració pública"
+          },
+          "summary": {
+            "es": "Validación ética de una propuesta de sistema de IA para el cribado automático de candidatos en oposiciones y concursos de méritos de la administración pública valenciana. La validación concluye con una recomendación de reformulación sustancial antes de poder considerarse apto para piloto.",
+            "en": "Ethical validation of a proposed AI system for automatic candidate screening in public administration competitive examinations and merit competitions in the Valencian Community. The validation concludes with a recommendation for substantial reformulation before being considered suitable for piloting.",
+            "va": "Validació ètica d'una proposta de sistema d'IA per al cribratge automàtic de candidats en oposicions i concursos de mèrits de l'administració pública valenciana. La validació conclou amb una recomanació de reformulació substancial abans de poder considerar-se apte per a pilot."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "nts",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "ethical-validation",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-03-01",
+          "revisionDate": "2026-05-01",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "1 de marzo de 2026",
+            "en": "March 1, 2026",
+            "va": "1 de març de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "1 de mayo de 2026",
+            "en": "May 1, 2026",
+            "va": "1 de maig de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": {
+          "file": "validation-etica-ia-seleccion-personal-adm.pdf",
+          "publicPath": "/assets/downloads/marketplace/validations/validation-etica-ia-seleccion-personal-adm.pdf"
+        },
+        "adhesionForm": {
+          "url": "https://forms.cloud.microsoft/e/ERLBsJwJ7Y"
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "proposer": {
+            "name": "Dirección General de Función Pública — Generalitat Valenciana",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "validators": []
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Propuesta de sistema IA para cribado automático de candidatos en oposiciones y concursos de méritos",
+            "en": "Proposed AI system for automatic candidate screening in competitive examinations and merit competitions",
+            "va": "Proposta de sistema IA per al cribratge automàtic de candidats en oposicions i concursos de mèrits"
+          },
+          "validationQuestion": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "need": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "method": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Análisis ALTAI — Comité de Ética Digital de la Generalitat (7 dimensiones, 52 criterios evaluados)",
+                "en": "ALTAI analysis — Generalitat Digital Ethics Committee (7 dimensions, 52 criteria assessed)",
+                "va": "Anàlisi ALTAI — Comité d'Ètica Digital de la Generalitat (7 dimensions, 52 criteris avaluats)"
+              }
+            },
+            {
+              "label": {
+                "es": "Análisis legal — Servicio Jurídico de la Generalitat Valenciana (Reglamento IA UE + Ley de Empleo Público)",
+                "en": "Legal analysis — Valencian Generalitat Legal Service (EU AI Act + Public Employment Law)",
+                "va": "Anàlisi legal — Servei Jurídic de la Generalitat Valenciana (Reglament IA UE + Llei d'Ocupació Pública)"
+              }
+            },
+            {
+              "label": {
+                "es": "Consulta sindical — CSIF y UGT-PV (representantes de empleados públicos de la Generalitat)",
+                "en": "Union consultation — CSIF and UGT-PV (Generalitat public employee representatives)",
+                "va": "Consulta sindical — CSIF i UGT-PV (representants d'empleats públics de la Generalitat)"
+              }
+            },
+            {
+              "label": {
+                "es": "Análisis de correlaciones — dataset histórico anonimizado de 4.200 expedientes de candidatos (2021-2024)",
+                "en": "Correlation analysis — anonymised historical dataset of 4,200 candidate files (2021-2024)",
+                "va": "Anàlisi de correlacions — dataset històric anonimitzat de 4.200 expedients de candidats (2021-2024)"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": []
+        },
+        "evidence": null,
+        "decision": {
+          "outcome": "",
+          "tone": "negative",
+          "label": {
+            "es": "Requiere reformulación sustancial — no apto para piloto en estado actual",
+            "en": "Requires substantial reformulation — not suitable for piloting in current state",
+            "va": "Requereix reformulació substancial — no apte per a pilot en estat actual"
+          },
+          "rationale": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "nextStep": null
+        },
+        "trackRouting": null,
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showDecision": true,
+            "showValidationStage": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": true,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2026-01-10",
+          "end": "2026-02-28"
+        },
+        "criteriaCount": 0,
+        "validationTypeLabel": {
+          "es": "Validación ética",
+          "en": "Ethical validation",
+          "va": "Validació ètica"
+        },
+        "validationStageLabel": {
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
+        },
+        "decisionOutcomeLabel": {},
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-legal-datos-movilidad-mob",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-04-05",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-legal-datos-movilidad-mob.yml",
+        "core": {
+          "status": "closed",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Validación legal — Uso de datos de movilidad urbana de Correos para el reto de optimización de rutas",
+            "en": "[DEMO] Legal validation — Use of Correos urban mobility data for the route optimisation challenge",
+            "va": "[DEMO] Validació legal — Ús de dades de mobilitat urbana de Correos per al repte d'optimització de rutes"
+          },
+          "summary": {
+            "es": "Validación legal del marco de cesión y anonimización de los datos de rutas y entregas de Correos necesarios para el reto de optimización de última milla, confirmando la viabilidad de la cesión bajo el RGPD y estableciendo las condiciones específicas de anonimización y uso que deben incluirse en las bases del reto.",
+            "en": "Legal validation of the framework for transferring and anonymising Correos route and delivery data needed for the last-mile optimisation challenge, confirming the feasibility of transfer under GDPR and establishing the specific anonymisation and use conditions to be included in the challenge terms.",
+            "va": "Validació legal del marc de cessió i anonimització de les dades de rutes i lliuraments de Correos necessàries per al repte d'optimització d'última milla, confirmant la viabilitat de la cessió sota el RGPD i establint les condicions específiques d'anonimització i ús que han d'incloure's en les bases del repte."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "mob",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "legal-validation",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-02-20",
+          "revisionDate": "2026-04-05",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "20 de febrero de 2026",
+            "en": "February 20, 2026",
+            "va": "20 de febrer de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "5 de abril de 2026",
+            "en": "April 5, 2026",
+            "va": "5 d'abril de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "proposer": {
+            "name": "Correos — Dirección de Operaciones Zona Mediterráneo",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "validators": []
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Reto — Optimización de rutas de última milla con IA para logística urbana sostenible (uso del dataset de Correos)",
+            "en": "Challenge — AI last-mile route optimisation for sustainable urban logistics (use of Correos dataset)",
+            "va": "Repte — Optimització de rutes d'última milla amb IA per a logística urbana sostenible (ús del dataset de Correos)"
+          },
+          "validationQuestion": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "need": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "method": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "EIPD simplificada — DPO de Correos",
+                "en": "Simplified DPIA — Correos DPO",
+                "va": "AIPD simplificada — DPO de Correos"
+              }
+            },
+            {
+              "label": {
+                "es": "Revisión de condiciones de uso — AI-STEAM Asesoría Legal",
+                "en": "Use conditions review — AI-STEAM Legal Advisory",
+                "va": "Revisió de condicions d'ús — AI-STEAM Assessoria Legal"
+              }
+            },
+            {
+              "label": {
+                "es": "Protocolo de anonimización k-anonimato — DPO + Asesoría Legal",
+                "en": "K-anonymity anonymisation protocol — DPO + Legal Advisory",
+                "va": "Protocol d'anonimització k-anonimat — DPO + Assessoria Legal"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": []
+        },
+        "evidence": null,
+        "decision": {
+          "outcome": "",
+          "tone": "neutral",
+          "label": {
+            "es": "Validado — datos aptos para cesión en el reto con el protocolo de anonimización documentado",
+            "en": "Validated — data suitable for challenge transfer with the documented anonymisation protocol",
+            "va": "Validat — dades aptes per a cessió en el repte amb el protocol d'anonimització documentat"
+          },
+          "rationale": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "nextStep": null
+        },
+        "trackRouting": null,
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showDecision": true,
+            "showValidationStage": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": true,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2026-01-05",
+          "end": "2026-02-15"
+        },
+        "criteriaCount": 0,
+        "validationTypeLabel": {
+          "es": "Validación legal",
+          "en": "Legal validation",
+          "va": "Validació legal"
+        },
+        "validationStageLabel": {
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
+        },
+        "decisionOutcomeLabel": {},
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-tecnica-gemelo-digital-ene",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-04-01",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-tecnica-gemelo-digital-ene.yml",
+        "core": {
+          "status": "closed",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Validación técnica — Viabilidad del gemelo digital para la gestión predictiva de la red eléctrica urbana",
+            "en": "[DEMO] Technical validation — Feasibility of digital twin for predictive urban electricity grid management",
+            "va": "[DEMO] Validació tècnica — Viabilitat de la bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
+          },
+          "summary": {
+            "es": "Validación técnica del reto de gemelo digital para la red eléctrica promovido por Endesa Distribución, confirmando la viabilidad de CARLA y ROS 2 como stack tecnológico y la disponibilidad de datos SCADA anonimizables para el desarrollo del prototipo.",
+            "en": "Technical validation of the electricity grid digital twin challenge promoted by Endesa Distribución, confirming the viability of CARLA and ROS 2 as the technology stack and the availability of anonymisable SCADA data for prototype development.",
+            "va": "Validació tècnica del repte de bessona digital per a la xarxa elèctrica promogut per Endesa Distribució, confirmant la viabilitat de CARLA i ROS 2 com a stack tecnològic i la disponibilitat de dades SCADA anonimitzables per al desenvolupament del prototip."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "ene",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "technical-validation",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-02-15",
+          "revisionDate": "2026-04-01",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "15 de febrero de 2026",
+            "en": "February 15, 2026",
+            "va": "15 de febrer de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "1 de abril de 2026",
+            "en": "April 1, 2026",
+            "va": "1 d'abril de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "proposer": {
+            "name": "Endesa Distribución S.A. — Área de Innovación Redes",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "validators": []
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Reto — Gemelo digital para la gestión predictiva de la red eléctrica urbana",
+            "en": "Challenge — Digital twin for predictive urban electricity grid management",
+            "va": "Repte — Bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
+          },
+          "validationQuestion": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "need": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "method": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Revisión técnica ITE — dataset histórico SCADA (muestra 5%)",
+                "en": "ITE technical review — historical SCADA dataset (5% sample)",
+                "va": "Revisió tècnica ITE — dataset històric SCADA (mostra 5%)"
+              }
+            },
+            {
+              "label": {
+                "es": "Prueba de concepto en entorno sandboxed de Endesa",
+                "en": "Proof of concept in Endesa sandboxed environment",
+                "va": "Prova de concepte en entorn sandboxed d'Endesa"
+              }
+            },
+            {
+              "label": {
+                "es": "Sesión de triage ConsensUE con Comité Técnico Energía",
+                "en": "ConsensUE triage session with Energy Technical Committee",
+                "va": "Sessió de triatge ConsensUE amb Comité Tècnic Energia"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": []
+        },
+        "evidence": null,
+        "decision": {
+          "outcome": "",
+          "tone": "neutral",
+          "label": {
+            "es": "Validado — clasificado Track B para reto abierto al ecosistema",
+            "en": "Validated — classified as Track B for open ecosystem challenge",
+            "va": "Validat — classificat Track B per a repte obert a l'ecosistema"
+          },
+          "rationale": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "nextStep": null
+        },
+        "trackRouting": null,
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showDecision": true,
+            "showValidationStage": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": true,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-12-01",
+          "end": "2026-02-10"
+        },
+        "criteriaCount": 0,
+        "validationTypeLabel": {
+          "es": "Validación técnica",
+          "en": "Technical validation",
+          "va": "Validació tècnica"
+        },
+        "validationStageLabel": {
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
+        },
+        "decisionOutcomeLabel": {},
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-stakeholder-turismo-inteligente-tur",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-03-20",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-stakeholder-turismo-inteligente-tur.yml",
+        "core": {
+          "status": "closed",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Validación stakeholder — Necesidad de personalización con IA en la oferta turística valenciana",
+            "en": "[DEMO] Stakeholder validation — Need for AI personalisation in the Valencian tourism offer",
+            "va": "[DEMO] Validació stakeholder — Necessitat de personalització amb IA en l'oferta turística valenciana"
+          },
+          "summary": {
+            "es": "Validación con la Agència Valenciana del Turisme, asociaciones hoteleras y plataformas de reservas de la demanda real de sistemas de personalización de experiencias turísticas con IA, que derivó en la publicación del reto de análisis de sentimiento y en el inicio de dos pilotos de personalización de recomendaciones en destinos piloto de la Costa Blanca.",
+            "en": "Validation with the Valencian Tourism Agency, hotel associations and booking platforms of the real demand for AI tourism experience personalisation systems, leading to the publication of the sentiment analysis challenge and the launch of two recommendation personalisation pilots in Costa Blanca pilot destinations.",
+            "va": "Validació amb l'Agència Valenciana del Turisme, associacions hoteleres i plataformes de reserves de la demanda real de sistemes de personalització d'experiències turístiques amb IA, que va derivar en la publicació del repte d'anàlisi de sentiment i en l'inici de dos pilots de personalització de recomanacions en destinacions pilot de la Costa Blanca."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "cci",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "stakeholder-validation",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-01-10",
+          "revisionDate": "2026-03-20",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "10 de enero de 2026",
+            "en": "January 10, 2026",
+            "va": "10 de gener de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "20 de marzo de 2026",
+            "en": "March 20, 2026",
+            "va": "20 de març de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "proposer": {
+            "name": "Agència Valenciana del Turisme (Turisme Comunitat Valenciana)",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "validators": []
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Necesidad de sistemas de IA para análisis de reputación y personalización de la experiencia turística en la Comunitat Valenciana",
+            "en": "Need for AI systems for reputation analysis and tourism experience personalisation in the Valencian Community",
+            "va": "Necessitat de sistemes d'IA per a anàlisi de reputació i personalització de l'experiència turística a la Comunitat Valenciana"
+          },
+          "validationQuestion": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "need": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "method": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Panel de expertos hoteleros — HOSBEC (n=12)",
+                "en": "Hotel expert panel — HOSBEC (n=12)",
+                "va": "Panell d'experts hotelers — HOSBEC (n=12)"
+              }
+            },
+            {
+              "label": {
+                "es": "Análisis de datos agregados de búsqueda — Booking.com (destinos valencianos, 2024-2025)",
+                "en": "Aggregated search data analysis — Booking.com (Valencian destinations, 2024-2025)",
+                "va": "Anàlisi de dades agregades de cerca — Booking.com (destinacions valencianes, 2024-2025)"
+              }
+            },
+            {
+              "label": {
+                "es": "Triage ConsensUE — Comité Técnico Turismo y Cultura",
+                "en": "ConsensUE triage — Tourism and Culture Technical Committee",
+                "va": "Triatge ConsensUE — Comité Tècnic Turisme i Cultura"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": []
+        },
+        "evidence": null,
+        "decision": {
+          "outcome": "",
+          "tone": "neutral",
+          "label": {
+            "es": "Validado — necesidad confirmada; se deriva a reto Track B (análisis de sentimiento) y piloto de personalización",
+            "en": "Validated — need confirmed; derived to Track B challenge (sentiment analysis) and personalisation pilot",
+            "va": "Validat — necessitat confirmada; es deriva a repte Track B (anàlisi de sentiment) i pilot de personalització"
+          },
+          "rationale": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "nextStep": null
+        },
+        "trackRouting": null,
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showDecision": true,
+            "showValidationStage": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": true,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-10-15",
+          "end": "2025-12-20"
+        },
+        "criteriaCount": 0,
+        "validationTypeLabel": {
+          "es": "Validación stakeholder",
+          "en": "Stakeholder validation",
+          "va": "Validació stakeholder"
+        },
+        "validationStageLabel": {
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
+        },
+        "decisionOutcomeLabel": {},
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-pedagogica-control-calidad-mfg",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-03-10",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-pedagogica-control-calidad-mfg.yml",
+        "core": {
+          "status": "closed",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Validación pedagógica — Integración de visión artificial en ciclos de FP de Fabricación Mecánica",
+            "en": "[DEMO] Pedagogical validation — Integration of computer vision in Mechanical Manufacturing VET cycles",
+            "va": "[DEMO] Validació pedagògica — Integració de visió artificial en cicles de FP de Fabricació Mecànica"
+          },
+          "summary": {
+            "es": "Validación del encaje curricular de un módulo de visión artificial para control de calidad en los ciclos de FP de Fabricación Mecánica y Mecatrónica, confirmando la pertinencia pedagógica y definiendo los requisitos de formación docente necesarios para la implantación autónoma.",
+            "en": "Validation of the curricular fit of a computer vision quality control module in Mechanical Manufacturing and Mechatronics VET cycles, confirming pedagogical relevance and defining teacher training requirements for autonomous implementation.",
+            "va": "Validació de l'encaix curricular d'un mòdul de visió artificial per a control de qualitat en els cicles de FP de Fabricació Mecànica i Mecatrònica, confirmant la pertinència pedagògica i definint els requisits de formació docent necessaris per a la implantació autònoma."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "mfg",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "pedagogical-validation",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-01-20",
+          "revisionDate": "2026-03-10",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "20 de enero de 2026",
+            "en": "January 20, 2026",
+            "va": "20 de gener de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "10 de marzo de 2026",
+            "en": "March 10, 2026",
+            "va": "10 de març de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "proposer": {
+            "name": "Pamesa Cerámica S.A. — Dirección de Ingeniería de Proceso",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "validators": []
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Reto — Control de calidad visual con IA en línea de producción de componentes cerámicos",
+            "en": "Challenge — AI visual quality control on ceramic component production line",
+            "va": "Repte — Control de qualitat visual amb IA en línia de producció de components ceràmics"
+          },
+          "validationQuestion": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "need": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "method": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Análisis curricular — Reales Decretos FP Fabricación y Mecatrónica",
+                "en": "Curriculum analysis — Royal Decrees for Manufacturing and Mechatronics VET",
+                "va": "Anàlisi curricular — Reials Decrets FP Fabricació i Mecatrònica"
+              }
+            },
+            {
+              "label": {
+                "es": "Encuesta a 12 docentes de FP de Fabricación Mecánica",
+                "en": "Survey of 12 Mechanical Manufacturing VET teachers",
+                "va": "Enquesta a 12 docents de FP de Fabricació Mecànica"
+              }
+            },
+            {
+              "label": {
+                "es": "Sesión de revisión docente en IES Ausiàs March",
+                "en": "Teacher review session at IES Ausiàs March",
+                "va": "Sessió de revisió docent a l'IES Ausiàs March"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": []
+        },
+        "evidence": null,
+        "decision": {
+          "outcome": "",
+          "tone": "neutral",
+          "label": {
+            "es": "Validado — clasificado Track B con requisito de formación docente previa",
+            "en": "Validated — classified as Track B with prior teacher training requirement",
+            "va": "Validat — classificat Track B amb requisit de formació docent prèvia"
+          },
+          "rationale": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "nextStep": null
+        },
+        "trackRouting": null,
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showDecision": true,
+            "showValidationStage": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": true,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-11-01",
+          "end": "2026-01-15"
+        },
+        "criteriaCount": 0,
+        "validationTypeLabel": {
+          "es": "Validación pedagógica",
+          "en": "Pedagogical validation",
+          "va": "Validació pedagògica"
+        },
+        "validationStageLabel": {
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
+        },
+        "decisionOutcomeLabel": {},
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-stakeholder-salud-digital-nts",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-02-20",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-stakeholder-salud-digital-nts.yml",
+        "core": {
+          "status": "closed",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Validación stakeholder — Necesidad de competencias digitales en salud en la FP Sanitaria valenciana",
+            "en": "[DEMO] Stakeholder validation — Digital health competency needs in Valencian Health VET",
+            "va": "[DEMO] Validació stakeholder — Necessitat de competències digitals en salut en la FP Sanitària valenciana"
+          },
+          "summary": {
+            "es": "Validación con hospitales públicos, colegios profesionales sanitarios y centros de FP de la Comunitat Valenciana de la brecha de competencias digitales en salud que existe entre la formación recibida en FP Sanitario y las competencias que demandan los entornos clínicos actuales, con clasificación Track A para el máster universitario.",
+            "en": "Validation with public hospitals, healthcare professional associations and VET centres in the Valencian Community of the digital health competency gap between Health VET training and the competencies demanded by current clinical settings, with Track A classification for the university master's programme.",
+            "va": "Validació amb hospitals públics, col·legis professionals sanitaris i centres de FP de la Comunitat Valenciana de la bretxa de competències digitals en salut que existeix entre la formació rebuda en FP Sanitari i les competències que demanden els entorns clínics actuals, amb classificació Track A per al màster universitari."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "nts",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "stakeholder-validation",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2025-12-01",
+          "revisionDate": "2026-02-20",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "1 de diciembre de 2025",
+            "en": "December 1, 2025",
+            "va": "1 de desembre de 2025"
+          },
+          "revisionDateLabel": {
+            "es": "20 de febrero de 2026",
+            "en": "February 20, 2026",
+            "va": "20 de febrer de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "proposer": {
+            "name": "Consell Valencià d'Infermeria",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "validators": []
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Brecha de competencias digitales en salud en los graduados de FP Sanitario valenciano",
+            "en": "Digital health competency gap in Valencian Health VET graduates",
+            "va": "Bretxa de competències digitals en salut en els graduats de FP Sanitari valencià"
+          },
+          "validationQuestion": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "need": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "method": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Encuesta de inserción laboral 2025 — Consell Valencià d'Infermeria (n=312)",
+                "en": "2025 job placement survey — Consell Valencià d'Infermeria (n=312)",
+                "va": "Enquesta d'inserció laboral 2025 — Consell Valencià d'Infermeria (n=312)"
+              }
+            },
+            {
+              "label": {
+                "es": "Entrevistas con 180 supervisores clínicos — 8 hospitales red pública valenciana",
+                "en": "Interviews with 180 clinical supervisors — 8 Valencian public hospital network hospitals",
+                "va": "Entrevistes amb 180 supervisors clínics — 8 hospitals xarxa pública valenciana"
+              }
+            },
+            {
+              "label": {
+                "es": "Triage ConsensUE — Comité Técnico Salud Digital",
+                "en": "ConsensUE triage — Digital Health Technical Committee",
+                "va": "Triatge ConsensUE — Comité Tècnic Salut Digital"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": []
+        },
+        "evidence": null,
+        "decision": {
+          "outcome": "",
+          "tone": "neutral",
+          "label": {
+            "es": "Validado — clasificado Track A para tratamiento académico en máster y Track B para intervención en FP",
+            "en": "Validated — classified as Track A for academic treatment at master's level and Track B for VET intervention",
+            "va": "Validat — classificat Track A per a tractament acadèmic en màster i Track B per a intervenció en FP"
+          },
+          "rationale": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "nextStep": null
+        },
+        "trackRouting": null,
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showDecision": true,
+            "showValidationStage": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": true,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-09-15",
+          "end": "2025-11-30"
+        },
+        "criteriaCount": 0,
+        "validationTypeLabel": {
+          "es": "Validación stakeholder",
+          "en": "Stakeholder validation",
+          "va": "Validació stakeholder"
+        },
+        "validationStageLabel": {
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
+        },
+        "decisionOutcomeLabel": {},
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-stakeholder-agr-asaja",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-01-25",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-stakeholder-agr-asaja.yml",
+        "core": {
+          "status": "closed",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Validación stakeholder — Reto de agricultura de precisión con IA",
+            "en": "[DEMO] Stakeholder validation — Precision agriculture with AI challenge",
+            "va": "[DEMO] Validació stakeholder — Repte d'agricultura de precisió amb IA"
+          },
+          "summary": {
+            "es": "Validación con AVA-ASAJA y UVEG del reto sectorial sobre agricultura de precisión. Clasificado Track A para tratamiento académico en el Máster.",
+            "en": "Validation with AVA-ASAJA and UVEG of the sectoral challenge on precision agriculture. Classified as Track A for academic treatment in the Master programme.",
+            "va": "Validació amb AVA-ASAJA i UVEG del repte sectorial sobre agricultura de precisió. Classificat Track A per a tractament acadèmic en el Màster."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "agr",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "stakeholder-validation",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2025-11-10",
+          "revisionDate": "2026-01-25",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "10 de noviembre de 2025",
+            "en": "November 10, 2025",
+            "va": "10 de novembre de 2025"
+          },
+          "revisionDateLabel": {
+            "es": "25 de enero de 2026",
+            "en": "January 25, 2026",
+            "va": "25 de gener de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "proposer": {
+            "name": "AVA-ASAJA",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "validators": []
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Reto formativo sobre visión artificial y drones en agricultura de precisión",
+            "en": "Training challenge on computer vision and drones in precision agriculture",
+            "va": "Repte formatiu sobre visió artificial i drons en agricultura de precisió"
+          },
+          "validationQuestion": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "need": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "method": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Entrevistas estructuradas con AVA-ASAJA",
+                "en": "Structured interviews with AVA-ASAJA",
+                "va": "Entrevistes estructurades amb AVA-ASAJA"
+              }
+            },
+            {
+              "label": {
+                "es": "Revisión técnica UVEG",
+                "en": "UVEG technical review",
+                "va": "Revisió tècnica UVEG"
+              }
+            },
+            {
+              "label": {
+                "es": "Proceso de triage ConsensUE",
+                "en": "ConsensUE triage process",
+                "va": "Procés de triatge ConsensUE"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": []
+        },
+        "evidence": null,
+        "decision": {
+          "outcome": "",
+          "tone": "neutral",
+          "label": {
+            "es": "Validado — clasificado Track A para tratamiento académico",
+            "en": "Validated — classified as Track A for academic treatment",
+            "va": "Validat — classificat Track A per a tractament acadèmic"
+          },
+          "rationale": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "nextStep": null
+        },
+        "trackRouting": null,
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showDecision": true,
+            "showValidationStage": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": true,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-10-01",
+          "end": "2026-01-25"
+        },
+        "criteriaCount": 0,
+        "validationTypeLabel": {
+          "es": "Validación stakeholder",
+          "en": "Stakeholder validation",
+          "va": "Validació stakeholder"
+        },
+        "validationStageLabel": {
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
+        },
+        "decisionOutcomeLabel": {},
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-academica-rl-edificios-hou",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2026-01-10",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-academica-rl-edificios-hou.yml",
+        "core": {
+          "status": "documented",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
+            "en": "[DEMO] Reinforcement learning applied to energy management of university buildings",
+            "va": "[DEMO] Aprenentatge per reforç aplicat a la gestió energètica d'edificis universitaris"
+          },
+          "summary": {
+            "es": "Validación académica por el Instituto de Ingeniería Energética de la UPV y el grupo de investigación SAIL de la UCLM de la pertinencia científica y formativa del uso de aprendizaje por refuerzo para la gestión energética adaptativa en edificios, confirmando su encaje como contenido de máster y justificando la creación del Living Lab como entorno de investigación-formación.",
+            "en": "Academic validation by UPV's Institute of Energy Engineering and UCLM's SAIL research group of the scientific and educational relevance of reinforcement learning for adaptive building energy management, confirming its fit as master's content and justifying the creation of the Living Lab as a research-training environment.",
+            "va": "Validació acadèmica per l'Institut d'Enginyeria Energètica de la UPV i el grup de recerca SAIL de la UCLM de la pertinència científica i formativa de l'ús d'aprenentatge per reforç per a la gestió energètica adaptativa en edificis, confirmant el seu encaix com a contingut de màster i justificant la creació del Living Lab com a entorn de recerca-formació."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "hou",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "academic-validation",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2025-11-20",
+          "revisionDate": "2026-01-10",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "20 de noviembre de 2025",
+            "en": "November 20, 2025",
+            "va": "20 de novembre de 2025"
+          },
+          "revisionDateLabel": {
+            "es": "10 de enero de 2026",
+            "en": "January 10, 2026",
+            "va": "10 de gener de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": "https://forms.cloud.microsoft/e/ERLBsJwJ7Y"
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "proposer": {
+            "name": "Instituto de Ingeniería Energética — Universitat Politècnica de València",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "validators": []
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Metodología Living Lab para el entrenamiento y validación de agentes RL de gestión energética con participación de estudiantes de FP y máster",
+            "en": "Living Lab methodology for training and validating RL energy management agents with VET and master's student participation",
+            "va": "Metodologia Living Lab per a l'entrenament i validació d'agents RL de gestió energètica amb participació d'estudiants de FP i màster"
+          },
+          "validationQuestion": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "need": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "method": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Revisión bibliométrica SAIL-UCLM — 3 años de literatura sobre RL en edificios",
+                "en": "SAIL-UCLM bibliometric review — 3 years of RL in buildings literature",
+                "va": "Revisió bibliomètrica SAIL-UCLM — 3 anys de literatura sobre RL en edificis"
+              }
+            },
+            {
+              "label": {
+                "es": "Evaluación experimental del edificio 4I — IIE-UPV",
+                "en": "Building 4I experimental evaluation — IIE-UPV",
+                "va": "Avaluació experimental de l'edifici 4I — IIE-UPV"
+              }
+            },
+            {
+              "label": {
+                "es": "Sessión de valoración formativa — Comité Técnico Búsqueda AI-STEAM",
+                "en": "Educational value assessment session — AI-STEAM Research Technical Committee",
+                "va": "Sessió de valoració formativa — Comité Tècnic Recerca AI-STEAM"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": []
+        },
+        "evidence": null,
+        "decision": {
+          "outcome": "",
+          "tone": "positive",
+          "label": {
+            "es": "Validado — apto para piloto Living Lab con apertura a publicación de resultados como caso",
+            "en": "Validated — suitable for Living Lab pilot with openness to publishing results as a case",
+            "va": "Validat — apte per a pilot Living Lab amb obertura a publicació de resultats com a cas"
+          },
+          "rationale": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "nextStep": null
+        },
+        "trackRouting": null,
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showDecision": true,
+            "showValidationStage": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": true,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-09-01",
+          "end": "2025-11-15"
+        },
+        "criteriaCount": 0,
+        "validationTypeLabel": {
+          "es": "Validación académica",
+          "en": "Academic validation",
+          "va": "Validació acadèmica"
+        },
+        "validationStageLabel": {
+          "es": "Documentada",
+          "en": "Documented",
+          "va": "Documentada"
+        },
+        "decisionOutcomeLabel": {},
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      },
+      {
+        "id": "validation-stakeholder-movilidad-electrica",
+        "type": "validation",
+        "tab": "validations",
+        "sortDate": "2025-10-20",
+        "visible": true,
+        "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
+        "core": {
+          "status": "closed",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Validación stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
+            "en": "[DEMO] Stakeholder validation — Electric mobility and charging infrastructure challenge",
+            "va": "[DEMO] Validació stakeholder — Repte de mobilitat elèctrica i infraestructura de càrrega"
+          },
+          "summary": {
+            "es": "Validación con ASEVA y concesionarios valencianos del reto sectorial sobre vehículo eléctrico y formación dual. Clasificado Track B para diseño de módulo FP dual en 2026-27.",
+            "en": "Validation with ASEVA and Valencian dealers of the sectoral challenge on electric vehicles and dual training. Classified as Track B for dual VET module design in 2026-27.",
+            "va": "Validació amb ASEVA i concessionaris valencians del repte sectorial sobre vehicle elèctric i formació dual. Classificat Track B per al disseny de mòdul FP dual en 2026-27."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "mob",
+          "sectors": [],
+          "stakeholderCategory": "",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "stakeholder-validation",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2025-07-01",
+          "revisionDate": "2025-10-20",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "1 de julio de 2025",
+            "en": "July 1, 2025",
+            "va": "1 de juliol de 2025"
+          },
+          "revisionDateLabel": {
+            "es": "20 de octubre de 2025",
+            "en": "October 20, 2025",
+            "va": "20 d'octubre de 2025"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "validations"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "proposer": {
+            "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "validators": []
+        },
+        "validation": {
+          "objectType": "challenge",
+          "objectTitle": {
+            "es": "Reto formativo sobre instalación y mantenimiento de infraestructura de carga para vehículo eléctrico",
+            "en": "Training challenge on the installation and maintenance of electric vehicle charging infrastructure",
+            "va": "Repte formatiu sobre instal·lació i manteniment d'infraestructura de càrrega per a vehicle elèctric"
+          },
+          "validationQuestion": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "need": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "method": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "validationEnvironment": [
+            {
+              "label": {
+                "es": "Panel de expertos ASEVA con concesionarios",
+                "en": "ASEVA expert panel with dealers",
+                "va": "Panell d'experts ASEVA amb concessionaris"
+              }
+            },
+            {
+              "label": {
+                "es": "Análisis de brechas de competencias",
+                "en": "Competency gap analysis",
+                "va": "Anàlisi de bretxes de competències"
+              }
+            },
+            {
+              "label": {
+                "es": "Proceso de triage ConsensUE",
+                "en": "ConsensUE triage process",
+                "va": "Procés de triatge ConsensUE"
+              }
+            }
+          ]
+        },
+        "criteria": {
+          "items": []
+        },
+        "evidence": null,
+        "decision": {
+          "outcome": "",
+          "tone": "neutral",
+          "label": {
+            "es": "Validado — clasificado Track B para diseño de módulo FP dual",
+            "en": "Validated — classified as Track B for dual VET module design",
+            "va": "Validat — classificat Track B per al disseny de mòdul FP dual"
+          },
+          "rationale": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "nextStep": null
+        },
+        "trackRouting": null,
+        "relations": {
+          "validatedChallengeId": "",
+          "resultingPilotIds": [],
+          "resultingCaseIds": [],
+          "resultingResourceIds": [],
+          "relatedMentorshipIds": [],
+          "nextPossibleItems": []
+        },
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "Ver validación",
+              "en": "View validation",
+              "va": "Veure validació"
+            },
+            "url": "",
+            "system": ""
+          },
+          "secondaryAction": null
+        },
+        "presentation": {
+          "card": {
+            "variant": "validation",
+            "showDecision": true,
+            "showValidationStage": true,
+            "showWindow": true,
+            "showValidationEnvironment": true,
+            "showDownloadsIndicator": false,
+            "mainBlockLabel": {
+              "es": "Qué se valida",
+              "en": "What is validated",
+              "va": "Què es valida"
+            }
+          },
+          "detail": {
+            "sections": {
+              "object": true,
+              "need": true,
+              "context": true,
+              "method": true,
+              "criteria": true,
+              "evidence": true,
+              "decision": true,
+              "downloads": true,
+              "resources": true,
+              "people": true,
+              "access": true,
+              "trackRouting": true,
+              "relations": false
+            }
+          }
+        },
+        "validationWindow": {
+          "start": "2025-06-01",
+          "end": "2025-10-20"
+        },
+        "criteriaCount": 0,
+        "validationTypeLabel": {
+          "es": "Validación stakeholder",
+          "en": "Stakeholder validation",
+          "va": "Validació stakeholder"
+        },
+        "validationStageLabel": {
+          "es": "Cerrada",
+          "en": "Closed",
+          "va": "Tancada"
+        },
+        "decisionOutcomeLabel": {},
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "template": {
+          "requiredBlocks": [
+            "validation",
+            "criteria",
+            "evidence",
+            "decision"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "access",
+            "trackRouting",
+            "relations",
+            "people",
+            "externalFlow"
+          ],
+          "cardSignal": "validation"
+        }
+      }
+    ],
+    "pilots": [
+      {
+        "id": "pilot-ia-diagnostico-cancer-piel-nts",
+        "type": "pilot",
+        "tab": "pilots",
+        "sortDate": "2026-05-20",
+        "visible": true,
+        "sourcePath": "content/challenges/items/pilots/pilot-ia-diagnostico-cancer-piel-nts.yml",
+        "core": {
+          "status": "in-progress",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
+            "en": "[DEMO] AI for dermatological diagnosis support in Health VET settings",
+            "va": "[DEMO] IA per al suport al diagnòstic dermatològic en entorns de FP Sanitari"
+          },
+          "summary": {
+            "es": "Validación de un módulo de IA para la clasificación de lesiones cutáneas sospechosas (malignas/benignas) a partir de imágenes dermoscópicas, integrado en el itinerario formativo del ciclo de Imagen para el Diagnóstico de FP Sanitario, con supervisión clínica del Hospital La Fe y evaluación de competencias digitales en salud.",
+            "en": "Validation of an AI module for classifying suspicious skin lesions (malignant/benign) from dermoscopic images, integrated into the Diagnostic Imaging Health VET cycle curriculum, with clinical supervision from Hospital La Fe and digital health competency assessment.",
+            "va": "Validació d'un mòdul d'IA per a la classificació de lesions cutànies sospitoses (malignes/benignes) a partir d'imatges dermoscòpiques, integrat en l'itinerari formatiu del cicle d'Imatge per al Diagnòstic de FP Sanitari, amb supervisió clínica de l'Hospital La Fe i avaluació de competències digitals en salut."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "in-progress",
+          "executionWindow": {
+            "start": "2026-02-01",
+            "end": "2026-07-31"
+          },
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "nts",
+          "sectors": [],
+          "levels": [],
+          "pilotType": "vet-industry",
+          "validationType": "",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-02-01",
+          "revisionDate": "2026-05-20",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "1 de febrero de 2026",
+            "en": "February 1, 2026",
+            "va": "1 de febrer de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "20 de mayo de 2026",
+            "en": "May 20, 2026",
+            "va": "20 de maig de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": {
+          "file": "pilot-ia-diagnostico-cancer-piel-nts.pdf",
+          "publicPath": "/assets/downloads/marketplace/pilots/pilot-ia-diagnostico-cancer-piel-nts.pdf"
+        },
+        "adhesionForm": {
+          "url": "https://forms.cloud.microsoft/e/sC11Pyhaa7"
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "pilots"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "Hospital Universitari i Politècnic La Fe — Servicio de Dermatología",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [],
+          "partners": []
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Si los alumnos de 2.º curso del ciclo de Imagen para el Diagnóstico trabajan con un módulo de clasificación de lesiones cutáneas mediante IA durante 8 sesiones supervisadas, alcanzarán competencia básica en interpretación de modelos de IA médica y serán capaces de identificar sus limitaciones éticas y clínicas.",
+            "en": "If 2nd-year Diagnostic Imaging cycle students work with an AI skin lesion classification module over 8 supervised sessions, they will achieve basic competency in interpreting medical AI models and will be able to identify their ethical and clinical limitations.",
+            "va": "Si els alumnes de 2n curs del cicle d'Imatge per al Diagnòstic treballen amb un mòdul de classificació de lesions cutànies mitjançant IA durant 8 sessions supervisades, assoliran competència bàsica en interpretació de models d'IA mèdica i seran capaços d'identificar-ne les limitacions ètiques i clíniques."
+          },
+          "objective": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "targetParticipants": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "methodology": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "El 80% de los alumnos del grupo experimental supera el umbral de competencia básica en el test post-intervención",
+                "en": "80% of experimental group students exceed the basic competency threshold in the post-intervention test",
+                "va": "El 80% dels alumnes del grup experimental supera el llindar de competència bàsica en el test post-intervenció"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "El profesorado participante obtiene una confianza media de 7,5/10 o superior para impartir el módulo de forma autónoma",
+                "en": "Participating teachers achieve an average confidence of 7.5/10 or higher to deliver the module autonomously",
+                "va": "El professorat participant obté una confiança mitjana de 7,5/10 o superior per impartir el mòdul de forma autònoma"
+              }
+            },
+            {
+              "id": "sc3",
+              "label": {
+                "es": "El módulo se puede instalar y ejecutar sin intervención técnica del Hospital La Fe en menos de 2 horas",
+                "en": "The module can be installed and run without Hospital La Fe technical intervention in under 2 hours",
+                "va": "El mòdul es pot instal·lar i executar sense intervenció tècnica de l'Hospital La Fe en menys de 2 hores"
+              }
+            },
+            {
+              "id": "sc4",
+              "label": {
+                "es": "El módulo supera la revisión ética del Comité de Bioética del Hospital La Fe para uso con fines exclusivamente educativos",
+                "en": "The module passes the bioethics review of Hospital La Fe's Bioethics Committee for exclusively educational use",
+                "va": "El mòdul supera la revisió ètica del Comité de Bioètica de l'Hospital La Fe per a ús exclusivament educatiu"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 6,
+              "pilotLabel": {
+                "es": "TRL 6 — Demostración en entorno relevante (aula de FP Sanitario)",
+                "en": "TRL 6 — Demonstration in relevant environment (Health VET classroom)",
+                "va": "TRL 6 — Demostració en entorn rellevant (aula de FP Sanitari)"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": false,
+              "level": "classroom-tested",
+              "pilotLabel": {
+                "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
+                "en": "Classroom-tested — previously tested with La Fe residents, first VET validation",
+                "va": "Provat en aula — testejat prèviament amb residents del La Fe, primera validació en FP"
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "id": "computer-lab",
+              "label": {
+                "es": "Aula informática con ordenadores básicos (sin GPU dedicada) — mínimo Intel Core i5, 8 GB RAM",
+                "en": "Computer lab with standard workstations (no dedicated GPU) — minimum Intel Core i5, 8 GB RAM",
+                "va": "Aula d'informàtica amb ordinadors bàsics (sense GPU dedicada) — mínim Intel Core i5, 8 GB RAM"
+              }
+            },
+            {
+              "id": "gradio-interface",
+              "label": {
+                "es": "Interfaz web Gradio desplegada localmente — accesible desde navegador sin instalación por parte del alumno",
+                "en": "Locally deployed Gradio web interface — accessible from browser without student-side installation",
+                "va": "Interfície web Gradio desplegada localment — accessible des de navegador sense instal·lació per part de l'alumne"
+              }
+            },
+            {
+              "id": "video-conferencing",
+              "label": {
+                "es": "Sistema de videoconferencia para supervisión clínica remota del Hospital La Fe (sesiones 4 y 7)",
+                "en": "Video conferencing system for remote clinical supervision from Hospital La Fe (sessions 4 and 7)",
+                "va": "Sistema de videoconferència per a supervisió clínica remota de l'Hospital La Fe (sessions 4 i 7)"
+              }
+            }
+          ],
+          "tools": [],
+          "dataManagement": null
+        },
+        "evidence": null,
+        "results": {
+          "headline": {
+            "es": "El grupo experimental supera al control en +31 puntos percentil; 89% de los alumnos supera el umbral de competencia básica en IA dermoscópica. Confianza docente media 8,1/10. Instalación autónoma en menos de 50 minutos.",
+            "en": "Experimental group outperforms control by +31 percentile points; 89% of students exceed the basic dermoscopic AI competency threshold. Average teacher confidence 8.1/10. Autonomous installation in under 50 minutes.",
+            "va": "El grup experimental supera el control en +31 punts percentil; el 89% dels alumnes supera el llindar de competència bàsica en IA dermoscòpica. Confiança docent mitjana 8,1/10. Instal·lació autònoma en menys de 50 minuts."
+          },
+          "outputs": [],
+          "decision": null
+        },
+        "transferability": null,
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": true,
+              "resources": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "pilotPlan",
+            "implementation",
+            "evidence",
+            "results",
+            "transferability"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
+            "people",
+            "access",
+            "externalFlow",
+            "relations"
+          ],
+          "cardSignal": "pilotPlan"
+        }
+      },
+      {
+        "id": "pilot-living-lab-eficiencia-energetica-hou",
+        "type": "pilot",
+        "tab": "pilots",
+        "sortDate": "2026-05-20",
+        "visible": true,
+        "sourcePath": "content/challenges/items/pilots/pilot-living-lab-eficiencia-energetica-hou.yml",
+        "core": {
+          "status": "in-progress",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Living Lab — IA para la gestión energética adaptativa en edificio universitario",
+            "en": "[DEMO] Living Lab — AI for adaptive energy management in a university building",
+            "va": "[DEMO] Living Lab — IA per a la gestió energètica adaptativa en edifici universitari"
+          },
+          "summary": {
+            "es": "La Universitat Politècnica de València convierte el edificio 4I de la ETSII en un Living Lab donde alumnos de máster y FP de Instalaciones Eléctricas trabajan junto a ingenieros de Siemens Smart Infrastructure para entrenar y validar un sistema de gestión energética adaptativa basado en aprendizaje por refuerzo, con el objetivo de reducir el consumo eléctrico del edificio en un 20% sin pérdida de confort.",
+            "en": "The Universitat Politècnica de València turns building 4I of ETSII into a Living Lab where master's and Electrical Installations VET students work alongside Siemens Smart Infrastructure engineers to train and validate an adaptive energy management system based on reinforcement learning, aiming to reduce the building's electricity consumption by 20% without loss of comfort.",
+            "va": "La Universitat Politècnica de València converteix l'edifici 4I de l'ETSII en un Living Lab on alumnes de màster i FP d'Instal·lacions Elèctriques treballen juntament amb enginyers de Siemens Smart Infrastructure per entrenar i validar un sistema de gestió energètica adaptativa basat en aprenentatge per reforç, amb l'objectiu de reduir el consum elèctric de l'edifici en un 20% sense pèrdua de confort."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "in-progress",
+          "executionWindow": {
+            "start": "2026-01-15",
+            "end": "2026-12-15"
+          },
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "hou",
+          "sectors": [],
+          "levels": [],
+          "pilotType": "living-lab",
+          "validationType": "",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-01-15",
+          "revisionDate": "2026-05-20",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "15 de enero de 2026",
+            "en": "January 15, 2026",
+            "va": "15 de gener de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "20 de mayo de 2026",
+            "en": "May 20, 2026",
+            "va": "20 de maig de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "pilots"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "Universitat Politècnica de València — Instituto de Ingeniería Energética (IIE)",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [],
+          "partners": []
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Un agente de aprendizaje por refuerzo entrenado con datos reales de ocupación, temperatura y tarifas eléctricas del edificio 4I puede reducir el consumo eléctrico total del edificio en al menos un 20% en condiciones de uso habitual, sin que el índice de confort térmico percibido por los ocupantes caiga por debajo de 7/10.",
+            "en": "A reinforcement learning agent trained on real occupancy, temperature and electricity tariff data from building 4I can reduce total building electricity consumption by at least 20% under normal use conditions, without the perceived thermal comfort index falling below 7/10.",
+            "va": "Un agent d'aprenentatge per reforç entrenat amb dades reals d'ocupació, temperatura i tarifes elèctriques de l'edifici 4I pot reduir el consum elèctric total de l'edifici en almenys un 20% en condicions d'ús habitual, sense que l'índex de confort tèrmic percebut pels ocupants caiga per davall de 7/10."
+          },
+          "objective": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "targetParticipants": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "methodology": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "El agente desplegado en el edificio real reduce el consumo eléctrico en al menos un 20% respecto a la línea base",
+                "en": "The agent deployed in the real building reduces electricity consumption by at least 20% against the baseline",
+                "va": "L'agent desplegat en l'edifici real redueix el consum elèctric en almenys un 20% respecte a la línia base"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "El índice de confort térmico percibido por los ocupantes no baja de 7/10 durante los 3 meses de despliegue",
+                "en": "The perceived thermal comfort index does not fall below 7/10 during the 3 months of deployment",
+                "va": "L'índex de confort tèrmic percebut pels ocupants no baixa de 7/10 durant els 3 mesos de desplegament"
+              }
+            },
+            {
+              "id": "sc3",
+              "label": {
+                "es": "Los datos de entrenamiento y el código del agente se publican en abierto antes del cierre del piloto",
+                "en": "Training data and agent code are published openly before the pilot closes",
+                "va": "Les dades d'entrenament i el codi de l'agent es publiquen en obert abans del tancament del pilot"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 6,
+              "pilotLabel": {
+                "es": "TRL 6 — Demostración en entorno relevante real (edificio universitario)",
+                "en": "TRL 6 — Demonstration in real relevant environment (university building)",
+                "va": "TRL 6 — Demostració en entorn rellevant real (edifici universitari)"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": true,
+              "level": "designed",
+              "pilotLabel": {
+                "es": "Diseñado — módulo conjunto FP-máster en fase de primera implementación",
+                "en": "Designed — joint VET-master module in first implementation phase",
+                "va": "Dissenyat — mòdul conjunt FP-màster en fase de primera implementació"
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "id": "bms-desigo",
+              "label": {
+                "es": "Siemens Desigo CC — plataforma de Building Management System",
+                "en": "Siemens Desigo CC — Building Management System platform",
+                "va": "Siemens Desigo CC — plataforma de Building Management System"
+              }
+            },
+            {
+              "id": "iot-sensors",
+              "label": {
+                "es": "Red de 180 sensores IoT de CO₂, temperatura, humedad y ocupación",
+                "en": "Network of 180 IoT sensors for CO₂, temperature, humidity and occupancy",
+                "va": "Xarxa de 180 sensors IoT de CO₂, temperatura, humitat i ocupació"
+              }
+            },
+            {
+              "id": "energyplus",
+              "label": {
+                "es": "Simulador EnergyPlus — entorno de entrenamiento y validación del agente RL",
+                "en": "EnergyPlus simulator — RL agent training and validation environment",
+                "va": "Simulador EnergyPlus — entorn d'entrenament i validació de l'agent RL"
+              }
+            }
+          ],
+          "tools": [],
+          "dataManagement": null
+        },
+        "evidence": null,
+        "results": {
+          "headline": {
+            "es": "22,4% de reducción de consumo eléctrico en los primeros 3 meses; confort térmico medio de 8,1/10. 7 equipos publican agentes RL funcionales en abierto.",
+            "en": "22.4% electricity consumption reduction in the first 3 months; average thermal comfort of 8.1/10. 7 teams publish functional RL agents as open source.",
+            "va": "22,4% de reducció de consum elèctric en els primers 3 mesos; confort tèrmic mitjà de 8,1/10. 7 equips publiquen agents RL funcionals en obert."
+          },
+          "outputs": [],
+          "decision": null
+        },
+        "transferability": null,
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": true,
+              "resources": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "pilotPlan",
+            "implementation",
+            "evidence",
+            "results",
+            "transferability"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
+            "people",
+            "access",
+            "externalFlow",
+            "relations"
+          ],
+          "cardSignal": "pilotPlan"
+        }
+      },
+      {
+        "id": "pilot-fp-energia-costera",
+        "type": "pilot",
+        "tab": "pilots",
+        "sortDate": "2026-05-02",
+        "visible": true,
+        "sourcePath": "content/challenges/items/pilots/pilot-fp-energia-costera.yml",
+        "core": {
+          "status": "closed",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Piloto FP — IA para eficiencia energética en centros educativos",
+            "en": "[DEMO] VET Pilot — AI for energy efficiency in educational centres",
+            "va": "[DEMO] Pilot FP — IA per a l'eficiència energètica en centres educatius"
+          },
+          "summary": {
+            "es": "Módulo OER de eficiencia energética con IA pilotado con alumnado de FP en IES La Costera.",
+            "en": "AI-based energy efficiency OER module piloted with VET students at IES La Costera.",
+            "va": "Mòdul OER d'eficiència energètica amb IA pilotat amb alumnat de FP a l'IES La Costera."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "published",
+          "executionWindow": {
+            "start": "2025-11-01",
+            "end": "2026-01-15"
+          },
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "ene",
+          "sectors": [],
+          "levels": [],
+          "pilotType": "curriculum-pilot",
+          "validationType": "",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-01-15",
+          "revisionDate": "2026-05-02",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "15 de enero de 2026",
+            "en": "January 15, 2026",
+            "va": "15 de gener de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "2 de mayo de 2026",
+            "en": "May 2, 2026",
+            "va": "2 de maig de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "pilots"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "CEICE",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [],
+          "partners": []
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Oferta de módulo OER validado para replicación en centros de FP de Energía y Agua.",
+            "en": "Validated OER module offer for replication in Energy and Water VET centres.",
+            "va": "Oferta de mòdul OER validat per a replicació en centres de FP d'Energia i Aigua."
+          },
+          "objective": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "targetParticipants": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "methodology": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "El módulo OER es completado por al menos el 80% del alumnado participante",
+                "en": "The OER module is completed by at least 80% of participating students",
+                "va": "El mòdul OER és completat per almenys el 80% de l'alumnat participant"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "El módulo se publica en Aules bajo licencia CC BY con dataset anonimizado disponible",
+                "en": "The module is published on Aules under CC BY with anonymised dataset available",
+                "va": "El mòdul es publica a Aules sota llicència CC BY amb dataset anonimitzat disponible"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 7,
+              "pilotLabel": {
+                "es": "Demostración en entorno operacional",
+                "en": "Demonstration in operational environment",
+                "va": "Demostració en entorn operacional"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": true,
+              "level": "validated-in-real-context",
+              "pilotLabel": {
+                "es": "Validado en contexto real",
+                "en": "Validated in real context",
+                "va": "Validat en context real"
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "id": "aules",
+              "label": {
+                "es": "Plataforma Aules",
+                "en": "Aules platform",
+                "va": "Plataforma Aules"
+              }
+            },
+            {
+              "id": "iot-sensors",
+              "label": {
+                "es": "Sensores IoT aula",
+                "en": "Classroom IoT sensors",
+                "va": "Sensors IoT d'aula"
+              }
+            },
+            {
+              "id": "energy-dataset",
+              "label": {
+                "es": "Dataset energético anonimizado",
+                "en": "Anonymised energy dataset",
+                "va": "Dataset energètic anonimitzat"
+              }
+            }
+          ],
+          "tools": [],
+          "dataManagement": null
+        },
+        "evidence": null,
+        "results": {
+          "headline": {
+            "es": "Módulo OER CC-BY publicado en Aules. 24 alumnos participantes. Dataset anonimizado disponible para reutilización.",
+            "en": "CC-BY OER module published on Aules. 24 participating students. Anonymised dataset available for reuse.",
+            "va": "Mòdul OER CC-BY publicat a Aules. 24 alumnes participants. Dataset anonimitzat disponible per a reutilització."
+          },
+          "outputs": [],
+          "decision": null
+        },
+        "transferability": null,
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": true,
+              "resources": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "pilotPlan",
+            "implementation",
+            "evidence",
+            "results",
+            "transferability"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
+            "people",
+            "access",
+            "externalFlow",
+            "relations"
+          ],
+          "cardSignal": "pilotPlan"
+        }
+      },
+      {
+        "id": "pilot-drones-inspeccion-infraestructura-mob",
+        "type": "pilot",
+        "tab": "pilots",
+        "sortDate": "2026-04-15",
+        "visible": true,
+        "sourcePath": "content/challenges/items/pilots/pilot-drones-inspeccion-infraestructura-mob.yml",
+        "core": {
+          "status": "closed",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Piloto — Drones con IA para la inspección automatizada de infraestructuras viarias",
+            "en": "[DEMO] Pilot — AI drones for automated road infrastructure inspection",
+            "va": "[DEMO] Pilot — Drons amb IA per a la inspecció automatitzada d'infraestructures viàries"
+          },
+          "summary": {
+            "es": "Validación de un sistema de inspección autónoma de carreteras y puentes mediante drones equipados con visión artificial para detectar grietas, baches y deterioro superficial, desarrollado junto al IVACE y tres centros de FP de Transporte, que reduce el tiempo de inspección manual de un tramo de 10 km de 8 horas a 45 minutos.",
+            "en": "Validation of an autonomous road and bridge inspection system using drones equipped with computer vision to detect cracks, potholes and surface deterioration, developed with IVACE and three Transport VET centres, reducing manual inspection time for a 10-km stretch from 8 hours to 45 minutes.",
+            "va": "Validació d'un sistema d'inspecció autònom de carreteres i ponts mitjançant drons equipats amb visió artificial per detectar esquerdes, clots i deteriorament superficial, desenvolupat juntament amb l'IVACE i tres centres de FP de Transport, que redueix el temps d'inspecció manual d'un tram de 10 km de 8 hores a 45 minuts."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "published",
+          "executionWindow": {
+            "start": "2025-10-01",
+            "end": "2026-03-31"
+          },
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "mob",
+          "sectors": [],
+          "levels": [],
+          "pilotType": "vet-industry",
+          "validationType": "",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2025-10-01",
+          "revisionDate": "2026-04-15",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "1 de octubre de 2025",
+            "en": "October 1, 2025",
+            "va": "1 d'octubre de 2025"
+          },
+          "revisionDateLabel": {
+            "es": "15 de abril de 2026",
+            "en": "April 15, 2026",
+            "va": "15 d'abril de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "pilots"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "IVACE — Institut Valencià de Competitivitat Empresarial",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [],
+          "partners": []
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Un sistema de drones con IA entrenado para detectar deterioros superficiales en carreteras puede alcanzar una precisión de detección superior al 92% respecto al inventario manual de referencia, reducir el tiempo de inspección en más de un 85% y ser operado por alumnos de FP de Transporte tras una formación de 2 días.",
+            "en": "A drone system with AI trained to detect surface road deterioration can achieve detection accuracy exceeding 92% against the manual reference inventory, reduce inspection time by more than 85% and be operated by Transport VET students after 2 days of training.",
+            "va": "Un sistema de drons amb IA entrenat per detectar deterioraments superficials en carreteres pot assolir una precisió de detecció superior al 92% respecte a l'inventari manual de referència, reduir el temps d'inspecció en més d'un 85% i ser operat per alumnes de FP de Transport després d'una formació de 2 dies."
+          },
+          "objective": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "targetParticipants": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "methodology": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "Precisión de detección de deterioros ≥ 92% respecto al inventario manual de referencia",
+                "en": "Deterioration detection accuracy ≥ 92% against the manual reference inventory",
+                "va": "Precisió de detecció de deterioraments ≥ 92% respecte a l'inventari manual de referència"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "Reducción del tiempo de inspección del tramo de 10 km en más de un 85% respecto a la inspección manual",
+                "en": "Reduction of inspection time for the 10-km stretch by more than 85% relative to manual inspection",
+                "va": "Reducció del temps d'inspecció del tram de 10 km en més d'un 85% respecte a la inspecció manual"
+              }
+            },
+            {
+              "id": "sc3",
+              "label": {
+                "es": "Los alumnos de FP son capaces de operar el sistema y interpretar los informes tras la formación de 2 días",
+                "en": "VET students are able to operate the system and interpret reports after 2 days of training",
+                "va": "Els alumnes de FP són capaços d'operar el sistema i interpretar els informes després de la formació de 2 dies"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": "6",
+              "pilotLabel": {
+                "es": "TRL 7 — Demostración del prototipo en entorno operacional real (carretera CV-35)",
+                "en": "TRL 7 — Prototype demonstration in real operational environment (CV-35 road)",
+                "va": "TRL 7 — Demostració del prototip en entorn operacional real (carretera CV-35)"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": false,
+              "level": "validated-in-real-context",
+              "pilotLabel": {
+                "es": "Validado en contexto real — alumnos de FP en entorno de carretera autonómica",
+                "en": "Validated in real context — VET students in regional road environment",
+                "va": "Validat en context real — alumnes de FP en entorn de carretera autonòmica"
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "id": null,
+              "label": {
+                "es": "Drones DJI Matrice 300 RTK con cámara Zenmuse H20T",
+                "en": "DJI Matrice 300 RTK drones with Zenmuse H20T camera",
+                "va": "Drones DJI Matrice 300 RTK amb càmera Zenmuse H20T"
+              }
+            },
+            {
+              "id": null,
+              "label": {
+                "es": "Portátil con GPU dedicada para inferencia en campo",
+                "en": "Laptop with dedicated GPU for field inference",
+                "va": "Portàtil amb GPU dedicada per a inferència en camp"
+              }
+            },
+            {
+              "id": null,
+              "label": {
+                "es": "Plataforma GIS para geolocalización y visualización de deterioros",
+                "en": "GIS platform for geolocation and deterioration visualisation",
+                "va": "Plataforma GIS per a geolocalització i visualització de deterioraments"
+              }
+            }
+          ],
+          "tools": [],
+          "dataManagement": null
+        },
+        "evidence": null,
+        "results": {
+          "headline": {
+            "es": "94,2% de precisión de detección; el tiempo de inspección de 10 km se reduce de 8 horas a 43 minutos (–91%). El 89% de los alumnos opera el sistema autónomamente tras la formación de 2 días.",
+            "en": "94.2% detection accuracy; 10-km inspection time reduced from 8 hours to 43 minutes (–91%). 89% of students operate the system autonomously after 2-day training.",
+            "va": "94,2% de precisió de detecció; el temps d'inspecció de 10 km es redueix de 8 hores a 43 minuts (–91%). El 89% dels alumnes opera el sistema autònomament després de la formació de 2 dies."
+          },
+          "outputs": [],
+          "decision": null
+        },
+        "transferability": null,
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": true,
+              "resources": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "pilotPlan",
+            "implementation",
+            "evidence",
+            "results",
+            "transferability"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
+            "people",
+            "access",
+            "externalFlow",
+            "relations"
+          ],
+          "cardSignal": "pilotPlan"
+        }
+      },
+      {
+        "id": "pilot-teacher-sesgos-ia-uveg",
+        "type": "pilot",
+        "tab": "pilots",
+        "sortDate": "2026-03-01",
+        "visible": true,
+        "sourcePath": "content/challenges/items/pilots/pilot-teacher-sesgos-ia-uveg.yml",
+        "core": {
+          "status": "closed",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Formación Docente — Análisis de sesgos en IA para profesorado de Máster",
+            "en": "[DEMO] Teacher Training — AI bias analysis for Master's programme faculty",
+            "va": "[DEMO] Formació Docent — Anàlisi de biaixos en IA per a professorat de Màster"
+          },
+          "summary": {
+            "es": "Taller intensivo para profesorado universitario sobre detección y mitigación de sesgos algorítmicos en modelos de IA usados en contextos educativos.",
+            "en": "Intensive workshop for university faculty on detection and mitigation of algorithmic bias in AI models used in educational contexts.",
+            "va": "Taller intensiu per a professorat universitari sobre detecció i mitigació de biaixos algorítmics en models d'IA usats en contextos educatius."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "published",
+          "executionWindow": {
+            "start": "2025-11-01",
+            "end": "2025-12-15"
+          },
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "nts",
+          "sectors": [],
+          "levels": [],
+          "pilotType": "teacher-training",
+          "validationType": "",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2025-12-01",
+          "revisionDate": "2026-03-01",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "1 de diciembre de 2025",
+            "en": "December 1, 2025",
+            "va": "1 de desembre de 2025"
+          },
+          "revisionDateLabel": {
+            "es": "1 de marzo de 2026",
+            "en": "March 1, 2026",
+            "va": "1 de març de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "pilots"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "UVEG — Facultat d'Informàtica",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [],
+          "partners": []
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Oferta de taller replicable sobre auditoría de sesgos algorítmicos para programas de Máster.",
+            "en": "Replicable workshop offer on algorithmic bias auditing for Master's programmes.",
+            "va": "Oferta de taller replicable sobre auditoria de biaixos algorítmics per a programes de Màster."
+          },
+          "objective": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "targetParticipants": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "methodology": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "Al menos el 80% del profesorado integra contenidos de sesgos en sus asignaturas para 2026-27",
+                "en": "At least 80% of faculty integrate bias content into their courses for 2026-27",
+                "va": "Almenys el 80% del professorat integra continguts de biaixos en les seues assignatures per a 2026-27"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "Plantilla CC-BY-SA publicada en repositorio AI-STEAM y reutilizable",
+                "en": "CC-BY-SA template published in AI-STEAM repository and reusable",
+                "va": "Plantilla CC-BY-SA publicada en repositori AI-STEAM i reutilitzable"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": false,
+              "level": null,
+              "pilotLabel": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            },
+            "educationalReadiness": {
+              "enabled": true,
+              "level": "validated-in-real-context",
+              "pilotLabel": {
+                "es": "Validado en contexto real",
+                "en": "Validated in real context",
+                "va": "Validat en context real"
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "id": "classroom",
+              "label": {
+                "es": "Aula universitaria equipada",
+                "en": "Equipped university classroom",
+                "va": "Aula universitària equipada"
+              }
+            },
+            {
+              "id": "audit-datasets",
+              "label": {
+                "es": "Datasets reales de auditoría",
+                "en": "Real audit datasets",
+                "va": "Datasets reals d'auditoria"
+              }
+            },
+            {
+              "id": "ai-steam-repo",
+              "label": {
+                "es": "Repositorio AI-STEAM",
+                "en": "AI-STEAM repository",
+                "va": "Repositori AI-STEAM"
+              }
+            }
+          ],
+          "tools": [],
+          "dataManagement": null
+        },
+        "evidence": null,
+        "results": {
+          "headline": {
+            "es": "14 docentes formados. 6 asignaturas de Máster incorporan unidad de sesgos en IA en 2026-27. Plantilla CC-BY-SA publicada.",
+            "en": "14 teachers trained. 6 Master's courses incorporate AI bias unit in 2026-27. CC-BY-SA template published.",
+            "va": "14 docents formats. 6 assignatures de Màster incorporen unitat de biaixos en IA en 2026-27. Plantilla CC-BY-SA publicada."
+          },
+          "outputs": [],
+          "decision": null
+        },
+        "transferability": null,
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se entrena",
+              "en": "What is being trained",
+              "va": "Què s'entrena"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": true,
+              "resources": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "pilotPlan",
+            "implementation",
+            "evidence",
+            "results",
+            "transferability"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
+            "people",
+            "access",
+            "externalFlow",
+            "relations"
+          ],
+          "cardSignal": "pilotPlan"
+        }
+      },
+      {
+        "id": "pilot-fp-cobots-mecatronica",
+        "type": "pilot",
+        "tab": "pilots",
+        "sortDate": "2026-02-10",
+        "visible": true,
+        "sourcePath": "content/challenges/items/pilots/pilot-fp-cobots-mecatronica.yml",
+        "core": {
+          "status": "closed",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Piloto FP — Cobots y robótica colaborativa en ciclos de mecatrónica",
+            "en": "[DEMO] VET Pilot — Cobots and collaborative robotics in mechatronics cycles",
+            "va": "[DEMO] Pilot FP — Cobots i robòtica col·laborativa en cicles de mecatrònica"
+          },
+          "summary": {
+            "es": "Integración de cobots industriales en la práctica de taller de FP de Mecatrónica en colaboración con Ford España y tres centros educativos.",
+            "en": "Integration of industrial cobots into VET Mechatronics workshop practice in collaboration with Ford España and three educational centres.",
+            "va": "Integració de cobots industrials en la pràctica de taller de FP de Mecatrònica en col·laboració amb Ford España i tres centres educatius."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "published",
+          "executionWindow": {
+            "start": "2025-09-01",
+            "end": "2026-01-31"
+          },
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "mfg",
+          "sectors": [],
+          "levels": [],
+          "pilotType": "vet-industry",
+          "validationType": "",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2025-09-01",
+          "revisionDate": "2026-02-10",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "1 de septiembre de 2025",
+            "en": "September 1, 2025",
+            "va": "1 de setembre de 2025"
+          },
+          "revisionDateLabel": {
+            "es": "10 de febrero de 2026",
+            "en": "February 10, 2026",
+            "va": "10 de febrer de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "pilots"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "Ford España — Centro Tecnológico de Valencia",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [],
+          "partners": []
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Oferta de rotaciones en planta industrial con certificación en operación de cobots.",
+            "en": "Offer of industrial plant rotations with cobot operation certification.",
+            "va": "Oferta de rotacions en planta industrial amb certificació en operació de cobots."
+          },
+          "objective": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "targetParticipants": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "methodology": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "Al menos el 80% de los participantes obtiene certificación en operación de cobots",
+                "en": "At least 80% of participants obtain cobot operation certification",
+                "va": "Almenys el 80% dels participants obtenen certificació en operació de cobots"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "Módulo dual documentado y replicable en al menos 4 centros adicionales",
+                "en": "Dual module documented and replicable in at least 4 additional centres",
+                "va": "Mòdul dual documentat i replicable en almenys 4 centres addicionals"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 7,
+              "pilotLabel": {
+                "es": "Demostración en entorno operacional",
+                "en": "Demonstration in operational environment",
+                "va": "Demostració en entorn operacional"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": false,
+              "level": null,
+              "pilotLabel": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "id": "ford-plant",
+              "label": {
+                "es": "Planta Ford Valencia",
+                "en": "Ford Valencia plant",
+                "va": "Planta Ford València"
+              }
+            },
+            {
+              "id": "cobots-ur10",
+              "label": {
+                "es": "Cobots industriales (UR10)",
+                "en": "Industrial cobots (UR10)",
+                "va": "Cobots industrials (UR10)"
+              }
+            },
+            {
+              "id": "fp-workshop",
+              "label": {
+                "es": "Taller FP Mecatrónica",
+                "en": "VET mechatronics workshop",
+                "va": "Taller FP Mecatrònica"
+              }
+            }
+          ],
+          "tools": [],
+          "dataManagement": null
+        },
+        "evidence": null,
+        "results": {
+          "headline": {
+            "es": "32 estudiantes certificados en cobots. Módulo dual validado y replicable en 4 centros. Acuerdo de continuidad firmado para 2026-27.",
+            "en": "32 students certified in cobots. Dual module validated and replicable in 4 centres. Continuity agreement signed for 2026-27.",
+            "va": "32 estudiants certificats en cobots. Mòdul dual validat i replicable en 4 centres. Acord de continuïtat signat per a 2026-27."
+          },
+          "outputs": [],
+          "decision": null
+        },
+        "transferability": null,
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": true,
+              "resources": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "pilotPlan",
+            "implementation",
+            "evidence",
+            "results",
+            "transferability"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
+            "people",
+            "access",
+            "externalFlow",
+            "relations"
+          ],
+          "cardSignal": "pilotPlan"
+        }
+      },
+      {
+        "id": "pilot-master-bridge-gemelos-digitales",
+        "type": "pilot",
+        "tab": "pilots",
+        "sortDate": "2026-02-01",
+        "visible": true,
+        "sourcePath": "content/challenges/items/pilots/pilot-master-bridge-gemelos-digitales.yml",
+        "core": {
+          "status": "in-progress",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "[DEMO] Piloto Máster — Puente FP-Máster en IA aplicada a gemelos digitales",
+            "en": "[DEMO] Master Bridge Pilot — VET-to-Master bridge in AI applied to digital twins",
+            "va": "[DEMO] Pilot Pont al Màster — Pont FP-Màster en IA aplicada a bessons digitals"
+          },
+          "summary": {
+            "es": "Itinerario de transición entre FP Superior y Máster universitario centrado en gemelos digitales y simulación industrial con IA.",
+            "en": "Transition itinerary from Higher VET to Master's degree focused on digital twins and AI-driven industrial simulation.",
+            "va": "Itinerari de transició entre FP Superior i Màster universitari centrat en bessons digitals i simulació industrial amb IA."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "in-progress",
+          "executionWindow": {
+            "start": "2026-02-01",
+            "end": "2026-09-30"
+          },
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "mfg",
+          "sectors": [],
+          "levels": [],
+          "pilotType": "master-bridge",
+          "validationType": "",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-02-01",
+          "revisionDate": null,
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "1 de febrero de 2026",
+            "en": "February 1, 2026",
+            "va": "1 de febrer de 2026"
+          },
+          "revisionDateLabel": null,
+          "deadlineLabel": null
+        },
+        "ficha": null,
+        "adhesionForm": {
+          "url": ""
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": ""
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "pilots"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "",
+            "org": ""
+          },
+          "lead": {
+            "name": "INESC TEC",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "coordinator": null,
+          "pilotSites": [],
+          "partners": []
+        },
+        "pilotPlan": {
+          "hypothesis": {
+            "es": "Demanda de centros FP y oferta de marco de reconocimiento universitario para itinerario puente.",
+            "en": "Demand from VET centres and offer of university recognition framework for bridge itinerary.",
+            "va": "Demanda de centres FP i oferta de marc de reconeixement universitari per a itinerari pont."
+          },
+          "objective": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "context": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "targetParticipants": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "methodology": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "successCriteria": [
+            {
+              "id": "sc1",
+              "label": {
+                "es": "Al menos el 75% de los participantes obtiene el reconocimiento de créditos por UPV",
+                "en": "At least 75% of participants obtain credit recognition from UPV",
+                "va": "Almenys el 75% dels participants obtenen el reconeixement de crèdits per UPV"
+              }
+            },
+            {
+              "id": "sc2",
+              "label": {
+                "es": "Guía de itinerario publicada bajo CC BY antes de septiembre 2026",
+                "en": "Itinerary guide published under CC BY before September 2026",
+                "va": "Guia d'itinerari publicada sota CC BY abans del setembre de 2026"
+              }
+            }
+          ]
+        },
+        "implementation": {
+          "readiness": {
+            "technologyReadiness": {
+              "enabled": true,
+              "level": 5,
+              "pilotLabel": {
+                "es": "Validación en entorno relevante",
+                "en": "Validation in relevant environment",
+                "va": "Validació en entorn rellevant"
+              }
+            },
+            "educationalReadiness": {
+              "enabled": true,
+              "level": "designed",
+              "pilotLabel": {
+                "es": "Diseñado",
+                "en": "Designed",
+                "va": "Dissenyat"
+              }
+            }
+          },
+          "infrastructure": [
+            {
+              "id": "upv-lms",
+              "label": {
+                "es": "Plataforma LMS UPV",
+                "en": "UPV LMS platform",
+                "va": "Plataforma LMS UPV"
+              }
+            },
+            {
+              "id": "digital-twins-lab",
+              "label": {
+                "es": "Laboratorio de gemelos digitales INESC TEC",
+                "en": "INESC TEC digital twins lab",
+                "va": "Laboratori de bessons digitals INESC TEC"
+              }
+            },
+            {
+              "id": "aules-fp",
+              "label": {
+                "es": "Entorno Aules FP",
+                "en": "Aules VET environment",
+                "va": "Entorn Aules FP"
+              }
+            }
+          ],
+          "tools": [],
+          "dataManagement": null
+        },
+        "evidence": null,
+        "results": {
+          "headline": {
+            "es": "12 estudiantes en itinerario puente activo. Marco de créditos en revisión por UPV. Publicación de guía prevista para septiembre 2026.",
+            "en": "12 students on active bridge itinerary. Credit framework under UPV review. Guide publication planned for September 2026.",
+            "va": "12 estudiants en itinerari pont actiu. Marc de crèdits en revisió per UPV. Publicació de guia prevista per al setembre 2026."
+          },
+          "outputs": [],
+          "decision": null
+        },
+        "transferability": null,
+        "downloads": {
+          "enabled": false,
+          "basePath": "",
+          "items": []
+        },
+        "resources": null,
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "relatedValidations": [],
+          "relatedCases": [],
+          "relatedResources": [],
+          "relatedMentorships": [],
+          "nextPossibleItems": []
+        },
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "pilot",
+            "showPilotStage": true,
+            "showPilotType": true,
+            "showReadiness": true,
+            "showWindow": true,
+            "showInfrastructure": true,
+            "showPrimaryMetric": true,
+            "showDownloadsIndicator": false,
+            "resultBlockLabel": {
+              "es": "Qué se prueba",
+              "en": "What is being tested",
+              "va": "Què es prova"
+            }
+          },
+          "detail": {
+            "sections": {
+              "summary": true,
+              "pilotPlan": true,
+              "methodology": true,
+              "implementation": true,
+              "evidence": true,
+              "results": true,
+              "transferability": true,
+              "downloads": true,
+              "resources": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false
+            }
+          }
+        },
+        "template": {
+          "requiredBlocks": [
+            "pilotPlan",
+            "implementation",
+            "evidence",
+            "results",
+            "transferability"
+          ],
+          "optionalBlocks": [
+            "downloads",
+            "resources",
+            "process",
+            "people",
+            "access",
+            "externalFlow",
+            "relations"
+          ],
+          "cardSignal": "pilotPlan"
         }
       }
     ],
@@ -24511,8245 +32750,6 @@ export const MARKETPLACE_CONFIG = {
             "trackA"
           ],
           "cardSignal": "transferValue"
-        }
-      }
-    ],
-    "pilots": [
-      {
-        "id": "pilot-ia-diagnostico-cancer-piel-nts",
-        "type": "pilot",
-        "tab": "pilots",
-        "sortDate": "2026-05-20",
-        "visible": true,
-        "sourcePath": "content/challenges/items/pilots/pilot-ia-diagnostico-cancer-piel-nts.yml",
-        "core": {
-          "status": "in-progress",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] IA para el apoyo al diagnóstico dermatológico en entornos de FP Sanitario",
-            "en": "[DEMO] AI for dermatological diagnosis support in Health VET settings",
-            "va": "[DEMO] IA per al suport al diagnòstic dermatològic en entorns de FP Sanitari"
-          },
-          "summary": {
-            "es": "Validación de un módulo de IA para la clasificación de lesiones cutáneas sospechosas (malignas/benignas) a partir de imágenes dermoscópicas, integrado en el itinerario formativo del ciclo de Imagen para el Diagnóstico de FP Sanitario, con supervisión clínica del Hospital La Fe y evaluación de competencias digitales en salud.",
-            "en": "Validation of an AI module for classifying suspicious skin lesions (malignant/benign) from dermoscopic images, integrated into the Diagnostic Imaging Health VET cycle curriculum, with clinical supervision from Hospital La Fe and digital health competency assessment.",
-            "va": "Validació d'un mòdul d'IA per a la classificació de lesions cutànies sospitoses (malignes/benignes) a partir d'imatges dermoscòpiques, integrat en l'itinerari formatiu del cicle d'Imatge per al Diagnòstic de FP Sanitari, amb supervisió clínica de l'Hospital La Fe i avaluació de competències digitals en salut."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "in-progress",
-          "executionWindow": {
-            "start": "2026-02-01",
-            "end": "2026-07-31"
-          },
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "nts",
-          "sectors": [],
-          "levels": [],
-          "pilotType": "vet-industry",
-          "validationType": "",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-02-01",
-          "revisionDate": "2026-05-20",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "1 de febrero de 2026",
-            "en": "February 1, 2026",
-            "va": "1 de febrer de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "20 de mayo de 2026",
-            "en": "May 20, 2026",
-            "va": "20 de maig de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": {
-          "file": "pilot-ia-diagnostico-cancer-piel-nts.pdf",
-          "publicPath": "/assets/downloads/marketplace/pilots/pilot-ia-diagnostico-cancer-piel-nts.pdf"
-        },
-        "adhesionForm": {
-          "url": "https://forms.cloud.microsoft/e/sC11Pyhaa7"
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "pilots"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "lead": {
-            "name": "Hospital Universitari i Politècnic La Fe — Servicio de Dermatología",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "coordinator": null,
-          "pilotSites": [],
-          "partners": []
-        },
-        "pilotPlan": {
-          "hypothesis": {
-            "es": "Si los alumnos de 2.º curso del ciclo de Imagen para el Diagnóstico trabajan con un módulo de clasificación de lesiones cutáneas mediante IA durante 8 sesiones supervisadas, alcanzarán competencia básica en interpretación de modelos de IA médica y serán capaces de identificar sus limitaciones éticas y clínicas.",
-            "en": "If 2nd-year Diagnostic Imaging cycle students work with an AI skin lesion classification module over 8 supervised sessions, they will achieve basic competency in interpreting medical AI models and will be able to identify their ethical and clinical limitations.",
-            "va": "Si els alumnes de 2n curs del cicle d'Imatge per al Diagnòstic treballen amb un mòdul de classificació de lesions cutànies mitjançant IA durant 8 sessions supervisades, assoliran competència bàsica en interpretació de models d'IA mèdica i seran capaços d'identificar-ne les limitacions ètiques i clíniques."
-          },
-          "objective": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "targetParticipants": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "methodology": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "successCriteria": [
-            {
-              "id": "sc1",
-              "label": {
-                "es": "El 80% de los alumnos del grupo experimental supera el umbral de competencia básica en el test post-intervención",
-                "en": "80% of experimental group students exceed the basic competency threshold in the post-intervention test",
-                "va": "El 80% dels alumnes del grup experimental supera el llindar de competència bàsica en el test post-intervenció"
-              }
-            },
-            {
-              "id": "sc2",
-              "label": {
-                "es": "El profesorado participante obtiene una confianza media de 7,5/10 o superior para impartir el módulo de forma autónoma",
-                "en": "Participating teachers achieve an average confidence of 7.5/10 or higher to deliver the module autonomously",
-                "va": "El professorat participant obté una confiança mitjana de 7,5/10 o superior per impartir el mòdul de forma autònoma"
-              }
-            },
-            {
-              "id": "sc3",
-              "label": {
-                "es": "El módulo se puede instalar y ejecutar sin intervención técnica del Hospital La Fe en menos de 2 horas",
-                "en": "The module can be installed and run without Hospital La Fe technical intervention in under 2 hours",
-                "va": "El mòdul es pot instal·lar i executar sense intervenció tècnica de l'Hospital La Fe en menys de 2 hores"
-              }
-            },
-            {
-              "id": "sc4",
-              "label": {
-                "es": "El módulo supera la revisión ética del Comité de Bioética del Hospital La Fe para uso con fines exclusivamente educativos",
-                "en": "The module passes the bioethics review of Hospital La Fe's Bioethics Committee for exclusively educational use",
-                "va": "El mòdul supera la revisió ètica del Comité de Bioètica de l'Hospital La Fe per a ús exclusivament educatiu"
-              }
-            }
-          ]
-        },
-        "implementation": {
-          "readiness": {
-            "technologyReadiness": {
-              "enabled": true,
-              "level": 6,
-              "pilotLabel": {
-                "es": "TRL 6 — Demostración en entorno relevante (aula de FP Sanitario)",
-                "en": "TRL 6 — Demonstration in relevant environment (Health VET classroom)",
-                "va": "TRL 6 — Demostració en entorn rellevant (aula de FP Sanitari)"
-              }
-            },
-            "educationalReadiness": {
-              "enabled": false,
-              "level": "classroom-tested",
-              "pilotLabel": {
-                "es": "Probado en aula — testado previamente con residentes del La Fe, primera validación en FP",
-                "en": "Classroom-tested — previously tested with La Fe residents, first VET validation",
-                "va": "Provat en aula — testejat prèviament amb residents del La Fe, primera validació en FP"
-              }
-            }
-          },
-          "infrastructure": [
-            {
-              "id": "computer-lab",
-              "label": {
-                "es": "Aula informática con ordenadores básicos (sin GPU dedicada) — mínimo Intel Core i5, 8 GB RAM",
-                "en": "Computer lab with standard workstations (no dedicated GPU) — minimum Intel Core i5, 8 GB RAM",
-                "va": "Aula d'informàtica amb ordinadors bàsics (sense GPU dedicada) — mínim Intel Core i5, 8 GB RAM"
-              }
-            },
-            {
-              "id": "gradio-interface",
-              "label": {
-                "es": "Interfaz web Gradio desplegada localmente — accesible desde navegador sin instalación por parte del alumno",
-                "en": "Locally deployed Gradio web interface — accessible from browser without student-side installation",
-                "va": "Interfície web Gradio desplegada localment — accessible des de navegador sense instal·lació per part de l'alumne"
-              }
-            },
-            {
-              "id": "video-conferencing",
-              "label": {
-                "es": "Sistema de videoconferencia para supervisión clínica remota del Hospital La Fe (sesiones 4 y 7)",
-                "en": "Video conferencing system for remote clinical supervision from Hospital La Fe (sessions 4 and 7)",
-                "va": "Sistema de videoconferència per a supervisió clínica remota de l'Hospital La Fe (sessions 4 i 7)"
-              }
-            }
-          ],
-          "tools": [],
-          "dataManagement": null
-        },
-        "evidence": null,
-        "results": {
-          "headline": {
-            "es": "El grupo experimental supera al control en +31 puntos percentil; 89% de los alumnos supera el umbral de competencia básica en IA dermoscópica. Confianza docente media 8,1/10. Instalación autónoma en menos de 50 minutos.",
-            "en": "Experimental group outperforms control by +31 percentile points; 89% of students exceed the basic dermoscopic AI competency threshold. Average teacher confidence 8.1/10. Autonomous installation in under 50 minutes.",
-            "va": "El grup experimental supera el control en +31 punts percentil; el 89% dels alumnes supera el llindar de competència bàsica en IA dermoscòpica. Confiança docent mitjana 8,1/10. Instal·lació autònoma en menys de 50 minuts."
-          },
-          "outputs": [],
-          "decision": null
-        },
-        "transferability": null,
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "system": "",
-            "url": ""
-          },
-          "secondaryAction": null
-        },
-        "relations": {
-          "originChallengeId": "",
-          "relatedValidations": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "relatedMentorships": [],
-          "nextPossibleItems": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "pilot",
-            "showPilotStage": true,
-            "showPilotType": true,
-            "showReadiness": true,
-            "showWindow": true,
-            "showInfrastructure": true,
-            "showPrimaryMetric": true,
-            "showDownloadsIndicator": false,
-            "resultBlockLabel": {
-              "es": "Qué se prueba",
-              "en": "What is being tested",
-              "va": "Què es prova"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "pilotPlan": true,
-              "methodology": true,
-              "implementation": true,
-              "evidence": true,
-              "results": true,
-              "transferability": true,
-              "downloads": true,
-              "resources": true,
-              "process": true,
-              "people": true,
-              "access": true,
-              "trackA": false,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "pilotPlan",
-            "implementation",
-            "evidence",
-            "results",
-            "transferability"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "process",
-            "people",
-            "access",
-            "externalFlow",
-            "relations"
-          ],
-          "cardSignal": "pilotPlan"
-        }
-      },
-      {
-        "id": "pilot-living-lab-eficiencia-energetica-hou",
-        "type": "pilot",
-        "tab": "pilots",
-        "sortDate": "2026-05-20",
-        "visible": true,
-        "sourcePath": "content/challenges/items/pilots/pilot-living-lab-eficiencia-energetica-hou.yml",
-        "core": {
-          "status": "in-progress",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Living Lab — IA para la gestión energética adaptativa en edificio universitario",
-            "en": "[DEMO] Living Lab — AI for adaptive energy management in a university building",
-            "va": "[DEMO] Living Lab — IA per a la gestió energètica adaptativa en edifici universitari"
-          },
-          "summary": {
-            "es": "La Universitat Politècnica de València convierte el edificio 4I de la ETSII en un Living Lab donde alumnos de máster y FP de Instalaciones Eléctricas trabajan junto a ingenieros de Siemens Smart Infrastructure para entrenar y validar un sistema de gestión energética adaptativa basado en aprendizaje por refuerzo, con el objetivo de reducir el consumo eléctrico del edificio en un 20% sin pérdida de confort.",
-            "en": "The Universitat Politècnica de València turns building 4I of ETSII into a Living Lab where master's and Electrical Installations VET students work alongside Siemens Smart Infrastructure engineers to train and validate an adaptive energy management system based on reinforcement learning, aiming to reduce the building's electricity consumption by 20% without loss of comfort.",
-            "va": "La Universitat Politècnica de València converteix l'edifici 4I de l'ETSII en un Living Lab on alumnes de màster i FP d'Instal·lacions Elèctriques treballen juntament amb enginyers de Siemens Smart Infrastructure per entrenar i validar un sistema de gestió energètica adaptativa basat en aprenentatge per reforç, amb l'objectiu de reduir el consum elèctric de l'edifici en un 20% sense pèrdua de confort."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "in-progress",
-          "executionWindow": {
-            "start": "2026-01-15",
-            "end": "2026-12-15"
-          },
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "hou",
-          "sectors": [],
-          "levels": [],
-          "pilotType": "living-lab",
-          "validationType": "",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-01-15",
-          "revisionDate": "2026-05-20",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "15 de enero de 2026",
-            "en": "January 15, 2026",
-            "va": "15 de gener de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "20 de mayo de 2026",
-            "en": "May 20, 2026",
-            "va": "20 de maig de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "pilots"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "lead": {
-            "name": "Universitat Politècnica de València — Instituto de Ingeniería Energética (IIE)",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "coordinator": null,
-          "pilotSites": [],
-          "partners": []
-        },
-        "pilotPlan": {
-          "hypothesis": {
-            "es": "Un agente de aprendizaje por refuerzo entrenado con datos reales de ocupación, temperatura y tarifas eléctricas del edificio 4I puede reducir el consumo eléctrico total del edificio en al menos un 20% en condiciones de uso habitual, sin que el índice de confort térmico percibido por los ocupantes caiga por debajo de 7/10.",
-            "en": "A reinforcement learning agent trained on real occupancy, temperature and electricity tariff data from building 4I can reduce total building electricity consumption by at least 20% under normal use conditions, without the perceived thermal comfort index falling below 7/10.",
-            "va": "Un agent d'aprenentatge per reforç entrenat amb dades reals d'ocupació, temperatura i tarifes elèctriques de l'edifici 4I pot reduir el consum elèctric total de l'edifici en almenys un 20% en condicions d'ús habitual, sense que l'índex de confort tèrmic percebut pels ocupants caiga per davall de 7/10."
-          },
-          "objective": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "targetParticipants": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "methodology": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "successCriteria": [
-            {
-              "id": "sc1",
-              "label": {
-                "es": "El agente desplegado en el edificio real reduce el consumo eléctrico en al menos un 20% respecto a la línea base",
-                "en": "The agent deployed in the real building reduces electricity consumption by at least 20% against the baseline",
-                "va": "L'agent desplegat en l'edifici real redueix el consum elèctric en almenys un 20% respecte a la línia base"
-              }
-            },
-            {
-              "id": "sc2",
-              "label": {
-                "es": "El índice de confort térmico percibido por los ocupantes no baja de 7/10 durante los 3 meses de despliegue",
-                "en": "The perceived thermal comfort index does not fall below 7/10 during the 3 months of deployment",
-                "va": "L'índex de confort tèrmic percebut pels ocupants no baixa de 7/10 durant els 3 mesos de desplegament"
-              }
-            },
-            {
-              "id": "sc3",
-              "label": {
-                "es": "Los datos de entrenamiento y el código del agente se publican en abierto antes del cierre del piloto",
-                "en": "Training data and agent code are published openly before the pilot closes",
-                "va": "Les dades d'entrenament i el codi de l'agent es publiquen en obert abans del tancament del pilot"
-              }
-            }
-          ]
-        },
-        "implementation": {
-          "readiness": {
-            "technologyReadiness": {
-              "enabled": true,
-              "level": 6,
-              "pilotLabel": {
-                "es": "TRL 6 — Demostración en entorno relevante real (edificio universitario)",
-                "en": "TRL 6 — Demonstration in real relevant environment (university building)",
-                "va": "TRL 6 — Demostració en entorn rellevant real (edifici universitari)"
-              }
-            },
-            "educationalReadiness": {
-              "enabled": true,
-              "level": "designed",
-              "pilotLabel": {
-                "es": "Diseñado — módulo conjunto FP-máster en fase de primera implementación",
-                "en": "Designed — joint VET-master module in first implementation phase",
-                "va": "Dissenyat — mòdul conjunt FP-màster en fase de primera implementació"
-              }
-            }
-          },
-          "infrastructure": [
-            {
-              "id": "bms-desigo",
-              "label": {
-                "es": "Siemens Desigo CC — plataforma de Building Management System",
-                "en": "Siemens Desigo CC — Building Management System platform",
-                "va": "Siemens Desigo CC — plataforma de Building Management System"
-              }
-            },
-            {
-              "id": "iot-sensors",
-              "label": {
-                "es": "Red de 180 sensores IoT de CO₂, temperatura, humedad y ocupación",
-                "en": "Network of 180 IoT sensors for CO₂, temperature, humidity and occupancy",
-                "va": "Xarxa de 180 sensors IoT de CO₂, temperatura, humitat i ocupació"
-              }
-            },
-            {
-              "id": "energyplus",
-              "label": {
-                "es": "Simulador EnergyPlus — entorno de entrenamiento y validación del agente RL",
-                "en": "EnergyPlus simulator — RL agent training and validation environment",
-                "va": "Simulador EnergyPlus — entorn d'entrenament i validació de l'agent RL"
-              }
-            }
-          ],
-          "tools": [],
-          "dataManagement": null
-        },
-        "evidence": null,
-        "results": {
-          "headline": {
-            "es": "22,4% de reducción de consumo eléctrico en los primeros 3 meses; confort térmico medio de 8,1/10. 7 equipos publican agentes RL funcionales en abierto.",
-            "en": "22.4% electricity consumption reduction in the first 3 months; average thermal comfort of 8.1/10. 7 teams publish functional RL agents as open source.",
-            "va": "22,4% de reducció de consum elèctric en els primers 3 mesos; confort tèrmic mitjà de 8,1/10. 7 equips publiquen agents RL funcionals en obert."
-          },
-          "outputs": [],
-          "decision": null
-        },
-        "transferability": null,
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "system": "",
-            "url": ""
-          },
-          "secondaryAction": null
-        },
-        "relations": {
-          "originChallengeId": "",
-          "relatedValidations": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "relatedMentorships": [],
-          "nextPossibleItems": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "pilot",
-            "showPilotStage": true,
-            "showPilotType": true,
-            "showReadiness": true,
-            "showWindow": true,
-            "showInfrastructure": true,
-            "showPrimaryMetric": true,
-            "showDownloadsIndicator": false,
-            "resultBlockLabel": {
-              "es": "Qué se prueba",
-              "en": "What is being tested",
-              "va": "Què es prova"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "pilotPlan": true,
-              "methodology": true,
-              "implementation": true,
-              "evidence": true,
-              "results": true,
-              "transferability": true,
-              "downloads": true,
-              "resources": true,
-              "process": true,
-              "people": true,
-              "access": true,
-              "trackA": false,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "pilotPlan",
-            "implementation",
-            "evidence",
-            "results",
-            "transferability"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "process",
-            "people",
-            "access",
-            "externalFlow",
-            "relations"
-          ],
-          "cardSignal": "pilotPlan"
-        }
-      },
-      {
-        "id": "pilot-fp-energia-costera",
-        "type": "pilot",
-        "tab": "pilots",
-        "sortDate": "2026-05-02",
-        "visible": true,
-        "sourcePath": "content/challenges/items/pilots/pilot-fp-energia-costera.yml",
-        "core": {
-          "status": "closed",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Piloto FP — IA para eficiencia energética en centros educativos",
-            "en": "[DEMO] VET Pilot — AI for energy efficiency in educational centres",
-            "va": "[DEMO] Pilot FP — IA per a l'eficiència energètica en centres educatius"
-          },
-          "summary": {
-            "es": "Módulo OER de eficiencia energética con IA pilotado con alumnado de FP en IES La Costera.",
-            "en": "AI-based energy efficiency OER module piloted with VET students at IES La Costera.",
-            "va": "Mòdul OER d'eficiència energètica amb IA pilotat amb alumnat de FP a l'IES La Costera."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "published",
-          "executionWindow": {
-            "start": "2025-11-01",
-            "end": "2026-01-15"
-          },
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "ene",
-          "sectors": [],
-          "levels": [],
-          "pilotType": "curriculum-pilot",
-          "validationType": "",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-01-15",
-          "revisionDate": "2026-05-02",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "15 de enero de 2026",
-            "en": "January 15, 2026",
-            "va": "15 de gener de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "2 de mayo de 2026",
-            "en": "May 2, 2026",
-            "va": "2 de maig de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "pilots"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "lead": {
-            "name": "CEICE",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "coordinator": null,
-          "pilotSites": [],
-          "partners": []
-        },
-        "pilotPlan": {
-          "hypothesis": {
-            "es": "Oferta de módulo OER validado para replicación en centros de FP de Energía y Agua.",
-            "en": "Validated OER module offer for replication in Energy and Water VET centres.",
-            "va": "Oferta de mòdul OER validat per a replicació en centres de FP d'Energia i Aigua."
-          },
-          "objective": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "targetParticipants": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "methodology": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "successCriteria": [
-            {
-              "id": "sc1",
-              "label": {
-                "es": "El módulo OER es completado por al menos el 80% del alumnado participante",
-                "en": "The OER module is completed by at least 80% of participating students",
-                "va": "El mòdul OER és completat per almenys el 80% de l'alumnat participant"
-              }
-            },
-            {
-              "id": "sc2",
-              "label": {
-                "es": "El módulo se publica en Aules bajo licencia CC BY con dataset anonimizado disponible",
-                "en": "The module is published on Aules under CC BY with anonymised dataset available",
-                "va": "El mòdul es publica a Aules sota llicència CC BY amb dataset anonimitzat disponible"
-              }
-            }
-          ]
-        },
-        "implementation": {
-          "readiness": {
-            "technologyReadiness": {
-              "enabled": true,
-              "level": 7,
-              "pilotLabel": {
-                "es": "Demostración en entorno operacional",
-                "en": "Demonstration in operational environment",
-                "va": "Demostració en entorn operacional"
-              }
-            },
-            "educationalReadiness": {
-              "enabled": true,
-              "level": "validated-in-real-context",
-              "pilotLabel": {
-                "es": "Validado en contexto real",
-                "en": "Validated in real context",
-                "va": "Validat en context real"
-              }
-            }
-          },
-          "infrastructure": [
-            {
-              "id": "aules",
-              "label": {
-                "es": "Plataforma Aules",
-                "en": "Aules platform",
-                "va": "Plataforma Aules"
-              }
-            },
-            {
-              "id": "iot-sensors",
-              "label": {
-                "es": "Sensores IoT aula",
-                "en": "Classroom IoT sensors",
-                "va": "Sensors IoT d'aula"
-              }
-            },
-            {
-              "id": "energy-dataset",
-              "label": {
-                "es": "Dataset energético anonimizado",
-                "en": "Anonymised energy dataset",
-                "va": "Dataset energètic anonimitzat"
-              }
-            }
-          ],
-          "tools": [],
-          "dataManagement": null
-        },
-        "evidence": null,
-        "results": {
-          "headline": {
-            "es": "Módulo OER CC-BY publicado en Aules. 24 alumnos participantes. Dataset anonimizado disponible para reutilización.",
-            "en": "CC-BY OER module published on Aules. 24 participating students. Anonymised dataset available for reuse.",
-            "va": "Mòdul OER CC-BY publicat a Aules. 24 alumnes participants. Dataset anonimitzat disponible per a reutilització."
-          },
-          "outputs": [],
-          "decision": null
-        },
-        "transferability": null,
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "system": "",
-            "url": ""
-          },
-          "secondaryAction": null
-        },
-        "relations": {
-          "originChallengeId": "",
-          "relatedValidations": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "relatedMentorships": [],
-          "nextPossibleItems": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "pilot",
-            "showPilotStage": true,
-            "showPilotType": true,
-            "showReadiness": true,
-            "showWindow": true,
-            "showInfrastructure": true,
-            "showPrimaryMetric": true,
-            "showDownloadsIndicator": false,
-            "resultBlockLabel": {
-              "es": "Qué se prueba",
-              "en": "What is being tested",
-              "va": "Què es prova"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "pilotPlan": true,
-              "methodology": true,
-              "implementation": true,
-              "evidence": true,
-              "results": true,
-              "transferability": true,
-              "downloads": true,
-              "resources": true,
-              "process": true,
-              "people": true,
-              "access": true,
-              "trackA": false,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "pilotPlan",
-            "implementation",
-            "evidence",
-            "results",
-            "transferability"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "process",
-            "people",
-            "access",
-            "externalFlow",
-            "relations"
-          ],
-          "cardSignal": "pilotPlan"
-        }
-      },
-      {
-        "id": "pilot-drones-inspeccion-infraestructura-mob",
-        "type": "pilot",
-        "tab": "pilots",
-        "sortDate": "2026-04-15",
-        "visible": true,
-        "sourcePath": "content/challenges/items/pilots/pilot-drones-inspeccion-infraestructura-mob.yml",
-        "core": {
-          "status": "closed",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Piloto — Drones con IA para la inspección automatizada de infraestructuras viarias",
-            "en": "[DEMO] Pilot — AI drones for automated road infrastructure inspection",
-            "va": "[DEMO] Pilot — Drons amb IA per a la inspecció automatitzada d'infraestructures viàries"
-          },
-          "summary": {
-            "es": "Validación de un sistema de inspección autónoma de carreteras y puentes mediante drones equipados con visión artificial para detectar grietas, baches y deterioro superficial, desarrollado junto al IVACE y tres centros de FP de Transporte, que reduce el tiempo de inspección manual de un tramo de 10 km de 8 horas a 45 minutos.",
-            "en": "Validation of an autonomous road and bridge inspection system using drones equipped with computer vision to detect cracks, potholes and surface deterioration, developed with IVACE and three Transport VET centres, reducing manual inspection time for a 10-km stretch from 8 hours to 45 minutes.",
-            "va": "Validació d'un sistema d'inspecció autònom de carreteres i ponts mitjançant drons equipats amb visió artificial per detectar esquerdes, clots i deteriorament superficial, desenvolupat juntament amb l'IVACE i tres centres de FP de Transport, que redueix el temps d'inspecció manual d'un tram de 10 km de 8 hores a 45 minuts."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "published",
-          "executionWindow": {
-            "start": "2025-10-01",
-            "end": "2026-03-31"
-          },
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "mob",
-          "sectors": [],
-          "levels": [],
-          "pilotType": "vet-industry",
-          "validationType": "",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2025-10-01",
-          "revisionDate": "2026-04-15",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "1 de octubre de 2025",
-            "en": "October 1, 2025",
-            "va": "1 d'octubre de 2025"
-          },
-          "revisionDateLabel": {
-            "es": "15 de abril de 2026",
-            "en": "April 15, 2026",
-            "va": "15 d'abril de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "pilots"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "lead": {
-            "name": "IVACE — Institut Valencià de Competitivitat Empresarial",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "coordinator": null,
-          "pilotSites": [],
-          "partners": []
-        },
-        "pilotPlan": {
-          "hypothesis": {
-            "es": "Un sistema de drones con IA entrenado para detectar deterioros superficiales en carreteras puede alcanzar una precisión de detección superior al 92% respecto al inventario manual de referencia, reducir el tiempo de inspección en más de un 85% y ser operado por alumnos de FP de Transporte tras una formación de 2 días.",
-            "en": "A drone system with AI trained to detect surface road deterioration can achieve detection accuracy exceeding 92% against the manual reference inventory, reduce inspection time by more than 85% and be operated by Transport VET students after 2 days of training.",
-            "va": "Un sistema de drons amb IA entrenat per detectar deterioraments superficials en carreteres pot assolir una precisió de detecció superior al 92% respecte a l'inventari manual de referència, reduir el temps d'inspecció en més d'un 85% i ser operat per alumnes de FP de Transport després d'una formació de 2 dies."
-          },
-          "objective": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "targetParticipants": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "methodology": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "successCriteria": [
-            {
-              "id": "sc1",
-              "label": {
-                "es": "Precisión de detección de deterioros ≥ 92% respecto al inventario manual de referencia",
-                "en": "Deterioration detection accuracy ≥ 92% against the manual reference inventory",
-                "va": "Precisió de detecció de deterioraments ≥ 92% respecte a l'inventari manual de referència"
-              }
-            },
-            {
-              "id": "sc2",
-              "label": {
-                "es": "Reducción del tiempo de inspección del tramo de 10 km en más de un 85% respecto a la inspección manual",
-                "en": "Reduction of inspection time for the 10-km stretch by more than 85% relative to manual inspection",
-                "va": "Reducció del temps d'inspecció del tram de 10 km en més d'un 85% respecte a la inspecció manual"
-              }
-            },
-            {
-              "id": "sc3",
-              "label": {
-                "es": "Los alumnos de FP son capaces de operar el sistema y interpretar los informes tras la formación de 2 días",
-                "en": "VET students are able to operate the system and interpret reports after 2 days of training",
-                "va": "Els alumnes de FP són capaços d'operar el sistema i interpretar els informes després de la formació de 2 dies"
-              }
-            }
-          ]
-        },
-        "implementation": {
-          "readiness": {
-            "technologyReadiness": {
-              "enabled": true,
-              "level": "6",
-              "pilotLabel": {
-                "es": "TRL 7 — Demostración del prototipo en entorno operacional real (carretera CV-35)",
-                "en": "TRL 7 — Prototype demonstration in real operational environment (CV-35 road)",
-                "va": "TRL 7 — Demostració del prototip en entorn operacional real (carretera CV-35)"
-              }
-            },
-            "educationalReadiness": {
-              "enabled": false,
-              "level": "validated-in-real-context",
-              "pilotLabel": {
-                "es": "Validado en contexto real — alumnos de FP en entorno de carretera autonómica",
-                "en": "Validated in real context — VET students in regional road environment",
-                "va": "Validat en context real — alumnes de FP en entorn de carretera autonòmica"
-              }
-            }
-          },
-          "infrastructure": [
-            {
-              "id": null,
-              "label": {
-                "es": "Drones DJI Matrice 300 RTK con cámara Zenmuse H20T",
-                "en": "DJI Matrice 300 RTK drones with Zenmuse H20T camera",
-                "va": "Drones DJI Matrice 300 RTK amb càmera Zenmuse H20T"
-              }
-            },
-            {
-              "id": null,
-              "label": {
-                "es": "Portátil con GPU dedicada para inferencia en campo",
-                "en": "Laptop with dedicated GPU for field inference",
-                "va": "Portàtil amb GPU dedicada per a inferència en camp"
-              }
-            },
-            {
-              "id": null,
-              "label": {
-                "es": "Plataforma GIS para geolocalización y visualización de deterioros",
-                "en": "GIS platform for geolocation and deterioration visualisation",
-                "va": "Plataforma GIS per a geolocalització i visualització de deterioraments"
-              }
-            }
-          ],
-          "tools": [],
-          "dataManagement": null
-        },
-        "evidence": null,
-        "results": {
-          "headline": {
-            "es": "94,2% de precisión de detección; el tiempo de inspección de 10 km se reduce de 8 horas a 43 minutos (–91%). El 89% de los alumnos opera el sistema autónomamente tras la formación de 2 días.",
-            "en": "94.2% detection accuracy; 10-km inspection time reduced from 8 hours to 43 minutes (–91%). 89% of students operate the system autonomously after 2-day training.",
-            "va": "94,2% de precisió de detecció; el temps d'inspecció de 10 km es redueix de 8 hores a 43 minuts (–91%). El 89% dels alumnes opera el sistema autònomament després de la formació de 2 dies."
-          },
-          "outputs": [],
-          "decision": null
-        },
-        "transferability": null,
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "system": "",
-            "url": ""
-          },
-          "secondaryAction": null
-        },
-        "relations": {
-          "originChallengeId": "",
-          "relatedValidations": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "relatedMentorships": [],
-          "nextPossibleItems": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "pilot",
-            "showPilotStage": true,
-            "showPilotType": true,
-            "showReadiness": true,
-            "showWindow": true,
-            "showInfrastructure": true,
-            "showPrimaryMetric": true,
-            "showDownloadsIndicator": false,
-            "resultBlockLabel": {
-              "es": "Qué se prueba",
-              "en": "What is being tested",
-              "va": "Què es prova"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "pilotPlan": true,
-              "methodology": true,
-              "implementation": true,
-              "evidence": true,
-              "results": true,
-              "transferability": true,
-              "downloads": true,
-              "resources": true,
-              "process": true,
-              "people": true,
-              "access": true,
-              "trackA": false,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "pilotPlan",
-            "implementation",
-            "evidence",
-            "results",
-            "transferability"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "process",
-            "people",
-            "access",
-            "externalFlow",
-            "relations"
-          ],
-          "cardSignal": "pilotPlan"
-        }
-      },
-      {
-        "id": "pilot-teacher-sesgos-ia-uveg",
-        "type": "pilot",
-        "tab": "pilots",
-        "sortDate": "2026-03-01",
-        "visible": true,
-        "sourcePath": "content/challenges/items/pilots/pilot-teacher-sesgos-ia-uveg.yml",
-        "core": {
-          "status": "closed",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Formación Docente — Análisis de sesgos en IA para profesorado de Máster",
-            "en": "[DEMO] Teacher Training — AI bias analysis for Master's programme faculty",
-            "va": "[DEMO] Formació Docent — Anàlisi de biaixos en IA per a professorat de Màster"
-          },
-          "summary": {
-            "es": "Taller intensivo para profesorado universitario sobre detección y mitigación de sesgos algorítmicos en modelos de IA usados en contextos educativos.",
-            "en": "Intensive workshop for university faculty on detection and mitigation of algorithmic bias in AI models used in educational contexts.",
-            "va": "Taller intensiu per a professorat universitari sobre detecció i mitigació de biaixos algorítmics en models d'IA usats en contextos educatius."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "published",
-          "executionWindow": {
-            "start": "2025-11-01",
-            "end": "2025-12-15"
-          },
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "nts",
-          "sectors": [],
-          "levels": [],
-          "pilotType": "teacher-training",
-          "validationType": "",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2025-12-01",
-          "revisionDate": "2026-03-01",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "1 de diciembre de 2025",
-            "en": "December 1, 2025",
-            "va": "1 de desembre de 2025"
-          },
-          "revisionDateLabel": {
-            "es": "1 de marzo de 2026",
-            "en": "March 1, 2026",
-            "va": "1 de març de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "pilots"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "lead": {
-            "name": "UVEG — Facultat d'Informàtica",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "coordinator": null,
-          "pilotSites": [],
-          "partners": []
-        },
-        "pilotPlan": {
-          "hypothesis": {
-            "es": "Oferta de taller replicable sobre auditoría de sesgos algorítmicos para programas de Máster.",
-            "en": "Replicable workshop offer on algorithmic bias auditing for Master's programmes.",
-            "va": "Oferta de taller replicable sobre auditoria de biaixos algorítmics per a programes de Màster."
-          },
-          "objective": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "targetParticipants": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "methodology": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "successCriteria": [
-            {
-              "id": "sc1",
-              "label": {
-                "es": "Al menos el 80% del profesorado integra contenidos de sesgos en sus asignaturas para 2026-27",
-                "en": "At least 80% of faculty integrate bias content into their courses for 2026-27",
-                "va": "Almenys el 80% del professorat integra continguts de biaixos en les seues assignatures per a 2026-27"
-              }
-            },
-            {
-              "id": "sc2",
-              "label": {
-                "es": "Plantilla CC-BY-SA publicada en repositorio AI-STEAM y reutilizable",
-                "en": "CC-BY-SA template published in AI-STEAM repository and reusable",
-                "va": "Plantilla CC-BY-SA publicada en repositori AI-STEAM i reutilitzable"
-              }
-            }
-          ]
-        },
-        "implementation": {
-          "readiness": {
-            "technologyReadiness": {
-              "enabled": false,
-              "level": null,
-              "pilotLabel": {
-                "es": "",
-                "en": "",
-                "va": ""
-              }
-            },
-            "educationalReadiness": {
-              "enabled": true,
-              "level": "validated-in-real-context",
-              "pilotLabel": {
-                "es": "Validado en contexto real",
-                "en": "Validated in real context",
-                "va": "Validat en context real"
-              }
-            }
-          },
-          "infrastructure": [
-            {
-              "id": "classroom",
-              "label": {
-                "es": "Aula universitaria equipada",
-                "en": "Equipped university classroom",
-                "va": "Aula universitària equipada"
-              }
-            },
-            {
-              "id": "audit-datasets",
-              "label": {
-                "es": "Datasets reales de auditoría",
-                "en": "Real audit datasets",
-                "va": "Datasets reals d'auditoria"
-              }
-            },
-            {
-              "id": "ai-steam-repo",
-              "label": {
-                "es": "Repositorio AI-STEAM",
-                "en": "AI-STEAM repository",
-                "va": "Repositori AI-STEAM"
-              }
-            }
-          ],
-          "tools": [],
-          "dataManagement": null
-        },
-        "evidence": null,
-        "results": {
-          "headline": {
-            "es": "14 docentes formados. 6 asignaturas de Máster incorporan unidad de sesgos en IA en 2026-27. Plantilla CC-BY-SA publicada.",
-            "en": "14 teachers trained. 6 Master's courses incorporate AI bias unit in 2026-27. CC-BY-SA template published.",
-            "va": "14 docents formats. 6 assignatures de Màster incorporen unitat de biaixos en IA en 2026-27. Plantilla CC-BY-SA publicada."
-          },
-          "outputs": [],
-          "decision": null
-        },
-        "transferability": null,
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "system": "",
-            "url": ""
-          },
-          "secondaryAction": null
-        },
-        "relations": {
-          "originChallengeId": "",
-          "relatedValidations": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "relatedMentorships": [],
-          "nextPossibleItems": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "pilot",
-            "showPilotStage": true,
-            "showPilotType": true,
-            "showReadiness": true,
-            "showWindow": true,
-            "showInfrastructure": true,
-            "showPrimaryMetric": true,
-            "showDownloadsIndicator": false,
-            "resultBlockLabel": {
-              "es": "Qué se entrena",
-              "en": "What is being trained",
-              "va": "Què s'entrena"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "pilotPlan": true,
-              "methodology": true,
-              "implementation": true,
-              "evidence": true,
-              "results": true,
-              "transferability": true,
-              "downloads": true,
-              "resources": true,
-              "process": true,
-              "people": true,
-              "access": true,
-              "trackA": false,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "pilotPlan",
-            "implementation",
-            "evidence",
-            "results",
-            "transferability"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "process",
-            "people",
-            "access",
-            "externalFlow",
-            "relations"
-          ],
-          "cardSignal": "pilotPlan"
-        }
-      },
-      {
-        "id": "pilot-fp-cobots-mecatronica",
-        "type": "pilot",
-        "tab": "pilots",
-        "sortDate": "2026-02-10",
-        "visible": true,
-        "sourcePath": "content/challenges/items/pilots/pilot-fp-cobots-mecatronica.yml",
-        "core": {
-          "status": "closed",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Piloto FP — Cobots y robótica colaborativa en ciclos de mecatrónica",
-            "en": "[DEMO] VET Pilot — Cobots and collaborative robotics in mechatronics cycles",
-            "va": "[DEMO] Pilot FP — Cobots i robòtica col·laborativa en cicles de mecatrònica"
-          },
-          "summary": {
-            "es": "Integración de cobots industriales en la práctica de taller de FP de Mecatrónica en colaboración con Ford España y tres centros educativos.",
-            "en": "Integration of industrial cobots into VET Mechatronics workshop practice in collaboration with Ford España and three educational centres.",
-            "va": "Integració de cobots industrials en la pràctica de taller de FP de Mecatrònica en col·laboració amb Ford España i tres centres educatius."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "published",
-          "executionWindow": {
-            "start": "2025-09-01",
-            "end": "2026-01-31"
-          },
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "mfg",
-          "sectors": [],
-          "levels": [],
-          "pilotType": "vet-industry",
-          "validationType": "",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2025-09-01",
-          "revisionDate": "2026-02-10",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "1 de septiembre de 2025",
-            "en": "September 1, 2025",
-            "va": "1 de setembre de 2025"
-          },
-          "revisionDateLabel": {
-            "es": "10 de febrero de 2026",
-            "en": "February 10, 2026",
-            "va": "10 de febrer de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "pilots"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "lead": {
-            "name": "Ford España — Centro Tecnológico de Valencia",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "coordinator": null,
-          "pilotSites": [],
-          "partners": []
-        },
-        "pilotPlan": {
-          "hypothesis": {
-            "es": "Oferta de rotaciones en planta industrial con certificación en operación de cobots.",
-            "en": "Offer of industrial plant rotations with cobot operation certification.",
-            "va": "Oferta de rotacions en planta industrial amb certificació en operació de cobots."
-          },
-          "objective": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "targetParticipants": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "methodology": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "successCriteria": [
-            {
-              "id": "sc1",
-              "label": {
-                "es": "Al menos el 80% de los participantes obtiene certificación en operación de cobots",
-                "en": "At least 80% of participants obtain cobot operation certification",
-                "va": "Almenys el 80% dels participants obtenen certificació en operació de cobots"
-              }
-            },
-            {
-              "id": "sc2",
-              "label": {
-                "es": "Módulo dual documentado y replicable en al menos 4 centros adicionales",
-                "en": "Dual module documented and replicable in at least 4 additional centres",
-                "va": "Mòdul dual documentat i replicable en almenys 4 centres addicionals"
-              }
-            }
-          ]
-        },
-        "implementation": {
-          "readiness": {
-            "technologyReadiness": {
-              "enabled": true,
-              "level": 7,
-              "pilotLabel": {
-                "es": "Demostración en entorno operacional",
-                "en": "Demonstration in operational environment",
-                "va": "Demostració en entorn operacional"
-              }
-            },
-            "educationalReadiness": {
-              "enabled": false,
-              "level": null,
-              "pilotLabel": {
-                "es": "",
-                "en": "",
-                "va": ""
-              }
-            }
-          },
-          "infrastructure": [
-            {
-              "id": "ford-plant",
-              "label": {
-                "es": "Planta Ford Valencia",
-                "en": "Ford Valencia plant",
-                "va": "Planta Ford València"
-              }
-            },
-            {
-              "id": "cobots-ur10",
-              "label": {
-                "es": "Cobots industriales (UR10)",
-                "en": "Industrial cobots (UR10)",
-                "va": "Cobots industrials (UR10)"
-              }
-            },
-            {
-              "id": "fp-workshop",
-              "label": {
-                "es": "Taller FP Mecatrónica",
-                "en": "VET mechatronics workshop",
-                "va": "Taller FP Mecatrònica"
-              }
-            }
-          ],
-          "tools": [],
-          "dataManagement": null
-        },
-        "evidence": null,
-        "results": {
-          "headline": {
-            "es": "32 estudiantes certificados en cobots. Módulo dual validado y replicable en 4 centros. Acuerdo de continuidad firmado para 2026-27.",
-            "en": "32 students certified in cobots. Dual module validated and replicable in 4 centres. Continuity agreement signed for 2026-27.",
-            "va": "32 estudiants certificats en cobots. Mòdul dual validat i replicable en 4 centres. Acord de continuïtat signat per a 2026-27."
-          },
-          "outputs": [],
-          "decision": null
-        },
-        "transferability": null,
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "system": "",
-            "url": ""
-          },
-          "secondaryAction": null
-        },
-        "relations": {
-          "originChallengeId": "",
-          "relatedValidations": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "relatedMentorships": [],
-          "nextPossibleItems": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "pilot",
-            "showPilotStage": true,
-            "showPilotType": true,
-            "showReadiness": true,
-            "showWindow": true,
-            "showInfrastructure": true,
-            "showPrimaryMetric": true,
-            "showDownloadsIndicator": false,
-            "resultBlockLabel": {
-              "es": "Qué se prueba",
-              "en": "What is being tested",
-              "va": "Què es prova"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "pilotPlan": true,
-              "methodology": true,
-              "implementation": true,
-              "evidence": true,
-              "results": true,
-              "transferability": true,
-              "downloads": true,
-              "resources": true,
-              "process": true,
-              "people": true,
-              "access": true,
-              "trackA": false,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "pilotPlan",
-            "implementation",
-            "evidence",
-            "results",
-            "transferability"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "process",
-            "people",
-            "access",
-            "externalFlow",
-            "relations"
-          ],
-          "cardSignal": "pilotPlan"
-        }
-      },
-      {
-        "id": "pilot-master-bridge-gemelos-digitales",
-        "type": "pilot",
-        "tab": "pilots",
-        "sortDate": "2026-02-01",
-        "visible": true,
-        "sourcePath": "content/challenges/items/pilots/pilot-master-bridge-gemelos-digitales.yml",
-        "core": {
-          "status": "in-progress",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Piloto Máster — Puente FP-Máster en IA aplicada a gemelos digitales",
-            "en": "[DEMO] Master Bridge Pilot — VET-to-Master bridge in AI applied to digital twins",
-            "va": "[DEMO] Pilot Pont al Màster — Pont FP-Màster en IA aplicada a bessons digitals"
-          },
-          "summary": {
-            "es": "Itinerario de transición entre FP Superior y Máster universitario centrado en gemelos digitales y simulación industrial con IA.",
-            "en": "Transition itinerary from Higher VET to Master's degree focused on digital twins and AI-driven industrial simulation.",
-            "va": "Itinerari de transició entre FP Superior i Màster universitari centrat en bessons digitals i simulació industrial amb IA."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "in-progress",
-          "executionWindow": {
-            "start": "2026-02-01",
-            "end": "2026-09-30"
-          },
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "mfg",
-          "sectors": [],
-          "levels": [],
-          "pilotType": "master-bridge",
-          "validationType": "",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-02-01",
-          "revisionDate": null,
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "1 de febrero de 2026",
-            "en": "February 1, 2026",
-            "va": "1 de febrer de 2026"
-          },
-          "revisionDateLabel": null,
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "pilots"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "lead": {
-            "name": "INESC TEC",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "coordinator": null,
-          "pilotSites": [],
-          "partners": []
-        },
-        "pilotPlan": {
-          "hypothesis": {
-            "es": "Demanda de centros FP y oferta de marco de reconocimiento universitario para itinerario puente.",
-            "en": "Demand from VET centres and offer of university recognition framework for bridge itinerary.",
-            "va": "Demanda de centres FP i oferta de marc de reconeixement universitari per a itinerari pont."
-          },
-          "objective": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "targetParticipants": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "methodology": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "successCriteria": [
-            {
-              "id": "sc1",
-              "label": {
-                "es": "Al menos el 75% de los participantes obtiene el reconocimiento de créditos por UPV",
-                "en": "At least 75% of participants obtain credit recognition from UPV",
-                "va": "Almenys el 75% dels participants obtenen el reconeixement de crèdits per UPV"
-              }
-            },
-            {
-              "id": "sc2",
-              "label": {
-                "es": "Guía de itinerario publicada bajo CC BY antes de septiembre 2026",
-                "en": "Itinerary guide published under CC BY before September 2026",
-                "va": "Guia d'itinerari publicada sota CC BY abans del setembre de 2026"
-              }
-            }
-          ]
-        },
-        "implementation": {
-          "readiness": {
-            "technologyReadiness": {
-              "enabled": true,
-              "level": 5,
-              "pilotLabel": {
-                "es": "Validación en entorno relevante",
-                "en": "Validation in relevant environment",
-                "va": "Validació en entorn rellevant"
-              }
-            },
-            "educationalReadiness": {
-              "enabled": true,
-              "level": "designed",
-              "pilotLabel": {
-                "es": "Diseñado",
-                "en": "Designed",
-                "va": "Dissenyat"
-              }
-            }
-          },
-          "infrastructure": [
-            {
-              "id": "upv-lms",
-              "label": {
-                "es": "Plataforma LMS UPV",
-                "en": "UPV LMS platform",
-                "va": "Plataforma LMS UPV"
-              }
-            },
-            {
-              "id": "digital-twins-lab",
-              "label": {
-                "es": "Laboratorio de gemelos digitales INESC TEC",
-                "en": "INESC TEC digital twins lab",
-                "va": "Laboratori de bessons digitals INESC TEC"
-              }
-            },
-            {
-              "id": "aules-fp",
-              "label": {
-                "es": "Entorno Aules FP",
-                "en": "Aules VET environment",
-                "va": "Entorn Aules FP"
-              }
-            }
-          ],
-          "tools": [],
-          "dataManagement": null
-        },
-        "evidence": null,
-        "results": {
-          "headline": {
-            "es": "12 estudiantes en itinerario puente activo. Marco de créditos en revisión por UPV. Publicación de guía prevista para septiembre 2026.",
-            "en": "12 students on active bridge itinerary. Credit framework under UPV review. Guide publication planned for September 2026.",
-            "va": "12 estudiants en itinerari pont actiu. Marc de crèdits en revisió per UPV. Publicació de guia prevista per al setembre 2026."
-          },
-          "outputs": [],
-          "decision": null
-        },
-        "transferability": null,
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "system": "",
-            "url": ""
-          },
-          "secondaryAction": null
-        },
-        "relations": {
-          "originChallengeId": "",
-          "relatedValidations": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "relatedMentorships": [],
-          "nextPossibleItems": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "pilot",
-            "showPilotStage": true,
-            "showPilotType": true,
-            "showReadiness": true,
-            "showWindow": true,
-            "showInfrastructure": true,
-            "showPrimaryMetric": true,
-            "showDownloadsIndicator": false,
-            "resultBlockLabel": {
-              "es": "Qué se prueba",
-              "en": "What is being tested",
-              "va": "Què es prova"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "pilotPlan": true,
-              "methodology": true,
-              "implementation": true,
-              "evidence": true,
-              "results": true,
-              "transferability": true,
-              "downloads": true,
-              "resources": true,
-              "process": true,
-              "people": true,
-              "access": true,
-              "trackA": false,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "pilotPlan",
-            "implementation",
-            "evidence",
-            "results",
-            "transferability"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "process",
-            "people",
-            "access",
-            "externalFlow",
-            "relations"
-          ],
-          "cardSignal": "pilotPlan"
-        }
-      }
-    ],
-    "validations": [
-      {
-        "id": "validation-etica-ia-seleccion-personal-adm",
-        "type": "validation",
-        "tab": "validations",
-        "sortDate": "2026-05-01",
-        "visible": true,
-        "sourcePath": "content/challenges/items/validations/validation-etica-ia-seleccion-personal-adm.yml",
-        "core": {
-          "status": "closed",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Uso de IA para el cribado de candidatos en procesos selectivos de la administración pública",
-            "en": "[DEMO] Use of AI for candidate screening in public administration selection processes",
-            "va": "[DEMO] Ús d'IA per al cribratge de candidats en processos selectius de l'administració pública"
-          },
-          "summary": {
-            "es": "Validación ética de una propuesta de sistema de IA para el cribado automático de candidatos en oposiciones y concursos de méritos de la administración pública valenciana. La validación concluye con una recomendación de reformulación sustancial antes de poder considerarse apto para piloto.",
-            "en": "Ethical validation of a proposed AI system for automatic candidate screening in public administration competitive examinations and merit competitions in the Valencian Community. The validation concludes with a recommendation for substantial reformulation before being considered suitable for piloting.",
-            "va": "Validació ètica d'una proposta de sistema d'IA per al cribratge automàtic de candidats en oposicions i concursos de mèrits de l'administració pública valenciana. La validació conclou amb una recomanació de reformulació substancial abans de poder considerar-se apte per a pilot."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "nts",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "ethical-validation",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-03-01",
-          "revisionDate": "2026-05-01",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "1 de marzo de 2026",
-            "en": "March 1, 2026",
-            "va": "1 de març de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "1 de mayo de 2026",
-            "en": "May 1, 2026",
-            "va": "1 de maig de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": {
-          "file": "validation-etica-ia-seleccion-personal-adm.pdf",
-          "publicPath": "/assets/downloads/marketplace/validations/validation-etica-ia-seleccion-personal-adm.pdf"
-        },
-        "adhesionForm": {
-          "url": "https://forms.cloud.microsoft/e/ERLBsJwJ7Y"
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "validations"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "proposer": {
-            "name": "Dirección General de Función Pública — Generalitat Valenciana",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "validators": []
-        },
-        "validation": {
-          "objectType": "challenge",
-          "objectTitle": {
-            "es": "Propuesta de sistema IA para cribado automático de candidatos en oposiciones y concursos de méritos",
-            "en": "Proposed AI system for automatic candidate screening in competitive examinations and merit competitions",
-            "va": "Proposta de sistema IA per al cribratge automàtic de candidats en oposicions i concursos de mèrits"
-          },
-          "validationQuestion": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "need": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "method": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "validationEnvironment": [
-            {
-              "label": {
-                "es": "Análisis ALTAI — Comité de Ética Digital de la Generalitat (7 dimensiones, 52 criterios evaluados)",
-                "en": "ALTAI analysis — Generalitat Digital Ethics Committee (7 dimensions, 52 criteria assessed)",
-                "va": "Anàlisi ALTAI — Comité d'Ètica Digital de la Generalitat (7 dimensions, 52 criteris avaluats)"
-              }
-            },
-            {
-              "label": {
-                "es": "Análisis legal — Servicio Jurídico de la Generalitat Valenciana (Reglamento IA UE + Ley de Empleo Público)",
-                "en": "Legal analysis — Valencian Generalitat Legal Service (EU AI Act + Public Employment Law)",
-                "va": "Anàlisi legal — Servei Jurídic de la Generalitat Valenciana (Reglament IA UE + Llei d'Ocupació Pública)"
-              }
-            },
-            {
-              "label": {
-                "es": "Consulta sindical — CSIF y UGT-PV (representantes de empleados públicos de la Generalitat)",
-                "en": "Union consultation — CSIF and UGT-PV (Generalitat public employee representatives)",
-                "va": "Consulta sindical — CSIF i UGT-PV (representants d'empleats públics de la Generalitat)"
-              }
-            },
-            {
-              "label": {
-                "es": "Análisis de correlaciones — dataset histórico anonimizado de 4.200 expedientes de candidatos (2021-2024)",
-                "en": "Correlation analysis — anonymised historical dataset of 4,200 candidate files (2021-2024)",
-                "va": "Anàlisi de correlacions — dataset històric anonimitzat de 4.200 expedients de candidats (2021-2024)"
-              }
-            }
-          ]
-        },
-        "criteria": {
-          "items": []
-        },
-        "evidence": null,
-        "decision": {
-          "outcome": "",
-          "tone": "negative",
-          "label": {
-            "es": "Requiere reformulación sustancial — no apto para piloto en estado actual",
-            "en": "Requires substantial reformulation — not suitable for piloting in current state",
-            "va": "Requereix reformulació substancial — no apte per a pilot en estat actual"
-          },
-          "rationale": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "nextStep": null
-        },
-        "trackRouting": null,
-        "relations": {
-          "validatedChallengeId": "",
-          "resultingPilotIds": [],
-          "resultingCaseIds": [],
-          "resultingResourceIds": [],
-          "relatedMentorshipIds": [],
-          "nextPossibleItems": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "Ver validación",
-              "en": "View validation",
-              "va": "Veure validació"
-            },
-            "url": "",
-            "system": ""
-          },
-          "secondaryAction": null
-        },
-        "presentation": {
-          "card": {
-            "variant": "validation",
-            "showDecision": true,
-            "showValidationStage": true,
-            "showWindow": true,
-            "showValidationEnvironment": true,
-            "showDownloadsIndicator": false,
-            "mainBlockLabel": {
-              "es": "Qué se valida",
-              "en": "What is validated",
-              "va": "Què es valida"
-            }
-          },
-          "detail": {
-            "sections": {
-              "object": true,
-              "need": true,
-              "context": true,
-              "method": true,
-              "criteria": true,
-              "evidence": true,
-              "decision": true,
-              "downloads": true,
-              "resources": true,
-              "people": true,
-              "access": true,
-              "trackRouting": true,
-              "relations": false
-            }
-          }
-        },
-        "validationWindow": {
-          "start": "2026-01-10",
-          "end": "2026-02-28"
-        },
-        "criteriaCount": 0,
-        "validationTypeLabel": {
-          "es": "Validación ética",
-          "en": "Ethical validation",
-          "va": "Validació ètica"
-        },
-        "validationStageLabel": {
-          "es": "Cerrada",
-          "en": "Closed",
-          "va": "Tancada"
-        },
-        "decisionOutcomeLabel": {},
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "template": {
-          "requiredBlocks": [
-            "validation",
-            "criteria",
-            "evidence",
-            "decision"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "access",
-            "trackRouting",
-            "relations",
-            "people",
-            "externalFlow"
-          ],
-          "cardSignal": "validation"
-        }
-      },
-      {
-        "id": "validation-legal-datos-movilidad-mob",
-        "type": "validation",
-        "tab": "validations",
-        "sortDate": "2026-04-05",
-        "visible": true,
-        "sourcePath": "content/challenges/items/validations/validation-legal-datos-movilidad-mob.yml",
-        "core": {
-          "status": "closed",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Validación legal — Uso de datos de movilidad urbana de Correos para el reto de optimización de rutas",
-            "en": "[DEMO] Legal validation — Use of Correos urban mobility data for the route optimisation challenge",
-            "va": "[DEMO] Validació legal — Ús de dades de mobilitat urbana de Correos per al repte d'optimització de rutes"
-          },
-          "summary": {
-            "es": "Validación legal del marco de cesión y anonimización de los datos de rutas y entregas de Correos necesarios para el reto de optimización de última milla, confirmando la viabilidad de la cesión bajo el RGPD y estableciendo las condiciones específicas de anonimización y uso que deben incluirse en las bases del reto.",
-            "en": "Legal validation of the framework for transferring and anonymising Correos route and delivery data needed for the last-mile optimisation challenge, confirming the feasibility of transfer under GDPR and establishing the specific anonymisation and use conditions to be included in the challenge terms.",
-            "va": "Validació legal del marc de cessió i anonimització de les dades de rutes i lliuraments de Correos necessàries per al repte d'optimització d'última milla, confirmant la viabilitat de la cessió sota el RGPD i establint les condicions específiques d'anonimització i ús que han d'incloure's en les bases del repte."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "mob",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "legal-validation",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-02-20",
-          "revisionDate": "2026-04-05",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "20 de febrero de 2026",
-            "en": "February 20, 2026",
-            "va": "20 de febrer de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "5 de abril de 2026",
-            "en": "April 5, 2026",
-            "va": "5 d'abril de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "validations"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "proposer": {
-            "name": "Correos — Dirección de Operaciones Zona Mediterráneo",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "validators": []
-        },
-        "validation": {
-          "objectType": "challenge",
-          "objectTitle": {
-            "es": "Reto — Optimización de rutas de última milla con IA para logística urbana sostenible (uso del dataset de Correos)",
-            "en": "Challenge — AI last-mile route optimisation for sustainable urban logistics (use of Correos dataset)",
-            "va": "Repte — Optimització de rutes d'última milla amb IA per a logística urbana sostenible (ús del dataset de Correos)"
-          },
-          "validationQuestion": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "need": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "method": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "validationEnvironment": [
-            {
-              "label": {
-                "es": "EIPD simplificada — DPO de Correos",
-                "en": "Simplified DPIA — Correos DPO",
-                "va": "AIPD simplificada — DPO de Correos"
-              }
-            },
-            {
-              "label": {
-                "es": "Revisión de condiciones de uso — AI-STEAM Asesoría Legal",
-                "en": "Use conditions review — AI-STEAM Legal Advisory",
-                "va": "Revisió de condicions d'ús — AI-STEAM Assessoria Legal"
-              }
-            },
-            {
-              "label": {
-                "es": "Protocolo de anonimización k-anonimato — DPO + Asesoría Legal",
-                "en": "K-anonymity anonymisation protocol — DPO + Legal Advisory",
-                "va": "Protocol d'anonimització k-anonimat — DPO + Assessoria Legal"
-              }
-            }
-          ]
-        },
-        "criteria": {
-          "items": []
-        },
-        "evidence": null,
-        "decision": {
-          "outcome": "",
-          "tone": "neutral",
-          "label": {
-            "es": "Validado — datos aptos para cesión en el reto con el protocolo de anonimización documentado",
-            "en": "Validated — data suitable for challenge transfer with the documented anonymisation protocol",
-            "va": "Validat — dades aptes per a cessió en el repte amb el protocol d'anonimització documentat"
-          },
-          "rationale": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "nextStep": null
-        },
-        "trackRouting": null,
-        "relations": {
-          "validatedChallengeId": "",
-          "resultingPilotIds": [],
-          "resultingCaseIds": [],
-          "resultingResourceIds": [],
-          "relatedMentorshipIds": [],
-          "nextPossibleItems": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "Ver validación",
-              "en": "View validation",
-              "va": "Veure validació"
-            },
-            "url": "",
-            "system": ""
-          },
-          "secondaryAction": null
-        },
-        "presentation": {
-          "card": {
-            "variant": "validation",
-            "showDecision": true,
-            "showValidationStage": true,
-            "showWindow": true,
-            "showValidationEnvironment": true,
-            "showDownloadsIndicator": false,
-            "mainBlockLabel": {
-              "es": "Qué se valida",
-              "en": "What is validated",
-              "va": "Què es valida"
-            }
-          },
-          "detail": {
-            "sections": {
-              "object": true,
-              "need": true,
-              "context": true,
-              "method": true,
-              "criteria": true,
-              "evidence": true,
-              "decision": true,
-              "downloads": true,
-              "resources": true,
-              "people": true,
-              "access": true,
-              "trackRouting": true,
-              "relations": false
-            }
-          }
-        },
-        "validationWindow": {
-          "start": "2026-01-05",
-          "end": "2026-02-15"
-        },
-        "criteriaCount": 0,
-        "validationTypeLabel": {
-          "es": "Validación legal",
-          "en": "Legal validation",
-          "va": "Validació legal"
-        },
-        "validationStageLabel": {
-          "es": "Cerrada",
-          "en": "Closed",
-          "va": "Tancada"
-        },
-        "decisionOutcomeLabel": {},
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "template": {
-          "requiredBlocks": [
-            "validation",
-            "criteria",
-            "evidence",
-            "decision"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "access",
-            "trackRouting",
-            "relations",
-            "people",
-            "externalFlow"
-          ],
-          "cardSignal": "validation"
-        }
-      },
-      {
-        "id": "validation-tecnica-gemelo-digital-ene",
-        "type": "validation",
-        "tab": "validations",
-        "sortDate": "2026-04-01",
-        "visible": true,
-        "sourcePath": "content/challenges/items/validations/validation-tecnica-gemelo-digital-ene.yml",
-        "core": {
-          "status": "closed",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Validación técnica — Viabilidad del gemelo digital para la gestión predictiva de la red eléctrica urbana",
-            "en": "[DEMO] Technical validation — Feasibility of digital twin for predictive urban electricity grid management",
-            "va": "[DEMO] Validació tècnica — Viabilitat de la bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
-          },
-          "summary": {
-            "es": "Validación técnica del reto de gemelo digital para la red eléctrica promovido por Endesa Distribución, confirmando la viabilidad de CARLA y ROS 2 como stack tecnológico y la disponibilidad de datos SCADA anonimizables para el desarrollo del prototipo.",
-            "en": "Technical validation of the electricity grid digital twin challenge promoted by Endesa Distribución, confirming the viability of CARLA and ROS 2 as the technology stack and the availability of anonymisable SCADA data for prototype development.",
-            "va": "Validació tècnica del repte de bessona digital per a la xarxa elèctrica promogut per Endesa Distribució, confirmant la viabilitat de CARLA i ROS 2 com a stack tecnològic i la disponibilitat de dades SCADA anonimitzables per al desenvolupament del prototip."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "ene",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "technical-validation",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-02-15",
-          "revisionDate": "2026-04-01",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "15 de febrero de 2026",
-            "en": "February 15, 2026",
-            "va": "15 de febrer de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "1 de abril de 2026",
-            "en": "April 1, 2026",
-            "va": "1 d'abril de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "validations"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "proposer": {
-            "name": "Endesa Distribución S.A. — Área de Innovación Redes",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "validators": []
-        },
-        "validation": {
-          "objectType": "challenge",
-          "objectTitle": {
-            "es": "Reto — Gemelo digital para la gestión predictiva de la red eléctrica urbana",
-            "en": "Challenge — Digital twin for predictive urban electricity grid management",
-            "va": "Repte — Bessona digital per a la gestió predictiva de la xarxa elèctrica urbana"
-          },
-          "validationQuestion": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "need": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "method": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "validationEnvironment": [
-            {
-              "label": {
-                "es": "Revisión técnica ITE — dataset histórico SCADA (muestra 5%)",
-                "en": "ITE technical review — historical SCADA dataset (5% sample)",
-                "va": "Revisió tècnica ITE — dataset històric SCADA (mostra 5%)"
-              }
-            },
-            {
-              "label": {
-                "es": "Prueba de concepto en entorno sandboxed de Endesa",
-                "en": "Proof of concept in Endesa sandboxed environment",
-                "va": "Prova de concepte en entorn sandboxed d'Endesa"
-              }
-            },
-            {
-              "label": {
-                "es": "Sesión de triage ConsensUE con Comité Técnico Energía",
-                "en": "ConsensUE triage session with Energy Technical Committee",
-                "va": "Sessió de triatge ConsensUE amb Comité Tècnic Energia"
-              }
-            }
-          ]
-        },
-        "criteria": {
-          "items": []
-        },
-        "evidence": null,
-        "decision": {
-          "outcome": "",
-          "tone": "neutral",
-          "label": {
-            "es": "Validado — clasificado Track B para reto abierto al ecosistema",
-            "en": "Validated — classified as Track B for open ecosystem challenge",
-            "va": "Validat — classificat Track B per a repte obert a l'ecosistema"
-          },
-          "rationale": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "nextStep": null
-        },
-        "trackRouting": null,
-        "relations": {
-          "validatedChallengeId": "",
-          "resultingPilotIds": [],
-          "resultingCaseIds": [],
-          "resultingResourceIds": [],
-          "relatedMentorshipIds": [],
-          "nextPossibleItems": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "Ver validación",
-              "en": "View validation",
-              "va": "Veure validació"
-            },
-            "url": "",
-            "system": ""
-          },
-          "secondaryAction": null
-        },
-        "presentation": {
-          "card": {
-            "variant": "validation",
-            "showDecision": true,
-            "showValidationStage": true,
-            "showWindow": true,
-            "showValidationEnvironment": true,
-            "showDownloadsIndicator": false,
-            "mainBlockLabel": {
-              "es": "Qué se valida",
-              "en": "What is validated",
-              "va": "Què es valida"
-            }
-          },
-          "detail": {
-            "sections": {
-              "object": true,
-              "need": true,
-              "context": true,
-              "method": true,
-              "criteria": true,
-              "evidence": true,
-              "decision": true,
-              "downloads": true,
-              "resources": true,
-              "people": true,
-              "access": true,
-              "trackRouting": true,
-              "relations": false
-            }
-          }
-        },
-        "validationWindow": {
-          "start": "2025-12-01",
-          "end": "2026-02-10"
-        },
-        "criteriaCount": 0,
-        "validationTypeLabel": {
-          "es": "Validación técnica",
-          "en": "Technical validation",
-          "va": "Validació tècnica"
-        },
-        "validationStageLabel": {
-          "es": "Cerrada",
-          "en": "Closed",
-          "va": "Tancada"
-        },
-        "decisionOutcomeLabel": {},
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "template": {
-          "requiredBlocks": [
-            "validation",
-            "criteria",
-            "evidence",
-            "decision"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "access",
-            "trackRouting",
-            "relations",
-            "people",
-            "externalFlow"
-          ],
-          "cardSignal": "validation"
-        }
-      },
-      {
-        "id": "validation-stakeholder-turismo-inteligente-tur",
-        "type": "validation",
-        "tab": "validations",
-        "sortDate": "2026-03-20",
-        "visible": true,
-        "sourcePath": "content/challenges/items/validations/validation-stakeholder-turismo-inteligente-tur.yml",
-        "core": {
-          "status": "closed",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Validación stakeholder — Necesidad de personalización con IA en la oferta turística valenciana",
-            "en": "[DEMO] Stakeholder validation — Need for AI personalisation in the Valencian tourism offer",
-            "va": "[DEMO] Validació stakeholder — Necessitat de personalització amb IA en l'oferta turística valenciana"
-          },
-          "summary": {
-            "es": "Validación con la Agència Valenciana del Turisme, asociaciones hoteleras y plataformas de reservas de la demanda real de sistemas de personalización de experiencias turísticas con IA, que derivó en la publicación del reto de análisis de sentimiento y en el inicio de dos pilotos de personalización de recomendaciones en destinos piloto de la Costa Blanca.",
-            "en": "Validation with the Valencian Tourism Agency, hotel associations and booking platforms of the real demand for AI tourism experience personalisation systems, leading to the publication of the sentiment analysis challenge and the launch of two recommendation personalisation pilots in Costa Blanca pilot destinations.",
-            "va": "Validació amb l'Agència Valenciana del Turisme, associacions hoteleres i plataformes de reserves de la demanda real de sistemes de personalització d'experiències turístiques amb IA, que va derivar en la publicació del repte d'anàlisi de sentiment i en l'inici de dos pilots de personalització de recomanacions en destinacions pilot de la Costa Blanca."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "cci",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "stakeholder-validation",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-01-10",
-          "revisionDate": "2026-03-20",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "10 de enero de 2026",
-            "en": "January 10, 2026",
-            "va": "10 de gener de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "20 de marzo de 2026",
-            "en": "March 20, 2026",
-            "va": "20 de març de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "validations"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "proposer": {
-            "name": "Agència Valenciana del Turisme (Turisme Comunitat Valenciana)",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "validators": []
-        },
-        "validation": {
-          "objectType": "challenge",
-          "objectTitle": {
-            "es": "Necesidad de sistemas de IA para análisis de reputación y personalización de la experiencia turística en la Comunitat Valenciana",
-            "en": "Need for AI systems for reputation analysis and tourism experience personalisation in the Valencian Community",
-            "va": "Necessitat de sistemes d'IA per a anàlisi de reputació i personalització de l'experiència turística a la Comunitat Valenciana"
-          },
-          "validationQuestion": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "need": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "method": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "validationEnvironment": [
-            {
-              "label": {
-                "es": "Panel de expertos hoteleros — HOSBEC (n=12)",
-                "en": "Hotel expert panel — HOSBEC (n=12)",
-                "va": "Panell d'experts hotelers — HOSBEC (n=12)"
-              }
-            },
-            {
-              "label": {
-                "es": "Análisis de datos agregados de búsqueda — Booking.com (destinos valencianos, 2024-2025)",
-                "en": "Aggregated search data analysis — Booking.com (Valencian destinations, 2024-2025)",
-                "va": "Anàlisi de dades agregades de cerca — Booking.com (destinacions valencianes, 2024-2025)"
-              }
-            },
-            {
-              "label": {
-                "es": "Triage ConsensUE — Comité Técnico Turismo y Cultura",
-                "en": "ConsensUE triage — Tourism and Culture Technical Committee",
-                "va": "Triatge ConsensUE — Comité Tècnic Turisme i Cultura"
-              }
-            }
-          ]
-        },
-        "criteria": {
-          "items": []
-        },
-        "evidence": null,
-        "decision": {
-          "outcome": "",
-          "tone": "neutral",
-          "label": {
-            "es": "Validado — necesidad confirmada; se deriva a reto Track B (análisis de sentimiento) y piloto de personalización",
-            "en": "Validated — need confirmed; derived to Track B challenge (sentiment analysis) and personalisation pilot",
-            "va": "Validat — necessitat confirmada; es deriva a repte Track B (anàlisi de sentiment) i pilot de personalització"
-          },
-          "rationale": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "nextStep": null
-        },
-        "trackRouting": null,
-        "relations": {
-          "validatedChallengeId": "",
-          "resultingPilotIds": [],
-          "resultingCaseIds": [],
-          "resultingResourceIds": [],
-          "relatedMentorshipIds": [],
-          "nextPossibleItems": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "Ver validación",
-              "en": "View validation",
-              "va": "Veure validació"
-            },
-            "url": "",
-            "system": ""
-          },
-          "secondaryAction": null
-        },
-        "presentation": {
-          "card": {
-            "variant": "validation",
-            "showDecision": true,
-            "showValidationStage": true,
-            "showWindow": true,
-            "showValidationEnvironment": true,
-            "showDownloadsIndicator": false,
-            "mainBlockLabel": {
-              "es": "Qué se valida",
-              "en": "What is validated",
-              "va": "Què es valida"
-            }
-          },
-          "detail": {
-            "sections": {
-              "object": true,
-              "need": true,
-              "context": true,
-              "method": true,
-              "criteria": true,
-              "evidence": true,
-              "decision": true,
-              "downloads": true,
-              "resources": true,
-              "people": true,
-              "access": true,
-              "trackRouting": true,
-              "relations": false
-            }
-          }
-        },
-        "validationWindow": {
-          "start": "2025-10-15",
-          "end": "2025-12-20"
-        },
-        "criteriaCount": 0,
-        "validationTypeLabel": {
-          "es": "Validación stakeholder",
-          "en": "Stakeholder validation",
-          "va": "Validació stakeholder"
-        },
-        "validationStageLabel": {
-          "es": "Cerrada",
-          "en": "Closed",
-          "va": "Tancada"
-        },
-        "decisionOutcomeLabel": {},
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "template": {
-          "requiredBlocks": [
-            "validation",
-            "criteria",
-            "evidence",
-            "decision"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "access",
-            "trackRouting",
-            "relations",
-            "people",
-            "externalFlow"
-          ],
-          "cardSignal": "validation"
-        }
-      },
-      {
-        "id": "validation-pedagogica-control-calidad-mfg",
-        "type": "validation",
-        "tab": "validations",
-        "sortDate": "2026-03-10",
-        "visible": true,
-        "sourcePath": "content/challenges/items/validations/validation-pedagogica-control-calidad-mfg.yml",
-        "core": {
-          "status": "closed",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Validación pedagógica — Integración de visión artificial en ciclos de FP de Fabricación Mecánica",
-            "en": "[DEMO] Pedagogical validation — Integration of computer vision in Mechanical Manufacturing VET cycles",
-            "va": "[DEMO] Validació pedagògica — Integració de visió artificial en cicles de FP de Fabricació Mecànica"
-          },
-          "summary": {
-            "es": "Validación del encaje curricular de un módulo de visión artificial para control de calidad en los ciclos de FP de Fabricación Mecánica y Mecatrónica, confirmando la pertinencia pedagógica y definiendo los requisitos de formación docente necesarios para la implantación autónoma.",
-            "en": "Validation of the curricular fit of a computer vision quality control module in Mechanical Manufacturing and Mechatronics VET cycles, confirming pedagogical relevance and defining teacher training requirements for autonomous implementation.",
-            "va": "Validació de l'encaix curricular d'un mòdul de visió artificial per a control de qualitat en els cicles de FP de Fabricació Mecànica i Mecatrònica, confirmant la pertinència pedagògica i definint els requisits de formació docent necessaris per a la implantació autònoma."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "mfg",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "pedagogical-validation",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-01-20",
-          "revisionDate": "2026-03-10",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "20 de enero de 2026",
-            "en": "January 20, 2026",
-            "va": "20 de gener de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "10 de marzo de 2026",
-            "en": "March 10, 2026",
-            "va": "10 de març de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "validations"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "proposer": {
-            "name": "Pamesa Cerámica S.A. — Dirección de Ingeniería de Proceso",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "validators": []
-        },
-        "validation": {
-          "objectType": "challenge",
-          "objectTitle": {
-            "es": "Reto — Control de calidad visual con IA en línea de producción de componentes cerámicos",
-            "en": "Challenge — AI visual quality control on ceramic component production line",
-            "va": "Repte — Control de qualitat visual amb IA en línia de producció de components ceràmics"
-          },
-          "validationQuestion": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "need": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "method": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "validationEnvironment": [
-            {
-              "label": {
-                "es": "Análisis curricular — Reales Decretos FP Fabricación y Mecatrónica",
-                "en": "Curriculum analysis — Royal Decrees for Manufacturing and Mechatronics VET",
-                "va": "Anàlisi curricular — Reials Decrets FP Fabricació i Mecatrònica"
-              }
-            },
-            {
-              "label": {
-                "es": "Encuesta a 12 docentes de FP de Fabricación Mecánica",
-                "en": "Survey of 12 Mechanical Manufacturing VET teachers",
-                "va": "Enquesta a 12 docents de FP de Fabricació Mecànica"
-              }
-            },
-            {
-              "label": {
-                "es": "Sesión de revisión docente en IES Ausiàs March",
-                "en": "Teacher review session at IES Ausiàs March",
-                "va": "Sessió de revisió docent a l'IES Ausiàs March"
-              }
-            }
-          ]
-        },
-        "criteria": {
-          "items": []
-        },
-        "evidence": null,
-        "decision": {
-          "outcome": "",
-          "tone": "neutral",
-          "label": {
-            "es": "Validado — clasificado Track B con requisito de formación docente previa",
-            "en": "Validated — classified as Track B with prior teacher training requirement",
-            "va": "Validat — classificat Track B amb requisit de formació docent prèvia"
-          },
-          "rationale": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "nextStep": null
-        },
-        "trackRouting": null,
-        "relations": {
-          "validatedChallengeId": "",
-          "resultingPilotIds": [],
-          "resultingCaseIds": [],
-          "resultingResourceIds": [],
-          "relatedMentorshipIds": [],
-          "nextPossibleItems": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "Ver validación",
-              "en": "View validation",
-              "va": "Veure validació"
-            },
-            "url": "",
-            "system": ""
-          },
-          "secondaryAction": null
-        },
-        "presentation": {
-          "card": {
-            "variant": "validation",
-            "showDecision": true,
-            "showValidationStage": true,
-            "showWindow": true,
-            "showValidationEnvironment": true,
-            "showDownloadsIndicator": false,
-            "mainBlockLabel": {
-              "es": "Qué se valida",
-              "en": "What is validated",
-              "va": "Què es valida"
-            }
-          },
-          "detail": {
-            "sections": {
-              "object": true,
-              "need": true,
-              "context": true,
-              "method": true,
-              "criteria": true,
-              "evidence": true,
-              "decision": true,
-              "downloads": true,
-              "resources": true,
-              "people": true,
-              "access": true,
-              "trackRouting": true,
-              "relations": false
-            }
-          }
-        },
-        "validationWindow": {
-          "start": "2025-11-01",
-          "end": "2026-01-15"
-        },
-        "criteriaCount": 0,
-        "validationTypeLabel": {
-          "es": "Validación pedagógica",
-          "en": "Pedagogical validation",
-          "va": "Validació pedagògica"
-        },
-        "validationStageLabel": {
-          "es": "Cerrada",
-          "en": "Closed",
-          "va": "Tancada"
-        },
-        "decisionOutcomeLabel": {},
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "template": {
-          "requiredBlocks": [
-            "validation",
-            "criteria",
-            "evidence",
-            "decision"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "access",
-            "trackRouting",
-            "relations",
-            "people",
-            "externalFlow"
-          ],
-          "cardSignal": "validation"
-        }
-      },
-      {
-        "id": "validation-stakeholder-salud-digital-nts",
-        "type": "validation",
-        "tab": "validations",
-        "sortDate": "2026-02-20",
-        "visible": true,
-        "sourcePath": "content/challenges/items/validations/validation-stakeholder-salud-digital-nts.yml",
-        "core": {
-          "status": "closed",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Validación stakeholder — Necesidad de competencias digitales en salud en la FP Sanitaria valenciana",
-            "en": "[DEMO] Stakeholder validation — Digital health competency needs in Valencian Health VET",
-            "va": "[DEMO] Validació stakeholder — Necessitat de competències digitals en salut en la FP Sanitària valenciana"
-          },
-          "summary": {
-            "es": "Validación con hospitales públicos, colegios profesionales sanitarios y centros de FP de la Comunitat Valenciana de la brecha de competencias digitales en salud que existe entre la formación recibida en FP Sanitario y las competencias que demandan los entornos clínicos actuales, con clasificación Track A para el máster universitario.",
-            "en": "Validation with public hospitals, healthcare professional associations and VET centres in the Valencian Community of the digital health competency gap between Health VET training and the competencies demanded by current clinical settings, with Track A classification for the university master's programme.",
-            "va": "Validació amb hospitals públics, col·legis professionals sanitaris i centres de FP de la Comunitat Valenciana de la bretxa de competències digitals en salut que existeix entre la formació rebuda en FP Sanitari i les competències que demanden els entorns clínics actuals, amb classificació Track A per al màster universitari."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "nts",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "stakeholder-validation",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2025-12-01",
-          "revisionDate": "2026-02-20",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "1 de diciembre de 2025",
-            "en": "December 1, 2025",
-            "va": "1 de desembre de 2025"
-          },
-          "revisionDateLabel": {
-            "es": "20 de febrero de 2026",
-            "en": "February 20, 2026",
-            "va": "20 de febrer de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "validations"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "proposer": {
-            "name": "Consell Valencià d'Infermeria",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "validators": []
-        },
-        "validation": {
-          "objectType": "challenge",
-          "objectTitle": {
-            "es": "Brecha de competencias digitales en salud en los graduados de FP Sanitario valenciano",
-            "en": "Digital health competency gap in Valencian Health VET graduates",
-            "va": "Bretxa de competències digitals en salut en els graduats de FP Sanitari valencià"
-          },
-          "validationQuestion": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "need": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "method": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "validationEnvironment": [
-            {
-              "label": {
-                "es": "Encuesta de inserción laboral 2025 — Consell Valencià d'Infermeria (n=312)",
-                "en": "2025 job placement survey — Consell Valencià d'Infermeria (n=312)",
-                "va": "Enquesta d'inserció laboral 2025 — Consell Valencià d'Infermeria (n=312)"
-              }
-            },
-            {
-              "label": {
-                "es": "Entrevistas con 180 supervisores clínicos — 8 hospitales red pública valenciana",
-                "en": "Interviews with 180 clinical supervisors — 8 Valencian public hospital network hospitals",
-                "va": "Entrevistes amb 180 supervisors clínics — 8 hospitals xarxa pública valenciana"
-              }
-            },
-            {
-              "label": {
-                "es": "Triage ConsensUE — Comité Técnico Salud Digital",
-                "en": "ConsensUE triage — Digital Health Technical Committee",
-                "va": "Triatge ConsensUE — Comité Tècnic Salut Digital"
-              }
-            }
-          ]
-        },
-        "criteria": {
-          "items": []
-        },
-        "evidence": null,
-        "decision": {
-          "outcome": "",
-          "tone": "neutral",
-          "label": {
-            "es": "Validado — clasificado Track A para tratamiento académico en máster y Track B para intervención en FP",
-            "en": "Validated — classified as Track A for academic treatment at master's level and Track B for VET intervention",
-            "va": "Validat — classificat Track A per a tractament acadèmic en màster i Track B per a intervenció en FP"
-          },
-          "rationale": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "nextStep": null
-        },
-        "trackRouting": null,
-        "relations": {
-          "validatedChallengeId": "",
-          "resultingPilotIds": [],
-          "resultingCaseIds": [],
-          "resultingResourceIds": [],
-          "relatedMentorshipIds": [],
-          "nextPossibleItems": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "Ver validación",
-              "en": "View validation",
-              "va": "Veure validació"
-            },
-            "url": "",
-            "system": ""
-          },
-          "secondaryAction": null
-        },
-        "presentation": {
-          "card": {
-            "variant": "validation",
-            "showDecision": true,
-            "showValidationStage": true,
-            "showWindow": true,
-            "showValidationEnvironment": true,
-            "showDownloadsIndicator": false,
-            "mainBlockLabel": {
-              "es": "Qué se valida",
-              "en": "What is validated",
-              "va": "Què es valida"
-            }
-          },
-          "detail": {
-            "sections": {
-              "object": true,
-              "need": true,
-              "context": true,
-              "method": true,
-              "criteria": true,
-              "evidence": true,
-              "decision": true,
-              "downloads": true,
-              "resources": true,
-              "people": true,
-              "access": true,
-              "trackRouting": true,
-              "relations": false
-            }
-          }
-        },
-        "validationWindow": {
-          "start": "2025-09-15",
-          "end": "2025-11-30"
-        },
-        "criteriaCount": 0,
-        "validationTypeLabel": {
-          "es": "Validación stakeholder",
-          "en": "Stakeholder validation",
-          "va": "Validació stakeholder"
-        },
-        "validationStageLabel": {
-          "es": "Cerrada",
-          "en": "Closed",
-          "va": "Tancada"
-        },
-        "decisionOutcomeLabel": {},
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "template": {
-          "requiredBlocks": [
-            "validation",
-            "criteria",
-            "evidence",
-            "decision"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "access",
-            "trackRouting",
-            "relations",
-            "people",
-            "externalFlow"
-          ],
-          "cardSignal": "validation"
-        }
-      },
-      {
-        "id": "validation-stakeholder-agr-asaja",
-        "type": "validation",
-        "tab": "validations",
-        "sortDate": "2026-01-25",
-        "visible": true,
-        "sourcePath": "content/challenges/items/validations/validation-stakeholder-agr-asaja.yml",
-        "core": {
-          "status": "closed",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Validación stakeholder — Reto de agricultura de precisión con IA",
-            "en": "[DEMO] Stakeholder validation — Precision agriculture with AI challenge",
-            "va": "[DEMO] Validació stakeholder — Repte d'agricultura de precisió amb IA"
-          },
-          "summary": {
-            "es": "Validación con AVA-ASAJA y UVEG del reto sectorial sobre agricultura de precisión. Clasificado Track A para tratamiento académico en el Máster.",
-            "en": "Validation with AVA-ASAJA and UVEG of the sectoral challenge on precision agriculture. Classified as Track A for academic treatment in the Master programme.",
-            "va": "Validació amb AVA-ASAJA i UVEG del repte sectorial sobre agricultura de precisió. Classificat Track A per a tractament acadèmic en el Màster."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "agr",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "stakeholder-validation",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2025-11-10",
-          "revisionDate": "2026-01-25",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "10 de noviembre de 2025",
-            "en": "November 10, 2025",
-            "va": "10 de novembre de 2025"
-          },
-          "revisionDateLabel": {
-            "es": "25 de enero de 2026",
-            "en": "January 25, 2026",
-            "va": "25 de gener de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "validations"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "proposer": {
-            "name": "AVA-ASAJA",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "validators": []
-        },
-        "validation": {
-          "objectType": "challenge",
-          "objectTitle": {
-            "es": "Reto formativo sobre visión artificial y drones en agricultura de precisión",
-            "en": "Training challenge on computer vision and drones in precision agriculture",
-            "va": "Repte formatiu sobre visió artificial i drons en agricultura de precisió"
-          },
-          "validationQuestion": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "need": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "method": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "validationEnvironment": [
-            {
-              "label": {
-                "es": "Entrevistas estructuradas con AVA-ASAJA",
-                "en": "Structured interviews with AVA-ASAJA",
-                "va": "Entrevistes estructurades amb AVA-ASAJA"
-              }
-            },
-            {
-              "label": {
-                "es": "Revisión técnica UVEG",
-                "en": "UVEG technical review",
-                "va": "Revisió tècnica UVEG"
-              }
-            },
-            {
-              "label": {
-                "es": "Proceso de triage ConsensUE",
-                "en": "ConsensUE triage process",
-                "va": "Procés de triatge ConsensUE"
-              }
-            }
-          ]
-        },
-        "criteria": {
-          "items": []
-        },
-        "evidence": null,
-        "decision": {
-          "outcome": "",
-          "tone": "neutral",
-          "label": {
-            "es": "Validado — clasificado Track A para tratamiento académico",
-            "en": "Validated — classified as Track A for academic treatment",
-            "va": "Validat — classificat Track A per a tractament acadèmic"
-          },
-          "rationale": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "nextStep": null
-        },
-        "trackRouting": null,
-        "relations": {
-          "validatedChallengeId": "",
-          "resultingPilotIds": [],
-          "resultingCaseIds": [],
-          "resultingResourceIds": [],
-          "relatedMentorshipIds": [],
-          "nextPossibleItems": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "Ver validación",
-              "en": "View validation",
-              "va": "Veure validació"
-            },
-            "url": "",
-            "system": ""
-          },
-          "secondaryAction": null
-        },
-        "presentation": {
-          "card": {
-            "variant": "validation",
-            "showDecision": true,
-            "showValidationStage": true,
-            "showWindow": true,
-            "showValidationEnvironment": true,
-            "showDownloadsIndicator": false,
-            "mainBlockLabel": {
-              "es": "Qué se valida",
-              "en": "What is validated",
-              "va": "Què es valida"
-            }
-          },
-          "detail": {
-            "sections": {
-              "object": true,
-              "need": true,
-              "context": true,
-              "method": true,
-              "criteria": true,
-              "evidence": true,
-              "decision": true,
-              "downloads": true,
-              "resources": true,
-              "people": true,
-              "access": true,
-              "trackRouting": true,
-              "relations": false
-            }
-          }
-        },
-        "validationWindow": {
-          "start": "2025-10-01",
-          "end": "2026-01-25"
-        },
-        "criteriaCount": 0,
-        "validationTypeLabel": {
-          "es": "Validación stakeholder",
-          "en": "Stakeholder validation",
-          "va": "Validació stakeholder"
-        },
-        "validationStageLabel": {
-          "es": "Cerrada",
-          "en": "Closed",
-          "va": "Tancada"
-        },
-        "decisionOutcomeLabel": {},
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "template": {
-          "requiredBlocks": [
-            "validation",
-            "criteria",
-            "evidence",
-            "decision"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "access",
-            "trackRouting",
-            "relations",
-            "people",
-            "externalFlow"
-          ],
-          "cardSignal": "validation"
-        }
-      },
-      {
-        "id": "validation-academica-rl-edificios-hou",
-        "type": "validation",
-        "tab": "validations",
-        "sortDate": "2026-01-10",
-        "visible": true,
-        "sourcePath": "content/challenges/items/validations/validation-academica-rl-edificios-hou.yml",
-        "core": {
-          "status": "documented",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Aprendizaje por refuerzo aplicado a la gestión energética de edificios universitarios",
-            "en": "[DEMO] Reinforcement learning applied to energy management of university buildings",
-            "va": "[DEMO] Aprenentatge per reforç aplicat a la gestió energètica d'edificis universitaris"
-          },
-          "summary": {
-            "es": "Validación académica por el Instituto de Ingeniería Energética de la UPV y el grupo de investigación SAIL de la UCLM de la pertinencia científica y formativa del uso de aprendizaje por refuerzo para la gestión energética adaptativa en edificios, confirmando su encaje como contenido de máster y justificando la creación del Living Lab como entorno de investigación-formación.",
-            "en": "Academic validation by UPV's Institute of Energy Engineering and UCLM's SAIL research group of the scientific and educational relevance of reinforcement learning for adaptive building energy management, confirming its fit as master's content and justifying the creation of the Living Lab as a research-training environment.",
-            "va": "Validació acadèmica per l'Institut d'Enginyeria Energètica de la UPV i el grup de recerca SAIL de la UCLM de la pertinència científica i formativa de l'ús d'aprenentatge per reforç per a la gestió energètica adaptativa en edificis, confirmant el seu encaix com a contingut de màster i justificant la creació del Living Lab com a entorn de recerca-formació."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "hou",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "academic-validation",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2025-11-20",
-          "revisionDate": "2026-01-10",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "20 de noviembre de 2025",
-            "en": "November 20, 2025",
-            "va": "20 de novembre de 2025"
-          },
-          "revisionDateLabel": {
-            "es": "10 de enero de 2026",
-            "en": "January 10, 2026",
-            "va": "10 de gener de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": "https://forms.cloud.microsoft/e/ERLBsJwJ7Y"
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "validations"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "proposer": {
-            "name": "Instituto de Ingeniería Energética — Universitat Politècnica de València",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "validators": []
-        },
-        "validation": {
-          "objectType": "challenge",
-          "objectTitle": {
-            "es": "Metodología Living Lab para el entrenamiento y validación de agentes RL de gestión energética con participación de estudiantes de FP y máster",
-            "en": "Living Lab methodology for training and validating RL energy management agents with VET and master's student participation",
-            "va": "Metodologia Living Lab per a l'entrenament i validació d'agents RL de gestió energètica amb participació d'estudiants de FP i màster"
-          },
-          "validationQuestion": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "need": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "method": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "validationEnvironment": [
-            {
-              "label": {
-                "es": "Revisión bibliométrica SAIL-UCLM — 3 años de literatura sobre RL en edificios",
-                "en": "SAIL-UCLM bibliometric review — 3 years of RL in buildings literature",
-                "va": "Revisió bibliomètrica SAIL-UCLM — 3 anys de literatura sobre RL en edificis"
-              }
-            },
-            {
-              "label": {
-                "es": "Evaluación experimental del edificio 4I — IIE-UPV",
-                "en": "Building 4I experimental evaluation — IIE-UPV",
-                "va": "Avaluació experimental de l'edifici 4I — IIE-UPV"
-              }
-            },
-            {
-              "label": {
-                "es": "Sessión de valoración formativa — Comité Técnico Búsqueda AI-STEAM",
-                "en": "Educational value assessment session — AI-STEAM Research Technical Committee",
-                "va": "Sessió de valoració formativa — Comité Tècnic Recerca AI-STEAM"
-              }
-            }
-          ]
-        },
-        "criteria": {
-          "items": []
-        },
-        "evidence": null,
-        "decision": {
-          "outcome": "",
-          "tone": "positive",
-          "label": {
-            "es": "Validado — apto para piloto Living Lab con apertura a publicación de resultados como caso",
-            "en": "Validated — suitable for Living Lab pilot with openness to publishing results as a case",
-            "va": "Validat — apte per a pilot Living Lab amb obertura a publicació de resultats com a cas"
-          },
-          "rationale": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "nextStep": null
-        },
-        "trackRouting": null,
-        "relations": {
-          "validatedChallengeId": "",
-          "resultingPilotIds": [],
-          "resultingCaseIds": [],
-          "resultingResourceIds": [],
-          "relatedMentorshipIds": [],
-          "nextPossibleItems": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "Ver validación",
-              "en": "View validation",
-              "va": "Veure validació"
-            },
-            "url": "",
-            "system": ""
-          },
-          "secondaryAction": null
-        },
-        "presentation": {
-          "card": {
-            "variant": "validation",
-            "showDecision": true,
-            "showValidationStage": true,
-            "showWindow": true,
-            "showValidationEnvironment": true,
-            "showDownloadsIndicator": false,
-            "mainBlockLabel": {
-              "es": "Qué se valida",
-              "en": "What is validated",
-              "va": "Què es valida"
-            }
-          },
-          "detail": {
-            "sections": {
-              "object": true,
-              "need": true,
-              "context": true,
-              "method": true,
-              "criteria": true,
-              "evidence": true,
-              "decision": true,
-              "downloads": true,
-              "resources": true,
-              "people": true,
-              "access": true,
-              "trackRouting": true,
-              "relations": false
-            }
-          }
-        },
-        "validationWindow": {
-          "start": "2025-09-01",
-          "end": "2025-11-15"
-        },
-        "criteriaCount": 0,
-        "validationTypeLabel": {
-          "es": "Validación académica",
-          "en": "Academic validation",
-          "va": "Validació acadèmica"
-        },
-        "validationStageLabel": {
-          "es": "Documentada",
-          "en": "Documented",
-          "va": "Documentada"
-        },
-        "decisionOutcomeLabel": {},
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "template": {
-          "requiredBlocks": [
-            "validation",
-            "criteria",
-            "evidence",
-            "decision"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "access",
-            "trackRouting",
-            "relations",
-            "people",
-            "externalFlow"
-          ],
-          "cardSignal": "validation"
-        }
-      },
-      {
-        "id": "validation-stakeholder-movilidad-electrica",
-        "type": "validation",
-        "tab": "validations",
-        "sortDate": "2025-10-20",
-        "visible": true,
-        "sourcePath": "content/challenges/items/validations/validation-stakeholder-movilidad-electrica.yml",
-        "core": {
-          "status": "closed",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Validación stakeholder — Reto de movilidad eléctrica e infraestructura de carga",
-            "en": "[DEMO] Stakeholder validation — Electric mobility and charging infrastructure challenge",
-            "va": "[DEMO] Validació stakeholder — Repte de mobilitat elèctrica i infraestructura de càrrega"
-          },
-          "summary": {
-            "es": "Validación con ASEVA y concesionarios valencianos del reto sectorial sobre vehículo eléctrico y formación dual. Clasificado Track B para diseño de módulo FP dual en 2026-27.",
-            "en": "Validation with ASEVA and Valencian dealers of the sectoral challenge on electric vehicles and dual training. Classified as Track B for dual VET module design in 2026-27.",
-            "va": "Validació amb ASEVA i concessionaris valencians del repte sectorial sobre vehicle elèctric i formació dual. Classificat Track B per al disseny de mòdul FP dual en 2026-27."
-          },
-          "entity": {
-            "name": "",
-            "type": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "mob",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "stakeholder-validation",
-          "mentoringType": "",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2025-07-01",
-          "revisionDate": "2025-10-20",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "1 de julio de 2025",
-            "en": "July 1, 2025",
-            "va": "1 de juliol de 2025"
-          },
-          "revisionDateLabel": {
-            "es": "20 de octubre de 2025",
-            "en": "October 20, 2025",
-            "va": "20 d'octubre de 2025"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": ""
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "validations"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "proposer": {
-            "name": "ASEVA — Asociación Española del Vehículo Eléctrico",
-            "type": "",
-            "role": {
-              "es": "",
-              "en": "",
-              "va": ""
-            }
-          },
-          "validators": []
-        },
-        "validation": {
-          "objectType": "challenge",
-          "objectTitle": {
-            "es": "Reto formativo sobre instalación y mantenimiento de infraestructura de carga para vehículo eléctrico",
-            "en": "Training challenge on the installation and maintenance of electric vehicle charging infrastructure",
-            "va": "Repte formatiu sobre instal·lació i manteniment d'infraestructura de càrrega per a vehicle elèctric"
-          },
-          "validationQuestion": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "need": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "context": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "method": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "validationEnvironment": [
-            {
-              "label": {
-                "es": "Panel de expertos ASEVA con concesionarios",
-                "en": "ASEVA expert panel with dealers",
-                "va": "Panell d'experts ASEVA amb concessionaris"
-              }
-            },
-            {
-              "label": {
-                "es": "Análisis de brechas de competencias",
-                "en": "Competency gap analysis",
-                "va": "Anàlisi de bretxes de competències"
-              }
-            },
-            {
-              "label": {
-                "es": "Proceso de triage ConsensUE",
-                "en": "ConsensUE triage process",
-                "va": "Procés de triatge ConsensUE"
-              }
-            }
-          ]
-        },
-        "criteria": {
-          "items": []
-        },
-        "evidence": null,
-        "decision": {
-          "outcome": "",
-          "tone": "neutral",
-          "label": {
-            "es": "Validado — clasificado Track B para diseño de módulo FP dual",
-            "en": "Validated — classified as Track B for dual VET module design",
-            "va": "Validat — classificat Track B per al disseny de mòdul FP dual"
-          },
-          "rationale": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "nextStep": null
-        },
-        "trackRouting": null,
-        "relations": {
-          "validatedChallengeId": "",
-          "resultingPilotIds": [],
-          "resultingCaseIds": [],
-          "resultingResourceIds": [],
-          "relatedMentorshipIds": [],
-          "nextPossibleItems": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": null,
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "Ver validación",
-              "en": "View validation",
-              "va": "Veure validació"
-            },
-            "url": "",
-            "system": ""
-          },
-          "secondaryAction": null
-        },
-        "presentation": {
-          "card": {
-            "variant": "validation",
-            "showDecision": true,
-            "showValidationStage": true,
-            "showWindow": true,
-            "showValidationEnvironment": true,
-            "showDownloadsIndicator": false,
-            "mainBlockLabel": {
-              "es": "Qué se valida",
-              "en": "What is validated",
-              "va": "Què es valida"
-            }
-          },
-          "detail": {
-            "sections": {
-              "object": true,
-              "need": true,
-              "context": true,
-              "method": true,
-              "criteria": true,
-              "evidence": true,
-              "decision": true,
-              "downloads": true,
-              "resources": true,
-              "people": true,
-              "access": true,
-              "trackRouting": true,
-              "relations": false
-            }
-          }
-        },
-        "validationWindow": {
-          "start": "2025-06-01",
-          "end": "2025-10-20"
-        },
-        "criteriaCount": 0,
-        "validationTypeLabel": {
-          "es": "Validación stakeholder",
-          "en": "Stakeholder validation",
-          "va": "Validació stakeholder"
-        },
-        "validationStageLabel": {
-          "es": "Cerrada",
-          "en": "Closed",
-          "va": "Tancada"
-        },
-        "decisionOutcomeLabel": {},
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "template": {
-          "requiredBlocks": [
-            "validation",
-            "criteria",
-            "evidence",
-            "decision"
-          ],
-          "optionalBlocks": [
-            "downloads",
-            "resources",
-            "access",
-            "trackRouting",
-            "relations",
-            "people",
-            "externalFlow"
-          ],
-          "cardSignal": "validation"
-        }
-      }
-    ],
-    "mentorings": [
-      {
-        "id": "mentoring-ia-creativa-turismo-cultura",
-        "type": "mentoring",
-        "tab": "mentorings",
-        "sortDate": "2026-05-22",
-        "visible": true,
-        "sourcePath": "content/challenges/items/mentorings/mentoring-ia-creativa-turismo-cultura.yml",
-        "core": {
-          "status": "open",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] IA generativa y creativa para turismo, cultura e industrias creativas",
-            "en": "[DEMO] Generative and creative AI for tourism, culture and creative industries",
-            "va": "[DEMO] IA generativa i creativa per a turisme, cultura i indústries creatives"
-          },
-          "summary": {
-            "es": "Acompañamiento para empresas turísticas, entidades culturales, museos y agencias creativas que quieren integrar IA generativa (texto, imagen, audio, vídeo) en sus productos, servicios o procesos creativos, orientándose sobre herramientas adecuadas a su escala, derechos de autor en contenidos generados por IA, y cómo usar la IA sin perder la identidad creativa de la organización.",
-            "en": "Support for tourism companies, cultural organisations, museums and creative agencies wishing to integrate generative AI (text, image, audio, video) into their products, services or creative processes, with guidance on tools appropriate to their scale, copyright in AI-generated content, and how to use AI without losing the organisation's creative identity.",
-            "va": "Acompanyament per a empreses turístiques, entitats culturals, museus i agències creatives que volen integrar IA generativa (text, imatge, àudio, vídeo) en els seus productes, serveis o processos creatius, orientant-se sobre eines adequades a la seua escala, drets d'autor en continguts generats per IA, i com usar la IA sense perdre la identitat creativa de l'organització."
-          },
-          "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
-            "type": {
-              "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural, diseño e industrias creativas valencianas e internacionales",
-              "en": "Mentors experienced in generative AI applications in tourism, cultural heritage, design and Valencian and international creative industries",
-              "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural, disseny i indústries creatives valencianes i internacionals"
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "cci",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "",
-          "mentoringType": "creative-ai-support",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-04-15",
-          "revisionDate": "2026-05-22",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "15 de abril de 2026",
-            "en": "April 15, 2026",
-            "va": "15 d'abril de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "22 de mayo de 2026",
-            "en": "May 22, 2026",
-            "va": "22 de maig de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": {
-          "file": "mentoring-ia-creativa-turismo-cultura.pdf",
-          "publicPath": "/assets/downloads/marketplace/mentorings/mentoring-ia-creativa-turismo-cultura.pdf"
-        },
-        "adhesionForm": {
-          "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufimy8pKaFjvbtEm6P80z2LuPxUNFhSTlNGTFpPMEdWNUwzTk8yVjYzTlpRQS4u"
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "mentoringTeam": {
-            "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
-              "en": "AI-STEAM Network Mentoring Pool — Creative AI and Tourism-Culture Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme-Cultura"
-            },
-            "type": "",
-            "role": {
-              "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural, diseño e industrias creativas valencianas e internacionales",
-              "en": "Mentors experienced in generative AI applications in tourism, cultural heritage, design and Valencian and international creative industries",
-              "va": "Mentors amb experiència en aplicacions d'IA generativa en turisme, patrimoni cultural, disseny i indústries creatives valencianes i internacionals"
-            },
-            "org": ""
-          },
-          "coordinator": null
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": "",
-          "sector": "cci",
-          "sectorLabel": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "stakeholderCategory": "",
-          "audience": []
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "mentorings"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "mentoringOffer": {
-          "purpose": {
-            "es": "Orientar a organizaciones turísticas y culturales en la selección e integración ética de herramientas de IA generativa en sus procesos creativos y de negocio, garantizando que los contenidos generados respetan los derechos de autor, la identidad de marca y las expectativas del visitante o usuario final.",
-            "en": "Guide tourism and cultural organisations in selecting and ethically integrating generative AI tools into their creative and business processes, ensuring that generated content respects copyright, brand identity and the expectations of the visitor or end user.",
-            "va": "Orientar organitzacions turístiques i culturals en la selecció i integració ètica d'eines d'IA generativa en els seus processos creatius i de negoci, garantint que els continguts generats respecten els drets d'autor, la identitat de marca i les expectatives del visitant o usuari final."
-          },
-          "problemAddressed": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringScope": {
-            "included": [],
-            "excluded": []
-          },
-          "format": {
-            "sessions": [
-              {
-                "modality": "online",
-                "sessionCount": 1,
-                "sessionDurationHours": 1,
-                "sessionDurationMinutes": null,
-                "sessionTypes": [
-                  "sync"
-                ]
-              },
-              {
-                "modality": "online",
-                "sessionCount": 1,
-                "sessionDurationHours": 1,
-                "sessionDurationMinutes": 30,
-                "sessionTypes": [
-                  "sync",
-                  "async-review"
-                ]
-              },
-              {
-                "modality": "in-person",
-                "sessionCount": 1,
-                "sessionDurationHours": null,
-                "sessionDurationMinutes": 30,
-                "sessionTypes": [
-                  "sync"
-                ]
-              }
-            ],
-            "languageCodes": [],
-            "availability": {
-              "es": "Convocatoria continua con sesiones disponibles fuera de temporada alta turística (octubre-abril). Proceso de 3 sesiones — diagnóstico creativo (online 60 min), revisión del plan de integración con feedback escrito (online 90 min) y sesión de cierre presencial o videollamada (30 min).",
-              "en": "Rolling call with sessions available outside the tourism peak season (October-April). 3-session process — creative diagnosis (online 60 min), integration plan review with written feedback (online 90 min) and closing session in-person or video call (30 min).",
-              "va": "Convocatòria contínua amb sessions disponibles fora de la temporada alta turística (octubre-abril). Procés de 3 sessions — diagnòstic creatiu (en línia 60 min), revisió del pla d'integració amb feedback escrit (en línia 90 min) i sessió de tancament presencial o videotrucada (30 min)."
-            }
-          },
-          "targetUsers": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "transferValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        },
-        "mentors": {
-          "mode": "pool",
-          "items": [
-            {
-              "id": "pool-ia-creativa-tur",
-              "name": "AI-STEAM Mentoring Pool — IA Creativa y Turismo-Cultura",
-              "organisation": "",
-              "role": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "specialties": [
-                "responsible-ai",
-                "industry-4-0"
-              ]
-            }
-          ]
-        },
-        "preparation": {
-          "requiredBeforeRequest": [],
-          "intakeQuestions": []
-        },
-        "expectedOutputs": {
-          "items": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": {
-          "externalLinks": []
-        },
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "url": "",
-            "system": ""
-          },
-          "fallbackAction": null,
-          "secondaryAction": null
-        },
-        "relations": {
-          "relatedChallenges": [],
-          "relatedValidations": [],
-          "relatedPilots": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "possibleOutputs": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "mentoring",
-            "showPurpose": true,
-            "showProvider": true,
-            "showSpecialties": true,
-            "showAvailability": true,
-            "showDownloadsIndicator": false,
-            "showChatBadge": false,
-            "mainBlockLabel": {
-              "es": "Qué ofrece",
-              "en": "What it offers",
-              "va": "Que ofereix"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "purpose": true,
-              "scope": true,
-              "targetUsers": true,
-              "format": true,
-              "mentors": true,
-              "preparation": true,
-              "expectedOutputs": true,
-              "transferValue": true,
-              "downloads": true,
-              "resources": true,
-              "access": true,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "context",
-            "transferValue",
-            "participation",
-            "people",
-            "process"
-          ],
-          "optionalBlocks": [
-            "outputs",
-            "access",
-            "trackA"
-          ],
-          "cardSignal": "participation"
-        }
-      },
-      {
-        "id": "mentoring-participacion-administracion-publica",
-        "type": "mentoring",
-        "tab": "mentorings",
-        "sortDate": "2026-05-22",
-        "visible": true,
-        "sourcePath": "content/challenges/items/mentorings/mentoring-participacion-administracion-publica.yml",
-        "core": {
-          "status": "open",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Mentoría — Cómo incorporar una administración pública al ecosistema AI-STEAM",
-            "en": "[DEMO] Mentoring — How to bring a public administration into the AI-STEAM ecosystem",
-            "va": "[DEMO] Mentoria — Com incorporar una administració pública a l'ecosistema AI-STEAM"
-          },
-          "summary": {
-            "es": "Acompañamiento para organismos públicos, entidades locales y consorcios interadministrativos que quieren participar activamente en el ecosistema AI-STEAM — como demandantes de retos, financiadores de pilotos o entornos de validación — y necesitan orientación sobre roles posibles, compromisos esperados, gestión de datos públicos y encaje con sus procedimientos administrativos habituales.",
-            "en": "Support for public bodies, local authorities and inter-administrative consortia wishing to actively participate in the AI-STEAM ecosystem — as challenge demanders, pilot funders or validation environments — who need guidance on possible roles, expected commitments, public data management and fit with their usual administrative procedures.",
-            "va": "Acompanyament per a organismes públics, entitats locals i consorcis interadministratius que volen participar activament en l'ecosistema AI-STEAM — com demandants de reptes, finançadors de pilots o entorns de validació — i necessiten orientació sobre rols possibles, compromisos esperats, gestió de dades públiques i encaix amb els seus procediments administratius habituals."
-          },
-          "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
-            "type": {
-              "es": "Mentores con experiencia en transformación digital de administraciones públicas, datos abiertos y colaboración público-privada en innovación",
-              "en": "Mentors experienced in digital transformation of public administrations, open data and public-private innovation collaboration",
-              "va": "Mentors amb experiència en transformació digital d'administracions públiques, dades obertes i col·laboració públic-privada en innovació"
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "nts",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "",
-          "mentoringType": "stakeholder-engagement",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-04-10",
-          "revisionDate": "2026-05-22",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "10 de abril de 2026",
-            "en": "April 10, 2026",
-            "va": "10 d'abril de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "22 de mayo de 2026",
-            "en": "May 22, 2026",
-            "va": "22 de maig de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "mentoringTeam": {
-            "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
-              "en": "AI-STEAM Network Mentoring Pool — Public Innovation and AI Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Innovació Pública i IA"
-            },
-            "type": "",
-            "role": {
-              "es": "Mentores con experiencia en transformación digital de administraciones públicas, datos abiertos y colaboración público-privada en innovación",
-              "en": "Mentors experienced in digital transformation of public administrations, open data and public-private innovation collaboration",
-              "va": "Mentors amb experiència en transformació digital d'administracions públiques, dades obertes i col·laboració públic-privada en innovació"
-            },
-            "org": ""
-          },
-          "coordinator": null
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": "",
-          "sector": "nts",
-          "sectorLabel": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "stakeholderCategory": "",
-          "audience": []
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "mentorings"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "mentoringOffer": {
-          "purpose": {
-            "es": "Orientar a organismos públicos sobre cómo articular su participación en el ecosistema AI-STEAM según su perfil y capacidades — formulando un reto abierto con datos públicos, financiando un piloto educativo, abriendo sus instalaciones como entorno de validación o convirtiéndose en caso de referencia de innovación pública.",
-            "en": "Guide public bodies on how to articulate their participation in the AI-STEAM ecosystem according to their profile and capabilities — framing an open challenge with public data, funding an educational pilot, opening their facilities as a validation environment or becoming a reference case of public innovation.",
-            "va": "Orientar organismes públics sobre com articular la seua participació en l'ecosistema AI-STEAM segons el seu perfil i capacitats — formulant un repte obert amb dades públiques, finançant un pilot educatiu, obrint les seues instal·lacions com a entorn de validació o convertint-se en cas de referència d'innovació pública."
-          },
-          "problemAddressed": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringScope": {
-            "included": [],
-            "excluded": []
-          },
-          "format": {
-            "sessions": [
-              {
-                "modality": "hybrid",
-                "sessionCount": 3,
-                "sessionDurationHours": 1,
-                "sessionDurationMinutes": 15,
-                "sessionTypes": [
-                  "sync",
-                  "async-review"
-                ]
-              }
-            ],
-            "languageCodes": [],
-            "availability": {
-              "es": "Convocatoria abierta coordinada con los ciclos presupuestarios y de planificación de las administraciones. Sesiones disponibles en horario de funcionario (9:00-15:00).",
-              "en": "Open call coordinated with administrative budget and planning cycles. Sessions available during civil service hours (9:00-15:00).",
-              "va": "Convocatòria oberta coordinada amb els cicles pressupostaris i de planificació de les administracions. Sessions disponibles en horari de funcionari (9:00-15:00)."
-            }
-          },
-          "targetUsers": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "transferValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        },
-        "mentors": {
-          "mode": "pool",
-          "items": [
-            {
-              "id": "pool-innovacion-publica",
-              "name": "AI-STEAM Mentoring Pool — Innovación Pública e IA",
-              "organisation": "",
-              "role": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "specialties": [
-                "public-sector-ai",
-                "open-data",
-                "public-private-collaboration",
-                "administrative-procedures"
-              ]
-            }
-          ]
-        },
-        "preparation": {
-          "requiredBeforeRequest": [],
-          "intakeQuestions": []
-        },
-        "expectedOutputs": {
-          "items": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": {
-          "externalLinks": []
-        },
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "url": "",
-            "system": ""
-          },
-          "fallbackAction": null,
-          "secondaryAction": null
-        },
-        "relations": {
-          "relatedChallenges": [],
-          "relatedValidations": [],
-          "relatedPilots": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "possibleOutputs": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "mentoring",
-            "showPurpose": true,
-            "showProvider": true,
-            "showSpecialties": true,
-            "showAvailability": true,
-            "showDownloadsIndicator": false,
-            "showChatBadge": false,
-            "mainBlockLabel": {
-              "es": "Qué ofrece",
-              "en": "What it offers",
-              "va": "Que ofereix"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "purpose": true,
-              "scope": true,
-              "targetUsers": true,
-              "format": true,
-              "mentors": true,
-              "preparation": true,
-              "expectedOutputs": true,
-              "transferValue": true,
-              "downloads": true,
-              "resources": true,
-              "access": true,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "context",
-            "transferValue",
-            "participation",
-            "people",
-            "process"
-          ],
-          "optionalBlocks": [
-            "outputs",
-            "access",
-            "trackA"
-          ],
-          "cardSignal": "participation"
-        }
-      },
-      {
-        "id": "mentoring-replicacion-casos-agr",
-        "type": "mentoring",
-        "tab": "mentorings",
-        "sortDate": "2026-05-22",
-        "visible": true,
-        "sourcePath": "content/challenges/items/mentorings/mentoring-replicacion-casos-agr.yml",
-        "core": {
-          "status": "open",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Mentoría — Replicación de casos AI-STEAM en el sector agroalimentario",
-            "en": "[DEMO] Mentoring — Replicating AI-STEAM cases in the agri-food sector",
-            "va": "[DEMO] Mentoria — Replicació de casos AI-STEAM en el sector agroalimentari"
-          },
-          "summary": {
-            "es": "Acompañamiento para cooperativas agrícolas, agroindustrias y centros de FP agroalimentaria que quieren replicar un caso AI-STEAM verificado en su propio contexto — adaptando los datos, el entorno productivo y las condiciones de formación — sin tener que rediseñar el proyecto desde cero.",
-            "en": "Support for agricultural cooperatives, agri-food industries and agri-food VET centres wishing to replicate a verified AI-STEAM case in their own context — adapting data, production environment and training conditions — without having to redesign the project from scratch.",
-            "va": "Acompanyament per a cooperatives agrícoles, agroindustries i centres de FP agroalimentària que volen replicar un cas AI-STEAM verificat en el seu propi context — adaptant les dades, l'entorn productiu i les condicions de formació — sense haver de redissenyar el projecte des de zero."
-          },
-          "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
-            "type": {
-              "es": "Mentores con experiencia en proyectos de IA en agricultura de precisión, visión computacional agrícola y formación agroalimentaria",
-              "en": "Mentors experienced in AI projects in precision agriculture, agricultural computer vision and agri-food training",
-              "va": "Mentors amb experiència en projectes d'IA en agricultura de precisió, visió computacional agrícola i formació agroalimentària"
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "agr",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "",
-          "mentoringType": "replication-support",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-03-20",
-          "revisionDate": "2026-05-22",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "20 de marzo de 2026",
-            "en": "March 20, 2026",
-            "va": "20 de març de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "22 de mayo de 2026",
-            "en": "May 22, 2026",
-            "va": "22 de maig de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "mentoringTeam": {
-            "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
-              "en": "AI-STEAM Network Mentoring Pool — Agri-food AI Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Agroalimentària"
-            },
-            "type": "",
-            "role": {
-              "es": "Mentores con experiencia en proyectos de IA en agricultura de precisión, visión computacional agrícola y formación agroalimentaria",
-              "en": "Mentors experienced in AI projects in precision agriculture, agricultural computer vision and agri-food training",
-              "va": "Mentors amb experiència en projectes d'IA en agricultura de precisió, visió computacional agrícola i formació agroalimentària"
-            },
-            "org": ""
-          },
-          "coordinator": null
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": "",
-          "sector": "agr",
-          "sectorLabel": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "stakeholderCategory": "",
-          "audience": []
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "mentorings"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "mentoringOffer": {
-          "purpose": {
-            "es": "Facilitar la adaptación y replicación contextualizada de un caso AI-STEAM verificado en el sector agroalimentario, identificando las condiciones de transferibilidad, los ajustes necesarios en los datos y el entorno, y asegurando que la nueva implementación mantiene la calidad de evidencia del caso original.",
-            "en": "Facilitate the contextualised adaptation and replication of a verified AI-STEAM case in the agri-food sector, identifying transferability conditions, required adjustments to data and environment, and ensuring the new implementation maintains the evidential quality of the original case.",
-            "va": "Facilitar l'adaptació i replicació contextualitzada d'un cas AI-STEAM verificat en el sector agroalimentari, identificant les condicions de transferibilitat, els ajustos necessaris en les dades i l'entorn, i assegurant que la nova implementació manté la qualitat d'evidència del cas original."
-          },
-          "problemAddressed": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringScope": {
-            "included": [],
-            "excluded": []
-          },
-          "format": {
-            "sessions": [
-              {
-                "modality": "hybrid",
-                "sessionCount": 4,
-                "sessionDurationHours": 1,
-                "sessionDurationMinutes": null,
-                "sessionTypes": [
-                  "sync",
-                  "async"
-                ]
-              }
-            ],
-            "languageCodes": [],
-            "availability": {
-              "es": "Convocatoria abierta vinculada a casos publicados en el Marketplace AI-STEAM. Se requiere identificar el caso de referencia antes de solicitar la mentoría.",
-              "en": "Open call linked to cases published on the AI-STEAM Marketplace. The reference case must be identified before requesting mentoring.",
-              "va": "Convocatòria oberta vinculada a casos publicats al Marketplace AI-STEAM. Es requereix identificar el cas de referència abans de sol·licitar la mentoria."
-            }
-          },
-          "targetUsers": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "transferValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        },
-        "mentors": {
-          "mode": "pool",
-          "items": [
-            {
-              "id": "pool-agr-replicacion",
-              "name": "AI-STEAM Mentoring Pool — Transferencia Agroalimentaria",
-              "organisation": "",
-              "role": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "specialties": [
-                "precision-agriculture",
-                "agricultural-computer-vision",
-                "case-replication",
-                "vet-agri-food"
-              ]
-            }
-          ]
-        },
-        "preparation": {
-          "requiredBeforeRequest": [],
-          "intakeQuestions": []
-        },
-        "expectedOutputs": {
-          "items": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": {
-          "externalLinks": []
-        },
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "url": "",
-            "system": ""
-          },
-          "fallbackAction": null,
-          "secondaryAction": null
-        },
-        "relations": {
-          "relatedChallenges": [],
-          "relatedValidations": [],
-          "relatedPilots": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "possibleOutputs": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "mentoring",
-            "showPurpose": true,
-            "showProvider": true,
-            "showSpecialties": true,
-            "showAvailability": true,
-            "showDownloadsIndicator": false,
-            "showChatBadge": false,
-            "mainBlockLabel": {
-              "es": "Qué ofrece",
-              "en": "What it offers",
-              "va": "Que ofereix"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "purpose": true,
-              "scope": true,
-              "targetUsers": true,
-              "format": true,
-              "mentors": true,
-              "preparation": true,
-              "expectedOutputs": true,
-              "transferValue": true,
-              "downloads": true,
-              "resources": true,
-              "access": true,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "context",
-            "transferValue",
-            "participation",
-            "people",
-            "process"
-          ],
-          "optionalBlocks": [
-            "outputs",
-            "access",
-            "trackA"
-          ],
-          "cardSignal": "participation"
-        }
-      },
-      {
-        "id": "mentoring-transferencia-investigacion-fp",
-        "type": "mentoring",
-        "tab": "mentorings",
-        "sortDate": "2026-05-22",
-        "visible": true,
-        "sourcePath": "content/challenges/items/mentorings/mentoring-transferencia-investigacion-fp.yml",
-        "core": {
-          "status": "open",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Mentoría — De la investigación al aula de FP: transferencia de resultados con IA",
-            "en": "[DEMO] Mentoring — From research to the VET classroom: AI results transfer",
-            "va": "[DEMO] Mentoria — De la recerca a l'aula de FP: transferència de resultats amb IA"
-          },
-          "summary": {
-            "es": "Acompañamiento para grupos de investigación universitarios y tecnológicos que quieren transferir sus resultados de IA al sistema de FP, adaptando sus metodologías, datasets o herramientas a contextos formativos accesibles para docentes y alumnos sin perfil investigador, y construyendo el caso de valor pedagógico que justifique la colaboración con centros educativos.",
-            "en": "Support for university and technology research groups wishing to transfer their AI results to the VET system, adapting their methodologies, datasets or tools to training contexts accessible for teachers and students without a research profile, and building the pedagogical value case that justifies collaboration with educational centres.",
-            "va": "Acompanyament per a grups de recerca universitaris i tecnològics que volen transferir els seus resultats d'IA al sistema de FP, adaptant les seues metodologies, datasets o eines a contexts formatius accessibles per a docents i alumnes sense perfil investigador, i construint el cas de valor pedagògic que justifique la col·laboració amb centres educatius."
-          },
-          "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
-            "type": {
-              "es": "Mentores con perfil dual investigador-docente, con experiencia en traducción de resultados de investigación a contenidos formativos de FP",
-              "en": "Mentors with a dual researcher-teacher profile, experienced in translating research results into VET training content",
-              "va": "Mentors amb perfil dual investigador-docent, amb experiència en traducció de resultats de recerca a continguts formatius de FP"
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "nts",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "",
-          "mentoringType": "research-transfer",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-04-01",
-          "revisionDate": "2026-05-22",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "1 de abril de 2026",
-            "en": "April 1, 2026",
-            "va": "1 d'abril de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "22 de mayo de 2026",
-            "en": "May 22, 2026",
-            "va": "22 de maig de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "mentoringTeam": {
-            "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
-              "en": "AI-STEAM Network Mentoring Pool — Research-to-VET Transfer Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Transferència Recerca-FP"
-            },
-            "type": "",
-            "role": {
-              "es": "Mentores con perfil dual investigador-docente, con experiencia en traducción de resultados de investigación a contenidos formativos de FP",
-              "en": "Mentors with a dual researcher-teacher profile, experienced in translating research results into VET training content",
-              "va": "Mentors amb perfil dual investigador-docent, amb experiència en traducció de resultats de recerca a continguts formatius de FP"
-            },
-            "org": ""
-          },
-          "coordinator": null
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": "",
-          "sector": "nts",
-          "sectorLabel": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "stakeholderCategory": "",
-          "audience": []
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "mentorings"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "mentoringOffer": {
-          "purpose": {
-            "es": "Acompañar a grupos de investigación en la traducción de sus resultados, herramientas o datasets de IA a contenidos y prácticas formativas transferibles para centros de FP, construyendo la narrativa pedagógica y el plan de colaboración con centros educativos.",
-            "en": "Support research groups in translating their AI results, tools or datasets into transferable training content and practices for VET centres, building the pedagogical narrative and collaboration plan with educational centres.",
-            "va": "Acompanyar grups de recerca en la traducció dels seus resultats, eines o datasets d'IA a continguts i pràctiques formatives transferibles per a centres de FP, construint la narrativa pedagògica i el pla de col·laboració amb centres educatius."
-          },
-          "problemAddressed": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringScope": {
-            "included": [],
-            "excluded": []
-          },
-          "format": {
-            "sessions": [
-              {
-                "modality": "online",
-                "sessionCount": 3,
-                "sessionDurationHours": 1,
-                "sessionDurationMinutes": 30,
-                "sessionTypes": [
-                  "sync",
-                  "async"
-                ]
-              }
-            ],
-            "languageCodes": [],
-            "availability": {
-              "es": "Convocatoria vinculada a la apertura del curso académico (septiembre-octubre) y a la convocatoria de proyectos de innovación docente (enero-febrero). Proceso de 3 sesiones.",
-              "en": "Call linked to the academic year start (September-October) and to the teaching innovation projects call (January-February). 3-session process.",
-              "va": "Convocatòria vinculada a l'obertura del curs acadèmic (setembre-octubre) i a la convocatòria de projectes d'innovació docent (gener-febrer). Procés de 3 sessions."
-            }
-          },
-          "targetUsers": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "transferValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        },
-        "mentors": {
-          "mode": "pool",
-          "items": [
-            {
-              "id": "pool-investigacion-fp",
-              "name": "AI-STEAM Mentoring Pool — Transferencia Investigación-FP",
-              "organisation": "",
-              "role": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "specialties": [
-                "research-transfer",
-                "vet-curriculum-design",
-                "ai-research-translation",
-                "academic-industry-bridge"
-              ]
-            }
-          ]
-        },
-        "preparation": {
-          "requiredBeforeRequest": [],
-          "intakeQuestions": []
-        },
-        "expectedOutputs": {
-          "items": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": {
-          "externalLinks": []
-        },
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "url": "",
-            "system": ""
-          },
-          "fallbackAction": null,
-          "secondaryAction": null
-        },
-        "relations": {
-          "relatedChallenges": [],
-          "relatedValidations": [],
-          "relatedPilots": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "possibleOutputs": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "mentoring",
-            "showPurpose": true,
-            "showProvider": true,
-            "showSpecialties": true,
-            "showAvailability": true,
-            "showDownloadsIndicator": false,
-            "showChatBadge": false,
-            "mainBlockLabel": {
-              "es": "Qué ofrece",
-              "en": "What it offers",
-              "va": "Que ofereix"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "purpose": true,
-              "scope": true,
-              "targetUsers": true,
-              "format": true,
-              "mentors": true,
-              "preparation": true,
-              "expectedOutputs": true,
-              "transferValue": true,
-              "downloads": true,
-              "resources": true,
-              "access": true,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "context",
-            "transferValue",
-            "participation",
-            "people",
-            "process"
-          ],
-          "optionalBlocks": [
-            "outputs",
-            "access",
-            "trackA"
-          ],
-          "cardSignal": "participation"
-        }
-      },
-      {
-        "id": "mentoring-etica-ia-proyectos-educativos",
-        "type": "mentoring",
-        "tab": "mentorings",
-        "sortDate": "2026-05-20",
-        "visible": true,
-        "sourcePath": "content/challenges/items/mentorings/mentoring-etica-ia-proyectos-educativos.yml",
-        "core": {
-          "status": "open",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Mentoría — Ética de la IA en proyectos educativos y formativos",
-            "en": "[DEMO] Mentoring — AI ethics in educational and training projects",
-            "va": "[DEMO] Mentoria — Ètica de la IA en projectes educatius i formatius"
-          },
-          "summary": {
-            "es": "Acompañamiento para docentes, equipos de centro y entidades educativas que introducen IA en sus prácticas formativas y necesitan una revisión ética básica — uso de datos de alumnos, sesgos algorítmicos, transparencia con las familias, IA generativa en el aula — antes de implantar o publicar sus proyectos.",
-            "en": "Support for teachers, school teams and educational organisations introducing AI into their training practices who need a basic ethics review — student data use, algorithmic biases, transparency with families, generative AI in the classroom — before implementing or publishing their projects.",
-            "va": "Acompanyament per a docents, equips de centre i entitats educatives que introdueixen IA en les seues pràctiques formatives i necessiten una revisió ètica bàsica — ús de dades d'alumnes, biaixos algorítmics, transparència amb les famílies, IA generativa a l'aula — abans d'implantar o publicar els seus projectes."
-          },
-          "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
-            "type": {
-              "es": "Mentores con formación en ética digital, protección de datos educativos y uso responsable de IA en el aula",
-              "en": "Mentors trained in digital ethics, educational data protection and responsible AI use in the classroom",
-              "va": "Mentors amb formació en ètica digital, protecció de dades educatives i ús responsable d'IA a l'aula"
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "nts",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "",
-          "mentoringType": "ethics-review",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-03-01",
-          "revisionDate": "2026-05-20",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "1 de marzo de 2026",
-            "en": "March 1, 2026",
-            "va": "1 de març de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "20 de mayo de 2026",
-            "en": "May 20, 2026",
-            "va": "20 de maig de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "mentoringTeam": {
-            "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
-              "en": "AI-STEAM Network Mentoring Pool — AI Ethics and Education Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Ètica IA i Educació"
-            },
-            "type": "",
-            "role": {
-              "es": "Mentores con formación en ética digital, protección de datos educativos y uso responsable de IA en el aula",
-              "en": "Mentors trained in digital ethics, educational data protection and responsible AI use in the classroom",
-              "va": "Mentors amb formació en ètica digital, protecció de dades educatives i ús responsable d'IA a l'aula"
-            },
-            "org": ""
-          },
-          "coordinator": null
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": "",
-          "sector": "nts",
-          "sectorLabel": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "stakeholderCategory": "",
-          "audience": []
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "mentorings"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "mentoringOffer": {
-          "purpose": {
-            "es": "Proporcionar a docentes y equipos de centro una revisión ética accesible y práctica de sus proyectos con IA, identificando riesgos reales, orientando sobre normativa aplicable (RGPD, Reglamento IA) y sugiriendo salvaguardas proporcionales antes de que el proyecto se implante o se publique.",
-            "en": "Provide teachers and school teams with an accessible and practical ethics review of their AI projects, identifying real risks, guiding on applicable regulations (GDPR, AI Act) and suggesting proportionate safeguards before the project is implemented or published.",
-            "va": "Proporcionar a docents i equips de centre una revisió ètica accessible i pràctica dels seus projectes amb IA, identificant riscos reals, orientant sobre normativa aplicable (RGPD, Reglament IA) i suggerint salvaguardes proporcionades abans que el projecte s'implante o es publique."
-          },
-          "problemAddressed": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringScope": {
-            "included": [],
-            "excluded": []
-          },
-          "format": {
-            "sessions": [
-              {
-                "modality": "online",
-                "sessionCount": 4,
-                "sessionDurationHours": 1,
-                "sessionDurationMinutes": null,
-                "sessionTypes": [
-                  "sync",
-                  "async-review"
-                ]
-              }
-            ],
-            "languageCodes": [],
-            "availability": {
-              "es": "Convocatoria continua. Respuesta garantizada en 5 días laborables para solicitudes de centros educativos.",
-              "en": "Rolling call. Response guaranteed within 5 working days for educational centre requests.",
-              "va": "Convocatòria contínua. Resposta garantida en 5 dies laborables per a sol·licituds de centres educatius."
-            }
-          },
-          "targetUsers": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "transferValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        },
-        "mentors": {
-          "mode": "pool",
-          "items": [
-            {
-              "id": "pool-etica-educacion",
-              "name": "AI-STEAM Mentoring Pool — Ética IA y Educación",
-              "organisation": "",
-              "role": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "specialties": [
-                "ai-ethics",
-                "educational-data-protection",
-                "generative-ai-in-education",
-                "algorithmic-bias"
-              ]
-            }
-          ]
-        },
-        "preparation": {
-          "requiredBeforeRequest": [],
-          "intakeQuestions": []
-        },
-        "expectedOutputs": {
-          "items": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": {
-          "externalLinks": []
-        },
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "url": "",
-            "system": ""
-          },
-          "fallbackAction": null,
-          "secondaryAction": null
-        },
-        "relations": {
-          "relatedChallenges": [],
-          "relatedValidations": [],
-          "relatedPilots": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "possibleOutputs": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "mentoring",
-            "showPurpose": true,
-            "showProvider": true,
-            "showSpecialties": true,
-            "showAvailability": true,
-            "showDownloadsIndicator": false,
-            "showChatBadge": false,
-            "mainBlockLabel": {
-              "es": "Qué ofrece",
-              "en": "What it offers",
-              "va": "Que ofereix"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "purpose": true,
-              "scope": true,
-              "targetUsers": true,
-              "format": true,
-              "mentors": true,
-              "preparation": true,
-              "expectedOutputs": true,
-              "transferValue": true,
-              "downloads": true,
-              "resources": true,
-              "access": true,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "context",
-            "transferValue",
-            "participation",
-            "people",
-            "process"
-          ],
-          "optionalBlocks": [
-            "outputs",
-            "access",
-            "trackA"
-          ],
-          "cardSignal": "participation"
-        }
-      },
-      {
-        "id": "mentoring-soporte-tecnico-implementacion-ia-nts",
-        "type": "mentoring",
-        "tab": "mentorings",
-        "sortDate": "2026-05-20",
-        "visible": true,
-        "sourcePath": "content/challenges/items/mentorings/mentoring-soporte-tecnico-implementacion-ia-nts.yml",
-        "core": {
-          "status": "open",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Mentoría — Soporte técnico para implementar IA en entornos sanitarios y sociosanitarios",
-            "en": "[DEMO] Mentoring — Technical support for AI implementation in health and social care settings",
-            "va": "[DEMO] Mentoria — Suport tècnic per implementar IA en entorns sanitaris i sociosanitaris"
-          },
-          "summary": {
-            "es": "Acompañamiento técnico para equipos de FP sanitaria, centros de salud y entidades sociosanitarias que quieren implementar un sistema de IA (diagnóstico asistido, triaje automatizado, analítica de pacientes) y necesitan orientación sobre arquitectura de datos, selección de modelos y cumplimiento normativo sanitario antes de lanzar el proyecto.",
-            "en": "Technical support for VET health teams, health centres and social care organisations wishing to implement an AI system (assisted diagnosis, automated triage, patient analytics) who need guidance on data architecture, model selection and health regulatory compliance before launching the project.",
-            "va": "Acompanyament tècnic per a equips de FP sanitària, centres de salut i entitats sociosanitàries que volen implementar un sistema d'IA (diagnòstic assistit, triatge automatitzat, analítica de pacients) i necessiten orientació sobre arquitectura de dades, selecció de models i compliment normatiu sanitari abans de llançar el projecte."
-          },
-          "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
-            "type": {
-              "es": "Mentores con perfil técnico en ciencia de datos clínicos, visión computacional médica y cumplimiento normativo sanitario",
-              "en": "Mentors with technical profile in clinical data science, medical computer vision and health regulatory compliance",
-              "va": "Mentors amb perfil tècnic en ciència de dades clíniques, visió computacional mèdica i compliment normatiu sanitari"
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "nts",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "",
-          "mentoringType": "technical-support",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-03-15",
-          "revisionDate": "2026-05-20",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "15 de marzo de 2026",
-            "en": "March 15, 2026",
-            "va": "15 de març de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "20 de mayo de 2026",
-            "en": "May 20, 2026",
-            "va": "20 de maig de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "mentoringTeam": {
-            "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
-              "en": "AI-STEAM Network Mentoring Pool — Healthcare AI Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Sanitària"
-            },
-            "type": "",
-            "role": {
-              "es": "Mentores con perfil técnico en ciencia de datos clínicos, visión computacional médica y cumplimiento normativo sanitario",
-              "en": "Mentors with technical profile in clinical data science, medical computer vision and health regulatory compliance",
-              "va": "Mentors amb perfil tècnic en ciència de dades clíniques, visió computacional mèdica i compliment normatiu sanitari"
-            },
-            "org": ""
-          },
-          "coordinator": null
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": "",
-          "sector": "nts",
-          "sectorLabel": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "stakeholderCategory": "",
-          "audience": []
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "mentorings"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "mentoringOffer": {
-          "purpose": {
-            "es": "Guiar a equipos técnicos y docentes en la definición de la arquitectura de datos, selección del modelo de IA adecuado y protocolo de validación clínica, garantizando el cumplimiento del Reglamento IA (clasificación de riesgo alto), RGPD sanitario y estándares HL7/FHIR desde el diseño.",
-            "en": "Guide technical and teaching teams in defining the data architecture, selecting the appropriate AI model and clinical validation protocol, ensuring compliance with the AI Act (high-risk classification), health GDPR and HL7/FHIR standards by design.",
-            "va": "Guiar equips tècnics i docents en la definició de l'arquitectura de dades, selecció del model d'IA adequat i protocol de validació clínica, garantint el compliment del Reglament IA (classificació de risc alt), RGPD sanitari i estàndards HL7/FHIR des del disseny."
-          },
-          "problemAddressed": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringScope": {
-            "included": [],
-            "excluded": []
-          },
-          "format": {
-            "sessions": [
-              {
-                "modality": "online",
-                "sessionCount": 2,
-                "sessionDurationHours": 1,
-                "sessionDurationMinutes": 15,
-                "sessionTypes": [
-                  "sync",
-                  "async-review"
-                ]
-              }
-            ],
-            "languageCodes": [],
-            "availability": {
-              "es": "Convocatoria continua. Proceso de 2 sesiones técnicas más revisión asíncrona de documentos. Respuesta inicial en 7 días laborables.",
-              "en": "Rolling call. Process of 2 technical sessions plus asynchronous document review. Initial response within 7 working days.",
-              "va": "Convocatòria contínua. Procés de 2 sessions tècniques més revisió asíncrona de documents. Resposta inicial en 7 dies laborables."
-            }
-          },
-          "targetUsers": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "transferValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        },
-        "mentors": {
-          "mode": "pool",
-          "items": [
-            {
-              "id": "pool-ia-sanitaria",
-              "name": "AI-STEAM Mentoring Pool — IA Sanitaria y Datos Clínicos",
-              "organisation": "",
-              "role": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "specialties": [
-                "clinical-data-science",
-                "medical-imaging-ai",
-                "ai-act-samd",
-                "hl7-fhir"
-              ]
-            }
-          ]
-        },
-        "preparation": {
-          "requiredBeforeRequest": [],
-          "intakeQuestions": []
-        },
-        "expectedOutputs": {
-          "items": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": {
-          "externalLinks": []
-        },
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "url": "",
-            "system": ""
-          },
-          "fallbackAction": null,
-          "secondaryAction": null
-        },
-        "relations": {
-          "relatedChallenges": [],
-          "relatedValidations": [],
-          "relatedPilots": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "possibleOutputs": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "mentoring",
-            "showPurpose": true,
-            "showProvider": true,
-            "showSpecialties": true,
-            "showAvailability": true,
-            "showDownloadsIndicator": false,
-            "showChatBadge": false,
-            "mainBlockLabel": {
-              "es": "Qué ofrece",
-              "en": "What it offers",
-              "va": "Que ofereix"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "purpose": true,
-              "scope": true,
-              "targetUsers": true,
-              "format": true,
-              "mentors": true,
-              "preparation": true,
-              "expectedOutputs": true,
-              "transferValue": true,
-              "downloads": true,
-              "resources": true,
-              "access": true,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "context",
-            "transferValue",
-            "participation",
-            "people",
-            "process"
-          ],
-          "optionalBlocks": [
-            "outputs",
-            "access",
-            "trackA"
-          ],
-          "cardSignal": "participation"
-        }
-      },
-      {
-        "id": "mentoring-diseno-pilotos-fp-empresa",
-        "type": "mentoring",
-        "tab": "mentorings",
-        "sortDate": "2026-05-15",
-        "visible": true,
-        "sourcePath": "content/challenges/items/mentorings/mentoring-diseno-pilotos-fp-empresa.yml",
-        "core": {
-          "status": "open",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Mentoría — Diseño de pilotos de colaboración FP-empresa con IA",
-            "en": "[DEMO] Mentoring — Designing VET-industry AI collaboration pilots",
-            "va": "[DEMO] Mentoria — Disseny de pilots de col·laboració FP-empresa amb IA"
-          },
-          "summary": {
-            "es": "Acompañamiento para centros de FP y empresas que quieren co-diseñar un piloto educativo real donde los alumnos trabajen con datos, herramientas o entornos industriales con IA, definiendo hipótesis, metodología, métricas de éxito y condiciones de transferibilidad desde el primer momento.",
-            "en": "Support for VET centres and companies wishing to co-design a real educational pilot where students work with industrial AI data, tools or environments, defining hypotheses, methodology, success metrics and transferability conditions from the outset.",
-            "va": "Acompanyament per a centres de FP i empreses que volen co-dissenyar un pilot educatiu real on els alumnes treballen amb dades, eines o entorns industrials amb IA, definint hipòtesis, metodologia, mètriques d'èxit i condicions de transferibilitat des del primer moment."
-          },
-          "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
-            "type": {
-              "es": "Mentores con perfil dual pedagógico-técnico, con experiencia en diseño de pilotos FP-empresa",
-              "en": "Mentors with dual pedagogical-technical profile, experienced in designing VET-industry pilots",
-              "va": "Mentors amb perfil dual pedagògic-tècnic, amb experiència en disseny de pilots FP-empresa"
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "nts",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "",
-          "mentoringType": "pilot-design",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-02-01",
-          "revisionDate": "2026-05-15",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "1 de febrero de 2026",
-            "en": "February 1, 2026",
-            "va": "1 de febrer de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "15 de mayo de 2026",
-            "en": "May 15, 2026",
-            "va": "15 de maig de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufimy8pKaFjvbtEm6P80z2LuPxUNFhSTlNGTFpPMEdWNUwzTk8yVjYzTlpRQS4u"
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "mentoringTeam": {
-            "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
-              "en": "AI-STEAM Network Mentoring Pool — VET Pedagogy and Innovation Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Pedagogia FP i Innovació"
-            },
-            "type": "",
-            "role": {
-              "es": "Mentores con perfil dual pedagógico-técnico, con experiencia en diseño de pilotos FP-empresa",
-              "en": "Mentors with dual pedagogical-technical profile, experienced in designing VET-industry pilots",
-              "va": "Mentors amb perfil dual pedagògic-tècnic, amb experiència en disseny de pilots FP-empresa"
-            },
-            "org": ""
-          },
-          "coordinator": null
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": "",
-          "sector": "nts",
-          "sectorLabel": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "stakeholderCategory": "",
-          "audience": []
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "mentorings"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "mentoringOffer": {
-          "purpose": {
-            "es": "Acompañar a parejas FP-empresa en el diseño de un piloto educativo riguroso: con hipótesis clara, metodología adecuada al ciclo formativo, métricas de éxito evaluables y condiciones de transferibilidad para que otros centros puedan replicarlo.",
-            "en": "Support VET-company pairs in designing a rigorous educational pilot: with a clear hypothesis, methodology appropriate to the training cycle, evaluable success metrics and transferability conditions so other centres can replicate it.",
-            "va": "Acompanyar parelles FP-empresa en el disseny d'un pilot educatiu rigorós: amb hipòtesi clara, metodologia adequada al cicle formatiu, mètriques d'èxit avaluables i condicions de transferibilitat perquè altres centres puguen replicar-lo."
-          },
-          "problemAddressed": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringScope": {
-            "included": [],
-            "excluded": []
-          },
-          "format": {
-            "sessions": [
-              {
-                "modality": "hybrid",
-                "sessionCount": 3,
-                "sessionDurationHours": 1,
-                "sessionDurationMinutes": 30,
-                "sessionTypes": [
-                  "sync",
-                  "async-review"
-                ]
-              }
-            ],
-            "languageCodes": [],
-            "availability": {
-              "es": "Sesiones disponibles para parejas FP-empresa con proyecto identificado. Proceso de 3 sesiones en 6 semanas.",
-              "en": "Sessions available for VET-company pairs with an identified project. 3-session process over 6 weeks.",
-              "va": "Sessions disponibles per a parelles FP-empresa amb projecte identificat. Procés de 3 sessions en 6 setmanes."
-            }
-          },
-          "targetUsers": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "transferValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        },
-        "mentors": {
-          "mode": "pool",
-          "items": [
-            {
-              "id": "pool-pedagogia-fp",
-              "name": "AI-STEAM Mentoring Pool — Pedagogía FP e Innovación",
-              "organisation": "",
-              "role": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "specialties": [
-                "pilot-design",
-                "vet-curriculum",
-                "evidence-collection",
-                "vet-industry-collaboration"
-              ]
-            }
-          ]
-        },
-        "preparation": {
-          "requiredBeforeRequest": [],
-          "intakeQuestions": []
-        },
-        "expectedOutputs": {
-          "items": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": {
-          "externalLinks": []
-        },
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "url": "",
-            "system": ""
-          },
-          "fallbackAction": null,
-          "secondaryAction": null
-        },
-        "relations": {
-          "relatedChallenges": [],
-          "relatedValidations": [],
-          "relatedPilots": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "possibleOutputs": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "mentoring",
-            "showPurpose": true,
-            "showProvider": true,
-            "showSpecialties": true,
-            "showAvailability": true,
-            "showDownloadsIndicator": false,
-            "showChatBadge": false,
-            "mainBlockLabel": {
-              "es": "Qué ofrece",
-              "en": "What it offers",
-              "va": "Que ofereix"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "purpose": true,
-              "scope": true,
-              "targetUsers": true,
-              "format": true,
-              "mentors": true,
-              "preparation": true,
-              "expectedOutputs": true,
-              "transferValue": true,
-              "downloads": true,
-              "resources": true,
-              "access": true,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "context",
-            "transferValue",
-            "participation",
-            "people",
-            "process"
-          ],
-          "optionalBlocks": [
-            "outputs",
-            "access",
-            "trackA"
-          ],
-          "cardSignal": "participation"
-        }
-      },
-      {
-        "id": "mentoring-formulacion-retos-industria",
-        "type": "mentoring",
-        "tab": "mentorings",
-        "sortDate": "2026-05-10",
-        "visible": true,
-        "sourcePath": "content/challenges/items/mentorings/mentoring-formulacion-retos-industria.yml",
-        "core": {
-          "status": "open",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Mentoría — Cómo formular un reto industrial para el ecosistema AI-STEAM",
-            "en": "[DEMO] Mentoring — How to frame an industrial challenge for the AI-STEAM ecosystem",
-            "va": "[DEMO] Mentoria — Com formular un repte industrial per a l'ecosistema AI-STEAM"
-          },
-          "summary": {
-            "es": "Acompañamiento para empresas industriales y pymes tecnológicas que quieren convertir una necesidad de innovación o una brecha de talento en un reto bien formulado, publicable en el Marketplace AI-STEAM y orientado a obtener prototipos, datos o metodologías de la comunidad de práctica.",
-            "en": "Support for industrial companies and technology SMEs wishing to turn an innovation need or talent gap into a well-framed challenge, publishable on the AI-STEAM Marketplace and designed to obtain prototypes, data or methodologies from the community of practice.",
-            "va": "Acompanyament per a empreses industrials i pimes tecnològiques que volen convertir una necessitat d'innovació o una bretxa de talent en un repte ben formulat, publicable al Marketplace AI-STEAM i orientat a obtindre prototips, dades o metodologies de la comunitat de pràctica."
-          },
-          "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
-            "type": {
-              "es": "Mentores con experiencia en formulación de retos en contextos industriales y de FP",
-              "en": "Mentors experienced in challenge framing in industrial and VET contexts",
-              "va": "Mentors amb experiència en formulació de reptes en contextos industrials i de FP"
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "mfg",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "",
-          "mentoringType": "brief-support",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2026-01-15",
-          "revisionDate": "2026-05-10",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "15 de enero de 2026",
-            "en": "January 15, 2026",
-            "va": "15 de gener de 2026"
-          },
-          "revisionDateLabel": {
-            "es": "10 de mayo de 2026",
-            "en": "May 10, 2026",
-            "va": "10 de maig de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "mentoringTeam": {
-            "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
-              "en": "AI-STEAM Network Mentoring Pool — Industry 4.0 Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Indústria 4.0"
-            },
-            "type": "",
-            "role": {
-              "es": "Mentores con experiencia en formulación de retos en contextos industriales y de FP",
-              "en": "Mentors experienced in challenge framing in industrial and VET contexts",
-              "va": "Mentors amb experiència en formulació de reptes en contextos industrials i de FP"
-            },
-            "org": ""
-          },
-          "coordinator": null
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": "",
-          "sector": "mfg",
-          "sectorLabel": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "stakeholderCategory": "",
-          "audience": []
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "mentorings"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "mentoringOffer": {
-          "purpose": {
-            "es": "Ayudar a empresas industriales a transformar una necesidad técnica o de talento en un reto AI-STEAM publicable, con alcance realista, incentivos atractivos para la comunidad y condiciones claras de datos y propiedad intelectual.",
-            "en": "Help industrial companies transform a technical or talent need into a publishable AI-STEAM challenge, with realistic scope, attractive community incentives and clear data and intellectual property conditions.",
-            "va": "Ajudar empreses industrials a transformar una necessitat tècnica o de talent en un repte AI-STEAM publicable, amb abast realista, incentius atractius per a la comunitat i condicions clares de dades i propietat intel·lectual."
-          },
-          "problemAddressed": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringScope": {
-            "included": [],
-            "excluded": []
-          },
-          "format": {
-            "sessions": [
-              {
-                "modality": "hybrid",
-                "sessionCount": 3,
-                "sessionDurationHours": 1,
-                "sessionDurationMinutes": null,
-                "sessionTypes": [
-                  "sync",
-                  "async"
-                ]
-              }
-            ],
-            "languageCodes": [],
-            "availability": {
-              "es": "Convocatoria abierta con plazas limitadas. Sesiones disponibles en horario de empresa (9:00-18:00).",
-              "en": "Open call with limited places. Sessions available during business hours (9:00-18:00).",
-              "va": "Convocatòria oberta amb places limitades. Sessions disponibles en horari d'empresa (9:00-18:00)."
-            }
-          },
-          "targetUsers": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "transferValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        },
-        "mentors": {
-          "mode": "pool",
-          "items": [
-            {
-              "id": "pool-industria-40",
-              "name": "AI-STEAM Mentoring Pool — Industria 4.0",
-              "organisation": "",
-              "role": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "specialties": [
-                "industry-4-0",
-                "challenge-framing",
-                "data-sharing",
-                "vet-industry-collaboration"
-              ]
-            }
-          ]
-        },
-        "preparation": {
-          "requiredBeforeRequest": [],
-          "intakeQuestions": []
-        },
-        "expectedOutputs": {
-          "items": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": {
-          "externalLinks": []
-        },
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "url": "",
-            "system": ""
-          },
-          "fallbackAction": null,
-          "secondaryAction": null
-        },
-        "relations": {
-          "relatedChallenges": [],
-          "relatedValidations": [],
-          "relatedPilots": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "possibleOutputs": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "mentoring",
-            "showPurpose": true,
-            "showProvider": true,
-            "showSpecialties": true,
-            "showAvailability": true,
-            "showDownloadsIndicator": false,
-            "showChatBadge": false,
-            "mainBlockLabel": {
-              "es": "Qué ofrece",
-              "en": "What it offers",
-              "va": "Que ofereix"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "purpose": true,
-              "scope": true,
-              "targetUsers": true,
-              "format": true,
-              "mentors": true,
-              "preparation": true,
-              "expectedOutputs": true,
-              "transferValue": true,
-              "downloads": true,
-              "resources": true,
-              "access": true,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "context",
-            "transferValue",
-            "participation",
-            "people",
-            "process"
-          ],
-          "optionalBlocks": [
-            "outputs",
-            "access",
-            "trackA"
-          ],
-          "cardSignal": "participation"
-        }
-      },
-      {
-        "id": "responsible-ai-creative-briefs",
-        "type": "mentoring",
-        "tab": "mentorings",
-        "sortDate": "2026-04-10",
-        "visible": true,
-        "sourcePath": "content/challenges/items/mentorings/responsible-ai-creative-briefs.yml",
-        "core": {
-          "status": "open",
-          "forceOpen": false,
-          "maturity": "idea",
-          "title": {
-            "es": "[DEMO] Mentoría para briefs creativos con IA responsable",
-            "en": "[DEMO] Mentoring for responsible AI creative briefs",
-            "va": "[DEMO] Mentoria per a briefs creatius amb IA responsable"
-          },
-          "summary": {
-            "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
-            "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AI-STEAM collaboration.",
-            "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AI-STEAM."
-          },
-          "entity": {
-            "name": "AI-STEAM Network Mentoring Pool",
-            "type": {
-              "es": "Equipo de mentoría en formulación de retos y ética de IA",
-              "en": "Mentoring team in challenge framing and AI ethics",
-              "va": "Equip de mentoria en formulació de reptes i ètica d'IA"
-            }
-          },
-          "caseStage": "",
-          "pilotStage": "",
-          "executionWindow": null,
-          "evidenceLevel": "",
-          "verificationStatus": "",
-          "sector": "cci",
-          "sectors": [],
-          "stakeholderCategory": "",
-          "levels": [],
-          "pilotType": "",
-          "validationType": "",
-          "mentoringType": "brief-support",
-          "helix": [],
-          "relatedDeliverable": "",
-          "relatedOerId": "",
-          "publishedAt": "2025-12-10",
-          "revisionDate": "2026-04-10",
-          "deadline": null,
-          "publishedAtLabel": {
-            "es": "10 de diciembre de 2025",
-            "en": "December 10, 2025",
-            "va": "10 de desembre de 2025"
-          },
-          "revisionDateLabel": {
-            "es": "10 de abril de 2026",
-            "en": "April 10, 2026",
-            "va": "10 d'abril de 2026"
-          },
-          "deadlineLabel": null
-        },
-        "ficha": null,
-        "adhesionForm": {
-          "url": ""
-        },
-        "ownership": {
-          "publisher": {
-            "name": "",
-            "org": ""
-          },
-          "mentoringTeam": {
-            "name": {
-              "es": "AI-STEAM Network Mentoring Pool",
-              "en": "AI-STEAM Network Mentoring Pool",
-              "va": "AI-STEAM Network Mentoring Pool"
-            },
-            "type": "",
-            "role": {
-              "es": "Equipo de mentoría en formulación de retos y ética de IA",
-              "en": "Mentoring team in challenge framing and AI ethics",
-              "va": "Equip de mentoria en formulació de reptes i ètica d'IA"
-            },
-            "org": ""
-          },
-          "coordinator": null
-        },
-        "classification": {
-          "aiSteamFocus": [],
-          "tripleTransition": [],
-          "policyCluster": [],
-          "engagementLevel": "",
-          "evidenceMaturity": "idea",
-          "lbdStage": "input",
-          "trackBValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "verificationStatus": "",
-          "pilotStatus": "",
-          "sector": "cci",
-          "sectorLabel": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "stakeholderCategory": "",
-          "audience": []
-        },
-        "transfer": {
-          "type": "",
-          "originOrganization": "",
-          "beneficiaryOrganizations": []
-        },
-        "community": {
-          "tab": "mentorings"
-        },
-        "card": {},
-        "visibility": {},
-        "detail": {},
-        "access": {
-          "pageVisibility": "public",
-          "pageLicense": "",
-          "codeLicense": "",
-          "dataAvailability": "",
-          "sensitiveDataIncluded": false,
-          "contributionVisibility": "",
-          "sensitiveDataPolicy": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "rightsNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringRequestAccess": "",
-          "confidentialityLevel": "",
-          "publicationNote": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "publicUrl": "",
-          "license": "",
-          "privacyLevel": "public"
-        },
-        "trackA": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "trackALink": {
-          "enabled": false,
-          "label": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "url": ""
-        },
-        "mentoringOffer": {
-          "purpose": {
-            "es": "Ayudar a entidades de la red a transformar una idea inicial en un brief claro, publicable y accionable dentro del ecosistema AI-STEAM.",
-            "en": "Help network organisations turn an initial idea into a clear, publishable and actionable brief within the AI-STEAM ecosystem.",
-            "va": "Ajudar entitats de la xarxa a transformar una idea inicial en un brief clar, publicable i accionable dins de l'ecosistema AI-STEAM."
-          },
-          "problemAddressed": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "mentoringScope": {
-            "included": [],
-            "excluded": []
-          },
-          "format": {
-            "sessions": [
-              {
-                "modality": "online",
-                "sessionCount": 4,
-                "sessionDurationHours": null,
-                "sessionDurationMinutes": 45,
-                "sessionTypes": [
-                  "sync",
-                  "async-review"
-                ]
-              }
-            ],
-            "languageCodes": [],
-            "availability": {
-              "es": "Convocatoria continua mientras haya capacidad de mentoria disponible.",
-              "en": "Rolling call while mentoring capacity is available.",
-              "va": "Convocatoria continua mentre hi haja capacitat de mentoria disponible."
-            }
-          },
-          "targetUsers": {
-            "es": "",
-            "en": "",
-            "va": ""
-          },
-          "transferValue": {
-            "es": "",
-            "en": "",
-            "va": ""
-          }
-        },
-        "mentors": {
-          "mode": "pool",
-          "items": [
-            {
-              "id": "ai-steam-mentoring-pool",
-              "name": "AI-STEAM Network Mentoring Pool",
-              "organisation": "",
-              "role": {
-                "es": "",
-                "en": "",
-                "va": ""
-              },
-              "specialties": [
-                "responsible-ai",
-                "creative-brief",
-                "co-design",
-                "track-b-transfer"
-              ]
-            }
-          ]
-        },
-        "preparation": {
-          "requiredBeforeRequest": [],
-          "intakeQuestions": []
-        },
-        "expectedOutputs": {
-          "items": []
-        },
-        "downloads": {
-          "enabled": false,
-          "basePath": "",
-          "items": []
-        },
-        "resources": {
-          "externalLinks": []
-        },
-        "externalFlow": {
-          "enabled": false,
-          "primaryAction": {
-            "label": {
-              "es": "",
-              "en": "",
-              "va": ""
-            },
-            "url": "",
-            "system": ""
-          },
-          "fallbackAction": null,
-          "secondaryAction": null
-        },
-        "relations": {
-          "relatedChallenges": [],
-          "relatedValidations": [],
-          "relatedPilots": [],
-          "relatedCases": [],
-          "relatedResources": [],
-          "possibleOutputs": []
-        },
-        "hasDownloads": false,
-        "downloadCount": 0,
-        "cardDownloads": [],
-        "presentation": {
-          "card": {
-            "variant": "mentoring",
-            "showPurpose": true,
-            "showProvider": true,
-            "showSpecialties": true,
-            "showAvailability": true,
-            "showDownloadsIndicator": false,
-            "showChatBadge": false,
-            "mainBlockLabel": {
-              "es": "Qué ofrece",
-              "en": "What it offers",
-              "va": "Que ofereix"
-            }
-          },
-          "detail": {
-            "sections": {
-              "summary": true,
-              "purpose": true,
-              "scope": true,
-              "targetUsers": true,
-              "format": true,
-              "mentors": true,
-              "preparation": true,
-              "expectedOutputs": true,
-              "transferValue": true,
-              "downloads": true,
-              "resources": true,
-              "access": true,
-              "relations": false
-            }
-          }
-        },
-        "template": {
-          "requiredBlocks": [
-            "context",
-            "transferValue",
-            "participation",
-            "people",
-            "process"
-          ],
-          "optionalBlocks": [
-            "outputs",
-            "access",
-            "trackA"
-          ],
-          "cardSignal": "participation"
         }
       }
     ]
