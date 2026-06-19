@@ -16,6 +16,18 @@ export const MARKETPLACE_CONFIG = {
     },
     "stats": [
       {
+        "id": "mentorings",
+        "visible": true,
+        "value": 9,
+        "realValue": 9,
+        "valueOverride": null,
+        "label": {
+          "es": "Mentorías",
+          "en": "Mentoring",
+          "va": "Mentories"
+        }
+      },
+      {
         "id": "challenges",
         "visible": true,
         "value": 8,
@@ -25,30 +37,6 @@ export const MARKETPLACE_CONFIG = {
           "es": "Retos",
           "en": "Challenges",
           "va": "Reptes"
-        }
-      },
-      {
-        "id": "cases",
-        "visible": true,
-        "value": 12,
-        "realValue": 12,
-        "valueOverride": null,
-        "label": {
-          "es": "Casos",
-          "en": "Cases",
-          "va": "Casos"
-        }
-      },
-      {
-        "id": "pilots",
-        "visible": true,
-        "value": 7,
-        "realValue": 7,
-        "valueOverride": null,
-        "label": {
-          "es": "Pilotos",
-          "en": "Pilots",
-          "va": "Pilotatges"
         }
       },
       {
@@ -64,15 +52,27 @@ export const MARKETPLACE_CONFIG = {
         }
       },
       {
-        "id": "mentorings",
+        "id": "pilots",
         "visible": true,
-        "value": 9,
-        "realValue": 9,
+        "value": 7,
+        "realValue": 7,
         "valueOverride": null,
         "label": {
-          "es": "Mentorías",
-          "en": "Mentoring",
-          "va": "Mentories"
+          "es": "Pilotos",
+          "en": "Pilots",
+          "va": "Pilotatges"
+        }
+      },
+      {
+        "id": "cases",
+        "visible": true,
+        "value": 12,
+        "realValue": 12,
+        "valueOverride": null,
+        "label": {
+          "es": "Casos",
+          "en": "Cases",
+          "va": "Casos"
         }
       }
     ]
