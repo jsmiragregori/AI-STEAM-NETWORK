@@ -603,7 +603,7 @@ function getActiveTabId() {
   const tabs = getTabs();
   const current = getState('marketplaceTab');
   if (tabs.some(tab => tab.id === current)) return current;
-  return tabs[0]?.id || 'challenges';
+  return tabs[0]?.id || 'mentorings';
 }
 
 function getActiveTab() {
