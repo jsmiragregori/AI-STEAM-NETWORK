@@ -20,14 +20,14 @@ export const HOME_CONFIG = {
       "va": "Comunitat i Transferència d'AI-SECRETT"
     },
     "heroTagline": {
-      "es": "AI-STEAM Network es el ecosistema Track B de CEICE para AI-SECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders moviliza centros FP forma docentes y especializa los 7 sectores AI-SECRETT en IA y creatividad.",
-      "en": "AI-STEAM Network is the Track B ecosystem of CEICE for AI-SECRETT: built on ENRED interregional cooperation activating stakeholders mobilizing VET centers training teachers and specializing the 7 AI-SECRETT sectors in AI and creativity.",
-      "va": "AI-STEAM Network és l'ecosistema Track B de CEICE per a AI-SECRETT: construïda sobre la cooperació interregional d'ENRED activa agents interessats movilitza centres FP forma docents i especialitza els 7 sectors AI-SECRETT en IA i creativitat."
+      "es": "AI-STEAM Network es el ecosistema Track B de CECU para AI-SECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders moviliza centros FP forma docentes y especializa los 7 sectores AI-SECRETT en IA y creatividad.",
+      "en": "AI-STEAM Network is the Track B ecosystem of CECU for AI-SECRETT: built on ENRED interregional cooperation activating stakeholders mobilizing VET centers training teachers and specializing the 7 AI-SECRETT sectors in AI and creativity.",
+      "va": "AI-STEAM Network és l'ecosistema Track B de CECU per a AI-SECRETT: construïda sobre la cooperació interregional d'ENRED activa agents interessats movilitza centres FP forma docents i especialitza els 7 sectors AI-SECRETT en IA i creativitat."
     },
     "description": {
-      "es": "Liderada por CEICE activa stakeholders moviliza centros FP forma docentes y genera evidencias para el consorcio AI-SECRETT en las 7 áreas sectoriales europeas.",
-      "en": "Led by CEICE it activates stakeholders mobilizes VET centers trains teachers and generates evidence for the AI-SECRETT consortium in the 7 sectoral areas.",
-      "va": "Liderada per CEICE activa agents interessats movilitza centres FP forma docents i genera evidències per al consorci AI-SECRETT en les 7 àrees sectorials europees."
+      "es": "Liderada por CECU activa stakeholders moviliza centros FP forma docentes y genera evidencias para el consorcio AI-SECRETT en las 7 áreas sectoriales europeas.",
+      "en": "Led by CECU it activates stakeholders mobilizes VET centers trains teachers and generates evidence for the AI-SECRETT consortium in the 7 sectoral areas.",
+      "va": "Liderada per CECU activa agents interessats movilitza centres FP forma docents i genera evidències per al consorci AI-SECRETT en les 7 àrees sectorials europees."
     },
     "buttons": {
       "uploadChallenge": {
@@ -383,9 +383,9 @@ export const HOME_CONFIG = {
           "va": "CMS · Aquest portal"
         },
         "description": {
-          "es": "Repositorio de retos, socios, conocimiento y recursos para nutrir el máster y la FP de CEICE.",
-          "en": "Repository of challenges, partners, knowledge and resources to feed the master and CEICE VET programs.",
-          "va": "Repositori de reptes, socis, coneixement i recursos per a nodrir el màster i la FP de CEICE."
+          "es": "Hub de comunidad, retos y transferencia que conecta FP, socios y conocimiento para resolver necesidades reales.",
+          "en": "Community, challenge and transfer hub connecting VET, partners and knowledge to solve real needs.",
+          "va": "Hub de comunitat, reptes i transferència que connecta FP, socis i coneixement per a resoldre necessitats reals."
         },
         "tag": {
           "visible": true,
@@ -408,9 +408,9 @@ export const HOME_CONFIG = {
           "va": "ConsensUE"
         },
         "subtitle": {
-          "es": "Participación · Decidim",
-          "en": "Participation · Decidim",
-          "va": "Participació · Decidim"
+          "es": "Espacio ConsensUE en Aules",
+          "en": "ConsensUE space in Aules",
+          "va": "Espai ConsensUE en Aules"
         },
         "description": {
           "es": "Democracia y participación: propuestas, votaciones y validación de relevancia de necesidades, casos y retos.",
@@ -438,9 +438,9 @@ export const HOME_CONFIG = {
     "description": {
       "visible": true,
       "html": {
-        "es": "La red alimenta simultáneamente dos niveles de formación reglada coordinados por CEICE.",
-        "en": "The network simultaneously feeds two levels of formal education coordinated by CEICE.",
-        "va": "La xarxa alimenta simultàniament dos nivells de formació reglada coordinats per CEICE."
+        "es": "La red alimenta simultáneamente dos niveles de formación reglada coordinados por CECU.",
+        "en": "The network simultaneously feeds two levels of formal education coordinated by CECU.",
+        "va": "La xarxa alimenta simultàniament dos nivells de formació reglada coordinats per CECU."
       }
     },
     "cards": [
@@ -449,9 +449,9 @@ export const HOME_CONFIG = {
         "tone": "orange",
         "initials": "FP",
         "coordinator": {
-          "es": "Coordinado por CEICE",
-          "en": "Coordinated by CEICE",
-          "va": "Coordinat per CEICE"
+          "es": "Coordinado por CECU",
+          "en": "Coordinated by CECU",
+          "va": "Coordinat per CECU"
         },
         "title": {
           "es": "FP y Ciclos Formativos",
@@ -712,10 +712,10 @@ export const HOME_CONFIG = {
         "logo": "laurea.png"
       },
       {
-        "id": "ceice",
-        "name": "CEICE",
-        "acronym": "CEICE",
-        "logo": "ceice.png"
+        "id": "CECU",
+        "name": "CECU",
+        "acronym": "CECU",
+        "logo": "CECU.png"
       },
       {
         "id": "lpga",

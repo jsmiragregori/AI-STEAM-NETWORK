@@ -904,13 +904,13 @@ export const NETWORK_CONFIG = {
         "logo": "laurea.png"
       },
       {
-        "id": "ceice",
+        "id": "CECU",
         "name": {
-          "es": "Conselleria de Educación (CEICE)",
-          "en": "Department of Education (CEICE)",
-          "va": "Conselleria d'Educació (CEICE)"
+          "es": "Conselleria de Educación (CECU)",
+          "en": "Department of Education (CECU)",
+          "va": "Conselleria d'Educació (CECU)"
         },
-        "acronym": "CEICE",
+        "acronym": "CECU",
         "country": "ES",
         "city": {
           "es": "Valencia",
@@ -956,8 +956,8 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://ceice.gva.es/va/",
-        "logo": "ceice.png"
+        "url": "https://CECU.gva.es/va/",
+        "logo": "CECU.png"
       },
       {
         "id": "lpga",
@@ -1615,9 +1615,9 @@ export const NETWORK_CONFIG = {
       "va": "Grups d'interès de la Xarxa"
     },
     "description": {
-      "es": "Los stakeholders serán organizaciones externas adheridas voluntariamente a la red AI-STEAM. El <strong>proceso de adhesión está pendiente de validación</strong> por CEICE, la coordinación del proyecto y los socios responsables; sus condiciones (incluido el Acuerdo de Gasto Cero) y las vías de participación se definirán cuando el proceso esté habilitado.",
-      "en": "Stakeholders will be external organizations voluntarily joined to the AI-STEAM network. The <strong>joining process is pending validation</strong> by CEICE, project coordination and the partners responsible for it; its conditions (including the Zero-Cost Agreement) and participation channels will be defined once the process is enabled.",
-      "va": "Els grups d'interès seran organitzacions externes adherides voluntàriament a la xarxa AI-STEAM. El <strong>procés d'adhesió està pendent de validació</strong> per CEICE, la coordinació del projecte i els socis responsables; les seues condicions (inclòs l'Acord de Despesa Zero) i les vies de participació es definiran quan el procés estiga habilitat."
+      "es": "Los stakeholders serán organizaciones externas adheridas voluntariamente a la red AI-STEAM. El <strong>proceso de adhesión está pendiente de validación</strong> por CECU, la coordinación del proyecto y los socios responsables; sus condiciones (incluido el Acuerdo de Gasto Cero) y las vías de participación se definirán cuando el proceso esté habilitado.",
+      "en": "Stakeholders will be external organizations voluntarily joined to the AI-STEAM network. The <strong>joining process is pending validation</strong> by CECU, project coordination and the partners responsible for it; its conditions (including the Zero-Cost Agreement) and participation channels will be defined once the process is enabled.",
+      "va": "Els grups d'interès seran organitzacions externes adherides voluntàriament a la xarxa AI-STEAM. El <strong>procés d'adhesió està pendent de validació</strong> per CECU, la coordinació del projecte i els socis responsables; les seues condicions (inclòs l'Acord de Despesa Zero) i les vies de participació es definiran quan el procés estiga habilitat."
     },
     "filterAll": {
       "es": "Todos",
@@ -1684,9 +1684,9 @@ export const NETWORK_CONFIG = {
         "va": "Formulari d'Adhesió com a Stakeholder"
       },
       "description": {
-        "es": "<strong>ATENCIÓN:</strong> Este formulario es una <strong>previsualización</strong> del futuro proceso de adhesión de stakeholders y <strong>no está operativo</strong> — no recoge ni envía datos. La adhesión, sus condiciones y el flujo real de solicitud están pendientes de validación por CEICE, la coordinación del proyecto y los socios responsables del proceso (con INESC en la coordinación de la Red de Stakeholders), y de la revisión del tratamiento de datos por el DPD de la Generalitat.",
-        "en": "<strong>ATTENTION:</strong> This form is a <strong>preview</strong> of the future stakeholder joining process and is <strong>not operational</strong> — it does not collect or send any data. Membership, its conditions and the real application flow are pending validation by CEICE, project coordination and the partners responsible for the process (with INESC coordinating the Stakeholders' Network), and pending data-processing review by the Generalitat Data Protection Officer.",
-        "va": "<strong>ATENCIÓ:</strong> Aquest formulari és una <strong>previsualització</strong> del futur procés d'adhesió de grups d'interès i <strong>no està operatiu</strong> — no recull ni envia dades. L'adhesió, les seues condicions i el flux real de sol·licitud estan pendents de validació per CEICE, la coordinació del projecte i els socis responsables del procés (amb INESC en la coordinació de la Xarxa de Grups d'interès), i de la revisió del tractament de dades pel DPD de la Generalitat."
+        "es": "<strong>ATENCIÓN:</strong> Este formulario es una <strong>previsualización</strong> del futuro proceso de adhesión de stakeholders y <strong>no está operativo</strong> — no recoge ni envía datos. La adhesión, sus condiciones y el flujo real de solicitud están pendientes de validación por CECU, la coordinación del proyecto y los socios responsables del proceso (con INESC en la coordinación de la Red de Stakeholders), y de la revisión del tratamiento de datos por el DPD de la Generalitat.",
+        "en": "<strong>ATTENTION:</strong> This form is a <strong>preview</strong> of the future stakeholder joining process and is <strong>not operational</strong> — it does not collect or send any data. Membership, its conditions and the real application flow are pending validation by CECU, project coordination and the partners responsible for the process (with INESC coordinating the Stakeholders' Network), and pending data-processing review by the Generalitat Data Protection Officer.",
+        "va": "<strong>ATENCIÓ:</strong> Aquest formulari és una <strong>previsualització</strong> del futur procés d'adhesió de grups d'interès i <strong>no està operatiu</strong> — no recull ni envia dades. L'adhesió, les seues condicions i el flux real de sol·licitud estan pendents de validació per CECU, la coordinació del projecte i els socis responsables del procés (amb INESC en la coordinació de la Xarxa de Grups d'interès), i de la revisió del tractament de dades pel DPD de la Generalitat."
       },
       "fields": {
         "entityName": {

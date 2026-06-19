@@ -235,7 +235,7 @@ function tabFlujo() {
           <p class="text-gray-600 text-base leading-relaxed">${t('knowledge.networkPlatform') || ''}</p>
         </div>
         <div class="rd-card rd-card-grad-violet rd-card-edge p-4">
-          <p class="font-extrabold text-eu-blue mb-1">ConsensUE (Decidim)</p>
+          <p class="font-extrabold text-eu-blue mb-1">Espacio ConsensUE en Aules</p>
           <p class="text-gray-600 text-base leading-relaxed">${t('knowledge.consensuePlatform') || ''}</p>
         </div>`;
     }

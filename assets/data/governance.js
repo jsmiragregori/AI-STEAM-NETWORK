@@ -83,9 +83,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Valencia"
           },
           "org": {
-            "es": "CEICE - Generalitat Valenciana",
-            "en": "CEICE - Generalitat Valenciana",
-            "va": "CEICE - Generalitat Valenciana"
+            "es": "CECU - Generalitat Valenciana",
+            "en": "CECU - Generalitat Valenciana",
+            "va": "CECU - Generalitat Valenciana"
           },
           "role": {
             "es": "Orquestador del ecosistema. Hub central de la red. Aloja el portal, Aules y ConsensUE.",
@@ -161,15 +161,15 @@ export const GOVERNANCE_CONFIG = {
       },
       "cards": [
         {
-          "id": "ceice",
+          "id": "CECU",
           "visible": true,
           "order": 1,
           "icon": "building-2",
           "tone": "orange",
           "title": {
-            "es": "CEICE - Orquestador Institucional",
-            "en": "CEICE - Institutional Orchestrator",
-            "va": "CEICE - Orquestrador Institucional"
+            "es": "CECU - Orquestador Institucional",
+            "en": "CECU - Institutional Orchestrator",
+            "va": "CECU - Orquestrador Institucional"
           },
           "subtitle": {
             "es": "Generalitat Valenciana · Track B",
@@ -236,9 +236,9 @@ export const GOVERNANCE_CONFIG = {
                 "va": "Infraestructura"
               },
               "desc": {
-                "es": "Provee y mantiene el PortalEdu, Aules y la plataforma de participación democrática (ConsensUE/Decidim).",
-                "en": "Provides and maintains PortalEdu, Aules, and democratic participation platform (ConsensUE/Decidim).",
-                "va": "Proporciona i manté PortalEdu, Aules i la plataforma de participació democràtica (ConsensUE/Decidim)."
+                "es": "Provee y mantiene PortalEdu, Aules y el Espacio ConsensUE en Aules para la participación del Track B.",
+                "en": "Provides and maintains PortalEdu, Aules, and the ConsensUE space in Aules for Track B participation.",
+                "va": "Proporciona i manté PortalEdu, Aules i l'Espai ConsensUE en Aules per a la participació del Track B."
               }
             }
           ]
@@ -560,9 +560,9 @@ export const GOVERNANCE_CONFIG = {
           "va": "Alineament amb polítiques europees (Digital Decade, AI Act, EPALE) i amb les prioritats de la Generalitat Valenciana. Coordina amb ENRED (Xarxa Europea de Departaments d'Educació Regional)."
         },
         "members": {
-          "es": "CEICE, LC, KEA, Lisbon Council",
-          "en": "CEICE, LC, KEA, Lisbon Council",
-          "va": "CEICE, LC, KEA, Lisbon Council"
+          "es": "CECU, LC, KEA, Lisbon Council",
+          "en": "CECU, LC, KEA, Lisbon Council",
+          "va": "CECU, LC, KEA, Lisbon Council"
         },
         "frequency": {
           "es": "Anual",
@@ -728,9 +728,9 @@ export const GOVERNANCE_CONFIG = {
           "va": "Track B – Espai de l'Ecosistema"
         },
         "subtitle": {
-          "es": "Orquestado por CEICE (GVA)",
-          "en": "Orchestrated by CEICE (GVA)",
-          "va": "Orquestrat per CEICE (GVA)"
+          "es": "Orquestado por CECU (GVA)",
+          "en": "Orchestrated by CECU (GVA)",
+          "va": "Orquestrat per CECU (GVA)"
         },
         "scope": {
           "text": {
@@ -748,9 +748,9 @@ export const GOVERNANCE_CONFIG = {
         },
         "keyLimit": {
           "text": {
-            "es": "Las aportaciones de stakeholders pueden canalizarse a través de la Red de Stakeholders y ConsensUE cuando el proceso esté habilitado. Las decisiones formales permanecen en los órganos del consorcio y en los procedimientos aprobados por CEICE y la coordinación del proyecto.",
-            "en": "Stakeholder input may be channelled through the Stakeholder Network and ConsensUE when the process is enabled. Formal decisions remain with the consortium bodies and the procedures approved by CEICE and project coordination.",
-            "va": "Les aportacions de stakeholders poden canalitzar-se a través de la Xarxa de Stakeholders i ConsensUE quan el procés estiga habilitat. Les decisions formals romanen en els òrgans del consorci i en els procediments aprovats per CEICE i la coordinació del projecte."
+            "es": "Las aportaciones de stakeholders pueden canalizarse a través de la Red de Stakeholders y ConsensUE cuando el proceso esté habilitado. Las decisiones formales permanecen en los órganos del consorcio y en los procedimientos aprobados por CECU y la coordinación del proyecto.",
+            "en": "Stakeholder input may be channelled through the Stakeholder Network and ConsensUE when the process is enabled. Formal decisions remain with the consortium bodies and the procedures approved by CECU and project coordination.",
+            "va": "Les aportacions de stakeholders poden canalitzar-se a través de la Xarxa de Stakeholders i ConsensUE quan el procés estiga habilitat. Les decisions formals romanen en els òrgans del consorci i en els procediments aprovats per CECU i la coordinació del projecte."
           }
         },
         "activeBodies": [
@@ -891,19 +891,19 @@ export const GOVERNANCE_CONFIG = {
         "va": "Dades i límits de responsabilitat"
       },
       "description": {
-        "es": "Cada plataforma mantiene su responsabilidad operativa. La AI-STEAM Network protege los compromisos de CEICE en el Track B sin entrar en decisiones académicas del Máster.",
-        "en": "Each platform keeps its operational responsibility. The AI-STEAM Network protects CEICE commitments in Track B without entering Master academic decisions.",
-        "va": "Cada plataforma manté la seua responsabilitat operativa. La AI-STEAM Network protegeix els compromisos de CEICE al Track B sense entrar en decisions acadèmiques del Màster."
+        "es": "Cada plataforma mantiene su responsabilidad operativa. La AI-STEAM Network protege los compromisos de CECU en el Track B sin entrar en decisiones académicas del Máster.",
+        "en": "Each platform keeps its operational responsibility. The AI-STEAM Network protects CECU commitments in Track B without entering Master academic decisions.",
+        "va": "Cada plataforma manté la seua responsabilitat operativa. La AI-STEAM Network protegeix els compromisos de CECU al Track B sense entrar en decisions acadèmiques del Màster."
       },
       "items": [
         {
-          "id": "ceice",
+          "id": "CECU",
           "visible": true,
           "order": 1,
           "owner": {
-            "es": "CEICE",
-            "en": "CEICE",
-            "va": "CEICE"
+            "es": "CECU",
+            "en": "CECU",
+            "va": "CECU"
           },
           "scope": {
             "es": "Datos de miembros, participación comunitaria, red ENRED/AI-STEAM, retos/casos y evidencias del Track B.",
@@ -936,9 +936,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "CONSENSUE (Aules)"
           },
           "scope": {
-            "es": "Participación, consultas y contribuciones documentadas de la comunidad cuando el proceso esté habilitado por CEICE y las reglas aplicables.",
-            "en": "Participation, consultations and documented community contributions when the process is enabled by CEICE and the applicable rules.",
-            "va": "Participació, consultes i contribucions documentades de la comunitat quan el procés estiga habilitat per CEICE i les regles aplicables."
+            "es": "Participación, consultas y contribuciones documentadas de la comunidad cuando el proceso esté habilitado por CECU y las reglas aplicables.",
+            "en": "Participation, consultations and documented community contributions when the process is enabled by CECU and the applicable rules.",
+            "va": "Participació, consultes i contribucions documentades de la comunitat quan el procés estiga habilitat per CECU i les regles aplicables."
           }
         },
         {
@@ -966,9 +966,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Model d'Acord de Col·laboració – Regla de Cost Zero"
       },
       "description": {
-        "es": "Este bloque muestra una propuesta de principios para el futuro proceso de adhesión al Track B. El contenido está pendiente de decisión por CEICE, la coordinación del proyecto y los socios responsables del proceso de stakeholders.",
-        "en": "This block shows a proposed set of principles for the future Track B joining process. The content is pending decision by CEICE, project coordination and the partners responsible for the stakeholder process.",
-        "va": "Este bloc mostra una proposta de principis per al futur procés d'adhesió al Track B. El contingut està pendent de decisió per CEICE, la coordinació del projecte i els socis responsables del procés de stakeholders."
+        "es": "Este bloque muestra una propuesta de principios para el futuro proceso de adhesión al Track B. El contenido está pendiente de decisión por CECU, la coordinación del proyecto y los socios responsables del proceso de stakeholders.",
+        "en": "This block shows a proposed set of principles for the future Track B joining process. The content is pending decision by CECU, project coordination and the partners responsible for the stakeholder process.",
+        "va": "Este bloc mostra una proposta de principis per al futur procés d'adhesió al Track B. El contingut està pendent de decisió per CECU, la coordinació del projecte i els socis responsables del procés de stakeholders."
       },
       "items": [
         {
@@ -1085,9 +1085,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Organitzacions de la xarxa"
           },
           "description": {
-            "es": "Los miembros del ecosistema aportan necesidades, retos y casos de uso a través de los canales habilitados. La Red de Stakeholders (SN), coordinada por INESC TEC y con CEICE como orquestadora del Track B, puede revisar su relevancia y orientar su clasificación para actividades, recursos, pilotos o posible revisión académica por Track A.",
-            "en": "Ecosystem members contribute needs, challenges and use cases through ConsensUE. The Stakeholder Network, coordinated by INESC TEC and with CEICE as Track B orchestrator, may review their relevance and guide classification for activities, resources, pilots or possible academic review by Track A.",
-            "va": "Els membres de l'ecosistema aporten necessitats, reptes i casos d'ús a través dels canals habilitats. La Xarxa de Stakeholders, coordinada per INESC TEC i amb CEICE com a orquestradora del Track B, pot revisar la seua rellevància i orientar-ne la classificació per a activitats, recursos, pilots o possible revisió acadèmica per Track A."
+            "es": "Los miembros del ecosistema aportan necesidades, retos y casos de uso a través de los canales habilitados. La Red de Stakeholders (SN), coordinada por INESC TEC y con CECU como orquestadora del Track B, puede revisar su relevancia y orientar su clasificación para actividades, recursos, pilotos o posible revisión académica por Track A.",
+            "en": "Ecosystem members contribute needs, challenges and use cases through ConsensUE. The Stakeholder Network, coordinated by INESC TEC and with CECU as Track B orchestrator, may review their relevance and guide classification for activities, resources, pilots or possible academic review by Track A.",
+            "va": "Els membres de l'ecosistema aporten necessitats, reptes i casos d'ús a través dels canals habilitats. La Xarxa de Stakeholders, coordinada per INESC TEC i amb CECU com a orquestradora del Track B, pot revisar la seua rellevància i orientar-ne la classificació per a activitats, recursos, pilots o possible revisió acadèmica per Track A."
           },
           "outputs": [
             {
@@ -1249,9 +1249,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Flux operatiu de Track B a evidències"
       },
       "description": {
-        "es": "El recorrido muestra cómo CEICE puede convertir participación de red en evidencias auditables sin presentar indicadores demo como resultados reales.",
-        "en": "The flow shows how CEICE can turn network participation into auditable evidence without presenting demo indicators as real results.",
-        "va": "El recorregut mostra com CEICE pot convertir participació de xarxa en evidències auditables sense presentar indicadors demo com a resultats reals."
+        "es": "El recorrido muestra cómo CECU puede convertir participación de red en evidencias auditables sin presentar indicadores demo como resultados reales.",
+        "en": "The flow shows how CECU can turn network participation into auditable evidence without presenting demo indicators as real results.",
+        "va": "El recorregut mostra com CECU pot convertir participació de xarxa en evidències auditables sense presentar indicadors demo com a resultats reals."
       },
       "steps": [
         {
@@ -1354,9 +1354,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Les Tres Plataformes en el Flux LbD"
       },
       "description": {
-        "es": "Cada plataforma tiene un rol específico. La web AI-STEAM publica y orienta; ConsensUE apoya la participación cuando esté habilitada; Aules se usa para cursos y actividades del Track B.",
-        "en": "Each platform has a specific role. The AI-STEAM website publishes and routes; ConsensUE supports participation when enabled; Aules is used for Track B courses and activities.",
-        "va": "Cada plataforma té un rol específic. La web AI-STEAM publica i orienta; ConsensUE dona suport a la participació quan estiga habilitada; Aules s'utilitza per a cursos i activitats del Track B."
+        "es": "Cada plataforma tiene un rol específico. La web AI-STEAM publica y orienta; el Espacio ConsensUE en Aules apoya la participación cuando esté habilitada; Aules se usa para cursos y actividades del Track B.",
+        "en": "Each platform has a specific role. The AI-STEAM website publishes and routes; the ConsensUE space in Aules supports participation when enabled; Aules is used for Track B courses and activities.",
+        "va": "Cada plataforma té un rol específic. La web AI-STEAM publica i orienta; l'Espai ConsensUE en Aules dona suport a la participació quan estiga habilitada; Aules s'utilitza per a cursos i activitats del Track B."
       },
       "cards": [
         {
@@ -1369,9 +1369,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "ConsensUE"
           },
           "tech": {
-            "es": "Decidim",
-            "en": "Decidim",
-            "va": "Decidim"
+            "es": "Espacio ConsensUE en Aules",
+            "en": "ConsensUE space in Aules",
+            "va": "Espai ConsensUE en Aules"
           },
           "track": {
             "es": "Track B",
@@ -1379,9 +1379,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Track B"
           },
           "owner": {
-            "es": "CEICE",
-            "en": "CEICE",
-            "va": "CEICE"
+            "es": "CECU",
+            "en": "CECU",
+            "va": "CECU"
           },
           "role": {
             "es": "Participación democrática",
@@ -1414,9 +1414,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Track A + B"
           },
           "owner": {
-            "es": "CEICE + UVEG",
-            "en": "CEICE + UVEG",
-            "va": "CEICE + UVEG"
+            "es": "CECU + UVEG",
+            "en": "CECU + UVEG",
+            "va": "CECU + UVEG"
           },
           "role": {
             "es": "Catálogo público y orientación",
@@ -1449,9 +1449,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Track B"
           },
           "owner": {
-            "es": "CEICE",
-            "en": "CEICE",
-            "va": "CEICE"
+            "es": "CECU",
+            "en": "CECU",
+            "va": "CECU"
           },
           "role": {
             "es": "Entrega formativa",
@@ -1459,9 +1459,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Entrega Formativa"
           },
           "description": {
-            "es": "Entorno de aprendizaje para cursos, FP, formación docente y otras actividades del Track B gestionadas por CEICE. El Máster AI-SECRETT se desarrolla en su plataforma propia, ValgrAI.",
-            "en": "Learning environment for courses, VET, teacher training and other Track B activities managed by CEICE. The AI-SECRETT Master is delivered in its own platform, ValgrAI.",
-            "va": "Entorn d'aprenentatge per a cursos, FP, formació docent i altres activitats del Track B gestionades per CEICE. El Màster AI-SECRETT es desenvolupa en la seua plataforma pròpia, ValgrAI."
+            "es": "Entorno de aprendizaje para cursos, FP, formación docente y otras actividades del Track B gestionadas por CECU. El Máster AI-SECRETT se desarrolla en su plataforma propia, ValgrAI.",
+            "en": "Learning environment for courses, VET, teacher training and other Track B activities managed by CECU. The AI-SECRETT Master is delivered in its own platform, ValgrAI.",
+            "va": "Entorn d'aprenentatge per a cursos, FP, formació docent i altres activitats del Track B gestionades per CECU. El Màster AI-SECRETT es desenvolupa en la seua plataforma pròpia, ValgrAI."
           }
         }
       ]
@@ -1499,9 +1499,9 @@ export const GOVERNANCE_CONFIG = {
               "visible": true,
               "order": 1,
               "label": {
-                "es": "Track B gestionado manualmente por CEICE",
-                "en": "Track B manually managed by CEICE",
-                "va": "Track B gestionat manualment per CEICE"
+                "es": "Track B gestionado manualmente por CECU",
+                "en": "Track B manually managed by CECU",
+                "va": "Track B gestionat manualment per CECU"
               }
             },
             {
@@ -2117,9 +2117,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Proposta Track B · Espai Ecosistema · Pendent de validació"
       },
       "description": {
-        "es": "Esta card muestra una <strong>propuesta de contenidos</strong> para el futuro proceso de adhesión de stakeholders al Track B. La adhesión, sus condiciones y el Acuerdo de Colaboración están pendientes de validación por CEICE, la coordinación del proyecto y los socios responsables del proceso.",
-        "en": "This card shows a <strong>content proposal</strong> for the future Track B stakeholder joining process. Membership, its conditions and the Collaboration Agreement are pending validation by CEICE, project coordination and the partners responsible for the process.",
-        "va": "Esta card mostra una <strong>proposta de continguts</strong> per al futur procés d'adhesió de stakeholders al Track B. L'adhesió, les seues condicions i l'Acord de Col·laboració estan pendents de validació per CEICE, la coordinació del projecte i els socis responsables del procés."
+        "es": "Esta card muestra una <strong>propuesta de contenidos</strong> para el futuro proceso de adhesión de stakeholders al Track B. La adhesión, sus condiciones y el Acuerdo de Colaboración están pendientes de validación por CECU, la coordinación del proyecto y los socios responsables del proceso.",
+        "en": "This card shows a <strong>content proposal</strong> for the future Track B stakeholder joining process. Membership, its conditions and the Collaboration Agreement are pending validation by CECU, project coordination and the partners responsible for the process.",
+        "va": "Esta card mostra una <strong>proposta de continguts</strong> per al futur procés d'adhesió de stakeholders al Track B. L'adhesió, les seues condicions i l'Acord de Col·laboració estan pendents de validació per CECU, la coordinació del projecte i els socis responsables del procés."
       },
       "benefitsLabel": {
         "es": "La propuesta podría incluir:",
@@ -2191,14 +2191,14 @@ export const GOVERNANCE_CONFIG = {
         "va": "Participa vía ConsensUE"
       },
       "subtitle": {
-        "es": "Track B · Plataforma ConsensUE · Participación cuando esté habilitada",
-        "en": "Track B · ConsensUE Platform · Participation when enabled",
-        "va": "Track B · Plataforma ConsensUE · Participació quan estiga habilitada"
+        "es": "Track B · Espacio ConsensUE en Aules · Participación cuando esté habilitada",
+        "en": "Track B · ConsensUE space in Aules · Participation when enabled",
+        "va": "Track B · Espai ConsensUE en Aules · Participació quan estiga habilitada"
       },
       "description": {
-        "es": "ConsensUE es una plataforma de participación basada en <strong>Decidim</strong> y gestionada por CEICE. Puede servir como canal de consulta, propuesta y deliberación del Track B cuando el proceso esté habilitado, sin sustituir a los órganos formales de decisión del consorcio.",
-        "en": "ConsensUE is a participation platform based on <strong>Decidim</strong> and managed by CEICE. It may serve as a consultation, proposal and deliberation channel for Track B when the process is enabled, without replacing the consortium's formal decision-making bodies.",
-        "va": "ConsensUE és una plataforma de participació basada en <strong>Decidim</strong> i gestionada per CEICE. Pot servir com a canal de consulta, proposta i deliberació del Track B quan el procés estiga habilitat, sense substituir els òrgans formals de decisió del consorci."
+        "es": "El Espacio ConsensUE en Aules, gestionado por CECU, puede servir como canal de consulta, propuesta y deliberación del Track B cuando el proceso esté habilitado, sin sustituir a los órganos formales de decisión del consorcio.",
+        "en": "The ConsensUE space in Aules, managed by CECU, may serve as a consultation, proposal and deliberation channel for Track B when the process is enabled, without replacing the consortium's formal decision-making bodies.",
+        "va": "L'Espai ConsensUE en Aules, gestionat per CECU, pot servir com a canal de consulta, proposta i deliberació del Track B quan el procés estiga habilitat, sense substituir els òrgans formals de decisió del consorci."
       },
       "groups": [
         {
@@ -2233,9 +2233,9 @@ export const GOVERNANCE_CONFIG = {
             },
             {
               "text": {
-                "es": "Responder consultas de la red convocadas por CEICE o los órganos competentes",
-                "en": "Respond to network consultations convened by CEICE or the competent bodies",
-                "va": "Respondre consultes de la xarxa convocades per CEICE o els òrgans competents"
+                "es": "Responder consultas de la red convocadas por CECU o los órganos competentes",
+                "en": "Respond to network consultations convened by CECU or the competent bodies",
+                "va": "Respondre consultes de la xarxa convocades per CECU o els òrgans competents"
               }
             }
           ]
@@ -2265,9 +2265,9 @@ export const GOVERNANCE_CONFIG = {
             },
             {
               "text": {
-                "es": "Participar en consultas convocadas por CEICE o por los órganos competentes",
-                "en": "Participate in consultations convened by CEICE or the competent bodies",
-                "va": "Participar en consultes convocades per CEICE o pels òrgans competents"
+                "es": "Participar en consultas convocadas por CECU o por los órganos competentes",
+                "en": "Participate in consultations convened by CECU or the competent bodies",
+                "va": "Participar en consultes convocades per CECU o pels òrgans competents"
               }
             },
             {
@@ -2296,9 +2296,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Xarxa de Stakeholders (SN) – Pròximes Reunions"
       },
       "subtitle": {
-        "es": "Coordinada por CEICE · Frecuencia semestral + online continua",
-        "en": "Coordinated by CEICE · Bi-annual frequency + continuous online",
-        "va": "Coordinada per CEICE · Freqüència semestral + online contínua"
+        "es": "Coordinada por CECU · Frecuencia semestral + online continua",
+        "en": "Coordinated by CECU · Bi-annual frequency + continuous online",
+        "va": "Coordinada per CECU · Freqüència semestral + online contínua"
       },
       "meetings": [
         {

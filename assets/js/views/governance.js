@@ -69,13 +69,13 @@ function tabEstructura(govT) {
   const actorCards = hasCmsActorCards && Array.isArray(actorsBlock.cards)
     ? actorsBlock.cards
     : [
-        { id: 'ceice', visible: true, icon: 'building-2', tone: 'orange', title: s.ceiceTitle, subtitle: s.ceiceSubtitle, roles: s.ceiceRoles || [] },
+        { id: 'CECU', visible: true, icon: 'building-2', tone: 'orange', title: s.CECUTitle, subtitle: s.CECUSubtitle, roles: s.CECURoles || [] },
         { id: 'uveg', visible: true, icon: 'graduation-cap', tone: 'blue', title: s.uvegTitle, subtitle: s.uvegSubtitle, roles: s.uvegRoles || [] },
       ];
 
   const actorCardsHtml = actorCards.map(card => {
     const isOrange = card.tone === 'orange';
-    // CEICE = Track B (orange), UVEG = Track A (blue) — mismo código de color que Dual Track
+    // CECU = Track B (orange), UVEG = Track A (blue) — mismo código de color que Dual Track
     const headerBg  = isOrange ? 'bg-eu-purple' : 'bg-eu-blue';
     const bodyBg    = isOrange ? 'rgb(255 244 225/.6)' : 'rgb(86 32 246/.07)';
     const alertText = isOrange ? 'text-eu-purple' : 'text-eu-blue';

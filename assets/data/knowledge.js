@@ -81,9 +81,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "Classificació per Ruta"
         },
         "description": {
-          "es": "CEICE, con consulta a socios según el sector, clasifica la aportación y le asigna una ruta de trabajo (FP, docente, recurso, piloto o puente académico)",
-          "en": "CEICE, consulting partners by sector, classifies the input and assigns a working route (VET, teacher, resource, pilot or academic bridge)",
-          "va": "CEICE, consultant socis per sector, classifica l'aportació i li assigna una ruta de treball (FP, docent, recurs, pilot o pont acadèmic)"
+          "es": "CECU, con consulta a socios según el sector, clasifica la aportación y le asigna una ruta de trabajo (FP, docente, recurso, piloto o puente académico)",
+          "en": "CECU, consulting partners by sector, classifies the input and assigns a working route (VET, teacher, resource, pilot or academic bridge)",
+          "va": "CECU, consultant socis per sector, classifica l'aportació i li assigna una ruta de treball (FP, docent, recurs, pilot o pont acadèmic)"
         }
       },
       {
@@ -164,9 +164,9 @@ export const KNOWLEDGE_CONFIG = {
           "visible": true,
           "name": "Aules (Moodle)",
           "description": {
-            "es": "Plataforma educativa de CEICE para FP y formación del profesorado. Puede alojar recursos OER de la red bajo las condiciones acordadas con los socios autores.",
-            "en": "CEICE's educational platform for VET and teacher training. It may host network OER resources under conditions agreed with the authoring partners.",
-            "va": "Plataforma educativa de CEICE per a FP i formació del professorat. Pot allotjar recursos OER de la xarxa amb les condicions acordades amb els socis autors."
+            "es": "Plataforma educativa de CECU para FP y formación del profesorado. Puede alojar recursos OER de la red bajo las condiciones acordadas con los socios autores.",
+            "en": "CECU's educational platform for VET and teacher training. It may host network OER resources under conditions agreed with the authoring partners.",
+            "va": "Plataforma educativa de CECU per a FP i formació del professorat. Pot allotjar recursos OER de la xarxa amb les condicions acordades amb els socis autors."
           }
         },
         {
@@ -307,7 +307,7 @@ export const KNOWLEDGE_CONFIG = {
           "Docentes"
         ],
         "license": "CC-BY-SA 4.0",
-        "author": "CEICE / IF.E",
+        "author": "CECU / IF.E",
         "date": "May 2026",
         "lang": "ES / VA",
         "validationStatus": "pending",
@@ -398,7 +398,7 @@ export const KNOWLEDGE_CONFIG = {
         "duration": "45 min",
         "format": "XLSX",
         "updatedAt": "2026-05-15",
-        "url": "https://resources.ceice.gva.es/plantilla-bias-analysis.zip",
+        "url": "https://resources.CECU.gva.es/plantilla-bias-analysis.zip",
         "linkType": "download",
         "external": false
       },
@@ -419,7 +419,7 @@ export const KNOWLEDGE_CONFIG = {
           "FP"
         ],
         "license": "CC-BY 4.0",
-        "author": "UMU / CEICE",
+        "author": "UMU / CECU",
         "date": "Mar 2026",
         "lang": "ES / VA",
         "validationStatus": "validated",
@@ -447,14 +447,14 @@ export const KNOWLEDGE_CONFIG = {
           "Docentes"
         ],
         "license": "CC-BY-SA 4.0",
-        "author": "LC / CEICE",
+        "author": "LC / CECU",
         "date": "Mar 2026",
         "lang": "ES / EN",
         "validationStatus": "validated",
         "duration": "20 min",
         "format": "PDF",
         "updatedAt": "2026-05-10",
-        "url": "https://ceice.gva.es/recursos/reglamento-ia-ue-administracion",
+        "url": "https://CECU.gva.es/recursos/reglamento-ia-ue-administracion",
         "linkType": "external",
         "external": true
       },
@@ -538,7 +538,7 @@ export const KNOWLEDGE_CONFIG = {
         "duration": "1h",
         "format": "ZIP",
         "updatedAt": "2026-02-18",
-        "url": "https://resources.ceice.gva.es/toolkit-ia-generativa-artes-escenicas.zip",
+        "url": "https://resources.CECU.gva.es/toolkit-ia-generativa-artes-escenicas.zip",
         "linkType": "download",
         "external": false
       },
@@ -562,14 +562,14 @@ export const KNOWLEDGE_CONFIG = {
           "Docentes"
         ],
         "license": "CC-BY 4.0",
-        "author": "CEICE / UVEG",
+        "author": "CECU / UVEG",
         "date": "Oct 2025",
         "lang": "ES / VA / EN",
         "validationStatus": "validated",
         "duration": "35 min",
         "format": "PDF",
         "updatedAt": "2026-01-12",
-        "url": "https://ceice.gva.es/recursos/guia-prompting-steam-comunidades-practica",
+        "url": "https://CECU.gva.es/recursos/guia-prompting-steam-comunidades-practica",
         "linkType": "external",
         "external": true
       },
@@ -620,7 +620,7 @@ export const KNOWLEDGE_CONFIG = {
           "Docentes"
         ],
         "license": "CC-BY-SA 4.0",
-        "author": "UMU / CEICE",
+        "author": "UMU / CECU",
         "date": "Jul 2025",
         "lang": "ES / VA",
         "validationStatus": "validated",
@@ -651,7 +651,7 @@ export const KNOWLEDGE_CONFIG = {
           "Docentes"
         ],
         "license": "CC-BY 4.0",
-        "author": "CEICE / IF.E / INESC TEC",
+        "author": "CECU / IF.E / INESC TEC",
         "date": "Jun 2025",
         "lang": "ES / VA / EN",
         "validationStatus": "pending",

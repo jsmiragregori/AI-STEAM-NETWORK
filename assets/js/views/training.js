@@ -3,7 +3,7 @@ import { getState, setState } from '../state.js';
 import { getViewParams } from '../router.js';
 import { TRAINING_CONFIG } from '../../data/training.js';
 
-const COURSE_PARTNERS  = ['UVEG / CEICE', "Ud'A / UVEG", 'CEICE / Inspiring Futures Europe', 'AVA-ASAJA / CINK', 'INESC TEC / HSW', 'Region Värmland / NTNU', 'KEA / ESAD-GV / LPGA', 'LC / CEICE'];
+const COURSE_PARTNERS  = ['UVEG / CECU', "Ud'A / UVEG", 'CECU / Inspiring Futures Europe', 'AVA-ASAJA / CINK', 'INESC TEC / HSW', 'Region Värmland / NTNU', 'KEA / ESAD-GV / LPGA', 'LC / CECU'];
 const COURSE_MODALITY  = ['Semipresencial', 'Online', 'Online', 'Semipresencial', 'Online', 'Online', 'Online', 'Online'];
 
 const TONE_MAP = {

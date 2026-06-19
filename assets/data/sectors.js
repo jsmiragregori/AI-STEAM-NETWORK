@@ -2509,9 +2509,9 @@ export const SECTORS_CONFIG = {
             "va": "[DEMO] IA per a la personalització d'itineraris formatius en cicles de FP"
           },
           "summary": {
-            "es": "CEICE convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
-            "en": "CEICE calls on VET centres, EdTech companies and educational research groups to develop a personalised learning pathway recommendation system based on the student's academic and competency history, suggesting optional modules, specialisations and professional pathways aligned with the Valencian labour market.",
-            "va": "CEICE convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
+            "es": "CECU convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
+            "en": "CECU calls on VET centres, EdTech companies and educational research groups to develop a personalised learning pathway recommendation system based on the student's academic and competency history, suggesting optional modules, specialisations and professional pathways aligned with the Valencian labour market.",
+            "va": "CECU convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
           },
           "status": "closed",
           "targetRoute": "marketplace"

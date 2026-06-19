@@ -40,8 +40,8 @@ export const translations = {
       "badge": "Programa Digital Europe 2021-2027 · AI-SECRETT",
       "title": "AI-STEAM Network",
       "subtitle": "Comunidad y Transferencia de AI-SECRETT",
-      "heroTagline": "AI-STEAM Network es el ecosistema Track B de CEICE para AI-SECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders moviliza centros FP forma docentes y especializa los 7 sectores AI-SECRETT en IA y creatividad.",
-      "description": "Liderada por CEICE activa stakeholders moviliza centros FP forma docentes y genera evidencias para el consorcio AI-SECRETT en las 7 áreas sectoriales europeas.",
+      "heroTagline": "AI-STEAM Network es el ecosistema Track B de CECU para AI-SECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders moviliza centros FP forma docentes y especializa los 7 sectores AI-SECRETT en IA y creatividad.",
+      "description": "Liderada por CECU activa stakeholders moviliza centros FP forma docentes y genera evidencias para el consorcio AI-SECRETT en las 7 áreas sectoriales europeas.",
       "uploadChallenge": "Propón un reto, caso o aportación",
       "requestJoin": "Únete a la AI-STEAM Network",
       "stats": {
@@ -64,12 +64,12 @@ export const translations = {
         "network": {
           "name": "AI-STEAM Network",
           "subtitle": "CMS · Este portal",
-          "desc": "Repositorio de retos, socios, conocimiento y recursos para nutrir el máster y la FP de CEICE.",
+          "desc": "Hub de comunidad, retos y transferencia que conecta FP, socios y conocimiento para resolver necesidades reales.",
           "tag": "Red de Conocimiento"
         },
         "consensUE": {
           "name": "ConsensUE",
-          "subtitle": "Participación · Decidim",
+          "subtitle": "Espacio ConsensUE en Aules",
           "desc": "Democracia y participación: propuestas, votaciones y validación de relevancia de necesidades, casos y retos.",
           "tag": "Participación"
         }
@@ -113,7 +113,7 @@ export const translations = {
       "sectorsDesc": "El conocimiento de la red se organiza en torno a las 7 áreas sectoriales AI-SECRETT para la triple transición digital, verde y social.",
       "viewAllSectors": "Ver todos los sectores",
       "dualFocus": "Foco Educativo Dual",
-      "dualFocusDesc": "La red alimenta simultáneamente dos niveles de formación reglada coordinados por CEICE.",
+      "dualFocusDesc": "La red alimenta simultáneamente dos niveles de formación reglada coordinados por CECU.",
       "master": {
         "title": "Máster AI-SECRETT",
         "coordinator": "Coordinado por UVEG",
@@ -125,7 +125,7 @@ export const translations = {
       },
       "fp": {
         "title": "FP y Ciclos Formativos",
-        "coordinator": "Coordinado por CEICE",
+        "coordinator": "Coordinado por CECU",
         "desc": "Los retos y conocimientos de la red nutren directamente los módulos de FP: ciclos formativos y cursos de especialización de la Conselleria d'Educació.",
         "item1": "Cursos de Especialización en IA para sectores STEAM",
         "item2": "ABP: retos de empresa en el aula",
@@ -138,7 +138,7 @@ export const translations = {
       "latestChallengesData": [
         {
           "title": "Optimización energética en museos con IA",
-          "org": "Generalitat Valenciana (CEICE)",
+          "org": "Generalitat Valenciana (CECU)",
           "level": "FP",
           "sectorCode": "ene",
           "status": "Abierto"
@@ -539,7 +539,7 @@ export const translations = {
         "Trabajo interdisciplinar en equipo"
       ],
       "teacherTrainingTitle": "Formación del Profesorado / CEFIRE",
-      "teacherTrainingDesc": "Formación para docentes de FP y no universitarios, coordinada con CEFIRE. Los recursos están disponibles en Aules y el diseño sigue las directrices de CEICE.",
+      "teacherTrainingDesc": "Formación para docentes de FP y no universitarios, coordinada con CEFIRE. Los recursos están disponibles en Aules y el diseño sigue las directrices de CECU.",
       "teacherTopicsTitle": "Temáticas del itinerario docente",
       "teacherTopics": [
         "Diseño de actividades basadas en retos reales",
@@ -559,7 +559,7 @@ export const translations = {
         "Inspiración para TFM/proyectos cuando es aceptada por el Track A"
       ],
       "masterBridgeDisclaimer": "El Máster AI-SECRETT (Track A) es gobernado por UVEG y los socios académicos del consorcio. La AI-STEAM Network (Track B) no asigna ECTS, no certifica títulos universitarios ni define los criterios de evaluación del Máster.",
-      "credentialsDisclaimer": "Los mecanismos de reconocimiento están sujetos a validación por la gobernanza de AI-SECRETT y los marcos de CEICE, UVEG y TUV.IT.",
+      "credentialsDisclaimer": "Los mecanismos de reconocimiento están sujetos a validación por la gobernanza de AI-SECRETT y los marcos de CECU, UVEG y TUV.IT.",
       "courseTitle": "Título del Módulo",
       "courseDescription": "Descripción",
       "courseHours": "h",
@@ -571,7 +571,7 @@ export const translations = {
       "courseHourPlural": "horas",
       "courseEnrolledLabel": "participantes",
       "trainingPaths": "Itinerarios de Transferencia",
-      "fpPath": "Itinerario FP – CEICE",
+      "fpPath": "Itinerario FP – CECU",
       "masterPath": "Puente al Máster AI-SECRETT (Track A)",
       "fpPathSteps": [
         "Ciclo Formativo de Grado Superior (CFGS)",
@@ -691,7 +691,7 @@ export const translations = {
         },
         {
           "title": "Clasificación por Ruta",
-          "desc": "CEICE, con consulta a socios según el sector, clasifica la aportación y le asigna una ruta de trabajo (FP, docente, recurso, piloto o puente académico)"
+          "desc": "CECU, con consulta a socios según el sector, clasifica la aportación y le asigna una ruta de trabajo (FP, docente, recurso, piloto o puente académico)"
         },
         {
           "title": "Validación Track B",
@@ -710,7 +710,7 @@ export const translations = {
           "desc": "Si supera la validación, el resultado puede publicarse como caso de transferencia o recurso educativo abierto en la red"
         }
       ],
-      "aulesPlatform": "Plataforma educativa de CEICE para FP y formación del profesorado. Puede alojar recursos OER de la red bajo las condiciones acordadas con los socios autores.",
+      "aulesPlatform": "Plataforma educativa de CECU para FP y formación del profesorado. Puede alojar recursos OER de la red bajo las condiciones acordadas con los socios autores.",
       "networkPlatform": "Portal que centraliza retos, casos, repositorio OER, plantillas y evidencias de piloto. Punto de acceso común para todos los miembros de la red.",
       "consensuePlatform": "La comunidad puede proponer y consultar qué necesidades y recursos pueden ser relevantes para la red, con el fin de orientar futuras actividades.",
       "oerTitle": "Recursos Educativos Abiertos",
@@ -752,7 +752,7 @@ export const translations = {
           "status": "Completado",
           "participants": 24,
           "outcome": "Módulo OER CC-BY publicado en Aules. 24 alumnos participantes. Dataset anonimizado disponible.",
-          "partner": "CEICE / IES La Costera"
+          "partner": "CECU / IES La Costera"
         },
         {
           "id": "ev2",
@@ -762,7 +762,7 @@ export const translations = {
           "status": "En curso",
           "participants": 18,
           "outcome": "Sesiones CEFIRE en curso. Guía metodológica en elaboración. Encuesta de impacto prevista para junio 2026.",
-          "partner": "CEFIRE Valencia / CEICE"
+          "partner": "CEFIRE Valencia / CECU"
         },
         {
           "id": "ev3",
@@ -782,7 +782,7 @@ export const translations = {
           "status": "Completado",
           "participants": 11,
           "outcome": "Acta de cooperación firmada entre 4 departamentos regionales. 3 necesidades sectoriales identificadas. Informe de síntesis publicado.",
-          "partner": "ENRED / CEICE / KEA"
+          "partner": "ENRED / CECU / KEA"
         },
         {
           "id": "ev5",
@@ -792,7 +792,7 @@ export const translations = {
           "status": "En revisión",
           "participants": 0,
           "outcome": "Indicadores Track B consolidados: stakeholders registrados, sectores activos, retos validados, trazas ConsensUE. Entregable D2.2 en preparación.",
-          "partner": "CEICE / Steering Committee"
+          "partner": "CECU / Steering Committee"
         }
       ],
       "statsOER": "Recursos OER",
@@ -805,7 +805,7 @@ export const translations = {
           "sector": "nts",
           "level": "FP",
           "license": "CC-BY-SA 4.0",
-          "author": "CEICE / IF.E",
+          "author": "CECU / IF.E",
           "date": "Mar 2026",
           "downloads": 1420,
           "lang": "ES / VA"
@@ -853,7 +853,7 @@ export const translations = {
           "sector": "nts",
           "level": "FP",
           "license": "CC-BY 4.0",
-          "author": "UMU / CEICE",
+          "author": "UMU / CECU",
           "date": "Nov 2025",
           "downloads": 3210,
           "lang": "ES / VA"
@@ -865,7 +865,7 @@ export const translations = {
           "sector": "nts",
           "level": "Docentes",
           "license": "CC-BY-SA 4.0",
-          "author": "LC / CEICE",
+          "author": "LC / CECU",
           "date": "Feb 2026",
           "downloads": 789,
           "lang": "ES / EN"
@@ -898,7 +898,7 @@ export const translations = {
       "successCases": [
         {
           "title": "Automatización de expedientes académicos con IA",
-          "org": "CEICE – Generalitat Valenciana",
+          "org": "CECU – Generalitat Valenciana",
           "sector": "nts",
           "level": "FP",
           "result": "Sistema OCR + LLM en producción. Reducción del 70% en tiempo de tramitación. 5 equipos participantes.",
@@ -940,7 +940,7 @@ export const translations = {
       "eyebrow": "Gobernanza",
       "title": "Gobernanza y Transparencia",
       "subtitle": "Estructura de decisión y participación",
-      "description": "La AI-STEAM Network opera bajo un modelo de gobernanza de Doble Vía (Dual Track): un espacio académico liderado por UVEG y un espacio ecosistema orquestado por la Generalitat Valenciana (CEICE).",
+      "description": "La AI-STEAM Network opera bajo un modelo de gobernanza de Doble Vía (Dual Track): un espacio académico liderado por UVEG y un espacio ecosistema orquestado por la Generalitat Valenciana (CECU).",
       "tabEstructura": "Estructura y Órganos",
       "tabDualTrack": "Arquitectura Dual Track",
       "tabLbd": "Metodología LbD",
@@ -983,7 +983,7 @@ export const translations = {
           "type": "Órgano ejecutivo",
           "freq": "Trimestral",
           "quorum": "Mayoría simple",
-          "members": "UVEG (coord.), UMU, CEICE, TUV.IT, LC",
+          "members": "UVEG (coord.), UMU, CECU, TUV.IT, LC",
           "desc": "Gestión operativa del proyecto. Supervisa el plan de trabajo, aprueba los informes internos y coordina la coherencia entre Track A (Académico) y Track B (Ecosistema).",
           "color": "border-eu-blue bg-eu-blue/10",
           "iconColor": "text-eu-blue"
@@ -1020,7 +1020,7 @@ export const translations = {
           "freq": "Semestral + Online continua",
           "quorum": "Participación abierta",
           "members": "Todos los stakeholders adheridos mediante Acuerdo de Colaboración",
-          "desc": "Órgano participativo del Track B. Stakeholders informan necesidades, validan relevancia y aportan casos o retos vía ConsensUE. CEICE actúa como Orquestadora de este espacio.",
+          "desc": "Órgano participativo del Track B. Stakeholders informan necesidades, validan relevancia y aportan casos o retos vía ConsensUE. CECU actúa como Orquestadora de este espacio.",
           "color": "border-eu-purple bg-eu-yellow/60",
           "iconColor": "text-eu-purple"
         },
@@ -1031,7 +1031,7 @@ export const translations = {
           "type": "Enlace institucional",
           "freq": "Anual",
           "quorum": "Unanimidad",
-          "members": "CEICE, LC, KEA, Lisbon Council",
+          "members": "CECU, LC, KEA, Lisbon Council",
           "desc": "Alineación con políticas europeas (Digital Decade, AI Act, EPALE) y con las prioridades de la Generalitat Valenciana. Coordina con ENRED (Red Europea de Departamentos de Educación Regional).",
           "color": "border-gray-600 bg-gray-50",
           "iconColor": "text-gray-700"
@@ -1144,18 +1144,18 @@ export const translations = {
         },
         "trackB": {
           "title": "Track B – Espacio Ecosistema",
-          "subtitle": "Orquestado por CEICE (GVA)",
+          "subtitle": "Orquestado por CECU (GVA)",
           "scope_label": "Alcance",
           "scope_desc": "Foros de política educativa, banco de retos, networking, eventos, repositorio de conocimiento y participación de stakeholders.",
           "framework_label": "Marco normativo",
           "framework_desc": "Acuerdo de Colaboración con Regla de Gasto Cero. Espacio abierto y flexible, sin burocracia académica.",
           "limit_label": "Límite clave",
-          "limit_desc": "La admisión de nuevos miembros y la validación de relevancia de los retos se deciden colectivamente a través de la Red de Stakeholders (SN) en ConsensUE. CEICE, como orquestadora, tiene voz principal en este proceso, pero no actúa unilateralmente. La adhesión es rápida y no burocrática.",
+          "limit_desc": "La admisión de nuevos miembros y la validación de relevancia de los retos se deciden colectivamente a través de la Red de Stakeholders (SN) en ConsensUE. CECU, como orquestadora, tiene voz principal en este proceso, pero no actúa unilateralmente. La adhesión es rápida y no burocrática.",
           "bodies_label": "Órganos activos",
           "bodies": [
             "Red de Stakeholders (SN)",
             "Junta Estratégica (SB)",
-            "ConsensUE (Decidim)"
+            "Espacio ConsensUE en Aules"
           ]
         },
         "dataArch": {
@@ -1163,7 +1163,7 @@ export const translations = {
           "desc": "La separación de Tracks se refleja también en la arquitectura de datos, garantizando el cumplimiento del RGPD y la compartimentación de información sensible.",
           "publicZone": {
             "title": "🔓 Zona Pública / Red (Track B)",
-            "desc": "Visible para todos los miembros autenticados de la red. Responsable de datos: CEICE.",
+            "desc": "Visible para todos los miembros autenticados de la red. Responsable de datos: CECU.",
             "items": [
               "Foros y debates sectoriales",
               "Banco de Retos y casos de uso",
@@ -1186,10 +1186,10 @@ export const translations = {
         },
         "responsibilityBoundaries": {
           "title": "Límites de datos y responsabilidad",
-          "desc": "Cada plataforma conserva su responsabilidad operativa. La AI-STEAM Network protege los compromisos CEICE en Track B sin invadir decisiones académicas del Máster.",
+          "desc": "Cada plataforma conserva su responsabilidad operativa. La AI-STEAM Network protege los compromisos CECU en Track B sin invadir decisiones académicas del Máster.",
           "items": [
             {
-              "owner": "CEICE",
+              "owner": "CECU",
               "scope": "Datos de miembros, participación comunitaria, red ENRED/AI-STEAM, retos/casos y evidencias Track B."
             },
             {
@@ -1197,7 +1197,7 @@ export const translations = {
               "scope": "Expedientes académicos, evaluación del Máster, criterios docentes, ECTS y decisiones curriculares Track A."
             },
             {
-              "owner": "ConsensUE / Decidim",
+              "owner": "Espacio ConsensUE en Aules",
               "scope": "Participación, deliberaciones, debates, votaciones y trazabilidad de aportaciones comunitarias."
             },
             {
@@ -1241,7 +1241,7 @@ export const translations = {
             "platform": "ConsensUE + AI-STEAM Network",
             "title": "Input: Retos y Casos de Uso",
             "actor": "Organizaciones de la red (empresas, administraciones, ONGs)",
-            "desc": "Los miembros del ecosistema aportan necesidades, retos y casos de uso a través de ConsensUE. La Red de Stakeholders (SN), con CEICE como orquestadora, valida su relevancia Track B y los clasifica para actividades, recursos, pilotos o posible revisión académica por Track A.",
+            "desc": "Los miembros del ecosistema aportan necesidades, retos y casos de uso a través de ConsensUE. La Red de Stakeholders (SN), con CECU como orquestadora, valida su relevancia Track B y los clasifica para actividades, recursos, pilotos o posible revisión académica por Track A.",
             "outputs": [
               "Reto o caso registrado",
               "Necesidad y sector clasificados",
@@ -1277,7 +1277,7 @@ export const translations = {
         ],
         "operatingFlow": {
           "title": "Flujo operativo de Track B a evidencias",
-          "desc": "El recorrido muestra cómo CEICE puede convertir participación de red en evidencias auditables sin presentar indicadores demo como resultados reales.",
+          "desc": "El recorrido muestra cómo CECU puede convertir participación de red en evidencias auditables sin presentar indicadores demo como resultados reales.",
           "steps": [
             {
               "title": "Input",
@@ -1310,9 +1310,9 @@ export const translations = {
         "platforms": [
           {
             "name": "ConsensUE",
-            "tech": "Decidim",
+            "tech": "Espacio ConsensUE en Aules",
             "track": "Track B",
-            "owner": "CEICE (Orquestadora)",
+            "owner": "CECU (Orquestadora)",
             "role": "Participación democrática",
             "desc": "Punto de entrada de propuestas. Deliberación comunitaria, votación de prioridades y validación de relevancia de necesidades, casos y retos."
           },
@@ -1320,15 +1320,15 @@ export const translations = {
             "name": "AI-STEAM Network",
             "tech": "Portal web",
             "track": "Track A + B",
-            "owner": "CEICE + UVEG",
+            "owner": "CECU + UVEG",
             "role": "Validación y repositorio",
             "desc": "Banco de Retos validados, Conocimiento OER, directorio de la red. Punto de encuentro de los dos Tracks."
           },
           {
             "name": "Aules",
             "tech": "Moodle LMS",
-            "track": "Track A + entornos CEICE",
-            "owner": "UVEG/CEICE según actividad",
+            "track": "Track A + entornos CECU",
+            "owner": "UVEG/CECU según actividad",
             "role": "Entrega formativa",
             "desc": "Entorno de aprendizaje para actividades del Máster, FP o formación docente. La evaluación y los ECTS del Máster permanecen bajo Track A."
           }
@@ -1341,7 +1341,7 @@ export const translations = {
           {
             "label": "Nodo Principal",
             "city": "Valencia",
-            "org": "CEICE – Generalitat Valenciana",
+            "org": "CECU – Generalitat Valenciana",
             "role": "Orquestador del ecosistema. Hub central de la red. Aloja el portal, Aules y ConsensUE."
           },
           {
@@ -1359,9 +1359,9 @@ export const translations = {
         ],
         "actorsTitle": "Los Dos Actores Principales de la Plataforma",
         "actorsDesc": "Siguiendo el modelo DigiNet, la operación del hub se articula sobre una división formal de competencias entre el Orquestador Institucional y el Proveedor Académico.",
-        "ceiceTitle": "CEICE – Orquestador Institucional",
-        "ceiceSubtitle": "Generalitat Valenciana · Track B",
-        "ceiceRoles": [
+        "CECUTitle": "CECU – Orquestador Institucional",
+        "CECUSubtitle": "Generalitat Valenciana · Track B",
+        "CECURoles": [
           {
             "label": "Representación",
             "desc": "Representación pública y política de la red ante instituciones europeas y nacionales."
@@ -1376,7 +1376,7 @@ export const translations = {
           },
           {
             "label": "Infraestructura",
-            "desc": "Provee y mantiene el PortalEdu, Aules y la plataforma de participación democrática (ConsensUE/Decidim)."
+            "desc": "Provee y mantiene PortalEdu, Aules y el Espacio ConsensUE en Aules."
           }
         ],
         "uvegTitle": "UVEG – Proveedor Académico",
@@ -1428,8 +1428,8 @@ export const translations = {
         "stakeholderWarning": "Los stakeholders operan exclusivamente en el Track B. No tienen acceso al espacio académico (Aules/Máster) salvo autorización expresa de UVEG.",
         "stakeholderButton": "Solicitar Acuerdo de Colaboración",
         "consensueTitle": "Participa vía ConsensUE",
-        "consensueSubtitle": "Track B · Plataforma ConsensUE · Democracia Participativa",
-        "consensueDesc": "ConsensUE es la plataforma democrática del ecosistema, basada en <strong>Decidim</strong> y gestionada por CEICE. Es el canal principal para que stakeholders y socios del consorcio propongan y debatan contenidos del Track B.",
+        "consensueSubtitle": "Track B · Espacio ConsensUE en Aules · Participación cuando esté habilitada",
+        "consensueDesc": "El Espacio ConsensUE en Aules, gestionado por CECU, puede servir como canal de consulta, propuesta y deliberación del Track B cuando el proceso esté habilitado, sin sustituir a los órganos formales de decisión del consorcio.",
         "consensueGroupStakeholders": "Para Stakeholders (Track B)",
         "consensueActionsStakeholders": [
           "Proponer retos al Banco de Retos",
@@ -1446,7 +1446,7 @@ export const translations = {
         ],
         "consensueButton": "Ir a ConsensUE",
         "meetingsTitle": "Red de Stakeholders (SN) – Próximas Reuniones",
-        "meetingsSubtitle": "Coordinada por CEICE · Frecuencia semestral + online continua",
+        "meetingsSubtitle": "Coordinada por CECU · Frecuencia semestral + online continua",
         "meetings": [
           {
             "date": "15 Jun 2026",
@@ -1507,7 +1507,7 @@ export const translations = {
           "title": "La Conselleria de Educación participa en el lanzamiento del proyecto internacional AI SECRETT dotado con 7,2 M€",
           "excerpt": "Impulsado por la Universitat de València, el proyecto busca la transición ecológica y digital a través de la formación en IA y la creación de la red AI-STEAM en 12 países.",
           "category": "Stakeholders",
-          "partner": "UVEG / CEICE",
+          "partner": "UVEG / CECU",
           "date": "04 Oct 2024",
           "featured": true,
           "isOfficial": true
@@ -1517,16 +1517,16 @@ export const translations = {
           "excerpt": "Más de 50 equipos multidisciplinares formados por estudiantes de FP y Máster compitieron durante 48 horas en la Ciudad Politécnica de la Innovación. El equipo ganador desarrolló un modelo de predicción de sequías para la cuenca del Júcar.",
           "category": "Eventos",
           "sector": "Medio Ambiente",
-          "partner": "UVEG / UPV / CEICE",
+          "partner": "UVEG / UPV / CECU",
           "date": "02 Abr 2026",
           "isOfficial": false
         },
         "news3": {
-          "title": "CEICE publica el nuevo Curso de Especialización en IA para Ciclos Formativos",
+          "title": "CECU publica el nuevo Curso de Especialización en IA para Ciclos Formativos",
           "excerpt": "La Conselleria d'Educació lanza el primer Curso de Especialización en Inteligencia Artificial y Automatización, co-diseñado con los socios de la red AI-STEAM para 15 familias profesionales.",
           "category": "FP",
           "sector": "Educación",
-          "partner": "CEICE",
+          "partner": "CECU",
           "date": "25 Mar 2026",
           "isOfficial": true
         },
@@ -1561,16 +1561,16 @@ export const translations = {
           "title": "Taller ENRED & AI-STEAM Network: 4 departamentos regionales mapean necesidades formativas en IA (demo)",
           "excerpt": "Once representantes de departamentos regionales de educación de España, Italia, Noruega y Croacia participaron en un taller de cooperación para identificar necesidades formativas en IA. Los resultados nutrirán la agenda temática compartida entre ENRED y AI-STEAM Network.",
           "category": "ENRED",
-          "partner": "CEICE / ENRED / KEA",
+          "partner": "CECU / ENRED / KEA",
           "date": "14 Mar 2026",
           "isOfficial": false
         },
         "news8": {
           "title": "Piloto FP completado: IA para eficiencia energética en centros educativos (demo)",
-          "excerpt": "El IES La Costera y CEICE han completado el primer piloto FP de la red, con 24 alumnos de ciclos formativos trabajando en un modelo de predicción de consumo energético. El módulo OER resultante ya está disponible en Aules.",
+          "excerpt": "El IES La Costera y CECU han completado el primer piloto FP de la red, con 24 alumnos de ciclos formativos trabajando en un modelo de predicción de consumo energético. El módulo OER resultante ya está disponible en Aules.",
           "category": "FP",
           "sector": "Energía",
-          "partner": "CEICE / IES La Costera",
+          "partner": "CECU / IES La Costera",
           "date": "20 Feb 2026",
           "isOfficial": false
         },
@@ -1579,16 +1579,16 @@ export const translations = {
           "excerpt": "CEFIRE Valencia ha iniciado la primera sesión de formación para docentes de FP sobre IA ética, prompt engineering y detección de sesgos. 18 docentes participantes de 5 centros de la Comunitat Valenciana.",
           "category": "Form. Docente",
           "sector": "Educación",
-          "partner": "CEFIRE / CEICE",
+          "partner": "CEFIRE / CECU",
           "date": "05 Mar 2026",
           "isOfficial": false
         },
         "news10": {
           "title": "Sesión de validación de stakeholders: 3 retos agroalimentarios revisados en ConsensUE (demo)",
-          "excerpt": "La Red de Stakeholders celebró una sesión de validación en ConsensUE donde se revisaron 3 retos candidatos del sector agroalimentario, con participación de cooperativas, agtech y representantes CEICE.",
+          "excerpt": "La Red de Stakeholders celebró una sesión de validación en ConsensUE donde se revisaron 3 retos candidatos del sector agroalimentario, con participación de cooperativas, agtech y representantes CECU.",
           "category": "Retos y Casos",
           "sector": "Agroalimentario",
-          "partner": "CEICE / AVA-ASAJA",
+          "partner": "CECU / AVA-ASAJA",
           "date": "28 Feb 2026",
           "isOfficial": false
         }
@@ -1926,8 +1926,8 @@ export const translations = {
       "badge": "Digital Europe Programme 2021-2027 · AI-SECRETT",
       "title": "AI-STEAM Network",
       "subtitle": "Community and Transfer of AI-SECRETT",
-      "heroTagline": "AI-STEAM Network is the Track B ecosystem of CEICE for AI-SECRETT: built on ENRED interregional cooperation activating stakeholders mobilizing VET centers training teachers and specializing the 7 AI-SECRETT sectors in AI and creativity.",
-      "description": "Led by CEICE it activates stakeholders mobilizes VET centers trains teachers and generates evidence for the AI-SECRETT consortium in the 7 sectoral areas.",
+      "heroTagline": "AI-STEAM Network is the Track B ecosystem of CECU for AI-SECRETT: built on ENRED interregional cooperation activating stakeholders mobilizing VET centers training teachers and specializing the 7 AI-SECRETT sectors in AI and creativity.",
+      "description": "Led by CECU it activates stakeholders mobilizes VET centers trains teachers and generates evidence for the AI-SECRETT consortium in the 7 sectoral areas.",
       "uploadChallenge": "Submit a challenge, case or contribution",
       "requestJoin": "Join the AI-STEAM Network",
       "stats": {
@@ -1950,12 +1950,12 @@ export const translations = {
         "network": {
           "name": "AI-STEAM Network",
           "subtitle": "CMS · This portal",
-          "desc": "Repository of challenges, partners, knowledge and resources to feed the master and CEICE VET programs.",
+          "desc": "Community, challenge and transfer hub connecting VET, partners and knowledge to solve real needs.",
           "tag": "Knowledge Network"
         },
         "consensUE": {
           "name": "ConsensUE",
-          "subtitle": "Participation · Decidim",
+          "subtitle": "ConsensUE space in Aules",
           "desc": "Democracy and participation: proposals, voting and relevance validation of needs, cases and challenges.",
           "tag": "Participation"
         }
@@ -1999,7 +1999,7 @@ export const translations = {
       "sectorsDesc": "Network knowledge is organised around the 7 AI-SECRETT sectoral areas for the digital, green and social triple transition.",
       "viewAllSectors": "View all sectors",
       "dualFocus": "Dual Educational Focus",
-      "dualFocusDesc": "The network simultaneously feeds two levels of formal education coordinated by CEICE.",
+      "dualFocusDesc": "The network simultaneously feeds two levels of formal education coordinated by CECU.",
       "master": {
         "title": "Master AI-SECRETT",
         "coordinator": "Coordinated by UVEG",
@@ -2011,7 +2011,7 @@ export const translations = {
       },
       "fp": {
         "title": "VET and Training Cycles",
-        "coordinator": "Coordinated by CEICE",
+        "coordinator": "Coordinated by CECU",
         "desc": "Network challenges and knowledge directly feed VET subjects: training cycles and specialization courses from the Department of Education.",
         "item1": "Specialization Courses in AI for STEAM sectors",
         "item2": "PBL: business challenges in the classroom",
@@ -2024,7 +2024,7 @@ export const translations = {
       "latestChallengesData": [
         {
           "title": "Energy efficiency optimization in museums with AI",
-          "org": "Generalitat Valenciana (CEICE)",
+          "org": "Generalitat Valenciana (CECU)",
           "level": "FP",
           "sectorCode": "ene",
           "status": "Open"
@@ -2425,7 +2425,7 @@ export const translations = {
         "Interdisciplinary teamwork"
       ],
       "teacherTrainingTitle": "Teacher Training / CEFIRE",
-      "teacherTrainingDesc": "Training for VET and non-university teachers, coordinated with CEFIRE. Resources are available on Aules and follow CEICE guidelines.",
+      "teacherTrainingDesc": "Training for VET and non-university teachers, coordinated with CEFIRE. Resources are available on Aules and follow CECU guidelines.",
       "teacherTopicsTitle": "Teacher training pathway themes",
       "teacherTopics": [
         "Designing challenge-based activities with real cases",
@@ -2445,7 +2445,7 @@ export const translations = {
         "TFM/project inspiration when accepted by Track A"
       ],
       "masterBridgeDisclaimer": "The Master AI-SECRETT (Track A) is governed by UVEG and the academic partners of the consortium. The AI-STEAM Network (Track B) does not award ECTS, does not certify university degrees and does not define Master assessment criteria.",
-      "credentialsDisclaimer": "Recognition mechanisms are subject to validation by AI-SECRETT governance and relevant CEICE, UVEG and TUV.IT frameworks.",
+      "credentialsDisclaimer": "Recognition mechanisms are subject to validation by AI-SECRETT governance and relevant CECU, UVEG and TUV.IT frameworks.",
       "courseTitle": "Subject Title",
       "courseDescription": "Description",
       "courseHours": "h",
@@ -2457,7 +2457,7 @@ export const translations = {
       "courseHourPlural": "hours",
       "courseEnrolledLabel": "participants",
       "trainingPaths": "Transfer Pathways",
-      "fpPath": "VET Pathway – CEICE",
+      "fpPath": "VET Pathway – CECU",
       "masterPath": "Master AI-SECRETT Bridge (Track A)",
       "fpPathSteps": [
         "Upper Secondary VET Cycle (CFGS)",
@@ -2577,7 +2577,7 @@ export const translations = {
         },
         {
           "title": "Route Classification",
-          "desc": "CEICE, consulting partners by sector, classifies the input and assigns a working route (VET, teacher, resource, pilot or academic bridge)"
+          "desc": "CECU, consulting partners by sector, classifies the input and assigns a working route (VET, teacher, resource, pilot or academic bridge)"
         },
         {
           "title": "Track B Validation",
@@ -2596,7 +2596,7 @@ export const translations = {
           "desc": "Where validated, the result may be published as a transfer case or open educational resource in the network"
         }
       ],
-      "aulesPlatform": "CEICE's educational platform for VET and teacher training. It may host network OER resources under conditions agreed with the authoring partners.",
+      "aulesPlatform": "CECU's educational platform for VET and teacher training. It may host network OER resources under conditions agreed with the authoring partners.",
       "networkPlatform": "Portal centralising challenges, cases, OER repository, templates and pilot evidence. Common access point for all network members.",
       "consensuePlatform": "The community can propose and consult on which needs and resources may be relevant to the network, helping to guide future activities.",
       "oerTitle": "Open Educational Resources",
@@ -2638,7 +2638,7 @@ export const translations = {
           "status": "Completed",
           "participants": 24,
           "outcome": "CC-BY OER resource published in Aules. 24 student participants. Anonymised dataset available.",
-          "partner": "CEICE / IES La Costera"
+          "partner": "CECU / IES La Costera"
         },
         {
           "id": "ev2",
@@ -2648,7 +2648,7 @@ export const translations = {
           "status": "In progress",
           "participants": 18,
           "outcome": "CEFIRE sessions underway. Methodological guide in preparation. Impact survey planned for June 2026.",
-          "partner": "CEFIRE Valencia / CEICE"
+          "partner": "CEFIRE Valencia / CECU"
         },
         {
           "id": "ev3",
@@ -2668,7 +2668,7 @@ export const translations = {
           "status": "Completed",
           "participants": 11,
           "outcome": "Cooperation agreement signed by 4 regional departments. 3 sectoral needs identified. Synthesis report published.",
-          "partner": "ENRED / CEICE / KEA"
+          "partner": "ENRED / CECU / KEA"
         },
         {
           "id": "ev5",
@@ -2678,7 +2678,7 @@ export const translations = {
           "status": "Under review",
           "participants": 0,
           "outcome": "Track B indicators consolidated: registered stakeholders, active sectors, validated challenges, ConsensUE traces. D2.2 deliverable in preparation.",
-          "partner": "CEICE / Steering Committee"
+          "partner": "CECU / Steering Committee"
         }
       ],
       "statsOER": "OER Resources",
@@ -2691,7 +2691,7 @@ export const translations = {
           "sector": "nts",
           "level": "FP",
           "license": "CC-BY-SA 4.0",
-          "author": "CEICE / IF.E",
+          "author": "CECU / IF.E",
           "date": "Mar 2026",
           "downloads": 1420,
           "lang": "ES / VA"
@@ -2739,7 +2739,7 @@ export const translations = {
           "sector": "nts",
           "level": "FP",
           "license": "CC-BY 4.0",
-          "author": "UMU / CEICE",
+          "author": "UMU / CECU",
           "date": "Nov 2025",
           "downloads": 3210,
           "lang": "ES / VA"
@@ -2751,7 +2751,7 @@ export const translations = {
           "sector": "nts",
           "level": "Docentes",
           "license": "CC-BY-SA 4.0",
-          "author": "LC / CEICE",
+          "author": "LC / CECU",
           "date": "Feb 2026",
           "downloads": 789,
           "lang": "ES / EN"
@@ -2784,7 +2784,7 @@ export const translations = {
       "successCases": [
         {
           "title": "AI automation of academic records",
-          "org": "CEICE – Generalitat Valenciana",
+          "org": "CECU – Generalitat Valenciana",
           "sector": "nts",
           "level": "FP",
           "result": "OCR + LLM system in production. 70% reduction in processing time. 5 teams participated.",
@@ -2826,7 +2826,7 @@ export const translations = {
       "eyebrow": "Governance",
       "title": "Governance and Transparency",
       "subtitle": "Decision-making structure and participation",
-      "description": "The AI-STEAM Network operates under a Dual Track governance model: an academic space led by UVEG and an ecosystem space orchestrated by the Generalitat Valenciana (CEICE).",
+      "description": "The AI-STEAM Network operates under a Dual Track governance model: an academic space led by UVEG and an ecosystem space orchestrated by the Generalitat Valenciana (CECU).",
       "tabEstructura": "Structure and Bodies",
       "tabDualTrack": "Dual Track Architecture",
       "tabLbd": "LbD Methodology",
@@ -2869,7 +2869,7 @@ export const translations = {
           "type": "Executive body",
           "freq": "Quarterly",
           "quorum": "Simple majority",
-          "members": "UVEG (coord.), UMU, CEICE, TUV.IT, LC",
+          "members": "UVEG (coord.), UMU, CECU, TUV.IT, LC",
           "desc": "Operational management of the project. Supervises the work plan, approves internal reports, and coordinates coherence between Track A (Academic) and Track B (Ecosystem).",
           "color": "border-eu-blue bg-eu-blue/10",
           "iconColor": "text-eu-blue"
@@ -2906,7 +2906,7 @@ export const translations = {
           "freq": "Biannual + Continuous online",
           "quorum": "Open participation",
           "members": "All stakeholders adhered through Collaboration Agreement",
-          "desc": "Participatory body of Track B. Stakeholders inform needs, validate relevance and contribute cases or challenges via ConsensUE. CEICE acts as orchestrator of this space.",
+          "desc": "Participatory body of Track B. Stakeholders inform needs, validate relevance and contribute cases or challenges via ConsensUE. CECU acts as orchestrator of this space.",
           "color": "border-eu-purple bg-eu-yellow/60",
           "iconColor": "text-eu-purple"
         },
@@ -2917,7 +2917,7 @@ export const translations = {
           "type": "Institutional liaison",
           "freq": "Annual",
           "quorum": "Unanimity",
-          "members": "CEICE, LC, KEA, Lisbon Council",
+          "members": "CECU, LC, KEA, Lisbon Council",
           "desc": "Alignment with European policies (Digital Decade, AI Act, EPALE) and Generalitat Valenciana priorities. Coordinates with ENRED (European Network of Regional Education Departments).",
           "color": "border-gray-600 bg-gray-50",
           "iconColor": "text-gray-700"
@@ -3030,18 +3030,18 @@ export const translations = {
         },
         "trackB": {
           "title": "Track B – Ecosystem Space",
-          "subtitle": "Orchestrated by CEICE (GVA)",
+          "subtitle": "Orchestrated by CECU (GVA)",
           "scope_label": "Scope",
           "scope_desc": "Education policy forums, challenge bank, networking, events, knowledge repository, and stakeholder participation.",
           "framework_label": "Normative Framework",
           "framework_desc": "Collaboration Agreement with Zero Cost Rule. Open and flexible space, without academic bureaucracy.",
           "limit_label": "Key Limit",
-          "limit_desc": "Admission of new members and validation of challenge relevance are decided collectively through the Stakeholder Network (SN) in ConsensUE. CEICE has principal voice but does not act unilaterally. Membership is rapid and non-bureaucratic.",
+          "limit_desc": "Admission of new members and validation of challenge relevance are decided collectively through the Stakeholder Network (SN) in ConsensUE. CECU has principal voice but does not act unilaterally. Membership is rapid and non-bureaucratic.",
           "bodies_label": "Active Bodies",
           "bodies": [
             "Stakeholder Network (SN)",
             "Strategic Board (SB)",
-            "ConsensUE (Decidim)"
+            "ConsensUE space in Aules"
           ]
         },
         "dataArch": {
@@ -3049,7 +3049,7 @@ export const translations = {
           "desc": "Track separation is also reflected in data architecture, ensuring GDPR compliance and compartmentalization of sensitive information.",
           "publicZone": {
             "title": "🔓 Public Zone / Network (Track B)",
-            "desc": "Visible to all authenticated network members. Data Controller: CEICE.",
+            "desc": "Visible to all authenticated network members. Data Controller: CECU.",
             "items": [
               "Sectoral forums and debates",
               "Challenge Bank and use cases",
@@ -3072,10 +3072,10 @@ export const translations = {
         },
         "responsibilityBoundaries": {
           "title": "Data and responsibility boundaries",
-          "desc": "Each platform keeps its operational responsibility. The AI-STEAM Network protects CEICE commitments in Track B without entering Master academic decisions.",
+          "desc": "Each platform keeps its operational responsibility. The AI-STEAM Network protects CECU commitments in Track B without entering Master academic decisions.",
           "items": [
             {
-              "owner": "CEICE",
+              "owner": "CECU",
               "scope": "Member data, community participation, ENRED/AI-STEAM network, challenges/cases and Track B evidence."
             },
             {
@@ -3083,7 +3083,7 @@ export const translations = {
               "scope": "Academic student records, Master evaluation, teaching criteria, ECTS and Track A curriculum decisions."
             },
             {
-              "owner": "ConsensUE / Decidim",
+              "owner": "ConsensUE space in Aules",
               "scope": "Participation, deliberations, debates, votes and traceability of community contributions."
             },
             {
@@ -3127,7 +3127,7 @@ export const translations = {
             "platform": "ConsensUE + AI-STEAM Network",
             "title": "Input: Challenges and Use Cases",
             "actor": "Network organizations",
-            "desc": "Ecosystem members contribute needs, challenges and use cases through ConsensUE. The Stakeholder Network, with CEICE as orchestrator, validates Track B relevance and classifies them for activities, resources, pilots or possible academic review by Track A.",
+            "desc": "Ecosystem members contribute needs, challenges and use cases through ConsensUE. The Stakeholder Network, with CECU as orchestrator, validates Track B relevance and classifies them for activities, resources, pilots or possible academic review by Track A.",
             "outputs": [
               "Challenge or case registered",
               "Need and sector classified",
@@ -3163,7 +3163,7 @@ export const translations = {
         ],
         "operatingFlow": {
           "title": "Operating flow from Track B to evidence",
-          "desc": "The flow shows how CEICE can turn network participation into auditable evidence without presenting demo indicators as real results.",
+          "desc": "The flow shows how CECU can turn network participation into auditable evidence without presenting demo indicators as real results.",
           "steps": [
             {
               "title": "Input",
@@ -3196,9 +3196,9 @@ export const translations = {
         "platforms": [
           {
             "name": "ConsensUE",
-            "tech": "Decidim",
+            "tech": "ConsensUE space in Aules",
             "track": "Track B",
-            "owner": "CEICE",
+            "owner": "CECU",
             "role": "Democratic Participation",
             "desc": "Entry point for proposals, community deliberation, priority voting and relevance validation of needs, cases and challenges."
           },
@@ -3206,15 +3206,15 @@ export const translations = {
             "name": "AI-STEAM Network",
             "tech": "Web Portal",
             "track": "Track A + B",
-            "owner": "CEICE + UVEG",
+            "owner": "CECU + UVEG",
             "role": "Validation and Repository",
             "desc": "Challenge Bank, OER Knowledge, network directory."
           },
           {
             "name": "Aules",
             "tech": "Moodle LMS",
-            "track": "Track A + CEICE environments",
-            "owner": "UVEG/CEICE by activity",
+            "track": "Track A + CECU environments",
+            "owner": "UVEG/CECU by activity",
             "role": "Training Delivery",
             "desc": "Learning environment for Master, VET or teacher training activities. Master evaluation and ECTS remain under Track A."
           }
@@ -3227,7 +3227,7 @@ export const translations = {
           {
             "label": "Main Node",
             "city": "Valencia",
-            "org": "CEICE – Generalitat Valenciana",
+            "org": "CECU – Generalitat Valenciana",
             "role": "Ecosystem orchestrator. Central hub of the network. Hosts the portal, Aules, and ConsensUE."
           },
           {
@@ -3245,9 +3245,9 @@ export const translations = {
         ],
         "actorsTitle": "The Two Main Actors of the Platform",
         "actorsDesc": "Following the DigiNet model, hub operation is articulated on a formal division of competencies between the Institutional Orchestrator and the Academic Provider.",
-        "ceiceTitle": "CEICE – Institutional Orchestrator",
-        "ceiceSubtitle": "Generalitat Valenciana · Track B",
-        "ceiceRoles": [
+        "CECUTitle": "CECU – Institutional Orchestrator",
+        "CECUSubtitle": "Generalitat Valenciana · Track B",
+        "CECURoles": [
           {
             "label": "Representation",
             "desc": "Public and political representation of the network before European and national institutions."
@@ -3262,7 +3262,7 @@ export const translations = {
           },
           {
             "label": "Infrastructure",
-            "desc": "Provides and maintains PortalEdu, Aules, and democratic participation platform (ConsensUE/Decidim)."
+            "desc": "Provides and maintains PortalEdu, Aules, and the ConsensUE space in Aules."
           }
         ],
         "uvegTitle": "UVEG – Academic Provider",
@@ -3314,8 +3314,8 @@ export const translations = {
         "stakeholderWarning": "Stakeholders operate exclusively in Track B. They do not have access to the academic space (Aules/Master) unless expressly authorized by UVEG.",
         "stakeholderButton": "Request Collaboration Agreement",
         "consensueTitle": "Participate via ConsensUE",
-        "consensueSubtitle": "Track B · ConsensUE Platform · Participatory Democracy",
-        "consensueDesc": "ConsensUE is the ecosystem's democratic platform, based on <strong>Decidim</strong> and managed by CEICE. It's the main channel for stakeholders and consortium partners to propose and debate Track B content.",
+        "consensueSubtitle": "Track B · ConsensUE space in Aules · Participation when enabled",
+        "consensueDesc": "The ConsensUE space in Aules, managed by CECU, may serve as a consultation, proposal and deliberation channel for Track B when the process is enabled, without replacing the consortium's formal decision-making bodies.",
         "consensueGroupStakeholders": "For Stakeholders (Track B)",
         "consensueActionsStakeholders": [
           "Propose challenges to the Challenge Bank",
@@ -3332,7 +3332,7 @@ export const translations = {
         ],
         "consensueButton": "Go to ConsensUE",
         "meetingsTitle": "Stakeholder Network (SN) – Upcoming Meetings",
-        "meetingsSubtitle": "Coordinated by CEICE · Bi-annual frequency + continuous online",
+        "meetingsSubtitle": "Coordinated by CECU · Bi-annual frequency + continuous online",
         "meetings": [
           {
             "date": "15 Jun 2026",
@@ -3393,7 +3393,7 @@ export const translations = {
           "title": "The Ministry of Education joins the launch of the international project AI SECRETT endowed with €7.2M",
           "excerpt": "Led by the University of Valencia, the project aims for ecological and digital transition through AI training and the creation of the AI-STEAM network across 12 countries.",
           "category": "Stakeholders",
-          "partner": "UVEG / CEICE",
+          "partner": "UVEG / CECU",
           "date": "Oct 4, 2024",
           "featured": true,
           "isOfficial": true
@@ -3403,16 +3403,16 @@ export const translations = {
           "excerpt": "More than 50 multidisciplinary teams of VET and Master students competed for 48 hours at the Polytechnic City of Innovation. The winning team developed a drought prediction model for the Júcar basin.",
           "category": "Events",
           "sector": "Energy and Environment",
-          "partner": "UVEG / UPV / CEICE",
+          "partner": "UVEG / UPV / CECU",
           "date": "Apr 2, 2026",
           "isOfficial": false
         },
         "news3": {
-          "title": "CEICE Publishes New Specialization Course in AI for VET Cycles",
+          "title": "CECU Publishes New Specialization Course in AI for VET Cycles",
           "excerpt": "The Education Department launches the first Specialization Course in Artificial Intelligence and Automation, co-designed with AI-STEAM network partners for 15 professional families.",
           "category": "VET",
           "sector": "Education",
-          "partner": "CEICE",
+          "partner": "CECU",
           "date": "Mar 25, 2026",
           "isOfficial": true
         },
@@ -3447,16 +3447,16 @@ export const translations = {
           "title": "ENRED & AI-STEAM Network workshop: 4 regional departments map AI training needs (demo)",
           "excerpt": "Eleven representatives from regional education departments in Spain, Italy, Norway and Croatia took part in a cooperation workshop to identify AI training needs. The results will feed the shared thematic agenda connecting ENRED and AI-STEAM Network.",
           "category": "ENRED",
-          "partner": "CEICE / ENRED / KEA",
+          "partner": "CECU / ENRED / KEA",
           "date": "Mar 14, 2026",
           "isOfficial": false
         },
         "news8": {
           "title": "VET pilot completed: AI for energy efficiency in education centres (demo)",
-          "excerpt": "IES La Costera and CEICE have completed the network's first VET pilot, with 24 vocational students working on an energy consumption prediction model. The resulting OER resource is now available on Aules.",
+          "excerpt": "IES La Costera and CECU have completed the network's first VET pilot, with 24 vocational students working on an energy consumption prediction model. The resulting OER resource is now available on Aules.",
           "category": "VET",
           "sector": "Energy",
-          "partner": "CEICE / IES La Costera",
+          "partner": "CECU / IES La Costera",
           "date": "Feb 20, 2026",
           "isOfficial": false
         },
@@ -3465,16 +3465,16 @@ export const translations = {
           "excerpt": "CEFIRE Valencia has launched the network's first teacher training session on ethical AI, prompt engineering and bias detection. 18 teachers participating from 5 centres in the Valencian Community.",
           "category": "Teacher Training",
           "sector": "Education",
-          "partner": "CEFIRE / CEICE",
+          "partner": "CEFIRE / CECU",
           "date": "Mar 5, 2026",
           "isOfficial": false
         },
         "news10": {
           "title": "Stakeholder validation session: 3 agrifood challenges reviewed in ConsensUE (demo)",
-          "excerpt": "The Stakeholder Network held a validation session on ConsensUE reviewing 3 candidate challenges from the agrifood sector, with participation from cooperatives, agtech companies and CEICE representatives.",
+          "excerpt": "The Stakeholder Network held a validation session on ConsensUE reviewing 3 candidate challenges from the agrifood sector, with participation from cooperatives, agtech companies and CECU representatives.",
           "category": "Challenges & Cases",
           "sector": "Agrifood",
-          "partner": "CEICE / AVA-ASAJA",
+          "partner": "CECU / AVA-ASAJA",
           "date": "Feb 28, 2026",
           "isOfficial": false
         }
@@ -3812,8 +3812,8 @@ export const translations = {
       "badge": "Programa Digital Europe 2021-2027 · AI-SECRETT",
       "title": "AI-STEAM Network",
       "subtitle": "Comunitat i Transferència d'AI-SECRETT",
-      "heroTagline": "AI-STEAM Network és l'ecosistema Track B de CEICE per a AI-SECRETT: construïda sobre la cooperació interregional d'ENRED activa agents interessats movilitza centres FP forma docents i especialitza els 7 sectors AI-SECRETT en IA i creativitat.",
-      "description": "Liderada per CEICE activa agents interessats movilitza centres FP forma docents i genera evidències per al consorci AI-SECRETT en les 7 àrees sectorials europees.",
+      "heroTagline": "AI-STEAM Network és l'ecosistema Track B de CECU per a AI-SECRETT: construïda sobre la cooperació interregional d'ENRED activa agents interessats movilitza centres FP forma docents i especialitza els 7 sectors AI-SECRETT en IA i creativitat.",
+      "description": "Liderada per CECU activa agents interessats movilitza centres FP forma docents i genera evidències per al consorci AI-SECRETT en les 7 àrees sectorials europees.",
       "uploadChallenge": "Proposa un repte, cas o aportació",
       "requestJoin": "Uneix-te a la AI-STEAM Network",
       "stats": {
@@ -3836,12 +3836,12 @@ export const translations = {
         "network": {
           "name": "AI-STEAM Network",
           "subtitle": "CMS · Aquest portal",
-          "desc": "Repositori de reptes, socis, coneixement i recursos per a nutrire el màster i la FP de CEICE.",
+          "desc": "Hub de comunitat, reptes i transferència que connecta FP, socis i coneixement per a resoldre necessitats reals.",
           "tag": "Xarxa de Coneixement"
         },
         "consensUE": {
           "name": "ConsensUE",
-          "subtitle": "Participació · Decidim",
+          "subtitle": "Espai ConsensUE en Aules",
           "desc": "Democràcia i participació: propostes, votacions i validació de rellevància de necessitats, casos i reptes.",
           "tag": "Participació"
         }
@@ -3885,7 +3885,7 @@ export const translations = {
       "sectorsDesc": "El coneixement de la xarxa s'organitza al voltant de les 7 àrees sectorials AI-SECRETT per a la triple transició digital, verda i social.",
       "viewAllSectors": "Veure tots els sectors",
       "dualFocus": "Doble Focus Educatiu",
-      "dualFocusDesc": "La xarxa alimenta simultàniament dos nivells de formació reglada coordinats per CEICE.",
+      "dualFocusDesc": "La xarxa alimenta simultàniament dos nivells de formació reglada coordinats per CECU.",
       "master": {
         "title": "Màster AI-SECRETT",
         "coordinator": "Coordinat per UVEG",
@@ -3897,7 +3897,7 @@ export const translations = {
       },
       "fp": {
         "title": "FP i Cicles Formatius",
-        "coordinator": "Coordinat per CEICE",
+        "coordinator": "Coordinat per CECU",
         "desc": "Els reptes i coneixements de la xarxa alimenten directament els mòduls de FP: cicles formatius i cursos d'especialització de la Conselleria d'Educació.",
         "item1": "Cursos d'Especialització en IA per a sectors STEAM",
         "item2": "ABP: reptes d'empresa a l'aula",
@@ -3910,7 +3910,7 @@ export const translations = {
       "latestChallengesData": [
         {
           "title": "Optimització energètica en museus amb IA",
-          "org": "Generalitat Valenciana (CEICE)",
+          "org": "Generalitat Valenciana (CECU)",
           "level": "FP",
           "sectorCode": "ene",
           "status": "Obert"
@@ -4320,13 +4320,13 @@ export const translations = {
         "Conferenciants convidats o sessions de validació",
         "Inspiració per a TFM/projectes quan és acceptada per Track A"
       ],
-      "masterBridgeDisclaimer": "El Màster AI-SECRETT (Track A) és governat per UVEG. L'accés i el reconeixement de crèdits estan subjectes als criteris d'admissió universitària. AI-STEAM Network (Track B, CEICE) facilita el pont i la preparació.",
-      "credentialsDisclaimer": "El Màster AI-SECRETT (Track A) és governat per UVEG. L'accés i el reconeixement de crèdits estan subjectes als criteris d'admissió universitària. AI-STEAM Network (Track B, CEICE) facilita el pont i la preparació.",
+      "masterBridgeDisclaimer": "El Màster AI-SECRETT (Track A) és governat per UVEG. L'accés i el reconeixement de crèdits estan subjectes als criteris d'admissió universitària. AI-STEAM Network (Track B, CECU) facilita el pont i la preparació.",
+      "credentialsDisclaimer": "El Màster AI-SECRETT (Track A) és governat per UVEG. L'accés i el reconeixement de crèdits estan subjectes als criteris d'admissió universitària. AI-STEAM Network (Track B, CECU) facilita el pont i la preparació.",
       "courseViewMore": "Veure curs →",
       "courseHours": "h",
       "courseEnrolledLabel": "matriculats",
       "trainingPaths": "Itineraris Formatius",
-      "fpPath": "Itinerari FP – CEICE",
+      "fpPath": "Itinerari FP – CECU",
       "masterPath": "Pont al Màster AI-SECRETT",
       "fpPathSteps": [
         "Cicle Formatiu de Grau Superior (CFGS)",
@@ -4446,7 +4446,7 @@ export const translations = {
         },
         {
           "title": "Classificació per Ruta",
-          "desc": "CEICE, consultant socis per sector, classifica l'aportació i li assigna una ruta de treball (FP, docent, recurs, pilot o pont acadèmic)"
+          "desc": "CECU, consultant socis per sector, classifica l'aportació i li assigna una ruta de treball (FP, docent, recurs, pilot o pont acadèmic)"
         },
         {
           "title": "Validació Track B",
@@ -4465,7 +4465,7 @@ export const translations = {
           "desc": "Si supera la validació, el resultat pot publicar-se com a cas de transferència o recurs educatiu obert a la xarxa"
         }
       ],
-      "aulesPlatform": "Plataforma educativa de CEICE per a FP i formació del professorat. Pot allotjar recursos OER de la xarxa amb les condicions acordades amb els socis autors.",
+      "aulesPlatform": "Plataforma educativa de CECU per a FP i formació del professorat. Pot allotjar recursos OER de la xarxa amb les condicions acordades amb els socis autors.",
       "networkPlatform": "Portal que centralitza reptes, casos, repositori OER, plantilles i evidències de pilot. Punt d'accés comú per a tots els membres de la xarxa.",
       "consensuePlatform": "La comunitat pot proposar i consultar quins recursos i necessitats poden ser rellevants per a la xarxa, amb la finalitat d'orientar futures activitats.",
       "oerTitle": "Recursos Educatius Oberts",
@@ -4505,7 +4505,7 @@ export const translations = {
           "status": "Completat",
           "participants": 24,
           "outcome": "Mòdul OER CC-BY publicat en Aules. 24 alumnes participants. Dataset anonimitzat disponible.",
-          "partner": "CEICE / IES La Costera"
+          "partner": "CECU / IES La Costera"
         },
         {
           "id": "ev2",
@@ -4515,7 +4515,7 @@ export const translations = {
           "status": "En curs",
           "participants": 18,
           "outcome": "Sessions CEFIRE en curs. Guia metodològica en elaboració. Enquesta d'impacte prevista per a juny 2026.",
-          "partner": "CEFIRE València / CEICE"
+          "partner": "CEFIRE València / CECU"
         },
         {
           "id": "ev3",
@@ -4535,7 +4535,7 @@ export const translations = {
           "status": "Completat",
           "participants": 11,
           "outcome": "Acta de cooperació signada entre 4 departaments regionals. 3 necessitats sectorials identificades. Informe de síntesi publicat.",
-          "partner": "ENRED / CEICE / KEA"
+          "partner": "ENRED / CECU / KEA"
         },
         {
           "id": "ev5",
@@ -4545,7 +4545,7 @@ export const translations = {
           "status": "En revisió",
           "participants": 0,
           "outcome": "Indicadors Track B consolidats: stakeholders registrats, sectors actius, reptes validats, traces ConsensUE. Lliurable D2.2 en preparació.",
-          "partner": "CEICE / Steering Committee"
+          "partner": "CECU / Steering Committee"
         }
       ],
       "statsOER": "Recursos OER",
@@ -4558,7 +4558,7 @@ export const translations = {
           "sector": "nts",
           "level": "FP",
           "license": "CC-BY-SA 4.0",
-          "author": "CEICE / IF.E",
+          "author": "CECU / IF.E",
           "date": "Mar 2026",
           "downloads": 1420,
           "lang": "ES / VA"
@@ -4606,7 +4606,7 @@ export const translations = {
           "sector": "nts",
           "level": "FP",
           "license": "CC-BY 4.0",
-          "author": "UMU / CEICE",
+          "author": "UMU / CECU",
           "date": "Nov 2025",
           "downloads": 3210,
           "lang": "ES / VA"
@@ -4618,7 +4618,7 @@ export const translations = {
           "sector": "nts",
           "level": "Docentes",
           "license": "CC-BY-SA 4.0",
-          "author": "LC / CEICE",
+          "author": "LC / CECU",
           "date": "Feb 2026",
           "downloads": 789,
           "lang": "ES / EN"
@@ -4651,7 +4651,7 @@ export const translations = {
       "successCases": [
         {
           "title": "Automatització d'expedients acadèmics amb IA",
-          "org": "CEICE – Generalitat Valenciana",
+          "org": "CECU – Generalitat Valenciana",
           "sector": "nts",
           "level": "FP",
           "result": "Sistema OCR + LLM en producció. Reducció del 70% en temps de tramitació. 5 equips participants.",
@@ -4693,7 +4693,7 @@ export const translations = {
       "eyebrow": "Governança",
       "title": "Governança i Transparència",
       "subtitle": "Estructura de decisió i participació",
-      "description": "La xarxa AI-STEAM funciona sota un model de governança de Doble Vía: un espai acadèmic liderat per UVEG i un espai ecosistema orquestrat per la Generalitat Valenciana (CEICE).",
+      "description": "La xarxa AI-STEAM funciona sota un model de governança de Doble Vía: un espai acadèmic liderat per UVEG i un espai ecosistema orquestrat per la Generalitat Valenciana (CECU).",
       "tabEstructura": "Estructura i Òrgans",
       "tabDualTrack": "Arquitectura de Doble Vía",
       "tabLbd": "Metodologia LbD",
@@ -4736,7 +4736,7 @@ export const translations = {
           "type": "Òrgan executiu",
           "freq": "Trimestral",
           "quorum": "Majoria simple",
-          "members": "UVEG (coord.), UMU, CEICE, TUV.IT, LC",
+          "members": "UVEG (coord.), UMU, CECU, TUV.IT, LC",
           "desc": "Gestió operativa del projecte. Supervisa el pla de treball, aprova els informes interns i coordina la coherència entre Track A (Acadèmic) i Track B (Ecosistema).",
           "color": "border-eu-blue bg-eu-blue/10",
           "iconColor": "text-eu-blue"
@@ -4773,7 +4773,7 @@ export const translations = {
           "freq": "Semestral + Online contínua",
           "quorum": "Participació oberta",
           "members": "Tots els stakeholders adherits mitjançant Acord de Col·laboració",
-          "desc": "Òrgan participatiu del Track B. Els stakeholders informen necessitats, validen la rellevància i aporten casos o reptes via ConsensUE. CEICE actua com Orquestrador d'este espai.",
+          "desc": "Òrgan participatiu del Track B. Els stakeholders informen necessitats, validen la rellevància i aporten casos o reptes via ConsensUE. CECU actua com Orquestrador d'este espai.",
           "color": "border-eu-purple bg-eu-yellow/60",
           "iconColor": "text-eu-purple"
         },
@@ -4784,7 +4784,7 @@ export const translations = {
           "type": "Enllaç institucional",
           "freq": "Anual",
           "quorum": "Unanimitat",
-          "members": "CEICE, LC, KEA, Lisbon Council",
+          "members": "CECU, LC, KEA, Lisbon Council",
           "desc": "Alineament amb polítiques europees (Digital Decade, AI Act, EPALE) i amb les prioritats de la Generalitat Valenciana. Coordina amb ENRED (Xarxa Europea de Departaments d'Educació Regional).",
           "color": "border-gray-600 bg-gray-50",
           "iconColor": "text-gray-700"
@@ -4897,18 +4897,18 @@ export const translations = {
         },
         "trackB": {
           "title": "Track B – Espai Ecosistema",
-          "subtitle": "Orquestrat per CEICE (GVA)",
+          "subtitle": "Orquestrat per CECU (GVA)",
           "scope_label": "Alcance",
           "scope_desc": "Fòrums de política educativa, banc de reptes, networking, events, repositori de coneixement i participació de stakeholders.",
           "framework_label": "Marc Normatiu",
           "framework_desc": "Acord de Col·laboració amb Regla de Cost Zero. Espai obert i flexible, sense burocràcia acadèmica.",
           "limit_label": "Límit Clau",
-          "limit_desc": "L'admissió de nous membres i la validació de relevància dels reptes es decidixen col·lectivament a través de la Xarxa de Stakeholders (SN) en ConsensUE. CEICE té veu principal però no actua unilateralment. L'adhesió és ràpida i no burocràtica.",
+          "limit_desc": "L'admissió de nous membres i la validació de relevància dels reptes es decidixen col·lectivament a través de la Xarxa de Stakeholders (SN) en ConsensUE. CECU té veu principal però no actua unilateralment. L'adhesió és ràpida i no burocràtica.",
           "bodies_label": "Òrgans Actius",
           "bodies": [
             "Xarxa de Stakeholders (SN)",
             "Junta Estratègica (SB)",
-            "ConsensUE (Decidim)"
+            "Espai ConsensUE en Aules"
           ]
         },
         "dataArch": {
@@ -4916,7 +4916,7 @@ export const translations = {
           "desc": "La separació de Tracks es reflecteix també en l'arquitectura de dades, garantint el compliment del RGPD i la compartimentació d'informació sensible.",
           "publicZone": {
             "title": "🔓 Zona Pública / Xarxa (Track B)",
-            "desc": "Visible per a tots els membres autenticats de la xarxa. Responsable de dades: CEICE.",
+            "desc": "Visible per a tots els membres autenticats de la xarxa. Responsable de dades: CECU.",
             "items": [
               "Fòrums i debats sectorials",
               "Banc de Reptes i casos d'ús",
@@ -4939,10 +4939,10 @@ export const translations = {
         },
         "responsibilityBoundaries": {
           "title": "Límits de dades i responsabilitat",
-          "desc": "Cada plataforma conserva la seua responsabilitat operativa. La xarxa AI-STEAM protegeix els compromisos de CEICE en Track B sense entrar en decisions acadèmiques del Màster.",
+          "desc": "Cada plataforma conserva la seua responsabilitat operativa. La xarxa AI-STEAM protegeix els compromisos de CECU en Track B sense entrar en decisions acadèmiques del Màster.",
           "items": [
             {
-              "owner": "CEICE",
+              "owner": "CECU",
               "scope": "Dades de membres, participació comunitària, xarxa ENRED/AI-STEAM, reptes/casos i evidències Track B."
             },
             {
@@ -4950,7 +4950,7 @@ export const translations = {
               "scope": "Expedients acadèmics, avaluació del Màster, criteris docents, ECTS i decisions curriculars Track A."
             },
             {
-              "owner": "ConsensUE / Decidim",
+              "owner": "Espai ConsensUE en Aules",
               "scope": "Participació, deliberacions, debats, votacions i traçabilitat de contribucions comunitàries."
             },
             {
@@ -4994,7 +4994,7 @@ export const translations = {
             "platform": "ConsensUE + AI-STEAM Network",
             "title": "Input: Reptes i Casos d'Ús",
             "actor": "Organitzacions de la xarxa",
-            "desc": "Els membres de l'ecosistema aporten necessitats, reptes i casos d'ús a través de ConsensUE. La Xarxa de Stakeholders, amb CEICE com a orquestradora, valida la rellevància Track B i els classifica per a activitats, recursos, pilots o possible revisió acadèmica per Track A.",
+            "desc": "Els membres de l'ecosistema aporten necessitats, reptes i casos d'ús a través de ConsensUE. La Xarxa de Stakeholders, amb CECU com a orquestradora, valida la rellevància Track B i els classifica per a activitats, recursos, pilots o possible revisió acadèmica per Track A.",
             "outputs": [
               "Repte o cas registrat",
               "Necessitat i sector classificats",
@@ -5030,7 +5030,7 @@ export const translations = {
         ],
         "operatingFlow": {
           "title": "Flux operatiu de Track B a evidències",
-          "desc": "El recorregut mostra com CEICE pot convertir participació de xarxa en evidències auditables sense presentar indicadors demo com a resultats reals.",
+          "desc": "El recorregut mostra com CECU pot convertir participació de xarxa en evidències auditables sense presentar indicadors demo com a resultats reals.",
           "steps": [
             {
               "title": "Input",
@@ -5063,9 +5063,9 @@ export const translations = {
         "platforms": [
           {
             "name": "ConsensUE",
-            "tech": "Decidim",
+            "tech": "Espai ConsensUE en Aules",
             "track": "Track B",
-            "owner": "CEICE",
+            "owner": "CECU",
             "role": "Participació Democràtica",
             "desc": "Punt d'entrada de propostes, deliberació comunitària, votació de prioritats i validació de rellevància de necessitats, casos i reptes."
           },
@@ -5073,15 +5073,15 @@ export const translations = {
             "name": "AI-STEAM Network",
             "tech": "Portal Web",
             "track": "Track A + B",
-            "owner": "CEICE + UVEG",
+            "owner": "CECU + UVEG",
             "role": "Validació i Repositori",
             "desc": "Banc de Reptes, Coneixement OER, directori de la xarxa."
           },
           {
             "name": "Aules",
             "tech": "Moodle LMS",
-            "track": "Track A + entorns CEICE",
-            "owner": "UVEG/CEICE segons activitat",
+            "track": "Track A + entorns CECU",
+            "owner": "UVEG/CECU segons activitat",
             "role": "Entrega Formativa",
             "desc": "Entorn d'aprenentatge per a activitats del Màster, FP o formació docent. L'avaluació i els ECTS del Màster romanen sota Track A."
           }
@@ -5094,7 +5094,7 @@ export const translations = {
           {
             "label": "Node Principal",
             "city": "València",
-            "org": "CEICE – Generalitat Valenciana",
+            "org": "CECU – Generalitat Valenciana",
             "role": "Orquestrador de l'ecosistema. Hub central de la xarxa. Allotja el portal, Aules i ConsensUE."
           },
           {
@@ -5112,9 +5112,9 @@ export const translations = {
         ],
         "actorsTitle": "Els Dos Actors Principals de la Plataforma",
         "actorsDesc": "Seguint el model DigiNet, l'operació del hub s'articula sobre una divisió formal de competències entre l'Orquestrador Institucional i el Proveïdor Acadèmic.",
-        "ceiceTitle": "CEICE – Orquestrador Institucional",
-        "ceiceSubtitle": "Generalitat Valenciana · Track B",
-        "ceiceRoles": [
+        "CECUTitle": "CECU – Orquestrador Institucional",
+        "CECUSubtitle": "Generalitat Valenciana · Track B",
+        "CECURoles": [
           {
             "label": "Representació",
             "desc": "Representació pública i política de la xarxa davant institucions europees i nacionals."
@@ -5129,7 +5129,7 @@ export const translations = {
           },
           {
             "label": "Infraestructura",
-            "desc": "Proporciona i manté PortalEdu, Aules i la plataforma de participació democràtica (ConsensUE/Decidim)."
+            "desc": "Proporciona i manté PortalEdu, Aules i l'Espai ConsensUE en Aules."
           }
         ],
         "uvegTitle": "UVEG – Proveïdor Acadèmic",
@@ -5181,8 +5181,8 @@ export const translations = {
         "stakeholderWarning": "Els stakeholders operen exclusivament en el Track B. No tindran accés a l'espai acadèmic (Aules/Màster) llevat que UVEG ho autorice expressament.",
         "stakeholderButton": "Solicitar Acord de Col·laboració",
         "consensueTitle": "Participa vía ConsensUE",
-        "consensueSubtitle": "Track B · Plataforma ConsensUE · Democràcia Participativa",
-        "consensueDesc": "ConsensUE és la plataforma democràtica de l'ecosistema, basada en <strong>Decidim</strong> i gestionada per CEICE. És el canal principal per a que stakeholders i socis del consorcio propongan i debatem continguts del Track B.",
+        "consensueSubtitle": "Track B · Espai ConsensUE en Aules · Participació quan estiga habilitada",
+        "consensueDesc": "L'Espai ConsensUE en Aules, gestionat per CECU, pot servir com a canal de consulta, proposta i deliberació del Track B quan el procés estiga habilitat, sense substituir els òrgans formals de decisió del consorci.",
         "consensueGroupStakeholders": "Per a Stakeholders (Track B)",
         "consensueActionsStakeholders": [
           "Proposar reptes al Banc de Reptes",
@@ -5199,7 +5199,7 @@ export const translations = {
         ],
         "consensueButton": "Anar a ConsensUE",
         "meetingsTitle": "Xarxa de Stakeholders (SN) – Pròximes Reunions",
-        "meetingsSubtitle": "Coordinada per CEICE · Freqüència semestral + online contínua",
+        "meetingsSubtitle": "Coordinada per CECU · Freqüència semestral + online contínua",
         "meetings": [
           {
             "date": "15 Jun 2026",
@@ -5260,7 +5260,7 @@ export const translations = {
           "title": "La Conselleria d'Educació participa en el llançament del projecte internacional AI SECRETT dotat amb 7,2 M€",
           "excerpt": "Impulsat per la Universitat de València, el projecte busca la transició ecològica i digital mitjançant la formació en IA i la creació de la xarxa AI-STEAM en 12 països.",
           "category": "Stakeholders",
-          "partner": "UVEG / CEICE",
+          "partner": "UVEG / CECU",
           "date": "04 Oct 2024",
           "featured": true,
           "isOfficial": true
@@ -5270,16 +5270,16 @@ export const translations = {
           "excerpt": "Més de 50 equips multidisciplinars formats per estudiants de FP i Màster van competir durant 48 hores a la Ciutat Politècnica de la Innovació. L'equip guanyador va desenvolupar un model de predicció de sequeres per a la conca del Xúquer.",
           "category": "Events",
           "sector": "Medi Ambient",
-          "partner": "UVEG / UPV / CEICE",
+          "partner": "UVEG / UPV / CECU",
           "date": "02 Abr 2026",
           "isOfficial": false
         },
         "news3": {
-          "title": "CEICE publica el nou Curs d'Especialització en IA per a Cicles Formatius",
+          "title": "CECU publica el nou Curs d'Especialització en IA per a Cicles Formatius",
           "excerpt": "La Conselleria d'Educació lança el primer Curs d'Especialització en Intel·ligència Artificial i Automatització, co-dissenyat amb els socis de la xarxa AI-STEAM per a 15 famílies professionals.",
           "category": "FP",
           "sector": "Educació",
-          "partner": "CEICE",
+          "partner": "CECU",
           "date": "25 Mar 2026",
           "isOfficial": true
         },
@@ -5314,16 +5314,16 @@ export const translations = {
           "title": "Taller ENRED & AI-STEAM Network: 4 departaments regionals mapegen necessitats formatives en IA (demo)",
           "excerpt": "Onze representants de departaments regionals d'educació d'Espanya, Itàlia, Noruega i Croàcia van participar en un taller de cooperació per a identificar necessitats formatives en IA. Els resultats nodriran l'agenda temàtica compartida entre ENRED i AI-STEAM Network.",
           "category": "ENRED",
-          "partner": "CEICE / ENRED / KEA",
+          "partner": "CECU / ENRED / KEA",
           "date": "14 Mar 2026",
           "isOfficial": false
         },
         "news8": {
           "title": "Pilot FP completat: IA per a eficiència energètica en centres educatius (demo)",
-          "excerpt": "L'IES La Costera i CEICE han completat el primer pilot FP de la xarxa, amb 24 alumnes de cicles formatius treballant en un model de predicció de consum energètic. El mòdul OER resultant ja està disponible a Aules.",
+          "excerpt": "L'IES La Costera i CECU han completat el primer pilot FP de la xarxa, amb 24 alumnes de cicles formatius treballant en un model de predicció de consum energètic. El mòdul OER resultant ja està disponible a Aules.",
           "category": "FP",
           "sector": "Energia",
-          "partner": "CEICE / IES La Costera",
+          "partner": "CECU / IES La Costera",
           "date": "20 Feb 2026",
           "isOfficial": false
         },
@@ -5332,16 +5332,16 @@ export const translations = {
           "excerpt": "CEFIRE València ha iniciat la primera sessió de formació per a docents de FP sobre IA ètica, prompt engineering i detecció de biaix. 18 docents participants de 5 centres de la Comunitat Valenciana.",
           "category": "Form. Docent",
           "sector": "Educació",
-          "partner": "CEFIRE / CEICE",
+          "partner": "CEFIRE / CECU",
           "date": "05 Mar 2026",
           "isOfficial": false
         },
         "news10": {
           "title": "Sessió de validació de stakeholders: 3 reptes agroalimentaris revisats en ConsensUE (demo)",
-          "excerpt": "La Xarxa de Stakeholders va celebrar una sessió de validació en ConsensUE on es van revisar 3 reptes candidats del sector agroalimentari, amb participació de cooperatives, agtech i representants CEICE.",
+          "excerpt": "La Xarxa de Stakeholders va celebrar una sessió de validació en ConsensUE on es van revisar 3 reptes candidats del sector agroalimentari, amb participació de cooperatives, agtech i representants CECU.",
           "category": "Reptes i Casos",
           "sector": "Agroalimentari",
-          "partner": "CEICE / AVA-ASAJA",
+          "partner": "CECU / AVA-ASAJA",
           "date": "28 Feb 2026",
           "isOfficial": false
         }
@@ -5422,7 +5422,7 @@ export const translations = {
           },
           {
             "title": "Primers compromisos: institucions i empreses ja s'adhereixin",
-            "content": "En sols tres mesos desde el seu anunci, la Xarxa AI-STEAM ha aconseguit acords d'adhesió amb més de 40 organitzacions europees:\n\n• AVA-ASAJA (Comunitat Valenciana): 12.000 hectàrees de dades agrícoles per a reptes d'agricultura de precisió\n• Municipis de València, Stuttgart i Porto: col·laboració en reptes de smart cities i transport urbà\n• Hospital La Fe (València): desenvolupament de ferramentes IA per a triatge i diagnòstic clínic\n• INESC TEC (Portugal): lideratge tècnic en bessons digitals per a indústria\n• Hochschule Wismar (Alemanya): integració de formació en IA en cicles de FP alemanys\n\n\"L'entusiasme ha superat les nostres expectatives\", comenta Isabel Ferrer, directora de CEICE. \"No és un programa més. Es un moviment que està transformant com entenem l'educació tècnica a Europa\"."
+            "content": "En sols tres mesos desde el seu anunci, la Xarxa AI-STEAM ha aconseguit acords d'adhesió amb més de 40 organitzacions europees:\n\n• AVA-ASAJA (Comunitat Valenciana): 12.000 hectàrees de dades agrícoles per a reptes d'agricultura de precisió\n• Municipis de València, Stuttgart i Porto: col·laboració en reptes de smart cities i transport urbà\n• Hospital La Fe (València): desenvolupament de ferramentes IA per a triatge i diagnòstic clínic\n• INESC TEC (Portugal): lideratge tècnic en bessons digitals per a indústria\n• Hochschule Wismar (Alemanya): integració de formació en IA en cicles de FP alemanys\n\n\"L'entusiasme ha superat les nostres expectatives\", comenta Isabel Ferrer, directora de CECU. \"No és un programa més. Es un moviment que està transformant com entenem l'educació tècnica a Europa\"."
           },
           {
             "title": "Dades i xifres del llançament",

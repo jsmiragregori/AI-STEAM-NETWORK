@@ -310,9 +310,9 @@ export const TRAINING_CONFIG = {
       "pathBlock": {
         "visible": true,
         "title": {
-          "es": "Itinerario FP – CEICE",
-          "en": "VET Pathway – CEICE",
-          "va": "Itinerari FP – CEICE"
+          "es": "Itinerario FP – CECU",
+          "en": "VET Pathway – CECU",
+          "va": "Itinerari FP – CECU"
         },
         "steps": [
           {

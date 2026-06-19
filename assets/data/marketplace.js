@@ -3632,9 +3632,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "[DEMO] IA per a la personalització d'itineraris formatius en cicles de FP"
         },
         "summary": {
-          "es": "CEICE convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
-          "en": "CEICE calls on VET centres, EdTech companies and educational research groups to develop a personalised learning pathway recommendation system based on the student's academic and competency history, suggesting optional modules, specialisations and professional pathways aligned with the Valencian labour market.",
-          "va": "CEICE convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
+          "es": "CECU convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
+          "en": "CECU calls on VET centres, EdTech companies and educational research groups to develop a personalised learning pathway recommendation system based on the student's academic and competency history, suggesting optional modules, specialisations and professional pathways aligned with the Valencian labour market.",
+          "va": "CECU convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
         },
         "entity": {
           "name": "",
@@ -3756,9 +3756,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Pot la IA recomanar l'itinerari de FP més adequat per a cada alumne?"
         },
         "reward": {
-          "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CEICE, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AI-STEAM y en la red estatal de innovación en FP.",
-          "en": "The winning team receives: (1) development and implementation contract with CEICE, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AI-STEAM Marketplace and in the national VET innovation network.",
-          "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CEICE, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AI-STEAM i a la xarxa estatal d'innovació en FP."
+          "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CECU, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AI-STEAM y en la red estatal de innovación en FP.",
+          "en": "The winning team receives: (1) development and implementation contract with CECU, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AI-STEAM Marketplace and in the national VET innovation network.",
+          "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CECU, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AI-STEAM i a la xarxa estatal d'innovació en FP."
         }
       },
       "access": {
@@ -7893,7 +7893,7 @@ export const MARKETPLACE_CONFIG = {
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "org": "CECU"
         },
         "origin": {
           "name": "Universitat Politècnica de València (UPV)"
@@ -8304,7 +8304,7 @@ export const MARKETPLACE_CONFIG = {
           "org": ""
         },
         "lead": {
-          "name": "CEICE",
+          "name": "CECU",
           "type": "",
           "role": {
             "es": "",
@@ -9506,7 +9506,7 @@ export const MARKETPLACE_CONFIG = {
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "org": "CECU"
         },
         "origin": {
           "name": "IVAM — Institut Valencià d'Art Modern"
@@ -10128,7 +10128,7 @@ export const MARKETPLACE_CONFIG = {
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "org": "CECU"
         },
         "origin": {
           "name": "Enertika, S.L."
@@ -10445,7 +10445,7 @@ export const MARKETPLACE_CONFIG = {
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "org": "CECU"
         },
         "origin": {
           "name": "IVIA — Institut Valencià d'Investigacions Agràries"
@@ -11068,7 +11068,7 @@ export const MARKETPLACE_CONFIG = {
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "org": "CECU"
         },
         "origin": {
           "name": "Renault España — Centro de Ingeniería de Valladolid"
@@ -11740,7 +11740,7 @@ export const MARKETPLACE_CONFIG = {
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "org": "CECU"
         },
         "origin": {
           "name": "Anecoop, S. Coop."
@@ -12695,7 +12695,7 @@ export const MARKETPLACE_CONFIG = {
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "org": "CECU"
         },
         "origin": {
           "name": "Solarius Energy S.L."
@@ -13665,7 +13665,7 @@ export const MARKETPLACE_CONFIG = {
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "org": "CECU"
         },
         "origin": {
           "name": "Museu de Belles Arts de València"
@@ -13984,7 +13984,7 @@ export const MARKETPLACE_CONFIG = {
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "org": "CECU"
         },
         "origin": {
           "name": "Grupo Antolin (Planta Valencia)"
@@ -14635,7 +14635,7 @@ export const MARKETPLACE_CONFIG = {
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "org": "CECU"
         },
         "origin": {
           "name": "IVECO Valencia"
@@ -15617,7 +15617,7 @@ export const MARKETPLACE_CONFIG = {
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "org": "CECU"
         },
         "origin": {
           "name": "Conselleria d'Educació — CEFIREs"
@@ -16281,7 +16281,7 @@ export const MARKETPLACE_CONFIG = {
       "ownership": {
         "publisher": {
           "name": "AI-STEAM Network",
-          "org": "CEICE"
+          "org": "CECU"
         },
         "origin": {
           "name": "Hospital Universitari i Politècnic La Fe"
@@ -21099,9 +21099,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "[DEMO] IA per a la personalització d'itineraris formatius en cicles de FP"
           },
           "summary": {
-            "es": "CEICE convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
-            "en": "CEICE calls on VET centres, EdTech companies and educational research groups to develop a personalised learning pathway recommendation system based on the student's academic and competency history, suggesting optional modules, specialisations and professional pathways aligned with the Valencian labour market.",
-            "va": "CEICE convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
+            "es": "CECU convoca a centros de FP, empresas EdTech y grupos de investigación educativa para desarrollar un sistema de recomendación de itinerarios formativos personalizados basado en el historial académico y competencial del alumno, que sugiera módulos optativos, especializaciones y salidas profesionales alineadas con el mercado laboral valenciano.",
+            "en": "CECU calls on VET centres, EdTech companies and educational research groups to develop a personalised learning pathway recommendation system based on the student's academic and competency history, suggesting optional modules, specialisations and professional pathways aligned with the Valencian labour market.",
+            "va": "CECU convoca centres de FP, empreses EdTech i grups de recerca educativa per desenvolupar un sistema de recomanació d'itineraris formatius personalitzats basat en l'historial acadèmic i competencial de l'alumne, que suggerisca mòduls optatius, especialitzacions i eixides professionals alineades amb el mercat laboral valencià."
           },
           "entity": {
             "name": "",
@@ -21223,9 +21223,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Pot la IA recomanar l'itinerari de FP més adequat per a cada alumne?"
           },
           "reward": {
-            "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CEICE, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AI-STEAM y en la red estatal de innovación en FP.",
-            "en": "The winning team receives: (1) development and implementation contract with CEICE, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AI-STEAM Marketplace and in the national VET innovation network.",
-            "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CEICE, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AI-STEAM i a la xarxa estatal d'innovació en FP."
+            "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CECU, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AI-STEAM y en la red estatal de innovación en FP.",
+            "en": "The winning team receives: (1) development and implementation contract with CECU, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AI-STEAM Marketplace and in the national VET innovation network.",
+            "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CECU, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AI-STEAM i a la xarxa estatal d'innovació en FP."
           }
         },
         "access": {
@@ -27251,7 +27251,7 @@ export const MARKETPLACE_CONFIG = {
             "org": ""
           },
           "lead": {
-            "name": "CEICE",
+            "name": "CECU",
             "type": "",
             "role": {
               "es": "",
@@ -28915,7 +28915,7 @@ export const MARKETPLACE_CONFIG = {
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "org": "CECU"
           },
           "origin": {
             "name": "Universitat Politècnica de València (UPV)"
@@ -29250,7 +29250,7 @@ export const MARKETPLACE_CONFIG = {
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "org": "CECU"
           },
           "origin": {
             "name": "IVAM — Institut Valencià d'Art Modern"
@@ -29568,7 +29568,7 @@ export const MARKETPLACE_CONFIG = {
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "org": "CECU"
           },
           "origin": {
             "name": "Enertika, S.L."
@@ -29885,7 +29885,7 @@ export const MARKETPLACE_CONFIG = {
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "org": "CECU"
           },
           "origin": {
             "name": "IVIA — Institut Valencià d'Investigacions Agràries"
@@ -30204,7 +30204,7 @@ export const MARKETPLACE_CONFIG = {
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "org": "CECU"
           },
           "origin": {
             "name": "Renault España — Centro de Ingeniería de Valladolid"
@@ -30522,7 +30522,7 @@ export const MARKETPLACE_CONFIG = {
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "org": "CECU"
           },
           "origin": {
             "name": "Anecoop, S. Coop."
@@ -30855,7 +30855,7 @@ export const MARKETPLACE_CONFIG = {
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "org": "CECU"
           },
           "origin": {
             "name": "Solarius Energy S.L."
@@ -31187,7 +31187,7 @@ export const MARKETPLACE_CONFIG = {
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "org": "CECU"
           },
           "origin": {
             "name": "Museu de Belles Arts de València"
@@ -31506,7 +31506,7 @@ export const MARKETPLACE_CONFIG = {
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "org": "CECU"
           },
           "origin": {
             "name": "Grupo Antolin (Planta Valencia)"
@@ -31838,7 +31838,7 @@ export const MARKETPLACE_CONFIG = {
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "org": "CECU"
           },
           "origin": {
             "name": "IVECO Valencia"
@@ -32155,7 +32155,7 @@ export const MARKETPLACE_CONFIG = {
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "org": "CECU"
           },
           "origin": {
             "name": "Conselleria d'Educació — CEFIREs"
@@ -32500,7 +32500,7 @@ export const MARKETPLACE_CONFIG = {
         "ownership": {
           "publisher": {
             "name": "AI-STEAM Network",
-            "org": "CEICE"
+            "org": "CECU"
           },
           "origin": {
             "name": "Hospital Universitari i Politècnic La Fe"
