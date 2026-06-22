@@ -957,7 +957,7 @@ export const NETWORK_CONFIG = {
         ],
         "role": "beneficiary",
         "url": "https://CECU.gva.es/va/",
-        "logo": "CECU.png"
+        "logo": "cecu.png"
       },
       {
         "id": "lpga",

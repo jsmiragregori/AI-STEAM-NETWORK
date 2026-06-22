@@ -715,7 +715,7 @@ export const HOME_CONFIG = {
         "id": "CECU",
         "name": "CECU",
         "acronym": "CECU",
-        "logo": "CECU.png"
+        "logo": "cecu.png"
       },
       {
         "id": "lpga",
