@@ -956,7 +956,7 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://CECU.gva.es/va/",
+        "url": "https://ceice.gva.es/va/",
         "logo": "cecu.png"
       },
       {
