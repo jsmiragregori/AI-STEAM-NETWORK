@@ -231,7 +231,7 @@ function tabFlujo() {
           <p class="text-gray-600 text-base leading-relaxed">${t('knowledge.aulesPlatform') || ''}</p>
         </div>
         <div class="rd-card rd-card-grad-violet rd-card-edge p-4">
-          <p class="font-extrabold text-eu-purple mb-1">AI-STEAM Network (CMS)</p>
+          <p class="font-extrabold text-eu-purple mb-1">AI-STEAM Network Website</p>
           <p class="text-gray-600 text-base leading-relaxed">${t('knowledge.networkPlatform') || ''}</p>
         </div>
         <div class="rd-card rd-card-grad-violet rd-card-edge p-4">

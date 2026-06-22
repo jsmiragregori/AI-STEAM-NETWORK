@@ -353,9 +353,9 @@ export const HOME_CONFIG = {
           "va": "LMS · Moodle"
         },
         "description": {
-          "es": "Cursos, módulos de FP y máster, formación docente y contenidos OER del proyecto.",
-          "en": "Courses, VET and master modules, teacher training and project OER content.",
-          "va": "Cursos, mòduls de FP i màster, formació docent i continguts OER del projecte."
+          "es": "Entorno de aprendizaje del Track B para cursos, itinerarios de formación docente y actividades vinculadas a FP y recursos abiertos del proyecto.",
+          "en": "Track B learning environment for courses, teacher training pathways and activities linked to VET and the project’s open resources.",
+          "va": "Entorn d&#39;aprenentatge del Track B per a cursos, itineraris de formació docent i activitats vinculades a FP i recursos oberts del projecte."
         },
         "tag": {
           "visible": true,
@@ -378,14 +378,14 @@ export const HOME_CONFIG = {
           "va": "AI-STEAM Network"
         },
         "subtitle": {
-          "es": "CMS · Este portal",
-          "en": "CMS · This portal",
-          "va": "CMS · Aquest portal"
+          "es": "Sitio web · Portal público",
+          "en": "Website · Public portal",
+          "va": "Lloc web · Portal públic"
         },
         "description": {
-          "es": "Hub de comunidad, retos y transferencia que conecta FP, socios y conocimiento para resolver necesidades reales.",
-          "en": "Community, challenge and transfer hub connecting VET, partners and knowledge to solve real needs.",
-          "va": "Hub de comunitat, reptes i transferència que connecta FP, socis i coneixement per a resoldre necessitats reals."
+          "es": "Espacio público de la comunidad de práctica AI-STEAM, donde la red comparte retos, casos, recursos y evidencias para activar transferencia educativa.",
+          "en": "Public space for the AI-STEAM community of practice, where the network shares challenges, cases, resources and evidence to support educational transfer.",
+          "va": "Espai públic de la comunitat de pràctica AI-STEAM, on la xarxa compartix reptes, casos, recursos i evidències per a activar transferència educativa."
         },
         "tag": {
           "visible": true,
@@ -413,9 +413,9 @@ export const HOME_CONFIG = {
           "va": "Espai ConsensUE en Aules"
         },
         "description": {
-          "es": "Democracia y participación: propuestas, votaciones y validación de relevancia de necesidades, casos y retos.",
-          "en": "Democracy and participation: proposals, voting and relevance validation of needs, cases and challenges.",
-          "va": "Democràcia i participació: propostes, votacions i validació de rellevància de necessitats, casos i reptes."
+          "es": "Canal participativo del Track B para consultas, deliberación y trazabilidad de aportaciones que ayudan a priorizar necesidades, retos y recursos de la red.",
+          "en": "Track B participation channel for consultation, deliberation and traceability of contributions that help prioritise the network’s needs, challenges and resources.",
+          "va": "Canal participatiu del Track B per a consultes, deliberació i traçabilitat d&#39;aportacions que ajuden a prioritzar les necessitats, els reptes i els recursos de la xarxa."
         },
         "tag": {
           "visible": true,

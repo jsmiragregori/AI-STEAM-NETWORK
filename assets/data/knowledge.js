@@ -172,11 +172,11 @@ export const KNOWLEDGE_CONFIG = {
         {
           "id": "network",
           "visible": true,
-          "name": "AI-STEAM Network (CMS)",
+          "name": "AI-STEAM Network Website",
           "description": {
-            "es": "Portal que centraliza retos, casos, repositorio OER, plantillas y evidencias de piloto. Punto de acceso común para todos los miembros de la red.",
-            "en": "Portal centralising challenges, cases, OER repository, templates and pilot evidence. Common access point for all network members.",
-            "va": "Portal que centralitza reptes, casos, repositori OER, plantilles i evidències de pilot. Punt d'accés comú per a tots els membres de la xarxa."
+            "es": "Web pública de la comunidad de práctica AI-STEAM. Punto de encuentro para compartir retos, casos, recursos OER, plantillas y evidencias de pilotaje entre los miembros de la red.",
+            "en": "Public website of the AI-STEAM community of practice. A shared meeting point for network members to exchange challenges, cases, OER resources, templates and pilot evidence.",
+            "va": "Web pública de la comunitat de pràctica AI-STEAM. Punt de trobada compartit perquè els membres de la xarxa intercanvien reptes, casos, recursos OER, plantilles i evidències de pilotatge."
           }
         },
         {
@@ -184,9 +184,9 @@ export const KNOWLEDGE_CONFIG = {
           "visible": true,
           "name": "ConsensUE (Aules)",
           "description": {
-            "es": "La comunidad puede proponer y consultar qué necesidades y recursos pueden ser relevantes para la red, con el fin de orientar futuras actividades.",
-            "en": "The community can propose and consult on which needs and resources may be relevant to the network, helping to guide future activities.",
-            "va": "La comunitat pot proposar i consultar quins recursos i necessitats poden ser rellevants per a la xarxa, amb la finalitat d'orientar futures activitats."
+            "es": "Espacio de participación del Track B para consultas, deliberación y trazabilidad de aportaciones de la comunidad. Puede apoyar la priorización de necesidades, retos y recursos que orienten actividades futuras de la red.",
+            "en": "Track B participation space for consultation, deliberation and traceability of community contributions. It can support the prioritisation of needs, challenges and resources that may inform future network activities.",
+            "va": "Espai de participació del Track B per a consultes, deliberació i traçabilitat de les aportacions de la comunitat. Pot donar suport a la priorització de necessitats, reptes i recursos que orienten activitats futures de la xarxa."
           }
         }
       ]

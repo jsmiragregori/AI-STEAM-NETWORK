@@ -1201,7 +1201,7 @@ export const translations = {
               "scope": "Participación, deliberaciones, debates, votaciones y trazabilidad de aportaciones comunitarias."
             },
             {
-              "owner": "Aules / PortalEdu",
+              "owner": "Aules / Esta aplicación web",
               "scope": "Entornos de aprendizaje y publicación de recursos cuando aplique, según el responsable de cada actividad."
             }
           ]
@@ -1376,7 +1376,7 @@ export const translations = {
           },
           {
             "label": "Infraestructura",
-            "desc": "Provee y mantiene PortalEdu, Aules y el Espacio ConsensUE en Aules."
+            "desc": "Provee y mantiene esta aplicación web, Aules y el Espacio ConsensUE en Aules."
           }
         ],
         "uvegTitle": "UVEG – Proveedor Académico",
@@ -3087,7 +3087,7 @@ export const translations = {
               "scope": "Participation, deliberations, debates, votes and traceability of community contributions."
             },
             {
-              "owner": "Aules / PortalEdu",
+              "owner": "Aules / This web application",
               "scope": "Learning and resource environments where applicable, according to the responsible owner of each activity."
             }
           ]
@@ -3262,7 +3262,7 @@ export const translations = {
           },
           {
             "label": "Infrastructure",
-            "desc": "Provides and maintains PortalEdu, Aules, and the ConsensUE space in Aules."
+            "desc": "Provides and maintains this web application, Aules, and the ConsensUE space in Aules."
           }
         ],
         "uvegTitle": "UVEG – Academic Provider",
@@ -4954,7 +4954,7 @@ export const translations = {
               "scope": "Participació, deliberacions, debats, votacions i traçabilitat de contribucions comunitàries."
             },
             {
-              "owner": "Aules / PortalEdu",
+              "owner": "Aules / Esta aplicació web",
               "scope": "Entorns d'aprenentatge i publicació de recursos quan aplique, segons el responsable de cada activitat."
             }
           ]
@@ -5129,7 +5129,7 @@ export const translations = {
           },
           {
             "label": "Infraestructura",
-            "desc": "Proporciona i manté PortalEdu, Aules i l'Espai ConsensUE en Aules."
+            "desc": "Proporciona i manté esta aplicació web, Aules i l'Espai ConsensUE en Aules."
           }
         ],
         "uvegTitle": "UVEG – Proveïdor Acadèmic",

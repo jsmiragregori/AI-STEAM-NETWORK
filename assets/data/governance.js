@@ -236,9 +236,9 @@ export const GOVERNANCE_CONFIG = {
                 "va": "Infraestructura"
               },
               "desc": {
-                "es": "Provee y mantiene PortalEdu, Aules y el Espacio ConsensUE en Aules para la participación del Track B.",
-                "en": "Provides and maintains PortalEdu, Aules, and the ConsensUE space in Aules for Track B participation.",
-                "va": "Proporciona i manté PortalEdu, Aules i l'Espai ConsensUE en Aules per a la participació del Track B."
+                "es": "Provee y mantiene esta aplicación web, Aules y el Espacio ConsensUE en Aules para la participación del Track B.",
+                "en": "Provides and maintains this web application, Aules, and the ConsensUE space in Aules for Track B participation.",
+                "va": "Proporciona i manté esta aplicació web, Aules i l'Espai ConsensUE en Aules per a la participació del Track B."
               }
             }
           ]
@@ -946,9 +946,9 @@ export const GOVERNANCE_CONFIG = {
           "visible": true,
           "order": 4,
           "owner": {
-            "es": "AULES / PORTALEDU",
-            "en": "AULES / PORTALEDU",
-            "va": "AULES / PORTALEDU"
+            "es": "AULES / ESTA APLICACIÓN WEB",
+            "en": "AULES / THIS WEB APPLICATION",
+            "va": "AULES / ESTA APLICACIÓ WEB"
           },
           "scope": {
             "es": "Entornos de aprendizaje y recursos donde corresponda, según el responsable de cada actividad.",
