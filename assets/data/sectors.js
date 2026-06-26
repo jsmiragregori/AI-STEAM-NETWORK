@@ -1421,9 +1421,9 @@ export const SECTORS_CONFIG = {
           "id": "joist",
           "acronym": "JOIST",
           "name": {
-            "es": "The Factory IKE (JOIST)",
-            "en": "The Factory IKE (JOIST)",
-            "va": "The Factory IKE (JOIST)"
+            "es": "JOIST Innovation Park",
+            "en": "JOIST Innovation Park",
+            "va": "JOIST Innovation Park"
           },
           "country": "GR",
           "city": {
@@ -1441,7 +1441,7 @@ export const SECTORS_CONFIG = {
             "va": "Empresa i Innovació"
           },
           "role": "beneficiary",
-          "url": "https://joistpark.eu/",
+          "url": "https://joistpark.eu/en/",
           "logo": "joist.png",
           "found": true
         }

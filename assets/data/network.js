@@ -1243,9 +1243,9 @@ export const NETWORK_CONFIG = {
       {
         "id": "joist",
         "name": {
-          "es": "The Factory IKE (JOIST)",
-          "en": "The Factory IKE (JOIST)",
-          "va": "The Factory IKE (JOIST)"
+          "es": "JOIST Innovation Park",
+          "en": "JOIST Innovation Park",
+          "va": "JOIST Innovation Park"
         },
         "acronym": "JOIST",
         "country": "GR",
@@ -1288,7 +1288,7 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://joistpark.eu/",
+        "url": "https://joistpark.eu/en/",
         "logo": "joist.png"
       },
       {
