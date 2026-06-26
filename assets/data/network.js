@@ -876,9 +876,9 @@ export const NETWORK_CONFIG = {
           "va": "Educació Superior i I+D+I"
         },
         "contribution": {
-          "es": "Apoya la plataforma y las master classes con living labs y diseño de servicios orientados al aprendizaje aplicado.",
-          "en": "Supports the platform and master classes with living labs and service design for applied learning.",
-          "va": "Dona suport a la plataforma i a les master classes amb living labs i disseny de serveis per a l'aprenentatge aplicat."
+          "es": "Impulsa una innovación en IA ética y centrada en las personas, integrando prospectiva estratégica con co-creación y metodologías de diseño para reforzar el desarrollo de masterclasses.",
+          "en": "Fosters ethically grounded, human-centred AI innovation by integrating strategic foresight with co-creation and design-driven methodologies to strengthen masterclass development.",
+          "va": "Impulsa una innovació en IA ètica i centrada en les persones, integrant prospectiva estratègica amb co-creació i metodologies de disseny per a reforçar el desenvolupament de masterclasses."
         },
         "sectors": [
           {
@@ -889,14 +889,39 @@ export const NETWORK_CONFIG = {
         ],
         "expertise": [
           {
-            "es": "Living labs",
-            "en": "Living labs",
-            "va": "Living labs"
+            "es": "Ética, IA y Legislación",
+            "en": "AI Ethics & Law",
+            "va": "Ètica, IA i Legislació"
           },
           {
-            "es": "Diseño de servicios",
-            "en": "Service design",
-            "va": "Disseny de serveis"
+            "es": "IA centrada en personas",
+            "en": "Human-centered AI",
+            "va": "IA centrada en persones"
+          },
+          {
+            "es": "Pensamiento en Diseño",
+            "en": "Design Thinking",
+            "va": "Pensament en Disseny"
+          },
+          {
+            "es": "Prospección Estratégica",
+            "en": "Strategic Foresight",
+            "va": "Prospecció Estratègica"
+          },
+          {
+            "es": "Diseño de Servicios",
+            "en": "Service Design",
+            "va": "Disseny de Serveis"
+          },
+          {
+            "es": "Co-creación: Laboratorios vivos",
+            "en": "Co-creation: Living labs",
+            "va": "Co-creació: Laboratoris vius"
+          },
+          {
+            "es": "Aprendizaje por Desarrollo",
+            "en": "Learning by Developing",
+            "va": "Aprenentatge per Desenvolupament"
           }
         ],
         "role": "beneficiary",
