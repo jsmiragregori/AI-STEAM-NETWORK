@@ -1040,21 +1040,11 @@ export const NETWORK_CONFIG = {
           "va": "Administració Pública"
         },
         "contribution": {
-          "es": "Aporta desarrollo regional e innovación pública a la comunidad AI-STEAM y a la validación territorial del programa.",
-          "en": "Brings regional development and public sector innovation to the AI-STEAM Community and territorial programme validation.",
-          "va": "Aporta desenvolupament regional i innovació pública a la Comunitat AI-STEAM i a la validació territorial del programa."
+          "es": "Aporta desarrollo regional, innovación en el sector público y experiencia en diseño internacional en salud y servicios sociales a la red, a través de Experio Lab, centro nacional de Regions.",
+          "en": "Brings regional development, public sector innovation and international design expertise in healthcare and social services to the network through Experio Lab, the Regions national centre.",
+          "va": "Aporta desenvolupament regional, innovació en el sector públic i experiència en disseny internacional en salut i serveis socials a la xarxa, a través d'Experio Lab, centre nacional de Regions."
         },
         "sectors": [
-          {
-            "es": "Energía y Medio Ambiente",
-            "en": "Energy and Environment",
-            "va": "Energia i Medi Ambient"
-          },
-          {
-            "es": "Movilidad y Transporte",
-            "en": "Mobility and Transport",
-            "va": "Mobilitat i Transport"
-          },
           {
             "es": "Servicios No Turísticos",
             "en": "Non-Touristic Services",
@@ -1063,14 +1053,14 @@ export const NETWORK_CONFIG = {
         ],
         "expertise": [
           {
-            "es": "Desarrollo regional",
-            "en": "Regional development",
-            "va": "Desenvolupament regional"
+            "es": "Salud pública",
+            "en": "Public health",
+            "va": "Salut pública"
           },
           {
-            "es": "Innovación en el sector público",
-            "en": "Public sector innovation",
-            "va": "Innovació en el sector públic"
+            "es": "Servicios sociales",
+            "en": "Social services",
+            "va": "Serveis socials"
           }
         ],
         "role": "beneficiary",
