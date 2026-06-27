@@ -882,31 +882,21 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Servicios No Turísticos",
-            "en": "Non-Touristic Services",
-            "va": "Serveis No Turístics"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
           }
         ],
         "expertise": [
           {
-            "es": "Ética, IA y Legislación",
+            "es": "Derecho Tecnológico",
             "en": "AI Ethics & Law",
-            "va": "Ètica, IA i Legislació"
+            "va": "Dret Tecnològic"
           },
           {
-            "es": "IA centrada en personas",
+            "es": "IA centrada en las personas",
             "en": "Human-centered AI",
-            "va": "IA centrada en persones"
-          },
-          {
-            "es": "Pensamiento en Diseño",
-            "en": "Design Thinking",
-            "va": "Pensament en Disseny"
-          },
-          {
-            "es": "Prospección Estratégica",
-            "en": "Strategic Foresight",
-            "va": "Prospecció Estratègica"
+            "va": "IA centrada en les persones"
           },
           {
             "es": "Diseño de Servicios",
@@ -914,14 +904,9 @@ export const NETWORK_CONFIG = {
             "va": "Disseny de Serveis"
           },
           {
-            "es": "Co-creación: Laboratorios vivos",
-            "en": "Co-creation: Living labs",
-            "va": "Co-creació: Laboratoris vius"
-          },
-          {
-            "es": "Aprendizaje por Desarrollo",
-            "en": "Learning by Developing",
-            "va": "Aprenentatge per Desenvolupament"
+            "es": "Prospección Estratégica",
+            "en": "Strategic Foresight",
+            "va": "Prospecció Estratègica"
           }
         ],
         "role": "beneficiary",
