@@ -773,9 +773,9 @@ export const NETWORK_CONFIG = {
           "va": "Educació Superior i I+D+I"
         },
         "contribution": {
-          "es": "Organiza actividades extracurriculares y prácticas, reforzando la dimensión artística y de diseño del aprendizaje AI-STEAM.",
-          "en": "Organises extracurricular activities and placements, strengthening the artistic and design dimension of AI-STEAM learning.",
-          "va": "Organitza activitats extracurriculars i pràctiques, reforçant la dimensió artística i de disseny de l'aprenentatge AI-STEAM."
+          "es": "Lidera investigación basada en la práctica sobre flujos de IA autoalojada y organiza actividades extracurriculares, reforzando la dimensión artística y de diseño del aprendizaje AI-STEAM.",
+          "en": "Leads practice-based research about self-hosted AI workflows and organises extracurricular activities, strengthening the artistic and design dimension of AI-STEAM learning.",
+          "va": "Lidera investigació basada en la pràctica sobre fluxos d'IA autoallotjada i organitza activitats extracurriculars, reforçant la dimensió artística i de disseny de l'aprenentatge AI-STEAM."
         },
         "sectors": [
           {
@@ -794,6 +794,11 @@ export const NETWORK_CONFIG = {
             "es": "Creatividad aplicada",
             "en": "Applied creativity",
             "va": "Creativitat aplicada"
+          },
+          {
+            "es": "Investigación basada en la práctica",
+            "en": "Practice-based research",
+            "va": "Investigació basada en la pràctica"
           }
         ],
         "role": "beneficiary",
@@ -1074,7 +1079,7 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "https://www.regionvarmland.se/",
+        "url": "https://www.experiolab.se",
         "logo": "varm.png"
       },
       {
