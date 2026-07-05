@@ -311,7 +311,7 @@ export const SECTORS_CONFIG = {
             "va": "Administració Pública"
           },
           "role": "beneficiary",
-          "url": "www.predaprijedor.com",
+          "url": "https://www.predaprijedor.com",
           "logo": "preda.png",
           "found": true
         }
@@ -1132,7 +1132,7 @@ export const SECTORS_CONFIG = {
             "va": "Administració Pública"
           },
           "role": "beneficiary",
-          "url": "www.predaprijedor.com",
+          "url": "https://www.predaprijedor.com",
           "logo": "preda.png",
           "found": true
         }
@@ -1537,7 +1537,7 @@ export const SECTORS_CONFIG = {
             "va": "Administració Pública"
           },
           "role": "beneficiary",
-          "url": "www.predaprijedor.com",
+          "url": "https://www.predaprijedor.com",
           "logo": "preda.png",
           "found": true
         }
@@ -1926,7 +1926,7 @@ export const SECTORS_CONFIG = {
             "va": "Administració Pública"
           },
           "role": "beneficiary",
-          "url": "www.predaprijedor.com",
+          "url": "https://www.predaprijedor.com",
           "logo": "preda.png",
           "found": true
         }
@@ -2634,7 +2634,7 @@ export const SECTORS_CONFIG = {
             "va": "Administració Pública"
           },
           "role": "beneficiary",
-          "url": "www.predaprijedor.com",
+          "url": "https://www.predaprijedor.com",
           "logo": "preda.png",
           "found": true
         }

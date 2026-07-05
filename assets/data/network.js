@@ -1155,7 +1155,7 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "beneficiary",
-        "url": "www.predaprijedor.com",
+        "url": "https://www.predaprijedor.com",
         "logo": "preda.png"
       },
       {
