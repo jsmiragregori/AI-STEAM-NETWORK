@@ -1106,9 +1106,9 @@ export const NETWORK_CONFIG = {
           "va": "Administració Pública"
         },
         "contribution": {
-          "es": "Refuerza la comunidad AI-STEAM con desarrollo regional, apoyo a pymes y conexión con sectores productivos locales.",
-          "en": "Strengthens the AI-STEAM Community with regional development, SME support and links to local productive sectors.",
-          "va": "Reforça la Comunitat AI-STEAM amb desenvolupament regional, suport a PIMES i connexió amb sectors productius locals."
+          "es": "Garantiza la difusión regional y las conexiones comunitarias de AI-STEAM en la región de los Balcanes Occidentales.",
+          "en": "Ensures regional outreach and community connections for AI-STEAM in the Western Balkans region.",
+          "va": "Garanteix la difusió regional i les connexions comunitàries d’AI-STEAM a la regió dels Balcans Occidentals."
         },
         "sectors": [
           {
