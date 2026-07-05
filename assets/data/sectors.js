@@ -1076,7 +1076,8 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Sistema de monitorització de qualitat de l'aire amb sensors IoT i alertes automàtiques"
       },
       "featuredPartners": [
-        "CINK"
+        "CINK",
+        "PREDA"
       ],
       "featuredPartnerDetails": [
         {
@@ -1105,6 +1106,34 @@ export const SECTORS_CONFIG = {
           "role": "beneficiary",
           "url": "https://cinkventuring.es/",
           "logo": "cink.png",
+          "found": true
+        },
+        {
+          "id": "preda",
+          "acronym": "PREDA",
+          "name": {
+            "es": "Development Agency of City of Prijedor “PREDA”",
+            "en": "Development Agency of City of Prijedor “PREDA”",
+            "va": "Development Agency of City of Prijedor “PREDA”"
+          },
+          "country": "BA",
+          "city": {
+            "es": "Prijedor",
+            "en": "Prijedor",
+            "va": "Prijedor"
+          },
+          "categories": [
+            "admin"
+          ],
+          "category": "admin",
+          "categoryLabel": {
+            "es": "Administración Pública",
+            "en": "Public Administration",
+            "va": "Administració Pública"
+          },
+          "role": "beneficiary",
+          "url": "www.predaprijedor.com",
+          "logo": "preda.png",
           "found": true
         }
       ],
@@ -1244,7 +1273,16 @@ export const SECTORS_CONFIG = {
         "hasFeaturedPartners": true,
         "unresolvedFeaturedPartners": []
       },
-      "sections": {}
+      "sections": {
+        "stakeholderTypes": true,
+        "fpSkills": true,
+        "masterTopics": true,
+        "teacherRelevance": true,
+        "keywordsDescription": true,
+        "keywords": true,
+        "exampleChallenge": true,
+        "featuredPartners": true
+      }
     },
     {
       "id": "agr",
@@ -1443,7 +1481,8 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Detecció de plagues en vinyes mitjançant anàlisi d'imatges de dron"
       },
       "featuredPartners": [
-        "JOIST"
+        "JOIST",
+        "PREDA"
       ],
       "featuredPartnerDetails": [
         {
@@ -1472,6 +1511,34 @@ export const SECTORS_CONFIG = {
           "role": "beneficiary",
           "url": "https://joistpark.eu/en/",
           "logo": "joist.png",
+          "found": true
+        },
+        {
+          "id": "preda",
+          "acronym": "PREDA",
+          "name": {
+            "es": "Development Agency of City of Prijedor “PREDA”",
+            "en": "Development Agency of City of Prijedor “PREDA”",
+            "va": "Development Agency of City of Prijedor “PREDA”"
+          },
+          "country": "BA",
+          "city": {
+            "es": "Prijedor",
+            "en": "Prijedor",
+            "va": "Prijedor"
+          },
+          "categories": [
+            "admin"
+          ],
+          "category": "admin",
+          "categoryLabel": {
+            "es": "Administración Pública",
+            "en": "Public Administration",
+            "va": "Administració Pública"
+          },
+          "role": "beneficiary",
+          "url": "www.predaprijedor.com",
+          "logo": "preda.png",
           "found": true
         }
       ],
@@ -1595,7 +1662,16 @@ export const SECTORS_CONFIG = {
         "hasFeaturedPartners": true,
         "unresolvedFeaturedPartners": []
       },
-      "sections": {}
+      "sections": {
+        "stakeholderTypes": true,
+        "fpSkills": true,
+        "masterTopics": true,
+        "teacherRelevance": true,
+        "keywordsDescription": true,
+        "keywords": true,
+        "exampleChallenge": true,
+        "featuredPartners": true
+      }
     },
     {
       "id": "cci",
@@ -2502,7 +2578,8 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Chatbot multilingüe per a orientació ciutadana en serveis administratius municipals"
       },
       "featuredPartners": [
-        "TUV.IT"
+        "TUV.IT",
+        "PREDA"
       ],
       "featuredPartnerDetails": [
         {
@@ -2531,6 +2608,34 @@ export const SECTORS_CONFIG = {
           "role": "certification",
           "url": "https://tuv-thuringen.it/",
           "logo": "tuvit.png",
+          "found": true
+        },
+        {
+          "id": "preda",
+          "acronym": "PREDA",
+          "name": {
+            "es": "Development Agency of City of Prijedor “PREDA”",
+            "en": "Development Agency of City of Prijedor “PREDA”",
+            "va": "Development Agency of City of Prijedor “PREDA”"
+          },
+          "country": "BA",
+          "city": {
+            "es": "Prijedor",
+            "en": "Prijedor",
+            "va": "Prijedor"
+          },
+          "categories": [
+            "admin"
+          ],
+          "category": "admin",
+          "categoryLabel": {
+            "es": "Administración Pública",
+            "en": "Public Administration",
+            "va": "Administració Pública"
+          },
+          "role": "beneficiary",
+          "url": "www.predaprijedor.com",
+          "logo": "preda.png",
           "found": true
         }
       ],
@@ -2766,7 +2871,16 @@ export const SECTORS_CONFIG = {
         "hasFeaturedPartners": true,
         "unresolvedFeaturedPartners": []
       },
-      "sections": {}
+      "sections": {
+        "stakeholderTypes": true,
+        "fpSkills": true,
+        "masterTopics": true,
+        "teacherRelevance": true,
+        "keywordsDescription": true,
+        "keywords": true,
+        "exampleChallenge": true,
+        "featuredPartners": true
+      }
     }
   ],
   "ctaBlock": {
