@@ -255,7 +255,8 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Detecció automàtica de defectes en línia de producció amb visió artificial"
       },
       "featuredPartners": [
-        "C-LINK"
+        "C-LINK",
+        "PREDA"
       ],
       "featuredPartnerDetails": [
         {
@@ -284,6 +285,34 @@ export const SECTORS_CONFIG = {
           "role": "beneficiary",
           "url": "https://culturalink.net/",
           "logo": "clink.png",
+          "found": true
+        },
+        {
+          "id": "preda",
+          "acronym": "PREDA",
+          "name": {
+            "es": "Development Agency of City of Prijedor “PREDA”",
+            "en": "Development Agency of City of Prijedor “PREDA”",
+            "va": "Development Agency of City of Prijedor “PREDA”"
+          },
+          "country": "BA",
+          "city": {
+            "es": "Prijedor",
+            "en": "Prijedor",
+            "va": "Prijedor"
+          },
+          "categories": [
+            "admin"
+          ],
+          "category": "admin",
+          "categoryLabel": {
+            "es": "Administración Pública",
+            "en": "Public Administration",
+            "va": "Administració Pública"
+          },
+          "role": "beneficiary",
+          "url": "www.predaprijedor.com",
+          "logo": "preda.png",
           "found": true
         }
       ],
@@ -1765,7 +1794,8 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Digitalització i descripció automàtica de fons arxivístics per a accés obert"
       },
       "featuredPartners": [
-        "UVEG"
+        "UVEG",
+        "PREDA"
       ],
       "featuredPartnerDetails": [
         {
@@ -1794,6 +1824,34 @@ export const SECTORS_CONFIG = {
           "role": "coordinator",
           "url": "https://www.uv.es/",
           "logo": "uveg.png",
+          "found": true
+        },
+        {
+          "id": "preda",
+          "acronym": "PREDA",
+          "name": {
+            "es": "Development Agency of City of Prijedor “PREDA”",
+            "en": "Development Agency of City of Prijedor “PREDA”",
+            "va": "Development Agency of City of Prijedor “PREDA”"
+          },
+          "country": "BA",
+          "city": {
+            "es": "Prijedor",
+            "en": "Prijedor",
+            "va": "Prijedor"
+          },
+          "categories": [
+            "admin"
+          ],
+          "category": "admin",
+          "categoryLabel": {
+            "es": "Administración Pública",
+            "en": "Public Administration",
+            "va": "Administració Pública"
+          },
+          "role": "beneficiary",
+          "url": "www.predaprijedor.com",
+          "logo": "preda.png",
           "found": true
         }
       ],
@@ -1933,7 +1991,16 @@ export const SECTORS_CONFIG = {
         "hasFeaturedPartners": true,
         "unresolvedFeaturedPartners": []
       },
-      "sections": {}
+      "sections": {
+        "stakeholderTypes": true,
+        "fpSkills": true,
+        "masterTopics": true,
+        "teacherRelevance": true,
+        "keywordsDescription": true,
+        "keywords": true,
+        "exampleChallenge": true,
+        "featuredPartners": true
+      }
     },
     {
       "id": "hou",
