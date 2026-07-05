@@ -1085,9 +1085,9 @@ export const NETWORK_CONFIG = {
       {
         "id": "preda",
         "name": {
-          "es": "Agencia Desarrollo Prijedor",
-          "en": "Agencia Desarrollo Prijedor",
-          "va": "Agencia Desarrollo Prijedor"
+          "es": "Development Agency of City of Prijedor “PREDA”",
+          "en": "Development Agency of City of Prijedor “PREDA”",
+          "va": "Development Agency of City of Prijedor “PREDA”"
         },
         "acronym": "PREDA",
         "country": "BA",
@@ -1125,22 +1125,37 @@ export const NETWORK_CONFIG = {
             "es": "Servicios No Turísticos",
             "en": "Non-Touristic Services",
             "va": "Serveis No Turístics"
+          },
+          {
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
+          },
+          {
+            "es": "Vivienda",
+            "en": "Housing",
+            "va": "Habitatge"
+          },
+          {
+            "es": "Energía y Medio Ambiente",
+            "en": "Energy and Environment",
+            "va": "Energia i Medi Ambient"
+          },
+          {
+            "es": "Movilidad y Transporte",
+            "en": "Mobility and Transport",
+            "va": "Mobilitat i Transport"
           }
         ],
         "expertise": [
           {
-            "es": "Desarrollo regional",
-            "en": "Regional development",
-            "va": "Desenvolupament regional"
-          },
-          {
-            "es": "Apoyo a PYMES",
-            "en": "SME support",
-            "va": "Suport a PIMES"
+            "es": "Desarrollo local y regional",
+            "en": "Local and regional development",
+            "va": "Desenvolupament local i regional"
           }
         ],
         "role": "beneficiary",
-        "url": "https://razvojnaagencija.predaprijedor.com/",
+        "url": "www.predaprijedor.com",
         "logo": "preda.png"
       },
       {
