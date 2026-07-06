@@ -1325,9 +1325,9 @@ export const NETWORK_CONFIG = {
           "va": "Empresa i Innovació"
         },
         "contribution": {
-          "es": "Contribuye a la cocreación de contenidos, la construcción de comunidad y la comunicación, aportando experiencia en ecosistemas culturales y creativos.",
-          "en": "Contributes to content co-creation, community building and communication, bringing expertise in cultural and creative ecosystems.",
-          "va": "Contribueix a la cocreació de continguts, la construcció de comunitat i la comunicació, aportant experiència en ecosistemes culturals i creatius."
+          "es": "Contribuye a la cocreación de contenidos y la construcción de comunidad, aportando experiencia en ecosistemas culturales y creativos.",
+          "en": "Contributes to content co-creation and community building, bringing expertise in cultural and creative ecosystems.",
+          "va": "Contribueix a la cocreació de continguts i la construcció de comunitat, aportant experiència en ecosistemes culturals i creatius."
         },
         "sectors": [
           {
