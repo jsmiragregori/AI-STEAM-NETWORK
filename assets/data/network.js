@@ -479,19 +479,9 @@ export const NETWORK_CONFIG = {
         },
         "sectors": [
           {
-            "es": "Agroalimentario",
-            "en": "Agrifood",
-            "va": "Agroalimentari"
-          },
-          {
             "es": "Energía y Medio Ambiente",
             "en": "Energy and Environment",
             "va": "Energia i Medi Ambient"
-          },
-          {
-            "es": "Vivienda",
-            "en": "Housing",
-            "va": "Habitatge"
           },
           {
             "es": "Manufactura",
