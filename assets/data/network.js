@@ -1314,16 +1314,16 @@ export const NETWORK_CONFIG = {
       {
         "id": "clink",
         "name": {
-          "es": "CulturaLink SL",
-          "en": "CulturaLink SL",
-          "va": "CulturaLink SL"
+          "es": "Culturalink SL",
+          "en": "Culturalink SL",
+          "va": "Culturalink SL"
         },
         "acronym": "C-LINK",
         "country": "ES",
         "city": {
-          "es": "Las Palmas",
-          "en": "Las Palmas",
-          "va": "Las Palmas"
+          "es": "Valencia",
+          "en": "Valencia",
+          "va": "València"
         },
         "categories": [
           "empresa"
@@ -1335,27 +1335,27 @@ export const NETWORK_CONFIG = {
           "va": "Empresa i Innovació"
         },
         "contribution": {
-          "es": "Contribuye a la co-creación de contenidos, comunidad y comunicación desde la gestión cultural y la difusión.",
-          "en": "Contributes to content co-creation, community building and communication through cultural management and dissemination.",
-          "va": "Contribueix a la cocreació de continguts, comunitat i comunicació des de la gestió cultural i la difusió."
+          "es": "Contribuye a la cocreación de contenidos, la construcción de comunidad y la comunicación, aportando experiencia en ecosistemas culturales y creativos.",
+          "en": "Contributes to content co-creation, community building and communication, bringing expertise in cultural and creative ecosystems.",
+          "va": "Contribueix a la cocreació de continguts, la construcció de comunitat i la comunicació, aportant experiència en ecosistemes culturals i creatius."
         },
         "sectors": [
           {
-            "es": "Manufactura",
-            "en": "Manufacturing",
-            "va": "Manufactura"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
           }
         ],
         "expertise": [
           {
-            "es": "Gestión cultural",
-            "en": "Cultural management",
-            "va": "Gestió cultural"
+            "es": "Política cultural",
+            "en": "Cultural policy",
+            "va": "Política cultural"
           },
           {
-            "es": "Comunicación y difusión",
-            "en": "Communication and dissemination",
-            "va": "Comunicació i difusió"
+            "es": "Investigación aplicada",
+            "en": "Applied research",
+            "va": "Investigació aplicada"
           }
         ],
         "role": "beneficiary",

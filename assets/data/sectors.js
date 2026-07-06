@@ -263,15 +263,15 @@ export const SECTORS_CONFIG = {
           "id": "clink",
           "acronym": "C-LINK",
           "name": {
-            "es": "CulturaLink SL",
-            "en": "CulturaLink SL",
-            "va": "CulturaLink SL"
+            "es": "Culturalink SL",
+            "en": "Culturalink SL",
+            "va": "Culturalink SL"
           },
           "country": "ES",
           "city": {
-            "es": "Las Palmas",
-            "en": "Las Palmas",
-            "va": "Las Palmas"
+            "es": "Valencia",
+            "en": "Valencia",
+            "va": "València"
           },
           "categories": [
             "empresa"
@@ -1871,7 +1871,8 @@ export const SECTORS_CONFIG = {
       },
       "featuredPartners": [
         "UVEG",
-        "PREDA"
+        "PREDA",
+        "C-LINK"
       ],
       "featuredPartnerDetails": [
         {
@@ -1928,6 +1929,34 @@ export const SECTORS_CONFIG = {
           "role": "beneficiary",
           "url": "https://www.predaprijedor.com",
           "logo": "preda.png",
+          "found": true
+        },
+        {
+          "id": "clink",
+          "acronym": "C-LINK",
+          "name": {
+            "es": "Culturalink SL",
+            "en": "Culturalink SL",
+            "va": "Culturalink SL"
+          },
+          "country": "ES",
+          "city": {
+            "es": "Valencia",
+            "en": "Valencia",
+            "va": "València"
+          },
+          "categories": [
+            "empresa"
+          ],
+          "category": "empresa",
+          "categoryLabel": {
+            "es": "Empresa e Innovación",
+            "en": "Business & Innovation",
+            "va": "Empresa i Innovació"
+          },
+          "role": "beneficiary",
+          "url": "https://culturalink.net/",
+          "logo": "clink.png",
           "found": true
         }
       ],
