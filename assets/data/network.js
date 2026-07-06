@@ -523,9 +523,9 @@ export const NETWORK_CONFIG = {
       {
         "id": "ntnu",
         "name": {
-          "es": "NTNU – Norwegian Univ. of S&T",
-          "en": "NTNU – Norwegian Univ. of S&T",
-          "va": "NTNU – Norwegian Univ. of S&T"
+          "es": "Norwegian University of Science and Technology",
+          "en": "Norwegian University of Science and Technology",
+          "va": "Norwegian University of Science and Technology"
         },
         "acronym": "NTNU",
         "country": "NO",
@@ -555,19 +555,14 @@ export const NETWORK_CONFIG = {
             "va": "Energia i Medi Ambient"
           },
           {
-            "es": "Vivienda",
-            "en": "Housing",
-            "va": "Habitatge"
+            "es": "Industrias Culturales y Creativas",
+            "en": "Cultural and Creative Industries",
+            "va": "Indústries Culturals i Creatives"
           },
           {
-            "es": "Manufactura",
-            "en": "Manufacturing",
-            "va": "Manufactura"
-          },
-          {
-            "es": "Movilidad y Transporte",
-            "en": "Mobility and Transport",
-            "va": "Mobilitat i Transport"
+            "es": "Servicios No Turísticos",
+            "en": "Non-Touristic Services",
+            "va": "Serveis No Turístics"
           }
         ],
         "expertise": [
@@ -580,6 +575,11 @@ export const NETWORK_CONFIG = {
             "es": "IA aplicada",
             "en": "Applied AI",
             "va": "IA aplicada"
+          },
+          {
+            "es": "Tecnologías del aprendizaje",
+            "en": "Learning Technologies",
+            "va": "Tecnologies de l'aprenentatge"
           }
         ],
         "role": "beneficiary",
