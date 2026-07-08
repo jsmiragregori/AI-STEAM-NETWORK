@@ -1361,9 +1361,9 @@ export const NETWORK_CONFIG = {
           "va": "Empresa i Innovació"
         },
         "contribution": {
-          "es": "Impulsa la co-creación de contenidos iniciales y aporta emprendimiento e innovación educativa al ecosistema AI-STEAM.",
-          "en": "Drives initial content co-creation and brings entrepreneurship and educational innovation to the AI-STEAM ecosystem.",
-          "va": "Impulsa la cocreació de continguts inicials i aporta emprenedoria i innovació educativa a l'ecosistema AI-STEAM."
+          "es": "Impulsa la co-creación de contenidos iniciales y aporta experiencia en emprendimiento y consultoría de innovación al ecosistema AI-STEAM.",
+          "en": "Drives initial content co-creation and brings entrepreneurship and innovation consulting expertise to the AI-STEAM ecosystem.",
+          "va": "Impulsa la cocreació de continguts inicials i aporta experiència en emprenedoria i consultoria d'innovació a l'ecosistema AI-STEAM."
         },
         "sectors": [
           {
@@ -1379,9 +1379,9 @@ export const NETWORK_CONFIG = {
             "va": "Emprenedoria"
           },
           {
-            "es": "Innovación educativa",
-            "en": "Educational innovation",
-            "va": "Innovació educativa"
+            "es": "Consultoría en innovación",
+            "en": "Innovation consulting",
+            "va": "Consultoria en innovació"
           }
         ],
         "role": "beneficiary",
