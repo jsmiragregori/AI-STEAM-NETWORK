@@ -1112,29 +1112,14 @@ export const NETWORK_CONFIG = {
             "va": "Manufactura"
           },
           {
-            "es": "Servicios No Turísticos",
-            "en": "Non-Touristic Services",
-            "va": "Serveis No Turístics"
-          },
-          {
             "es": "Industrias Culturales y Creativas",
             "en": "Cultural and Creative Industries",
             "va": "Indústries Culturals i Creatives"
           },
           {
-            "es": "Vivienda",
-            "en": "Housing",
-            "va": "Habitatge"
-          },
-          {
             "es": "Energía y Medio Ambiente",
             "en": "Energy and Environment",
             "va": "Energia i Medi Ambient"
-          },
-          {
-            "es": "Movilidad y Transporte",
-            "en": "Mobility and Transport",
-            "va": "Mobilitat i Transport"
           }
         ],
         "expertise": [

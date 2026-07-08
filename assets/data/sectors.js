@@ -2607,8 +2607,7 @@ export const SECTORS_CONFIG = {
         "va": "[DEMO] Chatbot multilingüe per a orientació ciutadana en serveis administratius municipals"
       },
       "featuredPartners": [
-        "TUV.IT",
-        "PREDA"
+        "TUV.IT"
       ],
       "featuredPartnerDetails": [
         {
@@ -2637,34 +2636,6 @@ export const SECTORS_CONFIG = {
           "role": "certification",
           "url": "https://tuv-thuringen.it/",
           "logo": "tuvit.png",
-          "found": true
-        },
-        {
-          "id": "preda",
-          "acronym": "PREDA",
-          "name": {
-            "es": "Development Agency of City of Prijedor “PREDA”",
-            "en": "Development Agency of City of Prijedor “PREDA”",
-            "va": "Development Agency of City of Prijedor “PREDA”"
-          },
-          "country": "BA",
-          "city": {
-            "es": "Prijedor",
-            "en": "Prijedor",
-            "va": "Prijedor"
-          },
-          "categories": [
-            "admin"
-          ],
-          "category": "admin",
-          "categoryLabel": {
-            "es": "Administración Pública",
-            "en": "Public Administration",
-            "va": "Administració Pública"
-          },
-          "role": "beneficiary",
-          "url": "https://www.predaprijedor.com",
-          "logo": "preda.png",
           "found": true
         }
       ],
