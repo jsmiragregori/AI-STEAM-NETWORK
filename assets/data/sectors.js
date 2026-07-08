@@ -1879,9 +1879,9 @@ export const SECTORS_CONFIG = {
           "id": "uveg",
           "acronym": "UVEG",
           "name": {
-            "es": "Universitat de València",
-            "en": "University of Valencia",
-            "va": "Universitat de València"
+            "es": "Universitat de València / Econcult",
+            "en": "University of Valencia / Econcult",
+            "va": "Universitat de València / Econcult"
           },
           "country": "ES",
           "city": {
@@ -1899,7 +1899,7 @@ export const SECTORS_CONFIG = {
             "va": "Educació Superior i I+D+I"
           },
           "role": "coordinator",
-          "url": "https://www.uv.es/",
+          "url": "http://econcult.eu",
           "logo": "uveg.png",
           "found": true
         },

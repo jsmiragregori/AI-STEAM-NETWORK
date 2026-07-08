@@ -350,9 +350,9 @@ export const NETWORK_CONFIG = {
       {
         "id": "uveg",
         "name": {
-          "es": "Universitat de València",
-          "en": "University of Valencia",
-          "va": "Universitat de València"
+          "es": "Universitat de València / Econcult",
+          "en": "University of Valencia / Econcult",
+          "va": "Universitat de València / Econcult"
         },
         "acronym": "UVEG",
         "country": "ES",
@@ -395,7 +395,7 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "coordinator",
-        "url": "https://www.uv.es/",
+        "url": "http://econcult.eu",
         "logo": "uveg.png"
       },
       {
