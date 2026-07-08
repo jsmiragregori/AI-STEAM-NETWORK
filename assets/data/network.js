@@ -422,9 +422,9 @@ export const NETWORK_CONFIG = {
           "va": "Educació Superior i I+D+I"
         },
         "contribution": {
-          "es": "Lidera comunicación, eventos públicos y convocatorias en cascada, conectando el programa con comunidades educativas y creativas.",
-          "en": "Leads communication, public events and cascade funding calls, connecting the programme with education and creative communities.",
-          "va": "Lidera comunicació, esdeveniments públics i convocatòries en cascada, connectant el programa amb comunitats educatives i creatives."
+          "es": "Contribuye a la comunicación y las actividades públicas del proyecto, tendiendo puentes con comunidades educativas, creativas y profesionales.",
+          "en": "Contributes to project communication and public activities, building bridges with educational, creative and professional communities.",
+          "va": "Contribueix a la comunicació i les activitats públiques del projecte, tendint ponts amb comunitats educatives, creatives i professionals."
         },
         "sectors": [
           {
