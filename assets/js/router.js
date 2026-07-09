@@ -14,5 +14,16 @@ export function navigateTo(view, params = {}) {
   activeView = view;
   viewParams = params;
   window.scrollTo(0, 0);
+  history.pushState({ appView: view }, '');
+  import('./main.js').then(m => m.renderApp());
+}
+
+// Restaura una vista desde el historial del navegador (popstate) SIN apilar una
+// nueva entrada. La usa el listener global de main.js para back/forward.
+export function syncView(view) {
+  if (!VIEWS.includes(view)) return;
+  activeView = view;
+  viewParams = {};
+  window.scrollTo(0, 0);
   import('./main.js').then(m => m.renderApp());
 }

@@ -16,6 +16,7 @@ const appState = {
   governanceTab: 'estructura',
   trainingTab: 'fp',
   expandedSector: null,
+  sectorsScrollTarget: null,
   newsCategoryFilter: null,
   selectedNewsId: null,
 };

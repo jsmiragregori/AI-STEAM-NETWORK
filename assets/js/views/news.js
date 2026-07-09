@@ -1,5 +1,6 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
+import { getActiveView } from '../router.js';
 import { NEWS_CONFIG } from '../../data/news.js';
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
@@ -438,7 +439,9 @@ export function mount() {
   if (!_popstateAttached) {
     _popstateAttached = true;
     window.addEventListener('popstate', () => {
-      if (getState('selectedNewsId') !== null) {
+      // Solo cerrar el detalle si Actualidad es la vista activa: evita re-inyectar
+      // la lista de noticias sobre otra vista al volver con el botón "atrás".
+      if (getActiveView() === 'actualidad' && getState('selectedNewsId') !== null) {
         goBackToList();
       }
     });

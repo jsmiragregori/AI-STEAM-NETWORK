@@ -414,6 +414,20 @@ function navigateSector(kind, sectorId) {
 }
 
 export function mount() {
+  // Scroll one-shot al sector abierto desde la home (consume la clave para no
+  // re-scrollear en toggles posteriores, que re-ejecutan mount vía renderApp).
+  const scrollId = getState('sectorsScrollTarget');
+  if (scrollId) {
+    setState('sectorsScrollTarget', null);
+    const el = document.querySelector(`article [data-toggle="${scrollId}"]`)?.closest('article');
+    if (el) {
+      requestAnimationFrame(() => {
+        const y = el.getBoundingClientRect().top + window.pageYOffset - 120;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+    }
+  }
+
   document.querySelectorAll('[data-toggle]').forEach(btn => {
     btn.addEventListener('click', event => {
       if (event.target.closest('[data-sector-nav], [data-sector-content], a')) return;

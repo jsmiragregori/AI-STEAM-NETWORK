@@ -1,7 +1,7 @@
 import { renderHeader, mountHeader } from './components/header.js';
 import { renderFooter, mountFooter } from './components/footer.js';
 import { renderCookieBanner, mountCookieBanner } from './components/cookie-banner.js';
-import { getActiveView } from './router.js';
+import { getActiveView, syncView } from './router.js';
 import { getLanguage } from './i18n.js';
 import * as views from './views/index.js';
 
@@ -47,7 +47,18 @@ export function renderApp() {
   if (window.lucide) window.lucide.createIcons();
 }
 
+// Back/forward del navegador entre vistas de nivel superior. Los detalles
+// por-vista (p.ej. Actualidad) apilan sus propias entradas sin `appView` y las
+// gestiona su propio listener; aquí solo actuamos si cambia la vista activa.
+window.addEventListener('popstate', (e) => {
+  const view = e.state?.appView;
+  if (view && view !== getActiveView()) syncView(view);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   syncHtmlLang();
   renderApp();
+  // Entrada base del historial = vista inicial (Inicio), para que "atrás"
+  // desde la primera navegación vuelva a la landing.
+  history.replaceState({ appView: getActiveView() }, '');
 });

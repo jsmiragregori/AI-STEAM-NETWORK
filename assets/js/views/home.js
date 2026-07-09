@@ -333,7 +333,7 @@ function renderSectorsBlock() {
   const cards = (block.cards || []).map(card => {
     const icon = SECTOR_ICONS[card.id] || 'shapes';
     return `
-    <button data-nav="sectores" class="rd-card rd-card-grad-violet rd-card-hover flex flex-col items-center justify-center text-center cursor-pointer group" style="padding:2rem 1rem" aria-label="${localized(card.label)}">
+    <button data-nav="sectores" data-sector-open="${card.id}" class="rd-card rd-card-grad-violet rd-card-hover flex flex-col items-center justify-center text-center cursor-pointer group" style="padding:2rem 1rem" aria-label="${localized(card.label)}">
       <div class="rd-icon-circle mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
         <i data-lucide="${icon}" class="w-6 h-6 text-eu-blue"></i>
       </div>
@@ -479,6 +479,13 @@ export function mount() {
         setState('networkSector', 'todos');
         setState('networkSearch', '');
         setState('networkPage', 0);
+      }
+      // Card de sector concreto → abrir ese sector y hacer scroll a su card.
+      // Botón "ver todos"/heading (sin data-sector-open) → lista colapsada.
+      if (btn.dataset.nav === 'sectores') {
+        const sectorId = btn.dataset.sectorOpen || null;
+        setState('expandedSector', sectorId);
+        setState('sectorsScrollTarget', sectorId);
       }
       navigateTo(btn.dataset.nav);
     });
