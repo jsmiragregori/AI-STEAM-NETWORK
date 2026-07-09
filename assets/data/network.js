@@ -1412,9 +1412,9 @@ export const NETWORK_CONFIG = {
           "va": "Societat Civil i ONG"
         },
         "contribution": {
-          "es": "Lidera análisis de políticas STEAM y planes de explotación, aportando visión europea de gobernanza digital.",
-          "en": "Leads STEAM policy analysis and exploitation plans, bringing a European perspective on digital governance.",
-          "va": "Lidera anàlisi de polítiques STEAM i plans d'explotació, aportant visió europea de governança digital."
+          "es": "Lidera análisis de políticas STEAM y aprovechamiento de resultados, aportando visión europea de gobernanza digital.",
+          "en": "Leads STEAM policy analysis and results uptake, bringing a European perspective on digital governance.",
+          "va": "Lidera anàlisi de polítiques STEAM i aprofitament de resultats, aportant visió europea de governança digital."
         },
         "sectors": [
           {

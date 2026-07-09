@@ -1077,7 +1077,8 @@ export const SECTORS_CONFIG = {
       },
       "featuredPartners": [
         "CINK",
-        "PREDA"
+        "PREDA",
+        "LC"
       ],
       "featuredPartnerDetails": [
         {
@@ -1134,6 +1135,34 @@ export const SECTORS_CONFIG = {
           "role": "beneficiary",
           "url": "https://www.predaprijedor.com",
           "logo": "preda.png",
+          "found": true
+        },
+        {
+          "id": "lc",
+          "acronym": "LC",
+          "name": {
+            "es": "The Lisbon Council",
+            "en": "The Lisbon Council",
+            "va": "The Lisbon Council"
+          },
+          "country": "BE",
+          "city": {
+            "es": "Bruselas",
+            "en": "Brussels",
+            "va": "Brussel·les"
+          },
+          "categories": [
+            "sociedad"
+          ],
+          "category": "sociedad",
+          "categoryLabel": {
+            "es": "Sociedad Civil y ONG",
+            "en": "Civil Society & NGOs",
+            "va": "Societat Civil i ONG"
+          },
+          "role": "beneficiary",
+          "url": "https://lisboncouncil.net/",
+          "logo": "lc.png",
           "found": true
         }
       ],
@@ -1872,7 +1901,8 @@ export const SECTORS_CONFIG = {
       "featuredPartners": [
         "UVEG",
         "PREDA",
-        "C-LINK"
+        "C-LINK",
+        "LC"
       ],
       "featuredPartnerDetails": [
         {
@@ -1957,6 +1987,34 @@ export const SECTORS_CONFIG = {
           "role": "beneficiary",
           "url": "https://culturalink.net/",
           "logo": "clink.png",
+          "found": true
+        },
+        {
+          "id": "lc",
+          "acronym": "LC",
+          "name": {
+            "es": "The Lisbon Council",
+            "en": "The Lisbon Council",
+            "va": "The Lisbon Council"
+          },
+          "country": "BE",
+          "city": {
+            "es": "Bruselas",
+            "en": "Brussels",
+            "va": "Brussel·les"
+          },
+          "categories": [
+            "sociedad"
+          ],
+          "category": "sociedad",
+          "categoryLabel": {
+            "es": "Sociedad Civil y ONG",
+            "en": "Civil Society & NGOs",
+            "va": "Societat Civil i ONG"
+          },
+          "role": "beneficiary",
+          "url": "https://lisboncouncil.net/",
+          "logo": "lc.png",
           "found": true
         }
       ],
