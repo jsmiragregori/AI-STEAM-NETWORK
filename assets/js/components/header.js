@@ -155,14 +155,21 @@ export function mountHeader() {
   // Logo → inicio
   document.getElementById('logo-btn')?.addEventListener('click', () => navigateTo('inicio'));
 
-  // Tabs nav
+  // Tabs nav — al elegir destino, cerrar el menú móvil antes de navegar
+  // (navigateTo → renderApp re-renderiza el header leyendo mobileMenuOpen)
   document.querySelectorAll('[data-view]').forEach(btn => {
-    btn.addEventListener('click', () => navigateTo(btn.dataset.view));
+    btn.addEventListener('click', () => {
+      setState('mobileMenuOpen', false);
+      navigateTo(btn.dataset.view);
+    });
   });
 
-  // Language buttons
+  // Language buttons — cerrar también el menú móvil al elegir idioma
   document.querySelectorAll('[data-lang]').forEach(btn => {
-    btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+    btn.addEventListener('click', () => {
+      setState('mobileMenuOpen', false);
+      setLanguage(btn.dataset.lang);
+    });
   });
 
   // Hamburger toggle
