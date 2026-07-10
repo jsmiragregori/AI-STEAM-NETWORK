@@ -395,7 +395,7 @@ export const NETWORK_CONFIG = {
           }
         ],
         "role": "coordinator",
-        "url": "http://econcult.eu",
+        "url": "https://www.uv.es/econcult",
         "logo": "uveg.png"
       },
       {

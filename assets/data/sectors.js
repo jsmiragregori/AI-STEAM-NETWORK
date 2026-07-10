@@ -1929,7 +1929,7 @@ export const SECTORS_CONFIG = {
             "va": "Educació Superior i I+D+I"
           },
           "role": "coordinator",
-          "url": "http://econcult.eu",
+          "url": "https://www.uv.es/econcult",
           "logo": "uveg.png",
           "found": true
         },
