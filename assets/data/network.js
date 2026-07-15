@@ -911,9 +911,9 @@ export const NETWORK_CONFIG = {
       {
         "id": "CECU",
         "name": {
-          "es": "Conselleria de Educación (CECU)",
-          "en": "Department of Education (CECU)",
-          "va": "Conselleria d'Educació (CECU)"
+          "es": "Conselleria de Educación, Cultura y Universidades",
+          "en": "Department of Education, Culture and Universities",
+          "va": "Conselleria d'Educació, Cultura i Universitats"
         },
         "acronym": "CECU",
         "country": "ES",

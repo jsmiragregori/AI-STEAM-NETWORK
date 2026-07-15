@@ -1,5 +1,6 @@
 import { getState, setState } from '../state.js';
 import { NETWORK_CONFIG } from '../../data/network.js';
+import { getFlagAssetPath } from '../lib/flag-assets.js';
 
 // ── Static data ─────────────────────────────────────────────────────────────
 
@@ -208,7 +209,7 @@ function tabSocios(activeCategory, filterCountry) {
           <p class="font-extrabold text-eu-purple text-base leading-snug mb-0.5">${localized(p.name)}</p>
           <p class="text-sm text-gray-500 mb-1">${p.acronym} · ${localized(p.city)}</p>
           <div class="flex items-center gap-1.5">
-            <img src="https://flagcdn.com/20x15/${p.country.toLowerCase()}.png" alt="${countryLabel}" class="rounded-sm" />
+            <img src="${getFlagAssetPath(p.country, '20x15')}" alt="${countryLabel}" width="20" height="15" class="rounded-sm" />
             <span class="text-xs bg-eu-blue/10 text-eu-blue font-bold px-1.5 py-0.5 rounded">${countryLabel}</span>
           </div>
           ${pShowRole ? `<p class="text-sm text-eu-blue font-bold mt-2 mb-3">${roleLabel}</p>` : ''}
@@ -236,7 +237,7 @@ function tabSocios(activeCategory, filterCountry) {
     const name = getCountryName(c);
     return `
       <button data-net-country="${c}" class="rd-card rd-card-grad-violet rd-card-edge p-4 flex flex-col items-center gap-2 cursor-pointer text-center ${isActive ? 'ring-2 ring-eu-blue' : ''}">
-        <img src="https://flagcdn.com/48x36/${c.toLowerCase()}.png" alt="${name}" class="w-10 h-auto rounded-sm shadow-sm" />
+        <img src="${getFlagAssetPath(c, '48x36')}" alt="${name}" width="48" height="36" class="w-10 h-auto rounded-sm shadow-sm" />
         <p class="font-bold text-sm leading-tight text-eu-text">${name}</p>
         <span class="text-sm font-bold px-2 py-0.5 rounded-full bg-eu-blue/10 text-eu-blue">
           ${cnt} ${cnt === 1 ? (loc(pb.member) || '') : (loc(pb.members) || '')}
