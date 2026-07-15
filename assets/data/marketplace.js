@@ -3680,7 +3680,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ficha": {
         "file": "reto-personalizacion-itinerarios-fp-edu.pdf",
-        "publicPath": "/assets/downloads/marketplace/challenges/reto-personalizacion-itinerarios-fp-edu.pdf"
+        "publicPath": "assets/downloads/marketplace/challenges/reto-personalizacion-itinerarios-fp-edu.pdf"
       },
       "adhesionForm": {
         "url": "https://forms.cloud.microsoft/e/rUwScfwTPC"
@@ -3981,7 +3981,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ficha": {
         "file": "mentoring-ia-creativa-turismo-cultura.pdf",
-        "publicPath": "/assets/downloads/marketplace/mentorings/mentoring-ia-creativa-turismo-cultura.pdf"
+        "publicPath": "assets/downloads/marketplace/mentorings/mentoring-ia-creativa-turismo-cultura.pdf"
       },
       "adhesionForm": {
         "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufimy8pKaFjvbtEm6P80z2LuPxUNFhSTlNGTFpPMEdWNUwzTk8yVjYzTlpRQS4u"
@@ -5922,7 +5922,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ficha": {
         "file": "pilot-ia-diagnostico-cancer-piel-nts.pdf",
-        "publicPath": "/assets/downloads/marketplace/pilots/pilot-ia-diagnostico-cancer-piel-nts.pdf"
+        "publicPath": "assets/downloads/marketplace/pilots/pilot-ia-diagnostico-cancer-piel-nts.pdf"
       },
       "adhesionForm": {
         "url": "https://forms.cloud.microsoft/e/sC11Pyhaa7"
@@ -7885,7 +7885,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ficha": {
         "file": "eficiencia-energetica-edificios-hou.pdf",
-        "publicPath": "/assets/downloads/marketplace/cases/eficiencia-energetica-edificios-hou.pdf"
+        "publicPath": "assets/downloads/marketplace/cases/eficiencia-energetica-edificios-hou.pdf"
       },
       "adhesionForm": {
         "url": "https://forms.cloud.microsoft/e/fSBRuSr0sM"
@@ -9171,7 +9171,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ficha": {
         "file": "validation-etica-ia-seleccion-personal-adm.pdf",
-        "publicPath": "/assets/downloads/marketplace/validations/validation-etica-ia-seleccion-personal-adm.pdf"
+        "publicPath": "assets/downloads/marketplace/validations/validation-etica-ia-seleccion-personal-adm.pdf"
       },
       "adhesionForm": {
         "url": "https://forms.cloud.microsoft/e/ERLBsJwJ7Y"
@@ -10762,7 +10762,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ficha": {
         "file": "reto-control-calidad-vision-ia-mfg.pdf",
-        "publicPath": "/assets/downloads/marketplace/challenges/reto-control-calidad-vision-ia-mfg.pdf"
+        "publicPath": "assets/downloads/marketplace/challenges/reto-control-calidad-vision-ia-mfg.pdf"
       },
       "adhesionForm": {
         "url": "https://example.org/adhesion-demo"
@@ -18242,7 +18242,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ficha": {
           "file": "mentoring-ia-creativa-turismo-cultura.pdf",
-          "publicPath": "/assets/downloads/marketplace/mentorings/mentoring-ia-creativa-turismo-cultura.pdf"
+          "publicPath": "assets/downloads/marketplace/mentorings/mentoring-ia-creativa-turismo-cultura.pdf"
         },
         "adhesionForm": {
           "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufimy8pKaFjvbtEm6P80z2LuPxUNFhSTlNGTFpPMEdWNUwzTk8yVjYzTlpRQS4u"
@@ -21147,7 +21147,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ficha": {
           "file": "reto-personalizacion-itinerarios-fp-edu.pdf",
-          "publicPath": "/assets/downloads/marketplace/challenges/reto-personalizacion-itinerarios-fp-edu.pdf"
+          "publicPath": "assets/downloads/marketplace/challenges/reto-personalizacion-itinerarios-fp-edu.pdf"
         },
         "adhesionForm": {
           "url": "https://forms.cloud.microsoft/e/rUwScfwTPC"
@@ -22963,7 +22963,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ficha": {
           "file": "reto-control-calidad-vision-ia-mfg.pdf",
-          "publicPath": "/assets/downloads/marketplace/challenges/reto-control-calidad-vision-ia-mfg.pdf"
+          "publicPath": "assets/downloads/marketplace/challenges/reto-control-calidad-vision-ia-mfg.pdf"
         },
         "adhesionForm": {
           "url": "https://example.org/adhesion-demo"
@@ -23567,7 +23567,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ficha": {
           "file": "validation-etica-ia-seleccion-personal-adm.pdf",
-          "publicPath": "/assets/downloads/marketplace/validations/validation-etica-ia-seleccion-personal-adm.pdf"
+          "publicPath": "assets/downloads/marketplace/validations/validation-etica-ia-seleccion-personal-adm.pdf"
         },
         "adhesionForm": {
           "url": "https://forms.cloud.microsoft/e/ERLBsJwJ7Y"
@@ -26452,7 +26452,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ficha": {
           "file": "pilot-ia-diagnostico-cancer-piel-nts.pdf",
-          "publicPath": "/assets/downloads/marketplace/pilots/pilot-ia-diagnostico-cancer-piel-nts.pdf"
+          "publicPath": "assets/downloads/marketplace/pilots/pilot-ia-diagnostico-cancer-piel-nts.pdf"
         },
         "adhesionForm": {
           "url": "https://forms.cloud.microsoft/e/sC11Pyhaa7"
@@ -28907,7 +28907,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ficha": {
           "file": "eficiencia-energetica-edificios-hou.pdf",
-          "publicPath": "/assets/downloads/marketplace/cases/eficiencia-energetica-edificios-hou.pdf"
+          "publicPath": "assets/downloads/marketplace/cases/eficiencia-energetica-edificios-hou.pdf"
         },
         "adhesionForm": {
           "url": "https://forms.cloud.microsoft/e/fSBRuSr0sM"

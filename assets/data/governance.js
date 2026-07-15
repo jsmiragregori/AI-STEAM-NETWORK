@@ -2030,7 +2030,7 @@ export const GOVERNANCE_CONFIG = {
         "url": "https://aules.edu.gva.es/formaciodelprofessorat",
         "external": true,
         "file": "consortium-agreement.pdf",
-        "filePublicPath": "/assets/downloads/governance/consortium-agreement.pdf",
+        "filePublicPath": "assets/downloads/governance/consortium-agreement.pdf",
         "linkText": {
           "es": "",
           "en": "",
