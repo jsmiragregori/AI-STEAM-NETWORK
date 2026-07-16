@@ -1604,15 +1604,35 @@ export const NETWORK_CONFIG = {
     "formVisible": true,
     "membershipCtasVisible": true,
     "effectiveMembershipCtasVisible": true,
+    "formMode": "microsoftForms",
+    "microsoftForms": {
+      "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufim2QOZI2KzXdNkVDX-aJiHOVUMFc4QjI2SlU2M0lEV0lSN1E4TkhTMTdCSC4u",
+      "presentation": "newTab",
+      "title": {
+        "es": "Formulario de adhesión como stakeholder",
+        "en": "Stakeholder membership form",
+        "va": "Formulari d’adhesió com a grup d’interés"
+      },
+      "description": {
+        "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AI-STEAM.",
+        "en": "Complete the Microsoft Forms form to request your organization’s membership in the AI-STEAM Network.",
+        "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AI-STEAM."
+      },
+      "openExternalLabel": {
+        "es": "Conviértete en Stakeholder",
+        "en": "Become Stakeholder",
+        "va": "Converteix-te en Stakeholder"
+      }
+    },
     "tabTitle": {
       "es": "Stakeholders de la Red",
       "en": "Network Stakeholders",
       "va": "Grups d'interès de la Xarxa"
     },
     "description": {
-      "es": "Los stakeholders serán organizaciones externas adheridas voluntariamente a la red AI-STEAM. El <strong>proceso de adhesión está pendiente de validación</strong> por CECU, la coordinación del proyecto y los socios responsables; sus condiciones (incluido el Acuerdo de Gasto Cero) y las vías de participación se definirán cuando el proceso esté habilitado.",
-      "en": "Stakeholders will be external organizations voluntarily joined to the AI-STEAM network. The <strong>joining process is pending validation</strong> by CECU, project coordination and the partners responsible for it; its conditions (including the Zero-Cost Agreement) and participation channels will be defined once the process is enabled.",
-      "va": "Els grups d'interès seran organitzacions externes adherides voluntàriament a la xarxa AI-STEAM. El <strong>procés d'adhesió està pendent de validació</strong> per CECU, la coordinació del projecte i els socis responsables; les seues condicions (inclòs l'Acord de Despesa Zero) i les vies de participació es definiran quan el procés estiga habilitat."
+      "es": "Los stakeholders son organizaciones externas que participan voluntariamente en la red AI-STEAM. La incorporación se coordina con CECU, la coordinación del proyecto y los socios responsables del proceso, conforme a las condiciones y canales de participación aplicables.",
+      "en": "Stakeholders are external organizations that participate voluntarily in the AI-STEAM Network. Onboarding is coordinated with CECU, project coordination and the partners responsible for the process, in accordance with the applicable participation conditions and channels.",
+      "va": "Els grups d'interés són organitzacions externes que participen voluntàriament en la Xarxa AI-STEAM. La incorporació es coordina amb CECU, la coordinació del projecte i els socis responsables del procés, d'acord amb les condicions i els canals de participació aplicables."
     },
     "filterAll": {
       "es": "Todos",
@@ -1845,6 +1865,11 @@ export const NETWORK_CONFIG = {
         "es": "Enviar Solicitud",
         "en": "Submit Application",
         "va": "Enviar Solicitud"
+      },
+      "subtitle": {
+        "es": "",
+        "en": "",
+        "va": ""
       }
     },
     "chipVisibility": {

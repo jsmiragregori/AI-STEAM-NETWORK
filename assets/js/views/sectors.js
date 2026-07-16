@@ -2,6 +2,7 @@ import { t } from '../i18n.js';
 import { navigateTo } from '../router.js';
 import { getState, setState } from '../state.js';
 import { SECTORS_CONFIG } from '../../data/sectors.js';
+import { resolveMembershipAction } from '../utils/membership.js';
 
 
 const SECTOR_ICONS = {
@@ -335,21 +336,31 @@ function renderSectorCard(sector, sectorsT, index) {
 
 function renderCta(cta, sectorsT) {
   if (!cta || cta.visible === false) return '';
+  const membershipAction = resolveMembershipAction(cta, 'sectors');
+  const buttonVisible = cta.buttonVisible !== false && membershipAction.kind !== 'hidden';
+  const buttonLabel = esc(localized(cta.buttonLabel) || sectorsT?.ctaButton || '');
+  const buttonHtml = !buttonVisible
+    ? ''
+    : membershipAction.kind === 'external'
+      ? `
+        <a href="${membershipAction.url}" target="_blank" rel="noopener noreferrer" class="rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white" style="background:#FFF4E1">
+          ${buttonLabel}
+        </a>`
+      : `
+        <button id="sectors-cta-btn" class="rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white" style="background:#FFF4E1">
+          ${buttonLabel}
+        </button>`;
 
   return `
     <section class="px-6 pb-24">
       <div class="mx-auto max-w-7xl">
         <div class="rd-hero-gradient flex flex-col items-start justify-between gap-8 rounded-[2rem] p-10 text-white md:flex-row md:items-center md:p-12">
-          <div class="${cta.buttonVisible !== false ? 'max-w-2xl' : 'w-full'}">
+          <div class="${buttonVisible ? 'max-w-2xl' : 'w-full'}">
             <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/70">AI-STEAM Network</p>
             <h3 class="mt-3 text-3xl font-extrabold tracking-tight" style="color:#FFF4E1">${esc(localized(cta.title) || sectorsT?.cta || '')}</h3>
             <p class="mt-4 text-lg leading-relaxed text-white/85">${localized(cta.description) || sectorsT?.ctaDesc || ''}</p>
           </div>
-          ${cta.buttonVisible !== false ? `
-            <button id="sectors-cta-btn" class="rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white" style="background:#FFF4E1">
-              ${esc(localized(cta.buttonLabel) || sectorsT?.ctaButton || '')}
-            </button>
-          ` : ''}
+          ${buttonHtml}
         </div>
       </div>
     </section>

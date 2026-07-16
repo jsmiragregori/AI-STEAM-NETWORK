@@ -2,6 +2,7 @@ import { t, getLanguage } from '../i18n.js';
 import { navigateTo } from '../router.js';
 import { setState } from '../state.js';
 import { HOME_CONFIG } from '../../data/home.js';
+import { resolveMembershipAction } from '../utils/membership.js';
 
 
 
@@ -413,11 +414,17 @@ function renderHeroBlock() {
       <div class="text-xs font-bold uppercase tracking-wider" style="color:rgba(255,244,225,.75)">${loc(s.label)}</div>
     </div>`;
   }).join('');
-  const requestJoinButton = hero.buttons?.requestJoin?.visible !== false
-    ? `<button data-nav="red" data-membership-cta="true" class="rounded-full font-bold transition-all" style="border:2px solid rgba(255,255,255,.35);color:white;padding:.875rem 2rem">
-        ${loc(hero.buttons?.requestJoin)}
-      </button>`
-    : '';
+  const requestJoin = hero.buttons?.requestJoin || {};
+  const membershipAction = resolveMembershipAction(requestJoin, 'home');
+  const requestJoinButton = requestJoin.visible === false || membershipAction.kind === 'hidden'
+    ? ''
+    : membershipAction.kind === 'external'
+      ? `<a href="${membershipAction.url}" target="_blank" rel="noopener noreferrer" class="rounded-full font-bold transition-all" style="border:2px solid rgba(255,255,255,.35);color:white;padding:.875rem 2rem">
+          ${loc(requestJoin)}
+        </a>`
+      : `<button data-nav="red" data-membership-cta="true" class="rounded-full font-bold transition-all" style="border:2px solid rgba(255,255,255,.35);color:white;padding:.875rem 2rem">
+          ${loc(requestJoin)}
+        </button>`;
   return `
     <section class="rd-hero-gradient rd-hero-fill text-white px-6 py-20">
       <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -476,7 +483,7 @@ export function mount() {
         setState('networkTab', 'stakeholders');
         setState('networkShowForm', true);
         setState('networkCategory', 'todos');
-        setState('networkSector', 'todos');
+        setState('networkSector', null);
         setState('networkSearch', '');
         setState('networkPage', 0);
       }

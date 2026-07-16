@@ -1,6 +1,7 @@
 import { getState, setState } from '../state.js';
 import { NETWORK_CONFIG } from '../../data/network.js';
 import { getFlagAssetPath } from '../lib/flag-assets.js';
+import { resolveMembershipAction } from '../utils/membership.js';
 
 // ── Static data ─────────────────────────────────────────────────────────────
 
@@ -81,6 +82,15 @@ function localized(value) {
   const lang = getLang();
   if (typeof value === 'string') return value;
   return value?.[lang] || value?.es || '';
+}
+
+function esc(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
 }
 
 // Cuádruple hélice multi-eje: una organización puede pertenecer a uno o más
@@ -275,9 +285,9 @@ function tabStakeholders(activeCategory, showForm) {
   const shBlock = NETWORK_CONFIG?.stakeholdersBlock || {};
   const loc = obj => localized(obj) || '';
   const formVisible = shBlock.formVisible !== false;
-  const membershipCtasVisible = formVisible && shBlock.membershipCtasVisible !== false;
+  const membershipAction = resolveMembershipAction(shBlock, 'network');
   const effectiveShowForm = formVisible && showForm;
-  const showToggleButton = formVisible;
+  const showToggleButton = membershipAction.kind !== 'hidden';
 
   const shTexts = {
     description:       loc(shBlock.description),
@@ -294,6 +304,7 @@ function tabStakeholders(activeCategory, showForm) {
     showLabel:         loc(shBlock.showLabel)         || loc({ es: 'Mostrar', en: 'Show', va: 'Mostrar' }),
     showAllLabel:      loc(shBlock.showAllLabel)      || loc({ es: 'Todos', en: 'All', va: 'Tots' }),
     form: shBlock.form || {},
+    microsoftForms: shBlock.microsoftForms || {},
   };
   const pageSize = shBlock.pageSize || 12;
 
@@ -308,7 +319,7 @@ function tabStakeholders(activeCategory, showForm) {
 
   // ── Form HTML (shared by empty-state and full view) ──────────────────────────
   const f = shTexts.form;
-  const formHtml = effectiveShowForm ? `
+  const demoFormHtml = effectiveShowForm && membershipAction.kind === 'internal' ? `
     <div id="stakeholder-form" class="rd-card overflow-hidden mt-8" style="border:2px solid rgb(86 32 246/.3)">
       <div class="rd-ceja-grad px-6 py-4 flex items-center gap-3">
         <i data-lucide="user-plus" class="w-5 h-5" style="color:#fff"></i>
@@ -393,14 +404,51 @@ function tabStakeholders(activeCategory, showForm) {
       </div>
     </div>` : '';
 
+  const microsoftForms = shTexts.microsoftForms;
+  const externalTitle = esc(loc(microsoftForms.title) || shTexts.requestMembership);
+  const externalDescription = esc(loc(microsoftForms.description));
+  const externalLabel = esc(loc(microsoftForms.openExternalLabel) || shTexts.requestMembership);
+  const iframeFormHtml = effectiveShowForm && membershipAction.kind === 'embed' ? `
+    <div id="stakeholder-form" class="rd-card overflow-hidden mt-8" style="border:2px solid rgb(86 32 246/.3)">
+      <div class="rd-ceja-grad px-6 py-4 flex items-center gap-3">
+        <i data-lucide="user-plus" class="w-5 h-5" style="color:#fff"></i>
+        <h2 class="text-lg font-extrabold" style="color:#fff">${externalTitle}</h2>
+      </div>
+      <div class="p-6 rd-card-grad-beige">
+        ${externalDescription ? `<p class="text-base text-gray-600 mb-5 leading-relaxed">${externalDescription}</p>` : ''}
+        <a href="${membershipAction.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors mb-5">
+          <i data-lucide="external-link" class="w-4 h-4"></i>
+          ${externalLabel}
+        </a>
+        <iframe
+          src="${membershipAction.url}"
+          title="${externalTitle}"
+          loading="lazy"
+          style="display:block;width:100%;height:clamp(32rem,75vh,52rem);border:0;border-radius:1rem"
+        ></iframe>
+      </div>
+    </div>` : '';
+  const formHtml = membershipAction.kind === 'embed' ? iframeFormHtml : demoFormHtml;
+
+  const renderMembershipControl = (id, className) => {
+    if (!showToggleButton) return '';
+    if (membershipAction.kind === 'external') {
+      return `<a href="${membershipAction.url}" target="_blank" rel="noopener noreferrer" class="${className}">
+        <i data-lucide="external-link" class="w-4 h-4"></i>
+        ${esc(shTexts.requestMembership)}
+      </a>`;
+    }
+    return `<button id="${id}" class="${className}">
+      <i data-lucide="user-plus" class="w-4 h-4"></i>
+      ${effectiveShowForm ? shTexts.closeForm : shTexts.requestMembership}
+    </button>`;
+  };
+
   // ── Header bar (description + membership button) ──────────────────────────────
   const headerBar = `
     <div class="flex items-start justify-between mb-5 flex-wrap gap-4">
       <p class="text-lg text-gray-600 max-w-3xl leading-relaxed">${shTexts.description}</p>
-      ${showToggleButton ? `<button id="net-toggle-form" class="flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0">
-        <i data-lucide="user-plus" class="w-4 h-4"></i>
-        ${effectiveShowForm ? shTexts.closeForm : shTexts.requestMembership}
-      </button>` : ''}
+      ${renderMembershipControl('net-toggle-form', 'flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0')}
     </div>`;
 
   // ── Empty state (no stakeholders at all) ──────────────────────────────────────
@@ -411,10 +459,7 @@ function tabStakeholders(activeCategory, showForm) {
         <i data-lucide="users" class="w-12 h-12 text-eu-purple/40 mx-auto mb-5"></i>
         ${shTexts.emptyStateTitle ? `<h3 class="text-xl font-extrabold text-eu-purple mb-3">${shTexts.emptyStateTitle}</h3>` : ''}
         <p class="text-base text-gray-600 max-w-sm sm:max-w-md mx-auto mb-8 leading-relaxed">${shTexts.emptyState}</p>
-        ${formVisible ? `<button id="net-toggle-form-empty" class="inline-flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer">
-          <i data-lucide="user-plus" class="w-4 h-4"></i>
-          ${shTexts.requestMembership}
-        </button>` : ''}
+        ${renderMembershipControl('net-toggle-form-empty', 'inline-flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer')}
       </div>
       ${formHtml}`;
   }
