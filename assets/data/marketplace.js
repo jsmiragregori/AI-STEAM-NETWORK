@@ -7955,11 +7955,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "",
           "va": ""
         },
-        "levels": [
-          "vet",
-          "master",
-          "teacher"
-        ],
+        "levels": [],
         "audience": [],
         "sdgs": [
           7,
@@ -8128,7 +8124,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "primaryMetric": {
           "id": "energy-consumption-reduction",
-          "value": 23,
+          "value": "23",
           "unit": "%",
           "label": {
             "es": "Reducción de consumo energético en el primer año de despliegue",
@@ -12756,9 +12752,7 @@ export const MARKETPLACE_CONFIG = {
           "en": "",
           "va": ""
         },
-        "levels": [
-          "vet"
-        ],
+        "levels": [],
         "audience": [],
         "sdgs": [
           4,
@@ -12927,7 +12921,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "primaryMetric": {
           "id": "teacher-satisfaction",
-          "value": 94,
+          "value": "94",
           "unit": "%",
           "label": {
             "es": "Satisfacción docente con el material",
@@ -28977,11 +28971,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "",
             "va": ""
           },
-          "levels": [
-            "vet",
-            "master",
-            "teacher"
-          ],
+          "levels": [],
           "audience": [],
           "sdgs": [
             7,
@@ -29150,7 +29140,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "primaryMetric": {
             "id": "energy-consumption-reduction",
-            "value": 23,
+            "value": "23",
             "unit": "%",
             "label": {
               "es": "Reducción de consumo energético en el primer año de despliegue",
@@ -30916,9 +30906,7 @@ export const MARKETPLACE_CONFIG = {
             "en": "",
             "va": ""
           },
-          "levels": [
-            "vet"
-          ],
+          "levels": [],
           "audience": [],
           "sdgs": [
             4,
@@ -31087,7 +31075,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "primaryMetric": {
             "id": "teacher-satisfaction",
-            "value": 94,
+            "value": "94",
             "unit": "%",
             "label": {
               "es": "Satisfacción docente con el material",
