@@ -126,9 +126,9 @@ export const NETWORK_CONFIG = {
         "bg": "bg-green-100",
         "border": "border-green-300",
         "manualOverride": false,
-        "value": 9,
-        "computedValue": 9,
-        "partnersCount": 4,
+        "value": 10,
+        "computedValue": 10,
+        "partnersCount": 5,
         "stakeholdersCount": 5
       },
       {
@@ -1352,7 +1352,8 @@ export const NETWORK_CONFIG = {
           "va": "Madrid"
         },
         "categories": [
-          "empresa"
+          "empresa",
+          "admin"
         ],
         "category": "empresa",
         "categoryLabel": {
@@ -1382,6 +1383,11 @@ export const NETWORK_CONFIG = {
             "es": "Consultoría en innovación",
             "en": "Innovation consulting",
             "va": "Consultoria en innovació"
+          },
+          {
+            "es": "Diseño de programas intersectoriales",
+            "en": "Cross-sector programme design",
+            "va": "Disseny de programes intersectorials"
           }
         ],
         "role": "beneficiary",
