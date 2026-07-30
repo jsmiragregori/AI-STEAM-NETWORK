@@ -1096,7 +1096,8 @@ export const SECTORS_CONFIG = {
             "va": "Madrid"
           },
           "categories": [
-            "empresa"
+            "empresa",
+            "admin"
           ],
           "category": "empresa",
           "categoryLabel": {
