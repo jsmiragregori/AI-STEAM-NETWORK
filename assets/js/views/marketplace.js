@@ -415,6 +415,58 @@ function simpleMarkdown(text) {
     .replace(/\*(.+?)\*/g, '<em>$1</em>');
 }
 
+// Markdown de bloque para el texto de introducción de cada tab de la CoP
+// (content/challenges/meta.yml > communityTabs[].intro). Soporta, además de
+// negrita/cursiva vía simpleMarkdown: párrafos separados por línea en blanco,
+// un encabezado "### " y listas con viñetas "- ". Es deliberadamente mínimo:
+// solo lo que ese campo necesita, no un parser de Markdown general.
+function renderTabIntroMarkdown(text) {
+  if (!text) return '';
+  const lines = String(text).split('\n');
+  const blocks = [];
+  let paragraph = [];
+  let list = [];
+  let first = true;
+
+  const topSpacing = () => {
+    const cls = first ? 'mt-5' : 'mt-4';
+    first = false;
+    return cls;
+  };
+  const flushParagraph = () => {
+    if (!paragraph.length) return;
+    blocks.push(`<p class="${topSpacing()} text-lg leading-relaxed text-gray-600">${simpleMarkdown(paragraph.join(' '))}</p>`);
+    paragraph = [];
+  };
+  const flushList = () => {
+    if (!list.length) return;
+    const items = list.map(item => `<li>${simpleMarkdown(item)}</li>`).join('');
+    blocks.push(`<ul class="${topSpacing()} space-y-2 list-disc pl-5 text-lg leading-relaxed text-gray-600">${items}</ul>`);
+    list = [];
+  };
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line) { flushParagraph(); flushList(); continue; }
+    const heading = line.match(/^###\s+(.*)$/);
+    const item = line.match(/^[-*]\s+(.*)$/);
+    if (heading) {
+      flushParagraph();
+      flushList();
+      blocks.push(`<h3 class="${topSpacing()} text-lg font-extrabold text-eu-purple">${simpleMarkdown(heading[1])}</h3>`);
+    } else if (item) {
+      flushParagraph();
+      list.push(item[1]);
+    } else {
+      flushList();
+      paragraph.push(line);
+    }
+  }
+  flushParagraph();
+  flushList();
+  return blocks.join('');
+}
+
 function asArray(value) {
   if (!value) return [];
   return Array.isArray(value) ? value : [value];
@@ -1978,7 +2030,7 @@ function renderTabIntroCard(tab, items) {
             </span>
             <h2 class="min-w-0 text-3xl font-extrabold leading-tight text-eu-purple">${esc(title)}</h2>
           </div>
-          ${intro ? `<p class="mt-5 text-lg leading-relaxed text-gray-600">${simpleMarkdown(intro)}</p>` : ''}
+          ${intro ? renderTabIntroMarkdown(intro) : ''}
         </div>
       </div>
     </div>`;
