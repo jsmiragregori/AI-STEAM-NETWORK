@@ -3,6 +3,7 @@
   "scripts": {
     "build:css": "tailwindcss -i assets/css/tailwind-input.css -o assets/css/tailwind-output.css --minify",
     "watch:css": "tailwindcss -i assets/css/tailwind-input.css -o assets/css/tailwind-output.css --watch",
+    "security:inventory": "node scripts/inventory-render-surface.mjs",
     "vendor:flags": "node scripts/vendor-flags.mjs",
     "verify:vendor": "node scripts/verify-vendored-assets.mjs"
   },
