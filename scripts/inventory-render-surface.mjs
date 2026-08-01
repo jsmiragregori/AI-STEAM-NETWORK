@@ -17,7 +17,7 @@
 import { readFile, readdir } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const JS_ROOT = path.join(ROOT, 'assets/js');
@@ -329,11 +329,7 @@ function runSelfTests() {
   console.log('Self-test del inventario: OK');
 }
 
-async function main() {
-  if (process.argv.includes('--self-test')) {
-    runSelfTests();
-    return;
-  }
+export async function generateInventory() {
   const files = (await collectJsFiles(JS_ROOT)).sort();
   const perFile = [];
   let totalUnescaped = 0;
@@ -389,8 +385,7 @@ async function main() {
   const editorialDynamicHrefs = dynamicHrefs.filter((hit) => hit.file.startsWith('assets/js/views/'));
   const nonEditorialDynamicHrefs = dynamicHrefs.filter((hit) => !hit.file.startsWith('assets/js/views/'));
 
-  const report = {
-    commit: null, // rellenado por el runner de pruebas / CLI si hace falta
+  return {
     scannedFiles: files.length,
     pickLangInterpolations: { unescaped: totalUnescaped, escaped: totalEscaped, perFile },
     viewsTotal: viewFiles.length,
@@ -405,6 +400,15 @@ async function main() {
     blankTargetsWithoutNoopener: blankTargetTotal,
     dangerousSinks,
   };
+}
+
+async function main() {
+  if (process.argv.includes('--self-test')) {
+    runSelfTests();
+    return;
+  }
+
+  const report = await generateInventory();
 
   if (process.argv.includes('--json')) {
     console.log(JSON.stringify(report, null, 2));
@@ -427,7 +431,10 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(`Inventory failed: ${error.message}`);
-  process.exitCode = 1;
-});
+const invokedPath = process.argv[1] ? pathToFileURL(path.resolve(process.argv[1])).href : null;
+if (invokedPath === import.meta.url) {
+  main().catch((error) => {
+    console.error(`Inventory failed: ${error.message}`);
+    process.exitCode = 1;
+  });
+}
