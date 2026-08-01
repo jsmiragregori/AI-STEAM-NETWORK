@@ -23,7 +23,10 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const JS_ROOT = path.join(ROOT, 'assets/js');
 const EXCLUDED_DIRS = new Set(['lib']); // código vendorizado, fuera del alcance de VAN-1/VAN-2
 
-async function collectJsFiles(directory) {
+export const INVENTORY_ROOT = ROOT;
+export const INVENTORY_JS_ROOT = JS_ROOT;
+
+export async function collectJsFiles(directory) {
   const output = [];
   for (const entry of await readdir(directory, { withFileTypes: true })) {
     if (entry.isDirectory()) {
@@ -44,8 +47,8 @@ async function collectJsFiles(directory) {
 // forma fiable; por eso VAN-0.1 exige un escáner, no una lista a mano
 // (lección de SEC-6.1.1 citada en el plan).
 
-function extractInterpolations(source) {
-  const interpolations = []; // { expr, start, end }
+export function extractInterpolations(source) {
+  const interpolations = []; // { expr, start, end, templateStart, templateEnd, precedingLiteral }
   let i = 0;
   const n = source.length;
 
@@ -77,12 +80,31 @@ function extractInterpolations(source) {
 
   // Consume a template literal starting at the backtick; return nothing but
   // record every top-level ${...} found (recursing into nested templates).
+  //
+  // Además del propio rango de la interpolación se registra su **contexto de
+  // plantilla**, que `VAN-1.2` necesita para clasificar sin volver a escanear
+  // con un segundo lexer que podría divergir de este:
+  //
+  //   - `templateStart` / `templateEnd`: el literal que la contiene;
+  //   - `precedingLiteral`: el texto literal de esa plantilla que aparece
+  //     ANTES de la interpolación, excluyendo las interpolaciones hermanas.
+  //     Con él se decide si la salida cae dentro de una etiqueta (contexto de
+  //     atributo) o en el texto de un elemento.
+  //
+  // Son campos aditivos: no cambian qué se cuenta ni cuántas hay.
   function skipTemplateLiteral() {
+    const templateStart = i;
+    const ownInterpolations = [];
+    let literalText = '';
     i++; // opening backtick
     while (i < n) {
       const ch = source[i];
-      if (ch === '\\') { i += 2; continue; }
-      if (ch === '`') { i++; return; }
+      if (ch === '\\') { literalText += source.slice(i, i + 2); i += 2; continue; }
+      if (ch === '`') {
+        i++;
+        for (const entry of ownInterpolations) entry.templateEnd = i;
+        return;
+      }
       if (ch === '$' && source[i + 1] === '{') {
         i += 2;
         const exprStart = i;
@@ -99,12 +121,23 @@ function extractInterpolations(source) {
           else { i++; }
         }
         const exprEnd = i;
-        interpolations.push({ expr: source.slice(exprStart, exprEnd), start: exprStart, end: exprEnd });
+        const entry = {
+          expr: source.slice(exprStart, exprEnd),
+          start: exprStart,
+          end: exprEnd,
+          templateStart,
+          templateEnd: -1,
+          precedingLiteral: literalText,
+        };
+        interpolations.push(entry);
+        ownInterpolations.push(entry);
         i++; // closing }
         continue;
       }
+      literalText += ch;
       i++;
     }
+    for (const entry of ownInterpolations) entry.templateEnd = i;
   }
 
   while (i < n) {
@@ -187,7 +220,7 @@ function skipTemplateLiteralAt(source, index) {
   return i;
 }
 
-function lineOf(source, index) {
+export function lineOf(source, index) {
   let line = 1;
   for (let k = 0; k < index; k++) if (source[k] === '\n') line++;
   return line;
@@ -203,7 +236,7 @@ function lineOf(source, index) {
 // interpolación hija por separado. Por eso, antes de clasificar, se redacta
 // (se sustituye por espacios) el rango de cada interpolación anidada,
 // dejando solo el texto que pertenece de verdad al nivel exterior.
-function redactNestedSpans(expr, exprStart, nestedSpans) {
+export function redactNestedSpans(expr, exprStart, nestedSpans) {
   const chars = expr.split('');
   for (const span of nestedSpans) {
     const relStart = span.start - exprStart;
@@ -213,7 +246,7 @@ function redactNestedSpans(expr, exprStart, nestedSpans) {
   return chars.join('');
 }
 
-function classifyInterpolation(directText) {
+export function classifyInterpolation(directText) {
   const trimmed = directText.trim();
   if (!/\bpickLang\s*\(/.test(trimmed)) return null;
   // Escapada si la llamada de nivel superior es esc(...) envolviendo a
