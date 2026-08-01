@@ -2145,11 +2145,6 @@ function getMentoringFormatSummary(format = {}) {
   }).filter(Boolean).join(' / ');
 }
 
-function scrollToTop(preferredBehavior = 'auto') {
-  const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-  window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : preferredBehavior });
-}
-
 export function render() {
   // El segundo nivel de detalle se retiró (Fase 2). Las cards solo ofrecen la
   // descarga de ficha y el formulario de adhesión; no hay vista de detalle.
@@ -2164,7 +2159,6 @@ export function mount() {
       setState('marketplaceTab', button.dataset.mpTab);
       setState('selectedChallengeId', null);
       rerender();
-      scrollToTop('smooth');
     });
     button.addEventListener('keydown', event => {
       let next = -1;
@@ -2178,7 +2172,6 @@ export function mount() {
         setState('marketplaceTab', tabButtons[next].dataset.mpTab);
         setState('selectedChallengeId', null);
         rerender();
-        scrollToTop('smooth');
       }
     });
   });
