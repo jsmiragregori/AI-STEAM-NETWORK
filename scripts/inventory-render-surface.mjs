@@ -335,6 +335,7 @@ export async function generateInventory() {
   let totalUnescaped = 0;
   let totalEscaped = 0;
   const filesDefiningEsc = [];
+  const filesImportingEscapeHtml = [];
   const dynamicHrefs = [];
   const blankTargetTotal = { total: 0, unsafe: [] };
   const dangerousSinks = [];
@@ -344,6 +345,9 @@ export async function generateInventory() {
     const source = await readFile(filePath, 'utf8');
 
     if (/\bfunction\s+esc\s*\(|\bconst\s+esc\s*=/.test(source)) filesDefiningEsc.push(relativePath);
+    if (/import\s*\{\s*escapeHtml\s+as\s+esc\s*\}\s*from\s*['"]\.\.\/utils\/escape-html\.js['"]/.test(source)) {
+      filesImportingEscapeHtml.push(relativePath);
+    }
 
     const interpolations = extractInterpolations(source);
     let fileUnescaped = 0;
@@ -390,6 +394,7 @@ export async function generateInventory() {
     pickLangInterpolations: { unescaped: totalUnescaped, escaped: totalEscaped, perFile },
     viewsTotal: viewFiles.length,
     viewsDefiningEsc: filesDefiningEsc.filter((f) => f.startsWith('assets/js/views/')),
+    viewsImportingEscapeHtml: filesImportingEscapeHtml.filter((f) => f.startsWith('assets/js/views/')),
     dynamicHrefs: {
       editorialCount: editorialDynamicHrefs.length,
       editorial: editorialDynamicHrefs,
@@ -419,7 +424,8 @@ async function main() {
   console.log(`Ficheros JS escaneados (excluyendo assets/js/lib): ${report.scannedFiles}`);
   console.log(`Interpolaciones pickLang() sin escapar: ${report.pickLangInterpolations.unescaped}`);
   console.log(`Interpolaciones pickLang() con esc(): ${report.pickLangInterpolations.escaped}`);
-  console.log(`Vistas que definen esc(): ${report.viewsDefiningEsc.length} de ${report.viewsTotal} (${report.viewsDefiningEsc.join(', ')})`);
+  console.log(`Vistas con copia local de esc(): ${report.viewsDefiningEsc.length} de ${report.viewsTotal}`);
+  console.log(`Vistas que importan escapeHtml como esc: ${report.viewsImportingEscapeHtml.length} de ${report.viewsTotal} (${report.viewsImportingEscapeHtml.join(', ')})`);
   console.log(`href="\${...}" editoriales dinámicos: ${report.dynamicHrefs.editorialCount}`);
   console.log(`href="\${...}" no editoriales: ${report.dynamicHrefs.nonEditorialCount}`);
   console.log(`target="_blank" sin rel="noopener": ${report.blankTargetsWithoutNoopener.unsafe.length} de ${report.blankTargetsWithoutNoopener.total}`);

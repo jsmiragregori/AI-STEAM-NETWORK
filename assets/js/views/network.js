@@ -2,6 +2,7 @@ import { getState, setState } from '../state.js';
 import { NETWORK_CONFIG } from '../../data/network.js';
 import { getFlagAssetPath } from '../lib/flag-assets.js';
 import { resolveMembershipAction } from '../utils/membership.js';
+import { escapeHtml as esc } from '../utils/escape-html.js';
 
 // ── Static data ─────────────────────────────────────────────────────────────
 
@@ -82,15 +83,6 @@ function localized(value) {
   const lang = getLang();
   if (typeof value === 'string') return value;
   return value?.[lang] || value?.es || '';
-}
-
-function esc(value) {
-  return String(value ?? '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
 }
 
 // Cuádruple hélice multi-eje: una organización puede pertenecer a uno o más

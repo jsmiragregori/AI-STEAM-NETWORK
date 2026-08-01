@@ -21,7 +21,7 @@ const EXPECTED_ESC_VIEWS = [
 test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   const report = await generateInventory();
 
-  assert.equal(report.scannedFiles, 17);
+  assert.equal(report.scannedFiles, 18);
   assert.equal(report.pickLangInterpolations.unescaped, 126);
   assert.equal(report.pickLangInterpolations.escaped, 16);
   assert.deepEqual(
@@ -30,7 +30,8 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   );
 
   assert.equal(report.viewsTotal, 9);
-  assert.deepEqual(report.viewsDefiningEsc, EXPECTED_ESC_VIEWS);
+  assert.deepEqual(report.viewsDefiningEsc, []);
+  assert.deepEqual(report.viewsImportingEscapeHtml, EXPECTED_ESC_VIEWS);
   assert.equal(report.dynamicHrefs.editorialCount, 21);
   assert.equal(report.dynamicHrefs.nonEditorialCount, 2);
   assert.equal(report.dynamicHrefs.total, 23);

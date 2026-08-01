@@ -1,6 +1,7 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { getViewParams } from '../router.js';
+import { escapeHtml as esc } from '../utils/escape-html.js';
 import { MARKETPLACE_CONFIG } from '../../data/marketplace.js';
 
 const UI_TEXT = {
@@ -397,15 +398,6 @@ function pickLangStrict(value) {
 
 function uiText(key) {
   return pickLang(UI_TEXT[key], key);
-}
-
-function esc(value) {
-  return String(value ?? '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#39;');
 }
 
 function simpleMarkdown(text) {

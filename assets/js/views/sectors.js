@@ -3,6 +3,7 @@ import { navigateTo } from '../router.js';
 import { getState, setState } from '../state.js';
 import { SECTORS_CONFIG } from '../../data/sectors.js';
 import { resolveMembershipAction } from '../utils/membership.js';
+import { escapeHtml as esc } from '../utils/escape-html.js';
 
 
 const SECTOR_ICONS = {
@@ -45,15 +46,6 @@ function localizedList(value) {
   if (!value) return [];
   if (Array.isArray(value)) return value;
   return value[getLang()] || value.es || [];
-}
-
-function esc(value) {
-  return String(value ?? '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
 }
 
 function renderHero(hero) {

@@ -2,6 +2,7 @@ import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { getViewParams } from '../router.js';
 import { TRAINING_CONFIG } from '../../data/training.js';
+import { escapeHtml as esc } from '../utils/escape-html.js';
 
 const COURSE_PARTNERS  = ['UVEG / CECU', "Ud'A / UVEG", 'CECU / Inspiring Futures Europe', 'AVA-ASAJA / CINK', 'INESC TEC / HSW', 'Region Värmland / NTNU', 'KEA / ESAD-GV / LPGA', 'LC / CECU'];
 const COURSE_MODALITY  = ['Semipresencial', 'Online', 'Online', 'Semipresencial', 'Online', 'Online', 'Online', 'Online'];
@@ -20,14 +21,6 @@ function pickLang(value, fallback = '') {
   const lang = getLang();
   if (value && typeof value === 'object') return value[lang] || value.es || fallback;
   return fallback;
-}
-function esc(value) {
-  return String(value ?? '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
 }
 function getSkillIcon(id) {
   const iconMap = {
