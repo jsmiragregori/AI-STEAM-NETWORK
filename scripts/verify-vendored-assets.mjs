@@ -51,11 +51,18 @@ async function textFiles(directory) {
 async function main() {
   const manifest = JSON.parse(await readFile(path.join(ROOT, 'assets/vendor-manifest.json'), 'utf8'));
   assert(manifest.schemaVersion === 1, 'Unsupported vendor manifest schema');
-  const { lucide, instrumentSans, flags } = manifest.dependencies || {};
+  const { lucide, wordcloud2, instrumentSans, flags } = manifest.dependencies || {};
   assert(lucide?.version === '1.24.0', 'Lucide version lock is missing or unexpected');
+  assert(wordcloud2?.version === '1.2.3+local.1', 'Wordcloud2 version lock is missing or unexpected');
+  assert(wordcloud2?.upstreamVersion === '1.2.3', 'Wordcloud2 upstream version is missing or unexpected');
+  assert(wordcloud2?.upstreamGitCommit === 'bce07098d4a7b2c298c1b51715f6370b07d80ef2', 'Wordcloud2 upstream commit is missing or unexpected');
+  assert(wordcloud2?.localPatch?.commit === '44edcb5209d8e9df297c88753ab093a08f689fd7', 'Wordcloud2 local patch provenance is missing');
   assert(instrumentSans?.version === 'v4', 'Instrument Sans version lock is missing or unexpected');
+  assert(flags?.version === 'snapshot-2026-07-15', 'Flag snapshot version is missing or unexpected');
+  assert(flags?.retrievedAt === '2026-07-15', 'Flag retrieval date is missing or unexpected');
+  assert(typeof flags?.license === 'string' && flags.license.includes('NOTICE.md'), 'Flag licensing notice is missing');
 
-  for (const dependency of [lucide, instrumentSans]) {
+  for (const dependency of [lucide, wordcloud2, instrumentSans]) {
     for (const entry of dependency.files || []) await verifyLockedFile(entry);
   }
   await verifyLockedFile(flags.fallback);
@@ -63,6 +70,9 @@ async function main() {
 
   const lucideBuffer = await readFile(path.join(ROOT, 'assets/js/lib/lucide.min.js'));
   assert(lucideBuffer.includes('1.24.0'), 'Lucide UMD does not identify version 1.24.0');
+  const wordcloudBuffer = await readFile(path.join(ROOT, 'assets/js/lib/wordcloud2.js'));
+  assert(wordcloudBuffer.includes('Released under the MIT license'), 'Wordcloud2 license header is missing');
+  assert(wordcloudBuffer.includes("typeof settings.rotateRatio === 'function'"), 'Wordcloud2 local rotateRatio patch is missing');
 
   for (const entry of instrumentSans.files.filter(file => file.path.endsWith('.woff2'))) {
     const buffer = await readFile(path.join(ROOT, entry.path));
@@ -105,6 +115,7 @@ async function main() {
 
   const requiredLicenses = [
     'assets/js/lib/lucide-LICENSE.txt',
+    'assets/js/lib/wordcloud2-LICENSE.txt',
     'assets/fonts/instrument-sans/OFL.txt',
     'THIRD_PARTY_NOTICES.md',
   ];
@@ -113,7 +124,7 @@ async function main() {
     assert(fileStat?.isFile() && fileStat.size > 0, `Missing required notice or license: ${relativePath}`);
   }
 
-  console.log(`Verified ${flags.files.length + lucide.files.length + instrumentSans.files.length + 2} locked files; browser runtime contains no CDN dependencies.`);
+  console.log(`Verified ${flags.files.length + lucide.files.length + wordcloud2.files.length + instrumentSans.files.length + 2} locked files; browser runtime contains no CDN dependencies.`);
 }
 
 main().catch(error => {

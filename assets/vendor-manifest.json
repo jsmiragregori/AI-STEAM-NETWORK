@@ -19,6 +19,32 @@
         }
       ]
     },
+    "wordcloud2": {
+      "version": "1.2.3+local.1",
+      "upstreamVersion": "1.2.3",
+      "upstreamGitCommit": "bce07098d4a7b2c298c1b51715f6370b07d80ef2",
+      "license": "MIT",
+      "localPatch": {
+        "commit": "44edcb5209d8e9df297c88753ab093a08f689fd7",
+        "description": "Permite que rotateRatio sea un callback por palabra",
+        "upstreamSize": 38883,
+        "upstreamSha256": "45eac9067024086f166ae2da067fceb31533292c7040508fbfbbd65539d8432e"
+      },
+      "files": [
+        {
+          "path": "assets/js/lib/wordcloud2.js",
+          "source": "https://github.com/timdream/wordcloud2.js/blob/bce07098d4a7b2c298c1b51715f6370b07d80ef2/src/wordcloud2.js",
+          "size": 37820,
+          "sha256": "42418798a8a75c9ca448932185defaafc0b7c2f356a99eb6a3f207640e3caab1"
+        },
+        {
+          "path": "assets/js/lib/wordcloud2-LICENSE.txt",
+          "source": "https://github.com/timdream/wordcloud2.js/blob/bce07098d4a7b2c298c1b51715f6370b07d80ef2/LICENSE",
+          "size": 1090,
+          "sha256": "0dc2d5907eae01b9564ad667a29f246e6274b11f827dfd8059cf34f35d406ad4"
+        }
+      ]
+    },
     "instrumentSans": {
       "version": "v4",
       "license": "SIL Open Font License 1.1",
@@ -44,6 +70,9 @@
       ]
     },
     "flags": {
+      "version": "snapshot-2026-07-15",
+      "retrievedAt": "2026-07-15",
+      "license": "Jurisdiction-specific flag conditions; see assets/flags/NOTICE.md",
       "sourceBase": "https://flagcdn.com",
       "countryCodes": [
         "BA",
