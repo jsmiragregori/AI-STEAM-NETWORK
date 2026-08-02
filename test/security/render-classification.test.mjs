@@ -12,7 +12,7 @@ import {
 // Línea base de VAN-1.2. Si alguien migra una interpolación, este desglose
 // cambia: debe cambiarse aquí a la vez, con su justificación en el checkpoint.
 const EXPECTED_BY_CATEGORY = {
-  TEXTO_PLANO: 18,
+  TEXTO_PLANO: 9,
   ATRIBUTO: 0,
   URL: 0,
   HTML_INTENCIONAL: 0,
@@ -23,7 +23,6 @@ const EXPECTED_BY_CATEGORY = {
 
 const EXPECTED_BY_FILE = {
   'assets/js/views/governance.js': { ESTRUCTURAL: 1 },
-  'assets/js/views/knowledge.js': { TEXTO_PLANO: 9 },
   'assets/js/views/marketplace.js': { ESTRUCTURAL: 1, HELPER_QUE_ESCAPA: 2, COMPOSICION_CADENA: 2 },
   'assets/js/views/news.js': { TEXTO_PLANO: 4 },
   'assets/js/views/training.js': { TEXTO_PLANO: 5, ESTRUCTURAL: 1 },
@@ -45,7 +44,7 @@ const EXPECTED_EXCEPTIONS = [
 test('la clasificación VAN-1.2 reproduce su línea base', async () => {
   const report = await generateClassification();
 
-  assert.equal(report.total, 25);
+  assert.equal(report.total, 16);
   assert.deepEqual(report.byCategory, EXPECTED_BY_CATEGORY);
 
   const observedByFile = Object.fromEntries(
@@ -73,12 +72,12 @@ test('la clasificación VAN-1.2 reproduce su línea base', async () => {
 test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async () => {
   const { indirectOutputCandidates } = await generateClassification();
 
-  assert.equal(indirectOutputCandidates.total, 262);
+  assert.equal(indirectOutputCandidates.total, 221);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/header.js': 8,
     'assets/js/views/governance.js': 25,
     'assets/js/views/home.js': 18,
-    'assets/js/views/knowledge.js': 59,
+    'assets/js/views/knowledge.js': 18,
     'assets/js/views/marketplace.js': 19,
     'assets/js/views/network.js': 61,
     'assets/js/views/news.js': 34,
