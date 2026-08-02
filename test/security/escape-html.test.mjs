@@ -8,7 +8,7 @@ import { escapeHtml } from '../../assets/js/utils/escape-html.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const VIEWS_DIR = path.join(ROOT, 'assets/js/views');
-const EXPECTED_IMPORTERS = new Set(['governance.js', 'marketplace.js', 'network.js', 'sectors.js', 'training.js']);
+const EXPECTED_IMPORTERS = new Set(['governance.js', 'home.js', 'marketplace.js', 'network.js', 'sectors.js', 'training.js']);
 
 test('escapeHtml escapa los cinco caracteres significativos y normaliza valores vacíos', () => {
   assert.equal(escapeHtml('&<>"\''), '&amp;&lt;&gt;&quot;&#39;');

@@ -73,11 +73,11 @@ test('la clasificación VAN-1.2 reproduce su línea base', async () => {
 test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async () => {
   const { indirectOutputCandidates } = await generateClassification();
 
-  assert.equal(indirectOutputCandidates.total, 266);
+  assert.equal(indirectOutputCandidates.total, 262);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/header.js': 8,
     'assets/js/views/governance.js': 25,
-    'assets/js/views/home.js': 22,
+    'assets/js/views/home.js': 18,
     'assets/js/views/knowledge.js': 59,
     'assets/js/views/marketplace.js': 19,
     'assets/js/views/network.js': 61,

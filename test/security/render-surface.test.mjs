@@ -13,6 +13,7 @@ const EXPECTED_PER_FILE = [
 
 const EXPECTED_ESC_VIEWS = [
   'assets/js/views/governance.js',
+  'assets/js/views/home.js',
   'assets/js/views/marketplace.js',
   'assets/js/views/network.js',
   'assets/js/views/sectors.js',
