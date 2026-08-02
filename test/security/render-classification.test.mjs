@@ -12,7 +12,7 @@ import {
 // Línea base de VAN-1.2. Si alguien migra una interpolación, este desglose
 // cambia: debe cambiarse aquí a la vez, con su justificación en el checkpoint.
 const EXPECTED_BY_CATEGORY = {
-  TEXTO_PLANO: 119,
+  TEXTO_PLANO: 18,
   ATRIBUTO: 0,
   URL: 0,
   HTML_INTENCIONAL: 0,
@@ -22,7 +22,7 @@ const EXPECTED_BY_CATEGORY = {
 };
 
 const EXPECTED_BY_FILE = {
-  'assets/js/views/governance.js': { TEXTO_PLANO: 101, ESTRUCTURAL: 1 },
+  'assets/js/views/governance.js': { ESTRUCTURAL: 1 },
   'assets/js/views/knowledge.js': { TEXTO_PLANO: 9 },
   'assets/js/views/marketplace.js': { ESTRUCTURAL: 1, HELPER_QUE_ESCAPA: 2, COMPOSICION_CADENA: 2 },
   'assets/js/views/news.js': { TEXTO_PLANO: 4 },
@@ -33,7 +33,7 @@ const EXPECTED_BY_FILE = {
 // las decisiones revisadas a mano en VAN-1.2 y las únicas que la migración de
 // VAN-1.3 en adelante no debe escapar sin volver a razonarlas.
 const EXPECTED_EXCEPTIONS = [
-  { file: 'assets/js/views/governance.js', line: 692, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/governance.js', line: 694, category: 'ESTRUCTURAL' },
   { file: 'assets/js/views/marketplace.js', line: 1743, category: 'HELPER_QUE_ESCAPA' },
   { file: 'assets/js/views/marketplace.js', line: 1928, category: 'ESTRUCTURAL' },
   { file: 'assets/js/views/marketplace.js', line: 1930, category: 'COMPOSICION_CADENA' },
@@ -45,7 +45,7 @@ const EXPECTED_EXCEPTIONS = [
 test('la clasificación VAN-1.2 reproduce su línea base', async () => {
   const report = await generateClassification();
 
-  assert.equal(report.total, 126);
+  assert.equal(report.total, 25);
   assert.deepEqual(report.byCategory, EXPECTED_BY_CATEGORY);
 
   const observedByFile = Object.fromEntries(
@@ -73,10 +73,10 @@ test('la clasificación VAN-1.2 reproduce su línea base', async () => {
 test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async () => {
   const { indirectOutputCandidates } = await generateClassification();
 
-  assert.equal(indirectOutputCandidates.total, 271);
+  assert.equal(indirectOutputCandidates.total, 266);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/header.js': 8,
-    'assets/js/views/governance.js': 30,
+    'assets/js/views/governance.js': 25,
     'assets/js/views/home.js': 22,
     'assets/js/views/knowledge.js': 59,
     'assets/js/views/marketplace.js': 19,

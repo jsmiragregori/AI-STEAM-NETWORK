@@ -5,7 +5,7 @@
 // la superficie relevante para XSS almacenado:
 //
 //   - interpolaciones ${...} que llaman a pickLang(...), separadas en
-//     escapadas (esc(pickLang(...))) y sin escapar;
+//     protegidas (esc(...) o sanitizeEditorialHtml(...)) y sin proteger;
 //   - vistas que definen su propio esc();
 //   - href="${...}" dinámicos, separando las vistas editoriales del resto;
 //   - target="_blank" sin rel="noopener";
@@ -249,13 +249,10 @@ export function redactNestedSpans(expr, exprStart, nestedSpans) {
 export function classifyInterpolation(directText) {
   const trimmed = directText.trim();
   if (!/\bpickLang\s*\(/.test(trimmed)) return null;
-  // Escapada si la llamada de nivel superior es esc(...) envolviendo a
-  // pickLang, tolerando envoltorios habituales: esc(pickLang(...)),
-  // esc(String(pickLang(...))), etc. Cualquier otra forma (incluida una
-  // llamada a esc() que NO envuelve el pickLang relevante) cuenta como
-  // sin escapar: el criterio de aceptación de VAN-1 es sobre la
-  // arquitectura, no sobre la superficie textual de la llamada.
-  const escaped = /^esc\s*\(/.test(trimmed);
+  // La salida está protegida por esc() para texto plano o por el sanitizador
+  // de allowlist para HTML editorial. Cualquier otra forma cuenta como no
+  // protegida: el criterio es arquitectónico, no una búsqueda textual.
+  const escaped = /^(?:esc|sanitizeEditorialHtml)\s*\(/.test(trimmed);
   return { escaped };
 }
 

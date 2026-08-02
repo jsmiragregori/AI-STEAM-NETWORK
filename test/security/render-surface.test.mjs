@@ -4,7 +4,7 @@ import test from 'node:test';
 import { generateInventory } from '../../scripts/inventory-render-surface.mjs';
 
 const EXPECTED_PER_FILE = [
-  { file: 'assets/js/views/governance.js', unescaped: 102, escaped: 0 },
+  { file: 'assets/js/views/governance.js', unescaped: 1, escaped: 101 },
   { file: 'assets/js/views/knowledge.js', unescaped: 9, escaped: 0 },
   { file: 'assets/js/views/marketplace.js', unescaped: 5, escaped: 12 },
   { file: 'assets/js/views/news.js', unescaped: 4, escaped: 0 },
@@ -12,6 +12,7 @@ const EXPECTED_PER_FILE = [
 ];
 
 const EXPECTED_ESC_VIEWS = [
+  'assets/js/views/governance.js',
   'assets/js/views/marketplace.js',
   'assets/js/views/network.js',
   'assets/js/views/sectors.js',
@@ -22,8 +23,8 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   const report = await generateInventory();
 
   assert.equal(report.scannedFiles, 20);
-  assert.equal(report.pickLangInterpolations.unescaped, 126);
-  assert.equal(report.pickLangInterpolations.escaped, 16);
+  assert.equal(report.pickLangInterpolations.unescaped, 25);
+  assert.equal(report.pickLangInterpolations.escaped, 117);
   assert.deepEqual(
     report.pickLangInterpolations.perFile.map(({ file, unescaped, escaped }) => ({ file, unescaped, escaped })),
     EXPECTED_PER_FILE,
