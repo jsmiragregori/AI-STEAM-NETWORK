@@ -8,7 +8,7 @@ const EXPECTED_PER_FILE = [
   { file: 'assets/js/views/knowledge.js', unescaped: 0, escaped: 9 },
   { file: 'assets/js/views/marketplace.js', unescaped: 5, escaped: 12 },
   { file: 'assets/js/views/news.js', unescaped: 4, escaped: 0 },
-  { file: 'assets/js/views/training.js', unescaped: 6, escaped: 4 },
+  { file: 'assets/js/views/training.js', unescaped: 1, escaped: 9 },
 ];
 
 const EXPECTED_ESC_VIEWS = [
@@ -25,8 +25,8 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   const report = await generateInventory();
 
   assert.equal(report.scannedFiles, 20);
-  assert.equal(report.pickLangInterpolations.unescaped, 16);
-  assert.equal(report.pickLangInterpolations.escaped, 126);
+  assert.equal(report.pickLangInterpolations.unescaped, 11);
+  assert.equal(report.pickLangInterpolations.escaped, 131);
   assert.deepEqual(
     report.pickLangInterpolations.perFile.map(({ file, unescaped, escaped }) => ({ file, unescaped, escaped })),
     EXPECTED_PER_FILE,

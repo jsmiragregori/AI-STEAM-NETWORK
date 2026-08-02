@@ -4,6 +4,7 @@ import { getState, setState } from '../state.js';
 import { SECTORS_CONFIG } from '../../data/sectors.js';
 import { resolveMembershipAction } from '../utils/membership.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
+import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
 
 
 const SECTOR_ICONS = {
@@ -336,11 +337,11 @@ function renderCta(cta, sectorsT) {
     : membershipAction.kind === 'external'
       ? `
         <a href="${membershipAction.url}" target="_blank" rel="noopener noreferrer" class="rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white" style="background:#FFF4E1">
-          ${buttonLabel}
+          ${esc(buttonLabel)}
         </a>`
       : `
         <button id="sectors-cta-btn" class="rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white" style="background:#FFF4E1">
-          ${buttonLabel}
+          ${esc(buttonLabel)}
         </button>`;
 
   return `
@@ -350,7 +351,7 @@ function renderCta(cta, sectorsT) {
           <div class="${buttonVisible ? 'max-w-2xl' : 'w-full'}">
             <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/70">AI-STEAM Network</p>
             <h3 class="mt-3 text-3xl font-extrabold tracking-tight" style="color:#FFF4E1">${esc(localized(cta.title) || sectorsT?.cta || '')}</h3>
-            <p class="mt-4 text-lg leading-relaxed text-white/85">${localized(cta.description) || sectorsT?.ctaDesc || ''}</p>
+            <p class="mt-4 text-lg leading-relaxed text-white/85">${sanitizeEditorialHtml(localized(cta.description) || sectorsT?.ctaDesc || '')}</p>
           </div>
           ${buttonHtml}
         </div>

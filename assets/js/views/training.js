@@ -165,33 +165,33 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
     const chip = courseTags.find(c => c.id === chipId);
     if (!chip) return '';
     const isActive = activeFilters.tags.includes(chipId);
-    return `<button data-filter-tag="${chipId}" class="text-xs font-bold px-2.5 py-1 rounded-full transition-all duration-300 cursor-pointer ${isActive ? 'bg-eu-blue text-white border border-eu-blue shadow-sm' : 'bg-eu-blue/5 text-eu-blue border border-eu-blue/15 hover:bg-eu-blue/10'}">${pickLang(chip.shortLabel || chip.label, chipId)}</button>`;
+    return `<button data-filter-tag="${esc(chipId)}" class="text-xs font-bold px-2.5 py-1 rounded-full transition-all duration-300 cursor-pointer ${isActive ? 'bg-eu-blue text-white border border-eu-blue shadow-sm' : 'bg-eu-blue/5 text-eu-blue border border-eu-blue/15 hover:bg-eu-blue/10'}">${esc(pickLang(chip.shortLabel || chip.label, chipId))}</button>`;
   }).join('') : '';
 
   return `
     <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden">
       <div class="rd-card-mp-ceja">
-        <h3 class="rd-card-mp-title">${course.title}</h3>
+        <h3 class="rd-card-mp-title">${esc(course.title)}</h3>
       </div>
       <div class="p-7 pt-5 flex-1">
         <div class="flex items-center justify-between mb-4 gap-2 flex-wrap">
           <div class="flex items-center gap-2 flex-wrap">
             ${isMaster ? '<span class="text-xs bg-eu-purple text-white px-2.5 py-0.5 rounded-lg font-bold">Track A</span>' : ''}
           </div>
-          ${trShowStatus ? `<button data-filter-status="${course.statusId}" class="text-xs font-bold px-2.5 py-1 rounded-full cursor-pointer transition-all duration-300 ${isStatusActive ? 'shadow-sm' : (TONE_MAP[tone]?.cls || TONE_MAP.neutral.cls)}" ${isStatusActive ? `style="${TONE_MAP[tone]?.activeStyle || TONE_MAP.neutral.activeStyle}"` : ''}>${statusLabel}</button>` : ''}
+          ${trShowStatus ? `<button data-filter-status="${esc(course.statusId)}" class="text-xs font-bold px-2.5 py-1 rounded-full cursor-pointer transition-all duration-300 ${isStatusActive ? 'shadow-sm' : (TONE_MAP[tone]?.cls || TONE_MAP.neutral.cls)}" ${isStatusActive ? `style="${TONE_MAP[tone]?.activeStyle || TONE_MAP.neutral.activeStyle}"` : ''}>${esc(statusLabel)}</button>` : ''}
         </div>
-        <p class="text-base text-eu-text/75 mb-4 leading-relaxed">${course.description}</p>
+        <p class="text-base text-eu-text/75 mb-4 leading-relaxed">${esc(course.description)}</p>
         <div class="flex flex-wrap gap-3 text-sm text-eu-text/70 mb-4">
-          ${course.hours    != null ? `<span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-eu-blue"></i>${course.hours}${trainingT?.courseHours || ''}</span>` : ''}
-          ${course.enrolled != null ? `<span class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-eu-blue"></i>${course.enrolled} ${trainingT?.courseEnrolledLabel || ''}</span>` : ''}
+          ${course.hours    != null ? `<span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-4 h-4 text-eu-blue"></i>${esc(course.hours)}${esc(trainingT?.courseHours || '')}</span>` : ''}
+          ${course.enrolled != null ? `<span class="flex items-center gap-1.5"><i data-lucide="users" class="w-4 h-4 text-eu-blue"></i>${esc(course.enrolled)} ${esc(trainingT?.courseEnrolledLabel || '')}</span>` : ''}
         </div>
         ${trShowSectors || trShowModality ? `<div class="flex flex-wrap gap-2">
           ${trShowSectors ? (course.sectorIds || []).map((sectorId, idx) => {
             const isActive = activeFilters.sectors.includes(sectorId);
             const label    = course.sectors[idx] || sectorId;
-            return `<button data-filter-sector="${sectorId}" class="text-xs font-bold px-2.5 py-0.5 rounded-full whitespace-nowrap transition-all duration-300 cursor-pointer ${isActive ? 'bg-eu-blue text-white border border-eu-blue shadow-sm' : 'bg-eu-blue/5 border border-eu-blue/15 text-eu-blue hover:bg-eu-blue/10'}" style="min-height: 24px;">${label}</button>`;
+            return `<button data-filter-sector="${esc(sectorId)}" class="text-xs font-bold px-2.5 py-0.5 rounded-full whitespace-nowrap transition-all duration-300 cursor-pointer ${isActive ? 'bg-eu-blue text-white border border-eu-blue shadow-sm' : 'bg-eu-blue/5 border border-eu-blue/15 text-eu-blue hover:bg-eu-blue/10'}" style="min-height: 24px;">${esc(label)}</button>`;
           }).join('') : ''}
-          ${trShowModality && course.modalityId ? `<button data-filter-modality="${course.modalityId}" class="text-xs px-2.5 py-0.5 rounded-full font-bold whitespace-nowrap transition-all duration-300 cursor-pointer ${activeFilters.modalities.includes(course.modalityId) ? 'bg-eu-purple text-white border border-eu-purple shadow-sm' : 'bg-eu-purple/5 text-eu-purple border border-eu-purple/15 hover:bg-eu-purple/10'}" style="min-height: 24px;">${modalityLabel}</button>` : ''}
+          ${trShowModality && course.modalityId ? `<button data-filter-modality="${esc(course.modalityId)}" class="text-xs px-2.5 py-0.5 rounded-full font-bold whitespace-nowrap transition-all duration-300 cursor-pointer ${activeFilters.modalities.includes(course.modalityId) ? 'bg-eu-purple text-white border border-eu-purple shadow-sm' : 'bg-eu-purple/5 text-eu-purple border border-eu-purple/15 hover:bg-eu-purple/10'}" style="min-height: 24px;">${esc(modalityLabel)}</button>` : ''}
         </div>` : ''}
         ${chipsHtml ? `<div class="flex flex-wrap gap-2 mt-4">${chipsHtml}</div>` : ''}
       </div>
@@ -199,7 +199,7 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
       <div class="border-t border-eu-blue/10 p-4 flex items-center justify-end">
         <a href="${linkUrl}" target="${linkTarget}" ${linkTarget === '_blank' ? 'rel="noopener noreferrer"' : ''}
            class="text-eu-blue font-bold text-sm cursor-pointer hover:text-eu-purple hover:underline inline-flex items-center gap-1.5 shrink-0 transition-colors duration-300">
-          ${viewLabel} <i data-lucide="external-link" class="w-4 h-4"></i>
+          ${esc(viewLabel)} <i data-lucide="external-link" class="w-4 h-4"></i>
         </a>
       </div>` : ''}
     </div>`;
@@ -213,7 +213,7 @@ function renderSkillPanel(theme, icon, title, itemsHtml, gridClass) {
           <i data-lucide="${icon}" class="w-6 h-6 text-eu-blue"></i>
         </div>
         <div class="min-w-0 flex items-center h-16">
-          <h2 class="text-2xl font-extrabold text-eu-purple leading-tight">${title}</h2>
+          <h2 class="text-2xl font-extrabold text-eu-purple leading-tight">${esc(title)}</h2>
         </div>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 ${gridClass} gap-4">${itemsHtml}</div>
@@ -228,7 +228,7 @@ function renderSkillCloudPanel(theme, icon, title, cloudId) {
           <i data-lucide="${icon}" class="w-6 h-6 text-eu-blue"></i>
         </div>
         <div class="min-w-0 flex items-center h-16">
-          <h2 class="text-2xl font-extrabold text-eu-purple leading-tight">${title}</h2>
+          <h2 class="text-2xl font-extrabold text-eu-purple leading-tight">${esc(title)}</h2>
         </div>
       </div>
       <div id="${cloudId}" class="flex flex-wrap items-center justify-center gap-4 py-4 min-h-[280px]"></div>
@@ -240,7 +240,7 @@ function pathSteps(steps, color) {
   return (steps || []).map((step, i) => `
     <div class="flex items-center gap-3 rd-card-grad-violet border border-eu-blue/10 rounded-2xl px-4 py-3 shadow-sm hover:border-eu-blue/30 transition-all duration-300">
       <div class="w-6 h-6 rounded-full ${color} text-white text-xs font-bold flex items-center justify-center shrink-0 shadow-inner"><span>${i + 1}</span></div>
-      <span class="text-base font-semibold text-eu-text leading-tight">${step}</span>
+      <span class="text-base font-semibold text-eu-text leading-tight">${esc(step)}</span>
     </div>`).join('');
 }
 
@@ -255,11 +255,11 @@ function renderSearchControls(tab, trainingT) {
     <div class="flex flex-wrap items-center gap-4 mb-6">
       <div class="relative">
         <i data-lucide="search" class="w-5 h-5 text-eu-blue absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
-        <input id="tr-search" type="search" value="${(filters.search || '').replace(/"/g, '&quot;')}"
-          placeholder="${placeholder}"
+        <input id="tr-search" type="search" value="${esc(filters.search || '')}"
+          placeholder="${esc(placeholder)}"
           class="w-full sm:w-80 border border-eu-blue/10 rounded-full pl-11 pr-5 py-2.5 text-base focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white shadow-sm transition-all duration-300 placeholder:text-eu-text/40" />
       </div>
-      ${hasActive ? `<button data-clear-filters class="inline-flex items-center gap-2 text-sm px-5 py-2.5 rounded-full font-bold transition-all duration-300 bg-white text-eu-purple border border-eu-blue/10 hover:bg-eu-blue/5 hover:border-eu-blue/30 cursor-pointer shadow-sm"><i data-lucide="x" class="w-4 h-4 text-eu-blue"></i>${clearLabel}</button>` : ''}
+      ${hasActive ? `<button data-clear-filters class="inline-flex items-center gap-2 text-sm px-5 py-2.5 rounded-full font-bold transition-all duration-300 bg-white text-eu-purple border border-eu-blue/10 hover:bg-eu-blue/5 hover:border-eu-blue/30 cursor-pointer shadow-sm"><i data-lucide="x" class="w-4 h-4 text-eu-blue"></i>${esc(clearLabel)}</button>` : ''}
     </div>`;
 }
 
@@ -285,14 +285,14 @@ function renderCourseGridContent(tab, allCourses, trainingT, courseTags, emptyMe
   const pageSizeHtml = `
     <div class="flex gap-1.5">
       ${pageSizeOpts.map(n => `<button data-tr-pagesize="${n}" class="px-3 py-1.5 rounded-xl border cursor-pointer text-xs font-bold transition-all duration-300 ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue shadow-sm' : 'bg-white text-eu-text border border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">${n}</button>`).join('')}
-      ${showAllOpt ? `<button data-tr-pagesize="all" class="px-3 py-1.5 rounded-xl border cursor-pointer text-xs font-bold transition-all duration-300 ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue shadow-sm' : 'bg-white text-eu-text border border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">${showAllLbl}</button>` : ''}
+      ${showAllOpt ? `<button data-tr-pagesize="all" class="px-3 py-1.5 rounded-xl border cursor-pointer text-xs font-bold transition-all duration-300 ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue shadow-sm' : 'bg-white text-eu-text border border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">${esc(showAllLbl)}</button>` : ''}
     </div>`;
 
   const paginationHtml = !isAll && totalPages > 1 ? `
     <div class="flex gap-3 justify-center mt-8 mb-6 items-center">
-      <button id="tr-pag-prev" class="px-4 py-2 rounded-xl border text-sm font-bold cursor-pointer transition-all duration-300 ${safePage === 0 ? 'opacity-40 pointer-events-none border-eu-blue/10 text-eu-text/40' : 'bg-white border-eu-blue/10 text-eu-text hover:border-eu-blue/30 hover:bg-eu-blue/5'}">← ${trainingT?.paginationPrev || 'Anterior'}</button>
+      <button id="tr-pag-prev" class="px-4 py-2 rounded-xl border text-sm font-bold cursor-pointer transition-all duration-300 ${safePage === 0 ? 'opacity-40 pointer-events-none border-eu-blue/10 text-eu-text/40' : 'bg-white border-eu-blue/10 text-eu-text hover:border-eu-blue/30 hover:bg-eu-blue/5'}">← ${esc(trainingT?.paginationPrev || 'Anterior')}</button>
       <span class="px-4 py-2 text-sm font-bold text-eu-text/70 bg-eu-blue/5 rounded-xl">${safePage + 1} / ${totalPages}</span>
-      <button id="tr-pag-next" class="px-4 py-2 rounded-xl border text-sm font-bold cursor-pointer transition-all duration-300 ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none border-eu-blue/10 text-eu-text/40' : 'bg-white border-eu-blue/10 text-eu-text hover:border-eu-blue/30 hover:bg-eu-blue/5'}">${trainingT?.paginationNext || 'Siguiente'} →</button>
+      <button id="tr-pag-next" class="px-4 py-2 rounded-xl border text-sm font-bold cursor-pointer transition-all duration-300 ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none border-eu-blue/10 text-eu-text/40' : 'bg-white border-eu-blue/10 text-eu-text hover:border-eu-blue/30 hover:bg-eu-blue/5'}">${esc(trainingT?.paginationNext || 'Siguiente')} →</button>
     </div>` : '';
 
   const count = filtered.length;
@@ -300,7 +300,7 @@ function renderCourseGridContent(tab, allCourses, trainingT, courseTags, emptyMe
 
   return `
     <div class="flex items-center justify-between mb-4">
-      <span class="text-xs text-eu-text/60 font-semibold">${countLabel}</span>
+      <span class="text-xs text-eu-text/60 font-semibold">${esc(countLabel)}</span>
       ${pageSizeHtml}
     </div>
     ${paginated.length > 0 ? `
@@ -310,7 +310,7 @@ function renderCourseGridContent(tab, allCourses, trainingT, courseTags, emptyMe
       ${paginationHtml}` : `
       <div class="rd-card rd-pad text-center rd-card-grad-beige">
         <i data-lucide="inbox" class="w-12 h-12 text-eu-blue/50 mx-auto mb-4"></i>
-        <p class="text-eu-text/80 text-base font-semibold">${pickLang(emptyMessage, 'No hay cursos disponibles.')}</p>
+        <p class="text-eu-text/80 text-base font-semibold">${esc(pickLang(emptyMessage, 'No hay cursos disponibles.'))}</p>
       </div>`}`;
 }
 
@@ -411,13 +411,13 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
               <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
                 <i data-lucide="${getSkillIcon(s.id)}" class="w-5 h-5 text-eu-blue"></i>
               </div>
-              <span class="min-w-0 leading-tight">${pickLang(s.title, '')}</span>
+              <span class="min-w-0 leading-tight">${esc(pickLang(s.title, ''))}</span>
             </div>`).join('')
           : (trainingT?.fpSkills || []).map(s => `<div class="group flex items-center gap-3 rounded-2xl border border-eu-blue/10 bg-[#FFFDF9] px-4 py-3 text-base font-semibold text-eu-text shadow-sm hover:bg-white hover:border-eu-blue/30 transition-all duration-300">
               <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
                 <i data-lucide="check-circle" class="w-5 h-5 text-eu-blue"></i>
               </div>
-              <span class="min-w-0 leading-tight">${s}</span>
+              <span class="min-w-0 leading-tight">${esc(s)}</span>
             </div>`).join('');
         skillsBlockHtml = `<div class="mb-8">${renderSkillPanel('fp', 'briefcase', sectionTitle, skillsHtml, 'lg:grid-cols-3')}</div>`;
       }
@@ -431,7 +431,7 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
         const pbTitle = pb ? pickLang(pb.title, trainingT?.fpPath || '') : (trainingT?.fpPath || '');
         const pbSteps = pb?.steps?.length > 0 ? pb.steps.map(s => pickLang(s.text, '')) : (trainingT?.fpPathSteps || []);
         return `<div class="rd-hero-gradient rounded-[2rem] p-10 md:p-12 mt-10 text-white">
-          <h3 class="text-2xl font-extrabold mb-6" style="color:#FFF4E1">${pbTitle}</h3>
+          <h3 class="text-2xl font-extrabold mb-6" style="color:#FFF4E1">${esc(pbTitle)}</h3>
           <div class="flex flex-wrap items-center gap-3">${pathSteps(pbSteps, 'bg-eu-purple')}</div>
         </div>`;
       })()}`;
@@ -452,13 +452,13 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
               <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
                 <i data-lucide="${getSkillIcon(s.id)}" class="w-5 h-5 text-eu-blue"></i>
               </div>
-              <span class="min-w-0 leading-tight">${pickLang(s.title, '')}</span>
+              <span class="min-w-0 leading-tight">${esc(pickLang(s.title, ''))}</span>
             </div>`).join('')
           : (trainingT?.teacherTopics || []).map(s => `<div class="group flex items-center gap-3 rounded-2xl border border-eu-blue/10 bg-[#FFFDF9] px-4 py-3 text-base font-semibold text-eu-text shadow-sm hover:bg-white hover:border-eu-blue/30 transition-all duration-300">
               <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
                 <i data-lucide="check-circle" class="w-5 h-5 text-eu-blue"></i>
               </div>
-              <span class="min-w-0 leading-tight">${s}</span>
+              <span class="min-w-0 leading-tight">${esc(s)}</span>
             </div>`).join('');
         skillsBlockHtml = `<div class="mb-8">${renderSkillPanel('teacher', 'book-open', sectionTitle, topicsHtml, 'lg:grid-cols-2')}</div>`;
       }
@@ -483,13 +483,13 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
             <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
               <i data-lucide="${getSkillIcon(s.id)}" class="w-5 h-5 text-eu-blue"></i>
             </div>
-            <span class="min-w-0 leading-tight">${pickLang(s.title, '')}</span>
+            <span class="min-w-0 leading-tight">${esc(pickLang(s.title, ''))}</span>
           </div>`).join('')
         : (trainingT?.masterBridgeItems || []).map((item, i) => `<div class="group flex items-center gap-3 rounded-2xl border border-eu-blue/10 bg-[#FFFDF9] px-4 py-3 text-base font-semibold text-eu-text shadow-sm hover:bg-white hover:border-eu-blue/30 transition-all duration-300">
             <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
               <span class="text-xs font-extrabold text-eu-blue">${i + 1}</span>
             </div>
-            <span class="min-w-0 leading-tight">${item}</span>
+            <span class="min-w-0 leading-tight">${esc(item)}</span>
           </div>`).join('');
       masterSkillsBlockHtml = `<div class="mb-8">${renderSkillPanel('master', 'graduation-cap', masterSectionTitle, masterSkillsHtml, 'xl:grid-cols-4')}</div>`;
     }
@@ -507,14 +507,14 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
         <i data-lucide="alert-triangle" class="w-6 h-6"></i>
       </div>
       <div class="flex-1">
-        <p class="text-base text-white leading-relaxed font-semibold">${masterDisclaimer}</p>
+        <p class="text-base text-white leading-relaxed font-semibold">${esc(masterDisclaimer)}</p>
       </div>
     </div>`}
     ${masterSkillsBlockHtml}
     ${searchControls}${courseGrid}
     ${masterPathBlock?.visible === false ? '' : `
     <div class="rd-hero-gradient rounded-[2rem] p-10 md:p-12 mt-10 text-white">
-      <h3 class="text-2xl font-extrabold mb-6" style="color:#FFF4E1">${masterPathTitle}</h3>
+      <h3 class="text-2xl font-extrabold mb-6" style="color:#FFF4E1">${esc(masterPathTitle)}</h3>
       <div class="flex flex-wrap items-center gap-3">${pathSteps(masterPathSteps, 'bg-eu-purple')}</div>
     </div>`}`;
 }
@@ -645,7 +645,7 @@ export function mount() {
         const style = isVertical
           ? `font-size:${size}px;color:${color};writing-mode:vertical-rl;text-orientation:mixed;line-height:1.2;`
           : `font-size:${size}px;color:${color};line-height:1.2;`;
-        return `<span class="inline-block font-medium px-1 py-1 whitespace-nowrap" style="${style}">${item.label}</span>`;
+        return `<span class="inline-block font-medium px-1 py-1 whitespace-nowrap" style="${style}">${esc(item.label)}</span>`;
       }).join('');
     }
   }
