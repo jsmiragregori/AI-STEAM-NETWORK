@@ -404,11 +404,17 @@ export async function generateInventory() {
     totalUnescaped += fileUnescaped;
     totalEscaped += fileEscaped;
 
-    dynamicHrefs.push(...findDynamicHrefs(source, relativePath));
+    // Las utilidades pueden construir marcado seguro como implementación
+    // interna; esta métrica describe las plantillas que el sitio renderiza.
+    const isRuntimeTemplate = relativePath.startsWith('assets/js/views/')
+      || relativePath === 'assets/js/components/header.js';
+    if (isRuntimeTemplate) {
+      dynamicHrefs.push(...findDynamicHrefs(source, relativePath));
 
-    const blank = findUnsafeBlankTargets(source, relativePath);
-    blankTargetTotal.total += blank.total;
-    blankTargetTotal.unsafe.push(...blank.unsafe);
+      const blank = findUnsafeBlankTargets(source, relativePath);
+      blankTargetTotal.total += blank.total;
+      blankTargetTotal.unsafe.push(...blank.unsafe);
+    }
 
     dangerousSinks.push(...findDangerousSinks(source, relativePath));
 

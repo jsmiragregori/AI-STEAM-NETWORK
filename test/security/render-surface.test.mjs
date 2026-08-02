@@ -21,7 +21,7 @@ const EXPECTED_ESC_VIEWS = [
 test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   const report = await generateInventory();
 
-  assert.equal(report.scannedFiles, 19);
+  assert.equal(report.scannedFiles, 20);
   assert.equal(report.pickLangInterpolations.unescaped, 126);
   assert.equal(report.pickLangInterpolations.escaped, 16);
   assert.deepEqual(
