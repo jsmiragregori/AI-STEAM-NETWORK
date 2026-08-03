@@ -49,7 +49,11 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   assert.equal(report.dynamicHrefs.editorialSchemeValidated, 21);
   assert.equal(report.dynamicHrefs.nonEditorialCount, 2);
   assert.equal(report.dynamicHrefs.total, 23);
-  assert.equal(report.blankTargetsWithoutNoopener.total, 16);
+  // VAN-2.3: 21 y no 16 por dos ampliaciones de la medición: los
+  // `target="${…}"` calculados, antes invisibles, y el ancla que emite
+  // `sanitize-editorial-html.js`, antes fuera de alcance. El invariante —que la
+  // lista de inseguros esté vacía— vive en `noopener.test.mjs`.
+  assert.equal(report.blankTargetsWithoutNoopener.total, 21);
   assert.deepEqual(report.blankTargetsWithoutNoopener.unsafe, []);
 
   const sinkCounts = Object.fromEntries(

@@ -325,20 +325,98 @@ export function isHrefSchemeValidated(snippet, validatedIds) {
 
 // --- target="_blank" sin rel="noopener" ---------------------------------
 
-function findUnsafeBlankTargets(source, relativePath) {
-  const results = [];
-  // Aproxima la etiqueta completa buscando hacia atrás/adelante desde
-  // target="_blank" hasta el `<` y `>` más cercanos en la misma plantilla.
-  const targetRe = /target\s*=\s*["']_blank["']/g;
+// Delimita la etiqueta `<…>` que contiene un índice, saltando las
+// interpolaciones para que un `>` dentro de `${…}` no la corte antes de tiempo.
+// Devuelve null si el índice no está dentro de ninguna etiqueta: ocurre cuando
+// los atributos se construyen como fragmento suelto y se interpolan después.
+export function enclosingTagSpan(source, index) {
+  let i = 0;
+  let tagStart = -1;
+  while (i < source.length) {
+    const ch = source[i];
+    if (ch === '$' && source[i + 1] === '{') {
+      const next = skipInterpolationExprAt(source, i + 2);
+      if (tagStart >= 0 && index >= i && index < next) return { start: tagStart, end: next };
+      i = next;
+      continue;
+    }
+    if (ch === '<') { tagStart = i; i++; continue; }
+    if (ch === '>' && tagStart >= 0) {
+      if (index >= tagStart && index <= i) return { start: tagStart, end: i + 1 };
+      tagStart = -1;
+      i++;
+      continue;
+    }
+    i++;
+  }
+  return null;
+}
+
+// Recorta el literal de plantilla **más externo** que contiene el índice.
+// Es la red de seguridad para los fragmentos de atributos sin etiqueta propia,
+// donde el `rel` condicional vive en una interpolación hermana.
+function outermostTemplateSpan(source, index) {
+  const spans = extractInterpolations(source)
+    .filter((entry) => entry.templateStart <= index && index < (entry.templateEnd ?? Infinity))
+    .sort((a, b) => a.templateStart - b.templateStart);
+  return spans.length ? { start: spans[0].templateStart, end: spans[0].templateEnd } : null;
+}
+
+const NOOPENER_RE = /rel\s*=\s*["'][^"']*noopener[^"']*["']/;
+
+// `target="_blank"` **y** `target="${…}"`.
+//
+// Contar solo el literal dejaba un punto ciego que importa: un destino
+// calculado en tiempo de ejecución no lleva la cadena `_blank` en el código y
+// era invisible para la guarda, que seguía en verde. Es la lección de
+// `SEC-7.1.3`: el invariante tiene que ser sobre la arquitectura, no sobre cómo
+// se escribió el atributo. Como no se puede demostrar estáticamente que un
+// destino dinámico nunca valdrá `_blank`, se le exige `rel` igual que al
+// literal.
+export function findBlankTargets(source, relativePath) {
+  const literal = [];
+  const dynamic = [];
+  const unsafe = [];
+  const targetRe = /target\s*=\s*(["'])((?:(?!\1).)*)\1/g;
   let match;
   while ((match = targetRe.exec(source))) {
-    const tagStart = source.lastIndexOf('<', match.index);
-    const tagEnd = source.indexOf('>', match.index);
-    const tag = tagStart >= 0 && tagEnd >= 0 ? source.slice(tagStart, tagEnd + 1) : source.slice(match.index, match.index + 120);
-    const hasNoopener = /rel\s*=\s*["'][^"']*noopener[^"']*["']/.test(tag);
-    if (!hasNoopener) results.push({ file: relativePath, line: lineOf(source, match.index), snippet: tag.slice(0, 160) });
+    const value = match[2];
+    const isDynamic = value.includes('${');
+    const isBlank = value.trim() === '_blank';
+    if (!isDynamic && !isBlank) continue; // `_self` y equivalentes no exponen nada
+
+    const tag = enclosingTagSpan(source, match.index);
+    const region = tag || outermostTemplateSpan(source, match.index);
+    const text = region ? source.slice(region.start, region.end) : source.slice(match.index, match.index + 200);
+    const entry = {
+      file: relativePath,
+      line: lineOf(source, match.index),
+      kind: isDynamic ? 'dynamic' : 'literal',
+      snippet: text.replace(/\s+/g, ' ').slice(0, 160),
+    };
+    (isDynamic ? dynamic : literal).push(entry);
+    if (!NOOPENER_RE.test(text)) unsafe.push(entry);
   }
-  return { total: [...source.matchAll(targetRe)].length, unsafe: results };
+  return { total: literal.length + dynamic.length, literalCount: literal.length, dynamicCount: dynamic.length, unsafe };
+}
+
+// `window.open()` abre una pestaña con la misma exposición que un
+// `target="_blank"`, y hoy no hay ninguna. Se vigila para que no entre una sin
+// `noopener` sin que nadie lo note.
+export function findWindowOpenCalls(source, relativePath) {
+  const results = [];
+  const re = /\bwindow\.open\s*\(/g;
+  let match;
+  while ((match = re.exec(source))) {
+    const call = source.slice(match.index, match.index + 240);
+    results.push({
+      file: relativePath,
+      line: lineOf(source, match.index),
+      safe: /noopener/.test(call),
+      snippet: call.replace(/\s+/g, ' ').slice(0, 160),
+    });
+  }
+  return results;
 }
 
 // --- Sinks peligrosos ------------------------------------------------------
@@ -383,8 +461,28 @@ function runSelfTests() {
 
   const hrefFixture = 'const html = `<a href="${value || \'#\'}">x</a>`;';
   assert.equal(findDynamicHrefs(hrefFixture, 'fixture.js').length, 1, 'una comilla dentro de ${...} no cierra href');
-  assert.equal(findUnsafeBlankTargets('<a target="_blank" rel="noreferrer noopener">', 'fixture.js').unsafe.length, 0);
-  assert.equal(findUnsafeBlankTargets('<a target="_blank">', 'fixture.js').unsafe.length, 1);
+  assert.equal(findBlankTargets('<a target="_blank" rel="noreferrer noopener">', 'fixture.js').unsafe.length, 0);
+  assert.equal(findBlankTargets('<a target="_blank">', 'fixture.js').unsafe.length, 1);
+  assert.equal(findBlankTargets('<a target="_self">', 'fixture.js').total, 0, '_self no expone nada');
+
+  // Un destino calculado cuenta y exige rel, porque no se puede demostrar
+  // estáticamente que nunca valga _blank.
+  const dyn = findBlankTargets('const h = `<a target="${t}">x</a>`;', 'fixture.js');
+  assert.equal(dyn.dynamicCount, 1);
+  assert.equal(dyn.unsafe.length, 1, 'un target dinámico sin rel es inseguro');
+  assert.equal(findBlankTargets('const h = `<a target="${t}" rel="noopener noreferrer">x</a>`;', 'fixture.js').unsafe.length, 0);
+
+  // Fragmento de atributos sin etiqueta propia: el rel condicional vive en una
+  // interpolación hermana del mismo literal externo.
+  const fragment = 'const attrs = `${on ? ` target="${t}"` : \'\'}${on ? \' rel="noopener noreferrer"\' : \'\'}`;';
+  assert.equal(findBlankTargets(fragment, 'fixture.js').unsafe.length, 0);
+
+  // Y la guarda no se deja excusar por el rel de una etiqueta vecina.
+  const neighbour = 'const h = `<a target="_blank">a</a><a href="#" rel="noopener">b</a>`;';
+  assert.equal(findBlankTargets(neighbour, 'fixture.js').unsafe.length, 1, 'el rel del vecino no cubre');
+
+  assert.equal(findWindowOpenCalls('window.open(u);', 'fixture.js')[0].safe, false);
+  assert.equal(findWindowOpenCalls('window.open(u, "_blank", "noopener");', 'fixture.js')[0].safe, true);
   console.log('Self-test del inventario: OK');
 }
 
@@ -396,7 +494,8 @@ export async function generateInventory() {
   const filesDefiningEsc = [];
   const filesImportingEscapeHtml = [];
   const dynamicHrefs = [];
-  const blankTargetTotal = { total: 0, unsafe: [] };
+  const blankTargetTotal = { total: 0, literalCount: 0, dynamicCount: 0, unsafe: [] };
+  const windowOpenCalls = [];
   const dangerousSinks = [];
 
   for (const filePath of files) {
@@ -440,12 +539,22 @@ export async function generateInventory() {
         dynamicHrefs.push({ ...hit, schemeValidated: isHrefSchemeValidated(hit.snippet, validatedIds) });
       }
 
-      const blank = findUnsafeBlankTargets(source, relativePath);
+    }
+
+    // El tabnabbing, en cambio, se vigila en **todo** el árbol escaneado y no
+    // solo en las plantillas de vista. `sanitize-editorial-html.js` emite un
+    // `<a target="_blank">` real al DOM: si alguien le quitara el `rel`, con el
+    // alcance restringido la guarda habría seguido en verde.
+    {
+      const blank = findBlankTargets(source, relativePath);
       blankTargetTotal.total += blank.total;
+      blankTargetTotal.literalCount += blank.literalCount;
+      blankTargetTotal.dynamicCount += blank.dynamicCount;
       blankTargetTotal.unsafe.push(...blank.unsafe);
     }
 
     dangerousSinks.push(...findDangerousSinks(source, relativePath));
+    windowOpenCalls.push(...findWindowOpenCalls(source, relativePath));
 
     if (fileUnescaped || fileEscaped) {
       perFile.push({ file: relativePath, unescaped: fileUnescaped, escaped: fileEscaped, interpolationDetails });
@@ -473,6 +582,7 @@ export async function generateInventory() {
       total: dynamicHrefs.length,
     },
     blankTargetsWithoutNoopener: blankTargetTotal,
+    windowOpenCalls,
     dangerousSinks,
   };
 }
@@ -499,7 +609,9 @@ async function main() {
   console.log(`href="\${...}" editoriales dinámicos: ${report.dynamicHrefs.editorialCount} (con esquema validado: ${report.dynamicHrefs.editorialSchemeValidated})`);
   for (const hit of report.dynamicHrefs.editorialUnvalidated) console.log(`  - SIN VALIDAR ${hit.file}:${hit.line}`);
   console.log(`href="\${...}" no editoriales: ${report.dynamicHrefs.nonEditorialCount}`);
-  console.log(`target="_blank" sin rel="noopener": ${report.blankTargetsWithoutNoopener.unsafe.length} de ${report.blankTargetsWithoutNoopener.total}`);
+  console.log(`Destinos de pestaña nueva sin rel="noopener": ${report.blankTargetsWithoutNoopener.unsafe.length} de ${report.blankTargetsWithoutNoopener.total} (${report.blankTargetsWithoutNoopener.literalCount} literales, ${report.blankTargetsWithoutNoopener.dynamicCount} dinámicos)`);
+  for (const hit of report.blankTargetsWithoutNoopener.unsafe) console.log(`  - SIN noopener ${hit.file}:${hit.line} [${hit.kind}]`);
+  console.log(`window.open(): ${report.windowOpenCalls.length} (sin noopener: ${report.windowOpenCalls.filter((c) => !c.safe).length})`);
   console.log(`Sinks peligrosos (eval/new Function/document.write/insertAdjacentHTML/innerHTML=/location.search|hash/URLSearchParams): ${report.dangerousSinks.length}`);
   for (const hit of report.dangerousSinks) console.log(`  - ${hit.file}:${hit.line} ${hit.sink}`);
   console.log('\n-- Detalle por fichero (pickLang) --');
