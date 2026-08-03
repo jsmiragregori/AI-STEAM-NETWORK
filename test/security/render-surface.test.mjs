@@ -4,7 +4,11 @@ import test from 'node:test';
 import { generateInventory } from '../../scripts/inventory-render-surface.mjs';
 
 const EXPECTED_PER_FILE = [
-  { file: 'assets/js/views/governance.js', unescaped: 1, escaped: 101 },
+  // 99 y no 101: los dos botones de Participar dejan de tener rama <span> con
+  // `pickLang` para el caso "con CMS", porque ahora siempre son <a>. Esa rama
+  // solo se conserva para el caso sin CMS, donde `pickLang` no aplica —y donde
+  // acceder a `cms.*` habría lanzado—.
+  { file: 'assets/js/views/governance.js', unescaped: 1, escaped: 99 },
   { file: 'assets/js/views/knowledge.js', unescaped: 0, escaped: 9 },
   { file: 'assets/js/views/marketplace.js', unescaped: 5, escaped: 12 },
   { file: 'assets/js/views/news.js', unescaped: 4, escaped: 0 },
@@ -28,7 +32,7 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
 
   assert.equal(report.scannedFiles, 20);
   assert.equal(report.pickLangInterpolations.unescaped, 11);
-  assert.equal(report.pickLangInterpolations.escaped, 132);
+  assert.equal(report.pickLangInterpolations.escaped, 130);
   assert.deepEqual(
     report.pickLangInterpolations.perFile.map(({ file, unescaped, escaped }) => ({ file, unescaped, escaped })),
     EXPECTED_PER_FILE,

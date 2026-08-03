@@ -725,10 +725,17 @@ function tabParticipar(govT) {
   const stakeBtnExt = hasCms ? cms.stakeholderCard.buttonExternal : false;
   const consBtnUrl = hasCms ? cms.consensueCard.buttonUrl || '#' : '#';
   const consBtnExt = hasCms ? cms.consensueCard.buttonExternal : false;
-  // '#' es el centinela de "sin URL" y ya tiene su rama <span>; una URL
-  // rechazada por la allowlist cae en esa misma rama.
+  // '#' es el centinela del CMS para "enlace pendiente de rellenar": el botón
+  // se pinta clicable e inerte, no como <span>. Se distingue de una URL real
+  // porque con '#' no tiene sentido abrir pestaña nueva. Una URL que exista
+  // pero no supere la allowlist cae en ese mismo '#'.
+  // `safe*` solo tiene valor con una URL real y utilizable: es lo que decide si
+  // abrir pestaña nueva. `*Href` es lo que se pinta, con '#' como destino
+  // inerte tanto para el centinela como para una URL rechazada.
   const safeStakeBtnUrl = stakeBtnUrl === '#' ? null : getSafeEditorialUrl(stakeBtnUrl);
   const safeConsBtnUrl = consBtnUrl === '#' ? null : getSafeEditorialUrl(consBtnUrl);
+  const stakeBtnHref = getSafeEditorialUrl(stakeBtnUrl) || '#';
+  const consBtnHref = getSafeEditorialUrl(consBtnUrl) || '#';
 
   const stakeholderBenefitsHtml = (hasCms
     ? (cms.stakeholderCard.benefits || []).map(b => `
@@ -847,12 +854,12 @@ function tabParticipar(govT) {
               </p>
             </div>
             <div class="pt-4 shrink-0" style="border-top:1px solid rgb(86 32 246/.15)">
-              ${(hasCms && safeStakeBtnUrl)
-                ? `<a href="${esc(safeStakeBtnUrl)}" ${stakeBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#5620F6">
+              ${hasCms
+                ? `<a href="${esc(stakeBtnHref)}" ${(safeStakeBtnUrl && stakeBtnExt) ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#5620F6">
                 <span>${esc(pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || ''))}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
               </a>`
                 : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#5620F6">
-                <span>${esc(pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || ''))}</span>
+                <span>${esc(s.stakeholderButton || '')}</span>
               </span>`
               }
             </div>
@@ -877,12 +884,12 @@ function tabParticipar(govT) {
               <div class="space-y-4 mb-6">${consensueGroupsHtml}</div>
             </div>
             <div class="pt-4 shrink-0" style="border-top:1px solid rgb(73 24 173 / .15)">
-              ${(hasCms && safeConsBtnUrl)
-                ? `<a href="${esc(safeConsBtnUrl)}" ${consBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#4918AD">
+              ${hasCms
+                ? `<a href="${esc(consBtnHref)}" ${(safeConsBtnUrl && consBtnExt) ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#4918AD">
                 <span>${esc(pickLang(cms.consensueCard.buttonText, s.consensueButton || ''))}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
               </a>`
                 : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#4918AD">
-                <span>${esc(pickLang(cms.consensueCard.buttonText, s.consensueButton || ''))}</span>
+                <span>${esc(s.consensueButton || '')}</span>
               </span>`
               }
             </div>
