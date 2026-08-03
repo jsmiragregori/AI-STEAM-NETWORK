@@ -316,7 +316,7 @@ function renderDetail(newsT) {
   // VAN-2.2: se cablea la validación de URL aunque la sección esté diferida.
   // El texto del CTA sigue sin escapar a propósito: pertenece a la deuda V1 de
   // News, que se resuelve o se acepta antes de VAN-3B.
-  const ctaLink = getSafeEditorialUrl(detail.cta_link);
+  const ctaLink = getSafeEditorialUrl(detail.cta_link) || '#';
 
   const sectionsHtml = (detail.sections || []).map((section, idx) => `
     <article class="scroll-mt-20">
@@ -375,14 +375,10 @@ function renderDetail(newsT) {
           <div class="rd-card rd-card-tint-purple rd-pad mb-12 text-center relative overflow-hidden border border-eu-purple/10">
             <h3 class="text-2xl font-extrabold text-eu-purple mb-3">${newsT?.detailCtaTitle || '¿Listo para unirte a la red?'}</h3>
             <p class="text-gray-650 text-base mb-6 max-w-2xl mx-auto leading-relaxed">${newsT?.detailCtaDesc || ''}</p>
-            ${ctaLink
-              ? `<a href="${escapeHtml(ctaLink)}"
+            <a href="${escapeHtml(ctaLink)}"
                class="inline-flex items-center gap-2 bg-eu-blue text-white px-8 py-3.5 rounded-full font-bold hover:bg-eu-purple transition-all shadow-md">
               ${detail.cta_button || ''} <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </a>`
-              : `<span class="inline-flex items-center gap-2 bg-eu-blue text-white px-8 py-3.5 rounded-full font-bold shadow-md">
-              ${detail.cta_button || ''} <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </span>`}
+            </a>
           </div>
 
           ${relatedHtml}

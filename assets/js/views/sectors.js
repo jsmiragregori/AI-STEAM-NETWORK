@@ -212,15 +212,15 @@ function renderPartners(sector, sectorsT) {
       </div>
       <div class="mt-5 grid gap-3 sm:grid-cols-2">
         ${partners.map(partner => {
-          // Sin URL utilizable la tarjeta se pinta como <div>: misma
-          // composición, sin enlace. Antes caía en un href="#" inerte.
-          const safePartnerUrl = getSafeEditorialUrl(partner.url);
-          const tag = safePartnerUrl ? 'a' : 'div';
-          const linkAttrs = safePartnerUrl
-            ? `href="${esc(safePartnerUrl)}" target="_blank" rel="noopener noreferrer"`
-            : '';
+          // '#' es la convención del CMS para "enlace pendiente de rellenar" y
+          // se conserva: es inerte, no navega ni ejecuta nada. Una URL que
+          // exista pero no supere la allowlist cae en ese mismo '#'.
+          const partnerHref = getSafeEditorialUrl(partner.url) || '#';
+          const linkAttrs = partnerHref === '#'
+            ? ''
+            : 'target="_blank" rel="noopener noreferrer"';
           return `
-          <${tag} ${linkAttrs} class="flex flex-col justify-between rd-card rd-card-grad-beige rd-card-edge rounded-2xl p-5 text-center">
+          <a href="${esc(partnerHref)}" ${linkAttrs} class="flex flex-col justify-between rd-card rd-card-grad-beige rd-card-edge rounded-2xl p-5 text-center">
             <div class="flex flex-1 items-center justify-center min-h-[5rem]">
               ${partner.logo ? `
                 <img src="assets/images/partners/${esc(partner.logo)}" alt="${esc(partner.acronym || partner.id)}" class="max-h-16 max-w-[95%] object-contain">
@@ -232,7 +232,7 @@ function renderPartners(sector, sectorsT) {
             <div>
               <span class="block text-sm font-bold leading-tight text-eu-text/85">${esc(localized(partner.name) || partner.id)}</span>
             </div>
-          </${tag}>
+          </a>
         `;
         }).join('')}
       </div>
