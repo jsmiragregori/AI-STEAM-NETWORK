@@ -4,6 +4,7 @@ import { setState } from '../state.js';
 import { HOME_CONFIG } from '../../data/home.js';
 import { resolveMembershipAction } from '../utils/membership.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
+import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
 
 function localized(value) {
@@ -197,13 +198,16 @@ function renderEcosystemBlock() {
     const tag = card.tag?.visible
       ? `<span class="self-start text-sm font-bold rounded-full" style="padding:.35rem 1rem;${tagStyle}">${sanitizeEditorialHtml(localized(card.tag.html))}</span>`
       : '';
-    const attrs = card.href
-      ? `href="${card.href}"${card.target ? ` target="${card.target}"` : ''}${card.target === '_blank' ? ' rel="noopener noreferrer"' : ''}`
+    // Un href rechazado degrada la card a <div>: conserva la composición y
+    // pierde solo la navegabilidad. No la convierte en la card "activa".
+    const safeCardHref = getSafeEditorialUrl(card.href);
+    const attrs = safeCardHref
+      ? `href="${esc(safeCardHref)}"${card.target ? ` target="${esc(card.target)}"` : ''}${card.target === '_blank' ? ' rel="noopener noreferrer"' : ''}`
       : '';
-    const element = card.href ? 'a' : 'div';
+    const element = safeCardHref ? 'a' : 'div';
     const cardStyle = isActive ? ' style="background:linear-gradient(to bottom,#ffffff 0%,#FFF4E1 100%)"' : '';
     const activeBorder = isActive ? ' border-2 border-eu-purple' : '';
-    const cursor = card.href ? ' cursor-pointer' : '';
+    const cursor = safeCardHref ? ' cursor-pointer' : '';
 
     return `
       <${element} ${attrs} class="rd-card rd-card-grad-violet rd-card-hover rd-pad flex flex-col${activeBorder}${cursor}"${cardStyle}>
@@ -418,8 +422,12 @@ function renderHeroBlock() {
   const membershipAction = resolveMembershipAction(requestJoin, 'home');
   const requestJoinButton = requestJoin.visible === false || membershipAction.kind === 'hidden'
     ? ''
-    : membershipAction.kind === 'external'
-      ? `<a href="${membershipAction.url}" target="_blank" rel="noopener noreferrer" class="rounded-full font-bold transition-all" style="border:2px solid rgba(255,255,255,.35);color:white;padding:.875rem 2rem">
+    : membershipAction.kind === 'unsafe'
+      ? `<span class="rounded-full font-bold transition-all" style="border:2px solid rgba(255,255,255,.35);color:white;padding:.875rem 2rem">
+          ${esc(loc(requestJoin))}
+        </span>`
+      : membershipAction.kind === 'external'
+      ? `<a href="${esc(membershipAction.url)}" target="_blank" rel="noopener noreferrer" class="rounded-full font-bold transition-all" style="border:2px solid rgba(255,255,255,.35);color:white;padding:.875rem 2rem">
           ${esc(loc(requestJoin))}
         </a>`
       : `<button data-nav="red" data-membership-cta="true" class="rounded-full font-bold transition-all" style="border:2px solid rgba(255,255,255,.35);color:white;padding:.875rem 2rem">

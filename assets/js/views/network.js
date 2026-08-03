@@ -3,6 +3,7 @@ import { NETWORK_CONFIG } from '../../data/network.js';
 import { getFlagAssetPath } from '../lib/flag-assets.js';
 import { resolveMembershipAction } from '../utils/membership.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
+import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
 
 // ── Static data ─────────────────────────────────────────────────────────────
@@ -195,12 +196,18 @@ function tabSocios(activeCategory, filterCountry) {
     const logoHtml = p.logo
       ? `<img src="${LOGO_BASE}${esc(p.logo)}" alt="${esc(p.acronym || p.name || p.id)}" class="max-h-12 max-w-[160px] w-auto h-auto object-contain" loading="lazy" />`
       : `<div class="network-category-tooltip w-12 h-12 rounded-xl ${meta.bg} flex items-center justify-center" data-tooltip="${esc(categoryLabel)}" aria-label="${esc(categoryLabel)}"><i data-lucide="${meta.icon}" class="w-6 h-6 ${meta.color}"></i></div>`;
-    const visitLinkHtml = p.url ? `
+    // Una URL rechazada conserva el rótulo sin enlace, para no dejar hueco.
+    const safePartnerUrl = getSafeEditorialUrl(p.url);
+    const visitLinkHtml = !p.url ? '' : `
       <div class="border-t border-eu-purple/10 px-4 py-3">
-        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">
+        ${safePartnerUrl
+          ? `<a href="${esc(safePartnerUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">
           <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(visitLabel)}
-        </a>
-      </div>` : '';
+        </a>`
+          : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-400">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(visitLabel)}
+        </span>`}
+      </div>`;
     return `
       <div class="rd-card rd-card-grad-violet rd-card-edge flex flex-col overflow-hidden">
         <!-- Logo area -->
@@ -409,12 +416,12 @@ function tabStakeholders(activeCategory, showForm) {
       </div>
       <div class="p-6 rd-card-grad-beige">
         ${externalDescription ? `<p class="text-base text-gray-600 mb-5 leading-relaxed">${externalDescription}</p>` : ''}
-        <a href="${membershipAction.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors mb-5">
+        <a href="${esc(membershipAction.url)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors mb-5">
           <i data-lucide="external-link" class="w-4 h-4"></i>
           ${externalLabel}
         </a>
         <iframe
-          src="${membershipAction.url}"
+          src="${esc(membershipAction.url)}"
           title="${externalTitle}"
           loading="lazy"
           style="display:block;width:100%;height:clamp(32rem,75vh,52rem);border:0;border-radius:1rem"
@@ -426,10 +433,17 @@ function tabStakeholders(activeCategory, showForm) {
   const renderMembershipControl = (id, className) => {
     if (!showToggleButton) return '';
     if (membershipAction.kind === 'external') {
-      return `<a href="${membershipAction.url}" target="_blank" rel="noopener noreferrer" class="${className}">
+      return `<a href="${esc(membershipAction.url)}" target="_blank" rel="noopener noreferrer" class="${className}">
         <i data-lucide="external-link" class="w-4 h-4"></i>
         ${esc(shTexts.requestMembership)}
       </a>`;
+    }
+    // URL de adhesión rechazada: se conserva el rótulo, no la navegación.
+    if (membershipAction.kind === 'unsafe') {
+      return `<span class="${className}">
+        <i data-lucide="external-link" class="w-4 h-4"></i>
+        ${esc(shTexts.requestMembership)}
+      </span>`;
     }
     return `<button id="${id}" class="${className}">
       <i data-lucide="user-plus" class="w-4 h-4"></i>
@@ -548,10 +562,14 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
           return `<button data-net-sector="${esc(sec)}" class="text-sm px-2 py-0.5 rounded-full font-bold cursor-pointer transition-all ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="background:rgb(86 32 246/.10); color:#5620F6">${esc(label)}</button>`;
         }).join('') : '';
 
-        const webLink = s.website ? `
-          <a href="${s.website}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1 text-sm text-eu-blue font-bold hover:text-eu-purple transition-colors">
+        const safeWebsite = getSafeEditorialUrl(s.website);
+        const webLink = !s.website ? '' : safeWebsite ? `
+          <a href="${esc(safeWebsite)}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1 text-sm text-eu-blue font-bold hover:text-eu-purple transition-colors">
             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(shTexts.visitWebLabel)}
-          </a>` : '';
+          </a>` : `
+          <span class="mt-3 inline-flex items-center gap-1 text-sm text-gray-400 font-bold">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(shTexts.visitWebLabel)}
+          </span>`;
 
         return `
           <div class="rd-card rd-card-grad-violet rd-card-edge p-4 flex flex-col group">

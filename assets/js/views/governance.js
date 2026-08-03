@@ -3,6 +3,7 @@ import { getState, setState } from '../state.js';
 import { GOVERNANCE_CONFIG } from '../../data/governance.js';
 import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
+import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
 function pickLang(value, fallback = '') {
@@ -599,8 +600,12 @@ function tabDocumentos(govT) {
 
     const cardsHtml = paged.map(doc => {
       const pub = isPublic(doc);
-      const hasFile = doc.filePublicPath && doc.filePublicPath.trim();
-      const hasUrl = doc.url && doc.url.trim();
+      // Una URL rechazada por la allowlist equivale a no tener enlace: la card
+      // cae en su estado "sin enlace", que ya existe y ocupa el mismo espacio.
+      const fileUrl = getSafeEditorialUrl(doc.filePublicPath);
+      const docUrl = getSafeEditorialUrl(doc.url);
+      const hasFile = Boolean(fileUrl);
+      const hasUrl = Boolean(docUrl);
       const lang = getLang();
       const customLinkText = pickLang(doc.linkText, '');
       // Texto del enlace: el personalizado del CMS o un default según el origen.
@@ -638,12 +643,12 @@ function tabDocumentos(govT) {
           </div>
           <div class="mt-5 pt-4 border-t border-eu-blue/10">
             ${hasFile ? `
-            <a href="${doc.filePublicPath}" download class="inline-flex items-center gap-1.5 text-base font-bold text-eu-blue hover:text-eu-purple transition-colors duration-300">
+            <a href="${esc(fileUrl)}" download class="inline-flex items-center gap-1.5 text-base font-bold text-eu-blue hover:text-eu-purple transition-colors duration-300">
               <span>${esc(linkText)}</span>
               <i data-lucide="download" class="w-4 h-4"></i>
             </a>
             ` : hasUrl ? `
-            <a href="${doc.url}" ${doc.external ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-base font-bold text-eu-blue hover:text-eu-purple transition-colors duration-300">
+            <a href="${esc(docUrl)}" ${doc.external ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-base font-bold text-eu-blue hover:text-eu-purple transition-colors duration-300">
               <span>${esc(linkText)}</span>
               <i data-lucide="external-link" class="w-4 h-4"></i>
             </a>
@@ -720,6 +725,10 @@ function tabParticipar(govT) {
   const stakeBtnExt = hasCms ? cms.stakeholderCard.buttonExternal : false;
   const consBtnUrl = hasCms ? cms.consensueCard.buttonUrl || '#' : '#';
   const consBtnExt = hasCms ? cms.consensueCard.buttonExternal : false;
+  // '#' es el centinela de "sin URL" y ya tiene su rama <span>; una URL
+  // rechazada por la allowlist cae en esa misma rama.
+  const safeStakeBtnUrl = stakeBtnUrl === '#' ? null : getSafeEditorialUrl(stakeBtnUrl);
+  const safeConsBtnUrl = consBtnUrl === '#' ? null : getSafeEditorialUrl(consBtnUrl);
 
   const stakeholderBenefitsHtml = (hasCms
     ? (cms.stakeholderCard.benefits || []).map(b => `
@@ -762,6 +771,10 @@ function tabParticipar(govT) {
         const regExt = e.registrationExternal;
         const accUrl = (e.accessUrl || '').trim();
         const accExt = e.accessExternal;
+        // Si la URL existe pero no supera la allowlist, el botón conserva su
+        // sitio y su rótulo como <span>, sin llegar a ser un enlace.
+        const safeRegUrl = getSafeEditorialUrl(regUrl);
+        const safeAccUrl = getSafeEditorialUrl(accUrl);
         return `
       <div class="flex flex-col justify-between gap-4 p-6 rd-card rd-card-grad-violet rd-card-edge h-full group">
         <div class="flex items-start gap-4">
@@ -776,12 +789,16 @@ function tabParticipar(govT) {
         </div>
         ${(regUrl || accUrl) ? `
         <div class="flex flex-wrap gap-2 pt-3 border-t border-eu-blue/10 mt-auto">
-          ${regUrl ? `<a href="${regUrl}" ${regExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors bg-eu-blue/5 border border-eu-blue/10 rounded-lg px-3 py-1.5">
+          ${!regUrl ? '' : safeRegUrl ? `<a href="${esc(safeRegUrl)}" ${regExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors bg-eu-blue/5 border border-eu-blue/10 rounded-lg px-3 py-1.5">
             <i data-lucide="clipboard-list" class="w-4 h-4"></i>Registration
-          </a>` : ''}
-          ${accUrl ? `<a href="${accUrl}" ${accExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-purple hover:text-eu-blue transition-colors border rounded-lg px-3 py-1.5" style="background:rgb(73 24 173/.06); border-color:rgb(73 24 173/.15)">
+          </a>` : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue bg-eu-blue/5 border border-eu-blue/10 rounded-lg px-3 py-1.5">
+            <i data-lucide="clipboard-list" class="w-4 h-4"></i>Registration
+          </span>`}
+          ${!accUrl ? '' : safeAccUrl ? `<a href="${esc(safeAccUrl)}" ${accExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-purple hover:text-eu-blue transition-colors border rounded-lg px-3 py-1.5" style="background:rgb(73 24 173/.06); border-color:rgb(73 24 173/.15)">
             <i data-lucide="video" class="w-4 h-4"></i>Access
-          </a>` : ''}
+          </a>` : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-purple border rounded-lg px-3 py-1.5" style="background:rgb(73 24 173/.06); border-color:rgb(73 24 173/.15)">
+            <i data-lucide="video" class="w-4 h-4"></i>Access
+          </span>`}
         </div>` : ''}
       </div>
     `;
@@ -830,8 +847,8 @@ function tabParticipar(govT) {
               </p>
             </div>
             <div class="pt-4 shrink-0" style="border-top:1px solid rgb(86 32 246/.15)">
-              ${(hasCms && stakeBtnUrl !== '#')
-                ? `<a href="${stakeBtnUrl}" ${stakeBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#5620F6">
+              ${(hasCms && safeStakeBtnUrl)
+                ? `<a href="${esc(safeStakeBtnUrl)}" ${stakeBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#5620F6">
                 <span>${esc(pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || ''))}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
               </a>`
                 : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#5620F6">
@@ -860,8 +877,8 @@ function tabParticipar(govT) {
               <div class="space-y-4 mb-6">${consensueGroupsHtml}</div>
             </div>
             <div class="pt-4 shrink-0" style="border-top:1px solid rgb(73 24 173 / .15)">
-              ${(hasCms && consBtnUrl !== '#')
-                ? `<a href="${consBtnUrl}" ${consBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#4918AD">
+              ${(hasCms && safeConsBtnUrl)
+                ? `<a href="${esc(safeConsBtnUrl)}" ${consBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#4918AD">
                 <span>${esc(pickLang(cms.consensueCard.buttonText, s.consensueButton || ''))}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
               </a>`
                 : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#4918AD">

@@ -294,6 +294,35 @@ function findDynamicHrefs(source, relativePath) {
   return results;
 }
 
+// --- Validación de esquema en href dinámicos (VAN-2.2) -------------------
+//
+// Un href está protegido cuando su valor es exactamente una interpolación
+// `${esc(ID)}` cuyo ID procede de `getSafeEditorialUrl()`. La comprobación es
+// sobre la procedencia del valor, no sobre que aparezca la cadena
+// "getSafeEditorialUrl" en el fichero: eso es la lección de SEC-7.1.3.
+//
+// `membershipAction.url` se acepta porque `resolveMembershipAction()` valida
+// en origen y solo devuelve `external`/`embed` con una URL ya filtrada. Es una
+// afirmación sobre el cuerpo de ese helper, igual que ESCAPING_HELPERS: si
+// alguien la cambia, hay que revisarla aquí.
+export function collectValidatedUrlIdentifiers(source) {
+  const ids = new Set();
+  // `[^;]` en vez de `[^;\n]`: una declaración puede ocupar varias líneas
+  // (un ternario formateado), pero nunca cruza un `;`.
+  const declRe = /(?:const|let|var)\s+([A-Za-z_$][\w$]*)\s*=\s*[^;]*?getSafeEditorialUrl\s*\(/g;
+  let match;
+  while ((match = declRe.exec(source))) ids.add(match[1]);
+  if (/\bresolveMembershipAction\s*\(/.test(source)) ids.add('membershipAction.url');
+  return ids;
+}
+
+export function isHrefSchemeValidated(snippet, validatedIds) {
+  const value = snippet.replace(/^href=(["'])/, '').replace(/(["'])$/, '');
+  const pure = /^\$\{\s*(?:esc|escapeHtml)\s*\(\s*([A-Za-z_$][\w$.]*)\s*\)\s*\}$/.exec(value);
+  if (!pure) return false;
+  return validatedIds.has(pure[1]);
+}
+
 // --- target="_blank" sin rel="noopener" ---------------------------------
 
 function findUnsafeBlankTargets(source, relativePath) {
@@ -406,7 +435,10 @@ export async function generateInventory() {
     const isRuntimeTemplate = relativePath.startsWith('assets/js/views/')
       || relativePath === 'assets/js/components/header.js';
     if (isRuntimeTemplate) {
-      dynamicHrefs.push(...findDynamicHrefs(source, relativePath));
+      const validatedIds = collectValidatedUrlIdentifiers(source);
+      for (const hit of findDynamicHrefs(source, relativePath)) {
+        dynamicHrefs.push({ ...hit, schemeValidated: isHrefSchemeValidated(hit.snippet, validatedIds) });
+      }
 
       const blank = findUnsafeBlankTargets(source, relativePath);
       blankTargetTotal.total += blank.total;
@@ -434,6 +466,8 @@ export async function generateInventory() {
     dynamicHrefs: {
       editorialCount: editorialDynamicHrefs.length,
       editorial: editorialDynamicHrefs,
+      editorialSchemeValidated: editorialDynamicHrefs.filter((hit) => hit.schemeValidated).length,
+      editorialUnvalidated: editorialDynamicHrefs.filter((hit) => !hit.schemeValidated),
       nonEditorialCount: nonEditorialDynamicHrefs.length,
       nonEditorial: nonEditorialDynamicHrefs,
       total: dynamicHrefs.length,
@@ -462,7 +496,8 @@ async function main() {
   console.log(`Interpolaciones pickLang() con esc(): ${report.pickLangInterpolations.escaped}`);
   console.log(`Vistas con copia local de esc(): ${report.viewsDefiningEsc.length} de ${report.viewsTotal}`);
   console.log(`Vistas que importan escapeHtml como esc: ${report.viewsImportingEscapeHtml.length} de ${report.viewsTotal} (${report.viewsImportingEscapeHtml.join(', ')})`);
-  console.log(`href="\${...}" editoriales dinámicos: ${report.dynamicHrefs.editorialCount}`);
+  console.log(`href="\${...}" editoriales dinámicos: ${report.dynamicHrefs.editorialCount} (con esquema validado: ${report.dynamicHrefs.editorialSchemeValidated})`);
+  for (const hit of report.dynamicHrefs.editorialUnvalidated) console.log(`  - SIN VALIDAR ${hit.file}:${hit.line}`);
   console.log(`href="\${...}" no editoriales: ${report.dynamicHrefs.nonEditorialCount}`);
   console.log(`target="_blank" sin rel="noopener": ${report.blankTargetsWithoutNoopener.unsafe.length} de ${report.blankTargetsWithoutNoopener.total}`);
   console.log(`Sinks peligrosos (eval/new Function/document.write/insertAdjacentHTML/innerHTML=/location.search|hash/URLSearchParams): ${report.dangerousSinks.length}`);

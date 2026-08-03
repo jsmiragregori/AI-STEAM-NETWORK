@@ -3,6 +3,7 @@ import { getState, setState } from '../state.js';
 import { getViewParams } from '../router.js';
 import { TRAINING_CONFIG } from '../../data/training.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
+import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 
 const COURSE_PARTNERS  = ['UVEG / CECU', "Ud'A / UVEG", 'CECU / Inspiring Futures Europe', 'AVA-ASAJA / CINK', 'INESC TEC / HSW', 'Region Värmland / NTNU', 'KEA / ESAD-GV / LPGA', 'LC / CECU'];
 const COURSE_MODALITY  = ['Semipresencial', 'Online', 'Online', 'Semipresencial', 'Online', 'Online', 'Online', 'Online'];
@@ -150,7 +151,8 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
   const modalityLabel  = modalityLabels[course.modality] || course.modality;
   const tone           = course.statusObj?.tone || 'neutral';
   const isStatusActive = (activeFilters.statuses || []).includes(course.statusId);
-  const linkUrl        = course.link?.url || '';
+  const rawLinkUrl     = course.link?.url || '';
+  const linkUrl        = getSafeEditorialUrl(rawLinkUrl) || '';
   const linkTarget     = course.link?.external !== false ? '_blank' : '_self';
   const viewLabel      = trainingT?.courseViewMore || 'Ver';
 
@@ -195,13 +197,17 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
         </div>` : ''}
         ${chipsHtml ? `<div class="flex flex-wrap gap-2 mt-4">${chipsHtml}</div>` : ''}
       </div>
-      ${linkUrl ? `
+      ${!rawLinkUrl ? '' : `
       <div class="border-t border-eu-blue/10 p-4 flex items-center justify-end">
-        <a href="${linkUrl}" target="${linkTarget}" ${linkTarget === '_blank' ? 'rel="noopener noreferrer"' : ''}
+        ${linkUrl
+          ? `<a href="${esc(linkUrl)}" target="${linkTarget}" ${linkTarget === '_blank' ? 'rel="noopener noreferrer"' : ''}
            class="text-eu-blue font-bold text-sm cursor-pointer hover:text-eu-purple hover:underline inline-flex items-center gap-1.5 shrink-0 transition-colors duration-300">
           ${esc(viewLabel)} <i data-lucide="external-link" class="w-4 h-4"></i>
-        </a>
-      </div>` : ''}
+        </a>`
+          : `<span class="text-gray-400 font-bold text-sm inline-flex items-center gap-1.5 shrink-0">
+          ${esc(viewLabel)} <i data-lucide="external-link" class="w-4 h-4"></i>
+        </span>`}
+      </div>`}
     </div>`;
 }
 
@@ -543,6 +549,12 @@ export function render() {
   const heroBlock  = TRAINING_CONFIG?.heroBlock || {};
   const heroStats  = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
   const ctaButton  = heroBlock.ctaButton || {};
+  // Sin URL editorial se mantiene el destino por defecto. Con una URL editorial
+  // rechazada NO se cae a ese defecto: enviaría al visitante a un sitio que el
+  // editor no eligió. Se pinta el rótulo sin enlace.
+  const ctaUrl = ctaButton.url
+    ? getSafeEditorialUrl(ctaButton.url)
+    : 'https://aules.edu.gva.es/';
 
   return `
     <div class="rd-canvas">
@@ -560,10 +572,14 @@ export function render() {
             </div>
             ${ctaButton.visible !== false ? `
             <div class="shrink-0 mt-2 md:mt-0">
-              <a href="${ctaButton.url || 'https://aules.edu.gva.es/'}" target="_blank" rel="noopener noreferrer"
+              ${ctaUrl
+                ? `<a href="${esc(ctaUrl)}" target="_blank" rel="noopener noreferrer"
                  class="inline-flex min-h-11 items-center gap-2 rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white cursor-pointer shadow-sm" style="background:#FFF4E1">
                 <i data-lucide="book-open" class="w-4 h-4"></i>${esc(pickLang(ctaButton.label, trainingT?.accessAules || ''))}<i data-lucide="external-link" class="w-3 h-3"></i>
-              </a>
+              </a>`
+                : `<span class="inline-flex min-h-11 items-center gap-2 rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple shadow-sm" style="background:#FFF4E1">
+                <i data-lucide="book-open" class="w-4 h-4"></i>${esc(pickLang(ctaButton.label, trainingT?.accessAules || ''))}<i data-lucide="external-link" class="w-3 h-3"></i>
+              </span>`}
             </div>` : ''}
           </div>
           ${heroStats.length > 0 ? `

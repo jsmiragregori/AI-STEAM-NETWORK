@@ -2,6 +2,7 @@ import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { KNOWLEDGE_CONFIG } from '../../data/knowledge.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
+import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 
 const TABS = ['flujo', 'oer', 'plantillas'];
 
@@ -501,7 +502,9 @@ function renderOerGridContent(search) {
       const label = LEVEL_LABELS[l] ? pickLang(LEVEL_LABELS[l], l) : l;
       return `<button data-filter-level="${esc(l)}" class="text-sm font-bold px-2.5 py-0.5 rounded-full cursor-pointer transition-all ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="${levelChipStyle(l)}" title="Filtrar por nivel">${esc(label)}</button>`;
     }).join(' ');
-    const rUrl    = r.url || '';
+    // Una URL rechazada cae en la rama "sin enlace" que ya existe: mismo
+    // rótulo y mismo espacio, en gris y sin navegación.
+    const rUrl    = getSafeEditorialUrl(r.url) || '';
     const rLinkType = r.linkType || 'external';
     const rExternal = r.external === true;
     const linkIcon = rLinkType === 'download' ? 'download' : 'external-link';
@@ -559,7 +562,7 @@ function renderOerGridContent(search) {
             return `<i data-lucide="${icons[status] || 'check-circle'}" class="w-3.5 h-3.5"></i>${esc(getStatusLabel(status))}`;
           })()}
         </button>` : '<span></span>'}
-        ${rUrl ? `<a href="${rUrl}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-400 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</span>`}
+        ${rUrl ? `<a href="${esc(rUrl)}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-400 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</span>`}
       </div>
     </div>
   `}).join('');
@@ -903,6 +906,7 @@ function renderTemplatesGridContent(search) {
     const btnIcon   = tpl.linkType === 'external' ? 'external-link' : 'download';
     const isExternal = tpl.linkType === 'external' || tpl.external !== false;
     const targetAttr = isExternal ? `target="_blank" rel="noopener noreferrer"` : '';
+    const safeTplUrl = getSafeEditorialUrl(tpl.url);
 
     const tplLang = getLang();
     const createdLbl = tplLang === 'en' ? 'Created' : tplLang === 'va' ? 'Creat' : 'Creado';
@@ -929,9 +933,13 @@ function renderTemplatesGridContent(search) {
       </div>
       <div class="flex items-center justify-between">
         ${showLicense ? `<span class="text-sm font-mono text-eu-purple">${esc(tpl.license || '')}</span>` : '<span></span>'}
-        <a href="${tpl.url}" ${targetAttr} class="flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:text-eu-purple transition-colors cursor-pointer">
+        ${safeTplUrl
+          ? `<a href="${esc(safeTplUrl)}" ${targetAttr} class="flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:text-eu-purple transition-colors cursor-pointer">
           <i data-lucide="${btnIcon}" class="w-3.5 h-3.5"></i>${esc(btnLabel)}
-        </a>
+        </a>`
+          : `<span class="flex items-center gap-1.5 text-gray-400 text-sm font-bold">
+          <i data-lucide="${btnIcon}" class="w-3.5 h-3.5"></i>${esc(btnLabel)}
+        </span>`}
       </div>
       </div>
     </div>`;

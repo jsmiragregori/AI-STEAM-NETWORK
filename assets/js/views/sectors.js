@@ -4,6 +4,7 @@ import { getState, setState } from '../state.js';
 import { SECTORS_CONFIG } from '../../data/sectors.js';
 import { resolveMembershipAction } from '../utils/membership.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
+import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
 
 
@@ -210,8 +211,16 @@ function renderPartners(sector, sectorsT) {
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(sectorsT?.featuredPartnersLabel || '')}</h4>
       </div>
       <div class="mt-5 grid gap-3 sm:grid-cols-2">
-        ${partners.map(partner => `
-          <a href="${esc(partner.url || '#')}" ${partner.url ? 'target="_blank" rel="noopener noreferrer"' : ''} class="flex flex-col justify-between rd-card rd-card-grad-beige rd-card-edge rounded-2xl p-5 text-center">
+        ${partners.map(partner => {
+          // Sin URL utilizable la tarjeta se pinta como <div>: misma
+          // composición, sin enlace. Antes caía en un href="#" inerte.
+          const safePartnerUrl = getSafeEditorialUrl(partner.url);
+          const tag = safePartnerUrl ? 'a' : 'div';
+          const linkAttrs = safePartnerUrl
+            ? `href="${esc(safePartnerUrl)}" target="_blank" rel="noopener noreferrer"`
+            : '';
+          return `
+          <${tag} ${linkAttrs} class="flex flex-col justify-between rd-card rd-card-grad-beige rd-card-edge rounded-2xl p-5 text-center">
             <div class="flex flex-1 items-center justify-center min-h-[5rem]">
               ${partner.logo ? `
                 <img src="assets/images/partners/${esc(partner.logo)}" alt="${esc(partner.acronym || partner.id)}" class="max-h-16 max-w-[95%] object-contain">
@@ -223,8 +232,9 @@ function renderPartners(sector, sectorsT) {
             <div>
               <span class="block text-sm font-bold leading-tight text-eu-text/85">${esc(localized(partner.name) || partner.id)}</span>
             </div>
-          </a>
-        `).join('')}
+          </${tag}>
+        `;
+        }).join('')}
       </div>
     </article>
   `;
@@ -334,9 +344,14 @@ function renderCta(cta, sectorsT) {
   const buttonLabel = esc(localized(cta.buttonLabel) || sectorsT?.ctaButton || '');
   const buttonHtml = !buttonVisible
     ? ''
-    : membershipAction.kind === 'external'
+    : membershipAction.kind === 'unsafe'
       ? `
-        <a href="${membershipAction.url}" target="_blank" rel="noopener noreferrer" class="rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white" style="background:#FFF4E1">
+        <span class="rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple" style="background:#FFF4E1">
+          ${esc(buttonLabel)}
+        </span>`
+      : membershipAction.kind === 'external'
+      ? `
+        <a href="${esc(membershipAction.url)}" target="_blank" rel="noopener noreferrer" class="rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white" style="background:#FFF4E1">
           ${esc(buttonLabel)}
         </a>`
       : `

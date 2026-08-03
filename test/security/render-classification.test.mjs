@@ -31,14 +31,17 @@ const EXPECTED_BY_FILE = {
 // Las siete interpolaciones que NO son texto plano se fijan una por una: son
 // las decisiones revisadas a mano en VAN-1.2 y las únicas que la migración de
 // VAN-1.3 en adelante no debe escapar sin volver a razonarlas.
+// VAN-2.2 solo desplaza estas líneas (governance +5, marketplace +9,
+// training +6) al insertar la validación de URL por encima de ellas. Siguen
+// siendo las mismas siete expresiones, con la misma categoría.
 const EXPECTED_EXCEPTIONS = [
-  { file: 'assets/js/views/governance.js', line: 694, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1743, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 1928, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1930, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/marketplace.js', line: 1969, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 2129, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/training.js', line: 428, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/governance.js', line: 699, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 1752, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 1937, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 1939, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 1978, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 2138, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/training.js', line: 434, category: 'ESTRUCTURAL' },
 ];
 
 test('la clasificación VAN-1.2 reproduce su línea base', async () => {
