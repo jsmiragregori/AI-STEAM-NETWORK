@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import { readFile } from 'node:fs/promises';
 
 import { generateInventory } from '../../scripts/inventory-render-surface.mjs';
 import {
@@ -70,6 +71,52 @@ test('la clasificación VAN-1.2 reproduce su línea base', async () => {
   }
 
   assert.deepEqual(await generateClassification(), report, 'la clasificación debe ser determinista');
+});
+
+test('VAN-3B.2.2 demuestra el destino seguro de las siete excepciones de V1', async () => {
+  const [governance, marketplace, training] = await Promise.all([
+    readFile(new URL('../../assets/js/views/governance.js', import.meta.url), 'utf8'),
+    readFile(new URL('../../assets/js/views/marketplace.js', import.meta.url), 'utf8'),
+    readFile(new URL('../../assets/js/views/training.js', import.meta.url), 'utf8'),
+  ]);
+
+  // ESTRUCTURAL Governance: el pickLang exterior decide si se crea el <p>;
+  // el mismo productor solo llega al texto mediante esc().
+  assert.match(
+    governance,
+    /\$\{pickLang\(cms\.description, s\.description \|\| ''\) \? `<p[^`]+\$\{esc\(pickLang\(cms\.description, s\.description \|\| ''\)\)\}<\/p>` : ''\}/,
+  );
+
+  // HELPER_QUE_ESCAPA: el helper que recibe las dos excepciones de value
+  // protege todos sus campos de texto. htmlValue queda explícitamente fuera
+  // de esa afirmación y se prueba por separado debajo.
+  const miniMetaBody = marketplace.match(/function renderCardMiniMeta\(items\) \{([\s\S]*?)\n\}/)?.[1] || '';
+  for (const field of ['label', 'value', 'secondaryValue', 'tertiaryValue']) {
+    assert.match(miniMetaBody, new RegExp(`\\$\\{esc\\(item\\.${field}\\)\\}`), `${field} debe escapar en el helper`);
+  }
+
+  // ESTRUCTURAL + COMPOSICION_CADENA Marketplace: el único htmlValue que
+  // contiene el sufijo localizado compone `parts` y solo lo emite escapado.
+  assert.match(
+    marketplace,
+    /htmlValue:[\s\S]*?const count = s\.sessionCount \? `\$\{s\.sessionCount\} \$\{pickLang\([\s\S]*?const parts = \[[\s\S]*?\$\{esc\(parts\.join\(' · '\)\)\}<\/p>/,
+  );
+
+  // COMPOSICION_CADENA Marketplace restante: getMentoringFormatSummary()
+  // produce texto, pero formatSummary no tiene consumidor ni interpolación.
+  // Si empezara a usarse, este recuento dejaría de ser uno y exigiría auditar
+  // el nuevo sink.
+  assert.equal((marketplace.match(/\bformatSummary\b/g) || []).length, 1);
+  assert.match(marketplace, /const formatSummary = getMentoringFormatSummary\(format\);/);
+
+  // ESTRUCTURAL Training: título y pasos proceden de pickLang; el título se
+  // emite con esc() y cada paso cruza pathSteps(), que escapa `step`.
+  assert.match(training, /const pbTitle = pb \? pickLang\(pb\.title,[^;]+;/);
+  assert.match(training, /<h3[^>]*>\$\{esc\(pbTitle\)\}<\/h3>/);
+  assert.match(training, /const pbSteps = [^;]*pickLang\(s\.text, ''\)[^;]*;/);
+  assert.match(training, /pathSteps\(pbSteps, 'bg-eu-purple'\)/);
+  const pathStepsBody = training.match(/function pathSteps\(steps, color\) \{([\s\S]*?)\n\}/)?.[1] || '';
+  assert.match(pathStepsBody, /\$\{esc\(step\)\}/);
 });
 
 test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async () => {
