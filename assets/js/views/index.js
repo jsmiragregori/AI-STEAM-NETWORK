@@ -1,7 +1,6 @@
 import * as home       from './home.js';
 import * as sectors    from './sectors.js';
 import * as training   from './training.js';
-import * as news       from './news.js';
 import * as governance from './governance.js';
 import * as knowledge  from './knowledge.js';
 import * as network      from './network.js';
@@ -14,4 +13,3 @@ export const bancoRetos   = marketplace;
 export const formacion    = training;
 export const conocimiento = knowledge;
 export const gobernanza   = governance;
-export const actualidad   = news;

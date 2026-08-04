@@ -16,11 +16,11 @@ test('los componentes globales escapan contenido editorial y Header falla cerrad
 
   const button = HEADER_CONFIG.buttons[0];
   const language = HEADER_CONFIG.languages[0];
-  const navItem = NAV_CONFIG.items[0];
+  const navIdItem = NAV_CONFIG.items.find(item => item.id === 'red');
   const originals = {
     button: { ...button },
     language: { ...language },
-    navId: navItem.id,
+    navId: navIdItem.id,
     navText: translations.es.nav.inicio,
     footerText: translations.es.footer.fundedBy,
     cookieText: translations.es.cookieBanner.text,
@@ -32,7 +32,7 @@ test('los componentes globales escapan contenido editorial y Header falla cerrad
     language.code = 'es" autofocus onfocus="window.__v10=2';
     language.label = '<svg onload=window.__v10=3>';
     language.bcp47 = 'es" onfocus="window.__v10=4';
-    navItem.id = 'inicio" autofocus onfocus="window.__v10=5';
+    navIdItem.id = 'red" autofocus onfocus="window.__v10=5';
     translations.es.nav.inicio = '<img src=x onerror=window.__v10=6>';
     translations.es.footer.fundedBy = '<svg onload=window.__v10=7>';
     translations.es.cookieBanner.text = '<img src=x onerror=window.__v10=8>';
@@ -44,6 +44,7 @@ test('los componentes globales escapan contenido editorial y Header falla cerrad
     assert.ok(!header.includes('javascript:window.__v9=1'), 'una URL rechazada no llega al DOM');
     assert.ok(!header.includes('<img src=x'), 'la traducción no crea un elemento img');
     assert.ok(!header.includes('<svg onload='), 'la etiqueta de idioma no crea un elemento svg');
+    assert.ok(!header.includes('window.__v10=5'), 'una ruta que no está publicada no llega al DOM');
     assert.ok(
       !/data-lang="[^"]*"\s+autofocus\b/i.test(header),
       'los atributos editoriales no rompen sus comillas',
@@ -56,7 +57,7 @@ test('los componentes globales escapan contenido editorial y Header falla cerrad
   } finally {
     Object.assign(button, originals.button);
     Object.assign(language, originals.language);
-    navItem.id = originals.navId;
+    navIdItem.id = originals.navId;
     translations.es.nav.inicio = originals.navText;
     translations.es.footer.fundedBy = originals.footerText;
     translations.es.cookieBanner.text = originals.cookieText;

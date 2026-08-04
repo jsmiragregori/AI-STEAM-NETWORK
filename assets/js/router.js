@@ -1,4 +1,4 @@
-export const VIEWS = ['inicio', 'red', 'sectores', 'banco-retos', 'formacion', 'conocimiento', 'gobernanza', 'actualidad'];
+export const VIEWS = ['inicio', 'red', 'sectores', 'banco-retos', 'formacion', 'conocimiento', 'gobernanza'];
 
 let activeView = 'inicio';
 let viewParams = {};

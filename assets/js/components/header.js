@@ -1,5 +1,5 @@
 import { t, getLanguage, setLanguage } from '../i18n.js';
-import { getActiveView, navigateTo } from '../router.js';
+import { VIEWS, getActiveView, navigateTo } from '../router.js';
 import { getState, setState } from '../state.js';
 import { HEADER_CONFIG } from '../../data/header.js';
 import { NAV_CONFIG } from '../../data/navigation.js';
@@ -80,8 +80,9 @@ export function renderHeader() {
   const languages = getHeaderLanguages();
   const desktopLangButtons = languages.map(language => langBtn(language, lang)).join('');
   const mobileLangButtons = languages.map(language => langBtnMobile(language, lang)).join('');
+  const visibleNavItems = NAV_CONFIG.items.filter(item => VIEWS.includes(item.id));
 
-  const desktopNav = NAV_CONFIG.items.map(item => `
+  const desktopNav = visibleNavItems.map(item => `
     <button data-view="${esc(item.id)}" class="font-bold uppercase cursor-pointer transition-all duration-200 rounded-full ${
       active === item.id
         ? 'bg-white/20'
@@ -89,7 +90,7 @@ export function renderHeader() {
     }" style="min-height:44px;flex-shrink:0;white-space:nowrap;font-size:0.8125rem;letter-spacing:.03em;padding:.375rem .625rem;color:#FFF4E1">${esc(t(item.key))}</button>
   `).join('');
 
-  const mobileNav = NAV_CONFIG.items.map(item => `
+  const mobileNav = visibleNavItems.map(item => `
     <button data-view="${esc(item.id)}" class="px-6 py-4 text-left font-bold uppercase tracking-wider border-l-4 transition-all duration-200 min-h-12 flex items-center text-sm active:scale-95 ${
       active === item.id
         ? 'bg-eu-blue/20 border-eu-yellow text-white shadow-md'

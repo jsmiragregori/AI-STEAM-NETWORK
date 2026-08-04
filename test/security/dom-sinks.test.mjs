@@ -20,7 +20,7 @@ test('ningún sink DOM queda sin productor clasificado ni conserva una fila obso
     ({ file, line, sink }) => `${file}:${line}:${sink}`,
   ));
   const rows = [...audit.matchAll(
-    /^\| `([^`]+:(?:innerHTML assignment|insertAdjacentHTML))` \| `([^`]+)` \| `(AUDITADO|PENDIENTE_NEWS)` \| ([^|]+) \|$/gm,
+    /^\| `([^`]+:(?:innerHTML assignment|insertAdjacentHTML))` \| `([^`]+)` \| `(AUDITADO|RETIRADO_RUNTIME)` \| ([^|]+) \|$/gm,
   )].map((match) => ({ id: match[1], producer: match[2], status: match[3], evidence: match[4].trim() }));
   const classified = sorted(rows.map(({ id }) => id));
 
@@ -34,14 +34,13 @@ test('ningún sink DOM queda sin productor clasificado ni conserva una fila obso
   }
 });
 
-test('los únicos productores pendientes pertenecen a News y no se aceptan por anticipado', async () => {
+test('el sink conservado de News está clasificado como retirado del runtime', async () => {
   const audit = await readFile(AUDIT_URL, 'utf8');
-  const pending = [...audit.matchAll(
-    /^\| `([^`]+)` \| `([^`]+)` \| `PENDIENTE_NEWS` \|/gm,
+  const retired = [...audit.matchAll(
+    /^\| `([^`]+)` \| `([^`]+)` \| `RETIRADO_RUNTIME` \|/gm,
   )].map((match) => ({ id: match[1], producer: match[2] }));
 
-  assert.deepEqual(pending, [
-    { id: 'assets/js/main.js:31:innerHTML assignment', producer: 'VIEW_MAP[activeView].render()' },
+  assert.deepEqual(retired, [
     { id: 'assets/js/views/news.js:404:innerHTML assignment', producer: 'render() de News' },
   ]);
 });

@@ -20,7 +20,6 @@ const VIEW_MAP = {
   'formacion': views.formacion,
   'conocimiento': views.conocimiento,
   'gobernanza': views.gobernanza,
-  'actualidad': views.actualidad,
 };
 
 export function renderApp() {
