@@ -563,8 +563,11 @@ export async function generateInventory() {
 
   const viewsDir = path.join(JS_ROOT, 'views');
   const viewFiles = (await readdir(viewsDir)).filter((name) => name.endsWith('.js'));
-  const editorialDynamicHrefs = dynamicHrefs.filter((hit) => hit.file.startsWith('assets/js/views/'));
-  const nonEditorialDynamicHrefs = dynamicHrefs.filter((hit) => !hit.file.startsWith('assets/js/views/'));
+  // Todos los href dinámicos runtime proceden de datos editoriales: los de
+  // vistas, de sus módulos de contenido; los de Header, de HEADER_CONFIG.
+  // VAN-3B.1 demostró que clasificar por ubicación ocultaba estos últimos.
+  const editorialDynamicHrefs = dynamicHrefs;
+  const nonEditorialDynamicHrefs = [];
 
   return {
     scannedFiles: files.length,

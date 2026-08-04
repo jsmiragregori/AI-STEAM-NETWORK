@@ -156,6 +156,7 @@ export async function generateClassification() {
   const files = (await collectJsFiles(INVENTORY_JS_ROOT)).sort();
   const entries = [];
   const indirectCandidatesByFile = {};
+  const indirectCandidateEntries = [];
   let indirectCandidates = 0;
 
   for (const filePath of files) {
@@ -177,6 +178,11 @@ export async function generateClassification() {
       ) {
         indirectCandidates++;
         indirectCandidatesByFile[relativePath] = (indirectCandidatesByFile[relativePath] || 0) + 1;
+        indirectCandidateEntries.push({
+          file: relativePath,
+          line: lineOf(source, current.start),
+          expression: current.expr.trim(),
+        });
       }
 
       const nestedSpans = interpolations.filter(
@@ -219,7 +225,11 @@ export async function generateClassification() {
     byCategory,
     byFile,
     entries,
-    indirectOutputCandidates: { total: indirectCandidates, byFile: indirectCandidatesByFile },
+    indirectOutputCandidates: {
+      total: indirectCandidates,
+      byFile: indirectCandidatesByFile,
+      entries: indirectCandidateEntries,
+    },
   };
 }
 

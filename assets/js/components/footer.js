@@ -1,4 +1,5 @@
 import { t } from '../i18n.js';
+import { escapeHtml as esc } from '../utils/escape-html.js';
 
 export function renderFooter() {
   return `
@@ -8,17 +9,17 @@ export function renderFooter() {
           <div class="flex items-center gap-3 sm:gap-5">
             <div class="w-7.5 h-5 bg-eu-blue shrink-0"></div>
             <div class="text-xs sm:text-sm">
-              ${t('footer.fundedBy')}<br/>
-              <strong>${t('footer.europeanUnion')}</strong>
+              ${esc(t('footer.fundedBy'))}<br/>
+              <strong>${esc(t('footer.europeanUnion'))}</strong>
             </div>
           </div>
           <div class="text-xs sm:text-sm hidden sm:block">
-            ${t('footer.orgName')}<br/>${t('footer.orgUnit')}
+            ${esc(t('footer.orgName'))}<br/>${esc(t('footer.orgUnit'))}
           </div>
           <div class="flex flex-wrap gap-3 sm:gap-6 sm:ml-auto text-xs sm:text-sm">
-            <a href="#" class="text-white hover:text-eu-yellow transition-colors font-medium">${t('footer.accessibility')}</a>
-            <a href="#" class="text-white hover:text-eu-yellow transition-colors font-medium">${t('footer.privacy')}</a>
-            <a href="#" class="text-white hover:text-eu-yellow transition-colors font-medium">${t('footer.sitemap')}</a>
+            <a href="#" class="text-white hover:text-eu-yellow transition-colors font-medium">${esc(t('footer.accessibility'))}</a>
+            <a href="#" class="text-white hover:text-eu-yellow transition-colors font-medium">${esc(t('footer.privacy'))}</a>
+            <a href="#" class="text-white hover:text-eu-yellow transition-colors font-medium">${esc(t('footer.sitemap'))}</a>
           </div>
         </div>
       </div>

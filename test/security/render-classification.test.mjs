@@ -75,9 +75,9 @@ test('la clasificación VAN-1.2 reproduce su línea base', async () => {
 test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async () => {
   const { indirectOutputCandidates } = await generateClassification();
 
-  assert.equal(indirectOutputCandidates.total, 174);
+  assert.equal(indirectOutputCandidates.total, 170);
   assert.deepEqual(indirectOutputCandidates.byFile, {
-    'assets/js/components/header.js': 8,
+    'assets/js/components/header.js': 4,
     'assets/js/views/governance.js': 25,
     'assets/js/views/home.js': 18,
     'assets/js/views/knowledge.js': 18,
@@ -87,6 +87,16 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
     'assets/js/views/sectors.js': 2,
     'assets/js/views/training.js': 13,
   });
+
+  // VAN-3B.2.1 tría las ocho candidatas de Header: cuatro eran texto
+  // editorial y ahora pasan por esc(); las cuatro restantes son fragmentos
+  // estructurales construidos por helpers cuyos productores ya se protegen.
+  assert.deepEqual(
+    indirectOutputCandidates.entries
+      .filter(({ file }) => file === 'assets/js/components/header.js')
+      .map(({ expression }) => expression),
+    ['desktopNav', 'desktopLangButtons', 'mobileNav', 'mobileLangButtons'],
+  );
 });
 
 test('la clasificación cubre exactamente las interpolaciones sin escapar del inventario', async () => {

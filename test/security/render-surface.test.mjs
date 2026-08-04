@@ -41,13 +41,14 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   assert.equal(report.viewsTotal, 9);
   assert.deepEqual(report.viewsDefiningEsc, []);
   assert.deepEqual(report.viewsImportingEscapeHtml, EXPECTED_ESC_VIEWS);
-  assert.equal(report.dynamicHrefs.editorialCount, 21);
-  // VAN-2.2: los 21 pasan por getSafeEditorialUrl(). El invariante que importa
-  // es que no quede ninguno sin validar, no que sigan siendo 21: si alguien
+  assert.equal(report.dynamicHrefs.editorialCount, 23);
+  // VAN-3B.2.1: los 23 pasan por getSafeEditorialUrl(), incluidos los dos de
+  // Header que V9 demostró editoriales. El invariante que importa
+  // es que no quede ninguno sin validar, no que sigan siendo 23: si alguien
   // añade el enlace 22 sin cablearlo, esta lista deja de estar vacía.
   assert.deepEqual(report.dynamicHrefs.editorialUnvalidated, []);
-  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 21);
-  assert.equal(report.dynamicHrefs.nonEditorialCount, 2);
+  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 23);
+  assert.equal(report.dynamicHrefs.nonEditorialCount, 0);
   assert.equal(report.dynamicHrefs.total, 23);
   // VAN-2.3: 21 y no 16 por dos ampliaciones de la medición: los
   // `target="${…}"` calculados, antes invisibles, y el ancla que emite
