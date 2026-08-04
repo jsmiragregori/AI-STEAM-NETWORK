@@ -30,10 +30,6 @@ export const NAV_CONFIG = {
     {
       "id": "gobernanza",
       "key": "nav.gobernanza"
-    },
-    {
-      "id": "actualidad",
-      "key": "nav.actualidad"
     }
   ]
 };
