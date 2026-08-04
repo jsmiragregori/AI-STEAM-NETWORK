@@ -1,6 +1,9 @@
 # Normalize line endings automatically
 * text=auto eol=lf
 
+# Excepción histórica: esta vista está almacenada deliberadamente en CRLF.
+assets/js/views/marketplace.js text eol=crlf
+
 # Binary files (no line ending conversion)
 *.png binary
 *.jpg binary
