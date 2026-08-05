@@ -1,6 +1,9 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { GOVERNANCE_CONFIG } from '../../data/governance.js';
+import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
+import { escapeHtml as esc } from '../utils/escape-html.js';
+import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
 function pickLang(value, fallback = '') {
@@ -57,11 +60,11 @@ function tabEstructura(govT) {
         <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 text-eu-blue shadow-inner shrink-0 rd-icon-circle-gov transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
           <i data-lucide="${node.icon || 'globe'}" class="w-5 h-5"></i>
         </div>
-        <p class="text-xs font-extrabold uppercase tracking-widest text-eu-blue mb-1.5">${pickLang(node.label, node.label || '')}</p>
-        <p class="font-extrabold text-2xl text-eu-purple leading-tight">${pickLang(node.city, node.city || '')}</p>
-        <p class="text-base text-eu-text/80 mt-2 font-bold">${pickLang(node.org, node.org || '')}</p>
+        <p class="text-xs font-extrabold uppercase tracking-widest text-eu-blue mb-1.5">${esc(pickLang(node.label, node.label || ''))}</p>
+        <p class="font-extrabold text-2xl text-eu-purple leading-tight">${esc(pickLang(node.city, node.city || ''))}</p>
+        <p class="text-base text-eu-text/80 mt-2 font-bold">${esc(pickLang(node.org, node.org || ''))}</p>
       </div>
-      <p class="text-lg text-gray-700 mt-5 leading-relaxed">${pickLang(node.role, node.role || '')}</p>
+      <p class="text-lg text-gray-700 mt-5 leading-relaxed">${esc(pickLang(node.role, node.role || ''))}</p>
     </div>
   `).join('');
 
@@ -86,8 +89,8 @@ function tabEstructura(govT) {
           <i data-lucide="${item.icon || 'globe'}" class="w-4 h-4 ${alertText}"></i>
         </div>
         <div>
-          <span class="font-extrabold text-eu-text text-lg">${pickLang(item.label, item.label || '')}: </span>
-          <span class="text-lg text-gray-700 leading-relaxed">${pickLang(item.desc, item.desc || '')}</span>
+          <span class="font-extrabold text-eu-text text-lg">${esc(pickLang(item.label, item.label || ''))}: </span>
+          <span class="text-lg text-gray-700 leading-relaxed">${esc(pickLang(item.desc, item.desc || ''))}</span>
         </div>
       </div>
     `).join('');
@@ -100,8 +103,8 @@ function tabEstructura(govT) {
               <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 text-white"></i>
             </div>
             <div>
-              <h3 class="font-extrabold text-2xl leading-tight text-white">${pickLang(card.title, card.title || '')}</h3>
-              <p class="text-white/80 text-sm mt-0.5">${pickLang(card.subtitle, card.subtitle || '')}</p>
+              <h3 class="font-extrabold text-2xl leading-tight text-white">${esc(pickLang(card.title, card.title || ''))}</h3>
+              <p class="text-white/80 text-sm mt-0.5">${esc(pickLang(card.subtitle, card.subtitle || ''))}</p>
             </div>
           </div>
         </div>
@@ -120,20 +123,20 @@ function tabEstructura(govT) {
     const picked = pickLang(value, '');
     const text = typeof picked === 'string' ? picked.trim() : '';
     if (!text) return '';
-    return `<p class="text-sm"><span class="font-extrabold text-gray-700">${pickLang(label)}:</span> <span class="text-gray-650 font-medium">${text}</span></p>`;
+    return `<p class="text-sm"><span class="font-extrabold text-gray-700">${esc(pickLang(label))}:</span> <span class="text-gray-650 font-medium">${esc(text)}</span></p>`;
   }
 
   const bodiesHtml = formalBodies.map(body => {
     return `
       <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden h-full group">
         <div class="rd-card-mp-ceja flex items-start justify-between gap-3">
-          <h3 class="rd-card-mp-title">${pickLang(body.name, body.name || '')}</h3>
+          <h3 class="rd-card-mp-title">${esc(pickLang(body.name, body.name || ''))}</h3>
           <span class="text-2xl font-extrabold text-white/40 select-none shrink-0 leading-none">${body.abbr || ''}</span>
         </div>
         <div class="p-7 pt-5 flex flex-col justify-between flex-1">
           <div>
-            <p class="text-sm font-extrabold uppercase tracking-wider mb-3 text-eu-blue">${pickLang(body.type, body.type || '')}</p>
-            <p class="text-lg text-gray-700 mb-5 leading-relaxed">${pickLang(body.desc, body.desc || '')}</p>
+            <p class="text-sm font-extrabold uppercase tracking-wider mb-3 text-eu-blue">${esc(pickLang(body.type, body.type || ''))}</p>
+            <p class="text-lg text-gray-700 mb-5 leading-relaxed">${esc(pickLang(body.desc, body.desc || ''))}</p>
           </div>
           <div class="space-y-2.5 pt-4 border-t border-eu-blue/10">
             ${metaRow(formalLabels.members || { es: 'Miembros', en: 'Members', va: 'Membres' }, body.members)}
@@ -158,8 +161,8 @@ function tabEstructura(govT) {
         <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 ${iconColor}"></i>
       </div>
       <div>
-        <h3 class="font-extrabold text-eu-purple mb-3 text-2xl leading-snug">${pickLang(card.title, card.title || '')}</h3>
-        <p class="text-lg text-gray-700 leading-relaxed">${pickLang(card.desc, card.desc || '')}</p>
+        <h3 class="font-extrabold text-eu-purple mb-3 text-2xl leading-snug">${esc(pickLang(card.title, card.title || ''))}</h3>
+        <p class="text-lg text-gray-700 leading-relaxed">${esc(pickLang(card.desc, card.desc || ''))}</p>
       </div>
     </div>
   `;}).join('');
@@ -173,17 +176,17 @@ function tabEstructura(govT) {
           <div class="w-14 h-14 rounded-full flex items-center justify-center text-eu-blue shrink-0 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
             <i data-lucide="globe" class="w-7 h-7"></i>
           </div>
-          ${pickLang(hubBlock.title, s.hubTitle || '')}
+          ${esc(pickLang(hubBlock.title, s.hubTitle || ''))}
         </h2>
-        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${pickLang(hubBlock.description, s.hubDesc || '')}</p>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${esc(pickLang(hubBlock.description, s.hubDesc || ''))}</p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${nodesHtml}</div>
       </div>` : ''}
 
       ${actorsBlock.visible !== false ? `
       <!-- Actores principales -->
       <div>
-        <h2 class="font-extrabold text-eu-purple mb-3">${pickLang(actorsBlock.title, s.actorsTitle || '')}</h2>
-        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${pickLang(actorsBlock.description, s.actorsDesc || '')}</p>
+        <h2 class="font-extrabold text-eu-purple mb-3">${esc(pickLang(actorsBlock.title, s.actorsTitle || ''))}</h2>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${esc(pickLang(actorsBlock.description, s.actorsDesc || ''))}</p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           ${actorCardsHtml}
         </div>
@@ -192,8 +195,8 @@ function tabEstructura(govT) {
       ${formalBodiesBlock.visible !== false ? `
       <!-- Órganos formales -->
       <div>
-        <h2 class="font-extrabold text-eu-purple mb-3">${pickLang(formalBodiesBlock.title, s.bodiesTitle || '')}</h2>
-        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${pickLang(formalBodiesBlock.description, s.bodiesDesc || '')}</p>
+        <h2 class="font-extrabold text-eu-purple mb-3">${esc(pickLang(formalBodiesBlock.title, s.bodiesTitle || ''))}</h2>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${esc(pickLang(formalBodiesBlock.description, s.bodiesDesc || ''))}</p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">${bodiesHtml}</div>
       </div>` : ''}
 
@@ -220,7 +223,7 @@ function tabDualTrack(govT) {
 
   function trackBlock(cmsTrack, colorClass, accentClass, alertIcon, alertText, bodyBg, keyLimitBg) {
     const bodiesHtml = (cmsTrack.activeBodies || []).map(b =>
-      `<span class="text-sm ${accentClass} font-bold px-3.5 py-1.5 rounded-full">${pickLang(b.label)}</span>`
+      `<span class="text-sm ${accentClass} font-bold px-3.5 py-1.5 rounded-full">${esc(pickLang(b.label))}</span>`
     ).join('');
     return `
       <div class="rd-card border-none overflow-hidden shadow-lg h-full flex flex-col rd-card-hover cursor-default" style="background:${bodyBg}">
@@ -228,32 +231,32 @@ function tabDualTrack(govT) {
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center font-extrabold text-xl shrink-0">${cmsTrack.letter || ''}</div>
             <div>
-              <h3 class="font-extrabold text-2xl leading-tight">${pickLang(cmsTrack.title)}</h3>
-              <p class="text-white/80 text-sm mt-0.5">${pickLang(cmsTrack.subtitle)}</p>
+              <h3 class="font-extrabold text-2xl leading-tight">${esc(pickLang(cmsTrack.title))}</h3>
+              <p class="text-white/80 text-sm mt-0.5">${esc(pickLang(cmsTrack.subtitle))}</p>
             </div>
           </div>
         </div>
         <div class="p-8 space-y-6 flex-1 flex flex-col justify-between">
           <div class="space-y-6">
             <div>
-              <h4 class="text-xl font-extrabold text-eu-purple mb-2">${pickLang(fl.scope)}</h4>
-              <p class="text-lg text-gray-700 leading-relaxed">${pickLang(cmsTrack.scope?.text)}</p>
+              <h4 class="text-xl font-extrabold text-eu-purple mb-2">${esc(pickLang(fl.scope))}</h4>
+              <p class="text-lg text-gray-700 leading-relaxed">${esc(pickLang(cmsTrack.scope?.text))}</p>
             </div>
             <div>
-              <h4 class="text-xl font-extrabold text-eu-purple mb-2">${pickLang(fl.normativeFramework)}</h4>
-              <p class="text-lg text-gray-700 leading-relaxed">${pickLang(cmsTrack.normativeFramework?.text)}</p>
+              <h4 class="text-xl font-extrabold text-eu-purple mb-2">${esc(pickLang(fl.normativeFramework))}</h4>
+              <p class="text-lg text-gray-700 leading-relaxed">${esc(pickLang(cmsTrack.normativeFramework?.text))}</p>
             </div>
           </div>
           <div class="space-y-6 mt-6 pt-6 border-t border-eu-blue/10">
             <div>
-              <h4 class="text-xl font-extrabold text-eu-purple mb-3">${pickLang(fl.keyLimit)}</h4>
+              <h4 class="text-xl font-extrabold text-eu-purple mb-3">${esc(pickLang(fl.keyLimit))}</h4>
               <div class="flex items-start gap-3 rounded-2xl p-5 transition-all duration-300 hover:shadow-md hover:scale-[1.015] cursor-default" style="background:${keyLimitBg}">
                 <i data-lucide="${alertIcon}" class="w-5 h-5 ${alertText} shrink-0 mt-0.5"></i>
-                <p class="text-base ${alertText} font-semibold leading-relaxed">${pickLang(cmsTrack.keyLimit?.text)}</p>
+                <p class="text-base ${alertText} font-semibold leading-relaxed">${esc(pickLang(cmsTrack.keyLimit?.text))}</p>
               </div>
             </div>
             <div>
-              <h4 class="text-xl font-extrabold text-eu-purple mb-3">${pickLang(fl.activeBodies)}</h4>
+              <h4 class="text-xl font-extrabold text-eu-purple mb-3">${esc(pickLang(fl.activeBodies))}</h4>
               <div class="flex flex-wrap gap-2">${bodiesHtml}</div>
             </div>
           </div>
@@ -270,12 +273,12 @@ function tabDualTrack(govT) {
   const dataArchZonesHtml = (cmsDataArch.zones || []).map(zone => {
     const st = zoneStyles[zone.id] || zoneStyles.public;
     const itemsHtml = (zone.items || []).map(item =>
-      `<li class="flex items-center gap-2.5 text-base text-gray-700"><span class="w-1.5 h-1.5 rounded-full ${st.dot} shrink-0"></span>${pickLang(item)}</li>`
+      `<li class="flex items-center gap-2.5 text-base text-gray-700"><span class="w-1.5 h-1.5 rounded-full ${st.dot} shrink-0"></span>${esc(pickLang(item))}</li>`
     ).join('');
     return `
       <div class="${st.zone}">
-        <h4 class="text-xl font-extrabold ${st.h4} mb-2">${pickLang(zone.title)}</h4>
-        <p class="text-lg text-gray-700 mb-4 leading-relaxed">${pickLang(zone.description)}</p>
+        <h4 class="text-xl font-extrabold ${st.h4} mb-2">${esc(pickLang(zone.title))}</h4>
+        <p class="text-lg text-gray-700 mb-4 leading-relaxed">${esc(pickLang(zone.description))}</p>
         <ul class="space-y-2">${itemsHtml}</ul>
       </div>`;
   }).join('');
@@ -284,8 +287,8 @@ function tabDualTrack(govT) {
   const responsibilityHtml = (cmsRB.items || []).map(item => `
     <div class="rd-card rd-card-grad-violet rd-card-edge p-6 h-full flex flex-col justify-between">
       <div>
-        <h4 class="text-xl font-extrabold text-eu-purple mb-2">${pickLang(item.owner)}</h4>
-        <p class="text-lg text-gray-700 leading-relaxed">${pickLang(item.scope)}</p>
+        <h4 class="text-xl font-extrabold text-eu-purple mb-2">${esc(pickLang(item.owner))}</h4>
+        <p class="text-lg text-gray-700 leading-relaxed">${esc(pickLang(item.scope))}</p>
       </div>
     </div>
   `).join('');
@@ -294,8 +297,8 @@ function tabDualTrack(govT) {
   const agreementItemsHtml = (cmsAgreement.items || []).map(c => `
     <div class="rd-card rd-card-grad-violet rd-card-edge p-6 h-full flex flex-col justify-between">
       <div>
-        <h4 class="text-xl font-extrabold text-eu-purple mb-2">${pickLang(c.title)}</h4>
-        <p class="text-lg text-gray-700 leading-relaxed">${pickLang(c.desc)}</p>
+        <h4 class="text-xl font-extrabold text-eu-purple mb-2">${esc(pickLang(c.title))}</h4>
+        <p class="text-lg text-gray-700 leading-relaxed">${esc(pickLang(c.desc))}</p>
       </div>
     </div>
   `).join('');
@@ -304,8 +307,8 @@ function tabDualTrack(govT) {
     <div class="space-y-12">
       ${dualTrackVisible ? `
       <div>
-        <h2 class="font-extrabold text-eu-purple mb-3">${pickLang(dualTrackBlock.title)}</h2>
-        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${pickLang(dualTrackBlock.description)}</p>
+        <h2 class="font-extrabold text-eu-purple mb-3">${esc(pickLang(dualTrackBlock.title))}</h2>
+        <p class="text-lg text-gray-600 mb-8 leading-relaxed">${esc(pickLang(dualTrackBlock.description))}</p>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           ${trackAVisible ? trackBlock(tracksById['track-a'], 'bg-eu-blue',   'bg-eu-blue/10 text-eu-blue',   'alert-circle',  'text-eu-blue',   'linear-gradient(to bottom,#ffffff 0%,#EAE6FF 100%)',   'rgb(86 32 246/.12)'  ) : ''}
@@ -321,9 +324,9 @@ function tabDualTrack(govT) {
             <div class="w-12 h-12 rounded-full flex items-center justify-center text-eu-blue shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:rgba(255,255,255,0.85)">
               <i data-lucide="shield-check" class="w-6 h-6"></i>
             </div>
-            ${pickLang(cmsDataArch.title)}
+            ${esc(pickLang(cmsDataArch.title))}
           </h3>
-          <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(cmsDataArch.description)}</p>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">${esc(pickLang(cmsDataArch.description))}</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">${dataArchZonesHtml}</div>
         </div>` : ''}
 
@@ -334,9 +337,9 @@ function tabDualTrack(govT) {
             <div class="w-12 h-12 rounded-full flex items-center justify-center text-eu-purple shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:rgba(255,255,255,0.85)">
               <i data-lucide="shield" class="w-6 h-6"></i>
             </div>
-            ${pickLang(cmsRB.title)}
+            ${esc(pickLang(cmsRB.title))}
           </h3>
-          <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(cmsRB.description)}</p>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">${esc(pickLang(cmsRB.description))}</p>
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">${responsibilityHtml}</div>
         </div>` : ''}
 
@@ -347,9 +350,9 @@ function tabDualTrack(govT) {
             <div class="w-12 h-12 rounded-full flex items-center justify-center text-eu-purple shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:rgba(255,255,255,0.85)">
               <i data-lucide="file-signature" class="w-6 h-6"></i>
             </div>
-            ${pickLang(cmsAgreement.title)}
+            ${esc(pickLang(cmsAgreement.title))}
           </h3>
-          <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(cmsAgreement.description)}</p>
+          <p class="text-lg text-gray-600 mb-6 leading-relaxed">${esc(pickLang(cmsAgreement.description))}</p>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">${agreementItemsHtml}</div>
         </div>` : ''}
       </div>
@@ -381,7 +384,7 @@ function tabLbd(govT) {
     const [color, border] = phaseColors[i % phaseColors.length];
     const outputsHtml = (phase.outputs || []).map(o => `
       <span class="flex items-center gap-1.5 text-sm bg-eu-blue/5 border border-eu-blue/10 px-3.5 py-1.5 rounded-full text-gray-750 font-bold">
-        <i data-lucide="check-circle" class="w-4 h-4 text-eu-blue shrink-0"></i>${pickLang(o.label, o)}
+        <i data-lucide="check-circle" class="w-4 h-4 text-eu-blue shrink-0"></i>${esc(pickLang(o.label, o))}
       </span>`).join('');
     return `
       <div class="relative">
@@ -389,13 +392,13 @@ function tabLbd(govT) {
           <div class="w-12 h-12 rounded-full ${color} text-white flex items-center justify-center font-extrabold text-xl shrink-0 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">${phase.step}</div>
           <div class="flex-1 min-w-0">
             <div class="flex flex-wrap items-center gap-3 mb-2">
-              <span class="text-xs font-extrabold uppercase px-2.5 py-1 rounded-full ${color} text-white">${pickLang(phase.track, phase.track || '')}</span>
+              <span class="text-xs font-extrabold uppercase px-2.5 py-1 rounded-full ${color} text-white">${esc(pickLang(phase.track, phase.track || ''))}</span>
               <span class="text-xs text-gray-500">·</span>
-              <span class="text-sm font-bold text-eu-purple">${pickLang(phase.platform, phase.platform || '')}</span>
+              <span class="text-sm font-bold text-eu-purple">${esc(pickLang(phase.platform, phase.platform || ''))}</span>
             </div>
-            <h4 class="text-2xl font-extrabold text-eu-text mb-2">${pickLang(phase.title, phase.title || '')}</h4>
-            <p class="text-sm text-gray-600 font-bold mb-3 flex items-center gap-1.5"><i data-lucide="user" class="w-3.5 h-3.5"></i> ${pickLang(phase.actor, phase.actor || '')}</p>
-            <p class="text-lg text-gray-700 mb-4 leading-relaxed">${pickLang(phase.description, phase.desc || '')}</p>
+            <h4 class="text-2xl font-extrabold text-eu-text mb-2">${esc(pickLang(phase.title, phase.title || ''))}</h4>
+            <p class="text-sm text-gray-600 font-bold mb-3 flex items-center gap-1.5"><i data-lucide="user" class="w-3.5 h-3.5"></i> ${esc(pickLang(phase.actor, phase.actor || ''))}</p>
+            <p class="text-lg text-gray-700 mb-4 leading-relaxed">${esc(pickLang(phase.description, phase.desc || ''))}</p>
             <div class="flex flex-wrap gap-2">${outputsHtml}</div>
           </div>
         </div>
@@ -406,8 +409,8 @@ function tabLbd(govT) {
   const flowStepsHtml = (operatingFlowSteps || s.operatingFlow?.steps || []).map((step, i) => `
     <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col h-full group">
       <div class="w-8 h-8 rounded-lg bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm mb-4 shrink-0 shadow-sm rd-icon-circle-gov">${i + 1}</div>
-      <p class="text-base font-extrabold text-eu-text mb-2.5 leading-snug">${pickLang(step.title, step.title || '')}</p>
-      <p class="text-base text-gray-700 leading-relaxed mt-auto">${pickLang(step.description, step.desc || '')}</p>
+      <p class="text-base font-extrabold text-eu-text mb-2.5 leading-snug">${esc(pickLang(step.title, step.title || ''))}</p>
+      <p class="text-base text-gray-700 leading-relaxed mt-auto">${esc(pickLang(step.description, step.desc || ''))}</p>
     </div>
   `).join('');
 
@@ -423,14 +426,14 @@ function tabLbd(govT) {
     <div class="relative h-full">
       <div class="rd-card rd-card-grad-violet rd-card-edge p-6 border-l-4 ${border} h-full flex flex-col group">
         <div class="mb-3">
-          <span class="inline-block text-xs font-extrabold uppercase px-2.5 py-1 rounded-full ${color} text-white">${pickLang(p.track, p.track || '')}</span>
+          <span class="inline-block text-xs font-extrabold uppercase px-2.5 py-1 rounded-full ${color} text-white">${esc(pickLang(p.track, p.track || ''))}</span>
         </div>
-        <p class="font-extrabold text-2xl text-eu-text leading-snug mb-1">${pickLang(p.name, p.name || '')}</p>
-        <p class="text-sm text-gray-500 mb-2 font-bold">${pickLang(p.tech, p.tech || '')}</p>
-        <p class="text-sm font-extrabold uppercase ${text} mb-3 tracking-wider">${pickLang(p.role, p.role || '')}</p>
-        <p class="text-lg text-gray-700 mb-4 leading-relaxed">${pickLang(p.description, p.desc || '')}</p>
+        <p class="font-extrabold text-2xl text-eu-text leading-snug mb-1">${esc(pickLang(p.name, p.name || ''))}</p>
+        <p class="text-sm text-gray-500 mb-2 font-bold">${esc(pickLang(p.tech, p.tech || ''))}</p>
+        <p class="text-sm font-extrabold uppercase ${text} mb-3 tracking-wider">${esc(pickLang(p.role, p.role || ''))}</p>
+        <p class="text-lg text-gray-700 mb-4 leading-relaxed">${esc(pickLang(p.description, p.desc || ''))}</p>
         <p class="text-xs text-gray-600 font-bold bg-eu-blue/5 rounded-full px-3 py-1.5 mt-auto flex items-center gap-1.5 w-fit">
-          <i data-lucide="user" class="w-3.5 h-3.5"></i> ${pickLang(p.owner, p.owner || '')}
+          <i data-lucide="user" class="w-3.5 h-3.5"></i> ${esc(pickLang(p.owner, p.owner || ''))}
         </p>
       </div>
     </div>
@@ -447,15 +450,15 @@ function tabLbd(govT) {
     return `
     <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col h-full group">
       <div class="mb-3 shrink-0">
-        <span class="inline-block px-3 py-1 rounded-full text-white text-xs font-extrabold uppercase ${color}">${pickLang(f.label)}</span>
+        <span class="inline-block px-3 py-1 rounded-full text-white text-xs font-extrabold uppercase ${color}">${esc(pickLang(f.label))}</span>
       </div>
-      <p class="font-extrabold text-eu-purple text-lg mb-0.5 leading-snug">${pickLang(f.range)}</p>
+      <p class="font-extrabold text-eu-purple text-lg mb-0.5 leading-snug">${esc(pickLang(f.range))}</p>
       <p class="text-sm text-gray-500 font-bold mb-4">${f.period || ''}</p>
       <ul class="space-y-2.5 mt-2">
         ${(f.items || []).map(item => `
           <li class="flex items-start gap-2.5 text-base text-gray-700 leading-relaxed">
             <span class="w-1.5 h-1.5 rounded-full mt-2 shrink-0 ${color}"></span>
-            <span>${pickLang(item.label)}</span>
+            <span>${esc(pickLang(item.label))}</span>
           </li>`).join('')}
       </ul>
     </div>
@@ -465,16 +468,16 @@ function tabLbd(govT) {
     <div class="space-y-12">
       <div>
         ${lbdBlock.visible !== false ? `
-        <h2 class="font-extrabold text-eu-purple mb-3">${pickLang(lbdBlock.title, s.title || '')}</h2>
-        <p class="text-lg text-gray-600 mb-4 leading-relaxed">${pickLang(lbdBlock.description, s.intro_desc || '')}</p>
-        <p class="text-base text-gray-500 mb-8 leading-relaxed">${pickLang(lbdBlock.diginetDescription, s.diginetDesc || '')}</p>
+        <h2 class="font-extrabold text-eu-purple mb-3">${esc(pickLang(lbdBlock.title, s.title || ''))}</h2>
+        <p class="text-lg text-gray-600 mb-4 leading-relaxed">${esc(pickLang(lbdBlock.description, s.intro_desc || ''))}</p>
+        <p class="text-base text-gray-500 mb-8 leading-relaxed">${esc(pickLang(lbdBlock.diginetDescription, s.diginetDesc || ''))}</p>
         ` : ''}
 
         <!-- Fases LbD -->
         ${cycleBlock.visible !== false ? `
         <div class="rd-card overflow-hidden mb-8">
           <div class="px-10 py-6 rd-ceja-grad">
-            <h3 class="text-2xl font-extrabold text-white">${pickLang(cycleBlock.title, s.cycleTitle || '')}</h3>
+            <h3 class="text-2xl font-extrabold text-white">${esc(pickLang(cycleBlock.title, s.cycleTitle || ''))}</h3>
           </div>
           <div class="p-8 space-y-0 rd-card-grad-beige">${phasesHtml}</div>
         </div>` : ''}
@@ -487,11 +490,11 @@ function tabLbd(govT) {
               <div class="w-10 h-10 rounded-full flex items-center justify-center text-white shrink-0" style="background:rgba(255,255,255,0.2)">
                 <i data-lucide="arrow-right" class="w-5 h-5"></i>
               </div>
-              ${pickLang(operatingFlowBlock.title, s.operatingFlow?.title || '')}
+              ${esc(pickLang(operatingFlowBlock.title, s.operatingFlow?.title || ''))}
             </h3>
           </div>
           <div class="p-8 rd-card-grad-beige">
-            <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(operatingFlowBlock.description, s.operatingFlow?.desc || '')}</p>
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed">${esc(pickLang(operatingFlowBlock.description, s.operatingFlow?.desc || ''))}</p>
             <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-4">${flowStepsHtml}</div>
           </div>
         </div>` : ''}
@@ -500,10 +503,10 @@ function tabLbd(govT) {
         ${platformsBlock.visible !== false ? `
         <div class="rd-card overflow-hidden mb-8">
           <div class="px-10 py-6 rd-ceja-grad">
-            <h3 class="text-2xl font-extrabold text-white">${pickLang(platformsBlock.title, s.platformsTitle || '')}</h3>
+            <h3 class="text-2xl font-extrabold text-white">${esc(pickLang(platformsBlock.title, s.platformsTitle || ''))}</h3>
           </div>
           <div class="p-8 rd-card-grad-beige">
-            <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(platformsBlock.description, s.platformsDesc || '')}</p>
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed">${esc(pickLang(platformsBlock.description, s.platformsDesc || ''))}</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${platformsHtml}</div>
           </div>
         </div>` : ''}
@@ -516,11 +519,11 @@ function tabLbd(govT) {
               <div class="w-10 h-10 rounded-full flex items-center justify-center text-white shrink-0" style="background:rgba(255,255,255,0.2)">
                 <i data-lucide="zap" class="w-5 h-5"></i>
               </div>
-              ${pickLang(scalabilityBlock.title)}
+              ${esc(pickLang(scalabilityBlock.title))}
             </h3>
           </div>
           <div class="p-8 rd-card-grad-beige">
-            <p class="text-lg text-gray-600 mb-6 leading-relaxed">${pickLang(scalabilityBlock.description)}</p>
+            <p class="text-lg text-gray-600 mb-6 leading-relaxed">${esc(pickLang(scalabilityBlock.description))}</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${scaleHtml}</div>
           </div>
         </div>` : ''}
@@ -583,7 +586,7 @@ function tabDocumentos(govT) {
     if (filtered.length === 0) {
       return `
         <div class="col-span-full rounded-2xl border border-eu-blue/10 bg-eu-blue/5 p-8 text-center">
-          <p class="text-sm text-gray-600">${searchQuery ? pickLang(noSearchResultsMessage, 'No hay documentos que coincidan con la búsqueda.') : pickLang(cms.noDocsMessage, s.noDocsMessage || '')}</p>
+          <p class="text-sm text-gray-600">${esc(searchQuery ? pickLang(noSearchResultsMessage, 'No hay documentos que coincidan con la búsqueda.') : pickLang(cms.noDocsMessage, s.noDocsMessage || ''))}</p>
         </div>
       `;
     }
@@ -597,8 +600,12 @@ function tabDocumentos(govT) {
 
     const cardsHtml = paged.map(doc => {
       const pub = isPublic(doc);
-      const hasFile = doc.filePublicPath && doc.filePublicPath.trim();
-      const hasUrl = doc.url && doc.url.trim();
+      // Una URL rechazada por la allowlist equivale a no tener enlace: la card
+      // cae en su estado "sin enlace", que ya existe y ocupa el mismo espacio.
+      const fileUrl = getSafeEditorialUrl(doc.filePublicPath);
+      const docUrl = getSafeEditorialUrl(doc.url);
+      const hasFile = Boolean(fileUrl);
+      const hasUrl = Boolean(docUrl);
       const lang = getLang();
       const customLinkText = pickLang(doc.linkText, '');
       // Texto del enlace: el personalizado del CMS o un default según el origen.
@@ -608,7 +615,7 @@ function tabDocumentos(govT) {
       return `
         <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden h-full group">
           <div class="rd-card-mp-ceja">
-            <h3 class="rd-card-mp-title break-words">${pickLang(doc.title) || ''}</h3>
+            <h3 class="rd-card-mp-title break-words">${esc(pickLang(doc.title) || '')}</h3>
           </div>
           <div class="p-7 pt-5 flex flex-col justify-between flex-1">
           <div>
@@ -626,23 +633,23 @@ function tabDocumentos(govT) {
                   'background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.18)',
                   'background:rgb(73 24 173/.10); color:#4918AD; border:1px solid rgb(73 24 173/.18)',
                 ];
-                return `<span class="text-sm px-3 py-1 rounded-full font-bold" style="${chipStyles[ti % chipStyles.length]}">${pickLang(type.label, '')}</span>`;
+                return `<span class="text-sm px-3 py-1 rounded-full font-bold" style="${chipStyles[ti % chipStyles.length]}">${esc(pickLang(type.label, ''))}</span>`;
               }).join('')}
               <span class="text-sm font-extrabold px-3 py-1 rounded-full inline-flex items-center gap-1.5" style="${pub ? 'background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.18)' : 'background:rgb(73 24 173/.08); color:#4918AD; border:1px solid rgb(73 24 173/.15)'}">
                 <i data-lucide="${pub ? 'globe' : 'lock'}" class="w-3.5 h-3.5 shrink-0"></i>
-                ${pickLang(pub ? accessLabels.public : accessLabels.partners, pub ? (s.accessPublic || 'Público') : (s.accessPartners || 'Partners')).replace(/[\u{1F300}-\u{1FAFF}]/gu, '').trim()}
+                ${esc(pickLang(pub ? accessLabels.public : accessLabels.partners, pub ? (s.accessPublic || 'Público') : (s.accessPartners || 'Partners')).replace(/[\u{1F300}-\u{1FAFF}]/gu, '').trim())}
               </span>
             </div>
           </div>
           <div class="mt-5 pt-4 border-t border-eu-blue/10">
             ${hasFile ? `
-            <a href="${doc.filePublicPath}" download class="inline-flex items-center gap-1.5 text-base font-bold text-eu-blue hover:text-eu-purple transition-colors duration-300">
-              <span>${linkText}</span>
+            <a href="${esc(fileUrl)}" download class="inline-flex items-center gap-1.5 text-base font-bold text-eu-blue hover:text-eu-purple transition-colors duration-300">
+              <span>${esc(linkText)}</span>
               <i data-lucide="download" class="w-4 h-4"></i>
             </a>
             ` : hasUrl ? `
-            <a href="${doc.url}" ${doc.external ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-base font-bold text-eu-blue hover:text-eu-purple transition-colors duration-300">
-              <span>${linkText}</span>
+            <a href="${esc(docUrl)}" ${doc.external ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-base font-bold text-eu-blue hover:text-eu-purple transition-colors duration-300">
+              <span>${esc(linkText)}</span>
               <i data-lucide="external-link" class="w-4 h-4"></i>
             </a>
             ` : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-400"><i data-lucide="minus-circle" class="w-4 h-4"></i>${lang === 'en' ? 'No link' : lang === 'va' ? 'Sense enllaç' : 'Sin enlace'}</span>`}
@@ -654,9 +661,9 @@ function tabDocumentos(govT) {
 
     const paginationHtml = !isShowAll && totalPages > 1 ? `
       <div class="flex gap-2 justify-center mt-6">
-        <button data-gov-doc-page="prev" class="px-4 py-2 text-xs font-bold rounded-full border cursor-pointer transition-all ${safePage === 0 ? 'opacity-50 cursor-not-allowed text-gray-400 border-gray-200' : 'bg-white text-eu-text border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">← ${pickLang(paginationPrev, 'Anterior')}</button>
+        <button data-gov-doc-page="prev" class="px-4 py-2 text-xs font-bold rounded-full border cursor-pointer transition-all ${safePage === 0 ? 'opacity-50 cursor-not-allowed text-gray-400 border-gray-200' : 'bg-white text-eu-text border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">← ${esc(pickLang(paginationPrev, 'Anterior'))}</button>
         <span class="px-3 py-2 text-xs text-gray-500 font-bold">Página ${safePage + 1} de ${totalPages}</span>
-        <button data-gov-doc-page="next" class="px-4 py-2 text-xs font-bold rounded-full border cursor-pointer transition-all ${safePage >= totalPages - 1 ? 'opacity-50 cursor-not-allowed text-gray-400 border-gray-200' : 'bg-white text-eu-text border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">${pickLang(paginationNext, 'Siguiente')} →</button>
+        <button data-gov-doc-page="next" class="px-4 py-2 text-xs font-bold rounded-full border cursor-pointer transition-all ${safePage >= totalPages - 1 ? 'opacity-50 cursor-not-allowed text-gray-400 border-gray-200' : 'bg-white text-eu-text border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">${esc(pickLang(paginationNext, 'Siguiente'))} →</button>
       </div>
     ` : '';
 
@@ -668,7 +675,7 @@ function tabDocumentos(govT) {
           </button>
         `).join('')}
         ${showAllOption ? `<button data-gov-doc-pagesize="all" class="px-3 py-1.5 rounded-full border cursor-pointer transition-all text-xs font-bold ${actualPageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue shadow-sm' : 'bg-white text-gray-600 border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">
-          ${pickLang(allLabel, 'Todo')}
+          ${esc(pickLang(allLabel, 'Todo'))}
         </button>` : ''}
       </div>
     ` : '';
@@ -687,9 +694,9 @@ function tabDocumentos(govT) {
               <span class="rd-icon-circle shrink-0 text-eu-blue transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
                 <i data-lucide="file-text" class="h-6 w-6"></i>
               </span>
-              <h2 class="min-w-0 text-3xl font-extrabold leading-tight text-eu-purple">${pickLang(cms.title, s.title || '')}</h2>
+              <h2 class="min-w-0 text-3xl font-extrabold leading-tight text-eu-purple">${esc(pickLang(cms.title, s.title || ''))}</h2>
             </div>
-            ${pickLang(cms.description, s.description || '') ? `<p class="mt-5 text-lg leading-relaxed text-gray-600">${pickLang(cms.description, s.description || '')}</p>` : ''}
+            ${pickLang(cms.description, s.description || '') ? `<p class="mt-5 text-lg leading-relaxed text-gray-600">${esc(pickLang(cms.description, s.description || ''))}</p>` : ''}
           </div>
         </div>
       </div>
@@ -718,15 +725,26 @@ function tabParticipar(govT) {
   const stakeBtnExt = hasCms ? cms.stakeholderCard.buttonExternal : false;
   const consBtnUrl = hasCms ? cms.consensueCard.buttonUrl || '#' : '#';
   const consBtnExt = hasCms ? cms.consensueCard.buttonExternal : false;
+  // '#' es el centinela del CMS para "enlace pendiente de rellenar": el botón
+  // se pinta clicable e inerte, no como <span>. Se distingue de una URL real
+  // porque con '#' no tiene sentido abrir pestaña nueva. Una URL que exista
+  // pero no supere la allowlist cae en ese mismo '#'.
+  // `safe*` solo tiene valor con una URL real y utilizable: es lo que decide si
+  // abrir pestaña nueva. `*Href` es lo que se pinta, con '#' como destino
+  // inerte tanto para el centinela como para una URL rechazada.
+  const safeStakeBtnUrl = stakeBtnUrl === '#' ? null : getSafeEditorialUrl(stakeBtnUrl);
+  const safeConsBtnUrl = consBtnUrl === '#' ? null : getSafeEditorialUrl(consBtnUrl);
+  const stakeBtnHref = getSafeEditorialUrl(stakeBtnUrl) || '#';
+  const consBtnHref = getSafeEditorialUrl(consBtnUrl) || '#';
 
   const stakeholderBenefitsHtml = (hasCms
     ? (cms.stakeholderCard.benefits || []).map(b => `
     <li class="flex items-start gap-2.5 text-lg text-gray-700 leading-relaxed">
-      <i data-lucide="check-circle" class="w-4 h-4 mt-1 shrink-0" style="color:#5620F6"></i>${pickLang(b.text, b.text?.es || '')}
+      <i data-lucide="check-circle" class="w-4 h-4 mt-1 shrink-0" style="color:#5620F6"></i>${esc(pickLang(b.text, b.text?.es || ''))}
     </li>`).join('')
     : (s.stakeholderBenefits || []).map(a => `
     <li class="flex items-start gap-2.5 text-lg text-gray-700 leading-relaxed">
-      <i data-lucide="check-circle" class="w-4 h-4 mt-1 shrink-0" style="color:#5620F6"></i>${a}
+      <i data-lucide="check-circle" class="w-4 h-4 mt-1 shrink-0" style="color:#5620F6"></i>${esc(a)}
     </li>`).join('')
   );
 
@@ -742,12 +760,12 @@ function tabParticipar(govT) {
 
   const consensueGroupsHtml = consensueGroups.map(g => `
     <div class="rounded-2xl p-5 rd-card-grad-violet" style="border:1px solid rgb(73 24 173 / .15)">
-      <p class="text-base font-extrabold uppercase tracking-wider mb-3" style="color:#4918AD">${g.who || ''}</p>
+      <p class="text-base font-extrabold uppercase tracking-wider mb-3" style="color:#4918AD">${esc(g.who || '')}</p>
       <ul class="space-y-2.5">
         ${(g.actions || []).map(a => `
           <li class="flex items-start gap-2.5 text-lg text-gray-700 leading-relaxed">
             <span class="w-1.5 h-1.5 rounded-full shrink-0 mt-2" style="background:#5620F6"></span>
-            <span>${a}</span>
+            <span>${esc(a)}</span>
           </li>`).join('')}
       </ul>
     </div>
@@ -760,6 +778,10 @@ function tabParticipar(govT) {
         const regExt = e.registrationExternal;
         const accUrl = (e.accessUrl || '').trim();
         const accExt = e.accessExternal;
+        // Si la URL existe pero no supera la allowlist, el botón conserva su
+        // sitio y su rótulo como <span>, sin llegar a ser un enlace.
+        const safeRegUrl = getSafeEditorialUrl(regUrl);
+        const safeAccUrl = getSafeEditorialUrl(accUrl);
         return `
       <div class="flex flex-col justify-between gap-4 p-6 rd-card rd-card-grad-violet rd-card-edge h-full group">
         <div class="flex items-start gap-4">
@@ -768,18 +790,22 @@ function tabParticipar(govT) {
             <span class="block text-xs font-bold uppercase tracking-wider mt-1">${parts[1] || ''}</span>
           </div>
           <div class="min-w-0">
-            <p class="font-extrabold text-lg text-eu-purple leading-snug break-words">${pickLang(e.title, e.title?.es || '')}</p>
-            <p class="text-sm text-gray-600 mt-1.5 flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${pickLang(e.location, e.location?.es || '')}</p>
+            <p class="font-extrabold text-lg text-eu-purple leading-snug break-words">${esc(pickLang(e.title, e.title?.es || ''))}</p>
+            <p class="text-sm text-gray-600 mt-1.5 flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${esc(pickLang(e.location, e.location?.es || ''))}</p>
           </div>
         </div>
         ${(regUrl || accUrl) ? `
         <div class="flex flex-wrap gap-2 pt-3 border-t border-eu-blue/10 mt-auto">
-          ${regUrl ? `<a href="${regUrl}" ${regExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors bg-eu-blue/5 border border-eu-blue/10 rounded-lg px-3 py-1.5">
+          ${!regUrl ? '' : safeRegUrl ? `<a href="${esc(safeRegUrl)}" ${regExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors bg-eu-blue/5 border border-eu-blue/10 rounded-lg px-3 py-1.5">
             <i data-lucide="clipboard-list" class="w-4 h-4"></i>Registration
-          </a>` : ''}
-          ${accUrl ? `<a href="${accUrl}" ${accExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-purple hover:text-eu-blue transition-colors border rounded-lg px-3 py-1.5" style="background:rgb(73 24 173/.06); border-color:rgb(73 24 173/.15)">
+          </a>` : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue bg-eu-blue/5 border border-eu-blue/10 rounded-lg px-3 py-1.5">
+            <i data-lucide="clipboard-list" class="w-4 h-4"></i>Registration
+          </span>`}
+          ${!accUrl ? '' : safeAccUrl ? `<a href="${esc(safeAccUrl)}" ${accExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-purple hover:text-eu-blue transition-colors border rounded-lg px-3 py-1.5" style="background:rgb(73 24 173/.06); border-color:rgb(73 24 173/.15)">
             <i data-lucide="video" class="w-4 h-4"></i>Access
-          </a>` : ''}
+          </a>` : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-purple border rounded-lg px-3 py-1.5" style="background:rgb(73 24 173/.06); border-color:rgb(73 24 173/.15)">
+            <i data-lucide="video" class="w-4 h-4"></i>Access
+          </span>`}
         </div>` : ''}
       </div>
     `;
@@ -789,12 +815,12 @@ function tabParticipar(govT) {
         return `
       <div class="flex items-start gap-4 p-6 rd-card rd-card-grad-violet rd-card-edge h-full group">
         <div class="bg-eu-blue text-white rounded-xl px-3 py-2 text-center shrink-0 min-w-[3.5rem] shadow-sm">
-          <span class="block text-lg font-extrabold leading-none">${parts[0] || ''}</span>
-          <span class="block text-xs font-bold uppercase tracking-wider mt-1">${parts[1] || ''}</span>
+          <span class="block text-lg font-extrabold leading-none">${esc(parts[0] || '')}</span>
+          <span class="block text-xs font-bold uppercase tracking-wider mt-1">${esc(parts[1] || '')}</span>
         </div>
         <div>
-          <p class="font-extrabold text-lg text-eu-purple leading-snug">${e.title || ''}</p>
-          <p class="text-sm text-gray-600 mt-1.5 flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${e.location || ''}</p>
+          <p class="font-extrabold text-lg text-eu-purple leading-snug">${esc(e.title || '')}</p>
+          <p class="text-sm text-gray-600 mt-1.5 flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${esc(e.location || '')}</p>
         </div>
       </div>
     `;
@@ -811,29 +837,29 @@ function tabParticipar(govT) {
               <i data-lucide="building-2" class="w-6 h-6 text-white"></i>
             </div>
             <div>
-              <h3 class="text-2xl font-extrabold text-white leading-snug">${hasCms ? pickLang(cms.stakeholderCard.title, s.stakeholderTitle || '') : (s.stakeholderTitle || '')}</h3>
-              <p class="text-sm font-extrabold uppercase tracking-widest text-white/80 mt-0.5">${hasCms ? pickLang(cms.stakeholderCard.subtitle, s.stakeholderSubtitle || '') : (s.stakeholderSubtitle || '')}</p>
+              <h3 class="text-2xl font-extrabold text-white leading-snug">${esc(hasCms ? pickLang(cms.stakeholderCard.title, s.stakeholderTitle || '') : (s.stakeholderTitle || ''))}</h3>
+              <p class="text-sm font-extrabold uppercase tracking-widest text-white/80 mt-0.5">${esc(hasCms ? pickLang(cms.stakeholderCard.subtitle, s.stakeholderSubtitle || '') : (s.stakeholderSubtitle || ''))}</p>
             </div>
           </div>
           <div class="rd-pad rd-card-grad-blue flex-1 flex flex-col justify-between">
             <div>
-              <p class="text-lg text-gray-700 mb-6 leading-relaxed">${hasCms ? pickLang(cms.stakeholderCard.description, s.stakeholderDesc || '') : (s.stakeholderDesc || '')}</p>
+              <p class="text-lg text-gray-700 mb-6 leading-relaxed">${sanitizeEditorialHtml(hasCms ? pickLang(cms.stakeholderCard.description, s.stakeholderDesc || '') : (s.stakeholderDesc || ''))}</p>
               <div class="rounded-2xl p-6 mb-6 rd-card-grad-beige" style="border:1px solid rgb(86 32 246/.18)">
-                <p class="text-base font-extrabold uppercase tracking-wider mb-3" style="color:#4918AD">${hasCms ? pickLang(cms.stakeholderCard.benefitsLabel, s.stakeholderBenefitsLabel || '') : (s.stakeholderBenefitsLabel || '')}</p>
+                <p class="text-base font-extrabold uppercase tracking-wider mb-3" style="color:#4918AD">${esc(hasCms ? pickLang(cms.stakeholderCard.benefitsLabel, s.stakeholderBenefitsLabel || '') : (s.stakeholderBenefitsLabel || ''))}</p>
                 <ul class="space-y-2.5">${stakeholderBenefitsHtml}</ul>
               </div>
               <p class="text-base text-gray-600 mb-6 flex items-start gap-2.5 leading-relaxed">
                 <i data-lucide="alert-circle" class="w-4 h-4 shrink-0 mt-1" style="color:#4918AD"></i>
-                <span>${hasCms ? pickLang(cms.stakeholderCard.warning, s.stakeholderWarning || '') : (s.stakeholderWarning || '')}</span>
+                <span>${esc(hasCms ? pickLang(cms.stakeholderCard.warning, s.stakeholderWarning || '') : (s.stakeholderWarning || ''))}</span>
               </p>
             </div>
             <div class="pt-4 shrink-0" style="border-top:1px solid rgb(86 32 246/.15)">
-              ${(hasCms && stakeBtnUrl !== '#')
-                ? `<a href="${stakeBtnUrl}" ${stakeBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#5620F6">
-                <span>${pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || '')}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
+              ${hasCms
+                ? `<a href="${esc(stakeBtnHref)}" ${(safeStakeBtnUrl && stakeBtnExt) ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#5620F6">
+                <span>${esc(pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || ''))}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
               </a>`
                 : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#5620F6">
-                <span>${pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || '')}</span>
+                <span>${esc(s.stakeholderButton || '')}</span>
               </span>`
               }
             </div>
@@ -848,22 +874,22 @@ function tabParticipar(govT) {
               <i data-lucide="users" class="w-6 h-6 text-white"></i>
             </div>
             <div>
-              <h3 class="text-2xl font-extrabold text-white leading-snug">${hasCms ? pickLang(cms.consensueCard.title, s.consensueTitle || '') : (s.consensueTitle || '')}</h3>
-              <p class="text-sm font-extrabold uppercase tracking-widest text-white/80 mt-0.5">${hasCms ? pickLang(cms.consensueCard.subtitle, s.consensueSubtitle || '') : (s.consensueSubtitle || '')}</p>
+              <h3 class="text-2xl font-extrabold text-white leading-snug">${esc(hasCms ? pickLang(cms.consensueCard.title, s.consensueTitle || '') : (s.consensueTitle || ''))}</h3>
+              <p class="text-sm font-extrabold uppercase tracking-widest text-white/80 mt-0.5">${esc(hasCms ? pickLang(cms.consensueCard.subtitle, s.consensueSubtitle || '') : (s.consensueSubtitle || ''))}</p>
             </div>
           </div>
           <div class="rd-pad rd-card-grad-beige flex-1 flex flex-col justify-between">
             <div>
-              <p class="text-lg text-gray-700 mb-6 leading-relaxed">${hasCms ? pickLang(cms.consensueCard.description, s.consensueDesc || '') : (s.consensueDesc || '')}</p>
+              <p class="text-lg text-gray-700 mb-6 leading-relaxed">${esc(hasCms ? pickLang(cms.consensueCard.description, s.consensueDesc || '') : (s.consensueDesc || ''))}</p>
               <div class="space-y-4 mb-6">${consensueGroupsHtml}</div>
             </div>
             <div class="pt-4 shrink-0" style="border-top:1px solid rgb(73 24 173 / .15)">
-              ${(hasCms && consBtnUrl !== '#')
-                ? `<a href="${consBtnUrl}" ${consBtnExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#4918AD">
-                <span>${pickLang(cms.consensueCard.buttonText, s.consensueButton || '')}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
+              ${hasCms
+                ? `<a href="${esc(consBtnHref)}" ${(safeConsBtnUrl && consBtnExt) ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#4918AD">
+                <span>${esc(pickLang(cms.consensueCard.buttonText, s.consensueButton || ''))}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
               </a>`
                 : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#4918AD">
-                <span>${pickLang(cms.consensueCard.buttonText, s.consensueButton || '')}</span>
+                <span>${esc(s.consensueButton || '')}</span>
               </span>`
               }
             </div>
@@ -879,8 +905,8 @@ function tabParticipar(govT) {
             <i data-lucide="landmark" class="w-6 h-6 text-eu-blue"></i>
           </div>
           <div>
-            <h2 class="text-3xl font-extrabold text-eu-purple leading-tight">${hasCms ? pickLang(cms.meetingsSection.title, s.meetingsTitle || '') : (s.meetingsTitle || '')}</h2>
-            <p class="text-base text-gray-500 font-bold mt-1">${hasCms ? pickLang(cms.meetingsSection.subtitle, s.meetingsSubtitle || '') : (s.meetingsSubtitle || '')}</p>
+            <h2 class="text-3xl font-extrabold text-eu-purple leading-tight">${esc(hasCms ? pickLang(cms.meetingsSection.title, s.meetingsTitle || '') : (s.meetingsTitle || ''))}</h2>
+            <p class="text-base text-gray-500 font-bold mt-1">${esc(hasCms ? pickLang(cms.meetingsSection.subtitle, s.meetingsSubtitle || '') : (s.meetingsSubtitle || ''))}</p>
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${meetingsHtml}</div>
@@ -902,7 +928,7 @@ export function render() {
   const statsHtml = heroStats.map(s => `
     <div class="rd-hero-stat text-center">
       <p class="text-3xl font-extrabold text-white leading-tight">${s.value || ''}</p>
-      <p class="text-[10px] font-extrabold uppercase tracking-widest mt-2" style="color:rgba(255,244,225,.75)">${pickLang(s.label)}</p>
+      <p class="text-[10px] font-extrabold uppercase tracking-widest mt-2" style="color:rgba(255,244,225,.75)">${esc(pickLang(s.label))}</p>
     </div>
   `).join('');
 
@@ -929,8 +955,8 @@ export function render() {
               <span class="inline-block bg-white/10 border border-white/20 font-extrabold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6" style="color:#FFF4E1;backdrop-filter:blur(8px)">
                 ${govT?.eyebrow || 'Gobernanza'}
               </span>
-              <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${pickLang(heroBlock.title, govT?.title || '')}</h1>
-              <p class="text-lg leading-relaxed max-w-3xl" style="color:rgba(255,255,255,.9)">${pickLang(heroBlock.description, govT?.description || '')}</p>
+              <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${esc(pickLang(heroBlock.title, govT?.title || ''))}</h1>
+              <p class="text-lg leading-relaxed max-w-3xl" style="color:rgba(255,255,255,.9)">${esc(pickLang(heroBlock.description, govT?.description || ''))}</p>
             </div>
           </div>
           ${heroStats.length > 0 ? `

@@ -3,6 +3,9 @@ import { navigateTo } from '../router.js';
 import { getState, setState } from '../state.js';
 import { SECTORS_CONFIG } from '../../data/sectors.js';
 import { resolveMembershipAction } from '../utils/membership.js';
+import { escapeHtml as esc } from '../utils/escape-html.js';
+import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
+import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
 
 
 const SECTOR_ICONS = {
@@ -45,15 +48,6 @@ function localizedList(value) {
   if (!value) return [];
   if (Array.isArray(value)) return value;
   return value[getLang()] || value.es || [];
-}
-
-function esc(value) {
-  return String(value ?? '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
 }
 
 function renderHero(hero) {
@@ -217,8 +211,16 @@ function renderPartners(sector, sectorsT) {
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(sectorsT?.featuredPartnersLabel || '')}</h4>
       </div>
       <div class="mt-5 grid gap-3 sm:grid-cols-2">
-        ${partners.map(partner => `
-          <a href="${esc(partner.url || '#')}" ${partner.url ? 'target="_blank" rel="noopener noreferrer"' : ''} class="flex flex-col justify-between rd-card rd-card-grad-beige rd-card-edge rounded-2xl p-5 text-center">
+        ${partners.map(partner => {
+          // '#' es la convención del CMS para "enlace pendiente de rellenar" y
+          // se conserva: es inerte, no navega ni ejecuta nada. Una URL que
+          // exista pero no supere la allowlist cae en ese mismo '#'.
+          const partnerHref = getSafeEditorialUrl(partner.url) || '#';
+          const linkAttrs = partnerHref === '#'
+            ? ''
+            : 'target="_blank" rel="noopener noreferrer"';
+          return `
+          <a href="${esc(partnerHref)}" ${linkAttrs} class="flex flex-col justify-between rd-card rd-card-grad-beige rd-card-edge rounded-2xl p-5 text-center">
             <div class="flex flex-1 items-center justify-center min-h-[5rem]">
               ${partner.logo ? `
                 <img src="assets/images/partners/${esc(partner.logo)}" alt="${esc(partner.acronym || partner.id)}" class="max-h-16 max-w-[95%] object-contain">
@@ -231,7 +233,8 @@ function renderPartners(sector, sectorsT) {
               <span class="block text-sm font-bold leading-tight text-eu-text/85">${esc(localized(partner.name) || partner.id)}</span>
             </div>
           </a>
-        `).join('')}
+        `;
+        }).join('')}
       </div>
     </article>
   `;
@@ -341,14 +344,19 @@ function renderCta(cta, sectorsT) {
   const buttonLabel = esc(localized(cta.buttonLabel) || sectorsT?.ctaButton || '');
   const buttonHtml = !buttonVisible
     ? ''
-    : membershipAction.kind === 'external'
+    : membershipAction.kind === 'unsafe'
       ? `
-        <a href="${membershipAction.url}" target="_blank" rel="noopener noreferrer" class="rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white" style="background:#FFF4E1">
-          ${buttonLabel}
+        <span class="rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple" style="background:#FFF4E1">
+          ${esc(buttonLabel)}
+        </span>`
+      : membershipAction.kind === 'external'
+      ? `
+        <a href="${esc(membershipAction.url)}" target="_blank" rel="noopener noreferrer" class="rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white" style="background:#FFF4E1">
+          ${esc(buttonLabel)}
         </a>`
       : `
         <button id="sectors-cta-btn" class="rounded-full border-0 px-8 py-3.5 font-bold text-eu-purple transition hover:bg-white" style="background:#FFF4E1">
-          ${buttonLabel}
+          ${esc(buttonLabel)}
         </button>`;
 
   return `
@@ -358,7 +366,7 @@ function renderCta(cta, sectorsT) {
           <div class="${buttonVisible ? 'max-w-2xl' : 'w-full'}">
             <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/70">AI-STEAM Network</p>
             <h3 class="mt-3 text-3xl font-extrabold tracking-tight" style="color:#FFF4E1">${esc(localized(cta.title) || sectorsT?.cta || '')}</h3>
-            <p class="mt-4 text-lg leading-relaxed text-white/85">${localized(cta.description) || sectorsT?.ctaDesc || ''}</p>
+            <p class="mt-4 text-lg leading-relaxed text-white/85">${sanitizeEditorialHtml(localized(cta.description) || sectorsT?.ctaDesc || '')}</p>
           </div>
           ${buttonHtml}
         </div>

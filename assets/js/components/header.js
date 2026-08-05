@@ -1,8 +1,10 @@
 import { t, getLanguage, setLanguage } from '../i18n.js';
-import { getActiveView, navigateTo } from '../router.js';
+import { VIEWS, getActiveView, navigateTo } from '../router.js';
 import { getState, setState } from '../state.js';
 import { HEADER_CONFIG } from '../../data/header.js';
 import { NAV_CONFIG } from '../../data/navigation.js';
+import { escapeHtml as esc } from '../utils/escape-html.js';
+import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 
 const DEFAULT_LANGUAGES = [
   { code: 'en', label: 'EN', bcp47: 'en' },
@@ -26,19 +28,19 @@ function langBtn(language, lang) {
   const code = language.code;
   const label = language.label || code.toUpperCase();
   const active = lang === code;
-  return `<button data-lang="${code}" lang="${language.bcp47 || code}" aria-label="Cambiar idioma a ${label}" class="cursor-pointer font-bold transition-all whitespace-nowrap" style="min-height:44px;min-width:2rem;font-size:0.8125rem;padding:.25rem .625rem;border-radius:.4rem;background:${active ? 'rgba(255,255,255,0.2)' : 'transparent'};color:${active ? '#FFF4E1' : 'rgba(255,244,225,0.6)'}"
+  return `<button data-lang="${esc(code)}" lang="${esc(language.bcp47 || code)}" aria-label="Cambiar idioma a ${esc(label)}" class="cursor-pointer font-bold transition-all whitespace-nowrap" style="min-height:44px;min-width:2rem;font-size:0.8125rem;padding:.25rem .625rem;border-radius:.4rem;background:${active ? 'rgba(255,255,255,0.2)' : 'transparent'};color:${active ? '#FFF4E1' : 'rgba(255,244,225,0.6)'}"
     onmouseover="if(!${active})this.style.background='rgba(255,255,255,0.1)'"
     onmouseout="if(!${active})this.style.background='transparent'"
-  >${label}</button>`;
+  >${esc(label)}</button>`;
 }
 
 function langBtnMobile(language, lang) {
   const code = language.code;
   const label = language.label || code.toUpperCase();
   const active = lang === code;
-  return `<button data-lang="${code}" lang="${language.bcp47 || code}" class="flex-1 px-3 py-2 rounded font-bold transition-all min-h-10 flex items-center justify-center text-sm ${
+  return `<button data-lang="${esc(code)}" lang="${esc(language.bcp47 || code)}" class="flex-1 px-3 py-2 rounded font-bold transition-all min-h-10 flex items-center justify-center text-sm ${
     active ? 'bg-eu-yellow text-eu-blue shadow-lg' : 'bg-white/40 text-white hover:bg-white/60 active:bg-white/50'
-  }">${label}</button>`;
+  }">${esc(label)}</button>`;
 }
 
 function renderDesktopButtons() {
@@ -46,13 +48,13 @@ function renderDesktopButtons() {
     .filter(btn => btn.visible !== false)
     .map(btn => {
       const label = btn[`label_${getLanguage()}`] || btn.label_es;
-      const href = btn.href;
-      if (!href) return '';
-      return `<a href="${href}" target="${btn.target || '_self'}" rel="noopener noreferrer"
+      const safeHref = getSafeEditorialUrl(btn.href);
+      if (!safeHref) return '';
+      return `<a href="${esc(safeHref)}" target="${esc(btn.target || '_self')}" rel="noopener noreferrer"
                class="rounded-full text-sm font-bold cursor-pointer transition-colors inline-flex items-center" style="min-height:44px;background:#FFF4E1;color:#4918AD;padding:.375rem 1rem"
                onmouseover="this.style.background='#5620F6';this.style.color='#FFF4E1'"
                onmouseout="this.style.background='#FFF4E1';this.style.color='#4918AD'">
-              ${label}
+              ${esc(label)}
             </a>`;
     }).join('');
 }
@@ -62,11 +64,11 @@ function renderMobileButtons() {
     .filter(btn => btn.visible !== false)
     .map(btn => {
       const label = btn[`label_${getLanguage()}`] || btn.label_es;
-      const href = btn.href;
-      if (!href) return '';
-      return `<a href="${href}" target="${btn.target || '_self'}" rel="noopener noreferrer"
+      const safeHref = getSafeEditorialUrl(btn.href);
+      if (!safeHref) return '';
+      return `<a href="${esc(safeHref)}" target="${esc(btn.target || '_self')}" rel="noopener noreferrer"
              class="flex w-full items-center justify-center bg-white border border-eu-blue text-eu-blue px-4 py-3 rounded text-sm font-bold hover:bg-gray-50 transition-colors min-h-12">
-            ${label}
+            ${esc(label)}
           </a>`;
     }).join('');
 }
@@ -78,21 +80,22 @@ export function renderHeader() {
   const languages = getHeaderLanguages();
   const desktopLangButtons = languages.map(language => langBtn(language, lang)).join('');
   const mobileLangButtons = languages.map(language => langBtnMobile(language, lang)).join('');
+  const visibleNavItems = NAV_CONFIG.items.filter(item => VIEWS.includes(item.id));
 
-  const desktopNav = NAV_CONFIG.items.map(item => `
-    <button data-view="${item.id}" class="font-bold uppercase cursor-pointer transition-all duration-200 rounded-full ${
+  const desktopNav = visibleNavItems.map(item => `
+    <button data-view="${esc(item.id)}" class="font-bold uppercase cursor-pointer transition-all duration-200 rounded-full ${
       active === item.id
         ? 'bg-white/20'
         : 'hover:bg-white/10'
-    }" style="min-height:44px;flex-shrink:0;white-space:nowrap;font-size:0.8125rem;letter-spacing:.03em;padding:.375rem .625rem;color:#FFF4E1">${t(item.key)}</button>
+    }" style="min-height:44px;flex-shrink:0;white-space:nowrap;font-size:0.8125rem;letter-spacing:.03em;padding:.375rem .625rem;color:#FFF4E1">${esc(t(item.key))}</button>
   `).join('');
 
-  const mobileNav = NAV_CONFIG.items.map(item => `
-    <button data-view="${item.id}" class="px-6 py-4 text-left font-bold uppercase tracking-wider border-l-4 transition-all duration-200 min-h-12 flex items-center text-sm active:scale-95 ${
+  const mobileNav = visibleNavItems.map(item => `
+    <button data-view="${esc(item.id)}" class="px-6 py-4 text-left font-bold uppercase tracking-wider border-l-4 transition-all duration-200 min-h-12 flex items-center text-sm active:scale-95 ${
       active === item.id
         ? 'bg-eu-blue/20 border-eu-yellow text-white shadow-md'
         : 'border-transparent text-white/80 hover:text-white hover:bg-white/10 active:bg-white/20'
-    }" style="color:#FFF4E1">${t(item.key)}</button>
+    }" style="color:#FFF4E1">${esc(t(item.key))}</button>
   `).join('');
 
   const hamburgerPath = mobileOpen
@@ -107,8 +110,8 @@ export function renderHeader() {
         <div id="logo-btn" class="flex items-center gap-2 sm:gap-3 cursor-pointer shrink-0">
           <div class="w-10 h-10 bg-eu-blue rounded flex items-center justify-center text-white font-bold text-xl shrink-0">AI</div>
           <div class="hidden sm:block">
-            <span class="font-bold text-xl text-eu-blue block leading-none">${t('header.title')}</span>
-            <span class="text-xs text-gray-500 font-medium tracking-wide uppercase">${t('header.subtitle')}</span>
+            <span class="font-bold text-xl text-eu-blue block leading-none">${esc(t('header.title'))}</span>
+            <span class="text-xs text-gray-500 font-medium tracking-wide uppercase">${esc(t('header.subtitle'))}</span>
           </div>
         </div>
 
@@ -138,7 +141,7 @@ export function renderHeader() {
       <nav class="rd-nav-mobile bg-eu-blue border-t border-eu-blue/20 max-h-[calc(100vh-128px)] overflow-y-auto">
         <div class="flex flex-col">${mobileNav}</div>
         <div class="border-t border-eu-blue/20 px-6 py-4">
-          <p class="text-xs text-white/80 font-bold uppercase mb-3 tracking-wide">${t('header.language')}</p>
+          <p class="text-xs text-white/80 font-bold uppercase mb-3 tracking-wide">${esc(t('header.language'))}</p>
           <div class="flex gap-2">
             ${mobileLangButtons}
           </div>

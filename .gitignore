@@ -11,3 +11,7 @@ dist/
 *.log
 .agents/
 skills-lock.json
+
+# El expediente de securización vive en AI-STEAM-CONTENT (remoto en red local).
+# Este repositorio es público: no debe volver a alojarlo. Ver VAN-4.3b.
+docs/security/

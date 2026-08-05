@@ -2,6 +2,10 @@ import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { getActiveView } from '../router.js';
 import { NEWS_CONFIG } from '../../data/news.js';
+// Sin alias `esc` a propósito: News no está migrada y no debe contarse como
+// vista escapada en el inventario. El helper entra solo para el href de VAN-2.2.
+import { escapeHtml } from '../utils/escape-html.js';
+import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
 function pickLang(value, fallback = '') {
@@ -309,6 +313,10 @@ function renderDetail(newsT) {
   const heroCategory = article.category || detail.category || '';
   const heroDate     = article.date     || detail.date     || '';
   const heroPartner  = article.partner  || detail.author   || '';
+  // VAN-2.2: se cablea la validación de URL aunque la sección esté diferida.
+  // El texto del CTA sigue sin escapar a propósito: pertenece a la deuda V1 de
+  // News, que se resuelve o se acepta antes de VAN-3B.
+  const ctaLink = getSafeEditorialUrl(detail.cta_link) || '#';
 
   const sectionsHtml = (detail.sections || []).map((section, idx) => `
     <article class="scroll-mt-20">
@@ -367,7 +375,7 @@ function renderDetail(newsT) {
           <div class="rd-card rd-card-tint-purple rd-pad mb-12 text-center relative overflow-hidden border border-eu-purple/10">
             <h3 class="text-2xl font-extrabold text-eu-purple mb-3">${newsT?.detailCtaTitle || '¿Listo para unirte a la red?'}</h3>
             <p class="text-gray-650 text-base mb-6 max-w-2xl mx-auto leading-relaxed">${newsT?.detailCtaDesc || ''}</p>
-            <a href="${detail.cta_link || '#'}"
+            <a href="${escapeHtml(ctaLink)}"
                class="inline-flex items-center gap-2 bg-eu-blue text-white px-8 py-3.5 rounded-full font-bold hover:bg-eu-purple transition-all shadow-md">
               ${detail.cta_button || ''} <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>

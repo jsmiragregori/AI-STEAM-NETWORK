@@ -2,6 +2,9 @@ import { getState, setState } from '../state.js';
 import { NETWORK_CONFIG } from '../../data/network.js';
 import { getFlagAssetPath } from '../lib/flag-assets.js';
 import { resolveMembershipAction } from '../utils/membership.js';
+import { escapeHtml as esc } from '../utils/escape-html.js';
+import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
+import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
 
 // ── Static data ─────────────────────────────────────────────────────────────
 
@@ -84,15 +87,6 @@ function localized(value) {
   return value?.[lang] || value?.es || '';
 }
 
-function esc(value) {
-  return String(value ?? '')
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#039;');
-}
-
 // Cuádruple hélice multi-eje: una organización puede pertenecer a uno o más
 // ejes. `categories` (array) es el campo canónico; `category` es fallback.
 function itemCats(x) {
@@ -135,17 +129,17 @@ function helixBlock() {
     return `
       <div class="rd-card rd-card-grad-violet rd-card-edge p-5 text-center group">
         <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${meta.icon}" class="w-6 h-6 ${meta.color}"></i></div>
-        <p class="font-extrabold text-base ${meta.color}">${loc(cat.label)}</p>
+        <p class="font-extrabold text-base ${meta.color}">${esc(loc(cat.label))}</p>
         <p class="text-3xl font-extrabold text-eu-text mt-1">${total}</p>
-        ${detailParts.length ? `<p class="text-sm text-gray-500 mt-0.5">${detailParts.join(' · ')}</p>` : ''}
+        ${detailParts.length ? `<p class="text-sm text-gray-500 mt-0.5">${esc(detailParts.join(' · '))}</p>` : ''}
       </div>
     `;
   }).join('');
 
   return `
     <div class="rd-card rd-card-accent rd-pad mb-8 rd-card-grad-beige">
-      <h2 class="text-2xl font-extrabold text-eu-purple mb-2">${loc(helix.heading)}</h2>
-      <p class="text-lg text-gray-600 mb-6 leading-relaxed">${loc(helix.description)}</p>
+      <h2 class="text-2xl font-extrabold text-eu-purple mb-2">${esc(loc(helix.heading))}</h2>
+      <p class="text-lg text-gray-600 mb-6 leading-relaxed">${esc(loc(helix.description))}</p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">${html}</div>
     </div>
   `;
@@ -172,11 +166,11 @@ function tabSocios(activeCategory, filterCountry) {
 
   const catFilters = `
     <button data-net-cat="todos" class="px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer border transition-colors ${activeCategory === 'todos' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow'}">
-      ${loc(pb.filterAll) || 'Todos'} (${ACTIVE_PARTNERS.length})
+      ${esc(loc(pb.filterAll) || 'Todos')} (${ACTIVE_PARTNERS.length})
     </button>
     ${Object.entries(CATEGORY_META).map(([key, meta]) => `
       <button data-net-cat="${key}" class="px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer border transition-colors ${activeCategory === key ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow'}">
-        ${getCategoryLabel(key)} (${pc[key] || 0})
+        ${esc(getCategoryLabel(key))} (${pc[key] || 0})
       </button>
     `).join('')}
   `;
@@ -190,24 +184,30 @@ function tabSocios(activeCategory, filterCountry) {
   const cardsHtml = filtered.map(p => {
     const pCats = itemCats(p);
     const meta = CATEGORY_META[pCats[0]] || CATEGORY_META.sociedad;
-    const sectorsHtml = p.sectors.map(s => `<span class="text-sm px-2 py-0.5 rounded-full font-bold" style="background:rgb(86 32 246/.10); color:#5620F6">${localized(s)}</span>`).join('');
+    const sectorsHtml = p.sectors.map(s => `<span class="text-sm px-2 py-0.5 rounded-full font-bold" style="background:rgb(86 32 246/.10); color:#5620F6">${esc(localized(s))}</span>`).join('');
     // Áreas de expertise libres: chip en Deep Purple (#4918AD), distinto del azul de los sectores oficiales.
-    const expertiseHtml = (p.expertise || []).map(e => `<span class="text-sm px-2 py-0.5 rounded-full font-bold" style="background:rgb(73 24 173/.10); color:#4918AD">${localized(e)}</span>`).join('');
+    const expertiseHtml = (p.expertise || []).map(e => `<span class="text-sm px-2 py-0.5 rounded-full font-bold" style="background:rgb(73 24 173/.10); color:#4918AD">${esc(localized(e))}</span>`).join('');
     const categoryLabel = pCats.map(c => getCategoryLabel(c)).join(' · ') || localized(p.categoryLabel);
     const roleLabel = loc(pb.roleLabels?.[p.role]) || p.role;
     const countryLabel = getCountryName(p.country);
     const contributionText = localized(p.contribution);
-    const contributionHtml = contributionText ? `<p class="text-sm text-gray-700 leading-snug mb-3">${contributionText}</p>` : '';
+    const contributionHtml = contributionText ? `<p class="text-sm text-gray-700 leading-snug mb-3">${esc(contributionText)}</p>` : '';
     const visitLabel = loc(pb.visitSite) || 'Visit website';
     const logoHtml = p.logo
-      ? `<img src="${LOGO_BASE}${p.logo}" alt="${(p.acronym || p.name || p.id).replace(/"/g, '&quot;')}" class="max-h-12 max-w-[160px] w-auto h-auto object-contain" loading="lazy" />`
-      : `<div class="network-category-tooltip w-12 h-12 rounded-xl ${meta.bg} flex items-center justify-center" data-tooltip="${categoryLabel}" aria-label="${categoryLabel}"><i data-lucide="${meta.icon}" class="w-6 h-6 ${meta.color}"></i></div>`;
-    const visitLinkHtml = p.url ? `
+      ? `<img src="${LOGO_BASE}${esc(p.logo)}" alt="${esc(p.acronym || p.name || p.id)}" class="max-h-12 max-w-[160px] w-auto h-auto object-contain" loading="lazy" />`
+      : `<div class="network-category-tooltip w-12 h-12 rounded-xl ${meta.bg} flex items-center justify-center" data-tooltip="${esc(categoryLabel)}" aria-label="${esc(categoryLabel)}"><i data-lucide="${meta.icon}" class="w-6 h-6 ${meta.color}"></i></div>`;
+    // Una URL rechazada conserva el rótulo sin enlace, para no dejar hueco.
+    const safePartnerUrl = getSafeEditorialUrl(p.url);
+    const visitLinkHtml = !p.url ? '' : `
       <div class="border-t border-eu-purple/10 px-4 py-3">
-        <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">
-          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${visitLabel}
-        </a>
-      </div>` : '';
+        ${safePartnerUrl
+          ? `<a href="${esc(safePartnerUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(visitLabel)}
+        </a>`
+          : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-400">
+          <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(visitLabel)}
+        </span>`}
+      </div>`;
     return `
       <div class="rd-card rd-card-grad-violet rd-card-edge flex flex-col overflow-hidden">
         <!-- Logo area -->
@@ -216,22 +216,22 @@ function tabSocios(activeCategory, filterCountry) {
         </div>
         <!-- Nombre + país + contribución + clasificación -->
         <div class="px-4 pt-3 pb-4 flex-1 flex flex-col">
-          <p class="font-extrabold text-eu-purple text-base leading-snug mb-0.5">${localized(p.name)}</p>
-          <p class="text-sm text-gray-500 mb-1">${p.acronym} · ${localized(p.city)}</p>
+          <p class="font-extrabold text-eu-purple text-base leading-snug mb-0.5">${esc(localized(p.name))}</p>
+          <p class="text-sm text-gray-500 mb-1">${esc(p.acronym)} · ${esc(localized(p.city))}</p>
           <div class="flex items-center gap-1.5">
-            <img src="${getFlagAssetPath(p.country, '20x15')}" alt="${countryLabel}" width="20" height="15" class="rounded-sm" />
-            <span class="text-xs bg-eu-blue/10 text-eu-blue font-bold px-1.5 py-0.5 rounded">${countryLabel}</span>
+            <img src="${getFlagAssetPath(p.country, '20x15')}" alt="${esc(countryLabel)}" width="20" height="15" class="rounded-sm" />
+            <span class="text-xs bg-eu-blue/10 text-eu-blue font-bold px-1.5 py-0.5 rounded">${esc(countryLabel)}</span>
           </div>
-          ${pShowRole ? `<p class="text-sm text-eu-blue font-bold mt-2 mb-3">${roleLabel}</p>` : ''}
+          ${pShowRole ? `<p class="text-sm text-eu-blue font-bold mt-2 mb-3">${esc(roleLabel)}</p>` : ''}
           ${contributionHtml}
           ${pShowCategory ? `<div class="flex flex-wrap items-center gap-3 min-w-0 ${contributionHtml ? 'mb-3' : 'mt-2 mb-3'}">${pCats.map(c => {
             const m = CATEGORY_META[c] || CATEGORY_META.sociedad;
             const lbl = getCategoryLabel(c);
-            return `<div class="network-category-tooltip flex items-center gap-1.5 min-w-0" data-tooltip="${lbl}" aria-label="${lbl}" tabindex="0">
+            return `<div class="network-category-tooltip flex items-center gap-1.5 min-w-0" data-tooltip="${esc(lbl)}" aria-label="${esc(lbl)}" tabindex="0">
               <div class="w-5 h-5 rounded ${m.bg} flex items-center justify-center shrink-0">
                 <i data-lucide="${m.icon}" class="w-3 h-3 ${m.color}"></i>
               </div>
-              <span class="text-sm text-gray-500 font-medium truncate">${lbl}</span>
+              <span class="text-sm text-gray-500 font-medium truncate">${esc(lbl)}</span>
             </div>`;
           }).join('')}</div>` : ''}
           ${pShowSectors ? `<div class="flex flex-wrap gap-1.5 mt-auto">${sectorsHtml}</div>` : ''}
@@ -247,10 +247,10 @@ function tabSocios(activeCategory, filterCountry) {
     const name = getCountryName(c);
     return `
       <button data-net-country="${c}" class="rd-card rd-card-grad-violet rd-card-edge p-4 flex flex-col items-center gap-2 cursor-pointer text-center ${isActive ? 'ring-2 ring-eu-blue' : ''}">
-        <img src="${getFlagAssetPath(c, '48x36')}" alt="${name}" width="48" height="36" class="w-10 h-auto rounded-sm shadow-sm" />
-        <p class="font-bold text-sm leading-tight text-eu-text">${name}</p>
+        <img src="${getFlagAssetPath(c, '48x36')}" alt="${esc(name)}" width="48" height="36" class="w-10 h-auto rounded-sm shadow-sm" />
+        <p class="font-bold text-sm leading-tight text-eu-text">${esc(name)}</p>
         <span class="text-sm font-bold px-2 py-0.5 rounded-full bg-eu-blue/10 text-eu-blue">
-          ${cnt} ${cnt === 1 ? (loc(pb.member) || '') : (loc(pb.members) || '')}
+          ${cnt} ${esc(cnt === 1 ? (loc(pb.member) || '') : (loc(pb.members) || ''))}
         </span>
       </button>
     `;
@@ -258,19 +258,19 @@ function tabSocios(activeCategory, filterCountry) {
 
   const filterNote = filterCountry ? `
     <p class="text-sm text-gray-500 mt-4">
-      ${loc(pb.filteringPartners)} <strong>${getCountryName(filterCountry)}</strong>. ${loc(pb.resultsMessage)}
+      ${esc(loc(pb.filteringPartners))} <strong>${esc(getCountryName(filterCountry))}</strong>. ${esc(loc(pb.resultsMessage))}
     </p>` : '';
 
   return `
-    <p class="text-lg text-gray-600 mb-5 leading-relaxed">${loc(pb.description)}</p>
+    <p class="text-lg text-gray-600 mb-5 leading-relaxed">${sanitizeEditorialHtml(loc(pb.description))}</p>
     <div class="flex flex-wrap gap-2 mb-5">${catFilters}</div>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mb-10">${cardsHtml}</div>
     <div class="rd-card rd-card-accent rd-pad rd-card-grad-beige">
       <div class="flex items-center justify-between mb-5">
         <h2 class="text-2xl font-extrabold text-eu-purple flex items-center gap-2">
-          <i data-lucide="map-pin" class="w-5 h-5 text-eu-blue"></i>${loc(pb.geographicCoverage)}
+          <i data-lucide="map-pin" class="w-5 h-5 text-eu-blue"></i>${esc(loc(pb.geographicCoverage))}
         </h2>
-        ${filterCountry ? `<button id="net-clear-country" class="text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors cursor-pointer bg-transparent border-none">${loc(pb.clearFilter) || '✕'}</button>` : ''}
+        ${filterCountry ? `<button id="net-clear-country" class="text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors cursor-pointer bg-transparent border-none">${esc(loc(pb.clearFilter) || '✕')}</button>` : ''}
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">${countryGrid}</div>
       ${filterNote}
@@ -324,80 +324,80 @@ function tabStakeholders(activeCategory, showForm) {
       <div class="rd-ceja-grad px-6 py-4 flex items-center gap-3">
         <i data-lucide="user-plus" class="w-5 h-5" style="color:#fff"></i>
         <div>
-          <h2 class="text-lg font-extrabold" style="color:#fff">${loc(f.title)}</h2>
+          <h2 class="text-lg font-extrabold" style="color:#fff">${esc(loc(f.title))}</h2>
         </div>
       </div>
       <div class="p-6 rd-card-grad-beige">
-        <p class="text-base text-gray-600 mb-6 leading-relaxed">${loc(f.description)}</p>
+        <p class="text-base text-gray-600 mb-6 leading-relaxed">${sanitizeEditorialHtml(loc(f.description))}</p>
         <form id="net-form" class="space-y-5">
           <div class="grid grid-cols-1 gap-y-5 gap-x-4 sm:grid-cols-2">
             <div class="sm:col-span-2">
-              <label for="net-entity" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.entityName)} *</label>
+              <label for="net-entity" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.entityName))} *</label>
               <input id="net-entity" type="text" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" placeholder="Ej. FEDACOVA, Hospital La Fe..." />
             </div>
             <div>
-              <label for="net-category" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.category)} *</label>
+              <label for="net-category" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.category))} *</label>
               <select id="net-category" class="w-full rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="border:1px solid rgb(73 24 173/.2)">
-                <option>${loc(f.categoryOptions?.university)}</option>
-                <option>${loc(f.categoryOptions?.company)}</option>
-                <option>${loc(f.categoryOptions?.admin)}</option>
-                <option>${loc(f.categoryOptions?.civil)}</option>
+                <option>${esc(loc(f.categoryOptions?.university))}</option>
+                <option>${esc(loc(f.categoryOptions?.company))}</option>
+                <option>${esc(loc(f.categoryOptions?.admin))}</option>
+                <option>${esc(loc(f.categoryOptions?.civil))}</option>
               </select>
             </div>
             <div>
-              <label for="net-sector" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.sector)} *</label>
+              <label for="net-sector" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.sector))} *</label>
               <select id="net-sector" class="w-full rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="border:1px solid rgb(73 24 173/.2)">
-                <option>${loc(f.sectorOptions?.manufacturing)}</option>
-                <option>${loc(f.sectorOptions?.mobility)}</option>
-                <option>${loc(f.sectorOptions?.energy)}</option>
-                <option>${loc(f.sectorOptions?.agrifood)}</option>
-                <option>${loc(f.sectorOptions?.cci)}</option>
-                <option>${loc(f.sectorOptions?.housing)}</option>
-                <option>${loc(f.sectorOptions?.services)}</option>
+                <option>${esc(loc(f.sectorOptions?.manufacturing))}</option>
+                <option>${esc(loc(f.sectorOptions?.mobility))}</option>
+                <option>${esc(loc(f.sectorOptions?.energy))}</option>
+                <option>${esc(loc(f.sectorOptions?.agrifood))}</option>
+                <option>${esc(loc(f.sectorOptions?.cci))}</option>
+                <option>${esc(loc(f.sectorOptions?.housing))}</option>
+                <option>${esc(loc(f.sectorOptions?.services))}</option>
               </select>
             </div>
             <div>
-              <label for="net-contact" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.contact)} *</label>
+              <label for="net-contact" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.contact))} *</label>
               <input id="net-contact" type="text" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" placeholder="Nombre y apellidos" />
             </div>
             <div>
-              <label for="net-country" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.country)} *</label>
+              <label for="net-country" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.country))} *</label>
               <input id="net-country" type="text" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" value="España" />
             </div>
             <div>
-              <label for="net-region" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.region)} *</label>
+              <label for="net-region" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.region))} *</label>
               <input id="net-region" type="text" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" placeholder="Comunitat Valenciana..." />
             </div>
             <div class="sm:col-span-2">
-              <label for="net-email" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.email)} *</label>
+              <label for="net-email" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.email))} *</label>
               <input id="net-email" type="email" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" placeholder="correo@entidad.com" />
             </div>
             <div class="sm:col-span-2">
-              <label for="net-contribution" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.contributionFocus)} *</label>
+              <label for="net-contribution" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.contributionFocus))} *</label>
               <select id="net-contribution" class="w-full rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="border:1px solid rgb(73 24 173/.2)">
-                <option>${loc(f.contributionOptions?.challenge)}</option>
-                <option>${loc(f.contributionOptions?.case)}</option>
-                <option>${loc(f.contributionOptions?.validation)}</option>
-                <option>${loc(f.contributionOptions?.mentoring)}</option>
-                <option>${loc(f.contributionOptions?.pilot)}</option>
-                <option>${loc(f.contributionOptions?.resource)}</option>
-                <option>${loc(f.contributionOptions?.network)}</option>
+                <option>${esc(loc(f.contributionOptions?.challenge))}</option>
+                <option>${esc(loc(f.contributionOptions?.case))}</option>
+                <option>${esc(loc(f.contributionOptions?.validation))}</option>
+                <option>${esc(loc(f.contributionOptions?.mentoring))}</option>
+                <option>${esc(loc(f.contributionOptions?.pilot))}</option>
+                <option>${esc(loc(f.contributionOptions?.resource))}</option>
+                <option>${esc(loc(f.contributionOptions?.network))}</option>
               </select>
             </div>
             <div class="sm:col-span-2">
-              <label for="net-description" class="block text-sm font-bold text-eu-text mb-1">${loc(f.fields?.description)}</label>
+              <label for="net-description" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.description))}</label>
               <textarea id="net-description" rows="3" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white resize-none" style="border:1px solid rgb(73 24 173/.2)" placeholder="Describa su entidad e interés en la red AI-STEAM..."></textarea>
             </div>
           </div>
           <div class="flex items-center gap-2">
             <input type="checkbox" id="net-gdpr" class="rounded" style="border:1px solid rgb(73 24 173/.2)" />
             <label for="net-gdpr" class="text-sm text-gray-600">
-              ${loc(f.acceptTerms)} <a href="#" class="text-eu-blue hover:underline">${loc(f.privacyPolicy)}</a> ${loc(f.rgpd)}
+              ${esc(loc(f.acceptTerms))} <a href="#" class="text-eu-blue hover:underline">${esc(loc(f.privacyPolicy))}</a> ${esc(loc(f.rgpd))}
             </label>
           </div>
           <div class="flex justify-end">
             <button type="submit" class="bg-eu-blue text-white px-6 py-2.5 rounded-full font-bold border-none hover:bg-eu-purple transition-colors cursor-pointer">
-              ${loc(f.submitBtn)}
+              ${esc(loc(f.submitBtn))}
             </button>
           </div>
         </form>
@@ -416,12 +416,12 @@ function tabStakeholders(activeCategory, showForm) {
       </div>
       <div class="p-6 rd-card-grad-beige">
         ${externalDescription ? `<p class="text-base text-gray-600 mb-5 leading-relaxed">${externalDescription}</p>` : ''}
-        <a href="${membershipAction.url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors mb-5">
+        <a href="${esc(membershipAction.url)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors mb-5">
           <i data-lucide="external-link" class="w-4 h-4"></i>
           ${externalLabel}
         </a>
         <iframe
-          src="${membershipAction.url}"
+          src="${esc(membershipAction.url)}"
           title="${externalTitle}"
           loading="lazy"
           style="display:block;width:100%;height:clamp(32rem,75vh,52rem);border:0;border-radius:1rem"
@@ -433,21 +433,28 @@ function tabStakeholders(activeCategory, showForm) {
   const renderMembershipControl = (id, className) => {
     if (!showToggleButton) return '';
     if (membershipAction.kind === 'external') {
-      return `<a href="${membershipAction.url}" target="_blank" rel="noopener noreferrer" class="${className}">
+      return `<a href="${esc(membershipAction.url)}" target="_blank" rel="noopener noreferrer" class="${className}">
         <i data-lucide="external-link" class="w-4 h-4"></i>
         ${esc(shTexts.requestMembership)}
       </a>`;
     }
+    // URL de adhesión rechazada: se conserva el rótulo, no la navegación.
+    if (membershipAction.kind === 'unsafe') {
+      return `<span class="${className}">
+        <i data-lucide="external-link" class="w-4 h-4"></i>
+        ${esc(shTexts.requestMembership)}
+      </span>`;
+    }
     return `<button id="${id}" class="${className}">
       <i data-lucide="user-plus" class="w-4 h-4"></i>
-      ${effectiveShowForm ? shTexts.closeForm : shTexts.requestMembership}
+      ${esc(effectiveShowForm ? shTexts.closeForm : shTexts.requestMembership)}
     </button>`;
   };
 
   // ── Header bar (description + membership button) ──────────────────────────────
   const headerBar = `
     <div class="flex items-start justify-between mb-5 flex-wrap gap-4">
-      <p class="text-lg text-gray-600 max-w-3xl leading-relaxed">${shTexts.description}</p>
+      <p class="text-lg text-gray-600 max-w-3xl leading-relaxed">${esc(shTexts.description)}</p>
       ${renderMembershipControl('net-toggle-form', 'flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer shrink-0')}
     </div>`;
 
@@ -457,8 +464,8 @@ function tabStakeholders(activeCategory, showForm) {
       ${headerBar}
       <div class="rd-card rd-card-accent rd-pad text-center rd-card-grad-beige">
         <i data-lucide="users" class="w-12 h-12 text-eu-purple/40 mx-auto mb-5"></i>
-        ${shTexts.emptyStateTitle ? `<h3 class="text-xl font-extrabold text-eu-purple mb-3">${shTexts.emptyStateTitle}</h3>` : ''}
-        <p class="text-base text-gray-600 max-w-sm sm:max-w-md mx-auto mb-8 leading-relaxed">${shTexts.emptyState}</p>
+        ${shTexts.emptyStateTitle ? `<h3 class="text-xl font-extrabold text-eu-purple mb-3">${esc(shTexts.emptyStateTitle)}</h3>` : ''}
+        <p class="text-base text-gray-600 max-w-sm sm:max-w-md mx-auto mb-8 leading-relaxed">${esc(shTexts.emptyState)}</p>
         ${renderMembershipControl('net-toggle-form-empty', 'inline-flex items-center gap-2 bg-eu-blue text-white px-5 py-2.5 rounded-full font-bold text-sm hover:bg-eu-purple transition-colors border-none cursor-pointer')}
       </div>
       ${formHtml}`;
@@ -469,11 +476,11 @@ function tabStakeholders(activeCategory, showForm) {
 
   const catFilters = `
     <button data-net-cat="todos" class="px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer border transition-colors ${activeCategory === 'todos' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow'}">
-      ${shTexts.filterAll} (${STAKEHOLDERS.length})
+      ${esc(shTexts.filterAll)} (${STAKEHOLDERS.length})
     </button>
     ${Object.entries(CATEGORY_META).filter(([key]) => (sc[key] || 0) > 0).map(([key]) => `
       <button data-net-cat="${key}" class="px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer border transition-colors ${activeCategory === key ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow'}">
-        ${getCategoryLabel(key)} (${sc[key] || 0})
+        ${esc(getCategoryLabel(key))} (${sc[key] || 0})
       </button>
     `).join('')}
   `;
@@ -483,8 +490,8 @@ function tabStakeholders(activeCategory, showForm) {
       <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
       <input id="net-search"
         type="search"
-        value="${(getState('networkSearch') || '').replace(/"/g, '&quot;')}"
-        placeholder="${shTexts.searchPlaceholder}"
+        value="${esc(getState('networkSearch') || '')}"
+        placeholder="${esc(shTexts.searchPlaceholder)}"
         class="w-full sm:w-72 rounded-full pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="background:#fff;border:1px solid rgb(73 24 173/.2)" />
     </div>`;
 
@@ -540,7 +547,7 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
   const shShowSectors  = shCv.sectors  !== false;
 
   const cardsHtml = paged.length === 0
-    ? `<div class="col-span-3 py-10 text-center text-base text-gray-500">${shTexts.noResults}</div>`
+    ? `<div class="col-span-3 py-10 text-center text-base text-gray-500">${esc(shTexts.noResults)}</div>`
     : paged.map(s => {
         const sCats = itemCats(s);
         const meta = CATEGORY_META[sCats[0]] || CATEGORY_META.sociedad;
@@ -552,32 +559,36 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
         const sectorPills = shShowSectors ? allSectors.map(sec => {
           const label    = localized(SECTOR_LABEL[sec] || { es: sec, en: sec, va: sec });
           const isActive = activeSector === sec;
-          return `<button data-net-sector="${sec}" class="text-sm px-2 py-0.5 rounded-full font-bold cursor-pointer transition-all ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="background:rgb(86 32 246/.10); color:#5620F6">${label}</button>`;
+          return `<button data-net-sector="${esc(sec)}" class="text-sm px-2 py-0.5 rounded-full font-bold cursor-pointer transition-all ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="background:rgb(86 32 246/.10); color:#5620F6">${esc(label)}</button>`;
         }).join('') : '';
 
-        const webLink = s.website ? `
-          <a href="${s.website}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1 text-sm text-eu-blue font-bold hover:text-eu-purple transition-colors">
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${shTexts.visitWebLabel}
-          </a>` : '';
+        const safeWebsite = getSafeEditorialUrl(s.website);
+        const webLink = !s.website ? '' : safeWebsite ? `
+          <a href="${esc(safeWebsite)}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1 text-sm text-eu-blue font-bold hover:text-eu-purple transition-colors">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(shTexts.visitWebLabel)}
+          </a>` : `
+          <span class="mt-3 inline-flex items-center gap-1 text-sm text-gray-400 font-bold">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(shTexts.visitWebLabel)}
+          </span>`;
 
         return `
           <div class="rd-card rd-card-grad-violet rd-card-edge p-4 flex flex-col group">
             <div class="flex items-start justify-between mb-3">
-              <div class="network-category-tooltip w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff" data-tooltip="${sectorTooltip}" aria-label="${sectorTooltip}" tabindex="0">
+              <div class="network-category-tooltip w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff" data-tooltip="${esc(sectorTooltip)}" aria-label="${esc(sectorTooltip)}" tabindex="0">
                 <i data-lucide="${sectorIcon}" class="w-4 h-4 ${meta.color}"></i>
               </div>
               ${shShowCategory ? `<div class="flex flex-wrap justify-end gap-1">${sCats.map(c => {
                 const m = CATEGORY_META[c] || CATEGORY_META.sociedad;
                 const lbl = getCatLabel(c);
-                return `<div class="network-category-tooltip flex items-center gap-1.5 ${m.bg} ${m.border} border rounded-full px-2 py-0.5" data-tooltip="${lbl}" aria-label="${lbl}" tabindex="0">
+                return `<div class="network-category-tooltip flex items-center gap-1.5 ${m.bg} ${m.border} border rounded-full px-2 py-0.5" data-tooltip="${esc(lbl)}" aria-label="${esc(lbl)}" tabindex="0">
                   <i data-lucide="${m.icon}" class="w-3 h-3 ${m.color}"></i>
-                  <span class="text-xs font-bold ${m.color}">${lbl}</span>
+                  <span class="text-xs font-bold ${m.color}">${esc(lbl)}</span>
                 </div>`;
               }).join('')}</div>` : ''}
             </div>
-            <p class="font-extrabold text-eu-purple text-base leading-snug mb-0.5">${localized(s.name)}</p>
-            ${s.region ? `<p class="text-sm text-eu-blue font-bold mb-1 inline-flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>${localized(s.region)}</p>` : ''}
-            ${description ? `<p class="text-sm text-gray-600 mb-2 flex-1">${description}</p>` : ''}
+            <p class="font-extrabold text-eu-purple text-base leading-snug mb-0.5">${esc(localized(s.name))}</p>
+            ${s.region ? `<p class="text-sm text-eu-blue font-bold mb-1 inline-flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i>${esc(localized(s.region))}</p>` : ''}
+            ${description ? `<p class="text-sm text-gray-600 mb-2 flex-1">${esc(description)}</p>` : ''}
             ${sectorPills ? `<div class="flex flex-wrap gap-1.5 mt-auto pt-2">${sectorPills}</div>` : ''}
             ${webLink}
           </div>`;
@@ -586,25 +597,25 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
   const paginationHtml = !isShowAll && totalPages > 1 ? `
     <div class="flex items-center justify-between mt-6">
       <button id="net-pag-prev" ${safePage === 0 ? 'disabled' : ''} class="px-4 py-1.5 rounded-full text-sm font-bold border border-eu-blue/15 bg-white text-eu-text hover:border-eu-blue disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors">
-        ← ${shTexts.paginationPrev}
+        ← ${esc(shTexts.paginationPrev)}
       </button>
       <span class="text-sm text-gray-500">${safePage + 1} / ${totalPages}</span>
       <button id="net-pag-next" ${safePage >= totalPages - 1 ? 'disabled' : ''} class="px-4 py-1.5 rounded-full text-sm font-bold border border-eu-blue/15 bg-white text-eu-text hover:border-eu-blue disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors">
-        ${shTexts.paginationNext} →
+        ${esc(shTexts.paginationNext)} →
       </button>
     </div>` : '';
 
   const sectorNote = activeSector ? `
     <p class="text-sm text-gray-500 mb-3">
       Sector activo:
-      <button data-net-sector="${activeSector}" class="text-eu-blue font-bold hover:text-eu-purple transition-colors cursor-pointer bg-transparent border-none">
-        ${localized(SECTOR_LABEL[activeSector] || { es: activeSector })} ✕
+      <button data-net-sector="${esc(activeSector)}" class="text-eu-blue font-bold hover:text-eu-purple transition-colors cursor-pointer bg-transparent border-none">
+        ${esc(localized(SECTOR_LABEL[activeSector] || { es: activeSector }))} ✕
       </button>
     </p>` : '';
 
   const pageSizeSelector = pageSizeOptions && pageSizeOptions.length > 0 ? `
     <div class="flex items-center gap-2 text-sm">
-      <span class="text-gray-600">${shTexts.showLabel}:</span>
+      <span class="text-gray-600">${esc(shTexts.showLabel)}:</span>
       <div class="flex gap-1">
         ${pageSizeOptions.map(opt => `
           <button data-net-pagesize="${opt}" class="px-2 py-1 rounded-full border cursor-pointer transition-colors font-bold ${actualPageSize === opt ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">
@@ -613,7 +624,7 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
         `).join('')}
         ${showAllOption ? `
           <button data-net-pagesize="all" class="px-2 py-1 rounded-full border cursor-pointer transition-colors font-bold ${actualPageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">
-            ${shTexts.showAllLabel}
+            ${esc(shTexts.showAllLabel)}
           </button>
         ` : ''}
       </div>
@@ -691,8 +702,8 @@ function renderNetworkHero() {
 
   const statsHtml = (hero.stats || []).map((s, i) => `
     <div class="rd-hero-stat text-center">
-      <p class="text-3xl font-extrabold text-white leading-none">${s.value}</p>
-      <p class="text-xs font-bold uppercase tracking-wider mt-1.5" style="color:rgba(255,244,225,.75)">${s.label?.[lang] || s.label?.es || ''}</p>
+      <p class="text-3xl font-extrabold text-white leading-none">${esc(s.value)}</p>
+      <p class="text-xs font-bold uppercase tracking-wider mt-1.5" style="color:rgba(255,244,225,.75)">${esc(s.label?.[lang] || s.label?.es || '')}</p>
     </div>`
   ).join('');
 
@@ -701,8 +712,8 @@ function renderNetworkHero() {
       <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-2xl"></div>
       <div class="absolute left-10 top-5 w-40 h-40 bg-eu-yellow/5 rounded-full blur-xl"></div>
       <div class="max-w-7xl mx-auto relative z-10">
-        <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${title}</h1>
-        <p class="text-lg leading-relaxed max-w-3xl mb-8" style="color:rgba(255,255,255,.9)">${description}</p>
+        <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${esc(title)}</h1>
+        <p class="text-lg leading-relaxed max-w-3xl mb-8" style="color:rgba(255,255,255,.9)">${esc(description)}</p>
         <div class="rd-hero-stats-grid">${statsHtml}</div>
       </div>
     </div>`;
@@ -734,12 +745,12 @@ export function render() {
         : '';
     const partnersTab = SHOW_PARTNERS_TAB ? `
           <button data-net-tab="socios" class="${tabBtnClass('socios')}">
-            <i data-lucide="network" class="w-4 h-4"></i>${localized(pb.tabTitle) || 'Socios'} (${ACTIVE_PARTNERS.length})
+            <i data-lucide="network" class="w-4 h-4"></i>${esc(localized(pb.tabTitle) || 'Socios')} (${ACTIVE_PARTNERS.length})
           </button>
     ` : '';
     const stakeholdersTab = SHOW_STAKEHOLDERS_TAB ? `
           <button data-net-tab="stakeholders" class="${tabBtnClass('stakeholders')}">
-            <i data-lucide="users" class="w-4 h-4"></i>${localized(NETWORK_CONFIG?.stakeholdersBlock?.tabTitle) || 'Stakeholders'} (${STAKEHOLDERS.length})
+            <i data-lucide="users" class="w-4 h-4"></i>${esc(localized(NETWORK_CONFIG?.stakeholdersBlock?.tabTitle) || 'Stakeholders')} (${STAKEHOLDERS.length})
           </button>
     ` : '';
 
@@ -763,7 +774,7 @@ export function render() {
     `;
   } catch (error) {
     console.error('❌ Error rendering network view:', error);
-    return `<div class="p-6" role="alert"><p class="text-red-600">Error al cargar la sección Red. Revisa la consola.</p><pre>${error.message}</pre></div>`;
+    return `<div class="p-6" role="alert"><p class="text-red-600">Error al cargar la sección Red. Revisa la consola.</p><pre>${esc(error.message)}</pre></div>`;
   }
 }
 

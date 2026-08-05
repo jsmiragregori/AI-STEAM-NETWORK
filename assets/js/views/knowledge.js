@@ -1,6 +1,8 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { KNOWLEDGE_CONFIG } from '../../data/knowledge.js';
+import { escapeHtml as esc } from '../utils/escape-html.js';
+import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 
 const TABS = ['flujo', 'oer', 'plantillas'];
 
@@ -106,7 +108,7 @@ function tabBar(activeTab) {
       activeTab === id
         ? 'bg-eu-blue text-white border-eu-blue shadow-sm'
         : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow hover:border-eu-purple/30'
-    }"><i data-lucide="${icons[id]}" class="w-4 h-4"></i>${labels[id]}</button>
+    }"><i data-lucide="${icons[id]}" class="w-4 h-4"></i>${esc(labels[id])}</button>
   `).join('');
 }
 
@@ -184,8 +186,8 @@ function tabFlujo() {
         <div class="rd-card rd-card-grad-violet rd-card-edge p-6 relative group">
           <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${idx + 1}</div>
           <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${lucideName(step.icon, FLOW_ICONS[idx] || 'circle')}" class="w-6 h-6 text-eu-blue"></i></div>
-          <h3 class="font-extrabold text-eu-purple text-lg mb-2">${pickLang(step.title, '')}</h3>
-          <p class="text-base text-gray-600 leading-relaxed">${pickLang(step.description, '')}</p>
+          <h3 class="font-extrabold text-eu-purple text-lg mb-2">${esc(pickLang(step.title, ''))}</h3>
+          <p class="text-base text-gray-600 leading-relaxed">${esc(pickLang(step.description, ''))}</p>
         </div>
       `).join('');
     } else {
@@ -195,14 +197,14 @@ function tabFlujo() {
         <div class="rd-card rd-card-grad-violet rd-card-edge p-6 relative group">
           <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${idx + 1}</div>
           <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${FLOW_ICONS[idx] || 'circle'}" class="w-6 h-6 text-eu-blue"></i></div>
-          <h3 class="font-extrabold text-eu-purple text-lg mb-2">${step.title || ''}</h3>
-          <p class="text-base text-gray-600 leading-relaxed">${step.desc || ''}</p>
+          <h3 class="font-extrabold text-eu-purple text-lg mb-2">${esc(step.title || '')}</h3>
+          <p class="text-base text-gray-600 leading-relaxed">${esc(step.desc || '')}</p>
         </div>
       `).join('');
     }
     stepsSection = `
-      <h2 class="text-2xl font-extrabold text-eu-purple mb-2">${sectionTitle}</h2>
-      <p class="text-lg text-gray-600 mb-8 leading-relaxed">${sectionDesc}</p>
+      <h2 class="text-2xl font-extrabold text-eu-purple mb-2">${esc(sectionTitle)}</h2>
+      <p class="text-lg text-gray-600 mb-8 leading-relaxed">${esc(sectionDesc)}</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">${stepsHtml}</div>`;
   }
 
@@ -219,8 +221,8 @@ function tabFlujo() {
         const [borderCls, textCls] = colorClass.split(' ');
         return `
           <div class="rd-card rd-card-grad-violet rd-card-edge p-4">
-            <p class="font-extrabold ${textCls} mb-1">${p.name || ''}</p>
-            <p class="text-gray-600 text-base leading-relaxed">${pickLang(p.description, '')}</p>
+            <p class="font-extrabold ${textCls} mb-1">${esc(p.name || '')}</p>
+            <p class="text-gray-600 text-base leading-relaxed">${esc(pickLang(p.description, ''))}</p>
           </div>`;
       }).join('');
     } else {
@@ -228,22 +230,22 @@ function tabFlujo() {
       platformCards = `
         <div class="rd-card rd-card-grad-violet rd-card-edge p-4">
           <p class="font-extrabold text-eu-blue mb-1">Aules (Moodle)</p>
-          <p class="text-gray-600 text-base leading-relaxed">${t('knowledge.aulesPlatform') || ''}</p>
+          <p class="text-gray-600 text-base leading-relaxed">${esc(t('knowledge.aulesPlatform') || '')}</p>
         </div>
         <div class="rd-card rd-card-grad-violet rd-card-edge p-4">
           <p class="font-extrabold text-eu-purple mb-1">AI-STEAM Network Website</p>
-          <p class="text-gray-600 text-base leading-relaxed">${t('knowledge.networkPlatform') || ''}</p>
+          <p class="text-gray-600 text-base leading-relaxed">${esc(t('knowledge.networkPlatform') || '')}</p>
         </div>
         <div class="rd-card rd-card-grad-violet rd-card-edge p-4">
           <p class="font-extrabold text-eu-blue mb-1">Espacio ConsensUE en Aules</p>
-          <p class="text-gray-600 text-base leading-relaxed">${t('knowledge.consensuePlatform') || ''}</p>
+          <p class="text-gray-600 text-base leading-relaxed">${esc(t('knowledge.consensuePlatform') || '')}</p>
         </div>`;
     }
     // Solo renderizar el contenedor si hay plataformas que mostrar
     if (platformCards) {
       platformsHtml = `
         <div class="rd-card rd-card-accent rd-pad rd-card-grad-beige">
-          <h3 class="font-extrabold text-eu-purple text-xl mb-3">${pbTitle}</h3>
+          <h3 class="font-extrabold text-eu-purple text-xl mb-3">${esc(pbTitle)}</h3>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">${platformCards}</div>
         </div>`;
     }
@@ -268,7 +270,7 @@ function tabOER(search) {
     return `
     <div class="rd-card rd-card-grad-violet rd-card-edge p-12 text-center">
       <i data-lucide="inbox" class="w-12 h-12 text-eu-purple/40 mx-auto mb-4"></i>
-      <p class="text-gray-600 text-base">${noContentMsg}</p>
+      <p class="text-gray-600 text-base">${esc(noContentMsg)}</p>
     </div>`;
   }
 
@@ -280,15 +282,15 @@ function tabOER(search) {
     <div>
       <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
         <div>
-          <h2 class="text-2xl font-extrabold text-eu-purple mb-1">${blockTitle}</h2>
-          <p class="text-lg text-gray-600 leading-relaxed">${blockDesc}</p>
+          <h2 class="text-2xl font-extrabold text-eu-purple mb-1">${esc(blockTitle)}</h2>
+          <p class="text-lg text-gray-600 leading-relaxed">${esc(blockDesc)}</p>
         </div>
         <div class="flex gap-3 items-center">
           <div class="relative">
             <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
-            <input id="oer-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
+            <input id="oer-search" type="text" value="${esc(search || '')}"
               class="rounded-full pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64" style="background:#fff;border:1px solid rgb(73 24 173/.2)"
-              placeholder="${searchPlh}" />
+              placeholder="${esc(searchPlh)}" />
             <button id="oer-search-clear"
               style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)"
               class="w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer ${search ? '' : 'hidden'}"
@@ -322,7 +324,7 @@ function renderActiveFiltersDisplay() {
     };
     badges.push(`
       <button data-remove-filter="type" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.25)">
-        <i data-lucide="clipboard-list" class="w-3.5 h-3.5"></i><span>${typeLabels[activeFilters.typeId] || activeFilters.typeId}</span>
+        <i data-lucide="clipboard-list" class="w-3.5 h-3.5"></i><span>${esc(typeLabels[activeFilters.typeId] || activeFilters.typeId)}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>
     `);
@@ -332,8 +334,8 @@ function renderActiveFiltersDisplay() {
   activeFilters.sectors.forEach(sectorId => {
     const label = getSectorName(sectorId);
     badges.push(`
-      <button data-remove-filter="sector" data-filter-value="${sectorId}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.25)">
-        <i data-lucide="tag" class="w-3.5 h-3.5"></i><span>${label}</span>
+      <button data-remove-filter="sector" data-filter-value="${esc(sectorId)}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.25)">
+        <i data-lucide="tag" class="w-3.5 h-3.5"></i><span>${esc(label)}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>
     `);
@@ -343,8 +345,8 @@ function renderActiveFiltersDisplay() {
   activeFilters.levels.forEach(level => {
     const label = LEVEL_LABELS[level] ? pickLang(LEVEL_LABELS[level], level) : level;
     badges.push(`
-      <button data-remove-filter="level" data-filter-value="${level}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(73 24 173/.10); color:#4918AD; border:1px solid rgb(73 24 173/.25)">
-        <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i><span>${label}</span>
+      <button data-remove-filter="level" data-filter-value="${esc(level)}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(73 24 173/.10); color:#4918AD; border:1px solid rgb(73 24 173/.25)">
+        <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i><span>${esc(label)}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>
     `);
@@ -356,7 +358,7 @@ function renderActiveFiltersDisplay() {
     const statusIcons = { validated: 'check-circle', pending: 'clock', draft: 'file-text' };
     badges.push(`
       <button data-remove-filter="status" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="${statusBadgeStyle(status)}; border:1px solid rgb(73 24 173/.2)">
-        <i data-lucide="${statusIcons[status] || 'check-circle'}" class="w-3.5 h-3.5"></i><span>${getStatusLabel(status)}</span>
+        <i data-lucide="${statusIcons[status] || 'check-circle'}" class="w-3.5 h-3.5"></i><span>${esc(getStatusLabel(status))}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>
     `);
@@ -368,10 +370,10 @@ function renderActiveFiltersDisplay() {
 
   return `
     <div class="flex flex-wrap items-center gap-2 mb-6 p-4 rounded-2xl" style="background:rgb(86 32 246/.05); border:1px solid rgb(86 32 246/.15)">
-      <span class="text-sm font-bold text-gray-700">${activeFiltersLabel}</span>
+      <span class="text-sm font-bold text-gray-700">${esc(activeFiltersLabel)}</span>
       ${badges.join('')}
       <button id="oer-clear-all-filters" class="ml-auto px-3 py-1 rounded-full text-sm font-bold text-eu-purple hover:bg-eu-purple/10 transition-colors cursor-pointer" style="border:1px solid rgb(73 24 173/.25)">
-        ${clearAllLabel}
+        ${esc(clearAllLabel)}
       </button>
     </div>
   `;
@@ -465,17 +467,17 @@ function renderOerGridContent(search) {
   const pageSizeHtml = `
     <div class="flex gap-1">
       ${pageSizeOpts.map(n => `<button data-oer-pagesize="${n}" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${n}</button>`).join('')}
-      ${showAllOpt ? `<button data-oer-pagesize="all" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${showAllLbl}</button>` : ''}
+      ${showAllOpt ? `<button data-oer-pagesize="all" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${esc(showAllLbl)}</button>` : ''}
     </div>`;
 
   const paginationHtml = !isAll && totalPages > 1 ? `
     <div class="flex gap-2 justify-center mt-6 items-center">
       <button id="oer-pag-prev" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
-        ← ${getOerLabel('previous')}
+        ← ${esc(getOerLabel('previous'))}
       </button>
       <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
       <button id="oer-pag-next" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
-        ${getOerLabel('next')} →
+        ${esc(getOerLabel('next'))} →
       </button>
     </div>` : '';
 
@@ -490,7 +492,7 @@ function renderOerGridContent(search) {
       : (r.sector ? [r.sector] : []);
     const rSectorsHtml = rSectorIds.map(sid => {
       const isActive = activeFilters.sectors.includes(sid);
-      return `<button data-filter-sector="${sid}" class="text-sm font-bold px-2.5 py-0.5 rounded-full cursor-pointer transition-all ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="${sectorChipStyle()}" title="Filtrar por sector">${getSectorName(sid)}</button>`;
+      return `<button data-filter-sector="${esc(sid)}" class="text-sm font-bold px-2.5 py-0.5 rounded-full cursor-pointer transition-all ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="${sectorChipStyle()}" title="Filtrar por sector">${esc(getSectorName(sid))}</button>`;
     }).join(' ');
     const rLevels = hasCmsBlock
       ? (Array.isArray(r.levels) ? r.levels : (r.level && r.level !== 'Todos' ? [r.level] : ['FP', 'Máster', 'Docentes']))
@@ -498,9 +500,11 @@ function renderOerGridContent(search) {
     const rLevelsHtml = rLevels.map(l => {
       const isActive = activeFilters.levels.includes(l);
       const label = LEVEL_LABELS[l] ? pickLang(LEVEL_LABELS[l], l) : l;
-      return `<button data-filter-level="${l}" class="text-sm font-bold px-2.5 py-0.5 rounded-full cursor-pointer transition-all ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="${levelChipStyle(l)}" title="Filtrar por nivel">${label}</button>`;
+      return `<button data-filter-level="${esc(l)}" class="text-sm font-bold px-2.5 py-0.5 rounded-full cursor-pointer transition-all ${isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="${levelChipStyle(l)}" title="Filtrar por nivel">${esc(label)}</button>`;
     }).join(' ');
-    const rUrl    = r.url || '';
+    // Una URL rechazada cae en la rama "sin enlace" que ya existe: mismo
+    // rótulo y mismo espacio, en gris y sin navegación.
+    const rUrl    = getSafeEditorialUrl(r.url) || '';
     const rLinkType = r.linkType || 'external';
     const rExternal = r.external === true;
     const linkIcon = rLinkType === 'download' ? 'download' : 'external-link';
@@ -510,12 +514,12 @@ function renderOerGridContent(search) {
     return `
     <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden group">
       <div class="rd-card-mp-ceja">
-        <h3 class="rd-card-mp-title line-clamp-3">${rTitle}</h3>
+        <h3 class="rd-card-mp-title line-clamp-3">${esc(rTitle)}</h3>
       </div>
       <div class="p-7 pt-5 flex-1 flex flex-col">
         <!-- Header: Type + Levels (secondary, compact) -->
         <div class="flex items-center gap-2 mb-3">
-          ${oerShowType ? `<span class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${rIcon}" class="w-5 h-5 text-eu-purple"></i></span><span class="text-sm font-bold uppercase text-gray-600 tracking-wider">${rType}</span>` : ''}
+          ${oerShowType ? `<span class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${rIcon}" class="w-5 h-5 text-eu-purple"></i></span><span class="text-sm font-bold uppercase text-gray-600 tracking-wider">${esc(rType)}</span>` : ''}
           ${oerShowLevels ? `<div class="flex gap-1 ml-auto">${rLevelsHtml}</div>` : ''}
         </div>
 
@@ -525,40 +529,40 @@ function renderOerGridContent(search) {
         <!-- Author + Metadata (compact) -->
         <div class="mb-4 pb-4 border-b border-eu-purple/10">
           <div class="text-base text-gray-800 font-bold mb-1">
-            ${r.author ? `${r.author}` : `<span class="text-gray-400">${getOerLabel('noAuthor')}</span>`}
+            ${r.author ? esc(r.author) : `<span class="text-gray-400">${esc(getOerLabel('noAuthor'))}</span>`}
           </div>
           <div class="text-sm text-gray-500 flex gap-2 flex-wrap items-center">
-            ${r.license ? `<span>${r.license}</span>` : ''}
-            ${r.lang ? `<span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i>${r.lang}</span>` : ''}
+            ${r.license ? `<span>${esc(r.license)}</span>` : ''}
+            ${r.lang ? `<span class="inline-flex items-center gap-1"><i data-lucide="globe" class="w-3.5 h-3.5"></i>${esc(r.lang)}</span>` : ''}
           </div>
         </div>
 
         <!-- Resource Details (compressed) -->
         <div class="text-sm text-gray-500 space-y-1">
           ${r.date || r.duration || r.format ? `<div class="flex flex-wrap items-center gap-x-2 gap-y-1">
-            ${r.date ? `<span class="inline-flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i>${getOerLabel('created')} ${r.date}</span>` : ''}
-            ${r.duration ? `<span class="inline-flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i>${r.duration}</span>` : ''}
-            ${r.format ? `<span class="inline-flex items-center gap-1"><i data-lucide="file" class="w-3 h-3"></i>${r.format}</span>` : ''}
+            ${r.date ? `<span class="inline-flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i>${esc(getOerLabel('created'))} ${esc(r.date)}</span>` : ''}
+            ${r.duration ? `<span class="inline-flex items-center gap-1"><i data-lucide="clock" class="w-3 h-3"></i>${esc(r.duration)}</span>` : ''}
+            ${r.format ? `<span class="inline-flex items-center gap-1"><i data-lucide="file" class="w-3 h-3"></i>${esc(r.format)}</span>` : ''}
           </div>` : ''}
-          ${r.updatedAt ? `<div class="text-eu-blue font-medium inline-flex items-center gap-1"><i data-lucide="pencil" class="w-3 h-3"></i>${getOerLabel('updated')} ${r.updatedAt}</div>` : ''}
+          ${r.updatedAt ? `<div class="text-eu-blue font-medium inline-flex items-center gap-1"><i data-lucide="pencil" class="w-3 h-3"></i>${esc(getOerLabel('updated'))} ${esc(r.updatedAt)}</div>` : ''}
         </div>
       </div>
 
       <!-- Footer: Status badge (compact, clickable) + Link button (primary) -->
       <div class="border-t border-eu-purple/10 p-4 flex items-center justify-between gap-3">
-        ${oerShowValidationStatus ? `<button data-filter-status="${r.validationStatus || 'validated'}" class="text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap cursor-pointer transition-all inline-flex items-center gap-1.5 ${(() => {
+        ${oerShowValidationStatus ? `<button data-filter-status="${esc(r.validationStatus || 'validated')}" class="text-sm font-bold px-3 py-1 rounded-full whitespace-nowrap cursor-pointer transition-all inline-flex items-center gap-1.5 ${(() => {
           const status = r.validationStatus || 'validated';
           const activeFilters = getOerFilters();
           const isActive = activeFilters.validationStatus === status;
           return isActive ? 'ring-2 ring-offset-1 ring-eu-blue' : '';
-        })()}" style="${statusBadgeStyle(r.validationStatus || 'validated')}" title="${getOerLabel('filterByStatus')}">
+        })()}" style="${statusBadgeStyle(r.validationStatus || 'validated')}" title="${esc(getOerLabel('filterByStatus'))}">
           ${(() => {
             const status = r.validationStatus || 'validated';
             const icons = { validated: 'check-circle', pending: 'clock', draft: 'file-text' };
-            return `<i data-lucide="${icons[status] || 'check-circle'}" class="w-3.5 h-3.5"></i>${getStatusLabel(status)}`;
+            return `<i data-lucide="${icons[status] || 'check-circle'}" class="w-3.5 h-3.5"></i>${esc(getStatusLabel(status))}`;
           })()}
         </button>` : '<span></span>'}
-        ${rUrl ? `<a href="${rUrl}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-400 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${linkText}</span>`}
+        ${rUrl ? `<a href="${esc(rUrl)}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-400 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</span>`}
       </div>
     </div>
   `}).join('');
@@ -568,9 +572,9 @@ function renderOerGridContent(search) {
     <div class="rd-card rd-card-grad-violet rd-card-edge p-12 text-center">
       <i data-lucide="search" class="w-12 h-12 text-eu-purple/40 mx-auto mb-4"></i>
       <p class="text-gray-600 text-base">
-        ${emptyMsg || (getLang() === 'en' ? 'No resources found matching your search'
+        ${esc(emptyMsg || (getLang() === 'en' ? 'No resources found matching your search'
           : getLang() === 'va' ? 'No s\'han trobat recursos amb la cerca'
-          : 'No se encontraron recursos')}
+          : 'No se encontraron recursos'))}
       </p>
     </div>`
     : '';
@@ -578,7 +582,7 @@ function renderOerGridContent(search) {
   return `
     ${renderActiveFiltersDisplay()}
     <div class="flex items-center justify-between mb-4">
-      <span class="text-sm text-gray-500 font-medium">${countLabel}</span>
+      <span class="text-sm text-gray-500 font-medium">${esc(countLabel)}</span>
       ${pageSizeHtml}
     </div>
     ${paginated.length > 0 ? `
@@ -748,7 +752,7 @@ function tabPlantillas(search) {
   if (!block.visible) {
     return `<div class="rd-card rd-card-grad-violet rd-card-edge p-8 text-center">
       <i data-lucide="inbox" class="w-12 h-12 text-eu-purple/40 mx-auto mb-4"></i>
-      <p class="text-gray-600 text-base">${pickLang(block.emptyMessage, '')}</p>
+      <p class="text-gray-600 text-base">${esc(pickLang(block.emptyMessage, ''))}</p>
     </div>`;
   }
 
@@ -760,15 +764,15 @@ function tabPlantillas(search) {
     <div>
       <div class="flex flex-wrap items-start justify-between gap-4 mb-6">
         <div>
-          <h2 class="text-2xl font-extrabold text-eu-purple mb-1">${blockTitle}</h2>
-          <p class="text-lg text-gray-600 leading-relaxed">${blockDesc}</p>
+          <h2 class="text-2xl font-extrabold text-eu-purple mb-1">${esc(blockTitle)}</h2>
+          <p class="text-lg text-gray-600 leading-relaxed">${esc(blockDesc)}</p>
         </div>
         <div class="flex gap-3 items-center">
           <div class="relative">
             <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
-            <input id="tmpl-search" type="text" value="${(search || '').replace(/"/g, '&quot;')}"
+            <input id="tmpl-search" type="text" value="${esc(search || '')}"
               class="rounded-full pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64" style="background:#fff;border:1px solid rgb(73 24 173/.2)"
-              placeholder="${searchPlh}" />
+              placeholder="${esc(searchPlh)}" />
             <button id="tmpl-search-clear"
               style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)"
               class="w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer ${search ? '' : 'hidden'}"
@@ -846,7 +850,7 @@ function renderTemplatesGridContent(search) {
       const icon = lucideName(meta?.icon, 'clipboard-list');
       badges.push(`
         <button data-tmpl-remove-filter="type" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.25)">
-          <i data-lucide="${icon}" class="w-3.5 h-3.5"></i><span>${lbl}</span>
+          <i data-lucide="${icon}" class="w-3.5 h-3.5"></i><span>${esc(lbl)}</span>
           <i data-lucide="x" class="w-3.5 h-3.5"></i>
         </button>`);
     }
@@ -854,8 +858,8 @@ function renderTemplatesGridContent(search) {
       const meta = routeLabelMap[rid];
       const lbl = meta ? pickLang(meta.label, rid) : rid;
       badges.push(`
-        <button data-tmpl-remove-filter="route" data-filter-value="${rid}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(73 24 173/.10); color:#4918AD; border:1px solid rgb(73 24 173/.25)">
-          <i data-lucide="users" class="w-3.5 h-3.5"></i><span>${lbl}</span>
+        <button data-tmpl-remove-filter="route" data-filter-value="${esc(rid)}" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(73 24 173/.10); color:#4918AD; border:1px solid rgb(73 24 173/.25)">
+          <i data-lucide="users" class="w-3.5 h-3.5"></i><span>${esc(lbl)}</span>
           <i data-lucide="x" class="w-3.5 h-3.5"></i>
         </button>`);
     });
@@ -867,10 +871,10 @@ function renderTemplatesGridContent(search) {
 
     return `
       <div class="flex flex-wrap items-center gap-2 mb-6 p-4 rounded-2xl" style="background:rgb(86 32 246/.05); border:1px solid rgb(86 32 246/.15)">
-        <span class="text-sm font-bold text-gray-700">${activeFiltersLabel}</span>
+        <span class="text-sm font-bold text-gray-700">${esc(activeFiltersLabel)}</span>
         ${badges.join('')}
         <button id="tmpl-clear-all-filters" class="ml-auto px-3 py-1 rounded-full text-sm font-bold text-eu-purple hover:bg-eu-purple/10 transition-colors cursor-pointer" style="border:1px solid rgb(73 24 173/.25)">
-          ${clearAllLabel}
+          ${esc(clearAllLabel)}
         </button>
       </div>`;
   })();
@@ -878,17 +882,17 @@ function renderTemplatesGridContent(search) {
   const pageSizeHtml = `
     <div class="flex gap-1">
       ${pageSizeOpts.map(n => `<button data-tmpl-pagesize="${n}" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${n}</button>`).join('')}
-      ${showAllOpt ? `<button data-tmpl-pagesize="all" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${showAllLbl}</button>` : ''}
+      ${showAllOpt ? `<button data-tmpl-pagesize="all" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${esc(showAllLbl)}</button>` : ''}
     </div>`;
 
   const paginationHtml = !isAll && totalPages > 1 ? `
     <div class="flex gap-2 justify-center mt-6 items-center">
       <button id="tmpl-pag-prev" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
-        ← ${prevLbl}
+        ← ${esc(prevLbl)}
       </button>
       <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
       <button id="tmpl-pag-next" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
-        ${nextLbl} →
+        ${esc(nextLbl)} →
       </button>
     </div>` : '';
 
@@ -902,6 +906,7 @@ function renderTemplatesGridContent(search) {
     const btnIcon   = tpl.linkType === 'external' ? 'external-link' : 'download';
     const isExternal = tpl.linkType === 'external' || tpl.external !== false;
     const targetAttr = isExternal ? `target="_blank" rel="noopener noreferrer"` : '';
+    const safeTplUrl = getSafeEditorialUrl(tpl.url);
 
     const tplLang = getLang();
     const createdLbl = tplLang === 'en' ? 'Created' : tplLang === 'va' ? 'Creat' : 'Creado';
@@ -913,24 +918,28 @@ function renderTemplatesGridContent(search) {
 
     return `<div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden group">
       <div class="rd-card-mp-ceja">
-        <h3 class="rd-card-mp-title">${pickLang(tpl.title, '')}</h3>
+        <h3 class="rd-card-mp-title">${esc(pickLang(tpl.title, ''))}</h3>
       </div>
       <div class="p-7 pt-5 flex flex-col flex-1">
       <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${lucideName(iconStr, 'file-text')}" class="w-7 h-7 text-eu-purple"></i></div>
-      <p class="text-base text-gray-600 mb-4 flex-1 leading-relaxed">${pickLang(tpl.description, '')}</p>
+      <p class="text-base text-gray-600 mb-4 flex-1 leading-relaxed">${esc(pickLang(tpl.description, ''))}</p>
       <div class="flex flex-wrap gap-2 mb-4">
-        ${showType && typeStr ? `<button data-tmpl-filter-type="${tpl.typeId}" class="text-sm px-3 py-1 rounded-full font-bold cursor-pointer transition-all ${filtersHere.typeId === tpl.typeId ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="background:rgb(86 32 246/.10); color:#5620F6">${typeStr}</button>` : ''}
-        ${showRoute ? routes.map(r => `<button data-tmpl-filter-route="${r.id}" class="text-sm px-3 py-1 rounded-full font-bold cursor-pointer transition-all ${filtersHere.routeIds.includes(r.id) ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="background:rgb(73 24 173/.10); color:#4918AD">${r.label}</button>`).join('') : ''}
+        ${showType && typeStr ? `<button data-tmpl-filter-type="${esc(tpl.typeId)}" class="text-sm px-3 py-1 rounded-full font-bold cursor-pointer transition-all ${filtersHere.typeId === tpl.typeId ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="background:rgb(86 32 246/.10); color:#5620F6">${esc(typeStr)}</button>` : ''}
+        ${showRoute ? routes.map(r => `<button data-tmpl-filter-route="${esc(r.id)}" class="text-sm px-3 py-1 rounded-full font-bold cursor-pointer transition-all ${filtersHere.routeIds.includes(r.id) ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="background:rgb(73 24 173/.10); color:#4918AD">${esc(r.label)}</button>`).join('') : ''}
       </div>
       <div class="text-sm text-gray-500 space-y-1 mb-3 pt-3 border-t border-eu-purple/10">
-        ${pubFmt ? `<div class="inline-flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i>${createdLbl}: ${pubFmt}</div>` : ''}
-        ${revFmt ? `<div class="text-eu-blue font-medium inline-flex items-center gap-1"><i data-lucide="pencil" class="w-3 h-3"></i>${revisedLbl}: ${revFmt}</div>` : ''}
+        ${pubFmt ? `<div class="inline-flex items-center gap-1"><i data-lucide="calendar" class="w-3 h-3"></i>${esc(createdLbl)}: ${esc(pubFmt)}</div>` : ''}
+        ${revFmt ? `<div class="text-eu-blue font-medium inline-flex items-center gap-1"><i data-lucide="pencil" class="w-3 h-3"></i>${esc(revisedLbl)}: ${esc(revFmt)}</div>` : ''}
       </div>
       <div class="flex items-center justify-between">
-        ${showLicense ? `<span class="text-sm font-mono text-eu-purple">${tpl.license || ''}</span>` : '<span></span>'}
-        <a href="${tpl.url}" ${targetAttr} class="flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:text-eu-purple transition-colors cursor-pointer">
-          <i data-lucide="${btnIcon}" class="w-3.5 h-3.5"></i>${btnLabel}
-        </a>
+        ${showLicense ? `<span class="text-sm font-mono text-eu-purple">${esc(tpl.license || '')}</span>` : '<span></span>'}
+        ${safeTplUrl
+          ? `<a href="${esc(safeTplUrl)}" ${targetAttr} class="flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:text-eu-purple transition-colors cursor-pointer">
+          <i data-lucide="${btnIcon}" class="w-3.5 h-3.5"></i>${esc(btnLabel)}
+        </a>`
+          : `<span class="flex items-center gap-1.5 text-gray-400 text-sm font-bold">
+          <i data-lucide="${btnIcon}" class="w-3.5 h-3.5"></i>${esc(btnLabel)}
+        </span>`}
       </div>
       </div>
     </div>`;
@@ -939,7 +948,7 @@ function renderTemplatesGridContent(search) {
   const emptyHtml = paginated.length === 0
     ? `<div class="col-span-full rd-card rd-card-grad-violet rd-card-edge p-8 text-center">
         <i data-lucide="inbox" class="w-12 h-12 text-eu-purple/40 mx-auto mb-4"></i>
-        <p class="text-gray-600 text-base">${emptyMsg}</p>
+        <p class="text-gray-600 text-base">${esc(emptyMsg)}</p>
       </div>`
     : '';
 
@@ -1059,16 +1068,16 @@ export function render() {
         <div class="max-w-7xl mx-auto relative z-10">
           <div class="max-w-3xl">
             <span class="inline-block bg-white/10 border border-white/20 font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6" style="color:#FFF4E1;backdrop-filter:blur(8px)">
-              ${t('knowledge.eyebrow') || 'Conocimiento'}
+              ${esc(t('knowledge.eyebrow') || 'Conocimiento')}
             </span>
-            <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${pickLang(heroBlock.title, t('knowledge.title') || '')}</h1>
-            <p class="text-lg mb-6 leading-relaxed" style="color:rgba(255,255,255,.9)">${pickLang(heroBlock.description, t('knowledge.description') || '')}</p>
+            <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${esc(pickLang(heroBlock.title, t('knowledge.title') || ''))}</h1>
+            <p class="text-lg mb-6 leading-relaxed" style="color:rgba(255,255,255,.9)">${esc(pickLang(heroBlock.description, t('knowledge.description') || ''))}</p>
             ${heroStats.length > 0 ? `
             <div class="rd-hero-stats-grid mt-8">
               ${heroStats.map((stat, i) => `
               <div class="rd-hero-stat text-center">
-                <p class="text-3xl font-extrabold text-white leading-none">${stat.value}</p>
-                <p class="text-xs font-bold uppercase tracking-wider mt-1.5" style="color:rgba(255,244,225,.75)">${pickLang(stat.label, '')}</p>
+                <p class="text-3xl font-extrabold text-white leading-none">${esc(stat.value)}</p>
+                <p class="text-xs font-bold uppercase tracking-wider mt-1.5" style="color:rgba(255,244,225,.75)">${esc(pickLang(stat.label, ''))}</p>
               </div>`).join('')}
             </div>` : ''}
           </div>

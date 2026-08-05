@@ -6,6 +6,7 @@ the repository and no CDN request is made when the site is rendered.
 | Component | Version/source | License | Local files |
 |---|---|---|---|
 | Lucide | `lucide@1.24.0` | ISC; icons derived from Feather under MIT | `assets/js/lib/lucide.min.js`, `assets/js/lib/lucide-LICENSE.txt` |
+| wordcloud2.js | `wordcloud@1.2.3` plus local `rotateRatio` callback patch (`44edcb5`) | MIT | `assets/js/lib/wordcloud2.js`, `assets/js/lib/wordcloud2-LICENSE.txt` |
 | Instrument Sans | v4, Google Fonts distribution | SIL Open Font License 1.1 | `assets/fonts/instrument-sans/` |
 | Country flags | Flagcdn snapshots retrieved 2026-07-15 | See per-source conditions and `assets/flags/NOTICE.md` | `assets/flags/20x15/`, `assets/flags/48x36/` |
 
