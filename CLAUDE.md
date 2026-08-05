@@ -48,12 +48,17 @@ D:\CEICE\AI-STEAM-VANILLA/
 │   │   │   ├── header.js
 │   │   │   ├── footer.js
 │   │   │   └── cookie-banner.js
+│   │   ├── utils/              ← seguridad de salida (ver sección Seguridad)
+│   │   │   ├── escape-html.js
+│   │   │   ├── sanitize-editorial-html.js
+│   │   │   ├── safe-editorial-url.js
+│   │   │   └── membership.js
 │   │   └── views/
 │   │       ├── index.js        ← exporta todas las views
 │   │       ├── home.js
 │   │       ├── sectors.js
 │   │       ├── training.js
-│   │       ├── news.js
+│   │       ├── news.js         ← FUERA del runtime desde VAN-3B.2.5
 │   │       ├── governance.js
 │   │       ├── knowledge.js
 │   │       ├── network.js
@@ -61,8 +66,11 @@ D:\CEICE\AI-STEAM-VANILLA/
 │   └── data/
 │       ├── translations.js     ← { es, en, va }
 │       └── challenge-extras.js ← datos extra r1-r9 (en/es/va)
-└── fonts/
-    └── InstrumentSans-*.woff2
+├── fonts/
+│   └── InstrumentSans-*.woff2
+├── test/security/              ← arnés `node:test`, sin dependencias (`npm test`)
+├── scripts/                    ← mediciones reproducibles de seguridad
+└── (docs/security → trasladado a AI-STEAM-CONTENT, repo interno)
 ```
 
 ---
@@ -74,7 +82,7 @@ D:\CEICE\AI-STEAM-VANILLA/
 | Inicio | `home.js` | ✅ | Hero, stats, features, partners |
 | Sectores | `sectors.js` | ✅ | 7 sectores expand/collapse, transfer chain |
 | Formación | `training.js` | ✅ | 3 tabs (FP/Teacher/Master), cursos, badges |
-| Actualidad | `news.js` | ✅ | Filtros, featured, sidebar, detail view |
+| Actualidad | `news.js` | ⏸️ **Fuera del runtime** | Retirada en `VAN-3B.2.5`: sin ruta, sin entrada de menú, sin importar. Los archivos se conservan intactos para su rediseño. Una prueba falla si vuelve al runtime sin sanear sus 4 textos pendientes |
 | Gobernanza | `governance.js` | ✅ | 5 tabs (estructura/dual-track/lbd/docs/participar) |
 | Conocimiento | `knowledge.js` | ✅ | 5 tabs (flujo/oer/casos/evidencia/plantillas), búsqueda OER |
 | Red | `network.js` | ✅ | 2 tabs (socios/stakeholders), filtros país+categoría, form |
@@ -154,6 +162,24 @@ const title = t('home.heroTitle');  // string directamente
 Namespaces disponibles: `home`, `sectors`, `training`, `news`, `governance`, `knowledge`, `network`, `marketplace`, `challengeDetail`, `header`, `footer`, `cookies`.
 
 ---
+
+## Seguridad — regla corta y dónde está lo largo
+
+Todo el contenido editorial viene del panel y **no se pinta crudo**:
+
+- Texto → `esc()` de `assets/js/utils/escape-html.js`. HTML editorial →
+  `sanitize-editorial-html.js`. **Ninguna vista define su propia copia.**
+- URL editorial en `href`/`src` → `getSafeEditorialUrl()` de
+  `safe-editorial-url.js`, que **falla cerrado**: si el esquema no vale, no hay
+  enlace. `target="_blank"` siempre con `rel="noopener"`.
+- `npm test` (`node:test`, sin dependencias) tiene guardas que fallan si entra
+  una salida sin escapar, una URL sin validar o un destino sin `noopener`.
+  Ejecútalo antes de dar por buena cualquier vista.
+
+El detalle, las mediciones y las decisiones **no viven aquí**: este repositorio
+es público. El expediente de securización está en `AI-STEAM-CONTENT`, cuyo
+remoto es interno, bajo su carpeta `docs/`. Una prueba del arnés falla si
+alguien lo reintroduce en este árbol.
 
 ## Accesibilidad — Fixes ya aplicados (Fase 5)
 
