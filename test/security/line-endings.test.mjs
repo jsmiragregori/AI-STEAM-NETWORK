@@ -100,6 +100,29 @@ test('V7 conserva los bytes: Marketplace en CRLF y ninguna otra vista', async ()
       '',
       'la vista no debe reescribirse',
     );
+
+    // La comprobación que faltaba, y que `VAN-4.5b` añade tras el ensayo de
+    // integración: `text eol=crlf` significa **almacenar en LF y entregar en
+    // CRLF**. Si el blob guardado conserva CRLF, Git ve una discrepancia
+    // permanente y **cualquier clon nuevo nace con el fichero modificado**.
+    //
+    // El síntoma es invisible en un worktree ya existente, porque su índice
+    // tiene el fichero cacheado: por eso `VAN-3B.2.4` cerró `V7` en verde con
+    // el defecto dentro. Esta aserción mide el blob, no el árbol de trabajo.
+    const blob = execFileSync('git', ['show', `HEAD:${MARKETPLACE}`], {
+      cwd: ROOT,
+      encoding: 'buffer',
+      maxBuffer: 1 << 28,
+    });
+    assert.equal(
+      blob.filter(byte => byte === 0x0d).length,
+      0,
+      'el blob almacenado debe estar en LF puro; con CRLF, todo clon nuevo nace sucio',
+    );
+    assert.ok(
+      marketplace.includes('\r\n'),
+      'y el fichero entregado al árbol de trabajo debe seguir en CRLF',
+    );
   }
 });
 
