@@ -132,14 +132,19 @@ if (process.env.VAN42B_SIN_GIT !== '1') {
   test('V7 se comprueba igual sin git en el PATH', () => {
     // El ejecutor de pruebas exporta `NODE_TEST_CONTEXT` y variables afines; si
     // se heredan, el hijo cambia de formato de salida y deja de emitir el
-    // resumen TAP que aquí se mide.
+    // resumen TAP que aquí se mide. El reporter se fija además por bandera,
+    // porque el predeterminado cambia entre versiones de Node.
     const env = Object.fromEntries(
       Object.entries(process.env).filter(([clave]) => !clave.startsWith('NODE_TEST')),
     );
 
     const hijo = spawnSync(
       process.execPath,
-      ['--test', 'test/security/line-endings.test.mjs'],
+      // El reporter se fija explícitamente: el predeterminado depende de la
+      // versión de Node (25 emite `spec`, no TAP) y esta prueba mide el
+      // resumen TAP. Sin fijarlo, el arnés falla al cambiar de intérprete
+      // aunque las dos comprobaciones sigan pasando.
+      ['--test', '--test-reporter=tap', 'test/security/line-endings.test.mjs'],
       {
         cwd: ROOT,
         encoding: 'utf8',
