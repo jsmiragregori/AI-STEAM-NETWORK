@@ -5867,7 +5867,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/pilots/pilot-ia-diagnostico-cancer-piel-nts.yml",
       "core": {
-        "status": "in-progress",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -10701,7 +10701,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/challenges/reto-control-calidad-vision-ia-mfg.yml",
       "core": {
-        "status": "open",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "pilot",
         "title": {
@@ -22900,7 +22900,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/challenges/reto-control-calidad-vision-ia-mfg.yml",
         "core": {
-          "status": "open",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "pilot",
           "title": {
@@ -26391,7 +26391,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/pilots/pilot-ia-diagnostico-cancer-piel-nts.yml",
         "core": {
-          "status": "in-progress",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {

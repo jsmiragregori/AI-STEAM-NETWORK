@@ -378,7 +378,7 @@ export const SECTORS_CONFIG = {
             "en": "Pamesa Cerámica seeks a computer vision system capable of detecting surface defects (cracks, bubbles, glaze irregularities) in ceramic tiles at production speeds of 80 pieces per minute, exceeding the current human detection rate of 94% and reducing material waste by 15%.",
             "va": "Pamesa Ceràmica cerca un sistema de visió artificial capaç de detectar defectes superficials (esquerdes, bambolles, irregularitats d'esmalt) en rajoles ceràmiques a velocitats de producció de 80 peces per minut, superant la taxa de detecció humana actual del 94% i reduint el malbaratament de material en un 15%."
           },
-          "status": "open",
+          "status": "closed",
           "targetRoute": "marketplace"
         },
         {
@@ -2840,7 +2840,7 @@ export const SECTORS_CONFIG = {
             "en": "Validation of an AI module for classifying suspicious skin lesions (malignant/benign) from dermoscopic images, integrated into the Diagnostic Imaging Health VET cycle curriculum, with clinical supervision from Hospital La Fe and digital health competency assessment.",
             "va": "Validació d'un mòdul d'IA per a la classificació de lesions cutànies sospitoses (malignes/benignes) a partir d'imatges dermoscòpiques, integrat en l'itinerari formatiu del cicle d'Imatge per al Diagnòstic de FP Sanitari, amb supervisió clínica de l'Hospital La Fe i avaluació de competències digitals en salut."
           },
-          "status": "in-progress",
+          "status": "closed",
           "targetRoute": "marketplace"
         },
         {

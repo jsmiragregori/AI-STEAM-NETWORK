@@ -1,5 +1,7 @@
-// GENERADO AUTOMÁTICAMENTE — NO EDITAR DIRECTAMENTE
-// Edita los archivos en content/_ui/*.csv y ejecuta: npm run cms:ui
+// FUENTE ESTÁTICA de traducciones (D24) regenerada por cms:ui.
+// Este archivo ES la base: las claves que no están en content/_ui/*.csv solo
+// viven aquí y pueden editarse directamente. Las claves presentes en los CSV
+// se sobreescriben en cada cms:ui — esas se editan en el CSV.
 // Base: translations.js existente + overrides de 86 entradas CSV
 
 export const translations = {
