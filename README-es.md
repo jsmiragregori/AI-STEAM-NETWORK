@@ -35,9 +35,7 @@ python -m http.server 8000
 
 | Archivo | Propósito |
 |---------|-----------|
-| **PLAN_CONVERSION_VANILLA.md** | Plan detallado de 5 fases, arquitectura, decisiones técnicas |
-| **CLAUDE.md** | Instrucciones del proyecto, patrones clave, checklist de inicio |
-| **MEMORIA_DESARROLLO.md** | Contexto de decisiones, checklist pre-implementación, referencias |
+| **AGENTS.md** | Puntero al repositorio privado, donde vive toda la documentación |
 | **init-fase1.ps1** | Script que prepara estructura base (directorios, placeholders) |
 | **README.md** | Este archivo, guía rápida |
 
@@ -144,8 +142,8 @@ npx esbuild ./assets/js/main.js --bundle --minify --outfile=./assets/js/main.min
 
 1. **Próxima sesión:** Abre contexto en `D:\CEICE`
 2. **Ejecuta:** `.\init-fase1.ps1`
-3. **Lee:** `PLAN_CONVERSION_VANILLA.md` (arquitectura completa)
-4. **Sigue:** `CLAUDE.md` (instrucciones proyecto) y `MEMORIA_DESARROLLO.md` (contexto)
+3. **Lee:** `../AI-STEAM-CONTENT/AGENTS.md` y `../AI-STEAM-CONTENT/docs/agents/ESTADO.md`
+4. **Consulta:** los planes y la memoria en `../AI-STEAM-CONTENT/docs/agents/vanilla/`
 5. **Implementa:** Fase 1 según el plan
 
 ---
