@@ -232,3 +232,31 @@ export function planLanguageSwitch(view, lang, tabla) {
   const hash = formatViewRoute(view, lang, undefined, tabla);
   return hash ? { hash, replace: true } : null;
 }
+
+/**
+ * Decide si un cambio de hash obliga a repintar, y con qué vista e idioma.
+ *
+ * Existe por un fallo encontrado en DL-5: editar a mano `#es/sectores` para
+ * dejarlo en `#va/sectors` cambia el idioma pero NO la vista. Comparando solo la
+ * vista, el cambio se ignoraba y la página se quedaba en español hasta forzar
+ * una recarga sin caché. Comparar las dos cosas es lo que lo arregla, y por eso
+ * la comparación vive aquí, donde se puede probar, y no dentro del listener.
+ *
+ * @param {{view: string, lang: string, langFromLink: boolean}} ruta Lo que
+ *   devuelve `resolveInitialRoute` para el hash nuevo.
+ * @param {{view: string, lang: string}} actual Lo que hay pintado ahora.
+ * @returns {{render: boolean, view: string, lang: string, changeLang: boolean}}
+ */
+export function planHashChange(ruta, actual) {
+  // El idioma solo cuenta como cambio si el enlace lo trae. Un alias sin idioma
+  // (`#sectores`) no debe arrastrar al visitante a otro idioma (DA-DL-6b).
+  const cambiaIdioma = ruta.langFromLink && ruta.lang !== actual.lang;
+  const cambiaVista = ruta.view !== actual.view;
+
+  return {
+    render: cambiaVista || cambiaIdioma,
+    view: ruta.view,
+    lang: cambiaIdioma ? ruta.lang : actual.lang,
+    changeLang: cambiaIdioma,
+  };
+}

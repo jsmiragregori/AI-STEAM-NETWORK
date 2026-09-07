@@ -6,6 +6,7 @@ import { VIEWS } from '../../assets/js/router.js';
 import {
   DEFAULT_LANG,
   DEFAULT_VIEW,
+  planHashChange,
   planLanguageSwitch,
   resolveInitialRoute,
 } from '../../assets/js/utils/view-route.js';
@@ -156,4 +157,43 @@ test('TDD-24: un solo render por navegación', async () => {
 
   // El router no escucha eventos: los listeners viven en un solo sitio.
   assert.ok(!/addEventListener/.test(router), 'los listeners globales viven en main.js');
+});
+
+// TDD-25 — regresión encontrada por Salva en DL-5
+test('TDD-25: editar el idioma del hash a mano repinta aunque no cambie la sección', () => {
+  const enSectoresEs = { view: 'sectores', lang: 'es' };
+
+  // El caso del fallo: de #es/sectores a #va/sectors. Misma sección, otro
+  // idioma. Comparando solo la vista, esto devolvía render:false y la página se
+  // quedaba en español hasta forzar una recarga sin caché.
+  assert.deepEqual(
+    planHashChange(resolveInitialRoute('#va/sectors', { storedLang: 'es' }), enSectoresEs),
+    { render: true, view: 'sectores', lang: 'va', changeLang: true },
+  );
+
+  // Y en el otro sentido, y con el tercer idioma.
+  assert.equal(planHashChange(resolveInitialRoute('#en/sectors', {}), enSectoresEs).lang, 'en');
+  assert.equal(planHashChange(resolveInitialRoute('#es/sectores', {}), { view: 'sectores', lang: 'va' }).render, true);
+
+  // Lo que NO debe repintar: el mismo enlace otra vez. Esta es la mitad que
+  // impide el doble render de §6.4, y sigue en pie.
+  assert.equal(
+    planHashChange(resolveInitialRoute('#es/sectores', { storedLang: 'es' }), enSectoresEs).render,
+    false,
+  );
+
+  // Cambio de sección sin cambio de idioma: repinta, y el idioma no se toca.
+  assert.deepEqual(
+    planHashChange(resolveInitialRoute('#es/formacion', { storedLang: 'es' }), enSectoresEs),
+    { render: true, view: 'formacion', lang: 'es', changeLang: false },
+  );
+
+  // Un alias sin idioma no arrastra al visitante a otro idioma (DA-DL-6b): si
+  // ya estaba en esa sección, no hay nada que repintar.
+  const alias = planHashChange(resolveInitialRoute('#sectores', { storedLang: 'va' }), { view: 'sectores', lang: 'va' });
+  assert.deepEqual(alias, { render: false, view: 'sectores', lang: 'va', changeLang: false });
+
+  // Y un hash inválido tampoco cambia el idioma: lleva a Inicio y punto.
+  const basura = planHashChange(resolveInitialRoute('#basura', { storedLang: 'va' }), enSectoresEs);
+  assert.deepEqual(basura, { render: true, view: 'inicio', lang: 'es', changeLang: false });
 });

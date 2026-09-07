@@ -4,7 +4,7 @@ import { renderCookieBanner, mountCookieBanner } from './components/cookie-banne
 import { getActiveView, readRoute, setActiveView, syncView } from './router.js';
 import { applyLanguage, getLanguage } from './i18n.js';
 import * as views from './views/index.js';
-import { formatViewRoute } from './utils/view-route.js';
+import { formatViewRoute, planHashChange } from './utils/view-route.js';
 
 const LANG_BCP47 = { es: 'es', en: 'en', va: 'ca-valencia' };
 function syncHtmlLang() {
@@ -57,20 +57,27 @@ window.addEventListener('popstate', (e) => {
 
 // Enlaces directos por slug (DL-4). Editar el hash a mano en la barra de
 // direcciones SÍ dispara `hashchange`; `pushState` con hash NO. Por eso este
-// listener solo actúa si la vista resuelta es distinta de la activa: sin esa
+// listener solo actúa si cambia algo de verdad —la vista o el idioma—: sin esa
 // comparación, una misma navegación se pintaría dos veces (§6.4).
 window.addEventListener('hashchange', () => {
   const ruta = readRoute();
+  // Se comparan vista E idioma. Comparar solo la vista dejaba sin efecto el
+  // caso que encontró Salva en DL-5: editar el hash a mano para pasar de
+  // `#es/sectores` a `#va/sectors` cambia el idioma sin cambiar de sección, y
+  // la página se quedaba en el idioma anterior hasta forzar una recarga.
+  const plan = planHashChange(ruta, { view: getActiveView(), lang: getLanguage() });
   // Atrás/adelante entre dos entradas con hash distinto dispara popstate Y
   // hashchange. Sea cual sea el orden en que lleguen, solo pinta el primero: el
   // que actúa fija `activeView` de forma síncrona, y el segundo encuentra la
   // vista ya puesta y se retira aquí mismo. El listener de popstate hace la
   // misma comprobación, y por eso la pareja es segura en ambos sentidos.
-  if (ruta.view === getActiveView()) return;
-  if (ruta.langFromLink) applyLanguage(ruta.lang);
-  setActiveView(ruta.view);
+  if (!plan.render) return;
+  if (plan.changeLang) applyLanguage(plan.lang);
+  setActiveView(plan.view);
   window.scrollTo(0, 0);
-  history.replaceState({ appView: ruta.view }, '');
+  // Se normaliza a la forma canónica: si se llegó por un alias, la barra de
+  // direcciones acaba mostrando el enlace que sí se genera.
+  history.replaceState({ appView: plan.view }, '', formatViewRoute(plan.view, plan.lang) || undefined);
   renderApp();
 });
 
