@@ -30,7 +30,12 @@ const EXPECTED_ESC_VIEWS = [
 test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   const report = await generateInventory();
 
-  assert.equal(report.scannedFiles, 20);
+  // DL-2: 21 y no 20 porque existe un fichero nuevo, assets/js/utils/view-route.js.
+  // Es un recuento de ficheros, no de superficie: TODAS las demás cifras de esta
+  // prueba siguen idénticas a la línea base VAN-0.1 —interpolaciones, sinks,
+  // hrefs y vistas—, y el módulo nuevo no aparece en ninguna de ellas porque no
+  // renderiza nada. Verificado contra el tag salvaguardia/pre-deeplink-2026-09-07.
+  assert.equal(report.scannedFiles, 21);
   assert.equal(report.pickLangInterpolations.unescaped, 11);
   assert.equal(report.pickLangInterpolations.escaped, 130);
   assert.deepEqual(
