@@ -1,9 +1,10 @@
 import { renderHeader, mountHeader } from './components/header.js';
 import { renderFooter, mountFooter } from './components/footer.js';
 import { renderCookieBanner, mountCookieBanner } from './components/cookie-banner.js';
-import { getActiveView, syncView } from './router.js';
-import { getLanguage } from './i18n.js';
+import { getActiveView, readRoute, setActiveView, syncView } from './router.js';
+import { applyLanguage, getLanguage } from './i18n.js';
 import * as views from './views/index.js';
+import { formatViewRoute, planHashChange } from './utils/view-route.js';
 
 const LANG_BCP47 = { es: 'es', en: 'en', va: 'ca-valencia' };
 function syncHtmlLang() {
@@ -54,10 +55,44 @@ window.addEventListener('popstate', (e) => {
   if (view && view !== getActiveView()) syncView(view);
 });
 
+// Enlaces directos por slug (DL-4). Editar el hash a mano en la barra de
+// direcciones SÍ dispara `hashchange`; `pushState` con hash NO. Por eso este
+// listener solo actúa si cambia algo de verdad —la vista o el idioma—: sin esa
+// comparación, una misma navegación se pintaría dos veces (§6.4).
+window.addEventListener('hashchange', () => {
+  const ruta = readRoute();
+  // Se comparan vista E idioma. Comparar solo la vista dejaba sin efecto el
+  // caso que encontró Salva en DL-5: editar el hash a mano para pasar de
+  // `#es/sectores` a `#va/sectors` cambia el idioma sin cambiar de sección, y
+  // la página se quedaba en el idioma anterior hasta forzar una recarga.
+  const plan = planHashChange(ruta, { view: getActiveView(), lang: getLanguage() });
+  // Atrás/adelante entre dos entradas con hash distinto dispara popstate Y
+  // hashchange. Sea cual sea el orden en que lleguen, solo pinta el primero: el
+  // que actúa fija `activeView` de forma síncrona, y el segundo encuentra la
+  // vista ya puesta y se retira aquí mismo. El listener de popstate hace la
+  // misma comprobación, y por eso la pareja es segura en ambos sentidos.
+  if (!plan.render) return;
+  if (plan.changeLang) applyLanguage(plan.lang);
+  setActiveView(plan.view);
+  window.scrollTo(0, 0);
+  // Se normaliza a la forma canónica: si se llegó por un alias, la barra de
+  // direcciones acaba mostrando el enlace que sí se genera.
+  history.replaceState({ appView: plan.view }, '', formatViewRoute(plan.view, plan.lang) || undefined);
+  renderApp();
+});
+
 document.addEventListener('DOMContentLoaded', () => {
+  // El enlace decide antes de pintar: aplicar el idioma después obligaría a un
+  // segundo render (§6.4). Una ruta irreconocible devuelve Inicio y deja el
+  // idioma del visitante intacto, así que esto es seguro para una visita normal.
+  const ruta = readRoute();
+  if (ruta.langFromLink) applyLanguage(ruta.lang);
+  setActiveView(ruta.view);
+
   syncHtmlLang();
   renderApp();
-  // Entrada base del historial = vista inicial (Inicio), para que "atrás"
-  // desde la primera navegación vuelva a la landing.
-  history.replaceState({ appView: getActiveView() }, '');
+  // Entrada base del historial = la vista con la que se ha abierto, para que
+  // "atrás" desde la primera navegación vuelva aquí. Se normaliza la URL a la
+  // forma canónica: un alias tolerado se reescribe al enlace que sí se genera.
+  history.replaceState({ appView: getActiveView() }, '', formatViewRoute(getActiveView(), getLanguage()) || undefined);
 });
