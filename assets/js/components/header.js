@@ -1,5 +1,5 @@
 import { t, getLanguage, setLanguage } from '../i18n.js';
-import { VIEWS, getActiveView, navigateTo } from '../router.js';
+import { VIEWS, getActiveView, navigateTo, syncRouteLanguage } from '../router.js';
 import { getState, setState } from '../state.js';
 import { HEADER_CONFIG } from '../../data/header.js';
 import { NAV_CONFIG } from '../../data/navigation.js';
@@ -172,6 +172,9 @@ export function mountHeader() {
     btn.addEventListener('click', () => {
       setState('mobileMenuOpen', false);
       setLanguage(btn.dataset.lang);
+      // El enlace de la barra de direcciones sigue al idioma, sin apilar
+      // historial: cambiar de idioma no es navegar (contrato 5).
+      syncRouteLanguage(btn.dataset.lang);
     });
   });
 

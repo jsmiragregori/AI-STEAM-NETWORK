@@ -70,6 +70,14 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   assert.deepEqual(sinkCounts, {
     'innerHTML assignment': 23,
     insertAdjacentHTML: 1,
+    // DL-4: la ÚNICA lectura del hash de todo el árbol, en router.js. El
+    // inventario la marca porque el hash es entrada no confiable, y hace bien:
+    // que aparezca aquí es lo que obliga a justificarla. Está contenida por
+    // test/security/hash-containment.test.mjs, que falla si aparece una segunda
+    // lectura en cualquier otro fichero (TDD-14) o si el fichero que la lee
+    // escribe HTML (TDD-15). Su valor no se interpola nunca: solo se compara
+    // contra la allowlist de slugs y se descarta.
+    'location.hash': 1,
   });
 
   assert.deepEqual(await generateInventory(), report, 'el inventario debe ser determinista');

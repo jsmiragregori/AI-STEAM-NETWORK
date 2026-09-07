@@ -16,7 +16,7 @@ import {
 const SLUGS = {
   'inicio':       { es: 'inicio',                en: 'home',                  va: 'inici' },
   'red':          { es: 'la-red',                en: 'network',               va: 'la-xarxa' },
-  'sectores':     { es: 'sectores',              en: 'vertical-sectors',      va: 'sectors' },
+  'sectores':     { es: 'sectores',              en: 'sectors',               va: 'sectors' },
   'banco-retos':  { es: 'comunidad-de-practica', en: 'community-of-practice', va: 'comunitat-de-practica' },
   'formacion':    { es: 'formacion',             en: 'training',              va: 'formacio' },
   'conocimiento': { es: 'conocimiento',          en: 'knowledge',             va: 'coneixement' },
@@ -134,9 +134,13 @@ test('TDD-10: los 21 slugs canónicos resuelven a su vista y a su idioma', () =>
 });
 
 // TDD-10b (§3.1)
-test('TDD-10b: el prefijo de idioma desambigua aunque dos idiomas compartieran slug', () => {
+test('TDD-10b: el prefijo de idioma desambigua el slug que EN y VA comparten', () => {
+  // «Sectors» es idéntico en inglés y en valenciano. Es exactamente el caso que
+  // obliga a que el idioma vaya delante y siempre (DA-DL-6): sin prefijo, el
+  // enlace que motiva todo el encargo sería el ambiguo.
+  assert.deepEqual(parseViewRoute('#en/sectors'), { view: 'sectores', lang: 'en' });
   assert.deepEqual(parseViewRoute('#va/sectors'), { view: 'sectores', lang: 'va' });
-  assert.deepEqual(parseViewRoute('#en/vertical-sectors'), { view: 'sectores', lang: 'en' });
+  assert.notDeepEqual(parseViewRoute('#en/sectors'), parseViewRoute('#va/sectors'));
   assert.notDeepEqual(parseViewRoute('#va/sectors'), parseViewRoute('#es/sectores'));
 });
 
@@ -144,8 +148,7 @@ test('TDD-10b: el prefijo de idioma desambigua aunque dos idiomas compartieran s
 test('TDD-10c: los alias sin idioma resuelven la vista y no inventan idioma', () => {
   for (const [alias, view] of [
     ['#sectores', 'sectores'],
-    ['#sectors', 'sectores'],
-    ['#vertical-sectors', 'sectores'],
+    ['#sectors', 'sectores'],       // compartido por EN y VA: como alias basta con la vista
     ['#la-xarxa', 'red'],
     ['#network', 'red'],
     ['#comunidad-de-practica', 'banco-retos'],

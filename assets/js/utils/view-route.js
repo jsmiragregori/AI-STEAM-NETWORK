@@ -29,7 +29,7 @@ export const LANGS = ['es', 'en', 'va'];
 export const VIEW_SLUGS = Object.freeze({
   'inicio':       Object.freeze({ es: 'inicio',                en: 'home',                  va: 'inici' }),
   'red':          Object.freeze({ es: 'la-red',                en: 'network',               va: 'la-xarxa' }),
-  'sectores':     Object.freeze({ es: 'sectores',              en: 'vertical-sectors',      va: 'sectors' }),
+  'sectores':     Object.freeze({ es: 'sectores',              en: 'sectors',              va: 'sectors' }),
   'banco-retos':  Object.freeze({ es: 'comunidad-de-practica', en: 'community-of-practice', va: 'comunitat-de-practica' }),
   'formacion':    Object.freeze({ es: 'formacion',             en: 'training',              va: 'formacio' }),
   'conocimiento': Object.freeze({ es: 'conocimiento',          en: 'knowledge',             va: 'coneixement' }),
@@ -176,4 +176,59 @@ export function formatViewRoute(view, lang, _params, tabla) {
   if (typeof slug !== 'string' || slug === '') return null;
 
   return `#${lang}/${slug}`;
+}
+
+/** Idioma por defecto cuando el visitante no tiene preferencia guardada. */
+export const DEFAULT_LANG = 'es';
+
+/** Vista que se abre ante cualquier ruta que no se reconozca (DA-DL-3). */
+export const DEFAULT_VIEW = 'inicio';
+
+/**
+ * Decide qué vista y qué idioma corresponden al abrir la página.
+ *
+ * A diferencia de `parseViewRoute`, esta función NUNCA devuelve `null`: su
+ * trabajo es decidir, y ante cualquier ruta irreconocible decide Inicio en el
+ * idioma que ya tuviera el visitante (DA-DL-3). Es la que fija los contratos 1,
+ * 2 y 3 de §4, y por eso vive aquí, donde se puede probar sin navegador.
+ *
+ * @param {string|null|undefined} hash
+ * @param {{storedLang?: string|null}} [opciones] Preferencia guardada del visitante.
+ * @param {Record<string, Record<string, string>>} [tabla]
+ * @returns {{view: string, lang: string, langFromLink: boolean, recognised: boolean}}
+ */
+export function resolveInitialRoute(hash, { storedLang } = {}, tabla) {
+  const preferido = LANGS.includes(storedLang) ? storedLang : DEFAULT_LANG;
+  const ruta = parseViewRoute(hash, tabla);
+
+  // Ruta no reconocida: Inicio, y el idioma NO se toca. Un enlace roto no puede
+  // además cambiarle el idioma al visitante (contrato 3).
+  if (!ruta) {
+    return { view: DEFAULT_VIEW, lang: preferido, langFromLink: false, recognised: false };
+  }
+
+  // El idioma del enlace manda sobre la preferencia guardada (DA-DL-6): es justo
+  // lo que hace falta cuando el enlace se envía a un tercero.
+  if (ruta.lang) {
+    return { view: ruta.view, lang: ruta.lang, langFromLink: true, recognised: true };
+  }
+
+  // Alias sin idioma: resuelve la vista y deja el idioma como estaba.
+  return { view: ruta.view, lang: preferido, langFromLink: false, recognised: true };
+}
+
+/**
+ * Enlace canónico al que debe apuntar la barra de direcciones tras cambiar de
+ * idioma sin moverse de vista (contrato 5).
+ *
+ * Se devuelve `replace: true` porque cambiar de idioma no es navegar: apilar
+ * una entrada obligaría a pulsar "atrás" dos veces para volver a la página
+ * anterior.
+ *
+ * @returns {{hash: string, replace: boolean}|null} `null` si no hay enlace
+ *   posible; en ese caso el llamante deja la URL como está.
+ */
+export function planLanguageSwitch(view, lang, tabla) {
+  const hash = formatViewRoute(view, lang, undefined, tabla);
+  return hash ? { hash, replace: true } : null;
 }
