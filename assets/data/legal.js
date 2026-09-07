@@ -198,7 +198,13 @@ export const LEGAL_CONFIG = {
       "metodo": "autoevaluación mediante revisión estática del código",
       "fecha_evaluacion": "2026-09-07T00:00:00.000Z",
       "canal_comunicacion": null,
-      "fecha_revision_prevista": "2027-09-07T00:00:00.000Z"
+      "fecha_revision_prevista": "2027-09-07T00:00:00.000Z",
+      "defectos_declarados": [
+        "contraste 4,27:1 en el selector de idioma inactivo",
+        "contraste 2,50:1 en textos secundarios con text-gray-400",
+        "idioma activo distinguido solo por color",
+        "iconos decorativos sin aria-hidden"
+      ]
     },
     "autoridad_control": {
       "estado": "verificado",
