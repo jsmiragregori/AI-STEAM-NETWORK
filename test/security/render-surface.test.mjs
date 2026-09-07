@@ -77,7 +77,13 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
     // lectura en cualquier otro fichero (TDD-14) o si el fichero que la lee
     // escribe HTML (TDD-15). Su valor no se interpola nunca: solo se compara
     // contra la allowlist de slugs y se descarta.
-    'location.hash': 1,
+    // LG-10: pasa a 2 —ambas en router.js—. La segunda es isInPageAnchor, que
+    // distingue el salto al contenido principal de una ruta. Sigue contenida:
+    // TDD-14 falla si location.hash aparece en cualquier otro fichero, y TDD-15
+    // si el fichero que lo lee escribe HTML. Ninguna de las dos interpola el
+    // valor: una lo compara contra la allowlist de slugs y la otra pregunta si
+    // existe un elemento con ese id en nuestro propio DOM.
+    'location.hash': 2,
   });
 
   assert.deepEqual(await generateInventory(), report, 'el inventario debe ser determinista');

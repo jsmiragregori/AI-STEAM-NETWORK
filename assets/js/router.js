@@ -47,6 +47,29 @@ export function readRoute() {
 }
 
 /**
+ * ¿El hash apunta a un elemento de la propia página en vez de a una vista?
+ *
+ * Existe por un fallo encontrado al evaluar accesibilidad (LG-10): el enlace
+ * «Saltar al contenido principal» es `href="#main-root"`, y para el router eso
+ * era una ruta no reconocida, así que respondía abriendo Inicio. Es decir, quien
+ * navegaba por teclado no podía usar el salto sin perder la página en la que
+ * estaba. El salto al contenido es justamente la ayuda de quien más la necesita.
+ *
+ * La comprobación es segura: solo pregunta si existe un elemento con ese id en
+ * nuestro propio DOM. No interpola el valor, ni lo usa para construir una URL.
+ */
+export function isInPageAnchor() {
+  const crudo = window.location.hash.slice(1);
+  // Un ancla interna nunca lleva barra: `#es/sectores` es una ruta, no un id.
+  if (!crudo || crudo.includes('/')) return false;
+  try {
+    return Boolean(document.getElementById(decodeURIComponent(crudo)));
+  } catch {
+    return false; // id mal codificado: no es nuestro
+  }
+}
+
+/**
  * Fija la vista sin apilar historial ni renderizar. La usa main.js al arrancar
  * y al detectar un hashchange; quien llama decide cuándo pintar, que es lo que
  * garantiza un solo render por navegación (§6.4).

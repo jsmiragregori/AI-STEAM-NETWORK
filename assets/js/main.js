@@ -1,7 +1,7 @@
 import { renderHeader, mountHeader } from './components/header.js';
 import { renderFooter, mountFooter } from './components/footer.js';
 import { renderCookieBanner, mountCookieBanner } from './components/cookie-banner.js';
-import { getActiveView, readRoute, setActiveView, syncView } from './router.js';
+import { getActiveView, isInPageAnchor, readRoute, setActiveView, syncView } from './router.js';
 import { applyLanguage, getLanguage } from './i18n.js';
 import * as views from './views/index.js';
 import { formatViewRoute, planHashChange } from './utils/view-route.js';
@@ -60,6 +60,11 @@ window.addEventListener('popstate', (e) => {
 // listener solo actúa si cambia algo de verdad —la vista o el idioma—: sin esa
 // comparación, una misma navegación se pintaría dos veces (§6.4).
 window.addEventListener('hashchange', () => {
+  // Un ancla dentro de la página —el salto al contenido principal— no es una
+  // navegación: el navegador ya la resuelve desplazándose. Si el router actuara,
+  // se llevaría a Inicio a quien solo quería saltar la cabecera.
+  if (isInPageAnchor()) return;
+
   const ruta = readRoute();
   // Se comparan vista E idioma. Comparar solo la vista dejaba sin efecto el
   // caso que encontró Salva en DL-5: editar el hash a mano para pasar de
