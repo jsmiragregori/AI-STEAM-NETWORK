@@ -17,9 +17,9 @@ export function renderFooter() {
             ${esc(t('footer.orgName'))}<br/>${esc(t('footer.orgUnit'))}
           </div>
           <div class="flex flex-wrap gap-3 sm:gap-6 sm:ml-auto text-xs sm:text-sm">
-            <a href="#" class="text-white hover:text-eu-yellow transition-colors font-medium">${esc(t('footer.accessibility'))}</a>
-            <a href="#" class="text-white hover:text-eu-yellow transition-colors font-medium">${esc(t('footer.privacy'))}</a>
-            <a href="#" class="text-white hover:text-eu-yellow transition-colors font-medium">${esc(t('footer.sitemap'))}</a>
+            <a class="text-white hover:text-eu-yellow transition-colors font-medium">${esc(t('footer.accessibility'))}</a>
+            <a class="text-white hover:text-eu-yellow transition-colors font-medium">${esc(t('footer.privacy'))}</a>
+            <a class="text-white hover:text-eu-yellow transition-colors font-medium">${esc(t('footer.sitemap'))}</a>
           </div>
         </div>
       </div>

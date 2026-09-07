@@ -392,7 +392,7 @@ function tabStakeholders(activeCategory, showForm) {
           <div class="flex items-center gap-2">
             <input type="checkbox" id="net-gdpr" class="rounded" style="border:1px solid rgb(73 24 173/.2)" />
             <label for="net-gdpr" class="text-sm text-gray-600">
-              ${esc(loc(f.acceptTerms))} <a href="#" class="text-eu-blue hover:underline">${esc(loc(f.privacyPolicy))}</a> ${esc(loc(f.rgpd))}
+              ${esc(loc(f.acceptTerms))} <a class="text-eu-blue hover:underline">${esc(loc(f.privacyPolicy))}</a> ${esc(loc(f.rgpd))}
             </label>
           </div>
           <div class="flex justify-end">

@@ -167,7 +167,7 @@ export function render() {
           </p>
           <div class="flex items-center justify-between">
             <span class="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${getTypeColor(event.type)}">${event.type}</span>
-            ${event.register ? `<a href="#" class="text-xs font-bold text-eu-blue hover:text-eu-purple transition-colors flex items-center gap-1">${newsT?.register || ''} <i data-lucide="external-link" class="w-3 h-3"></i></a>` : ''}
+            ${event.register ? `<a class="text-xs font-bold text-eu-blue hover:text-eu-purple transition-colors flex items-center gap-1">${newsT?.register || ''} <i data-lucide="external-link" class="w-3 h-3"></i></a>` : ''}
           </div>
         </div>
       </div>
@@ -189,7 +189,7 @@ export function render() {
   ].filter(l => l.label).map(l => {
     const iconSvg = socialIconMap[l.key] || '<i data-lucide="external-link" class="w-5 h-5 shrink-0"></i>';
     return `
-      <a href="#" class="flex items-center justify-between w-full p-4 rounded-full text-sm hover:bg-white hover:text-eu-purple hover:scale-[1.02] transition-all font-bold shadow-sm border-none" style="background:#FFF4E1;color:#4918AD">
+      <a class="flex items-center justify-between w-full p-4 rounded-full text-sm hover:bg-white hover:text-eu-purple hover:scale-[1.02] transition-all font-bold shadow-sm border-none" style="background:#FFF4E1;color:#4918AD">
         <span class="flex items-center gap-3">
           ${iconSvg}
           <span>${l.label}</span>
@@ -265,7 +265,7 @@ export function render() {
                 </div>
                 <ul class="divide-y divide-eu-purple/10 pl-4">${eventsHtml}</ul>
                 <div class="p-4 bg-eu-purple/5 rounded-b-[2rem] text-center border-t border-eu-purple/10">
-                  <a href="#" class="text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">${newsT?.viewFullCalendar || ''}</a>
+                  <a class="text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">${newsT?.viewFullCalendar || ''}</a>
                 </div>
               </div>
 
