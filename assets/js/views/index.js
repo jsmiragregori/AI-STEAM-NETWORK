@@ -6,6 +6,7 @@ import * as knowledge  from './knowledge.js';
 import * as network      from './network.js';
 import * as marketplace  from './marketplace.js';
 import { crearVistaLegal } from './legal.js';
+import * as sitemap from './sitemap.js';
 
 export const inicio       = home;
 export const red          = network;
@@ -22,3 +23,4 @@ export const avisoLegal    = crearVistaLegal('aviso-legal');
 export const privacidad    = crearVistaLegal('privacidad');
 export const cookies       = crearVistaLegal('cookies');
 export const accesibilidad = crearVistaLegal('accesibilidad');
+export const mapaWeb      = sitemap;

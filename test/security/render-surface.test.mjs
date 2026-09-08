@@ -27,6 +27,8 @@ const EXPECTED_ESC_VIEWS = [
   'assets/js/views/marketplace.js',
   'assets/js/views/network.js',
   'assets/js/views/sectors.js',
+  // SM-4: el mapa web importa el escapado común, como todas.
+  'assets/js/views/sitemap.js',
   'assets/js/views/training.js',
 ];
 
@@ -44,7 +46,8 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // —la vista legal no usa pickLang, no construye ningún href dinámico y no
   // escribe en el DOM—. Lo único que sí se mueve es el total de vistas y la
   // lista de las que importan el escapado común, más abajo.
-  assert.equal(report.scannedFiles, 23);
+  // SM-4: 24 con la vista del mapa web.
+  assert.equal(report.scannedFiles, 24);
   assert.equal(report.pickLangInterpolations.unescaped, 11);
   assert.equal(report.pickLangInterpolations.escaped, 130);
   assert.deepEqual(
@@ -53,7 +56,8 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   );
 
   // LG-6: la décima vista es legal.js, la de las cuatro páginas legales.
-  assert.equal(report.viewsTotal, 10);
+  // SM-4: la undécima es sitemap.js, el mapa web.
+  assert.equal(report.viewsTotal, 11);
   assert.deepEqual(report.viewsDefiningEsc, []);
   assert.deepEqual(report.viewsImportingEscapeHtml, EXPECTED_ESC_VIEWS);
   // LG-7 y LG-8: 25 y no 23. Dos enlaces nuevos -el del pie a las páginas
@@ -63,15 +67,17 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // Ninguno de los dos es editorial: los construye `formatViewRoute()` desde la
   // tabla de slugs congelada, y por eso cuentan como validados (ver
   // `collectValidatedUrlIdentifiers`).
-  assert.equal(report.dynamicHrefs.editorialCount, 25);
+  // SM-4: 26 con el enlace de cada entrada del mapa web. Tampoco es editorial:
+  // lo construye `formatViewRoute()` desde la tabla de slugs congelada.
+  assert.equal(report.dynamicHrefs.editorialCount, 26);
   // VAN-3B.2.1: los 23 pasan por getSafeEditorialUrl(), incluidos los dos de
   // Header que V9 demostró editoriales. El invariante que importa
   // es que no quede ninguno sin validar, no que sigan siendo 23: si alguien
   // añade el enlace 22 sin cablearlo, esta lista deja de estar vacía.
   assert.deepEqual(report.dynamicHrefs.editorialUnvalidated, []);
-  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 25);
+  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 26);
   assert.equal(report.dynamicHrefs.nonEditorialCount, 0);
-  assert.equal(report.dynamicHrefs.total, 25);
+  assert.equal(report.dynamicHrefs.total, 26);
   // VAN-2.3: 21 y no 16 por dos ampliaciones de la medición: los
   // `target="${…}"` calculados, antes invisibles, y el ancla que emite
   // `sanitize-editorial-html.js`, antes fuera de alcance. El invariante —que la

@@ -99,8 +99,14 @@ test('TDD-L10: las páginas legales no entran en el menú principal', () => {
   ]);
   assert.equal(VIEWS.length, 7);
 
-  assert.deepEqual(SECONDARY_VIEWS, ['aviso-legal', 'privacidad', 'cookies', 'accesibilidad']);
-  // Conjuntos disjuntos: ninguna vista legal puede colarse en el contrato del menú.
+  // Las cuatro legales son vistas secundarias. La lista puede crecer -SM añadió
+  // el mapa web-, así que se comprueba que estén TODAS ellas y que ninguna
+  // secundaria se cuele en el menú, en vez de fijar el contenido exacto de una
+  // lista que no es el contrato de esta prueba.
+  for (const legal of ['aviso-legal', 'privacidad', 'cookies', 'accesibilidad']) {
+    assert.ok(SECONDARY_VIEWS.includes(legal), legal);
+  }
+  // Conjuntos disjuntos: ninguna vista secundaria puede colarse en el menú.
   for (const view of SECONDARY_VIEWS) assert.ok(!VIEWS.includes(view), view);
 });
 

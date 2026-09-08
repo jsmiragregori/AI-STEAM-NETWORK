@@ -514,3 +514,30 @@ textarea:focus-visible,
   text-underline-offset: .15em;
 }
 .rd-legal-prose a:hover { text-decoration-thickness: 2px; }
+
+/* ─── MAPA WEB (SM-4) ─────────────────────────────────────────────────────── */
+/* Reutiliza el título de las páginas legales; solo necesita la lista. */
+.rd-sitemap-group {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--rd-purple);
+  margin-bottom: .75rem;
+}
+
+.rd-sitemap-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .5rem;
+}
+
+.rd-sitemap-link {
+  display: inline-block;
+  font-size: 1.125rem;
+  color: #374151;
+  text-decoration: underline;
+  text-underline-offset: .15em;
+  padding: .125rem 0;
+}
+.rd-sitemap-link:hover { color: var(--rd-purple); text-decoration-thickness: 2px; }
