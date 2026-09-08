@@ -127,8 +127,12 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
   // `sello` se compone en la propia función a partir de esc() sobre cada parte
   // —versión, etiqueta y fecha—, y por eso llega ya escapada al interpolarse.
   // Es el mismo patrón COMPOSICION_CADENA ya admitido en marketplace.
-  assert.equal(indirectOutputCandidates.total, 171);
+  // LG-7: 173 y no 171 por las dos salidas del pie -el rótulo del enlace y el
+  // del rótulo sin enlace-. `rotulo` es `esc(t(clave))`: llega ya escapado, es
+  // el mismo patrón que las demás de esta lista.
+  assert.equal(indirectOutputCandidates.total, 173);
   assert.deepEqual(indirectOutputCandidates.byFile, {
+    'assets/js/components/footer.js': 2,
     'assets/js/components/header.js': 4,
     'assets/js/views/governance.js': 25,
     'assets/js/views/home.js': 18,

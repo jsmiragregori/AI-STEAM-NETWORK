@@ -2,7 +2,7 @@
 // Este archivo ES la base: las claves que no están en content/_ui/*.csv solo
 // viven aquí y pueden editarse directamente. Las claves presentes en los CSV
 // se sobreescriben en cada cms:ui — esas se editan en el CSV.
-// Base: translations.js existente + overrides de 89 entradas CSV
+// Base: translations.js existente + overrides de 92 entradas CSV
 
 export const translations = {
   "es": {
@@ -28,10 +28,13 @@ export const translations = {
       "fundedBy": "Financiado por la",
       "europeanUnion": "Unión Europea",
       "accessibility": "Accesibilidad",
-      "privacy": "Privacidad y cookies",
+      "privacy": "Privacidad",
       "sitemap": "Mapa Web",
       "orgName": "Generalitat Valenciana",
-      "orgUnit": "Conselleria de Educación, Cultura y Universidades"
+      "orgUnit": "Conselleria de Educación, Cultura y Universidades",
+      "legalNav": "Enlaces legales",
+      "legalNotice": "Aviso legal",
+      "cookies": "Cookies"
     },
     "cookieBanner": {
       "legal": "Aviso Legal:",
@@ -1919,10 +1922,13 @@ export const translations = {
       "fundedBy": "Funded by",
       "europeanUnion": "European Union",
       "accessibility": "Accessibility",
-      "privacy": "Privacy and cookies",
+      "privacy": "Privacy",
       "sitemap": "Sitemap",
       "orgName": "Generalitat Valenciana",
-      "orgUnit": "Education, Culture and Universities Ministry"
+      "orgUnit": "Education, Culture and Universities Ministry",
+      "legalNav": "Legal links",
+      "legalNotice": "Legal notice",
+      "cookies": "Cookies"
     },
     "cookieBanner": {
       "legal": "Legal Notice:",
@@ -3810,10 +3816,13 @@ export const translations = {
       "fundedBy": "Finançat per la",
       "europeanUnion": "Unió Europea",
       "accessibility": "Accessibilitat",
-      "privacy": "Privacitat i cookies",
+      "privacy": "Privacitat",
       "sitemap": "Mapa Web",
       "orgName": "Generalitat Valenciana",
-      "orgUnit": "Conselleria d'Educació, Cultura i Universitats"
+      "orgUnit": "Conselleria d'Educació, Cultura i Universitats",
+      "legalNav": "Enllaços legals",
+      "legalNotice": "Avís legal",
+      "cookies": "Cookies"
     },
     "cookieBanner": {
       "legal": "Avís Legal:",

@@ -313,6 +313,13 @@ export function collectValidatedUrlIdentifiers(source) {
   let match;
   while ((match = declRe.exec(source))) ids.add(match[1]);
   if (/\bresolveMembershipAction\s*\(/.test(source)) ids.add('membershipAction.url');
+  // `formatViewRoute()` (LG-7, el pie) se acepta por la misma clase de
+  // afirmación sobre el cuerpo del helper: devuelve `null` o exactamente
+  // `#<idioma>/<slug>` construido desde una tabla congelada, y no hay camino por
+  // el que un valor de fuera llegue a su salida. No es una URL editorial: es una
+  // ruta interna del sitio, más acotada que cualquier validador de esquema.
+  const rutaRe = /(?:const|let|var)\s+([A-Za-z_$][\w$]*)\s*=\s*[^;]*?formatViewRoute\s*\(/g;
+  while ((match = rutaRe.exec(source))) ids.add(match[1]);
   return ids;
 }
 
@@ -531,8 +538,12 @@ export async function generateInventory() {
 
     // Las utilidades pueden construir marcado seguro como implementación
     // interna; esta métrica describe las plantillas que el sitio renderiza.
+    // LG-7 añade el pie: desde que enlaza con las páginas legales emite un href
+    // dinámico, y dejarlo fuera del censo sería un punto ciego -el siguiente
+    // href que alguien añadiera ahí no lo contaría nadie-.
     const isRuntimeTemplate = relativePath.startsWith('assets/js/views/')
-      || relativePath === 'assets/js/components/header.js';
+      || relativePath === 'assets/js/components/header.js'
+      || relativePath === 'assets/js/components/footer.js';
     if (isRuntimeTemplate) {
       const validatedIds = collectValidatedUrlIdentifiers(source);
       for (const hit of findDynamicHrefs(source, relativePath)) {

@@ -39,12 +39,22 @@ test('TDD-L11: ningún componente ni vista emite href="#"', async () => {
   );
 });
 
-test('TDD-L11b: el pie sigue mostrando sus tres rótulos', async () => {
+test('TDD-L11b: el pie sigue mostrando sus rótulos', async () => {
   const footer = await readFile(new URL('../../assets/js/components/footer.js', import.meta.url), 'utf8');
 
   // El arreglo no puede consistir en borrar los rótulos: la accesibilidad es una
   // obligación legal (RD 1112/2018) y su enlace tiene que acabar existiendo.
-  for (const clave of ['footer.accessibility', 'footer.privacy', 'footer.sitemap']) {
-    assert.match(footer, new RegExp(`t\\('${clave}'\\)`), clave);
+  //
+  // LG-7 cambia CÓMO se piden -los cuatro legales salen de una tabla y se
+  // resuelven con `t(clave)`, en vez de cuatro llamadas escritas una a una-, así
+  // que la comprobación pasa a ser que la clave siga nombrada en el fichero, y
+  // no que lo esté con una forma concreta de llamada. Que además se pinten con
+  // su rótulo y su destino lo comprueba `footer-links.test.mjs`.
+  const claves = [
+    'footer.accessibility', 'footer.privacy', 'footer.cookies',
+    'footer.legalNotice', 'footer.sitemap',
+  ];
+  for (const clave of claves) {
+    assert.ok(footer.includes(`'${clave}'`), clave);
   }
 });
