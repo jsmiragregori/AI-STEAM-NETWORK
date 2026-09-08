@@ -30,5 +30,14 @@ export const ALLOWED_LEGAL_TAGS = new Set([
  * validado por `getSafeEditorialUrl`, y ningún otro atributo.
  */
 export function sanitizeLegalHtml(value) {
-  return sanitizeWithAllowlist(value, ALLOWED_LEGAL_TAGS);
+  // `sourceIsHtml`: la entrada es el HTML que ya generó y saneó el build, no
+  // texto en crudo. Sin esto, `d&#39;Educació` —HTML correcto para un
+  // apóstrofo— se volvía a escapar a `d&amp;#39;Educació` y el navegador
+  // pintaba el `&#39;` literal en mitad de la palabra. Lo vio Salva en el
+  // valenciano al revisar LG-6.
+  //
+  // Es la diferencia real entre las dos capas: la editorial recibe texto que
+  // una persona escribió en el panel, y ahí una entidad de entrada SÍ es
+  // contenido que hay que escapar; la legal recibe HTML ya escapado.
+  return sanitizeWithAllowlist(value, ALLOWED_LEGAL_TAGS, { sourceIsHtml: true });
 }

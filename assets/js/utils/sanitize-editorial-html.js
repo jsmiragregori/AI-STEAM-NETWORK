@@ -16,6 +16,27 @@ function decodeHtmlEntities(value) {
     });
 }
 
+/**
+ * Descodifica texto que YA viene escapado como HTML, para poder volver a
+ * escaparlo sin duplicar entidades.
+ *
+ * Distinta de `decodeHtmlEntities`, que se usa para leer un `href` y no
+ * necesita `&lt;` ni `&gt;`: aquí sí hacen falta, porque son justamente las que
+ * el build emite cuando el texto legal contiene un signo de menor o mayor.
+ *
+ * `&amp;` se descodifica LA ÚLTIMA, y no es un detalle de estilo: al revés,
+ * `&amp;lt;` se convertiría primero en `&lt;` y después en `<`, es decir, una
+ * entidad doblemente escapada acabaría siendo marcado. En este orden, no.
+ */
+function decodeEscapedHtmlText(value) {
+  return String(value)
+    .replaceAll('&lt;', '<')
+    .replaceAll('&gt;', '>')
+    .replaceAll('&quot;', '"')
+    .replaceAll('&#39;', "'")
+    .replaceAll('&amp;', '&');
+}
+
 function findTagEnd(source, start) {
   let quote = null;
   for (let index = start; index < source.length; index++) {
@@ -49,8 +70,18 @@ function openingTag(name, attributeSource) {
   if (!href) return '';
 
   // El editor no controla atributos salvo el destino seguro del enlace.
-  return attributes.get('target') === '_blank'
-    ? `<a href="${esc(href)}" target="_blank" rel="noopener noreferrer">`
+  if (attributes.get('target') === '_blank') {
+    return `<a href="${esc(href)}" target="_blank" rel="noopener noreferrer">`;
+  }
+  // Un `rel` ya presente se conserva, pero SOLO si es exactamente el valor
+  // seguro: no es un atributo que el origen pueda rellenar a su gusto, sino un
+  // valor único que se reconoce o se descarta. Lo necesita el HTML legal, donde
+  // el build lo pone en todos los enlaces —también en los de la misma pestaña,
+  // porque `noreferrer` evita anunciar de dónde viene quien lee una política de
+  // privacidad—. Sin esto, esta capa se lo quitaba y las dos capas dejaban de
+  // producir lo mismo.
+  return attributes.get('rel') === 'noopener noreferrer'
+    ? `<a href="${esc(href)}" rel="noopener noreferrer">`
     : `<a href="${esc(href)}">`;
 }
 
@@ -79,9 +110,17 @@ export function sanitizeEditorialHtml(value) {
  *
  * @param {unknown} value
  * @param {Set<string>} allowed Etiquetas permitidas, en minúsculas.
+ * @param {{sourceIsHtml?: boolean}} [opciones] `sourceIsHtml` dice que el texto
+ *   de la entrada YA viene escapado como HTML, no en crudo. Con él, cada trozo
+ *   de texto se descodifica una vez antes de volver a escaparlo, y el resultado
+ *   es idéntico a la entrada en vez de escaparla dos veces.
  */
-export function sanitizeWithAllowlist(value, allowed) {
+export function sanitizeWithAllowlist(value, allowed, { sourceIsHtml = false } = {}) {
   const source = String(value ?? '');
+  // Descodificar y volver a escapar NO abre nada: la salida de `texto()` está
+  // escapada siempre. `&lt;script&gt;` se descodifica a `<script>` y se vuelve
+  // a escapar a `&lt;script&gt;`, que es texto, no marcado.
+  const texto = sourceIsHtml ? (trozo) => esc(decodeEscapedHtmlText(trozo)) : esc;
   const output = [];
   const stack = [];
   let cursor = 0;
@@ -89,10 +128,10 @@ export function sanitizeWithAllowlist(value, allowed) {
   while (cursor < source.length) {
     const start = source.indexOf('<', cursor);
     if (start === -1) {
-      output.push(esc(source.slice(cursor)));
+      output.push(texto(source.slice(cursor)));
       break;
     }
-    output.push(esc(source.slice(cursor, start)));
+    output.push(texto(source.slice(cursor, start)));
 
     if (source.startsWith('<!--', start)) {
       const commentEnd = source.indexOf('-->', start + 4);
@@ -102,14 +141,14 @@ export function sanitizeWithAllowlist(value, allowed) {
 
     const end = findTagEnd(source, start + 1);
     if (end === -1) {
-      output.push(esc(source.slice(start)));
+      output.push(texto(source.slice(start)));
       break;
     }
 
     const raw = source.slice(start + 1, end);
     const match = raw.match(/^\s*(\/)?\s*([A-Za-z][\w:-]*)([\s\S]*?)\/?\s*$/);
     if (!match) {
-      output.push(esc(source.slice(start, end + 1)));
+      output.push(texto(source.slice(start, end + 1)));
       cursor = end + 1;
       continue;
     }

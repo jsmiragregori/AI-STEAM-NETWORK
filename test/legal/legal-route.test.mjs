@@ -150,3 +150,42 @@ test('TDD-L12: el saneado de pintado usa la allowlist legal, no la editorial', a
   assert.equal(sanitizeLegalHtml('<a href="javascript:alert(1)">No</a>'), 'No');
   assert.equal(sanitizeLegalHtml('<a href="mailto:dpd@gva.es">DPD</a>'), '<a href="mailto:dpd@gva.es">DPD</a>');
 });
+
+// Regresión encontrada por Salva al revisar LG-6 en el navegador.
+test('TDD-L12: el saneado no vuelve a escapar lo que el build ya escapó', async () => {
+  const { sanitizeLegalHtml } = await import('../../assets/js/utils/sanitize-legal-html.js');
+
+  // El fallo: el HTML del build trae `&#39;` donde el texto lleva un apóstrofo,
+  // que es HTML correcto. Escaparlo otra vez lo convierte en `&amp;#39;` y el
+  // navegador pinta un literal `&#39;` en mitad de la palabra. Se veía en
+  // cualquier `d'Educació` del valenciano.
+  assert.equal(sanitizeLegalHtml('<p>Conselleria d&#39;Educació</p>'), '<p>Conselleria d&#39;Educació</p>');
+  assert.equal(sanitizeLegalHtml('<p>Drets &amp; deures</p>'), '<p>Drets &amp; deures</p>');
+  assert.equal(sanitizeLegalHtml('<p>&quot;cita&quot;</p>'), '<p>&quot;cita&quot;</p>');
+
+  // Y lo que no puede pasar por arreglar lo anterior: que una etiqueta escapada
+  // en el origen se desescape y vuelva a ser marcado. Sigue siendo texto.
+  assert.equal(sanitizeLegalHtml('<p>&lt;script&gt;alert(1)&lt;/script&gt;</p>'), '<p>&lt;script&gt;alert(1)&lt;/script&gt;</p>');
+  assert.equal(sanitizeLegalHtml('&lt;img src=x onerror=alert(1)&gt;'), '&lt;img src=x onerror=alert(1)&gt;');
+
+  // Idempotente: sanear dos veces da lo mismo que sanear una. Es la propiedad
+  // que faltaba, y la que hacía que la segunda capa estropeara la primera.
+  const doc = '<h2>Títol</h2><p>l&#39;usuari &amp; l&#39;administració</p>';
+  assert.equal(sanitizeLegalHtml(sanitizeLegalHtml(doc)), sanitizeLegalHtml(doc));
+});
+
+test('TDD-L12: los doce textos publicados sobreviven al saneado sin perder ni un carácter', async () => {
+  const { sanitizeLegalHtml } = await import('../../assets/js/utils/sanitize-legal-html.js');
+  const { LEGAL_CONFIG } = await import('../../assets/data/legal.js');
+
+  for (const [documento, idiomas] of Object.entries(LEGAL_CONFIG.documentos)) {
+    for (const [lang, doc] of Object.entries(idiomas)) {
+      const donde = `${documento}/${lang}`;
+      // El build ya sanea contra la misma allowlist (TL1): si las dos capas
+      // dicen lo mismo, la segunda no puede cambiar nada. Cualquier diferencia
+      // aquí es una de las dos equivocándose.
+      assert.equal(sanitizeLegalHtml(doc.html), doc.html, donde);
+      assert.ok(!/&amp;(#\d+|[a-z]+);/i.test(sanitizeLegalHtml(doc.html)), `${donde}: entidad doblemente escapada`);
+    }
+  }
+});
