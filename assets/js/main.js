@@ -21,6 +21,12 @@ const VIEW_MAP = {
   'formacion': views.formacion,
   'conocimiento': views.conocimiento,
   'gobernanza': views.gobernanza,
+  // Secundarias: páginas legales (LG-6). Se pintan igual que cualquier otra
+  // vista; lo único que no hacen es aparecer en el menú principal.
+  'aviso-legal': views.avisoLegal,
+  'privacidad': views.privacidad,
+  'cookies': views.cookies,
+  'accesibilidad': views.accesibilidad,
 };
 
 export function renderApp() {

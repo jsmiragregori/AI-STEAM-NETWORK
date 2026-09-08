@@ -61,6 +61,26 @@ function openingTag(name, attributeSource) {
  * href validado por la política común; target=_blank fuerza rel seguro.
  */
 export function sanitizeEditorialHtml(value) {
+  return sanitizeWithAllowlist(value, ALLOWED_TAGS);
+}
+
+/**
+ * El motor de saneado, con la allowlist por parámetro.
+ *
+ * Se abrió en LG-6, cuando las páginas legales necesitaron conservar
+ * encabezados y párrafos que el contenido editorial no usa (DA-LG-4). La
+ * alternativa era copiar estas ochenta líneas en un segundo fichero, y duplicar
+ * código de seguridad es la forma más segura de que un día solo se arregle una
+ * de las dos copias.
+ *
+ * Lo que NO cambia con la allowlist: el escapado de todo lo que no está en
+ * ella, el descarte de atributos y la política de URL de los enlaces. Quien
+ * llame solo decide QUÉ etiquetas sobreviven, nunca cómo se tratan.
+ *
+ * @param {unknown} value
+ * @param {Set<string>} allowed Etiquetas permitidas, en minúsculas.
+ */
+export function sanitizeWithAllowlist(value, allowed) {
   const source = String(value ?? '');
   const output = [];
   const stack = [];
@@ -96,7 +116,7 @@ export function sanitizeEditorialHtml(value) {
 
     const [, closing, rawName, attributeSource] = match;
     const name = rawName.toLowerCase();
-    if (!ALLOWED_TAGS.has(name)) {
+    if (!allowed.has(name)) {
       cursor = end + 1;
       continue;
     }

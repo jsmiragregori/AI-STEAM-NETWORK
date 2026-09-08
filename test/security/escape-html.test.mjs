@@ -8,7 +8,10 @@ import { escapeHtml } from '../../assets/js/utils/escape-html.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const VIEWS_DIR = path.join(ROOT, 'assets/js/views');
-const EXPECTED_IMPORTERS = new Set(['governance.js', 'home.js', 'knowledge.js', 'marketplace.js', 'network.js', 'sectors.js', 'training.js']);
+// LG-6 añade 'legal.js': la vista de las páginas legales importa el escapado
+// común, como todas. La lista se enumera a mano a propósito —si una vista deja
+// de importarlo, esta prueba lo dice en lugar de adaptarse—.
+const EXPECTED_IMPORTERS = new Set(['governance.js', 'home.js', 'knowledge.js', 'legal.js', 'marketplace.js', 'network.js', 'sectors.js', 'training.js']);
 
 test('escapeHtml escapa los cinco caracteres significativos y normaliza valores vacíos', () => {
   assert.equal(escapeHtml('&<>"\''), '&amp;&lt;&gt;&quot;&#39;');

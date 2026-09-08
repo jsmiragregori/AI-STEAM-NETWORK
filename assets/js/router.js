@@ -3,6 +3,19 @@ import { formatViewRoute, planLanguageSwitch, resolveInitialRoute } from './util
 
 export const VIEWS = ['inicio', 'red', 'sectores', 'banco-retos', 'formacion', 'conocimiento', 'gobernanza'];
 
+/**
+ * Vistas secundarias: las páginas legales (LG-6, DA-LG-6).
+ *
+ * Van en una lista APARTE, no dentro de `VIEWS`. `VIEWS` es el contrato del
+ * menú principal —siete entradas, y TDD-17 lo fija— y estas páginas viven en el
+ * pie. Separarlas deja ese contrato intacto y hace explícito, para quien lea
+ * esto dentro de un año, que no son navegación principal.
+ *
+ * Enrutan igual que cualquier otra vista: tienen slug en los tres idiomas y se
+ * enlazan con el mismo `#idioma/slug`.
+ */
+export const SECONDARY_VIEWS = ['aviso-legal', 'privacidad', 'cookies', 'accesibilidad'];
+
 let activeView = 'inicio';
 let viewParams = {};
 
@@ -10,7 +23,7 @@ export function getActiveView() { return activeView; }
 export function getViewParams() { return viewParams; }
 
 export function navigateTo(view, params = {}) {
-  if (!VIEWS.includes(view)) {
+  if (!VIEWS.includes(view) && !SECONDARY_VIEWS.includes(view)) {
     console.warn(`View "${view}" no existe`);
     return;
   }
@@ -27,7 +40,7 @@ export function navigateTo(view, params = {}) {
 // Restaura una vista desde el historial del navegador (popstate) SIN apilar una
 // nueva entrada. La usa el listener global de main.js para back/forward.
 export function syncView(view) {
-  if (!VIEWS.includes(view)) return;
+  if (!VIEWS.includes(view) && !SECONDARY_VIEWS.includes(view)) return;
   activeView = view;
   viewParams = {};
   window.scrollTo(0, 0);
@@ -75,7 +88,7 @@ export function isInPageAnchor() {
  * garantiza un solo render por navegación (§6.4).
  */
 export function setActiveView(view) {
-  if (!VIEWS.includes(view)) return;
+  if (!VIEWS.includes(view) && !SECONDARY_VIEWS.includes(view)) return;
   activeView = view;
   viewParams = {};
 }

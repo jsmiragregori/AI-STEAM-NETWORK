@@ -2,7 +2,7 @@
 // Este archivo ES la base: las claves que no están en content/_ui/*.csv solo
 // viven aquí y pueden editarse directamente. Las claves presentes en los CSV
 // se sobreescriben en cada cms:ui — esas se editan en el CSV.
-// Base: translations.js existente + overrides de 86 entradas CSV
+// Base: translations.js existente + overrides de 89 entradas CSV
 
 export const translations = {
   "es": {
@@ -1889,6 +1889,11 @@ export const translations = {
         "Acepto las normas básicas de participación de la AI-STEAM Network.",
         "Acepto el tratamiento de datos necesario para gestionar la solicitud."
       ]
+    },
+    "legal": {
+      "version": "Versión",
+      "updated": "Última actualización:",
+      "unavailable": "Este documento no está disponible en el idioma seleccionado."
     }
   },
   "en": {
@@ -3775,6 +3780,11 @@ export const translations = {
         "I accept the basic participation rules of the AI-STEAM Network.",
         "I accept the data processing necessary to manage the request."
       ]
+    },
+    "legal": {
+      "version": "Version",
+      "updated": "Last updated:",
+      "unavailable": "This document is not available in the selected language."
     }
   },
   "va": {
@@ -5658,6 +5668,11 @@ export const translations = {
         "Accepte les normes bàsiques de participació de l'AI-STEAM Network.",
         "Accepte el tractament de dades necessari per gestionar la sol·licitud."
       ]
+    },
+    "legal": {
+      "version": "Versió",
+      "updated": "Última actualització:",
+      "unavailable": "Aquest document no està disponible en l'idioma seleccionat."
     }
   }
 };

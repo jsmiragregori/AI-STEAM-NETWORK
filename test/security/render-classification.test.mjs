@@ -122,12 +122,18 @@ test('VAN-3B.2.2 demuestra el destino seguro de las siete excepciones de V1', as
 test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async () => {
   const { indirectOutputCandidates } = await generateClassification();
 
-  assert.equal(indirectOutputCandidates.total, 170);
+  // LG-6: 171 y no 170 por una sola candidata nueva, `${sello}` en la vista
+  // legal (línea del sello de versión y fecha). No es una salida sin proteger:
+  // `sello` se compone en la propia función a partir de esc() sobre cada parte
+  // —versión, etiqueta y fecha—, y por eso llega ya escapada al interpolarse.
+  // Es el mismo patrón COMPOSICION_CADENA ya admitido en marketplace.
+  assert.equal(indirectOutputCandidates.total, 171);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/header.js': 4,
     'assets/js/views/governance.js': 25,
     'assets/js/views/home.js': 18,
     'assets/js/views/knowledge.js': 18,
+    'assets/js/views/legal.js': 1,
     'assets/js/views/marketplace.js': 19,
     'assets/js/views/network.js': 37,
     'assets/js/views/news.js': 34,

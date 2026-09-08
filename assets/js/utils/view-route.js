@@ -37,6 +37,35 @@ export const VIEW_SLUGS = Object.freeze({
 });
 
 /**
+ * Slugs de las páginas legales, aprobados y congelados por Salva el 2026-09-07
+ * (§3.1 de PLAN_LEGAL_VANILLA_2026-09-07). Doce más, y el total del sitio pasa
+ * a 33.
+ *
+ * TABLA SEPARADA A PROPÓSITO (DA-LG-6). `VIEW_SLUGS` es el contrato del menú
+ * principal —siete vistas, ni una más— y hay pruebas que lo fijan así. Las
+ * páginas legales viven en el pie, no en el menú: mezclarlas en la misma tabla
+ * habría obligado a relajar ese contrato, que es justo lo que no interesa.
+ * Para resolver rutas se usan las dos juntas; para hablar del menú, solo la
+ * primera.
+ *
+ * Cambiar un valor de aquí rompe enlaces ya repartidos: se añade un alias,
+ * nunca se sustituye.
+ */
+export const LEGAL_VIEW_SLUGS = Object.freeze({
+  'aviso-legal':   Object.freeze({ es: 'aviso-legal',            en: 'legal-notice',   va: 'avis-legal' }),
+  'privacidad':    Object.freeze({ es: 'politica-de-privacidad', en: 'privacy-policy', va: 'politica-de-privacitat' }),
+  'cookies':       Object.freeze({ es: 'politica-de-cookies',    en: 'cookie-policy',  va: 'politica-de-cookies' }),
+  'accesibilidad': Object.freeze({ es: 'accesibilidad',          en: 'accessibility',  va: 'accessibilitat' }),
+});
+
+/**
+ * Las 33 rutas del sitio: las siete del menú y las cuatro legales. Es la tabla
+ * que se usa para resolver y para construir enlaces, porque una página legal se
+ * enlaza igual que cualquier otra.
+ */
+export const ALL_VIEW_SLUGS = Object.freeze({ ...VIEW_SLUGS, ...LEGAL_VIEW_SLUGS });
+
+/**
  * Longitud máxima del hash que se acepta procesar, contando la almohadilla
  * (amenaza T6). El canónico más largo mide 27 caracteres
  * (`#va/comunitat-de-practica`); 128 deja holgura de sobra para los slugs que
@@ -78,7 +107,9 @@ function construirIndice(tabla) {
   return { canonicos, alias };
 }
 
-const INDICE_POR_DEFECTO = construirIndice(VIEW_SLUGS);
+// Las 33 rutas, no solo las siete del menú: quien abre un enlace a la política
+// de privacidad merece la misma resolución que quien abre uno a Sectores.
+const INDICE_POR_DEFECTO = construirIndice(ALL_VIEW_SLUGS);
 
 /**
  * Decodifica una única vez y falla cerrado si el valor está mal formado o si
@@ -168,7 +199,7 @@ export function parseViewRoute(hash, tabla) {
  * @returns {string|null} '#es/sectores', o `null` si la combinación no existe.
  */
 export function formatViewRoute(view, lang, _params, tabla) {
-  const fuente = tabla || VIEW_SLUGS;
+  const fuente = tabla || ALL_VIEW_SLUGS;
   if (!Object.prototype.hasOwnProperty.call(fuente, view)) return null;
   if (!LANGS.includes(lang)) return null;
 

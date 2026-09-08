@@ -433,3 +433,74 @@ textarea:focus-visible,
   outline: 3px solid var(--rd-blue) !important;
   outline-offset: 3px !important;
 }
+
+/* ─── PÁGINAS LEGALES (LG-6) ──────────────────────────────────────────────── */
+/* El HTML de estos documentos lo genera el build a partir de markdown: son
+   etiquetas desnudas (h2, h3, p, ul, li, blockquote) sin ninguna clase, así que
+   la tipografía tiene que venir de aquí. Acotado a .rd-legal-prose para no
+   afectar a ninguna otra parte del sitio.
+   Cuerpo mínimo text-lg (1.125rem) por decisión humana del rediseño v3. */
+.rd-legal-title {
+  font-size: clamp(2rem, 4vw, 2.625rem);
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  font-weight: 800;
+  color: var(--rd-purple);
+}
+
+.rd-legal-stamp {
+  margin-top: .75rem;
+  font-size: .9375rem;
+  color: #4b5563;               /* gray-600: 7,44:1 sobre el canvas (P-28) */
+}
+
+.rd-legal-prose {
+  margin-top: 2.5rem;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #374151;               /* gray-700 */
+}
+
+.rd-legal-prose h2 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--rd-purple);
+  margin-top: 2.5rem;
+  margin-bottom: .75rem;
+}
+
+.rd-legal-prose h3 {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-top: 1.75rem;
+  margin-bottom: .5rem;
+}
+
+.rd-legal-prose p { margin-bottom: 1rem; }
+
+.rd-legal-prose ul,
+.rd-legal-prose ol {
+  margin: 0 0 1rem 1.5rem;
+  padding-left: .25rem;
+}
+.rd-legal-prose ul { list-style: disc; }
+.rd-legal-prose ol { list-style: decimal; }
+.rd-legal-prose li { margin-bottom: .375rem; }
+
+.rd-legal-prose blockquote {
+  margin: 1.25rem 0;
+  padding: .75rem 1.25rem;
+  border-left: 4px solid var(--rd-purple);
+  background: #FFF4E1;          /* Sand Beige, solo como acento */
+  border-radius: .5rem;
+}
+
+/* Enlaces: subrayados de verdad, no distinguidos solo por color (WCAG 1.4.1). */
+.rd-legal-prose a {
+  color: var(--rd-purple);
+  text-decoration: underline;
+  text-underline-offset: .15em;
+}
+.rd-legal-prose a:hover { text-decoration-thickness: 2px; }

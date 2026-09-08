@@ -21,6 +21,9 @@ const EXPECTED_ESC_VIEWS = [
   'assets/js/views/governance.js',
   'assets/js/views/home.js',
   'assets/js/views/knowledge.js',
+  // LG-6: la vista legal importa el escapado común, no una copia propia. Que
+  // aparezca en esta lista es exactamente lo que exige TDD-L12.
+  'assets/js/views/legal.js',
   'assets/js/views/marketplace.js',
   'assets/js/views/network.js',
   'assets/js/views/sectors.js',
@@ -35,7 +38,13 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // prueba siguen idénticas a la línea base VAN-0.1 —interpolaciones, sinks,
   // hrefs y vistas—, y el módulo nuevo no aparece en ninguna de ellas porque no
   // renderiza nada. Verificado contra el tag salvaguardia/pre-deeplink-2026-09-07.
-  assert.equal(report.scannedFiles, 21);
+  // LG-6: 23 y no 21 por dos ficheros nuevos, assets/js/views/legal.js y
+  // assets/js/utils/sanitize-legal-html.js. Es un recuento de ficheros, no de
+  // superficie: las cifras de interpolaciones, hrefs y sinks siguen idénticas
+  // —la vista legal no usa pickLang, no construye ningún href dinámico y no
+  // escribe en el DOM—. Lo único que sí se mueve es el total de vistas y la
+  // lista de las que importan el escapado común, más abajo.
+  assert.equal(report.scannedFiles, 23);
   assert.equal(report.pickLangInterpolations.unescaped, 11);
   assert.equal(report.pickLangInterpolations.escaped, 130);
   assert.deepEqual(
@@ -43,7 +52,8 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
     EXPECTED_PER_FILE,
   );
 
-  assert.equal(report.viewsTotal, 9);
+  // LG-6: la décima vista es legal.js, la de las cuatro páginas legales.
+  assert.equal(report.viewsTotal, 10);
   assert.deepEqual(report.viewsDefiningEsc, []);
   assert.deepEqual(report.viewsImportingEscapeHtml, EXPECTED_ESC_VIEWS);
   assert.equal(report.dynamicHrefs.editorialCount, 23);
