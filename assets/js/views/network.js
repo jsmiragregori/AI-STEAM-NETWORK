@@ -204,7 +204,7 @@ function tabSocios(activeCategory, filterCountry) {
           ? `<a href="${esc(safePartnerUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">
           <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(visitLabel)}
         </a>`
-          : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-400">
+          : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-500">
           <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(visitLabel)}
         </span>`}
       </div>`;
@@ -392,7 +392,7 @@ function tabStakeholders(activeCategory, showForm) {
           <div class="flex items-center gap-2">
             <input type="checkbox" id="net-gdpr" class="rounded" style="border:1px solid rgb(73 24 173/.2)" />
             <label for="net-gdpr" class="text-sm text-gray-600">
-              ${esc(loc(f.acceptTerms))} <a href="#" class="text-eu-blue hover:underline">${esc(loc(f.privacyPolicy))}</a> ${esc(loc(f.rgpd))}
+              ${esc(loc(f.acceptTerms))} <a class="text-eu-blue hover:underline">${esc(loc(f.privacyPolicy))}</a> ${esc(loc(f.rgpd))}
             </label>
           </div>
           <div class="flex justify-end">
@@ -490,6 +490,7 @@ function tabStakeholders(activeCategory, showForm) {
       <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
       <input id="net-search"
         type="search"
+        aria-label="${esc(shTexts.searchPlaceholder)}"
         value="${esc(getState('networkSearch') || '')}"
         placeholder="${esc(shTexts.searchPlaceholder)}"
         class="w-full sm:w-72 rounded-full pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="background:#fff;border:1px solid rgb(73 24 173/.2)" />
@@ -567,7 +568,7 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
           <a href="${esc(safeWebsite)}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1 text-sm text-eu-blue font-bold hover:text-eu-purple transition-colors">
             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(shTexts.visitWebLabel)}
           </a>` : `
-          <span class="mt-3 inline-flex items-center gap-1 text-sm text-gray-400 font-bold">
+          <span class="mt-3 inline-flex items-center gap-1 text-sm text-gray-500 font-bold">
             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(shTexts.visitWebLabel)}
           </span>`;
 

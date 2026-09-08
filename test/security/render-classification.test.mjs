@@ -122,12 +122,24 @@ test('VAN-3B.2.2 demuestra el destino seguro de las siete excepciones de V1', as
 test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async () => {
   const { indirectOutputCandidates } = await generateClassification();
 
-  assert.equal(indirectOutputCandidates.total, 170);
+  // LG-6: 171 y no 170 por una sola candidata nueva, `${sello}` en la vista
+  // legal (línea del sello de versión y fecha). No es una salida sin proteger:
+  // `sello` se compone en la propia función a partir de esc() sobre cada parte
+  // —versión, etiqueta y fecha—, y por eso llega ya escapada al interpolarse.
+  // Es el mismo patrón COMPOSICION_CADENA ya admitido en marketplace.
+  // LG-7 y LG-8: 174 y no 171. Dos salidas del pie -el rótulo del enlace y el
+  // del rótulo sin enlace, ambos `esc(t(clave))`, ya escapados- y una del aviso
+  // de cookies: `enlace`, un fragmento de marcado que construye el propio
+  // componente con `esc()` sobre el href y sobre el texto.
+  assert.equal(indirectOutputCandidates.total, 174);
   assert.deepEqual(indirectOutputCandidates.byFile, {
+    'assets/js/components/cookie-notice.js': 1,
+    'assets/js/components/footer.js': 2,
     'assets/js/components/header.js': 4,
     'assets/js/views/governance.js': 25,
     'assets/js/views/home.js': 18,
     'assets/js/views/knowledge.js': 18,
+    'assets/js/views/legal.js': 1,
     'assets/js/views/marketplace.js': 19,
     'assets/js/views/network.js': 37,
     'assets/js/views/news.js': 34,

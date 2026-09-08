@@ -1,7 +1,7 @@
 import { renderHeader, mountHeader } from './components/header.js';
 import { renderFooter, mountFooter } from './components/footer.js';
-import { renderCookieBanner, mountCookieBanner } from './components/cookie-banner.js';
-import { getActiveView, readRoute, setActiveView, syncView } from './router.js';
+import { renderCookieNotice, mountCookieNotice } from './components/cookie-notice.js';
+import { getActiveView, isInPageAnchor, readRoute, setActiveView, syncView } from './router.js';
 import { applyLanguage, getLanguage } from './i18n.js';
 import * as views from './views/index.js';
 import { formatViewRoute, planHashChange } from './utils/view-route.js';
@@ -21,6 +21,12 @@ const VIEW_MAP = {
   'formacion': views.formacion,
   'conocimiento': views.conocimiento,
   'gobernanza': views.gobernanza,
+  // Secundarias: páginas legales (LG-6). Se pintan igual que cualquier otra
+  // vista; lo único que no hacen es aparecer en el menú principal.
+  'aviso-legal': views.avisoLegal,
+  'privacidad': views.privacidad,
+  'cookies': views.cookies,
+  'accesibilidad': views.accesibilidad,
 };
 
 export function renderApp() {
@@ -28,15 +34,16 @@ export function renderApp() {
   const view = VIEW_MAP[activeView];
 
   document.getElementById('header-root').innerHTML = renderHeader();
-  document.getElementById('main-root').innerHTML = view?.render?.() ?? '<p class="p-8 text-gray-400">Vista no encontrada</p>';
+  document.getElementById('main-root').innerHTML = view?.render?.() ?? '<p class="p-8 text-gray-500">Vista no encontrada</p>';
   document.getElementById('footer-root').innerHTML = renderFooter();
 
-  // Cookie banner: insertar solo si no existe ya
-  if (!document.getElementById('cookie-banner')) {
-    const bannerHtml = renderCookieBanner();
-    if (bannerHtml) {
-      document.body.insertAdjacentHTML('beforeend', bannerHtml);
-      mountCookieBanner();
+  // Aviso de cookies (LG-8): informativo, no de consentimiento. Se inserta solo
+  // si no está ya puesto; una vez cerrado, renderCookieNotice devuelve ''.
+  if (!document.getElementById('cookie-notice')) {
+    const avisoHtml = renderCookieNotice();
+    if (avisoHtml) {
+      document.body.insertAdjacentHTML('beforeend', avisoHtml);
+      mountCookieNotice();
     }
   }
 
@@ -44,7 +51,11 @@ export function renderApp() {
   mountFooter();
   view?.mount?.();
 
-  if (window.lucide) window.lucide.createIcons();
+  // Los iconos son decorativos: el texto que acompañan ya dice lo que hay que
+  // saber, y un lector de pantalla que los anuncie solo añade ruido (criterio
+  // 1.1.1). Se marcan al generarlos, en un único punto, y no icono a icono en
+  // las vistas: así lo hereda también cualquier icono que se añada mañana.
+  if (window.lucide) window.lucide.createIcons({ attrs: { 'aria-hidden': 'true', focusable: 'false' } });
 }
 
 // Back/forward del navegador entre vistas de nivel superior. Los detalles
@@ -60,6 +71,11 @@ window.addEventListener('popstate', (e) => {
 // listener solo actúa si cambia algo de verdad —la vista o el idioma—: sin esa
 // comparación, una misma navegación se pintaría dos veces (§6.4).
 window.addEventListener('hashchange', () => {
+  // Un ancla dentro de la página —el salto al contenido principal— no es una
+  // navegación: el navegador ya la resuelve desplazándose. Si el router actuara,
+  // se llevaría a Inicio a quien solo quería saltar la cabecera.
+  if (isInPageAnchor()) return;
+
   const ruta = readRoute();
   // Se comparan vista E idioma. Comparar solo la vista dejaba sin efecto el
   // caso que encontró Salva en DL-5: editar el hash a mano para pasar de

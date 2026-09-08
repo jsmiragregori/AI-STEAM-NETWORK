@@ -652,7 +652,7 @@ function tabDocumentos(govT) {
               <span>${esc(linkText)}</span>
               <i data-lucide="external-link" class="w-4 h-4"></i>
             </a>
-            ` : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-400"><i data-lucide="minus-circle" class="w-4 h-4"></i>${lang === 'en' ? 'No link' : lang === 'va' ? 'Sense enllaç' : 'Sin enlace'}</span>`}
+            ` : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-500"><i data-lucide="minus-circle" class="w-4 h-4"></i>${lang === 'en' ? 'No link' : lang === 'va' ? 'Sense enllaç' : 'Sin enlace'}</span>`}
           </div>
           </div>
         </div>
@@ -702,7 +702,7 @@ function tabDocumentos(govT) {
       </div>
       ` : ''}
       <div>
-        <input type="text" id="gov-doc-search" placeholder="Buscar por título, tipo o ID..." class="w-full px-6 py-4 rounded-full border border-eu-purple/20 focus:outline-none focus:ring-2 focus:ring-eu-purple focus:border-eu-purple text-eu-text placeholder-eu-text/40 shadow-sm transition-all text-sm mb-6" style="background:#ffffff" />
+        <input type="text" id="gov-doc-search" aria-label="Buscar por título, tipo o ID" placeholder="Buscar por título, tipo o ID..." class="w-full px-6 py-4 rounded-full border border-eu-purple/20 focus:outline-none focus:ring-2 focus:ring-eu-purple focus:border-eu-purple text-eu-text placeholder-eu-text/40 shadow-sm transition-all text-sm mb-6" style="background:#ffffff" />
         <div id="gov-docs-results">${renderDocs()}</div>
       </div>
     </div>

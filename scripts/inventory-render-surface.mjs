@@ -313,6 +313,13 @@ export function collectValidatedUrlIdentifiers(source) {
   let match;
   while ((match = declRe.exec(source))) ids.add(match[1]);
   if (/\bresolveMembershipAction\s*\(/.test(source)) ids.add('membershipAction.url');
+  // `formatViewRoute()` (LG-7, el pie) se acepta por la misma clase de
+  // afirmación sobre el cuerpo del helper: devuelve `null` o exactamente
+  // `#<idioma>/<slug>` construido desde una tabla congelada, y no hay camino por
+  // el que un valor de fuera llegue a su salida. No es una URL editorial: es una
+  // ruta interna del sitio, más acotada que cualquier validador de esquema.
+  const rutaRe = /(?:const|let|var)\s+([A-Za-z_$][\w$]*)\s*=\s*[^;]*?formatViewRoute\s*\(/g;
+  while ((match = rutaRe.exec(source))) ids.add(match[1]);
   return ids;
 }
 
@@ -531,8 +538,15 @@ export async function generateInventory() {
 
     // Las utilidades pueden construir marcado seguro como implementación
     // interna; esta métrica describe las plantillas que el sitio renderiza.
+    // El censo cubre TODOS los componentes, no una lista de ficheros.
+    //
+    // Antes solo miraba las vistas y `header.js`, que era el único componente
+    // con href dinámicos. LG-7 y LG-8 añadieron uno en el pie y otro en el aviso
+    // de cookies, y ninguno de los dos lo habría contado nadie. Enumerar
+    // ficheros deja el instrumento siempre un paso por detrás del código: lo que
+    // define la superficie es ser una plantilla que el sitio renderiza.
     const isRuntimeTemplate = relativePath.startsWith('assets/js/views/')
-      || relativePath === 'assets/js/components/header.js';
+      || relativePath.startsWith('assets/js/components/');
     if (isRuntimeTemplate) {
       const validatedIds = collectValidatedUrlIdentifiers(source);
       for (const hit of findDynamicHrefs(source, relativePath)) {

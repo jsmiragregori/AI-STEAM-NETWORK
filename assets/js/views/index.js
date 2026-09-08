@@ -5,6 +5,7 @@ import * as governance from './governance.js';
 import * as knowledge  from './knowledge.js';
 import * as network      from './network.js';
 import * as marketplace  from './marketplace.js';
+import { crearVistaLegal } from './legal.js';
 
 export const inicio       = home;
 export const red          = network;
@@ -13,3 +14,11 @@ export const bancoRetos   = marketplace;
 export const formacion    = training;
 export const conocimiento = knowledge;
 export const gobernanza   = governance;
+
+// Vistas secundarias (LG-6). No están en el menú: se llega a ellas por el pie o
+// por enlace directo. Las cuatro comparten vista y se distinguen por el
+// documento que pintan.
+export const avisoLegal    = crearVistaLegal('aviso-legal');
+export const privacidad    = crearVistaLegal('privacidad');
+export const cookies       = crearVistaLegal('cookies');
+export const accesibilidad = crearVistaLegal('accesibilidad');

@@ -288,13 +288,13 @@ function tabOER(search) {
         <div class="flex gap-3 items-center">
           <div class="relative">
             <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
-            <input id="oer-search" type="text" value="${esc(search || '')}"
+            <input id="oer-search" type="text" aria-label="${esc(searchPlh)}" value="${esc(search || '')}"
               class="rounded-full pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64" style="background:#fff;border:1px solid rgb(73 24 173/.2)"
               placeholder="${esc(searchPlh)}" />
             <button id="oer-search-clear"
               style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)"
               class="w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer ${search ? '' : 'hidden'}"
-              title="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
+              title="Borrar búsqueda" aria-label="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
           </div>
         </div>
       </div>
@@ -529,7 +529,7 @@ function renderOerGridContent(search) {
         <!-- Author + Metadata (compact) -->
         <div class="mb-4 pb-4 border-b border-eu-purple/10">
           <div class="text-base text-gray-800 font-bold mb-1">
-            ${r.author ? esc(r.author) : `<span class="text-gray-400">${esc(getOerLabel('noAuthor'))}</span>`}
+            ${r.author ? esc(r.author) : `<span class="text-gray-500">${esc(getOerLabel('noAuthor'))}</span>`}
           </div>
           <div class="text-sm text-gray-500 flex gap-2 flex-wrap items-center">
             ${r.license ? `<span>${esc(r.license)}</span>` : ''}
@@ -562,7 +562,7 @@ function renderOerGridContent(search) {
             return `<i data-lucide="${icons[status] || 'check-circle'}" class="w-3.5 h-3.5"></i>${esc(getStatusLabel(status))}`;
           })()}
         </button>` : '<span></span>'}
-        ${rUrl ? `<a href="${esc(rUrl)}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-400 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</span>`}
+        ${rUrl ? `<a href="${esc(rUrl)}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-500 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</span>`}
       </div>
     </div>
   `}).join('');
@@ -770,13 +770,13 @@ function tabPlantillas(search) {
         <div class="flex gap-3 items-center">
           <div class="relative">
             <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
-            <input id="tmpl-search" type="text" value="${esc(search || '')}"
+            <input id="tmpl-search" type="text" aria-label="${esc(searchPlh)}" value="${esc(search || '')}"
               class="rounded-full pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64" style="background:#fff;border:1px solid rgb(73 24 173/.2)"
               placeholder="${esc(searchPlh)}" />
             <button id="tmpl-search-clear"
               style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)"
               class="w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer ${search ? '' : 'hidden'}"
-              title="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
+              title="Borrar búsqueda" aria-label="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
           </div>
         </div>
       </div>
@@ -937,7 +937,7 @@ function renderTemplatesGridContent(search) {
           ? `<a href="${esc(safeTplUrl)}" ${targetAttr} class="flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:text-eu-purple transition-colors cursor-pointer">
           <i data-lucide="${btnIcon}" class="w-3.5 h-3.5"></i>${esc(btnLabel)}
         </a>`
-          : `<span class="flex items-center gap-1.5 text-gray-400 text-sm font-bold">
+          : `<span class="flex items-center gap-1.5 text-gray-500 text-sm font-bold">
           <i data-lucide="${btnIcon}" class="w-3.5 h-3.5"></i>${esc(btnLabel)}
         </span>`}
       </div>

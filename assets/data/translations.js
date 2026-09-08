@@ -2,7 +2,7 @@
 // Este archivo ES la base: las claves que no están en content/_ui/*.csv solo
 // viven aquí y pueden editarse directamente. Las claves presentes en los CSV
 // se sobreescriben en cada cms:ui — esas se editan en el CSV.
-// Base: translations.js existente + overrides de 86 entradas CSV
+// Base: translations.js existente + overrides de 94 entradas CSV
 
 export const translations = {
   "es": {
@@ -28,10 +28,13 @@ export const translations = {
       "fundedBy": "Financiado por la",
       "europeanUnion": "Unión Europea",
       "accessibility": "Accesibilidad",
-      "privacy": "Privacidad y cookies",
+      "privacy": "Privacidad",
       "sitemap": "Mapa Web",
       "orgName": "Generalitat Valenciana",
-      "orgUnit": "Conselleria de Educación, Cultura y Universidades"
+      "orgUnit": "Conselleria de Educación, Cultura y Universidades",
+      "legalNav": "Enlaces legales",
+      "legalNotice": "Aviso legal",
+      "cookies": "Cookies"
     },
     "cookieBanner": {
       "legal": "Aviso Legal:",
@@ -1889,6 +1892,18 @@ export const translations = {
         "Acepto las normas básicas de participación de la AI-STEAM Network.",
         "Acepto el tratamiento de datos necesario para gestionar la solicitud."
       ]
+    },
+    "legal": {
+      "version": "Versión",
+      "updated": "Última actualización:",
+      "unavailable": "Este documento no está disponible en el idioma seleccionado."
+    },
+    "cookieNotice": {
+      "title": "Sobre sus datos y este sitio",
+      "text": "Este sitio no instala cookies. Solo guarda en su navegador las preferencias que usted elige -el idioma y los filtros- para que se las encuentre la próxima vez. Nunca se envían al servidor.",
+      "more": "Política de cookies",
+      "dismiss": "Entendido",
+      "close": "Cerrar el aviso"
     }
   },
   "en": {
@@ -1914,10 +1929,13 @@ export const translations = {
       "fundedBy": "Funded by",
       "europeanUnion": "European Union",
       "accessibility": "Accessibility",
-      "privacy": "Privacy and cookies",
+      "privacy": "Privacy",
       "sitemap": "Sitemap",
       "orgName": "Generalitat Valenciana",
-      "orgUnit": "Education, Culture and Universities Ministry"
+      "orgUnit": "Education, Culture and Universities Ministry",
+      "legalNav": "Legal links",
+      "legalNotice": "Legal notice",
+      "cookies": "Cookies"
     },
     "cookieBanner": {
       "legal": "Legal Notice:",
@@ -3775,6 +3793,18 @@ export const translations = {
         "I accept the basic participation rules of the AI-STEAM Network.",
         "I accept the data processing necessary to manage the request."
       ]
+    },
+    "legal": {
+      "version": "Version",
+      "updated": "Last updated:",
+      "unavailable": "This document is not available in the selected language."
+    },
+    "cookieNotice": {
+      "title": "About your data and this site",
+      "text": "This site sets no cookies. It only stores in your browser the preferences you choose -language and filters- so you find them next time. They are never sent to the server.",
+      "more": "Cookie policy",
+      "dismiss": "Got it",
+      "close": "Close this notice"
     }
   },
   "va": {
@@ -3800,10 +3830,13 @@ export const translations = {
       "fundedBy": "Finançat per la",
       "europeanUnion": "Unió Europea",
       "accessibility": "Accessibilitat",
-      "privacy": "Privacitat i cookies",
+      "privacy": "Privacitat",
       "sitemap": "Mapa Web",
       "orgName": "Generalitat Valenciana",
-      "orgUnit": "Conselleria d'Educació, Cultura i Universitats"
+      "orgUnit": "Conselleria d'Educació, Cultura i Universitats",
+      "legalNav": "Enllaços legals",
+      "legalNotice": "Avís legal",
+      "cookies": "Cookies"
     },
     "cookieBanner": {
       "legal": "Avís Legal:",
@@ -5658,6 +5691,18 @@ export const translations = {
         "Accepte les normes bàsiques de participació de l'AI-STEAM Network.",
         "Accepte el tractament de dades necessari per gestionar la sol·licitud."
       ]
+    },
+    "legal": {
+      "version": "Versió",
+      "updated": "Última actualització:",
+      "unavailable": "Aquest document no està disponible en l'idioma seleccionat."
+    },
+    "cookieNotice": {
+      "title": "Sobre les seues dades i aquest lloc",
+      "text": "Aquest lloc no instal·la cookies. Només guarda en el seu navegador les preferències que vosté tria -l'idioma i els filtres- perquè se les trobe la pròxima vegada. Mai s'envien al servidor.",
+      "more": "Política de cookies",
+      "dismiss": "Entesos",
+      "close": "Tancar l'avís"
     }
   }
 };

@@ -28,7 +28,9 @@ function langBtn(language, lang) {
   const code = language.code;
   const label = language.label || code.toUpperCase();
   const active = lang === code;
-  return `<button data-lang="${esc(code)}" lang="${esc(language.bcp47 || code)}" aria-label="Cambiar idioma a ${esc(label)}" class="cursor-pointer font-bold transition-all whitespace-nowrap" style="min-height:44px;min-width:2rem;font-size:0.8125rem;padding:.25rem .625rem;border-radius:.4rem;background:${active ? 'rgba(255,255,255,0.2)' : 'transparent'};color:${active ? '#FFF4E1' : 'rgba(255,244,225,0.6)'}"
+  // `aria-pressed` dice el estado a quien no ve el color de fondo (criterios
+  // 1.4.1 y 4.1.2). Sin él, el idioma activo solo se distinguía por color.
+  return `<button data-lang="${esc(code)}" lang="${esc(language.bcp47 || code)}" aria-pressed="${active}" aria-label="Cambiar idioma a ${esc(label)}" class="cursor-pointer font-bold transition-all whitespace-nowrap" style="min-height:44px;min-width:2rem;font-size:0.8125rem;padding:.25rem .625rem;border-radius:.4rem;background:${active ? 'rgba(255,255,255,0.2)' : 'transparent'};color:${active ? '#FFF4E1' : 'rgba(255,244,225,0.75)'}"
     onmouseover="if(!${active})this.style.background='rgba(255,255,255,0.1)'"
     onmouseout="if(!${active})this.style.background='transparent'"
   >${esc(label)}</button>`;
@@ -38,8 +40,11 @@ function langBtnMobile(language, lang) {
   const code = language.code;
   const label = language.label || code.toUpperCase();
   const active = lang === code;
-  return `<button data-lang="${esc(code)}" lang="${esc(language.bcp47 || code)}" class="flex-1 px-3 py-2 rounded font-bold transition-all min-h-10 flex items-center justify-center text-sm ${
-    active ? 'bg-eu-yellow text-eu-blue shadow-lg' : 'bg-white/40 text-white hover:bg-white/60 active:bg-white/50'
+  return `<button data-lang="${esc(code)}" lang="${esc(language.bcp47 || code)}" aria-pressed="${active}" aria-label="Cambiar idioma a ${esc(label)}" class="flex-1 px-3 py-2 rounded font-bold transition-all min-h-10 flex items-center justify-center text-sm ${
+    // El inactivo era blanco sobre `white/40` encima de #5620F6: 3,24:1, por
+    // debajo del 4,5:1 que exige 1.4.3. Sin fondo son 7,2:1, y el hover a
+    // `white/20` sigue en 5,0:1. El activo (#FFF4E1 sobre azul) ya daba 6,6:1.
+    active ? 'bg-eu-yellow text-eu-blue shadow-lg' : 'text-white hover:bg-white/20 active:bg-white/10'
   }">${esc(label)}</button>`;
 }
 
@@ -117,7 +122,7 @@ export function renderHeader() {
 
         <!-- Hamburger (responsive controlado en redesign.css: rd-nav-toggle) -->
         <button id="mobile-menu-toggle" style="min-height:44px;min-width:44px" class="rd-nav-toggle p-2 rounded hover:bg-gray-100 transition-colors items-center justify-center" aria-label="Toggle menu">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-6 h-6" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${hamburgerPath}"/>
           </svg>
         </button>

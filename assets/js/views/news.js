@@ -162,12 +162,12 @@ export function render() {
         </div>
         <div class="flex-1 min-w-0">
           <h4 class="font-extrabold text-sm text-eu-text mb-1 leading-snug hover:text-eu-blue transition-colors cursor-pointer">${event.title}</h4>
-          <p class="text-xs text-gray-400 flex items-center gap-1 mb-2">
+          <p class="text-xs text-gray-500 flex items-center gap-1 mb-2">
             <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${event.location}
           </p>
           <div class="flex items-center justify-between">
             <span class="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${getTypeColor(event.type)}">${event.type}</span>
-            ${event.register ? `<a href="#" class="text-xs font-bold text-eu-blue hover:text-eu-purple transition-colors flex items-center gap-1">${newsT?.register || ''} <i data-lucide="external-link" class="w-3 h-3"></i></a>` : ''}
+            ${event.register ? `<a class="text-xs font-bold text-eu-blue hover:text-eu-purple transition-colors flex items-center gap-1">${newsT?.register || ''} <i data-lucide="external-link" class="w-3 h-3"></i></a>` : ''}
           </div>
         </div>
       </div>
@@ -189,7 +189,7 @@ export function render() {
   ].filter(l => l.label).map(l => {
     const iconSvg = socialIconMap[l.key] || '<i data-lucide="external-link" class="w-5 h-5 shrink-0"></i>';
     return `
-      <a href="#" class="flex items-center justify-between w-full p-4 rounded-full text-sm hover:bg-white hover:text-eu-purple hover:scale-[1.02] transition-all font-bold shadow-sm border-none" style="background:#FFF4E1;color:#4918AD">
+      <a class="flex items-center justify-between w-full p-4 rounded-full text-sm hover:bg-white hover:text-eu-purple hover:scale-[1.02] transition-all font-bold shadow-sm border-none" style="background:#FFF4E1;color:#4918AD">
         <span class="flex items-center gap-3">
           ${iconSvg}
           <span>${l.label}</span>
@@ -265,7 +265,7 @@ export function render() {
                 </div>
                 <ul class="divide-y divide-eu-purple/10 pl-4">${eventsHtml}</ul>
                 <div class="p-4 bg-eu-purple/5 rounded-b-[2rem] text-center border-t border-eu-purple/10">
-                  <a href="#" class="text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">${newsT?.viewFullCalendar || ''}</a>
+                  <a class="text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">${newsT?.viewFullCalendar || ''}</a>
                 </div>
               </div>
 
@@ -304,7 +304,7 @@ export function render() {
 
 function renderDetail(newsT) {
   const detail = newsT?.newsDetail;
-  if (!detail) return '<div class="p-12 text-center text-gray-400">No detail available</div>';
+  if (!detail) return '<div class="p-12 text-center text-gray-500">No detail available</div>';
 
   const { news } = getNewsAndEvents(newsT);
   const selectedId = getState('selectedNewsId');
@@ -386,7 +386,7 @@ function renderDetail(newsT) {
           <!-- Share -->
           <div class="mt-12 pt-8 border-t border-eu-blue/10">
             <div class="flex items-center justify-between">
-              <span class="text-sm text-gray-400 font-bold uppercase tracking-wider">${newsT?.shareArticle || 'Compartir esta noticia'}</span>
+              <span class="text-sm text-gray-500 font-bold uppercase tracking-wider">${newsT?.shareArticle || 'Compartir esta noticia'}</span>
               <div class="flex items-center gap-3">
                 <button class="p-3 bg-eu-blue/5 hover:bg-eu-blue/10 text-eu-blue rounded-full transition-all border border-eu-blue/10 cursor-pointer">
                   <i data-lucide="share-2" class="w-4.5 h-4.5"></i>
