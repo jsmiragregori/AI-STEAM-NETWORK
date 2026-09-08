@@ -1,6 +1,6 @@
 import { renderHeader, mountHeader } from './components/header.js';
 import { renderFooter, mountFooter } from './components/footer.js';
-import { renderCookieBanner, mountCookieBanner } from './components/cookie-banner.js';
+import { renderCookieNotice, mountCookieNotice } from './components/cookie-notice.js';
 import { getActiveView, isInPageAnchor, readRoute, setActiveView, syncView } from './router.js';
 import { applyLanguage, getLanguage } from './i18n.js';
 import * as views from './views/index.js';
@@ -37,12 +37,13 @@ export function renderApp() {
   document.getElementById('main-root').innerHTML = view?.render?.() ?? '<p class="p-8 text-gray-400">Vista no encontrada</p>';
   document.getElementById('footer-root').innerHTML = renderFooter();
 
-  // Cookie banner: insertar solo si no existe ya
-  if (!document.getElementById('cookie-banner')) {
-    const bannerHtml = renderCookieBanner();
-    if (bannerHtml) {
-      document.body.insertAdjacentHTML('beforeend', bannerHtml);
-      mountCookieBanner();
+  // Aviso de cookies (LG-8): informativo, no de consentimiento. Se inserta solo
+  // si no está ya puesto; una vez cerrado, renderCookieNotice devuelve ''.
+  if (!document.getElementById('cookie-notice')) {
+    const avisoHtml = renderCookieNotice();
+    if (avisoHtml) {
+      document.body.insertAdjacentHTML('beforeend', avisoHtml);
+      mountCookieNotice();
     }
   }
 

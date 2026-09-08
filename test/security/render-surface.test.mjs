@@ -56,20 +56,22 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   assert.equal(report.viewsTotal, 10);
   assert.deepEqual(report.viewsDefiningEsc, []);
   assert.deepEqual(report.viewsImportingEscapeHtml, EXPECTED_ESC_VIEWS);
-  // LG-7: 24 y no 23 por el enlace del pie a las páginas legales, y porque el
-  // censo pasa a mirar también `footer.js`, que hasta ahora no emitía ninguno.
-  // Ese href no es editorial: lo construye `formatViewRoute()` desde la tabla
-  // de slugs congelada, y por eso cuenta como validado (ver
+  // LG-7 y LG-8: 25 y no 23. Dos enlaces nuevos -el del pie a las páginas
+  // legales y el del aviso de cookies a su política- y un censo que pasa a
+  // cubrir TODOS los componentes en vez de una lista de ficheros, porque
+  // enumerarlos dejaba el instrumento un paso por detrás del código.
+  // Ninguno de los dos es editorial: los construye `formatViewRoute()` desde la
+  // tabla de slugs congelada, y por eso cuentan como validados (ver
   // `collectValidatedUrlIdentifiers`).
-  assert.equal(report.dynamicHrefs.editorialCount, 24);
+  assert.equal(report.dynamicHrefs.editorialCount, 25);
   // VAN-3B.2.1: los 23 pasan por getSafeEditorialUrl(), incluidos los dos de
   // Header que V9 demostró editoriales. El invariante que importa
   // es que no quede ninguno sin validar, no que sigan siendo 23: si alguien
   // añade el enlace 22 sin cablearlo, esta lista deja de estar vacía.
   assert.deepEqual(report.dynamicHrefs.editorialUnvalidated, []);
-  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 24);
+  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 25);
   assert.equal(report.dynamicHrefs.nonEditorialCount, 0);
-  assert.equal(report.dynamicHrefs.total, 24);
+  assert.equal(report.dynamicHrefs.total, 25);
   // VAN-2.3: 21 y no 16 por dos ampliaciones de la medición: los
   // `target="${…}"` calculados, antes invisibles, y el ancla que emite
   // `sanitize-editorial-html.js`, antes fuera de alcance. El invariante —que la

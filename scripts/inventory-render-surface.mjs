@@ -538,12 +538,15 @@ export async function generateInventory() {
 
     // Las utilidades pueden construir marcado seguro como implementación
     // interna; esta métrica describe las plantillas que el sitio renderiza.
-    // LG-7 añade el pie: desde que enlaza con las páginas legales emite un href
-    // dinámico, y dejarlo fuera del censo sería un punto ciego -el siguiente
-    // href que alguien añadiera ahí no lo contaría nadie-.
+    // El censo cubre TODOS los componentes, no una lista de ficheros.
+    //
+    // Antes solo miraba las vistas y `header.js`, que era el único componente
+    // con href dinámicos. LG-7 y LG-8 añadieron uno en el pie y otro en el aviso
+    // de cookies, y ninguno de los dos lo habría contado nadie. Enumerar
+    // ficheros deja el instrumento siempre un paso por detrás del código: lo que
+    // define la superficie es ser una plantilla que el sitio renderiza.
     const isRuntimeTemplate = relativePath.startsWith('assets/js/views/')
-      || relativePath === 'assets/js/components/header.js'
-      || relativePath === 'assets/js/components/footer.js';
+      || relativePath.startsWith('assets/js/components/');
     if (isRuntimeTemplate) {
       const validatedIds = collectValidatedUrlIdentifiers(source);
       for (const hit of findDynamicHrefs(source, relativePath)) {

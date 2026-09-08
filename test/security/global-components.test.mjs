@@ -12,7 +12,7 @@ test('los componentes globales escapan contenido editorial y Header falla cerrad
   const { translations } = await import('../../assets/data/translations.js');
   const { renderHeader } = await import('../../assets/js/components/header.js');
   const { renderFooter } = await import('../../assets/js/components/footer.js');
-  const { renderCookieBanner } = await import('../../assets/js/components/cookie-banner.js');
+  const { renderCookieNotice } = await import('../../assets/js/components/cookie-notice.js');
 
   const button = HEADER_CONFIG.buttons[0];
   const language = HEADER_CONFIG.languages[0];
@@ -23,7 +23,7 @@ test('los componentes globales escapan contenido editorial y Header falla cerrad
     navId: navIdItem.id,
     navText: translations.es.nav.inicio,
     footerText: translations.es.footer.fundedBy,
-    cookieText: translations.es.cookieBanner.text,
+    cookieText: translations.es.cookieNotice.text,
   };
 
   try {
@@ -35,11 +35,11 @@ test('los componentes globales escapan contenido editorial y Header falla cerrad
     navIdItem.id = 'red" autofocus onfocus="window.__v10=5';
     translations.es.nav.inicio = '<img src=x onerror=window.__v10=6>';
     translations.es.footer.fundedBy = '<svg onload=window.__v10=7>';
-    translations.es.cookieBanner.text = '<img src=x onerror=window.__v10=8>';
+    translations.es.cookieNotice.text = '<img src=x onerror=window.__v10=8>';
 
     const header = renderHeader();
     const footer = renderFooter();
-    const cookies = renderCookieBanner();
+    const cookies = renderCookieNotice();
 
     assert.ok(!header.includes('javascript:window.__v9=1'), 'una URL rechazada no llega al DOM');
     assert.ok(!header.includes('<img src=x'), 'la traducción no crea un elemento img');
@@ -50,7 +50,7 @@ test('los componentes globales escapan contenido editorial y Header falla cerrad
       'los atributos editoriales no rompen sus comillas',
     );
     assert.ok(!footer.includes('<svg onload='), 'el pie no crea un elemento svg editorial');
-    assert.ok(!cookies.includes('<img src=x'), 'el banner no crea un elemento img editorial');
+    assert.ok(!cookies.includes('<img src=x'), 'el aviso no crea un elemento img editorial');
     assert.match(header, /&lt;img src=x onerror=window\.__v10=6&gt;/);
     assert.match(footer, /&lt;svg onload=window\.__v10=7&gt;/);
     assert.match(cookies, /&lt;img src=x onerror=window\.__v10=8&gt;/);
@@ -60,6 +60,6 @@ test('los componentes globales escapan contenido editorial y Header falla cerrad
     navIdItem.id = originals.navId;
     translations.es.nav.inicio = originals.navText;
     translations.es.footer.fundedBy = originals.footerText;
-    translations.es.cookieBanner.text = originals.cookieText;
+    translations.es.cookieNotice.text = originals.cookieText;
   }
 });

@@ -2,7 +2,7 @@
 // Este archivo ES la base: las claves que no están en content/_ui/*.csv solo
 // viven aquí y pueden editarse directamente. Las claves presentes en los CSV
 // se sobreescriben en cada cms:ui — esas se editan en el CSV.
-// Base: translations.js existente + overrides de 92 entradas CSV
+// Base: translations.js existente + overrides de 94 entradas CSV
 
 export const translations = {
   "es": {
@@ -1897,6 +1897,13 @@ export const translations = {
       "version": "Versión",
       "updated": "Última actualización:",
       "unavailable": "Este documento no está disponible en el idioma seleccionado."
+    },
+    "cookieNotice": {
+      "title": "Sobre sus datos y este sitio",
+      "text": "Este sitio no instala cookies. Solo guarda en su navegador las preferencias que usted elige -el idioma y los filtros- para que se las encuentre la próxima vez. Nunca se envían al servidor.",
+      "more": "Política de cookies",
+      "dismiss": "Entendido",
+      "close": "Cerrar el aviso"
     }
   },
   "en": {
@@ -3791,6 +3798,13 @@ export const translations = {
       "version": "Version",
       "updated": "Last updated:",
       "unavailable": "This document is not available in the selected language."
+    },
+    "cookieNotice": {
+      "title": "About your data and this site",
+      "text": "This site sets no cookies. It only stores in your browser the preferences you choose -language and filters- so you find them next time. They are never sent to the server.",
+      "more": "Cookie policy",
+      "dismiss": "Got it",
+      "close": "Close this notice"
     }
   },
   "va": {
@@ -5682,6 +5696,13 @@ export const translations = {
       "version": "Versió",
       "updated": "Última actualització:",
       "unavailable": "Aquest document no està disponible en l'idioma seleccionat."
+    },
+    "cookieNotice": {
+      "title": "Sobre les seues dades i aquest lloc",
+      "text": "Aquest lloc no instal·la cookies. Només guarda en el seu navegador les preferències que vosté tria -l'idioma i els filtres- perquè se les trobe la pròxima vegada. Mai s'envien al servidor.",
+      "more": "Política de cookies",
+      "dismiss": "Entesos",
+      "close": "Tancar l'avís"
     }
   }
 };
