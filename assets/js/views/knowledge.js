@@ -288,13 +288,13 @@ function tabOER(search) {
         <div class="flex gap-3 items-center">
           <div class="relative">
             <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
-            <input id="oer-search" type="text" value="${esc(search || '')}"
+            <input id="oer-search" type="text" aria-label="${esc(searchPlh)}" value="${esc(search || '')}"
               class="rounded-full pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64" style="background:#fff;border:1px solid rgb(73 24 173/.2)"
               placeholder="${esc(searchPlh)}" />
             <button id="oer-search-clear"
               style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)"
               class="w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer ${search ? '' : 'hidden'}"
-              title="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
+              title="Borrar búsqueda" aria-label="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
           </div>
         </div>
       </div>
@@ -770,13 +770,13 @@ function tabPlantillas(search) {
         <div class="flex gap-3 items-center">
           <div class="relative">
             <i data-lucide="search" class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"></i>
-            <input id="tmpl-search" type="text" value="${esc(search || '')}"
+            <input id="tmpl-search" type="text" aria-label="${esc(searchPlh)}" value="${esc(search || '')}"
               class="rounded-full pl-9 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue w-64" style="background:#fff;border:1px solid rgb(73 24 173/.2)"
               placeholder="${esc(searchPlh)}" />
             <button id="tmpl-search-clear"
               style="position:absolute;right:0.5rem;top:50%;transform:translateY(-50%)"
               class="w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer ${search ? '' : 'hidden'}"
-              title="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
+              title="Borrar búsqueda" aria-label="Borrar búsqueda"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
           </div>
         </div>
       </div>

@@ -261,7 +261,7 @@ function renderSearchControls(tab, trainingT) {
     <div class="flex flex-wrap items-center gap-4 mb-6">
       <div class="relative">
         <i data-lucide="search" class="w-5 h-5 text-eu-blue absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"></i>
-        <input id="tr-search" type="search" value="${esc(filters.search || '')}"
+        <input id="tr-search" type="search" aria-label="${esc(placeholder)}" value="${esc(filters.search || '')}"
           placeholder="${esc(placeholder)}"
           class="w-full sm:w-80 border border-eu-blue/10 rounded-full pl-11 pr-5 py-2.5 text-base focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white shadow-sm transition-all duration-300 placeholder:text-eu-text/40" />
       </div>

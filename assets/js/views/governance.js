@@ -702,7 +702,7 @@ function tabDocumentos(govT) {
       </div>
       ` : ''}
       <div>
-        <input type="text" id="gov-doc-search" placeholder="Buscar por título, tipo o ID..." class="w-full px-6 py-4 rounded-full border border-eu-purple/20 focus:outline-none focus:ring-2 focus:ring-eu-purple focus:border-eu-purple text-eu-text placeholder-eu-text/40 shadow-sm transition-all text-sm mb-6" style="background:#ffffff" />
+        <input type="text" id="gov-doc-search" aria-label="Buscar por título, tipo o ID" placeholder="Buscar por título, tipo o ID..." class="w-full px-6 py-4 rounded-full border border-eu-purple/20 focus:outline-none focus:ring-2 focus:ring-eu-purple focus:border-eu-purple text-eu-text placeholder-eu-text/40 shadow-sm transition-all text-sm mb-6" style="background:#ffffff" />
         <div id="gov-docs-results">${renderDocs()}</div>
       </div>
     </div>

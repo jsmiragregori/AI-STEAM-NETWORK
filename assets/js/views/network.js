@@ -490,6 +490,7 @@ function tabStakeholders(activeCategory, showForm) {
       <i data-lucide="search" class="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
       <input id="net-search"
         type="search"
+        aria-label="${esc(shTexts.searchPlaceholder)}"
         value="${esc(getState('networkSearch') || '')}"
         placeholder="${esc(shTexts.searchPlaceholder)}"
         class="w-full sm:w-72 rounded-full pl-9 pr-4 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="background:#fff;border:1px solid rgb(73 24 173/.2)" />
