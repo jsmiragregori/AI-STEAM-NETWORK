@@ -497,6 +497,16 @@ textarea:focus-visible,
   border-radius: .5rem;
 }
 
+/* Nombres técnicos -claves de almacenamiento- dentro del texto legal (LG-9). */
+.rd-legal-prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .9375em;
+  background: #FFF4E1;          /* Sand Beige, como acento */
+  border-radius: .25rem;
+  padding: .1em .35em;
+  word-break: break-word;
+}
+
 /* Enlaces: subrayados de verdad, no distinguidos solo por color (WCAG 1.4.1). */
 .rd-legal-prose a {
   color: var(--rd-purple);

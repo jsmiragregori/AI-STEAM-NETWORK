@@ -16,6 +16,9 @@ import { sanitizeWithAllowlist } from './sanitize-editorial-html.js';
  */
 export const ALLOWED_LEGAL_TAGS = new Set([
   'h2', 'h3', 'p', 'ul', 'ol', 'li', 'strong', 'em', 'a', 'blockquote',
+  // `code` (LG-9): la política de cookies enumera nombres de claves de
+  // almacenamiento. Va en las dos capas a la vez, como manda TL1.
+  'code',
 ]);
 
 /**
