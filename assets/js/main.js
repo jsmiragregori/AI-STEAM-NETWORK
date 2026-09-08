@@ -27,6 +27,7 @@ const VIEW_MAP = {
   'privacidad': views.privacidad,
   'cookies': views.cookies,
   'accesibilidad': views.accesibilidad,
+  'mapa-web': views.mapaWeb,
 };
 
 export function renderApp() {

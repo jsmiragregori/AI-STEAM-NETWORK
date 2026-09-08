@@ -131,7 +131,10 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
   // del rótulo sin enlace, ambos `esc(t(clave))`, ya escapados- y una del aviso
   // de cookies: `enlace`, un fragmento de marcado que construye el propio
   // componente con `esc()` sobre el href y sobre el texto.
-  assert.equal(indirectOutputCandidates.total, 174);
+  // SM-4: 176 con las dos del mapa web -la lista de entradas de un grupo y la
+  // de grupos-. Las dos son marcado que compone el propio fichero a partir de
+  // `esc()`: ni una sola cadena del CSV llega sin escapar.
+  assert.equal(indirectOutputCandidates.total, 176);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/cookie-notice.js': 1,
     'assets/js/components/footer.js': 2,
@@ -142,6 +145,7 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
     'assets/js/views/legal.js': 1,
     'assets/js/views/marketplace.js': 19,
     'assets/js/views/network.js': 37,
+    'assets/js/views/sitemap.js': 2,
     'assets/js/views/news.js': 34,
     'assets/js/views/sectors.js': 2,
     'assets/js/views/training.js': 13,

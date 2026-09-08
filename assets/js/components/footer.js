@@ -3,7 +3,7 @@ import { escapeHtml as esc } from '../utils/escape-html.js';
 import { formatViewRoute } from '../utils/view-route.js';
 
 /**
- * Los cuatro documentos legales, en el orden en que se leen (LG-7).
+ * Los enlaces del pie: los cuatro documentos legales y el mapa web (LG-7, SM-5).
  *
  * El destino NO se escribe aquí: se pide al enrutador con `formatViewRoute`,
  * que construye el enlace desde la tabla de slugs congelada. Escribir
@@ -16,6 +16,9 @@ const ENLACES_LEGALES = [
   { view: 'privacidad',    clave: 'footer.privacy' },
   { view: 'cookies',       clave: 'footer.cookies' },
   { view: 'accesibilidad', clave: 'footer.accessibility' },
+  // El mapa web (SM-5). Cierra P-33: hasta ahora este rótulo estaba aquí sin
+  // destino, porque la página no existía.
+  { view: 'mapa-web',      clave: 'footer.sitemap' },
 ];
 
 const CLASES_ENLACE = 'text-white hover:text-eu-yellow transition-colors font-medium underline underline-offset-2';
@@ -57,10 +60,6 @@ export function renderFooter() {
           </div>
           <nav aria-label="${esc(t('footer.legalNav'))}" class="flex flex-wrap gap-3 sm:gap-6 sm:ml-auto text-xs sm:text-sm">
             ${renderEnlacesLegales()}
-            <!-- El mapa web queda FUERA del alcance del plan legal: no existe la
-                 página. Se pinta como rótulo y no como enlace, para que deje de
-                 aparentar que lleva a alguna parte (P-33). -->
-            <span class="${CLASES_ROTULO}">${esc(t('footer.sitemap'))}</span>
           </nav>
         </div>
       </div>

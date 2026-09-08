@@ -18,14 +18,38 @@ async function readViews() {
   );
 }
 
-test('toda vista con href dinámico importa el validador de URL', async () => {
+test('toda vista con href dinámico valida su procedencia', async () => {
   for (const { name, source } of await readViews()) {
     if (!/href\s*=\s*"\$\{/.test(source)) continue;
-    assert.match(
-      source,
-      /import\s*\{\s*getSafeEditorialUrl\s*\}\s*from\s*['"]\.\.\/utils\/safe-editorial-url\.js['"]/,
-      `${name} pinta href dinámicos y debe importar getSafeEditorialUrl`,
+
+    // Un href dinámico puede venir de dos sitios, y solo de dos:
+    //
+    //   1. De datos editoriales -una URL que alguien escribió en el panel-, y
+    //      entonces pasa por `getSafeEditorialUrl`, que falla cerrado.
+    //   2. Del propio enrutador (SM-4, el mapa web), y entonces es `null` o
+    //      exactamente `#<idioma>/<slug>` construido desde la tabla congelada.
+    //      No hay camino por el que un valor de fuera llegue a esa salida.
+    //
+    // Antes esta prueba solo contemplaba el primero, porque el segundo no
+    // existía en ninguna vista. Exigirle a la vista del mapa que importe un
+    // validador de URL editoriales sería pedirle que valide algo que no tiene.
+    const editorial = /import\s*\{\s*getSafeEditorialUrl\s*\}\s*from\s*['"]\.\.\/utils\/safe-editorial-url\.js['"]/.test(source);
+    const deRuta = /import\s*\{[^}]*formatViewRoute[^}]*\}\s*from\s*['"]\.\.\/utils\/view-route\.js['"]/.test(source);
+
+    assert.ok(
+      editorial || deRuta,
+      `${name} pinta href dinámicos y no valida su procedencia: o los pasa por `
+      + 'getSafeEditorialUrl, o los construye con formatViewRoute',
     );
+
+    // Y si los construye el enrutador, no puede haber ADEMÁS un href suelto sin
+    // validar: los que no salen de una ruta tienen que ser editoriales.
+    if (deRuta && !editorial) {
+      const hrefs = source.match(/href\s*=\s*"\$\{[^}]*\}"/g) || [];
+      for (const href of hrefs) {
+        assert.match(href, /esc\(href\)|esc\(ruta\)/, `${name}: href de procedencia desconocida -> ${href}`);
+      }
+    }
   }
 });
 

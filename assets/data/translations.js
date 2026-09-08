@@ -2,7 +2,7 @@
 // Este archivo ES la base: las claves que no están en content/_ui/*.csv solo
 // viven aquí y pueden editarse directamente. Las claves presentes en los CSV
 // se sobreescriben en cada cms:ui — esas se editan en el CSV.
-// Base: translations.js existente + overrides de 94 entradas CSV
+// Base: translations.js existente + overrides de 98 entradas CSV
 
 export const translations = {
   "es": {
@@ -1904,6 +1904,12 @@ export const translations = {
       "more": "Política de cookies",
       "dismiss": "Entendido",
       "close": "Cerrar el aviso"
+    },
+    "sitemap": {
+      "title": "Mapa web",
+      "intro": "Todas las secciones de este sitio, en una sola página.",
+      "groupSections": "Secciones",
+      "groupLegal": "Información legal"
     }
   },
   "en": {
@@ -3805,6 +3811,12 @@ export const translations = {
       "more": "Cookie policy",
       "dismiss": "Got it",
       "close": "Close this notice"
+    },
+    "sitemap": {
+      "title": "Sitemap",
+      "intro": "Every section of this site, on a single page.",
+      "groupSections": "Sections",
+      "groupLegal": "Legal information"
     }
   },
   "va": {
@@ -5703,6 +5715,12 @@ export const translations = {
       "more": "Política de cookies",
       "dismiss": "Entesos",
       "close": "Tancar l'avís"
+    },
+    "sitemap": {
+      "title": "Mapa web",
+      "intro": "Totes les seccions d'aquest lloc, en una sola pàgina.",
+      "groupSections": "Seccions",
+      "groupLegal": "Informació legal"
     }
   }
 };

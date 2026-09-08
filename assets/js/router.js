@@ -14,7 +14,7 @@ export const VIEWS = ['inicio', 'red', 'sectores', 'banco-retos', 'formacion', '
  * Enrutan igual que cualquier otra vista: tienen slug en los tres idiomas y se
  * enlazan con el mismo `#idioma/slug`.
  */
-export const SECONDARY_VIEWS = ['aviso-legal', 'privacidad', 'cookies', 'accesibilidad'];
+export const SECONDARY_VIEWS = ['aviso-legal', 'privacidad', 'cookies', 'accesibilidad', 'mapa-web'];
 
 let activeView = 'inicio';
 let viewParams = {};

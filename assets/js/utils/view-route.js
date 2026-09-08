@@ -59,11 +59,27 @@ export const LEGAL_VIEW_SLUGS = Object.freeze({
 });
 
 /**
- * Las 33 rutas del sitio: las siete del menú y las cuatro legales. Es la tabla
- * que se usa para resolver y para construir enlaces, porque una página legal se
- * enlaza igual que cualquier otra.
+ * Slug del mapa web, aprobado por Salva el 2026-09-08 (§3 de
+ * PLAN_SITEMAP_2026-09-08). `es` y `va` coinciden a propósito, como ya ocurre
+ * con `politica-de-cookies`: el prefijo de idioma los distingue.
  */
-export const ALL_VIEW_SLUGS = Object.freeze({ ...VIEW_SLUGS, ...LEGAL_VIEW_SLUGS });
+export const SITEMAP_VIEW_SLUGS = Object.freeze({
+  'mapa-web': Object.freeze({ es: 'mapa-web', en: 'sitemap', va: 'mapa-web' }),
+});
+
+/**
+ * Las vistas secundarias: las que se alcanzan desde el pie y no desde el menú.
+ * Se agrupan aquí para que `SECONDARY_VIEWS` del router tenga un espejo exacto
+ * en la tabla de slugs, y para no seguir enumerando familias sueltas.
+ */
+export const SECONDARY_VIEW_SLUGS = Object.freeze({ ...LEGAL_VIEW_SLUGS, ...SITEMAP_VIEW_SLUGS });
+
+/**
+ * Las 36 rutas del sitio: las siete del menú y las cinco secundarias. Es la
+ * tabla que se usa para resolver y para construir enlaces, porque una página
+ * secundaria se enlaza igual que cualquier otra.
+ */
+export const ALL_VIEW_SLUGS = Object.freeze({ ...VIEW_SLUGS, ...SECONDARY_VIEW_SLUGS });
 
 /**
  * Longitud máxima del hash que se acepta procesar, contando la almohadilla
