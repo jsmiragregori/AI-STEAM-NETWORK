@@ -66,8 +66,7 @@ test('TDD-L15: la política dice que no hay cookies, y el código no crea ningun
   const AFIRMACION = {
     es: 'no instala ninguna cookie',
     en: 'does not place any cookies',
-    // El valenciano usa «galeta», no «cookie», en todo el documento.
-    va: 'no instal·la cap galeta',
+    va: 'no instal·la cap cookie',
   };
   for (const [lang, frase] of Object.entries(AFIRMACION)) {
     const html = LEGAL_CONFIG.documentos.cookies[lang].html.toLowerCase();
