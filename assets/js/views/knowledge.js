@@ -529,7 +529,7 @@ function renderOerGridContent(search) {
         <!-- Author + Metadata (compact) -->
         <div class="mb-4 pb-4 border-b border-eu-purple/10">
           <div class="text-base text-gray-800 font-bold mb-1">
-            ${r.author ? esc(r.author) : `<span class="text-gray-400">${esc(getOerLabel('noAuthor'))}</span>`}
+            ${r.author ? esc(r.author) : `<span class="text-gray-500">${esc(getOerLabel('noAuthor'))}</span>`}
           </div>
           <div class="text-sm text-gray-500 flex gap-2 flex-wrap items-center">
             ${r.license ? `<span>${esc(r.license)}</span>` : ''}
@@ -562,7 +562,7 @@ function renderOerGridContent(search) {
             return `<i data-lucide="${icons[status] || 'check-circle'}" class="w-3.5 h-3.5"></i>${esc(getStatusLabel(status))}`;
           })()}
         </button>` : '<span></span>'}
-        ${rUrl ? `<a href="${esc(rUrl)}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-400 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</span>`}
+        ${rUrl ? `<a href="${esc(rUrl)}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-500 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</span>`}
       </div>
     </div>
   `}).join('');
@@ -937,7 +937,7 @@ function renderTemplatesGridContent(search) {
           ? `<a href="${esc(safeTplUrl)}" ${targetAttr} class="flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:text-eu-purple transition-colors cursor-pointer">
           <i data-lucide="${btnIcon}" class="w-3.5 h-3.5"></i>${esc(btnLabel)}
         </a>`
-          : `<span class="flex items-center gap-1.5 text-gray-400 text-sm font-bold">
+          : `<span class="flex items-center gap-1.5 text-gray-500 text-sm font-bold">
           <i data-lucide="${btnIcon}" class="w-3.5 h-3.5"></i>${esc(btnLabel)}
         </span>`}
       </div>

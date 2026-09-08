@@ -162,7 +162,7 @@ export function render() {
         </div>
         <div class="flex-1 min-w-0">
           <h4 class="font-extrabold text-sm text-eu-text mb-1 leading-snug hover:text-eu-blue transition-colors cursor-pointer">${event.title}</h4>
-          <p class="text-xs text-gray-400 flex items-center gap-1 mb-2">
+          <p class="text-xs text-gray-500 flex items-center gap-1 mb-2">
             <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${event.location}
           </p>
           <div class="flex items-center justify-between">
@@ -304,7 +304,7 @@ export function render() {
 
 function renderDetail(newsT) {
   const detail = newsT?.newsDetail;
-  if (!detail) return '<div class="p-12 text-center text-gray-400">No detail available</div>';
+  if (!detail) return '<div class="p-12 text-center text-gray-500">No detail available</div>';
 
   const { news } = getNewsAndEvents(newsT);
   const selectedId = getState('selectedNewsId');
@@ -386,7 +386,7 @@ function renderDetail(newsT) {
           <!-- Share -->
           <div class="mt-12 pt-8 border-t border-eu-blue/10">
             <div class="flex items-center justify-between">
-              <span class="text-sm text-gray-400 font-bold uppercase tracking-wider">${newsT?.shareArticle || 'Compartir esta noticia'}</span>
+              <span class="text-sm text-gray-500 font-bold uppercase tracking-wider">${newsT?.shareArticle || 'Compartir esta noticia'}</span>
               <div class="flex items-center gap-3">
                 <button class="p-3 bg-eu-blue/5 hover:bg-eu-blue/10 text-eu-blue rounded-full transition-all border border-eu-blue/10 cursor-pointer">
                   <i data-lucide="share-2" class="w-4.5 h-4.5"></i>

@@ -204,7 +204,7 @@ function tabSocios(activeCategory, filterCountry) {
           ? `<a href="${esc(safePartnerUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">
           <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(visitLabel)}
         </a>`
-          : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-400">
+          : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-gray-500">
           <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(visitLabel)}
         </span>`}
       </div>`;
@@ -567,7 +567,7 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
           <a href="${esc(safeWebsite)}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex items-center gap-1 text-sm text-eu-blue font-bold hover:text-eu-purple transition-colors">
             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(shTexts.visitWebLabel)}
           </a>` : `
-          <span class="mt-3 inline-flex items-center gap-1 text-sm text-gray-400 font-bold">
+          <span class="mt-3 inline-flex items-center gap-1 text-sm text-gray-500 font-bold">
             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>${esc(shTexts.visitWebLabel)}
           </span>`;
 

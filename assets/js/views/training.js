@@ -204,7 +204,7 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
            class="text-eu-blue font-bold text-sm cursor-pointer hover:text-eu-purple hover:underline inline-flex items-center gap-1.5 shrink-0 transition-colors duration-300">
           ${esc(viewLabel)} <i data-lucide="external-link" class="w-4 h-4"></i>
         </a>`
-          : `<span class="text-gray-400 font-bold text-sm inline-flex items-center gap-1.5 shrink-0">
+          : `<span class="text-gray-500 font-bold text-sm inline-flex items-center gap-1.5 shrink-0">
           ${esc(viewLabel)} <i data-lucide="external-link" class="w-4 h-4"></i>
         </span>`}
       </div>`}

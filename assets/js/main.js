@@ -34,7 +34,7 @@ export function renderApp() {
   const view = VIEW_MAP[activeView];
 
   document.getElementById('header-root').innerHTML = renderHeader();
-  document.getElementById('main-root').innerHTML = view?.render?.() ?? '<p class="p-8 text-gray-400">Vista no encontrada</p>';
+  document.getElementById('main-root').innerHTML = view?.render?.() ?? '<p class="p-8 text-gray-500">Vista no encontrada</p>';
   document.getElementById('footer-root').innerHTML = renderFooter();
 
   // Aviso de cookies (LG-8): informativo, no de consentimiento. Se inserta solo
@@ -51,7 +51,11 @@ export function renderApp() {
   mountFooter();
   view?.mount?.();
 
-  if (window.lucide) window.lucide.createIcons();
+  // Los iconos son decorativos: el texto que acompañan ya dice lo que hay que
+  // saber, y un lector de pantalla que los anuncie solo añade ruido (criterio
+  // 1.1.1). Se marcan al generarlos, en un único punto, y no icono a icono en
+  // las vistas: así lo hereda también cualquier icono que se añada mañana.
+  if (window.lucide) window.lucide.createIcons({ attrs: { 'aria-hidden': 'true', focusable: 'false' } });
 }
 
 // Back/forward del navegador entre vistas de nivel superior. Los detalles

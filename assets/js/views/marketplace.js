@@ -1161,13 +1161,13 @@ function renderCardActions(item) {
     const label = pickLang({ es: 'Descargar ficha', en: 'Download brief', va: 'Descarregar fitxa' });
     parts.push(safeFichaUrl
       ? `<a href="${esc(safeFichaUrl)}" download class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(label)} <i data-lucide="download" class="h-4 w-4"></i></a>`
-      : `<span class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-gray-400 rounded">${esc(label)} <i data-lucide="download" class="h-4 w-4"></i></span>`);
+      : `<span class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-gray-500 rounded">${esc(label)} <i data-lucide="download" class="h-4 w-4"></i></span>`);
   }
   if (adhesionUrl) {
     const label = pickLang({ es: 'Solicitar adhesión', en: 'Request membership', va: 'Sol·licitar adhesió' });
     parts.push(safeAdhesionUrl
       ? `<a href="${esc(safeAdhesionUrl)}" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-eu-blue hover:text-eu-purple focus:outline-none focus:ring-2 focus:ring-eu-blue focus:ring-offset-2 rounded">${esc(label)} <i data-lucide="external-link" class="h-4 w-4"></i></a>`
-      : `<span class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-gray-400 rounded">${esc(label)} <i data-lucide="external-link" class="h-4 w-4"></i></span>`);
+      : `<span class="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-gray-500 rounded">${esc(label)} <i data-lucide="external-link" class="h-4 w-4"></i></span>`);
   }
   return parts.join('');
 }
