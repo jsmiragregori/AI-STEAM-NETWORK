@@ -303,7 +303,6 @@ function tabStakeholders(activeCategory, showForm) {
     paginationNext:    loc(shBlock.paginationNext)    || '→',
     showLabel:         loc(shBlock.showLabel)         || loc({ es: 'Mostrar', en: 'Show', va: 'Mostrar' }),
     showAllLabel:      loc(shBlock.showAllLabel)      || loc({ es: 'Todos', en: 'All', va: 'Tots' }),
-    form: shBlock.form || {},
     microsoftForms: shBlock.microsoftForms || {},
   };
   const pageSize = shBlock.pageSize || 12;
@@ -318,92 +317,21 @@ function tabStakeholders(activeCategory, showForm) {
   const page         = getState('networkPage') || 0;
 
   // ── Form HTML (shared by empty-state and full view) ──────────────────────────
-  const f = shTexts.form;
-  const demoFormHtml = effectiveShowForm && membershipAction.kind === 'internal' ? `
-    <div id="stakeholder-form" class="rd-card overflow-hidden mt-8" style="border:2px solid rgb(86 32 246/.3)">
-      <div class="rd-ceja-grad px-6 py-4 flex items-center gap-3">
-        <i data-lucide="user-plus" class="w-5 h-5" style="color:#fff"></i>
-        <div>
-          <h2 class="text-lg font-extrabold" style="color:#fff">${esc(loc(f.title))}</h2>
-        </div>
-      </div>
-      <div class="p-6 rd-card-grad-beige">
-        <p class="text-base text-gray-600 mb-6 leading-relaxed">${sanitizeEditorialHtml(loc(f.description))}</p>
-        <form id="net-form" class="space-y-5">
-          <div class="grid grid-cols-1 gap-y-5 gap-x-4 sm:grid-cols-2">
-            <div class="sm:col-span-2">
-              <label for="net-entity" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.entityName))} *</label>
-              <input id="net-entity" type="text" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" placeholder="Ej. FEDACOVA, Hospital La Fe..." />
-            </div>
-            <div>
-              <label for="net-category" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.category))} *</label>
-              <select id="net-category" class="w-full rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="border:1px solid rgb(73 24 173/.2)">
-                <option>${esc(loc(f.categoryOptions?.university))}</option>
-                <option>${esc(loc(f.categoryOptions?.company))}</option>
-                <option>${esc(loc(f.categoryOptions?.admin))}</option>
-                <option>${esc(loc(f.categoryOptions?.civil))}</option>
-              </select>
-            </div>
-            <div>
-              <label for="net-sector" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.sector))} *</label>
-              <select id="net-sector" class="w-full rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="border:1px solid rgb(73 24 173/.2)">
-                <option>${esc(loc(f.sectorOptions?.manufacturing))}</option>
-                <option>${esc(loc(f.sectorOptions?.mobility))}</option>
-                <option>${esc(loc(f.sectorOptions?.energy))}</option>
-                <option>${esc(loc(f.sectorOptions?.agrifood))}</option>
-                <option>${esc(loc(f.sectorOptions?.cci))}</option>
-                <option>${esc(loc(f.sectorOptions?.housing))}</option>
-                <option>${esc(loc(f.sectorOptions?.services))}</option>
-              </select>
-            </div>
-            <div>
-              <label for="net-contact" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.contact))} *</label>
-              <input id="net-contact" type="text" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" placeholder="Nombre y apellidos" />
-            </div>
-            <div>
-              <label for="net-country" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.country))} *</label>
-              <input id="net-country" type="text" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" value="España" />
-            </div>
-            <div>
-              <label for="net-region" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.region))} *</label>
-              <input id="net-region" type="text" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" placeholder="Comunitat Valenciana..." />
-            </div>
-            <div class="sm:col-span-2">
-              <label for="net-email" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.email))} *</label>
-              <input id="net-email" type="email" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white" style="border:1px solid rgb(73 24 173/.2)" placeholder="correo@entidad.com" />
-            </div>
-            <div class="sm:col-span-2">
-              <label for="net-contribution" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.contributionFocus))} *</label>
-              <select id="net-contribution" class="w-full rounded-md p-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue" style="border:1px solid rgb(73 24 173/.2)">
-                <option>${esc(loc(f.contributionOptions?.challenge))}</option>
-                <option>${esc(loc(f.contributionOptions?.case))}</option>
-                <option>${esc(loc(f.contributionOptions?.validation))}</option>
-                <option>${esc(loc(f.contributionOptions?.mentoring))}</option>
-                <option>${esc(loc(f.contributionOptions?.pilot))}</option>
-                <option>${esc(loc(f.contributionOptions?.resource))}</option>
-                <option>${esc(loc(f.contributionOptions?.network))}</option>
-              </select>
-            </div>
-            <div class="sm:col-span-2">
-              <label for="net-description" class="block text-sm font-bold text-eu-text mb-1">${esc(loc(f.fields?.description))}</label>
-              <textarea id="net-description" rows="3" class="w-full rounded-md p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-eu-blue focus:border-eu-blue bg-white resize-none" style="border:1px solid rgb(73 24 173/.2)" placeholder="Describa su entidad e interés en la red AI-STEAM..."></textarea>
-            </div>
-          </div>
-          <div class="flex items-center gap-2">
-            <input type="checkbox" id="net-gdpr" class="rounded" style="border:1px solid rgb(73 24 173/.2)" />
-            <label for="net-gdpr" class="text-sm text-gray-600">
-              ${esc(loc(f.acceptTerms))} <a class="text-eu-blue hover:underline">${esc(loc(f.privacyPolicy))}</a> ${esc(loc(f.rgpd))}
-            </label>
-          </div>
-          <div class="flex justify-end">
-            <button type="submit" class="bg-eu-blue text-white px-6 py-2.5 rounded-full font-bold border-none hover:bg-eu-purple transition-colors cursor-pointer">
-              ${esc(loc(f.submitBtn))}
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>` : '';
-
+  // P-32 — El formulario de adhesión en línea se retiró el 2026-09-10.
+  //
+  // Pedía nombre, entidad, correo y mostraba una casilla de RGPD, pero **no
+  // había backend que recogiera nada**, ni intención de tenerlo (Salva,
+  // 2026-09-07). Su `submit` hacía `preventDefault()` y ahí moría todo.
+  //
+  // Que no se pintara no bastaba para dejarlo estar: sólo aparecía con
+  // `formMode: 'demo'`, y ese es **el valor por defecto** cuando el campo falta
+  // (`utils/membership.js`). Bastaba con que alguien borrara esa clave del YAML
+  // para publicar un formulario que pide datos personales y los tira — pidiendo
+  // además el consentimiento para tratarlos. Una promesa que no se puede
+  // cumplir es peor que no ofrecer nada.
+  //
+  // La adhesión se tramita por Microsoft Forms (`formMode: 'microsoftForms'`),
+  // que es lo que de verdad recoge las solicitudes.
   const microsoftForms = shTexts.microsoftForms;
   const externalTitle = esc(loc(microsoftForms.title) || shTexts.requestMembership);
   const externalDescription = esc(loc(microsoftForms.description));
@@ -428,7 +356,7 @@ function tabStakeholders(activeCategory, showForm) {
         ></iframe>
       </div>
     </div>` : '';
-  const formHtml = membershipAction.kind === 'embed' ? iframeFormHtml : demoFormHtml;
+  const formHtml = membershipAction.kind === 'embed' ? iframeFormHtml : '';
 
   const renderMembershipControl = (id, className) => {
     if (!showToggleButton) return '';
@@ -848,7 +776,6 @@ export function mount() {
   document.getElementById('net-toggle-form-empty')?.addEventListener('click', toggleForm);
 
   // Form submit
-  document.getElementById('net-form')?.addEventListener('submit', e => e.preventDefault());
 
   if (getState('networkTab') === 'stakeholders' && getState('networkShowForm')) {
     setTimeout(() => document.getElementById('stakeholder-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 80);
