@@ -11,6 +11,11 @@
 // y se despliega descomprimiendo sobre montajes NFS. Esta guarda es la que ve
 // una descompresión parcial o un montaje que no está donde se cree.
 //
+// HERRAMIENTA DE CONSTRUCCIÓN. Se ejecuta en la máquina que genera y empaqueta
+// el sitio, nunca en el servidor: el paquete que se despliega lleva solo
+// `index.html` y `assets/`, sin `package.json` ni `scripts/`, y el sitio servido
+// no depende de Node para nada.
+//
 // Uso:  npm run verify:data
 // Devuelve código 1 si algo falta, para poder encadenarlo antes de empaquetar.
 
