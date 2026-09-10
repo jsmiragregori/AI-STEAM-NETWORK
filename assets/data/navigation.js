@@ -84,9 +84,9 @@ export const NAV_CONFIG = {
       "va": "politica-de-privacitat"
     },
     "red": {
-      "es": "la-red",
+      "es": "red",
       "en": "network",
-      "va": "la-xarxa"
+      "va": "xarxa"
     },
     "sectores": {
       "es": "sectores",
@@ -94,7 +94,18 @@ export const NAV_CONFIG = {
       "va": "sectors"
     }
   },
-  "aliases": []
+  "aliases": [
+    {
+      "id": "red",
+      "lang": "es",
+      "slug": "la-red"
+    },
+    {
+      "id": "red",
+      "lang": "va",
+      "slug": "la-xarxa"
+    }
+  ]
 };
 
 // Exportar también por claves individuales para compatibilidad
