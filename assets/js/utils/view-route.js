@@ -99,7 +99,7 @@ export const MAX_HASH_LENGTH = 128;
  * @param {Record<string, Record<string, string>>} tabla
  * @returns {{ canonicos: Map<string, {view: string, lang: string}>, alias: Map<string, string> }}
  */
-function construirIndice(tabla) {
+function construirIndice(tabla, aliasExtra) {
   const canonicos = new Map();
   const alias = new Map();
 
@@ -120,11 +120,20 @@ function construirIndice(tabla) {
     }
   }
 
+  // Los slugs jubilados (CS-4). Se añaden DESPUÉS de los canónicos y sin
+  // pisarlos: un alias nunca puede secuestrar un enlace vivo. Sirven para que
+  // un enlace repartido antes de un renombrado siga abriendo su sección.
+  for (const entrada of aliasExtra || []) {
+    const clave = `${entrada.lang}/${entrada.slug}`;
+    if (!canonicos.has(clave)) canonicos.set(clave, { view: entrada.id, lang: entrada.lang });
+    if (!alias.has(entrada.slug)) alias.set(entrada.slug, entrada.id);
+  }
+
   return { canonicos, alias };
 }
 
-// Las 33 rutas, no solo las siete del menú: quien abre un enlace a la política
-// de privacidad merece la misma resolución que quien abre uno a Sectores.
+// Las 36 rutas, no solo las 21 del menú: quien abre un enlace a la política de
+// privacidad merece la misma resolución que quien abre uno a Sectores.
 const INDICE_POR_DEFECTO = construirIndice(ALL_VIEW_SLUGS);
 
 /**
@@ -151,6 +160,94 @@ function decodificarUnaVez(valor) {
 /** Un segmento válido: minúsculas, dígitos y guiones. Nada más (T1, T3, T4). */
 const SEGMENTO = /^[a-z0-9-]+$/;
 
+// --- Slugs administrados desde el CMS (CS-4) --------------------------------
+//
+// Desde P-26 los slugs se editan en el panel y llegan aquí dentro de
+// `NAV_CONFIG`, que es un fichero generado en `assets/data/` — en producción, un
+// **montaje NFS escrito por el panel**, que ya llegó vacío una vez tras un
+// reinicio. Dos reglas gobiernan todo lo que sigue:
+//
+//   DA-CS-5 · Fallo cerrado. Ante cualquier duda, la tabla incrustada. El dato
+//     del CMS solo puede mejorar lo que ya funciona; nunca puede quitarlo. Por
+//     eso la fusión es **por vista** y no todo o nada: un CSV a medias no deja
+//     sin enlace a las secciones que sí estaban bien.
+//
+//   DA-CS-4 · El CMS aporta el texto del slug, nunca qué vistas existen. Por eso
+//     se itera **la allowlist del código** y jamás las claves del dato. Esa
+//     inversión es también la contención de la contaminación de prototipo: el
+//     generado es código JS, no JSON, así que una clave `__proto__` en un objeto
+//     literal *sí* establecería el prototipo — pero nunca se lee, porque
+//     `__proto__` no es una vista conocida.
+
+/**
+ * Fusiona los slugs del CMS sobre la tabla incrustada, vista a vista.
+ *
+ * @param {unknown} navConfig El `NAV_CONFIG` generado, en cualquier estado.
+ * @param {Record<string, Record<string, string>>} [base] Allowlist y respaldo.
+ * @returns {Record<string, Record<string, string>>} Tabla nueva; nunca con
+ *   menos vistas que `base`, para que ningún enlace publicado deje de resolver.
+ */
+export function construirTablaEfectiva(navConfig, base = ALL_VIEW_SLUGS) {
+  const resultado = {};
+  for (const view of Object.keys(base)) resultado[view] = { ...base[view] };
+
+  const crudos = navConfig && typeof navConfig === 'object' && !Array.isArray(navConfig)
+    ? navConfig.slugs
+    : null;
+  if (!crudos || typeof crudos !== 'object' || Array.isArray(crudos)) return resultado;
+
+  for (const view of Object.keys(base)) {
+    if (!Object.prototype.hasOwnProperty.call(crudos, view)) continue;
+    const fila = crudos[view];
+    if (!fila || typeof fila !== 'object') continue;
+
+    const limpia = {};
+    let completa = true;
+    for (const lang of LANGS) {
+      const slug = Object.prototype.hasOwnProperty.call(fila, lang) ? fila[lang] : undefined;
+      // Mismo criterio que para el hash que llega de fuera: el dato generado es
+      // entrada no confiable, porque lo escribe el panel en un montaje de red.
+      if (typeof slug !== 'string' || !SEGMENTO.test(slug) || slug.length > MAX_HASH_LENGTH) {
+        completa = false;
+        break;
+      }
+      limpia[lang] = slug;
+    }
+    // A medias, no: una vista con un idioma inválido conserva entera la del
+    // código, en vez de quedar mitad publicada y mitad no.
+    if (completa) resultado[view] = limpia;
+  }
+
+  return resultado;
+}
+
+/**
+ * Saca de `NAV_CONFIG` los alias jubilados que se pueden aceptar.
+ *
+ * @param {unknown} navConfig
+ * @param {Record<string, Record<string, string>>} [tabla] Vistas admitidas.
+ * @returns {{id: string, lang: string, slug: string}[]}
+ */
+export function construirAliasEfectivos(navConfig, tabla = ALL_VIEW_SLUGS) {
+  const lista = [];
+  const crudos = navConfig && typeof navConfig === 'object' && !Array.isArray(navConfig)
+    ? navConfig.aliases
+    : null;
+  if (!Array.isArray(crudos)) return lista;
+
+  for (const fila of crudos) {
+    if (!fila || typeof fila !== 'object') continue;
+    const { id, lang, slug } = fila;
+    // `hasOwnProperty` y no `id in tabla`: `'__proto__' in tabla` sería cierto
+    // por herencia y colaría una vista que no existe.
+    if (typeof id !== 'string' || !Object.prototype.hasOwnProperty.call(tabla, id)) continue;
+    if (typeof lang !== 'string' || !LANGS.includes(lang)) continue;
+    if (typeof slug !== 'string' || !SEGMENTO.test(slug) || slug.length > MAX_HASH_LENGTH) continue;
+    lista.push({ id, lang, slug });
+  }
+  return lista;
+}
+
 /**
  * Resuelve el hash de la barra de direcciones a una vista.
  *
@@ -161,7 +258,7 @@ const SEGMENTO = /^[a-z0-9-]+$/;
  * @returns {{view: string, lang?: string}|null} `null` significa "sin ruta":
  *   el llamante abre Inicio.
  */
-export function parseViewRoute(hash, tabla) {
+export function parseViewRoute(hash, tabla, aliasExtra) {
   if (typeof hash !== 'string') return null;
   if (hash.length > MAX_HASH_LENGTH) return null; // T6: acotar ANTES de procesar
 
@@ -171,7 +268,9 @@ export function parseViewRoute(hash, tabla) {
   const valor = decodificarUnaVez(crudo);
   if (valor === null) return null;
 
-  const { canonicos, alias } = tabla ? construirIndice(tabla) : INDICE_POR_DEFECTO;
+  const { canonicos, alias } = (tabla || aliasExtra)
+    ? construirIndice(tabla || ALL_VIEW_SLUGS, aliasExtra)
+    : INDICE_POR_DEFECTO;
 
   const partes = valor.split('/');
 
@@ -244,9 +343,9 @@ export const DEFAULT_VIEW = 'inicio';
  * @param {Record<string, Record<string, string>>} [tabla]
  * @returns {{view: string, lang: string, langFromLink: boolean, recognised: boolean}}
  */
-export function resolveInitialRoute(hash, { storedLang } = {}, tabla) {
+export function resolveInitialRoute(hash, { storedLang } = {}, tabla, aliasExtra) {
   const preferido = LANGS.includes(storedLang) ? storedLang : DEFAULT_LANG;
-  const ruta = parseViewRoute(hash, tabla);
+  const ruta = parseViewRoute(hash, tabla, aliasExtra);
 
   // Ruta no reconocida: Inicio, y el idioma NO se toca. Un enlace roto no puede
   // además cambiarle el idioma al visitante (contrato 3).

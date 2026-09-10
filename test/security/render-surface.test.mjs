@@ -47,7 +47,14 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // escribe en el DOM—. Lo único que sí se mueve es el total de vistas y la
   // lista de las que importan el escapado común, más abajo.
   // SM-4: 24 con la vista del mapa web.
-  assert.equal(report.scannedFiles, 24);
+  // CS-4: 25 con assets/js/slug-table.js, que une el dato generado del CMS con
+  // el módulo puro de enrutado. Es un recuento de ficheros, no de superficie:
+  // TODAS las demás cifras de esta prueba siguen idénticas —interpolaciones
+  // 11/130, perFile, viewsTotal 11, hrefs 26, sinks—, y el fichero nuevo no
+  // aparece en ninguna medición porque no renderiza: solo importa dos funciones
+  // puras y exporta el resultado. Comprobado contra el tag
+  // salvaguardia/pre-cs4-2026-09-10-congelada.
+  assert.equal(report.scannedFiles, 25);
   assert.equal(report.pickLangInterpolations.unescaped, 11);
   assert.equal(report.pickLangInterpolations.escaped, 130);
   assert.deepEqual(
