@@ -1,5 +1,6 @@
 import { getLanguage, getStoredLanguage } from './i18n.js';
 import { formatViewRoute, planLanguageSwitch, resolveInitialRoute } from './utils/view-route.js';
+import { TABLA_SLUGS, ALIAS_SLUGS } from './slug-table.js';
 
 export const VIEWS = ['inicio', 'red', 'sectores', 'banco-retos', 'formacion', 'conocimiento', 'gobernanza'];
 
@@ -33,7 +34,7 @@ export function navigateTo(view, params = {}) {
   // La URL lleva solo la vista y el idioma. `params` es estado interno y no se
   // serializa nunca (DA-DL-2): formatViewRoute lo ignora por construcción. Si
   // no hubiera enlace posible, se apila sin URL como se hacía antes.
-  history.pushState({ appView: view }, '', formatViewRoute(view, getLanguage()) || undefined);
+  history.pushState({ appView: view }, '', formatViewRoute(view, getLanguage(), undefined, TABLA_SLUGS) || undefined);
   import('./main.js').then(m => m.renderApp());
 }
 
@@ -56,7 +57,7 @@ export function syncView(view) {
 
 /** Lee el hash actual y lo resuelve. Nunca devuelve `null` (DA-DL-3). */
 export function readRoute() {
-  return resolveInitialRoute(window.location.hash, { storedLang: getStoredLanguage() });
+  return resolveInitialRoute(window.location.hash, { storedLang: getStoredLanguage() }, TABLA_SLUGS, ALIAS_SLUGS);
 }
 
 /**
@@ -98,7 +99,7 @@ export function setActiveView(view) {
  * una entrada (contrato 5). Si no hay enlace posible, deja la URL como está.
  */
 export function syncRouteLanguage(lang) {
-  const plan = planLanguageSwitch(activeView, lang);
+  const plan = planLanguageSwitch(activeView, lang, TABLA_SLUGS);
   if (!plan) return;
   history.replaceState({ appView: activeView }, '', plan.hash);
 }

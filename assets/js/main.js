@@ -5,6 +5,7 @@ import { getActiveView, isInPageAnchor, readRoute, setActiveView, syncView } fro
 import { applyLanguage, getLanguage } from './i18n.js';
 import * as views from './views/index.js';
 import { formatViewRoute, planHashChange } from './utils/view-route.js';
+import { TABLA_SLUGS } from './slug-table.js';
 
 const LANG_BCP47 = { es: 'es', en: 'en', va: 'ca-valencia' };
 function syncHtmlLang() {
@@ -94,7 +95,7 @@ window.addEventListener('hashchange', () => {
   window.scrollTo(0, 0);
   // Se normaliza a la forma canónica: si se llegó por un alias, la barra de
   // direcciones acaba mostrando el enlace que sí se genera.
-  history.replaceState({ appView: plan.view }, '', formatViewRoute(plan.view, plan.lang) || undefined);
+  history.replaceState({ appView: plan.view }, '', formatViewRoute(plan.view, plan.lang, undefined, TABLA_SLUGS) || undefined);
   renderApp();
 });
 
@@ -111,5 +112,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Entrada base del historial = la vista con la que se ha abierto, para que
   // "atrás" desde la primera navegación vuelva aquí. Se normaliza la URL a la
   // forma canónica: un alias tolerado se reescribe al enlace que sí se genera.
-  history.replaceState({ appView: getActiveView() }, '', formatViewRoute(getActiveView(), getLanguage()) || undefined);
+  history.replaceState({ appView: getActiveView() }, '', formatViewRoute(getActiveView(), getLanguage(), undefined, TABLA_SLUGS) || undefined);
 });
