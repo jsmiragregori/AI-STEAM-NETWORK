@@ -122,13 +122,13 @@ export function renderHeader() {
       <header class="rd-brand-header">
         <div class="rd-brand-row">
           <button id="logo-btn" class="rd-brand-link rd-brand-government" type="button" aria-label="${esc(BRAND_ALT[lang] || BRAND_ALT.es)} — ${esc(HOME_LABEL[lang] || HOME_LABEL.es)}">
-            <img src="assets/images/brand/generalitat-va-480.png" srcset="assets/images/brand/generalitat-va-240.png 240w, assets/images/brand/generalitat-va-480.png 480w, assets/images/brand/generalitat-va-720.png 720w" sizes="(max-width: 479px) 190px, (max-width: 767px) 210px, (max-width: 1279px) 190px, 300px" width="720" height="343" alt="${esc(BRAND_ALT[lang] || BRAND_ALT.es)}">
+            <img src="assets/images/brand/generalitat-va-480.png" srcset="assets/images/brand/generalitat-va-240.png 240w, assets/images/brand/generalitat-va-480.png 480w, assets/images/brand/generalitat-va-720.png 720w" sizes="(max-width: 479px) 140px, (max-width: 767px) 130px, (max-width: 1023px) 120px, 160px" width="720" height="343" alt="${esc(BRAND_ALT[lang] || BRAND_ALT.es)}">
           </button>
           ${AI_SECRETT_URL ? `<a class="rd-brand-link rd-brand-secrett" href="${esc(AI_SECRETT_URL)}" target="_blank" rel="noopener noreferrer" aria-label="AI-SECRETT — ${esc('Creativity and AI for the Triple Transition')}">
-            <img src="assets/images/brand/aisecrett-480.png" srcset="assets/images/brand/aisecrett-240.png 240w, assets/images/brand/aisecrett-480.png 480w, assets/images/brand/aisecrett-720.png 720w" sizes="(max-width: 1023px) 235px, (max-width: 1279px) 300px, 500px" width="720" height="96" alt="AI-SECRETT — Creativity and AI for the Triple Transition">
+            <img src="assets/images/brand/aisecrett-480.png" srcset="assets/images/brand/aisecrett-240.png 240w, assets/images/brand/aisecrett-480.png 480w, assets/images/brand/aisecrett-720.png 720w" sizes="(max-width: 1023px) 206px, 273px" width="720" height="96" alt="AI-SECRETT — Creativity and AI for the Triple Transition">
           </a>` : ''}
           <button id="network-logo-btn" class="rd-brand-link rd-brand-network" type="button" aria-label="${esc('AI-STEAM Network')} — ${esc(HOME_LABEL[lang] || HOME_LABEL.es)}">
-            <img src="assets/images/brand/aisteam-network-480.png" srcset="assets/images/brand/aisteam-network-240.png 240w, assets/images/brand/aisteam-network-480.png 480w, assets/images/brand/aisteam-network-720.png 720w" sizes="(max-width: 767px) 160px, (max-width: 1023px) 200px, (max-width: 1279px) 350px, 600px" width="720" height="57" alt="AI-STEAM Network">
+            <img src="assets/images/brand/aisteam-network-480.png" srcset="assets/images/brand/aisteam-network-240.png 240w, assets/images/brand/aisteam-network-480.png 480w, assets/images/brand/aisteam-network-720.png 720w" sizes="(max-width: 1023px) 200px, 300px" width="720" height="57" alt="AI-STEAM Network">
           </button>
         </div>
 
