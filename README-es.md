@@ -57,8 +57,7 @@ D:\CEICE\AI-STEAM-VANILLA/
 │   │   ├── state.js
 │   │   ├── components/
 │   │   │   ├── header.js
-│   │   │   ├── footer.js
-│   │   │   └── cookie-banner.js
+│   │   │   └── footer.js
 │   │   └── views/
 │   │       ├── home.js
 │   │       ├── marketplace.js
@@ -134,7 +133,7 @@ npx esbuild ./assets/js/main.js --bundle --minify --outfile=./assets/js/main.min
 - **HTTP obligatorio:** No funciona con `file://`. Requiere servidor HTTP.
 - **ES modules:** Usar `import/export` nativos, navegadores modernos lo soportan.
 - **Lucide:** Llamar `lucide.createIcons()` tras cada render completo.
-- **localStorage:** Persiste idioma y cookies entre sesiones.
+- **localStorage:** Persiste idioma y filtros entre sesiones (el sitio no instala cookies).
 
 ---
 

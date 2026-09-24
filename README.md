@@ -107,8 +107,7 @@ The site will reload automatically if you edit files (or manually refresh).
 │   │   ├── state.js              # Client-side state
 │   │   ├── components/
 │   │   │   ├── header.js
-│   │   │   ├── footer.js
-│   │   │   └── cookie-banner.js
+│   │   │   └── footer.js
 │   │   └── views/
 │   │       ├── home.js
 │   │       ├── marketplace.js

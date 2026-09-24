@@ -54,7 +54,8 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // aparece en ninguna medición porque no renderiza: solo importa dos funciones
   // puras y exporta el resultado. Comprobado contra el tag
   // salvaguardia/pre-cs4-2026-09-10-congelada.
-  assert.equal(report.scannedFiles, 25);
+  // 2026-09-24: 24 al retirar el aviso de cookies (components/cookie-notice.js).
+  assert.equal(report.scannedFiles, 24);
   assert.equal(report.pickLangInterpolations.unescaped, 11);
   assert.equal(report.pickLangInterpolations.escaped, 130);
   assert.deepEqual(
@@ -76,15 +77,16 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // `collectValidatedUrlIdentifiers`).
   // SM-4: 26 con el enlace de cada entrada del mapa web. Tampoco es editorial:
   // lo construye `formatViewRoute()` desde la tabla de slugs congelada.
-  assert.equal(report.dynamicHrefs.editorialCount, 26);
+  // 2026-09-24: 25 al retirar el aviso de cookies, que enlazaba a su política.
+  assert.equal(report.dynamicHrefs.editorialCount, 25);
   // VAN-3B.2.1: los 23 pasan por getSafeEditorialUrl(), incluidos los dos de
   // Header que V9 demostró editoriales. El invariante que importa
   // es que no quede ninguno sin validar, no que sigan siendo 23: si alguien
   // añade el enlace 22 sin cablearlo, esta lista deja de estar vacía.
   assert.deepEqual(report.dynamicHrefs.editorialUnvalidated, []);
-  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 26);
+  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 25);
   assert.equal(report.dynamicHrefs.nonEditorialCount, 0);
-  assert.equal(report.dynamicHrefs.total, 26);
+  assert.equal(report.dynamicHrefs.total, 25);
   // VAN-2.3: 21 y no 16 por dos ampliaciones de la medición: los
   // `target="${…}"` calculados, antes invisibles, y el ancla que emite
   // `sanitize-editorial-html.js`, antes fuera de alcance. El invariante —que la
@@ -98,8 +100,9 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
       .map((sink) => [sink, report.dangerousSinks.filter((hit) => hit.sink === sink).length]),
   );
   assert.deepEqual(sinkCounts, {
+    // 2026-09-24: el único insertAdjacentHTML era el del aviso de cookies en
+    // main.js, retirado con él.
     'innerHTML assignment': 23,
-    insertAdjacentHTML: 1,
     // DL-4: la ÚNICA lectura del hash de todo el árbol, en router.js. El
     // inventario la marca porque el hash es entrada no confiable, y hace bien:
     // que aparezca aquí es lo que obliga a justificarla. Está contenida por

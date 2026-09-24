@@ -134,9 +134,9 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
   // SM-4: 176 con las dos del mapa web -la lista de entradas de un grupo y la
   // de grupos-. Las dos son marcado que compone el propio fichero a partir de
   // `esc()`: ni una sola cadena del CSV llega sin escapar.
-  assert.equal(indirectOutputCandidates.total, 176);
+  // 2026-09-24: 175 al retirar el aviso de cookies, que aportaba enlace.
+  assert.equal(indirectOutputCandidates.total, 175);
   assert.deepEqual(indirectOutputCandidates.byFile, {
-    'assets/js/components/cookie-notice.js': 1,
     'assets/js/components/footer.js': 2,
     'assets/js/components/header.js': 4,
     'assets/js/views/governance.js': 25,

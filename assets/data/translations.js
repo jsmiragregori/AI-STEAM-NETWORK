@@ -2,7 +2,7 @@
 // Este archivo ES la base: las claves que no están en content/_ui/*.csv solo
 // viven aquí y pueden editarse directamente. Las claves presentes en los CSV
 // se sobreescriben en cada cms:ui — esas se editan en el CSV.
-// Base: translations.js existente + overrides de 98 entradas CSV
+// Base: translations.js existente + overrides de 93 entradas CSV
 
 export const translations = {
   "es": {
