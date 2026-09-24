@@ -67,7 +67,11 @@
 @media (min-width: 480px) and (max-width: 767px) {
   .rd-brand-secrett { display: none; }
   .rd-brand-government { width: 130px; }
-  .rd-brand-network { width: 200px; }
+  .rd-brand-network {
+    width: 200px;
+    border-left: 1px solid rgb(0 61 165 / .55);
+    padding-left: 27px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .rd-brand-row { gap: 24px; }
