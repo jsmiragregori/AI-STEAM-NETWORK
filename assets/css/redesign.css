@@ -19,10 +19,78 @@
 /* ─── CANVAS ──────────────────────────────────────────────────────────────── */
 .rd-canvas { background: var(--rd-canvas); }
 
-/* Padding superior del <main> ajustado a la altura real del header fijo.
-   < 80rem: solo topbar (64px). ≥ 80rem: topbar + navpill (~124px). */
-.rd-main { padding-top: 64px; }
-@media (min-width: 80rem) { .rd-main { padding-top: 128px; } }
+/* Cabecera institucional: la franja de marca sustituye la antigua barra blanca. */
+.rd-brand-header {
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-inline: 16px;
+  background: var(--rd-canvas);
+  border-bottom: 1px solid rgb(0 61 165 / .14);
+}
+.rd-brand-row {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(12px, 2vw, 32px);
+  min-width: 0;
+}
+.rd-brand-link {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  flex-shrink: 1;
+  cursor: pointer;
+}
+.rd-brand-link:focus-visible {
+  outline: 3px solid #003DA5;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+.rd-brand-link img { display: block; width: 100%; height: auto; max-height: 96px; object-fit: contain; }
+.rd-brand-government { width: clamp(180px, 20vw, 300px); justify-content: flex-start; flex-shrink: 0; }
+.rd-brand-secrett { width: clamp(300px, 32vw, 500px); border-left: 1px solid rgb(0 61 165 / .55); padding-left: clamp(12px, 2vw, 28px); }
+.rd-brand-network { width: clamp(280px, 39vw, 600px); justify-content: flex-start; }
+.rd-brand-network img { max-height: 56px; }
+.rd-nav-mobile { max-height: calc(100vh - 112px); }
+@media (max-width: 479px) {
+  .rd-brand-secrett, .rd-brand-network { display: none; }
+  .rd-brand-government { width: min(190px, calc(100vw - 88px)); }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  .rd-brand-secrett { display: none; }
+  .rd-brand-government { width: 210px; }
+  .rd-brand-network { width: min(220px, 35vw); }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .rd-brand-government { width: 170px; }
+  .rd-brand-secrett { width: 235px; }
+  .rd-brand-network { width: 200px; }
+}
+@media (min-width: 1024px) {
+  .rd-brand-header { height: 144px; padding-inline: 24px; }
+  .rd-brand-link img { max-height: 124px; }
+  .rd-brand-network img { max-height: 56px; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .rd-brand-government { width: 190px; }
+  .rd-brand-secrett { width: 300px; }
+  .rd-brand-network { width: 350px; }
+}
+@media (min-width: 1024px) { .rd-nav-mobile { max-height: calc(100vh - 144px); } }
+
+/* Padding superior del <main> ajustado a la altura de la cabecera fija. */
+.rd-main { padding-top: 112px; }
+@media (min-width: 1024px) { .rd-main { padding-top: 144px; } }
+@media (min-width: 80rem) { .rd-main { padding-top: 208px; } }
 
 /* ─── RITMO DE SECCIÓN ────────────────────────────────────────────────────── */
 .rd-section { padding-block: 8rem; }
@@ -239,12 +307,15 @@
 
 /* Hero a pantalla completa: solo el azul above-the-fold (alto menos header) */
 .rd-hero-fill {
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - 112px);
   display: flex;
   align-items: center;
 }
 @media (min-width: 80rem) {
-  .rd-hero-fill { min-height: calc(100vh - 128px); }
+  .rd-hero-fill { min-height: calc(100vh - 208px); }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .rd-hero-fill { min-height: calc(100vh - 144px); }
 }
 
 /* Stats glassmórficas en el hero — ESTILO CANÓNICO UNIFICADO (2026-06-09)

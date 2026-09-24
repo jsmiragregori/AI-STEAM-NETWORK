@@ -12,6 +12,15 @@ const DEFAULT_LANGUAGES = [
   { code: 'va', label: 'VA', bcp47: 'ca-valencia' },
 ];
 
+const BRAND_ALT = {
+  es: 'Generalitat Valenciana — Conselleria de Educación, Cultura y Universidades',
+  en: 'Valencian Government — Department of Education, Culture and Universities',
+  va: 'Generalitat Valenciana — Conselleria d’Educació, Cultura i Universitats',
+};
+const HOME_LABEL = { es: 'Ir al inicio', en: 'Go to home', va: 'Anar a l’inici' };
+
+const AI_SECRETT_URL = getSafeEditorialUrl('https://aisecrett.eu/');
+
 function getHeaderLanguages() {
   const configured = Array.isArray(HEADER_CONFIG?.languages) ? HEADER_CONFIG.languages : [];
   const valid = configured
@@ -110,14 +119,17 @@ export function renderHeader() {
   return `
     <div class="fixed top-0 left-0 right-0 z-50">
       <!-- Top bar -->
-      <header class="bg-white border-b border-eu-border h-16 flex items-center justify-between px-4 sm:px-6">
-        <!-- Logo -->
-        <div id="logo-btn" class="flex items-center gap-2 sm:gap-3 cursor-pointer shrink-0">
-          <div class="w-10 h-10 bg-eu-blue rounded flex items-center justify-center text-white font-bold text-xl shrink-0">AI</div>
-          <div class="hidden sm:block">
-            <span class="font-bold text-xl text-eu-blue block leading-none">${esc(t('header.title'))}</span>
-            <span class="text-xs text-gray-500 font-medium tracking-wide uppercase">${esc(t('header.subtitle'))}</span>
-          </div>
+      <header class="rd-brand-header">
+        <div class="rd-brand-row">
+          <button id="logo-btn" class="rd-brand-link rd-brand-government" type="button" aria-label="${esc(BRAND_ALT[lang] || BRAND_ALT.es)} — ${esc(HOME_LABEL[lang] || HOME_LABEL.es)}">
+            <img src="assets/images/brand/generalitat-va-480.png" srcset="assets/images/brand/generalitat-va-240.png 240w, assets/images/brand/generalitat-va-480.png 480w, assets/images/brand/generalitat-va-720.png 720w" sizes="(max-width: 479px) 190px, (max-width: 767px) 210px, (max-width: 1279px) 190px, 300px" width="720" height="343" alt="${esc(BRAND_ALT[lang] || BRAND_ALT.es)}">
+          </button>
+          ${AI_SECRETT_URL ? `<a class="rd-brand-link rd-brand-secrett" href="${esc(AI_SECRETT_URL)}" target="_blank" rel="noopener noreferrer" aria-label="AI-SECRETT — ${esc('Creativity and AI for the Triple Transition')}">
+            <img src="assets/images/brand/aisecrett-480.png" srcset="assets/images/brand/aisecrett-240.png 240w, assets/images/brand/aisecrett-480.png 480w, assets/images/brand/aisecrett-720.png 720w" sizes="(max-width: 1023px) 235px, (max-width: 1279px) 300px, 500px" width="720" height="96" alt="AI-SECRETT — Creativity and AI for the Triple Transition">
+          </a>` : ''}
+          <button id="network-logo-btn" class="rd-brand-link rd-brand-network" type="button" aria-label="${esc('AI-STEAM Network')} — ${esc(HOME_LABEL[lang] || HOME_LABEL.es)}">
+            <img src="assets/images/brand/aisteam-network-480.png" srcset="assets/images/brand/aisteam-network-240.png 240w, assets/images/brand/aisteam-network-480.png 480w, assets/images/brand/aisteam-network-720.png 720w" sizes="(max-width: 767px) 160px, (max-width: 1023px) 200px, (max-width: 1279px) 350px, 600px" width="720" height="57" alt="AI-STEAM Network">
+          </button>
         </div>
 
         <!-- Hamburger (responsive controlado en redesign.css: rd-nav-toggle) -->
@@ -143,7 +155,7 @@ export function renderHeader() {
 
       <!-- Mobile/tablet dropdown (rd-nav-mobile) -->
       ${mobileOpen ? `
-      <nav class="rd-nav-mobile bg-eu-blue border-t border-eu-blue/20 max-h-[calc(100vh-128px)] overflow-y-auto">
+      <nav class="rd-nav-mobile bg-eu-blue border-t border-eu-blue/20 overflow-y-auto">
         <div class="flex flex-col">${mobileNav}</div>
         <div class="border-t border-eu-blue/20 px-6 py-4">
           <p class="text-xs text-white/80 font-bold uppercase mb-3 tracking-wide">${esc(t('header.language'))}</p>
@@ -162,6 +174,7 @@ export function renderHeader() {
 export function mountHeader() {
   // Logo → inicio
   document.getElementById('logo-btn')?.addEventListener('click', () => navigateTo('inicio'));
+  document.getElementById('network-logo-btn')?.addEventListener('click', () => navigateTo('inicio'));
 
   // Tabs nav — al elegir destino, cerrar el menú móvil antes de navegar
   // (navigateTo → renderApp re-renderiza el header leyendo mobileMenuOpen)
