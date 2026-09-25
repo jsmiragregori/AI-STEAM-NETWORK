@@ -34,9 +34,10 @@ test('ningún window.open() se abre sin noopener', async () => {
 test('línea base informativa de destinos de pestaña nueva', async () => {
   const report = await generateInventory();
   const { total, literalCount, dynamicCount } = report.blankTargetsWithoutNoopener;
-  assert.equal(literalCount, 17);
+  // CABECERA: el logo de AI-SECRETT añade un enlace externo _blank con noopener.
+  assert.equal(literalCount, 18);
   assert.equal(dynamicCount, 4);
-  assert.equal(total, 21);
+  assert.equal(total, 22);
   assert.equal(report.windowOpenCalls.length, 0);
 });
 

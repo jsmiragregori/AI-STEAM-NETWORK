@@ -78,20 +78,23 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // SM-4: 26 con el enlace de cada entrada del mapa web. Tampoco es editorial:
   // lo construye `formatViewRoute()` desde la tabla de slugs congelada.
   // 2026-09-24: 25 al retirar el aviso de cookies, que enlazaba a su política.
-  assert.equal(report.dynamicHrefs.editorialCount, 25);
+  // CABECERA: el logo de AI-SECRETT añade un href externo validado con
+  // getSafeEditorialUrl(); es el único incremento de superficie editorial.
+  assert.equal(report.dynamicHrefs.editorialCount, 26);
   // VAN-3B.2.1: los 23 pasan por getSafeEditorialUrl(), incluidos los dos de
   // Header que V9 demostró editoriales. El invariante que importa
   // es que no quede ninguno sin validar, no que sigan siendo 23: si alguien
   // añade el enlace 22 sin cablearlo, esta lista deja de estar vacía.
   assert.deepEqual(report.dynamicHrefs.editorialUnvalidated, []);
-  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 25);
+  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 26);
   assert.equal(report.dynamicHrefs.nonEditorialCount, 0);
-  assert.equal(report.dynamicHrefs.total, 25);
+  assert.equal(report.dynamicHrefs.total, 26);
   // VAN-2.3: 21 y no 16 por dos ampliaciones de la medición: los
   // `target="${…}"` calculados, antes invisibles, y el ancla que emite
   // `sanitize-editorial-html.js`, antes fuera de alcance. El invariante —que la
   // lista de inseguros esté vacía— vive en `noopener.test.mjs`.
-  assert.equal(report.blankTargetsWithoutNoopener.total, 21);
+  // CABECERA: el mismo enlace externo añade un _blank literal protegido.
+  assert.equal(report.blankTargetsWithoutNoopener.total, 22);
   assert.deepEqual(report.blankTargetsWithoutNoopener.unsafe, []);
 
   const sinkCounts = Object.fromEntries(
