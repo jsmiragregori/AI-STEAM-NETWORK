@@ -92,7 +92,7 @@
 .rd-footer { background: var(--rd-canvas); color: var(--rd-text); }
 .rd-footer-inner { display: grid; gap: 20px; }
 .rd-footer-funding-mark { display: block; width: min(100%, 300px); height: auto; }
-.rd-footer-org { align-self: center; min-width: 0; color: var(--rd-text); text-align: center; }
+.rd-footer-org { align-self: center; min-width: 0; color: var(--rd-purple); text-align: center; }
 .rd-footer-link:focus-visible { outline: 2px solid var(--rd-blue); outline-offset: 3px; }
 .rd-footer-nav { align-self: center; min-width: 0; }
 .rd-footer-link { color: var(--rd-purple); text-decoration: none; transition: color .2s ease; }
