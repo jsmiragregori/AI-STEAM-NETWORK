@@ -21,7 +21,7 @@ const ENLACES_LEGALES = [
   { view: 'mapa-web',      clave: 'footer.sitemap' },
 ];
 
-const CLASES_ENLACE = 'rd-footer-link font-medium underline underline-offset-2';
+const CLASES_ENLACE = 'rd-footer-link font-medium';
 const CLASES_ROTULO = 'rd-footer-label font-medium';
 
 /**
@@ -50,14 +50,13 @@ export function renderFooter() {
         <img src="assets/images/co-funder-blue.svg" width="300" height="116"
           alt="${esc(t('footer.fundedBy'))} ${esc(t('footer.europeanUnion'))} — Digital Europe Programme (DIGITAL-2024-ADVANCED-DIGITAL-07)"
           class="rd-footer-funding-mark" loading="lazy" decoding="async" />
-        <div class="rd-footer-meta">
-          <div class="text-xs sm:text-sm">
-            ${esc(t('footer.orgName'))}<br/>${esc(t('footer.orgUnit'))}
-          </div>
-          <nav aria-label="${esc(t('footer.legalNav'))}" class="flex flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm">
-            ${renderEnlacesLegales()}
-          </nav>
-        </div>
+        <a class="rd-footer-org text-xs sm:text-sm" href="https://ceice.gva.es/"
+          target="_blank" rel="noopener noreferrer">
+          ${esc(t('footer.orgName'))}<br/>${esc(t('footer.orgUnit'))}
+        </a>
+        <nav aria-label="${esc(t('footer.legalNav'))}" class="rd-footer-nav flex flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm">
+          ${renderEnlacesLegales()}
+        </nav>
       </div>
     </footer>
   `;

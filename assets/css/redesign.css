@@ -92,12 +92,16 @@
 .rd-footer { background: var(--rd-canvas); color: var(--rd-text); }
 .rd-footer-inner { display: grid; gap: 20px; }
 .rd-footer-funding-mark { display: block; width: min(100%, 300px); height: auto; }
-.rd-footer-meta { display: grid; align-content: center; gap: 16px; min-width: 0; }
-.rd-footer-link { color: var(--rd-purple); transition: color .2s ease; }
-.rd-footer-link:hover, .rd-footer-link:focus-visible { color: var(--rd-blue); }
+.rd-footer-org { align-self: center; min-width: 0; color: var(--rd-text); text-align: center; text-decoration: none; border-radius: 6px; transition: color .2s ease, background-color .2s ease; }
+.rd-footer-org:hover { color: var(--rd-blue); background: rgb(86 32 246 / .06); }
+.rd-footer-org:focus-visible, .rd-footer-link:focus-visible { outline: 2px solid var(--rd-blue); outline-offset: 3px; }
+.rd-footer-nav { align-self: center; min-width: 0; }
+.rd-footer-link { color: var(--rd-text); text-decoration: none; border-radius: 6px; transition: color .2s ease, background-color .2s ease; }
+.rd-footer-link:hover { color: var(--rd-blue); background: rgb(86 32 246 / .06); }
 .rd-footer-label { color: var(--rd-text); }
 @media (min-width: 900px) {
-  .rd-footer-inner { grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 36px; }
+  .rd-footer-inner { grid-template-columns: minmax(0, 300px) minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+  .rd-footer-nav { justify-content: flex-end; }
 }
 
 /* ─── RITMO DE SECCIÓN ────────────────────────────────────────────────────── */
