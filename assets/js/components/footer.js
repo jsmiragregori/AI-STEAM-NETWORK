@@ -21,8 +21,8 @@ const ENLACES_LEGALES = [
   { view: 'mapa-web',      clave: 'footer.sitemap' },
 ];
 
-const CLASES_ENLACE = 'text-white hover:text-eu-yellow transition-colors font-medium underline underline-offset-2';
-const CLASES_ROTULO = 'text-white/70 font-medium';
+const CLASES_ENLACE = 'rd-footer-link font-medium underline underline-offset-2';
+const CLASES_ROTULO = 'rd-footer-label font-medium';
 
 /**
  * Pinta los enlaces legales en el idioma activo.
@@ -45,18 +45,16 @@ function renderEnlacesLegales() {
 
 export function renderFooter() {
   return `
-    <footer class="bg-eu-footer text-white border-t-4 border-eu-blue mt-auto">
-      <div class="rd-footer-funding px-4 sm:px-6 py-6">
+    <footer class="rd-footer border-t-4 border-eu-blue mt-auto">
+      <div class="rd-footer-inner px-4 sm:px-6 py-4">
         <img src="assets/images/co-funder-blue.svg" width="300" height="116"
           alt="${esc(t('footer.fundedBy'))} ${esc(t('footer.europeanUnion'))} — Digital Europe Programme (DIGITAL-2024-ADVANCED-DIGITAL-07)"
           class="rd-footer-funding-mark" loading="lazy" decoding="async" />
-      </div>
-      <div class="px-4 sm:px-6 py-6 sm:py-5">
-        <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
+        <div class="rd-footer-meta">
           <div class="text-xs sm:text-sm">
             ${esc(t('footer.orgName'))}<br/>${esc(t('footer.orgUnit'))}
           </div>
-          <nav aria-label="${esc(t('footer.legalNav'))}" class="flex flex-wrap gap-3 sm:gap-6 sm:ml-auto text-xs sm:text-sm">
+          <nav aria-label="${esc(t('footer.legalNav'))}" class="flex flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm">
             ${renderEnlacesLegales()}
           </nav>
         </div>

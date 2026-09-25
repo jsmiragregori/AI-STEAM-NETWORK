@@ -88,9 +88,17 @@
 .rd-main { padding-top: 100px; }
 @media (min-width: 80rem) { .rd-main { padding-top: 172px; } }
 
-/* La marca oficial incluye bandera, acreditación y leyenda del programa. */
-.rd-footer-funding { background: var(--rd-canvas); }
-.rd-footer-funding-mark { display: block; width: min(100%, 390px); height: auto; }
+/* Pie único: acreditación oficial e información institucional en la misma franja. */
+.rd-footer { background: var(--rd-canvas); color: var(--rd-text); }
+.rd-footer-inner { display: grid; gap: 20px; }
+.rd-footer-funding-mark { display: block; width: min(100%, 300px); height: auto; }
+.rd-footer-meta { display: grid; align-content: center; gap: 16px; min-width: 0; }
+.rd-footer-link { color: var(--rd-purple); transition: color .2s ease; }
+.rd-footer-link:hover, .rd-footer-link:focus-visible { color: var(--rd-blue); }
+.rd-footer-label { color: var(--rd-text); }
+@media (min-width: 900px) {
+  .rd-footer-inner { grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 36px; }
+}
 
 /* ─── RITMO DE SECCIÓN ────────────────────────────────────────────────────── */
 .rd-section { padding-block: 8rem; }
