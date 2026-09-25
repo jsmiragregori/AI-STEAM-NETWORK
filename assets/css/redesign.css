@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 27px;
+  gap: 30px;
   min-width: 0;
 }
 .rd-brand-link {
@@ -55,37 +55,53 @@
   outline-offset: 4px;
   border-radius: 3px;
 }
+.rd-brand-link picture { display: block; width: 100%; }
 .rd-brand-link img { display: block; width: 100%; height: auto; max-height: 84px; object-fit: contain; }
-.rd-brand-government { width: 160px; justify-content: flex-start; flex-shrink: 0; }
-.rd-brand-secrett { width: 300px; border-left: 1px solid rgb(0 61 165 / .55); padding-left: 27px; }
-.rd-brand-network { width: 300px; justify-content: flex-start; }
+.rd-brand-government { width: 140px; justify-content: flex-start; flex-shrink: 0; }
+.rd-brand-secrett { display: none; width: 317px; border-left: 1px solid rgb(0 61 165 / .55); padding-left: 30px; }
+.rd-brand-network { display: none; width: 335px; justify-content: flex-start; }
 .rd-nav-mobile { max-height: calc(100vh - 100px); }
-@media (max-width: 479px) {
-  .rd-brand-secrett, .rd-brand-network { display: none; }
-  .rd-brand-government { width: 140px; }
-}
-@media (min-width: 480px) and (max-width: 767px) {
-  .rd-brand-secrett { display: none; }
+@media (min-width: 480px) {
   .rd-brand-government { width: 130px; }
   .rd-brand-network {
+    display: inline-flex;
     width: 200px;
     border-left: 1px solid rgb(0 61 165 / .55);
-    padding-left: 27px;
+    padding-left: 30px;
   }
 }
-@media (min-width: 768px) and (max-width: 1023px) {
-  .rd-brand-row { gap: 24px; }
+@media (min-width: 768px) {
   .rd-brand-government { width: 120px; }
-  .rd-brand-secrett { width: 230px; padding-left: 24px; }
-  .rd-brand-network { width: 200px; }
+  .rd-brand-secrett { display: inline-flex; width: 230px; }
+  .rd-brand-network { border-left: 0; padding-left: 0; }
+}
+@media (min-width: 1024px) {
+  .rd-brand-government { width: 150px; }
+  .rd-brand-secrett { width: 317px; }
+  .rd-brand-network { width: 335px; }
 }
 @media (min-width: 1280px) {
-  .rd-brand-header { padding-inline: 27px; }
+  .rd-brand-header { padding-inline: 30px; }
 }
 
 /* Padding superior del <main> ajustado a la altura de la cabecera fija. */
 .rd-main { padding-top: 100px; }
 @media (min-width: 80rem) { .rd-main { padding-top: 172px; } }
+
+/* Pie único: acreditación oficial e información institucional en la misma franja. */
+.rd-footer { background: var(--rd-canvas); color: var(--rd-text); }
+.rd-footer-inner { display: grid; gap: 20px; }
+.rd-footer-funding-mark { display: block; width: min(100%, 300px); height: auto; }
+.rd-footer-org { align-self: center; min-width: 0; color: var(--rd-text); text-align: center; }
+.rd-footer-link:focus-visible { outline: 2px solid var(--rd-blue); outline-offset: 3px; }
+.rd-footer-nav { align-self: center; min-width: 0; }
+.rd-footer-link { color: var(--rd-purple); text-decoration: none; transition: color .2s ease; }
+.rd-footer-link:hover { color: #2E0F70; }
+.rd-footer-label { color: var(--rd-text); }
+@media (min-width: 900px) {
+  .rd-footer-inner { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .rd-footer-nav { justify-content: flex-end; }
+}
 
 /* ─── RITMO DE SECCIÓN ────────────────────────────────────────────────────── */
 .rd-section { padding-block: 8rem; }

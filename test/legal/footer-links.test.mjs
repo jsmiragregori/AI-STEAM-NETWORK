@@ -34,9 +34,10 @@ const ENLACES = [
   { view: 'accesibilidad', clave: 'accessibility' },
 ];
 
-/** Extrae los pares (href, texto) de los enlaces del pie. */
+/** Extrae los pares (href, texto) de la navegación legal del pie. */
 function anclas(html) {
-  return [...html.matchAll(/<a\b[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/g)]
+  const nav = html.match(/<nav\b[\s\S]*?<\/nav>/)?.[0] ?? '';
+  return [...nav.matchAll(/<a\b[^>]*href="([^"]*)"[^>]*>([\s\S]*?)<\/a>/g)]
     .map(([, href, texto]) => ({ href, texto: texto.trim() }));
 }
 
@@ -66,6 +67,14 @@ test('TDD-L17: cambiar de idioma cambia los cuatro enlaces', () => {
   assert.notDeepEqual(enEspanol, enIngles, 'el pie se quedó con los enlaces del idioma anterior');
   assert.ok(enIngles.every(h => h.startsWith('#en/')), enIngles.join(' '));
   assert.ok(enEspanol.every(h => h.startsWith('#es/')), enEspanol.join(' '));
+});
+
+test('el texto institucional del pie no enlaza y el logo de Generalitat abre la Conselleria', async () => {
+  const { renderHeader } = await import('../../assets/js/components/header.js');
+  const footer = renderFooter();
+  const header = renderHeader();
+  assert.doesNotMatch(footer, /href="https:\/\/ceice\.gva\.es\/"/);
+  assert.match(header, /<a\b[^>]*rd-brand-government[^>]*href="https:\/\/ceice\.gva\.es\/"[^>]*target="_blank"[^>]*rel="noopener noreferrer"/);
 });
 
 test('TDD-L18: el pie no deja anclas sin destino ni destinos inventados', async () => {
