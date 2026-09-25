@@ -69,9 +69,12 @@ test('TDD-L17: cambiar de idioma cambia los cuatro enlaces', () => {
   assert.ok(enEspanol.every(h => h.startsWith('#es/')), enEspanol.join(' '));
 });
 
-test('el enlace institucional abre ceice.gva.es en otra pestaña', () => {
+test('el texto institucional del pie no enlaza y el logo de Generalitat abre la Conselleria', async () => {
+  const { renderHeader } = await import('../../assets/js/components/header.js');
   const footer = renderFooter();
-  assert.match(footer, /<a\b[^>]*href="https:\/\/ceice\.gva\.es\/"[^>]*target="_blank"[^>]*rel="noopener noreferrer"/);
+  const header = renderHeader();
+  assert.doesNotMatch(footer, /href="https:\/\/ceice\.gva\.es\/"/);
+  assert.match(header, /<a\b[^>]*rd-brand-government[^>]*href="https:\/\/ceice\.gva\.es\/"[^>]*target="_blank"[^>]*rel="noopener noreferrer"/);
 });
 
 test('TDD-L18: el pie no deja anclas sin destino ni destinos inventados', async () => {

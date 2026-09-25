@@ -35,7 +35,7 @@ test('línea base informativa de destinos de pestaña nueva', async () => {
   const report = await generateInventory();
   const { total, literalCount, dynamicCount } = report.blankTargetsWithoutNoopener;
   // CABECERA: el logo de AI-SECRETT añade un enlace externo _blank con noopener.
-  // FOOTER: el enlace institucional a ceice.gva.es añade otro destino seguro.
+  // GENERALITAT: el logo enlaza a ceice.gva.es en otra pestaña de forma segura.
   assert.equal(literalCount, 19);
   assert.equal(dynamicCount, 4);
   assert.equal(total, 23);

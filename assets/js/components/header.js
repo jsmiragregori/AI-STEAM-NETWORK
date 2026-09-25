@@ -121,12 +121,12 @@ export function renderHeader() {
       <!-- Top bar -->
       <header class="rd-brand-header">
         <div class="rd-brand-row">
-          <button id="logo-btn" class="rd-brand-link rd-brand-government" type="button" aria-label="${esc(BRAND_ALT[lang] || BRAND_ALT.es)} — ${esc(HOME_LABEL[lang] || HOME_LABEL.es)}">
+          <a class="rd-brand-link rd-brand-government" href="https://ceice.gva.es/" target="_blank" rel="noopener noreferrer" aria-label="${esc(BRAND_ALT[lang] || BRAND_ALT.es)}">
             <picture>
               <source srcset="assets/images/brand/generalitat-oficial.svg" type="image/svg+xml">
               <img src="assets/images/brand/generalitat-oficial-1x.png" srcset="assets/images/brand/generalitat-oficial-1x.png 1x, assets/images/brand/generalitat-oficial-2x.png 2x" width="150" height="72" alt="${esc(BRAND_ALT[lang] || BRAND_ALT.es)}">
             </picture>
-          </button>
+          </a>
           ${AI_SECRETT_URL ? `<a class="rd-brand-link rd-brand-secrett" href="${esc(AI_SECRETT_URL)}" target="_blank" rel="noopener noreferrer" aria-label="AI-SECRETT — ${esc('Creativity and AI for the Triple Transition')}">
             <picture>
               <source srcset="assets/images/brand/aisecrett-oficial.svg" type="image/svg+xml">
@@ -181,8 +181,7 @@ export function renderHeader() {
 }
 
 export function mountHeader() {
-  // Logo → inicio
-  document.getElementById('logo-btn')?.addEventListener('click', () => navigateTo('inicio'));
+  // El logo de la red vuelve al inicio; el de Generalitat abre su web institucional.
   document.getElementById('network-logo-btn')?.addEventListener('click', () => navigateTo('inicio'));
 
   // Tabs nav — al elegir destino, cerrar el menú móvil antes de navegar

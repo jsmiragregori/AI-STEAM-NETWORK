@@ -50,10 +50,9 @@ export function renderFooter() {
         <img src="assets/images/co-funder-blue.svg" width="300" height="116"
           alt="${esc(t('footer.fundedBy'))} ${esc(t('footer.europeanUnion'))} — Digital Europe Programme (DIGITAL-2024-ADVANCED-DIGITAL-07)"
           class="rd-footer-funding-mark" loading="lazy" decoding="async" />
-        <a class="rd-footer-org text-base" href="https://ceice.gva.es/"
-          target="_blank" rel="noopener noreferrer">
+        <div class="rd-footer-org text-base">
           ${esc(t('footer.orgName'))}<br/>${esc(t('footer.orgUnit'))}
-        </a>
+        </div>
         <nav aria-label="${esc(t('footer.legalNav'))}" class="rd-footer-nav flex flex-wrap gap-3 sm:gap-5 text-base">
           ${renderEnlacesLegales()}
         </nav>

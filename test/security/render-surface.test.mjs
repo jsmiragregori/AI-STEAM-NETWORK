@@ -94,7 +94,7 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // `sanitize-editorial-html.js`, antes fuera de alcance. El invariante —que la
   // lista de inseguros esté vacía— vive en `noopener.test.mjs`.
   // CABECERA: el mismo enlace externo añade un _blank literal protegido.
-  // FOOTER: el enlace institucional a ceice.gva.es añade otro _blank protegido.
+  // GENERALITAT: el logo enlaza a ceice.gva.es con otro _blank protegido.
   assert.equal(report.blankTargetsWithoutNoopener.total, 23);
   assert.deepEqual(report.blankTargetsWithoutNoopener.unsafe, []);
 
