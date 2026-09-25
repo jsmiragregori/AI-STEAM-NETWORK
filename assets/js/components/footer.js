@@ -46,16 +46,14 @@ function renderEnlacesLegales() {
 export function renderFooter() {
   return `
     <footer class="bg-eu-footer text-white border-t-4 border-eu-blue mt-auto">
-      <div class="px-4 sm:px-6 py-6 sm:py-4">
+      <div class="rd-footer-funding px-4 sm:px-6 py-6">
+        <img src="assets/images/co-funder-blue.svg" width="300" height="116"
+          alt="${esc(t('footer.fundedBy'))} ${esc(t('footer.europeanUnion'))} — Digital Europe Programme (DIGITAL-2024-ADVANCED-DIGITAL-07)"
+          class="rd-footer-funding-mark" loading="lazy" decoding="async" />
+      </div>
+      <div class="px-4 sm:px-6 py-6 sm:py-5">
         <div class="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-8">
-          <div class="flex items-center gap-3 sm:gap-5">
-            <div class="w-7.5 h-5 bg-eu-blue shrink-0"></div>
-            <div class="text-xs sm:text-sm">
-              ${esc(t('footer.fundedBy'))}<br/>
-              <strong>${esc(t('footer.europeanUnion'))}</strong>
-            </div>
-          </div>
-          <div class="text-xs sm:text-sm hidden sm:block">
+          <div class="text-xs sm:text-sm">
             ${esc(t('footer.orgName'))}<br/>${esc(t('footer.orgUnit'))}
           </div>
           <nav aria-label="${esc(t('footer.legalNav'))}" class="flex flex-wrap gap-3 sm:gap-6 sm:ml-auto text-xs sm:text-sm">

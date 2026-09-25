@@ -88,6 +88,10 @@
 .rd-main { padding-top: 100px; }
 @media (min-width: 80rem) { .rd-main { padding-top: 172px; } }
 
+/* La marca oficial incluye bandera, acreditación y leyenda del programa. */
+.rd-footer-funding { background: var(--rd-canvas); }
+.rd-footer-funding-mark { display: block; width: min(100%, 390px); height: auto; }
+
 /* ─── RITMO DE SECCIÓN ────────────────────────────────────────────────────── */
 .rd-section { padding-block: 8rem; }
 
