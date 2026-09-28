@@ -331,6 +331,27 @@ export const DEFAULT_LANG = 'es';
 export const DEFAULT_VIEW = 'inicio';
 
 /**
+ * Vistas del menú principal que el menú oculta y que, por tanto, no se abren
+ * por enlace directo. Sale de `NAV_CONFIG.hidden`, un dato generado que puede
+ * faltar o venir corrupto: ante cualquier duda, ninguna. El dato solo puede
+ * ocultar vistas del menú (`VIEW_SLUGS`) y nunca la vista por defecto, así que
+ * no puede dejar el sitio sin Inicio ni quitar las páginas del pie.
+ */
+export function construirVistasOcultas(navConfig) {
+  const lista = navConfig && Array.isArray(navConfig.hidden) ? navConfig.hidden : [];
+  const ocultas = lista.filter(view =>
+    typeof view === 'string'
+    && view !== DEFAULT_VIEW
+    && Object.prototype.hasOwnProperty.call(VIEW_SLUGS, view));
+  return Object.freeze([...new Set(ocultas)]);
+}
+
+/** La vista que se abre de verdad: una oculta lleva a la vista por defecto. */
+export function resolverVistaPermitida(view, ocultas) {
+  return ocultas.includes(view) ? DEFAULT_VIEW : view;
+}
+
+/**
  * Decide qué vista y qué idioma corresponden al abrir la página.
  *
  * A diferencia de `parseViewRoute`, esta función NUNCA devuelve `null`: su

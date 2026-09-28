@@ -15,10 +15,13 @@
 // exactamente igual que antes de que existiera el CMS (DA-CS-5).
 
 import { NAV_CONFIG } from '../data/navigation.js';
-import { construirTablaEfectiva, construirAliasEfectivos } from './utils/view-route.js';
+import { construirTablaEfectiva, construirAliasEfectivos, construirVistasOcultas } from './utils/view-route.js';
 
 /** Tabla efectiva de slugs canónicos. Nunca tiene menos vistas que el código. */
 export const TABLA_SLUGS = construirTablaEfectiva(NAV_CONFIG);
 
 /** Slugs jubilados que siguen resolviendo, para no romper enlaces repartidos. */
 export const ALIAS_SLUGS = construirAliasEfectivos(NAV_CONFIG, TABLA_SLUGS);
+
+/** Vistas que el menú oculta: el router no las abre por enlace directo. */
+export const VISTAS_OCULTAS = construirVistasOcultas(NAV_CONFIG);
