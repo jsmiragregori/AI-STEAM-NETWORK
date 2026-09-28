@@ -1,6 +1,6 @@
 import { getLanguage, getStoredLanguage } from './i18n.js';
-import { formatViewRoute, planLanguageSwitch, resolveInitialRoute } from './utils/view-route.js';
-import { TABLA_SLUGS, ALIAS_SLUGS } from './slug-table.js';
+import { formatViewRoute, planLanguageSwitch, resolveInitialRoute, resolverVistaPermitida } from './utils/view-route.js';
+import { TABLA_SLUGS, ALIAS_SLUGS, VISTAS_OCULTAS } from './slug-table.js';
 
 export const VIEWS = ['inicio', 'red', 'sectores', 'banco-retos', 'formacion', 'conocimiento', 'gobernanza'];
 
@@ -28,6 +28,8 @@ export function navigateTo(view, params = {}) {
     console.warn(`View "${view}" no existe`);
     return;
   }
+  // Lo que el menú oculta no se abre ni desde un enlace interno: se va a Inicio.
+  view = resolverVistaPermitida(view, VISTAS_OCULTAS);
   activeView = view;
   viewParams = params;
   window.scrollTo(0, 0);
@@ -42,7 +44,7 @@ export function navigateTo(view, params = {}) {
 // nueva entrada. La usa el listener global de main.js para back/forward.
 export function syncView(view) {
   if (!VIEWS.includes(view) && !SECONDARY_VIEWS.includes(view)) return;
-  activeView = view;
+  activeView = resolverVistaPermitida(view, VISTAS_OCULTAS);
   viewParams = {};
   window.scrollTo(0, 0);
   import('./main.js').then(m => m.renderApp());
@@ -57,7 +59,11 @@ export function syncView(view) {
 
 /** Lee el hash actual y lo resuelve. Nunca devuelve `null` (DA-DL-3). */
 export function readRoute() {
-  return resolveInitialRoute(window.location.hash, { storedLang: getStoredLanguage() }, TABLA_SLUGS, ALIAS_SLUGS);
+  const ruta = resolveInitialRoute(window.location.hash, { storedLang: getStoredLanguage() }, TABLA_SLUGS, ALIAS_SLUGS);
+  // Un enlace directo a una vista oculta en el menú abre Inicio, en su idioma,
+  // igual que una ruta que no se reconoce.
+  const view = resolverVistaPermitida(ruta.view, VISTAS_OCULTAS);
+  return view === ruta.view ? ruta : { ...ruta, view, recognised: false };
 }
 
 /**
@@ -90,7 +96,7 @@ export function isInPageAnchor() {
  */
 export function setActiveView(view) {
   if (!VIEWS.includes(view) && !SECONDARY_VIEWS.includes(view)) return;
-  activeView = view;
+  activeView = resolverVistaPermitida(view, VISTAS_OCULTAS);
   viewParams = {};
 }
 

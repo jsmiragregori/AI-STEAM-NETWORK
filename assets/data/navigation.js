@@ -32,6 +32,9 @@ export const NAV_CONFIG = {
       "key": "nav.gobernanza"
     }
   ],
+  "hidden": [
+    "actualidad"
+  ],
   "slugs": {
     "accesibilidad": {
       "es": "accesibilidad",
