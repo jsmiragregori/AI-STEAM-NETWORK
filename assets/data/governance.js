@@ -2289,73 +2289,7 @@ export const GOVERNANCE_CONFIG = {
       "buttonExternal": false
     },
     "meetingsSection": {
-      "visible": false,
-      "title": {
-        "es": "Red de Stakeholders (SN) – Próximas Reuniones",
-        "en": "Stakeholder Network (SN) – Upcoming Meetings",
-        "va": "Xarxa de Stakeholders (SN) – Pròximes Reunions"
-      },
-      "subtitle": {
-        "es": "Coordinada por CECU · Frecuencia semestral + online continua",
-        "en": "Coordinated by CECU · Bi-annual frequency + continuous online",
-        "va": "Coordinada per CECU · Freqüència semestral + online contínua"
-      },
-      "meetings": [
-        {
-          "id": "asamblea-3",
-          "date": "15 Jun 2026",
-          "title": {
-            "es": "Asamblea de la Red – Sesión 3",
-            "en": "Network Assembly – Session 3",
-            "va": "Assemblea de la Xarxa – Sessió 3"
-          },
-          "location": {
-            "es": "Conselleria de Educació, Valencia + Streaming",
-            "en": "Education Ministry, Valencia + Streaming",
-            "va": "Conselleria d'Educació, València + Streaming"
-          },
-          "registrationUrl": "https://aules.edu.gva.es/formaciodelprofessorat/login/index.php",
-          "registrationExternal": true,
-          "accessUrl": "https://teams.microsoft.com/meet/392333086027865?p=NJ3mn5mHNiHdLaZmSo",
-          "accessExternal": true
-        },
-        {
-          "id": "taller-ia-salud",
-          "date": "10 Jul 2026",
-          "title": {
-            "es": "Taller Sectorial: IA y Salud",
-            "en": "Sectorial Workshop: AI and Health",
-            "va": "Taller Sectorial: IA i Salut"
-          },
-          "location": {
-            "es": "Hospital La Fe + Online",
-            "en": "La Fe Hospital + Online",
-            "va": "Hospital La Fe + Online"
-          },
-          "registrationUrl": "",
-          "registrationExternal": false,
-          "accessUrl": "",
-          "accessExternal": false
-        },
-        {
-          "id": "foro-anual-2026",
-          "date": "18 Sep 2026",
-          "title": {
-            "es": "Foro Anual AI-STEAM Network",
-            "en": "AI-STEAM Network Annual Forum",
-            "va": "Fòrum Anual AI-STEAM Network"
-          },
-          "location": {
-            "es": "Ciudad Politécnica de la Innovación, Valencia",
-            "en": "Innovation Polytechnic City, Valencia",
-            "va": "Ciutat Politècnica de la Innovació, València"
-          },
-          "registrationUrl": "",
-          "registrationExternal": false,
-          "accessUrl": "",
-          "accessExternal": false
-        }
-      ]
+      "visible": false
     }
   }
 };
