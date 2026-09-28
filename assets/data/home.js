@@ -128,9 +128,9 @@ export const HOME_CONFIG = {
       },
       {
         "id": "openKnowledge",
-        "value": 36,
+        "value": 15,
         "manualOverride": false,
-        "computedValue": 36,
+        "computedValue": 15,
         "icon": "library",
         "label": {
           "es": "Recursos abiertos y toolkits",
