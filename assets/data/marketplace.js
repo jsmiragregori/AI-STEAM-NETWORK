@@ -7529,7 +7529,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/challenges/reto-analisis-sentimiento-turismo-tur.yml",
       "core": {
-        "status": "open",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -10756,10 +10756,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "31 d'agost de 2026"
         }
       },
-      "ficha": {
-        "file": "reto-control-calidad-vision-ia-mfg.pdf",
-        "publicPath": "assets/downloads/marketplace/challenges/reto-control-calidad-vision-ia-mfg.pdf"
-      },
+      "ficha": null,
       "adhesionForm": {
         "url": "https://example.org/adhesion-demo"
       },
@@ -21692,7 +21689,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/challenges/reto-analisis-sentimiento-turismo-tur.yml",
         "core": {
-          "status": "open",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -22955,10 +22952,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "31 d'agost de 2026"
           }
         },
-        "ficha": {
-          "file": "reto-control-calidad-vision-ia-mfg.pdf",
-          "publicPath": "assets/downloads/marketplace/challenges/reto-control-calidad-vision-ia-mfg.pdf"
-        },
+        "ficha": null,
         "adhesionForm": {
           "url": "https://example.org/adhesion-demo"
         },
