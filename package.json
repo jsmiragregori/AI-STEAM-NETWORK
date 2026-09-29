@@ -8,7 +8,9 @@
     "security:classify": "node scripts/classify-render-surface.mjs",
     "vendor:flags": "node scripts/vendor-flags.mjs",
     "verify:vendor": "node scripts/verify-vendored-assets.mjs",
-    "verify:data": "node scripts/verify-generated-data.mjs"
+    "verify:data": "node scripts/verify-generated-data.mjs",
+    "serve:csp": "node scripts/serve-csp.mjs",
+    "csp:walk": "node scripts/csp-walk.mjs"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.4",

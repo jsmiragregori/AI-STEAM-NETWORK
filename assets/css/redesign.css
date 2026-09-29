@@ -620,3 +620,11 @@ textarea:focus-visible,
   padding: .125rem 0;
 }
 .rd-sitemap-link:hover { color: var(--rd-purple); text-decoration-thickness: 2px; }
+
+/* CS-18 — Hover de la cabecera sin manejadores en línea: la CSP forzada
+   (script-src 'self') bloquea onmouseover/onmouseout. Mismos colores que antes. */
+.hdr-lang { background: transparent; color: rgba(255, 244, 225, 0.75); }
+.hdr-lang[aria-pressed="true"] { background: rgba(255, 255, 255, 0.2); color: #FFF4E1; }
+.hdr-lang[aria-pressed="false"]:hover { background: rgba(255, 255, 255, 0.1); }
+.hdr-pill { background: #FFF4E1; color: #4918AD; }
+.hdr-pill:hover { background: #5620F6; color: #FFF4E1; }
