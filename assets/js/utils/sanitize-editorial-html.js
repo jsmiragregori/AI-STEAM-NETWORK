@@ -92,7 +92,10 @@ function openingTag(name, attributeSource) {
  * href validado por la política común; target=_blank fuerza rel seguro.
  */
 export function sanitizeEditorialHtml(value) {
-  return sanitizeWithAllowlist(value, ALLOWED_TAGS);
+  // `sourceIsHtml`: los campos editoriales son el HTML que produjo `marked` en
+  // el build, con el texto ya escapado. Sin descodificarlo una vez, `IA & STEAM`
+  // se pintaba como «IA &amp; STEAM» (CS-22, detectado por escape-integrity).
+  return sanitizeWithAllowlist(value, ALLOWED_TAGS, { sourceIsHtml: true });
 }
 
 /**
