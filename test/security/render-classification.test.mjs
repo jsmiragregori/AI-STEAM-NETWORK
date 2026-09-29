@@ -12,8 +12,9 @@ import {
 
 // Línea base de VAN-1.2. Si alguien migra una interpolación, este desglose
 // cambia: debe cambiarse aquí a la vez, con su justificación en el checkpoint.
+// CS-20: TEXTO_PLANO pasa de 4 a 0; eran las cuatro de news.js, ya escapadas.
 const EXPECTED_BY_CATEGORY = {
-  TEXTO_PLANO: 4,
+  TEXTO_PLANO: 0,
   ATRIBUTO: 0,
   URL: 0,
   HTML_INTENCIONAL: 0,
@@ -25,7 +26,6 @@ const EXPECTED_BY_CATEGORY = {
 const EXPECTED_BY_FILE = {
   'assets/js/views/governance.js': { ESTRUCTURAL: 1 },
   'assets/js/views/marketplace.js': { ESTRUCTURAL: 1, HELPER_QUE_ESCAPA: 2, COMPOSICION_CADENA: 2 },
-  'assets/js/views/news.js': { TEXTO_PLANO: 4 },
   'assets/js/views/training.js': { ESTRUCTURAL: 1 },
 };
 
@@ -48,7 +48,7 @@ const EXPECTED_EXCEPTIONS = [
 test('la clasificación VAN-1.2 reproduce su línea base', async () => {
   const report = await generateClassification();
 
-  assert.equal(report.total, 11);
+  assert.equal(report.total, 7); // CS-20: sin las cuatro de news.js
   assert.deepEqual(report.byCategory, EXPECTED_BY_CATEGORY);
 
   const observedByFile = Object.fromEntries(
@@ -135,7 +135,9 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
   // de grupos-. Las dos son marcado que compone el propio fichero a partir de
   // `esc()`: ni una sola cadena del CSV llega sin escapar.
   // 2026-09-24: 175 al retirar el aviso de cookies, que aportaba enlace.
-  assert.equal(indirectOutputCandidates.total, 175);
+  // CS-20: 150 al escapar news.js (de 34 candidatas quedan 9, todas estructurales:
+  // condiciones, clases de un mapa del código y fragmentos ya compuestos con esc()).
+  assert.equal(indirectOutputCandidates.total, 150);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/footer.js': 2,
     'assets/js/components/header.js': 4,
@@ -146,7 +148,7 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
     'assets/js/views/marketplace.js': 19,
     'assets/js/views/network.js': 37,
     'assets/js/views/sitemap.js': 2,
-    'assets/js/views/news.js': 34,
+    'assets/js/views/news.js': 9,
     'assets/js/views/sectors.js': 2,
     'assets/js/views/training.js': 13,
   });

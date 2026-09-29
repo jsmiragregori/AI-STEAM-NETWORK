@@ -11,7 +11,8 @@ const VIEWS_DIR = path.join(ROOT, 'assets/js/views');
 // LG-6 añade 'legal.js': la vista de las páginas legales importa el escapado
 // común, como todas. La lista se enumera a mano a propósito —si una vista deja
 // de importarlo, esta prueba lo dice en lugar de adaptarse—.
-const EXPECTED_IMPORTERS = new Set(['governance.js', 'home.js', 'knowledge.js', 'legal.js', 'marketplace.js', 'network.js', 'sectors.js', 'sitemap.js', 'training.js']);
+// CS-20 añade 'news.js': sigue fuera del runtime, pero ya escapa todo dato.
+const EXPECTED_IMPORTERS = new Set(['governance.js', 'home.js', 'knowledge.js', 'legal.js', 'marketplace.js', 'network.js', 'news.js', 'sectors.js', 'sitemap.js', 'training.js']);
 
 test('escapeHtml escapa los cinco caracteres significativos y normaliza valores vacíos', () => {
   assert.equal(escapeHtml('&<>"\''), '&amp;&lt;&gt;&quot;&#39;');
