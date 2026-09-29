@@ -39,7 +39,7 @@ function langBtn(language, lang) {
   const active = lang === code;
   // `aria-pressed` dice el estado a quien no ve el color de fondo (criterios
   // 1.4.1 y 4.1.2). Sin él, el idioma activo solo se distinguía por color.
-  return `<button data-lang="${esc(code)}" lang="${esc(language.bcp47 || code)}" aria-pressed="${active}" aria-label="Cambiar idioma a ${esc(label)}" class="hdr-lang cursor-pointer font-bold transition-all whitespace-nowrap" style="min-height:44px;min-width:2rem;font-size:0.8125rem;padding:.25rem .625rem;border-radius:.4rem"
+  return `<button data-lang="${esc(code)}" lang="${esc(language.bcp47 || code)}" aria-pressed="${esc(active)}" aria-label="Cambiar idioma a ${esc(label)}" class="hdr-lang cursor-pointer font-bold transition-all whitespace-nowrap" style="min-height:44px;min-width:2rem;font-size:0.8125rem;padding:.25rem .625rem;border-radius:.4rem"
   >${esc(label)}</button>`;
 }
 
@@ -47,7 +47,7 @@ function langBtnMobile(language, lang) {
   const code = language.code;
   const label = language.label || code.toUpperCase();
   const active = lang === code;
-  return `<button data-lang="${esc(code)}" lang="${esc(language.bcp47 || code)}" aria-pressed="${active}" aria-label="Cambiar idioma a ${esc(label)}" class="flex-1 px-3 py-2 rounded font-bold transition-all min-h-10 flex items-center justify-center text-sm ${
+  return `<button data-lang="${esc(code)}" lang="${esc(language.bcp47 || code)}" aria-pressed="${esc(active)}" aria-label="Cambiar idioma a ${esc(label)}" class="flex-1 px-3 py-2 rounded font-bold transition-all min-h-10 flex items-center justify-center text-sm ${
     // El inactivo era blanco sobre `white/40` encima de #5620F6: 3,24:1, por
     // debajo del 4,5:1 que exige 1.4.3. Sin fondo son 7,2:1, y el hover a
     // `white/20` sigue en 5,0:1. El activo (#FFF4E1 sobre azul) ya daba 6,6:1.

@@ -137,20 +137,21 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
   // 2026-09-24: 175 al retirar el aviso de cookies, que aportaba enlace.
   // CS-20: 150 al escapar news.js (de 34 candidatas quedan 9, todas estructurales:
   // condiciones, clases de un mapa del código y fragmentos ya compuestos con esc()).
-  assert.equal(indirectOutputCandidates.total, 150);
+  // CS-22: 134 al pasar por esc() todo dato de las plantillas HTML. Solo baja:
+  // ninguna salida nueva sin escapar (lo impone escape-coverage.test.mjs).
+  assert.equal(indirectOutputCandidates.total, 134);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/footer.js': 2,
     'assets/js/components/header.js': 4,
-    'assets/js/views/governance.js': 25,
+    'assets/js/views/governance.js': 22,
     'assets/js/views/home.js': 18,
-    'assets/js/views/knowledge.js': 18,
-    'assets/js/views/legal.js': 1,
-    'assets/js/views/marketplace.js': 19,
-    'assets/js/views/network.js': 37,
+    'assets/js/views/knowledge.js': 14,
+    'assets/js/views/marketplace.js': 18,
+    'assets/js/views/network.js': 33,
     'assets/js/views/sitemap.js': 2,
-    'assets/js/views/news.js': 9,
+    'assets/js/views/news.js': 8,
     'assets/js/views/sectors.js': 2,
-    'assets/js/views/training.js': 13,
+    'assets/js/views/training.js': 11,
   });
 
   // VAN-3B.2.1 tría las ocho candidatas de Header: cuatro eran texto

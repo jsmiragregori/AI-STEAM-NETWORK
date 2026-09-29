@@ -67,3 +67,21 @@ test('una función cuenta como fragmento solo si todo lo que devuelve lo es', ()
   assert.equal(kind('mal(a)', source), 'dato');
   assert.equal(kind('recursiva(a)', source), 'fragmento');
 });
+
+test('un array de fragmentos y un mapa de fragmentos no son datos', () => {
+  const source = [
+    'const badges = [];',
+    'badges.push(`<span>${esc(a)}</span>`);',
+    'const sucio = [];',
+    'sucio.push(item.title);',
+    'const mapa = { uno: `<p>x</p>`, dos: pinta() };',
+    'function pinta() { return `<b>y</b>`; }',
+    'const mezcla = { uno: `<p>x</p>`, dos: item.title };',
+  ].join('\n');
+  const at = source.length;
+  const ctx = { ...fileContext(source), at };
+  assert.notEqual(classifyEmission("badges.join('')", ctx), 'dato');
+  assert.equal(classifyEmission("sucio.join('')", ctx), 'dato');
+  assert.notEqual(classifyEmission('mapa[k]', ctx), 'dato');
+  assert.equal(classifyEmission('mezcla[k]', ctx), 'dato');
+});

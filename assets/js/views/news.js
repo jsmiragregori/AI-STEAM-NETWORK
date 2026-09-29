@@ -166,7 +166,7 @@ export function render() {
             <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${esc(event.location)}
           </p>
           <div class="flex items-center justify-between">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${getTypeColor(event.type)}">${esc(event.type)}</span>
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${esc(getTypeColor(event.type))}">${esc(event.type)}</span>
             ${event.register ? `<a class="text-xs font-bold text-eu-blue hover:text-eu-purple transition-colors flex items-center gap-1">${esc(newsT?.register || '')} <i data-lucide="external-link" class="w-3 h-3"></i></a>` : ''}
           </div>
         </div>
@@ -191,7 +191,7 @@ export function render() {
     return `
       <a class="flex items-center justify-between w-full p-4 rounded-full text-sm hover:bg-white hover:text-eu-purple hover:scale-[1.02] transition-all font-bold shadow-sm border-none" style="background:#FFF4E1;color:#4918AD">
         <span class="flex items-center gap-3">
-          ${iconSvg}
+          ${esc(iconSvg)}
           <span>${esc(l.label)}</span>
         </span>
         <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-60"></i>

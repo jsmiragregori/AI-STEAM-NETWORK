@@ -109,6 +109,14 @@ function splitTernary(text) {
   return [text.slice(q + 1, colon), text.slice(colon + 1)];
 }
 
+function splitTopLevel(text, sep) {
+  const parts = [];
+  let last = 0;
+  scan(text, (i, c) => { if (c === sep) { parts.push(text.slice(last, i)); last = i + 1; } return true; });
+  parts.push(text.slice(last));
+  return parts;
+}
+
 function splitBinary(text, op) {
   const parts = [];
   let last = 0;
@@ -143,14 +151,20 @@ function declarationEnd(source, start) {
 
 export function fileContext(source) {
   // Toda asignación cuenta, no solo la declaración: `let x = ''` seguido de
-  // `x += dato` emite ese dato, y `x = otroValor` más abajo también.
+  // `x += dato` emite ese dato. Solo en código: `aria-disabled="true"` dentro de
+  // una plantilla no es una asignación. Se guarda la posición para resolver cada
+  // uso con la declaración más cercana anterior (dos funciones pueden reutilizar
+  // el mismo nombre para cosas distintas).
+  const code = codeMask(source);
   const declarations = new Map();
-  const assignment = /(?:\b(?:const|let|var)\s+|(?<![\w$.]))([A-Za-z_$][\w$]*)\s*(\+?=)(?![=>])\s*/g;
+  const assignment = /(?:\b(?:const|let|var)\s+|(?<![\w$.\-]))([A-Za-z_$][\w$]*)\s*(\+?=)(?![=>])\s*/g;
   for (const m of source.matchAll(assignment)) {
+    if (!code[m.index]) continue;
     const start = m.index + m[0].length;
     const expr = source.slice(start, declarationEnd(source, start)).trim();
+    const declares = /^(?:const|let|var)\b/.test(m[0]);
     if (!declarations.has(m[1])) declarations.set(m[1], []);
-    declarations.get(m[1]).push(expr);
+    declarations.get(m[1]).push({ pos: m.index, expr, append: m[2] === '+=', declares });
   }
   const producers = new Set();
   for (const m of source.matchAll(/\bfunction\s+([A-Za-z_$][\w$]*)\s*\([^)]*\)\s*\{/g)) {
@@ -166,32 +180,86 @@ export function fileContext(source) {
     const body = source.slice(open, k);
     const returns = [];
     for (const r of body.matchAll(/\breturn\s+/g)) {
+      if (!code[open + r.index]) continue;
       const start = r.index + r[0].length;
-      returns.push(body.slice(start, declarationEnd(body, start)).trim());
+      returns.push({ pos: open + r.index, expr: body.slice(start, declarationEnd(body, start)).trim() });
     }
     if (returns.length) producers.add({ name: m[1], returns });
   }
   // Funciones flecha asignadas a una constante: `const f = (x) => ...`.
-  for (const [name, exprs] of declarations) {
-    if (exprs.length === 1) {
-      const arrow = exprs[0].match(/^(?:\([^)]*\)|[A-Za-z_$][\w$]*)\s*=>\s*/);
-      if (arrow) producers.add({ name, returns: [exprs[0].slice(arrow[0].length)] });
+  for (const [name, entries] of declarations) {
+    if (entries.length === 1) {
+      const arrow = entries[0].expr.match(/^(?:\([^)]*\)|[A-Za-z_$][\w$]*)\s*=>\s*/);
+      if (arrow) producers.add({ name, returns: [{ pos: entries[0].pos, expr: entries[0].expr.slice(arrow[0].length) }] });
     }
   }
   // Una función produce HTML si TODO lo que devuelve es fragmento, literal o
   // escapado. Punto fijo MÁXIMO: se parte de suponer que todas producen HTML y
   // se descartan las que devuelven un dato, hasta que nada cambia. Así una
   // función recursiva (renderBadge dentro de su propio .map) se resuelve bien.
-  const ctx = { declarations, producers: new Set([...producers].map((p) => p.name)), pending: producers };
+  const ctx = { source, declarations, producers: new Set([...producers].map((p) => p.name)), pending: producers };
   let changed = true;
   while (changed) {
     changed = false;
     for (const p of producers) {
       if (!ctx.producers.has(p.name)) continue;
-      if (p.returns.some((r) => classifyEmission(r, ctx) === 'dato')) { ctx.producers.delete(p.name); changed = true; }
+      if (p.returns.some((r) => classifyEmission(r.expr, { ...ctx, at: r.pos }) === 'dato')) { ctx.producers.delete(p.name); changed = true; }
     }
   }
   return ctx;
+}
+
+// Marca qué posiciones del fichero son código (true) y cuáles texto de una
+// cadena o de una plantilla (false). Dentro de ${...} vuelve a ser código.
+export function codeMask(source) {
+  const mask = new Array(source.length).fill(true);
+  let i = 0;
+  function template() {
+    mask[i] = false; i++; // backtick
+    while (i < source.length && source[i] !== '`') {
+      if (source[i] === BACKSLASH) { mask[i] = false; mask[i + 1] = false; i += 2; continue; }
+      if (source[i] === '$' && source[i + 1] === '{') { i += 2; code(1); continue; }
+      mask[i] = false; i++;
+    }
+    mask[i] = false; i++;
+  }
+  function quoted() {
+    const q = source[i];
+    mask[i] = false; i++;
+    while (i < source.length && source[i] !== q && source[i] !== '\n') {
+      if (source[i] === BACKSLASH) { mask[i] = false; i++; }
+      mask[i] = false; i++;
+    }
+    mask[i] = false; i++;
+  }
+  function code(depth) {
+    while (i < source.length) {
+      const c = source[i];
+      if (c === '/' && source[i + 1] === '/') { while (i < source.length && source[i] !== '\n') { mask[i] = false; i++; } continue; }
+      if (c === '/' && source[i + 1] === '*') { while (i < source.length && !(source[i] === '*' && source[i + 1] === '/')) { mask[i] = false; i++; } i += 2; continue; }
+      if (c === '`') { template(); continue; }
+      if (c === "'" || c === '"') { quoted(); continue; }
+      if (c === '{') depth++;
+      if (c === '}') { depth--; if (depth === 0) { i++; return; } }
+      i++;
+    }
+  }
+  code(Infinity);
+  return mask;
+}
+
+// Asignaciones que valen en la posición `at`: la última declaración anterior
+// y los `x = ` / `x += ` que la siguen hasta `at`. Sin posición (pruebas
+// unitarias), todas.
+function resolve(ctx, name, at) {
+  const entries = ctx.declarations.get(name);
+  if (!entries) return null;
+  if (at === undefined) return entries.map((e) => e.expr);
+  const before = entries.filter((e) => e.pos < at);
+  if (!before.length) return null;
+  let from = before.length - 1;
+  while (from > 0 && !before[from].declares) from--;
+  return before.slice(from).map((e) => e.expr);
 }
 
 // ── Clasificación de lo que se emite ──
@@ -211,6 +279,38 @@ export function classifyEmission(text, ctx = { declarations: new Map(), producer
   }
   const and = splitBinary(t, '&&');
   if (and) return classifyEmission(and[and.length - 1], ctx, seen);
+
+  // lista.join('') de un array local: emite lo que se le metió, en su
+  // inicializador `[...]` y en cada `lista.push(...)` anterior al uso.
+  const arrayJoin = t.match(/^([A-Za-z_$][\w$]*)\.join\s*\(\s*(?:''|""|``)\s*\)$/);
+  if (arrayJoin && ctx.source) {
+    const name = arrayJoin[1];
+    const inits = resolve(ctx, name, ctx.at) || [];
+    const pushed = [];
+    for (const m of ctx.source.matchAll(new RegExp(`\\b${name}\\.push\\(`, 'g'))) {
+      if (ctx.at !== undefined && m.index > ctx.at) continue;
+      const open = m.index + m[0].length - 1;
+      pushed.push(ctx.source.slice(open + 1, closingParen(ctx.source, open)));
+    }
+    const elements = inits.flatMap((e) => (/^\[\s*\]$/.test(e) ? [] : [e.replace(/^\[|\]$/g, '')]));
+    if (!inits.every((e) => e.startsWith('['))) return 'dato';
+    return worst([...elements, ...pushed].map((e) => classifyEmission(e, ctx, seen)).concat('literal'));
+  }
+
+  // mapa[clave] de un objeto local `{ a: X, b: Y }`: emite alguno de sus valores.
+  const indexed = t.match(/^([A-Za-z_$][\w$]*)\s*\[[^\]]*\]$/);
+  if (indexed) {
+    const inits = resolve(ctx, indexed[1], ctx.at);
+    if (inits && inits.length === 1 && inits[0].startsWith('{')) {
+      const values = [];
+      scan(inits[0].slice(1, -1), () => true);
+      for (const entry of splitTopLevel(inits[0].slice(1, -1), ',')) {
+        const colon = entry.indexOf(':');
+        if (entry.trim()) values.push(colon >= 0 ? entry.slice(colon + 1) : entry);
+      }
+      return worst(values.map((v) => classifyEmission(v, ctx, seen)));
+    }
+  }
 
   const call = t.match(/^([A-Za-z_$][\w$]*)\s*\(/);
   if (call && closingParen(t, call[0].length - 1) === t.length - 1) {
@@ -243,7 +343,7 @@ export function classifyEmission(text, ctx = { declarations: new Map(), producer
   if (/^[\w$.\s+\-*/%()]+$/.test(t) && (/\d/.test(t) || /\.length\b/.test(t)) && !/\./.test(sinLength.replace(/\d\.\d/g, ''))) return 'literal';
 
   if (/^[A-Za-z_$][\w$]*$/.test(t)) {
-    const exprs = ctx.declarations.get(t);
+    const exprs = resolve(ctx, t, ctx.at);
     if (exprs && !seen.has(t)) {
       const inner = new Set(seen).add(t);
       return worst(exprs.map((e) => classifyEmission(e, ctx, inner)));
@@ -296,9 +396,14 @@ export async function generateEscapeCoverage() {
       const inMarkup = isMarkupTemplate(source, cur) || all.some((outer) =>
         outer !== cur && outer.start <= cur.templateStart && cur.templateEnd <= outer.end && isMarkupTemplate(source, outer));
       if (!inMarkup) continue;
+      // Una plantilla que es argumento de esc() se escapa entera: su contenido es texto.
+      const insideEscaper = all.some((outer) =>
+        outer !== cur && outer.start <= cur.templateStart && cur.templateEnd <= outer.end
+        && /^\s*(?:esc|escAttr|escapeHtml)\s*\(/.test(outer.expr));
+      if (insideEscaper) continue;
       const nested = all.filter((o) => o !== cur && o.start >= cur.start && o.end <= cur.end);
       const direct = redactNestedSpans(cur.expr, cur.start, nested);
-      const kind = classifyEmission(direct, ctx);
+      const kind = classifyEmission(direct, { ...ctx, at: cur.start });
       counts[kind]++;
       if (kind === 'dato') unescaped.push(`${rel}:${lineOf(source, cur.start)}: ${direct.trim().replace(/\s+/g, ' ').slice(0, 100)}`);
     }

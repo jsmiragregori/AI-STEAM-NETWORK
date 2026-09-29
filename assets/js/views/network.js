@@ -128,9 +128,9 @@ function helixBlock() {
     ].filter(Boolean);
     return `
       <div class="rd-card rd-card-grad-violet rd-card-edge p-5 text-center group">
-        <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${meta.icon}" class="w-6 h-6 ${meta.color}"></i></div>
-        <p class="font-extrabold text-base ${meta.color}">${esc(loc(cat.label))}</p>
-        <p class="text-3xl font-extrabold text-eu-text mt-1">${total}</p>
+        <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${esc(meta.icon)}" class="w-6 h-6 ${esc(meta.color)}"></i></div>
+        <p class="font-extrabold text-base ${esc(meta.color)}">${esc(loc(cat.label))}</p>
+        <p class="text-3xl font-extrabold text-eu-text mt-1">${esc(total)}</p>
         ${detailParts.length ? `<p class="text-sm text-gray-500 mt-0.5">${esc(detailParts.join(' · '))}</p>` : ''}
       </div>
     `;
@@ -169,8 +169,8 @@ function tabSocios(activeCategory, filterCountry) {
       ${esc(loc(pb.filterAll) || 'Todos')} (${ACTIVE_PARTNERS.length})
     </button>
     ${Object.entries(CATEGORY_META).map(([key, meta]) => `
-      <button data-net-cat="${key}" class="px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer border transition-colors ${activeCategory === key ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow'}">
-        ${esc(getCategoryLabel(key))} (${pc[key] || 0})
+      <button data-net-cat="${esc(key)}" class="px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer border transition-colors ${activeCategory === key ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow'}">
+        ${esc(getCategoryLabel(key))} (${esc(pc[key] || 0)})
       </button>
     `).join('')}
   `;
@@ -195,7 +195,7 @@ function tabSocios(activeCategory, filterCountry) {
     const visitLabel = loc(pb.visitSite) || 'Visit website';
     const logoHtml = p.logo
       ? `<img src="${LOGO_BASE}${esc(p.logo)}" alt="${esc(p.acronym || p.name || p.id)}" class="max-h-12 max-w-[160px] w-auto h-auto object-contain" loading="lazy" />`
-      : `<div class="network-category-tooltip w-12 h-12 rounded-xl ${meta.bg} flex items-center justify-center" data-tooltip="${esc(categoryLabel)}" aria-label="${esc(categoryLabel)}"><i data-lucide="${meta.icon}" class="w-6 h-6 ${meta.color}"></i></div>`;
+      : `<div class="network-category-tooltip w-12 h-12 rounded-xl ${esc(meta.bg)} flex items-center justify-center" data-tooltip="${esc(categoryLabel)}" aria-label="${esc(categoryLabel)}"><i data-lucide="${esc(meta.icon)}" class="w-6 h-6 ${esc(meta.color)}"></i></div>`;
     // Una URL rechazada conserva el rótulo sin enlace, para no dejar hueco.
     const safePartnerUrl = getSafeEditorialUrl(p.url);
     const visitLinkHtml = !p.url ? '' : `
@@ -219,7 +219,7 @@ function tabSocios(activeCategory, filterCountry) {
           <p class="font-extrabold text-eu-purple text-base leading-snug mb-0.5">${esc(localized(p.name))}</p>
           <p class="text-sm text-gray-500 mb-1">${esc(p.acronym)} · ${esc(localized(p.city))}</p>
           <div class="flex items-center gap-1.5">
-            <img src="${getFlagAssetPath(p.country, '20x15')}" alt="${esc(countryLabel)}" width="20" height="15" class="rounded-sm" />
+            <img src="${esc(getFlagAssetPath(p.country, '20x15'))}" alt="${esc(countryLabel)}" width="20" height="15" class="rounded-sm" />
             <span class="text-xs bg-eu-blue/10 text-eu-blue font-bold px-1.5 py-0.5 rounded">${esc(countryLabel)}</span>
           </div>
           ${pShowRole ? `<p class="text-sm text-eu-blue font-bold mt-2 mb-3">${esc(roleLabel)}</p>` : ''}
@@ -228,8 +228,8 @@ function tabSocios(activeCategory, filterCountry) {
             const m = CATEGORY_META[c] || CATEGORY_META.sociedad;
             const lbl = getCategoryLabel(c);
             return `<div class="network-category-tooltip flex items-center gap-1.5 min-w-0" data-tooltip="${esc(lbl)}" aria-label="${esc(lbl)}" tabindex="0">
-              <div class="w-5 h-5 rounded ${m.bg} flex items-center justify-center shrink-0">
-                <i data-lucide="${m.icon}" class="w-3 h-3 ${m.color}"></i>
+              <div class="w-5 h-5 rounded ${esc(m.bg)} flex items-center justify-center shrink-0">
+                <i data-lucide="${esc(m.icon)}" class="w-3 h-3 ${esc(m.color)}"></i>
               </div>
               <span class="text-sm text-gray-500 font-medium truncate">${esc(lbl)}</span>
             </div>`;
@@ -246,11 +246,11 @@ function tabSocios(activeCategory, filterCountry) {
     const isActive = filterCountry === c;
     const name = getCountryName(c);
     return `
-      <button data-net-country="${c}" class="rd-card rd-card-grad-violet rd-card-edge p-4 flex flex-col items-center gap-2 cursor-pointer text-center ${isActive ? 'ring-2 ring-eu-blue' : ''}">
-        <img src="${getFlagAssetPath(c, '48x36')}" alt="${esc(name)}" width="48" height="36" class="w-10 h-auto rounded-sm shadow-sm" />
+      <button data-net-country="${esc(c)}" class="rd-card rd-card-grad-violet rd-card-edge p-4 flex flex-col items-center gap-2 cursor-pointer text-center ${isActive ? 'ring-2 ring-eu-blue' : ''}">
+        <img src="${esc(getFlagAssetPath(c, '48x36'))}" alt="${esc(name)}" width="48" height="36" class="w-10 h-auto rounded-sm shadow-sm" />
         <p class="font-bold text-sm leading-tight text-eu-text">${esc(name)}</p>
         <span class="text-sm font-bold px-2 py-0.5 rounded-full bg-eu-blue/10 text-eu-blue">
-          ${cnt} ${esc(cnt === 1 ? (loc(pb.member) || '') : (loc(pb.members) || ''))}
+          ${esc(cnt)} ${esc(cnt === 1 ? (loc(pb.member) || '') : (loc(pb.members) || ''))}
         </span>
       </button>
     `;
@@ -361,19 +361,19 @@ function tabStakeholders(activeCategory, showForm) {
   const renderMembershipControl = (id, className) => {
     if (!showToggleButton) return '';
     if (membershipAction.kind === 'external') {
-      return `<a href="${esc(membershipAction.url)}" target="_blank" rel="noopener noreferrer" class="${className}">
+      return `<a href="${esc(membershipAction.url)}" target="_blank" rel="noopener noreferrer" class="${esc(className)}">
         <i data-lucide="external-link" class="w-4 h-4"></i>
         ${esc(shTexts.requestMembership)}
       </a>`;
     }
     // URL de adhesión rechazada: se conserva el rótulo, no la navegación.
     if (membershipAction.kind === 'unsafe') {
-      return `<span class="${className}">
+      return `<span class="${esc(className)}">
         <i data-lucide="external-link" class="w-4 h-4"></i>
         ${esc(shTexts.requestMembership)}
       </span>`;
     }
-    return `<button id="${id}" class="${className}">
+    return `<button id="${esc(id)}" class="${esc(className)}">
       <i data-lucide="user-plus" class="w-4 h-4"></i>
       ${esc(effectiveShowForm ? shTexts.closeForm : shTexts.requestMembership)}
     </button>`;
@@ -407,8 +407,8 @@ function tabStakeholders(activeCategory, showForm) {
       ${esc(shTexts.filterAll)} (${STAKEHOLDERS.length})
     </button>
     ${Object.entries(CATEGORY_META).filter(([key]) => (sc[key] || 0) > 0).map(([key]) => `
-      <button data-net-cat="${key}" class="px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer border transition-colors ${activeCategory === key ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow'}">
-        ${esc(getCategoryLabel(key))} (${sc[key] || 0})
+      <button data-net-cat="${esc(key)}" class="px-4 py-1.5 rounded-full text-sm font-bold cursor-pointer border transition-colors ${activeCategory === key ? 'bg-eu-blue text-white border-eu-blue' : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow'}">
+        ${esc(getCategoryLabel(key))} (${esc(sc[key] || 0)})
       </button>
     `).join('')}
   `;
@@ -504,14 +504,14 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
           <div class="rd-card rd-card-grad-violet rd-card-edge p-4 flex flex-col group">
             <div class="flex items-start justify-between mb-3">
               <div class="network-category-tooltip w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff" data-tooltip="${esc(sectorTooltip)}" aria-label="${esc(sectorTooltip)}" tabindex="0">
-                <i data-lucide="${sectorIcon}" class="w-4 h-4 ${meta.color}"></i>
+                <i data-lucide="${esc(sectorIcon)}" class="w-4 h-4 ${esc(meta.color)}"></i>
               </div>
               ${shShowCategory ? `<div class="flex flex-wrap justify-end gap-1">${sCats.map(c => {
                 const m = CATEGORY_META[c] || CATEGORY_META.sociedad;
                 const lbl = getCatLabel(c);
-                return `<div class="network-category-tooltip flex items-center gap-1.5 ${m.bg} ${m.border} border rounded-full px-2 py-0.5" data-tooltip="${esc(lbl)}" aria-label="${esc(lbl)}" tabindex="0">
-                  <i data-lucide="${m.icon}" class="w-3 h-3 ${m.color}"></i>
-                  <span class="text-xs font-bold ${m.color}">${esc(lbl)}</span>
+                return `<div class="network-category-tooltip flex items-center gap-1.5 ${esc(m.bg)} ${esc(m.border)} border rounded-full px-2 py-0.5" data-tooltip="${esc(lbl)}" aria-label="${esc(lbl)}" tabindex="0">
+                  <i data-lucide="${esc(m.icon)}" class="w-3 h-3 ${esc(m.color)}"></i>
+                  <span class="text-xs font-bold ${esc(m.color)}">${esc(lbl)}</span>
                 </div>`;
               }).join('')}</div>` : ''}
             </div>
@@ -528,7 +528,7 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
       <button id="net-pag-prev" ${safePage === 0 ? 'disabled' : ''} class="px-4 py-1.5 rounded-full text-sm font-bold border border-eu-blue/15 bg-white text-eu-text hover:border-eu-blue disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors">
         ← ${esc(shTexts.paginationPrev)}
       </button>
-      <span class="text-sm text-gray-500">${safePage + 1} / ${totalPages}</span>
+      <span class="text-sm text-gray-500">${safePage + 1} / ${esc(totalPages)}</span>
       <button id="net-pag-next" ${safePage >= totalPages - 1 ? 'disabled' : ''} class="px-4 py-1.5 rounded-full text-sm font-bold border border-eu-blue/15 bg-white text-eu-text hover:border-eu-blue disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors">
         ${esc(shTexts.paginationNext)} →
       </button>
@@ -547,8 +547,8 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
       <span class="text-gray-600">${esc(shTexts.showLabel)}:</span>
       <div class="flex gap-1">
         ${pageSizeOptions.map(opt => `
-          <button data-net-pagesize="${opt}" class="px-2 py-1 rounded-full border cursor-pointer transition-colors font-bold ${actualPageSize === opt ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">
-            ${opt}
+          <button data-net-pagesize="${esc(opt)}" class="px-2 py-1 rounded-full border cursor-pointer transition-colors font-bold ${actualPageSize === opt ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">
+            ${esc(opt)}
           </button>
         `).join('')}
         ${showAllOption ? `

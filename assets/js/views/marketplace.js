@@ -428,13 +428,13 @@ function renderTabIntroMarkdown(text) {
   };
   const flushParagraph = () => {
     if (!paragraph.length) return;
-    blocks.push(`<p class="${topSpacing()} text-lg leading-relaxed text-gray-600">${simpleMarkdown(paragraph.join(' '))}</p>`);
+    blocks.push(`<p class="${esc(topSpacing())} text-lg leading-relaxed text-gray-600">${simpleMarkdown(paragraph.join(' '))}</p>`);
     paragraph = [];
   };
   const flushList = () => {
     if (!list.length) return;
     const items = list.map(item => `<li>${simpleMarkdown(item)}</li>`).join('');
-    blocks.push(`<ul class="${topSpacing()} space-y-2 list-disc pl-5 text-lg leading-relaxed text-gray-600">${items}</ul>`);
+    blocks.push(`<ul class="${esc(topSpacing())} space-y-2 list-disc pl-5 text-lg leading-relaxed text-gray-600">${items}</ul>`);
     list = [];
   };
 
@@ -446,7 +446,7 @@ function renderTabIntroMarkdown(text) {
     if (heading) {
       flushParagraph();
       flushList();
-      blocks.push(`<h3 class="${topSpacing()} text-lg font-extrabold text-eu-purple">${simpleMarkdown(heading[1])}</h3>`);
+      blocks.push(`<h3 class="${esc(topSpacing())} text-lg font-extrabold text-eu-purple">${simpleMarkdown(heading[1])}</h3>`);
     } else if (item) {
       flushParagraph();
       list.push(item[1]);
@@ -1087,7 +1087,7 @@ function renderTabResults(tab, items) {
         class="rounded border border-eu-border px-3 py-1.5 text-sm font-semibold transition-colors ${currentPage === 0 ? 'pointer-events-none opacity-40' : 'hover:border-eu-blue hover:text-eu-blue'}">
         ${esc(pickLang(pagination.paginationPrev, 'Anterior'))}
       </button>
-      <span class="px-2 text-xs font-semibold text-gray-500">${currentPage + 1} / ${totalPages}</span>
+      <span class="px-2 text-xs font-semibold text-gray-500">${currentPage + 1} / ${esc(totalPages)}</span>
       <button type="button" data-mp-page="next"
         class="rounded border border-eu-border px-3 py-1.5 text-sm font-semibold transition-colors ${currentPage >= totalPages - 1 ? 'pointer-events-none opacity-40' : 'hover:border-eu-blue hover:text-eu-blue'}">
         ${esc(pickLang(pagination.paginationNext, 'Siguiente'))}
@@ -1195,12 +1195,12 @@ function renderCardCallout(label, value, icon = 'sparkles', strict = false, tone
   const labelClass = tone.labelClass || 'text-eu-blue';
   const valueClass = tone.valueClass || 'text-eu-text';
   return `
-    <div class="mt-4 rounded-xl p-4 ${boxClass}">
-      <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide ${labelClass}">
+    <div class="mt-4 rounded-xl p-4 ${esc(boxClass)}">
+      <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-wide ${esc(labelClass)}">
         <i data-lucide="${esc(icon)}" class="h-3.5 w-3.5"></i>
         ${esc(label)}
       </p>
-      <p class="mt-1 text-base font-semibold leading-relaxed ${valueClass}">${esc(text)}</p>
+      <p class="mt-1 text-base font-semibold leading-relaxed ${esc(valueClass)}">${esc(text)}</p>
     </div>`;
 }
 
@@ -1210,13 +1210,13 @@ function renderCardMiniMeta(items) {
   return `
     <div class="mt-4 grid gap-3">
       ${visible.map(item => `
-        <div class="rounded-xl border px-3.5 py-2.5 ${item.boxClass || 'border-eu-purple/15 bg-white'}">
-          <p class="text-xs font-semibold uppercase tracking-wide ${item.labelClass || 'text-eu-purple/70'}">${esc(item.label)}</p>
+        <div class="rounded-xl border px-3.5 py-2.5 ${esc(item.boxClass || 'border-eu-purple/15 bg-white')}">
+          <p class="text-xs font-semibold uppercase tracking-wide ${esc(item.labelClass || 'text-eu-purple/70')}">${esc(item.label)}</p>
           ${item.htmlValue
-            ? `<div class="mt-1 ${item.valueClass || 'text-base text-gray-600'}">${item.htmlValue}</div>`
-            : `<p class="mt-0.5 text-base leading-relaxed ${item.valueClass || 'text-gray-700'}">${esc(item.value)}</p>`}
-          ${item.secondaryValue ? `<p class="mt-1 text-base leading-relaxed ${item.secondaryValueClass || 'text-gray-600'}">${esc(item.secondaryValue)}</p>` : ''}
-          ${item.tertiaryValue ? `<div class="${item.tertiaryWrapClass || 'mt-2 border-t border-slate-100 pt-2'}"><p class="text-sm leading-5 ${item.tertiaryValueClass || 'text-gray-700'}">${esc(item.tertiaryValue)}</p></div>` : ''}
+            ? `<div class="mt-1 ${esc(item.valueClass || 'text-base text-gray-600')}">${item.htmlValue}</div>`
+            : `<p class="mt-0.5 text-base leading-relaxed ${esc(item.valueClass || 'text-gray-700')}">${esc(item.value)}</p>`}
+          ${item.secondaryValue ? `<p class="mt-1 text-base leading-relaxed ${esc(item.secondaryValueClass || 'text-gray-600')}">${esc(item.secondaryValue)}</p>` : ''}
+          ${item.tertiaryValue ? `<div class="${esc(item.tertiaryWrapClass || 'mt-2 border-t border-slate-100 pt-2')}"><p class="text-sm leading-5 ${esc(item.tertiaryValueClass || 'text-gray-700')}">${esc(item.tertiaryValue)}</p></div>` : ''}
         </div>`).join('')}
     </div>`;
 }
@@ -1496,7 +1496,7 @@ function renderCaseCard(item, tab) {
           <i data-lucide="building-2" class="h-3.5 w-3.5"></i>
           ${esc(uiText('transferChain'))}
         </p>
-        <p class="mt-1 text-sm font-semibold leading-6 text-gray-700 line-clamp-2">${esc(originName || publisherName)}${beneficiaries.length ? ' → ' + beneficiaries.slice(0, 2).join(', ') : ''}</p>
+        <p class="mt-1 text-sm font-semibold leading-6 text-gray-700 line-clamp-2">${esc(originName || publisherName)}${esc(beneficiaries.length ? ' → ' + beneficiaries.slice(0, 2).join(', ') : '')}</p>
       </div>`;
   }
 

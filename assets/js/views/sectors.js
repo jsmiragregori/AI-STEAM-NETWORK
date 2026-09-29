@@ -109,7 +109,7 @@ function renderRoute(sector, sectorsT) {
           return `
             <article class="group relative rd-card rd-card-grad-beige rd-card-edge rounded-3xl p-5">
               <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
-                <i data-lucide="${icon}" class="h-5 w-5 text-eu-blue"></i>
+                <i data-lucide="${esc(icon)}" class="h-5 w-5 text-eu-blue"></i>
               </div>
               <p class="mt-4 text-xs font-bold uppercase tracking-wider text-eu-purple">${esc(label)}</p>
               <p class="mt-3 text-sm leading-relaxed text-eu-text/75">${esc(localized(item.value))}</p>
@@ -132,7 +132,7 @@ function renderListCard(title, icon, items, tone = 'blue', note = '') {
   return `
     <article class="rd-card group rd-card-grad-violet rd-card-edge rd-pad">
       <div class="flex items-center gap-3">
-        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${icon}" class="h-5 w-5 ${color}"></i></div>
+        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${esc(icon)}" class="h-5 w-5 ${color}"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(title)}</h4>
       </div>
       <ul class="mt-5 space-y-3">
@@ -154,7 +154,7 @@ function renderTextCard(title, icon, text, tone = 'blue', note = '') {
   return `
     <article class="rd-card group rd-card-grad-violet rd-card-edge rd-pad">
       <div class="flex items-center gap-3">
-        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${icon}" class="h-5 w-5 ${color}"></i></div>
+        <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${esc(icon)}" class="h-5 w-5 ${color}"></i></div>
         <h4 class="text-xl font-extrabold text-eu-purple">${esc(title)}</h4>
       </div>
       <p class="mt-5 text-base leading-relaxed text-eu-text/75">${esc(text)}</p>
@@ -310,7 +310,7 @@ function renderSectorCard(sector, sectorsT, index) {
       <div class="rd-ceja-grad grid gap-6 p-6 md:grid-cols-[auto_1fr_auto] md:items-start md:p-8">
         <button data-toggle="${esc(sector.id)}" class="grid cursor-pointer grid-cols-[auto_1fr] gap-5 border-0 bg-transparent p-0 text-left md:contents">
           <div class="rd-icon-circle transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
-            <i data-lucide="${icon}" class="h-8 w-8 text-eu-blue"></i>
+            <i data-lucide="${esc(icon)}" class="h-8 w-8 text-eu-blue"></i>
           </div>
           <div class="min-w-0">
             <div class="flex flex-wrap items-center gap-3">
@@ -321,7 +321,7 @@ function renderSectorCard(sector, sectorsT, index) {
             ${keywords ? `<div class="mt-5">${keywords}</div>` : ''}
           </div>
         </button>
-        <div class="grid min-w-0 gap-3 md:w-[24rem]" style="grid-template-columns: repeat(${statsColumns}, minmax(0, 1fr))">
+        <div class="grid min-w-0 gap-3 md:w-[24rem]" style="grid-template-columns: repeat(${esc(statsColumns)}, minmax(0, 1fr))">
           ${statsList.map(stat => {
             const target = stat.id === 'initiatives' ? navTargets.marketplace : stat.id === 'courses' ? navTargets.training : navTargets.network;
             return renderStatButton(sector, stat.id, stat.value, localized(stat.label) || sectorLabels[stat.id] || '', target?.enabled);
