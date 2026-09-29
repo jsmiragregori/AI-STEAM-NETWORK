@@ -2,9 +2,9 @@ import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
 import { getActiveView } from '../router.js';
 import { NEWS_CONFIG } from '../../data/news.js';
-// Sin alias `esc` a propósito: News no está migrada y no debe contarse como
-// vista escapada en el inventario. El helper entra solo para el href de VAN-2.2.
-import { escapeHtml } from '../utils/escape-html.js';
+// CS-20: News sigue fuera del runtime, pero se conserva para cuando vuelva y el
+// fichero se publica. Si vuelve, vuelve escapada: todo dato pasa por esc().
+import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
@@ -94,55 +94,55 @@ export function render() {
   const rest     = filtered.filter(n => !n.featured || activeFilter !== firstCat);
 
   const categoryTabsHtml = categoryList.map(cat => `
-    <button data-cat="${cat}" class="px-4 py-2 rounded-full text-xs font-bold cursor-pointer border transition-all ${
+    <button data-cat="${esc(cat)}" class="px-4 py-2 rounded-full text-xs font-bold cursor-pointer border transition-all ${
       activeFilter === cat
         ? 'bg-eu-blue text-white border-eu-blue shadow-sm'
         : 'bg-white text-eu-text border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'
-    }">${cat}</button>
+    }">${esc(cat)}</button>
   `).join('');
 
   const featuredHtml = (activeFilter === firstCat && featured) ? `
-    <article class="rd-card rd-card-hover rd-pad mb-6 cursor-pointer relative overflow-hidden group border-none shadow-xl text-white" style="background:#4918AD" data-news-id="${featured.id}">
+    <article class="rd-card rd-card-hover rd-pad mb-6 cursor-pointer relative overflow-hidden group border-none shadow-xl text-white" style="background:#4918AD" data-news-id="${esc(featured.id)}">
       <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/5 rounded-full blur-xl"></div>
       
       <div class="flex items-center gap-3 mb-4 relative z-10">
-        <span class="rd-badge-beige">${newsT?.featured || ''}</span>
-        <span class="text-sm text-white/70 flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4"></i>${featured.date}</span>
+        <span class="rd-badge-beige">${esc(newsT?.featured || '')}</span>
+        <span class="text-sm text-white/70 flex items-center gap-1.5"><i data-lucide="calendar" class="w-4 h-4"></i>${esc(featured.date)}</span>
       </div>
-      <h2 class="text-3xl font-extrabold mb-4 group-hover:text-white transition-colors leading-tight relative z-10" style="color:#FFF4E1">${featured.title}</h2>
-      <p class="text-lg text-white/85 mb-6 leading-relaxed relative z-10">${featured.excerpt}</p>
+      <h2 class="text-3xl font-extrabold mb-4 group-hover:text-white transition-colors leading-tight relative z-10" style="color:#FFF4E1">${esc(featured.title)}</h2>
+      <p class="text-lg text-white/85 mb-6 leading-relaxed relative z-10">${esc(featured.excerpt)}</p>
       <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/10 relative z-10">
-        <span class="text-xs font-bold text-white/60 uppercase tracking-wider">${featured.partner || ''}</span>
-        <button data-news-id="${featured.id}" class="inline-flex items-center font-bold text-sm hover:text-white transition-colors cursor-pointer border-none bg-transparent p-0" style="color:#FFF4E1">
-          ${newsT?.readMore || ''} <i data-lucide="arrow-right" class="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+        <span class="text-xs font-bold text-white/60 uppercase tracking-wider">${esc(featured.partner || '')}</span>
+        <button data-news-id="${esc(featured.id)}" class="inline-flex items-center font-bold text-sm hover:text-white transition-colors cursor-pointer border-none bg-transparent p-0" style="color:#FFF4E1">
+          ${esc(newsT?.readMore || '')} <i data-lucide="arrow-right" class="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
         </button>
       </div>
     </article>
   ` : '';
 
   const newsListHtml = rest.map(item => `
-    <article class="rd-card rd-card-grad-violet rd-card-edge rd-pad cursor-pointer group flex flex-col justify-between" data-news-id="${item.id}">
+    <article class="rd-card rd-card-grad-violet rd-card-edge rd-pad cursor-pointer group flex flex-col justify-between" data-news-id="${esc(item.id)}">
       <div>
         <div class="flex items-center justify-between mb-4">
           <div class="flex flex-wrap items-center gap-2">
-            <span class="text-xs font-bold uppercase tracking-wider ${getCategoryColor(item.category)}">${item.category}</span>
-            ${item.sector ? `<span class="flex items-center gap-1.5 text-sm text-gray-500 font-semibold"><i data-lucide="tag" class="w-3 h-3"></i>${item.sector}</span>` : ''}
+            <span class="text-xs font-bold uppercase tracking-wider ${getCategoryColor(item.category)}">${esc(item.category)}</span>
+            ${item.sector ? `<span class="flex items-center gap-1.5 text-sm text-gray-500 font-semibold"><i data-lucide="tag" class="w-3 h-3"></i>${esc(item.sector)}</span>` : ''}
           </div>
           <div class="flex items-center gap-2">
             ${item.isOfficial !== undefined ? `
               <span class="text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${item.isOfficial ? 'bg-eu-blue/5 text-eu-blue border border-eu-blue/10' : 'bg-eu-purple/5 text-eu-purple border border-eu-purple/10'}">
-                ${item.isOfficial ? (newsT?.officialBadge || 'Oficial') : (newsT?.demoBadge || 'Demo')}
+                ${esc(item.isOfficial ? (newsT?.officialBadge || 'Oficial') : (newsT?.demoBadge || 'Demo'))}
               </span>` : ''}
-            <span class="text-sm text-gray-500 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>${item.date}</span>
+            <span class="text-sm text-gray-500 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>${esc(item.date)}</span>
           </div>
         </div>
-        <h3 class="text-2xl font-extrabold text-eu-purple mb-4 group-hover:text-eu-blue transition-colors leading-snug">${item.title}</h3>
-        <p class="text-base text-gray-600 mb-6 line-clamp-3 leading-relaxed">${item.excerpt}</p>
+        <h3 class="text-2xl font-extrabold text-eu-purple mb-4 group-hover:text-eu-blue transition-colors leading-snug">${esc(item.title)}</h3>
+        <p class="text-base text-gray-600 mb-6 line-clamp-3 leading-relaxed">${esc(item.excerpt)}</p>
       </div>
       <div class="flex items-center justify-between border-t border-eu-blue/5 pt-4 mt-auto">
-        ${item.partner ? `<span class="text-xs font-bold text-gray-500 uppercase tracking-wider">${item.partner}</span>` : '<span></span>'}
+        ${item.partner ? `<span class="text-xs font-bold text-gray-500 uppercase tracking-wider">${esc(item.partner)}</span>` : '<span></span>'}
         <span class="inline-flex items-center text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors ml-auto">
-          ${newsT?.readMore || ''} <i data-lucide="arrow-right" class="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+          ${esc(newsT?.readMore || '')} <i data-lucide="arrow-right" class="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"></i>
         </span>
       </div>
     </article>
@@ -150,24 +150,24 @@ export function render() {
 
   const emptyHtml = filtered.length === 0 ? `
     <div class="text-center py-12 text-gray-505">
-      <p class="font-semibold">${newsT?.noNews || ''}</p>
+      <p class="font-semibold">${esc(newsT?.noNews || '')}</p>
     </div>` : '';
 
   const eventsHtml = events.map(event => `
     <li class="p-5 hover:bg-eu-blue/5 transition-colors first:rounded-t-2xl last:rounded-b-2xl">
       <div class="flex items-start gap-4">
         <div class="bg-eu-purple/5 border border-eu-purple/10 text-eu-purple rounded-2xl p-2.5 text-center min-w-[3.5rem] shrink-0">
-          <span class="block text-xl font-extrabold leading-none">${event.dateNum}</span>
-          <span class="block text-[0.65rem] font-bold uppercase tracking-wider mt-1 opacity-80">${event.dateMonth}</span>
+          <span class="block text-xl font-extrabold leading-none">${esc(event.dateNum)}</span>
+          <span class="block text-[0.65rem] font-bold uppercase tracking-wider mt-1 opacity-80">${esc(event.dateMonth)}</span>
         </div>
         <div class="flex-1 min-w-0">
-          <h4 class="font-extrabold text-sm text-eu-text mb-1 leading-snug hover:text-eu-blue transition-colors cursor-pointer">${event.title}</h4>
+          <h4 class="font-extrabold text-sm text-eu-text mb-1 leading-snug hover:text-eu-blue transition-colors cursor-pointer">${esc(event.title)}</h4>
           <p class="text-xs text-gray-500 flex items-center gap-1 mb-2">
-            <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${event.location}
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${esc(event.location)}
           </p>
           <div class="flex items-center justify-between">
-            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${getTypeColor(event.type)}">${event.type}</span>
-            ${event.register ? `<a class="text-xs font-bold text-eu-blue hover:text-eu-purple transition-colors flex items-center gap-1">${newsT?.register || ''} <i data-lucide="external-link" class="w-3 h-3"></i></a>` : ''}
+            <span class="text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${esc(getTypeColor(event.type))}">${esc(event.type)}</span>
+            ${event.register ? `<a class="text-xs font-bold text-eu-blue hover:text-eu-purple transition-colors flex items-center gap-1">${esc(newsT?.register || '')} <i data-lucide="external-link" class="w-3 h-3"></i></a>` : ''}
           </div>
         </div>
       </div>
@@ -191,8 +191,8 @@ export function render() {
     return `
       <a class="flex items-center justify-between w-full p-4 rounded-full text-sm hover:bg-white hover:text-eu-purple hover:scale-[1.02] transition-all font-bold shadow-sm border-none" style="background:#FFF4E1;color:#4918AD">
         <span class="flex items-center gap-3">
-          ${iconSvg}
-          <span>${l.label}</span>
+          ${esc(iconSvg)}
+          <span>${esc(l.label)}</span>
         </span>
         <i data-lucide="arrow-up-right" class="w-4 h-4 opacity-60"></i>
       </a>
@@ -217,16 +217,16 @@ export function render() {
         <div class="max-w-7xl mx-auto relative z-10">
           <div class="max-w-3xl">
             <span class="inline-block bg-white/10 border border-white/20 font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6" style="color:#FFF4E1;backdrop-filter:blur(8px)">
-              ${newsT?.eyebrow || 'Actualidad'}
+              ${esc(newsT?.eyebrow || 'Actualidad')}
             </span>
-            <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${pickLang(heroBlock.title, newsT?.title || '')}</h1>
-            <p class="text-lg mb-6 leading-relaxed" style="color:rgba(255,255,255,.9)">${pickLang(heroBlock.description, newsT?.description || '')}</p>
-            ${notice ? `<p class="text-sm text-eu-yellow/90 italic mt-3 flex items-center gap-1.5 mb-6"><i data-lucide="info" class="w-4 h-4"></i>${notice}</p>` : ''}
+            <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${esc(pickLang(heroBlock.title, newsT?.title || ''))}</h1>
+            <p class="text-lg mb-6 leading-relaxed" style="color:rgba(255,255,255,.9)">${esc(pickLang(heroBlock.description, newsT?.description || ''))}</p>
+            ${notice ? `<p class="text-sm text-eu-yellow/90 italic mt-3 flex items-center gap-1.5 mb-6"><i data-lucide="info" class="w-4 h-4"></i>${esc(notice)}</p>` : ''}
             
             ${ctaButton.visible !== false ? `
             <div class="flex flex-wrap gap-4 mb-8">
               <button class="flex items-center gap-2 rounded-full font-bold transition-all hover:scale-105 hover:bg-white hover:text-eu-purple border-none cursor-pointer shadow-lg" style="background:#FFF4E1;color:#4918AD;padding:1rem 2.5rem">
-                <i data-lucide="rss" class="w-4 h-4"></i>${pickLang(ctaButton.label, newsT?.subscribeButton || '')}
+                <i data-lucide="rss" class="w-4 h-4"></i>${esc(pickLang(ctaButton.label, newsT?.subscribeButton || ''))}
               </button>
             </div>` : ''}
 
@@ -234,8 +234,8 @@ export function render() {
             <div class="rd-hero-stats-grid mt-8">
               ${heroStats.map((s, i) => `
               <div class="rd-hero-stat text-center">
-                <p class="text-3xl font-extrabold text-white leading-none">${s.value}</p>
-                <p class="text-xs font-bold uppercase tracking-wider mt-1.5" style="color:rgba(255,244,225,.75)">${pickLang(s.label)}</p>
+                <p class="text-3xl font-extrabold text-white leading-none">${esc(s.value)}</p>
+                <p class="text-xs font-bold uppercase tracking-wider mt-1.5" style="color:rgba(255,244,225,.75)">${esc(pickLang(s.label))}</p>
               </div>`).join('')}
             </div>` : ''}
           </div>
@@ -260,12 +260,12 @@ export function render() {
               <div class="rd-card-v5 rd-card-accent rd-card-grad-beige">
                 <div class="p-6 pb-2 pl-8">
                   <h3 class="text-xl font-extrabold text-eu-purple flex items-center gap-2">
-                    <i data-lucide="calendar" class="w-5 h-5 text-eu-blue"></i>${newsT?.upcomingEvents || ''}
+                    <i data-lucide="calendar" class="w-5 h-5 text-eu-blue"></i>${esc(newsT?.upcomingEvents || '')}
                   </h3>
                 </div>
                 <ul class="divide-y divide-eu-purple/10 pl-4">${eventsHtml}</ul>
                 <div class="p-4 bg-eu-purple/5 rounded-b-[2rem] text-center border-t border-eu-purple/10">
-                  <a class="text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">${newsT?.viewFullCalendar || ''}</a>
+                  <a class="text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors">${esc(newsT?.viewFullCalendar || '')}</a>
                 </div>
               </div>
 
@@ -273,14 +273,14 @@ export function render() {
               <div class="rd-hero-gradient rounded-[2rem] p-8 text-white shadow-lg relative overflow-hidden">
                 <!-- Accent blob -->
                 <div class="absolute -right-8 -top-8 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
-                <h3 class="font-extrabold text-xl mb-2 text-eu-yellow">${newsT?.newsletterTitle || ''}</h3>
-                <p class="text-sm text-white/80 mb-6 leading-relaxed">${newsT?.newsletterDesc || ''}</p>
+                <h3 class="font-extrabold text-xl mb-2 text-eu-yellow">${esc(newsT?.newsletterTitle || '')}</h3>
+                <p class="text-sm text-white/80 mb-6 leading-relaxed">${esc(newsT?.newsletterDesc || '')}</p>
                 <form id="newsletter-form" class="space-y-3">
                   <input id="newsletter-email" type="email"
-                    placeholder="${newsT?.newsletterPlaceholder || ''}"
+                    placeholder="${esc(newsT?.newsletterPlaceholder || '')}"
                     class="w-full rounded-full px-4 py-3 text-sm text-eu-text bg-white/95 border border-white/20 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-eu-yellow transition-all" />
                   <button type="submit" class="w-full bg-eu-yellow text-eu-purple font-bold rounded-full py-3 text-sm hover:bg-white hover:text-eu-purple transition-all cursor-pointer border-none shadow-md">
-                    ${newsT?.newsletterSubscribe || ''}
+                    ${esc(newsT?.newsletterSubscribe || '')}
                   </button>
                 </form>
               </div>
@@ -290,7 +290,7 @@ export function render() {
                 <!-- Accent blob -->
                 <div class="absolute -right-8 -top-8 w-24 h-24 bg-white/10 rounded-full blur-xl"></div>
                 <h3 class="font-extrabold text-xl mb-4 text-eu-yellow flex items-center gap-2 relative z-10">
-                  <i data-lucide="share-2" class="w-5 h-5 text-white"></i>${newsT?.followUs || ''}
+                  <i data-lucide="share-2" class="w-5 h-5 text-white"></i>${esc(newsT?.followUs || '')}
                 </h3>
                 <div class="space-y-3 relative z-10">${socialLinks}</div>
               </div>
@@ -314,29 +314,27 @@ function renderDetail(newsT) {
   const heroDate     = article.date     || detail.date     || '';
   const heroPartner  = article.partner  || detail.author   || '';
   // VAN-2.2: se cablea la validación de URL aunque la sección esté diferida.
-  // El texto del CTA sigue sin escapar a propósito: pertenece a la deuda V1 de
-  // News, que se resuelve o se acepta antes de VAN-3B.
   const ctaLink = getSafeEditorialUrl(detail.cta_link) || '#';
 
   const sectionsHtml = (detail.sections || []).map((section, idx) => `
     <article class="scroll-mt-20">
       <h2 class="text-2xl font-extrabold text-eu-purple mb-4 flex items-center gap-4">
         <span class="rd-icon-circle bg-eu-yellow text-eu-purple text-lg font-extrabold shrink-0 shadow-sm">${idx + 1}</span>
-        ${section.title}
+        ${esc(section.title)}
       </h2>
-      <p class="text-lg text-gray-650 leading-relaxed whitespace-pre-wrap">${section.content}</p>
+      <p class="text-lg text-gray-650 leading-relaxed whitespace-pre-wrap">${esc(section.content)}</p>
     </article>
   `).join('');
 
   const relatedHtml = (detail.related_news || []).length > 0 ? `
     <div class="pt-12 border-t border-eu-blue/10">
       <h3 class="text-2xl font-extrabold text-eu-purple mb-6 flex items-center gap-2">
-        <i data-lucide="tag" class="w-5 h-5 text-eu-blue"></i>${newsT?.relatedNews || 'Noticias Relacionadas'}
+        <i data-lucide="tag" class="w-5 h-5 text-eu-blue"></i>${esc(newsT?.relatedNews || 'Noticias Relacionadas')}
       </h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         ${(detail.related_news || []).map(related => `
           <div class="text-left p-6 rd-card-grad-violet border border-eu-blue/10 rounded-2xl hover:border-eu-blue/30 hover:-translate-y-0.5 transition-all shadow-sm cursor-pointer group">
-            <p class="font-bold text-eu-text group-hover:text-eu-blue transition-colors leading-snug">${related}</p>
+            <p class="font-bold text-eu-text group-hover:text-eu-blue transition-colors leading-snug">${esc(related)}</p>
           </div>
         `).join('')}
       </div>
@@ -349,16 +347,16 @@ function renderDetail(newsT) {
         <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-white/5 rounded-full blur-2xl"></div>
         <div class="max-w-4xl mx-auto relative z-10">
           <button id="news-back-btn" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-all text-white px-4 py-2 rounded-full font-bold text-xs border border-white/20 mb-6 cursor-pointer">
-            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>${newsT?.backToNews || 'Volver a Noticias'}
+            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>${esc(newsT?.backToNews || 'Volver a Noticias')}
           </button>
           <div class="flex items-center gap-2 mb-4">
-            <span class="rd-badge-beige">${heroCategory}</span>
+            <span class="rd-badge-beige">${esc(heroCategory)}</span>
           </div>
-          <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight tracking-tight">${heroTitle}</h1>
-          <p class="text-xl text-white/85 mb-8 max-w-3xl leading-relaxed font-medium">${detail.hero_subtitle || ''}</p>
+          <h1 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight tracking-tight">${esc(heroTitle)}</h1>
+          <p class="text-xl text-white/85 mb-8 max-w-3xl leading-relaxed font-medium">${esc(detail.hero_subtitle || '')}</p>
           <div class="flex flex-wrap items-center gap-6 text-white/70 text-sm">
-            <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4.5 h-4.5"></i><span>${heroDate}</span></div>
-            <div class="flex items-center gap-2"><i data-lucide="user" class="w-4.5 h-4.5"></i><span>${heroPartner}</span></div>
+            <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4.5 h-4.5"></i><span>${esc(heroDate)}</span></div>
+            <div class="flex items-center gap-2"><i data-lucide="user" class="w-4.5 h-4.5"></i><span>${esc(heroPartner)}</span></div>
           </div>
         </div>
       </div>
@@ -367,17 +365,17 @@ function renderDetail(newsT) {
       <div class="rd-canvas py-16">
         <div class="max-w-4xl mx-auto px-6">
           <div class="mb-12 pb-12 border-b border-eu-blue/10">
-            <p class="text-xl text-gray-700 leading-relaxed whitespace-pre-wrap font-medium">${detail.intro || ''}</p>
+            <p class="text-xl text-gray-700 leading-relaxed whitespace-pre-wrap font-medium">${esc(detail.intro || '')}</p>
           </div>
           <div class="space-y-12 mb-12">${sectionsHtml}</div>
 
           <!-- CTA -->
           <div class="rd-card rd-card-tint-purple rd-pad mb-12 text-center relative overflow-hidden border border-eu-purple/10">
-            <h3 class="text-2xl font-extrabold text-eu-purple mb-3">${newsT?.detailCtaTitle || '¿Listo para unirte a la red?'}</h3>
-            <p class="text-gray-650 text-base mb-6 max-w-2xl mx-auto leading-relaxed">${newsT?.detailCtaDesc || ''}</p>
-            <a href="${escapeHtml(ctaLink)}"
+            <h3 class="text-2xl font-extrabold text-eu-purple mb-3">${esc(newsT?.detailCtaTitle || '¿Listo para unirte a la red?')}</h3>
+            <p class="text-gray-650 text-base mb-6 max-w-2xl mx-auto leading-relaxed">${esc(newsT?.detailCtaDesc || '')}</p>
+            <a href="${esc(ctaLink)}"
                class="inline-flex items-center gap-2 bg-eu-blue text-white px-8 py-3.5 rounded-full font-bold hover:bg-eu-purple transition-all shadow-md">
-              ${detail.cta_button || ''} <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              ${esc(detail.cta_button || '')} <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
           </div>
 
@@ -386,7 +384,7 @@ function renderDetail(newsT) {
           <!-- Share -->
           <div class="mt-12 pt-8 border-t border-eu-blue/10">
             <div class="flex items-center justify-between">
-              <span class="text-sm text-gray-500 font-bold uppercase tracking-wider">${newsT?.shareArticle || 'Compartir esta noticia'}</span>
+              <span class="text-sm text-gray-500 font-bold uppercase tracking-wider">${esc(newsT?.shareArticle || 'Compartir esta noticia')}</span>
               <div class="flex items-center gap-3">
                 <button class="p-3 bg-eu-blue/5 hover:bg-eu-blue/10 text-eu-blue rounded-full transition-all border border-eu-blue/10 cursor-pointer">
                   <i data-lucide="share-2" class="w-4.5 h-4.5"></i>

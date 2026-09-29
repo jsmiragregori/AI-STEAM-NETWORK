@@ -11,7 +11,7 @@ const EXPECTED_PER_FILE = [
   { file: 'assets/js/views/governance.js', unescaped: 1, escaped: 99 },
   { file: 'assets/js/views/knowledge.js', unescaped: 0, escaped: 9 },
   { file: 'assets/js/views/marketplace.js', unescaped: 5, escaped: 12 },
-  { file: 'assets/js/views/news.js', unescaped: 4, escaped: 0 },
+  { file: 'assets/js/views/news.js', unescaped: 0, escaped: 4 }, // CS-20
   // VAN-2.2: 10 y no 9 porque el rótulo del CTA del hero aparece ahora también
   // en la rama <span> de fallo cerrado. Es la misma salida, protegida dos veces.
   { file: 'assets/js/views/training.js', unescaped: 1, escaped: 10 },
@@ -26,6 +26,8 @@ const EXPECTED_ESC_VIEWS = [
   'assets/js/views/legal.js',
   'assets/js/views/marketplace.js',
   'assets/js/views/network.js',
+  // CS-20: News, fuera del runtime, importa ya el escapado común.
+  'assets/js/views/news.js',
   'assets/js/views/sectors.js',
   // SM-4: el mapa web importa el escapado común, como todas.
   'assets/js/views/sitemap.js',
@@ -56,8 +58,9 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // salvaguardia/pre-cs4-2026-09-10-congelada.
   // 2026-09-24: 24 al retirar el aviso de cookies (components/cookie-notice.js).
   assert.equal(report.scannedFiles, 24);
-  assert.equal(report.pickLangInterpolations.unescaped, 11);
-  assert.equal(report.pickLangInterpolations.escaped, 130);
+  // CS-20: las cuatro de news.js pasan a escapadas (11 → 7 y 130 → 134).
+  assert.equal(report.pickLangInterpolations.unescaped, 7);
+  assert.equal(report.pickLangInterpolations.escaped, 134);
   assert.deepEqual(
     report.pickLangInterpolations.perFile.map(({ file, unescaped, escaped }) => ({ file, unescaped, escaped })),
     EXPECTED_PER_FILE,

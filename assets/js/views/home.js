@@ -104,16 +104,16 @@ function renderIsNotBlock() {
   const cards = (block.cards || []).map(card => {
     const tone = cardToneClasses(card.tone);
     const items = (card.items || []).map(item => `
-      <li class="flex items-start gap-3 text-base font-medium ${tone.item}">
-        <div style="width:9px;height:9px;border-radius:9999px;background:${tone.bulletHex};margin-top:9px;flex-shrink:0"></div><span>${sanitizeEditorialHtml(localized(item.html))}</span>
+      <li class="flex items-start gap-3 text-base font-medium ${esc(tone.item)}">
+        <div style="width:9px;height:9px;border-radius:9999px;background:${esc(tone.bulletHex)};margin-top:9px;flex-shrink:0"></div><span>${sanitizeEditorialHtml(localized(item.html))}</span>
       </li>
     `).join('');
 
     return `
-      <div class="rd-card rd-card-grad-violet rd-card-accent rd-card-edge ${tone.accentExtra} rd-pad group">
+      <div class="rd-card rd-card-grad-violet rd-card-accent rd-card-edge ${esc(tone.accentExtra)} rd-pad group">
         <div class="flex items-center gap-3 mb-8">
-          <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${card.icon}" class="w-5 h-5 ${tone.icon}"></i></div>
-          <h3 class="font-extrabold ${tone.title} text-xl">${esc(localized(card.title))}</h3>
+          <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${esc(card.icon)}" class="w-5 h-5 ${esc(tone.icon)}"></i></div>
+          <h3 class="font-extrabold ${esc(tone.title)} text-xl">${esc(localized(card.title))}</h3>
         </div>
         <ul class="space-y-5">${items}</ul>
       </div>
@@ -141,12 +141,12 @@ function renderEnredBlock() {
   const cards = (block.cards || []).map(card => {
     const tone = enredToneClasses(card.tone);
     const pills = (card.pills || []).map(pill =>
-      `<span class="font-semibold rounded-full" style="font-size:.8125rem;padding:.3rem .85rem;background:${tone.pillBg};color:${tone.pillColor}">${sanitizeEditorialHtml(localized(pill.html))}</span>`
+      `<span class="font-semibold rounded-full" style="font-size:.8125rem;padding:.3rem .85rem;background:${esc(tone.pillBg)};color:${esc(tone.pillColor)}">${sanitizeEditorialHtml(localized(pill.html))}</span>`
     ).join('');
 
     return `
-      <div class="flex-1 rd-card rd-card-grad-violet rd-card-accent rd-card-edge ${tone.accent} rd-pad">
-        <p class="text-xs font-bold uppercase ${tone.title} mb-4" style="letter-spacing:.15em">${esc(localized(card.title))}</p>
+      <div class="flex-1 rd-card rd-card-grad-violet rd-card-accent rd-card-edge ${esc(tone.accent)} rd-pad">
+        <p class="text-xs font-bold uppercase ${esc(tone.title)} mb-4" style="letter-spacing:.15em">${esc(localized(card.title))}</p>
         <div class="flex flex-wrap gap-2">${pills}</div>
       </div>
     `;
@@ -156,7 +156,7 @@ function renderEnredBlock() {
 
   const connector = block.connector?.visible ? `
     <div class="flex flex-col items-center justify-center gap-1 shrink-0 py-4">
-      <i data-lucide="${block.connector.icon || 'link-2'}" class="w-6 h-6 text-eu-blue/50"></i>
+      <i data-lucide="${esc(block.connector.icon || 'link-2')}" class="w-6 h-6 text-eu-blue/50"></i>
       <span class="text-xs font-bold text-eu-blue/50 uppercase tracking-wider hidden md:block" style="writing-mode:vertical-rl;transform:rotate(180deg)">${esc(localized(block.connector.label))}</span>
     </div>
   ` : '';
@@ -280,21 +280,21 @@ function renderDualFocusBlock() {
     const tone = dualFocusToneClasses(card.tone);
     const items = (card.items || []).map(item => `
       <li class="flex items-center gap-3 text-base font-semibold text-eu-text">
-        <div style="width:10px;height:10px;border-radius:9999px;background:${tone.bulletHex};flex-shrink:0"></div>
+        <div style="width:10px;height:10px;border-radius:9999px;background:${esc(tone.bulletHex)};flex-shrink:0"></div>
         <span>${sanitizeEditorialHtml(localized(item.html))}</span>
       </li>
     `).join('');
 
     return `
       <div class="rd-card rd-card-edge rd-card-xl rd-card-hover flex flex-col overflow-hidden">
-        <div class="${tone.headerBg} text-white px-10 py-7 flex items-center gap-5">
+        <div class="${esc(tone.headerBg)} text-white px-10 py-7 flex items-center gap-5">
           <div class="flex items-center justify-center font-extrabold text-2xl shrink-0 bg-white/20" style="width:4rem;height:4rem;border-radius:1rem;color:#fff">${esc(card.initials)}</div>
           <div>
             <h3 class="font-extrabold text-white text-2xl leading-tight">${esc(localized(card.title))}</h3>
             <p class="text-base text-white/80 font-bold mt-0.5">${esc(localized(card.coordinator))}</p>
           </div>
         </div>
-        <div class="rd-pad-l ${tone.bodyGrad} flex-1">
+        <div class="rd-pad-l ${esc(tone.bodyGrad)} flex-1">
           <p class="text-lg text-gray-600 mb-10 leading-relaxed">${esc(localized(card.description))}</p>
           <ul class="space-y-4">${items}</ul>
         </div>
@@ -340,7 +340,7 @@ function renderSectorsBlock() {
     return `
     <button data-nav="sectores" data-sector-open="${esc(card.id)}" class="rd-card rd-card-grad-violet rd-card-hover flex flex-col items-center justify-center text-center cursor-pointer group" style="padding:2rem 1rem" aria-label="${esc(localized(card.label))}">
       <div class="rd-icon-circle mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
-        <i data-lucide="${icon}" class="w-6 h-6 text-eu-blue"></i>
+        <i data-lucide="${esc(icon)}" class="w-6 h-6 text-eu-blue"></i>
       </div>
       <span class="text-sm font-bold text-eu-text leading-tight">${esc(localized(card.label))}</span>
     </button>
@@ -413,7 +413,7 @@ function renderHeroBlock() {
     const spanStyle = isOddLast ? 'grid-column:1 / -1;' : '';
     return `
     <div class="rd-hero-stat flex flex-col" style="${spanStyle}">
-      <i data-lucide="${s.icon}" class="w-6 h-6 mb-4" style="color:#FFF4E1"></i>
+      <i data-lucide="${esc(s.icon)}" class="w-6 h-6 mb-4" style="color:#FFF4E1"></i>
       <div class="text-4xl font-extrabold text-white leading-none mb-2">${esc(s.value)}</div>
       <div class="text-xs font-bold uppercase tracking-wider" style="color:rgba(255,244,225,.75)">${esc(loc(s.label))}</div>
     </div>`;

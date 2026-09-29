@@ -32,11 +32,11 @@ function tabBar(activeTab, govT) {
     'participar':  'users',
   };
   return TABS.map(id => `
-    <button data-gov-tab="${id}" class="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold cursor-pointer transition-all duration-300 ${
+    <button data-gov-tab="${esc(id)}" class="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold cursor-pointer transition-all duration-300 ${
       activeTab === id
         ? 'bg-eu-blue text-white shadow-sm'
         : 'bg-eu-yellow/70 text-eu-purple border border-eu-yellow hover:bg-eu-yellow hover:border-eu-purple/30'
-    }"><i data-lucide="${icons[id]}" class="w-4 h-4"></i>${labels[id]}</button>
+    }"><i data-lucide="${icons[id]}" class="w-4 h-4"></i>${esc(labels[id])}</button>
   `).join('');
 }
 
@@ -58,7 +58,7 @@ function tabEstructura(govT) {
     <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col justify-between h-full group">
       <div>
         <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 text-eu-blue shadow-inner shrink-0 rd-icon-circle-gov transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
-          <i data-lucide="${node.icon || 'globe'}" class="w-5 h-5"></i>
+          <i data-lucide="${esc(node.icon || 'globe')}" class="w-5 h-5"></i>
         </div>
         <p class="text-xs font-extrabold uppercase tracking-widest text-eu-blue mb-1.5">${esc(pickLang(node.label, node.label || ''))}</p>
         <p class="font-extrabold text-2xl text-eu-purple leading-tight">${esc(pickLang(node.city, node.city || ''))}</p>
@@ -86,7 +86,7 @@ function tabEstructura(govT) {
     const rolesHtml = (Array.isArray(card.roles) ? card.roles : []).map(item => `
       <div class="flex items-start gap-4">
         <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-          <i data-lucide="${item.icon || 'globe'}" class="w-4 h-4 ${alertText}"></i>
+          <i data-lucide="${esc(item.icon || 'globe')}" class="w-4 h-4 ${alertText}"></i>
         </div>
         <div>
           <span class="font-extrabold text-eu-text text-lg">${esc(pickLang(item.label, item.label || ''))}: </span>
@@ -100,7 +100,7 @@ function tabEstructura(govT) {
         <div class="${headerBg} text-white px-6 py-6 shrink-0">
           <div class="flex items-center gap-4">
             <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center shrink-0">
-              <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 text-white"></i>
+              <i data-lucide="${esc(card.icon || 'globe')}" class="w-6 h-6 text-white"></i>
             </div>
             <div>
               <h3 class="font-extrabold text-2xl leading-tight text-white">${esc(pickLang(card.title, card.title || ''))}</h3>
@@ -131,7 +131,7 @@ function tabEstructura(govT) {
       <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden h-full group">
         <div class="rd-card-mp-ceja flex items-start justify-between gap-3">
           <h3 class="rd-card-mp-title">${esc(pickLang(body.name, body.name || ''))}</h3>
-          <span class="text-2xl font-extrabold text-white/40 select-none shrink-0 leading-none">${body.abbr || ''}</span>
+          <span class="text-2xl font-extrabold text-white/40 select-none shrink-0 leading-none">${esc(body.abbr || '')}</span>
         </div>
         <div class="p-7 pt-5 flex flex-col justify-between flex-1">
           <div>
@@ -158,7 +158,7 @@ function tabEstructura(govT) {
     return `
     <div class="rd-card ${gradClass} ${accentClass} rd-card-edge rd-pad flex gap-6 items-start cursor-default group">
       <div class="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
-        <i data-lucide="${card.icon || 'globe'}" class="w-6 h-6 ${iconColor}"></i>
+        <i data-lucide="${esc(card.icon || 'globe')}" class="w-6 h-6 ${iconColor}"></i>
       </div>
       <div>
         <h3 class="font-extrabold text-eu-purple mb-3 text-2xl leading-snug">${esc(pickLang(card.title, card.title || ''))}</h3>
@@ -227,9 +227,9 @@ function tabDualTrack(govT) {
     ).join('');
     return `
       <div class="rd-card border-none overflow-hidden shadow-lg h-full flex flex-col rd-card-hover cursor-default" style="background:${bodyBg}">
-        <div class="${colorClass} text-white px-6 py-6 shrink-0">
+        <div class="${esc(colorClass)} text-white px-6 py-6 shrink-0">
           <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center font-extrabold text-xl shrink-0">${cmsTrack.letter || ''}</div>
+            <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center font-extrabold text-xl shrink-0">${esc(cmsTrack.letter || '')}</div>
             <div>
               <h3 class="font-extrabold text-2xl leading-tight">${esc(pickLang(cmsTrack.title))}</h3>
               <p class="text-white/80 text-sm mt-0.5">${esc(pickLang(cmsTrack.subtitle))}</p>
@@ -250,8 +250,8 @@ function tabDualTrack(govT) {
           <div class="space-y-6 mt-6 pt-6 border-t border-eu-blue/10">
             <div>
               <h4 class="text-xl font-extrabold text-eu-purple mb-3">${esc(pickLang(fl.keyLimit))}</h4>
-              <div class="flex items-start gap-3 rounded-2xl p-5 transition-all duration-300 hover:shadow-md hover:scale-[1.015] cursor-default" style="background:${keyLimitBg}">
-                <i data-lucide="${alertIcon}" class="w-5 h-5 ${alertText} shrink-0 mt-0.5"></i>
+              <div class="flex items-start gap-3 rounded-2xl p-5 transition-all duration-300 hover:shadow-md hover:scale-[1.015] cursor-default" style="background:${esc(keyLimitBg)}">
+                <i data-lucide="${esc(alertIcon)}" class="w-5 h-5 ${alertText} shrink-0 mt-0.5"></i>
                 <p class="text-base ${alertText} font-semibold leading-relaxed">${esc(pickLang(cmsTrack.keyLimit?.text))}</p>
               </div>
             </div>
@@ -273,11 +273,11 @@ function tabDualTrack(govT) {
   const dataArchZonesHtml = (cmsDataArch.zones || []).map(zone => {
     const st = zoneStyles[zone.id] || zoneStyles.public;
     const itemsHtml = (zone.items || []).map(item =>
-      `<li class="flex items-center gap-2.5 text-base text-gray-700"><span class="w-1.5 h-1.5 rounded-full ${st.dot} shrink-0"></span>${esc(pickLang(item))}</li>`
+      `<li class="flex items-center gap-2.5 text-base text-gray-700"><span class="w-1.5 h-1.5 rounded-full ${esc(st.dot)} shrink-0"></span>${esc(pickLang(item))}</li>`
     ).join('');
     return `
-      <div class="${st.zone}">
-        <h4 class="text-xl font-extrabold ${st.h4} mb-2">${esc(pickLang(zone.title))}</h4>
+      <div class="${esc(st.zone)}">
+        <h4 class="text-xl font-extrabold ${esc(st.h4)} mb-2">${esc(pickLang(zone.title))}</h4>
         <p class="text-lg text-gray-700 mb-4 leading-relaxed">${esc(pickLang(zone.description))}</p>
         <ul class="space-y-2">${itemsHtml}</ul>
       </div>`;
@@ -388,11 +388,11 @@ function tabLbd(govT) {
       </span>`).join('');
     return `
       <div class="relative">
-        <div class="flex flex-col md:flex-row gap-6 p-8 rd-card rd-card-grad-violet rd-card-edge mb-4 border-l-4 ${border} group">
-          <div class="w-12 h-12 rounded-full ${color} text-white flex items-center justify-center font-extrabold text-xl shrink-0 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">${phase.step}</div>
+        <div class="flex flex-col md:flex-row gap-6 p-8 rd-card rd-card-grad-violet rd-card-edge mb-4 border-l-4 ${esc(border)} group">
+          <div class="w-12 h-12 rounded-full ${esc(color)} text-white flex items-center justify-center font-extrabold text-xl shrink-0 shadow-md group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">${esc(phase.step)}</div>
           <div class="flex-1 min-w-0">
             <div class="flex flex-wrap items-center gap-3 mb-2">
-              <span class="text-xs font-extrabold uppercase px-2.5 py-1 rounded-full ${color} text-white">${esc(pickLang(phase.track, phase.track || ''))}</span>
+              <span class="text-xs font-extrabold uppercase px-2.5 py-1 rounded-full ${esc(color)} text-white">${esc(pickLang(phase.track, phase.track || ''))}</span>
               <span class="text-xs text-gray-500">·</span>
               <span class="text-sm font-bold text-eu-purple">${esc(pickLang(phase.platform, phase.platform || ''))}</span>
             </div>
@@ -424,13 +424,13 @@ function tabLbd(govT) {
     const [color, border, text] = platformTones[i % platformTones.length];
     return `
     <div class="relative h-full">
-      <div class="rd-card rd-card-grad-violet rd-card-edge p-6 border-l-4 ${border} h-full flex flex-col group">
+      <div class="rd-card rd-card-grad-violet rd-card-edge p-6 border-l-4 ${esc(border)} h-full flex flex-col group">
         <div class="mb-3">
-          <span class="inline-block text-xs font-extrabold uppercase px-2.5 py-1 rounded-full ${color} text-white">${esc(pickLang(p.track, p.track || ''))}</span>
+          <span class="inline-block text-xs font-extrabold uppercase px-2.5 py-1 rounded-full ${esc(color)} text-white">${esc(pickLang(p.track, p.track || ''))}</span>
         </div>
         <p class="font-extrabold text-2xl text-eu-text leading-snug mb-1">${esc(pickLang(p.name, p.name || ''))}</p>
         <p class="text-sm text-gray-500 mb-2 font-bold">${esc(pickLang(p.tech, p.tech || ''))}</p>
-        <p class="text-sm font-extrabold uppercase ${text} mb-3 tracking-wider">${esc(pickLang(p.role, p.role || ''))}</p>
+        <p class="text-sm font-extrabold uppercase ${esc(text)} mb-3 tracking-wider">${esc(pickLang(p.role, p.role || ''))}</p>
         <p class="text-lg text-gray-700 mb-4 leading-relaxed">${esc(pickLang(p.description, p.desc || ''))}</p>
         <p class="text-xs text-gray-600 font-bold bg-eu-blue/5 rounded-full px-3 py-1.5 mt-auto flex items-center gap-1.5 w-fit">
           <i data-lucide="user" class="w-3.5 h-3.5"></i> ${esc(pickLang(p.owner, p.owner || ''))}
@@ -450,14 +450,14 @@ function tabLbd(govT) {
     return `
     <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col h-full group">
       <div class="mb-3 shrink-0">
-        <span class="inline-block px-3 py-1 rounded-full text-white text-xs font-extrabold uppercase ${color}">${esc(pickLang(f.label))}</span>
+        <span class="inline-block px-3 py-1 rounded-full text-white text-xs font-extrabold uppercase ${esc(color)}">${esc(pickLang(f.label))}</span>
       </div>
       <p class="font-extrabold text-eu-purple text-lg mb-0.5 leading-snug">${esc(pickLang(f.range))}</p>
-      <p class="text-sm text-gray-500 font-bold mb-4">${f.period || ''}</p>
+      <p class="text-sm text-gray-500 font-bold mb-4">${esc(f.period || '')}</p>
       <ul class="space-y-2.5 mt-2">
         ${(f.items || []).map(item => `
           <li class="flex items-start gap-2.5 text-base text-gray-700 leading-relaxed">
-            <span class="w-1.5 h-1.5 rounded-full mt-2 shrink-0 ${color}"></span>
+            <span class="w-1.5 h-1.5 rounded-full mt-2 shrink-0 ${esc(color)}"></span>
             <span>${esc(pickLang(item.label))}</span>
           </li>`).join('')}
       </ul>
@@ -624,7 +624,7 @@ function tabDocumentos(govT) {
                 <i data-lucide="file-text" class="w-6 h-6" style="color:#4918AD"></i>
               </div>
               <div class="flex-1 min-w-0">
-                <span class="text-sm text-gray-500 font-bold">${formatDocDate(doc.date)}</span>
+                <span class="text-sm text-gray-500 font-bold">${esc(formatDocDate(doc.date))}</span>
               </div>
             </div>
             <div class="flex items-center gap-2 flex-wrap">
@@ -633,7 +633,7 @@ function tabDocumentos(govT) {
                   'background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.18)',
                   'background:rgb(73 24 173/.10); color:#4918AD; border:1px solid rgb(73 24 173/.18)',
                 ];
-                return `<span class="text-sm px-3 py-1 rounded-full font-bold" style="${chipStyles[ti % chipStyles.length]}">${esc(pickLang(type.label, ''))}</span>`;
+                return `<span class="text-sm px-3 py-1 rounded-full font-bold" style="${esc(chipStyles[ti % chipStyles.length])}">${esc(pickLang(type.label, ''))}</span>`;
               }).join('')}
               <span class="text-sm font-extrabold px-3 py-1 rounded-full inline-flex items-center gap-1.5" style="${pub ? 'background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.18)' : 'background:rgb(73 24 173/.08); color:#4918AD; border:1px solid rgb(73 24 173/.15)'}">
                 <i data-lucide="${pub ? 'globe' : 'lock'}" class="w-3.5 h-3.5 shrink-0"></i>
@@ -662,7 +662,7 @@ function tabDocumentos(govT) {
     const paginationHtml = !isShowAll && totalPages > 1 ? `
       <div class="flex gap-2 justify-center mt-6">
         <button data-gov-doc-page="prev" class="px-4 py-2 text-xs font-bold rounded-full border cursor-pointer transition-all ${safePage === 0 ? 'opacity-50 cursor-not-allowed text-gray-400 border-gray-200' : 'bg-white text-eu-text border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">← ${esc(pickLang(paginationPrev, 'Anterior'))}</button>
-        <span class="px-3 py-2 text-xs text-gray-500 font-bold">Página ${safePage + 1} de ${totalPages}</span>
+        <span class="px-3 py-2 text-xs text-gray-500 font-bold">Página ${safePage + 1} de ${esc(totalPages)}</span>
         <button data-gov-doc-page="next" class="px-4 py-2 text-xs font-bold rounded-full border cursor-pointer transition-all ${safePage >= totalPages - 1 ? 'opacity-50 cursor-not-allowed text-gray-400 border-gray-200' : 'bg-white text-eu-text border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">${esc(pickLang(paginationNext, 'Siguiente'))} →</button>
       </div>
     ` : '';
@@ -670,8 +670,8 @@ function tabDocumentos(govT) {
     const pageSizeSelector = pageSizeOptions && pageSizeOptions.length > 0 ? `
       <div class="flex gap-2 justify-end mb-4">
         ${pageSizeOptions.map(opt => `
-          <button data-gov-doc-pagesize="${opt}" class="px-3 py-1.5 rounded-full border cursor-pointer transition-all text-xs font-bold ${actualPageSize === opt ? 'bg-eu-blue text-white border-eu-blue shadow-sm' : 'bg-white text-gray-600 border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">
-            ${opt}
+          <button data-gov-doc-pagesize="${esc(opt)}" class="px-3 py-1.5 rounded-full border cursor-pointer transition-all text-xs font-bold ${actualPageSize === opt ? 'bg-eu-blue text-white border-eu-blue shadow-sm' : 'bg-white text-gray-600 border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">
+            ${esc(opt)}
           </button>
         `).join('')}
         ${showAllOption ? `<button data-gov-doc-pagesize="all" class="px-3 py-1.5 rounded-full border cursor-pointer transition-all text-xs font-bold ${actualPageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue shadow-sm' : 'bg-white text-gray-600 border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">
@@ -786,8 +786,8 @@ function tabParticipar(govT) {
       <div class="flex flex-col justify-between gap-4 p-6 rd-card rd-card-grad-violet rd-card-edge h-full group">
         <div class="flex items-start gap-4">
           <div class="bg-eu-blue text-white rounded-xl px-3 py-2 text-center shrink-0 min-w-[3.5rem] shadow-sm">
-            <span class="block text-lg font-extrabold leading-none">${parts[0] || ''}</span>
-            <span class="block text-xs font-bold uppercase tracking-wider mt-1">${parts[1] || ''}</span>
+            <span class="block text-lg font-extrabold leading-none">${esc(parts[0] || '')}</span>
+            <span class="block text-xs font-bold uppercase tracking-wider mt-1">${esc(parts[1] || '')}</span>
           </div>
           <div class="min-w-0">
             <p class="font-extrabold text-lg text-eu-purple leading-snug break-words">${esc(pickLang(e.title, e.title?.es || ''))}</p>
@@ -927,7 +927,7 @@ export function render() {
 
   const statsHtml = heroStats.map(s => `
     <div class="rd-hero-stat text-center">
-      <p class="text-3xl font-extrabold text-white leading-tight">${s.value || ''}</p>
+      <p class="text-3xl font-extrabold text-white leading-tight">${esc(s.value || '')}</p>
       <p class="text-[10px] font-extrabold uppercase tracking-widest mt-2" style="color:rgba(255,244,225,.75)">${esc(pickLang(s.label))}</p>
     </div>
   `).join('');
@@ -953,7 +953,7 @@ export function render() {
           <div class="flex flex-wrap items-start justify-between gap-8">
             <div class="max-w-4xl">
               <span class="inline-block bg-white/10 border border-white/20 font-extrabold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-6" style="color:#FFF4E1;backdrop-filter:blur(8px)">
-                ${govT?.eyebrow || 'Gobernanza'}
+                ${esc(govT?.eyebrow || 'Gobernanza')}
               </span>
               <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${esc(pickLang(heroBlock.title, govT?.title || ''))}</h1>
               <p class="text-lg leading-relaxed max-w-3xl" style="color:rgba(255,255,255,.9)">${esc(pickLang(heroBlock.description, govT?.description || ''))}</p>

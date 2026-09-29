@@ -104,11 +104,11 @@ function tabBar(activeTab) {
   };
   const icons = { flujo: 'git-commit', oer: 'book-open', plantillas: 'file-text' };
   return TABS.map(id => `
-    <button data-know-tab="${id}" class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold cursor-pointer border transition-all whitespace-nowrap ${
+    <button data-know-tab="${esc(id)}" class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold cursor-pointer border transition-all whitespace-nowrap ${
       activeTab === id
         ? 'bg-eu-blue text-white border-eu-blue shadow-sm'
         : 'bg-eu-yellow/70 text-eu-purple border-eu-yellow hover:bg-eu-yellow hover:border-eu-purple/30'
-    }"><i data-lucide="${icons[id]}" class="w-4 h-4"></i>${esc(labels[id])}</button>
+    }"><i data-lucide="${esc(icons[id])}" class="w-4 h-4"></i>${esc(labels[id])}</button>
   `).join('');
 }
 
@@ -185,7 +185,7 @@ function tabFlujo() {
       stepsHtml = (cycleBlock.steps || []).map((step, idx) => `
         <div class="rd-card rd-card-grad-violet rd-card-edge p-6 relative group">
           <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${idx + 1}</div>
-          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${lucideName(step.icon, FLOW_ICONS[idx] || 'circle')}" class="w-6 h-6 text-eu-blue"></i></div>
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${esc(lucideName(step.icon, FLOW_ICONS[idx] || 'circle'))}" class="w-6 h-6 text-eu-blue"></i></div>
           <h3 class="font-extrabold text-eu-purple text-lg mb-2">${esc(pickLang(step.title, ''))}</h3>
           <p class="text-base text-gray-600 leading-relaxed">${esc(pickLang(step.description, ''))}</p>
         </div>
@@ -196,7 +196,7 @@ function tabFlujo() {
       stepsHtml = flowSteps.map((step, idx) => `
         <div class="rd-card rd-card-grad-violet rd-card-edge p-6 relative group">
           <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${idx + 1}</div>
-          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${FLOW_ICONS[idx] || 'circle'}" class="w-6 h-6 text-eu-blue"></i></div>
+          <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${esc(FLOW_ICONS[idx] || 'circle')}" class="w-6 h-6 text-eu-blue"></i></div>
           <h3 class="font-extrabold text-eu-purple text-lg mb-2">${esc(step.title || '')}</h3>
           <p class="text-base text-gray-600 leading-relaxed">${esc(step.desc || '')}</p>
         </div>
@@ -221,7 +221,7 @@ function tabFlujo() {
         const [borderCls, textCls] = colorClass.split(' ');
         return `
           <div class="rd-card rd-card-grad-violet rd-card-edge p-4">
-            <p class="font-extrabold ${textCls} mb-1">${esc(p.name || '')}</p>
+            <p class="font-extrabold ${esc(textCls)} mb-1">${esc(p.name || '')}</p>
             <p class="text-gray-600 text-base leading-relaxed">${esc(pickLang(p.description, ''))}</p>
           </div>`;
       }).join('');
@@ -358,7 +358,7 @@ function renderActiveFiltersDisplay() {
     const statusIcons = { validated: 'check-circle', pending: 'clock', draft: 'file-text' };
     badges.push(`
       <button data-remove-filter="status" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="${statusBadgeStyle(status)}; border:1px solid rgb(73 24 173/.2)">
-        <i data-lucide="${statusIcons[status] || 'check-circle'}" class="w-3.5 h-3.5"></i><span>${esc(getStatusLabel(status))}</span>
+        <i data-lucide="${esc(statusIcons[status] || 'check-circle')}" class="w-3.5 h-3.5"></i><span>${esc(getStatusLabel(status))}</span>
         <i data-lucide="x" class="w-3.5 h-3.5"></i>
       </button>
     `);
@@ -466,7 +466,7 @@ function renderOerGridContent(search) {
 
   const pageSizeHtml = `
     <div class="flex gap-1">
-      ${pageSizeOpts.map(n => `<button data-oer-pagesize="${n}" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${n}</button>`).join('')}
+      ${pageSizeOpts.map(n => `<button data-oer-pagesize="${esc(n)}" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${esc(n)}</button>`).join('')}
       ${showAllOpt ? `<button data-oer-pagesize="all" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${esc(showAllLbl)}</button>` : ''}
     </div>`;
 
@@ -475,7 +475,7 @@ function renderOerGridContent(search) {
       <button id="oer-pag-prev" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
         ← ${esc(getOerLabel('previous'))}
       </button>
-      <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
+      <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${esc(totalPages)}</span>
       <button id="oer-pag-next" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
         ${esc(getOerLabel('next'))} →
       </button>
@@ -519,7 +519,7 @@ function renderOerGridContent(search) {
       <div class="p-7 pt-5 flex-1 flex flex-col">
         <!-- Header: Type + Levels (secondary, compact) -->
         <div class="flex items-center gap-2 mb-3">
-          ${oerShowType ? `<span class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${rIcon}" class="w-5 h-5 text-eu-purple"></i></span><span class="text-sm font-bold uppercase text-gray-600 tracking-wider">${esc(rType)}</span>` : ''}
+          ${oerShowType ? `<span class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${esc(rIcon)}" class="w-5 h-5 text-eu-purple"></i></span><span class="text-sm font-bold uppercase text-gray-600 tracking-wider">${esc(rType)}</span>` : ''}
           ${oerShowLevels ? `<div class="flex gap-1 ml-auto">${rLevelsHtml}</div>` : ''}
         </div>
 
@@ -559,7 +559,7 @@ function renderOerGridContent(search) {
           ${(() => {
             const status = r.validationStatus || 'validated';
             const icons = { validated: 'check-circle', pending: 'clock', draft: 'file-text' };
-            return `<i data-lucide="${icons[status] || 'check-circle'}" class="w-3.5 h-3.5"></i>${esc(getStatusLabel(status))}`;
+            return `<i data-lucide="${esc(icons[status] || 'check-circle')}" class="w-3.5 h-3.5"></i>${esc(getStatusLabel(status))}`;
           })()}
         </button>` : '<span></span>'}
         ${rUrl ? `<a href="${esc(rUrl)}"${rExternal ? ' target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-eu-blue text-sm font-bold hover:underline cursor-pointer"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</a>` : `<span class="inline-flex items-center gap-1.5 text-gray-500 text-sm font-bold"><i data-lucide="${linkIcon}" class="w-4 h-4"></i>${esc(linkText)}</span>`}
@@ -850,7 +850,7 @@ function renderTemplatesGridContent(search) {
       const icon = lucideName(meta?.icon, 'clipboard-list');
       badges.push(`
         <button data-tmpl-remove-filter="type" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold hover:opacity-80 transition-opacity cursor-pointer" style="background:rgb(86 32 246/.10); color:#5620F6; border:1px solid rgb(86 32 246/.25)">
-          <i data-lucide="${icon}" class="w-3.5 h-3.5"></i><span>${esc(lbl)}</span>
+          <i data-lucide="${esc(icon)}" class="w-3.5 h-3.5"></i><span>${esc(lbl)}</span>
           <i data-lucide="x" class="w-3.5 h-3.5"></i>
         </button>`);
     }
@@ -881,7 +881,7 @@ function renderTemplatesGridContent(search) {
 
   const pageSizeHtml = `
     <div class="flex gap-1">
-      ${pageSizeOpts.map(n => `<button data-tmpl-pagesize="${n}" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${n}</button>`).join('')}
+      ${pageSizeOpts.map(n => `<button data-tmpl-pagesize="${esc(n)}" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === n ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${esc(n)}</button>`).join('')}
       ${showAllOpt ? `<button data-tmpl-pagesize="all" class="px-2 py-1 rounded-full border cursor-pointer text-xs font-bold transition-colors ${pageSize === 'all' ? 'bg-eu-blue text-white border-eu-blue' : 'bg-white text-gray-700 border-eu-blue/15 hover:border-eu-blue'}">${esc(showAllLbl)}</button>` : ''}
     </div>`;
 
@@ -890,7 +890,7 @@ function renderTemplatesGridContent(search) {
       <button id="tmpl-pag-prev" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
         ← ${esc(prevLbl)}
       </button>
-      <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${totalPages}</span>
+      <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${esc(totalPages)}</span>
       <button id="tmpl-pag-next" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
         ${esc(nextLbl)} →
       </button>
@@ -921,7 +921,7 @@ function renderTemplatesGridContent(search) {
         <h3 class="rd-card-mp-title">${esc(pickLang(tpl.title, ''))}</h3>
       </div>
       <div class="p-7 pt-5 flex flex-col flex-1">
-      <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${lucideName(iconStr, 'file-text')}" class="w-7 h-7 text-eu-purple"></i></div>
+      <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${esc(lucideName(iconStr, 'file-text'))}" class="w-7 h-7 text-eu-purple"></i></div>
       <p class="text-base text-gray-600 mb-4 flex-1 leading-relaxed">${esc(pickLang(tpl.description, ''))}</p>
       <div class="flex flex-wrap gap-2 mb-4">
         ${showType && typeStr ? `<button data-tmpl-filter-type="${esc(tpl.typeId)}" class="text-sm px-3 py-1 rounded-full font-bold cursor-pointer transition-all ${filtersHere.typeId === tpl.typeId ? 'ring-2 ring-offset-1 ring-eu-blue' : ''}" style="background:rgb(86 32 246/.10); color:#5620F6">${esc(typeStr)}</button>` : ''}

@@ -28,3 +28,20 @@ test('sanitizeEditorialHtml degrada HTML peligroso a texto seguro', () => {
   );
   assert.equal(sanitizeEditorialHtml('<b>sin cierre'), 'sin cierre');
 });
+
+// Los campos editoriales llegan como HTML que produjo `marked` en el build, y
+// `marked` ya escapa el texto: «IA & STEAM» llega como «IA &amp; STEAM». Volver
+// a escaparlo sin descodificar pintaba «IA &amp; STEAM» en la portada.
+test('sanitizeEditorialHtml no escapa dos veces el texto que ya llega escapado', () => {
+  assert.equal(sanitizeEditorialHtml('IA &amp; STEAM'), 'IA &amp; STEAM');
+  assert.equal(sanitizeEditorialHtml('Drets d&#39;Autor'), 'Drets d&#39;Autor');
+  assert.equal(sanitizeEditorialHtml('<strong>R&amp;D&amp;I</strong>'), '<strong>R&amp;D&amp;I</strong>');
+});
+
+test('descodificar antes de escapar no convierte texto en marcado', () => {
+  // Una etiqueta que llega escapada sigue siendo texto.
+  assert.equal(sanitizeEditorialHtml('&lt;script&gt;alert(1)&lt;/script&gt;'), '&lt;script&gt;alert(1)&lt;/script&gt;');
+  assert.equal(sanitizeEditorialHtml('&lt;img src=x onerror=alert(1)&gt;'), '&lt;img src=x onerror=alert(1)&gt;');
+  // Una doblemente escapada tampoco sale como marcado: se descodifica una sola vez.
+  assert.doesNotMatch(sanitizeEditorialHtml('&amp;lt;script&amp;gt;'), /<script/);
+});

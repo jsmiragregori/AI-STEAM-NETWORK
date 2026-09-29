@@ -67,7 +67,7 @@ function renderDocumento(documento) {
   return `
     <section class="rd-section max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
       <h1 class="rd-legal-title">${esc(doc.titulo)}</h1>
-      ${sello ? `<p class="rd-legal-stamp">${sello}</p>` : ''}
+      ${sello ? `<p class="rd-legal-stamp">${esc(sello)}</p>` : ''}
       <div class="rd-legal-prose">${sanitizeLegalHtml(doc.html)}</div>
     </section>
   `;
