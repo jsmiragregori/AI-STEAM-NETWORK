@@ -196,14 +196,14 @@ export const LEGAL_CONFIG = {
       "grado_conformidad": "parcialmente conforme",
       "norma": "UNE-EN 301549 (WCAG 2.1, nivel AA)",
       "metodo": "autoevaluación mediante revisión estática del código",
-      "fecha_evaluacion": "2026-09-07T00:00:00.000Z",
+      "fecha_evaluacion": "2026-09-07",
       "canal_comunicacion": {
         "es": "https://ceice.gva.es/es/formulario-consultas",
         "va": "https://ceice.gva.es/va/formulario-consultas",
         "en": "https://ceice.gva.es/es/formulario-consultas"
       },
       "canal_comunicacion_origen": "aportado por Salva (2026-09-08)",
-      "fecha_revision_prevista": "2027-09-07T00:00:00.000Z",
+      "fecha_revision_prevista": "2027-09-07",
       "defectos_declarados": [
         "contraste 4,27:1 en el selector de idioma inactivo",
         "contraste 2,50:1 en textos secundarios con text-gray-400",
