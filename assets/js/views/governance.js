@@ -430,7 +430,7 @@ function tabLbd(govT) {
         </div>
         <p class="font-extrabold text-2xl text-eu-text leading-snug mb-1">${esc(pickLang(p.name, p.name || ''))}</p>
         <p class="text-sm text-gray-500 mb-2 font-bold">${esc(pickLang(p.tech, p.tech || ''))}</p>
-        <p class="text-sm font-extrabold uppercase ${text} mb-3 tracking-wider">${esc(pickLang(p.role, p.role || ''))}</p>
+        <p class="text-sm font-extrabold uppercase ${esc(text)} mb-3 tracking-wider">${esc(pickLang(p.role, p.role || ''))}</p>
         <p class="text-lg text-gray-700 mb-4 leading-relaxed">${esc(pickLang(p.description, p.desc || ''))}</p>
         <p class="text-xs text-gray-600 font-bold bg-eu-blue/5 rounded-full px-3 py-1.5 mt-auto flex items-center gap-1.5 w-fit">
           <i data-lucide="user" class="w-3.5 h-3.5"></i> ${esc(pickLang(p.owner, p.owner || ''))}

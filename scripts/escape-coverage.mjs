@@ -168,36 +168,39 @@ export function fileContext(source) {
   }
   const producers = new Set();
   for (const m of source.matchAll(/\bfunction\s+([A-Za-z_$][\w$]*)\s*\([^)]*\)\s*\{/g)) {
+    if (!code[m.index]) continue;
     const open = m.index + m[0].length - 1;
-    let depth = 0;
-    let k = open;
-    for (; k < source.length; k++) {
-      const c = source[k];
-      if (c === "'" || c === '"' || c === '`') { k = skipString(source, k); continue; }
-      if (c === '{') depth++;
-      else if (c === '}') { depth--; if (depth === 0) break; }
-    }
-    const body = source.slice(open, k);
-    const returns = [];
-    for (const r of body.matchAll(/\breturn\s+/g)) {
-      if (!code[open + r.index]) continue;
-      const start = r.index + r[0].length;
-      returns.push({ pos: open + r.index, expr: body.slice(start, declarationEnd(body, start)).trim() });
-    }
+    const returns = ownReturns(source, open, code);
     if (returns.length) producers.add({ name: m[1], returns });
   }
-  // Funciones flecha asignadas a una constante: `const f = (x) => ...`.
+  // Funciones flecha asignadas a una constante: `const f = (x) => expr` o
+  // `const f = (x) => { ... return ...; }`.
   for (const [name, entries] of declarations) {
-    if (entries.length === 1) {
-      const arrow = entries[0].expr.match(/^(?:\([^)]*\)|[A-Za-z_$][\w$]*)\s*=>\s*/);
-      if (arrow) producers.add({ name, returns: [{ pos: entries[0].pos, expr: entries[0].expr.slice(arrow[0].length) }] });
+    if (entries.length !== 1) continue;
+    const { pos, expr } = entries[0];
+    const arrow = expr.match(/^(?:\([^)]*\)|[A-Za-z_$][\w$]*)\s*=>\s*/);
+    if (!arrow) continue;
+    const bodyAt = source.indexOf(expr, pos) + arrow[0].length;
+    if (source[bodyAt] === '{') {
+      const returns = ownReturns(source, bodyAt, code);
+      if (returns.length) producers.add({ name, returns });
+    } else {
+      producers.add({ name, returns: [{ pos, expr: expr.slice(arrow[0].length) }] });
     }
   }
   // Una función produce HTML si TODO lo que devuelve es fragmento, literal o
   // escapado. Punto fijo MÁXIMO: se parte de suponer que todas producen HTML y
   // se descartan las que devuelven un dato, hasta que nada cambia. Así una
   // función recursiva (renderBadge dentro de su propio .map) se resuelve bien.
-  const ctx = { source, declarations, producers: new Set([...producers].map((p) => p.name)), pending: producers };
+  // Funciones con nombre y sus parámetros, para resolver un parámetro mirando
+  // qué le pasan las llamadas del fichero.
+  const functions = [];
+  for (const m of source.matchAll(/\bfunction\s+([A-Za-z_$][\w$]*)\s*\(([^)]*)\)\s*\{/g)) {
+    if (!code[m.index]) continue;
+    const open = m.index + m[0].length - 1;
+    functions.push({ name: m[1], params: paramNames(m[2]), start: open, end: blockEnd(source, open) });
+  }
+  const ctx = { source, code, functions, declarations, producers: new Set([...producers].map((p) => p.name)), pending: producers };
   let changed = true;
   while (changed) {
     changed = false;
@@ -207,6 +210,140 @@ export function fileContext(source) {
     }
   }
   return ctx;
+}
+
+function blockEnd(source, open) {
+  let depth = 0;
+  for (let k = open; k < source.length; k++) {
+    const c = source[k];
+    if (c === "'" || c === '"' || c === '`') { k = skipString(source, k); continue; }
+    if (c === '{') depth++;
+    else if (c === '}') { depth--; if (depth === 0) return k; }
+  }
+  return source.length;
+}
+
+// Nombres de los parámetros: `a, b = 1, { x } = {}` → ['a', 'b', null].
+function paramNames(list) {
+  return splitTopLevel(list, ',').map((p) => {
+    const m = p.trim().match(/^([A-Za-z_$][\w$]*)/);
+    return m ? m[1] : null;
+  });
+}
+
+// Posición absoluta de un trozo de texto que forma parte de la expresión en `ctx.at`.
+function locate(ctx, snippet) {
+  if (!ctx.source) return -1;
+  // El trozo puede estar antes del uso (en una declaración) o después (dentro
+  // de la propia expresión): la aparición más cercana a `at`.
+  const at = ctx.at ?? 0;
+  let best = -1;
+  for (let k = ctx.source.indexOf(snippet); k >= 0; k = ctx.source.indexOf(snippet, k + 1)) {
+    if (best < 0 || Math.abs(k - at) < Math.abs(best - at)) best = k;
+  }
+  return best;
+}
+
+// Un parámetro: lo que le pasen TODAS las llamadas del fichero en su posición.
+function classifyParam(name, ctx, seen) {
+  if (!ctx.functions || ctx.at === undefined) return null;
+  const fn = ctx.functions
+    .filter((f) => f.start < ctx.at && ctx.at < f.end)
+    .sort((a, b) => b.start - a.start)[0];
+  if (!fn) return null;
+  const index = fn.params.indexOf(name);
+  if (index < 0) return null;
+  const key = `${fn.name}#${index}`;
+  if (seen.has(key)) return 'literal'; // recursión: lo decide el resto de llamadas
+  const inner = new Set(seen).add(key);
+  const kinds = [];
+  for (const m of ctx.source.matchAll(new RegExp(`(?<![\\w$.])${fn.name}\\s*\\(`, 'g'))) {
+    if (!ctx.code[m.index]) continue;
+    if (/function\s+$/.test(ctx.source.slice(Math.max(0, m.index - 12), m.index))) continue;
+    const open = m.index + m[0].length - 1;
+    const args = splitTopLevel(ctx.source.slice(open + 1, closingParen(ctx.source, open)), ',');
+    const arg = (args[index] || '').trim();
+    if (!arg) { kinds.push('literal'); continue; }
+    kinds.push(classifyEmission(arg, { ...ctx, at: m.index }, inner));
+  }
+  return kinds.length ? worst(kinds) : null;
+}
+
+// objeto.propHtml: lo que valga esa propiedad en TODOS los objetos del fichero.
+function classifyHtmlProperty(prop, ctx, seen) {
+  if (!ctx.source) return null;
+  const key = `.${prop}`;
+  if (seen.has(key)) return 'literal';
+  const inner = new Set(seen).add(key);
+  const kinds = [];
+  for (const m of ctx.source.matchAll(new RegExp(`(?<![\\w$.])${prop}\\s*:\\s*`, 'g'))) {
+    if (!ctx.code[m.index]) continue;
+    const start = m.index + m[0].length;
+    const value = ctx.source.slice(start, declarationEnd(ctx.source, start)).trim();
+    kinds.push(classifyEmission(value, { ...ctx, at: start }, inner));
+  }
+  return kinds.length ? worst(kinds) : null;
+}
+
+// Lo que devuelve un cuerpo de función en línea (callback o IIFE), con cada
+// return resuelto en su propia posición.
+function classifyBlock(blockText, ctx, seen) {
+  const abs = locate(ctx, blockText);
+  if (abs >= 0) {
+    const returns = ownReturns(ctx.source, abs, ctx.code);
+    if (!returns.length) return dato(blockText, ctx);
+    return worst(returns.map((r) => classifyEmission(r.expr, { ...ctx, at: r.pos }, seen)));
+  }
+  // Dentro de una interpolación el texto llega redactado (las plantillas
+  // anidadas en blanco) y no está tal cual en el fuente: se analiza el propio
+  // texto. Sus plantillas anidadas se clasifican aparte, como interpolaciones.
+  const returns = ownReturns(blockText, 0, codeMask(blockText));
+  if (!returns.length) return dato(blockText, ctx);
+  return worst(returns.map((r) => classifyEmission(r.expr, ctx, seen)));
+}
+
+// Los `return` de un cuerpo `{...}` que empieza en `open`, SIN los de las
+// funciones anidadas (un `.filter(x => { return ... })` no es lo que devuelve
+// la función de fuera).
+function ownReturns(source, open, code) {
+  let depth = 0;
+  let end = open;
+  for (; end < source.length; end++) {
+    const c = source[end];
+    if (c === "'" || c === '"' || c === '`') { end = skipString(source, end); continue; }
+    if (c === '{') depth++;
+    else if (c === '}') { depth--; if (depth === 0) break; }
+  }
+  // Rangos de las funciones anidadas: `=> {` y `function (...) {`.
+  const nested = [];
+  const re = /=>\s*\{|\bfunction\b[^{(]*\([^)]*\)\s*\{/g;
+  re.lastIndex = open + 1;
+  let m;
+  while ((m = re.exec(source)) && m.index < end) {
+    if (!code[m.index]) continue;
+    const start = m.index + m[0].length - 1;
+    let d = 0;
+    let k = start;
+    for (; k < end; k++) {
+      const c = source[k];
+      if (c === "'" || c === '"' || c === '`') { k = skipString(source, k); continue; }
+      if (c === '{') d++;
+      else if (c === '}') { d--; if (d === 0) break; }
+    }
+    nested.push([start, k]);
+  }
+  const returns = [];
+  const body = source.slice(0, end);
+  const rr = /\breturn\s+/g;
+  rr.lastIndex = open;
+  let r;
+  while ((r = rr.exec(body))) {
+    if (!code[r.index]) continue;
+    if (nested.some(([a, b]) => r.index > a && r.index < b)) continue;
+    const start = r.index + r[0].length;
+    returns.push({ pos: r.index, expr: source.slice(start, declarationEnd(source, start)).trim() });
+  }
+  return returns;
 }
 
 // Marca qué posiciones del fichero son código (true) y cuáles texto de una
@@ -264,6 +401,9 @@ function resolve(ctx, name, at) {
 
 // ── Clasificación de lo que se emite ──
 
+// Hoja que hace que algo sea dato; con ctx.trace, se anota (para revisar a mano).
+const dato = (t, ctx) => { if (ctx.trace) ctx.trace.push(t); return 'dato'; };
+
 const RANK = { escapada: 0, literal: 0, fragmento: 0, dato: 1 };
 const worst = (kinds) => kinds.reduce((a, b) => (RANK[b] > RANK[a] ? b : a), 'literal');
 
@@ -282,18 +422,27 @@ export function classifyEmission(text, ctx = { declarations: new Map(), producer
 
   // lista.join('') de un array local: emite lo que se le metió, en su
   // inicializador `[...]` y en cada `lista.push(...)` anterior al uso.
-  const arrayJoin = t.match(/^([A-Za-z_$][\w$]*)\.join\s*\(\s*(?:''|""|``)\s*\)$/);
+  const arrayJoin = t.match(/^([A-Za-z_$][\w$]*)(?:\.(?:slice|filter)\([^()]*\))*\.join\s*\(\s*(?:''|""|``)\s*\)$/);
   if (arrayJoin && ctx.source) {
     const name = arrayJoin[1];
     const inits = resolve(ctx, name, ctx.at) || [];
+    // Un array creado con .map(...) emite lo que emite su callback.
+    if (inits.length && inits.every((e) => /\.map\s*\(/.test(e) && e.endsWith(')'))) {
+      return worst(inits.map((e) => classifyEmission(`${e}.join('')`, ctx, seen)));
+    }
+    // `[...].filter(Boolean)`: el filtro quita elementos, no los cambia.
+    for (let n = 0; n < inits.length; n++) {
+      const lit = inits[n].match(/^(\[[\s\S]*\])(?:\s*\.filter\([^()]*\))+$/);
+      if (lit) inits[n] = lit[1];
+    }
     const pushed = [];
     for (const m of ctx.source.matchAll(new RegExp(`\\b${name}\\.push\\(`, 'g'))) {
       if (ctx.at !== undefined && m.index > ctx.at) continue;
       const open = m.index + m[0].length - 1;
       pushed.push(ctx.source.slice(open + 1, closingParen(ctx.source, open)));
     }
-    const elements = inits.flatMap((e) => (/^\[\s*\]$/.test(e) ? [] : [e.replace(/^\[|\]$/g, '')]));
-    if (!inits.every((e) => e.startsWith('['))) return 'dato';
+    const elements = inits.flatMap((e) => (/^\[\s*\]$/.test(e) ? [] : splitTopLevel(e.slice(1, -1), ',').filter((x) => x.trim())));
+    if (!inits.every((e) => e.startsWith('['))) return dato(t, ctx);
     return worst([...elements, ...pushed].map((e) => classifyEmission(e, ctx, seen)).concat('literal'));
   }
 
@@ -301,6 +450,10 @@ export function classifyEmission(text, ctx = { declarations: new Map(), producer
   const indexed = t.match(/^([A-Za-z_$][\w$]*)\s*\[[^\]]*\]$/);
   if (indexed) {
     const inits = resolve(ctx, indexed[1], ctx.at);
+    // Un elemento de un array local: lo que emitan sus elementos.
+    if (inits && inits.length && inits.every((e) => (/\.map\s*\(/.test(e) && e.endsWith(')')) || e.startsWith('['))) {
+      return classifyEmission(`${indexed[1]}.join('')`, ctx, seen);
+    }
     if (inits && inits.length === 1 && inits[0].startsWith('{')) {
       const values = [];
       scan(inits[0].slice(1, -1), () => true);
@@ -316,27 +469,66 @@ export function classifyEmission(text, ctx = { declarations: new Map(), producer
   if (call && closingParen(t, call[0].length - 1) === t.length - 1) {
     if (ESCAPERS.test(call[1])) return 'escapada';
     if (ctx.producers.has(call[1])) return 'fragmento';
-    return 'dato';
+    return dato(t, ctx);
   }
   if (t[0] === "'" || t[0] === '"') return skipString(t, 0) === t.length - 1 ? 'literal' : 'dato';
   if (t[0] === '`' && skipString(t, 0) === t.length - 1) return 'fragmento';
   if (/^(?:true|false|null|undefined|-?\d+(?:\.\d+)?)$/.test(t)) return 'literal';
-  // lista.map(x => EXPR).join('') emite lo que emita EXPR para cada elemento.
-  const joined = t.match(/\.join\s*\(\s*(?:''|""|``)\s*\)$/);
-  const mapAt = t.lastIndexOf('.map(');
+  // esc(x).replace(/…/g, '<strong>$1</strong>')…: escapa primero y solo inserta
+  // marcado escrito en el código (las capturas $1 son del texto ya escapado).
+  const escChain = t.match(/^([A-Za-z_$][\w$]*)\s*\(/);
+  if (escChain && ESCAPERS.test(escChain[1])) {
+    let rest = t.slice(closingParen(t, escChain[0].length - 1) + 1).trim();
+    let ok = rest.length > 0;
+    while (ok && rest) {
+      const rep = rest.match(/^\.replace(?:All)?\s*\(/);
+      if (!rep) { ok = false; break; }
+      const close = closingParen(rest, rep[0].length - 1);
+      const args = splitTopLevel(rest.slice(rep[0].length, close), ',');
+      const replacement = (args[1] || '').trim();
+      if (!/^'(?:[^'\\]|\\.)*'$|^"(?:[^"\\]|\\.)*"$/.test(replacement)) { ok = false; break; }
+      rest = rest.slice(close + 1).trim();
+    }
+    if (ok) return 'escapada';
+  }
+
+  // lista.map(x => EXPR).join(sep) emite lo que emita EXPR para cada elemento;
+  // el separador es un literal del código.
+  const joined = t.match(/\.join\s*\(\s*(?:'[^'<]*'|"[^"<]*"|`[^`$<]*`)\s*\)$/);
+  // El .map que llega hasta ese .join (no uno anidado en su callback); entre
+  // los dos solo puede haber .filter(...), que quita elementos pero no los cambia.
+  let mapAt = -1;
+  if (joined) {
+    const joinAt = t.length - joined[0].length;
+    for (let k = t.indexOf('.map('); k >= 0; k = t.indexOf('.map(', k + 1)) {
+      const close = closingParen(t, k + 4);
+      if (close > 0 && /^(?:\.filter\([^()]*\))*$/.test(t.slice(close + 1, joinAt))) { mapAt = k; break; }
+    }
+  }
   if (joined && mapAt > 0) {
     const close = closingParen(t, mapAt + 4);
     const callback = t.slice(mapAt + 5, close);
     const arrow = callback.match(/^\s*(?:\([^)]*\)|[A-Za-z_$][\w$]*)\s*=>\s*/);
     if (arrow) {
-      let body = callback.slice(arrow[0].length).trim();
-      if (body.startsWith('{')) {
-        const rets = [...body.matchAll(/\breturn\s+/g)].map((r) => body.slice(r.index + r[0].length, declarationEnd(body, r.index + r[0].length)).trim());
-        return rets.length ? worst(rets.map((r) => classifyEmission(r, ctx, seen))) : 'dato';
-      }
+      const body = callback.slice(arrow[0].length).trim();
+      if (body.startsWith('{')) return classifyBlock(body, ctx, seen);
       return classifyEmission(body, ctx, seen);
     }
-    return 'dato';
+    return dato(t, ctx);
+  }
+
+  // (() => { ...; return `...`; })(): lo que devuelve la función en línea.
+  const iife = t.match(/^\(\s*\(\s*\)\s*=>\s*\{/);
+  if (iife && /\}\s*\)\s*\(\s*\)$/.test(t)) {
+    return classifyBlock(t.slice(iife[0].length - 1, t.lastIndexOf('}') + 1), ctx, seen);
+  }
+
+  // objeto.algoHtml: una propiedad que transporta HTML; se mira qué le asigna
+  // cada objeto del fichero.
+  const htmlProp = t.match(/^[A-Za-z_$][\w$]*(?:\?\.|\.)((?:[A-Za-z_$][\w$]*)?[hH]tml[\w$]*)$/);
+  if (htmlProp) {
+    const kind = classifyHtmlProperty(htmlProp[1], ctx, seen);
+    if (kind) return kind === 'dato' ? dato(t, ctx) : kind;
   }
   // Aritmética: identificadores, números, .length y operadores, con algún número o .length
   const sinLength = t.replace(/\.length\b/g, '');
@@ -348,9 +540,12 @@ export function classifyEmission(text, ctx = { declarations: new Map(), producer
       const inner = new Set(seen).add(t);
       return worst(exprs.map((e) => classifyEmission(e, ctx, inner)));
     }
-    return 'dato';
+    // Sin asignación antes del uso: si es un parámetro, lo que le pasen las llamadas.
+    const param = classifyParam(t, ctx, seen);
+    if (param) return param === 'dato' ? dato(t, ctx) : param;
+    return dato(t, ctx);
   }
-  return 'dato';
+  return dato(t, ctx);
 }
 
 // ── Informe ──

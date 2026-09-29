@@ -85,3 +85,42 @@ test('un array de fragmentos y un mapa de fragmentos no son datos', () => {
   assert.notEqual(classifyEmission('mapa[k]', ctx), 'dato');
   assert.equal(classifyEmission('mezcla[k]', ctx), 'dato');
 });
+
+// Reglas que dan algo por seguro: cada una con su caso a favor y en contra.
+const conFuente = (source, expr) => {
+  const at = source.lastIndexOf(expr);
+  return classifyEmission(expr, { ...fileContext(source), at });
+};
+
+test('un parámetro vale lo que le pasen todas las llamadas', () => {
+  const bien = [
+    'function panel(itemsHtml) { return `<div>${itemsHtml}</div>`; }',
+    'panel(`<li>x</li>`);',
+    'panel(lista.map(i => `<li>${esc(i)}</li>`).join(""));',
+  ].join('\n');
+  assert.notEqual(conFuente(bien, 'itemsHtml'), 'dato');
+  const mal = bien + '\npanel(item.title);';
+  assert.equal(conFuente(mal, 'itemsHtml'), 'dato', 'basta una llamada con un dato');
+});
+
+test('una propiedad …Html vale lo que le asignen todos los objetos', () => {
+  const bien = 'const a = { htmlValue: `<p>x</p>` };\nconst b = `${item.htmlValue}`;';
+  assert.notEqual(conFuente(bien, 'item.htmlValue'), 'dato');
+  const mal = 'const a = { htmlValue: `<p>x</p>` };\nconst c = { htmlValue: item.title };\nconst b = `${item.htmlValue}`;';
+  assert.equal(conFuente(mal, 'item.htmlValue'), 'dato');
+});
+
+test('una función en línea vale lo que devuelve, sin los return de sus callbacks', () => {
+  assert.notEqual(kind('(() => { const x = lista.filter(i => { return i.ok; }); return `<p>x</p>`; })()'), 'dato');
+  assert.equal(kind('(() => { return item.title; })()'), 'dato');
+});
+
+test('.filter entre .map y .join no cambia lo que se emite', () => {
+  assert.notEqual(kind("xs.map(x => `<b>${esc(x)}</b>`).filter(Boolean).join('')"), 'dato');
+  assert.equal(kind("xs.map(x => x.name).filter(Boolean).join('')"), 'dato');
+});
+
+test('esc(x).replace solo es seguro si lo que inserta es un literal del código', () => {
+  assert.equal(kind("esc(t).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')"), 'escapada');
+  assert.equal(kind('esc(t).replace(/x/g, item.title)'), 'dato');
+});
