@@ -2065,7 +2065,7 @@ export const SECTORS_CONFIG = {
             "en": "Turisme Comunitat Valenciana calls on teams to create a tourism review analysis system across multiple languages and platforms that identifies satisfaction trends, detects emerging problems by destination and generates automatic reports for municipal tourism managers, reducing manual analysis time from 40 hours per week to under 2.",
             "va": "Turisme Comunitat Valenciana convoca equips per crear un sistema d'anàlisi de ressenyes turístiques en múltiples idiomes i plataformes que identifique tendències de satisfacció, detecte problemes emergents per destinació i genere informes automàtics per a gestors municipals de turisme, reduint el temps d'anàlisi manual de 40 hores setmanals a menys de 2."
           },
-          "status": "open",
+          "status": "closed",
           "targetRoute": "marketplace"
         },
         {
