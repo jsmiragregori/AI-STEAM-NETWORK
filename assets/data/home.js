@@ -423,8 +423,8 @@ export const HOME_CONFIG = {
         "id": "consensue",
         "tone": "orange",
         "initials": "CO",
-        "href": "#",
-        "target": "",
+        "href": "https://aules.edu.gva.es/formaciodelprofessorat/course/view.php?id=41369",
+        "target": "_blank",
         "title": {
           "es": "ConsensUE",
           "en": "ConsensUE",

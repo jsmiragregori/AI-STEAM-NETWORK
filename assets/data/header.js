@@ -42,8 +42,8 @@ export const HEADER_CONFIG = {
       "label_es": "ConsensUE",
       "label_en": "ConsensUE",
       "label_va": "ConsensUE",
-      "href": "#",
-      "target": "",
+      "href": "https://aules.edu.gva.es/formaciodelprofessorat/course/view.php?id=41369",
+      "target": "_blank",
       "icon": "",
       "color": "outline",
       "visible": true
