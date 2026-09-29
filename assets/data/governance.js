@@ -2285,8 +2285,8 @@ export const GOVERNANCE_CONFIG = {
         "en": "Go to ConsensUE",
         "va": "Anar a ConsensUE"
       },
-      "buttonUrl": "#",
-      "buttonExternal": false
+      "buttonUrl": "https://aules.edu.gva.es/formaciodelprofessorat/course/view.php?id=41369",
+      "buttonExternal": true
     },
     "meetingsSection": {
       "visible": false

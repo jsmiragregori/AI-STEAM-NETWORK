@@ -39,9 +39,7 @@ function langBtn(language, lang) {
   const active = lang === code;
   // `aria-pressed` dice el estado a quien no ve el color de fondo (criterios
   // 1.4.1 y 4.1.2). Sin él, el idioma activo solo se distinguía por color.
-  return `<button data-lang="${esc(code)}" lang="${esc(language.bcp47 || code)}" aria-pressed="${active}" aria-label="Cambiar idioma a ${esc(label)}" class="cursor-pointer font-bold transition-all whitespace-nowrap" style="min-height:44px;min-width:2rem;font-size:0.8125rem;padding:.25rem .625rem;border-radius:.4rem;background:${active ? 'rgba(255,255,255,0.2)' : 'transparent'};color:${active ? '#FFF4E1' : 'rgba(255,244,225,0.75)'}"
-    onmouseover="if(!${active})this.style.background='rgba(255,255,255,0.1)'"
-    onmouseout="if(!${active})this.style.background='transparent'"
+  return `<button data-lang="${esc(code)}" lang="${esc(language.bcp47 || code)}" aria-pressed="${active}" aria-label="Cambiar idioma a ${esc(label)}" class="hdr-lang cursor-pointer font-bold transition-all whitespace-nowrap" style="min-height:44px;min-width:2rem;font-size:0.8125rem;padding:.25rem .625rem;border-radius:.4rem"
   >${esc(label)}</button>`;
 }
 
@@ -65,9 +63,7 @@ function renderDesktopButtons() {
       const safeHref = getSafeEditorialUrl(btn.href);
       if (!safeHref) return '';
       return `<a href="${esc(safeHref)}" target="${esc(btn.target || '_self')}" rel="noopener noreferrer"
-               class="rounded-full text-sm font-bold cursor-pointer transition-colors inline-flex items-center" style="min-height:44px;background:#FFF4E1;color:#4918AD;padding:.375rem 1rem"
-               onmouseover="this.style.background='#5620F6';this.style.color='#FFF4E1'"
-               onmouseout="this.style.background='#FFF4E1';this.style.color='#4918AD'">
+               class="hdr-pill rounded-full text-sm font-bold cursor-pointer transition-colors inline-flex items-center" style="min-height:44px;padding:.375rem 1rem">
               ${esc(label)}
             </a>`;
     }).join('');
