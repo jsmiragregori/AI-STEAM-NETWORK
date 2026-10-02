@@ -791,6 +791,7 @@ function normalizeText(value) {
 
 function getSearchHaystack(item) {
   return [
+    item.code,
     pickLang(item.core?.title),
     pickLang(item.core?.summary),
     pickLang(item.core?.entity?.name),
