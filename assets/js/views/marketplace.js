@@ -11,6 +11,11 @@ const UI_TEXT = {
     en: 'Back to Community',
     va: 'Tornar a Comunitat',
   },
+  publicCode: {
+    es: 'Código',
+    en: 'Code',
+    va: 'Codi',
+  },
   created: {
     es: 'Creado',
     en: 'Created',
@@ -786,6 +791,7 @@ function normalizeText(value) {
 
 function getSearchHaystack(item) {
   return [
+    item.code,
     pickLang(item.core?.title),
     pickLang(item.core?.summary),
     pickLang(item.core?.entity?.name),
@@ -1119,6 +1125,9 @@ function renderCardShell(item, tab, body, options = {}) {
   const subtitle = pickLang(options.subtitle);
   const entity = options.entity !== undefined ? options.entity : pickLang(item.core?.entity?.name);
   const dateLabel = getItemDateLabel(item);
+  // Código público del elemento: línea propia en la ceja, encima del título. Es dato del YAML y va a
+  // innerHTML, así que sale por esc(). Sin código no se pinta nada (ni línea vacía).
+  const code = String(item.code ?? '').trim();
   const tone = TAB_TONES[tab.id] || TAB_TONES.challenges;
   const statusRaw = options.statusValue !== undefined ? options.statusValue : item.core?.status;
   const statusLabel = options.statusLabel !== undefined ? options.statusLabel : getStatusLabel(statusRaw);
@@ -1129,6 +1138,7 @@ function renderCardShell(item, tab, body, options = {}) {
   return `
     <article class="rd-card-mp rd-card-mp-hover group flex h-full flex-col overflow-hidden">
       <div class="rd-card-mp-ceja">
+        ${code ? `<p class="rd-card-mp-code"><span class="sr-only">${esc(uiText('publicCode'))}: </span>${esc(code)}</p>` : ''}
         <h3 class="rd-card-mp-title">${esc(title)}</h3>
       </div>
       <div class="flex flex-1 flex-col p-7 pt-5">

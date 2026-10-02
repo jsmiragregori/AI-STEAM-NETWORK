@@ -35,13 +35,21 @@ const EXPECTED_BY_FILE = {
 // VAN-2.2 solo desplaza estas líneas (governance +5, marketplace +9,
 // training +6) al insertar la validación de URL por encima de ellas. Siguen
 // siendo las mismas siete expresiones, con la misma categoría.
+// F5.1 (código público de la card) desplaza otras +9 las cinco de marketplace.js: son las nueve
+// líneas que el fichero gana por ENCIMA de todas ellas, cinco en UI_TEXT (la etiqueta `publicCode`)
+// y cuatro en renderCardShell (comentario, constante `code` y línea de la ceja). No cambia ninguna
+// expresión, ninguna categoría ni ningún recuento: las interpolaciones nuevas son esc(...) y no
+// entran en esta clasificación.
+// F6 (el código entra en la búsqueda) añade UNA línea más en getSearchHaystack, por encima de las
+// cinco: +1 otra vez (acumulado +10 sobre la línea base de F0). Mismo criterio: mismas siete
+// expresiones, mismas categorías y mismos recuentos.
 const EXPECTED_EXCEPTIONS = [
   { file: 'assets/js/views/governance.js', line: 699, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1752, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 1937, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1939, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/marketplace.js', line: 1978, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 2138, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 1762, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 1947, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 1949, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 1988, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 2148, category: 'COMPOSICION_CADENA' },
   { file: 'assets/js/views/training.js', line: 434, category: 'ESTRUCTURAL' },
 ];
 

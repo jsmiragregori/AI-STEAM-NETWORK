@@ -3617,6 +3617,7 @@ export const MARKETPLACE_CONFIG = {
   "items": [
     {
       "id": "reto-personalizacion-itinerarios-fp-edu",
+      "code": "CHA-2026-043",
       "type": "challenge",
       "tab": "challenges",
       "sortDate": "2026-05-28",
@@ -3922,6 +3923,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "mentoring-ia-creativa-turismo-cultura",
+      "code": "MEN-2026-045",
       "type": "mentoring",
       "tab": "mentorings",
       "sortDate": "2026-05-22",
@@ -4261,6 +4263,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "mentoring-participacion-administracion-publica",
+      "code": "MEN-2026-044",
       "type": "mentoring",
       "tab": "mentorings",
       "sortDate": "2026-05-22",
@@ -4581,6 +4584,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "mentoring-replicacion-casos-agr",
+      "code": "MEN-2026-041",
       "type": "mentoring",
       "tab": "mentorings",
       "sortDate": "2026-05-22",
@@ -4901,6 +4905,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "mentoring-transferencia-investigacion-fp",
+      "code": "MEN-2026-042",
       "type": "mentoring",
       "tab": "mentorings",
       "sortDate": "2026-05-22",
@@ -5221,6 +5226,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "mentoring-etica-ia-proyectos-educativos",
+      "code": "MEN-2026-036",
       "type": "mentoring",
       "tab": "mentorings",
       "sortDate": "2026-05-20",
@@ -5541,6 +5547,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "mentoring-soporte-tecnico-implementacion-ia-nts",
+      "code": "MEN-2026-039",
       "type": "mentoring",
       "tab": "mentorings",
       "sortDate": "2026-05-20",
@@ -5861,6 +5868,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "pilot-ia-diagnostico-cancer-piel-nts",
+      "code": "PIL-2026-029",
       "type": "pilot",
       "tab": "pilots",
       "sortDate": "2026-05-20",
@@ -6226,6 +6234,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "pilot-living-lab-eficiencia-energetica-hou",
+      "code": "PIL-2026-024",
       "type": "pilot",
       "tab": "pilots",
       "sortDate": "2026-05-20",
@@ -6580,6 +6589,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "mentoring-diseno-pilotos-fp-empresa",
+      "code": "MEN-2026-028",
       "type": "mentoring",
       "tab": "mentorings",
       "sortDate": "2026-05-15",
@@ -6900,6 +6910,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "reto-chatbot-atencion-ciudadana-adm",
+      "code": "CHA-2026-037",
       "type": "challenge",
       "tab": "challenges",
       "sortDate": "2026-05-15",
@@ -7203,6 +7214,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "mentoring-formulacion-retos-industria",
+      "code": "MEN-2026-021",
       "type": "mentoring",
       "tab": "mentorings",
       "sortDate": "2026-05-10",
@@ -7523,6 +7535,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "reto-analisis-sentimiento-turismo-tur",
+      "code": "CHA-2026-040",
       "type": "challenge",
       "tab": "challenges",
       "sortDate": "2026-05-10",
@@ -7824,6 +7837,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "eficiencia-energetica-edificios-hou",
+      "code": "CAS-2026-002",
       "type": "case",
       "tab": "cases",
       "sortDate": "2026-05-02",
@@ -8159,6 +8173,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "pilot-fp-energia-costera",
+      "code": "PIL-2026-023",
       "type": "pilot",
       "tab": "pilots",
       "sortDate": "2026-05-02",
@@ -8505,6 +8520,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "reto-gemelo-digital-red-electrica-ene",
+      "code": "CHA-2026-031",
       "type": "challenge",
       "tab": "challenges",
       "sortDate": "2026-05-01",
@@ -8807,6 +8823,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "reto-optimizacion-rutas-logistica-mob",
+      "code": "CHA-2026-033",
       "type": "challenge",
       "tab": "challenges",
       "sortDate": "2026-05-01",
@@ -9108,6 +9125,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "validation-etica-ia-seleccion-personal-adm",
+      "code": "VAL-2026-038",
       "type": "validation",
       "tab": "validations",
       "sortDate": "2026-05-01",
@@ -9437,6 +9455,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "narrativas-digitales-ia-cci",
+      "code": "CAS-2026-022",
       "type": "case",
       "tab": "cases",
       "sortDate": "2026-04-30",
@@ -9755,6 +9774,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "creative-ai-green-campus",
+      "code": "CHA-2026-007",
       "type": "challenge",
       "tab": "challenges",
       "sortDate": "2026-04-28",
@@ -10059,6 +10079,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "auditoria-energetica-ia-hou",
+      "code": "CAS-2026-032",
       "type": "case",
       "tab": "cases",
       "sortDate": "2026-04-25",
@@ -10376,6 +10397,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "ia-deteccion-plagas-agr",
+      "code": "CAS-2026-011",
       "type": "case",
       "tab": "cases",
       "sortDate": "2026-04-20",
@@ -10695,6 +10717,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "reto-control-calidad-vision-ia-mfg",
+      "code": "CHA-2026-019",
       "type": "challenge",
       "tab": "challenges",
       "sortDate": "2026-04-20",
@@ -10996,6 +11019,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "simulacion-conduccion-autonoma-mob",
+      "code": "CAS-2026-025",
       "type": "case",
       "tab": "cases",
       "sortDate": "2026-04-20",
@@ -11314,6 +11338,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "pilot-drones-inspeccion-infraestructura-mob",
+      "code": "PIL-2026-008",
       "type": "pilot",
       "tab": "pilots",
       "sortDate": "2026-04-15",
@@ -11668,6 +11693,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "drones-agricultura-precision-agr",
+      "code": "CAS-2026-004",
       "type": "case",
       "tab": "cases",
       "sortDate": "2026-04-10",
@@ -12001,6 +12027,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "responsible-ai-creative-briefs",
+      "code": "MEN-2026-018",
       "type": "mentoring",
       "tab": "mentorings",
       "sortDate": "2026-04-10",
@@ -12321,6 +12348,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "reto-ia-deteccion-plagas-agr",
+      "code": "CHA-2026-026",
       "type": "challenge",
       "tab": "challenges",
       "sortDate": "2026-04-10",
@@ -12623,6 +12651,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "solar-fotovoltaica-gemelo-digital-ene",
+      "code": "CAS-2026-013",
       "type": "case",
       "tab": "cases",
       "sortDate": "2026-04-05",
@@ -12953,6 +12982,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "validation-legal-datos-movilidad-mob",
+      "code": "VAL-2026-035",
       "type": "validation",
       "tab": "validations",
       "sortDate": "2026-04-05",
@@ -13272,6 +13302,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "validation-tecnica-gemelo-digital-ene",
+      "code": "VAL-2026-034",
       "type": "validation",
       "tab": "validations",
       "sortDate": "2026-04-01",
@@ -13591,6 +13622,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "realidad-aumentada-museos-cci",
+      "code": "CAS-2026-016",
       "type": "case",
       "tab": "cases",
       "sortDate": "2026-03-30",
@@ -13910,6 +13942,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "mantenimiento-predictivo-ml-mfg",
+      "code": "CAS-2026-003",
       "type": "case",
       "tab": "cases",
       "sortDate": "2026-03-22",
@@ -14242,6 +14275,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "validation-stakeholder-turismo-inteligente-tur",
+      "code": "VAL-2026-020",
       "type": "validation",
       "tab": "validations",
       "sortDate": "2026-03-20",
@@ -14561,6 +14595,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "cobot-soldadura-fp",
+      "code": "CAS-2026-006",
       "type": "case",
       "tab": "cases",
       "sortDate": "2026-03-10",
@@ -14878,6 +14913,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "validation-pedagogica-control-calidad-mfg",
+      "code": "VAL-2026-027",
       "type": "validation",
       "tab": "validations",
       "sortDate": "2026-03-10",
@@ -15197,6 +15233,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "pilot-teacher-sesgos-ia-uveg",
+      "code": "PIL-2026-015",
       "type": "pilot",
       "tab": "pilots",
       "sortDate": "2026-03-01",
@@ -15543,6 +15580,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "movilidad-sostenible-formacion-docente",
+      "code": "CAS-2026-010",
       "type": "case",
       "tab": "cases",
       "sortDate": "2026-02-28",
@@ -15888,6 +15926,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "validation-stakeholder-salud-digital-nts",
+      "code": "VAL-2026-017",
       "type": "validation",
       "tab": "validations",
       "sortDate": "2026-02-20",
@@ -16207,6 +16246,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "diagnostico-ia-fp-sanitario-nts",
+      "code": "CAS-2026-009",
       "type": "case",
       "tab": "cases",
       "sortDate": "2026-02-14",
@@ -16526,6 +16566,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "pilot-fp-cobots-mecatronica",
+      "code": "PIL-2026-005",
       "type": "pilot",
       "tab": "pilots",
       "sortDate": "2026-02-10",
@@ -16872,6 +16913,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "pilot-master-bridge-gemelos-digitales",
+      "code": "PIL-2026-030",
       "type": "pilot",
       "tab": "pilots",
       "sortDate": "2026-02-01",
@@ -17214,6 +17256,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "validation-stakeholder-agr-asaja",
+      "code": "VAL-2026-012",
       "type": "validation",
       "tab": "validations",
       "sortDate": "2026-01-25",
@@ -17533,6 +17576,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "validation-academica-rl-edificios-hou",
+      "code": "VAL-2026-014",
       "type": "validation",
       "tab": "validations",
       "sortDate": "2026-01-10",
@@ -17852,6 +17896,7 @@ export const MARKETPLACE_CONFIG = {
     },
     {
       "id": "validation-stakeholder-movilidad-electrica",
+      "code": "VAL-2026-001",
       "type": "validation",
       "tab": "validations",
       "sortDate": "2025-10-20",
@@ -18174,6 +18219,7 @@ export const MARKETPLACE_CONFIG = {
     "mentorings": [
       {
         "id": "mentoring-ia-creativa-turismo-cultura",
+        "code": "MEN-2026-045",
         "type": "mentoring",
         "tab": "mentorings",
         "sortDate": "2026-05-22",
@@ -18513,6 +18559,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "mentoring-participacion-administracion-publica",
+        "code": "MEN-2026-044",
         "type": "mentoring",
         "tab": "mentorings",
         "sortDate": "2026-05-22",
@@ -18833,6 +18880,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "mentoring-replicacion-casos-agr",
+        "code": "MEN-2026-041",
         "type": "mentoring",
         "tab": "mentorings",
         "sortDate": "2026-05-22",
@@ -19153,6 +19201,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "mentoring-transferencia-investigacion-fp",
+        "code": "MEN-2026-042",
         "type": "mentoring",
         "tab": "mentorings",
         "sortDate": "2026-05-22",
@@ -19473,6 +19522,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "mentoring-etica-ia-proyectos-educativos",
+        "code": "MEN-2026-036",
         "type": "mentoring",
         "tab": "mentorings",
         "sortDate": "2026-05-20",
@@ -19793,6 +19843,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "mentoring-soporte-tecnico-implementacion-ia-nts",
+        "code": "MEN-2026-039",
         "type": "mentoring",
         "tab": "mentorings",
         "sortDate": "2026-05-20",
@@ -20113,6 +20164,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "mentoring-diseno-pilotos-fp-empresa",
+        "code": "MEN-2026-028",
         "type": "mentoring",
         "tab": "mentorings",
         "sortDate": "2026-05-15",
@@ -20433,6 +20485,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "mentoring-formulacion-retos-industria",
+        "code": "MEN-2026-021",
         "type": "mentoring",
         "tab": "mentorings",
         "sortDate": "2026-05-10",
@@ -20753,6 +20806,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "responsible-ai-creative-briefs",
+        "code": "MEN-2026-018",
         "type": "mentoring",
         "tab": "mentorings",
         "sortDate": "2026-04-10",
@@ -21075,6 +21129,7 @@ export const MARKETPLACE_CONFIG = {
     "challenges": [
       {
         "id": "reto-personalizacion-itinerarios-fp-edu",
+        "code": "CHA-2026-043",
         "type": "challenge",
         "tab": "challenges",
         "sortDate": "2026-05-28",
@@ -21380,6 +21435,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "reto-chatbot-atencion-ciudadana-adm",
+        "code": "CHA-2026-037",
         "type": "challenge",
         "tab": "challenges",
         "sortDate": "2026-05-15",
@@ -21683,6 +21739,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "reto-analisis-sentimiento-turismo-tur",
+        "code": "CHA-2026-040",
         "type": "challenge",
         "tab": "challenges",
         "sortDate": "2026-05-10",
@@ -21984,6 +22041,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "reto-gemelo-digital-red-electrica-ene",
+        "code": "CHA-2026-031",
         "type": "challenge",
         "tab": "challenges",
         "sortDate": "2026-05-01",
@@ -22286,6 +22344,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "reto-optimizacion-rutas-logistica-mob",
+        "code": "CHA-2026-033",
         "type": "challenge",
         "tab": "challenges",
         "sortDate": "2026-05-01",
@@ -22587,6 +22646,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "creative-ai-green-campus",
+        "code": "CHA-2026-007",
         "type": "challenge",
         "tab": "challenges",
         "sortDate": "2026-04-28",
@@ -22891,6 +22951,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "reto-control-calidad-vision-ia-mfg",
+        "code": "CHA-2026-019",
         "type": "challenge",
         "tab": "challenges",
         "sortDate": "2026-04-20",
@@ -23192,6 +23253,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "reto-ia-deteccion-plagas-agr",
+        "code": "CHA-2026-026",
         "type": "challenge",
         "tab": "challenges",
         "sortDate": "2026-04-10",
@@ -23496,6 +23558,7 @@ export const MARKETPLACE_CONFIG = {
     "validations": [
       {
         "id": "validation-etica-ia-seleccion-personal-adm",
+        "code": "VAL-2026-038",
         "type": "validation",
         "tab": "validations",
         "sortDate": "2026-05-01",
@@ -23825,6 +23888,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "validation-legal-datos-movilidad-mob",
+        "code": "VAL-2026-035",
         "type": "validation",
         "tab": "validations",
         "sortDate": "2026-04-05",
@@ -24144,6 +24208,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "validation-tecnica-gemelo-digital-ene",
+        "code": "VAL-2026-034",
         "type": "validation",
         "tab": "validations",
         "sortDate": "2026-04-01",
@@ -24463,6 +24528,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "validation-stakeholder-turismo-inteligente-tur",
+        "code": "VAL-2026-020",
         "type": "validation",
         "tab": "validations",
         "sortDate": "2026-03-20",
@@ -24782,6 +24848,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "validation-pedagogica-control-calidad-mfg",
+        "code": "VAL-2026-027",
         "type": "validation",
         "tab": "validations",
         "sortDate": "2026-03-10",
@@ -25101,6 +25168,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "validation-stakeholder-salud-digital-nts",
+        "code": "VAL-2026-017",
         "type": "validation",
         "tab": "validations",
         "sortDate": "2026-02-20",
@@ -25420,6 +25488,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "validation-stakeholder-agr-asaja",
+        "code": "VAL-2026-012",
         "type": "validation",
         "tab": "validations",
         "sortDate": "2026-01-25",
@@ -25739,6 +25808,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "validation-academica-rl-edificios-hou",
+        "code": "VAL-2026-014",
         "type": "validation",
         "tab": "validations",
         "sortDate": "2026-01-10",
@@ -26058,6 +26128,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "validation-stakeholder-movilidad-electrica",
+        "code": "VAL-2026-001",
         "type": "validation",
         "tab": "validations",
         "sortDate": "2025-10-20",
@@ -26379,6 +26450,7 @@ export const MARKETPLACE_CONFIG = {
     "pilots": [
       {
         "id": "pilot-ia-diagnostico-cancer-piel-nts",
+        "code": "PIL-2026-029",
         "type": "pilot",
         "tab": "pilots",
         "sortDate": "2026-05-20",
@@ -26744,6 +26816,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "pilot-living-lab-eficiencia-energetica-hou",
+        "code": "PIL-2026-024",
         "type": "pilot",
         "tab": "pilots",
         "sortDate": "2026-05-20",
@@ -27098,6 +27171,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "pilot-fp-energia-costera",
+        "code": "PIL-2026-023",
         "type": "pilot",
         "tab": "pilots",
         "sortDate": "2026-05-02",
@@ -27444,6 +27518,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "pilot-drones-inspeccion-infraestructura-mob",
+        "code": "PIL-2026-008",
         "type": "pilot",
         "tab": "pilots",
         "sortDate": "2026-04-15",
@@ -27798,6 +27873,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "pilot-teacher-sesgos-ia-uveg",
+        "code": "PIL-2026-015",
         "type": "pilot",
         "tab": "pilots",
         "sortDate": "2026-03-01",
@@ -28144,6 +28220,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "pilot-fp-cobots-mecatronica",
+        "code": "PIL-2026-005",
         "type": "pilot",
         "tab": "pilots",
         "sortDate": "2026-02-10",
@@ -28490,6 +28567,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "pilot-master-bridge-gemelos-digitales",
+        "code": "PIL-2026-030",
         "type": "pilot",
         "tab": "pilots",
         "sortDate": "2026-02-01",
@@ -28834,6 +28912,7 @@ export const MARKETPLACE_CONFIG = {
     "cases": [
       {
         "id": "eficiencia-energetica-edificios-hou",
+        "code": "CAS-2026-002",
         "type": "case",
         "tab": "cases",
         "sortDate": "2026-05-02",
@@ -29169,6 +29248,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "narrativas-digitales-ia-cci",
+        "code": "CAS-2026-022",
         "type": "case",
         "tab": "cases",
         "sortDate": "2026-04-30",
@@ -29487,6 +29567,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "auditoria-energetica-ia-hou",
+        "code": "CAS-2026-032",
         "type": "case",
         "tab": "cases",
         "sortDate": "2026-04-25",
@@ -29804,6 +29885,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "ia-deteccion-plagas-agr",
+        "code": "CAS-2026-011",
         "type": "case",
         "tab": "cases",
         "sortDate": "2026-04-20",
@@ -30123,6 +30205,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "simulacion-conduccion-autonoma-mob",
+        "code": "CAS-2026-025",
         "type": "case",
         "tab": "cases",
         "sortDate": "2026-04-20",
@@ -30441,6 +30524,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "drones-agricultura-precision-agr",
+        "code": "CAS-2026-004",
         "type": "case",
         "tab": "cases",
         "sortDate": "2026-04-10",
@@ -30774,6 +30858,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "solar-fotovoltaica-gemelo-digital-ene",
+        "code": "CAS-2026-013",
         "type": "case",
         "tab": "cases",
         "sortDate": "2026-04-05",
@@ -31104,6 +31189,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "realidad-aumentada-museos-cci",
+        "code": "CAS-2026-016",
         "type": "case",
         "tab": "cases",
         "sortDate": "2026-03-30",
@@ -31423,6 +31509,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "mantenimiento-predictivo-ml-mfg",
+        "code": "CAS-2026-003",
         "type": "case",
         "tab": "cases",
         "sortDate": "2026-03-22",
@@ -31755,6 +31842,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "cobot-soldadura-fp",
+        "code": "CAS-2026-006",
         "type": "case",
         "tab": "cases",
         "sortDate": "2026-03-10",
@@ -32072,6 +32160,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "movilidad-sostenible-formacion-docente",
+        "code": "CAS-2026-010",
         "type": "case",
         "tab": "cases",
         "sortDate": "2026-02-28",
@@ -32417,6 +32506,7 @@ export const MARKETPLACE_CONFIG = {
       },
       {
         "id": "diagnostico-ia-fp-sanitario-nts",
+        "code": "CAS-2026-009",
         "type": "case",
         "tab": "cases",
         "sortDate": "2026-02-14",
