@@ -8511,7 +8511,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/challenges/reto-gemelo-digital-red-electrica-ene.yml",
       "core": {
-        "status": "open",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "prototype",
         "title": {
@@ -9761,7 +9761,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/challenges/creative-ai-green-campus.yml",
       "core": {
-        "status": "open",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -16878,7 +16878,7 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "sourcePath": "content/challenges/items/pilots/pilot-master-bridge-gemelos-digitales.yml",
       "core": {
-        "status": "in-progress",
+        "status": "closed",
         "forceOpen": false,
         "maturity": "idea",
         "title": {
@@ -21990,7 +21990,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/challenges/reto-gemelo-digital-red-electrica-ene.yml",
         "core": {
-          "status": "open",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "prototype",
           "title": {
@@ -22593,7 +22593,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/challenges/creative-ai-green-campus.yml",
         "core": {
-          "status": "open",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {
@@ -28496,7 +28496,7 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "sourcePath": "content/challenges/items/pilots/pilot-master-bridge-gemelos-digitales.yml",
         "core": {
-          "status": "in-progress",
+          "status": "closed",
           "forceOpen": false,
           "maturity": "idea",
           "title": {

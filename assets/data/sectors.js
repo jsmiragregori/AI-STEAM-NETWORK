@@ -426,7 +426,7 @@ export const SECTORS_CONFIG = {
             "en": "Transition itinerary from Higher VET to Master's degree focused on digital twins and AI-driven industrial simulation.",
             "va": "Itinerari de transició entre FP Superior i Màster universitari centrat en bessons digitals i simulació industrial amb IA."
           },
-          "status": "in-progress",
+          "status": "closed",
           "targetRoute": "marketplace"
         },
         {
@@ -1213,7 +1213,7 @@ export const SECTORS_CONFIG = {
             "en": "An educational institution is looking for applicable ideas to reduce energy use and improve learning spaces through AI, data and creativity.",
             "va": "Una institució educativa busca idees aplicables per a reduir consum energètic i millorar espais d'aprenentatge mitjançant IA, dades i creativitat."
           },
-          "status": "open",
+          "status": "closed",
           "targetRoute": "marketplace"
         },
         {
@@ -1229,7 +1229,7 @@ export const SECTORS_CONFIG = {
             "en": "Endesa Distribución seeks teams from educational centres and technology companies to develop a digital twin prototype capable of predicting overloads in the electricity grid of Valencian neighbourhoods with high photovoltaic penetration, using open consumption and generation data.",
             "va": "Endesa Distribució cerca equips de centres educatius i empreses tecnològiques que desenvolupen un prototip de bessona digital capaç de predir sobrecàrregues en la xarxa elèctrica de barris valencians amb alta penetració d'instal·lacions fotovoltaiques, usant dades obertes de consum i generació."
           },
-          "status": "open",
+          "status": "closed",
           "targetRoute": "marketplace"
         },
         {
