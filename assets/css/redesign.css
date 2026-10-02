@@ -238,6 +238,19 @@
   letter-spacing: -.01em;
 }
 
+/* Código público del elemento (MEN-2026-003): línea propia sobre el título, dentro de la ceja. Texto
+   pequeño, así que exige 4,5:1 en TODO el degradado; lo mide test/rendering/marketplace-codigo-contraste.test.mjs. */
+.rd-card-mp-ceja .rd-card-mp-code {
+  margin: 0 0 .35rem;
+  color: rgba(255, 255, 255, .88);
+  font-size: .8125rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: .06em;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
 /* (b) Card con barra de acento lateral azul */
 .rd-card-accent {
   position: relative;
