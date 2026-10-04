@@ -121,9 +121,10 @@ function helixBlock() {
     ? cat.value
     : (pc[cat.id] || 0) + (sc[cat.id] || 0);
 
-  const html = (helix.categories || [])
-    .filter(cat => cat.visible !== false && !isZeroStatValue(totalDeCategoria(cat)))
-    .map(cat => {
+  const ejesVisibles = (helix.categories || [])
+    .filter(cat => cat.visible !== false && !isZeroStatValue(totalDeCategoria(cat)));
+
+  const html = ejesVisibles.map(cat => {
     const meta = CATEGORY_META[cat.id] || CATEGORY_META.sociedad;
     // El total se resuelve en el loader (computado o manualOverride). Fallback al
     // cálculo en vista por compatibilidad con datos antiguos sin estos campos.
@@ -144,11 +145,21 @@ function helixBlock() {
     `;
   }).join('');
 
+  // F3 bis (H1): la rejilla se reparte entre los ejes realmente visibles, sin
+  // columnas vacías; la descripción solo reserva su margen si hay rejilla.
+  const HELIX_COLS = {
+    1: 'grid-cols-1',
+    2: 'grid-cols-2',
+    3: 'grid-cols-2 md:grid-cols-3',
+    4: 'grid-cols-2 md:grid-cols-4',
+  };
+  const columnas = HELIX_COLS[Math.min(ejesVisibles.length, 4)] || '';
+
   return `
     <div class="rd-card rd-card-accent rd-pad mb-8 rd-card-grad-beige">
       <h2 class="text-2xl font-extrabold text-eu-purple mb-2">${esc(loc(helix.heading))}</h2>
-      <p class="text-lg text-gray-600 mb-6 leading-relaxed">${esc(loc(helix.description))}</p>
-      ${html ? `<div class="grid grid-cols-2 md:grid-cols-4 gap-4">${html}</div>` : ''}
+      <p class="text-lg text-gray-600${html ? ' mb-6' : ''} leading-relaxed">${esc(loc(helix.description))}</p>
+      ${html ? `<div class="grid ${columnas} gap-4">${html}</div>` : ''}
     </div>
   `;
 }

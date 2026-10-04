@@ -419,6 +419,9 @@ function renderHeroBlock() {
       <div class="text-xs font-bold uppercase tracking-wider" style="color:rgba(255,244,225,.75)">${esc(loc(s.label))}</div>
     </div>`;
   }).join('');
+  // F3 bis (H1): sin cajas visibles no se reserva la segunda columna del
+  // layout externo; el texto del hero ocupa todo el ancho.
+  const layoutHero = stats.length ? ' lg:grid-cols-2' : '';
   const requestJoin = hero.buttons?.requestJoin || {};
   const membershipAction = resolveMembershipAction(requestJoin, 'home');
   const requestJoinButton = requestJoin.visible === false || membershipAction.kind === 'hidden'
@@ -436,7 +439,7 @@ function renderHeroBlock() {
         </button>`;
   return `
     <section class="rd-hero-gradient rd-hero-fill text-white px-6 py-20">
-      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1${layoutHero} gap-20 items-center">
         <div>
           <span class="inline-block bg-white/10 border border-white/20 font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-8" style="color:#FFF4E1;backdrop-filter:blur(8px)">
             ${esc(loc(hero.badge))}
