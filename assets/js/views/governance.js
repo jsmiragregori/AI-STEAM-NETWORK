@@ -1,9 +1,12 @@
 import { t } from '../i18n.js';
 import { getState, setState } from '../state.js';
+import { navigateTo } from '../router.js';
 import { GOVERNANCE_CONFIG } from '../../data/governance.js';
 import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
+import { resolveMembershipAction } from '../utils/membership.js';
+import { filterVisibleStats } from '../utils/stat-visibility.js';
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
 function pickLang(value, fallback = '') {
@@ -721,20 +724,45 @@ function tabParticipar(govT) {
   const cc = hasCms ? cms.consensueCard : {};
   const ms = hasCms ? cms.meetingsSection : {};
 
-  const stakeBtnUrl = hasCms ? cms.stakeholderCard.buttonUrl || '#' : '#';
-  const stakeBtnExt = hasCms ? cms.stakeholderCard.buttonExternal : false;
+  // F4 bis: el botón de la card de Stakeholder no tiene URL propia. Su acción es
+  // la misma que la del CTA de la hero de Inicio, resuelta por el helper
+  // compartido sobre la configuración canónica de adhesión (Red →
+  // Stakeholders). Mismos estados que Inicio: externo (Forms en pestaña nueva),
+  // interno (Red → Stakeholders con el formulario abierto), oculto
+  // (formVisible/membershipCtasVisible) y «unsafe» (URL rechazada: se conserva
+  // el rótulo, no la navegación). Sin enlace «#» inerte.
+  const membershipAction = resolveMembershipAction(sc, 'governance');
+  const membershipCtaVisible = sc.effectiveMembershipCtasVisible !== false
+    && membershipAction.kind !== 'hidden';
+  const stakeBtnLabel = hasCms ? pickLang(sc.buttonText, s.stakeholderButton || '') : (s.stakeholderButton || '');
+  const stakeBtnClass = 'inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md';
+  const stakeBtnHtml = !hasCms
+    ? `<span class="${stakeBtnClass}" style="background:#5620F6">
+                <span>${esc(s.stakeholderButton || '')}</span>
+              </span>`
+    : !membershipCtaVisible
+      ? ''
+      : membershipAction.kind === 'unsafe'
+        ? `<span data-gov-participar-cta="true" class="${stakeBtnClass}" style="background:#5620F6">
+                <span>${esc(stakeBtnLabel)}</span>
+              </span>`
+        : membershipAction.kind === 'external'
+          ? `<a href="${esc(membershipAction.url)}" target="_blank" rel="noopener noreferrer" data-gov-participar-cta="true" class="${stakeBtnClass}" style="background:#5620F6">
+                <span>${esc(stakeBtnLabel)}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>`
+          : `<button type="button" data-gov-participar-cta="true" class="${stakeBtnClass} border-0 cursor-pointer" style="background:#5620F6">
+                <span>${esc(stakeBtnLabel)}</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>`;
   const consBtnUrl = hasCms ? cms.consensueCard.buttonUrl || '#' : '#';
   const consBtnExt = hasCms ? cms.consensueCard.buttonExternal : false;
   // '#' es el centinela del CMS para "enlace pendiente de rellenar": el botón
-  // se pinta clicable e inerte, no como <span>. Se distingue de una URL real
-  // porque con '#' no tiene sentido abrir pestaña nueva. Una URL que exista
-  // pero no supere la allowlist cae en ese mismo '#'.
-  // `safe*` solo tiene valor con una URL real y utilizable: es lo que decide si
-  // abrir pestaña nueva. `*Href` es lo que se pinta, con '#' como destino
-  // inerte tanto para el centinela como para una URL rechazada.
-  const safeStakeBtnUrl = stakeBtnUrl === '#' ? null : getSafeEditorialUrl(stakeBtnUrl);
+  // de ConsensUE se pinta clicable e inerte, no como <span>. Se distingue de
+  // una URL real porque con '#' no tiene sentido abrir pestaña nueva. Una URL
+  // que exista pero no supere la allowlist cae en ese mismo '#'.
+  // `safeConsBtnUrl` solo tiene valor con una URL real y utilizable: es lo que
+  // decide si abrir pestaña nueva. `consBtnHref` es lo que se pinta, con '#'
+  // como destino inerte tanto para el centinela como para una URL rechazada.
   const safeConsBtnUrl = consBtnUrl === '#' ? null : getSafeEditorialUrl(consBtnUrl);
-  const stakeBtnHref = getSafeEditorialUrl(stakeBtnUrl) || '#';
   const consBtnHref = getSafeEditorialUrl(consBtnUrl) || '#';
 
   const stakeholderBenefitsHtml = (hasCms
@@ -853,16 +881,10 @@ function tabParticipar(govT) {
                 <span>${esc(hasCms ? pickLang(cms.stakeholderCard.warning, s.stakeholderWarning || '') : (s.stakeholderWarning || ''))}</span>
               </p>
             </div>
+            ${stakeBtnHtml ? `
             <div class="pt-4 shrink-0" style="border-top:1px solid rgb(86 32 246/.15)">
-              ${hasCms
-                ? `<a href="${esc(stakeBtnHref)}" ${(safeStakeBtnUrl && stakeBtnExt) ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base hover:opacity-90 transition-all shadow-md" style="background:#5620F6">
-                <span>${esc(pickLang(cms.stakeholderCard.buttonText, s.stakeholderButton || ''))}</span> <i data-lucide="external-link" class="w-4 h-4"></i>
-              </a>`
-                : `<span class="inline-flex items-center gap-2 text-white px-6 py-3 rounded-full font-bold text-base shadow-md" style="background:#5620F6">
-                <span>${esc(s.stakeholderButton || '')}</span>
-              </span>`
-              }
-            </div>
+              ${stakeBtnHtml}
+            </div>` : ''}
           </div>
         </div>` : ''}
 
@@ -923,11 +945,11 @@ export function render() {
 
   const heroBlock  = GOVERNANCE_CONFIG?.heroBlock || {};
   const heroVisible = heroBlock.visible !== false;
-  const heroStats  = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
+  const heroStats  = filterVisibleStats(heroBlock.stats);
 
   const statsHtml = heroStats.map(s => `
     <div class="rd-hero-stat text-center">
-      <p class="text-3xl font-extrabold text-white leading-tight">${esc(s.value || '')}</p>
+      <p class="text-3xl font-extrabold text-white leading-tight">${esc(s.value)}</p>
       <p class="text-[10px] font-extrabold uppercase tracking-widest mt-2" style="color:rgba(255,244,225,.75)">${esc(pickLang(s.label))}</p>
     </div>
   `).join('');
@@ -987,6 +1009,21 @@ export function mount() {
       main.innerHTML = render();
       mount();
       if (window.lucide) window.lucide.createIcons();
+    });
+  });
+
+  // F4 bis: CTA de adhesión de la tarjeta Stakeholder (solo modo interno; el
+  // enlace externo navega solo). Misma mecánica que el CTA de la hero de Inicio
+  // (home.js mount): Red → Stakeholders con el formulario de adhesión abierto.
+  document.querySelectorAll('button[data-gov-participar-cta]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      setState('networkTab', 'stakeholders');
+      setState('networkShowForm', true);
+      setState('networkCategory', 'todos');
+      setState('networkSector', null);
+      setState('networkSearch', '');
+      setState('networkPage', 0);
+      navigateTo('red');
     });
   });
 

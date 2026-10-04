@@ -6,6 +6,7 @@ import { resolveMembershipAction } from '../utils/membership.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
+import { filterVisibleStats } from '../utils/stat-visibility.js';
 
 
 const SECTOR_ICONS = {
@@ -53,6 +54,8 @@ function localizedList(value) {
 function renderHero(hero) {
   if (!hero || hero.visible === false) return '';
 
+  const stats = filterVisibleStats(hero.stats);
+
   return `
     <section class="rd-hero-gradient px-6 py-24 text-white">
       <div class="mx-auto max-w-7xl">
@@ -62,14 +65,14 @@ function renderHero(hero) {
         </div>
         <h1 class="mt-7 max-w-5xl text-5xl font-extrabold tracking-tight md:text-7xl" style="color:#FFF4E1;line-height:1.02">${esc(localized(hero.title))}</h1>
         <p class="mt-7 max-w-3xl text-lg leading-relaxed text-white/85 md:text-xl">${esc(localized(hero.description))}</p>
-        <div class="mt-12 rd-hero-stats-grid">
-          ${(hero.stats || []).map(stat => `
+        ${stats.length ? `<div class="mt-12 rd-hero-stats-grid">
+          ${stats.map(stat => `
             <div class="rd-hero-stat text-center">
               <p class="text-4xl font-extrabold text-white">${esc(stat.value)}</p>
               <p class="mt-2 text-xs font-bold uppercase tracking-wider" style="color:rgba(255,244,225,.75)">${esc(localized(stat.label))}</p>
             </div>
           `).join('')}
-        </div>
+        </div>` : ''}
       </div>
     </section>
   `;
@@ -292,11 +295,11 @@ function renderSectorCard(sector, sectorsT, index) {
   const isOpen = expanded === sector.id;
   const stats = sector.stats || {};
   const sectorLabels = sectorsT?.sectorLabels || {};
-  const statsList = Array.isArray(sector.statsList) ? sector.statsList : [
+  const statsList = filterVisibleStats(Array.isArray(sector.statsList) ? sector.statsList : [
     { id: 'initiatives', value: stats.initiatives, label: sectorLabels.initiatives || sectorLabels.challenges || '' },
     { id: 'stakeholders', value: stats.stakeholders, label: sectorLabels.stakeholders || '' },
     { id: 'courses', value: stats.courses, label: sectorLabels.courses || '' },
-  ];
+  ]);
   const statsColumns = Math.max(1, Math.min(statsList.length, 3));
   const navTargets = sector.navigationTargets || {};
   const icon = SECTOR_ICONS[sector.id] || 'shapes';
@@ -321,12 +324,12 @@ function renderSectorCard(sector, sectorsT, index) {
             ${keywords ? `<div class="mt-5">${keywords}</div>` : ''}
           </div>
         </button>
-        <div class="grid min-w-0 gap-3 md:w-[24rem]" style="grid-template-columns: repeat(${esc(statsColumns)}, minmax(0, 1fr))">
+        ${statsList.length ? `<div class="grid min-w-0 gap-3 md:w-[24rem]" style="grid-template-columns: repeat(${esc(statsColumns)}, minmax(0, 1fr))">
           ${statsList.map(stat => {
             const target = stat.id === 'initiatives' ? navTargets.marketplace : stat.id === 'courses' ? navTargets.training : navTargets.network;
             return renderStatButton(sector, stat.id, stat.value, localized(stat.label) || sectorLabels[stat.id] || '', target?.enabled);
           }).join('')}
-        </div>
+        </div>` : ''}
       </div>
       <button data-toggle="${esc(sector.id)}" class="flex w-full cursor-pointer items-center justify-between border-0 border-t border-eu-blue/10 bg-transparent px-6 py-4 text-left md:px-8">
         <span class="text-sm font-bold text-eu-blue">${esc(isOpen ? (sectorsT?.collapseSector || 'Cerrar brújula') : (sectorsT?.expandSector || 'Abrir brújula sectorial'))}</span>

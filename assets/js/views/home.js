@@ -6,6 +6,7 @@ import { resolveMembershipAction } from '../utils/membership.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
+import { filterVisibleStats } from '../utils/stat-visibility.js';
 
 function localized(value) {
   const lang = getLanguage();
@@ -407,7 +408,7 @@ function renderHeroBlock() {
   if (!hero?.visible) return '';
   const lang = getLanguage();
   const loc = v => v?.[lang] || v?.es || '';
-  const stats = hero.stats || [];
+  const stats = filterVisibleStats(hero.stats);
   const statsHtml = stats.map((s, i) => {
     const isOddLast = (i === stats.length - 1) && (stats.length % 2 === 1);
     const spanStyle = isOddLast ? 'grid-column:1 / -1;' : '';
@@ -418,6 +419,9 @@ function renderHeroBlock() {
       <div class="text-xs font-bold uppercase tracking-wider" style="color:rgba(255,244,225,.75)">${esc(loc(s.label))}</div>
     </div>`;
   }).join('');
+  // F3 bis (H1): sin cajas visibles no se reserva la segunda columna del
+  // layout externo; el texto del hero ocupa todo el ancho.
+  const layoutHero = stats.length ? ' lg:grid-cols-2' : '';
   const requestJoin = hero.buttons?.requestJoin || {};
   const membershipAction = resolveMembershipAction(requestJoin, 'home');
   const requestJoinButton = requestJoin.visible === false || membershipAction.kind === 'hidden'
@@ -435,7 +439,7 @@ function renderHeroBlock() {
         </button>`;
   return `
     <section class="rd-hero-gradient rd-hero-fill text-white px-6 py-20">
-      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1${layoutHero} gap-20 items-center">
         <div>
           <span class="inline-block bg-white/10 border border-white/20 font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-8" style="color:#FFF4E1;backdrop-filter:blur(8px)">
             ${esc(loc(hero.badge))}
@@ -451,7 +455,7 @@ function renderHeroBlock() {
             ${requestJoinButton}
           </div>
         </div>
-        <div class="grid grid-cols-2 gap-5">${statsHtml}</div>
+        ${statsHtml ? `<div class="grid grid-cols-2 gap-5">${statsHtml}</div>` : ''}
       </div>
     </section>
   `;

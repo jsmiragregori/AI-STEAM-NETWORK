@@ -4,9 +4,9 @@ import { getViewParams } from '../router.js';
 import { TRAINING_CONFIG } from '../../data/training.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
+import { filterVisibleStats } from '../utils/stat-visibility.js';
 
 const COURSE_PARTNERS  = ['UVEG / CECU', "Ud'A / UVEG", 'CECU / Inspiring Futures Europe', 'AVA-ASAJA / CINK', 'INESC TEC / HSW', 'Region Värmland / NTNU', 'KEA / ESAD-GV / LPGA', 'LC / CECU'];
-const COURSE_MODALITY  = ['Semipresencial', 'Online', 'Online', 'Semipresencial', 'Online', 'Online', 'Online', 'Online'];
 
 const TONE_MAP = {
   success: { cls: 'text-eu-purple bg-eu-purple/5 border border-eu-purple/15 hover:bg-eu-purple/10',   activeStyle: 'background:#4918AD;color:#fff;border-color:#4918AD' },
@@ -18,9 +18,9 @@ const TONE_MAP = {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 function getLang() { return localStorage.getItem('language') || 'es'; }
-function pickLang(value, fallback = '') {
-  const lang = getLang();
-  if (value && typeof value === 'object') return value[lang] || value.es || fallback;
+function pickLang(value, fallback = '', lang = null) {
+  const active = lang || getLang();
+  if (value && typeof value === 'object') return value[active] || value.es || fallback;
   return fallback;
 }
 function getSkillIcon(id) {
@@ -102,26 +102,31 @@ function filterCourses(courses, filters) {
 }
 
 // ── Course data ───────────────────────────────────────────────────────────────
-function getCourses(trainingT) {
-  const cmsConfig = TRAINING_CONFIG?.coursesBlock;
-  if (cmsConfig?.courses?.length > 0) {
+// F3.01: el bloque del CMS manda siempre que exista, aunque su colección esté
+// vacía —`courses: []` es un vacío válido y no reactiva los cursos legacy de
+// traducciones—; solo su ausencia (datos anteriores al contrato) usa el respaldo
+// legacy. La constante demo COURSE_MODALITY se retiró (D3): los cursos legacy no
+// aportan modalidad propia y no se inventa una.
+export function resolveCourses(cmsBlock, legacyCourses, lang) {
+  const cmsCourses = Array.isArray(cmsBlock?.courses) ? cmsBlock.courses : null;
+  if (cmsCourses) {
     const sectorsMap = {}, modalitiesMap = {}, statusesMap = {};
-    (cmsConfig.sectors    || []).forEach(s => { sectorsMap[s.id]    = s.label; });
-    (cmsConfig.modalities || []).forEach(m => { modalitiesMap[m.id] = m.label; });
-    (cmsConfig.statuses   || []).forEach(s => { statusesMap[s.id]   = s; });
+    (cmsBlock.sectors    || []).forEach(s => { sectorsMap[s.id]    = s.label; });
+    (cmsBlock.modalities || []).forEach(m => { modalitiesMap[m.id] = m.label; });
+    (cmsBlock.statuses   || []).forEach(s => { statusesMap[s.id]   = s; });
 
-    return cmsConfig.courses.map((course, idx) => ({
+    return cmsCourses.map((course, idx) => ({
       id:          course.id,
-      title:       pickLang(course.title, ''),
+      title:       pickLang(course.title, '', lang),
       level:       course.level,
       sectorIds:   course.sectorIds || [],
-      sectors:     (course.sectorIds || []).map(id => pickLang(sectorsMap[id], id)),
+      sectors:     (course.sectorIds || []).map(id => pickLang(sectorsMap[id], id, lang)),
       hours:       course.hours    ?? null,
       enrolled:    course.enrolled ?? null,
       partner:     COURSE_PARTNERS[idx] || '',
-      description: pickLang(course.description, ''),
+      description: pickLang(course.description, '', lang),
       modalityId:  course.modalityId || '',
-      modality:    pickLang(modalitiesMap[course.modalityId], course.modalityId),
+      modality:    pickLang(modalitiesMap[course.modalityId], course.modalityId, lang),
       statusId:    course.statusId || '',
       statusObj:   statusesMap[course.statusId] || { id: course.statusId, label: { es: course.statusId, en: course.statusId, va: course.statusId }, tone: 'neutral' },
       skillIds:    course.skillIds || course.tagIds || [],
@@ -129,17 +134,21 @@ function getCourses(trainingT) {
       link:        course.link || { url: '', external: true },
     }));
   }
-  const coursesObj = trainingT?.courses || {};
+  const coursesObj = legacyCourses && typeof legacyCourses === 'object' ? legacyCourses : {};
   return Object.values(coursesObj).map((course, idx) => ({
     id: `c${idx + 1}`, title: course.title, level: course.level,
     sectorIds: [], sectors: [course.sector] || [],
     hours: null, enrolled: null,
     partner: COURSE_PARTNERS[idx], description: course.desc,
-    modalityId: '', modality: COURSE_MODALITY[idx],
+    modalityId: '', modality: '',
     statusId: course.status || '',
     statusObj: { id: course.status, label: { es: course.status, en: course.status, va: course.status }, tone: 'neutral' },
     skillIds: [], tagIds: [], link: { url: '', external: true },
   }));
+}
+
+function getCourses(trainingT) {
+  return resolveCourses(TRAINING_CONFIG?.coursesBlock, trainingT?.courses, getLang());
 }
 
 // ── Course card ───────────────────────────────────────────────────────────────
@@ -325,7 +334,7 @@ function updateCourseGrid() {
   const tab         = getState('trainingTab') || 'fp';
   const trainingT   = t('training') || {};
   const coursesBlock = TRAINING_CONFIG?.coursesBlock || {};
-  const courses     = getCourses(trainingT);
+  const courses     = coursesBlock.visible !== false ? getCourses(trainingT) : [];
   const courseTags  = coursesBlock.skills || coursesBlock.courseTags || [];
   const emptyMsg    = coursesBlock.emptyMessage || {};
   const container   = document.getElementById('tr-courses-grid');
@@ -547,7 +556,7 @@ export function render() {
     }"><i data-lucide="${esc(tab.icon)}" class="w-4 h-4"></i>${esc(tab.label || '')}</button>`).join('');
 
   const heroBlock  = TRAINING_CONFIG?.heroBlock || {};
-  const heroStats  = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
+  const heroStats  = filterVisibleStats(heroBlock.stats);
   const ctaButton  = heroBlock.ctaButton || {};
   // Sin URL editorial se mantiene el destino por defecto. Con una URL editorial
   // rechazada NO se cae a ese defecto: enviaría al visitante a un sitio que el

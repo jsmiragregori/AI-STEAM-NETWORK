@@ -4,6 +4,7 @@ import { getViewParams } from '../router.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 import { MARKETPLACE_CONFIG } from '../../data/marketplace.js';
+import { filterVisibleStats } from '../utils/stat-visibility.js';
 
 const UI_TEXT = {
   backCommunity: {
@@ -693,7 +694,7 @@ function renderBadge(label, tone = 'bg-white text-gray-700 border-eu-border', fi
 
 function renderHero() {
   const hero = MARKETPLACE_CONFIG.heroBlock || {};
-  const stats = (hero.stats || []).filter(stat => stat.visible !== false);
+  const stats = filterVisibleStats(hero.stats);
   const title = pickLang(hero.title, pickLang(MARKETPLACE_CONFIG.publicSectionName?.title, 'Comunidad de Practica'));
   const description = pickLang(hero.description);
 

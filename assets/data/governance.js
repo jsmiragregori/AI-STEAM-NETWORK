@@ -2176,12 +2176,33 @@ export const GOVERNANCE_CONFIG = {
         "va": "La participació de stakeholders no implica admissió automàtica, accés a espais acadèmics ni drets de decisió en els òrgans formals del consorci."
       },
       "buttonText": {
-        "es": "Proceso pendiente de validación",
-        "en": "Process pending validation",
-        "va": "Procés pendent de validació"
+        "es": "Únete a la AI-STEAM Network",
+        "en": "Join the AI-STEAM Network",
+        "va": "Uneix-te a la AI-STEAM Network"
       },
-      "buttonUrl": "#",
-      "buttonExternal": false
+      "formVisible": true,
+      "membershipCtasVisible": true,
+      "effectiveMembershipCtasVisible": true,
+      "formMode": "microsoftForms",
+      "microsoftForms": {
+        "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufim2QOZI2KzXdNkVDX-aJiHOVUMFc4QjI2SlU2M0lEV0lSN1E4TkhTMTdCSC4u",
+        "presentation": "newTab",
+        "title": {
+          "es": "Formulario de adhesión como stakeholder",
+          "en": "Stakeholder membership form",
+          "va": "Formulari d’adhesió com a grup d’interés"
+        },
+        "description": {
+          "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AI-STEAM.",
+          "en": "Complete the Microsoft Forms form to request your organization’s membership in the AI-STEAM Network.",
+          "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AI-STEAM."
+        },
+        "openExternalLabel": {
+          "es": "Conviértete en Stakeholder",
+          "en": "Become Stakeholder",
+          "va": "Converteix-te en Stakeholder"
+        }
+      }
     },
     "consensueCard": {
       "visible": true,

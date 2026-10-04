@@ -8,7 +8,13 @@ const EXPECTED_PER_FILE = [
   // `pickLang` para el caso "con CMS", porque ahora siempre son <a>. Esa rama
   // solo se conserva para el caso sin CMS, donde `pickLang` no aplica —y donde
   // acceder a `cms.*` habría lanzado—.
-  { file: 'assets/js/views/governance.js', unescaped: 1, escaped: 99 },
+  // F4 bis (P-66): 98 y no 99 en governance.js. El rótulo del CTA de Stakeholder
+  // ya no interpola `esc(pickLang(...))` directamente: se resuelve una vez en la
+  // constante `stakeBtnLabel` (también por pickLang, y escapada al pintar) para
+  // compartirla entre las ramas externa, interna y de rótulo sin enlace. El
+  // total de interpolaciones escapadas baja en una; no desaparece ningún
+  // escapado (lo vigila escape-coverage.test.mjs).
+  { file: 'assets/js/views/governance.js', unescaped: 1, escaped: 98 },
   { file: 'assets/js/views/knowledge.js', unescaped: 0, escaped: 9 },
   { file: 'assets/js/views/marketplace.js', unescaped: 5, escaped: 12 },
   { file: 'assets/js/views/news.js', unescaped: 0, escaped: 4 }, // CS-20
@@ -57,10 +63,17 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // puras y exporta el resultado. Comprobado contra el tag
   // salvaguardia/pre-cs4-2026-09-10-congelada.
   // 2026-09-24: 24 al retirar el aviso de cookies (components/cookie-notice.js).
-  assert.equal(report.scannedFiles, 24);
+  // F3 bis (P-66): 25 con assets/js/utils/stat-visibility.js, el helper puro de
+  // la regla de estadísticas a cero. Es un recuento de ficheros, no de
+  // superficie: no define vista, no importa escape-html ni usa pickLang, y las
+  // demás cifras de esta prueba siguen idénticas.
+  assert.equal(report.scannedFiles, 25);
   // CS-20: las cuatro de news.js pasan a escapadas (11 → 7 y 130 → 134).
+  // F4 bis (P-66): 133 al resolver el rótulo del CTA de Gobernanza en una
+  // constante compartida (ver EXPECTED_PER_FILE). Sigue sin haber ninguna
+  // interpolación de dato sin escapar.
   assert.equal(report.pickLangInterpolations.unescaped, 7);
-  assert.equal(report.pickLangInterpolations.escaped, 134);
+  assert.equal(report.pickLangInterpolations.escaped, 133);
   assert.deepEqual(
     report.pickLangInterpolations.perFile.map(({ file, unescaped, escaped }) => ({ file, unescaped, escaped })),
     EXPECTED_PER_FILE,

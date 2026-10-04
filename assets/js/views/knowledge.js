@@ -3,6 +3,7 @@ import { getState, setState } from '../state.js';
 import { KNOWLEDGE_CONFIG } from '../../data/knowledge.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
+import { filterVisibleStats } from '../utils/stat-visibility.js';
 
 const TABS = ['flujo', 'oer', 'plantillas'];
 
@@ -1048,7 +1049,7 @@ export function render() {
 
   const heroBlock = KNOWLEDGE_CONFIG?.heroBlock || {};
   const heroVisible = heroBlock.visible !== false;
-  const heroStats = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
+  const heroStats = filterVisibleStats(heroBlock.stats);
 
   const templatesSearch = getState('templatesSearch') || '';
 

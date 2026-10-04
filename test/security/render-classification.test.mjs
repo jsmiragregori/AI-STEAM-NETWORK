@@ -43,14 +43,23 @@ const EXPECTED_BY_FILE = {
 // F6 (el código entra en la búsqueda) añade UNA línea más en getSearchHaystack, por encima de las
 // cinco: +1 otra vez (acumulado +10 sobre la línea base de F0). Mismo criterio: mismas siete
 // expresiones, mismas categorías y mismos recuentos.
+// F3.01 (P-66) retira la constante demo COURSE_MODALITY y extrae resolveCourses: +8 líneas
+// netas por encima de la excepción de training.js, que pasa de 434 a 442. Misma expresión,
+// misma categoría y mismos recuentos.
+// F3 bis (P-66) añade a cada vista implicada el import del helper puro
+// assets/js/utils/stat-visibility.js: las siete excepciones se desplazan +1 línea y siguen
+// siendo las mismas expresiones con las mismas categorías. Mismos recuentos.
+// F4 bis (P-66) añade a governance.js dos imports (router y membership): su excepción
+// ESTRUCTURAL se desplaza +2 (700 → 702). Sigue siendo la misma expresión, con la misma
+// categoría; los demás ficheros no se mueven.
 const EXPECTED_EXCEPTIONS = [
-  { file: 'assets/js/views/governance.js', line: 699, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1762, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 1947, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1949, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/marketplace.js', line: 1988, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 2148, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/training.js', line: 434, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/governance.js', line: 702, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 1763, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 1948, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 1950, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 1989, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 2149, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/training.js', line: 443, category: 'ESTRUCTURAL' },
 ];
 
 test('la clasificación VAN-1.2 reproduce su línea base', async () => {
@@ -147,11 +156,15 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
   // condiciones, clases de un mapa del código y fragmentos ya compuestos con esc()).
   // CS-22: 134 al pasar por esc() todo dato de las plantillas HTML. Solo baja:
   // ninguna salida nueva sin escapar (lo impone escape-coverage.test.mjs).
-  assert.equal(indirectOutputCandidates.total, 134);
+  // F4 bis (P-66): 135 con `stakeBtnHtml`, el fragmento del CTA de adhesión de
+  // Gobernanza. Es del mismo tipo que `consensueGroupsHtml` o `meetingsHtml`:
+  // marcado compuesto por el propio fichero, con rótulo y URL ya escapados
+  // (`esc(...)`), y la acción resuelta por el helper compartido.
+  assert.equal(indirectOutputCandidates.total, 135);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/footer.js': 2,
     'assets/js/components/header.js': 4,
-    'assets/js/views/governance.js': 22,
+    'assets/js/views/governance.js': 23,
     'assets/js/views/home.js': 18,
     'assets/js/views/knowledge.js': 14,
     'assets/js/views/marketplace.js': 18,
