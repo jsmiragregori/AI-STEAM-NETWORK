@@ -1,8 +1,8 @@
-// H1 (auditoría F3, 2026-10-04) — Ninguna estadística visible puede ocultar su
-// cero. Se ponen a 0 todas las cifras de hero de las siete vistas principales y
-// se comprueba que cada una pinta su «0» y su etiqueta; después se comprueba la
-// ausencia de dato en Gobernanza. El defecto `value || ''` que ocultaba el cero
-// hace fallar estas comprobaciones.
+// F3 bis (2026-10-04) — Todas las cifras de hero a cero: ninguna caja se
+// renderiza, no queda rejilla ni hueco, y la sección sigue en pie. Sustituye
+// las aserciones de la corrección H1 (auditoría F3) que exigían el cero
+// visible: la cifra en datos sigue siendo cero; lo que cambia es solo su
+// presentación (regla común en `utils/stat-visibility.js`).
 
 import assert from 'node:assert/strict';
 import test from 'node:test';
@@ -33,30 +33,26 @@ for (const [vista, config] of Object.entries(datos)) {
 }
 
 const vistas = await import('../../assets/js/views/index.js');
+const news = await import('../../assets/js/views/news.js');
 
 for (const [vista, config] of Object.entries(datos)) {
-  test(`${vista}: todas las estadísticas muestran 0 y conservan su etiqueta`, () => {
+  test(`${vista}: hero a cero sin cajas, sin contenedor y con la sección en pie`, () => {
     const html = vistas[vista].render();
-    for (const stat of config.heroBlock.stats) {
-      const etiqueta = stat.label?.es ?? '';
-      if (etiqueta) assert.ok(html.includes(etiqueta), `${vista}: falta la etiqueta ${etiqueta}`);
-    }
-    const ceros = (html.match(/>0</g) || []).length;
-    assert.ok(
-      ceros >= config.heroBlock.stats.length,
-      `${vista}: ceros visibles ${ceros}, se esperaban al menos ${config.heroBlock.stats.length}`,
-    );
+    assert.equal((html.match(/rd-hero-stat\b/g) || []).length, 0, `${vista}: alguna caja a cero sigue pintada`);
+    assert.ok(!html.includes('rd-hero-stats-grid'), `${vista}: el contenedor de la rejilla sigue presente`);
+    assert.match(html, /<h1/, `${vista}: la sección desapareció con las estadísticas`);
+    // La fuente no se toca: las cifras siguen siendo cero.
+    for (const stat of config.heroBlock.stats) assert.equal(stat.value, 0);
     assert.doesNotMatch(html, />undefined</);
     assert.doesNotMatch(html, />null</);
   });
 }
 
-test('gobernanza: la ausencia de dato deja el hueco vacío', () => {
-  const stats = datos.gobernanza.heroBlock.stats;
-  const original = stats[0].value;
-  stats[0].value = undefined;
-  const html = vistas.gobernanza.render();
-  assert.doesNotMatch(html, />undefined</);
-  assert.doesNotMatch(html, />null</);
-  stats[0].value = original;
+test('news: hero a cero sin cajas, sin rejilla y con la vista completa', async () => {
+  const datosNewsStats = (await import('../../assets/data/news.js')).NEWS_CONFIG.heroBlock.stats;
+  for (const stat of datosNewsStats) stat.value = 0;
+  const html = news.render();
+  assert.equal((html.match(/rd-hero-stat\b/g) || []).length, 0);
+  assert.ok(!html.includes('rd-hero-stats-grid'));
+  assert.ok(html.length > 200);
 });

@@ -6,6 +6,7 @@ import { NEWS_CONFIG } from '../../data/news.js';
 // fichero se publica. Si vuelve, vuelve escapada: todo dato pasa por esc().
 import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
+import { filterVisibleStats } from '../utils/stat-visibility.js';
 
 function getLang() { return localStorage.getItem('language') || 'es'; }
 function pickLang(value, fallback = '') {
@@ -201,7 +202,7 @@ export function render() {
 
   const heroBlock  = NEWS_CONFIG?.heroBlock || {};
   const heroVisible = heroBlock.visible !== false;
-  const heroStats  = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
+  const heroStats  = filterVisibleStats(heroBlock.stats);
   const notice     = pickLang(heroBlock.notice, '');
   const ctaButton  = heroBlock.ctaButton || {};
 

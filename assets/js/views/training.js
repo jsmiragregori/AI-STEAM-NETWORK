@@ -4,6 +4,7 @@ import { getViewParams } from '../router.js';
 import { TRAINING_CONFIG } from '../../data/training.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
+import { filterVisibleStats } from '../utils/stat-visibility.js';
 
 const COURSE_PARTNERS  = ['UVEG / CECU', "Ud'A / UVEG", 'CECU / Inspiring Futures Europe', 'AVA-ASAJA / CINK', 'INESC TEC / HSW', 'Region Värmland / NTNU', 'KEA / ESAD-GV / LPGA', 'LC / CECU'];
 
@@ -555,7 +556,7 @@ export function render() {
     }"><i data-lucide="${esc(tab.icon)}" class="w-4 h-4"></i>${esc(tab.label || '')}</button>`).join('');
 
   const heroBlock  = TRAINING_CONFIG?.heroBlock || {};
-  const heroStats  = Array.isArray(heroBlock.stats) ? heroBlock.stats : [];
+  const heroStats  = filterVisibleStats(heroBlock.stats);
   const ctaButton  = heroBlock.ctaButton || {};
   // Sin URL editorial se mantiene el destino por defecto. Con una URL editorial
   // rechazada NO se cae a ese defecto: enviaría al visitante a un sitio que el

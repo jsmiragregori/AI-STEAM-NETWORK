@@ -57,7 +57,11 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // puras y exporta el resultado. Comprobado contra el tag
   // salvaguardia/pre-cs4-2026-09-10-congelada.
   // 2026-09-24: 24 al retirar el aviso de cookies (components/cookie-notice.js).
-  assert.equal(report.scannedFiles, 24);
+  // F3 bis (P-66): 25 con assets/js/utils/stat-visibility.js, el helper puro de
+  // la regla de estadísticas a cero. Es un recuento de ficheros, no de
+  // superficie: no define vista, no importa escape-html ni usa pickLang, y las
+  // demás cifras de esta prueba siguen idénticas.
+  assert.equal(report.scannedFiles, 25);
   // CS-20: las cuatro de news.js pasan a escapadas (11 → 7 y 130 → 134).
   assert.equal(report.pickLangInterpolations.unescaped, 7);
   assert.equal(report.pickLangInterpolations.escaped, 134);

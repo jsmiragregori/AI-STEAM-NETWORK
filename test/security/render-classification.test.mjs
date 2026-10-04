@@ -46,14 +46,17 @@ const EXPECTED_BY_FILE = {
 // F3.01 (P-66) retira la constante demo COURSE_MODALITY y extrae resolveCourses: +8 líneas
 // netas por encima de la excepción de training.js, que pasa de 434 a 442. Misma expresión,
 // misma categoría y mismos recuentos.
+// F3 bis (P-66) añade a cada vista implicada el import del helper puro
+// assets/js/utils/stat-visibility.js: las siete excepciones se desplazan +1 línea y siguen
+// siendo las mismas expresiones con las mismas categorías. Mismos recuentos.
 const EXPECTED_EXCEPTIONS = [
-  { file: 'assets/js/views/governance.js', line: 699, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1762, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 1947, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1949, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/marketplace.js', line: 1988, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 2148, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/training.js', line: 442, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/governance.js', line: 700, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 1763, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 1948, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 1950, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 1989, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 2149, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/training.js', line: 443, category: 'ESTRUCTURAL' },
 ];
 
 test('la clasificación VAN-1.2 reproduce su línea base', async () => {

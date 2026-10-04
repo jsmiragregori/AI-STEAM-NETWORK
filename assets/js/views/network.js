@@ -5,6 +5,7 @@ import { resolveMembershipAction } from '../utils/membership.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
+import { filterVisibleStats, isZeroStatValue } from '../utils/stat-visibility.js';
 
 // ── Static data ─────────────────────────────────────────────────────────────
 
@@ -115,11 +116,18 @@ function helixBlock() {
   const pc = counts(ACTIVE_PARTNERS);
   const sc = counts(STAKEHOLDERS);
 
-  const html = (helix.categories || []).map(cat => {
+  // F3 bis: un eje de la hélice con total efectivo cero no pinta su caja.
+  const totalDeCategoria = cat => Number.isInteger(cat.value)
+    ? cat.value
+    : (pc[cat.id] || 0) + (sc[cat.id] || 0);
+
+  const html = (helix.categories || [])
+    .filter(cat => cat.visible !== false && !isZeroStatValue(totalDeCategoria(cat)))
+    .map(cat => {
     const meta = CATEGORY_META[cat.id] || CATEGORY_META.sociedad;
     // El total se resuelve en el loader (computado o manualOverride). Fallback al
     // cálculo en vista por compatibilidad con datos antiguos sin estos campos.
-    const total = Number.isInteger(cat.value) ? cat.value : (pc[cat.id] || 0) + (sc[cat.id] || 0);
+    const total = totalDeCategoria(cat);
     const pCount = Number.isInteger(cat.partnersCount) ? cat.partnersCount : (pc[cat.id] || 0);
     const sCount = Number.isInteger(cat.stakeholdersCount) ? cat.stakeholdersCount : (sc[cat.id] || 0);
     const detailParts = [
@@ -140,7 +148,7 @@ function helixBlock() {
     <div class="rd-card rd-card-accent rd-pad mb-8 rd-card-grad-beige">
       <h2 class="text-2xl font-extrabold text-eu-purple mb-2">${esc(loc(helix.heading))}</h2>
       <p class="text-lg text-gray-600 mb-6 leading-relaxed">${esc(loc(helix.description))}</p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">${html}</div>
+      ${html ? `<div class="grid grid-cols-2 md:grid-cols-4 gap-4">${html}</div>` : ''}
     </div>
   `;
 }
@@ -629,7 +637,7 @@ function renderNetworkHero() {
   const title = hero.title?.[lang] || hero.title?.es || '';
   const description = hero.description?.[lang] || hero.description?.es || '';
 
-  const statsHtml = (hero.stats || []).map((s, i) => `
+  const statsHtml = filterVisibleStats(hero.stats).map((s, i) => `
     <div class="rd-hero-stat text-center">
       <p class="text-3xl font-extrabold text-white leading-none">${esc(s.value)}</p>
       <p class="text-xs font-bold uppercase tracking-wider mt-1.5" style="color:rgba(255,244,225,.75)">${esc(s.label?.[lang] || s.label?.es || '')}</p>
@@ -643,7 +651,7 @@ function renderNetworkHero() {
       <div class="max-w-7xl mx-auto relative z-10">
         <h1 class="font-extrabold mb-6" style="color:#FFF4E1;letter-spacing:-.025em;font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.05;max-width:20ch">${esc(title)}</h1>
         <p class="text-lg leading-relaxed max-w-3xl mb-8" style="color:rgba(255,255,255,.9)">${esc(description)}</p>
-        <div class="rd-hero-stats-grid">${statsHtml}</div>
+        ${statsHtml ? `<div class="rd-hero-stats-grid">${statsHtml}</div>` : ''}
       </div>
     </div>`;
 }
