@@ -49,8 +49,11 @@ const EXPECTED_BY_FILE = {
 // F3 bis (P-66) añade a cada vista implicada el import del helper puro
 // assets/js/utils/stat-visibility.js: las siete excepciones se desplazan +1 línea y siguen
 // siendo las mismas expresiones con las mismas categorías. Mismos recuentos.
+// F4 bis (P-66) añade a governance.js dos imports (router y membership): su excepción
+// ESTRUCTURAL se desplaza +2 (700 → 702). Sigue siendo la misma expresión, con la misma
+// categoría; los demás ficheros no se mueven.
 const EXPECTED_EXCEPTIONS = [
-  { file: 'assets/js/views/governance.js', line: 700, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/governance.js', line: 702, category: 'ESTRUCTURAL' },
   { file: 'assets/js/views/marketplace.js', line: 1763, category: 'HELPER_QUE_ESCAPA' },
   { file: 'assets/js/views/marketplace.js', line: 1948, category: 'ESTRUCTURAL' },
   { file: 'assets/js/views/marketplace.js', line: 1950, category: 'COMPOSICION_CADENA' },
@@ -153,11 +156,15 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
   // condiciones, clases de un mapa del código y fragmentos ya compuestos con esc()).
   // CS-22: 134 al pasar por esc() todo dato de las plantillas HTML. Solo baja:
   // ninguna salida nueva sin escapar (lo impone escape-coverage.test.mjs).
-  assert.equal(indirectOutputCandidates.total, 134);
+  // F4 bis (P-66): 135 con `stakeBtnHtml`, el fragmento del CTA de adhesión de
+  // Gobernanza. Es del mismo tipo que `consensueGroupsHtml` o `meetingsHtml`:
+  // marcado compuesto por el propio fichero, con rótulo y URL ya escapados
+  // (`esc(...)`), y la acción resuelta por el helper compartido.
+  assert.equal(indirectOutputCandidates.total, 135);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/footer.js': 2,
     'assets/js/components/header.js': 4,
-    'assets/js/views/governance.js': 22,
+    'assets/js/views/governance.js': 23,
     'assets/js/views/home.js': 18,
     'assets/js/views/knowledge.js': 14,
     'assets/js/views/marketplace.js': 18,
