@@ -43,6 +43,9 @@ const EXPECTED_BY_FILE = {
 // F6 (el código entra en la búsqueda) añade UNA línea más en getSearchHaystack, por encima de las
 // cinco: +1 otra vez (acumulado +10 sobre la línea base de F0). Mismo criterio: mismas siete
 // expresiones, mismas categorías y mismos recuentos.
+// F3.01 (P-66) retira la constante demo COURSE_MODALITY y extrae resolveCourses: +8 líneas
+// netas por encima de la excepción de training.js, que pasa de 434 a 442. Misma expresión,
+// misma categoría y mismos recuentos.
 const EXPECTED_EXCEPTIONS = [
   { file: 'assets/js/views/governance.js', line: 699, category: 'ESTRUCTURAL' },
   { file: 'assets/js/views/marketplace.js', line: 1762, category: 'HELPER_QUE_ESCAPA' },
@@ -50,7 +53,7 @@ const EXPECTED_EXCEPTIONS = [
   { file: 'assets/js/views/marketplace.js', line: 1949, category: 'COMPOSICION_CADENA' },
   { file: 'assets/js/views/marketplace.js', line: 1988, category: 'HELPER_QUE_ESCAPA' },
   { file: 'assets/js/views/marketplace.js', line: 2148, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/training.js', line: 434, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/training.js', line: 442, category: 'ESTRUCTURAL' },
 ];
 
 test('la clasificación VAN-1.2 reproduce su línea base', async () => {
