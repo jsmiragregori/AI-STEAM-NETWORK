@@ -927,7 +927,7 @@ export function render() {
 
   const statsHtml = heroStats.map(s => `
     <div class="rd-hero-stat text-center">
-      <p class="text-3xl font-extrabold text-white leading-tight">${esc(s.value || '')}</p>
+      <p class="text-3xl font-extrabold text-white leading-tight">${esc(s.value)}</p>
       <p class="text-[10px] font-extrabold uppercase tracking-widest mt-2" style="color:rgba(255,244,225,.75)">${esc(pickLang(s.label))}</p>
     </div>
   `).join('');
