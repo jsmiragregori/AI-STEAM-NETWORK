@@ -15,7 +15,7 @@ const EXPECTED_PER_FILE = [
   // total de interpolaciones escapadas baja en una; no desaparece ningún
   // escapado (lo vigila escape-coverage.test.mjs).
   { file: 'assets/js/views/governance.js', unescaped: 1, escaped: 98 },
-  { file: 'assets/js/views/knowledge.js', unescaped: 0, escaped: 9 },
+  { file: 'assets/js/views/knowledge.js', unescaped: 0, escaped: 10 },
   { file: 'assets/js/views/marketplace.js', unescaped: 5, escaped: 12 },
   { file: 'assets/js/views/news.js', unescaped: 0, escaped: 4 }, // CS-20
   // VAN-2.2: 10 y no 9 porque el rótulo del CTA del hero aparece ahora también
@@ -75,8 +75,10 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // F4 bis (P-66): 133 al resolver el rótulo del CTA de Gobernanza en una
   // constante compartida (ver EXPECTED_PER_FILE). Sigue sin haber ninguna
   // interpolación de dato sin escapar.
+  // C14 (códigos de Conocimiento): 134 con la etiqueta local del código en `knowledge.js` (9 → 10 en su
+  // ficha): una interpolación más, escapada como todas; ninguna sin escapar.
   assert.equal(report.pickLangInterpolations.unescaped, 7);
-  assert.equal(report.pickLangInterpolations.escaped, 133);
+  assert.equal(report.pickLangInterpolations.escaped, 134);
   assert.deepEqual(
     report.pickLangInterpolations.perFile.map(({ file, unescaped, escaped }) => ({ file, unescaped, escaped })),
     EXPECTED_PER_FILE,
