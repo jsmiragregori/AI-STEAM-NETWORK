@@ -67,7 +67,10 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // la regla de estadísticas a cero. Es un recuento de ficheros, no de
   // superficie: no define vista, no importa escape-html ni usa pickLang, y las
   // demás cifras de esta prueba siguen idénticas.
-  assert.equal(report.scannedFiles, 25);
+  // C13 (códigos de Formación): 26 con assets/js/utils/course-code-display.js, el helper puro de
+  // presentación y búsqueda de los códigos de un curso. Es un recuento de ficheros, no de superficie: no
+  // define vista, no importa escape-html ni usa pickLang, y las demás cifras de esta prueba siguen idénticas.
+  assert.equal(report.scannedFiles, 26);
   // CS-20: las cuatro de news.js pasan a escapadas (11 → 7 y 130 → 134).
   // F4 bis (P-66): 133 al resolver el rótulo del CTA de Gobernanza en una
   // constante compartida (ver EXPECTED_PER_FILE). Sigue sin haber ninguna

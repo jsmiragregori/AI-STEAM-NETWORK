@@ -52,6 +52,9 @@ const EXPECTED_BY_FILE = {
 // F4 bis (P-66) añade a governance.js dos imports (router y membership): su excepción
 // ESTRUCTURAL se desplaza +2 (700 → 702). Sigue siendo la misma expresión, con la misma
 // categoría; los demás ficheros no se mueven.
+// C13 (códigos de Formación) desplaza +25 la excepción ESTRUCTURAL de training.js (443 → 468):
+// imports y UI_TEXT de los dos códigos, el paso de los campos por resolveCourses, la línea de código
+// en courseCard y el código en la búsqueda. Sigue siendo la misma expresión, con la misma categoría.
 const EXPECTED_EXCEPTIONS = [
   { file: 'assets/js/views/governance.js', line: 702, category: 'ESTRUCTURAL' },
   { file: 'assets/js/views/marketplace.js', line: 1763, category: 'HELPER_QUE_ESCAPA' },
@@ -59,7 +62,7 @@ const EXPECTED_EXCEPTIONS = [
   { file: 'assets/js/views/marketplace.js', line: 1950, category: 'COMPOSICION_CADENA' },
   { file: 'assets/js/views/marketplace.js', line: 1989, category: 'HELPER_QUE_ESCAPA' },
   { file: 'assets/js/views/marketplace.js', line: 2149, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/training.js', line: 443, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/training.js', line: 468, category: 'ESTRUCTURAL' },
 ];
 
 test('la clasificación VAN-1.2 reproduce su línea base', async () => {
@@ -160,7 +163,10 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
   // Gobernanza. Es del mismo tipo que `consensueGroupsHtml` o `meetingsHtml`:
   // marcado compuesto por el propio fichero, con rótulo y URL ya escapados
   // (`esc(...)`), y la acción resuelta por el helper compartido.
-  assert.equal(indirectOutputCandidates.total, 135);
+  // C13 (códigos de Formación): 136 y `training.js` 11 → 12 con `codeLinesHtml`, el fragmento de las
+  // líneas de código de la card. Mismo tipo que `stakeBtnHtml`: marcado compuesto por el propio fichero,
+  // con la etiqueta y el valor ya escapados (`esc(...)`); ni el código ni el externo llegan sin escapar.
+  assert.equal(indirectOutputCandidates.total, 136);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/footer.js': 2,
     'assets/js/components/header.js': 4,
@@ -172,7 +178,7 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
     'assets/js/views/sitemap.js': 2,
     'assets/js/views/news.js': 8,
     'assets/js/views/sectors.js': 2,
-    'assets/js/views/training.js': 11,
+    'assets/js/views/training.js': 12,
   });
 
   // VAN-3B.2.1 tría las ocho candidatas de Header: cuatro eran texto
