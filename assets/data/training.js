@@ -359,9 +359,9 @@ export const TRAINING_CONFIG = {
       "id": "master-skills",
       "visible": true,
       "title": {
-        "es": "Master · Skills y Empleabilidad",
-        "en": "Master · Skills and Employability",
-        "va": "Master · Habilitats i Empleabilitat"
+        "es": "Actividades extracurriculares",
+        "en": "Extracurricular activities",
+        "va": "Activitats extracurriculars"
       },
       "skillsBlock": {
         "visible": true,
@@ -546,9 +546,9 @@ export const TRAINING_CONFIG = {
       "pathBlock": {
         "visible": true,
         "title": {
-          "es": "Puente al Máster AI-SECRETT (Track A)",
-          "en": "Master AI-SECRETT Bridge (Track A)",
-          "va": "Pont al Màster AI-SECRETT"
+          "es": "Actividades extracurriculares",
+          "en": "Extracurricular activities",
+          "va": "Activitats extracurriculars"
         },
         "steps": [
           {
@@ -2223,6 +2223,9 @@ export const TRAINING_CONFIG = {
     "courses": [
       {
         "id": "ai-industria-fp",
+        "code": "VET-2026-003",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-08",
         "title": {
           "es": "[DEMO] Inteligencia Artificial Aplicada a la Industria 4.0",
@@ -2262,6 +2265,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "agricultura-precision-fp",
+        "code": "VET-2026-026",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-27",
         "title": {
           "es": "[DEMO] Agricultura de Precisión con IA y Drones",
@@ -2302,6 +2308,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "monitorizacion-ambiental-fp",
+        "code": "VET-2026-042",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-02",
         "title": {
           "es": "[DEMO] Monitorización Ambiental con IoT e IA",
@@ -2340,6 +2349,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "diseno-generativo-fp",
+        "code": "VET-2026-005",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-12",
         "title": {
           "es": "[DEMO] Diseño Generativo e Impresión 3D con IA",
@@ -2377,6 +2389,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "narrativa-digital-fp",
+        "code": "VET-2026-008",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-19",
         "title": {
           "es": "[DEMO] Narrativa Digital y Creación de Contenidos con IA",
@@ -2414,6 +2429,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "robotica-colaborativa-fp",
+        "code": "VET-2026-012",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-27",
         "title": {
           "es": "[DEMO] Robótica Colaborativa e IA Industrial",
@@ -2450,6 +2468,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "produccion-musical-ia-fp",
+        "code": "VET-2026-015",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-03",
         "title": {
           "es": "[DEMO] Producción Musical y Sonido Asistidos por IA",
@@ -2485,6 +2506,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "ciberseguridad-ia-fp",
+        "code": "VET-2026-017",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-10",
         "title": {
           "es": "[DEMO] Ciberseguridad e Inteligencia Artificial",
@@ -2523,6 +2547,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "imagen-medica-ia-fp",
+        "code": "VET-2026-019",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-14",
         "title": {
           "es": "[DEMO] Análisis de Imagen Médica con IA",
@@ -2559,6 +2586,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "fotogrametria-drones-fp",
+        "code": "VET-2026-022",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-20",
         "title": {
           "es": "[DEMO] Fotogrametría, Drones y Modelado 3D",
@@ -2596,6 +2626,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "gestion-residuos-iot-fp",
+        "code": "VET-2026-025",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-25",
         "title": {
           "es": "[DEMO] Gestión Inteligente de Residuos con IoT e IA",
@@ -2634,6 +2667,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "gamificacion-ra-fp",
+        "code": "VET-2026-029",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-04",
         "title": {
           "es": "[DEMO] Gamificación y Realidad Aumentada en el Aula",
@@ -2670,6 +2706,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "fabricacion-aditiva-ia-fp",
+        "code": "VET-2026-031",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-10",
         "title": {
           "es": "[DEMO] Fabricación Aditiva e IA para la Industria",
@@ -2706,6 +2745,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "chatbots-servicios-publicos-fp",
+        "code": "VET-2026-034",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-17",
         "title": {
           "es": "[DEMO] Asistentes Virtuales y Chatbots para Servicios Públicos",
@@ -2742,6 +2784,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "ml-cultivos-fp",
+        "code": "VET-2026-037",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-24",
         "title": {
           "es": "[DEMO] Machine Learning para el Análisis de Cultivos",
@@ -2777,6 +2822,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "digitalizacion-patrimonio-fp",
+        "code": "VET-2026-039",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-31",
         "title": {
           "es": "[DEMO] Digitalización del Patrimonio Cultural con IA",
@@ -2813,6 +2861,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "salud-mental-digital-fp",
+        "code": "VET-2026-044",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-07",
         "title": {
           "es": "[DEMO] Tecnología y Bienestar — IA en Salud Mental",
@@ -2850,6 +2901,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "energias-renovables-ia-fp",
+        "code": "VET-2026-046",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-11",
         "title": {
           "es": "[DEMO] Energías Renovables y Optimización con IA",
@@ -2887,6 +2941,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "logistica-supply-chain-fp",
+        "code": "VET-2026-049",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-16",
         "title": {
           "es": "[DEMO] Logística Inteligente y Cadena de Suministro con IA",
@@ -2923,6 +2980,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "accesibilidad-ia-fp",
+        "code": "VET-2026-051",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-22",
         "title": {
           "es": "[DEMO] Accesibilidad Digital e IA Inclusiva",
@@ -2959,6 +3019,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "turismo-inteligente-fp",
+        "code": "VET-2026-056",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-28",
         "title": {
           "es": "[DEMO] Turismo Inteligente — Datos y Experiencia Digital",
@@ -2997,6 +3060,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "arte-imagen-generativa-fp",
+        "code": "VET-2026-058",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-05-05",
         "title": {
           "es": "[DEMO] Arte e Imagen Generativa con IA",
@@ -3034,6 +3100,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "seguridad-alimentaria-ia-fp",
+        "code": "VET-2026-061",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-05-12",
         "title": {
           "es": "[DEMO] Seguridad Alimentaria y Trazabilidad con IA",
@@ -3072,6 +3141,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "ia-etica-aula-docentes",
+        "code": "TCH-2026-018",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-11",
         "title": {
           "es": "[DEMO] IA Ética y Uso Responsable en el Aula",
@@ -3106,6 +3178,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "administracion-electronica-docentes",
+        "code": "TCH-2026-059",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-05-07",
         "title": {
           "es": "[DEMO] Administración Electrónica e IA para el Sector Público",
@@ -3142,6 +3217,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "steam-creatividad-generativa-docentes",
+        "code": "TCH-2026-002",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-06",
         "title": {
           "es": "[DEMO] STEAM Creativo e IA Generativa para Proyectos de Aula",
@@ -3179,6 +3257,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "vision-artificial-industria-docentes",
+        "code": "TCH-2026-006",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-13",
         "title": {
           "es": "[DEMO] Visión Artificial para Retos Industriales en FP",
@@ -3215,6 +3296,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "datos-climaticos-docentes",
+        "code": "TCH-2026-009",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-20",
         "title": {
           "es": "[DEMO] Datos Climáticos, IA y Sostenibilidad en el Aula",
@@ -3252,6 +3336,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "arte-datos-turismo-docentes",
+        "code": "TCH-2026-011",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-27",
         "title": {
           "es": "[DEMO] Arte de Datos e IA para Turismo Cultural",
@@ -3286,6 +3373,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "ia-agroalimentaria-docentes",
+        "code": "TCH-2026-014",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-03",
         "title": {
           "es": "[DEMO] IA para Sistemas Agroalimentarios en Proyectos STEAM",
@@ -3324,6 +3414,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "salud-digital-aula-docentes",
+        "code": "TCH-2026-021",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-17",
         "title": {
           "es": "[DEMO] Salud Digital, IA Responsable y Aprendizaje Basado en Casos",
@@ -3359,6 +3452,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "automatizacion-administracion-docentes",
+        "code": "TCH-2026-023",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-24",
         "title": {
           "es": "[DEMO] Automatización Inteligente y Servicios Públicos como Reto de Aula",
@@ -3395,6 +3491,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "creatividad-aumentada-docentes",
+        "code": "TCH-2026-027",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-02",
         "title": {
           "es": "[DEMO] Creatividad Aumentada, Diseño y Pensamiento Visual con IA",
@@ -3432,6 +3531,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "iot-aula-sectores-docentes",
+        "code": "TCH-2026-030",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-09",
         "title": {
           "es": "[DEMO] IoT, Sensores e IA para Retos Multisectoriales",
@@ -3468,6 +3570,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "evaluacion-ia-steam-docentes",
+        "code": "TCH-2026-033",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-16",
         "title": {
           "es": "[DEMO] Evaluación de Proyectos STEAM con Evidencias Generadas por IA",
@@ -3503,6 +3608,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "mantenimiento-predictivo-docentes",
+        "code": "TCH-2026-036",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-23",
         "title": {
           "es": "[DEMO] Mantenimiento Predictivo como Proyecto Didáctico",
@@ -3537,6 +3645,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "narrativas-inmersivas-docentes",
+        "code": "TCH-2026-038",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-30",
         "title": {
           "es": "[DEMO] Narrativas Inmersivas con IA para Patrimonio y Cultura",
@@ -3574,6 +3685,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "ia-inclusiva-accesibilidad-docentes",
+        "code": "TCH-2026-041",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-02",
         "title": {
           "es": "[DEMO] IA Inclusiva, Accesibilidad y Diseño Universal",
@@ -3608,6 +3722,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "gemelos-digitales-aula-docentes",
+        "code": "TCH-2026-043",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-06",
         "title": {
           "es": "[DEMO] Gemelos Digitales para Simular Ciudades, Fábricas y Aulas",
@@ -3646,6 +3763,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "pensamiento-critico-modelos-docentes",
+        "code": "TCH-2026-045",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-10",
         "title": {
           "es": "[DEMO] Pensamiento Crítico ante Modelos de IA en Contextos STEAM",
@@ -3682,6 +3802,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "musica-sonido-ia-docentes",
+        "code": "TCH-2026-048",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-14",
         "title": {
           "es": "[DEMO] Música, Sonido e IA para Aprendizaje Creativo",
@@ -3719,6 +3842,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "movilidad-datos-urbanos-docentes",
+        "code": "TCH-2026-050",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-18",
         "title": {
           "es": "[DEMO] Movilidad, Datos Urbanos e IA para Retos STEAM",
@@ -3757,6 +3883,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "seguridad-alimentaria-docentes",
+        "code": "TCH-2026-053",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-22",
         "title": {
           "es": "[DEMO] Seguridad Alimentaria, Trazabilidad e IA en el Aula",
@@ -3795,6 +3924,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "laboratorios-creativos-ia-docentes",
+        "code": "TCH-2026-054",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-27",
         "title": {
           "es": "[DEMO] Laboratorios Creativos de IA para Retos del Ecosistema",
@@ -3831,6 +3963,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "privacidad-datos-aula-docentes",
+        "code": "TCH-2026-057",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-05-01",
         "title": {
           "es": "[DEMO] Privacidad, Datos y Gobernanza de IA para Docentes",
@@ -3865,6 +4000,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "emprendimiento-steam-ia-docentes",
+        "code": "TCH-2026-060",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-05-08",
         "title": {
           "es": "[DEMO] Emprendimiento STEAM con IA, Arte y Prototipos",
@@ -3903,6 +4041,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "bienestar-docente-ia-docentes",
+        "code": "TCH-2026-062",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-05-13",
         "title": {
           "es": "[DEMO] Bienestar Docente, Organización del Trabajo e IA",
@@ -3939,6 +4080,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "ml-diagnostico-master",
+        "code": "EXT-2026-010",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-23",
         "title": {
           "es": "[DEMO] Machine Learning para Diagnóstico Clínico",
@@ -3973,6 +4117,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "gemelos-digitales-master",
+        "code": "EXT-2026-032",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-14",
         "title": {
           "es": "[DEMO] Gemelos Digitales y Simulación para la Industria",
@@ -4008,6 +4155,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "patrimonio-cultural-master",
+        "code": "EXT-2026-052",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-22",
         "title": {
           "es": "[DEMO] IA Generativa para Patrimonio Cultural y Turismo",
@@ -4042,6 +4192,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "agentes-ia-servicios-publicos-master",
+        "code": "EXT-2026-001",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-04",
         "title": {
           "es": "[DEMO] Agentes de IA para Servicios Públicos y Participación Ciudadana",
@@ -4078,6 +4231,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "creatividad-computacional-steam-master",
+        "code": "EXT-2026-004",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-10",
         "title": {
           "es": "[DEMO] Creatividad Computacional e IA Generativa para Proyectos STEAM",
@@ -4115,6 +4271,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "vision-artificial-calidad-industrial-master",
+        "code": "EXT-2026-007",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-18",
         "title": {
           "es": "[DEMO] Visión Artificial para Calidad, Seguridad y Diseño Industrial",
@@ -4151,6 +4310,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "ia-agroalimentaria-precision-master",
+        "code": "EXT-2026-013",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-01-29",
         "title": {
           "es": "[DEMO] IA para Agroalimentación de Precisión y Trazabilidad Creativa",
@@ -4189,6 +4351,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "modelos-climaticos-biodiversidad-master",
+        "code": "EXT-2026-016",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-06",
         "title": {
           "es": "[DEMO] Modelos de IA para Clima, Biodiversidad y Visualización Ambiental",
@@ -4226,6 +4391,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "learning-analytics-generativa-master",
+        "code": "EXT-2026-020",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-15",
         "title": {
           "es": "[DEMO] Learning Analytics e IA Generativa para Educación Personalizada",
@@ -4260,6 +4428,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "bioarte-datos-salud-master",
+        "code": "EXT-2026-024",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-02-24",
         "title": {
           "es": "[DEMO] Bioarte, Datos de Salud e IA Responsable",
@@ -4295,6 +4466,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "robots-colaborativos-industria-creativa-master",
+        "code": "EXT-2026-028",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-03",
         "title": {
           "es": "[DEMO] Robots Colaborativos, IA y Fabricación Creativa",
@@ -4331,6 +4505,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "turismo-inteligente-experiencias-master",
+        "code": "EXT-2026-035",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-03-21",
         "title": {
           "es": "[DEMO] Turismo Inteligente, Experiencias Inmersivas e IA Narrativa",
@@ -4369,6 +4546,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "ia-compras-publicas-sostenibles-master",
+        "code": "EXT-2026-040",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-01",
         "title": {
           "es": "[DEMO] IA para Compra Pública Innovadora y Sostenible",
@@ -4406,6 +4586,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "food-design-ia-master",
+        "code": "EXT-2026-047",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-12",
         "title": {
           "es": "[DEMO] Food Design con IA, Sensorización y Experiencia de Usuario",
@@ -4445,6 +4628,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "ciberseguridad-ia-infraestructuras-master",
+        "code": "EXT-2026-055",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-04-28",
         "title": {
           "es": "[DEMO] IA para Ciberseguridad de Infraestructuras Críticas STEAM",
@@ -4483,6 +4669,9 @@ export const TRAINING_CONFIG = {
       },
       {
         "id": "laboratorio-retos-multisectoriales-master",
+        "code": "EXT-2026-063",
+        "externalCode": null,
+        "codeDisplay": "internal",
         "createdAt": "2026-05-16",
         "title": {
           "es": "[DEMO] Laboratorio Master de Retos Multisectoriales con IA",
