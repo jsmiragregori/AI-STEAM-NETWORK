@@ -1703,6 +1703,7 @@ export const GOVERNANCE_CONFIG = {
     "docs": [
       {
         "id": "internal-progress-q1",
+        "code": "DOC-2026-012",
         "visible": true,
         "order": 10,
         "title": {
@@ -1735,6 +1736,7 @@ export const GOVERNANCE_CONFIG = {
       },
       {
         "id": "oer-policy",
+        "code": "DOC-2026-010",
         "visible": true,
         "order": 4,
         "title": {
@@ -1767,6 +1769,7 @@ export const GOVERNANCE_CONFIG = {
       },
       {
         "id": "sc-minutes-q1-2026",
+        "code": "DOC-2026-011",
         "visible": true,
         "order": 8,
         "title": {
@@ -1799,6 +1802,7 @@ export const GOVERNANCE_CONFIG = {
       },
       {
         "id": "consensue-manual",
+        "code": "DOC-2026-009",
         "visible": true,
         "order": 11,
         "title": {
@@ -1831,6 +1835,7 @@ export const GOVERNANCE_CONFIG = {
       },
       {
         "id": "d1-2-governance",
+        "code": "DOC-2026-007",
         "visible": true,
         "order": 2,
         "title": {
@@ -1863,6 +1868,7 @@ export const GOVERNANCE_CONFIG = {
       },
       {
         "id": "collaboration-agreement-model",
+        "code": "DOC-2026-006",
         "visible": true,
         "order": 3,
         "title": {
@@ -1895,6 +1901,7 @@ export const GOVERNANCE_CONFIG = {
       },
       {
         "id": "ethics-code",
+        "code": "DOC-2026-008",
         "visible": true,
         "order": 5,
         "title": {
@@ -1927,6 +1934,7 @@ export const GOVERNANCE_CONFIG = {
       },
       {
         "id": "ga-minutes-1",
+        "code": "DOC-2026-004",
         "visible": true,
         "order": 7,
         "title": {
@@ -1959,6 +1967,7 @@ export const GOVERNANCE_CONFIG = {
       },
       {
         "id": "gender-equality-policy",
+        "code": "DOC-2026-005",
         "visible": true,
         "order": 12,
         "title": {
@@ -1991,6 +2000,7 @@ export const GOVERNANCE_CONFIG = {
       },
       {
         "id": "consortium-agreement",
+        "code": "DOC-2026-001",
         "visible": true,
         "order": 1,
         "title": {
@@ -2039,6 +2049,7 @@ export const GOVERNANCE_CONFIG = {
       },
       {
         "id": "dmp",
+        "code": "DOC-2026-002",
         "visible": true,
         "order": 6,
         "title": {
@@ -2071,6 +2082,7 @@ export const GOVERNANCE_CONFIG = {
       },
       {
         "id": "ethics-declaration",
+        "code": "DOC-2026-003",
         "visible": true,
         "order": 9,
         "title": {

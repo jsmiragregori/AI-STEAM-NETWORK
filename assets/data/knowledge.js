@@ -290,6 +290,7 @@ export const KNOWLEDGE_CONFIG = {
     "resources": [
       {
         "id": "o1",
+        "code": "OER-2026-036",
         "visible": true,
         "createdAt": "2026-05-10",
         "title": {
@@ -320,6 +321,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "o2",
+        "code": "OER-2026-034",
         "visible": true,
         "createdAt": "2026-05-01",
         "title": {
@@ -347,6 +349,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "o3",
+        "code": "OER-2026-031",
         "visible": true,
         "createdAt": "2026-04-20",
         "title": {
@@ -374,6 +377,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "o4",
+        "code": "OER-2026-024",
         "visible": true,
         "createdAt": "2026-04-05",
         "title": {
@@ -404,6 +408,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "o5",
+        "code": "OER-2026-018",
         "visible": true,
         "createdAt": "2026-03-15",
         "title": {
@@ -432,6 +437,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "o6",
+        "code": "OER-2026-015",
         "visible": true,
         "createdAt": "2026-03-01",
         "title": {
@@ -460,6 +466,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "o7",
+        "code": "OER-2026-012",
         "visible": true,
         "createdAt": "2026-02-14",
         "title": {
@@ -487,6 +494,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "o8",
+        "code": "OER-2026-006",
         "visible": true,
         "createdAt": "2026-01-15",
         "title": {
@@ -515,6 +523,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "o9",
+        "code": "OER-2026-005",
         "visible": true,
         "createdAt": "2025-12-09",
         "title": {
@@ -544,6 +553,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "o10",
+        "code": "OER-2026-004",
         "visible": true,
         "createdAt": "2025-10-27",
         "title": {
@@ -575,6 +585,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "o11",
+        "code": "OER-2026-003",
         "visible": true,
         "createdAt": "2025-09-03",
         "title": {
@@ -603,6 +614,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "o12",
+        "code": "OER-2026-002",
         "visible": true,
         "createdAt": "2025-07-22",
         "title": {
@@ -633,6 +645,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "o13",
+        "code": "OER-2026-001",
         "visible": true,
         "createdAt": "2025-06-12",
         "title": {
@@ -783,6 +796,7 @@ export const KNOWLEDGE_CONFIG = {
     "templates": [
       {
         "id": "t4",
+        "code": "TPL-2026-029",
         "visible": true,
         "title": {
           "es": "[DEMO] Guía Rápida de Formación Docente",
@@ -809,6 +823,7 @@ export const KNOWLEDGE_CONFIG = {
       },
       {
         "id": "t5",
+        "code": "TPL-2026-032",
         "visible": true,
         "title": {
           "es": "[DEMO] Formulario de Adhesión Stakeholder",
