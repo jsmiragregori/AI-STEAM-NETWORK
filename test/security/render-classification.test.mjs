@@ -55,8 +55,10 @@ const EXPECTED_BY_FILE = {
 // C13 (códigos de Formación) desplaza +25 la excepción ESTRUCTURAL de training.js (443 → 468):
 // imports y UI_TEXT de los dos códigos, el paso de los campos por resolveCourses, la línea de código
 // en courseCard y el código en la búsqueda. Sigue siendo la misma expresión, con la misma categoría.
+// C15 (códigos de Gobernanza) desplaza +12 la de governance.js (702 → 714): la etiqueta y el helper de la
+// línea de código de los documentos. Misma expresión y categoría.
 const EXPECTED_EXCEPTIONS = [
-  { file: 'assets/js/views/governance.js', line: 702, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/governance.js', line: 714, category: 'ESTRUCTURAL' },
   { file: 'assets/js/views/marketplace.js', line: 1763, category: 'HELPER_QUE_ESCAPA' },
   { file: 'assets/js/views/marketplace.js', line: 1948, category: 'ESTRUCTURAL' },
   { file: 'assets/js/views/marketplace.js', line: 1950, category: 'COMPOSICION_CADENA' },

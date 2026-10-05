@@ -14,7 +14,7 @@ const EXPECTED_PER_FILE = [
   // compartirla entre las ramas externa, interna y de rótulo sin enlace. El
   // total de interpolaciones escapadas baja en una; no desaparece ningún
   // escapado (lo vigila escape-coverage.test.mjs).
-  { file: 'assets/js/views/governance.js', unescaped: 1, escaped: 98 },
+  { file: 'assets/js/views/governance.js', unescaped: 1, escaped: 99 },
   { file: 'assets/js/views/knowledge.js', unescaped: 0, escaped: 10 },
   { file: 'assets/js/views/marketplace.js', unescaped: 5, escaped: 12 },
   { file: 'assets/js/views/news.js', unescaped: 0, escaped: 4 }, // CS-20
@@ -77,8 +77,10 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // interpolación de dato sin escapar.
   // C14 (códigos de Conocimiento): 134 con la etiqueta local del código en `knowledge.js` (9 → 10 en su
   // ficha): una interpolación más, escapada como todas; ninguna sin escapar.
+  // C15 (códigos de Gobernanza): 135 con la etiqueta local del código en `governance.js` (98 → 99), misma
+  // regla: escapada y sin abrir ninguna vía sin escapar.
   assert.equal(report.pickLangInterpolations.unescaped, 7);
-  assert.equal(report.pickLangInterpolations.escaped, 134);
+  assert.equal(report.pickLangInterpolations.escaped, 135);
   assert.deepEqual(
     report.pickLangInterpolations.perFile.map(({ file, unescaped, escaped }) => ({ file, unescaped, escaped })),
     EXPECTED_PER_FILE,
