@@ -510,7 +510,7 @@ export async function generateInventory() {
     const source = await readFile(filePath, 'utf8');
 
     if (/\bfunction\s+esc\s*\(|\bconst\s+esc\s*=/.test(source)) filesDefiningEsc.push(relativePath);
-    if (/import\s*\{\s*escapeHtml\s+as\s+esc\s*\}\s*from\s*['"]\.\.\/utils\/escape-html\.js['"]/.test(source)) {
+    if (/import\s*\{\s*escapeHtml\s+as\s+esc\s*\}\s*from\s*['"]\.\.\/utils\/escape-html\.js(?:\?v=[0-9a-f]{8})?['"]/.test(source)) {
       filesImportingEscapeHtml.push(relativePath);
     }
 
