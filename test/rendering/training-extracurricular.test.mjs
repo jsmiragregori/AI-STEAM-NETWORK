@@ -207,3 +207,13 @@ test('con el aviso oculto no se pinta ni el texto ni el enlace', () => {
     seccion.disclaimerBlock.visible = original;
   }
 });
+
+test('una ruta interna del enlace se pinta tal cual (href interno)', () => {
+  // F4/P2: la vista valida el esquema con getSafeEditorialUrl y conserva las rutas internas admitidas.
+  for (const ruta of ['assets/downloads/convocatoria.pdf', './assets/downloads/convocatoria.pdf',
+    '../recursos/convocatoria.pdf']) {
+    const html = conLink(structuredClone({ url: ruta, text: LINK_TEXT, label: LINK_LABEL }), () => renderMaster('es'));
+    assert.ok(html.includes(`href="${ruta}"`), `falta el href interno ${ruta}`);
+    assert.ok(!html.includes(`href="https://${ruta}`), `no debe convertirse en https:// (${ruta})`);
+  }
+});
