@@ -559,6 +559,15 @@ function formatDocDate(dateStr) {
 function tabDocumentos(govT) {
   const s   = govT?.tabContent_documentos || {};
   const cms = GOVERNANCE_CONFIG?.documentationBlock || {};
+
+  // C15: código propio del documento. Etiqueta local (no translations.js, como en el resto de vistas).
+  const GOV_CODE_LABEL = { es: 'Código AI-STEAM', en: 'AI-STEAM code', va: 'Codi AI-STEAM' };
+  const govCodeLineHtml = (doc) => {
+    const code = typeof doc?.code === 'string' ? doc.code.trim() : '';
+    if (!code) return '';
+    return `<p class="rd-card-mp-code"><span class="sr-only">${esc(pickLang(GOV_CODE_LABEL, ''))}: </span>${esc(code)}</p>`;
+  };
+
   const hasCmsDocs = Object.prototype.hasOwnProperty.call(cms, 'docs');
   const accessLabels = cms.accessLabels || { public: { es: '', en: '', va: '' }, partners: { es: '', en: '', va: '' } };
   const pageSize = cms.pageSize || 12;
@@ -578,7 +587,9 @@ function tabDocumentos(govT) {
     const title = (pickLang(doc.title) || '').toLowerCase();
     const typesStr = (Array.isArray(doc.types) ? doc.types.map(t => (t.label?.es || '').toLowerCase()).join(' ') : '').toLowerCase();
     const id = (doc.id || '').toLowerCase();
-    return title.includes(term) || typesStr.includes(term) || id.includes(term);
+    // C15: también por el código propio.
+    const code = (typeof doc.code === 'string' ? doc.code.trim() : '').toLowerCase();
+    return title.includes(term) || typesStr.includes(term) || id.includes(term) || code.includes(term);
   }
 
   function renderDocs() {
@@ -618,6 +629,7 @@ function tabDocumentos(govT) {
       return `
         <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden h-full group">
           <div class="rd-card-mp-ceja">
+            ${govCodeLineHtml(doc)}
             <h3 class="rd-card-mp-title break-words">${esc(pickLang(doc.title) || '')}</h3>
           </div>
           <div class="p-7 pt-5 flex flex-col justify-between flex-1">
@@ -705,7 +717,7 @@ function tabDocumentos(govT) {
       </div>
       ` : ''}
       <div>
-        <input type="text" id="gov-doc-search" aria-label="Buscar por título, tipo o ID" placeholder="Buscar por título, tipo o ID..." class="w-full px-6 py-4 rounded-full border border-eu-purple/20 focus:outline-none focus:ring-2 focus:ring-eu-purple focus:border-eu-purple text-eu-text placeholder-eu-text/40 shadow-sm transition-all text-sm mb-6" style="background:#ffffff" />
+        <input type="text" id="gov-doc-search" aria-label="Buscar por título, tipo, ID o código" placeholder="Buscar por título, tipo, ID o código..." class="w-full px-6 py-4 rounded-full border border-eu-purple/20 focus:outline-none focus:ring-2 focus:ring-eu-purple focus:border-eu-purple text-eu-text placeholder-eu-text/40 shadow-sm transition-all text-sm mb-6" style="background:#ffffff" />
         <div id="gov-docs-results">${renderDocs()}</div>
       </div>
     </div>

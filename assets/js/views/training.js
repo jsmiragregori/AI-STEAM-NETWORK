@@ -5,8 +5,23 @@ import { TRAINING_CONFIG } from '../../data/training.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 import { filterVisibleStats } from '../utils/stat-visibility.js';
+import { courseCodeSearchText, resolveCourseCodes } from '../utils/course-code-display.js';
 
 const COURSE_PARTNERS  = ['UVEG / CECU', "Ud'A / UVEG", 'CECU / Inspiring Futures Europe', 'AVA-ASAJA / CINK', 'INESC TEC / HSW', 'Region Värmland / NTNU', 'KEA / ESAD-GV / LPGA', 'LC / CECU'];
+
+// C13: etiquetas locales de los dos códigos. Viven aquí, como las del marketplace: no hace falta `cms:ui`.
+const UI_TEXT = {
+  aiSteamCode: {
+    es: 'Código AI-STEAM',
+    en: 'AI-STEAM code',
+    va: 'Codi AI-STEAM',
+  },
+  trainingCode: {
+    es: 'Código de la formación',
+    en: 'Training code',
+    va: 'Codi de la formació',
+  },
+};
 
 const TONE_MAP = {
   success: { cls: 'text-eu-purple bg-eu-purple/5 border border-eu-purple/15 hover:bg-eu-purple/10',   activeStyle: 'background:#4918AD;color:#fff;border-color:#4918AD' },
@@ -23,6 +38,7 @@ function pickLang(value, fallback = '', lang = null) {
   if (value && typeof value === 'object') return value[active] || value.es || fallback;
   return fallback;
 }
+function uiText(key) { return pickLang(UI_TEXT[key], ''); }
 function getSkillIcon(id) {
   const iconMap = {
     // FP
@@ -90,7 +106,9 @@ function filterCourses(courses, filters) {
   const q = (filters.search || '').toLowerCase().trim();
   return courses.filter(course => {
     if (q) {
-      const hit = course.title.toLowerCase().includes(q) || course.description.toLowerCase().includes(q);
+      // C13: el buscador encuentra por título, descripción y por AMBOS códigos (aunque el modo muestre uno).
+      const hit = course.title.toLowerCase().includes(q) || course.description.toLowerCase().includes(q)
+        || courseCodeSearchText(course).toLowerCase().includes(q);
       if (!hit) return false;
     }
     const sectorMatch   = !filters.sectors.length   || course.sectorIds?.some(s => filters.sectors.includes(s));
@@ -117,6 +135,9 @@ export function resolveCourses(cmsBlock, legacyCourses, lang) {
 
     return cmsCourses.map((course, idx) => ({
       id:          course.id,
+      code:        course.code,
+      externalCode: course.externalCode,
+      codeDisplay: course.codeDisplay,
       title:       pickLang(course.title, '', lang),
       level:       course.level,
       sectorIds:   course.sectorIds || [],
@@ -164,6 +185,9 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
   const linkUrl        = getSafeEditorialUrl(rawLinkUrl) || '';
   const linkTarget     = course.link?.external !== false ? '_blank' : '_self';
   const viewLabel      = trainingT?.courseViewMore || 'Ver';
+  // C13: código(s) que muestra la card, según `codeDisplay`; el externo es texto literal y sale por esc().
+  const codeLinesHtml  = resolveCourseCodes(course).map(({ kind, value }) =>
+    `<p class="rd-card-mp-code"><span class="sr-only">${esc(kind === 'internal' ? uiText('aiSteamCode') : uiText('trainingCode'))}: </span>${esc(value)}</p>`).join('');
 
   const trCv          = TRAINING_CONFIG?.coursesBlock?.chipVisibility || {};
   const trShowLevel    = trCv.level    !== false;
@@ -182,6 +206,7 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
   return `
     <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden">
       <div class="rd-card-mp-ceja">
+        ${codeLinesHtml}
         <h3 class="rd-card-mp-title">${esc(course.title)}</h3>
       </div>
       <div class="p-7 pt-5 flex-1">

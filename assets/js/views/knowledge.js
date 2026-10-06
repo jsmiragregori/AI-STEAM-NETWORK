@@ -61,6 +61,20 @@ function pickLang(value, fallback = '') {
   return fallback;
 }
 
+// C14: código propio de OER y plantillas. Etiqueta local (no translations.js, como en Marketplace).
+const CODE_LABEL = { es: 'Código AI-STEAM', en: 'AI-STEAM code', va: 'Codi AI-STEAM' };
+
+function itemCodeText(item) {
+  return typeof item?.code === 'string' ? item.code.trim() : '';
+}
+
+/** Línea de código de la ceja: texto literal escapado; sin código no se pinta nada. */
+function codeLineHtml(item) {
+  const code = itemCodeText(item);
+  if (!code) return '';
+  return `<p class="rd-card-mp-code"><span class="sr-only">${esc(pickLang(CODE_LABEL, ''))}: </span>${esc(code)}</p>`;
+}
+
 function getSectorName(sectorId) {
   if (!sectorId || sectorId === 'Todos' || sectorId === 'All' || sectorId === 'Tots') return sectorId || '';
   const sectorNames = t('sectors.sectorNames') || {};
@@ -418,7 +432,8 @@ function renderOerGridContent(search) {
           : (r.sector ? [r.sector] : []);
         const sectorStr = sectorIds.map(id => getSectorName(id)).join(' ');
         return titleStr.toLowerCase().includes(search.toLowerCase()) ||
-               sectorStr.toLowerCase().includes(search.toLowerCase());
+               sectorStr.toLowerCase().includes(search.toLowerCase()) ||
+               itemCodeText(r).toLowerCase().includes(search.toLowerCase());
       })
     : oerData;
 
@@ -515,6 +530,7 @@ function renderOerGridContent(search) {
     return `
     <div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden group">
       <div class="rd-card-mp-ceja">
+        ${codeLineHtml(r)}
         <h3 class="rd-card-mp-title line-clamp-3">${esc(rTitle)}</h3>
       </div>
       <div class="p-7 pt-5 flex-1 flex flex-col">
@@ -811,7 +827,8 @@ function renderTemplatesGridContent(search) {
         const titleStr = pickLang(tpl.title, '').toLowerCase();
         const descStr  = pickLang(tpl.description, '').toLowerCase();
         const typeStr  = pickLang(typeLabelMap[tpl.typeId]?.label, '').toLowerCase();
-        return titleStr.includes(q) || descStr.includes(q) || typeStr.includes(q);
+        return titleStr.includes(q) || descStr.includes(q) || typeStr.includes(q)
+          || itemCodeText(tpl).toLowerCase().includes(q);
       })
     : data;
 
@@ -919,6 +936,7 @@ function renderTemplatesGridContent(search) {
 
     return `<div class="rd-card-mp rd-card-mp-hover flex flex-col overflow-hidden group">
       <div class="rd-card-mp-ceja">
+        ${codeLineHtml(tpl)}
         <h3 class="rd-card-mp-title">${esc(pickLang(tpl.title, ''))}</h3>
       </div>
       <div class="p-7 pt-5 flex flex-col flex-1">
