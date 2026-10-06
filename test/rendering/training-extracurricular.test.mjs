@@ -108,13 +108,13 @@ test('la vista no escribe los rótulos a mano: los toma de traducciones/seccione
 const LINK_URL = 'https://aisecrett.eu/bid-to-our-call/';
 const LINK_TEXT = {
   es: 'La UVEG gestiona, en nombre del consorcio, la convocatoria FSTP de apoyo económico para participar en actividades extracurriculares del Máster: escuelas de verano e invierno, talleres temáticos y formación intensiva.',
-  en: "UVEG runs, on behalf of the consortium, the AI-SECRETT FSTP Call, which offers financial support for taking part in extracurricular activities linked to the master's programme: summer and winter schools, thematic workshops and intensive training events.",
+  en: "UVEG runs, on behalf of the consortium, the AiSECRETT FSTP Call, which offers financial support for taking part in extracurricular activities linked to the master's programme: summer and winter schools, thematic workshops and intensive training events.",
   va: "La UVEG gestiona, en nom del consorci, la convocatòria FSTP de suport econòmic per a participar en activitats extracurriculars del Màster: escoles d'estiu i d'hivern, tallers temàtics i formació intensiva.",
 };
 const LINK_LABEL = {
-  es: 'Consultar la convocatoria FSTP de AI-SECRETT',
-  en: 'See the AI-SECRETT FSTP Call',
-  va: "Consultar la convocatòria FSTP d'AI-SECRETT",
+  es: 'Consultar la convocatoria FSTP de AiSECRETT',
+  en: 'See the AiSECRETT FSTP Call',
+  va: "Consultar la convocatòria FSTP d'AiSECRETT",
 };
 
 const { escapeHtml } = await import('../../assets/js/utils/escape-html.js');

@@ -2,12 +2,12 @@
 // Este archivo ES la base: las claves que no están en content/_ui/*.csv solo
 // viven aquí y pueden editarse directamente. Las claves presentes en los CSV
 // se sobreescriben en cada cms:ui — esas se editan en el CSV.
-// Base: translations.js existente + overrides de 97 entradas CSV
+// Base: translations.js existente + overrides de 99 entradas CSV
 
 export const translations = {
   "es": {
     "header": {
-      "title": "AI-STEAM Network",
+      "title": "AiSTEAM Network",
       "subtitle": "Generalitat Valenciana · Conselleria d'Educació, Cultura i Universitats",
       "privateAccess": "Acceso Área Privada",
       "aules": "Aules",
@@ -42,13 +42,13 @@ export const translations = {
       "accept": "Aceptar"
     },
     "home": {
-      "badge": "Programa Digital Europe 2021-2027 · AI-SECRETT",
-      "title": "AI-STEAM Network",
-      "subtitle": "Comunidad y Transferencia de AI-SECRETT",
-      "heroTagline": "AI-STEAM Network es el ecosistema Track B de CECU para AI-SECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders moviliza centros FP forma docentes y especializa los 7 sectores AI-SECRETT en IA y creatividad.",
-      "description": "Liderada por CECU activa stakeholders moviliza centros FP forma docentes y genera evidencias para el consorcio AI-SECRETT en las 7 áreas sectoriales europeas.",
+      "badge": "Programa Digital Europe 2021-2027 · AiSECRETT",
+      "title": "AiSTEAM Network",
+      "subtitle": "Comunidad y Transferencia de AiSECRETT",
+      "heroTagline": "AiSTEAM Network es el ecosistema Track B de CECU para AiSECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders moviliza centros FP forma docentes y especializa los 7 sectores AiSECRETT en IA y creatividad.",
+      "description": "Liderada por CECU activa stakeholders moviliza centros FP forma docentes y genera evidencias para el consorcio AiSECRETT en las 7 áreas sectoriales europeas.",
       "uploadChallenge": "Propón un reto, caso o aportación",
-      "requestJoin": "Únete a la AI-STEAM Network",
+      "requestJoin": "Únete a la AiSTEAM Network",
       "stats": {
         "stakeholders": "Grupos de interés",
         "totalChallenges": "Retos y casos",
@@ -515,7 +515,7 @@ export const translations = {
       "expandSector": "Abrir brújula sectorial",
       "collapseSector": "Cerrar brújula",
       "stakeholderNote": "Tipos de organización orientativos. La participación de stakeholders es voluntaria y futura, sujeta al proceso de incorporación que se defina; la Red de Stakeholders es un órgano consultivo, no decisorio, y no implica publicación directa ni roles automáticos.",
-      "academicNote": "Posibles líneas de conexión académica, pendientes de validación por UVEG. No son contenidos aprobados del Máster AI-SECRETT."
+      "academicNote": "Posibles líneas de conexión académica, pendientes de validación por UVEG. No son contenidos aprobados del Máster AiSECRETT."
     },
     "training": {
       "title": "Itinerarios de Transferencia AI-STEAM",
@@ -563,7 +563,7 @@ export const translations = {
         "Conferenciantes invitados o sesiones de validación",
         "Inspiración para TFM/proyectos cuando es aceptada por el Track A"
       ],
-      "masterBridgeDisclaimer": "El Máster AI-SECRETT (Track A) es gobernado por UVEG y los socios académicos del consorcio. La AI-STEAM Network (Track B) no asigna ECTS, no certifica títulos universitarios ni define los criterios de evaluación del Máster.",
+      "masterBridgeDisclaimer": "El Máster AiSECRETT (Track A) es gobernado por UVEG y los socios académicos del consorcio. La AiSTEAM Network (Track B) no asigna ECTS, no certifica títulos universitarios ni define los criterios de evaluación del Máster.",
       "credentialsDisclaimer": "Los mecanismos de reconocimiento están sujetos a validación por la gobernanza de AI-SECRETT y los marcos de CECU, UVEG y TUV.IT.",
       "courseTitle": "Título del Módulo",
       "courseDescription": "Descripción",
@@ -577,7 +577,7 @@ export const translations = {
       "courseEnrolledLabel": "participantes",
       "trainingPaths": "Itinerarios de Transferencia",
       "fpPath": "Itinerario FP – CECU",
-      "masterPath": "Actividades extracurriculares AI-SECRETT (Track A)",
+      "masterPath": "Actividades extracurriculares AiSECRETT (Track A)",
       "fpPathSteps": [
         "Ciclo Formativo de Grado Superior (CFGS)",
         "Módulo de especialización IA-STEAM (Aules)",
@@ -589,7 +589,7 @@ export const translations = {
         "Validación de relevancia curricular por UVEG",
         "Posible incorporación como TFM (decisión de UVEG)",
         "Sesión de transferencia o conferencia invitada",
-        "Evidencia de adopción aportada a AI-SECRETT"
+        "Evidencia de adopción aportada a AiSECRETT"
       ],
       "courses": {
         "course1": {
@@ -1914,7 +1914,7 @@ export const translations = {
   },
   "en": {
     "header": {
-      "title": "AI-STEAM Network",
+      "title": "AiSTEAM Network",
       "subtitle": "Generalitat Valenciana · Education, Culture and Universities Ministry",
       "privateAccess": "Private Access",
       "aules": "Aules",
@@ -1949,13 +1949,13 @@ export const translations = {
       "accept": "Accept"
     },
     "home": {
-      "badge": "Digital Europe Programme 2021-2027 · AI-SECRETT",
-      "title": "AI-STEAM Network",
-      "subtitle": "Community and Transfer of AI-SECRETT",
-      "heroTagline": "AI-STEAM Network is the Track B ecosystem of CECU for AI-SECRETT: built on ENRED interregional cooperation activating stakeholders mobilizing VET centers training teachers and specializing the 7 AI-SECRETT sectors in AI and creativity.",
-      "description": "Led by CECU it activates stakeholders mobilizes VET centers trains teachers and generates evidence for the AI-SECRETT consortium in the 7 sectoral areas.",
+      "badge": "Digital Europe Programme 2021-2027 · AiSECRETT",
+      "title": "AiSTEAM Network",
+      "subtitle": "Community and Transfer of AiSECRETT",
+      "heroTagline": "AiSTEAM Network is the Track B ecosystem of CECU for AiSECRETT: built on ENRED interregional cooperation activating stakeholders mobilizing VET centers training teachers and specializing the 7 AiSECRETT sectors in AI and creativity.",
+      "description": "Led by CECU it activates stakeholders mobilizes VET centers trains teachers and generates evidence for the AiSECRETT consortium in the 7 sectoral areas.",
       "uploadChallenge": "Submit a challenge, case or contribution",
-      "requestJoin": "Join the AI-STEAM Network",
+      "requestJoin": "Join the AiSTEAM Network",
       "stats": {
         "stakeholders": "Stakeholders",
         "totalChallenges": "Challenges and cases",
@@ -2422,7 +2422,7 @@ export const translations = {
       "expandSector": "Open sector compass",
       "collapseSector": "Close compass",
       "stakeholderNote": "Indicative organisation types. Stakeholder participation is voluntary and prospective, subject to the onboarding process to be defined; the Stakeholders' Network is an advisory, non-decision-making body and does not imply direct publishing or automatic roles.",
-      "academicNote": "Possible academic connection lines, pending validation by UVEG. These are not approved Master AI-SECRETT contents."
+      "academicNote": "Possible academic connection lines, pending validation by UVEG. These are not approved Master AiSECRETT contents."
     },
     "training": {
       "title": "AI-STEAM Transfer Pathways",
@@ -2470,7 +2470,7 @@ export const translations = {
         "Guest lectures or validation sessions",
         "TFM/project inspiration when accepted by Track A"
       ],
-      "masterBridgeDisclaimer": "The Master AI-SECRETT (Track A) is governed by UVEG and the academic partners of the consortium. The AI-STEAM Network (Track B) does not award ECTS, does not certify university degrees and does not define Master assessment criteria.",
+      "masterBridgeDisclaimer": "The Master AiSECRETT (Track A) is governed by UVEG and the academic partners of the consortium. The AiSTEAM Network (Track B) does not award ECTS, does not certify university degrees and does not define Master assessment criteria.",
       "credentialsDisclaimer": "Recognition mechanisms are subject to validation by AI-SECRETT governance and relevant CECU, UVEG and TUV.IT frameworks.",
       "courseTitle": "Subject Title",
       "courseDescription": "Description",
@@ -2484,7 +2484,7 @@ export const translations = {
       "courseEnrolledLabel": "participants",
       "trainingPaths": "Transfer Pathways",
       "fpPath": "VET Pathway – CECU",
-      "masterPath": "AI-SECRETT Extracurricular activities (Track A)",
+      "masterPath": "AiSECRETT Extracurricular activities (Track A)",
       "fpPathSteps": [
         "Upper Secondary VET Cycle (CFGS)",
         "AI-STEAM specialisation subject (Aules)",
@@ -2496,7 +2496,7 @@ export const translations = {
         "Curriculum relevance validation by UVEG",
         "Possible TFM incorporation (UVEG decision)",
         "Transfer session or guest lecture",
-        "Adoption evidence contributed to AI-SECRETT"
+        "Adoption evidence contributed to AiSECRETT"
       ],
       "courses": {
         "course1": {
@@ -3821,7 +3821,7 @@ export const translations = {
   },
   "va": {
     "header": {
-      "title": "AI-STEAM Network",
+      "title": "AiSTEAM Network",
       "subtitle": "Generalitat Valenciana · Conselleria d'Educació, Cultura i Universitats",
       "privateAccess": "Accés Àrea Privada",
       "aules": "Aules",
@@ -3856,13 +3856,13 @@ export const translations = {
       "accept": "Acceptar"
     },
     "home": {
-      "badge": "Programa Digital Europe 2021-2027 · AI-SECRETT",
-      "title": "AI-STEAM Network",
-      "subtitle": "Comunitat i Transferència d'AI-SECRETT",
-      "heroTagline": "AI-STEAM Network és l'ecosistema Track B de CECU per a AI-SECRETT: construïda sobre la cooperació interregional d'ENRED activa agents interessats movilitza centres FP forma docents i especialitza els 7 sectors AI-SECRETT en IA i creativitat.",
-      "description": "Liderada per CECU activa agents interessats movilitza centres FP forma docents i genera evidències per al consorci AI-SECRETT en les 7 àrees sectorials europees.",
+      "badge": "Programa Digital Europe 2021-2027 · AiSECRETT",
+      "title": "AiSTEAM Network",
+      "subtitle": "Comunitat i Transferència d'AiSECRETT",
+      "heroTagline": "AiSTEAM Network és l'ecosistema Track B de CECU per a AiSECRETT: construïda sobre la cooperació interregional d'ENRED activa agents interessats movilitza centres FP forma docents i especialitza els 7 sectors AiSECRETT en IA i creativitat.",
+      "description": "Liderada per CECU activa agents interessats movilitza centres FP forma docents i genera evidències per al consorci AiSECRETT en les 7 àrees sectorials europees.",
       "uploadChallenge": "Proposa un repte, cas o aportació",
-      "requestJoin": "Uneix-te a la AI-STEAM Network",
+      "requestJoin": "Uneix-te a la AiSTEAM Network",
       "stats": {
         "stakeholders": "Grups d'interés",
         "totalChallenges": "Reptes i casos",
@@ -4329,7 +4329,7 @@ export const translations = {
       "expandSector": "Obrir brúixola sectorial",
       "collapseSector": "Tancar brúixola",
       "stakeholderNote": "Tipus d'organització orientatius. La participació de stakeholders és voluntària i futura, subjecta al procés d'incorporació que es definisca; la Xarxa de Stakeholders és un òrgan consultiu, no decisori, i no implica publicació directa ni rols automàtics.",
-      "academicNote": "Possibles línies de connexió acadèmica, pendents de validació per UVEG. No són continguts aprovats del Màster AI-SECRETT."
+      "academicNote": "Possibles línies de connexió acadèmica, pendents de validació per UVEG. No són continguts aprovats del Màster AiSECRETT."
     },
     "training": {
       "title": "Itineraris de Transferència AI-STEAM",
@@ -4367,14 +4367,14 @@ export const translations = {
         "Conferenciants convidats o sessions de validació",
         "Inspiració per a TFM/projectes quan és acceptada per Track A"
       ],
-      "masterBridgeDisclaimer": "El Màster AI-SECRETT (Track A) és governat per UVEG. L'accés i el reconeixement de crèdits estan subjectes als criteris d'admissió universitària. AI-STEAM Network (Track B, CECU) facilita el pont i la preparació.",
+      "masterBridgeDisclaimer": "El Màster AiSECRETT (Track A) és governat per UVEG. L'accés i el reconeixement de crèdits estan subjectes als criteris d'admissió universitària. AiSTEAM Network (Track B, CECU) facilita el pont i la preparació.",
       "credentialsDisclaimer": "El Màster AI-SECRETT (Track A) és governat per UVEG. L'accés i el reconeixement de crèdits estan subjectes als criteris d'admissió universitària. AI-STEAM Network (Track B, CECU) facilita el pont i la preparació.",
       "courseViewMore": "Veure curs →",
       "courseHours": "h",
       "courseEnrolledLabel": "matriculats",
       "trainingPaths": "Itineraris Formatius",
       "fpPath": "Itinerari FP – CECU",
-      "masterPath": "Activitats extracurriculars AI-SECRETT",
+      "masterPath": "Activitats extracurriculars AiSECRETT",
       "fpPathSteps": [
         "Cicle Formatiu de Grau Superior (CFGS)",
         "Curs d'especialització AI-STEAM (demo)",

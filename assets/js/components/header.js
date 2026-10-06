@@ -123,16 +123,16 @@ export function renderHeader() {
               <img src="assets/images/brand/generalitat-oficial-1x.png" srcset="assets/images/brand/generalitat-oficial-1x.png 1x, assets/images/brand/generalitat-oficial-2x.png 2x" width="150" height="72" alt="${esc(BRAND_ALT[lang] || BRAND_ALT.es)}">
             </picture>
           </a>
-          ${AI_SECRETT_URL ? `<a class="rd-brand-link rd-brand-secrett" href="${esc(AI_SECRETT_URL)}" target="_blank" rel="noopener noreferrer" aria-label="AI-SECRETT — ${esc('Creativity and AI for the Triple Transition')}">
+          ${AI_SECRETT_URL ? `<a class="rd-brand-link rd-brand-secrett" href="${esc(AI_SECRETT_URL)}" target="_blank" rel="noopener noreferrer" aria-label="AiSECRETT — ${esc('Creativity and AI for the Triple Transition')}">
             <picture>
               <source srcset="assets/images/brand/aisecrett-oficial.svg" type="image/svg+xml">
-              <img src="assets/images/brand/aisecrett-oficial-1x.png" srcset="assets/images/brand/aisecrett-oficial-1x.png 1x, assets/images/brand/aisecrett-oficial-2x.png 2x" width="286" height="37" alt="AI-SECRETT — Creativity and AI for the Triple Transition">
+              <img src="assets/images/brand/aisecrett-oficial-1x.png" srcset="assets/images/brand/aisecrett-oficial-1x.png 1x, assets/images/brand/aisecrett-oficial-2x.png 2x" width="286" height="37" alt="AiSECRETT — Creativity and AI for the Triple Transition">
             </picture>
           </a>` : ''}
-          <button id="network-logo-btn" class="rd-brand-link rd-brand-network" type="button" aria-label="${esc('AI-STEAM Network')} — ${esc(HOME_LABEL[lang] || HOME_LABEL.es)}">
+          <button id="network-logo-btn" class="rd-brand-link rd-brand-network" type="button" aria-label="${esc('AiSTEAM Network')} — ${esc(HOME_LABEL[lang] || HOME_LABEL.es)}">
             <picture>
               <source srcset="assets/images/brand/aisteam-network-oficial.svg" type="image/svg+xml">
-              <img src="assets/images/brand/aisteam-network-oficial-1x.png" srcset="assets/images/brand/aisteam-network-oficial-1x.png 1x, assets/images/brand/aisteam-network-oficial-2x.png 2x" width="335" height="60" alt="AI-STEAM Network">
+              <img src="assets/images/brand/aisteam-network-oficial-1x.png" srcset="assets/images/brand/aisteam-network-oficial-1x.png 1x, assets/images/brand/aisteam-network-oficial-2x.png 2x" width="335" height="60" alt="AiSTEAM Network">
             </picture>
           </button>
         </div>

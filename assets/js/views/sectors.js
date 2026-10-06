@@ -61,7 +61,7 @@ function renderHero(hero) {
       <div class="mx-auto max-w-7xl">
         <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur">
           <i data-lucide="compass" class="h-4 w-4"></i>
-          AI-SECRETT
+          AiSECRETT
         </div>
         <h1 class="mt-7 max-w-5xl text-5xl font-extrabold tracking-tight md:text-7xl" style="color:#FFF4E1;line-height:1.02">${esc(localized(hero.title))}</h1>
         <p class="mt-7 max-w-3xl text-lg leading-relaxed text-white/85 md:text-xl">${esc(localized(hero.description))}</p>
@@ -367,7 +367,7 @@ function renderCta(cta, sectorsT) {
       <div class="mx-auto max-w-7xl">
         <div class="rd-hero-gradient flex flex-col items-start justify-between gap-8 rounded-[2rem] p-10 text-white md:flex-row md:items-center md:p-12">
           <div class="${buttonVisible ? 'max-w-2xl' : 'w-full'}">
-            <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/70">AI-STEAM Network</p>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/70">AiSTEAM Network</p>
             <h3 class="mt-3 text-3xl font-extrabold tracking-tight" style="color:#FFF4E1">${esc(localized(cta.title) || sectorsT?.cta || '')}</h3>
             <p class="mt-4 text-lg leading-relaxed text-white/85">${sanitizeEditorialHtml(localized(cta.description) || sectorsT?.ctaDesc || '')}</p>
           </div>

@@ -12,9 +12,9 @@ const COURSE_PARTNERS  = ['UVEG / CECU', "Ud'A / UVEG", 'CECU / Inspiring Future
 // C13: etiquetas locales de los dos códigos. Viven aquí, como las del marketplace: no hace falta `cms:ui`.
 const UI_TEXT = {
   aiSteamCode: {
-    es: 'Código AI-STEAM',
-    en: 'AI-STEAM code',
-    va: 'Codi AI-STEAM',
+    es: 'Código AiSTEAM',
+    en: 'AiSTEAM code',
+    va: 'Codi AiSTEAM',
   },
   trainingCode: {
     es: 'Código de la formación',
@@ -607,7 +607,7 @@ export function render() {
             <div class="max-w-4xl">
               <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur">
                 <i data-lucide="graduation-cap" class="h-4 w-4"></i>
-                AI-SECRETT
+                AiSECRETT
               </div>
               <h1 class="mt-7 text-4xl font-extrabold tracking-tight md:text-6xl" style="color:#FFF4E1;line-height:1.02">${esc(pickLang(heroBlock.title, trainingT?.title || ''))}</h1>
               <p class="mt-7 text-lg leading-relaxed text-white/85 md:text-xl">${esc(pickLang(heroBlock.description, trainingT?.description || ''))}</p>

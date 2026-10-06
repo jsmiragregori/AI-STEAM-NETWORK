@@ -4,9 +4,9 @@
 export const HEADER_CONFIG = {
   "logo": {
     "path": "header/ai-steam-logo.webp",
-    "alt_es": "Logo de la red AI-STEAM Network",
-    "alt_en": "AI-STEAM Network logo",
-    "alt_va": "Logotip de la xarxa AI-STEAM Network"
+    "alt_es": "Logo de la red AiSTEAM Network",
+    "alt_en": "AiSTEAM Network logo",
+    "alt_va": "Logotip de la xarxa AiSTEAM Network"
   },
   "languages": [
     {

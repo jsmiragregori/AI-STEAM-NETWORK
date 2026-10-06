@@ -1376,9 +1376,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "community",
       "visible": true,
       "label": {
-        "es": "Comunidad AI-STEAM",
-        "en": "AI-STEAM community",
-        "va": "Comunitat AI-STEAM"
+        "es": "Comunidad AiSTEAM",
+        "en": "AiSTEAM community",
+        "va": "Comunitat AiSTEAM"
       }
     }
   ],
@@ -3758,9 +3758,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Pot la IA recomanar l'itinerari de FP més adequat per a cada alumne?"
         },
         "reward": {
-          "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CECU, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AI-STEAM y en la red estatal de innovación en FP.",
-          "en": "The winning team receives: (1) development and implementation contract with CECU, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AI-STEAM Marketplace and in the national VET innovation network.",
-          "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CECU, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AI-STEAM i a la xarxa estatal d'innovació en FP."
+          "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CECU, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AiSTEAM y en la red estatal de innovación en FP.",
+          "en": "The winning team receives: (1) development and implementation contract with CECU, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AiSTEAM Marketplace and in the national VET innovation network.",
+          "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CECU, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AiSTEAM i a la xarxa estatal d'innovació en FP."
         }
       },
       "access": {
@@ -3945,7 +3945,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "Acompanyament per a empreses turístiques, entitats culturals, museus i agències creatives que volen integrar IA generativa (text, imatge, àudio, vídeo) en els seus productes, serveis o processos creatius, orientant-se sobre eines adequades a la seua escala, drets d'autor en continguts generats per IA, i com usar la IA sense perdre la identitat creativa de l'organització."
         },
         "entity": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
+          "name": "AiSTEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
           "type": {
             "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural, diseño e industrias creativas valencianas e internacionales",
             "en": "Mentors experienced in generative AI applications in tourism, cultural heritage, design and Valencian and international creative industries",
@@ -3996,9 +3996,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringTeam": {
           "name": {
-            "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
-            "en": "AI-STEAM Network Mentoring Pool — Creative AI and Tourism-Culture Specialists",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme-Cultura"
+            "es": "AiSTEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
+            "en": "AiSTEAM Network Mentoring Pool — Creative AI and Tourism-Culture Specialists",
+            "va": "AiSTEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme-Cultura"
           },
           "type": "",
           "role": {
@@ -4159,7 +4159,7 @@ export const MARKETPLACE_CONFIG = {
         "items": [
           {
             "id": "pool-ia-creativa-tur",
-            "name": "AI-STEAM Mentoring Pool — IA Creativa y Turismo-Cultura",
+            "name": "AiSTEAM Mentoring Pool — IA Creativa y Turismo-Cultura",
             "organisation": "",
             "role": {
               "es": "",
@@ -4275,17 +4275,17 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "[DEMO] Mentoría — Cómo incorporar una administración pública al ecosistema AI-STEAM",
-          "en": "[DEMO] Mentoring — How to bring a public administration into the AI-STEAM ecosystem",
-          "va": "[DEMO] Mentoria — Com incorporar una administració pública a l'ecosistema AI-STEAM"
+          "es": "[DEMO] Mentoría — Cómo incorporar una administración pública al ecosistema AiSTEAM",
+          "en": "[DEMO] Mentoring — How to bring a public administration into the AiSTEAM ecosystem",
+          "va": "[DEMO] Mentoria — Com incorporar una administració pública a l'ecosistema AiSTEAM"
         },
         "summary": {
-          "es": "Acompañamiento para organismos públicos, entidades locales y consorcios interadministrativos que quieren participar activamente en el ecosistema AI-STEAM — como demandantes de retos, financiadores de pilotos o entornos de validación — y necesitan orientación sobre roles posibles, compromisos esperados, gestión de datos públicos y encaje con sus procedimientos administrativos habituales.",
-          "en": "Support for public bodies, local authorities and inter-administrative consortia wishing to actively participate in the AI-STEAM ecosystem — as challenge demanders, pilot funders or validation environments — who need guidance on possible roles, expected commitments, public data management and fit with their usual administrative procedures.",
-          "va": "Acompanyament per a organismes públics, entitats locals i consorcis interadministratius que volen participar activament en l'ecosistema AI-STEAM — com demandants de reptes, finançadors de pilots o entorns de validació — i necessiten orientació sobre rols possibles, compromisos esperats, gestió de dades públiques i encaix amb els seus procediments administratius habituals."
+          "es": "Acompañamiento para organismos públicos, entidades locales y consorcios interadministrativos que quieren participar activamente en el ecosistema AiSTEAM — como demandantes de retos, financiadores de pilotos o entornos de validación — y necesitan orientación sobre roles posibles, compromisos esperados, gestión de datos públicos y encaje con sus procedimientos administrativos habituales.",
+          "en": "Support for public bodies, local authorities and inter-administrative consortia wishing to actively participate in the AiSTEAM ecosystem — as challenge demanders, pilot funders or validation environments — who need guidance on possible roles, expected commitments, public data management and fit with their usual administrative procedures.",
+          "va": "Acompanyament per a organismes públics, entitats locals i consorcis interadministratius que volen participar activament en l'ecosistema AiSTEAM — com demandants de reptes, finançadors de pilots o entorns de validació — i necessiten orientació sobre rols possibles, compromisos esperats, gestió de dades públiques i encaix amb els seus procediments administratius habituals."
         },
         "entity": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
+          "name": "AiSTEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
           "type": {
             "es": "Mentores con experiencia en transformación digital de administraciones públicas, datos abiertos y colaboración público-privada en innovación",
             "en": "Mentors experienced in digital transformation of public administrations, open data and public-private innovation collaboration",
@@ -4333,9 +4333,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringTeam": {
           "name": {
-            "es": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
-            "en": "AI-STEAM Network Mentoring Pool — Public Innovation and AI Specialists",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistes en Innovació Pública i IA"
+            "es": "AiSTEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
+            "en": "AiSTEAM Network Mentoring Pool — Public Innovation and AI Specialists",
+            "va": "AiSTEAM Network Mentoring Pool — Especialistes en Innovació Pública i IA"
           },
           "type": "",
           "role": {
@@ -4429,9 +4429,9 @@ export const MARKETPLACE_CONFIG = {
       },
       "mentoringOffer": {
         "purpose": {
-          "es": "Orientar a organismos públicos sobre cómo articular su participación en el ecosistema AI-STEAM según su perfil y capacidades — formulando un reto abierto con datos públicos, financiando un piloto educativo, abriendo sus instalaciones como entorno de validación o convirtiéndose en caso de referencia de innovación pública.",
-          "en": "Guide public bodies on how to articulate their participation in the AI-STEAM ecosystem according to their profile and capabilities — framing an open challenge with public data, funding an educational pilot, opening their facilities as a validation environment or becoming a reference case of public innovation.",
-          "va": "Orientar organismes públics sobre com articular la seua participació en l'ecosistema AI-STEAM segons el seu perfil i capacitats — formulant un repte obert amb dades públiques, finançant un pilot educatiu, obrint les seues instal·lacions com a entorn de validació o convertint-se en cas de referència d'innovació pública."
+          "es": "Orientar a organismos públicos sobre cómo articular su participación en el ecosistema AiSTEAM según su perfil y capacidades — formulando un reto abierto con datos públicos, financiando un piloto educativo, abriendo sus instalaciones como entorno de validación o convirtiéndose en caso de referencia de innovación pública.",
+          "en": "Guide public bodies on how to articulate their participation in the AiSTEAM ecosystem according to their profile and capabilities — framing an open challenge with public data, funding an educational pilot, opening their facilities as a validation environment or becoming a reference case of public innovation.",
+          "va": "Orientar organismes públics sobre com articular la seua participació en l'ecosistema AiSTEAM segons el seu perfil i capacitats — formulant un repte obert amb dades públiques, finançant un pilot educatiu, obrint les seues instal·lacions com a entorn de validació o convertint-se en cas de referència d'innovació pública."
         },
         "problemAddressed": {
           "es": "",
@@ -4478,7 +4478,7 @@ export const MARKETPLACE_CONFIG = {
         "items": [
           {
             "id": "pool-innovacion-publica",
-            "name": "AI-STEAM Mentoring Pool — Innovación Pública e IA",
+            "name": "AiSTEAM Mentoring Pool — Innovación Pública e IA",
             "organisation": "",
             "role": {
               "es": "",
@@ -4596,17 +4596,17 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "[DEMO] Mentoría — Replicación de casos AI-STEAM en el sector agroalimentario",
-          "en": "[DEMO] Mentoring — Replicating AI-STEAM cases in the agri-food sector",
-          "va": "[DEMO] Mentoria — Replicació de casos AI-STEAM en el sector agroalimentari"
+          "es": "[DEMO] Mentoría — Replicación de casos AiSTEAM en el sector agroalimentario",
+          "en": "[DEMO] Mentoring — Replicating AiSTEAM cases in the agri-food sector",
+          "va": "[DEMO] Mentoria — Replicació de casos AiSTEAM en el sector agroalimentari"
         },
         "summary": {
-          "es": "Acompañamiento para cooperativas agrícolas, agroindustrias y centros de FP agroalimentaria que quieren replicar un caso AI-STEAM verificado en su propio contexto — adaptando los datos, el entorno productivo y las condiciones de formación — sin tener que rediseñar el proyecto desde cero.",
-          "en": "Support for agricultural cooperatives, agri-food industries and agri-food VET centres wishing to replicate a verified AI-STEAM case in their own context — adapting data, production environment and training conditions — without having to redesign the project from scratch.",
-          "va": "Acompanyament per a cooperatives agrícoles, agroindustries i centres de FP agroalimentària que volen replicar un cas AI-STEAM verificat en el seu propi context — adaptant les dades, l'entorn productiu i les condicions de formació — sense haver de redissenyar el projecte des de zero."
+          "es": "Acompañamiento para cooperativas agrícolas, agroindustrias y centros de FP agroalimentaria que quieren replicar un caso AiSTEAM verificado en su propio contexto — adaptando los datos, el entorno productivo y las condiciones de formación — sin tener que rediseñar el proyecto desde cero.",
+          "en": "Support for agricultural cooperatives, agri-food industries and agri-food VET centres wishing to replicate a verified AiSTEAM case in their own context — adapting data, production environment and training conditions — without having to redesign the project from scratch.",
+          "va": "Acompanyament per a cooperatives agrícoles, agroindustries i centres de FP agroalimentària que volen replicar un cas AiSTEAM verificat en el seu propi context — adaptant les dades, l'entorn productiu i les condicions de formació — sense haver de redissenyar el projecte des de zero."
         },
         "entity": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
+          "name": "AiSTEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
           "type": {
             "es": "Mentores con experiencia en proyectos de IA en agricultura de precisión, visión computacional agrícola y formación agroalimentaria",
             "en": "Mentors experienced in AI projects in precision agriculture, agricultural computer vision and agri-food training",
@@ -4654,9 +4654,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringTeam": {
           "name": {
-            "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
-            "en": "AI-STEAM Network Mentoring Pool — Agri-food AI Specialists",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Agroalimentària"
+            "es": "AiSTEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
+            "en": "AiSTEAM Network Mentoring Pool — Agri-food AI Specialists",
+            "va": "AiSTEAM Network Mentoring Pool — Especialistes en IA Agroalimentària"
           },
           "type": "",
           "role": {
@@ -4750,9 +4750,9 @@ export const MARKETPLACE_CONFIG = {
       },
       "mentoringOffer": {
         "purpose": {
-          "es": "Facilitar la adaptación y replicación contextualizada de un caso AI-STEAM verificado en el sector agroalimentario, identificando las condiciones de transferibilidad, los ajustes necesarios en los datos y el entorno, y asegurando que la nueva implementación mantiene la calidad de evidencia del caso original.",
-          "en": "Facilitate the contextualised adaptation and replication of a verified AI-STEAM case in the agri-food sector, identifying transferability conditions, required adjustments to data and environment, and ensuring the new implementation maintains the evidential quality of the original case.",
-          "va": "Facilitar l'adaptació i replicació contextualitzada d'un cas AI-STEAM verificat en el sector agroalimentari, identificant les condicions de transferibilitat, els ajustos necessaris en les dades i l'entorn, i assegurant que la nova implementació manté la qualitat d'evidència del cas original."
+          "es": "Facilitar la adaptación y replicación contextualizada de un caso AiSTEAM verificado en el sector agroalimentario, identificando las condiciones de transferibilidad, los ajustes necesarios en los datos y el entorno, y asegurando que la nueva implementación mantiene la calidad de evidencia del caso original.",
+          "en": "Facilitate the contextualised adaptation and replication of a verified AiSTEAM case in the agri-food sector, identifying transferability conditions, required adjustments to data and environment, and ensuring the new implementation maintains the evidential quality of the original case.",
+          "va": "Facilitar l'adaptació i replicació contextualitzada d'un cas AiSTEAM verificat en el sector agroalimentari, identificant les condicions de transferibilitat, els ajustos necessaris en les dades i l'entorn, i assegurant que la nova implementació manté la qualitat d'evidència del cas original."
         },
         "problemAddressed": {
           "es": "",
@@ -4778,9 +4778,9 @@ export const MARKETPLACE_CONFIG = {
           ],
           "languageCodes": [],
           "availability": {
-            "es": "Convocatoria abierta vinculada a casos publicados en el Marketplace AI-STEAM. Se requiere identificar el caso de referencia antes de solicitar la mentoría.",
-            "en": "Open call linked to cases published on the AI-STEAM Marketplace. The reference case must be identified before requesting mentoring.",
-            "va": "Convocatòria oberta vinculada a casos publicats al Marketplace AI-STEAM. Es requereix identificar el cas de referència abans de sol·licitar la mentoria."
+            "es": "Convocatoria abierta vinculada a casos publicados en el Marketplace AiSTEAM. Se requiere identificar el caso de referencia antes de solicitar la mentoría.",
+            "en": "Open call linked to cases published on the AiSTEAM Marketplace. The reference case must be identified before requesting mentoring.",
+            "va": "Convocatòria oberta vinculada a casos publicats al Marketplace AiSTEAM. Es requereix identificar el cas de referència abans de sol·licitar la mentoria."
           }
         },
         "targetUsers": {
@@ -4799,7 +4799,7 @@ export const MARKETPLACE_CONFIG = {
         "items": [
           {
             "id": "pool-agr-replicacion",
-            "name": "AI-STEAM Mentoring Pool — Transferencia Agroalimentaria",
+            "name": "AiSTEAM Mentoring Pool — Transferencia Agroalimentaria",
             "organisation": "",
             "role": {
               "es": "",
@@ -4927,7 +4927,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "Acompanyament per a grups de recerca universitaris i tecnològics que volen transferir els seus resultats d'IA al sistema de FP, adaptant les seues metodologies, datasets o eines a contexts formatius accessibles per a docents i alumnes sense perfil investigador, i construint el cas de valor pedagògic que justifique la col·laboració amb centres educatius."
         },
         "entity": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
+          "name": "AiSTEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
           "type": {
             "es": "Mentores con perfil dual investigador-docente, con experiencia en traducción de resultados de investigación a contenidos formativos de FP",
             "en": "Mentors with a dual researcher-teacher profile, experienced in translating research results into VET training content",
@@ -4975,9 +4975,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringTeam": {
           "name": {
-            "es": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
-            "en": "AI-STEAM Network Mentoring Pool — Research-to-VET Transfer Specialists",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistes en Transferència Recerca-FP"
+            "es": "AiSTEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
+            "en": "AiSTEAM Network Mentoring Pool — Research-to-VET Transfer Specialists",
+            "va": "AiSTEAM Network Mentoring Pool — Especialistes en Transferència Recerca-FP"
           },
           "type": "",
           "role": {
@@ -5120,7 +5120,7 @@ export const MARKETPLACE_CONFIG = {
         "items": [
           {
             "id": "pool-investigacion-fp",
-            "name": "AI-STEAM Mentoring Pool — Transferencia Investigación-FP",
+            "name": "AiSTEAM Mentoring Pool — Transferencia Investigación-FP",
             "organisation": "",
             "role": {
               "es": "",
@@ -5248,7 +5248,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "Acompanyament per a docents, equips de centre i entitats educatives que introdueixen IA en les seues pràctiques formatives i necessiten una revisió ètica bàsica — ús de dades d'alumnes, biaixos algorítmics, transparència amb les famílies, IA generativa a l'aula — abans d'implantar o publicar els seus projectes."
         },
         "entity": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
+          "name": "AiSTEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
           "type": {
             "es": "Mentores con formación en ética digital, protección de datos educativos y uso responsable de IA en el aula",
             "en": "Mentors trained in digital ethics, educational data protection and responsible AI use in the classroom",
@@ -5296,9 +5296,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringTeam": {
           "name": {
-            "es": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
-            "en": "AI-STEAM Network Mentoring Pool — AI Ethics and Education Specialists",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistes en Ètica IA i Educació"
+            "es": "AiSTEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
+            "en": "AiSTEAM Network Mentoring Pool — AI Ethics and Education Specialists",
+            "va": "AiSTEAM Network Mentoring Pool — Especialistes en Ètica IA i Educació"
           },
           "type": "",
           "role": {
@@ -5441,7 +5441,7 @@ export const MARKETPLACE_CONFIG = {
         "items": [
           {
             "id": "pool-etica-educacion",
-            "name": "AI-STEAM Mentoring Pool — Ética IA y Educación",
+            "name": "AiSTEAM Mentoring Pool — Ética IA y Educación",
             "organisation": "",
             "role": {
               "es": "",
@@ -5569,7 +5569,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "Acompanyament tècnic per a equips de FP sanitària, centres de salut i entitats sociosanitàries que volen implementar un sistema d'IA (diagnòstic assistit, triatge automatitzat, analítica de pacients) i necessiten orientació sobre arquitectura de dades, selecció de models i compliment normatiu sanitari abans de llançar el projecte."
         },
         "entity": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
+          "name": "AiSTEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
           "type": {
             "es": "Mentores con perfil técnico en ciencia de datos clínicos, visión computacional médica y cumplimiento normativo sanitario",
             "en": "Mentors with technical profile in clinical data science, medical computer vision and health regulatory compliance",
@@ -5617,9 +5617,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringTeam": {
           "name": {
-            "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
-            "en": "AI-STEAM Network Mentoring Pool — Healthcare AI Specialists",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Sanitària"
+            "es": "AiSTEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
+            "en": "AiSTEAM Network Mentoring Pool — Healthcare AI Specialists",
+            "va": "AiSTEAM Network Mentoring Pool — Especialistes en IA Sanitària"
           },
           "type": "",
           "role": {
@@ -5762,7 +5762,7 @@ export const MARKETPLACE_CONFIG = {
         "items": [
           {
             "id": "pool-ia-sanitaria",
-            "name": "AI-STEAM Mentoring Pool — IA Sanitaria y Datos Clínicos",
+            "name": "AiSTEAM Mentoring Pool — IA Sanitaria y Datos Clínicos",
             "organisation": "",
             "role": {
               "es": "",
@@ -6611,7 +6611,7 @@ export const MARKETPLACE_CONFIG = {
           "va": "Acompanyament per a centres de FP i empreses que volen co-dissenyar un pilot educatiu real on els alumnes treballen amb dades, eines o entorns industrials amb IA, definint hipòtesis, metodologia, mètriques d'èxit i condicions de transferibilitat des del primer moment."
         },
         "entity": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
+          "name": "AiSTEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
           "type": {
             "es": "Mentores con perfil dual pedagógico-técnico, con experiencia en diseño de pilotos FP-empresa",
             "en": "Mentors with dual pedagogical-technical profile, experienced in designing VET-industry pilots",
@@ -6659,9 +6659,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringTeam": {
           "name": {
-            "es": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
-            "en": "AI-STEAM Network Mentoring Pool — VET Pedagogy and Innovation Specialists",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistes en Pedagogia FP i Innovació"
+            "es": "AiSTEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
+            "en": "AiSTEAM Network Mentoring Pool — VET Pedagogy and Innovation Specialists",
+            "va": "AiSTEAM Network Mentoring Pool — Especialistes en Pedagogia FP i Innovació"
           },
           "type": "",
           "role": {
@@ -6804,7 +6804,7 @@ export const MARKETPLACE_CONFIG = {
         "items": [
           {
             "id": "pool-pedagogia-fp",
-            "name": "AI-STEAM Mentoring Pool — Pedagogía FP e Innovación",
+            "name": "AiSTEAM Mentoring Pool — Pedagogía FP e Innovación",
             "organisation": "",
             "role": {
               "es": "",
@@ -7226,17 +7226,17 @@ export const MARKETPLACE_CONFIG = {
         "forceOpen": false,
         "maturity": "idea",
         "title": {
-          "es": "[DEMO] Mentoría — Cómo formular un reto industrial para el ecosistema AI-STEAM",
-          "en": "[DEMO] Mentoring — How to frame an industrial challenge for the AI-STEAM ecosystem",
-          "va": "[DEMO] Mentoria — Com formular un repte industrial per a l'ecosistema AI-STEAM"
+          "es": "[DEMO] Mentoría — Cómo formular un reto industrial para el ecosistema AiSTEAM",
+          "en": "[DEMO] Mentoring — How to frame an industrial challenge for the AiSTEAM ecosystem",
+          "va": "[DEMO] Mentoria — Com formular un repte industrial per a l'ecosistema AiSTEAM"
         },
         "summary": {
-          "es": "Acompañamiento para empresas industriales y pymes tecnológicas que quieren convertir una necesidad de innovación o una brecha de talento en un reto bien formulado, publicable en el Marketplace AI-STEAM y orientado a obtener prototipos, datos o metodologías de la comunidad de práctica.",
-          "en": "Support for industrial companies and technology SMEs wishing to turn an innovation need or talent gap into a well-framed challenge, publishable on the AI-STEAM Marketplace and designed to obtain prototypes, data or methodologies from the community of practice.",
-          "va": "Acompanyament per a empreses industrials i pimes tecnològiques que volen convertir una necessitat d'innovació o una bretxa de talent en un repte ben formulat, publicable al Marketplace AI-STEAM i orientat a obtindre prototips, dades o metodologies de la comunitat de pràctica."
+          "es": "Acompañamiento para empresas industriales y pymes tecnológicas que quieren convertir una necesidad de innovación o una brecha de talento en un reto bien formulado, publicable en el Marketplace AiSTEAM y orientado a obtener prototipos, datos o metodologías de la comunidad de práctica.",
+          "en": "Support for industrial companies and technology SMEs wishing to turn an innovation need or talent gap into a well-framed challenge, publishable on the AiSTEAM Marketplace and designed to obtain prototypes, data or methodologies from the community of practice.",
+          "va": "Acompanyament per a empreses industrials i pimes tecnològiques que volen convertir una necessitat d'innovació o una bretxa de talent en un repte ben formulat, publicable al Marketplace AiSTEAM i orientat a obtindre prototips, dades o metodologies de la comunitat de pràctica."
         },
         "entity": {
-          "name": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
+          "name": "AiSTEAM Network Mentoring Pool — Especialistas en Industria 4.0",
           "type": {
             "es": "Mentores con experiencia en formulación de retos en contextos industriales y de FP",
             "en": "Mentors experienced in challenge framing in industrial and VET contexts",
@@ -7284,9 +7284,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringTeam": {
           "name": {
-            "es": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
-            "en": "AI-STEAM Network Mentoring Pool — Industry 4.0 Specialists",
-            "va": "AI-STEAM Network Mentoring Pool — Especialistes en Indústria 4.0"
+            "es": "AiSTEAM Network Mentoring Pool — Especialistas en Industria 4.0",
+            "en": "AiSTEAM Network Mentoring Pool — Industry 4.0 Specialists",
+            "va": "AiSTEAM Network Mentoring Pool — Especialistes en Indústria 4.0"
           },
           "type": "",
           "role": {
@@ -7380,9 +7380,9 @@ export const MARKETPLACE_CONFIG = {
       },
       "mentoringOffer": {
         "purpose": {
-          "es": "Ayudar a empresas industriales a transformar una necesidad técnica o de talento en un reto AI-STEAM publicable, con alcance realista, incentivos atractivos para la comunidad y condiciones claras de datos y propiedad intelectual.",
-          "en": "Help industrial companies transform a technical or talent need into a publishable AI-STEAM challenge, with realistic scope, attractive community incentives and clear data and intellectual property conditions.",
-          "va": "Ajudar empreses industrials a transformar una necessitat tècnica o de talent en un repte AI-STEAM publicable, amb abast realista, incentius atractius per a la comunitat i condicions clares de dades i propietat intel·lectual."
+          "es": "Ayudar a empresas industriales a transformar una necesidad técnica o de talento en un reto AiSTEAM publicable, con alcance realista, incentivos atractivos para la comunidad y condiciones claras de datos y propiedad intelectual.",
+          "en": "Help industrial companies transform a technical or talent need into a publishable AiSTEAM challenge, with realistic scope, attractive community incentives and clear data and intellectual property conditions.",
+          "va": "Ajudar empreses industrials a transformar una necessitat tècnica o de talent en un repte AiSTEAM publicable, amb abast realista, incentius atractius per a la comunitat i condicions clares de dades i propietat intel·lectual."
         },
         "problemAddressed": {
           "es": "",
@@ -7429,7 +7429,7 @@ export const MARKETPLACE_CONFIG = {
         "items": [
           {
             "id": "pool-industria-40",
-            "name": "AI-STEAM Mentoring Pool — Industria 4.0",
+            "name": "AiSTEAM Mentoring Pool — Industria 4.0",
             "organisation": "",
             "role": {
               "es": "",
@@ -7907,7 +7907,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "org": "CECU"
         },
         "origin": {
@@ -8658,9 +8658,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Pot una bessona digital predir i prevenir sobrecàrregues en la xarxa de distribució?"
         },
         "reward": {
-          "es": "El equipo ganador recibe: (1) contrato de prueba de concepto con Endesa por valor de 15.000 €, (2) mentoría técnica de 3 meses con el equipo de innovación de redes, (3) publicación del caso en el Marketplace AI-STEAM como caso verificado.",
-          "en": "The winning team receives: (1) proof-of-concept contract with Endesa worth €15,000, (2) 3-month technical mentoring with the grid innovation team, (3) publication of the case in the AI-STEAM Marketplace as a verified case.",
-          "va": "L'equip guanyador rep: (1) contracte de prova de concepte amb Endesa per valor de 15.000 €, (2) mentoria tècnica de 3 mesos amb l'equip d'innovació de xarxes, (3) publicació del cas al Marketplace AI-STEAM com a cas verificat."
+          "es": "El equipo ganador recibe: (1) contrato de prueba de concepto con Endesa por valor de 15.000 €, (2) mentoría técnica de 3 meses con el equipo de innovación de redes, (3) publicación del caso en el Marketplace AiSTEAM como caso verificado.",
+          "en": "The winning team receives: (1) proof-of-concept contract with Endesa worth €15,000, (2) 3-month technical mentoring with the grid innovation team, (3) publication of the case in the AiSTEAM Marketplace as a verified case.",
+          "va": "L'equip guanyador rep: (1) contracte de prova de concepte amb Endesa per valor de 15.000 €, (2) mentoria tècnica de 3 mesos amb l'equip d'innovació de xarxes, (3) publicació del cas al Marketplace AiSTEAM com a cas verificat."
         }
       },
       "access": {
@@ -9521,7 +9521,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "org": "CECU"
         },
         "origin": {
@@ -10145,7 +10145,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "org": "CECU"
         },
         "origin": {
@@ -10463,7 +10463,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "org": "CECU"
         },
         "origin": {
@@ -11085,7 +11085,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "org": "CECU"
         },
         "origin": {
@@ -11759,7 +11759,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "org": "CECU"
         },
         "origin": {
@@ -12044,12 +12044,12 @@ export const MARKETPLACE_CONFIG = {
           "va": "[DEMO] Mentoria per a briefs creatius amb IA responsable"
         },
         "summary": {
-          "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
-          "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AI-STEAM collaboration.",
-          "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AI-STEAM."
+          "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AiSTEAM.",
+          "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AiSTEAM collaboration.",
+          "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AiSTEAM."
         },
         "entity": {
-          "name": "AI-STEAM Network Mentoring Pool",
+          "name": "AiSTEAM Network Mentoring Pool",
           "type": {
             "es": "Equipo de mentoría en formulación de retos y ética de IA",
             "en": "Mentoring team in challenge framing and AI ethics",
@@ -12097,9 +12097,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringTeam": {
           "name": {
-            "es": "AI-STEAM Network Mentoring Pool",
-            "en": "AI-STEAM Network Mentoring Pool",
-            "va": "AI-STEAM Network Mentoring Pool"
+            "es": "AiSTEAM Network Mentoring Pool",
+            "en": "AiSTEAM Network Mentoring Pool",
+            "va": "AiSTEAM Network Mentoring Pool"
           },
           "type": "",
           "role": {
@@ -12193,9 +12193,9 @@ export const MARKETPLACE_CONFIG = {
       },
       "mentoringOffer": {
         "purpose": {
-          "es": "Ayudar a entidades de la red a transformar una idea inicial en un brief claro, publicable y accionable dentro del ecosistema AI-STEAM.",
-          "en": "Help network organisations turn an initial idea into a clear, publishable and actionable brief within the AI-STEAM ecosystem.",
-          "va": "Ajudar entitats de la xarxa a transformar una idea inicial en un brief clar, publicable i accionable dins de l'ecosistema AI-STEAM."
+          "es": "Ayudar a entidades de la red a transformar una idea inicial en un brief claro, publicable y accionable dentro del ecosistema AiSTEAM.",
+          "en": "Help network organisations turn an initial idea into a clear, publishable and actionable brief within the AiSTEAM ecosystem.",
+          "va": "Ajudar entitats de la xarxa a transformar una idea inicial en un brief clar, publicable i accionable dins de l'ecosistema AiSTEAM."
         },
         "problemAddressed": {
           "es": "",
@@ -12242,7 +12242,7 @@ export const MARKETPLACE_CONFIG = {
         "items": [
           {
             "id": "ai-steam-mentoring-pool",
-            "name": "AI-STEAM Network Mentoring Pool",
+            "name": "AiSTEAM Network Mentoring Pool",
             "organisation": "",
             "role": {
               "es": "",
@@ -12486,9 +12486,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Pot un smartphone detectar plagues de taronger abans que l'agricultor les veja?"
         },
         "reward": {
-          "es": "El equipo ganador recibe: (1) acuerdo de colaboración para pilotar la solución en campo durante la campaña 2027, (2) acceso a mentores del IVIA (Instituto Valenciano de Investigaciones Agrarias), (3) publicación del caso en el Marketplace AI-STEAM.",
-          "en": "The winning team receives: (1) collaboration agreement to pilot the solution in the field during the 2027 campaign, (2) access to mentors from IVIA (Valencian Institute of Agrarian Research), (3) publication of the case in the AI-STEAM Marketplace.",
-          "va": "L'equip guanyador rep: (1) acord de col·laboració per pilotar la solució en camp durant la campanya 2027, (2) accés a mentors de l'IVIA (Institut Valencià d'Investigacions Agràries), (3) publicació del cas al Marketplace AI-STEAM."
+          "es": "El equipo ganador recibe: (1) acuerdo de colaboración para pilotar la solución en campo durante la campaña 2027, (2) acceso a mentores del IVIA (Instituto Valenciano de Investigaciones Agrarias), (3) publicación del caso en el Marketplace AiSTEAM.",
+          "en": "The winning team receives: (1) collaboration agreement to pilot the solution in the field during the 2027 campaign, (2) access to mentors from IVIA (Valencian Institute of Agrarian Research), (3) publication of the case in the AiSTEAM Marketplace.",
+          "va": "L'equip guanyador rep: (1) acord de col·laboració per pilotar la solució en camp durant la campanya 2027, (2) accés a mentors de l'IVIA (Institut Valencià d'Investigacions Agràries), (3) publicació del cas al Marketplace AiSTEAM."
         }
       },
       "access": {
@@ -12717,7 +12717,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "org": "CECU"
         },
         "origin": {
@@ -13170,9 +13170,9 @@ export const MARKETPLACE_CONFIG = {
           },
           {
             "label": {
-              "es": "Revisión de condiciones de uso — AI-STEAM Asesoría Legal",
-              "en": "Use conditions review — AI-STEAM Legal Advisory",
-              "va": "Revisió de condicions d'ús — AI-STEAM Assessoria Legal"
+              "es": "Revisión de condiciones de uso — AiSTEAM Asesoría Legal",
+              "en": "Use conditions review — AiSTEAM Legal Advisory",
+              "va": "Revisió de condicions d'ús — AiSTEAM Assessoria Legal"
             }
           },
           {
@@ -13688,7 +13688,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "org": "CECU"
         },
         "origin": {
@@ -14008,7 +14008,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "org": "CECU"
         },
         "origin": {
@@ -14661,7 +14661,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "org": "CECU"
         },
         "origin": {
@@ -15426,9 +15426,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "sc2",
             "label": {
-              "es": "Plantilla CC-BY-SA publicada en repositorio AI-STEAM y reutilizable",
-              "en": "CC-BY-SA template published in AI-STEAM repository and reusable",
-              "va": "Plantilla CC-BY-SA publicada en repositori AI-STEAM i reutilitzable"
+              "es": "Plantilla CC-BY-SA publicada en repositorio AiSTEAM y reutilizable",
+              "en": "CC-BY-SA template published in AiSTEAM repository and reusable",
+              "va": "Plantilla CC-BY-SA publicada en repositori AiSTEAM i reutilitzable"
             }
           }
         ]
@@ -15474,9 +15474,9 @@ export const MARKETPLACE_CONFIG = {
           {
             "id": "ai-steam-repo",
             "label": {
-              "es": "Repositorio AI-STEAM",
-              "en": "AI-STEAM repository",
-              "va": "Repositori AI-STEAM"
+              "es": "Repositorio AiSTEAM",
+              "en": "AiSTEAM repository",
+              "va": "Repositori AiSTEAM"
             }
           }
         ],
@@ -15646,7 +15646,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "org": "CECU"
         },
         "origin": {
@@ -16312,7 +16312,7 @@ export const MARKETPLACE_CONFIG = {
       },
       "ownership": {
         "publisher": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "org": "CECU"
         },
         "origin": {
@@ -17771,9 +17771,9 @@ export const MARKETPLACE_CONFIG = {
           },
           {
             "label": {
-              "es": "Sessión de valoración formativa — Comité Técnico Búsqueda AI-STEAM",
-              "en": "Educational value assessment session — AI-STEAM Research Technical Committee",
-              "va": "Sessió de valoració formativa — Comité Tècnic Recerca AI-STEAM"
+              "es": "Sessión de valoración formativa — Comité Técnico Búsqueda AiSTEAM",
+              "en": "Educational value assessment session — AiSTEAM Research Technical Committee",
+              "va": "Sessió de valoració formativa — Comité Tècnic Recerca AiSTEAM"
             }
           }
         ]
@@ -18241,7 +18241,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Acompanyament per a empreses turístiques, entitats culturals, museus i agències creatives que volen integrar IA generativa (text, imatge, àudio, vídeo) en els seus productes, serveis o processos creatius, orientant-se sobre eines adequades a la seua escala, drets d'autor en continguts generats per IA, i com usar la IA sense perdre la identitat creativa de l'organització."
           },
           "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
+            "name": "AiSTEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
             "type": {
               "es": "Mentores con experiencia en aplicaciones de IA generativa en turismo, patrimonio cultural, diseño e industrias creativas valencianas e internacionales",
               "en": "Mentors experienced in generative AI applications in tourism, cultural heritage, design and Valencian and international creative industries",
@@ -18292,9 +18292,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "mentoringTeam": {
             "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
-              "en": "AI-STEAM Network Mentoring Pool — Creative AI and Tourism-Culture Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme-Cultura"
+              "es": "AiSTEAM Network Mentoring Pool — Especialistas en IA Creativa y Turismo-Cultura",
+              "en": "AiSTEAM Network Mentoring Pool — Creative AI and Tourism-Culture Specialists",
+              "va": "AiSTEAM Network Mentoring Pool — Especialistes en IA Creativa i Turisme-Cultura"
             },
             "type": "",
             "role": {
@@ -18455,7 +18455,7 @@ export const MARKETPLACE_CONFIG = {
           "items": [
             {
               "id": "pool-ia-creativa-tur",
-              "name": "AI-STEAM Mentoring Pool — IA Creativa y Turismo-Cultura",
+              "name": "AiSTEAM Mentoring Pool — IA Creativa y Turismo-Cultura",
               "organisation": "",
               "role": {
                 "es": "",
@@ -18571,17 +18571,17 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "[DEMO] Mentoría — Cómo incorporar una administración pública al ecosistema AI-STEAM",
-            "en": "[DEMO] Mentoring — How to bring a public administration into the AI-STEAM ecosystem",
-            "va": "[DEMO] Mentoria — Com incorporar una administració pública a l'ecosistema AI-STEAM"
+            "es": "[DEMO] Mentoría — Cómo incorporar una administración pública al ecosistema AiSTEAM",
+            "en": "[DEMO] Mentoring — How to bring a public administration into the AiSTEAM ecosystem",
+            "va": "[DEMO] Mentoria — Com incorporar una administració pública a l'ecosistema AiSTEAM"
           },
           "summary": {
-            "es": "Acompañamiento para organismos públicos, entidades locales y consorcios interadministrativos que quieren participar activamente en el ecosistema AI-STEAM — como demandantes de retos, financiadores de pilotos o entornos de validación — y necesitan orientación sobre roles posibles, compromisos esperados, gestión de datos públicos y encaje con sus procedimientos administrativos habituales.",
-            "en": "Support for public bodies, local authorities and inter-administrative consortia wishing to actively participate in the AI-STEAM ecosystem — as challenge demanders, pilot funders or validation environments — who need guidance on possible roles, expected commitments, public data management and fit with their usual administrative procedures.",
-            "va": "Acompanyament per a organismes públics, entitats locals i consorcis interadministratius que volen participar activament en l'ecosistema AI-STEAM — com demandants de reptes, finançadors de pilots o entorns de validació — i necessiten orientació sobre rols possibles, compromisos esperats, gestió de dades públiques i encaix amb els seus procediments administratius habituals."
+            "es": "Acompañamiento para organismos públicos, entidades locales y consorcios interadministrativos que quieren participar activamente en el ecosistema AiSTEAM — como demandantes de retos, financiadores de pilotos o entornos de validación — y necesitan orientación sobre roles posibles, compromisos esperados, gestión de datos públicos y encaje con sus procedimientos administrativos habituales.",
+            "en": "Support for public bodies, local authorities and inter-administrative consortia wishing to actively participate in the AiSTEAM ecosystem — as challenge demanders, pilot funders or validation environments — who need guidance on possible roles, expected commitments, public data management and fit with their usual administrative procedures.",
+            "va": "Acompanyament per a organismes públics, entitats locals i consorcis interadministratius que volen participar activament en l'ecosistema AiSTEAM — com demandants de reptes, finançadors de pilots o entorns de validació — i necessiten orientació sobre rols possibles, compromisos esperats, gestió de dades públiques i encaix amb els seus procediments administratius habituals."
           },
           "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
+            "name": "AiSTEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
             "type": {
               "es": "Mentores con experiencia en transformación digital de administraciones públicas, datos abiertos y colaboración público-privada en innovación",
               "en": "Mentors experienced in digital transformation of public administrations, open data and public-private innovation collaboration",
@@ -18629,9 +18629,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "mentoringTeam": {
             "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
-              "en": "AI-STEAM Network Mentoring Pool — Public Innovation and AI Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Innovació Pública i IA"
+              "es": "AiSTEAM Network Mentoring Pool — Especialistas en Innovación Pública e IA",
+              "en": "AiSTEAM Network Mentoring Pool — Public Innovation and AI Specialists",
+              "va": "AiSTEAM Network Mentoring Pool — Especialistes en Innovació Pública i IA"
             },
             "type": "",
             "role": {
@@ -18725,9 +18725,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringOffer": {
           "purpose": {
-            "es": "Orientar a organismos públicos sobre cómo articular su participación en el ecosistema AI-STEAM según su perfil y capacidades — formulando un reto abierto con datos públicos, financiando un piloto educativo, abriendo sus instalaciones como entorno de validación o convirtiéndose en caso de referencia de innovación pública.",
-            "en": "Guide public bodies on how to articulate their participation in the AI-STEAM ecosystem according to their profile and capabilities — framing an open challenge with public data, funding an educational pilot, opening their facilities as a validation environment or becoming a reference case of public innovation.",
-            "va": "Orientar organismes públics sobre com articular la seua participació en l'ecosistema AI-STEAM segons el seu perfil i capacitats — formulant un repte obert amb dades públiques, finançant un pilot educatiu, obrint les seues instal·lacions com a entorn de validació o convertint-se en cas de referència d'innovació pública."
+            "es": "Orientar a organismos públicos sobre cómo articular su participación en el ecosistema AiSTEAM según su perfil y capacidades — formulando un reto abierto con datos públicos, financiando un piloto educativo, abriendo sus instalaciones como entorno de validación o convirtiéndose en caso de referencia de innovación pública.",
+            "en": "Guide public bodies on how to articulate their participation in the AiSTEAM ecosystem according to their profile and capabilities — framing an open challenge with public data, funding an educational pilot, opening their facilities as a validation environment or becoming a reference case of public innovation.",
+            "va": "Orientar organismes públics sobre com articular la seua participació en l'ecosistema AiSTEAM segons el seu perfil i capacitats — formulant un repte obert amb dades públiques, finançant un pilot educatiu, obrint les seues instal·lacions com a entorn de validació o convertint-se en cas de referència d'innovació pública."
           },
           "problemAddressed": {
             "es": "",
@@ -18774,7 +18774,7 @@ export const MARKETPLACE_CONFIG = {
           "items": [
             {
               "id": "pool-innovacion-publica",
-              "name": "AI-STEAM Mentoring Pool — Innovación Pública e IA",
+              "name": "AiSTEAM Mentoring Pool — Innovación Pública e IA",
               "organisation": "",
               "role": {
                 "es": "",
@@ -18892,17 +18892,17 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "[DEMO] Mentoría — Replicación de casos AI-STEAM en el sector agroalimentario",
-            "en": "[DEMO] Mentoring — Replicating AI-STEAM cases in the agri-food sector",
-            "va": "[DEMO] Mentoria — Replicació de casos AI-STEAM en el sector agroalimentari"
+            "es": "[DEMO] Mentoría — Replicación de casos AiSTEAM en el sector agroalimentario",
+            "en": "[DEMO] Mentoring — Replicating AiSTEAM cases in the agri-food sector",
+            "va": "[DEMO] Mentoria — Replicació de casos AiSTEAM en el sector agroalimentari"
           },
           "summary": {
-            "es": "Acompañamiento para cooperativas agrícolas, agroindustrias y centros de FP agroalimentaria que quieren replicar un caso AI-STEAM verificado en su propio contexto — adaptando los datos, el entorno productivo y las condiciones de formación — sin tener que rediseñar el proyecto desde cero.",
-            "en": "Support for agricultural cooperatives, agri-food industries and agri-food VET centres wishing to replicate a verified AI-STEAM case in their own context — adapting data, production environment and training conditions — without having to redesign the project from scratch.",
-            "va": "Acompanyament per a cooperatives agrícoles, agroindustries i centres de FP agroalimentària que volen replicar un cas AI-STEAM verificat en el seu propi context — adaptant les dades, l'entorn productiu i les condicions de formació — sense haver de redissenyar el projecte des de zero."
+            "es": "Acompañamiento para cooperativas agrícolas, agroindustrias y centros de FP agroalimentaria que quieren replicar un caso AiSTEAM verificado en su propio contexto — adaptando los datos, el entorno productivo y las condiciones de formación — sin tener que rediseñar el proyecto desde cero.",
+            "en": "Support for agricultural cooperatives, agri-food industries and agri-food VET centres wishing to replicate a verified AiSTEAM case in their own context — adapting data, production environment and training conditions — without having to redesign the project from scratch.",
+            "va": "Acompanyament per a cooperatives agrícoles, agroindustries i centres de FP agroalimentària que volen replicar un cas AiSTEAM verificat en el seu propi context — adaptant les dades, l'entorn productiu i les condicions de formació — sense haver de redissenyar el projecte des de zero."
           },
           "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
+            "name": "AiSTEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
             "type": {
               "es": "Mentores con experiencia en proyectos de IA en agricultura de precisión, visión computacional agrícola y formación agroalimentaria",
               "en": "Mentors experienced in AI projects in precision agriculture, agricultural computer vision and agri-food training",
@@ -18950,9 +18950,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "mentoringTeam": {
             "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
-              "en": "AI-STEAM Network Mentoring Pool — Agri-food AI Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Agroalimentària"
+              "es": "AiSTEAM Network Mentoring Pool — Especialistas en IA Agroalimentaria",
+              "en": "AiSTEAM Network Mentoring Pool — Agri-food AI Specialists",
+              "va": "AiSTEAM Network Mentoring Pool — Especialistes en IA Agroalimentària"
             },
             "type": "",
             "role": {
@@ -19046,9 +19046,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringOffer": {
           "purpose": {
-            "es": "Facilitar la adaptación y replicación contextualizada de un caso AI-STEAM verificado en el sector agroalimentario, identificando las condiciones de transferibilidad, los ajustes necesarios en los datos y el entorno, y asegurando que la nueva implementación mantiene la calidad de evidencia del caso original.",
-            "en": "Facilitate the contextualised adaptation and replication of a verified AI-STEAM case in the agri-food sector, identifying transferability conditions, required adjustments to data and environment, and ensuring the new implementation maintains the evidential quality of the original case.",
-            "va": "Facilitar l'adaptació i replicació contextualitzada d'un cas AI-STEAM verificat en el sector agroalimentari, identificant les condicions de transferibilitat, els ajustos necessaris en les dades i l'entorn, i assegurant que la nova implementació manté la qualitat d'evidència del cas original."
+            "es": "Facilitar la adaptación y replicación contextualizada de un caso AiSTEAM verificado en el sector agroalimentario, identificando las condiciones de transferibilidad, los ajustes necesarios en los datos y el entorno, y asegurando que la nueva implementación mantiene la calidad de evidencia del caso original.",
+            "en": "Facilitate the contextualised adaptation and replication of a verified AiSTEAM case in the agri-food sector, identifying transferability conditions, required adjustments to data and environment, and ensuring the new implementation maintains the evidential quality of the original case.",
+            "va": "Facilitar l'adaptació i replicació contextualitzada d'un cas AiSTEAM verificat en el sector agroalimentari, identificant les condicions de transferibilitat, els ajustos necessaris en les dades i l'entorn, i assegurant que la nova implementació manté la qualitat d'evidència del cas original."
           },
           "problemAddressed": {
             "es": "",
@@ -19074,9 +19074,9 @@ export const MARKETPLACE_CONFIG = {
             ],
             "languageCodes": [],
             "availability": {
-              "es": "Convocatoria abierta vinculada a casos publicados en el Marketplace AI-STEAM. Se requiere identificar el caso de referencia antes de solicitar la mentoría.",
-              "en": "Open call linked to cases published on the AI-STEAM Marketplace. The reference case must be identified before requesting mentoring.",
-              "va": "Convocatòria oberta vinculada a casos publicats al Marketplace AI-STEAM. Es requereix identificar el cas de referència abans de sol·licitar la mentoria."
+              "es": "Convocatoria abierta vinculada a casos publicados en el Marketplace AiSTEAM. Se requiere identificar el caso de referencia antes de solicitar la mentoría.",
+              "en": "Open call linked to cases published on the AiSTEAM Marketplace. The reference case must be identified before requesting mentoring.",
+              "va": "Convocatòria oberta vinculada a casos publicats al Marketplace AiSTEAM. Es requereix identificar el cas de referència abans de sol·licitar la mentoria."
             }
           },
           "targetUsers": {
@@ -19095,7 +19095,7 @@ export const MARKETPLACE_CONFIG = {
           "items": [
             {
               "id": "pool-agr-replicacion",
-              "name": "AI-STEAM Mentoring Pool — Transferencia Agroalimentaria",
+              "name": "AiSTEAM Mentoring Pool — Transferencia Agroalimentaria",
               "organisation": "",
               "role": {
                 "es": "",
@@ -19223,7 +19223,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Acompanyament per a grups de recerca universitaris i tecnològics que volen transferir els seus resultats d'IA al sistema de FP, adaptant les seues metodologies, datasets o eines a contexts formatius accessibles per a docents i alumnes sense perfil investigador, i construint el cas de valor pedagògic que justifique la col·laboració amb centres educatius."
           },
           "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
+            "name": "AiSTEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
             "type": {
               "es": "Mentores con perfil dual investigador-docente, con experiencia en traducción de resultados de investigación a contenidos formativos de FP",
               "en": "Mentors with a dual researcher-teacher profile, experienced in translating research results into VET training content",
@@ -19271,9 +19271,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "mentoringTeam": {
             "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
-              "en": "AI-STEAM Network Mentoring Pool — Research-to-VET Transfer Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Transferència Recerca-FP"
+              "es": "AiSTEAM Network Mentoring Pool — Especialistas en Transferencia Investigación-FP",
+              "en": "AiSTEAM Network Mentoring Pool — Research-to-VET Transfer Specialists",
+              "va": "AiSTEAM Network Mentoring Pool — Especialistes en Transferència Recerca-FP"
             },
             "type": "",
             "role": {
@@ -19416,7 +19416,7 @@ export const MARKETPLACE_CONFIG = {
           "items": [
             {
               "id": "pool-investigacion-fp",
-              "name": "AI-STEAM Mentoring Pool — Transferencia Investigación-FP",
+              "name": "AiSTEAM Mentoring Pool — Transferencia Investigación-FP",
               "organisation": "",
               "role": {
                 "es": "",
@@ -19544,7 +19544,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Acompanyament per a docents, equips de centre i entitats educatives que introdueixen IA en les seues pràctiques formatives i necessiten una revisió ètica bàsica — ús de dades d'alumnes, biaixos algorítmics, transparència amb les famílies, IA generativa a l'aula — abans d'implantar o publicar els seus projectes."
           },
           "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
+            "name": "AiSTEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
             "type": {
               "es": "Mentores con formación en ética digital, protección de datos educativos y uso responsable de IA en el aula",
               "en": "Mentors trained in digital ethics, educational data protection and responsible AI use in the classroom",
@@ -19592,9 +19592,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "mentoringTeam": {
             "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
-              "en": "AI-STEAM Network Mentoring Pool — AI Ethics and Education Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Ètica IA i Educació"
+              "es": "AiSTEAM Network Mentoring Pool — Especialistas en Ética IA y Educación",
+              "en": "AiSTEAM Network Mentoring Pool — AI Ethics and Education Specialists",
+              "va": "AiSTEAM Network Mentoring Pool — Especialistes en Ètica IA i Educació"
             },
             "type": "",
             "role": {
@@ -19737,7 +19737,7 @@ export const MARKETPLACE_CONFIG = {
           "items": [
             {
               "id": "pool-etica-educacion",
-              "name": "AI-STEAM Mentoring Pool — Ética IA y Educación",
+              "name": "AiSTEAM Mentoring Pool — Ética IA y Educación",
               "organisation": "",
               "role": {
                 "es": "",
@@ -19865,7 +19865,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Acompanyament tècnic per a equips de FP sanitària, centres de salut i entitats sociosanitàries que volen implementar un sistema d'IA (diagnòstic assistit, triatge automatitzat, analítica de pacients) i necessiten orientació sobre arquitectura de dades, selecció de models i compliment normatiu sanitari abans de llançar el projecte."
           },
           "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
+            "name": "AiSTEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
             "type": {
               "es": "Mentores con perfil técnico en ciencia de datos clínicos, visión computacional médica y cumplimiento normativo sanitario",
               "en": "Mentors with technical profile in clinical data science, medical computer vision and health regulatory compliance",
@@ -19913,9 +19913,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "mentoringTeam": {
             "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
-              "en": "AI-STEAM Network Mentoring Pool — Healthcare AI Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en IA Sanitària"
+              "es": "AiSTEAM Network Mentoring Pool — Especialistas en IA Sanitaria",
+              "en": "AiSTEAM Network Mentoring Pool — Healthcare AI Specialists",
+              "va": "AiSTEAM Network Mentoring Pool — Especialistes en IA Sanitària"
             },
             "type": "",
             "role": {
@@ -20058,7 +20058,7 @@ export const MARKETPLACE_CONFIG = {
           "items": [
             {
               "id": "pool-ia-sanitaria",
-              "name": "AI-STEAM Mentoring Pool — IA Sanitaria y Datos Clínicos",
+              "name": "AiSTEAM Mentoring Pool — IA Sanitaria y Datos Clínicos",
               "organisation": "",
               "role": {
                 "es": "",
@@ -20186,7 +20186,7 @@ export const MARKETPLACE_CONFIG = {
             "va": "Acompanyament per a centres de FP i empreses que volen co-dissenyar un pilot educatiu real on els alumnes treballen amb dades, eines o entorns industrials amb IA, definint hipòtesis, metodologia, mètriques d'èxit i condicions de transferibilitat des del primer moment."
           },
           "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
+            "name": "AiSTEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
             "type": {
               "es": "Mentores con perfil dual pedagógico-técnico, con experiencia en diseño de pilotos FP-empresa",
               "en": "Mentors with dual pedagogical-technical profile, experienced in designing VET-industry pilots",
@@ -20234,9 +20234,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "mentoringTeam": {
             "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
-              "en": "AI-STEAM Network Mentoring Pool — VET Pedagogy and Innovation Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Pedagogia FP i Innovació"
+              "es": "AiSTEAM Network Mentoring Pool — Especialistas en Pedagogía FP e Innovación",
+              "en": "AiSTEAM Network Mentoring Pool — VET Pedagogy and Innovation Specialists",
+              "va": "AiSTEAM Network Mentoring Pool — Especialistes en Pedagogia FP i Innovació"
             },
             "type": "",
             "role": {
@@ -20379,7 +20379,7 @@ export const MARKETPLACE_CONFIG = {
           "items": [
             {
               "id": "pool-pedagogia-fp",
-              "name": "AI-STEAM Mentoring Pool — Pedagogía FP e Innovación",
+              "name": "AiSTEAM Mentoring Pool — Pedagogía FP e Innovación",
               "organisation": "",
               "role": {
                 "es": "",
@@ -20497,17 +20497,17 @@ export const MARKETPLACE_CONFIG = {
           "forceOpen": false,
           "maturity": "idea",
           "title": {
-            "es": "[DEMO] Mentoría — Cómo formular un reto industrial para el ecosistema AI-STEAM",
-            "en": "[DEMO] Mentoring — How to frame an industrial challenge for the AI-STEAM ecosystem",
-            "va": "[DEMO] Mentoria — Com formular un repte industrial per a l'ecosistema AI-STEAM"
+            "es": "[DEMO] Mentoría — Cómo formular un reto industrial para el ecosistema AiSTEAM",
+            "en": "[DEMO] Mentoring — How to frame an industrial challenge for the AiSTEAM ecosystem",
+            "va": "[DEMO] Mentoria — Com formular un repte industrial per a l'ecosistema AiSTEAM"
           },
           "summary": {
-            "es": "Acompañamiento para empresas industriales y pymes tecnológicas que quieren convertir una necesidad de innovación o una brecha de talento en un reto bien formulado, publicable en el Marketplace AI-STEAM y orientado a obtener prototipos, datos o metodologías de la comunidad de práctica.",
-            "en": "Support for industrial companies and technology SMEs wishing to turn an innovation need or talent gap into a well-framed challenge, publishable on the AI-STEAM Marketplace and designed to obtain prototypes, data or methodologies from the community of practice.",
-            "va": "Acompanyament per a empreses industrials i pimes tecnològiques que volen convertir una necessitat d'innovació o una bretxa de talent en un repte ben formulat, publicable al Marketplace AI-STEAM i orientat a obtindre prototips, dades o metodologies de la comunitat de pràctica."
+            "es": "Acompañamiento para empresas industriales y pymes tecnológicas que quieren convertir una necesidad de innovación o una brecha de talento en un reto bien formulado, publicable en el Marketplace AiSTEAM y orientado a obtener prototipos, datos o metodologías de la comunidad de práctica.",
+            "en": "Support for industrial companies and technology SMEs wishing to turn an innovation need or talent gap into a well-framed challenge, publishable on the AiSTEAM Marketplace and designed to obtain prototypes, data or methodologies from the community of practice.",
+            "va": "Acompanyament per a empreses industrials i pimes tecnològiques que volen convertir una necessitat d'innovació o una bretxa de talent en un repte ben formulat, publicable al Marketplace AiSTEAM i orientat a obtindre prototips, dades o metodologies de la comunitat de pràctica."
           },
           "entity": {
-            "name": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
+            "name": "AiSTEAM Network Mentoring Pool — Especialistas en Industria 4.0",
             "type": {
               "es": "Mentores con experiencia en formulación de retos en contextos industriales y de FP",
               "en": "Mentors experienced in challenge framing in industrial and VET contexts",
@@ -20555,9 +20555,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "mentoringTeam": {
             "name": {
-              "es": "AI-STEAM Network Mentoring Pool — Especialistas en Industria 4.0",
-              "en": "AI-STEAM Network Mentoring Pool — Industry 4.0 Specialists",
-              "va": "AI-STEAM Network Mentoring Pool — Especialistes en Indústria 4.0"
+              "es": "AiSTEAM Network Mentoring Pool — Especialistas en Industria 4.0",
+              "en": "AiSTEAM Network Mentoring Pool — Industry 4.0 Specialists",
+              "va": "AiSTEAM Network Mentoring Pool — Especialistes en Indústria 4.0"
             },
             "type": "",
             "role": {
@@ -20651,9 +20651,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringOffer": {
           "purpose": {
-            "es": "Ayudar a empresas industriales a transformar una necesidad técnica o de talento en un reto AI-STEAM publicable, con alcance realista, incentivos atractivos para la comunidad y condiciones claras de datos y propiedad intelectual.",
-            "en": "Help industrial companies transform a technical or talent need into a publishable AI-STEAM challenge, with realistic scope, attractive community incentives and clear data and intellectual property conditions.",
-            "va": "Ajudar empreses industrials a transformar una necessitat tècnica o de talent en un repte AI-STEAM publicable, amb abast realista, incentius atractius per a la comunitat i condicions clares de dades i propietat intel·lectual."
+            "es": "Ayudar a empresas industriales a transformar una necesidad técnica o de talento en un reto AiSTEAM publicable, con alcance realista, incentivos atractivos para la comunidad y condiciones claras de datos y propiedad intelectual.",
+            "en": "Help industrial companies transform a technical or talent need into a publishable AiSTEAM challenge, with realistic scope, attractive community incentives and clear data and intellectual property conditions.",
+            "va": "Ajudar empreses industrials a transformar una necessitat tècnica o de talent en un repte AiSTEAM publicable, amb abast realista, incentius atractius per a la comunitat i condicions clares de dades i propietat intel·lectual."
           },
           "problemAddressed": {
             "es": "",
@@ -20700,7 +20700,7 @@ export const MARKETPLACE_CONFIG = {
           "items": [
             {
               "id": "pool-industria-40",
-              "name": "AI-STEAM Mentoring Pool — Industria 4.0",
+              "name": "AiSTEAM Mentoring Pool — Industria 4.0",
               "organisation": "",
               "role": {
                 "es": "",
@@ -20823,12 +20823,12 @@ export const MARKETPLACE_CONFIG = {
             "va": "[DEMO] Mentoria per a briefs creatius amb IA responsable"
           },
           "summary": {
-            "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
-            "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AI-STEAM collaboration.",
-            "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AI-STEAM."
+            "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AiSTEAM.",
+            "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AiSTEAM collaboration.",
+            "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AiSTEAM."
           },
           "entity": {
-            "name": "AI-STEAM Network Mentoring Pool",
+            "name": "AiSTEAM Network Mentoring Pool",
             "type": {
               "es": "Equipo de mentoría en formulación de retos y ética de IA",
               "en": "Mentoring team in challenge framing and AI ethics",
@@ -20876,9 +20876,9 @@ export const MARKETPLACE_CONFIG = {
           },
           "mentoringTeam": {
             "name": {
-              "es": "AI-STEAM Network Mentoring Pool",
-              "en": "AI-STEAM Network Mentoring Pool",
-              "va": "AI-STEAM Network Mentoring Pool"
+              "es": "AiSTEAM Network Mentoring Pool",
+              "en": "AiSTEAM Network Mentoring Pool",
+              "va": "AiSTEAM Network Mentoring Pool"
             },
             "type": "",
             "role": {
@@ -20972,9 +20972,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "mentoringOffer": {
           "purpose": {
-            "es": "Ayudar a entidades de la red a transformar una idea inicial en un brief claro, publicable y accionable dentro del ecosistema AI-STEAM.",
-            "en": "Help network organisations turn an initial idea into a clear, publishable and actionable brief within the AI-STEAM ecosystem.",
-            "va": "Ajudar entitats de la xarxa a transformar una idea inicial en un brief clar, publicable i accionable dins de l'ecosistema AI-STEAM."
+            "es": "Ayudar a entidades de la red a transformar una idea inicial en un brief claro, publicable y accionable dentro del ecosistema AiSTEAM.",
+            "en": "Help network organisations turn an initial idea into a clear, publishable and actionable brief within the AiSTEAM ecosystem.",
+            "va": "Ajudar entitats de la xarxa a transformar una idea inicial en un brief clar, publicable i accionable dins de l'ecosistema AiSTEAM."
           },
           "problemAddressed": {
             "es": "",
@@ -21021,7 +21021,7 @@ export const MARKETPLACE_CONFIG = {
           "items": [
             {
               "id": "ai-steam-mentoring-pool",
-              "name": "AI-STEAM Network Mentoring Pool",
+              "name": "AiSTEAM Network Mentoring Pool",
               "organisation": "",
               "role": {
                 "es": "",
@@ -21270,9 +21270,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Pot la IA recomanar l'itinerari de FP més adequat per a cada alumne?"
           },
           "reward": {
-            "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CECU, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AI-STEAM y en la red estatal de innovación en FP.",
-            "en": "The winning team receives: (1) development and implementation contract with CECU, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AI-STEAM Marketplace and in the national VET innovation network.",
-            "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CECU, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AI-STEAM i a la xarxa estatal d'innovació en FP."
+            "es": "El equipo ganador recibe: (1) contrato de desarrollo e implementación con CECU, (2) acceso privilegiado a datos del Observatorio Laboral Valenciano para investigación, (3) publicación del caso en el Marketplace AiSTEAM y en la red estatal de innovación en FP.",
+            "en": "The winning team receives: (1) development and implementation contract with CECU, (2) privileged access to Valencian Labour Observatory data for research, (3) publication of the case in the AiSTEAM Marketplace and in the national VET innovation network.",
+            "va": "L'equip guanyador rep: (1) contracte de desenvolupament i implementació amb CECU, (2) accés privilegiat a dades de l'Observatori Laboral Valencià per a la recerca, (3) publicació del cas al Marketplace AiSTEAM i a la xarxa estatal d'innovació en FP."
           }
         },
         "access": {
@@ -22179,9 +22179,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Pot una bessona digital predir i prevenir sobrecàrregues en la xarxa de distribució?"
           },
           "reward": {
-            "es": "El equipo ganador recibe: (1) contrato de prueba de concepto con Endesa por valor de 15.000 €, (2) mentoría técnica de 3 meses con el equipo de innovación de redes, (3) publicación del caso en el Marketplace AI-STEAM como caso verificado.",
-            "en": "The winning team receives: (1) proof-of-concept contract with Endesa worth €15,000, (2) 3-month technical mentoring with the grid innovation team, (3) publication of the case in the AI-STEAM Marketplace as a verified case.",
-            "va": "L'equip guanyador rep: (1) contracte de prova de concepte amb Endesa per valor de 15.000 €, (2) mentoria tècnica de 3 mesos amb l'equip d'innovació de xarxes, (3) publicació del cas al Marketplace AI-STEAM com a cas verificat."
+            "es": "El equipo ganador recibe: (1) contrato de prueba de concepto con Endesa por valor de 15.000 €, (2) mentoría técnica de 3 meses con el equipo de innovación de redes, (3) publicación del caso en el Marketplace AiSTEAM como caso verificado.",
+            "en": "The winning team receives: (1) proof-of-concept contract with Endesa worth €15,000, (2) 3-month technical mentoring with the grid innovation team, (3) publication of the case in the AiSTEAM Marketplace as a verified case.",
+            "va": "L'equip guanyador rep: (1) contracte de prova de concepte amb Endesa per valor de 15.000 €, (2) mentoria tècnica de 3 mesos amb l'equip d'innovació de xarxes, (3) publicació del cas al Marketplace AiSTEAM com a cas verificat."
           }
         },
         "access": {
@@ -23391,9 +23391,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Pot un smartphone detectar plagues de taronger abans que l'agricultor les veja?"
           },
           "reward": {
-            "es": "El equipo ganador recibe: (1) acuerdo de colaboración para pilotar la solución en campo durante la campaña 2027, (2) acceso a mentores del IVIA (Instituto Valenciano de Investigaciones Agrarias), (3) publicación del caso en el Marketplace AI-STEAM.",
-            "en": "The winning team receives: (1) collaboration agreement to pilot the solution in the field during the 2027 campaign, (2) access to mentors from IVIA (Valencian Institute of Agrarian Research), (3) publication of the case in the AI-STEAM Marketplace.",
-            "va": "L'equip guanyador rep: (1) acord de col·laboració per pilotar la solució en camp durant la campanya 2027, (2) accés a mentors de l'IVIA (Institut Valencià d'Investigacions Agràries), (3) publicació del cas al Marketplace AI-STEAM."
+            "es": "El equipo ganador recibe: (1) acuerdo de colaboración para pilotar la solución en campo durante la campaña 2027, (2) acceso a mentores del IVIA (Instituto Valenciano de Investigaciones Agrarias), (3) publicación del caso en el Marketplace AiSTEAM.",
+            "en": "The winning team receives: (1) collaboration agreement to pilot the solution in the field during the 2027 campaign, (2) access to mentors from IVIA (Valencian Institute of Agrarian Research), (3) publication of the case in the AiSTEAM Marketplace.",
+            "va": "L'equip guanyador rep: (1) acord de col·laboració per pilotar la solució en camp durant la campanya 2027, (2) accés a mentors de l'IVIA (Institut Valencià d'Investigacions Agràries), (3) publicació del cas al Marketplace AiSTEAM."
           }
         },
         "access": {
@@ -24076,9 +24076,9 @@ export const MARKETPLACE_CONFIG = {
             },
             {
               "label": {
-                "es": "Revisión de condiciones de uso — AI-STEAM Asesoría Legal",
-                "en": "Use conditions review — AI-STEAM Legal Advisory",
-                "va": "Revisió de condicions d'ús — AI-STEAM Assessoria Legal"
+                "es": "Revisión de condiciones de uso — AiSTEAM Asesoría Legal",
+                "en": "Use conditions review — AiSTEAM Legal Advisory",
+                "va": "Revisió de condicions d'ús — AiSTEAM Assessoria Legal"
               }
             },
             {
@@ -26003,9 +26003,9 @@ export const MARKETPLACE_CONFIG = {
             },
             {
               "label": {
-                "es": "Sessión de valoración formativa — Comité Técnico Búsqueda AI-STEAM",
-                "en": "Educational value assessment session — AI-STEAM Research Technical Committee",
-                "va": "Sessió de valoració formativa — Comité Tècnic Recerca AI-STEAM"
+                "es": "Sessión de valoración formativa — Comité Técnico Búsqueda AiSTEAM",
+                "en": "Educational value assessment session — AiSTEAM Research Technical Committee",
+                "va": "Sessió de valoració formativa — Comité Tècnic Recerca AiSTEAM"
               }
             }
           ]
@@ -28066,9 +28066,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "sc2",
               "label": {
-                "es": "Plantilla CC-BY-SA publicada en repositorio AI-STEAM y reutilizable",
-                "en": "CC-BY-SA template published in AI-STEAM repository and reusable",
-                "va": "Plantilla CC-BY-SA publicada en repositori AI-STEAM i reutilitzable"
+                "es": "Plantilla CC-BY-SA publicada en repositorio AiSTEAM y reutilizable",
+                "en": "CC-BY-SA template published in AiSTEAM repository and reusable",
+                "va": "Plantilla CC-BY-SA publicada en repositori AiSTEAM i reutilitzable"
               }
             }
           ]
@@ -28114,9 +28114,9 @@ export const MARKETPLACE_CONFIG = {
             {
               "id": "ai-steam-repo",
               "label": {
-                "es": "Repositorio AI-STEAM",
-                "en": "AI-STEAM repository",
-                "va": "Repositori AI-STEAM"
+                "es": "Repositorio AiSTEAM",
+                "en": "AiSTEAM repository",
+                "va": "Repositori AiSTEAM"
               }
             }
           ],
@@ -28982,7 +28982,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
+            "name": "AiSTEAM Network",
             "org": "CECU"
           },
           "origin": {
@@ -29314,7 +29314,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
+            "name": "AiSTEAM Network",
             "org": "CECU"
           },
           "origin": {
@@ -29633,7 +29633,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
+            "name": "AiSTEAM Network",
             "org": "CECU"
           },
           "origin": {
@@ -29951,7 +29951,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
+            "name": "AiSTEAM Network",
             "org": "CECU"
           },
           "origin": {
@@ -30271,7 +30271,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
+            "name": "AiSTEAM Network",
             "org": "CECU"
           },
           "origin": {
@@ -30590,7 +30590,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
+            "name": "AiSTEAM Network",
             "org": "CECU"
           },
           "origin": {
@@ -30924,7 +30924,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
+            "name": "AiSTEAM Network",
             "org": "CECU"
           },
           "origin": {
@@ -31255,7 +31255,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
+            "name": "AiSTEAM Network",
             "org": "CECU"
           },
           "origin": {
@@ -31575,7 +31575,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
+            "name": "AiSTEAM Network",
             "org": "CECU"
           },
           "origin": {
@@ -31908,7 +31908,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
+            "name": "AiSTEAM Network",
             "org": "CECU"
           },
           "origin": {
@@ -32226,7 +32226,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
+            "name": "AiSTEAM Network",
             "org": "CECU"
           },
           "origin": {
@@ -32572,7 +32572,7 @@ export const MARKETPLACE_CONFIG = {
         },
         "ownership": {
           "publisher": {
-            "name": "AI-STEAM Network",
+            "name": "AiSTEAM Network",
             "org": "CECU"
           },
           "origin": {
@@ -33069,9 +33069,9 @@ export const MARKETPLACE_CONFIG = {
         "id": "community",
         "visible": true,
         "label": {
-          "es": "Comunidad AI-STEAM",
-          "en": "AI-STEAM community",
-          "va": "Comunitat AI-STEAM"
+          "es": "Comunidad AiSTEAM",
+          "en": "AiSTEAM community",
+          "va": "Comunitat AiSTEAM"
         }
       }
     ],

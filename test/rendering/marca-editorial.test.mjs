@@ -57,6 +57,18 @@ test('traducciones publicadas: AiSTEAM Network en header y home, en los tres idi
   assert.match(translations.es.home.heroTagline, /AiSTEAM Network es el ecosistema Track B de CECU para AiSECRETT/);
 });
 
+test('Formación: aviso del Máster y último paso del recorrido, sin la grafía antigua', async () => {
+  const { translations } = await import('../../assets/data/translations.js');
+  for (const lang of ['es', 'en', 'va']) {
+    const t = translations[lang].training;
+    assert.match(t.masterBridgeDisclaimer, /Master|Màster|Máster/);
+    assert.ok(t.masterBridgeDisclaimer.includes('AiSECRETT') && !/AI-S/.test(t.masterBridgeDisclaimer), lang);
+    assert.equal(t.masterPathSteps.length, 5, `${lang}: la lista conserva sus cinco pasos`);
+    assert.ok(!/AI-S/.test(t.masterPathSteps.join('|')), lang);
+  }
+  assert.equal(translations.es.training.masterPathSteps[4], 'Evidencia de adopción aportada a AiSECRETT');
+});
+
 test('identificadores estructurales publicados conservan su grafía', async () => {
   const data = await leer('assets/data/governance.js');
   assert.ok(/\bai-steam-network\b/.test(data), 'el id/slug ai-steam-network no cambia');

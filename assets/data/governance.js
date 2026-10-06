@@ -10,9 +10,9 @@ export const GOVERNANCE_CONFIG = {
       "va": "Governança del Projecte"
     },
     "description": {
-      "es": "Estructura de toma de decisiones y coordinación del consorcio AI-SECRETT, con representación de todos los agentes del ecosistema y mecanismos de participación abierta.",
-      "en": "Decision-making and coordination structure of the AI-SECRETT consortium, with representation from all ecosystem agents and open participation mechanisms.",
-      "va": "Estructura de presa de decisions i coordinació del consorci AI-SECRETT, amb representació de tots els agents de l'ecosistema i mecanismes de participació oberta."
+      "es": "Estructura de toma de decisiones y coordinación del consorcio AiSECRETT, con representación de todos los agentes del ecosistema y mecanismos de participación abierta.",
+      "en": "Decision-making and coordination structure of the AiSECRETT consortium, with representation from all ecosystem agents and open participation mechanisms.",
+      "va": "Estructura de presa de decisions i coordinació del consorci AiSECRETT, amb representació de tots els agents de l'ecosistema i mecanismes de participació oberta."
     },
     "stats": [
       {
@@ -62,9 +62,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Estructura de Hub Distribuït"
       },
       "description": {
-        "es": "La AI-STEAM Network opera como un concentrador distribuido de mejora del conocimiento e innovación, inspirada en el modelo DigiNet (Finlandia). Su estructura física y virtual replica la lógica de un hub con nodos regionales europeos.",
-        "en": "The AI-STEAM Network operates as a distributed facility for knowledge improvement and innovation, inspired by the DigiNet model (Finland). Its physical and virtual structure replicates the logic of a hub with European regional nodes.",
-        "va": "La xarxa AI-STEAM funciona com una instal·lació distribuïda per a la millora del coneixement i la innovació, inspirada en el model DigiNet (Finlàndia). La seua estructura física i virtual replica la lògica d'un hub amb nodes regionals europeus."
+        "es": "La AiSTEAM Network opera como un concentrador distribuido de mejora del conocimiento e innovación, inspirada en el modelo DigiNet (Finlandia). Su estructura física y virtual replica la lógica de un hub con nodos regionales europeos.",
+        "en": "The AiSTEAM Network operates as a distributed facility for knowledge improvement and innovation, inspired by the DigiNet model (Finland). Its physical and virtual structure replicates the logic of a hub with European regional nodes.",
+        "va": "La xarxa AiSTEAM funciona com una instal·lació distribuïda per a la millora del coneixement i la innovació, inspirada en el model DigiNet (Finlàndia). La seua estructura física i virtual replica la lògica d'un hub amb nodes regionals europeus."
       },
       "nodes": [
         {
@@ -135,9 +135,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Europa (12 països)"
           },
           "org": {
-            "es": "Socios del Consorcio AI-SECRETT",
-            "en": "AI-SECRETT Consortium Partners",
-            "va": "Socis del Consorci AI-SECRETT"
+            "es": "Socios del Consorcio AiSECRETT",
+            "en": "AiSECRETT Consortium Partners",
+            "va": "Socis del Consorci AiSECRETT"
           },
           "role": {
             "es": "NTNU, HSW, INESC, LAUREA, FIDIT, Ud'A, ESAD-GV y otros. Extensión regional de la red en sus territorios.",
@@ -271,9 +271,9 @@ export const GOVERNANCE_CONFIG = {
                 "va": "Garant acadèmic"
               },
               "desc": {
-                "es": "Responsable de la calidad académica del Máster AI-SECRETT, los ECTS y la evaluación de competencias. Coordina con Laurea el Espacio Académico.",
-                "en": "Responsible for academic quality of the Master AI-SECRETT, ECTS credits, and competency evaluation. Coordinates with Laurea the Academic Space.",
-                "va": "Responsable de la qualitat acadèmica del Màster AI-SECRETT, els crèdits ECTS i l'avaluació de competències. Coordina amb Laurea l'Espai Acadèmic."
+                "es": "Responsable de la calidad académica del Máster AiSECRETT, los ECTS y la evaluación de competencias. Coordina con Laurea el Espacio Académico.",
+                "en": "Responsible for academic quality of the Master AiSECRETT, ECTS credits, and competency evaluation. Coordinates with Laurea the Academic Space.",
+                "va": "Responsable de la qualitat acadèmica del Màster AiSECRETT, els crèdits ECTS i l'avaluació de competències. Coordina amb Laurea l'Espai Acadèmic."
               }
             },
             {
@@ -332,9 +332,9 @@ export const GOVERNANCE_CONFIG = {
   "formalBodiesBlock": {
     "visible": true,
     "title": {
-      "es": "Órganos Formales del Consorcio AI-SECRETT",
-      "en": "Formal Bodies of the AI-SECRETT Consortium",
-      "va": "Òrgans Formals del Consorci AI-SECRETT"
+      "es": "Órganos Formales del Consorcio AiSECRETT",
+      "en": "Formal Bodies of the AiSECRETT Consortium",
+      "va": "Òrgans Formals del Consorci AiSECRETT"
     },
     "description": {
       "es": "Los seis órganos de gobernanza están definidos en el Acuerdo de Consorcio v1.0. Cada uno opera en uno o ambos Tracks según su naturaleza.",
@@ -483,9 +483,9 @@ export const GOVERNANCE_CONFIG = {
           "va": "Òrgan de validació (Track A)"
         },
         "desc": {
-          "es": "Valida la calidad académica del Máster AI-SECRETT, los módulos ECTS y los recursos OER. Transforma los retos del ecosistema en materiales didácticos dentro del Track Académico.",
-          "en": "Validates the academic quality of the Master AI-SECRETT, ECTS modules, and OER resources. Transforms ecosystem challenges into educational materials within the Academic Track.",
-          "va": "Valida la qualitat acadèmica del Màster AI-SECRETT, els mòduls ECTS i els recursos OER. Transforma els reptes de l'ecosistema en materials didàctics dins del Track Acadèmic."
+          "es": "Valida la calidad académica del Máster AiSECRETT, los módulos ECTS y los recursos OER. Transforma los retos del ecosistema en materiales didácticos dentro del Track Académico.",
+          "en": "Validates the academic quality of the Master AiSECRETT, ECTS modules, and OER resources. Transforms ecosystem challenges into educational materials within the Academic Track.",
+          "va": "Valida la qualitat acadèmica del Màster AiSECRETT, els mòduls ECTS i els recursos OER. Transforma els reptes de l'ecosistema en materials didàctics dins del Track Acadèmic."
         },
         "members": {
           "es": "Investigadores senior: UVEG, UMU, NTNU, INESC, Ud'A",
@@ -591,9 +591,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "ISO 21001 – Gestió Educativa"
           },
           "desc": {
-            "es": "Las actividades formativas de AI-SECRETT se orientan por los principios de ISO 21001/EOMS bajo coordinación de UVEG. Cualquier certificación o transferencia posterior requerirá una decisión formal de la Asamblea General.",
-            "en": "AI-SECRETT training activities are guided by ISO 21001/EOMS principles under UVEG coordination. Any later certification or transfer will require a formal decision by the General Assembly.",
-            "va": "Les activitats formatives d'AI-SECRETT s'orienten pels principis d'ISO 21001/EOMS sota coordinació d'UVEG. Qualsevol certificació o transferència posterior requerirà una decisió formal de l'Assemblea General."
+            "es": "Las actividades formativas de AiSECRETT se orientan por los principios de ISO 21001/EOMS bajo coordinación de UVEG. Cualquier certificación o transferencia posterior requerirá una decisión formal de la Asamblea General.",
+            "en": "AiSECRETT training activities are guided by ISO 21001/EOMS principles under UVEG coordination. Any later certification or transfer will require a formal decision by the General Assembly.",
+            "va": "Les activitats formatives d'AiSECRETT s'orienten pels principis d'ISO 21001/EOMS sota coordinació d'UVEG. Qualsevol certificació o transferència posterior requerirà una decisió formal de l'Assemblea General."
           }
         },
         {
@@ -608,9 +608,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "ENRED – Xarxa Europea de Departaments d'Educació Regional"
           },
           "desc": {
-            "es": "ENRED es un marco de cooperación interregional no vinculante que impulsa el intercambio de buenas prácticas, el diálogo político y la colaboración internacional entre departamentos regionales de educación en Europa. AI-STEAM Network se construye sobre ese ecosistema de confianza institucional: aprovecha las relaciones interregionales de ENRED para ampliar la visibilidad, el compromiso de los stakeholders y la diseminación de la innovación educativa en IA, creatividad y STEAM.",
-            "en": "ENRED is a non-binding interregional cooperation framework promoting best practice exchange, policy dialogue and international collaboration among regional education departments in Europe. AI-STEAM Network builds on this institutional trust ecosystem: it draws on ENRED's interregional relationships to broaden visibility, stakeholder engagement and dissemination of educational innovation in AI, creativity and STEAM.",
-            "va": "ENRED és un marc de cooperació interregional no vinculant que impulsa l'intercanvi de bones pràctiques, el diàleg polític i la col·laboració internacional entre departaments regionals d'educació a Europa. AI-STEAM Network es construeix sobre eixe ecosistema de confiança institucional: aprofita les relacions interregionals d'ENRED per a ampliar la visibilitat, el compromís dels stakeholders i la difusió de la innovació educativa en IA, creativitat i STEAM."
+            "es": "ENRED es un marco de cooperación interregional no vinculante que impulsa el intercambio de buenas prácticas, el diálogo político y la colaboración internacional entre departamentos regionales de educación en Europa. AiSTEAM Network se construye sobre ese ecosistema de confianza institucional: aprovecha las relaciones interregionales de ENRED para ampliar la visibilidad, el compromiso de los stakeholders y la diseminación de la innovación educativa en IA, creatividad y STEAM.",
+            "en": "ENRED is a non-binding interregional cooperation framework promoting best practice exchange, policy dialogue and international collaboration among regional education departments in Europe. AiSTEAM Network builds on this institutional trust ecosystem: it draws on ENRED's interregional relationships to broaden visibility, stakeholder engagement and dissemination of educational innovation in AI, creativity and STEAM.",
+            "va": "ENRED és un marc de cooperació interregional no vinculant que impulsa l'intercanvi de bones pràctiques, el diàleg polític i la col·laboració internacional entre departaments regionals d'educació a Europa. AiSTEAM Network es construeix sobre eixe ecosistema de confiança institucional: aprofita les relacions interregionals d'ENRED per a ampliar la visibilitat, el compromís dels stakeholders i la difusió de la innovació educativa en IA, creativitat i STEAM."
           }
         }
       ]
@@ -624,9 +624,9 @@ export const GOVERNANCE_CONFIG = {
       "va": "Model de Governança Dual Track"
     },
     "description": {
-      "es": "Para garantizar la operabilidad legal y pedagógica, la AI-STEAM Network implementa un modelo de gobernanza Dual Track que opera en paralelo. Cada Track tiene su propio gestor, ámbito, marco normativo y límites de autoridad. Esta separación es deliberada: protege la autonomía universitaria en el Track A y permite la flexibilidad del ecosistema en el Track B.",
-      "en": "To ensure legal and pedagogical operability, the AI-STEAM Network implements a Dual Track governance model that operates in parallel. Each Track has its own manager, scope, normative framework, and limits of authority. This separation is deliberate: it protects university autonomy in Track A and enables ecosystem flexibility in Track B.",
-      "va": "Per garantir l'operabilitat legal i pedagògica, la AI-STEAM Network implementa un model de governança Dual Track que opera en paral·lel. Cada Track té el seu propi gestor, àmbit, marc normatiu i límits d'autoritat. Aquesta separació és deliberada: protegeix l'autonomia universitària al Track A i permet la flexibilitat de l'ecosistema al Track B."
+      "es": "Para garantizar la operabilidad legal y pedagógica, la AiSTEAM Network implementa un modelo de gobernanza Dual Track que opera en paralelo. Cada Track tiene su propio gestor, ámbito, marco normativo y límites de autoridad. Esta separación es deliberada: protege la autonomía universitaria en el Track A y permite la flexibilidad del ecosistema en el Track B.",
+      "en": "To ensure legal and pedagogical operability, the AiSTEAM Network implements a Dual Track governance model that operates in parallel. Each Track has its own manager, scope, normative framework, and limits of authority. This separation is deliberate: it protects university autonomy in Track A and enables ecosystem flexibility in Track B.",
+      "va": "Per garantir l'operabilitat legal i pedagògica, la AiSTEAM Network implementa un model de governança Dual Track que opera en paral·lel. Cada Track té el seu propi gestor, àmbit, marc normatiu i límits d'autoritat. Aquesta separació és deliberada: protegeix l'autonomia universitària al Track A i permet la flexibilitat de l'ecosistema al Track B."
     },
     "fieldLabels": {
       "scope": {
@@ -668,16 +668,16 @@ export const GOVERNANCE_CONFIG = {
         },
         "scope": {
           "text": {
-            "es": "Currículo del Máster AI-SECRETT, microcredenciales ECTS, evaluaciones académicas, rigor científico y calidad pedagógica.",
-            "en": "Master AI-SECRETT curriculum, ECTS micro-credentials, academic evaluations, scientific rigor, and pedagogical quality.",
-            "va": "Currículum del Màster AI-SECRETT, microcredencials ECTS, avaluacions acadèmiques, rigor científic i qualitat pedagògica."
+            "es": "Currículo del Máster AiSECRETT, microcredenciales ECTS, evaluaciones académicas, rigor científico y calidad pedagógica.",
+            "en": "Master AiSECRETT curriculum, ECTS micro-credentials, academic evaluations, scientific rigor, and pedagogical quality.",
+            "va": "Currículum del Màster AiSECRETT, microcredencials ECTS, avaluacions acadèmiques, rigor científic i qualitat pedagògica."
           }
         },
         "normativeFramework": {
           "text": {
-            "es": "Acuerdo de Consorcio AI-SECRETT + estándares universitarios de calidad (Proceso de Bolonia) + ISO 21001.",
-            "en": "AI-SECRETT Consortium Agreement + university quality standards (Bologna Process) + ISO 21001.",
-            "va": "Acord de Consorci AI-SECRETT + estàndards universitaris de qualitat (Procés de Bolonya) + ISO 21001."
+            "es": "Acuerdo de Consorcio AiSECRETT + estándares universitarios de calidad (Proceso de Bolonia) + ISO 21001.",
+            "en": "AiSECRETT Consortium Agreement + university quality standards (Bologna Process) + ISO 21001.",
+            "va": "Acord de Consorci AiSECRETT + estàndards universitaris de qualitat (Procés de Bolonya) + ISO 21001."
           }
         },
         "keyLimit": {
@@ -849,9 +849,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Zona Privada / Acadèmica (Track A)"
           },
           "description": {
-            "es": "Información académica gestionada en sistemas autorizados del Track A, fuera de la web pública AI-STEAM Network.",
-            "en": "Academic information managed in authorised Track A systems, outside the public AI-STEAM Network website.",
-            "va": "Informació acadèmica gestionada en sistemes autoritzats del Track A, fora de la web pública AI-STEAM Network."
+            "es": "Información académica gestionada en sistemas autorizados del Track A, fuera de la web pública AiSTEAM Network.",
+            "en": "Academic information managed in authorised Track A systems, outside the public AiSTEAM Network website.",
+            "va": "Informació acadèmica gestionada en sistemes autoritzats del Track A, fora de la web pública AiSTEAM Network."
           },
           "items": [
             {
@@ -865,9 +865,9 @@ export const GOVERNANCE_CONFIG = {
               "va": "Exàmens i activitats d'avaluació"
             },
             {
-              "es": "Materiales docentes del Máster AI-SECRETT",
-              "en": "Master AI-SECRETT teaching materials",
-              "va": "Materials docents del Màster AI-SECRETT"
+              "es": "Materiales docentes del Máster AiSECRETT",
+              "en": "Master AiSECRETT teaching materials",
+              "va": "Materials docents del Màster AiSECRETT"
             },
             {
               "es": "Datos personales de estudiantes (protegidos por normativa universitaria)",
@@ -891,9 +891,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Dades i límits de responsabilitat"
       },
       "description": {
-        "es": "Cada plataforma mantiene su responsabilidad operativa. La AI-STEAM Network protege los compromisos de CECU en el Track B sin entrar en decisiones académicas del Máster.",
-        "en": "Each platform keeps its operational responsibility. The AI-STEAM Network protects CECU commitments in Track B without entering Master academic decisions.",
-        "va": "Cada plataforma manté la seua responsabilitat operativa. La AI-STEAM Network protegeix els compromisos de CECU al Track B sense entrar en decisions acadèmiques del Màster."
+        "es": "Cada plataforma mantiene su responsabilidad operativa. La AiSTEAM Network protege los compromisos de CECU en el Track B sin entrar en decisiones académicas del Máster.",
+        "en": "Each platform keeps its operational responsibility. The AiSTEAM Network protects CECU commitments in Track B without entering Master academic decisions.",
+        "va": "Cada plataforma manté la seua responsabilitat operativa. La AiSTEAM Network protegeix els compromisos de CECU al Track B sense entrar en decisions acadèmiques del Màster."
       },
       "items": [
         {
@@ -906,9 +906,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "CECU"
           },
           "scope": {
-            "es": "Datos de miembros, participación comunitaria, red ENRED/AI-STEAM, retos/casos y evidencias del Track B.",
-            "en": "Member data, community participation, ENRED/AI-STEAM network, challenges/cases and Track B evidence.",
-            "va": "Dades de membres, participació comunitària, xarxa ENRED/AI-STEAM, reptes/casos i evidències del Track B."
+            "es": "Datos de miembros, participación comunitaria, red ENRED/AiSTEAM, retos/casos y evidencias del Track B.",
+            "en": "Member data, community participation, ENRED/AiSTEAM network, challenges/cases and Track B evidence.",
+            "va": "Dades de membres, participació comunitària, xarxa ENRED/AiSTEAM, reptes/casos i evidències del Track B."
           }
         },
         {
@@ -1042,9 +1042,9 @@ export const GOVERNANCE_CONFIG = {
       "va": "Metodologia Learning by Developing (LbD)"
     },
     "description": {
-      "es": "La AI-STEAM Network no es un repositorio pasivo. La interacción entre los dos Tracks (Académico y Ecosistema) utiliza la metodología LbD (Learning by Developing) como modelo pedagógico de referencia, transformando necesidades reales en oportunidades de aprendizaje, transferencia y evidencia cuando proceda.",
-      "en": "The AI-STEAM Network is not a passive repository. Interaction between the two Tracks (Academic and Ecosystem) uses the LbD methodology as a reference pedagogical model, transforming real needs into learning, transfer and evidence opportunities where appropriate.",
-      "va": "La xarxa AI-STEAM no és un repositori passiu. La interacció entre els dos Tracks (Acadèmic i Ecosistema) utilitza la metodologia LbD com a model pedagògic de referència, transformant necessitats reals en oportunitats d'aprenentatge, transferència i evidència quan pertoque."
+      "es": "La AiSTEAM Network no es un repositorio pasivo. La interacción entre los dos Tracks (Académico y Ecosistema) utiliza la metodología LbD (Learning by Developing) como modelo pedagógico de referencia, transformando necesidades reales en oportunidades de aprendizaje, transferencia y evidencia cuando proceda.",
+      "en": "The AiSTEAM Network is not a passive repository. Interaction between the two Tracks (Academic and Ecosystem) uses the LbD methodology as a reference pedagogical model, transforming real needs into learning, transfer and evidence opportunities where appropriate.",
+      "va": "La xarxa AiSTEAM no és un repositori passiu. La interacció entre els dos Tracks (Acadèmic i Ecosistema) utilitza la metodologia LbD com a model pedagògic de referència, transformant necessitats reals en oportunitats d'aprenentatge, transferència i evidència quan pertoque."
     },
     "diginetDescription": {
       "es": "El enfoque se inspira en experiencias como DigiNet y en el modelo LbD aportado por Laurea, adaptándolos con prudencia al contexto de la IA aplicada a la triple transición europea.",
@@ -1070,9 +1070,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Track B"
           },
           "platform": {
-            "es": "ConsensUE + AI-STEAM Network",
-            "en": "ConsensUE + AI-STEAM Network",
-            "va": "ConsensUE + AI-STEAM Network"
+            "es": "ConsensUE + AiSTEAM Network",
+            "en": "ConsensUE + AiSTEAM Network",
+            "va": "ConsensUE + AiSTEAM Network"
           },
           "title": {
             "es": "Input: Retos y Casos de Uso",
@@ -1145,9 +1145,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Comité Científic + equip docent UVEG/Laurea"
           },
           "description": {
-            "es": "Cuando una contribución se considera académicamente pertinente, UVEG y los socios académicos deciden si se convierte en material, actividad o propuesta de trabajo dentro del Track A. La AI-STEAM Network no asigna ECTS ni evalúa al alumnado del Máster.",
-            "en": "When a contribution is academically relevant, UVEG and academic partners decide whether it becomes material, an activity or a work proposal within Track A. The AI-STEAM Network does not assign ECTS or evaluate Master students.",
-            "va": "Quan una contribució és acadèmicament pertinent, UVEG i els socis acadèmics decidixen si es converteix en material, activitat o proposta de treball dins del Track A. La xarxa AI-STEAM no assigna ECTS ni avalua l'alumnat del Màster."
+            "es": "Cuando una contribución se considera académicamente pertinente, UVEG y los socios académicos deciden si se convierte en material, actividad o propuesta de trabajo dentro del Track A. La AiSTEAM Network no asigna ECTS ni evalúa al alumnado del Máster.",
+            "en": "When a contribution is academically relevant, UVEG and academic partners decide whether it becomes material, an activity or a work proposal within Track A. The AiSTEAM Network does not assign ECTS or evaluate Master students.",
+            "va": "Quan una contribució és acadèmicament pertinent, UVEG i els socis acadèmics decidixen si es converteix en material, activitat o proposta de treball dins del Track A. La xarxa AiSTEAM no assigna ECTS ni avalua l'alumnat del Màster."
           },
           "outputs": [
             {
@@ -1190,9 +1190,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Track B + Track A"
           },
           "platform": {
-            "es": "AI-STEAM Network + Aules",
-            "en": "AI-STEAM Network + Aules",
-            "va": "AI-STEAM Network + Aules"
+            "es": "AiSTEAM Network + Aules",
+            "en": "AiSTEAM Network + Aules",
+            "va": "AiSTEAM Network + Aules"
           },
           "title": {
             "es": "Output: Beneficio Triple",
@@ -1200,9 +1200,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Output: Benefici Triple"
           },
           "actor": {
-            "es": "Organización proponente + Estudiante + Red AI-STEAM",
-            "en": "Proposing organization + Student + AI-STEAM Network",
-            "va": "Organització proponent + Estudiant + Xarxa AI-STEAM"
+            "es": "Organización proponente + Estudiante + Red AiSTEAM",
+            "en": "Proposing organization + Student + AiSTEAM Network",
+            "va": "Organització proponent + Estudiant + Xarxa AiSTEAM"
           },
           "description": {
             "es": "Al completar el reto, cada parte recibe su beneficio específico. Si el resultado no es confidencial, se publica como caso de éxito en la sección de Conocimiento para visibilidad europea.",
@@ -1279,9 +1279,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Classificació"
           },
           "description": {
-            "es": "Se clasifica por sector AI-SECRETT y ruta: FP, docente, recurso, piloto o puente académico.",
-            "en": "It is classified by AI-SECRETT sector and route: VET, teacher, resource, pilot or academic bridge.",
-            "va": "Es classifica per sector AI-SECRETT i ruta: FP, docent, recurs, pilot o pont acadèmic."
+            "es": "Se clasifica por sector AiSECRETT y ruta: FP, docente, recurso, piloto o puente académico.",
+            "en": "It is classified by AiSECRETT sector and route: VET, teacher, resource, pilot or academic bridge.",
+            "va": "Es classifica per sector AiSECRETT i ruta: FP, docent, recurs, pilot o pont acadèmic."
           }
         },
         {
@@ -1354,9 +1354,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Les Tres Plataformes en el Flux LbD"
       },
       "description": {
-        "es": "Cada plataforma tiene un rol específico. La web AI-STEAM publica y orienta; el Espacio ConsensUE en Aules apoya la participación cuando esté habilitada; Aules se usa para cursos y actividades del Track B.",
-        "en": "Each platform has a specific role. The AI-STEAM website publishes and routes; the ConsensUE space in Aules supports participation when enabled; Aules is used for Track B courses and activities.",
-        "va": "Cada plataforma té un rol específic. La web AI-STEAM publica i orienta; l'Espai ConsensUE en Aules dona suport a la participació quan estiga habilitada; Aules s'utilitza per a cursos i activitats del Track B."
+        "es": "Cada plataforma tiene un rol específico. La web AiSTEAM publica y orienta; el Espacio ConsensUE en Aules apoya la participación cuando esté habilitada; Aules se usa para cursos y actividades del Track B.",
+        "en": "Each platform has a specific role. The AiSTEAM website publishes and routes; the ConsensUE space in Aules supports participation when enabled; Aules is used for Track B courses and activities.",
+        "va": "Cada plataforma té un rol específic. La web AiSTEAM publica i orienta; l'Espai ConsensUE en Aules dona suport a la participació quan estiga habilitada; Aules s'utilitza per a cursos i activitats del Track B."
       },
       "cards": [
         {
@@ -1399,9 +1399,9 @@ export const GOVERNANCE_CONFIG = {
           "visible": true,
           "order": 2,
           "name": {
-            "es": "AI-STEAM Network",
-            "en": "AI-STEAM Network",
-            "va": "AI-STEAM Network"
+            "es": "AiSTEAM Network",
+            "en": "AiSTEAM Network",
+            "va": "AiSTEAM Network"
           },
           "tech": {
             "es": "Portal web",
@@ -1459,9 +1459,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Entrega Formativa"
           },
           "description": {
-            "es": "Entorno de aprendizaje para cursos, FP, formación docente y otras actividades del Track B gestionadas por CECU. El Máster AI-SECRETT se desarrolla en su plataforma propia, ValgrAI.",
-            "en": "Learning environment for courses, VET, teacher training and other Track B activities managed by CECU. The AI-SECRETT Master is delivered in its own platform, ValgrAI.",
-            "va": "Entorn d'aprenentatge per a cursos, FP, formació docent i altres activitats del Track B gestionades per CECU. El Màster AI-SECRETT es desenvolupa en la seua plataforma pròpia, ValgrAI."
+            "es": "Entorno de aprendizaje para cursos, FP, formación docente y otras actividades del Track B gestionadas por CECU. El Máster AiSECRETT se desarrolla en su plataforma propia, ValgrAI.",
+            "en": "Learning environment for courses, VET, teacher training and other Track B activities managed by CECU. The AiSECRETT Master is delivered in its own platform, ValgrAI.",
+            "va": "Entorn d'aprenentatge per a cursos, FP, formació docent i altres activitats del Track B gestionades per CECU. El Màster AiSECRETT es desenvolupa en la seua plataforma pròpia, ValgrAI."
           }
         }
       ]
@@ -2004,9 +2004,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 1,
         "title": {
-          "es": "[DEMO] Acuerdo de Consorcio AI-SECRETT v1.0",
-          "en": "[DEMO] AI-SECRETT Consortium Agreement v1.0",
-          "va": "[DEMO] Acord de Consorci AI-SECRETT v1.0"
+          "es": "[DEMO] Acuerdo de Consorcio AiSECRETT v1.0",
+          "en": "[DEMO] AiSECRETT Consortium Agreement v1.0",
+          "va": "[DEMO] Acord de Consorci AiSECRETT v1.0"
         },
         "date": "2025-10-15",
         "types": [
@@ -2188,9 +2188,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "La participació de stakeholders no implica admissió automàtica, accés a espais acadèmics ni drets de decisió en els òrgans formals del consorci."
       },
       "buttonText": {
-        "es": "Únete a la AI-STEAM Network",
-        "en": "Join the AI-STEAM Network",
-        "va": "Uneix-te a la AI-STEAM Network"
+        "es": "Únete a la AiSTEAM Network",
+        "en": "Join the AiSTEAM Network",
+        "va": "Uneix-te a la AiSTEAM Network"
       },
       "formVisible": true,
       "membershipCtasVisible": true,
@@ -2205,9 +2205,9 @@ export const GOVERNANCE_CONFIG = {
           "va": "Formulari d’adhesió com a grup d’interés"
         },
         "description": {
-          "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AI-STEAM.",
-          "en": "Complete the Microsoft Forms form to request your organization’s membership in the AI-STEAM Network.",
-          "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AI-STEAM."
+          "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AiSTEAM.",
+          "en": "Complete the Microsoft Forms form to request your organization’s membership in the AiSTEAM Network.",
+          "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AiSTEAM."
         },
         "openExternalLabel": {
           "es": "Conviértete en Stakeholder",

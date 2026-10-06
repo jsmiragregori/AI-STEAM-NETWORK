@@ -5,9 +5,9 @@ export const TRAINING_CONFIG = {
   "heroBlock": {
     "visible": true,
     "title": {
-      "es": "Formación AI-STEAM",
-      "en": "AI-STEAM Training",
-      "va": "Formació AI-STEAM"
+      "es": "Formación AiSTEAM",
+      "en": "AiSTEAM Training",
+      "va": "Formació AiSTEAM"
     },
     "description": {
       "es": "Módulos de formación docente y FP/VET en inteligencia artificial aplicada, desarrollados con socios europeos. Accesibles a través de Aules y la plataforma valgrai.eu.",
@@ -329,8 +329,8 @@ export const TRAINING_CONFIG = {
             "order": 2,
             "text": {
               "es": "Módulo de especialización IA-STEAM (Aules)",
-              "en": "AI-STEAM specialisation subject (Aules)",
-              "va": "Curs d'especialització AI-STEAM (Aules)"
+              "en": "AiSTEAM specialisation subject (Aules)",
+              "va": "Curs d'especialització AiSTEAM (Aules)"
             }
           },
           {
@@ -591,8 +591,8 @@ export const TRAINING_CONFIG = {
             "id": "certificacion",
             "order": 5,
             "text": {
-              "es": "Evidencia de adopción aportada a AI-SECRETT",
-              "en": "Adoption evidence contributed to AI-SECRETT",
+              "es": "Evidencia de adopción aportada a AiSECRETT",
+              "en": "Adoption evidence contributed to AiSECRETT",
               "va": "Certificació TÜV + Credencial Digital Europea (pilot)"
             }
           }
@@ -601,21 +601,21 @@ export const TRAINING_CONFIG = {
       "disclaimerBlock": {
         "visible": true,
         "text": {
-          "es": "El Máster AI-SECRETT (Track A) es gobernado por UVEG y los socios académicos del consorcio. La AI-STEAM Network (Track B) no asigna ECTS, no certifica títulos universitarios ni define los criterios de evaluación del Máster.",
-          "en": "The Master AI-SECRETT (Track A) is governed by UVEG and the academic partners of the consortium. The AI-STEAM Network (Track B) does not award ECTS, does not certify university degrees and does not define Master assessment criteria.",
-          "va": "El Màster AI-SECRETT (Track A) és governat per UVEG i els socis acadèmics del consorci. La AI-STEAM Network (Track B) no atorga ECTS, no certifica títols universitaris ni definix els criteris d'avaluació del Màster."
+          "es": "El Máster AiSECRETT (Track A) es gobernado por UVEG y los socios académicos del consorcio. La AiSTEAM Network (Track B) no asigna ECTS, no certifica títulos universitarios ni define los criterios de evaluación del Máster.",
+          "en": "The Master AiSECRETT (Track A) is governed by UVEG and the academic partners of the consortium. The AiSTEAM Network (Track B) does not award ECTS, does not certify university degrees and does not define Master assessment criteria.",
+          "va": "El Màster AiSECRETT (Track A) és governat per UVEG i els socis acadèmics del consorci. La AiSTEAM Network (Track B) no atorga ECTS, no certifica títols universitaris ni definix els criteris d'avaluació del Màster."
         },
         "link": {
           "url": "https://aisecrett.eu/bid-to-our-call/",
           "text": {
             "es": "La UVEG gestiona, en nombre del consorcio, la convocatoria FSTP de apoyo económico para participar en actividades extracurriculares del Máster: escuelas de verano e invierno, talleres temáticos y formación intensiva.",
-            "en": "UVEG runs, on behalf of the consortium, the AI-SECRETT FSTP Call, which offers financial support for taking part in extracurricular activities linked to the master's programme: summer and winter schools, thematic workshops and intensive training events.",
+            "en": "UVEG runs, on behalf of the consortium, the AiSECRETT FSTP Call, which offers financial support for taking part in extracurricular activities linked to the master's programme: summer and winter schools, thematic workshops and intensive training events.",
             "va": "La UVEG gestiona, en nom del consorci, la convocatòria FSTP de suport econòmic per a participar en activitats extracurriculars del Màster: escoles d'estiu i d'hivern, tallers temàtics i formació intensiva."
           },
           "label": {
-            "es": "Consultar la convocatoria FSTP de AI-SECRETT",
-            "en": "See the AI-SECRETT FSTP Call",
-            "va": "Consultar la convocatòria FSTP d'AI-SECRETT"
+            "es": "Consultar la convocatoria FSTP de AiSECRETT",
+            "en": "See the AiSECRETT FSTP Call",
+            "va": "Consultar la convocatòria FSTP d'AiSECRETT"
           }
         }
       }
