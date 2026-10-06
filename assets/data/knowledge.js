@@ -5,14 +5,14 @@ export const KNOWLEDGE_CONFIG = {
   "heroBlock": {
     "visible": true,
     "title": {
-      "es": "Conocimiento Abierto AI-STEAM",
-      "en": "AI-STEAM Open Knowledge",
-      "va": "Coneixement Obert AI-STEAM"
+      "es": "Conocimiento Abierto AiSTEAM",
+      "en": "AiSTEAM Open Knowledge",
+      "va": "Coneixement Obert AiSTEAM"
     },
     "description": {
-      "es": "Recursos educativos abiertos, casos de uso, evidencias de aprendizaje y plantillas para la comunidad AI-SECRETT. Descarga, adapta y comparte.",
-      "en": "Open educational resources, use cases, learning evidence and templates for the AI-SECRETT community. Download, adapt and share.",
-      "va": "Recursos educatius oberts, casos d'ús, evidències d'aprenentatge i plantilles per a la comunitat AI-SECRETT. Descarrega, adapta i comparteix."
+      "es": "Recursos educativos abiertos, casos de uso, evidencias de aprendizaje y plantillas para la comunidad AiSECRETT. Descarga, adapta y comparte.",
+      "en": "Open educational resources, use cases, learning evidence and templates for the AiSECRETT community. Download, adapt and share.",
+      "va": "Recursos educatius oberts, casos d'ús, evidències d'aprenentatge i plantilles per a la comunitat AiSECRETT. Descarrega, adapta i comparteix."
     },
     "stats": [
       {
@@ -49,9 +49,9 @@ export const KNOWLEDGE_CONFIG = {
       "va": "Del Repte Ecosistema al Recurs Educatiu Obert"
     },
     "description": {
-      "es": "Proceso de seis etapas que convierte necesidades detectadas por organizaciones, centros educativos o la red en recursos educativos abiertos o casos de transferencia, clasificados por sector AI-SECRETT y ruta de conocimiento.",
-      "en": "A six-stage process that converts needs detected by organisations, education centres or the network into open educational resources or transfer cases, classified by AI-SECRETT sector and knowledge route.",
-      "va": "Procés de sis etapes que converteix necessitats detectades per organitzacions, centres educatius o la xarxa en recursos educatius oberts o casos de transferència, classificats per sector AI-SECRETT i ruta de coneixement."
+      "es": "Proceso de seis etapas que convierte necesidades detectadas por organizaciones, centros educativos o la red en recursos educativos abiertos o casos de transferencia, clasificados por sector AiSECRETT y ruta de conocimiento.",
+      "en": "A six-stage process that converts needs detected by organisations, education centres or the network into open educational resources or transfer cases, classified by AiSECRETT sector and knowledge route.",
+      "va": "Procés de sis etapes que converteix necessitats detectades per organitzacions, centres educatius o la xarxa en recursos educatius oberts o casos de transferència, classificats per sector AiSECRETT i ruta de coneixement."
     },
     "steps": [
       {
@@ -172,11 +172,11 @@ export const KNOWLEDGE_CONFIG = {
         {
           "id": "network",
           "visible": true,
-          "name": "AI-STEAM Network Website",
+          "name": "AiSTEAM Network Website",
           "description": {
-            "es": "Web pública de la comunidad de práctica AI-STEAM. Punto de encuentro para compartir retos, casos, recursos OER, plantillas y evidencias de pilotaje entre los miembros de la red.",
-            "en": "Public website of the AI-STEAM community of practice. A shared meeting point for network members to exchange challenges, cases, OER resources, templates and pilot evidence.",
-            "va": "Web pública de la comunitat de pràctica AI-STEAM. Punt de trobada compartit perquè els membres de la xarxa intercanvien reptes, casos, recursos OER, plantilles i evidències de pilotatge."
+            "es": "Web pública de la comunidad de práctica AiSTEAM. Punto de encuentro para compartir retos, casos, recursos OER, plantillas y evidencias de pilotaje entre los miembros de la red.",
+            "en": "Public website of the AiSTEAM community of practice. A shared meeting point for network members to exchange challenges, cases, OER resources, templates and pilot evidence.",
+            "va": "Web pública de la comunitat de pràctica AiSTEAM. Punt de trobada compartit perquè els membres de la xarxa intercanvien reptes, casos, recursos OER, plantilles i evidències de pilotatge."
           }
         },
         {
@@ -200,9 +200,9 @@ export const KNOWLEDGE_CONFIG = {
       "va": "Recursos Educatius Oberts"
     },
     "description": {
-      "es": "Recursos educativos abiertos bajo licencias abiertas, distribuibles a través de las plataformas educativas de la red. Cada recurso está clasificado por sector AI-SECRETT, ruta educativa, tipo de recurso y estado de validación.",
-      "en": "Open educational resources under open licences, distributable through the network's educational platforms. Each resource is classified by AI-SECRETT sector, educational route, resource type and validation status.",
-      "va": "Recursos educatius oberts sota llicències obertes, distribuïbles a través de les plataformes educatives de la xarxa. Cada recurs està classificat per sector AI-SECRETT, ruta educativa, tipus de recurs i estat de validació."
+      "es": "Recursos educativos abiertos bajo licencias abiertas, distribuibles a través de las plataformas educativas de la red. Cada recurso está clasificado por sector AiSECRETT, ruta educativa, tipo de recurso y estado de validación.",
+      "en": "Open educational resources under open licences, distributable through the network's educational platforms. Each resource is classified by AiSECRETT sector, educational route, resource type and validation status.",
+      "va": "Recursos educatius oberts sota llicències obertes, distribuïbles a través de les plataformes educatives de la xarxa. Cada recurs està classificat per sector AiSECRETT, ruta educativa, tipus de recurs i estat de validació."
     },
     "searchPlaceholder": {
       "es": "Buscar recurso...",
@@ -284,6 +284,16 @@ export const KNOWLEDGE_CONFIG = {
           "es": "Plantilla",
           "en": "Template",
           "va": "Plantilla"
+        }
+      },
+      {
+        "id": "proyecto",
+        "visible": true,
+        "icon": "🚀",
+        "label": {
+          "es": "Proyecto",
+          "en": "Project",
+          "va": "Projecte"
         }
       }
     ],
@@ -650,7 +660,7 @@ export const KNOWLEDGE_CONFIG = {
         "createdAt": "2025-06-12",
         "title": {
           "es": "[DEMO] Manual de Transferencia de Conocimiento IA-STEAM para Centros FP",
-          "en": "[DEMO] AI-STEAM Knowledge Transfer Manual for VET Centres",
+          "en": "[DEMO] AiSTEAM Knowledge Transfer Manual for VET Centres",
           "va": "[DEMO] Manual de Transferència de Coneixement IA-STEAM per a Centres FP"
         },
         "typeId": "manual",
@@ -691,9 +701,9 @@ export const KNOWLEDGE_CONFIG = {
       "va": "Plantilles i Toolkits"
     },
     "description": {
-      "es": "Documentos de trabajo, listas de verificación y recursos de apoyo bajo licencias abiertas para facilitar la participación en la red AI-STEAM, desde la preparación de retos y propuestas hasta la documentación de actividades, casos y recursos. Disponibles para descarga directa o acceso en línea.",
-      "en": "Working documents, checklists and support resources under open licences to facilitate participation in the AI-STEAM network, from preparing challenges and proposals to documenting activities, cases and resources. Available for direct download or online access.",
-      "va": "Documents de treball, llistes de verificació i recursos de suport sota llicències obertes per facilitar la participació en la xarxa AI-STEAM, des de la preparació de reptes i propostes fins a la documentació d'activitats, casos i recursos. Disponibles per a descàrrega directa o accés en línia."
+      "es": "Documentos de trabajo, listas de verificación y recursos de apoyo bajo licencias abiertas para facilitar la participación en la red AiSTEAM, desde la preparación de retos y propuestas hasta la documentación de actividades, casos y recursos. Disponibles para descarga directa o acceso en línea.",
+      "en": "Working documents, checklists and support resources under open licences to facilitate participation in the AiSTEAM network, from preparing challenges and proposals to documenting activities, cases and resources. Available for direct download or online access.",
+      "va": "Documents de treball, llistes de verificació i recursos de suport sota llicències obertes per facilitar la participació en la xarxa AiSTEAM, des de la preparació de reptes i propostes fins a la documentació d'activitats, casos i recursos. Disponibles per a descàrrega directa o accés en línia."
     },
     "searchPlaceholder": {
       "es": "Buscar plantillas...",
@@ -804,9 +814,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "[DEMO] Guia Ràpida de Formació Docent"
         },
         "description": {
-          "es": "Plantilla pedagógica con dinámicas y rúbricas para integrar AI-STEAM en programas de formación docente.",
-          "en": "Pedagogical template with activities and rubrics to integrate AI-STEAM into teacher training programmes.",
-          "va": "Plantilla pedagògica amb dinàmiques i rúbriques per a integrar AI-STEAM en programes de formació docent."
+          "es": "Plantilla pedagógica con dinámicas y rúbricas para integrar AiSTEAM en programas de formación docente.",
+          "en": "Pedagogical template with activities and rubrics to integrate AiSTEAM into teacher training programmes.",
+          "va": "Plantilla pedagògica amb dinàmiques i rúbriques per a integrar AiSTEAM en programes de formació docent."
         },
         "typeId": "pedagogical",
         "routeIds": [
@@ -831,9 +841,9 @@ export const KNOWLEDGE_CONFIG = {
           "va": "[DEMO] Formulari d'Adhesió Stakeholder"
         },
         "description": {
-          "es": "Formulario operativo para incorporar nuevas entidades a la red AI-STEAM con rol, sectores y compromisos.",
-          "en": "Operational form to onboard new entities into the AI-STEAM network with role, sectors and commitments.",
-          "va": "Formulari operatiu per a incorporar noves entitats a la xarxa AI-STEAM amb rol, sectors i compromisos."
+          "es": "Formulario operativo para incorporar nuevas entidades a la red AiSTEAM con rol, sectores y compromisos.",
+          "en": "Operational form to onboard new entities into the AiSTEAM network with role, sectors and commitments.",
+          "va": "Formulari operatiu per a incorporar noves entitats a la xarxa AiSTEAM amb rol, sectors i compromisos."
         },
         "typeId": "form",
         "routeIds": [

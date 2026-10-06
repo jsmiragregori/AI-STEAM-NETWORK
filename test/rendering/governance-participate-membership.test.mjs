@@ -28,9 +28,9 @@ const { render } = await import('../../assets/js/views/governance.js');
 
 const FORMS = 'https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=example';
 const TEXTO = {
-  es: 'Únete a la AI-STEAM Network',
-  en: 'Join the AI-STEAM Network',
-  va: 'Uneix-te a la AI-STEAM Network',
+  es: 'Únete a la AiSTEAM Network',
+  en: 'Join the AiSTEAM Network',
+  va: 'Uneix-te a la AiSTEAM Network',
 };
 const TITULO = {
   es: 'Adhesión como Stakeholder',

@@ -33,9 +33,9 @@ const { setState } = await import('../../assets/js/state.js');
 const vistas = await import('../../assets/js/views/index.js');
 
 const ETIQUETA = {
-  es: { internal: 'Código AI-STEAM', external: 'Código de la formación' },
-  en: { internal: 'AI-STEAM code', external: 'Training code' },
-  va: { internal: 'Codi AI-STEAM', external: 'Codi de la formació' },
+  es: { internal: 'Código AiSTEAM', external: 'Código de la formación' },
+  en: { internal: 'AiSTEAM code', external: 'Training code' },
+  va: { internal: 'Codi AiSTEAM', external: 'Codi de la formació' },
 };
 
 const CURSOS = () => TRAINING_CONFIG.coursesBlock.courses;
@@ -122,7 +122,7 @@ test('codeDisplay both: los dos, el AI-STEAM primero, cada uno con su etiqueta',
     for (const card of cards(pintar('master'))) {
       const lineas = lineasCodigo(card);
       assert.equal(lineas.length, 2);
-      assert.ok(sinMarcas(lineas[0]).startsWith('Código AI-STEAM: ') && sinMarcas(lineas[0]).includes('EXT-2026-003'));
+      assert.ok(sinMarcas(lineas[0]).startsWith('Código AiSTEAM: ') && sinMarcas(lineas[0]).includes('EXT-2026-003'));
       assert.ok(sinMarcas(lineas[1]).startsWith('Código de la formación: ') && sinMarcas(lineas[1]).includes('MASTER-X-1'));
     }
   });

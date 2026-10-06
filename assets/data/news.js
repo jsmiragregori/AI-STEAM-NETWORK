@@ -5,19 +5,19 @@ export const NEWS_CONFIG = {
   "heroBlock": {
     "visible": true,
     "title": {
-      "es": "Actualidad AI-STEAM",
-      "en": "AI-STEAM News",
-      "va": "Actualitat AI-STEAM"
+      "es": "Actualidad AiSTEAM",
+      "en": "AiSTEAM News",
+      "va": "Actualitat AiSTEAM"
     },
     "description": {
-      "es": "Noticias, eventos y novedades del ecosistema AI-SECRETT y sus socios.",
-      "en": "News, events and updates from the AI-SECRETT ecosystem and its partners.",
-      "va": "Notícies, esdeveniments i novetats de l'ecosistema AI-SECRETT i els seus socis."
+      "es": "Noticias, eventos y novedades del ecosistema AiSECRETT y sus socios.",
+      "en": "News, events and updates from the AiSECRETT ecosystem and its partners.",
+      "va": "Notícies, esdeveniments i novetats de l'ecosistema AiSECRETT i els seus socis."
     },
     "notice": {
-      "es": "📌 Contenido demo del prototipo. Las noticias no marcadas como oficiales son ficticias y no representan resultados reales de AI-SECRETT ni de sus socios.",
-      "en": "📌 Demo prototype content. News items not marked as official are fictional and do not represent real results from AI-SECRETT or its partners.",
-      "va": "📌 Contingut demo del prototip. Les notícies no marcades com a oficials són fictícies i no representen resultats reals d'AI-SECRETT ni dels seus socis."
+      "es": "📌 Contenido demo del prototipo. Las noticias no marcadas como oficiales son ficticias y no representan resultados reales de AiSECRETT ni de sus socios.",
+      "en": "📌 Demo prototype content. News items not marked as official are fictional and do not represent real results from AiSECRETT or its partners.",
+      "va": "📌 Contingut demo del prototip. Les notícies no marcades com a oficials són fictícies i no representen resultats reals d'AiSECRETT ni dels seus socis."
     },
     "stats": [
       {

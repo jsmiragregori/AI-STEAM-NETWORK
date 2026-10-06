@@ -5,14 +5,14 @@ export const NETWORK_CONFIG = {
   "heroBlock": {
     "visible": true,
     "title": {
-      "es": "El Ecosistema AI-STEAM",
-      "en": "The AI-STEAM Ecosystem",
-      "va": "L'Ecosistema AI-STEAM"
+      "es": "El Ecosistema AiSTEAM",
+      "en": "The AiSTEAM Ecosystem",
+      "va": "L'Ecosistema AiSTEAM"
     },
     "description": {
-      "es": "Una red de innovación cuádruple hélice que conecta universidades, empresas, administraciones y sociedad civil. El consorcio AI-SECRETT impulsa la red, abierta a la adhesión de stakeholders de toda España y Europa.",
-      "en": "A quadruple helix innovation network connecting universities, companies, administrations and civil society. The AI-SECRETT consortium drives the network, open to stakeholders from Spain and Europe.",
-      "va": "Una xarxa d'innovació de quàdruple hèlix que connecta universitats, empreses, administracions i societat civil. El consorci AI-SECRETT impulsa la xarxa, oberta a l'adhesió de grups d'interès de tota Espanya i Europa."
+      "es": "Una red de innovación cuádruple hélice que conecta universidades, empresas, administraciones y sociedad civil. El consorcio AiSECRETT impulsa la red, abierta a la adhesión de stakeholders de toda España y Europa.",
+      "en": "A quadruple helix innovation network connecting universities, companies, administrations and civil society. The AiSECRETT consortium drives the network, open to stakeholders from Spain and Europe.",
+      "va": "Una xarxa d'innovació de quàdruple hèlix que connecta universitats, empreses, administracions i societat civil. El consorci AiSECRETT impulsa la xarxa, oberta a l'adhesió de grups d'interès de tota Espanya i Europa."
     },
     "stats": [
       {
@@ -153,14 +153,14 @@ export const NETWORK_CONFIG = {
   "partnersBlock": {
     "visible": true,
     "tabTitle": {
-      "es": "Socios del Consorcio AI-SECRETT",
-      "en": "AI-SECRETT Consortium Partners",
-      "va": "Socis del Consorci AI-SECRETT"
+      "es": "Socios del Consorcio AiSECRETT",
+      "en": "AiSECRETT Consortium Partners",
+      "va": "Socis del Consorci AiSECRETT"
     },
     "description": {
-      "es": "Los socios del consorcio AI-SECRETT son los <strong>23 miembros</strong> (22 beneficiarios + 1 socio asociado) del proyecto europeo, seleccionados en la convocatoria inicial. Su composición es fija durante la vida del proyecto.",
-      "en": "AI-SECRETT consortium partners are the <strong>23 members</strong> (22 beneficiaries + 1 associated partner) of the European project, selected in the initial call. Its composition is fixed during the project lifetime.",
-      "va": "Els socis del consorci AI-SECRETT són els <strong>23 membres</strong> (22 beneficiaris + 1 soci associat) del projecte europeu, seleccionats en la convocatòria inicial. La seua composició és fixa durant la vida del projecte."
+      "es": "Los socios del consorcio AiSECRETT son los <strong>23 miembros</strong> (22 beneficiarios + 1 socio asociado) del proyecto europeo, seleccionados en la convocatoria inicial. Su composición es fija durante la vida del proyecto.",
+      "en": "AiSECRETT consortium partners are the <strong>23 members</strong> (22 beneficiaries + 1 associated partner) of the European project, selected in the initial call. Its composition is fixed during the project lifetime.",
+      "va": "Els socis del consorci AiSECRETT són els <strong>23 membres</strong> (22 beneficiaris + 1 soci associat) del projecte europeu, seleccionats en la convocatòria inicial. La seua composició és fixa durant la vida del projecte."
     },
     "filterAll": {
       "es": "Todos",
@@ -473,9 +473,9 @@ export const NETWORK_CONFIG = {
           "va": "Educació Superior i I+D+I"
         },
         "contribution": {
-          "es": "Aporta ingeniería y tecnología al diseño del programa, la plataforma y los contenidos AI-STEAM.",
-          "en": "Brings engineering and technology expertise to programme design, the platform and AI-STEAM content.",
-          "va": "Aporta enginyeria i tecnologia al disseny del programa, la plataforma i els continguts AI-STEAM."
+          "es": "Aporta ingeniería y tecnología al diseño del programa, la plataforma y los contenidos AiSTEAM.",
+          "en": "Brings engineering and technology expertise to programme design, the platform and AiSTEAM content.",
+          "va": "Aporta enginyeria i tecnologia al disseny del programa, la plataforma i els continguts AiSTEAM."
         },
         "sectors": [
           {
@@ -763,9 +763,9 @@ export const NETWORK_CONFIG = {
           "va": "Educació Superior i I+D+I"
         },
         "contribution": {
-          "es": "Lidera investigación basada en la práctica sobre flujos de IA autoalojada y organiza actividades extracurriculares, reforzando la dimensión artística y de diseño del aprendizaje AI-STEAM.",
-          "en": "Leads practice-based research about self-hosted AI workflows and organises extracurricular activities, strengthening the artistic and design dimension of AI-STEAM learning.",
-          "va": "Lidera investigació basada en la pràctica sobre fluxos d'IA autoallotjada i organitza activitats extracurriculars, reforçant la dimensió artística i de disseny de l'aprenentatge AI-STEAM."
+          "es": "Lidera investigación basada en la práctica sobre flujos de IA autoalojada y organiza actividades extracurriculares, reforzando la dimensión artística y de diseño del aprendizaje AiSTEAM.",
+          "en": "Leads practice-based research about self-hosted AI workflows and organises extracurricular activities, strengthening the artistic and design dimension of AiSTEAM learning.",
+          "va": "Lidera investigació basada en la pràctica sobre fluxos d'IA autoallotjada i organitza activitats extracurriculars, reforçant la dimensió artística i de disseny de l'aprenentatge AiSTEAM."
         },
         "sectors": [
           {
@@ -820,9 +820,9 @@ export const NETWORK_CONFIG = {
           "va": "Educació Superior i I+D+I"
         },
         "contribution": {
-          "es": "Coordina la red de stakeholders y aporta ciencia de datos, IA y sistemas ciberfísicos al ecosistema AI-STEAM.",
-          "en": "Coordinates the stakeholders' network and brings data science, AI and cyber-physical systems to the AI-STEAM ecosystem.",
-          "va": "Coordina la xarxa de stakeholders i aporta ciència de dades, IA i sistemes ciberfísics a l'ecosistema AI-STEAM."
+          "es": "Coordina la red de stakeholders y aporta ciencia de datos, IA y sistemas ciberfísicos al ecosistema AiSTEAM.",
+          "en": "Coordinates the stakeholders' network and brings data science, AI and cyber-physical systems to the AiSTEAM ecosystem.",
+          "va": "Coordina la xarxa de stakeholders i aporta ciència de dades, IA i sistemes ciberfísics a l'ecosistema AiSTEAM."
         },
         "sectors": [
           {
@@ -932,9 +932,9 @@ export const NETWORK_CONFIG = {
           "va": "Administració Pública"
         },
         "contribution": {
-          "es": "Impulsa la Comunidad AI-STEAM y aporta política educativa, FP y formación docente a la transferencia regional.",
-          "en": "Drives the AI-STEAM Community and brings education policy, VET and teacher training to regional transfer.",
-          "va": "Impulsa la Comunitat AI-STEAM i aporta política educativa, FP i formació docent a la transferència regional."
+          "es": "Impulsa la Comunidad AiSTEAM y aporta política educativa, FP y formación docente a la transferencia regional.",
+          "en": "Drives the AiSTEAM Community and brings education policy, VET and teacher training to regional transfer.",
+          "va": "Impulsa la Comunitat AiSTEAM i aporta política educativa, FP i formació docent a la transferència regional."
         },
         "sectors": [
           {
@@ -989,9 +989,9 @@ export const NETWORK_CONFIG = {
           "va": "Administració Pública"
         },
         "contribution": {
-          "es": "Conecta la comunidad AI-STEAM con innovación urbana, movilidad y vivienda desde la promoción pública local.",
-          "en": "Connects the AI-STEAM Community with urban innovation, mobility and housing through local public promotion.",
-          "va": "Connecta la Comunitat AI-STEAM amb innovació urbana, mobilitat i habitatge des de la promoció pública local."
+          "es": "Conecta la comunidad AiSTEAM con innovación urbana, movilidad y vivienda desde la promoción pública local.",
+          "en": "Connects the AiSTEAM Community with urban innovation, mobility and housing through local public promotion.",
+          "va": "Connecta la Comunitat AiSTEAM amb innovació urbana, mobilitat i habitatge des de la promoció pública local."
         },
         "sectors": [
           {
@@ -1096,9 +1096,9 @@ export const NETWORK_CONFIG = {
           "va": "Administració Pública"
         },
         "contribution": {
-          "es": "Garantiza la difusión regional y las conexiones comunitarias de AI-STEAM en la región de los Balcanes Occidentales.",
-          "en": "Ensures regional outreach and community connections for AI-STEAM in the Western Balkans region.",
-          "va": "Garanteix la difusió regional i les connexions comunitàries d’AI-STEAM a la regió dels Balcans Occidentals."
+          "es": "Garantiza la difusión regional y las conexiones comunitarias de AiSTEAM en la región de los Balcanes Occidentales.",
+          "en": "Ensures regional outreach and community connections for AiSTEAM in the Western Balkans region.",
+          "va": "Garanteix la difusió regional i les connexions comunitàries d’AiSTEAM a la regió dels Balcans Occidentals."
         },
         "sectors": [
           {
@@ -1362,9 +1362,9 @@ export const NETWORK_CONFIG = {
           "va": "Empresa i Innovació"
         },
         "contribution": {
-          "es": "Impulsa la co-creación de contenidos iniciales y aporta experiencia en emprendimiento y consultoría de innovación al ecosistema AI-STEAM.",
-          "en": "Drives initial content co-creation and brings entrepreneurship and innovation consulting expertise to the AI-STEAM ecosystem.",
-          "va": "Impulsa la cocreació de continguts inicials i aporta experiència en emprenedoria i consultoria d'innovació a l'ecosistema AI-STEAM."
+          "es": "Impulsa la co-creación de contenidos iniciales y aporta experiencia en emprendimiento y consultoría de innovación al ecosistema AiSTEAM.",
+          "en": "Drives initial content co-creation and brings entrepreneurship and innovation consulting expertise to the AiSTEAM ecosystem.",
+          "va": "Impulsa la cocreació de continguts inicials i aporta experiència en emprenedoria i consultoria d'innovació a l'ecosistema AiSTEAM."
         },
         "sectors": [
           {
@@ -1620,9 +1620,9 @@ export const NETWORK_CONFIG = {
         "va": "Formulari d’adhesió com a grup d’interés"
       },
       "description": {
-        "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AI-STEAM.",
-        "en": "Complete the Microsoft Forms form to request your organization’s membership in the AI-STEAM Network.",
-        "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AI-STEAM."
+        "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AiSTEAM.",
+        "en": "Complete the Microsoft Forms form to request your organization’s membership in the AiSTEAM Network.",
+        "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AiSTEAM."
       },
       "openExternalLabel": {
         "es": "Conviértete en Stakeholder",
@@ -1636,9 +1636,9 @@ export const NETWORK_CONFIG = {
       "va": "Grups d'interès de la Xarxa"
     },
     "description": {
-      "es": "Los stakeholders son organizaciones externas que participan voluntariamente en la red AI-STEAM. La incorporación se coordina con CECU, la coordinación del proyecto y los socios responsables del proceso, conforme a las condiciones y canales de participación aplicables.",
-      "en": "Stakeholders are external organizations that participate voluntarily in the AI-STEAM Network. Onboarding is coordinated with CECU, project coordination and the partners responsible for the process, in accordance with the applicable participation conditions and channels.",
-      "va": "Els grups d'interés són organitzacions externes que participen voluntàriament en la Xarxa AI-STEAM. La incorporació es coordina amb CECU, la coordinació del projecte i els socis responsables del procés, d'acord amb les condicions i els canals de participació aplicables."
+      "es": "Los stakeholders son organizaciones externas que participan voluntariamente en la red AiSTEAM. La incorporación se coordina con CECU, la coordinación del proyecto y los socios responsables del proceso, conforme a las condiciones y canales de participación aplicables.",
+      "en": "Stakeholders are external organizations that participate voluntarily in the AiSTEAM Network. Onboarding is coordinated with CECU, project coordination and the partners responsible for the process, in accordance with the applicable participation conditions and channels.",
+      "va": "Els grups d'interés són organitzacions externes que participen voluntàriament en la Xarxa AiSTEAM. La incorporació es coordina amb CECU, la coordinació del projecte i els socis responsables del procés, d'acord amb les condicions i els canals de participació aplicables."
     },
     "filterAll": {
       "es": "Todos",

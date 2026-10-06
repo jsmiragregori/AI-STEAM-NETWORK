@@ -62,7 +62,7 @@ function pickLang(value, fallback = '') {
 }
 
 // C14: código propio de OER y plantillas. Etiqueta local (no translations.js, como en Marketplace).
-const CODE_LABEL = { es: 'Código AI-STEAM', en: 'AI-STEAM code', va: 'Codi AI-STEAM' };
+const CODE_LABEL = { es: 'Código AiSTEAM', en: 'AiSTEAM code', va: 'Codi AiSTEAM' };
 
 function itemCodeText(item) {
   return typeof item?.code === 'string' ? item.code.trim() : '';
@@ -248,7 +248,7 @@ function tabFlujo() {
           <p class="text-gray-600 text-base leading-relaxed">${esc(t('knowledge.aulesPlatform') || '')}</p>
         </div>
         <div class="rd-card rd-card-grad-violet rd-card-edge p-4">
-          <p class="font-extrabold text-eu-purple mb-1">AI-STEAM Network Website</p>
+          <p class="font-extrabold text-eu-purple mb-1">AiSTEAM Network Website</p>
           <p class="text-gray-600 text-base leading-relaxed">${esc(t('knowledge.networkPlatform') || '')}</p>
         </div>
         <div class="rd-card rd-card-grad-violet rd-card-edge p-4">

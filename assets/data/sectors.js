@@ -5,14 +5,14 @@ export const SECTORS_CONFIG = {
   "heroBlock": {
     "visible": true,
     "title": {
-      "es": "Los 7 Sectores AI-SECRETT",
-      "en": "The 7 AI-SECRETT Sectors",
-      "va": "Els 7 Sectors AI-SECRETT"
+      "es": "Los 7 Sectores AiSECRETT",
+      "en": "The 7 AiSECRETT Sectors",
+      "va": "Els 7 Sectors AiSECRETT"
     },
     "description": {
-      "es": "Mapa de transferencia AI-SECRETT: cada sector conecta necesidades reales de stakeholders con soluciones de IA, formando el núcleo de la red.",
-      "en": "AI-SECRETT transfer map: each sector connects real stakeholder needs with AI solutions, forming the core of the network.",
-      "va": "Mapa de transferència d'AI-SECRETT: cada sector connecta necessitats reals dels stakeholders amb solucions d'IA, formant el nucli de la xarxa."
+      "es": "Mapa de transferencia AiSECRETT: cada sector conecta necesidades reales de stakeholders con soluciones de IA, formando el núcleo de la red.",
+      "en": "AiSECRETT transfer map: each sector connects real stakeholder needs with AI solutions, forming the core of the network.",
+      "va": "Mapa de transferència d'AiSECRETT: cada sector connecta necessitats reals dels stakeholders amb solucions d'IA, formant el nucli de la xarxa."
     },
     "stats": [
       {
@@ -385,14 +385,14 @@ export const SECTORS_CONFIG = {
           "id": "mentoring-formulacion-retos-industria",
           "type": "mentoring",
           "title": {
-            "es": "[DEMO] Mentoría — Cómo formular un reto industrial para el ecosistema AI-STEAM",
-            "en": "[DEMO] Mentoring — How to frame an industrial challenge for the AI-STEAM ecosystem",
-            "va": "[DEMO] Mentoria — Com formular un repte industrial per a l'ecosistema AI-STEAM"
+            "es": "[DEMO] Mentoría — Cómo formular un reto industrial para el ecosistema AiSTEAM",
+            "en": "[DEMO] Mentoring — How to frame an industrial challenge for the AiSTEAM ecosystem",
+            "va": "[DEMO] Mentoria — Com formular un repte industrial per a l'ecosistema AiSTEAM"
           },
           "summary": {
-            "es": "Acompañamiento para empresas industriales y pymes tecnológicas que quieren convertir una necesidad de innovación o una brecha de talento en un reto bien formulado, publicable en el Marketplace AI-STEAM y orientado a obtener prototipos, datos o metodologías de la comunidad de práctica.",
-            "en": "Support for industrial companies and technology SMEs wishing to turn an innovation need or talent gap into a well-framed challenge, publishable on the AI-STEAM Marketplace and designed to obtain prototypes, data or methodologies from the community of practice.",
-            "va": "Acompanyament per a empreses industrials i pimes tecnològiques que volen convertir una necessitat d'innovació o una bretxa de talent en un repte ben formulat, publicable al Marketplace AI-STEAM i orientat a obtindre prototips, dades o metodologies de la comunitat de pràctica."
+            "es": "Acompañamiento para empresas industriales y pymes tecnológicas que quieren convertir una necesidad de innovación o una brecha de talento en un reto bien formulado, publicable en el Marketplace AiSTEAM y orientado a obtener prototipos, datos o metodologías de la comunidad de práctica.",
+            "en": "Support for industrial companies and technology SMEs wishing to turn an innovation need or talent gap into a well-framed challenge, publishable on the AiSTEAM Marketplace and designed to obtain prototypes, data or methodologies from the community of practice.",
+            "va": "Acompanyament per a empreses industrials i pimes tecnològiques que volen convertir una necessitat d'innovació o una bretxa de talent en un repte ben formulat, publicable al Marketplace AiSTEAM i orientat a obtindre prototips, dades o metodologies de la comunitat de pràctica."
           },
           "status": "open",
           "targetRoute": "marketplace"
@@ -1625,14 +1625,14 @@ export const SECTORS_CONFIG = {
           "id": "mentoring-replicacion-casos-agr",
           "type": "mentoring",
           "title": {
-            "es": "[DEMO] Mentoría — Replicación de casos AI-STEAM en el sector agroalimentario",
-            "en": "[DEMO] Mentoring — Replicating AI-STEAM cases in the agri-food sector",
-            "va": "[DEMO] Mentoria — Replicació de casos AI-STEAM en el sector agroalimentari"
+            "es": "[DEMO] Mentoría — Replicación de casos AiSTEAM en el sector agroalimentario",
+            "en": "[DEMO] Mentoring — Replicating AiSTEAM cases in the agri-food sector",
+            "va": "[DEMO] Mentoria — Replicació de casos AiSTEAM en el sector agroalimentari"
           },
           "summary": {
-            "es": "Acompañamiento para cooperativas agrícolas, agroindustrias y centros de FP agroalimentaria que quieren replicar un caso AI-STEAM verificado en su propio contexto — adaptando los datos, el entorno productivo y las condiciones de formación — sin tener que rediseñar el proyecto desde cero.",
-            "en": "Support for agricultural cooperatives, agri-food industries and agri-food VET centres wishing to replicate a verified AI-STEAM case in their own context — adapting data, production environment and training conditions — without having to redesign the project from scratch.",
-            "va": "Acompanyament per a cooperatives agrícoles, agroindustries i centres de FP agroalimentària que volen replicar un cas AI-STEAM verificat en el seu propi context — adaptant les dades, l'entorn productiu i les condicions de formació — sense haver de redissenyar el projecte des de zero."
+            "es": "Acompañamiento para cooperativas agrícolas, agroindustrias y centros de FP agroalimentaria que quieren replicar un caso AiSTEAM verificado en su propio contexto — adaptando los datos, el entorno productivo y las condiciones de formación — sin tener que rediseñar el proyecto desde cero.",
+            "en": "Support for agricultural cooperatives, agri-food industries and agri-food VET centres wishing to replicate a verified AiSTEAM case in their own context — adapting data, production environment and training conditions — without having to redesign the project from scratch.",
+            "va": "Acompanyament per a cooperatives agrícoles, agroindustries i centres de FP agroalimentària que volen replicar un cas AiSTEAM verificat en el seu propi context — adaptant les dades, l'entorn productiu i les condicions de formació — sense haver de redissenyar el projecte des de zero."
           },
           "status": "open",
           "targetRoute": "marketplace"
@@ -2093,9 +2093,9 @@ export const SECTORS_CONFIG = {
             "va": "[DEMO] Mentoria per a briefs creatius amb IA responsable"
           },
           "summary": {
-            "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AI-STEAM.",
-            "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AI-STEAM collaboration.",
-            "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AI-STEAM."
+            "es": "Acompañamiento para entidades que quieren transformar una necesidad cultural, social o educativa en un brief claro para colaboración AiSTEAM.",
+            "en": "Support for organisations turning a cultural, social or educational need into a clear brief for AiSTEAM collaboration.",
+            "va": "Acompanyament per a entitats que volen transformar una necessitat cultural, social o educativa en un brief clar per a col·laboració AiSTEAM."
           },
           "status": "open",
           "targetRoute": "marketplace"
@@ -2783,14 +2783,14 @@ export const SECTORS_CONFIG = {
           "id": "mentoring-participacion-administracion-publica",
           "type": "mentoring",
           "title": {
-            "es": "[DEMO] Mentoría — Cómo incorporar una administración pública al ecosistema AI-STEAM",
-            "en": "[DEMO] Mentoring — How to bring a public administration into the AI-STEAM ecosystem",
-            "va": "[DEMO] Mentoria — Com incorporar una administració pública a l'ecosistema AI-STEAM"
+            "es": "[DEMO] Mentoría — Cómo incorporar una administración pública al ecosistema AiSTEAM",
+            "en": "[DEMO] Mentoring — How to bring a public administration into the AiSTEAM ecosystem",
+            "va": "[DEMO] Mentoria — Com incorporar una administració pública a l'ecosistema AiSTEAM"
           },
           "summary": {
-            "es": "Acompañamiento para organismos públicos, entidades locales y consorcios interadministrativos que quieren participar activamente en el ecosistema AI-STEAM — como demandantes de retos, financiadores de pilotos o entornos de validación — y necesitan orientación sobre roles posibles, compromisos esperados, gestión de datos públicos y encaje con sus procedimientos administrativos habituales.",
-            "en": "Support for public bodies, local authorities and inter-administrative consortia wishing to actively participate in the AI-STEAM ecosystem — as challenge demanders, pilot funders or validation environments — who need guidance on possible roles, expected commitments, public data management and fit with their usual administrative procedures.",
-            "va": "Acompanyament per a organismes públics, entitats locals i consorcis interadministratius que volen participar activament en l'ecosistema AI-STEAM — com demandants de reptes, finançadors de pilots o entorns de validació — i necessiten orientació sobre rols possibles, compromisos esperats, gestió de dades públiques i encaix amb els seus procediments administratius habituals."
+            "es": "Acompañamiento para organismos públicos, entidades locales y consorcios interadministrativos que quieren participar activamente en el ecosistema AiSTEAM — como demandantes de retos, financiadores de pilotos o entornos de validación — y necesitan orientación sobre roles posibles, compromisos esperados, gestión de datos públicos y encaje con sus procedimientos administrativos habituales.",
+            "en": "Support for public bodies, local authorities and inter-administrative consortia wishing to actively participate in the AiSTEAM ecosystem — as challenge demanders, pilot funders or validation environments — who need guidance on possible roles, expected commitments, public data management and fit with their usual administrative procedures.",
+            "va": "Acompanyament per a organismes públics, entitats locals i consorcis interadministratius que volen participar activament en l'ecosistema AiSTEAM — com demandants de reptes, finançadors de pilots o entorns de validació — i necessiten orientació sobre rols possibles, compromisos esperats, gestió de dades públiques i encaix amb els seus procediments administratius habituals."
           },
           "status": "open",
           "targetRoute": "marketplace"
@@ -2950,9 +2950,9 @@ export const SECTORS_CONFIG = {
       "va": "La teua organització treballa en algun d'estos sectors?"
     },
     "description": {
-      "es": "La red AI-STEAM está abierta a organizaciones interesadas de cualquiera de los 7 sectores. Desde la sección <strong>La Red</strong> puedes <strong>expresar tu interés</strong>: la solicitud se revisa y, cuando proceda, se inicia el proceso de incorporación. No implica adhesión automática ni aceptación inmediata.",
-      "en": "The AI-STEAM network is open to interested organisations from any of the 7 sectors. From the <strong>Network</strong> section you can <strong>register your interest</strong>: the request is reviewed and, where appropriate, the onboarding process begins. It does not imply automatic membership or immediate acceptance.",
-      "va": "La xarxa AI-STEAM és oberta a organitzacions interessades de qualsevol dels 7 sectors. Des de la secció <strong>La Xarxa</strong> pots <strong>expressar el teu interés</strong>: la sol·licitud es revisa i, quan procedisca, s'inicia el procés d'incorporació. No implica adhesió automàtica ni acceptació immediata."
+      "es": "La red AiSTEAM está abierta a organizaciones interesadas de cualquiera de los 7 sectores. Desde la sección <strong>La Red</strong> puedes <strong>expresar tu interés</strong>: la solicitud se revisa y, cuando proceda, se inicia el proceso de incorporación. No implica adhesión automática ni aceptación inmediata.",
+      "en": "The AiSTEAM network is open to interested organisations from any of the 7 sectors. From the <strong>Network</strong> section you can <strong>register your interest</strong>: the request is reviewed and, where appropriate, the onboarding process begins. It does not imply automatic membership or immediate acceptance.",
+      "va": "La xarxa AiSTEAM és oberta a organitzacions interessades de qualsevol dels 7 sectors. Des de la secció <strong>La Xarxa</strong> pots <strong>expressar el teu interés</strong>: la sol·licitud es revisa i, quan procedisca, s'inicia el procés d'incorporació. No implica adhesió automàtica ni acceptació immediata."
     },
     "buttonVisible": true,
     "configuredButtonVisible": true,
@@ -2969,9 +2969,9 @@ export const SECTORS_CONFIG = {
         "va": "Formulari d’adhesió com a grup d’interés"
       },
       "description": {
-        "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AI-STEAM.",
-        "en": "Complete the Microsoft Forms form to request your organization’s membership in the AI-STEAM Network.",
-        "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AI-STEAM."
+        "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AiSTEAM.",
+        "en": "Complete the Microsoft Forms form to request your organization’s membership in the AiSTEAM Network.",
+        "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AiSTEAM."
       },
       "openExternalLabel": {
         "es": "Conviértete en Stakeholder",

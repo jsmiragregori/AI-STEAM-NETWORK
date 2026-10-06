@@ -11,3 +11,8 @@ el repositorio privado hermano:
 No crear aquí documentos de instrucciones, estado, planes ni handoffs.
 No editar a mano `assets/data/*.js` (se generan con los loaders de CONTENT) ni
 `assets/css/tailwind-output.css` (se genera con `npm run build:css`).
+
+Las pruebas siguen la **política global por impacto** de
+`../AI-STEAM-CONTENT/docs/POLITICA_PRUEBAS_POR_IMPACTO.md`, que aplica también aquí: pruebas
+focales por comportamiento cambiado en el trabajo diario y `npm test` (`node --test`) solo en los
+hitos de integración y entrega, con autorización para el hito. No se instalan hooks.

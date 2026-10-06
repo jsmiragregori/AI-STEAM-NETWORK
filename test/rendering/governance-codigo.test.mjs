@@ -28,7 +28,7 @@ const { setState } = await import('../../assets/js/state.js');
 const vistas = await import('../../assets/js/views/index.js');
 
 const DOCS = () => GOVERNANCE_CONFIG.documentationBlock.docs;
-const ETIQUETA = { es: 'Código AI-STEAM', en: 'AI-STEAM code', va: 'Codi AI-STEAM' };
+const ETIQUETA = { es: 'Código AiSTEAM', en: 'AiSTEAM code', va: 'Codi AiSTEAM' };
 
 function conCodigo(items, valor, fn) {
   const originales = items.map((c) => [c, c.code, Object.prototype.hasOwnProperty.call(c, 'code')]);
@@ -75,7 +75,7 @@ test('cada documento pinta su código en la ceja, encima del título', () => {
     for (const card of lista) {
       const linea = lineasCodigo(card);
       assert.equal(linea.length, 1);
-      assert.match(sinMarcas(linea[0]), /^Código AI-STEAM: DOC-2026-\d{3}$/);
+      assert.match(sinMarcas(linea[0]), /^Código AiSTEAM: DOC-2026-\d{3}$/);
       assert.ok(ceja(card).indexOf('rd-card-mp-code') < ceja(card).indexOf('rd-card-mp-title'), 'el código va ENCIMA del título');
     }
   } finally {
@@ -170,7 +170,7 @@ test('el adjunto descargable y el enlace externo se conservan con el código', (
 
 test('la etiqueta local no toca translations.js (no hace falta cms:ui)', async () => {
   const fuente = await readFile(new URL('../../assets/data/translations.js', import.meta.url), 'utf8');
-  assert.ok(!/Código AI-STEAM|AI-STEAM code|Codi AI-STEAM/.test(fuente));
+  assert.ok(!/Código AiSTEAM|AiSTEAM code|Codi AiSTEAM/.test(fuente));
   const vista = await readFile(new URL('../../assets/js/views/governance.js', import.meta.url), 'utf8');
   assert.match(vista, /GOV_CODE_LABEL|govCodeLineHtml/);
 });

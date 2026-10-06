@@ -12,9 +12,9 @@ const COURSE_PARTNERS  = ['UVEG / CECU', "Ud'A / UVEG", 'CECU / Inspiring Future
 // C13: etiquetas locales de los dos códigos. Viven aquí, como las del marketplace: no hace falta `cms:ui`.
 const UI_TEXT = {
   aiSteamCode: {
-    es: 'Código AI-STEAM',
-    en: 'AI-STEAM code',
-    va: 'Codi AI-STEAM',
+    es: 'Código AiSTEAM',
+    en: 'AiSTEAM code',
+    va: 'Codi AiSTEAM',
   },
   trainingCode: {
     es: 'Código de la formación',
@@ -537,6 +537,12 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
   const masterDisclaimer = cmsSection?.disclaimerBlock
     ? pickLang(cmsSection.disclaimerBlock.text, '')
     : (trainingT?.masterBridgeDisclaimer || '');
+  // F4 (T4.2): enlace estructurado del aviso (convocatoria FSTP). La URL pasa por la validación
+  // editorial existente; si no es segura, el aviso se pinta sin enlace.
+  const disclaimerLink = cmsSection?.disclaimerBlock?.link || null;
+  const disclaimerLinkUrl = disclaimerLink ? getSafeEditorialUrl(disclaimerLink.url) : null;
+  const disclaimerLinkText = disclaimerLink ? pickLang(disclaimerLink.text, '') : '';
+  const disclaimerLinkLabel = disclaimerLink ? pickLang(disclaimerLink.label, '') : '';
   const masterPathBlock = cmsSection?.pathBlock;
   const masterPathTitle = masterPathBlock ? pickLang(masterPathBlock.title, trainingT?.masterPath || '') : (trainingT?.masterPath || '');
   const masterPathSteps = masterPathBlock?.steps?.length > 0 ? masterPathBlock.steps.map(s => pickLang(s.text, '')) : (trainingT?.masterPathSteps || []);
@@ -548,6 +554,8 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
       </div>
       <div class="flex-1">
         <p class="text-base text-white leading-relaxed font-semibold">${esc(masterDisclaimer)}</p>
+        ${disclaimerLink && (disclaimerLinkText || disclaimerLinkUrl) ? `
+        <p class="mt-3 text-sm leading-relaxed text-white/90">${esc(disclaimerLinkText)}${disclaimerLinkUrl && disclaimerLinkLabel ? ` <a href="${esc(disclaimerLinkUrl)}" target="_blank" rel="noopener noreferrer" class="font-bold text-eu-yellow underline hover:text-white">${esc(disclaimerLinkLabel)}<i data-lucide="external-link" class="ml-1 inline h-3 w-3"></i></a>` : ''}</p>` : ''}
       </div>
     </div>`}
     ${masterSkillsBlockHtml}
@@ -599,7 +607,7 @@ export function render() {
             <div class="max-w-4xl">
               <div class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white/80 backdrop-blur">
                 <i data-lucide="graduation-cap" class="h-4 w-4"></i>
-                AI-SECRETT
+                AiSECRETT
               </div>
               <h1 class="mt-7 text-4xl font-extrabold tracking-tight md:text-6xl" style="color:#FFF4E1;line-height:1.02">${esc(pickLang(heroBlock.title, trainingT?.title || ''))}</h1>
               <p class="mt-7 text-lg leading-relaxed text-white/85 md:text-xl">${esc(pickLang(heroBlock.description, trainingT?.description || ''))}</p>

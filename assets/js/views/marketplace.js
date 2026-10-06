@@ -242,6 +242,11 @@ const UI_TEXT = {
     en: 'Looking for',
     va: 'Es busca',
   },
+  tripleTransition: {
+    es: 'Triple transición',
+    en: 'Triple transition',
+    va: 'Triple transició',
+  },
   contributionType: {
     es: 'Tipo de contribución',
     en: 'Contribution type',
@@ -592,6 +597,10 @@ function getAudienceLabel(id) {
 
 function getCompetenceLabel(id) {
   return getLabelFromArray(MARKETPLACE_CONFIG.labels?.competences, id);
+}
+
+function getTransitionLabel(id) {
+  return getLabelFromArray(MARKETPLACE_CONFIG.transitionLabels || MARKETPLACE_CONFIG.legacyLabels?.transitionLabels, id);
 }
 
 function getDownloadTypeLabel(id) {
@@ -1409,6 +1418,16 @@ function renderChallengeCard(item, tab) {
     .filter(c => c.label)
     .slice(0, CARD_CHIP_MAX) : [];
 
+  const transitionChips = ccv.tripleTransition !== false ? asArray(cl.tripleTransition)
+    .map(id => ({ id, label: getTransitionLabel(id) }))
+    .filter(c => c.label)
+    .slice(0, CARD_CHIP_MAX) : [];
+
+  // Sector de la card: la variable ya existía desde siempre, pero nunca llegaba a pintarse.
+  const challengeSectorCode = getSectorCode(item.core?.sector || cl.sector);
+  const challengeSectorLabel = getSectorLabel(challengeSectorCode);
+  const showSectorChip = ccv.ch_challenge_sector !== false && Boolean(challengeSectorLabel);
+
   // Fecha límite
   const deadlineLabel = pres.showDeadline !== false ? pickLang(item.core?.deadlineLabel) : null;
 
@@ -1432,6 +1451,16 @@ function renderChallengeCard(item, tab) {
         <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('audience'))}</p>
         <div class="flex flex-wrap gap-2">${audienceChips.map(c => renderBadge(c.label, 'bg-eu-purple/10 text-eu-purple border-eu-purple/20', 'audience', c.id)).join('')}</div>
       </div>` : ''}
+    ${showSectorChip ? `
+      <div class="mt-3">
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('sector'))}</p>
+        <div class="flex flex-wrap gap-2">${renderBadge(challengeSectorLabel, 'bg-eu-purple/10 text-eu-purple border-eu-purple/20', 'sector', challengeSectorCode)}</div>
+      </div>` : ''}
+    ${transitionChips.length ? `
+      <div class="mt-3">
+        <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('tripleTransition'))}</p>
+        <div class="flex flex-wrap gap-2">${transitionChips.map(c => renderBadge(c.label, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20')).join('')}</div>
+      </div>` : ''}
     ${deadlineLabel ? `<div class="mt-4 flex items-center gap-2 rounded-lg border border-eu-border px-3 py-2 text-sm text-gray-600"><i data-lucide="clock" class="h-4 w-4 shrink-0 text-gray-400"></i><span class="text-xs font-bold uppercase tracking-wide text-gray-400">${esc(uiText('deadline'))}</span><span class="font-semibold">${esc(deadlineLabel)}</span></div>` : ''}
     ${dlIndicator ? `<div class="mt-3 flex items-center gap-1.5 text-xs text-gray-500"><i data-lucide="file-down" class="h-3.5 w-3.5 shrink-0"></i><span>${esc(dlIndicator)}</span></div>` : ''}
     ${(() => { const _sdgInner = ccv.ch_sdgs !== false ? renderSdgs(cl.sdgs, CARD_CHIP_MAX, 'sdg', true) : ''; return _sdgInner ? `<div class="mt-3"><p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('sdgs'))}</p><div class="flex flex-wrap gap-2">${_sdgInner}</div></div>` : ''; })()}
@@ -1444,7 +1473,6 @@ function renderChallengeCard(item, tab) {
 
   const showMat = ccv.ch_maturityBadge !== false;
   const maturityLabel = showMat ? getEvidenceLabel(item.core?.maturity) : null;
-  const challengeSectorCode = getSectorCode(item.core?.sector || cl.sector);
   return renderCardShell(item, tab, body, {
     title: item.core?.title,
     subtitle: item.core?.summary,
@@ -1507,7 +1535,7 @@ function renderCaseCard(item, tab) {
           <i data-lucide="building-2" class="h-3.5 w-3.5"></i>
           ${esc(uiText('transferChain'))}
         </p>
-        <p class="mt-1 text-sm font-semibold leading-6 text-gray-700 line-clamp-2">${esc(originName || publisherName)}${esc(beneficiaries.length ? ' → ' + beneficiaries.slice(0, 2).join(', ') : '')}</p>
+        <p class="mt-1 text-sm font-semibold leading-6 text-gray-700">${esc(originName || publisherName)}${esc(beneficiaries.length ? ' → ' + beneficiaries.join(', ') : '')}</p>
       </div>`;
   }
 

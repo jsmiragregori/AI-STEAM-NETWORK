@@ -561,7 +561,7 @@ function tabDocumentos(govT) {
   const cms = GOVERNANCE_CONFIG?.documentationBlock || {};
 
   // C15: código propio del documento. Etiqueta local (no translations.js, como en el resto de vistas).
-  const GOV_CODE_LABEL = { es: 'Código AI-STEAM', en: 'AI-STEAM code', va: 'Codi AI-STEAM' };
+  const GOV_CODE_LABEL = { es: 'Código AiSTEAM', en: 'AiSTEAM code', va: 'Codi AiSTEAM' };
   const govCodeLineHtml = (doc) => {
     const code = typeof doc?.code === 'string' ? doc.code.trim() : '';
     if (!code) return '';
