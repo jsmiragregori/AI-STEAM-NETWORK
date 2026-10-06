@@ -57,13 +57,19 @@ const EXPECTED_BY_FILE = {
 // en courseCard y el código en la búsqueda. Sigue siendo la misma expresión, con la misma categoría.
 // C15 (códigos de Gobernanza) desplaza +12 la de governance.js (702 → 714): la etiqueta y el helper de la
 // línea de código de los documentos. Misma expresión y categoría.
+// F3 de la depuración (D5) añade a marketplace.js la etiqueta de Triple Transición (+5 en UI_TEXT),
+// el helper getTransitionLabel (+4) y los bloques de sector y Triple Transición de la card
+// (+19 netas en renderChallengeCard, con la variable muerta del sector reutilizada): +28 netas por
+// encima de las cinco de marketplace.js, que pasan a 1791, 1976, 1978, 2017 y 2177. Mismas
+// expresiones, mismas categorías y mismos recuentos (las interpolaciones nuevas van con esc() o
+// son fragmentos compuestos, como los de las demás cards).
 const EXPECTED_EXCEPTIONS = [
   { file: 'assets/js/views/governance.js', line: 714, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1763, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 1948, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1950, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/marketplace.js', line: 1989, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 2149, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 1791, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 1976, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 1978, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 2017, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 2177, category: 'COMPOSICION_CADENA' },
   { file: 'assets/js/views/training.js', line: 468, category: 'ESTRUCTURAL' },
 ];
 

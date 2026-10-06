@@ -504,6 +504,7 @@ export const MARKETPLACE_CONFIG = {
     "ch_audience": true,
     "ch_sdgs": true,
     "ch_competences": true,
+    "ch_challenge_sector": true,
     "ch_reviewDate": true,
     "ch_entity": true,
     "ch_case_status": true,
