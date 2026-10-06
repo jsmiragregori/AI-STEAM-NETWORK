@@ -216,7 +216,7 @@ async function verificarHuellas(raiz) {
 
   // `index.html` tiene que cargar la copia de entrada, no el canónico.
   const html = (await leerTextoSiExiste(path.join(raiz, 'index.html'))) || '';
-  const scriptSrc = /<script[^>]+src="((?:\.\/)?[^"]+)"/.exec(html);
+  const scriptSrc = /<script[^>]*type="module"[^>]*src="((?:\.\/)?[^"]+)"/.exec(html);
   const tokenEntrada = scriptSrc ? scriptSrc[1].replace(/^\.\//, '') : null;
   if (!tokenEntrada || !esRutaSellada(tokenEntrada)) {
     problemas.push('index.html no carga ninguna copia sellada del módulo de entrada (¿sello incompleto?)');
