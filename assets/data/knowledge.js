@@ -285,6 +285,16 @@ export const KNOWLEDGE_CONFIG = {
           "en": "Template",
           "va": "Plantilla"
         }
+      },
+      {
+        "id": "proyecto",
+        "visible": true,
+        "icon": "🚀",
+        "label": {
+          "es": "Proyecto",
+          "en": "Project",
+          "va": "Projecte"
+        }
       }
     ],
     "resources": [
