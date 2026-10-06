@@ -537,6 +537,12 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
   const masterDisclaimer = cmsSection?.disclaimerBlock
     ? pickLang(cmsSection.disclaimerBlock.text, '')
     : (trainingT?.masterBridgeDisclaimer || '');
+  // F4 (T4.2): enlace estructurado del aviso (convocatoria FSTP). La URL pasa por la validación
+  // editorial existente; si no es segura, el aviso se pinta sin enlace.
+  const disclaimerLink = cmsSection?.disclaimerBlock?.link || null;
+  const disclaimerLinkUrl = disclaimerLink ? getSafeEditorialUrl(disclaimerLink.url) : null;
+  const disclaimerLinkText = disclaimerLink ? pickLang(disclaimerLink.text, '') : '';
+  const disclaimerLinkLabel = disclaimerLink ? pickLang(disclaimerLink.label, '') : '';
   const masterPathBlock = cmsSection?.pathBlock;
   const masterPathTitle = masterPathBlock ? pickLang(masterPathBlock.title, trainingT?.masterPath || '') : (trainingT?.masterPath || '');
   const masterPathSteps = masterPathBlock?.steps?.length > 0 ? masterPathBlock.steps.map(s => pickLang(s.text, '')) : (trainingT?.masterPathSteps || []);
@@ -548,6 +554,8 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
       </div>
       <div class="flex-1">
         <p class="text-base text-white leading-relaxed font-semibold">${esc(masterDisclaimer)}</p>
+        ${disclaimerLink && (disclaimerLinkText || disclaimerLinkUrl) ? `
+        <p class="mt-3 text-sm leading-relaxed text-white/90">${esc(disclaimerLinkText)}${disclaimerLinkUrl && disclaimerLinkLabel ? ` <a href="${esc(disclaimerLinkUrl)}" target="_blank" rel="noopener noreferrer" class="font-bold text-eu-yellow underline hover:text-white">${esc(disclaimerLinkLabel)}<i data-lucide="external-link" class="ml-1 inline h-3 w-3"></i></a>` : ''}</p>` : ''}
       </div>
     </div>`}
     ${masterSkillsBlockHtml}

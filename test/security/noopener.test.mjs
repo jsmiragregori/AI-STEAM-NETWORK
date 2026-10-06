@@ -36,9 +36,10 @@ test('línea base informativa de destinos de pestaña nueva', async () => {
   const { total, literalCount, dynamicCount } = report.blankTargetsWithoutNoopener;
   // CABECERA: el logo de AI-SECRETT añade un enlace externo _blank con noopener.
   // GENERALITAT: el logo enlaza a ceice.gva.es en otra pestaña de forma segura.
-  assert.equal(literalCount, 19);
+  // F4 de la depuración: el enlace FSTP del aviso de Formación añade otro _blank literal con rel.
+  assert.equal(literalCount, 20);
   assert.equal(dynamicCount, 4);
-  assert.equal(total, 23);
+  assert.equal(total, 24);
   assert.equal(report.windowOpenCalls.length, 0);
 });
 
