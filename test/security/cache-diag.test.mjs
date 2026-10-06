@@ -51,7 +51,7 @@ test('construirActivosCriticos lista entrada, módulos, datos y recursos con su 
     },
   };
   assert.deepEqual(construirActivosCriticos(version), [
-    { grupo: 'entrada', etiqueta: 'assets/js/main.js', url: 'assets/js/main.js?v=aaaaaaaa' },
+    { grupo: 'entrada', etiqueta: 'assets/js/main.js', url: 'assets/js/main.aaaaaaaa.js' },
     { grupo: 'modulos', etiqueta: 'assets/js/views/v.js', url: 'assets/js/views/v.js?v=bbbbbbbb' },
     { grupo: 'datos', etiqueta: 'marketplace.js', url: 'assets/data/marketplace.js?v=cccccccc' },
     { grupo: 'recursos', etiqueta: 'assets/downloads/x.pdf', url: 'assets/downloads/x.pdf?v=dddddddd' },

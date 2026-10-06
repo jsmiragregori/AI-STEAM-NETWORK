@@ -52,43 +52,51 @@ export const DATOS_GENERADOS = [
 /** Un fichero generado por debajo de esto está a medias, no escrito. */
 const TAMANO_MINIMO = 40;
 
-// ── F5 (D9): coherencia de las huellas `?v=<hash8>` ─────────────────────────
+// ── F5 (D9): coherencia de los activos inmutables ───────────────────────────
 //
-// Un árbol sellado lleva en cada URL de módulo/dato/adjunto el prefijo de 8 hex
-// del SHA-256 de sus bytes finales, y `version.json` con commit, fecha y los
-// hashes de cada `assets/data/*.js`. Esta comprobación es ligera e independiente
-// de `stamp-assets.mjs` (que vive en CONTENT): recorre las huellas declaradas,
-// resuelve su destino y compara. Un dato tocado sin resellar, o un adjunto
-// sustituido, se ven aquí aunque el fichero siga existiendo y parseando.
+// Un árbol sellado referencia COPIAS con la huella en el nombre
+// (`main.<hash8>.js`, `marketplace.<hash8>.js`, `adjunto.<hash8>.pdf`) y
+// `version.json` (esquema `ai-steam-build/2`) declara cada una con su `sha256` y
+// su canónico. Esta comprobación es ligera e independiente de
+// `stamp-assets.mjs` (que vive en CONTENT): un manifest que no cuadre con sus
+// bytes, una copia ausente o alterada, o un `index.html` que cargue el canónico
+// en vez de la copia se ven aquí. Los canónicos siguen siendo el alcance de la
+// guarda P-40 (datos generados completos), y el panel/los enlaces compartidos
+// siguen usándolos.
 
-const HUELLA_EN_TEXTO = /([A-Za-z0-9_./-]+)\?v=([0-9a-f]{8})/g;
-const SCHEMA_VERSION = 'ai-steam-build/1';
+const SCHEMA_VERSION = 'ai-steam-build/2';
+const SELLADA = /\.[0-9a-f]{8}\.[^./]+$/;
 
 function sha256Hex(bytes) {
   return createHash('sha256').update(bytes).digest('hex');
 }
 
-/** Resuelve el token de una URL sellada, o null si no es una ruta local. */
-function resolverToken(raiz, relArchivo, token) {
-  const limpio = String(token).split('#')[0];
-  if (!limpio || /^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(limpio) || limpio.startsWith('//')) return null;
-  const base = limpio.startsWith('./') || limpio.startsWith('../')
-    ? path.dirname(path.join(raiz, ...relArchivo.split('/')))
-    : raiz;
-  return path.resolve(base, limpio);
+function esRutaSellada(rel) {
+  return SELLADA.test(String(rel));
 }
 
-async function ficherosConHuellas(raiz) {
-  const salida = [];
-  const agregar = async (absoluto, rel) => {
-    try {
-      salida.push({ rel, texto: await readFile(absoluto, 'utf8') });
-    } catch {
-      /* un fichero que no existe no aporta huellas */
+function canonicoDe(rel) {
+  return String(rel).replace(/\.[0-9a-f]{8}(\.[^./]+)$/, '$1');
+}
+
+async function leerTextoSiExiste(absoluto) {
+  try {
+    return await readFile(absoluto, 'utf8');
+  } catch {
+    return null;
+  }
+}
+
+/** Referencias a copias citadas por `index.html`, los módulos/datos y los adjuntos. */
+async function referenciasSelladas(raiz) {
+  const refs = [];
+  const agregar = (origenRel, texto) => {
+    for (const match of texto.matchAll(/[A-Za-z0-9_./-]+\.[0-9a-f]{8}\.[a-z0-9]+/g)) {
+      refs.push({ token: match[0], origenRel });
     }
   };
-  await agregar(path.join(raiz, 'index.html'), 'index.html');
-  await agregar(path.join(raiz, 'version.json'), 'version.json');
+  const html = await leerTextoSiExiste(path.join(raiz, 'index.html'));
+  if (html) agregar('index.html', html);
   async function caminar(directorio, relBase) {
     let entradas;
     try {
@@ -98,87 +106,85 @@ async function ficherosConHuellas(raiz) {
     }
     for (const entrada of entradas.sort((a, b) => a.name.localeCompare(b.name))) {
       const rel = `${relBase}/${entrada.name}`;
-      if (entrada.isDirectory()) await caminar(path.join(directorio, entrada.name), rel);
-      else if (entrada.name.endsWith('.js')) await agregar(path.join(directorio, entrada.name), rel);
+      if (entrada.isDirectory()) {
+        await caminar(path.join(directorio, entrada.name), rel);
+        continue;
+      }
+      if (!/\.(?:js|html)$/.test(entrada.name)) continue;
+      const texto = await leerTextoSiExiste(path.join(directorio, entrada.name));
+      if (texto) agregar(rel, texto);
     }
   }
   await caminar(path.join(raiz, 'assets', 'js'), 'assets/js');
   await caminar(path.join(raiz, 'assets', 'data'), 'assets/data');
-  return salida;
+  return refs;
+}
+
+/** Ruta absoluta de un token sellado: `assets/...` es de raíz; `./` y `../`, relativos. */
+function absolutoDeToken(raiz, token, origenRel) {
+  const limpio = token.replace(/^\.\//, '');
+  if (limpio.startsWith('assets/')) return path.join(raiz, ...limpio.split('/'));
+  const base = path.dirname(path.join(raiz, ...origenRel.split('/')));
+  return path.resolve(base, limpio);
 }
 
 async function verificarHuellas(raiz) {
   const problemas = [];
   let comprobadas = 0;
-  const declaraciones = new Map(); // absoluto → { esperada, origen, url }
+  const refs = await referenciasSelladas(raiz);
 
-  for (const { rel, texto } of await ficherosConHuellas(raiz)) {
-    for (const match of texto.matchAll(HUELLA_EN_TEXTO)) {
-      const absoluto = resolverToken(raiz, rel, match[1]);
-      if (!absoluto) continue;
-      if (!declaraciones.has(absoluto)) {
-        declaraciones.set(absoluto, { esperada: match[2], origen: rel, url: match[1] });
+  let version = null;
+  let crudo = null;
+  try {
+    crudo = await readFile(path.join(raiz, 'version.json'), 'utf8');
+  } catch (error) {
+    if (error.code !== 'ENOENT') {
+      problemas.push('version.json ilegible: no se puede comprobar el sello');
+    }
+  }
+  if (crudo !== null) {
+    if (crudo.trim() === '') problemas.push('version.json vacío: el sitio no está sellado');
+    else {
+      try {
+        version = JSON.parse(crudo);
+      } catch {
+        problemas.push('version.json ilegible: no se puede comprobar el sello');
       }
     }
   }
-
-  for (const [absoluto, declaracion] of declaraciones) {
-    let bytes;
-    try {
-      bytes = await readFile(absoluto);
-    } catch {
-      problemas.push(
-        `huella sin destino: ${declaracion.origen} apunta a ${declaracion.url}?v=${declaracion.esperada}, `
-        + 'y ese fichero no existe',
-      );
-      continue;
-    }
-    comprobadas += 1;
-    const real = sha256Hex(bytes).slice(0, 8);
-    if (real !== declaracion.esperada) {
-      problemas.push(
-        `huella obsoleta: ${declaracion.origen} apunta a ${declaracion.url}?v=${declaracion.esperada}, `
-        + `pero los bytes son ${real}; hay que resellar`,
-      );
-    }
-  }
-
-  let version = null;
-  try {
-    version = JSON.parse(await readFile(path.join(raiz, 'version.json'), 'utf8'));
-  } catch (error) {
-    if (error.code !== 'ENOENT') problemas.push('version.json ilegible: no se puede comprobar el sello');
-    version = null;
-  }
   if (!version || typeof version !== 'object') {
-    if (declaraciones.size > 0) {
-      problemas.push('hay huellas ?v= pero no hay version.json: el sitio no está sellado');
+    if (refs.length > 0) {
+      problemas.push('hay copias selladas referenciadas pero no hay version.json legible: el sitio no está sellado');
     }
     return { problemas, comprobadas };
   }
   if (version.schema !== SCHEMA_VERSION) {
     problemas.push(`version.json con esquema desconocido: ${JSON.stringify(version.schema)}`);
   }
+
   const datos = version.datos && typeof version.datos === 'object' ? version.datos : {};
   for (const { fichero } of DATOS_GENERADOS) {
     if (!datos[fichero]) problemas.push(`version.json no declara assets/data/${fichero}`);
   }
+
   const secciones = [
     ['entrada', { entrada: version.entrada }],
     ['modulos', version.modulos || {}],
     ['datos', datos],
     ['recursos', version.recursos || {}],
   ];
+  const declaradas = new Set();
   for (const [seccion, mapa] of secciones) {
     for (const [clave, item] of Object.entries(mapa)) {
       if (!item || typeof item.url !== 'string' || !/^[0-9a-f]{64}$/.test(item.sha256 || '')) {
         problemas.push(`version.json: ${seccion}['${clave}'] mal formado`);
         continue;
       }
-      const absoluto = resolverToken(raiz, 'version.json', item.url.replace(/\?v=[0-9a-f]{8}$/, ''));
+      const url = item.url.replace(/^\.\//, '');
+      declaradas.add(url);
       let bytes;
       try {
-        bytes = await readFile(absoluto);
+        bytes = await readFile(path.join(raiz, ...url.split('/')));
       } catch {
         problemas.push(`version.json: ${seccion}['${clave}'] apunta a ${item.url}, que no existe`);
         continue;
@@ -191,12 +197,49 @@ async function verificarHuellas(raiz) {
           + `pero los bytes son ${real.slice(0, 12)}…`,
         );
       }
-      const huella = /\?v=([0-9a-f]{8})$/.exec(item.url);
-      if (!huella || huella[1] !== real.slice(0, 8)) {
+      const sufijo = /\.([0-9a-f]{8})\.[^./]+$/.exec(url);
+      if (!sufijo || sufijo[1] !== real.slice(0, 8)) {
         problemas.push(
-          `version.json: ${seccion}['${clave}'] (${item.url}) tiene una huella que no corresponde a sus bytes`,
+          `version.json: ${seccion}['${clave}'] (${item.url}) tiene una huella en el nombre que no corresponde a sus bytes`,
         );
       }
+      if (item.canonico) {
+        if (item.canonico !== canonicoDe(url)) {
+          problemas.push(`version.json: ${seccion}['${clave}'] declara un canónico distinto de su copia: ${item.canonico}`);
+        }
+        if ((await leerTextoSiExiste(path.join(raiz, ...item.canonico.split('/')))) === null) {
+          problemas.push(`version.json: ${seccion}['${clave}']: falta el canónico ${item.canonico}`);
+        }
+      }
+    }
+  }
+
+  // `index.html` tiene que cargar la copia de entrada, no el canónico.
+  const html = (await leerTextoSiExiste(path.join(raiz, 'index.html'))) || '';
+  const scriptSrc = /<script[^>]+src="((?:\.\/)?[^"]+)"/.exec(html);
+  const tokenEntrada = scriptSrc ? scriptSrc[1].replace(/^\.\//, '') : null;
+  if (!tokenEntrada || !esRutaSellada(tokenEntrada)) {
+    problemas.push('index.html no carga ninguna copia sellada del módulo de entrada (¿sello incompleto?)');
+  } else if (version.entrada && tokenEntrada !== version.entrada.url) {
+    problemas.push(`index.html carga ${tokenEntrada} y version.json declara ${version.entrada.url}`);
+  }
+
+  // Referencias selladas que no pasan por el manifest: deben existir y cuadrar.
+  for (const { token, origenRel } of refs) {
+    const url = token.replace(/^\.\//, '');
+    if (declaradas.has(url)) continue;
+    const absoluto = absolutoDeToken(raiz, token, origenRel);
+    let bytes;
+    try {
+      bytes = await readFile(absoluto);
+    } catch {
+      problemas.push(`referencia sellada sin fichero: ${origenRel} cita ${token}`);
+      continue;
+    }
+    comprobadas += 1;
+    const sufijo = /\.([0-9a-f]{8})\.[^./]+$/.exec(url);
+    if (!sufijo || sufijo[1] !== sha256Hex(bytes).slice(0, 8)) {
+      problemas.push(`referencia sellada alterada: ${token} (citada en ${origenRel})`);
     }
   }
   return { problemas, comprobadas };
