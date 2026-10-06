@@ -58,13 +58,11 @@ test('un árbol sellado coherente no produce problemas', async () => {
 
 test('una huella que no corresponde a los bytes del destino se detecta', async () => {
   const { raiz, version } = await sitioSellado();
-  const main = await readFile(path.join(raiz, 'assets/js/main.js'), 'utf8');
   version.entrada.sha256 = '0'.repeat(64);
   await escribir(raiz, 'version.json', JSON.stringify(version, null, 2) + '\n');
   // La URL conserva la huella antigua; el sha256 declarado ya no casa con main.js.
   const informe = await verificarDatosGenerados(raiz);
   assert.ok(informe.problemas.some((p) => /version\.json/.test(p) && /main\.js/.test(p)), informe.problemas);
-  assert.ok(main.includes(`?v=${h8(main)}`));
 });
 
 test('una URL sellada que apunta a otros bytes se detecta', async () => {

@@ -19,7 +19,8 @@
 // Uso:  npm run verify:data
 // Devuelve código 1 si algo falta, para poder encadenarlo antes de empaquetar.
 
-import { readFile } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -50,6 +51,156 @@ export const DATOS_GENERADOS = [
 
 /** Un fichero generado por debajo de esto está a medias, no escrito. */
 const TAMANO_MINIMO = 40;
+
+// ── F5 (D9): coherencia de las huellas `?v=<hash8>` ─────────────────────────
+//
+// Un árbol sellado lleva en cada URL de módulo/dato/adjunto el prefijo de 8 hex
+// del SHA-256 de sus bytes finales, y `version.json` con commit, fecha y los
+// hashes de cada `assets/data/*.js`. Esta comprobación es ligera e independiente
+// de `stamp-assets.mjs` (que vive en CONTENT): recorre las huellas declaradas,
+// resuelve su destino y compara. Un dato tocado sin resellar, o un adjunto
+// sustituido, se ven aquí aunque el fichero siga existiendo y parseando.
+
+const HUELLA_EN_TEXTO = /([A-Za-z0-9_./-]+)\?v=([0-9a-f]{8})/g;
+const SCHEMA_VERSION = 'ai-steam-build/1';
+
+function sha256Hex(bytes) {
+  return createHash('sha256').update(bytes).digest('hex');
+}
+
+/** Resuelve el token de una URL sellada, o null si no es una ruta local. */
+function resolverToken(raiz, relArchivo, token) {
+  const limpio = String(token).split('#')[0];
+  if (!limpio || /^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(limpio) || limpio.startsWith('//')) return null;
+  const base = limpio.startsWith('./') || limpio.startsWith('../')
+    ? path.dirname(path.join(raiz, ...relArchivo.split('/')))
+    : raiz;
+  return path.resolve(base, limpio);
+}
+
+async function ficherosConHuellas(raiz) {
+  const salida = [];
+  const agregar = async (absoluto, rel) => {
+    try {
+      salida.push({ rel, texto: await readFile(absoluto, 'utf8') });
+    } catch {
+      /* un fichero que no existe no aporta huellas */
+    }
+  };
+  await agregar(path.join(raiz, 'index.html'), 'index.html');
+  await agregar(path.join(raiz, 'version.json'), 'version.json');
+  async function caminar(directorio, relBase) {
+    let entradas;
+    try {
+      entradas = await readdir(directorio, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const entrada of entradas.sort((a, b) => a.name.localeCompare(b.name))) {
+      const rel = `${relBase}/${entrada.name}`;
+      if (entrada.isDirectory()) await caminar(path.join(directorio, entrada.name), rel);
+      else if (entrada.name.endsWith('.js')) await agregar(path.join(directorio, entrada.name), rel);
+    }
+  }
+  await caminar(path.join(raiz, 'assets', 'js'), 'assets/js');
+  await caminar(path.join(raiz, 'assets', 'data'), 'assets/data');
+  return salida;
+}
+
+async function verificarHuellas(raiz) {
+  const problemas = [];
+  let comprobadas = 0;
+  const declaraciones = new Map(); // absoluto → { esperada, origen, url }
+
+  for (const { rel, texto } of await ficherosConHuellas(raiz)) {
+    for (const match of texto.matchAll(HUELLA_EN_TEXTO)) {
+      const absoluto = resolverToken(raiz, rel, match[1]);
+      if (!absoluto) continue;
+      if (!declaraciones.has(absoluto)) {
+        declaraciones.set(absoluto, { esperada: match[2], origen: rel, url: match[1] });
+      }
+    }
+  }
+
+  for (const [absoluto, declaracion] of declaraciones) {
+    let bytes;
+    try {
+      bytes = await readFile(absoluto);
+    } catch {
+      problemas.push(
+        `huella sin destino: ${declaracion.origen} apunta a ${declaracion.url}?v=${declaracion.esperada}, `
+        + 'y ese fichero no existe',
+      );
+      continue;
+    }
+    comprobadas += 1;
+    const real = sha256Hex(bytes).slice(0, 8);
+    if (real !== declaracion.esperada) {
+      problemas.push(
+        `huella obsoleta: ${declaracion.origen} apunta a ${declaracion.url}?v=${declaracion.esperada}, `
+        + `pero los bytes son ${real}; hay que resellar`,
+      );
+    }
+  }
+
+  let version = null;
+  try {
+    version = JSON.parse(await readFile(path.join(raiz, 'version.json'), 'utf8'));
+  } catch (error) {
+    if (error.code !== 'ENOENT') problemas.push('version.json ilegible: no se puede comprobar el sello');
+    version = null;
+  }
+  if (!version || typeof version !== 'object') {
+    if (declaraciones.size > 0) {
+      problemas.push('hay huellas ?v= pero no hay version.json: el sitio no está sellado');
+    }
+    return { problemas, comprobadas };
+  }
+  if (version.schema !== SCHEMA_VERSION) {
+    problemas.push(`version.json con esquema desconocido: ${JSON.stringify(version.schema)}`);
+  }
+  const datos = version.datos && typeof version.datos === 'object' ? version.datos : {};
+  for (const { fichero } of DATOS_GENERADOS) {
+    if (!datos[fichero]) problemas.push(`version.json no declara assets/data/${fichero}`);
+  }
+  const secciones = [
+    ['entrada', { entrada: version.entrada }],
+    ['modulos', version.modulos || {}],
+    ['datos', datos],
+    ['recursos', version.recursos || {}],
+  ];
+  for (const [seccion, mapa] of secciones) {
+    for (const [clave, item] of Object.entries(mapa)) {
+      if (!item || typeof item.url !== 'string' || !/^[0-9a-f]{64}$/.test(item.sha256 || '')) {
+        problemas.push(`version.json: ${seccion}['${clave}'] mal formado`);
+        continue;
+      }
+      const absoluto = resolverToken(raiz, 'version.json', item.url.replace(/\?v=[0-9a-f]{8}$/, ''));
+      let bytes;
+      try {
+        bytes = await readFile(absoluto);
+      } catch {
+        problemas.push(`version.json: ${seccion}['${clave}'] apunta a ${item.url}, que no existe`);
+        continue;
+      }
+      comprobadas += 1;
+      const real = sha256Hex(bytes);
+      if (item.sha256 !== real) {
+        problemas.push(
+          `version.json: ${seccion}['${clave}'] (${item.url}) declara sha256 ${item.sha256.slice(0, 12)}… `
+          + `pero los bytes son ${real.slice(0, 12)}…`,
+        );
+      }
+      const huella = /\?v=([0-9a-f]{8})$/.exec(item.url);
+      if (!huella || huella[1] !== real.slice(0, 8)) {
+        problemas.push(
+          `version.json: ${seccion}['${clave}'] (${item.url}) tiene una huella que no corresponde a sus bytes`,
+        );
+      }
+    }
+  }
+  return { problemas, comprobadas };
+}
 
 /**
  * @param {string} raiz Raíz del repositorio.
@@ -105,7 +256,12 @@ export async function verificarDatosGenerados(raiz, opciones = {}) {
     }
   }
 
-  return { comprobados, problemas };
+  // F5: si el sitio está sellado, las huellas tienen que corresponder a los bytes
+  // que se van a servir. Es independiente de la guarda P-40 y no la sustituye.
+  const sello = await verificarHuellas(raiz);
+  problemas.push(...sello.problemas);
+
+  return { comprobados, problemas, huellas: sello.comprobadas };
 }
 
 const ejecutadoDirectamente = process.argv[1]

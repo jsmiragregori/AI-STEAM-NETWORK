@@ -174,10 +174,14 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
   // C13 (códigos de Formación): 136 y `training.js` 11 → 12 con `codeLinesHtml`, el fragmento de las
   // líneas de código de la card. Mismo tipo que `stakeBtnHtml`: marcado compuesto por el propio fichero,
   // con la etiqueta y el valor ya escapados (`esc(...)`); ni el código ni el externo llegan sin escapar.
-  assert.equal(indirectOutputCandidates.total, 136);
+  // F5 (D9): 138 y `diag-cache.js` 2 —el resumen de version.json y la celda "cargado por la página"—.
+  // Son fragmentos del propio fichero, con todo dato por `esc()`; el techo no incorpora ninguna salida
+  // editorial nueva.
+  assert.equal(indirectOutputCandidates.total, 138);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/footer.js': 2,
     'assets/js/components/header.js': 4,
+    'assets/js/diag-cache.js': 2,
     'assets/js/views/governance.js': 23,
     'assets/js/views/home.js': 18,
     'assets/js/views/knowledge.js': 14,
