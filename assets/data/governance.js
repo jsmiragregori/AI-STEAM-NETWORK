@@ -1839,9 +1839,9 @@ export const GOVERNANCE_CONFIG = {
         "visible": true,
         "order": 2,
         "title": {
-          "es": "[DEMO] D1.2 – AI STEAM Network: Conceptos Iniciales y Gobernanza",
-          "en": "[DEMO] D1.2 – AI STEAM Network: Initial Concepts and Governance",
-          "va": "[DEMO] D1.2 – AI STEAM Network: Conceptes Inicials i Governança"
+          "es": "[DEMO] D1.2 – AiSTEAM Network: Conceptos Iniciales y Gobernanza",
+          "en": "[DEMO] D1.2 – AiSTEAM Network: Initial Concepts and Governance",
+          "va": "[DEMO] D1.2 – AiSTEAM Network: Conceptes Inicials i Governança"
         },
         "date": "2026-02-15",
         "types": [
