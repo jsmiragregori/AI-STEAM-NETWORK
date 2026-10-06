@@ -38,8 +38,8 @@ test('formatearCabeceras distingue el valor presente del ausente', () => {
 
 test('construirActivosCriticos lista entrada, módulos, datos y recursos con su URL', () => {
   const version = {
-    schema: 'ai-steam-build/1',
-    entrada: { url: 'assets/js/main.js?v=aaaaaaaa', sha256: 'a'.repeat(64) },
+    schema: 'ai-steam-build/2',
+    entrada: { url: 'assets/js/main.aaaaaaaa.js', sha256: 'a'.repeat(64), canonico: 'assets/js/main.js' },
     modulos: {
       'assets/js/views/v.js': { url: 'assets/js/views/v.js?v=bbbbbbbb', sha256: 'b'.repeat(64) },
     },
