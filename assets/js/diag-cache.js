@@ -40,18 +40,15 @@ export function formatearCabeceras(cabeceras, nombres = NOMBRES_CABECERA) {
 
 /** Lista ordenada de activos críticos declarados en `version.json`. */
 export function construirActivosCriticos(version) {
-  if (!version || version.schema !== 'ai-steam-build/2') return [];
+  if (!version || version.schema !== 'ai-steam-build/1') return [];
   const salida = [];
-  const sinHuella = (url) => String(url)
-    .replace(/\?v=[0-9a-f]{8}$/, '')
-    .replace(/\.[0-9a-f]{8}(\.[^./]+)$/, '$1');
-  const etiqueta = (item) => (item && typeof item.canonico === 'string' && item.canonico) || sinHuella(item.url);
-  const añadir = (grupo, etiquetaTexto, item) => {
+  const sinHuella = (url) => String(url).replace(/\?v=[0-9a-f]{8}$/, '');
+  const añadir = (grupo, etiqueta, item) => {
     if (item && typeof item.url === 'string' && item.url) {
-      salida.push({ grupo, etiqueta: etiquetaTexto || etiqueta(item), url: item.url });
+      salida.push({ grupo, etiqueta: etiqueta || sinHuella(item.url), url: item.url });
     }
   };
-  añadir('entrada', version.entrada ? etiqueta(version.entrada) : null, version.entrada);
+  añadir('entrada', version.entrada ? sinHuella(version.entrada.url) : null, version.entrada);
   for (const [clave, item] of Object.entries(version.modulos || {}).sort(([a], [b]) => a.localeCompare(b))) {
     añadir('modulos', clave, item);
   }
