@@ -64,7 +64,7 @@ test('están declarados todos los ficheros de datos que el sitio importa', async
     } catch {
       continue; // una vista que ya no exista no invalida el censo
     }
-    for (const encontrado of fuente.matchAll(/from '(?:\.\.\/)+data\/([\w-]+\.js)(?:\?v=[0-9a-f]{8})?'/g)) {
+    for (const encontrado of fuente.matchAll(/from '(?:\.\.\/)+data\/([\w-]+\.js)'/g)) {
       importados.add(encontrado[1]);
     }
   }

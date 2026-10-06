@@ -1,7 +1,6 @@
 import { getLanguage, getStoredLanguage } from './i18n.js';
 import { formatViewRoute, planLanguageSwitch, resolveInitialRoute, resolverVistaPermitida } from './utils/view-route.js';
 import { TABLA_SLUGS, ALIAS_SLUGS, VISTAS_OCULTAS } from './slug-table.js';
-import { solicitarRenderApp } from './utils/app-render.js';
 
 export const VIEWS = ['inicio', 'red', 'sectores', 'banco-retos', 'formacion', 'conocimiento', 'gobernanza'];
 
@@ -38,7 +37,7 @@ export function navigateTo(view, params = {}) {
   // serializa nunca (DA-DL-2): formatViewRoute lo ignora por construcción. Si
   // no hubiera enlace posible, se apila sin URL como se hacía antes.
   history.pushState({ appView: view }, '', formatViewRoute(view, getLanguage(), undefined, TABLA_SLUGS) || undefined);
-  solicitarRenderApp();
+  import('./main.js').then(m => m.renderApp());
 }
 
 // Restaura una vista desde el historial del navegador (popstate) SIN apilar una
@@ -48,7 +47,7 @@ export function syncView(view) {
   activeView = resolverVistaPermitida(view, VISTAS_OCULTAS);
   viewParams = {};
   window.scrollTo(0, 0);
-  solicitarRenderApp();
+  import('./main.js').then(m => m.renderApp());
 }
 
 // --- Enlaces directos por slug (DL-4) --------------------------------------

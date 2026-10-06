@@ -7,7 +7,6 @@ import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
 import { filterVisibleStats } from '../utils/stat-visibility.js';
-import { solicitarRenderApp } from '../utils/app-render.js';
 
 
 const SECTOR_ICONS = {
@@ -457,7 +456,7 @@ export function mount() {
       const id = btn.dataset.toggle;
       const current = getState('expandedSector');
       setState('expandedSector', current === id ? null : id);
-      solicitarRenderApp();
+      import('../main.js').then(m => m.renderApp());
     });
   });
 

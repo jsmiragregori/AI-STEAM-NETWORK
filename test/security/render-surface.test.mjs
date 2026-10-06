@@ -70,10 +70,7 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // C13 (códigos de Formación): 26 con assets/js/utils/course-code-display.js, el helper puro de
   // presentación y búsqueda de los códigos de un curso. Es un recuento de ficheros, no de superficie: no
   // define vista, no importa escape-html ni usa pickLang, y las demás cifras de esta prueba siguen idénticas.
-  // F5 (D9): 28 con assets/js/utils/app-render.js (registro del render; sustituye a los imports
-  // dinámicos de main.js) y assets/js/diag-cache.js (diagnóstico ?diag=cache). El segundo sí aporta
-  // superficie medida: dos innerHTML y una lectura de location.search, abajo.
-  assert.equal(report.scannedFiles, 28);
+  assert.equal(report.scannedFiles, 26);
   // CS-20: las cuatro de news.js pasan a escapadas (11 → 7 y 130 → 134).
   // F4 bis (P-66): 133 al resolver el rótulo del CTA de Gobernanza en una
   // constante compartida (ver EXPECTED_PER_FILE). Sigue sin haber ninguna
@@ -135,10 +132,7 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   assert.deepEqual(sinkCounts, {
     // 2026-09-24: el único insertAdjacentHTML era el del aviso de cookies en
     // main.js, retirado con él.
-    // F5 (D9): 25 con los dos `innerHTML` de assets/js/diag-cache.js (cabecera
-    // literal y tabla con filas escapadas; `escape-coverage` no ve ningún dato
-    // sin `esc()`).
-    'innerHTML assignment': 25,
+    'innerHTML assignment': 23,
     // DL-4: la ÚNICA lectura del hash de todo el árbol, en router.js. El
     // inventario la marca porque el hash es entrada no confiable, y hace bien:
     // que aparezca aquí es lo que obliga a justificarla. Está contenida por
@@ -153,10 +147,6 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
     // valor: una lo compara contra la allowlist de slugs y la otra pregunta si
     // existe un elemento con ese id en nuestro propio DOM.
     'location.hash': 2,
-    // F5 (D9): la lectura de `location.search` de diag-cache.js, para activar
-    // el diagnóstico con `?diag=cache`. No se interpola: solo se compara con un
-    // patrón exacto, y el fichero que la lee pasa toda su salida por `esc()`.
-    'location.search': 1,
   });
 
   assert.deepEqual(await generateInventory(), report, 'el inventario debe ser determinista');

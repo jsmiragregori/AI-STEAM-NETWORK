@@ -5,8 +5,6 @@ import { applyLanguage, getLanguage } from './i18n.js';
 import * as views from './views/index.js';
 import { formatViewRoute, planHashChange } from './utils/view-route.js';
 import { TABLA_SLUGS } from './slug-table.js';
-import { registrarRenderApp } from './utils/app-render.js';
-import { mostrarDiagnosticoCacheSiSePide } from './diag-cache.js';
 
 const LANG_BCP47 = { es: 'es', en: 'en', va: 'ca-valencia' };
 function syncHtmlLang() {
@@ -50,11 +48,6 @@ export function renderApp() {
   // las vistas: así lo hereda también cualquier icono que se añada mañana.
   if (window.lucide) window.lucide.createIcons({ attrs: { 'aria-hidden': 'true', focusable: 'false' } });
 }
-
-// El render de la aplicación queda registrado aquí una sola vez (F5): las
-// dependencias que repintan después del arranque (idioma, router, Sectores) lo
-// piden por el registro en vez de volver a importar este módulo.
-registrarRenderApp(renderApp);
 
 // Back/forward del navegador entre vistas de nivel superior. Los detalles
 // por-vista (p.ej. Actualidad) apilan sus propias entradas sin `appView` y las
@@ -109,7 +102,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // "atrás" desde la primera navegación vuelva aquí. Se normaliza la URL a la
   // forma canónica: un alias tolerado se reescribe al enlace que sí se genera.
   history.replaceState({ appView: getActiveView() }, '', formatViewRoute(getActiveView(), getLanguage(), undefined, TABLA_SLUGS) || undefined);
-  // F5 (T5.3): con ?diag=cache, esta llamada sustituye la vista por el
-  // diagnóstico de cabeceras. Sin el parámetro no hace nada.
-  mostrarDiagnosticoCacheSiSePide();
 });

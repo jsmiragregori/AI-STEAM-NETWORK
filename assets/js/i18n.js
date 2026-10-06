@@ -1,5 +1,4 @@
 import { translations } from '../data/translations.js';
-import { solicitarRenderApp } from './utils/app-render.js';
 
 const LANG_BCP47 = { es: 'es', en: 'en', va: 'ca-valencia' };
 
@@ -39,7 +38,7 @@ export function applyLanguage(lang) {
 
 export function setLanguage(lang) {
   applyLanguage(lang);
-  solicitarRenderApp();
+  import('./main.js').then(m => m.renderApp());
 }
 
 export function t(key) {
