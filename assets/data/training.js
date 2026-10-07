@@ -3279,9 +3279,9 @@ export const TRAINING_CONFIG = {
         "codeDisplay": "both",
         "createdAt": "2026-10-07",
         "title": {
-          "es": "EmprendeTech FP",
-          "en": "EmprendeTech FP",
-          "va": "EmprendeTech FP"
+          "es": "[DEMO] EmprendeTech FP",
+          "en": "[DEMO] EmprendeTech FP",
+          "va": "[DEMO] EmprendeTech FP"
         },
         "description": {
           "es": "La Conselleria de Educación, Cultura y Universidades ha presentado EmprendeTech FP, un programa dirigido a los centros de Formación Profesional de la Comunitat Valenciana para impulsar proyectos vinculados con la innovación, las nuevas tecnologías y las necesidades del tejido productivo. La iniciativa se ha planteado como una vía para acercar a las aulas el desarrollo de propuestas basadas en tecnologías habilitadoras digitales y en dinámicas de emprendimiento aplicadas al entorno educativo.",
@@ -4265,9 +4265,9 @@ export const TRAINING_CONFIG = {
         "codeDisplay": "internal",
         "createdAt": "2026-10-07",
         "title": {
-          "es": "IA en Formación Profesional",
-          "en": "AI for VET",
-          "va": "IA en Formació Profesional"
+          "es": "[DEMO] IA en Formación Profesional",
+          "en": "[DEMO] AI for VET",
+          "va": "[DEMO] IA en Formació Profesional"
         },
         "description": {
           "es": "Este programa formativo tiene como objetivo capacitar al profesorado para comprender, analizar e integrar la Inteligencia Artificial en la práctica educativa de forma crítica, ética, responsable y pedagógicamente significativa.\n\nNo se trata únicamente de aprender a utilizar herramientas, sino de:\n\n- entender qué es realmente la IA,\n- cómo funciona,\n- qué implicaciones éticas, legales y educativas tiene, y\n- cómo impacta en el aprendizaje, la evaluación y el rol docente.\n\nEl programa se estructura en cuatro módulos progresivos, que van desde la concienciación y el marco ético hasta la aplicación práctica en generación de materiales y evaluación.",
@@ -4932,9 +4932,9 @@ export const TRAINING_CONFIG = {
         "codeDisplay": "both",
         "createdAt": "2026-10-07",
         "title": {
-          "es": "Inteligencia Artificial en Centros Educativos",
-          "en": "Artificial Intelligence in Educational Institutions Conference",
-          "va": "Intel·ligència Artificial en Centres Educatius"
+          "es": "[DEMO] Inteligencia Artificial en Centros Educativos",
+          "en": "[DEMO] Artificial Intelligence in Educational Institutions Conference",
+          "va": "[DEMO] Intel·ligència Artificial en Centres Educatius"
         },
         "description": {
           "es": "La jornada Inteligencia Artificial en Centros Educativos ofrece un espacio de análisis y formación sobre los desafíos y oportunidades que la IA plantea en el ámbito educativo. Mediante ponencias de especialistas, experiencias aplicadas y una mesa redonda, se abordarán temas clave como la propiedad intelectual, la protección de datos, la creación de materiales docentes y la gestión de los centros educativos. Un encuentro dirigido a profesionales de la educación interesados en impulsar un uso responsable, ético e innovador de la inteligencia artificial en sus organizaciones.",
