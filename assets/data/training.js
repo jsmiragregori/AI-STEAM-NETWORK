@@ -4956,7 +4956,7 @@ export const TRAINING_CONFIG = {
           "responsible-ai"
         ],
         "link": {
-          "url": "",
+          "url": "https://portal.edu.gva.es/cefire/es/jornada-intelligencia-artificial-en-centres-educatius-es/",
           "external": true
         }
       }
