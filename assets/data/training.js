@@ -18,7 +18,7 @@ export const TRAINING_CONFIG = {
       {
         "id": "courses-fp",
         "visible": true,
-        "value": 23,
+        "value": 24,
         "manualOverride": false,
         "label": {
           "es": "Cursos de FP",
@@ -29,7 +29,7 @@ export const TRAINING_CONFIG = {
       {
         "id": "courses-teacher",
         "visible": true,
-        "value": 24,
+        "value": 25,
         "manualOverride": false,
         "label": {
           "es": "Formación del profesorado",
@@ -253,6 +253,63 @@ export const TRAINING_CONFIG = {
               "va": "Col.laboracio interdisciplinaria per a connectar perfils, sectors i evidencies d aprenentatge."
             },
             "icon": "👥"
+          },
+          {
+            "id": "digital-literacy",
+            "title": {
+              "es": "Alfabetización digital para docentes",
+              "en": "Digital Literacy for Teachers",
+              "va": "Alfabetització digital per a docents"
+            },
+            "shortLabel": {
+              "es": "Alfabetización digital para docentes",
+              "en": "Digital Literacy for Teachers",
+              "va": "Alfabetització digital per a docents"
+            },
+            "description": {
+              "es": "Competencia digital docente para entender, seleccionar y usar herramientas de IA.",
+              "en": "Teacher digital literacy to understand, select and use AI tools.",
+              "va": "Competencia digital docent per a entendre, seleccionar i usar eines d IA."
+            },
+            "icon": "💻"
+          },
+          {
+            "id": "assessment-innovation",
+            "title": {
+              "es": "Innovación en evaluación",
+              "en": "Assessment Innovation",
+              "va": "Innovació en avaluació"
+            },
+            "shortLabel": {
+              "es": "Innovación en evaluación",
+              "en": "Assessment Innovation",
+              "va": "Innovació en avaluació"
+            },
+            "description": {
+              "es": "Innovacion en evaluacion mediante evidencias, rubricas, datos y retroalimentacion asistida.",
+              "en": "Assessment innovation through evidence, rubrics, data and assisted feedback.",
+              "va": "Innovacio en avaluacio mitjancant evidencies, rubriques, dades i retroalimentacio assistida."
+            },
+            "icon": "✅"
+          },
+          {
+            "id": "strategic-communication",
+            "title": {
+              "es": "Comunicación estratégica",
+              "en": "Strategic Communication",
+              "va": "Comunicació estratègica"
+            },
+            "shortLabel": {
+              "es": "Comunicación estratégica",
+              "en": "Strategic Communication",
+              "va": "Comunicació estratègica"
+            },
+            "description": {
+              "es": "Comunicacion estrategica de resultados, impacto, riesgos y propuestas de valor.",
+              "en": "Strategic communication of results, impact, risks and value propositions.",
+              "va": "Comunicacio estrategica de resultats, impacte, riscos i propostes de valor."
+            },
+            "icon": "📢"
           }
         ],
         "cloudCounts": [
@@ -270,7 +327,7 @@ export const TRAINING_CONFIG = {
           },
           {
             "skillId": "process-automation",
-            "count": 9
+            "count": 10
           },
           {
             "skillId": "sustainability",
@@ -291,6 +348,18 @@ export const TRAINING_CONFIG = {
           {
             "skillId": "privacy-ethics",
             "count": 4
+          },
+          {
+            "skillId": "digital-literacy",
+            "count": 1
+          },
+          {
+            "skillId": "assessment-innovation",
+            "count": 1
+          },
+          {
+            "skillId": "strategic-communication",
+            "count": 1
           }
         ],
         "derivedSkillIds": [
@@ -302,7 +371,10 @@ export const TRAINING_CONFIG = {
           "problem-solving",
           "sustainability",
           "privacy-ethics",
-          "teamwork"
+          "teamwork",
+          "digital-literacy",
+          "assessment-innovation",
+          "strategic-communication"
         ],
         "manualIncludeIds": [],
         "manualHiddenIds": []
@@ -633,6 +705,25 @@ export const TRAINING_CONFIG = {
         "displayMode": "cards",
         "skills": [
           {
+            "id": "ai-literacy",
+            "title": {
+              "es": "Alfabetización IA aplicada",
+              "en": "Applied AI Literacy",
+              "va": "Alfabetització IA aplicada"
+            },
+            "shortLabel": {
+              "es": "Alfabetización IA aplicada",
+              "en": "Applied AI Literacy",
+              "va": "Alfabetització IA aplicada"
+            },
+            "description": {
+              "es": "Comprension aplicada de la IA para usarla en tareas tecnicas, creativas y profesionales.",
+              "en": "Applied understanding of AI for technical, creative and professional tasks.",
+              "va": "Comprensio aplicada de la IA per a usar-la en tasques tecniques, creatives i professionals."
+            },
+            "icon": "🤖"
+          },
+          {
             "id": "ped-ai-integration",
             "title": {
               "es": "Integración de IA en pedagogía",
@@ -771,9 +862,14 @@ export const TRAINING_CONFIG = {
           {
             "skillId": "assessment-innovation",
             "count": 11
+          },
+          {
+            "skillId": "ai-literacy",
+            "count": 1
           }
         ],
         "derivedSkillIds": [
+          "ai-literacy",
           "ped-ai-integration",
           "digital-literacy",
           "critical-thinking",
@@ -3153,6 +3249,53 @@ export const TRAINING_CONFIG = {
         }
       },
       {
+        "id": "fp-course-24",
+        "code": "VET-2026-064",
+        "externalCode": "CEEI-001",
+        "codeDisplay": "both",
+        "createdAt": "2026-10-07",
+        "title": {
+          "es": "EmprendeTech FP",
+          "en": "EmprendeTech FP",
+          "va": "EmprendeTech FP"
+        },
+        "description": {
+          "es": "La Conselleria de Educación, Cultura y Universidades ha presentado EmprendeTech FP, un programa dirigido a los centros de Formación Profesional de la Comunitat Valenciana para impulsar proyectos vinculados con la innovación, las nuevas tecnologías y las necesidades del tejido productivo. La iniciativa se ha planteado como una vía para acercar a las aulas el desarrollo de propuestas basadas en tecnologías habilitadoras digitales y en dinámicas de emprendimiento aplicadas al entorno educativo.",
+          "en": "The Department of Education, Culture, and Universities has launched EmprendeTech FP, a program aimed at Vocational Training centers in the Valencian Community designed to foster projects linked to innovation, new technologies, and the needs of the productive sector. The initiative is intended to bring the development of proposals—based on digital enabling technologies and entrepreneurial dynamics applied to the educational setting—into the classroom.",
+          "va": "La Conselleria d'Educació, Cultura i Universitats ha presentat EmprendeTech FP, un programa adreçat als centres de formació professional de la Comunitat Valenciana per impulsar projectes vinculats amb la innovació, les noves tecnologies i les necessitats del teixit productiu. La iniciativa s‟ha plantejat com una via per apropar a les aules el desenvolupament de propostes basades en tecnologies habilitadores digitals i en dinàmiques d‟emprenedoria aplicades al‟entorn educatiu."
+        },
+        "level": "FP",
+        "statusId": "activo",
+        "hours": null,
+        "enrolled": null,
+        "sectorIds": [
+          "agr",
+          "cci",
+          "ene",
+          "hou",
+          "mfg",
+          "mob",
+          "nts"
+        ],
+        "modalityId": "semipresencial",
+        "skillIds": [
+          "process-automation",
+          "digital-literacy",
+          "assessment-innovation",
+          "strategic-communication"
+        ],
+        "tagIds": [
+          "process-automation",
+          "digital-literacy",
+          "assessment-innovation",
+          "strategic-communication"
+        ],
+        "link": {
+          "url": "https://alicantextra.com/es/politica/emprendetech-fp-llegara-a-16-centros-de-formacion-profesional-de-la-comunitat-valenciana_600228_102.html",
+          "external": true
+        }
+      },
+      {
         "id": "ia-etica-aula-docentes",
         "code": "TCH-2026-018",
         "externalCode": null,
@@ -4088,6 +4231,41 @@ export const TRAINING_CONFIG = {
         ],
         "link": {
           "url": "https://portal.edu.gva.es/aules/",
+          "external": true
+        }
+      },
+      {
+        "id": "teacher-course-25",
+        "code": "TCH-2026-065",
+        "externalCode": null,
+        "codeDisplay": "internal",
+        "createdAt": "2026-10-07",
+        "title": {
+          "es": "IA en Formación Profesional",
+          "en": "AI for VET",
+          "va": "IA en Formació Profesional"
+        },
+        "description": {
+          "es": "Este programa formativo tiene como objetivo capacitar al profesorado para comprender, analizar e integrar la Inteligencia Artificial en la práctica educativa de forma crítica, ética, responsable y pedagógicamente significativa.\n\nNo se trata únicamente de aprender a utilizar herramientas, sino de:\n\n- entender qué es realmente la IA,\n- cómo funciona,\n- qué implicaciones éticas, legales y educativas tiene, y\n- cómo impacta en el aprendizaje, la evaluación y el rol docente.\n\nEl programa se estructura en cuatro módulos progresivos, que van desde la concienciación y el marco ético hasta la aplicación práctica en generación de materiales y evaluación.",
+          "en": "This training program aims to equip teachers to understand, analyze, and integrate Artificial Intelligence into educational practice in a manner that is critical, ethical, responsible, and pedagogically meaningful.\n\nIt is not merely about learning to use tools, but rather about:\n\n- understanding what AI truly is,\n- how it works,\n- its ethical, legal, and educational implications, and\n- its impact on learning, assessment, and the role of the teacher.\n\nThe program is structured into four progressive modules, ranging from awareness and the ethical framework to practical application in the creation of materials and assessment.",
+          "va": "Aquest programa formatiu té com a objectiu capacitar el professorat per comprendre, analitzar i integrar la Intel·ligència Artificial a la pràctica educativa de forma crítica, ètica, responsable i pedagògicament significativa.\n\nNo es tracta únicament d'aprendre a utilitzar eines, sinó de:\n\n- entendre què és realment la IA,\n- com funciona,\n- quines implicacions ètiques, legals i educatives té, i\n- com impacta a l'aprenentatge, l'avaluació i el rol docent.\n\nEl programa s'estructura en quatre mòduls progressius, des de la conscienciació i el marc ètic fins a l'aplicació pràctica en generació de materials i avaluació."
+        },
+        "level": "Docentes",
+        "statusId": "finalizado",
+        "hours": 32,
+        "enrolled": null,
+        "sectorIds": [
+          "nts"
+        ],
+        "modalityId": "online",
+        "skillIds": [
+          "ai-literacy"
+        ],
+        "tagIds": [
+          "ai-literacy"
+        ],
+        "link": {
+          "url": "https://aules.edu.gva.es/formaciodelprofessorat/course/view.php?id=39955",
           "external": true
         }
       },

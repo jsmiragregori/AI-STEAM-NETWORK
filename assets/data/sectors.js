@@ -48,7 +48,7 @@ export const SECTORS_CONFIG = {
       {
         "id": "sectorLinkedCourses",
         "icon": "BookOpen",
-        "value": "63",
+        "value": "65",
         "label": {
           "es": "Cursos",
           "en": "Courses",
@@ -79,7 +79,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "initiatives": 8,
         "stakeholders": 6,
-        "courses": 19
+        "courses": 20
       },
       "statsList": [
         {
@@ -105,7 +105,7 @@ export const SECTORS_CONFIG = {
         {
           "id": "courses",
           "icon": "BookOpen",
-          "value": 19,
+          "value": 20,
           "label": {
             "es": "Cursos",
             "en": "Courses",
@@ -463,7 +463,7 @@ export const SECTORS_CONFIG = {
               "mfg"
             ]
           },
-          "count": 19
+          "count": 20
         },
         "network": {
           "enabled": true,
@@ -516,7 +516,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "initiatives": 7,
         "stakeholders": 1,
-        "courses": 4
+        "courses": 5
       },
       "statsList": [
         {
@@ -542,7 +542,7 @@ export const SECTORS_CONFIG = {
         {
           "id": "courses",
           "icon": "BookOpen",
-          "value": 4,
+          "value": 5,
           "label": {
             "es": "Cursos",
             "en": "Courses",
@@ -856,7 +856,7 @@ export const SECTORS_CONFIG = {
               "mob"
             ]
           },
-          "count": 4
+          "count": 5
         },
         "network": {
           "enabled": true,
@@ -900,7 +900,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "initiatives": 6,
         "stakeholders": 3,
-        "courses": 23
+        "courses": 24
       },
       "statsList": [
         {
@@ -926,7 +926,7 @@ export const SECTORS_CONFIG = {
         {
           "id": "courses",
           "icon": "BookOpen",
-          "value": 23,
+          "value": 24,
           "label": {
             "es": "Cursos",
             "en": "Courses",
@@ -1282,7 +1282,7 @@ export const SECTORS_CONFIG = {
               "ene"
             ]
           },
-          "count": 23
+          "count": 24
         },
         "network": {
           "enabled": true,
@@ -1335,7 +1335,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "initiatives": 5,
         "stakeholders": 3,
-        "courses": 9
+        "courses": 10
       },
       "statsList": [
         {
@@ -1361,7 +1361,7 @@ export const SECTORS_CONFIG = {
         {
           "id": "courses",
           "icon": "BookOpen",
-          "value": 9,
+          "value": 10,
           "label": {
             "es": "Cursos",
             "en": "Courses",
@@ -1671,7 +1671,7 @@ export const SECTORS_CONFIG = {
               "agr"
             ]
           },
-          "count": 9
+          "count": 10
         },
         "network": {
           "enabled": true,
@@ -1724,7 +1724,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "initiatives": 6,
         "stakeholders": 2,
-        "courses": 26
+        "courses": 27
       },
       "statsList": [
         {
@@ -1750,7 +1750,7 @@ export const SECTORS_CONFIG = {
         {
           "id": "courses",
           "icon": "BookOpen",
-          "value": 26,
+          "value": 27,
           "label": {
             "es": "Cursos",
             "en": "Courses",
@@ -2134,7 +2134,7 @@ export const SECTORS_CONFIG = {
               "cci"
             ]
           },
-          "count": 26
+          "count": 27
         },
         "network": {
           "enabled": true,
@@ -2187,7 +2187,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "initiatives": 2,
         "stakeholders": 1,
-        "courses": 10
+        "courses": 11
       },
       "statsList": [
         {
@@ -2213,7 +2213,7 @@ export const SECTORS_CONFIG = {
         {
           "id": "courses",
           "icon": "BookOpen",
-          "value": 10,
+          "value": 11,
           "label": {
             "es": "Cursos",
             "en": "Courses",
@@ -2446,7 +2446,7 @@ export const SECTORS_CONFIG = {
               "hou"
             ]
           },
-          "count": 10
+          "count": 11
         },
         "network": {
           "enabled": true,
@@ -2490,7 +2490,7 @@ export const SECTORS_CONFIG = {
       "stats": {
         "initiatives": 12,
         "stakeholders": 4,
-        "courses": 36
+        "courses": 38
       },
       "statsList": [
         {
@@ -2516,7 +2516,7 @@ export const SECTORS_CONFIG = {
         {
           "id": "courses",
           "icon": "BookOpen",
-          "value": 36,
+          "value": 38,
           "label": {
             "es": "Cursos",
             "en": "Courses",
@@ -2909,7 +2909,7 @@ export const SECTORS_CONFIG = {
               "nts"
             ]
           },
-          "count": 36
+          "count": 38
         },
         "network": {
           "enabled": true,
