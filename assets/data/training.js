@@ -40,7 +40,7 @@ export const TRAINING_CONFIG = {
       {
         "id": "courses-master",
         "visible": true,
-        "value": 16,
+        "value": 17,
         "manualOverride": false,
         "label": {
           "es": "Cursos Track A",
@@ -440,6 +440,25 @@ export const TRAINING_CONFIG = {
         "displayMode": "cards",
         "skills": [
           {
+            "id": "responsible-ai",
+            "title": {
+              "es": "Uso responsable de IA generativa",
+              "en": "Responsible Use of Generative AI",
+              "va": "Ús responsable de IA generativa"
+            },
+            "shortLabel": {
+              "es": "Uso responsable de IA generativa",
+              "en": "Responsible Use of Generative AI",
+              "va": "Ús responsable de IA generativa"
+            },
+            "description": {
+              "es": "Uso seguro, transparente y supervisado de sistemas de IA en contextos formativos y sectoriales.",
+              "en": "Safe, transparent and supervised use of AI systems in training and sector contexts.",
+              "va": "Us segur, transparent i supervisat de sistemes d IA en contextos formatius i sectorials."
+            },
+            "icon": "⚖️"
+          },
+          {
             "id": "ai-strategy",
             "title": {
               "es": "Estrategia de IA en organizaciones",
@@ -601,9 +620,14 @@ export const TRAINING_CONFIG = {
           {
             "skillId": "stakeholder-engagement",
             "count": 5
+          },
+          {
+            "skillId": "responsible-ai",
+            "count": 1
           }
         ],
         "derivedSkillIds": [
+          "responsible-ai",
           "ai-strategy",
           "advanced-data",
           "ai-governance",
@@ -4898,6 +4922,41 @@ export const TRAINING_CONFIG = {
         ],
         "link": {
           "url": "https://valgrai.eu",
+          "external": true
+        }
+      },
+      {
+        "id": "master-course-17",
+        "code": "EXT-2026-066",
+        "externalCode": "26IA92IN039",
+        "codeDisplay": "both",
+        "createdAt": "2026-10-07",
+        "title": {
+          "es": "Inteligencia Artificial en Centros Educativos",
+          "en": "Artificial Intelligence in Educational Institutions Conference",
+          "va": "Intel·ligència Artificial en Centres Educatius"
+        },
+        "description": {
+          "es": "La jornada Inteligencia Artificial en Centros Educativos ofrece un espacio de análisis y formación sobre los desafíos y oportunidades que la IA plantea en el ámbito educativo. Mediante ponencias de especialistas, experiencias aplicadas y una mesa redonda, se abordarán temas clave como la propiedad intelectual, la protección de datos, la creación de materiales docentes y la gestión de los centros educativos. Un encuentro dirigido a profesionales de la educación interesados en impulsar un uso responsable, ético e innovador de la inteligencia artificial en sus organizaciones.",
+          "en": "The Artificial Intelligence in Educational Institutions Conference provides a forum for exploring the opportunities and challenges that AI brings to education. Through expert presentations, practical insights, and a roundtable discussion, participants will examine key topics such as intellectual property, data protection, the creation of educational resources, and school leadership in the age of AI. The event is designed for education professionals seeking to promote the responsible, ethical, and innovative adoption of artificial intelligence in teaching, learning, and institutional management.",
+          "va": "La jornada Intel·ligència Artificial en Centres Educatius oferix un espai de reflexió i formació sobre els reptes i oportunitats que la IA planteja en l’àmbit educatiu. A través de ponències d’experts, experiències pràctiques i una taula redona, s’abordaran qüestions clau com la propietat intel·lectual, la protecció de dades, la creació de materials docents i la gestió dels centres educatius. Una trobada dirigida a professionals de l’educació interessats en una adopció responsable, ètica i innovadora de la intel·ligència artificial."
+        },
+        "level": "Máster",
+        "statusId": "activo",
+        "hours": 10,
+        "enrolled": null,
+        "sectorIds": [
+          "nts"
+        ],
+        "modalityId": "online",
+        "skillIds": [
+          "responsible-ai"
+        ],
+        "tagIds": [
+          "responsible-ai"
+        ],
+        "link": {
+          "url": "",
           "external": true
         }
       }

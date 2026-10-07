@@ -173,7 +173,7 @@ function getCourses(trainingT) {
 }
 
 // ── Course card ───────────────────────────────────────────────────────────────
-function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFilters) {
+function courseCard(course, trainingT, courseTags, activeTab, activeFilters) {
   const levelLabels    = trainingT?.levelLabels    || {};
   const modalityLabels = trainingT?.modalityLabels || {};
   const statusLabel    = pickLang(course.statusObj?.label, course.statusId);
@@ -210,10 +210,7 @@ function courseCard(course, trainingT, isMaster, courseTags, activeTab, activeFi
         <h3 class="rd-card-mp-title">${esc(course.title)}</h3>
       </div>
       <div class="p-7 pt-5 flex-1">
-        <div class="flex items-center justify-between mb-4 gap-2 flex-wrap">
-          <div class="flex items-center gap-2 flex-wrap">
-            ${isMaster ? '<span class="text-xs bg-eu-purple text-white px-2.5 py-0.5 rounded-lg font-bold">Track A</span>' : ''}
-          </div>
+        <div class="flex items-center justify-end mb-4 gap-2 flex-wrap">
           ${trShowStatus ? `<button data-filter-status="${esc(course.statusId)}" class="text-xs font-bold px-2.5 py-1 rounded-full cursor-pointer transition-all duration-300 ${esc(isStatusActive ? 'shadow-sm' : (TONE_MAP[tone]?.cls || TONE_MAP.neutral.cls))}" ${isStatusActive ? `style="${esc(TONE_MAP[tone]?.activeStyle || TONE_MAP.neutral.activeStyle)}"` : ''}>${esc(statusLabel)}</button>` : ''}
         </div>
         <p class="text-base text-eu-text/75 mb-4 leading-relaxed">${esc(course.description)}</p>
@@ -306,7 +303,6 @@ function renderSearchControls(tab, trainingT) {
 // ── Course grid with pagination (replaces #tr-courses-grid on partial update) ─
 function renderCourseGridContent(tab, allCourses, trainingT, courseTags, emptyMessage) {
   const levelMap  = { fp: 'FP', teacher: 'Docentes', master: 'Máster' };
-  const isMaster  = tab === 'master';
   const filters   = getActiveFilters(tab);
   const filtered  = filterCourses(allCourses.filter(c => c.level === levelMap[tab]), filters);
 
@@ -345,7 +341,7 @@ function renderCourseGridContent(tab, allCourses, trainingT, courseTags, emptyMe
     </div>
     ${paginated.length > 0 ? `
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        ${paginated.map(c => courseCard(c, trainingT, isMaster, courseTags, tab, filters)).join('')}
+        ${paginated.map(c => courseCard(c, trainingT, courseTags, tab, filters)).join('')}
       </div>
       ${paginationHtml}` : `
       <div class="rd-card rd-pad text-center rd-card-grad-beige">

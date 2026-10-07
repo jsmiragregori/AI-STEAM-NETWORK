@@ -87,6 +87,18 @@ test('hay cursos y el bloque de datos es el del CMS', () => {
   assert.ok(Array.isArray(CURSOS()) && CURSOS().length > 0);
 });
 
+test('las cards no asignan Track A a las actividades extracurriculares', () => {
+  for (const idioma of ['es', 'en', 'va']) {
+    const pintadas = cards(pintar('master', idioma));
+    assert.ok(pintadas.length > 0);
+    for (const card of pintadas) {
+      assert.doesNotMatch(card, />Track A<\/span>/);
+      assert.match(card, /rd-card-mp-title/);
+      assert.match(card, /data-filter-status=/);
+    }
+  }
+});
+
 test('cursos sin sectores ni skills: card visible sin pills en las tres modalidades e idiomas', () => {
   const originales = CURSOS();
   const cv = TRAINING_CONFIG.coursesBlock.chipVisibility;
