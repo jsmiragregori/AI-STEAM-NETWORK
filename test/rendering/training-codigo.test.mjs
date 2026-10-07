@@ -87,6 +87,31 @@ test('hay cursos y el bloque de datos es el del CMS', () => {
   assert.ok(Array.isArray(CURSOS()) && CURSOS().length > 0);
 });
 
+test('cursos sin sectores ni skills: card visible sin pills en las tres modalidades e idiomas', () => {
+  const originales = CURSOS();
+  const cv = TRAINING_CONFIG.coursesBlock.chipVisibility;
+  try {
+    TRAINING_CONFIG.coursesBlock.chipVisibility = { ...cv, sectors: true, tags: true, modality: true };
+    for (const tab of ['fp', 'teacher', 'master']) {
+      const base = cursosDe(tab)[0];
+      assert.ok(base, `falta curso de ${tab}`);
+      TRAINING_CONFIG.coursesBlock.courses = [{ ...base, sectorIds: [], skillIds: [], tagIds: [] }];
+      for (const idioma of ['es', 'en', 'va']) {
+        const pintadas = cards(pintar(tab, idioma));
+        assert.equal(pintadas.length, 1);
+        assert.match(pintadas[0], /rd-card-mp-title/);
+        assert.doesNotMatch(pintadas[0], /data-filter-sector=/);
+        assert.doesNotMatch(pintadas[0], /data-filter-tag=/);
+        if (base.modalityId) assert.match(pintadas[0], /data-filter-modality=/);
+      }
+      TRAINING_CONFIG.coursesBlock.courses = originales;
+    }
+  } finally {
+    TRAINING_CONFIG.coursesBlock.courses = originales;
+    TRAINING_CONFIG.coursesBlock.chipVisibility = cv;
+  }
+});
+
 test('codeDisplay internal (y sin campo): solo el código AI-STEAM', () => {
   const items = cursosDe('fp');
   conCodigos(items, () => {
