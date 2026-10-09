@@ -55,6 +55,8 @@ const EXPECTED_BY_FILE = {
 // C13 (códigos de Formación) desplaza +25 la excepción ESTRUCTURAL de training.js (443 → 468):
 // imports y UI_TEXT de los dos códigos, el paso de los campos por resolveCourses, la línea de código
 // en courseCard y el código en la búsqueda. Sigue siendo la misma expresión, con la misma categoría.
+// 2026-10-09 (R7): la retirada de la pill fija Track A (a1272e8) desplaza -4 la excepción ESTRUCTURAL de
+// training.js (468 → 464). Misma expresión y misma categoría; solo cambia el número de línea.
 // C15 (códigos de Gobernanza) desplaza +12 la de governance.js (702 → 714): la etiqueta y el helper de la
 // línea de código de los documentos. Misma expresión y categoría.
 // F3 de la depuración (D5) añade a marketplace.js la etiqueta de Triple Transición (+5 en UI_TEXT),
@@ -70,7 +72,7 @@ const EXPECTED_EXCEPTIONS = [
   { file: 'assets/js/views/marketplace.js', line: 1978, category: 'COMPOSICION_CADENA' },
   { file: 'assets/js/views/marketplace.js', line: 2017, category: 'HELPER_QUE_ESCAPA' },
   { file: 'assets/js/views/marketplace.js', line: 2177, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/training.js', line: 468, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/training.js', line: 464, category: 'ESTRUCTURAL' },
 ];
 
 test('la clasificación VAN-1.2 reproduce su línea base', async () => {
