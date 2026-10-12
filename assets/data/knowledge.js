@@ -19,8 +19,8 @@ export const KNOWLEDGE_CONFIG = {
         "id": "oer-resources",
         "visible": true,
         "manualOverride": false,
-        "value": 13,
-        "computedValue": 13,
+        "value": 15,
+        "computedValue": 15,
         "label": {
           "es": "Recursos OER",
           "en": "OER Resources",
@@ -298,6 +298,61 @@ export const KNOWLEDGE_CONFIG = {
       }
     ],
     "resources": [
+      {
+        "id": "o14",
+        "code": "OER-2026-037",
+        "visible": true,
+        "createdAt": "2026-10-10",
+        "title": {
+          "es": "Maqueta AI-STEAM Network",
+          "en": "AI-STEAM Network Mockup",
+          "va": "Maqueta AI-STEAM Network"
+        },
+        "typeId": "proyecto",
+        "sectorIds": [
+          "nts"
+        ],
+        "levels": [
+          "FP"
+        ],
+        "license": "",
+        "author": "Salvador Mira",
+        "date": "Oct 2026",
+        "lang": "ES, VA, EN",
+        "validationStatus": "validated",
+        "duration": "",
+        "format": "",
+        "updatedAt": "2026-10-10",
+        "url": "https://jsmiragregori.github.io/AI-STEAM-MOCKUP/",
+        "linkType": "external",
+        "external": true
+      },
+      {
+        "id": "o15",
+        "code": "OER-2026-038",
+        "visible": true,
+        "createdAt": "2026-10-10",
+        "title": {
+          "es": "Proyectos IA y Big Data",
+          "en": "AI and Big Data projects",
+          "va": "Projectes IA i Big Data"
+        },
+        "typeId": "guia",
+        "sectorIds": [],
+        "levels": [
+          "FP"
+        ],
+        "license": "",
+        "author": "IES Marcos Zaragoza",
+        "date": "Oct 2026",
+        "lang": "ES",
+        "validationStatus": "pending",
+        "duration": "",
+        "format": "PDF",
+        "url": "assets/downloads/knowledge/oer/o15-0965d69c7f1e-fcb302a8558a.docx",
+        "linkType": "download",
+        "external": false
+      },
       {
         "id": "o1",
         "code": "OER-2026-036",
