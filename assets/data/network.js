@@ -915,7 +915,7 @@ export const NETWORK_CONFIG = {
           "en": "Department of Education, Culture and Universities",
           "va": "Conselleria d'Educació, Cultura i Universitats"
         },
-        "acronym": "CECU",
+        "acronym": "CECUrrucucu",
         "country": "ES",
         "city": {
           "es": "Valencia",
