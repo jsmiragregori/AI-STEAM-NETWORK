@@ -59,6 +59,9 @@ const EXPECTED_BY_FILE = {
 // training.js (468 → 464). Misma expresión y misma categoría; solo cambia el número de línea.
 // C15 (códigos de Gobernanza) desplaza +12 la de governance.js (702 → 714): la etiqueta y el helper de la
 // línea de código de los documentos. Misma expresión y categoría.
+// S8-R1: el resumen breve (S6/S7) inserta un párrafo condicional en governance.js y desplaza +3 la
+// excepción ESTRUCTURAL (714 → 717). Misma expresión y categoría; las otras seis excepciones siguen
+// en su línea.
 // F3 de la depuración (D5) añade a marketplace.js la etiqueta de Triple Transición (+5 en UI_TEXT),
 // el helper getTransitionLabel (+4) y los bloques de sector y Triple Transición de la card
 // (+19 netas en renderChallengeCard, con la variable muerta del sector reutilizada): +28 netas por
@@ -66,7 +69,7 @@ const EXPECTED_BY_FILE = {
 // expresiones, mismas categorías y mismos recuentos (las interpolaciones nuevas van con esc() o
 // son fragmentos compuestos, como los de las demás cards).
 const EXPECTED_EXCEPTIONS = [
-  { file: 'assets/js/views/governance.js', line: 714, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/governance.js', line: 717, category: 'ESTRUCTURAL' },
   { file: 'assets/js/views/marketplace.js', line: 1791, category: 'HELPER_QUE_ESCAPA' },
   { file: 'assets/js/views/marketplace.js', line: 1976, category: 'ESTRUCTURAL' },
   { file: 'assets/js/views/marketplace.js', line: 1978, category: 'COMPOSICION_CADENA' },
