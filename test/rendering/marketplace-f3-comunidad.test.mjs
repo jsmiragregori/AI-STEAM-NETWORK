@@ -13,6 +13,8 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
+import { BENEFICIARIAS_DE_PRUEBA, elementosDePrueba } from '../fixtures/marketplace-de-prueba.mjs';
+
 let lang = 'es';
 const almacen = new Map();
 globalThis.localStorage = {
@@ -32,6 +34,11 @@ const { MARKETPLACE_CONFIG } = await import('../../assets/data/marketplace.js');
 const { setState } = await import('../../assets/js/state.js');
 const { applyLanguage } = await import('../../assets/js/i18n.js');
 const vistas = await import('../../assets/js/views/index.js');
+
+// Estado de partida propio: dos elementos sintéticos por pestaña, en lugar de los del contenido real.
+const { items: elementosDePartida, itemsByTab: porPestana } = elementosDePrueba();
+MARKETPLACE_CONFIG.items = elementosDePartida;
+MARKETPLACE_CONFIG.itemsByTab = porPestana;
 
 /** Pinta una pestaña completa (todas las cards) en el idioma pedido. */
 function pintar(tab, idioma = 'es') {
@@ -87,13 +94,8 @@ function conTransicion(item, valores, fn) {
 
 // ═══ T3.1 — cadena de transferencia completa ═══════════════════════════════════════════════
 
-const CASO = 'movilidad-sostenible-formacion-docente';
-const BENEFICIARIAS = [
-  'EMT Valencia',
-  'CEFIRE de Valencia',
-  'CEFIRE de Alicante',
-  'CEFIRE de Castellón',
-];
+const CASO = 'case-de-prueba-1';
+const BENEFICIARIAS = BENEFICIARIAS_DE_PRUEBA;
 
 /** El bloque de la cadena de transferencia de una card: clase e interior del `<p>` de texto. */
 function cadenaDe(card) {
@@ -154,7 +156,7 @@ test('T3.1 ch_case_actors=false sigue escondiendo la cadena (regresión)', () =>
 
 // ═══ T3.2 — sector en la card de reto ══════════════════════════════════════════════════════
 
-const RETO = 'creative-ai-green-campus';
+const RETO = 'challenge-de-prueba-1';
 
 test('T3.2 la card de reto pinta el sector con etiqueta localizada (ES/EN/VA)', () => {
   const item = itemDe('challenges', RETO);
