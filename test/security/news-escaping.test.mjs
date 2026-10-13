@@ -33,6 +33,17 @@ async function renderNews(selectedNewsId) {
   const { NEWS_CONFIG } = await import('../../assets/data/news.js');
   const { translations } = await import('../../assets/data/translations.js');
   const stateModule = await import('../../assets/js/state.js');
+  // Estado de partida propio: una noticia y su detalle sintéticos, para recorrer el detalle.
+  translations.es.news.newsItems = {
+    'noticia-de-prueba': {
+      title: 'Noticia de prueba', date: '2026-01-01', category: 'Prueba', excerpt: 'Extracto de prueba.',
+      sector: 'Prueba', partner: 'Prueba', featured: false, isOfficial: false,
+    },
+  };
+  translations.es.news.newsDetail = {
+    title: 'Noticia de prueba', date: '2026-01-01', category: 'Prueba', author: 'Prueba', cta_link: '',
+    sections: [{ title: 'Sección de prueba', content: 'Contenido de prueba.' }], related_news: [],
+  };
   poison(NEWS_CONFIG);
   poison(translations.es.news);
   // Una noticia destacada y un evento con inscripción, para recorrer todas las ramas.
