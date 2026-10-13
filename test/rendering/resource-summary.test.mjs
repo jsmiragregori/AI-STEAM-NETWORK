@@ -17,6 +17,9 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 
+import { plantillasDePrueba, recursosOerDePrueba } from '../fixtures/conocimiento-de-prueba.mjs';
+import { documentosDePrueba } from '../fixtures/documentos-de-prueba.mjs';
+
 // ── Stubs mínimos de navegador (mismo patrón que knowledge-codigo) ───────────
 
 const almacen = new Map();
@@ -39,6 +42,11 @@ const { KNOWLEDGE_CONFIG } = await import('../../assets/data/knowledge.js');
 const { GOVERNANCE_CONFIG } = await import('../../assets/data/governance.js');
 const { setState } = await import('../../assets/js/state.js');
 const vistas = await import('../../assets/js/views/index.js');
+
+// Estado de partida propio: recursos, plantillas y documentos sintéticos, en lugar de los del contenido real.
+KNOWLEDGE_CONFIG.oerResourcesBlock.resources = recursosOerDePrueba(KNOWLEDGE_CONFIG.oerResourcesBlock);
+KNOWLEDGE_CONFIG.templatesBlock.templates = plantillasDePrueba(KNOWLEDGE_CONFIG.templatesBlock);
+GOVERNANCE_CONFIG.documentationBlock.docs = documentosDePrueba();
 
 // ── Colecciones, fixtures e infraestructura de aislamiento ──────────────────
 
@@ -656,7 +664,7 @@ prueba('S6-P21 · OER/Plantillas: acción, filtros y búsqueda iguales; el resum
 prueba('S6-P22 · DOC: archivo con download, URL con target/rel y badges public/partners', () => {
   assert.ok(DOC_ARCHIVO && DOC_URL, 'P22: la base real necesita un documento con archivo y otro con URL externa');
   const fArchivo = fixtureCol('doc', { code: 'S6T-P22-ARCHIVO', access: 'partners' });
-  const fUrl = fixtureCol('doc', { code: 'S6T-P22-URL' }, DOC_URL);
+  const fUrl = fixtureCol('doc', { code: 'S6T-P22-URL', access: 'public' }, DOC_URL);
   assert.equal(fArchivo.access, 'partners');
   assert.equal(fUrl.access, 'public');
   enclavarCol('doc', [fArchivo, fUrl], () => {
