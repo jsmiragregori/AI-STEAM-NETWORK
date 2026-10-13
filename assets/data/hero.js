@@ -6,13 +6,13 @@ export const HERO_CONFIG = {
     {
       "id": "stakeholders",
       "key": "home.stats.stakeholders",
-      "value": "12",
+      "value": "0",
       "icon": "users"
     },
     {
       "id": "totalChallenges",
       "key": "home.stats.totalChallenges",
-      "value": "7",
+      "value": "0",
       "icon": "zap"
     },
     {
@@ -30,7 +30,7 @@ export const HERO_CONFIG = {
     {
       "id": "trainingModules",
       "key": "home.stats.trainingModules",
-      "value": "68",
+      "value": "0",
       "icon": "layers"
     }
   ]

@@ -28,9 +28,9 @@ export const NETWORK_CONFIG = {
       },
       {
         "id": "stakeholdersNetwork",
-        "value": 14,
+        "value": 0,
         "manualOverride": false,
-        "computedValue": 14,
+        "computedValue": 0,
         "label": {
           "es": "Stakeholders Red",
           "en": "Network Stakeholders",
@@ -50,9 +50,9 @@ export const NETWORK_CONFIG = {
       },
       {
         "id": "totalOrganizations",
-        "value": 37,
+        "value": 23,
         "manualOverride": false,
-        "computedValue": 37,
+        "computedValue": 23,
         "label": {
           "es": "Total Organizaciones",
           "en": "Total Organizations",
@@ -63,8 +63,8 @@ export const NETWORK_CONFIG = {
     "computedStats": {
       "consortiumPartners": 23,
       "countries": 12,
-      "totalOrganizations": 37,
-      "stakeholdersNetwork": 14
+      "totalOrganizations": 23,
+      "stakeholdersNetwork": 0
     }
   },
   "helixBlock": {
@@ -92,10 +92,10 @@ export const NETWORK_CONFIG = {
         "bg": "bg-purple-100",
         "border": "border-purple-300",
         "manualOverride": false,
-        "value": 12,
-        "computedValue": 12,
+        "value": 10,
+        "computedValue": 10,
         "partnersCount": 10,
-        "stakeholdersCount": 2
+        "stakeholdersCount": 0
       },
       {
         "id": "empresa",
@@ -109,10 +109,10 @@ export const NETWORK_CONFIG = {
         "bg": "bg-blue-100",
         "border": "border-blue-300",
         "manualOverride": false,
-        "value": 13,
-        "computedValue": 13,
+        "value": 7,
+        "computedValue": 7,
         "partnersCount": 7,
-        "stakeholdersCount": 6
+        "stakeholdersCount": 0
       },
       {
         "id": "admin",
@@ -126,10 +126,10 @@ export const NETWORK_CONFIG = {
         "bg": "bg-green-100",
         "border": "border-green-300",
         "manualOverride": false,
-        "value": 10,
-        "computedValue": 10,
+        "value": 5,
+        "computedValue": 5,
         "partnersCount": 5,
-        "stakeholdersCount": 5
+        "stakeholdersCount": 0
       },
       {
         "id": "sociedad",
@@ -143,10 +143,10 @@ export const NETWORK_CONFIG = {
         "bg": "bg-pink-100",
         "border": "border-pink-300",
         "manualOverride": false,
-        "value": 5,
-        "computedValue": 5,
+        "value": 4,
+        "computedValue": 4,
         "partnersCount": 4,
-        "stakeholdersCount": 1
+        "stakeholdersCount": 0
       }
     ]
   },
@@ -1882,410 +1882,6 @@ export const NETWORK_CONFIG = {
       "category": true,
       "sectors": true
     },
-    "stakeholders": [
-      {
-        "id": "aesia",
-        "joinedAt": "2026-05-06",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] AESIA – Agencia Española de Supervisión de IA",
-          "en": "[DEMO] AESIA – Spanish AI Supervisory Agency",
-          "va": "[DEMO] AESIA – Agència Espanyola de Supervisió de la IA"
-        },
-        "categories": [
-          "admin"
-        ],
-        "category": "admin",
-        "primarySector": "nts",
-        "sectors": [],
-        "region": {
-          "es": "Nacional",
-          "en": "National",
-          "va": "Nacional"
-        },
-        "country": "ES",
-        "website": "https://www.aesia.es",
-        "description": {
-          "es": "Supervisión regulatoria y ética de la IA en España.",
-          "en": "AI regulatory supervision and ethics in Spain.",
-          "va": "Supervisió regulatòria i ètica de la IA a Espanya."
-        }
-      },
-      {
-        "id": "invattur",
-        "joinedAt": "2026-04-25",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] INVAT·TUR",
-          "en": "[DEMO] INVAT·TUR",
-          "va": "[DEMO] INVAT·TUR"
-        },
-        "categories": [
-          "admin"
-        ],
-        "category": "admin",
-        "primarySector": "cci",
-        "sectors": [],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://invattur.gva.es",
-        "description": {
-          "es": "Turismo inteligente y analítica de destinos.",
-          "en": "Smart tourism and destination analytics.",
-          "va": "Turisme intel·ligent i analítica de destinacions."
-        }
-      },
-      {
-        "id": "lafe",
-        "joinedAt": "2026-04-14",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] Hospital Universitario La Fe",
-          "en": "[DEMO] La Fe University Hospital",
-          "va": "[DEMO] Hospital Universitari La Fe"
-        },
-        "categories": [
-          "sociedad"
-        ],
-        "category": "sociedad",
-        "primarySector": "hou",
-        "sectors": [],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.hospital-lafe.com",
-        "description": {
-          "es": "Referente en IA clínica y datos de salud.",
-          "en": "Leader in clinical AI and health data.",
-          "va": "Referent en IA clínica i dades de salut."
-        }
-      },
-      {
-        "id": "redit",
-        "joinedAt": "2026-04-01",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] REDIT",
-          "en": "[DEMO] REDIT",
-          "va": "[DEMO] REDIT"
-        },
-        "categories": [
-          "universidad"
-        ],
-        "category": "universidad",
-        "primarySector": "mfg",
-        "sectors": [
-          "ene",
-          "agr"
-        ],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.redit.es",
-        "description": {
-          "es": "Coordinación de 11 centros tecnológicos de la Comunitat Valenciana.",
-          "en": "Coordination of 11 technology centers in the Valencian Community.",
-          "va": "Coordinació de 11 centres tecnològics de la Comunitat Valenciana."
-        }
-      },
-      {
-        "id": "iti",
-        "joinedAt": "2026-03-22",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] ITI – Institut Tecnològic d'Informàtica",
-          "en": "[DEMO] ITI – Technological Institute of Informatics",
-          "va": "[DEMO] ITI – Institut Tecnològic d'Informàtica"
-        },
-        "categories": [
-          "universidad"
-        ],
-        "category": "universidad",
-        "primarySector": "mfg",
-        "sectors": [
-          "nts"
-        ],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.iti.es",
-        "description": {
-          "es": "Big Data, IA y coordinador del EDIH valenciano.",
-          "en": "Big Data, AI and coordinator of the Valencian EDIH.",
-          "va": "Big Data, IA i coordinador de l'EDIH valencià."
-        }
-      },
-      {
-        "id": "brainstorm",
-        "joinedAt": "2026-03-12",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] Brainstorm Multimedia",
-          "en": "[DEMO] Brainstorm Multimedia",
-          "va": "[DEMO] Brainstorm Multimedia"
-        },
-        "categories": [
-          "empresa"
-        ],
-        "category": "empresa",
-        "primarySector": "cci",
-        "sectors": [],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.brainstorm.es",
-        "description": {
-          "es": "Gráficos 3D en tiempo real y estudios virtuales con IA.",
-          "en": "Real-time 3D graphics and virtual studios with AI.",
-          "va": "Gràfics 3D en temps real i estudis virtuals amb IA."
-        }
-      },
-      {
-        "id": "globalomnium",
-        "joinedAt": "2026-03-03",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] Global Omnium",
-          "en": "[DEMO] Global Omnium",
-          "va": "[DEMO] Global Omnium"
-        },
-        "categories": [
-          "empresa"
-        ],
-        "category": "empresa",
-        "primarySector": "ene",
-        "sectors": [
-          "mob"
-        ],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.globalomnium.com",
-        "description": {
-          "es": "IA en ciclo integral del agua y gemelos digitales.",
-          "en": "AI in the complete water cycle and digital twins.",
-          "va": "IA en cicle integral de l'aigua i bessons digitals."
-        }
-      },
-      {
-        "id": "ascer",
-        "joinedAt": "2026-02-22",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] ASCER",
-          "en": "[DEMO] ASCER",
-          "va": "[DEMO] ASCER"
-        },
-        "categories": [
-          "empresa"
-        ],
-        "category": "empresa",
-        "primarySector": "mfg",
-        "sectors": [],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.ascer.es",
-        "description": {
-          "es": "Clúster cerámico, eficiencia energética e IA en diseño.",
-          "en": "Ceramic cluster, energy efficiency and AI in design.",
-          "va": "Clúster ceràmic, eficiència energètica i IA en disseny."
-        }
-      },
-      {
-        "id": "femeval",
-        "joinedAt": "2026-02-14",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] FEMEVAL",
-          "en": "[DEMO] FEMEVAL",
-          "va": "[DEMO] FEMEVAL"
-        },
-        "categories": [
-          "empresa"
-        ],
-        "category": "empresa",
-        "primarySector": "mfg",
-        "sectors": [],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.femeval.es",
-        "description": {
-          "es": "Transformación digital del sector metal valenciano.",
-          "en": "Digital transformation of the Valencian metal sector.",
-          "va": "Transformació digital del sector metal valencià."
-        }
-      },
-      {
-        "id": "avaasaja",
-        "joinedAt": "2026-02-05",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] AVA-ASAJA",
-          "en": "[DEMO] AVA-ASAJA",
-          "va": "[DEMO] AVA-ASAJA"
-        },
-        "categories": [
-          "empresa"
-        ],
-        "category": "empresa",
-        "primarySector": "agr",
-        "sectors": [],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.ava-asaja.es",
-        "description": {
-          "es": "Digitalización rural y representación de la base productiva agrícola.",
-          "en": "Rural digitalization and representation of the agricultural productive base.",
-          "va": "Digitalització rural i representació de la base productiva agrícola."
-        }
-      },
-      {
-        "id": "fedacova",
-        "joinedAt": "2026-01-28",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] FEDACOVA",
-          "en": "[DEMO] FEDACOVA",
-          "va": "[DEMO] FEDACOVA"
-        },
-        "categories": [
-          "empresa"
-        ],
-        "category": "empresa",
-        "primarySector": "agr",
-        "sectors": [],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.fedacova.org",
-        "description": {
-          "es": "Agrupa 30 asociaciones de la industria transformadora agroalimentaria.",
-          "en": "Groups 30 associations of the agrifood processing industry.",
-          "va": "Agrupa 30 associacions de la indústria transformadora agroalimentària."
-        }
-      },
-      {
-        "id": "lasnaves",
-        "joinedAt": "2026-01-20",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] Las Naves",
-          "en": "[DEMO] Las Naves",
-          "va": "[DEMO] Las Naves"
-        },
-        "categories": [
-          "admin"
-        ],
-        "category": "admin",
-        "primarySector": "ene",
-        "sectors": [
-          "mfg"
-        ],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.lasnaves.com",
-        "description": {
-          "es": "Living lab urbano, misiones 2030 de la ciudad de Valencia.",
-          "en": "Urban living lab, 2030 missions of the city of Valencia.",
-          "va": "Living lab urbà, missions 2030 de la ciutat de València."
-        }
-      },
-      {
-        "id": "ivace",
-        "joinedAt": "2026-01-19",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] IVACE+i",
-          "en": "[DEMO] IVACE+i",
-          "va": "[DEMO] IVACE+i"
-        },
-        "categories": [
-          "admin"
-        ],
-        "category": "admin",
-        "primarySector": "mfg",
-        "sectors": [
-          "nts"
-        ],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.ivace.es",
-        "description": {
-          "es": "Financiación de innovación y enlace con PYMES.",
-          "en": "Innovation funding and liaison with SMEs.",
-          "va": "Finançament d'innovació i enllaç amb PIMEs."
-        }
-      },
-      {
-        "id": "dgtic",
-        "joinedAt": "2026-01-12",
-        "partner": "ceice",
-        "name": {
-          "es": "[DEMO] GVA – DGTIC",
-          "en": "[DEMO] GVA – DGTIC",
-          "va": "[DEMO] GVA – DGTIC"
-        },
-        "categories": [
-          "admin"
-        ],
-        "category": "admin",
-        "primarySector": "nts",
-        "sectors": [],
-        "region": {
-          "es": "C. Valenciana",
-          "en": "Valencian Community",
-          "va": "C. Valenciana"
-        },
-        "country": "ES",
-        "website": "https://www.gva.es/es/inicio/atencion_ciudadano/dgtic",
-        "description": {
-          "es": "Dirección General de TIC de la Generalitat Valenciana.",
-          "en": "General Directorate of ICT of the GVA.",
-          "va": "Direcció General de TIC de la Generalitat Valenciana."
-        }
-      }
-    ]
+    "stakeholders": []
   }
 };
