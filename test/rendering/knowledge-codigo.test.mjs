@@ -7,6 +7,8 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
+import { plantillasDePrueba, recursosOerDePrueba } from '../fixtures/conocimiento-de-prueba.mjs';
+
 const almacen = new Map();
 let lang = 'es';
 globalThis.localStorage = {
@@ -25,6 +27,10 @@ globalThis.window = { location: { hash: '' }, addEventListener() {}, scrollTo() 
 const { KNOWLEDGE_CONFIG } = await import('../../assets/data/knowledge.js');
 const { setState } = await import('../../assets/js/state.js');
 const vistas = await import('../../assets/js/views/index.js');
+
+// Estado de partida propio: recursos y plantillas sintéticos, en lugar de los del contenido real.
+KNOWLEDGE_CONFIG.oerResourcesBlock.resources = recursosOerDePrueba(KNOWLEDGE_CONFIG.oerResourcesBlock);
+KNOWLEDGE_CONFIG.templatesBlock.templates = plantillasDePrueba(KNOWLEDGE_CONFIG.templatesBlock);
 
 const OER = () => KNOWLEDGE_CONFIG.oerResourcesBlock.resources;
 const TPL = () => KNOWLEDGE_CONFIG.templatesBlock.templates;
