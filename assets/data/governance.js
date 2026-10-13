@@ -1249,9 +1249,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Flux operatiu de Track B a evidències"
       },
       "description": {
-        "es": "El recorrido muestra cómo CECU puede convertir participación de red en evidencias auditables sin presentar indicadores demo como resultados reales.",
-        "en": "The flow shows how CECU can turn network participation into auditable evidence without presenting demo indicators as real results.",
-        "va": "El recorregut mostra com CECU pot convertir participació de xarxa en evidències auditables sense presentar indicadors demo com a resultats reals."
+        "es": "El recorrido muestra cómo CECU puede convertir participación de red en evidencias auditables.",
+        "en": "The flow shows how CECU can turn network participation into auditable evidence.",
+        "va": "El recorregut mostra com CECU pot convertir participació de xarxa en evidències auditables."
       },
       "steps": [
         {

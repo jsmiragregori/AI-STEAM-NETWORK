@@ -2,7 +2,6 @@
 // Este archivo ES la base: las claves que no están en content/_ui/*.csv solo
 // viven aquí y pueden editarse directamente. Las claves presentes en los CSV
 // se sobreescriben en cada cms:ui — esas se editan en el CSV.
-// Proyección declarada (P-66/F2): 75 claves demo retiradas de la base
 // Base: translations.js existente + overrides de 99 entradas CSV
 
 export const translations = {
@@ -296,7 +295,6 @@ export const translations = {
       "stakeholderTypesLabel": "Stakeholders que pueden participar",
       "teacherRelevanceLabel": "Aplicación didáctica para formación docente",
       "exampleChallengeLabel": "Evidencia destacada",
-      "demoLabel": "demo",
       "transferChainTitle": "Ruta de transferencia del sector",
       "transferChainLabels": {
         "stakeholderNeed": "Necesidades sectoriales detectadas",
@@ -579,12 +577,6 @@ export const translations = {
       "trainingPaths": "Itinerarios de Transferencia",
       "fpPath": "Itinerario FP – CECU",
       "masterPath": "Actividades extracurriculares AiSECRETT (Track A)",
-      "fpPathSteps": [
-        "Ciclo Formativo de Grado Superior (CFGS)",
-        "Módulo de especialización IA-STEAM (Aules)",
-        "Proyecto intermodular con reto del ecosistema",
-        "Portfolio de evidencias del alumnado"
-      ],
       "masterPathSteps": [
         "Caso o reto del ecosistema candidato al Track A",
         "Validación de relevancia curricular por UVEG",
@@ -624,7 +616,6 @@ export const translations = {
       "title": "Transferencia de Conocimiento",
       "subtitle": "Repositorio de recursos, evidencias y casos de transferencia AI-SECRETT",
       "description": "Repositorio de recursos OER, casos de transferencia, evidencias de pilotos y plantillas útiles para stakeholders, FP, formación docente y puentes académicos.",
-      "demoNotice": "Los recursos, casos, evidencias y descargas son contenido demo del prototipo. Las cifras son indicativas — no representan resultados reales de AI-SECRETT.",
       "tabFlow": "Ciclo de Transferencia",
       "tabOER": "Recursos OER",
       "tabCases": "Casos de Transferencia",
@@ -679,15 +670,12 @@ export const translations = {
       "oerRoute": "Ruta:",
       "oerValidation": "Validación:",
       "casesTitle": "Casos de Transferencia",
-      "casesDesc": "Retos y contribuciones convertidas en evidencia de transferencia Track B. Los datos son demo del prototipo y no representan resultados oficiales de AI-SECRETT.",
       "casesSolved": "Transferido",
       "casesViewFull": "Ver caso completo",
       "casesDownloadResources": "Descargar recursos",
       "casesRoute": "Ruta:",
       "casesEvidence": "Evidencia:",
       "evidenceTitle": "Evidencias de Piloto",
-      "evidenceDesc": "Registro de actividades piloto realizadas en el marco de AI-STEAM Network. Todos los indicadores son demo del prototipo — no representan entregas oficiales de AI-SECRETT.",
-      "evidenceDemoLabel": "Indicador demo",
       "evidenceSector": "Sector:",
       "evidenceRoute": "Ruta:",
       "evidenceStatus": "Estado:",
@@ -745,7 +733,6 @@ export const translations = {
         }
       ],
       "statsOER": "Recursos OER",
-      "statsDownloads": "Descargas Totales (demo)",
       "oerResources": [
         {
           "id": "o1",
@@ -1224,36 +1211,6 @@ export const translations = {
             ]
           }
         ],
-        "operatingFlow": {
-          "title": "Flujo operativo de Track B a evidencias",
-          "desc": "El recorrido muestra cómo CECU puede convertir participación de red en evidencias auditables sin presentar indicadores demo como resultados reales.",
-          "steps": [
-            {
-              "title": "Input",
-              "desc": "Stakeholder, ENRED o centro educativo aporta una necesidad, caso o propuesta."
-            },
-            {
-              "title": "Clasificación",
-              "desc": "Se clasifica por sector AI-SECRETT y ruta: FP, docente, recurso, piloto o puente académico."
-            },
-            {
-              "title": "Validación",
-              "desc": "La relevancia se contrasta en Track B y, si procede, se deriva a órganos académicos Track A."
-            },
-            {
-              "title": "Actividad",
-              "desc": "Se genera actividad, recurso OER, debate, piloto o caso documentado."
-            },
-            {
-              "title": "Evidencia",
-              "desc": "Se registran indicadores, trazas ConsensUE, recursos, encuestas y participación."
-            },
-            {
-              "title": "Seguimiento",
-              "desc": "La evidencia alimenta la mejora continua y el relato público de evolución de la red."
-            }
-          ]
-        },
         "platformsTitle": "Las tres plataformas en el flujo LbD",
         "platformsDesc": "Cada plataforma tiene un rol específico y una autoridad responsable. El contenido fluye unidireccionalmente del ecosistema al aprendizaje.",
         "platforms": [
@@ -1419,11 +1376,8 @@ export const translations = {
     "news": {
       "title": "Actualidad y Agenda",
       "subtitle": "Noticias, eventos y novedades de AI-STEAM Network y AI-SECRETT",
-      "description": "Canal de comunicación de la red AI-STEAM para stakeholders, centros FP, docentes y socios del consorcio AI-SECRETT. Las noticias marcadas como (demo) son contenido prototipo y no representan comunicados oficiales.",
       "subscribeButton": "Suscribirse al boletín",
-      "demoDisclaimer": "📌 Contenido demo del prototipo. Las noticias no marcadas como oficiales son ficticias y no representan resultados reales de AI-SECRETT ni de sus socios.",
       "officialBadge": "Oficial",
-      "demoBadge": "Demo",
       "categoryAll": "Todas",
       "categoryENRED": "ENRED",
       "categoryFPVET": "FP",
@@ -1486,9 +1440,6 @@ export const translations = {
       "relatedChallenge": "Contribución relacionada",
       "publishChallenge": "Proponer contribución",
       "publishNew": "Proponer un reto, caso o contribución",
-      "shareChallenge": "Este formulario reproduce, solo como demo, el flujo de propuesta de contribuciones de la red AI-STEAM.",
-      "consensueDemoTitle": "Demo del flujo en ConsensUE",
-      "consensueDemoNote": "En la plataforma real, las propuestas se presentarán en ConsensUE y estarán disponibles únicamente para miembros del consorcio AI-SECRETT y stakeholders adheridos a la AI-STEAM Network. Este formulario se mantiene aquí solo para mostrar el tipo de información que se solicitaría.",
       "openChallenges": "Abiertas",
       "inProgressChallenges": "En Proceso",
       "resolvedChallenges": "Completadas",
@@ -1978,7 +1929,6 @@ export const translations = {
       "stakeholderTypesLabel": "Stakeholders who can participate",
       "teacherRelevanceLabel": "Didactic application for teacher training",
       "exampleChallengeLabel": "Featured evidence",
-      "demoLabel": "demo",
       "transferChainTitle": "Sector transfer route",
       "transferChainLabels": {
         "stakeholderNeed": "Detected sector needs",
@@ -2261,12 +2211,6 @@ export const translations = {
       "trainingPaths": "Transfer Pathways",
       "fpPath": "VET Pathway – CECU",
       "masterPath": "AiSECRETT Extracurricular activities (Track A)",
-      "fpPathSteps": [
-        "Upper Secondary VET Cycle (CFGS)",
-        "AI-STEAM specialisation subject (Aules)",
-        "Cross-subject project with ecosystem challenge",
-        "Student evidence portfolio"
-      ],
       "masterPathSteps": [
         "Ecosystem case or challenge candidate for Track A",
         "Curriculum relevance validation by UVEG",
@@ -2306,7 +2250,6 @@ export const translations = {
       "title": "Knowledge Transfer",
       "subtitle": "Repository of OER, transfer cases, pilot evidence and templates",
       "description": "OER resources, transfer cases, pilot evidence and useful templates for stakeholders, VET, teacher training and academic bridges.",
-      "demoNotice": "Resources, cases, evidence records and download counts are prototype demo content. Figures are indicative — they do not represent official AI-SECRETT results.",
       "tabFlow": "Transfer Cycle",
       "tabOER": "OER Resources",
       "tabCases": "Transfer Cases",
@@ -2361,15 +2304,12 @@ export const translations = {
       "oerRoute": "Route:",
       "oerValidation": "Validation:",
       "casesTitle": "Transfer Cases",
-      "casesDesc": "Challenges and contributions converted into Track B transfer evidence. Data is prototype demo content and does not represent official AI-SECRETT outcomes.",
       "casesSolved": "Transferred",
       "casesViewFull": "View full case",
       "casesDownloadResources": "Download resources",
       "casesRoute": "Route:",
       "casesEvidence": "Evidence:",
       "evidenceTitle": "Pilot Evidence",
-      "evidenceDesc": "Record of pilot activities carried out under the AI-STEAM Network. All indicators are prototype demo content — they do not represent official AI-SECRETT deliverables.",
-      "evidenceDemoLabel": "Demo indicator",
       "evidenceSector": "Sector:",
       "evidenceRoute": "Route:",
       "evidenceStatus": "Status:",
@@ -2427,7 +2367,6 @@ export const translations = {
         }
       ],
       "statsOER": "OER Resources",
-      "statsDownloads": "Total Downloads (demo)",
       "oerResources": [
         {
           "id": "o1",
@@ -2906,36 +2845,6 @@ export const translations = {
             ]
           }
         ],
-        "operatingFlow": {
-          "title": "Operating flow from Track B to evidence",
-          "desc": "The flow shows how CECU can turn network participation into auditable evidence without presenting demo indicators as real results.",
-          "steps": [
-            {
-              "title": "Input",
-              "desc": "A stakeholder, ENRED or education centre contributes a need, case or proposal."
-            },
-            {
-              "title": "Classification",
-              "desc": "It is classified by AI-SECRETT sector and route: VET, teacher, resource, pilot or academic bridge."
-            },
-            {
-              "title": "Validation",
-              "desc": "Relevance is checked in Track B and, where appropriate, routed to Track A academic bodies."
-            },
-            {
-              "title": "Activity",
-              "desc": "An activity, OER resource, debate, pilot or documented case is produced."
-            },
-            {
-              "title": "Evidence",
-              "desc": "Indicators, ConsensUE traces, resources, surveys and participation are recorded."
-            },
-            {
-              "title": "Tracking",
-              "desc": "Evidence feeds continuous improvement and the public story of network evolution."
-            }
-          ]
-        },
         "platformsTitle": "The Three Platforms in the LbD Flow",
         "platformsDesc": "Each platform has a specific role. Content flows from ecosystem to learning.",
         "platforms": [
@@ -3101,11 +3010,8 @@ export const translations = {
     "news": {
       "title": "News and Events",
       "subtitle": "News and updates from AI-STEAM Network and AI-SECRETT",
-      "description": "Communication channel of the AI-STEAM network for stakeholders, VET centres, teachers and AI-SECRETT consortium partners. News marked as (demo) are prototype content and do not represent official communications.",
       "subscribeButton": "Subscribe to Newsletter",
-      "demoDisclaimer": "📌 Prototype demo content. News not marked as official is fictional and does not represent real AI-SECRETT results or those of its partners.",
       "officialBadge": "Official",
-      "demoBadge": "Demo",
       "categoryAll": "All",
       "categoryENRED": "ENRED",
       "categoryFPVET": "VET",
@@ -3168,9 +3074,6 @@ export const translations = {
       "relatedChallenge": "Related contribution",
       "publishChallenge": "Propose contribution",
       "publishNew": "Propose a challenge, case or contribution",
-      "shareChallenge": "This form reproduces, as a demo only, the AI-STEAM network contribution proposal flow.",
-      "consensueDemoTitle": "Demo of the ConsensUE flow",
-      "consensueDemoNote": "In the real platform, proposals will be submitted through ConsensUE and will be available only to AI-SECRETT consortium members and stakeholders formally joined to the AI-STEAM Network. This form is kept here only to show the kind of information that would be requested.",
       "openChallenges": "Open",
       "inProgressChallenges": "In Progress",
       "resolvedChallenges": "Completed",
@@ -3660,7 +3563,6 @@ export const translations = {
       "stakeholderTypesLabel": "Stakeholders que poden participar",
       "teacherRelevanceLabel": "Aplicació didàctica per a formació docent",
       "exampleChallengeLabel": "Evidència destacada",
-      "demoLabel": "demo",
       "transferChainTitle": "Ruta de transferència del sector",
       "transferChainLabels": {
         "stakeholderNeed": "Necessitats sectorials detectades",
@@ -3926,12 +3828,6 @@ export const translations = {
       "trainingPaths": "Itineraris Formatius",
       "fpPath": "Itinerari FP – CECU",
       "masterPath": "Activitats extracurriculars AiSECRETT",
-      "fpPathSteps": [
-        "Cicle Formatiu de Grau Superior (CFGS)",
-        "Curs d'especialització AI-STEAM (demo)",
-        "FCT amb empresa de la xarxa",
-        "Accés al Màster AI-SECRETT (pont)"
-      ],
       "masterPathSteps": [
         "Admissió (grau universitari o FP + pont)",
         "Mòduls temàtics per sector (60 ECTS)",
@@ -3973,7 +3869,6 @@ export const translations = {
       "title": "Transferència de Coneixement",
       "subtitle": "Repositori de recursos OER, casos de transferència, evidències i plantilles",
       "description": "Recursos OER, casos de transferència, evidències de pilot i plantilles útils per a stakeholders, FP, formació docent i ponts acadèmics.",
-      "demoNotice": "Els recursos, casos, evidències i descarregues són contingut demo del prototipus. Les xifres són indicatives — no representen resultats reals d'AI-SECRETT.",
       "tabFlow": "Cicle de Transferència",
       "tabOER": "Recursos OER",
       "tabCases": "Casos de Transferència",
@@ -4026,15 +3921,12 @@ export const translations = {
       "oerRoute": "Ruta:",
       "oerValidation": "Validació:",
       "casesTitle": "Casos de Transferència",
-      "casesDesc": "Reptes i contribucions convertits en evidència de transferència Track B. Les dades són contingut demo del prototipus i no representen resultats oficials d'AI-SECRETT.",
       "casesSolved": "Transferit",
       "casesViewFull": "Veure cas sencer",
       "casesDownloadResources": "Descarregar recursos",
       "casesRoute": "Ruta:",
       "casesEvidence": "Evidència:",
       "evidenceTitle": "Evidències de Pilot",
-      "evidenceDesc": "Registre d'activitats pilot realitzades en el marc de AI-STEAM Network. Tots els indicadors són contingut demo del prototipus — no representen lliurables oficials d'AI-SECRETT.",
-      "evidenceDemoLabel": "Indicador demo",
       "evidenceSector": "Sector:",
       "evidenceRoute": "Ruta:",
       "evidenceStatus": "Estat:",
@@ -4092,7 +3984,6 @@ export const translations = {
         }
       ],
       "statsOER": "Recursos OER",
-      "statsDownloads": "Descarregues Totals (demo)",
       "oerResources": [
         {
           "id": "o1",
@@ -4571,36 +4462,6 @@ export const translations = {
             ]
           }
         ],
-        "operatingFlow": {
-          "title": "Flux operatiu de Track B a evidències",
-          "desc": "El recorregut mostra com CECU pot convertir participació de xarxa en evidències auditables sense presentar indicadors demo com a resultats reals.",
-          "steps": [
-            {
-              "title": "Input",
-              "desc": "Un stakeholder, ENRED o centre educatiu aporta una necessitat, cas o proposta."
-            },
-            {
-              "title": "Classificació",
-              "desc": "Es classifica per sector AI-SECRETT i ruta: FP, docent, recurs, pilot o pont acadèmic."
-            },
-            {
-              "title": "Validació",
-              "desc": "La rellevància es contrasta en Track B i, si escau, es deriva a òrgans acadèmics Track A."
-            },
-            {
-              "title": "Activitat",
-              "desc": "Es genera activitat, recurs OER, debat, pilot o cas documentat."
-            },
-            {
-              "title": "Evidència",
-              "desc": "Es registren indicadors, traces ConsensUE, recursos, enquestes i participació."
-            },
-            {
-              "title": "Seguiment",
-              "desc": "L'evidència alimenta la millora contínua i el relat públic d'evolució de la xarxa."
-            }
-          ]
-        },
         "platformsTitle": "Les Tres Plataformes en el Flux LbD",
         "platformsDesc": "Cada plataforma té un rol específic. El contingut fluïx de l'ecosistema a l'aprenentatge.",
         "platforms": [
@@ -4766,11 +4627,8 @@ export const translations = {
     "news": {
       "title": "Actualitat i Agenda",
       "subtitle": "Notícies, events i novetats de la xarxa AI-STEAM i AI-SECRETT",
-      "description": "Canal de comunicació de la xarxa AI-STEAM per a stakeholders, centres FP, docents i socis del consorci AI-SECRETT. Les notícies marcades com a (demo) són contingut prototipus i no representen comunicats oficials.",
       "subscribeButton": "Subscriu-te al butlletí",
-      "demoDisclaimer": "📌 Contingut demo del prototipus. Les notícies no marcades com a oficials són fictícies i no representen resultats reals d'AI-SECRETT ni dels seus socis.",
       "officialBadge": "Oficial",
-      "demoBadge": "Demo",
       "categoryAll": "Totes",
       "categoryENRED": "ENRED",
       "categoryFPVET": "FP",
@@ -4833,9 +4691,6 @@ export const translations = {
       "relatedChallenge": "Contribució relacionada",
       "publishChallenge": "Proposar contribució",
       "publishNew": "Proposar un repte, cas o contribució",
-      "shareChallenge": "Aquest formulari reprodueix, només com a demo, el flux de proposta de contribucions de la xarxa AI-STEAM.",
-      "consensueDemoTitle": "Demo del flux en ConsensUE",
-      "consensueDemoNote": "En la plataforma real, les propostes es presentaran en ConsensUE i estaran disponibles únicament per a membres del consorci AI-SECRETT i stakeholders adherits a l'AI-STEAM Network. Aquest formulari es manté ací només per mostrar el tipus d'informació que se sol·licitaria.",
       "openChallenges": "Obertes",
       "inProgressChallenges": "En Procés",
       "resolvedChallenges": "Completades",

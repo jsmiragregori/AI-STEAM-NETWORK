@@ -15,9 +15,9 @@ export const NEWS_CONFIG = {
       "va": "Notícies, esdeveniments i novetats de l'ecosistema AiSECRETT i els seus socis."
     },
     "notice": {
-      "es": "📌 Contenido demo del prototipo. Las noticias no marcadas como oficiales son ficticias y no representan resultados reales de AiSECRETT ni de sus socios.",
-      "en": "📌 Demo prototype content. News items not marked as official are fictional and do not represent real results from AiSECRETT or its partners.",
-      "va": "📌 Contingut demo del prototip. Les notícies no marcades com a oficials són fictícies i no representen resultats reals d'AiSECRETT ni dels seus socis."
+      "es": "",
+      "en": "",
+      "va": ""
     },
     "stats": [
       {
