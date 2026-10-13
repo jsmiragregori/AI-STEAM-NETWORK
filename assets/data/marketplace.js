@@ -4403,9 +4403,9 @@ export const MARKETPLACE_CONFIG = {
       },
       "pilotPlan": {
         "hypothesis": {
-          "es": "- Entorno real IoT: Convierte el centro educativo en un living lab monitorizando 34 espacios con sensores de consumo eléctrico y calidad ambiental.\n- Eficiencia y confort: Demuestra un ahorro energético del 18,8% en tomas de corriente y mantiene máxima calidad del aire el 79,5% del tiempo lectivo.\n- IA y MLOps educativo: Permite al alumnado de FP entrenar modelos predictivos de consumo, generación fotovoltaica y detección de anomalías.\n- Gobernanza y replicabilidad: Aplica supervisión humana (Shadow Mode) y simulación con datos sintéticos en Docker para replicarlo sin sensores físicos.",
-          "en": "•\tDidactic gap in MLOps: AI students lack real production environments to manage continuous IoT data pipelines (MQTT, InfluxDB, Grafana) and evaluate predictive model drift.\n•\tFacility inefficiency and economic adoption barrier: Educational centers usually lack environmental/energy management tools, and the initial investment in physical sensors hinders replication in other schools.",
-          "va": "•\tEscletxa didàctica en MLOps: L'alumnat d'IA no disposa d'entorns reals de producció on gestionar canals continus (pipelines) de dades IoT (MQTT, InfluxDB, Grafana) i avaluar la deriva de models predictius.\n•\tIneficiència en instal·lacions i barrera econòmica d'adopció: Els centres educatius no solen disposar d'eines de gestió ambiental/energètica, i la inversió inicial en sensòrica física frena la rèplica en altres instituts."
+          "es": "Convierte el centro educativo en un living lab monitorizando 34 espacios con sensores de consumo eléctrico y calidad ambiental.\nconvierte el centro en un living lab IoT real que monitoriza 34 espacios para evaluar la eficiencia energética y el confort ambiental, demostrando un ahorro del 18,8% en tomas de corriente. A nivel educativo, permite al alumnado de FP entrenar modelos predictivos de IA (consumo, fotovoltaica y anomalías) sobre flujos MLOps de código abierto. Todo el sistema opera bajo una estricta gobernanza ética con supervisión humana (Shadow Mode) y garantiza su replicabilidad en cualquier otra entidad mediante simulación con datos sintéticos en Docker sin necesidad de instalar sensores físicos iniciales.",
+          "en": "It turns the school into a real IoT living lab monitoring 34 spaces to assess energy efficiency and environmental comfort, demonstrating an 18.8% energy savings in power outlets. From an educational perspective, it enables VET students to train predictive AI models (consumption, photovoltaics, and anomalies) on open-source MLOps workflows. The entire system operates under strict ethical governance with human oversight (Shadow Mode) and guarantees replicability in any other entity through synthetic data simulation in Docker without requiring initial physical sensors.",
+          "va": "Converteix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garanteix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
         },
         "objective": {
           "es": "",
@@ -4432,8 +4432,8 @@ export const MARKETPLACE_CONFIG = {
       "implementation": {
         "readiness": {
           "technologyReadiness": {
-            "enabled": false,
-            "level": "1",
+            "enabled": true,
+            "level": 6,
             "pilotLabel": {
               "es": "",
               "en": "",
@@ -4442,7 +4442,7 @@ export const MARKETPLACE_CONFIG = {
           },
           "educationalReadiness": {
             "enabled": false,
-            "level": null,
+            "level": "concept",
             "pilotLabel": {
               "es": "",
               "en": "",
@@ -4466,8 +4466,8 @@ export const MARKETPLACE_CONFIG = {
       "results": {
         "headline": {
           "es": "•\tAdopción y usabilidad: Cobertura del 100% en los 34 espacios, estabilidad del pipeline abierto (MQTT/InfluxDB/Grafana) y disponibilidad del generador de datos sintéticos para la red AI-STEAM.\n•\tAprendizaje y evaluación: Puntuación en Codabench sobre dataset oculto, defensa pública en vídeo y cumplimiento de la auditoría de 20 días en el aula focal P1S01.\n•\tEvidencias y gobernanza: Demostración del ahorro energético proyectado (hasta un 18,8% vía Monte Carlo), auditoría técnica de CAPTIA Technology y 100% de cumplimiento del modo shadow con supervisión humana previa.",
-          "en": "•\tAdoption and usability: 100% coverage across the 34 spaces, stability of the open pipeline (MQTT/InfluxDB/Grafana), and availability of the synthetic data generator for the AI-STEAM network.\n•\tLearning and assessment: Score on Codabench against a hidden dataset, public video defense, and completion of the 20-day audit in focal classroom P1S01.\n•\tEvidence and governance: Demonstration of projected energy savings (up to 18.8% via Monte Carlo), technical audit by CAPTIA Technology, and 100% compliance with shadow mode with prior human oversight.",
-          "va": "•\tAdopció i usabilitat: Cobertura del 100% en els 34 espais, estabilitat del canal de dades obert (pipeline MQTT/InfluxDB/Grafana) i disponibilitat del generador de dades sintètiques per a la xarxa AI-STEAM.\n•\tAprenentatge i avaluació: Puntuació en Codabench sobre conjunt de dades (dataset) ocult, defensa pública en vídeo i compliment de l'auditoria de 20 dies a l'aula focal P1S01.\n•\tEvidències i governança: Demostració de l'estalvi energètic projectat (fins a un 18,8% via Monte Carlo), auditoria tècnica de CAPTIA Technology i 100% de compliment del mode shadow amb supervisió humana prèvia."
+          "en": "It turns the school into a real IoT living lab monitoring 34 spaces to assess energy efficiency and environmental comfort, demonstrating an 18.8% energy savings in power outlets. From an educational perspective, it enables VET students to train predictive AI models (consumption, photovoltaics, and anomalies) on open-source MLOps workflows. The entire system operates under strict ethical governance with human oversight (Shadow Mode) and guarantees replicability in any other entity through synthetic data simulation in Docker without requiring initial physical sensors.",
+          "va": "Converteix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garanteix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
         },
         "outputs": [],
         "decision": null
@@ -4508,7 +4508,7 @@ export const MARKETPLACE_CONFIG = {
           "variant": "pilot",
           "showPilotStage": true,
           "showPilotType": true,
-          "showReadiness": false,
+          "showReadiness": true,
           "showWindow": false,
           "showInfrastructure": false,
           "showPrimaryMetric": true,
@@ -5008,9 +5008,9 @@ export const MARKETPLACE_CONFIG = {
         },
         "pilotPlan": {
           "hypothesis": {
-            "es": "- Entorno real IoT: Convierte el centro educativo en un living lab monitorizando 34 espacios con sensores de consumo eléctrico y calidad ambiental.\n- Eficiencia y confort: Demuestra un ahorro energético del 18,8% en tomas de corriente y mantiene máxima calidad del aire el 79,5% del tiempo lectivo.\n- IA y MLOps educativo: Permite al alumnado de FP entrenar modelos predictivos de consumo, generación fotovoltaica y detección de anomalías.\n- Gobernanza y replicabilidad: Aplica supervisión humana (Shadow Mode) y simulación con datos sintéticos en Docker para replicarlo sin sensores físicos.",
-            "en": "•\tDidactic gap in MLOps: AI students lack real production environments to manage continuous IoT data pipelines (MQTT, InfluxDB, Grafana) and evaluate predictive model drift.\n•\tFacility inefficiency and economic adoption barrier: Educational centers usually lack environmental/energy management tools, and the initial investment in physical sensors hinders replication in other schools.",
-            "va": "•\tEscletxa didàctica en MLOps: L'alumnat d'IA no disposa d'entorns reals de producció on gestionar canals continus (pipelines) de dades IoT (MQTT, InfluxDB, Grafana) i avaluar la deriva de models predictius.\n•\tIneficiència en instal·lacions i barrera econòmica d'adopció: Els centres educatius no solen disposar d'eines de gestió ambiental/energètica, i la inversió inicial en sensòrica física frena la rèplica en altres instituts."
+            "es": "Convierte el centro educativo en un living lab monitorizando 34 espacios con sensores de consumo eléctrico y calidad ambiental.\nconvierte el centro en un living lab IoT real que monitoriza 34 espacios para evaluar la eficiencia energética y el confort ambiental, demostrando un ahorro del 18,8% en tomas de corriente. A nivel educativo, permite al alumnado de FP entrenar modelos predictivos de IA (consumo, fotovoltaica y anomalías) sobre flujos MLOps de código abierto. Todo el sistema opera bajo una estricta gobernanza ética con supervisión humana (Shadow Mode) y garantiza su replicabilidad en cualquier otra entidad mediante simulación con datos sintéticos en Docker sin necesidad de instalar sensores físicos iniciales.",
+            "en": "It turns the school into a real IoT living lab monitoring 34 spaces to assess energy efficiency and environmental comfort, demonstrating an 18.8% energy savings in power outlets. From an educational perspective, it enables VET students to train predictive AI models (consumption, photovoltaics, and anomalies) on open-source MLOps workflows. The entire system operates under strict ethical governance with human oversight (Shadow Mode) and guarantees replicability in any other entity through synthetic data simulation in Docker without requiring initial physical sensors.",
+            "va": "Converteix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garanteix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
           },
           "objective": {
             "es": "",
@@ -5037,8 +5037,8 @@ export const MARKETPLACE_CONFIG = {
         "implementation": {
           "readiness": {
             "technologyReadiness": {
-              "enabled": false,
-              "level": "1",
+              "enabled": true,
+              "level": 6,
               "pilotLabel": {
                 "es": "",
                 "en": "",
@@ -5047,7 +5047,7 @@ export const MARKETPLACE_CONFIG = {
             },
             "educationalReadiness": {
               "enabled": false,
-              "level": null,
+              "level": "concept",
               "pilotLabel": {
                 "es": "",
                 "en": "",
@@ -5071,8 +5071,8 @@ export const MARKETPLACE_CONFIG = {
         "results": {
           "headline": {
             "es": "•\tAdopción y usabilidad: Cobertura del 100% en los 34 espacios, estabilidad del pipeline abierto (MQTT/InfluxDB/Grafana) y disponibilidad del generador de datos sintéticos para la red AI-STEAM.\n•\tAprendizaje y evaluación: Puntuación en Codabench sobre dataset oculto, defensa pública en vídeo y cumplimiento de la auditoría de 20 días en el aula focal P1S01.\n•\tEvidencias y gobernanza: Demostración del ahorro energético proyectado (hasta un 18,8% vía Monte Carlo), auditoría técnica de CAPTIA Technology y 100% de cumplimiento del modo shadow con supervisión humana previa.",
-            "en": "•\tAdoption and usability: 100% coverage across the 34 spaces, stability of the open pipeline (MQTT/InfluxDB/Grafana), and availability of the synthetic data generator for the AI-STEAM network.\n•\tLearning and assessment: Score on Codabench against a hidden dataset, public video defense, and completion of the 20-day audit in focal classroom P1S01.\n•\tEvidence and governance: Demonstration of projected energy savings (up to 18.8% via Monte Carlo), technical audit by CAPTIA Technology, and 100% compliance with shadow mode with prior human oversight.",
-            "va": "•\tAdopció i usabilitat: Cobertura del 100% en els 34 espais, estabilitat del canal de dades obert (pipeline MQTT/InfluxDB/Grafana) i disponibilitat del generador de dades sintètiques per a la xarxa AI-STEAM.\n•\tAprenentatge i avaluació: Puntuació en Codabench sobre conjunt de dades (dataset) ocult, defensa pública en vídeo i compliment de l'auditoria de 20 dies a l'aula focal P1S01.\n•\tEvidències i governança: Demostració de l'estalvi energètic projectat (fins a un 18,8% via Monte Carlo), auditoria tècnica de CAPTIA Technology i 100% de compliment del mode shadow amb supervisió humana prèvia."
+            "en": "It turns the school into a real IoT living lab monitoring 34 spaces to assess energy efficiency and environmental comfort, demonstrating an 18.8% energy savings in power outlets. From an educational perspective, it enables VET students to train predictive AI models (consumption, photovoltaics, and anomalies) on open-source MLOps workflows. The entire system operates under strict ethical governance with human oversight (Shadow Mode) and guarantees replicability in any other entity through synthetic data simulation in Docker without requiring initial physical sensors.",
+            "va": "Converteix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garanteix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
           },
           "outputs": [],
           "decision": null
@@ -5113,7 +5113,7 @@ export const MARKETPLACE_CONFIG = {
             "variant": "pilot",
             "showPilotStage": true,
             "showPilotType": true,
-            "showReadiness": false,
+            "showReadiness": true,
             "showWindow": false,
             "showInfrastructure": false,
             "showPrimaryMetric": true,
