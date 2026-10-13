@@ -12,11 +12,17 @@ const PESTANAS = {
   validation: 'validations',
 };
 
+const PREFIJO = { challenge: 'CHA', case: 'CAS', mentoring: 'MEN', pilot: 'PIL', validation: 'VAL' };
+
+// Beneficiarias del primer caso de prueba (su cadena de transferencia las pinta todas).
+export const BENEFICIARIAS_DE_PRUEBA = [1, 2, 3, 4].map((n) => `Beneficiaria de prueba ${n}`);
+
 export function elementoDePrueba(tipo, numero) {
   const id = `${tipo}-de-prueba-${numero}`;
+  const primero = numero === 1;
   return {
     id,
-    code: '',
+    code: `${PREFIJO[tipo]}-2026-${String(numero).padStart(3, '0')}`,
     type: tipo,
     tab: PESTANAS[tipo],
     sortDate: '2026-01-01',
@@ -34,8 +40,8 @@ export function elementoDePrueba(tipo, numero) {
       executionWindow: null,
       evidenceLevel: '',
       verificationStatus: '',
-      sector: '',
-      sectors: [],
+      sector: primero && tipo === 'challenge' ? 'ene' : '',
+      sectors: primero && tipo === 'challenge' ? ['ene'] : [],
       stakeholderCategory: '',
       levels: [],
       pilotType: '',
@@ -59,7 +65,7 @@ export function elementoDePrueba(tipo, numero) {
       requester: { name: 'Solicitante de prueba', publicLabel: traduccion('Solicitante') },
       leadTeam: null,
       contact: null,
-      beneficiaries: [],
+      beneficiaries: primero && tipo === 'case' ? BENEFICIARIAS_DE_PRUEBA.map((name) => ({ name })) : [],
     },
     classification: {
       aiSteamFocus: [],
@@ -105,7 +111,7 @@ export function elementoDePrueba(tipo, numero) {
 
 /** Dos elementos por pestaña, agrupados como los necesita la vista (`items` y `itemsByTab`). */
 export function elementosDePrueba() {
-  const items = Object.keys(PESTANAS).flatMap((tipo) => [1, 2].map((n) => elementoDePrueba(tipo, n)));
+  const items = Object.keys(PESTANAS).flatMap((tipo) => [1, 2, 3].map((n) => elementoDePrueba(tipo, n)));
   const itemsByTab = Object.fromEntries(Object.values(PESTANAS).map((tab) => [tab, items.filter((i) => i.tab === tab)]));
   return { items, itemsByTab };
 }
