@@ -30,8 +30,8 @@ export const MARKETPLACE_CONFIG = {
       {
         "id": "challenges",
         "visible": true,
-        "value": 0,
-        "realValue": 0,
+        "value": 1,
+        "realValue": 1,
         "valueOverride": null,
         "label": {
           "es": "Retos",
@@ -66,8 +66,8 @@ export const MARKETPLACE_CONFIG = {
       {
         "id": "cases",
         "visible": true,
-        "value": 0,
-        "realValue": 0,
+        "value": 1,
+        "realValue": 1,
         "valueOverride": null,
         "label": {
           "es": "Casos",
@@ -3615,13 +3615,1274 @@ export const MARKETPLACE_CONFIG = {
     }
   ],
   "modelVersion": "community-practice-mvp-1",
-  "items": [],
+  "items": [
+    {
+      "id": "CAS-2026-001",
+      "code": "CAS-2026-001",
+      "type": "case",
+      "tab": "cases",
+      "sortDate": "2026-10-13",
+      "visible": true,
+      "sourcePath": "content/challenges/items/cases/cas-2026-001.yml",
+      "core": {
+        "status": "published",
+        "forceOpen": false,
+        "maturity": "idea",
+        "title": {
+          "es": "LARA - Proyecto Formativo de Investigación e Innovación Aplicada en FP",
+          "en": "LARA - Applied Research and Innovation Project in VET",
+          "va": "LARA - Projecte Formatiu d'Investigació i Innovació Aplicada en FP"
+        },
+        "summary": {
+          "es": "Solución tecnológica que dota de autonomía comunicativa a personas con trastornos del habla. Combina una app de captura de voz para crear un dataset fonético con un modelo de IA que reconoce y traduce el habla en tiempo real, mostrando el texto en pantalla y narrándolo en voz alta para facilitar la comprensión.",
+          "en": "Technological solution providing communicative autonomy to people with speech disorders. It combines a voice capture app to create a phonetic dataset with an AI model that recognizes and translates speech in real time, displaying the text on screen and narrating it aloud to facilitate understanding.",
+          "va": "Solució tecnològica que dota d'autonomia comunicativa persones amb trastorns de la parla. Combina una aplicació de captura de veu per a crear un dataset fonètic amb un model d'IA que reconeix i tradueix la parla en temps real, mostrant el text en pantalla i narrant-lo en veu alta per a facilitar la comprensió."
+        },
+        "entity": {
+          "name": "IES Severo Ochoa",
+          "type": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "caseStage": "pilot-result",
+        "pilotStage": "",
+        "executionWindow": null,
+        "evidenceLevel": "documented",
+        "verificationStatus": "self-reported",
+        "sector": "nts",
+        "sectors": [
+          "nts"
+        ],
+        "levels": [],
+        "pilotType": "",
+        "validationType": "",
+        "mentoringType": "",
+        "helix": [],
+        "relatedDeliverable": "",
+        "relatedOerId": "",
+        "publishedAt": "2026-10-13",
+        "revisionDate": "2026-10-13",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "13 de octubre de 2026",
+          "en": "October 13, 2026",
+          "va": "13 d'octubre de 2026"
+        },
+        "revisionDateLabel": {
+          "es": "13 de octubre de 2026",
+          "en": "October 13, 2026",
+          "va": "13 d'octubre de 2026"
+        },
+        "deadlineLabel": null
+      },
+      "ficha": {
+        "file": "cas-2026-001.pdf",
+        "publicPath": "assets/downloads/marketplace/cases/cas-2026-001.pdf"
+      },
+      "adhesionForm": {
+        "url": ""
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AiSTEAM Network",
+          "org": "CECU"
+        },
+        "origin": {
+          "name": "IES Severo Ochoa"
+        },
+        "requester": null,
+        "leadTeam": null,
+        "contact": null,
+        "beneficiaries": [
+          {
+            "name": "Adipsi,Aspanias,ASFEME,San Rafael Fundación Estima,CO Maigmó, APCA, ADACEA, Asociación Parkinson,CPEE Tamarit",
+            "type": "",
+            "role": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          }
+        ]
+      },
+      "classification": {
+        "aiSteamFocus": [],
+        "tripleTransition": [],
+        "policyCluster": [],
+        "engagementLevel": "",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "verificationStatus": "",
+        "pilotStatus": "",
+        "sector": "nts",
+        "sectors": [
+          "nts"
+        ],
+        "sectorLabel": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "levels": [
+          "vet",
+          "teacher"
+        ],
+        "audience": [],
+        "sdgs": [
+          3,
+          4,
+          8,
+          10,
+          11,
+          17
+        ]
+      },
+      "transfer": {
+        "type": "pilot-result",
+        "originOrganization": "IES Severo Ochoa",
+        "beneficiaryOrganizations": [
+          {
+            "name": "Adipsi,Aspanias,ASFEME,San Rafael Fundación Estima,CO Maigmó, APCA, ADACEA, Asociación Parkinson,CPEE Tamarit",
+            "sector": "",
+            "type": ""
+          }
+        ]
+      },
+      "community": {
+        "tab": "cases"
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {},
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "Apache 2.0",
+        "dataAvailability": "not-applicable",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "",
+        "sensitiveDataPolicy": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "rightsNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "system": "",
+          "url": ""
+        },
+        "secondaryAction": null,
+        "fallbackAction": null,
+        "fallbackContact": null
+      },
+      "relations": {
+        "originChallengeId": "",
+        "validations": [],
+        "pilots": [],
+        "cases": [],
+        "mentorships": [],
+        "resources": []
+      },
+      "resources": null,
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/cases/nuevo-case/",
+        "items": []
+      },
+      "outputs": null,
+      "process": null,
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "presentation": {
+        "card": {
+          "variant": "case",
+          "showActors": true,
+          "showSector": true,
+          "showEntity": true,
+          "showPrimaryMetric": false,
+          "showEvidenceBadge": true,
+          "showReward": true,
+          "showSdgs": true,
+          "showCompetences": true,
+          "showDeadline": true,
+          "showDownloadsIndicator": true,
+          "showChatBadge": false,
+          "showLevels": true,
+          "resultBlockLabel": null
+        },
+        "detail": {
+          "sections": {
+            "brief": true,
+            "need": true,
+            "context": true,
+            "participation": true,
+            "transferValue": true,
+            "resources": true,
+            "downloads": true,
+            "outputs": true,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": false,
+            "relations": false,
+            "evidence": true,
+            "transferability": true,
+            "summary": true,
+            "originContext": true,
+            "intervention": true,
+            "transferPath": true
+          }
+        }
+      },
+      "caseStudy": {
+        "type": "piloting",
+        "originContext": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "transferContext": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "intervention": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "transferPath": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      "evidence": {
+        "headline": {
+          "es": "Demostración de la viabilidad de modelos útiles a nivel de usuario/asociación, estableciendo la necesidad de ampliar el corpus de datos como requisito indispensable para conseguir un modelo de IA universal.",
+          "en": "Demonstration of the viability of useful models at the user/association level, establishing the need to expand the data corpus as an essential requirement to achieve a universal AI model.",
+          "va": "Demostració de la viabilitat de models útils a nivell d'usuari/associació, establint la necessitat d'ampliar el corpus de dades com a requisit indispensable per a aconseguir un model d'IA universal."
+        },
+        "primaryMetric": {
+          "id": "principal",
+          "value": 0,
+          "unit": "",
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "secondaryMetrics": [],
+        "verification": {
+          "status": "self-reported",
+          "verifiedBy": "",
+          "verifiedAt": "",
+          "method": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "limitations": {
+          "es": "",
+          "en": "",
+          "va": ""
+        }
+      },
+      "transferability": null,
+      "template": {
+        "requiredBlocks": [
+          "context",
+          "transferValue",
+          "evidence",
+          "outputs",
+          "people"
+        ],
+        "optionalBlocks": [
+          "resources",
+          "access",
+          "trackA"
+        ],
+        "cardSignal": "transferValue"
+      }
+    },
+    {
+      "id": "CHA-2026-002",
+      "code": "CHA-2026-002",
+      "type": "challenge",
+      "tab": "challenges",
+      "sortDate": "2026-10-13",
+      "visible": true,
+      "sourcePath": "content/challenges/items/challenges/cha-2026-002.yml",
+      "core": {
+        "status": "open",
+        "forceOpen": false,
+        "maturity": "idea",
+        "title": {
+          "es": "Cómo evaluar al estudiante y no a la IA en un examen",
+          "en": "How to assess the student, not the AI, in an exam",
+          "va": "Com avaluar l'estudiant i no la IA en un examen"
+        },
+        "summary": {
+          "es": "Este reto busca diseñar y validar actividades de evaluación en las que el uso de IA esté permitido, pero en las que la calificación refleje las competencias, el razonamiento y la capacidad crítica del estudiante, y no únicamente la calidad de las respuestas generadas por la herramienta.",
+          "en": "This challenge aims to design and validate assessment activities in which the use of AI is permitted, but where grading reflects the student's skills, reasoning, and critical thinking abilities, rather than solely the quality of the responses generated by the tool.",
+          "va": "Este repte busca dissenyar i validar activitats d'avaluació en les quals l'ús de la IA siga permés, però en les quals la qualificació reflectisca les competències, el raonament i la capacitat crítica de l'estudiantat, i no únicament la qualitat de les respostes generades per l'eina."
+        },
+        "entity": {
+          "name": "",
+          "type": {
+            "es": "UMH Vitrobiodis",
+            "en": "UMH Vitrobiodis",
+            "va": "UMH Vitrobiodis"
+          }
+        },
+        "caseStage": "",
+        "pilotStage": "",
+        "executionWindow": null,
+        "evidenceLevel": "",
+        "verificationStatus": "",
+        "sector": "nts",
+        "sectors": [],
+        "stakeholderCategory": "knowledge",
+        "levels": [],
+        "pilotType": "",
+        "validationType": "",
+        "mentoringType": "",
+        "helix": [],
+        "relatedDeliverable": "",
+        "relatedOerId": "",
+        "publishedAt": "2026-10-13",
+        "revisionDate": "2026-10-13",
+        "deadline": null,
+        "publishedAtLabel": {
+          "es": "13 de octubre de 2026",
+          "en": "October 13, 2026",
+          "va": "13 d'octubre de 2026"
+        },
+        "revisionDateLabel": {
+          "es": "13 de octubre de 2026",
+          "en": "October 13, 2026",
+          "va": "13 d'octubre de 2026"
+        },
+        "deadlineLabel": null
+      },
+      "ficha": {
+        "file": "cha-2026-002.pdf",
+        "publicPath": "assets/downloads/marketplace/challenges/cha-2026-002.pdf"
+      },
+      "adhesionForm": {
+        "url": "https://forms.cloud.microsoft/e/EygihEyHYX"
+      },
+      "ownership": {
+        "publisher": {
+          "name": "AiSTEAM Network",
+          "org": "CECU"
+        },
+        "origin": null,
+        "requester": {
+          "name": "",
+          "publicLabel": {
+            "es": "UMH Vitrobiodis",
+            "en": "UMH Vitrobiodis",
+            "va": "UMH Vitrobiodis"
+          }
+        },
+        "leadTeam": null,
+        "contact": null,
+        "beneficiaries": []
+      },
+      "classification": {
+        "aiSteamFocus": [],
+        "tripleTransition": [
+          "digital",
+          "social"
+        ],
+        "policyCluster": [],
+        "engagementLevel": "challenge-contribution",
+        "evidenceMaturity": "idea",
+        "lbdStage": "input",
+        "trackBValue": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "verificationStatus": "",
+        "pilotStatus": "",
+        "contributionTypes": [
+          "ideas",
+          "methodologies",
+          "contextual-data"
+        ],
+        "audience": [],
+        "competences": [
+          "teamwork",
+          "applied-creativity",
+          "integrated-pedagogy"
+        ],
+        "sdgs": [
+          4,
+          9
+        ]
+      },
+      "transfer": {
+        "type": "",
+        "originOrganization": "",
+        "beneficiaryOrganizations": []
+      },
+      "community": {
+        "tab": "challenges"
+      },
+      "card": {},
+      "visibility": {},
+      "detail": {
+        "briefTitle": {
+          "es": "Si permitimos IA en un examen, ¿cómo evaluamos al estudiante y no a la IA?",
+          "en": "If we allow AI in an exam, how do we assess the student and not the AI?",
+          "va": "Si permetem la IA en un examen, com avaluem l'alumnat i no la IA?"
+        },
+        "reward": {
+          "es": "Las propuestas seleccionadas podrán obtener visibilidad dentro de la red AI-STEAM y participar en su validación mediante experiencias piloto en contextos educativos reales. Los resultados y materiales derivados podrán difundirse como buenas prácticas y recursos educativos, respetando las condiciones de autoría y propiedad intelectual establecidas por la red.",
+          "en": "Selected proposals will gain visibility within the AI-STEAM network and participate in its validation through pilot experiences in real educational settings. Derived results and materials may be disseminated as best practices and educational resources, respecting the conditions of authorship and intellectual property established by the network.",
+          "va": "Les propostes seleccionades podran obtindre visibilitat dins de la xarxa AI-STEAM i participar en la seua validació mitjançant experiències pilot en contextos educatius reals. Els resultats i materials derivats es podran difondre com a bones pràctiques i recursos educatius, respectant les condicions d'autoria i propietat intel·lectual establides per la xarxa."
+        }
+      },
+      "access": {
+        "pageVisibility": "public",
+        "pageLicense": "CC BY 4.0",
+        "codeLicense": "",
+        "dataAvailability": "",
+        "sensitiveDataIncluded": false,
+        "contributionVisibility": "external-managed",
+        "sensitiveDataPolicy": {
+          "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
+          "en": "Personal, confidential or sensitive data must not be submitted through this site.",
+          "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+        },
+        "rightsNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "mentoringRequestAccess": "",
+        "confidentialityLevel": "",
+        "publicationNote": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "publicUrl": "",
+        "license": "CC BY 4.0",
+        "privacyLevel": "public"
+      },
+      "trackA": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "trackALink": {
+        "enabled": false,
+        "label": {
+          "es": "",
+          "en": "",
+          "va": ""
+        },
+        "url": ""
+      },
+      "externalFlow": {
+        "enabled": false,
+        "primaryAction": {
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "system": "",
+          "url": ""
+        },
+        "secondaryAction": null,
+        "fallbackAction": null,
+        "fallbackContact": null
+      },
+      "relations": {
+        "originChallengeId": "",
+        "validations": [],
+        "pilots": [],
+        "cases": [],
+        "mentorships": [],
+        "resources": []
+      },
+      "resources": null,
+      "downloads": {
+        "enabled": false,
+        "basePath": "/assets/downloads/challenges/nuevo-challenge/",
+        "items": []
+      },
+      "outputs": null,
+      "process": null,
+      "hasDownloads": false,
+      "downloadCount": 0,
+      "cardDownloads": [],
+      "presentation": {
+        "card": {
+          "variant": "challenge",
+          "showActors": true,
+          "showSector": true,
+          "showEntity": true,
+          "showPrimaryMetric": true,
+          "showEvidenceBadge": true,
+          "showReward": true,
+          "showSdgs": true,
+          "showCompetences": true,
+          "showDeadline": false,
+          "showDownloadsIndicator": false,
+          "showChatBadge": false,
+          "showLevels": true,
+          "resultBlockLabel": null
+        },
+        "detail": {
+          "sections": {
+            "brief": true,
+            "need": true,
+            "context": true,
+            "participation": true,
+            "transferValue": true,
+            "resources": true,
+            "downloads": false,
+            "outputs": true,
+            "process": true,
+            "people": true,
+            "access": true,
+            "trackA": false,
+            "relations": false,
+            "evidence": false,
+            "transferability": true,
+            "summary": true,
+            "originContext": true,
+            "intervention": true,
+            "transferPath": true
+          }
+        }
+      },
+      "caseStudy": null,
+      "evidence": null,
+      "transferability": null,
+      "template": {
+        "requiredBlocks": [
+          "need",
+          "context",
+          "transferValue",
+          "participation",
+          "resources",
+          "outputs",
+          "process"
+        ],
+        "optionalBlocks": [
+          "people",
+          "evidence",
+          "access",
+          "trackA",
+          "downloads",
+          "relations"
+        ],
+        "cardSignal": "need"
+      }
+    }
+  ],
   "itemsByTab": {
     "mentorings": [],
-    "challenges": [],
+    "challenges": [
+      {
+        "id": "CHA-2026-002",
+        "code": "CHA-2026-002",
+        "type": "challenge",
+        "tab": "challenges",
+        "sortDate": "2026-10-13",
+        "visible": true,
+        "sourcePath": "content/challenges/items/challenges/cha-2026-002.yml",
+        "core": {
+          "status": "open",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "Cómo evaluar al estudiante y no a la IA en un examen",
+            "en": "How to assess the student, not the AI, in an exam",
+            "va": "Com avaluar l'estudiant i no la IA en un examen"
+          },
+          "summary": {
+            "es": "Este reto busca diseñar y validar actividades de evaluación en las que el uso de IA esté permitido, pero en las que la calificación refleje las competencias, el razonamiento y la capacidad crítica del estudiante, y no únicamente la calidad de las respuestas generadas por la herramienta.",
+            "en": "This challenge aims to design and validate assessment activities in which the use of AI is permitted, but where grading reflects the student's skills, reasoning, and critical thinking abilities, rather than solely the quality of the responses generated by the tool.",
+            "va": "Este repte busca dissenyar i validar activitats d'avaluació en les quals l'ús de la IA siga permés, però en les quals la qualificació reflectisca les competències, el raonament i la capacitat crítica de l'estudiantat, i no únicament la qualitat de les respostes generades per l'eina."
+          },
+          "entity": {
+            "name": "",
+            "type": {
+              "es": "UMH Vitrobiodis",
+              "en": "UMH Vitrobiodis",
+              "va": "UMH Vitrobiodis"
+            }
+          },
+          "caseStage": "",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "",
+          "verificationStatus": "",
+          "sector": "nts",
+          "sectors": [],
+          "stakeholderCategory": "knowledge",
+          "levels": [],
+          "pilotType": "",
+          "validationType": "",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-10-13",
+          "revisionDate": "2026-10-13",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "13 de octubre de 2026",
+            "en": "October 13, 2026",
+            "va": "13 d'octubre de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "13 de octubre de 2026",
+            "en": "October 13, 2026",
+            "va": "13 d'octubre de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": {
+          "file": "cha-2026-002.pdf",
+          "publicPath": "assets/downloads/marketplace/challenges/cha-2026-002.pdf"
+        },
+        "adhesionForm": {
+          "url": "https://forms.cloud.microsoft/e/EygihEyHYX"
+        },
+        "ownership": {
+          "publisher": {
+            "name": "AiSTEAM Network",
+            "org": "CECU"
+          },
+          "origin": null,
+          "requester": {
+            "name": "",
+            "publicLabel": {
+              "es": "UMH Vitrobiodis",
+              "en": "UMH Vitrobiodis",
+              "va": "UMH Vitrobiodis"
+            }
+          },
+          "leadTeam": null,
+          "contact": null,
+          "beneficiaries": []
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [
+            "digital",
+            "social"
+          ],
+          "policyCluster": [],
+          "engagementLevel": "challenge-contribution",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": "",
+          "contributionTypes": [
+            "ideas",
+            "methodologies",
+            "contextual-data"
+          ],
+          "audience": [],
+          "competences": [
+            "teamwork",
+            "applied-creativity",
+            "integrated-pedagogy"
+          ],
+          "sdgs": [
+            4,
+            9
+          ]
+        },
+        "transfer": {
+          "type": "",
+          "originOrganization": "",
+          "beneficiaryOrganizations": []
+        },
+        "community": {
+          "tab": "challenges"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {
+          "briefTitle": {
+            "es": "Si permitimos IA en un examen, ¿cómo evaluamos al estudiante y no a la IA?",
+            "en": "If we allow AI in an exam, how do we assess the student and not the AI?",
+            "va": "Si permetem la IA en un examen, com avaluem l'alumnat i no la IA?"
+          },
+          "reward": {
+            "es": "Las propuestas seleccionadas podrán obtener visibilidad dentro de la red AI-STEAM y participar en su validación mediante experiencias piloto en contextos educativos reales. Los resultados y materiales derivados podrán difundirse como buenas prácticas y recursos educativos, respetando las condiciones de autoría y propiedad intelectual establecidas por la red.",
+            "en": "Selected proposals will gain visibility within the AI-STEAM network and participate in its validation through pilot experiences in real educational settings. Derived results and materials may be disseminated as best practices and educational resources, respecting the conditions of authorship and intellectual property established by the network.",
+            "va": "Les propostes seleccionades podran obtindre visibilitat dins de la xarxa AI-STEAM i participar en la seua validació mitjançant experiències pilot en contextos educatius reals. Els resultats i materials derivats es podran difondre com a bones pràctiques i recursos educatius, respectant les condicions d'autoria i propietat intel·lectual establides per la xarxa."
+          }
+        },
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "",
+          "dataAvailability": "",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "external-managed",
+          "sensitiveDataPolicy": {
+            "es": "No deben enviarse datos personales, confidenciales o sensibles a través de este sitio.",
+            "en": "Personal, confidential or sensitive data must not be submitted through this site.",
+            "va": "No s'han d'enviar dades personals, confidencials o sensibles a través d'este lloc."
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null,
+          "fallbackAction": null,
+          "fallbackContact": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "validations": [],
+          "pilots": [],
+          "cases": [],
+          "mentorships": [],
+          "resources": []
+        },
+        "resources": null,
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/challenges/nuevo-challenge/",
+          "items": []
+        },
+        "outputs": null,
+        "process": null,
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "challenge",
+            "showActors": true,
+            "showSector": true,
+            "showEntity": true,
+            "showPrimaryMetric": true,
+            "showEvidenceBadge": true,
+            "showReward": true,
+            "showSdgs": true,
+            "showCompetences": true,
+            "showDeadline": false,
+            "showDownloadsIndicator": false,
+            "showChatBadge": false,
+            "showLevels": true,
+            "resultBlockLabel": null
+          },
+          "detail": {
+            "sections": {
+              "brief": true,
+              "need": true,
+              "context": true,
+              "participation": true,
+              "transferValue": true,
+              "resources": true,
+              "downloads": false,
+              "outputs": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false,
+              "evidence": false,
+              "transferability": true,
+              "summary": true,
+              "originContext": true,
+              "intervention": true,
+              "transferPath": true
+            }
+          }
+        },
+        "caseStudy": null,
+        "evidence": null,
+        "transferability": null,
+        "template": {
+          "requiredBlocks": [
+            "need",
+            "context",
+            "transferValue",
+            "participation",
+            "resources",
+            "outputs",
+            "process"
+          ],
+          "optionalBlocks": [
+            "people",
+            "evidence",
+            "access",
+            "trackA",
+            "downloads",
+            "relations"
+          ],
+          "cardSignal": "need"
+        }
+      }
+    ],
     "validations": [],
     "pilots": [],
-    "cases": []
+    "cases": [
+      {
+        "id": "CAS-2026-001",
+        "code": "CAS-2026-001",
+        "type": "case",
+        "tab": "cases",
+        "sortDate": "2026-10-13",
+        "visible": true,
+        "sourcePath": "content/challenges/items/cases/cas-2026-001.yml",
+        "core": {
+          "status": "published",
+          "forceOpen": false,
+          "maturity": "idea",
+          "title": {
+            "es": "LARA - Proyecto Formativo de Investigación e Innovación Aplicada en FP",
+            "en": "LARA - Applied Research and Innovation Project in VET",
+            "va": "LARA - Projecte Formatiu d'Investigació i Innovació Aplicada en FP"
+          },
+          "summary": {
+            "es": "Solución tecnológica que dota de autonomía comunicativa a personas con trastornos del habla. Combina una app de captura de voz para crear un dataset fonético con un modelo de IA que reconoce y traduce el habla en tiempo real, mostrando el texto en pantalla y narrándolo en voz alta para facilitar la comprensión.",
+            "en": "Technological solution providing communicative autonomy to people with speech disorders. It combines a voice capture app to create a phonetic dataset with an AI model that recognizes and translates speech in real time, displaying the text on screen and narrating it aloud to facilitate understanding.",
+            "va": "Solució tecnològica que dota d'autonomia comunicativa persones amb trastorns de la parla. Combina una aplicació de captura de veu per a crear un dataset fonètic amb un model d'IA que reconeix i tradueix la parla en temps real, mostrant el text en pantalla i narrant-lo en veu alta per a facilitar la comprensió."
+          },
+          "entity": {
+            "name": "IES Severo Ochoa",
+            "type": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "caseStage": "pilot-result",
+          "pilotStage": "",
+          "executionWindow": null,
+          "evidenceLevel": "documented",
+          "verificationStatus": "self-reported",
+          "sector": "nts",
+          "sectors": [
+            "nts"
+          ],
+          "levels": [],
+          "pilotType": "",
+          "validationType": "",
+          "mentoringType": "",
+          "helix": [],
+          "relatedDeliverable": "",
+          "relatedOerId": "",
+          "publishedAt": "2026-10-13",
+          "revisionDate": "2026-10-13",
+          "deadline": null,
+          "publishedAtLabel": {
+            "es": "13 de octubre de 2026",
+            "en": "October 13, 2026",
+            "va": "13 d'octubre de 2026"
+          },
+          "revisionDateLabel": {
+            "es": "13 de octubre de 2026",
+            "en": "October 13, 2026",
+            "va": "13 d'octubre de 2026"
+          },
+          "deadlineLabel": null
+        },
+        "ficha": {
+          "file": "cas-2026-001.pdf",
+          "publicPath": "assets/downloads/marketplace/cases/cas-2026-001.pdf"
+        },
+        "adhesionForm": {
+          "url": ""
+        },
+        "ownership": {
+          "publisher": {
+            "name": "AiSTEAM Network",
+            "org": "CECU"
+          },
+          "origin": {
+            "name": "IES Severo Ochoa"
+          },
+          "requester": null,
+          "leadTeam": null,
+          "contact": null,
+          "beneficiaries": [
+            {
+              "name": "Adipsi,Aspanias,ASFEME,San Rafael Fundación Estima,CO Maigmó, APCA, ADACEA, Asociación Parkinson,CPEE Tamarit",
+              "type": "",
+              "role": {
+                "es": "",
+                "en": "",
+                "va": ""
+              }
+            }
+          ]
+        },
+        "classification": {
+          "aiSteamFocus": [],
+          "tripleTransition": [],
+          "policyCluster": [],
+          "engagementLevel": "",
+          "evidenceMaturity": "idea",
+          "lbdStage": "input",
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "verificationStatus": "",
+          "pilotStatus": "",
+          "sector": "nts",
+          "sectors": [
+            "nts"
+          ],
+          "sectorLabel": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "levels": [
+            "vet",
+            "teacher"
+          ],
+          "audience": [],
+          "sdgs": [
+            3,
+            4,
+            8,
+            10,
+            11,
+            17
+          ]
+        },
+        "transfer": {
+          "type": "pilot-result",
+          "originOrganization": "IES Severo Ochoa",
+          "beneficiaryOrganizations": [
+            {
+              "name": "Adipsi,Aspanias,ASFEME,San Rafael Fundación Estima,CO Maigmó, APCA, ADACEA, Asociación Parkinson,CPEE Tamarit",
+              "sector": "",
+              "type": ""
+            }
+          ]
+        },
+        "community": {
+          "tab": "cases"
+        },
+        "card": {},
+        "visibility": {},
+        "detail": {},
+        "access": {
+          "pageVisibility": "public",
+          "pageLicense": "CC BY 4.0",
+          "codeLicense": "Apache 2.0",
+          "dataAvailability": "not-applicable",
+          "sensitiveDataIncluded": false,
+          "contributionVisibility": "",
+          "sensitiveDataPolicy": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "rightsNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "mentoringRequestAccess": "",
+          "confidentialityLevel": "",
+          "publicationNote": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "publicUrl": "",
+          "license": "CC BY 4.0",
+          "privacyLevel": "public"
+        },
+        "trackA": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "trackALink": {
+          "enabled": false,
+          "label": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "url": ""
+        },
+        "externalFlow": {
+          "enabled": false,
+          "primaryAction": {
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            },
+            "system": "",
+            "url": ""
+          },
+          "secondaryAction": null,
+          "fallbackAction": null,
+          "fallbackContact": null
+        },
+        "relations": {
+          "originChallengeId": "",
+          "validations": [],
+          "pilots": [],
+          "cases": [],
+          "mentorships": [],
+          "resources": []
+        },
+        "resources": null,
+        "downloads": {
+          "enabled": false,
+          "basePath": "/assets/downloads/cases/nuevo-case/",
+          "items": []
+        },
+        "outputs": null,
+        "process": null,
+        "hasDownloads": false,
+        "downloadCount": 0,
+        "cardDownloads": [],
+        "presentation": {
+          "card": {
+            "variant": "case",
+            "showActors": true,
+            "showSector": true,
+            "showEntity": true,
+            "showPrimaryMetric": false,
+            "showEvidenceBadge": true,
+            "showReward": true,
+            "showSdgs": true,
+            "showCompetences": true,
+            "showDeadline": true,
+            "showDownloadsIndicator": true,
+            "showChatBadge": false,
+            "showLevels": true,
+            "resultBlockLabel": null
+          },
+          "detail": {
+            "sections": {
+              "brief": true,
+              "need": true,
+              "context": true,
+              "participation": true,
+              "transferValue": true,
+              "resources": true,
+              "downloads": true,
+              "outputs": true,
+              "process": true,
+              "people": true,
+              "access": true,
+              "trackA": false,
+              "relations": false,
+              "evidence": true,
+              "transferability": true,
+              "summary": true,
+              "originContext": true,
+              "intervention": true,
+              "transferPath": true
+            }
+          }
+        },
+        "caseStudy": {
+          "type": "piloting",
+          "originContext": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "transferContext": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "intervention": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "transferPath": {
+            "es": "",
+            "en": "",
+            "va": ""
+          },
+          "trackBValue": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "evidence": {
+          "headline": {
+            "es": "Demostración de la viabilidad de modelos útiles a nivel de usuario/asociación, estableciendo la necesidad de ampliar el corpus de datos como requisito indispensable para conseguir un modelo de IA universal.",
+            "en": "Demonstration of the viability of useful models at the user/association level, establishing the need to expand the data corpus as an essential requirement to achieve a universal AI model.",
+            "va": "Demostració de la viabilitat de models útils a nivell d'usuari/associació, establint la necessitat d'ampliar el corpus de dades com a requisit indispensable per a aconseguir un model d'IA universal."
+          },
+          "primaryMetric": {
+            "id": "principal",
+            "value": 0,
+            "unit": "",
+            "label": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "secondaryMetrics": [],
+          "verification": {
+            "status": "self-reported",
+            "verifiedBy": "",
+            "verifiedAt": "",
+            "method": {
+              "es": "",
+              "en": "",
+              "va": ""
+            }
+          },
+          "limitations": {
+            "es": "",
+            "en": "",
+            "va": ""
+          }
+        },
+        "transferability": null,
+        "template": {
+          "requiredBlocks": [
+            "context",
+            "transferValue",
+            "evidence",
+            "outputs",
+            "people"
+          ],
+          "optionalBlocks": [
+            "resources",
+            "access",
+            "trackA"
+          ],
+          "cardSignal": "transferValue"
+        }
+      }
+    ]
   },
   "legacyItems": [],
   "labels": {
