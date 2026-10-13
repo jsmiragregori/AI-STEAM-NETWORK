@@ -7,6 +7,8 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
+import { documentosDePrueba } from '../fixtures/documentos-de-prueba.mjs';
+
 const almacen = new Map();
 let lang = 'es';
 let busqueda = '';
@@ -26,6 +28,11 @@ globalThis.window = { location: { hash: '' }, addEventListener() {}, scrollTo() 
 const { GOVERNANCE_CONFIG } = await import('../../assets/data/governance.js');
 const { setState } = await import('../../assets/js/state.js');
 const vistas = await import('../../assets/js/views/index.js');
+
+// Estado de partida propio: la prueba no depende de los documentos que tenga el contenido real.
+const docsDePartida = GOVERNANCE_CONFIG.documentationBlock.docs;
+docsDePartida.length = 0;
+docsDePartida.push(...documentosDePrueba());
 
 const DOCS = () => GOVERNANCE_CONFIG.documentationBlock.docs;
 const ETIQUETA = { es: 'Código AiSTEAM', en: 'AiSTEAM code', va: 'Codi AiSTEAM' };
@@ -116,8 +123,8 @@ test('la búsqueda por id y por título sigue funcionando (control)', () => {
   const items = DOCS();
   items.forEach((d, i) => { d.code = `DOC-2026-3${String(i).padStart(2, '0')}`; });
   try {
-    assert.equal(cards(docsSection(pintar('es', 'consortium-agreement'))).length, 1);
-    assert.ok(cards(docsSection(pintar('es', 'Consorcio'))).length >= 1);
+    assert.equal(cards(docsSection(pintar('es', 'prueba-publico-adjunto'))).length, 1);
+    assert.ok(cards(docsSection(pintar('es', 'Documento de prueba'))).length >= 1);
   } finally {
     for (const d of items) delete d.code;
   }
