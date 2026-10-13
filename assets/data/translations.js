@@ -295,7 +295,6 @@ export const translations = {
       "stakeholderTypesLabel": "Stakeholders que pueden participar",
       "teacherRelevanceLabel": "Aplicación didáctica para formación docente",
       "exampleChallengeLabel": "Evidencia destacada",
-      "demoLabel": "demo",
       "transferChainTitle": "Ruta de transferencia del sector",
       "transferChainLabels": {
         "stakeholderNeed": "Necesidades sectoriales detectadas",
@@ -578,12 +577,6 @@ export const translations = {
       "trainingPaths": "Itinerarios de Transferencia",
       "fpPath": "Itinerario FP – CECU",
       "masterPath": "Actividades extracurriculares AiSECRETT (Track A)",
-      "fpPathSteps": [
-        "Ciclo Formativo de Grado Superior (CFGS)",
-        "Módulo de especialización IA-STEAM (Aules)",
-        "Proyecto intermodular con reto del ecosistema",
-        "Portfolio de evidencias del alumnado"
-      ],
       "masterPathSteps": [
         "Caso o reto del ecosistema candidato al Track A",
         "Validación de relevancia curricular por UVEG",
@@ -591,64 +584,7 @@ export const translations = {
         "Sesión de transferencia o conferencia invitada",
         "Evidencia de adopción aportada a AiSECRETT"
       ],
-      "courses": {
-        "course1": {
-          "title": "Inteligencia Artificial Aplicada a la Industria 4.0",
-          "desc": "Módulo de especialización para alumnado de FP. Mantenimiento predictivo, visión artificial y gemelos digitales con casos reales del ecosistema.",
-          "level": "FP",
-          "sector": "Industria",
-          "status": "Activo"
-        },
-        "course2": {
-          "title": "Machine Learning para Diagnóstico Clínico",
-          "desc": "Módulo de profundización — candidato a puente con el Track A. CNN aplicadas a radiología, NLP clínico y apoyo a la decisión médica.",
-          "level": "Máster",
-          "sector": "Salud",
-          "status": "Activo"
-        },
-        "course3": {
-          "title": "IA Ética y Uso Responsable en el Aula",
-          "desc": "Formación para docentes de FP. Fundamentos de IA, prompt engineering, detección de sesgos y uso ético en el contexto educativo. Disponible en Aules.",
-          "level": "Docentes",
-          "sector": "Educación",
-          "status": "Activo"
-        },
-        "course4": {
-          "title": "Agricultura de Precisión con IA y Drones",
-          "desc": "Módulo FP. Vuelos autónomos, análisis multiespectral y riego inteligente. Incluye prácticas con sensores reales en campo.",
-          "level": "FP",
-          "sector": "Agroalimentario",
-          "status": "Activo"
-        },
-        "course5": {
-          "title": "Gemelos Digitales y Simulación para la Industria",
-          "desc": "Módulo candidato a puente Track A. Gemelos digitales en entornos industriales: SCADA, IIoT y edge computing.",
-          "level": "Máster",
-          "sector": "Industria",
-          "status": "Activo"
-        },
-        "course6": {
-          "title": "Monitorización Ambiental con IoT e IA",
-          "desc": "Módulo FP. Sensores ambientales, series temporales y alertas automáticas. Casos reales de cuencas hidrográficas y calidad del aire.",
-          "level": "FP",
-          "sector": "Medio Ambiente",
-          "status": "Activo"
-        },
-        "course7": {
-          "title": "IA Generativa para Patrimonio Cultural y Turismo",
-          "desc": "Módulo candidato a puente Track A. Modelos de difusión y NLP para museos virtuales y restauración digital.",
-          "level": "Máster",
-          "sector": "Turismo y Cultura",
-          "status": "Próximamente"
-        },
-        "course8": {
-          "title": "Administración Electrónica e IA para el Sector Público",
-          "desc": "Formación docente y funcionarios. IA en servicios públicos, chatbots ciudadanos y reglamento europeo de IA. Disponible en Aules.",
-          "level": "Docentes",
-          "sector": "Administración",
-          "status": "Activo"
-        }
-      },
+      "courses": {},
       "levelLabels": {
         "FP": "FP",
         "Máster": "Puente Track A",
@@ -680,7 +616,6 @@ export const translations = {
       "title": "Transferencia de Conocimiento",
       "subtitle": "Repositorio de recursos, evidencias y casos de transferencia AI-SECRETT",
       "description": "Repositorio de recursos OER, casos de transferencia, evidencias de pilotos y plantillas útiles para stakeholders, FP, formación docente y puentes académicos.",
-      "demoNotice": "Los recursos, casos, evidencias y descargas son contenido demo del prototipo. Las cifras son indicativas — no representan resultados reales de AI-SECRETT.",
       "tabFlow": "Ciclo de Transferencia",
       "tabOER": "Recursos OER",
       "tabCases": "Casos de Transferencia",
@@ -735,15 +670,12 @@ export const translations = {
       "oerRoute": "Ruta:",
       "oerValidation": "Validación:",
       "casesTitle": "Casos de Transferencia",
-      "casesDesc": "Retos y contribuciones convertidas en evidencia de transferencia Track B. Los datos son demo del prototipo y no representan resultados oficiales de AI-SECRETT.",
       "casesSolved": "Transferido",
       "casesViewFull": "Ver caso completo",
       "casesDownloadResources": "Descargar recursos",
       "casesRoute": "Ruta:",
       "casesEvidence": "Evidencia:",
       "evidenceTitle": "Evidencias de Piloto",
-      "evidenceDesc": "Registro de actividades piloto realizadas en el marco de AI-STEAM Network. Todos los indicadores son demo del prototipo — no representan entregas oficiales de AI-SECRETT.",
-      "evidenceDemoLabel": "Indicador demo",
       "evidenceSector": "Sector:",
       "evidenceRoute": "Ruta:",
       "evidenceStatus": "Estado:",
@@ -801,7 +733,6 @@ export const translations = {
         }
       ],
       "statsOER": "Recursos OER",
-      "statsDownloads": "Descargas Totales (demo)",
       "oerResources": [
         {
           "id": "o1",
@@ -1280,36 +1211,6 @@ export const translations = {
             ]
           }
         ],
-        "operatingFlow": {
-          "title": "Flujo operativo de Track B a evidencias",
-          "desc": "El recorrido muestra cómo CECU puede convertir participación de red en evidencias auditables sin presentar indicadores demo como resultados reales.",
-          "steps": [
-            {
-              "title": "Input",
-              "desc": "Stakeholder, ENRED o centro educativo aporta una necesidad, caso o propuesta."
-            },
-            {
-              "title": "Clasificación",
-              "desc": "Se clasifica por sector AI-SECRETT y ruta: FP, docente, recurso, piloto o puente académico."
-            },
-            {
-              "title": "Validación",
-              "desc": "La relevancia se contrasta en Track B y, si procede, se deriva a órganos académicos Track A."
-            },
-            {
-              "title": "Actividad",
-              "desc": "Se genera actividad, recurso OER, debate, piloto o caso documentado."
-            },
-            {
-              "title": "Evidencia",
-              "desc": "Se registran indicadores, trazas ConsensUE, recursos, encuestas y participación."
-            },
-            {
-              "title": "Seguimiento",
-              "desc": "La evidencia alimenta la mejora continua y el relato público de evolución de la red."
-            }
-          ]
-        },
         "platformsTitle": "Las tres plataformas en el flujo LbD",
         "platformsDesc": "Cada plataforma tiene un rol específico y una autoridad responsable. El contenido fluye unidireccionalmente del ecosistema al aprendizaje.",
         "platforms": [
@@ -1475,11 +1376,8 @@ export const translations = {
     "news": {
       "title": "Actualidad y Agenda",
       "subtitle": "Noticias, eventos y novedades de AI-STEAM Network y AI-SECRETT",
-      "description": "Canal de comunicación de la red AI-STEAM para stakeholders, centros FP, docentes y socios del consorcio AI-SECRETT. Las noticias marcadas como (demo) son contenido prototipo y no representan comunicados oficiales.",
       "subscribeButton": "Suscribirse al boletín",
-      "demoDisclaimer": "📌 Contenido demo del prototipo. Las noticias no marcadas como oficiales son ficticias y no representan resultados reales de AI-SECRETT ni de sus socios.",
       "officialBadge": "Oficial",
-      "demoBadge": "Demo",
       "categoryAll": "Todas",
       "categoryENRED": "ENRED",
       "categoryFPVET": "FP",
@@ -1507,176 +1405,8 @@ export const translations = {
         "youtube": "YouTube – Canal AI-STEAM",
         "substack": "Substack – Artículos y Papers"
       },
-      "newsItems": {
-        "news1": {
-          "title": "La Conselleria de Educación participa en el lanzamiento del proyecto internacional AI SECRETT dotado con 7,2 M€",
-          "excerpt": "Impulsado por la Universitat de València, el proyecto busca la transición ecológica y digital a través de la formación en IA y la creación de la red AI-STEAM en 12 países.",
-          "category": "Stakeholders",
-          "partner": "UVEG / CECU",
-          "date": "04 Oct 2024",
-          "featured": true,
-          "isOfficial": true
-        },
-        "news2": {
-          "title": "Hackathon \"Green AI\" 2026: 50 equipos abordan el cambio climático con Inteligencia Artificial (demo)",
-          "excerpt": "Más de 50 equipos multidisciplinares formados por estudiantes de FP y Máster compitieron durante 48 horas en la Ciudad Politécnica de la Innovación. El equipo ganador desarrolló un modelo de predicción de sequías para la cuenca del Júcar.",
-          "category": "Eventos",
-          "sector": "Medio Ambiente",
-          "partner": "UVEG / UPV / CECU",
-          "date": "02 Abr 2026",
-          "isOfficial": false
-        },
-        "news3": {
-          "title": "CECU publica el nuevo Curso de Especialización en IA para Ciclos Formativos",
-          "excerpt": "La Conselleria d'Educació lanza el primer Curso de Especialización en Inteligencia Artificial y Automatización, co-diseñado con los socios de la red AI-STEAM para 15 familias profesionales.",
-          "category": "FP",
-          "sector": "Educación",
-          "partner": "CECU",
-          "date": "25 Mar 2026",
-          "isOfficial": true
-        },
-        "news4": {
-          "title": "Manual de Gemelos Digitales v2.1 publicado como recurso OER",
-          "excerpt": "INESC TEC y Hochschule Wismar publican la nueva versión del manual de gemelos digitales bajo licencia CC-BY 4.0, con casos de uso en manufactura, energía y logística. Ya disponible en Aules.",
-          "category": "FP",
-          "sector": "Industria",
-          "partner": "INESC TEC / HSW",
-          "date": "18 Mar 2026",
-          "isOfficial": true
-        },
-        "news5": {
-          "title": "Nuevo reto validado: IA para triaje de urgencias pediátricas (demo)",
-          "excerpt": "El reto de triaje pediátrico ha sido validado por la Red de Stakeholders y clasificado como candidato a puente Track A. El Hospital La Fe participa como stakeholder proponente.",
-          "category": "Retos y Casos",
-          "sector": "Salud",
-          "partner": "Hospital La Fe",
-          "date": "10 Mar 2026",
-          "isOfficial": false
-        },
-        "news6": {
-          "title": "AVA-ASAJA se adhiere a la red: primer stakeholder agroalimentario valenciano (demo)",
-          "excerpt": "AVA-ASAJA se convierte en el primer stakeholder del sector agroalimentario valenciano en adherirse a la red, aportando acceso a 12.000 hectáreas de datos de cultivos para retos de agricultura de precisión.",
-          "category": "Stakeholders",
-          "sector": "Agroalimentario",
-          "partner": "AVA-ASAJA",
-          "date": "01 Mar 2026",
-          "isOfficial": false
-        },
-        "news7": {
-          "title": "Taller ENRED & AI-STEAM Network: 4 departamentos regionales mapean necesidades formativas en IA (demo)",
-          "excerpt": "Once representantes de departamentos regionales de educación de España, Italia, Noruega y Croacia participaron en un taller de cooperación para identificar necesidades formativas en IA. Los resultados nutrirán la agenda temática compartida entre ENRED y AI-STEAM Network.",
-          "category": "ENRED",
-          "partner": "CECU / ENRED / KEA",
-          "date": "14 Mar 2026",
-          "isOfficial": false
-        },
-        "news8": {
-          "title": "Piloto FP completado: IA para eficiencia energética en centros educativos (demo)",
-          "excerpt": "El IES La Costera y CECU han completado el primer piloto FP de la red, con 24 alumnos de ciclos formativos trabajando en un modelo de predicción de consumo energético. El módulo OER resultante ya está disponible en Aules.",
-          "category": "FP",
-          "sector": "Energía",
-          "partner": "CECU / IES La Costera",
-          "date": "20 Feb 2026",
-          "isOfficial": false
-        },
-        "news9": {
-          "title": "Sesión de formación docente sobre IA responsable en el aula con CEFIRE (demo)",
-          "excerpt": "CEFIRE Valencia ha iniciado la primera sesión de formación para docentes de FP sobre IA ética, prompt engineering y detección de sesgos. 18 docentes participantes de 5 centros de la Comunitat Valenciana.",
-          "category": "Form. Docente",
-          "sector": "Educación",
-          "partner": "CEFIRE / CECU",
-          "date": "05 Mar 2026",
-          "isOfficial": false
-        },
-        "news10": {
-          "title": "Sesión de validación de stakeholders: 3 retos agroalimentarios revisados en ConsensUE (demo)",
-          "excerpt": "La Red de Stakeholders celebró una sesión de validación en ConsensUE donde se revisaron 3 retos candidatos del sector agroalimentario, con participación de cooperativas, agtech y representantes CECU.",
-          "category": "Retos y Casos",
-          "sector": "Agroalimentario",
-          "partner": "CECU / AVA-ASAJA",
-          "date": "28 Feb 2026",
-          "isOfficial": false
-        }
-      },
-      "events": {
-        "event1": {
-          "dateNum": "15",
-          "dateMonth": "Jun",
-          "title": "Asamblea General de Socios AI-STEAM – Sesión 3",
-          "location": "Conselleria de Educació, Valencia",
-          "type": "Híbrido",
-          "register": true
-        },
-        "event2": {
-          "dateNum": "25",
-          "dateMonth": "Jun",
-          "title": "Webinar: Reglamento IA UE para Educadores",
-          "location": "Online (Zoom)",
-          "type": "Online",
-          "register": true
-        },
-        "event3": {
-          "dateNum": "10",
-          "dateMonth": "Jul",
-          "title": "Taller Sectorial: IA y Salud – Co-creación de Retos",
-          "location": "Hospital La Fe, Valencia",
-          "type": "Presencial",
-          "register": true
-        },
-        "event4": {
-          "dateNum": "18",
-          "dateMonth": "Sep",
-          "title": "Foro Anual AI-STEAM Network 2026",
-          "location": "Ciudad Politécnica de la Innovación, Valencia",
-          "type": "Presencial",
-          "register": false
-        },
-        "event5": {
-          "dateNum": "02",
-          "dateMonth": "Oct",
-          "title": "Apertura Máster AI-SECRETT – 2ª Edición",
-          "location": "Online (Aules)",
-          "type": "Online",
-          "register": false
-        },
-        "event6": {
-          "dateNum": "15",
-          "dateMonth": "Oct",
-          "title": "Hackathon AgroAI: IA para la Agricultura Sostenible",
-          "location": "ETSIAMN – UPV, Valencia",
-          "type": "Presencial",
-          "register": false
-        }
-      },
-      "newsDetail": {
-        "title": "La Conselleria de Educación participa en el lanzamiento del proyecto internacional AI SECRETT",
-        "date": "04 Oct 2024",
-        "author": "Gabinete de Prensa - GVA",
-        "category": "Stakeholders",
-        "hero_subtitle": "El proyecto AI SECRETT cuenta con una financiación de 7,2 millones de euros para liderar la transición ecológica, digital y social a través de la IA",
-        "intro": "La Conselleria de Educación, Cultura, Universidades y Empleo participa en el lanzamiento del proyecto internacional AI SECRETT, impulsado en España por la Universitat de València. El principal objetivo es alcanzar la transición ecológica, digital y social a través de la inteligencia artificial. El proyecto se enmarca en el Programa Europa Digital y busca conseguir 20 millones de especialistas TIC para 2030.",
-        "sections": [
-          {
-            "title": "Un consorcio internacional de gran escala",
-            "content": "El proyecto está respaldado por un consorcio de universidades, centros de investigación, pymes, autoridades del sector público y organizaciones culturales de 12 países de toda Europa. La Universitat de València es la encargada en España de dirigir esta iniciativa, que cuenta con una financiación de 7,2 millones de euros y será desarrollada durante cuatro años por un equipo coordinado por el profesor Pau Rausell."
-          },
-          {
-            "title": "La Red AI-STEAM: Disciplinas para el futuro",
-            "content": "La Conselleria de Educación es la encargada de desarrollar uno de los objetivos clave del programa: la creación de una red AI-STEAM. Esta red se centra en el desarrollo de la inteligencia artificial a través de las disciplinas de Ciencia, Tecnología, Ingeniería, Arte y Matemáticas (STEAM).\n\nDaniel McEvoy, secretario autonómico de Educación, ha subrayado la importancia de contar con un ordenamiento europeo común, como el Reglamento de Inteligencia Artificial, para afrontar este cambio revolucionario en el sector educativo."
-          },
-          {
-            "title": "Transformación digital y prácticas internacionales",
-            "content": "La jornada de presentación en el Monasterio de San Miguel de los Reyes contó con ponentes de Suecia, Bosnia y Herzegovina e Italia, quienes expusieron buenas prácticas de la IA a nivel internacional. Armando Martí, subdirector general de Innovación, describió el proceso de transformación digital en el sistema educativo valenciano, mientras que Mercedes Castro presentó la web oficial de la red AI-STEAM."
-          }
-        ],
-        "cta_button": "Leer nota oficial",
-        "cta_link": "https://comunica.gva.es/es/detalle?id=398519709&site=373430869",
-        "related_news": [
-          "Hackathon \"Green AI\" 2026: 50 equipos abordan el cambio climático con Inteligencia Artificial",
-          "La red AI-STEAM presenta resultados en el European AI Forum de Bruselas",
-          "Acuerdo de adhesión con AVA-ASAJA: la mayor cooperativa agrícola valenciana se une a la red"
-        ]
-      }
+      "newsItems": {},
+      "events": {}
     },
     "marketplace": {
       "title": "Contribuciones del Ecosistema",
@@ -1710,9 +1440,6 @@ export const translations = {
       "relatedChallenge": "Contribución relacionada",
       "publishChallenge": "Proponer contribución",
       "publishNew": "Proponer un reto, caso o contribución",
-      "shareChallenge": "Este formulario reproduce, solo como demo, el flujo de propuesta de contribuciones de la red AI-STEAM.",
-      "consensueDemoTitle": "Demo del flujo en ConsensUE",
-      "consensueDemoNote": "En la plataforma real, las propuestas se presentarán en ConsensUE y estarán disponibles únicamente para miembros del consorcio AI-SECRETT y stakeholders adheridos a la AI-STEAM Network. Este formulario se mantiene aquí solo para mostrar el tipo de información que se solicitaría.",
       "openChallenges": "Abiertas",
       "inProgressChallenges": "En Proceso",
       "resolvedChallenges": "Completadas",
@@ -2202,7 +1929,6 @@ export const translations = {
       "stakeholderTypesLabel": "Stakeholders who can participate",
       "teacherRelevanceLabel": "Didactic application for teacher training",
       "exampleChallengeLabel": "Featured evidence",
-      "demoLabel": "demo",
       "transferChainTitle": "Sector transfer route",
       "transferChainLabels": {
         "stakeholderNeed": "Detected sector needs",
@@ -2485,12 +2211,6 @@ export const translations = {
       "trainingPaths": "Transfer Pathways",
       "fpPath": "VET Pathway – CECU",
       "masterPath": "AiSECRETT Extracurricular activities (Track A)",
-      "fpPathSteps": [
-        "Upper Secondary VET Cycle (CFGS)",
-        "AI-STEAM specialisation subject (Aules)",
-        "Cross-subject project with ecosystem challenge",
-        "Student evidence portfolio"
-      ],
       "masterPathSteps": [
         "Ecosystem case or challenge candidate for Track A",
         "Curriculum relevance validation by UVEG",
@@ -2498,64 +2218,7 @@ export const translations = {
         "Transfer session or guest lecture",
         "Adoption evidence contributed to AiSECRETT"
       ],
-      "courses": {
-        "course1": {
-          "title": "Artificial Intelligence Applied to Industry 4.0",
-          "desc": "VET specialisation subject. Predictive maintenance, computer vision and digital twins with real ecosystem cases.",
-          "level": "FP",
-          "sector": "Industria",
-          "status": "Activo"
-        },
-        "course2": {
-          "title": "Machine Learning for Clinical Diagnosis",
-          "desc": "Advanced module — candidate for Track A bridge. CNN applied to radiology, clinical NLP and decision support systems.",
-          "level": "Máster",
-          "sector": "Salud",
-          "status": "Activo"
-        },
-        "course3": {
-          "title": "Ethical AI and Responsible Use in the Classroom",
-          "desc": "Teacher training for VET. AI fundamentals, prompt engineering, bias detection and ethical use in educational contexts. Available on Aules.",
-          "level": "Docentes",
-          "sector": "Educación",
-          "status": "Activo"
-        },
-        "course4": {
-          "title": "Precision Agriculture with AI and Drones",
-          "desc": "VET subject. Autonomous flights, multispectral analysis and smart irrigation. Field practice with real sensors.",
-          "level": "FP",
-          "sector": "Agroalimentario",
-          "status": "Activo"
-        },
-        "course5": {
-          "title": "Digital Twins and Simulation for Industry",
-          "desc": "Track A bridge candidate. Digital twins in industrial environments: SCADA, IIoT and edge computing.",
-          "level": "Máster",
-          "sector": "Industria",
-          "status": "Activo"
-        },
-        "course6": {
-          "title": "Environmental Monitoring with IoT and AI",
-          "desc": "VET subject. Environmental sensors, time series and automated alerts. Real watershed and air quality cases.",
-          "level": "FP",
-          "sector": "Medio Ambiente",
-          "status": "Activo"
-        },
-        "course7": {
-          "title": "Generative AI for Cultural Heritage and Tourism",
-          "desc": "Track A bridge candidate. Diffusion models and NLP for virtual museums and digital restoration.",
-          "level": "Máster",
-          "sector": "Turismo y Cultura",
-          "status": "Próximamente"
-        },
-        "course8": {
-          "title": "E-Government and AI for the Public Sector",
-          "desc": "Teacher training and civil servants. AI in public services, citizen chatbots and EU AI regulation. Available on Aules.",
-          "level": "Docentes",
-          "sector": "Administración",
-          "status": "Activo"
-        }
-      },
+      "courses": {},
       "levelLabels": {
         "FP": "VET",
         "Máster": "Track A Bridge",
@@ -2587,7 +2250,6 @@ export const translations = {
       "title": "Knowledge Transfer",
       "subtitle": "Repository of OER, transfer cases, pilot evidence and templates",
       "description": "OER resources, transfer cases, pilot evidence and useful templates for stakeholders, VET, teacher training and academic bridges.",
-      "demoNotice": "Resources, cases, evidence records and download counts are prototype demo content. Figures are indicative — they do not represent official AI-SECRETT results.",
       "tabFlow": "Transfer Cycle",
       "tabOER": "OER Resources",
       "tabCases": "Transfer Cases",
@@ -2642,15 +2304,12 @@ export const translations = {
       "oerRoute": "Route:",
       "oerValidation": "Validation:",
       "casesTitle": "Transfer Cases",
-      "casesDesc": "Challenges and contributions converted into Track B transfer evidence. Data is prototype demo content and does not represent official AI-SECRETT outcomes.",
       "casesSolved": "Transferred",
       "casesViewFull": "View full case",
       "casesDownloadResources": "Download resources",
       "casesRoute": "Route:",
       "casesEvidence": "Evidence:",
       "evidenceTitle": "Pilot Evidence",
-      "evidenceDesc": "Record of pilot activities carried out under the AI-STEAM Network. All indicators are prototype demo content — they do not represent official AI-SECRETT deliverables.",
-      "evidenceDemoLabel": "Demo indicator",
       "evidenceSector": "Sector:",
       "evidenceRoute": "Route:",
       "evidenceStatus": "Status:",
@@ -2708,7 +2367,6 @@ export const translations = {
         }
       ],
       "statsOER": "OER Resources",
-      "statsDownloads": "Total Downloads (demo)",
       "oerResources": [
         {
           "id": "o1",
@@ -3187,36 +2845,6 @@ export const translations = {
             ]
           }
         ],
-        "operatingFlow": {
-          "title": "Operating flow from Track B to evidence",
-          "desc": "The flow shows how CECU can turn network participation into auditable evidence without presenting demo indicators as real results.",
-          "steps": [
-            {
-              "title": "Input",
-              "desc": "A stakeholder, ENRED or education centre contributes a need, case or proposal."
-            },
-            {
-              "title": "Classification",
-              "desc": "It is classified by AI-SECRETT sector and route: VET, teacher, resource, pilot or academic bridge."
-            },
-            {
-              "title": "Validation",
-              "desc": "Relevance is checked in Track B and, where appropriate, routed to Track A academic bodies."
-            },
-            {
-              "title": "Activity",
-              "desc": "An activity, OER resource, debate, pilot or documented case is produced."
-            },
-            {
-              "title": "Evidence",
-              "desc": "Indicators, ConsensUE traces, resources, surveys and participation are recorded."
-            },
-            {
-              "title": "Tracking",
-              "desc": "Evidence feeds continuous improvement and the public story of network evolution."
-            }
-          ]
-        },
         "platformsTitle": "The Three Platforms in the LbD Flow",
         "platformsDesc": "Each platform has a specific role. Content flows from ecosystem to learning.",
         "platforms": [
@@ -3382,11 +3010,8 @@ export const translations = {
     "news": {
       "title": "News and Events",
       "subtitle": "News and updates from AI-STEAM Network and AI-SECRETT",
-      "description": "Communication channel of the AI-STEAM network for stakeholders, VET centres, teachers and AI-SECRETT consortium partners. News marked as (demo) are prototype content and do not represent official communications.",
       "subscribeButton": "Subscribe to Newsletter",
-      "demoDisclaimer": "📌 Prototype demo content. News not marked as official is fictional and does not represent real AI-SECRETT results or those of its partners.",
       "officialBadge": "Official",
-      "demoBadge": "Demo",
       "categoryAll": "All",
       "categoryENRED": "ENRED",
       "categoryFPVET": "VET",
@@ -3414,176 +3039,8 @@ export const translations = {
         "youtube": "YouTube – AI-STEAM Channel",
         "substack": "Substack – Articles and Papers"
       },
-      "newsItems": {
-        "news1": {
-          "title": "The Ministry of Education joins the launch of the international project AI SECRETT endowed with €7.2M",
-          "excerpt": "Led by the University of Valencia, the project aims for ecological and digital transition through AI training and the creation of the AI-STEAM network across 12 countries.",
-          "category": "Stakeholders",
-          "partner": "UVEG / CECU",
-          "date": "Oct 4, 2024",
-          "featured": true,
-          "isOfficial": true
-        },
-        "news2": {
-          "title": "Hackathon \"Green AI\" 2026: 50 teams tackle climate change with Artificial Intelligence (demo)",
-          "excerpt": "More than 50 multidisciplinary teams of VET and Master students competed for 48 hours at the Polytechnic City of Innovation. The winning team developed a drought prediction model for the Júcar basin.",
-          "category": "Events",
-          "sector": "Energy and Environment",
-          "partner": "UVEG / UPV / CECU",
-          "date": "Apr 2, 2026",
-          "isOfficial": false
-        },
-        "news3": {
-          "title": "CECU Publishes New Specialization Course in AI for VET Cycles",
-          "excerpt": "The Education Department launches the first Specialization Course in Artificial Intelligence and Automation, co-designed with AI-STEAM network partners for 15 professional families.",
-          "category": "VET",
-          "sector": "Education",
-          "partner": "CECU",
-          "date": "Mar 25, 2026",
-          "isOfficial": true
-        },
-        "news4": {
-          "title": "Digital Twins Manual v2.1 Published as OER Resource",
-          "excerpt": "INESC TEC and Hochschule Wismar publish the new version of the digital twins manual under CC-BY 4.0 license, with use cases in manufacturing, energy and logistics. Available on Aules.",
-          "category": "VET",
-          "sector": "Manufacturing",
-          "partner": "INESC TEC / HSW",
-          "date": "Mar 18, 2026",
-          "isOfficial": true
-        },
-        "news5": {
-          "title": "New validated challenge: AI for paediatric emergency triage (demo)",
-          "excerpt": "The paediatric triage challenge has been validated by the Stakeholder Network and classified as a Track A bridge candidate. Hospital La Fe participates as the proposing stakeholder.",
-          "category": "Challenges & Cases",
-          "sector": "Health",
-          "partner": "Hospital La Fe",
-          "date": "Mar 10, 2026",
-          "isOfficial": false
-        },
-        "news6": {
-          "title": "AVA-ASAJA joins the network: first Valencian agrifood stakeholder (demo)",
-          "excerpt": "AVA-ASAJA becomes the first agrifood sector stakeholder in Valencia to join the network, providing access to 12,000 hectares of crop data for precision agriculture challenges.",
-          "category": "Stakeholders",
-          "sector": "Agrifood",
-          "partner": "AVA-ASAJA",
-          "date": "Mar 1, 2026",
-          "isOfficial": false
-        },
-        "news7": {
-          "title": "ENRED & AI-STEAM Network workshop: 4 regional departments map AI training needs (demo)",
-          "excerpt": "Eleven representatives from regional education departments in Spain, Italy, Norway and Croatia took part in a cooperation workshop to identify AI training needs. The results will feed the shared thematic agenda connecting ENRED and AI-STEAM Network.",
-          "category": "ENRED",
-          "partner": "CECU / ENRED / KEA",
-          "date": "Mar 14, 2026",
-          "isOfficial": false
-        },
-        "news8": {
-          "title": "VET pilot completed: AI for energy efficiency in education centres (demo)",
-          "excerpt": "IES La Costera and CECU have completed the network's first VET pilot, with 24 vocational students working on an energy consumption prediction model. The resulting OER resource is now available on Aules.",
-          "category": "VET",
-          "sector": "Energy",
-          "partner": "CECU / IES La Costera",
-          "date": "Feb 20, 2026",
-          "isOfficial": false
-        },
-        "news9": {
-          "title": "Teacher training session on responsible AI in the classroom with CEFIRE (demo)",
-          "excerpt": "CEFIRE Valencia has launched the network's first teacher training session on ethical AI, prompt engineering and bias detection. 18 teachers participating from 5 centres in the Valencian Community.",
-          "category": "Teacher Training",
-          "sector": "Education",
-          "partner": "CEFIRE / CECU",
-          "date": "Mar 5, 2026",
-          "isOfficial": false
-        },
-        "news10": {
-          "title": "Stakeholder validation session: 3 agrifood challenges reviewed in ConsensUE (demo)",
-          "excerpt": "The Stakeholder Network held a validation session on ConsensUE reviewing 3 candidate challenges from the agrifood sector, with participation from cooperatives, agtech companies and CECU representatives.",
-          "category": "Challenges & Cases",
-          "sector": "Agrifood",
-          "partner": "CECU / AVA-ASAJA",
-          "date": "Feb 28, 2026",
-          "isOfficial": false
-        }
-      },
-      "events": {
-        "event1": {
-          "dateNum": "15",
-          "dateMonth": "Jun",
-          "title": "AI-STEAM Partners General Assembly – Session 3",
-          "location": "Education Department, Valencia",
-          "type": "Hybrid",
-          "register": true
-        },
-        "event2": {
-          "dateNum": "25",
-          "dateMonth": "Jun",
-          "title": "Webinar: EU AI Regulation for Educators",
-          "location": "Online (Zoom)",
-          "type": "Online",
-          "register": true
-        },
-        "event3": {
-          "dateNum": "10",
-          "dateMonth": "Jul",
-          "title": "Sectorial Workshop: AI and Health – Challenge Co-creation",
-          "location": "Hospital La Fe, Valencia",
-          "type": "In-person",
-          "register": true
-        },
-        "event4": {
-          "dateNum": "18",
-          "dateMonth": "Sep",
-          "title": "AI-STEAM Network Annual Forum 2026",
-          "location": "Polytechnic City of Innovation, Valencia",
-          "type": "In-person",
-          "register": false
-        },
-        "event5": {
-          "dateNum": "02",
-          "dateMonth": "Oct",
-          "title": "Master AI-SECRETT Opening – 2nd Edition",
-          "location": "Online (Aules)",
-          "type": "Online",
-          "register": false
-        },
-        "event6": {
-          "dateNum": "15",
-          "dateMonth": "Oct",
-          "title": "AgroAI Hackathon: AI for Sustainable Agriculture",
-          "location": "ETSIAMN – UPV, Valencia",
-          "type": "In-person",
-          "register": false
-        }
-      },
-      "newsDetail": {
-        "title": "The Ministry of Education participates in the launch of the international project AI SECRETT",
-        "date": "Oct 4, 2024",
-        "author": "GVA Press Office",
-        "category": "Stakeholders",
-        "hero_subtitle": "The AI SECRETT project has €7.2 million in funding to lead the ecological, digital, and social transition through AI",
-        "intro": "The Department of Education, Culture, Universities, and Employment participates in the launch of the international project AI SECRETT, led in Spain by the University of Valencia. The main objective is to achieve a green, digital, and social transition through artificial intelligence. The project is part of the Digital Europe Program and aims to achieve 20 million ICT specialists by 2030.",
-        "sections": [
-          {
-            "title": "A large-scale international consortium",
-            "content": "The project is backed by a consortium of universities, research centers, SMEs, public sector authorities, and cultural organizations from 12 countries across Europe. The University of Valencia is responsible for directing this initiative in Spain, which has €7.2 million in funding and will be developed over four years by a team coordinated by Professor Pau Rausell."
-          },
-          {
-            "title": "The AI-STEAM Network: Disciplines for the future",
-            "content": "The Ministry of Education is responsible for developing one of the key objectives of the program: the creation of an AI-STEAM network. This network focuses on the development of artificial intelligence through the disciplines of Science, Technology, Engineering, Art, and Mathematics (STEAM).\n\nDaniel McEvoy, regional secretary of Education, highlighted the importance of having a common European legal framework, such as the Artificial Intelligence Regulation, to face this revolutionary change in the education sector."
-          },
-          {
-            "title": "Digital transformation and international practices",
-            "content": "The presentation day at the Monastery of San Miguel de los Reyes featured speakers from Sweden, Bosnia and Herzegovina, and Italy, who shared international best practices in AI. Armando Martí, deputy general director for Innovation, described the digital transformation process in the Valencian education system, while Mercedes Castro presented the official website of the AI-STEAM network."
-          }
-        ],
-        "cta_button": "Read official press release",
-        "cta_link": "https://comunica.gva.es/es/detalle?id=398519709&site=373430869",
-        "related_news": [
-          "Hackathon \"Green AI\" 2026: 50 teams tackle climate change with Artificial Intelligence",
-          "AI-STEAM Network Presents Results at European AI Forum in Brussels",
-          "Membership Agreement with AVA-ASAJA: Valencian Agricultural Cooperative Joins Network"
-        ]
-      }
+      "newsItems": {},
+      "events": {}
     },
     "marketplace": {
       "title": "Ecosystem Contributions",
@@ -3617,9 +3074,6 @@ export const translations = {
       "relatedChallenge": "Related contribution",
       "publishChallenge": "Propose contribution",
       "publishNew": "Propose a challenge, case or contribution",
-      "shareChallenge": "This form reproduces, as a demo only, the AI-STEAM network contribution proposal flow.",
-      "consensueDemoTitle": "Demo of the ConsensUE flow",
-      "consensueDemoNote": "In the real platform, proposals will be submitted through ConsensUE and will be available only to AI-SECRETT consortium members and stakeholders formally joined to the AI-STEAM Network. This form is kept here only to show the kind of information that would be requested.",
       "openChallenges": "Open",
       "inProgressChallenges": "In Progress",
       "resolvedChallenges": "Completed",
@@ -4109,7 +3563,6 @@ export const translations = {
       "stakeholderTypesLabel": "Stakeholders que poden participar",
       "teacherRelevanceLabel": "Aplicació didàctica per a formació docent",
       "exampleChallengeLabel": "Evidència destacada",
-      "demoLabel": "demo",
       "transferChainTitle": "Ruta de transferència del sector",
       "transferChainLabels": {
         "stakeholderNeed": "Necessitats sectorials detectades",
@@ -4375,12 +3828,6 @@ export const translations = {
       "trainingPaths": "Itineraris Formatius",
       "fpPath": "Itinerari FP – CECU",
       "masterPath": "Activitats extracurriculars AiSECRETT",
-      "fpPathSteps": [
-        "Cicle Formatiu de Grau Superior (CFGS)",
-        "Curs d'especialització AI-STEAM (demo)",
-        "FCT amb empresa de la xarxa",
-        "Accés al Màster AI-SECRETT (pont)"
-      ],
       "masterPathSteps": [
         "Admissió (grau universitari o FP + pont)",
         "Mòduls temàtics per sector (60 ECTS)",
@@ -4388,64 +3835,7 @@ export const translations = {
         "Pràctiques internacionals amb soci UE",
         "Certificació TÜV + Credencial Digital Europea (pilot)"
       ],
-      "courses": {
-        "course1": {
-          "title": "Intel·ligència Artificial Aplicada a la Indústria 4.0 (demo)",
-          "desc": "Curs d'especialització per a tècnics de FP. Abarca manteniment predictiu, visió artificial i bessons digitals amb casos pràctics reals d'empreses de la xarxa.",
-          "level": "FP",
-          "sector": "Industria",
-          "status": "Activo"
-        },
-        "course2": {
-          "title": "Machine Learning per a Diagnòstic Clínic (demo)",
-          "desc": "Mòdul avançat del Màster AI-SECRETT. Xarxes neuronals convolucionals aplicades a radiologia, PLN clínic i sistemes de suport a la decisió mèdica.",
-          "level": "Máster",
-          "sector": "Salud",
-          "status": "Activo"
-        },
-        "course3": {
-          "title": "IA Ètica i Ús Responsable a l'Aula (demo)",
-          "desc": "Formació per a docents de FP i secundària. Fonaments d'IA, enginyeria de prompts, detecció de biaix i guies d'ús ètic de ferramentes IA en el context educatiu.",
-          "level": "Docentes",
-          "sector": "Educación",
-          "status": "Activo"
-        },
-        "course4": {
-          "title": "Agricultura de Precisió amb IA i Drons (demo)",
-          "desc": "Programació de vols autònoms, anàlisi multiespectral amb ML i sistemes de riego intel·ligent. Inclou pràctiques en camp amb sensors reals.",
-          "level": "FP",
-          "sector": "Agroalimentario",
-          "status": "Activo"
-        },
-        "course5": {
-          "title": "Bessons Digitals i Simulació per a la Indústria (demo)",
-          "desc": "Modelatge, simulació i anàlisi de bessons digitals en entorns industrials. Integració amb sistemes SCADA, IIoT i plataformes d'edge computing.",
-          "level": "Máster",
-          "sector": "Industria",
-          "status": "Activo"
-        },
-        "course6": {
-          "title": "Monitorització Ambiental amb IoT i IA (demo)",
-          "desc": "Xarxes de sensors ambientals, processament de sèries temporals i alertes automàtiques. Cases reals de monitorització de conques hidrogràfiques i qualitat de l'aire.",
-          "level": "FP",
-          "sector": "Medio Ambiente",
-          "status": "Activo"
-        },
-        "course7": {
-          "title": "IA Generativa per a Patrimoni Cultural i Turisme (demo)",
-          "desc": "Models de difusió, síntesi de veu i llenguatge natural aplicats a museus virtuals, guies turístiques IA i restauració digital de patrimoni.",
-          "level": "Máster",
-          "sector": "Turismo y Cultura",
-          "status": "Próximamente"
-        },
-        "course8": {
-          "title": "Administració Electrònica i IA per al Sector Públic (demo)",
-          "desc": "Automatització de tràmits, chatbots ciutadans, dades obertes i reglament europeu de IA aplicat als serveis públics. Dirigit a funcionaris i docents.",
-          "level": "Docentes",
-          "sector": "Administración",
-          "status": "Activo"
-        }
-      },
+      "courses": {},
       "levelLabels": {
         "FP": "FP",
         "Máster": "Pont Track A",
@@ -4479,7 +3869,6 @@ export const translations = {
       "title": "Transferència de Coneixement",
       "subtitle": "Repositori de recursos OER, casos de transferència, evidències i plantilles",
       "description": "Recursos OER, casos de transferència, evidències de pilot i plantilles útils per a stakeholders, FP, formació docent i ponts acadèmics.",
-      "demoNotice": "Els recursos, casos, evidències i descarregues són contingut demo del prototipus. Les xifres són indicatives — no representen resultats reals d'AI-SECRETT.",
       "tabFlow": "Cicle de Transferència",
       "tabOER": "Recursos OER",
       "tabCases": "Casos de Transferència",
@@ -4532,15 +3921,12 @@ export const translations = {
       "oerRoute": "Ruta:",
       "oerValidation": "Validació:",
       "casesTitle": "Casos de Transferència",
-      "casesDesc": "Reptes i contribucions convertits en evidència de transferència Track B. Les dades són contingut demo del prototipus i no representen resultats oficials d'AI-SECRETT.",
       "casesSolved": "Transferit",
       "casesViewFull": "Veure cas sencer",
       "casesDownloadResources": "Descarregar recursos",
       "casesRoute": "Ruta:",
       "casesEvidence": "Evidència:",
       "evidenceTitle": "Evidències de Pilot",
-      "evidenceDesc": "Registre d'activitats pilot realitzades en el marc de AI-STEAM Network. Tots els indicadors són contingut demo del prototipus — no representen lliurables oficials d'AI-SECRETT.",
-      "evidenceDemoLabel": "Indicador demo",
       "evidenceSector": "Sector:",
       "evidenceRoute": "Ruta:",
       "evidenceStatus": "Estat:",
@@ -4598,7 +3984,6 @@ export const translations = {
         }
       ],
       "statsOER": "Recursos OER",
-      "statsDownloads": "Descarregues Totals (demo)",
       "oerResources": [
         {
           "id": "o1",
@@ -5077,36 +4462,6 @@ export const translations = {
             ]
           }
         ],
-        "operatingFlow": {
-          "title": "Flux operatiu de Track B a evidències",
-          "desc": "El recorregut mostra com CECU pot convertir participació de xarxa en evidències auditables sense presentar indicadors demo com a resultats reals.",
-          "steps": [
-            {
-              "title": "Input",
-              "desc": "Un stakeholder, ENRED o centre educatiu aporta una necessitat, cas o proposta."
-            },
-            {
-              "title": "Classificació",
-              "desc": "Es classifica per sector AI-SECRETT i ruta: FP, docent, recurs, pilot o pont acadèmic."
-            },
-            {
-              "title": "Validació",
-              "desc": "La rellevància es contrasta en Track B i, si escau, es deriva a òrgans acadèmics Track A."
-            },
-            {
-              "title": "Activitat",
-              "desc": "Es genera activitat, recurs OER, debat, pilot o cas documentat."
-            },
-            {
-              "title": "Evidència",
-              "desc": "Es registren indicadors, traces ConsensUE, recursos, enquestes i participació."
-            },
-            {
-              "title": "Seguiment",
-              "desc": "L'evidència alimenta la millora contínua i el relat públic d'evolució de la xarxa."
-            }
-          ]
-        },
         "platformsTitle": "Les Tres Plataformes en el Flux LbD",
         "platformsDesc": "Cada plataforma té un rol específic. El contingut fluïx de l'ecosistema a l'aprenentatge.",
         "platforms": [
@@ -5272,11 +4627,8 @@ export const translations = {
     "news": {
       "title": "Actualitat i Agenda",
       "subtitle": "Notícies, events i novetats de la xarxa AI-STEAM i AI-SECRETT",
-      "description": "Canal de comunicació de la xarxa AI-STEAM per a stakeholders, centres FP, docents i socis del consorci AI-SECRETT. Les notícies marcades com a (demo) són contingut prototipus i no representen comunicats oficials.",
       "subscribeButton": "Subscriu-te al butlletí",
-      "demoDisclaimer": "📌 Contingut demo del prototipus. Les notícies no marcades com a oficials són fictícies i no representen resultats reals d'AI-SECRETT ni dels seus socis.",
       "officialBadge": "Oficial",
-      "demoBadge": "Demo",
       "categoryAll": "Totes",
       "categoryENRED": "ENRED",
       "categoryFPVET": "FP",
@@ -5304,192 +4656,8 @@ export const translations = {
         "youtube": "YouTube – Canal AI-STEAM",
         "substack": "Substack – Articles i Papers"
       },
-      "newsItems": {
-        "news1": {
-          "title": "La Conselleria d'Educació participa en el llançament del projecte internacional AI SECRETT dotat amb 7,2 M€",
-          "excerpt": "Impulsat per la Universitat de València, el projecte busca la transició ecològica i digital mitjançant la formació en IA i la creació de la xarxa AI-STEAM en 12 països.",
-          "category": "Stakeholders",
-          "partner": "UVEG / CECU",
-          "date": "04 Oct 2024",
-          "featured": true,
-          "isOfficial": true
-        },
-        "news2": {
-          "title": "Hackathon \"Green AI\" 2026: 50 equips aborden el canvi climàtic amb Intel·ligència Artificial (demo)",
-          "excerpt": "Més de 50 equips multidisciplinars formats per estudiants de FP i Màster van competir durant 48 hores a la Ciutat Politècnica de la Innovació. L'equip guanyador va desenvolupar un model de predicció de sequeres per a la conca del Xúquer.",
-          "category": "Events",
-          "sector": "Medi Ambient",
-          "partner": "UVEG / UPV / CECU",
-          "date": "02 Abr 2026",
-          "isOfficial": false
-        },
-        "news3": {
-          "title": "CECU publica el nou Curs d'Especialització en IA per a Cicles Formatius",
-          "excerpt": "La Conselleria d'Educació lança el primer Curs d'Especialització en Intel·ligència Artificial i Automatització, co-dissenyat amb els socis de la xarxa AI-STEAM per a 15 famílies professionals.",
-          "category": "FP",
-          "sector": "Educació",
-          "partner": "CECU",
-          "date": "25 Mar 2026",
-          "isOfficial": true
-        },
-        "news4": {
-          "title": "Publicat el Manual de Bessons Digitals v2.1 com a recurs OER",
-          "excerpt": "INESC TEC i Hochschule Wismar publiquen la nova versió del manual de bessons digitals sota llicència CC-BY 4.0, amb casos d'ús en manufactura, energia i logística. Ja disponible a Aules.",
-          "category": "FP",
-          "sector": "Indústria",
-          "partner": "INESC TEC / HSW",
-          "date": "18 Mar 2026",
-          "isOfficial": true
-        },
-        "news5": {
-          "title": "Nou repte validat: IA per a triatge d'urgències pediàtriques (demo)",
-          "excerpt": "El repte de triatge pediàtric ha sigut validat per la Xarxa de Stakeholders i classificat com a candidat a pont Track A. L'Hospital La Fe participa com a stakeholder proponent.",
-          "category": "Reptes i Casos",
-          "sector": "Salut",
-          "partner": "Hospital La Fe",
-          "date": "10 Mar 2026",
-          "isOfficial": false
-        },
-        "news6": {
-          "title": "AVA-ASAJA s'adhereix a la xarxa: primer stakeholder agroalimentari valencià (demo)",
-          "excerpt": "AVA-ASAJA es convertix en el primer stakeholder del sector agroalimentari valencià en adherir-se a la xarxa, aportant accés a 12.000 hectàrees de dades de cultius per a reptes d'agricultura de precisió.",
-          "category": "Stakeholders",
-          "sector": "Agroalimentari",
-          "partner": "AVA-ASAJA",
-          "date": "01 Mar 2026",
-          "isOfficial": false
-        },
-        "news7": {
-          "title": "Taller ENRED & AI-STEAM Network: 4 departaments regionals mapegen necessitats formatives en IA (demo)",
-          "excerpt": "Onze representants de departaments regionals d'educació d'Espanya, Itàlia, Noruega i Croàcia van participar en un taller de cooperació per a identificar necessitats formatives en IA. Els resultats nodriran l'agenda temàtica compartida entre ENRED i AI-STEAM Network.",
-          "category": "ENRED",
-          "partner": "CECU / ENRED / KEA",
-          "date": "14 Mar 2026",
-          "isOfficial": false
-        },
-        "news8": {
-          "title": "Pilot FP completat: IA per a eficiència energètica en centres educatius (demo)",
-          "excerpt": "L'IES La Costera i CECU han completat el primer pilot FP de la xarxa, amb 24 alumnes de cicles formatius treballant en un model de predicció de consum energètic. El mòdul OER resultant ja està disponible a Aules.",
-          "category": "FP",
-          "sector": "Energia",
-          "partner": "CECU / IES La Costera",
-          "date": "20 Feb 2026",
-          "isOfficial": false
-        },
-        "news9": {
-          "title": "Sessió de formació docent sobre IA responsable a l'aula amb CEFIRE (demo)",
-          "excerpt": "CEFIRE València ha iniciat la primera sessió de formació per a docents de FP sobre IA ètica, prompt engineering i detecció de biaix. 18 docents participants de 5 centres de la Comunitat Valenciana.",
-          "category": "Form. Docent",
-          "sector": "Educació",
-          "partner": "CEFIRE / CECU",
-          "date": "05 Mar 2026",
-          "isOfficial": false
-        },
-        "news10": {
-          "title": "Sessió de validació de stakeholders: 3 reptes agroalimentaris revisats en ConsensUE (demo)",
-          "excerpt": "La Xarxa de Stakeholders va celebrar una sessió de validació en ConsensUE on es van revisar 3 reptes candidats del sector agroalimentari, amb participació de cooperatives, agtech i representants CECU.",
-          "category": "Reptes i Casos",
-          "sector": "Agroalimentari",
-          "partner": "CECU / AVA-ASAJA",
-          "date": "28 Feb 2026",
-          "isOfficial": false
-        }
-      },
-      "events": {
-        "event1": {
-          "dateNum": "15",
-          "dateMonth": "Jun",
-          "title": "Assemblea General de Socis AI-STEAM – Sessió 3",
-          "location": "Conselleria d'Educació, València",
-          "type": "Híbrid",
-          "register": true
-        },
-        "event2": {
-          "dateNum": "25",
-          "dateMonth": "Jun",
-          "title": "Webinar: Reglament IA UE per a Educadors",
-          "location": "En línia (Zoom)",
-          "type": "En línia",
-          "register": true
-        },
-        "event3": {
-          "dateNum": "10",
-          "dateMonth": "Jul",
-          "title": "Taller Sectorial: IA i Salut – Co-creació de Reptes",
-          "location": "Hospital La Fe, València",
-          "type": "Presencial",
-          "register": true
-        },
-        "event4": {
-          "dateNum": "18",
-          "dateMonth": "Sep",
-          "title": "Fòrum Anual AI-STEAM Network 2026",
-          "location": "Ciutat Politècnica de la Innovació, València",
-          "type": "Presencial",
-          "register": false
-        },
-        "event5": {
-          "dateNum": "02",
-          "dateMonth": "Oct",
-          "title": "Obertura Màster AI-SECRETT – 2ª Edició",
-          "location": "En línia (Aules)",
-          "type": "En línia",
-          "register": false
-        },
-        "event6": {
-          "dateNum": "15",
-          "dateMonth": "Oct",
-          "title": "Hackathon AgroAI: IA per a l'Agricultura Sostenible",
-          "location": "ETSIAMN – UPV, València",
-          "type": "Presencial",
-          "register": false
-        }
-      },
-      "newsDetail": {
-        "title": "La Conselleria d'Educació participa en el llançament del projecte internacional AI SECRETT",
-        "date": "04 Oct 2024",
-        "author": "Gabinet de Premsa - GVA",
-        "category": "Stakeholders",
-        "hero_subtitle": "El projecte AI SECRETT compta amb un finançament de 7,2 milions d'euros per a liderar la transició ecològica, digital i social mitjançant la IA",
-        "intro": "La Conselleria d'Educació, Cultura, Universitats i Ocupació participa en el llançament del projecte internacional AI SECRETT, impulsat a Espanya per la Universitat de València. El principal objectiu és aconseguir la transició ecològica, digital i social mitjançant la intel·ligència artificial. El projecte s'emmarca en el Programa Europa Digital i busca aconseguir 20 milions d'especialistes TIC per a 2030.",
-        "sections": [
-          {
-            "title": "Un consorci internacional de gran escala",
-            "content": "El projecte està recolzat per un consorci d'universitats, centres de recerca, pimes, autoritats del sector públic i organitzacions culturals de 12 països de tota Europa. La Universitat de València és l'encarregada a Espanya de dirigir esta iniciativa, que compta amb un finançament de 7,2 milions d'euros i serà desenvolupada durant quatre anys per un equip coordinat pel professor Pau Rausell."
-          },
-          {
-            "title": "La Xarxa AI-STEAM: Disciplines per al futur",
-            "content": "La Conselleria d'Educació és l'encarregada de desenvolupar un dels objectius clau del programa: la creació d'una xarxa AI-STEAM. Esta xarxa se centra en el desenvolupament de la intel·ligència artificial a través de les disciplines de Ciència, Tecnologia, Enginyeria, Art i Matemàtiques (STEAM).\n\nDaniel McEvoy, secretari autonòmic d'Educació, ha subratllat la importància de comptar amb un ordenament europeu comú, com el Reglament de Intel·ligència Artificial, per a afrontar este canvi revolucionari en el sector educatiu."
-          },
-          {
-            "title": "Transformació digital i pràctiques internacionals",
-            "content": "La jornada de presentació al Monestir de Sant Miquel dels Reis va comptar amb ponents de Suècia, Bòsnia i Hercegovina i Itàlia, que van exposar bones pràctiques de la IA a nivell internacional. Armando Martí, subdirector general d'Innovació, va descriure el procés de transformació digital en el sistema educatiu valencià, mentre que Mercedes Castro va presentar la web oficial de la xarxa AI-STEAM."
-          },
-          {
-            "title": "Sectors d'actuació",
-            "content": "1. Agroalimentari\n2. Indústria i Manufactura\n3. Energia i Medi Ambient\n4. Mobilitat i Transport\n5. Indústries Culturals i Creatives\n6. Habitatge i Construcció Sostenible\n7. Servicis No Turístics (Sanitat, Administració, Educació)\n\nCada sector compta amb un grup de treball interdisciplinari format per acadèmics, professionals de la indústria i responsables de polítiques públiques que dissenya conjuntament els reptes i els mòduls formatius."
-          },
-          {
-            "title": "Primers compromisos: institucions i empreses ja s'adhereixin",
-            "content": "En sols tres mesos desde el seu anunci, la Xarxa AI-STEAM ha aconseguit acords d'adhesió amb més de 40 organitzacions europees:\n\n• AVA-ASAJA (Comunitat Valenciana): 12.000 hectàrees de dades agrícoles per a reptes d'agricultura de precisió\n• Municipis de València, Stuttgart i Porto: col·laboració en reptes de smart cities i transport urbà\n• Hospital La Fe (València): desenvolupament de ferramentes IA per a triatge i diagnòstic clínic\n• INESC TEC (Portugal): lideratge tècnic en bessons digitals per a indústria\n• Hochschule Wismar (Alemanya): integració de formació en IA en cicles de FP alemanys\n\n\"L'entusiasme ha superat les nostres expectatives\", comenta Isabel Ferrer, directora de CECU. \"No és un programa més. Es un moviment que està transformant com entenem l'educació tècnica a Europa\"."
-          },
-          {
-            "title": "Dades i xifres del llançament",
-            "content": "📊 23 socis del consorci de 12 països europeus\n📊 12 països participants (Espanya, Portugal, Itàlia, Alemanya, Suècia, Finlàndia, Bèlgica, Grècia, Croàcia, Noruega, França, Bòsnia i Hercegovina)\n📊 60+ mòduls formatius en desenvolupament\n📊 127 reptes i casos publicats al Banc de Reptes\n📊 7,2 milions d'euros de finançament EU\n📊 0 euros de cost per als stakeholders (Regla de Cost Zero)"
-          },
-          {
-            "title": "¿Com participar?",
-            "content": "La Xarxa AI-STEAM està oberta a noves adhesions:\n\n✓ Empreses, ONGs i administracions poden proposar reptes reals a través de ConsensUE\n✓ Estudiants de FP i Màster poden inscriure's en els mòduls disponibles a Aules\n✓ Docents de centres de FP poden accedir a recursos OER i formació d'actualització en IA\n✓ Responsables de polítiques educatives poden participar en el grup de treball ENRED"
-          }
-        ],
-        "cta_button": "Sol·licitar Adhesió a la Xarxa",
-        "cta_link": "#",
-        "related_news": [
-          "Hackathon \"Green AI\" 2026: 50 equips aborden el canvi climàtic amb Intel·ligència Artificial",
-          "La xarxa AI-STEAM presenta resultats al Fòrum Europeu d'IA de Brussel·les",
-          "Acord d'adhesió amb AVA-ASAJA: la major cooperativa agrícola valenciana s'uneix a la xarxa"
-        ]
-      }
+      "newsItems": {},
+      "events": {}
     },
     "marketplace": {
       "title": "Contribucions de l'Ecosistema",
@@ -5523,9 +4691,6 @@ export const translations = {
       "relatedChallenge": "Contribució relacionada",
       "publishChallenge": "Proposar contribució",
       "publishNew": "Proposar un repte, cas o contribució",
-      "shareChallenge": "Aquest formulari reprodueix, només com a demo, el flux de proposta de contribucions de la xarxa AI-STEAM.",
-      "consensueDemoTitle": "Demo del flux en ConsensUE",
-      "consensueDemoNote": "En la plataforma real, les propostes es presentaran en ConsensUE i estaran disponibles únicament per a membres del consorci AI-SECRETT i stakeholders adherits a l'AI-STEAM Network. Aquest formulari es manté ací només per mostrar el tipus d'informació que se sol·licitaria.",
       "openChallenges": "Obertes",
       "inProgressChallenges": "En Procés",
       "resolvedChallenges": "Completades",

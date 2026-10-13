@@ -42,10 +42,17 @@ test('competencias, itinerarios y pasos de la sección se conservan', () => {
 });
 
 test('los cursos llevan su código EXT y el nivel no cambia', () => {
-  const cursos = (TRAINING_CONFIG.coursesBlock?.courses || []).filter((c) => c.level === 'Máster');
-  assert.ok(cursos.length > 0);
-  for (const c of cursos) {
-    assert.match(c.code || '', /^EXT-2026-\d{3,}$/, `${c.id}: ${c.code}`);
+  // Estado de partida propio: un curso de Máster sintético con su código EXT, restaurado al acabar.
+  const courses = TRAINING_CONFIG.coursesBlock.courses;
+  const previos = courses.splice(0, courses.length, { id: 'curso-master-de-prueba', code: 'EXT-2026-001', level: 'Máster' });
+  try {
+    const cursos = courses.filter((c) => c.level === 'Máster');
+    assert.ok(cursos.length > 0);
+    for (const c of cursos) {
+      assert.match(c.code || '', /^EXT-2026-\d{3,}$/, `${c.id}: ${c.code}`);
+    }
+  } finally {
+    courses.splice(0, courses.length, ...previos);
   }
 });
 

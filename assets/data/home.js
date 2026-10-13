@@ -68,9 +68,9 @@ export const HOME_CONFIG = {
     "stats": [
       {
         "id": "stakeholders",
-        "value": 14,
+        "value": 0,
         "manualOverride": false,
-        "computedValue": 14,
+        "computedValue": 0,
         "icon": "users",
         "label": {
           "es": "Stakeholders",
@@ -80,9 +80,9 @@ export const HOME_CONFIG = {
       },
       {
         "id": "initiatives",
-        "value": 45,
+        "value": 0,
         "manualOverride": false,
-        "computedValue": 45,
+        "computedValue": 0,
         "icon": "zap",
         "label": {
           "es": "Iniciativas",
@@ -116,9 +116,9 @@ export const HOME_CONFIG = {
       },
       {
         "id": "totalCourses",
-        "value": 63,
+        "value": 0,
         "manualOverride": false,
-        "computedValue": 63,
+        "computedValue": 0,
         "icon": "layers",
         "label": {
           "es": "Cursos",
@@ -128,9 +128,9 @@ export const HOME_CONFIG = {
       },
       {
         "id": "openKnowledge",
-        "value": 15,
+        "value": 0,
         "manualOverride": false,
-        "computedValue": 15,
+        "computedValue": 0,
         "icon": "library",
         "label": {
           "es": "Recursos abiertos y toolkits",

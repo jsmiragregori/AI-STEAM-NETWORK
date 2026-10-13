@@ -130,9 +130,9 @@ export function render() {
             ${item.sector ? `<span class="flex items-center gap-1.5 text-sm text-gray-500 font-semibold"><i data-lucide="tag" class="w-3 h-3"></i>${esc(item.sector)}</span>` : ''}
           </div>
           <div class="flex items-center gap-2">
-            ${item.isOfficial !== undefined ? `
-              <span class="text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${item.isOfficial ? 'bg-eu-blue/5 text-eu-blue border border-eu-blue/10' : 'bg-eu-purple/5 text-eu-purple border border-eu-purple/10'}">
-                ${esc(item.isOfficial ? (newsT?.officialBadge || 'Oficial') : (newsT?.demoBadge || 'Demo'))}
+            ${item.isOfficial ? `
+              <span class="text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-wider bg-eu-blue/5 text-eu-blue border border-eu-blue/10">
+                ${esc(newsT?.officialBadge || 'Oficial')}
               </span>` : ''}
             <span class="text-sm text-gray-500 flex items-center gap-1.5"><i data-lucide="calendar" class="w-3.5 h-3.5"></i>${esc(item.date)}</span>
           </div>

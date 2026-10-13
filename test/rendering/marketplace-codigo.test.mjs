@@ -12,6 +12,8 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
+import { elementosDePrueba } from '../fixtures/marketplace-de-prueba.mjs';
+
 let lang = 'es';
 globalThis.localStorage = { getItem: (k) => (k === 'language' ? lang : null), setItem() {}, removeItem() {} };
 globalThis.document = {
@@ -25,6 +27,11 @@ globalThis.window = { location: { hash: '' }, addEventListener() {}, scrollTo() 
 const { MARKETPLACE_CONFIG } = await import('../../assets/data/marketplace.js');
 const { setState } = await import('../../assets/js/state.js');
 const vistas = await import('../../assets/js/views/index.js');
+
+// Estado de partida propio: dos elementos sintéticos por pestaña, en lugar de los del contenido real.
+const { items: elementosDePartida, itemsByTab: porPestana } = elementosDePrueba();
+MARKETPLACE_CONFIG.items = elementosDePartida;
+MARKETPLACE_CONFIG.itemsByTab = porPestana;
 
 const PREFIJO = { challenge: 'CHA', case: 'CAS', mentoring: 'MEN', pilot: 'PIL', validation: 'VAL' };
 const TABS = ['challenges', 'cases', 'mentorings', 'pilots', 'validations'];
