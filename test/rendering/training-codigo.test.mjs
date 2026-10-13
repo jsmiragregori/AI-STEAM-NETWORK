@@ -13,6 +13,8 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
+import { cursosDePrueba } from '../fixtures/cursos-de-prueba.mjs';
+
 const almacen = new Map();
 let lang = 'es';
 globalThis.localStorage = {
@@ -31,6 +33,9 @@ globalThis.window = { location: { hash: '' }, addEventListener() {}, scrollTo() 
 const { TRAINING_CONFIG } = await import('../../assets/data/training.js');
 const { setState } = await import('../../assets/js/state.js');
 const vistas = await import('../../assets/js/views/index.js');
+
+// Estado de partida propio: dos cursos sintéticos por nivel, en lugar de los del contenido real.
+TRAINING_CONFIG.coursesBlock.courses = cursosDePrueba(TRAINING_CONFIG.coursesBlock);
 
 const ETIQUETA = {
   es: { internal: 'Código AiSTEAM', external: 'Código de la formación' },
