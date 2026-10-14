@@ -28,7 +28,7 @@ export const SECTORS_CONFIG = {
       {
         "id": "initiatives",
         "icon": "Zap",
-        "value": "0",
+        "value": "3",
         "label": {
           "es": "Iniciativas",
           "en": "Initiatives",
@@ -1650,7 +1650,7 @@ export const SECTORS_CONFIG = {
         "va": "De les necessitats residencials i urbanes a competències FP, aplicació didàctica, evidència d'edifici i connexió acadèmica."
       },
       "stats": {
-        "initiatives": 0,
+        "initiatives": 1,
         "stakeholders": 0,
         "courses": 0
       },
@@ -1658,7 +1658,7 @@ export const SECTORS_CONFIG = {
         {
           "id": "initiatives",
           "icon": "Zap",
-          "value": 0,
+          "value": 1,
           "label": {
             "es": "Iniciativas",
             "en": "Initiatives",
@@ -1856,15 +1856,32 @@ export const SECTORS_CONFIG = {
           "found": true
         }
       ],
-      "relatedContent": [],
+      "relatedContent": [
+        {
+          "id": "PIL-2026-003",
+          "type": "pilot",
+          "title": {
+            "es": "CENTINELA+: cuando el propio instituto se convierte en el mejor laboratorio",
+            "en": "CENTINELA+: When the School Itself Becomes the Ultimate Lab",
+            "va": "CENTINELA+: quan el mateix institut es converteix en el millor laboratori"
+          },
+          "summary": {
+            "es": "El IES Dr. Lluís Simarro (Xàtiva) ha convertido su propio centro en un laboratorio real de IA e IoT para el alumnado del Curso de Especialización en IA y Big Data. Mediante sensórica en 34 espacios conectada a una cadena open source (MQTT, InfluxDB, Grafana, MLOps), el alumnado entrena modelos predictivos, detección de anomalías y asistentes RAG. Destaca por su alta transferibilidad: es un patrón por aula replicable, de código abierto e incluye un generador público de datos sintéticos para empezar sin instalar sensores.",
+            "en": "IES Dr. Lluís Simarro (Xàtiva) has turned its facility into a real-world AI and IoT lab for students in the AI & Big Data Specialization Course. Using IoT sensors across 34 spaces connected to an open-source stack (MQTT, InfluxDB, Grafana, MLOps), students train predictive models, anomaly detection, and RAG assistants. It stands out for its high transferability: a replicable classroom pattern, 100% open-source, and equipped with a public synthetic data generator allowing any school to start without hardware sensors.",
+            "va": "L'IES Dr. Lluís Simarro (Xàtiva) ha transformat el seu centre en un laboratori real d'IA i IoT per a l'alumnat del Curs d'Especialització en IA i Big Data. Mitjançant sensòrica en 34 espais connectada a un stack de codi obert (MQTT, InfluxDB, Grafana, MLOps), l'alumnat entrena models predictius, detecció d'anomalies i assistents RAG. Destaca per la seua alta transferibilitat: és un patró replicable per aula, 100% obert i inclou un generador de dades sintètiques perquè qualsevol centre pugues començar sense instal·lar sensors."
+          },
+          "status": "in-progress",
+          "targetRoute": "marketplace"
+        }
+      ],
       "navigationTargets": {
         "marketplace": {
-          "enabled": false,
+          "enabled": true,
           "targetRoute": "marketplace",
           "filters": {
             "sector": "hou"
           },
-          "count": 0
+          "count": 1
         },
         "training": {
           "enabled": false,
@@ -1887,7 +1904,7 @@ export const SECTORS_CONFIG = {
         }
       },
       "emptyFlags": {
-        "hasRelatedContent": false,
+        "hasRelatedContent": true,
         "hasCourses": false,
         "hasStakeholders": false,
         "hasEvidenceCase": false,
@@ -1918,7 +1935,7 @@ export const SECTORS_CONFIG = {
         "va": "De les necessitats de servicis i administració a competències FP, ús formatiu, evidència aplicada i connexió acadèmica."
       },
       "stats": {
-        "initiatives": 0,
+        "initiatives": 2,
         "stakeholders": 0,
         "courses": 0
       },
@@ -1926,7 +1943,7 @@ export const SECTORS_CONFIG = {
         {
           "id": "initiatives",
           "icon": "Zap",
-          "value": 0,
+          "value": 2,
           "label": {
             "es": "Iniciativas",
             "en": "Initiatives",
@@ -2124,15 +2141,48 @@ export const SECTORS_CONFIG = {
           "found": true
         }
       ],
-      "relatedContent": [],
+      "relatedContent": [
+        {
+          "id": "CAS-2026-001",
+          "type": "case",
+          "title": {
+            "es": "LARA - Proyecto Formativo de Investigación e Innovación Aplicada en FP",
+            "en": "LARA - Applied Research and Innovation Project in VET",
+            "va": "LARA - Projecte Formatiu d'Investigació i Innovació Aplicada en FP"
+          },
+          "summary": {
+            "es": "Solución tecnológica que dota de autonomía comunicativa a personas con trastornos del habla. Combina una app de captura de voz para crear un dataset fonético con un modelo de IA que reconoce y traduce el habla en tiempo real, mostrando el texto en pantalla y narrándolo en voz alta para facilitar la comprensión.",
+            "en": "Technological solution providing communicative autonomy to people with speech disorders. It combines a voice capture app to create a phonetic dataset with an AI model that recognizes and translates speech in real time, displaying the text on screen and narrating it aloud to facilitate understanding.",
+            "va": "Solució tecnològica que dota d'autonomia comunicativa persones amb trastorns de la parla. Combina una aplicació de captura de veu per a crear un dataset fonètic amb un model d'IA que reconeix i tradueix la parla en temps real, mostrant el text en pantalla i narrant-lo en veu alta per a facilitar la comprensió."
+          },
+          "status": "published",
+          "targetRoute": "marketplace"
+        },
+        {
+          "id": "CHA-2026-002",
+          "type": "challenge",
+          "title": {
+            "es": "Cómo evaluar al estudiante y no a la IA en un examen",
+            "en": "How to assess the student, not the AI, in an exam",
+            "va": "Com avaluar l'estudiant i no la IA en un examen"
+          },
+          "summary": {
+            "es": "Este reto busca diseñar y validar actividades de evaluación en las que el uso de IA esté permitido, pero en las que la calificación refleje las competencias, el razonamiento y la capacidad crítica del estudiante, y no únicamente la calidad de las respuestas generadas por la herramienta.",
+            "en": "This challenge aims to design and validate assessment activities in which the use of AI is permitted, but where grading reflects the student's skills, reasoning, and critical thinking abilities, rather than solely the quality of the responses generated by the tool.",
+            "va": "Este repte busca dissenyar i validar activitats d'avaluació en les quals l'ús de la IA siga permés, però en les quals la qualificació reflectisca les competències, el raonament i la capacitat crítica de l'estudiantat, i no únicament la qualitat de les respostes generades per l'eina."
+          },
+          "status": "open",
+          "targetRoute": "marketplace"
+        }
+      ],
       "navigationTargets": {
         "marketplace": {
-          "enabled": false,
+          "enabled": true,
           "targetRoute": "marketplace",
           "filters": {
             "sector": "nts"
           },
-          "count": 0
+          "count": 2
         },
         "training": {
           "enabled": false,
@@ -2155,7 +2205,7 @@ export const SECTORS_CONFIG = {
         }
       },
       "emptyFlags": {
-        "hasRelatedContent": false,
+        "hasRelatedContent": true,
         "hasCourses": false,
         "hasStakeholders": false,
         "hasEvidenceCase": false,

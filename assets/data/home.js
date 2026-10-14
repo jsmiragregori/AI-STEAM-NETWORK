@@ -80,9 +80,9 @@ export const HOME_CONFIG = {
       },
       {
         "id": "initiatives",
-        "value": 0,
+        "value": 3,
         "manualOverride": false,
-        "computedValue": 0,
+        "computedValue": 3,
         "icon": "zap",
         "label": {
           "es": "Iniciativas",
