@@ -220,15 +220,23 @@ for (const tab of TABS_MARKETPLACE) {
   }
 }
 
-test('Marketplace con elementos sintéticos: control, cada pestaña pinta sus cards', () => {
+test('Marketplace con elementos sintéticos: cada pestaña pinta cards en los tres idiomas', () => {
   const { items, itemsByTab } = elementosDePrueba();
   const previosItems = MARKETPLACE_CONFIG.items;
   const previosPorPestana = MARKETPLACE_CONFIG.itemsByTab;
   MARKETPLACE_CONFIG.items = items;
   MARKETPLACE_CONFIG.itemsByTab = itemsByTab;
   try {
-    for (const tab of TABS_MARKETPLACE) {
-      assert.ok(cardsMarketplace(pintarMarketplace(tab, 'es')).length > 0, `${tab}: sin cards con elementos`);
+    for (const idioma of IDIOMAS) {
+      for (const tab of TABS_MARKETPLACE) {
+        const html = pintarMarketplace(tab, idioma);
+        const config = MARKETPLACE_CONFIG.tabs.find((entry) => entry.id === tab);
+        const title = mensajeDe(config?.emptyState?.title, idioma);
+        const message = mensajeDe(config?.emptyState?.message, idioma);
+        assert.ok(cardsMarketplace(html).length > 0, `${tab}/${idioma}: sin cards con elementos`);
+        if (title) assert.ok(!html.includes(escapeHtml(title)), `${tab}/${idioma}: aparece el título vacío con cards`);
+        if (message) assert.ok(!html.includes(escapeHtml(message)), `${tab}/${idioma}: aparece el mensaje vacío con cards`);
+      }
     }
   } finally {
     MARKETPLACE_CONFIG.items = previosItems;
