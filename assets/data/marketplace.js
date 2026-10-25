@@ -2260,7 +2260,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "preparation-guide",
       "visible": true,
       "label": {
-        "es": "Guia de preparacion",
+        "es": "Guía de preparación",
         "en": "Preparation guide",
         "va": "Guia de preparacio"
       }
@@ -2269,7 +2269,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "intake-form",
       "visible": true,
       "label": {
-        "es": "Formulario de preparacion",
+        "es": "Formulario de preparación",
         "en": "Intake form",
         "va": "Formulari de preparacio"
       }
@@ -2278,7 +2278,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "ethics-note",
       "visible": true,
       "label": {
-        "es": "Nota etica",
+        "es": "Nota ética",
         "en": "Ethics note",
         "va": "Nota etica"
       }
@@ -2296,7 +2296,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "publication-note",
       "visible": true,
       "label": {
-        "es": "Nota de publicacion",
+        "es": "Nota de publicación",
         "en": "Publication note",
         "va": "Nota de publicacio"
       }
@@ -3029,7 +3029,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "pilot-design",
       "visible": true,
       "label": {
-        "es": "Diseno de pilotos",
+        "es": "Diseño de pilotos",
         "en": "Pilot design",
         "va": "Disseny de pilots"
       }
@@ -3038,7 +3038,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "stakeholder-engagement",
       "visible": true,
       "label": {
-        "es": "Participacion institucional",
+        "es": "Participación institucional",
         "en": "Stakeholder engagement",
         "va": "Participacio institucional"
       }
@@ -3047,7 +3047,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "ethics-review",
       "visible": true,
       "label": {
-        "es": "Revision etica",
+        "es": "Revisión ética",
         "en": "Ethics review",
         "va": "Revisio etica"
       }
@@ -3056,7 +3056,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "replication-support",
       "visible": true,
       "label": {
-        "es": "Apoyo a replicacion",
+        "es": "Apoyo a replicación",
         "en": "Replication support",
         "va": "Suport a replicacio"
       }
@@ -3065,7 +3065,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "technical-support",
       "visible": true,
       "label": {
-        "es": "Soporte tecnico",
+        "es": "Soporte técnico",
         "en": "Technical support",
         "va": "Suport tecnic"
       }
@@ -3083,7 +3083,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "research-transfer",
       "visible": true,
       "label": {
-        "es": "Transferencia de investigacion",
+        "es": "Transferencia de investigación",
         "en": "Research transfer",
         "va": "Transferencia d'investigacio"
       }
@@ -3121,7 +3121,7 @@ export const MARKETPLACE_CONFIG = {
       "id": "upcoming",
       "visible": true,
       "label": {
-        "es": "Proximamente",
+        "es": "Próximamente",
         "en": "Upcoming",
         "va": "Proximament"
       }
@@ -3458,9 +3458,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "hybrid",
       "visible": true,
       "label": {
-        "es": "Hibrida",
+        "es": "Híbrida",
         "en": "Hybrid",
-        "va": "Hibrida"
+        "va": "Híbrida"
       }
     },
     {
@@ -3476,9 +3476,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "asynchronous",
       "visible": true,
       "label": {
-        "es": "Asincrona",
+        "es": "Asíncrona",
         "en": "Asynchronous",
-        "va": "Asincrona"
+        "va": "Asíncrona"
       }
     }
   ],
@@ -7435,7 +7435,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "preparation-guide",
         "visible": true,
         "label": {
-          "es": "Guia de preparacion",
+          "es": "Guía de preparación",
           "en": "Preparation guide",
           "va": "Guia de preparacio"
         }
@@ -7444,7 +7444,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "intake-form",
         "visible": true,
         "label": {
-          "es": "Formulario de preparacion",
+          "es": "Formulario de preparación",
           "en": "Intake form",
           "va": "Formulari de preparacio"
         }
@@ -7453,7 +7453,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "ethics-note",
         "visible": true,
         "label": {
-          "es": "Nota etica",
+          "es": "Nota ética",
           "en": "Ethics note",
           "va": "Nota etica"
         }
@@ -7471,7 +7471,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "publication-note",
         "visible": true,
         "label": {
-          "es": "Nota de publicacion",
+          "es": "Nota de publicación",
           "en": "Publication note",
           "va": "Nota de publicacio"
         }
@@ -7581,7 +7581,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "pilot-design",
         "visible": true,
         "label": {
-          "es": "Diseno de pilotos",
+          "es": "Diseño de pilotos",
           "en": "Pilot design",
           "va": "Disseny de pilots"
         }
@@ -7590,7 +7590,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "stakeholder-engagement",
         "visible": true,
         "label": {
-          "es": "Participacion institucional",
+          "es": "Participación institucional",
           "en": "Stakeholder engagement",
           "va": "Participacio institucional"
         }
@@ -7599,7 +7599,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "ethics-review",
         "visible": true,
         "label": {
-          "es": "Revision etica",
+          "es": "Revisión ética",
           "en": "Ethics review",
           "va": "Revisio etica"
         }
@@ -7608,7 +7608,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "replication-support",
         "visible": true,
         "label": {
-          "es": "Apoyo a replicacion",
+          "es": "Apoyo a replicación",
           "en": "Replication support",
           "va": "Suport a replicacio"
         }
@@ -7617,7 +7617,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "technical-support",
         "visible": true,
         "label": {
-          "es": "Soporte tecnico",
+          "es": "Soporte técnico",
           "en": "Technical support",
           "va": "Suport tecnic"
         }
@@ -7635,7 +7635,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "research-transfer",
         "visible": true,
         "label": {
-          "es": "Transferencia de investigacion",
+          "es": "Transferencia de investigación",
           "en": "Research transfer",
           "va": "Transferencia d'investigacio"
         }
@@ -7673,7 +7673,7 @@ export const MARKETPLACE_CONFIG = {
         "id": "upcoming",
         "visible": true,
         "label": {
-          "es": "Proximamente",
+          "es": "Próximamente",
           "en": "Upcoming",
           "va": "Proximament"
         }
@@ -8010,9 +8010,9 @@ export const MARKETPLACE_CONFIG = {
         "id": "hybrid",
         "visible": true,
         "label": {
-          "es": "Hibrida",
+          "es": "Híbrida",
           "en": "Hybrid",
-          "va": "Hibrida"
+          "va": "Híbrida"
         }
       },
       {
@@ -8028,9 +8028,9 @@ export const MARKETPLACE_CONFIG = {
         "id": "asynchronous",
         "visible": true,
         "label": {
-          "es": "Asincrona",
+          "es": "Asíncrona",
           "en": "Asynchronous",
-          "va": "Asincrona"
+          "va": "Asíncrona"
         }
       }
     ],
