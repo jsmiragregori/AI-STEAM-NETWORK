@@ -25,10 +25,12 @@ const { MARKETPLACE_CONFIG } = await import('../../assets/data/marketplace.js');
 const { TRAINING_CONFIG } = await import('../../assets/data/training.js');
 const { KNOWLEDGE_CONFIG } = await import('../../assets/data/knowledge.js');
 const { GOVERNANCE_CONFIG } = await import('../../assets/data/governance.js');
-const { NEWS_CONFIG } = await import('../../assets/data/news.js');
 
 const vistas = await import('../../assets/js/views/index.js');
-const newsView = await import('../../assets/js/views/news.js');
+
+test('los contratos de estadísticas cubren solo vistas que siguen activas', () => {
+  assert.equal('actualidad' in vistas, false);
+});
 
 const L = (es) => ({ es, en: `${es} EN`, va: `${es} VA` });
 
@@ -71,7 +73,6 @@ const HERO_VIEWS = [
   ['formacion', TRAINING_CONFIG, () => vistas.formacion.render()],
   ['conocimiento', KNOWLEDGE_CONFIG, () => vistas.conocimiento.render()],
   ['gobernanza', GOVERNANCE_CONFIG, () => vistas.gobernanza.render()],
-  ['noticias', NEWS_CONFIG, () => newsView.render()],
 ];
 
 const VALORES = {
@@ -82,7 +83,6 @@ const VALORES = {
   formacion: (html) => [...html.matchAll(/<p class="text-4xl font-extrabold text-white">([^<]*)<\/p>/g)].map((m) => m[1]),
   conocimiento: (html) => [...html.matchAll(/<p class="text-3xl font-extrabold text-white leading-none">([^<]*)<\/p>/g)].map((m) => m[1]),
   gobernanza: (html) => [...html.matchAll(/<p class="text-3xl font-extrabold text-white leading-tight">([^<]*)<\/p>/g)].map((m) => m[1]),
-  noticias: (html) => [...html.matchAll(/<p class="text-3xl font-extrabold text-white leading-none">([^<]*)<\/p>/g)].map((m) => m[1]),
 };
 
 function conHeroStats(config, stats, fn) {

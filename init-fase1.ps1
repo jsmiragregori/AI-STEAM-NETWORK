@@ -193,7 +193,7 @@ console.log('AI-STEAM Network Vanilla - Inicializado');
 // Sistema de routing basado en tabs
 // TODO: Implementar en Fase 1
 
-export const VIEWS = ['inicio','red','sectores','banco-retos','formacion','conocimiento','gobernanza','actualidad'];
+export const VIEWS = ['inicio','red','sectores','banco-retos','formacion','conocimiento','gobernanza'];
 export let activeView = 'inicio';
 export let viewParams = {};
 

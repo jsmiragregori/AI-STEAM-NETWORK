@@ -40,7 +40,6 @@ export const DATOS_GENERADOS = [
   { fichero: 'marketplace.js', simbolo: 'MARKETPLACE_CONFIG' },
   { fichero: 'navigation.js', simbolo: 'NAV_CONFIG' },
   { fichero: 'network.js', simbolo: 'NETWORK_CONFIG' },
-  { fichero: 'news.js', simbolo: 'NEWS_CONFIG' },
   { fichero: 'sectors.js', simbolo: 'SECTORS_CONFIG' },
   { fichero: 'sitemap.js', simbolo: 'SITEMAP_CONFIG' },
   { fichero: 'training.js', simbolo: 'TRAINING_CONFIG' },

@@ -49,9 +49,8 @@ export function renderApp() {
   if (window.lucide) window.lucide.createIcons({ attrs: { 'aria-hidden': 'true', focusable: 'false' } });
 }
 
-// Back/forward del navegador entre vistas de nivel superior. Los detalles
-// por-vista (p.ej. Actualidad) apilan sus propias entradas sin `appView` y las
-// gestiona su propio listener; aquí solo actuamos si cambia la vista activa.
+// Back/forward del navegador entre vistas de nivel superior. Aquí solo
+// actuamos si cambia la vista activa.
 window.addEventListener('popstate', (e) => {
   const view = e.state?.appView;
   if (view && view !== getActiveView()) syncView(view);

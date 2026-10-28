@@ -33,7 +33,6 @@ for (const [vista, config] of Object.entries(datos)) {
 }
 
 const vistas = await import('../../assets/js/views/index.js');
-const news = await import('../../assets/js/views/news.js');
 
 for (const [vista, config] of Object.entries(datos)) {
   test(`${vista}: hero a cero sin cajas, sin contenedor y con la sección en pie`, () => {
@@ -48,11 +47,6 @@ for (const [vista, config] of Object.entries(datos)) {
   });
 }
 
-test('news: hero a cero sin cajas, sin rejilla y con la vista completa', async () => {
-  const datosNewsStats = (await import('../../assets/data/news.js')).NEWS_CONFIG.heroBlock.stats;
-  for (const stat of datosNewsStats) stat.value = 0;
-  const html = news.render();
-  assert.equal((html.match(/rd-hero-stat\b/g) || []).length, 0);
-  assert.ok(!html.includes('rd-hero-stats-grid'));
-  assert.ok(html.length > 200);
+test('Actualidad retirada no reaparece en el índice de vistas', () => {
+  assert.equal('actualidad' in vistas, false);
 });
