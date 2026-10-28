@@ -737,7 +737,6 @@ function tabParticipar(govT) {
 
   const sc = hasCms ? cms.stakeholderCard : {};
   const cc = hasCms ? cms.consensueCard : {};
-  const ms = hasCms ? cms.meetingsSection : {};
 
   // F4 bis: el botón de la card de Stakeholder no tiene URL propia. Su acción es
   // la misma que la del CTA de la hero de Inicio, resuelta por el helper
@@ -814,61 +813,6 @@ function tabParticipar(govT) {
     </div>
   `).join('');
 
-  const meetingsHtml = hasCms
-    ? (cms.meetingsSection.meetings || []).map(e => {
-        const parts = (e.date || '').split(' ');
-        const regUrl = (e.registrationUrl || '').trim();
-        const regExt = e.registrationExternal;
-        const accUrl = (e.accessUrl || '').trim();
-        const accExt = e.accessExternal;
-        // Si la URL existe pero no supera la allowlist, el botón conserva su
-        // sitio y su rótulo como <span>, sin llegar a ser un enlace.
-        const safeRegUrl = getSafeEditorialUrl(regUrl);
-        const safeAccUrl = getSafeEditorialUrl(accUrl);
-        return `
-      <div class="flex flex-col justify-between gap-4 p-6 rd-card rd-card-grad-violet rd-card-edge h-full group">
-        <div class="flex items-start gap-4">
-          <div class="bg-eu-blue text-white rounded-xl px-3 py-2 text-center shrink-0 min-w-[3.5rem] shadow-sm">
-            <span class="block text-lg font-extrabold leading-none">${esc(parts[0] || '')}</span>
-            <span class="block text-xs font-bold uppercase tracking-wider mt-1">${esc(parts[1] || '')}</span>
-          </div>
-          <div class="min-w-0">
-            <p class="font-extrabold text-lg text-eu-purple leading-snug break-words">${esc(pickLang(e.title, e.title?.es || ''))}</p>
-            <p class="text-sm text-gray-600 mt-1.5 flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${esc(pickLang(e.location, e.location?.es || ''))}</p>
-          </div>
-        </div>
-        ${(regUrl || accUrl) ? `
-        <div class="flex flex-wrap gap-2 pt-3 border-t border-eu-blue/10 mt-auto">
-          ${!regUrl ? '' : safeRegUrl ? `<a href="${esc(safeRegUrl)}" ${regExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue hover:text-eu-purple transition-colors bg-eu-blue/5 border border-eu-blue/10 rounded-lg px-3 py-1.5">
-            <i data-lucide="clipboard-list" class="w-4 h-4"></i>Registration
-          </a>` : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-blue bg-eu-blue/5 border border-eu-blue/10 rounded-lg px-3 py-1.5">
-            <i data-lucide="clipboard-list" class="w-4 h-4"></i>Registration
-          </span>`}
-          ${!accUrl ? '' : safeAccUrl ? `<a href="${esc(safeAccUrl)}" ${accExt ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-purple hover:text-eu-blue transition-colors border rounded-lg px-3 py-1.5" style="background:rgb(73 24 173/.06); border-color:rgb(73 24 173/.15)">
-            <i data-lucide="video" class="w-4 h-4"></i>Access
-          </a>` : `<span class="inline-flex items-center gap-1.5 text-sm font-bold text-eu-purple border rounded-lg px-3 py-1.5" style="background:rgb(73 24 173/.06); border-color:rgb(73 24 173/.15)">
-            <i data-lucide="video" class="w-4 h-4"></i>Access
-          </span>`}
-        </div>` : ''}
-      </div>
-    `;
-      }).join('')
-    : (s.meetings || []).map(e => {
-        const parts = (e.date || '').split(' ');
-        return `
-      <div class="flex items-start gap-4 p-6 rd-card rd-card-grad-violet rd-card-edge h-full group">
-        <div class="bg-eu-blue text-white rounded-xl px-3 py-2 text-center shrink-0 min-w-[3.5rem] shadow-sm">
-          <span class="block text-lg font-extrabold leading-none">${esc(parts[0] || '')}</span>
-          <span class="block text-xs font-bold uppercase tracking-wider mt-1">${esc(parts[1] || '')}</span>
-        </div>
-        <div>
-          <p class="font-extrabold text-lg text-eu-purple leading-snug">${esc(e.title || '')}</p>
-          <p class="text-sm text-gray-600 mt-1.5 flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 shrink-0"></i>${esc(e.location || '')}</p>
-        </div>
-      </div>
-    `;
-      }).join('');
-
   return `
     <div class="space-y-12">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -933,21 +877,6 @@ function tabParticipar(govT) {
           </div>
         </div>` : ''}
       </div>
-
-      <!-- Reuniones -->
-      ${(hasCms ? cms.meetingsSection.visible !== false : true) ? `
-      <div class="rd-card-gov-beige rd-card-gov-static-hover rd-pad">
-        <div class="flex items-center gap-4 mb-6">
-          <div class="w-14 h-14 bg-eu-blue/10 rounded-2xl flex items-center justify-center shrink-0 rd-icon-circle-gov">
-            <i data-lucide="landmark" class="w-6 h-6 text-eu-blue"></i>
-          </div>
-          <div>
-            <h2 class="text-3xl font-extrabold text-eu-purple leading-tight">${esc(hasCms ? pickLang(cms.meetingsSection.title, s.meetingsTitle || '') : (s.meetingsTitle || ''))}</h2>
-            <p class="text-base text-gray-500 font-bold mt-1">${esc(hasCms ? pickLang(cms.meetingsSection.subtitle, s.meetingsSubtitle || '') : (s.meetingsSubtitle || ''))}</p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">${meetingsHtml}</div>
-      </div>` : ''}
     </div>
   `;
 }

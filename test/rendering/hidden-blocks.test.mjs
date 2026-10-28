@@ -36,7 +36,10 @@ for (const fichero of (await readdir(DIR_DATOS)).filter(f => f.endsWith('.js')))
 
 // Respaldos conocidos, capturados antes de reducir nada.
 const { translations } = modulos['translations.js'];
-const tituloReunionesReserva = translations.es.governance.tabContent_participar.meetingsTitle;
+const marcadorMeetingsLegacy = 'FIXTURE-G07-MEETINGS-FALLBACK';
+translations.es.governance ??= {};
+translations.es.governance.tabContent_participar ??= {};
+translations.es.governance.tabContent_participar.meetingsTitle = marcadorMeetingsLegacy;
 const { MARKETPLACE_CONFIG } = modulos['marketplace.js'];
 const pestanasMarketplace = (MARKETPLACE_CONFIG.tabs || []).map(t => t?.id).filter(Boolean);
 
@@ -127,8 +130,7 @@ test('red: con el bloque de socios oculto no se pinta la lista de reserva', asyn
   assert.deepEqual(vistos, [], `se pintan socios de la lista de reserva: ${vistos.join(', ')}`);
 });
 
-test('gobernanza: con las reuniones ocultas no se pinta su título de reserva', () => {
-  assert.ok(tituloReunionesReserva, 'no se encontró el título de reserva de reuniones');
+test('gobernanza: no pinta un fallback legacy Meetings sintético', () => {
   const html = pintar('gobernanza', 'participar');
-  assert.ok(!html.includes(tituloReunionesReserva), 'se pinta la sección de reuniones con el título de reserva');
+  assert.ok(!html.includes(marcadorMeetingsLegacy), 'se pinta un fallback legacy retirado');
 });

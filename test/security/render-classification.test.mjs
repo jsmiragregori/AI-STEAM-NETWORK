@@ -175,17 +175,18 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
   // CS-22: 134 al pasar por esc() todo dato de las plantillas HTML. Solo baja:
   // ninguna salida nueva sin escapar (lo impone escape-coverage.test.mjs).
   // F4 bis (P-66): 135 con `stakeBtnHtml`, el fragmento del CTA de adhesión de
-  // Gobernanza. Es del mismo tipo que `consensueGroupsHtml` o `meetingsHtml`:
+  // Gobernanza. Es del mismo tipo que `consensueGroupsHtml` y
   // marcado compuesto por el propio fichero, con rótulo y URL ya escapados
   // (`esc(...)`), y la acción resuelta por el helper compartido.
   // C13 (códigos de Formación): `training.js` 11 → 12 con `codeLinesHtml`, el fragmento de las
   // líneas de código de la card. Mismo tipo que `stakeBtnHtml`: marcado compuesto por el propio fichero,
   // con la etiqueta y el valor ya escapados (`esc(...)`); ni el código ni el externo llegan sin escapar.
-  assert.equal(indirectOutputCandidates.total, 128);
+  // G07 removes the Meetings renderer and its single indirect output candidate.
+  assert.equal(indirectOutputCandidates.total, 127);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/footer.js': 2,
     'assets/js/components/header.js': 4,
-    'assets/js/views/governance.js': 23,
+    'assets/js/views/governance.js': 22,
     'assets/js/views/home.js': 18,
     'assets/js/views/knowledge.js': 14,
     'assets/js/views/marketplace.js': 18,
