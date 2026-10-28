@@ -12,7 +12,7 @@ import {
 
 // Línea base de VAN-1.2. Si alguien migra una interpolación, este desglose
 // cambia: debe cambiarse aquí a la vez, con su justificación en el checkpoint.
-// CS-20: TEXTO_PLANO pasa de 4 a 0; eran las cuatro de news.js, ya escapadas.
+// G06 retira Actualidad del inventario de vistas activas.
 const EXPECTED_BY_CATEGORY = {
   TEXTO_PLANO: 0,
   ATRIBUTO: 0,
@@ -84,7 +84,7 @@ const EXPECTED_EXCEPTIONS = [
 test('la clasificación VAN-1.2 reproduce su línea base', async () => {
   const report = await generateClassification();
 
-  assert.equal(report.total, 7); // CS-20: sin las cuatro de news.js
+  assert.equal(report.total, 7);
   assert.deepEqual(report.byCategory, EXPECTED_BY_CATEGORY);
 
   const observedByFile = Object.fromEntries(
@@ -171,18 +171,17 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
   // de grupos-. Las dos son marcado que compone el propio fichero a partir de
   // `esc()`: ni una sola cadena del CSV llega sin escapar.
   // 2026-09-24: 175 al retirar el aviso de cookies, que aportaba enlace.
-  // CS-20: 150 al escapar news.js (de 34 candidatas quedan 9, todas estructurales:
-  // condiciones, clases de un mapa del código y fragmentos ya compuestos con esc()).
+  // G06 retira ocho salidas indirectas pertenecientes a la vista de Actualidad.
   // CS-22: 134 al pasar por esc() todo dato de las plantillas HTML. Solo baja:
   // ninguna salida nueva sin escapar (lo impone escape-coverage.test.mjs).
   // F4 bis (P-66): 135 con `stakeBtnHtml`, el fragmento del CTA de adhesión de
   // Gobernanza. Es del mismo tipo que `consensueGroupsHtml` o `meetingsHtml`:
   // marcado compuesto por el propio fichero, con rótulo y URL ya escapados
   // (`esc(...)`), y la acción resuelta por el helper compartido.
-  // C13 (códigos de Formación): 136 y `training.js` 11 → 12 con `codeLinesHtml`, el fragmento de las
+  // C13 (códigos de Formación): `training.js` 11 → 12 con `codeLinesHtml`, el fragmento de las
   // líneas de código de la card. Mismo tipo que `stakeBtnHtml`: marcado compuesto por el propio fichero,
   // con la etiqueta y el valor ya escapados (`esc(...)`); ni el código ni el externo llegan sin escapar.
-  assert.equal(indirectOutputCandidates.total, 136);
+  assert.equal(indirectOutputCandidates.total, 128);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/footer.js': 2,
     'assets/js/components/header.js': 4,
@@ -192,7 +191,6 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
     'assets/js/views/marketplace.js': 18,
     'assets/js/views/network.js': 33,
     'assets/js/views/sitemap.js': 2,
-    'assets/js/views/news.js': 8,
     'assets/js/views/sectors.js': 2,
     'assets/js/views/training.js': 12,
   });

@@ -116,7 +116,6 @@ The site will reload automatically if you edit files (or manually refresh).
 │   │       ├── sectors.js
 │   │       ├── training.js
 │   │       ├── knowledge.js
-│   │       └── news.js
 │   └── data/
 │       ├── translations.js       # i18n strings (ES, EN, VA)
 │       └── challenge-extras.js   # Challenge metadata

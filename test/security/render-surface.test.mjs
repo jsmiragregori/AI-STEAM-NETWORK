@@ -17,7 +17,6 @@ const EXPECTED_PER_FILE = [
   { file: 'assets/js/views/governance.js', unescaped: 1, escaped: 99 },
   { file: 'assets/js/views/knowledge.js', unescaped: 0, escaped: 10 },
   { file: 'assets/js/views/marketplace.js', unescaped: 5, escaped: 12 },
-  { file: 'assets/js/views/news.js', unescaped: 0, escaped: 4 }, // CS-20
   // VAN-2.2: 10 y no 9 porque el rótulo del CTA del hero aparece ahora también
   // en la rama <span> de fallo cerrado. Es la misma salida, protegida dos veces.
   { file: 'assets/js/views/training.js', unescaped: 1, escaped: 10 },
@@ -32,8 +31,6 @@ const EXPECTED_ESC_VIEWS = [
   'assets/js/views/legal.js',
   'assets/js/views/marketplace.js',
   'assets/js/views/network.js',
-  // CS-20: News, fuera del runtime, importa ya el escapado común.
-  'assets/js/views/news.js',
   'assets/js/views/sectors.js',
   // SM-4: el mapa web importa el escapado común, como todas.
   'assets/js/views/sitemap.js',
@@ -70,28 +67,27 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // C13 (códigos de Formación): 26 con assets/js/utils/course-code-display.js, el helper puro de
   // presentación y búsqueda de los códigos de un curso. Es un recuento de ficheros, no de superficie: no
   // define vista, no importa escape-html ni usa pickLang, y las demás cifras de esta prueba siguen idénticas.
-  // S8-R1: 27 con assets/js/utils/resource-summary.js, el selector puro del resumen breve. Es un recuento
-  // de ficheros, no de superficie: no renderiza, no usa pickLang ni define vista, y las demás cifras
-  // (escaped 135, unescaped 7, vistas 11, hrefs 27, etc.) siguen idénticas.
-  assert.equal(report.scannedFiles, 27);
-  // CS-20: las cuatro de news.js pasan a escapadas (11 → 7 y 130 → 134).
+  // S8-R1 añadió el selector puro resource-summary.js (27 ficheros en esa base).
+  // G06 retira assets/js/views/news.js; el inventario actual contiene 26 ficheros.
+  assert.equal(report.scannedFiles, 26);
+  // G06 retira la vista de Actualidad y sus cuatro interpolaciones escapadas.
   // F4 bis (P-66): 133 al resolver el rótulo del CTA de Gobernanza en una
   // constante compartida (ver EXPECTED_PER_FILE). Sigue sin haber ninguna
   // interpolación de dato sin escapar.
   // C14 (códigos de Conocimiento): 134 con la etiqueta local del código en `knowledge.js` (9 → 10 en su
   // ficha): una interpolación más, escapada como todas; ninguna sin escapar.
-  // C15 (códigos de Gobernanza): 135 con la etiqueta local del código en `governance.js` (98 → 99), misma
+  // C15 (códigos de Gobernanza): 131 tras retirar las cuatro interpolaciones de Actualidad.
+  // La etiqueta local del código en `governance.js` (98 → 99) sigue escapada.
   // regla: escapada y sin abrir ninguna vía sin escapar.
   assert.equal(report.pickLangInterpolations.unescaped, 7);
-  assert.equal(report.pickLangInterpolations.escaped, 135);
+  assert.equal(report.pickLangInterpolations.escaped, 131);
   assert.deepEqual(
     report.pickLangInterpolations.perFile.map(({ file, unescaped, escaped }) => ({ file, unescaped, escaped })),
     EXPECTED_PER_FILE,
   );
 
-  // LG-6: la décima vista es legal.js, la de las cuatro páginas legales.
-  // SM-4: la undécima es sitemap.js, el mapa web.
-  assert.equal(report.viewsTotal, 11);
+  // LG-6: la novena vista es legal.js; SM-4 añade el mapa web como décima.
+  assert.equal(report.viewsTotal, 10);
   assert.deepEqual(report.viewsDefiningEsc, []);
   assert.deepEqual(report.viewsImportingEscapeHtml, EXPECTED_ESC_VIEWS);
   // LG-7 y LG-8: 25 y no 23. Dos enlaces nuevos -el del pie a las páginas
@@ -108,15 +104,15 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // getSafeEditorialUrl(); es el único incremento de superficie editorial.
   // F4 de la depuración: 27 con el enlace FSTP del aviso de Formación, validado
   // con getSafeEditorialUrl() y escapado al pintar.
-  assert.equal(report.dynamicHrefs.editorialCount, 27);
+  assert.equal(report.dynamicHrefs.editorialCount, 26);
   // VAN-3B.2.1: los 23 pasan por getSafeEditorialUrl(), incluidos los dos de
   // Header que V9 demostró editoriales. El invariante que importa
   // es que no quede ninguno sin validar, no que sigan siendo 23: si alguien
   // añade el enlace 22 sin cablearlo, esta lista deja de estar vacía.
   assert.deepEqual(report.dynamicHrefs.editorialUnvalidated, []);
-  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 27);
+  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 26);
   assert.equal(report.dynamicHrefs.nonEditorialCount, 0);
-  assert.equal(report.dynamicHrefs.total, 27);
+  assert.equal(report.dynamicHrefs.total, 26);
   // VAN-2.3: 21 y no 16 por dos ampliaciones de la medición: los
   // `target="${…}"` calculados, antes invisibles, y el ancla que emite
   // `sanitize-editorial-html.js`, antes fuera de alcance. El invariante —que la
@@ -135,7 +131,7 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   assert.deepEqual(sinkCounts, {
     // 2026-09-24: el único insertAdjacentHTML era el del aviso de cookies en
     // main.js, retirado con él.
-    'innerHTML assignment': 23,
+    'innerHTML assignment': 22,
     // DL-4: la ÚNICA lectura del hash de todo el árbol, en router.js. El
     // inventario la marca porque el hash es entrada no confiable, y hace bien:
     // que aparezca aquí es lo que obliga a justificarla. Está contenida por

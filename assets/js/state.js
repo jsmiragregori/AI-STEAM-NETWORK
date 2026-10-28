@@ -16,8 +16,6 @@ const appState = {
   trainingTab: 'fp',
   expandedSector: null,
   sectorsScrollTarget: null,
-  newsCategoryFilter: null,
-  selectedNewsId: null,
 };
 
 export function getState(key) { return appState[key]; }

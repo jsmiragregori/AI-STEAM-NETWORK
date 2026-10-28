@@ -78,7 +78,7 @@ D:\CEICE\AI-STEAM-VANILLA/
 ⏳ **Esperando:** Implementación (header, router, i18n, state)
 
 ### Fase 2: Views Simples
-⏳ Home, Training, Sectors, News
+⏳ Home, Training, Sectors; Actualidad se retiró del producto activo
 
 ### Fase 3: Views Complejas
 ⏳ Governance, Knowledge, Network

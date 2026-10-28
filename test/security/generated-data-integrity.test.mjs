@@ -53,7 +53,7 @@ test('están declarados todos los ficheros de datos que el sitio importa', async
     'assets/js/components/header.js', 'assets/js/views/index.js',
   ];
   for (const vista of ['home', 'sectors', 'training', 'governance', 'knowledge',
-    'network', 'marketplace', 'legal', 'sitemap', 'news']) {
+    'network', 'marketplace', 'legal', 'sitemap']) {
     ficherosJs.push(`assets/js/views/${vista}.js`);
   }
 
