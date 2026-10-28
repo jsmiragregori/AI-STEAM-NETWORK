@@ -7,6 +7,8 @@ test('las traducciones generadas no publican etiquetas UI huérfanas de Actualid
 
   for (const lang of ['es', 'en', 'va']) {
     assert.deepEqual(translations[lang]?.news, {}, `${lang}: solo queda el namespace vacío de limpieza histórica`);
+    assert.equal(translations[lang]?.nav?.actualidad, undefined, `${lang}: se proyecta nav.actualidad`);
+    assert.equal(typeof translations[lang]?.nav?.inicio, 'string', `${lang}: el resto de navegación sigue disponible`);
   }
 });
 
