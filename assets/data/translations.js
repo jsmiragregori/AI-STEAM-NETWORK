@@ -1,8 +1,8 @@
 // FUENTE ESTÁTICA de traducciones (D24) regenerada por cms:ui.
-// Este archivo ES la base: las claves que no están en content/_ui/*.csv solo
-// viven aquí y pueden editarse directamente. Las claves presentes en los CSV
-// se sobreescriben en cada cms:ui — esas se editan en el CSV.
-// Base: translations.js existente + overrides de 99 entradas CSV
+// Este archivo ES la base: las claves activas que no están en content/_ui/*.csv
+// solo viven aquí. Las claves presentes en los CSV se sobreescriben en cada
+// cms:ui — esas se editan en el CSV. Las etiquetas de Actualidad se retiran al generar.
+// Base: translations.js existente + overrides de 98 entradas CSV
 
 export const translations = {
   "es": {
@@ -21,7 +21,6 @@ export const translations = {
       "bancoRetos": "Comunidad de Práctica",
       "formacion": "Formación",
       "conocimiento": "Conocimiento",
-      "actualidad": "Actualidad",
       "gobernanza": "Gobernanza"
     },
     "footer": {
@@ -1373,41 +1372,7 @@ export const translations = {
         "meetingsButton": "Inscribirse a la próxima reunión"
       }
     },
-    "news": {
-      "title": "Actualidad y Agenda",
-      "subtitle": "Noticias, eventos y novedades de AI-STEAM Network y AI-SECRETT",
-      "subscribeButton": "Suscribirse al boletín",
-      "officialBadge": "Oficial",
-      "categoryAll": "Todas",
-      "categoryENRED": "ENRED",
-      "categoryFPVET": "FP",
-      "categoryTeacherTraining": "Form. Docente",
-      "categoryStakeholders": "Stakeholders",
-      "categoryChallengesCases": "Retos y Casos",
-      "categoryEvents": "Eventos",
-      "featured": "Destacado",
-      "readMore": "Leer más",
-      "noNews": "No hay noticias en esta categoría",
-      "upcomingEvents": "Próximos Eventos",
-      "viewFullCalendar": "Ver calendario completo",
-      "newsletterTitle": "Boletín AI-STEAM",
-      "newsletterDesc": "Recibe cada mes las novedades del proyecto, nuevos retos y recursos formativos.",
-      "newsletterPlaceholder": "Tu correo institucional",
-      "newsletterSubscribe": "Suscribirme",
-      "followUs": "Síguenos",
-      "inPerson": "Presencial",
-      "online": "Online",
-      "hybrid": "Híbrido",
-      "register": "Inscribirse",
-      "socialLinks": {
-        "linkedin": "LinkedIn – Proyecto AI-SECRETT",
-        "twitter": "Twitter/X – @AISTEAMNetwork",
-        "youtube": "YouTube – Canal AI-STEAM",
-        "substack": "Substack – Artículos y Papers"
-      },
-      "newsItems": {},
-      "events": {}
-    },
+    "news": {},
     "marketplace": {
       "title": "Contribuciones del Ecosistema",
       "subtitle": "Retos, casos, validaciones, mentorías, pilotajes y recursos",
@@ -1655,7 +1620,6 @@ export const translations = {
       "bancoRetos": "Community of Practice",
       "formacion": "Training",
       "conocimiento": "Knowledge",
-      "actualidad": "News",
       "gobernanza": "Governance"
     },
     "footer": {
@@ -3007,41 +2971,7 @@ export const translations = {
         "meetingsButton": "Register for the next meeting"
       }
     },
-    "news": {
-      "title": "News and Events",
-      "subtitle": "News and updates from AI-STEAM Network and AI-SECRETT",
-      "subscribeButton": "Subscribe to Newsletter",
-      "officialBadge": "Official",
-      "categoryAll": "All",
-      "categoryENRED": "ENRED",
-      "categoryFPVET": "VET",
-      "categoryTeacherTraining": "Teacher Training",
-      "categoryStakeholders": "Stakeholders",
-      "categoryChallengesCases": "Challenges & Cases",
-      "categoryEvents": "Events",
-      "featured": "Featured",
-      "readMore": "Read more",
-      "noNews": "No news in this category",
-      "upcomingEvents": "Upcoming Events",
-      "viewFullCalendar": "View full calendar",
-      "newsletterTitle": "AI-STEAM Newsletter",
-      "newsletterDesc": "Receive monthly updates about the project, new challenges and training resources.",
-      "newsletterPlaceholder": "Your institutional email",
-      "newsletterSubscribe": "Subscribe",
-      "followUs": "Follow Us",
-      "inPerson": "In-person",
-      "online": "Online",
-      "hybrid": "Hybrid",
-      "register": "Register",
-      "socialLinks": {
-        "linkedin": "LinkedIn – AI-SECRETT Project",
-        "twitter": "Twitter/X – @AISTEAMNetwork",
-        "youtube": "YouTube – AI-STEAM Channel",
-        "substack": "Substack – Articles and Papers"
-      },
-      "newsItems": {},
-      "events": {}
-    },
+    "news": {},
     "marketplace": {
       "title": "Ecosystem Contributions",
       "subtitle": "Challenges, cases, validations, mentoring, pilots and resources",
@@ -3289,7 +3219,6 @@ export const translations = {
       "bancoRetos": "Comunitat de Pràctica",
       "formacion": "Formació",
       "conocimiento": "Coneixement",
-      "actualidad": "Actualitat",
       "gobernanza": "Governança"
     },
     "footer": {
@@ -4624,41 +4553,7 @@ export const translations = {
         "meetingsButton": "Inscripció a la pròxima reunió"
       }
     },
-    "news": {
-      "title": "Actualitat i Agenda",
-      "subtitle": "Notícies, events i novetats de la xarxa AI-STEAM i AI-SECRETT",
-      "subscribeButton": "Subscriu-te al butlletí",
-      "officialBadge": "Oficial",
-      "categoryAll": "Totes",
-      "categoryENRED": "ENRED",
-      "categoryFPVET": "FP",
-      "categoryTeacherTraining": "Form. Docent",
-      "categoryStakeholders": "Stakeholders",
-      "categoryChallengesCases": "Reptes i Casos",
-      "categoryEvents": "Events",
-      "featured": "Destacat",
-      "readMore": "Llegeix més",
-      "noNews": "No hi ha notícies en esta categoria",
-      "upcomingEvents": "Pròxims Events",
-      "viewFullCalendar": "Veure calendari complet",
-      "newsletterTitle": "Butlletí AI-STEAM",
-      "newsletterDesc": "Rep cada mes les novetats del projecte, nous reptes i recursos formatius.",
-      "newsletterPlaceholder": "El teu correu institucional",
-      "newsletterSubscribe": "Subscriu-me",
-      "followUs": "Segueix-nos",
-      "inPerson": "Presencial",
-      "online": "En línia",
-      "hybrid": "Híbrid",
-      "register": "Registra't",
-      "socialLinks": {
-        "linkedin": "LinkedIn – Projecte AI-SECRETT",
-        "twitter": "Twitter/X – @AISTEAMNetwork",
-        "youtube": "YouTube – Canal AI-STEAM",
-        "substack": "Substack – Articles i Papers"
-      },
-      "newsItems": {},
-      "events": {}
-    },
+    "news": {},
     "marketplace": {
       "title": "Contribucions de l'Ecosistema",
       "subtitle": "Reptes, casos, validacions, mentories, pilotatges i recursos",
