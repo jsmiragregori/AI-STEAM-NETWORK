@@ -255,3 +255,51 @@ test('T3.3 los valores en la card siguen el orden de la fuente', () => {
   const card = conTransicion(item, ['social', 'digital'], () => cardDe(pintar('challenges'), item.code));
   assert.ok(card.indexOf('Transición Social') < card.indexOf('Transición Digital'), 'debe respetarse el orden de la fuente');
 });
+
+// G05: una métrica incompleta no se presenta como una elección del autor; cero explícito sí.
+test('G05 un KPI cero con unidad y etiqueta se conserva y se muestra', () => {
+  const item = itemDe('cases', CASO);
+  const original = item.evidence;
+  item.evidence = { primaryMetric: { value: 0, unit: '%', label: { es: 'Medida cero', en: 'Zero measure', va: 'Mesura zero' } } };
+  try {
+    const card = cardDe(pintar('cases'), item.code);
+    assert.match(card, /0% — Medida cero/);
+  } finally {
+    item.evidence = original;
+  }
+});
+
+test('G05 un KPI cero con etiqueta válida y unidad vacía sigue visible', () => {
+  const item = itemDe('cases', CASO);
+  const original = item.evidence;
+  item.evidence = { primaryMetric: { value: '0', unit: '', label: { es: 'Medida sin unidad' } } };
+  try {
+    const card = cardDe(pintar('cases'), item.code);
+    assert.match(card, /0 — Medida sin unidad/);
+  } finally {
+    item.evidence = original;
+  }
+});
+
+test('G05 un KPI sin valor o etiqueta queda fuera de la card', () => {
+  const item = itemDe('cases', CASO);
+  const original = item.evidence;
+  const originalPresentation = item.presentation;
+  try {
+    for (const metric of [
+      { value: '', unit: '%', label: { es: 'Pendiente' } },
+      { value: '12', unit: '%', label: { es: '' } },
+    ]) {
+      item.evidence = { primaryMetric: metric };
+      const card = cardDe(pintar('cases'), item.code);
+      assert.doesNotMatch(card, /Pendiente|12%/);
+    }
+    item.evidence = { primaryMetric: { value: 0, unit: '%', label: { es: 'Oculta' } } };
+    item.presentation = { card: { showPrimaryMetric: false } };
+    const card = cardDe(pintar('cases'), item.code);
+    assert.doesNotMatch(card, /Oculta|0%/);
+  } finally {
+    item.evidence = original;
+    item.presentation = originalPresentation;
+  }
+});

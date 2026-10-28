@@ -1549,16 +1549,21 @@ function renderCaseCard(item, tab) {
   // 3. KPI Destacado (MiniMeta estándar)
   let miniMetaHtml = '';
   if (cardPres.showPrimaryMetric !== false && evidence.primaryMetric) {
-    let metricVal = String(evidence.primaryMetric.value);
-    const unit = evidence.primaryMetric.unit || '';
-    if (unit && !['images', 'teachers', 'narratives', 'cases'].includes(unit.toLowerCase())) {
-      metricVal += unit.startsWith('%') ? unit : ` ${unit}`;
+    const rawMetricValue = evidence.primaryMetric.value;
+    const metricVal = rawMetricValue == null ? '' : String(rawMetricValue).trim();
+    const rawUnit = evidence.primaryMetric.unit;
+    const unit = String(typeof rawUnit === 'object' ? pickLang(rawUnit) : rawUnit || '').trim();
+    const metricLabel = String(pickLang(evidence.primaryMetric.label) || '').trim();
+    if (metricVal && metricLabel) {
+      let displayMetricValue = metricVal;
+      if (unit && !['images', 'teachers', 'narratives', 'cases'].includes(unit.toLowerCase())) {
+        displayMetricValue += unit.startsWith('%') ? unit : ` ${unit}`;
+      }
+      miniMetaHtml = renderCardMiniMeta([{
+        label: uiText('kpi'),
+        value: `${displayMetricValue} — ${metricLabel}`,
+      }]);
     }
-    const metricLabel = pickLang(evidence.primaryMetric.label);
-    miniMetaHtml = renderCardMiniMeta([{
-      label: uiText('kpi'),
-      value: `${metricVal} — ${metricLabel}`,
-    }]);
   }
 
   // 4. Sector

@@ -68,13 +68,16 @@ const EXPECTED_BY_FILE = {
 // encima de las cinco de marketplace.js, que pasan a 1791, 1976, 1978, 2017 y 2177. Mismas
 // expresiones, mismas categorías y mismos recuentos (las interpolaciones nuevas van con esc() o
 // son fragmentos compuestos, como los de las demás cards).
+// G05 añade cinco líneas netas en la guardia de KPI de renderCaseCard: exige valor y etiqueta,
+// pero permite unidad vacía y cero explícito. Desplaza estas mismas cinco excepciones a 1796,
+// 1981, 1983, 2022 y 2182; las expresiones, categorías y recuentos no cambian.
 const EXPECTED_EXCEPTIONS = [
   { file: 'assets/js/views/governance.js', line: 717, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1791, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 1976, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1978, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/marketplace.js', line: 2017, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 2177, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 1796, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 1981, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 1983, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 2022, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 2182, category: 'COMPOSICION_CADENA' },
   { file: 'assets/js/views/training.js', line: 464, category: 'ESTRUCTURAL' },
 ];
 
