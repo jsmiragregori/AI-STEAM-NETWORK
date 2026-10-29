@@ -14,7 +14,9 @@ const EXPECTED_PER_FILE = [
   // compartirla entre las ramas externa, interna y de rótulo sin enlace. El
   // total de interpolaciones escapadas baja en una; no desaparece ningún
   // escapado (lo vigila escape-coverage.test.mjs).
-  { file: 'assets/js/views/governance.js', unescaped: 1, escaped: 99 },
+  // G07 retira cuatro salidas escapadas exclusivas de Meetings (título,
+  // ubicación y los rótulos de sección), por lo que governance queda en 95.
+  { file: 'assets/js/views/governance.js', unescaped: 1, escaped: 95 },
   { file: 'assets/js/views/knowledge.js', unescaped: 0, escaped: 10 },
   { file: 'assets/js/views/marketplace.js', unescaped: 5, escaped: 12 },
   // VAN-2.2: 10 y no 9 porque el rótulo del CTA del hero aparece ahora también
@@ -78,9 +80,10 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // ficha): una interpolación más, escapada como todas; ninguna sin escapar.
   // C15 (códigos de Gobernanza): 131 tras retirar las cuatro interpolaciones de Actualidad.
   // La etiqueta local del código en `governance.js` (98 → 99) sigue escapada.
+  // G07 retira otras cuatro interpolaciones exclusivas de Meetings: 127 total y 95 en Gobernanza.
   // regla: escapada y sin abrir ninguna vía sin escapar.
   assert.equal(report.pickLangInterpolations.unescaped, 7);
-  assert.equal(report.pickLangInterpolations.escaped, 131);
+  assert.equal(report.pickLangInterpolations.escaped, 127);
   assert.deepEqual(
     report.pickLangInterpolations.perFile.map(({ file, unescaped, escaped }) => ({ file, unescaped, escaped })),
     EXPECTED_PER_FILE,
@@ -104,15 +107,16 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // getSafeEditorialUrl(); es el único incremento de superficie editorial.
   // F4 de la depuración: 27 con el enlace FSTP del aviso de Formación, validado
   // con getSafeEditorialUrl() y escapado al pintar.
-  assert.equal(report.dynamicHrefs.editorialCount, 26);
+  // G07 retira los dos href de Registration y Access, ambos previamente validados.
+  assert.equal(report.dynamicHrefs.editorialCount, 24);
   // VAN-3B.2.1: los 23 pasan por getSafeEditorialUrl(), incluidos los dos de
   // Header que V9 demostró editoriales. El invariante que importa
   // es que no quede ninguno sin validar, no que sigan siendo 23: si alguien
   // añade el enlace 22 sin cablearlo, esta lista deja de estar vacía.
   assert.deepEqual(report.dynamicHrefs.editorialUnvalidated, []);
-  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 26);
+  assert.equal(report.dynamicHrefs.editorialSchemeValidated, 24);
   assert.equal(report.dynamicHrefs.nonEditorialCount, 0);
-  assert.equal(report.dynamicHrefs.total, 26);
+  assert.equal(report.dynamicHrefs.total, 24);
   // VAN-2.3: 21 y no 16 por dos ampliaciones de la medición: los
   // `target="${…}"` calculados, antes invisibles, y el ancla que emite
   // `sanitize-editorial-html.js`, antes fuera de alcance. El invariante —que la
@@ -120,7 +124,8 @@ test('el inventario de render reproduce la línea base VAN-0.1', async () => {
   // CABECERA: el mismo enlace externo añade un _blank literal protegido.
   // GENERALITAT: el logo enlaza a ceice.gva.es con otro _blank protegido.
   // F4 de la depuración: el enlace FSTP del aviso de Formación añade otro _blank literal con rel.
-  assert.equal(report.blankTargetsWithoutNoopener.total, 24);
+  // G07 retira los dos _blank literales protegidos de Meetings (Registration/Access).
+  assert.equal(report.blankTargetsWithoutNoopener.total, 22);
   assert.deepEqual(report.blankTargetsWithoutNoopener.unsafe, []);
 
   const sinkCounts = Object.fromEntries(
