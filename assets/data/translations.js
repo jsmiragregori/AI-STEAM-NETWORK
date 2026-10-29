@@ -1,7 +1,8 @@
 // FUENTE ESTÁTICA de traducciones (D24) regenerada por cms:ui.
 // Este archivo ES la base: las claves activas que no están en content/_ui/*.csv
 // solo viven aquí. Las claves presentes en los CSV se sobreescriben en cada
-// cms:ui — esas se editan en el CSV. Las etiquetas de Actualidad se retiran al generar.
+// cms:ui — esas se editan en el CSV. Las claves retiradas de Actualidad y Meetings se filtran al generar.
+// Retirada G07: 12 claves UI de Meetings
 // Base: translations.js existente + overrides de 98 entradas CSV
 
 export const translations = {
@@ -1349,27 +1350,7 @@ export const translations = {
           "Convocar consultas a la red",
           "Coordinar nodos distribuidos"
         ],
-        "consensueButton": "Ir a ConsensUE",
-        "meetingsTitle": "Red de Stakeholders (SN) – Próximas Reuniones",
-        "meetingsSubtitle": "Coordinada por CECU · Frecuencia semestral + online continua",
-        "meetings": [
-          {
-            "date": "15 Jun 2026",
-            "title": "Asamblea de la Red – Sesión 3",
-            "location": "Conselleria de Educació, Valencia + Streaming"
-          },
-          {
-            "date": "10 Jul 2026",
-            "title": "Taller Sectorial: IA y Salud",
-            "location": "Hospital La Fe + Online"
-          },
-          {
-            "date": "18 Sep 2026",
-            "title": "Foro Anual AI-STEAM Network",
-            "location": "Ciudad Politécnica de la Innovación, Valencia"
-          }
-        ],
-        "meetingsButton": "Inscribirse a la próxima reunión"
+        "consensueButton": "Ir a ConsensUE"
       }
     },
     "news": {},
@@ -2948,27 +2929,7 @@ export const translations = {
           "Convene network consultations",
           "Coordinate distributed nodes"
         ],
-        "consensueButton": "Go to ConsensUE",
-        "meetingsTitle": "Stakeholder Network (SN) – Upcoming Meetings",
-        "meetingsSubtitle": "Coordinated by CECU · Bi-annual frequency + continuous online",
-        "meetings": [
-          {
-            "date": "15 Jun 2026",
-            "title": "Network Assembly – Session 3",
-            "location": "Education Ministry, Valencia + Streaming"
-          },
-          {
-            "date": "10 Jul 2026",
-            "title": "Sectorial Workshop: AI and Health",
-            "location": "La Fe Hospital + Online"
-          },
-          {
-            "date": "18 Sep 2026",
-            "title": "AI-STEAM Network Annual Forum",
-            "location": "Innovation Polytechnic City, Valencia"
-          }
-        ],
-        "meetingsButton": "Register for the next meeting"
+        "consensueButton": "Go to ConsensUE"
       }
     },
     "news": {},
@@ -4530,27 +4491,7 @@ export const translations = {
           "Convocar consultes a la xarxa",
           "Coordinar nodes distribuïts"
         ],
-        "consensueButton": "Anar a ConsensUE",
-        "meetingsTitle": "Xarxa de Stakeholders (SN) – Pròximes Reunions",
-        "meetingsSubtitle": "Coordinada per CECU · Freqüència semestral + online contínua",
-        "meetings": [
-          {
-            "date": "15 Jun 2026",
-            "title": "Assemblea de la Xarxa – Sessió 3",
-            "location": "Conselleria d'Educació, València + Streaming"
-          },
-          {
-            "date": "10 Jul 2026",
-            "title": "Taller Sectorial: IA i Salut",
-            "location": "Hospital La Fe + Online"
-          },
-          {
-            "date": "18 Sep 2026",
-            "title": "Fòrum Anual AI-STEAM Network",
-            "location": "Ciutat Politècnica de la Innovació, València"
-          }
-        ],
-        "meetingsButton": "Inscripció a la pròxima reunió"
+        "consensueButton": "Anar a ConsensUE"
       }
     },
     "news": {},

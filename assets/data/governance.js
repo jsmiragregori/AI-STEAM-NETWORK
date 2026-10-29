@@ -1907,9 +1907,6 @@ export const GOVERNANCE_CONFIG = {
       },
       "buttonUrl": "https://aules.edu.gva.es/formaciodelprofessorat/course/view.php?id=41369",
       "buttonExternal": true
-    },
-    "meetingsSection": {
-      "visible": false
     }
   }
 };
