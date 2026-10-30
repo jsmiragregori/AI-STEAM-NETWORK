@@ -219,9 +219,17 @@ function tabDualTrack(govT) {
   const s = govT?.tabContent_dualtrack || {};
   const dualTrackBlock = GOVERNANCE_CONFIG?.dualTrackBlock || {};
   const dualTrackVisible = dualTrackBlock.visible !== false;
-  const tracksById = Object.fromEntries((dualTrackBlock.tracks || []).map(t => [t.id, t]));
-  const trackAVisible = tracksById['track-a']?.visible !== false;
-  const trackBVisible = tracksById['track-b']?.visible !== false;
+  const trackVariants = {
+    'track-a': ['bg-eu-blue', 'bg-eu-blue/10 text-eu-blue', 'alert-circle', 'text-eu-blue', 'linear-gradient(to bottom,#ffffff 0%,#EAE6FF 100%)', 'rgb(86 32 246/.12)'],
+    'track-b': ['bg-eu-purple', 'bg-eu-purple/10 text-eu-purple', 'check-circle', 'text-eu-purple', 'linear-gradient(to bottom,#ffffff 0%,#FFF4E1 100%)', 'rgb(73 24 173/.12)'],
+  };
+  const visibleTracks = (Array.isArray(dualTrackBlock.tracks) ? dualTrackBlock.tracks : [])
+    .filter(track => trackVariants[track?.id] && track.visible !== false)
+    .sort((a, b) => {
+      const orderA = Number.isFinite(Number(a.order)) ? Number(a.order) : Number.MAX_SAFE_INTEGER;
+      const orderB = Number.isFinite(Number(b.order)) ? Number(b.order) : Number.MAX_SAFE_INTEGER;
+      return orderA - orderB || (a.id === 'track-a' ? -1 : 1);
+    });
 
   const fl = dualTrackBlock.fieldLabels || {};
 
@@ -315,8 +323,7 @@ function tabDualTrack(govT) {
         <p class="text-lg text-gray-600 mb-8 leading-relaxed">${esc(pickLang(dualTrackBlock.description))}</p>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          ${trackAVisible ? trackBlock(tracksById['track-a'], 'bg-eu-blue',   'bg-eu-blue/10 text-eu-blue',   'alert-circle',  'text-eu-blue',   'linear-gradient(to bottom,#ffffff 0%,#EAE6FF 100%)',   'rgb(86 32 246/.12)'  ) : ''}
-          ${trackBVisible ? trackBlock(tracksById['track-b'], 'bg-eu-purple', 'bg-eu-purple/10 text-eu-purple','check-circle',  'text-eu-purple', 'linear-gradient(to bottom,#ffffff 0%,#FFF4E1 100%)',  'rgb(73 24 173/.12)' ) : ''}
+          ${visibleTracks.map(track => trackBlock(track, ...trackVariants[track.id])).join('')}
         </div>
       </div>` : ''}
       <div>
@@ -578,6 +585,7 @@ function tabDocumentos(govT) {
   const paginationPrev = cms.paginationPrev || { es: 'Anterior', en: 'Previous', va: 'Anterior' };
   const paginationNext = cms.paginationNext || { es: 'Siguiente', en: 'Next', va: 'Següent' };
   const noSearchResultsMessage = cms.noSearchResultsMessage || { es: 'No hay documentos que coincidan con la búsqueda.', en: 'No documents match your search.', va: 'Cap document coincideix amb la teva cerca.' };
+  const documentIcons = new Set(['📄', '📘', '📑', '📚', '📝', '📊', '📋', '📜', '📖', '📂']);
 
   function isPublic(doc) {
     return doc.access === 'public';
@@ -624,6 +632,7 @@ function tabDocumentos(govT) {
       const lang = getLang();
       const summaryText = getResourceSummary(doc.summary, lang);
       const customLinkText = pickLang(doc.linkText, '');
+      const documentIcon = documentIcons.has(doc.icon) ? doc.icon : '📄';
       // Texto del enlace: el personalizado del CMS o un default según el origen.
       const defaultDownload = lang === 'en' ? 'Download' : lang === 'va' ? 'Descarregar' : 'Descargar';
       const defaultView = lang === 'en' ? 'View' : lang === 'va' ? 'Veure' : 'Ver';
@@ -639,7 +648,7 @@ function tabDocumentos(govT) {
             ${summaryText ? `<p class="text-base text-gray-600 mb-4 leading-relaxed wrap-anywhere">${esc(summaryText)}</p>` : ''}
             <div class="flex items-start gap-4 mb-4">
               <div class="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff; box-shadow: inset 0 2px 6px rgb(73 24 173 / .08)">
-                <i data-lucide="file-text" class="w-6 h-6" style="color:#4918AD"></i>
+                <span class="text-3xl" aria-hidden="true">${esc(documentIcon)}</span>
               </div>
               <div class="flex-1 min-w-0">
                 <span class="text-sm text-gray-500 font-bold">${esc(formatDocDate(doc.date))}</span>
