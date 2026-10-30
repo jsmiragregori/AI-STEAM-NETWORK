@@ -274,14 +274,17 @@ test('gobernanza: la ausencia de dato pinta el hueco vacío (no es cero)', () =>
   assert.doesNotMatch(html, />null</);
 });
 
-test('inicio: cadena vacía y false no se clasifican como cero', () => {
+test('inicio: cadena vacía (dato ausente) no pinta caja; false no se clasifica como cero', () => {
+  // QA-018: en la portada la cadena vacía es dato ausente y no pinta caja. El
+  // resto de vistas conserva su comportamiento previo (ver las pruebas de arriba).
   const stats = [
     { id: 'a', value: '', icon: 'zap', label: L('VACIA') },
     { id: 'b', value: false, icon: 'zap', label: L('FALSE') },
     { id: 'c', value: 0, icon: 'zap', label: L('CERO') },
   ];
   const html = conHeroStats(HOME_CONFIG, stats, () => vistas.inicio.render());
-  assert.deepEqual(VALORES.inicio(html), ['', 'false']);
+  assert.deepEqual(VALORES.inicio(html), ['false']);
+  assert.ok(!html.includes('VACIA'), 'la etiqueta de un dato ausente no se pinta');
   assert.doesNotMatch(html, />undefined</);
   assert.doesNotMatch(html, />null</);
 });

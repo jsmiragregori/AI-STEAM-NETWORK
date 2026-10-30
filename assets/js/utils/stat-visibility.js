@@ -22,6 +22,15 @@ export function isZeroStatValue(value) {
   return Number(text) === 0;
 }
 
+// QA-018 (solo portada): un dato ausente (null, undefined, cadena vacía o solo
+// espacios) no es una cifra ni pinta caja. Es distinto de cero: el loader de Home
+// lo marca como null cuando falta el valor calculado o el manual está vacío. Las
+// demás vistas no lo aplican y conservan su comportamiento previo.
+export function isAbsentStatValue(value) {
+  if (value === null || value === undefined) return true;
+  return typeof value === 'string' && value.trim() === '';
+}
+
 export function filterVisibleStats(stats) {
   if (!Array.isArray(stats)) return [];
   return stats.filter(stat => stat && stat.visible !== false && !isZeroStatValue(stat.value));

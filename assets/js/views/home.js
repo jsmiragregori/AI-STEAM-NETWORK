@@ -6,7 +6,7 @@ import { resolveMembershipAction } from '../utils/membership.js';
 import { escapeHtml as esc } from '../utils/escape-html.js';
 import { getSafeEditorialUrl } from '../utils/safe-editorial-url.js';
 import { sanitizeEditorialHtml } from '../utils/sanitize-editorial-html.js';
-import { filterVisibleStats } from '../utils/stat-visibility.js';
+import { filterVisibleStats, isAbsentStatValue } from '../utils/stat-visibility.js';
 
 function localized(value) {
   const lang = getLanguage();
@@ -408,7 +408,8 @@ function renderHeroBlock() {
   if (!hero?.visible) return '';
   const lang = getLanguage();
   const loc = v => v?.[lang] || v?.es || '';
-  const stats = filterVisibleStats(hero.stats);
+  // QA-018: además de ocultar el cero, la portada no pinta datos ausentes (null/'').
+  const stats = filterVisibleStats(hero.stats).filter(s => !isAbsentStatValue(s.value));
   const statsHtml = stats.map((s, i) => {
     const isOddLast = (i === stats.length - 1) && (stats.length % 2 === 1);
     const spanStyle = isOddLast ? 'grid-column:1 / -1;' : '';
