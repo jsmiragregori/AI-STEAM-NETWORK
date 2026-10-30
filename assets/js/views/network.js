@@ -73,6 +73,17 @@ const CATEGORY_META = {
   admin:       { icon: 'globe',          color: 'text-eu-blue',   bg: 'bg-eu-blue/10',   border: 'border-eu-blue/25'   },
   sociedad:    { icon: 'heart-handshake',color: 'text-eu-purple', bg: 'bg-eu-purple/10', border: 'border-eu-purple/25' },
 };
+const ALLOWED_CATEGORY_ICONS = new Set(['graduation-cap', 'building-2', 'globe', 'heart-handshake']);
+
+function categoryMeta(categoryId) {
+  const meta = CATEGORY_META[categoryId] || CATEGORY_META.sociedad;
+  const configuredIcon = (NETWORK_CONFIG?.helixBlock?.categories || [])
+    .find(category => category.id === categoryId)?.icon;
+  return {
+    ...meta,
+    icon: ALLOWED_CATEGORY_ICONS.has(configuredIcon) ? configuredIcon : meta.icon,
+  };
+}
 
 const COUNTRIES = [...new Set(ACTIVE_PARTNERS.map(p => p.country))];
 
@@ -125,7 +136,7 @@ function helixBlock() {
     .filter(cat => cat.visible !== false && !isZeroStatValue(totalDeCategoria(cat)));
 
   const html = ejesVisibles.map(cat => {
-    const meta = CATEGORY_META[cat.id] || CATEGORY_META.sociedad;
+    const meta = categoryMeta(cat.id);
     // El total se resuelve en el loader (computado o manualOverride). Fallback al
     // cálculo en vista por compatibilidad con datos antiguos sin estos campos.
     const total = totalDeCategoria(cat);
@@ -202,7 +213,7 @@ function tabSocios(activeCategory, filterCountry) {
   const getCountryName = c => loc(pb.countryNames?.[c]) || c;
   const cardsHtml = filtered.map(p => {
     const pCats = itemCats(p);
-    const meta = CATEGORY_META[pCats[0]] || CATEGORY_META.sociedad;
+    const meta = categoryMeta(pCats[0]);
     const sectorsHtml = p.sectors.map(s => `<span class="text-sm px-2 py-0.5 rounded-full font-bold" style="background:rgb(86 32 246/.10); color:#5620F6">${esc(localized(s))}</span>`).join('');
     // Áreas de expertise libres: chip en Deep Purple (#4918AD), distinto del azul de los sectores oficiales.
     const expertiseHtml = (p.expertise || []).map(e => `<span class="text-sm px-2 py-0.5 rounded-full font-bold" style="background:rgb(73 24 173/.10); color:#4918AD">${esc(localized(e))}</span>`).join('');
@@ -244,7 +255,7 @@ function tabSocios(activeCategory, filterCountry) {
           ${pShowRole ? `<p class="text-sm text-eu-blue font-bold mt-2 mb-3">${esc(roleLabel)}</p>` : ''}
           ${contributionHtml}
           ${pShowCategory ? `<div class="flex flex-wrap items-center gap-3 min-w-0 ${contributionHtml ? 'mb-3' : 'mt-2 mb-3'}">${pCats.map(c => {
-            const m = CATEGORY_META[c] || CATEGORY_META.sociedad;
+            const m = categoryMeta(c);
             const lbl = getCategoryLabel(c);
             return `<div class="network-category-tooltip flex items-center gap-1.5 min-w-0" data-tooltip="${esc(lbl)}" aria-label="${esc(lbl)}" tabindex="0">
               <div class="w-5 h-5 rounded ${esc(m.bg)} flex items-center justify-center shrink-0">
@@ -498,7 +509,7 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
     ? `<div class="col-span-3 py-10 text-center text-base text-gray-500">${esc(shTexts.noResults)}</div>`
     : paged.map(s => {
         const sCats = itemCats(s);
-        const meta = CATEGORY_META[sCats[0]] || CATEGORY_META.sociedad;
+        const meta = categoryMeta(sCats[0]);
         const sectorIcon    = SECTOR_ICON[s.primarySector] || 'layers';
         const sectorTooltip = localized(SECTOR_LABEL[s.primarySector] || { es: s.primarySector, en: s.primarySector, va: s.primarySector });
         const description   = s.description?.[lang] || s.description?.es || '';
@@ -526,7 +537,7 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
                 <i data-lucide="${esc(sectorIcon)}" class="w-4 h-4 ${esc(meta.color)}"></i>
               </div>
               ${shShowCategory ? `<div class="flex flex-wrap justify-end gap-1">${sCats.map(c => {
-                const m = CATEGORY_META[c] || CATEGORY_META.sociedad;
+                const m = categoryMeta(c);
                 const lbl = getCatLabel(c);
                 return `<div class="network-category-tooltip flex items-center gap-1.5 ${esc(m.bg)} ${esc(m.border)} border rounded-full px-2 py-0.5" data-tooltip="${esc(lbl)}" aria-label="${esc(lbl)}" tabindex="0">
                   <i data-lucide="${esc(m.icon)}" class="w-3 h-3 ${esc(m.color)}"></i>

@@ -60,6 +60,33 @@ function pintar(idioma = 'es', termino = '') {
   return vistas.gobernanza.render();
 }
 
+function tracksSinteticos({ orderA = 2, orderB = 1, visibleA = true, visibleB = true } = {}) {
+  return ['track-a', 'track-b'].map((id) => ({
+    id,
+    visible: id === 'track-a' ? visibleA : visibleB,
+    order: id === 'track-a' ? orderA : orderB,
+    letter: id === 'track-a' ? 'A' : 'B',
+    title: { es: `TRACK ${id.slice(-1).toUpperCase()}`, en: `TRACK ${id.slice(-1).toUpperCase()}`, va: `TRACK ${id.slice(-1).toUpperCase()}` },
+    subtitle: { es: 'Subtítulo', en: 'Subtitle', va: 'Subtítol' },
+    scope: { text: { es: 'Ámbito', en: 'Scope', va: 'Àmbit' } },
+    normativeFramework: { text: { es: 'Marco', en: 'Framework', va: 'Marc' } },
+    keyLimit: { text: { es: 'Límite', en: 'Limit', va: 'Límit' } },
+    activeBodies: [],
+  }));
+}
+
+function pintarTracks(tracks) {
+  const configTracks = GOVERNANCE_CONFIG.dualTrackBlock.tracks;
+  const previos = configTracks.splice(0, configTracks.length, ...tracks);
+  setState('governanceTab', 'dual-track');
+  try {
+    return vistas.gobernanza.render();
+  } finally {
+    configTracks.splice(0, configTracks.length, ...previos);
+    setState('governanceTab', 'documentos');
+  }
+}
+
 const docsSection = (html) => {
   const inicio = html.indexOf('id="gov-docs-results"');
   return html.slice(inicio);
@@ -161,6 +188,51 @@ test('el acceso y la visibilidad de cada documento se conservan', () => {
     assert.ok(html.includes('data-lucide="globe"'), 'el acceso público conserva su globo');
     assert.ok(partner && publico);
   });
+});
+
+test('tracks visibles se ordenan por order ascendente y empate favorece track-a', () => {
+  const ordenInvertido = pintarTracks(tracksSinteticos({ orderA: 2, orderB: 1 }));
+  assert.ok(ordenInvertido.indexOf('TRACK B') < ordenInvertido.indexOf('TRACK A'));
+  const empate = pintarTracks(tracksSinteticos({ orderA: 1, orderB: 1 }));
+  assert.ok(empate.indexOf('TRACK A') < empate.indexOf('TRACK B'));
+});
+
+test('tracks ocultos se excluyen con cero, uno y dos visibles', () => {
+  const cardStart = '<div class="rd-card border-none overflow-hidden shadow-lg h-full flex flex-col rd-card-hover cursor-default"';
+  for (const [visibleA, visibleB, expected] of [[false, false, 0], [true, false, 1], [true, true, 2]]) {
+    const html = pintarTracks(tracksSinteticos({ visibleA, visibleB }));
+    assert.equal(html.split(cardStart).length - 1, expected, `visibles=${visibleA}/${visibleB}`);
+  }
+});
+
+test('el icono de documento admitido se muestra en es/en/va', () => {
+  const previos = DOCS().map((doc) => doc.icon);
+  try {
+    DOCS().forEach((doc) => { doc.icon = '📘'; });
+    for (const idioma of ['es', 'en', 'va']) {
+      assert.match(docsSection(pintar(idioma)), /<span class="text-3xl" aria-hidden="true">📘<\/span>/);
+    }
+  } finally {
+    DOCS().forEach((doc, index) => { doc.icon = previos[index]; });
+  }
+});
+
+test('icono legacy o HTML se conserva como dato pero la tarjeta usa fallback sin interpretarlo', () => {
+  const doc = DOCS()[0];
+  const previo = doc.icon;
+  try {
+    for (const legacy of ['file-text', '<img src=x onerror=alert(1)>']) {
+      doc.icon = legacy;
+      for (const idioma of ['es', 'en', 'va']) {
+        const html = docsSection(pintar(idioma));
+        assert.match(html, /<span class="text-3xl" aria-hidden="true">📄<\/span>/);
+        assert.ok(!html.includes('<img src=x'), `${idioma}: el icono se interpretó como HTML`);
+      }
+      assert.equal(doc.icon, legacy, 'la vista no debe normalizar el dato legado');
+    }
+  } finally {
+    doc.icon = previo;
+  }
 });
 
 test('el adjunto descargable y el enlace externo se conservan con el código', () => {
