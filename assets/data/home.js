@@ -348,7 +348,7 @@ export const HOME_CONFIG = {
     "heading": {
       "es": "El Ecosistema AiSTEAM",
       "en": "The AiSTEAM Ecosystem",
-      "va": "L&#39;Ecosistema AiSTEAM"
+      "va": "L'Ecosistema AiSTEAM"
     },
     "description": {
       "visible": true,
@@ -378,7 +378,7 @@ export const HOME_CONFIG = {
         "description": {
           "es": "Entorno de aprendizaje del Track B para cursos, itinerarios de formación docente y actividades vinculadas a FP y recursos abiertos del proyecto.",
           "en": "Track B learning environment for courses, teacher training pathways and activities linked to VET and the project’s open resources.",
-          "va": "Entorn d&#39;aprenentatge del Track B per a cursos, itineraris de formació docent i activitats vinculades a FP i recursos oberts del projecte."
+          "va": "Entorn d'aprenentatge del Track B per a cursos, itineraris de formació docent i activitats vinculades a FP i recursos oberts del projecte."
         },
         "tag": {
           "visible": true,
@@ -438,7 +438,7 @@ export const HOME_CONFIG = {
         "description": {
           "es": "Canal participativo del Track B para consultas, deliberación y trazabilidad de aportaciones que ayudan a priorizar necesidades, retos y recursos de la red.",
           "en": "Track B participation channel for consultation, deliberation and traceability of contributions that help prioritise the network’s needs, challenges and resources.",
-          "va": "Canal participatiu del Track B per a consultes, deliberació i traçabilitat d&#39;aportacions que ajuden a prioritzar les necessitats, els reptes i els recursos de la xarxa."
+          "va": "Canal participatiu del Track B per a consultes, deliberació i traçabilitat d'aportacions que ajuden a prioritzar les necessitats, els reptes i els recursos de la xarxa."
         },
         "tag": {
           "visible": true,
@@ -484,7 +484,7 @@ export const HOME_CONFIG = {
         "description": {
           "es": "Los retos y conocimientos de la red nutren directamente los módulos de FP: ciclos formativos y cursos de especialización de la Conselleria de Educación, Cultura y Universidades.",
           "en": "Network challenges and knowledge directly feed VET subjects: training cycles and specialization courses from the Department of Education, Culture and Universities",
-          "va": "Els reptes i coneixements de la xarxa alimenten directament els mòduls de FP: cicles formatius i cursos d&#39;especialització de la Conselleria d&#39;Educació, Cultura i Universitats."
+          "va": "Els reptes i coneixements de la xarxa alimenten directament els mòduls de FP: cicles formatius i cursos d'especialització de la Conselleria d'Educació, Cultura i Universitats."
         },
         "items": [
           {
@@ -537,7 +537,7 @@ export const HOME_CONFIG = {
         },
         "description": {
           "es": "Máster universitario internacional sobre IA aplicada a la creatividad y la triple transición. Contenidos co-creados con los socios de la red en 12 países europeos.",
-          "en": "International university master&#39;s degree on AI applied to creativity and the triple transition. Content co-created with network partners in 12 European countries.",
+          "en": "International university master's degree on AI applied to creativity and the triple transition. Content co-created with network partners in 12 European countries.",
           "va": "Màster universitari internacional sobre IA aplicada a la creativitat i la triple transició. Continguts co-creats amb els socis de la xarxa en 12 països europeus."
         },
         "items": [
