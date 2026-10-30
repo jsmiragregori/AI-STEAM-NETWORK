@@ -2,7 +2,6 @@
 // Este archivo ES la base: las claves activas que no están en content/_ui/*.csv
 // solo viven aquí. Las claves presentes en los CSV se sobreescriben en cada
 // cms:ui — esas se editan en el CSV. Las claves retiradas de Actualidad y Meetings se filtran al generar.
-// Retirada G07: 12 claves UI de Meetings
 // Base: translations.js existente + overrides de 98 entradas CSV
 
 export const translations = {
