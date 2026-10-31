@@ -532,6 +532,7 @@ export const MARKETPLACE_CONFIG = {
     "ch_mentoring_type": true,
     "ch_mentoring_provider": true,
     "ch_mentoring_specialties": true,
+    "ch_mentoring_sector": true,
     "ch_mentoring_availability": true
   },
   "searchBlock": {
@@ -4511,6 +4512,7 @@ export const MARKETPLACE_CONFIG = {
           "showReadiness": true,
           "showWindow": false,
           "showInfrastructure": false,
+          "showEntity": true,
           "showPrimaryMetric": true,
           "showDownloadsIndicator": false,
           "resultBlockLabel": {
@@ -5116,6 +5118,7 @@ export const MARKETPLACE_CONFIG = {
             "showReadiness": true,
             "showWindow": false,
             "showInfrastructure": false,
+            "showEntity": true,
             "showPrimaryMetric": true,
             "showDownloadsIndicator": false,
             "resultBlockLabel": {

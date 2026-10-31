@@ -6,6 +6,8 @@
 //       global `ch_challenge_sector` (mismo patrón que ch_case_sector / ch_pilot_sector).
 // T3.3: la card de reto muestra la Triple Transición con las etiquetas ES/EN/VA del catálogo
 //       existente (transitionLabels), controlada por `cardChipVisibility.tripleTransition`.
+// G11: la card de piloto consume `presentation.card.showEntity` y la de mentoría respeta
+//       `cardChipVisibility.ch_mentoring_sector`.
 //
 // Los valores de Triple Transición se inyectan EN MEMORIA ítem a ítem (las fuentes reales
 // todavía no tienen valores) y se restauran siempre; la prueba no escribe nada.
@@ -254,6 +256,62 @@ test('T3.3 los valores en la card siguen el orden de la fuente', () => {
   const item = itemDe('challenges', RETO);
   const card = conTransicion(item, ['social', 'digital'], () => cardDe(pintar('challenges'), item.code));
   assert.ok(card.indexOf('Transición Social') < card.indexOf('Transición Digital'), 'debe respetarse el orden de la fuente');
+});
+
+// ═══ G11 — controles de visibilidad en pilotos y mentorías ═════════════════════════════════
+
+test('G11 presentation.card.showEntity controla la entidad líder de la card de piloto', () => {
+  const item = itemDe('pilots', 'pilot-de-prueba-1');
+  const ownershipOriginal = item.ownership;
+  const pilotPlanOriginal = item.pilotPlan;
+  const presentationOriginal = item.presentation;
+  const entidad = 'Entidad líder piloto G11';
+
+  try {
+    item.ownership = {
+      ...ownershipOriginal,
+      lead: { name: { es: entidad, en: entidad, va: entidad } },
+    };
+    item.pilotPlan = {};
+    item.presentation = { card: { showEntity: true } };
+
+    const visible = conConfig(['cardChipVisibility', 'ch_entity'], true, () =>
+      cardDe(pintar('pilots'), item.code));
+    assert.ok(visible.includes(entidad), 'con showEntity=true debe salir la entidad líder');
+
+    item.presentation.card.showEntity = false;
+    const oculta = conConfig(['cardChipVisibility', 'ch_entity'], true, () =>
+      cardDe(pintar('pilots'), item.code));
+    assert.ok(!oculta.includes(entidad), 'con showEntity=false la entidad líder debe ocultarse');
+  } finally {
+    item.ownership = ownershipOriginal;
+    item.pilotPlan = pilotPlanOriginal;
+    item.presentation = presentationOriginal;
+  }
+});
+
+test('G11 ch_mentoring_sector controla la insignia de sector en la card de mentoría', () => {
+  const item = itemDe('mentorings', 'mentoring-de-prueba-1');
+  const coreOriginal = item.core;
+  const presentationOriginal = item.presentation;
+  const sectorChip = 'data-mp-chip-filter="sector" data-mp-chip-value="ene"';
+
+  try {
+    item.core = { ...coreOriginal, sector: 'ene' };
+    // `presentation` hace que el render use el esquema de mentoría v2.
+    item.presentation = { card: {} };
+
+    const visible = conConfig(['cardChipVisibility', 'ch_mentoring_sector'], true, () =>
+      cardDe(pintar('mentorings'), item.code));
+    assert.ok(visible.includes(sectorChip), 'con ch_mentoring_sector=true debe salir el chip');
+
+    const oculta = conConfig(['cardChipVisibility', 'ch_mentoring_sector'], false, () =>
+      cardDe(pintar('mentorings'), item.code));
+    assert.ok(!oculta.includes(sectorChip), 'con ch_mentoring_sector=false debe ocultarse el chip');
+  } finally {
+    item.core = coreOriginal;
+    item.presentation = presentationOriginal;
+  }
 });
 
 // G05: una métrica incompleta no se presenta como una elección del autor; cero explícito sí.
