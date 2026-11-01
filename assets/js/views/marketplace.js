@@ -340,6 +340,30 @@ const TRANSFER_TYPE_ICONS = {
 
 const CARD_CHIP_MAX = MARKETPLACE_CONFIG.cardChipMax ?? 4;
 
+// QA-057/QA-075: la fecha de revisión y la entidad tienen control propio por tipo.
+// Si la clave nueva no existe, se usa la antigua como fallback (compatibilidad).
+const REVIEW_DATE_CHIP_KEYS = {
+  challenge: 'ch_reviewDate_challenge',
+  case: 'ch_reviewDate_case',
+  pilot: 'ch_reviewDate_pilot',
+  validation: 'ch_reviewDate_validation',
+  mentoring: 'ch_reviewDate_mentoring',
+};
+const ENTITY_CHIP_KEYS = {
+  challenge: 'ch_entity_challenge',
+  case: 'ch_entity_case',
+  pilot: 'ch_entity_pilot',
+  validation: 'ch_entity_validation',
+};
+
+function chipVisibleForType(ccv, itemType, kind) {
+  const visible = ccv || {};
+  const keys = kind === 'reviewDate' ? REVIEW_DATE_CHIP_KEYS : ENTITY_CHIP_KEYS;
+  const key = keys[itemType];
+  if (key && visible[key] !== undefined) return visible[key] !== false;
+  return visible[kind === 'reviewDate' ? 'ch_reviewDate' : 'ch_entity'] !== false;
+}
+
 const LEVEL_STYLES = {
   FP:       'bg-[#FFF4E1] text-eu-purple border-eu-purple/20',
   vet:      'bg-[#FFF4E1] text-eu-purple border-eu-purple/20',
@@ -686,7 +710,7 @@ function getItemById(id) {
 
 function getItemDateLabel(item) {
   const ccv = MARKETPLACE_CONFIG.cardChipVisibility || {};
-  if (ccv.ch_reviewDate === false) return '';
+  if (!chipVisibleForType(ccv, item.type, 'reviewDate')) return '';
   const revised = pickLang(item.core?.revisionDateLabel);
   return revised ? `${uiText('updated')}: ${revised}` : '';
 }
@@ -1103,7 +1127,7 @@ function renderTabResults(tab, items) {
         class="rounded border border-eu-border px-3 py-1.5 text-sm font-semibold transition-colors ${currentPage === 0 ? 'pointer-events-none opacity-40' : 'hover:border-eu-blue hover:text-eu-blue'}">
         ${esc(pickLang(pagination.paginationPrev, 'Anterior'))}
       </button>
-      <span class="px-2 text-xs font-semibold text-gray-500">${currentPage + 1} / ${esc(totalPages)}</span>
+      <span class="px-2 text-xs font-semibold text-gray-500">${esc(currentPage + 1)} / ${esc(totalPages)}</span>
       <button type="button" data-mp-page="next"
         class="rounded border border-eu-border px-3 py-1.5 text-sm font-semibold transition-colors ${currentPage >= totalPages - 1 ? 'pointer-events-none opacity-40' : 'hover:border-eu-blue hover:text-eu-blue'}">
         ${esc(pickLang(pagination.paginationNext, 'Siguiente'))}
@@ -1247,16 +1271,28 @@ function renderChipList(values, tone = 'bg-eu-bg text-gray-700 border-eu-border'
   return `<div class="mt-4 flex flex-wrap gap-2">${chips.map(chip => renderBadge(chip, tone)).join('')}</div>`;
 }
 
-function renderSdgs(sdgs, limit = CARD_CHIP_MAX, filterKey = '', noWrap = false) {
-  const items = asArray(sdgs).slice(0, limit).map(sdg => {
+function renderSdgs(sdgs, limit = CARD_CHIP_MAX, filterKey = '', noWrap = false, showMoreIndicator = false) {
+  const mapped = asArray(sdgs).map(sdg => {
     const rawId = sdg?.id != null ? String(sdg.id) : (typeof sdg === 'number' || /^\d+$/.test(String(sdg ?? '')) ? String(sdg) : null);
     const sdgPrefix = pickLang({ es: 'ODS', en: 'SDG', va: 'ODS' });
     const label = rawId ? `${sdgPrefix} ${rawId}` : pickLang(sdg?.label || sdg);
     return label ? { label, value: rawId || label } : null;
   }).filter(Boolean);
+  const items = mapped.slice(0, limit);
   if (!items.length) return '';
   const inner = items.map(({ label, value }) => renderBadge(label, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20', filterKey, value)).join('');
-  return noWrap ? inner : `<div class="mt-4 flex flex-wrap gap-2">${inner}</div>`;
+  const hiddenCount = mapped.length - items.length;
+  const moreLabel = hiddenCount > 0
+    ? pickLang({
+        es: hiddenCount === 1 ? '1 ODS más' : `${hiddenCount} ODS más`,
+        en: hiddenCount === 1 ? '1 more SDG' : `${hiddenCount} more SDGs`,
+        va: hiddenCount === 1 ? '1 ODS més' : `${hiddenCount} ODS més`,
+      })
+    : '';
+  const moreChip = showMoreIndicator && hiddenCount > 0
+    ? `<span class="inline-flex items-center rounded border border-dashed border-eu-blue/20 bg-eu-blue/5 px-2 py-0.5 text-xs font-semibold text-eu-blue" title="${esc(moreLabel)}" aria-label="${esc(moreLabel)}">+${hiddenCount}</span>`
+    : '';
+  return noWrap ? inner + moreChip : `<div class="mt-4 flex flex-wrap gap-2">${inner}${moreChip}</div>`;
 }
 
 function renderActorNames(actors) {
@@ -1433,8 +1469,8 @@ function renderChallengeCard(item, tab) {
 
   const dlIndicator = '';
 
-  // Entidad promotora — solo si global visibility lo permite
-  const entityLabel = ccv.ch_entity !== false
+  // Entidad promotora — solo si la visibilidad del tipo lo permite
+  const entityLabel = chipVisibleForType(ccv, item.type, 'entity')
     ? (pickLang(ownership.requester?.publicLabel) || pickLang(item.core?.entity?.name))
     : null;
 
@@ -1605,8 +1641,8 @@ function renderCaseCard(item, tab) {
     : '';
 
 
-  // 8. ODS
-  const _sdgInner = (showSdgsFlag && cl.sdgs) ? renderSdgs(cl.sdgs, 3, 'sdg', true) : '';
+  // 8. ODS (máximo 3 + indicador estático «+N» si hay más)
+  const _sdgInner = (showSdgsFlag && cl.sdgs) ? renderSdgs(cl.sdgs, 3, 'sdg', true, true) : '';
   const sdgsHtml = _sdgInner
     ? `<div class="mt-3">
         <p class="mb-1.5 text-xs font-bold uppercase tracking-wide text-gray-500">${esc(uiText('sdgs'))}</p>
@@ -1633,7 +1669,7 @@ function renderCaseCard(item, tab) {
     extraBadgeTone: 'bg-eu-purple/10 text-eu-purple border-eu-purple/20',
     extraBadgeFilterKey: (showStageBadge && caseStageLabel) ? 'caseStage' : '',
     extraBadgeFilterValue: (showStageBadge && caseStageLabel) ? (core.caseStage || '') : '',
-    entity: (ccv.ch_entity !== false && cardPres.showEntity !== false) ? (originName || publisherName) : null,
+    entity: (chipVisibleForType(ccv, item.type, 'entity') && cardPres.showEntity !== false) ? (originName || publisherName) : null,
     hideTypeBadge: true,
   };
 
@@ -1770,7 +1806,7 @@ function renderPilotCard(item, tab) {
   `;
 
   const leadName = pickLang(item.ownership?.lead?.name, item.ownership?.lead?.name || '');
-  const entityLabel = (ccv.ch_entity !== false && pres.showEntity !== false) ? leadName : null;
+  const entityLabel = (chipVisibleForType(ccv, item.type, 'entity') && pres.showEntity !== false) ? leadName : null;
 
   return renderCardShell(item, tab, body, {
     title: core.title,
@@ -1899,7 +1935,7 @@ function renderValidationCard(item, tab) {
     ${dlHtml}
   `;
 
-  const proposerName = ccv.ch_entity !== false ? (pickLang(item.ownership?.proposer?.name) || '') : '';
+  const proposerName = chipVisibleForType(ccv, item.type, 'entity') ? (pickLang(item.ownership?.proposer?.name) || '') : '';
 
   return renderCardShell(item, tab, body, {
     title: core.title,

@@ -558,7 +558,7 @@ function buildShResults({ lang, shTexts, shBlock, pageSize, activeCategory, acti
       <button id="net-pag-prev" ${safePage === 0 ? 'disabled' : ''} class="px-4 py-1.5 rounded-full text-sm font-bold border border-eu-blue/15 bg-white text-eu-text hover:border-eu-blue disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors">
         ← ${esc(shTexts.paginationPrev)}
       </button>
-      <span class="text-sm text-gray-500">${safePage + 1} / ${esc(totalPages)}</span>
+      <span class="text-sm text-gray-500">${esc(safePage + 1)} / ${esc(totalPages)}</span>
       <button id="net-pag-next" ${safePage >= totalPages - 1 ? 'disabled' : ''} class="px-4 py-1.5 rounded-full text-sm font-bold border border-eu-blue/15 bg-white text-eu-text hover:border-eu-blue disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer transition-colors">
         ${esc(shTexts.paginationNext)} →
       </button>
