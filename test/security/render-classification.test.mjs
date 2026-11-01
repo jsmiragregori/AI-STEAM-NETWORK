@@ -76,13 +76,16 @@ const EXPECTED_BY_FILE = {
 // G13 (2026-11-01) añade 36 líneas antes de las cinco excepciones de marketplace.js; conserva
 // sus expresiones y categorías. También suma dos salidas indirectas (`_sdgInner` en 1502 y 1649),
 // fragmentos de renderSdgs cuyos rótulos editoriales pasan por esc(); el techo V6 sube a 129.
+// G14 (2026-11-01) añade dos líneas de comentario en renderChallengeCard antes de las cinco
+// excepciones de marketplace.js: 1832→1834, 2017→2019, 2019→2021, 2058→2060 y 2218→2220.
+// Siguen siendo las mismas expresiones, con las mismas categorías y recuentos.
 const EXPECTED_EXCEPTIONS = [
   { file: 'assets/js/views/governance.js', line: 726, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1832, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 2017, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 2019, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/marketplace.js', line: 2058, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 2218, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 1834, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 2019, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 2021, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 2060, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 2220, category: 'COMPOSICION_CADENA' },
   { file: 'assets/js/views/training.js', line: 464, category: 'ESTRUCTURAL' },
 ];
 

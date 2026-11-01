@@ -4047,8 +4047,8 @@ export const MARKETPLACE_CONFIG = {
           "name": "",
           "publicLabel": {
             "es": "UMH Vitrobiodis",
-            "en": "UMH Vitrobiodis",
-            "va": "UMH Vitrobiodis"
+            "en": "",
+            "va": ""
           }
         },
         "leadTeam": null,
@@ -4650,8 +4650,8 @@ export const MARKETPLACE_CONFIG = {
             "name": "",
             "publicLabel": {
               "es": "UMH Vitrobiodis",
-              "en": "UMH Vitrobiodis",
-              "va": "UMH Vitrobiodis"
+              "en": "",
+              "va": ""
             }
           },
           "leadTeam": null,
