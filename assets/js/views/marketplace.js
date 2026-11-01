@@ -771,7 +771,7 @@ function renderTabs(activeId) {
                   ? 'border-eu-blue bg-eu-blue text-white shadow-sm'
                   : 'border-eu-yellow bg-eu-yellow/70 text-eu-purple hover:border-eu-purple/30 hover:bg-eu-yellow'
               }">
-              <i data-lucide="${esc(tab.icon || 'layers-3')}" class="h-4 w-4"></i>
+              ${tab.icon ? `<i data-lucide="${esc(tab.icon)}" class="h-4 w-4"></i>` : ''}
               ${esc(pickLang(tab.label, tab.id))}
             </button>`;
         }).join('')}
@@ -1469,9 +1469,11 @@ function renderChallengeCard(item, tab) {
 
   const dlIndicator = '';
 
-  // Entidad promotora — solo si la visibilidad del tipo lo permite
+  // Entidad promotora — solo si la visibilidad del tipo lo permite. Usa la
+  // misma regla estricta que el brief y la recompensa (QA-073): sin texto en el
+  // idioma activo no se pinta, en vez de caer al español.
   const entityLabel = chipVisibleForType(ccv, item.type, 'entity')
-    ? (pickLang(ownership.requester?.publicLabel) || pickLang(item.core?.entity?.name))
+    ? (pickLangStrict(ownership.requester?.publicLabel) || pickLangStrict(item.core?.entity?.name))
     : null;
 
   const body = `
