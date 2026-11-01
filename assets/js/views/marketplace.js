@@ -1282,8 +1282,15 @@ function renderSdgs(sdgs, limit = CARD_CHIP_MAX, filterKey = '', noWrap = false,
   if (!items.length) return '';
   const inner = items.map(({ label, value }) => renderBadge(label, 'bg-eu-blue/10 text-eu-blue border-eu-blue/20', filterKey, value)).join('');
   const hiddenCount = mapped.length - items.length;
+  const moreLabel = hiddenCount > 0
+    ? pickLang({
+        es: hiddenCount === 1 ? '1 ODS más' : `${hiddenCount} ODS más`,
+        en: hiddenCount === 1 ? '1 more SDG' : `${hiddenCount} more SDGs`,
+        va: hiddenCount === 1 ? '1 ODS més' : `${hiddenCount} ODS més`,
+      })
+    : '';
   const moreChip = showMoreIndicator && hiddenCount > 0
-    ? `<span class="inline-flex items-center rounded border border-dashed border-eu-blue/20 bg-eu-blue/5 px-2 py-0.5 text-xs font-semibold text-eu-blue">+${hiddenCount}</span>`
+    ? `<span class="inline-flex items-center rounded border border-dashed border-eu-blue/20 bg-eu-blue/5 px-2 py-0.5 text-xs font-semibold text-eu-blue" title="${esc(moreLabel)}" aria-label="${esc(moreLabel)}">+${hiddenCount}</span>`
     : '';
   return noWrap ? inner + moreChip : `<div class="mt-4 flex flex-wrap gap-2">${inner}${moreChip}</div>`;
 }
