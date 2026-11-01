@@ -129,6 +129,32 @@ function splitBinary(text, op) {
   return parts;
 }
 
+// Separa concatenaciones binarias sin confundirlas con + unario o ++. Las
+// actualizaciones ambiguas quedan sin separar y terminan clasificadas como dato.
+function splitAddition(text) {
+  const parts = [];
+  let last = 0;
+  scan(text, (i, c) => {
+    if (c !== '+') return true;
+    const before = text.slice(0, i).trimEnd();
+    const after = text.slice(i + 1).trimStart();
+    const previous = before.at(-1);
+    const incrementedOperand = before.at(-3);
+    const endsWithPostIncrement = before.endsWith('++')
+      && (/[A-Za-z0-9_$)\]}]/.test(incrementedOperand || '') || ["'", '"', '`'].includes(incrementedOperand));
+    const previousEndsOperand = /[A-Za-z0-9_$)\]}]/.test(previous || '')
+      || ["'", '"', '`'].includes(previous)
+      || endsWithPostIncrement;
+    if (!before || !after || !previousEndsOperand || text[i + 1] === '+') return true;
+    parts.push(text.slice(last, i));
+    last = i + 1;
+    return true;
+  });
+  if (!parts.length) return null;
+  parts.push(text.slice(last));
+  return parts;
+}
+
 // ── Contexto por fichero: declaraciones locales y funciones que devuelven HTML ──
 
 function declarationEnd(source, start) {
@@ -420,6 +446,11 @@ export function classifyEmission(text, ctx = { declarations: new Map(), producer
   const and = splitBinary(t, '&&');
   if (and) return classifyEmission(and[and.length - 1], ctx, seen);
 
+  // La suma puede concatenar texto. Solo es segura si cada operando lo es;
+  // por ejemplo, un fragmento escapado + texto externo sigue siendo inseguro.
+  const addition = splitAddition(t);
+  if (addition) return worst(addition.map((part) => classifyEmission(part, ctx, seen)));
+
   // lista.join('') de un array local: emite lo que se le metió, en su
   // inicializador `[...]` y en cada `lista.push(...)` anterior al uso.
   const arrayJoin = t.match(/^([A-Za-z_$][\w$]*)(?:\.(?:slice|filter)\([^()]*\))*\.join\s*\(\s*(?:''|""|``)\s*\)$/);
@@ -530,7 +561,8 @@ export function classifyEmission(text, ctx = { declarations: new Map(), producer
     const kind = classifyHtmlProperty(htmlProp[1], ctx, seen);
     if (kind) return kind === 'dato' ? dato(t, ctx) : kind;
   }
-  // Aritmética: identificadores, números, .length y operadores, con algún número o .length
+  // Aritmética con coerción numérica; la suma binaria se clasificó arriba por
+  // operandos para no confundir `dato + 1` con una operación segura.
   const sinLength = t.replace(/\.length\b/g, '');
   if (/^[\w$.\s+\-*/%()]+$/.test(t) && (/\d/.test(t) || /\.length\b/.test(t)) && !/\./.test(sinLength.replace(/\d\.\d/g, ''))) return 'literal';
 

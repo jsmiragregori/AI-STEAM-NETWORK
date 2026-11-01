@@ -1127,7 +1127,7 @@ function renderTabResults(tab, items) {
         class="rounded border border-eu-border px-3 py-1.5 text-sm font-semibold transition-colors ${currentPage === 0 ? 'pointer-events-none opacity-40' : 'hover:border-eu-blue hover:text-eu-blue'}">
         ${esc(pickLang(pagination.paginationPrev, 'Anterior'))}
       </button>
-      <span class="px-2 text-xs font-semibold text-gray-500">${currentPage + 1} / ${esc(totalPages)}</span>
+      <span class="px-2 text-xs font-semibold text-gray-500">${esc(currentPage + 1)} / ${esc(totalPages)}</span>
       <button type="button" data-mp-page="next"
         class="rounded border border-eu-border px-3 py-1.5 text-sm font-semibold transition-colors ${currentPage >= totalPages - 1 ? 'pointer-events-none opacity-40' : 'hover:border-eu-blue hover:text-eu-blue'}">
         ${esc(pickLang(pagination.paginationNext, 'Siguiente'))}

@@ -276,7 +276,7 @@ function renderSkillCloudPanel(theme, icon, title, cloudId) {
 function pathSteps(steps, color) {
   return (steps || []).map((step, i) => `
     <div class="flex items-center gap-3 rd-card-grad-violet border border-eu-blue/10 rounded-2xl px-4 py-3 shadow-sm hover:border-eu-blue/30 transition-all duration-300">
-      <div class="w-6 h-6 rounded-full ${esc(color)} text-white text-xs font-bold flex items-center justify-center shrink-0 shadow-inner"><span>${i + 1}</span></div>
+      <div class="w-6 h-6 rounded-full ${esc(color)} text-white text-xs font-bold flex items-center justify-center shrink-0 shadow-inner"><span>${esc(i + 1)}</span></div>
       <span class="text-base font-semibold text-eu-text leading-tight">${esc(step)}</span>
     </div>`).join('');
 }
@@ -327,7 +327,7 @@ function renderCourseGridContent(tab, allCourses, trainingT, courseTags, emptyMe
   const paginationHtml = !isAll && totalPages > 1 ? `
     <div class="flex gap-3 justify-center mt-8 mb-6 items-center">
       <button id="tr-pag-prev" class="px-4 py-2 rounded-xl border text-sm font-bold cursor-pointer transition-all duration-300 ${safePage === 0 ? 'opacity-40 pointer-events-none border-eu-blue/10 text-eu-text/40' : 'bg-white border-eu-blue/10 text-eu-text hover:border-eu-blue/30 hover:bg-eu-blue/5'}">← ${esc(trainingT?.paginationPrev || 'Anterior')}</button>
-      <span class="px-4 py-2 text-sm font-bold text-eu-text/70 bg-eu-blue/5 rounded-xl">${safePage + 1} / ${esc(totalPages)}</span>
+      <span class="px-4 py-2 text-sm font-bold text-eu-text/70 bg-eu-blue/5 rounded-xl">${esc(safePage + 1)} / ${esc(totalPages)}</span>
       <button id="tr-pag-next" class="px-4 py-2 rounded-xl border text-sm font-bold cursor-pointer transition-all duration-300 ${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none border-eu-blue/10 text-eu-text/40' : 'bg-white border-eu-blue/10 text-eu-text hover:border-eu-blue/30 hover:bg-eu-blue/5'}">${esc(trainingT?.paginationNext || 'Siguiente')} →</button>
     </div>` : '';
 
@@ -523,7 +523,7 @@ function tabContent(activeTab, courses, trainingT, sections, courseTags, emptyMe
           </div>`).join('')
         : (trainingT?.masterBridgeItems || []).map((item, i) => `<div class="group flex items-center gap-3 rounded-2xl border border-eu-blue/10 bg-[#FFFDF9] px-4 py-3 text-base font-semibold text-eu-text shadow-sm hover:bg-white hover:border-eu-blue/30 transition-all duration-300">
             <div class="rd-icon-circle-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff">
-              <span class="text-xs font-extrabold text-eu-blue">${i + 1}</span>
+              <span class="text-xs font-extrabold text-eu-blue">${esc(i + 1)}</span>
             </div>
             <span class="min-w-0 leading-tight">${esc(item)}</span>
           </div>`).join('');

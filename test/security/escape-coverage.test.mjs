@@ -35,12 +35,84 @@ test('el detector acepta lo escapado, lo literal y los fragmentos del código', 
     'esc(item.title)',
     "esc(item.title || '')",
     "flag ? 'a' : 'b'",
-    'idx + 1',
+    '4 + 1',
     'list.length',
     '`<b>x</b>`',
     'items.map(i => `<li>${esc(i)}</li>`).join(\'\')',
     'cond ? `<p>x</p>` : \'\'',
   ]) assert.notEqual(kind(expr), 'dato', expr);
+});
+
+// G13: renderSdgs devuelve `inner + moreChip`. Los dos operandos son HTML
+// compuesto por el código y los valores editoriales de sus chips pasan por
+// esc(); el detector debe comprobar cada operando para no aceptar por accidente
+// expresiones como `dato + 1` (la antigua regla aritmética las daba por literales).
+test('la concatenación solo es segura cuando todos sus operandos lo son', () => {
+  const source = [
+    'function renderSdgs(items, showMoreIndicator) {',
+    '  const inner = items.map(sdg => `<span>${esc(sdg.label)}</span>`).join("");',
+    '  const moreChip = showMoreIndicator ? `<span>+3</span>` : "";',
+    '  return inner + moreChip;',
+    '}',
+    'function renderWithUnsafeData() {',
+    '  const inner = `<span>seguro</span>`;',
+    '  const moreChip = `<span>+3</span>`;',
+    '  return (inner + moreChip) + item.title;',
+    '}',
+    'function renderWithPrecedence(enabled) {',
+    '  const inner = `<span>seguro</span>`;',
+    '  const moreChip = `<span>+3</span>`;',
+    '  return enabled ? (inner + moreChip) : ((inner + "") + item.title);',
+    '}',
+  ].join('\n');
+  const ctx = fileContext(source);
+
+  assert.equal(classifyEmission('renderSdgs(sdgs, true)', ctx), 'fragmento');
+  assert.equal(classifyEmission('renderWithUnsafeData()', ctx), 'dato');
+  assert.equal(classifyEmission('renderWithPrecedence(true)', ctx), 'dato');
+  assert.equal(kind('dato + 1'), 'dato');
+  assert.equal(kind('item.title + 1'), 'dato');
+  assert.equal(kind('++dato'), 'dato');
+  assert.equal(kind('dato++'), 'dato');
+  assert.equal(kind('4 + (1 + 2)'), 'literal');
+  assert.equal(kind('esc(dato + 1)'), 'escapada');
+
+  const indexed = 'const chips = items.map((item, idx) => `<span>${idx + 1}</span>`).join("");';
+  assert.equal(
+    classifyEmission('idx + 1', { ...fileContext(indexed), at: indexed.indexOf('idx + 1') }),
+    'dato',
+    'el detector no prueba que el receiver sea Array.prototype.map',
+  );
+  const customMap = 'const collection = { map(callback) { return callback("fragmento", item.title); } }; collection.map((item, idx) => `<span>${idx + 1}</span>`);';
+  assert.equal(
+    classifyEmission('idx + 1', { ...fileContext(customMap), at: customMap.indexOf('idx + 1') }),
+    'dato',
+    'un método map propio puede entregar un valor no numérico como segundo argumento',
+  );
+  const shadowed = 'items.map((item, idx) => { const local = (idx) => `<span>${idx + 1}</span>`; return local(item.label); }).join("");';
+  assert.equal(
+    classifyEmission('idx + 1', { ...fileContext(shadowed), at: shadowed.indexOf('idx + 1') }),
+    'dato',
+    'un callback anidado puede sombrear el índice de map con dato externo',
+  );
+
+  const paged = 'const safePage = Math.min(rawPage, Math.max(0, totalPages - 1)); const label = `${safePage + 1}`;';
+  assert.equal(
+    classifyEmission('safePage + 1', { ...fileContext(paged), at: paged.indexOf('safePage + 1') }),
+    'dato',
+    'el detector no asume que Math sea el objeto global sin sombra ni mutación',
+  );
+  assert.equal(kind('Number(dato) + 1'), 'dato', 'Number también puede estar sombreado o reasignado');
+  const shadowedBuiltins = 'function render(Number, Math) { return Number(dato) + Math.min(1, 2); }';
+  assert.equal(
+    classifyEmission('Number(dato) + Math.min(1, 2)', { ...fileContext(shadowedBuiltins), at: shadowedBuiltins.indexOf('return') }),
+    'dato',
+  );
+  const reassignedBuiltins = 'Number = custom; Math.min = custom; const value = Number(dato) + Math.min(1, 2);';
+  assert.equal(
+    classifyEmission('Number(dato) + Math.min(1, 2)', { ...fileContext(reassignedBuiltins), at: reassignedBuiltins.lastIndexOf('Number') }),
+    'dato',
+  );
 });
 
 test('el detector sigue una variable hasta sus asignaciones', () => {

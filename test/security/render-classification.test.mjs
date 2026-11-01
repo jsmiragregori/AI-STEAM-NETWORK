@@ -73,13 +73,16 @@ const EXPECTED_BY_FILE = {
 // G05 añade cinco líneas netas en la guardia de KPI de renderCaseCard: exige valor y etiqueta,
 // pero permite unidad vacía y cero explícito. Desplaza estas mismas cinco excepciones a 1796,
 // 1981, 1983, 2022 y 2182; las expresiones, categorías y recuentos no cambian.
+// G13 (2026-11-01) añade 36 líneas antes de las cinco excepciones de marketplace.js; conserva
+// sus expresiones y categorías. También suma dos salidas indirectas (`_sdgInner` en 1502 y 1649),
+// fragmentos de renderSdgs cuyos rótulos editoriales pasan por esc(); el techo V6 sube a 129.
 const EXPECTED_EXCEPTIONS = [
   { file: 'assets/js/views/governance.js', line: 726, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1796, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 1981, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1983, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/marketplace.js', line: 2022, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 2182, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 1832, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 2017, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 2019, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 2058, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 2218, category: 'COMPOSICION_CADENA' },
   { file: 'assets/js/views/training.js', line: 464, category: 'ESTRUCTURAL' },
 ];
 
@@ -184,14 +187,16 @@ test('el techo de salidas editoriales indirectas queda fijado (deuda V6)', async
   // líneas de código de la card. Mismo tipo que `stakeBtnHtml`: marcado compuesto por el propio fichero,
   // con la etiqueta y el valor ya escapados (`esc(...)`); ni el código ni el externo llegan sin escapar.
   // G07 removes the Meetings renderer and its single indirect output candidate.
-  assert.equal(indirectOutputCandidates.total, 127);
+  // G13 añade dos usos de `_sdgInner` como salida en texto de elemento; renderSdgs compone ese HTML
+  // con chips cuyos rótulos llevan esc(). Se mantienen dentro del techo grueso por ser identificadores.
+  assert.equal(indirectOutputCandidates.total, 129);
   assert.deepEqual(indirectOutputCandidates.byFile, {
     'assets/js/components/footer.js': 2,
     'assets/js/components/header.js': 4,
     'assets/js/views/governance.js': 22,
     'assets/js/views/home.js': 18,
     'assets/js/views/knowledge.js': 14,
-    'assets/js/views/marketplace.js': 18,
+    'assets/js/views/marketplace.js': 20,
     'assets/js/views/network.js': 33,
     'assets/js/views/sitemap.js': 2,
     'assets/js/views/sectors.js': 2,

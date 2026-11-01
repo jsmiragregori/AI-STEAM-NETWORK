@@ -419,7 +419,7 @@ function tabLbd(govT) {
 
   const flowStepsHtml = (operatingFlowSteps || s.operatingFlow?.steps || []).map((step, i) => `
     <div class="rd-card rd-card-grad-violet rd-card-edge p-6 flex flex-col h-full group">
-      <div class="w-8 h-8 rounded-lg bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm mb-4 shrink-0 shadow-sm rd-icon-circle-gov">${i + 1}</div>
+      <div class="w-8 h-8 rounded-lg bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm mb-4 shrink-0 shadow-sm rd-icon-circle-gov">${esc(i + 1)}</div>
       <p class="text-base font-extrabold text-eu-text mb-2.5 leading-snug">${esc(pickLang(step.title, step.title || ''))}</p>
       <p class="text-base text-gray-700 leading-relaxed mt-auto">${esc(pickLang(step.description, step.desc || ''))}</p>
     </div>
@@ -689,7 +689,7 @@ function tabDocumentos(govT) {
     const paginationHtml = !isShowAll && totalPages > 1 ? `
       <div class="flex gap-2 justify-center mt-6">
         <button data-gov-doc-page="prev" class="px-4 py-2 text-xs font-bold rounded-full border cursor-pointer transition-all ${safePage === 0 ? 'opacity-50 cursor-not-allowed text-gray-400 border-gray-200' : 'bg-white text-eu-text border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">← ${esc(pickLang(paginationPrev, 'Anterior'))}</button>
-        <span class="px-3 py-2 text-xs text-gray-500 font-bold">Página ${safePage + 1} de ${esc(totalPages)}</span>
+        <span class="px-3 py-2 text-xs text-gray-500 font-bold">Página ${esc(safePage + 1)} de ${esc(totalPages)}</span>
         <button data-gov-doc-page="next" class="px-4 py-2 text-xs font-bold rounded-full border cursor-pointer transition-all ${safePage >= totalPages - 1 ? 'opacity-50 cursor-not-allowed text-gray-400 border-gray-200' : 'bg-white text-eu-text border-eu-blue/10 hover:border-eu-blue/30 hover:bg-eu-blue/5'}">${esc(pickLang(paginationNext, 'Siguiente'))} →</button>
       </div>
     ` : '';

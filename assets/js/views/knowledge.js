@@ -200,7 +200,7 @@ function tabFlujo() {
       // CMS activo: renderiza solo los steps visibles (puede ser array vacío)
       stepsHtml = (cycleBlock.steps || []).map((step, idx) => `
         <div class="rd-card rd-card-grad-violet rd-card-edge p-6 relative group">
-          <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${idx + 1}</div>
+          <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${esc(idx + 1)}</div>
           <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${esc(lucideName(step.icon, FLOW_ICONS[idx] || 'circle'))}" class="w-6 h-6 text-eu-blue"></i></div>
           <h3 class="font-extrabold text-eu-purple text-lg mb-2">${esc(pickLang(step.title, ''))}</h3>
           <p class="text-base text-gray-600 leading-relaxed">${esc(pickLang(step.description, ''))}</p>
@@ -211,7 +211,7 @@ function tabFlujo() {
       const flowSteps = t('knowledge.flowSteps') || [];
       stepsHtml = flowSteps.map((step, idx) => `
         <div class="rd-card rd-card-grad-violet rd-card-edge p-6 relative group">
-          <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${idx + 1}</div>
+          <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-eu-blue text-white flex items-center justify-center font-extrabold text-sm">${esc(idx + 1)}</div>
           <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" style="background:#ffffff"><i data-lucide="${esc(FLOW_ICONS[idx] || 'circle')}" class="w-6 h-6 text-eu-blue"></i></div>
           <h3 class="font-extrabold text-eu-purple text-lg mb-2">${esc(step.title || '')}</h3>
           <p class="text-base text-gray-600 leading-relaxed">${esc(step.desc || '')}</p>
@@ -492,7 +492,7 @@ function renderOerGridContent(search) {
       <button id="oer-pag-prev" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
         ← ${esc(getOerLabel('previous'))}
       </button>
-      <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${esc(totalPages)}</span>
+      <span class="px-3 py-1 text-xs text-gray-500">${esc(safePage + 1)} / ${esc(totalPages)}</span>
       <button id="oer-pag-next" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
         ${esc(getOerLabel('next'))} →
       </button>
@@ -911,7 +911,7 @@ function renderTemplatesGridContent(search) {
       <button id="tmpl-pag-prev" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage === 0 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
         ← ${esc(prevLbl)}
       </button>
-      <span class="px-3 py-1 text-xs text-gray-500">${safePage + 1} / ${esc(totalPages)}</span>
+      <span class="px-3 py-1 text-xs text-gray-500">${esc(safePage + 1)} / ${esc(totalPages)}</span>
       <button id="tmpl-pag-next" class="px-3 py-1.5 rounded-full border text-sm cursor-pointer transition-colors border-eu-blue/15${safePage >= totalPages - 1 ? 'opacity-40 pointer-events-none' : 'hover:border-eu-blue'}">
         ${esc(nextLbl)} →
       </button>
