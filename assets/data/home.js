@@ -242,7 +242,7 @@ export const HOME_CONFIG = {
       "visible": true,
       "html": {
         "es": "<strong>ENRED</strong> es la red europea de departamentos regionales de educación impulsada por la Generalitat Valenciana: un entorno de cooperación interregional, intercambio de buenas prácticas, diálogo político y aprendizaje institucional entre administraciones educativas. <strong>AiSTEAM Network</strong> se construye sobre esa base de confianza institucional para añadir un foco temático especializado en IA, creatividad y educación STEAM. La sinergia es clara: <strong>ENRED</strong> proporciona el ecosistema institucional y el alcance europeo; <strong>AiSTEAM Network</strong> proporciona la profundidad temática, la comunidad especializada y el marco sostenible para movilizar centros, docentes y stakeholders de AiSECRETT alrededor de la innovación educativa en IA.",
-        "en": "<strong>ENRED</strong> is the European Network of Regional Education Departments, a non-binding cooperation framework promoted by the Generalitat Valenciana: an environment of interregional cooperation, best practice exchange, policy dialogue and institutional learning among education authorities. <strong>AiSTEAM Network</strong> builds on this foundation of institutional trust to add a focused thematic expertise in AI, creativity and STEAM education. The synergy is clear: <strong>ENRED</strong> provides the institutional ecosystem and European reach; <strong>AiSTEAM Network</strong> provides thematic depth, a specialised community and a sustainable framework to mobilise centres, educators and AiSECRETT stakeholders around educational innovation in AI.",
+        "en": "<strong>ENRED</strong> is the European Network of Regional Education Departments, a non-binding cooperation framework promoted by the Generalitat Valenciana: an environment of interregional cooperation, best practice exchange, policy dialogue and institutional learning among education authorities. <strong>AiSTEAM Network</strong> builds on this foundation of institutional trust to add a focused thematic expertise in AI, creativity and STEAM education. The synergy is clear: <strong>ENRED</strong> provides the institutional ecosystem and European reach; <strong>AiSTEAM Network</strong> provides thematic depth, a specialized community and a sustainable framework to mobilize centres, educators and AiSECRETT stakeholders around educational innovation in AI.",
         "va": "<strong>ENRED</strong> és la Xarxa Europea de Departaments d&#39;Educació Regional impulsada per la Generalitat Valenciana: un entorn de cooperació interregional, intercanvi de bones pràctiques, diàleg polític i aprenentatge institucional entre administracions educatives. <strong>AiSTEAM Network</strong> es construeix sobre eixa base de confiança institucional per a afegir un focus temàtic especialitzat en IA, creativitat i educació STEAM. La sinergia és clara: <strong>ENRED</strong> proporciona l&#39;ecosistema institucional i l&#39;abast europeu; <strong>AiSTEAM Network</strong> proporciona la profunditat temàtica, la comunitat especialitzada i el marc sostenible per a mobilitzar centres, docents i stakeholders d&#39;AiSECRETT al voltant de la innovació educativa en IA."
       }
     },
@@ -437,7 +437,7 @@ export const HOME_CONFIG = {
         },
         "description": {
           "es": "Canal participativo del Track B para consultas, deliberación y trazabilidad de aportaciones que ayudan a priorizar necesidades, retos y recursos de la red.",
-          "en": "Track B participation channel for consultation, deliberation and traceability of contributions that help prioritise the network’s needs, challenges and resources.",
+          "en": "Track B participation channel for consultation, deliberation and traceability of contributions that help prioritize the network’s needs, challenges and resources.",
           "va": "Canal participatiu del Track B per a consultes, deliberació i traçabilitat d'aportacions que ajuden a prioritzar les necessitats, els reptes i els recursos de la xarxa."
         },
         "tag": {
@@ -588,7 +588,7 @@ export const HOME_CONFIG = {
       "visible": true,
       "html": {
         "es": "El conocimiento de la red se organiza en torno a las siete áreas sectoriales AiSECRETT para la triple transición digital, verde y social.",
-        "en": "Network knowledge is organised around the seven AiSECRETT sectoral areas for the digital, green and social triple transition.",
+        "en": "Network knowledge is organized around the seven AiSECRETT sectoral areas for the digital, green and social triple transition.",
         "va": "El coneixement de la xarxa s&#39;organitza al voltant de les set àrees sectorials AiSECRETT per a la triple transició digital, verda i social."
       }
     },

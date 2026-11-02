@@ -32,9 +32,9 @@ export const NETWORK_CONFIG = {
         "manualOverride": false,
         "computedValue": 0,
         "label": {
-          "es": "Miembros",
-          "en": "Members",
-          "va": "Membres"
+          "es": "Miembros de la red",
+          "en": "Network members",
+          "va": "Membres de la xarxa"
         }
       },
       {
@@ -764,7 +764,7 @@ export const NETWORK_CONFIG = {
         },
         "contribution": {
           "es": "Lidera investigación basada en la práctica sobre flujos de IA autoalojada y organiza actividades extracurriculares, reforzando la dimensión artística y de diseño del aprendizaje AiSTEAM.",
-          "en": "Leads practice-based research about self-hosted AI workflows and organises extracurricular activities, strengthening the artistic and design dimension of AiSTEAM learning.",
+          "en": "Leads practice-based research about self-hosted AI workflows and organizes extracurricular activities, strengthening the artistic and design dimension of AiSTEAM learning.",
           "va": "Lidera investigació basada en la pràctica sobre fluxos d'IA autoallotjada i organitza activitats extracurriculars, reforçant la dimensió artística i de disseny de l'aprenentatge AiSTEAM."
         },
         "sectors": [
@@ -1631,9 +1631,9 @@ export const NETWORK_CONFIG = {
       }
     },
     "tabTitle": {
-      "es": "Miembros",
-      "en": "Members",
-      "va": "Membres"
+      "es": "Miembros de la red",
+      "en": "Network members",
+      "va": "Membres de la xarxa"
     },
     "description": {
       "es": "Únete a la comunidad de práctica de la AiSTEAM Network: organizaciones que comparten retos, casos y pilotos de IA y creatividad. La adhesión es gratuita y, al darte de alta, tu organización pasa a ser también stakeholder de AiSECRETT.",
@@ -1838,7 +1838,7 @@ export const NETWORK_CONFIG = {
         },
         "pilot": {
           "es": "Pilotaje en organización o centro",
-          "en": "Pilot in an organisation or centre",
+          "en": "Pilot in an organization or centre",
           "va": "Pilotatge en organització o centre"
         },
         "resource": {

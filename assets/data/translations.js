@@ -171,7 +171,7 @@ export const translations = {
       "description": "Una red de innovación cuádruple hélice que conecta universidades, empresas, administraciones y sociedad civil. El consorcio AiSECRETT impulsa la red, abierta a la adhesión de organizaciones de toda España y Europa.",
       "stats": {
         "consortiumPartners": "Socios Consorcio",
-        "stakeholdersNetwork": "Miembros",
+        "stakeholdersNetwork": "Miembros de la red",
         "countries": "Países",
         "totalOrganizations": "Total Organizaciones"
       },
@@ -184,7 +184,7 @@ export const translations = {
         "sociedad": "Sociedad Civil y ONG"
       },
       "partnersTabTitle": "Socios del Consorcio AiSECRETT",
-      "stakeholdersTabTitle": "Miembros",
+      "stakeholdersTabTitle": "Miembros de la red",
       "partnersDesc": "Los socios del consorcio AiSECRETT son los <strong>23 socios</strong> (22 beneficiarios + 1 socio asociado) del proyecto europeo, seleccionados en la convocatoria inicial. Su composición es fija durante la vida del proyecto.",
       "filterAll": "Todos",
       "consortium": "CONSORCIO",
@@ -1674,7 +1674,7 @@ export const translations = {
       },
       "enredBlock": {
         "heading": "Built on ENRED: From cooperation to thematic innovation",
-        "desc": "ENRED is the European Network of Regional Education Departments, a non-binding cooperation framework promoted by the Generalitat Valenciana: an environment of interregional cooperation, best practice exchange, policy dialogue and institutional learning among education authorities. AiSTEAM Network builds on this foundation of institutional trust to add a focused thematic expertise in AI, creativity and STEAM education. The synergy is clear: ENRED provides the institutional ecosystem and European reach; AiSTEAM Network provides thematic depth, a specialised community and a sustainable framework to mobilise centres, educators and AiSECRETT stakeholders around educational innovation in AI.",
+        "desc": "ENRED is the European Network of Regional Education Departments, a non-binding cooperation framework promoted by the Generalitat Valenciana: an environment of interregional cooperation, best practice exchange, policy dialogue and institutional learning among education authorities. AiSTEAM Network builds on this foundation of institutional trust to add a focused thematic expertise in AI, creativity and STEAM education. The synergy is clear: ENRED provides the institutional ecosystem and European reach; AiSTEAM Network provides thematic depth, a specialized community and a sustainable framework to mobilize centres, educators and AiSECRETT stakeholders around educational innovation in AI.",
         "enredLabel": "ENRED (institutional ecosystem)",
         "networkLabel": "AiSTEAM Network (thematic focus)",
         "synergyLabel": "Complementary synergy",
@@ -1750,7 +1750,7 @@ export const translations = {
       "description": "A quadruple helix innovation network connecting universities, companies, administrations and civil society. The AiSECRETT consortium drives the network, open to organizations from Spain and across Europe.",
       "stats": {
         "consortiumPartners": "Consortium Partners",
-        "stakeholdersNetwork": "Members",
+        "stakeholdersNetwork": "Network members",
         "countries": "Countries",
         "totalOrganizations": "Total Organizations"
       },
@@ -1763,7 +1763,7 @@ export const translations = {
         "sociedad": "Civil Society and NGOs"
       },
       "partnersTabTitle": "AiSECRETT Consortium Partners",
-      "stakeholdersTabTitle": "Members",
+      "stakeholdersTabTitle": "Network members",
       "partnersDesc": "AiSECRETT consortium partners are the <strong>23 partners</strong> (22 beneficiaries + 1 associated partner) of the European project, selected in the initial call. Its composition is fixed during the project lifetime.",
       "filterAll": "All",
       "consortium": "CONSORTIUM",
@@ -3329,7 +3329,7 @@ export const translations = {
       "description": "Una xarxa d'innovació de quàdruple hèlix que connecta universitats, empreses, administracions i societat civil. El consorci AiSECRETT impulsa la xarxa, oberta a l'adhesió d'organitzacions de tota Espanya i Europa.",
       "stats": {
         "consortiumPartners": "Socis Consorci",
-        "stakeholdersNetwork": "Membres",
+        "stakeholdersNetwork": "Membres de la xarxa",
         "countries": "Països",
         "totalOrganizations": "Total Organitzacions"
       },
@@ -3342,7 +3342,7 @@ export const translations = {
         "sociedad": "Societat Civil i ONG"
       },
       "partnersTabTitle": "Socis del Consorci AiSECRETT",
-      "stakeholdersTabTitle": "Membres",
+      "stakeholdersTabTitle": "Membres de la xarxa",
       "partnersDesc": "Els socis del consorci AiSECRETT són els <strong>23 socis</strong> (22 beneficiaris + 1 soci associat) del projecte europeu, seleccionats en la convocatòria inicial. La seua composició és fixa durant la vida del projecte.",
       "filterAll": "Tots",
       "consortium": "CONSORCI",
@@ -3438,7 +3438,7 @@ export const translations = {
       "masterTopics": "Candidats a pont acadèmic",
       "featuredPartners": "Socis Destacats",
       "cta": "La teua organització treballa en algun d'estos sectors?",
-      "ctaDesc": "La AiSTEAM Network és oberta a organitzacions interessades de qualsevol dels 7 sectors. La sol·licitud es gestiona des de la secció <strong>La Xarxa</strong>, on es recull la informació necessària per a ubicar la teua organització a l'ecosistema.",
+      "ctaDesc": "L'AiSTEAM Network és oberta a organitzacions interessades de qualsevol dels 7 sectors. La sol·licitud es gestiona des de la secció <strong>La Xarxa</strong>, on es recull la informació necessària per a ubicar la teua organització a l'ecosistema.",
       "ctaButton": "Anar al formulari d'adhesió",
       "sectorLabels": {
         "initiatives": "Iniciatives",

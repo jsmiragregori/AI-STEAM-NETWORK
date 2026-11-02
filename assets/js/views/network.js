@@ -712,7 +712,7 @@ export function render() {
     ` : '';
     const stakeholdersTab = SHOW_STAKEHOLDERS_TAB ? `
           <button data-net-tab="stakeholders" class="${tabBtnClass('stakeholders')}">
-            <i data-lucide="users" class="w-4 h-4"></i>${esc(localized(NETWORK_CONFIG?.stakeholdersBlock?.tabTitle) || localized({ es: 'Miembros', en: 'Members', va: 'Membres' }))} (${STAKEHOLDERS.length})
+            <i data-lucide="users" class="w-4 h-4"></i>${esc(localized(NETWORK_CONFIG?.stakeholdersBlock?.tabTitle) || localized({ es: 'Miembros de la red', en: 'Network members', va: 'Membres de la xarxa' }))} (${STAKEHOLDERS.length})
           </button>
     ` : '';
 
