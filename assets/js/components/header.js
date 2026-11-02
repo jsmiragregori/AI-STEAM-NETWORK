@@ -22,15 +22,22 @@ const HOME_LABEL = { es: 'Ir al inicio', en: 'Go to home', va: 'Anar a l’inici
 const AI_SECRETT_URL = getSafeEditorialUrl('https://aisecrett.eu/');
 
 function getHeaderLanguages() {
-  const configured = Array.isArray(HEADER_CONFIG?.languages) ? HEADER_CONFIG.languages : [];
-  const valid = configured
+  const configured = HEADER_CONFIG?.languages;
+  // Sin configuración (generado antiguo) se conserva el selector de siempre.
+  // Con una lista explícita —aunque esté vacía— se pinta lo que dice: no se
+  // sustituyen idiomas que el autor no ha configurado.
+  if (!Array.isArray(configured)) return DEFAULT_LANGUAGES;
+  return configured
     .filter(item => item && typeof item.code === 'string' && item.code.trim())
     .map(item => ({
       code: item.code.trim(),
       label: String(item.label || item.code).trim(),
       bcp47: String(item.bcp47 || item.code).trim(),
-    }));
-  return valid.length ? valid : DEFAULT_LANGUAGES;
+    }))
+    // QA-036: el sitio solo aplica es/en/va. Un código distinto dejaría un
+    // botón que no cambia el idioma; no se pinta aunque venga en el generado.
+    .filter(item => ['es', 'en', 'va'].includes(item.code))
+    .filter((item, index, all) => all.findIndex(other => other.code === item.code) === index);
 }
 
 function langBtn(language, lang) {
