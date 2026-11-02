@@ -519,9 +519,9 @@ export const GOVERNANCE_CONFIG = {
           "va": "Òrgan participatiu (Track B)"
         },
         "desc": {
-          "es": "Órgano estratégico y no decisorio del Track B. Los stakeholders aportan necesidades, conocimiento sectorial y casos o retos; INESC TEC coordina la relación con esta red en consulta con la coordinación del proyecto.",
-          "en": "Strategic, non-decision-making body of Track B. Stakeholders contribute needs, sector expertise and cases or challenges; INESC TEC coordinates the relationship with this network in consultation with the project coordination.",
-          "va": "Òrgan estratègic i no decisori del Track B. Els stakeholders aporten necessitats, coneixement sectorial i casos o reptes; INESC TEC coordina la relació amb esta xarxa en consulta amb la coordinació del projecte."
+          "es": "Órgano estratégico y no decisorio del Track B. Los stakeholders de AiSECRETT, incluidos los miembros de la comunidad de práctica, aportan necesidades, conocimiento sectorial y casos o retos; INESC TEC coordina la relación con este órgano en consulta con la coordinación del proyecto.",
+          "en": "Strategic, non-decision-making body of Track B. AiSECRETT stakeholders, including members of the community of practice, contribute needs, sector expertise and cases or challenges; INESC TEC coordinates the relationship with this body in consultation with the project coordination.",
+          "va": "Òrgan estratègic i no decisori del Track B. Els stakeholders d'AiSECRETT, inclosos els membres de la comunitat de pràctica, aporten necessitats, coneixement sectorial i casos o reptes; INESC TEC coordina la relació amb este òrgan en consulta amb la coordinació del projecte."
         },
         "members": {
           "es": "Representantes externos invitados según prioridades, sectores y relevancia del proyecto",
@@ -608,9 +608,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "ENRED – Xarxa Europea de Departaments d'Educació Regional"
           },
           "desc": {
-            "es": "ENRED es un marco de cooperación interregional no vinculante que impulsa el intercambio de buenas prácticas, el diálogo político y la colaboración internacional entre departamentos regionales de educación en Europa. AiSTEAM Network se construye sobre ese ecosistema de confianza institucional: aprovecha las relaciones interregionales de ENRED para ampliar la visibilidad, el compromiso de los stakeholders y la diseminación de la innovación educativa en IA, creatividad y STEAM.",
-            "en": "ENRED is a non-binding interregional cooperation framework promoting best practice exchange, policy dialogue and international collaboration among regional education departments in Europe. AiSTEAM Network builds on this institutional trust ecosystem: it draws on ENRED's interregional relationships to broaden visibility, stakeholder engagement and dissemination of educational innovation in AI, creativity and STEAM.",
-            "va": "ENRED és un marc de cooperació interregional no vinculant que impulsa l'intercanvi de bones pràctiques, el diàleg polític i la col·laboració internacional entre departaments regionals d'educació a Europa. AiSTEAM Network es construeix sobre eixe ecosistema de confiança institucional: aprofita les relacions interregionals d'ENRED per a ampliar la visibilitat, el compromís dels stakeholders i la difusió de la innovació educativa en IA, creativitat i STEAM."
+            "es": "ENRED es un marco de cooperación interregional no vinculante que impulsa el intercambio de buenas prácticas, el diálogo político y la colaboración internacional entre departamentos regionales de educación en Europa. AiSTEAM Network se construye sobre ese ecosistema de confianza institucional: aprovecha las relaciones interregionales de ENRED para ampliar la visibilidad, la implicación de los agentes del ecosistema y la diseminación de la innovación educativa en IA, creatividad y STEAM.",
+            "en": "ENRED is a non-binding interregional cooperation framework promoting best practice exchange, policy dialogue and international collaboration among regional education departments in Europe. AiSTEAM Network builds on this institutional trust ecosystem: it draws on ENRED's interregional relationships to broaden visibility, the involvement of ecosystem actors and dissemination of educational innovation in AI, creativity and STEAM.",
+            "va": "ENRED és un marc de cooperació interregional no vinculant que impulsa l'intercanvi de bones pràctiques, el diàleg polític i la col·laboració internacional entre departaments regionals d'educació a Europa. L'AiSTEAM Network es construeix sobre eixe ecosistema de confiança institucional: aprofita les relacions interregionals d'ENRED per a ampliar la visibilitat, la implicació dels agents de l'ecosistema i la difusió de la innovació educativa en IA, creativitat i STEAM."
           }
         }
       ]
@@ -734,9 +734,9 @@ export const GOVERNANCE_CONFIG = {
         },
         "scope": {
           "text": {
-            "es": "Foros de política educativa, banco de retos, networking, eventos, repositorio de conocimiento y participación de stakeholders.",
-            "en": "Education policy forums, challenge bank, networking, events, knowledge repository, and stakeholder participation.",
-            "va": "Fòrums de política educativa, banc de reptes, networking, events, repositori de coneixement i participació de stakeholders."
+            "es": "Foros de política educativa, banco de retos, networking, eventos, repositorio de conocimiento y participación de stakeholders de AiSECRETT.",
+            "en": "Education policy forums, challenge bank, networking, events, knowledge repository, and participation of AiSECRETT stakeholders.",
+            "va": "Fòrums de política educativa, banc de reptes, networking, events, repositori de coneixement i participació de stakeholders d'AiSECRETT."
           }
         },
         "normativeFramework": {
@@ -748,9 +748,9 @@ export const GOVERNANCE_CONFIG = {
         },
         "keyLimit": {
           "text": {
-            "es": "Las aportaciones de stakeholders pueden canalizarse a través de la Red de Stakeholders y ConsensUE cuando el proceso esté habilitado. Las decisiones formales permanecen en los órganos del consorcio y en los procedimientos aprobados por CECU y la coordinación del proyecto.",
-            "en": "Stakeholder input may be channelled through the Stakeholder Network and ConsensUE when the process is enabled. Formal decisions remain with the consortium bodies and the procedures approved by CECU and project coordination.",
-            "va": "Les aportacions de stakeholders poden canalitzar-se a través de la Xarxa de Stakeholders i ConsensUE quan el procés estiga habilitat. Les decisions formals romanen en els òrgans del consorci i en els procediments aprovats per CECU i la coordinació del projecte."
+            "es": "Los stakeholders de AiSECRETT, también los miembros de la AiSTEAM Network, pueden canalizar sus aportaciones a través de la Red de Stakeholders y ConsensUE cuando el proceso esté habilitado. Las decisiones formales permanecen en los órganos del consorcio y en los procedimientos aprobados por CECU y la coordinación del proyecto.",
+            "en": "AiSECRETT stakeholders, including AiSTEAM Network members, may channel their input through the Stakeholder Network and ConsensUE when the process is enabled. Formal decisions remain with the consortium bodies and the procedures approved by CECU and project coordination.",
+            "va": "Els stakeholders d'AiSECRETT, inclosos els membres de l'AiSTEAM Network, poden canalitzar les seues aportacions a través de la Xarxa de Stakeholders i ConsensUE quan el procés estiga habilitat. Les decisions formals romanen en els òrgans del consorci i en els procediments aprovats per CECU i la coordinació del projecte."
           }
         },
         "activeBodies": [
@@ -907,7 +907,7 @@ export const GOVERNANCE_CONFIG = {
           },
           "scope": {
             "es": "Datos de miembros, participación comunitaria, red ENRED/AiSTEAM, retos/casos y evidencias del Track B.",
-            "en": "Member data, community participation, ENRED/AiSTEAM network, challenges/cases and Track B evidence.",
+            "en": "Member data, community participation, ENRED/AiSTEAM Network, challenges/cases and Track B evidence.",
             "va": "Dades de membres, participació comunitària, xarxa ENRED/AiSTEAM, reptes/casos i evidències del Track B."
           }
         },
@@ -966,9 +966,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Model d'Acord de Col·laboració – Regla de Cost Zero"
       },
       "description": {
-        "es": "Este bloque muestra una propuesta de principios para el futuro proceso de adhesión al Track B. El contenido está pendiente de decisión por CECU, la coordinación del proyecto y los socios responsables del proceso de stakeholders.",
-        "en": "This block shows a proposed set of principles for the future Track B joining process. The content is pending decision by CECU, project coordination and the partners responsible for the stakeholder process.",
-        "va": "Este bloc mostra una proposta de principis per al futur procés d'adhesió al Track B. El contingut està pendent de decisió per CECU, la coordinació del projecte i els socis responsables del procés de stakeholders."
+        "es": "Este bloque muestra una propuesta de principios para el futuro proceso de adhesión al Track B. El contenido está pendiente de decisión por CECU, la coordinación del proyecto y los socios responsables del proceso de adhesión.",
+        "en": "This block shows a proposed set of principles for the future Track B joining process. The content is pending decision by CECU, project coordination and the partners responsible for the joining process.",
+        "va": "Este bloc mostra una proposta de principis per al futur procés d'adhesió al Track B. El contingut està pendent de decisió per CECU, la coordinació del projecte i els socis responsables del procés d'adhesió."
       },
       "items": [
         {
@@ -1085,9 +1085,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Organitzacions de la xarxa"
           },
           "description": {
-            "es": "Los miembros del ecosistema aportan necesidades, retos y casos de uso a través de los canales habilitados. La Red de Stakeholders (SN), coordinada por INESC TEC y con CECU como orquestadora del Track B, puede revisar su relevancia y orientar su clasificación para actividades, recursos, pilotos o posible revisión académica por Track A.",
-            "en": "Ecosystem members contribute needs, challenges and use cases through ConsensUE. The Stakeholder Network, coordinated by INESC TEC and with CECU as Track B orchestrator, may review their relevance and guide classification for activities, resources, pilots or possible academic review by Track A.",
-            "va": "Els membres de l'ecosistema aporten necessitats, reptes i casos d'ús a través dels canals habilitats. La Xarxa de Stakeholders, coordinada per INESC TEC i amb CECU com a orquestradora del Track B, pot revisar la seua rellevància i orientar-ne la classificació per a activitats, recursos, pilots o possible revisió acadèmica per Track A."
+            "es": "Los stakeholders de AiSECRETT, incluidos los miembros de la AiSTEAM Network, aportan necesidades, retos y casos de uso a través de los canales habilitados. La Red de Stakeholders (SN), coordinada por INESC TEC y con CECU como orquestadora del Track B, puede revisar su relevancia y orientar su clasificación para actividades, recursos, pilotos o posible revisión académica por Track A.",
+            "en": "AiSECRETT stakeholders, including AiSTEAM Network members, contribute needs, challenges and use cases through ConsensUE. The Stakeholder Network, coordinated by INESC TEC and with CECU as Track B orchestrator, may review their relevance and guide classification for activities, resources, pilots or possible academic review by Track A.",
+            "va": "Els stakeholders d'AiSECRETT, inclosos els membres de l'AiSTEAM Network, aporten necessitats, reptes i casos d'ús a través dels canals habilitats. La Xarxa de Stakeholders, coordinada per INESC TEC i amb CECU com a orquestradora del Track B, pot revisar la seua rellevància i orientar-ne la classificació per a activitats, recursos, pilots o possible revisió acadèmica per Track A."
           },
           "outputs": [
             {
@@ -1264,9 +1264,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "Input"
           },
           "description": {
-            "es": "Stakeholder, ENRED o centro educativo aporta una necesidad, caso o propuesta.",
-            "en": "A stakeholder, ENRED or education centre contributes a need, case or proposal.",
-            "va": "Un stakeholder, ENRED o centre educatiu aporta una necessitat, cas o proposta."
+            "es": "Stakeholder de AiSECRETT, ENRED o centro educativo aporta una necesidad, caso o propuesta.",
+            "en": "An AiSECRETT stakeholder, ENRED or education center contributes a need, case or proposal.",
+            "va": "Un stakeholder d'AiSECRETT, ENRED o centre educatiu aporta una necessitat, cas o proposta."
           }
         },
         {
@@ -1706,9 +1706,9 @@ export const GOVERNANCE_CONFIG = {
     "stakeholderCard": {
       "visible": true,
       "title": {
-        "es": "Adhesión como Stakeholder",
-        "en": "Join as a Stakeholder",
-        "va": "Adhesió com a Stakeholder"
+        "es": "Adhesión como miembro",
+        "en": "Join as a member",
+        "va": "Adhesió com a membre"
       },
       "subtitle": {
         "es": "Propuesta Track B · Espacio Ecosistema · Pendiente de validación",
@@ -1716,9 +1716,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Proposta Track B · Espai Ecosistema · Pendent de validació"
       },
       "description": {
-        "es": "Esta card muestra una <strong>propuesta de contenidos</strong> para el futuro proceso de adhesión de stakeholders al Track B. La adhesión, sus condiciones y el Acuerdo de Colaboración están pendientes de validación por CECU, la coordinación del proyecto y los socios responsables del proceso.",
-        "en": "This card shows a <strong>content proposal</strong> for the future Track B stakeholder joining process. Membership, its conditions and the Collaboration Agreement are pending validation by CECU, project coordination and the partners responsible for the process.",
-        "va": "Esta card mostra una <strong>proposta de continguts</strong> per al futur procés d'adhesió de stakeholders al Track B. L'adhesió, les seues condicions i l'Acord de Col·laboració estan pendents de validació per CECU, la coordinació del projecte i els socis responsables del procés."
+        "es": "Esta card muestra una <strong>propuesta de contenidos</strong> para el futuro proceso de adhesión de miembros al Track B. La adhesión, sus condiciones y el Acuerdo de Colaboración están pendientes de validación por CECU, la coordinación del proyecto y los socios responsables del proceso.",
+        "en": "This card shows a <strong>content proposal</strong> for the future Track B member joining process. Membership, its conditions and the Collaboration Agreement are pending validation by CECU, project coordination and the partners responsible for the process.",
+        "va": "Esta card mostra una <strong>proposta de continguts</strong> per al futur procés d'adhesió de membres al Track B. L'adhesió, les seues condicions i l'Acord de Col·laboració estan pendents de validació per CECU, la coordinació del projecte i els socis responsables del procés."
       },
       "benefitsLabel": {
         "es": "La propuesta podría incluir:",
@@ -1728,9 +1728,9 @@ export const GOVERNANCE_CONFIG = {
       "benefits": [
         {
           "text": {
-            "es": "Proponer retos reales al Banco de Retos vía ConsensUE",
-            "en": "Propose real challenges to the Challenge Bank via ConsensUE",
-            "va": "Proposar reptes reals al Banc de Reptes via ConsensUE"
+            "es": "Dar visibilidad a retos reales en el Banco de Retos vía ConsensUE",
+            "en": "Give visibility to real challenges in the Challenge Bank via ConsensUE",
+            "va": "Donar visibilitat a reptes reals al Banc de Reptes via ConsensUE"
           }
         },
         {
@@ -1770,9 +1770,9 @@ export const GOVERNANCE_CONFIG = {
         }
       ],
       "warning": {
-        "es": "La participación de stakeholders no implica admisión automática, acceso a espacios académicos ni derechos de decisión en los órganos formales del consorcio.",
-        "en": "Stakeholder participation does not imply automatic admission, access to academic spaces or decision rights in the consortium's formal bodies.",
-        "va": "La participació de stakeholders no implica admissió automàtica, accés a espais acadèmics ni drets de decisió en els òrgans formals del consorci."
+        "es": "La participación de miembros no implica admisión automática, acceso a espacios académicos ni derechos de decisión en los órganos formales del consorcio.",
+        "en": "Member participation does not imply automatic admission, access to academic spaces or decision rights in the consortium's formal bodies.",
+        "va": "La participació de membres no implica admissió automàtica, accés a espais acadèmics ni drets de decisió en els òrgans formals del consorci."
       },
       "buttonText": {
         "es": "Únete a la AiSTEAM Network",
@@ -1787,19 +1787,19 @@ export const GOVERNANCE_CONFIG = {
         "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufim2QOZI2KzXdNkVDX-aJiHOVUMFc4QjI2SlU2M0lEV0lSN1E4TkhTMTdCSC4u",
         "presentation": "newTab",
         "title": {
-          "es": "Formulario de adhesión como stakeholder",
-          "en": "Stakeholder membership form",
-          "va": "Formulari d’adhesió com a grup d’interés"
+          "es": "Solicitud de adhesión a la AiSTEAM Network",
+          "en": "Membership application for the AiSTEAM Network",
+          "va": "Sol·licitud d'adhesió a l'AiSTEAM Network"
         },
         "description": {
-          "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AiSTEAM.",
+          "es": "Completa el formulario de Microsoft Forms para solicitar el alta de tu organización en la AiSTEAM Network.",
           "en": "Complete the Microsoft Forms form to request your organization’s membership in the AiSTEAM Network.",
-          "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AiSTEAM."
+          "va": "Completa el formulari de Microsoft Forms per a sol·licitar l'alta de la teua organització a l'AiSTEAM Network."
         },
         "openExternalLabel": {
-          "es": "Conviértete en Stakeholder",
-          "en": "Become Stakeholder",
-          "va": "Converteix-te en Stakeholder"
+          "es": "Conviértete en miembro",
+          "en": "Become a member",
+          "va": "Fes-te'n membre"
         }
       }
     },
@@ -1825,9 +1825,9 @@ export const GOVERNANCE_CONFIG = {
           "id": "stakeholders",
           "visible": true,
           "who": {
-            "es": "Para Stakeholders (Track B)",
-            "en": "For Stakeholders (Track B)",
-            "va": "Per a Stakeholders (Track B)"
+            "es": "Para miembros (Track B)",
+            "en": "For members (Track B)",
+            "va": "Per a membres (Track B)"
           },
           "actions": [
             {

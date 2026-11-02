@@ -314,7 +314,7 @@ export const KNOWLEDGE_CONFIG = {
     },
     "description": {
       "es": "Documentos de trabajo, listas de verificación y recursos de apoyo bajo licencias abiertas para facilitar la participación en la red AiSTEAM, desde la preparación de retos y propuestas hasta la documentación de actividades, casos y recursos. Disponibles para descarga directa o acceso en línea.",
-      "en": "Working documents, checklists and support resources under open licences to facilitate participation in the AiSTEAM network, from preparing challenges and proposals to documenting activities, cases and resources. Available for direct download or online access.",
+      "en": "Working documents, checklists and support resources under open licenses to facilitate participation in the AiSTEAM Network, from preparing challenges and proposals to documenting activities, cases and resources. Available for direct download or online access.",
       "va": "Documents de treball, llistes de verificació i recursos de suport sota llicències obertes per facilitar la participació en la xarxa AiSTEAM, des de la preparació de reptes i propostes fins a la documentació d'activitats, casos i recursos. Disponibles per a descàrrega directa o accés en línia."
     },
     "searchPlaceholder": {

@@ -161,9 +161,9 @@ export const MARKETPLACE_CONFIG = {
         "va": "Reptes"
       },
       "intro": {
-        "es": "**Un reto es una necesidad real y claramente descrita que una organización comparte con la red para buscar conocimiento, colaboración o posibles vías de actuación.** Puede proceder de una empresa, un centro de FP, un centro educativo, una universidad, una administración pública, una organización de investigación, una entidad social u otro stakeholder relevante. Un reto no es una licitación, una solicitud de servicios gratuitos ni una solución ya definida. Debe explicar el problema, el contexto, las personas o colectivos afectados, las restricciones relevantes y el tipo de colaboración o conocimiento necesario. Las propuestas se revisan antes de su posible publicación.",
-        "en": "**A challenge is a clearly described real-world need that an organisation shares with the network to find knowledge, collaboration or possible ways forward.** It may come from a company, VET centre, school, university, public authority, research organisation, civil-society organisation or another relevant stakeholder. A challenge is not a tender, a request for free services or a pre-defined solution. It should explain the problem, context, affected people or groups, relevant constraints and the type of collaboration or knowledge required. Proposals are reviewed before possible publication.",
-        "va": "**Un repte és una necessitat real i clarament descrita que una organització comparteix amb la xarxa per a buscar coneixement, col·laboració o possibles vies d'actuació.** Pot procedir d'una empresa, un centre d'FP, un centre educatiu, una universitat, una administració pública, una organització de recerca, una entitat social o un altre stakeholder rellevant. Un repte no és una licitació, una sol·licitud de serveis gratuïts ni una solució ja definida. Ha d'explicar el problema, el context, les persones o col·lectius afectats, les restriccions rellevants i el tipus de col·laboració o coneixement necessari. Les propostes es revisen abans de la possible publicació."
+        "es": "**Un reto es una necesidad real y claramente descrita que una organización comparte con la red para buscar conocimiento, colaboración o posibles vías de actuación.** Puede proceder de una empresa, un centro de FP, un centro educativo, una universidad, una administración pública, una organización de investigación, una entidad social u otro stakeholder de AiSECRETT relevante. Un reto no es una licitación, una solicitud de servicios gratuitos ni una solución ya definida. Debe explicar el problema, el contexto, las personas o colectivos afectados, las restricciones relevantes y el tipo de colaboración o conocimiento necesario. Las propuestas se revisan antes de su posible publicación.",
+        "en": "**A challenge is a clearly described real-world need that an organization shares with the network to find knowledge, collaboration or possible ways forward.** It may come from a company, VET center, school, university, public authority, research organization, civil-society organization or another relevant AiSECRETT stakeholder. A challenge is not a tender, a request for free services or a pre-defined solution. It should explain the problem, context, affected people or groups, relevant constraints and the type of collaboration or knowledge required. Proposals are reviewed before possible publication.",
+        "va": "**Un repte és una necessitat real i clarament descrita que una organització comparteix amb la xarxa per a buscar coneixement, col·laboració o possibles vies d'actuació.** Pot procedir d'una empresa, un centre d'FP, un centre educatiu, una universitat, una administració pública, una organització de recerca, una entitat social o un altre stakeholder d'AiSECRETT rellevant. Un repte no és una licitació, una sol·licitud de serveis gratuïts ni una solució ja definida. Ha d'explicar el problema, el context, les persones o col·lectius afectats, les restriccions rellevants i el tipus de col·laboració o coneixement necessari. Les propostes es revisen abans de la possible publicació."
       },
       "ctaLabel": {
         "es": "Solicitar participación",
@@ -1171,9 +1171,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "stakeholder-validation",
       "visible": true,
       "label": {
-        "es": "Validación stakeholder",
-        "en": "Stakeholder validation",
-        "va": "Validació stakeholder"
+        "es": "Validación con los destinatarios",
+        "en": "Validation with end users",
+        "va": "Validació amb els destinataris"
       }
     },
     {
@@ -2882,9 +2882,9 @@ export const MARKETPLACE_CONFIG = {
       "id": "stakeholder-validation",
       "visible": true,
       "label": {
-        "es": "Validación stakeholder",
-        "en": "Stakeholder validation",
-        "va": "Validació stakeholder"
+        "es": "Validación con los destinatarios",
+        "en": "Validation with end users",
+        "va": "Validació amb els destinataris"
       }
     },
     {
@@ -3049,8 +3049,8 @@ export const MARKETPLACE_CONFIG = {
       "visible": true,
       "label": {
         "es": "Participación institucional",
-        "en": "Stakeholder engagement",
-        "va": "Participacio institucional"
+        "en": "Institutional participation",
+        "va": "Participació institucional"
       }
     },
     {
@@ -4105,9 +4105,9 @@ export const MARKETPLACE_CONFIG = {
           "va": "Si permetem la IA en un examen, com avaluem l'alumnat i no la IA?"
         },
         "reward": {
-          "es": "Las propuestas seleccionadas podrán obtener visibilidad dentro de la red AI-STEAM y participar en su validación mediante experiencias piloto en contextos educativos reales. Los resultados y materiales derivados podrán difundirse como buenas prácticas y recursos educativos, respetando las condiciones de autoría y propiedad intelectual establecidas por la red.",
-          "en": "Selected proposals will gain visibility within the AI-STEAM network and participate in its validation through pilot experiences in real educational settings. Derived results and materials may be disseminated as best practices and educational resources, respecting the conditions of authorship and intellectual property established by the network.",
-          "va": "Les propostes seleccionades podran obtindre visibilitat dins de la xarxa AI-STEAM i participar en la seua validació mitjançant experiències pilot en contextos educatius reals. Els resultats i materials derivats es podran difondre com a bones pràctiques i recursos educatius, respectant les condicions d'autoria i propietat intel·lectual establides per la xarxa."
+          "es": "Las propuestas seleccionadas podrán obtener visibilidad dentro de la AiSTEAM Network y participar en su validación mediante experiencias piloto en contextos educativos reales. Los resultados y materiales derivados podrán difundirse como buenas prácticas y recursos educativos, respetando las condiciones de autoría y propiedad intelectual establecidas por la red.",
+          "en": "Selected proposals will gain visibility within the AiSTEAM Network and participate in its validation through pilot experiences in real educational settings. Derived results and materials may be disseminated as best practices and educational resources, respecting the conditions of authorship and intellectual property established by the network.",
+          "va": "Les propostes seleccionades podran obtindre visibilitat dins de l'AiSTEAM Network i participar en la seua validació mitjançant experiències pilot en contextos educatius reals. Els resultats i materials derivats es podran difondre com a bones pràctiques i recursos educatius, respectant les condicions d'autoria i propietat intel·lectual establides per la xarxa."
         }
       },
       "access": {
@@ -4475,7 +4475,7 @@ export const MARKETPLACE_CONFIG = {
       "evidence": null,
       "results": {
         "headline": {
-          "es": "•\tAdopción y usabilidad: Cobertura del 100% en los 34 espacios, estabilidad del pipeline abierto (MQTT/InfluxDB/Grafana) y disponibilidad del generador de datos sintéticos para la red AI-STEAM.\n•\tAprendizaje y evaluación: Puntuación en Codabench sobre dataset oculto, defensa pública en vídeo y cumplimiento de la auditoría de 20 días en el aula focal P1S01.\n•\tEvidencias y gobernanza: Demostración del ahorro energético proyectado (hasta un 18,8% vía Monte Carlo), auditoría técnica de CAPTIA Technology y 100% de cumplimiento del modo shadow con supervisión humana previa.",
+          "es": "•\tAdopción y usabilidad: Cobertura del 100% en los 34 espacios, estabilidad del pipeline abierto (MQTT/InfluxDB/Grafana) y disponibilidad del generador de datos sintéticos para la AiSTEAM Network.\n•\tAprendizaje y evaluación: Puntuación en Codabench sobre dataset oculto, defensa pública en vídeo y cumplimiento de la auditoría de 20 días en el aula focal P1S01.\n•\tEvidencias y gobernanza: Demostración del ahorro energético proyectado (hasta un 18,8% vía Monte Carlo), auditoría técnica de CAPTIA Technology y 100% de cumplimiento del modo shadow con supervisión humana previa.",
           "en": "It turns the school into a real IoT living lab monitoring 34 spaces to assess energy efficiency and environmental comfort, demonstrating an 18.8% energy savings in power outlets. From an educational perspective, it enables VET students to train predictive AI models (consumption, photovoltaics, and anomalies) on open-source MLOps workflows. The entire system operates under strict ethical governance with human oversight (Shadow Mode) and guarantees replicability in any other entity through synthetic data simulation in Docker without requiring initial physical sensors.",
           "va": "Converteix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garanteix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
         },
@@ -4708,9 +4708,9 @@ export const MARKETPLACE_CONFIG = {
             "va": "Si permetem la IA en un examen, com avaluem l'alumnat i no la IA?"
           },
           "reward": {
-            "es": "Las propuestas seleccionadas podrán obtener visibilidad dentro de la red AI-STEAM y participar en su validación mediante experiencias piloto en contextos educativos reales. Los resultados y materiales derivados podrán difundirse como buenas prácticas y recursos educativos, respetando las condiciones de autoría y propiedad intelectual establecidas por la red.",
-            "en": "Selected proposals will gain visibility within the AI-STEAM network and participate in its validation through pilot experiences in real educational settings. Derived results and materials may be disseminated as best practices and educational resources, respecting the conditions of authorship and intellectual property established by the network.",
-            "va": "Les propostes seleccionades podran obtindre visibilitat dins de la xarxa AI-STEAM i participar en la seua validació mitjançant experiències pilot en contextos educatius reals. Els resultats i materials derivats es podran difondre com a bones pràctiques i recursos educatius, respectant les condicions d'autoria i propietat intel·lectual establides per la xarxa."
+            "es": "Las propuestas seleccionadas podrán obtener visibilidad dentro de la AiSTEAM Network y participar en su validación mediante experiencias piloto en contextos educativos reales. Los resultados y materiales derivados podrán difundirse como buenas prácticas y recursos educativos, respetando las condiciones de autoría y propiedad intelectual establecidas por la red.",
+            "en": "Selected proposals will gain visibility within the AiSTEAM Network and participate in its validation through pilot experiences in real educational settings. Derived results and materials may be disseminated as best practices and educational resources, respecting the conditions of authorship and intellectual property established by the network.",
+            "va": "Les propostes seleccionades podran obtindre visibilitat dins de l'AiSTEAM Network i participar en la seua validació mitjançant experiències pilot en contextos educatius reals. Els resultats i materials derivats es podran difondre com a bones pràctiques i recursos educatius, respectant les condicions d'autoria i propietat intel·lectual establides per la xarxa."
           }
         },
         "access": {
@@ -5081,7 +5081,7 @@ export const MARKETPLACE_CONFIG = {
         "evidence": null,
         "results": {
           "headline": {
-            "es": "•\tAdopción y usabilidad: Cobertura del 100% en los 34 espacios, estabilidad del pipeline abierto (MQTT/InfluxDB/Grafana) y disponibilidad del generador de datos sintéticos para la red AI-STEAM.\n•\tAprendizaje y evaluación: Puntuación en Codabench sobre dataset oculto, defensa pública en vídeo y cumplimiento de la auditoría de 20 días en el aula focal P1S01.\n•\tEvidencias y gobernanza: Demostración del ahorro energético proyectado (hasta un 18,8% vía Monte Carlo), auditoría técnica de CAPTIA Technology y 100% de cumplimiento del modo shadow con supervisión humana previa.",
+            "es": "•\tAdopción y usabilidad: Cobertura del 100% en los 34 espacios, estabilidad del pipeline abierto (MQTT/InfluxDB/Grafana) y disponibilidad del generador de datos sintéticos para la AiSTEAM Network.\n•\tAprendizaje y evaluación: Puntuación en Codabench sobre dataset oculto, defensa pública en vídeo y cumplimiento de la auditoría de 20 días en el aula focal P1S01.\n•\tEvidencias y gobernanza: Demostración del ahorro energético proyectado (hasta un 18,8% vía Monte Carlo), auditoría técnica de CAPTIA Technology y 100% de cumplimiento del modo shadow con supervisión humana previa.",
             "en": "It turns the school into a real IoT living lab monitoring 34 spaces to assess energy efficiency and environmental comfort, demonstrating an 18.8% energy savings in power outlets. From an educational perspective, it enables VET students to train predictive AI models (consumption, photovoltaics, and anomalies) on open-source MLOps workflows. The entire system operates under strict ethical governance with human oversight (Shadow Mode) and guarantees replicability in any other entity through synthetic data simulation in Docker without requiring initial physical sensors.",
             "va": "Converteix el centre en un living lab IoT real que monitoritza 34 espais per a avaluar l'eficiència energètica i el confort ambiental, demostrant un estalvi del 18,8% en preses de corrent. A nivell educatiu, permet a l'alumnat d'FP entrenar models predictius d'IA (consum, fotovoltaica i anomalies) sobre fluxos MLOps de codi obert. Tot el sistema opera sota una estricta governança ètica amb supervisió humana (Shadow Mode) i garanteix la seua replicabilitat en qualsevol altra entitat mitjançant simulació amb dades sintètiques en Docker sense necessitat d'instal·lar sensors físics inicials."
           },
@@ -6393,9 +6393,9 @@ export const MARKETPLACE_CONFIG = {
         "id": "stakeholder-validation",
         "visible": true,
         "label": {
-          "es": "Validación stakeholder",
-          "en": "Stakeholder validation",
-          "va": "Validació stakeholder"
+          "es": "Validación con los destinatarios",
+          "en": "Validation with end users",
+          "va": "Validació amb els destinataris"
         }
       },
       {
@@ -7603,8 +7603,8 @@ export const MARKETPLACE_CONFIG = {
         "visible": true,
         "label": {
           "es": "Participación institucional",
-          "en": "Stakeholder engagement",
-          "va": "Participacio institucional"
+          "en": "Institutional participation",
+          "va": "Participació institucional"
         }
       },
       {
