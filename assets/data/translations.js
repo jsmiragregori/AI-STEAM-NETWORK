@@ -2091,7 +2091,7 @@ export const translations = {
       "noRelatedContent": "No related content published yet",
       "expandSector": "Open sector compass",
       "collapseSector": "Close compass",
-      "stakeholderNote": "Indicative organization types. Participation by AiSECRETT stakeholders is voluntary and prospective, subject to the joining process to be defined; the Stakeholders' Network is an advisory, non-decision-making body and does not imply direct publishing or automatic roles.",
+      "stakeholderNote": "Indicative organization types. Participation by AiSECRETT stakeholders is voluntary and prospective, subject to the joining process to be defined; the Stakeholder Network is an advisory, non-decision-making body and does not imply direct publishing or automatic roles.",
       "academicNote": "Possible academic connection lines, pending validation by UVEG. These are not approved Master AiSECRETT contents."
     },
     "training": {
@@ -3752,7 +3752,7 @@ export const translations = {
       "clearFiltersButton": "Esborrar filtres",
       "masterBridgeTitle": "Activitats extracurriculars (Track A)",
       "subtitle": "FP · Formació Docent · Activitats extracurriculars",
-      "fpVetDesc": "Mòduls aplicats per sector AiSECRETT, projectes intermodulars amb reptes de l'ecosistema i portfolio d'evidències de l'alumnat. Disponibles a Aules.",
+      "fpVetDesc": "Mòduls aplicats per sector AiSECRETT, projectes intermodulars amb reptes de l'ecosistema i portfoli d'evidències de l'alumnat. Disponibles a Aules.",
       "masterBridgeDesc": "L'AiSTEAM Network no governa el Màster AiSECRETT ni el seu currículum, ECTS ni avaluació. El Màster pertany al Track A acadèmic liderat per UVEG. La xarxa pot tendir ponts aportant:"
     },
     "knowledge": {
@@ -4018,7 +4018,7 @@ export const translations = {
       "eyebrow": "Governança",
       "title": "Governança i Transparència",
       "subtitle": "Estructura de decisió i participació",
-      "description": "L'AiSTEAM Network funciona sota un model de governança de Doble Vía: un espai acadèmic liderat per UVEG i un espai ecosistema orquestrat per la Generalitat Valenciana (CECU).",
+      "description": "L'AiSTEAM Network funciona sota un model de governança de Doble Via: un espai acadèmic liderat per UVEG i un espai ecosistema orquestrat per la Generalitat Valenciana (CECU).",
       "tabEstructura": "Estructura i Òrgans",
       "tabDualTrack": "Arquitectura de Doble Vía",
       "tabLbd": "Metodologia LbD",
@@ -4203,14 +4203,14 @@ export const translations = {
       ],
       "tabContent_dualtrack": {
         "title": "Model de Governança de Doble Vía (Dual Track)",
-        "desc": "Per a garantir l'operabilitat jurídica i pedagògica, l'AiSTEAM Network implementa un model de governança de Doble Vía que funciona en paral·lel. Cada Track té el seu propi responsable, alcance, marc normatiu i límits d'autoritat. Esta separació és deliberada: protegeix l'autonomia universitària del Track A i permet la flexibilitat de l'ecosistema en el Track B.",
+        "desc": "Per a garantir l'operabilitat jurídica i pedagògica, l'AiSTEAM Network implementa un model de governança de Doble Via que funciona en paral·lel. Cada Track té el seu propi responsable, abast, marc normatiu i límits d'autoritat. Esta separació és deliberada: protegeix l'autonomia universitària del Track A i permet la flexibilitat de l'ecosistema en el Track B.",
         "trackA": {
           "title": "Track A – Espai Acadèmic",
           "subtitle": "Liderat per UVEG + Laurea",
           "scope_label": "Alcance",
           "scope_desc": "Currículum del Màster AiSECRETT, avaluacions acadèmiques, crèdits ECTS, rigor científic i qualitat pedagògica.",
           "framework_label": "Marc Normatiu",
-          "framework_desc": "Acord de Consorcio AiSECRETT + estàndards de qualitat universitaria (Procés de Bolònia) + ISO 21001.",
+          "framework_desc": "Acord de Consorci AiSECRETT + estàndards de qualitat universitària (Procés de Bolònia) + ISO 21001.",
           "limit_label": "Límit Clau",
           "limit_desc": "Els socis industrials i governamentals no tenen dret a vot en l'avaluació acadèmica ni en l'emissió de títols. L'autonomia universitaria és inviolable en este espai.",
           "bodies_label": "Òrgans Actius",
@@ -4224,7 +4224,7 @@ export const translations = {
           "title": "Track B – Espai Ecosistema",
           "subtitle": "Orquestrat per CECU (GVA)",
           "scope_label": "Alcance",
-          "scope_desc": "Fòrums de política educativa, banc de reptes, networking, events, repositori de coneixement i participació de stakeholders d'AiSECRETT.",
+          "scope_desc": "Fòrums de política educativa, banc de reptes, networking, esdeveniments, repositori de coneixement i participació de stakeholders d'AiSECRETT.",
           "framework_label": "Marc Normatiu",
           "framework_desc": "Acord de Col·laboració amb Regla de Cost Zero. Espai obert i flexible, sense burocràcia acadèmica.",
           "limit_label": "Límit Clau",
@@ -4473,7 +4473,7 @@ export const translations = {
           "Rebre solucions prototipades d'equips del Màster AiSECRETT",
           "Connectar amb els socis del consorcio i la xarxa europea"
         ],
-        "stakeholderWarning": "Els stakeholders d'AiSECRETT operen exclusivament en el Track B. No tindran accés a l'espai acadèmic (Aules/Màster) llevat que UVEG ho autorize expressament.",
+        "stakeholderWarning": "Els stakeholders d'AiSECRETT operen exclusivament en el Track B. No tenen accés a l'espai acadèmic (Aules/Màster) llevat que UVEG ho autoritze expressament.",
         "stakeholderButton": "Solicitar Acord de Col·laboració",
         "consensueTitle": "Participa vía ConsensUE",
         "consensueSubtitle": "Track B · Espai ConsensUE en Aules · Participació quan estiga habilitada",

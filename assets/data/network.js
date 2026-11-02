@@ -821,7 +821,7 @@ export const NETWORK_CONFIG = {
         },
         "contribution": {
           "es": "Coordina la Red de Stakeholders y aporta ciencia de datos, IA y sistemas ciberfísicos al ecosistema AiSTEAM.",
-          "en": "Coordinates the Stakeholders' Network and brings data science, AI and cyber-physical systems to the AiSTEAM ecosystem.",
+          "en": "Coordinates the Stakeholder Network and brings data science, AI and cyber-physical systems to the AiSTEAM ecosystem.",
           "va": "Coordina la Xarxa de Stakeholders i aporta ciència de dades, IA i sistemes ciberfísics a l'ecosistema AiSTEAM."
         },
         "sectors": [
@@ -1706,7 +1706,7 @@ export const NETWORK_CONFIG = {
       },
       "description": {
         "es": "<strong>ATENCIÓN:</strong> Este formulario es una <strong>previsualización</strong> del futuro proceso de adhesión a la AiSTEAM Network y <strong>no está operativo</strong> — no recoge ni envía datos. La adhesión, sus condiciones y el flujo real de solicitud están pendientes de validación por la coordinación del proyecto y los socios responsables del proceso (con INESC en la coordinación de la Red de Stakeholders), y de la revisión del tratamiento de datos por el DPD de la Generalitat.",
-        "en": "<strong>ATTENTION:</strong> This form is a <strong>preview</strong> of the future AiSTEAM Network joining process and is <strong>not operational</strong> — it does not collect or send any data. Membership, its conditions and the real application flow are pending validation by project coordination and the partners responsible for the process (with INESC coordinating the Stakeholders' Network), and pending data-processing review by the Generalitat Data Protection Officer.",
+        "en": "<strong>ATTENTION:</strong> This form is a <strong>preview</strong> of the future AiSTEAM Network joining process and is <strong>not operational</strong> — it does not collect or send any data. Membership, its conditions and the real application flow are pending validation by project coordination and the partners responsible for the process (with INESC coordinating the Stakeholder Network), and pending data-processing review by the Generalitat Data Protection Officer.",
         "va": "<strong>ATENCIÓ:</strong> Aquest formulari és una <strong>previsualització</strong> del futur procés d'adhesió a l'AiSTEAM Network i <strong>no està operatiu</strong> — no recull ni envia dades. L'adhesió, les seues condicions i el flux real de sol·licitud estan pendents de validació per la coordinació del projecte i els socis responsables del procés (amb INESC en la coordinació de la Xarxa de Stakeholders), i de la revisió del tractament de dades pel DPD de la Generalitat."
       },
       "fields": {
