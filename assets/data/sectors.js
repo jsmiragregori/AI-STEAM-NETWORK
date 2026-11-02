@@ -10,9 +10,9 @@ export const SECTORS_CONFIG = {
       "va": "Els 7 Sectors AiSECRETT"
     },
     "description": {
-      "es": "Mapa de transferencia AiSECRETT: cada sector conecta necesidades reales de stakeholders con soluciones de IA, formando el núcleo de la red.",
-      "en": "AiSECRETT transfer map: each sector connects real stakeholder needs with AI solutions, forming the core of the network.",
-      "va": "Mapa de transferència d'AiSECRETT: cada sector connecta necessitats reals dels stakeholders amb solucions d'IA, formant el nucli de la xarxa."
+      "es": "Mapa de transferencia AiSECRETT: cada sector conecta necesidades reales de stakeholders de AiSECRETT con soluciones de IA, y los miembros de la AiSTEAM Network las convierten en retos, casos y pilotos.",
+      "en": "AiSECRETT transfer map: each sector connects real AiSECRETT stakeholder needs with AI solutions, and AiSTEAM Network members turn them into challenges, cases and pilots.",
+      "va": "Mapa de transferència AiSECRETT: cada sector connecta necessitats reals dels stakeholders d'AiSECRETT amb solucions d'IA, i els membres de l'AiSTEAM Network les converteixen en reptes, casos i pilots."
     },
     "stats": [
       {
@@ -40,9 +40,9 @@ export const SECTORS_CONFIG = {
         "icon": "Users",
         "value": "0",
         "label": {
-          "es": "Stakeholders",
-          "en": "Stakeholders",
-          "va": "Stakeholders"
+          "es": "Miembros",
+          "en": "Members",
+          "va": "Membres"
         }
       },
       {
@@ -97,9 +97,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -401,9 +401,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -670,9 +670,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -1004,9 +1004,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -1308,9 +1308,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -1670,9 +1670,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -1955,9 +1955,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -2234,7 +2234,7 @@ export const SECTORS_CONFIG = {
     },
     "description": {
       "es": "La red AiSTEAM está abierta a organizaciones interesadas de cualquiera de los 7 sectores. Desde la sección <strong>La Red</strong> puedes <strong>expresar tu interés</strong>: la solicitud se revisa y, cuando proceda, se inicia el proceso de incorporación. No implica adhesión automática ni aceptación inmediata.",
-      "en": "The AiSTEAM network is open to interested organisations from any of the 7 sectors. From the <strong>Network</strong> section you can <strong>register your interest</strong>: the request is reviewed and, where appropriate, the onboarding process begins. It does not imply automatic membership or immediate acceptance.",
+      "en": "The AiSTEAM Network is open to interested organisations from any of the 7 sectors. From the <strong>Network</strong> section you can <strong>register your interest</strong>: the request is reviewed and, where appropriate, the onboarding process begins. It does not imply automatic membership or immediate acceptance.",
       "va": "La xarxa AiSTEAM és oberta a organitzacions interessades de qualsevol dels 7 sectors. Des de la secció <strong>La Xarxa</strong> pots <strong>expressar el teu interés</strong>: la sol·licitud es revisa i, quan procedisca, s'inicia el procés d'incorporació. No implica adhesió automàtica ni acceptació immediata."
     },
     "buttonVisible": true,
@@ -2247,19 +2247,19 @@ export const SECTORS_CONFIG = {
       "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufim2QOZI2KzXdNkVDX-aJiHOVUMFc4QjI2SlU2M0lEV0lSN1E4TkhTMTdCSC4u",
       "presentation": "newTab",
       "title": {
-        "es": "Formulario de adhesión como stakeholder",
-        "en": "Stakeholder membership form",
-        "va": "Formulari d’adhesió com a grup d’interés"
+        "es": "Solicitud de adhesión a la AiSTEAM Network",
+        "en": "Membership application for the AiSTEAM Network",
+        "va": "Sol·licitud d'adhesió a l'AiSTEAM Network"
       },
       "description": {
-        "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AiSTEAM.",
+        "es": "Completa el formulario de Microsoft Forms para solicitar el alta de tu organización en la AiSTEAM Network.",
         "en": "Complete the Microsoft Forms form to request your organization’s membership in the AiSTEAM Network.",
-        "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AiSTEAM."
+        "va": "Completa el formulari de Microsoft Forms per a sol·licitar l'alta de la teua organització a l'AiSTEAM Network."
       },
       "openExternalLabel": {
-        "es": "Conviértete en Stakeholder",
-        "en": "Become Stakeholder",
-        "va": "Converteix-te en Stakeholder"
+        "es": "Conviértete en miembro",
+        "en": "Become a member",
+        "va": "Fes-te'n membre"
       }
     },
     "buttonLabel": {

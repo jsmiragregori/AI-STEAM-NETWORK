@@ -2,7 +2,7 @@
 // Este archivo ES la base: las claves activas que no están en content/_ui/*.csv
 // solo viven aquí. Las claves presentes en los CSV se sobreescriben en cada
 // cms:ui — esas se editan en el CSV. Las claves retiradas de Actualidad y Meetings se filtran al generar.
-// Base: translations.js existente + overrides de 98 entradas CSV
+// Base: translations.js existente + overrides de 127 entradas CSV
 
 export const translations = {
   "es": {
@@ -44,19 +44,19 @@ export const translations = {
       "badge": "Programa Digital Europe 2021-2027 · AiSECRETT",
       "title": "AiSTEAM Network",
       "subtitle": "Comunidad y Transferencia de AiSECRETT",
-      "heroTagline": "AiSTEAM Network es el ecosistema Track B de CECU para AiSECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders moviliza centros FP forma docentes y especializa los 7 sectores AiSECRETT en IA y creatividad.",
-      "description": "Liderada por CECU activa stakeholders moviliza centros FP forma docentes y genera evidencias para el consorcio AiSECRETT en las 7 áreas sectoriales europeas.",
+      "heroTagline": "AiSTEAM Network es el ecosistema Track B de CECU para AiSECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders de AiSECRETT moviliza centros FP forma docentes y especializa los 7 sectores AiSECRETT en IA y creatividad.",
+      "description": "Liderada por CECU activa stakeholders de AiSECRETT moviliza centros FP forma docentes y genera evidencias para el consorcio AiSECRETT en las 7 áreas sectoriales europeas.",
       "uploadChallenge": "Propón un reto, caso o aportación",
       "requestJoin": "Únete a la AiSTEAM Network",
       "stats": {
-        "stakeholders": "Grupos de interés",
+        "stakeholders": "Miembros",
         "totalChallenges": "Retos y casos",
-        "consortiumMembers": "Miembros del consorcio",
+        "consortiumMembers": "Socios del consorcio",
         "microCredentials": "Experiencias piloto",
         "countries": "Países",
         "trainingModules": "Módulos formativos"
       },
-      "ecosystem": "El Ecosistema AI-STEAM",
+      "ecosystem": "El Ecosistema AiSTEAM",
       "ecosystemDesc": "Tres plataformas complementarias para una red de conocimiento e innovación educativa única en Europa.",
       "platforms": {
         "aules": {
@@ -66,7 +66,7 @@ export const translations = {
           "tag": "Formación"
         },
         "network": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "subtitle": "CMS · Este portal",
           "desc": "Hub de comunidad, retos y transferencia que conecta FP, socios y conocimiento para resolver necesidades reales.",
           "tag": "Red de Conocimiento"
@@ -82,8 +82,8 @@ export const translations = {
         "heading": "¿Qué es y qué no es esta red?",
         "isTitle": "Es",
         "isItems": [
-          "Track B de AI-SECRETT: comunidad y capa de transferencia",
-          "Activación de stakeholders, transferencia FP, formación docente",
+          "Track B de AiSECRETT: comunidad y capa de transferencia",
+          "Activación del ecosistema, transferencia FP, formación docente",
           "Generador de evidencias sectoriales que proporciona datos e indicadores para validar el impacto educativo y sectorial del programa"
         ],
         "isNotTitle": "No es",
@@ -95,9 +95,9 @@ export const translations = {
       },
       "enredBlock": {
         "heading": "Construida sobre ENRED: de la cooperación a la innovación temática",
-        "desc": "ENRED es la red europea de departamentos regionales de educación impulsada por la Generalitat Valenciana: un entorno de cooperación interregional, intercambio de buenas prácticas, diálogo político y aprendizaje institucional entre administraciones educativas. AI-STEAM Network se construye sobre esa base de confianza institucional para añadir un foco temático especializado en IA, creatividad y educación STEAM. La sinergia es clara: ENRED proporciona el ecosistema institucional y el alcance europeo; AI-STEAM Network proporciona la profundidad temática, la comunidad especializada y el marco sostenible para movilizar centros, docentes y stakeholders alrededor de la innovación educativa en IA.",
+        "desc": "ENRED es la red europea de departamentos regionales de educación impulsada por la Generalitat Valenciana: un entorno de cooperación interregional, intercambio de buenas prácticas, diálogo político y aprendizaje institucional entre administraciones educativas. AiSTEAM Network se construye sobre esa base de confianza institucional para añadir un foco temático especializado en IA, creatividad y educación STEAM. La sinergia es clara: ENRED proporciona el ecosistema institucional y el alcance europeo; AiSTEAM Network proporciona la profundidad temática, la comunidad especializada y el marco sostenible para movilizar centros, docentes y stakeholders de AiSECRETT alrededor de la innovación educativa en IA.",
         "enredLabel": "ENRED (ecosistema institucional)",
-        "networkLabel": "AI-STEAM Network (foco temático)",
+        "networkLabel": "AiSTEAM Network (foco temático)",
         "synergyLabel": "Sinergia complementaria",
         "enredTags": [
           "Cooperación interregional",
@@ -110,16 +110,16 @@ export const translations = {
           "Triple Transición",
           "FP Transfer",
           "Formación Docente",
-          "AI-SECRETT Track B"
+          "AiSECRETT Track B"
         ]
       },
-      "sectors": "7 Áreas Sectoriales AI-SECRETT",
-      "sectorsDesc": "El conocimiento de la red se organiza en torno a las 7 áreas sectoriales AI-SECRETT para la triple transición digital, verde y social.",
+      "sectors": "7 Áreas Sectoriales AiSECRETT",
+      "sectorsDesc": "El conocimiento de la red se organiza en torno a las 7 áreas sectoriales AiSECRETT para la triple transición digital, verde y social.",
       "viewAllSectors": "Ver todos los sectores",
       "dualFocus": "Foco Educativo Dual",
       "dualFocusDesc": "La red alimenta simultáneamente dos niveles de formación reglada coordinados por CECU.",
       "master": {
-        "title": "Máster AI-SECRETT",
+        "title": "Máster AiSECRETT",
         "coordinator": "Coordinado por UVEG",
         "desc": "Máster universitario internacional sobre IA aplicada a la creatividad y la triple transición. Contenidos co-creados con los socios de la red en 12 países europeos.",
         "item1": "2 ediciones anuales (formato blended)",
@@ -162,16 +162,16 @@ export const translations = {
           "status": "Abierto"
         }
       ],
-      "consortium": "Consorcio AI-SECRETT ·",
+      "consortium": "Consorcio AiSECRETT ·",
       "members": "miembros en",
       "countries2": "países"
     },
     "network": {
-      "title": "El Ecosistema AI-STEAM",
-      "description": "Una red de innovación cuádruple hélice que conecta universidades, empresas, administraciones y sociedad civil. El consorcio AI-SECRETT impulsa la red, abierta a la adhesión de stakeholders de toda España y Europa.",
+      "title": "El Ecosistema AiSTEAM",
+      "description": "Una red de innovación cuádruple hélice que conecta universidades, empresas, administraciones y sociedad civil. El consorcio AiSECRETT impulsa la red, abierta a la adhesión de organizaciones de toda España y Europa.",
       "stats": {
         "consortiumPartners": "Socios Consorcio",
-        "stakeholdersNetwork": "Stakeholders Red",
+        "stakeholdersNetwork": "Miembros",
         "countries": "Países",
         "totalOrganizations": "Total Organizaciones"
       },
@@ -183,25 +183,25 @@ export const translations = {
         "admin": "Administración Pública",
         "sociedad": "Sociedad Civil y ONG"
       },
-      "partnersTabTitle": "Socios del Consorcio AI-SECRETT",
-      "stakeholdersTabTitle": "Stakeholders de la Red",
-      "partnersDesc": "Los socios del consorcio AI-SECRETT son los <strong>23 miembros</strong> (22 beneficiarios + 1 socio asociado) del proyecto europeo, seleccionados en la convocatoria inicial. Su composición es fija durante la vida del proyecto.",
+      "partnersTabTitle": "Socios del Consorcio AiSECRETT",
+      "stakeholdersTabTitle": "Miembros",
+      "partnersDesc": "Los socios del consorcio AiSECRETT son los <strong>23 socios</strong> (22 beneficiarios + 1 socio asociado) del proyecto europeo, seleccionados en la convocatoria inicial. Su composición es fija durante la vida del proyecto.",
       "filterAll": "Todos",
       "consortium": "CONSORCIO",
       "geographicCoverage": "Cobertura Geográfica del Consorcio",
       "clearFilter": "✕ Quitar filtro",
       "filteringPartners": "Filtrando socios de",
-      "member": "miembro",
-      "members": "miembros",
+      "member": "socio",
+      "members": "socios",
       "sociosLabel": "socios",
-      "stakeholdersLabel": "stakeholders",
-      "stakeholdersDesc": "Los stakeholders son organizaciones adheridas voluntariamente a la red AI-STEAM. Su adhesión es <strong>gratuita</strong> (acuerdo de gasto cero) y les permite publicar retos, acceder a recursos formativos y participar en la gobernanza a través de ConsensUE.",
+      "stakeholdersLabel": "miembros",
+      "stakeholdersDesc": "Las organizaciones adheridas voluntariamente a la AiSTEAM Network son miembros de su comunidad de práctica. Su adhesión es <strong>gratuita</strong> (acuerdo de gasto cero). Todo miembro es también stakeholder de AiSECRETT. Ser miembro permite acceder a recursos formativos y participar en la gobernanza a través de ConsensUE.",
       "requestMembership": "Solicitar adhesión",
       "closeForm": "Cerrar formulario",
-      "stakeholderBadge": "STAKEHOLDER",
+      "stakeholderBadge": "MIEMBRO",
       "stakeholdersFilterAll": "Todos",
       "resultsMessage": "Los resultados se muestran en la lista superior.",
-      "formDescription": "Al adherirte como stakeholder podrás publicar retos al Banco de Retos, acceder a recursos formativos, participar en la gobernanza vía ConsensUE y conectar con los socios del consorcio AI-SECRETT. Tras la solicitud, un miembro del consorcio contactará con tu organización para completar el proceso y ubicar la adhesión según país, región, sector y tipo de aportación.",
+      "formDescription": "Al solicitar la adhesión a la AiSTEAM Network podrás acceder a recursos formativos, participar en la gobernanza vía ConsensUE y conectar con los socios del consorcio AiSECRETT. Tras la solicitud, un socio del consorcio contactará con tu organización para completar el proceso y ubicar la adhesión según país, región, sector y tipo de aportación.",
       "countryNames": {
         "ES": "España",
         "IT": "Italia",
@@ -219,7 +219,7 @@ export const translations = {
       "beneficiary": "Socio Beneficiario",
       "certification": "Certificación",
       "associated": "Socio Asociado",
-      "formTitle": "Formulario de Adhesión como Stakeholder",
+      "formTitle": "Solicitud de adhesión a la AiSTEAM Network",
       "formSubtitle": "Adhesión bajo el Acuerdo de Gasto Cero · Plazo abierto · Solo para organizaciones externas al consorcio",
       "formFields": {
         "entityName": "Nombre de la Entidad",
@@ -262,12 +262,12 @@ export const translations = {
       "submitBtn": "Enviar Solicitud",
       "free": "gratuita",
       "socios": "socios",
-      "stakeholders": "stakeholders",
+      "stakeholders": "miembros",
       "noResults": "No hay resultados que coincidan con los filtros seleccionados."
     },
     "sectors": {
-      "title": "Los 7 Sectores AI-SECRETT",
-      "description": "Mapa de transferencia AI-SECRETT: cada sector conecta necesidades reales de stakeholders con competencias FP, formación docente y posibles puentes académicos. Triple transición digital, ecológica y social.",
+      "title": "Los 7 Sectores AiSECRETT",
+      "description": "Mapa de transferencia AiSECRETT: cada sector conecta necesidades reales de stakeholders de AiSECRETT con competencias FP, formación docente y posibles puentes académicos. Triple transición digital, ecológica y social.",
       "stats": {
         "totalChallenges": "Retos y casos",
         "partners": "Socios",
@@ -280,18 +280,18 @@ export const translations = {
       "masterTopics": "Candidatos a puente académico",
       "featuredPartners": "Socios Destacados",
       "cta": "¿Tu organización trabaja en alguno de estos sectores?",
-      "ctaDesc": "La red AI-STEAM está abierta a stakeholders de cualquiera de los 7 sectores. La solicitud se gestiona desde la sección <strong>La Red</strong>, donde se recoge la información necesaria para ubicar tu organización en el ecosistema.",
+      "ctaDesc": "La AiSTEAM Network está abierta a organizaciones interesadas de cualquiera de los 7 sectores. La solicitud se gestiona desde la sección <strong>La Red</strong>, donde se recoge la información necesaria para ubicar tu organización en el ecosistema.",
       "ctaButton": "Ir al formulario de adhesión",
       "sectorLabels": {
         "initiatives": "Iniciativas",
-        "stakeholders": "Stakeholders",
+        "stakeholders": "Miembros",
         "courses": "Cursos",
         "modules": "Skills FP"
       },
       "fpModulesLabel": "Competencias FP prioritarias",
       "masterTopicsLabel": "Conexiones académicas posibles",
       "featuredPartnersLabel": "Socios destacados",
-      "stakeholderTypesLabel": "Stakeholders que pueden participar",
+      "stakeholderTypesLabel": "Stakeholders de AiSECRETT que pueden participar",
       "teacherRelevanceLabel": "Aplicación didáctica para formación docente",
       "exampleChallengeLabel": "Evidencia destacada",
       "transferChainTitle": "Ruta de transferencia del sector",
@@ -505,14 +505,14 @@ export const translations = {
           "Gobernanza de datos en servicios públicos"
         ]
       },
-      "stakeholderContributionLabel": "Qué puede aportar un stakeholder",
+      "stakeholderContributionLabel": "Qué puede aportar un stakeholder de AiSECRETT",
       "relatedContentLabel": "Contenidos relacionados",
       "exploreSectorContent": "Explorar contenidos del sector",
       "noFeaturedEvidence": "Sin evidencia publicada todavía",
       "noRelatedContent": "Sin contenidos relacionados publicados todavía",
       "expandSector": "Abrir brújula sectorial",
       "collapseSector": "Cerrar brújula",
-      "stakeholderNote": "Tipos de organización orientativos. La participación de stakeholders es voluntaria y futura, sujeta al proceso de incorporación que se defina; la Red de Stakeholders es un órgano consultivo, no decisorio, y no implica publicación directa ni roles automáticos.",
+      "stakeholderNote": "Tipos de organización orientativos. La participación de stakeholders de AiSECRETT es voluntaria y futura, sujeta al proceso de adhesión que se defina; la Red de Stakeholders es un órgano consultivo, no decisorio, y no implica publicación directa ni roles automáticos.",
       "academicNote": "Posibles líneas de conexión académica, pendientes de validación por UVEG. No son contenidos aprobados del Máster AiSECRETT."
     },
     "training": {
@@ -1623,19 +1623,19 @@ export const translations = {
       "badge": "Digital Europe Programme 2021-2027 · AiSECRETT",
       "title": "AiSTEAM Network",
       "subtitle": "Community and Transfer of AiSECRETT",
-      "heroTagline": "AiSTEAM Network is the Track B ecosystem of CECU for AiSECRETT: built on ENRED interregional cooperation activating stakeholders mobilizing VET centers training teachers and specializing the 7 AiSECRETT sectors in AI and creativity.",
-      "description": "Led by CECU it activates stakeholders mobilizes VET centers trains teachers and generates evidence for the AiSECRETT consortium in the 7 sectoral areas.",
+      "heroTagline": "AiSTEAM Network is the Track B ecosystem of CECU for AiSECRETT: built on ENRED interregional cooperation, it activates AiSECRETT stakeholders, mobilizes VET centers, trains teachers and specializes the 7 AiSECRETT sectors in AI and creativity.",
+      "description": "Led by CECU, it activates AiSECRETT stakeholders, mobilizes VET centers, trains teachers and generates evidence for the AiSECRETT consortium in the 7 sectoral areas.",
       "uploadChallenge": "Submit a challenge, case or contribution",
       "requestJoin": "Join the AiSTEAM Network",
       "stats": {
-        "stakeholders": "Stakeholders",
+        "stakeholders": "Members",
         "totalChallenges": "Challenges and cases",
-        "consortiumMembers": "Consortium members",
+        "consortiumMembers": "Consortium partners",
         "microCredentials": "Pilot experiences",
         "countries": "Countries",
         "trainingModules": "Training modules"
       },
-      "ecosystem": "The AI-STEAM Ecosystem",
+      "ecosystem": "The AiSTEAM Ecosystem",
       "ecosystemDesc": "Three complementary platforms for a unique knowledge and educational innovation network in Europe.",
       "platforms": {
         "aules": {
@@ -1645,7 +1645,7 @@ export const translations = {
           "tag": "Training"
         },
         "network": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "subtitle": "CMS · This portal",
           "desc": "Community, challenge and transfer hub connecting VET, partners and knowledge to solve real needs.",
           "tag": "Knowledge Network"
@@ -1661,8 +1661,8 @@ export const translations = {
         "heading": "What this network is — and is not",
         "isTitle": "Is",
         "isItems": [
-          "AI-SECRETT Track B: community and transfer layer",
-          "Stakeholder activation, VET transfer, teacher training, sectoral evidence",
+          "AiSECRETT Track B: community and transfer layer",
+          "Ecosystem activation, VET transfer, teacher training",
           "Sectoral evidence generator that provides data and indicators to validate the educational and sectoral impact of the program"
         ],
         "isNotTitle": "Is not",
@@ -1674,9 +1674,9 @@ export const translations = {
       },
       "enredBlock": {
         "heading": "Built on ENRED: From cooperation to thematic innovation",
-        "desc": "ENRED is the European Network of Regional Education Departments, a non-binding cooperation framework promoted by the Generalitat Valenciana: an environment of interregional cooperation, best practice exchange, policy dialogue and institutional learning among education authorities. AI-STEAM Network builds on this foundation of institutional trust to add a focused thematic expertise in AI, creativity and STEAM education. The synergy is clear: ENRED provides the institutional ecosystem and European reach; AI-STEAM Network provides thematic depth, a specialised community and a sustainable framework to mobilise centres, educators and stakeholders around educational innovation in AI.",
+        "desc": "ENRED is the European Network of Regional Education Departments, a non-binding cooperation framework promoted by the Generalitat Valenciana: an environment of interregional cooperation, best practice exchange, policy dialogue and institutional learning among education authorities. AiSTEAM Network builds on this foundation of institutional trust to add a focused thematic expertise in AI, creativity and STEAM education. The synergy is clear: ENRED provides the institutional ecosystem and European reach; AiSTEAM Network provides thematic depth, a specialised community and a sustainable framework to mobilise centres, educators and AiSECRETT stakeholders around educational innovation in AI.",
         "enredLabel": "ENRED (institutional ecosystem)",
-        "networkLabel": "AI-STEAM Network (thematic focus)",
+        "networkLabel": "AiSTEAM Network (thematic focus)",
         "synergyLabel": "Complementary synergy",
         "enredTags": [
           "Interregional cooperation",
@@ -1689,16 +1689,16 @@ export const translations = {
           "Triple Transition",
           "VET Transfer",
           "Teacher Training",
-          "AI-SECRETT Track B"
+          "AiSECRETT Track B"
         ]
       },
-      "sectors": "7 AI-SECRETT Sectoral Areas",
-      "sectorsDesc": "Network knowledge is organised around the 7 AI-SECRETT sectoral areas for the digital, green and social triple transition.",
+      "sectors": "7 AiSECRETT Sectoral Areas",
+      "sectorsDesc": "Network knowledge is organized around the 7 AiSECRETT sectoral areas for the digital, green and social triple transition.",
       "viewAllSectors": "View all sectors",
       "dualFocus": "Dual Educational Focus",
       "dualFocusDesc": "The network simultaneously feeds two levels of formal education coordinated by CECU.",
       "master": {
-        "title": "Master AI-SECRETT",
+        "title": "Master AiSECRETT",
         "coordinator": "Coordinated by UVEG",
         "desc": "International university master's degree on AI applied to creativity and the triple transition. Content co-created with network partners in 12 European countries.",
         "item1": "2 annual editions (blended format)",
@@ -1741,16 +1741,16 @@ export const translations = {
           "status": "Open"
         }
       ],
-      "consortium": "AI-SECRETT Consortium ·",
+      "consortium": "AiSECRETT Consortium ·",
       "members": "members in",
       "countries2": "countries"
     },
     "network": {
-      "title": "The AI-STEAM Ecosystem",
-      "description": "A quadruple helix innovation network connecting universities, companies, administrations and civil society. The AI-SECRETT consortium drives the network, open to stakeholders from Spain and Europe.",
+      "title": "The AiSTEAM Ecosystem",
+      "description": "A quadruple helix innovation network connecting universities, companies, administrations and civil society. The AiSECRETT consortium drives the network, open to organizations from Spain and across Europe.",
       "stats": {
         "consortiumPartners": "Consortium Partners",
-        "stakeholdersNetwork": "Network Stakeholders",
+        "stakeholdersNetwork": "Members",
         "countries": "Countries",
         "totalOrganizations": "Total Organizations"
       },
@@ -1762,25 +1762,25 @@ export const translations = {
         "admin": "Public Administration",
         "sociedad": "Civil Society and NGOs"
       },
-      "partnersTabTitle": "AI-SECRETT Consortium Partners",
-      "stakeholdersTabTitle": "Network Stakeholders",
-      "partnersDesc": "AI-SECRETT consortium partners are the <strong>23 members</strong> (22 beneficiaries + 1 associated partner) of the European project, selected in the initial call. Its composition is fixed during the project lifetime.",
+      "partnersTabTitle": "AiSECRETT Consortium Partners",
+      "stakeholdersTabTitle": "Members",
+      "partnersDesc": "AiSECRETT consortium partners are the <strong>23 partners</strong> (22 beneficiaries + 1 associated partner) of the European project, selected in the initial call. Its composition is fixed during the project lifetime.",
       "filterAll": "All",
       "consortium": "CONSORTIUM",
       "geographicCoverage": "Consortium Geographic Coverage",
       "clearFilter": "✕ Clear filter",
       "filteringPartners": "Filtering partners from",
-      "member": "member",
-      "members": "members",
+      "member": "partner",
+      "members": "partners",
       "sociosLabel": "partners",
-      "stakeholdersLabel": "stakeholders",
-      "stakeholdersDesc": "Stakeholders are organizations voluntarily joined to the AI-STEAM network. Their membership is <strong>free</strong> (zero-cost agreement) and allows them to publish challenges, access training resources and participate in governance through ConsensUE.",
+      "stakeholdersLabel": "members",
+      "stakeholdersDesc": "Organizations that voluntarily join the AiSTEAM Network are members of its community of practice. Joining is <strong>free</strong> (zero-cost agreement). Every member is also an AiSECRETT stakeholder. Being a member gives access to training resources and allows participation in governance through ConsensUE.",
       "requestMembership": "Request Membership",
       "closeForm": "Close Form",
-      "stakeholderBadge": "STAKEHOLDER",
+      "stakeholderBadge": "MEMBER",
       "stakeholdersFilterAll": "All",
       "resultsMessage": "Results are displayed in the list above.",
-      "formDescription": "As a stakeholder, you will be able to publish challenges to the Challenge Bank, access training resources, participate in governance via ConsensUE, and connect with AI-SECRETT consortium partners. After the request, a consortium member will contact your organisation to complete the process and place the membership according to country, region, sector and type of contribution.",
+      "formDescription": "By applying to join the AiSTEAM Network, you will be able to access training resources, take part in governance via ConsensUE and connect with AiSECRETT consortium partners. After your application, a consortium partner will contact your organization to complete the process and place it according to country, region, sector and type of contribution.",
       "countryNames": {
         "ES": "Spain",
         "IT": "Italy",
@@ -1798,7 +1798,7 @@ export const translations = {
       "beneficiary": "Beneficiary Partner",
       "certification": "Certification",
       "associated": "Associated Partner",
-      "formTitle": "Stakeholder Membership Form",
+      "formTitle": "Membership application for the AiSTEAM Network",
       "formSubtitle": "Zero Cost Agreement · Open deadline · External organizations only",
       "formFields": {
         "entityName": "Organization Name",
@@ -1841,12 +1841,12 @@ export const translations = {
       "submitBtn": "Submit Application",
       "free": "free",
       "socios": "partners",
-      "stakeholders": "stakeholders",
+      "stakeholders": "members",
       "noResults": "No results match the selected filters."
     },
     "sectors": {
-      "title": "7 AI-SECRETT Sectors",
-      "description": "AI-SECRETT transfer map: each sector connects real stakeholder needs with VET skills, teacher training relevance and optional academic bridge candidates. Digital, ecological and social triple transition.",
+      "title": "The 7 AiSECRETT Sectors",
+      "description": "AiSECRETT transfer map: each sector connects real AiSECRETT stakeholder needs with VET skills, teacher training relevance and possible academic bridges. Digital, ecological and social triple transition.",
       "stats": {
         "totalChallenges": "Challenges & cases",
         "partners": "Partners",
@@ -1859,18 +1859,18 @@ export const translations = {
       "masterTopics": "Academic Bridge Candidates",
       "featuredPartners": "Featured Partners",
       "cta": "Does your organization work in any of these sectors?",
-      "ctaDesc": "The AI-STEAM network is open to stakeholders from any of the 7 sectors. The request is managed from the <strong>Network</strong> section, where the information needed to place your organisation in the ecosystem is collected.",
+      "ctaDesc": "The AiSTEAM Network is open to interested organizations from any of the 7 sectors. Requests are managed from the <strong>Network</strong> section, where the information needed to place your organization in the ecosystem is collected.",
       "ctaButton": "Go to membership form",
       "sectorLabels": {
         "initiatives": "Initiatives",
-        "stakeholders": "Stakeholders",
+        "stakeholders": "Members",
         "courses": "Courses",
         "modules": "VET Skills"
       },
       "fpModulesLabel": "Priority VET competences",
       "masterTopicsLabel": "Possible academic connections",
       "featuredPartnersLabel": "Featured partners",
-      "stakeholderTypesLabel": "Stakeholders who can participate",
+      "stakeholderTypesLabel": "AiSECRETT stakeholders who can participate",
       "teacherRelevanceLabel": "Didactic application for teacher training",
       "exampleChallengeLabel": "Featured evidence",
       "transferChainTitle": "Sector transfer route",
@@ -2084,14 +2084,14 @@ export const translations = {
           "Data governance in public services"
         ]
       },
-      "stakeholderContributionLabel": "What a stakeholder can contribute",
+      "stakeholderContributionLabel": "What an AiSECRETT stakeholder can contribute",
       "relatedContentLabel": "Related content",
       "exploreSectorContent": "Explore sector content",
       "noFeaturedEvidence": "No published evidence yet",
       "noRelatedContent": "No related content published yet",
       "expandSector": "Open sector compass",
       "collapseSector": "Close compass",
-      "stakeholderNote": "Indicative organisation types. Stakeholder participation is voluntary and prospective, subject to the onboarding process to be defined; the Stakeholders' Network is an advisory, non-decision-making body and does not imply direct publishing or automatic roles.",
+      "stakeholderNote": "Indicative organization types. Participation by AiSECRETT stakeholders is voluntary and prospective, subject to the joining process to be defined; the Stakeholders' Network is an advisory, non-decision-making body and does not imply direct publishing or automatic roles.",
       "academicNote": "Possible academic connection lines, pending validation by UVEG. These are not approved Master AiSECRETT contents."
     },
     "training": {
@@ -3202,19 +3202,19 @@ export const translations = {
       "badge": "Programa Digital Europe 2021-2027 · AiSECRETT",
       "title": "AiSTEAM Network",
       "subtitle": "Comunitat i Transferència d'AiSECRETT",
-      "heroTagline": "AiSTEAM Network és l'ecosistema Track B de CECU per a AiSECRETT: construïda sobre la cooperació interregional d'ENRED activa agents interessats movilitza centres FP forma docents i especialitza els 7 sectors AiSECRETT en IA i creativitat.",
-      "description": "Liderada per CECU activa agents interessats movilitza centres FP forma docents i genera evidències per al consorci AiSECRETT en les 7 àrees sectorials europees.",
+      "heroTagline": "AiSTEAM Network és l'ecosistema Track B de CECU per a AiSECRETT: construïda sobre la cooperació interregional d'ENRED, activa stakeholders d'AiSECRETT, mobilitza centres FP, forma docents i especialitza els 7 sectors AiSECRETT en IA i creativitat.",
+      "description": "Liderada per CECU, activa stakeholders d'AiSECRETT, mobilitza centres FP, forma docents i genera evidències per al consorci AiSECRETT en les 7 àrees sectorials europees.",
       "uploadChallenge": "Proposa un repte, cas o aportació",
       "requestJoin": "Uneix-te a la AiSTEAM Network",
       "stats": {
-        "stakeholders": "Grups d'interés",
+        "stakeholders": "Membres",
         "totalChallenges": "Reptes i casos",
-        "consortiumMembers": "Membres del consorci",
+        "consortiumMembers": "Socis del consorci",
         "microCredentials": "Experiències pilot",
         "countries": "Països",
         "trainingModules": "Mòduls formatius"
       },
-      "ecosystem": "L'Ecosistema AI-STEAM",
+      "ecosystem": "L'Ecosistema AiSTEAM",
       "ecosystemDesc": "Tres plataformes complementàries per a una xarxa de coneixement i innovació educativa única a Europa.",
       "platforms": {
         "aules": {
@@ -3224,7 +3224,7 @@ export const translations = {
           "tag": "Formació"
         },
         "network": {
-          "name": "AI-STEAM Network",
+          "name": "AiSTEAM Network",
           "subtitle": "CMS · Aquest portal",
           "desc": "Hub de comunitat, reptes i transferència que connecta FP, socis i coneixement per a resoldre necessitats reals.",
           "tag": "Xarxa de Coneixement"
@@ -3240,8 +3240,8 @@ export const translations = {
         "heading": "Què és i què no és aquesta xarxa?",
         "isTitle": "És",
         "isItems": [
-          "Track B d'AI-SECRETT: comunitat i capa de transferència",
-          "Activació de stakeholders, transferència FP, formació docent, evidència sectorial",
+          "Track B d'AiSECRETT: comunitat i capa de transferència",
+          "Activació de l'ecosistema, transferència FP, formació docent",
           "Generador d'evidències sectorials que proporciona dades i indicadors per a validar l'impacte educatiu i sectorial del programa"
         ],
         "isNotTitle": "No és",
@@ -3253,9 +3253,9 @@ export const translations = {
       },
       "enredBlock": {
         "heading": "Construïda sobre ENRED: de la cooperació a la innovació temàtica",
-        "desc": "ENRED és la Xarxa Europea de Departaments d'Educació Regional impulsada per la Generalitat Valenciana: un entorn de cooperació interregional, intercanvi de bones pràctiques, diàleg polític i aprenentatge institucional entre administracions educatives. AI-STEAM Network es construeix sobre eixa base de confiança institucional per a afegir un focus temàtic especialitzat en IA, creativitat i educació STEAM. La sinergia és clara: ENRED proporciona l'ecosistema institucional i l'abast europeu; AI-STEAM Network proporciona la profunditat temàtica, la comunitat especialitzada i el marc sostenible per a mobilitzar centres, docents i stakeholders al voltant de la innovació educativa en IA.",
+        "desc": "ENRED és la Xarxa Europea de Departaments d'Educació Regional impulsada per la Generalitat Valenciana: un entorn de cooperació interregional, intercanvi de bones pràctiques, diàleg polític i aprenentatge institucional entre administracions educatives. AiSTEAM Network es construeix sobre eixa base de confiança institucional per a afegir un focus temàtic especialitzat en IA, creativitat i educació STEAM. La sinergia és clara: ENRED proporciona l'ecosistema institucional i l'abast europeu; AiSTEAM Network proporciona la profunditat temàtica, la comunitat especialitzada i el marc sostenible per a mobilitzar centres, docents i stakeholders d'AiSECRETT al voltant de la innovació educativa en IA.",
         "enredLabel": "ENRED (ecosistema institucional)",
-        "networkLabel": "AI-STEAM Network (focus temàtic)",
+        "networkLabel": "AiSTEAM Network (focus temàtic)",
         "synergyLabel": "Sinergia complementària",
         "enredTags": [
           "Cooperació interregional",
@@ -3268,16 +3268,16 @@ export const translations = {
           "Triple Transició",
           "Transferència FP",
           "Formació Docent",
-          "AI-SECRETT Track B"
+          "AiSECRETT Track B"
         ]
       },
-      "sectors": "7 Àrees Sectorials AI-SECRETT",
-      "sectorsDesc": "El coneixement de la xarxa s'organitza al voltant de les 7 àrees sectorials AI-SECRETT per a la triple transició digital, verda i social.",
+      "sectors": "7 Àrees Sectorials AiSECRETT",
+      "sectorsDesc": "El coneixement de la xarxa s'organitza al voltant de les 7 àrees sectorials AiSECRETT per a la triple transició digital, verda i social.",
       "viewAllSectors": "Veure tots els sectors",
       "dualFocus": "Doble Focus Educatiu",
       "dualFocusDesc": "La xarxa alimenta simultàniament dos nivells de formació reglada coordinats per CECU.",
       "master": {
-        "title": "Màster AI-SECRETT",
+        "title": "Màster AiSECRETT",
         "coordinator": "Coordinat per UVEG",
         "desc": "Màster universitari internacional sobre IA aplicada a la creativitat i la triple transició. Continguts co-creats amb els socis de la xarxa en 12 països europeus.",
         "item1": "2 edicions anuals (format blended)",
@@ -3320,16 +3320,16 @@ export const translations = {
           "status": "Obert"
         }
       ],
-      "consortium": "Consorci AI-SECRETT ·",
+      "consortium": "Consorci AiSECRETT ·",
       "members": "membres en",
       "countries2": "països"
     },
     "network": {
-      "title": "L'Ecosistema AI-STEAM",
-      "description": "Una xarxa d'innovació de quàdruple hèlix que connecta universitats, empreses, administracions i societat civil. El consorci AI-SECRETT impulsa la xarxa, oberta a l'adhesió de grups d'interès de tota Espanya i Europa.",
+      "title": "L'Ecosistema AiSTEAM",
+      "description": "Una xarxa d'innovació de quàdruple hèlix que connecta universitats, empreses, administracions i societat civil. El consorci AiSECRETT impulsa la xarxa, oberta a l'adhesió d'organitzacions de tota Espanya i Europa.",
       "stats": {
         "consortiumPartners": "Socis Consorci",
-        "stakeholdersNetwork": "Grups d'interès Xarxa",
+        "stakeholdersNetwork": "Membres",
         "countries": "Països",
         "totalOrganizations": "Total Organitzacions"
       },
@@ -3341,25 +3341,25 @@ export const translations = {
         "admin": "Administració Pública",
         "sociedad": "Societat Civil i ONG"
       },
-      "partnersTabTitle": "Socis del Consorci AI-SECRETT",
-      "stakeholdersTabTitle": "Grups d'interès de la Xarxa",
-      "partnersDesc": "Els socis del consorci AI-SECRETT són els <strong>23 membres</strong> (22 beneficiaris + 1 soci associat) del projecte europeu, seleccionats en la convocatòria inicial. La seua composició és fixa durant la vida del projecte.",
+      "partnersTabTitle": "Socis del Consorci AiSECRETT",
+      "stakeholdersTabTitle": "Membres",
+      "partnersDesc": "Els socis del consorci AiSECRETT són els <strong>23 socis</strong> (22 beneficiaris + 1 soci associat) del projecte europeu, seleccionats en la convocatòria inicial. La seua composició és fixa durant la vida del projecte.",
       "filterAll": "Tots",
       "consortium": "CONSORCI",
       "geographicCoverage": "Cobertura Geogràfica del Consorci",
       "clearFilter": "✕ Quitar filtre",
       "filteringPartners": "Filtrant socis de",
-      "member": "membre",
-      "members": "membres",
+      "member": "soci",
+      "members": "socis",
       "sociosLabel": "socis",
-      "stakeholdersLabel": "grups d'interès",
-      "stakeholdersDesc": "Els grups d'interès són organitzacions adherides voluntàriament a la xarxa AI-STEAM. La seua adhesió és <strong>gratuïta</strong> (acord de despesa zero) i els permet publicar reptes, accedir a recursos formatius i participar en la governança a través de ConsensUE.",
+      "stakeholdersLabel": "membres",
+      "stakeholdersDesc": "Les organitzacions adherides voluntàriament a l'AiSTEAM Network són membres de la seua comunitat de pràctica. La seua adhesió és <strong>gratuïta</strong> (acord de despesa zero). Tot membre és també stakeholder d'AiSECRETT. Ser membre permet accedir a recursos formatius i participar en la governança a través de ConsensUE.",
       "requestMembership": "Solicitar adhesió",
       "closeForm": "Tancar formulari",
-      "stakeholderBadge": "GRUP D'INTERÈS",
+      "stakeholderBadge": "MEMBRE",
       "stakeholdersFilterAll": "Tots",
       "resultsMessage": "Els resultats es mostren en la llista superior.",
-      "formDescription": "En adherir-te com a grup d'interès podràs publicar reptes al Banc de Reptes, accedir a recursos formatius, participar en la governança vía ConsensUE i connectar amb els socis del consorci AI-SECRETT. Després de la sol·licitud, un membre del consorci contactarà amb la teua organització per completar el procés i ubicar l'adhesió segons país, regió, sector i tipus d'aportació.",
+      "formDescription": "En sol·licitar l'adhesió a l'AiSTEAM Network podràs accedir a recursos formatius, participar en la governança via ConsensUE i connectar amb els socis del consorci AiSECRETT. Després de la sol·licitud, un soci del consorci contactarà amb la teua organització per a completar el procés i ubicar-la segons el país, la regió, el sector i el tipus d'aportació.",
       "countryNames": {
         "ES": "Espanya",
         "IT": "Itàlia",
@@ -3377,7 +3377,7 @@ export const translations = {
       "beneficiary": "Soci Beneficiari",
       "certification": "Certificació",
       "associated": "Soci Associat",
-      "formTitle": "Formulari d'Adhesió com a Grup d'interès",
+      "formTitle": "Sol·licitud d'adhesió a l'AiSTEAM Network",
       "formSubtitle": "Adhesió sota l'Acord de Despesa Zero · Termini obert · Solo per a organitzacions externes al consorci",
       "formFields": {
         "entityName": "Nom de l'Entitat",
@@ -3420,12 +3420,12 @@ export const translations = {
       "submitBtn": "Enviar Solicitud",
       "free": "gratuïta",
       "socios": "socis",
-      "stakeholders": "grups d'interès",
+      "stakeholders": "membres",
       "noResults": "No hi ha resultats que coincidisquen amb els filtres seleccionats."
     },
     "sectors": {
-      "title": "7 Sectors AI-SECRETT",
-      "description": "Mapa de transferència AI-SECRETT: cada sector connecta necessitats reals de stakeholders amb competències FP, formació docent i possibles ponts acadèmics. Triple transició digital, ecològica i social.",
+      "title": "Els 7 Sectors AiSECRETT",
+      "description": "Mapa de transferència AiSECRETT: cada sector connecta necessitats reals dels stakeholders d'AiSECRETT amb competències FP, formació docent i possibles ponts acadèmics. Triple transició digital, ecològica i social.",
       "stats": {
         "totalChallenges": "Reptes i casos",
         "partners": "Socis",
@@ -3438,18 +3438,18 @@ export const translations = {
       "masterTopics": "Candidats a pont acadèmic",
       "featuredPartners": "Socis Destacats",
       "cta": "La teua organització treballa en algun d'estos sectors?",
-      "ctaDesc": "La xarxa AI-STEAM és oberta a stakeholders de qualsevol dels 7 sectors. La sol·licitud es gestiona des de la secció <strong>La Xarxa</strong>, on es recull la informació necessària per ubicar la teua organització en l'ecosistema.",
+      "ctaDesc": "La AiSTEAM Network és oberta a organitzacions interessades de qualsevol dels 7 sectors. La sol·licitud es gestiona des de la secció <strong>La Xarxa</strong>, on es recull la informació necessària per a ubicar la teua organització a l'ecosistema.",
       "ctaButton": "Anar al formulari d'adhesió",
       "sectorLabels": {
         "initiatives": "Iniciatives",
-        "stakeholders": "Stakeholders",
+        "stakeholders": "Membres",
         "courses": "Cursos",
         "modules": "Skills FP"
       },
       "fpModulesLabel": "Competències FP prioritàries",
       "masterTopicsLabel": "Connexions acadèmiques possibles",
       "featuredPartnersLabel": "Socis destacats",
-      "stakeholderTypesLabel": "Stakeholders que poden participar",
+      "stakeholderTypesLabel": "Stakeholders d'AiSECRETT que poden participar",
       "teacherRelevanceLabel": "Aplicació didàctica per a formació docent",
       "exampleChallengeLabel": "Evidència destacada",
       "transferChainTitle": "Ruta de transferència del sector",
@@ -3663,14 +3663,14 @@ export const translations = {
           "Governança de dades en serveis públics"
         ]
       },
-      "stakeholderContributionLabel": "Què pot aportar un stakeholder",
+      "stakeholderContributionLabel": "Què pot aportar un stakeholder d'AiSECRETT",
       "relatedContentLabel": "Continguts relacionats",
       "exploreSectorContent": "Explorar continguts del sector",
       "noFeaturedEvidence": "Sense evidència publicada encara",
       "noRelatedContent": "Sense continguts relacionats publicats encara",
       "expandSector": "Obrir brúixola sectorial",
       "collapseSector": "Tancar brúixola",
-      "stakeholderNote": "Tipus d'organització orientatius. La participació de stakeholders és voluntària i futura, subjecta al procés d'incorporació que es definisca; la Xarxa de Stakeholders és un òrgan consultiu, no decisori, i no implica publicació directa ni rols automàtics.",
+      "stakeholderNote": "Tipus d'organització orientatius. La participació dels stakeholders d'AiSECRETT és voluntària i futura, subjecta al procés d'adhesió que es definisca; la Xarxa de Stakeholders és un òrgan consultiu, no decisori, i no implica publicació directa ni rols automàtics.",
       "academicNote": "Possibles línies de connexió acadèmica, pendents de validació per UVEG. No són continguts aprovats del Màster AiSECRETT."
     },
     "training": {

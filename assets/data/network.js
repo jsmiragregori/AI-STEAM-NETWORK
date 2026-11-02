@@ -10,9 +10,9 @@ export const NETWORK_CONFIG = {
       "va": "L'Ecosistema AiSTEAM"
     },
     "description": {
-      "es": "Una red de innovación cuádruple hélice que conecta universidades, empresas, administraciones y sociedad civil. El consorcio AiSECRETT impulsa la red, abierta a la adhesión de stakeholders de toda España y Europa.",
-      "en": "A quadruple helix innovation network connecting universities, companies, administrations and civil society. The AiSECRETT consortium drives the network, open to stakeholders from Spain and Europe.",
-      "va": "Una xarxa d'innovació de quàdruple hèlix que connecta universitats, empreses, administracions i societat civil. El consorci AiSECRETT impulsa la xarxa, oberta a l'adhesió de grups d'interès de tota Espanya i Europa."
+      "es": "Una red de innovación cuádruple hélice que conecta universidades, empresas, administraciones y sociedad civil. El consorcio AiSECRETT impulsa la red, abierta a la adhesión de organizaciones de toda España y Europa.",
+      "en": "A quadruple helix innovation network connecting universities, companies, administrations and civil society. The AiSECRETT consortium drives the network, open to organizations from Spain and across Europe.",
+      "va": "Una xarxa d'innovació de quàdruple hèlix que connecta universitats, empreses, administracions i societat civil. El consorci AiSECRETT impulsa la xarxa, oberta a l'adhesió d'organitzacions de tota Espanya i Europa."
     },
     "stats": [
       {
@@ -32,9 +32,9 @@ export const NETWORK_CONFIG = {
         "manualOverride": false,
         "computedValue": 0,
         "label": {
-          "es": "Stakeholders Red",
-          "en": "Network Stakeholders",
-          "va": "Grups d'interès Xarxa"
+          "es": "Miembros",
+          "en": "Members",
+          "va": "Membres"
         }
       },
       {
@@ -158,9 +158,9 @@ export const NETWORK_CONFIG = {
       "va": "Socis del Consorci AiSECRETT"
     },
     "description": {
-      "es": "Los socios del consorcio AiSECRETT son los <strong>23 miembros</strong> (22 beneficiarios + 1 socio asociado) del proyecto europeo, seleccionados en la convocatoria inicial. Su composición es fija durante la vida del proyecto.",
-      "en": "AiSECRETT consortium partners are the <strong>23 members</strong> (22 beneficiaries + 1 associated partner) of the European project, selected in the initial call. Its composition is fixed during the project lifetime.",
-      "va": "Els socis del consorci AiSECRETT són els <strong>23 membres</strong> (22 beneficiaris + 1 soci associat) del projecte europeu, seleccionats en la convocatòria inicial. La seua composició és fixa durant la vida del projecte."
+      "es": "Los socios del consorcio AiSECRETT son los <strong>23 socios</strong> (22 beneficiarios + 1 socio asociado) del proyecto europeo, seleccionados en la convocatoria inicial. Su composición es fija durante la vida del proyecto.",
+      "en": "AiSECRETT consortium partners are the <strong>23 partners</strong> (22 beneficiaries + 1 associated partner) of the European project, selected in the initial call. Its composition is fixed during the project lifetime.",
+      "va": "Els socis del consorci AiSECRETT són els <strong>23 socis</strong> (22 beneficiaris + 1 soci associat) del projecte europeu, seleccionats en la convocatòria inicial. La seua composició és fixa durant la vida del projecte."
     },
     "filterAll": {
       "es": "Todos",
@@ -193,14 +193,14 @@ export const NETWORK_CONFIG = {
       "va": "Fes clic de nou al país per mostrar-los tots."
     },
     "member": {
-      "es": "miembro",
-      "en": "member",
-      "va": "membre"
+      "es": "socio",
+      "en": "partner",
+      "va": "soci"
     },
     "members": {
-      "es": "miembros",
-      "en": "members",
-      "va": "membres"
+      "es": "socios",
+      "en": "partners",
+      "va": "socis"
     },
     "visitSite": {
       "es": "Visitar sitio web",
@@ -820,9 +820,9 @@ export const NETWORK_CONFIG = {
           "va": "Educació Superior i I+D+I"
         },
         "contribution": {
-          "es": "Coordina la red de stakeholders y aporta ciencia de datos, IA y sistemas ciberfísicos al ecosistema AiSTEAM.",
-          "en": "Coordinates the stakeholders' network and brings data science, AI and cyber-physical systems to the AiSTEAM ecosystem.",
-          "va": "Coordina la xarxa de stakeholders i aporta ciència de dades, IA i sistemes ciberfísics a l'ecosistema AiSTEAM."
+          "es": "Coordina la Red de Stakeholders y aporta ciencia de datos, IA y sistemas ciberfísicos al ecosistema AiSTEAM.",
+          "en": "Coordinates the Stakeholders' Network and brings data science, AI and cyber-physical systems to the AiSTEAM ecosystem.",
+          "va": "Coordina la Xarxa de Stakeholders i aporta ciència de dades, IA i sistemes ciberfísics a l'ecosistema AiSTEAM."
         },
         "sectors": [
           {
@@ -1615,30 +1615,30 @@ export const NETWORK_CONFIG = {
       "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufim2QOZI2KzXdNkVDX-aJiHOVUMFc4QjI2SlU2M0lEV0lSN1E4TkhTMTdCSC4u",
       "presentation": "newTab",
       "title": {
-        "es": "Formulario de adhesión como stakeholder",
-        "en": "Stakeholder membership form",
-        "va": "Formulari d’adhesió com a grup d’interés"
+        "es": "Solicitud de adhesión a la AiSTEAM Network",
+        "en": "Membership application for the AiSTEAM Network",
+        "va": "Sol·licitud d'adhesió a l'AiSTEAM Network"
       },
       "description": {
-        "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AiSTEAM.",
+        "es": "Completa el formulario de Microsoft Forms para solicitar el alta de tu organización en la AiSTEAM Network.",
         "en": "Complete the Microsoft Forms form to request your organization’s membership in the AiSTEAM Network.",
-        "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AiSTEAM."
+        "va": "Completa el formulari de Microsoft Forms per a sol·licitar l'alta de la teua organització a l'AiSTEAM Network."
       },
       "openExternalLabel": {
-        "es": "Conviértete en Stakeholder",
-        "en": "Become Stakeholder",
-        "va": "Converteix-te en Stakeholder"
+        "es": "Conviértete en miembro",
+        "en": "Become a member",
+        "va": "Fes-te'n membre"
       }
     },
     "tabTitle": {
-      "es": "Stakeholders de la Red",
-      "en": "Network Stakeholders",
-      "va": "Grups d'interès de la Xarxa"
+      "es": "Miembros",
+      "en": "Members",
+      "va": "Membres"
     },
     "description": {
-      "es": "Los stakeholders son organizaciones externas que participan voluntariamente en la red AiSTEAM. La incorporación se coordina con CECU, la coordinación del proyecto y los socios responsables del proceso, conforme a las condiciones y canales de participación aplicables.",
-      "en": "Stakeholders are external organizations that participate voluntarily in the AiSTEAM Network. Onboarding is coordinated with CECU, project coordination and the partners responsible for the process, in accordance with the applicable participation conditions and channels.",
-      "va": "Els grups d'interés són organitzacions externes que participen voluntàriament en la Xarxa AiSTEAM. La incorporació es coordina amb CECU, la coordinació del projecte i els socis responsables del procés, d'acord amb les condicions i els canals de participació aplicables."
+      "es": "Únete a la comunidad de práctica de la AiSTEAM Network: organizaciones que comparten retos, casos y pilotos de IA y creatividad. La adhesión es gratuita y, al darte de alta, tu organización pasa a ser también stakeholder de AiSECRETT.",
+      "en": "Join the AiSTEAM Network community of practice: organizations that share AI and creativity challenges, cases and pilots. Joining is free and, once your organization signs up, it also becomes an AiSECRETT stakeholder.",
+      "va": "Uneix-te a la comunitat de pràctica de l'AiSTEAM Network: organitzacions que comparteixen reptes, casos i pilots d'IA i creativitat. L'adhesió és gratuïta i, en donar-te d'alta, la teua organització passa a ser també stakeholder d'AiSECRETT."
     },
     "filterAll": {
       "es": "Todos",
@@ -1661,9 +1661,9 @@ export const NETWORK_CONFIG = {
       "va": "No hi ha resultats que coincidisquen amb els filtres seleccionats."
     },
     "emptyState": {
-      "es": "Aún no hay stakeholders registrados en la red. Las organizaciones interesadas pueden solicitar su adhesión mediante el formulario.",
-      "en": "There are not yet any stakeholders registered in the network. Interested organizations can request membership through the form.",
-      "va": "Encara no hi ha grups d'interès registrats en la xarxa. Les organitzacions interessades poden sol·licitar l'adhesió mitjançant el formulari."
+      "es": "Aún no hay miembros registrados en la red. Las organizaciones interesadas pueden solicitar su adhesión mediante el formulario.",
+      "en": "There are not yet any members registered in the network. Interested organizations can request membership through the form.",
+      "va": "Encara no hi ha membres registrats en la xarxa. Les organitzacions interessades poden sol·licitar l'adhesió mitjançant el formulari."
     },
     "emptyStateTitle": {
       "es": "La red aún está creciendo",
@@ -1700,14 +1700,14 @@ export const NETWORK_CONFIG = {
     "pageSize": 12,
     "form": {
       "title": {
-        "es": "Formulario de Adhesión como Stakeholder",
-        "en": "Stakeholder Membership Form",
-        "va": "Formulari d'Adhesió com a Stakeholder"
+        "es": "Solicitud de adhesión a la AiSTEAM Network",
+        "en": "Membership application for the AiSTEAM Network",
+        "va": "Sol·licitud d'adhesió a l'AiSTEAM Network"
       },
       "description": {
-        "es": "<strong>ATENCIÓN:</strong> Este formulario es una <strong>previsualización</strong> del futuro proceso de adhesión de stakeholders y <strong>no está operativo</strong> — no recoge ni envía datos. La adhesión, sus condiciones y el flujo real de solicitud están pendientes de validación por CECU, la coordinación del proyecto y los socios responsables del proceso (con INESC en la coordinación de la Red de Stakeholders), y de la revisión del tratamiento de datos por el DPD de la Generalitat.",
-        "en": "<strong>ATTENTION:</strong> This form is a <strong>preview</strong> of the future stakeholder joining process and is <strong>not operational</strong> — it does not collect or send any data. Membership, its conditions and the real application flow are pending validation by CECU, project coordination and the partners responsible for the process (with INESC coordinating the Stakeholders' Network), and pending data-processing review by the Generalitat Data Protection Officer.",
-        "va": "<strong>ATENCIÓ:</strong> Aquest formulari és una <strong>previsualització</strong> del futur procés d'adhesió de grups d'interès i <strong>no està operatiu</strong> — no recull ni envia dades. L'adhesió, les seues condicions i el flux real de sol·licitud estan pendents de validació per CECU, la coordinació del projecte i els socis responsables del procés (amb INESC en la coordinació de la Xarxa de Grups d'interès), i de la revisió del tractament de dades pel DPD de la Generalitat."
+        "es": "<strong>ATENCIÓN:</strong> Este formulario es una <strong>previsualización</strong> del futuro proceso de adhesión a la AiSTEAM Network y <strong>no está operativo</strong> — no recoge ni envía datos. La adhesión, sus condiciones y el flujo real de solicitud están pendientes de validación por la coordinación del proyecto y los socios responsables del proceso (con INESC en la coordinación de la Red de Stakeholders), y de la revisión del tratamiento de datos por el DPD de la Generalitat.",
+        "en": "<strong>ATTENTION:</strong> This form is a <strong>preview</strong> of the future AiSTEAM Network joining process and is <strong>not operational</strong> — it does not collect or send any data. Membership, its conditions and the real application flow are pending validation by project coordination and the partners responsible for the process (with INESC coordinating the Stakeholders' Network), and pending data-processing review by the Generalitat Data Protection Officer.",
+        "va": "<strong>ATENCIÓ:</strong> Aquest formulari és una <strong>previsualització</strong> del futur procés d'adhesió a l'AiSTEAM Network i <strong>no està operatiu</strong> — no recull ni envia dades. L'adhesió, les seues condicions i el flux real de sol·licitud estan pendents de validació per la coordinació del projecte i els socis responsables del procés (amb INESC en la coordinació de la Xarxa de Stakeholders), i de la revisió del tractament de dades pel DPD de la Generalitat."
       },
       "fields": {
         "entityName": {
