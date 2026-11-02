@@ -20,14 +20,14 @@ export const HOME_CONFIG = {
       "va": "Comunitat i Transferència d'AiSECRETT"
     },
     "heroTagline": {
-      "es": "AiSTEAM Network es el ecosistema Track B de CECU para AiSECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders moviliza centros FP forma docentes y especializa los 7 sectores AiSECRETT en IA y creatividad.",
-      "en": "AiSTEAM Network is the Track B ecosystem of CECU for AiSECRETT: built on ENRED interregional cooperation activating stakeholders mobilizing VET centers training teachers and specializing the 7 AiSECRETT sectors in AI and creativity.",
-      "va": "AiSTEAM Network és l'ecosistema Track B de CECU per a AiSECRETT: construïda sobre la cooperació interregional d'ENRED activa agents interessats movilitza centres FP forma docents i especialitza els 7 sectors AiSECRETT en IA i creativitat."
+      "es": "AiSTEAM Network es el ecosistema Track B de CECU para AiSECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders de AiSECRETT moviliza centros FP forma docentes y especializa los 7 sectores AiSECRETT en IA y creatividad.",
+      "en": "AiSTEAM Network is the Track B ecosystem of CECU for AiSECRETT: built on ENRED interregional cooperation, it activates AiSECRETT stakeholders, mobilizes VET centers, trains teachers and specializes the 7 AiSECRETT sectors in AI and creativity.",
+      "va": "AiSTEAM Network és l'ecosistema Track B de CECU per a AiSECRETT: construïda sobre la cooperació interregional d'ENRED, activa stakeholders d'AiSECRETT, mobilitza centres FP, forma docents i especialitza els 7 sectors AiSECRETT en IA i creativitat."
     },
     "description": {
-      "es": "Liderada por CECU activa stakeholders moviliza centros FP forma docentes y genera evidencias para el consorcio AiSECRETT en las 7 áreas sectoriales europeas.",
-      "en": "Led by CECU it activates stakeholders mobilizes VET centers trains teachers and generates evidence for the AiSECRETT consortium in the 7 sectoral areas.",
-      "va": "Liderada per CECU activa agents interessats movilitza centres FP forma docents i genera evidències per al consorci AiSECRETT en les 7 àrees sectorials europees."
+      "es": "Liderada por CECU activa stakeholders de AiSECRETT moviliza centros FP forma docentes y genera evidencias para el consorcio AiSECRETT en las 7 áreas sectoriales europeas.",
+      "en": "Led by CECU, it activates AiSECRETT stakeholders, mobilizes VET centers, trains teachers and generates evidence for the AiSECRETT consortium in the 7 sectoral areas.",
+      "va": "Liderada per CECU, activa stakeholders d'AiSECRETT, mobilitza centres FP, forma docents i genera evidències per al consorci AiSECRETT en les 7 àrees sectorials europees."
     },
     "buttons": {
       "uploadChallenge": {
@@ -47,19 +47,19 @@ export const HOME_CONFIG = {
           "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufim2QOZI2KzXdNkVDX-aJiHOVUMFc4QjI2SlU2M0lEV0lSN1E4TkhTMTdCSC4u",
           "presentation": "newTab",
           "title": {
-            "es": "Formulario de adhesión como stakeholder",
-            "en": "Stakeholder membership form",
-            "va": "Formulari d’adhesió com a grup d’interés"
+            "es": "Solicitud de adhesión a la AiSTEAM Network",
+            "en": "Membership application for the AiSTEAM Network",
+            "va": "Sol·licitud d'adhesió a l'AiSTEAM Network"
           },
           "description": {
-            "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AiSTEAM.",
+            "es": "Completa el formulario de Microsoft Forms para solicitar el alta de tu organización en la AiSTEAM Network.",
             "en": "Complete the Microsoft Forms form to request your organization’s membership in the AiSTEAM Network.",
-            "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AiSTEAM."
+            "va": "Completa el formulari de Microsoft Forms per a sol·licitar l'alta de la teua organització a l'AiSTEAM Network."
           },
           "openExternalLabel": {
-            "es": "Conviértete en Stakeholder",
-            "en": "Become Stakeholder",
-            "va": "Converteix-te en Stakeholder"
+            "es": "Conviértete en miembro",
+            "en": "Become a member",
+            "va": "Fes-te'n membre"
           }
         },
         "visible": true
@@ -73,9 +73,9 @@ export const HOME_CONFIG = {
         "computedValue": 0,
         "icon": "users",
         "label": {
-          "es": "Stakeholders",
-          "en": "Stakeholders",
-          "va": "Stakeholders"
+          "es": "Miembros",
+          "en": "Members",
+          "va": "Membres"
         }
       },
       {
@@ -97,9 +97,9 @@ export const HOME_CONFIG = {
         "computedValue": 23,
         "icon": "book-open",
         "label": {
-          "es": "Miembros del consorcio",
-          "en": "Consortium members",
-          "va": "Membres del consorci"
+          "es": "Socios del consorcio",
+          "en": "Consortium partners",
+          "va": "Socis del consorci"
         }
       },
       {
@@ -169,9 +169,9 @@ export const HOME_CONFIG = {
           {
             "id": "is-2",
             "html": {
-              "es": "Activación de stakeholders, transferencia FP, formación docente",
-              "en": "Stakeholder activation, VET transfer, teacher training, sectoral evidence",
-              "va": "Activació de stakeholders, transferència FP, formació docent, evidència sectorial"
+              "es": "Activación del ecosistema, transferencia FP, formación docente",
+              "en": "Ecosystem activation, VET transfer, teacher training",
+              "va": "Activació de l&#39;ecosistema, transferència FP, formació docent"
             }
           },
           {
@@ -241,9 +241,9 @@ export const HOME_CONFIG = {
     "description": {
       "visible": true,
       "html": {
-        "es": "<strong>ENRED</strong> es la red europea de departamentos regionales de educación impulsada por la Generalitat Valenciana: un entorno de cooperación interregional, intercambio de buenas prácticas, diálogo político y aprendizaje institucional entre administraciones educativas. <strong>AiSTEAM Network</strong> se construye sobre esa base de confianza institucional para añadir un foco temático especializado en IA, creatividad y educación STEAM. La sinergia es clara: <strong>ENRED</strong> proporciona el ecosistema institucional y el alcance europeo; <strong>AiSTEAM Network</strong> proporciona la profundidad temática, la comunidad especializada y el marco sostenible para movilizar centros, docentes y stakeholders alrededor de la innovación educativa en IA.",
-        "en": "<strong>ENRED</strong> is the European Network of Regional Education Departments, a non-binding cooperation framework promoted by the Generalitat Valenciana: an environment of interregional cooperation, best practice exchange, policy dialogue and institutional learning among education authorities. <strong>AiSTEAM Network</strong> builds on this foundation of institutional trust to add a focused thematic expertise in AI, creativity and STEAM education. The synergy is clear: <strong>ENRED</strong> provides the institutional ecosystem and European reach; <strong>AiSTEAM Network</strong> provides thematic depth, a specialised community and a sustainable framework to mobilise centres, educators and stakeholders around educational innovation in AI.",
-        "va": "<strong>ENRED</strong> és la Xarxa Europea de Departaments d&#39;Educació Regional impulsada per la Generalitat Valenciana: un entorn de cooperació interregional, intercanvi de bones pràctiques, diàleg polític i aprenentatge institucional entre administracions educatives. <strong>AiSTEAM Network</strong> es construeix sobre eixa base de confiança institucional per a afegir un focus temàtic especialitzat en IA, creativitat i educació STEAM. La sinergia és clara: <strong>ENRED</strong> proporciona l&#39;ecosistema institucional i l&#39;abast europeu; <strong>AiSTEAM Network</strong> proporciona la profunditat temàtica, la comunitat especialitzada i el marc sostenible per a mobilitzar centres, docents i stakeholders al voltant de la innovació educativa en IA."
+        "es": "<strong>ENRED</strong> es la red europea de departamentos regionales de educación impulsada por la Generalitat Valenciana: un entorno de cooperación interregional, intercambio de buenas prácticas, diálogo político y aprendizaje institucional entre administraciones educativas. <strong>AiSTEAM Network</strong> se construye sobre esa base de confianza institucional para añadir un foco temático especializado en IA, creatividad y educación STEAM. La sinergia es clara: <strong>ENRED</strong> proporciona el ecosistema institucional y el alcance europeo; <strong>AiSTEAM Network</strong> proporciona la profundidad temática, la comunidad especializada y el marco sostenible para movilizar centros, docentes y stakeholders de AiSECRETT alrededor de la innovación educativa en IA.",
+        "en": "<strong>ENRED</strong> is the European Network of Regional Education Departments, a non-binding cooperation framework promoted by the Generalitat Valenciana: an environment of interregional cooperation, best practice exchange, policy dialogue and institutional learning among education authorities. <strong>AiSTEAM Network</strong> builds on this foundation of institutional trust to add a focused thematic expertise in AI, creativity and STEAM education. The synergy is clear: <strong>ENRED</strong> provides the institutional ecosystem and European reach; <strong>AiSTEAM Network</strong> provides thematic depth, a specialized community and a sustainable framework to mobilize centres, educators and AiSECRETT stakeholders around educational innovation in AI.",
+        "va": "<strong>ENRED</strong> és la Xarxa Europea de Departaments d&#39;Educació Regional impulsada per la Generalitat Valenciana: un entorn de cooperació interregional, intercanvi de bones pràctiques, diàleg polític i aprenentatge institucional entre administracions educatives. <strong>AiSTEAM Network</strong> es construeix sobre eixa base de confiança institucional per a afegir un focus temàtic especialitzat en IA, creativitat i educació STEAM. La sinergia és clara: <strong>ENRED</strong> proporciona l&#39;ecosistema institucional i l&#39;abast europeu; <strong>AiSTEAM Network</strong> proporciona la profunditat temàtica, la comunitat especialitzada i el marc sostenible per a mobilitzar centres, docents i stakeholders d&#39;AiSECRETT al voltant de la innovació educativa en IA."
       }
     },
     "cards": [
@@ -437,7 +437,7 @@ export const HOME_CONFIG = {
         },
         "description": {
           "es": "Canal participativo del Track B para consultas, deliberación y trazabilidad de aportaciones que ayudan a priorizar necesidades, retos y recursos de la red.",
-          "en": "Track B participation channel for consultation, deliberation and traceability of contributions that help prioritise the network’s needs, challenges and resources.",
+          "en": "Track B participation channel for consultation, deliberation and traceability of contributions that help prioritize the network’s needs, challenges and resources.",
           "va": "Canal participatiu del Track B per a consultes, deliberació i traçabilitat d'aportacions que ajuden a prioritzar les necessitats, els reptes i els recursos de la xarxa."
         },
         "tag": {
@@ -588,7 +588,7 @@ export const HOME_CONFIG = {
       "visible": true,
       "html": {
         "es": "El conocimiento de la red se organiza en torno a las siete áreas sectoriales AiSECRETT para la triple transición digital, verde y social.",
-        "en": "Network knowledge is organised around the seven AiSECRETT sectoral areas for the digital, green and social triple transition.",
+        "en": "Network knowledge is organized around the seven AiSECRETT sectoral areas for the digital, green and social triple transition.",
         "va": "El coneixement de la xarxa s&#39;organitza al voltant de les set àrees sectorials AiSECRETT per a la triple transició digital, verda i social."
       }
     },
@@ -669,9 +669,9 @@ export const HOME_CONFIG = {
   "consortiumBlock": {
     "visible": true,
     "heading": {
-      "es": "Consorcio AiSECRETT · 23 miembros en 12 países",
-      "en": "AiSECRETT Consortium · 23 members in 12 countries",
-      "va": "Consorci AiSECRETT · 23 membres en 12 països"
+      "es": "Consorcio AiSECRETT · 23 socios en 12 países",
+      "en": "AiSECRETT Consortium · 23 partners in 12 countries",
+      "va": "Consorci AiSECRETT · 23 socis en 12 països"
     },
     "partners": [
       {

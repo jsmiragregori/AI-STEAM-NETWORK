@@ -10,9 +10,9 @@ export const SECTORS_CONFIG = {
       "va": "Els 7 Sectors AiSECRETT"
     },
     "description": {
-      "es": "Mapa de transferencia AiSECRETT: cada sector conecta necesidades reales de stakeholders con soluciones de IA, formando el núcleo de la red.",
-      "en": "AiSECRETT transfer map: each sector connects real stakeholder needs with AI solutions, forming the core of the network.",
-      "va": "Mapa de transferència d'AiSECRETT: cada sector connecta necessitats reals dels stakeholders amb solucions d'IA, formant el nucli de la xarxa."
+      "es": "Mapa de transferencia AiSECRETT: cada sector conecta necesidades reales de stakeholders de AiSECRETT con soluciones de IA, y los miembros de la AiSTEAM Network las convierten en retos, casos y pilotos.",
+      "en": "AiSECRETT transfer map: each sector connects real AiSECRETT stakeholder needs with AI solutions, and AiSTEAM Network members turn them into challenges, cases and pilots.",
+      "va": "Mapa de transferència AiSECRETT: cada sector connecta necessitats reals dels stakeholders d'AiSECRETT amb solucions d'IA, i els membres de l'AiSTEAM Network les converteixen en reptes, casos i pilots."
     },
     "stats": [
       {
@@ -40,9 +40,9 @@ export const SECTORS_CONFIG = {
         "icon": "Users",
         "value": "0",
         "label": {
-          "es": "Stakeholders",
-          "en": "Stakeholders",
-          "va": "Stakeholders"
+          "es": "Miembros",
+          "en": "Members",
+          "va": "Membres"
         }
       },
       {
@@ -97,9 +97,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -372,7 +372,7 @@ export const SECTORS_CONFIG = {
       },
       "description": {
         "es": "IA para movilidad eficiente, segura y sostenible: logística verde, transporte intermodal, optimización de rutas y acceso equitativo a servicios de movilidad.",
-        "en": "AI for efficient, safe and sustainable mobility: green logistics, intermodal transport, route optimisation and equitable access to mobility services.",
+        "en": "AI for efficient, safe and sustainable mobility: green logistics, intermodal transport, route optimization and equitable access to mobility services.",
         "va": "IA per a mobilitat eficient, segura i sostenible: logística verda, transport intermodal, optimització de rutes i accés equitatiu a servicis de mobilitat."
       },
       "transferRouteIntro": {
@@ -401,9 +401,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -450,7 +450,7 @@ export const SECTORS_CONFIG = {
           "visible": true,
           "value": {
             "es": "Predicción de demanda en transporte público para optimización de frecuencias",
-            "en": "Demand prediction in public transport for frequency optimisation",
+            "en": "Demand prediction in public transport for frequency optimization",
             "va": "Predicció de demanda en transport públic per a optimització de freqüències"
           }
         },
@@ -495,7 +495,7 @@ export const SECTORS_CONFIG = {
         "en": [
           "Telemetry and IoT in vehicles and fleets",
           "Mobility and demand data analysis",
-          "Route optimisation and green logistics"
+          "Route optimization and green logistics"
         ],
         "va": [
           "Telemetria i IoT en vehicles i flotes",
@@ -670,9 +670,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -735,7 +735,7 @@ export const SECTORS_CONFIG = {
       ],
       "stakeholderContribution": {
         "es": "En el futuro, empresas, administraciones y entidades ambientales podrían contribuir —según el proceso de participación que se valide— con datos de consumo, sensores, espacios piloto o casos de gestión sostenible.",
-        "en": "In the future, companies, administrations and environmental organisations could contribute —subject to the participation process to be validated— consumption data, sensors, pilot spaces or sustainable management cases.",
+        "en": "In the future, companies, administrations and environmental organizations could contribute —subject to the participation process to be validated— consumption data, sensors, pilot spaces or sustainable management cases.",
         "va": "En el futur, empreses, administracions i entitats ambientals podrien contribuir —segons el procés de participació que es valide— amb dades de consum, sensors, espais pilot o casos de gestió sostenible."
       },
       "stakeholderTypes": {
@@ -1004,9 +1004,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -1069,7 +1069,7 @@ export const SECTORS_CONFIG = {
       ],
       "stakeholderContribution": {
         "es": "En el futuro, cooperativas, productores y agtech podrían contribuir —según el proceso de participación que se valide— con parcelas piloto, imágenes, datos agronómicos, problemas reales o mentoría técnica.",
-        "en": "In the future, cooperatives, producers and agtech organisations could contribute —subject to the participation process to be validated— pilot plots, images, agronomic data, real problems or technical mentoring.",
+        "en": "In the future, cooperatives, producers and agtech organizations could contribute —subject to the participation process to be validated— pilot plots, images, agronomic data, real problems or technical mentoring.",
         "va": "En el futur, cooperatives, productors i agtech podrien contribuir —segons el procés de participació que es valide— amb parcel·les pilot, imatges, dades agronòmiques, problemes reals o mentoria tècnica."
       },
       "stakeholderTypes": {
@@ -1308,9 +1308,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -1339,7 +1339,7 @@ export const SECTORS_CONFIG = {
           "visible": true,
           "value": {
             "es": "Digitalización de patrimonio cultural",
-            "en": "Cultural heritage digitisation",
+            "en": "Cultural heritage digitization",
             "va": "Digitalització de patrimoni cultural"
           }
         },
@@ -1357,7 +1357,7 @@ export const SECTORS_CONFIG = {
           "visible": true,
           "value": {
             "es": "Digitalización y descripción automática de fondos archivísticos para acceso abierto",
-            "en": "Digitisation and automatic description of archival collections for open access",
+            "en": "Digitization and automatic description of archival collections for open access",
             "va": "Digitalització i descripció automàtica de fons arxivístics per a accés obert"
           }
         },
@@ -1400,7 +1400,7 @@ export const SECTORS_CONFIG = {
           "Gestión de metadatos y activos digitales"
         ],
         "en": [
-          "Heritage digitisation and cataloguing",
+          "Heritage digitization and cataloguing",
           "Ethical use of generative AI in creation",
           "Metadata and digital asset management"
         ],
@@ -1670,9 +1670,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -1719,7 +1719,7 @@ export const SECTORS_CONFIG = {
           "visible": true,
           "value": {
             "es": "Optimización del consumo energético en bloque de viviendas sociales con ML",
-            "en": "Energy consumption optimisation in social housing block with ML",
+            "en": "Energy consumption optimization in social housing block with ML",
             "va": "Optimització del consum energètic en bloc d'habitatges socials amb ML"
           }
         },
@@ -1735,7 +1735,7 @@ export const SECTORS_CONFIG = {
       ],
       "stakeholderContribution": {
         "es": "En el futuro, constructoras, administraciones y entidades de vivienda podrían contribuir —según el proceso de participación que se valide— con edificios piloto, datos de consumo, retos de eficiencia o casos de inclusión.",
-        "en": "In the future, construction companies, administrations and housing organisations could contribute —subject to the participation process to be validated— pilot buildings, consumption data, efficiency challenges or inclusion cases.",
+        "en": "In the future, construction companies, administrations and housing organizations could contribute —subject to the participation process to be validated— pilot buildings, consumption data, efficiency challenges or inclusion cases.",
         "va": "En el futur, constructores, administracions i entitats d'habitatge podrien contribuir —segons el procés de participació que es valide— amb edificis pilot, dades de consum, reptes d'eficiència o casos d'inclusió."
       },
       "stakeholderTypes": {
@@ -1747,7 +1747,7 @@ export const SECTORS_CONFIG = {
         "en": [
           "Construction companies, developers and housing cooperatives",
           "City councils and urban agencies",
-          "Sustainability and energy efficiency organisations"
+          "Sustainability and energy efficiency organizations"
         ],
         "va": [
           "Constructores, promotors i cooperatives d'habitatge",
@@ -1955,9 +1955,9 @@ export const SECTORS_CONFIG = {
           "icon": "Users",
           "value": 0,
           "label": {
-            "es": "Stakeholders",
-            "en": "Stakeholders",
-            "va": "Stakeholders"
+            "es": "Miembros",
+            "en": "Members",
+            "va": "Membres"
           }
         },
         {
@@ -2020,7 +2020,7 @@ export const SECTORS_CONFIG = {
       ],
       "stakeholderContribution": {
         "es": "En el futuro, pymes, administraciones, servicios públicos y entidades sociales podrían contribuir —según el proceso de participación que se valide— con procesos reales, datos anonimizados, casos de atención o validación ética.",
-        "en": "In the future, SMEs, administrations, public services and social organisations could contribute —subject to the participation process to be validated— real processes, anonymised data, service cases or ethical validation.",
+        "en": "In the future, SMEs, administrations, public services and social organizations could contribute —subject to the participation process to be validated— real processes, anonymized data, service cases or ethical validation.",
         "va": "En el futur, pimes, administracions, servicis públics i entitats socials podrien contribuir —segons el procés de participació que es valide— amb processos reals, dades anonimitzades, casos d'atenció o validació ètica."
       },
       "stakeholderTypes": {
@@ -2032,7 +2032,7 @@ export const SECTORS_CONFIG = {
         "en": [
           "Service and commerce SMEs",
           "Public administrations and financial entities",
-          "Third sector organisations and social services"
+          "Third sector organizations and social services"
         ],
         "va": [
           "PIMES de serveis i comerç",
@@ -2234,7 +2234,7 @@ export const SECTORS_CONFIG = {
     },
     "description": {
       "es": "La red AiSTEAM está abierta a organizaciones interesadas de cualquiera de los 7 sectores. Desde la sección <strong>La Red</strong> puedes <strong>expresar tu interés</strong>: la solicitud se revisa y, cuando proceda, se inicia el proceso de incorporación. No implica adhesión automática ni aceptación inmediata.",
-      "en": "The AiSTEAM network is open to interested organisations from any of the 7 sectors. From the <strong>Network</strong> section you can <strong>register your interest</strong>: the request is reviewed and, where appropriate, the onboarding process begins. It does not imply automatic membership or immediate acceptance.",
+      "en": "The AiSTEAM Network is open to interested organizations from any of the 7 sectors. From the <strong>Network</strong> section you can <strong>register your interest</strong>: the request is reviewed and, where appropriate, the onboarding process begins. It does not imply automatic membership or immediate acceptance.",
       "va": "La xarxa AiSTEAM és oberta a organitzacions interessades de qualsevol dels 7 sectors. Des de la secció <strong>La Xarxa</strong> pots <strong>expressar el teu interés</strong>: la sol·licitud es revisa i, quan procedisca, s'inicia el procés d'incorporació. No implica adhesió automàtica ni acceptació immediata."
     },
     "buttonVisible": true,
@@ -2247,19 +2247,19 @@ export const SECTORS_CONFIG = {
       "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=FBHdc33vx0CGaVadMufim2QOZI2KzXdNkVDX-aJiHOVUMFc4QjI2SlU2M0lEV0lSN1E4TkhTMTdCSC4u",
       "presentation": "newTab",
       "title": {
-        "es": "Formulario de adhesión como stakeholder",
-        "en": "Stakeholder membership form",
-        "va": "Formulari d’adhesió com a grup d’interés"
+        "es": "Solicitud de adhesión a la AiSTEAM Network",
+        "en": "Membership application for the AiSTEAM Network",
+        "va": "Sol·licitud d'adhesió a l'AiSTEAM Network"
       },
       "description": {
-        "es": "Completa el formulario de Microsoft Forms para solicitar la adhesión de tu organización a la Red AiSTEAM.",
+        "es": "Completa el formulario de Microsoft Forms para solicitar el alta de tu organización en la AiSTEAM Network.",
         "en": "Complete the Microsoft Forms form to request your organization’s membership in the AiSTEAM Network.",
-        "va": "Completa el formulari de Microsoft Forms per a sol·licitar l’adhesió de la teua organització a la Xarxa AiSTEAM."
+        "va": "Completa el formulari de Microsoft Forms per a sol·licitar l'alta de la teua organització a l'AiSTEAM Network."
       },
       "openExternalLabel": {
-        "es": "Conviértete en Stakeholder",
-        "en": "Become Stakeholder",
-        "va": "Converteix-te en Stakeholder"
+        "es": "Conviértete en miembro",
+        "en": "Become a member",
+        "va": "Fes-te'n membre"
       }
     },
     "buttonLabel": {

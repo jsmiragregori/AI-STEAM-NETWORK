@@ -147,7 +147,7 @@ function helixBlock() {
       : { es: 'socios', en: 'partners', va: 'socis' };
     const detailParts = [
       pCount ? `${pCount} ${loc(partnerNoun)}` : '',
-      sCount ? `${sCount} ${loc({es:'stakeholders',en:'stakeholders',va:'stakeholders'})}` : '',
+      sCount ? `${sCount} ${loc({es:'miembros',en:'members',va:'membres'})}` : '',
     ].filter(Boolean);
     return `
       <div class="rd-card rd-card-grad-violet rd-card-edge p-5 text-center group">
@@ -712,7 +712,7 @@ export function render() {
     ` : '';
     const stakeholdersTab = SHOW_STAKEHOLDERS_TAB ? `
           <button data-net-tab="stakeholders" class="${tabBtnClass('stakeholders')}">
-            <i data-lucide="users" class="w-4 h-4"></i>${esc(localized(NETWORK_CONFIG?.stakeholdersBlock?.tabTitle) || 'Stakeholders')} (${STAKEHOLDERS.length})
+            <i data-lucide="users" class="w-4 h-4"></i>${esc(localized(NETWORK_CONFIG?.stakeholdersBlock?.tabTitle) || localized({ es: 'Miembros de la red', en: 'Network members', va: 'Membres de la xarxa' }))} (${STAKEHOLDERS.length})
           </button>
     ` : '';
 

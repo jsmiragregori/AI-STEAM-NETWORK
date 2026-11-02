@@ -399,19 +399,19 @@ export const TRAINING_CONFIG = {
           {
             "id": "stakeholder-engagement",
             "title": {
-              "es": "Engagement de stakeholders",
-              "en": "Stakeholder Engagement",
-              "va": "Engagement de stakeholders"
+              "es": "Implicación del ecosistema y de los usuarios",
+              "en": "Ecosystem and user involvement",
+              "va": "Implicació de l'ecosistema i dels usuaris"
             },
             "shortLabel": {
-              "es": "Engagement de stakeholders",
-              "en": "Stakeholder Engagement",
-              "va": "Engagement de stakeholders"
+              "es": "Implicación del ecosistema y de los usuarios",
+              "en": "Ecosystem and user involvement",
+              "va": "Implicació de l'ecosistema i dels usuaris"
             },
             "description": {
-              "es": "Implicacion de stakeholders para alinear retos, evidencias, impacto y adopcion.",
-              "en": "Stakeholder engagement to align challenges, evidence, impact and adoption.",
-              "va": "Implicacio de stakeholders per a alinear reptes, evidencies, impacte i adopcio."
+              "es": "Implicación del ecosistema y de los usuarios para alinear retos, evidencias, impacto y adopción.",
+              "en": "Ecosystem and user involvement to align challenges, evidence, impact and adoption.",
+              "va": "Implicació de l'ecosistema i dels usuaris per a alinear reptes, evidències, impacte i adopció."
             },
             "icon": "🤝"
           },
@@ -1279,24 +1279,24 @@ export const TRAINING_CONFIG = {
         "visible": true,
         "icon": "🤝",
         "label": {
-          "es": "Engagement de stakeholders",
-          "en": "Stakeholder Engagement",
-          "va": "Engagement de stakeholders"
+          "es": "Implicación del ecosistema y de los usuarios",
+          "en": "Ecosystem and user involvement",
+          "va": "Implicació de l'ecosistema i dels usuaris"
         },
         "shortLabel": {
-          "es": "Engagement de stakeholders",
-          "en": "Stakeholder Engagement",
-          "va": "Engagement de stakeholders"
+          "es": "Implicación del ecosistema y de los usuarios",
+          "en": "Ecosystem and user involvement",
+          "va": "Implicació de l'ecosistema i dels usuaris"
         },
         "title": {
-          "es": "Engagement de stakeholders",
-          "en": "Stakeholder Engagement",
-          "va": "Engagement de stakeholders"
+          "es": "Implicación del ecosistema y de los usuarios",
+          "en": "Ecosystem and user involvement",
+          "va": "Implicació de l'ecosistema i dels usuaris"
         },
         "description": {
-          "es": "Implicacion de stakeholders para alinear retos, evidencias, impacto y adopcion.",
-          "en": "Stakeholder engagement to align challenges, evidence, impact and adoption.",
-          "va": "Implicacio de stakeholders per a alinear reptes, evidencies, impacte i adopcio."
+          "es": "Implicación del ecosistema y de los usuarios para alinear retos, evidencias, impacto y adopción.",
+          "en": "Ecosystem and user involvement to align challenges, evidence, impact and adoption.",
+          "va": "Implicació de l'ecosistema i dels usuaris per a alinear reptes, evidències, impacte i adopció."
         }
       },
       {
@@ -1931,24 +1931,24 @@ export const TRAINING_CONFIG = {
         "visible": true,
         "icon": "🤝",
         "label": {
-          "es": "Engagement de stakeholders",
-          "en": "Stakeholder Engagement",
-          "va": "Engagement de stakeholders"
+          "es": "Implicación del ecosistema y de los usuarios",
+          "en": "Ecosystem and user involvement",
+          "va": "Implicació de l'ecosistema i dels usuaris"
         },
         "shortLabel": {
-          "es": "Engagement de stakeholders",
-          "en": "Stakeholder Engagement",
-          "va": "Engagement de stakeholders"
+          "es": "Implicación del ecosistema y de los usuarios",
+          "en": "Ecosystem and user involvement",
+          "va": "Implicació de l'ecosistema i dels usuaris"
         },
         "title": {
-          "es": "Engagement de stakeholders",
-          "en": "Stakeholder Engagement",
-          "va": "Engagement de stakeholders"
+          "es": "Implicación del ecosistema y de los usuarios",
+          "en": "Ecosystem and user involvement",
+          "va": "Implicació de l'ecosistema i dels usuaris"
         },
         "description": {
-          "es": "Implicacion de stakeholders para alinear retos, evidencias, impacto y adopcion.",
-          "en": "Stakeholder engagement to align challenges, evidence, impact and adoption.",
-          "va": "Implicacio de stakeholders per a alinear reptes, evidencies, impacte i adopcio."
+          "es": "Implicación del ecosistema y de los usuarios para alinear retos, evidencias, impacto y adopción.",
+          "en": "Ecosystem and user involvement to align challenges, evidence, impact and adoption.",
+          "va": "Implicació de l'ecosistema i dels usuaris per a alinear reptes, evidències, impacte i adopció."
         }
       },
       {
