@@ -99,6 +99,16 @@ function conHelix(cats, fn) {
   }
 }
 
+function conIdioma(lang, fn) {
+  const getItem = localStorage.getItem;
+  localStorage.getItem = key => key === 'language' ? lang : getItem(key);
+  try {
+    return fn();
+  } finally {
+    localStorage.getItem = getItem;
+  }
+}
+
 /** Clases de la rejilla de la hélice; null si no hay rejilla. */
 function rejillaHelix(html) {
   const match = html.match(/(<div class="grid ([^"]+) gap-4">)/);
@@ -128,6 +138,32 @@ test('hélice: 4 ejes conserva la distribución actual', () => {
   const html = conHelix(CATS, () => vistas.red.render());
   assert.equal(rejillaHelix(html).clases, 'grid-cols-2 md:grid-cols-4');
   assert.equal(tarjetasHelix(html).length, 4);
+});
+
+test('hélice: localiza socios en singular para uno y conserva el plural para cero y dos', () => {
+  const formas = {
+    es: { singular: 'socio', plural: 'socios' },
+    en: { singular: 'partner', plural: 'partners' },
+    va: { singular: 'soci', plural: 'socis' },
+  };
+
+  for (const [lang, forma] of Object.entries(formas)) {
+    for (const [count, esperado] of [[0, null], [1, forma.singular], [2, forma.plural]]) {
+      const cat = {
+        id: 'universidad', icon: 'graduation-cap', value: 1, computedValue: 1,
+        partnersCount: count, stakeholdersCount: 0,
+        label: { es: 'Sintético', en: 'Synthetic', va: 'Sintètic' },
+      };
+      const html = conIdioma(lang, () => conHelix([cat], () => vistas.red.render()));
+      const contenido = rejillaHelix(html).contenido;
+
+      if (esperado === null) {
+        assert.ok(!/\b(socios|partners|socis|socio|partner|soci)\b/.test(contenido), `${lang} con 0 socios no debe mostrar detalle`);
+      } else {
+        assert.match(contenido, new RegExp(`\\b${count} ${esperado}\\b`), `${lang} con ${count} debe mostrar «${count} ${esperado}»`);
+      }
+    }
+  }
 });
 
 test('hélice: 1, 2 y 3 ejes reparten solo las columnas visibles', () => {

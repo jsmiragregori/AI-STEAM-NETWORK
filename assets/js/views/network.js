@@ -142,8 +142,11 @@ function helixBlock() {
     const total = totalDeCategoria(cat);
     const pCount = Number.isInteger(cat.partnersCount) ? cat.partnersCount : (pc[cat.id] || 0);
     const sCount = Number.isInteger(cat.stakeholdersCount) ? cat.stakeholdersCount : (sc[cat.id] || 0);
+    const partnerNoun = pCount === 1
+      ? { es: 'socio', en: 'partner', va: 'soci' }
+      : { es: 'socios', en: 'partners', va: 'socis' };
     const detailParts = [
-      pCount ? `${pCount} ${loc({es:'socios',en:'partners',va:'socis'})}` : '',
+      pCount ? `${pCount} ${loc(partnerNoun)}` : '',
       sCount ? `${sCount} ${loc({es:'stakeholders',en:'stakeholders',va:'stakeholders'})}` : '',
     ].filter(Boolean);
     return `
