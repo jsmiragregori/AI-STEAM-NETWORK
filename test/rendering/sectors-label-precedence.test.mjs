@@ -65,7 +65,7 @@ function renderConFicha(exampleChallengeLabel) {
   const original = translations.es.sectors;
   const existed = Object.prototype.hasOwnProperty.call(translations.es, 'sectors');
   translations.es.sectors = { ...(original || {}), exampleChallengeLabel: GENERICA };
-  SECTORS_CONFIG.cardsBlock = [fichaDePrueba(exampleChallengeLabel)];
+  SECTORS_CONFIG.cardsBlock = { visible: true, sectors: [fichaDePrueba(exampleChallengeLabel)] };
   setState('expandedSector', 'fixture-sector');
   try {
     return vistas.sectores.render();

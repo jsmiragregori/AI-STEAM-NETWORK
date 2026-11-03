@@ -211,7 +211,7 @@ function botonesDe(article) {
 }
 
 test('ficha sectorial con tres contadores cero: sin cajas, sin contenedor y ficha viva', () => {
-  const card = SECTORS_CONFIG.cardsBlock[0];
+  const card = SECTORS_CONFIG.cardsBlock.sectors[0];
   const statsList = [
     { id: 'initiatives', value: 0, label: L('INICIATIVAS') },
     { id: 'stakeholders', value: '0', label: L('STAKEHOLDERS') },
@@ -227,7 +227,7 @@ test('ficha sectorial con tres contadores cero: sin cajas, sin contenedor y fich
 });
 
 test('ficha sectorial en mezcla: solo positivos, en orden, sin huecos y con columnas ajustadas', () => {
-  const card = SECTORS_CONFIG.cardsBlock[0];
+  const card = SECTORS_CONFIG.cardsBlock.sectors[0];
   const statsList = [
     { id: 'initiatives', value: 0, label: L('INICIATIVAS') },
     { id: 'stakeholders', value: 5, label: L('CINCO') },
@@ -244,7 +244,7 @@ test('ficha sectorial en mezcla: solo positivos, en orden, sin huecos y con colu
 });
 
 test('ficha sectorial: transición 0 → positivo → 0 sin tocar flags', () => {
-  const card = SECTORS_CONFIG.cardsBlock[0];
+  const card = SECTORS_CONFIG.cardsBlock.sectors[0];
   const statsList = [{ id: 'initiatives', value: 0, label: L('TRANSICION') }];
   const render = () => vistas.sectores.render();
   assert.deepEqual(botonesDe(articleDe(conCardStats(card, statsList, render), card.id)), []);
@@ -255,7 +255,7 @@ test('ficha sectorial: transición 0 → positivo → 0 sin tocar flags', () => 
 });
 
 test('ficha sectorial: la ausencia de dato conserva su comportamiento previo (hueco «0»)', () => {
-  const card = SECTORS_CONFIG.cardsBlock[0];
+  const card = SECTORS_CONFIG.cardsBlock.sectors[0];
   const statsList = [{ id: 'initiatives', label: L('SIN-DATO') }];
   const html = conCardStats(card, statsList, () => vistas.sectores.render());
   const article = articleDe(html, card.id);
