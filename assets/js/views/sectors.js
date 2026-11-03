@@ -51,6 +51,23 @@ function localizedList(value) {
   return value[getLang()] || value.es || [];
 }
 
+// QA-064: `cardsBlock` es un objeto `{ visible, sectors }`. Se acepta también
+// la forma antigua (array) para que una vista nueva no rompa con datos viejos.
+function getCardsBlock() {
+  const block = SECTORS_CONFIG?.cardsBlock;
+  if (Array.isArray(block)) return { visible: true, sectors: block };
+  return {
+    visible: block?.visible !== false,
+    sectors: Array.isArray(block?.sectors) ? block.sectors : [],
+  };
+}
+
+// QA-066: un icono solo se pinta si es un nombre textual no vacío. El valor se
+// escapa como atributo; nunca se interpola HTML/SVG libre.
+function iconName(value) {
+  return typeof value === 'string' && value.trim() !== '' ? value.trim() : '';
+}
+
 function renderHero(hero) {
   if (!hero || hero.visible === false) return '';
 
@@ -68,6 +85,7 @@ function renderHero(hero) {
         ${stats.length ? `<div class="mt-12 rd-hero-stats-grid">
           ${stats.map(stat => `
             <div class="rd-hero-stat text-center">
+              ${iconName(stat.icon) ? `<i data-lucide="${esc(iconName(stat.icon))}" class="mx-auto mb-3 h-7 w-7 text-white/80"></i>` : ''}
               <p class="text-4xl font-extrabold text-white">${esc(stat.value)}</p>
               <p class="mt-2 text-xs font-bold uppercase tracking-wider" style="color:rgba(255,244,225,.75)">${esc(localized(stat.label))}</p>
             </div>
@@ -78,15 +96,19 @@ function renderHero(hero) {
   `;
 }
 
-function renderStatButton(sector, key, value, label, enabled) {
+function renderStatButton(sector, stat, enabled, fallbackLabel = '') {
+  const key = stat.id;
   const navKind = key === 'initiatives' ? 'marketplace' : key === 'courses' ? 'training' : 'network';
   const disabled = enabled ? '' : ' aria-disabled="true"';
   const action = enabled ? `data-sector-nav="${navKind}" data-sector-id="${esc(sector.id)}"` : '';
+  const icon = iconName(stat.icon);
+  const iconTone = key === 'courses' || key === 'stakeholders' ? 'text-eu-purple' : 'text-eu-blue';
 
   return `
     <button ${action}${disabled} class="rd-card rd-card-grad-beige rd-card-edge min-w-0 rounded-3xl px-3 py-4 text-center transition sm:px-4 ${enabled ? 'cursor-pointer' : 'cursor-default opacity-55'}">
-      <span class="block text-3xl font-extrabold ${key === 'courses' ? 'text-eu-purple' : key === 'stakeholders' ? 'text-eu-purple' : 'text-eu-blue'}">${esc(value ?? 0)}</span>
-      <span class="mt-1 block max-w-full break-words text-[0.68rem] font-bold uppercase leading-tight tracking-wide text-gray-500 [hyphens:auto] sm:text-xs">${esc(label)}</span>
+      ${icon ? `<i data-lucide="${esc(icon)}" class="mx-auto mb-2 h-5 w-5 ${iconTone}"></i>` : ''}
+      <span class="block text-3xl font-extrabold ${key === 'courses' ? 'text-eu-purple' : key === 'stakeholders' ? 'text-eu-purple' : 'text-eu-blue'}">${esc(stat.value ?? 0)}</span>
+      <span class="mt-1 block max-w-full break-words text-[0.68rem] font-bold uppercase leading-tight tracking-wide text-gray-500 [hyphens:auto] sm:text-xs">${esc(localized(stat.label) || fallbackLabel)}</span>
     </button>
   `;
 }
@@ -304,6 +326,9 @@ function renderSectorCard(sector, sectorsT, index) {
   const navTargets = sector.navigationTargets || {};
   const icon = SECTOR_ICONS[sector.id] || 'shapes';
   const keywords = renderKeywords(sector);
+  // QA-067: «Descripción visible» controla solo la descripción breve de la
+  // cabecera. Título, etiquetas y el resto de la tarjeta no cambian.
+  const showDescription = (sector.sections || {}).keywordsDescription !== false;
 
   const isEven = index % 2 === 0;
   const tintClass = isEven ? 'rd-card-grad-blue' : 'rd-card-grad-violet';
@@ -320,14 +345,14 @@ function renderSectorCard(sector, sectorsT, index) {
               <h2 class="text-3xl font-extrabold tracking-tight text-white">${esc(localized(sector.name) || sector.id)}</h2>
               <span class="rounded-full border border-white/25 bg-white/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">${esc(sector.id)}</span>
             </div>
-            <p class="mt-3 max-w-3xl text-base leading-relaxed text-white/85 md:text-lg">${esc(localized(sector.description))}</p>
+            ${showDescription ? `<p class="mt-3 max-w-3xl text-base leading-relaxed text-white/85 md:text-lg">${esc(localized(sector.description))}</p>` : ''}
             ${keywords ? `<div class="mt-5">${keywords}</div>` : ''}
           </div>
         </button>
         ${statsList.length ? `<div class="grid min-w-0 gap-3 md:w-[24rem]" style="grid-template-columns: repeat(${esc(statsColumns)}, minmax(0, 1fr))">
           ${statsList.map(stat => {
             const target = stat.id === 'initiatives' ? navTargets.marketplace : stat.id === 'courses' ? navTargets.training : navTargets.network;
-            return renderStatButton(sector, stat.id, stat.value, localized(stat.label) || sectorLabels[stat.id] || '', target?.enabled);
+            return renderStatButton(sector, stat, target?.enabled, sectorLabels[stat.id] || '');
           }).join('')}
         </div>` : ''}
       </div>
@@ -380,24 +405,24 @@ function renderCta(cta, sectorsT) {
 
 export function render() {
   const sectorsT = t('sectors') || {};
-  const sectorList = (SECTORS_CONFIG.cardsBlock || [])
-    .filter(sector => sector.visible !== false);
+  const cardsBlock = getCardsBlock();
+  const sectorList = cardsBlock.sectors.filter(sector => sector.visible !== false);
 
   return `
     <div class="rd-canvas">
       ${renderHero(SECTORS_CONFIG?.heroBlock)}
-      <section class="px-6 py-20">
+      ${cardsBlock.visible === false ? '' : `<section class="px-6 py-20">
         <div class="mx-auto max-w-7xl space-y-6">
           ${sectorList.map((sector, index) => renderSectorCard(sector, sectorsT, index)).join('')}
         </div>
-      </section>
+      </section>`}
       ${renderCta(SECTORS_CONFIG?.ctaBlock, sectorsT)}
     </div>
   `;
 }
 
 function navigateSector(kind, sectorId) {
-  const sector = (SECTORS_CONFIG.cardsBlock || []).find(item => item.id === sectorId);
+  const sector = getCardsBlock().sectors.find(item => item.id === sectorId);
   if (!sector) return;
 
   if (kind === 'network') {
