@@ -503,7 +503,7 @@ function asArray(value) {
 function getLabelFromArray(arr, id, fallback = '') {
   const rawId = id == null ? '' : String(id);
   const match = arr?.find(item => String(item.id) === rawId);
-  return pickLang(match?.label, fallback || id);
+  return pickLang(match?.label, fallback);
 }
 
 function getTypeLabel(id) {
@@ -727,6 +727,7 @@ function renderBadge(label, tone = 'bg-white text-gray-700 border-eu-border', fi
 
 function renderHero() {
   const hero = MARKETPLACE_CONFIG.heroBlock || {};
+  if (hero.visible === false) return '';
   const stats = filterVisibleStats(hero.stats);
   const title = pickLang(hero.title, pickLang(MARKETPLACE_CONFIG.publicSectionName?.title, 'Comunidad de Practica'));
   const description = pickLang(hero.description);

@@ -79,13 +79,16 @@ const EXPECTED_BY_FILE = {
 // G14 (2026-11-01) añade dos líneas de comentario en renderChallengeCard antes de las cinco
 // excepciones de marketplace.js: 1832→1834, 2017→2019, 2019→2021, 2058→2060 y 2218→2220.
 // Siguen siendo las mismas expresiones, con las mismas categorías y recuentos.
+// G17 (2026-11-04) añade una guardia `visible:false` en renderHero de marketplace.js (+1 a sus
+// cinco excepciones: 1835, 2020, 2022, 2061 y 2221) y siete líneas en governance.js para retirar
+// la pestaña LbD oculta (726 → 733). Mismas expresiones, categorías y recuentos.
 const EXPECTED_EXCEPTIONS = [
-  { file: 'assets/js/views/governance.js', line: 726, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 1834, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 2019, category: 'ESTRUCTURAL' },
-  { file: 'assets/js/views/marketplace.js', line: 2021, category: 'COMPOSICION_CADENA' },
-  { file: 'assets/js/views/marketplace.js', line: 2060, category: 'HELPER_QUE_ESCAPA' },
-  { file: 'assets/js/views/marketplace.js', line: 2220, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/governance.js', line: 733, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 1835, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 2020, category: 'ESTRUCTURAL' },
+  { file: 'assets/js/views/marketplace.js', line: 2022, category: 'COMPOSICION_CADENA' },
+  { file: 'assets/js/views/marketplace.js', line: 2061, category: 'HELPER_QUE_ESCAPA' },
+  { file: 'assets/js/views/marketplace.js', line: 2221, category: 'COMPOSICION_CADENA' },
   { file: 'assets/js/views/training.js', line: 464, category: 'ESTRUCTURAL' },
 ];
 

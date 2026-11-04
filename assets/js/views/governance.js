@@ -20,6 +20,10 @@ const TABS = ['estructura', 'dual-track', 'lbd', 'documentos', 'participar'];
 
 // ─── helpers ─────────────────────────────────────────────────────────────────
 
+function lbdVisible() {
+  return GOVERNANCE_CONFIG?.lbdBlock?.visible !== false;
+}
+
 function tabBar(activeTab, govT) {
   const labels = {
     'estructura':  govT?.tabEstructura  || 'Estructura',
@@ -35,7 +39,9 @@ function tabBar(activeTab, govT) {
     'documentos':  'file-text',
     'participar':  'users',
   };
-  return TABS.map(id => `
+  return TABS
+    .filter(id => id !== 'lbd' || lbdVisible())
+    .map(id => `
     <button data-gov-tab="${esc(id)}" class="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold cursor-pointer transition-all duration-300 ${
       activeTab === id
         ? 'bg-eu-blue text-white shadow-sm'
@@ -374,8 +380,9 @@ function tabDualTrack(govT) {
 // ─── Tab 3: LbD ─────────────────────────────────────────────────────────────
 
 function tabLbd(govT) {
-  const s = govT?.tabContent_lbd || {};
   const lbdBlock = GOVERNANCE_CONFIG?.lbdBlock || {};
+  if (lbdBlock.visible === false) return '';
+  const s = govT?.tabContent_lbd || {};
   const cycleBlock = lbdBlock.cycle || {};
   const cyclePhases = Array.isArray(cycleBlock.phases) ? cycleBlock.phases : null;
   const operatingFlowBlock = lbdBlock.operatingFlow || {};
@@ -894,7 +901,8 @@ function tabParticipar(govT) {
 
 export function render() {
   const govT      = t('governance') || {};
-  const activeTab = getState('governanceTab') || 'estructura';
+  const requestedTab = getState('governanceTab') || 'estructura';
+  const activeTab = requestedTab === 'lbd' && !lbdVisible() ? 'estructura' : requestedTab;
 
   const heroBlock  = GOVERNANCE_CONFIG?.heroBlock || {};
   const heroVisible = heroBlock.visible !== false;
@@ -910,10 +918,10 @@ export function render() {
   const contentMap = {
     'estructura':  tabEstructura(govT),
     'dual-track':  tabDualTrack(govT),
-    'lbd':         tabLbd(govT),
     'documentos':  tabDocumentos(govT),
     'participar':  tabParticipar(govT),
   };
+  if (lbdVisible()) contentMap.lbd = tabLbd(govT);
 
   return `
     <div>
