@@ -70,7 +70,8 @@ This repository contains the **production-ready web application** — a modern J
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18 or later (minimum provisional, to be confirmed by compatibility tests). Only needed for local development, not for production.
+- Node.js 24 LTS, the supported runtime. Verified on Node 24.19 (Windows) and 24.21 (Linux, RHEL 8.10). Node 25.9 has been verified only on Windows, for the local static server. Only needed for local development and for the static server, not for production.
+- Production: Apache httpd (not yet validated in the target environment).
 - The static server included in this repository: `scripts/serve-static.mjs` (no extra packages). Do not replace it with `python -m http.server` or `npx serve`; see the note below.
 
 ### Local Development

@@ -136,7 +136,8 @@ npx esbuild ./assets/js/main.js --bundle --minify --outfile=./assets/js/main.min
 ## ⚠️ Importante
 
 - **HTTP obligatorio:** No funciona con `file://`. Requiere servidor HTTP (`scripts/serve-static.mjs`).
-- **Node.js 18 o superior** para el servidor local (mínimo provisional, pendiente de las pruebas de compatibilidad).
+- **Node.js 24 LTS**, el runtime soportado, para el servidor local. Verificado con Node 24.19 (Windows) y 24.21 (Linux, RHEL 8.10). Node 25.9 solo se ha verificado en Windows, para el servidor estático local.
+- **Producción:** Apache httpd (no validado todavía en el entorno de destino).
 - **ES modules:** Usar `import/export` nativos, navegadores modernos lo soportan.
 - **Lucide:** Llamar `lucide.createIcons()` tras cada render completo.
 - **localStorage:** Persiste idioma y filtros entre sesiones (el sitio no instala cookies).
