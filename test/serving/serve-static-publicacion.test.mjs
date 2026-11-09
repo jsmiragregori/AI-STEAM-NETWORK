@@ -23,6 +23,16 @@ import { fileURLToPath } from 'node:url';
 // intérprete (no se fija ninguna ruta local en el repositorio). Es un diagnóstico
 // del defecto original, marcado como TODO: no es una guarda de producto.
 // Puertos: solo >= 3500, sin tocar 3000-3006 ni 8501.
+//
+// Cliente que aborta (recargas del navegador, mismo incidente): una descarga se corta tras
+// el primer fragmento. El servidor no debe retener el archivo después, ni lanzar excepciones
+// ni caer. Cubierto por las pruebas "cliente que aborta", "ciclos de recargas" y "tras N
+// recargas cortadas" del final de este fichero.
+// Límite medido (Windows 11, loopback y LAN): serve-static entrega 32-256 MiB al socket en
+// 20-170 ms aunque el cliente deje de leer tras el primer fragmento, así que la respuesta no
+// queda en curso del lado del servidor. Estas pruebas comprueban el resultado observable
+// (rename a la primera, versión nueva, servidor vivo). Contraste ad hoc, fuera del repo, con
+// el mismo escenario de abortar y renombrar: serve 14.2.6 da EPERM y serve-static.mjs no.
 
 const SCRIPT = fileURLToPath(new URL('../../scripts/serve-static.mjs', import.meta.url));
 const MIB = 1024 * 1024;
@@ -101,6 +111,30 @@ function descargar(puertoDestino, ruta, { pausarTras } = {}) {
       });
     });
     req.on('error', reject);
+  });
+}
+
+/**
+ * Cliente que aborta, como un navegador que recarga: lee solo el primer fragmento de la
+ * respuesta y destruye el socket. Resuelve cuando el socket del cliente ya está cerrado.
+ */
+function abortarTrasPrimerTrozo(puertoDestino, ruta) {
+  return new Promise((resolve, reject) => {
+    let abortada = false;
+    const req = http.get({ host: '127.0.0.1', port: puertoDestino, path: ruta, agent: false }, res => {
+      res.on('error', () => {}); // la respuesta que corta el propio cliente no es un fallo de la prueba
+      res.once('data', trozo => {
+        abortada = true;
+        req.once('close', () => resolve({ estado: res.statusCode, bytes: trozo.length }));
+        req.destroy();
+      });
+      res.once('end', () => {
+        if (!abortada) reject(new Error(`la respuesta de ${ruta} terminó sin abortarse`));
+      });
+    });
+    req.on('error', error => {
+      if (!abortada) reject(error);
+    });
   });
 }
 
@@ -302,3 +336,129 @@ test(
     }
   },
 );
+
+test('un cliente que aborta a mitad de 32 MiB no retiene el archivo: el rename tiene éxito a la primera', { timeout: 180000 }, async () => {
+  const { sandbox, raiz, destino } = prepararSandbox();
+  let servidor;
+  try {
+    publicar(destino, randomBytes(TAMANO));
+    servidor = await arrancarNode(raiz);
+    const { proceso, puerto } = servidor;
+    const pid = proceso.pid;
+
+    const cortada = await abortarTrasPrimerTrozo(puerto, '/modulo.js');
+    assert.equal(cortada.estado, 200);
+    assert.ok(cortada.bytes > 0 && cortada.bytes < TAMANO, `bytes leídos antes de abortar: ${cortada.bytes}`);
+    // No se exige la nota "cliente cerró antes de terminar" en el log: en Windows el servidor
+    // entrega el cuerpo al socket en milisegundos (finish antes del corte) y la línea sale con 200.
+    await esperar(200);
+
+    // Una sola pasada, sin reintentos: si el servidor retuviera el archivo, aquí lanzaría EPERM.
+    const nueva = publicar(destino, randomBytes(TAMANO));
+
+    const fresca = await descargar(puerto, '/modulo.js');
+    const datos = await fresca.hecho;
+    assert.equal(fresca.estado, 200);
+    assert.equal(datos.bytes, TAMANO, 'la petición nueva debe ser completa');
+    assert.equal(datos.sha, nueva, 'la petición nueva debe recibir la versión publicada');
+    assert.equal(proceso.pid, pid, 'el PID debe ser el mismo');
+    assert.equal(proceso.exitCode, null, 'el servidor debe seguir vivo');
+  } finally {
+    if (servidor) await detener(servidor.proceso);
+    rmSync(sandbox, { recursive: true, force: true });
+  }
+});
+
+test('20 ciclos de recargas simultáneas y publicación de tres archivos: ningún EPERM y el mismo servidor', { timeout: 300000 }, async () => {
+  const sandbox = mkdtempSync(path.join(os.tmpdir(), 'serve-static-publica-'));
+  const raiz = path.join(sandbox, 'www');
+  mkdirSync(raiz);
+  const archivos = ['modulo-a.js', 'modulo-b.js', 'modulo-c.js'];
+  let servidor;
+  try {
+    let vigente = new Map(archivos.map(nombre => [nombre, publicar(path.join(raiz, nombre), randomBytes(TAMANO))]));
+    servidor = await arrancarNode(raiz);
+    const { proceso, puerto } = servidor;
+    const pid = proceso.pid;
+
+    for (let ciclo = 1; ciclo <= 20; ciclo += 1) {
+      // Tres recargas a la vez, cada una sobre un archivo distinto y cortada tras el primer fragmento.
+      const cortadas = await Promise.all(archivos.map(nombre => abortarTrasPrimerTrozo(puerto, `/${nombre}`)));
+      for (const cortada of cortadas) {
+        assert.equal(cortada.estado, 200, `ciclo ${ciclo}: estado de una recarga cortada`);
+        assert.ok(cortada.bytes > 0 && cortada.bytes < TAMANO, `ciclo ${ciclo}: bytes antes de abortar: ${cortada.bytes}`);
+      }
+
+      // Una lectura completa en vuelo mientras se publica: sale íntegra, con la versión anterior o la nueva.
+      const archivoEnVuelo = archivos[ciclo % archivos.length];
+      const enVuelo = await descargar(puerto, `/${archivoEnVuelo}`);
+      await esperar((ciclo % 3) * 10);
+
+      // Tres publicaciones seguidas, una pasada cada una: un EPERM lanza y la prueba falla.
+      const nueva = new Map();
+      for (const nombre of archivos) {
+        nueva.set(nombre, publicar(path.join(raiz, nombre), randomBytes(TAMANO)));
+      }
+
+      const datosEnVuelo = await enVuelo.hecho;
+      assert.equal(enVuelo.estado, 200, `ciclo ${ciclo}: estado de la lectura en vuelo`);
+      assert.equal(datosEnVuelo.bytes, TAMANO, `ciclo ${ciclo}: la lectura en vuelo debe ser completa`);
+      assert.ok(
+        [vigente.get(archivoEnVuelo), nueva.get(archivoEnVuelo)].includes(datosEnVuelo.sha),
+        `ciclo ${ciclo}: la lectura en vuelo debe ser una versión íntegra`,
+      );
+
+      for (const nombre of archivos) {
+        const fresca = await descargar(puerto, `/${nombre}`);
+        const datos = await fresca.hecho;
+        assert.equal(fresca.estado, 200, `ciclo ${ciclo}: estado de ${nombre}`);
+        assert.equal(datos.bytes, TAMANO, `ciclo ${ciclo}: ${nombre} debe ser completo`);
+        assert.equal(datos.sha, nueva.get(nombre), `ciclo ${ciclo}: ${nombre} debe servir la versión publicada`);
+      }
+
+      assert.equal(proceso.pid, pid, `ciclo ${ciclo}: el PID debe ser el mismo`);
+      assert.equal(proceso.exitCode, null, `ciclo ${ciclo}: el servidor debe seguir vivo`);
+      vigente = nueva;
+    }
+  } finally {
+    if (servidor) await detener(servidor.proceso);
+    rmSync(sandbox, { recursive: true, force: true });
+  }
+});
+
+test('tras 60 recargas cortadas el servidor sigue respondiendo, sin salida de error ni ERROR en el log', { timeout: 180000 }, async () => {
+  const { sandbox, raiz, destino } = prepararSandbox();
+  let servidor;
+  try {
+    writeFileSync(destino, randomBytes(TAMANO));
+    const pagina = '<p>sintetico</p>\n';
+    writeFileSync(path.join(raiz, 'pagina.html'), pagina);
+    servidor = await arrancarNode(raiz);
+    const { proceso, puerto } = servidor;
+    const pid = proceso.pid;
+
+    for (let lote = 0; lote < 6; lote += 1) {
+      const cortadas = await Promise.all(Array.from({ length: 10 }, () => abortarTrasPrimerTrozo(puerto, '/modulo.js')));
+      assert.ok(cortadas.every(cortada => cortada.estado === 200), `lote ${lote}: estado de las recargas cortadas`);
+    }
+
+    const respuesta = await descargar(puerto, '/pagina.html');
+    const datos = await respuesta.hecho;
+    assert.equal(respuesta.estado, 200, 'el servidor debe seguir respondiendo');
+    assert.equal(datos.sha, sha256(Buffer.from(pagina)), 'la página pequeña debe llegar íntegra');
+
+    assert.equal(proceso.pid, pid, 'el PID debe ser el mismo');
+    assert.equal(proceso.exitCode, null, 'el servidor no debe haber terminado');
+    assert.equal(proceso.signalCode, null, 'el servidor no debe haber recibido señal');
+    assert.equal(proceso.salida.stderr, '', 'no debe haber excepciones no capturadas ni avisos en stderr');
+    assert.doesNotMatch(proceso.salida.stdout, / ERROR /, 'el log no debe registrar errores internos');
+    // Cada petición atendida deja una línea (finish o close, una sola vez por respuesta).
+    assert.ok(
+      await esperarHasta(() => (proceso.salida.stdout.match(/GET \/modulo\.js 200/g) ?? []).length >= 60),
+      `el log debe registrar las 60 peticiones atendidas: ${proceso.salida.stdout}`,
+    );
+  } finally {
+    if (servidor) await detener(servidor.proceso);
+    rmSync(sandbox, { recursive: true, force: true });
+  }
+});
