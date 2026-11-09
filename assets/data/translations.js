@@ -3710,7 +3710,7 @@ export const translations = {
         "Conferenciants convidats o sessions de validació",
         "Inspiració per a TFM/projectes quan és acceptada per Track A"
       ],
-      "masterBridgeDisclaimer": "El Màster AiSECRETT (Track A) és governat per UVEG. L'accés i el reconeixement de crèdits estan subjectes als criteris d'admissió universitària. AiSTEAM Network (Track B, CECU) facilita el pont i la preparació.",
+      "masterBridgeDisclaimer": "El Màster AiSECRETT (Track A) és governat per UVEG i els socis acadèmics del consorci. L'AiSTEAM Network (Track B) no assigna ECTS, no certifica títols universitaris ni defineix els criteris d'avaluació del Màster.",
       "credentialsDisclaimer": "Els mecanismes de reconeixement estan subjectes a validació per la governança d'AiSECRETT i els marcs de CECU, UVEG i TUV.IT.",
       "courseViewMore": "Veure curs →",
       "courseHours": "h",
@@ -3723,7 +3723,7 @@ export const translations = {
         "Mòduls temàtics per sector (60 ECTS)",
         "Repte real del Banc de Reptes com a TFG",
         "Pràctiques internacionals amb soci UE",
-        "Certificació TÜV + Credencial Digital Europea (pilot)"
+        "Evidència d'adopció aportada a AiSECRETT"
       ],
       "courses": {},
       "levelLabels": {

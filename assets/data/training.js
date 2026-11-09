@@ -501,7 +501,7 @@ export const TRAINING_CONFIG = {
             "text": {
               "es": "Validación de relevancia curricular por UVEG",
               "en": "Curriculum relevance validation by UVEG",
-              "va": "Mòduls temàtics per sector (60 ECTS)"
+              "va": "Validació de rellevància curricular per UVEG"
             }
           },
           {
@@ -510,7 +510,7 @@ export const TRAINING_CONFIG = {
             "text": {
               "es": "Posible incorporación como TFM (decisión de UVEG)",
               "en": "Possible TFM incorporation (UVEG decision)",
-              "va": "Repte real del Banc de Reptes com a TFG"
+              "va": "Possible incorporació com a TFM (decisió d'UVEG)"
             }
           },
           {
@@ -519,7 +519,7 @@ export const TRAINING_CONFIG = {
             "text": {
               "es": "Sesión de transferencia o conferencia invitada",
               "en": "Transfer session or guest lecture",
-              "va": "Pràctiques internacionals amb soci UE"
+              "va": "Sessió de transferència o conferència convidada"
             }
           },
           {
@@ -528,7 +528,7 @@ export const TRAINING_CONFIG = {
             "text": {
               "es": "Evidencia de adopción aportada a AiSECRETT",
               "en": "Adoption evidence contributed to AiSECRETT",
-              "va": "Certificació TÜV + Credencial Digital Europea (pilot)"
+              "va": "Evidència d'adopció aportada a AiSECRETT"
             }
           }
         ]
