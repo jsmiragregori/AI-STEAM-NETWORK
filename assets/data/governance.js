@@ -591,9 +591,9 @@ export const GOVERNANCE_CONFIG = {
             "va": "ISO 21001 – Gestió Educativa"
           },
           "desc": {
-            "es": "Las actividades formativas de AiSECRETT se orientan por los principios de ISO 21001/EOMS bajo coordinación de UVEG. Cualquier certificación o transferencia posterior requerirá una decisión formal de la Asamblea General.",
-            "en": "AiSECRETT training activities are guided by ISO 21001/EOMS principles under UVEG coordination. Any later certification or transfer will require a formal decision by the General Assembly.",
-            "va": "Les activitats formatives d'AiSECRETT s'orienten pels principis d'ISO 21001/EOMS sota coordinació d'UVEG. Qualsevol certificació o transferència posterior requerirà una decisió formal de l'Assemblea General."
+            "es": "Las actividades formativas de AiSECRETT se orientan por los principios de ISO 21001/EOMS bajo coordinación de UVEG. La AiSTEAM Network no actúa como entidad certificadora; cualquier esquema de certificación formal posterior dependerá de entidades acreditadas y requerirá la decisión formal de la Asamblea General.",
+            "en": "AiSECRETT training activities are guided by ISO 21001/EOMS principles under UVEG coordination. The AiSTEAM Network does not act as a certifying body; any subsequent formal certification scheme will depend on accredited bodies and require a formal decision by the General Assembly.",
+            "va": "Les activitats formatives d'AiSECRETT s'orienten pels principis d'ISO 21001/EOMS sota coordinació d'UVEG. L'AiSTEAM Network no actua com a entitat certificadora; qualsevol esquema de certificació formal posterior dependrà d'entitats acreditades i requerirà la decisió formal de l'Assemblea General."
           }
         },
         {

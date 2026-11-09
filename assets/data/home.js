@@ -205,9 +205,9 @@ export const HOME_CONFIG = {
           {
             "id": "is-not-2",
             "html": {
-              "es": "Una plataforma de certificación sin validar",
-              "en": "An unvalidated certification platform",
-              "va": "Una plataforma de certificació sense validar"
+              "es": "Una entidad certificadora oficial (la acreditación académica y de títulos corresponde exclusivamente a las universidades)",
+              "en": "An official certifying body (academic qualification and degree accreditation rests exclusively with universities)",
+              "va": "Una entitat certificadora oficial (l&#39;acreditació acadèmica i de títols correspon exclusivament a les universitats)"
             }
           },
           {
