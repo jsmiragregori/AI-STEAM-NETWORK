@@ -10,6 +10,7 @@
     "verify:vendor": "node scripts/verify-vendored-assets.mjs",
     "verify:data": "node scripts/verify-generated-data.mjs",
     "serve:csp": "node scripts/serve-csp.mjs",
+    "serve:static": "node scripts/serve-static.mjs",
     "csp:walk": "node scripts/csp-walk.mjs"
   },
   "devDependencies": {
