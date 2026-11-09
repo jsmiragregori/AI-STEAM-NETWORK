@@ -461,9 +461,9 @@ export const HOME_CONFIG = {
     "description": {
       "visible": true,
       "html": {
-        "es": "La red alimenta simultáneamente dos niveles de formación reglada coordinados por CECU.",
-        "en": "The network simultaneously feeds two levels of formal education coordinated by CECU.",
-        "va": "La xarxa alimenta simultàniament dos nivells de formació reglada coordinats per CECU."
+        "es": "La red conecta la Formación Profesional coordinada por CECU con los puentes de transferencia hacia el Máster coordinado por UVEG.",
+        "en": "The network connects Vocational Education and Training coordinated by CECU with transfer bridges to the Master&#39;s degree coordinated by UVEG.",
+        "va": "La xarxa connecta la Formació Professional coordinada per CECU amb els ponts de transferència cap al Màster coordinat per UVEG."
       }
     },
     "cards": [
@@ -560,17 +560,17 @@ export const HOME_CONFIG = {
           {
             "id": "master-3",
             "html": {
-              "es": "Créditos ECTS y Credencial Digital Europea",
-              "en": "ECTS credits and European Digital Credentials",
-              "va": "Crèdits ECTS i Credencials Digitals Europees"
+              "es": "Modelo curricular basado en créditos ECTS y Credenciales Digitales Europeas (en tramitación)",
+              "en": "Curriculum model based on ECTS credits and European Digital Credentials (under academic approval)",
+              "va": "Model curricular basat en crèdits ECTS i Credencials Digitals Europees (en tramitació)"
             }
           },
           {
             "id": "master-4",
             "html": {
-              "es": "Retos reales del Banco de Retos como TFM",
-              "en": "Real challenges from the Challenge Bank as final projects",
-              "va": "Reptes reals del Banc de Reptes com TFM"
+              "es": "Opción de incorporar retos reales del Banco de Retos como TFM (sujeto a aprobación académica)",
+              "en": "Option to incorporate real ecosystem challenges as Master&#39;s Final Projects (subject to academic approval)",
+              "va": "Opció d&#39;incorporar reptes reals del Banc de Reptes com a TFM (subjecte a aprovació acadèmica)"
             }
           }
         ]
