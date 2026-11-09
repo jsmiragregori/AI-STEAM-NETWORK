@@ -70,8 +70,8 @@ This repository contains the **production-ready web application** — a modern J
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18+ (only for local development, not for production)
-- A simple HTTP server (`python -m http.server`, `serve`, or equivalent)
+- Node.js 18 or later (minimum provisional, to be confirmed by compatibility tests). Only needed for local development, not for production.
+- The static server included in this repository: `scripts/serve-static.mjs` (no extra packages). Do not replace it with `python -m http.server` or `npx serve`; see the note below.
 
 ### Local Development
 
@@ -79,17 +79,21 @@ This repository contains the **production-ready web application** — a modern J
 # Navigate to project
 cd AI-STEAM-VANILLA
 
-# Option 1: Python
-python -m http.server 3000
+# Option 1: repository server (recommended)
+node scripts/serve-static.mjs --port 3000
 
-# Option 2: Node (if serve is installed)
-npx serve -l 3000
+# Option 2: the same server through npm
+npm run serve:static -- --port 3000
 
 # Open browser
 # http://localhost:3000
 ```
 
-The site will reload automatically if you edit files (or manually refresh).
+The server listens on `127.0.0.1` by default. Add `--bind 0.0.0.0` only if the site must be visible on the local network. Stop it with Ctrl+C.
+
+> **Do not use `python -m http.server` or `npx serve` for this site.** Both keep the file open while a response is being sent, and `serve` also keeps it open after a response is aborted (for example, when the browser reloads). On Windows, the atomic replacement of a published file then fails (EPERM or a sharing violation). `scripts/serve-static.mjs` reads each file completely into memory and closes it before responding, so a writer can replace the file while downloads are in progress. On Windows stations, the versioned launcher `arrancar_vanilla.ps1` (in `tools/servicios/` of the private repository AI-STEAM-CONTENT) starts this same server.
+
+The server does not watch files: refresh the browser after editing.
 
 ## 📁 Project Structure
 
@@ -289,7 +293,7 @@ export const challenges = [
 ### For Frontend Development
 
 1. Create a branch: `git checkout -b feature/new-view`
-2. Make changes, test locally with `python -m http.server`
+2. Make changes, test locally with `node scripts/serve-static.mjs --port 3000`
 3. Commit and push
 4. Submit PR for review
 5. Merge to `main` to deploy

@@ -25,9 +25,14 @@ npx tailwindcss -i ..\AI-STEAM-MOCKUP\src\index.css -o .\assets\css\tailwind-out
 
 ### 4. Arrancar servidor local
 ```powershell
-python -m http.server 8000
+node scripts\serve-static.mjs --port 8000
 # Abrir en navegador: http://localhost:8000
+# (equivalente: npm run serve:static -- --port 8000)
 ```
+
+No uses `python -m http.server` ni `npx serve` para esta web: retienen el archivo y, en Windows, el
+reemplazo al publicar falla con EPERM. El servidor de `scripts\serve-static.mjs` no retiene los
+archivos. Detalles en la sección «Local Development» de `README.md`.
 
 ---
 
@@ -120,7 +125,7 @@ Proyecto React/Vite original en `D:\CEICE\AI-STEAM-MOCKUP`:
 npx tailwindcss -i ..\AI-STEAM-MOCKUP\src\index.css -o .\assets\css\tailwind-output.css --minify
 
 # Desarrollo
-python -m http.server 8000
+node scripts\serve-static.mjs --port 8000
 
 # Producción (Fase 5)
 npx esbuild ./assets/js/main.js --bundle --minify --outfile=./assets/js/main.min.js
@@ -130,7 +135,8 @@ npx esbuild ./assets/js/main.js --bundle --minify --outfile=./assets/js/main.min
 
 ## ⚠️ Importante
 
-- **HTTP obligatorio:** No funciona con `file://`. Requiere servidor HTTP.
+- **HTTP obligatorio:** No funciona con `file://`. Requiere servidor HTTP (`scripts/serve-static.mjs`).
+- **Node.js 18 o superior** para el servidor local (mínimo provisional, pendiente de las pruebas de compatibilidad).
 - **ES modules:** Usar `import/export` nativos, navegadores modernos lo soportan.
 - **Lucide:** Llamar `lucide.createIcons()` tras cada render completo.
 - **localStorage:** Persiste idioma y filtros entre sesiones (el sitio no instala cookies).

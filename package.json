@@ -1,5 +1,8 @@
 {
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "test": "node --test",
     "build:css": "tailwindcss -i assets/css/tailwind-input.css -o assets/css/tailwind-output.css --minify",
