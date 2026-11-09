@@ -1625,9 +1625,9 @@ export const NETWORK_CONFIG = {
         "va": "Completa el formulari de Microsoft Forms per a sol·licitar l'alta de la teua organització a l'AiSTEAM Network."
       },
       "openExternalLabel": {
-        "es": "Conviértete en miembro",
-        "en": "Become a member",
-        "va": "Fes-te'n membre"
+        "es": "Solicitar adhesión como miembro",
+        "en": "Apply for Membership",
+        "va": "Sol·licitar adhesió com a membre"
       }
     },
     "tabTitle": {
@@ -1636,9 +1636,9 @@ export const NETWORK_CONFIG = {
       "va": "Membres de la xarxa"
     },
     "description": {
-      "es": "Únete a la comunidad de práctica de la AiSTEAM Network: organizaciones que comparten retos, casos y pilotos de IA y creatividad. La adhesión es gratuita y, al darte de alta, tu organización pasa a ser también stakeholder de AiSECRETT.",
-      "en": "Join the AiSTEAM Network community of practice: organizations that share AI and creativity challenges, cases and pilots. Joining is free and, once your organization signs up, it also becomes an AiSECRETT stakeholder.",
-      "va": "Uneix-te a la comunitat de pràctica de l'AiSTEAM Network: organitzacions que comparteixen reptes, casos i pilots d'IA i creativitat. L'adhesió és gratuïta i, en donar-te d'alta, la teua organització passa a ser també stakeholder d'AiSECRETT."
+      "es": "Únete a la comunidad de práctica de la AiSTEAM Network: organizaciones que comparten retos, casos y pilotos de IA y creatividad. La participación es gratuita: las organizaciones interesadas pueden solicitar su adhesión mediante formulario, decidiéndose su admisión a través del procedimiento en ConsensUE. Una vez aprobada el alta, la entidad pasa a ser miembro de la AiSTEAM Network y, de facto, stakeholder de AiSECRETT.",
+      "en": "Join the AiSTEAM Network community of practice: organizations that share AI and creativity challenges, cases and pilots. Participation is free: interested organizations may apply through our registration form, and applications are reviewed and decided upon within ConsensUE. Once admission is approved, the organization formally becomes an AiSTEAM Network member and, de facto, an AiSECRETT stakeholder.",
+      "va": "Uneix-te a la comunitat de pràctica de l'AiSTEAM Network: organitzacions que comparteixen reptes, casos i pilots d'IA i creativitat. La participació és gratuïta: les organitzacions interessades poden sol·licitar l'adhesió mitjançant formulari, decidint-se la seua admissió a través del procediment en ConsensUE. Una vegada aprovada l'alta, l'entitat esdevé membre de l'AiSTEAM Network i, de facto, stakeholder d'AiSECRETT."
     },
     "filterAll": {
       "es": "Todos",

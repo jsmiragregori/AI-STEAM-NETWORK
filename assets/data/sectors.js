@@ -2260,9 +2260,9 @@ export const SECTORS_CONFIG = {
         "va": "Completa el formulari de Microsoft Forms per a sol·licitar l'alta de la teua organització a l'AiSTEAM Network."
       },
       "openExternalLabel": {
-        "es": "Conviértete en miembro",
-        "en": "Become a member",
-        "va": "Fes-te'n membre"
+        "es": "Solicitar adhesión como miembro",
+        "en": "Apply for Membership",
+        "va": "Sol·licitar adhesió com a membre"
       }
     },
     "buttonLabel": {

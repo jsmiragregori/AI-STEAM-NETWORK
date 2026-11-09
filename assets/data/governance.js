@@ -1467,181 +1467,7 @@ export const GOVERNANCE_CONFIG = {
       ]
     },
     "scalabilityBlock": {
-      "visible": true,
-      "title": {
-        "es": "Escalabilidad del Modelo LbD",
-        "en": "Scalability of the LbD Model",
-        "va": "Escalabilitat del Model LbD"
-      },
-      "description": {
-        "es": "Esta hoja de ruta es una propuesta de validación, todavía no aprobada como compromiso operativo. Se muestra para recoger feedback de socios antes de decidir si se publica, se ajusta o se oculta.",
-        "en": "This roadmap is a validation proposal, not yet approved as an operational commitment. It is shown to collect partner feedback before deciding whether it should be published, adjusted or hidden.",
-        "va": "Este full de ruta és una proposta de validació, encara no aprovada com a compromís operatiu. Es mostra per a recollir feedback de socis abans de decidir si es publica, s'ajusta o s'oculta."
-      },
-      "phases": [
-        {
-          "id": "pilot",
-          "visible": true,
-          "order": 1,
-          "label": {
-            "es": "Fase Piloto",
-            "en": "Pilot Phase",
-            "va": "Fase Pilot"
-          },
-          "range": {
-            "es": "< 50 organizaciones",
-            "en": "< 50 organizations",
-            "va": "< 50 organitzacions"
-          },
-          "period": "2025–2026",
-          "items": [
-            {
-              "visible": true,
-              "order": 1,
-              "label": {
-                "es": "Track B gestionado manualmente por CECU",
-                "en": "Track B manually managed by CECU",
-                "va": "Track B gestionat manualment per CECU"
-              }
-            },
-            {
-              "visible": true,
-              "order": 2,
-              "label": {
-                "es": "Comité Científico revisa todos los retos",
-                "en": "Scientific Committee reviews all challenges",
-                "va": "El Comité Científic revisa tots els reptes"
-              }
-            },
-            {
-              "visible": true,
-              "order": 3,
-              "label": {
-                "es": "ConsensUE con grupos reducidos",
-                "en": "ConsensUE with small groups",
-                "va": "ConsensUE amb grups reduïts"
-              }
-            },
-            {
-              "visible": true,
-              "order": 4,
-              "label": {
-                "es": "Todos los retos pasan por revisión completa",
-                "en": "All challenges go through full review",
-                "va": "Tots els reptes passen per revisió completa"
-              }
-            }
-          ]
-        },
-        {
-          "id": "growth",
-          "visible": true,
-          "order": 2,
-          "label": {
-            "es": "Fase de Crecimiento",
-            "en": "Growth Phase",
-            "va": "Fase de Creixement"
-          },
-          "range": {
-            "es": "50–250 organizaciones",
-            "en": "50–250 organizations",
-            "va": "50–250 organitzacions"
-          },
-          "period": "2026–2027",
-          "items": [
-            {
-              "visible": true,
-              "order": 1,
-              "label": {
-                "es": "Validación por grupos de trabajo sectoriales (SN)",
-                "en": "Validation by sector working groups (SN)",
-                "va": "Validació per grups de treball sectorials (SN)"
-              }
-            },
-            {
-              "visible": true,
-              "order": 2,
-              "label": {
-                "es": "Automatización del enrutamiento de propuestas",
-                "en": "Automation of proposal routing",
-                "va": "Automatització de l'encaminament de propostes"
-              }
-            },
-            {
-              "visible": true,
-              "order": 3,
-              "label": {
-                "es": "RBAC en las 3 plataformas",
-                "en": "RBAC across the 3 platforms",
-                "va": "RBAC en les 3 plataformes"
-              }
-            },
-            {
-              "visible": true,
-              "order": 4,
-              "label": {
-                "es": "Sistema de reputación para revisores del Track B",
-                "en": "Reputation system for Track B reviewers",
-                "va": "Sistema de reputació per a revisors del Track B"
-              }
-            }
-          ]
-        },
-        {
-          "id": "stable",
-          "visible": true,
-          "order": 3,
-          "label": {
-            "es": "Fase Estable",
-            "en": "Stable Phase",
-            "va": "Fase Estable"
-          },
-          "range": {
-            "es": "500+ organizaciones",
-            "en": "500+ organizations",
-            "va": "500+ organitzacions"
-          },
-          "period": "2027+",
-          "items": [
-            {
-              "visible": true,
-              "order": 1,
-              "label": {
-                "es": "Delegación de validación Track B a orgs. acreditadas",
-                "en": "Delegation of Track B validation to accredited organizations",
-                "va": "Delegació de validació Track B a orgs. acreditades"
-              }
-            },
-            {
-              "visible": true,
-              "order": 2,
-              "label": {
-                "es": "Workflows asíncronos sin reuniones obligatorias",
-                "en": "Asynchronous workflows without mandatory meetings",
-                "va": "Workflows asíncrons sense reunions obligatòries"
-              }
-            },
-            {
-              "visible": true,
-              "order": 3,
-              "label": {
-                "es": "IA asistente para pre-validación de retos",
-                "en": "AI assistant for challenge pre-validation",
-                "va": "IA assistent per a prevalidació de reptes"
-              }
-            },
-            {
-              "visible": true,
-              "order": 4,
-              "label": {
-                "es": "Sostenibilidad financiera con cuotas + Digital Europe",
-                "en": "Financial sustainability with fees + Digital Europe",
-                "va": "Sostenibilitat financera amb quotes + Digital Europe"
-              }
-            }
-          ]
-        }
-      ]
+      "visible": false
     }
   },
   "documentationBlock": {
@@ -1716,9 +1542,9 @@ export const GOVERNANCE_CONFIG = {
         "va": "Proposta Track B · Espai Ecosistema · Pendent de validació"
       },
       "description": {
-        "es": "Esta card muestra una <strong>propuesta de contenidos</strong> para el futuro proceso de adhesión de miembros al Track B. La adhesión, sus condiciones y el Acuerdo de Colaboración están pendientes de validación por CECU, la coordinación del proyecto y los socios responsables del proceso.",
-        "en": "This card shows a <strong>content proposal</strong> for the future Track B member joining process. Membership, its conditions and the Collaboration Agreement are pending validation by CECU, project coordination and the partners responsible for the process.",
-        "va": "Esta card mostra una <strong>proposta de continguts</strong> per al futur procés d'adhesió de membres al Track B. L'adhesió, les seues condicions i l'Acord de Col·laboració estan pendents de validació per CECU, la coordinació del projecte i els socis responsables del procés."
+        "es": "Esta tarjeta muestra el procedimiento de adhesión de miembros al Track B. La solicitud se canaliza mediante formulario y su validación se formaliza a través del procedimiento en ConsensUE y el correspondiente Acuerdo de Colaboración.",
+        "en": "This card outlines the Track B member onboarding process. Applications are submitted via form and validation is formalized through the ConsensUE procedure and the corresponding Collaboration Agreement.",
+        "va": "Esta targeta mostra el procediment d'adhesió de membres al Track B. La sol·licitud es canalitza mitjançant formulari i la seua validació es formalitza a través del procediment en ConsensUE i el corresponent Acord de Col·laboració."
       },
       "benefitsLabel": {
         "es": "La propuesta podría incluir:",
@@ -1797,9 +1623,9 @@ export const GOVERNANCE_CONFIG = {
           "va": "Completa el formulari de Microsoft Forms per a sol·licitar l'alta de la teua organització a l'AiSTEAM Network."
         },
         "openExternalLabel": {
-          "es": "Conviértete en miembro",
-          "en": "Become a member",
-          "va": "Fes-te'n membre"
+          "es": "Solicitar adhesión como miembro",
+          "en": "Apply for Membership",
+          "va": "Sol·licitar adhesió com a membre"
         }
       }
     },
