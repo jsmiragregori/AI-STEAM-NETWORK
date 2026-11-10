@@ -20,14 +20,14 @@ export const HOME_CONFIG = {
       "va": "Comunitat i Transferència d'AiSECRETT"
     },
     "heroTagline": {
-      "es": "AiSTEAM Network es el ecosistema Track B de CECU para AiSECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders de AiSECRETT moviliza centros FP forma docentes y especializa los 7 sectores AiSECRETT en IA y creatividad.",
-      "en": "AiSTEAM Network is the Track B ecosystem of CECU for AiSECRETT: built on ENRED interregional cooperation, it activates AiSECRETT stakeholders, mobilizes VET centers, trains teachers and specializes the 7 AiSECRETT sectors in AI and creativity.",
-      "va": "AiSTEAM Network és l'ecosistema Track B de CECU per a AiSECRETT: construïda sobre la cooperació interregional d'ENRED, activa stakeholders d'AiSECRETT, mobilitza centres FP, forma docents i especialitza els 7 sectors AiSECRETT en IA i creativitat."
+      "es": "AiSTEAM Network es el ecosistema de colaboración e innovación educativa de AiSECRETT: dinamizado por la Conselleria de Educación y apoyado en la cooperación interregional de ENRED, conecta a centros de Formación Profesional, profesorado y empresas para impulsar la IA y la creatividad en las 7 áreas sectoriales del proyecto.",
+      "en": "AiSTEAM Network is the collaborative education and innovation ecosystem of AiSECRETT: facilitated and energized by the Regional Ministry of Education and built on ENRED interregional cooperation, it connects VET centres, educators and industry to advance AI and creativity across the project's 7 sectoral areas.",
+      "va": "AiSTEAM Network és l'ecosistema de col·laboració i innovació educativa d'AiSECRETT: dinamitzat per la Conselleria d'Educació i recolzat en la cooperació interregional d'ENRED, connecta centres de Formació Professional, professorat i empreses per a impulsar la IA i la creativitat en les 7 àrees sectorials del projecte."
     },
     "description": {
-      "es": "Liderada por CECU activa stakeholders de AiSECRETT moviliza centros FP forma docentes y genera evidencias para el consorcio AiSECRETT en las 7 áreas sectoriales europeas.",
-      "en": "Led by CECU, it activates AiSECRETT stakeholders, mobilizes VET centers, trains teachers and generates evidence for the AiSECRETT consortium in the 7 sectoral areas.",
-      "va": "Liderada per CECU, activa stakeholders d'AiSECRETT, mobilitza centres FP, forma docents i genera evidències per al consorci AiSECRETT en les 7 àrees sectorials europees."
+      "es": "Dinamizada por la Conselleria de Educación de la Generalitat Valenciana, moviliza a centros educativos de FP, capacita al profesorado y genera evidencias reales de transferencia formativa en las 7 áreas sectoriales del proyecto.",
+      "en": "Energized by the Regional Ministry of Education of the Generalitat Valenciana, it mobilizes VET centres, trains educators and delivers real-world learning transfer evidence across the project's 7 sectoral areas.",
+      "va": "Dinamitzada per la Conselleria d'Educació de la Generalitat Valenciana, mobilitza centres educatius d'FP, capacita el professorat i genera evidències reals de transferència formativa en les 7 àrees sectorials del projecte."
     },
     "buttons": {
       "uploadChallenge": {
@@ -36,9 +36,9 @@ export const HOME_CONFIG = {
         "va": "Proposa un repte, cas o aportació"
       },
       "requestJoin": {
-        "es": "Únete a la AiSTEAM Network",
-        "en": "Join the AiSTEAM Network",
-        "va": "Uneix-te a la AiSTEAM Network",
+        "es": "Solicitar adhesión a la red",
+        "en": "Apply to Join the Network",
+        "va": "Sol·licitar adhesió a la xarxa",
         "formVisible": true,
         "membershipCtasVisible": true,
         "effectiveMembershipCtasVisible": true,
@@ -73,9 +73,9 @@ export const HOME_CONFIG = {
         "computedValue": 0,
         "icon": "users",
         "label": {
-          "es": "Miembros",
-          "en": "Members",
-          "va": "Membres"
+          "es": "Entidades colaboradoras",
+          "en": "Collaborating organizations",
+          "va": "Entitats col·laboradores"
         }
       },
       {
@@ -161,9 +161,9 @@ export const HOME_CONFIG = {
           {
             "id": "is-1",
             "html": {
-              "es": "Track B de AiSECRETT: comunidad y capa de transferencia",
-              "en": "AiSECRETT Track B: community and transfer layer",
-              "va": "Track B d&#39;AiSECRETT: comunitat i capa de transferència"
+              "es": "Comunidad de práctica y espacio de transferencia e innovación del proyecto europeo AiSECRETT",
+              "en": "Community of practice and transfer &amp; innovation ecosystem of the European project AiSECRETT",
+              "va": "Comunitat de pràctica i espai de transferència i innovació del projecte europeu AiSECRETT"
             }
           },
           {
@@ -197,9 +197,9 @@ export const HOME_CONFIG = {
           {
             "id": "is-not-1",
             "html": {
-              "es": "Un máster paralelo (el Track A académico lo lidera UVEG)",
-              "en": "A parallel Master (Track A is led academically by UVEG)",
-              "va": "Un màster paral·lel (el Track A acadèmic el lidera UVEG)"
+              "es": "Un máster o titulación universitaria paralela (el programa académico oficial lo imparte y coordina la Universitat de València junto a las universidades socias)",
+              "en": "A parallel Master&#39;s degree (the official academic university programme is taught and coordinated by the Universitat de València alongside partner universities)",
+              "va": "Un màster o titulació universitària paral·lela (el programa acadèmic oficial l&#39;impartix i coordina la Universitat de València juntament amb les universitats sòcies)"
             }
           },
           {
@@ -334,9 +334,9 @@ export const HOME_CONFIG = {
           {
             "id": "ai-steam-5",
             "html": {
-              "es": "AiSECRETT Track B",
-              "en": "AiSECRETT Track B",
-              "va": "AiSECRETT Track B"
+              "es": "Comunidad de Práctica",
+              "en": "Community of Practice",
+              "va": "Comunitat de Pràctica"
             }
           }
         ]
@@ -376,9 +376,9 @@ export const HOME_CONFIG = {
           "va": "LMS · Moodle"
         },
         "description": {
-          "es": "Entorno de aprendizaje del Track B para cursos, itinerarios de formación docente y actividades vinculadas a FP y recursos abiertos del proyecto.",
-          "en": "Track B learning environment for courses, teacher training pathways and activities linked to VET and the project’s open resources.",
-          "va": "Entorn d'aprenentatge del Track B per a cursos, itineraris de formació docent i activitats vinculades a FP i recursos oberts del projecte."
+          "es": "Entorno virtual de aprendizaje para cursos, itinerarios de formación docente y actividades vinculadas a la Formación Profesional y recursos abiertos del proyecto.",
+          "en": "Virtual learning environment for courses, teacher training pathways and activities linked to VET and the project's open educational resources.",
+          "va": "Entorn virtual d'aprenentatge per a cursos, itineraris de formació docent i activitats vinculades a la Formació Professional i recursos oberts del projecte."
         },
         "tag": {
           "visible": true,
@@ -436,9 +436,9 @@ export const HOME_CONFIG = {
           "va": "Espai ConsensUE en Aules"
         },
         "description": {
-          "es": "Canal participativo del Track B para consultas, deliberación y trazabilidad de aportaciones que ayudan a priorizar necesidades, retos y recursos de la red.",
-          "en": "Track B participation channel for consultation, deliberation and traceability of contributions that help prioritize the network’s needs, challenges and resources.",
-          "va": "Canal participatiu del Track B per a consultes, deliberació i traçabilitat d'aportacions que ajuden a prioritzar les necessitats, els reptes i els recursos de la xarxa."
+          "es": "Canal participativo de la red para consultas, deliberación y trazabilidad de aportaciones que ayudan a priorizar necesidades, retos y recursos colaborativos.",
+          "en": "Network participation channel for consultations, deliberation and traceability of contributions to help prioritize collaborative needs, challenges and resources.",
+          "va": "Canal participatiu de la xarxa per a consultes, deliberació i traçabilitat d'aportacions que ajuden a prioritzar necessitats, reptes i recursos col·laboratius."
         },
         "tag": {
           "visible": true,
@@ -461,9 +461,9 @@ export const HOME_CONFIG = {
     "description": {
       "visible": true,
       "html": {
-        "es": "La red conecta la Formación Profesional coordinada por CECU con los puentes de transferencia hacia el Máster coordinado por UVEG.",
-        "en": "The network connects Vocational Education and Training coordinated by CECU with transfer bridges to the Master&#39;s degree coordinated by UVEG.",
-        "va": "La xarxa connecta la Formació Professional coordinada per CECU amb els ponts de transferència cap al Màster coordinat per UVEG."
+        "es": "Un modelo educativo donde la Formación Profesional y los estudios universitarios avanzan de la mano: docentes, alumnado y organizaciones colaboran sobre retos reales del entorno laboral para aprender y crear con inteligencia artificial.",
+        "en": "An educational model where Vocational Education and Training and university studies move forward hand in hand: educators, students and organizations collaborate on real-world workplace challenges to learn and create with artificial intelligence.",
+        "va": "Un model educatiu on la Formació Professional i els estudis universitaris avancen de la mà: docents, alumnat i organitzacions col·laboren sobre reptes reals de l&#39;entorn laboral per a aprendre i crear amb intel·ligència artificial."
       }
     },
     "cards": [
@@ -472,9 +472,9 @@ export const HOME_CONFIG = {
         "tone": "orange",
         "initials": "FP",
         "coordinator": {
-          "es": "Coordinado por CECU",
-          "en": "Coordinated by CECU",
-          "va": "Coordinat per CECU"
+          "es": "Dinamizado por la Conselleria de Educación",
+          "en": "Facilitated by the Regional Ministry of Education",
+          "va": "Dinamitzat per la Conselleria d'Educació"
         },
         "title": {
           "es": "FP y Ciclos Formativos",
@@ -482,9 +482,9 @@ export const HOME_CONFIG = {
           "va": "FP i Cicles Formatius"
         },
         "description": {
-          "es": "Los retos y conocimientos de la red nutren directamente los módulos de FP: ciclos formativos y cursos de especialización de la Conselleria de Educación, Cultura y Universidades.",
-          "en": "Network challenges and knowledge directly feed VET subjects: training cycles and specialization courses from the Department of Education, Culture and Universities",
-          "va": "Els reptes i coneixements de la xarxa alimenten directament els mòduls de FP: cicles formatius i cursos d'especialització de la Conselleria d'Educació, Cultura i Universitats."
+          "es": "Llevamos los retos del mundo laboral directamente a las aulas de FP: una comunidad donde docentes y estudiantes experimentan con inteligencia artificial aplicada, comparten recursos didácticos abiertos y dan respuesta a necesidades reales de las organizaciones.",
+          "en": "Bringing real-world workplace challenges directly into VET classrooms: a community where educators and students experiment with applied artificial intelligence, share open educational resources and respond to real organizational needs.",
+          "va": "Portem els reptes del món laboral directament a les aules d'FP: una comunitat on docents i estudiants experimenten amb intel·ligència artificial aplicada, comparteixen recursos didàctics oberts i donen resposta a necessitats reals de les organitzacions."
         },
         "items": [
           {
@@ -526,9 +526,9 @@ export const HOME_CONFIG = {
         "tone": "purple",
         "initials": "M",
         "coordinator": {
-          "es": "Coordinado por UVEG",
-          "en": "Coordinated by UVEG",
-          "va": "Coordinat per UVEG"
+          "es": "Coordinado por la Universitat de València",
+          "en": "Coordinated by Universitat de València",
+          "va": "Coordinat per la Universitat de València"
         },
         "title": {
           "es": "Máster AiSECRETT",

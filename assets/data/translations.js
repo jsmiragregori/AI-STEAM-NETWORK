@@ -45,12 +45,12 @@ export const translations = {
       "badge": "Programa Digital Europe 2021-2027 · AiSECRETT",
       "title": "AiSTEAM Network",
       "subtitle": "Comunidad y Transferencia de AiSECRETT",
-      "heroTagline": "AiSTEAM Network es el ecosistema Track B de CECU para AiSECRETT: construida sobre la cooperación interregional de ENRED activa stakeholders de AiSECRETT moviliza centros FP forma docentes y especializa los 7 sectores AiSECRETT en IA y creatividad.",
-      "description": "Liderada por CECU activa stakeholders de AiSECRETT moviliza centros FP forma docentes y genera evidencias para el consorcio AiSECRETT en las 7 áreas sectoriales europeas.",
+      "heroTagline": "AiSTEAM Network es el ecosistema de colaboración e innovación educativa de AiSECRETT: dinamizado por la Conselleria de Educación y apoyado en la cooperación interregional de ENRED, conecta a centros de Formación Profesional, profesorado y empresas para impulsar la IA y la creatividad en las 7 áreas sectoriales del proyecto.",
+      "description": "Dinamizada por la Conselleria de Educación de la Generalitat Valenciana, moviliza a centros educativos de FP, capacita al profesorado y genera evidencias reales de transferencia formativa en las 7 áreas sectoriales del proyecto.",
       "uploadChallenge": "Propón un reto, caso o aportación",
-      "requestJoin": "Únete a la AiSTEAM Network",
+      "requestJoin": "Solicitar adhesión a la red",
       "stats": {
-        "stakeholders": "Miembros",
+        "stakeholders": "Entidades colaboradoras",
         "totalChallenges": "Retos y casos",
         "consortiumMembers": "Socios del consorcio",
         "microCredentials": "Experiencias piloto",
@@ -83,7 +83,7 @@ export const translations = {
         "heading": "¿Qué es y qué no es esta red?",
         "isTitle": "Es",
         "isItems": [
-          "Track B de AiSECRETT: comunidad y capa de transferencia",
+          "Comunidad de práctica y espacio de transferencia e innovación del proyecto europeo AiSECRETT",
           "Activación del ecosistema, transferencia FP, formación docente",
           "Generador de evidencias sectoriales que proporciona datos e indicadores para validar el impacto educativo y sectorial del programa"
         ],
@@ -111,7 +111,7 @@ export const translations = {
           "Triple Transición",
           "FP Transfer",
           "Formación Docente",
-          "AiSECRETT Track B"
+          "Comunidad de Práctica"
         ]
       },
       "sectors": "7 Áreas Sectoriales AiSECRETT",
@@ -1624,12 +1624,12 @@ export const translations = {
       "badge": "Digital Europe Programme 2021-2027 · AiSECRETT",
       "title": "AiSTEAM Network",
       "subtitle": "Community and Transfer of AiSECRETT",
-      "heroTagline": "AiSTEAM Network is the Track B ecosystem of CECU for AiSECRETT: built on ENRED interregional cooperation, it activates AiSECRETT stakeholders, mobilizes VET centers, trains teachers and specializes the 7 AiSECRETT sectors in AI and creativity.",
-      "description": "Led by CECU, it activates AiSECRETT stakeholders, mobilizes VET centers, trains teachers and generates evidence for the AiSECRETT consortium in the 7 sectoral areas.",
+      "heroTagline": "AiSTEAM Network is the collaborative education and innovation ecosystem of AiSECRETT: facilitated and energized by the Regional Ministry of Education and built on ENRED interregional cooperation, it connects VET centres, educators and industry to advance AI and creativity across the project's 7 sectoral areas.",
+      "description": "Energized by the Regional Ministry of Education of the Generalitat Valenciana, it mobilizes VET centres, trains educators and delivers real-world learning transfer evidence across the project's 7 sectoral areas.",
       "uploadChallenge": "Submit a challenge, case or contribution",
-      "requestJoin": "Join the AiSTEAM Network",
+      "requestJoin": "Apply to Join the Network",
       "stats": {
-        "stakeholders": "Members",
+        "stakeholders": "Collaborating organizations",
         "totalChallenges": "Challenges and cases",
         "consortiumMembers": "Consortium partners",
         "microCredentials": "Pilot experiences",
@@ -1662,7 +1662,7 @@ export const translations = {
         "heading": "What this network is — and is not",
         "isTitle": "Is",
         "isItems": [
-          "AiSECRETT Track B: community and transfer layer",
+          "Community of practice and transfer & innovation ecosystem of the European project AiSECRETT",
           "Ecosystem activation, VET transfer, teacher training",
           "Sectoral evidence generator that provides data and indicators to validate the educational and sectoral impact of the program"
         ],
@@ -1690,7 +1690,7 @@ export const translations = {
           "Triple Transition",
           "VET Transfer",
           "Teacher Training",
-          "AiSECRETT Track B"
+          "Community of Practice"
         ]
       },
       "sectors": "7 AiSECRETT Sectoral Areas",
@@ -3203,12 +3203,12 @@ export const translations = {
       "badge": "Programa Digital Europe 2021-2027 · AiSECRETT",
       "title": "AiSTEAM Network",
       "subtitle": "Comunitat i Transferència d'AiSECRETT",
-      "heroTagline": "AiSTEAM Network és l'ecosistema Track B de CECU per a AiSECRETT: construïda sobre la cooperació interregional d'ENRED, activa stakeholders d'AiSECRETT, mobilitza centres FP, forma docents i especialitza els 7 sectors AiSECRETT en IA i creativitat.",
-      "description": "Liderada per CECU, activa stakeholders d'AiSECRETT, mobilitza centres FP, forma docents i genera evidències per al consorci AiSECRETT en les 7 àrees sectorials europees.",
+      "heroTagline": "AiSTEAM Network és l'ecosistema de col·laboració i innovació educativa d'AiSECRETT: dinamitzat per la Conselleria d'Educació i recolzat en la cooperació interregional d'ENRED, connecta centres de Formació Professional, professorat i empreses per a impulsar la IA i la creativitat en les 7 àrees sectorials del projecte.",
+      "description": "Dinamitzada per la Conselleria d'Educació de la Generalitat Valenciana, mobilitza centres educatius d'FP, capacita el professorat i genera evidències reals de transferència formativa en les 7 àrees sectorials del projecte.",
       "uploadChallenge": "Proposa un repte, cas o aportació",
-      "requestJoin": "Uneix-te a la AiSTEAM Network",
+      "requestJoin": "Sol·licitar adhesió a la xarxa",
       "stats": {
-        "stakeholders": "Membres",
+        "stakeholders": "Entitats col·laboradores",
         "totalChallenges": "Reptes i casos",
         "consortiumMembers": "Socis del consorci",
         "microCredentials": "Experiències pilot",
@@ -3241,7 +3241,7 @@ export const translations = {
         "heading": "Què és i què no és aquesta xarxa?",
         "isTitle": "És",
         "isItems": [
-          "Track B d'AiSECRETT: comunitat i capa de transferència",
+          "Comunitat de pràctica i espai de transferència i innovació del projecte europeu AiSECRETT",
           "Activació de l'ecosistema, transferència FP, formació docent",
           "Generador d'evidències sectorials que proporciona dades i indicadors per a validar l'impacte educatiu i sectorial del programa"
         ],
@@ -3269,7 +3269,7 @@ export const translations = {
           "Triple Transició",
           "Transferència FP",
           "Formació Docent",
-          "AiSECRETT Track B"
+          "Comunitat de Pràctica"
         ]
       },
       "sectors": "7 Àrees Sectorials AiSECRETT",
