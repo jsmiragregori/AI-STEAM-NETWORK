@@ -552,9 +552,9 @@ export const HOME_CONFIG = {
           {
             "id": "master-2",
             "html": {
-              "es": "Modelo curricular basado en créditos ECTS y Credenciales Digitales Europeas (en tramitación)",
-              "en": "Curriculum model based on ECTS credits and European Digital Credentials (under academic approval)",
-              "va": "Model curricular basat en crèdits ECTS i Credencials Digitals Europees (en tramitació)"
+              "es": "Créditos ECTS sujetos a reconocimiento universitario, con soporte de Credenciales Digitales Europeas",
+              "en": "ECTS credits subject to university recognition, supported by European Digital Credentials",
+              "va": "Crèdits ECTS subjectes a reconeixement universitari, amb suport de Credencials Digitals Europees"
             }
           },
           {

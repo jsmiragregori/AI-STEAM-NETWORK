@@ -563,7 +563,7 @@ export const translations = {
         "Inspiración para TFM/proyectos cuando es aceptada por el Track A"
       ],
       "masterBridgeDisclaimer": "El Máster AiSECRETT (Track A) es gobernado por UVEG y los socios académicos del consorcio. La AiSTEAM Network (Track B) no asigna ECTS, no certifica títulos universitarios ni define los criterios de evaluación del Máster.",
-      "credentialsDisclaimer": "Los mecanismos de reconocimiento están sujetos a validación por la gobernanza de AiSECRETT y los marcos de CECU, UVEG y TUV.IT.",
+      "credentialsDisclaimer": "El reconocimiento académico de ECTS corresponde a la validación de la UVEG y las universidades, mientras que los mecanismos procedimentales de credenciales digitales siguen el marco de gobernanza de AiSECRETT.",
       "courseTitle": "Título del Módulo",
       "courseDescription": "Descripción",
       "courseHours": "h",
@@ -2142,7 +2142,7 @@ export const translations = {
         "TFM/project inspiration when accepted by Track A"
       ],
       "masterBridgeDisclaimer": "The Master AiSECRETT (Track A) is governed by UVEG and the academic partners of the consortium. The AiSTEAM Network (Track B) does not award ECTS, does not certify university degrees and does not define Master assessment criteria.",
-      "credentialsDisclaimer": "Recognition mechanisms are subject to validation by AiSECRETT governance and relevant CECU, UVEG and TUV.IT frameworks.",
+      "credentialsDisclaimer": "Academic recognition of ECTS remains subject to UVEG and university validation, while procedural arrangements for digital credentials follow the AiSECRETT governance framework.",
       "courseTitle": "Subject Title",
       "courseDescription": "Description",
       "courseHours": "h",
@@ -3711,7 +3711,7 @@ export const translations = {
         "Inspiració per a TFM/projectes quan és acceptada per Track A"
       ],
       "masterBridgeDisclaimer": "El Màster AiSECRETT (Track A) és governat per UVEG i els socis acadèmics del consorci. L'AiSTEAM Network (Track B) no assigna ECTS, no certifica títols universitaris ni defineix els criteris d'avaluació del Màster.",
-      "credentialsDisclaimer": "Els mecanismes de reconeixement estan subjectes a validació per la governança d'AiSECRETT i els marcs de CECU, UVEG i TUV.IT.",
+      "credentialsDisclaimer": "El reconeixement acadèmic d'ECTS correspon a la validació d'UVEG i les universitats, mentre que els mecanismes procedimentals de credencials digitals seguixen el marc de governança d'AiSECRETT.",
       "courseViewMore": "Veure curs →",
       "courseHours": "h",
       "courseEnrolledLabel": "matriculats",
