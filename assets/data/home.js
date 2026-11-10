@@ -205,9 +205,9 @@ export const HOME_CONFIG = {
           {
             "id": "is-not-2",
             "html": {
-              "es": "Una entidad certificadora oficial (la acreditación académica y de títulos corresponde exclusivamente a las universidades)",
-              "en": "An official certifying body (academic qualification and degree accreditation rests exclusively with universities)",
-              "va": "Una entitat certificadora oficial (l&#39;acreditació acadèmica i de títols correspon exclusivament a les universitats)"
+              "es": "Una entidad certificadora oficial (el reconocimiento académico y el otorgamiento de títulos corresponde exclusivamente a las universidades)",
+              "en": "An official certifying body (academic recognition and awarding of degrees rests exclusively with universities)",
+              "va": "Una entitat certificadora oficial (el reconeixement acadèmic i l&#39;atorgament de títols correspon exclusivament a les universitats)"
             }
           },
           {
