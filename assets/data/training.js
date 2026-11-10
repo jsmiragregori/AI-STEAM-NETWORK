@@ -43,9 +43,9 @@ export const TRAINING_CONFIG = {
         "value": 0,
         "manualOverride": false,
         "label": {
-          "es": "Cursos Track A",
-          "en": "Track A Courses",
-          "va": "Cursos Track A"
+          "es": "Actividades extracurriculares",
+          "en": "Extracurricular activities",
+          "va": "Activitats extracurriculars"
         }
       },
       {
@@ -263,9 +263,9 @@ export const TRAINING_CONFIG = {
       "pathBlock": {
         "visible": true,
         "title": {
-          "es": "Itinerario FP – CECU",
-          "en": "VET Pathway – CECU",
-          "va": "Itinerari FP – CECU"
+          "es": "Itinerario de Formación Profesional",
+          "en": "Vocational Education and Training Pathway",
+          "va": "Itinerari de Formació Professional"
         },
         "steps": [
           {
@@ -490,27 +490,27 @@ export const TRAINING_CONFIG = {
             "id": "admision",
             "order": 1,
             "text": {
-              "es": "Caso o reto del ecosistema candidato al Track A",
-              "en": "Ecosystem case or challenge candidate for Track A",
-              "va": "Cas o repte de l'ecosistema candidat al Track A"
+              "es": "Planteamiento de un reto o caso real por la comunidad",
+              "en": "Submission of a real-world challenge or case by the community",
+              "va": "Plantejament d'un repte o cas real per la comunitat"
             }
           },
           {
             "id": "modulos-sector",
             "order": 2,
             "text": {
-              "es": "Validación de relevancia curricular por UVEG",
-              "en": "Curriculum relevance validation by UVEG",
-              "va": "Validació de rellevància curricular per UVEG"
+              "es": "Validación participativa del interés formativo en ConsensUE",
+              "en": "Collaborative validation of educational relevance in ConsensUE",
+              "va": "Validació participativa de l'interés formatiu en ConsensUE"
             }
           },
           {
             "id": "reto-real",
             "order": 3,
             "text": {
-              "es": "Posible incorporación como TFM (decisión de UVEG)",
-              "en": "Possible TFM incorporation (UVEG decision)",
-              "va": "Possible incorporació com a TFM (decisió d'UVEG)"
+              "es": "Posible incorporación como TFM (decisión académica de la universidad)",
+              "en": "Possible incorporation as Master's Thesis (university academic decision)",
+              "va": "Possible incorporació com a TFM (decisió acadèmica de la universitat)"
             }
           },
           {
@@ -536,21 +536,21 @@ export const TRAINING_CONFIG = {
       "disclaimerBlock": {
         "visible": true,
         "text": {
-          "es": "El Máster AiSECRETT (Track A) es gobernado por UVEG y los socios académicos del consorcio. La AiSTEAM Network (Track B) no asigna ECTS, no certifica títulos universitarios ni define los criterios de evaluación del Máster.",
-          "en": "The Master AiSECRETT (Track A) is governed by UVEG and the academic partners of the consortium. The AiSTEAM Network (Track B) does not award ECTS, does not certify university degrees and does not define Master assessment criteria.",
-          "va": "El Màster AiSECRETT (Track A) és governat per UVEG i els socis acadèmics del consorci. La AiSTEAM Network (Track B) no atorga ECTS, no certifica títols universitaris ni definix els criteris d'avaluació del Màster."
+          "es": "El Máster AiSECRETT se rige por la Universitat de València y las universidades socias del consorcio. La AiSTEAM Network no asigna créditos ECTS, no expide títulos universitarios oficiales ni interviene en los criterios de evaluación del Máster.",
+          "en": "The Master AiSECRETT is governed by the Universitat de València and consortium academic partners. The AiSTEAM Network does not award ECTS credits, does not issue official university degrees and does not determine Master evaluation criteria.",
+          "va": "El Màster AiSECRETT es regix per la Universitat de València i les universitats sòcies del consorci. L'AiSTEAM Network no atorga crèdits ECTS, no expedix títols universitaris oficials ni intervé en els criteris d'avaluació del Màster."
         },
         "link": {
           "url": "https://aisecrett.eu/bid-to-our-call/",
           "text": {
-            "es": "La UVEG gestiona, en nombre del consorcio, la convocatoria FSTP de apoyo económico para participar en actividades extracurriculares del Máster: escuelas de verano e invierno, talleres temáticos y formación intensiva.",
-            "en": "UVEG runs, on behalf of the consortium, the AiSECRETT FSTP Call, which offers financial support for taking part in extracurricular activities linked to the master's programme: summer and winter schools, thematic workshops and intensive training events.",
-            "va": "La UVEG gestiona, en nom del consorci, la convocatòria FSTP de suport econòmic per a participar en activitats extracurriculars del Màster: escoles d'estiu i d'hivern, tallers temàtics i formació intensiva."
+            "es": "La Universitat de València gestiona, en nombre del consorcio, las convocatorias de ayudas económicas y becas para participar en las actividades formativas del Máster: escuelas de verano e invierno, talleres temáticos y jornadas intensivas.",
+            "en": "The Universitat de València manages, on behalf of the consortium, the financial support and grant calls for participating in Master's training activities: summer and winter schools, thematic workshops and intensive training events.",
+            "va": "La Universitat de València gestiona, en nom del consorci, les convocatòries d'ajudes econòmiques i beques per a participar en les activitats formatives del Màster: escoles d'estiu i d'hivern, tallers temàtics i jornades intensives."
           },
           "label": {
-            "es": "Consultar la convocatoria FSTP de AiSECRETT",
-            "en": "See the AiSECRETT FSTP Call",
-            "va": "Consultar la convocatòria FSTP d'AiSECRETT"
+            "es": "Consultar las convocatorias de ayudas y becas del Máster",
+            "en": "View Master's financial support and grant calls",
+            "va": "Consultar les convocatòries d'ajudes i beques del Màster"
           }
         }
       }
